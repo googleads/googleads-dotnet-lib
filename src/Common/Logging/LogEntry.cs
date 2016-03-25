@@ -15,7 +15,6 @@
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util;
 
-using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Globalization;
@@ -43,7 +42,7 @@ namespace Google.Api.Ads.Common.Logging {
     /// <summary>
     /// The flag to indicate whether this request is a failure or not.
     /// </summary>
-    bool isFailure;
+    private bool isFailure;
 
     /// <summary>
     /// Gets or sets the summary request log.
@@ -223,12 +222,14 @@ namespace Google.Api.Ads.Common.Logging {
     /// response logs.</param>
     public void LogResponseDetails(WebResponse response, string responseBody,
         ISet<string> fieldsToMask, TraceFormatter formatter) {
+      WebHeaderCollection collection = (response == null) ?
+          new WebHeaderCollection() : response.Headers;
       if (config.MaskCredentials) {
         this.DetailedResponseLog = GetFormattedResponseLog(new ResponseInfo(
-            response.Headers, responseBody), fieldsToMask, formatter);
+            collection, responseBody), fieldsToMask, formatter);
       } else {
         this.DetailedResponseLog = GetFormattedResponseLog(new ResponseInfo(
-            response.Headers, responseBody));
+            collection, responseBody));
       }
     }
 

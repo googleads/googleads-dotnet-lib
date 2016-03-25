@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System;
 using System.ComponentModel;
 using System.Net;
 
@@ -20,12 +21,19 @@ namespace Google.Api.Ads.Common.Lib {
   /// <summary>
   /// Interface for common configuration properties.
   /// </summary>
-  public interface AppConfig {
+  public interface AppConfig : ICloneable {
 
     /// <summary>
     /// Gets whether the credentials in the log file should be masked.
     /// </summary>
     bool MaskCredentials { get; }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 server URL.
+    /// </summary>
+    /// <remarks>This property is primarily used only for testing purposes.
+    /// </remarks>
+    string OAuth2ServerUrl { get; set; }
 
     /// <summary>
     /// Gets or sets the OAuth2 mode.

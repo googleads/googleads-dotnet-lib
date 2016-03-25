@@ -16,15 +16,15 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201509;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Text;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
+
   /// <summary>
   /// This code example retrieves keywords that are related to a given keyword.
   /// </summary>
   public class GetKeywordIdeas : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -58,8 +58,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
       TargetingIdeaService targetingIdeaService =
           (TargetingIdeaService) user.GetService(AdWordsService.v201509.TargetingIdeaService);
 
-      string keywordText = "mars cruise";
-
       // Create selector.
       TargetingIdeaSelector selector = new TargetingIdeaSelector();
       selector.requestType = RequestType.IDEAS;
@@ -69,21 +67,36 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
         AttributeType.SEARCH_VOLUME,
         AttributeType.CATEGORY_PRODUCTS_AND_SERVICES};
 
-      // Language setting (optional).
-      // The ID can be found in the documentation:
-      //   https://developers.google.com/adwords/api/docs/appendix/languagecodes
-      // Note: As of v201302, only a single language parameter is allowed.
-      LanguageSearchParameter languageParameter = new LanguageSearchParameter();
-      Language english = new Language();
-      english.id = 1000;
-      languageParameter.languages = new Language[] {english};
+      // Create the search parameters.
+      string keywordText = "mars cruise";
 
       // Create related to query search parameter.
       RelatedToQuerySearchParameter relatedToQuerySearchParameter =
           new RelatedToQuerySearchParameter();
-      relatedToQuerySearchParameter.queries = new String[] {keywordText};
-      selector.searchParameters =
-        new SearchParameter[] {relatedToQuerySearchParameter, languageParameter};
+      relatedToQuerySearchParameter.queries = new String[] { keywordText };
+
+      // Add a language search parameter (optional).
+      // The ID can be found in the documentation:
+      //   https://developers.google.com/adwords/api/docs/appendix/languagecodes
+      LanguageSearchParameter languageParameter = new LanguageSearchParameter();
+      Language english = new Language();
+      english.id = 1000;
+      languageParameter.languages = new Language[] { english };
+
+      // Add network search parameter (optional).
+      NetworkSetting networkSetting = new NetworkSetting();
+      networkSetting.targetGoogleSearch = true;
+      networkSetting.targetSearchNetwork = false;
+      networkSetting.targetContentNetwork = false;
+      networkSetting.targetPartnerSearchNetwork = false;
+
+      NetworkSearchParameter networkSearchParameter = new NetworkSearchParameter();
+      networkSearchParameter.networkSetting = networkSetting;
+
+      // Set the search parameters.
+      selector.searchParameters = new SearchParameter[] {
+          relatedToQuerySearchParameter, languageParameter, networkSearchParameter
+      };
 
       // Set selector paging (required for targeting idea service).
       Paging paging = Paging.Default;
@@ -114,7 +127,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
                     foreach (int value in categorySet.value) {
                       builder.AppendFormat("{0}, ", value);
                     }
-                    categories = builder.ToString().Trim(new char[] {',', ' '});
+                    categories = builder.ToString().Trim(new char[] { ',', ' ' });
                   }
                 }
                 if (entry.key == AttributeType.SEARCH_VOLUME) {

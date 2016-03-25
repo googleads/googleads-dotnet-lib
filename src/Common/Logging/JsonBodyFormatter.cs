@@ -12,9 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Web.Script.Serialization;
+
 
 namespace Google.Api.Ads.Common.Logging {
 
@@ -34,16 +36,29 @@ namespace Google.Api.Ads.Common.Logging {
     /// </returns>
     public override string MaskContents(string body, ISet<string> keysToMask) {
       JavaScriptSerializer serializer = new JavaScriptSerializer();
-      Dictionary<string, string> jsonDict =
-          serializer.Deserialize<Dictionary<string, string>>(body);
+      Dictionary<string, string> jsonDict = null;
 
-      foreach (string key in keysToMask) {
-        if (jsonDict.ContainsKey(key)) {
-          jsonDict[key] = MASK_PATTERN;
-        }
+      try {
+        jsonDict = serializer.Deserialize<Dictionary<string, string>>(body);
+      } catch {
+        // This block could be hit if
+        // - ArgumentException is thrown. This happens if the body being passed
+        // here is not a JSON text.
+        // - ArgumentNullException if body is null.
+        // In both cases, it makes sense to return body unaltered.
+        return body;
       }
 
-      return serializer.Serialize(jsonDict);
+      if (jsonDict != null) {
+        foreach (string key in keysToMask) {
+          if (jsonDict.ContainsKey(key)) {
+            jsonDict[key] = MASK_PATTERN;
+          }
+        }
+        return serializer.Serialize(jsonDict);
+      } else {
+        return body;
+      }
     }
   }
 }

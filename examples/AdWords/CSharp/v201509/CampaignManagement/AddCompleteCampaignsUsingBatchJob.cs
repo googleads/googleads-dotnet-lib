@@ -67,7 +67,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
     /// pending state.
     /// </summary>
     private readonly HashSet<BatchJobStatus> PENDING_STATUSES = new HashSet<BatchJobStatus>() {
-      BatchJobStatus.ACTIVE, BatchJobStatus.AWAITING_FILE
+      BatchJobStatus.ACTIVE, BatchJobStatus.AWAITING_FILE, BatchJobStatus.CANCELING
     };
 
     /// <summary>

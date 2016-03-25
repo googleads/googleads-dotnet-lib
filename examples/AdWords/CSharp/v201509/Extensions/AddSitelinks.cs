@@ -75,7 +75,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
       // Create your sitelinks.
       SitelinkFeedItem sitelink1 = new SitelinkFeedItem() {
         sitelinkText = "Store Hours",
-        sitelinkFinalUrls = new string[] { "http://www.example.com/storehours" }
+        sitelinkFinalUrls = new UrlList() {
+          urls = new string[] { "http://www.example.com/storehours" }
+        }
       };
       extensions.Add(sitelink1);
 
@@ -88,7 +90,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
         // Show the Thanksgiving specials link only from 20 - 27 Nov.
         SitelinkFeedItem sitelink2 = new SitelinkFeedItem() {
           sitelinkText = "Thanksgiving Specials",
-          sitelinkFinalUrls = new string[] { "http://www.example.com/thanksgiving" },
+          sitelinkFinalUrls = new UrlList() {
+            urls = new string[] { "http://www.example.com/thanksgiving" }
+          },
           startTime = string.Format("{0} {1}", startOfThanksGiving.ToString("yyyyMMdd HHmmss"),
               customer.dateTimeZone),
           endTime = string.Format("{0} {1}", endOfThanksGiving.ToString("yyyyMMdd HHmmss"),
@@ -99,7 +103,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
       // Show the wifi details primarily for high end mobile users.
       SitelinkFeedItem sitelink3 = new SitelinkFeedItem() {
         sitelinkText = "Wifi available",
-        sitelinkFinalUrls = new string[] { "http://www.example.com/mobile/wifi" },
+        sitelinkFinalUrls = new UrlList() {
+          urls = new string[] { "http://www.example.com/mobile/wifi" }
+        },
         devicePreference = new FeedItemDevicePreference() {
           // See https://developers.google.com/adwords/api/docs/appendix/platforms
           // for device criteria IDs.
@@ -111,7 +117,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
       // Show the happy hours link only during Mon - Fri 6PM to 9PM.
       SitelinkFeedItem sitelink4 = new SitelinkFeedItem() {
         sitelinkText = "Happy hours",
-        sitelinkFinalUrls = new string[] { "http://www.example.com/happyhours" },
+        sitelinkFinalUrls = new UrlList() {
+          urls = new string[] { "http://www.example.com/happyhours" }
+        },
         scheduling = new FeedItemSchedule[] {
             new FeedItemSchedule() {
                 dayOfWeek = DayOfWeek.MONDAY,

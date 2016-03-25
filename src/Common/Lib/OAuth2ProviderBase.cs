@@ -33,14 +33,31 @@ namespace Google.Api.Ads.Common.Lib {
         AdsFeatureUsageRegistry.Instance;
 
     /// <summary>
+    /// Gets the OAuth2 server URL.
+    /// </summary>
+    protected string OAUTH_SERVER {
+      get {
+        return Config.OAuth2ServerUrl;
+      }
+    }
+
+    /// <summary>
     /// The OAuth2 endpoint for obtaining an authorization token.
     /// </summary>
-    protected string AUTH_ENDPOINT = "https://accounts.google.com/o/oauth2/auth";
+    protected string AUTH_ENDPOINT {
+      get {
+        return OAUTH_SERVER + "/o/oauth2/auth";
+      }
+    }
 
     /// <summary>
     /// The OAuth2 endpoint for obtaining or refreshing an access token.
     /// </summary>
-    protected string TOKEN_ENDPOINT = "https://accounts.google.com/o/oauth2/token";
+    protected string TOKEN_ENDPOINT {
+      get {
+        return OAUTH_SERVER + "/o/oauth2/token";
+      }
+    }
 
     /// <summary>
     /// The OAuth2 tokens will be refreshed automatically if the time left for
@@ -298,16 +315,11 @@ namespace Google.Api.Ads.Common.Lib {
       WebRequest request = HttpUtilities.BuildRequest(TOKEN_ENDPOINT, "POST", config);
       request.ContentType = "application/x-www-form-urlencoded";
 
-      using (StreamWriter writer = new StreamWriter(request.GetRequestStream())) {
-        writer.Write(body);
-      }
-
       LogEntry logEntry = new LogEntry(config, new DefaultDateTimeProvider());
-      logEntry.LogRequest(request, body, REQUEST_HEADERS_TO_MASK);
-
       WebResponse response = null;
 
       try {
+        HttpUtilities.WritePostBodyAndLog(request, body, logEntry, REQUEST_HEADERS_TO_MASK);
         response = request.GetResponse();
 
         string contents = MediaUtilities.GetStreamContentsAsString(response.GetResponseStream());
@@ -334,18 +346,9 @@ namespace Google.Api.Ads.Common.Lib {
           this.OnOAuthTokensObtained(this);
         }
       } catch (WebException e) {
-        string contents = "";
-        response = e.Response;
-
-        try {
-          contents = MediaUtilities.GetStreamContentsAsString(response.GetResponseStream());
-          logEntry.LogResponse(response, true, contents, RESPONSE_FIELDS_TO_MASK,
-              new JsonBodyFormatter());
-        } catch {
-          contents = e.Message;
-          logEntry.LogResponse(response, true, contents);
-        }
-
+        string contents = HttpUtilities.GetErrorResponseBody(e);
+        logEntry.LogResponse(response, true, contents, RESPONSE_FIELDS_TO_MASK,
+            new JsonBodyFormatter());
         logEntry.Flush();
 
         throw new ApplicationException(contents, e);

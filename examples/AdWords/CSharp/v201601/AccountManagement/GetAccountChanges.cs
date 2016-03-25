@@ -94,7 +94,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201601 {
               Console.WriteLine("  Removed ad extensions: {0}",
                   GetFormattedList(campaignChanges.removedAdExtensions));
               Console.WriteLine("  Removed campaign criteria: {0}",
-                  GetFormattedList(campaignChanges.removedAdExtensions));
+                  GetFormattedList(campaignChanges.removedCampaignCriteria));
 
               if (campaignChanges.changedAdGroups != null) {
                 foreach (AdGroupChangeData adGroupChanges in campaignChanges.changedAdGroups) {

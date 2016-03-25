@@ -218,5 +218,49 @@ namespace Google.Api.Ads.AdWords.Tests.v201509 {
         new VBExamples.AddHtml5Ad().Run(user, adGroupId1);
       });
     }
+
+    /// <summary>
+    /// Tests the AddTextAdWithUpgradedUrls C# code example.
+    /// </summary>
+    [Test]
+    public void TestAddTextAdWithUpgradedUrlsCSharpExample() {
+      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+      RunExample(delegate() {
+        new CSharpExamples.AddTextAdWithUpgradedUrls().Run(user, adGroupId1);
+      });
+    }
+
+    /// <summary>
+    /// Tests the AddTextAdWithUpgradedUrls VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestAddTextAdWithUpgradedUrlsVBExample() {
+      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+      RunExample(delegate() {
+        new VBExamples.AddTextAdWithUpgradedUrls().Run(user, adGroupId1);
+      });
+    }
+
+    /// <summary>
+    /// Tests the UsePortfolioBiddingStrategy C# code example.
+    /// </summary>
+    [Test]
+    public void TestUsePortfolioBiddingStrategyCSharpExample() {
+      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+      RunExample(delegate() {
+        new CSharpExamples.UsePortfolioBiddingStrategy().Run(user);
+      });
+    }
+
+    /// <summary>
+    /// Tests the UsePortfolioBiddingStrategy VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestUsePortfolioBiddingStrategyVBExample() {
+      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+      RunExample(delegate() {
+        new VBExamples.UsePortfolioBiddingStrategy().Run(user);
+      });
+    }
   }
 }

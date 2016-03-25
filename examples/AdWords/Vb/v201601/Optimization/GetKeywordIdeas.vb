@@ -59,30 +59,45 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
       Dim targetingIdeaService As TargetingIdeaService = CType(user.GetService( _
           AdWordsService.v201601.TargetingIdeaService), TargetingIdeaService)
 
-      Dim keywordText As String = "mars cruise"
-
       ' Create selector.
       Dim selector As New TargetingIdeaSelector()
       selector.requestType = RequestType.IDEAS
       selector.ideaType = IdeaType.KEYWORD
       selector.requestedAttributeTypes = New AttributeType() { _
-        AttributeType.KEYWORD_TEXT, AttributeType.SEARCH_VOLUME, _
-        AttributeType.CATEGORY_PRODUCTS_AND_SERVICES}
+        AttributeType.KEYWORD_TEXT,
+        AttributeType.SEARCH_VOLUME,
+        AttributeType.CATEGORY_PRODUCTS_AND_SERVICES _
+      }
 
-      ' Language setting (optional).
+      ' Create the search parameters.
+      Dim keywordText As String = "mars cruise"
+
+      ' Create related to query search parameter.
+      Dim relatedToQuerySearchParameter As New RelatedToQuerySearchParameter()
+      relatedToQuerySearchParameter.queries = new String() {keywordText}
+
+      ' Add a language search parameter (optional).
       ' The ID can be found in the documentation:
       '   https://developers.google.com/adwords/api/docs/appendix/languagecodes
-      ' Note: As of v201302, only a single language parameter is allowed.
       Dim languageParameter As New LanguageSearchParameter()
       Dim english As New Language()
       english.id = 1000
       languageParameter.languages = New Language() {english}
 
-      ' Create related to query search parameter.
-      Dim relatedToQuerySearchParameter As New RelatedToQuerySearchParameter()
-      relatedToQuerySearchParameter.queries = New String() {keywordText}
-      selector.searchParameters = New SearchParameter() {relatedToQuerySearchParameter, _
-                                                         languageParameter}
+      ' Add network search parameter (optional).
+      Dim networkSetting As New NetworkSetting()
+      networkSetting.targetGoogleSearch = True
+      networkSetting.targetSearchNetwork = False
+      networkSetting.targetContentNetwork = False
+      networkSetting.targetPartnerSearchNetwork = False
+
+      Dim networkSearchParameter As New NetworkSearchParameter()
+      networkSearchParameter.networkSetting = networkSetting
+
+      ' Set the search parameters.
+      selector.searchParameters = New SearchParameter() { _
+        relatedToQuerySearchParameter, languageParameter, networkSearchParameter
+      }
 
       ' Set selector paging (required for targeting idea service).
       Dim paging As Paging = paging.Default

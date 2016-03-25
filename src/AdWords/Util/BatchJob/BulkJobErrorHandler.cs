@@ -68,7 +68,9 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
         }
       } else if (exception is WebException) {
         WebException e = (WebException) exception;
-        httpCode = (e.Response as HttpWebResponse).StatusCode;
+        if (e.Response != null && e.Response is HttpWebResponse) {
+          httpCode = (e.Response as HttpWebResponse).StatusCode;
+        }
       } else {
         return false;
       }

@@ -66,6 +66,17 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
     Private ReadOnly PENDING_STATUSES As New HashSet(Of BatchJobStatus)
 
     ''' <summary>
+    ''' Static constructor.
+    ''' </summary>
+    Shared Sub New()
+      ' Initialize the pending statuses Hashset. The 'from' keyword cannot be
+      ' used due to mono compiler limitations.
+      PENDING_STATUSES.Add(BatchJobStatus.ACTIVE)
+      PENDING_STATUSES.Add(BatchJobStatus.AWAITING_FILE)
+      PENDING_STATUSES.Add(BatchJobStatus.CANCELING)    
+    End Sub
+    
+    ''' <summary>
     ''' Create a temporary ID generator that will produce a sequence of descending
     ''' negative numbers.
     ''' </summary>
@@ -104,12 +115,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
-      ' Initialize the pending statuses Hashset. The 'from' keyword cannot be
-      ' used due to mono compiler limitations.
-      PENDING_STATUSES.Clear()
-      PENDING_STATUSES.Add(BatchJobStatus.ACTIVE)
-      PENDING_STATUSES.Add(BatchJobStatus.AWAITING_FILE)
-
       ' Get the BatchJobService.
       Dim batchJobService As BatchJobService = CType(user.GetService( _
           AdWordsService.v201601.BatchJobService), BatchJobService)

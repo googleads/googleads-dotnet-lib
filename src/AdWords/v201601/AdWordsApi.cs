@@ -37,7 +37,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href="/adwords/api/docs/appendix/templateads">Template Ad formats</a>.</dd>
   /// </dl>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "AdGroupAdServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -191,7 +191,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents an upgrade operation to upgrade Ad.url.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -319,7 +319,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdReturnValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdLabelReturnValue))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -421,7 +421,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from the AdGroupAdService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -503,7 +503,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents an ad in an ad group.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -857,7 +857,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageAd))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeprecatedAd))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CallOnlyAd))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -954,7 +954,9 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// class="constraint Selectable">This field can be selected using the value
     /// "CreativeFinalUrls".</span><span class="constraint Filterable">This field can be
     /// filtered on.</span> <span class="constraint CollectionSize">The maximum size of
-    /// this collection is 10.</span></p>
+    /// this collection is 10.</span> <span class="constraint
+    /// ContentsStringLength">Strings in this field must be non-empty
+    /// (trimmed).</span></p>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("finalUrls")]
     public string[] finalUrls {
@@ -972,7 +974,9 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// class="constraint Selectable">This field can be selected using the value
     /// "CreativeFinalMobileUrls".</span><span class="constraint Filterable">This field
     /// can be filtered on.</span> <span class="constraint CollectionSize">The maximum
-    /// size of this collection is 10.</span></p>
+    /// size of this collection is 10.</span> <span class="constraint
+    /// ContentsStringLength">Strings in this field must be non-empty
+    /// (trimmed).</span></p>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("finalMobileUrls")]
     public string[] finalMobileUrls {
@@ -1062,9 +1066,11 @@ namespace Google.Api.Ads.AdWords.v201601 {
       }
     }
 
-    /// <summary>The device preference for the ad. <span class="constraint Selectable">This field
-    /// can be selected using the value "DevicePreference".</span><span
-    /// class="constraint Filterable">This field can be filtered on.</span>
+    /// <summary>The device preference for the ad. You can only specify a preference for mobile
+    /// devices (CriterionId 30001). If unspecified (no device preference), all devices
+    /// are targeted. <span class="constraint Selectable">This field can be selected
+    /// using the value "DevicePreference".</span><span class="constraint
+    /// Filterable">This field can be filtered on.</span>
     /// </summary>
     public long devicePreference {
       get {
@@ -1213,7 +1219,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A URL for deep linking into an app for the given operating system.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1312,7 +1318,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The possible os types for an AppUrl
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AppUrl.OsType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AppUrlOsType {
@@ -1330,7 +1336,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// a special field used to indicate that the current map should be cleared and
   /// replaced with this new map.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1431,7 +1437,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>CustomParameter is used to map a custom parameter key to its value.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1548,7 +1554,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The types of ads.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Ad.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdType {
@@ -1595,7 +1601,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// URLs</a>.</p> <span class="constraint AdxEnabled">This is disabled for AdX when
   /// it is contained within Operators: ADD, SET.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1694,7 +1700,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents a TextAd. <span class="constraint AdxEnabled">This is disabled for
   /// AdX when it is contained within Operators: ADD, SET.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1706,7 +1712,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
     private string description2Field;
 
-    /// <summary>The headline of the ad <span class="constraint Selectable">This field can be
+    /// <summary>The headline of the ad. <span class="constraint Selectable">This field can be
     /// selected using the value "Headline".</span><span class="constraint
     /// Filterable">This field can be filtered on.</span>
     /// </summary>
@@ -1719,8 +1725,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
       }
     }
 
-    /// <summary>The first description line <span class="constraint Selectable">This field can be
-    /// selected using the value "Description1".</span><span class="constraint
+    /// <summary>The first description line. <span class="constraint Selectable">This field can
+    /// be selected using the value "Description1".</span><span class="constraint
     /// Filterable">This field can be filtered on.</span>
     /// </summary>
     public string description1 {
@@ -1732,7 +1738,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
       }
     }
 
-    /// <summary>The second description line <span class="constraint Selectable">This field can
+    /// <summary>The second description line. <span class="constraint Selectable">This field can
     /// be selected using the value "Description2".</span><span class="constraint
     /// Filterable">This field can be filtered on.</span>
     /// </summary>
@@ -1820,7 +1826,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// class="constraint AdxEnabled">This is disabled for AdX when it is contained
   /// within Operators: ADD, SET.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2068,7 +2074,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents an id indicating a grouping of Ads under some heuristic.
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TempAdUnionId))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2171,7 +2177,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents the temporary id for an ad union id, which the user can specify. The
   /// temporary id can be used to group ads together during ad creation.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2183,7 +2189,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents an element in a template. Each template element is composed of a list
   /// of fields (actual value data).
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2224,7 +2230,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a field in a template element.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2370,7 +2376,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Possible field types of template element fields.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TemplateElementField.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum TemplateElementFieldType {
@@ -2421,7 +2427,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(MediaBundle))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Image))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Audio))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2777,7 +2783,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Media types
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Media.MediaType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum MediaMediaType {
@@ -2808,7 +2814,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>This represents an entry in a map with a key of type Size and value of type
   /// Dimensions.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2856,7 +2862,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Sizes for retrieving the original media
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Media.Size", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum MediaSize {
@@ -2877,7 +2883,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a simple height-width dimension.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3004,7 +3010,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>This represents an entry in a map with a key of type Size and value of type
   /// String.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3052,7 +3058,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Mime types
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Media.MimeType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum MediaMimeType {
@@ -3097,7 +3103,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Encapsulates a Video media identified by a MediaId.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3298,7 +3304,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a ZIP archive media the content of which contains HTML5 assets.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3403,7 +3409,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Encapsulates an Image media. For <code>SET</code>,<code>REMOVE</code> operations
   /// in MediaService, use <code>mediaId</code>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3473,7 +3479,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Encapsulates an Audio media identified by a MediaId.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3622,7 +3628,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// is disabled for AdX when it is contained within Operators: ADD, SET.</span>
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ThirdPartyRedirectAd))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3666,9 +3672,9 @@ namespace Google.Api.Ads.AdWords.v201601 {
     }
 
     /// <summary>Dimensions (height and width) of the ad. This field is optional for
-    /// ThirdPartyRedirectAd. AdX Traditional Yield Management creatives do not specify
-    /// the dimension on the ThirdPartyRedirectAd, instead the size is specified in the
-    /// publisher front end when creating a mediation chain.
+    /// ThirdPartyRedirectAd. Ad Exchange traditional yield management creatives do not
+    /// specify the dimension on the ThirdPartyRedirectAd; instead, the size is
+    /// specified in the publisher front end when creating a mediation chain.
     /// </summary>
     public Dimensions dimensions {
       get {
@@ -3679,10 +3685,10 @@ namespace Google.Api.Ads.AdWords.v201601 {
       }
     }
 
-    /// <summary>Snippet for this ad. Required for standard third-party ads. <span
-    /// class="constraint Selectable">This field can be selected using the value
-    /// "RichMediaAdSnippet".</span> <span class="constraint StringLength">The length of
-    /// this string should be between 1 and 3072, inclusive.</span>
+    /// <summary>Snippet for this ad. Required for standard third-party ads. <p>The length of the
+    /// string should be between 1 and 3072, inclusive. <span class="constraint
+    /// Selectable">This field can be selected using the value
+    /// "RichMediaAdSnippet".</span></p>
     /// </summary>
     public string snippet {
       get {
@@ -3891,7 +3897,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Different types of rich media ad that are available to customers.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RichMediaAd.RichMediaAdType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum RichMediaAdRichMediaAdType {
@@ -3906,7 +3912,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A set of attributes that describe the rich media ad capabilities.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RichMediaAd.AdAttribute", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum RichMediaAdAdAttribute {
@@ -3927,7 +3933,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Data associated with rich media extension attributes. <span class="constraint
   /// AdxEnabled">This is enabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4133,7 +4139,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>VideoType enum values that are permitted for video filterable creative attribute
   /// IDs.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum VideoType {
@@ -4154,7 +4160,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Allowed expanding directions for ads that are expandable.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ThirdPartyRedirectAd.ExpandingDirection", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ThirdPartyRedirectAdExpandingDirection {
@@ -4206,7 +4212,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// campaign level instead.</p> <span class="constraint AdxEnabled">This is disabled
   /// for AdX when it is contained within Operators: ADD, SET.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4285,7 +4291,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents an ImageAd. <span class="constraint AdxEnabled">This is enabled for
   /// AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4413,7 +4419,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// created. <span class="constraint AdxEnabled">This is disabled for AdX when it is
   /// contained within Operators: ADD, SET.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4521,7 +4527,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DeprecatedAd.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum DeprecatedAdType {
@@ -4583,7 +4589,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// call only ad will cause an error. <span class="constraint AdxEnabled">This is
   /// enabled for AdX.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4877,7 +4883,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Data associated with an advertiser experiment for an AdGroupAd <span
   /// class="constraint AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5045,7 +5051,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Status of an entity denoting its type of experimental change in a campaign.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ExperimentDeltaStatus {
@@ -5070,7 +5076,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Status of the experimental change associated with an entity.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ExperimentDataStatus {
@@ -5090,7 +5096,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The current status of an Ad.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupAd.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdGroupAdStatus {
@@ -5108,7 +5114,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents the possible approval statuses.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupAd.ApprovalStatus", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdGroupAdApprovalStatus {
@@ -5138,7 +5144,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// ads, criterion etc.
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TextLabel))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5320,11 +5326,15 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Label.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum LabelStatus {
+    /// <summary>The label is enabled.
+    /// </summary>
     ENABLED,
+    /// <summary>The label has been removed.
+    /// </summary>
     REMOVED,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
@@ -5337,7 +5347,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Base type for AdWords label attributes.
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DisplayAttribute))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5409,7 +5419,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Attributes for Text Labels.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5495,7 +5505,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represent a display label entry.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5507,7 +5517,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>This represents an entry in a map with a key of type String and value of type
   /// String.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5585,7 +5595,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdError))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdCustomizerError))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5754,7 +5764,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Url Validation errors.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5839,7 +5849,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the url error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UrlError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum UrlErrorReason {
@@ -5997,7 +6007,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors associated with the length of the given string being out of bounds.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6082,7 +6092,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StringLengthError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum StringLengthErrorReason {
@@ -6093,7 +6103,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents possible error codes when querying for stats.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6178,7 +6188,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for errors when querying for stats.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StatsQueryError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum StatsQueryErrorReason {
@@ -6191,7 +6201,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Indicates that the number of entries in the request or response exceeds the
   /// system limit.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6276,7 +6286,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for Ad Scheduling errors.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SizeLimitError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum SizeLimitErrorReason {
@@ -6299,7 +6309,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents possible error codes for <a href='Selector'>Selector</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6384,7 +6394,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SelectorError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum SelectorErrorReason {
@@ -6448,7 +6458,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors due to missing required field.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6533,7 +6543,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequiredError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum RequiredErrorReason {
@@ -6545,7 +6555,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Encapsulates the generic errors thrown when there's an error with user request.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6580,7 +6590,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequestError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum RequestErrorReason {
@@ -6599,7 +6609,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Indicates that a field was rejected due to compatibility issues.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6684,7 +6694,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RejectedError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum RejectedErrorReason {
@@ -6696,7 +6706,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors from attempting to write to read-only fields.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6781,7 +6791,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReadOnlyError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ReadOnlyErrorReason {
@@ -6791,7 +6801,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Signals that a call failed because a measured rate exceeded.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6932,7 +6942,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reason for the rate exceeded error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RateExceededError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum RateExceededErrorReason {
@@ -6944,7 +6954,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A list of all errors associated with the Range constraint.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7029,7 +7039,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RangeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum RangeErrorReason {
@@ -7040,7 +7050,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Encapsulates the errors thrown during developer quota checks.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7078,7 +7088,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Enums for all the reasons an error can be thrown to the user during billing
   /// quota checks.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "QuotaCheckError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum QuotaCheckErrorReason {
@@ -7115,7 +7125,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A QueryError represents possible errors for query parsing and execution.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7163,7 +7173,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reason for the query error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "QueryError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum QueryErrorReason {
@@ -7231,7 +7241,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// also contains 'INC' which also violates 'capitalization' it would be represented
   /// in a separate instance.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7385,7 +7395,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Key of the violation. The key is used for referring to a violation when filing
   /// an exemption request.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7471,7 +7481,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Points to a substring within an ad field or criterion.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7585,7 +7595,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error codes for pagination. See <a href='Paging'>Paging</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7670,11 +7680,15 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for errors when using pagination.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PagingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum PagingErrorReason {
+    /// <summary>The start index value cannot be a negative number.
+    /// </summary>
     START_INDEX_CANNOT_BE_NEGATIVE,
+    /// <summary>The number of results cannot be a negative number.
+    /// </summary>
     NUMBER_OF_RESULTS_CANNOT_BE_NEGATIVE,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
@@ -7686,7 +7700,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors due to the use of unsupported operations.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7771,7 +7785,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the validation error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OperatorError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum OperatorErrorReason {
@@ -7781,7 +7795,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operation not permitted due to the invoked service's access policy.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7818,7 +7832,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the operation access error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OperationAccessDenied.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum OperationAccessDeniedReason {
@@ -7855,7 +7869,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors associated with violation of a NOT NULL check.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7940,7 +7954,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the validation error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NullError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum NullErrorReason {
@@ -7952,7 +7966,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors corresponding with violation of a NOT EMPTY check.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8037,7 +8051,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the validation error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotEmptyError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum NotEmptyErrorReason {
@@ -8047,7 +8061,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error associated with creation of new entities.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8130,7 +8144,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NewEntityCreationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum NewEntityCreationErrorReason {
@@ -8149,7 +8163,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error class for media related errors.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8234,7 +8248,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "MediaError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum MediaErrorReason {
@@ -8259,27 +8273,18 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// <summary>The media id is invalid
     /// </summary>
     INVALID_MEDIA_ID,
-    /// <summary>The media type is invalid
-    /// </summary>
-    INVALID_MEDIA_TYPE,
     /// <summary>The media subtype is invalid
     /// </summary>
     INVALID_MEDIA_SUB_TYPE,
+    /// <summary>The media type is invalid
+    /// </summary>
+    INVALID_MEDIA_TYPE,
     /// <summary>The media reference id is invalid
     /// </summary>
     INVALID_REFERENCE_ID,
     /// <summary>The YouTube video id is invalid
     /// </summary>
     INVALID_YOU_TUBE_ID,
-    /// <summary>The YouTube video id is syntactically valid but the video was not found.
-    /// </summary>
-    YOU_TUBE_VIDEO_NOT_FOUND,
-    /// <summary>YouTube is unavailable for requesting video data.
-    /// </summary>
-    YOU_TUBE_SERVICE_UNAVAILABLE,
-    /// <summary>The YouTube video has a non positive duration.
-    /// </summary>
-    YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION,
     /// <summary>Media has failed transcoding
     /// </summary>
     MEDIA_FAILED_TRANSCODING,
@@ -8302,13 +8307,24 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// supported
     /// </summary>
     UNSUPPORTED_OPERATION,
+    /// <summary>The specified type is not supported.
+    /// </summary>
     UNSUPPORTED_TYPE,
+    /// <summary>YouTube is unavailable for requesting video data.
+    /// </summary>
+    YOU_TUBE_SERVICE_UNAVAILABLE,
+    /// <summary>The YouTube video has a non positive duration.
+    /// </summary>
+    YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION,
+    /// <summary>The YouTube video id is syntactically valid but the video was not found.
+    /// </summary>
+    YOU_TUBE_VIDEO_NOT_FOUND,
   }
 
 
   /// <summary>Error class for errors associated with parsing media bundle data.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8394,7 +8410,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Enumeration of the reasons for the <a
   /// href='MediaBundleError'>MediaBundleError</a>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "MediaBundleError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum MediaBundleErrorReason {
@@ -8470,7 +8486,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Indicates that a server-side error has occured. <code></code>s are generally not
   /// the result of an invalid request or message sent by the client.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8555,7 +8571,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The single reason for the internal API error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "InternalApiError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum InternalApiErrorReason {
@@ -8576,7 +8592,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error class for errors associated with parsing image data.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8659,7 +8675,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ImageError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ImageErrorReason {
@@ -8776,7 +8792,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors associated with the ids.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8861,7 +8877,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "IdError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum IdErrorReason {
@@ -8874,7 +8890,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>An error resulting from a failure to parse the textual representation of a
   /// function.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8949,7 +8965,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Function parsing error reason.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FunctionParsingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum FunctionParsingErrorReason {
@@ -8992,7 +9008,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors that indicate issues with the function.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9077,7 +9093,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FunctionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum FunctionErrorReason {
@@ -9133,7 +9149,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A ForwardComptibilityError represents possible errors when using the
   /// forwardCompatibilityMap in some of the common services.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9218,7 +9234,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reason for the error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ForwardCompatibilityError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ForwardCompatibilityErrorReason {
@@ -9231,7 +9247,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An error indicating a problem with a reference to a feed attribute in an ad.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9340,7 +9356,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Feed attribute reference error reasons.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FeedAttributeReferenceError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum FeedAttributeReferenceErrorReason {
@@ -9356,7 +9372,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9441,7 +9457,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ExperimentError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ExperimentErrorReason {
@@ -9479,7 +9495,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>An id did not correspond to an entity, or it referred to an entity which does
   /// not belong to the customer.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9562,7 +9578,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityNotFound.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum EntityNotFoundReason {
@@ -9577,7 +9593,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// many criteria for a campaign.
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdCountLimitExceeded))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9747,7 +9763,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Limits at various levels of the account.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityCountLimitExceeded.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum EntityCountLimitExceededReason {
@@ -9800,7 +9816,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Indicates too many ads were added/enabled under the specified adgroup.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9811,7 +9827,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Reports permission problems trying to access an entity.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9894,7 +9910,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityAccessDenied.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum EntityAccessDeniedReason {
@@ -9909,7 +9925,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors related to distinct ids or content.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9994,7 +10010,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the validation error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DistinctError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum DistinctErrorReason {
@@ -10005,7 +10021,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors associated with invalid dates and date ranges.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10090,7 +10106,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DateError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum DateErrorReason {
@@ -10126,7 +10142,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors that are thrown due to a database access problem.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10211,7 +10227,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the database error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DatabaseError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum DatabaseErrorReason {
@@ -10242,7 +10258,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error due to user not accepting the AdWords terms of service.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10280,7 +10296,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Enums for the various reasons an error can be thrown as a result of ClientTerms
   /// violation.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ClientTermsError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ClientTermsErrorReason {
@@ -10292,7 +10308,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors encountered when trying to authorize a user.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10377,7 +10393,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the database error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AuthorizationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AuthorizationErrorReason {
@@ -10407,7 +10423,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors returned when Authentication failed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10492,7 +10508,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The single reason for the authentication failure.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AuthenticationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AuthenticationErrorReason {
@@ -10569,7 +10585,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors that are thrown when a non-AdX feature is accessed by an AdX customer.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10654,7 +10670,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the AdX error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdxError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdxErrorReason {
@@ -10666,7 +10682,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error information for AdGroupAdService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10751,7 +10767,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupAdError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdGroupAdErrorReason {
@@ -10786,7 +10802,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Base error class for Ad Service.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10871,7 +10887,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdErrorReason {
@@ -11239,7 +11255,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An error indicating a problem with an ad customizer tag.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11390,7 +11406,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Ad customizer error reasons.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdCustomizerError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdCustomizerErrorReason {
@@ -11412,7 +11428,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A container for return values from the <a
   /// href='AdGroupAdService#mutateLabel'>AdGroupAdService#mutateLabel</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11446,7 +11462,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Manages the labels associated with an AdGroupAd.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11598,7 +11614,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A request to be exempted from a <a
   /// href='PolicyViolationError'>PolicyViolationError</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11671,7 +11687,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdLabelOperation))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11813,7 +11829,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>This represents an operator that may be presented to an adsapi service.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum Operator {
@@ -11831,7 +11847,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>AdGroupAd service operations.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11916,7 +11932,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operations for adding/removing labels from AdGroupAds.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11987,7 +12003,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains the results from a get call.
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupAdPage))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12125,7 +12141,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents a page of <a href='AdGroupAd'>AdGroupAd</a>s resulting from the query
   /// done by <a href='AdGroupAdService'>AdGroupAdService</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12196,7 +12212,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Specifies the page of results to return in the response. A page is specified by
   /// the result position to start at and the maximum number of results to return.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12313,7 +12329,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Specifies how the resulting information should be sorted.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12367,7 +12383,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Possible orders of sorting.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum SortOrder {
@@ -12379,7 +12395,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents a range of dates that has either an upper or a lower bound. The
   /// format for the date is YYYYMMDD.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12462,7 +12478,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Specifies how an entity (eg. adgroup, campaign, criterion, ad) should be
   /// filtered.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12541,7 +12557,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Defines the valid set of operators.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Predicate.Operator", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum PredicateOperator {
@@ -12625,7 +12641,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A generic selector to specify the type of information to return.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12719,7 +12735,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Base class for exceptions.
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ApiException))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12804,7 +12820,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Exception class for holding a list of service errors.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12883,7 +12899,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// can be added using the Criterion Id listed in the <a
   /// href="/adwords/api/docs/appendix/platforms">documentation</a>.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CampaignCriterionServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -12983,7 +12999,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from the CampaignCriterionService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13066,7 +13082,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents a campaign level criterion.
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(NegativeCampaignCriterion))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13317,7 +13333,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Carrier))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AgeRange))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdSchedule))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13479,7 +13495,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The types of criteria.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Criterion.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CriterionType {
@@ -13578,7 +13594,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// excluded. <span class="constraint AdxEnabled">This is disabled for AdX when it
   /// is contained within Operators: ADD, SET.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13675,7 +13691,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// excluded. <span class="constraint AdxEnabled">This is disabled for AdX when it
   /// is contained within Operators: ADD, SET.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13777,7 +13793,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD,
   /// SET.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13913,7 +13929,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Parameter of Webpage criterion, expressed as a list of conditions, or logical
   /// expressions, for targeting webpages of an advertiser's website.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14011,7 +14027,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='WebpageConditionOperand'>WebpageConditionOperand</a>, and, based on this
   /// value, <code>OP</code> is either of <code>EQUALS</code> or <code></code>.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14115,7 +14131,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operand value of <a href='WebpageCondition'>WebpageCondition</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum WebpageConditionOperand {
@@ -14150,7 +14166,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Base type of criterion parameters.
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(WebpageParameter))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14226,7 +14242,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// complete list of available vertical categories.</a> <span class="constraint
   /// AdxEnabled">This is enabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14377,7 +14393,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>UserList - represents a user list that is defined by the advertiser to be
   /// targeted. <span class="constraint AdxEnabled">This is enabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14522,7 +14538,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Membership status of the user list.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CriterionUserList.MembershipStatus", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CriterionUserListMembershipStatus {
@@ -14538,7 +14554,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>User Interest represents a particular interest-based vertical to be targeted.
   /// <span class="constraint AdxEnabled">This is enabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14700,7 +14716,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// </code> </pre> <span class="constraint AdxEnabled">This is disabled for AdX when
   /// it is contained within Operators: ADD, SET.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14829,7 +14845,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// (Operand) new ConstantOperand(10L), new ConstantOperand(20L), new
   /// ConstantOperand(30L))); </code> </pre>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14966,7 +14982,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operators that can be used in functions.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Function.Operator", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum FunctionOperator {
@@ -15004,7 +15020,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(IncomeOperand))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeoTargetOperand))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConstantOperand))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15079,7 +15095,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>This operand specifies a place of interest category for semantic targeting.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15165,7 +15181,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Categories to identify places of interest.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PlacesOfInterestOperand.Category", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum PlacesOfInterestOperandCategory {
@@ -15182,7 +15198,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>This operand specifies information required for location extension targeting.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15282,7 +15298,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A constant operand in a matching function.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15497,7 +15513,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The types of constant operands.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConstantOperand.ConstantType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ConstantOperandConstantType {
@@ -15518,7 +15534,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The units of constant operands, if applicable.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConstantOperand.Unit", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ConstantOperandUnit {
@@ -15534,7 +15550,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>This operand specifies the income bracket a household falls under.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15623,7 +15639,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// belongs to the highest income bracket. The income bracket range associated with
   /// each tier is defined per country and computed based on income percentiles.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum IncomeTier {
@@ -15644,7 +15660,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// geographical area. Currently, geo targets are restricted to a single criterion
   /// id per operand.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15723,7 +15739,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// targetable. <span class="constraint AdxEnabled">This is enabled for
   /// AdX.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15888,7 +15904,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Specifies a geo location with the supplied latitude/longitude.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16004,7 +16020,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The radius distance is expressed in either kilometers or miles.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Proximity.DistanceUnits", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ProximityDistanceUnits {
@@ -16019,7 +16035,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Structure to specify an address location.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16181,7 +16197,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD,
   /// SET.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16273,7 +16289,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductBiddingCategory))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductAdwordsLabels))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductAdwordsGrouping))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16346,7 +16362,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>An unknown product dimension type which will be returned in place of any
   /// ProductDimension not supported by the clients current API version.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16361,7 +16377,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// supported by campaigns of <a
   /// href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a>.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16434,7 +16450,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// product type. All cases of the same subdivision must have the same dimension
   /// type (product type level).
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16538,7 +16554,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Type of product dimension.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ProductDimensionType {
@@ -16572,7 +16588,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An offer ID as specified by the merchant.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16645,7 +16661,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// which to subdivide. All cases of the same subdivision must have the same
   /// dimension type (attribute index).
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16750,7 +16766,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A plain condition string. Not supported by campaigns of <a
   /// href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16773,7 +16789,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// offer between only local, only online, or both. Only supported by campaigns of
   /// <a href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16811,7 +16827,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Channel exclusivity specifies whether an item is sold exclusively in one channel
   /// or through multiple channels.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ShoppingProductChannelExclusivity {
@@ -16835,7 +16851,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// supported by campaigns of <a
   /// href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16872,7 +16888,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Channel specifies where the item is sold: online or in local stores.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ShoppingProductChannel {
@@ -16893,7 +16909,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A canonical condition. Only supported by campaigns of <a
   /// href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16930,7 +16946,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A canonical product condition.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProductCanonicalCondition.Condition", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ProductCanonicalConditionCondition {
@@ -16947,7 +16963,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A brand string.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17021,7 +17037,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// category. All cases of the same subdivision must have the same dimension type
   /// (category level).
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17156,7 +17172,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>An <code>adwords labels</code> string. Not supported by campaigns of <a
   /// href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17226,7 +17242,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>An <code>adwords grouping</code> string. Not supported by campaigns of <a
   /// href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17297,7 +17313,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// using an ID. <span class="constraint AdxEnabled">This is enabled for
   /// AdX.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17373,7 +17389,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A placement used for modifying bids for sites when targeting the content
   /// network. <span class="constraint AdxEnabled">This is enabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17456,7 +17472,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// class="constraint AdxEnabled">This is disabled for AdX when it is contained
   /// within Operators: ADD, SET.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17547,7 +17563,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The possible types of parents.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Parent.ParentType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ParentParentType {
@@ -17570,7 +17586,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// type can be either targeted or excluded. <span class="constraint
   /// AdxEnabled">This is enabled for AdX.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17754,7 +17770,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The operator type.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OperatingSystemVersion.OperatorType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum OperatingSystemVersionOperatorType {
@@ -17769,7 +17785,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// excluded. <span class="constraint AdxEnabled">This is enabled for
   /// AdX.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17915,7 +17931,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "MobileDevice.DeviceType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum MobileDeviceDeviceType {
@@ -17927,7 +17943,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents the mobile application to be targeted. <span class="constraint
   /// AdxEnabled">This is enabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18045,7 +18061,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// available mobile app categories</a>. <span class="constraint AdxEnabled">This is
   /// enabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18156,7 +18172,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// using an ID. A criterion of this type can be either targeted or excluded. <span
   /// class="constraint AdxEnabled">This is enabled for AdX.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18330,7 +18346,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Enum that represents the different Targeting Status values for a Location
   /// criterion.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum LocationTargetingStatus {
@@ -18350,7 +18366,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// using an ID. A criterion of this type is only targetable. <span
   /// class="constraint AdxEnabled">This is enabled for AdX.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18445,7 +18461,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents a keyword. <span class="constraint AdxEnabled">This is disabled for
   /// AdX when it is contained within Operators: ADD, SET.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18568,7 +18584,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Match type of a keyword. i.e. the way we match a keyword string with search
   /// queries.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum KeywordMatchType {
@@ -18585,12 +18601,16 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
 
   /// <summary>Criterion used for IP exclusions. We allow: <ul> <li>IPv4 and IPv6
-  /// addresses</li> <li>individual addresses (192.168.0.1)</li> <li>masks for
-  /// individual addresses (192.168.0.1/32)</li> <li>masks for Class C networks
-  /// (192.168.0.1/24)</li> </ul> <span class="constraint AdxEnabled">This is disabled
-  /// for AdX when it is contained within Operators: ADD, SET.</span>
+  /// addresses</li> <li>individual addresses (192.168.0.1)</li> <li>CIDR IP address
+  /// blocks (e.g., 1.2.3.0/24, 2001:db8::/32).</li> </ul> <p>Note that for a CIDR IP
+  /// address block, the specified IP address portion must be properly truncated (i.e.
+  /// all the host bits must be zero) or the input is considered malformed. For
+  /// example, "1.2.3.0/24" is accepted but "1.2.3.4/24" is not. Similarly, for IPv6,
+  /// "2001:db8::/32" is accepted whereas "2001:db8::1/32" is not. <span
+  /// class="constraint AdxEnabled">This is disabled for AdX when it is contained
+  /// within Operators: ADD, SET.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18598,9 +18618,11 @@ namespace Google.Api.Ads.AdWords.v201601 {
   public partial class IpBlock : Criterion {
     private string ipAddressField;
 
-    /// <summary><span class="constraint Required">This field is required and should not be
-    /// <code>null</code> when it is contained within <a href='Operator'>Operator</a>s :
-    /// ADD.</span>
+    /// <summary><span class="constraint Selectable">This field can be selected using the value
+    /// "IpAddress".</span><span class="constraint Filterable">This field can be
+    /// filtered on.</span> <span class="constraint Required">This field is required and
+    /// should not be <code>null</code> when it is contained within <a
+    /// href='Operator'>Operator</a>s : ADD.</span>
     /// </summary>
     public string ipAddress {
       get {
@@ -18618,6 +18640,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
       protected Fields() {
       }
 
+      public static readonly Field IpAddress = new Field("IpAddress", true, true);
+
       public static new Field[] All {
         get {
           return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -18633,6 +18657,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
       /// </summary>
       protected SelectableFields() {
       }
+
+      public static readonly Field IpAddress = Fields.IpAddress;
 
       public static new Field[] All {
         get {
@@ -18650,6 +18676,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
       protected FilterableFields() {
       }
 
+      public static readonly Field IpAddress = Fields.IpAddress;
+
       public static new Field[] All {
         get {
           return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -18664,7 +18692,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// class="constraint AdxEnabled">This is disabled for AdX when it is contained
   /// within Operators: ADD, SET.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18753,7 +18781,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Gender.GenderType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum GenderGenderType {
@@ -18766,7 +18794,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Content Label for category exclusion. <span class="constraint AdxEnabled">This
   /// is enabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18861,7 +18889,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Content label type.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ContentLabelType {
@@ -18946,7 +18974,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// using an ID. A criterion of this type can be either targeted or excluded. <span
   /// class="constraint AdxEnabled">This is enabled for AdX.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19043,7 +19071,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// excluded. <span class="constraint AdxEnabled">This is disabled for AdX when it
   /// is contained within Operators: ADD, SET.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19132,7 +19160,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AgeRange.AgeRangeType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AgeRangeAgeRangeType {
@@ -19156,7 +19184,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// more than <b>six</b> intervals in a day.</p> <span class="constraint
   /// AdxEnabled">This is enabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19409,7 +19437,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Days of the week.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum DayOfWeek {
@@ -19439,7 +19467,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Minutes in an hour. Currently only 0, 15, 30, and 45 are supported
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum MinuteOfHour {
@@ -19460,7 +19488,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A negative campaign criterion.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19471,7 +19499,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A list of all errors associated with the @RegionCode constraints.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19556,7 +19584,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the validation error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RegionCodeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum RegionCodeErrorReason {
@@ -19566,7 +19594,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error class used for reporting criteria related errors.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19601,7 +19629,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CriterionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CriterionErrorReason {
@@ -19851,7 +19879,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Base error class for Campaign Criterion Service.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19936,7 +19964,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignCriterionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CampaignCriterionErrorReason {
@@ -19974,7 +20002,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Generic operation (add, remove and set) for campaign criteria.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20045,7 +20073,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a subset of campaign criteria resulting from a call to <a
   /// href='CampaignCriterionService#get'>CampaignCriterionService#get</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20120,7 +20148,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// campaign-wide ad extensions using <a
   /// href='CampaignExtensionSettingService'>CampaignExtensionSettingService</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CampaignServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -20252,7 +20280,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from the CampaignService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20334,7 +20362,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Data representing an AdWords campaign.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20883,7 +20911,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Campaign status.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CampaignStatus {
@@ -20906,7 +20934,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Campaign serving status.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ServingStatus {
@@ -20931,7 +20959,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Budgets are used for managing the amount of money spent on AdWords.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21096,7 +21124,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
     /// <summary>Number of campaigns actively using this budget. This field is only populated for
     /// Get operations. <span class="constraint Selectable">This field can be selected
-    /// using the value "BudgetReferenceCount".</span> <span class="constraint
+    /// using the value "BudgetReferenceCount".</span><span class="constraint
+    /// Filterable">This field can be filtered on.</span> <span class="constraint
     /// ReadOnly">This field is read only and will be ignored when sent to the
     /// API.</span>
     /// </summary>
@@ -21202,7 +21231,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
       public static readonly Field DeliveryMethod = new Field("DeliveryMethod", false, true);
 
-      public static readonly Field BudgetReferenceCount = new Field("BudgetReferenceCount", false, true);
+      public static readonly Field BudgetReferenceCount = new Field("BudgetReferenceCount", true, true);
 
       public static readonly Field IsBudgetExplicitlyShared = new Field("IsBudgetExplicitlyShared", true, true);
 
@@ -21262,6 +21291,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
       public static readonly Field Amount = Fields.Amount;
 
+      public static readonly Field BudgetReferenceCount = Fields.BudgetReferenceCount;
+
       public static readonly Field IsBudgetExplicitlyShared = Fields.IsBudgetExplicitlyShared;
 
       public static readonly Field BudgetStatus = Fields.BudgetStatus;
@@ -21277,7 +21308,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Budget periods.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Budget.BudgetPeriod", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BudgetBudgetPeriod {
@@ -21287,7 +21318,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a money amount.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21376,7 +21407,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LongValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DoubleValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(Money))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21450,7 +21481,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LongValue))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DoubleValue))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21461,7 +21492,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Number value type for constructing long valued ranges.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21546,7 +21577,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Number value type for constructing double valued ranges.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21631,7 +21662,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Budget delivery methods.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Budget.BudgetDeliveryMethod", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BudgetBudgetDeliveryMethod {
@@ -21646,7 +21677,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Budget.BudgetStatus", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BudgetBudgetStatus {
@@ -21658,7 +21689,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Eligibility data for Campaign to transition to Conversion Optimizer
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21769,7 +21800,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConversionOptimizerEligibility.RejectionReason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ConversionOptimizerEligibilityRejectionReason {
@@ -21792,7 +21823,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Ad serving status of campaign.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdServingOptimizationStatus {
@@ -21825,7 +21856,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A frequency cap is the maximum number of times an ad (or some set of ads) can be
   /// shown to a user over a particular time period.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21996,7 +22027,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Unit of time the cap is defined at.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum TimeUnit {
@@ -22011,7 +22042,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The level on which the cap is to be applied.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum Level {
@@ -22044,7 +22075,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(RealTimeBiddingSetting))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeoTargetTypeSetting))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DynamicSearchAdsSetting))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22118,7 +22149,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Campaign level settings for tracking information.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22191,7 +22222,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Setting for shopping campaigns. Defines the universe of products covered by the
   /// campaign. Encapsulates a merchant ID, sales country, and campaign priority.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22357,7 +22388,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Settings for Real-Time Bidding, a feature only available for campaigns targeting
   /// the Ad Exchange network.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22459,7 +22490,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// applies only to ads shown on the search network, and does not affect ads shown
   /// on the Google Display Network.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22580,7 +22611,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The various signals a positive location target may use.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "GeoTargetTypeSetting.PositiveGeoTargetType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum GeoTargetTypeSettingPositiveGeoTargetType {
@@ -22598,7 +22629,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The various signals a negative location target may use.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "GeoTargetTypeSetting.NegativeGeoTargetType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum GeoTargetTypeSettingNegativeGeoTargetType {
@@ -22617,7 +22648,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// the language used by the DSA system to automatically generate landing pages and
   /// keywords for a campaign.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22704,7 +22735,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The channel type a campaign may target to serve on.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdvertisingChannelType {
@@ -22728,7 +22759,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A non-mutable specialization of an Advertising Channel.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdvertisingChannelSubType {
@@ -22754,7 +22785,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Network settings for a Campaign.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22985,7 +23016,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// bidding, visit the <a
   /// href="https://support.google.com/adwords/answer/2979071">Help Center</a>.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23225,23 +23256,61 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  /// <summary>The bidding strategy type.
+  /// <summary>The bidding strategy type. See <a
+  /// href='BiddingStrategyConfiguration'>BiddingStrategyConfiguration</a> for
+  /// additional information.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BiddingStrategyType {
     /// <summary>Replaced by TARGET_SPEND. Kept only for legacy support.
     /// </summary>
     BUDGET_OPTIMIZER,
+    /// <summary>Replaced by TARGET_CPA. Kept only for legacy support.
+    /// </summary>
     CONVERSION_OPTIMIZER,
+    /// <summary>Manual click based bidding where user pays per click. See <a
+    /// href='ManualCpcBiddingScheme'>ManualCpcBiddingScheme</a> for more details.
+    /// </summary>
     MANUAL_CPC,
+    /// <summary>Manual impression based bidding where user pays per thousand impressions. See <a
+    /// href='ManualCpmBiddingScheme'>ManualCpmBiddingScheme</a> for more details.
+    /// </summary>
     MANUAL_CPM,
+    /// <summary>Page-One Promoted is an automated bid strategy that sets max CPC bids to target
+    /// impressions on page one or page one promoted slots on google.com. See <a
+    /// href='PageOnePromotedBiddingScheme'>PageOnePromotedBiddingScheme</a> for more
+    /// details.
+    /// </summary>
     PAGE_ONE_PROMOTED,
+    /// <summary>Target Spend (Maximize Clicks) is an automated bid strategy that sets your bids
+    /// to help get as many clicks as possible within your budget. See <a
+    /// href='TargetSpendBiddingScheme'>TargetSpendBiddingScheme</a> for more details.
+    /// </summary>
     TARGET_SPEND,
+    /// <summary>Enhanced CPC is a bidding strategy that raises your bids for clicks that seem
+    /// more likely to lead to a conversion and lowers them for clicks where they seem
+    /// less likely. See <a href='EnhancedCpcBiddingScheme'>EnhancedCpcBiddingScheme</a>
+    /// for more details.
+    /// </summary>
     ENHANCED_CPC,
+    /// <summary>Target CPA is an automated bid strategy that sets bids to help get as many
+    /// conversions as possible at the target cost-per-acquisition (CPA) you set. See <a
+    /// href='TargetCpaBiddingScheme'>TargetCpaBiddingScheme</a> for more details.
+    /// </summary>
     TARGET_CPA,
+    /// <summary>Target ROAS is an automated bidding strategy that helps you maximize revenue
+    /// while averaging a specific target Return On Average Spend (ROAS). See <a
+    /// href='TargetRoasBiddingScheme'>TargetRoasBiddingScheme</a> for more details.
+    /// </summary>
     TARGET_ROAS,
+    /// <summary>Target Outrank Share is an automated bidding strategy that sets bids based on
+    /// the target fraction of auctions where the advertiser should outrank a specific
+    /// competitor. See <a
+    /// href='TargetOutrankShareBiddingScheme'>TargetOutrankShareBiddingScheme</a> for
+    /// more details.
+    /// </summary>
     TARGET_OUTRANK_SHARE,
     /// <summary>Special bidding strategy type used to reset the bidding strategy at AdGroup and
     /// AdGroupCriterion.
@@ -23257,7 +23326,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Indicates where bidding strategy came from: campaign, adgroup or criterion.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BiddingStrategySource {
@@ -23286,7 +23355,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(EnhancedCpcBiddingScheme))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConversionOptimizerBiddingScheme))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BudgetOptimizerBiddingScheme))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23356,11 +23425,12 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  /// <summary>Target Spend bidding scheme, in which Google automatically places bids for the
-  /// user based on their daily/monthly budget or optional spend target. <span
-  /// class="constraint AdxEnabled">This is disabled for AdX.</span>
+  /// <summary><a href="https://support.google.com/adwords/answer/6268626">Target Spend</a> is
+  /// an automated bid strategy that sets your bids to help get as many clicks as
+  /// possible within your budget. <span class="constraint AdxEnabled">This is
+  /// disabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23462,7 +23532,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// bidding strategy. <span class="constraint AdxEnabled">This is disabled for
   /// AdX.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23593,7 +23663,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// impressions on Google.com. <span class="constraint AdxEnabled">This is disabled
   /// for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23799,17 +23869,17 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  /// <summary>Target Cpa bidding strategy helps you maximize your return on investment (ROI)
-  /// by automatically getting you the most possible conversions for your budget. This
-  /// is similar to the <code>ConversionOptimizerBiddingScheme</code> but does not
-  /// support user-entered AdGroup-level target CPA bids, but rather a strategy-wide
-  /// average CPA target. <p>Note that campaigns must meet <a
-  /// href="//support.google.com/adwords/answer/2471188">specific eligibility
-  /// requirements</a> before they can use the <code>TargetCpaBiddingScheme</code>
-  /// bidding strategy. <span class="constraint AdxEnabled">This is disabled for
-  /// AdX.</span></p>
+  /// <summary><a href="https://support.google.com/adwords/answer/6268632">Target CPA</a> is an
+  /// automated bid strategy that sets bids to help get as many conversions as
+  /// possible at the target cost-per-acquisition (CPA) you set. <p>A <a
+  /// href='#targetCpa'>target CPA</a> must be set for the strategy, but can also be
+  /// optionally set for individual ad groups in the strategy. Ad group targets, if
+  /// set, will override strategy targets.</p> <p>Note that campaigns must meet <a
+  /// href="https://support.google.com/adwords/answer/2471188">specific eligibility
+  /// requirements</a> before they can use the Target CPA bid strategy. <span
+  /// class="constraint AdxEnabled">This is disabled for AdX.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23929,7 +23999,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// on page one or page one promoted slots on google.com. <span class="constraint
   /// AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24176,7 +24246,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PageOnePromotedBiddingScheme.StrategyGoal", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum PageOnePromotedBiddingSchemeStrategyGoal {
@@ -24192,7 +24262,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Manual impression based bidding where user pays per thousand impressions. <span
   /// class="constraint AdxEnabled">This is enabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24204,7 +24274,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Manual click based bidding where user pays per click. <span class="constraint
   /// AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24304,7 +24374,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// strategy overrides. <span class="constraint AdxEnabled">This is disabled for
   /// AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24313,19 +24383,23 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  /// <summary>Conversion optimizer bidding strategy helps you maximize your return on
+  /// <summary>This bidding strategy has been deprecated and replaced with <a
+  /// href='TargetCpaBiddingScheme'>TargetCpa</a>. After V201601, we no longer allow
+  /// advertisers to opt into this strategy--<code></code> solely exists so that
+  /// advertisers can access campaigns that had specified this strategy.<br /> <br />
+  /// <p>Conversion optimizer bidding strategy helps you maximize your return on
   /// investment (ROI) by automatically getting you the most possible conversions for
-  /// your budget. <p class="warning"><code>pricingMode</code> currently defaults to
-  /// <code></code> and cannot be changed.</p> <p>Note that campaigns must meet <a
+  /// your budget.</p> <p class="warning"><code>pricingMode</code> currently defaults
+  /// to <code></code> and cannot be changed.</p> <p>Note that campaigns must meet <a
   /// href="https://support.google.com/adwords/answer/2471188#CORequirements">specific
   /// eligibility requirements</a> before they can use the
   /// <code>ConversionOptimizer</code> bidding strategy.</p> <p>For more information
   /// on conversion optimizer, visit the <a
-  /// href="https://support.google.com/adwords/answer/2471188">Conversion Optimizer
+  /// href="https://support.google.com/adwords/answer/2390684">Conversion Optimizer
   /// help center</a>.</p> <span class="constraint AdxEnabled">This is disabled for
   /// AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24454,7 +24528,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConversionOptimizerBiddingScheme.PricingMode", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ConversionOptimizerBiddingSchemePricingMode {
@@ -24463,7 +24537,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConversionOptimizerBiddingScheme.BidType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ConversionOptimizerBiddingSchemeBidType {
@@ -24481,7 +24555,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// strategy.</p> <span class="constraint AdxEnabled">This is disabled for
   /// AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24598,7 +24672,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpmBid))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpcBid))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CpaBid))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24670,7 +24744,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Manual impression based bids.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24788,7 +24862,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Indicate where a criterion's bid came from: criterion or the adgroup it belongs
   /// to.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BidSource {
@@ -24803,7 +24877,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Manual click based bids.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24923,7 +24997,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>CPA Bids.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24932,7 +25006,12 @@ namespace Google.Api.Ads.AdWords.v201601 {
     private Money bidField;
 
     /// <summary>Target cost per acquisition/conversion. This is applicable only at the ad group
-    /// level.
+    /// level. <p>If an ad group-level target is not set and the strategy type is
+    /// TARGET_CPA, the strategy level target will be used. To set the strategy-level
+    /// target, set the <a
+    /// href='TargetCpaBiddingScheme#targetCpa'>TargetCpaBiddingScheme#targetCpa</a> on
+    /// the strategy's <a
+    /// href='BiddingStrategyConfiguration#biddingScheme'>BiddingStrategyConfiguration#biddingScheme</a>.</p>
     /// </summary>
     public Money bid {
       get {
@@ -24999,7 +25078,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A list of error code for reporting invalid content of input strings.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25036,7 +25115,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StringFormatError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum StringFormatErrorReason {
@@ -25052,7 +25131,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Indicates a problem with campaign settings.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25137,7 +25216,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the setting error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SettingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum SettingErrorReason {
@@ -25175,7 +25254,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A list of all the error codes being used for date range error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25260,7 +25339,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the date range error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DateRangeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum DateRangeErrorReason {
@@ -25285,7 +25364,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Base error class for Campaign Service.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25370,7 +25449,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CampaignErrorReason {
@@ -25447,7 +25526,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A list of all the error codes being used by the common budget domain package.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25532,7 +25611,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the budget error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BudgetError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BudgetErrorReason {
@@ -25587,7 +25666,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents error codes for bidding strategy entities.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25670,7 +25749,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BiddingErrors.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BiddingErrorsReason {
@@ -25782,7 +25861,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A container for return values from the <a
   /// href='CampaignService#mutateLabel'>CampaignService#mutateLabel</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25816,7 +25895,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Manages the labels associated with a campaign.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25937,7 +26016,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <code>REMOVE</code> operator is not supported. To remove a campaign, set its <a
   /// href='Campaign#status'>status</a> to <code>REMOVED</code>.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26007,7 +26086,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operations for adding/removing labels from Campaign.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26078,7 +26157,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a subset of campaign resulting from the filtering and paging of the <a
   /// href='CampaignService#get'>CampaignService#get</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26148,7 +26227,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Service used to manage campaign feed links, and matching functions.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CampaignFeedServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -26246,7 +26325,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>The result of a call to <a
   /// href='CampaignFeedService#mutate'>CampaignFeedService#mutate</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26329,7 +26408,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>CampaignFeeds are used to link a feed to a campaign using a matching function,
   /// making the feed's feed items available in the campaign's ads for substitution.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26550,7 +26629,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An operand in a function referring to a value in the request context.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26634,7 +26713,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequestContextOperand.ContextType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum RequestContextOperandContextType {
@@ -26654,7 +26733,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A function operand in a matching function. Used to represent nested functions.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26724,7 +26803,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a feed attribute reference to use in a function.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26840,7 +26919,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Status of the CampaignFeed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignFeed.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CampaignFeedStatus {
@@ -26860,7 +26939,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors associated with the size of the given collection being out of bounds.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26945,7 +27024,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CollectionSizeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CollectionSizeErrorReason {
@@ -26956,7 +27035,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents an error for the CampaignFeedService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27041,7 +27120,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error reasons.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignFeedError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CampaignFeedErrorReason {
@@ -27077,7 +27156,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operation used to create or mutate a CampaignFeed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27146,7 +27225,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignFeedPage))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27166,7 +27245,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='CampaignFeedService#get'>CampaignFeedService#get</a>. Contains a list of
   /// associations between campaign and feeds.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27236,7 +27315,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A service to return constant data.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "ConstantDataServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -27428,7 +27507,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// field catalog generation.
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductBiddingCategoryData))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27502,7 +27581,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// convert between human-readable category names / display strings and
   /// ProductBiddingCategory instances.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27659,7 +27738,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Status of a bidding dimension (category) in a bidding taxonomy.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ShoppingBiddingDimensionStatus {
@@ -27679,14 +27758,24 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An enumeration of possible user interest taxonomy types.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConstantDataService.UserInterestTaxonomyType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ConstantDataServiceUserInterestTaxonomyType {
+    /// <summary>The brand for this user interest.
+    /// </summary>
     BRAND,
+    /// <summary>The market for this user interest.
+    /// </summary>
     IN_MARKET,
+    /// <summary>Users known to have installed applications in the specified categories.
+    /// </summary>
     MOBILE_APP_INSTALL_USER,
+    /// <summary>The geographical location of the interest-based vertical.
+    /// </summary>
     VERTICAL_GEO,
+    /// <summary>User interest criteria for new smart phone users.
+    /// </summary>
     NEW_SMART_PHONE_USER,
   }
 
@@ -27696,7 +27785,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// The data this provides can be used to gauge the effectiveness of your ads and
   /// keywords.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "ConversionTrackerServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -27810,7 +27899,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from the ConversionTrackerService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27837,7 +27926,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AppConversion))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdWordsConversionTracker))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdCallMetricsConversion))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -28472,7 +28561,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Status of the conversion tracker. The user cannot ADD or SET the status to
   /// <code>HIDDEN</code>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConversionTracker.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ConversionTrackerStatus {
@@ -28491,7 +28580,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The category of conversion tracker that is being tracked.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConversionTracker.Category", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ConversionTrackerCategory {
@@ -28516,7 +28605,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// optimize for number of clicks that get at least one conversion, or total number
   /// of conversions per click.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ConversionDeduplicationMode {
@@ -28535,7 +28624,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// dynamically-generated phone number,</li> <li>Calls that number from their home
   /// (or other) phone</li> </ul>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -28641,7 +28730,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// conversion details to the OfflineConversionFeedService to attribute those
   /// conversions to this conversion type.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -28652,7 +28741,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A ConversionTracker for mobile apps.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -28843,7 +28932,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>App platform for the AppConversionTracker.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AppConversion.AppPlatform", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AppConversionAppPlatform {
@@ -28854,7 +28943,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AppConversion.AppConversionType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AppConversionAppConversionType {
@@ -28867,7 +28956,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A conversion tracker created through AdWords Conversion Tracking.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29058,7 +29147,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Text format to display on the conversion page.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdWordsConversionTracker.TextFormat", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdWordsConversionTrackerTextFormat {
@@ -29076,7 +29165,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Type of snippet code to generate.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdWordsConversionTracker.TrackingCodeType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdWordsConversionTrackerTrackingCodeType {
@@ -29102,7 +29191,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// than N seconds. This duration is 60 seconds by default. Each call extension can
   /// specify the desired conversion configuration.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29198,7 +29287,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operations for conversion tracker.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29267,7 +29356,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConversionTrackerPage))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29284,7 +29373,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// resulting from the filtering and paging of the <a
   /// href='ConversionTrackerService#get'>ConversionTrackerService#get</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29354,7 +29443,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An error that can occur during calls to the ConversionTypeService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29391,7 +29480,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Enumerates all the possible reasons for a ConversionTypeError.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConversionTrackingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ConversionTrackingErrorReason {
@@ -29435,7 +29524,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// ANDROID_MARKET cannot have a countingType of MANY_PER_CLICK
     /// </summary>
     INCONSISTENT_COUNTING_TYPE,
-    /// <summary>The user specified two identical app ids when attempting to create or rename a
+    /// <summary>The user specified two identical app ids when attempting to create or modify a
     /// conversion type.
     /// </summary>
     DUPLICATE_APP_ID,
@@ -29505,7 +29594,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors returned when App Postback Url is invalid.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29540,7 +29629,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AppPostbackUrlError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AppPostbackUrlErrorReason {
@@ -29558,7 +29647,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Service to access basic details about any customer.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CustomerServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/mcm/v201601")]
@@ -29600,8 +29689,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
     /// <summary>Returns details of the authorized customer.
     /// </summary><returns>customer associated with the caller</returns>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Customer get() {
@@ -29610,10 +29699,14 @@ namespace Google.Api.Ads.AdWords.v201601 {
     }
 
     /// <summary>Returns details of all the customers directly accessible by the user
-    /// authenticating the call.
+    /// authenticating the call. Callers are discouraged from setting the
+    /// <code>clientCustomerId</code> header field in calls to <a
+    /// href='CustomerService#getCustomers()'>CustomerService#getCustomers()</a>, as its
+    /// value is ignored by this method, and its presence will trigger an authorization
+    /// error if the caller does not have access to the customer with the included ID.
     /// </summary>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Customer[] getCustomers() {
@@ -29627,8 +29720,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// on auto-tagging</a> before updating <code></code>. </p>
     /// </summary><param name='customer'>the requested updated value for the customer.</param>
     /// ApiException
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Customer mutate(Customer customer) {
@@ -29643,7 +29736,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Customer-wide settings related to AdWords remarketing.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29716,7 +29809,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// Settings that apply at the conversion type level can be accessed and modified
   /// though <code></code>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29835,9 +29928,9 @@ namespace Google.Api.Ads.AdWords.v201601 {
       }
     }
 
-    /// <summary>True if customer has selected to include advanced conversions (such as
-    /// cross-device conversions) in the "Conversions" column, which is used by any
-    /// conversion-based bid strategies; false otherwise.
+    /// <summary>True if customer has selected to include cross-device conversions in the
+    /// "Conversions" column, which is used by any conversion-based bid strategies;
+    /// false otherwise.
     /// </summary>
     public bool optimizeOnEstimatedConversions {
       get {
@@ -29913,7 +30006,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a customer for the CustomerService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -30204,7 +30297,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// data.</p> <p class="note"><b>Note:</b> CustomerSyncService only supports queries
   /// for dates within the last 90 days.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CustomerSyncServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/ch/v201601")]
@@ -30251,8 +30344,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// about the objects changed at each level. All Campaigns that are requested in the
     /// selector will be returned, regardless of whether or not they have changed, but
     /// unchanged AdGroups will be ignored.</returns>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/ch/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/ch/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CustomerChangeData get(CustomerSyncSelector selector) {
@@ -30267,7 +30360,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Holds information about a changed feed and any feeds items within the feed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -30415,7 +30508,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// changed, this status would be FIELDS_CHANGED, but if only bids on keywords
   /// belonging an AdGroup were changed this status would be FIELDS_UNCHANGED.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/ch/v201601")]
   public enum ChangeStatus {
@@ -30436,7 +30529,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Holds information about a changed adgroup
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -30657,7 +30750,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Holds information about a changed campaign and any ad groups under that have
   /// changed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -30875,7 +30968,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Holds information about changes to a customer
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -30976,7 +31069,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -31008,7 +31101,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A filter for selecting change history data for a customer.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -31021,8 +31114,12 @@ namespace Google.Api.Ads.AdWords.v201601 {
     private long[] feedIdsField;
 
     /// <summary>Only return entities that have changed during the specified time range. String
-    /// Format: yyyyMMdd HHmmss zzz (e.g. 20100609 150223 UTC) <span class="constraint
-    /// Required">This field is required and should not be <code>null</code>.</span>
+    /// Format: yyyyMMdd HHmmss <timezone id=""> (for example, 20100609 150223
+    /// America/New_York). See the <a
+    /// href="https://developers.google.com/adwords/api/docs/appendix/timezones">
+    /// Timezones</a> page for the complete list of Timezone IDs. <span
+    /// class="constraint Required">This field is required and should not be
+    /// <code>null</code>.</span></timezone>
     /// </summary>
     public DateTimeRange dateTimeRange {
       get {
@@ -31109,7 +31206,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents CustomerSyncService specific errors
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -31171,7 +31268,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomerSyncError.Reason", Namespace = "https://adwords.google.com/api/adwords/ch/v201601")]
   public enum CustomerSyncErrorReason {
@@ -31197,7 +31294,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Service used to manage customer feed links, and matching functions.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CustomerFeedServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -31295,7 +31392,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>The result of a call to <a
   /// href='CustomerFeedService#mutate'>CustomerFeedService#mutate</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -31318,7 +31415,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>CustomerFeeds are used to link a feed to the customer using a matching function,
   /// making the feed's feed items available in the customer's ads for substitution.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -31500,7 +31597,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Status of the CustomerFeed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomerFeed.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CustomerFeedStatus {
@@ -31520,7 +31617,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operation used to create or mutate a CustomerFeed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -31592,7 +31689,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='CustomerFeedService#get'>CustomerFeedService#get</a>. Contains a list of
   /// associations between customer and feeds.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -31662,7 +31759,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents an error for the CustomerFeedService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -31747,7 +31844,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error reasons.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomerFeedError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CustomerFeedErrorReason {
@@ -31784,7 +31881,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='Selector'>Selector</a>. <span class="constraint AdxEnabled">This is
   /// disabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "DataServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -31962,7 +32059,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Properties of the level of detail of the report being viewed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -32056,7 +32153,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A set of estimates for a criterion's performance for a specific bid amount.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -32278,7 +32375,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BidLandscape))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionBidLandscape))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupBidLandscape))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -32351,7 +32448,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Top level class for Dimensions.
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DomainCategory))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -32376,7 +32473,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// breadcrumbs to your webpages.</p> <p>Categories can be filtered by domain name
   /// or by a set of campaign IDs.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -32636,7 +32733,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionBidLandscape))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupBidLandscape))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -32823,7 +32920,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>The bid landscape for a criterion. A bid landscape estimates how a a criterion
   /// will perform based on different bid amounts.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -32917,7 +33014,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents data about a bidlandscape for an adgroup.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -33049,7 +33146,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Used to specify the type of <code>AdGroupLandscape</code>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupBidLandscape.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdGroupBidLandscapeType {
@@ -33069,7 +33166,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='DataService#getCriterionBidLandscape'>DataService#getCriterionBidLandscape</a>
   /// call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -33142,7 +33239,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='DataService#getAdGroupBidLandscape'>DataService#getAdGroupBidLandscape</a>
   /// call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -33214,7 +33311,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// resulting from the filtering and paging of <a
   /// href='DataService#getDomainCategory'>DataService#getDomainCategory</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -33284,7 +33381,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents errors thrown by the get operation.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -33321,7 +33418,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Reasons for error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DataError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum DataErrorReason {
@@ -33353,7 +33450,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// Center</a>.</p> <span class="constraint AdxEnabled">This is disabled for
   /// AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "ExperimentServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -33441,7 +33538,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from the ExperimentService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -33463,7 +33560,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Class representing a experiment for the ExperimentService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -33864,7 +33961,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Experiment status.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ExperimentStatus {
@@ -33880,7 +33977,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ExperimentServingStatus {
@@ -33905,7 +34002,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains how many changes were made associated with an experiment at the
   /// adgroup, critieria and creative levels
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -34065,7 +34162,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Operation for adding, updating or removing operations. For removing, use SET and
   /// mark status as REMOVED.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -34087,7 +34184,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a subset of experiment resulting from the filtering and paging of the
   /// <a href='ExperimentService#get'>ExperimentService#get</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -34157,7 +34254,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Base error class for Experiment Service.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -34242,7 +34339,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ExperimentServiceError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ExperimentServiceErrorReason {
@@ -34306,7 +34403,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Service used to manage adgroup feed links, and matching functions.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "AdGroupFeedServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -34403,7 +34500,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The result of a call to AdGroupFeedService#mutate.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -34486,7 +34583,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>AdGroupFeeds are used to link a feed to an adgroup using a matching function,
   /// making the feed's feed items available in the adgroup's ads for substitution.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -34706,7 +34803,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Status of the AdGroupFeed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupFeed.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdGroupFeedStatus {
@@ -34726,7 +34823,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents an error for the AdGroupFeedService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -34811,7 +34908,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error reasons.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupFeedError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdGroupFeedErrorReason {
@@ -34847,7 +34944,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operation used to create or mutate an AdGroupFeed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -34918,7 +35015,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>The result of a call to AdGroupFeedService#get. Contains a list of associations
   /// between ad groups and feeds.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -34988,7 +35085,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Service used to get and mutate Feeds.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "FeedServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -35085,7 +35182,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The result of a call to FeedService#mutate.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -35157,7 +35254,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// either be user-entered via the FeedItemService or system-generated, in which
   /// case the data is provided automatically.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -35404,7 +35501,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// the same FeedAttributeId. Optionally, a FeedAttribute can be marked as being
   /// part of a FeedItem's unique key.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -35569,7 +35666,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Possible data types.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FeedAttribute.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum FeedAttributeType {
@@ -35595,7 +35692,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Status of the Feed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Feed.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum FeedStatus {
@@ -35616,7 +35713,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Used to Specify who manages the <a href='FeedAttribute'>FeedAttribute</a>s for
   /// the <a href='Feed'>Feed</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Feed.Origin", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum FeedOrigin {
@@ -35643,7 +35740,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Configuration data allowing feed items to be populated for a system feed.
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(PlacesLocationFeedData))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -35716,7 +35813,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Data used to configure a location feed populated from Google My Business
   /// Locations.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -35872,7 +35969,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <a
   /// href='"https://developers.google.com/accounts/docs/OAuth2"'>"https://developers.google.com/accounts/docs/OAuth2"</a>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -35967,7 +36064,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operation used to create or mutate a Feed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -36037,7 +36134,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The result of a call to FeedService#get.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -36107,7 +36204,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An error caused by an invalid Feed in a FeedService request.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -36192,7 +36289,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error reasons.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FeedError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum FeedErrorReason {
@@ -36254,7 +36351,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Service to operate on feed items.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "FeedItemServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -36353,7 +36450,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from FeedItemService.mutate().
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -36437,7 +36534,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents an item in a feed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -36848,7 +36945,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FeedItem.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum FeedItemStatus {
@@ -36869,7 +36966,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents a feed item's value for a particular feed attribute. A feed item's
   /// value is composed of a collection of these attribute values.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -37132,7 +37229,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// FeedMapping. Each validation data indicates any issues found on the feed item
   /// when used in the context of the feed mapping.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -37318,7 +37415,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Validation status of a FeedItem.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum FeedItemValidationStatus {
@@ -37336,7 +37433,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Feed item approval status.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum FeedItemApprovalStatus {
@@ -37354,7 +37451,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Contains validation error details for a set of feed attributes.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -37470,7 +37567,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Approval and policy information attached to an entity.
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FeedItemPolicyData))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -37556,7 +37653,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Container for information about why an AdWords entity was disapproved.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -37626,7 +37723,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a FeedItem device preference.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -37716,7 +37813,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// when the feed item may serve. The FeedItemSchedule times are in the account's
   /// time zone.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -37930,7 +38027,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// below campaign targeting is set to campaignId = X, then the feed item can only
   /// serve under campaign X.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38029,7 +38126,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// below adgroup targeting is set to adgroup = X, then the feed item can only serve
   /// under adgroup X.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38125,7 +38222,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>FeedItemService related errors.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38162,7 +38259,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FeedItemError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum FeedItemErrorReason {
@@ -38219,7 +38316,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>FeedItem service mutate operation.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38290,7 +38387,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a subset of feed items resulting from a <a
   /// href='FeedItemService#get'>FeedItemService#get</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38360,7 +38457,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Service for getting and mutating FeedMappings.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "FeedMappingServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -38459,7 +38556,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>The result of a call to <a
   /// href='FeedMappingService#mutate'>FeedMappingService#mutate</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38534,7 +38631,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// extension can not be displayed. <p>For a list of feed placeholders, see <a
   /// href="/adwords/api/docs/appendix/placeholders">https://developers.google.com/adwords/api/docs/appendix/placeholders</a></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38800,7 +38897,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FeedMapping.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum FeedMappingStatus {
@@ -38822,7 +38919,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// list of feed placeholders, see <a
   /// href="/adwords/api/docs/appendix/placeholders">https://developers.google.com/adwords/api/docs/appendix/placeholders</a></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38940,7 +39037,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Operation used to create a FeedMapping. <p>The following <a
   /// href='Operator'>Operator</a>s are supported: ADD, REMOVE.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39011,7 +39108,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>The result of a call to <a
   /// href='FeedMappingService#get'>FeedMappingService#get</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39081,7 +39178,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors caused by invalid usage of FeedMappingService
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39164,7 +39261,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FeedMappingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum FeedMappingErrorReason {
@@ -39226,7 +39323,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// selector. <p> </p><p>Please note that filtering by date range is not
   /// supported.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "LocationCriterionServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -39307,7 +39404,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents data that encapsulates a location criterion.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39496,7 +39593,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents errors thrown by the <a
   /// href='LocationCriterionService#get'>LocationCriterionService#get</a> operation.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39533,7 +39630,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Reasons for error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LocationCriterionServiceError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum LocationCriterionServiceErrorReason {
@@ -39550,7 +39647,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Customer Manager Service.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "ManagedCustomerServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/mcm/v201601")]
@@ -39598,8 +39695,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// <returns>List of customers identified by the selector.</returns>
     /// <exception cref='ApiException'>When there is at least one error with the
     /// request.</exception>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ManagedCustomerPage get(Selector serviceSelector) {
@@ -39615,8 +39712,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// customer ids (invitees)</param>
     /// <exception cref='ApiException'>when there is at least one error with the
     /// request</exception>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual PendingInvitation[] getPendingInvitations(PendingInvitationSelector selector) {
@@ -39634,8 +39731,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// </summary><param name='operations'>List of unique operations.</param>
     /// <returns>The list of updated managed customers, returned in the same order as
     /// the <code>operations</code> array.</returns>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ManagedCustomerReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] ManagedCustomerOperation[] operations) {
@@ -39662,8 +39759,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// AccountLabel may be applied to at most 1000 customers.</p> <p>This method does
     /// not support partial failures, and will fail if any operation is invalid.</p>
     /// </summary>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlArrayAttribute("rval")]
     [return: System.Xml.Serialization.XmlArrayItemAttribute("value", IsNullable = false)]
@@ -39689,8 +39786,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// <returns>results for the given operations</returns>
     /// <exception cref='ApiException'>with a <a
     /// href='ManagedCustomerServiceError'>ManagedCustomerServiceError</a></exception>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlArrayAttribute("rval")]
     [return: System.Xml.Serialization.XmlArrayItemAttribute("links", IsNullable = false)]
@@ -39709,8 +39806,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// <returns>results for the given operations</returns>
     /// <exception cref='ApiException'>with a <a
     /// href='ManagedCustomerServiceError'>ManagedCustomerServiceError</a></exception>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlArrayAttribute("rval")]
     [return: System.Xml.Serialization.XmlArrayItemAttribute("links", IsNullable = false)]
@@ -39726,7 +39823,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from the ManagedCustomerService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39797,7 +39894,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Data object that represents a managed customer. Member of <a
   /// href='ManagedCustomerPage'>ManagedCustomerPage</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -40138,7 +40235,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// are not interchangeable with campaign management labels, and are owned by
   /// manager customers.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -40261,7 +40358,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A label ID and customer ID the label applies to.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -40385,7 +40482,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// supported beginning with v201601.</li> <li><code>REMOVE</code> operator is not
   /// supported.</li> </ul>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -40456,7 +40553,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Operation for moving ManagedCustomer links. See <a
   /// href='ManagedCustomerService#mutateManager'>ManagedCustomerService#mutateManager</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -40552,7 +40649,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents an AdWords manager-client link.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -40741,7 +40838,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>These status values match the values in the ServicedAccounts.Status column.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201601")]
   public enum LinkStatus {
@@ -40767,7 +40864,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Operation for modifying ManagedCustomer links. See <a
   /// href='ManagedCustomerService#mutateLink'>ManagedCustomerService#mutateLink</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -40838,7 +40935,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>An operation to apply or remove an account label from a managed customer. <p
   /// class="note"><b>Note:</b> The <code>SET</code> operator is not supported.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -40908,7 +41005,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Pending invitation result for the getPendingInvitations method.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -40962,7 +41059,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Selector for getPendingInvitations method.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -41046,7 +41143,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Return result of <a href='ManagedCustomerService'>ManagedCustomerService</a>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -41130,7 +41227,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error for <a href='ManagedCustomerService'>ManagedCustomerService</a>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -41225,14 +41322,14 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ManagedCustomerServiceError.Reason", Namespace = "https://adwords.google.com/api/adwords/mcm/v201601")]
   public enum ManagedCustomerServiceErrorReason {
     /// <summary>Unknown.
     /// </summary>
     UNKNOWN,
-    /// <summary>The user is not authorized to perform the action
+    /// <summary>The user is not authorized to perform the action.
     /// </summary>
     NOT_AUTHORIZED,
     /// <summary>Invalid selector
@@ -41286,11 +41383,9 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
 
   /// <summary>Use this service to manage media for your template ads. After uploading images
-  /// and videos with this service, use the IDs when creating template ads. <p>When
-  /// creating image ads do not use this service to upload images. The
-  /// AdGroupAdService allows you to upload image data when creating the image ad.</p>
+  /// and videos with this service, use the IDs when creating image or template ads.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "MediaServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -41387,7 +41482,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Page of media returned by the <a href='MediaService'>MediaService</a> which
   /// includes the media.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -41486,7 +41581,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error class for errors associated with parsing video data.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -41569,7 +41664,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum VideoErrorReason {
@@ -41614,7 +41709,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error class for errors associated with parsing audio data.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -41697,7 +41792,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AudioError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AudioErrorReason {
@@ -41742,7 +41837,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// serious ones occur, the service will abort a job leaving some or all of its
   /// operations unprocessed.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "MutateJobServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -41845,7 +41940,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A basic job policy.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -41931,7 +42026,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD,
   /// SET.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42077,7 +42172,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Type of a product partition in a shopping campaign.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ProductPartitionType {
@@ -42101,7 +42196,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// class="constraint AdxEnabled">This is disabled for AdX when it is contained
   /// within Operators: ADD, SET.</span></p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42192,7 +42287,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The possible types of App Payment Model.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AppPaymentModel.AppPaymentModelType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AppPaymentModelAppPaymentModelType {
@@ -42210,7 +42305,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Setting for targeting related features. This is applicable at Campaign and
   /// AdGroup level.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42284,7 +42379,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href="https://support.google.com/adwords/answer/6056342">Targeting
   /// Settings</a>.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42405,7 +42500,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The list of groupings of criteria types.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CriterionTypeGroup {
@@ -42448,7 +42543,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Settings for the <a href="//support.google.com/adwords/answer/190596">Display
   /// Campaign Optimizer</a>, initially termed "Explorer".
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42486,7 +42581,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>CampaignAdExtension service operation. <b>Note:</b> The <code>SET</code>
   /// operator is not supported.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42557,7 +42652,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents a campaign level ad extension. A campaign ad extension specifies a
   /// campaign and an ad extension which can extend any ad under that campaign.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42721,7 +42816,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocationSyncExtension))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocationExtension))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42827,7 +42922,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Local business center(LBC) sync extension that ties a LBC account with a
   /// campaign.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42974,7 +43069,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Location based ad extension.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -43002,8 +43097,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
     private bool imageMediaIdFieldSpecified;
 
-    /// <summary>Address of the location (as is populated in GeoLocation by GeoLocationService).
-    /// <b>Note:</b> When specifying both <a
+    /// <summary>Address of the location. <b>Note:</b> When specifying both <a
     /// href='Address#provinceCode'>provinceCode</a> and <a
     /// href='Address#provinceName'>provinceName</a>, only provinceName is saved and
     /// returned. If provinceName is empty and provinceCode is specified, the
@@ -43019,8 +43113,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
       }
     }
 
-    /// <summary>The lat/long point of the location (as is populated in GeoLocation by
-    /// GeoLocationService).
+    /// <summary>The lat/long point of the location.
     /// </summary>
     public GeoPoint geoPoint {
       get {
@@ -43031,8 +43124,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
       }
     }
 
-    /// <summary>Byte data encoding address and geo point (as is populated in GeoLocation by
-    /// GeoLocationService). Input only. Required on location extension creation.
+    /// <summary>Byte data encoding address and geo point. Input only. Required on location
+    /// extension creation.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
     public byte[] encodedLocation {
@@ -43191,7 +43284,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LocationExtension.Source", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum LocationExtensionSource {
@@ -43206,7 +43299,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Status of the CampaignAdExtension.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignAdExtension.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CampaignAdExtensionStatus {
@@ -43221,7 +43314,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Approval status of the CampaignAdExtension.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignAdExtension.ApprovalStatus", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CampaignAdExtensionApprovalStatus {
@@ -43239,7 +43332,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operations for adding/updating Budget entities.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -43309,7 +43402,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>AdGroup operations for adding/updating/removing adgroups.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -43379,7 +43472,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents an ad group.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -43785,7 +43878,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Status of this ad group.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroup.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdGroupStatus {
@@ -43809,7 +43902,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Data associated with an advertiser experiment for this adgroup. <span
   /// class="constraint AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -43995,7 +44088,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManualCPMAdGroupExperimentBidMultipliers))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManualCPCAdGroupExperimentBidMultipliers))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44068,7 +44161,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Adgroup level bid multipliers used in manual CPM bidding strategy. <span
   /// class="constraint AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44146,7 +44239,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents a multiplier to modify a bid. The final value after modification is
   /// represented by the multiplied bid value.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44247,7 +44340,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a bid of a certain amount.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44317,7 +44410,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Adgroup level bid multipliers used in manual CPC bidding strategies. <span
   /// class="constraint AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44415,7 +44508,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operations for adding/removing labels from AdGroup.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44485,7 +44578,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Manages the labels associated with an <a href='AdGroup'>AdGroup</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44604,7 +44697,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operation (add, remove and set) on adgroup criteria.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44692,7 +44785,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(NegativeAdGroupCriterion))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BiddableAdGroupCriterion))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44906,7 +44999,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The way a criterion is used - biddable or negative.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CriterionUse {
@@ -44921,7 +45014,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A negative criterion in an adgroup.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44932,7 +45025,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A biddable (positive) criterion in an adgroup.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45419,7 +45512,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Specified by user to pause or unpause a criterion.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum UserStatus {
@@ -45437,7 +45530,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Reported by system to reflect the criterion's serving status.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum SystemServingStatus {
@@ -45455,7 +45548,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Approval status for the criterion. Note: there are more states involved but we
   /// only expose two to users.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ApprovalStatus {
@@ -45477,7 +45570,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Data associated with an advertiser experiment for this <a
   /// href='BiddableAdGroupCriterion'>BiddableAdGroupCriterion</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45671,7 +45764,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// experiment. <span class="constraint AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManualCPCAdGroupCriterionExperimentBidMultiplier))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45745,7 +45838,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>AdGroupCriterion level bid multiplier used in manual CPC bidding strategies.
   /// <span class="constraint AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45858,7 +45951,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Denotes whether the bid multiplier is derived from the adgroup or the criterion
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum MultiplierSource {
@@ -45878,7 +45971,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Container for criterion quality information.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45975,7 +46068,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Wrapper POJO for a list of URLs. The list can be cleared if a request contains a
   /// UrlList with an empty urls list.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45985,7 +46078,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
     /// <summary>List of URLs. On SET operation, empty list indicates to clear the list. <span
     /// class="constraint CollectionSize">The maximum size of this collection is
-    /// 10.</span>
+    /// 10.</span> <span class="constraint ContentsStringLength">Strings in this field
+    /// must be non-empty (trimmed).</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("urls")]
     public string[] urls {
@@ -46047,7 +46141,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operations for adding/removing labels from AdGroupCriterion.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46117,7 +46211,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Manages the labels associated with an AdGroupCriterion.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46268,7 +46362,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operation used to create or mutate a AdGroupBidModifier.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46339,7 +46433,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents an adgroup level bid modifier override for campaign level criterion
   /// bid modifier values.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46420,9 +46514,11 @@ namespace Google.Api.Ads.AdWords.v201601 {
     }
 
     /// <summary>The criterion whose bid value is being overridden. Currently, bid modifier
-    /// overrides are supported only for HighEndMobile platform criterion (ID=30001).
-    /// The <a href='AdGroupBidModifierService#get'>AdGroupBidModifierService#get</a>
-    /// method returns all platform criteria. <span class="constraint Required">This
+    /// overrides are supported only for HighEndMobile platform criterion (ID=30001) and
+    /// preferred content criterion (ID = 400). The <a
+    /// href='AdGroupBidModifierService#get'>AdGroupBidModifierService#get</a> method
+    /// returns all platform and preferred content criteria. Preferred Content Criteria
+    /// is available in versions &gt;= V201603. <span class="constraint Required">This
     /// field is required and should not be <code>null</code>.</span>
     /// </summary>
     public Criterion criterion {
@@ -46569,7 +46665,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Enumerates possible sources for bid modifier.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BidModifierSource {
@@ -46590,7 +46686,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A place holder for a result which is not available.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46601,7 +46697,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A marker interface for entities that can be operated upon in mutate operations.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46641,7 +46737,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents an asynchronous macro unit of work.
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SimpleMutateJob))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46757,7 +46853,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Interface that has a reason return an associated service error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46840,7 +46936,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdExtensionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdExtensionErrorReason {
@@ -46989,7 +47085,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the target error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupCriterionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdGroupCriterionErrorReason {
@@ -47118,7 +47214,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the adgroup service error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupServiceError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdGroupServiceErrorReason {
@@ -47159,7 +47255,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the beta error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BetaError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BetaErrorReason {
@@ -47171,7 +47267,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Reason for bidding error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BiddingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BiddingErrorReason {
@@ -47238,7 +47334,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Reason for bidding transition error. Used by the bidding transition capability
   /// service as the denial reason.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BiddingTransitionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BiddingTransitionErrorReason {
@@ -47342,7 +47438,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the bulk mutate job handling error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BulkMutateJobError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BulkMutateJobErrorReason {
@@ -47420,7 +47516,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignAdExtensionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CampaignAdExtensionErrorReason {
@@ -47448,7 +47544,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the job handling error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "JobError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum JobErrorReason {
@@ -47491,7 +47587,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Reason for bidding error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "MultiplierError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum MultiplierErrorReason {
@@ -47538,7 +47634,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PolicyViolationError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum PolicyViolationErrorReason {
@@ -47548,7 +47644,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Job-handling statistics.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47710,7 +47806,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// excludes the cost of operating on the job itself - setting up the job, polling
   /// for its status, retrieving the result, etc.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47826,7 +47922,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='MutateJobService#mutate'>MutateJobService#mutate</a>, and will execute
   /// asynchronously sometime after submission.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47955,7 +48051,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A basic set of job statuses.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BasicJobStatus {
@@ -47978,7 +48074,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An event defined by a status change of a job.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -48063,7 +48159,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The results of a simple mutation job.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -48147,7 +48243,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Contains the policy violations for a single BiddableAdGroupCriterion.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -48158,7 +48254,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents errors in bid multipliers.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -48195,7 +48291,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Job handling errors.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -48280,7 +48376,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Signals that too many criteria were added to some ad group.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -48317,7 +48413,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The entity type that exceeded the limit.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupCriterionLimitExceeded.CriteriaLimitType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdGroupCriterionLimitExceededCriteriaLimitType {
@@ -48330,7 +48426,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>CampaignAdExtension errors.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -48415,7 +48511,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Bulk mutate job handling errors.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -48500,7 +48596,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents possible error codes in AdGroupService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -48585,7 +48681,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Base error class for Ad Group Criterion Service.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -48670,7 +48766,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>AdExtension errors.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -48757,7 +48853,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// successfully processed operations as well as errors returned by failed
   /// operations.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -48781,7 +48877,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// a job service.
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BulkMutateJobSelector))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -48912,7 +49008,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Specifies additional criteria for selecting bulk mutate jobs.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49023,7 +49119,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href="https://developers.google.com/adwords/api/docs/guides/conversion-tracking">
   /// conversion tracking guide</a>.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "OfflineConversionFeedServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -49089,7 +49185,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from the OfflineConversionFeedService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49172,7 +49268,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents an entire record in the offline conversions feed that the advertiser
   /// uploads.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49374,7 +49470,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Errors that the <a
   /// href='OfflineConversionFeedService'>OfflineConversionFeedService</a> can throw.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49411,7 +49507,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for an OfflineConversionError.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OfflineConversionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum OfflineConversionErrorReason {
@@ -49458,7 +49554,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors for currency codes.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49544,7 +49640,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Encodes the reason (cause) of a particular <a
   /// href='CurrencyCodeError'>CurrencyCodeError</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CurrencyCodeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CurrencyCodeErrorReason {
@@ -49556,7 +49652,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='OfflineConversionFeed'>OfflineConversionFeed</a>. See <a
   /// href='OfflineConversionFeedService#mutate'>OfflineConversionFeedService#mutate</a>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49636,7 +49732,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// retrieving reports, see <a href="/adwords/api/docs/guides/reporting">Reporting
   /// Basics</a>.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "ReportDefinitionServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -49700,7 +49796,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents information about enum values.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49789,7 +49885,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='ReportDefinitionService#getReportFields'>ReportDefinitionService#getReportFields</a>
   /// api and run the corresponding reports.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50123,7 +50219,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Encapsulates the errors that can be thrown during <a
   /// href='ReportDefinition'>ReportDefinition</a> mutate operation.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50162,7 +50258,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='ReportDefinitionService#mutate(java.util.List)'>ReportDefinitionService#mutate(java.util.List)</a>
   /// operation.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReportDefinitionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ReportDefinitionErrorReason {
@@ -50212,7 +50308,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Indicates that the customer is not whitelisted for accessing the API.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50297,7 +50393,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The single reason for the whitelist error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotWhitelistedError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum NotWhitelistedErrorReason {
@@ -50309,7 +50405,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Enums for report types.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReportDefinition.ReportType", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ReportDefinitionReportType {
@@ -50466,7 +50562,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='RequestType#STATS'>RequestType#STATS</a> and passing in the appropriate
   /// search parameters.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "TargetingIdeaServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/o/v201601")]
@@ -50535,7 +50631,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Basic information about a webpage.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50619,7 +50715,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// instance with a <code>null</code> count is valid, indicating that the
   /// information is unavailable.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50764,7 +50860,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a range of values that has either an upper or a lower bound.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50817,7 +50913,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DoubleAttribute))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CriterionAttribute))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BooleanAttribute))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50890,7 +50986,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary><a href='Attribute'>Attribute</a> type that contains a <a
   /// href='WebpageDescriptor'>WebpageDescriptor</a> value.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50960,7 +51056,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary><a href='Attribute'>Attribute</a> type that contains a string value.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51033,7 +51129,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// current month). The first item is the data for the most recent month and the
   /// last item is the data for the oldest month.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51108,7 +51204,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary><a href='Attribute'>Attribute</a> type that contains a <a href='Money'>Money</a>
   /// value.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51179,7 +51275,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary><a href='Attribute'>Attribute</a> type that contains a <a href='Range'>Range</a>
   /// of <a href='LongValue'>LongValue</a> values.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51249,7 +51345,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary><a href='Attribute'>Attribute</a> type that contains a long value.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51335,7 +51431,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary><a href='Attribute'>Attribute</a> type that contains a <a
   /// href='Keyword'>Keyword</a> value.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51405,7 +51501,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary><a href='Attribute'>Attribute</a> type that contains a Set of integer values.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51477,7 +51573,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary><a href='Attribute'>Attribute</a> type that contains an integer value.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51566,7 +51662,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='IdeaTypeAttribute'>IdeaTypeAttribute</a> would contain a
   /// <code>KEYWORD</code> <a href='IdeaType'>IdeaType</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51653,7 +51749,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents the type of idea. <span class="constraint AdxEnabled">This is
   /// disabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201601")]
   public enum IdeaType {
@@ -51665,7 +51761,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary><a href='Attribute'>Attribute</a> type that contains a double value.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51751,7 +51847,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary><a href='Attribute'>Attribute</a> type that contains a <a
   /// href='Criterion'>Criterion</a> value.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51820,7 +51916,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary><a href='Attribute'>Attribute</a> type that contains a boolean value.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51906,7 +52002,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>This represents an entry in a map with a key of type Type and value of type
   /// Attribute.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51964,7 +52060,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='#SEARCH_VOLUME'>#SEARCH_VOLUME</a></li> <li><a
   /// href='#TARGETED_MONTHLY_SEARCHES'>#TARGETED_MONTHLY_SEARCHES</a></li> </ul>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201601")]
   public enum AttributeType {
@@ -52030,7 +52126,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='TargetingIdeaSelector'>TargetingIdeaSelector</a>. Targeting ideas are
   /// keywords or placements that are similar to those the user inputs.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -52105,7 +52201,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// criteria specified by a <a
   /// href='TargetingIdeaSelector'>TargetingIdeaSelector</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -52208,7 +52304,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// specify the valid values requested for the specific <a
   /// href='Attribute'>Attribute</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -52373,7 +52469,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(IdeaTextFilterSearchParameter))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CompetitionSearchParameter))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CategoryProductsAndServicesSearchParameter))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -52450,7 +52546,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// by following <a href='IdeaType'>IdeaType</a>s: KEYWORD.</p> <p>This element is
   /// supported by following <a href='RequestType'>RequestType</a>s: IDEAS.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -52544,7 +52640,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// following <a href='IdeaType'>IdeaType</a>s: KEYWORD.</p> <p>This element is
   /// supported by following <a href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -52619,7 +52715,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// element is supported by following <a href='RequestType'>RequestType</a>s:
   /// IDEAS.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -52729,7 +52825,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='IdeaType'>IdeaType</a>s: KEYWORD.</p> <p>This element is supported by
   /// following <a href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -52810,7 +52906,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// element is supported by following <a href='RequestType'>RequestType</a>s: IDEAS,
   /// STATS.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -52884,14 +52980,16 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A <a href='SearchParameter'>SearchParameter</a> used to indicate the locations
   /// being targeted. This can be used, for example, to search for
   /// <code>KEYWORD</code> <a href='IdeaType'>IdeaType</a>s that are best for Japan
-  /// and Los Angeles. <p>This parameter replaces the <code></code>.</p> <p>Warning:
-  /// Not all back-ends support sub-country precision.</p> <p>The service allows up to
-  /// 10 locations to be targeted for KEYWORD requests and 50 locations for PLACEMENT
-  /// requests.</p> <p>This element is supported by following <a
-  /// href='IdeaType'>IdeaType</a>s: KEYWORD.</p> <p>This element is supported by
-  /// following <a href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
+  /// and Los Angeles. <p>This parameter replaces the <code></code>.</p> <p>See the <a
+  /// href="https://developers.google.com/adwords/api/docs/appendix/geotargeting">
+  /// Geographical Targeting</a> page for the complete list of supported geo target
+  /// types for this service.</p> <p>The service allows up to 10 locations to be
+  /// targeted for KEYWORD requests and 50 locations for PLACEMENT requests.</p>
+  /// <p>This element is supported by following <a href='IdeaType'>IdeaType</a>s:
+  /// KEYWORD.</p> <p>This element is supported by following <a
+  /// href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -52978,7 +53076,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <p>This element is supported by following <a
   /// href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53059,7 +53157,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='IdeaType'>IdeaType</a>s: KEYWORD.</p> <p>This element is supported by
   /// following <a href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53078,7 +53176,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='IdeaType'>IdeaType</a>s: KEYWORD.</p> <p>This element is supported by
   /// following <a href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53174,7 +53272,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <a href='IdeaType'>IdeaType</a>s: KEYWORD.</p> <p>This element is supported by
   /// following <a href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53253,7 +53351,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='CompetitionSearchParameter'>CompetitionSearchParameter</a> to specify the
   /// granularity of competition to be filtered.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CompetitionSearchParameter.Level", Namespace = "https://adwords.google.com/api/adwords/o/v201601")]
   public enum CompetitionSearchParameterLevel {
@@ -53276,7 +53374,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// KEYWORD.</p> <p>This element is supported by following <a
   /// href='RequestType'>RequestType</a>s: IDEAS.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53364,7 +53462,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A descriptor for finding <a href='TargetingIdea'>TargetingIdea</a>s that match
   /// the specified criteria.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53568,7 +53666,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents the type of the request.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/o/v201601")]
   public enum RequestType {
@@ -53590,7 +53688,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Base error class for <a
   /// href='TrafficEstimatorService'>TrafficEstimatorService</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53625,7 +53723,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TrafficEstimatorError.Reason", Namespace = "https://adwords.google.com/api/adwords/o/v201601")]
   public enum TrafficEstimatorErrorReason {
@@ -53680,7 +53778,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Base error class for the <a
   /// href='TargetingIdeaService'>TargetingIdeaService</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53766,7 +53864,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>An enumeration of <a href='TargetingIdeaService'>TargetingIdeaService</a>
   /// specific errors.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "TargetingIdeaError.Reason", Namespace = "https://adwords.google.com/api/adwords/o/v201601")]
   public enum TargetingIdeaErrorReason {
@@ -53844,7 +53942,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// criterion</a> defines conditions that will prevent the parent ad group's ads
   /// from displaying.</li> </ul>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "AdGroupCriterionServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -53974,7 +54072,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from the AdGroupCriterionService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54060,7 +54158,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='AdGroupCriterionService#mutateLabel'>AdGroupCriterionService#mutateLabel</a>
   /// call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54095,7 +54193,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a subset of adgroup criteria resulting from a <a
   /// href='AdGroupCriterionService#get'>AdGroupCriterionService#get</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54182,7 +54280,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// comparing numbers, use the same account for the API and UI.</p> <span
   /// class="constraint AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "TrafficEstimatorServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/o/v201601")]
@@ -54250,7 +54348,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// be <code>null</code> when not defined and <code></code> or
   /// <code>impressionsPerDay</code> is <code>0</code>, respectively.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54452,7 +54550,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignEstimate))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(KeywordEstimate))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupEstimate))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54524,7 +54622,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents the estimate results for a single campaign.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54625,7 +54723,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents the estimate results for a single ad group.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54726,7 +54824,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents the traffic estimate result for a single keyword.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54840,7 +54938,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Contains results of traffic estimation request.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54914,7 +55012,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CampaignEstimateRequest))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(KeywordEstimateRequest))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupEstimateRequest))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54995,7 +55093,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// do not consider existing account information (e.g. historical ad group
   /// performance), set <a href='#campaignId'>#campaignId</a> to <code></code>.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -55189,7 +55287,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <code></code> to <code>null</code>.</p> <p>For more details on usage, refer to
   /// document at <a href='CampaignEstimateRequest'>CampaignEstimateRequest</a>.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -55309,7 +55407,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a keyword to be estimated.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -55441,7 +55539,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Contains a list of campaigns to perform a traffic estimate on.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -55518,7 +55616,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Service which is used to manage user lists.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "AdwordsUserListServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/rm/v201601")]
@@ -55618,7 +55716,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return value from <code></code> method.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -55696,7 +55794,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(BasicUserList))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(LogicalUserList))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CrmBasedUserList))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56296,7 +56394,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Membership status of the user list. This status indicates whether a user list
   /// can accumulate more users and may be targeted to.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/rm/v201601")]
   public enum UserListMembershipStatus {
@@ -56311,7 +56409,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>This indicates the way the entity such as UserList is related to a user.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/rm/v201601")]
   public enum AccessReason {
@@ -56333,7 +56431,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Status in the AccountUserListStatus table. This indicates if the user list share
   /// or the licensing of the userlist is still active.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/rm/v201601")]
   public enum AccountUserListStatus {
@@ -56344,7 +56442,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Size range in terms of number of users of a UserList/UserInterest.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/rm/v201601")]
   public enum SizeRange {
@@ -56369,7 +56467,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The user list types
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/rm/v201601")]
   public enum UserListType {
@@ -56403,7 +56501,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>SimilarUserList is a list of users which are similar to users from another
   /// UserList. These lists are readonly and automatically created by google.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56619,7 +56717,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressionRuleUserList))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DateSpecificRuleUserList))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56630,7 +56728,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Visitors of a page. The page visit is defined by one boolean rule expression.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56709,7 +56807,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A client defined rule based on custom parameters sent by web sites. It consists
   /// of rule item groups that are connected by OR.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56785,7 +56883,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A group of rule items that are ANDed together.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56859,7 +56957,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An atomic rule fragment.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56883,7 +56981,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An atomic rule fragment composing of date operation.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57000,7 +57098,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// </ul> <p>If time zone information is not present in the value, it is assumed to
   /// be PST. If time value is not specified, it defaults to midnight of the day.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57075,7 +57173,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Supported rule operator for date type.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DateRuleItem.DateOperator", Namespace = "https://adwords.google.com/api/adwords/rm/v201601")]
   public enum DateRuleItemDateOperator {
@@ -57093,7 +57191,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An atomic rule fragment composing of number operation.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57223,7 +57321,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A custom parameter of type number.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57298,7 +57396,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Supported operator for numbers.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NumberRuleItem.NumberOperator", Namespace = "https://adwords.google.com/api/adwords/rm/v201601")]
   public enum NumberRuleItemNumberOperator {
@@ -57318,7 +57416,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An atomic rule fragment composing of string operation.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57437,7 +57535,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Custom parameter of type string. For websites, there are two built-in parameters
   /// URL (name = 'url__') and referrer URL (name = 'ref_url__').
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57512,7 +57610,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Supported operators for strings.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StringRuleItem.StringOperator", Namespace = "https://adwords.google.com/api/adwords/rm/v201601")]
   public enum StringRuleItemStringOperator {
@@ -57539,7 +57637,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <code>startDate</code> (exclusive) with <code>endDate</code> = 2037-12-30.</li>
   /// </ul>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57662,7 +57760,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>User list targeting as a collection of conversion types.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57737,7 +57835,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a conversion type used for building remarketing user lists.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57868,7 +57966,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>User can create only BOOMERANG_EVENT conversion types. For all other types
   /// UserListService service will return OTHER.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserListConversionType.Category", Namespace = "https://adwords.google.com/api/adwords/rm/v201601")]
   public enum UserListConversionTypeCategory {
@@ -57880,7 +57978,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents a user list that is a custom combination of user lists and user
   /// interests.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57979,7 +58077,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A user list logical rule. A rule has a logical operator (and/or/not) and a list
   /// of operands that can be user lists or user interests.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58081,7 +58179,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserListLogicalRule.Operator", Namespace = "https://adwords.google.com/api/adwords/rm/v201601")]
   public enum UserListLogicalRuleOperator {
@@ -58106,7 +58204,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// combination of logical rules. Each rule is defined as a logical operator and a
   /// list of operands. Those operands can be of type UserList.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58128,7 +58226,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>UserList of CRM users provided by the advertiser.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58202,7 +58300,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from the UserListService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58224,7 +58322,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operand containing user list id and members to be added or removed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58361,7 +58459,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents the different type of the member data entity.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "MutateMembersOperand.DataType", Namespace = "https://adwords.google.com/api/adwords/rm/v201601")]
   public enum MutateMembersOperandDataType {
@@ -58373,7 +58471,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>UserList operations for adding/updating UserList entities.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58443,7 +58541,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operation representing a request to add or remove members from a user list.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58514,7 +58612,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a list of user lists resulting from the filtering and paging of the <a
   /// href='UserListService#get'>UserListService#get</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58584,7 +58682,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents possible error codes in UserListService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58667,7 +58765,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserListError.Reason", Namespace = "https://adwords.google.com/api/adwords/rm/v201601")]
   public enum UserListErrorReason {
@@ -58735,7 +58833,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents possible error codes from <code></code>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58772,7 +58870,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Reasons
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "MutateMembersError.Reason", Namespace = "https://adwords.google.com/api/adwords/rm/v201601")]
   public enum MutateMembersErrorReason {
@@ -58788,7 +58886,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A service which fetches and manages AdWords Express businesses.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "ExpressBusinessServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/express/v201601")]
@@ -58835,8 +58933,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// </summary><param name='selector'>the selector specifying the AdWords Express businesses to
     /// return</param>
     /// <returns>list of AdWords Express businesses identified by the selector</returns>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/express/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/express/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ExpressBusinessPage get(Selector selector) {
@@ -58852,8 +58950,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// </summary><param name='operations'>list of unique operations; the same AdWords Express
     /// business cannot be specified in more than one operation</param>
     /// <returns>the updated AdWords Express businesses</returns>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/express/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/express/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ExpressBusiness[] mutate([System.Xml.Serialization.XmlElementAttribute("operations")] ExpressBusinessOperation[] operations) {
@@ -58872,7 +58970,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// remove an <a href='ExpressBusiness'>ExpressBusiness</a>, set its <a
   /// href='ExpressBusiness#status'>status</a> to <code>DELETED</code>.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58893,7 +58991,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Information about an AdWords Express business.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59077,7 +59175,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Possible statusus of this business.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ExpressBusiness.Status", Namespace = "https://adwords.google.com/api/adwords/express/v201601")]
   public enum ExpressBusinessStatus {
@@ -59087,7 +59185,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
 
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExpressBusinessPage))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59100,7 +59198,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a page of <a href='ExpressBusiness'>ExpressBusiness</a>es with no
   /// stats.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59168,152 +59266,9 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  /// <summary>Represents a date.
-  /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
-  public partial class Date {
-    private int yearField;
-
-    private bool yearFieldSpecified;
-
-    private int monthField;
-
-    private bool monthFieldSpecified;
-
-    private int dayField;
-
-    private bool dayFieldSpecified;
-
-    /// <summary>Year (e.g., 2009)
-    /// </summary>
-    public int year {
-      get {
-        return this.yearField;
-      }
-      set {
-        this.yearField = value;
-        this.yearSpecified = true;
-      }
-    }
-
-    /// <summary> <code>true</code>, if a value is specified for <see cref="year" />,
-    /// <code>false</code> otherwise. </summary>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool yearSpecified {
-      get {
-        return this.yearFieldSpecified;
-      }
-      set {
-        this.yearFieldSpecified = value;
-      }
-    }
-
-    /// <summary>Month (1..12)
-    /// </summary>
-    public int month {
-      get {
-        return this.monthField;
-      }
-      set {
-        this.monthField = value;
-        this.monthSpecified = true;
-      }
-    }
-
-    /// <summary> <code>true</code>, if a value is specified for <see cref="month" />,
-    /// <code>false</code> otherwise. </summary>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool monthSpecified {
-      get {
-        return this.monthFieldSpecified;
-      }
-      set {
-        this.monthFieldSpecified = value;
-      }
-    }
-
-    /// <summary>Day (1..31)
-    /// </summary>
-    public int day {
-      get {
-        return this.dayField;
-      }
-      set {
-        this.dayField = value;
-        this.daySpecified = true;
-      }
-    }
-
-    /// <summary> <code>true</code>, if a value is specified for <see cref="day" />,
-    /// <code>false</code> otherwise. </summary>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool daySpecified {
-      get {
-        return this.dayFieldSpecified;
-      }
-      set {
-        this.dayFieldSpecified = value;
-      }
-    }
-
-    /// <summary> List of all supported fields for the <see cref='Date' /> class.
-    /// </summary>
-    public class Fields : BaseFields {
-      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
-      protected Fields() {
-      }
-
-      public static Field[] All {
-        get {
-          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        }
-      }
-    }
-
-
-    /// <summary> List of all supported selectable fields for the <see cref='Date' />
-    /// class. </summary>
-    public class SelectableFields : BaseFields {
-      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
-      /// </summary>
-      protected SelectableFields() {
-      }
-
-      public static Field[] All {
-        get {
-          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        }
-      }
-    }
-
-
-    /// <summary> List of all supported filterable fields for the <see cref='Date' />
-    /// class. </summary>
-    public class FilterableFields : BaseFields {
-      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
-      /// </summary>
-      protected FilterableFields() {
-      }
-
-      public static Field[] All {
-        get {
-          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        }
-      }
-    }
-  }
-
-
   /// <summary>Express business related errors.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59398,7 +59353,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Reason behind the <code>BusinessError</code>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ExpressBusinessError.Reason", Namespace = "https://adwords.google.com/api/adwords/express/v201601")]
   public enum ExpressBusinessErrorReason {
@@ -59424,7 +59379,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A service for budget suggestion.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "BudgetSuggestionServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/express/v201601")]
@@ -59471,8 +59426,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// </summary><param name='selector'>the selector specifying the budget suggestion to
     /// return</param>
     /// <returns>budget suggestion identified by the selector</returns>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/express/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/express/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BudgetSuggestion get(BudgetSuggestionSelector selector) {
@@ -59487,7 +59442,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A budget suggestion and its associated data (all are estimates).
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59731,7 +59686,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// application-specific packages, others in common.base.i18n. The latter ones will
   /// be listed with "see" tags in this class.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201601")]
   public enum CurrencyCode {
@@ -60534,7 +60489,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD,
   /// SET.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -60549,7 +60504,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD,
   /// SET.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -60656,7 +60611,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// class="constraint AdxEnabled">This is disabled for AdX when it is contained
   /// within Operators: ADD, SET.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -60728,7 +60683,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD,
   /// SET.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -60789,7 +60744,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD,
   /// SET.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -60810,7 +60765,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A selector for budget suggestion
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -60922,7 +60877,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A service which manages AdWords Express promotions.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "PromotionServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/express/v201601")]
@@ -60970,8 +60925,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// </summary><param name='selector'>the selector specifying the AdWords Express promotion to
     /// return</param>
     /// <returns>list of AdWords Express promotion identified by the selector</returns>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/express/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/express/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual PromotionPage get(Selector selector) {
@@ -60986,8 +60941,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// </summary><param name='operations'>list of unique operations; the same AdWords Express
     /// promotion cannot be specified in more than one operation</param>
     /// <returns>the updated AdWords Express promotion</returns>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/express/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/express/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Promotion[] mutate([System.Xml.Serialization.XmlElementAttribute("operations")] PromotionOperation[] operations) {
@@ -61006,7 +60961,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='Promotion'>Promotion</a>, set its <a href='Promotion#status'>status</a> to
   /// <code>DELETED</code>.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61028,7 +60983,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A promotion for a business. It contains all the user specified data as needed by
   /// AdWords Express to generate AdWords campaigns.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61403,7 +61358,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// is one way migration from Adwords Express to AdWords. There is no way to undo
   /// the migration currently.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Promotion.Status", Namespace = "https://adwords.google.com/api/adwords/express/v201601")]
   public enum PromotionStatus {
@@ -61417,7 +61372,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Creative for a text ad.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61516,7 +61471,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Phone number which contains the phone number string plus the region that the
   /// number is to be from.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61653,7 +61608,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// though most times CLDR codes are the same as the ISO codes, sometimes they are
   /// not.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/express/v201601")]
   public enum ExpressRegionCode {
@@ -62574,7 +62529,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Contains a page of <a href='Promotion'>Promotion</a>s with no stats.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -62644,7 +62599,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Promotion related errors for AdWords Express.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -62681,7 +62636,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Reason behind the <code>PromotionError</code>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PromotionError.Reason", Namespace = "https://adwords.google.com/api/adwords/express/v201601")]
   public enum PromotionErrorReason {
@@ -62746,7 +62701,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A service which returns product and service supported by AdWords Express.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "ProductServiceServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/express/v201601")]
@@ -62794,8 +62749,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// </summary><param name='selector'>the selector specifying the product services to
     /// return</param>
     /// <returns>list of product services identified by the selector</returns>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/express/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/express/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ProductServicePage get(Selector selector) {
@@ -62810,7 +62765,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Contains a page of <a href='ProductService'>ProductService</a>s with no stats.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -62881,7 +62836,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>This service is used for managing associations between <code></code> entities
   /// and <code>Campaign</code> entities.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CampaignSharedSetServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -62979,7 +62934,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A container for return values from the <a
   /// href='CampaignSharedSetService#mutate'>CampaignSharedSetService#mutate</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63002,7 +62957,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>CampaignSharedSets are used for managing the shared sets associated with a
   /// campaign.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63254,7 +63209,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Enumerates the different types of shared sets.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum SharedSetType {
@@ -63270,7 +63225,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Status of association between campaign and shared set.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignSharedSet.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CampaignSharedSetStatus {
@@ -63286,7 +63241,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operations for adding/updating CampaignSharedSet entities.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63358,7 +63313,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// the filtering and paging of <a
   /// href='CampaignSharedSetService#get'>CampaignSharedSetService#get</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63380,7 +63335,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents error codes for the CampaignSharedSetService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63417,7 +63372,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error reasons
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignSharedSetError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum CampaignSharedSetErrorReason {
@@ -63429,7 +63384,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Manages which criteria are associated with shared sets.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "SharedCriterionServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -63525,7 +63480,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Container for the return value from the SharedSetCriterionService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63547,7 +63502,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a criterion belonging to a shared set.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63692,7 +63647,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operation for adding/removing a criterion from a shared set.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63763,7 +63718,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a list of shared set criteria results filtered and sorted as specified
   /// in the <a href='SharedCriterionService#get'>SharedCriterionService#get</a> call
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63833,7 +63788,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents error codes for the SharedCriterionService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63870,7 +63825,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error reasons
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SharedCriterionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum SharedCriterionErrorReason {
@@ -63889,7 +63844,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>This service is used for managing <a href='SharedSet'>SharedSet</a> entities
   /// themselves and the association between sets and campaigns.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "SharedSetServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -63987,7 +63942,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A container for return values from the <a
   /// href='SharedSetService#mutate'>SharedSetService#mutate</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -64010,7 +63965,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>SharedSets are used for sharing entities across multiple campaigns under the
   /// same account.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -64281,7 +64236,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SharedSet.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum SharedSetStatus {
@@ -64297,7 +64252,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operations for adding/updating SharedSet entities.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -64368,7 +64323,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a list of criterion lists resulting from the filtering and paging of <a
   /// href='SharedSetService#get'>SharedSetService#get</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -64438,7 +64393,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents error codes for the SharedSetService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -64475,7 +64430,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error reasons
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SharedSetError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum SharedSetErrorReason {
@@ -64491,7 +64446,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// attached to campaign management entities such as campaigns, ad groups,
   /// creatives, criterion and etc.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "LabelServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -64593,7 +64548,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from LabelService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -64615,7 +64570,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An operation for adding, editing, removing <a href='Label'>Label</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -64686,7 +64641,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a subset of labels resulting from the filtering and paging of the <a
   /// href='LabelService#get'>LabelService#get</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -64756,7 +64711,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Base error class for LabelService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -64841,7 +64796,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reasons for the label error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LabelError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum LabelErrorReason {
@@ -64867,7 +64822,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='AdGroup#bids'>default bid</a> for its criteria. One or more ad groups
   /// belong to a campaign.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "AdGroupServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -64996,7 +64951,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from the AdGroupService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -65081,7 +65036,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A container for return values from the <a
   /// href='AdGroupService#mutateLabel'>AdGroupService#mutateLabel</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -65116,7 +65071,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a subset of adgroup resulting from the filtering and paging of the <a
   /// href='AdGroupService#get'>AdGroupService#get</a> call
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -65196,7 +65151,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// customer, see <a
   /// href='ManagedCustomerService#mutateLabel'>ManagedCustomerService#mutateLabel</a>.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "AccountLabelServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/mcm/v201601")]
@@ -65243,8 +65198,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// selector</returns>
     /// <exception cref='ApiException'>if a problem occurs fetching the information
     /// requested</exception>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlArrayAttribute("rval")]
     [return: System.Xml.Serialization.XmlArrayItemAttribute("labels", IsNullable = false)]
@@ -65267,8 +65222,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// parameter</returns>
     /// <exception cref='ApiException'>if problems occurs while modifying label
     /// information</exception>
-    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
+    [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", ResponseNamespace = "https://adwords.google.com/api/adwords/mcm/v201601", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
     [return: System.Xml.Serialization.XmlArrayAttribute("rval")]
     [return: System.Xml.Serialization.XmlArrayItemAttribute("labels", IsNullable = false)]
@@ -65284,7 +65239,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operation for adding, updating, or deleting a label.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -65352,9 +65307,152 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
+  /// <summary>Represents a date.
+  /// </summary>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
+  public partial class Date {
+    private int yearField;
+
+    private bool yearFieldSpecified;
+
+    private int monthField;
+
+    private bool monthFieldSpecified;
+
+    private int dayField;
+
+    private bool dayFieldSpecified;
+
+    /// <summary>Year (e.g., 2009)
+    /// </summary>
+    public int year {
+      get {
+        return this.yearField;
+      }
+      set {
+        this.yearField = value;
+        this.yearSpecified = true;
+      }
+    }
+
+    /// <summary> <code>true</code>, if a value is specified for <see cref="year" />,
+    /// <code>false</code> otherwise. </summary>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool yearSpecified {
+      get {
+        return this.yearFieldSpecified;
+      }
+      set {
+        this.yearFieldSpecified = value;
+      }
+    }
+
+    /// <summary>Month (1..12)
+    /// </summary>
+    public int month {
+      get {
+        return this.monthField;
+      }
+      set {
+        this.monthField = value;
+        this.monthSpecified = true;
+      }
+    }
+
+    /// <summary> <code>true</code>, if a value is specified for <see cref="month" />,
+    /// <code>false</code> otherwise. </summary>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool monthSpecified {
+      get {
+        return this.monthFieldSpecified;
+      }
+      set {
+        this.monthFieldSpecified = value;
+      }
+    }
+
+    /// <summary>Day (1..31)
+    /// </summary>
+    public int day {
+      get {
+        return this.dayField;
+      }
+      set {
+        this.dayField = value;
+        this.daySpecified = true;
+      }
+    }
+
+    /// <summary> <code>true</code>, if a value is specified for <see cref="day" />,
+    /// <code>false</code> otherwise. </summary>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool daySpecified {
+      get {
+        return this.dayFieldSpecified;
+      }
+      set {
+        this.dayFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='Date' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Date' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Date' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+  }
+
+
   /// <summary>Errors for <a href='LabelService'>LabelService</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -65389,7 +65487,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LabelServiceError.Reason", Namespace = "https://adwords.google.com/api/adwords/mcm/v201601")]
   public enum LabelServiceErrorReason {
@@ -65428,7 +65526,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// such Feeds can also be managed using a combination of the Feed, FeedMapping, and
   /// CustomerFeed services.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "AdCustomizerFeedServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -65508,7 +65606,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The result of a call to AdCustomizerFeedService#mutate.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -65580,7 +65678,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// AdCustomizerFeed is a view of a regular Feed, but with some simplifications
   /// intended to support the most common use cases.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -65766,7 +65864,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An attribute of an AdCustomizerFeed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -65899,7 +65997,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Possible data types.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdCustomizerFeedAttribute.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdCustomizerFeedAttributeType {
@@ -65917,7 +66015,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operation used to create or mutate an AdCustomizerFeed.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -65987,7 +66085,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The result of a call to AdCustomizerFeedService#get.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -66010,7 +66108,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>An error caused by an invalid ad customizer feed in an AdCustomizerFeedService
   /// request.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -66095,7 +66193,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error reasons.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdCustomizerFeedError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdCustomizerFeedErrorReason {
@@ -66128,7 +66226,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// managed by AdWords using existing feed services, including creating and
   /// modifying feeds, feed items, and adgroup feeds for the user.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "AdGroupExtensionSettingServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -66234,7 +66332,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from a <code></code> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -66305,7 +66403,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>An AdGroupExtensionSetting is used to add or modify extensions being served for
   /// the specified ad group.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -66457,7 +66555,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Feed hard type. Values coincide with placeholder type id.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Feed.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum FeedType {
@@ -66489,7 +66587,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A setting specifying when and which extensions should serve at a given level
   /// (customer, campaign, or ad group).
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -66608,7 +66706,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CalloutFeedItem))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CallFeedItem))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AppFeedItem))]
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -66888,7 +66986,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a structured snippet extension.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -66979,7 +67077,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a sitelink extension.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -66993,9 +67091,9 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
     private string sitelinkLine3Field;
 
-    private string[] sitelinkFinalUrlsField;
+    private UrlList sitelinkFinalUrlsField;
 
-    private string[] sitelinkFinalMobileUrlsField;
+    private UrlList sitelinkFinalMobileUrlsField;
 
     private string sitelinkTrackingUrlTemplateField;
 
@@ -67055,8 +67153,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
     /// <summary>A list of possible final URLs after all cross domain redirects.
     /// </summary>
-    [System.Xml.Serialization.XmlArrayItemAttribute("urls", IsNullable = false)]
-    public string[] sitelinkFinalUrls {
+    public UrlList sitelinkFinalUrls {
       get {
         return this.sitelinkFinalUrlsField;
       }
@@ -67067,8 +67164,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
     /// <summary>A list of possible final mobile URLs after all cross domain redirects.
     /// </summary>
-    [System.Xml.Serialization.XmlArrayItemAttribute("urls", IsNullable = false)]
-    public string[] sitelinkFinalMobileUrls {
+    public UrlList sitelinkFinalMobileUrls {
       get {
         return this.sitelinkFinalMobileUrlsField;
       }
@@ -67151,7 +67247,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a Review extension.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -67280,7 +67376,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a callout extension.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -67350,7 +67446,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a Call extension.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -67542,7 +67638,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Conversion type for a call extension.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -67629,7 +67725,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents an App extension.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -67645,9 +67741,9 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
     private string appUrlField;
 
-    private string[] appFinalUrlsField;
+    private UrlList appFinalUrlsField;
 
-    private string[] appFinalMobileUrlsField;
+    private UrlList appFinalMobileUrlsField;
 
     private string appTrackingUrlTemplateField;
 
@@ -67718,8 +67814,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
     /// <summary>A list of possible final URLs after all cross domain redirects.
     /// </summary>
-    [System.Xml.Serialization.XmlArrayItemAttribute("urls", IsNullable = false)]
-    public string[] appFinalUrls {
+    public UrlList appFinalUrls {
       get {
         return this.appFinalUrlsField;
       }
@@ -67730,8 +67825,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
     /// <summary>A list of possible final mobile URLs after all cross domain redirects.
     /// </summary>
-    [System.Xml.Serialization.XmlArrayItemAttribute("urls", IsNullable = false)]
-    public string[] appFinalMobileUrls {
+    public UrlList appFinalMobileUrls {
       get {
         return this.appFinalMobileUrlsField;
       }
@@ -67814,7 +67908,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The available application stores for app extensions.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AppFeedItem.AppStore", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AppFeedItemAppStore {
@@ -67830,7 +67924,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Different levels of platform restrictions.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ExtensionSetting.Platform", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ExtensionSettingPlatform {
@@ -67848,7 +67942,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operation used to create or mutate an AdGroupExtensionSetting.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -67919,7 +68013,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a subset of AdGroupExtensionSetting objects resulting from a
   /// <code>AdGroupExtensionSettingService#get</code> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -67989,7 +68083,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents an error for various extension setting services.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -68074,7 +68168,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error reasons.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ExtensionSettingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum ExtensionSettingErrorReason {
@@ -68231,7 +68325,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// managed by AdWords using existing feed services, including creating and
   /// modifying feeds, feed items, and campaign feeds for the user.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CampaignExtensionSettingServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -68337,7 +68431,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from a <code></code> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -68408,7 +68502,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A CampaignExtensionSetting is used to add or modify extensions being served for
   /// the specified campaign.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -68560,7 +68654,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operation used to create or mutate a CampaignExtensionSetting.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -68631,7 +68725,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a subset of CampaignExtensionSetting objects resulting from a
   /// <code>CampaignExtensionSettingService#get</code> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -68703,7 +68797,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// managed by AdWords using existing feed services, including creating and
   /// modifying feeds, feed items, and customer feeds for the user.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "CustomerExtensionSettingServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -68809,7 +68903,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from a <code></code> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -68880,7 +68974,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A CustomerExtensionSetting is used to add or modify extensions being served for
   /// the customer.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -68991,7 +69085,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operation used to create or mutate a CustomerExtensionSetting.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -69062,7 +69156,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a subset of CustomerExtensionSetting objects resulting from a
   /// <code>CustomerExtensionSettingService#get</code> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -69133,7 +69227,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Service used to manage campaign criterion bid overrides at the ad group level.
   /// Currently supports platform (mobile) bid multiplier overrides only.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "AdGroupBidModifierServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -69232,7 +69326,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from the AdGroupBidModifierService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -69267,7 +69361,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a subset of adgroup bid modifiers resulting from a call to <a
   /// href='AdGroupBidModifierService#get'>AdGroupBidModifierService#get</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -69302,7 +69396,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href='NetworkTarget#networkCoverageType'>Google Display Network</a>.</li> </ul>
   /// <span class="constraint AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "AdParamServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -69388,7 +69482,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents an operation on an <a href='AdParam'>AdParam</a>. The supported
   /// operators are <code>SET</code> and <code>REMOVE</code>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -69465,7 +69559,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// combination of these three fields:</p> <ul> <li><code>adGroupId</code></li>
   /// <li><code>criterionId</code></li> <li><code>paramIndex</code></li> </ul>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -69676,7 +69770,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Represents a page of AdParams returned by the <a
   /// href='AdParamService'>AdParamService</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -69775,7 +69869,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Policy violation for an AdParam.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -69786,7 +69880,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Errors for AdParamService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -69869,7 +69963,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdParamError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum AdParamErrorReason {
@@ -69910,7 +70004,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// will risk getting your customer rate-limited.</p> <p>Once a job's status changes
   /// to <code>DONE</code>, you can retrieve the job's results.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "BatchJobServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -70009,7 +70103,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A container for return values from the BatchJobService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -70031,7 +70125,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents a large mutation job.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -70289,7 +70383,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The current status of a BatchJob.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BatchJobStatus {
@@ -70306,12 +70400,13 @@ namespace Google.Api.Ads.AdWords.v201601 {
     /// </summary>
     ACTIVE,
     /// <summary>Indicates that a job is being canceled. It will remain in this status until any
-    /// partial results are written, and then will be marked CANCELED. This status is
-    /// not supported in SET operations.
+    /// partial results are written, and then will be marked CANCELED. Send this status
+    /// in a SET operation to cancel a job that is in progress. This is the only status
+    /// that can be explicitly set.
     /// </summary>
     CANCELING,
     /// <summary>Indicates that a job has been canceled. It will be garbage-collected 30 days
-    /// after cancellation. This status is not currently supported in SET operations.
+    /// after cancellation.
     /// </summary>
     CANCELED,
     /// <summary>Indicates that a job has completed. It will be garbage-collected 30 days after
@@ -70323,7 +70418,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Statistics on the progress of a <code>BatchJob</code>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -70495,7 +70590,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A URL that expires at a particular time.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -70579,7 +70674,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An error related to processing a <code>BatchJob</code>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -70616,7 +70711,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reason for the error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BatchJobProcessingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BatchJobProcessingErrorReason {
@@ -70635,7 +70730,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>An error related to a <code>BatchJob</code>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -70672,7 +70767,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>The reason for the error.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BatchJobError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BatchJobErrorReason {
@@ -70692,7 +70787,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>An operation on a <code>BatchJob</code>. <p class="note"><b>Note:</b> Only the
   /// <code>ADD</code> and <code>SET</code> operators are supported.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -70762,7 +70857,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>A page of <code>BatchJob</code>s.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -70785,7 +70880,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>BiddingStrategy Service to get/mutate bidding strategies. <span
   /// class="constraint AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "BiddingStrategyServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -70882,7 +70977,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A container for return values from the <a
   /// href='BiddingStrategyService#mutate'>BiddingStrategyService#mutate</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -70905,7 +71000,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Bidding strategies store shared bidding configuration data and are account-level
   /// objects.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -71123,7 +71218,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Status of the bidding strategy.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SharedBiddingStrategy.BiddingStrategyStatus", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum SharedBiddingStrategyBiddingStrategyStatus {
@@ -71135,7 +71230,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operations for adding/updating bidding strategies.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -71206,7 +71301,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a list of bidding strategies resulting from the filtering and paging of
   /// <a href='BiddingStrategy#get'>BiddingStrategy#get</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -71228,7 +71323,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Represents error codes for bidding strategy entities.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -71311,7 +71406,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BiddingStrategyError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
   public enum BiddingStrategyErrorReason {
@@ -71339,7 +71434,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// Any attempt to make more than one operation will result in an
   /// <code>ApiException</code>.</p>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "BudgetOrderServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/billing/v201601")]
@@ -71443,7 +71538,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A container for return values from the <a
   /// href='BudgetOrderService#mutate'>BudgetOrderService#mutate</a> method.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -71514,7 +71609,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A <a href="https://support.google.com/adwords/answer/2393037">budget order</a>
   /// links an account-wide budget with a <a href='BillingAccount'>BillingAccount</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -71869,7 +71964,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// class="constraint Billing">This element only applies if manager account is
   /// whitelisted for new billing backend.</span>
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -72065,7 +72160,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BudgetOrderRequest.Status", Namespace = "https://adwords.google.com/api/adwords/billing/v201601")]
   public enum BudgetOrderRequestStatus {
@@ -72083,7 +72178,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Operation for <a href='BudgetOrder'>BudgetOrder</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -72155,7 +72250,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// href="https://support.google.com/adwords/answer/2375371">consolidated
   /// billing</a>.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -72287,7 +72382,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A page of <a href='BudgetOrder'>BudgetOrder</a>s from <a
   /// href='BudgetOrderService#get'>BudgetOrderService#get</a> method.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -72357,7 +72452,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error information returned for CustomerOrderLineService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -72395,7 +72490,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Enums for all the reasons an error can be thrown to the user during a
   /// CustomerOrderLine mutate operation.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomerOrderLineError.Reason", Namespace = "https://adwords.google.com/api/adwords/billing/v201601")]
   public enum CustomerOrderLineErrorReason {
@@ -72471,7 +72566,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Error information for BudgetOrderService.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -72506,7 +72601,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   }
 
 
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BudgetOrderError.Reason", Namespace = "https://adwords.google.com/api/adwords/billing/v201601")]
   public enum BudgetOrderErrorReason {
@@ -72574,7 +72669,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>Budget Service to get/mutate budgets.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Web.Services.WebServiceBindingAttribute(Name = "BudgetServiceSoapBinding", Namespace = "https://adwords.google.com/api/adwords/cm/v201601")]
@@ -72673,7 +72768,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>A container for return values from the <a
   /// href='BudgetService#mutate'>BudgetService#mutate</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -72708,7 +72803,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
   /// <summary>Contains a list of budgets resulting from the filtering and paging of <a
   /// href='BudgetService#get'>BudgetService#get</a> call.
   /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.1055.0")]
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -73152,7 +73247,11 @@ namespace Google.Api.Ads.AdWords.v201601 {
     Customer get();
 
     /// <summary>Returns details of all the customers directly accessible by the user
-    /// authenticating the call.
+    /// authenticating the call. Callers are discouraged from setting the
+    /// <code>clientCustomerId</code> header field in calls to <a
+    /// href='CustomerService#getCustomers()'>CustomerService#getCustomers()</a>, as its
+    /// value is ignored by this method, and its presence will trigger an authorization
+    /// error if the caller does not have access to the customer with the included ID.
     /// </summary>
     Customer[] getCustomers();
 
@@ -73688,9 +73787,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
 
 
   /// <summary>Use this service to manage media for your template ads. After uploading images
-  /// and videos with this service, use the IDs when creating template ads. <p>When
-  /// creating image ads do not use this service to upload images. The
-  /// AdGroupAdService allows you to upload image data when creating the image ad.</p>
+  /// and videos with this service, use the IDs when creating image or template ads.
   /// </summary>
   public interface IMediaService {
     /// <summary>
@@ -75094,8 +75191,8 @@ namespace Google.Api.Ads.AdWords.v201601 {
       codes["QueryErrorReason.INVALID_MAX_DATE_IN_DURING_CLAUSE"] = "The maximum date in the DURING clause is not a valid date in YYYYMMDD format.";
       codes["QueryErrorReason.MAX_LESS_THAN_MIN_IN_DURING_CLAUSE"] = "The minimum date in the DURING is after the maximum date.";
       codes["QueryErrorReason.VALIDATION_FAILED"] = "The query matched the grammar, but is invalid in some way such as using a service that isn't supported.";
-      codes["PagingErrorReason.START_INDEX_CANNOT_BE_NEGATIVE"] = "";
-      codes["PagingErrorReason.NUMBER_OF_RESULTS_CANNOT_BE_NEGATIVE"] = "";
+      codes["PagingErrorReason.START_INDEX_CANNOT_BE_NEGATIVE"] = "The start index value cannot be a negative number.";
+      codes["PagingErrorReason.NUMBER_OF_RESULTS_CANNOT_BE_NEGATIVE"] = "The number of results cannot be a negative number.";
       codes["PagingErrorReason.UNKNOWN"] = "<span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
       codes["OperatorErrorReason.OPERATOR_NOT_SUPPORTED"] = "";
       codes["NullErrorReason.NULL_CONTENT"] = "Specified list/container must not contain any null elements";
@@ -75110,13 +75207,10 @@ namespace Google.Api.Ads.AdWords.v201601 {
       codes["MediaErrorReason.ENTITY_REFERENCED_IN_MULTIPLE_OPS"] = "A media may only be modified once per call";
       codes["MediaErrorReason.FIELD_NOT_SUPPORTED_FOR_MEDIA_SUB_TYPE"] = "Field is not supported for the media sub type.";
       codes["MediaErrorReason.INVALID_MEDIA_ID"] = "The media id is invalid";
-      codes["MediaErrorReason.INVALID_MEDIA_TYPE"] = "The media type is invalid";
       codes["MediaErrorReason.INVALID_MEDIA_SUB_TYPE"] = "The media subtype is invalid";
+      codes["MediaErrorReason.INVALID_MEDIA_TYPE"] = "The media type is invalid";
       codes["MediaErrorReason.INVALID_REFERENCE_ID"] = "The media reference id is invalid";
       codes["MediaErrorReason.INVALID_YOU_TUBE_ID"] = "The YouTube video id is invalid";
-      codes["MediaErrorReason.YOU_TUBE_VIDEO_NOT_FOUND"] = "The YouTube video id is syntactically valid but the video was not found.";
-      codes["MediaErrorReason.YOU_TUBE_SERVICE_UNAVAILABLE"] = "YouTube is unavailable for requesting video data.";
-      codes["MediaErrorReason.YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION"] = "The YouTube video has a non positive duration.";
       codes["MediaErrorReason.MEDIA_FAILED_TRANSCODING"] = "Media has failed transcoding";
       codes["MediaErrorReason.MEDIA_NOT_TRANSCODED"] = "Media has not been transcoded";
       codes["MediaErrorReason.MEDIA_TYPE_DOES_NOT_MATCH_OBJECT_TYPE"] = "The MediaType does not match the actual media object's type";
@@ -75124,7 +75218,10 @@ namespace Google.Api.Ads.AdWords.v201601 {
       codes["MediaErrorReason.NULL_REFERENCE_ID_AND_MEDIA_ID"] = "One of reference Id or media Id must be specified";
       codes["MediaErrorReason.TOO_LONG"] = "The string has too many characters.";
       codes["MediaErrorReason.UNSUPPORTED_OPERATION"] = "The specified operation is not supported. Only ADD, SET, and REMOVE are supported";
-      codes["MediaErrorReason.UNSUPPORTED_TYPE"] = "";
+      codes["MediaErrorReason.UNSUPPORTED_TYPE"] = "The specified type is not supported.";
+      codes["MediaErrorReason.YOU_TUBE_SERVICE_UNAVAILABLE"] = "YouTube is unavailable for requesting video data.";
+      codes["MediaErrorReason.YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION"] = "The YouTube video has a non positive duration.";
+      codes["MediaErrorReason.YOU_TUBE_VIDEO_NOT_FOUND"] = "The YouTube video id is syntactically valid but the video was not found.";
       codes["MediaBundleErrorReason.ENTRY_POINT_CANNOT_BE_SET_USING_MEDIA_SERVICE"] = "The entryPoint field cannot be set using the <code>MediaService</code>.";
       codes["MediaBundleErrorReason.BAD_REQUEST"] = "There was a problem with the request.";
       codes["MediaBundleErrorReason.DOUBLECLICK_BUNDLE_NOT_ALLOWED"] = "HTML5 ads using DoubleClick Studio created ZIP files are not supported.";
@@ -75563,7 +75660,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
       codes["ConversionTrackingErrorReason.CONVERSION_TYPE_NOT_FOUND"] = "An attempt to access a conversion type failed because no conversion type with this ID exists for this account.";
       codes["ConversionTrackingErrorReason.DOMAIN_EXCEPTION"] = "An exception occurred in the domain layer during an attempt to process a ConversionTypeOperation.";
       codes["ConversionTrackingErrorReason.INCONSISTENT_COUNTING_TYPE"] = "An attempt was made to set a counting type inconsistent with other properties. Currently, AppConversion with appConversionType = DOWNLOAD and appPlatform = ANDROID_MARKET cannot have a countingType of MANY_PER_CLICK";
-      codes["ConversionTrackingErrorReason.DUPLICATE_APP_ID"] = "The user specified two identical app ids when attempting to create or rename a conversion type.";
+      codes["ConversionTrackingErrorReason.DUPLICATE_APP_ID"] = "The user specified two identical app ids when attempting to create or modify a conversion type.";
       codes["ConversionTrackingErrorReason.DUPLICATE_NAME"] = "The user specified two identical names when attempting to create or rename multiple conversion types.";
       codes["ConversionTrackingErrorReason.EMAIL_FAILED"] = "An error occurred while the server was sending the email.";
       codes["ConversionTrackingErrorReason.EXCEEDED_CONVERSION_TYPE_LIMIT"] = "The maximum number of active conversion types for this account has been exceeded.";
@@ -75683,7 +75780,7 @@ namespace Google.Api.Ads.AdWords.v201601 {
       codes["LocationCriterionServiceErrorReason.INVALID_COUNTRY_CODE"] = "";
       codes["LocationCriterionServiceErrorReason.LOCATION_CRITERION_SERVICE_ERROR"] = "<span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
       codes["ManagedCustomerServiceErrorReason.UNKNOWN"] = "Unknown.";
-      codes["ManagedCustomerServiceErrorReason.NOT_AUTHORIZED"] = "The user is not authorized to perform the action";
+      codes["ManagedCustomerServiceErrorReason.NOT_AUTHORIZED"] = "The user is not authorized to perform the action.";
       codes["ManagedCustomerServiceErrorReason.INVALID_SELECTOR"] = "Invalid selector";
       codes["ManagedCustomerServiceErrorReason.INVALID_TIMEZONE"] = "Can't process the passed in timezone.";
       codes["ManagedCustomerServiceErrorReason.INVALID_CURRENCY"] = "Can't process the passed in currency code.";

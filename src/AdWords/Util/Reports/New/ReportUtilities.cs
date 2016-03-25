@@ -46,7 +46,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// Default report version.
     /// </summary>
-    internal const string DEFAULT_REPORT_VERSION = "v201509";
+    internal const string DEFAULT_REPORT_VERSION = "v201603";
 
     /// <summary>
     /// Sets the reporting API version to use.
@@ -175,13 +175,11 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       AdWordsErrorHandler errorHandler = new AdWordsErrorHandler(this.User as AdWordsUser);
       while (true) {
         WebResponse response = null;
-        HttpWebRequest request = BuildRequest(downloadUrl, postBody);
-
+        HttpWebRequest request = null;
         LogEntry logEntry = new LogEntry(User.Config, new DefaultDateTimeProvider());
 
-        logEntry.LogRequest(request, postBody, HEADERS_TO_MASK);
-
         try {
+          request = BuildRequest(downloadUrl, postBody, logEntry);
           response = request.GetResponse();
 
           logEntry.LogResponse(response, false, "Response truncated.");
@@ -191,13 +189,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
           Exception reportsException = null;
 
           string contents = HttpUtilities.GetErrorResponseBody(e);
-
           logEntry.LogResponse(e.Response, true, contents);
           logEntry.Flush();
 
           reportsException = ParseException(e, contents);
 
-          if (AdWordsErrorHandler.IsOAuthTokenExpiredError(reportsException)) {
+          if (AdWordsErrorHandler.IsOAuthTokenExpiredError(reportsException) && request != null) {
             reportsException = new AdWordsCredentialsExpiredException(
                 request.Headers["Authorization"]);
           }
@@ -217,8 +214,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// </summary>
     /// <param name="downloadUrl">The download url.</param>
     /// <param name="postBody">The POST body.</param>
+    /// <param name="logEntry">The logEntry to write the HTTP logs.</param>
     /// <returns>A webrequest to download reports.</returns>
-    private HttpWebRequest BuildRequest(string downloadUrl, string postBody) {
+    private HttpWebRequest BuildRequest(string downloadUrl, string postBody, LogEntry logEntry) {
       AdWordsAppConfig config = this.User.Config as AdWordsAppConfig;
 
       HttpWebRequest request = (HttpWebRequest) HttpUtilities.BuildRequest(downloadUrl, "POST",
@@ -247,9 +245,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
             ToLower());
       }
 
-      using (StreamWriter writer = new StreamWriter(request.GetRequestStream())) {
-        writer.Write(postBody);
-      }
+      HttpUtilities.WritePostBodyAndLog(request, postBody, logEntry, HEADERS_TO_MASK);
       return request;
     }
 

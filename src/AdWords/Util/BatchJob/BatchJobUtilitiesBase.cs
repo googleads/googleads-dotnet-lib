@@ -160,13 +160,8 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
         logEntry.Flush();
         return response.Headers["Location"];
       } catch (WebException e) {
-        response = e.Response;
-        string contents = "";
-        if (response != null) {
-          contents = MediaUtilities.GetStreamContentsAsString(
-            response.GetResponseStream());
-        }
-        logEntry.LogResponse(response, false, contents);
+        string contents = HttpUtilities.GetErrorResponseBody(e);
+        logEntry.LogResponse(e.Response, false, contents);
         logEntry.Flush();
         throw ParseException(e, contents);
       } finally {
@@ -221,7 +216,6 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
 
       while (true) {
         WebRequest request = HttpUtilities.BuildRequest(url, "GET", user.Config);
-
         WebResponse response = null;
 
         LogEntry logEntry = new LogEntry(User.Config, new DefaultDateTimeProvider());
@@ -353,11 +347,11 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
         request.ContentType = "application/xml";
 
         try {
+          logEntry.LogRequest(request, "Truncated", HEADERS_TO_MASK);
+
           using (Stream requestStream = request.GetRequestStream()) {
             requestStream.Write(postBody, start, bytesToWrite);
           }
-
-          logEntry.LogRequest(request, "Truncated", HEADERS_TO_MASK);
 
           response = request.GetResponse();
 
@@ -389,8 +383,8 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
     /// <returns>true, if this exception represents a successful partial
     /// upload, false otherwise.</returns>
     private bool IsPartialUploadSuccessResponse(WebException e) {
-      WebResponse response = e.Response;
-      return (int) ((response as HttpWebResponse).StatusCode) == 308;
+      HttpWebResponse response = e.Response as HttpWebResponse;
+      return response != null && (int) response.StatusCode == 308;
     }
 
     /// <summary>
@@ -408,7 +402,6 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
 
       using (WebResponse response = e.Response) {
         string contents = HttpUtilities.GetErrorResponseBody(e);
-
         logEntry.LogResponse(response, false, contents);
         logEntry.Flush();
 

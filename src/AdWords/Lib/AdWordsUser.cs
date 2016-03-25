@@ -35,6 +35,14 @@ namespace Google.Api.Ads.AdWords.Lib {
     private List<ApiCallEntry> apiCalls = new List<ApiCallEntry>();
 
     /// <summary>
+    /// Public constructor. Use this version if you want to construct
+    /// an AdWordsUser with a custom configuration.
+    /// </summary>
+    public AdWordsUser(AdWordsAppConfig config)
+      : base(config) {
+    }
+
+    /// <summary>
     /// Public constructor. Use this version if you want the library to
     /// use all settings from App.config.
     /// </summary>

@@ -79,7 +79,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
       ' Create your sitelinks.
       Dim sitelink1 As New SitelinkFeedItem()
       sitelink1.sitelinkText = "Store Hours"
-      sitelink1.sitelinkFinalUrls = New String() {"http://www.example.com/storehours"}
+      sitelink1.sitelinkFinalUrls = New UrlList()
+      sitelink1.sitelinkFinalUrls.urls = New String() {"http://www.example.com/storehours"}
       extensions.Add(sitelink1)
 
       Dim startOfThanksGiving As New DateTime(DateTime.Now.Year, 11, 20, 0, 0, 0)
@@ -91,7 +92,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
         ' Show the Thanksgiving specials link only from 20 - 27 Nov.
         Dim sitelink2 As New SitelinkFeedItem()
         sitelink2.sitelinkText = "Thanksgiving Specials"
-        sitelink2.sitelinkFinalUrls = New String() {"http://www.example.com/thanksgiving"}
+        sitelink2.sitelinkFinalUrls = New UrlList()
+        sitelink2.sitelinkFinalUrls.urls = New String() {"http://www.example.com/thanksgiving"}
         sitelink2.startTime = String.Format("{0}1120 000000 {1}", DateTime.Now.Year, _
                                             customer.dateTimeZone)
         sitelink2.endTime = String.Format("{0}1127 235959 {1}", DateTime.Now.Year, _
@@ -102,7 +104,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
       ' Show the wifi details primarily for high end mobile users.
       Dim sitelink3 As New SitelinkFeedItem()
       sitelink3.sitelinkText = "Wifi available"
-      sitelink3.sitelinkFinalUrls = New String() {"http://www.example.com/mobile/wifi"}
+      sitelink3.sitelinkFinalUrls = New UrlList()
+      sitelink3.sitelinkFinalUrls.urls = New String() {"http://www.example.com/mobile/wifi"}
       sitelink3.devicePreference = New FeedItemDevicePreference()
       sitelink3.devicePreference.devicePreference = 30001
       extensions.Add(sitelink3)
@@ -110,7 +113,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
       ' Show the happy hours link only during Mon - Fri 6PM to 9PM.
       Dim sitelink4 As New SitelinkFeedItem()
       sitelink4.sitelinkText = "Happy hours"
-      sitelink4.sitelinkFinalUrls = New String() {"http://www.example.com/happyhours"}
+      sitelink4.sitelinkFinalUrls = New UrlList()
+      sitelink4.sitelinkFinalUrls.urls = New String() {"http://www.example.com/happyhours"}
       extensions.Add(sitelink4)
 
       Dim schedule1 As New FeedItemSchedule()

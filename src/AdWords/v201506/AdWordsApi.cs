@@ -25,6 +25,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
   using System.Web.Services.Protocols;
   using System.Web.Services;
 
+
+
   /// <summary>Use this service to manage ads. Available ad types are subclasses of the base <a
   /// href='Ad'>Ad</a> type and are shown in the <a
   /// href='AdGroupAd#ad'>AdGroupAd.ad</a> documentation. Here are some of the
@@ -94,9 +96,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupAdPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((AdGroupAdPage) (results[0]));
     }
 
@@ -123,9 +125,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupAdReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupAdOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((AdGroupAdReturnValue) (results[0]));
     }
 
@@ -149,9 +151,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupAdLabelReturnValue mutateLabel([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupAdLabelOperation[] operations) {
       object[] results = this.Invoke("mutateLabel", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((AdGroupAdLabelReturnValue) (results[0]));
     }
 
@@ -166,9 +168,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupAdPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((AdGroupAdPage) (results[0]));
     }
 
@@ -181,9 +183,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Ad[] upgradeUrl([System.Xml.Serialization.XmlElementAttribute("operations")] AdUrlUpgrade[] operations) {
       object[] results = this.Invoke("upgradeUrl", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((Ad[]) (results[0]));
     }
   }
@@ -949,7 +951,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// class="constraint Selectable">This field can be selected using the value
     /// "CreativeFinalUrls".</span><span class="constraint Filterable">This field can be
     /// filtered on.</span> <span class="constraint CollectionSize">The maximum size of
-    /// this collection is 10.</span></p>
+    /// this collection is 10.</span> <span class="constraint
+    /// ContentsStringLength">Strings in this field must be non-empty
+    /// (trimmed).</span></p>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("finalUrls")]
     public string[] finalUrls {
@@ -967,7 +971,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// class="constraint Selectable">This field can be selected using the value
     /// "CreativeFinalMobileUrls".</span><span class="constraint Filterable">This field
     /// can be filtered on.</span> <span class="constraint CollectionSize">The maximum
-    /// size of this collection is 10.</span></p>
+    /// size of this collection is 10.</span> <span class="constraint
+    /// ContentsStringLength">Strings in this field must be non-empty
+    /// (trimmed).</span></p>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("finalMobileUrls")]
     public string[] finalMobileUrls {
@@ -1030,9 +1036,11 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>The device preference for the ad. <span class="constraint Selectable">This field
-    /// can be selected using the value "DevicePreference".</span><span
-    /// class="constraint Filterable">This field can be filtered on.</span>
+    /// <summary>The device preference for the ad. You can only specify a preference for mobile
+    /// devices (CriterionId 30001). If unspecified (no device preference), all devices
+    /// are targeted. <span class="constraint Selectable">This field can be selected
+    /// using the value "DevicePreference".</span><span class="constraint
+    /// Filterable">This field can be filtered on.</span>
     /// </summary>
     public long devicePreference {
       get {
@@ -1646,7 +1654,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     private string description2Field;
 
-    /// <summary>The headline of the ad <span class="constraint Selectable">This field can be
+    /// <summary>The headline of the ad. <span class="constraint Selectable">This field can be
     /// selected using the value "Headline".</span><span class="constraint
     /// Filterable">This field can be filtered on.</span>
     /// </summary>
@@ -1659,8 +1667,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>The first description line <span class="constraint Selectable">This field can be
-    /// selected using the value "Description1".</span><span class="constraint
+    /// <summary>The first description line. <span class="constraint Selectable">This field can
+    /// be selected using the value "Description1".</span><span class="constraint
     /// Filterable">This field can be filtered on.</span>
     /// </summary>
     public string description1 {
@@ -1672,7 +1680,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>The second description line <span class="constraint Selectable">This field can
+    /// <summary>The second description line. <span class="constraint Selectable">This field can
     /// be selected using the value "Description2".</span><span class="constraint
     /// Filterable">This field can be filtered on.</span>
     /// </summary>
@@ -3487,7 +3495,10 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>Dimensions (height and width) of the ad. Required for standard third-party ads.
+    /// <summary>Dimensions (height and width) of the ad. This field is optional for
+    /// ThirdPartyRedirectAd. Ad Exchange traditional yield management creatives do not
+    /// specify the dimension on the ThirdPartyRedirectAd; instead, the size is
+    /// specified in the publisher front end when creating a mediation chain.
     /// </summary>
     public Dimensions dimensions {
       get {
@@ -3498,10 +3509,10 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>Snippet for this ad. Required for standard third-party ads. <span
-    /// class="constraint Selectable">This field can be selected using the value
-    /// "RichMediaAdSnippet".</span> <span class="constraint StringLength">The length of
-    /// this string should be between 1 and 3072, inclusive.</span>
+    /// <summary>Snippet for this ad. Required for standard third-party ads. <p>The length of the
+    /// string should be between 1 and 3072, inclusive. <span class="constraint
+    /// Selectable">This field can be selected using the value
+    /// "RichMediaAdSnippet".</span></p>
     /// </summary>
     public string snippet {
       get {
@@ -4937,7 +4948,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <summary>Disapproved
     /// </summary>
     DISAPPROVED,
-    /// <summary>Approved - famiy safe
+    /// <summary>Approved - family safe
     /// </summary>
     FAMILY_SAFE,
     /// <summary>Approved - non-family safe
@@ -5143,7 +5154,11 @@ namespace Google.Api.Ads.AdWords.v201506 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Label.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201506")]
   public enum LabelStatus {
+    /// <summary>The label is enabled.
+    /// </summary>
     ENABLED,
+    /// <summary>The label has been removed.
+    /// </summary>
     REMOVED,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
@@ -7444,7 +7459,11 @@ namespace Google.Api.Ads.AdWords.v201506 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PagingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201506")]
   public enum PagingErrorReason {
+    /// <summary>The start index value cannot be a negative number.
+    /// </summary>
     START_INDEX_CANNOT_BE_NEGATIVE,
+    /// <summary>The number of results cannot be a negative number.
+    /// </summary>
     NUMBER_OF_RESULTS_CANNOT_BE_NEGATIVE,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
@@ -8022,27 +8041,18 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <summary>The media id is invalid
     /// </summary>
     INVALID_MEDIA_ID,
-    /// <summary>The media type is invalid
-    /// </summary>
-    INVALID_MEDIA_TYPE,
     /// <summary>The media subtype is invalid
     /// </summary>
     INVALID_MEDIA_SUB_TYPE,
+    /// <summary>The media type is invalid
+    /// </summary>
+    INVALID_MEDIA_TYPE,
     /// <summary>The media reference id is invalid
     /// </summary>
     INVALID_REFERENCE_ID,
     /// <summary>The YouTube video id is invalid
     /// </summary>
     INVALID_YOU_TUBE_ID,
-    /// <summary>The YouTube video id is syntactically valid but the video was not found.
-    /// </summary>
-    YOU_TUBE_VIDEO_NOT_FOUND,
-    /// <summary>YouTube is unavailable for requesting video data.
-    /// </summary>
-    YOU_TUBE_SERVICE_UNAVAILABLE,
-    /// <summary>The YouTube video has a non positive duration.
-    /// </summary>
-    YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION,
     /// <summary>Media has failed transcoding
     /// </summary>
     MEDIA_FAILED_TRANSCODING,
@@ -8065,7 +8075,18 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// supported
     /// </summary>
     UNSUPPORTED_OPERATION,
+    /// <summary>The specified type is not supported.
+    /// </summary>
     UNSUPPORTED_TYPE,
+    /// <summary>YouTube is unavailable for requesting video data.
+    /// </summary>
+    YOU_TUBE_SERVICE_UNAVAILABLE,
+    /// <summary>The YouTube video has a non positive duration.
+    /// </summary>
+    YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION,
+    /// <summary>The YouTube video id is syntactically valid but the video was not found.
+    /// </summary>
+    YOU_TUBE_VIDEO_NOT_FOUND,
   }
 
 
@@ -12524,9 +12545,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((CampaignPage) (results[0]));
     }
 
@@ -12546,9 +12567,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] CampaignOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((CampaignReturnValue) (results[0]));
     }
 
@@ -12573,9 +12594,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignLabelReturnValue mutateLabel([System.Xml.Serialization.XmlElementAttribute("operations")] CampaignLabelOperation[] operations) {
       object[] results = this.Invoke("mutateLabel", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((CampaignLabelReturnValue) (results[0]));
     }
 
@@ -12590,9 +12611,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((CampaignPage) (results[0]));
     }
   }
@@ -13444,7 +13465,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     /// <summary>Number of campaigns actively using this budget. This field is only populated for
     /// Get operations. <span class="constraint Selectable">This field can be selected
-    /// using the value "BudgetReferenceCount".</span> <span class="constraint
+    /// using the value "BudgetReferenceCount".</span><span class="constraint
+    /// Filterable">This field can be filtered on.</span> <span class="constraint
     /// ReadOnly">This field is read only and will be ignored when sent to the
     /// API.</span>
     /// </summary>
@@ -13550,7 +13572,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
       public static readonly Field DeliveryMethod = new Field("DeliveryMethod", false, true);
 
-      public static readonly Field BudgetReferenceCount = new Field("BudgetReferenceCount", false, true);
+      public static readonly Field BudgetReferenceCount = new Field("BudgetReferenceCount", true, true);
 
       public static readonly Field IsBudgetExplicitlyShared = new Field("IsBudgetExplicitlyShared", true, true);
 
@@ -13609,6 +13631,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
       public static readonly Field BudgetName = Fields.BudgetName;
 
       public static readonly Field Amount = Fields.Amount;
+
+      public static readonly Field BudgetReferenceCount = Fields.BudgetReferenceCount;
 
       public static readonly Field IsBudgetExplicitlyShared = Fields.IsBudgetExplicitlyShared;
 
@@ -14470,9 +14494,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     private string trackingUrlField;
 
     /// <summary>The url used for dynamic tracking. For more information, see the article <a
-    /// href="https://support.google.com/adwords/answer/2549100?hl=en"> Specify "NONE"
-    /// to clear existing url. <span class="constraint StringLength">This string must
-    /// not be empty.</span> </a>
+    /// href="https://support.google.com/adwords/answer/2549100">Use dynamic tracking
+    /// URLs</a>. Specify "NONE" to clear existing url. <span class="constraint
+    /// StringLength">This string must not be empty.</span>
     /// </summary>
     public string trackingUrl {
       get {
@@ -15568,7 +15592,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
   }
 
 
-  /// <summary>The bidding strategy type.
+  /// <summary>The bidding strategy type. See <a
+  /// href='BiddingStrategyConfiguration'>BiddingStrategyConfiguration</a> for
+  /// additional information.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15577,14 +15603,50 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <summary>Replaced by TARGET_SPEND. Kept only for legacy support.
     /// </summary>
     BUDGET_OPTIMIZER,
+    /// <summary>Replaced by TARGET_CPA. Kept only for legacy support.
+    /// </summary>
     CONVERSION_OPTIMIZER,
+    /// <summary>Manual click based bidding where user pays per click. See <a
+    /// href='ManualCpcBiddingScheme'>ManualCpcBiddingScheme</a> for more details.
+    /// </summary>
     MANUAL_CPC,
+    /// <summary>Manual impression based bidding where user pays per thousand impressions. See <a
+    /// href='ManualCpmBiddingScheme'>ManualCpmBiddingScheme</a> for more details.
+    /// </summary>
     MANUAL_CPM,
+    /// <summary>Page-One Promoted is an automated bid strategy that sets max CPC bids to target
+    /// impressions on page one or page one promoted slots on google.com. See <a
+    /// href='PageOnePromotedBiddingScheme'>PageOnePromotedBiddingScheme</a> for more
+    /// details.
+    /// </summary>
     PAGE_ONE_PROMOTED,
+    /// <summary>Target Spend (Maximize Clicks) is an automated bid strategy that sets your bids
+    /// to help get as many clicks as possible within your budget. See <a
+    /// href='TargetSpendBiddingScheme'>TargetSpendBiddingScheme</a> for more details.
+    /// </summary>
     TARGET_SPEND,
+    /// <summary>Enhanced CPC is a bidding strategy that raises your bids for clicks that seem
+    /// more likely to lead to a conversion and lowers them for clicks where they seem
+    /// less likely. See <a href='EnhancedCpcBiddingScheme'>EnhancedCpcBiddingScheme</a>
+    /// for more details.
+    /// </summary>
     ENHANCED_CPC,
+    /// <summary>Target CPA is an automated bid strategy that sets bids to help get as many
+    /// conversions as possible at the target cost-per-acquisition (CPA) you set. See <a
+    /// href='TargetCpaBiddingScheme'>TargetCpaBiddingScheme</a> for more details.
+    /// </summary>
     TARGET_CPA,
+    /// <summary>Target ROAS is an automated bidding strategy that helps you maximize revenue
+    /// while averaging a specific target Return On Average Spend (ROAS). See <a
+    /// href='TargetRoasBiddingScheme'>TargetRoasBiddingScheme</a> for more details.
+    /// </summary>
     TARGET_ROAS,
+    /// <summary>Target Outrank Share is an automated bidding strategy that sets bids based on
+    /// the target fraction of auctions where the advertiser should outrank a specific
+    /// competitor. See <a
+    /// href='TargetOutrankShareBiddingScheme'>TargetOutrankShareBiddingScheme</a> for
+    /// more details.
+    /// </summary>
     TARGET_OUTRANK_SHARE,
     /// <summary>Special bidding strategy type used to reset the bidding strategy at AdGroup and
     /// AdGroupCriterion.
@@ -15699,9 +15761,10 @@ namespace Google.Api.Ads.AdWords.v201506 {
   }
 
 
-  /// <summary>Target Spend bidding scheme, in which Google automatically places bids for the
-  /// user based on their daily/monthly budget or optional spend target. <span
-  /// class="constraint AdxEnabled">This is disabled for AdX.</span>
+  /// <summary><a href="https://support.google.com/adwords/answer/6268626">Target Spend</a> is
+  /// an automated bid strategy that sets your bids to help get as many clicks as
+  /// possible within your budget. <span class="constraint AdxEnabled">This is
+  /// disabled for AdX.</span>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16142,15 +16205,15 @@ namespace Google.Api.Ads.AdWords.v201506 {
   }
 
 
-  /// <summary>Target Cpa bidding strategy helps you maximize your return on investment (ROI)
-  /// by automatically getting you the most possible conversions for your budget. This
-  /// is similar to the <code>ConversionOptimizerBiddingScheme</code> but does not
-  /// support user-entered AdGroup-level target CPA bids, but rather a strategy-wide
-  /// average CPA target. <p>Note that campaigns must meet <a
-  /// href="//support.google.com/adwords/answer/2471188">specific eligibility
-  /// requirements</a> before they can use the <code>TargetCpaBiddingScheme</code>
-  /// bidding strategy. <span class="constraint AdxEnabled">This is disabled for
-  /// AdX.</span></p>
+  /// <summary><a href="https://support.google.com/adwords/answer/6268632">Target CPA</a> is an
+  /// automated bid strategy that sets bids to help get as many conversions as
+  /// possible at the target cost-per-acquisition (CPA) you set. <p>A <a
+  /// href='#targetCpa'>target CPA</a> must be set for the strategy, but can also be
+  /// optionally set for individual ad groups in the strategy. Ad group targets, if
+  /// set, will override strategy targets.</p> <p>Note that campaigns must meet <a
+  /// href="https://support.google.com/adwords/answer/2471188">specific eligibility
+  /// requirements</a> before they can use the Target CPA bid strategy. <span
+  /// class="constraint AdxEnabled">This is disabled for AdX.</span></p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -16740,15 +16803,19 @@ namespace Google.Api.Ads.AdWords.v201506 {
   }
 
 
-  /// <summary>Conversion optimizer bidding strategy helps you maximize your return on
+  /// <summary>This bidding strategy has been deprecated and replaced with <a
+  /// href='TargetCpaBiddingScheme'>TargetCpa</a>. After V201601, we no longer allow
+  /// advertisers to opt into this strategy--<code></code> solely exists so that
+  /// advertisers can access campaigns that had specified this strategy.<br /> <br />
+  /// <p>Conversion optimizer bidding strategy helps you maximize your return on
   /// investment (ROI) by automatically getting you the most possible conversions for
-  /// your budget. <p class="warning"><code>pricingMode</code> currently defaults to
-  /// <code></code> and cannot be changed.</p> <p>Note that campaigns must meet <a
+  /// your budget.</p> <p class="warning"><code>pricingMode</code> currently defaults
+  /// to <code></code> and cannot be changed.</p> <p>Note that campaigns must meet <a
   /// href="https://support.google.com/adwords/answer/2471188#CORequirements">specific
   /// eligibility requirements</a> before they can use the
   /// <code>ConversionOptimizer</code> bidding strategy.</p> <p>For more information
   /// on conversion optimizer, visit the <a
-  /// href="https://support.google.com/adwords/answer/2471188">Conversion Optimizer
+  /// href="https://support.google.com/adwords/answer/2390684">Conversion Optimizer
   /// help center</a>.</p> <span class="constraint AdxEnabled">This is disabled for
   /// AdX.</span>
   /// </summary>
@@ -17359,7 +17426,12 @@ namespace Google.Api.Ads.AdWords.v201506 {
     private Money bidField;
 
     /// <summary>Target cost per acquisition/conversion. This is applicable only at the ad group
-    /// level.
+    /// level. <p>If an ad group-level target is not set and the strategy type is
+    /// TARGET_CPA, the strategy level target will be used. To set the strategy-level
+    /// target, set the <a
+    /// href='TargetCpaBiddingScheme#targetCpa'>TargetCpaBiddingScheme#targetCpa</a> on
+    /// the strategy's <a
+    /// href='BiddingStrategyConfiguration#biddingScheme'>BiddingStrategyConfiguration#biddingScheme</a>.</p>
     /// </summary>
     public Money bid {
       get {
@@ -18720,9 +18792,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignFeedPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((CampaignFeedPage) (results[0]));
     }
 
@@ -18736,9 +18808,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignFeedReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] CampaignFeedOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((CampaignFeedReturnValue) (results[0]));
     }
 
@@ -18753,9 +18825,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignFeedPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((CampaignFeedPage) (results[0]));
     }
   }
@@ -20408,9 +20480,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ProductBiddingCategoryData[] getProductBiddingCategoryData(Selector selector) {
       object[] results = this.Invoke("getProductBiddingCategoryData", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((ProductBiddingCategoryData[]) (results[0]));
     }
 
@@ -20426,9 +20498,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CriterionUserInterest[] getUserInterestCriterion(ConstantDataServiceUserInterestTaxonomyType userInterestTaxonomyType) {
       object[] results = this.Invoke("getUserInterestCriterion", new object[]
-        {
-          userInterestTaxonomyType
-        });
+				{
+					userInterestTaxonomyType
+				});
       return ((CriterionUserInterest[]) (results[0]));
     }
 
@@ -23705,9 +23777,17 @@ namespace Google.Api.Ads.AdWords.v201506 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConstantDataService.UserInterestTaxonomyType", Namespace = "https://adwords.google.com/api/adwords/cm/v201506")]
   public enum ConstantDataServiceUserInterestTaxonomyType {
+    /// <summary>The brand for this user interest.
+    /// </summary>
     BRAND,
+    /// <summary>The market for this user interest.
+    /// </summary>
     IN_MARKET,
+    /// <summary>Users known to have installed applications in the specified categories.
+    /// </summary>
     MOBILE_APP_INSTALL_USER,
+    /// <summary>The geographical location of the interest-based vertical.
+    /// </summary>
     VERTICAL_GEO,
   }
 
@@ -23774,9 +23854,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ConversionTrackerPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((ConversionTrackerPage) (results[0]));
     }
 
@@ -23804,9 +23884,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ConversionTrackerReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] ConversionTrackerOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((ConversionTrackerReturnValue) (results[0]));
     }
 
@@ -23821,9 +23901,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ConversionTrackerPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((ConversionTrackerPage) (results[0]));
     }
   }
@@ -25582,7 +25662,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// ANDROID_MARKET cannot have a countingType of MANY_PER_CLICK
     /// </summary>
     INCONSISTENT_COUNTING_TYPE,
-    /// <summary>The user specified two identical app ids when attempting to create or rename a
+    /// <summary>The user specified two identical app ids when attempting to create or modify a
     /// conversion type.
     /// </summary>
     DUPLICATE_APP_ID,
@@ -25715,9 +25795,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Customer mutate(Customer customer) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          customer
-        });
+				{
+					customer
+				});
       return ((Customer) (results[0]));
     }
   }
@@ -26307,9 +26387,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CustomerChangeData get(CustomerSyncSelector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((CustomerChangeData) (results[0]));
     }
   }
@@ -27071,8 +27151,12 @@ namespace Google.Api.Ads.AdWords.v201506 {
     private long[] feedIdsField;
 
     /// <summary>Only return entities that have changed during the specified time range. String
-    /// Format: yyyyMMdd HHmmss zzz (e.g. 20100609 150223 UTC) <span class="constraint
-    /// Required">This field is required and should not be <code>null</code>.</span>
+    /// Format: yyyyMMdd HHmmss <timezone id=""> (for example, 20100609 150223
+    /// America/New_York). See the <a
+    /// href="https://developers.google.com/adwords/api/docs/appendix/timezones">
+    /// Timezones</a> page for the complete list of Timezone IDs. <span
+    /// class="constraint Required">This field is required and should not be
+    /// <code>null</code>.</span></timezone>
     /// </summary>
     public DateTimeRange dateTimeRange {
       get {
@@ -27301,9 +27385,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CustomerFeedPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((CustomerFeedPage) (results[0]));
     }
 
@@ -27317,9 +27401,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CustomerFeedReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] CustomerFeedOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((CustomerFeedReturnValue) (results[0]));
     }
 
@@ -27334,9 +27418,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CustomerFeedPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((CustomerFeedPage) (results[0]));
     }
   }
@@ -27895,9 +27979,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupBidLandscapePage getAdGroupBidLandscape(Selector serviceSelector) {
       object[] results = this.Invoke("getAdGroupBidLandscape", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((AdGroupBidLandscapePage) (results[0]));
     }
 
@@ -27919,9 +28003,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CriterionBidLandscapePage getCriterionBidLandscape(Selector serviceSelector) {
       object[] results = this.Invoke("getCriterionBidLandscape", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((CriterionBidLandscapePage) (results[0]));
     }
 
@@ -27938,9 +28022,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual DomainCategoryPage getDomainCategory(Selector serviceSelector) {
       object[] results = this.Invoke("getDomainCategory", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((DomainCategoryPage) (results[0]));
     }
 
@@ -27961,9 +28045,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupBidLandscapePage queryAdGroupBidLandscape(string query) {
       object[] results = this.Invoke("queryAdGroupBidLandscape", new object[]
-        {
-          query
-        });
+				{
+					query
+				});
       return ((AdGroupBidLandscapePage) (results[0]));
     }
 
@@ -27984,9 +28068,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CriterionBidLandscapePage queryCriterionBidLandscape(string query) {
       object[] results = this.Invoke("queryCriterionBidLandscape", new object[]
-        {
-          query
-        });
+				{
+					query
+				});
       return ((CriterionBidLandscapePage) (results[0]));
     }
 
@@ -28002,9 +28086,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual DomainCategoryPage queryDomainCategory(string query) {
       object[] results = this.Invoke("queryDomainCategory", new object[]
-        {
-          query
-        });
+				{
+					query
+				});
       return ((DomainCategoryPage) (results[0]));
     }
   }
@@ -29369,9 +29453,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ExperimentPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((ExperimentPage) (results[0]));
     }
 
@@ -29389,9 +29473,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ExperimentReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] ExperimentOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((ExperimentReturnValue) (results[0]));
     }
   }
@@ -30318,9 +30402,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((FeedPage) (results[0]));
     }
 
@@ -30334,9 +30418,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] FeedOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((FeedReturnValue) (results[0]));
     }
 
@@ -30351,9 +30435,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((FeedPage) (results[0]));
     }
   }
@@ -31567,9 +31651,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupFeedPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((AdGroupFeedPage) (results[0]));
     }
 
@@ -31583,9 +31667,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupFeedReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupFeedOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((AdGroupFeedReturnValue) (results[0]));
     }
 
@@ -31600,9 +31684,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupFeedPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((AdGroupFeedPage) (results[0]));
     }
   }
@@ -32251,9 +32335,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedItemPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((FeedItemPage) (results[0]));
     }
 
@@ -32267,9 +32351,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedItemReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] FeedItemOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((FeedItemReturnValue) (results[0]));
     }
 
@@ -32284,9 +32368,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedItemPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((FeedItemPage) (results[0]));
     }
   }
@@ -32508,7 +32592,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// unspecified where the time zone defaults to the account time zone. This field
     /// may be null to indicate no start time restriction. The special value "00000101
     /// 000000" may be used to clear an existing start time. <span class="constraint
-    /// Selectable">This field can be selected using the value "StartTime".</span> <span
+    /// Selectable">This field can be selected using the value "StartTime".</span><span
+    /// class="constraint Filterable">This field can be filtered on.</span> <span
     /// class="constraint ReadOnly">This field is read only and will be ignored when
     /// sent to the API for the following <a href='Operator'>Operator</a>s:
     /// REMOVE.</span>
@@ -32527,7 +32612,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// unspecified where the time zone defaults to the account time zone. This field
     /// may be null to indicate no end time restriction. The special value "00000101
     /// 000000" may be used to clear an existing end time. <span class="constraint
-    /// Selectable">This field can be selected using the value "EndTime".</span> <span
+    /// Selectable">This field can be selected using the value "EndTime".</span><span
+    /// class="constraint Filterable">This field can be filtered on.</span> <span
     /// class="constraint ReadOnly">This field is read only and will be ignored when
     /// sent to the API for the following <a href='Operator'>Operator</a>s:
     /// REMOVE.</span>
@@ -32684,9 +32770,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
       public static readonly Field Status = new Field("Status", true, true);
 
-      public static readonly Field StartTime = new Field("StartTime", false, true);
+      public static readonly Field StartTime = new Field("StartTime", true, true);
 
-      public static readonly Field EndTime = new Field("EndTime", false, true);
+      public static readonly Field EndTime = new Field("EndTime", true, true);
 
       public static readonly Field AttributeValues = new Field("AttributeValues", false, true);
 
@@ -32755,6 +32841,10 @@ namespace Google.Api.Ads.AdWords.v201506 {
       public static readonly Field FeedItemId = Fields.FeedItemId;
 
       public static readonly Field Status = Fields.Status;
+
+      public static readonly Field StartTime = Fields.StartTime;
+
+      public static readonly Field EndTime = Fields.EndTime;
 
       public static readonly Field DevicePreference = Fields.DevicePreference;
 
@@ -34575,9 +34665,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedMappingPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((FeedMappingPage) (results[0]));
     }
 
@@ -34592,9 +34682,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedMappingReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] FeedMappingOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((FeedMappingReturnValue) (results[0]));
     }
 
@@ -34609,9 +34699,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual FeedMappingPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((FeedMappingPage) (results[0]));
     }
   }
@@ -35434,9 +35524,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual GeoLocation[] get(GeoLocationSelector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((GeoLocation[]) (results[0]));
     }
   }
@@ -36065,9 +36155,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual LocationCriterion[] get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((LocationCriterion[]) (results[0]));
     }
 
@@ -36083,9 +36173,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual LocationCriterion[] query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((LocationCriterion[]) (results[0]));
     }
   }
@@ -36390,9 +36480,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ManagedCustomerPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((ManagedCustomerPage) (results[0]));
     }
 
@@ -36407,15 +36497,16 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual PendingInvitation[] getPendingInvitations(PendingInvitationSelector selector) {
       object[] results = this.Invoke("getPendingInvitations", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((PendingInvitation[]) (results[0]));
     }
 
-    /// <summary>Adds managed customers. <p class="note"><b>Note:</b> <a
-    /// href='ManagedCustomerOperation'>ManagedCustomerOperation</a> only supports
-    /// <code>ADD</code> operator.</p>
+    /// <summary>Modifies or creates new <a href='ManagedCustomer'>ManagedCustomer</a>s. <p
+    /// class="note"><b>Note:</b> See <a
+    /// href='ManagedCustomerOperation'>ManagedCustomerOperation</a> for available
+    /// operators.</p>
     /// </summary><param name='operations'>List of unique operations.</param>
     /// <returns>The list of updated managed customers, returned in the same order as
     /// the <code>operations</code> array.</returns>
@@ -36425,9 +36516,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ManagedCustomerReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] ManagedCustomerOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((ManagedCustomerReturnValue) (results[0]));
     }
 
@@ -36454,9 +36545,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlArrayItemAttribute("value", IsNullable = false)]
     public virtual ManagedCustomerLabel[] mutateLabel([System.Xml.Serialization.XmlElementAttribute("operations")] ManagedCustomerLabelOperation[] operations) {
       object[] results = this.Invoke("mutateLabel", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((ManagedCustomerLabel[]) (results[0]));
     }
 
@@ -36481,9 +36572,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlArrayItemAttribute("links", IsNullable = false)]
     public virtual ManagedCustomerLink[] mutateLink([System.Xml.Serialization.XmlElementAttribute("operations")] LinkOperation[] operations) {
       object[] results = this.Invoke("mutateLink", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((ManagedCustomerLink[]) (results[0]));
     }
 
@@ -36501,9 +36592,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlArrayItemAttribute("links", IsNullable = false)]
     public virtual ManagedCustomerLink[] mutateManager([System.Xml.Serialization.XmlElementAttribute("operations")] MoveOperation[] operations) {
       object[] results = this.Invoke("mutateManager", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((ManagedCustomerLink[]) (results[0]));
     }
   }
@@ -36649,7 +36740,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// class="constraint Selectable">This field can be selected using the value
     /// "CustomerId".</span><span class="constraint Filterable">This field can be
     /// filtered on.</span> <span class="constraint ReadOnly">This field is read only
-    /// and will be ignored when sent to the API.</span>
+    /// and will be ignored when sent to the API for the following <a
+    /// href='Operator'>Operator</a>s: ADD.</span>
     /// </summary>
     public long customerId {
       get {
@@ -37163,8 +37255,11 @@ namespace Google.Api.Ads.AdWords.v201506 {
   }
 
 
-  /// <summary>An operation on a managed customer. <p class="note"><b>Note:</b> only
-  /// <code>ADD</code> operator is supported.</p>
+  /// <summary>An operation to create or modify a managed customer. <p
+  /// class="note"><b>Note:</b></p> <ul class="noindent"> <li><code>ADD</code>
+  /// operator is supported in all API versions.</li> <li><code>SET</code> operator is
+  /// supported beginning with v201601.</li> <li><code>REMOVE</code> operator is not
+  /// supported.</li> </ul>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -38013,7 +38108,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// <summary>Unknown.
     /// </summary>
     UNKNOWN,
-    /// <summary>The user is not authorized to perform the action
+    /// <summary>The user is not authorized to perform the action.
     /// </summary>
     NOT_AUTHORIZED,
     /// <summary>Invalid selector
@@ -38067,9 +38162,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
 
   /// <summary>Use this service to manage media for your template ads. After uploading images
-  /// and videos with this service, use the IDs when creating template ads. <p>When
-  /// creating image ads do not use this service to upload images. The
-  /// AdGroupAdService allows you to upload image data when creating the image ad.</p>
+  /// and videos with this service, use the IDs when creating image or template ads.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -38122,9 +38215,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual MediaPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((MediaPage) (results[0]));
     }
 
@@ -38139,9 +38232,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual MediaPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((MediaPage) (results[0]));
     }
 
@@ -38157,9 +38250,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Media[] upload([System.Xml.Serialization.XmlElementAttribute("media")] Media[] media) {
       object[] results = this.Invoke("upload", new object[]
-        {
-          media
-        });
+				{
+					media
+				});
       return ((Media[]) (results[0]));
     }
   }
@@ -38577,9 +38670,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Job[] get(JobSelector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((Job[]) (results[0]));
     }
 
@@ -38595,9 +38688,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual JobResult getResult(JobSelector selector) {
       object[] results = this.Invoke("getResult", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((JobResult) (results[0]));
     }
 
@@ -38615,10 +38708,10 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual SimpleMutateJob mutate([System.Xml.Serialization.XmlElementAttribute("operations")] Operation[] operations, BulkMutateJobPolicy policy) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations,
-          policy
-        });
+				{
+					operations,
+					policy
+				});
       return ((SimpleMutateJob) (results[0]));
     }
   }
@@ -40391,10 +40484,14 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
 
   /// <summary>Criterion used for IP exclusions. We allow: <ul> <li>IPv4 and IPv6
-  /// addresses</li> <li>individual addresses (192.168.0.1)</li> <li>masks for
-  /// individual addresses (192.168.0.1/32)</li> <li>masks for Class C networks
-  /// (192.168.0.1/24)</li> </ul> <span class="constraint AdxEnabled">This is disabled
-  /// for AdX when it is contained within Operators: ADD, SET.</span>
+  /// addresses</li> <li>individual addresses (192.168.0.1)</li> <li>CIDR IP address
+  /// blocks (e.g., 1.2.3.0/24, 2001:db8::/32).</li> </ul> <p>Note that for a CIDR IP
+  /// address block, the specified IP address portion must be properly truncated (i.e.
+  /// all the host bits must be zero) or the input is considered malformed. For
+  /// example, "1.2.3.0/24" is accepted but "1.2.3.4/24" is not. Similarly, for IPv6,
+  /// "2001:db8::/32" is accepted whereas "2001:db8::1/32" is not. <span
+  /// class="constraint AdxEnabled">This is disabled for AdX when it is contained
+  /// within Operators: ADD, SET.</span></p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -40404,9 +40501,11 @@ namespace Google.Api.Ads.AdWords.v201506 {
   public partial class IpBlock : Criterion {
     private string ipAddressField;
 
-    /// <summary><span class="constraint Required">This field is required and should not be
-    /// <code>null</code> when it is contained within <a href='Operator'>Operator</a>s :
-    /// ADD.</span>
+    /// <summary><span class="constraint Selectable">This field can be selected using the value
+    /// "IpAddress".</span><span class="constraint Filterable">This field can be
+    /// filtered on.</span> <span class="constraint Required">This field is required and
+    /// should not be <code>null</code> when it is contained within <a
+    /// href='Operator'>Operator</a>s : ADD.</span>
     /// </summary>
     public string ipAddress {
       get {
@@ -40424,6 +40523,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
       protected Fields() {
       }
 
+      public static readonly Field IpAddress = new Field("IpAddress", true, true);
+
       public static new Field[] All {
         get {
           return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -40440,6 +40541,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
       protected SelectableFields() {
       }
 
+      public static readonly Field IpAddress = Fields.IpAddress;
+
       public static new Field[] All {
         get {
           return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -40455,6 +40558,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
       /// </summary>
       protected FilterableFields() {
       }
+
+      public static readonly Field IpAddress = Fields.IpAddress;
 
       public static new Field[] All {
         get {
@@ -42113,8 +42218,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     private bool imageMediaIdFieldSpecified;
 
-    /// <summary>Address of the location (as is populated in GeoLocation by GeoLocationService).
-    /// <b>Note:</b> When specifying both <a
+    /// <summary>Address of the location. <b>Note:</b> When specifying both <a
     /// href='Address#provinceCode'>provinceCode</a> and <a
     /// href='Address#provinceName'>provinceName</a>, only provinceName is saved and
     /// returned. If provinceName is empty and provinceCode is specified, the
@@ -42130,8 +42234,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>The lat/long point of the location (as is populated in GeoLocation by
-    /// GeoLocationService).
+    /// <summary>The lat/long point of the location.
     /// </summary>
     public GeoPoint geoPoint {
       get {
@@ -42142,8 +42245,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>Byte data encoding address and geo point (as is populated in GeoLocation by
-    /// GeoLocationService). Input only. Required on location extension creation.
+    /// <summary>Byte data encoding address and geo point. Input only. Required on location
+    /// extension creation.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
     public byte[] encodedLocation {
@@ -45039,11 +45142,12 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary>The keyword quality score ranges from 1 (lowest) to 10 (highest). This field may
-    /// be returned as NULL if AdWords does not have enough information to determine an
-    /// appropriate quality score value. <span class="constraint Selectable">This field
-    /// can be selected using the value "QualityScore".</span><span class="constraint
-    /// Filterable">This field can be filtered on.</span>
+    /// <summary>The keyword quality score ranges from 1 (lowest) to 10 (highest). For v201509
+    /// and later, this field may be returned as NULL if AdWords does not have enough
+    /// information to determine an appropriate quality score value. <span
+    /// class="constraint Selectable">This field can be selected using the value
+    /// "QualityScore".</span><span class="constraint Filterable">This field can be
+    /// filtered on.</span>
     /// </summary>
     public int qualityScore {
       get {
@@ -45147,7 +45251,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     /// <summary>List of URLs. On SET operation, empty list indicates to clear the list. <span
     /// class="constraint CollectionSize">The maximum size of this collection is
-    /// 10.</span>
+    /// 10.</span> <span class="constraint ContentsStringLength">Strings in this field
+    /// must be non-empty (trimmed).</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("urls")]
     public string[] urls {
@@ -45582,9 +45687,11 @@ namespace Google.Api.Ads.AdWords.v201506 {
     }
 
     /// <summary>The criterion whose bid value is being overridden. Currently, bid modifier
-    /// overrides are supported only for HighEndMobile platform criterion (ID=30001).
-    /// The <a href='AdGroupBidModifierService#get'>AdGroupBidModifierService#get</a>
-    /// method returns all platform criteria. <span class="constraint Required">This
+    /// overrides are supported only for HighEndMobile platform criterion (ID=30001) and
+    /// preferred content criterion (ID = 400). The <a
+    /// href='AdGroupBidModifierService#get'>AdGroupBidModifierService#get</a> method
+    /// returns all platform and preferred content criteria. Preferred Content Criteria
+    /// is available in versions &gt;= V201603. <span class="constraint Required">This
     /// field is required and should not be <code>null</code>.</span>
     /// </summary>
     public Criterion criterion {
@@ -48648,9 +48755,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual OfflineConversionFeedReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] OfflineConversionFeedOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((OfflineConversionFeedReturnValue) (results[0]));
     }
   }
@@ -49259,9 +49366,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ReportDefinitionField[] getReportFields(ReportDefinitionReportType reportType) {
       object[] results = this.Invoke("getReportFields", new object[]
-        {
-          reportType
-        });
+				{
+					reportType
+				});
       return ((ReportDefinitionField[]) (results[0]));
     }
   }
@@ -50003,11 +50110,11 @@ namespace Google.Api.Ads.AdWords.v201506 {
   }
 
 
-  /// <summary>Use this service to generate new keyword and placement ideas based on the
-  /// parameters specified in the selector. See the <a
+  /// <summary>Use this service to generate new keyword ideas based on the parameters specified
+  /// in the selector. See the <a
   /// href='TargetingIdeaSelector'>TargetingIdeaSelector</a> documentation for more
   /// details. <p>You can also use this service to retrieve statistics for existing
-  /// keywords and placements by setting the selector's <code></code> to <a
+  /// keyword ideas by setting the selector's <code></code> to <a
   /// href='RequestType#STATS'>RequestType#STATS</a> and passing in the appropriate
   /// search parameters.</p>
   /// </summary>
@@ -50058,7 +50165,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// advancing the paging <code>startIndex</code> value by <code>numberResults</code>
     /// with each call.</p>
     /// </summary><param name='selector'>Query describing the types of results to return when
-    /// finding matches (similar keyword ideas/placement ideas).</param>
+    /// finding matches (similar keyword ideas).</param>
     /// <returns>A <a href='TargetingIdeaPage'>TargetingIdeaPage</a> of results, that is
     /// a subset of the list of possible ideas meeting the criteria of the <a
     /// href='TargetingIdeaSelector'>TargetingIdeaSelector</a>.</returns>
@@ -50070,9 +50177,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual TargetingIdeaPage get(TargetingIdeaSelector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((TargetingIdeaPage) (results[0]));
     }
   }
@@ -53573,12 +53680,14 @@ namespace Google.Api.Ads.AdWords.v201506 {
   /// <summary>A <a href='SearchParameter'>SearchParameter</a> used to indicate the locations
   /// being targeted. This can be used, for example, to search for
   /// <code>KEYWORD</code> <a href='IdeaType'>IdeaType</a>s that are best for Japan
-  /// and Los Angeles. <p>This parameter replaces the <code></code>.</p> <p>Warning:
-  /// Not all back-ends support sub-country precision.</p> <p>The service allows up to
-  /// 10 locations to be targeted for KEYWORD requests and 50 locations for PLACEMENT
-  /// requests.</p> <p>This element is supported by following <a
-  /// href='IdeaType'>IdeaType</a>s: KEYWORD.</p> <p>This element is supported by
-  /// following <a href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
+  /// and Los Angeles. <p>This parameter replaces the <code></code>.</p> <p>See the <a
+  /// href="https://developers.google.com/adwords/api/docs/appendix/geotargeting">
+  /// Geographical Targeting</a> page for the complete list of supported geo target
+  /// types for this service.</p> <p>The service allows up to 10 locations to be
+  /// targeted for KEYWORD requests and 50 locations for PLACEMENT requests.</p>
+  /// <p>This element is supported by following <a href='IdeaType'>IdeaType</a>s:
+  /// KEYWORD.</p> <p>This element is supported by following <a
+  /// href='RequestType'>RequestType</a>s: IDEAS, STATS.</p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -54590,9 +54699,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupCriterionPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((AdGroupCriterionPage) (results[0]));
     }
 
@@ -54608,9 +54717,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupCriterionReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupCriterionOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((AdGroupCriterionReturnValue) (results[0]));
     }
 
@@ -54636,9 +54745,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupCriterionLabelReturnValue mutateLabel([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupCriterionLabelOperation[] operations) {
       object[] results = this.Invoke("mutateLabel", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((AdGroupCriterionLabelReturnValue) (results[0]));
     }
 
@@ -54653,9 +54762,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupCriterionPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((AdGroupCriterionPage) (results[0]));
     }
   }
@@ -54926,9 +55035,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual TrafficEstimatorResult get(TrafficEstimatorSelector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((TrafficEstimatorResult) (results[0]));
     }
   }
@@ -56262,9 +56371,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual UserListPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((UserListPage) (results[0]));
     }
 
@@ -56278,9 +56387,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual UserListReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] UserListOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((UserListReturnValue) (results[0]));
     }
   }
@@ -59030,9 +59139,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ExpressBusinessPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((ExpressBusinessPage) (results[0]));
     }
 
@@ -59047,9 +59156,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ExpressBusiness[] mutate([System.Xml.Serialization.XmlElementAttribute("operations")] ExpressBusinessOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((ExpressBusiness[]) (results[0]));
     }
   }
@@ -60473,149 +60582,6 @@ namespace Google.Api.Ads.AdWords.v201506 {
   }
 
 
-  /// <summary>Represents a date.
-  /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201506")]
-  public partial class Date {
-    private int yearField;
-
-    private bool yearFieldSpecified;
-
-    private int monthField;
-
-    private bool monthFieldSpecified;
-
-    private int dayField;
-
-    private bool dayFieldSpecified;
-
-    /// <summary>Year (e.g., 2009)
-    /// </summary>
-    public int year {
-      get {
-        return this.yearField;
-      }
-      set {
-        this.yearField = value;
-        this.yearSpecified = true;
-      }
-    }
-
-    /// <summary> <code>true</code>, if a value is specified for <see cref="year" />,
-    /// <code>false</code> otherwise. </summary>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool yearSpecified {
-      get {
-        return this.yearFieldSpecified;
-      }
-      set {
-        this.yearFieldSpecified = value;
-      }
-    }
-
-    /// <summary>Month (1..12)
-    /// </summary>
-    public int month {
-      get {
-        return this.monthField;
-      }
-      set {
-        this.monthField = value;
-        this.monthSpecified = true;
-      }
-    }
-
-    /// <summary> <code>true</code>, if a value is specified for <see cref="month" />,
-    /// <code>false</code> otherwise. </summary>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool monthSpecified {
-      get {
-        return this.monthFieldSpecified;
-      }
-      set {
-        this.monthFieldSpecified = value;
-      }
-    }
-
-    /// <summary>Day (1..31)
-    /// </summary>
-    public int day {
-      get {
-        return this.dayField;
-      }
-      set {
-        this.dayField = value;
-        this.daySpecified = true;
-      }
-    }
-
-    /// <summary> <code>true</code>, if a value is specified for <see cref="day" />,
-    /// <code>false</code> otherwise. </summary>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool daySpecified {
-      get {
-        return this.dayFieldSpecified;
-      }
-      set {
-        this.dayFieldSpecified = value;
-      }
-    }
-
-    /// <summary> List of all supported fields for the <see cref='Date' /> class.
-    /// </summary>
-    public class Fields : BaseFields {
-      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
-      protected Fields() {
-      }
-
-      public static Field[] All {
-        get {
-          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        }
-      }
-    }
-
-
-    /// <summary> List of all supported selectable fields for the <see cref='Date' />
-    /// class. </summary>
-    public class SelectableFields : BaseFields {
-      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
-      /// </summary>
-      protected SelectableFields() {
-      }
-
-      public static Field[] All {
-        get {
-          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        }
-      }
-    }
-
-
-    /// <summary> List of all supported filterable fields for the <see cref='Date' />
-    /// class. </summary>
-    public class FilterableFields : BaseFields {
-      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
-      /// </summary>
-      protected FilterableFields() {
-      }
-
-      public static Field[] All {
-        get {
-          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        }
-      }
-    }
-  }
-
-
   /// <summary>Express business related errors.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -60782,9 +60748,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BudgetSuggestion get(BudgetSuggestionSelector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((BudgetSuggestion) (results[0]));
     }
   }
@@ -60946,8 +60912,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
     }
 
-    /// <summary><span class="constraint ReadOnly">This field is read only and will be ignored
-    /// when sent to the API.</span>
+    /// <summary>The suggested currency code to be used if not specified <span class="constraint
+    /// ReadOnly">This field is read only and will be ignored when sent to the
+    /// API.</span>
     /// </summary>
     public CurrencyCode currencyCode {
       get {
@@ -62296,9 +62263,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual PromotionPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((PromotionPage) (results[0]));
     }
 
@@ -62312,9 +62279,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Promotion[] mutate([System.Xml.Serialization.XmlElementAttribute("operations")] PromotionOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((Promotion[]) (results[0]));
     }
   }
@@ -63061,9 +63028,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual ProductServicePage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((ProductServicePage) (results[0]));
     }
   }
@@ -63196,9 +63163,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignSharedSetPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((CampaignSharedSetPage) (results[0]));
     }
 
@@ -63212,9 +63179,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignSharedSetReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] CampaignSharedSetOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((CampaignSharedSetReturnValue) (results[0]));
     }
 
@@ -63229,9 +63196,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignSharedSetPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((CampaignSharedSetPage) (results[0]));
     }
   }
@@ -63743,9 +63710,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual SharedCriterionPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((SharedCriterionPage) (results[0]));
     }
 
@@ -63760,9 +63727,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual SharedCriterionReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] SharedCriterionOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((SharedCriterionReturnValue) (results[0]));
     }
 
@@ -63776,9 +63743,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual SharedCriterionPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((SharedCriterionPage) (results[0]));
     }
   }
@@ -64204,9 +64171,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual SharedSetPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((SharedSetPage) (results[0]));
     }
 
@@ -64220,9 +64187,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual SharedSetReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] SharedSetOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((SharedSetReturnValue) (results[0]));
     }
 
@@ -64237,9 +64204,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual SharedSetPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((SharedSetPage) (results[0]));
     }
   }
@@ -64808,9 +64775,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual LabelPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((LabelPage) (results[0]));
     }
 
@@ -64826,9 +64793,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual LabelReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] LabelOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((LabelReturnValue) (results[0]));
     }
 
@@ -64844,9 +64811,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual LabelPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((LabelPage) (results[0]));
     }
   }
@@ -65185,9 +65152,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((AdGroupPage) (results[0]));
     }
 
@@ -65204,9 +65171,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((AdGroupReturnValue) (results[0]));
     }
 
@@ -65231,9 +65198,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupLabelReturnValue mutateLabel([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupLabelOperation[] operations) {
       object[] results = this.Invoke("mutateLabel", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((AdGroupLabelReturnValue) (results[0]));
     }
 
@@ -65247,9 +65214,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((AdGroupPage) (results[0]));
     }
   }
@@ -65511,9 +65478,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlArrayItemAttribute("labels", IsNullable = false)]
     public virtual AccountLabel[] get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((AccountLabel[]) (results[0]));
     }
 
@@ -65535,9 +65502,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlArrayItemAttribute("labels", IsNullable = false)]
     public virtual AccountLabel[] mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AccountLabelOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((AccountLabel[]) (results[0]));
     }
   }
@@ -65605,6 +65572,149 @@ namespace Google.Api.Ads.AdWords.v201506 {
       }
 
       public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+  }
+
+
+  /// <summary>Represents a date.
+  /// </summary>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201506")]
+  public partial class Date {
+    private int yearField;
+
+    private bool yearFieldSpecified;
+
+    private int monthField;
+
+    private bool monthFieldSpecified;
+
+    private int dayField;
+
+    private bool dayFieldSpecified;
+
+    /// <summary>Year (e.g., 2009)
+    /// </summary>
+    public int year {
+      get {
+        return this.yearField;
+      }
+      set {
+        this.yearField = value;
+        this.yearSpecified = true;
+      }
+    }
+
+    /// <summary> <code>true</code>, if a value is specified for <see cref="year" />,
+    /// <code>false</code> otherwise. </summary>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool yearSpecified {
+      get {
+        return this.yearFieldSpecified;
+      }
+      set {
+        this.yearFieldSpecified = value;
+      }
+    }
+
+    /// <summary>Month (1..12)
+    /// </summary>
+    public int month {
+      get {
+        return this.monthField;
+      }
+      set {
+        this.monthField = value;
+        this.monthSpecified = true;
+      }
+    }
+
+    /// <summary> <code>true</code>, if a value is specified for <see cref="month" />,
+    /// <code>false</code> otherwise. </summary>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool monthSpecified {
+      get {
+        return this.monthFieldSpecified;
+      }
+      set {
+        this.monthFieldSpecified = value;
+      }
+    }
+
+    /// <summary>Day (1..31)
+    /// </summary>
+    public int day {
+      get {
+        return this.dayField;
+      }
+      set {
+        this.dayField = value;
+        this.daySpecified = true;
+      }
+    }
+
+    /// <summary> <code>true</code>, if a value is specified for <see cref="day" />,
+    /// <code>false</code> otherwise. </summary>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool daySpecified {
+      get {
+        return this.dayFieldSpecified;
+      }
+      set {
+        this.dayFieldSpecified = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='Date' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='Date' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='Date' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
         get {
           return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         }
@@ -65684,7 +65794,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
   }
 
 
-  /// <summary>Service used to create and mutate Feeds that contain ad customizer data. <p>This
+  /// <summary>Service used to get and mutate Feeds that contain ad customizer data. <p>This
   /// service is a convenience for creating and modifying ad customizer Feeds, but
   /// such Feeds can also be managed using a combination of the Feed, FeedMapping, and
   /// CustomerFeed services.</p>
@@ -65743,9 +65853,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdCustomizerFeedPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((AdCustomizerFeedPage) (results[0]));
     }
 
@@ -65759,9 +65869,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdCustomizerFeedReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdCustomizerFeedOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((AdCustomizerFeedReturnValue) (results[0]));
     }
   }
@@ -66445,9 +66555,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupExtensionSettingPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((AdGroupExtensionSettingPage) (results[0]));
     }
 
@@ -66469,9 +66579,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupExtensionSettingReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupExtensionSettingOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((AdGroupExtensionSettingReturnValue) (results[0]));
     }
 
@@ -66485,9 +66595,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupExtensionSettingPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((AdGroupExtensionSettingPage) (results[0]));
     }
   }
@@ -66860,11 +66970,11 @@ namespace Google.Api.Ads.AdWords.v201506 {
   /// <summary>Contains base extension feed item data for an extension in an extension feed
   /// managed by AdWords.
   /// </summary>
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AppFeedItem))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(SitelinkFeedItem))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReviewFeedItem))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CalloutFeedItem))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(CallFeedItem))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(AppFeedItem))]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -67143,207 +67253,6 @@ namespace Google.Api.Ads.AdWords.v201506 {
   }
 
 
-  /// <summary>Represents an App extension.
-  /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201506")]
-  public partial class AppFeedItem : ExtensionFeedItem {
-    private AppFeedItemAppStore appStoreField;
-
-    private bool appStoreFieldSpecified;
-
-    private string appIdField;
-
-    private string appLinkTextField;
-
-    private string appUrlField;
-
-    private string[] appFinalUrlsField;
-
-    private string[] appFinalMobileUrlsField;
-
-    private string appTrackingUrlTemplateField;
-
-    private CustomParameters appUrlCustomParametersField;
-
-    /// <summary>The application store that the target application belongs to.
-    /// </summary>
-    public AppFeedItemAppStore appStore {
-      get {
-        return this.appStoreField;
-      }
-      set {
-        this.appStoreField = value;
-        this.appStoreSpecified = true;
-      }
-    }
-
-    /// <summary> <code>true</code>, if a value is specified for <see cref="appStore"
-    /// />, <code>false</code> otherwise. </summary>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    [EditorBrowsable(EditorBrowsableState.Never)]
-    public bool appStoreSpecified {
-      get {
-        return this.appStoreFieldSpecified;
-      }
-      set {
-        this.appStoreFieldSpecified = value;
-      }
-    }
-
-    /// <summary>The store-specific ID for the target application. <span class="constraint
-    /// StringLength">This string must not be empty.</span>
-    /// </summary>
-    public string appId {
-      get {
-        return this.appIdField;
-      }
-      set {
-        this.appIdField = value;
-      }
-    }
-
-    /// <summary>The visible text displayed when the link is rendered in an ad. <span
-    /// class="constraint StringLength">The length of this string should be between 1
-    /// and 25, inclusive.</span>
-    /// </summary>
-    public string appLinkText {
-      get {
-        return this.appLinkTextField;
-      }
-      set {
-        this.appLinkTextField = value;
-      }
-    }
-
-    /// <summary>The destination URL of the in-app link. <span class="constraint
-    /// StringLength">The length of this string should be between 0 and 2076,
-    /// inclusive.</span>
-    /// </summary>
-    public string appUrl {
-      get {
-        return this.appUrlField;
-      }
-      set {
-        this.appUrlField = value;
-      }
-    }
-
-    /// <summary>A list of possible final URLs after all cross domain redirects.
-    /// </summary>
-    [System.Xml.Serialization.XmlArrayItemAttribute("urls", IsNullable = false)]
-    public string[] appFinalUrls {
-      get {
-        return this.appFinalUrlsField;
-      }
-      set {
-        this.appFinalUrlsField = value;
-      }
-    }
-
-    /// <summary>A list of possible final mobile URLs after all cross domain redirects.
-    /// </summary>
-    [System.Xml.Serialization.XmlArrayItemAttribute("urls", IsNullable = false)]
-    public string[] appFinalMobileUrls {
-      get {
-        return this.appFinalMobileUrlsField;
-      }
-      set {
-        this.appFinalMobileUrlsField = value;
-      }
-    }
-
-    /// <summary>URL template for constructing a tracking URL. To clear this field, set its value
-    /// to the empty string.
-    /// </summary>
-    public string appTrackingUrlTemplate {
-      get {
-        return this.appTrackingUrlTemplateField;
-      }
-      set {
-        this.appTrackingUrlTemplateField = value;
-      }
-    }
-
-    /// <summary>A list of mappings to be used for substituting URL custom parameter tags in the
-    /// trackingUrlTemplate, finalUrls, and/or finalMobileUrls.
-    /// </summary>
-    public CustomParameters appUrlCustomParameters {
-      get {
-        return this.appUrlCustomParametersField;
-      }
-      set {
-        this.appUrlCustomParametersField = value;
-      }
-    }
-
-    /// <summary> List of all supported fields for the <see cref='AppFeedItem' /> class.
-    /// </summary>
-    public new class Fields : ExtensionFeedItem.Fields {
-      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
-      protected Fields() {
-      }
-
-      public static new Field[] All {
-        get {
-          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        }
-      }
-    }
-
-
-    /// <summary> List of all supported selectable fields for the <see cref='AppFeedItem' />
-    /// class. </summary>
-    public new class SelectableFields : ExtensionFeedItem.SelectableFields {
-      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
-      /// </summary>
-      protected SelectableFields() {
-      }
-
-      public static new Field[] All {
-        get {
-          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        }
-      }
-    }
-
-
-    /// <summary> List of all supported filterable fields for the <see cref='AppFeedItem' />
-    /// class. </summary>
-    public new class FilterableFields : ExtensionFeedItem.FilterableFields {
-      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
-      /// </summary>
-      protected FilterableFields() {
-      }
-
-      public static new Field[] All {
-        get {
-          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        }
-      }
-    }
-  }
-
-
-  /// <summary>The available application stores for app extensions.
-  /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
-  [System.SerializableAttribute()]
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AppFeedItem.AppStore", Namespace = "https://adwords.google.com/api/adwords/cm/v201506")]
-  public enum AppFeedItemAppStore {
-    APPLE_ITUNES,
-    GOOGLE_PLAY,
-    /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
-    /// could not be processed, typically due to incompatibility with your WSDL
-    /// version.</span>
-    /// </summary>
-    UNKNOWN,
-  }
-
-
   /// <summary>Represents a sitelink extension.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
@@ -67360,9 +67269,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     private string sitelinkLine3Field;
 
-    private string[] sitelinkFinalUrlsField;
+    private UrlList sitelinkFinalUrlsField;
 
-    private string[] sitelinkFinalMobileUrlsField;
+    private UrlList sitelinkFinalMobileUrlsField;
 
     private string sitelinkTrackingUrlTemplateField;
 
@@ -67422,8 +67331,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     /// <summary>A list of possible final URLs after all cross domain redirects.
     /// </summary>
-    [System.Xml.Serialization.XmlArrayItemAttribute("urls", IsNullable = false)]
-    public string[] sitelinkFinalUrls {
+    public UrlList sitelinkFinalUrls {
       get {
         return this.sitelinkFinalUrlsField;
       }
@@ -67434,8 +67342,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
     /// <summary>A list of possible final mobile URLs after all cross domain redirects.
     /// </summary>
-    [System.Xml.Serialization.XmlArrayItemAttribute("urls", IsNullable = false)]
-    public string[] sitelinkFinalMobileUrls {
+    public UrlList sitelinkFinalMobileUrls {
       get {
         return this.sitelinkFinalMobileUrlsField;
       }
@@ -67814,7 +67721,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     }
 
     /// <summary>Call conversion type. To clear this field, set a CallConversionType with a value
-    /// of null in its conversionTypeId field.
+    /// of null in its conversionTypeId field. This value should not be set if <a
+    /// href='CallFeedItem#disableCallConversionTracking'>CallFeedItem#disableCallConversionTracking</a>
+    /// is true.
     /// </summary>
     public CallConversionType callConversionType {
       get {
@@ -67957,6 +67866,205 @@ namespace Google.Api.Ads.AdWords.v201506 {
         }
       }
     }
+  }
+
+
+  /// <summary>Represents an App extension.
+  /// </summary>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201506")]
+  public partial class AppFeedItem : ExtensionFeedItem {
+    private AppFeedItemAppStore appStoreField;
+
+    private bool appStoreFieldSpecified;
+
+    private string appIdField;
+
+    private string appLinkTextField;
+
+    private string appUrlField;
+
+    private UrlList appFinalUrlsField;
+
+    private UrlList appFinalMobileUrlsField;
+
+    private string appTrackingUrlTemplateField;
+
+    private CustomParameters appUrlCustomParametersField;
+
+    /// <summary>The application store that the target application belongs to.
+    /// </summary>
+    public AppFeedItemAppStore appStore {
+      get {
+        return this.appStoreField;
+      }
+      set {
+        this.appStoreField = value;
+        this.appStoreSpecified = true;
+      }
+    }
+
+    /// <summary> <code>true</code>, if a value is specified for <see cref="appStore"
+    /// />, <code>false</code> otherwise. </summary>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public bool appStoreSpecified {
+      get {
+        return this.appStoreFieldSpecified;
+      }
+      set {
+        this.appStoreFieldSpecified = value;
+      }
+    }
+
+    /// <summary>The store-specific ID for the target application. <span class="constraint
+    /// StringLength">This string must not be empty.</span>
+    /// </summary>
+    public string appId {
+      get {
+        return this.appIdField;
+      }
+      set {
+        this.appIdField = value;
+      }
+    }
+
+    /// <summary>The visible text displayed when the link is rendered in an ad. <span
+    /// class="constraint StringLength">The length of this string should be between 1
+    /// and 25, inclusive.</span>
+    /// </summary>
+    public string appLinkText {
+      get {
+        return this.appLinkTextField;
+      }
+      set {
+        this.appLinkTextField = value;
+      }
+    }
+
+    /// <summary>The destination URL of the in-app link. <span class="constraint
+    /// StringLength">The length of this string should be between 0 and 2076,
+    /// inclusive.</span>
+    /// </summary>
+    public string appUrl {
+      get {
+        return this.appUrlField;
+      }
+      set {
+        this.appUrlField = value;
+      }
+    }
+
+    /// <summary>A list of possible final URLs after all cross domain redirects.
+    /// </summary>
+    public UrlList appFinalUrls {
+      get {
+        return this.appFinalUrlsField;
+      }
+      set {
+        this.appFinalUrlsField = value;
+      }
+    }
+
+    /// <summary>A list of possible final mobile URLs after all cross domain redirects.
+    /// </summary>
+    public UrlList appFinalMobileUrls {
+      get {
+        return this.appFinalMobileUrlsField;
+      }
+      set {
+        this.appFinalMobileUrlsField = value;
+      }
+    }
+
+    /// <summary>URL template for constructing a tracking URL. To clear this field, set its value
+    /// to the empty string.
+    /// </summary>
+    public string appTrackingUrlTemplate {
+      get {
+        return this.appTrackingUrlTemplateField;
+      }
+      set {
+        this.appTrackingUrlTemplateField = value;
+      }
+    }
+
+    /// <summary>A list of mappings to be used for substituting URL custom parameter tags in the
+    /// trackingUrlTemplate, finalUrls, and/or finalMobileUrls.
+    /// </summary>
+    public CustomParameters appUrlCustomParameters {
+      get {
+        return this.appUrlCustomParametersField;
+      }
+      set {
+        this.appUrlCustomParametersField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AppFeedItem' /> class.
+    /// </summary>
+    public new class Fields : ExtensionFeedItem.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AppFeedItem' />
+    /// class. </summary>
+    public new class SelectableFields : ExtensionFeedItem.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AppFeedItem' />
+    /// class. </summary>
+    public new class FilterableFields : ExtensionFeedItem.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+  }
+
+
+  /// <summary>The available application stores for app extensions.
+  /// </summary>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
+  [System.SerializableAttribute()]
+  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AppFeedItem.AppStore", Namespace = "https://adwords.google.com/api/adwords/cm/v201506")]
+  public enum AppFeedItemAppStore {
+    APPLE_ITUNES,
+    GOOGLE_PLAY,
+    /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
+    /// could not be processed, typically due to incompatibility with your WSDL
+    /// version.</span>
+    /// </summary>
+    UNKNOWN,
   }
 
 
@@ -68405,9 +68513,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignExtensionSettingPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((CampaignExtensionSettingPage) (results[0]));
     }
 
@@ -68429,9 +68537,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignExtensionSettingReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] CampaignExtensionSettingOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((CampaignExtensionSettingReturnValue) (results[0]));
     }
 
@@ -68445,9 +68553,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignExtensionSettingPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((CampaignExtensionSettingPage) (results[0]));
     }
   }
@@ -68877,9 +68985,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CustomerExtensionSettingPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((CustomerExtensionSettingPage) (results[0]));
     }
 
@@ -68901,9 +69009,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CustomerExtensionSettingReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] CustomerExtensionSettingOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((CustomerExtensionSettingReturnValue) (results[0]));
     }
 
@@ -68917,9 +69025,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CustomerExtensionSettingPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((CustomerExtensionSettingPage) (results[0]));
     }
   }
@@ -69306,9 +69414,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupBidModifierPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((AdGroupBidModifierPage) (results[0]));
     }
 
@@ -69323,9 +69431,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupBidModifierReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdGroupBidModifierOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((AdGroupBidModifierReturnValue) (results[0]));
     }
 
@@ -69340,9 +69448,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdGroupBidModifierPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((AdGroupBidModifierPage) (results[0]));
     }
   }
@@ -69470,9 +69578,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdParamPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((AdParamPage) (results[0]));
     }
 
@@ -69495,9 +69603,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AdParam[] mutate([System.Xml.Serialization.XmlElementAttribute("operations")] AdParamOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((AdParam[]) (results[0]));
     }
   }
@@ -70074,9 +70182,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BiddingStrategyPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((BiddingStrategyPage) (results[0]));
     }
 
@@ -70090,9 +70198,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BiddingStrategyReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] BiddingStrategyOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((BiddingStrategyReturnValue) (results[0]));
     }
 
@@ -70106,9 +70214,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BiddingStrategyPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((BiddingStrategyPage) (results[0]));
     }
   }
@@ -70631,9 +70739,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BudgetOrderPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((BudgetOrderPage) (results[0]));
     }
 
@@ -70667,9 +70775,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BudgetOrderReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] BudgetOrderOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((BudgetOrderReturnValue) (results[0]));
     }
   }
@@ -71866,9 +71974,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BudgetPage get(Selector selector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          selector
-        });
+				{
+					selector
+				});
       return ((BudgetPage) (results[0]));
     }
 
@@ -71883,9 +71991,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BudgetReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] BudgetOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((BudgetReturnValue) (results[0]));
     }
 
@@ -71900,9 +72008,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BudgetPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((BudgetPage) (results[0]));
     }
   }
@@ -72033,9 +72141,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignCriterionPage get(Selector serviceSelector) {
       object[] results = this.Invoke("get", new object[]
-        {
-          serviceSelector
-        });
+				{
+					serviceSelector
+				});
       return ((CampaignCriterionPage) (results[0]));
     }
 
@@ -72050,9 +72158,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignCriterionReturnValue mutate([System.Xml.Serialization.XmlElementAttribute("operations")] CampaignCriterionOperation[] operations) {
       object[] results = this.Invoke("mutate", new object[]
-        {
-          operations
-        });
+				{
+					operations
+				});
       return ((CampaignCriterionReturnValue) (results[0]));
     }
 
@@ -72067,9 +72175,9 @@ namespace Google.Api.Ads.AdWords.v201506 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual CampaignCriterionPage query([System.Xml.Serialization.XmlElementAttribute("query")] string query1) {
       object[] results = this.Invoke("query", new object[]
-        {
-          query1
-        });
+				{
+					query1
+				});
       return ((CampaignCriterionPage) (results[0]));
     }
   }
@@ -73105,9 +73213,10 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// request</exception>
     PendingInvitation[] getPendingInvitations(PendingInvitationSelector selector);
 
-    /// <summary>Adds managed customers. <p class="note"><b>Note:</b> <a
-    /// href='ManagedCustomerOperation'>ManagedCustomerOperation</a> only supports
-    /// <code>ADD</code> operator.</p>
+    /// <summary>Modifies or creates new <a href='ManagedCustomer'>ManagedCustomer</a>s. <p
+    /// class="note"><b>Note:</b> See <a
+    /// href='ManagedCustomerOperation'>ManagedCustomerOperation</a> for available
+    /// operators.</p>
     /// </summary><param name='operations'>List of unique operations.</param>
     /// <returns>The list of updated managed customers, returned in the same order as
     /// the <code>operations</code> array.</returns>
@@ -73159,9 +73268,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
 
 
   /// <summary>Use this service to manage media for your template ads. After uploading images
-  /// and videos with this service, use the IDs when creating template ads. <p>When
-  /// creating image ads do not use this service to upload images. The
-  /// AdGroupAdService allows you to upload image data when creating the image ad.</p>
+  /// and videos with this service, use the IDs when creating image or template ads.
   /// </summary>
   public interface IMediaService {
     /// <summary>
@@ -73355,11 +73462,11 @@ namespace Google.Api.Ads.AdWords.v201506 {
   }
 
 
-  /// <summary>Use this service to generate new keyword and placement ideas based on the
-  /// parameters specified in the selector. See the <a
+  /// <summary>Use this service to generate new keyword ideas based on the parameters specified
+  /// in the selector. See the <a
   /// href='TargetingIdeaSelector'>TargetingIdeaSelector</a> documentation for more
   /// details. <p>You can also use this service to retrieve statistics for existing
-  /// keywords and placements by setting the selector's <code></code> to <a
+  /// keyword ideas by setting the selector's <code></code> to <a
   /// href='RequestType#STATS'>RequestType#STATS</a> and passing in the appropriate
   /// search parameters.</p>
   /// </summary>
@@ -73387,7 +73494,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
     /// advancing the paging <code>startIndex</code> value by <code>numberResults</code>
     /// with each call.</p>
     /// </summary><param name='selector'>Query describing the types of results to return when
-    /// finding matches (similar keyword ideas/placement ideas).</param>
+    /// finding matches (similar keyword ideas).</param>
     /// <returns>A <a href='TargetingIdeaPage'>TargetingIdeaPage</a> of results, that is
     /// a subset of the list of possible ideas meeting the criteria of the <a
     /// href='TargetingIdeaSelector'>TargetingIdeaSelector</a>.</returns>
@@ -73962,7 +74069,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
   }
 
 
-  /// <summary>Service used to create and mutate Feeds that contain ad customizer data. <p>This
+  /// <summary>Service used to get and mutate Feeds that contain ad customizer data. <p>This
   /// service is a convenience for creating and modifying ad customizer Feeds, but
   /// such Feeds can also be managed using a combination of the Feed, FeedMapping, and
   /// CustomerFeed services.</p>
@@ -74541,8 +74648,8 @@ namespace Google.Api.Ads.AdWords.v201506 {
       codes["QueryErrorReason.INVALID_MAX_DATE_IN_DURING_CLAUSE"] = "The maximum date in the DURING clause is not a valid date in YYYYMMDD format.";
       codes["QueryErrorReason.MAX_LESS_THAN_MIN_IN_DURING_CLAUSE"] = "The minimum date in the DURING is after the maximum date.";
       codes["QueryErrorReason.VALIDATION_FAILED"] = "The query matched the grammar, but is invalid in some way such as using a service that isn't supported.";
-      codes["PagingErrorReason.START_INDEX_CANNOT_BE_NEGATIVE"] = "";
-      codes["PagingErrorReason.NUMBER_OF_RESULTS_CANNOT_BE_NEGATIVE"] = "";
+      codes["PagingErrorReason.START_INDEX_CANNOT_BE_NEGATIVE"] = "The start index value cannot be a negative number.";
+      codes["PagingErrorReason.NUMBER_OF_RESULTS_CANNOT_BE_NEGATIVE"] = "The number of results cannot be a negative number.";
       codes["PagingErrorReason.UNKNOWN"] = "<span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
       codes["OperatorErrorReason.OPERATOR_NOT_SUPPORTED"] = "";
       codes["NullErrorReason.NULL_CONTENT"] = "Specified list/container must not contain any null elements";
@@ -74555,13 +74662,10 @@ namespace Google.Api.Ads.AdWords.v201506 {
       codes["MediaErrorReason.ENTITY_REFERENCED_IN_MULTIPLE_OPS"] = "A media may only be modified once per call";
       codes["MediaErrorReason.FIELD_NOT_SUPPORTED_FOR_MEDIA_SUB_TYPE"] = "Field is not supported for the media sub type.";
       codes["MediaErrorReason.INVALID_MEDIA_ID"] = "The media id is invalid";
-      codes["MediaErrorReason.INVALID_MEDIA_TYPE"] = "The media type is invalid";
       codes["MediaErrorReason.INVALID_MEDIA_SUB_TYPE"] = "The media subtype is invalid";
+      codes["MediaErrorReason.INVALID_MEDIA_TYPE"] = "The media type is invalid";
       codes["MediaErrorReason.INVALID_REFERENCE_ID"] = "The media reference id is invalid";
       codes["MediaErrorReason.INVALID_YOU_TUBE_ID"] = "The YouTube video id is invalid";
-      codes["MediaErrorReason.YOU_TUBE_VIDEO_NOT_FOUND"] = "The YouTube video id is syntactically valid but the video was not found.";
-      codes["MediaErrorReason.YOU_TUBE_SERVICE_UNAVAILABLE"] = "YouTube is unavailable for requesting video data.";
-      codes["MediaErrorReason.YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION"] = "The YouTube video has a non positive duration.";
       codes["MediaErrorReason.MEDIA_FAILED_TRANSCODING"] = "Media has failed transcoding";
       codes["MediaErrorReason.MEDIA_NOT_TRANSCODED"] = "Media has not been transcoded";
       codes["MediaErrorReason.MEDIA_TYPE_DOES_NOT_MATCH_OBJECT_TYPE"] = "The MediaType does not match the actual media object's type";
@@ -74569,7 +74673,10 @@ namespace Google.Api.Ads.AdWords.v201506 {
       codes["MediaErrorReason.NULL_REFERENCE_ID_AND_MEDIA_ID"] = "One of reference Id or media Id must be specified";
       codes["MediaErrorReason.TOO_LONG"] = "The string has too many characters.";
       codes["MediaErrorReason.UNSUPPORTED_OPERATION"] = "The specified operation is not supported. Only ADD, SET, and REMOVE are supported";
-      codes["MediaErrorReason.UNSUPPORTED_TYPE"] = "";
+      codes["MediaErrorReason.UNSUPPORTED_TYPE"] = "The specified type is not supported.";
+      codes["MediaErrorReason.YOU_TUBE_SERVICE_UNAVAILABLE"] = "YouTube is unavailable for requesting video data.";
+      codes["MediaErrorReason.YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION"] = "The YouTube video has a non positive duration.";
+      codes["MediaErrorReason.YOU_TUBE_VIDEO_NOT_FOUND"] = "The YouTube video id is syntactically valid but the video was not found.";
       codes["InternalApiErrorReason.UNEXPECTED_INTERNAL_API_ERROR"] = "API encountered an unexpected internal error.";
       codes["InternalApiErrorReason.TRANSIENT_ERROR"] = "A temporary error occurred during the request. Please retry.";
       codes["InternalApiErrorReason.UNKNOWN"] = "The cause of the error is not known or only defined in newer versions.";
@@ -74900,7 +75007,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
       codes["ConversionTrackingErrorReason.CONVERSION_TYPE_NOT_FOUND"] = "An attempt to access a conversion type failed because no conversion type with this ID exists for this account.";
       codes["ConversionTrackingErrorReason.DOMAIN_EXCEPTION"] = "An exception occurred in the domain layer during an attempt to process a ConversionTypeOperation.";
       codes["ConversionTrackingErrorReason.INCONSISTENT_COUNTING_TYPE"] = "An attempt was made to set a counting type inconsistent with other properties. Currently, AppConversion with appConversionType = DOWNLOAD and appPlatform = ANDROID_MARKET cannot have a countingType of MANY_PER_CLICK";
-      codes["ConversionTrackingErrorReason.DUPLICATE_APP_ID"] = "The user specified two identical app ids when attempting to create or rename a conversion type.";
+      codes["ConversionTrackingErrorReason.DUPLICATE_APP_ID"] = "The user specified two identical app ids when attempting to create or modify a conversion type.";
       codes["ConversionTrackingErrorReason.DUPLICATE_NAME"] = "The user specified two identical names when attempting to create or rename multiple conversion types.";
       codes["ConversionTrackingErrorReason.EMAIL_FAILED"] = "An error occurred while the server was sending the email.";
       codes["ConversionTrackingErrorReason.EXCEEDED_CONVERSION_TYPE_LIMIT"] = "The maximum number of active conversion types for this account has been exceeded.";
@@ -75015,7 +75122,7 @@ namespace Google.Api.Ads.AdWords.v201506 {
       codes["LocationCriterionServiceErrorReason.INVALID_COUNTRY_CODE"] = "";
       codes["LocationCriterionServiceErrorReason.LOCATION_CRITERION_SERVICE_ERROR"] = "<span class=\"constraint Rejected\">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>";
       codes["ManagedCustomerServiceErrorReason.UNKNOWN"] = "Unknown.";
-      codes["ManagedCustomerServiceErrorReason.NOT_AUTHORIZED"] = "The user is not authorized to perform the action";
+      codes["ManagedCustomerServiceErrorReason.NOT_AUTHORIZED"] = "The user is not authorized to perform the action.";
       codes["ManagedCustomerServiceErrorReason.INVALID_SELECTOR"] = "Invalid selector";
       codes["ManagedCustomerServiceErrorReason.INVALID_TIMEZONE"] = "Can't process the passed in timezone.";
       codes["ManagedCustomerServiceErrorReason.INVALID_CURRENCY"] = "Can't process the passed in currency code.";

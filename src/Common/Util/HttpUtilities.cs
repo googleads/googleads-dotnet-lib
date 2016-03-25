@@ -13,8 +13,11 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Logging;
 
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Net;
 
 namespace Google.Api.Ads.Common.Util {
@@ -108,14 +111,36 @@ namespace Google.Api.Ads.Common.Util {
     /// <returns></returns>
     public static string GetErrorResponseBody(WebException e) {
       WebResponse response = e.Response;
-      string contents = "";
+      string contents = e.Message;
       try {
-        contents = MediaUtilities.GetStreamContentsAsString(
-            response.GetResponseStream());
+        if (response != null) {
+          contents = MediaUtilities.GetStreamContentsAsString(
+              response.GetResponseStream());
+        }
       } catch {
-        contents = e.Message;
+        // Nothing much to do here, since this is an exception on top of an
+        // exception (e.g. IOException on top of a WebException that was a
+        // timeout), and it is enough to return the original WebException.
       }
       return contents;
+    }
+
+    /// <summary>
+    /// Attempts to write a post body and log the request.
+    /// </summary>
+    /// <param name="request">The request.</param>
+    /// <param name="postBody">The post body.</param>
+    /// <param name="logEntry">The log entry.</param>
+    /// <param name="headersToMask">The headers to mask.</param>
+    public static void WritePostBodyAndLog(WebRequest request, string postBody,
+        LogEntry logEntry, ISet<string> headersToMask) {
+      try {
+        using (StreamWriter writer = new StreamWriter(request.GetRequestStream())) {
+          writer.Write(postBody);
+        }
+      } finally {
+        logEntry.LogRequest(request, postBody, headersToMask);
+      }
     }
   }
 }

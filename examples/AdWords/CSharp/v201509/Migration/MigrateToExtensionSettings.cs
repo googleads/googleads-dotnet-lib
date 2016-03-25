@@ -376,8 +376,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
         SitelinkFeedItem newFeedItem = new SitelinkFeedItem() {
           sitelinkText = feedItem.Text,
           sitelinkUrl = feedItem.Url,
-          sitelinkFinalUrls = feedItem.FinalUrls,
-          sitelinkFinalMobileUrls = feedItem.FinalMobileUrls,
+          sitelinkFinalUrls = new UrlList() {
+            urls = feedItem.FinalUrls
+          },
+          sitelinkFinalMobileUrls = new UrlList() {
+            urls = feedItem.FinalMobileUrls
+          },
           sitelinkTrackingUrlTemplate = feedItem.TrackingUrlTemplate,
           sitelinkLine2 = feedItem.Line2,
           sitelinkLine3 = feedItem.Line3,

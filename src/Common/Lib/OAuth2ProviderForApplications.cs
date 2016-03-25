@@ -38,7 +38,11 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// The OAuth2 endpoint for revoking a refresh token programmatically.
     /// </summary>
-    private string REVOKE_ENDPOINT = "https://accounts.google.com/o/oauth2/revoke";
+    private string REVOKE_ENDPOINT {
+      get {
+        return OAUTH_SERVER + "/o/oauth2/revoke";
+      }
+    }
 
     /// <summary>
     /// The OAuth2 redirect url to be used if your application is a desktop
@@ -104,7 +108,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// OAuth2 parameters are empty: Scope, ClientId</exception>
     public string GetAuthorizationUrl() {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       string accessType = (isOffline) ? "offline" : "online";
       string redirectUrl = (string.IsNullOrEmpty(RedirectUri)) ? OFFLINE_REDIRECT_URL : RedirectUri;
@@ -137,7 +141,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// </exception>
     public bool FetchAccessAndRefreshTokens(string authorizationCode) {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       string redirectUrl = (string.IsNullOrEmpty(RedirectUri)) ? OFFLINE_REDIRECT_URL : RedirectUri;
 
@@ -171,7 +175,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// </exception>
     public void RefreshAccessTokenInOfflineMode() {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       ValidateOAuth2Parameter("RefreshToken", RefreshToken);
       ValidateOAuth2Parameter("ClientId", ClientId);
@@ -195,7 +199,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// OAuth2 parameters are empty: RefreshToken.</exception>
     public void RevokeRefreshToken() {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       ValidateOAuth2Parameter("RefreshToken", RefreshToken);
 
@@ -215,15 +219,7 @@ namespace Google.Api.Ads.Common.Lib {
         logEntry.LogResponse(response, false, contents);
         logEntry.Flush();
       } catch (WebException e) {
-        string contents = "";
-        response = e.Response;
-
-        try {
-          contents = MediaUtilities.GetStreamContentsAsString(response.GetResponseStream());
-        } catch {
-          contents = e.Message;
-        }
-
+        string contents = HttpUtilities.GetErrorResponseBody(e);
         logEntry.LogResponse(response, true, contents);
         logEntry.Flush();
 
@@ -244,7 +240,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// </exception>
     public override void RefreshAccessToken() {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       ValidateOAuth2Parameter("RefreshToken", RefreshToken);
       if (!IsOffline) {
@@ -259,7 +255,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <returns>The auth header.</returns>
     public override string GetAuthHeader() {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       return base.GetAuthHeader();
     }
@@ -269,7 +265,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     public override void RefreshAccessTokenIfExpiring() {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       base.RefreshAccessTokenIfExpiring();
     }

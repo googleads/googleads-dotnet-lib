@@ -496,8 +496,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
         Dim newFeedItem As New SitelinkFeedItem()
         newFeedItem.sitelinkText = feedItem.Text
         newFeedItem.sitelinkUrl = feedItem.Url
-        newFeedItem.sitelinkFinalUrls = feedItem.FinalUrls
-        newFeedItem.sitelinkFinalMobileUrls = feedItem.FinalMobileUrls
+        newFeedItem.sitelinkFinalUrls = New UrlList()
+        newFeedItem.sitelinkFinalUrls.urls = feedItem.FinalUrls
+        newFeedItem.sitelinkFinalMobileUrls = New UrlList()
+        newFeedItem.sitelinkFinalMobileUrls.urls = feedItem.FinalMobileUrls
         newFeedItem.sitelinkTrackingUrlTemplate = feedItem.TrackingUrlTemplate
         newFeedItem.sitelinkLine2 = feedItem.Line2
         newFeedItem.sitelinkLine3 = feedItem.Line3

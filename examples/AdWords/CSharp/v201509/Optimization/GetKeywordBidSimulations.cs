@@ -82,7 +82,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
       };
 
       CriterionBidLandscapePage page = new CriterionBidLandscapePage();
-      int bidLandscapeCount = 0;
+      int landscapePointsFound = 0;
       int landscapePointsInLastResponse = 0;
 
       try {
@@ -94,9 +94,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
           // Display bid landscapes.
           if (page != null && page.entries != null) {
             foreach (CriterionBidLandscape bidLandscape in page.entries) {
-              Console.WriteLine("{0}) Found criterion bid landscape with ad group id '{1}', " +
-                  "keyword id '{2}', start date '{3}', end date '{4}', and landscape points:",
-                  bidLandscapeCount + 1, bidLandscape.adGroupId, bidLandscape.criterionId,
+              Console.WriteLine("Found criterion bid landscape with ad group id '{0}', " +
+                  "keyword id '{1}', start date '{2}', end date '{3}', and landscape points:",
+                  bidLandscape.adGroupId, bidLandscape.criterionId,
                   bidLandscape.startDate, bidLandscape.endDate);
               foreach (BidLandscapeLandscapePoint bidLandscapePoint in
                   bidLandscape.landscapePoints) {
@@ -104,16 +104,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201509 {
                     bidLandscapePoint.bid.microAmount, bidLandscapePoint.clicks,
                     bidLandscapePoint.cost.microAmount, bidLandscapePoint.impressions);
                 landscapePointsInLastResponse++;
+                landscapePointsFound++;
               }
-              bidLandscapeCount++;
             }
           }
           // Offset by the number of landscape points, NOT the number
           // of entries (bid landscapes) in the last response.
           selector.paging.IncreaseOffsetBy(landscapePointsInLastResponse);
-        } while (landscapePointsInLastResponse > 0 &&
-            landscapePointsInLastResponse < selector.paging.numberResults);
-        Console.WriteLine("Number of keyword bid landscapes found: {0}", bidLandscapeCount);
+        } while (landscapePointsInLastResponse > 0);
+        Console.WriteLine("Number of keyword bid landscape points found: {0}",
+            landscapePointsFound);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to retrieve keyword bid landscapes.", e);
       }

@@ -85,6 +85,11 @@ namespace Google.Api.Ads.Common.Lib {
     private const string OAUTH2_MODE = "OAuth2Mode";
 
     /// <summary>
+    /// Key name for OAuth2 server.
+    /// </summary>
+    private const string OAUTH2_SERVER_URL = "OAuth2ServerUrl";
+
+    /// <summary>
     /// Key name for OAuth2 client id.
     /// </summary>
     private const string OAUTH2_CLIENTID = "OAuth2ClientId";
@@ -166,9 +171,14 @@ namespace Google.Api.Ads.Common.Lib {
     private bool enableGzipCompression;
 
     /// <summary>
-    /// OAuth2 client id.
+    /// OAuth2 client ID.
     /// </summary>
     private string oAuth2ClientId;
+
+    /// <summary>
+    /// OAuth2 server URL.
+    /// </summary>
+    private string oAuth2ServerUrl;
 
     /// <summary>
     /// OAuth2 client secret.
@@ -242,6 +252,11 @@ namespace Google.Api.Ads.Common.Lib {
     private const int DEFAULT_TIMEOUT = -1;
 
     /// <summary>
+    /// The default value of OAuth2 server URL.
+    /// </summary>
+    private const string DEFAULT_OAUTH2_SERVER = "https://accounts.google.com";
+
+    /// <summary>
     /// Gets whether the credentials in the log file should be masked.
     /// </summary>
     public bool MaskCredentials {
@@ -304,7 +319,21 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Gets or sets the OAuth2 client id.
+    /// Gets or sets the OAuth2 server URL.
+    /// </summary>
+    /// <remarks>This property's setter is primarily used for testing purposes.
+    /// </remarks>
+    public string OAuth2ServerUrl {
+      get {
+        return oAuth2ServerUrl;
+      }
+      set {
+        SetPropertyField("OAuth2ServerUrl", ref oAuth2ServerUrl, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 client ID.
     /// </summary>
     public string OAuth2ClientId {
       get {
@@ -542,6 +571,7 @@ namespace Google.Api.Ads.Common.Lib {
       timeout = DEFAULT_TIMEOUT;
       enableGzipCompression = true;
       oAuth2Mode = OAuth2Flow.APPLICATION;
+      oAuth2ServerUrl = DEFAULT_OAUTH2_SERVER;
       oAuth2ClientId = "";
       oAuth2ClientSecret = "";
       oAuth2AccessToken = "";
@@ -552,6 +582,7 @@ namespace Google.Api.Ads.Common.Lib {
       oAuth2ServiceAccountEmail = "";
 
       includeFeaturesInUserAgent = true;
+      enableSoapExtension = true;
     }
 
     /// <summary>
@@ -585,6 +616,7 @@ namespace Google.Api.Ads.Common.Lib {
       Enum.TryParse<OAuth2Flow>(ReadSetting(settings, OAUTH2_MODE, oAuth2Mode.ToString()),
           out oAuth2Mode);
 
+      oAuth2ServerUrl = ReadSetting(settings, OAUTH2_SERVER_URL, oAuth2ServerUrl);
       oAuth2ClientId = ReadSetting(settings, OAUTH2_CLIENTID, oAuth2ClientId);
       oAuth2ClientSecret = ReadSetting(settings, OAUTH2_CLIENTSECRET, oAuth2ClientSecret);
       oAuth2AccessToken = ReadSetting(settings, OAUTH2_ACCESSTOKEN, oAuth2AccessToken);
@@ -657,5 +689,15 @@ namespace Google.Api.Ads.Common.Lib {
     /// Occurs when a property value changes.
     /// </summary>
     public event PropertyChangedEventHandler PropertyChanged;
+
+    /// <summary>
+    /// Creates a new object that is a copy of the current instance.
+    /// </summary>
+    /// <returns>
+    /// A new object that is a copy of this instance.
+    /// </returns>
+    public virtual object Clone() {
+      return this.MemberwiseClone();
+    }
   }
 }

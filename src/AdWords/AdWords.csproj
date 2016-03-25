@@ -61,6 +61,13 @@
     <Compile Include="Util\BatchJob\v201601\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\v201509\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\CloudStorageError.cs" />
+    <Compile Include="Util\BatchJob\v201603\BatchJobUtilities.cs" />
+    <Compile Include="Util\Shopping\v201603\OperationPair.cs" />
+    <Compile Include="Util\Shopping\v201603\ProductDimensionEqualityComparer.cs" />
+    <Compile Include="Util\Shopping\v201603\ProductDimensions.cs" />
+    <Compile Include="Util\Shopping\v201603\ProductPartitionNode.cs" />
+    <Compile Include="Util\Shopping\v201603\ProductPartitionNodeAdapter.cs" />
+    <Compile Include="Util\Shopping\v201603\ProductPartitionTree.cs" />
     <Compile Include="Util\v201601\MapUtilities.cs" />
     <Compile Include="Util\Selectors\BaseFields.cs" />
     <Compile Include="Util\Shopping\BiddableUnitState.cs" />
@@ -82,6 +89,7 @@
       <DependentUpon>ShoppingMessages.resx</DependentUpon>
     </Compile>
     <Compile Include="Util\Shopping\SubdivisionState.cs" />
+    <Compile Include="Util\v201603\MapUtilities.cs" />
     <Compile Include="v201506\ApiError.cs" />
     <Compile Include="v201506\ApiException.cs" />
     <Compile Include="v201506\FeedValidationErrors.cs" />
@@ -139,6 +147,17 @@
     <Compile Include="v201601\Paging.cs" />
     <Compile Include="v201601\Predicate.cs" />
     <Compile Include="v201601\ReportDefinition.cs" />
+    <Compile Include="v201603\AdWordsApi.cs" />
+    <Compile Include="v201603\AdWordsApi.ProductDimension.cs" />
+    <Compile Include="v201603\AdWordsServiceV201603.cs" />
+    <Compile Include="v201603\ApiError.cs" />
+    <Compile Include="v201603\ApiException.cs" />
+    <Compile Include="v201603\BatchJobApi.cs" />
+    <Compile Include="v201603\FeedValidationErrors.cs" />
+    <Compile Include="v201603\OrderBy.cs" />
+    <Compile Include="v201603\Paging.cs" />
+    <Compile Include="v201603\Predicate.cs" />
+    <Compile Include="v201603\ReportDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
