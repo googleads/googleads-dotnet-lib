@@ -1,0 +1,12 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_parallel_repor2ea6fffaef2af3f77a35edd02c32c85e =
+[
+    [ "ThreadCallback", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_parallel_repor2ea6fffaef2af3f77a35edd02c32c85e.html#a0a761cc5342e846fbd9174365fa2dbea", null ],
+    [ "Config", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_parallel_repor2ea6fffaef2af3f77a35edd02c32c85e.html#a393eac8b545cf5ddb26999a92ad22583", null ],
+    [ "CustomerIdQueue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_parallel_repor2ea6fffaef2af3f77a35edd02c32c85e.html#aa0e44503a8eb83b32434aa2b04eb7c95", null ],
+    [ "DownloadFolder", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_parallel_repor2ea6fffaef2af3f77a35edd02c32c85e.html#a94c36c58d0a97f6f05154c803755388c", null ],
+    [ "FailedReports", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_parallel_repor2ea6fffaef2af3f77a35edd02c32c85e.html#a6cca63ddd5e5e86ca53471833505b13e", null ],
+    [ "QuotaLock", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_parallel_repor2ea6fffaef2af3f77a35edd02c32c85e.html#aecbbedb6957a530ed993585f347b2eac", null ],
+    [ "SignalEvent", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_parallel_repor2ea6fffaef2af3f77a35edd02c32c85e.html#a4c6347128cdbe42d395a945724f62da5", null ],
+    [ "SuccessfulReports", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_parallel_repor2ea6fffaef2af3f77a35edd02c32c85e.html#a784e267271731446b3b36c0e3599b56a", null ],
+    [ "ThreadIndex", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_parallel_repor2ea6fffaef2af3f77a35edd02c32c85e.html#aaec076fbeaf87448b90794e83d331bbc", null ]
+];

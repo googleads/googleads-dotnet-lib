@@ -1,0 +1,9 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_related_to_url_search_parameter =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_related_to_url_search_parameter_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_related_to_url_search_parameter_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_related_to_url_search_parameter_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_related_to_url_search_parameter_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_related_to_url_search_parameter_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_related_to_url_search_parameter_1_1_selectable_fields" ],
+    [ "includeSubUrls", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_related_to_url_search_parameter.html#a07a36727caf17ebdab9d6fd6d3a3f414", null ],
+    [ "includeSubUrlsSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_related_to_url_search_parameter.html#ae6a35a0f5fc5793069a5bef6cdf88649", null ],
+    [ "urls", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_related_to_url_search_parameter.html#a39969ffb136379106760377e3c5cbdde", null ]
+];

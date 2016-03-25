@@ -338,12 +338,12 @@ Selectable">This field can be selected using the value "ProgressStats".</span> <
 </div><div class="memdoc">
 
 <p>The URL to use to upload operations for this job. The URL is unique to this job, and will expire 1 week after the job is created. This field is only returned when calling <a href="BatchJobService#mutate">BatchJobService::mutate</a> with an </p>
-<p><code></code> operation. To upload a file, make a POST request to the uploadUrl with the Content-Type header equal to "application/xml". The body of the request should contain the operations of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_batch_job.html" title="Represents a large mutation job. ">BatchJob</a> in XML format. For the set of operations that <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_batch_job_service.html" title="Use the ">BatchJobService</a> supports, see <a href="https://adwords.google.com/api/adwords/cm/xsd/v201509/BatchJobOps.xsd">https://adwords.google.com/api/adwords/cm/xsd/v201509/BatchJobOps.xsd</a>. For more information about how to upload files, see <a href="https://cloud.google.com/storage/docs/json_api/v1/how-tos/upload">https://cloud.google.com/storage/docs/json_api/v1/how-tos/upload</a>. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
+<p><code></code> operation. To upload a file, for versions equal to or older than V201509, make a PUT request to the uploadUrl with the Content-Type header equal to "application/xml". The body of the request should contain the operations of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_batch_job.html" title="Represents a large mutation job. ">BatchJob</a> in XML format. For versions newer than V201509, make a POST request to the uploadUrl and retrieve the "Location" header from the response as the url to upload operations. For the set of operations that <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_batch_job_service.html" title="Use the ">BatchJobService</a> supports, see <a href="https://adwords.google.com/api/adwords/cm/xsd/v201509/BatchJobOps.xsd">https://adwords.google.com/api/adwords/cm/xsd/v201509/BatchJobOps.xsd</a>. For more information about how to upload files, see <a href="https://cloud.google.com/storage/docs/json_api/v1/how-tos/upload">https://cloud.google.com/storage/docs/json_api/v1/how-tos/upload</a>. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.sPGUwLND3A/dist/github/src/AdWords/v201509/<a class="el" href="v201509_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.RH1Z0eYSou/dist/github/src/AdWords/v201509/<a class="el" href="v201509_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -351,7 +351,7 @@ Selectable">This field can be selected using the value "ProgressStats".</span> <
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509.html">v201509</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_batch_job.html">BatchJob</a></li>
-    <li class="footer">Generated on Wed Feb 24 2016 10:18:50 for Ads API .NET library by
+    <li class="footer">Generated on Fri Mar 25 2016 17:44:18 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

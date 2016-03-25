@@ -136,7 +136,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a3155dee0abe027e2af000aac1c69400e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns details of the authorized customer.  <a href="#a3155dee0abe027e2af000aac1c69400e">More...</a><br/></td></tr>
 <tr class="separator:a3155dee0abe027e2af000aac1c69400e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7a3ec4caed8a07cf4d4cbf5f6968064"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_customer.html">Customer</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_customer_service.html#ab7a3ec4caed8a07cf4d4cbf5f6968064">getCustomers</a> ()</td></tr>
-<tr class="memdesc:ab7a3ec4caed8a07cf4d4cbf5f6968064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns details of all the customers directly accessible by the user authenticating the call.  <a href="#ab7a3ec4caed8a07cf4d4cbf5f6968064">More...</a><br/></td></tr>
+<tr class="memdesc:ab7a3ec4caed8a07cf4d4cbf5f6968064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns details of all the customers directly accessible by the user authenticating the call. Callers are discouraged from setting the  <a href="#ab7a3ec4caed8a07cf4d4cbf5f6968064">More...</a><br/></td></tr>
 <tr class="separator:ab7a3ec4caed8a07cf4d4cbf5f6968064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab730cb95646f684a99a66f7a1bf44f77"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_customer.html">Customer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_customer_service.html#ab730cb95646f684a99a66f7a1bf44f77">mutate</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_customer.html">Customer</a> customer)</td></tr>
 <tr class="memdesc:ab730cb95646f684a99a66f7a1bf44f77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the authorized customer.  <a href="#ab730cb95646f684a99a66f7a1bf44f77">More...</a><br/></td></tr>
@@ -356,7 +356,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns details of all the customers directly accessible by the user authenticating the call. </p>
+<p>Returns details of all the customers directly accessible by the user authenticating the call. Callers are discouraged from setting the </p>
+<p><code>clientCustomerId</code> header field in calls to <a href="CustomerService#getCustomers()">CustomerService::getCustomers()</a>, as its value is ignored by this method, and its presence will trigger an authorization error if the caller does not have access to the customer with the included ID. </p>
 
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_i_customer_service.html#a2ae6a8b51736d58962fb34b0261a0f84">Google.Api.Ads.AdWords.v201601.ICustomerService</a>.</p>
 
@@ -444,7 +445,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.sPGUwLND3A/dist/github/src/AdWords/v201601/<a class="el" href="v201601_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.RH1Z0eYSou/dist/github/src/AdWords/v201601/<a class="el" href="v201601_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -452,7 +453,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601.html">v201601</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_customer_service.html">CustomerService</a></li>
-    <li class="footer">Generated on Wed Feb 24 2016 10:20:39 for Ads API .NET library by
+    <li class="footer">Generated on Fri Mar 25 2016 17:47:21 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_use_shared_bidding_strategy =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_use_shared_bidding_strategy.html#ab4ad5f7ad8441b0967b4dca7597a12df", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_use_shared_bidding_strategy.html#a8ec37be20e26ab0d775d842ba4ca8daa", null ]
-];

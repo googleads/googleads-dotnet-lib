@@ -144,10 +144,10 @@ Properties</h2></td></tr>
 Required">This field is required and should not be </span> <a href="#a0dde0e40e2a66f8cd60a506eeb995a71">More...</a><br/></td></tr>
 <tr class="separator:a0dde0e40e2a66f8cd60a506eeb995a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89b13f52d315df6203be9dea842add2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_dimensions.html">Dimensions</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_rich_media_ad.html#a89b13f52d315df6203be9dea842add2e">dimensions</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a89b13f52d315df6203be9dea842add2e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_dimensions.html" title="Represents a simple height-width dimension. ">Dimensions</a> (height and width) of the ad. This field is optional for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_third_party_redirect_ad.html" title="Data associated with rich media extension attributes. This is enabled for AdX. ">ThirdPartyRedirectAd</a>. AdX Traditional Yield Management creatives do not specify the dimension on the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_third_party_redirect_ad.html" title="Data associated with rich media extension attributes. This is enabled for AdX. ">ThirdPartyRedirectAd</a>, instead the size is specified in the publisher front end when creating a mediation chain.  <a href="#a89b13f52d315df6203be9dea842add2e">More...</a><br/></td></tr>
+<tr class="memdesc:a89b13f52d315df6203be9dea842add2e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_dimensions.html" title="Represents a simple height-width dimension. ">Dimensions</a> (height and width) of the ad. This field is optional for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_third_party_redirect_ad.html" title="Data associated with rich media extension attributes. This is enabled for AdX. ">ThirdPartyRedirectAd</a>. <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad.html" title="The base class of all ad types. ">Ad</a> Exchange traditional yield management creatives do not specify the dimension on the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_third_party_redirect_ad.html" title="Data associated with rich media extension attributes. This is enabled for AdX. ">ThirdPartyRedirectAd</a>; instead, the size is specified in the publisher front end when creating a mediation chain.  <a href="#a89b13f52d315df6203be9dea842add2e">More...</a><br/></td></tr>
 <tr class="separator:a89b13f52d315df6203be9dea842add2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f03498e808644e0305a2b42b59ac98f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_rich_media_ad.html#a6f03498e808644e0305a2b42b59ac98f">snippet</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6f03498e808644e0305a2b42b59ac98f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Snippet for this ad. Required for standard third-party ads. <span class="constraint Selectable">This field can be selected using the value "RichMediaAdSnippet".</span> <span class="constraint StringLength">The length of this string should be between 1 and 3072, inclusive.</span>  <a href="#a6f03498e808644e0305a2b42b59ac98f">More...</a><br/></td></tr>
+<tr class="memdesc:a6f03498e808644e0305a2b42b59ac98f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Snippet for this ad. Required for standard third-party ads.  <a href="#a6f03498e808644e0305a2b42b59ac98f">More...</a><br/></td></tr>
 <tr class="separator:a6f03498e808644e0305a2b42b59ac98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6ab709959486fdb6ebcf13ade2151e1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_rich_media_ad.html#ab6ab709959486fdb6ebcf13ade2151e1">impressionBeaconUrl</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:ab6ab709959486fdb6ebcf13ade2151e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Impression beacon URL for the ad. <span class="constraint Selectable">This field can be selected using the value "RichMediaAdImpressionBeaconUrl".</span>  <a href="#ab6ab709959486fdb6ebcf13ade2151e1">More...</a><br/></td></tr>
@@ -209,7 +209,8 @@ Selectable">This field can be selected using the value "RichMediaAdType".</span>
 <tr class="memitem:a672372404f004f0bf6cf92d6fc1f56f3 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad.html#a672372404f004f0bf6cf92d6fc1f56f3">typeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a672372404f004f0bf6cf92d6fc1f56f3 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af265e4caefe1317776984019bc10b635 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad.html#af265e4caefe1317776984019bc10b635">devicePreference</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af265e4caefe1317776984019bc10b635 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The device preference for the ad. <span class="constraint Selectable">This field can be selected using the value "DevicePreference".</span><span class="constraint Filterable">This field can be filtered on.</span>  <a href="#af265e4caefe1317776984019bc10b635">More...</a><br/></td></tr>
+<tr class="memdesc:af265e4caefe1317776984019bc10b635 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The device preference for the ad. You can only specify a preference for mobile devices (CriterionId 30001). If unspecified (no device preference), all devices are targeted. <span class="constraint Selectable">This field can be selected using the value "DevicePreference".</span><span class="constraint
+Filterable">This field can be filtered on.</span>  <a href="#af265e4caefe1317776984019bc10b635">More...</a><br/></td></tr>
 <tr class="separator:af265e4caefe1317776984019bc10b635 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1f2788b8efbd03e81d85d3863713245 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad.html#ab1f2788b8efbd03e81d85d3863713245">devicePreferenceSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ab1f2788b8efbd03e81d85d3863713245 inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -353,7 +354,7 @@ Required">This field is required and should not be </span></p>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_dimensions.html" title="Represents a simple height-width dimension. ">Dimensions</a> (height and width) of the ad. This field is optional for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_third_party_redirect_ad.html" title="Data associated with rich media extension attributes. This is enabled for AdX. ">ThirdPartyRedirectAd</a>. AdX Traditional Yield Management creatives do not specify the dimension on the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_third_party_redirect_ad.html" title="Data associated with rich media extension attributes. This is enabled for AdX. ">ThirdPartyRedirectAd</a>, instead the size is specified in the publisher front end when creating a mediation chain. </p>
+<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_dimensions.html" title="Represents a simple height-width dimension. ">Dimensions</a> (height and width) of the ad. This field is optional for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_third_party_redirect_ad.html" title="Data associated with rich media extension attributes. This is enabled for AdX. ">ThirdPartyRedirectAd</a>. <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad.html" title="The base class of all ad types. ">Ad</a> Exchange traditional yield management creatives do not specify the dimension on the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_third_party_redirect_ad.html" title="Data associated with rich media extension attributes. This is enabled for AdX. ">ThirdPartyRedirectAd</a>; instead, the size is specified in the publisher front end when creating a mediation chain. </p>
 
 </div>
 </div>
@@ -467,7 +468,9 @@ Selectable">This field can be selected using the value "RichMediaAdType".</span>
 </table>
 </div><div class="memdoc">
 
-<p>Snippet for this ad. Required for standard third-party ads. <span class="constraint Selectable">This field can be selected using the value "RichMediaAdSnippet".</span> <span class="constraint StringLength">The length of this string should be between 1 and 3072, inclusive.</span> </p>
+<p>Snippet for this ad. Required for standard third-party ads. </p>
+<p>The length of the string should be between 1 and 3072, inclusive. <span class="constraint
+Selectable">This field can be selected using the value "RichMediaAdSnippet".</span></p>
 
 </div>
 </div>
@@ -494,7 +497,7 @@ Selectable">This field can be selected using the value "RichMediaAdType".</span>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.sPGUwLND3A/dist/github/src/AdWords/v201601/<a class="el" href="v201601_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.RH1Z0eYSou/dist/github/src/AdWords/v201601/<a class="el" href="v201601_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -502,7 +505,7 @@ Selectable">This field can be selected using the value "RichMediaAdType".</span>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601.html">v201601</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_rich_media_ad.html">RichMediaAd</a></li>
-    <li class="footer">Generated on Wed Feb 24 2016 10:19:08 for Ads API .NET library by
+    <li class="footer">Generated on Fri Mar 25 2016 17:44:50 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

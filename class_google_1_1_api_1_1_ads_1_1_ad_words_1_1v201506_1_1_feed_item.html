@@ -151,12 +151,12 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 <tr class="memitem:a8677058d051df9febc3e8e0aeaabb0f9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item.html#a8677058d051df9febc3e8e0aeaabb0f9">startTime</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a8677058d051df9febc3e8e0aeaabb0f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start time in which this feed item is effective and can begin serving. The time zone of startTime must either match the time zone of the account or be unspecified where the time zone defaults to the account time zone. This field may be null to indicate no start time restriction. The special value "00000101
 000000" may be used to clear an existing start time. <span class="constraint
-Selectable">This field can be selected using the value "StartTime".</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span>  <a href="#a8677058d051df9febc3e8e0aeaabb0f9">More...</a><br/></td></tr>
+Selectable">This field can be selected using the value "StartTime".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span>  <a href="#a8677058d051df9febc3e8e0aeaabb0f9">More...</a><br/></td></tr>
 <tr class="separator:a8677058d051df9febc3e8e0aeaabb0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a821b69e0e4cabb7819de05e95683da13"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item.html#a821b69e0e4cabb7819de05e95683da13">endTime</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a821b69e0e4cabb7819de05e95683da13"><td class="mdescLeft">&#160;</td><td class="mdescRight">End time in which this feed item is no longer effective and will stop serving. The time zone of endTime must either match the time zone of the account or be unspecified where the time zone defaults to the account time zone. This field may be null to indicate no end time restriction. The special value "00000101
 000000" may be used to clear an existing end time. <span class="constraint
-Selectable">This field can be selected using the value "EndTime".</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span>  <a href="#a821b69e0e4cabb7819de05e95683da13">More...</a><br/></td></tr>
+Selectable">This field can be selected using the value "EndTime".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span>  <a href="#a821b69e0e4cabb7819de05e95683da13">More...</a><br/></td></tr>
 <tr class="separator:a821b69e0e4cabb7819de05e95683da13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb161d4cbcb674fbb1a1af21914f7c3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item_attribute_value.html">FeedItemAttributeValue</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item.html#aeb161d4cbcb674fbb1a1af21914f7c3e">attributeValues</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:aeb161d4cbcb674fbb1a1af21914f7c3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The feed item's attribute values. For any unset/unspecified feed attributes, the value is considered unset/null on ADD and unchanged on SET. <span class="constraint Selectable">This field can be selected using the value "AttributeValues".</span> <span class="constraint Required">This field is required and should not be </span> <a href="#aeb161d4cbcb674fbb1a1af21914f7c3e">More...</a><br/></td></tr>
@@ -297,7 +297,7 @@ Selectable">This field can be selected using the value "UrlCustomParameters".</s
 
 <p>End time in which this feed item is no longer effective and will stop serving. The time zone of endTime must either match the time zone of the account or be unspecified where the time zone defaults to the account time zone. This field may be null to indicate no end time restriction. The special value "00000101
 000000" may be used to clear an existing end time. <span class="constraint
-Selectable">This field can be selected using the value "EndTime".</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span> </p>
+Selectable">This field can be selected using the value "EndTime".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span> </p>
 
 </div>
 </div>
@@ -481,7 +481,7 @@ Selectable">This field can be selected using the value "Scheduling".</span> </p>
 
 <p>Start time in which this feed item is effective and can begin serving. The time zone of startTime must either match the time zone of the account or be unspecified where the time zone defaults to the account time zone. This field may be null to indicate no start time restriction. The special value "00000101
 000000" may be used to clear an existing start time. <span class="constraint
-Selectable">This field can be selected using the value "StartTime".</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span> </p>
+Selectable">This field can be selected using the value "StartTime".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span> </p>
 
 </div>
 </div>
@@ -556,7 +556,7 @@ Selectable">This field can be selected using the value "UrlCustomParameters".</s
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.sPGUwLND3A/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.RH1Z0eYSou/dist/github/src/AdWords/v201506/<a class="el" href="v201506_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -564,7 +564,7 @@ Selectable">This field can be selected using the value "UrlCustomParameters".</s
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506.html">v201506</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_feed_item.html">FeedItem</a></li>
-    <li class="footer">Generated on Wed Feb 24 2016 10:12:54 for Ads API .NET library by
+    <li class="footer">Generated on Fri Mar 25 2016 17:32:17 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

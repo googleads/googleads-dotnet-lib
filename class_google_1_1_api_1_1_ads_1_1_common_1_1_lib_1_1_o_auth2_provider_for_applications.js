@@ -10,5 +10,6 @@ var class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_app
     [ "RevokeRefreshToken", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications.html#a6c6062c26864d47d1ecc82210001988c", null ],
     [ "OFFLINE_REDIRECT_URL", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications.html#a43519495b16826e5e7eeca0ca1f71057", null ],
     [ "IsOffline", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications.html#ad1363ced24ca43ae5858d7519dcfd12c", null ],
-    [ "RedirectUri", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications.html#a59775714e0d3814fa435e2fc4bc5f583", null ]
+    [ "RedirectUri", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications.html#a59775714e0d3814fa435e2fc4bc5f583", null ],
+    [ "REVOKE_ENDPOINT", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications.html#a66df59dec4d3a74117638848c9446f9e", null ]
 ];

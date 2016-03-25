@@ -141,7 +141,7 @@ Selectable">This field can be selected using the value "AdGroupId".</span><span 
 <tr class="memitem:ae329813cfda937ba10d8a586b108ebd4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad_group_bid_modifier.html#ae329813cfda937ba10d8a586b108ebd4">adGroupIdSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ae329813cfda937ba10d8a586b108ebd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae812c5cb61032369d6c3ddf1cfab8ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_criterion.html">Criterion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad_group_bid_modifier.html#aae812c5cb61032369d6c3ddf1cfab8ab">criterion</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aae812c5cb61032369d6c3ddf1cfab8ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">The criterion whose bid value is being overridden. Currently, bid modifier overrides are supported only for HighEndMobile platform criterion (ID=30001). The <a href="AdGroupBidModifierService#get">AdGroupBidModifierService::get</a> method returns all platform criteria. <span class="constraint Required">This field is required and should not be </span> <a href="#aae812c5cb61032369d6c3ddf1cfab8ab">More...</a><br/></td></tr>
+<tr class="memdesc:aae812c5cb61032369d6c3ddf1cfab8ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">The criterion whose bid value is being overridden. Currently, bid modifier overrides are supported only for HighEndMobile platform criterion (ID=30001) and preferred content criterion (ID = 400). The <a href="AdGroupBidModifierService#get">AdGroupBidModifierService::get</a> method returns all platform and preferred content criteria. Preferred Content Criteria is available in versions &gt;= V201603. <span class="constraint Required">This field is required and should not be </span> <a href="#aae812c5cb61032369d6c3ddf1cfab8ab">More...</a><br/></td></tr>
 <tr class="separator:aae812c5cb61032369d6c3ddf1cfab8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a134a2cf08e9993bf90ae658f4200055f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad_group_bid_modifier.html#a134a2cf08e9993bf90ae658f4200055f">bidModifier</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a134a2cf08e9993bf90ae658f4200055f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The modifier for bids when the criterion matches. Valid modifier values for the mobile platform criterion range from  <a href="#a134a2cf08e9993bf90ae658f4200055f">More...</a><br/></td></tr>
@@ -365,13 +365,13 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 </table>
 </div><div class="memdoc">
 
-<p>The criterion whose bid value is being overridden. Currently, bid modifier overrides are supported only for HighEndMobile platform criterion (ID=30001). The <a href="AdGroupBidModifierService#get">AdGroupBidModifierService::get</a> method returns all platform criteria. <span class="constraint Required">This field is required and should not be </span></p>
+<p>The criterion whose bid value is being overridden. Currently, bid modifier overrides are supported only for HighEndMobile platform criterion (ID=30001) and preferred content criterion (ID = 400). The <a href="AdGroupBidModifierService#get">AdGroupBidModifierService::get</a> method returns all platform and preferred content criteria. Preferred Content Criteria is available in versions &gt;= V201603. <span class="constraint Required">This field is required and should not be </span></p>
 <p><code>null</code>. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.sPGUwLND3A/dist/github/src/AdWords/v201601/<a class="el" href="v201601_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.RH1Z0eYSou/dist/github/src/AdWords/v201601/<a class="el" href="v201601_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -379,7 +379,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601.html">v201601</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad_group_bid_modifier.html">AdGroupBidModifier</a></li>
-    <li class="footer">Generated on Wed Feb 24 2016 10:21:34 for Ads API .NET library by
+    <li class="footer">Generated on Fri Mar 25 2016 17:48:55 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

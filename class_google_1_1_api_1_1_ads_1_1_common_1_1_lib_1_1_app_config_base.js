@@ -1,6 +1,7 @@
 var class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base =
 [
     [ "AppConfigBase", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a2c7bf31a65a93b6bacdade838d5aaf3d", null ],
+    [ "Clone", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a5fb19784119deff998b82db2308af588", null ],
     [ "GetDefaultOAuth2Scope", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#af0391b99de77e1843488071c0a42eef9", null ],
     [ "GetUserAgent", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a34b64f05661375da24baa0954610d5ee", null ],
     [ "OnPropertyChanged", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#aece0fdd468eab506707c6377058788d6", null ],
@@ -20,6 +21,7 @@ var class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base =
     [ "OAuth2RedirectUri", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a94a50eec5241e12ae2e49177fd985957", null ],
     [ "OAuth2RefreshToken", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a878646c78c970b77a2069a18c815aea0", null ],
     [ "OAuth2Scope", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a5a8b5556c4c8973fc2254fc424eab27e", null ],
+    [ "OAuth2ServerUrl", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a5de173ec4f749078a5809d64f55faace", null ],
     [ "OAuth2ServiceAccountEmail", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a91bd57b02557d66e0bdc07e54c4ce9c4", null ],
     [ "Proxy", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a15150e2c814d5ec435cb773b5acad613", null ],
     [ "RetryCount", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a117d43879308b43cd56fa6932e4bf478", null ],

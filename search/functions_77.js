@@ -13,6 +13,7 @@ var searchData=
   ['writedetailedrequestlogs',['WriteDetailedRequestLogs',['../class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_trace_utilities.html#a3850708ad3fc2ef1c41dd24895f7aea4',1,'Google::Api::Ads::Common::Util::TraceUtilities']]],
   ['writegeneralerrors',['WriteGeneralErrors',['../class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_trace_utilities.html#a0f178d14e713bf96a6a65607978f0c18',1,'Google::Api::Ads::Common::Util::TraceUtilities']]],
   ['writegeneralwarnings',['WriteGeneralWarnings',['../class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_trace_utilities.html#ae3258ffd7a920fbbc82bc4ac15d2a876',1,'Google::Api::Ads::Common::Util::TraceUtilities']]],
+  ['writepostbodyandlog',['WritePostBodyAndLog',['../class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_http_utilities.html#afa26baedecb928d56a100fa1f8fca5cc',1,'Google::Api::Ads::Common::Util::HttpUtilities']]],
   ['writesummaryrequestlogs',['WriteSummaryRequestLogs',['../class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_trace_utilities.html#ac0b6b3710955cffc933629fc5595a3da',1,'Google::Api::Ads::Common::Util::TraceUtilities']]],
   ['writexml',['WriteXml',['../class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_soap_header_base.html#af14ee06ada71e7fb96b4a23b4876540f',1,'Google::Api::Ads::Common::Lib::SoapHeaderBase']]]
 ];

@@ -16,6 +16,7 @@ var interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config =
     [ "OAuth2RedirectUri", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a347643e870b2580158f410d6f0cf0176", null ],
     [ "OAuth2RefreshToken", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#aeb104c69e8dcaa41373b8977680b72cf", null ],
     [ "OAuth2Scope", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#aef17b9fe0de92883fd98fcd3a048686b", null ],
+    [ "OAuth2ServerUrl", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#aeae1c1d732c0b0c6116d13bdce148f8b", null ],
     [ "OAuth2ServiceAccountEmail", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#adc0c2b67cf8b3c95d6f7b7b75a55b0f6", null ],
     [ "Proxy", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a234ca62e40ab4190a995ce6581fa7d0f", null ],
     [ "RetryCount", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a4ebd94bc79814be7907821f7408a36e9", null ],

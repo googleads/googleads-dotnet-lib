@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_enum_value_pair_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_enum_value_pair_1_1_filterable_fields.html#af7e6d8615561fd167b7a549713f5bd59", null ]
+];
