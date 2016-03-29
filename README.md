@@ -1,6 +1,6 @@
 #Google Ads API .NET Client Library
 
-This is a new line.
+This is a new line. Blah blah.
 
 This project hosts the .NET client library for the various SOAP-Based Ads APIs at Google -
  [AdWords API](//developers.google.com/adwords/api) and
