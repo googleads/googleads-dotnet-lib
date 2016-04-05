@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_optimizer_bidding_scheme_1_1_filterable_fields =
-[
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201506_1_1_budget_optimizer_bidding_scheme_1_1_filterable_fields.html#a7a2286d4f89726a1257043d23b926667", null ]
-];
