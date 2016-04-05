@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.AdWords.Examples.CSharp.v201506;
+using Google.Api.Ads.AdWords.Examples.CSharp.v201603;
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.Tests.v201506;
-using Google.Api.Ads.AdWords.v201506;
+using Google.Api.Ads.AdWords.Tests.v201603;
+using Google.Api.Ads.AdWords.v201603;
 
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests;
@@ -54,7 +54,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     [Test]
     [Category("Integration")]
     public void TestUpdateCampaignsCSharpExample() {
-      ExamplesMockData mockData = LoadMockData(SoapMessages_v201506.UpdateCampaign);
+      ExamplesMockData mockData = LoadMockData(SoapMessages_v201603.UpdateCampaign);
       RunMockedExample(mockData, delegate() {
         new UpdateCampaign().Run(user, TEST_CAMPAIGN_ID);
 
@@ -86,11 +86,11 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
         ContextStore.AddKey("SoapMethod", "mutate");
 
         XmlDocument xDoc = new XmlDocument();
-        xDoc.LoadXml(SoapMessages_v201506.UpdateCampaign);
+        xDoc.LoadXml(SoapMessages_v201603.UpdateCampaign);
         XmlElement xRequest = (XmlElement) xDoc.SelectSingleNode("/Example/SOAP/Response");
         xDoc.LoadXml(xRequest.InnerText);
         CampaignService service = (CampaignService) user.GetService(
-            AdWordsService.v201506.CampaignService);
+            AdWordsService.v201603.CampaignService);
 
         AdWordsCallListener.Instance.HandleMessage(xDoc, service, SoapMessageDirection.IN);
 
