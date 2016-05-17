@@ -13,12 +13,17 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.v201603;
+using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util;
 
 using System;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Collections.Generic;
+
+using ApiBatchJob = Google.Api.Ads.AdWords.v201603.BatchJob;
 
 namespace Google.Api.Ads.AdWords.Util.BatchJob.v201603 {
 
@@ -27,6 +32,26 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob.v201603 {
   /// results.
   /// </summary>
   public class BatchJobUtilities : BatchJobUtilitiesBase {
+
+    /// <summary>
+    /// Wait callback to be used when calling <see cref="WaitForPendingJob"/> method.
+    /// </summary>
+    /// <param name="batchJob">The batchjob instance that was retrieved by
+    /// the <see cref="WaitForPendingJob"/> method when polling for job
+    /// status.</param>
+    /// <param name="waitedMilliseconds">The time in milliseconds for which the
+    /// <see cref="WaitForPendingJob"/> method has waited so far.
+    /// <returns>true, if the <see cref="WaitForPendingJob"/> method should be cancelled,
+    /// false otherwise.<returns>
+    public delegate bool WaitCallback(ApiBatchJob batchJob, long waitedMilliseconds);
+
+    /// <summary>
+    /// The list of batch job statuses that corresponds to the job being in a
+    /// pending state.
+    /// </summary>
+    private readonly HashSet<BatchJobStatus> PENDING_STATUSES = new HashSet<BatchJobStatus>() {
+      BatchJobStatus.ACTIVE, BatchJobStatus.AWAITING_FILE, BatchJobStatus.CANCELING
+    };
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BatchJobUtilities"/>
@@ -114,6 +139,100 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob.v201603 {
     /// response from the server.</returns>
     private BatchJobMutateResponse ParseResponse(string contents) {
       return ParseResponse<BatchJobMutateResponseEnvelope>(contents).mutateResponse;
+    }
+
+    /// <summary>
+    /// Wait for the job to complete.
+    /// </summary>
+    /// <param name="batchJobId">ID of the job to wait for completion.</param>
+    /// <returns><c>false</c>, if the job is still pending, false otherwise.</returns>
+    public bool WaitForPendingJob(long batchJobId) {
+      return WaitForPendingJob(batchJobId, int.MaxValue, null);
+    }
+
+    /// <summary>
+    /// Wait for the job to complete.
+    /// </summary>
+    /// <param name="batchJobId">ID of the job to wait for completion.</param>
+    /// <param name="numMilliSecondsToWait">The number of milliseconds to wait for job
+    /// completion.</param>
+    /// <returns><c>false</c>, if the job is still pending, false otherwise.</returns>
+    public bool WaitForPendingJob(long batchJobId, int numMilliSecondsToWait) {
+      return WaitForPendingJob(batchJobId, numMilliSecondsToWait, null);
+    }
+
+    /// <summary>
+    /// Wait for the job to complete.
+    /// </summary>
+    /// <param name="batchJobId">ID of the job to wait for completion.</param>
+    /// <param name="numMilliSecondsToWait">The number of milliseconds to wait for job
+    /// completion.</param>
+    /// <param name="callback">The callback to be called whenever the method polls the
+    /// server for job status.</param>
+    /// <returns><c>false</c>, if the job is still pending, true otherwise.</returns>
+    public bool WaitForPendingJob(long batchJobId, int numMilliSecondsToWait,
+        WaitCallback callback) {
+      BatchJobService batchJobService = (BatchJobService) User.GetService(
+        AdWordsService.v201603.BatchJobService);
+
+      long totalMillisecondsWaited = 0;
+      long pollAttempts = 0;
+      bool cancelWait = false;
+      bool isPending = true;
+      do {
+        int sleepMillis = (int) Math.Pow(2, pollAttempts) *
+          POLL_INTERVAL_SECONDS_BASE * 1000;
+
+        if (totalMillisecondsWaited + sleepMillis > numMilliSecondsToWait) {
+          sleepMillis = (int) (numMilliSecondsToWait - totalMillisecondsWaited);
+        }
+
+        Thread.Sleep(sleepMillis);
+        totalMillisecondsWaited += sleepMillis;
+        pollAttempts++;
+
+        Selector selector = new Selector() {
+          fields = new string[] { ApiBatchJob.Fields.Id, ApiBatchJob.Fields.Status,
+            ApiBatchJob.Fields.DownloadUrl, ApiBatchJob.Fields.ProcessingErrors,
+            ApiBatchJob.Fields.ProgressStats },
+          predicates = new Predicate[] {
+            Predicate.Equals(ApiBatchJob.Fields.Id, batchJobId)
+          }
+        };
+
+        ApiBatchJob batchJob = batchJobService.get(selector).entries[0];
+        isPending = PENDING_STATUSES.Contains(batchJob.status);
+
+        if (callback != null) {
+          cancelWait = callback(batchJob, totalMillisecondsWaited);
+        }
+      } while (isPending && totalMillisecondsWaited < numMilliSecondsToWait && !cancelWait);
+      return !isPending;
+    }
+
+    /// <summary>
+    /// Try to cancel a job.
+    /// </summary>
+    /// <param name="batchJobId">ID of the batch job to cancel.</param>
+    /// <exception cref="AdWordsApiException">Thrown if an API error occurred
+    /// when cancelling the job.</exception>
+    public void TryToCancelJob(long batchJobId) {
+      BatchJobService batchJobService = (BatchJobService) User.GetService(
+        AdWordsService.v201603.BatchJobService);
+      try {
+        BatchJobOperation batchJobSetOperation = new BatchJobOperation() {
+          @operator = Operator.SET,
+          operand = new ApiBatchJob() {
+            id = batchJobId,
+            status = BatchJobStatus.CANCELING
+          }
+        };
+
+        batchJobService.mutate(new BatchJobOperation[] { batchJobSetOperation });
+      } catch (AdWordsApiException e) {
+        // Rethrow the API exception.
+        throw;
+      }
     }
   }
 }

@@ -346,4 +346,7 @@ TimeStamp: Mon, 03 Nov 2014 12:25:30 GMT
   <data name="SoapRequest" xml:space="preserve">
     <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;soap:Header&gt;&lt;RequestHeader xmlns="https://adwords.google.com/api/adwords/cm/v201409"&gt;&lt;KEY1&gt;VALUE1&lt;/KEY1&gt;&lt;KEY2&gt;VALUE2&lt;/KEY2&gt;&lt;KEY3&gt;VALUE3&lt;/KEY3&gt;&lt;/RequestHeader&gt;&lt;/soap:Header&gt;&lt;soap:Body&gt;&lt;get xmlns="https://adwords.google.com/api/adwords/cm/v201409"&gt;&lt;serviceSelector&gt;&lt;fields&gt;Id&lt;/fields&gt;&lt;fields&gt;Name&lt;/fields&gt;&lt;fields&gt;Status&lt;/fields&gt;&lt;paging&gt;&lt;startIndex&gt;0&lt;/startIndex&gt;&lt;numberResults&gt;500&lt;/numberResults&gt;&lt;/paging&gt;&lt;/serviceSelector&gt;&lt;/get&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;</value>
   </data>
+  <data name="secret" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\secret.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

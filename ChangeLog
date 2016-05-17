@@ -1,3 +1,29 @@
+18.26.0
+=======
+AdWords:
+  - Updated the AddCrmBasedUserList code examples to use BouncyCastle.
+
+DFP:
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/83.
+  - Added support for v201605.
+  - Added examples for v201605.
+  - Removed support for v201502.
+  - Removed examples for v201505.
+
+Common:
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/84.
+  - Added [Bouncy Castle](https://www.nuget.org/packages/BouncyCastle/) as a dependency.
+  - Modified P12 handling code to use Bouncy Castle, resolves
+  https://github.com/googleads/googleads-dotnet-lib/issues/75.
+  - Added support for using JSON secrets file when authenticating accounts using OAuth2 service
+  accounts. The JSON secrets file may be specified using the `OAuth2SecretsJsonPath` key in
+  `App.config / Web.config` file or in the AppConfig class. If `OAuth2SecretsJsonPath` setting is
+  specified, then the client library will ignore the settings in `OAuth2ServiceAccountEmail`,
+  `OAuth2JwtCertificatePath` and `OAuth2JwtCertificatePassword` settings. `OAuth2SecretsJsonPath` is
+  now the default mechanism for providing credentials for service account flow. 
+  `OAuth2ServiceAccountEmail`, `OAuth2JwtCertificatePath` and `OAuth2JwtCertificatePassword`
+  settings have been marked as deprecated.
+
 18.25.0
 ======
 

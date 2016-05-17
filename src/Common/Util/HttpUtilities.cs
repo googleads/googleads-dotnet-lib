@@ -88,19 +88,26 @@ namespace Google.Api.Ads.Common.Util {
         throw new ArgumentNullException("config");
       }
 
-      HttpWebRequest request = (HttpWebRequest) HttpWebRequest.Create(url);
+      WebRequest request = HttpWebRequest.Create(url);
 
       request.Method = method;
       request.Proxy = config.Proxy;
       request.Timeout = config.Timeout;
-      request.UserAgent = config.GetUserAgent();
 
-      if (config.EnableGzipCompression) {
-        (request as HttpWebRequest).AutomaticDecompression = DecompressionMethods.GZip
-            | DecompressionMethods.Deflate;
-      } else {
-        (request as HttpWebRequest).AutomaticDecompression = DecompressionMethods.None;
+      HttpWebRequest httpRequest = request as HttpWebRequest;
+      if (httpRequest != null) {
+        httpRequest.UserAgent = config.GetUserAgent();
+
+        if (config.EnableGzipCompression){
+          httpRequest.AutomaticDecompression = DecompressionMethods.GZip
+              | DecompressionMethods.Deflate;
+        } else {
+          httpRequest.AutomaticDecompression = DecompressionMethods.None;
+        }
+
+        return httpRequest;
       }
+
       return request;
     }
 

@@ -58,17 +58,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201603 {
     private const int POLL_INTERVAL_SECONDS_BASE = 30;
 
     /// <summary>
-    /// The maximum number of retries.
+    /// The maximum milliseconds to wait for completion.
     /// </summary>
-    private const long MAX_RETRIES = 5;
-
-    /// <summary>
-    /// The list of batch job statuses that corresponds to the job being in a
-    /// pending state.
-    /// </summary>
-    private readonly HashSet<BatchJobStatus> PENDING_STATUSES = new HashSet<BatchJobStatus>() {
-      BatchJobStatus.ACTIVE, BatchJobStatus.AWAITING_FILE, BatchJobStatus.CANCELING
-    };
+    private const int TIME_TO_WAIT_FOR_COMPLETION = 15 * 60 * 1000; // 15 minutes
 
     /// <summary>
     /// Create a temporary ID generator that will produce a sequence of descending
@@ -165,31 +157,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201603 {
         // Use the BatchJobUploadHelper to upload all operations.
         batchJobUploadHelper.Upload(resumableUploadUrl, operations.ToArray());
 
-        long pollAttempts = 0;
-        bool isPending = true;
-        do {
-          int sleepMillis = (int) Math.Pow(2, pollAttempts) *
-              POLL_INTERVAL_SECONDS_BASE * 1000;
-          Console.WriteLine("Sleeping {0} millis...", sleepMillis);
-          Thread.Sleep(sleepMillis);
+        bool isCompleted = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
+          TIME_TO_WAIT_FOR_COMPLETION, delegate(BatchJob waitBatchJob, long timeElapsed) {
+            Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
+                              timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status);
+            batchJob = waitBatchJob;
+            return false;
+          });
 
-          Selector selector = new Selector() {
-            fields = new string[] { BatchJob.Fields.Id, BatchJob.Fields.Status,
-                BatchJob.Fields.DownloadUrl, BatchJob.Fields.ProcessingErrors,
-                BatchJob.Fields.ProgressStats },
-            predicates = new Predicate[] {
-              Predicate.Equals(BatchJob.Fields.Id, batchJob.id)
-            }
-          };
-          batchJob = batchJobService.get(selector).entries[0];
-
-          Console.WriteLine("Batch job ID {0} has status '{1}'.", batchJob.id, batchJob.status);
-          isPending = PENDING_STATUSES.Contains(batchJob.status);
-        } while (isPending && ++pollAttempts <= MAX_RETRIES);
-
-        if (isPending) {
-          throw new TimeoutException("Job is still in pending state after polling " +
-              MAX_RETRIES + " times.");
+        if (!isCompleted) {
+          throw new TimeoutException("Job is still in pending state after waiting for " +
+             TIME_TO_WAIT_FOR_COMPLETION + " seconds.");
         }
 
         if (batchJob.processingErrors != null) {

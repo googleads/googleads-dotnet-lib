@@ -13,9 +13,8 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Logging;
-
 using System;
-using System.Security.Cryptography.X509Certificates;
+using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
@@ -80,6 +79,18 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
+    /// Gets or sets the JWT private key.
+    /// </summary>
+    public string JwtPrivateKey {
+      get {
+        return config.OAuth2PrivateKey;
+      }
+      set {
+        config.OAuth2PrivateKey = value;
+      }
+    }
+
+    /// <summary>
     /// Gets or sets the JWT certificate path.
     /// </summary>
     public string JwtCertificatePath {
@@ -119,15 +130,19 @@ namespace Google.Api.Ads.Common.Lib {
     /// JwtCertificatePath, JwtCertificatePassword.</exception>
     public void GenerateAccessTokenForServiceAccount() {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       long timestamp = config.UnixTimestamp;
       long expiry = timestamp + DEFAULT_EXPIRY_PERIOD;
 
       ValidateOAuth2Parameter("ServiceAccountEmail", ServiceAccountEmail);
       ValidateOAuth2Parameter("Scope", Scope);
-      ValidateOAuth2Parameter("JwtCertificatePath", JwtCertificatePath);
-      ValidateOAuth2Parameter("JwtCertificatePassword", JwtCertificatePassword);
+
+      // Validate certificate path and password only if private key is empty.
+      if (string.IsNullOrEmpty(JwtPrivateKey)) {
+        ValidateOAuth2Parameter("JwtCertificatePath", JwtCertificatePath);
+        ValidateOAuth2Parameter("JwtCertificatePassword", JwtCertificatePassword);
+      }
 
       OAuth2JwtClaimset jwtClaimset = new OAuth2JwtClaimsetBuilder()
           .WithScope(Scope)
@@ -142,10 +157,15 @@ namespace Google.Api.Ads.Common.Lib {
       string encodedClaimset = Base64UrlEncode(Encoding.UTF8.GetBytes(jwtClaimset.ToJson()));
       string inputForSignature = encodedHeader + "." + encodedClaimset;
 
-      X509Certificate2 jwtCertificate = new X509Certificate2(JwtCertificatePath,
-          JwtCertificatePassword);
+      RSAParameters rsaParameters;
 
-      string signature = Base64UrlEncode(GetRsaSha256Signature(jwtCertificate,
+      if (!string.IsNullOrEmpty(JwtPrivateKey)) {
+        rsaParameters = ConvertPKCS8ToRsaParameters(JwtPrivateKey);
+      } else {
+        rsaParameters = ConvertP12ToRsaParameters(JwtCertificatePath, JwtCertificatePassword);
+      }
+      
+      string signature = Base64UrlEncode(GetRsaSha256Signature(rsaParameters,
           Encoding.UTF8.GetBytes(inputForSignature)));
       string jwt = inputForSignature + "." + signature;
 
@@ -153,10 +173,10 @@ namespace Google.Api.Ads.Common.Lib {
           HttpUtility.UrlEncode(jwt);
 
       try {
-        CallTokenEndpoint(body);
+          CallTokenEndpoint(body);
       } catch (ApplicationException e) {
-        throw new AdsOAuthException("Failed to get access token for service account." + "\n" +
-            e.Message);
+          throw new AdsOAuthException("Failed to get access token for service account." + "\n" +
+              e.Message);
       }
     }
 

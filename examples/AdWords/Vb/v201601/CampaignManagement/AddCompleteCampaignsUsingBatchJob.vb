@@ -63,7 +63,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
     ''' The list of batch job statuses that corresponds to the job being in a
     ''' pending state.
     ''' </summary>
-    Private ReadOnly PENDING_STATUSES As New HashSet(Of BatchJobStatus)
+    Private Shared ReadOnly PENDING_STATUSES As New HashSet(Of BatchJobStatus)
 
     ''' <summary>
     ''' Static constructor.

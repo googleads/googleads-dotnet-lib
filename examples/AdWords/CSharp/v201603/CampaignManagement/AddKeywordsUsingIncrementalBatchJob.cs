@@ -17,6 +17,7 @@ using Google.Api.Ads.AdWords.v201603;
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using Google.Api.Ads.AdWords.Lib;
 
@@ -34,18 +35,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201603 {
     private const int CHUNK_SIZE = 4 * 1024 * 1024;
 
     /// <summary>
-    /// The polling interval base to be used for exponential backoff.
+    /// The maximum milliseconds to wait for completion.
     /// </summary>
-    private const int POLL_INTERVAL_SECONDS_BASE = 30;
-
-    /// <summary>
-    /// The maximum number of retries.
-    /// </summary>
-    private const long MAX_RETRIES = 5;
-
-    private readonly ISet<BatchJobStatus> PENDING_STATUSES = new HashSet<BatchJobStatus>() {
-      BatchJobStatus.ACTIVE, BatchJobStatus.AWAITING_FILE, BatchJobStatus.CANCELING
-    };
+    private const int TIME_TO_WAIT_FOR_COMPLETION = 15 * 60 * 1000; // 15 minutes
 
     /// <summary>
     /// Main method, to run this code example as a standalone application.
@@ -109,26 +101,50 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201603 {
         // Use the BatchJobUploadHelper to upload all operations.
         batchJobUploadHelper.Upload(resumableUploadUrl, operations.ToArray());
 
-        long pollAttempts = 0;
-        bool isPending = false;
-        batchJob = WaitWhileJobIsPending(batchJobService, batchJob, out isPending,
-            out pollAttempts);
-
         // A flag to determine if the job was requested to be cancelled. This
         // typically comes from the user.
         bool wasCancelRequested = false;
 
-        // Optional: Cancel the job if it has not completed after retrying
-        // MAX_RETRIES times.
-        if (isPending && !wasCancelRequested && pollAttempts == MAX_RETRIES) {
-          batchJob = CancelJob(batchJobService, batchJob);
-          batchJob = WaitWhileJobIsPending(batchJobService, batchJob, out isPending,
-              out pollAttempts);
+        bool isComplete = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
+          TIME_TO_WAIT_FOR_COMPLETION, delegate(BatchJob waitBatchJob, long timeElapsed) {
+            Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
+                              timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status);
+            batchJob = waitBatchJob;
+            return wasCancelRequested;
+          });
+
+        // Optional: Cancel the job if it has not completed after waiting for
+        // TIME_TO_WAIT_FOR_COMPLETION.
+        bool shouldWaitForCancellation = false;
+        if (!isComplete && wasCancelRequested) {
+          BatchJobError cancellationError = null;
+          try {
+            batchJobUploadHelper.TryToCancelJob(batchJob.id);
+          } catch (AdWordsApiException e) {
+            cancellationError = GetBatchJobError(e);
+          }
+          if (cancellationError == null) {
+            Console.WriteLine("Successfully requested job cancellation.");
+            shouldWaitForCancellation = true;
+          } else {
+            Console.WriteLine("Job cancellation failed. Error says: {0}.",
+                cancellationError.reason);
+          }
+
+          if (shouldWaitForCancellation) {
+            isComplete = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
+              TIME_TO_WAIT_FOR_COMPLETION, delegate(BatchJob waitBatchJob, long timeElapsed) {
+                Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
+                                  timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status);
+                batchJob = waitBatchJob;
+                return false;
+              });
+          }
         }
 
-        if (isPending) {
-          throw new TimeoutException("Job is still in pending state after polling " +
-              MAX_RETRIES + " times.");
+        if (!isComplete) {
+          throw new TimeoutException("Job is still in pending state after waiting for " +
+              TIME_TO_WAIT_FOR_COMPLETION + " seconds.");
         }
 
         if (batchJob.processingErrors != null) {
@@ -157,80 +173,13 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201603 {
     }
 
     /// <summary>
-    /// Cancels the job.
+    /// Gets the batch job error.
     /// </summary>
-    /// <param name="batchJobService">The batch job service.</param>
-    /// <param name="batchJob">The batch job.</param>
-    private BatchJob CancelJob(BatchJobService batchJobService, BatchJob batchJob) {
-      try {
-        batchJob.status = BatchJobStatus.CANCELING;
-        BatchJobOperation batchJobSetOperation = new BatchJobOperation() {
-          @operator = Operator.SET,
-          operand = batchJob
-        };
-
-        batchJob = batchJobService.mutate(
-            new BatchJobOperation[] { batchJobSetOperation }).value[0];
-        Console.WriteLine("Requested cancellation of batch job with ID {0}.", batchJob.id);
-      } catch (AdWordsApiException e) {
-        ApiException innerException = e.ApiException as ApiException;
-        if (innerException == null) {
-          // This means that the API call failed, but not due to an error on
-          // the operations. You can still examine the innerException property
-          // of the original exception to get more details.
-          throw new Exception("Failed to retrieve ApiError. See inner exception for more " +
-              "details.", e);
-        }
-
-        // Examine each ApiError received from the server.
-        foreach (ApiError apiError in innerException.errors) {
-          if (apiError is BatchJobError) {
-            BatchJobError batchJobError = (BatchJobError) apiError;
-            if (batchJobError.reason == BatchJobErrorReason.INVALID_STATE_CHANGE) {
-              Console.WriteLine("Attempt to cancel batch job with ID {0} was rejected because " +
-                  "the job already completed or was canceled.", batchJob.id);
-              continue;
-            }
-          }
-        }
-        throw;
-      }
-      return batchJob;
-    }
-
-    /// <summary>
-    /// Waits while the batch job is pending.
-    /// </summary>
-    /// <param name="batchJobService">The batch job service.</param>
-    /// <param name="batchJob">The batch job.</param>
-    /// <param name="isPending">True, if the job status is pending, false
-    /// otherwise.</param>
-    /// <param name="pollAttempts">The poll attempts to make while waiting for
-    /// batchjob completion or cancellation.</param>
-    private BatchJob WaitWhileJobIsPending(BatchJobService batchJobService, BatchJob batchJob,
-        out bool isPending, out long pollAttempts) {
-      pollAttempts = 0;
-      isPending = true;
-      do {
-        int sleepMillis = (int) Math.Pow(2, pollAttempts) *
-            POLL_INTERVAL_SECONDS_BASE * 1000;
-        Console.WriteLine("Sleeping {0} millis...", sleepMillis);
-        Thread.Sleep(sleepMillis);
-
-        Selector selector = new Selector() {
-          fields = new string[] { BatchJob.Fields.Id, BatchJob.Fields.Status,
-                BatchJob.Fields.DownloadUrl, BatchJob.Fields.ProcessingErrors,
-                BatchJob.Fields.ProgressStats },
-          predicates = new Predicate[] {
-              Predicate.Equals(BatchJob.Fields.Id, batchJob.id)
-            }
-        };
-        batchJob = batchJobService.get(selector).entries[0];
-
-        Console.WriteLine("Batch job ID {0} has status '{1}'.", batchJob.id, batchJob.status);
-        isPending = PENDING_STATUSES.Contains(batchJob.status);
-      } while (isPending && ++pollAttempts <= MAX_RETRIES);
-      return batchJob;
+    /// <param name="e">The AdWords API Exception.</param>
+    /// <returns>The underlying batch job error if available, null otherwise.</returns>
+    private BatchJobError GetBatchJobError(AdWordsApiException e) {
+      return (e.ApiException as ApiException).GetAllErrorsByType<BatchJobError>().
+          FirstOrDefault();
     }
 
     /// <summary>

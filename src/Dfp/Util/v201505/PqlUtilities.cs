@@ -204,39 +204,44 @@ namespace Google.Api.Ads.Dfp.Util.v201505 {
       object[] rowValues = GetRowValues(row);
       List<string> rowStringValues = new List<string>();
       foreach (object obj in rowValues) {
-        rowStringValues.Add(getTextValue(obj));
+        rowStringValues.Add(GetTextValue(obj));
       }
       return rowStringValues.ToArray();
     }
 
     /// <summary>
-    /// Gets the text value of an object.
+    /// Gets the text value of an unwrapped Value object.
     /// </summary>
-    /// <param name="value">The value.</param>
+    /// <param name="value">The unwrapped Value.</param>
     /// <returns>A formatted text representation of the value.</returns>
     /// <remarks>DateValue is formatted in yyyy-mm-dd format. DateTimeValue is
     /// formatted in yyyy-mm-dd HH:mm:ss Z format.</remarks>
-    private static string getTextValue(Object value) {
+    private static string GetTextValue(Object value) {
       if (value == null) {
         return "";
       }
 
-      if (value is DateValue) {
-        Google.Api.Ads.Dfp.v201505.DateValue dateValue =
-            (Google.Api.Ads.Dfp.v201505.DateValue) value;
-        return string.Format("{0:0000}-{1:00}-{2:00}", dateValue.value.year, dateValue.value.month,
-            dateValue.value.day);
-      } else if (value is DateTimeValue) {
-        Google.Api.Ads.Dfp.v201505.DateTimeValue dateTimeValue =
-            (Google.Api.Ads.Dfp.v201505.DateTimeValue) value;
+      if (value is Google.Api.Ads.Dfp.v201505.Date) {
+        Google.Api.Ads.Dfp.v201505.Date date =
+            (Google.Api.Ads.Dfp.v201505.Date) value;
+        return string.Format("{0:0000}-{1:00}-{2:00}",
+            date.year,
+            date.month,
+            date.day);
+      } else if (value is Google.Api.Ads.Dfp.v201505.DateTime) {
+        Google.Api.Ads.Dfp.v201505.DateTime dateTime =
+            (Google.Api.Ads.Dfp.v201505.DateTime) value;
         return string.Format("{0:0000}-{1:00}-{2:00}T{3:00}:{4:00}:{5:00} {6}",
-            dateTimeValue.value.date.year, dateTimeValue.value.date.month,
-            dateTimeValue.value.date.day, dateTimeValue.value.hour,
-            dateTimeValue.value.minute, dateTimeValue.value.second,
-            dateTimeValue.value.timeZoneID);
+            dateTime.date.year,
+            dateTime.date.month,
+            dateTime.date.day,
+            dateTime.hour,
+            dateTime.minute,
+            dateTime.second,
+            dateTime.timeZoneID);
       } else if (value is List<object>) {
         List<string> textValues = (value as List<object>)
-            .ConvertAll(new Converter<object, string>(getTextValue))
+            .ConvertAll(new Converter<object, string>(GetTextValue))
             .ConvertAll(new Converter<string, string>(EscapeCsv));
         return String.Join<string>(",", textValues);
       } else {

@@ -147,17 +147,17 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       provider.OAuth2RefreshCutoffLimit = 60;
 
       // Test if token is not expired if there's > 60 seconds remaining.
-      provider.UpdatedOn = DateTime.Now.Subtract(new TimeSpan(0, 0, 1800));
+      provider.UpdatedOn = DateTime.UtcNow.Subtract(new TimeSpan(0, 0, 1800));
       provider.ExpiresIn = 3600;
       Assert.False((bool) mi.Invoke(provider, null));
 
       // Test if token is expired if there's 60 seconds or lesser remaining.
-      provider.UpdatedOn = DateTime.Now.Subtract(new TimeSpan(0, 0, 3600));
+      provider.UpdatedOn = DateTime.UtcNow.Subtract(new TimeSpan(0, 0, 3600));
       provider.ExpiresIn = 3600 - provider.OAuth2RefreshCutoffLimit;
       Assert.True((bool) mi.Invoke(provider, null));
 
       // Test if token is expired if there's no time left for expiration.
-      provider.UpdatedOn = DateTime.Now.Subtract(new TimeSpan(0, 0, 3700));
+      provider.UpdatedOn = DateTime.UtcNow.Subtract(new TimeSpan(0, 0, 3700));
       provider.ExpiresIn = 3600;
       Assert.True((bool) mi.Invoke(provider, null));
     }

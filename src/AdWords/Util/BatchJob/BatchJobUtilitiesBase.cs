@@ -40,7 +40,12 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
     /// The feature ID for this class.
     /// </summary>
     protected const AdsFeatureUsageRegistry.Features FEATURE_ID =
-        AdsFeatureUsageRegistry.Features.BatchJobHelper;
+      AdsFeatureUsageRegistry.Features.BatchJobHelper;
+
+    /// <summary>
+    /// The polling interval base to be used for exponential backoff.
+    /// </summary>
+    protected const int POLL_INTERVAL_SECONDS_BASE = 30;
 
     /// <summary>
     /// The user associated with this object.

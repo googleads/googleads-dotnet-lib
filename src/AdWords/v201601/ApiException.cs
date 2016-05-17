@@ -12,6 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System.Collections.Generic;
+using System.Linq;
+
 namespace Google.Api.Ads.AdWords.v201601 {
 
   /// <summary>
@@ -31,6 +34,15 @@ namespace Google.Api.Ads.AdWords.v201601 {
       } else {
         return string.Join<ApiError>("\n", errors);
       }
+    }
+
+    /// <summary>
+    /// Gets all errors of a given type.
+    /// </summary>
+    /// <typeparam name="T">The error type to get.</typeparam>
+    /// <returns>A list of errors of specified type.</returns>
+    public List<T> GetAllErrorsByType<T>() where T : ApiError {
+      return new List<T>(this.errors.Where(x => x is T).Cast<T>());
     }
   }
 }

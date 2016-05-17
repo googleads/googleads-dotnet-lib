@@ -15,10 +15,8 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201509
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-Imports System.Security.Cryptography
+Imports Org.BouncyCastle.Crypto.Digests
+
 Imports System.Text
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
@@ -41,7 +39,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
       "customer1@example.com", "customer2@example.com", " Customer3@example.com "
     }
 
-    Private Shared ReadOnly hashProvider As HashAlgorithm = SHA256Managed.Create()
+    Private Shared ReadOnly digest As GeneralDigest = New Sha256Digest()
 
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -119,7 +117,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
         Dim emailHashes(EMAILS.Length) As String
         For i As Integer = 0 To EMAILS.Length - 1
           Dim normalizedEmail As String = ToNormalizedEmail(EMAILS(i))
-          emailHashes(i) = ToSha256String(hashProvider, normalizedEmail)
+          emailHashes(i) = ToSha256String(digest, normalizedEmail)
         Next
 
         ' Add email address hashes.
@@ -148,10 +146,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
     ''' <param name="hashProvider">Provides the algorithm for SHA-256.</param>
     ''' <param name="email">The email address to hash.</param>
     ''' <returns>Hash email address using SHA-256 hashing algorithm.</returns>
-    Private Shared Function ToSha256String(ByVal hashProvider As HashAlgorithm, _
+    Private Shared Function ToSha256String(ByVal digest As GeneralDigest, _
                                            ByVal email As String) As String
-      Dim hash As Byte() = hashProvider.ComputeHash(Encoding.UTF8.GetBytes(email))
-      Return BitConverter.ToString(hash).Replace("-", String.Empty)
+      Dim data As Byte() = Encoding.UTF8.GetBytes(email)
+      Dim digestBytes(digest.GetDigestSize()) As Byte
+      digest.BlockUpdate(data, 0, data.Length)
+      digest.DoFinal(digestBytes, 0)
+      Return BitConverter.ToString(digestBytes).Replace("-", String.Empty)
     End Function
 
     ''' <summary>

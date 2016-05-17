@@ -121,9 +121,17 @@
     <value>AuthToken login failed. See ErrorCode for more details.</value>
     <comment>Used by AuthToken when login fails.</comment>
   </data>
+  <data name="ClientEmailIsMissingInJsonFile" xml:space="preserve">
+    <value>Required key 'client_email' is missing in JSON secrets file.</value>
+    <comment>Used by AppConfigBase class when trying to load various settings from the JSON secrets file when using OAuth2 service account flow. Thrown if client_email key is missing in the JSON file.</comment>
+  </data>
   <data name="EmailCannotBeNull" xml:space="preserve">
     <value>Email cannot be null</value>
     <comment>Used by AuthTokenCache when an empty email is passed to it.</comment>
+  </data>
+  <data name="FailedToLoadJsonSecretsFile" xml:space="preserve">
+    <value>Failed to load JSON secrets file for service account configuration. See inner exception for details.</value>
+    <comment>Used by AppConfigBase class when trying to load various settings from the JSON secrets file when using OAuth2 service account flow.</comment>
   </data>
   <data name="FailedToParseAuthTokenException" xml:space="preserve">
     <value>Failed to parse response from server. See inner exception for more details.</value>
@@ -145,6 +153,10 @@
     <value>OAuth2 Offline mode should be true to refresh access token.</value>
     <comment>Used to check if OAuth2 offline mode is enabled when refreshing access tokens.</comment>
   </data>
+  <data name="OAuth2JwtCertificateInvalid" xml:space="preserve">
+    <value>Unable to load private key from specified JWT certificate.</value>
+    <comment>Used by OAuth2ProviderBase if a private key cannot be loaded from OAuth2JwtCertificatePath.</comment>
+  </data>
   <data name="OAuth2ParameterErrorMessage" xml:space="preserve">
     <value>Looks like your application is not configured to use OAuth2 properly. Required OAuth2 parameter {0} is missing. You may run Common\\Utils\\OAuth2TokenGenerator.cs to generate a default OAuth2 configuration.</value>
     <comment>Thrown when a required OAuth2 parameter is missing.</comment>
@@ -155,6 +167,10 @@
   <data name="PasswordCannotBeNull" xml:space="preserve">
     <value>Password cannot be null</value>
     <comment>Used by AuthTokenCache when an empty password is passed to it.</comment>
+  </data>
+  <data name="PrivateKeyIsMissingInJsonFile" xml:space="preserve">
+    <value>Required key 'private_key' is missing in JSON secrets file.</value>
+    <comment>Used by AppConfigBase class when trying to load various settings from the JSON secrets file when using OAuth2 service account flow. Thrown if private_key key is missing in the JSON file.</comment>
   </data>
   <data name="QuotesNotClosedInCsvLine" xml:space="preserve">
     <value>Quotes not closed in csv record.</value>

@@ -18,8 +18,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Net;
 using System.Reflection;
+using System.Web.Script.Serialization;
 
 namespace Google.Api.Ads.Common.Lib {
 
@@ -120,11 +122,6 @@ namespace Google.Api.Ads.Common.Lib {
     private const string OAUTH2_REDIRECTURI = "OAuth2RedirectUri";
 
     /// <summary>
-    /// Key name for service account email.
-    /// </summary>
-    private const string OAUTH2_SERVICEACCOUNT_EMAIL = "OAuth2ServiceAccountEmail";
-
-    /// <summary>
     /// Key name for prn account email.
     /// </summary>
     private const string OAUTH2_PRN_EMAIL = "OAuth2PrnEmail";
@@ -138,6 +135,16 @@ namespace Google.Api.Ads.Common.Lib {
     /// Key name for jwt certificate password.
     /// </summary>
     private const string OAUTH2_JWT_CERTIFICATE_PASSWORD = "OAuth2JwtCertificatePassword";
+
+    /// <summary>
+    /// Key name for service account email.
+    /// </summary>
+    private const string OAUTH2_SERVICEACCOUNT_EMAIL = "OAuth2ServiceAccountEmail";
+
+    /// <summary>
+    /// Key name for OAuth2 secrets JSON file path.
+    /// </summary>
+    private const string OAUTH2_SECRETS_JSON_PATH = "OAuth2SecretsJsonPath";
 
     /// <summary>
     /// Key name for includeFeaturesInUserAgent.
@@ -196,11 +203,6 @@ namespace Google.Api.Ads.Common.Lib {
     private string oAuth2RefreshToken;
 
     /// <summary>
-    /// OAuth2 service account email.
-    /// </summary>
-    private string oAuth2ServiceAccountEmail;
-
-    /// <summary>
     /// OAuth2 prn email.
     /// </summary>
     private string oAuth2PrnEmail;
@@ -214,6 +216,21 @@ namespace Google.Api.Ads.Common.Lib {
     /// OAuth2 certificate password.
     /// </summary>
     private string oAuth2CertificatePassword;
+
+    /// <summary>
+    /// OAuth2 service account email.
+    /// </summary>
+    private string oAuth2ServiceAccountEmail;
+
+    /// <summary>
+    /// OAuth2 secrets JSON file path.
+    /// </summary>
+    private string oAuth2SecretsJsonPath;
+
+    /// <summary>
+    /// OAuth2 private key loaded from secrets JSON file.
+    /// </summary>
+    private string oAuth2PrivateKey;
 
     /// <summary>
     /// OAuth2 scope.
@@ -421,20 +438,6 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Gets or sets the OAuth2 service account email.
-    /// </summary>
-    /// <remarks>This key is applicable only when using OAuth2 service accounts.
-    /// </remarks>
-    public string OAuth2ServiceAccountEmail {
-      get {
-        return oAuth2ServiceAccountEmail;
-      }
-      set {
-        SetPropertyField("OAuth2ServiceAccountEmail", ref oAuth2ServiceAccountEmail, value);
-      }
-    }
-
-    /// <summary>
     /// Gets or sets the OAuth2 prn email.
     /// </summary>
     /// <remarks>This key is applicable only when using OAuth2 service accounts.
@@ -473,6 +476,57 @@ namespace Google.Api.Ads.Common.Lib {
       }
       set {
         SetPropertyField("OAuth2CertificatePassword", ref oAuth2CertificatePassword, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 service account email.
+    /// </summary>
+    /// <remarks>This key is applicable only when using OAuth2 service accounts.
+    /// </remarks>
+    public string OAuth2ServiceAccountEmail {
+      get {
+        return oAuth2ServiceAccountEmail;
+      }
+      set {
+        SetPropertyField("OAuth2ServiceAccountEmail", ref oAuth2ServiceAccountEmail, value);
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 secrets JSON file path.
+    /// </summary>
+    /// <remarks>
+    /// This key is applicable only when using OAuth2 service accounts. If this
+    /// key is specified, then <see cref="OAuth2CertificatePath"/>,
+    /// <see cref="OAuth2CertificatePassword"/> and <see cref="OAuth2ServiceAccountEmail"/>
+    /// properties will be ignored and corresponding values will be read from the
+    /// JSON secrets file.
+    /// </remarks>
+    public string OAuth2SecretsJsonPath {
+      get {
+        return oAuth2SecretsJsonPath;
+      }
+      set {
+        SetPropertyField("OAuth2SecretsJsonPath", ref oAuth2SecretsJsonPath, value);
+        LoadOAuth2SecretsFromFile();
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the OAuth2 private key for service account flow.
+    /// </summary>
+    /// <remarks>
+    /// This key is applicable only when using OAuth2 service accounts.
+    /// This key is not read from App.config. It is instead populated by parsing
+    /// the file referred to in <see cref="OAuth2SecretsJsonPath"/> setting.
+    /// </remarks>
+    public string OAuth2PrivateKey {
+      get {
+        return oAuth2PrivateKey;
+      }
+      set {
+        SetPropertyField("OAuth2PrivateKey", ref oAuth2PrivateKey, value);
       }
     }
 
@@ -580,6 +634,8 @@ namespace Google.Api.Ads.Common.Lib {
       oAuth2RedirectUri = null;
       oAuth2PrnEmail = "";
       oAuth2ServiceAccountEmail = "";
+      oAuth2SecretsJsonPath = "";
+      oAuth2PrivateKey = "";
 
       includeFeaturesInUserAgent = true;
       enableSoapExtension = true;
@@ -623,14 +679,23 @@ namespace Google.Api.Ads.Common.Lib {
       oAuth2RefreshToken = ReadSetting(settings, OAUTH2_REFRESHTOKEN, oAuth2RefreshToken);
       oAuth2Scope = ReadSetting(settings, OAUTH2_SCOPE, oAuth2Scope);
       oAuth2RedirectUri = ReadSetting(settings, OAUTH2_REDIRECTURI, oAuth2RedirectUri);
-      oAuth2ServiceAccountEmail = ReadSetting(settings, OAUTH2_SERVICEACCOUNT_EMAIL,
-          oAuth2ServiceAccountEmail);
-      oAuth2PrnEmail = ReadSetting(settings, OAUTH2_PRN_EMAIL, oAuth2PrnEmail);
 
-      oAuth2CertificatePath = ReadSetting(settings, OAUTH2_JWT_CERTIFICATE_PATH,
-          oAuth2CertificatePath);
-      oAuth2CertificatePassword = ReadSetting(settings, OAUTH2_JWT_CERTIFICATE_PASSWORD,
-          oAuth2CertificatePassword);
+      // Read and parse the OAuth2 JSON secrets file if applicable.
+      oAuth2SecretsJsonPath = ReadSetting(settings, OAUTH2_SECRETS_JSON_PATH,
+          oAuth2SecretsJsonPath);
+
+      if (!string.IsNullOrEmpty(oAuth2SecretsJsonPath)) {
+        LoadOAuth2SecretsFromFile();
+      } else {
+        oAuth2ServiceAccountEmail = ReadSetting(settings, OAUTH2_SERVICEACCOUNT_EMAIL,
+            oAuth2ServiceAccountEmail);
+        oAuth2CertificatePath = ReadSetting(settings, OAUTH2_JWT_CERTIFICATE_PATH,
+            oAuth2CertificatePath);
+        oAuth2CertificatePassword = ReadSetting(settings, OAUTH2_JWT_CERTIFICATE_PASSWORD,
+            oAuth2CertificatePassword);
+      }
+
+      oAuth2PrnEmail = ReadSetting(settings, OAUTH2_PRN_EMAIL, oAuth2PrnEmail);
 
       int.TryParse(ReadSetting(settings, TIMEOUT, timeout.ToString()), out timeout);
       int.TryParse(ReadSetting(settings, RETRYCOUNT, retryCount.ToString()), out retryCount);
@@ -639,6 +704,34 @@ namespace Google.Api.Ads.Common.Lib {
 
       bool.TryParse(ReadSetting(settings, INCLUDE_FEATURES_IN_USERAGENT,
           includeFeaturesInUserAgent.ToString()), out includeFeaturesInUserAgent);
+    }
+
+    /// <summary>
+    /// Loads the OAuth2 private key and service account email settings from the
+    /// secrets JSON file.
+    /// </summary>
+    private void LoadOAuth2SecretsFromFile() {
+      try {
+        using (StreamReader reader = new StreamReader(OAuth2SecretsJsonPath)) {
+          string contents = reader.ReadToEnd();
+          JavaScriptSerializer serializer = new JavaScriptSerializer();
+          Dictionary<string, string> config =
+              serializer.Deserialize<Dictionary<string, string>>(contents);
+
+          if (config.ContainsKey("client_email")) {
+            this.OAuth2ServiceAccountEmail = config["client_email"];
+          } else {
+            throw new ApplicationException(CommonErrorMessages.ClientEmailIsMissingInJsonFile);
+          }
+          if (config.ContainsKey("private_key")) {
+            this.OAuth2PrivateKey = config["private_key"];
+          } else {
+            throw new ApplicationException(CommonErrorMessages.PrivateKeyIsMissingInJsonFile);
+          }
+        }
+      } catch (Exception e) {
+        throw new AdsOAuthException(CommonErrorMessages.FailedToLoadJsonSecretsFile, e);
+      }
     }
 
     /// <summary>

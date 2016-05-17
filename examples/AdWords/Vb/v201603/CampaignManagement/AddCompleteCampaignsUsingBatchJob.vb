@@ -50,32 +50,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201603
     Private Const NUMBER_OF_KEYWORDS_TO_ADD As Long = 5
 
     ''' <summary>
-    ''' The polling interval base to be used for exponential backoff.
+    ''' The maximum milliseconds to wait for completion.
     ''' </summary>
-    Private Const POLL_INTERVAL_SECONDS_BASE As Integer = 30
+    Private Const TIME_TO_WAIT_FOR_COMPLETION As Integer = 15 * 60 * 1000 ' 15 minutes
 
-    ''' <summary>
-    ''' The maximum number of retries.
-    ''' </summary>
-    Private Const MAX_RETRIES As Long = 5
 
-    ''' <summary>
-    ''' The list of batch job statuses that corresponds to the job being in a
-    ''' pending state.
-    ''' </summary>
-    Private ReadOnly PENDING_STATUSES As New HashSet(Of BatchJobStatus)
-
-    ''' <summary>
-    ''' Static constructor.
-    ''' </summary>
-    Shared Sub New()
-      ' Initialize the pending statuses Hashset. The 'from' keyword cannot be
-      ' used due to mono compiler limitations.
-      PENDING_STATUSES.Add(BatchJobStatus.ACTIVE)
-      PENDING_STATUSES.Add(BatchJobStatus.AWAITING_FILE)
-      PENDING_STATUSES.Add(BatchJobStatus.CANCELING)    
-    End Sub
-    
     ''' <summary>
     ''' Create a temporary ID generator that will produce a sequence of descending
     ''' negative numbers.
@@ -125,14 +104,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201603
         addOp.operator = [Operator].ADD
         addOp.operand = New BatchJob()
 
-        Dim job As BatchJob = batchJobService.mutate( _
+        Dim batchJob As BatchJob = batchJobService.mutate( _
             New BatchJobOperation() {addOp}).value(0)
 
         ' Get the upload URL from the new job.
-        Dim uploadUrl As String = job.uploadUrl.url
+        Dim uploadUrl As String = batchJob.uploadUrl.url
 
         Console.WriteLine("Created BatchJob with ID {0}, status '{1}' and upload URL {2}.",
-            job.id, job.status, job.uploadUrl.url)
+            batchJob.id, batchJob.status, batchJob.uploadUrl.url)
 
         ' Create the mutate request that will be sent to the upload URL.
         Dim operations As New List(Of Operation)()
@@ -172,34 +151,24 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201603
         ' Use the BatchJobUploadHelper to upload all operations.
         batchJobUploadHelper.Upload(resumableUploadUrl, operations.ToArray())
 
-        Dim pollAttempts As Long = 0
-        Dim isPending As Boolean = True
-        Do
-          Dim sleepMillis As Integer = CType(Math.Pow(2, pollAttempts) * _
-              POLL_INTERVAL_SECONDS_BASE * 1000, Integer)
-          Console.WriteLine("Sleeping {0} millis...", sleepMillis)
-          Thread.Sleep(sleepMillis)
-          Dim selector As New Selector()
-          selector.fields = New String() { _
-              BatchJob.Fields.Id, BatchJob.Fields.Status, BatchJob.Fields.DownloadUrl, _
-              BatchJob.Fields.ProcessingErrors, BatchJob.Fields.ProgressStats
-          }
-          selector.predicates = New Predicate() { _
-            Predicate.Equals(BatchJob.Fields.Id, job.id)
-          }
-          job = batchJobService.get(selector).entries(0)
-          Console.WriteLine("Batch job ID {0} has status '{1}'.", job.id, job.status)
-          isPending = PENDING_STATUSES.Contains(job.status)
-          pollAttempts += 1
-        Loop While isPending AndAlso pollAttempts <= MAX_RETRIES
+        Dim waitHandler As WaitHandler
 
-        If isPending Then
-          Throw New TimeoutException("Job is still in pending state after polling " & _
-              MAX_RETRIES.ToString() & " times.")
+        ' Create a wait handler.
+        waitHandler = New WaitHandler(batchJob, False)
+
+        Dim isComplete As Boolean = batchJobUploadHelper.WaitForPendingJob(BatchJob.id, _
+            TIME_TO_WAIT_FOR_COMPLETION, AddressOf waitHandler.OnJobWaitForCompletion)
+
+        ' Restore the latest value for batchJob from waithandler.
+        batchJob = waitHandler.Job
+
+        If Not isComplete Then
+          Throw New TimeoutException("Job is still in pending state after waiting for " & _
+             TIME_TO_WAIT_FOR_COMPLETION & " seconds.")
         End If
 
-        If Not (job.processingErrors Is Nothing) Then
-          For Each processingError As BatchJobProcessingError In job.processingErrors
+        If Not (batchJob.processingErrors Is Nothing) Then
+          For Each processingError As BatchJobProcessingError In batchJob.processingErrors
             Console.WriteLine("  Processing error: {0}, {1}, {2}, {3}, {4}", _
                 processingError.ApiErrorType, processingError.trigger, _
                 processingError.errorString, processingError.fieldPath, _
@@ -207,11 +176,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201603
           Next
         End If
 
-        If (Not (job.downloadUrl Is Nothing)) AndAlso _
-           (Not (job.downloadUrl.url Is Nothing)) Then
+        If (Not (batchJob.downloadUrl Is Nothing)) AndAlso _
+           (Not (batchJob.downloadUrl.url Is Nothing)) Then
           Dim mutateResponse As BatchJobMutateResponse = batchJobUploadHelper.Download( _
-              job.downloadUrl.url)
-          Console.WriteLine("Downloaded results from {0}.", job.downloadUrl.url)
+              batchJob.downloadUrl.url)
+          Console.WriteLine("Downloaded results from {0}.", batchJob.downloadUrl.url)
           For Each mutateResult As MutateResult In mutateResponse.rval
             Dim outcome As String = ""
             If mutateResult.errorList Is Nothing Then
@@ -226,6 +195,89 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201603
         Throw New System.ApplicationException("Failed to add campaigns using batch job.", e)
       End Try
     End Sub
+
+    ''' <summary>
+    ''' A class that handles wait callbacks for the batch job.
+    ''' </summary>
+    Class WaitHandler
+
+      ''' <summary>
+      ''' The batch job to wait for.
+      ''' </summary>
+      Private batchJob As BatchJob
+
+      ''' <summary>
+      ''' A flag to determine if the job was requested to be cancelled. This
+      ''' typically comes from the user.
+      ''' </summary>
+      Private cancelRequested As Boolean
+
+      ''' <summary>
+      ''' Initializes a new instance of the <see cref="WaitHandler"/> class.
+      ''' </summary>
+      ''' <param name="batchJob">The batch job to wait for.</param>
+      ''' <param name="wasCancelRequested">A flag to determine if the job was
+      ''' requested to be cancelled. This typically comes from the user.</param>
+      Sub New(ByVal batchJob As BatchJob, ByVal wasCancelRequested As Boolean)
+        Me.batchJob = batchJob
+        Me.WasCancelRequested = wasCancelRequested
+      End Sub
+
+      ''' <summary>
+      ''' Gets or sets the batch job to wait for.
+      ''' </summary>
+      Public Property Job As BatchJob
+        Get
+          Return Me.batchJob
+        End Get
+        Set(value As BatchJob)
+          Me.batchJob = value
+        End Set
+      End Property
+
+      ''' <summary>
+      ''' Gets or sets a flag to determine if the job was requested to be
+      ''' cancelled. This typically comes from the user.
+      ''' </summary>
+      Public Property WasCancelRequested As Boolean
+        Get
+          Return Me.cancelRequested
+        End Get
+        Set(value As Boolean)
+          Me.cancelRequested = value
+        End Set
+      End Property
+
+      ''' <summary>
+      ''' Callback method when the job is waiting for cancellation.
+      ''' </summary>
+      ''' <param name="waitBatchJob">The updated batch job being waited for.</param>
+      ''' <param name="timeElapsed">The time elapsed.</param>
+      ''' <returns>True, if the wait loop should be cancelled, false otherwise.
+      '''</returns>
+      Public Function OnJobWaitForCancellation(ByVal waitBatchJob As BatchJob, _
+                                               ByVal timeElapsed As Long) As Boolean
+        Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
+                          timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status)
+        batchJob = waitBatchJob
+        Return False
+      End Function
+
+      ''' <summary>
+      ''' Callback method when the job is waiting for completion.
+      ''' </summary>
+      ''' <param name="waitBatchJob">The updated batch job being waited for.</param>
+      ''' <param name="timeElapsed">The time elapsed.</param>
+      ''' <returns>True, if the wait loop should be cancelled, false otherwise.
+      '''</returns>
+      Public Function OnJobWaitForCompletion(ByVal waitBatchJob As BatchJob, _
+                                             ByVal timeElapsed As Long) As Boolean
+        Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
+                                timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status)
+        batchJob = waitBatchJob
+        Return Me.WasCancelRequested
+      End Function
+    End Class
 
     ''' <summary>
     ''' Builds the operation for creating an ad within an ad group.

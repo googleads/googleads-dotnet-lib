@@ -15,6 +15,8 @@
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201601;
 
+using Org.BouncyCastle.Crypto.Digests;
+
 using System;
 using System.Security.Cryptography;
 using System.Text;
@@ -39,7 +41,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201601 {
       "customer1@example.com", "customer2@example.com", " Customer3@example.com "
     };
 
-    private static readonly HashAlgorithm hashProvider = SHA256Managed.Create();
+    private static readonly GeneralDigest digest = new Sha256Digest();
 
     /// <summary>
     /// Main method, to run this code example as a standalone application.
@@ -119,7 +121,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201601 {
         String[] emailHashes = new String[EMAILS.Length];
         for (int i = 0; i < EMAILS.Length; i++) {
           String normalizedEmail = ToNormalizedEmail(EMAILS[i]);
-          emailHashes[i] = ToSha256String(hashProvider, normalizedEmail);
+          emailHashes[i] = ToSha256String(digest, normalizedEmail);
         }
 
         // Add email address hashes.
@@ -145,12 +147,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201601 {
     /// <summary>
     /// Hash email address using SHA-256 hashing algorithm.
     /// </summary>
-    /// <param name="hashProvider">Provides the algorithm for SHA-256.</param>
+    /// <param name="digest">Provides the algorithm for SHA-256.</param>
     /// <param name="email">The email address to hash.</param>
     /// <returns>Hash email address using SHA-256 hashing algorithm.</returns>
-    private static String ToSha256String(HashAlgorithm hashProvider, String email) {
-      byte[] hash = hashProvider.ComputeHash(Encoding.UTF8.GetBytes(email));
-      return BitConverter.ToString(hash).Replace("-", string.Empty);
+    private static String ToSha256String(GeneralDigest digest, String email) {
+      byte[] data = Encoding.UTF8.GetBytes(email);
+      byte[] digestBytes = new byte[digest.GetDigestSize()];
+      digest.BlockUpdate(data, 0, data.Length);
+      digest.DoFinal(digestBytes, 0);
+      return BitConverter.ToString(digestBytes).Replace("-", string.Empty);
     }
 
     /// <summary>

@@ -46,6 +46,10 @@
     <Compile Include="Headers\RequestHeaderStub.cs" />
     <Compile Include="Headers\OAuth.cs" />
     <Compile Include="Lib\DfpAuthorizationMethod.cs" />
+    <Compile Include="Util\v201605\DateTimeUtilities.cs" />
+    <Compile Include="Util\v201605\PqlUtilities.cs" />
+    <Compile Include="Util\v201605\StatementBuilder.cs" />
+    <Compile Include="Util\v201605\ReportUtilities.cs" />
     <Compile Include="Util\v201602\DateTimeUtilities.cs" />
     <Compile Include="Util\v201602\PqlUtilities.cs" />
     <Compile Include="Util\v201602\StatementBuilder.cs" />
@@ -62,10 +66,6 @@
     <Compile Include="Util\v201505\PqlUtilities.cs" />
     <Compile Include="Util\v201505\StatementBuilder.cs" />
     <Compile Include="Util\v201505\ReportUtilities.cs" />
-    <Compile Include="Util\v201502\DateTimeUtilities.cs" />
-    <Compile Include="Util\v201502\PqlUtilities.cs" />
-    <Compile Include="Util\v201502\StatementBuilder.cs" />
-    <Compile Include="Util\v201502\ReportUtilities.cs" />
     <Compile Include="DfpErrorMessages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,8 +84,6 @@
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Headers\RequestHeader.cs" />
-    <Compile Include="v201502\DfpApi.cs" />
-    <Compile Include="v201502\DfpServiceV201502.cs" />
     <Compile Include="v201505\DfpApi.cs" />
     <Compile Include="v201505\DfpServiceV201505.cs" />
     <Compile Include="v201508\DfpApi.cs" />
@@ -94,6 +92,8 @@
     <Compile Include="v201511\DfpServiceV201511.cs" />
     <Compile Include="v201602\DfpApi.cs" />
     <Compile Include="v201602\DfpServiceV201602.cs" />
+    <Compile Include="v201605\DfpApi.cs" />
+    <Compile Include="v201605\DfpServiceV201605.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

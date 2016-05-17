@@ -217,5 +217,43 @@ namespace Google.Api.Ads.Dfp.Tests.v201505 {
       Assert.AreEqual(1, stringValues.Length);
       Assert.AreEqual("1,2", stringValues[0]);
     }
+
+    [Test]
+    public void TestGetTextValueDateTimeValue() {
+        DateTime dateTime = new DateTime();
+        Date date = new Date();
+        date.year = 2012;
+        date.month = 12;
+        date.day = 2;
+        dateTime.date = date;
+        dateTime.hour = 12;
+        dateTime.minute = 45;
+        dateTime.second = 0;
+        dateTime.timeZoneID = "Asia/Shanghai";
+        DateTimeValue dateTimeValue = new DateTimeValue();
+        dateTimeValue.value = dateTime;
+
+        Row row = new Row();
+        row.values = new Value[] { dateTimeValue };
+        string[] stringValues = PqlUtilities.GetRowStringValues(row);
+        Assert.AreEqual(1, stringValues.Length);
+        Assert.AreEqual("2012-12-02T12:45:00 Asia/Shanghai", stringValues[0]);
+    }
+
+    [Test]
+    public void TestGetTextValueDateValue() {
+        Date date = new Date();
+        date.year = 2012;
+        date.month = 12;
+        date.day = 2;
+        DateValue dateValue = new DateValue();
+        dateValue.value = date;
+
+        Row row = new Row();
+        row.values = new Value[] { dateValue };
+        string[] stringValues = PqlUtilities.GetRowStringValues(row);
+        Assert.AreEqual(1, stringValues.Length);
+        Assert.AreEqual("2012-12-02", stringValues[0]);
+    }
   }
 }

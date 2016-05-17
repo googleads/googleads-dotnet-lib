@@ -65,7 +65,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201603
 
       ' Create selector.
       Dim selector as new Selector()
-      selector.fields = new string() {
+      selector.fields = New String() {
           CriterionBidLandscape.Fields.CampaignId,
           CriterionBidLandscape.Fields.CriterionId,
           CriterionBidLandscape.Fields.StartDate,
@@ -77,7 +77,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201603
           BidLandscapeLandscapePoint.Fields.TotalLocalCost,
           BidLandscapeLandscapePoint.Fields.TotalLocalImpressions,
           BidLandscapeLandscapePoint.Fields.RequiredBudget,
-          BidLandscapeLandscapePoint.Fields.BidModifier,
+          BidLandscapeLandscapePoint.Fields.BidModifier
       }
       selector.predicates = new Predicate() {
           Predicate.Equals(CriterionBidLandscape.Fields.CampaignId, campaignId)
