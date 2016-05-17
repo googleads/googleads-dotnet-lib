@@ -12,5 +12,6 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_batch_j
     [ "CHUNK_SIZE_ALIGN", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_batch_job_utilities_base.html#a81742926e85557d6318778ed624b8933", null ],
     [ "FEATURE_ID", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_batch_job_utilities_base.html#ae39f04509e76ad51eda3ec532f8a390c", null ],
     [ "featureUsageRegistry", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_batch_job_utilities_base.html#a034e9d0980dc228da5cfb35bcae03c72", null ],
+    [ "POLL_INTERVAL_SECONDS_BASE", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_batch_job_utilities_base.html#ac902416ec43793af2bb2789f4268927b", null ],
     [ "User", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_batch_job_utilities_base.html#abcb447a2734c32dead5f722cb2d4426c", null ]
 ];

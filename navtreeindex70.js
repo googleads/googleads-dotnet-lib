@@ -1,5 +1,15 @@
 var NAVTREEINDEX70 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_temporary_url.html#aa59d574245ee7fc94f88845f8d1f66bb":[1,0,0,0,0,0,6,578,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_temporary_url_1_1_fields.html":[1,0,0,0,0,0,6,578,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_temporary_url_1_1_fields.html#ac7885148c567cd5320686c62cabd0332":[1,0,0,0,0,0,6,578,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_temporary_url_1_1_filterable_fields.html":[1,0,0,0,0,0,6,578,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_temporary_url_1_1_filterable_fields.html#aa6c809190e8bdd0abd5ad51a23028403":[1,0,0,0,0,0,6,578,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_temporary_url_1_1_selectable_fields.html":[1,0,0,0,0,0,6,578,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_temporary_url_1_1_selectable_fields.html#a7594a7976c13daae0166bf485cbdfe7d":[1,0,0,0,0,0,6,578,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_text_ad.html":[1,0,0,0,0,0,6,10],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_text_ad.html#a1758bd7d76d1f10b4992f4cad3b14b29":[1,0,0,0,0,0,6,10,5],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_text_ad.html#a8fab5945611dd3f12a673ec5316d1515":[1,0,0,0,0,0,6,10,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_text_ad.html#afac28b46a505548bfecb6174ad2f9f27":[1,0,0,0,0,0,6,10,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_text_ad_1_1_fields.html":[1,0,0,0,0,0,6,10,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_text_ad_1_1_fields.html#a2c9f3f35cfb5c68b94ec9296d130a9a1":[1,0,0,0,0,0,6,10,0,0],
@@ -239,15 +249,5 @@ var NAVTREEINDEX70 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_user_list_return_value.html#acefc404907ea547691f3fe8437338192":[1,0,0,0,0,0,6,468,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_vanity_pharma.html":[1,0,0,0,0,0,6,193],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_vanity_pharma.html#a097af25174aff2891aa411e45b0f92d6":[1,0,0,0,0,0,6,193,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_vanity_pharma.html#a73f2eba7d75d1602af3a71051ceba751":[1,0,0,0,0,0,6,193,5],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_vanity_pharma.html#acbe66922c471e31ab3ee23f30c9f5df8":[1,0,0,0,0,0,6,193,6],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_vanity_pharma.html#afff3162cfb1ebb34200af2db9b711927":[1,0,0,0,0,0,6,193,4],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_vanity_pharma_1_1_fields.html":[1,0,0,0,0,0,6,193,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_vanity_pharma_1_1_fields.html#a8005ef8f70f0556bf9598ca06fec0621":[1,0,0,0,0,0,6,193,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_vanity_pharma_1_1_filterable_fields.html":[1,0,0,0,0,0,6,193,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_vanity_pharma_1_1_filterable_fields.html#ab2197ce53bd5ee2c4a93f03ae76637af":[1,0,0,0,0,0,6,193,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_vanity_pharma_1_1_selectable_fields.html":[1,0,0,0,0,0,6,193,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_vanity_pharma_1_1_selectable_fields.html#a133dad7377fe079ca3f7e52e9d3c8fc6":[1,0,0,0,0,0,6,193,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_vertical.html":[1,0,0,0,0,0,6,108],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_vertical.html#a24df500c609caf7efdf07a248ad98090":[1,0,0,0,0,0,6,108,4]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_vanity_pharma.html#a73f2eba7d75d1602af3a71051ceba751":[1,0,0,0,0,0,6,193,5]
 };

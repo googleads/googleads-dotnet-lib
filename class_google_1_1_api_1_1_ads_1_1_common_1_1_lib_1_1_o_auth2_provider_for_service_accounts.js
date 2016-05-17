@@ -5,6 +5,7 @@ var class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_ser
     [ "RefreshAccessToken", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_service_accounts.html#a5f0e4e7aa9eecfb3ae2da24ca4d70401", null ],
     [ "JwtCertificatePassword", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_service_accounts.html#ab98dac3f447128241b546d0c0384a412", null ],
     [ "JwtCertificatePath", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_service_accounts.html#a72e75143052334f098d3c53f14443e9b", null ],
+    [ "JwtPrivateKey", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_service_accounts.html#a92094b042dd4f262dc71462f741ab362", null ],
     [ "PrnEmail", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_service_accounts.html#a358dc737eaa79178404469fa8cbc1a88", null ],
     [ "ServiceAccountEmail", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_service_accounts.html#adf0ee2e6ec4e72c374cdbc34f0df685b", null ]
 ];

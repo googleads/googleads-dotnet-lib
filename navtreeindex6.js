@@ -1,5 +1,12 @@
 var NAVTREEINDEX6 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_customizer_feed.html#a305d08817da710f44d086f0102a55dc8":[1,0,0,0,0,0,4,533,6],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_customizer_feed.html#a3b030ff1222b1209e4fba749cf0ae582":[1,0,0,0,0,0,4,533,8],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_customizer_feed.html#a832a49452ed4aa8e02f106f30184c4e1":[1,0,0,0,0,0,4,533,4],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_customizer_feed.html#a985d7bcf371b93c5e38b031926716e95":[1,0,0,0,0,0,4,533,5],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_customizer_feed.html#acd3a34a293850afffbb1f03361b11a6c":[1,0,0,0,0,0,4,533,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_customizer_feed.html#af19be0506f888e514dfed649b6712815":[1,0,0,0,0,0,4,533,7],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_customizer_feed_1_1_fields.html":[1,0,0,0,0,0,4,533,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_customizer_feed_1_1_fields.html#a707ca93d796adca7aabfa473086e1924":[1,0,0,0,0,0,4,533,0,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_customizer_feed_1_1_filterable_fields.html":[1,0,0,0,0,0,4,533,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_customizer_feed_1_1_filterable_fields.html#ad2a522c23ed29bc4cebe3f2907bef6ee":[1,0,0,0,0,0,4,533,1,0],
@@ -242,12 +249,5 @@ var NAVTREEINDEX6 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_bid_modifier_1_1_selectable_fields.html#a8af4c898e1e06f375985846c4389571c":[1,0,0,0,0,0,4,362,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_bid_modifier_operation.html":[1,0,0,0,0,0,4,361],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_bid_modifier_operation.html#a4666be7b63adca8c0e1f1111366e0234":[1,0,0,0,0,0,4,361,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_bid_modifier_operation_1_1_fields.html":[1,0,0,0,0,0,4,361,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_bid_modifier_operation_1_1_fields.html#a8da70daf21d7fc885e47a2cb7b1cf7c3":[1,0,0,0,0,0,4,361,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_bid_modifier_operation_1_1_filterable_fields.html":[1,0,0,0,0,0,4,361,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_bid_modifier_operation_1_1_filterable_fields.html#a9d6c19e7e7afea9eddc409f622cba144":[1,0,0,0,0,0,4,361,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_bid_modifier_operation_1_1_selectable_fields.html":[1,0,0,0,0,0,4,361,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_bid_modifier_operation_1_1_selectable_fields.html#a40a0f8dd2643c5c41f8bdfa77e4d93d1":[1,0,0,0,0,0,4,361,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_bid_modifier_page.html":[1,0,0,0,0,0,4,565],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_bid_modifier_page.html#a32167be29423a3ff838cfbb01e3cd672":[1,0,0,0,0,0,4,565,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_ad_group_bid_modifier_operation_1_1_fields.html":[1,0,0,0,0,0,4,361,0]
 };
