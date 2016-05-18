@@ -1,3 +1,17 @@
+18.26.1
+=======
+
+AdWords:
+  - Fixed dependency issue in
+    https://github.com/googleads/googleads-dotnet-lib/issues/85.
+
+DFP:
+  - Fixed dependency issue in
+    https://github.com/googleads/googleads-dotnet-lib/issues/85.
+
+Common:
+  -
+
 18.26.0
 =======
 AdWords:
