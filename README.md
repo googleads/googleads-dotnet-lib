@@ -25,33 +25,43 @@ For API and client library updates and news, please follow our Google+ Ads Devel
 https://plus.google.com/+GoogleAdsDevelopers/posts and our Google Ads Developers blog:
 http://googleadsdeveloper.blogspot.com/.
 
-##How do I start?
+##Getting started
 
-We provide source, binary and nuget distributions for the client library. You may continue reading
-the the appropriate section below, depending on the distribution you are using.
+1. Install your library of choice. We recommend using the following Nuget distributions:
+  ####AdWords API
 
-##Nuget distribution
+  - [Google.AdWords](https://www.nuget.org/packages/Google.AdWords/): AdWords and DoubleClick Ad
+   Exchange Buyer API DotNet Client Library
+  - [Google.AdWords.Examples.CSharp](https://www.nuget.org/packages/Google.AdWords.Examples.CSharp/):
+   C# Code examples for AdWords API
+  - [Google.AdWords.Examples.VB](https://www.nuget.org/packages/Google.AdWords.Examples.VB/):
+   VB.NET Code examples for AdWords API
+  
+  ####DFP API
+  
+  - [Google.Dfp](https://www.nuget.org/packages/Google.Dfp/): DFP API DotNet Client Library
+  - [Google.Dfp.Examples.CSharp](https://www.nuget.org/packages/Google.Dfp.Examples.CSharp/):
+   C# Code examples for DFP API
+  
+  You can learn more about the nuget package manager at http://www.nuget.org. For other distribution options, see the alternative distribution options below.
 
-This is the recommended way to get the client library. The nuget distributions of the client library
- are listed below:
-###AdWords API
+1. Setup your OAuth2 credentials.
 
-- [Google.AdWords](https://www.nuget.org/packages/Google.AdWords/): AdWords and DoubleClick Ad
- Exchange Buyer API DotNet Client Library
-- [Google.AdWords.Examples.CSharp](https://www.nuget.org/packages/Google.AdWords.Examples.CSharp/):
- C# Code examples for AdWords API
-- [Google.AdWords.Examples.VB](https://www.nuget.org/packages/Google.AdWords.Examples.VB/):
- VB.NET Code examples for AdWords API
+  The AdWords and DoubleClick for Publishers APIs use
+[OAuth2](http://oauth.net/2/) as the authentication mechanism. Follow the appropriate guide below based on your use case.
 
-###DFP API
+  **If you're accessing an API using your own credentials...**
 
-- [Google.Dfp](https://www.nuget.org/packages/Google.Dfp/): DFP API DotNet Client Library
-- [Google.Dfp.Examples.CSharp](https://www.nuget.org/packages/Google.Dfp.Examples.CSharp/):
- C# Code examples for DFP API
+  * [Using AdWords](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-using-own-credentials-(installed-application-flow))
+  * [Using DFP](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-using-own-credentials-(server-to-server-flow))
 
-To use the library, you can install the appropriate nuget packages and add reference to your Visual
- Studio project. You can learn more about the nuget package manager at http://www.nuget.org.
-##Binary distribution
+  **If you're accessing an API on behalf of clients...**
+
+  * [Developing a web application (AdWords or DFP)](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-on-behalf-of-your-clients-(web-flow))
+
+##Alternative distribution options
+
+### Binary distribution
 
 The binary distribution of the Ads API .NET library consists of a precompiled version of the
  library as a .NET assembly, code examples for using the library, and library documentation.
@@ -82,8 +92,8 @@ To run the code examples:
 - Open the Properties dialog for the Examples project (Right click the Examples project of your
  choice in the Solution Explorer and select the Properties option from the context menu.).
 - Navigate to the Debug Tab and enter the command line options. The command line options are of
- the form `version.examplename`. For instance, `v201603.AddCampaign` is the command line option to
- run `AddCampaign` example in `v201603` version of the AdWords API.
+ the form `version.examplename`. For instance, `v201506.AddCampaign` is the command line option to
+ run `AddCampaign` example in `v201506` version of the AdWords API.
 - Compile and run the Examples project.
 
 Alternatively, each code example has a `main()` method, so you can set the appropriate code example
@@ -107,14 +117,14 @@ AdWordsUser user = new AdWordsUser();
 
 // Create the required service.
 CampaignService service = (CampaignService) user.GetService(
-     AdWordsService.v201603.CampaignService);
+     AdWordsService.v201506.CampaignService);
 
 // make more calls to service class.
 ```
 You can refer to [this wiki article](//github.com/googleads/googleads-dotnet-lib/wiki/Getting-Started) for
  more details.
 
-##Source distribution
+###Source distribution
 
 The source distribution of the Ads API .NET Client Library consists of individual Visual Studio
  projects for the client library, code examples and test cases, documentation, and support
@@ -151,8 +161,8 @@ To compile and run the project:
 - Open the Properties dialog for the Examples project (Right click the Examples project in the
  Solution Explorer and select the Properties option from the context menu.).
 - Navigate to the Debug tab and enter the command line options. The command line options are of
- the form `version.examplename`. For instance, `v201603.AddCampaign` is the command line option
- to run the `AddCampaign` example for the `v201603` version of the AdWords API.
+ the form `version.examplename`. For instance, `v201506.AddCampaign` is the command line option
+ to run the `AddCampaign` example for the `v201506` version of the AdWords API.
 - Set the Examples project as the Startup project.
 - Compile and run the Examples project.
 
@@ -175,10 +185,6 @@ To run the test cases, you need to download and install the latest version of NU
 
 It is recommended that you run the test cases against a test environment. Refer to the
  appropriate API documentation for details on how this may be done.
-
-##Working with OAuth2
-
-See https://github.com/googleads/googleads-dotnet-lib/wiki#oauth2 for details.
 
 ##How to enable logging
 
