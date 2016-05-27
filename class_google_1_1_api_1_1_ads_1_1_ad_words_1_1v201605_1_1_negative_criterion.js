@@ -1,0 +1,7 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_negative_criterion =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_negative_criterion_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_negative_criterion_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_negative_criterion_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_negative_criterion_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_negative_criterion_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_negative_criterion_1_1_selectable_fields" ],
+    [ "criterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_negative_criterion.html#ad4ff6a68b9b8e3c17b61d24a095a78f8", null ]
+];

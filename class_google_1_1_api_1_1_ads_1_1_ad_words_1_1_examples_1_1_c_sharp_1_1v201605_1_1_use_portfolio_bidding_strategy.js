@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_use_portfolio_bidding_strategy =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_use_portfolio_bidding_strategy.html#a266dfda2f1968de17676087b6dc9b9f9", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_use_portfolio_bidding_strategy.html#ad32dbc58f07bc93e2f8e84a0baefeef5", null ]
+];

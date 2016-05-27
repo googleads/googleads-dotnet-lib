@@ -1,0 +1,8 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_pending_invitation_selector =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_pending_invitation_selector_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_pending_invitation_selector_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_pending_invitation_selector_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_pending_invitation_selector_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_pending_invitation_selector_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_pending_invitation_selector_1_1_selectable_fields" ],
+    [ "clientCustomerIds", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_pending_invitation_selector.html#ad6c6aae6ec85f2616940f5a9ed68eff3", null ],
+    [ "managerCustomerIds", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_pending_invitation_selector.html#ad76fb2350454474846e34e4c015d3935", null ]
+];

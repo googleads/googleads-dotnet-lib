@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_long_comparison_operation_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_long_comparison_operation_1_1_filterable_fields.html#a757f549bcaa76690f846da5ec50ba783", null ]
+];

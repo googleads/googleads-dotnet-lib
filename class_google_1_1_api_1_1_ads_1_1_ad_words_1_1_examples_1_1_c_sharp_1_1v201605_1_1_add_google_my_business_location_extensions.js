@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_add_google_my_business_location_extensions =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_add_google_my_business_location_extensions.html#a48855335e1741602068d5cc116bfb8d0", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_add_google_my_business_location_extensions.html#a856b46aa175e35d47f7fb05e8628b695", null ]
+];

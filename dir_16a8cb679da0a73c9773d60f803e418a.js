@@ -1,6 +1,0 @@
-var dir_16a8cb679da0a73c9773d60f803e418a =
-[
-    [ "AdWords", "dir_86c6252638fc2776e64724d2e0601b29.html", "dir_86c6252638fc2776e64724d2e0601b29" ],
-    [ "Common", "dir_65254d89708a87d6255837ef2243163e.html", "dir_65254d89708a87d6255837ef2243163e" ],
-    [ "Dfp", "dir_84662f30e17af18d7758edb2ab6d240a.html", "dir_84662f30e17af18d7758edb2ab6d240a" ]
-];

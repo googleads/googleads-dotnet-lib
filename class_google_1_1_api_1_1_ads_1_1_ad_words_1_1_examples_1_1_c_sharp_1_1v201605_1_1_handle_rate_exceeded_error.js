@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_handle_rate_exceeded_error =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_handle_rate_exceeded_error.html#a96ec10715103c768af34c4aae18bbc27", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_handle_rate_exceeded_error.html#a6f5f6184821d22c88c9f00cb3b5476f9", null ]
+];

@@ -1,0 +1,13 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_biddable_ad_group_criterion_experiment_data =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_biddable_ad_group_criterion_experiment_data_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_biddable_ad_group_criterion_experiment_data_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_biddable_ad_group_criterion_experiment_data_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_biddable_ad_group_criterion_experiment_data_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_biddable_ad_group_criterion_experiment_data_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_biddable_ad_group_criterion_experiment_data_1_1_selectable_fields" ],
+    [ "experimentBidMultiplier", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_biddable_ad_group_criterion_experiment_data.html#ab4a5ba02d236d7e5acc7dd029d050319", null ],
+    [ "experimentDataStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_biddable_ad_group_criterion_experiment_data.html#aeb4fb2fa4552639c3f680879a9ffe246", null ],
+    [ "experimentDataStatusSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_biddable_ad_group_criterion_experiment_data.html#a1a617e1e6ed77b345e9ea3f068a4246e", null ],
+    [ "experimentDeltaStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_biddable_ad_group_criterion_experiment_data.html#a7b9ecefa76e773f34a9359e56cbd9778", null ],
+    [ "experimentDeltaStatusSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_biddable_ad_group_criterion_experiment_data.html#a235612b633ebd5ea315f6837f08720a4", null ],
+    [ "experimentId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_biddable_ad_group_criterion_experiment_data.html#a600abfbbe1098bc4d2f1d83d2e12d5a8", null ],
+    [ "experimentIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_biddable_ad_group_criterion_experiment_data.html#abb0f6dcd445dcf688fc4b64b7d97c99e", null ]
+];

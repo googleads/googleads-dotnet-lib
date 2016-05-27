@@ -1,0 +1,11 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_budget_utilization_report_1_1_campaign_stat =
+[
+    [ "BudgetLostClicks", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_budget_utilization_report_1_1_campaign_stat.html#a4d31ea56f5e4c101474f350c563e241b", null ],
+    [ "BudgetLostCost", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_budget_utilization_report_1_1_campaign_stat.html#aad7e3d02cf613abb3e1b103658ba600a", null ],
+    [ "BudgetLostImpressions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_budget_utilization_report_1_1_campaign_stat.html#a74ab4b797833422e240da831106253cb", null ],
+    [ "Clicks", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_budget_utilization_report_1_1_campaign_stat.html#a2b0fa43391d2596368dcb6aeddb21db7", null ],
+    [ "Cost", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_budget_utilization_report_1_1_campaign_stat.html#a4d6e19115658a997cdeec0aee2b80773", null ],
+    [ "DisplayStats", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_budget_utilization_report_1_1_campaign_stat.html#a5d0619cb50fe5a49318fd842bb81c342", null ],
+    [ "Impressions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_budget_utilization_report_1_1_campaign_stat.html#aa1bd3b4730f993c80d478cd69b38b7ff", null ],
+    [ "SearchStats", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201605_1_1_budget_utilization_report_1_1_campaign_stat.html#ac89ca9a2b470d7a6cd384adeb85b072c", null ]
+];

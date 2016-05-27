@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_manual_c_p_c_ad_group_criterion_experim32eb93fe89f45cf8920378831f8fc3b7 =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_manual_c_p_c_ad_group_criterion_experim32eb93fe89f45cf8920378831f8fc3b7.html#aab7a3548096f979e99b687dcc22e0210", null ]
+];
