@@ -63,6 +63,16 @@ namespace Google.Api.Ads.AdWords.Tests.v201601 {
     }
 
     /// <summary>
+    /// Tests the ParallelReportDownload C# code example.
+    /// </summary>
+    [Test]
+    public void TestParallelReportDownloadCSharpExample() {
+      RunExample(delegate() {
+        new CSharpExamples.ParallelReportDownload().Run(user, outputFileName);
+      });
+    }
+
+    /// <summary>
     /// Tests the GetReportFields VB.NET code example.
     /// </summary>
     [Test]

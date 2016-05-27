@@ -39,9 +39,9 @@ namespace Google.Api.Ads.Common.Tests.Lib {
         (OAuth2RequestInterceptor) OAuth2RequestInterceptor.Instance;
 
     /// <summary>
-    /// The hashtable to hold the test data.
+    /// The dictionary to hold the test data.
     /// </summary>
-    private Hashtable tblSettings;
+    private Dictionary<string, string> dictSettings;
 
     // Keys for TestPropertySettersAndGetters.
     private const string TEST_CLIENT_ID = "TEST_CLIENT_ID";
@@ -99,17 +99,17 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     /// </summary>
     [SetUp]
     public void Init() {
-      tblSettings = new Hashtable();
+      dictSettings = new Dictionary<string, string>();
 
-      tblSettings.Add("OAuth2ClientId", "OAuth2ClientId");
-      tblSettings.Add("OAuth2ClientSecret", "OAuth2ClientSecret");
-      tblSettings.Add("OAuth2AccessToken", "OAuth2AccessToken");
-      tblSettings.Add("OAuth2RefreshToken", "OAuth2RefreshToken");
-      tblSettings.Add("OAuth2Scope", "OAuth2Scope");
-      tblSettings.Add("OAuth2RedirectUri", "OAuth2RedirectUri");
+      dictSettings.Add("OAuth2ClientId", "OAuth2ClientId");
+      dictSettings.Add("OAuth2ClientSecret", "OAuth2ClientSecret");
+      dictSettings.Add("OAuth2AccessToken", "OAuth2AccessToken");
+      dictSettings.Add("OAuth2RefreshToken", "OAuth2RefreshToken");
+      dictSettings.Add("OAuth2Scope", "OAuth2Scope");
+      dictSettings.Add("OAuth2RedirectUri", "OAuth2RedirectUri");
 
       appConfig = new MockAppConfig();
-      appConfig.MockReadSettings(tblSettings);
+      appConfig.MockReadSettings(dictSettings);
       provider = new OAuth2ProviderForApplications(appConfig);
       oauth2RequestInterceptor.Intercept = true;
     }

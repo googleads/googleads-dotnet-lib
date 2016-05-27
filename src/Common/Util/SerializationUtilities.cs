@@ -98,13 +98,14 @@ namespace Google.Api.Ads.Common.Util {
     private static XmlSerializer GetCustomXmlSerializer(Type contentType, string ns,
         string rootNode) {
       string key = string.Format("{0}_{1}_{2}", contentType.AssemblyQualifiedName, ns, rootNode);
-      if (customSerializerMaps.ContainsKey(key)) {
-        return customSerializerMaps[key];
+
+      XmlSerializer serializer = CollectionUtilities.TryGetValue(customSerializerMaps, key);
+      if (serializer == null) {
+        serializer = new XmlSerializer(contentType, new XmlAttributeOverrides(),
+          new Type[] { }, new XmlRootAttribute(rootNode), ns);
+        customSerializerMaps.Add(key, serializer);
       }
 
-      XmlSerializer serializer = new XmlSerializer(contentType, new XmlAttributeOverrides(),
-          new Type[] {}, new XmlRootAttribute(rootNode), ns);
-      customSerializerMaps.Add(key, serializer);
       return serializer;
     }
 

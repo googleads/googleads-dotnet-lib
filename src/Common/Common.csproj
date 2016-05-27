@@ -107,6 +107,7 @@
     <Compile Include="Util\SerializationUtilities.cs" />
     <Compile Include="Util\TraceUtilities.cs" />
     <Compile Include="Util\PreconditionUtilities.cs" />
+    <Compile Include="Util\CollectionUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CommonErrorMessages.resx">

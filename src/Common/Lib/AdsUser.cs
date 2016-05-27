@@ -13,7 +13,7 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Logging;
-
+using Google.Api.Ads.Common.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -248,7 +248,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <returns>The service factory instance, or null if the service is not
     /// yet registered.</returns>
     public ServiceFactory GetServiceFactory(string serviceId) {
-      return (serviceFactoryMap.ContainsKey(serviceId)) ? serviceFactoryMap[serviceId] : null;
+      return CollectionUtilities.TryGetValue(serviceFactoryMap, serviceId);
     }
 
     /// <summary>

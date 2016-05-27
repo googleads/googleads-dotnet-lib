@@ -50,6 +50,25 @@ namespace Google.Api.Ads.AdWords.Tests.v201601 {
       return budgetRetval.value[0].budgetId;
     }
 
+    public long CreateLabel(AdWordsUser user) {
+      LabelService labelService =
+          (LabelService) user.GetService(AdWordsService.v201601.LabelService);
+
+      // Create the campaign budget.
+      TextLabel label = new TextLabel() {
+        name = "Interplanetary Cruise Label #" + DateTime.Now.ToString(
+          "yyyy-MM-dd HH:mm:ss.ffffff"),
+      };
+
+      LabelOperation labelOperation = new LabelOperation() {
+        @operator = Operator.ADD,
+        operand = label
+      };
+
+      LabelReturnValue labelRetval = labelService.mutate(new LabelOperation[] { labelOperation });
+      return labelRetval.value[0].id;
+    }
+
     /// <summary>
     /// Creates a test search campaign for running further tests.
     /// </summary>

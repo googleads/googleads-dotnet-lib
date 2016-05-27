@@ -224,10 +224,19 @@ namespace Google.Api.Ads.AdWords.Tests.v201509 {
     /// </summary>
     [Test]
     public void TestUpdateCampaignsMockRequestAndResponse() {
-      ExamplesMockData mockData = LoadMockData(SoapMessages_v201509.UpdateCampaign);
-      RunMockedExample(mockData, delegate() {
-        new CSharpExamples.UpdateCampaign().Run(user, 12345);
-      }, new WebRequestInterceptor.OnBeforeSendResponse(VerifyUpdateCampaignRequest));
+      // Note: For this test to work fine, we should turn off utils logging,
+      // since the OAuth classes aren't invoked when running this test and
+      // thus the check for useragent fails.
+      bool oldValue = user.Config.IncludeUtilitiesInUserAgent;
+      try {
+        user.Config.IncludeUtilitiesInUserAgent = false;
+        ExamplesMockData mockData = LoadMockData(SoapMessages_v201605.UpdateCampaign);
+        RunMockedExample(mockData, delegate() {
+          new CSharpExamples.UpdateCampaign().Run(user, 12345);
+        }, new WebRequestInterceptor.OnBeforeSendResponse(VerifyUpdateCampaignRequest));
+      } finally {
+        user.Config.IncludeUtilitiesInUserAgent = oldValue;
+      }
     }
 
     /// <summary>

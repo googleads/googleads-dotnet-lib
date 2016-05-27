@@ -343,18 +343,14 @@ namespace Google.Api.Ads.Common.Lib {
         logEntry.Flush();
 
         Dictionary<string, string> values = ParseJsonObjectResponse(contents);
-        if (values.ContainsKey("access_token")) {
-          this.AccessToken = values["access_token"];
-        }
-        if (values.ContainsKey("refresh_token")) {
-          this.RefreshToken = values["refresh_token"];
-        }
-        if (values.ContainsKey("token_type")) {
-          this.tokenType = values["token_type"];
-        }
-        if (values.ContainsKey("expires_in")) {
-          this.expiresIn = int.Parse(values["expires_in"]);
-        }
+        this.AccessToken =
+            CollectionUtilities.TryGetValue(values, "access_token", this.AccessToken);
+        this.RefreshToken =
+            CollectionUtilities.TryGetValue(values, "refresh_token", this.RefreshToken);
+        this.tokenType =
+            CollectionUtilities.TryGetValue(values, "token_type", this.tokenType);
+        this.expiresIn = int.Parse(
+            CollectionUtilities.TryGetValue(values, "expires_in", this.expiresIn.ToString()));
         this.updatedOn = DateTime.UtcNow;
 
         if (this.OnOAuthTokensObtained != null) {

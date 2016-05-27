@@ -64,6 +64,7 @@
     <Compile Include="Lib\OAuth2ProviderForServiceAccountsTests.cs" />
     <Compile Include="OAuth2RequestInterceptor.cs" />
     <Compile Include="TestUtils.cs" />
+    <Compile Include="Util\CollectionUtilitiesTest.cs" />
     <Compile Include="Util\DeprecationUtilitiesTest.cs" />
     <Compile Include="Util\MediaUtilitiesTests.cs" />
     <Compile Include="Util\CsvFileTests.cs" />

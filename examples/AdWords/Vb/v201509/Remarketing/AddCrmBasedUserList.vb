@@ -114,7 +114,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
         mutateMembersOperation.operator = [Operator].ADD
 
         ' Hash normalized email addresses based on SHA-256 hashing algorithm.
-        Dim emailHashes(EMAILS.Length) As String
+        Dim emailHashes(EMAILS.Length - 1) As String
         For i As Integer = 0 To EMAILS.Length - 1
           Dim normalizedEmail As String = ToNormalizedEmail(EMAILS(i))
           emailHashes(i) = ToSha256String(digest, normalizedEmail)
@@ -149,7 +149,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201509
     Private Shared Function ToSha256String(ByVal digest As GeneralDigest, _
                                            ByVal email As String) As String
       Dim data As Byte() = Encoding.UTF8.GetBytes(email)
-      Dim digestBytes(digest.GetDigestSize()) As Byte
+      Dim digestBytes(digest.GetDigestSize() - 1) As Byte
       digest.BlockUpdate(data, 0, data.Length)
       digest.DoFinal(digestBytes, 0)
       Return BitConverter.ToString(digestBytes).Replace("-", String.Empty)

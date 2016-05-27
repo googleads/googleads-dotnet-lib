@@ -16,6 +16,7 @@ using Google.Api.Ads.Common.Lib;
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Google.Api.Ads.Common.Tests.Mocks {
   /// <summary>
@@ -57,14 +58,14 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     /// <summary>
     /// Allows the test cases to call ReadSettings method for testing purposes.
     /// </summary>
-    /// <param name="tblSettings">The configuraiton settings.</param>
+    /// <param name="dictSettings">The configuration settings.</param>
     /// <remarks>AppConfigBase class loads its settings from App.config, and the
     /// framework calls ReadSettings method to load the values. However, this is
     /// a protected method, so we expose ReadSettings in the mock version to
     /// allow easier configuration of AppConfig while running test cases.
     /// </remarks>
-    public void MockReadSettings(Hashtable tblSettings) {
-      base.ReadSettings(tblSettings);
+    public void MockReadSettings(Dictionary<string, string> dictSettings) {
+      base.ReadSettings(dictSettings);
     }
 
     /// <summary>

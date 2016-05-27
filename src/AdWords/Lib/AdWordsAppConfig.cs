@@ -16,7 +16,9 @@ using Google.Api.Ads.Common.Lib;
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 
 namespace Google.Api.Ads.AdWords.Lib {
 
@@ -93,6 +95,11 @@ namespace Google.Api.Ads.AdWords.Lib {
     private const string INCLUDE_ZERO_IMPRESSIONS = "IncludeZeroImpressions";
 
     /// <summary>
+    /// Key name for useRawEnumValues.
+    /// </summary>
+    private const string USE_RAW_ENUM_VALUES = "UseRawEnumValues";
+
+    /// <summary>
     /// Default value for AdWords API URL.
     /// </summary>
     private const string DEFAULT_ADWORDSAPI_SERVER = "https://adwords.google.com";
@@ -121,6 +128,11 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Default value for including zero impression rows.
     /// </summary>
     private readonly bool? DEFAULT_INCLUDE_ZERO_IMPRESSIONS = null;
+
+    /// <summary>
+    /// Default value for returning raw values for enums.
+    /// </summary>
+    private readonly bool? DEFAULT_USE_RAW_ENUM_VALUES = null;
 
     /// <summary>
     /// ClientCustomerId to be used in SOAP headers.
@@ -186,6 +198,20 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// https://developers.google.com/adwords/api/docs/guides/zero-impression-reports#default_behavior.
     /// </remarks>
     private bool? includeZeroImpressions;
+
+    /// <summary>
+    /// Flag to decide whether enum values should be returned as actual enum values
+    /// or display values.
+    /// </summary>
+    /// <remarks>This setting is a three-valued logic. If this field is set to
+    /// true or false, the client library sends the value to the server, and the
+    /// server responds by returning the actual enum values or the display values.
+    /// If this value is set to null (either explicitly in the code, or by
+    /// commenting out the key in App.config / Web.config), then this value is
+    /// not sent to the server, and the server behaves as explained on
+    /// https://developers.google.com/adwords/api/docs/guides/reporting#request-headers.
+    /// </remarks>
+    private bool? useRawEnumValues;
 
     /// <summary>
     /// Gets or sets the client customerId to be used in SOAP headers.
@@ -306,6 +332,27 @@ namespace Google.Api.Ads.AdWords.Lib {
     }
 
     /// <summary>
+    /// Gets or sets whether enum values should be returned as actual enum values
+    /// or display values.
+    /// </summary>
+    /// <remarks>This setting is a three-valued logic. If this field is set to
+    /// true or false, the client library sends the value to the server, and the
+    /// server responds by returning the actual enum values or the display values.
+    /// If this value is set to null (either explicitly in the code, or by
+    /// commenting out the key in App.config / Web.config), then this value is
+    /// not sent to the server, and the server behaves as explained on
+    /// https://developers.google.com/adwords/api/docs/guides/reporting#request-headers.
+    /// </remarks>
+    public bool? UseRawEnumValues {
+      get {
+        return useRawEnumValues;
+      }
+      set {
+        SetPropertyField("UseRawEnumValues", ref useRawEnumValues, value);
+      }
+    }
+
+    /// <summary>
     /// Gets or sets the useragent to be used in SOAP headers.
     /// </summary>
     public string UserAgent {
@@ -359,15 +406,21 @@ namespace Google.Api.Ads.AdWords.Lib {
       skipReportSummary = DEFAULT_SKIP_REPORT_SUMMARY;
       skipColumnHeader = DEFAULT_SKIP_COLUMN_HEADER;
       includeZeroImpressions = DEFAULT_INCLUDE_ZERO_IMPRESSIONS;
+      useRawEnumValues = DEFAULT_USE_RAW_ENUM_VALUES;
 
-      ReadSettings((Hashtable) ConfigurationManager.GetSection("AdWordsApi"));
+      ReadSettings(
+          ((Hashtable)ConfigurationManager.GetSection("AdWordsApi"))
+          .Cast<DictionaryEntry>()
+          .ToDictionary(
+              setting => setting.Key.ToString(),
+              setting => setting.Value.ToString()));
     }
 
     /// <summary>
     /// Read all settings from App.config.
     /// </summary>
     /// <param name="settings">The parsed App.config settings.</param>
-    protected override void ReadSettings(Hashtable settings) {
+    protected override void ReadSettings(Dictionary<string, string> settings) {
       base.ReadSettings(settings);
 
       clientCustomerId = ReadSetting(settings, CLIENT_CUSTOMER_ID, clientCustomerId);
@@ -406,6 +459,13 @@ namespace Google.Api.Ads.AdWords.Lib {
         includeZeroImpressions = DEFAULT_INCLUDE_ZERO_IMPRESSIONS;
       } else {
         includeZeroImpressions = tempFlag;
+      }
+
+      if (!bool.TryParse(ReadSetting(settings, USE_RAW_ENUM_VALUES, ""),
+          out tempFlag)) {
+        useRawEnumValues = DEFAULT_USE_RAW_ENUM_VALUES;
+      } else {
+        useRawEnumValues = tempFlag;
       }
     }
   }

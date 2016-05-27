@@ -36,6 +36,8 @@ namespace Google.Api.Ads.AdWords.Tests.v201601 {
     long criterionId;
     long adId;
 
+    long labelId;
+
     const Double BID_MODIFIER = 1.5;
 
     /// <summary>
@@ -44,9 +46,60 @@ namespace Google.Api.Ads.AdWords.Tests.v201601 {
     [SetUp]
     public void Init() {
       campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
+      labelId = utils.CreateLabel(user);
       adGroupId = utils.CreateAdGroup(user, campaignId);
       criterionId = utils.CreateKeyword(user, adGroupId);
       adId = utils.CreateTextAd(user, adGroupId, false);
+    }
+
+    /// <summary>
+    /// Tests the AddCampaignLabels VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestAddCampaignLabelsVBExample() {
+      long campaignId1ForLabeling = utils.CreateSearchCampaign(user,
+          BiddingStrategyType.MANUAL_CPC);
+      long campaignId2ForLabeling = utils.CreateSearchCampaign(user,
+          BiddingStrategyType.MANUAL_CPC);
+      RunExample(delegate() {
+        new VBExamples.AddCampaignLabels().Run(user, campaignId1ForLabeling,
+            campaignId2ForLabeling, labelId);
+      });
+    }
+
+    /// <summary>
+    /// Tests the AddCampaignLabels C# code example.
+    /// </summary>
+    [Test]
+    public void TestAddCampaignLabelsCSharpExample() {
+      long campaignId1ForLabeling = utils.CreateSearchCampaign(user,
+          BiddingStrategyType.MANUAL_CPC);
+      long campaignId2ForLabeling = utils.CreateSearchCampaign(user,
+          BiddingStrategyType.MANUAL_CPC);
+      RunExample(delegate() {
+        new CSharpExamples.AddCampaignLabels().Run(user, campaignId1ForLabeling,
+            campaignId2ForLabeling, labelId);
+      });
+    }
+
+    /// <summary>
+    /// Tests the GetCampaignsByLabel VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestGetCampaignsByLabelVBExample() {
+      RunExample(delegate() {
+        new VBExamples.GetCampaignsByLabel().Run(user, labelId);
+      });
+    }
+
+    /// <summary>
+    /// Tests the GetCampaignsByLabel C# code example.
+    /// </summary>
+    [Test]
+    public void TestGetCampaignsByLabelCSharpExample() {
+      RunExample(delegate() {
+        new CSharpExamples.GetCampaignsByLabel().Run(user, labelId);
+      });
     }
 
     /// <summary>
@@ -70,26 +123,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201601 {
     }
 
     /// <summary>
-    /// Tests the AddKeywordsInBulk VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddKeywordsInBulkVBExample() {
-      RunExample(delegate() {
-        new VBExamples.AddKeywordsInBulk().Run(user, adGroupId);
-      });
-    }
-
-    /// <summary>
-    /// Tests the AddKeywordsInBulk C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddKeywordsInBulkCSharpExample() {
-      RunExample(delegate() {
-        new CSharpExamples.AddKeywordsInBulk().Run(user, adGroupId);
-      });
-    }
-
-    /// <summary>
     /// Tests the GetAllDisapprovedAds VB.NET code example.
     /// </summary>
     [Test]
@@ -106,6 +139,26 @@ namespace Google.Api.Ads.AdWords.Tests.v201601 {
     public void TestGetAllDisapprovedAdsCSharpExample() {
       RunExample(delegate() {
         new CSharpExamples.GetAllDisapprovedAds().Run(user, campaignId);
+      });
+    }
+
+    /// <summary>
+    /// Tests the GetAllDisapprovedAdsWithAwql VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestGetAllDisapprovedAdsWithAwqlVBExample() {
+      RunExample(delegate() {
+        new VBExamples.GetAllDisapprovedAdsWithAwql().Run(user, campaignId);
+      });
+    }
+
+    /// <summary>
+    /// Tests the GetAllDisapprovedAdsWithAwql C# code example.
+    /// </summary>
+    [Test]
+    public void TestGetAllDisapprovedAdsWithAwqlCSharpExample() {
+      RunExample(delegate() {
+        new CSharpExamples.GetAllDisapprovedAdsWithAwql().Run(user, campaignId);
       });
     }
 
@@ -191,6 +244,8 @@ namespace Google.Api.Ads.AdWords.Tests.v201601 {
       });
     }
 
+    #region tests that take a long while.
+
     /// <summary>
     /// Tests the AddCompleteCampaignUsingBatchJob C# code example.
     /// </summary>
@@ -210,6 +265,8 @@ namespace Google.Api.Ads.AdWords.Tests.v201601 {
         new VBExamples.AddCompleteCampaignsUsingBatchJob().Run(user);
       });
     }
+
+    #endregion
 
     /// <summary>
     /// Create an experiment for promotion.

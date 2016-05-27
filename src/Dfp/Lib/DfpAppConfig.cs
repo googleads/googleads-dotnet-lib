@@ -13,14 +13,11 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Lib;
-
 using System;
-using System.Configuration;
 using System.Collections;
-using System.Collections.Specialized;
-using System.IO;
-using System.Net;
-using System.Xml;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
 
 namespace Google.Api.Ads.Dfp.Lib {
   /// <summary>
@@ -158,14 +155,19 @@ namespace Google.Api.Ads.Dfp.Lib {
       dfpApiServer = DEFAULT_DFPAPI_SERVER;
       authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
 
-      ReadSettings((Hashtable) ConfigurationManager.GetSection("DfpApi"));
+      ReadSettings(
+          ((Hashtable)ConfigurationManager.GetSection("DfpApi"))
+          .Cast<DictionaryEntry>()
+          .ToDictionary(
+              setting => setting.Key.ToString(),
+              setting => setting.Value.ToString()));
     }
 
     /// <summary>
     /// Read all settings from App.config.
     /// </summary>
     /// <param name="settings">The parsed App.config settings.</param>
-    protected override void ReadSettings(Hashtable settings) {
+    protected override void ReadSettings(Dictionary<string, string> settings) {
       base.ReadSettings(settings);
 
       networkCode = ReadSetting(settings, NETWORK_CODE, networkCode);

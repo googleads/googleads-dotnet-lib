@@ -29,9 +29,9 @@ namespace Google.Api.Ads.Common.Tests.Lib {
   /// </summary>
   public class AppConfigBaseTests {
     /// <summary>
-    /// The hashtable to hold the test data.
+    /// The dictionary to hold the test data.
     /// </summary>
-    private Hashtable tblSettings;
+    private Dictionary<string, string> dictSettings;
 
     /// <summary>
     /// Inits this instance.
@@ -39,31 +39,31 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [SetUp]
     [Category("Small")]
     public void Init() {
-      tblSettings = new Hashtable();
-      tblSettings.Add("ProxyServer", "http://localhost/");
-      tblSettings.Add("ProxyUser", "ProxyUser");
-      tblSettings.Add("ProxyPassword", "ProxyPassword");
-      tblSettings.Add("ProxyDomain", "ProxyDomain");
-      tblSettings.Add("MaskCredentials", "false");
-      tblSettings.Add("Timeout", "20");
-      tblSettings.Add("RetryCount", "5");
+      dictSettings = new Dictionary<string, string>();
+      dictSettings.Add("ProxyServer", "http://localhost/");
+      dictSettings.Add("ProxyUser", "ProxyUser");
+      dictSettings.Add("ProxyPassword", "ProxyPassword");
+      dictSettings.Add("ProxyDomain", "ProxyDomain");
+      dictSettings.Add("MaskCredentials", "false");
+      dictSettings.Add("Timeout", "20");
+      dictSettings.Add("RetryCount", "5");
 
-      tblSettings.Add("OAuth2ClientId", "OAuth2ClientId");
-      tblSettings.Add("OAuth2ClientSecret", "OAuth2ClientSecret");
-      tblSettings.Add("OAuth2ServiceAccountEmail", "OAuth2ServiceAccountEmail");
-      tblSettings.Add("OAuth2PrnEmail", "OAuth2PrnEmail");
-      tblSettings.Add("OAuth2JwtCertificatePath", "OAuth2JwtCertificatePath");
-      tblSettings.Add("OAuth2JwtCertificatePassword", "OAuth2JwtCertificatePassword");
-      tblSettings.Add("OAuth2AccessToken", "OAuth2AccessToken");
-      tblSettings.Add("OAuth2RefreshToken", "OAuth2RefreshToken");
-      tblSettings.Add("OAuth2Scope", "OAuth2Scope");
-      tblSettings.Add("OAuth2RedirectUri", "OAuth2RedirectUri");
-      tblSettings.Add("OAuth2Mode", "SERVICE_ACCOUNT");
+      dictSettings.Add("OAuth2ClientId", "OAuth2ClientId");
+      dictSettings.Add("OAuth2ClientSecret", "OAuth2ClientSecret");
+      dictSettings.Add("OAuth2ServiceAccountEmail", "OAuth2ServiceAccountEmail");
+      dictSettings.Add("OAuth2PrnEmail", "OAuth2PrnEmail");
+      dictSettings.Add("OAuth2JwtCertificatePath", "OAuth2JwtCertificatePath");
+      dictSettings.Add("OAuth2JwtCertificatePassword", "OAuth2JwtCertificatePassword");
+      dictSettings.Add("OAuth2AccessToken", "OAuth2AccessToken");
+      dictSettings.Add("OAuth2RefreshToken", "OAuth2RefreshToken");
+      dictSettings.Add("OAuth2Scope", "OAuth2Scope");
+      dictSettings.Add("OAuth2RedirectUri", "OAuth2RedirectUri");
+      dictSettings.Add("OAuth2Mode", "SERVICE_ACCOUNT");
 
-      tblSettings.Add("Email", "Email");
-      tblSettings.Add("Password", "Password");
-      tblSettings.Add("AuthToken", "AuthToken");
-      tblSettings.Add("EnableGzipCompression", "false");
+      dictSettings.Add("Email", "Email");
+      dictSettings.Add("Password", "Password");
+      dictSettings.Add("AuthToken", "AuthToken");
+      dictSettings.Add("EnableGzipCompression", "false");
     }
 
     /// <summary>
@@ -73,32 +73,32 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Category("Small")]
     public void TestReadSettings() {
       MockAppConfig config = new MockAppConfig();
-      config.MockReadSettings(tblSettings);
+      config.MockReadSettings(dictSettings);
       NetworkCredential credential = (NetworkCredential) config.Proxy.Credentials;
-      Assert.AreEqual(tblSettings["ProxyUser"].ToString(), credential.UserName);
-      Assert.AreEqual(tblSettings["ProxyPassword"].ToString(), credential.Password);
-      Assert.AreEqual(tblSettings["ProxyDomain"].ToString(), credential.Domain);
-      Assert.AreEqual(bool.Parse(tblSettings["MaskCredentials"].ToString()),
+      Assert.AreEqual(dictSettings["ProxyUser"].ToString(), credential.UserName);
+      Assert.AreEqual(dictSettings["ProxyPassword"].ToString(), credential.Password);
+      Assert.AreEqual(dictSettings["ProxyDomain"].ToString(), credential.Domain);
+      Assert.AreEqual(bool.Parse(dictSettings["MaskCredentials"].ToString()),
           config.MaskCredentials);
-      Assert.AreEqual(int.Parse(tblSettings["Timeout"].ToString()), config.Timeout);
-      Assert.AreEqual(int.Parse(tblSettings["RetryCount"].ToString()), config.RetryCount);
+      Assert.AreEqual(int.Parse(dictSettings["Timeout"].ToString()), config.Timeout);
+      Assert.AreEqual(int.Parse(dictSettings["RetryCount"].ToString()), config.RetryCount);
 
-      Assert.AreEqual(tblSettings["OAuth2ClientId"].ToString(), config.OAuth2ClientId);
-      Assert.AreEqual(tblSettings["OAuth2ClientSecret"].ToString(), config.OAuth2ClientSecret);
-      Assert.AreEqual(tblSettings["OAuth2ServiceAccountEmail"].ToString(),
+      Assert.AreEqual(dictSettings["OAuth2ClientId"].ToString(), config.OAuth2ClientId);
+      Assert.AreEqual(dictSettings["OAuth2ClientSecret"].ToString(), config.OAuth2ClientSecret);
+      Assert.AreEqual(dictSettings["OAuth2ServiceAccountEmail"].ToString(),
           config.OAuth2ServiceAccountEmail);
-      Assert.AreEqual(tblSettings["OAuth2PrnEmail"].ToString(), config.OAuth2PrnEmail);
-      Assert.AreEqual(tblSettings["OAuth2AccessToken"].ToString(), config.OAuth2AccessToken);
-      Assert.AreEqual(tblSettings["OAuth2RefreshToken"].ToString(), config.OAuth2RefreshToken);
-      Assert.AreEqual(tblSettings["OAuth2Scope"].ToString(), config.OAuth2Scope);
-      Assert.AreEqual(tblSettings["OAuth2RedirectUri"].ToString(), config.OAuth2RedirectUri);
-      Assert.AreEqual(tblSettings["OAuth2JwtCertificatePath"].ToString(),
+      Assert.AreEqual(dictSettings["OAuth2PrnEmail"].ToString(), config.OAuth2PrnEmail);
+      Assert.AreEqual(dictSettings["OAuth2AccessToken"].ToString(), config.OAuth2AccessToken);
+      Assert.AreEqual(dictSettings["OAuth2RefreshToken"].ToString(), config.OAuth2RefreshToken);
+      Assert.AreEqual(dictSettings["OAuth2Scope"].ToString(), config.OAuth2Scope);
+      Assert.AreEqual(dictSettings["OAuth2RedirectUri"].ToString(), config.OAuth2RedirectUri);
+      Assert.AreEqual(dictSettings["OAuth2JwtCertificatePath"].ToString(),
           config.OAuth2CertificatePath);
-      Assert.AreEqual(tblSettings["OAuth2JwtCertificatePassword"].ToString(),
+      Assert.AreEqual(dictSettings["OAuth2JwtCertificatePassword"].ToString(),
           config.OAuth2CertificatePassword);
-      Assert.AreEqual(tblSettings["OAuth2Mode"].ToString(), config.OAuth2Mode.ToString());
+      Assert.AreEqual(dictSettings["OAuth2Mode"].ToString(), config.OAuth2Mode.ToString());
 
-      Assert.AreEqual(bool.Parse(tblSettings["EnableGzipCompression"].ToString()),
+      Assert.AreEqual(bool.Parse(dictSettings["EnableGzipCompression"].ToString()),
           config.EnableGzipCompression);
     }
 

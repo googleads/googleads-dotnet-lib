@@ -128,12 +128,13 @@ namespace Google.Api.Ads.Common.Util {
       // Mark the usage.
       featureUsageRegistry.MarkUsage(FEATURE_ID);;
 
-      if (KNOWN_TRACE_SOURCES.ContainsKey(sourceName)) {
-        return KNOWN_TRACE_SOURCES[sourceName];
-      } else {
+      TraceSource source = CollectionUtilities.TryGetValue(KNOWN_TRACE_SOURCES, sourceName);
+      if(source == null) {
         throw new ArgumentException(string.Format(CommonErrorMessages.UnknownTraceSource,
             sourceName));
       }
+
+      return source;
     }
 
     /// <summary>

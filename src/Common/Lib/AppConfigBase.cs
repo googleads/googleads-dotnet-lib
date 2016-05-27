@@ -13,7 +13,7 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Logging;
-
+using Google.Api.Ads.Common.Util;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -645,7 +645,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// Read all settings from App.config.
     /// </summary>
     /// <param name="settings">The parsed app.config settings.</param>
-    protected virtual void ReadSettings(Hashtable settings) {
+    protected virtual void ReadSettings(Dictionary<string, string> settings) {
       // Common keys.
       string proxyUrl = ReadSetting(settings, PROXY_SERVER, "");
 
@@ -718,14 +718,13 @@ namespace Google.Api.Ads.Common.Lib {
           Dictionary<string, string> config =
               serializer.Deserialize<Dictionary<string, string>>(contents);
 
-          if (config.ContainsKey("client_email")) {
-            this.OAuth2ServiceAccountEmail = config["client_email"];
-          } else {
+          this.OAuth2ServiceAccountEmail = CollectionUtilities.TryGetValue(config, "client_email");
+          if (this.OAuth2ServiceAccountEmail == null) {
             throw new ApplicationException(CommonErrorMessages.ClientEmailIsMissingInJsonFile);
           }
-          if (config.ContainsKey("private_key")) {
-            this.OAuth2PrivateKey = config["private_key"];
-          } else {
+
+          this.OAuth2PrivateKey = CollectionUtilities.TryGetValue(config, "private_key");
+          if (this.OAuth2PrivateKey == null) {
             throw new ApplicationException(CommonErrorMessages.PrivateKeyIsMissingInJsonFile);
           }
         }
@@ -744,11 +743,12 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="defaultValue">Default value for the key.</param>
     /// <returns>Actual value from settings, or defaultValue if settings
     /// does not have this key.</returns>
-    protected static string ReadSetting(Hashtable settings, string key, string defaultValue) {
+    protected static string ReadSetting(Dictionary<string, string> settings, string key,
+        string defaultValue) {
       if (settings == null) {
         return defaultValue;
       } else {
-        return settings.ContainsKey(key) ? (string) settings[key] : defaultValue;
+        return CollectionUtilities.TryGetValue(settings, key, defaultValue);
       }
     }
 

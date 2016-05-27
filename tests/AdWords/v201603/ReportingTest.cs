@@ -101,5 +101,15 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
         new CSharpExamples.StreamCriteriaReportResults().Run(user);
       });
     }
+
+    /// <summary>
+    /// Tests the ParallelReportDownload C# code example.
+    /// </summary>
+    [Test]
+    public void TestParallelReportDownloadCSharpExample() {
+      RunExample(delegate() {
+        new CSharpExamples.ParallelReportDownload().Run(user, outputFileName);
+      });
+    }
   }
 }

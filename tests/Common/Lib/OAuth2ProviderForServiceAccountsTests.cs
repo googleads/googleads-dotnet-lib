@@ -36,22 +36,22 @@ namespace Google.Api.Ads.Common.Tests.Lib {
         (OAuth2RequestInterceptor) OAuth2RequestInterceptor.Instance;
 
     /// <summary>
-    /// The hashtable to hold the test data, when testing
+    /// The dictionary to hold the test data, when testing
     /// OAuth2ProviderForServiceAccounts class with certificate and password.
     /// </summary>
-    private Hashtable tblSettingsNoSecretJson;
+    private Dictionary<string, string> dictSettingsNoSecretJson;
 
     /// <summary>
-    /// The hashtable to hold the test data, when testing
+    /// The dictionary to hold the test data, when testing
     /// OAuth2ProviderForServiceAccounts class with JSON secrets file.
     /// </summary>
-    private Hashtable tblSettingsWithSecretJson;
+    private Dictionary<string, string> dictSettingsWithSecretJson;
 
     /// <summary>
     /// Signed request for getting access token for a service account when
     /// using a test certificate and password.
     /// </summary>
-    private const string SERVICE_ACCOUNT_REQUEST_NO_SECRETS_FILE = 
+    private const string SERVICE_ACCOUNT_REQUEST_NO_SECRETS_FILE =
         "grant_type=urn%3aietf%3aparams%3aoauth%3agrant-type%3ajwt-bearer&assertion=" +
         "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJURVNUX1NFUlZJQ0VfQUNDT1VOVF" +
         "9FTUFJTCIsICJzY29wZSI6IlRFU1RfU0NPUEUiLCAiYXVkIjoiaHR0cHM6Ly9hY2NvdW50cy5nb" +
@@ -104,8 +104,8 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     /// </summary>
     [SetUp]
     public void Init() {
-      tblSettingsNoSecretJson = InitSettingsTable(false);
-      tblSettingsWithSecretJson = InitSettingsTable(true);
+      dictSettingsNoSecretJson = InitSettingsDict(false);
+      dictSettingsWithSecretJson = InitSettingsDict(true);
       oauth2RequestInterceptor.Intercept = true;
     }
 
@@ -114,9 +114,9 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     /// </summary>
     /// <param name="setJsonSecretsFile">True, if a value should be set to
     /// if set to OAuth2SecretsJsonPath property, false otherwise.</param>
-    /// <returns>The initialized settings table.</returns>
-    private Hashtable InitSettingsTable(bool setJsonSecretsFile) {
-      Hashtable retval = new Hashtable();
+    /// <returns>The initialized settings dictionary.</returns>
+    private Dictionary<string, string> InitSettingsDict(bool setJsonSecretsFile) {
+      Dictionary<string, string> retval = new Dictionary<string, string>();
       retval.Add("OAuth2ClientId", TEST_CLIENT_ID);
       retval.Add("OAuth2ClientSecret", TEST_CLIENT_SECRET);
       retval.Add("OAuth2ServiceAccountEmail", TEST_SERVICE_ACCOUNT_EMAIL);
@@ -174,12 +174,12 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     public void TestConstructor() {
       MockAppConfig config;
-      
+
       // Tests if the constructor works when JSON secrets file is not provided.
       config = new Mocks.MockAppConfig();
-      config.MockReadSettings(tblSettingsNoSecretJson);
+      config.MockReadSettings(dictSettingsNoSecretJson);
       provider = new OAuth2ProviderForServiceAccounts(config);
-      
+
       Assert.AreEqual(provider.ClientId, config.OAuth2ClientId);
       Assert.AreEqual(provider.ClientSecret, config.OAuth2ClientSecret);
       Assert.AreEqual(provider.AccessToken, config.OAuth2AccessToken);
@@ -192,9 +192,9 @@ namespace Google.Api.Ads.Common.Tests.Lib {
 
       // Tests if the constructor works when JSON secrets file is provided.
       config = new Mocks.MockAppConfig();
-      config.MockReadSettings(tblSettingsWithSecretJson);
+      config.MockReadSettings(dictSettingsWithSecretJson);
       provider = new OAuth2ProviderForServiceAccounts(config);
-      
+
       Assert.AreEqual(provider.ClientId, config.OAuth2ClientId);
       Assert.AreEqual(provider.ClientSecret, config.OAuth2ClientSecret);
       Assert.AreEqual(provider.AccessToken, config.OAuth2AccessToken);
@@ -202,7 +202,7 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       Assert.AreEqual(provider.ServiceAccountEmail, config.OAuth2ServiceAccountEmail);
       Assert.AreEqual(provider.PrnEmail, config.OAuth2PrnEmail);
       Assert.IsNullOrEmpty(provider.JwtCertificatePath);
-      Assert.IsNullOrEmpty(provider.JwtCertificatePassword); 
+      Assert.IsNullOrEmpty(provider.JwtCertificatePassword);
       Assert.AreEqual(provider.JwtPrivateKey, config.OAuth2PrivateKey);
     }
 
@@ -213,7 +213,7 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     public void TestGenerateAccessTokenForServiceAccountsNoSecretsFile() {
       MockAppConfig config = new Mocks.MockAppConfig();
-      config.MockReadSettings(tblSettingsNoSecretJson);
+      config.MockReadSettings(dictSettingsNoSecretJson);
       provider = new OAuth2ProviderForServiceAccounts(config);
 
       TestUtils.ValidateRequiredParameters(provider, new string[] {"ServiceAccountEmail",
@@ -246,7 +246,7 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     public void TestGenerateAccessTokenForServiceAccountsWithSecretsFile() {
       MockAppConfig config = new Mocks.MockAppConfig();
-      config.MockReadSettings(tblSettingsWithSecretJson);
+      config.MockReadSettings(dictSettingsWithSecretJson);
       provider = new OAuth2ProviderForServiceAccounts(config);
 
       TestUtils.ValidateRequiredParameters(provider, new string[] {"ServiceAccountEmail",
@@ -278,7 +278,7 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     public void TestGetAuthHeader() {
       MockAppConfig config = new MockAppConfig();
-      config.MockReadSettings(tblSettingsNoSecretJson);
+      config.MockReadSettings(dictSettingsNoSecretJson);
       provider = new OAuth2ProviderForServiceAccounts(config);
       Assert.AreEqual(AUTHORIZATION_HEADER, provider.GetAuthHeader());
     }
@@ -289,7 +289,7 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     public void TestPropertySettersAndGetters() {
       MockAppConfig config = new MockAppConfig();
-      config.MockReadSettings(tblSettingsNoSecretJson); 
+      config.MockReadSettings(dictSettingsNoSecretJson);
       provider = new OAuth2ProviderForServiceAccounts(config);
 
       provider.ClientId = TEST_CLIENT_ID;

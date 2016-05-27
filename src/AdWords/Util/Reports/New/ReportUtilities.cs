@@ -46,7 +46,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// Default report version.
     /// </summary>
-    internal const string DEFAULT_REPORT_VERSION = "v201603";
+    internal const string DEFAULT_REPORT_VERSION = "v201605";
 
     /// <summary>
     /// Sets the reporting API version to use.
@@ -243,6 +243,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       if (config.IncludeZeroImpressions.HasValue) {
         request.Headers.Add("includeZeroImpressions", config.IncludeZeroImpressions.ToString().
             ToLower());
+      }
+
+      // Send the useRawEnumValues header only if the user explicitly
+      // requested it through the config object.
+      if (config.UseRawEnumValues.HasValue) {
+        request.Headers.Add("useRawEnumValues", config.UseRawEnumValues.ToString().ToLower());
       }
 
       HttpUtilities.WritePostBodyAndLog(request, postBody, logEntry, HEADERS_TO_MASK);

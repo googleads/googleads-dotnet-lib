@@ -1,6 +1,17 @@
-18.26.1
+18.27.0
 =======
 
+AdWords:
+  - Added support for v201605.
+
+DFP:
+  -
+
+Common:
+  - Common library version was bumped to 3.15.0.
+
+18.26.1
+=======
 AdWords:
   - Fixed dependency issue in
     https://github.com/googleads/googleads-dotnet-lib/issues/85.
