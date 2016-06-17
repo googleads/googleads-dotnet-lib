@@ -4,6 +4,7 @@ var class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base =
     [ "Clone", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a5fb19784119deff998b82db2308af588", null ],
     [ "GetDefaultOAuth2Scope", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#af0391b99de77e1843488071c0a42eef9", null ],
     [ "GetUserAgent", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a34b64f05661375da24baa0954610d5ee", null ],
+    [ "LoadConfigSection", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a3f160037022a2b30581585316907926a", null ],
     [ "OnPropertyChanged", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#aece0fdd468eab506707c6377058788d6", null ],
     [ "ReadSettings", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a401e39fce299c2481bd3a2b210d45700", null ],
     [ "SetPropertyField< T >", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a9d1d55c9f1cd183b75dcda1a4fa2be07", null ],

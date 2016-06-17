@@ -1,8 +1,0 @@
-var dir_25af1d4b6dbe0655734f4442a8788af7 =
-[
-    [ "v201505", "dir_f72e60ae6681748e80e76b9d72c9b0b5.html", "dir_f72e60ae6681748e80e76b9d72c9b0b5" ],
-    [ "v201508", "dir_1229d6267d4bc32caec2438017e5cd02.html", "dir_1229d6267d4bc32caec2438017e5cd02" ],
-    [ "v201511", "dir_95b978ffa10c471ff45d4cdb85a64fda.html", "dir_95b978ffa10c471ff45d4cdb85a64fda" ],
-    [ "v201602", "dir_2c3cff05d31f0e612d8c4a450df6336f.html", "dir_2c3cff05d31f0e612d8c4a450df6336f" ],
-    [ "v201605", "dir_4f9b865e3e161d8c634f325765927058.html", "dir_4f9b865e3e161d8c634f325765927058" ]
-];

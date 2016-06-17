@@ -127,7 +127,7 @@ Inheritance diagram for Google.Api.Ads.Dfp.v201508.IProductService:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5f72fb234ff015a903cc278eafc0f9ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_product_page.html">ProductPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_i_product_service.html#a5f72fb234ff015a903cc278eafc0f9ab">getProductsByStatement</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_statement.html">Statement</a> statement)</td></tr>
-<tr class="memdesc:a5f72fb234ff015a903cc278eafc0f9ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="ProductPage">ProductPage</a> of <a href="Product">Product</a> objects that satisfy the criteria specified by given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering and/or sorting:  <a href="#a5f72fb234ff015a903cc278eafc0f9ab">More...</a><br/></td></tr>
+<tr class="memdesc:a5f72fb234ff015a903cc278eafc0f9ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="ProductPage">ProductPage</a> of <a href="Product">Product</a> objects that satisfy the criteria specified by given <a href="Statement#query">Statement::query</a>.  <a href="#a5f72fb234ff015a903cc278eafc0f9ab">More...</a><br/></td></tr>
 <tr class="separator:a5f72fb234ff015a903cc278eafc0f9ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab964d2d52cfb6f7dca947a4df068046d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_update_result.html">UpdateResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_i_product_service.html#ab964d2d52cfb6f7dca947a4df068046d">performProductAction</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_product_action.html">ProductAction</a> productAction, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_statement.html">Statement</a> filterStatement)</td></tr>
 <tr class="memdesc:ab964d2d52cfb6f7dca947a4df068046d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs action on <a href="Product">Product</a> objects that satisfy the given <a href="Statement">Statement</a>.  <a href="#ab964d2d52cfb6f7dca947a4df068046d">More...</a><br/></td></tr>
@@ -162,7 +162,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets a <a href="ProductPage">ProductPage</a> of <a href="Product">Product</a> objects that satisfy the criteria specified by given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering and/or sorting: </p>
+<p>Gets a <a href="ProductPage">ProductPage</a> of <a href="Product">Product</a> objects that satisfy the criteria specified by given <a href="Statement#query">Statement::query</a>. </p>
+<p>When using sales management, the following fields are supported for filtering and/or sorting.</p>
 <table class="doxtable">
 <tr>
 <th scope="col">PQL Property </th><th scope="col">Object Property </th><th scope="col">Filterable </th><th scope="col">Sortable  </th></tr>
@@ -182,6 +183,21 @@ Properties</h2></td></tr>
 <td><code>name</code> </td><td><a href="Product#name">Product::name</a> </td><td>Yes </td><td>Yes  </td></tr>
 <tr>
 <td><code>description</code> </td><td><a href="Product#description">Product::description</a> </td><td>Yes </td><td>No  </td></tr>
+<tr>
+<td><code>id</code> </td><td><a href="Product#id">Product::id</a> </td><td>Yes </td><td>Yes  </td></tr>
+<tr>
+<td><code>lastModifiedDateTime</code> </td><td><a href="Product#lastModifiedDateTime">Product::lastModifiedDateTime</a> </td><td>Yes </td><td>Yes  </td></tr>
+</table>
+<p>When using programmatic guaranteed and not sales management, the following fields are supported for filtering and/or sorting. </p>
+<table class="doxtable">
+<tr>
+<th scope="col">PQL Property </th><th scope="col">Object Property </th><th scope="col">Filterable </th><th scope="col">Sortable  </th></tr>
+<tr>
+<td><code>status</code> </td><td><a href="Product#status">Product::status</a> </td><td>Yes </td><td>Yes  </td></tr>
+<tr>
+<td><code>rateType</code> </td><td><a href="Product#rateType">Product::rateType</a> </td><td>Yes </td><td>Yes  </td></tr>
+<tr>
+<td><code>name</code> </td><td><a href="Product#name">Product::name</a> </td><td>Yes </td><td>Yes  </td></tr>
 <tr>
 <td><code>id</code> </td><td><a href="Product#id">Product::id</a> </td><td>Yes </td><td>Yes  </td></tr>
 <tr>
@@ -306,7 +322,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/tmp/tmp.MKCHHZsBCF/dist/github/src/Dfp/v201508/<a class="el" href="v201508_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.1jz0VGPwxd/dist/github/src/Dfp/v201508/<a class="el" href="v201508_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -314,7 +330,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508.html">v201508</a></li><li class="navelem"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201508_1_1_i_product_service.html">IProductService</a></li>
-    <li class="footer">Generated on Fri May 27 2016 19:43:08 for Ads API .NET library by
+    <li class="footer">Generated on Fri Jun 17 2016 12:03:08 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

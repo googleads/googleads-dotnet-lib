@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_seed_ad_group_id_search_parameter =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_seed_ad_group_id_search_parameter_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_seed_ad_group_id_search_parameter_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_seed_ad_group_id_search_parameter_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_seed_ad_group_id_search_parameter_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_seed_ad_group_id_search_parameter_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_seed_ad_group_id_search_parameter_1_1_selectable_fields" ],
-    [ "adGroupId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_seed_ad_group_id_search_parameter.html#a515e63c49a13f95c3f7676576075ded8", null ],
-    [ "adGroupIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_seed_ad_group_id_search_parameter.html#a76c7ad5d2f0b48502b83944191f28598", null ]
-];

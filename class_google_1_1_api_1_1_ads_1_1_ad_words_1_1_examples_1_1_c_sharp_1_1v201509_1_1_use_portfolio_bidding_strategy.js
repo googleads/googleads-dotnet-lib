@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_use_portfolio_bidding_strategy =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_use_portfolio_bidding_strategy.html#ae95e5fefbba224a6af4814dc4438582e", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201509_1_1_use_portfolio_bidding_strategy.html#a97bd7c9a912bf5f6013ad9165e6a38e0", null ]
-];

@@ -1541,6 +1541,7 @@ var v201508_2_dfp_api_8cs =
       [ "USER", "v201508_2_dfp_api_8cs.html#ae882de58b56d0ef20401fa7371f0c8dda2e40ad879e955201df4dedbf8d479a12", null ]
     ] ],
     [ "ConversionEvent", "v201508_2_dfp_api_8cs.html#a569244daa20a0dccd9ac312d4f32149f", [
+      [ "UNKNOWN", "v201508_2_dfp_api_8cs.html#a569244daa20a0dccd9ac312d4f32149fa696b031073e74bf2cb98e5ef201d4aa3", null ],
       [ "CREATIVE_VIEW", "v201508_2_dfp_api_8cs.html#a569244daa20a0dccd9ac312d4f32149fa3d8278b373da1a2b5aa10b0d725c49ae", null ],
       [ "START", "v201508_2_dfp_api_8cs.html#a569244daa20a0dccd9ac312d4f32149fab078ffd28db767c502ac367053f6e0ac", null ],
       [ "SKIP_SHOWN", "v201508_2_dfp_api_8cs.html#a569244daa20a0dccd9ac312d4f32149fad81389d600d0879d8179ce5441ce70fb", null ],
@@ -3342,7 +3343,8 @@ var v201508_2_dfp_api_8cs =
     [ "StartDateTimeType", "v201508_2_dfp_api_8cs.html#ad5fec34b7fb29e6503fb489fa88d7c38", [
       [ "USE_START_DATE_TIME", "v201508_2_dfp_api_8cs.html#ad5fec34b7fb29e6503fb489fa88d7c38a4616c1edc4f6d1e520b5edcf87e97db2", null ],
       [ "IMMEDIATELY", "v201508_2_dfp_api_8cs.html#ad5fec34b7fb29e6503fb489fa88d7c38ad051319484a869ba5244878e7ed93b8d", null ],
-      [ "ONE_HOUR_FROM_NOW", "v201508_2_dfp_api_8cs.html#ad5fec34b7fb29e6503fb489fa88d7c38a9cc3becf8742ac91693afaada225b63d", null ]
+      [ "ONE_HOUR_FROM_NOW", "v201508_2_dfp_api_8cs.html#ad5fec34b7fb29e6503fb489fa88d7c38a9cc3becf8742ac91693afaada225b63d", null ],
+      [ "UNKNOWN", "v201508_2_dfp_api_8cs.html#ad5fec34b7fb29e6503fb489fa88d7c38a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "StatementErrorReason", "v201508_2_dfp_api_8cs.html#abe8ed6ebe2e8dc2a845ca6d3a823827f", [
       [ "VARIABLE_NOT_BOUND_TO_VALUE", "v201508_2_dfp_api_8cs.html#abe8ed6ebe2e8dc2a845ca6d3a823827facd615242516bb819d99ca8f536ce0d31", null ],

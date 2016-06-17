@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_pending_invitation_selector =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_pending_invitation_selector_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_pending_invitation_selector_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_pending_invitation_selector_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_pending_invitation_selector_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_pending_invitation_selector_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_pending_invitation_selector_1_1_selectable_fields" ],
-    [ "clientCustomerIds", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_pending_invitation_selector.html#af51d30723c4849a0346ac945c8ff4d6f", null ],
-    [ "managerCustomerIds", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201509_1_1_pending_invitation_selector.html#a646858c5e4f0408ba380be1bfedbdce6", null ]
-];

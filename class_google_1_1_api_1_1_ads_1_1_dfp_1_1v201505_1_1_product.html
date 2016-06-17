@@ -154,7 +154,7 @@ Properties</h2></td></tr>
 <tr class="memitem:a5a2e3e5160f9150830466639e8c5cea7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_product.html#a5a2e3e5160f9150830466639e8c5cea7">rateTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a5a2e3e5160f9150830466639e8c5cea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe88cad5fd05ca0fd5dc9839f8a01f27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505.html#aa1a696c53779de2f0ec7caf7419e58d0">RoadblockingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_product.html#afe88cad5fd05ca0fd5dc9839f8a01f27">roadblockingType</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:afe88cad5fd05ca0fd5dc9839f8a01f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">The strategy for serving roadblocked creatives, i.e. instances where multiple creatives must be served together on a single web page.  <a href="#afe88cad5fd05ca0fd5dc9839f8a01f27">More...</a><br/></td></tr>
+<tr class="memdesc:afe88cad5fd05ca0fd5dc9839f8a01f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">The strategy for serving roadblocked creatives, i.e. instances where multiple creatives must be served together on a single web page. This attribute is read-only.  <a href="#afe88cad5fd05ca0fd5dc9839f8a01f27">More...</a><br/></td></tr>
 <tr class="separator:afe88cad5fd05ca0fd5dc9839f8a01f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a767a32422d6e6491c8a9ea76e4d8e05d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_product.html#a767a32422d6e6491c8a9ea76e4d8e05d">roadblockingTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a767a32422d6e6491c8a9ea76e4d8e05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -434,7 +434,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The name of the </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_product.html" title="Proposal line items are created from products, from which their properties are copied. ">Product</a></code>. This attribute is populated by <a class="el" href="namespace_google.html">Google</a>, but can be updated. It has maximum length of 255 characters if overridden via update. This attribute is required. </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_product.html" title="Proposal line items are created from products, from which their properties are copied. ">Product</a></code>. This attribute is populated by <a class="el" href="namespace_google.html">Google</a>, but can be updated. To overwrite this, set the <a href="#nameSource">#nameSource</a> to <a href="ValueSourceType#DIRECTLY_SPECIFIED">ValueSourceType::DIRECTLY_SPECIFIED</a> when setting the value of this field. It has maximum length of 255 characters if overridden via update. This attribute is required. </p>
 
 </div>
 </div>
@@ -524,7 +524,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The description of the </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_product_template.html">ProductTemplate</a></code> from which this product is generated. This attribute is read-only and is assigned by <a class="el" href="namespace_google.html">Google</a> when a product is created. </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_product_template.html">ProductTemplate</a></code> from which this product is generated. This attribute is read-only. </p>
 
 </div>
 </div>
@@ -547,7 +547,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The ID of the </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_product_template.html">ProductTemplate</a></code> from which this product is generated. This attribute is read-only and is assigned by <a class="el" href="namespace_google.html">Google</a> when a product is created. </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_product_template.html">ProductTemplate</a></code> from which this product is generated. This attribute is read-only. </p>
 
 </div>
 </div>
@@ -593,7 +593,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The type of </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_product.html" title="Proposal line items are created from products, from which their properties are copied. ">Product</a></code>. The attribute is read-only. </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_product.html" title="Proposal line items are created from products, from which their properties are copied. ">Product</a></code>. This will always be <a href="ProductType#DFP">ProductType::DFP</a> for programmatic guaranteed products. This attribute is read-only. </p>
 
 </div>
 </div>
@@ -683,8 +683,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The strategy for serving roadblocked creatives, i.e. instances where multiple creatives must be served together on a single web page. </p>
-<p>This attribute is read-only.</p>
+<p>The strategy for serving roadblocked creatives, i.e. instances where multiple creatives must be served together on a single web page. This attribute is read-only. </p>
 
 </div>
 </div>
@@ -782,7 +781,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.MKCHHZsBCF/dist/github/src/Dfp/v201505/<a class="el" href="v201505_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.1jz0VGPwxd/dist/github/src/Dfp/v201505/<a class="el" href="v201505_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -790,7 +789,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505.html">v201505</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201505_1_1_product.html">Product</a></li>
-    <li class="footer">Generated on Fri May 27 2016 19:43:02 for Ads API .NET library by
+    <li class="footer">Generated on Fri Jun 17 2016 12:03:01 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>
