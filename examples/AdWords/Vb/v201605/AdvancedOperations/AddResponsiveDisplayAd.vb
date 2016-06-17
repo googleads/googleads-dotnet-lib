@@ -87,7 +87,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201605
 
         ' Create a responsive display ad.
         Dim responsiveDisplayAd = New ResponsiveDisplayAd()
-        responsiveDisplayAd.marketingImage = newImage
+
+        ' This ad format does not allow the creation of an image using the
+        ' Image.data field. An image must first be created using the MediaService,
+        ' and Image.mediaId must be populated when creating the ad.
+        responsiveDisplayAd.marketingImage = New Image()
+        responsiveDisplayAd.marketingImage.mediaId = newImage.mediaId
+
         responsiveDisplayAd.shortHeadline = "Travel"
         responsiveDisplayAd.longHeadline = "Travel the World"
         responsiveDisplayAd.description = "Take to the air!"

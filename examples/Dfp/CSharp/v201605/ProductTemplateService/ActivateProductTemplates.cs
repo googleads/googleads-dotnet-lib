@@ -57,12 +57,14 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
       // Set the ID of the product template to activate.
       long productTemplateId = long.Parse(_T("INSERT_PRODUCT_TEMPLATE_ID_HERE"));
 
+      // [START product_template_statement] MOE:strip_line
       // Create statement to select a product template by ID.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("id = :id")
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
           .AddValue("id", productTemplateId);
+      // [END product_template_statement] MOE:strip_line
 
       // Set default for page.
       ProductTemplatePage page = new ProductTemplatePage();
@@ -93,6 +95,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
           // Modify statement.
           statementBuilder.RemoveLimitAndOffset();
 
+          // [START its_activation_time] MOE:strip_line
           // Create action.
           Google.Api.Ads.Dfp.v201605.ActivateProductTemplates action =
               new Google.Api.Ads.Dfp.v201605.ActivateProductTemplates();
@@ -100,6 +103,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
           // Perform action.
           UpdateResult result = productTemplateService.performProductTemplateAction(action,
               statementBuilder.ToStatement());
+          // [END its_activation_time] MOE:strip_line
 
           // Display results.
           if (result != null && result.numChanges > 0) {

@@ -82,7 +82,13 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
 
         // Create a responsive display ad.
         ResponsiveDisplayAd responsiveDisplayAd = new ResponsiveDisplayAd();
-        responsiveDisplayAd.marketingImage = newImage;
+
+        // This ad format does not allow the creation of an image using the
+        // Image.data field. An image must first be created using the MediaService,
+        // and Image.mediaId must be populated when creating the ad.
+        responsiveDisplayAd.marketingImage = new Image() {
+          mediaId = newImage.mediaId
+        };
         responsiveDisplayAd.shortHeadline = "Travel";
         responsiveDisplayAd.longHeadline = "Travel the World";
         responsiveDisplayAd.description = "Take to the air!";

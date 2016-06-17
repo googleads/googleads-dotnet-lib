@@ -14,10 +14,7 @@
 
 using Google.Api.Ads.Common.Lib;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
 
 namespace Google.Api.Ads.Dfp.Lib {
   /// <summary>
@@ -155,12 +152,7 @@ namespace Google.Api.Ads.Dfp.Lib {
       dfpApiServer = DEFAULT_DFPAPI_SERVER;
       authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
 
-      ReadSettings(
-          ((Hashtable)ConfigurationManager.GetSection("DfpApi"))
-          .Cast<DictionaryEntry>()
-          .ToDictionary(
-              setting => setting.Key.ToString(),
-              setting => setting.Value.ToString()));
+      ReadSettings(LoadConfigSection("DfpApi"));
     }
 
     /// <summary>

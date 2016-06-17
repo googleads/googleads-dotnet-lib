@@ -18,10 +18,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Web.Script.Serialization;
+using System.Linq;
 
 namespace Google.Api.Ads.Common.Lib {
 
@@ -639,6 +641,26 @@ namespace Google.Api.Ads.Common.Lib {
 
       includeFeaturesInUserAgent = true;
       enableSoapExtension = true;
+    }
+
+    /// <summary>
+    /// Attempts to load the configuration section with the given name.
+    /// </summary>
+    /// <param name="sectionName">The name of the configuration section to load.</param>
+    /// <returns>
+    /// The request configuration section, or <code>null</code> if none was found.
+    /// </returns>
+    protected Dictionary<string, string> LoadConfigSection(string sectionName) {
+      Hashtable configTable = (Hashtable)ConfigurationManager.GetSection(sectionName);
+
+      Dictionary<string, string> configDict = null;
+      if (configTable != null) {
+        configDict = configTable.Cast<DictionaryEntry>().ToDictionary(
+          setting => setting.Key.ToString(),
+          setting => setting.Value.ToString());
+      }
+
+      return configDict;
     }
 
     /// <summary>

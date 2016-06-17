@@ -60,11 +60,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
 
       long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
 
-      // Create statement object to filter for an order.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("ORDER_ID = :id")
-          .AddValue("id", orderId);
-
+      // [START report_guide_include_1] MOE:strip_line
       // Create report job.
       ReportJob reportJob = new ReportJob();
       reportJob.reportQuery = new ReportQuery();
@@ -84,12 +80,20 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
       reportJob.reportQuery.endDate =
         DateTimeUtilities.FromDateTime(endDateTime, "America/New_York").date;
 
+      // Create statement object to filter for an order.
+      StatementBuilder statementBuilder = new StatementBuilder()
+          .Where("ORDER_ID = :id")
+          .AddValue("id", orderId);
       reportJob.reportQuery.statement = statementBuilder.ToStatement();
+      // [END report_guide_include_1] MOE:strip_line
 
       try {
+        // [START report_guide_include_2] MOE:strip_line
         // Run report job.
         reportJob = reportService.runReportJob(reportJob);
+        // [END report_guide_include_2] MOE:strip_line
 
+        // [START report_guide_include_3] MOE:strip_line
         ReportUtilities reportUtilities = new ReportUtilities(reportService, reportJob.id);
 
         // Set download options.
@@ -103,6 +107,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
           reportResponse.Save(filePath);
         }
         Console.WriteLine("Report saved to \"{0}\".", filePath);
+        // [END report_guide_include_3] MOE:strip_line
 
       } catch (Exception e) {
         Console.WriteLine("Failed to run delivery report. Exception says \"{0}\"",

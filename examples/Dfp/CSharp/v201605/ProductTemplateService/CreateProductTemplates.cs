@@ -49,24 +49,31 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// </summary>
     /// <param name="user">The DFP user object running the code examples.</param>
     public override void Run(DfpUser user) {
+      // [START get_product_template_service] MOE:strip_line
       // Get the ProductTemplateService.
       ProductTemplateService productTemplateService =
           (ProductTemplateService) user.GetService(DfpService.v201605.ProductTemplateService);
+      // [END get_product_template_service] MOE:strip_line
 
       // Get the NetworkService.
       NetworkService networkService =
           (NetworkService) user.GetService(DfpService.v201605.NetworkService);
 
+      // [START create_product_template_local] MOE:strip_line
       // Create a product template.
       ProductTemplate productTemplate = new ProductTemplate();
       productTemplate.name = "Product template #" + new Random().Next(int.MaxValue);
       productTemplate.description = "This product template creates standard proposal line items "
           + "targeting Chrome browsers with product segmentation on ad units and geo targeting.";
+      // [END create_product_template_local] MOE:strip_line
 
+      // [START set_name_macro] MOE:strip_line
       // Set the name macro which will be used to generate the names of the products.
       // This will create a segmentation based on the line item type, ad unit, and location.
       productTemplate.nameMacro = "<line-item-type> - <ad-unit> - <template-name> - <location>";
+      // [END set_name_macro] MOE:strip_line
 
+      // [START line_item_fields] MOE:strip_line
       // Set the product type so the created proposal line items will be trafficked in DFP.
       productTemplate.productType = ProductType.DFP;
 
@@ -93,7 +100,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
 
       // Set the type of proposal line item to be created from the product template.
       productTemplate.lineItemType = LineItemType.STANDARD;
+      // [END line_item_fields] MOE:strip_line
 
+      // [START targeting] MOE:strip_line
       // Get the root ad unit ID used to target the whole site.
       String rootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
 
@@ -132,18 +141,23 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
       productTemplate.customizableAttributes = new CustomizableAttributes() {
         allowPlacementTargetingCustomization = true
       };
+      // [END targeting] MOE:strip_line
 
+      // [START product_segmentation] MOE:strip_line
       // Add inventory and geo targeting as product segmentation.
       ProductSegmentation productSegmentation = new ProductSegmentation();
       productSegmentation.adUnitSegments = new AdUnitTargeting[] {adUnitTargeting};
       productSegmentation.geoSegment = geoTargeting;
 
       productTemplate.productSegmentation = productSegmentation;
+      // [END product_segmentation] MOE:strip_line
 
       try {
+        // [START create_product_template_server] MOE:strip_line
         // Create the product template on the server.
         ProductTemplate[] productTemplates = productTemplateService.createProductTemplates(
             new ProductTemplate[] {productTemplate});
+        // [END create_product_template_server] MOE:strip_line
 
         foreach (ProductTemplate createdProductTemplate in productTemplates) {
           Console.WriteLine("A product template with ID \"{0}\" and name \"{1}\" was created.",

@@ -1,3 +1,15 @@
+18.28.0
+=======
+AdWords:
+  - Removed support for v201509.
+  - Fixed AddResponsiveDisplayAd example to send only the media ID when creating the ad.
+
+DFP:
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/86.
+
+Common:
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/87.
+
 18.27.0
 =======
 

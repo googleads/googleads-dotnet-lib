@@ -15,10 +15,7 @@
 using Google.Api.Ads.Common.Lib;
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
 
 namespace Google.Api.Ads.AdWords.Lib {
 
@@ -408,12 +405,7 @@ namespace Google.Api.Ads.AdWords.Lib {
       includeZeroImpressions = DEFAULT_INCLUDE_ZERO_IMPRESSIONS;
       useRawEnumValues = DEFAULT_USE_RAW_ENUM_VALUES;
 
-      ReadSettings(
-          ((Hashtable)ConfigurationManager.GetSection("AdWordsApi"))
-          .Cast<DictionaryEntry>()
-          .ToDictionary(
-              setting => setting.Key.ToString(),
-              setting => setting.Value.ToString()));
+      ReadSettings(LoadConfigSection("AdWordsApi"));
     }
 
     /// <summary>

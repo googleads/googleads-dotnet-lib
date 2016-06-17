@@ -1,4 +1,4 @@
-// Copyright 2015, Google Inc. All Rights Reserved.
+// Copyright 2016, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -9994,6 +9994,10 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// href='StartDateTimeType#USE_START_DATE_TIME'>StartDateTimeType#USE_START_DATE_TIME</a>.
     /// </summary>
     ONE_HOUR_FROM_NOW,
+    /// <summary>The value returned if the actual value is not exposed by the requested API
+    /// version.
+    /// </summary>
+    UNKNOWN,
   }
 
 
@@ -13827,7 +13831,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// CPM, clicks for CPC and days for CPD.
     /// </summary>
     RECONCILIATION_RECONCILED_VOLUME,
-    /// <summary>The discrepancy between DFP volume and third party volume.
+    /// <summary>The discrepancy percentage between DFP volume and third party volume.
     /// </summary>
     RECONCILIATION_DISCREPANCY,
     /// <summary>The reconciled revenue of the <a href='LineItem'>LineItem</a>.
@@ -14182,11 +14186,11 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// for <a href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>.
     /// </summary>
     ADVERTISER_PRIMARY_CONTACT,
-    /// <summary>Represents <a href='Order#startDateTime'>Order#startDateTime</a> for <a
+    /// <summary>Represents the start date (in YYYY-MM-DD format) for <a
     /// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. Can be used for filtering.
     /// </summary>
     ORDER_START_DATE_TIME,
-    /// <summary>Represents <a href='Order#endDateTime'>Order#endDateTime</a> for <a
+    /// <summary>Represents the end date (in YYYY-MM-DD format) for <a
     /// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. Can be used for filtering.
     /// </summary>
     ORDER_END_DATE_TIME,
@@ -14262,12 +14266,12 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>.
     /// </summary>
     ORDER_BOOKED_CPC,
-    /// <summary>Represents <a href='LineItem#startDateTime'>LineItem#startDateTime</a> for <a
+    /// <summary>Represents the start date (in YYYY-MM-DD format) for <a
     /// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. Can be used for
     /// filtering.
     /// </summary>
     LINE_ITEM_START_DATE_TIME,
-    /// <summary>Represents <a href='LineItem#endDateTime'>LineItem#endDateTime</a> for <a
+    /// <summary>Represents the end date (in YYYY-MM-DD format) for <a
     /// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. Can be used for
     /// filtering.
     /// </summary>
@@ -14392,7 +14396,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// filtering.
     /// </summary>
     PROPOSAL_IS_SOLD,
-    /// <summary>Represents <a href='Proposal#probabilityToClose'>Proposal#probabilityToClose</a>
+    /// <summary>Represents <a href='Proposal#probabilityOfClose'>Proposal#probabilityOfClose</a>
     /// for <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
     /// </summary>
     PROPOSAL_PROBABILITY_TO_CLOSE,
@@ -14581,7 +14585,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
     /// </summary>
     PROPOSAL_LINE_ITEM_BUFFER,
-    /// <summary>Represents the target rate (net) of <a
+    /// <summary>Represents the listing rate (net) of <a
     /// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
     /// </summary>
     PROPOSAL_LINE_ITEM_TARGET_RATE_NET,
@@ -14687,8 +14691,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>.
     /// </summary>
     PRODUCT_PRODUCT_TYPE,
-    /// <summary>Represents <a href='Product#notes'>Product#notes</a> for {@Link
-    /// Dimension#PRODUCT_NAME}.
+    /// <summary>Represents <a href='Product#notes'>Product#notes</a> for <a
+    /// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>.
     /// </summary>
     PRODUCT_NOTES,
     /// <summary>Represents the <a href='Company#type'>Company#type</a> of <a
@@ -15013,7 +15017,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <summary>The report file is generated as a list of Tab Separated Values.
     /// </summary>
     TSV,
-    /// <summary>The report file is generated as a list of Comma Separated Values for Excel.
+    /// <summary>The report file is generated as a list of tab-separated values for Excel.
     /// </summary>
     CSV_EXCEL,
     /// <summary>The report file is generated as a list of Comma Separated Values, to be used
@@ -22750,7 +22754,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
   }
 
 
-  /// <summary>A catch-all error that lists all generic errors associated with Product.
+  /// <summary>Lists all error reasons associated with <a href='Product'>products</a>.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
   [System.SerializableAttribute()]
@@ -22796,15 +22800,15 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <summary>The specified template is not found.
     /// </summary>
     TEMPLATE_NOT_FOUND,
-    /// <summary>The productId is not correctly formed.
+    /// <summary>The product ID is not correctly formed.
     /// </summary>
     MALFORMED_PRODUCT_ID,
-    /// <summary>The productId does not match the expanded features configured in its product
+    /// <summary>The product ID does not match the expanded features configured in its product
     /// template.
     /// </summary>
     BAD_PRODUCT_ID_FEATURE,
-    /// <summary>The template id specified in the parameters does not match the template id
-    /// implied in the productId.
+    /// <summary>The product template ID specified in the parameters does not match the product
+    /// template ID implied in the product ID.
     /// </summary>
     BAD_PRODUCT_TEMPLATE_ID,
     /// <summary>Cannot update an archived product.
@@ -24013,8 +24017,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
       }
     }
 
-    /// <summary>The description of the <code>ContentBundle</code>. This attribute is required
-    /// and has a maximum length of 65,535 characters.
+    /// <summary>The description of the <code>ContentBundle</code>. This attribute is deprecated.
+    /// Setting it is a no-op and it will always return null.
     /// </summary>
     public string description {
       get {
@@ -24543,7 +24547,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
   }
 
 
-  /// <summary>The status of workflow external conditions during workflow execution.
+  /// <summary>The status of a workflow rule during workflow execution.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
   [System.SerializableAttribute()]
@@ -26115,15 +26119,14 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <summary>Gets a <a href='RateCardPage'>RateCardPage</a> of <a
     /// href='RateCard'>RateCard</a> objects that satisfy the given <a
     /// href='Statement#query'>Statement#query</a>. The following fields are supported
-    /// for filtering: <table> <tr> <th scope="col">PQL Property</th> <th
-    /// scope="col">Object Property</th> </tr> <tr> <td><code>id</code></td> <td><a
-    /// href='RateCard#id'>RateCard#id</a></td> </tr> <tr> <td><code>name</code></td>
-    /// <td><a href='RateCard#name'>RateCard#name</a></td> </tr> <tr>
-    /// <td><code>status</code></td> <td><a
-    /// href='RateCard#status'>RateCard#status</a></td> </tr> <tr>
-    /// <td><code>lastModifiedDateTime</code></td> <td><a
+    /// for filtering: <table> <tr> <th>PQL property</th> <th>Entity property</th> </tr>
+    /// <tr> <td><code>Id</code></td> <td><a href='RateCard#id'>RateCard#id</a></td>
+    /// </tr> <tr> <td><code>LastModifiedDateTime</code></td> <td><a
     /// href='RateCard#lastModifiedDateTime'>RateCard#lastModifiedDateTime</a></td>
-    /// </tr> </table>
+    /// </tr> <tr> <td><code>Name</code></td> <td><a
+    /// href='RateCard#name'>RateCard#name</a></td> </tr> <tr>
+    /// <td><code>Status</code></td> <td><a
+    /// href='RateCard#status'>RateCard#status</a></td> </tr> </table>
     /// </summary><param name='filterStatement'>a Publisher Query Language statement to filter a
     /// list of rate cards.</param>
     /// <returns>the rate cards that match the filter</returns>
@@ -26360,9 +26363,10 @@ namespace Google.Api.Ads.Dfp.v201511 {
 
     /// <summary>The ISO currency code for the currency used by the <code></code>. This attribute
     /// is optional to create a <code>RateCard</code> and defaults to the <a
-    /// href='Network#currencyCode'>network's currency</a>. This attribute becomes
-    /// readonly once a <a href='ProposalLineItem'>ProposalLineItem</a> has been created
-    /// with this <a href='RateCard'>RateCard</a>.
+    /// href='Network#currencyCode'>network's currency</a>. This attribute is read-only
+    /// if either the <code></code> is for Marketplace or once a <a
+    /// href='ProposalLineItem'>ProposalLineItem</a> has been created using this
+    /// <code>RateCard</code>.
     /// </summary>
     public string currencyCode {
       get {
@@ -34545,7 +34549,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
   }
 
 
-  /// <summary>Errors associated with programmatic line items
+  /// <summary>Errors associated with programmatic line items.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
   [System.SerializableAttribute()]
@@ -34584,6 +34588,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
   }
 
 
+  /// <summary>Possible error reasons for a programmatic error.
+  /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProgrammaticError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201511")]
@@ -35091,7 +35097,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
   }
 
 
-  /// <summary>Service for handling <a href='SharedAdUnit'>SharedAdUnit</a> objects.
+  /// <summary><b>This service is deprecated.</b> <p>Service for handling <a
+  /// href='SharedAdUnit'>SharedAdUnit</a> objects.</p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -35127,17 +35134,10 @@ namespace Google.Api.Ads.Dfp.v201511 {
       }
     }
 
-    /// <summary>Gets a <a href='SharedAdUnitPage'>SharedAdUnitPage</a> of <a
-    /// href='SharedAdUnit'>SharedAdUnit</a> objects that satisfy the given <a
-    /// href='Statement#query'>Statement#query</a>. The following fields are supported
-    /// for filtering: <table> <tr> <th scope="col">PQL Property</th> <th
-    /// scope="col">Object Property</th> </tr> <tr> <td><code>id</code></td> <td><a
-    /// href='SharedAdUnit#id'>SharedAdUnit#id</a></td> </tr> <tr>
-    /// <td><code>name</code></td> <td><a
-    /// href='SharedAdUnit#name'>SharedAdUnit#name</a></td> </tr> </table>
-    /// </summary><param name='filterStatement'>a Publisher Query Language statement used to
-    /// filter a set of shared ad units</param>
-    /// <returns>the shared ad units that match the given filter</returns>
+    /// <summary><b>This method is deprecated and returns null.</b> <p><b>Instead, use <a
+    /// href='InventoryUnitService#getAdUnitsByStatement'>InventoryUnitService#getAdUnitsByStatement</a>
+    /// filtering on <code>isSharedByDistributor = true</code>.</b></p>
+    /// </summary>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace = "https://www.google.com/apis/ads/publisher/v201511", ResponseNamespace = "https://www.google.com/apis/ads/publisher/v201511", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -37357,8 +37357,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
       }
     }
 
-    /// <summary>The name of the <code>ProductTemplate</code>. This attribute is required and has
-    /// maximum length of 255 characters.
+    /// <summary>The name of the <code>ProductTemplate</code>. This attribute has maximum length
+    /// of 255 characters. This attribute is required.
     /// </summary>
     public string name {
       get {
@@ -37453,8 +37453,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
       }
     }
 
-    /// <summary>The status of the <code>ProductTemplate</code>. This attribute is read-only and
-    /// is assigned by Google.
+    /// <summary>The status of the <code>ProductTemplate</code>. This attribute is read-only.
     /// </summary>
     public ProductTemplateStatus status {
       get {
@@ -39053,7 +39052,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ContentPartnerError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201511")]
   public enum ContentPartnerErrorReason {
-    /// <summary>Can not assign partner if financial term feature is not enabled.
+    /// <summary>Cannot assign partner if financial term feature is not enabled.
     /// </summary>
     FEATURE_NOT_ENABLED,
     /// <summary>Only <code>CONTENT_PARTNER</code> type is allowed.
@@ -43843,12 +43842,13 @@ namespace Google.Api.Ads.Dfp.v201511 {
 
     /// <summary>Gets a <a href='ProductPage'>ProductPage</a> of <a href='Product'>Product</a>
     /// objects that satisfy the criteria specified by given <a
-    /// href='Statement#query'>Statement#query</a>. The following fields are supported
-    /// for filtering and/or sorting: <table> <tr> <th scope="col">PQL Property</th> <th
-    /// scope="col">Object Property</th> <th scope="col">Filterable</th> <th
-    /// scope="col">Sortable</th> </tr> <tr> <td><code>rateCardId</code></td> <td>Rate
-    /// card ID which the product is associated with</td> <td>Yes</td> <td>No</td> </tr>
-    /// <tr> <td><code>status</code></td> <td><a
+    /// href='Statement#query'>Statement#query</a>. <p>When using sales management, the
+    /// following fields are supported for filtering and/or sorting.</p> <table> <tr>
+    /// <th scope="col">PQL Property</th> <th scope="col">Object Property</th> <th
+    /// scope="col">Filterable</th> <th scope="col">Sortable</th> </tr> <tr>
+    /// <td><code>rateCardId</code></td> <td>Rate card ID which the product is
+    /// associated with</td> <td>Yes</td> <td>No</td> </tr> <tr>
+    /// <td><code>status</code></td> <td><a
     /// href='Product#status'>Product#status</a></td> <td>Yes</td> <td>Yes</td> </tr>
     /// <tr> <td><code>lineItemType</code></td> <td><a
     /// href='Product#lineItemType'>Product#lineItemType</a></td> <td>Yes</td>
@@ -43863,6 +43863,19 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <td><code>description</code></td> <td><a
     /// href='Product#description'>Product#description</a></td> <td>Yes</td> <td>No</td>
     /// </tr> <tr> <td><code>id</code></td> <td><a href='Product#id'>Product#id</a></td>
+    /// <td>Yes</td> <td>Yes</td> </tr> <tr> <td><code>lastModifiedDateTime</code></td>
+    /// <td><a href='Product#lastModifiedDateTime'>Product#lastModifiedDateTime</a></td>
+    /// <td>Yes</td> <td>Yes</td> </tr> </table> When using programmatic guaranteed and
+    /// not sales management, the following fields are supported for filtering and/or
+    /// sorting. <table> <tr> <th scope="col">PQL Property</th> <th scope="col">Object
+    /// Property</th> <th scope="col">Filterable</th> <th scope="col">Sortable</th>
+    /// </tr> <tr> <td><code>status</code></td> <td><a
+    /// href='Product#status'>Product#status</a></td> <td>Yes</td> <td>Yes</td> </tr>
+    /// <tr> <td><code>rateType</code></td> <td><a
+    /// href='Product#rateType'>Product#rateType</a></td> <td>Yes</td> <td>Yes</td>
+    /// </tr> <tr> <td><code>name</code></td> <td><a
+    /// href='Product#name'>Product#name</a></td> <td>Yes</td> <td>Yes</td> </tr> <tr>
+    /// <td><code>id</code></td> <td><a href='Product#id'>Product#id</a></td>
     /// <td>Yes</td> <td>Yes</td> </tr> <tr> <td><code>lastModifiedDateTime</code></td>
     /// <td><a href='Product#lastModifiedDateTime'>Product#lastModifiedDateTime</a></td>
     /// <td>Yes</td> <td>Yes</td> </tr> </table>
@@ -44029,8 +44042,11 @@ namespace Google.Api.Ads.Dfp.v201511 {
     private bool videoMaxDurationFieldSpecified;
 
     /// <summary>The name of the <code>Product</code>. This attribute is populated by Google, but
-    /// can be updated. It has maximum length of 255 characters if overridden via
-    /// update. This attribute is required.
+    /// can be updated. To overwrite this, set the <a href='#nameSource'>#nameSource</a>
+    /// to <a
+    /// href='ValueSourceType#DIRECTLY_SPECIFIED'>ValueSourceType#DIRECTLY_SPECIFIED</a>
+    /// when setting the value of this field. It has maximum length of 255 characters if
+    /// overridden via update. This attribute is required.
     /// </summary>
     public string name {
       get {
@@ -44066,7 +44082,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
       }
     }
 
-    /// <summary>The type of <code>Product</code>. The attribute is read-only.
+    /// <summary>The type of <code>Product</code>. This will always be <a
+    /// href='ProductType#DFP'>ProductType#DFP</a> for programmatic guaranteed products.
+    /// This attribute is read-only.
     /// </summary>
     public ProductType productType {
       get {
@@ -44092,7 +44110,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The ID of the <code>ProductTemplate</code> from which this product is generated.
-    /// This attribute is read-only and is assigned by Google when a product is created.
+    /// This attribute is read-only.
     /// </summary>
     public long productTemplateId {
       get {
@@ -44156,8 +44174,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The description of the <code>ProductTemplate</code> from which this product is
-    /// generated. This attribute is read-only and is assigned by Google when a product
-    /// is created.
+    /// generated. This attribute is read-only.
     /// </summary>
     public string productTemplateDescription {
       get {
@@ -44207,8 +44224,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The strategy for serving roadblocked creatives, i.e. instances where multiple
-    /// creatives must be served together on a single web page. <p>This attribute is
-    /// read-only.</p>
+    /// creatives must be served together on a single web page. This attribute is
+    /// read-only.
     /// </summary>
     public RoadblockingType roadblockingType {
       get {
@@ -44234,7 +44251,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The strategy for delivering ads over the course of the line item's duration.
-    /// <p>This attribute is read-only.</p>
+    /// This attribute is read-only.
     /// </summary>
     public DeliveryRateType deliveryRateType {
       get {
@@ -44260,8 +44277,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The strategy used for displaying multiple <a href='Creative'>Creative</a>
-    /// objects that are associated with the created <code>ProposalLineItem</code>.
-    /// <p>This attribute is read-only.</p>
+    /// objects that are associated with the created <code>ProposalLineItem</code>. This
+    /// attribute is read-only.
     /// </summary>
     public CreativeRotationType creativeRotationType {
       get {
@@ -44286,7 +44303,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
       }
     }
 
-    /// <summary>The delivery option for companions. <p>This attribute is read-only.</p>
+    /// <summary>The delivery option for companions. This attribute is read-only.
     /// </summary>
     public CompanionDeliveryOption companionDeliveryOption {
       get {
@@ -44395,12 +44412,12 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The targeting for the created <a href='ProposalLineItem'>ProposalLineItem</a>.
-    /// It's a combination of <a
+    /// For those scenarios using sales management, it's a combination of <a
     /// href='ProductTemplate#productSegmentation'>ProductTemplate#productSegmentation</a>
     /// and <a
     /// href='ProductTemplate#builtInTargeting'>ProductTemplate#builtInTargeting</a>.
-    /// See details in <a href='ProductTemplate'>ProductTemplate</a>. <p>This attribute
-    /// is read-only.</p>
+    /// See details in <a href='ProductTemplate'>ProductTemplate</a>. This attribute is
+    /// read-only.
     /// </summary>
     public Targeting builtInTargeting {
       get {
@@ -44412,8 +44429,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>Specifies what targeting or attributes for the created <a
-    /// href='ProposalLineItem'>ProposalLineItem</a> are customizable. <p>This attribute
-    /// is read-only.</p>
+    /// href='ProposalLineItem'>ProposalLineItem</a> are customizable. This attribute is
+    /// read-only.
     /// </summary>
     public CustomizableAttributes customizableAttributes {
       get {
@@ -44438,7 +44455,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The max duration of a video creative associated with this <code></code> in
-    /// milliseconds. This value is only meaningful if this is a video product.
+    /// milliseconds. This value is only meaningful if this is a video product. This
+    /// attribute is read-only.
     /// </summary>
     public long videoMaxDuration {
       get {
@@ -44569,8 +44587,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
   }
 
 
-  /// <summary>An error lists all error reasons associated with performing action on <a
-  /// href='Product'>Product</a> objects.
+  /// <summary>Lists all error reasons associated with performing actions on <a
+  /// href='Product'>products</a>.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
   [System.SerializableAttribute()]
@@ -44615,7 +44633,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProductActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201511")]
   public enum ProductActionErrorReason {
-    /// <summary>The operation is not applicable to the current status.
+    /// <summary>The operation is not applicable for a {@like Product product's} current status.
     /// </summary>
     NOT_APPLICABLE,
     /// <summary>The value returned if the actual value is not exposed by the requested API
@@ -45172,7 +45190,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// href='Proposal#thirdPartyAdServerId'>Proposal#thirdPartyAdServerId</a></td>
     /// </tr> <tr> <td><code>customThirdPartyAdServerName</code></td> <td><a
     /// href='Proposal#customThirdPartyAdServerName'>Proposal#customThirdPartyAdServerName</a></td>
-    /// </tr> </table>
+    /// </tr> <tr> <td><code>hasOfflineErrors</code></td> <td><a
+    /// href='Proposal#hasOfflineErrors'>Proposal#hasOfflineErrors</a></td> </tr>
+    /// </table>
     /// </summary><param name='filterStatement'>a Publisher Query Language statement used to
     /// filter a set of proposals</param>
     /// <returns>the proposals that match the given filter</returns>
@@ -45615,8 +45635,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
 
     private RetractionDetails lastRetractionDetailsField;
 
-    /// <summary>The unique ID of the <code>Proposal</code>. This attribute is readonly and is
-    /// assigned by Google.
+    /// <summary>The unique ID of the <code>Proposal</code>. This attribute is read-only.
     /// </summary>
     public long id {
       get {
@@ -45641,9 +45660,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
       }
     }
 
-    /// <summary>The unique ID of corresponding <a href='Order'>Order</a>. This attribute is
-    /// readonly. This will be <code>null</code> if the <code></code> has not been
-    /// pushed to DFP.
+    /// <summary>The unique ID of corresponding <a href='Order'>Order</a>. This will be
+    /// <code>null</code> if the <code>Proposal</code> has not been pushed to DFP. This
+    /// attribute is read-only.
     /// </summary>
     public long dfpOrderId {
       get {
@@ -45668,11 +45687,11 @@ namespace Google.Api.Ads.Dfp.v201511 {
       }
     }
 
-    /// <summary>The name of the <code>Proposal</code>. This value is required to create a
-    /// proposal and has a maximum length of 255 characters. This attribute is copied to
-    /// <a href='Order#name'>Order#name</a> when the proposal turns into an order. This
-    /// attribute can be configured as editable after the proposal has been submitted.
-    /// Please check with your network administrator for editable fields configuration.
+    /// <summary>The name of the <code>Proposal</code>. This value has a maximum length of 255
+    /// characters. This value is copied to <a href='Order#name'>Order#name</a> when the
+    /// proposal turns into an order. This attribute can be configured as editable after
+    /// the proposal has been submitted. Please check with your network administrator
+    /// for editable fields configuration. This attribute is required.
     /// </summary>
     public string name {
       get {
@@ -45685,7 +45704,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
 
     /// <summary>The option to specify whether the <code>Proposal</code> uses the Net or Gross
     /// pricing model. This field is optional and defaults to <a
-    /// href='PricingModel#NET'>PricingModel#NET</a>.
+    /// href='PricingModel#NET'>PricingModel#NET</a>. <span class="constraint
+    /// Applicable">This attribute is applicable when:</span> <ul> <li>not using
+    /// programmatic guaranteed, using sales management.</li> </ul>
     /// </summary>
     public PricingModel pricingModel {
       get {
@@ -45711,12 +45732,11 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The date and time at which the order and line items associated with the
-    /// <code>Proposal</code> are eligible to begin serving. This attribute is readonly
-    /// and is derived from the proposal line item of the proposal which has the
-    /// earliest <a
+    /// <code>Proposal</code> are eligible to begin serving. This attribute is derived
+    /// from the proposal line item of the proposal which has the earliest <a
     /// href='ProposalLineItem#startDateTime'>ProposalLineItem#startDateTime</a>. This
     /// attribute will be null, if this proposal has no related line items, or none of
-    /// its line items have a start time.
+    /// its line items have a start time. This attribute is read-only.
     /// </summary>
     public DateTime startDateTime {
       get {
@@ -45728,11 +45748,11 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The date and time at which the order and line items associated with the
-    /// <code>Proposal</code> stop being served. This attribute is readonly and is
-    /// derived from the proposal line item of the proposal which has the latest <a
+    /// <code>Proposal</code> stop being served. This attribute is derived from the
+    /// proposal line item of the proposal which has the latest <a
     /// href='ProposalLineItem#endDateTime'>ProposalLineItem#endDateTime</a>. This
     /// attribute will be null, if this proposal has no related line items, or none of
-    /// its line items have an end time.
+    /// its line items have an end time. This attribute is read-only.
     /// </summary>
     public DateTime endDateTime {
       get {
@@ -45746,7 +45766,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <summary>The time zone ID in tz database format (e.g. "America/Los_Angeles") for this
     /// <code>Proposal</code>. The <a href='#startDateTime'>#startDateTime</a> and <a
     /// href='#endDateTime'>#endDateTime</a> will be returned in this time zone. This
-    /// attribute is optional and defaults to the network?s time zone.
+    /// attribute is optional and defaults to the network's time zone. <span
+    /// class="constraint Applicable">This attribute is applicable when:</span> <ul>
+    /// <li>not using programmatic guaranteed, using sales management.</li> </ul>
     /// </summary>
     public string timeZoneId {
       get {
@@ -45757,7 +45779,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
       }
     }
 
-    /// <summary>The status of the <code>Proposal</code>. This attribute is readonly.
+    /// <summary>The status of the <code>Proposal</code>. This attribute is read-only.
     /// </summary>
     public ProposalStatus status {
       get {
@@ -45782,7 +45804,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
       }
     }
 
-    /// <summary>The archival status of the <code>Proposal</code>. This attribute is readonly.
+    /// <summary>The archival status of the <code>Proposal</code>. This attribute is read-only.
     /// </summary>
     public bool isArchived {
       get {
@@ -45836,7 +45858,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// If primary agency exists, its <a
     /// href='ProposalCompanyAssociation#companyId'>ProposalCompanyAssociation#companyId</a>
     /// will be copied to <a href='Order#agencyId'>Order#agencyId</a> when the proposal
-    /// turns into an order.
+    /// turns into an order. <span class="constraint Applicable">This attribute is
+    /// applicable when:</span> <ul> <li>not using programmatic guaranteed, using sales
+    /// management.</li> </ul>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("agencies")]
     public ProposalCompanyAssociation[] agencies {
@@ -45851,7 +45875,13 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <summary>The probability to close this <code>Proposal</code>. This percentage value is in
     /// terms of millipercent, and should be multiples of 10 with the range from 0 to
     /// 100000. This attribute is required and will be used to calculate the revenue in
-    /// reporting.
+    /// reporting. <span class="constraint Applicable">This attribute is applicable
+    /// when:</span> <ul> <li>using programmatic guaranteed, using sales
+    /// management.</li> <li>not using programmatic guaranteed, using sales
+    /// management.</li> </ul> <span class="constraint Required">This attribute is
+    /// required when:</span> <ul> <li>using programmatic guaranteed, using sales
+    /// management.</li> <li>not using programmatic guaranteed, using sales
+    /// management.</li> </ul>
     /// </summary>
     public long probabilityOfClose {
       get {
@@ -45882,7 +45912,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// this attribute or <a href='#billingSchedule'>#billingSchedule</a> will be used,
     /// according to the <a href='#billingSource'>#billingSource</a>. This attribute can
     /// be configured as editable after the proposal has been submitted. Please check
-    /// with your network administrator for editable fields configuration.
+    /// with your network administrator for editable fields configuration. <span
+    /// class="constraint Applicable">This attribute is applicable when:</span> <ul>
+    /// <li>not using programmatic guaranteed, using sales management.</li> </ul>
     /// </summary>
     public BillingCap billingCap {
       get {
@@ -45913,7 +45945,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// attribute or <a href='#billingCap'>#billingCap</a> will be used, according to
     /// the <a href='#billingSource'>#billingSource</a>. This attribute can be
     /// configured as editable after the proposal has been submitted. Please check with
-    /// your network administrator for editable fields configuration.
+    /// your network administrator for editable fields configuration. <span
+    /// class="constraint Applicable">This attribute is applicable when:</span> <ul>
+    /// <li>not using programmatic guaranteed, using sales management.</li> </ul>
     /// </summary>
     public BillingSchedule billingSchedule {
       get {
@@ -45945,7 +45979,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// the <a href='#billingSchedule'>#billingSchedule</a> will be used for billing,
     /// otherwise the <a href='billingCap'>billingCap</a> will be used. This attribute
     /// can be configured as editable after the proposal has been submitted. Please
-    /// check with your network administrator for editable fields configuration.
+    /// check with your network administrator for editable fields configuration. <span
+    /// class="constraint Applicable">This attribute is applicable when:</span> <ul>
+    /// <li>not using programmatic guaranteed, using sales management.</li> </ul>
     /// </summary>
     public BillingSource billingSource {
       get {
@@ -45977,6 +46013,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// and defaults to <a href='BillingBase#VOLUME'>BillingBase#VOLUME</a>. This
     /// attribute can be configured as editable after the proposal has been submitted.
     /// Please check with your network administrator for editable fields configuration.
+    /// <span class="constraint Applicable">This attribute is applicable when:</span>
+    /// <ul> <li>not using programmatic guaranteed, using sales management.</li> </ul>
     /// </summary>
     public BillingBase billingBase {
       get {
@@ -46006,7 +46044,10 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// href='Order#poNumber'>Order#poNumber</a> when the proposal turns into an order.
     /// This attribute can be configured as editable after the proposal has been
     /// submitted. Please check with your network administrator for editable fields
-    /// configuration.
+    /// configuration. <span class="constraint Applicable">This attribute is applicable
+    /// when:</span> <ul> <li>using programmatic guaranteed, using sales
+    /// management.</li> <li>not using programmatic guaranteed, using sales
+    /// management.</li> </ul>
     /// </summary>
     public string poNumber {
       get {
@@ -46036,7 +46077,10 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// fundamental currency unit, so the <a
     /// href='Money#microAmount'>Money#microAmount</a> must be multiples of 10000. This
     /// attribute is optional and default value is 0. The <a
-    /// href='Money#currencyCode'>Money#currencyCode</a> is readonly.
+    /// href='Money#currencyCode'>Money#currencyCode</a> is readonly. <span
+    /// class="constraint Applicable">This attribute is applicable when:</span> <ul>
+    /// <li>using programmatic guaranteed, using sales management.</li> <li>not using
+    /// programmatic guaranteed, using sales management.</li> </ul>
     /// </summary>
     public Money budget {
       get {
@@ -46068,7 +46112,10 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// href='#primarySalesperson'>#primarySalesperson</a> if any secondary salesperson
     /// exists. This attribute can be configured as editable after the proposal has been
     /// submitted. Please check with your network administrator for editable fields
-    /// configuration.
+    /// configuration. <span class="constraint Applicable">This attribute is applicable
+    /// when:</span> <ul> <li>using programmatic guaranteed, using sales
+    /// management.</li> <li>not using programmatic guaranteed, using sales
+    /// management.</li> </ul>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("secondarySalespeople")]
     public SalespersonSplit[] secondarySalespeople {
@@ -46132,6 +46179,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// but must also have a primary trafficker if any secondary trafficker exists. This
     /// attribute can be configured as editable after the proposal has been submitted.
     /// Please check with your network administrator for editable fields configuration.
+    /// <span class="constraint Applicable">This attribute is applicable when:</span>
+    /// <ul> <li>using programmatic guaranteed, using sales management.</li> <li>not
+    /// using programmatic guaranteed, using sales management.</li> </ul>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("secondaryTraffickerIds")]
     public long[] secondaryTraffickerIds {
@@ -46188,7 +46238,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
 
     /// <summary>Contains the set of labels applied directly to the proposal as well as those
     /// inherited ones. If a label has been negated, only the negated label is returned.
-    /// This field is readonly and is assigned by Google.
+    /// This attribute is read-only.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("effectiveAppliedLabels")]
     public AppliedLabel[] effectiveAppliedLabels {
@@ -46203,7 +46253,10 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <summary>The discount applied to the <code>Proposal</code> according to the <a
     /// href='#advertiser'>#advertiser</a>. The percentage value is stored as
     /// millipercents, and must be multiples of 10 with the range from 0 to 99990. This
-    /// attribute is optional and default value is 0.
+    /// attribute is optional and default value is 0. <span class="constraint
+    /// Applicable">This attribute is applicable when:</span> <ul> <li>using
+    /// programmatic guaranteed, using sales management.</li> <li>not using programmatic
+    /// guaranteed, using sales management.</li> </ul>
     /// </summary>
     public long advertiserDiscount {
       get {
@@ -46232,6 +46285,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// href='ProposalLineItem'>ProposalLineItem</a> objects in the <code></code>. The
     /// percentage value is stored as millipercents, and must be multiples of 10 with
     /// the range from 0 to 99990. This attribute is optional and default value is 0.
+    /// <span class="constraint Applicable">This attribute is applicable when:</span>
+    /// <ul> <li>using programmatic guaranteed, using sales management.</li> <li>not
+    /// using programmatic guaranteed, using sales management.</li> </ul>
     /// </summary>
     public long proposalDiscount {
       get {
@@ -46271,9 +46327,10 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <summary>The exchange rate from the <a href='#currencyCode'>#currencyCode</a> to the <a
     /// href='Network#currencyCode'>network's currency</a>. The value is stored as the
     /// exchange rate times 10,000,000,000 truncated to a long. This attribute is
-    /// readonly and is assigned by Google when first created or updated with <a
-    /// href='#refreshExchangeRate'>#refreshExchangeRate</a> set to <code></code>. This
-    /// attribute is ignored if the feature is not enabled.
+    /// assigned by Google when first created or updated with <a
+    /// href='#refreshExchangeRate'>#refreshExchangeRate</a> set to <code>true</code>.
+    /// This attribute is ignored if the feature is not enabled. This attribute is
+    /// read-only.
     /// </summary>
     public long exchangeRate {
       get {
@@ -46329,6 +46386,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <summary>The commission for the primary agency of the <code>Proposal</code>. The
     /// percentage value is stored as millipercents, and must be multiples of 10 with
     /// the range from 0 to 99990. This attribute is optional and default value is 0.
+    /// <span class="constraint Applicable">This attribute is applicable when:</span>
+    /// <ul> <li>not using programmatic guaranteed, using sales management.</li> </ul>
     /// </summary>
     public long agencyCommission {
       get {
@@ -46356,6 +46415,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <summary>The value added tax (VAT) applied on final cost of the <code></code>. The
     /// percentage value is stored as millipercents, and must be multiples of 10 with
     /// the range from 0 to 100000. This attribute is optional and default value is 0.
+    /// <span class="constraint Applicable">This attribute is applicable when:</span>
+    /// <ul> <li>not using programmatic guaranteed, using sales management.</li> </ul>
     /// </summary>
     public long valueAddedTax {
       get {
@@ -46383,7 +46444,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <summary>Indicates whether the proposal has been sold, i.e., corresponds to whether the
     /// status of an <a href='Order'>Order</a> is <a
     /// href='OrderStatus#APPROVED'>OrderStatus#APPROVED</a> or <a
-    /// href='OrderStatus#PAUSED'>OrderStatus#PAUSED</a>. This attribute is readonly.
+    /// href='OrderStatus#PAUSED'>OrderStatus#PAUSED</a>. This attribute is read-only.
     /// </summary>
     public bool isSold {
       get {
@@ -46409,8 +46470,13 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The approval status of the <code>Proposal</code> for the active user or
-    /// <code>null</code> if the active user has no action needed. This attribute is
-    /// readonly and is assigned by Google.
+    /// <code>null</code> if the active user has no action needed. <span
+    /// class="constraint Applicable">This attribute is applicable when:</span> <ul>
+    /// <li>using programmatic guaranteed, using sales management.</li> <li>not using
+    /// programmatic guaranteed, using sales management.</li> </ul> <span
+    /// class="constraint ReadOnly">This attribute is read-only when:</span> <ul>
+    /// <li>using programmatic guaranteed, using sales management.</li> <li>not using
+    /// programmatic guaranteed, using sales management.</li> </ul>
     /// </summary>
     public ProposalApprovalStatus approvalStatus {
       get {
@@ -46436,7 +46502,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The date and time this <code>Proposal</code> was last modified. This attribute
-    /// is readonly and is assigned by Google when a <code></code> is updated.
+    /// is read-only.
     /// </summary>
     public DateTime lastModifiedDateTime {
       get {
@@ -46450,7 +46516,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <summary>The list of resources on this <code>Proposal</code>. This attribute is optional.
     /// This attribute can be configured as editable after the proposal has been
     /// submitted. Please check with your network administrator for editable fields
-    /// configuration.
+    /// configuration. <span class="constraint Applicable">This attribute is applicable
+    /// when:</span> <ul> <li>not using programmatic guaranteed, using sales
+    /// management.</li> </ul>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("resources")]
     public ProposalLink[] resources {
@@ -46463,8 +46531,13 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The actual date and time at which the inventory reserved by the <a
-    /// href='Proposal'>Proposal</a> will expire. <p>This field is read-only / assigned
-    /// by Google.</p>
+    /// href='Proposal'>Proposal</a> will expire. <span class="constraint
+    /// Applicable">This attribute is applicable when:</span> <ul> <li>using
+    /// programmatic guaranteed, using sales management.</li> <li>not using programmatic
+    /// guaranteed, using sales management.</li> </ul> <span class="constraint
+    /// ReadOnly">This attribute is read-only when:</span> <ul> <li>using programmatic
+    /// guaranteed, using sales management.</li> <li>not using programmatic guaranteed,
+    /// using sales management.</li> </ul>
     /// </summary>
     public DateTime actualExpiryTime {
       get {
@@ -46476,8 +46549,13 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The expected date and time at which the inventory reserved by the <a
-    /// href='Proposal'>Proposal</a> will expire. <p>This field is read-only / assigned
-    /// by Google.</p>
+    /// href='Proposal'>Proposal</a> will expire. <span class="constraint
+    /// Applicable">This attribute is applicable when:</span> <ul> <li>using
+    /// programmatic guaranteed, using sales management.</li> <li>not using programmatic
+    /// guaranteed, using sales management.</li> </ul> <span class="constraint
+    /// ReadOnly">This attribute is read-only when:</span> <ul> <li>using programmatic
+    /// guaranteed, using sales management.</li> <li>not using programmatic guaranteed,
+    /// using sales management.</li> </ul>
     /// </summary>
     public DateTime expectedExpiryTime {
       get {
@@ -46494,7 +46572,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// not in the predefined list, this field is set to 0, and actual third party ad
     /// server name is set in <code></code>. Third party ad server is optional. By
     /// default, this field is 0, and <code></code> is null which means no third party
-    /// ad server is specified.
+    /// ad server is specified. <span class="constraint Applicable">This attribute is
+    /// applicable when:</span> <ul> <li>not using programmatic guaranteed, using sales
+    /// management.</li> </ul>
     /// </summary>
     public int thirdPartyAdServerId {
       get {
@@ -46522,7 +46602,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <summary>When actual third party ad server is not in the predefined list,
     /// <code>thirdPartyAdServerId</code> is set to 0, and actual third party ad server
     /// name is set here. When <code>thirdPartyAdServerId</code> is not 0, this field is
-    /// ignored.
+    /// ignored. <span class="constraint Applicable">This attribute is applicable
+    /// when:</span> <ul> <li>not using programmatic guaranteed, using sales
+    /// management.</li> </ul>
     /// </summary>
     public string customThirdPartyAdServerName {
       get {
@@ -46533,8 +46615,13 @@ namespace Google.Api.Ads.Dfp.v201511 {
       }
     }
 
-    /// <summary>Details describing the most recent proposal retraction. This field is readonly
-    /// and assigned by Google.
+    /// <summary>Details describing the most recent proposal retraction. <span class="constraint
+    /// Applicable">This attribute is applicable when:</span> <ul> <li>using
+    /// programmatic guaranteed, using sales management.</li> <li>not using programmatic
+    /// guaranteed, using sales management.</li> </ul> <span class="constraint
+    /// ReadOnly">This attribute is read-only when:</span> <ul> <li>using programmatic
+    /// guaranteed, using sales management.</li> <li>not using programmatic guaranteed,
+    /// using sales management.</li> </ul>
     /// </summary>
     public RetractionDetails lastRetractionDetails {
       get {
@@ -46649,7 +46736,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>List of unique IDs for <a href='Contact'>Contact</a> objects of the <a
-    /// href='Company'>Company</a>. This attribute is optional.
+    /// href='Company'>Company</a>.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("contactIds")]
     public long[] contactIds {
@@ -46736,7 +46823,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
 
     /// <summary>The split can be attributed to the salesperson. The percentage value is stored
     /// as millipercents, and must be multiples of 10 with the range from 0 to 100000.
-    /// This attribute is optional and default value is 0.
+    /// The default value is 0.
     /// </summary>
     public int split {
       get {
@@ -46810,8 +46897,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
 
     private DateTime creationDateTimeField;
 
-    /// <summary>The unique ID of the <code>ProposalLink</code>. This attribute is readonly and
-    /// is assigned by Google.
+    /// <summary>The unique ID of the <code>ProposalLink</code>. This attribute is read-only.
     /// </summary>
     public long id {
       get {
@@ -46837,8 +46923,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The name of the <code>ProposalLink</code>. Must be unique under the same <a
-    /// href='Proposal'>Proposal</a>. This attribute is required and has a maximum
-    /// length of 255 characters.
+    /// href='Proposal'>Proposal</a>. This attribute has a maximum length of 255
+    /// characters. This attribute is required.
     /// </summary>
     public string name {
       get {
@@ -46850,7 +46936,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The unique ID of the <a href='User'>User</a> who created the <code></code>. This
-    /// attribute is readonly and is assigned by Google.
+    /// attribute is read-only.
     /// </summary>
     public long creatorId {
       get {
@@ -46898,8 +46984,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
       }
     }
 
-    /// <summary>The creation time of the <code>ProposalLink</code>. This attribute is readonly
-    /// and is assigned by Google when the <code>ProposalLink</code> is created.
+    /// <summary>The creation time of the <code>ProposalLink</code>. This attribute is assigned
+    /// by Google when the <code>ProposalLink</code> is created. This attribute is
+    /// read-only.
     /// </summary>
     public DateTime creationDateTime {
       get {
@@ -48462,7 +48549,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
 
     /// <summary>Determines the preferred language and format of data for the <code></code>. The
     /// structure of the locale string should be [ISO language code]_[ISO_country code].
-    /// This field is required.
+    /// This attribute is readonly.
     /// </summary>
     public string preferredLocale {
       get {
@@ -49740,7 +49827,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
       }
     }
 
-    /// <summary>The programmatic settings associated with this order.
+    /// <summary>The programmatic settings associated with this order. <p>This field has been
+    /// deprecated and will return <code>null</code>.</p>
     /// </summary>
     public ProgrammaticSettings programmaticSettings {
       get {
@@ -51145,6 +51233,10 @@ namespace Google.Api.Ads.Dfp.v201511 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201511")]
   public enum ConversionEvent {
+    /// <summary>The value returned if the actual value is not exposed by the requested API
+    /// version.
+    /// </summary>
+    UNKNOWN,
     /// <summary>Corresponds to the <code>creativeView</code> tracking event.
     /// </summary>
     CREATIVE_VIEW,
@@ -51813,7 +51905,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
 
     private bool imageDensityFieldSpecified;
 
-    /// <summary>The ID of the asset. This attribute is read-only and is populated by Google.
+    /// <summary>The ID of the asset. This attribute is generated by Google upon creation.
     /// </summary>
     public long assetId {
       get {
@@ -51839,10 +51931,11 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>The content of the asset as a byte array. This attribute is required when
-    /// creating the creative that contains this asset. <br /> When updating the
-    /// content, pass a new byte array, and set <code></code> to null. Otherwise, this
-    /// field can be null. <br /> The <code>assetByteArray</code> will be
-    /// <code>null</code> when the creative is retrieved.
+    /// creating the creative that contains this asset if an <code>assetId</code> is not
+    /// provided. <br /> When updating the content, pass a new byte array, and set
+    /// <code></code> to null. Otherwise, this field can be null. <br /> The
+    /// <code>assetByteArray</code> will be <code>null</code> when the creative is
+    /// retrieved.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary")]
     public byte[] assetByteArray {
@@ -53088,7 +53181,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
 
 
   /// <summary>A <code>Creative</code> that contains externally hosted video ads and is served
-  /// via VAST 2.0 XML. This creative is read-only in versions V201408 and lower.
+  /// via VAST 2.0 XML.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
   [System.SerializableAttribute()]
@@ -55007,7 +55100,7 @@ namespace Google.Api.Ads.Dfp.v201511 {
     }
 
     /// <summary>An impression tracking URL to ping when this creative is displayed. This field
-    /// is optional and has a maximum length of 1024 characters.
+    /// is optional has a maximum length of 1024 characters.
     /// </summary>
     public string thirdPartyImpressionUrl {
       get {
@@ -59471,15 +59564,14 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <summary>Gets a <a href='RateCardPage'>RateCardPage</a> of <a
     /// href='RateCard'>RateCard</a> objects that satisfy the given <a
     /// href='Statement#query'>Statement#query</a>. The following fields are supported
-    /// for filtering: <table> <tr> <th scope="col">PQL Property</th> <th
-    /// scope="col">Object Property</th> </tr> <tr> <td><code>id</code></td> <td><a
-    /// href='RateCard#id'>RateCard#id</a></td> </tr> <tr> <td><code>name</code></td>
-    /// <td><a href='RateCard#name'>RateCard#name</a></td> </tr> <tr>
-    /// <td><code>status</code></td> <td><a
-    /// href='RateCard#status'>RateCard#status</a></td> </tr> <tr>
-    /// <td><code>lastModifiedDateTime</code></td> <td><a
+    /// for filtering: <table> <tr> <th>PQL property</th> <th>Entity property</th> </tr>
+    /// <tr> <td><code>Id</code></td> <td><a href='RateCard#id'>RateCard#id</a></td>
+    /// </tr> <tr> <td><code>LastModifiedDateTime</code></td> <td><a
     /// href='RateCard#lastModifiedDateTime'>RateCard#lastModifiedDateTime</a></td>
-    /// </tr> </table>
+    /// </tr> <tr> <td><code>Name</code></td> <td><a
+    /// href='RateCard#name'>RateCard#name</a></td> </tr> <tr>
+    /// <td><code>Status</code></td> <td><a
+    /// href='RateCard#status'>RateCard#status</a></td> </tr> </table>
     /// </summary><param name='filterStatement'>a Publisher Query Language statement to filter a
     /// list of rate cards.</param>
     /// <returns>the rate cards that match the filter</returns>
@@ -59854,7 +59946,8 @@ namespace Google.Api.Ads.Dfp.v201511 {
   }
 
 
-  /// <summary>Service for handling <a href='SharedAdUnit'>SharedAdUnit</a> objects.
+  /// <summary><b>This service is deprecated.</b> <p>Service for handling <a
+  /// href='SharedAdUnit'>SharedAdUnit</a> objects.</p>
   /// </summary>
   public interface ISharedAdUnitService {
     RequestHeader RequestHeader {
@@ -59867,17 +59960,10 @@ namespace Google.Api.Ads.Dfp.v201511 {
       set;
     }
 
-    /// <summary>Gets a <a href='SharedAdUnitPage'>SharedAdUnitPage</a> of <a
-    /// href='SharedAdUnit'>SharedAdUnit</a> objects that satisfy the given <a
-    /// href='Statement#query'>Statement#query</a>. The following fields are supported
-    /// for filtering: <table> <tr> <th scope="col">PQL Property</th> <th
-    /// scope="col">Object Property</th> </tr> <tr> <td><code>id</code></td> <td><a
-    /// href='SharedAdUnit#id'>SharedAdUnit#id</a></td> </tr> <tr>
-    /// <td><code>name</code></td> <td><a
-    /// href='SharedAdUnit#name'>SharedAdUnit#name</a></td> </tr> </table>
-    /// </summary><param name='filterStatement'>a Publisher Query Language statement used to
-    /// filter a set of shared ad units</param>
-    /// <returns>the shared ad units that match the given filter</returns>
+    /// <summary><b>This method is deprecated and returns null.</b> <p><b>Instead, use <a
+    /// href='InventoryUnitService#getAdUnitsByStatement'>InventoryUnitService#getAdUnitsByStatement</a>
+    /// filtering on <code>isSharedByDistributor = true</code>.</b></p>
+    /// </summary>
     SharedAdUnitPage getSharedAdUnitsByStatement(Statement filterStatement);
 
     /// <summary><b>This method is deprecated and is a no-op.</b> <p>Performs actions on shared
@@ -60906,12 +60992,13 @@ namespace Google.Api.Ads.Dfp.v201511 {
 
     /// <summary>Gets a <a href='ProductPage'>ProductPage</a> of <a href='Product'>Product</a>
     /// objects that satisfy the criteria specified by given <a
-    /// href='Statement#query'>Statement#query</a>. The following fields are supported
-    /// for filtering and/or sorting: <table> <tr> <th scope="col">PQL Property</th> <th
-    /// scope="col">Object Property</th> <th scope="col">Filterable</th> <th
-    /// scope="col">Sortable</th> </tr> <tr> <td><code>rateCardId</code></td> <td>Rate
-    /// card ID which the product is associated with</td> <td>Yes</td> <td>No</td> </tr>
-    /// <tr> <td><code>status</code></td> <td><a
+    /// href='Statement#query'>Statement#query</a>. <p>When using sales management, the
+    /// following fields are supported for filtering and/or sorting.</p> <table> <tr>
+    /// <th scope="col">PQL Property</th> <th scope="col">Object Property</th> <th
+    /// scope="col">Filterable</th> <th scope="col">Sortable</th> </tr> <tr>
+    /// <td><code>rateCardId</code></td> <td>Rate card ID which the product is
+    /// associated with</td> <td>Yes</td> <td>No</td> </tr> <tr>
+    /// <td><code>status</code></td> <td><a
     /// href='Product#status'>Product#status</a></td> <td>Yes</td> <td>Yes</td> </tr>
     /// <tr> <td><code>lineItemType</code></td> <td><a
     /// href='Product#lineItemType'>Product#lineItemType</a></td> <td>Yes</td>
@@ -60926,6 +61013,19 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// <td><code>description</code></td> <td><a
     /// href='Product#description'>Product#description</a></td> <td>Yes</td> <td>No</td>
     /// </tr> <tr> <td><code>id</code></td> <td><a href='Product#id'>Product#id</a></td>
+    /// <td>Yes</td> <td>Yes</td> </tr> <tr> <td><code>lastModifiedDateTime</code></td>
+    /// <td><a href='Product#lastModifiedDateTime'>Product#lastModifiedDateTime</a></td>
+    /// <td>Yes</td> <td>Yes</td> </tr> </table> When using programmatic guaranteed and
+    /// not sales management, the following fields are supported for filtering and/or
+    /// sorting. <table> <tr> <th scope="col">PQL Property</th> <th scope="col">Object
+    /// Property</th> <th scope="col">Filterable</th> <th scope="col">Sortable</th>
+    /// </tr> <tr> <td><code>status</code></td> <td><a
+    /// href='Product#status'>Product#status</a></td> <td>Yes</td> <td>Yes</td> </tr>
+    /// <tr> <td><code>rateType</code></td> <td><a
+    /// href='Product#rateType'>Product#rateType</a></td> <td>Yes</td> <td>Yes</td>
+    /// </tr> <tr> <td><code>name</code></td> <td><a
+    /// href='Product#name'>Product#name</a></td> <td>Yes</td> <td>Yes</td> </tr> <tr>
+    /// <td><code>id</code></td> <td><a href='Product#id'>Product#id</a></td>
     /// <td>Yes</td> <td>Yes</td> </tr> <tr> <td><code>lastModifiedDateTime</code></td>
     /// <td><a href='Product#lastModifiedDateTime'>Product#lastModifiedDateTime</a></td>
     /// <td>Yes</td> <td>Yes</td> </tr> </table>
@@ -61023,7 +61123,9 @@ namespace Google.Api.Ads.Dfp.v201511 {
     /// href='Proposal#thirdPartyAdServerId'>Proposal#thirdPartyAdServerId</a></td>
     /// </tr> <tr> <td><code>customThirdPartyAdServerName</code></td> <td><a
     /// href='Proposal#customThirdPartyAdServerName'>Proposal#customThirdPartyAdServerName</a></td>
-    /// </tr> </table>
+    /// </tr> <tr> <td><code>hasOfflineErrors</code></td> <td><a
+    /// href='Proposal#hasOfflineErrors'>Proposal#hasOfflineErrors</a></td> </tr>
+    /// </table>
     /// </summary><param name='filterStatement'>a Publisher Query Language statement used to
     /// filter a set of proposals</param>
     /// <returns>the proposals that match the given filter</returns>

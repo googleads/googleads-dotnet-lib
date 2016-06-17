@@ -54,6 +54,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
       // Set the ID of the product template to filter products by.
       long productTemplateId = long.Parse(_T("INSERT_PRODUCT_TEMPLATE_ID_HERE"));
 
+      // [START product_statement] MOE:strip_line
       // Create a statement to only select products that were created from a specific
       // product template.
       StatementBuilder statementBuilder = new StatementBuilder()
@@ -61,6 +62,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
           .OrderBy("name ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
           .AddValue("productTemplateId", productTemplateId);
+      // [END product_statement] MOE:strip_line
 
       // Set default for page.
       ProductPage page = new ProductPage();
@@ -68,7 +70,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
       try {
         do {
           // Get products by statement.
+          // [START get_some_products] MOE:strip_line
           page = productService.getProductsByStatement(statementBuilder.ToStatement());
+          // [END get_some_products] MOE:strip_line
 
           if (page.results != null && page.results.Length > 0) {
             int i = page.startIndex;
