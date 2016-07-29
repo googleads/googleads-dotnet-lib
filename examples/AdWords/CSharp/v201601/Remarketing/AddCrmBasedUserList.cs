@@ -24,8 +24,8 @@ using System.Text;
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201601 {
 
   /// <summary>
-  /// This code example adds a remarketing user list (a.k.a. audience) and
-  /// uploads hashed email addresses to populate the list.
+  /// This code example adds a user list (a.k.a. audience) and uploads hashed
+  /// email addresses to populate the list.
   ///
   /// <p>
   /// <em>Note:</em> It may take up to several hours for the list to be
@@ -38,7 +38,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201601 {
   public class AddCrmBasedUserList : ExampleBase {
 
     private static readonly String[] EMAILS = new String[] {
-      "customer1@example.com", "customer2@example.com", " Customer3@example.com "
+      "customer1@example.com", "customer2@example.com",
+      " Customer3@example.com "
     };
 
     private static readonly GeneralDigest digest = new Sha256Digest();
@@ -53,8 +54,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201601 {
       try {
         codeExample.Run(new AdWordsUser());
       } catch (Exception e) {
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e));
+        Console.WriteLine("An exception occurred while running this code " +
+                          "example. {0}", ExampleUtilities.FormatException(e));
       }
     }
 
@@ -63,8 +64,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201601 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example adds a remarketing user list (a.k.a. audience) and uploads " +
-            "hashed email addresses to populate the list.";
+        return "This code example adds a user list (a.k.a. audience) and " +
+          "uploads hashed email addresses to populate the list.";
       }
     }
 
@@ -75,19 +76,22 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201601 {
     public void Run(AdWordsUser user) {
       // Get the UserListService.
       AdwordsUserListService userListService =
-          (AdwordsUserListService) user.GetService(AdWordsService.v201601.AdwordsUserListService);
+          (AdwordsUserListService) user.GetService(
+            AdWordsService.v201601.AdwordsUserListService);
 
-      // Create remarketing user list.
+      // Create a user list.
       CrmBasedUserList userList = new CrmBasedUserList() {
-        name = "Customer relationship management list #" + ExampleUtilities.GetRandomString(),
-        description = "A list of customers that originated from email addresses",
+        name = "Customer relationship management list #" +
+          ExampleUtilities.GetRandomString(),
+        description = "A list of customers that originated from email " +
+          "addresses",
 
         // CRM Userlist has a maximum membership lifespan of 180 days. See
         // https://support.google.com/adwords/answer/6276125 for details.
         membershipLifeSpan = 180L,
 
-        // This field is optional. It links to a service you created that allows members
-        // of this list to remove themselves.
+        // This field is optional. It links to a service you created that
+        // allows members of this list to remove themselves.
         optOutLink = "http://endpoint1.example.com/optout"
       };
 
@@ -99,22 +103,24 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201601 {
 
       try {
         // Add user list.
-        UserListReturnValue result = userListService.mutate(new UserListOperation[] { operation });
+        UserListReturnValue result = userListService.mutate(
+          new UserListOperation[] { operation });
 
-        Console.WriteLine("Created new user list with name = '{0}' and id = '{1}'.",
-            result.value[0].name, result.value[0].id);
+        Console.WriteLine("Created new user list with name = '{0}' and id = " +
+                          "'{1}'.", result.value[0].name, result.value[0].id);
 
         // Get user list ID.
         long userListId = result.value[0].id;
 
         // Create operation to add members to the user list based on email
         // addresses.
-        MutateMembersOperation mutateMembersOperation = new MutateMembersOperation() {
-          operand = new MutateMembersOperand() {
-            userListId = userListId,
-            dataType = MutateMembersOperandDataType.EMAIL_SHA256
-          },
-          @operator = Operator.ADD
+        MutateMembersOperation mutateMembersOperation =
+          new MutateMembersOperation() {
+            operand = new MutateMembersOperand() {
+              userListId = userListId,
+              dataType = MutateMembersOperandDataType.EMAIL_SHA256
+            },
+            @operator = Operator.ADD
         };
 
         // Hash normalized email addresses based on SHA-256 hashing algorithm.
@@ -129,18 +135,20 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201601 {
 
         // Add members to the user list based on email addresses.
         MutateMembersReturnValue mutateMembersResult =
-            userListService.mutateMembers(new MutateMembersOperation[] { mutateMembersOperation });
+            userListService.mutateMembers(
+              new MutateMembersOperation[] { mutateMembersOperation });
 
         // Display results.
         // Reminder: it may take several hours for the list to be populated
         // with members.
         foreach (UserList userListResult in mutateMembersResult.userLists) {
-          Console.WriteLine("Email addresses were added to user list with name '{0}' and " +
-              "id '{1}'.", userListResult.name, userListResult.id);
+          Console.WriteLine("Email addresses were added to user list with " +
+                            "name '{0}' and id '{1}'.",
+                            userListResult.name, userListResult.id);
         }
       } catch (Exception e) {
-        throw new System.ApplicationException("Failed to add user lists (a.k.a. audiences) " +
-            "and upload email addresses.", e);
+        throw new System.ApplicationException("Failed to add user lists " +
+            "(a.k.a. audiences) and upload email addresses.", e);
       }
     }
 
@@ -159,7 +167,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201601 {
     }
 
     /// <summary>
-    /// Removes leading and trailing whitespace and converts all characters to lower case.
+    /// Removes leading and trailing whitespace and converts all characters to
+    /// lower case.
     /// </summary>
     /// <param name="email">The email address to normalize.</param>
     /// <returns>A normalized copy of the string.</returns>

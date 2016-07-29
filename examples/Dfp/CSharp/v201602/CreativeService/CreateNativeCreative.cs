@@ -25,7 +25,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
   /// This code example creates a new native creative. To determine which creatives
   /// already exist, run GetAllCreatives.cs.
   /// </summary>
-  class CreateNativeCreative : SampleBase {
+  public class CreateNativeCreative : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -40,8 +40,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new CreateNativeCreative();
+    public static void Main() {
+      CreateNativeCreative codeExample = new CreateNativeCreative();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -50,7 +50,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the CreativeService.
       CreativeService creativeService =
           (CreativeService) user.GetService(DfpService.v201602.CreativeService);

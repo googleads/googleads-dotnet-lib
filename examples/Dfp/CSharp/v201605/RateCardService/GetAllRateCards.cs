@@ -20,15 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all rate cards.
+  /// This example gets all rate cards.
   /// </summary>
-  class GetAllRateCards : SampleBase {
+  public class GetAllRateCards : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all rate cards.";
+        return "This example gets all rate cards.";
       }
     }
 
@@ -36,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllRateCards();
+    public static void Main() {
+      GetAllRateCards codeExample = new GetAllRateCards();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -46,28 +46,32 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the RateCardService.
+    public void Run(DfpUser user) {
       RateCardService rateCardService =
           (RateCardService) user.GetService(DfpService.v201605.RateCardService);
 
-      // Create a statement to get all rate cards.
+      // Create a statement to select rate cards.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Sets default for page.
+      // Retrieve a small amount of rate cards at a time, paging through
+      // until all rate cards have been retrieved.
       RateCardPage page = new RateCardPage();
       try {
         do {
-          // Get rate cards by statement.
           page = rateCardService.getRateCardsByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each rate card.
             int i = page.startIndex;
             foreach (RateCard rateCard in page.results) {
-              Console.WriteLine("{0}) Rate card with ID = '{1}' and name '{2}' was" +
-                  " found.", i++, rateCard.id, rateCard.name);
+              Console.WriteLine("{0}) Rate card with ID \"{1}\", name \"{2}\", "
+                  + "and currency code \"{3}\" was found.",
+                  i++,
+                  rateCard.id,
+                  rateCard.name,
+                  rateCard.currencyCode);
             }
           }
 

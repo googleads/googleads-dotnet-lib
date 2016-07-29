@@ -58,10 +58,18 @@
     <Compile Include="Util\BatchJob\BulkJobErrorHandler.cs" />
     <Compile Include="Util\BatchJob\CloudStorageErrorDetail.cs" />
     <Compile Include="Util\BatchJob\CloudStorageErrorResponse.cs" />
+    <Compile Include="Util\BatchJob\v201607\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\v201605\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\v201601\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\CloudStorageError.cs" />
     <Compile Include="Util\BatchJob\v201603\BatchJobUtilities.cs" />
+    <Compile Include="Util\Shopping\v201607\OperationPair.cs" />
+    <Compile Include="Util\Shopping\v201607\ProductDimensionEqualityComparer.cs" />
+    <Compile Include="Util\Shopping\v201607\ProductDimensions.cs" />
+    <Compile Include="Util\Shopping\v201607\ProductPartitionNode.cs" />
+    <Compile Include="Util\Shopping\v201607\ProductPartitionNodeAdapter.cs" />
+    <Compile Include="Util\Shopping\v201607\ProductPartitionTree.cs" />
+    <Compile Include="Util\v201607\MapUtilities.cs" />
     <Compile Include="Util\v201605\MapUtilities.cs" />
     <Compile Include="Util\Shopping\v201605\OperationPair.cs" />
     <Compile Include="Util\Shopping\v201605\ProductDimensionEqualityComparer.cs" />
@@ -148,6 +156,17 @@
     <Compile Include="v201605\Paging.cs" />
     <Compile Include="v201605\Predicate.cs" />
     <Compile Include="v201605\ReportDefinition.cs" />
+    <Compile Include="v201607\AdWordsApi.cs" />
+    <Compile Include="v201607\AdWordsApi.ProductDimension.cs" />
+    <Compile Include="v201607\AdWordsServiceV201607.cs" />
+    <Compile Include="v201607\ApiError.cs" />
+    <Compile Include="v201607\ApiException.cs" />
+    <Compile Include="v201607\BatchJobApi.cs" />
+    <Compile Include="v201607\FeedValidationErrors.cs" />
+    <Compile Include="v201607\OrderBy.cs" />
+    <Compile Include="v201607\Paging.cs" />
+    <Compile Include="v201607\Predicate.cs" />
+    <Compile Include="v201607\ReportDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

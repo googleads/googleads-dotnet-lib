@@ -20,19 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all base rates. To create product base rates, run 
-  /// CreateProductBaseRates.cs. To create product template base rates, run 
-  /// CreateProductTemplateBaseRates.cs.
+  /// This example gets all base rates.
   /// </summary>
-  class GetAllBaseRates : SampleBase {
+  public class GetAllBaseRates : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all base rates. To create product base rates, run " +
-            "CreateProductBaseRates.cs. To create product template base rates, run " +
-            "CreateProductTemplateBaseRates.cs.";
+        return "This example gets all base rates.";
       }
     }
 
@@ -40,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllBaseRates();
+    public static void Main() {
+      GetAllBaseRates codeExample = new GetAllBaseRates();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -50,28 +46,31 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the BaseRateService.
+    public void Run(DfpUser user) {
       BaseRateService baseRateService =
           (BaseRateService) user.GetService(DfpService.v201605.BaseRateService);
 
-      // Create a statement to get all base rates.
+      // Create a statement to select base rates.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Sets default for page.
+      // Retrieve a small amount of base rates at a time, paging through
+      // until all base rates have been retrieved.
       BaseRatePage page = new BaseRatePage();
       try {
         do {
-          // Get base rates by statement.
           page = baseRateService.getBaseRatesByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each base rate.
             int i = page.startIndex;
             foreach (BaseRate baseRate in page.results) {
-              Console.WriteLine("{0}) Base rate with ID ='{1}' and type '{2}' belonging to rate " +
-                  "card '{3}' was found.", i++, baseRate.id, baseRate.GetType().Name,
+              Console.WriteLine("{0}) Base rate with ID \"{1}\", type \"{2}\", "
+                  + "and rate card ID \"{3}\" was found.",
+                  i++,
+                  baseRate.id,
+                  baseRate.GetType().Name,
                   baseRate.rateCardId);
             }
           }

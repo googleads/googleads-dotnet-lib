@@ -13,25 +13,22 @@
 // limitations under the License.
 
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.v201605;
 using Google.Api.Ads.Dfp.Util.v201605;
+using Google.Api.Ads.Dfp.v201605;
 
 using System;
-using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all active activities. To create activities,
-  /// run CreateActivities.cs.
+  /// This example gets all active activities.
   /// </summary>
-  class GetActiveActivities : SampleBase {
+  public class GetActiveActivities : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all active activities. To create activities, run " +
-            "CreateActivities.cs.";
+        return "This example gets all active activities.";
       }
     }
 
@@ -39,9 +36,10 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetActiveActivities();
+    public static void Main() {
+      GetActiveActivities codeExample = new GetActiveActivities();
       Console.WriteLine(codeExample.Description);
+
       codeExample.Run(new DfpUser());
     }
 
@@ -49,40 +47,44 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the ActivityService.
+    public void Run(DfpUser user) {
       ActivityService activityService =
           (ActivityService) user.GetService(DfpService.v201605.ActivityService);
 
-      // Create a statement to select active activities.
+      // Create a statement to select activities.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("status = :status")
-          .OrderBy("id")
+          .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
           .AddValue("status", ActivityStatus.ACTIVE.ToString());
 
+      // Retrieve a small amount of activities at a time, paging through
+      // until all activities have been retrieved.
       ActivityPage page = new ActivityPage();
-
       try {
         do {
           page = activityService.getActivitiesByStatement(statementBuilder.ToStatement());
 
-          // Display results.
           if (page.results != null) {
+            // Print out some information for each activity.
             int i = page.startIndex;
             foreach (Activity activity in page.results) {
-              Console.WriteLine("{0}) Activity with ID \"{1}\", name \"{2}\", and type \"{3}\" " +
-                  "was found.", i, activity.id, activity.name, activity.type);
-              i++;
+              Console.WriteLine("{0}) Activity with ID \"{1}\", name \"{2}\", "
+                  + "and type \"{3}\" was found.",
+                  i++,
+                  activity.id,
+                  activity.name,
+                  activity.type);
             }
           }
 
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
-        Console.WriteLine("Number of results found: {0}.", page.totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get activities. Exception says \"{0}\"", e.Message);
+        Console.WriteLine("Failed to get activities. Exception says \"{0}\"",
+            e.Message);
       }
     }
   }

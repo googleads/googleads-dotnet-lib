@@ -25,7 +25,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
   /// units, run ApproveSuggestedAdUnits.cs. This feature is only available to
   /// DFP premium solution networks.
   /// </summary>
-  class GetAllSuggestedAdUnits : SampleBase {
+  public class GetAllSuggestedAdUnits : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -41,8 +41,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllSuggestedAdUnits();
+    public static void Main() {
+      GetAllSuggestedAdUnits codeExample = new GetAllSuggestedAdUnits();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -51,7 +51,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the SuggestedAdUnitService.
       SuggestedAdUnitService suggestedAdUnitService = (SuggestedAdUnitService) user.GetService(
           DfpService.v201602.SuggestedAdUnitService);

@@ -24,7 +24,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// This code example approves an order and all line items belonging to that order. To determine
   /// which orders exist, run GetAllOrders.cs.
   /// </summary>
-  class ApproveOrder : SampleBase {
+  public class ApproveOrder : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -39,8 +39,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new ApproveOrder();
+    public static void Main() {
+      ApproveOrder codeExample = new ApproveOrder();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -49,7 +49,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the OrderService.
       OrderService orderService =
           (OrderService) user.GetService(DfpService.v201605.OrderService);
@@ -74,7 +74,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
           // Get orders by statement.
           page = orderService.getOrdersByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
             foreach (Order order in page.results) {
               Console.WriteLine("{0}) Order with ID = '{1}', name = '{2}', and status ='{3}' " +
                   "will be approved.", i, order.id, order.name, order.status);

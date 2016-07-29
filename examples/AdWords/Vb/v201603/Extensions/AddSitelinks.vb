@@ -99,6 +99,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201603
                                             customer.dateTimeZone)
         sitelink2.endTime = String.Format("{0}1127 235959 {1}", DateTime.Now.Year, _
                                           customer.dateTimeZone)
+
+        ' Target this sitelink for United States only. See
+        ' https://developers.google.com/adwords/api/docs/appendix/geotargeting
+        ' for valid geolocation codes.
+        sitelink2.geoTargeting = New Location()
+        sitelink2.geoTargeting.id = 2840
+
         extensions.Add(sitelink2)
       End If
 

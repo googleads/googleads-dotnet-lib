@@ -121,6 +121,14 @@ TimeStamp: {1}
     }
 
     /// <summary>
+    /// Normalize line endings to the current Environment.NewLine.
+    /// </summary>
+    /// <param name="str">The string to normalize.</param>
+    private string NormalizeNewLines(string str) {
+      return str.Replace("\r\n", "\n").Replace("\n", System.Environment.NewLine);
+    }
+
+    /// <summary>
     /// Initializes this test instance.
     /// </summary>
     [SetUp]
@@ -148,11 +156,12 @@ TimeStamp: {1}
     [Test]
     public void TestLogRequestWithMasking() {
       logEntry.LogRequestDetails(testRequest, Resources.SoapRequest, KEYS, SOAP_FORMATTER);
-      string log = logEntry.DetailedRequestLog.Trim();
+      string log = NormalizeNewLines(logEntry.DetailedRequestLog.Trim());
 
       string maskedMessage = SOAP_FORMATTER.MaskContents(Resources.SoapRequest, KEYS).Trim();
-      string expectedMessage = string.Format(LOGGED_REQUEST, testRequest.RequestUri.AbsolutePath,
-          DATE_PROVIDER.Now.ToString("R"), maskedMessage).Trim();
+      string expectedMessage = NormalizeNewLines(string.Format(LOGGED_REQUEST,
+          testRequest.RequestUri.AbsolutePath,
+          DATE_PROVIDER.Now.ToString("R"), maskedMessage).Trim());
       Assert.AreEqual(expectedMessage, log);
     }
 
@@ -162,11 +171,13 @@ TimeStamp: {1}
     [Test]
     public void TestLogResponseWithMasking() {
       logEntry.LogRequestDetails(testRequest, Resources.SoapRequest, KEYS, SOAP_FORMATTER);
-      string log = logEntry.DetailedRequestLog.Trim();
+      string log = NormalizeNewLines(logEntry.DetailedRequestLog.Trim());
 
       string maskedMessage = SOAP_FORMATTER.MaskContents(Resources.SoapRequest, KEYS).Trim();
-      string expectedMessage = string.Format(LOGGED_REQUEST, testRequest.RequestUri.AbsolutePath,
-          DATE_PROVIDER.Now.ToString("R"), maskedMessage).Trim();
+      string expectedMessage = NormalizeNewLines(string.Format(LOGGED_REQUEST, 
+          testRequest.RequestUri.AbsolutePath,
+          DATE_PROVIDER.Now.ToString("R"), maskedMessage).Trim());
+
       Assert.AreEqual(expectedMessage, log);
     }
   }

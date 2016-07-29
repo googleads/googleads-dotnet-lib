@@ -24,7 +24,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// This code example activates a product template. To determine which product templates
   /// exist, run GetAllProductTemplates.cs.
   /// </summary>
-  class ActivateProductTemplates : SampleBase {
+  public class ActivateProductTemplates : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -39,8 +39,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new ActivateProductTemplates();
+    public static void Main() {
+      ActivateProductTemplates codeExample = new ActivateProductTemplates();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -49,7 +49,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the ProductTemplateService.
       ProductTemplateService productTemplateService =
           (ProductTemplateService) user.GetService(DfpService.v201605.ProductTemplateService);
@@ -76,7 +76,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
           page = productTemplateService.getProductTemplatesByStatement(
               statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
             int i = page.startIndex;
             foreach (ProductTemplate productTemplate in page.results) {
               Console.WriteLine("{0}) Product template with ID ='{1}' will be activated.",

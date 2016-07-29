@@ -23,7 +23,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
   /// This code example gets all line item creative associations (LICA). To
   /// create LICAs, run CreateLicas.cs.
   /// </summary>
-  class GetAllLicas : SampleBase {
+  public class GetAllLicas : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -38,8 +38,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllLicas();
+    public static void Main() {
+      GetAllLicas codeExample = new GetAllLicas();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,7 +48,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the LineItemCreativeAssociationService.
       LineItemCreativeAssociationService licaService = (LineItemCreativeAssociationService)
           user.GetService(DfpService.v201602.LineItemCreativeAssociationService);

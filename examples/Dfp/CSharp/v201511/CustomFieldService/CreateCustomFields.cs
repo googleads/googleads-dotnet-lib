@@ -23,7 +23,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
   /// This code example creates custom fields. To determine which custom fields
   /// exist, run GetAllCustomFields.cs.
   /// </summary>
-  class CreateCustomFields : SampleBase {
+  public class CreateCustomFields : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -38,8 +38,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new CreateCustomFields();
+    public static void Main() {
+      CreateCustomFields codeExample = new CreateCustomFields();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,7 +48,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the CustomFieldService.
       CustomFieldService customFieldService = (CustomFieldService) user.GetService(
           DfpService.v201511.CustomFieldService);

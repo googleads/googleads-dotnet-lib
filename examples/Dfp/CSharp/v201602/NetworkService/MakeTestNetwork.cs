@@ -29,7 +29,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
   /// Please see the following URL for more information:
   /// https://developers.google.com/doubleclick-publishers/docs/signup
   /// </summary>
-  class MakeTestNetwork : SampleBase {
+  public class MakeTestNetwork : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -49,8 +49,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new MakeTestNetwork();
+    public static void Main() {
+      MakeTestNetwork codeExample = new MakeTestNetwork();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -59,7 +59,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the NetworkService.
       NetworkService networkService =
           (NetworkService) user.GetService(DfpService.v201602.NetworkService);

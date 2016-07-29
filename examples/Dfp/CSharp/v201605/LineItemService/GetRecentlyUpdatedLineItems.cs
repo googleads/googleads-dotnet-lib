@@ -13,26 +13,21 @@
 // limitations under the License.
 
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.v201605;
 using Google.Api.Ads.Dfp.Util.v201605;
+using Google.Api.Ads.Dfp.v201605;
 
 using System;
-
-using DateTime = Google.Api.Ads.Dfp.v201605.DateTime;
-
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example shows how to get recently updated line items. To create
-  /// line items, run CreateLineItems.cs.
+  /// This example gets only recently updated line items.
   /// </summary>
-  class GetRecentlyUpdatedLineItems : SampleBase {
+  public class GetRecentlyUpdatedLineItems : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example shows how to get recently updated line items. To create " +
-            "line items, run CreateLineItems.cs";
+        return "This example gets only recently updated line items.";
       }
     }
 
@@ -40,9 +35,10 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetRecentlyUpdatedLineItems();
+    public static void Main() {
+      GetRecentlyUpdatedLineItems codeExample = new GetRecentlyUpdatedLineItems();
       Console.WriteLine(codeExample.Description);
+
       codeExample.Run(new DfpUser());
     }
 
@@ -50,45 +46,43 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the OrderService.
-      LineItemService lineItemService = (LineItemService) user.GetService(
-          DfpService.v201605.LineItemService);
+    public void Run(DfpUser user) {
+      LineItemService lineItemService =
+          (LineItemService) user.GetService(DfpService.v201605.LineItemService);
 
-      long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
-
-      // Create statement to only select line items for the given order that
-      // have been modified in the last 3 days.
-      DateTime threeDaysAgo =
-        DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(-3), "America/New_York");
+      // Create a statement to select line items.
       StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("lastModifiedDateTime >= :lastModifiedDateTime AND orderId = :orderId")
+          .Where("lastModifiedDateTime >= :lastModifiedDateTime")
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-          .AddValue("lastModifiedDateTime", threeDaysAgo)
-          .AddValue("orderId", orderId);
+          .AddValue("lastModifiedDateTime",
+              DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(-1), "America/New_York"));
 
-      // Set default for page.
+      // Retrieve a small amount of line items at a time, paging through
+      // until all line items have been retrieved.
       LineItemPage page = new LineItemPage();
-
       try {
         do {
-          // Get line items by statement.
           page = lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
 
-          // Display results.
-          if (page != null && page.results != null) {
+          if (page.results != null) {
+            // Print out some information for each line item.
+            int i = page.startIndex;
             foreach (LineItem lineItem in page.results) {
-              Console.WriteLine("Line item with id \"{0}\", belonging to order id \"{1}\" and " +
-                  "named \"{2}\" was found.", lineItem.id, lineItem.orderId, lineItem.name);
+              Console.WriteLine("{0}) Line item with ID \"{1}\" and name \"{2}\" was found.",
+                  i++,
+                  lineItem.id,
+                  lineItem.name);
             }
           }
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while(statementBuilder.GetOffset() < page.totalResultSetSize);
 
-        Console.WriteLine("Number of results found: {1}.", page.totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get line items. Exception says \"{0}\"", e.Message);
+        Console.WriteLine("Failed to get line items. Exception says \"{0}\"",
+            e.Message);
       }
     }
   }

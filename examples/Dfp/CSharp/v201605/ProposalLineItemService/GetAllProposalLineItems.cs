@@ -20,17 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all proposal line items. To create proposal line items, run
-  /// CreateProposalLineItems.cs.
+  /// This example gets all proposal line items.
   /// </summary>
-  class GetAllProposalLineItems : SampleBase {
+  public class GetAllProposalLineItems : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all proposal line items. To create proposal line items, " +
-            "run CreateProposalLineItems.cs.";
+        return "This example gets all proposal line items.";
       }
     }
 
@@ -38,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllProposalLineItems();
+    public static void Main() {
+      GetAllProposalLineItems codeExample = new GetAllProposalLineItems();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,29 +46,32 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the ProposalLineItemService.
+    public void Run(DfpUser user) {
       ProposalLineItemService proposalLineItemService =
           (ProposalLineItemService) user.GetService(DfpService.v201605.ProposalLineItemService);
 
-      // Create a statement to get all proposal line items.
+      // Create a statement to select proposal line items.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Sets default for page.
+      // Retrieve a small amount of proposal line items at a time, paging through
+      // until all proposal line items have been retrieved.
       ProposalLineItemPage page = new ProposalLineItemPage();
       try {
         do {
-          // Get proposal line items by statement.
-          page = proposalLineItemService
-              .getProposalLineItemsByStatement(statementBuilder.ToStatement());
+          page = proposalLineItemService.getProposalLineItemsByStatement(
+              statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each proposal line item.
             int i = page.startIndex;
             foreach (ProposalLineItem proposalLineItem in page.results) {
-              Console.WriteLine("{0}) Proposal line item with ID = '{1}' and name '{2}' was" +
-                  " found.", i++, proposalLineItem.id, proposalLineItem.name);
+              Console.WriteLine("{0}) Proposal line item with ID \"{1}\" "
+                  + "and name \"{2}\" was found.",
+                  i++,
+                  proposalLineItem.id,
+                  proposalLineItem.name);
             }
           }
 

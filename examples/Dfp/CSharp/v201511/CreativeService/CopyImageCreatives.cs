@@ -25,7 +25,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
   /// typically be done to reuse creatives in a small business network. To
   /// determine which creatives exist, run GetAllCreatives.cs.
   /// </summary>
-  class CopyImageCreatives : SampleBase {
+  public class CopyImageCreatives : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -41,8 +41,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new CopyImageCreatives();
+    public static void Main() {
+      CopyImageCreatives codeExample = new CopyImageCreatives();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -51,7 +51,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the CreativeService.
       CreativeService creativeService =
           (CreativeService) user.GetService(DfpService.v201511.CreativeService);

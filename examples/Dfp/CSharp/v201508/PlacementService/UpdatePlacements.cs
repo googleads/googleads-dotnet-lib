@@ -24,7 +24,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
   /// up to the first 500. To determine which placements exist, run
   /// GetAllPlacements.cs.
   /// </summary>
-  class UpdatePlacements : SampleBase {
+  public class UpdatePlacements : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -39,8 +39,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new UpdatePlacements();
+    public static void Main() {
+      UpdatePlacements codeExample = new UpdatePlacements();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -49,7 +49,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the PlacementService.
       PlacementService placementService =
           (PlacementService) user.GetService(DfpService.v201508.PlacementService);

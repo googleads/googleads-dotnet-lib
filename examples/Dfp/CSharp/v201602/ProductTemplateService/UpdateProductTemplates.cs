@@ -24,7 +24,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
   /// This example updates a product template's targeting to include a new GeoTarget.
   /// To determine which product templates exist, run GetAllProductTemplates.cs.
   /// </summary>
-  class UpdateProductTemplates : SampleBase {
+  public class UpdateProductTemplates : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -39,8 +39,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new UpdateProductTemplates();
+    public static void Main() {
+      UpdateProductTemplates codeExample = new UpdateProductTemplates();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -49,7 +49,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the ProductTemplateService.
       ProductTemplateService productTemplateService =
           (ProductTemplateService) user.GetService(DfpService.v201602.ProductTemplateService);

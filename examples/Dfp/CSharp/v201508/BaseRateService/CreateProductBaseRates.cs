@@ -22,7 +22,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
   /// This code example creates a product base rate. To determine which base rates exist,
   /// run GetAllBaseRates.cs.
   /// </summary>
-  class CreateProductBaseRates : SampleBase {
+  public class CreateProductBaseRates : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -37,8 +37,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new CreateProductBaseRates();
+    public static void Main() {
+      CreateProductBaseRates codeExample = new CreateProductBaseRates();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -47,7 +47,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the BaseRateService.
       BaseRateService baseRateService =
           (BaseRateService) user.GetService(DfpService.v201508.BaseRateService);

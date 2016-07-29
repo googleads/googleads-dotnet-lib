@@ -23,7 +23,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
   /// This code example removes the user from all its teams. To determine which
   /// users exist, run GetAllUsers.cs.
   /// </summary>
-  class DeleteUserTeamAssociation : SampleBase {
+  public class DeleteUserTeamAssociation : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -38,8 +38,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new DeleteUserTeamAssociation();
+    public static void Main() {
+      DeleteUserTeamAssociation codeExample = new DeleteUserTeamAssociation();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,7 +48,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Run the code example.
     /// </summary>
     /// <param name="dfpUser">The DFP user object running the code example.</param>
-    public override void Run(DfpUser dfpUser) {
+    public void Run(DfpUser dfpUser) {
       // Get the UserTeamAssociationService.
       UserTeamAssociationService userTeamAssociationService = (UserTeamAssociationService)
           dfpUser.GetService(DfpService.v201602.UserTeamAssociationService);

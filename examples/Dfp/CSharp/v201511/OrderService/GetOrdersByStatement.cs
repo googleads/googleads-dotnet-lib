@@ -24,7 +24,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
   /// CreateOrders.cs. To determine which companies are advertisers,
   /// run GetCompaniesByStatement.cs.
   /// </summary>
-  class GetOrdersByStatement : SampleBase {
+  public class GetOrdersByStatement : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -40,8 +40,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetOrdersByStatement();
+    public static void Main() {
+      GetOrdersByStatement codeExample = new GetOrdersByStatement();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -50,7 +50,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the OrderService.
       OrderService orderService = (OrderService) user.GetService(DfpService.v201511.OrderService);
 

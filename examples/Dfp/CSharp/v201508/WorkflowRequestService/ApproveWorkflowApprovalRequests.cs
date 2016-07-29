@@ -24,7 +24,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
   /// This code example approves all workflow approval requests belonging to a specific proposal.
   /// To determine which proposals exist, run GetAllProposals.cs.
   /// </summary>
-  class ApproveWorkflowApprovalRequests : SampleBase {
+  public class ApproveWorkflowApprovalRequests : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -39,8 +39,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new ApproveWorkflowApprovalRequests();
+    public static void Main() {
+      ApproveWorkflowApprovalRequests codeExample = new ApproveWorkflowApprovalRequests();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -49,7 +49,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the WorkflowRequestService.
       WorkflowRequestService workflowRequestService =
           (WorkflowRequestService) user.GetService(DfpService.v201508.WorkflowRequestService);

@@ -23,7 +23,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
   /// This code example gets all product packages. To create product packages, run
     /// CreateProductPackages.cs.
   /// </summary>
-  class GetAllProductPackages : SampleBase {
+  public class GetAllProductPackages : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -38,8 +38,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllProductPackages();
+    public static void Main() {
+      GetAllProductPackages codeExample = new GetAllProductPackages();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,7 +48,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the ProductPackageService.
       ProductPackageService productPackageService =
           (ProductPackageService) user.GetService(DfpService.v201508.ProductPackageService);

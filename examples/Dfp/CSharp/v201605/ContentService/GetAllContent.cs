@@ -20,17 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all content. This feature is only available to DFP
-  /// premium solution networks.
+  /// This example gets all content.
   /// </summary>
-  class GetAllContent : SampleBase {
+  public class GetAllContent : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all content. This feature is only available to DFP " +
-            "premium solution networks.";
+        return "This example gets all content.";
       }
     }
 
@@ -38,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllContent();
+    public static void Main() {
+      GetAllContent codeExample = new GetAllContent();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,38 +46,40 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the ContentService.
+    public void Run(DfpUser user) {
       ContentService contentService =
           (ContentService) user.GetService(DfpService.v201605.ContentService);
 
-      // Create a statement to get all content.
+      // Create a statement to select content.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Set default for page.
+      // Retrieve a small amount of content at a time, paging through
+      // until all content have been retrieved.
       ContentPage page = new ContentPage();
-
       try {
         do {
-          // Get content by statement.
           page = contentService.getContentByStatement(statementBuilder.ToStatement());
 
           if (page.results != null) {
+            // Print out some information for each content.
             int i = page.startIndex;
             foreach (Content content in page.results) {
-              Console.WriteLine("{0}) Content with ID \"{1}\", name \"{2}\", and status \"{3}\" " +
-                  "was found.", i, content.id, content.name, content.status);
-              i++;
+              Console.WriteLine("{0}) Content with ID \"{1}\" and name \"{2}\" was found.",
+                  i++,
+                  content.id,
+                  content.name);
             }
           }
+
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
-        Console.WriteLine("Number of results found: " + page.totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get all content. Exception says \"{0}\"", e.Message);
+        Console.WriteLine("Failed to get content. Exception says \"{0}\"",
+            e.Message);
       }
     }
   }

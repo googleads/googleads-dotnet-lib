@@ -1,4 +1,4 @@
-﻿// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2016, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,17 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all creative wrappers. To create creative wrappers,
-  /// run CreateCreativeWrappers.cs.
+  /// This example gets all creative wrappers.
   /// </summary>
-  class GetAllCreativeWrappers : SampleBase {
+  public class GetAllCreativeWrappers : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all active creative wrappers. To create creative " +
-            "wrappers, run CreateCreativeWrappers.cs.";
+        return "This example gets all creative wrappers.";
       }
     }
 
@@ -38,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllCreativeWrappers();
+    public static void Main() {
+      GetAllCreativeWrappers codeExample = new GetAllCreativeWrappers();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,31 +46,32 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Create the CreativeWrapperService.
-      CreativeWrapperService creativeWrapperService = (CreativeWrapperService) user.GetService(
-          DfpService.v201605.CreativeWrapperService);
+    public void Run(DfpUser user) {
+      CreativeWrapperService creativeWrapperService =
+          (CreativeWrapperService) user.GetService(DfpService.v201605.CreativeWrapperService);
 
-      // Set default for page.
-      CreativeWrapperPage page = new CreativeWrapperPage();
-
-      // Create a statement to get all creative wrappers.
+      // Create a statement to select creative wrappers.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
+      // Retrieve a small amount of creative wrappers at a time, paging through
+      // until all creative wrappers have been retrieved.
+      CreativeWrapperPage page = new CreativeWrapperPage();
       try {
         do {
-          // Get creative wrappers by statement.
           page = creativeWrapperService.getCreativeWrappersByStatement(
               statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each creative wrapper.
             int i = page.startIndex;
-            foreach (CreativeWrapper wrapper in page.results) {
-              Console.WriteLine("{0}) Creative wrapper with ID \'{1}\' applying to label " +
-                "\'{2}\' with status \'{3}\' was found.", i++, wrapper.id, wrapper.labelId,
-                wrapper.status);
+            foreach (CreativeWrapper creativeWrapper in page.results) {
+              Console.WriteLine("{0}) Creative wrapper with ID \"{1}\" "
+                  + "and label id \"{2}\" was found.",
+                  i++,
+                  creativeWrapper.id,
+                  creativeWrapper.labelId);
             }
           }
 
@@ -81,7 +80,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get active creative wrappers. Exception says \"{0}\"",
+        Console.WriteLine("Failed to get creative wrappers. Exception says \"{0}\"",
             e.Message);
       }
     }

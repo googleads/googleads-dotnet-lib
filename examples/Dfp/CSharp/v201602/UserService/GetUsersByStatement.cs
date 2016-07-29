@@ -23,7 +23,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
   /// This code example gets all active users sorted by name. To create new users,
   /// run CreateUsers.cs.
   /// </summary>
-  class GetUsersByStatement : SampleBase {
+  public class GetUsersByStatement : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -38,8 +38,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetUsersByStatement();
+    public static void Main() {
+      GetUsersByStatement codeExample = new GetUsersByStatement();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,7 +48,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the UserService.
       UserService userService = (UserService) user.GetService(DfpService.v201602.UserService);
 

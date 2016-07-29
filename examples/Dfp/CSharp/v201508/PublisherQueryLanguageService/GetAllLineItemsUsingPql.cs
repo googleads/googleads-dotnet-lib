@@ -27,7 +27,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
   /// schema can be found here:
   /// https://developers.google.com/doubleclick-publishers/docs/reference/v201508/PublisherQueryLanguageService#Line_Item
   /// </summary>
-  class GetAllLineItemsUsingPql : SampleBase {
+  public class GetAllLineItemsUsingPql : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -43,8 +43,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllLineItemsUsingPql();
+    public static void Main() {
+      GetAllLineItemsUsingPql codeExample = new GetAllLineItemsUsingPql();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -53,7 +53,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the PublisherQueryLanguageService.
       PublisherQueryLanguageService pqlService =
           (PublisherQueryLanguageService) user.GetService(

@@ -26,7 +26,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
   /// CreateCustomTargetingKeysAndValues.cs. To determine which custom
   /// targeting keys exist, run GetAllCustomTargetingKeysAndValues.cs.
   /// </summary>
-  class GetCustomTargetingValuesByStatement : SampleBase {
+  public class GetCustomTargetingValuesByStatement : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -43,8 +43,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetCustomTargetingValuesByStatement();
+    public static void Main() {
+      GetCustomTargetingValuesByStatement codeExample = new GetCustomTargetingValuesByStatement();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -53,7 +53,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the CustomTargetingService.
       CustomTargetingService customTargetingService =
           (CustomTargetingService) user.GetService(DfpService.v201508.CustomTargetingService);

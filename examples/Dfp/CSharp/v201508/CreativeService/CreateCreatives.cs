@@ -24,7 +24,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
   /// determine which companies are advertisers, run GetCompaniesByStatement.cs.
   /// To determine which creatives already exist, run GetAllCreatives.cs.
   /// </summary>
-  class CreateCreatives : SampleBase {
+  public class CreateCreatives : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -40,8 +40,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new CreateCreatives();
+    public static void Main() {
+      CreateCreatives codeExample = new CreateCreatives();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -50,7 +50,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the CreativeService.
       CreativeService creativeService =
           (CreativeService) user.GetService(DfpService.v201508.CreativeService);

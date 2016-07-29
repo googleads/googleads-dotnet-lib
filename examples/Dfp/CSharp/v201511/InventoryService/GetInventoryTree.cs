@@ -25,7 +25,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
   /// This code example retrieves a previously created ad units and creates
   /// a tree.
   /// </summary>
-  class GetInventoryTree : SampleBase {
+  public class GetInventoryTree : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -39,8 +39,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetInventoryTree();
+    public static void Main() {
+      GetInventoryTree codeExample = new GetInventoryTree();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -49,7 +49,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       try {
         // Get all ad units.
         AdUnit[] allAdUnits = GetAllAdUnits(user);

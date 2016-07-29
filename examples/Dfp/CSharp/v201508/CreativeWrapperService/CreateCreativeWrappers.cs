@@ -24,7 +24,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
   /// units by AdUnit.appliedLabels. To determine which creative wrappers exist,
   /// run GetAllCreativeWrappers.cs.
   /// </summary>
-  class CreateCreativeWrappers : SampleBase {
+  public class CreateCreativeWrappers : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -41,8 +41,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new CreateCreativeWrappers();
+    public static void Main() {
+      CreateCreativeWrappers codeExample = new CreateCreativeWrappers();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -51,7 +51,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Create the CreativeWrapperService.
       CreativeWrapperService creativeWrapperService = (CreativeWrapperService) user.GetService(
           DfpService.v201508.CreativeWrapperService);

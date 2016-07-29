@@ -22,7 +22,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
   /// This code example gets the current network that you can make requests
   /// against.
   /// </summary>
-  class GetCurrentNetwork : SampleBase {
+  public class GetCurrentNetwork : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -36,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetCurrentNetwork();
+    public static void Main() {
+      GetCurrentNetwork codeExample = new GetCurrentNetwork();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -46,7 +46,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the NetworkService.
       NetworkService networkService =
           (NetworkService) user.GetService(DfpService.v201511.NetworkService);

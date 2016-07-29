@@ -13,27 +13,22 @@
 // limitations under the License.
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201605;
 using Google.Api.Ads.Dfp.v201605;
 
 using System;
-using System.Collections.Generic;
-using Google.Api.Ads.Dfp.Util.v201605;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all suggested ad units. To approve suggested ad
-  /// units, run ApproveSuggestedAdUnits.cs. This feature is only available to
-  /// DFP premium solution networks.
+  /// This example gets all suggested ad units.
   /// </summary>
-  class GetAllSuggestedAdUnits : SampleBase {
+  public class GetAllSuggestedAdUnits : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all suggested ad units. To approve suggested ad units, " +
-            "run ApproveSuggestedAdUnits.cs. This feature is only available to DFP premium " +
-            "solution networks.";
+        return "This example gets all suggested ad units.";
       }
     }
 
@@ -41,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllSuggestedAdUnits();
+    public static void Main() {
+      GetAllSuggestedAdUnits codeExample = new GetAllSuggestedAdUnits();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -51,36 +46,39 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the SuggestedAdUnitService.
-      SuggestedAdUnitService suggestedAdUnitService = (SuggestedAdUnitService) user.GetService(
-          DfpService.v201605.SuggestedAdUnitService);
+    public void Run(DfpUser user) {
+      SuggestedAdUnitService suggestedAdUnitService =
+          (SuggestedAdUnitService) user.GetService(DfpService.v201605.SuggestedAdUnitService);
 
-      // Set default for page.
-      SuggestedAdUnitPage page = new SuggestedAdUnitPage();
-
-      // Create a statement to get all suggested ad units.
+      // Create a statement to select suggested ad units.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
+      // Retrieve a small amount of suggested ad units at a time, paging through
+      // until all suggested ad units have been retrieved.
+      SuggestedAdUnitPage page = new SuggestedAdUnitPage();
       try {
         do {
-          // Get suggested ad units by statement.
           page = suggestedAdUnitService.getSuggestedAdUnitsByStatement(
               statementBuilder.ToStatement());
 
           if (page.results != null) {
+            // Print out some information for each suggested ad unit.
             int i = page.startIndex;
             foreach (SuggestedAdUnit suggestedAdUnit in page.results) {
-              Console.WriteLine("{0}) Suggested ad unit with ID \"{1}\", and number of requests " +
-                  "\"{2}\" was found.", i++, suggestedAdUnit.id, suggestedAdUnit.numRequests);
+              Console.WriteLine("{0}) Suggested ad unit with ID \"{1}\" "
+                  + "and num requests \"{2}\" was found.",
+                  i++,
+                  suggestedAdUnit.id,
+                  suggestedAdUnit.numRequests);
             }
           }
+
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
-        Console.WriteLine("Number of results found: " + page.totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
         Console.WriteLine("Failed to get suggested ad units. Exception says \"{0}\"",
             e.Message);

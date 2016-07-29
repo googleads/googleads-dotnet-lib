@@ -27,7 +27,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
   /// which custom targeting keys and values exist, run
   /// GetAllCustomTargetingKeysAndValues.cs.
   /// </summary>
-  class TargetCustomCriteria : SampleBase {
+  public class TargetCustomCriteria : SampleBase {
 
     /// <summary>
     /// Returns a description about the code example.
@@ -44,8 +44,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new TargetCustomCriteria();
+    public static void Main() {
+      TargetCustomCriteria codeExample = new TargetCustomCriteria();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -54,7 +54,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the LineItemService.
       LineItemService lineItemService = (LineItemService) user.GetService(
           DfpService.v201508.LineItemService);

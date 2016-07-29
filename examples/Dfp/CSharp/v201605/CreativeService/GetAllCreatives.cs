@@ -20,16 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all creatives. To create creatives, run
-  /// CreateCreatives.cs.
+  /// This example gets all creatives.
   /// </summary>
-  class GetAllCreatives : SampleBase {
+  public class GetAllCreatives : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all creatives. To create creatives, run CreateCreatives.cs.";
+        return "This example gets all creatives.";
       }
     }
 
@@ -37,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllCreatives();
+    public static void Main() {
+      GetAllCreatives codeExample = new GetAllCreatives();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -47,30 +46,30 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the CreativeService.
+    public void Run(DfpUser user) {
       CreativeService creativeService =
           (CreativeService) user.GetService(DfpService.v201605.CreativeService);
 
-      // Create a statement to get all creatives.
+      // Create a statement to select creatives.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Set default for page.
+      // Retrieve a small amount of creatives at a time, paging through
+      // until all creatives have been retrieved.
       CreativePage page = new CreativePage();
-
       try {
         do {
-          // Get creatives by statement.
           page = creativeService.getCreativesByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each creative.
             int i = page.startIndex;
             foreach (Creative creative in page.results) {
-              Console.WriteLine("{0}) Creative with ID ='{1}', name ='{2}' and type ='{3}' " +
-                  "was found.", i, creative.id, creative.name, creative.GetType().Name);
-              i++;
+              Console.WriteLine("{0}) Creative with ID \"{1}\" and name \"{2}\" was found.",
+                  i++,
+                  creative.id,
+                  creative.name);
             }
           }
 
@@ -79,7 +78,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get all creatives. Exception says \"{0}\"", e.Message);
+        Console.WriteLine("Failed to get creatives. Exception says \"{0}\"",
+            e.Message);
       }
     }
   }

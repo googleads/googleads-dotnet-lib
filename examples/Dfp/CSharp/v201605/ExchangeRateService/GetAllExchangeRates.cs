@@ -20,17 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all exchange rates. To create exchange rates, run
-  /// CreateExchangeRates.cs.
+  /// This example gets all exchange rates.
   /// </summary>
-  class GetAllExchangeRates : SampleBase {
+  public class GetAllExchangeRates : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all exchange rates. To create exchange rates, " +
-            "run CreateExchangeRates.cs.";
+        return "This example gets all exchange rates.";
       }
     }
 
@@ -38,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllExchangeRates();
+    public static void Main() {
+      GetAllExchangeRates codeExample = new GetAllExchangeRates();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,31 +46,33 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the ExchangeRateService.
+    public void Run(DfpUser user) {
       ExchangeRateService exchangeRateService =
           (ExchangeRateService) user.GetService(DfpService.v201605.ExchangeRateService);
 
-      // Create a statement to get all exchange rates.
+      // Create a statement to select exchange rates.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Sets default for page.
+      // Retrieve a small amount of exchange rates at a time, paging through
+      // until all exchange rates have been retrieved.
       ExchangeRatePage page = new ExchangeRatePage();
       try {
         do {
-          // Get exchange rates by statement.
-          page = exchangeRateService
-              .getExchangeRatesByStatement(statementBuilder.ToStatement());
+          page = exchangeRateService.getExchangeRatesByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each exchange rate.
             int i = page.startIndex;
             foreach (ExchangeRate exchangeRate in page.results) {
-              Console.WriteLine("{0}) Exchange rate with ID '{1}', currency code '{2}', " +
-                  "direction '{3}' and exchange rate '{4}' was found.", i++,
-                  exchangeRate.id, exchangeRate.currencyCode, exchangeRate.direction,
-                  (exchangeRate.exchangeRate / 10000000000f));
+              Console.WriteLine("{0}) Exchange rate with ID \"{1}\", currency code \"{2}\", "
+                  + "direction \"{3}\", and exchange rate \"{4}\" was found.",
+                  i++,
+                  exchangeRate.id,
+                  exchangeRate.currencyCode,
+                  exchangeRate.direction,
+                  exchangeRate.exchangeRate);
             }
           }
 

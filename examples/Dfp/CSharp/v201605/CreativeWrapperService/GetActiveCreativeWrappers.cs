@@ -1,4 +1,4 @@
-﻿// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2016, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,24 +13,22 @@
 // limitations under the License.
 
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201605;
 using Google.Api.Ads.Dfp.v201605;
 
 using System;
-using Google.Api.Ads.Dfp.Util.v201605;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all active creative wrappers. To create
-  /// creative wrappers, run CreateCreativeWrappers.cs.
+  /// This example gets all active creative wrappers.
   /// </summary>
-  class GetActiveCreativeWrappers : SampleBase {
+  public class GetActiveCreativeWrappers : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all active creative wrappers. To create creative " +
-            "wrappers, run CreateCreativeWrappers.cs.";
+        return "This example gets all active creative wrappers.";
       }
     }
 
@@ -38,9 +36,10 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetActiveCreativeWrappers();
+    public static void Main() {
+      GetActiveCreativeWrappers codeExample = new GetActiveCreativeWrappers();
       Console.WriteLine(codeExample.Description);
+
       codeExample.Run(new DfpUser());
     }
 
@@ -48,33 +47,34 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Create the CreativeWrapperService.
-      CreativeWrapperService creativeWrapperService = (CreativeWrapperService) user.GetService(
-          DfpService.v201605.CreativeWrapperService);
+    public void Run(DfpUser user) {
+      CreativeWrapperService creativeWrapperService =
+          (CreativeWrapperService) user.GetService(DfpService.v201605.CreativeWrapperService);
 
-     // Create a statement to get all active creative wrappers.
-     StatementBuilder statementBuilder = new StatementBuilder()
+      // Create a statement to select creative wrappers.
+      StatementBuilder statementBuilder = new StatementBuilder()
           .Where("status = :status")
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
           .AddValue("status", CreativeWrapperStatus.ACTIVE.ToString());
 
-       // Set default for page.
+      // Retrieve a small amount of creative wrappers at a time, paging through
+      // until all creative wrappers have been retrieved.
       CreativeWrapperPage page = new CreativeWrapperPage();
-
       try {
         do {
-          // Get creative wrappers by statement.
           page = creativeWrapperService.getCreativeWrappersByStatement(
               statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each creative wrapper.
             int i = page.startIndex;
-            foreach (CreativeWrapper wrapper in page.results) {
-              Console.WriteLine("Creative wrapper with ID \'{0}\' applying to label \'{1}\' with " +
-                "status \'{2}\' was found.", wrapper.id, wrapper.labelId, wrapper.status);
-              i++;
+            foreach (CreativeWrapper creativeWrapper in page.results) {
+              Console.WriteLine("{0}) Creative wrapper with ID \"{1}\" "
+                  + "and label ID \"{2}\" was found.",
+                  i++,
+                  creativeWrapper.id,
+                  creativeWrapper.labelId);
             }
           }
 
@@ -83,7 +83,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get active creative wrappers. Exception says \"{0}\"",
+        Console.WriteLine("Failed to get creative wrappers. Exception says \"{0}\"",
             e.Message);
       }
     }

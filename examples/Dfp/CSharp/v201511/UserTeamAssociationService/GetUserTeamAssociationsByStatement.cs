@@ -23,7 +23,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
   ///  This code example gets all teams that the a user belongs to. To create
   ///  teams, run CreateTeams.cs.
   /// </summary>
-  class GetUserTeamAssociationsByStatement : SampleBase {
+  public class GetUserTeamAssociationsByStatement : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -38,8 +38,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetUserTeamAssociationsByStatement();
+    public static void Main() {
+      GetUserTeamAssociationsByStatement codeExample = new GetUserTeamAssociationsByStatement();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,7 +48,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the UserTeamAssociationService.
       UserTeamAssociationService userTeamAssociationService =
           (UserTeamAssociationService) user.GetService(

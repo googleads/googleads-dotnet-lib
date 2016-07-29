@@ -25,7 +25,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
   /// exist, run GetAllLabels.cs. This feature is only available to DFP premium
   /// solution networks.
   /// </summary>
-  class DeactivateActiveLabels : SampleBase {
+  public class DeactivateActiveLabels : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -41,8 +41,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new DeactivateActiveLabels();
+    public static void Main() {
+      DeactivateActiveLabels codeExample = new DeactivateActiveLabels();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -51,7 +51,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the LabelService.
       LabelService labelService =
           (LabelService) user.GetService(DfpService.v201508.LabelService);

@@ -22,7 +22,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
   /// This code example creates a premium rate. To determine which premium rates exist,
   /// run GetAllPremiumRates.cs.
   /// </summary>
-  class CreatePremiumRates : SampleBase {
+  public class CreatePremiumRates : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -37,8 +37,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new CreatePremiumRates();
+    public static void Main() {
+      CreatePremiumRates codeExample = new CreatePremiumRates();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -47,7 +47,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the PremiumRateService.
       PremiumRateService premiumRateService =
           (PremiumRateService) user.GetService(DfpService.v201602.PremiumRateService);

@@ -24,7 +24,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// This code example updates a premium rate to add a flat fee to an existing feature premium.
   /// To determine which premium rates exist, run GetAllPremiumRates.cs.
   /// </summary>
-  class UpdatePremiumRates : SampleBase {
+  public class UpdatePremiumRates : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -39,8 +39,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new UpdatePremiumRates();
+    public static void Main() {
+      UpdatePremiumRates codeExample = new UpdatePremiumRates();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -49,7 +49,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the PremiumRateService.
       PremiumRateService premiumRateService =
           (PremiumRateService) user.GetService(DfpService.v201605.PremiumRateService);

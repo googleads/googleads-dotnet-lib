@@ -20,17 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all product packages. To create product packages, run
-    /// CreateProductPackages.cs.
+  /// This example gets all product packages.
   /// </summary>
-  class GetAllProductPackages : SampleBase {
+  public class GetAllProductPackages : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all product packages. To create " +
-            "product packages, run CreateProductPackages.cs.";
+        return "This example gets all product packages.";
       }
     }
 
@@ -38,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllProductPackages();
+    public static void Main() {
+      GetAllProductPackages codeExample = new GetAllProductPackages();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,35 +46,38 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the ProductPackageService.
+    public void Run(DfpUser user) {
       ProductPackageService productPackageService =
           (ProductPackageService) user.GetService(DfpService.v201605.ProductPackageService);
 
-      // Create a statement to select all product packages.
+      // Create a statement to select product packages.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Set default for page.
+      // Retrieve a small amount of product packages at a time, paging through
+      // until all product packages have been retrieved.
       ProductPackagePage page = new ProductPackagePage();
-
       try {
         do {
-          // Get product packages by statement.
-          page =
-              productPackageService.getProductPackagesByStatement(statementBuilder.ToStatement());
+          page = productPackageService.getProductPackagesByStatement(
+              statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each product package.
             int i = page.startIndex;
             foreach (ProductPackage productPackage in page.results) {
-              Console.WriteLine("{0}) Product package with ID = \"{1}\" and name = \"{2}\" was " +
-                  "found.", i++, productPackage.id, productPackage.name);
+              Console.WriteLine("{0}) Product package with ID \"{1}\" and name \"{2}\" was found.",
+                  i++,
+                  productPackage.id,
+                  productPackage.name);
             }
           }
+
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-        Console.WriteLine("Number of results found: " + page.totalResultSetSize);
+
+        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
         Console.WriteLine("Failed to get product packages. Exception says \"{0}\"",
             e.Message);

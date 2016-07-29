@@ -21,22 +21,23 @@ Imports System.Text
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
   ''' <summary>
-  ''' This code example adds a remarketing user list (a.k.a. audience) and
-  ''' uploads hashed email addresses to populate the list.
-  ''' 
+  ''' This code example adds a user list (a.k.a. audience) and uploads hashed
+  ''' email addresses to populate the list.
+  '''
   ''' <p>
   ''' <em>Note:</em> It may take up to several hours for the list to be
   ''' populated with members. Email addresses must be associated with a Google
   ''' account. For privacy purposes, the user list size will show as zero until
   ''' the list has at least 1000 members. After that, the size will be rounded
-  ''' to the two most significant digits. 
+  ''' to the two most significant digits.
   ''' </p>
   ''' </summary>
   Public Class AddCrmBasedUserList
     Inherits ExampleBase
 
     Private Shared ReadOnly EMAILS As String() = New String() {
-      "customer1@example.com", "customer2@example.com", " Customer3@example.com "
+      "customer1@example.com", "customer2@example.com", _
+      " Customer3@example.com "
     }
 
     Private Shared ReadOnly digest As GeneralDigest = New Sha256Digest()
@@ -51,8 +52,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
       Try
         codeExample.Run(New AdWordsUser)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(e))
+        Console.WriteLine("An exception occurred while running this code " & _
+            "example. {0}", ExampleUtilities.FormatException(e))
       End Try
     End Sub
 
@@ -61,8 +62,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example adds a remarketing user list (a.k.a. audience) and uploads " & _
-            "hashed email addresses to populate the list."
+        Return "This code example adds a user list (a.k.a. audience) and " & _
+            "uploads hashed email addresses to populate the list."
       End Get
     End Property
 
@@ -73,20 +74,22 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the UserListService.
       Dim userListService As AdwordsUserListService = CType(user.GetService( _
-          AdWordsService.v201601.AdwordsUserListService), AdwordsUserListService)
+          AdWordsService.v201601.AdwordsUserListService), _
+          AdwordsUserListService)
 
-      ' Create remarketing user list.
+      ' Create a user list.
       Dim userList As New CrmBasedUserList
       userList.name = "Customer relationship management list #" & _
           ExampleUtilities.GetRandomString()
-      userList.description = "A list of customers that originated from email addresses"
+      userList.description = "A list of customers that originated from " & _
+          "email addresses"
 
       ' CRM Userlist has a maximum membership lifespan of 180 days. See
       ' https://support.google.com/adwords/answer/6276125 for details.
       userList.membershipLifeSpan = 180L
 
-      ' This field is optional. It links to a service you created that allows members
-      ' of this list to remove themselves.
+      ' This field is optional. It links to a service you created that allows
+      ' members of this list to remove themselves.
       userList.optOutLink = "http://endpoint1.example.com/optout"
 
       ' Create operation.
@@ -99,8 +102,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
         Dim result As UserListReturnValue = userListService.mutate( _
             New UserListOperation() {operation})
 
-        Console.WriteLine("Created new user list with name = '{0}' and id = '{1}'.", _
-            result.value(0).name, result.value(0).id)
+        Console.WriteLine("Created new user list with name = '{0}' and " & _
+            "id = '{1}'.", result.value(0).name, result.value(0).id)
 
         ' Get user list ID.
         Dim userListId As Long = result.value(0).id
@@ -110,7 +113,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
         Dim mutateMembersOperation As New MutateMembersOperation
         mutateMembersOperation.operand = New MutateMembersOperand()
         mutateMembersOperation.operand.userListId = userListId
-        mutateMembersOperation.operand.dataType = MutateMembersOperandDataType.EMAIL_SHA256
+        mutateMembersOperation.operand.dataType = _
+            MutateMembersOperandDataType.EMAIL_SHA256
         mutateMembersOperation.operator = [Operator].ADD
 
         ' Hash normalized email addresses based on SHA-256 hashing algorithm.
@@ -125,18 +129,20 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
 
         ' Add members to the user list based on email addresses.
         Dim mutateMembersResult As MutateMembersReturnValue =
-            userListService.mutateMembers(New MutateMembersOperation() {mutateMembersOperation})
+            userListService.mutateMembers( _
+                New MutateMembersOperation() {mutateMembersOperation})
 
         ' Display results.
         ' Reminder: it may take several hours for the list to be populated with
         ' members.
         For Each userListResult As UserList In mutateMembersResult.userLists
-          Console.WriteLine("Email addresses were added to user list with name '{0}' and " & _
-              "id '{1}'.", userListResult.name, userListResult.id)
+          Console.WriteLine("Email addresses were added to user list with " & _
+              "name '{0}' and id '{1}'.", _
+              userListResult.name, userListResult.id)
         Next
       Catch e As Exception
-        Throw New System.ApplicationException("Failed to add user lists (a.k.a. audiences)." & _
-            "and upload email addresses.", e)
+        Throw New System.ApplicationException("Failed to add user lists " & _
+            "(a.k.a. audiences) and upload email addresses.", e)
       End Try
     End Sub
 

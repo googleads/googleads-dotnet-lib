@@ -24,7 +24,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
   /// This code example updates the delivery rate of a line items.
   /// To determine which line items exist, run GetAllLineItems.cs.
   /// </summary>
-  class UpdateLineItems : SampleBase {
+  public class UpdateLineItems : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -39,8 +39,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new UpdateLineItems();
+    public static void Main() {
+      UpdateLineItems codeExample = new UpdateLineItems();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -49,7 +49,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the LineItemService.
       LineItemService lineItemService =
           (LineItemService) user.GetService(DfpService.v201508.LineItemService);

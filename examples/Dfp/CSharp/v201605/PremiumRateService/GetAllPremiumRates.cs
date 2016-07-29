@@ -20,17 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all premium rates. To create premium rates, run
-  /// CreatePremiumRates.cs.
+  /// This example gets all premium rates.
   /// </summary>
-  class GetAllPremiumRates : SampleBase {
+  public class GetAllPremiumRates : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all premium rates. To create premium rates, run " +
-            "CreatePremiumRates.cs.";
+        return "This example gets all premium rates.";
       }
     }
 
@@ -38,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllPremiumRates();
+    public static void Main() {
+      GetAllPremiumRates codeExample = new GetAllPremiumRates();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,29 +46,32 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the PremiumRateService.
+    public void Run(DfpUser user) {
       PremiumRateService premiumRateService =
           (PremiumRateService) user.GetService(DfpService.v201605.PremiumRateService);
 
-      // Create a statement to get all premium rates.
+      // Create a statement to select premium rates.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Sets default for page.
+      // Retrieve a small amount of premium rates at a time, paging through
+      // until all premium rates have been retrieved.
       PremiumRatePage page = new PremiumRatePage();
       try {
         do {
-          // Get premium rates by statement.
           page = premiumRateService.getPremiumRatesByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each premium rate.
             int i = page.startIndex;
             foreach (PremiumRate premiumRate in page.results) {
-              Console.WriteLine("{0}) Premium rate with ID '{1}' of type '{2}' assigned to rate " +
-                  "card with ID '{3}' was found.", i++, premiumRate.id,
-                  premiumRate.premiumFeature.GetType().Name, premiumRate.rateCardId);
+              Console.WriteLine("{0}) Premium rate with ID \"{1}\", premium feature \"{2}\", "
+                  + "and rate card id \"{3}\" was found.",
+                  i++,
+                  premiumRate.id,
+                  premiumRate.GetType().Name,
+                  premiumRate.rateCardId);
             }
           }
 

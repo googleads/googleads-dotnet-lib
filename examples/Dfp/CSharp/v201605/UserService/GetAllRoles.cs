@@ -22,7 +22,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// This code example gets all roles. This example can be used to determine
   /// which role ID is needed when getting and creating users.
   /// </summary>
-  class GetAllRoles : SampleBase {
+  public class GetAllRoles : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -37,8 +37,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllRoles();
+    public static void Main() {
+      GetAllRoles codeExample = new GetAllRoles();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -47,7 +47,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the UserService.
       UserService userService = (UserService) user.GetService(DfpService.v201605.UserService);
 

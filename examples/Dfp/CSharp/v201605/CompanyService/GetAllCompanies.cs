@@ -20,16 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all companies. To create companies, run
-  /// CreateCompanies.cs.
+  /// This example gets all companies.
   /// </summary>
-  class GetAllCompanies : SampleBase {
+  public class GetAllCompanies : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all companies. To create companies, run CreateCompanies.cs.";
+        return "This example gets all companies.";
       }
     }
 
@@ -37,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllCompanies();
+    public static void Main() {
+      GetAllCompanies codeExample = new GetAllCompanies();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -47,36 +46,42 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the CompanyService.
+    public void Run(DfpUser user) {
       CompanyService companyService =
           (CompanyService) user.GetService(DfpService.v201605.CompanyService);
 
-      // Set defaults for page and statement.
-      CompanyPage page = new CompanyPage();
+      // Create a statement to select companies.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
+      // Retrieve a small amount of companies at a time, paging through
+      // until all companies have been retrieved.
+      CompanyPage page = new CompanyPage();
       try {
         do {
-          // Get companies by statement.
           page = companyService.getCompaniesByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each company.
             int i = page.startIndex;
             foreach (Company company in page.results) {
-              Console.WriteLine("{0}) Company with ID = {1}, name = {2} and type = {3} was found",
-                  i, company.id, company.name, company.type);
-              i++;
+              Console.WriteLine("{0}) Company with ID \"{1}\", name \"{2}\", "
+                  + "and type \"{3}\" was found.",
+                  i++,
+                  company.id,
+                  company.name,
+                  company.type);
             }
           }
+
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get companies. Exception says \"{0}\"", e.Message);
+        Console.WriteLine("Failed to get companies. Exception says \"{0}\"",
+            e.Message);
       }
     }
   }

@@ -23,7 +23,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
   /// This code example gets workflow external condition requests. Workflow external condition
   /// requests must be triggered or skipped for a workflow to finish.
   /// </summary>
-  class GetWorkflowExternalConditionRequests : SampleBase {
+  public class GetWorkflowExternalConditionRequests : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -38,8 +38,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetWorkflowExternalConditionRequests();
+    public static void Main() {
+      GetWorkflowExternalConditionRequests codeExample = new GetWorkflowExternalConditionRequests();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,7 +48,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the WorkflowRequestService.
       WorkflowRequestService workflowRequestService =
           (WorkflowRequestService) user.GetService(DfpService.v201602.WorkflowRequestService);

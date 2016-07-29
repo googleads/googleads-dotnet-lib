@@ -24,7 +24,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
   /// This code example gets all activity groups. To create activity groups, run
   /// CreateActivityGroups.cs.
   /// </summary>
-  class GetAllActivityGroups : SampleBase {
+  public class GetAllActivityGroups : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -39,8 +39,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllActivityGroups();
+    public static void Main() {
+      GetAllActivityGroups codeExample = new GetAllActivityGroups();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -49,7 +49,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the ActivityGroupService.
       ActivityGroupService activityGroupService =
           (ActivityGroupService) user.GetService(DfpService.v201508.ActivityGroupService);

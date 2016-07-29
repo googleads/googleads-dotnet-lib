@@ -20,15 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all proposals. To create proposals, run CreateProposals.cs.
+  /// This example gets all proposals.
   /// </summary>
-  class GetAllProposals : SampleBase {
+  public class GetAllProposals : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This example gets all proposals. To create proposals, run CreateProposals.cs.";
+        return "This example gets all proposals.";
       }
     }
 
@@ -36,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllProposals();
+    public static void Main() {
+      GetAllProposals codeExample = new GetAllProposals();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -46,29 +46,30 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the ProposalService.
+    public void Run(DfpUser user) {
       ProposalService proposalService =
           (ProposalService) user.GetService(DfpService.v201605.ProposalService);
 
-      // Create a statement to get all proposals.
+      // Create a statement to select proposals.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Set default for page.
+      // Retrieve a small amount of proposals at a time, paging through
+      // until all proposals have been retrieved.
       ProposalPage page = new ProposalPage();
-
       try {
         do {
-          // Get proposals by statement.
           page = proposalService.getProposalsByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each proposal.
             int i = page.startIndex;
             foreach (Proposal proposal in page.results) {
-              Console.WriteLine("{0}) Proposal with ID = '{1}', name = '{2}' was found.",
-                  i++, proposal.id, proposal.name);
+              Console.WriteLine("{0}) Proposal with ID \"{1}\" and name \"{2}\" was found.",
+                  i++,
+                  proposal.id,
+                  proposal.name);
             }
           }
 
@@ -77,7 +78,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get all proposals. Exception says \"{0}\"",
+        Console.WriteLine("Failed to get proposals. Exception says \"{0}\"",
             e.Message);
       }
     }

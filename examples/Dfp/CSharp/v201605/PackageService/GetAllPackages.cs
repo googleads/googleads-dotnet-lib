@@ -20,15 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all packages. To create packages, run CreatePackages.cs.
+  /// This example gets all packages.
   /// </summary>
-  class GetAllPackages : SampleBase {
+  public class GetAllPackages : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This example gets all packages. To create packages, run CreatePackages.cs.";
+        return "This example gets all packages.";
       }
     }
 
@@ -36,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllPackages();
+    public static void Main() {
+      GetAllPackages codeExample = new GetAllPackages();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -46,29 +46,32 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the PackageService.
+    public void Run(DfpUser user) {
       PackageService packageService =
           (PackageService) user.GetService(DfpService.v201605.PackageService);
 
-      // Create a statement to get all packages.
+      // Create a statement to select packages.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Set default for page.
+      // Retrieve a small amount of packages at a time, paging through
+      // until all packages have been retrieved.
       PackagePage page = new PackagePage();
-
       try {
         do {
-          // Get packages by statement.
           page = packageService.getPackagesByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each package.
             int i = page.startIndex;
             foreach (Package package in page.results) {
-              Console.WriteLine("{0}) Package with ID = \"{1}\", name = \"{2}\" was found for " +
-                  "proposal ID \"{3}\".", i++, package.id, package.name, package.proposalId);
+              Console.WriteLine("{0}) Package with ID \"{1}\", name \"{2}\", "
+                  + "and proposal id \"{3}\" was found.",
+                  i++,
+                  package.id,
+                  package.name,
+                  package.proposalId);
             }
           }
 
@@ -77,7 +80,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get all packages. Exception says \"{0}\"",
+        Console.WriteLine("Failed to get packages. Exception says \"{0}\"",
             e.Message);
       }
     }

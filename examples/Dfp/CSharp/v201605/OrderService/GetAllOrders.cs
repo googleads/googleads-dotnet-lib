@@ -20,15 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all orders. To create orders, run CreateOrders.cs.
+  /// This example gets all orders.
   /// </summary>
-  class GetAllOrders : SampleBase {
+  public class GetAllOrders : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This example gets all orders. To create orders, run CreateOrders.cs.";
+        return "This example gets all orders.";
       }
     }
 
@@ -36,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllOrders();
+    public static void Main() {
+      GetAllOrders codeExample = new GetAllOrders();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -46,29 +46,30 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the OrderService.
-      OrderService orderService = (OrderService) user.GetService(DfpService.v201605.OrderService);
+    public void Run(DfpUser user) {
+      OrderService orderService =
+          (OrderService) user.GetService(DfpService.v201605.OrderService);
 
-      // Create a statement to get all orders.
+      // Create a statement to select orders.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Set default for page.
+      // Retrieve a small amount of orders at a time, paging through
+      // until all orders have been retrieved.
       OrderPage page = new OrderPage();
-
       try {
         do {
-          // Get orders by statement.
           page = orderService.getOrdersByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each order.
             int i = page.startIndex;
             foreach (Order order in page.results) {
-              Console.WriteLine("{0}) Order with ID = '{1}', name = '{2}', and advertiser " +
-                  "ID = '{3}' was found.", i, order.id, order.name, order.advertiserId);
-              i++;
+              Console.WriteLine("{0}) Order with ID \"{1}\" and name \"{2}\" was found.",
+                  i++,
+                  order.id,
+                  order.name);
             }
           }
 
@@ -77,7 +78,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get all orders. Exception says \"{0}\"",
+        Console.WriteLine("Failed to get orders. Exception says \"{0}\"",
             e.Message);
       }
     }

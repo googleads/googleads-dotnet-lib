@@ -25,7 +25,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
   /// The statement retrieves up to the maximum page size limit of 500. This
   /// feature is only available to DFP premium solution networks.
   /// </summary>
-  class GetSuggestedUnitByStatement : SampleBase {
+  public class GetSuggestedUnitByStatement : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -41,8 +41,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetSuggestedUnitByStatement();
+    public static void Main() {
+      GetSuggestedUnitByStatement codeExample = new GetSuggestedUnitByStatement();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -51,7 +51,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the SuggestedAdUnitService.
       SuggestedAdUnitService suggestedAdUnitService = (SuggestedAdUnitService) user.GetService(
           DfpService.v201602.SuggestedAdUnitService);

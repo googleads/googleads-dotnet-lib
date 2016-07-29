@@ -20,17 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all first party audience segments. To create first
-  /// party audience segments, run CreateAudienceSegments.cs.
+  /// This example gets all first party audience segments.
   /// </summary>
-  class GetFirstPartyAudienceSegments : SampleBase {
+  public class GetFirstPartyAudienceSegments : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all first party audience segments. To create first " +
-            "party audience segments, run CreateAudienceSegments.cs.";
+        return "This example gets all first party audience segments.";
       }
     }
 
@@ -38,9 +36,10 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetFirstPartyAudienceSegments();
+    public static void Main() {
+      GetFirstPartyAudienceSegments codeExample = new GetFirstPartyAudienceSegments();
       Console.WriteLine(codeExample.Description);
+
       codeExample.Run(new DfpUser());
     }
 
@@ -48,42 +47,45 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the AudienceSegmentService.
+    public void Run(DfpUser user) {
       AudienceSegmentService audienceSegmentService =
           (AudienceSegmentService) user.GetService(DfpService.v201605.AudienceSegmentService);
 
-      // Create a statement to only select first party audience segments.
+      // Create a statement to select audience segments.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("type = :type")
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-          .AddValue("type", "FIRST_PARTY");
+          .AddValue("type", AudienceSegmentType.FIRST_PARTY.ToString());
 
-      // Set default for page.
+      // Retrieve a small amount of audience segments at a time, paging through
+      // until all audience segments have been retrieved.
       AudienceSegmentPage page = new AudienceSegmentPage();
-
       try {
         do {
-          // Get audience segment by statement.
           page = audienceSegmentService.getAudienceSegmentsByStatement(
               statementBuilder.ToStatement());
 
-          // Display results.
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each audience segment.
             int i = page.startIndex;
-            foreach (AudienceSegment segment in page.results) {
-              Console.WriteLine("{0}) 'Audience segment with id \"{1}\" and name \"{2}\" of " +
-                  "size {3} was found.", i, segment.id, segment.name, segment.size);
-              i++;
+            foreach (AudienceSegment audienceSegment in page.results) {
+              Console.WriteLine("{0}) Audience segment with ID \"{1}\", name \"{2}\", "
+                  + "and size \"{3}\" was found.",
+                  i++,
+                  audienceSegment.id,
+                  audienceSegment.name,
+                  audienceSegment.size);
             }
           }
 
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get audience segment. Exception says \"{0}\"", e.Message);
+        Console.WriteLine("Failed to get audience segments. Exception says \"{0}\"",
+            e.Message);
       }
     }
   }

@@ -25,7 +25,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
   /// requests to the API. The user making the request cannot deactivate itself.
   /// To determine which users exist, run GetAllUsers.cs.
   /// </summary>
-  class DeactivateUser : SampleBase {
+  public class DeactivateUser : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -41,8 +41,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new DeactivateUser();
+    public static void Main() {
+      DeactivateUser codeExample = new DeactivateUser();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -51,7 +51,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the UserService.
       UserService userService = (UserService) user.GetService(DfpService.v201511.UserService);
 

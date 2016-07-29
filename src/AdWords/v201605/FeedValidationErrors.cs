@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.Common.Util;
 using System.Collections.Generic;
 
 namespace Google.Api.Ads.AdWords.v201605 {
@@ -87,11 +88,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <param name='key'>The error code.</param>
     /// <returns>The error description, or the key if no description can be found.</returns>
     public static string Lookup(int key) {
-      if (codes.ContainsKey(key)) {
-        return codes[key];
-      } else {
-        return key.ToString();
-      }
+      return CollectionUtilities.TryGetValue(codes, key, key.ToString());
     }
   }
 }

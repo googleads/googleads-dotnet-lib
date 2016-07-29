@@ -77,130 +77,98 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
           AdWordsService.v201601.CampaignCriterionService),  _
           CampaignCriterionService)
 
-      ' Create language criteria.
-      ' See http://code.google.com/apis/adwords/docs/appendix/languagecodes.html
-      ' for a detailed list of language codes.
-      Dim language1 As New Language
-      language1.id = 1002 ' French
-      Dim languageCriterion1 As New CampaignCriterion
-      languageCriterion1.campaignId = campaignId
-      languageCriterion1.criterion = language1
+      ' Create locations. The IDs can be found in the documentation or
+      ' retrieved with the LocationCriterionService.
+      Dim california As New Location
+      california.id = 21137L
 
-      Dim language2 As New Language
-      language2.id = 1005  ' Japanese
-      Dim languageCriterion2 As New CampaignCriterion
-      languageCriterion2.campaignId = campaignId
-      languageCriterion2.criterion = language2
+      Dim mexico As New Location
+      mexico.id = 2484L
 
-      ' Target Tier 3 income group near Miami, Florida.
-      Dim incomeLocationGroups As New LocationGroups
+      ' Create languages. The IDs can be found in the documentation or
+      ' retrieved with the ConstantDataService.
+      Dim english As New Language
+      english.id = 1000L
 
-      Dim incomeOperand As New IncomeOperand
+      Dim spanish As New Language
+      spanish.id = 1003L
+
+      ' Location groups criteria. These represent targeting by household income
+      ' or places of interest. The IDs can be found in the documentation or
+      ' retrieved with the LocationCriterionService.
+      Dim locationGroupTier3 As New LocationGroups
+      Dim tier3MatchingFunction As New [Function]
+
       ' Tiers are numbered 1-10, and represent 10% segments of earners.
       ' For example, TIER_1 is the top 10%, TIER_2 is the 80-90%, etc.
       ' Tiers 6 through 10 are grouped into TIER_6_TO_10.
-      incomeOperand.tier = IncomeTier.TIER_3
+      Dim tier3IncomeOperand As New IncomeOperand
+      tier3IncomeOperand.tier = IncomeTier.TIER_3
 
-      Dim geoTargetOperand1 As New GeoTargetOperand
-      geoTargetOperand1.locations = New Long() {1015116} ' Miami, FL.
+      tier3MatchingFunction.lhsOperand = New FunctionArgumentOperand() {tier3IncomeOperand}
+      tier3MatchingFunction.operator = FunctionOperator.AND
 
-      incomeLocationGroups.matchingFunction = New [Function]
-      incomeLocationGroups.matchingFunction.lhsOperand = _
-          New FunctionArgumentOperand() {incomeOperand}
-      incomeLocationGroups.matchingFunction.operator = FunctionOperator.AND
-      incomeLocationGroups.matchingFunction.rhsOperand = _
-          New FunctionArgumentOperand() {geoTargetOperand1}
+      Dim miami As New GeoTargetOperand()
+      miami.locations = New Long() {1015116L} ' Miami, FL
 
-      Dim locationGroupCriterion1 As New CampaignCriterion
-      locationGroupCriterion1.campaignId = campaignId
-      locationGroupCriterion1.criterion = incomeLocationGroups
+      tier3MatchingFunction.rhsOperand = New FunctionArgumentOperand() {miami}
+      locationGroupTier3.matchingFunction = tier3MatchingFunction
 
-      ' Target places of interest near Downtown Miami, Florida.
-      Dim interestLocationGroups As New LocationGroups
+      Dim criteria As New List(Of Criterion)()
+      criteria.AddRange(New Criterion() {
+        california, mexico, english, spanish, locationGroupTier3
+      })
 
-      Dim placesOfInterestOperand As New PlacesOfInterestOperand()
-      placesOfInterestOperand.category = PlacesOfInterestOperandCategory.DOWNTOWN
-
-      Dim geoTargetOperand2 As New GeoTargetOperand
-      geoTargetOperand2.locations = New Long() {1015116} ' Miami, FL.
-
-      interestLocationGroups.matchingFunction = New [Function]
-      interestLocationGroups.matchingFunction.lhsOperand = _
-          New FunctionArgumentOperand() {placesOfInterestOperand}
-      interestLocationGroups.matchingFunction.operator = FunctionOperator.AND
-      interestLocationGroups.matchingFunction.rhsOperand = _
-          New FunctionArgumentOperand() {geoTargetOperand2}
-
-      Dim locationGroupCriterion2 As New CampaignCriterion
-      locationGroupCriterion2.campaignId = campaignId
-      locationGroupCriterion2.criterion = interestLocationGroups
-
-      Dim locationGroupCriterion3 As New CampaignCriterion
-
+      ' Distance targeting. Area of 10 miles around the locations in the location feed.
       If feedId.HasValue Then
-        ' Distance targeting. Area of 10 miles around targets above.
-        Dim radius As New ConstantOperand
-        radius.type = ConstantOperandConstantType.DOUBLE
-        radius.unit = ConstantOperandUnit.MILES
-        radius.doubleValue = 10.0
-        Dim distance As New LocationExtensionOperand
-        distance.radius = radius
+        Dim radiusLocationGroup As New LocationGroups
+        radiusLocationGroup.feedId = feedId.Value
 
-        Dim radiusLocationGroups As New LocationGroups
-        radiusLocationGroups.matchingFunction = New [Function]
-        radiusLocationGroups.matchingFunction.operator = FunctionOperator.IDENTITY
-        radiusLocationGroups.matchingFunction.lhsOperand = New FunctionArgumentOperand() {distance}
+        Dim radiusMatchingFunction As New [Function]
+        radiusMatchingFunction.operator = FunctionOperator.IDENTITY
 
-        ' FeedID should be the ID of a feed that has been configured for location
-        ' targeting, meaning it has an ENABLED FeedMapping with criterionType of
-        ' 77. Feeds linked to a GMB account automatically have this FeedMapping.
-        radiusLocationGroups.feedId = feedId.Value
+        Dim radiusOperand As New LocationExtensionOperand
+        radiusOperand.radius = New ConstantOperand
+        radiusOperand.radius.type = ConstantOperandConstantType.DOUBLE
+        radiusOperand.radius.unit = ConstantOperandUnit.MILES
+        radiusOperand.radius.doubleValue = 10
 
-        locationGroupCriterion3.campaignId = campaignId
-        locationGroupCriterion3.criterion = radiusLocationGroups
+        radiusMatchingFunction.lhsOperand = New FunctionArgumentOperand() {radiusOperand}
+
+        criteria.Add(radiusLocationGroup)
       End If
 
-      ' Create location criteria.
-      ' See http://code.google.com/apis/adwords/docs/appendix/countrycodes.html
-      ' for a detailed list of country codes.
-      Dim location1 As New Location
-      location1.id = 2840  ' USA
-      Dim locationCriterion1 As New CampaignCriterion
-      locationCriterion1.campaignId = campaignId
-      locationCriterion1.criterion = location1
+      ' Create operations to add each of the criteria above.
+      Dim operations As New List(Of CampaignCriterionOperation)
 
-      Dim location2 As New Location
-      location2.id = 2392 ' Japan
-      Dim locationCriterion2 As New CampaignCriterion
-      locationCriterion2.campaignId = campaignId
-      locationCriterion2.criterion = location2
+      For Each criterion As Criterion In criteria
+        Dim campaignCriterion As New CampaignCriterion
+        campaignCriterion.campaignId = campaignId
+        campaignCriterion.criterion = criterion
 
-      ' Add a negative campaign keyword.
-      Dim negativeCriterion As New NegativeCampaignCriterion()
+        Dim operation As New CampaignCriterionOperation
+        operation.operator = [Operator].ADD
+        operation.operand = campaignCriterion
+
+        operations.Add(Operation)
+      Next
+
+      ' Add a negative campaign criterion.
+
+      Dim negativeCriterion As New NegativeCampaignCriterion
       negativeCriterion.campaignId = campaignId
 
-      Dim keyword As New Keyword()
-      keyword.matchType = KeywordMatchType.BROAD
+      Dim keyword As New Keyword
       keyword.text = "jupiter cruise"
+      keyword.matchType = KeywordMatchType.BROAD
 
       negativeCriterion.criterion = keyword
 
-      Dim criteria As New List(Of CampaignCriterion)(New CampaignCriterion() {languageCriterion1, _
-          languageCriterion2, locationCriterion1, locationCriterion2, negativeCriterion, _
-          locationGroupCriterion1, locationGroupCriterion2})
+      Dim negativeCriterionOperation As New CampaignCriterionOperation
+      negativeCriterionOperation.operand = negativeCriterion
+      negativeCriterionOperation.operator = [Operator].ADD
 
-      If feedId.HasValue Then
-        criteria.Add(locationGroupCriterion3)
-      End If
-
-      Dim operations As New List(Of CampaignCriterionOperation)
-
-      For Each criterion As CampaignCriterion In criteria
-        Dim operation As New CampaignCriterionOperation
-        operation.operator = [Operator].ADD
-        operation.operand = criterion
-        operations.Add(operation)
-      Next
+      operations.Add(negativeCriterionOperation)
 
       Try
         ' Set the campaign targets.

@@ -24,7 +24,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// This code example archives a proposal line item. To determine which proposal line items
   /// exist, run GetAllProposalLineItem.cs.
   /// </summary>
-  class ArchiveProposalLineItem : SampleBase {
+  public class ArchiveProposalLineItem : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -39,8 +39,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new ArchiveProposalLineItem();
+    public static void Main() {
+      ArchiveProposalLineItem codeExample = new ArchiveProposalLineItem();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -49,7 +49,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the ProposalLineItemService.
       ProposalLineItemService proposalLineItemService =
           (ProposalLineItemService) user.GetService(DfpService.v201605.ProposalLineItemService);
@@ -74,7 +74,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
           page = proposalLineItemService.getProposalLineItemsByStatement(
               statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
             int i = page.startIndex;
             foreach (ProposalLineItem proposalLineItem in page.results) {
               Console.WriteLine("{0}) Proposal line item with ID ='{1}' will be archived.",

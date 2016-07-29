@@ -20,15 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all users. To create users, run CreateUsers.cs.
+  /// This example gets all users.
   /// </summary>
-  class GetAllUsers : SampleBase {
+  public class GetAllUsers : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all users. To create users, run CreateUsers.cs.";
+        return "This example gets all users.";
       }
     }
 
@@ -36,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllUsers();
+    public static void Main() {
+      GetAllUsers codeExample = new GetAllUsers();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -46,37 +46,39 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the UserService.
-      UserService userService = (UserService) user.GetService(DfpService.v201605.UserService);
+    public void Run(DfpUser user) {
+      UserService userService =
+          (UserService) user.GetService(DfpService.v201605.UserService);
 
-      // Create a statement to get all users.
+      // Create a statement to select users.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Sets defaults for page and statement.
+      // Retrieve a small amount of users at a time, paging through
+      // until all users have been retrieved.
       UserPage page = new UserPage();
-
       try {
         do {
-          // Get users by statement.
           page = userService.getUsersByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each user.
             int i = page.startIndex;
             foreach (User usr in page.results) {
-              Console.WriteLine("{0}) User with ID = '{1}', email = '{2}', and role = '{3}'" +
-                  " was found.", i, usr.id, usr.email, usr.roleName);
-              i++;
+              Console.WriteLine("{0}) User with ID \"{1}\" and name \"{2}\" was found.",
+                  i++,
+                  usr.id,
+                  usr.name);
             }
           }
+
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get all users. Exception says \"{0}\"",
+        Console.WriteLine("Failed to get users. Exception says \"{0}\"",
             e.Message);
       }
     }

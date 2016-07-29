@@ -25,7 +25,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// fields of the drop-down custom field and they cannot be deleted. To
   /// determine which custom fields exist, run GetAllCustomFields.cs.
   /// </summary>
-  class CreateCustomFieldOptions : SampleBase {
+  public class CreateCustomFieldOptions : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -42,8 +42,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new CreateCustomFieldOptions();
+    public static void Main() {
+      CreateCustomFieldOptions codeExample = new CreateCustomFieldOptions();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -52,7 +52,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the CustomFieldService.
       CustomFieldService customFieldService =
           (CustomFieldService) user.GetService(DfpService.v201605.CustomFieldService);

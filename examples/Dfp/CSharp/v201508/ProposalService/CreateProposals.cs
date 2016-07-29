@@ -22,7 +22,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
   /// This code example creates new proposals. To determine which proposals exist,
   /// run GetAllProposals.cs.
   /// </summary>
-  class CreateProposals : SampleBase {
+  public class CreateProposals : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -37,8 +37,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new CreateProposals();
+    public static void Main() {
+      CreateProposals codeExample = new CreateProposals();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -47,7 +47,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201508 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the ProposalService.
       ProposalService proposalService =
           (ProposalService) user.GetService(DfpService.v201508.ProposalService);

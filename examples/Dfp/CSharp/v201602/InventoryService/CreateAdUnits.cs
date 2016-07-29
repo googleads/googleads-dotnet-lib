@@ -23,7 +23,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
   /// To determine which ad units exist, run GetAdUnitTree.cs or
   /// GetAllAdUnits.cs.
   /// </summary>
-  class CreateAdUnits : SampleBase {
+  public class CreateAdUnits : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -38,8 +38,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new CreateAdUnits();
+    public static void Main() {
+      CreateAdUnits codeExample = new CreateAdUnits();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,7 +48,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the InventoryService.
       InventoryService inventoryService =
           (InventoryService) user.GetService(DfpService.v201602.InventoryService);

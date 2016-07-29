@@ -20,16 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all ad units. To create ad units, run
-  /// CreateAdUnits.cs.
+  /// This example gets all ad units.
   /// </summary>
-  class GetAllAdUnits : SampleBase {
+  public class GetAllAdUnits : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all ad units. To create ad units, run CreateAdUnits.cs.";
+        return "This example gets all ad units.";
       }
     }
 
@@ -37,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllAdUnits();
+    public static void Main() {
+      GetAllAdUnits codeExample = new GetAllAdUnits();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -47,38 +46,40 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the InventoryService.
+    public void Run(DfpUser user) {
       InventoryService inventoryService =
           (InventoryService) user.GetService(DfpService.v201605.InventoryService);
 
-      // Create a statement to get all ad units.
+      // Create a statement to select ad units.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Set default for page.
+      // Retrieve a small amount of ad units at a time, paging through
+      // until all ad units have been retrieved.
       AdUnitPage page = new AdUnitPage();
-
       try {
         do {
-          // Get ad units by statement.
           page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each ad unit.
             int i = page.startIndex;
             foreach (AdUnit adUnit in page.results) {
-              Console.WriteLine("{0}) Ad unit with ID = '{1}', name = '{2}' and status = '{3}' " +
-                  "was found.", i, adUnit.id, adUnit.name, adUnit.status);
-              i++;
+              Console.WriteLine("{0}) Ad unit with ID \"{1}\" and name \"{2}\" was found.",
+                  i++,
+                  adUnit.id,
+                  adUnit.name);
             }
           }
+
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get ad unit. Exception says \"{0}\"", e.Message);
+        Console.WriteLine("Failed to get ad units. Exception says \"{0}\"",
+            e.Message);
       }
     }
   }

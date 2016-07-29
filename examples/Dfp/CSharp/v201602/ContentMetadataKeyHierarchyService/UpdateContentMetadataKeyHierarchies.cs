@@ -25,7 +25,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
   /// determine which content metadata key hierarchies exist, run
   /// GetAllContentMetadataKeyHierarchies.cs.
   /// </summary>
-  class UpdateContentMetadataKeyHierarchies : SampleBase {
+  public class UpdateContentMetadataKeyHierarchies : SampleBase {
 
     /// <summary>
     /// Returns a description about the code example.
@@ -42,8 +42,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new UpdateContentMetadataKeyHierarchies();
+    public static void Main() {
+      UpdateContentMetadataKeyHierarchies codeExample = new UpdateContentMetadataKeyHierarchies();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -52,7 +52,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the ContentMetadataKeyHierarchy service.
       ContentMetadataKeyHierarchyService contentMetadataKeyHierarchyService =
           (ContentMetadataKeyHierarchyService) user.GetService(

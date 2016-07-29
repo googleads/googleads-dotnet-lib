@@ -25,7 +25,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// determine which teams exist, run GetAllTeams.cs. To determine which ad
   /// units exist, run GetAllAdUnits.cs.
   /// </summary>
-  class UpdateTeams : SampleBase {
+  public class UpdateTeams : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -41,8 +41,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new UpdateTeams();
+    public static void Main() {
+      UpdateTeams codeExample = new UpdateTeams();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -51,7 +51,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the TeamService.
       TeamService teamService = (TeamService) user.GetService(DfpService.v201605.TeamService);
 

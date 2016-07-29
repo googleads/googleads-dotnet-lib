@@ -269,13 +269,15 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201603 {
       if (parentIdMap.Count == 0) {
         rootNode = new ProductPartitionNode(null, null, NEW_ROOT_ID);
       } else {
-        PreconditionUtilities.CheckState(parentIdMap.ContainsKey(ROOT_PARENT_ID),
+        List<AdGroupCriterion> root = CollectionUtilities.TryGetValue(parentIdMap, ROOT_PARENT_ID);
+
+        PreconditionUtilities.CheckState(root != null,
             string.Format(ShoppingMessages.RootCriteriaNotFoundInCriteriaList, adGroupId));
 
-        PreconditionUtilities.CheckState(parentIdMap[ROOT_PARENT_ID].Count == 1,
+        PreconditionUtilities.CheckState(root.Count == 1,
             string.Format(ShoppingMessages.MoreThanOneRootFound, adGroupId));
 
-        AdGroupCriterion rootCriterion = parentIdMap[ROOT_PARENT_ID][0];
+        AdGroupCriterion rootCriterion = root[0];
 
         PreconditionUtilities.CheckState(rootCriterion is BiddableAdGroupCriterion,
             string.Format(ShoppingMessages.RootCriterionIsNotBiddable, adGroupId));
@@ -350,10 +352,8 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201603 {
     /// of child criteria</param>
     private static void AddChildNodes(ProductPartitionNode parentNode,
         Dictionary<long, List<AdGroupCriterion>> parentIdMap) {
-      List<AdGroupCriterion> childCriteria = null;
-      if (parentIdMap.ContainsKey(parentNode.ProductPartitionId)) {
-        childCriteria = parentIdMap[parentNode.ProductPartitionId];
-      }
+      List<AdGroupCriterion> childCriteria =
+          CollectionUtilities.TryGetValue(parentIdMap, parentNode.ProductPartitionId);
 
       // no children, return.
       if (childCriteria == null || childCriteria.Count == 0) {

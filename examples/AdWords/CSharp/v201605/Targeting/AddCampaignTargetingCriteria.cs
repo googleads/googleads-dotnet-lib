@@ -77,132 +77,118 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
           (CampaignCriterionService) user.GetService(
               AdWordsService.v201605.CampaignCriterionService);
 
-      // Create language criteria.
-      // See http://code.google.com/apis/adwords/docs/appendix/languagecodes.html
-      // for a detailed list of language codes.
-      Language language1 = new Language();
-      language1.id = 1002; // French
-      CampaignCriterion languageCriterion1 = new CampaignCriterion();
-      languageCriterion1.campaignId = campaignId;
-      languageCriterion1.criterion = language1;
+      // Create locations. The IDs can be found in the documentation or
+      // retrieved with the LocationCriterionService.
+      Location california = new Location() {
+        id = 21137L
+      };
 
-      Language language2 = new Language();
-      language2.id = 1005; // Japanese
-      CampaignCriterion languageCriterion2 = new CampaignCriterion();
-      languageCriterion2.campaignId = campaignId;
-      languageCriterion2.criterion = language2;
+      Location mexico = new Location() {
+        id = 2484L
+      };
 
-      // Target Tier 3 income group near Miami, Florida.
-      LocationGroups incomeLocationGroups = new LocationGroups();
+      // Create languages. The IDs can be found in the documentation or
+      // retrieved with the ConstantDataService.
+      Language english = new Language() {
+        id = 1000L
+      };
 
-      IncomeOperand incomeOperand = new IncomeOperand();
-      // Tiers are numbered 1-10, and represent 10% segments of earners.
-      // For example, TIER_1 is the top 10%, TIER_2 is the 80-90%, etc.
-      // Tiers 6 through 10 are grouped into TIER_6_TO_10.
-      incomeOperand.tier = IncomeTier.TIER_3;
+      Language spanish = new Language() {
+        id = 1003L
+      };
 
-      GeoTargetOperand geoTargetOperand1 = new GeoTargetOperand();
-      geoTargetOperand1.locations = new long[] { 1015116 }; // Miami, FL.
+      // Location groups criteria. These represent targeting by household income
+      // or places of interest. The IDs can be found in the documentation or
+      // retrieved with the LocationCriterionService.
+      LocationGroups locationGroupTier3 = new LocationGroups();
+      Function tier3MatchingFunction = new Function();
+      tier3MatchingFunction.lhsOperand = new FunctionArgumentOperand[] {
+        // Tiers are numbered 1-10, and represent 10% segments of earners.
+        // For example, TIER_1 is the top 10%, TIER_2 is the 80-90%, etc.
+        // Tiers 6 through 10 are grouped into TIER_6_TO_10.
+        new IncomeOperand() {
+          tier = IncomeTier.TIER_3
+        }
+      };
+      tier3MatchingFunction.@operator = FunctionOperator.AND;
+      tier3MatchingFunction.rhsOperand = new FunctionArgumentOperand[] {
+        new GeoTargetOperand() {
+          locations = new long[] { 1015116L } // Miami, FL
+        }
+      };
 
-      incomeLocationGroups.matchingFunction = new Function();
-      incomeLocationGroups.matchingFunction.lhsOperand =
-          new FunctionArgumentOperand[] { incomeOperand };
-      incomeLocationGroups.matchingFunction.@operator = FunctionOperator.AND;
-      incomeLocationGroups.matchingFunction.rhsOperand =
-          new FunctionArgumentOperand[] { geoTargetOperand1 };
+      locationGroupTier3.matchingFunction = tier3MatchingFunction;
 
-      CampaignCriterion locationGroupCriterion1 = new CampaignCriterion();
-      locationGroupCriterion1.campaignId = campaignId;
-      locationGroupCriterion1.criterion = incomeLocationGroups;
+      LocationGroups locationGroupDowntown = new LocationGroups() {
+        matchingFunction = new Function() {
+          lhsOperand = new FunctionArgumentOperand[] {
+            new PlacesOfInterestOperand() {
+              category = PlacesOfInterestOperandCategory.DOWNTOWN
+            }
+          },
+          @operator = FunctionOperator.AND,
+          rhsOperand = new FunctionArgumentOperand[] {
+            new GeoTargetOperand() {
+              locations = new long[] { 1015116L } // Miami, FL
+            }
+          }
+        }
+      };
+      
+      List<Criterion> criteria = new List<Criterion>() {
+          california, mexico, english, spanish, locationGroupTier3};
 
-      // Target places of interest near Downtown Miami, Florida.
-      LocationGroups interestLocationGroups = new LocationGroups();
+      // Distance targeting. Area of 10 miles around the locations in the location feed.
+      if (feedId != null) {
+        LocationGroups radiusLocationGroup = new LocationGroups() {
+          feedId = feedId.Value,
+          matchingFunction = new Function() {
+            @operator = FunctionOperator.IDENTITY,
+            lhsOperand = new FunctionArgumentOperand[] {
+              new LocationExtensionOperand() {
+                radius = new ConstantOperand() {
+                  type = ConstantOperandConstantType.DOUBLE,
+                  unit  = ConstantOperandUnit.MILES,
+                  doubleValue = 10
+                }
+              }
+            }
+          }
+        };
 
-      PlacesOfInterestOperand placesOfInterestOperand = new PlacesOfInterestOperand();
-      placesOfInterestOperand.category = PlacesOfInterestOperandCategory.DOWNTOWN;
-
-      GeoTargetOperand geoTargetOperand2 = new GeoTargetOperand();
-      geoTargetOperand2.locations = new long[] { 1015116 }; // Miami, FL.
-
-      interestLocationGroups.matchingFunction = new Function();
-      interestLocationGroups.matchingFunction.lhsOperand =
-          new FunctionArgumentOperand[] { placesOfInterestOperand };
-      interestLocationGroups.matchingFunction.@operator = FunctionOperator.AND;
-      interestLocationGroups.matchingFunction.rhsOperand =
-          new FunctionArgumentOperand[] { geoTargetOperand2 };
-
-      CampaignCriterion locationGroupCriterion2 = new CampaignCriterion();
-      locationGroupCriterion2.campaignId = campaignId;
-      locationGroupCriterion2.criterion = interestLocationGroups;
-
-      CampaignCriterion locationGroupCriterion3 = new CampaignCriterion();
-
-      if (feedId.HasValue) {
-        // Distance targeting. Area of 10 miles around targets above.
-        ConstantOperand radius = new ConstantOperand();
-        radius.type = ConstantOperandConstantType.DOUBLE;
-        radius.unit = ConstantOperandUnit.MILES;
-        radius.doubleValue = 10.0;
-        LocationExtensionOperand distance = new LocationExtensionOperand();
-        distance.radius = radius;
-
-        LocationGroups radiusLocationGroups = new LocationGroups();
-        radiusLocationGroups.matchingFunction = new Function();
-        radiusLocationGroups.matchingFunction.@operator = FunctionOperator.IDENTITY;
-        radiusLocationGroups.matchingFunction.lhsOperand =
-            new FunctionArgumentOperand[] { distance };
-
-        // FeedID should be the ID of a feed that has been configured for location
-        // targeting, meaning it has an ENABLED FeedMapping with criterionType of
-        // 77. Feeds linked to a GMB account automatically have this FeedMapping.
-        radiusLocationGroups.feedId = feedId.Value;
-
-        locationGroupCriterion3.campaignId = campaignId;
-        locationGroupCriterion3.criterion = radiusLocationGroups;
+        criteria.Add(radiusLocationGroup);
       }
 
-      // Create location criteria.
-      // See http://code.google.com/apis/adwords/docs/appendix/countrycodes.html
-      // for a detailed list of country codes.
-      Location location1 = new Location();
-      location1.id = 2840; // USA
-      CampaignCriterion locationCriterion1 = new CampaignCriterion();
-      locationCriterion1.campaignId = campaignId;
-      locationCriterion1.criterion = location1;
-
-      Location location2 = new Location();
-      location2.id = 2392; // Japan
-      CampaignCriterion locationCriterion2 = new CampaignCriterion();
-      locationCriterion2.campaignId = campaignId;
-      locationCriterion2.criterion = location2;
-
-      // Add a negative campaign keyword.
-      NegativeCampaignCriterion negativeCriterion = new NegativeCampaignCriterion();
-      negativeCriterion.campaignId = campaignId;
-
-      Keyword keyword = new Keyword();
-      keyword.matchType = KeywordMatchType.BROAD;
-      keyword.text = "jupiter cruise";
-
-      negativeCriterion.criterion = keyword;
-
-      List<CampaignCriterion> criteria = new List<CampaignCriterion>(
-          new CampaignCriterion[] {languageCriterion1,
-          languageCriterion2, locationCriterion1, locationCriterion2, negativeCriterion,
-          locationGroupCriterion1, locationGroupCriterion2});
-
-      if (feedId.HasValue) {
-        criteria.Add(locationGroupCriterion3);
-      }
-
+      // Create operations to add each of the criteria above.
       List<CampaignCriterionOperation> operations = new List<CampaignCriterionOperation>();
+      foreach (Criterion criterion in criteria) {
+        CampaignCriterionOperation operation = new CampaignCriterionOperation() {
+          operand = new CampaignCriterion() {
+            campaignId = campaignId,
+            criterion = criterion
+          },
+          @operator = Operator.ADD
+        };
 
-      foreach (CampaignCriterion criterion in criteria) {
-        CampaignCriterionOperation operation = new CampaignCriterionOperation();
-        operation.@operator = Operator.ADD;
-        operation.operand = criterion;
         operations.Add(operation);
       }
+
+      // Add a negative campaign criterion.
+
+      CampaignCriterion negativeCriterion = new NegativeCampaignCriterion() {
+        campaignId = campaignId,
+        criterion = new Keyword() {
+          text = "jupiter cruise",
+          matchType = KeywordMatchType.BROAD
+        }
+      };
+
+      CampaignCriterionOperation negativeCriterionOperation = new CampaignCriterionOperation() {
+        operand = negativeCriterion,
+        @operator = Operator.ADD
+      };
+
+      operations.Add(negativeCriterionOperation);
 
       try {
         // Set the campaign targets.

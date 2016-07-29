@@ -25,7 +25,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// run GetAllProductPackages.cs.
   ///       ProductPackageService.performProductPackageAction
   /// </summary>
-  class ActivateProductPackage : SampleBase {
+  public class ActivateProductPackage : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -40,8 +40,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new ActivateProductPackage();
+    public static void Main() {
+      ActivateProductPackage codeExample = new ActivateProductPackage();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -50,7 +50,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the ProductPackageService.
       ProductPackageService productPackageService =
           (ProductPackageService) user.GetService(DfpService.v201605.ProductPackageService);
@@ -76,7 +76,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
           page =
               productPackageService.getProductPackagesByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
             foreach (ProductPackage productPackage in page.results) {
               Console.WriteLine("{0}) Product package with ID = '{1}', name = '{2}', and status " +
                   "='{3}' will be activated.", i++, productPackage.id, productPackage.name,

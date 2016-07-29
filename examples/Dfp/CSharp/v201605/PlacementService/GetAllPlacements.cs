@@ -20,17 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all placements. To create placements, run
-  /// CreatePlacements.cs.
+  /// This example gets all placements.
   /// </summary>
-  class GetAllPlacements : SampleBase {
+  public class GetAllPlacements : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all placements. To create placements, run " +
-            "CreatePlacements.cs.";
+        return "This example gets all placements.";
       }
     }
 
@@ -38,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllPlacements();
+    public static void Main() {
+      GetAllPlacements codeExample = new GetAllPlacements();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,30 +46,30 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the PlacementService.
+    public void Run(DfpUser user) {
       PlacementService placementService =
           (PlacementService) user.GetService(DfpService.v201605.PlacementService);
 
-      // Sets default for page.
-      PlacementPage page = new PlacementPage();
-
-      // Create a statement to get all placements.
+      // Create a statement to select placements.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
+      // Retrieve a small amount of placements at a time, paging through
+      // until all placements have been retrieved.
+      PlacementPage page = new PlacementPage();
       try {
         do {
-          // Get placements by statement.
           page = placementService.getPlacementsByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each placement.
             int i = page.startIndex;
             foreach (Placement placement in page.results) {
-              Console.WriteLine("{0}) Placement with ID = '{1}' and name = '{2}' was found.",
-                  i, placement.id, placement.name);
-              i++;
+              Console.WriteLine("{0}) Placement with ID \"{1}\" and name \"{2}\" was found.",
+                  i++,
+                  placement.id,
+                  placement.name);
             }
           }
 
@@ -80,7 +78,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get all placements. Exception says \"{0}\"",
+        Console.WriteLine("Failed to get placements. Exception says \"{0}\"",
             e.Message);
       }
     }

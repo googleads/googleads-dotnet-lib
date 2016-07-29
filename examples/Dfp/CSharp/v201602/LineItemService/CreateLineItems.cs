@@ -26,7 +26,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
   /// GetAllPlacements.cs. To determine the IDs for locations, run
   /// GetGeoTargets.cs
   /// </summary>
-  class CreateLineItems : SampleBase {
+  public class CreateLineItems : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -43,8 +43,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new CreateLineItems();
+    public static void Main() {
+      CreateLineItems codeExample = new CreateLineItems();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -53,7 +53,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Run the code examples.
     /// </summary>
     /// <param name="user">The DFP user object running the code examples.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the LineItemService.
       LineItemService lineItemService =
           (LineItemService) user.GetService(DfpService.v201602.LineItemService);

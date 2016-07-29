@@ -30,7 +30,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
   /// Test cases for all the code examples under v201603\Reporting.
   /// </summary>
   class ReportingTest : VersionedExampleTestsBase {
-    string outputFileName;
+    string outputFilePath;
     ReportDefinitionReportType reportType;
 
     /// <summary>
@@ -38,7 +38,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// </summary>
     [SetUp]
     public void Init() {
-      outputFileName = Path.GetFileName(Path.GetTempFileName());
+      outputFilePath = Path.GetTempPath();
       reportType = ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT;
     }
 
@@ -48,7 +48,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     [Test]
     public void TestDownloadCriteriaReportVBExample() {
       RunExample(delegate() {
-        new VBExamples.DownloadCriteriaReport().Run(user, outputFileName);
+        new VBExamples.DownloadCriteriaReport().Run(user, outputFilePath);
       });
     }
 
@@ -58,7 +58,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     [Test]
     public void TestDownloadCriteriaReportCSharpExample() {
       RunExample(delegate() {
-        new CSharpExamples.DownloadCriteriaReport().Run(user, outputFileName);
+        new CSharpExamples.DownloadCriteriaReport().Run(user, outputFilePath);
       });
     }
 
@@ -108,7 +108,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     [Test]
     public void TestParallelReportDownloadCSharpExample() {
       RunExample(delegate() {
-        new CSharpExamples.ParallelReportDownload().Run(user, outputFileName);
+        new CSharpExamples.ParallelReportDownload().Run(user, outputFilePath);
       });
     }
   }

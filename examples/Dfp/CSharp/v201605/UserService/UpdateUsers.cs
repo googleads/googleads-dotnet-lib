@@ -23,7 +23,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// This code example updates a user by adding "Sr." to the end of its
   /// name. To determine which users exist, run GetAllUsers.cs.
   /// </summary>
-  class UpdateUsers : SampleBase {
+  public class UpdateUsers : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -38,8 +38,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new UpdateUsers();
+    public static void Main() {
+      UpdateUsers codeExample = new UpdateUsers();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,7 +48,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="dfpUser">The DFP user object running the code example.</param>
-    public override void Run(DfpUser dfpUser) {
+    public void Run(DfpUser dfpUser) {
       // Get the UserService.
       UserService userService = (UserService) dfpUser.GetService(DfpService.v201605.UserService);
 

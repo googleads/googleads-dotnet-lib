@@ -24,7 +24,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// This code example deactivates all active ad units. To determine which ad
   /// units exist, run GetAllAdUnits.cs or GetInventoryTree.cs.
   /// </summary>
-  class DeActivateAdUnits : SampleBase {
+  public class DeActivateAdUnits : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -39,8 +39,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new DeActivateAdUnits();
+    public static void Main() {
+      DeActivateAdUnits codeExample = new DeActivateAdUnits();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -49,7 +49,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the InventoryService.
       InventoryService inventoryService =
           (InventoryService) user.GetService(DfpService.v201605.InventoryService);
@@ -73,7 +73,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
           // Get ad units by statement.
           page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
             int i = page.startIndex;
             foreach (AdUnit adUnit in page.results) {
               Console.WriteLine("{0}) Ad unit with ID ='{1}', name = {2} and status = {3} will" +

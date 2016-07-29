@@ -20,8 +20,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
-using SamplePair = System.Collections.Generic.KeyValuePair<string,
-    Google.Api.Ads.Dfp.Examples.CSharp.SampleBase>;
+using SamplePair = System.Collections.Generic.KeyValuePair<string, System.Type>;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp {
   /// <summary>
@@ -38,7 +37,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp {
     /// </summary>
     private static bool helpShown = false;
 
-    static void RegisterSample(string key, SampleBase value) {
+    static void RegisterSample(string key, Type value) {
       sampleMap.Add(new SamplePair(key, value));
     }
     /// <summary>
@@ -49,8 +48,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp {
 
       foreach (Type type in types) {
         if (type.BaseType == typeof(SampleBase)) {
-          RegisterSample(type.FullName.Replace(typeof(Program).Namespace + ".", ""),
-              Activator.CreateInstance(type) as SampleBase);
+          RegisterSample(type.FullName.Replace(typeof(Program).Namespace + ".", ""), type);
         }
       }
     }
@@ -85,10 +83,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp {
     /// <param name="user">The user whose credentials should be used for
     /// running the code example.</param>
     /// <param name="example">The code example to run.</param>
-    private static void RunASample(DfpUser user, SampleBase example) {
+    private static void RunASample(DfpUser user, Type example) {
       try {
-        Console.WriteLine(example.Description);
-        example.Run(user);
+        example.GetMethod("Main", BindingFlags.Public | BindingFlags.Static).Invoke(null, null);
       } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code sample.\n{0} at\n{1}",
             e.Message, e.StackTrace);
@@ -116,7 +113,11 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp {
       Console.WriteLine("examplename1 [examplename1 ...] : " +
           "Run specific code examples. Example name can be one of the following:\n", exeName);
       foreach (SamplePair pair in sampleMap) {
-        Console.WriteLine("{0} : {1}", pair.Key, pair.Value.Description);
+        SampleBase sample = Activator.CreateInstance(pair.Value) as SampleBase;
+        string description = (string) pair.Value
+          .GetProperty("Description")
+          .GetValue(sample, null);
+        Console.WriteLine("{0} : {1}", pair.Key, description);
       }
       Console.WriteLine("Press [Enter] to continue");
       Console.ReadLine();

@@ -23,7 +23,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
   /// This code example gets all contacts that aren't invited yet. To create
   /// contacts, run CreateContacts.cs.
   /// </summary>
-  class GetUninvitedContacts : SampleBase {
+  public class GetUninvitedContacts : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -38,8 +38,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetUninvitedContacts();
+    public static void Main() {
+      GetUninvitedContacts codeExample = new GetUninvitedContacts();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,7 +48,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201511 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the ContactService.
       ContactService contactService =
           (ContactService) user.GetService(DfpService.v201511.ContactService);

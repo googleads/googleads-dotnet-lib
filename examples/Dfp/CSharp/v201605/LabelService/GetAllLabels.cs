@@ -17,21 +17,18 @@ using Google.Api.Ads.Dfp.Util.v201605;
 using Google.Api.Ads.Dfp.v201605;
 
 using System;
-using System.Text;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all labels. To create labels, run CreateLabels.cs.
-  /// This feature is only available to DFP premium solution networks.
+  /// This example gets all labels.
   /// </summary>
-  class GetAllLabels : SampleBase {
+  public class GetAllLabels : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all labels. To create labels, run CreateLabels.cs. This " +
-            "feature is only available to DFP premium solution networks.";
+        return "This example gets all labels.";
       }
     }
 
@@ -39,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllLabels();
+    public static void Main() {
+      GetAllLabels codeExample = new GetAllLabels();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -49,36 +46,40 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the LabelService.
+    public void Run(DfpUser user) {
       LabelService labelService =
           (LabelService) user.GetService(DfpService.v201605.LabelService);
 
-      // Create a statement to get all labels.
+      // Create a statement to select labels.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Set default for page.
+      // Retrieve a small amount of labels at a time, paging through
+      // until all labels have been retrieved.
       LabelPage page = new LabelPage();
-
       try {
         do {
-          // Get labels by statement.
           page = labelService.getLabelsByStatement(statementBuilder.ToStatement());
 
           if (page.results != null) {
+            // Print out some information for each label.
             int i = page.startIndex;
             foreach (Label label in page.results) {
-              Console.WriteLine("{0}) Label with ID '{1}' and name '{2}' was found.",
-                  i, label.id, label.name);
-              i++;
+              Console.WriteLine("{0}) Label with ID \"{1}\" and name \"{2}\" was found.",
+                  i++,
+                  label.id,
+                  label.name);
             }
           }
+
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get labels. Exception says \"{0}\"", e.Message);
+        Console.WriteLine("Failed to get labels. Exception says \"{0}\"",
+            e.Message);
       }
     }
   }

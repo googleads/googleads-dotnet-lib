@@ -24,6 +24,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   using System.ComponentModel;
   using System.Web.Services.Protocols;
   using System.Web.Services;
+  using Google.Api.Ads.Common.Util;
 
   /// <summary>Use this service to manage ads. Available ad types are subclasses of the base <a
   /// href='Ad'>Ad</a> type and are shown in the <a
@@ -77707,11 +77708,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <param name='key'>The error code.</param>
     /// <returns>The error description, or the key if no description can be found.</returns>
     public static string Lookup(string key) {
-      if (codes.ContainsKey(key)) {
-        return codes[key];
-      } else {
-        return key;
-      }
+      return CollectionUtilities.TryGetValue(codes, key, key.ToString());
     }
   }
 }

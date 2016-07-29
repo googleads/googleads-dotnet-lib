@@ -23,7 +23,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// This code example gets all proposals that are pending approval. To create proposals, run
   /// CreateProposals.cs.
   /// </summary>
-  class GetAllProposalsPendingApproval : SampleBase {
+  public class GetAllProposalsPendingApproval : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -38,8 +38,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllProposalsPendingApproval();
+    public static void Main() {
+      GetAllProposalsPendingApproval codeExample = new GetAllProposalsPendingApproval();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,7 +48,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // Get the ProposalService.
       ProposalService proposalService =
           (ProposalService) user.GetService(DfpService.v201605.ProposalService);
@@ -68,7 +68,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
           // Get proposals by statement.
           page = proposalService.getProposalsByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
             int i = page.startIndex;
             foreach (Proposal proposal in page.results) {
               Console.WriteLine("{0}) Proposal with ID = '{1}', name = '{2}' was found.",

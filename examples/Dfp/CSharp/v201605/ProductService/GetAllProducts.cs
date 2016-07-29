@@ -20,17 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all products. Products are automatically created from
-  /// product templates.
+  /// This example gets all products.
   /// </summary>
-  class GetAllProducts : SampleBase {
+  public class GetAllProducts : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This example gets all products. Products are automatically created from " +
-          "product templates";
+        return "This example gets all products.";
       }
     }
 
@@ -38,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllProducts();
+    public static void Main() {
+      GetAllProducts codeExample = new GetAllProducts();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,29 +46,30 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the ProductService.
+    public void Run(DfpUser user) {
       ProductService productService =
           (ProductService) user.GetService(DfpService.v201605.ProductService);
 
-      // Create a statement to get all products.
+      // Create a statement to select products.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Set default for page.
+      // Retrieve a small amount of products at a time, paging through
+      // until all products have been retrieved.
       ProductPage page = new ProductPage();
-
       try {
         do {
-          // Get products by statement.
           page = productService.getProductsByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each product.
             int i = page.startIndex;
             foreach (Product product in page.results) {
-              Console.WriteLine("{0}) Product with ID = '{1}' and name '{2}' was found.",
-                  i++, product.id, product.name);
+              Console.WriteLine("{0}) Product with ID \"{1}\" and name \"{2}\" was found.",
+                  i++,
+                  product.id,
+                  product.name);
             }
           }
 
@@ -79,7 +78,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
 
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get all products. Exception says \"{0}\"",
+        Console.WriteLine("Failed to get products. Exception says \"{0}\"",
             e.Message);
       }
     }

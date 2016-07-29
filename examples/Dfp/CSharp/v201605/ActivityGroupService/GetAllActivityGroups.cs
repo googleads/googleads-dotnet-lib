@@ -13,25 +13,22 @@
 // limitations under the License.
 
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.v201605;
 using Google.Api.Ads.Dfp.Util.v201605;
+using Google.Api.Ads.Dfp.v201605;
 
 using System;
-using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all activity groups. To create activity groups, run
-  /// CreateActivityGroups.cs.
+  /// This example gets all activity groups.
   /// </summary>
-  class GetAllActivityGroups : SampleBase {
+  public class GetAllActivityGroups : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all activity groups. To create activity groups, run " +
-            "CreateActivityGroups.cs.";
+        return "This example gets all activity groups.";
       }
     }
 
@@ -39,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllActivityGroups();
+    public static void Main() {
+      GetAllActivityGroups codeExample = new GetAllActivityGroups();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -49,38 +46,40 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the ActivityGroupService.
+    public void Run(DfpUser user) {
       ActivityGroupService activityGroupService =
           (ActivityGroupService) user.GetService(DfpService.v201605.ActivityGroupService);
 
-      ActivityGroupPage page;
+      // Create a statement to select activity groups.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
+      // Retrieve a small amount of activity groups at a time, paging through
+      // until all activity groups have been retrieved.
+      ActivityGroupPage page = new ActivityGroupPage();
       try {
         do {
-          // Get activity groups by statement.
           page = activityGroupService.getActivityGroupsByStatement(statementBuilder.ToStatement());
 
-          // Display results.
           if (page.results != null) {
+            // Print out some information for each activity group.
             int i = page.startIndex;
-
             foreach (ActivityGroup activityGroup in page.results) {
-              Console.WriteLine("{0}) Activity group with ID \"{1}\" and name \"{2}\" was " +
-                  "found.", i, activityGroup.id, activityGroup.name);
-              i++;
+              Console.WriteLine("{0}) Activity group with ID \"{1}\" and name \"{2}\" was found.",
+                  i++,
+                  activityGroup.id,
+                  activityGroup.name);
             }
           }
 
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
-        Console.WriteLine("Number of results found: " + page.totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get activity groups. Exception says \"{0}\"", e.Message);
+        Console.WriteLine("Failed to get activity groups. Exception says \"{0}\"",
+            e.Message);
       }
     }
   }

@@ -22,7 +22,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
   /// This code example gets a forecast for an existing line item. To determine
   /// which line items exist, run GetAllLineItems.cs.
   /// </summary>
-  class GetAvailabilityForecastById : SampleBase {
+  public class GetAvailabilityForecastById : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -37,8 +37,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAvailabilityForecastById();
+    public static void Main() {
+      GetAvailabilityForecastById codeExample = new GetAvailabilityForecastById();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -47,7 +47,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
+    public void Run(DfpUser user) {
       // [START forecasting_1] MOE:strip_line
       // Get the ForecastService.
       ForecastService forecastService =

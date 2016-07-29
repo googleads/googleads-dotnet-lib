@@ -20,17 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all line items. To create line items, run
-  /// CreateLineItems.cs.
+  /// This example gets all line items.
   /// </summary>
-  class GetAllLineItems : SampleBase {
+  public class GetAllLineItems : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all line items. To create line items, run " +
-            "CreateLineItems.cs.";
+        return "This example gets all line items.";
       }
     }
 
@@ -38,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllLineItems();
+    public static void Main() {
+      GetAllLineItems codeExample = new GetAllLineItems();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -48,30 +46,30 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the LineItemService.
+    public void Run(DfpUser user) {
       LineItemService lineItemService =
           (LineItemService) user.GetService(DfpService.v201605.LineItemService);
 
-      // Create a statement to get all line items.
+      // Create a statement to select line items.
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Sets default for page.
+      // Retrieve a small amount of line items at a time, paging through
+      // until all line items have been retrieved.
       LineItemPage page = new LineItemPage();
       try {
         do {
-          // Get line items by statement.
           page = lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each line item.
             int i = page.startIndex;
-            foreach (LineItemSummary lineItem in page.results) {
-              Console.WriteLine("{0}) Line item with ID = '{1}', belonging to order ID ='{2}'" +
-                  " , and named '{3}' was found.", i, lineItem.id, lineItem.orderId,
+            foreach (LineItem lineItem in page.results) {
+              Console.WriteLine("{0}) Line item with ID \"{1}\" and name \"{2}\" was found.",
+                  i++,
+                  lineItem.id,
                   lineItem.name);
-              i++;
             }
           }
 

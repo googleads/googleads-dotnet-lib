@@ -26,7 +26,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp {
   /// <summary>
   /// This abstract class represents a code example.
   /// </summary>
-  abstract class SampleBase {
+  public abstract class SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
@@ -34,13 +34,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp {
       get;
     }
 
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    /// <param name="user">DFP user object running the code example.</param>
-    public abstract void Run(DfpUser user);
-
-    protected string _T(string prompt) {
+    protected static string _T(string prompt) {
 #if INTERACTIVE
       Console.Write(prompt + " : ");
       return Console.ReadLine();

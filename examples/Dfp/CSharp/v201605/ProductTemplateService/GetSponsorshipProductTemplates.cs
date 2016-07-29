@@ -20,17 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all sponsorship product templates. To create product
-  /// templates, run CreateProductTemplates.cs.
+  /// This example gets all sponsorship product templates.
   /// </summary>
-  class GetSponsorshipProductTemplates : SampleBase {
+  public class GetSponsorshipProductTemplates : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all sponsorship product templates. To " +
-            "create product templates, run CreateProductTemplates.cs.";
+        return "This example gets all sponsorship product templates.";
       }
     }
 
@@ -38,9 +36,10 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetSponsorshipProductTemplates();
+    public static void Main() {
+      GetSponsorshipProductTemplates codeExample = new GetSponsorshipProductTemplates();
       Console.WriteLine(codeExample.Description);
+
       codeExample.Run(new DfpUser());
     }
 
@@ -48,39 +47,42 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the ProductTemplateService.
+    public void Run(DfpUser user) {
       ProductTemplateService productTemplateService =
           (ProductTemplateService) user.GetService(DfpService.v201605.ProductTemplateService);
 
-      // Create a statement to select all sponsorship product templates.
+      // Create a statement to select product templates.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("lineItemType = :lineItemType")
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
           .AddValue("lineItemType", LineItemType.SPONSORSHIP.ToString());
 
-      // Set default for page.
+      // Retrieve a small amount of product templates at a time, paging through
+      // until all product templates have been retrieved.
       ProductTemplatePage page = new ProductTemplatePage();
-
       try {
         do {
-          // Get product templates by statement.
-          page = productTemplateService
-              .getProductTemplatesByStatement(statementBuilder.ToStatement());
+          page = productTemplateService.getProductTemplatesByStatement(
+              statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each product template.
             int i = page.startIndex;
-            foreach (ProductTemplate proposalLineItem in page.results) {
-              Console.WriteLine("{0}) Product template with ID ='{1}' and name '{2}' was found.",
-                i++, proposalLineItem.id, proposalLineItem.name);
+            foreach (ProductTemplate productTemplate in page.results) {
+              Console.WriteLine("{0}) Product template with ID \"{1}\" and name \"{2}\" was found.",
+                  i++,
+                  productTemplate.id,
+                  productTemplate.name);
             }
           }
+
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get product templates by statement. Exception says \"{0}\"",
+        Console.WriteLine("Failed to get product templates. Exception says \"{0}\"",
             e.Message);
       }
     }

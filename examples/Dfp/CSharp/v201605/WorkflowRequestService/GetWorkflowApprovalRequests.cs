@@ -20,17 +20,17 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets workflow approval requests. Workflow approval requests must
-  /// be approved or rejected for a workflow to finish.
+  /// This example gets workflow approval requests. Workflow approval requests must be approved
+  /// or rejected for a workflow to finish.
   /// </summary>
-  class GetWorkflowApprovalRequests : SampleBase {
+  public class GetWorkflowApprovalRequests : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets workflow approval requests. Workflow approval requests " +
-            "must be approved or rejected for a workflow to finish.";
+        return "This example gets workflow approval requests. Workflow approval requests"
+            + "must be approved or rejected for a workflow to finish.";
       }
     }
 
@@ -38,9 +38,10 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetWorkflowApprovalRequests();
+    public static void Main() {
+      GetWorkflowApprovalRequests codeExample = new GetWorkflowApprovalRequests();
       Console.WriteLine(codeExample.Description);
+
       codeExample.Run(new DfpUser());
     }
 
@@ -48,40 +49,44 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the WorkflowRequestService.
+    public void Run(DfpUser user) {
       WorkflowRequestService workflowRequestService =
           (WorkflowRequestService) user.GetService(DfpService.v201605.WorkflowRequestService);
 
-      // Create a statement to select all workflow approval requests.
+      // Create a statement to select workflow requests.
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("type = :type")
           .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
           .AddValue("type", WorkflowRequestType.WORKFLOW_APPROVAL_REQUEST.ToString());
 
-      // Set default for page.
+      // Retrieve a small amount of workflow requests at a time, paging through
+      // until all workflow requests have been retrieved.
       WorkflowRequestPage page = new WorkflowRequestPage();
-
       try {
         do {
-          // Get workflow requests by statement.
-          page = workflowRequestService
-              .getWorkflowRequestsByStatement(statementBuilder.ToStatement());
+          page = workflowRequestService.getWorkflowRequestsByStatement(
+              statementBuilder.ToStatement());
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each workflow request.
             int i = page.startIndex;
             foreach (WorkflowRequest workflowRequest in page.results) {
-              Console.WriteLine("{0}) Workflow approval request with ID '{1}' for {2} with ID " +
-                  "'{3}' was found.", i++, workflowRequest.id,
-                  workflowRequest.entityType.ToString(), workflowRequest.entityId);
+              Console.WriteLine("{0}) Workflow request with ID \"{1}\", entity type \"{2}\", "
+                  + "and entity ID \"{3}\" was found.",
+                  i++,
+                  workflowRequest.id,
+                  workflowRequest.entityType,
+                  workflowRequest.entityId);
             }
           }
+
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
         } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
-        Console.WriteLine("Failed to get workflow requests by statement. Exception says \"{0}\"",
+        Console.WriteLine("Failed to get workflow requests. Exception says \"{0}\"",
             e.Message);
       }
     }

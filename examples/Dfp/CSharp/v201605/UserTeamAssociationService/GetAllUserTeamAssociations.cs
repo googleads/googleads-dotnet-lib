@@ -20,17 +20,15 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all user team associations. To create user team
-  /// associations, run CreateUserTeamAssociations.cs.
+  /// This example gets all user team associations.
   /// </summary>
-  class GetAllUserTeamAssociations : SampleBase {
+  public class GetAllUserTeamAssociations : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all user team associations. To create user team " +
-            "associations, run CreateUserTeamAssociations.cs.";
+        return "This example gets all user team associations.";
       }
     }
 
@@ -38,8 +36,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetAllUserTeamAssociations();
+    public static void Main() {
+      GetAllUserTeamAssociations codeExample = new GetAllUserTeamAssociations();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -47,32 +45,34 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// <summary>
     /// Run the code example.
     /// </summary>
-    /// <param name="dfpUser">The DFP user object running the code example.</param>
-    public override void Run(DfpUser dfpUser) {
-      // Get the UserTeamAssociationService.
-      UserTeamAssociationService userTeamAssociationService = (UserTeamAssociationService)
-          dfpUser.GetService(DfpService.v201605.UserTeamAssociationService);
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser user) {
+      UserTeamAssociationService userTeamAssociationService =
+          (UserTeamAssociationService)
+          user.GetService(DfpService.v201605.UserTeamAssociationService);
 
-      // Set default for page.
-      UserTeamAssociationPage page = new UserTeamAssociationPage();
-
-      // Create a statement to get all user team associations.
+      // Create a statement to select user team associations.
       StatementBuilder statementBuilder = new StatementBuilder()
-          .OrderBy("teamId ASC, userId ASC")
+          .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
+      // Retrieve a small amount of user team associations at a time, paging through
+      // until all user team associations have been retrieved.
+      UserTeamAssociationPage page = new UserTeamAssociationPage();
       try {
         do {
-          // Get user team associations by statement.
           page = userTeamAssociationService.getUserTeamAssociationsByStatement(
               statementBuilder.ToStatement());
 
           if (page.results != null) {
+            // Print out some information for each user team association.
             int i = page.startIndex;
             foreach (UserTeamAssociation userTeamAssociation in page.results) {
-              Console.WriteLine("{0}) User team association between user with ID \"{1}\" and " +
-                  "team with ID \"{2}\" was found.", i++, userTeamAssociation.userId,
-                  userTeamAssociation.teamId);
+              Console.WriteLine("{0}) User team association with team id \"{1}\" "
+                  + "and user id \"{2}\" was found.",
+                  i++,
+                  userTeamAssociation.teamId,
+                  userTeamAssociation.userId);
             }
           }
 

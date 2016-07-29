@@ -17,18 +17,17 @@ using Google.Api.Ads.Dfp.Util.v201605;
 using Google.Api.Ads.Dfp.v201605;
 
 using System;
-
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
   /// <summary>
-  /// This code example gets all products created from a product template.
+  /// This example gets all products created from a product template.
   /// </summary>
-  class GetProductsForProductTemplate : SampleBase {
+  public class GetProductsForProductTemplate : SampleBase {
     /// <summary>
     /// Returns a description about the code example.
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all products created from a product template.";
+        return "This example gets all products created from a product template.";
       }
     }
 
@@ -36,53 +35,54 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      SampleBase codeExample = new GetProductsForProductTemplate();
+    public static void Main() {
+      GetProductsForProductTemplate codeExample = new GetProductsForProductTemplate();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
+
+      long productTemplateId = long.Parse(_T("INSERT_PRODUCT_TEMPLATE_ID_HERE"));
+      codeExample.Run(new DfpUser(), productTemplateId);
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
     /// <param name="user">The DFP user object running the code example.</param>
-    public override void Run(DfpUser user) {
-      // Get the ProductService.
+    public void Run(DfpUser user, long productTemplateId) {
       ProductService productService =
           (ProductService) user.GetService(DfpService.v201605.ProductService);
 
-      // Set the ID of the product template to filter products by.
-      long productTemplateId = long.Parse(_T("INSERT_PRODUCT_TEMPLATE_ID_HERE"));
-
       // [START product_statement] MOE:strip_line
-      // Create a statement to only select products that were created from a specific
-      // product template.
+      // Create a statement to select products.
       StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("WHERE productTemplateId = :productTemplateId")
-          .OrderBy("name ASC")
+          .Where("productTemplateId = :productTemplateId")
+          .OrderBy("id ASC")
           .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
           .AddValue("productTemplateId", productTemplateId);
       // [END product_statement] MOE:strip_line
 
-      // Set default for page.
+      // Retrieve a small amount of products at a time, paging through
+      // until all products have been retrieved.
       ProductPage page = new ProductPage();
-
       try {
         do {
-          // Get products by statement.
           // [START get_some_products] MOE:strip_line
           page = productService.getProductsByStatement(statementBuilder.ToStatement());
           // [END get_some_products] MOE:strip_line
 
-          if (page.results != null && page.results.Length > 0) {
+          if (page.results != null) {
+            // Print out some information for each product.
             int i = page.startIndex;
             foreach (Product product in page.results) {
-              Console.WriteLine("{0}) Product with ID = '{1}' and name '{2}' was found.",
-                  i++, product.id, product.name);
+              Console.WriteLine("{0}) Product with ID \"{1}\" and name \"{2}\" was found.",
+                  i++,
+                  product.id,
+                  product.name);
             }
           }
+
           statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while(statementBuilder.GetOffset() < page.totalResultSetSize);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
         Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
       } catch (Exception e) {
         Console.WriteLine("Failed to get products. Exception says \"{0}\"",
