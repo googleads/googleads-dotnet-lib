@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_ad_customizer_feed_return_value_1_1_fields =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_ad_customizer_feed_return_value_1_1_fields.html#a3364a18e05668cc60b48f3ce0b9a9a60", null ]
+];

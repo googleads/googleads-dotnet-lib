@@ -3,6 +3,7 @@ var searchData=
   ['errorhandler_2ecs',['ErrorHandler.cs',['../_error_handler_8cs.html',1,'']]],
   ['errorutilities_2ecs',['ErrorUtilities.cs',['../_error_utilities_8cs.html',1,'']]],
   ['estimatekeywordtraffic_2ecs',['EstimateKeywordTraffic.cs',['../v201603_2_optimization_2_estimate_keyword_traffic_8cs.html',1,'']]],
+  ['estimatekeywordtraffic_2ecs',['EstimateKeywordTraffic.cs',['../v201607_2_optimization_2_estimate_keyword_traffic_8cs.html',1,'']]],
   ['estimatekeywordtraffic_2ecs',['EstimateKeywordTraffic.cs',['../v201605_2_optimization_2_estimate_keyword_traffic_8cs.html',1,'']]],
   ['estimatekeywordtraffic_2ecs',['EstimateKeywordTraffic.cs',['../v201601_2_optimization_2_estimate_keyword_traffic_8cs.html',1,'']]],
   ['examplebase_2ecs',['ExampleBase.cs',['../_example_base_8cs.html',1,'']]],

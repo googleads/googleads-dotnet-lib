@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_currency_code_error_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_currency_code_error_1_1_selectable_fields.html#ab11fc330c312e6878bd2e1b75896445d", null ]
+];

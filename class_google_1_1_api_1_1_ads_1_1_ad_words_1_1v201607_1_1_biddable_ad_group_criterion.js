@@ -1,0 +1,27 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion_1_1_selectable_fields" ],
+    [ "approvalStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#ac8a4310d568b77de589bfe6ddb973626", null ],
+    [ "approvalStatusSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#a1298d50ab7d17aa8b942e6d254ca064f", null ],
+    [ "biddingStrategyConfiguration", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#ae4a1a0b824719246b1febfa61ed33eba", null ],
+    [ "bidModifier", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#a4097a657eebaac9e728f2eeaf599a468", null ],
+    [ "bidModifierSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#af044b0f6d1c76723bee2f32687f70a0f", null ],
+    [ "destinationUrl", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#aafa65a2c4d49e07d09f332ac17de668d", null ],
+    [ "disapprovalReasons", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#aaf890ae834ecee3d5090e861bfe37275", null ],
+    [ "experimentData", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#a3ba6507736d7f89b241c63e275b367df", null ],
+    [ "finalAppUrls", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#acea66f995123fd5d72f381f71b2136ca", null ],
+    [ "finalMobileUrls", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#a518dbfaaf89e01c794aeee0453c2b195", null ],
+    [ "finalUrls", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#a2ac0025588191bb90882fc78346f6911", null ],
+    [ "firstPageCpc", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#aedb7439e208a2eff3759fddbad01f051", null ],
+    [ "firstPositionCpc", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#a6f77d3c025c8d0ed51d27a25138a7701", null ],
+    [ "qualityInfo", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#ada501e1325506afb15e6df7e357677bb", null ],
+    [ "systemServingStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#aafa89b0572370dbf50268e4667bde3ac", null ],
+    [ "systemServingStatusSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#a8697f7eb7f644fcbb615327db14b6b97", null ],
+    [ "topOfPageCpc", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#a21bf81f10ce9cab182f8454e54462b6b", null ],
+    [ "trackingUrlTemplate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#a83e9562d920391cb30ea593414569bac", null ],
+    [ "urlCustomParameters", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#a4fb94c4c335ea992fc69e1f86af81caf", null ],
+    [ "userStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#aa96c9ad2518160b6e34831d73652c916", null ],
+    [ "userStatusSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_biddable_ad_group_criterion.html#af150f8ba44e294e4952f0940c2ef8599", null ]
+];

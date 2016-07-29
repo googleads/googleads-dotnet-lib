@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_vanity_pharma_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_vanity_pharma_1_1_filterable_fields.html#aa5e09d6e6957ce98b6c08afc8a354ef9", null ]
+];

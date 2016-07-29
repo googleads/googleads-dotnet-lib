@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_offline_conversion_feed_operation_1_1_fields =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_offline_conversion_feed_operation_1_1_fields.html#ae828e488ab2e4ad59aa19c6ae3a74ab4", null ]
+];
