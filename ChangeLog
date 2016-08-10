@@ -1,3 +1,14 @@
+18.29.1
+=======
+AdWords:
+  -
+
+DFP:
+  -
+
+Common:
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/92.
+
 18.29.0
 =======
 AdWords:

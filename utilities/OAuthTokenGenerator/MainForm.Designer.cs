@@ -25,6 +25,8 @@
     private void InitializeComponent() {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       this.panel1 = new System.Windows.Forms.Panel();
+      this.txtExtraScopes = new System.Windows.Forms.TextBox();
+      this.label4 = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
       this.txtClientID = new System.Windows.Forms.TextBox();
       this.label2 = new System.Windows.Forms.Label();
@@ -34,8 +36,6 @@
       this.btnOK = new System.Windows.Forms.Button();
       this.btnCancel = new System.Windows.Forms.Button();
       this.textBox1 = new System.Windows.Forms.TextBox();
-      this.label4 = new System.Windows.Forms.Label();
-      this.txtExtraScopes = new System.Windows.Forms.TextBox();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -53,6 +53,23 @@
       this.panel1.Name = "panel1";
       this.panel1.Size = new System.Drawing.Size(493, 226);
       this.panel1.TabIndex = 11;
+      // 
+      // txtExtraScopes
+      // 
+      this.txtExtraScopes.Location = new System.Drawing.Point(141, 119);
+      this.txtExtraScopes.Multiline = true;
+      this.txtExtraScopes.Name = "txtExtraScopes";
+      this.txtExtraScopes.Size = new System.Drawing.Size(349, 98);
+      this.txtExtraScopes.TabIndex = 7;
+      // 
+      // label4
+      // 
+      this.label4.AutoSize = true;
+      this.label4.Location = new System.Drawing.Point(3, 119);
+      this.label4.Name = "label4";
+      this.label4.Size = new System.Drawing.Size(90, 26);
+      this.label4.TabIndex = 6;
+      this.label4.Text = "Addtional Scopes\r\n(One per line)";
       // 
       // label1
       // 
@@ -135,23 +152,6 @@
       this.textBox1.TabIndex = 15;
       this.textBox1.Text = resources.GetString("textBox1.Text");
       // 
-      // label4
-      // 
-      this.label4.AutoSize = true;
-      this.label4.Location = new System.Drawing.Point(3, 119);
-      this.label4.Name = "label4";
-      this.label4.Size = new System.Drawing.Size(90, 26);
-      this.label4.TabIndex = 6;
-      this.label4.Text = "Addtional Scopes\r\n(One per line)";
-      // 
-      // txtExtraScopes
-      // 
-      this.txtExtraScopes.Location = new System.Drawing.Point(141, 119);
-      this.txtExtraScopes.Multiline = true;
-      this.txtExtraScopes.Name = "txtExtraScopes";
-      this.txtExtraScopes.Size = new System.Drawing.Size(349, 98);
-      this.txtExtraScopes.TabIndex = 7;
-      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,7 +164,9 @@
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.Name = "MainForm";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "OAuth2 Token Generator";
+      this.TopMost = true;
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
       this.ResumeLayout(false);

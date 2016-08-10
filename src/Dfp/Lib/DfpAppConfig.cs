@@ -138,7 +138,7 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// <summary>
     /// Gets a useragent string that can be used with the library.
     /// </summary>
-    public virtual string GetUserAgent() {
+    public override string GetUserAgent() {
       return String.Format("{0} ({1}{2})", this.applicationName, this.Signature,
           this.EnableGzipCompression ? ", gzip" : "");
     }
