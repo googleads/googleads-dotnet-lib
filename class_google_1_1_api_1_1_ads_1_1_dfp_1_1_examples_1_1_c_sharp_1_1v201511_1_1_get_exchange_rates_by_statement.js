@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201511_1_1_get_exchange_rates_by_statement =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201511_1_1_get_exchange_rates_by_statement.html#a905feb0ca036b0193be0201b5f9fdb7d", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201511_1_1_get_exchange_rates_by_statement.html#aea6c956b9105a1b01f272d4719bdf9fa", null ]
-];

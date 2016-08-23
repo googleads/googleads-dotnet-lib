@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201508_1_1_get_first_party_audience_segments =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201508_1_1_get_first_party_audience_segments.html#a75a8fe410200bedcc2e3d3bce5c3e19a", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201508_1_1_get_first_party_audience_segments.html#addc8b2aec5d2be783f6c3a95923ebb53", null ]
-];
