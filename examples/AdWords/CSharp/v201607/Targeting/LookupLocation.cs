@@ -88,7 +88,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
             foreach (Location location in locationCriterion.location.parentLocations) {
               parentLocations += GetLocationString(location) + ", ";
             }
-            parentLocations.TrimEnd(',', ' ');
+            parentLocations = parentLocations.TrimEnd(',', ' ');
           } else {
             parentLocations = "N/A";
           }
