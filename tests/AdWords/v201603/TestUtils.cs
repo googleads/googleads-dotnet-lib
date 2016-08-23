@@ -83,7 +83,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// Creates a test search campaign for running further tests.
     /// </summary>
     /// <param name="user">The user.</param>
-    /// <param name="biddingStrategy">The bidding strategy to be used.</param>
+    /// <param name="strategyType">The bidding strategy to be used.</param>
     /// <returns>The campaign id.</returns>
     public long CreateMobileSearchCampaign(AdWordsUser user, BiddingStrategyType strategyType) {
       return CreateCampaign(user, AdvertisingChannelType.SEARCH, strategyType, true);
@@ -93,7 +93,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// Creates a test search campaign for running further tests.
     /// </summary>
     /// <param name="user">The user.</param>
-    /// <param name="biddingStrategy">The bidding strategy to be used.</param>
+    /// <param name="strategyType">The bidding strategy to be used.</param>
     /// <returns>The campaign id.</returns>
     public long CreateSearchCampaign(AdWordsUser user, BiddingStrategyType strategyType) {
       return CreateCampaign(user, AdvertisingChannelType.SEARCH, strategyType);
@@ -103,7 +103,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// Creates a display campaign for running further tests.
     /// </summary>
     /// <param name="user">The user.</param>
-    /// <param name="biddingStrategy">The bidding strategy to be used.</param>
+    /// <param name="strategyType">The bidding strategy to be used.</param>
     /// <returns>The campaign id.</returns>
     public long CreateDisplayCampaign(AdWordsUser user, BiddingStrategyType strategyType) {
       return CreateCampaign(user, AdvertisingChannelType.DISPLAY, strategyType);
@@ -113,7 +113,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// Creates a test shopping campaign for running further tests.
     /// </summary>
     /// <param name="user">The user.</param>
-    /// <param name="biddingStrategy">The bidding strategy to be used.</param>
+    /// <param name="strategyType">The bidding strategy to be used.</param>
     /// <returns>The campaign id.</returns>
     public long CreateShoppingCampaign(AdWordsUser user, BiddingStrategyType strategyType) {
       return CreateCampaign(user, AdvertisingChannelType.SHOPPING, strategyType);
@@ -125,7 +125,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="channelType">The advertising channel type for this
     /// campaign.</param>
-    /// <param param name="strategyType">The bidding strategy to be used for
+    /// <param name="strategyType">The bidding strategy to be used for
     /// this campaign.</param>
     /// <returns>The campaign id.</returns>
     public long CreateCampaign(AdWordsUser user, AdvertisingChannelType channelType,
@@ -139,7 +139,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="channelType">The advertising channel type for this
     /// campaign.</param>
-    /// <param param name="strategyType">The bidding strategy to be used for
+    /// <param name="strategyType">The bidding strategy to be used for
     /// this campaign.</param>
     /// <param name="isMobile">True, if this campaign is mobile-only, false
     /// otherwise.</param>
@@ -375,8 +375,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="adGroupId">The adgroup id for which the ad is created.
     /// </param>
-    /// <param name="hasAdParam">True, if an ad param placeholder should be
-    /// added.</param>
     /// <returns>The text ad id.</returns>
     public long CreateThirdPartyRedirectAd(AdWordsUser user, long adGroupId) {
       AdGroupAdService adGroupAdService =

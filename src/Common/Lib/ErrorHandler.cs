@@ -38,7 +38,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Initializes a new instance of the <see cref="ErrorHandler"/> class.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="config">The application configuration instance.</param>
     public ErrorHandler(AppConfig config) {
       this.config = config;
     }

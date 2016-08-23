@@ -23,7 +23,7 @@ namespace Google.Api.Ads.Common.Util {
     /// <summary>
     /// Utility method for null checking arguments.
     /// </summary>
-    /// <param name="obj">The Object to check</param>
+    /// <param name="value">The Object to check</param>
     /// <param name="argument">The name of the argument being checked</param>
     public static void CheckArgumentNotNull(object value, string argument) {
       if (value == null) {
@@ -34,8 +34,8 @@ namespace Google.Api.Ads.Common.Util {
     /// <summary>
     /// Utility method for null checking arguments.
     /// </summary>
-    /// <param name="obj">The Object to check</param>
-    /// <param name="argument">The name of the argument being checked</param>
+    /// <param name="condition">The Object to check</param>
+    /// <param name="message">The name of the argument being checked</param>
     public static void CheckArgument(bool condition, string message) {
       if (!condition) {
         throw new ArgumentException(message);

@@ -80,7 +80,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
     private bool useChunking;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="BatchJobUtilities"/>
+    /// Initializes a new instance of the <see cref="BatchJobUtilitiesBase"/>
     /// class.
     /// </summary>
     /// <param name="user">AdWords user to be used along with this
@@ -97,7 +97,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="BatchJobUtilities"/>
+    /// Initializes a new instance of the <see cref="BatchJobUtilitiesBase"/>
     /// class.
     /// </summary>
     /// <param name="user">AdWords user to be used along with this
@@ -105,7 +105,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
     /// <param name="useChunking">if the operations should be broken into
     /// smaller chunks before uploading to the server.</param>
     /// <param name="chunkSize">The chunk size to use for resumable upload.</param>
-    /// <exception cref="ArgumentException">Thrown if <paramref name="chunkSie"/>
+    /// <exception cref="ArgumentException">Thrown if <paramref name="chunkSize"/>
     /// is not a multiple of 256KB.</exception>
     /// <remarks>Use chunking if your network is spotty for uploads, or if it
     /// has restrictions such as speed limits or timeouts. Chunking makes your
@@ -249,7 +249,6 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
     /// Gets the upload progress.
     /// </summary>
     /// <param name="url">The resumable upload URL.</param>
-    /// <param name="totalLength">The total length of upload.</param>
     /// <returns>The number of bytes uploaded so far.</returns>
     protected virtual int GetUploadProgress(string url) {
       int totalLength = 0;

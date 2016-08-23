@@ -17,7 +17,7 @@ using Google.Api.Ads.Common.Util;
 namespace Google.Api.Ads.AdWords.Util.Shopping {
 
   /// <summary>
-  /// NodeState implementation for <see cref="NodeType.BIDDABLE_UNIT"/>.
+  /// NodeState implementation for <see cref="F:NodeType.BIDDABLE_UNIT"/>.
   /// </summary>
   internal class BiddableUnitState : NodeState {
 

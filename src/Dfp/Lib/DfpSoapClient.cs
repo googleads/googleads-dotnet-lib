@@ -95,7 +95,8 @@ namespace Google.Api.Ads.Dfp.Lib {
         }
       }
 
-      if (string.IsNullOrEmpty(header.applicationName) || header.applicationName.Contains(
+      // TODO: (cseeley) add tests for this MOE:strip_line
+      if (string.IsNullOrWhiteSpace(header.applicationName) || header.applicationName.Contains(
           DfpAppConfig.DEFAULT_APPLICATION_NAME)) {
         throw new ApplicationException(DfpErrorMessages.RequireValidApplicationName);
       }

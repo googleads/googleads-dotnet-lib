@@ -132,7 +132,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Gets a custom exception that wraps the SOAP exception thrown
     /// by the server.
     /// </summary>
-    /// <param name="ex">SOAPException that was thrown by the server.</param>
+    /// <param name="exception">SOAPException that was thrown by the server.</param>
     /// <returns>A custom exception object that wraps the SOAP exception.
     /// </returns>
     protected override Exception GetCustomException(SoapException exception) {

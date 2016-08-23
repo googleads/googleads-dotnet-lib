@@ -26,7 +26,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201605 {
 
     /// <summary>
     /// The <see cref="ProductDimensionEqualityComparer"/> class to check for
-    /// equality of newly created <see cref="ProductionDimension"/> objects with
+    /// equality of newly created <see cref="T:ProductionDimension"/> objects with
     /// existing instances.
     /// </summary>
     private ProductDimensionEqualityComparer comparer = new ProductDimensionEqualityComparer();

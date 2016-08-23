@@ -489,9 +489,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
     /// <param name="user">The user for which reports are run.</param>
     /// <param name="campaignId">ID of the campaign for which we are generating
     ///  keyword ideas.</param>
-    /// <param name="maxResults">The maximum results to pick from SQR.</param>
-    /// <param name="comparer">A comparer, to decide how to sort the report
-    /// rows.</param>
     /// <returns>A list of seed keywords from SQR, to be used for getting
     /// further keyword ideas.</returns>
     private List<SeedKeyword> GetSeedKeywordsFromQueryReport(AdWordsUser user, long campaignId) {
@@ -542,9 +539,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
     /// <param name="user">The user for which reports are run.</param>
     /// <param name="campaignId">ID of the campaign for which we are generating
     ///  keyword ideas.</param>
-    /// <param name="maxResults">The maximum results to pick from SQR.</param>
-    /// <param name="comparer">A comparer, to decide how to sort the report
-    /// rows.</param>
     /// <returns>A list of top performing keywords in a campaign, that can be
     /// used for generating new keywords.</returns>
     private List<SeedKeyword> GetSeedKeywordsFromTopKeywords(AdWordsUser user, long campaignId) {
@@ -630,8 +624,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
     /// </param>
     /// <param name="seedKeywords">The seed keywords for generating ideas.
     /// </param>
-    /// <param name="searchParameters">The search parameters to be used when
-    /// generating keyword ideas.</param>
+    /// <param name="negativeTerms">The list of keywords to exclude.</param>
     /// <returns>A list of keyword ideas.</returns>
     private List<KeywordIdea> GetKeywordIdeas(AdWordsUser user, List<string> seedKeywords,
         SeedKeyword[] negativeTerms) {

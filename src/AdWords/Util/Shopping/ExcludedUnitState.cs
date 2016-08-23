@@ -15,7 +15,7 @@
 namespace Google.Api.Ads.AdWords.Util.Shopping {
 
   /// <summary>
-  /// NodeState implementation for <see cref="NodeType.EXCLUDED_UNIT"/>.
+  /// NodeState implementation for <see cref="F:NodeType.EXCLUDED_UNIT"/>.
   /// </summary>
   internal class ExcludedUnitState : NodeState {
 

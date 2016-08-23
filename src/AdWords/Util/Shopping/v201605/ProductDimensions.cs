@@ -22,16 +22,16 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201605 {
   /// has a signature that reflects the attributes that logically identify an
   /// instance of that subclass.
   ///
-  /// <p>E.g. <see cref="createBrand"/> method has a single <code>brand</code>
+  /// <p>E.g. <see cref="CreateBrand(string)"/> method has a single <code>brand</code>
   /// parameter since the <code>brand</code> attribute is what uniquely
   /// identifies a <see cref="ProductBrand"/>, while
-  /// <see cref="createBiddingCategory"/> method has both a
+  /// <see cref="CreateBiddingCategory(ProductDimensionType,long)"/> method has both a
   /// <code>productDimensionType</code> and a <code>biddingCategoryId</code>
   /// parameter since both attributes are required to uniquely identify a
-  /// <see cref="ProductBiddingCategory"/>.
+  /// <see cref="ProductBiddingCategory"/>.</p>
   ///
   /// <p>Note that this factory only includes methods for subclasses of
-  /// ProductDimension that are supported by Shopping Campaigns.
+  /// ProductDimension that are supported by Shopping Campaigns.</p>
   /// </summary>
   public static class ProductDimensions {
 
@@ -111,7 +111,6 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201605 {
     /// <summary>
     /// Creates a new ProductOfferId for the <b>Everything else</b> case.
     /// </summary>
-    /// <param name="offerId">The offer ID.</param>
     /// <returns>The product offer ID criterion.</returns>
     public static ProductOfferId CreateOfferId() {
       return CreateOfferId(null);

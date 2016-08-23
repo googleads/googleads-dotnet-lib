@@ -82,8 +82,6 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201607 {
     /// </summary>
     /// <param name="node">The node whose criterion should be updated.</param>
     /// <param name="adGroupId">The ad group ID of the criterion.</param>
-    /// <param name="biddingConfig">The bidding strategy configuration of the
-    /// criterion.</param>
     /// <returns>The AdGroupCriterion for SET operation.</returns>
     internal static AdGroupCriterion CreateCriterionForSetBid(ProductPartitionNode node,
         long adGroupId) {

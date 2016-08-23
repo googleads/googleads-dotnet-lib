@@ -47,7 +47,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob.v201601 {
     /// <param name="useChunking">if the operations should be broken into
     /// smaller chunks before uploading to the server.</param>
     /// <param name="chunkSize">The chunk size to use for resumable upload.</param>
-    /// <exception cref="ArgumentException">Thrown if <paramref name="chunkSie"/>
+    /// <exception cref="ArgumentException">Thrown if <paramref name="chunkSize"/>
     /// is not a multiple of 256KB.</exception>
     /// <remarks>Use chunking if your network is spotty for uploads, or if it
     /// has restrictions such as speed limits or timeouts. Chunking makes your

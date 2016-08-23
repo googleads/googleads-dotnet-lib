@@ -283,7 +283,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <param name="values">The predicate value.</param>
     /// <returns>A new <see cref="Predicate"/> object that filters only items
     ///  where the value of <paramref name="field"/> contains any of the values
-    ///  provided in <paramref name="value"/>.</returns>
+    ///  provided in <paramref name="values"/>.</returns>
     public static Predicate ContainsAny(string field, string[] values) {
       return WithCondition(field, PredicateOperator.CONTAINS_ANY, values);
     }
@@ -297,7 +297,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <param name="values">The predicate value.</param>
     /// <returns>A new <see cref="Predicate"/> object that filters only items
     ///  where the value of <paramref name="field"/> contains all of the values
-    ///  provided in <paramref name="value"/>.</returns>
+    ///  provided in <paramref name="values"/>.</returns>
     public static Predicate ContainsAll(string field, string[] values) {
       return WithCondition(field, PredicateOperator.CONTAINS_ALL, values);
     }
@@ -311,7 +311,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <param name="values">The predicate value.</param>
     /// <returns>A new <see cref="Predicate"/> object that filters only items
     ///  where the value of <paramref name="field"/> contains none of the values
-    ///  provided in <paramref name="value"/>.</returns>
+    ///  provided in <paramref name="values"/>.</returns>
     public static Predicate ContainsNone(string field, string[] values) {
       return WithCondition(field, PredicateOperator.CONTAINS_NONE, values);
     }

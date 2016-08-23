@@ -1,3 +1,16 @@
+18.30.0
+=======
+AdWords:
+  -
+
+DFP:
+  - Added support for v201608.
+  - Removed support for v201505.
+  - Removed examples for v201508 and v201511.
+
+Common:
+  -
+
 18.29.1
 =======
 AdWords:

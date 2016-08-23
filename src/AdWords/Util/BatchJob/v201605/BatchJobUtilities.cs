@@ -34,15 +34,16 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob.v201605 {
   public class BatchJobUtilities : BatchJobUtilitiesBase {
 
     /// <summary>
-    /// Wait callback to be used when calling <see cref="WaitForPendingJob"/> method.
+    /// Wait callback to be used when calling
+    /// <see cref="WaitForPendingJob(long,int,WaitCallback)"/> method.
     /// </summary>
     /// <param name="batchJob">The batchjob instance that was retrieved by
-    /// the <see cref="WaitForPendingJob"/> method when polling for job
+    /// the <see cref="WaitForPendingJob(long,int,WaitCallback)"/> method when polling for job
     /// status.</param>
     /// <param name="waitedMilliseconds">The time in milliseconds for which the
-    /// <see cref="WaitForPendingJob"/> method has waited so far.
-    /// <returns>true, if the <see cref="WaitForPendingJob"/> method should be cancelled,
-    /// false otherwise.<returns>
+    /// <see cref="WaitForPendingJob(long,int,WaitCallback)"/> method has waited so far.</param>
+    /// <returns>true, if the <see cref="WaitForPendingJob(long,int,WaitCallback)"/> method should
+    /// be cancelled, false otherwise.</returns>
     public delegate bool WaitCallback(ApiBatchJob batchJob, long waitedMilliseconds);
 
     /// <summary>
@@ -72,7 +73,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob.v201605 {
     /// <param name="useChunking">if the operations should be broken into
     /// smaller chunks before uploading to the server.</param>
     /// <param name="chunkSize">The chunk size to use for resumable upload.</param>
-    /// <exception cref="ArgumentException">Thrown if <paramref name="chunkSie"/>
+    /// <exception cref="ArgumentException">Thrown if <paramref name="chunkSize"/>
     /// is not a multiple of 256KB.</exception>
     /// <remarks>Use chunking if your network is spotty for uploads, or if it
     /// has restrictions such as speed limits or timeouts. Chunking makes your
@@ -229,7 +230,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob.v201605 {
         };
 
         batchJobService.mutate(new BatchJobOperation[] { batchJobSetOperation });
-      } catch (AdWordsApiException e) {
+      } catch (AdWordsApiException) {
         // Rethrow the API exception.
         throw;
       }

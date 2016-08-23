@@ -254,6 +254,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     private bool enableSoapExtension;
 
+    /// <summary>
     /// True, if the usage of a feature should be added to the user agent,
     /// false otherwise.
     /// </summary>
@@ -545,6 +546,7 @@ namespace Google.Api.Ads.Common.Lib {
       }
     }
 
+    /// <summary>
     /// Gets or sets whether usage of various client library features should be
     /// tracked.
     /// </summary>

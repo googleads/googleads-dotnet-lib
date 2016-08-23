@@ -55,8 +55,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="adGroupId">Id of the ad group to which ads are added.
-    /// </param>
+    /// <param name="campaignId">Id of the campaign.</param>
     public void Run(AdWordsUser user, long campaignId) {
       // Get the AdGroupAdService.
       AdGroupBidModifierService adGroupBidModifierService =

@@ -402,7 +402,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
           }
           selector.paging.IncreaseOffset();
         } while (selector.paging.startIndex < page.totalNumEntries);
-      } catch (Exception e) {
+      } catch (Exception) {
         Console.WriteLine("Failed to retrieve advertiser accounts under the manager account.");
         throw;
       }

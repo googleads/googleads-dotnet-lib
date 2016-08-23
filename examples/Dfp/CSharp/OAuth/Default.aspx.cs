@@ -15,8 +15,8 @@
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util.Reports;
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.Util.v201505;
-using Google.Api.Ads.Dfp.v201505;
+using Google.Api.Ads.Dfp.Util.v201605;
+using Google.Api.Ads.Dfp.v201605;
 
 using System;
 using System.Data;
@@ -79,7 +79,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.OAuth {
 
       try {
         // Get the UserService.
-        UserService userService = (UserService)user.GetService(DfpService.v201505.UserService);
+        UserService userService = (UserService)user.GetService(DfpService.v201605.UserService);
 
         // Create a Statement to get all users.
         StatementBuilder statementBuilder = new StatementBuilder()
@@ -132,7 +132,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.OAuth {
     protected void OnDownloadReportButtonClick(object sender, EventArgs eventArgs) {
       ConfigureUserForOAuth();
       ReportService reportService = (ReportService) user.GetService(
-          DfpService.v201505.ReportService);
+          DfpService.v201605.ReportService);
 
       ReportQuery reportQuery = new ReportQuery();
       reportQuery.dimensions =

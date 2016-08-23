@@ -59,7 +59,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="adGroupId">Id of the campaign whose bid should be modified.
+    /// <param name="campaignId">Id of the campaign whose bid should be modified.
     /// </param>
     /// <param name="bidModifier">The bid modifier.</param>
     public void Run(AdWordsUser user, long campaignId, double bidModifier) {

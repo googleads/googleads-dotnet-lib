@@ -223,7 +223,7 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201607 {
     /// criteria provided.
     /// </summary>
     /// <remarks>If retrieving existing criteria for use with this method,
-    /// you must include all of the fields in <see cref="REQUIRED_SELECTOR_FIELDS" />
+    /// you must include all of the fields in <see cref="REQUIRED_SELECTOR_FIELD_ENUMS" />
     /// in your selector.</remarks>
     /// <param name="adGroupCriteria">The list of ad group criteria.</param>
     /// <returns></returns>
@@ -237,7 +237,7 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201607 {
     /// criteria provided.
     /// </summary>
     /// <remarks>If retrieving existing criteria for use with this method,
-    /// you must include all of the fields in <see cref="REQUIRED_SELECTOR_FIELDS" />
+    /// you must include all of the fields in <see cref="REQUIRED_SELECTOR_FIELD_ENUMS" />
     /// in your selector.</remarks>
     /// <param name="adGroupId">The ad group ID.</param>
     /// <param name="adGroupCriteria">The list of ad group criteria.</param>

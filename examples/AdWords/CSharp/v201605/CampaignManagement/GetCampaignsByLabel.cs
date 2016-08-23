@@ -56,7 +56,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    /// <param name="labelName">ID of the label.</param>
+    /// <param name="labelId">ID of the label.</param>
     public void Run(AdWordsUser user, long labelId) {
       // Get the CampaignService.
       CampaignService campaignService =

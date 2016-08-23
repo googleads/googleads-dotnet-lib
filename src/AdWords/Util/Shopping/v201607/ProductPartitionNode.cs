@@ -270,7 +270,7 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201607 {
     /// <summary>
     /// Removes a child node that has matching dimension with the child node.
     /// </summary>
-    /// <param name="childDimension">The child node.</param>
+    /// <param name="childNode">The child node.</param>
     /// <returns>This node.</returns>
     public ProductPartitionNode RemoveChild(ProductPartitionNode childNode) {
       return RemoveChild(childNode.Dimension);
@@ -385,12 +385,9 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201607 {
 
     /// <summary>
     /// Deeply clones each child in <paramref name="children"/> and attaches it
-    /// to <paramref name="newParent"/>.
+    /// to the current node.
     /// </summary>
-    /// <param name="newParent">The new parent to which the cloned children
-    /// will be added</param>
     /// <param name="children">The children to clone</param>
-    /// <param name="minimumId">The minimum ID to compare to.</param>
     /// <returns>The minimum product partition ID found within the subtrees
     /// under <paramref name="children"/>.</returns>
     private void CloneChildrenFrom(IEnumerable<ProductPartitionNode> children) {

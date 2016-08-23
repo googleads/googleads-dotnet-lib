@@ -214,8 +214,6 @@ namespace Google.Api.Ads.Common.Logging {
     /// Logs the details of an HTTP response.
     /// </summary>
     /// <param name="response">The HTTP web response.</param>
-    /// <param name="isFailure">True, if this is a failed response, false
-    /// otherwise.</param>
     /// <param name="responseBody">The response body.</param>
     /// <param name="fieldsToMask">The list of fields to mask.</param>
     /// <param name="formatter">The formatter to be used for formatting the
@@ -236,10 +234,6 @@ namespace Google.Api.Ads.Common.Logging {
     /// <summary>
     /// Writes the HTTP logs.
     /// </summary>
-    /// <param name="requestLogs">The HTTP request logs.</param>
-    /// <param name="responseLogs">The HTTP response logs.</param>
-    /// <param name="isFailure">True, if this is a failed request, false
-    /// otherwise.</param>
     public void Flush() {
       TraceUtilities.WriteDetailedRequestLogs(this.DetailedLog, isFailure);
       TraceUtilities.WriteSummaryRequestLogs(this.SummaryLog, isFailure);
@@ -285,8 +279,8 @@ namespace Google.Api.Ads.Common.Logging {
     /// </summary>
     /// <param name="responseInfo">The response information.</param>
     /// <param name="headersToMask">The headers to mask.</param>
-    /// <param name="bodyFormatter">The trace formatter to use when formatting
-    /// the message.
+    /// <param name="traceFormatter">The trace formatter to use when formatting
+    /// the message.</param>
     /// <returns>The response log text.</returns>
     private string GetFormattedResponseLog(ResponseInfo responseInfo, ISet<string> headersToMask,
         TraceFormatter traceFormatter) {
@@ -357,6 +351,8 @@ namespace Google.Api.Ads.Common.Logging {
     /// </summary>
     /// <param name="headers">The HTTP request headers.</param>
     /// <param name="body">The HTTP request body.</param>
+    /// <param name="headersToMask">The set of headers to mask</param>
+    /// <param name="formatter">The formatter to use for masking</param>
     /// <returns>The request summary for logging.</returns>
     private string GetRequestSummary(WebHeaderCollection headers, string body,
         ISet<string> headersToMask, TraceFormatter formatter) {

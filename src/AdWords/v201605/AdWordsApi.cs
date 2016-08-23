@@ -98,7 +98,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((AdGroupAdPage) (results[0]));
+      return ((AdGroupAdPage)(results[0]));
     }
 
     /// <summary>Applies the list of mutate operations (ie. add, set, remove): <p>Add - Creates a
@@ -127,7 +127,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupAdReturnValue) (results[0]));
+      return ((AdGroupAdReturnValue)(results[0]));
     }
 
     /// <summary>Adds labels to the AdGroupAd or removes labels from the AdGroupAd. <p>Add -
@@ -154,7 +154,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupAdLabelReturnValue) (results[0]));
+      return ((AdGroupAdLabelReturnValue)(results[0]));
     }
 
     /// <summary>Returns a list of AdGroupAds based on the query.
@@ -171,7 +171,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((AdGroupAdPage) (results[0]));
+      return ((AdGroupAdPage)(results[0]));
     }
 
     /// <summary>Upgrades the url for a set of ads.
@@ -186,7 +186,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((Ad[]) (results[0]));
+      return ((Ad[])(results[0]));
     }
   }
 
@@ -13416,7 +13416,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((CampaignCriterionPage) (results[0]));
+      return ((CampaignCriterionPage)(results[0]));
     }
 
     /// <summary>Adds, removes or updates campaign criteria.
@@ -13433,7 +13433,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CampaignCriterionReturnValue) (results[0]));
+      return ((CampaignCriterionReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of campaign criteria that match the query.
@@ -13450,7 +13450,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((CampaignCriterionPage) (results[0]));
+      return ((CampaignCriterionPage)(results[0]));
     }
   }
 
@@ -20795,7 +20795,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((CampaignPage) (results[0]));
+      return ((CampaignPage)(results[0]));
     }
 
     /// <summary>Adds, updates, or removes campaigns. <p class="note"><b>Note:</b> <a
@@ -20817,7 +20817,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CampaignReturnValue) (results[0]));
+      return ((CampaignReturnValue)(results[0]));
     }
 
     /// <summary>Adds labels to the <a href='Campaign'>campaign</a> or removes <a
@@ -20844,7 +20844,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CampaignLabelReturnValue) (results[0]));
+      return ((CampaignLabelReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of campaigns that match the query.
@@ -20861,7 +20861,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((CampaignPage) (results[0]));
+      return ((CampaignPage)(results[0]));
     }
   }
 
@@ -27156,7 +27156,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((CampaignFeedPage) (results[0]));
+      return ((CampaignFeedPage)(results[0]));
     }
 
     /// <summary>Adds, sets or removes CampaignFeeds.
@@ -27172,7 +27172,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CampaignFeedReturnValue) (results[0]));
+      return ((CampaignFeedReturnValue)(results[0]));
     }
 
     /// <summary>Returns a list of <a href='CampaignFeed'>CampaignFeed</a>s inside a <a
@@ -27189,7 +27189,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((CampaignFeedPage) (results[0]));
+      return ((CampaignFeedPage)(results[0]));
     }
   }
 
@@ -28281,7 +28281,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AgeRange[] getAgeRangeCriterion() {
       object[] results = this.Invoke("getAgeRangeCriterion", new object[0]);
-      return ((AgeRange[]) (results[0]));
+      return ((AgeRange[])(results[0]));
     }
 
     /// <summary>Returns a list of all carrier criteria.
@@ -28294,7 +28294,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Carrier[] getCarrierCriterion() {
       object[] results = this.Invoke("getCarrierCriterion", new object[0]);
-      return ((Carrier[]) (results[0]));
+      return ((Carrier[])(results[0]));
     }
 
     /// <summary>Returns a list of all gender criteria.
@@ -28307,7 +28307,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Gender[] getGenderCriterion() {
       object[] results = this.Invoke("getGenderCriterion", new object[0]);
-      return ((Gender[]) (results[0]));
+      return ((Gender[])(results[0]));
     }
 
     /// <summary>Returns a list of all language criteria.
@@ -28320,7 +28320,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Language[] getLanguageCriterion() {
       object[] results = this.Invoke("getLanguageCriterion", new object[0]);
-      return ((Language[]) (results[0]));
+      return ((Language[])(results[0]));
     }
 
     /// <summary>Returns a list of all mobile app category criteria.
@@ -28333,7 +28333,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual MobileAppCategory[] getMobileAppCategoryCriterion() {
       object[] results = this.Invoke("getMobileAppCategoryCriterion", new object[0]);
-      return ((MobileAppCategory[]) (results[0]));
+      return ((MobileAppCategory[])(results[0]));
     }
 
     /// <summary>Returns a list of all mobile devices.
@@ -28346,7 +28346,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual MobileDevice[] getMobileDeviceCriterion() {
       object[] results = this.Invoke("getMobileDeviceCriterion", new object[0]);
-      return ((MobileDevice[]) (results[0]));
+      return ((MobileDevice[])(results[0]));
     }
 
     /// <summary>Returns a list of all operating system version criteria.
@@ -28359,7 +28359,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual OperatingSystemVersion[] getOperatingSystemVersionCriterion() {
       object[] results = this.Invoke("getOperatingSystemVersionCriterion", new object[0]);
-      return ((OperatingSystemVersion[]) (results[0]));
+      return ((OperatingSystemVersion[])(results[0]));
     }
 
     /// <summary>Returns a list of shopping bidding categories. A country predicate must be
@@ -28380,7 +28380,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((ProductBiddingCategoryData[]) (results[0]));
+      return ((ProductBiddingCategoryData[])(results[0]));
     }
 
     /// <summary>Returns a list of user interests.
@@ -28398,7 +28398,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					userInterestTaxonomyType
 				});
-      return ((CriterionUserInterest[]) (results[0]));
+      return ((CriterionUserInterest[])(results[0]));
     }
 
     /// <summary>Returns a list of content verticals.
@@ -28411,7 +28411,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Vertical[] getVerticalCriterion() {
       object[] results = this.Invoke("getVerticalCriterion", new object[0]);
-      return ((Vertical[]) (results[0]));
+      return ((Vertical[])(results[0]));
     }
   }
 
@@ -28758,7 +28758,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((ConversionTrackerPage) (results[0]));
+      return ((ConversionTrackerPage)(results[0]));
     }
 
     /// <summary>Applies the list of mutate operations such as adding or updating conversion
@@ -28788,7 +28788,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((ConversionTrackerReturnValue) (results[0]));
+      return ((ConversionTrackerReturnValue)(results[0]));
     }
 
     /// <summary>Returns a list of conversion trackers that match the query.
@@ -28805,7 +28805,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((ConversionTrackerPage) (results[0]));
+      return ((ConversionTrackerPage)(results[0]));
     }
   }
 
@@ -30608,7 +30608,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Customer get() {
       object[] results = this.Invoke("get", new object[0]);
-      return ((Customer) (results[0]));
+      return ((Customer)(results[0]));
     }
 
     /// <summary>Returns details of all the customers directly accessible by the user
@@ -30624,7 +30624,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Customer[] getCustomers() {
       object[] results = this.Invoke("getCustomers", new object[0]);
-      return ((Customer[]) (results[0]));
+      return ((Customer[])(results[0]));
     }
 
     /// <summary>Update the authorized customer. <p>While there are a limited set of properties
@@ -30642,7 +30642,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					customer
 				});
-      return ((Customer) (results[0]));
+      return ((Customer)(results[0]));
     }
   }
 
@@ -31319,7 +31319,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((CustomerChangeData) (results[0]));
+      return ((CustomerChangeData)(results[0]));
     }
   }
 
@@ -32289,7 +32289,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((CustomerFeedPage) (results[0]));
+      return ((CustomerFeedPage)(results[0]));
     }
 
     /// <summary>Adds, sets, or removes customer feeds.
@@ -32305,7 +32305,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CustomerFeedReturnValue) (results[0]));
+      return ((CustomerFeedReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of customer feeds that match the query.
@@ -32322,7 +32322,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((CustomerFeedPage) (results[0]));
+      return ((CustomerFeedPage)(results[0]));
     }
   }
 
@@ -32883,7 +32883,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((AdGroupBidLandscapePage) (results[0]));
+      return ((AdGroupBidLandscapePage)(results[0]));
     }
 
     /// <summary>Returns a list of <a href='CriterionBidLandscape'>CriterionBidLandscape</a>s for
@@ -32907,7 +32907,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((CriterionBidLandscapePage) (results[0]));
+      return ((CriterionBidLandscapePage)(results[0]));
     }
 
     /// <summary>Returns a list of <a href='CriterionBidLandscape'>CriterionBidLandscape</a>s for
@@ -32931,7 +32931,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((CriterionBidLandscapePage) (results[0]));
+      return ((CriterionBidLandscapePage)(results[0]));
     }
 
     /// <summary>Returns a list of domain categories that can be used to create <a
@@ -32950,7 +32950,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((DomainCategoryPage) (results[0]));
+      return ((DomainCategoryPage)(results[0]));
     }
 
     /// <summary>Returns a list of <a href='AdGroupBidLandscape'>AdGroupBidLandscape</a>s for the
@@ -32973,7 +32973,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query
 				});
-      return ((AdGroupBidLandscapePage) (results[0]));
+      return ((AdGroupBidLandscapePage)(results[0]));
     }
 
     /// <summary>Returns a list of <a href='CriterionBidLandscape'>CriterionBidLandscape</a>s for
@@ -32996,7 +32996,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query
 				});
-      return ((CriterionBidLandscapePage) (results[0]));
+      return ((CriterionBidLandscapePage)(results[0]));
     }
 
     /// <summary>Returns a list of <a href='CriterionBidLandscape'>CriterionBidLandscape</a>s for
@@ -33019,7 +33019,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query
 				});
-      return ((CriterionBidLandscapePage) (results[0]));
+      return ((CriterionBidLandscapePage)(results[0]));
     }
 
     /// <summary>Returns a list of domain categories that can be used to create <a
@@ -33037,7 +33037,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query
 				});
-      return ((DomainCategoryPage) (results[0]));
+      return ((DomainCategoryPage)(results[0]));
     }
   }
 
@@ -34712,7 +34712,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((ExperimentPage) (results[0]));
+      return ((ExperimentPage)(results[0]));
     }
 
     /// <summary>Mutates (add, update or remove) experiments. <b>Note:</b> To REMOVE use SET and
@@ -34732,7 +34732,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((ExperimentReturnValue) (results[0]));
+      return ((ExperimentReturnValue)(results[0]));
     }
   }
 
@@ -35661,7 +35661,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((AdGroupFeedPage) (results[0]));
+      return ((AdGroupFeedPage)(results[0]));
     }
 
     /// <summary>Adds, updates or removes AdGroupFeeds.
@@ -35677,7 +35677,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupFeedReturnValue) (results[0]));
+      return ((AdGroupFeedReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of AdGroupFeeds that match the query.
@@ -35694,7 +35694,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((AdGroupFeedPage) (results[0]));
+      return ((AdGroupFeedPage)(results[0]));
     }
   }
 
@@ -36425,7 +36425,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((FeedPage) (results[0]));
+      return ((FeedPage)(results[0]));
     }
 
     /// <summary>Add, remove, and set Feeds.
@@ -36441,7 +36441,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((FeedReturnValue) (results[0]));
+      return ((FeedReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of Feed that match the query.
@@ -36458,7 +36458,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((FeedPage) (results[0]));
+      return ((FeedPage)(results[0]));
     }
   }
 
@@ -37693,7 +37693,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((FeedItemPage) (results[0]));
+      return ((FeedItemPage)(results[0]));
     }
 
     /// <summary>Add, remove, and set FeedItems.
@@ -37709,7 +37709,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((FeedItemReturnValue) (results[0]));
+      return ((FeedItemReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of FeedItems that match the query.
@@ -37726,7 +37726,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((FeedItemPage) (results[0]));
+      return ((FeedItemPage)(results[0]));
     }
   }
 
@@ -39797,7 +39797,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((FeedMappingPage) (results[0]));
+      return ((FeedMappingPage)(results[0]));
     }
 
     /// <summary>Add and remove FeedMappings. The following <a href='Operator'>Operator</a>s are
@@ -39814,7 +39814,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((FeedMappingReturnValue) (results[0]));
+      return ((FeedMappingReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of FeedMappings that match the query.
@@ -39831,7 +39831,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((FeedMappingPage) (results[0]));
+      return ((FeedMappingPage)(results[0]));
     }
   }
 
@@ -40662,7 +40662,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((LocationCriterion[]) (results[0]));
+      return ((LocationCriterion[])(results[0]));
     }
 
     /// <summary>Returns the list of <a href='LocationCriterion'>LocationCriterion</a>s that
@@ -40680,7 +40680,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((LocationCriterion[]) (results[0]));
+      return ((LocationCriterion[])(results[0]));
     }
   }
 
@@ -40987,7 +40987,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((ManagedCustomerPage) (results[0]));
+      return ((ManagedCustomerPage)(results[0]));
     }
 
     /// <summary>Returns the pending invitations for the customer IDs in the selector.
@@ -41004,7 +41004,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((PendingInvitation[]) (results[0]));
+      return ((PendingInvitation[])(results[0]));
     }
 
     /// <summary>Modifies or creates new <a href='ManagedCustomer'>ManagedCustomer</a>s. <p
@@ -41023,7 +41023,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((ManagedCustomerReturnValue) (results[0]));
+      return ((ManagedCustomerReturnValue)(results[0]));
     }
 
     /// <summary>Adds <a href='AccountLabel'>AccountLabel</a>s to, and removes <a
@@ -41052,7 +41052,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((ManagedCustomerLabel[]) (results[0]));
+      return ((ManagedCustomerLabel[])(results[0]));
     }
 
     /// <summary>Modifies the ManagedCustomer forest. These actions are possible (categorized by
@@ -41078,7 +41078,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((ManagedCustomerLink[]) (results[0]));
+      return ((ManagedCustomerLink[])(results[0]));
     }
 
     /// <summary>Moves client customers to new managers (moving links). Only the following action
@@ -41098,7 +41098,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((ManagedCustomerLink[]) (results[0]));
+      return ((ManagedCustomerLink[])(results[0]));
     }
   }
 
@@ -42734,7 +42734,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((MediaPage) (results[0]));
+      return ((MediaPage)(results[0]));
     }
 
     /// <summary>Returns the list of <a href='Media'>Media</a> objects that match the query.
@@ -42751,7 +42751,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((MediaPage) (results[0]));
+      return ((MediaPage)(results[0]));
     }
 
     /// <summary>Uploads new media. Currently, you can upload <a href='Image'>Image</a> files and
@@ -42769,7 +42769,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					media
 				});
-      return ((Media[]) (results[0]));
+      return ((Media[])(results[0]));
     }
   }
 
@@ -50220,7 +50220,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((OfflineConversionFeedReturnValue) (results[0]));
+      return ((OfflineConversionFeedReturnValue)(results[0]));
     }
   }
 
@@ -50835,7 +50835,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					reportType
 				});
-      return ((ReportDefinitionField[]) (results[0]));
+      return ((ReportDefinitionField[])(results[0]));
     }
   }
 
@@ -51670,7 +51670,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((TargetingIdeaPage) (results[0]));
+      return ((TargetingIdeaPage)(results[0]));
     }
   }
 
@@ -55044,7 +55044,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((AdGroupCriterionPage) (results[0]));
+      return ((AdGroupCriterionPage)(results[0]));
     }
 
     /// <summary>Adds, removes or updates adgroup criteria.
@@ -55062,7 +55062,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupCriterionReturnValue) (results[0]));
+      return ((AdGroupCriterionReturnValue)(results[0]));
     }
 
     /// <summary>Adds labels to the AdGroupCriterion or removes labels from the AdGroupCriterion
@@ -55090,7 +55090,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupCriterionLabelReturnValue) (results[0]));
+      return ((AdGroupCriterionLabelReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of AdGroupCriterion that match the query.
@@ -55107,7 +55107,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((AdGroupCriterionPage) (results[0]));
+      return ((AdGroupCriterionPage)(results[0]));
     }
   }
 
@@ -55380,7 +55380,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((TrafficEstimatorResult) (results[0]));
+      return ((TrafficEstimatorResult)(results[0]));
     }
   }
 
@@ -56857,7 +56857,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((UserListPage) (results[0]));
+      return ((UserListPage)(results[0]));
     }
 
     /// <summary>Applies a list of mutate operations (i.e. add, set): Add - creates a set of user
@@ -56873,7 +56873,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((UserListReturnValue) (results[0]));
+      return ((UserListReturnValue)(results[0]));
     }
 
     /// <summary>Mutate members of user lists by either adding or removing their lists of
@@ -56892,7 +56892,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((MutateMembersReturnValue) (results[0]));
+      return ((MutateMembersReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of user lists that match the query.
@@ -56909,7 +56909,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((UserListPage) (results[0]));
+      return ((UserListPage)(results[0]));
     }
   }
 
@@ -60097,7 +60097,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((ExpressBusinessPage) (results[0]));
+      return ((ExpressBusinessPage)(results[0]));
     }
 
     /// <summary>Performs the given <a
@@ -60114,7 +60114,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((ExpressBusiness[]) (results[0]));
+      return ((ExpressBusiness[])(results[0]));
     }
   }
 
@@ -60590,7 +60590,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((BudgetSuggestion) (results[0]));
+      return ((BudgetSuggestion)(results[0]));
     }
   }
 
@@ -62100,7 +62100,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((PromotionPage) (results[0]));
+      return ((PromotionPage)(results[0]));
     }
 
     /// <summary>Performs the given <a href='PromotionOperation'>PromotionOperation</a>.
@@ -62116,7 +62116,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((Promotion[]) (results[0]));
+      return ((Promotion[])(results[0]));
     }
   }
 
@@ -63929,7 +63929,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((ProductServicePage) (results[0]));
+      return ((ProductServicePage)(results[0]));
     }
   }
 
@@ -64064,7 +64064,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((CampaignSharedSetPage) (results[0]));
+      return ((CampaignSharedSetPage)(results[0]));
     }
 
     /// <summary>Applies the list of mutate operations.
@@ -64080,7 +64080,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CampaignSharedSetReturnValue) (results[0]));
+      return ((CampaignSharedSetReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of CampaignSharedSets that match the query.
@@ -64097,7 +64097,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((CampaignSharedSetPage) (results[0]));
+      return ((CampaignSharedSetPage)(results[0]));
     }
   }
 
@@ -64611,7 +64611,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((SharedCriterionPage) (results[0]));
+      return ((SharedCriterionPage)(results[0]));
     }
 
     /// <summary>Adds, removes criteria in a shared set.
@@ -64628,7 +64628,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((SharedCriterionReturnValue) (results[0]));
+      return ((SharedCriterionReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of SharedCriterion that match the query.
@@ -64644,7 +64644,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((SharedCriterionPage) (results[0]));
+      return ((SharedCriterionPage)(results[0]));
     }
   }
 
@@ -65072,7 +65072,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((SharedSetPage) (results[0]));
+      return ((SharedSetPage)(results[0]));
     }
 
     /// <summary>Applies the list of mutate operations.
@@ -65088,7 +65088,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((SharedSetReturnValue) (results[0]));
+      return ((SharedSetReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of SharedSet entities that match the query.
@@ -65105,7 +65105,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((SharedSetPage) (results[0]));
+      return ((SharedSetPage)(results[0]));
     }
   }
 
@@ -65676,7 +65676,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((LabelPage) (results[0]));
+      return ((LabelPage)(results[0]));
     }
 
     /// <summary>Applies the list of mutate operations.
@@ -65694,7 +65694,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((LabelReturnValue) (results[0]));
+      return ((LabelReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of <a href='Label'>Label</a>s that match the query.
@@ -65712,7 +65712,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((LabelPage) (results[0]));
+      return ((LabelPage)(results[0]));
     }
   }
 
@@ -66053,7 +66053,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((AdGroupPage) (results[0]));
+      return ((AdGroupPage)(results[0]));
     }
 
     /// <summary>Adds, updates, or removes ad groups. <p class="note"><b>Note:</b> <a
@@ -66072,7 +66072,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupReturnValue) (results[0]));
+      return ((AdGroupReturnValue)(results[0]));
     }
 
     /// <summary>Adds labels to the <a href='AdGroup'>ad group</a> or removes <a
@@ -66100,7 +66100,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupLabelReturnValue) (results[0]));
+      return ((AdGroupLabelReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of ad groups that match the query.
@@ -66116,7 +66116,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((AdGroupPage) (results[0]));
+      return ((AdGroupPage)(results[0]));
     }
   }
 
@@ -66380,7 +66380,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((AccountLabel[]) (results[0]));
+      return ((AccountLabel[])(results[0]));
     }
 
     /// <summary>Possible actions: <ul> <li>Create a new label - create a new <a
@@ -66404,7 +66404,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AccountLabel[]) (results[0]));
+      return ((AccountLabel[])(results[0]));
     }
   }
 
@@ -66755,7 +66755,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((AdCustomizerFeedPage) (results[0]));
+      return ((AdCustomizerFeedPage)(results[0]));
     }
 
     /// <summary>Adds, removes, or modifies AdCustomizerFeeds.
@@ -66771,7 +66771,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdCustomizerFeedReturnValue) (results[0]));
+      return ((AdCustomizerFeedReturnValue)(results[0]));
     }
   }
 
@@ -67458,7 +67458,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((AdGroupExtensionSettingPage) (results[0]));
+      return ((AdGroupExtensionSettingPage)(results[0]));
     }
 
     /// <summary>Applies the list of mutate operations (add, remove, and set). <p>Beginning in
@@ -67482,7 +67482,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupExtensionSettingReturnValue) (results[0]));
+      return ((AdGroupExtensionSettingReturnValue)(results[0]));
     }
 
     /// <summary>Returns a list of AdGroupExtensionSettings that match the query.
@@ -67498,7 +67498,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((AdGroupExtensionSettingPage) (results[0]));
+      return ((AdGroupExtensionSettingPage)(results[0]));
     }
   }
 
@@ -67708,7 +67708,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((CampaignExtensionSettingPage) (results[0]));
+      return ((CampaignExtensionSettingPage)(results[0]));
     }
 
     /// <summary>Applies the list of mutate operations (add, remove, and set). <p>Beginning in
@@ -67732,7 +67732,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CampaignExtensionSettingReturnValue) (results[0]));
+      return ((CampaignExtensionSettingReturnValue)(results[0]));
     }
 
     /// <summary>Returns a list of CampaignExtensionSettings that match the query.
@@ -67748,7 +67748,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((CampaignExtensionSettingPage) (results[0]));
+      return ((CampaignExtensionSettingPage)(results[0]));
     }
   }
 
@@ -67958,7 +67958,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((CustomerExtensionSettingPage) (results[0]));
+      return ((CustomerExtensionSettingPage)(results[0]));
     }
 
     /// <summary>Applies the list of mutate operations (add, remove, and set). <p>Beginning in
@@ -67982,7 +67982,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CustomerExtensionSettingReturnValue) (results[0]));
+      return ((CustomerExtensionSettingReturnValue)(results[0]));
     }
 
     /// <summary>Returns a list of CustomerExtensionSettings that match the query.
@@ -67998,7 +67998,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((CustomerExtensionSettingPage) (results[0]));
+      return ((CustomerExtensionSettingPage)(results[0]));
     }
   }
 
@@ -68191,7 +68191,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     }
 
     /// <summary>Returns a DraftPage that contains a list of Draft objects matching the selector.
-    /// </summary><exception cref='{#link'>ApiException} if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
     /// results.</exception>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -68202,14 +68202,14 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((DraftPage) (results[0]));
+      return ((DraftPage)(results[0]));
     }
 
     /// <summary>The mutate action is used for creating new Drafts and controlling the life cycle
     /// of Drafts, such as abandoning or promoting Drafts.
     /// </summary><returns>The list of updated Drafts, in the same order as the <code></code>
     /// list.</returns>
-    /// <exception cref='{#link'>ApiException} if problems occurred while processing the
+    /// <exception cref='ApiException'> if problems occurred while processing the
     /// request.</exception>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -68220,11 +68220,11 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((DraftReturnValue) (results[0]));
+      return ((DraftReturnValue)(results[0]));
     }
 
     /// <summary>Returns a DraftPage that contains a list of Draft objects matching the query.
-    /// </summary><exception cref='{#link'>ApiException} if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
     /// results.</exception>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -68235,7 +68235,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((DraftPage) (results[0]));
+      return ((DraftPage)(results[0]));
     }
   }
 
@@ -68797,7 +68797,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 
     /// <summary>Returns a DraftAsyncErrorPage that contains a list of DraftAsyncErrors matching
     /// the selector.
-    /// </summary><exception cref='{#link'>ApiException} if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
     /// results.</exception>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -68808,12 +68808,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((DraftAsyncErrorPage) (results[0]));
+      return ((DraftAsyncErrorPage)(results[0]));
     }
 
     /// <summary>Returns a DraftAsyncErrorPage that contains a list of DraftAsyncErrors matching
     /// the query.
-    /// </summary><exception cref='{#link'>ApiException} if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
     /// results.</exception>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -68824,7 +68824,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((DraftAsyncErrorPage) (results[0]));
+      return ((DraftAsyncErrorPage)(results[0]));
     }
   }
 
@@ -69329,7 +69329,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((TrialPage) (results[0]));
+      return ((TrialPage)(results[0]));
     }
 
     /// <summary>Creates new trials, updates properties and controls the life cycle of existing
@@ -69348,12 +69348,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((TrialReturnValue) (results[0]));
+      return ((TrialReturnValue)(results[0]));
     }
 
     /// <summary>Loads a TrialPage containing a list of <a href='Trial'>Trial</a> objects
     /// matching the query.
-    /// </summary><param name='query'>defines which subset of all available trials to return, the
+    /// </summary><param name='query1'>defines which subset of all available trials to return, the
     /// sort order, and which fields to include</param>
     /// <returns>Returns a page of matching trial objects.</returns>
     /// <exception cref='ApiException'>if errors occurred while retrieving the
@@ -69367,7 +69367,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((TrialPage) (results[0]));
+      return ((TrialPage)(results[0]));
     }
   }
 
@@ -70105,7 +70105,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 
     /// <summary>Returns a TrialAsyncErrorPage that contains a list of TrialAsyncErrors matching
     /// the selector.
-    /// </summary><exception cref='{#link'>ApiException} if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
     /// results.</exception>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -70116,12 +70116,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((TrialAsyncErrorPage) (results[0]));
+      return ((TrialAsyncErrorPage)(results[0]));
     }
 
     /// <summary>Returns a TrialAsyncErrorPage that contains a list of TrialAsyncError matching
     /// the query.
-    /// </summary><exception cref='{#link'>ApiException} if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
     /// results.</exception>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -70132,7 +70132,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((TrialAsyncErrorPage) (results[0]));
+      return ((TrialAsyncErrorPage)(results[0]));
     }
   }
 
@@ -70485,7 +70485,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((AdGroupBidModifierPage) (results[0]));
+      return ((AdGroupBidModifierPage)(results[0]));
     }
 
     /// <summary>Adds, removes or updates ad group bid modifier overrides.
@@ -70502,7 +70502,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupBidModifierReturnValue) (results[0]));
+      return ((AdGroupBidModifierReturnValue)(results[0]));
     }
 
     /// <summary>Returns a list of <a href='AdGroupBidModifier'>AdGroupBidModifier</a>s that
@@ -70519,7 +70519,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((AdGroupBidModifierPage) (results[0]));
+      return ((AdGroupBidModifierPage)(results[0]));
     }
   }
 
@@ -70663,7 +70663,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((AdParamPage) (results[0]));
+      return ((AdParamPage)(results[0]));
     }
 
     /// <summary>Sets and removes ad parameters. <p class="note"><b>Note:</b> <code>ADD</code> is
@@ -70688,7 +70688,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdParam[]) (results[0]));
+      return ((AdParam[])(results[0]));
     }
   }
 
@@ -71275,7 +71275,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((BatchJobPage) (results[0]));
+      return ((BatchJobPage)(results[0]));
     }
 
     /// <summary>Creates or updates a <code>BatchJob</code>. <p class="note"><b>Note:</b> <a
@@ -71293,11 +71293,11 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((BatchJobReturnValue) (results[0]));
+      return ((BatchJobReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of <code>BatchJob</code>s that match the query.
-    /// </summary><param name='query'>The SQL-like AWQL query string.</param>
+    /// </summary><param name='query1'>The SQL-like AWQL query string.</param>
     /// <returns>The list of selected jobs.</returns>
     /// <exception cref='ApiException'>if problems occur while parsing the query or
     /// fetching batchjob information.</exception>
@@ -71310,7 +71310,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((BatchJobPage) (results[0]));
+      return ((BatchJobPage)(results[0]));
     }
   }
 
@@ -72154,7 +72154,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((BiddingStrategyPage) (results[0]));
+      return ((BiddingStrategyPage)(results[0]));
     }
 
     /// <summary>Applies the list of mutate operations.
@@ -72170,7 +72170,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((BiddingStrategyReturnValue) (results[0]));
+      return ((BiddingStrategyReturnValue)(results[0]));
     }
 
     /// <summary>Returns a list of bidding strategies that match the query.
@@ -72186,7 +72186,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((BiddingStrategyPage) (results[0]));
+      return ((BiddingStrategyPage)(results[0]));
     }
   }
 
@@ -72848,7 +72848,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((BudgetOrderPage) (results[0]));
+      return ((BudgetOrderPage)(results[0]));
     }
 
     /// <summary>Returns all the open/active BillingAccounts associated with the current manager.
@@ -72860,7 +72860,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BillingAccount[] getBillingAccounts() {
       object[] results = this.Invoke("getBillingAccounts", new object[0]);
-      return ((BillingAccount[]) (results[0]));
+      return ((BillingAccount[])(results[0]));
     }
 
     /// <summary>Mutates BudgetOrders, supported operations are: <p><code>ADD</code>: Adds a <a
@@ -72884,7 +72884,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((BudgetOrderReturnValue) (results[0]));
+      return ((BudgetOrderReturnValue)(results[0]));
     }
   }
 
@@ -74089,7 +74089,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((BudgetPage) (results[0]));
+      return ((BudgetPage)(results[0]));
     }
 
     /// <summary>Applies the list of mutate operations.
@@ -74106,7 +74106,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((BudgetReturnValue) (results[0]));
+      return ((BudgetReturnValue)(results[0]));
     }
 
     /// <summary>Returns the list of budgets that match the query.
@@ -74123,7 +74123,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((BudgetPage) (results[0]));
+      return ((BudgetPage)(results[0]));
     }
   }
 
@@ -76137,7 +76137,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     }
 
     /// <summary>Returns a DraftPage that contains a list of Draft objects matching the selector.
-    /// </summary><exception cref='{#link'>ApiException} if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
     /// results.</exception>
     DraftPage get(Selector selector);
 
@@ -76145,12 +76145,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// of Drafts, such as abandoning or promoting Drafts.
     /// </summary><returns>The list of updated Drafts, in the same order as the <code></code>
     /// list.</returns>
-    /// <exception cref='{#link'>ApiException} if problems occurred while processing the
+    /// <exception cref='ApiException'> if problems occurred while processing the
     /// request.</exception>
     DraftReturnValue mutate(DraftOperation[] operations);
 
     /// <summary>Returns a DraftPage that contains a list of Draft objects matching the query.
-    /// </summary><exception cref='{#link'>ApiException} if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
     /// results.</exception>
     DraftPage query(string query1);
   }
@@ -76178,13 +76178,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
 
     /// <summary>Returns a DraftAsyncErrorPage that contains a list of DraftAsyncErrors matching
     /// the selector.
-    /// </summary><exception cref='{#link'>ApiException} if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
     /// results.</exception>
     DraftAsyncErrorPage get(Selector selector);
 
     /// <summary>Returns a DraftAsyncErrorPage that contains a list of DraftAsyncErrors matching
     /// the query.
-    /// </summary><exception cref='{#link'>ApiException} if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
     /// results.</exception>
     DraftAsyncErrorPage query(string query1);
   }
@@ -76279,7 +76279,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 
     /// <summary>Loads a TrialPage containing a list of <a href='Trial'>Trial</a> objects
     /// matching the query.
-    /// </summary><param name='query'>defines which subset of all available trials to return, the
+    /// </summary><param name='query1'>defines which subset of all available trials to return, the
     /// sort order, and which fields to include</param>
     /// <returns>Returns a page of matching trial objects.</returns>
     /// <exception cref='ApiException'>if errors occurred while retrieving the
@@ -76310,13 +76310,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
 
     /// <summary>Returns a TrialAsyncErrorPage that contains a list of TrialAsyncErrors matching
     /// the selector.
-    /// </summary><exception cref='{#link'>ApiException} if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
     /// results.</exception>
     TrialAsyncErrorPage get(Selector selector);
 
     /// <summary>Returns a TrialAsyncErrorPage that contains a list of TrialAsyncError matching
     /// the query.
-    /// </summary><exception cref='{#link'>ApiException} if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
     /// results.</exception>
     TrialAsyncErrorPage query(string query1);
   }
@@ -76464,7 +76464,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     BatchJobReturnValue mutate(BatchJobOperation[] operations);
 
     /// <summary>Returns the list of <code>BatchJob</code>s that match the query.
-    /// </summary><param name='query'>The SQL-like AWQL query string.</param>
+    /// </summary><param name='query1'>The SQL-like AWQL query string.</param>
     /// <returns>The list of selected jobs.</returns>
     /// <exception cref='ApiException'>if problems occur while parsing the query or
     /// fetching batchjob information.</exception>

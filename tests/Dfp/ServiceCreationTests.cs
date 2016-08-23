@@ -33,12 +33,12 @@ namespace Google.Api.Ads.Dfp.Tests {
   /// </summary>
   [TestFixture]
   [Category("Smoke")]
-  public class ServiceCreationTests : BaseTests {
+  public class ServiceCreationTests {
 
     /// <summary>
     /// Default public constructor.
     /// </summary>
-    public ServiceCreationTests() : base() {
+    public ServiceCreationTests() {
     }
 
     /// <summary>
@@ -46,6 +46,7 @@ namespace Google.Api.Ads.Dfp.Tests {
     /// </summary>
     [Test]
     public void TestCreateServices() {
+      DfpUser user = new DfpUser();
       Type dfpServiceType = typeof(DfpService);
 
       Type[] versionTypes = dfpServiceType.GetNestedTypes();

@@ -278,7 +278,7 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="OAuth2"/> class.
+    /// Initializes a new instance of the <see cref="AdsOAuthProvider"/> class.
     /// </summary>
     /// <param name="config">The config.</param>
     public OAuth2ProviderBase(AppConfig config) {
@@ -309,9 +309,8 @@ namespace Google.Api.Ads.Common.Lib {
     public abstract void RefreshAccessToken();
 
     /// <summary>
-    /// Determines whether the access token for a provider is expiring.
+    /// Determines whether the access token for the provider is expiring.
     /// </summary>
-    /// <param name="provider">The provider.</param>
     /// <returns>True if the token is expiring, false otherwise.</returns>
     private bool IsAccessTokenExpiring() {
       if (this.UpdatedOn == DateTime.MinValue) {
@@ -325,7 +324,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// Calls the token endpoint to obtain an access token.
     /// </summary>
     /// <param name="body">The request body.</param>
-    /// <param name="errorMessage">The error message.</param>
     protected void CallTokenEndpoint(string body) {
       WebRequest request = HttpUtilities.BuildRequest(TOKEN_ENDPOINT, "POST", config);
       request.ContentType = "application/x-www-form-urlencoded";
@@ -411,7 +409,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets the RSA sha256 signature for data.
     /// </summary>
-    /// <param name="rsa">The RSA parameters to use for signing.</param>
+    /// <param name="rsaParameters">The RSA parameters to use for signing.</param>
     /// <param name="data">The data for which signature should be calculated.
     /// </param>
     /// <returns>The signature.</returns>

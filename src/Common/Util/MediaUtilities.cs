@@ -84,6 +84,7 @@ namespace Google.Api.Ads.Common.Util {
     /// Retrieves an asset from the web given its url.
     /// </summary>
     /// <param name="assetUrl">The url of the asset to be retrieved.</param>
+    /// <param name="config">The application configuration instance.</param>
     /// <returns>Asset data, as an array of bytes.</returns>
     /// <exception cref="ArgumentNullException">Thrown if
     /// <paramref name="assetUrl"/> or <paramref name="config" /> is null.

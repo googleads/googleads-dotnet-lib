@@ -63,7 +63,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201607
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    ''' </param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Create the query.
       Dim query As String = "SELECT Id, AdNetworkType1, Impressions FROM " & _

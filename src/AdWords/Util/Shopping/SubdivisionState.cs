@@ -15,7 +15,7 @@
 namespace Google.Api.Ads.AdWords.Util.Shopping {
 
   /// <summary>
-  /// NodeState implementation for <see cref="NodeType.SUBDIVISION"/>.
+  /// NodeState implementation for <see cref="F:NodeType.SUBDIVISION"/>.
   /// </summary>
   internal class SubdivisionState : NodeState {
 

@@ -132,7 +132,7 @@ namespace Google.Api.Ads.Common.Util {
     /// <param name="serializer">The serializer to be used for deserializing
     /// the objects.</param>
     /// <returns>The deserialized object.</returns>
-    /// <remarks><paramref name="contentType"/> must be XmlSerializable.
+    /// <remarks><paramref name="contents"/> must be XmlSerializable.
     /// </remarks>
     private static object DeserializeFromXmlText(XmlSerializer serializer, string contents) {
       object retval = null;
@@ -168,7 +168,7 @@ namespace Google.Api.Ads.Common.Util {
     /// </summary>
     /// <param name="objToClone">The object to clone.</param>
     /// <returns>The cloned object.</returns>
-    /// <remarks><paramref name="objToSerialize"/> must be Serializable.
+    /// <remarks><paramref name="objToClone"/> must be Serializable.
     /// </remarks>
     public static object CloneObject(object objToClone) {
       string serializedObject = SerializeAsXmlText(objToClone);

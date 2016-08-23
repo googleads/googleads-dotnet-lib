@@ -26,7 +26,7 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201605 {
   ///
   /// <p>The {@link #compare(ProductDimension, ProductDimension)} method handles
   /// nulls, ordering nulls
-  /// last.
+  /// last.</p>
   /// </summary>
   public class ProductDimensionEqualityComparer : IEqualityComparer<ProductDimension> {
 

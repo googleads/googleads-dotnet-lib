@@ -149,7 +149,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201601
     ''' <summary>
     ''' Hash email address using SHA-256 hashing algorithm.
     ''' </summary>
-    ''' <param name="hashProvider">Provides the algorithm for SHA-256.</param>
+    ''' <param name="digest">Provides the algorithm for SHA-256.</param>
     ''' <param name="email">The email address to hash.</param>
     ''' <returns>Hash email address using SHA-256 hashing algorithm.</returns>
     Private Shared Function ToSha256String(ByVal digest As GeneralDigest, _
