@@ -176,5 +176,14 @@ namespace Google.Api.Ads.AdWords {
                 return ResourceManager.GetString("SignatureIsOfWrongType", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Agent should contain only printable ASCII characters..
+        /// </summary>
+        internal static string UserAgentShouldbeAscii {
+            get {
+                return ResourceManager.GetString("UserAgentShouldbeAscii", resourceCulture);
+            }
+        }
     }
 }

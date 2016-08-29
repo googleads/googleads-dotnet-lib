@@ -66,6 +66,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201603 {
       // Get the DraftService.
       DraftService draftService = (DraftService) user.GetService(
           AdWordsService.v201603.DraftService);
+      // [START createDraft] MOE:strip_line
       Draft draft = new Draft() {
         baseCampaignId = baseCampaignId,
         draftName = "Test Draft #" + ExampleUtilities.GetRandomString()
@@ -75,6 +76,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201603 {
         @operator = Operator.ADD,
         operand = draft
       };
+      // [END createDraft] MOE:strip_line
 
       try {
         draft = draftService.mutate(new DraftOperation[] {draftOperation}).value[0];
@@ -88,7 +90,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201603 {
         CampaignCriterionService campaignCriterionService =
           (CampaignCriterionService) user.GetService(
               AdWordsService.v201603.CampaignCriterionService);
-
+        // [START customizeDraft] MOE:strip_line
         Language language = new Language() {
           id = 1003L // Spanish
         };  
@@ -107,7 +109,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201603 {
 
         campaignCriterion = campaignCriterionService.mutate(
             new CampaignCriterionOperation[] {criterionOperation}).value[0];
-
+        // [END customizeDraft] MOE:strip_line
         Console.WriteLine("Draft updated to include criteria in draft campaign ID {0}.",
             draft.draftCampaignId);
       } catch (Exception e) {

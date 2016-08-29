@@ -289,8 +289,10 @@ namespace Google.Api.Ads.AdWords.Tests.v201607 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     /// <param name="baseCampaignId">The base campaign ID for the draft.</param>
-    /// <returns>The draft ID.</returns>
-    public long AddDraft(AdWordsUser user, long baseCampaignId) {
+    /// <returns>The draft.</returns>
+    /// <remarks>We are returning the Draft itself, since there's no way to get
+    /// the draft campaign ID given a draft ID.</remarks>
+    public Draft AddDraft(AdWordsUser user, long baseCampaignId) {
       // Get the DraftService.
       DraftService draftService = (DraftService) user.GetService(
         AdWordsService.v201607.DraftService);
@@ -304,8 +306,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201607 {
         operand = draft
       };
 
-      draft = draftService.mutate(new DraftOperation[] {draftOperation}).value[0];
-      return draft.draftId;
+      return draftService.mutate(new DraftOperation[] {draftOperation}).value[0];
     }
 
     /// <summary>

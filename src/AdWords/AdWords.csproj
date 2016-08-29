@@ -60,7 +60,6 @@
     <Compile Include="Util\BatchJob\CloudStorageErrorResponse.cs" />
     <Compile Include="Util\BatchJob\v201607\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\v201605\BatchJobUtilities.cs" />
-    <Compile Include="Util\BatchJob\v201601\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\CloudStorageError.cs" />
     <Compile Include="Util\BatchJob\v201603\BatchJobUtilities.cs" />
     <Compile Include="Util\Shopping\v201607\OperationPair.cs" />
@@ -83,15 +82,8 @@
     <Compile Include="Util\Shopping\v201603\ProductPartitionNode.cs" />
     <Compile Include="Util\Shopping\v201603\ProductPartitionNodeAdapter.cs" />
     <Compile Include="Util\Shopping\v201603\ProductPartitionTree.cs" />
-    <Compile Include="Util\v201601\MapUtilities.cs" />
     <Compile Include="Util\Selectors\BaseFields.cs" />
     <Compile Include="Util\Shopping\BiddableUnitState.cs" />
-    <Compile Include="Util\Shopping\v201601\OperationPair.cs" />
-    <Compile Include="Util\Shopping\v201601\ProductDimensionEqualityComparer.cs" />
-    <Compile Include="Util\Shopping\v201601\ProductDimensions.cs" />
-    <Compile Include="Util\Shopping\v201601\ProductPartitionNode.cs" />
-    <Compile Include="Util\Shopping\v201601\ProductPartitionNodeAdapter.cs" />
-    <Compile Include="Util\Shopping\v201601\ProductPartitionTree.cs" />
     <Compile Include="Util\Shopping\ExcludedUnitState.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -123,17 +115,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Util\Selectors\Field.cs" />
-    <Compile Include="v201601\AdWordsApi.cs" />
-    <Compile Include="v201601\AdWordsApi.ProductDimension.cs" />
-    <Compile Include="v201601\AdWordsServiceV201601.cs" />
-    <Compile Include="v201601\ApiError.cs" />
-    <Compile Include="v201601\ApiException.cs" />
-    <Compile Include="v201601\BatchJobApi.cs" />
-    <Compile Include="v201601\FeedValidationErrors.cs" />
-    <Compile Include="v201601\OrderBy.cs" />
-    <Compile Include="v201601\Paging.cs" />
-    <Compile Include="v201601\Predicate.cs" />
-    <Compile Include="v201601\ReportDefinition.cs" />
     <Compile Include="v201603\AdWordsApi.cs" />
     <Compile Include="v201603\AdWordsApi.ProductDimension.cs" />
     <Compile Include="v201603\AdWordsServiceV201603.cs" />

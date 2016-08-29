@@ -98,7 +98,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((AdGroupAdPage)(results[0]));
+      return ((AdGroupAdPage) (results[0]));
     }
 
     /// <summary>Applies the list of mutate operations (ie. add, set, remove): <p>Add - Creates a
@@ -127,7 +127,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupAdReturnValue)(results[0]));
+      return ((AdGroupAdReturnValue) (results[0]));
     }
 
     /// <summary>Adds labels to the AdGroupAd or removes labels from the AdGroupAd. <p>Add -
@@ -154,7 +154,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupAdLabelReturnValue)(results[0]));
+      return ((AdGroupAdLabelReturnValue) (results[0]));
     }
 
     /// <summary>Returns a list of AdGroupAds based on the query.
@@ -171,7 +171,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((AdGroupAdPage)(results[0]));
+      return ((AdGroupAdPage) (results[0]));
     }
 
     /// <summary>Upgrades the url for a set of ads.
@@ -186,7 +186,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((Ad[])(results[0]));
+      return ((Ad[]) (results[0]));
     }
   }
 
@@ -1693,11 +1693,11 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AppUrlOsType {
     /// <summary>The Apple IOS operating system,
     /// </summary>
-    OS_TYPE_IOS,
+    OS_TYPE_IOS = 0,
     /// <summary>The Android operating system.
     /// </summary>
-    OS_TYPE_ANDROID,
-    UNKNOWN,
+    OS_TYPE_ANDROID = 1,
+    UNKNOWN = 2,
   }
 
 
@@ -1927,21 +1927,21 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Ad.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum AdType {
-    DEPRECATED_AD,
-    IMAGE_AD,
-    PRODUCT_AD,
-    TEMPLATE_AD,
-    TEXT_AD,
-    THIRD_PARTY_REDIRECT_AD,
-    DYNAMIC_SEARCH_AD,
-    CALL_ONLY_AD,
-    EXPANDED_TEXT_AD,
-    RESPONSIVE_DISPLAY_AD,
+    DEPRECATED_AD = 0,
+    IMAGE_AD = 1,
+    PRODUCT_AD = 2,
+    TEMPLATE_AD = 3,
+    TEXT_AD = 4,
+    THIRD_PARTY_REDIRECT_AD = 5,
+    DYNAMIC_SEARCH_AD = 6,
+    CALL_ONLY_AD = 7,
+    EXPANDED_TEXT_AD = 9,
+    RESPONSIVE_DISPLAY_AD = 10,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 8,
   }
 
 
@@ -2304,9 +2304,9 @@ namespace Google.Api.Ads.AdWords.v201605 {
       }
     }
 
-    /// <summary>Name of this ad. <span class="constraint Selectable">This field can be selected
-    /// using the value "TemplateAdName".</span> <span class="constraint Required">This
-    /// field is required and should not be <code>null</code>.</span>
+    /// <summary>Name of this ad. <span class="constraint Required">This field is required and
+    /// should not be <code>null</code>.</span> <span class="constraint Selectable">This
+    /// field can be selected using the value "TemplateAdName".</span>
     /// </summary>
     public string name {
       get {
@@ -2753,42 +2753,42 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum TemplateElementFieldType {
     /// <summary>Address field type (text).
     /// </summary>
-    ADDRESS,
+    ADDRESS = 0,
     /// <summary>Audio field type (Media).
     /// </summary>
-    AUDIO,
+    AUDIO = 1,
     /// <summary>Enum field type (text).
     /// </summary>
-    ENUM,
+    ENUM = 2,
     /// <summary>Image field type (Media).
     /// </summary>
-    IMAGE,
+    IMAGE = 3,
     /// <summary>Background Image field type (Media).
     /// </summary>
-    BACKGROUND_IMAGE,
+    BACKGROUND_IMAGE = 4,
     /// <summary>Number field type (text).
     /// </summary>
-    NUMBER,
+    NUMBER = 5,
     /// <summary>Text field type (text).
     /// </summary>
-    TEXT,
+    TEXT = 6,
     /// <summary>URL field type (text).
     /// </summary>
-    URL,
+    URL = 7,
     /// <summary>Video field type (Media).
     /// </summary>
-    VIDEO,
+    VIDEO = 8,
     /// <summary>Visible URL field type (text).
     /// </summary>
-    VISIBLE_URL,
+    VISIBLE_URL = 9,
     /// <summary>A ZIP file containing HTML5 assets.
     /// </summary>
-    MEDIA_BUNDLE,
+    MEDIA_BUNDLE = 10,
     /// <summary>UNKNOWN type can not be passed as input. <span class="constraint Rejected">Used
     /// for return value only. An enumeration could not be processed, typically due to
     /// incompatibility with your WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 11,
   }
 
 
@@ -3160,25 +3160,25 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum MediaMediaType {
     /// <summary>Audio file.
     /// </summary>
-    AUDIO,
+    AUDIO = 0,
     /// <summary>Animated image, such as animated GIF.
     /// </summary>
-    DYNAMIC_IMAGE,
+    DYNAMIC_IMAGE = 1,
     /// <summary>Small image; used for map ad.
     /// </summary>
-    ICON,
+    ICON = 2,
     /// <summary>Static image; for image ad.
     /// </summary>
-    IMAGE,
+    IMAGE = 3,
     /// <summary>Predefined standard icon; used for map ads.
     /// </summary>
-    STANDARD_ICON,
+    STANDARD_ICON = 4,
     /// <summary>Video file.
     /// </summary>
-    VIDEO,
+    VIDEO = 5,
     /// <summary>ZIP file; used in fields of template ads.
     /// </summary>
-    MEDIA_BUNDLE,
+    MEDIA_BUNDLE = 6,
   }
 
 
@@ -3239,16 +3239,16 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum MediaSize {
     /// <summary>Full size of Media.
     /// </summary>
-    FULL,
+    FULL = 0,
     /// <summary>Shunken size of media.
     /// </summary>
-    SHRUNKEN,
+    SHRUNKEN = 1,
     /// <summary>Preview size of media.
     /// </summary>
-    PREVIEW,
+    PREVIEW = 2,
     /// <summary>Video thumbnail size of Media.
     /// </summary>
-    VIDEO_THUMBNAIL,
+    VIDEO_THUMBNAIL = 3,
   }
 
 
@@ -3435,40 +3435,40 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum MediaMimeType {
     /// <summary>MIME type of image/jpeg
     /// </summary>
-    IMAGE_JPEG,
+    IMAGE_JPEG = 0,
     /// <summary>MIME type of image/gif
     /// </summary>
-    IMAGE_GIF,
+    IMAGE_GIF = 1,
     /// <summary>MIME type of image/png
     /// </summary>
-    IMAGE_PNG,
+    IMAGE_PNG = 2,
     /// <summary>MIME type of application/x-shockwave-flash
     /// </summary>
-    FLASH,
+    FLASH = 3,
     /// <summary>MIME type of text/html
     /// </summary>
-    TEXT_HTML,
+    TEXT_HTML = 4,
     /// <summary>MIME type of application/pdf
     /// </summary>
-    PDF,
+    PDF = 5,
     /// <summary>MIME type of application/msword
     /// </summary>
-    MSWORD,
+    MSWORD = 6,
     /// <summary>MIME type of application/vnd.ms-excel
     /// </summary>
-    MSEXCEL,
+    MSEXCEL = 7,
     /// <summary>MIME type of application/rtf
     /// </summary>
-    RTF,
+    RTF = 8,
     /// <summary>MIME type of audio/wav
     /// </summary>
-    AUDIO_WAV,
+    AUDIO_WAV = 9,
     /// <summary>MIME type of audio/mp3
     /// </summary>
-    AUDIO_MP3,
+    AUDIO_MP3 = 10,
     /// <summary>MIME type of application/x-html5-ad-zip
     /// </summary>
-    HTML5_AD_ZIP,
+    HTML5_AD_ZIP = 11,
   }
 
 
@@ -4274,10 +4274,10 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum RichMediaAdRichMediaAdType {
     /// <summary>Standard.
     /// </summary>
-    STANDARD,
+    STANDARD = 0,
     /// <summary>In stream video ad.
     /// </summary>
-    IN_STREAM_VIDEO,
+    IN_STREAM_VIDEO = 1,
   }
 
 
@@ -4291,13 +4291,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>Indicates that the ad supports mouse roll over to expand.
     /// </summary>
-    ROLL_OVER_TO_EXPAND,
+    ROLL_OVER_TO_EXPAND = 1,
     /// <summary>Indicates that the ad supports SSL.
     /// </summary>
-    SSL,
+    SSL = 2,
   }
 
 
@@ -4516,16 +4516,16 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum VideoType {
     /// <summary>The Adobe Flash video format (.swf).
     /// </summary>
-    ADOBE,
+    ADOBE = 0,
     /// <summary>The RealVideo format (.rm or .ram).
     /// </summary>
-    REALPLAYER,
+    REALPLAYER = 1,
     /// <summary>The QuickTime format (.mov).
     /// </summary>
-    QUICKTIME,
+    QUICKTIME = 2,
     /// <summary>The Windows Media format (.wmv).
     /// </summary>
-    WINDOWSMEDIA,
+    WINDOWSMEDIA = 3,
   }
 
 
@@ -4539,31 +4539,31 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// Rejected">Used for return value only. An enumeration could not be processed,
     /// typically due to incompatibility with your WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>The ad is allowed to expand upward.
     /// </summary>
-    EXPANDING_UP,
+    EXPANDING_UP = 1,
     /// <summary>The ad is allowed to expand downward.
     /// </summary>
-    EXPANDING_DOWN,
+    EXPANDING_DOWN = 2,
     /// <summary>The ad is allowed to expand leftward.
     /// </summary>
-    EXPANDING_LEFT,
+    EXPANDING_LEFT = 3,
     /// <summary>The ad is allowed to expand rightward.
     /// </summary>
-    EXPANDING_RIGHT,
+    EXPANDING_RIGHT = 4,
     /// <summary>The ad is allowed to expand toward the up-left corner.
     /// </summary>
-    EXPANDING_UPLEFT,
+    EXPANDING_UPLEFT = 5,
     /// <summary>The ad is allowed to expand toward the up-right corner.
     /// </summary>
-    EXPANDING_UPRIGHT,
+    EXPANDING_UPRIGHT = 6,
     /// <summary>The ad is allowed to expand toward the down-left corner.
     /// </summary>
-    EXPANDING_DOWNLEFT,
+    EXPANDING_DOWNLEFT = 7,
     /// <summary>The ad is allowed to expand toward the down-right corner.
     /// </summary>
-    EXPANDING_DOWNRIGHT,
+    EXPANDING_DOWNRIGHT = 8,
   }
 
 
@@ -4594,8 +4594,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
 
     /// <summary>Marketing image to be used in the ad. This ad format does not allow the creation
     /// of an image using the Image.data field. An image must first be created using the
-    /// MediaService, and Image.mediaId must be populated when creating an <a
-    /// href='"EnhancedDisplayAd"'>"EnhancedDisplayAd"</a>. <span class="constraint
+    /// MediaService, and Image.mediaId must be populated when creating a <a
+    /// href='"ResponsiveDisplayAd"'>"ResponsiveDisplayAd"</a>. <span class="constraint
     /// Required">This field is required and should not be <code>null</code> when it is
     /// contained within <a href='Operator'>Operator</a>s : ADD.</span>
     /// </summary>
@@ -4610,8 +4610,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
 
     /// <summary>Logo image to be used in the ad. This ad format does not allow the creation of
     /// an image using the Image.data field. An image must first be created using the
-    /// MediaService, and Image.mediaId must be populated when creating an <a
-    /// href='"EnhancedDisplayAd"'>"EnhancedDisplayAd"</a>.
+    /// MediaService, and Image.mediaId must be populated when creating a <a
+    /// href='"ResponsiveDisplayAd"'>"ResponsiveDisplayAd"</a>.
     /// </summary>
     public Image logoImage {
       get {
@@ -4935,7 +4935,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <summary>First part of the headline. <span class="constraint Selectable">This field can
     /// be selected using the value "HeadlinePart1".</span><span class="constraint
     /// Filterable">This field can be filtered on.</span> <span class="constraint
-    /// Required">This field is required and should not be <code>null</code>.</span>
+    /// Required">This field is required and should not be <code>null</code> when it is
+    /// contained within <a href='Operator'>Operator</a>s : ADD.</span>
     /// </summary>
     public string headlinePart1 {
       get {
@@ -4949,7 +4950,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <summary>Second part of the headline. <span class="constraint Selectable">This field can
     /// be selected using the value "HeadlinePart2".</span><span class="constraint
     /// Filterable">This field can be filtered on.</span> <span class="constraint
-    /// Required">This field is required and should not be <code>null</code>.</span>
+    /// Required">This field is required and should not be <code>null</code> when it is
+    /// contained within <a href='Operator'>Operator</a>s : ADD.</span>
     /// </summary>
     public string headlinePart2 {
       get {
@@ -4963,7 +4965,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <summary>The descriptive text of the ad. <span class="constraint Selectable">This field
     /// can be selected using the value "Description".</span><span class="constraint
     /// Filterable">This field can be filtered on.</span> <span class="constraint
-    /// Required">This field is required and should not be <code>null</code>.</span>
+    /// Required">This field is required and should not be <code>null</code> when it is
+    /// contained within <a href='Operator'>Operator</a>s : ADD.</span>
     /// </summary>
     public string description {
       get {
@@ -5197,50 +5200,50 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum DeprecatedAdType {
     /// <summary>Video ad.
     /// </summary>
-    VIDEO,
+    VIDEO = 0,
     /// <summary>Click to call ad.
     /// </summary>
-    CLICK_TO_CALL,
+    CLICK_TO_CALL = 1,
     /// <summary>Instream video ad.
     /// </summary>
-    IN_STREAM_VIDEO,
+    IN_STREAM_VIDEO = 2,
     /// <summary>Froogle ad.
     /// </summary>
-    FROOGLE,
+    FROOGLE = 3,
     /// <summary>Text link ad.
     /// </summary>
-    TEXT_LINK,
+    TEXT_LINK = 4,
     /// <summary>Gadget ad.
     /// </summary>
-    GADGET,
+    GADGET = 5,
     /// <summary>Print ad.
     /// </summary>
-    PRINT,
+    PRINT = 6,
     /// <summary>Wide text ad.
     /// </summary>
-    TEXT_WIDE,
+    TEXT_WIDE = 7,
     /// <summary>Gadget template ad.
     /// </summary>
-    GADGET_TEMPLATE,
+    GADGET_TEMPLATE = 8,
     /// <summary>Text ad with video.
     /// </summary>
-    TEXT_WITH_VIDEO,
+    TEXT_WITH_VIDEO = 9,
     /// <summary>Audio ad.
     /// </summary>
-    AUDIO,
+    AUDIO = 10,
     /// <summary>Local business ads.
     /// </summary>
-    LOCAL_BUSINESS_AD,
+    LOCAL_BUSINESS_AD = 11,
     /// <summary>Audio based template ads.
     /// </summary>
-    AUDIO_TEMPLATE,
+    AUDIO_TEMPLATE = 12,
     /// <summary>Mobile ads
     /// </summary>
-    MOBILE_AD,
+    MOBILE_AD = 13,
     /// <summary>Mobile image ads
     /// </summary>
-    MOBILE_IMAGE_AD,
-    UNKNOWN,
+    MOBILE_IMAGE_AD = 14,
+    UNKNOWN = 15,
   }
 
 
@@ -5721,20 +5724,20 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ExperimentDeltaStatus {
     /// <summary>The entity is added only to the Experiment split.
     /// </summary>
-    EXPERIMENT_ONLY,
+    EXPERIMENT_ONLY = 0,
     /// <summary>The entity is present in the Control split and is modified in the Experiment
     /// split.
     /// </summary>
-    MODIFIED,
+    MODIFIED = 1,
     /// <summary>The entity is present only in the Control split - it is suppressed from the
     /// Experiment split.
     /// </summary>
-    CONTROL_ONLY,
+    CONTROL_ONLY = 2,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 3,
   }
 
 
@@ -5746,15 +5749,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ExperimentDataStatus {
     /// <summary>The experimental changes to the entity are active.
     /// </summary>
-    ENABLED,
+    ENABLED = 0,
     /// <summary>The experimental changes to the entity are no longer active.
     /// </summary>
-    REMOVED,
+    REMOVED = 1,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -5766,13 +5769,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AdGroupAdStatus {
     /// <summary>Enabled.
     /// </summary>
-    ENABLED,
+    ENABLED = 0,
     /// <summary>Paused.
     /// </summary>
-    PAUSED,
+    PAUSED = 1,
     /// <summary>Disabled.
     /// </summary>
-    DISABLED,
+    DISABLED = 2,
   }
 
 
@@ -5784,23 +5787,23 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AdGroupAdApprovalStatus {
     /// <summary>Approved
     /// </summary>
-    APPROVED,
+    APPROVED = 0,
     /// <summary>Disapproved
     /// </summary>
-    DISAPPROVED,
+    DISAPPROVED = 1,
     /// <summary>Approved - family safe
     /// </summary>
-    FAMILY_SAFE,
+    FAMILY_SAFE = 2,
     /// <summary>Approved - non-family safe
     /// </summary>
-    NON_FAMILY_SAFE,
+    NON_FAMILY_SAFE = 3,
     /// <summary>Approved - adult content
     /// </summary>
-    PORN,
+    PORN = 4,
     /// <summary>Pending review
     /// </summary>
-    UNCHECKED,
-    UNKNOWN,
+    UNCHECKED = 5,
+    UNKNOWN = 6,
   }
 
 
@@ -5996,15 +5999,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum LabelStatus {
     /// <summary>The label is enabled.
     /// </summary>
-    ENABLED,
+    ENABLED = 0,
     /// <summary>The label has been removed.
     /// </summary>
-    REMOVED,
+    REMOVED = 1,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -6709,13 +6712,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum Operator {
     /// <summary>The ADD operator.
     /// </summary>
-    ADD,
+    ADD = 0,
     /// <summary>The REMOVE operator.
     /// </summary>
-    REMOVE,
+    REMOVE = 1,
     /// <summary>The SET operator (used for updates).
     /// </summary>
-    SET,
+    SET = 2,
   }
 
 
@@ -7265,8 +7268,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum SortOrder {
-    ASCENDING,
-    DESCENDING,
+    ASCENDING = 0,
+    DESCENDING = 1,
   }
 
 
@@ -7442,78 +7445,78 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <summary>Checks if the field is equal to the given value. <p>This operator is used with
     /// integers, dates, booleans, strings, enums, and sets.</p>
     /// </summary>
-    EQUALS,
+    EQUALS = 0,
     /// <summary>Checks if the field does not equal the given value. <p>This operator is used
     /// with integers, booleans, strings, enums, and sets.</p>
     /// </summary>
-    NOT_EQUALS,
+    NOT_EQUALS = 1,
     /// <summary>Checks if the field is equal to one of the given values. <p>This operator
     /// accepts multiple operands and is used with integers, booleans, strings, and
     /// enums.</p>
     /// </summary>
-    IN,
+    IN = 2,
     /// <summary>Checks if the field does not equal any of the given values. <p>This operator
     /// accepts multiple operands and is used with integers, booleans, strings, and
     /// enums.</p>
     /// </summary>
-    NOT_IN,
+    NOT_IN = 3,
     /// <summary>Checks if the field is greater than the given value. <p>This operator is used
     /// with numbers and dates.</p>
     /// </summary>
-    GREATER_THAN,
+    GREATER_THAN = 4,
     /// <summary>Checks if the field is greater or equal to the given value. <p>This operator is
     /// used with numbers and dates.</p>
     /// </summary>
-    GREATER_THAN_EQUALS,
+    GREATER_THAN_EQUALS = 5,
     /// <summary>Checks if the field is less than the given value. <p>This operator is used with
     /// numbers and dates.</p>
     /// </summary>
-    LESS_THAN,
+    LESS_THAN = 6,
     /// <summary>Checks if the field is less or equal to than the given value. <p>This operator
     /// is used with numbers and dates.</p>
     /// </summary>
-    LESS_THAN_EQUALS,
+    LESS_THAN_EQUALS = 7,
     /// <summary>Checks if the field starts with the given value. <p>This operator is used with
     /// strings.</p>
     /// </summary>
-    STARTS_WITH,
+    STARTS_WITH = 8,
     /// <summary>Checks if the field starts with the given value, ignoring case. <p>This operator
     /// is used with strings.</p>
     /// </summary>
-    STARTS_WITH_IGNORE_CASE,
+    STARTS_WITH_IGNORE_CASE = 9,
     /// <summary>Checks if the field contains the given value as a substring. <p>This operator is
     /// used with strings.</p>
     /// </summary>
-    CONTAINS,
+    CONTAINS = 10,
     /// <summary>Checks if the field contains the given value as a substring, ignoring case.
     /// <p>This operator is used with strings.</p>
     /// </summary>
-    CONTAINS_IGNORE_CASE,
+    CONTAINS_IGNORE_CASE = 11,
     /// <summary>Checks if the field does not contain the given value as a substring. <p>This
     /// operator is used with strings.</p>
     /// </summary>
-    DOES_NOT_CONTAIN,
+    DOES_NOT_CONTAIN = 12,
     /// <summary>Checks if the field does not contain the given value as a substring, ignoring
     /// case. <p>This operator is used with strings.</p>
     /// </summary>
-    DOES_NOT_CONTAIN_IGNORE_CASE,
+    DOES_NOT_CONTAIN_IGNORE_CASE = 13,
     /// <summary>Checks if the field contains <em>any</em> of the given values. <p>This operator
     /// accepts multiple values and is used on sets of numbers or strings.</p>
     /// </summary>
-    CONTAINS_ANY,
+    CONTAINS_ANY = 14,
     /// <summary>Checks if the field contains <em>all</em> of the given values. <p>This operator
     /// accepts multiple values and is used on sets of numbers or strings.</p>
     /// </summary>
-    CONTAINS_ALL,
+    CONTAINS_ALL = 15,
     /// <summary>Checks if the field contains <em>none</em> of the given values. <p>This operator
     /// accepts multiple values and is used on sets of numbers or strings.</p>
     /// </summary>
-    CONTAINS_NONE,
+    CONTAINS_NONE = 16,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 17,
   }
 
 
@@ -7903,153 +7906,153 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum UrlErrorReason {
     /// <summary>The tracking url template is invalid.
     /// </summary>
-    INVALID_TRACKING_URL_TEMPLATE,
+    INVALID_TRACKING_URL_TEMPLATE = 0,
     /// <summary>The tracking url template contains invalid tag.
     /// </summary>
-    INVALID_TAG_IN_TRACKING_URL_TEMPLATE,
+    INVALID_TAG_IN_TRACKING_URL_TEMPLATE = 1,
     /// <summary>The tracking url template must contain at least one tag (e.g. {lpurl}), This
     /// applies only to tracking url template associated with website ads or product
     /// ads.
     /// </summary>
-    MISSING_TRACKING_URL_TEMPLATE_TAG,
+    MISSING_TRACKING_URL_TEMPLATE_TAG = 2,
     /// <summary>The tracking url template must start with a valid protocol (or lpurl tag).
     /// </summary>
-    MISSING_PROTOCOL_IN_TRACKING_URL_TEMPLATE,
+    MISSING_PROTOCOL_IN_TRACKING_URL_TEMPLATE = 3,
     /// <summary>The tracking url template starts with an invalid protocol.
     /// </summary>
-    INVALID_PROTOCOL_IN_TRACKING_URL_TEMPLATE,
+    INVALID_PROTOCOL_IN_TRACKING_URL_TEMPLATE = 4,
     /// <summary>The tracking url template contains illegal characters.
     /// </summary>
-    MALFORMED_TRACKING_URL_TEMPLATE,
+    MALFORMED_TRACKING_URL_TEMPLATE = 5,
     /// <summary>The tracking url template must contain a host name (or lpurl tag).
     /// </summary>
-    MISSING_HOST_IN_TRACKING_URL_TEMPLATE,
+    MISSING_HOST_IN_TRACKING_URL_TEMPLATE = 6,
     /// <summary>The tracking url template has an invalid or missing top level domain extension.
     /// </summary>
-    INVALID_TLD_IN_TRACKING_URL_TEMPLATE,
+    INVALID_TLD_IN_TRACKING_URL_TEMPLATE = 7,
     /// <summary>The tracking url template contains nested occurrences of the same conditional
     /// tag (i.e. {ifmobile:{ifmobile:x}}).
     /// </summary>
-    REDUNDANT_NESTED_TRACKING_URL_TEMPLATE_TAG,
+    REDUNDANT_NESTED_TRACKING_URL_TEMPLATE_TAG = 8,
     /// <summary>The final url is invalid.
     /// </summary>
-    INVALID_FINAL_URL,
+    INVALID_FINAL_URL = 9,
     /// <summary>The final url contains invalid tag.
     /// </summary>
-    INVALID_TAG_IN_FINAL_URL,
+    INVALID_TAG_IN_FINAL_URL = 10,
     /// <summary>The final url contains nested occurrences of the same conditional tag (i.e.
     /// {ifmobile:{ifmobile:x}}).
     /// </summary>
-    REDUNDANT_NESTED_FINAL_URL_TAG,
+    REDUNDANT_NESTED_FINAL_URL_TAG = 11,
     /// <summary>The final url must start with a valid protocol.
     /// </summary>
-    MISSING_PROTOCOL_IN_FINAL_URL,
+    MISSING_PROTOCOL_IN_FINAL_URL = 12,
     /// <summary>The final url starts with an invalid protocol.
     /// </summary>
-    INVALID_PROTOCOL_IN_FINAL_URL,
+    INVALID_PROTOCOL_IN_FINAL_URL = 13,
     /// <summary>The final url contains illegal characters.
     /// </summary>
-    MALFORMED_FINAL_URL,
+    MALFORMED_FINAL_URL = 14,
     /// <summary>The final url must contain a host name.
     /// </summary>
-    MISSING_HOST_IN_FINAL_URL,
+    MISSING_HOST_IN_FINAL_URL = 15,
     /// <summary>The tracking url template has an invalid or missing top level domain extension.
     /// </summary>
-    INVALID_TLD_IN_FINAL_URL,
+    INVALID_TLD_IN_FINAL_URL = 16,
     /// <summary>The final mobile url is invalid.
     /// </summary>
-    INVALID_FINAL_MOBILE_URL,
+    INVALID_FINAL_MOBILE_URL = 17,
     /// <summary>The final mobile url contains invalid tag.
     /// </summary>
-    INVALID_TAG_IN_FINAL_MOBILE_URL,
+    INVALID_TAG_IN_FINAL_MOBILE_URL = 18,
     /// <summary>The final mobile url contains nested occurrences of the same conditional tag
     /// (i.e. {ifmobile:{ifmobile:x}}).
     /// </summary>
-    REDUNDANT_NESTED_FINAL_MOBILE_URL_TAG,
+    REDUNDANT_NESTED_FINAL_MOBILE_URL_TAG = 19,
     /// <summary>The final mobile url must start with a valid protocol.
     /// </summary>
-    MISSING_PROTOCOL_IN_FINAL_MOBILE_URL,
+    MISSING_PROTOCOL_IN_FINAL_MOBILE_URL = 20,
     /// <summary>The final mobile url starts with an invalid protocol.
     /// </summary>
-    INVALID_PROTOCOL_IN_FINAL_MOBILE_URL,
+    INVALID_PROTOCOL_IN_FINAL_MOBILE_URL = 21,
     /// <summary>The final mobile url contains illegal characters.
     /// </summary>
-    MALFORMED_FINAL_MOBILE_URL,
+    MALFORMED_FINAL_MOBILE_URL = 22,
     /// <summary>The final mobile url must contain a host name.
     /// </summary>
-    MISSING_HOST_IN_FINAL_MOBILE_URL,
+    MISSING_HOST_IN_FINAL_MOBILE_URL = 23,
     /// <summary>The tracking url template has an invalid or missing top level domain extension.
     /// </summary>
-    INVALID_TLD_IN_FINAL_MOBILE_URL,
+    INVALID_TLD_IN_FINAL_MOBILE_URL = 24,
     /// <summary>The final app url is invalid.
     /// </summary>
-    INVALID_FINAL_APP_URL,
+    INVALID_FINAL_APP_URL = 25,
     /// <summary>The final app url contains invalid tag.
     /// </summary>
-    INVALID_TAG_IN_FINAL_APP_URL,
+    INVALID_TAG_IN_FINAL_APP_URL = 26,
     /// <summary>The final app url contains nested occurrences of the same conditional tag (i.e.
     /// {ifmobile:{ifmobile:x}}).
     /// </summary>
-    REDUNDANT_NESTED_FINAL_APP_URL_TAG,
+    REDUNDANT_NESTED_FINAL_APP_URL_TAG = 27,
     /// <summary>More than one app url found for the same OS type.
     /// </summary>
-    MULTIPLE_APP_URLS_FOR_OSTYPE,
+    MULTIPLE_APP_URLS_FOR_OSTYPE = 28,
     /// <summary>The OS type given for an app url is not valid.
     /// </summary>
-    INVALID_OSTYPE,
+    INVALID_OSTYPE = 29,
     /// <summary>The protocol given for an app url is not valid. (E.g. "android-app://")
     /// </summary>
-    INVALID_PROTOCOL_FOR_APP_URL,
+    INVALID_PROTOCOL_FOR_APP_URL = 30,
     /// <summary>The package id (app id) given for an app url is not valid.
     /// </summary>
-    INVALID_PACKAGE_ID_FOR_APP_URL,
+    INVALID_PACKAGE_ID_FOR_APP_URL = 31,
     /// <summary>The number of url custom parameters for an entity exceeds the maximum limit
     /// allowed.
     /// </summary>
-    URL_CUSTOM_PARAMETERS_COUNT_EXCEEDS_LIMIT,
+    URL_CUSTOM_PARAMETERS_COUNT_EXCEEDS_LIMIT = 32,
     /// <summary>The parameter has isRemove set to true but a value that is non-null.
     /// </summary>
-    URL_CUSTOM_PARAMETER_REMOVAL_WITH_NON_NULL_VALUE,
+    URL_CUSTOM_PARAMETER_REMOVAL_WITH_NON_NULL_VALUE = 33,
     /// <summary>For add operations, there will not be any existing parameters to delete.
     /// </summary>
-    CANNOT_REMOVE_URL_CUSTOM_PARAMETER_IN_ADD_OPERATION,
+    CANNOT_REMOVE_URL_CUSTOM_PARAMETER_IN_ADD_OPERATION = 34,
     /// <summary>When the doReplace flag is set to true, individual parameters cannot be deleted.
     /// </summary>
-    CANNOT_REMOVE_URL_CUSTOM_PARAMETER_DURING_FULL_REPLACEMENT,
+    CANNOT_REMOVE_URL_CUSTOM_PARAMETER_DURING_FULL_REPLACEMENT = 35,
     /// <summary>For ADD operations and when the doReplace flag is set to true, custom parameter
     /// values cannot be null.
     /// </summary>
-    NULL_CUSTOM_PARAMETER_VALUE_DURING_ADD_OR_FULL_REPLACEMENT,
+    NULL_CUSTOM_PARAMETER_VALUE_DURING_ADD_OR_FULL_REPLACEMENT = 36,
     /// <summary>An invalid character appears in the parameter key.
     /// </summary>
-    INVALID_CHARACTERS_IN_URL_CUSTOM_PARAMETER_KEY,
+    INVALID_CHARACTERS_IN_URL_CUSTOM_PARAMETER_KEY = 37,
     /// <summary>An invalid character appears in the parameter value.
     /// </summary>
-    INVALID_CHARACTERS_IN_URL_CUSTOM_PARAMETER_VALUE,
+    INVALID_CHARACTERS_IN_URL_CUSTOM_PARAMETER_VALUE = 38,
     /// <summary>The url custom parameter value fails url tag validation.
     /// </summary>
-    INVALID_TAG_IN_URL_CUSTOM_PARAMETER_VALUE,
+    INVALID_TAG_IN_URL_CUSTOM_PARAMETER_VALUE = 39,
     /// <summary>The custom parameter contains nested occurrences of the same conditional tag
     /// (i.e. {ifmobile:{ifmobile:x}}).
     /// </summary>
-    REDUNDANT_NESTED_URL_CUSTOM_PARAMETER_TAG,
+    REDUNDANT_NESTED_URL_CUSTOM_PARAMETER_TAG = 40,
     /// <summary>The protocol (http:// or https://) is missing.
     /// </summary>
-    MISSING_PROTOCOL,
+    MISSING_PROTOCOL = 41,
     /// <summary>The url is invalid.
     /// </summary>
-    INVALID_URL,
+    INVALID_URL = 42,
     /// <summary>Destination Url is deprecated.
     /// </summary>
-    DESTINATION_URL_DEPRECATED,
+    DESTINATION_URL_DEPRECATED = 43,
     /// <summary>The url contains invalid tag.
     /// </summary>
-    INVALID_TAG_IN_URL,
+    INVALID_TAG_IN_URL = 44,
     /// <summary>The url must contain at least one tag (e.g. {lpurl}), This applies only to urls
     /// associated with website ads or product ads.
     /// </summary>
-    MISSING_URL_TAG,
-    URL_ERROR,
+    MISSING_URL_TAG = 45,
+    URL_ERROR = 46,
   }
 
 
@@ -8144,8 +8147,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StringLengthError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum StringLengthErrorReason {
-    TOO_SHORT,
-    TOO_LONG,
+    TOO_SHORT = 0,
+    TOO_LONG = 1,
   }
 
 
@@ -8192,13 +8195,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "StringFormatError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum StringFormatErrorReason {
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>The input string value contains disallowed characters.
     /// </summary>
-    ILLEGAL_CHARS,
+    ILLEGAL_CHARS = 1,
     /// <summary>The input string value is invalid for the associated field.
     /// </summary>
-    INVALID_FORMAT,
+    INVALID_FORMAT = 2,
   }
 
 
@@ -8295,7 +8298,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum StatsQueryErrorReason {
     /// <summary>Date is outside of allowed range.
     /// </summary>
-    DATE_NOT_IN_VALID_RANGE,
+    DATE_NOT_IN_VALID_RANGE = 0,
   }
 
 
@@ -8393,18 +8396,18 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum SizeLimitErrorReason {
     /// <summary>The number of entries in the request exceeds the system limit.
     /// </summary>
-    REQUEST_SIZE_LIMIT_EXCEEDED,
+    REQUEST_SIZE_LIMIT_EXCEEDED = 0,
     /// <summary>The number of entries in the response exceeds the system limit.
     /// </summary>
-    RESPONSE_SIZE_LIMIT_EXCEEDED,
+    RESPONSE_SIZE_LIMIT_EXCEEDED = 1,
     /// <summary>The account is too large to load.
     /// </summary>
-    INTERNAL_STORAGE_ERROR,
+    INTERNAL_STORAGE_ERROR = 2,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 3,
   }
 
 
@@ -8501,59 +8504,59 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum SelectorErrorReason {
     /// <summary>The field name is not valid.
     /// </summary>
-    INVALID_FIELD_NAME,
+    INVALID_FIELD_NAME = 0,
     /// <summary>The list of fields is null or empty.
     /// </summary>
-    MISSING_FIELDS,
+    MISSING_FIELDS = 1,
     /// <summary>The list of predicates is null or empty.
     /// </summary>
-    MISSING_PREDICATES,
+    MISSING_PREDICATES = 2,
     /// <summary>Predicate operator does not support multiple values. Multiple values are
     /// supported only for <a href='Predicate.Operator#IN'>Predicate.Operator#IN</a> and
     /// <a href='Predicate.Operator#NOT_IN'>Predicate.Operator#NOT_IN</a>.
     /// </summary>
-    OPERATOR_DOES_NOT_SUPPORT_MULTIPLE_VALUES,
+    OPERATOR_DOES_NOT_SUPPORT_MULTIPLE_VALUES = 3,
     /// <summary>The predicate enum value is not valid.
     /// </summary>
-    INVALID_PREDICATE_ENUM_VALUE,
+    INVALID_PREDICATE_ENUM_VALUE = 4,
     /// <summary>The predicate operator is empty.
     /// </summary>
-    MISSING_PREDICATE_OPERATOR,
+    MISSING_PREDICATE_OPERATOR = 5,
     /// <summary>The predicate values are empty.
     /// </summary>
-    MISSING_PREDICATE_VALUES,
+    MISSING_PREDICATE_VALUES = 6,
     /// <summary>The predicate field name is not valid.
     /// </summary>
-    INVALID_PREDICATE_FIELD_NAME,
+    INVALID_PREDICATE_FIELD_NAME = 7,
     /// <summary>The predicate operator is not valid.
     /// </summary>
-    INVALID_PREDICATE_OPERATOR,
+    INVALID_PREDICATE_OPERATOR = 8,
     /// <summary>Invalid selection of fields.
     /// </summary>
-    INVALID_FIELD_SELECTION,
+    INVALID_FIELD_SELECTION = 9,
     /// <summary>The predicate value is not valid.
     /// </summary>
-    INVALID_PREDICATE_VALUE,
+    INVALID_PREDICATE_VALUE = 10,
     /// <summary>The sort field name is not valid or the field is not sortable.
     /// </summary>
-    INVALID_SORT_FIELD_NAME,
+    INVALID_SORT_FIELD_NAME = 11,
     /// <summary>Standard error.
     /// </summary>
-    SELECTOR_ERROR,
+    SELECTOR_ERROR = 12,
     /// <summary>Filtering by date range is not supported.
     /// </summary>
-    FILTER_BY_DATE_RANGE_NOT_SUPPORTED,
+    FILTER_BY_DATE_RANGE_NOT_SUPPORTED = 13,
     /// <summary>Selector paging start index is too high.
     /// </summary>
-    START_INDEX_IS_TOO_HIGH,
+    START_INDEX_IS_TOO_HIGH = 14,
     /// <summary>The values list in a predicate was too long.
     /// </summary>
-    TOO_MANY_PREDICATE_VALUES,
+    TOO_MANY_PREDICATE_VALUES = 15,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN_ERROR,
+    UNKNOWN_ERROR = 16,
   }
 
 
@@ -8650,7 +8653,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum RequiredErrorReason {
     /// <summary>Missing required field.
     /// </summary>
-    REQUIRED,
+    REQUIRED = 0,
   }
 
 
@@ -8697,14 +8700,14 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum RequestErrorReason {
     /// <summary>Error reason is unknown.
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>Invalid input.
     /// </summary>
-    INVALID_INPUT,
+    INVALID_INPUT = 1,
     /// <summary>The api version in the request has been discontinued. Please update to the new
     /// AdWords API version.
     /// </summary>
-    UNSUPPORTED_VERSION,
+    UNSUPPORTED_VERSION = 2,
   }
 
 
@@ -8801,7 +8804,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum RejectedErrorReason {
     /// <summary>Unknown value encountered
     /// </summary>
-    UNKNOWN_VALUE,
+    UNKNOWN_VALUE = 0,
   }
 
 
@@ -8896,7 +8899,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReadOnlyError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum ReadOnlyErrorReason {
-    READ_ONLY,
+    READ_ONLY = 0,
   }
 
 
@@ -9049,7 +9052,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum RateExceededErrorReason {
     /// <summary>Rate exceeded.
     /// </summary>
-    RATE_EXCEEDED,
+    RATE_EXCEEDED = 0,
   }
 
 
@@ -9144,8 +9147,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RangeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum RangeErrorReason {
-    TOO_LOW,
-    TOO_HIGH,
+    TOO_LOW = 0,
+    TOO_HIGH = 1,
   }
 
 
@@ -9195,32 +9198,32 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum QuotaCheckErrorReason {
     /// <summary>Customer passed in an invalid token in the header.
     /// </summary>
-    INVALID_TOKEN_HEADER,
+    INVALID_TOKEN_HEADER = 0,
     /// <summary>Customer is marked delinquent.
     /// </summary>
-    ACCOUNT_DELINQUENT,
+    ACCOUNT_DELINQUENT = 1,
     /// <summary>Customer is a fraudulent.
     /// </summary>
-    ACCOUNT_INACCESSIBLE,
+    ACCOUNT_INACCESSIBLE = 2,
     /// <summary>Inactive Account.
     /// </summary>
-    ACCOUNT_INACTIVE,
+    ACCOUNT_INACTIVE = 3,
     /// <summary>Signup not complete
     /// </summary>
-    INCOMPLETE_SIGNUP,
+    INCOMPLETE_SIGNUP = 4,
     /// <summary>Developer token is not approved for production access, and the customer is
     /// attempting to access a production account.
     /// </summary>
-    DEVELOPER_TOKEN_NOT_APPROVED,
+    DEVELOPER_TOKEN_NOT_APPROVED = 5,
     /// <summary>Terms and conditions are not signed.
     /// </summary>
-    TERMS_AND_CONDITIONS_NOT_SIGNED,
+    TERMS_AND_CONDITIONS_NOT_SIGNED = 6,
     /// <summary>Monthly budget quota reached.
     /// </summary>
-    MONTHLY_BUDGET_REACHED,
+    MONTHLY_BUDGET_REACHED = 7,
     /// <summary>Monthly budget quota exceeded.
     /// </summary>
-    QUOTA_EXCEEDED,
+    QUOTA_EXCEEDED = 8,
   }
 
 
@@ -9281,55 +9284,55 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <summary>Exception that happens when trying to parse a query that doesn't match the AWQL
     /// grammar.
     /// </summary>
-    PARSING_FAILED,
+    PARSING_FAILED = 0,
     /// <summary>The provided query is an empty string.
     /// </summary>
-    MISSING_QUERY,
+    MISSING_QUERY = 1,
     /// <summary>The query does not contain the required SELECT clause or it is not in the
     /// correct location.
     /// </summary>
-    MISSING_SELECT_CLAUSE,
+    MISSING_SELECT_CLAUSE = 2,
     /// <summary>The query does not contain the required FROM clause or it is not in the correct
     /// location.
     /// </summary>
-    MISSING_FROM_CLAUSE,
+    MISSING_FROM_CLAUSE = 3,
     /// <summary>The SELECT clause could not be parsed.
     /// </summary>
-    INVALID_SELECT_CLAUSE,
+    INVALID_SELECT_CLAUSE = 4,
     /// <summary>The FROM clause could not be parsed.
     /// </summary>
-    INVALID_FROM_CLAUSE,
+    INVALID_FROM_CLAUSE = 5,
     /// <summary>The WHERE clause could not be parsed.
     /// </summary>
-    INVALID_WHERE_CLAUSE,
+    INVALID_WHERE_CLAUSE = 6,
     /// <summary>The ORDER BY clause could not be parsed.
     /// </summary>
-    INVALID_ORDER_BY_CLAUSE,
+    INVALID_ORDER_BY_CLAUSE = 7,
     /// <summary>The LIMIT clause could not be parsed.
     /// </summary>
-    INVALID_LIMIT_CLAUSE,
+    INVALID_LIMIT_CLAUSE = 8,
     /// <summary>The startIndex in the LIMIT clause does not contain a valid integer.
     /// </summary>
-    INVALID_START_INDEX_IN_LIMIT_CLAUSE,
+    INVALID_START_INDEX_IN_LIMIT_CLAUSE = 9,
     /// <summary>The pageSize in the LIMIT clause does not contain a valid integer.
     /// </summary>
-    INVALID_PAGE_SIZE_IN_LIMIT_CLAUSE,
+    INVALID_PAGE_SIZE_IN_LIMIT_CLAUSE = 10,
     /// <summary>The DURING clause could not be parsed.
     /// </summary>
-    INVALID_DURING_CLAUSE,
+    INVALID_DURING_CLAUSE = 11,
     /// <summary>The minimum date in the DURING clause is not a valid date in YYYYMMDD format.
     /// </summary>
-    INVALID_MIN_DATE_IN_DURING_CLAUSE,
+    INVALID_MIN_DATE_IN_DURING_CLAUSE = 12,
     /// <summary>The maximum date in the DURING clause is not a valid date in YYYYMMDD format.
     /// </summary>
-    INVALID_MAX_DATE_IN_DURING_CLAUSE,
+    INVALID_MAX_DATE_IN_DURING_CLAUSE = 13,
     /// <summary>The minimum date in the DURING is after the maximum date.
     /// </summary>
-    MAX_LESS_THAN_MIN_IN_DURING_CLAUSE,
+    MAX_LESS_THAN_MIN_IN_DURING_CLAUSE = 14,
     /// <summary>The query matched the grammar, but is invalid in some way such as using a
     /// service that isn't supported.
     /// </summary>
-    VALIDATION_FAILED,
+    VALIDATION_FAILED = 15,
   }
 
 
@@ -9586,15 +9589,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum PagingErrorReason {
     /// <summary>The start index value cannot be a negative number.
     /// </summary>
-    START_INDEX_CANNOT_BE_NEGATIVE,
+    START_INDEX_CANNOT_BE_NEGATIVE = 0,
     /// <summary>The number of results cannot be a negative number.
     /// </summary>
-    NUMBER_OF_RESULTS_CANNOT_BE_NEGATIVE,
+    NUMBER_OF_RESULTS_CANNOT_BE_NEGATIVE = 1,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -9689,7 +9692,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OperatorError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum OperatorErrorReason {
-    OPERATOR_NOT_SUPPORTED,
+    OPERATOR_NOT_SUPPORTED = 0,
   }
 
 
@@ -9738,32 +9741,32 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum OperationAccessDeniedReason {
     /// <summary>Unauthorized invocation of a service's method (get, mutate, etc.)
     /// </summary>
-    ACTION_NOT_PERMITTED,
+    ACTION_NOT_PERMITTED = 0,
     /// <summary>Unauthorized ADD operation in invoking a service's mutate method.
     /// </summary>
-    ADD_OPERATION_NOT_PERMITTED,
+    ADD_OPERATION_NOT_PERMITTED = 1,
     /// <summary>Unauthorized REMOVE operation in invoking a service's mutate method.
     /// </summary>
-    REMOVE_OPERATION_NOT_PERMITTED,
+    REMOVE_OPERATION_NOT_PERMITTED = 2,
     /// <summary>Unauthorized SET operation in invoking a service's mutate method.
     /// </summary>
-    SET_OPERATION_NOT_PERMITTED,
+    SET_OPERATION_NOT_PERMITTED = 3,
     /// <summary>A mutate action is not allowed on this campaign, from this client.
     /// </summary>
-    MUTATE_ACTION_NOT_PERMITTED_FOR_CLIENT,
+    MUTATE_ACTION_NOT_PERMITTED_FOR_CLIENT = 4,
     /// <summary>This operation is not permitted on this campaign type
     /// </summary>
-    OPERATION_NOT_PERMITTED_FOR_CAMPAIGN_TYPE,
+    OPERATION_NOT_PERMITTED_FOR_CAMPAIGN_TYPE = 5,
     /// <summary>An ADD operation may not set status to REMOVED.
     /// </summary>
-    ADD_AS_REMOVED_NOT_PERMITTED,
+    ADD_AS_REMOVED_NOT_PERMITTED = 6,
     /// <summary>This operation is not allowed because the campaign or adgroup is removed.
     /// </summary>
-    OPERATION_NOT_PERMITTED_FOR_REMOVED_ENTITY,
+    OPERATION_NOT_PERMITTED_FOR_REMOVED_ENTITY = 7,
     /// <summary>The reason the invoked method or operation is prohibited is not known (the
     /// client may be of an older version than the server).
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 8,
   }
 
 
@@ -9860,7 +9863,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum NullErrorReason {
     /// <summary>Specified list/container must not contain any null elements
     /// </summary>
-    NULL_CONTENT,
+    NULL_CONTENT = 0,
   }
 
 
@@ -9955,7 +9958,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotEmptyError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum NotEmptyErrorReason {
-    EMPTY_LIST,
+    EMPTY_LIST = 0,
   }
 
 
@@ -10050,14 +10053,14 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum NewEntityCreationErrorReason {
     /// <summary>Do not set the id field while creating new entities.
     /// </summary>
-    CANNOT_SET_ID_FOR_ADD,
+    CANNOT_SET_ID_FOR_ADD = 0,
     /// <summary>Creating more than one entity with the same temp ID is not allowed.
     /// </summary>
-    DUPLICATE_TEMP_IDS,
+    DUPLICATE_TEMP_IDS = 1,
     /// <summary>Parent object with specified temp id failed validation, so no deep validation
     /// will be done for this child entity.
     /// </summary>
-    TEMP_ID_ENTITY_HAD_ERRORS,
+    TEMP_ID_ENTITY_HAD_ERRORS = 2,
   }
 
 
@@ -10154,74 +10157,74 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum MediaErrorReason {
     /// <summary>Cannot add a standard icon type
     /// </summary>
-    CANNOT_ADD_STANDARD_ICON,
+    CANNOT_ADD_STANDARD_ICON = 0,
     /// <summary>May only select Standard Icons alone
     /// </summary>
-    CANNOT_SELECT_STANDARD_ICON_WITH_OTHER_TYPES,
+    CANNOT_SELECT_STANDARD_ICON_WITH_OTHER_TYPES = 1,
     /// <summary>Image contains both a media ID and media data.
     /// </summary>
-    CANNOT_SPECIFY_MEDIA_ID_AND_DATA,
+    CANNOT_SPECIFY_MEDIA_ID_AND_DATA = 22,
     /// <summary>A media with given type and reference id already exists
     /// </summary>
-    DUPLICATE_MEDIA,
+    DUPLICATE_MEDIA = 2,
     /// <summary>A required field was not specified or is an empty string.
     /// </summary>
-    EMPTY_FIELD,
+    EMPTY_FIELD = 3,
     /// <summary>A media may only be modified once per call
     /// </summary>
-    ENTITY_REFERENCED_IN_MULTIPLE_OPS,
+    ENTITY_REFERENCED_IN_MULTIPLE_OPS = 4,
     /// <summary>Field is not supported for the media sub type.
     /// </summary>
-    FIELD_NOT_SUPPORTED_FOR_MEDIA_SUB_TYPE,
+    FIELD_NOT_SUPPORTED_FOR_MEDIA_SUB_TYPE = 5,
     /// <summary>The media id is invalid
     /// </summary>
-    INVALID_MEDIA_ID,
+    INVALID_MEDIA_ID = 6,
     /// <summary>The media subtype is invalid
     /// </summary>
-    INVALID_MEDIA_SUB_TYPE,
+    INVALID_MEDIA_SUB_TYPE = 7,
     /// <summary>The media type is invalid
     /// </summary>
-    INVALID_MEDIA_TYPE,
+    INVALID_MEDIA_TYPE = 8,
     /// <summary>The media reference id is invalid
     /// </summary>
-    INVALID_REFERENCE_ID,
+    INVALID_REFERENCE_ID = 9,
     /// <summary>The YouTube video id is invalid
     /// </summary>
-    INVALID_YOU_TUBE_ID,
+    INVALID_YOU_TUBE_ID = 10,
     /// <summary>Media has failed transcoding
     /// </summary>
-    MEDIA_FAILED_TRANSCODING,
+    MEDIA_FAILED_TRANSCODING = 11,
     /// <summary>Media has not been transcoded
     /// </summary>
-    MEDIA_NOT_TRANSCODED,
+    MEDIA_NOT_TRANSCODED = 12,
     /// <summary>The MediaType does not match the actual media object's type
     /// </summary>
-    MEDIA_TYPE_DOES_NOT_MATCH_OBJECT_TYPE,
+    MEDIA_TYPE_DOES_NOT_MATCH_OBJECT_TYPE = 13,
     /// <summary>None of the fields have been specified.
     /// </summary>
-    NO_FIELDS_SPECIFIED,
+    NO_FIELDS_SPECIFIED = 14,
     /// <summary>One of reference Id or media Id must be specified
     /// </summary>
-    NULL_REFERENCE_ID_AND_MEDIA_ID,
+    NULL_REFERENCE_ID_AND_MEDIA_ID = 15,
     /// <summary>The string has too many characters.
     /// </summary>
-    TOO_LONG,
+    TOO_LONG = 16,
     /// <summary>The specified operation is not supported. Only ADD, SET, and REMOVE are
     /// supported
     /// </summary>
-    UNSUPPORTED_OPERATION,
+    UNSUPPORTED_OPERATION = 17,
     /// <summary>The specified type is not supported.
     /// </summary>
-    UNSUPPORTED_TYPE,
+    UNSUPPORTED_TYPE = 18,
     /// <summary>YouTube is unavailable for requesting video data.
     /// </summary>
-    YOU_TUBE_SERVICE_UNAVAILABLE,
+    YOU_TUBE_SERVICE_UNAVAILABLE = 19,
     /// <summary>The YouTube video has a non positive duration.
     /// </summary>
-    YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION,
+    YOU_TUBE_VIDEO_HAS_NON_POSITIVE_DURATION = 20,
     /// <summary>The YouTube video id is syntactically valid but the video was not found.
     /// </summary>
-    YOU_TUBE_VIDEO_NOT_FOUND,
+    YOU_TUBE_VIDEO_NOT_FOUND = 21,
   }
 
 
@@ -10319,70 +10322,70 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum MediaBundleErrorReason {
     /// <summary>The entryPoint field cannot be set using the <code>MediaService</code>.
     /// </summary>
-    ENTRY_POINT_CANNOT_BE_SET_USING_MEDIA_SERVICE,
+    ENTRY_POINT_CANNOT_BE_SET_USING_MEDIA_SERVICE = 0,
     /// <summary>There was a problem with the request.
     /// </summary>
-    BAD_REQUEST,
+    BAD_REQUEST = 1,
     /// <summary>HTML5 ads using DoubleClick Studio created ZIP files are not supported.
     /// </summary>
-    DOUBLECLICK_BUNDLE_NOT_ALLOWED,
+    DOUBLECLICK_BUNDLE_NOT_ALLOWED = 2,
     /// <summary>Cannot reference URL external to the media bundle.
     /// </summary>
-    EXTERNAL_URL_NOT_ALLOWED,
+    EXTERNAL_URL_NOT_ALLOWED = 3,
     /// <summary>Media bundle file is too large.
     /// </summary>
-    FILE_TOO_LARGE,
+    FILE_TOO_LARGE = 4,
     /// <summary>ZIP file from Google Web Designer is not published.
     /// </summary>
-    GOOGLE_WEB_DESIGNER_ZIP_FILE_NOT_PUBLISHED,
+    GOOGLE_WEB_DESIGNER_ZIP_FILE_NOT_PUBLISHED = 5,
     /// <summary>Input was invalid.
     /// </summary>
-    INVALID_INPUT,
+    INVALID_INPUT = 6,
     /// <summary>There was a problem with the media bundle.
     /// </summary>
-    INVALID_MEDIA_BUNDLE,
+    INVALID_MEDIA_BUNDLE = 7,
     /// <summary>There was a problem with one or more of the media bundle entries.
     /// </summary>
-    INVALID_MEDIA_BUNDLE_ENTRY,
+    INVALID_MEDIA_BUNDLE_ENTRY = 8,
     /// <summary>The media bundle contains a file with an unknown mime type
     /// </summary>
-    INVALID_MIME_TYPE,
+    INVALID_MIME_TYPE = 9,
     /// <summary>The media bundle contain an invalid asset path.
     /// </summary>
-    INVALID_PATH,
+    INVALID_PATH = 10,
     /// <summary>HTML5 ad is trying to reference an asset not in .ZIP file
     /// </summary>
-    INVALID_URL_REFERENCE,
+    INVALID_URL_REFERENCE = 11,
     /// <summary>Media data is too large.
     /// </summary>
-    MEDIA_DATA_TOO_LARGE,
+    MEDIA_DATA_TOO_LARGE = 12,
     /// <summary>The media bundle contains no primary entry.
     /// </summary>
-    MISSING_PRIMARY_MEDIA_BUNDLE_ENTRY,
+    MISSING_PRIMARY_MEDIA_BUNDLE_ENTRY = 13,
     /// <summary>There was an error on the server.
     /// </summary>
-    SERVER_ERROR,
+    SERVER_ERROR = 14,
     /// <summary>The image could not be stored.
     /// </summary>
-    STORAGE_ERROR,
+    STORAGE_ERROR = 15,
     /// <summary>Media bundle created with the Swiffy tool is not allowed.
     /// </summary>
-    SWIFFY_BUNDLE_NOT_ALLOWED,
+    SWIFFY_BUNDLE_NOT_ALLOWED = 16,
     /// <summary>The media bundle contains too many files.
     /// </summary>
-    TOO_MANY_FILES,
+    TOO_MANY_FILES = 17,
     /// <summary>The media bundle is not of legal dimensions.
     /// </summary>
-    UNEXPECTED_SIZE,
+    UNEXPECTED_SIZE = 18,
     /// <summary>Google Web Designer not created for "AdWords" environment.
     /// </summary>
-    UNSUPPORTED_GOOGLE_WEB_DESIGNER_ENVIRONMENT,
+    UNSUPPORTED_GOOGLE_WEB_DESIGNER_ENVIRONMENT = 19,
     /// <summary>Unsupported HTML5 feature in HTML5 asset.
     /// </summary>
-    UNSUPPORTED_HTML5_FEATURE,
+    UNSUPPORTED_HTML5_FEATURE = 20,
     /// <summary>URL in HTML5 entry is not ssl compliant.
     /// </summary>
-    URL_IN_MEDIA_BUNDLE_NOT_SSL_COMPLIANT,
+    URL_IN_MEDIA_BUNDLE_NOT_SSL_COMPLIANT = 21,
   }
 
 
@@ -10480,16 +10483,16 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum InternalApiErrorReason {
     /// <summary>API encountered an unexpected internal error.
     /// </summary>
-    UNEXPECTED_INTERNAL_API_ERROR,
+    UNEXPECTED_INTERNAL_API_ERROR = 0,
     /// <summary>A temporary error occurred during the request. Please retry.
     /// </summary>
-    TRANSIENT_ERROR,
+    TRANSIENT_ERROR = 1,
     /// <summary>The cause of the error is not known or only defined in newer versions.
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
     /// <summary>The API is currently unavailable for a planned downtime.
     /// </summary>
-    DOWNTIME,
+    DOWNTIME = 3,
   }
 
 
@@ -10584,115 +10587,115 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ImageErrorReason {
     /// <summary>The image is not valid.
     /// </summary>
-    INVALID_IMAGE,
+    INVALID_IMAGE = 0,
     /// <summary>The image could not be stored.
     /// </summary>
-    STORAGE_ERROR,
+    STORAGE_ERROR = 1,
     /// <summary>There was a problem with the request.
     /// </summary>
-    BAD_REQUEST,
+    BAD_REQUEST = 2,
     /// <summary>The image is not of legal dimensions.
     /// </summary>
-    UNEXPECTED_SIZE,
+    UNEXPECTED_SIZE = 3,
     /// <summary>Animated image are not permitted.
     /// </summary>
-    ANIMATED_NOT_ALLOWED,
+    ANIMATED_NOT_ALLOWED = 4,
     /// <summary>Animation is too long.
     /// </summary>
-    ANIMATION_TOO_LONG,
+    ANIMATION_TOO_LONG = 5,
     /// <summary>There was an error on the server.
     /// </summary>
-    SERVER_ERROR,
+    SERVER_ERROR = 6,
     /// <summary>Image cannot be in CMYK color format.
     /// </summary>
-    CMYK_JPEG_NOT_ALLOWED,
+    CMYK_JPEG_NOT_ALLOWED = 7,
     /// <summary>Flash images are not permitted.
     /// </summary>
-    FLASH_NOT_ALLOWED,
+    FLASH_NOT_ALLOWED = 8,
     /// <summary>Flash images must support clickTag.
     /// </summary>
-    FLASH_WITHOUT_CLICKTAG,
+    FLASH_WITHOUT_CLICKTAG = 9,
     /// <summary>A flash error has occurred after fixing the click tag.
     /// </summary>
-    FLASH_ERROR_AFTER_FIXING_CLICK_TAG,
+    FLASH_ERROR_AFTER_FIXING_CLICK_TAG = 10,
     /// <summary>Unacceptable visual effects.
     /// </summary>
-    ANIMATED_VISUAL_EFFECT,
+    ANIMATED_VISUAL_EFFECT = 11,
     /// <summary>There was a problem with the flash image.
     /// </summary>
-    FLASH_ERROR,
+    FLASH_ERROR = 12,
     /// <summary>Incorrect image layout.
     /// </summary>
-    LAYOUT_PROBLEM,
+    LAYOUT_PROBLEM = 13,
     /// <summary>There was a problem reading the image file.
     /// </summary>
-    PROBLEM_READING_IMAGE_FILE,
+    PROBLEM_READING_IMAGE_FILE = 14,
     /// <summary>There was an error storing the image.
     /// </summary>
-    ERROR_STORING_IMAGE,
+    ERROR_STORING_IMAGE = 15,
     /// <summary>The aspect ratio of the image is not allowed.
     /// </summary>
-    ASPECT_RATIO_NOT_ALLOWED,
+    ASPECT_RATIO_NOT_ALLOWED = 36,
     /// <summary>Flash cannot have network objects.
     /// </summary>
-    FLASH_HAS_NETWORK_OBJECTS,
+    FLASH_HAS_NETWORK_OBJECTS = 16,
     /// <summary>Flash cannot have network methods.
     /// </summary>
-    FLASH_HAS_NETWORK_METHODS,
+    FLASH_HAS_NETWORK_METHODS = 17,
     /// <summary>Flash cannot have a Url.
     /// </summary>
-    FLASH_HAS_URL,
+    FLASH_HAS_URL = 18,
     /// <summary>Flash cannot use mouse tracking.
     /// </summary>
-    FLASH_HAS_MOUSE_TRACKING,
+    FLASH_HAS_MOUSE_TRACKING = 19,
     /// <summary>Flash cannot have a random number.
     /// </summary>
-    FLASH_HAS_RANDOM_NUM,
+    FLASH_HAS_RANDOM_NUM = 20,
     /// <summary>Ad click target cannot be '_self'.
     /// </summary>
-    FLASH_SELF_TARGETS,
+    FLASH_SELF_TARGETS = 21,
     /// <summary>GetUrl method should only use '_blank'.
     /// </summary>
-    FLASH_BAD_GETURL_TARGET,
+    FLASH_BAD_GETURL_TARGET = 22,
     /// <summary>Flash version is not supported.
     /// </summary>
-    FLASH_VERSION_NOT_SUPPORTED,
+    FLASH_VERSION_NOT_SUPPORTED = 23,
     /// <summary>Flash movies need to have hard coded click URL or clickTAG
     /// </summary>
-    FLASH_WITHOUT_HARD_CODED_CLICK_URL,
+    FLASH_WITHOUT_HARD_CODED_CLICK_URL = 24,
     /// <summary>Uploaded flash file is corrupted.
     /// </summary>
-    INVALID_FLASH_FILE,
+    INVALID_FLASH_FILE = 25,
     /// <summary>Uploaded flash file can be parsed, but the click tag can not be fixed properly.
     /// </summary>
-    FAILED_TO_FIX_CLICK_TAG_IN_FLASH,
+    FAILED_TO_FIX_CLICK_TAG_IN_FLASH = 26,
     /// <summary>Flash movie accesses network resources
     /// </summary>
-    FLASH_ACCESSES_NETWORK_RESOURCES,
+    FLASH_ACCESSES_NETWORK_RESOURCES = 27,
     /// <summary>Flash movie attempts to call external javascript code
     /// </summary>
-    FLASH_EXTERNAL_JS_CALL,
+    FLASH_EXTERNAL_JS_CALL = 28,
     /// <summary>Flash movie attempts to call flash system commands
     /// </summary>
-    FLASH_EXTERNAL_FS_CALL,
+    FLASH_EXTERNAL_FS_CALL = 29,
     /// <summary>Image file is too large.
     /// </summary>
-    FILE_TOO_LARGE,
+    FILE_TOO_LARGE = 30,
     /// <summary>Image data is too large.
     /// </summary>
-    IMAGE_DATA_TOO_LARGE,
+    IMAGE_DATA_TOO_LARGE = 31,
     /// <summary>Error while processing the image.
     /// </summary>
-    IMAGE_PROCESSING_ERROR,
+    IMAGE_PROCESSING_ERROR = 32,
     /// <summary>Image is too small.
     /// </summary>
-    IMAGE_TOO_SMALL,
+    IMAGE_TOO_SMALL = 33,
     /// <summary>Input was invalid.
     /// </summary>
-    INVALID_INPUT,
+    INVALID_INPUT = 34,
     /// <summary>There was a problem reading the image file.
     /// </summary>
-    PROBLEM_READING_FILE,
+    PROBLEM_READING_FILE = 35,
   }
 
 
@@ -10789,7 +10792,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum IdErrorReason {
     /// <summary>Id not found
     /// </summary>
-    NOT_FOUND,
+    NOT_FOUND = 0,
   }
 
 
@@ -10877,38 +10880,38 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum FunctionParsingErrorReason {
     /// <summary>Unexpected end of function string.
     /// </summary>
-    NO_MORE_INPUT,
+    NO_MORE_INPUT = 0,
     /// <summary>Could not find an expected character.
     /// </summary>
-    EXPECTED_CHARACTER,
+    EXPECTED_CHARACTER = 1,
     /// <summary>Unexpected separator character.
     /// </summary>
-    UNEXPECTED_SEPARATOR,
+    UNEXPECTED_SEPARATOR = 2,
     /// <summary>Unmatched left bracket or parenthesis.
     /// </summary>
-    UNMATCHED_LEFT_BRACKET,
+    UNMATCHED_LEFT_BRACKET = 3,
     /// <summary>Unmatched right bracket or parenthesis.
     /// </summary>
-    UNMATCHED_RIGHT_BRACKET,
+    UNMATCHED_RIGHT_BRACKET = 4,
     /// <summary>Functions are nested too deeply.
     /// </summary>
-    TOO_MANY_NESTED_FUNCTIONS,
+    TOO_MANY_NESTED_FUNCTIONS = 5,
     /// <summary>Missing right-hand-side operand.
     /// </summary>
-    MISSING_RIGHT_HAND_OPERAND,
+    MISSING_RIGHT_HAND_OPERAND = 6,
     /// <summary>Invalid operator/function name.
     /// </summary>
-    INVALID_OPERATOR_NAME,
+    INVALID_OPERATOR_NAME = 7,
     /// <summary>Feed attribute operand's argument is not an integer.
     /// </summary>
-    FEED_ATTRIBUTE_OPERAND_ARGUMENT_NOT_INTEGER,
+    FEED_ATTRIBUTE_OPERAND_ARGUMENT_NOT_INTEGER = 8,
     /// <summary>Missing function operands.
     /// </summary>
-    NO_OPERANDS,
+    NO_OPERANDS = 9,
     /// <summary>Function had too many operands.
     /// </summary>
-    TOO_MANY_OPERANDS,
-    UNKNOWN,
+    TOO_MANY_OPERANDS = 10,
+    UNKNOWN = 11,
   }
 
 
@@ -11005,53 +11008,53 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum FunctionErrorReason {
     /// <summary>The format of the function is not recognized as a supported function format.
     /// </summary>
-    INVALID_FUNCTION_FORMAT,
+    INVALID_FUNCTION_FORMAT = 0,
     /// <summary>Operand data types do not match.
     /// </summary>
-    DATA_TYPE_MISMATCH,
+    DATA_TYPE_MISMATCH = 1,
     /// <summary>The operands cannot be used together in a conjunction.
     /// </summary>
-    INVALID_CONJUNCTION_OPERANDS,
+    INVALID_CONJUNCTION_OPERANDS = 2,
     /// <summary>Invalid numer of Operands.
     /// </summary>
-    INVALID_NUMBER_OF_OPERANDS,
+    INVALID_NUMBER_OF_OPERANDS = 3,
     /// <summary>Operand Type not supported.
     /// </summary>
-    INVALID_OPERAND_TYPE,
+    INVALID_OPERAND_TYPE = 4,
     /// <summary>Operator not supported.
     /// </summary>
-    INVALID_OPERATOR,
+    INVALID_OPERATOR = 5,
     /// <summary>Request context type not supported.
     /// </summary>
-    INVALID_REQUEST_CONTEXT_TYPE,
+    INVALID_REQUEST_CONTEXT_TYPE = 6,
     /// <summary>The matching function is not allowed for call placeholders
     /// </summary>
-    INVALID_FUNCTION_FOR_CALL_PLACEHOLDER,
+    INVALID_FUNCTION_FOR_CALL_PLACEHOLDER = 7,
     /// <summary>The matching function is not allowed for the specified placeholder
     /// </summary>
-    INVALID_FUNCTION_FOR_PLACEHOLDER,
+    INVALID_FUNCTION_FOR_PLACEHOLDER = 8,
     /// <summary>Invalid operand.
     /// </summary>
-    INVALID_OPERAND,
+    INVALID_OPERAND = 9,
     /// <summary>Missing value for the constant operand.
     /// </summary>
-    MISSING_CONSTANT_OPERAND_VALUE,
+    MISSING_CONSTANT_OPERAND_VALUE = 10,
     /// <summary>The value of the constant operand is invalid.
     /// </summary>
-    INVALID_CONSTANT_OPERAND_VALUE,
+    INVALID_CONSTANT_OPERAND_VALUE = 11,
     /// <summary>Invalid function nesting.
     /// </summary>
-    INVALID_NESTING,
+    INVALID_NESTING = 12,
     /// <summary>The Feed ID was different from another Feed ID in the same function.
     /// </summary>
-    MULTIPLE_FEED_IDS_NOT_SUPPORTED,
+    MULTIPLE_FEED_IDS_NOT_SUPPORTED = 13,
     /// <summary>The matching function is invalid for use with a feed with a fixed schema.
     /// </summary>
-    INVALID_FUNCTION_FOR_FEED_WITH_FIXED_SCHEMA,
+    INVALID_FUNCTION_FOR_FEED_WITH_FIXED_SCHEMA = 16,
     /// <summary>Invalid attribute name.
     /// </summary>
-    INVALID_ATTRIBUTE_NAME,
-    UNKNOWN,
+    INVALID_ATTRIBUTE_NAME = 14,
+    UNKNOWN = 15,
   }
 
 
@@ -11149,8 +11152,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ForwardCompatibilityErrorReason {
     /// <summary>Invalid value specified for a key in the forward compatibility map.
     /// </summary>
-    INVALID_FORWARD_COMPATIBILITY_MAP_VALUE,
-    UNKNOWN,
+    INVALID_FORWARD_COMPATIBILITY_MAP_VALUE = 0,
+    UNKNOWN = 1,
   }
 
 
@@ -11271,13 +11274,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum FeedAttributeReferenceErrorReason {
     /// <summary>A feed referenced by ID has been deleted.
     /// </summary>
-    CANNOT_REFERENCE_DELETED_FEED,
+    CANNOT_REFERENCE_DELETED_FEED = 0,
     /// <summary>There is no active feed with the given name.
     /// </summary>
-    INVALID_FEED_NAME,
+    INVALID_FEED_NAME = 1,
     /// <summary>There is no feed attribute in an active feed with the given name.
     /// </summary>
-    INVALID_FEED_ATTRIBUTE_NAME,
+    INVALID_FEED_ATTRIBUTE_NAME = 2,
   }
 
 
@@ -11372,32 +11375,32 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ExperimentErrorReason {
     /// <summary>Experiment delta status not specified.
     /// </summary>
-    EXPERIMENT_DELTA_STATUS_NOT_SPECIFIED,
+    EXPERIMENT_DELTA_STATUS_NOT_SPECIFIED = 0,
     /// <summary>Experiment delta status not allowed.
     /// </summary>
-    EXPERIMENT_DELTA_STATUS_NOT_ALLOWED,
+    EXPERIMENT_DELTA_STATUS_NOT_ALLOWED = 1,
     /// <summary>Cannot create experiment data in REMOVED status
     /// </summary>
-    EXPERIMENT_STATUS_NOT_ALLOWED,
+    EXPERIMENT_STATUS_NOT_ALLOWED = 2,
     /// <summary>Experiments are not allowed for this bidding strategy
     /// </summary>
-    EXPERIMENT_NOT_ALLOWED_FOR_BIDDING_STRATEGY,
+    EXPERIMENT_NOT_ALLOWED_FOR_BIDDING_STRATEGY = 3,
     /// <summary>Experiments are not allowed for this criterion type
     /// </summary>
-    EXPERIMENT_NOT_ALLOWED_FOR_CRITERION_TYPE,
+    EXPERIMENT_NOT_ALLOWED_FOR_CRITERION_TYPE = 4,
     /// <summary>Cannot make changes for inactive experiments
     /// </summary>
-    EXPERIMENT_NOT_ACTIVE,
+    EXPERIMENT_NOT_ACTIVE = 5,
     /// <summary>Invalid experiment id
     /// </summary>
-    INVALID_EXPERIMENT_ID,
+    INVALID_EXPERIMENT_ID = 6,
     /// <summary>Experiment id must be specified for this criterion
     /// </summary>
-    EXPERIMENT_ID_NOT_SPECIFIED_WITH_SEGMENTATION_CRITERIA,
+    EXPERIMENT_ID_NOT_SPECIFIED_WITH_SEGMENTATION_CRITERIA = 7,
     /// <summary>This experiment has too many changes
     /// </summary>
-    TOO_MANY_CHANGES_TO_EXPERIMENT,
-    EXPERIMENT_ERROR,
+    TOO_MANY_CHANGES_TO_EXPERIMENT = 8,
+    EXPERIMENT_ERROR = 9,
   }
 
 
@@ -11494,7 +11497,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <summary>The specified id refered to an entity which either doesn't exist or is not
     /// accessible to the customer. e.g. campaign belongs to another customer.
     /// </summary>
-    INVALID_ID,
+    INVALID_ID = 0,
   }
 
 
@@ -11680,46 +11683,46 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// AdWords account. The exact entity type and limit being checked can be inferred
     /// from <a href='#accountLimitType'>#accountLimitType</a>.
     /// </summary>
-    ACCOUNT_LIMIT,
+    ACCOUNT_LIMIT = 0,
     /// <summary>Indicates that this request would exceed the number of allowed entities in a
     /// Campaign. The exact entity type and limit being checked can be inferred from <a
     /// href='#accountLimitType'>#accountLimitType</a>, and the numeric id of the
     /// Campaign involved is given by <a href='#enclosingId'>#enclosingId</a>.
     /// </summary>
-    CAMPAIGN_LIMIT,
+    CAMPAIGN_LIMIT = 1,
     /// <summary>Indicates that this request would exceed the number of allowed entities in an ad
     /// group. The exact entity type and limit being checked can be inferred from <a
     /// href='#accountLimitType'>#accountLimitType</a>, and the numeric id of the ad
     /// group involved is given by <a href='#enclosingId'>#enclosingId</a>.
     /// </summary>
-    ADGROUP_LIMIT,
+    ADGROUP_LIMIT = 2,
     /// <summary>Indicates that this request would exceed the number of allowed entities in an ad
     /// group ad. The exact entity type and limit being checked can be inferred from <a
     /// href='#accountLimitType'>#accountLimitType</a>, and the <a
     /// href='#enclosingId'>#enclosingId</a> contains the ad group id followed by the ad
     /// id, separated by a single comma (,).
     /// </summary>
-    AD_GROUP_AD_LIMIT,
+    AD_GROUP_AD_LIMIT = 3,
     /// <summary>Indicates that this request would exceed the number of allowed entities in an ad
     /// group criterion. The exact entity type and limit being checked can be inferred
     /// from <a href='#accountLimitType'>#accountLimitType</a>, and the <a
     /// href='#enclosingId'>#enclosingId</a> contains the ad group id followed by the
     /// criterion id, separated by a single comma (,).
     /// </summary>
-    AD_GROUP_CRITERION_LIMIT,
+    AD_GROUP_CRITERION_LIMIT = 4,
     /// <summary>Indicates that this request would exceed the number of allowed entities in this
     /// shared set. The exact entity type and limit being checked can be inferred from
     /// <a href='#accountLimitType'>#accountLimitType</a>, and the numeric id of the
     /// shared set involved is given by <a href='#enclosingId'>#enclosingId</a>.
     /// </summary>
-    SHARED_SET_LIMIT,
+    SHARED_SET_LIMIT = 5,
     /// <summary>Exceeds a limit related to a matching function.
     /// </summary>
-    MATCHING_FUNCTION_LIMIT,
+    MATCHING_FUNCTION_LIMIT = 6,
     /// <summary>Specific limit that has been exceeded is unknown (the client may be of an older
     /// version than the server).
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 7,
   }
 
 
@@ -11825,10 +11828,10 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum EntityAccessDeniedReason {
     /// <summary>User did not have read access.
     /// </summary>
-    READ_ACCESS_DENIED,
+    READ_ACCESS_DENIED = 0,
     /// <summary>User did not have write access.
     /// </summary>
-    WRITE_ACCESS_DENIED,
+    WRITE_ACCESS_DENIED = 1,
   }
 
 
@@ -11923,8 +11926,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DistinctError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum DistinctErrorReason {
-    DUPLICATE_ELEMENT,
-    DUPLICATE_TYPE,
+    DUPLICATE_ELEMENT = 0,
+    DUPLICATE_TYPE = 1,
   }
 
 
@@ -12021,31 +12024,31 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum DateErrorReason {
     /// <summary>Given field values do not correspond to a valid date.
     /// </summary>
-    INVALID_FIELD_VALUES_IN_DATE,
+    INVALID_FIELD_VALUES_IN_DATE = 0,
     /// <summary>Given field values do not correspond to a valid date time.
     /// </summary>
-    INVALID_FIELD_VALUES_IN_DATE_TIME,
+    INVALID_FIELD_VALUES_IN_DATE_TIME = 1,
     /// <summary>The string date's format should be yyyymmdd.
     /// </summary>
-    INVALID_STRING_DATE,
+    INVALID_STRING_DATE = 2,
     /// <summary>The string date range's format should be yyyymmdd yyyymmdd.
     /// </summary>
-    INVALID_STRING_DATE_RANGE,
+    INVALID_STRING_DATE_RANGE = 3,
     /// <summary>The string date time's format should be yyyymmdd hhmmss [tz].
     /// </summary>
-    INVALID_STRING_DATE_TIME,
+    INVALID_STRING_DATE_TIME = 4,
     /// <summary>Date is before allowed minimum.
     /// </summary>
-    EARLIER_THAN_MINIMUM_DATE,
+    EARLIER_THAN_MINIMUM_DATE = 5,
     /// <summary>Date is after allowed maximum.
     /// </summary>
-    LATER_THAN_MAXIMUM_DATE,
+    LATER_THAN_MAXIMUM_DATE = 6,
     /// <summary>Date range bounds are not in order.
     /// </summary>
-    DATE_RANGE_MINIMUM_DATE_LATER_THAN_MAXIMUM_DATE,
+    DATE_RANGE_MINIMUM_DATE_LATER_THAN_MAXIMUM_DATE = 7,
     /// <summary>Both dates in range are null.
     /// </summary>
-    DATE_RANGE_MINIMUM_AND_MAXIMUM_DATES_BOTH_NULL,
+    DATE_RANGE_MINIMUM_AND_MAXIMUM_DATES_BOTH_NULL = 8,
   }
 
 
@@ -12143,25 +12146,25 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <summary>A concurrency problem occurred as two threads were attempting to modify same
     /// object.
     /// </summary>
-    CONCURRENT_MODIFICATION,
+    CONCURRENT_MODIFICATION = 0,
     /// <summary>The permission was denied to access an object.
     /// </summary>
-    PERMISSION_DENIED,
+    PERMISSION_DENIED = 1,
     /// <summary>The user's access to an object has been prohibited.
     /// </summary>
-    ACCESS_PROHIBITED,
+    ACCESS_PROHIBITED = 2,
     /// <summary>Requested campaign belongs to a product that is not supported by the api.
     /// </summary>
-    CAMPAIGN_PRODUCT_NOT_SUPPORTED,
+    CAMPAIGN_PRODUCT_NOT_SUPPORTED = 3,
     /// <summary>a duplicate key was detected upon insertion
     /// </summary>
-    DUPLICATE_KEY,
+    DUPLICATE_KEY = 4,
     /// <summary>a database error has occurred
     /// </summary>
-    DATABASE_ERROR,
+    DATABASE_ERROR = 5,
     /// <summary>an unknown error has occurred
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 6,
   }
 
 
@@ -12211,7 +12214,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ClientTermsErrorReason {
     /// <summary>Customer has not agreed to the latest AdWords Terms &amp; Conditions
     /// </summary>
-    INCOMPLETE_SIGNUP_CURRENT_ADWORDS_TNC_NOT_AGREED,
+    INCOMPLETE_SIGNUP_CURRENT_ADWORDS_TNC_NOT_AGREED = 0,
   }
 
 
@@ -12308,25 +12311,25 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AuthorizationErrorReason {
     /// <summary>Could not complete authorization due to an internal problem.
     /// </summary>
-    UNABLE_TO_AUTHORIZE,
+    UNABLE_TO_AUTHORIZE = 0,
     /// <summary>Customer has no AdWords account.
     /// </summary>
-    NO_ADWORDS_ACCOUNT_FOR_CUSTOMER,
+    NO_ADWORDS_ACCOUNT_FOR_CUSTOMER = 1,
     /// <summary>User doesn't have permission to access customer.
     /// </summary>
-    USER_PERMISSION_DENIED,
+    USER_PERMISSION_DENIED = 2,
     /// <summary>Effective user doesn't have permission to access this customer.
     /// </summary>
-    EFFECTIVE_USER_PERMISSION_DENIED,
+    EFFECTIVE_USER_PERMISSION_DENIED = 3,
     /// <summary>User has read-only permission cannot mutate.
     /// </summary>
-    USER_HAS_READONLY_PERMISSION,
+    USER_HAS_READONLY_PERMISSION = 4,
     /// <summary>No customer found.
     /// </summary>
-    NO_CUSTOMER_FOUND,
+    NO_CUSTOMER_FOUND = 5,
     /// <summary>Developer doesn't have permission to access service.
     /// </summary>
-    SERVICE_ACCESS_DENIED,
+    SERVICE_ACCESS_DENIED = 6,
   }
 
 
@@ -12423,72 +12426,72 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AuthenticationErrorReason {
     /// <summary>Authentication of the request failed.
     /// </summary>
-    AUTHENTICATION_FAILED,
+    AUTHENTICATION_FAILED = 0,
     /// <summary>Client Customer Id is required if CustomerIdMode is set to
     /// CLIENT_EXTERNAL_CUSTOMER_ID. Starting version V201409 ClientCustomerId will be
     /// required for all requests except for <a
     /// href='CustomerService#get'>CustomerService#get</a>
     /// </summary>
-    CLIENT_CUSTOMER_ID_IS_REQUIRED,
+    CLIENT_CUSTOMER_ID_IS_REQUIRED = 1,
     /// <summary>Client Email is required if CustomerIdMode is set to
     /// CLIENT_EXTERNAL_EMAIL_FIELD.
     /// </summary>
-    CLIENT_EMAIL_REQUIRED,
+    CLIENT_EMAIL_REQUIRED = 2,
     /// <summary>Client customer Id is not a number.
     /// </summary>
-    CLIENT_CUSTOMER_ID_INVALID,
+    CLIENT_CUSTOMER_ID_INVALID = 3,
     /// <summary>Client customer Id is not a number.
     /// </summary>
-    CLIENT_EMAIL_INVALID,
+    CLIENT_EMAIL_INVALID = 4,
     /// <summary>Client email is not a valid customer email.
     /// </summary>
-    CLIENT_EMAIL_FAILED_TO_AUTHENTICATE,
+    CLIENT_EMAIL_FAILED_TO_AUTHENTICATE = 5,
     /// <summary>No customer found for the customer id provided in the header.
     /// </summary>
-    CUSTOMER_NOT_FOUND,
+    CUSTOMER_NOT_FOUND = 6,
     /// <summary>Client's Google Account is deleted.
     /// </summary>
-    GOOGLE_ACCOUNT_DELETED,
+    GOOGLE_ACCOUNT_DELETED = 7,
     /// <summary>Google account login token in the cookie is invalid.
     /// </summary>
-    GOOGLE_ACCOUNT_COOKIE_INVALID,
+    GOOGLE_ACCOUNT_COOKIE_INVALID = 8,
     /// <summary>problem occurred during Google account authentication.
     /// </summary>
-    FAILED_TO_AUTHENTICATE_GOOGLE_ACCOUNT,
+    FAILED_TO_AUTHENTICATE_GOOGLE_ACCOUNT = 9,
     /// <summary>The user in the google account login token does not match the UserId in the
     /// cookie.
     /// </summary>
-    GOOGLE_ACCOUNT_USER_AND_ADS_USER_MISMATCH,
+    GOOGLE_ACCOUNT_USER_AND_ADS_USER_MISMATCH = 10,
     /// <summary>Login cookie is required for authentication.
     /// </summary>
-    LOGIN_COOKIE_REQUIRED,
+    LOGIN_COOKIE_REQUIRED = 11,
     /// <summary>User in the cookie is not a valid Ads user.
     /// </summary>
-    NOT_ADS_USER,
+    NOT_ADS_USER = 12,
     /// <summary>Oauth token in the header is not valid.
     /// </summary>
-    OAUTH_TOKEN_INVALID,
+    OAUTH_TOKEN_INVALID = 13,
     /// <summary>Oauth token in the header has expired.
     /// </summary>
-    OAUTH_TOKEN_EXPIRED,
+    OAUTH_TOKEN_EXPIRED = 14,
     /// <summary>Oauth token in the header has been disabled.
     /// </summary>
-    OAUTH_TOKEN_DISABLED,
+    OAUTH_TOKEN_DISABLED = 15,
     /// <summary>Oauth token in the header has been revoked.
     /// </summary>
-    OAUTH_TOKEN_REVOKED,
+    OAUTH_TOKEN_REVOKED = 16,
     /// <summary>Oauth token HTTP header is malformed.
     /// </summary>
-    OAUTH_TOKEN_HEADER_INVALID,
+    OAUTH_TOKEN_HEADER_INVALID = 17,
     /// <summary>Login cookie is not valid.
     /// </summary>
-    LOGIN_COOKIE_INVALID,
+    LOGIN_COOKIE_INVALID = 18,
     /// <summary>Failed to decrypt the login cookie.
     /// </summary>
-    FAILED_TO_RETRIEVE_LOGIN_COOKIE,
+    FAILED_TO_RETRIEVE_LOGIN_COOKIE = 19,
     /// <summary>User Id in the header is not a valid id.
     /// </summary>
-    USER_ID_INVALID,
+    USER_ID_INVALID = 20,
   }
 
 
@@ -12585,7 +12588,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AdxErrorReason {
     /// <summary>Attempt to use non-AdX feature by AdX customer.
     /// </summary>
-    UNSUPPORTED_FEATURE,
+    UNSUPPORTED_FEATURE = 0,
   }
 
 
@@ -12682,30 +12685,30 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AdGroupAdErrorReason {
     /// <summary>No link found between the adgroup ad and the label.
     /// </summary>
-    AD_GROUP_AD_LABEL_DOES_NOT_EXIST,
+    AD_GROUP_AD_LABEL_DOES_NOT_EXIST = 0,
     /// <summary>The label has already been attached to the adgroup ad.
     /// </summary>
-    AD_GROUP_AD_LABEL_ALREADY_EXISTS,
+    AD_GROUP_AD_LABEL_ALREADY_EXISTS = 1,
     /// <summary>The specified ad was not found in the adgroup
     /// </summary>
-    AD_NOT_UNDER_ADGROUP,
+    AD_NOT_UNDER_ADGROUP = 2,
     /// <summary>Removed ads may not be modified
     /// </summary>
-    CANNOT_OPERATE_ON_REMOVED_ADGROUPAD,
+    CANNOT_OPERATE_ON_REMOVED_ADGROUPAD = 3,
     /// <summary>An ad of this type is deprecated and cannot be created. Only deletions are
     /// permitted.
     /// </summary>
-    CANNOT_CREATE_DEPRECATED_ADS,
+    CANNOT_CREATE_DEPRECATED_ADS = 4,
     /// <summary>A required field was not specified or is an empty string.
     /// </summary>
-    EMPTY_FIELD,
+    EMPTY_FIELD = 5,
     /// <summary>An ad may only be modified once per call
     /// </summary>
-    ENTITY_REFERENCED_IN_MULTIPLE_OPS,
+    ENTITY_REFERENCED_IN_MULTIPLE_OPS = 6,
     /// <summary>The specified operation is not supported. Only ADD, SET, and REMOVE are
     /// supported
     /// </summary>
-    UNSUPPORTED_OPERATION,
+    UNSUPPORTED_OPERATION = 7,
   }
 
 
@@ -12802,375 +12805,375 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AdErrorReason {
     /// <summary>Ad customizers are not supported for ad type.
     /// </summary>
-    AD_CUSTOMIZERS_NOT_SUPPORTED_FOR_AD_TYPE,
+    AD_CUSTOMIZERS_NOT_SUPPORTED_FOR_AD_TYPE = 0,
     /// <summary>Estimating character sizes the string is too long.
     /// </summary>
-    APPROXIMATELY_TOO_LONG,
+    APPROXIMATELY_TOO_LONG = 1,
     /// <summary>Estimating character sizes the string is too short.
     /// </summary>
-    APPROXIMATELY_TOO_SHORT,
+    APPROXIMATELY_TOO_SHORT = 2,
     /// <summary>There is a problem with the snippet.
     /// </summary>
-    BAD_SNIPPET,
+    BAD_SNIPPET = 3,
     /// <summary>Cannot modify an ad.
     /// </summary>
-    CANNOT_MODIFY_AD,
+    CANNOT_MODIFY_AD = 116,
     /// <summary>business name and url cannot be set at the same time
     /// </summary>
-    CANNOT_SET_BUSINESS_NAME_IF_URL_SET,
+    CANNOT_SET_BUSINESS_NAME_IF_URL_SET = 4,
     /// <summary>The specified field is incompatible with this ad's type or settings.
     /// </summary>
-    CANNOT_SET_FIELD,
+    CANNOT_SET_FIELD = 5,
     /// <summary>Cannot set field when originAdId is set.
     /// </summary>
-    CANNOT_SET_FIELD_WITH_ORIGIN_AD_ID_SET,
+    CANNOT_SET_FIELD_WITH_ORIGIN_AD_ID_SET = 6,
     /// <summary>Cannot set field when an existing ad id is set for sharing.
     /// </summary>
-    CANNOT_SET_FIELD_WITH_AD_ID_SET_FOR_SHARING,
+    CANNOT_SET_FIELD_WITH_AD_ID_SET_FOR_SHARING = 117,
     /// <summary>Cannot specify a url for the ad type
     /// </summary>
-    CANNOT_SET_URL,
+    CANNOT_SET_URL = 7,
     /// <summary>Cannot specify a tracking or mobile url without also setting final urls
     /// </summary>
-    CANNOT_SET_WITHOUT_FINAL_URLS,
+    CANNOT_SET_WITHOUT_FINAL_URLS = 8,
     /// <summary>Cannot specify a legacy url and a final url simultaneously
     /// </summary>
-    CANNOT_SET_WITH_FINAL_URLS,
+    CANNOT_SET_WITH_FINAL_URLS = 9,
     /// <summary>Cannot specify a legacy url and a tracking url template simultaneously in a DSA.
     /// </summary>
-    CANNOT_SET_WITH_TRACKING_URL_TEMPLATE,
+    CANNOT_SET_WITH_TRACKING_URL_TEMPLATE = 10,
     /// <summary>This operator cannot be used with a subclass of Ad.
     /// </summary>
-    CANNOT_USE_AD_SUBCLASS_FOR_OPERATOR,
+    CANNOT_USE_AD_SUBCLASS_FOR_OPERATOR = 118,
     /// <summary>Customer is not approved for mobile ads.
     /// </summary>
-    CUSTOMER_NOT_APPROVED_MOBILEADS,
+    CUSTOMER_NOT_APPROVED_MOBILEADS = 11,
     /// <summary>Customer is not approved for 3PAS richmedia ads.
     /// </summary>
-    CUSTOMER_NOT_APPROVED_THIRDPARTY_ADS,
+    CUSTOMER_NOT_APPROVED_THIRDPARTY_ADS = 12,
     /// <summary>Customer is not approved for 3PAS redirect richmedia (Ad Exchange) ads.
     /// </summary>
-    CUSTOMER_NOT_APPROVED_THIRDPARTY_REDIRECT_ADS,
+    CUSTOMER_NOT_APPROVED_THIRDPARTY_REDIRECT_ADS = 13,
     /// <summary>Not an eligible customer
     /// </summary>
-    CUSTOMER_NOT_ELIGIBLE,
+    CUSTOMER_NOT_ELIGIBLE = 14,
     /// <summary>Customer is not eligible for updating beacon url
     /// </summary>
-    CUSTOMER_NOT_ELIGIBLE_FOR_UPDATING_BEACON_URL,
+    CUSTOMER_NOT_ELIGIBLE_FOR_UPDATING_BEACON_URL = 15,
     /// <summary>There already exists an ad with the same dimensions in the union.
     /// </summary>
-    DIMENSION_ALREADY_IN_UNION,
+    DIMENSION_ALREADY_IN_UNION = 16,
     /// <summary>Ad's dimension must be set before setting union dimension.
     /// </summary>
-    DIMENSION_MUST_BE_SET,
+    DIMENSION_MUST_BE_SET = 17,
     /// <summary>Ad's dimension must be included in the union dimensions.
     /// </summary>
-    DIMENSION_NOT_IN_UNION,
+    DIMENSION_NOT_IN_UNION = 18,
     /// <summary>Display Url cannot be specified (applies to Ad Exchange Ads)
     /// </summary>
-    DISPLAY_URL_CANNOT_BE_SPECIFIED,
+    DISPLAY_URL_CANNOT_BE_SPECIFIED = 19,
     /// <summary>Telephone number contains invalid characters or invalid format. Please re-enter
     /// your number using digits (0-9), dashes (-), and parentheses only.
     /// </summary>
-    DOMESTIC_PHONE_NUMBER_FORMAT,
+    DOMESTIC_PHONE_NUMBER_FORMAT = 20,
     /// <summary>Emergency telephone numbers are not allowed. Please enter a valid domestic phone
     /// number to connect customers to your business.
     /// </summary>
-    EMERGENCY_PHONE_NUMBER,
+    EMERGENCY_PHONE_NUMBER = 21,
     /// <summary>A required field was not specified or is an empty string.
     /// </summary>
-    EMPTY_FIELD,
+    EMPTY_FIELD = 22,
     /// <summary>A feed attribute referenced in an ad customizer tag is not in the ad customizer
     /// mapping for the feed.
     /// </summary>
-    FEED_ATTRIBUTE_MUST_HAVE_MAPPING_FOR_TYPE_ID,
+    FEED_ATTRIBUTE_MUST_HAVE_MAPPING_FOR_TYPE_ID = 23,
     /// <summary>The ad customizer field mapping for the feed attribute does not match the
     /// expected field type.
     /// </summary>
-    FEED_ATTRIBUTE_MAPPING_TYPE_MISMATCH,
+    FEED_ATTRIBUTE_MAPPING_TYPE_MISMATCH = 24,
     /// <summary>The use of ad customizer tags in the ad text is disallowed. Details in trigger.
     /// </summary>
-    ILLEGAL_AD_CUSTOMIZER_TAG_USE,
+    ILLEGAL_AD_CUSTOMIZER_TAG_USE = 25,
     /// <summary>The dimensions of the ad are specified or derived in multiple ways and are not
     /// consistent.
     /// </summary>
-    INCONSISTENT_DIMENSIONS,
+    INCONSISTENT_DIMENSIONS = 26,
     /// <summary>The status cannot differ among template ads of the same union.
     /// </summary>
-    INCONSISTENT_STATUS_IN_TEMPLATE_UNION,
+    INCONSISTENT_STATUS_IN_TEMPLATE_UNION = 27,
     /// <summary>The length of the string is not valid.
     /// </summary>
-    INCORRECT_LENGTH,
+    INCORRECT_LENGTH = 28,
     /// <summary>The ad is ineligible for upgrade.
     /// </summary>
-    INELIGIBLE_FOR_UPGRADE,
+    INELIGIBLE_FOR_UPGRADE = 29,
     /// <summary>User cannot create mobile ad for countries targeted in specified campaign.
     /// </summary>
-    INVALID_AD_ADDRESS_CAMPAIGN_TARGET,
+    INVALID_AD_ADDRESS_CAMPAIGN_TARGET = 30,
     /// <summary>Invalid Ad type. A specific type of Ad is required.
     /// </summary>
-    INVALID_AD_TYPE,
+    INVALID_AD_TYPE = 31,
     /// <summary>Headline, description or phone cannot be present when creating mobile image ad.
     /// </summary>
-    INVALID_ATTRIBUTES_FOR_MOBILE_IMAGE,
+    INVALID_ATTRIBUTES_FOR_MOBILE_IMAGE = 32,
     /// <summary>Image cannot be present when creating mobile text ad.
     /// </summary>
-    INVALID_ATTRIBUTES_FOR_MOBILE_TEXT,
+    INVALID_ATTRIBUTES_FOR_MOBILE_TEXT = 33,
     /// <summary>Invalid character in URL.
     /// </summary>
-    INVALID_CHARACTER_FOR_URL,
+    INVALID_CHARACTER_FOR_URL = 34,
     /// <summary>Creative's country code is not valid.
     /// </summary>
-    INVALID_COUNTRY_CODE,
+    INVALID_COUNTRY_CODE = 35,
     /// <summary>Invalid use of Dynamic Search Ads tags ({lpurl} etc.)
     /// </summary>
-    INVALID_DSA_URL_TAG,
+    INVALID_DSA_URL_TAG = 36,
     /// <summary>An input error whose real reason was not properly mapped (should not happen).
     /// </summary>
-    INVALID_INPUT,
+    INVALID_INPUT = 37,
     /// <summary>An invalid markup language was entered.
     /// </summary>
-    INVALID_MARKUP_LANGUAGE,
+    INVALID_MARKUP_LANGUAGE = 38,
     /// <summary>An invalid mobile carrier was entered.
     /// </summary>
-    INVALID_MOBILE_CARRIER,
+    INVALID_MOBILE_CARRIER = 39,
     /// <summary>Specified mobile carriers target a country not targeted by the campaign.
     /// </summary>
-    INVALID_MOBILE_CARRIER_TARGET,
+    INVALID_MOBILE_CARRIER_TARGET = 40,
     /// <summary>Wrong number of elements for given element type
     /// </summary>
-    INVALID_NUMBER_OF_ELEMENTS,
+    INVALID_NUMBER_OF_ELEMENTS = 41,
     /// <summary>The format of the telephone number is incorrect. Please re-enter the number
     /// using the correct format.
     /// </summary>
-    INVALID_PHONE_NUMBER_FORMAT,
+    INVALID_PHONE_NUMBER_FORMAT = 42,
     /// <summary>The certified vendor format id is incorrect.
     /// </summary>
-    INVALID_RICH_MEDIA_CERTIFIED_VENDOR_FORMAT_ID,
+    INVALID_RICH_MEDIA_CERTIFIED_VENDOR_FORMAT_ID = 43,
     /// <summary>The template ad data contains validation errors.
     /// </summary>
-    INVALID_TEMPLATE_DATA,
+    INVALID_TEMPLATE_DATA = 44,
     /// <summary>The template field doesn't have have the correct type.
     /// </summary>
-    INVALID_TEMPLATE_ELEMENT_FIELD_TYPE,
+    INVALID_TEMPLATE_ELEMENT_FIELD_TYPE = 45,
     /// <summary>Invalid template id.
     /// </summary>
-    INVALID_TEMPLATE_ID,
+    INVALID_TEMPLATE_ID = 46,
     /// <summary>After substituting replacement strings, the line is too wide.
     /// </summary>
-    LINE_TOO_WIDE,
+    LINE_TOO_WIDE = 47,
     /// <summary>When entering a markup language the Destination URL must be entered.
     /// </summary>
-    MARKUP_LANGUAGES_PRESENT,
+    MARKUP_LANGUAGES_PRESENT = 48,
     /// <summary>The feed referenced must have ad customizer mapping to be used in a customizer
     /// tag.
     /// </summary>
-    MISSING_AD_CUSTOMIZER_MAPPING,
+    MISSING_AD_CUSTOMIZER_MAPPING = 49,
     /// <summary>Missing address component in template element address field.
     /// </summary>
-    MISSING_ADDRESS_COMPONENT,
+    MISSING_ADDRESS_COMPONENT = 50,
     /// <summary>An ad name must be entered.
     /// </summary>
-    MISSING_ADVERTISEMENT_NAME,
+    MISSING_ADVERTISEMENT_NAME = 51,
     /// <summary>Business name must be entered.
     /// </summary>
-    MISSING_BUSINESS_NAME,
+    MISSING_BUSINESS_NAME = 52,
     /// <summary>Description (line 2) must be entered.
     /// </summary>
-    MISSING_DESCRIPTION1,
+    MISSING_DESCRIPTION1 = 53,
     /// <summary>Description (line 3) must be entered.
     /// </summary>
-    MISSING_DESCRIPTION2,
+    MISSING_DESCRIPTION2 = 54,
     /// <summary>A destination URL must be entered.
     /// </summary>
-    MISSING_DESTINATION_URL,
+    MISSING_DESTINATION_URL = 55,
     /// <summary>The destination url must contain at least one tag (e.g. {lpurl})
     /// </summary>
-    MISSING_DESTINATION_URL_TAG,
+    MISSING_DESTINATION_URL_TAG = 56,
     /// <summary>A valid dimension must be specified for this ad.
     /// </summary>
-    MISSING_DIMENSION,
+    MISSING_DIMENSION = 57,
     /// <summary>A display URL must be entered.
     /// </summary>
-    MISSING_DISPLAY_URL,
+    MISSING_DISPLAY_URL = 58,
     /// <summary>Headline must be entered.
     /// </summary>
-    MISSING_HEADLINE,
+    MISSING_HEADLINE = 59,
     /// <summary>A height must be entered.
     /// </summary>
-    MISSING_HEIGHT,
+    MISSING_HEIGHT = 60,
     /// <summary>An image must be entered.
     /// </summary>
-    MISSING_IMAGE,
+    MISSING_IMAGE = 61,
     /// <summary>The markup language in which your site is written must be entered.
     /// </summary>
-    MISSING_MARKUP_LANGUAGES,
+    MISSING_MARKUP_LANGUAGES = 62,
     /// <summary>A mobile carrier must be entered.
     /// </summary>
-    MISSING_MOBILE_CARRIER,
+    MISSING_MOBILE_CARRIER = 63,
     /// <summary>Phone number must be entered.
     /// </summary>
-    MISSING_PHONE,
+    MISSING_PHONE = 64,
     /// <summary>Missing required template fields
     /// </summary>
-    MISSING_REQUIRED_TEMPLATE_FIELDS,
+    MISSING_REQUIRED_TEMPLATE_FIELDS = 65,
     /// <summary>Missing a required field value
     /// </summary>
-    MISSING_TEMPLATE_FIELD_VALUE,
+    MISSING_TEMPLATE_FIELD_VALUE = 66,
     /// <summary>The ad must have text.
     /// </summary>
-    MISSING_TEXT,
+    MISSING_TEXT = 67,
     /// <summary>Ad must link to a mobile web page or connect users to your business telephone,
     /// or both. Please enter a mobile Destination URL and/or a business telephone
     /// number.
     /// </summary>
-    MISSING_URL_AND_PHONE,
+    MISSING_URL_AND_PHONE = 68,
     /// <summary>A visible URL must be entered.
     /// </summary>
-    MISSING_VISIBLE_URL,
+    MISSING_VISIBLE_URL = 69,
     /// <summary>A width must be entered.
     /// </summary>
-    MISSING_WIDTH,
+    MISSING_WIDTH = 70,
     /// <summary>Only 1 feed can be used as the source of ad customizer substitutions in a single
     /// ad.
     /// </summary>
-    MULTIPLE_DISTINCT_FEEDS_UNSUPPORTED,
+    MULTIPLE_DISTINCT_FEEDS_UNSUPPORTED = 71,
     /// <summary>TempAdUnionId must be use when adding template ads.
     /// </summary>
-    MUST_USE_TEMP_AD_UNION_ID_ON_ADD,
+    MUST_USE_TEMP_AD_UNION_ID_ON_ADD = 72,
     /// <summary>The string has too many characters.
     /// </summary>
-    TOO_LONG,
+    TOO_LONG = 73,
     /// <summary>The string has too few characters.
     /// </summary>
-    TOO_SHORT,
+    TOO_SHORT = 74,
     /// <summary>Ad union dimensions cannot change for saved ads.
     /// </summary>
-    UNION_DIMENSIONS_CANNOT_CHANGE,
+    UNION_DIMENSIONS_CANNOT_CHANGE = 75,
     /// <summary>Address component is not {country, lat, lng}.
     /// </summary>
-    UNKNOWN_ADDRESS_COMPONENT,
+    UNKNOWN_ADDRESS_COMPONENT = 76,
     /// <summary>Unknown unique field name
     /// </summary>
-    UNKNOWN_FIELD_NAME,
+    UNKNOWN_FIELD_NAME = 77,
     /// <summary>Unknown unique name (template element type specifier)
     /// </summary>
-    UNKNOWN_UNIQUE_NAME,
+    UNKNOWN_UNIQUE_NAME = 78,
     /// <summary>Unsupported ad dimension
     /// </summary>
-    UNSUPPORTED_DIMENSIONS,
+    UNSUPPORTED_DIMENSIONS = 79,
     /// <summary>URL starts with an invalid scheme.
     /// </summary>
-    URL_INVALID_SCHEME,
+    URL_INVALID_SCHEME = 80,
     /// <summary>URL ends with an invalid top-level domain name.
     /// </summary>
-    URL_INVALID_TOP_LEVEL_DOMAIN,
+    URL_INVALID_TOP_LEVEL_DOMAIN = 81,
     /// <summary>URL contains illegal characters.
     /// </summary>
-    URL_MALFORMED,
+    URL_MALFORMED = 82,
     /// <summary>URL must contain a host name.
     /// </summary>
-    URL_NO_HOST,
+    URL_NO_HOST = 83,
     /// <summary>URL not equivalent during upgrade.
     /// </summary>
-    URL_NOT_EQUIVALENT,
+    URL_NOT_EQUIVALENT = 84,
     /// <summary>URL host name too long to be stored as visible URL (applies to Ad Exchange ads)
     /// </summary>
-    URL_HOST_NAME_TOO_LONG,
+    URL_HOST_NAME_TOO_LONG = 85,
     /// <summary>URL must start with a scheme.
     /// </summary>
-    URL_NO_SCHEME,
+    URL_NO_SCHEME = 86,
     /// <summary>URL should end in a valid domain extension, such as .com or .net.
     /// </summary>
-    URL_NO_TOP_LEVEL_DOMAIN,
+    URL_NO_TOP_LEVEL_DOMAIN = 87,
     /// <summary>URL must not end with a path.
     /// </summary>
-    URL_PATH_NOT_ALLOWED,
+    URL_PATH_NOT_ALLOWED = 88,
     /// <summary>URL must not specify a port.
     /// </summary>
-    URL_PORT_NOT_ALLOWED,
+    URL_PORT_NOT_ALLOWED = 89,
     /// <summary>URL must not contain a query.
     /// </summary>
-    URL_QUERY_NOT_ALLOWED,
+    URL_QUERY_NOT_ALLOWED = 90,
     /// <summary>A url scheme is not allowed in front of tag in dest url (e.g. http://{lpurl})
     /// </summary>
-    URL_SCHEME_BEFORE_DSA_TAG,
+    URL_SCHEME_BEFORE_DSA_TAG = 91,
     /// <summary>The user does not have permissions to create a template ad for the given
     /// template.
     /// </summary>
-    USER_DOES_NOT_HAVE_ACCESS_TO_TEMPLATE,
+    USER_DOES_NOT_HAVE_ACCESS_TO_TEMPLATE = 92,
     /// <summary>Expandable setting is inconsistent/wrong. For example, an AdX ad is invalid if
     /// it has a expandable vendor format but no expanding directions specified, or
     /// expanding directions is specified, but the vendor format is not expandable.
     /// </summary>
-    INCONSISTENT_EXPANDABLE_SETTINGS,
+    INCONSISTENT_EXPANDABLE_SETTINGS = 93,
     /// <summary>Format is invalid
     /// </summary>
-    INVALID_FORMAT,
+    INVALID_FORMAT = 94,
     /// <summary>The text of this field did not match a pattern of allowed values.
     /// </summary>
-    INVALID_FIELD_TEXT,
+    INVALID_FIELD_TEXT = 95,
     /// <summary>Template element is mising
     /// </summary>
-    ELEMENT_NOT_PRESENT,
+    ELEMENT_NOT_PRESENT = 96,
     /// <summary>Error occurred during image processing
     /// </summary>
-    IMAGE_ERROR,
+    IMAGE_ERROR = 97,
     /// <summary>The value is not within the valid range
     /// </summary>
-    VALUE_NOT_IN_RANGE,
+    VALUE_NOT_IN_RANGE = 98,
     /// <summary>Template element field is not present
     /// </summary>
-    FIELD_NOT_PRESENT,
+    FIELD_NOT_PRESENT = 99,
     /// <summary>Address is incomplete
     /// </summary>
-    ADDRESS_NOT_COMPLETE,
+    ADDRESS_NOT_COMPLETE = 100,
     /// <summary>Invalid address
     /// </summary>
-    ADDRESS_INVALID,
+    ADDRESS_INVALID = 101,
     /// <summary>Error retrieving specified video
     /// </summary>
-    VIDEO_RETRIEVAL_ERROR,
+    VIDEO_RETRIEVAL_ERROR = 102,
     /// <summary>Error processing audio
     /// </summary>
-    AUDIO_ERROR,
+    AUDIO_ERROR = 103,
     /// <summary>Display URL is incorrect for YouTube PYV ads
     /// </summary>
-    INVALID_YOUTUBE_DISPLAY_URL,
+    INVALID_YOUTUBE_DISPLAY_URL = 104,
     /// <summary>The device preference is not compatible with the ad type
     /// </summary>
-    INCOMPATIBLE_AD_TYPE_AND_DEVICE_PREFERENCE,
+    INCOMPATIBLE_AD_TYPE_AND_DEVICE_PREFERENCE = 105,
     /// <summary>Call tracking is not supported for specified country.
     /// </summary>
-    CALLTRACKING_NOT_SUPPORTED_FOR_COUNTRY,
+    CALLTRACKING_NOT_SUPPORTED_FOR_COUNTRY = 106,
     /// <summary>Carrier specific short number is not allowed.
     /// </summary>
-    CARRIER_SPECIFIC_SHORT_NUMBER_NOT_ALLOWED,
+    CARRIER_SPECIFIC_SHORT_NUMBER_NOT_ALLOWED = 107,
     /// <summary>Specified phone number type is disallowed.
     /// </summary>
-    DISALLOWED_NUMBER_TYPE,
+    DISALLOWED_NUMBER_TYPE = 108,
     /// <summary>Phone number not supported for country.
     /// </summary>
-    PHONE_NUMBER_NOT_SUPPORTED_FOR_COUNTRY,
+    PHONE_NUMBER_NOT_SUPPORTED_FOR_COUNTRY = 109,
     /// <summary>Phone number not supported with call tracking enabled for country.
     /// </summary>
-    PHONE_NUMBER_NOT_SUPPORTED_WITH_CALLTRACKING_FOR_COUNTRY,
+    PHONE_NUMBER_NOT_SUPPORTED_WITH_CALLTRACKING_FOR_COUNTRY = 110,
     /// <summary>Premium rate phone number is not allowed.
     /// </summary>
-    PREMIUM_RATE_NUMBER_NOT_ALLOWED,
+    PREMIUM_RATE_NUMBER_NOT_ALLOWED = 111,
     /// <summary>Vanity phone number is not allowed.
     /// </summary>
-    VANITY_PHONE_NUMBER_NOT_ALLOWED,
+    VANITY_PHONE_NUMBER_NOT_ALLOWED = 112,
     /// <summary>Invalid call conversion type id.
     /// </summary>
-    INVALID_CALL_CONVERSION_TYPE_ID,
-    CANNOT_DISABLE_CALL_CONVERSION_AND_SET_CONVERSION_TYPE_ID,
+    INVALID_CALL_CONVERSION_TYPE_ID = 113,
+    CANNOT_DISABLE_CALL_CONVERSION_AND_SET_CONVERSION_TYPE_ID = 114,
     /// <summary>Cannot set path2 without path1.
     /// </summary>
-    CANNOT_SET_PATH2_WITHOUT_PATH1,
+    CANNOT_SET_PATH2_WITHOUT_PATH1 = 119,
     /// <summary>An unexpected or unknown error occurred.
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 115,
   }
 
 
@@ -13333,16 +13336,16 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AdCustomizerErrorReason {
     /// <summary>Invalid date argument in countdown function.
     /// </summary>
-    COUNTDOWN_INVALID_DATE_FORMAT,
+    COUNTDOWN_INVALID_DATE_FORMAT = 0,
     /// <summary>Countdown end date is in the past.
     /// </summary>
-    COUNTDOWN_DATE_IN_PAST,
+    COUNTDOWN_DATE_IN_PAST = 1,
     /// <summary>Invalid locale string in countdown function.
     /// </summary>
-    COUNTDOWN_INVALID_LOCALE,
+    COUNTDOWN_INVALID_LOCALE = 2,
     /// <summary>Days-before argument to countdown function is not positive.
     /// </summary>
-    COUNTDOWN_INVALID_START_DAYS_BEFORE,
+    COUNTDOWN_INVALID_START_DAYS_BEFORE = 3,
   }
 
 
@@ -13416,7 +13419,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((CampaignCriterionPage)(results[0]));
+      return ((CampaignCriterionPage) (results[0]));
     }
 
     /// <summary>Adds, removes or updates campaign criteria.
@@ -13433,7 +13436,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CampaignCriterionReturnValue)(results[0]));
+      return ((CampaignCriterionReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of campaign criteria that match the query.
@@ -13450,7 +13453,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((CampaignCriterionPage)(results[0]));
+      return ((CampaignCriterionPage) (results[0]));
     }
   }
 
@@ -13637,17 +13640,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
       }
     }
 
-    /// <summary>The modifier for bids when the criterion matches. <p>Allowable modifier values
-    /// depend on the criterion:</p> <ul> <li><code>0.1</code> - <code>10.0</code>: <a
-    /// href='AdSchedule'>AdSchedule</a></li> <li><code>0.1</code> - <code>10.0</code>:
-    /// <a href='Location'>Location</a></li> <li><code>0.1</code> - <code>10.0</code>:
-    /// <a href='Proximity'>Proximity</a></li> <li><code>0.1</code> - <code>10.0</code>:
-    /// <a href='LocationGroups'>LocationGroups</a></li> <li><code>0.1</code> -
-    /// <code>4.0</code>: <a href='Platform'>Platform</a> (mobile), <code>0</code>: to
-    /// opt out of mobile</li> </ul> Specify <code>-1.0</code> to clear existing bid
-    /// modifier. <span class="constraint Selectable">This field can be selected using
-    /// the value "BidModifier".</span><span class="constraint Filterable">This field
-    /// can be filtered on.</span>
+    /// <summary>The modifier for bids when the criterion matches. <p>Valid modifier values range
+    /// from <code>0.1</code> to <code>10.0</code>, with <code>0.0</code> reserved for
+    /// opting out of platform criterion.</p> <p>Specify <code>-1.0</code> to clear
+    /// existing bid modifier. <span class="constraint Selectable">This field can be
+    /// selected using the value "BidModifier".</span><span class="constraint
+    /// Filterable">This field can be filtered on.</span></p>
     /// </summary>
     public double bidModifier {
       get {
@@ -14001,95 +13999,95 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum CriterionType {
     /// <summary>Content label for exclusion.
     /// </summary>
-    CONTENT_LABEL,
+    CONTENT_LABEL = 0,
     /// <summary>Keyword. e.g. 'mars cruise'
     /// </summary>
-    KEYWORD,
+    KEYWORD = 1,
     /// <summary>Placement. aka Website. e.g. 'www.flowers4sale.com'
     /// </summary>
-    PLACEMENT,
+    PLACEMENT = 2,
     /// <summary>Vertical, e.g. 'category::Animals&gt;Pets' This is for vertical targeting on the
     /// content network.
     /// </summary>
-    VERTICAL,
+    VERTICAL = 3,
     /// <summary>User lists, are links to sets of users defined by the advertiser.
     /// </summary>
-    USER_LIST,
+    USER_LIST = 4,
     /// <summary>User interests, categories of interests the user is interested in.
     /// </summary>
-    USER_INTEREST,
+    USER_INTEREST = 5,
     /// <summary>Mobile applications to target.
     /// </summary>
-    MOBILE_APPLICATION,
+    MOBILE_APPLICATION = 6,
     /// <summary>Mobile application categories to target.
     /// </summary>
-    MOBILE_APP_CATEGORY,
+    MOBILE_APP_CATEGORY = 7,
     /// <summary>Product partition (product group) in a shopping campaign.
     /// </summary>
-    PRODUCT_PARTITION,
+    PRODUCT_PARTITION = 8,
     /// <summary>IP addresses to exclude.
     /// </summary>
-    IP_BLOCK,
+    IP_BLOCK = 9,
     /// <summary>Webpages of an advertiser's website to target.
     /// </summary>
-    WEBPAGE,
+    WEBPAGE = 10,
     /// <summary>Languages to target.
     /// </summary>
-    LANGUAGE,
+    LANGUAGE = 11,
     /// <summary>Geographic regions to target.
     /// </summary>
-    LOCATION,
+    LOCATION = 12,
     /// <summary>Age Range to exclude.
     /// </summary>
-    AGE_RANGE,
+    AGE_RANGE = 13,
     /// <summary>Mobile carriers to target.
     /// </summary>
-    CARRIER,
+    CARRIER = 14,
     /// <summary>Mobile operating system versions to target.
     /// </summary>
-    OPERATING_SYSTEM_VERSION,
+    OPERATING_SYSTEM_VERSION = 15,
     /// <summary>Mobile devices to target.
     /// </summary>
-    MOBILE_DEVICE,
+    MOBILE_DEVICE = 16,
     /// <summary>Gender to exclude.
     /// </summary>
-    GENDER,
+    GENDER = 17,
     /// <summary>Parent to target and exclude.
     /// </summary>
-    PARENT,
+    PARENT = 18,
     /// <summary>Proximity (area within a radius) to target.
     /// </summary>
-    PROXIMITY,
+    PROXIMITY = 19,
     /// <summary>Platforms to target.
     /// </summary>
-    PLATFORM,
+    PLATFORM = 20,
     /// <summary>Representing preferred content bid modifier.
     /// </summary>
-    PREFERRED_CONTENT,
+    PREFERRED_CONTENT = 28,
     /// <summary>AdSchedule or specific days and time intervals to target.
     /// </summary>
-    AD_SCHEDULE,
+    AD_SCHEDULE = 21,
     /// <summary>Targeting based on location groups.
     /// </summary>
-    LOCATION_GROUPS,
+    LOCATION_GROUPS = 22,
     /// <summary>Scope of products. Contains a list of product dimensions, all of which a product
     /// has to match to be included in the campaign.
     /// </summary>
-    PRODUCT_SCOPE,
+    PRODUCT_SCOPE = 23,
     /// <summary>YouTube video to target.
     /// </summary>
-    YOUTUBE_VIDEO,
+    YOUTUBE_VIDEO = 24,
     /// <summary>YouTube channel to target.
     /// </summary>
-    YOUTUBE_CHANNEL,
+    YOUTUBE_CHANNEL = 25,
     /// <summary>Enables advertisers to target paid apps.
     /// </summary>
-    APP_PAYMENT_MODEL,
+    APP_PAYMENT_MODEL = 26,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 27,
   }
 
 
@@ -14642,27 +14640,27 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// href='StringConditionOperator#CONTAINS'>StringConditionOperator#CONTAINS</a>
     /// will be used for such conditions.
     /// </summary>
-    URL,
+    URL = 0,
     /// <summary>Operand denoting a webpage category targeting condition. The operator <a
     /// href='StringConditionOperator#EQUALS'>StringConditionOperator#EQUALS</a> will be
     /// used for such conditions.
     /// </summary>
-    CATEGORY,
+    CATEGORY = 1,
     /// <summary>Operand denoting a webpage title targeting condition. The operator <a
     /// href='StringConditionOperator#CONTAINS'>StringConditionOperator#CONTAINS</a>
     /// will be used for such conditions.
     /// </summary>
-    PAGE_TITLE,
+    PAGE_TITLE = 2,
     /// <summary>Operand denoting a webpage content targeting condition. The operator <a
     /// href='StringConditionOperator#CONTAINS'>StringConditionOperator#CONTAINS</a>
     /// will be used for such conditions.
     /// </summary>
-    PAGE_CONTENT,
+    PAGE_CONTENT = 3,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 4,
   }
 
 
@@ -15126,10 +15124,10 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum CriterionUserListMembershipStatus {
     /// <summary>Open status - list is accruing members and can be targeted to.
     /// </summary>
-    OPEN,
+    OPEN = 0,
     /// <summary>Closed status - No new members being added. Can not be used for targeting.
     /// </summary>
-    CLOSED,
+    CLOSED = 1,
   }
 
 
@@ -15295,8 +15293,9 @@ namespace Google.Api.Ads.AdWords.v201605 {
   /// PlacesOfInterestOperand(PlacesOfInterestOperand.Category.AIRPORT));
   /// function.setOperator(Operator.AND); function.setRhsOperand(Arrays.asList(
   /// (Operand) new GeoTargetOperand(Lists.newArrayList(new CriterionId(2250L))));
-  /// </code> </pre> <span class="constraint AdxEnabled">This is disabled for AdX when
-  /// it is contained within Operators: ADD, SET.</span>
+  /// </code> </pre> <p>NOTE: Starting v201607 places of interest targeting is read
+  /// only.</p> <span class="constraint AdxEnabled">This is disabled for AdX when it
+  /// is contained within Operators: ADD, SET.</span>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -15570,28 +15569,28 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum FunctionOperator {
     /// <summary>The IN operator.
     /// </summary>
-    IN,
+    IN = 0,
     /// <summary>The IDENTITY operator.
     /// </summary>
-    IDENTITY,
+    IDENTITY = 1,
     /// <summary>The EQUALS operator
     /// </summary>
-    EQUALS,
+    EQUALS = 2,
     /// <summary>Operator that takes two or more operands that are of type FunctionOperand and
     /// checks that all the operands evaluate to true. For functions related to ad
     /// formats, all the operands must be in lhsOperand. Return ConstantOperand with
     /// Bool type.
     /// </summary>
-    AND,
+    AND = 3,
     /// <summary>Operator that returns true if the elements in lhsOperand contains any of the
     /// elements in rhsOperands. Otherwise, return false.
     /// </summary>
-    CONTAINS_ANY,
+    CONTAINS_ANY = 4,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 5,
   }
 
 
@@ -15767,14 +15766,14 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "PlacesOfInterestOperand.Category", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum PlacesOfInterestOperandCategory {
-    AIRPORT,
-    DOWNTOWN,
-    UNIVERSITY,
+    AIRPORT = 0,
+    DOWNTOWN = 1,
+    UNIVERSITY = 2,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 3,
   }
 
 
@@ -16101,16 +16100,16 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ConstantOperandConstantType {
     /// <summary>Boolean constant type. booleanValue should be set for this type.
     /// </summary>
-    BOOLEAN,
+    BOOLEAN = 0,
     /// <summary>Double constant type. doubleValue should be set for this type.
     /// </summary>
-    DOUBLE,
+    DOUBLE = 1,
     /// <summary>Long constant type. longValue should be set for this type.
     /// </summary>
-    LONG,
+    LONG = 2,
     /// <summary>String constant type. stringValue should be set for this type.
     /// </summary>
-    STRING,
+    STRING = 3,
   }
 
 
@@ -16122,11 +16121,11 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ConstantOperandUnit {
     /// <summary>Meters.
     /// </summary>
-    METERS,
+    METERS = 0,
     /// <summary>Miles.
     /// </summary>
-    MILES,
-    NONE,
+    MILES = 1,
+    NONE = 2,
   }
 
 
@@ -16225,16 +16224,16 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum IncomeTier {
-    UNKNOWN,
-    TIER_1,
-    TIER_2,
-    TIER_3,
-    TIER_4,
-    TIER_5,
+    UNKNOWN = 0,
+    TIER_1 = 1,
+    TIER_2 = 2,
+    TIER_3 = 3,
+    TIER_4 = 4,
+    TIER_5 = 5,
     /// <summary>Bucket consisting of the bottom 5 tiers, specifying the bottom 50% of household
     /// income zip codes.
     /// </summary>
-    TIER_6_TO_10,
+    TIER_6_TO_10 = 6,
   }
 
 
@@ -16608,10 +16607,10 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ProximityDistanceUnits {
     /// <summary>The unit of distance is kilometer.
     /// </summary>
-    KILOMETERS,
+    KILOMETERS = 0,
     /// <summary>The unit of distance is mile.
     /// </summary>
-    MILES,
+    MILES = 1,
   }
 
 
@@ -17144,27 +17143,27 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
-    BIDDING_CATEGORY_L1,
-    BIDDING_CATEGORY_L2,
-    BIDDING_CATEGORY_L3,
-    BIDDING_CATEGORY_L4,
-    BIDDING_CATEGORY_L5,
-    BRAND,
-    CANONICAL_CONDITION,
-    CUSTOM_ATTRIBUTE_0,
-    CUSTOM_ATTRIBUTE_1,
-    CUSTOM_ATTRIBUTE_2,
-    CUSTOM_ATTRIBUTE_3,
-    CUSTOM_ATTRIBUTE_4,
-    OFFER_ID,
-    PRODUCT_TYPE_L1,
-    PRODUCT_TYPE_L2,
-    PRODUCT_TYPE_L3,
-    PRODUCT_TYPE_L4,
-    PRODUCT_TYPE_L5,
-    CHANNEL,
-    CHANNEL_EXCLUSIVITY,
+    UNKNOWN = 0,
+    BIDDING_CATEGORY_L1 = 1,
+    BIDDING_CATEGORY_L2 = 2,
+    BIDDING_CATEGORY_L3 = 3,
+    BIDDING_CATEGORY_L4 = 4,
+    BIDDING_CATEGORY_L5 = 5,
+    BRAND = 6,
+    CANONICAL_CONDITION = 7,
+    CUSTOM_ATTRIBUTE_0 = 8,
+    CUSTOM_ATTRIBUTE_1 = 9,
+    CUSTOM_ATTRIBUTE_2 = 10,
+    CUSTOM_ATTRIBUTE_3 = 11,
+    CUSTOM_ATTRIBUTE_4 = 12,
+    OFFER_ID = 13,
+    PRODUCT_TYPE_L1 = 14,
+    PRODUCT_TYPE_L2 = 15,
+    PRODUCT_TYPE_L3 = 16,
+    PRODUCT_TYPE_L4 = 17,
+    PRODUCT_TYPE_L5 = 18,
+    CHANNEL = 19,
+    CHANNEL_EXCLUSIVITY = 20,
   }
 
 
@@ -17417,15 +17416,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>The item is sold through one channel only, either local stores or online as
     /// indicated by its ShoppingProductChannel.
     /// </summary>
-    SINGLE_CHANNEL,
+    SINGLE_CHANNEL = 1,
     /// <summary>The item is matched to its online or local stores counterpart, indicating it is
     /// available for purchase in both ShoppingProductChannels.
     /// </summary>
-    MULTI_CHANNEL,
+    MULTI_CHANNEL = 2,
   }
 
 
@@ -17478,13 +17477,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>The item is sold online.
     /// </summary>
-    ONLINE,
+    ONLINE = 1,
     /// <summary>The item is sold in local stores.
     /// </summary>
-    LOCAL,
+    LOCAL = 2,
   }
 
 
@@ -17532,14 +17531,14 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProductCanonicalCondition.Condition", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum ProductCanonicalConditionCondition {
-    NEW,
-    USED,
-    REFURBISHED,
+    NEW = 0,
+    USED = 1,
+    REFURBISHED = 2,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 3,
   }
 
 
@@ -18152,14 +18151,14 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Parent.ParentType", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum ParentParentType {
-    PARENT_PARENT,
-    PARENT_NOT_A_PARENT,
-    PARENT_UNDETERMINED,
+    PARENT_PARENT = 0,
+    PARENT_NOT_A_PARENT = 1,
+    PARENT_UNDETERMINED = 2,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 3,
   }
 
 
@@ -18359,9 +18358,9 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "OperatingSystemVersion.OperatorType", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum OperatingSystemVersionOperatorType {
-    GREATER_THAN_EQUAL_TO,
-    EQUAL_TO,
-    UNKNOWN,
+    GREATER_THAN_EQUAL_TO = 0,
+    EQUAL_TO = 1,
+    UNKNOWN = 2,
   }
 
 
@@ -18520,8 +18519,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "MobileDevice.DeviceType", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum MobileDeviceDeviceType {
-    DEVICE_TYPE_MOBILE,
-    DEVICE_TYPE_TABLET,
+    DEVICE_TYPE_MOBILE = 0,
+    DEVICE_TYPE_TABLET = 1,
   }
 
 
@@ -18937,13 +18936,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum LocationTargetingStatus {
     /// <summary>The location is active.
     /// </summary>
-    ACTIVE,
+    ACTIVE = 0,
     /// <summary>The location is not available for targeting.
     /// </summary>
-    OBSOLETE,
+    OBSOLETE = 1,
     /// <summary>The location is phasing out, it will marked obsolete soon.
     /// </summary>
-    PHASING_OUT,
+    PHASING_OUT = 2,
   }
 
 
@@ -19175,13 +19174,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum KeywordMatchType {
     /// <summary>Exact match
     /// </summary>
-    EXACT,
+    EXACT = 0,
     /// <summary>Phrase match
     /// </summary>
-    PHRASE,
+    PHRASE = 1,
     /// <summary>Broad match
     /// </summary>
-    BROAD,
+    BROAD = 2,
   }
 
 
@@ -19370,9 +19369,9 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Gender.GenderType", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum GenderGenderType {
-    GENDER_MALE,
-    GENDER_FEMALE,
-    GENDER_UNDETERMINED,
+    GENDER_MALE = 0,
+    GENDER_FEMALE = 1,
+    GENDER_UNDETERMINED = 2,
   }
 
 
@@ -19480,78 +19479,78 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ContentLabelType {
     /// <summary>Sexually suggestive content
     /// </summary>
-    ADULTISH,
+    ADULTISH = 0,
     /// <summary>Error pages
     /// </summary>
-    AFE,
+    AFE = 1,
     /// <summary>Below the fold placements
     /// </summary>
-    BELOW_THE_FOLD,
+    BELOW_THE_FOLD = 2,
     /// <summary>Military &amp; international conflict
     /// </summary>
-    CONFLICT,
+    CONFLICT = 3,
     /// <summary>Parked domains
     /// </summary>
-    DP,
+    DP = 4,
     /// <summary>Embedded video
     /// </summary>
-    EMBEDDED_VIDEO,
+    EMBEDDED_VIDEO = 5,
     /// <summary>Games
     /// </summary>
-    GAMES,
+    GAMES = 6,
     /// <summary>Juvenile, gross &amp; bizarre content
     /// </summary>
-    JUVENILE,
+    JUVENILE = 7,
     /// <summary>Profanity &amp; rough language
     /// </summary>
-    PROFANITY,
+    PROFANITY = 8,
     /// <summary>Forums
     /// </summary>
-    UGC_FORUMS,
+    UGC_FORUMS = 9,
     /// <summary>Image-sharing pages
     /// </summary>
-    UGC_IMAGES,
+    UGC_IMAGES = 10,
     /// <summary>Social networks
     /// </summary>
-    UGC_SOCIAL,
+    UGC_SOCIAL = 11,
     /// <summary>Video-sharing pages
     /// </summary>
-    UGC_VIDEOS,
+    UGC_VIDEOS = 12,
     /// <summary>Crime, police &amp; emergency
     /// </summary>
-    SIRENS,
+    SIRENS = 13,
     /// <summary>Death &amp; tragedy
     /// </summary>
-    TRAGEDY,
+    TRAGEDY = 14,
     /// <summary>Video
     /// </summary>
-    VIDEO,
+    VIDEO = 15,
     /// <summary>Content rating: G
     /// </summary>
-    VIDEO_RATING_DV_G,
+    VIDEO_RATING_DV_G = 16,
     /// <summary>Content rating: PG
     /// </summary>
-    VIDEO_RATING_DV_PG,
+    VIDEO_RATING_DV_PG = 17,
     /// <summary>Content rating: T
     /// </summary>
-    VIDEO_RATING_DV_T,
+    VIDEO_RATING_DV_T = 18,
     /// <summary>Content rating: MA
     /// </summary>
-    VIDEO_RATING_DV_MA,
+    VIDEO_RATING_DV_MA = 19,
     /// <summary>Content rating: not yet rated
     /// </summary>
-    VIDEO_NOT_YET_RATED,
+    VIDEO_NOT_YET_RATED = 20,
     /// <summary>Live streaming video
     /// </summary>
-    LIVE_STREAMING_VIDEO,
+    LIVE_STREAMING_VIDEO = 21,
     /// <summary>Allowed gambling content.
     /// </summary>
-    ALLOWED_GAMBLING_CONTENT,
+    ALLOWED_GAMBLING_CONTENT = 22,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 23,
   }
 
 
@@ -19752,18 +19751,18 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AgeRange.AgeRangeType", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum AgeRangeAgeRangeType {
-    AGE_RANGE_18_24,
-    AGE_RANGE_25_34,
-    AGE_RANGE_35_44,
-    AGE_RANGE_45_54,
-    AGE_RANGE_55_64,
-    AGE_RANGE_65_UP,
-    AGE_RANGE_UNDETERMINED,
+    AGE_RANGE_18_24 = 0,
+    AGE_RANGE_25_34 = 1,
+    AGE_RANGE_35_44 = 2,
+    AGE_RANGE_45_54 = 3,
+    AGE_RANGE_55_64 = 4,
+    AGE_RANGE_65_UP = 5,
+    AGE_RANGE_UNDETERMINED = 6,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 7,
   }
 
 
@@ -20031,25 +20030,25 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum DayOfWeek {
     /// <summary>The day of week named Monday.
     /// </summary>
-    MONDAY,
+    MONDAY = 0,
     /// <summary>The day of week named Tuesday.
     /// </summary>
-    TUESDAY,
+    TUESDAY = 1,
     /// <summary>The day of week named Wednesday.
     /// </summary>
-    WEDNESDAY,
+    WEDNESDAY = 2,
     /// <summary>The day of week named Thursday.
     /// </summary>
-    THURSDAY,
+    THURSDAY = 3,
     /// <summary>The day of week named Friday.
     /// </summary>
-    FRIDAY,
+    FRIDAY = 4,
     /// <summary>The day of week named Saturday.
     /// </summary>
-    SATURDAY,
+    SATURDAY = 5,
     /// <summary>The day of week named Sunday.
     /// </summary>
-    SUNDAY,
+    SUNDAY = 6,
   }
 
 
@@ -20061,16 +20060,16 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum MinuteOfHour {
     /// <summary>Zero minutes past hour.
     /// </summary>
-    ZERO,
+    ZERO = 0,
     /// <summary>Fifteen minutes past hour.
     /// </summary>
-    FIFTEEN,
+    FIFTEEN = 1,
     /// <summary>Thirty minutes past hour.
     /// </summary>
-    THIRTY,
+    THIRTY = 2,
     /// <summary>Forty-five minutes past hour.
     /// </summary>
-    FORTY_FIVE,
+    FORTY_FIVE = 3,
   }
 
 
@@ -20317,7 +20316,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "RegionCodeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum RegionCodeErrorReason {
-    INVALID_REGION_CODE,
+    INVALID_REGION_CODE = 0,
   }
 
 
@@ -20364,218 +20363,218 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum CriterionErrorReason {
     /// <summary>Concrete type of criterion is required for ADD and SET operations.
     /// </summary>
-    CONCRETE_TYPE_REQUIRED,
+    CONCRETE_TYPE_REQUIRED = 0,
     /// <summary>The category requested for exclusion is invalid.
     /// </summary>
-    INVALID_EXCLUDED_CATEGORY,
+    INVALID_EXCLUDED_CATEGORY = 1,
     /// <summary>Invalid keyword criteria text.
     /// </summary>
-    INVALID_KEYWORD_TEXT,
+    INVALID_KEYWORD_TEXT = 2,
     /// <summary>Keyword text should be less than 80 chars.
     /// </summary>
-    KEYWORD_TEXT_TOO_LONG,
+    KEYWORD_TEXT_TOO_LONG = 3,
     /// <summary>Keyword text has too many words.
     /// </summary>
-    KEYWORD_HAS_TOO_MANY_WORDS,
+    KEYWORD_HAS_TOO_MANY_WORDS = 4,
     /// <summary>Keyword text has invalid characters or symbols.
     /// </summary>
-    KEYWORD_HAS_INVALID_CHARS,
+    KEYWORD_HAS_INVALID_CHARS = 5,
     /// <summary>Invalid placement URL.
     /// </summary>
-    INVALID_PLACEMENT_URL,
+    INVALID_PLACEMENT_URL = 6,
     /// <summary>Invalid user list criterion.
     /// </summary>
-    INVALID_USER_LIST,
+    INVALID_USER_LIST = 7,
     /// <summary>Invalid user interest criterion.
     /// </summary>
-    INVALID_USER_INTEREST,
+    INVALID_USER_INTEREST = 8,
     /// <summary>Placement URL has wrong format.
     /// </summary>
-    INVALID_FORMAT_FOR_PLACEMENT_URL,
+    INVALID_FORMAT_FOR_PLACEMENT_URL = 9,
     /// <summary>Placement URL is too long.
     /// </summary>
-    PLACEMENT_URL_IS_TOO_LONG,
+    PLACEMENT_URL_IS_TOO_LONG = 10,
     /// <summary>Indicates the URL contains an illegal character.
     /// </summary>
-    PLACEMENT_URL_HAS_ILLEGAL_CHAR,
+    PLACEMENT_URL_HAS_ILLEGAL_CHAR = 11,
     /// <summary>Indicates the URL contains multiple comma separated URLs.
     /// </summary>
-    PLACEMENT_URL_HAS_MULTIPLE_SITES_IN_LINE,
+    PLACEMENT_URL_HAS_MULTIPLE_SITES_IN_LINE = 12,
     /// <summary>Indicates the domain is blacklisted.
     /// </summary>
-    PLACEMENT_IS_NOT_AVAILABLE_FOR_TARGETING_OR_EXCLUSION,
+    PLACEMENT_IS_NOT_AVAILABLE_FOR_TARGETING_OR_EXCLUSION = 13,
     /// <summary>Invalid vertical path.
     /// </summary>
-    INVALID_VERTICAL_PATH,
+    INVALID_VERTICAL_PATH = 14,
     /// <summary>Indicates the placement is a YouTube vertical channel, which is no longer
     /// supported.
     /// </summary>
-    YOUTUBE_VERTICAL_CHANNEL_DEPRECATED,
+    YOUTUBE_VERTICAL_CHANNEL_DEPRECATED = 15,
     /// <summary>Indicates the placement is a YouTube demographic channel, which is no longer
     /// supported.
     /// </summary>
-    YOUTUBE_DEMOGRAPHIC_CHANNEL_DEPRECATED,
+    YOUTUBE_DEMOGRAPHIC_CHANNEL_DEPRECATED = 16,
     /// <summary>YouTube urls are not supported in Placement criterion. Use YouTubeChannel and
     /// YouTubeVideo criterion instead.
     /// </summary>
-    YOUTUBE_URL_UNSUPPORTED,
+    YOUTUBE_URL_UNSUPPORTED = 17,
     /// <summary>Criteria type can not be excluded by the customer, like AOL account type cannot
     /// target site type criteria.
     /// </summary>
-    CANNOT_EXCLUDE_CRITERIA_TYPE,
+    CANNOT_EXCLUDE_CRITERIA_TYPE = 18,
     /// <summary>Criteria type can not be targeted.
     /// </summary>
-    CANNOT_ADD_CRITERIA_TYPE,
+    CANNOT_ADD_CRITERIA_TYPE = 19,
     /// <summary>Product filter in the product criteria has invalid characters. Operand and the
     /// argument in the filter can not have "==" or "&amp;+".
     /// </summary>
-    INVALID_PRODUCT_FILTER,
+    INVALID_PRODUCT_FILTER = 20,
     /// <summary>Product filter in the product criteria is translated to a string as
     /// operand1==argument1&amp;+operand2==argument2, maximum allowed length for the
     /// string is 255 chars.
     /// </summary>
-    PRODUCT_FILTER_TOO_LONG,
+    PRODUCT_FILTER_TOO_LONG = 21,
     /// <summary>Not allowed to add display only UserLists to search only campaigns.
     /// </summary>
-    CANNOT_ADD_DISPLAY_ONLY_LISTS_TO_SEARCH_ONLY_CAMPAIGNS,
+    CANNOT_ADD_DISPLAY_ONLY_LISTS_TO_SEARCH_ONLY_CAMPAIGNS = 22,
     /// <summary>Not allowed to set bids for this criterion type in search campaigns
     /// </summary>
-    CANNOT_SET_BIDS_ON_CRITERION_TYPE_IN_SEARCH_CAMPAIGNS,
+    CANNOT_SET_BIDS_ON_CRITERION_TYPE_IN_SEARCH_CAMPAIGNS = 23,
     /// <summary>Destination URL cannot be set for the criterion types of Gender, AgeRange,
     /// UserList, Placement, MobileApp, and MobileAppCategory in search campaigns.
     /// </summary>
-    CANNOT_ADD_DESTINATION_URL_TO_CRITERION_TYPE_IN_SEARCH_CAMPAIGNS,
+    CANNOT_ADD_DESTINATION_URL_TO_CRITERION_TYPE_IN_SEARCH_CAMPAIGNS = 24,
     /// <summary>IP address is not valid.
     /// </summary>
-    INVALID_IP_ADDRESS,
+    INVALID_IP_ADDRESS = 25,
     /// <summary>IP format is not valid.
     /// </summary>
-    INVALID_IP_FORMAT,
+    INVALID_IP_FORMAT = 26,
     /// <summary>Mobile application is not valid.
     /// </summary>
-    INVALID_MOBILE_APP,
+    INVALID_MOBILE_APP = 27,
     /// <summary>Mobile application category is not valid.
     /// </summary>
-    INVALID_MOBILE_APP_CATEGORY,
+    INVALID_MOBILE_APP_CATEGORY = 28,
     /// <summary>The CriterionId does not exist or is of the incorrect type.
     /// </summary>
-    INVALID_CRITERION_ID,
+    INVALID_CRITERION_ID = 29,
     /// <summary>The Criterion is not allowed to be targeted.
     /// </summary>
-    CANNOT_TARGET_CRITERION,
+    CANNOT_TARGET_CRITERION = 30,
     /// <summary>The criterion is not allowed to be targeted as it is deprecated.
     /// </summary>
-    CANNOT_TARGET_OBSOLETE_CRITERION,
+    CANNOT_TARGET_OBSOLETE_CRITERION = 31,
     /// <summary>The CriterionId is not valid for the type.
     /// </summary>
-    CRITERION_ID_AND_TYPE_MISMATCH,
+    CRITERION_ID_AND_TYPE_MISMATCH = 32,
     /// <summary>Distance for the radius for the proximity criterion is invalid.
     /// </summary>
-    INVALID_PROXIMITY_RADIUS,
+    INVALID_PROXIMITY_RADIUS = 33,
     /// <summary>Units for the distance for the radius for the proximity criterion is invalid.
     /// </summary>
-    INVALID_PROXIMITY_RADIUS_UNITS,
+    INVALID_PROXIMITY_RADIUS_UNITS = 34,
     /// <summary>Street address is too short.
     /// </summary>
-    INVALID_STREETADDRESS_LENGTH,
+    INVALID_STREETADDRESS_LENGTH = 35,
     /// <summary>City name in the address is too short.
     /// </summary>
-    INVALID_CITYNAME_LENGTH,
+    INVALID_CITYNAME_LENGTH = 36,
     /// <summary>Region code in the address is too short.
     /// </summary>
-    INVALID_REGIONCODE_LENGTH,
+    INVALID_REGIONCODE_LENGTH = 37,
     /// <summary>Region name in the address is not valid.
     /// </summary>
-    INVALID_REGIONNAME_LENGTH,
+    INVALID_REGIONNAME_LENGTH = 38,
     /// <summary>Postal code in the address is not valid.
     /// </summary>
-    INVALID_POSTALCODE_LENGTH,
+    INVALID_POSTALCODE_LENGTH = 39,
     /// <summary>Country code in the address is not valid.
     /// </summary>
-    INVALID_COUNTRY_CODE,
+    INVALID_COUNTRY_CODE = 40,
     /// <summary>Latitude for the GeoPoint is not valid.
     /// </summary>
-    INVALID_LATITUDE,
+    INVALID_LATITUDE = 41,
     /// <summary>Longitude for the GeoPoint is not valid.
     /// </summary>
-    INVALID_LONGITUDE,
+    INVALID_LONGITUDE = 42,
     /// <summary>The Proximity input is not valid. Both address and geoPoint cannot be null.
     /// </summary>
-    PROXIMITY_GEOPOINT_AND_ADDRESS_BOTH_CANNOT_BE_NULL,
+    PROXIMITY_GEOPOINT_AND_ADDRESS_BOTH_CANNOT_BE_NULL = 43,
     /// <summary>The Proximity address cannot be geocoded to a valid lat/long.
     /// </summary>
-    INVALID_PROXIMITY_ADDRESS,
+    INVALID_PROXIMITY_ADDRESS = 44,
     /// <summary>User domain name is not valid.
     /// </summary>
-    INVALID_USER_DOMAIN_NAME,
+    INVALID_USER_DOMAIN_NAME = 45,
     /// <summary>Length of serialized criterion parameter exceeded size limit.
     /// </summary>
-    CRITERION_PARAMETER_TOO_LONG,
+    CRITERION_PARAMETER_TOO_LONG = 46,
     /// <summary>Time interval in the AdSchedule overlaps with another AdSchedule.
     /// </summary>
-    AD_SCHEDULE_TIME_INTERVALS_OVERLAP,
+    AD_SCHEDULE_TIME_INTERVALS_OVERLAP = 47,
     /// <summary>AdSchedule time interval cannot span multiple days.
     /// </summary>
-    AD_SCHEDULE_INTERVAL_CANNOT_SPAN_MULTIPLE_DAYS,
+    AD_SCHEDULE_INTERVAL_CANNOT_SPAN_MULTIPLE_DAYS = 48,
     /// <summary>AdSchedule time interval specified is invalid, endTime cannot be earlier than
     /// startTime.
     /// </summary>
-    AD_SCHEDULE_INVALID_TIME_INTERVAL,
+    AD_SCHEDULE_INVALID_TIME_INTERVAL = 49,
     /// <summary>The number of AdSchedule entries in a day exceeds the limit.
     /// </summary>
-    AD_SCHEDULE_EXCEEDED_INTERVALS_PER_DAY_LIMIT,
+    AD_SCHEDULE_EXCEEDED_INTERVALS_PER_DAY_LIMIT = 50,
     /// <summary>CriteriaId does not match the interval of the AdSchedule specified.
     /// </summary>
-    AD_SCHEDULE_CRITERION_ID_MISMATCHING_FIELDS,
+    AD_SCHEDULE_CRITERION_ID_MISMATCHING_FIELDS = 51,
     /// <summary>Cannot set bid modifier for this criterion type.
     /// </summary>
-    CANNOT_BID_MODIFY_CRITERION_TYPE,
+    CANNOT_BID_MODIFY_CRITERION_TYPE = 52,
     /// <summary>Cannot bid modify criterion, since it is opted out of the campaign.
     /// </summary>
-    CANNOT_BID_MODIFY_CRITERION_CAMPAIGN_OPTED_OUT,
+    CANNOT_BID_MODIFY_CRITERION_CAMPAIGN_OPTED_OUT = 53,
     /// <summary>Cannot set bid modifier for a negative criterion.
     /// </summary>
-    CANNOT_BID_MODIFY_NEGATIVE_CRITERION,
+    CANNOT_BID_MODIFY_NEGATIVE_CRITERION = 54,
     /// <summary>Bid Modifier already exists. Use SET operation to update.
     /// </summary>
-    BID_MODIFIER_ALREADY_EXISTS,
+    BID_MODIFIER_ALREADY_EXISTS = 55,
     /// <summary>Feed Id is not allowed in these Location Groups.
     /// </summary>
-    FEED_ID_NOT_ALLOWED,
+    FEED_ID_NOT_ALLOWED = 56,
     /// <summary>The account may not use the requested criteria type. For example, some accounts
     /// are restricted to keywords only.
     /// </summary>
-    ACCOUNT_INELIGIBLE_FOR_CRITERIA_TYPE,
+    ACCOUNT_INELIGIBLE_FOR_CRITERIA_TYPE = 57,
     /// <summary>The requested criteria type cannot be used with campaign or ad group bidding
     /// strategy.
     /// </summary>
-    CRITERIA_TYPE_INVALID_FOR_BIDDING_STRATEGY,
+    CRITERIA_TYPE_INVALID_FOR_BIDDING_STRATEGY = 58,
     /// <summary>The Criterion is not allowed to be excluded.
     /// </summary>
-    CANNOT_EXCLUDE_CRITERION,
+    CANNOT_EXCLUDE_CRITERION = 59,
     /// <summary>The criterion is not allowed to be removed. For example, we cannot remove any of
     /// the platform criterion.
     /// </summary>
-    CANNOT_REMOVE_CRITERION,
+    CANNOT_REMOVE_CRITERION = 60,
     /// <summary>The combined length of product dimension values of the product scope criterion
     /// is too long.
     /// </summary>
-    PRODUCT_SCOPE_TOO_LONG,
+    PRODUCT_SCOPE_TOO_LONG = 61,
     /// <summary>Product scope contains too many dimensions.
     /// </summary>
-    PRODUCT_SCOPE_TOO_MANY_DIMENSIONS,
+    PRODUCT_SCOPE_TOO_MANY_DIMENSIONS = 62,
     /// <summary>The combined length of product dimension values of the product partition
     /// criterion is too long.
     /// </summary>
-    PRODUCT_PARTITION_TOO_LONG,
+    PRODUCT_PARTITION_TOO_LONG = 63,
     /// <summary>Product partition contains too many dimensions.
     /// </summary>
-    PRODUCT_PARTITION_TOO_MANY_DIMENSIONS,
+    PRODUCT_PARTITION_TOO_MANY_DIMENSIONS = 64,
     /// <summary>The product dimension is invalid (e.g. dimension contains illegal value,
     /// dimension type is represented with wrong class, etc). Product dimension value
     /// can not contain "==" or "&amp;+".
     /// </summary>
-    INVALID_PRODUCT_DIMENSION,
+    INVALID_PRODUCT_DIMENSION = 65,
     /// <summary>Product dimension type is either invalid for campaigns of this type or cannot be
     /// used in the current context. BIDDING_CATEGORY_Lx and PRODUCT_TYPE_Lx product
     /// dimensions must be used in ascending order of their levels: L1, L2, L3, L4,
@@ -20584,25 +20583,25 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// type but of a higher level ("others" BIDDING_CATEGORY_L3 can be subdivided with
     /// BRAND but not with BIDDING_CATEGORY_L4).
     /// </summary>
-    INVALID_PRODUCT_DIMENSION_TYPE,
+    INVALID_PRODUCT_DIMENSION_TYPE = 66,
     /// <summary>Bidding categories do not form a valid path in the Shopping bidding category
     /// taxonomy.
     /// </summary>
-    INVALID_PRODUCT_BIDDING_CATEGORY,
+    INVALID_PRODUCT_BIDDING_CATEGORY = 67,
     /// <summary>ShoppingSetting must be added to the campaign before ProductScope criteria can
     /// be added.
     /// </summary>
-    MISSING_SHOPPING_SETTING,
+    MISSING_SHOPPING_SETTING = 68,
     /// <summary>Matching function is invalid.
     /// </summary>
-    INVALID_MATCHING_FUNCTION,
+    INVALID_MATCHING_FUNCTION = 69,
     /// <summary>Filter parameters not allowed for location groups targeting.
     /// </summary>
-    LOCATION_FILTER_NOT_ALLOWED,
+    LOCATION_FILTER_NOT_ALLOWED = 70,
     /// <summary>Given location filter parameter is invalid for location groups targeting.
     /// </summary>
-    LOCATION_FILTER_INVALID,
-    UNKNOWN,
+    LOCATION_FILTER_INVALID = 71,
+    UNKNOWN = 72,
   }
 
 
@@ -20700,32 +20699,32 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <summary>Concrete type of criterion (keyword v.s. placement) is required for ADD and SET
     /// operations.
     /// </summary>
-    CONCRETE_TYPE_REQUIRED,
+    CONCRETE_TYPE_REQUIRED = 0,
     /// <summary>Invalid placement URL.
     /// </summary>
-    INVALID_PLACEMENT_URL,
+    INVALID_PLACEMENT_URL = 1,
     /// <summary>Criteria type can not be excluded for the campaign by the customer. like AOL
     /// account type cannot target site type criteria
     /// </summary>
-    CANNOT_EXCLUDE_CRITERIA_TYPE,
+    CANNOT_EXCLUDE_CRITERIA_TYPE = 2,
     /// <summary>Cannot target and exclude the same criterion.
     /// </summary>
-    CANNOT_TARGET_AND_EXCLUDE,
+    CANNOT_TARGET_AND_EXCLUDE = 3,
     /// <summary>The #mutate operation contained too many operations.
     /// </summary>
-    TOO_MANY_OPERATIONS,
+    TOO_MANY_OPERATIONS = 4,
     /// <summary>This operator cannot be applied to a criterion of this type.
     /// </summary>
-    OPERATOR_NOT_SUPPORTED_FOR_CRITERION_TYPE,
+    OPERATOR_NOT_SUPPORTED_FOR_CRITERION_TYPE = 5,
     /// <summary>The Shopping campaign sales country is not supported for ProductSalesChannel
     /// targeting.
     /// </summary>
-    SHOPPING_CAMPAIGN_SALES_COUNTRY_NOT_SUPPORTED_FOR_SALES_CHANNEL,
-    UNKNOWN,
+    SHOPPING_CAMPAIGN_SALES_COUNTRY_NOT_SUPPORTED_FOR_SALES_CHANNEL = 6,
+    UNKNOWN = 7,
     /// <summary>The existing field can't be updated with ADD operation. It can be updated with
     /// SET operation only.
     /// </summary>
-    CANNOT_ADD_EXISTING_FIELD,
+    CANNOT_ADD_EXISTING_FIELD = 8,
   }
 
 
@@ -20795,7 +20794,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((CampaignPage)(results[0]));
+      return ((CampaignPage) (results[0]));
     }
 
     /// <summary>Adds, updates, or removes campaigns. <p class="note"><b>Note:</b> <a
@@ -20817,7 +20816,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CampaignReturnValue)(results[0]));
+      return ((CampaignReturnValue) (results[0]));
     }
 
     /// <summary>Adds labels to the <a href='Campaign'>campaign</a> or removes <a
@@ -20844,7 +20843,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CampaignLabelReturnValue)(results[0]));
+      return ((CampaignLabelReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of campaigns that match the query.
@@ -20861,7 +20860,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((CampaignPage)(results[0]));
+      return ((CampaignPage) (results[0]));
     }
   }
 
@@ -21599,16 +21598,16 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>Campaign is currently serving ads depending on budget information.
     /// </summary>
-    ENABLED,
+    ENABLED = 1,
     /// <summary>Campaign has been paused by the user.
     /// </summary>
-    PAUSED,
+    PAUSED = 2,
     /// <summary>Campaign has been removed.
     /// </summary>
-    REMOVED,
+    REMOVED = 3,
   }
 
 
@@ -21620,20 +21619,20 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ServingStatus {
     /// <summary>The campaign is currently serving ads.
     /// </summary>
-    SERVING,
+    SERVING = 0,
     /// <summary>This is the catch-all if none of the other statuses make sense. Such a campaign
     /// is not serving, but none of the other statuses are sensible options.
     /// </summary>
-    NONE,
+    NONE = 1,
     /// <summary>The campaign end date has been past.
     /// </summary>
-    ENDED,
+    ENDED = 2,
     /// <summary>The campaign start date has not yet been reached.
     /// </summary>
-    PENDING,
+    PENDING = 3,
     /// <summary>The campaign has been suspended probably from lack of allocated funds.
     /// </summary>
-    SUSPENDED,
+    SUSPENDED = 4,
   }
 
 
@@ -22300,12 +22299,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum BudgetBudgetDeliveryMethod {
     /// <summary>The budget server will throttle serving evenly across the entire time period.
     /// </summary>
-    STANDARD,
+    STANDARD = 0,
     /// <summary>The budget server will not throttle serving, and ads will serve as fast as
     /// possible.
     /// </summary>
-    ACCELERATED,
-    UNKNOWN,
+    ACCELERATED = 1,
+    UNKNOWN = 2,
   }
 
 
@@ -22313,9 +22312,9 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Budget.BudgetStatus", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum BudgetBudgetStatus {
-    ENABLED,
-    REMOVED,
-    UNKNOWN,
+    ENABLED = 0,
+    REMOVED = 1,
+    UNKNOWN = 2,
   }
 
 
@@ -22438,18 +22437,18 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ConversionOptimizerEligibilityRejectionReason {
     /// <summary>Campaign is not active
     /// </summary>
-    CAMPAIGN_IS_NOT_ACTIVE,
+    CAMPAIGN_IS_NOT_ACTIVE = 0,
     /// <summary>Conversion optimizer is available to only Manual CPC campaign
     /// </summary>
-    NOT_CPC_CAMPAIGN,
+    NOT_CPC_CAMPAIGN = 1,
     /// <summary>Conversion tracking is not enabled for the Campaign
     /// </summary>
-    CONVERSION_TRACKING_NOT_ENABLED,
+    CONVERSION_TRACKING_NOT_ENABLED = 2,
     /// <summary>The campaign does not meet the requirement to have a sufficient count of
     /// conversions.
     /// </summary>
-    NOT_ENOUGH_CONVERSIONS,
-    UNKNOWN,
+    NOT_ENOUGH_CONVERSIONS = 3,
+    UNKNOWN = 4,
   }
 
 
@@ -22461,27 +22460,27 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AdServingOptimizationStatus {
     /// <summary>Ad serving is optimized based on CTR for the campaign.
     /// </summary>
-    OPTIMIZE,
+    OPTIMIZE = 0,
     /// <summary>Ad serving is optimized based on CTR * Conversion for the campaign. If the
     /// campaign is not in the conversion optimizer bidding strategy, it will default to
     /// OPTIMIZED.
     /// </summary>
-    CONVERSION_OPTIMIZE,
+    CONVERSION_OPTIMIZE = 1,
     /// <summary>Ads are rotated evenly for 90 days, then optimized for clicks.
     /// </summary>
-    ROTATE,
+    ROTATE = 2,
     /// <summary>Show lower performing ads more evenly with higher performing ads, and do not
     /// optimize.
     /// </summary>
-    ROTATE_INDEFINITELY,
+    ROTATE_INDEFINITELY = 3,
     /// <summary>Ad serving optimization status is not available.
     /// </summary>
-    UNAVAILABLE,
+    UNAVAILABLE = 4,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 5,
   }
 
 
@@ -22663,12 +22662,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum TimeUnit {
-    MINUTE,
-    HOUR,
-    DAY,
-    WEEK,
-    MONTH,
-    LIFETIME,
+    MINUTE = 0,
+    HOUR = 1,
+    DAY = 2,
+    WEEK = 3,
+    MONTH = 4,
+    LIFETIME = 5,
   }
 
 
@@ -22680,13 +22679,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum Level {
     /// <summary>The cap is applied at the creative level.
     /// </summary>
-    CREATIVE,
+    CREATIVE = 0,
     /// <summary>The cap is applied at the ad group level.
     /// </summary>
-    ADGROUP,
+    ADGROUP = 1,
     /// <summary>The cap is applied at the campaign level.
     /// </summary>
-    CAMPAIGN,
+    CAMPAIGN = 2,
     /// <summary>This value cannot be set by the user and sent to the AdWords API servers, as it
     /// would generate a RejectedError. It can only be received by the user from the
     /// AdWords API servers and it means that a new value available in a newer API
@@ -22696,7 +22695,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// Rejected">Used for return value only. An enumeration could not be processed,
     /// typically due to incompatibility with your WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 3,
   }
 
 
@@ -23249,13 +23248,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum GeoTargetTypeSettingPositiveGeoTargetType {
     /// <summary>Specifies that either AOI or LOP may trigger the ad.
     /// </summary>
-    DONT_CARE,
+    DONT_CARE = 0,
     /// <summary>Specifies that the ad is triggered only if the user's AOI matches.
     /// </summary>
-    AREA_OF_INTEREST,
+    AREA_OF_INTEREST = 1,
     /// <summary>Specifies that the ad is triggered only if the user's LOP matches.
     /// </summary>
-    LOCATION_OF_PRESENCE,
+    LOCATION_OF_PRESENCE = 2,
   }
 
 
@@ -23268,11 +23267,11 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <summary>Specifies that a user is excluded from seeing the ad if either their AOI or
     /// their LOP matches the geo target.
     /// </summary>
-    DONT_CARE,
+    DONT_CARE = 0,
     /// <summary>Specifies that a user is excluded from seeing the ad only if their LOP matches
     /// the geo target.
     /// </summary>
-    LOCATION_OF_PRESENCE,
+    LOCATION_OF_PRESENCE = 1,
   }
 
 
@@ -23375,17 +23374,17 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>Search Network. Includes display bundled, and Search+ campaigns.
     /// </summary>
-    SEARCH,
+    SEARCH = 1,
     /// <summary>Google Display Network only.
     /// </summary>
-    DISPLAY,
+    DISPLAY = 2,
     /// <summary>Shopping campaigns serve on the shopping property and on google.com search
     /// results.
     /// </summary>
-    SHOPPING,
+    SHOPPING = 3,
   }
 
 
@@ -23399,19 +23398,19 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>Mobile App Campaigns for Search
     /// </summary>
-    SEARCH_MOBILE_APP,
+    SEARCH_MOBILE_APP = 1,
     /// <summary>Mobile App Campaigns for Display
     /// </summary>
-    DISPLAY_MOBILE_APP,
+    DISPLAY_MOBILE_APP = 2,
     /// <summary>AdWords Express campaigns for search.
     /// </summary>
-    SEARCH_EXPRESS,
+    SEARCH_EXPRESS = 3,
     /// <summary>AdWords Express campaigns for display.
     /// </summary>
-    DISPLAY_EXPRESS,
+    DISPLAY_EXPRESS = 4,
   }
 
 
@@ -23898,61 +23897,61 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum BiddingStrategyType {
     /// <summary>Replaced by TARGET_SPEND. Kept only for legacy support.
     /// </summary>
-    BUDGET_OPTIMIZER,
+    BUDGET_OPTIMIZER = 0,
     /// <summary>Replaced by TARGET_CPA. Kept only for legacy support.
     /// </summary>
-    CONVERSION_OPTIMIZER,
+    CONVERSION_OPTIMIZER = 1,
     /// <summary>Manual click based bidding where user pays per click. See <a
     /// href='ManualCpcBiddingScheme'>ManualCpcBiddingScheme</a> for more details.
     /// </summary>
-    MANUAL_CPC,
+    MANUAL_CPC = 2,
     /// <summary>Manual impression based bidding where user pays per thousand impressions. See <a
     /// href='ManualCpmBiddingScheme'>ManualCpmBiddingScheme</a> for more details.
     /// </summary>
-    MANUAL_CPM,
+    MANUAL_CPM = 3,
     /// <summary>Page-One Promoted is an automated bid strategy that sets max CPC bids to target
     /// impressions on page one or page one promoted slots on google.com. See <a
     /// href='PageOnePromotedBiddingScheme'>PageOnePromotedBiddingScheme</a> for more
     /// details.
     /// </summary>
-    PAGE_ONE_PROMOTED,
+    PAGE_ONE_PROMOTED = 4,
     /// <summary>Target Spend (Maximize Clicks) is an automated bid strategy that sets your bids
     /// to help get as many clicks as possible within your budget. See <a
     /// href='TargetSpendBiddingScheme'>TargetSpendBiddingScheme</a> for more details.
     /// </summary>
-    TARGET_SPEND,
+    TARGET_SPEND = 5,
     /// <summary>Enhanced CPC is a bidding strategy that raises your bids for clicks that seem
     /// more likely to lead to a conversion and lowers them for clicks where they seem
     /// less likely. See <a href='EnhancedCpcBiddingScheme'>EnhancedCpcBiddingScheme</a>
     /// for more details.
     /// </summary>
-    ENHANCED_CPC,
+    ENHANCED_CPC = 6,
     /// <summary>Target CPA is an automated bid strategy that sets bids to help get as many
     /// conversions as possible at the target cost-per-acquisition (CPA) you set. See <a
     /// href='TargetCpaBiddingScheme'>TargetCpaBiddingScheme</a> for more details.
     /// </summary>
-    TARGET_CPA,
+    TARGET_CPA = 7,
     /// <summary>Target ROAS is an automated bidding strategy that helps you maximize revenue
     /// while averaging a specific target Return On Average Spend (ROAS). See <a
     /// href='TargetRoasBiddingScheme'>TargetRoasBiddingScheme</a> for more details.
     /// </summary>
-    TARGET_ROAS,
+    TARGET_ROAS = 8,
     /// <summary>Target Outrank Share is an automated bidding strategy that sets bids based on
     /// the target fraction of auctions where the advertiser should outrank a specific
     /// competitor. See <a
     /// href='TargetOutrankShareBiddingScheme'>TargetOutrankShareBiddingScheme</a> for
     /// more details.
     /// </summary>
-    TARGET_OUTRANK_SHARE,
+    TARGET_OUTRANK_SHARE = 9,
     /// <summary>Special bidding strategy type used to reset the bidding strategy at AdGroup and
     /// AdGroupCriterion.
     /// </summary>
-    NONE,
+    NONE = 10,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 11,
   }
 
 
@@ -23964,13 +23963,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum BiddingStrategySource {
     /// <summary>Bidding strategy is defined on campaign level.
     /// </summary>
-    CAMPAIGN,
+    CAMPAIGN = 0,
     /// <summary>Bidding strategy is defined on adgroup level.
     /// </summary>
-    ADGROUP,
+    ADGROUP = 1,
     /// <summary>Bidding strategy is defined on criterion level.
     /// </summary>
-    CRITERION,
+    CRITERION = 2,
   }
 
 
@@ -24884,10 +24883,10 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum PageOnePromotedBiddingSchemeStrategyGoal {
     /// <summary>First page on google.com.
     /// </summary>
-    PAGE_ONE,
+    PAGE_ONE = 0,
     /// <summary>Top slots of the first page on google.com.
     /// </summary>
-    PAGE_ONE_PROMOTED,
+    PAGE_ONE_PROMOTED = 1,
   }
 
 
@@ -25164,8 +25163,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConversionOptimizerBiddingScheme.PricingMode", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum ConversionOptimizerBiddingSchemePricingMode {
-    CLICKS,
-    CONVERSIONS,
+    CLICKS = 0,
+    CONVERSIONS = 1,
   }
 
 
@@ -25175,7 +25174,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ConversionOptimizerBiddingSchemeBidType {
     /// <summary>Average cost-per-acquisition (targetCPA) bid type.
     /// </summary>
-    TARGET_CPA,
+    TARGET_CPA = 0,
   }
 
 
@@ -25500,16 +25499,16 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum BidSource {
     /// <summary>Effective Bid is Adgroup level bid
     /// </summary>
-    ADGROUP,
+    ADGROUP = 0,
     /// <summary>Effective Bid is Keyword level bid
     /// </summary>
-    CRITERION,
+    CRITERION = 1,
     /// <summary>Effective Bid is inherited from Adgroup Bidding Strategy
     /// </summary>
-    ADGROUP_BIDDING_STRATEGY,
+    ADGROUP_BIDDING_STRATEGY = 2,
     /// <summary>Effective Bid is inherited from Campaign Bidding Strategy
     /// </summary>
-    CAMPAIGN_BIDDING_STRATEGY,
+    CAMPAIGN_BIDDING_STRATEGY = 3,
   }
 
 
@@ -25764,19 +25763,19 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// Rejected">Used for return value only. An enumeration could not be processed,
     /// typically due to incompatibility with your WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>This is a regular campaign created by the advertiser.
     /// </summary>
-    BASE,
+    BASE = 1,
     /// <summary>This is a draft version of a campaign. It has some modifications from a base
     /// campaign, but it does not serve or accrue stats.
     /// </summary>
-    DRAFT,
+    DRAFT = 2,
     /// <summary>This is a trial version of a campaign. It has some modifications from a base
     /// campaign, and a percentage of traffic is being diverted from the BASE campaign
     /// to this trial campaign.
     /// </summary>
-    TRIAL,
+    TRIAL = 3,
   }
 
 
@@ -25917,13 +25916,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>Replace vanity pharma URL with manufacturer website url.
     /// </summary>
-    MANUFACTURER_WEBSITE_URL,
+    MANUFACTURER_WEBSITE_URL = 1,
     /// <summary>Replace vanity pharma URL with description of the website.
     /// </summary>
-    WEBSITE_DESCRIPTION,
+    WEBSITE_DESCRIPTION = 2,
   }
 
 
@@ -25939,43 +25938,43 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>Prescription treatment website
     /// </summary>
-    PRESCRIPTION_TREATMENT_WEBSITE_EN,
+    PRESCRIPTION_TREATMENT_WEBSITE_EN = 1,
     /// <summary>Sitio de tratamientos con receta
     /// </summary>
-    PRESCRIPTION_TREATMENT_WEBSITE_ES,
+    PRESCRIPTION_TREATMENT_WEBSITE_ES = 2,
     /// <summary>Prescription device website
     /// </summary>
-    PRESCRIPTION_DEVICE_WEBSITE_EN,
+    PRESCRIPTION_DEVICE_WEBSITE_EN = 3,
     /// <summary>Sitio de dispositivos con receta
     /// </summary>
-    PRESCRIPTION_DEVICE_WEBSITE_ES,
+    PRESCRIPTION_DEVICE_WEBSITE_ES = 4,
     /// <summary>Medical device website
     /// </summary>
-    MEDICAL_DEVICE_WEBSITE_EN,
+    MEDICAL_DEVICE_WEBSITE_EN = 5,
     /// <summary>Sitio de dispositivos m?dicos
     /// </summary>
-    MEDICAL_DEVICE_WEBSITE_ES,
+    MEDICAL_DEVICE_WEBSITE_ES = 6,
     /// <summary>Preventative treatment website
     /// </summary>
-    PREVENTATIVE_TREATMENT_WEBSITE_EN,
+    PREVENTATIVE_TREATMENT_WEBSITE_EN = 7,
     /// <summary>Sitio de tratamientos preventivos
     /// </summary>
-    PREVENTATIVE_TREATMENT_WEBSITE_ES,
+    PREVENTATIVE_TREATMENT_WEBSITE_ES = 8,
     /// <summary>Prescription contraception website
     /// </summary>
-    PRESCRIPTION_CONTRACEPTION_WEBSITE_EN,
+    PRESCRIPTION_CONTRACEPTION_WEBSITE_EN = 9,
     /// <summary>Sitio de anticonceptivos con receta
     /// </summary>
-    PRESCRIPTION_CONTRACEPTION_WEBSITE_ES,
+    PRESCRIPTION_CONTRACEPTION_WEBSITE_ES = 10,
     /// <summary>Prescription vaccine website
     /// </summary>
-    PRESCRIPTION_VACCINE_WEBSITE_EN,
+    PRESCRIPTION_VACCINE_WEBSITE_EN = 11,
     /// <summary>Sitio de vacunas con receta
     /// </summary>
-    PRESCRIPTION_VACCINE_WEBSITE_ES,
+    PRESCRIPTION_VACCINE_WEBSITE_ES = 12,
   }
 
 
@@ -26439,33 +26438,33 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum SettingErrorReason {
     /// <summary>The campaign already has a setting of the type that is being added.
     /// </summary>
-    DUPLICATE_SETTING_TYPE,
+    DUPLICATE_SETTING_TYPE = 0,
     /// <summary>The campaign setting is not available for this AdWords account.
     /// </summary>
-    SETTING_TYPE_IS_NOT_AVAILABLE,
+    SETTING_TYPE_IS_NOT_AVAILABLE = 1,
     /// <summary>The setting is not compatible with the campaign.
     /// </summary>
-    SETTING_TYPE_IS_NOT_COMPATIBLE_WITH_CAMPAIGN,
+    SETTING_TYPE_IS_NOT_COMPATIBLE_WITH_CAMPAIGN = 2,
     /// <summary>The supplied TargetingSetting contains an invalid CriterionTypeGroup. See <a
     /// href='CriterionTypeGroup'>CriterionTypeGroup</a> documentation for
     /// CriterionTypeGroups allowed in Campaign or AdGroup TargetingSettings.
     /// </summary>
-    TARGETING_SETTING_CONTAINS_INVALID_CRITERION_TYPE_GROUP,
+    TARGETING_SETTING_CONTAINS_INVALID_CRITERION_TYPE_GROUP = 3,
     /// <summary>The supplied DynamicSearchAdsSetting contains an invalid domain name.
     /// </summary>
-    DYNAMIC_SEARCH_ADS_SETTING_CONTAINS_INVALID_DOMAIN_NAME,
+    DYNAMIC_SEARCH_ADS_SETTING_CONTAINS_INVALID_DOMAIN_NAME = 4,
     /// <summary>The supplied DynamicSearchAdsSetting contains an invalid language code.
     /// </summary>
-    DYNAMIC_SEARCH_ADS_SETTING_CONTAINS_INVALID_LANGUAGE_CODE,
+    DYNAMIC_SEARCH_ADS_SETTING_CONTAINS_INVALID_LANGUAGE_CODE = 5,
     /// <summary>TargetingSettings in search campaigns should not have
     /// CriterionTypeGroup.PLACEMENT set to targetAll.
     /// </summary>
-    TARGET_ALL_IS_NOT_ALLOWED_FOR_PLACEMENT_IN_SEARCH_CAMPAIGN,
+    TARGET_ALL_IS_NOT_ALLOWED_FOR_PLACEMENT_IN_SEARCH_CAMPAIGN = 6,
     /// <summary>Unspecified campaign setting error. <span class="constraint Rejected">Used for
     /// return value only. An enumeration could not be processed, typically due to
     /// incompatibility with your WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 7,
   }
 
 
@@ -26560,22 +26559,22 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DateRangeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum DateRangeErrorReason {
-    DATE_RANGE_ERROR,
+    DATE_RANGE_ERROR = 0,
     /// <summary>Invalid date.
     /// </summary>
-    INVALID_DATE,
+    INVALID_DATE = 1,
     /// <summary>The start date was after the end date.
     /// </summary>
-    START_DATE_AFTER_END_DATE,
+    START_DATE_AFTER_END_DATE = 2,
     /// <summary>Cannot set date to past time
     /// </summary>
-    CANNOT_SET_DATE_TO_PAST,
+    CANNOT_SET_DATE_TO_PAST = 3,
     /// <summary>A date was used that is past the system "last" date.
     /// </summary>
-    AFTER_MAXIMUM_ALLOWABLE_DATE,
+    AFTER_MAXIMUM_ALLOWABLE_DATE = 4,
     /// <summary>Trying to change start date on a campaign that has started.
     /// </summary>
-    CANNOT_MODIFY_START_DATE_IF_ALREADY_STARTED,
+    CANNOT_MODIFY_START_DATE_IF_ALREADY_STARTED = 5,
   }
 
 
@@ -26672,94 +26671,94 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum CampaignErrorReason {
     /// <summary>A complete campaign cannot go back to being incomplete
     /// </summary>
-    CANNOT_GO_BACK_TO_INCOMPLETE,
+    CANNOT_GO_BACK_TO_INCOMPLETE = 0,
     /// <summary>Trying to modify an end date before an active experiment end date.
     /// </summary>
-    CANNOT_SET_END_DATE_BEFORE_EXPERIMENT_END_DATE,
+    CANNOT_SET_END_DATE_BEFORE_EXPERIMENT_END_DATE = 1,
     /// <summary>Cannot target content network.
     /// </summary>
-    CANNOT_TARGET_CONTENT_NETWORK,
+    CANNOT_TARGET_CONTENT_NETWORK = 20,
     /// <summary>Cannot target search network.
     /// </summary>
-    CANNOT_TARGET_SEARCH_NETWORK,
+    CANNOT_TARGET_SEARCH_NETWORK = 21,
     /// <summary>Cannot cover search network without google search network.
     /// </summary>
-    CANNOT_TARGET_SEARCH_NETWORK_WITHOUT_GOOGLE_SEARCH,
+    CANNOT_TARGET_SEARCH_NETWORK_WITHOUT_GOOGLE_SEARCH = 22,
     /// <summary>Cannot target Google Search network for a CPM campaign.
     /// </summary>
-    CANNOT_TARGET_GOOGLE_SEARCH_FOR_CPM_CAMPAIGN,
+    CANNOT_TARGET_GOOGLE_SEARCH_FOR_CPM_CAMPAIGN = 23,
     /// <summary>Must target at least one network.
     /// </summary>
-    CAMPAIGN_MUST_TARGET_AT_LEAST_ONE_NETWORK,
+    CAMPAIGN_MUST_TARGET_AT_LEAST_ONE_NETWORK = 24,
     /// <summary>Only some Google partners are allowed to target partner search network.
     /// </summary>
-    CANNOT_TARGET_PARTNER_SEARCH_NETWORK,
+    CANNOT_TARGET_PARTNER_SEARCH_NETWORK = 25,
     /// <summary>Cannot target content network only as campaign has criteria-level bidding
     /// strategy.
     /// </summary>
-    CANNOT_TARGET_CONTENT_NETWORK_ONLY_WITH_CRITERIA_LEVEL_BIDDING_STRATEGY,
+    CANNOT_TARGET_CONTENT_NETWORK_ONLY_WITH_CRITERIA_LEVEL_BIDDING_STRATEGY = 26,
     /// <summary>Trying to modify the name of an active or paused campaign, where the name is
     /// already assigned to another active or paused campaign.
     /// </summary>
-    DUPLICATE_CAMPAIGN_NAME,
+    DUPLICATE_CAMPAIGN_NAME = 2,
     /// <summary>Two fields are in conflicting modes.
     /// </summary>
-    INCOMPATIBLE_CAMPAIGN_FIELD,
+    INCOMPATIBLE_CAMPAIGN_FIELD = 3,
     /// <summary>Campaign name cannot be used.
     /// </summary>
-    INVALID_CAMPAIGN_NAME,
+    INVALID_CAMPAIGN_NAME = 4,
     /// <summary>Given status is invalid.
     /// </summary>
-    INVALID_AD_SERVING_OPTIMIZATION_STATUS,
+    INVALID_AD_SERVING_OPTIMIZATION_STATUS = 5,
     /// <summary>Error in the campaign level tracking url.
     /// </summary>
-    INVALID_TRACKING_URL,
+    INVALID_TRACKING_URL = 6,
     /// <summary>Cannot set both tracking url template and tracking setting. An user has to clear
     /// legacy tracking setting in order to add tracking url template.
     /// </summary>
-    CANNOT_SET_BOTH_TRACKING_URL_TEMPLATE_AND_TRACKING_SETTING,
+    CANNOT_SET_BOTH_TRACKING_URL_TEMPLATE_AND_TRACKING_SETTING = 7,
     /// <summary>The maximum number of impressions for Frequency Cap should be an integer greater
     /// than 0.
     /// </summary>
-    MAX_IMPRESSIONS_NOT_IN_RANGE,
+    MAX_IMPRESSIONS_NOT_IN_RANGE = 8,
     /// <summary>Only the Day, Week and Month time units are supported.
     /// </summary>
-    TIME_UNIT_NOT_SUPPORTED,
+    TIME_UNIT_NOT_SUPPORTED = 9,
     /// <summary>Operation not allowed on a campaign whose serving status has ended
     /// </summary>
-    INVALID_OPERATION_IF_SERVING_STATUS_HAS_ENDED,
+    INVALID_OPERATION_IF_SERVING_STATUS_HAS_ENDED = 10,
     /// <summary>This budget is exclusively linked to a Campaign that is using @link{Experiment}s
     /// so it cannot be shared.
     /// </summary>
-    BUDGET_CANNOT_BE_SHARED,
+    BUDGET_CANNOT_BE_SHARED = 11,
     /// <summary>Campaigns using @link{Experiment}s cannot use a shared budget.
     /// </summary>
-    CAMPAIGN_CANNOT_USE_SHARED_BUDGET,
+    CAMPAIGN_CANNOT_USE_SHARED_BUDGET = 12,
     /// <summary>No link found between the campaign and the label.
     /// </summary>
-    CAMPAIGN_LABEL_DOES_NOT_EXIST,
+    CAMPAIGN_LABEL_DOES_NOT_EXIST = 13,
     /// <summary>The label has already been attached to the campaign.
     /// </summary>
-    CAMPAIGN_LABEL_ALREADY_EXISTS,
+    CAMPAIGN_LABEL_ALREADY_EXISTS = 14,
     /// <summary>A ShoppingSetting was not found when creating a shopping campaign.
     /// </summary>
-    MISSING_SHOPPING_SETTING,
+    MISSING_SHOPPING_SETTING = 15,
     /// <summary>The country in shopping setting is not an allowed country.
     /// </summary>
-    INVALID_SHOPPING_SALES_COUNTRY,
+    INVALID_SHOPPING_SALES_COUNTRY = 16,
     /// <summary>The requested channel type is not available according to the customer's account
     /// setting.
     /// </summary>
-    ADVERTISING_CHANNEL_TYPE_NOT_AVAILABLE_FOR_ACCOUNT_TYPE,
+    ADVERTISING_CHANNEL_TYPE_NOT_AVAILABLE_FOR_ACCOUNT_TYPE = 17,
     /// <summary>The AdvertisingChannelSubType is not a valid subtype of the primary channel
     /// type.
     /// </summary>
-    INVALID_ADVERTISING_CHANNEL_SUB_TYPE,
+    INVALID_ADVERTISING_CHANNEL_SUB_TYPE = 18,
     /// <summary>Default error <span class="constraint Rejected">Used for return value only. An
     /// enumeration could not be processed, typically due to incompatibility with your
     /// WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 19,
   }
 
 
@@ -26856,50 +26855,50 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum BudgetErrorReason {
     /// <summary>The requested budget no longer exists.
     /// </summary>
-    BUDGET_REMOVED,
+    BUDGET_REMOVED = 0,
     /// <summary>Default budget error.
     /// </summary>
-    BUDGET_ERROR,
+    BUDGET_ERROR = 1,
     /// <summary>The budget is associated with at least one campaign, and so the budget cannot be
     /// removed.
     /// </summary>
-    BUDGET_IN_USE,
+    BUDGET_IN_USE = 2,
     /// <summary>Customer is not whitelisted for this budget period.
     /// </summary>
-    BUDGET_PERIOD_NOT_AVAILABLE,
+    BUDGET_PERIOD_NOT_AVAILABLE = 3,
     /// <summary>Customer cannot use CampaignService to edit a shared budget.
     /// </summary>
-    CANNOT_EDIT_SHARED_BUDGET,
+    CANNOT_EDIT_SHARED_BUDGET = 4,
     /// <summary>This field is not mutable on implicitly shared budgets
     /// </summary>
-    CANNOT_MODIFY_FIELD_OF_IMPLICITLY_SHARED_BUDGET,
+    CANNOT_MODIFY_FIELD_OF_IMPLICITLY_SHARED_BUDGET = 5,
     /// <summary>Cannot change explicitly shared budgets back to implicitly shared ones.
     /// </summary>
-    CANNOT_UPDATE_BUDGET_TO_IMPLICITLY_SHARED,
+    CANNOT_UPDATE_BUDGET_TO_IMPLICITLY_SHARED = 6,
     /// <summary>An implicit budget without a name cannot be changed to explicitly shared budget.
     /// </summary>
-    CANNOT_UPDATE_BUDGET_TO_EXPLICITLY_SHARED_WITHOUT_NAME,
+    CANNOT_UPDATE_BUDGET_TO_EXPLICITLY_SHARED_WITHOUT_NAME = 7,
     /// <summary>Only explicitly shared budgets can be used with multiple campaigns.
     /// </summary>
-    CANNOT_USE_IMPLICITLY_SHARED_BUDGET_WITH_MULTIPLE_CAMPAIGNS,
+    CANNOT_USE_IMPLICITLY_SHARED_BUDGET_WITH_MULTIPLE_CAMPAIGNS = 8,
     /// <summary>A budget with this name already exists.
     /// </summary>
-    DUPLICATE_NAME,
+    DUPLICATE_NAME = 9,
     /// <summary>A money amount was not in the expected currency.
     /// </summary>
-    MONEY_AMOUNT_IN_WRONG_CURRENCY,
+    MONEY_AMOUNT_IN_WRONG_CURRENCY = 10,
     /// <summary>A money amount was less than the minimum CPC for currency.
     /// </summary>
-    MONEY_AMOUNT_LESS_THAN_CURRENCY_MINIMUM_CPC,
+    MONEY_AMOUNT_LESS_THAN_CURRENCY_MINIMUM_CPC = 11,
     /// <summary>A money amount was greater than the maximum allowed.
     /// </summary>
-    MONEY_AMOUNT_TOO_LARGE,
+    MONEY_AMOUNT_TOO_LARGE = 12,
     /// <summary>A money amount was negative.
     /// </summary>
-    NEGATIVE_MONEY_AMOUNT,
+    NEGATIVE_MONEY_AMOUNT = 13,
     /// <summary>A money amount was not a multiple of a minimum unit.
     /// </summary>
-    NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT,
+    NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT = 14,
   }
 
 
@@ -26994,106 +26993,106 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum BiddingErrorsReason {
     /// <summary>Cannot transition to new bidding strategy.
     /// </summary>
-    BIDDING_STRATEGY_TRANSITION_NOT_ALLOWED,
+    BIDDING_STRATEGY_TRANSITION_NOT_ALLOWED = 0,
     /// <summary>Bidding strategy cannot be overridden by current ad group bidding strategy.
     /// </summary>
-    BIDDING_STRATEGY_NOT_COMPATIBLE_WITH_ADGROUP_OVERRIDES,
+    BIDDING_STRATEGY_NOT_COMPATIBLE_WITH_ADGROUP_OVERRIDES = 1,
     /// <summary>Bidding strategy cannot be overridden by current criteria bidding strategy.
     /// </summary>
-    BIDDING_STRATEGY_NOT_COMPATIBLE_WITH_ADGROUP_CRITERIA_OVERRIDES,
+    BIDDING_STRATEGY_NOT_COMPATIBLE_WITH_ADGROUP_CRITERIA_OVERRIDES = 2,
     /// <summary>Cannot override campaign bidding strategy.
     /// </summary>
-    CAMPAIGN_BIDDING_STRATEGY_CANNOT_BE_OVERRIDDEN,
+    CAMPAIGN_BIDDING_STRATEGY_CANNOT_BE_OVERRIDDEN = 3,
     /// <summary>Cannot override ad group bidding strategy.
     /// </summary>
-    ADGROUP_BIDDING_STRATEGY_CANNOT_BE_OVERRIDDEN,
+    ADGROUP_BIDDING_STRATEGY_CANNOT_BE_OVERRIDDEN = 4,
     /// <summary>Cannot attach bidding strategy to campaign.
     /// </summary>
-    CANNOT_ATTACH_BIDDING_STRATEGY_TO_CAMPAIGN,
+    CANNOT_ATTACH_BIDDING_STRATEGY_TO_CAMPAIGN = 5,
     /// <summary>Cannot attach bidding strategy to ad group.
     /// </summary>
-    CANNOT_ATTACH_BIDDING_STRATEGY_TO_ADGROUP,
+    CANNOT_ATTACH_BIDDING_STRATEGY_TO_ADGROUP = 6,
     /// <summary>Cannot attach bidding strategy to criteria.
     /// </summary>
-    CANNOT_ATTACH_BIDDING_STRATEGY_TO_ADGROUP_CRITERIA,
+    CANNOT_ATTACH_BIDDING_STRATEGY_TO_ADGROUP_CRITERIA = 7,
     /// <summary>Bidding strategy is not supported or cannot be used as anonymous.
     /// </summary>
-    INVALID_ANONYMOUS_BIDDING_STRATEGY_TYPE,
+    INVALID_ANONYMOUS_BIDDING_STRATEGY_TYPE = 8,
     /// <summary>No bids may be set. The bid list must be null or empty.
     /// </summary>
-    BIDS_NOT_ALLLOWED,
+    BIDS_NOT_ALLLOWED = 9,
     /// <summary>The bid list contains two or more bids of the same type.
     /// </summary>
-    DUPLICATE_BIDS,
+    DUPLICATE_BIDS = 10,
     /// <summary>The bidding scheme does not match the bidding strategy type.
     /// </summary>
-    INVALID_BIDDING_SCHEME,
+    INVALID_BIDDING_SCHEME = 11,
     /// <summary>The type does not match the named strategy's type.
     /// </summary>
-    INVALID_BIDDING_STRATEGY_TYPE,
+    INVALID_BIDDING_STRATEGY_TYPE = 12,
     /// <summary>The bidding strategy type is missing.
     /// </summary>
-    MISSING_BIDDING_STRATEGY_TYPE,
+    MISSING_BIDDING_STRATEGY_TYPE = 13,
     /// <summary>The bid list contains a null entry.
     /// </summary>
-    NULL_BID,
+    NULL_BID = 14,
     /// <summary>The bid is invalid.
     /// </summary>
-    INVALID_BID,
+    INVALID_BID = 15,
     /// <summary>Bidding strategy is not available for the account type.
     /// </summary>
-    BIDDING_STRATEGY_NOT_AVAILABLE_FOR_ACCOUNT_TYPE,
+    BIDDING_STRATEGY_NOT_AVAILABLE_FOR_ACCOUNT_TYPE = 16,
     /// <summary>Conversion tracking is not enabled for the campaign for VBB transition.
     /// </summary>
-    CONVERSION_TRACKING_NOT_ENABLED,
+    CONVERSION_TRACKING_NOT_ENABLED = 17,
     /// <summary>Not enough conversions tracked for VBB transitions.
     /// </summary>
-    NOT_ENOUGH_CONVERSIONS,
+    NOT_ENOUGH_CONVERSIONS = 18,
     /// <summary>Campaign can not be created with given bidding strategy. It can be transitioned
     /// to the strategy, once eligible.
     /// </summary>
-    CANNOT_CREATE_CAMPAIGN_WITH_BIDDING_STRATEGY,
+    CANNOT_CREATE_CAMPAIGN_WITH_BIDDING_STRATEGY = 33,
     /// <summary>Cannot target content network only as ad group uses Page One Promoted bidding
     /// strategy.
     /// </summary>
-    CANNOT_TARGET_CONTENT_NETWORK_ONLY_WITH_AD_GROUP_LEVEL_POP_BIDDING_STRATEGY,
+    CANNOT_TARGET_CONTENT_NETWORK_ONLY_WITH_AD_GROUP_LEVEL_POP_BIDDING_STRATEGY = 20,
     /// <summary>Cannot target content network only as campaign uses Page One Promoted bidding
     /// strategy.
     /// </summary>
-    CANNOT_TARGET_CONTENT_NETWORK_ONLY_WITH_CAMPAIGN_LEVEL_POP_BIDDING_STRATEGY,
+    CANNOT_TARGET_CONTENT_NETWORK_ONLY_WITH_CAMPAIGN_LEVEL_POP_BIDDING_STRATEGY = 21,
     /// <summary>Budget Optimizer and Target Spend bidding strategies are not supported for
     /// campaigns with AdSchedule targeting.
     /// </summary>
-    BIDDING_STRATEGY_NOT_SUPPORTED_WITH_AD_SCHEDULE,
+    BIDDING_STRATEGY_NOT_SUPPORTED_WITH_AD_SCHEDULE = 22,
     /// <summary>Pay per conversion is not available to all the customer, only few whitelisted
     /// customers can use this.
     /// </summary>
-    PAY_PER_CONVERSION_NOT_AVAILABLE_FOR_CUSTOMER,
+    PAY_PER_CONVERSION_NOT_AVAILABLE_FOR_CUSTOMER = 23,
     /// <summary>Pay per conversion is not allowed with Target CPA.
     /// </summary>
-    PAY_PER_CONVERSION_NOT_ALLOWED_WITH_TARGET_CPA,
+    PAY_PER_CONVERSION_NOT_ALLOWED_WITH_TARGET_CPA = 24,
     /// <summary>Cannot set bidding strategy to Manual CPM for search network only campaigns.
     /// </summary>
-    BIDDING_STRATEGY_NOT_ALLOWED_FOR_SEARCH_ONLY_CAMPAIGNS,
+    BIDDING_STRATEGY_NOT_ALLOWED_FOR_SEARCH_ONLY_CAMPAIGNS = 25,
     /// <summary>The campaign has active experiments so bidding transition is prohibited.
     /// </summary>
-    BIDDING_STRATEGY_NOT_SUPPORTED_FOR_CAMPAIGNS_WITH_EXPERIMENTS,
+    BIDDING_STRATEGY_NOT_SUPPORTED_FOR_CAMPAIGNS_WITH_EXPERIMENTS = 26,
     /// <summary>The campaign has active experiment so bid strategy change is prohibited.
     /// </summary>
-    CANNOT_CHANGE_BIDDING_STRATEGY_IN_CAMPAIGN_WITH_EXPERIMENT,
+    CANNOT_CHANGE_BIDDING_STRATEGY_IN_CAMPAIGN_WITH_EXPERIMENT = 27,
     /// <summary>Bidding strategy type does not support product type ad group criterion.
     /// </summary>
-    BIDDING_STRATEGY_TYPE_DOES_NOT_SUPPORT_PRODUCT_TYPE_ADGROUP_CRITERION,
+    BIDDING_STRATEGY_TYPE_DOES_NOT_SUPPORT_PRODUCT_TYPE_ADGROUP_CRITERION = 28,
     /// <summary>Bid amount is too small.
     /// </summary>
-    BID_TOO_SMALL,
+    BID_TOO_SMALL = 29,
     /// <summary>Bid amount is too big.
     /// </summary>
-    BID_TOO_BIG,
+    BID_TOO_BIG = 30,
     /// <summary>Bid has too many fractional digit precision.
     /// </summary>
-    BID_TOO_MANY_FRACTIONAL_DIGITS,
-    UNKNOWN,
+    BID_TOO_MANY_FRACTIONAL_DIGITS = 31,
+    UNKNOWN = 32,
   }
 
 
@@ -27156,7 +27155,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((CampaignFeedPage)(results[0]));
+      return ((CampaignFeedPage) (results[0]));
     }
 
     /// <summary>Adds, sets or removes CampaignFeeds.
@@ -27172,7 +27171,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CampaignFeedReturnValue)(results[0]));
+      return ((CampaignFeedReturnValue) (results[0]));
     }
 
     /// <summary>Returns a list of <a href='CampaignFeed'>CampaignFeed</a>s inside a <a
@@ -27189,7 +27188,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((CampaignFeedPage)(results[0]));
+      return ((CampaignFeedPage) (results[0]));
     }
   }
 
@@ -27631,15 +27630,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum RequestContextOperandContextType {
     /// <summary>Feed item id in the request context.
     /// </summary>
-    FEED_ITEM_ID,
+    FEED_ITEM_ID = 0,
     /// <summary>The device's platform (possible values are 'Desktop' or 'Mobile').
     /// </summary>
-    DEVICE_PLATFORM,
+    DEVICE_PLATFORM = 1,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -27837,15 +27836,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum CampaignFeedStatus {
     /// <summary>This CampaignFeed's data is currently being used.
     /// </summary>
-    ENABLED,
+    ENABLED = 0,
     /// <summary>This CampaignFeed's data is not used anymore.
     /// </summary>
-    REMOVED,
+    REMOVED = 1,
     /// <summary>Unknown status. <span class="constraint Rejected">Used for return value only. An
     /// enumeration could not be processed, typically due to incompatibility with your
     /// WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -28100,8 +28099,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CollectionSizeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum CollectionSizeErrorReason {
-    TOO_FEW,
-    TOO_MANY,
+    TOO_FEW = 0,
+    TOO_MANY = 1,
   }
 
 
@@ -28198,31 +28197,31 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum CampaignFeedErrorReason {
     /// <summary>An active feed already exists for this campaign and place holder type.
     /// </summary>
-    FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE,
+    FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE = 0,
     /// <summary>The specified id does not exist.
     /// </summary>
-    INVALID_ID,
+    INVALID_ID = 1,
     /// <summary>The specified feed is deleted.
     /// </summary>
-    CANNOT_ADD_FOR_DELETED_FEED,
+    CANNOT_ADD_FOR_DELETED_FEED = 2,
     /// <summary>The CampaignFeed already exists. SET should be used to modify the existing
     /// CampaignFeed.
     /// </summary>
-    CANNOT_ADD_ALREADY_EXISTING_CAMPAIGN_FEED,
+    CANNOT_ADD_ALREADY_EXISTING_CAMPAIGN_FEED = 3,
     /// <summary>Cannot operate on deleted campaign feed.
     /// </summary>
-    CANNOT_OPERATE_ON_REMOVED_CAMPAIGN_FEED,
+    CANNOT_OPERATE_ON_REMOVED_CAMPAIGN_FEED = 4,
     /// <summary>Invalid placeholder type ids.
     /// </summary>
-    INVALID_PLACEHOLDER_TYPES,
+    INVALID_PLACEHOLDER_TYPES = 5,
     /// <summary>Feed mapping for this placeholder type does not exist.
     /// </summary>
-    MISSING_FEEDMAPPING_FOR_PLACEHOLDER_TYPE,
+    MISSING_FEEDMAPPING_FOR_PLACEHOLDER_TYPE = 6,
     /// <summary>Location CampaignFeeds cannot be created unless there is a location CustomerFeed
     /// for the specified feed.
     /// </summary>
-    NO_EXISTING_LOCATION_CUSTOMER_FEED,
-    UNKNOWN,
+    NO_EXISTING_LOCATION_CUSTOMER_FEED = 7,
+    UNKNOWN = 8,
   }
 
 
@@ -28281,7 +28280,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual AgeRange[] getAgeRangeCriterion() {
       object[] results = this.Invoke("getAgeRangeCriterion", new object[0]);
-      return ((AgeRange[])(results[0]));
+      return ((AgeRange[]) (results[0]));
     }
 
     /// <summary>Returns a list of all carrier criteria.
@@ -28294,7 +28293,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Carrier[] getCarrierCriterion() {
       object[] results = this.Invoke("getCarrierCriterion", new object[0]);
-      return ((Carrier[])(results[0]));
+      return ((Carrier[]) (results[0]));
     }
 
     /// <summary>Returns a list of all gender criteria.
@@ -28307,7 +28306,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Gender[] getGenderCriterion() {
       object[] results = this.Invoke("getGenderCriterion", new object[0]);
-      return ((Gender[])(results[0]));
+      return ((Gender[]) (results[0]));
     }
 
     /// <summary>Returns a list of all language criteria.
@@ -28320,7 +28319,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Language[] getLanguageCriterion() {
       object[] results = this.Invoke("getLanguageCriterion", new object[0]);
-      return ((Language[])(results[0]));
+      return ((Language[]) (results[0]));
     }
 
     /// <summary>Returns a list of all mobile app category criteria.
@@ -28333,7 +28332,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual MobileAppCategory[] getMobileAppCategoryCriterion() {
       object[] results = this.Invoke("getMobileAppCategoryCriterion", new object[0]);
-      return ((MobileAppCategory[])(results[0]));
+      return ((MobileAppCategory[]) (results[0]));
     }
 
     /// <summary>Returns a list of all mobile devices.
@@ -28346,7 +28345,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual MobileDevice[] getMobileDeviceCriterion() {
       object[] results = this.Invoke("getMobileDeviceCriterion", new object[0]);
-      return ((MobileDevice[])(results[0]));
+      return ((MobileDevice[]) (results[0]));
     }
 
     /// <summary>Returns a list of all operating system version criteria.
@@ -28359,7 +28358,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual OperatingSystemVersion[] getOperatingSystemVersionCriterion() {
       object[] results = this.Invoke("getOperatingSystemVersionCriterion", new object[0]);
-      return ((OperatingSystemVersion[])(results[0]));
+      return ((OperatingSystemVersion[]) (results[0]));
     }
 
     /// <summary>Returns a list of shopping bidding categories. A country predicate must be
@@ -28380,7 +28379,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((ProductBiddingCategoryData[])(results[0]));
+      return ((ProductBiddingCategoryData[]) (results[0]));
     }
 
     /// <summary>Returns a list of user interests.
@@ -28398,7 +28397,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					userInterestTaxonomyType
 				});
-      return ((CriterionUserInterest[])(results[0]));
+      return ((CriterionUserInterest[]) (results[0]));
     }
 
     /// <summary>Returns a list of content verticals.
@@ -28411,7 +28410,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Vertical[] getVerticalCriterion() {
       object[] results = this.Invoke("getVerticalCriterion", new object[0]);
-      return ((Vertical[])(results[0]));
+      return ((Vertical[]) (results[0]));
     }
   }
 
@@ -28659,13 +28658,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// return value only. An enumeration could not be processed, typically due to
     /// incompatibility with your WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>The dimension is active and it can be used for bidding.
     /// </summary>
-    ACTIVE,
+    ACTIVE = 1,
     /// <summary>The dimension is deprecated and should not be used for bidding.
     /// </summary>
-    OBSOLETE,
+    OBSOLETE = 2,
   }
 
 
@@ -28677,19 +28676,19 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ConstantDataServiceUserInterestTaxonomyType {
     /// <summary>The brand for this user interest.
     /// </summary>
-    BRAND,
+    BRAND = 0,
     /// <summary>The market for this user interest.
     /// </summary>
-    IN_MARKET,
+    IN_MARKET = 1,
     /// <summary>Users known to have installed applications in the specified categories.
     /// </summary>
-    MOBILE_APP_INSTALL_USER,
+    MOBILE_APP_INSTALL_USER = 2,
     /// <summary>The geographical location of the interest-based vertical.
     /// </summary>
-    VERTICAL_GEO,
+    VERTICAL_GEO = 3,
     /// <summary>User interest criteria for new smart phone users.
     /// </summary>
-    NEW_SMART_PHONE_USER,
+    NEW_SMART_PHONE_USER = 4,
   }
 
 
@@ -28758,7 +28757,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((ConversionTrackerPage)(results[0]));
+      return ((ConversionTrackerPage) (results[0]));
     }
 
     /// <summary>Applies the list of mutate operations such as adding or updating conversion
@@ -28788,7 +28787,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((ConversionTrackerReturnValue)(results[0]));
+      return ((ConversionTrackerReturnValue) (results[0]));
     }
 
     /// <summary>Returns a list of conversion trackers that match the query.
@@ -28805,7 +28804,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((ConversionTrackerPage)(results[0]));
+      return ((ConversionTrackerPage) (results[0]));
     }
   }
 
@@ -29480,14 +29479,14 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ConversionTrackerStatus {
     /// <summary>Visits to the conversion page will be recorded.
     /// </summary>
-    ENABLED,
+    ENABLED = 0,
     /// <summary>Visits to the conversion page will not be recorded.
     /// </summary>
-    DISABLED,
+    DISABLED = 1,
     /// <summary>Conversions will be recorded, but the conversion tracker will not appear in the
     /// UI.
     /// </summary>
-    HIDDEN,
+    HIDDEN = 2,
   }
 
 
@@ -29497,12 +29496,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ConversionTracker.Category", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum ConversionTrackerCategory {
-    DEFAULT,
-    PAGE_VIEW,
-    PURCHASE,
-    SIGNUP,
-    LEAD,
-    REMARKETING,
+    DEFAULT = 0,
+    PAGE_VIEW = 1,
+    PURCHASE = 2,
+    SIGNUP = 3,
+    LEAD = 4,
+    REMARKETING = 5,
     /// <summary>Download is applicable only to <a href='AppConversion'>AppConversion</a> types,
     /// and is an error to use in conjunction with other types. AppConversions must use
     /// download only if they also specify <a
@@ -29510,7 +29509,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// DOWNLOAD or FIRST_OPEN. If any other appConversionType is used, then some other
     /// category besides DOWNLOAD must be used.
     /// </summary>
-    DOWNLOAD,
+    DOWNLOAD = 6,
   }
 
 
@@ -29524,10 +29523,10 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ConversionDeduplicationMode {
     /// <summary>Number of clicks that get at least one conversion.
     /// </summary>
-    ONE_PER_CLICK,
+    ONE_PER_CLICK = 0,
     /// <summary>Total number of conversions per click.
     /// </summary>
-    MANY_PER_CLICK,
+    MANY_PER_CLICK = 1,
   }
 
 
@@ -29849,10 +29848,10 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AppConversion.AppPlatform", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum AppConversionAppPlatform {
-    NONE,
-    ITUNES,
-    ANDROID_MARKET,
-    MOBILE_APP_CHANNEL,
+    NONE = 0,
+    ITUNES = 1,
+    ANDROID_MARKET = 2,
+    MOBILE_APP_CHANNEL = 3,
   }
 
 
@@ -29860,10 +29859,10 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AppConversion.AppConversionType", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum AppConversionAppConversionType {
-    NONE,
-    DOWNLOAD,
-    IN_APP_PURCHASE,
-    FIRST_OPEN,
+    NONE = 0,
+    DOWNLOAD = 1,
+    IN_APP_PURCHASE = 2,
+    FIRST_OPEN = 3,
   }
 
 
@@ -30066,13 +30065,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AdWordsConversionTrackerTextFormat {
     /// <summary>The text will be displayed on one line.
     /// </summary>
-    ONE_LINE,
+    ONE_LINE = 0,
     /// <summary>The text will be displayed on two lines.
     /// </summary>
-    TWO_LINE,
+    TWO_LINE = 1,
     /// <summary>The text will be hidden.
     /// </summary>
-    HIDDEN,
+    HIDDEN = 2,
   }
 
 
@@ -30084,18 +30083,18 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AdWordsConversionTrackerTrackingCodeType {
     /// <summary>The snippet that is fired as a result of a website page loading.
     /// </summary>
-    WEBPAGE,
+    WEBPAGE = 0,
     /// <summary>The snippet contains a JavaScript function which fires the tag. This function is
     /// typically called from an onClick handler added to a link or button element on
     /// the page.
     /// </summary>
-    WEBPAGE_ONCLICK,
+    WEBPAGE_ONCLICK = 1,
     /// <summary>For embedding on a (mobile) webpage. The snippet contains a JavaScript function
     /// which fires the tag. This function is typically called from an onClick handler
     /// added to a link or button element on the page that also instructs a mobile
     /// device to dial the advertiser's phone number.
     /// </summary>
-    CLICK_TO_CALL,
+    CLICK_TO_CALL = 2,
   }
 
 
@@ -30401,107 +30400,107 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// made, but there already exists a conversion type forked from this global
     /// conversion type.
     /// </summary>
-    ALREADY_CREATED_CUSTOM_CONVERSION_TYPE,
+    ALREADY_CREATED_CUSTOM_CONVERSION_TYPE = 0,
     /// <summary>This user is not whitelisted for the import of Analytics goals and profiles, and
     /// yet requested to mutate an Analytics conversion type.
     /// </summary>
-    ANALYTICS_NOT_ALLOWED,
+    ANALYTICS_NOT_ALLOWED = 1,
     /// <summary>Cannot execute an ADD operation on this subclass of ConversionType (currently,
     /// only instances of AdWordsConversionType may be added).
     /// </summary>
-    CANNOT_ADD_CONVERSION_TYPE_SUBCLASS,
+    CANNOT_ADD_CONVERSION_TYPE_SUBCLASS = 2,
     /// <summary>AppConversions cannot change app conversion types once it has been set.
     /// </summary>
-    CANNOT_CHANGE_APP_CONVERSION_TYPE,
+    CANNOT_CHANGE_APP_CONVERSION_TYPE = 3,
     /// <summary>AppConversions cannot change app platforms once it has been set.
     /// </summary>
-    CANNOT_CHANGE_APP_PLATFORM,
+    CANNOT_CHANGE_APP_PLATFORM = 4,
     /// <summary>Cannot change between subclasses of ConversionType
     /// </summary>
-    CANNNOT_CHANGE_CONVERSION_SUBCLASS,
+    CANNNOT_CHANGE_CONVERSION_SUBCLASS = 5,
     /// <summary>If a conversion type's status is initially non-hidden, it may not be changed to
     /// Hidden; nor may hidden conversion types be created through the API. Hidden
     /// conversion types are typically created by backend processes.
     /// </summary>
-    CANNOT_SET_HIDDEN_STATUS,
+    CANNOT_SET_HIDDEN_STATUS = 6,
     /// <summary>An attempt to access a conversion type failed because no conversion type with
     /// this ID exists for this account.
     /// </summary>
-    CONVERSION_TYPE_NOT_FOUND,
+    CONVERSION_TYPE_NOT_FOUND = 7,
     /// <summary>An exception occurred in the domain layer during an attempt to process a
     /// ConversionTypeOperation.
     /// </summary>
-    DOMAIN_EXCEPTION,
+    DOMAIN_EXCEPTION = 8,
     /// <summary>An attempt was made to set a counting type inconsistent with other properties.
     /// Currently, AppConversion with appConversionType = DOWNLOAD and appPlatform =
     /// ANDROID_MARKET cannot have a countingType of MANY_PER_CLICK
     /// </summary>
-    INCONSISTENT_COUNTING_TYPE,
+    INCONSISTENT_COUNTING_TYPE = 9,
     /// <summary>The user specified two identical app ids when attempting to create or modify a
     /// conversion type.
     /// </summary>
-    DUPLICATE_APP_ID,
+    DUPLICATE_APP_ID = 10,
     /// <summary>The user specified two identical names when attempting to create or rename
     /// multiple conversion types.
     /// </summary>
-    DUPLICATE_NAME,
+    DUPLICATE_NAME = 11,
     /// <summary>An error occurred while the server was sending the email.
     /// </summary>
-    EMAIL_FAILED,
+    EMAIL_FAILED = 12,
     /// <summary>The maximum number of active conversion types for this account has been
     /// exceeded.
     /// </summary>
-    EXCEEDED_CONVERSION_TYPE_LIMIT,
+    EXCEEDED_CONVERSION_TYPE_LIMIT = 13,
     /// <summary>The user requested to modify an existing conversion type, but did not supply an
     /// ID.
     /// </summary>
-    ID_IS_NULL,
+    ID_IS_NULL = 14,
     /// <summary>App ids must adhere to valid Java package naming requirements.
     /// </summary>
-    INVALID_APP_ID,
+    INVALID_APP_ID = 15,
     /// <summary>App id can not be set to forked system-defined Android download conversion type.
     /// </summary>
-    CANNOT_SET_APP_ID,
+    CANNOT_SET_APP_ID = 16,
     /// <summary>The user entered an invalid background color. The background color must be a
     /// valid HTML hex color code, such as "99ccff".
     /// </summary>
-    INVALID_COLOR,
+    INVALID_COLOR = 17,
     /// <summary>The date range specified in the stats selector is invalid.
     /// </summary>
-    INVALID_DATE_RANGE,
+    INVALID_DATE_RANGE = 18,
     /// <summary>The email address of the sender or the recipient of a snippet email was invalid.
     /// </summary>
-    INVALID_EMAIL_ADDRESS,
+    INVALID_EMAIL_ADDRESS = 19,
     /// <summary>When providing a global conversion type id to fork from in an ADD operation, the
     /// global conversion type id is not acceptable (i.e.: we don't allow this global
     /// conversion type to be forked from)
     /// </summary>
-    INVALID_ORIGINAL_CONVERSION_TYPE_ID,
+    INVALID_ORIGINAL_CONVERSION_TYPE_ID = 20,
     /// <summary>The AppPlatform and AppConversionType must be set at the same time. It is an
     /// error to set just one or the other.
     /// </summary>
-    MUST_SET_APP_PLATFORM_AND_APP_CONVERSION_TYPE_TOGETHER,
+    MUST_SET_APP_PLATFORM_AND_APP_CONVERSION_TYPE_TOGETHER = 21,
     /// <summary>The user attempted to create a new conversion type, or to rename an existing
     /// conversion type, whose new name matches one of the other conversion types for
     /// his account.
     /// </summary>
-    NAME_ALREADY_EXISTS,
+    NAME_ALREADY_EXISTS = 22,
     /// <summary>The user asked to send a notification email, but specified no recipients.
     /// </summary>
-    NO_RECIPIENTS,
+    NO_RECIPIENTS = 23,
     /// <summary>The requested conversion type has no snippet, and thus its snippet email cannot
     /// be sent.
     /// </summary>
-    NO_SNIPPET,
+    NO_SNIPPET = 24,
     /// <summary>The requested date range contains too many webpages to be processed.
     /// </summary>
-    TOO_MANY_WEBPAGES,
+    TOO_MANY_WEBPAGES = 25,
     /// <summary>An unknown sorting type was specified in the selector.
     /// </summary>
-    UNKNOWN_SORTING_TYPE,
+    UNKNOWN_SORTING_TYPE = 26,
     /// <summary>AppConversionType cannot be set to DOWNLOAD when AppPlatform is ITUNES.
     /// </summary>
-    UNSUPPORTED_APP_CONVERSION_TYPE,
+    UNSUPPORTED_APP_CONVERSION_TYPE = 27,
   }
 
 
@@ -30548,13 +30547,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AppPostbackUrlErrorReason {
     /// <summary>Invalid Url format.
     /// </summary>
-    INVALID_URL_FORMAT,
+    INVALID_URL_FORMAT = 0,
     /// <summary>Invalid domain.
     /// </summary>
-    INVALID_DOMAIN,
+    INVALID_DOMAIN = 1,
     /// <summary>Some of the required macros were not found.
     /// </summary>
-    REQUIRED_MACRO_NOT_FOUND,
+    REQUIRED_MACRO_NOT_FOUND = 2,
   }
 
 
@@ -30608,15 +30607,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Customer get() {
       object[] results = this.Invoke("get", new object[0]);
-      return ((Customer)(results[0]));
+      return ((Customer) (results[0]));
     }
 
     /// <summary>Returns details of all the customers directly accessible by the user
-    /// authenticating the call. Callers are discouraged from setting the
-    /// <code>clientCustomerId</code> header field in calls to <a
-    /// href='CustomerService#getCustomers()'>CustomerService#getCustomers()</a>, as its
-    /// value is ignored by this method, and its presence will trigger an authorization
-    /// error if the caller does not have access to the customer with the included ID.
+    /// authenticating the call. <p>Following V201605, if <code>clientCustomerId</code>
+    /// is specified in the request header, only details of that customer will be
+    /// returned.</p>
     /// </summary>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -30624,7 +30621,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual Customer[] getCustomers() {
       object[] results = this.Invoke("getCustomers", new object[0]);
-      return ((Customer[])(results[0]));
+      return ((Customer[]) (results[0]));
     }
 
     /// <summary>Update the authorized customer. <p>While there are a limited set of properties
@@ -30642,7 +30639,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					customer
 				});
-      return ((Customer)(results[0]));
+      return ((Customer) (results[0]));
     }
   }
 
@@ -31248,11 +31245,11 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum CustomerErrorReason {
     /// <summary>A temporary server error. The request can be retried.
     /// </summary>
-    TEMPORARY,
+    TEMPORARY = 0,
     /// <summary>CustomerService cannot <a href='CustomerService#get()'>get</a> an account that
     /// is not fully set up.
     /// </summary>
-    ACCOUNT_NOT_SET_UP,
+    ACCOUNT_NOT_SET_UP = 1,
   }
 
 
@@ -31319,7 +31316,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((CustomerChangeData)(results[0]));
+      return ((CustomerChangeData) (results[0]));
     }
   }
 
@@ -31481,15 +31478,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <summary>The fields of this entity have not changed, but there may still be changes to
     /// its children.
     /// </summary>
-    FIELDS_UNCHANGED,
+    FIELDS_UNCHANGED = 0,
     /// <summary>The fields of this entity have changed, for example the name of an adgroup.
     /// </summary>
-    FIELDS_CHANGED,
+    FIELDS_CHANGED = 1,
     /// <summary>This entity was created during the time frame we're looking at. We will not
     /// enumerate all of the individual changes to this entity and its children. Instead
     /// it should be loaded from the appropriate service.
     /// </summary>
-    NEW,
+    NEW = 2,
   }
 
 
@@ -32213,20 +32210,20 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <summary>The request attempted to access a campaign that either does not exist or belongs
     /// to a different account.
     /// </summary>
-    INVALID_CAMPAIGN_ID,
+    INVALID_CAMPAIGN_ID = 0,
     /// <summary>The request attempted to access a feed that either does not exist or belongs to
     /// a different account.
     /// </summary>
-    INVALID_FEED_ID,
+    INVALID_FEED_ID = 1,
     /// <summary>The request asked for an invalid date range
     /// </summary>
-    INVALID_DATE_RANGE,
+    INVALID_DATE_RANGE = 2,
     /// <summary>There have been too many changes to sync the campaign over the requested
     /// date/time range. To avoid this error, try specifying a smaller date/time range.
     /// If this does not work, you should assume that everything has changed and
     /// retrieve the objects using their respective services.
     /// </summary>
-    TOO_MANY_CHANGES,
+    TOO_MANY_CHANGES = 3,
   }
 
 
@@ -32289,7 +32286,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((CustomerFeedPage)(results[0]));
+      return ((CustomerFeedPage) (results[0]));
     }
 
     /// <summary>Adds, sets, or removes customer feeds.
@@ -32305,7 +32302,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CustomerFeedReturnValue)(results[0]));
+      return ((CustomerFeedReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of customer feeds that match the query.
@@ -32322,7 +32319,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((CustomerFeedPage)(results[0]));
+      return ((CustomerFeedPage) (results[0]));
     }
   }
 
@@ -32541,15 +32538,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum CustomerFeedStatus {
     /// <summary>Indicates that the feed is currently being used.
     /// </summary>
-    ENABLED,
+    ENABLED = 0,
     /// <summary>Indicates that the feed is not used anymore.
     /// </summary>
-    REMOVED,
+    REMOVED = 1,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -32788,30 +32785,30 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum CustomerFeedErrorReason {
     /// <summary>An active feed already exists for this customer and place holder type.
     /// </summary>
-    FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE,
+    FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE = 0,
     /// <summary>The specified id does not exist.
     /// </summary>
-    INVALID_ID,
+    INVALID_ID = 1,
     /// <summary>The specified feed is deleted.
     /// </summary>
-    CANNOT_ADD_FOR_DELETED_FEED,
+    CANNOT_ADD_FOR_DELETED_FEED = 2,
     /// <summary>The CustomerFeed already exists. SET should be used to modify the existing
     /// CustomerFeed.
     /// </summary>
-    CANNOT_ADD_ALREADY_EXISTING_CUSTOMER_FEED,
+    CANNOT_ADD_ALREADY_EXISTING_CUSTOMER_FEED = 3,
     /// <summary>Cannot modify removed customer feed.
     /// </summary>
-    CANNOT_MODIFY_REMOVED_CUSTOMER_FEED,
+    CANNOT_MODIFY_REMOVED_CUSTOMER_FEED = 4,
     /// <summary>Invalid placeholder types.
     /// </summary>
-    INVALID_PLACEHOLDER_TYPES,
+    INVALID_PLACEHOLDER_TYPES = 5,
     /// <summary>Feed mapping for this placeholder type does not exist.
     /// </summary>
-    MISSING_FEEDMAPPING_FOR_PLACEHOLDER_TYPE,
+    MISSING_FEEDMAPPING_FOR_PLACEHOLDER_TYPE = 6,
     /// <summary>Placeholder not allowed at the account level.
     /// </summary>
-    PLACEHOLDER_TYPE_NOT_ALLOWED_ON_CUSTOMER_FEED,
-    UNKNOWN,
+    PLACEHOLDER_TYPE_NOT_ALLOWED_ON_CUSTOMER_FEED = 7,
+    UNKNOWN = 8,
   }
 
 
@@ -32883,7 +32880,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((AdGroupBidLandscapePage)(results[0]));
+      return ((AdGroupBidLandscapePage) (results[0]));
     }
 
     /// <summary>Returns a list of <a href='CriterionBidLandscape'>CriterionBidLandscape</a>s for
@@ -32907,7 +32904,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((CriterionBidLandscapePage)(results[0]));
+      return ((CriterionBidLandscapePage) (results[0]));
     }
 
     /// <summary>Returns a list of <a href='CriterionBidLandscape'>CriterionBidLandscape</a>s for
@@ -32931,7 +32928,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((CriterionBidLandscapePage)(results[0]));
+      return ((CriterionBidLandscapePage) (results[0]));
     }
 
     /// <summary>Returns a list of domain categories that can be used to create <a
@@ -32950,7 +32947,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((DomainCategoryPage)(results[0]));
+      return ((DomainCategoryPage) (results[0]));
     }
 
     /// <summary>Returns a list of <a href='AdGroupBidLandscape'>AdGroupBidLandscape</a>s for the
@@ -32973,7 +32970,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query
 				});
-      return ((AdGroupBidLandscapePage)(results[0]));
+      return ((AdGroupBidLandscapePage) (results[0]));
     }
 
     /// <summary>Returns a list of <a href='CriterionBidLandscape'>CriterionBidLandscape</a>s for
@@ -32996,7 +32993,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query
 				});
-      return ((CriterionBidLandscapePage)(results[0]));
+      return ((CriterionBidLandscapePage) (results[0]));
     }
 
     /// <summary>Returns a list of <a href='CriterionBidLandscape'>CriterionBidLandscape</a>s for
@@ -33019,7 +33016,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query
 				});
-      return ((CriterionBidLandscapePage)(results[0]));
+      return ((CriterionBidLandscapePage) (results[0]));
     }
 
     /// <summary>Returns a list of domain categories that can be used to create <a
@@ -33037,7 +33034,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query
 				});
-      return ((DomainCategoryPage)(results[0]));
+      return ((DomainCategoryPage) (results[0]));
     }
   }
 
@@ -34349,12 +34346,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// group. Criteria with bid overrides are <em>included</em>, but the overrides on
     /// these criteria were ignored when generating the landscape.
     /// </summary>
-    UNIFORM,
+    UNIFORM = 0,
     /// <summary>Signifies that the bid of this ad group was only applied to the ad group itself.
     /// Criteria with bid overrides are <em>excluded</em>.
     /// </summary>
-    DEFAULT,
-    UNKNOWN,
+    DEFAULT = 1,
+    UNKNOWN = 2,
   }
 
 
@@ -34620,13 +34617,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DataError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum DataErrorReason {
-    CANNOT_CREATE_TABLE_ENTRY,
-    NO_TABLE_ENTRY_CLASS_FOR_VIEW_TYPE,
+    CANNOT_CREATE_TABLE_ENTRY = 0,
+    NO_TABLE_ENTRY_CLASS_FOR_VIEW_TYPE = 1,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    TABLE_SERVICE_ERROR,
+    TABLE_SERVICE_ERROR = 2,
   }
 
 
@@ -34712,7 +34709,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((ExperimentPage)(results[0]));
+      return ((ExperimentPage) (results[0]));
     }
 
     /// <summary>Mutates (add, update or remove) experiments. <b>Note:</b> To REMOVE use SET and
@@ -34732,7 +34729,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((ExperimentReturnValue)(results[0]));
+      return ((ExperimentReturnValue) (results[0]));
     }
   }
 
@@ -35168,13 +35165,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ExperimentStatus {
     /// <summary>Experiment is currently active and can get traffic.
     /// </summary>
-    ENABLED,
+    ENABLED = 0,
     /// <summary>Experiment has been removed.
     /// </summary>
-    REMOVED,
+    REMOVED = 1,
     /// <summary>Changes from the experiment have been applied.
     /// </summary>
-    PROMOTED,
+    PROMOTED = 2,
   }
 
 
@@ -35184,19 +35181,19 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ExperimentServingStatus {
     /// <summary>Experiment is currently active and receiving traffic
     /// </summary>
-    RUNNING,
+    RUNNING = 0,
     /// <summary>Experiment has not started running yet i.e. start date has not reached yet
     /// </summary>
-    PENDING,
+    PENDING = 1,
     /// <summary>Experiment has already ended, but not promoted or removed.
     /// </summary>
-    ENDED,
+    ENDED = 2,
     /// <summary>Experiment has been removed.
     /// </summary>
-    REMOVED,
+    REMOVED = 3,
     /// <summary>Changes from the experiment have been applied.
     /// </summary>
-    PROMOTED,
+    PROMOTED = 4,
   }
 
 
@@ -35546,59 +35543,59 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ExperimentServiceErrorReason {
     /// <summary>Start/end date is too far in the future
     /// </summary>
-    AFTER_MAXIMUM_ALLOWABLE_DATE,
+    AFTER_MAXIMUM_ALLOWABLE_DATE = 0,
     /// <summary>AOL partners are not permitted to run experiments
     /// </summary>
-    AOL_PARTNER_CAMPAIGNS_CANT_RUN_EXPERIMENTS,
+    AOL_PARTNER_CAMPAIGNS_CANT_RUN_EXPERIMENTS = 1,
     /// <summary>Cannot create experiment for bidding strategy
     /// </summary>
-    CANNOT_CREATE_EXPERIMENT_FOR_BIDDING_STRATEGY,
+    CANNOT_CREATE_EXPERIMENT_FOR_BIDDING_STRATEGY = 2,
     /// <summary>Cannot create experiment for a bidding strategy feature used in the campaign.
     /// </summary>
-    CANNOT_CREATE_EXPERIMENT_FOR_BIDDING_STRATEGY_FEATURE,
+    CANNOT_CREATE_EXPERIMENT_FOR_BIDDING_STRATEGY_FEATURE = 3,
     /// <summary>Specified start/end date for experiment is in the past
     /// </summary>
-    CANNOT_SET_DATE_TO_PAST,
+    CANNOT_SET_DATE_TO_PAST = 4,
     /// <summary>Cannot set an end date for an experiment if a start date is not set.
     /// </summary>
-    CANNOT_SET_END_DATE_WITHOUT_SETTING_START_DATE,
+    CANNOT_SET_END_DATE_WITHOUT_SETTING_START_DATE = 5,
     /// <summary>Cannot use experiment with a campaign that is using a shared budget.
     /// </summary>
-    CANNOT_USE_EXPERIMENT_WITH_SHARED_BUDGET,
+    CANNOT_USE_EXPERIMENT_WITH_SHARED_BUDGET = 6,
     /// <summary>Start date before campaign start or end date after campaign end
     /// </summary>
-    DATE_OUTSIDE_CAMPAIGN_DATE_RANGE,
+    DATE_OUTSIDE_CAMPAIGN_DATE_RANGE = 7,
     /// <summary>Can't change start date of experiment once started
     /// </summary>
-    EXPERIMENT_ALREADY_STARTED,
+    EXPERIMENT_ALREADY_STARTED = 8,
     /// <summary>Can't edit ended experiments
     /// </summary>
-    EXPERIMENT_ENDED,
+    EXPERIMENT_ENDED = 9,
     /// <summary>Adding experiment would exceed maximum allowed experiments in campaign.
     /// </summary>
-    EXPERIMENT_LIMIT_EXCEEDED,
+    EXPERIMENT_LIMIT_EXCEEDED = 10,
     /// <summary>Experiment name cannot be used.
     /// </summary>
-    INVALID_EXPERIMENT_NAME,
+    INVALID_EXPERIMENT_NAME = 11,
     /// <summary>The query percentage is not valid
     /// </summary>
-    INVALID_QUERY_PERCENTAGE,
+    INVALID_QUERY_PERCENTAGE = 12,
     /// <summary>Cannot change query percentage after experiment has started
     /// </summary>
-    CANNOT_CHANGE_QUERY_PERCENTAGE_AFTER_EXPERIMENT_HAS_STARTED,
+    CANNOT_CHANGE_QUERY_PERCENTAGE_AFTER_EXPERIMENT_HAS_STARTED = 13,
     /// <summary>Invalid initial experiment status or transition.
     /// </summary>
-    INVALID_STATUS_UPDATE,
+    INVALID_STATUS_UPDATE = 14,
     /// <summary>The experiment start date was after the experiment end date.
     /// </summary>
-    START_DATE_AFTER_END_DATE,
+    START_DATE_AFTER_END_DATE = 15,
     /// <summary>No budget in this campaign
     /// </summary>
-    NO_VALID_BUDGET,
+    NO_VALID_BUDGET = 16,
     /// <summary>An inactive experiment cannot be changed
     /// </summary>
-    EXPERIMENT_NOT_ACTIVE,
-    EXPERIMENT_SERVICE_ERROR,
+    EXPERIMENT_NOT_ACTIVE = 17,
+    EXPERIMENT_SERVICE_ERROR = 18,
   }
 
 
@@ -35661,7 +35658,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((AdGroupFeedPage)(results[0]));
+      return ((AdGroupFeedPage) (results[0]));
     }
 
     /// <summary>Adds, updates or removes AdGroupFeeds.
@@ -35677,7 +35674,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupFeedReturnValue)(results[0]));
+      return ((AdGroupFeedReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of AdGroupFeeds that match the query.
@@ -35694,7 +35691,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((AdGroupFeedPage)(results[0]));
+      return ((AdGroupFeedPage) (results[0]));
     }
   }
 
@@ -36092,15 +36089,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AdGroupFeedStatus {
     /// <summary>This AdGroupFeed's data is currently being used.
     /// </summary>
-    ENABLED,
+    ENABLED = 0,
     /// <summary>This AdGroupFeed's data is not used anymore.
     /// </summary>
-    REMOVED,
+    REMOVED = 1,
     /// <summary>Unknown status. <span class="constraint Rejected">Used for return value only. An
     /// enumeration could not be processed, typically due to incompatibility with your
     /// WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -36338,31 +36335,31 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AdGroupFeedErrorReason {
     /// <summary>An active feed already exists for this adgroup and place holder type.
     /// </summary>
-    FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE,
+    FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE = 0,
     /// <summary>The specified id does not exist.
     /// </summary>
-    INVALID_ID,
+    INVALID_ID = 1,
     /// <summary>The specified feed is deleted.
     /// </summary>
-    CANNOT_ADD_FOR_DELETED_FEED,
+    CANNOT_ADD_FOR_DELETED_FEED = 2,
     /// <summary>The AdGroupFeed already exists. SET should be used to modify the existing
     /// AdGroupFeed.
     /// </summary>
-    CANNOT_ADD_ALREADY_EXISTING_ADGROUP_FEED,
+    CANNOT_ADD_ALREADY_EXISTING_ADGROUP_FEED = 3,
     /// <summary>Cannot operate on removed adgroup feed.
     /// </summary>
-    CANNOT_OPERATE_ON_REMOVED_ADGROUP_FEED,
+    CANNOT_OPERATE_ON_REMOVED_ADGROUP_FEED = 4,
     /// <summary>Invalid placeholder type ids.
     /// </summary>
-    INVALID_PLACEHOLDER_TYPES,
+    INVALID_PLACEHOLDER_TYPES = 5,
     /// <summary>Feed mapping for this placeholder type does not exist.
     /// </summary>
-    MISSING_FEEDMAPPING_FOR_PLACEHOLDER_TYPE,
+    MISSING_FEEDMAPPING_FOR_PLACEHOLDER_TYPE = 6,
     /// <summary>Location AdGroupFeeds cannot be created unless there is a location CustomerFeed
     /// for the specified feed.
     /// </summary>
-    NO_EXISTING_LOCATION_CUSTOMER_FEED,
-    UNKNOWN,
+    NO_EXISTING_LOCATION_CUSTOMER_FEED = 7,
+    UNKNOWN = 8,
   }
 
 
@@ -36425,7 +36422,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((FeedPage)(results[0]));
+      return ((FeedPage) (results[0]));
     }
 
     /// <summary>Add, remove, and set Feeds.
@@ -36441,7 +36438,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((FeedReturnValue)(results[0]));
+      return ((FeedReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of Feed that match the query.
@@ -36458,7 +36455,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((FeedPage)(results[0]));
+      return ((FeedPage) (results[0]));
     }
   }
 
@@ -36616,7 +36613,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// "Attributes".</span> <span class="constraint ContentsNotNull">This field must
     /// not contain <code></code> elements.</span> <span class="constraint
     /// Required">This field is required and should not be <code>null</code> when it is
-    /// contained within <a href='Operator'>Operator</a>s : ADD, SET.</span>
+    /// contained within <a href='Operator'>Operator</a>s : ADD.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("attributes")]
     public FeedAttribute[] attributes {
@@ -36953,23 +36950,23 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "FeedAttribute.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum FeedAttributeType {
-    INT64,
-    FLOAT,
-    STRING,
-    BOOLEAN,
-    URL,
-    DATE_TIME,
-    INT64_LIST,
-    FLOAT_LIST,
-    STRING_LIST,
-    BOOLEAN_LIST,
-    URL_LIST,
-    DATE_TIME_LIST,
+    INT64 = 0,
+    FLOAT = 1,
+    STRING = 2,
+    BOOLEAN = 3,
+    URL = 4,
+    DATE_TIME = 5,
+    INT64_LIST = 6,
+    FLOAT_LIST = 7,
+    STRING_LIST = 8,
+    BOOLEAN_LIST = 9,
+    URL_LIST = 10,
+    DATE_TIME_LIST = 11,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 12,
   }
 
 
@@ -36981,15 +36978,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum FeedStatus {
     /// <summary>This Feed's data can be used in placeholders.
     /// </summary>
-    ENABLED,
+    ENABLED = 0,
     /// <summary>This Feed's data is not used anymore.
     /// </summary>
-    REMOVED,
+    REMOVED = 1,
     /// <summary>Unknown status. <span class="constraint Rejected">Used for return value only. An
     /// enumeration could not be processed, typically due to incompatibility with your
     /// WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -37004,19 +37001,19 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// are managed by the user. Users can add <a
     /// href='FeedAttribute'>FeedAttribute</a>s to this <a href='Feed'>Feed</a>.
     /// </summary>
-    USER,
+    USER = 0,
     /// <summary>The <a href='FeedAttribute'>FeedAttribute</a>s for an ADWORDS <a
     /// href='Feed'>Feed</a> are created by ADWORDS. Occasionally the attributes defined
     /// for a particular type of <a href='Feed'>Feed</a> is expanded. In this case,
     /// older <a href='Feed'>Feed</a>s of this type can be mutated to add the expanded
     /// attributes.
     /// </summary>
-    ADWORDS,
+    ADWORDS = 1,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -37578,57 +37575,57 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum FeedErrorReason {
     /// <summary>The names of the FeedAttributes must be unique.
     /// </summary>
-    ATTRIBUTE_NAMES_NOT_UNIQUE,
+    ATTRIBUTE_NAMES_NOT_UNIQUE = 0,
     /// <summary>The attribute list must be an exact copy of the existing list if the attribute
     /// id's are present.
     /// </summary>
-    ATTRIBUTES_DO_NOT_MATCH_EXISTING_ATTRIBUTES,
+    ATTRIBUTES_DO_NOT_MATCH_EXISTING_ATTRIBUTES = 1,
     /// <summary>Origin can only be set during Feed creation.
     /// </summary>
-    CANNOT_CHANGE_ORIGIN,
+    CANNOT_CHANGE_ORIGIN = 2,
     /// <summary>Cannot specify USER origin for a system generated feed.
     /// </summary>
-    CANNOT_SPECIFY_USER_ORIGIN_FOR_SYSTEM_FEED,
+    CANNOT_SPECIFY_USER_ORIGIN_FOR_SYSTEM_FEED = 3,
     /// <summary>Cannot specify ADWORDS origin for a non-system generated feed.
     /// </summary>
-    CANNOT_SPECIFY_ADWORDS_ORIGIN_FOR_NON_SYSTEM_FEED,
+    CANNOT_SPECIFY_ADWORDS_ORIGIN_FOR_NON_SYSTEM_FEED = 4,
     /// <summary>Cannot specify feed attributes for system feed.
     /// </summary>
-    CANNOT_SPECIFY_FEED_ATTRIBUTES_FOR_SYSTEM_FEED,
+    CANNOT_SPECIFY_FEED_ATTRIBUTES_FOR_SYSTEM_FEED = 5,
     /// <summary>Cannot update FeedAttributes on feed with origin adwords.
     /// </summary>
-    CANNOT_UPDATE_FEED_ATTRIBUTES_WITH_ORIGIN_ADWORDS,
+    CANNOT_UPDATE_FEED_ATTRIBUTES_WITH_ORIGIN_ADWORDS = 6,
     /// <summary>The given id refers to a removed Feed. Removed Feeds are immutable.
     /// </summary>
-    FEED_REMOVED,
+    FEED_REMOVED = 7,
     /// <summary>The origin of the feed is not valid for the client.
     /// </summary>
-    INVALID_ORIGIN_VALUE,
+    INVALID_ORIGIN_VALUE = 8,
     /// <summary>A user can only create and modify feeds with user origin.
     /// </summary>
-    FEED_ORIGIN_IS_NOT_USER,
+    FEED_ORIGIN_IS_NOT_USER = 9,
     /// <summary>Feed name matches that of another active Feed.
     /// </summary>
-    DUPLICATE_FEED_NAME,
+    DUPLICATE_FEED_NAME = 10,
     /// <summary>Name of feed is not allowed.
     /// </summary>
-    INVALID_FEED_NAME,
+    INVALID_FEED_NAME = 11,
     /// <summary>Missing OAuthInfo
     /// </summary>
-    MISSING_OAUTH_INFO,
+    MISSING_OAUTH_INFO = 12,
     /// <summary>New FeedAttributes must not effect the unique key.
     /// </summary>
-    NEW_ATTRIBUTE_CANNOT_BE_PART_OF_UNIQUE_KEY,
+    NEW_ATTRIBUTE_CANNOT_BE_PART_OF_UNIQUE_KEY = 13,
     /// <summary>Too many FeedAttributes for a Feed.
     /// </summary>
-    TOO_MANY_FEED_ATTRIBUTES_FOR_FEED,
+    TOO_MANY_FEED_ATTRIBUTES_FOR_FEED = 14,
     /// <summary>The business account is not valid.
     /// </summary>
-    INVALID_BUSINESS_ACCOUNT,
+    INVALID_BUSINESS_ACCOUNT = 15,
     /// <summary>Business account cannot access Google My Business account.
     /// </summary>
-    BUSINESS_ACCOUNT_CANNOT_ACCESS_LOCATION_ACCOUNT,
-    UNKNOWN,
+    BUSINESS_ACCOUNT_CANNOT_ACCESS_LOCATION_ACCOUNT = 16,
+    UNKNOWN = 17,
   }
 
 
@@ -37693,7 +37690,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((FeedItemPage)(results[0]));
+      return ((FeedItemPage) (results[0]));
     }
 
     /// <summary>Add, remove, and set FeedItems.
@@ -37709,7 +37706,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((FeedItemReturnValue)(results[0]));
+      return ((FeedItemReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of FeedItems that match the query.
@@ -37726,7 +37723,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((FeedItemPage)(results[0]));
+      return ((FeedItemPage) (results[0]));
     }
   }
 
@@ -38234,15 +38231,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum FeedItemStatus {
     /// <summary>Feed item is active
     /// </summary>
-    ENABLED,
+    ENABLED = 0,
     /// <summary>Feed item is removed
     /// </summary>
-    REMOVED,
+    REMOVED = 1,
     /// <summary>Unknown status <span class="constraint Rejected">Used for return value only. An
     /// enumeration could not be processed, typically due to incompatibility with your
     /// WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -38704,13 +38701,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum FeedItemValidationStatus {
     /// <summary>Validation pending.
     /// </summary>
-    UNCHECKED,
+    UNCHECKED = 0,
     /// <summary>An error was found.
     /// </summary>
-    ERROR,
+    ERROR = 1,
     /// <summary>FeedItem is semantically well-formed.
     /// </summary>
-    VALID,
+    VALID = 2,
   }
 
 
@@ -38722,13 +38719,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum FeedItemApprovalStatus {
     /// <summary>Pending review
     /// </summary>
-    UNCHECKED,
+    UNCHECKED = 0,
     /// <summary>Approved
     /// </summary>
-    APPROVED,
+    APPROVED = 1,
     /// <summary>Disapproved
     /// </summary>
-    DISAPPROVED,
+    DISAPPROVED = 2,
   }
 
 
@@ -39689,52 +39686,52 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum FeedItemErrorReason {
     /// <summary>Targeted adgroup's campaign does not match the targeted campaign.
     /// </summary>
-    CAMPAIGN_TARGETING_MISMATCH,
+    CAMPAIGN_TARGETING_MISMATCH = 0,
     /// <summary>Cannot convert the feed attribute value from string to its real type.
     /// </summary>
-    CANNOT_CONVERT_ATTRIBUTE_VALUE_FROM_STRING,
+    CANNOT_CONVERT_ATTRIBUTE_VALUE_FROM_STRING = 1,
     /// <summary>Cannot operate on removed feed item.
     /// </summary>
-    CANNOT_OPERATE_ON_REMOVED_FEED_ITEM,
+    CANNOT_OPERATE_ON_REMOVED_FEED_ITEM = 2,
     /// <summary>Date time zone does not match the account's time zone.
     /// </summary>
-    DATE_TIME_MUST_BE_IN_ACCOUNT_TIME_ZONE,
+    DATE_TIME_MUST_BE_IN_ACCOUNT_TIME_ZONE = 3,
     /// <summary>Feed item with the key attributes could not be found.
     /// </summary>
-    KEY_ATTRIBUTES_NOT_FOUND,
+    KEY_ATTRIBUTES_NOT_FOUND = 4,
     /// <summary>Unknown or unsupported device preference.
     /// </summary>
-    INVALID_DEVICE_PREFERENCE,
+    INVALID_DEVICE_PREFERENCE = 5,
     /// <summary>Invalid feed item schedule end time (i.e., endHour = 24 and endMinute != 0).
     /// </summary>
-    INVALID_SCHEDULE_END,
+    INVALID_SCHEDULE_END = 6,
     /// <summary>Url feed attribute value is not valid.
     /// </summary>
-    INVALID_URL,
+    INVALID_URL = 7,
     /// <summary>Some key attributes are missing.
     /// </summary>
-    MISSING_KEY_ATTRIBUTES,
+    MISSING_KEY_ATTRIBUTES = 8,
     /// <summary>Feed item has same key attributes as another feed item.
     /// </summary>
-    KEY_ATTRIBUTES_NOT_UNIQUE,
+    KEY_ATTRIBUTES_NOT_UNIQUE = 9,
     /// <summary>Cannot modify key attributes on an existing feed item.
     /// </summary>
-    CANNOT_MODIFY_KEY_ATTRIBUTE_VALUE,
+    CANNOT_MODIFY_KEY_ATTRIBUTE_VALUE = 10,
     /// <summary>Overlapping feed item schedule times (e.g., 7-10AM and 8-11AM) are not allowed.
     /// </summary>
-    OVERLAPPING_SCHEDULES,
+    OVERLAPPING_SCHEDULES = 11,
     /// <summary>Feed item schedule end time must be after start time.
     /// </summary>
-    SCHEDULE_END_NOT_AFTER_START,
+    SCHEDULE_END_NOT_AFTER_START = 12,
     /// <summary>There are too many feed item schedules per day.
     /// </summary>
-    TOO_MANY_SCHEDULES_PER_DAY,
+    TOO_MANY_SCHEDULES_PER_DAY = 13,
     /// <summary>The feed attribute value is too large.
     /// </summary>
-    SIZE_TOO_LARGE_FOR_MULTI_VALUE_ATTRIBUTE,
+    SIZE_TOO_LARGE_FOR_MULTI_VALUE_ATTRIBUTE = 14,
     /// <summary>Unknown error.
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 15,
   }
 
 
@@ -39797,7 +39794,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((FeedMappingPage)(results[0]));
+      return ((FeedMappingPage) (results[0]));
     }
 
     /// <summary>Add and remove FeedMappings. The following <a href='Operator'>Operator</a>s are
@@ -39814,7 +39811,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((FeedMappingReturnValue)(results[0]));
+      return ((FeedMappingReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of FeedMappings that match the query.
@@ -39831,7 +39828,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((FeedMappingPage)(results[0]));
+      return ((FeedMappingPage) (results[0]));
     }
   }
 
@@ -39942,12 +39939,14 @@ namespace Google.Api.Ads.AdWords.v201605 {
 
     private bool criterionTypeFieldSpecified;
 
-    /// <summary>ID of this FeedMapping. <span class="constraint Required">This field is required
-    /// and should not be <code>null</code> when it is contained within <a
-    /// href='Operator'>Operator</a>s : REMOVE.</span> <span class="constraint
-    /// Selectable">This field can be selected using the value
-    /// "FeedMappingId".</span><span class="constraint Filterable">This field can be
-    /// filtered on.</span>
+    /// <summary>ID of this FeedMapping. <span class="constraint Selectable">This field can be
+    /// selected using the value "FeedMappingId".</span><span class="constraint
+    /// Filterable">This field can be filtered on.</span> <span class="constraint
+    /// ReadOnly">This field is read only and will be ignored when sent to the API for
+    /// the following <a href='Operator'>Operator</a>s: ADD.</span> <span
+    /// class="constraint Required">This field is required and should not be
+    /// <code>null</code> when it is contained within <a href='Operator'>Operator</a>s :
+    /// REMOVE.</span>
     /// </summary>
     public long feedMappingId {
       get {
@@ -40058,10 +40057,10 @@ namespace Google.Api.Ads.AdWords.v201605 {
     }
 
     /// <summary>The list of feed attributes to placeholder fields mappings. <span
-    /// class="constraint Required">This field is required and should not be
-    /// <code>null</code> when it is contained within <a href='Operator'>Operator</a>s :
-    /// ADD.</span> <span class="constraint Selectable">This field can be selected using
-    /// the value "AttributeFieldMappings".</span>
+    /// class="constraint Selectable">This field can be selected using the value
+    /// "AttributeFieldMappings".</span> <span class="constraint Required">This field is
+    /// required and should not be <code>null</code> when it is contained within <a
+    /// href='Operator'>Operator</a>s : ADD.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("attributeFieldMappings")]
     public AttributeFieldMapping[] attributeFieldMappings {
@@ -40186,15 +40185,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum FeedMappingStatus {
     /// <summary>This mapping is used in feeds.
     /// </summary>
-    ENABLED,
+    ENABLED = 0,
     /// <summary>This mapping is not used anymore.
     /// </summary>
-    REMOVED,
+    REMOVED = 1,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -40550,54 +40549,54 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum FeedMappingErrorReason {
     /// <summary>The given placeholder field does not exist.
     /// </summary>
-    INVALID_PLACEHOLDER_FIELD,
+    INVALID_PLACEHOLDER_FIELD = 0,
     /// <summary>The given criterion field does not exist.
     /// </summary>
-    INVALID_CRITERION_FIELD,
+    INVALID_CRITERION_FIELD = 1,
     /// <summary>The given placeholder type does not exist.
     /// </summary>
-    INVALID_PLACEHOLDER_TYPE,
+    INVALID_PLACEHOLDER_TYPE = 2,
     /// <summary>The given criterion type does not exist.
     /// </summary>
-    INVALID_CRITERION_TYPE,
+    INVALID_CRITERION_TYPE = 3,
     /// <summary>Cannot specify both placeholder type and criterion type.
     /// </summary>
-    CANNOT_SET_PLACEHOLDER_TYPE_AND_CRITERION_TYPE,
+    CANNOT_SET_PLACEHOLDER_TYPE_AND_CRITERION_TYPE = 4,
     /// <summary>A feed mapping must contain at least one attribute field mapping.
     /// </summary>
-    NO_ATTRIBUTE_FIELD_MAPPINGS,
+    NO_ATTRIBUTE_FIELD_MAPPINGS = 5,
     /// <summary>The type of the feed attribute referenced in the attribute field mapping must
     /// match the type of the placeholder field.
     /// </summary>
-    FEED_ATTRIBUTE_TYPE_MISMATCH,
+    FEED_ATTRIBUTE_TYPE_MISMATCH = 6,
     /// <summary>A feed mapping for a system generated feed cannot be operated on.
     /// </summary>
-    CANNOT_OPERATE_ON_MAPPINGS_FOR_SYSTEM_GENERATED_FEED,
+    CANNOT_OPERATE_ON_MAPPINGS_FOR_SYSTEM_GENERATED_FEED = 7,
     /// <summary>Only one feed mapping for a placeholder type is allowed per feed or customer
     /// (depending on the placeholder type).
     /// </summary>
-    MULTIPLE_MAPPINGS_FOR_PLACEHOLDER_TYPE,
+    MULTIPLE_MAPPINGS_FOR_PLACEHOLDER_TYPE = 8,
     /// <summary>Only one feed mapping for a criterion type is allowed per customer.
     /// </summary>
-    MULTIPLE_MAPPINGS_FOR_CRITERION_TYPE,
+    MULTIPLE_MAPPINGS_FOR_CRITERION_TYPE = 9,
     /// <summary>Only one feed attribute mapping for a placeholder field is allowed (depending on
     /// the placeholder type).
     /// </summary>
-    MULTIPLE_MAPPINGS_FOR_PLACEHOLDER_FIELD,
+    MULTIPLE_MAPPINGS_FOR_PLACEHOLDER_FIELD = 10,
     /// <summary>Only one feed attribute mapping for a criterion field is allowed (depending on
     /// the criterion type).
     /// </summary>
-    MULTIPLE_MAPPINGS_FOR_CRITERION_FIELD,
+    MULTIPLE_MAPPINGS_FOR_CRITERION_FIELD = 11,
     /// <summary>This feed mapping may not contain any explicit attribute field mappings.
     /// </summary>
-    UNEXPECTED_ATTRIBUTE_FIELD_MAPPINGS,
+    UNEXPECTED_ATTRIBUTE_FIELD_MAPPINGS = 12,
     /// <summary>Location placeholder feedmappings can only be created for Places feeds.
     /// </summary>
-    LOCATION_PLACEHOLDER_ONLY_FOR_PLACES_FEEDS,
+    LOCATION_PLACEHOLDER_ONLY_FOR_PLACES_FEEDS = 13,
     /// <summary>Mappings for typed feeds cannot be modified.
     /// </summary>
-    CANNOT_MODIFY_MAPPINGS_FOR_TYPED_FEED,
-    UNKNOWN,
+    CANNOT_MODIFY_MAPPINGS_FOR_TYPED_FEED = 14,
+    UNKNOWN = 15,
   }
 
 
@@ -40662,7 +40661,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((LocationCriterion[])(results[0]));
+      return ((LocationCriterion[]) (results[0]));
     }
 
     /// <summary>Returns the list of <a href='LocationCriterion'>LocationCriterion</a>s that
@@ -40680,7 +40679,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((LocationCriterion[])(results[0]));
+      return ((LocationCriterion[]) (results[0]));
     }
   }
 
@@ -40760,11 +40759,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
       }
     }
 
-    /// <summary>Locale of the name, as specified in the request. <b>Note:</b> If the specified
-    /// locale filter is invalid, or not supported, en_US will be used by default. <span
-    /// class="constraint Filterable">This field can be filtered on using the value
-    /// "Locale".</span> <span class="constraint ReadOnly">This field is read only and
-    /// will be ignored when sent to the API.</span>
+    /// <summary>Preferred locale to be used as a hint for determining the list of locations to
+    /// return. This is also used for language translation. <b>Note:</b> If the
+    /// specified locale filter is invalid, or not supported, en_US will be used by
+    /// default. <span class="constraint Filterable">This field can be filtered on using
+    /// the value "Locale".</span> <span class="constraint ReadOnly">This field is read
+    /// only and will be ignored when sent to the API.</span>
     /// </summary>
     public string locale {
       get {
@@ -40917,14 +40917,14 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "LocationCriterionServiceError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum LocationCriterionServiceErrorReason {
-    REQUIRED_LOCATION_CRITERION_PREDICATE_MISSING,
-    TOO_MANY_LOCATION_CRITERION_PREDICATES_SPECIFIED,
-    INVALID_COUNTRY_CODE,
+    REQUIRED_LOCATION_CRITERION_PREDICATE_MISSING = 0,
+    TOO_MANY_LOCATION_CRITERION_PREDICATES_SPECIFIED = 1,
+    INVALID_COUNTRY_CODE = 2,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    LOCATION_CRITERION_SERVICE_ERROR,
+    LOCATION_CRITERION_SERVICE_ERROR = 3,
   }
 
 
@@ -40987,7 +40987,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((ManagedCustomerPage)(results[0]));
+      return ((ManagedCustomerPage) (results[0]));
     }
 
     /// <summary>Returns the pending invitations for the customer IDs in the selector.
@@ -41004,7 +41004,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((PendingInvitation[])(results[0]));
+      return ((PendingInvitation[]) (results[0]));
     }
 
     /// <summary>Modifies or creates new <a href='ManagedCustomer'>ManagedCustomer</a>s. <p
@@ -41023,7 +41023,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((ManagedCustomerReturnValue)(results[0]));
+      return ((ManagedCustomerReturnValue) (results[0]));
     }
 
     /// <summary>Adds <a href='AccountLabel'>AccountLabel</a>s to, and removes <a
@@ -41052,7 +41052,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((ManagedCustomerLabel[])(results[0]));
+      return ((ManagedCustomerLabel[]) (results[0]));
     }
 
     /// <summary>Modifies the ManagedCustomer forest. These actions are possible (categorized by
@@ -41078,7 +41078,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((ManagedCustomerLink[])(results[0]));
+      return ((ManagedCustomerLink[]) (results[0]));
     }
 
     /// <summary>Moves client customers to new managers (moving links). Only the following action
@@ -41098,7 +41098,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((ManagedCustomerLink[])(results[0]));
+      return ((ManagedCustomerLink[]) (results[0]));
     }
   }
 
@@ -42127,20 +42127,20 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum LinkStatus {
     /// <summary>An active relationship.
     /// </summary>
-    ACTIVE,
+    ACTIVE = 0,
     /// <summary>A former active relationship.
     /// </summary>
-    INACTIVE,
+    INACTIVE = 1,
     /// <summary>An invitation that is active or has expired.
     /// </summary>
-    PENDING,
+    PENDING = 2,
     /// <summary>An invitation that was refused by the invitee.
     /// </summary>
-    REFUSED,
+    REFUSED = 3,
     /// <summary>An invitation that was cancelled by the invitor.
     /// </summary>
-    CANCELLED,
-    UNKNOWN,
+    CANCELLED = 4,
+    UNKNOWN = 5,
   }
 
 
@@ -42611,69 +42611,69 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ManagedCustomerServiceErrorReason {
     /// <summary>Unknown.
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>The user is not authorized to perform the action.
     /// </summary>
-    NOT_AUTHORIZED,
+    NOT_AUTHORIZED = 1,
     /// <summary>Invalid selector
     /// </summary>
-    INVALID_SELECTOR,
+    INVALID_SELECTOR = 2,
     /// <summary>Can't process the passed in timezone.
     /// </summary>
-    INVALID_TIMEZONE,
+    INVALID_TIMEZONE = 3,
     /// <summary>Can't process the passed in currency code.
     /// </summary>
-    INVALID_CURRENCY,
+    INVALID_CURRENCY = 4,
     /// <summary>Can't process the passed in descriptive name.
     /// </summary>
-    INVALID_DESCRIPTIVE_NAME,
+    INVALID_DESCRIPTIVE_NAME = 5,
     /// <summary>Generic error during add customer process.
     /// </summary>
-    ADD_CUSTOMER_FAILURE,
+    ADD_CUSTOMER_FAILURE = 6,
     /// <summary>There was a problem saving the modified customers, and some of the customers may
     /// not have been saved successfully.
     /// </summary>
-    SAVE_CUSTOMERS_FAILURE,
+    SAVE_CUSTOMERS_FAILURE = 7,
     /// <summary>Attempt to establish a link with a client that is already managed by the
     /// manager.
     /// </summary>
-    ALREADY_MANAGED_BY_THIS_MANAGER,
+    ALREADY_MANAGED_BY_THIS_MANAGER = 8,
     /// <summary>Attempt to invite a client that has already been invited by the manager.
     /// </summary>
-    ALREADY_INVITED_BY_THIS_MANAGER,
+    ALREADY_INVITED_BY_THIS_MANAGER = 9,
     /// <summary>Already managed by some other manager in the hierarchy.
     /// </summary>
-    ALREADY_MANAGED_IN_HIERARCHY,
+    ALREADY_MANAGED_IN_HIERARCHY = 17,
     /// <summary>Client is managed by another manager for UI access already.
     /// </summary>
-    ALREADY_MANAGED_FOR_UI_ACCESS,
+    ALREADY_MANAGED_FOR_UI_ACCESS = 18,
     /// <summary>Attempt to exceed the maximum hierarchy depth.
     /// </summary>
-    MAX_LINK_DEPTH_EXCEEDED,
+    MAX_LINK_DEPTH_EXCEEDED = 19,
     /// <summary>Attempt to accept an invitation that doesn't exist.
     /// </summary>
-    NO_PENDING_INVITATION,
+    NO_PENDING_INVITATION = 10,
     /// <summary>Manager account has the maximum number of linked accounts.
     /// </summary>
-    TOO_MANY_ACCOUNTS,
+    TOO_MANY_ACCOUNTS = 11,
     /// <summary>Your manager's account has the maximum number of linked accounts.
     /// </summary>
-    TOO_MANY_ACCOUNTS_AT_MANAGER,
+    TOO_MANY_ACCOUNTS_AT_MANAGER = 12,
     /// <summary>The invitee has already linked with max allowed number of UI and API managers.
     /// </summary>
-    TOO_MANY_UI_API_MANAGERS,
+    TOO_MANY_UI_API_MANAGERS = 20,
     /// <summary>Error involving test accounts (mixed types) or too many child accounts.
     /// </summary>
-    TEST_ACCOUNT_LINK_ERROR,
+    TEST_ACCOUNT_LINK_ERROR = 13,
     /// <summary>Label id was not found, or is not owned by the requesting customer.
     /// </summary>
-    INVALID_LABEL_ID,
+    INVALID_LABEL_ID = 14,
     /// <summary>Deleted labels cannot be applied to customers.
     /// </summary>
-    CANNOT_APPLY_INACTIVE_LABEL,
+    CANNOT_APPLY_INACTIVE_LABEL = 15,
     /// <summary>A label cannot be applied to more than 1000 customers.
     /// </summary>
-    APPLIED_LABEL_TO_TOO_MANY_ACCOUNTS,
+    APPLIED_LABEL_TO_TOO_MANY_ACCOUNTS = 16,
   }
 
 
@@ -42734,7 +42734,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((MediaPage)(results[0]));
+      return ((MediaPage) (results[0]));
     }
 
     /// <summary>Returns the list of <a href='Media'>Media</a> objects that match the query.
@@ -42751,7 +42751,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((MediaPage)(results[0]));
+      return ((MediaPage) (results[0]));
     }
 
     /// <summary>Uploads new media. Currently, you can upload <a href='Image'>Image</a> files and
@@ -42769,7 +42769,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					media
 				});
-      return ((Media[])(results[0]));
+      return ((Media[]) (results[0]));
     }
   }
 
@@ -42965,40 +42965,40 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum VideoErrorReason {
     /// <summary>Invalid video.
     /// </summary>
-    INVALID_VIDEO,
+    INVALID_VIDEO = 0,
     /// <summary>Storage error.
     /// </summary>
-    STORAGE_ERROR,
+    STORAGE_ERROR = 1,
     /// <summary>Bad request.
     /// </summary>
-    BAD_REQUEST,
+    BAD_REQUEST = 2,
     /// <summary>Server error.
     /// </summary>
-    ERROR_GENERATING_STREAMING_URL,
+    ERROR_GENERATING_STREAMING_URL = 3,
     /// <summary>Unexpected size.
     /// </summary>
-    UNEXPECTED_SIZE,
+    UNEXPECTED_SIZE = 4,
     /// <summary>Server error.
     /// </summary>
-    SERVER_ERROR,
+    SERVER_ERROR = 5,
     /// <summary>File too large.
     /// </summary>
-    FILE_TOO_LARGE,
+    FILE_TOO_LARGE = 6,
     /// <summary>Video processing error.
     /// </summary>
-    VIDEO_PROCESSING_ERROR,
+    VIDEO_PROCESSING_ERROR = 7,
     /// <summary>Invalid input.
     /// </summary>
-    INVALID_INPUT,
+    INVALID_INPUT = 8,
     /// <summary>Problem reading file.
     /// </summary>
-    PROBLEM_READING_FILE,
+    PROBLEM_READING_FILE = 9,
     /// <summary>Invalid ISCI.
     /// </summary>
-    INVALID_ISCI,
+    INVALID_ISCI = 10,
     /// <summary>Invalid AD-ID.
     /// </summary>
-    INVALID_AD_ID,
+    INVALID_AD_ID = 11,
   }
 
 
@@ -43091,12 +43091,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AudioError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum AudioErrorReason {
-    INVALID_AUDIO,
-    PROBLEM_READING_AUDIO_FILE,
-    ERROR_STORING_AUDIO,
-    FILE_TOO_LARGE,
-    UNSUPPORTED_AUDIO,
-    ERROR_GENERATING_STREAMING_URL,
+    INVALID_AUDIO = 0,
+    PROBLEM_READING_AUDIO_FILE = 1,
+    ERROR_STORING_AUDIO = 2,
+    FILE_TOO_LARGE = 3,
+    UNSUPPORTED_AUDIO = 4,
+    ERROR_GENERATING_STREAMING_URL = 5,
   }
 
 
@@ -43156,44 +43156,44 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum MultiplierErrorReason {
     /// <summary>Multiplier value is too high
     /// </summary>
-    MULTIPLIER_TOO_HIGH,
+    MULTIPLIER_TOO_HIGH = 0,
     /// <summary>Multiplier value is too low
     /// </summary>
-    MULTIPLIER_TOO_LOW,
+    MULTIPLIER_TOO_LOW = 1,
     /// <summary>Too many fractional digits
     /// </summary>
-    TOO_MANY_FRACTIONAL_DIGITS,
+    TOO_MANY_FRACTIONAL_DIGITS = 2,
     /// <summary>A multiplier cannot be set for this bidding strategy
     /// </summary>
-    MULTIPLIER_NOT_ALLOWED_FOR_BIDDING_STRATEGY,
+    MULTIPLIER_NOT_ALLOWED_FOR_BIDDING_STRATEGY = 3,
     /// <summary>A multiplier cannot be set when there is no base bid (e.g., content max cpc)
     /// </summary>
-    MULTIPLIER_NOT_ALLOWED_WHEN_BASE_BID_IS_MISSING,
+    MULTIPLIER_NOT_ALLOWED_WHEN_BASE_BID_IS_MISSING = 4,
     /// <summary>A multiplier cannot be set for this criterion type
     /// </summary>
-    MULTIPLIER_NOT_ALLOWED_FOR_EXPERIMENT_DELTA_STATUS,
+    MULTIPLIER_NOT_ALLOWED_FOR_EXPERIMENT_DELTA_STATUS = 5,
     /// <summary>A bid multiplier must be specified
     /// </summary>
-    NO_MULTIPLIER_SPECIFIED,
+    NO_MULTIPLIER_SPECIFIED = 6,
     /// <summary>Multiplier causes bid to exceed daily budget
     /// </summary>
-    MULTIPLIER_CAUSES_BID_TO_EXCEED_DAILY_BUDGET,
+    MULTIPLIER_CAUSES_BID_TO_EXCEED_DAILY_BUDGET = 7,
     /// <summary>Multiplier causes bid to exceed monthly budget
     /// </summary>
-    MULTIPLIER_CAUSES_BID_TO_EXCEED_MONTHLY_BUDGET,
+    MULTIPLIER_CAUSES_BID_TO_EXCEED_MONTHLY_BUDGET = 8,
     /// <summary>Multiplier causes bid to exceed custom budget
     /// </summary>
-    MULTIPLIER_CAUSES_BID_TO_EXCEED_CUSTOM_BUDGET,
+    MULTIPLIER_CAUSES_BID_TO_EXCEED_CUSTOM_BUDGET = 9,
     /// <summary>Multiplier causes bid to exceed maximum allowed bid
     /// </summary>
-    MULTIPLIER_CAUSES_BID_TO_EXCEED_MAX_ALLOWED_BID,
+    MULTIPLIER_CAUSES_BID_TO_EXCEED_MAX_ALLOWED_BID = 10,
     /// <summary>Multiplier causes bid to become less than the minimum bid allowed
     /// </summary>
-    BID_LESS_THAN_MIN_ALLOWED_BID_WITH_MULTIPLIER,
+    BID_LESS_THAN_MIN_ALLOWED_BID_WITH_MULTIPLIER = 11,
     /// <summary>Multiplier type (cpc vs. cpm) needs to match campaign's bidding strategy
     /// </summary>
-    MULTIPLIER_AND_BIDDING_STRATEGY_TYPE_MISMATCH,
-    MULTIPLIER_ERROR,
+    MULTIPLIER_AND_BIDDING_STRATEGY_TYPE_MISMATCH = 12,
+    MULTIPLIER_ERROR = 13,
   }
 
 
@@ -43291,159 +43291,159 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <summary>A platform restriction was provided without input extensions or existing
     /// extensions.
     /// </summary>
-    EXTENSIONS_REQUIRED,
+    EXTENSIONS_REQUIRED = 0,
     /// <summary>The provided feed type does not correspond to the provided extensions.
     /// </summary>
-    FEED_TYPE_EXTENSION_TYPE_MISMATCH,
+    FEED_TYPE_EXTENSION_TYPE_MISMATCH = 1,
     /// <summary>The provided feed type cannot be used.
     /// </summary>
-    INVALID_FEED_TYPE,
+    INVALID_FEED_TYPE = 2,
     /// <summary>The provided feed type cannot be used at the customer level.
     /// </summary>
-    INVALID_FEED_TYPE_FOR_CUSTOMER_EXTENSION_SETTING,
+    INVALID_FEED_TYPE_FOR_CUSTOMER_EXTENSION_SETTING = 3,
     /// <summary>Can not change a feed item field on an ADD operation.
     /// </summary>
-    CANNOT_CHANGE_FEED_ITEM_ON_ADD,
+    CANNOT_CHANGE_FEED_ITEM_ON_ADD = 4,
     /// <summary>Can not update an extension that is not already in this setting.
     /// </summary>
-    CANNOT_UPDATE_NEWLY_ADDED_EXTENSION,
+    CANNOT_UPDATE_NEWLY_ADDED_EXTENSION = 5,
     /// <summary>There is no existing AdGroupExtensionSetting for this type.
     /// </summary>
-    NO_EXISTING_AD_GROUP_EXTENSION_SETTING_FOR_TYPE,
+    NO_EXISTING_AD_GROUP_EXTENSION_SETTING_FOR_TYPE = 6,
     /// <summary>There is no existing CampaignExtensionSetting for this type.
     /// </summary>
-    NO_EXISTING_CAMPAIGN_EXTENSION_SETTING_FOR_TYPE,
+    NO_EXISTING_CAMPAIGN_EXTENSION_SETTING_FOR_TYPE = 7,
     /// <summary>There is no existing CustomerExtensionSetting for this type.
     /// </summary>
-    NO_EXISTING_CUSTOMER_EXTENSION_SETTING_FOR_TYPE,
+    NO_EXISTING_CUSTOMER_EXTENSION_SETTING_FOR_TYPE = 8,
     /// <summary>The AdGroupExtensionSetting already exists. SET should be used to modify the
     /// existing AdGroupExtensionSetting.
     /// </summary>
-    AD_GROUP_EXTENSION_SETTING_ALREADY_EXISTS,
+    AD_GROUP_EXTENSION_SETTING_ALREADY_EXISTS = 9,
     /// <summary>The CampaignExtensionSetting already exists. SET should be used to modify the
     /// existing CampaignExtensionSetting.
     /// </summary>
-    CAMPAIGN_EXTENSION_SETTING_ALREADY_EXISTS,
+    CAMPAIGN_EXTENSION_SETTING_ALREADY_EXISTS = 10,
     /// <summary>The CustomerExtensionSetting already exists. SET should be used to modify the
     /// existing CustomerExtensionSetting.
     /// </summary>
-    CUSTOMER_EXTENSION_SETTING_ALREADY_EXISTS,
+    CUSTOMER_EXTENSION_SETTING_ALREADY_EXISTS = 11,
     /// <summary>An active ad group feed already exists for this place holder type.
     /// </summary>
-    AD_GROUP_FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE,
+    AD_GROUP_FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE = 12,
     /// <summary>An active campaign feed already exists for this place holder type.
     /// </summary>
-    CAMPAIGN_FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE,
+    CAMPAIGN_FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE = 13,
     /// <summary>An active customer feed already exists for this place holder type.
     /// </summary>
-    CUSTOMER_FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE,
+    CUSTOMER_FEED_ALREADY_EXISTS_FOR_PLACEHOLDER_TYPE = 14,
     /// <summary>Value is not within the accepted range.
     /// </summary>
-    VALUE_OUT_OF_RANGE,
+    VALUE_OUT_OF_RANGE = 15,
     /// <summary>Cannot simultaneously set sitelink field with final urls.
     /// </summary>
-    CANNOT_SET_WITH_FINAL_URLS,
+    CANNOT_SET_WITH_FINAL_URLS = 16,
     /// <summary>Must set field with final urls.
     /// </summary>
-    CANNOT_SET_WITHOUT_FINAL_URLS,
+    CANNOT_SET_WITHOUT_FINAL_URLS = 17,
     /// <summary>Cannot simultaneously set sitelink url field with tracking url template.
     /// </summary>
-    CANNOT_SET_BOTH_DESTINATION_URL_AND_TRACKING_URL_TEMPLATE,
+    CANNOT_SET_BOTH_DESTINATION_URL_AND_TRACKING_URL_TEMPLATE = 18,
     /// <summary>Phone number for a call extension is invalid.
     /// </summary>
-    INVALID_PHONE_NUMBER,
+    INVALID_PHONE_NUMBER = 19,
     /// <summary>Phone number for a call extension is not supported for the given country code.
     /// </summary>
-    PHONE_NUMBER_NOT_SUPPORTED_FOR_COUNTRY,
+    PHONE_NUMBER_NOT_SUPPORTED_FOR_COUNTRY = 20,
     /// <summary>A carrier specific number in short format is not allowed for call extensions.
     /// </summary>
-    CARRIER_SPECIFIC_SHORT_NUMBER_NOT_ALLOWED,
+    CARRIER_SPECIFIC_SHORT_NUMBER_NOT_ALLOWED = 21,
     /// <summary>Premium rate numbers are not allowed for call extensions.
     /// </summary>
-    PREMIUM_RATE_NUMBER_NOT_ALLOWED,
+    PREMIUM_RATE_NUMBER_NOT_ALLOWED = 22,
     /// <summary>Phone number type for a call extension is not allowed.
     /// </summary>
-    DISALLOWED_NUMBER_TYPE,
+    DISALLOWED_NUMBER_TYPE = 23,
     /// <summary>Phone number for a call extension does not meet domestic format requirements.
     /// </summary>
-    INVALID_DOMESTIC_PHONE_NUMBER_FORMAT,
+    INVALID_DOMESTIC_PHONE_NUMBER_FORMAT = 24,
     /// <summary>Vanity phone numbers (i.e. those including letters) are not allowed for call
     /// extensions.
     /// </summary>
-    VANITY_PHONE_NUMBER_NOT_ALLOWED,
+    VANITY_PHONE_NUMBER_NOT_ALLOWED = 25,
     /// <summary>Country code provided for a call extension is invalid.
     /// </summary>
-    INVALID_COUNTRY_CODE,
+    INVALID_COUNTRY_CODE = 26,
     /// <summary>Call conversion type id provided for a call extension is invalid.
     /// </summary>
-    INVALID_CALL_CONVERSION_TYPE_ID,
+    INVALID_CALL_CONVERSION_TYPE_ID = 27,
     /// <summary>For a call extension, the customer is not whitelisted for call tracking.
     /// </summary>
-    CUSTOMER_NOT_WHITELISTED_FOR_CALLTRACKING,
+    CUSTOMER_NOT_WHITELISTED_FOR_CALLTRACKING = 28,
     /// <summary>Call tracking is not supported for the given country for a call extension.
     /// </summary>
-    CALLTRACKING_NOT_SUPPORTED_FOR_COUNTRY,
+    CALLTRACKING_NOT_SUPPORTED_FOR_COUNTRY = 29,
     /// <summary>App id provided for an app extension is invalid.
     /// </summary>
-    INVALID_APP_ID,
+    INVALID_APP_ID = 30,
     /// <summary>Quotation marks present in the review text for a review extension.
     /// </summary>
-    QUOTES_IN_REVIEW_EXTENSION_SNIPPET,
+    QUOTES_IN_REVIEW_EXTENSION_SNIPPET = 31,
     /// <summary>Hyphen character present in the review text for a review extension.
     /// </summary>
-    HYPHENS_IN_REVIEW_EXTENSION_SNIPPET,
+    HYPHENS_IN_REVIEW_EXTENSION_SNIPPET = 32,
     /// <summary>A blacklisted review source name or url was provided for a review extension.
     /// </summary>
-    REVIEW_EXTENSION_SOURCE_INELIGIBLE,
+    REVIEW_EXTENSION_SOURCE_INELIGIBLE = 33,
     /// <summary>Review source name should not be found in the review text.
     /// </summary>
-    SOURCE_NAME_IN_REVIEW_EXTENSION_TEXT,
+    SOURCE_NAME_IN_REVIEW_EXTENSION_TEXT = 34,
     /// <summary>Field must be set.
     /// </summary>
-    MISSING_FIELD,
+    MISSING_FIELD = 35,
     /// <summary>Unknown or unsupported device preference.
     /// </summary>
-    INVALID_DEVICE_PREFERENCE,
+    INVALID_DEVICE_PREFERENCE = 36,
     /// <summary>Invalid feed item schedule end time (i.e., endHour = 24 and endMinute != 0).
     /// </summary>
-    INVALID_SCHEDULE_END,
+    INVALID_SCHEDULE_END = 37,
     /// <summary>Date time zone does not match the account's time zone.
     /// </summary>
-    DATE_TIME_MUST_BE_IN_ACCOUNT_TIME_ZONE,
+    DATE_TIME_MUST_BE_IN_ACCOUNT_TIME_ZONE = 38,
     /// <summary>Overlapping feed item schedule times (e.g., 7-10AM and 8-11AM) are not allowed.
     /// </summary>
-    OVERLAPPING_SCHEDULES,
+    OVERLAPPING_SCHEDULES = 39,
     /// <summary>Feed item schedule end time must be after start time.
     /// </summary>
-    SCHEDULE_END_NOT_AFTER_START,
+    SCHEDULE_END_NOT_AFTER_START = 40,
     /// <summary>There are too many feed item schedules per day.
     /// </summary>
-    TOO_MANY_SCHEDULES_PER_DAY,
+    TOO_MANY_SCHEDULES_PER_DAY = 41,
     /// <summary>Cannot edit the same extension feed item id twice.
     /// </summary>
-    DUPLICATE_EXTENSION_FEED_ITEM_EDIT,
+    DUPLICATE_EXTENSION_FEED_ITEM_EDIT = 42,
     /// <summary>Invalid structured snippet header.
     /// </summary>
-    INVALID_SNIPPETS_HEADER,
+    INVALID_SNIPPETS_HEADER = 43,
     /// <summary>Phone number not supported with call tracking enabled for country.
     /// </summary>
-    PHONE_NUMBER_NOT_SUPPORTED_WITH_CALLTRACKING_FOR_COUNTRY,
+    PHONE_NUMBER_NOT_SUPPORTED_WITH_CALLTRACKING_FOR_COUNTRY = 44,
     /// <summary>Targeted adgroup's campaign does not match the targeted campaign.
     /// </summary>
-    CAMPAIGN_TARGETING_MISMATCH,
+    CAMPAIGN_TARGETING_MISMATCH = 47,
     /// <summary>The feed used by the ExtensionSetting is deleted and cannot be operated on.
     /// Remove the ExtensionSetting to allow a new one to be created using an active
     /// feed.
     /// </summary>
-    CANNOT_OPERATE_ON_DELETED_FEED,
+    CANNOT_OPERATE_ON_DELETED_FEED = 45,
     /// <summary>Concrete sub type of ExtensionFeedItem is required for this operation.
     /// </summary>
-    CONCRETE_EXTENSION_TYPE_REQUIRED,
+    CONCRETE_EXTENSION_TYPE_REQUIRED = 48,
     /// <summary>The matching function that links the extension feed to the customer, campaign,
     /// or ad group is not compatible with the ExtensionSetting services.
     /// </summary>
-    INCOMPATIBLE_UNDERLYING_MATCHING_FUNCTION,
-    UNKNOWN,
+    INCOMPATIBLE_UNDERLYING_MATCHING_FUNCTION = 49,
+    UNKNOWN = 46,
   }
 
 
@@ -43490,10 +43490,10 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdGroupCriterionLimitExceeded.CriteriaLimitType", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum AdGroupCriterionLimitExceededCriteriaLimitType {
-    ADGROUP_KEYWORD,
-    ADGROUP_WEBSITE,
-    ADGROUP_CRITERION,
-    UNKNOWN,
+    ADGROUP_KEYWORD = 0,
+    ADGROUP_WEBSITE = 1,
+    ADGROUP_CRITERION = 2,
+    UNKNOWN = 3,
   }
 
 
@@ -43590,36 +43590,36 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AdGroupServiceErrorReason {
     /// <summary>AdGroup with the same name already exists for the campaign.
     /// </summary>
-    DUPLICATE_ADGROUP_NAME,
+    DUPLICATE_ADGROUP_NAME = 0,
     /// <summary>AdGroup name is not valid.
     /// </summary>
-    INVALID_ADGROUP_NAME,
+    INVALID_ADGROUP_NAME = 1,
     /// <summary>Cannot remove an adgroup, adgroup status can be marked removed using set
     /// operator.
     /// </summary>
-    USE_SET_OPERATOR_AND_MARK_STATUS_TO_REMOVED,
+    USE_SET_OPERATOR_AND_MARK_STATUS_TO_REMOVED = 2,
     /// <summary>Advertiser is not allowed to target sites or set site bids that are not on the
     /// Google Search Network.
     /// </summary>
-    ADVERTISER_NOT_ON_CONTENT_NETWORK,
+    ADVERTISER_NOT_ON_CONTENT_NETWORK = 3,
     /// <summary>Bid amount is too big.
     /// </summary>
-    BID_TOO_BIG,
+    BID_TOO_BIG = 4,
     /// <summary>AdGroup bid does not match the campaign's bidding strategy.
     /// </summary>
-    BID_TYPE_AND_BIDDING_STRATEGY_MISMATCH,
+    BID_TYPE_AND_BIDDING_STRATEGY_MISMATCH = 5,
     /// <summary>AdGroup name is required for Add.
     /// </summary>
-    MISSING_ADGROUP_NAME,
+    MISSING_ADGROUP_NAME = 6,
     /// <summary>No link found between the ad group and the label.
     /// </summary>
-    ADGROUP_LABEL_DOES_NOT_EXIST,
+    ADGROUP_LABEL_DOES_NOT_EXIST = 7,
     /// <summary>The label has already been attached to the ad group.
     /// </summary>
-    ADGROUP_LABEL_ALREADY_EXISTS,
+    ADGROUP_LABEL_ALREADY_EXISTS = 8,
     /// <summary>The CriterionTypeGroup is not supported for the content bid dimension.
     /// </summary>
-    INVALID_CONTENT_BID_CRITERION_TYPE_GROUP,
+    INVALID_CONTENT_BID_CRITERION_TYPE_GROUP = 9,
   }
 
 
@@ -43716,124 +43716,124 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AdGroupCriterionErrorReason {
     /// <summary>No link found between the AdGroupCriterion and the label.
     /// </summary>
-    AD_GROUP_CRITERION_LABEL_DOES_NOT_EXIST,
+    AD_GROUP_CRITERION_LABEL_DOES_NOT_EXIST = 0,
     /// <summary>The label has already been attached to the AdGroupCriterion.
     /// </summary>
-    AD_GROUP_CRITERION_LABEL_ALREADY_EXISTS,
+    AD_GROUP_CRITERION_LABEL_ALREADY_EXISTS = 1,
     /// <summary>Negative AdGroupCriterion cannot have labels.
     /// </summary>
-    CANNOT_ADD_LABEL_TO_NEGATIVE_CRITERION,
+    CANNOT_ADD_LABEL_TO_NEGATIVE_CRITERION = 2,
     /// <summary>Too many operations for a single call.
     /// </summary>
-    TOO_MANY_OPERATIONS,
+    TOO_MANY_OPERATIONS = 3,
     /// <summary>Negative ad group criteria are not updateable.
     /// </summary>
-    CANT_UPDATE_NEGATIVE,
+    CANT_UPDATE_NEGATIVE = 4,
     /// <summary>Concrete type of criterion (keyword v.s. placement) is required for ADD and SET
     /// operations.
     /// </summary>
-    CONCRETE_TYPE_REQUIRED,
+    CONCRETE_TYPE_REQUIRED = 5,
     /// <summary>Bid is incompatible with ad group's bidding settings.
     /// </summary>
-    BID_INCOMPATIBLE_WITH_ADGROUP,
+    BID_INCOMPATIBLE_WITH_ADGROUP = 6,
     /// <summary>Cannot target and exclude the same criterion at once.
     /// </summary>
-    CANNOT_TARGET_AND_EXCLUDE,
+    CANNOT_TARGET_AND_EXCLUDE = 7,
     /// <summary>The URL of a placement is invalid.
     /// </summary>
-    ILLEGAL_URL,
+    ILLEGAL_URL = 8,
     /// <summary>Keyword text was invalid.
     /// </summary>
-    INVALID_KEYWORD_TEXT,
+    INVALID_KEYWORD_TEXT = 9,
     /// <summary>Destination URL was invalid.
     /// </summary>
-    INVALID_DESTINATION_URL,
+    INVALID_DESTINATION_URL = 10,
     /// <summary>The destination url must contain at least one tag (e.g. {lpurl})
     /// </summary>
-    MISSING_DESTINATION_URL_TAG,
+    MISSING_DESTINATION_URL_TAG = 11,
     /// <summary>Keyword-level cpm bid is not supported
     /// </summary>
-    KEYWORD_LEVEL_BID_NOT_SUPPORTED_FOR_MANUALCPM,
+    KEYWORD_LEVEL_BID_NOT_SUPPORTED_FOR_MANUALCPM = 12,
     /// <summary>For example, cannot add a biddable ad group criterion that had been removed.
     /// </summary>
-    INVALID_USER_STATUS,
+    INVALID_USER_STATUS = 13,
     /// <summary>Criteria type cannot be targeted for the ad group. Either the account is
     /// restricted to keywords only, the criteria type is incompatible with the
     /// campaign's bidding strategy, or the criteria type can only be applied to
     /// campaigns.
     /// </summary>
-    CANNOT_ADD_CRITERIA_TYPE,
+    CANNOT_ADD_CRITERIA_TYPE = 14,
     /// <summary>Criteria type cannot be excluded for the ad group. Refer to the documentation
     /// for a specific criterion to check if it is excludable.
     /// </summary>
-    CANNOT_EXCLUDE_CRITERIA_TYPE,
+    CANNOT_EXCLUDE_CRITERIA_TYPE = 15,
     /// <summary>Ad group is invalid due to the product partitions it contains.
     /// </summary>
-    INVALID_PRODUCT_PARTITION_HIERARCHY,
+    INVALID_PRODUCT_PARTITION_HIERARCHY = 16,
     /// <summary>Product partition unit cannot have children.
     /// </summary>
-    PRODUCT_PARTITION_UNIT_CANNOT_HAVE_CHILDREN,
+    PRODUCT_PARTITION_UNIT_CANNOT_HAVE_CHILDREN = 17,
     /// <summary>Subdivided product partitions must have an "others" case.
     /// </summary>
-    PRODUCT_PARTITION_SUBDIVISION_REQUIRES_OTHERS_CASE,
+    PRODUCT_PARTITION_SUBDIVISION_REQUIRES_OTHERS_CASE = 18,
     /// <summary>Dimension type of product partition must be the same as that of its siblings.
     /// </summary>
-    PRODUCT_PARTITION_REQUIRES_SAME_DIMENSION_TYPE_AS_SIBLINGS,
+    PRODUCT_PARTITION_REQUIRES_SAME_DIMENSION_TYPE_AS_SIBLINGS = 19,
     /// <summary>Product partition cannot be added to the ad group because it already exists.
     /// </summary>
-    PRODUCT_PARTITION_ALREADY_EXISTS,
+    PRODUCT_PARTITION_ALREADY_EXISTS = 20,
     /// <summary>Product partition referenced in the operation was not found in the ad group.
     /// </summary>
-    PRODUCT_PARTITION_DOES_NOT_EXIST,
+    PRODUCT_PARTITION_DOES_NOT_EXIST = 21,
     /// <summary>Recursive removal failed because product partition subdivision is being created
     /// or modified in this request.
     /// </summary>
-    PRODUCT_PARTITION_CANNOT_BE_REMOVED,
+    PRODUCT_PARTITION_CANNOT_BE_REMOVED = 22,
     /// <summary>Product partition type is not allowed for specified AdGroupCriterion type.
     /// </summary>
-    INVALID_PRODUCT_PARTITION_TYPE,
+    INVALID_PRODUCT_PARTITION_TYPE = 23,
     /// <summary>Product partition in an ADD operation specifies a non temporary CriterionId.
     /// </summary>
-    PRODUCT_PARTITION_ADD_MAY_ONLY_USE_TEMP_ID,
+    PRODUCT_PARTITION_ADD_MAY_ONLY_USE_TEMP_ID = 24,
     /// <summary>Partial failure is not supported for shopping campaign mutate operations.
     /// </summary>
-    CAMPAIGN_TYPE_NOT_COMPATIBLE_WITH_PARTIAL_FAILURE,
+    CAMPAIGN_TYPE_NOT_COMPATIBLE_WITH_PARTIAL_FAILURE = 25,
     /// <summary>Operations in the mutate request changes too many shopping ad groups. Please
     /// split requests for multiple shopping ad groups across multiple requests.
     /// </summary>
-    OPERATIONS_FOR_TOO_MANY_SHOPPING_ADGROUPS,
+    OPERATIONS_FOR_TOO_MANY_SHOPPING_ADGROUPS = 26,
     /// <summary>Not allowed to modify url fields of an ad group criterion if there are duplicate
     /// elements for that ad group criterion in the request.
     /// </summary>
-    CANNOT_MODIFY_URL_FIELDS_WITH_DUPLICATE_ELEMENTS,
+    CANNOT_MODIFY_URL_FIELDS_WITH_DUPLICATE_ELEMENTS = 27,
     /// <summary>Cannot set url fields without also setting final urls.
     /// </summary>
-    CANNOT_SET_WITHOUT_FINAL_URLS,
+    CANNOT_SET_WITHOUT_FINAL_URLS = 28,
     /// <summary>Cannot clear final urls if final mobile urls exist.
     /// </summary>
-    CANNOT_CLEAR_FINAL_URLS_IF_FINAL_MOBILE_URLS_EXIST,
+    CANNOT_CLEAR_FINAL_URLS_IF_FINAL_MOBILE_URLS_EXIST = 29,
     /// <summary>Cannot clear final urls if final app urls exist.
     /// </summary>
-    CANNOT_CLEAR_FINAL_URLS_IF_FINAL_APP_URLS_EXIST,
+    CANNOT_CLEAR_FINAL_URLS_IF_FINAL_APP_URLS_EXIST = 30,
     /// <summary>Cannot clear final urls if tracking url template exists.
     /// </summary>
-    CANNOT_CLEAR_FINAL_URLS_IF_TRACKING_URL_TEMPLATE_EXISTS,
+    CANNOT_CLEAR_FINAL_URLS_IF_TRACKING_URL_TEMPLATE_EXISTS = 31,
     /// <summary>Cannot clear final urls if url custom parameters exist.
     /// </summary>
-    CANNOT_CLEAR_FINAL_URLS_IF_URL_CUSTOM_PARAMETERS_EXIST,
+    CANNOT_CLEAR_FINAL_URLS_IF_URL_CUSTOM_PARAMETERS_EXIST = 32,
     /// <summary>Cannot set both destination url and final urls.
     /// </summary>
-    CANNOT_SET_BOTH_DESTINATION_URL_AND_FINAL_URLS,
+    CANNOT_SET_BOTH_DESTINATION_URL_AND_FINAL_URLS = 33,
     /// <summary>Cannot set both destination url and tracking url template.
     /// </summary>
-    CANNOT_SET_BOTH_DESTINATION_URL_AND_TRACKING_URL_TEMPLATE,
+    CANNOT_SET_BOTH_DESTINATION_URL_AND_TRACKING_URL_TEMPLATE = 34,
     /// <summary>Final urls are not supported for this criterion type.
     /// </summary>
-    FINAL_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE,
+    FINAL_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE = 35,
     /// <summary>Final mobile urls are not supported for this criterion type.
     /// </summary>
-    FINAL_MOBILE_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE,
-    UNKNOWN,
+    FINAL_MOBILE_URLS_NOT_SUPPORTED_FOR_CRITERION_TYPE = 36,
+    UNKNOWN = 37,
   }
 
 
@@ -44367,16 +44367,16 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>Active.
     /// </summary>
-    ENABLED,
+    ENABLED = 1,
     /// <summary>Paused.
     /// </summary>
-    PAUSED,
+    PAUSED = 2,
     /// <summary>Removed.
     /// </summary>
-    REMOVED,
+    REMOVED = 3,
   }
 
 
@@ -44587,37 +44587,37 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// set as a target "ALL" dimension with <a
     /// href='TargetRestriction'>TargetRestriction</a>.
     /// </summary>
-    KEYWORD,
+    KEYWORD = 0,
     /// <summary>Criteria for targeting lists of users. Lists may represent users with particular
     /// interests, or they may represent users who have interacted with an advertiser's
     /// site in particular ways.
     /// </summary>
-    USER_INTEREST_AND_LIST,
+    USER_INTEREST_AND_LIST = 1,
     /// <summary>Criteria for targeting similar categories of placements, e.g.
     /// 'category::Animals&gt;Pets' Used only for content network targeting.
     /// </summary>
-    VERTICAL,
+    VERTICAL = 2,
     /// <summary>Criteria for targeting gender.
     /// </summary>
-    GENDER,
+    GENDER = 3,
     /// <summary>Criteria for targeting age ranges.
     /// </summary>
-    AGE_RANGE,
+    AGE_RANGE = 4,
     /// <summary>Criteria for targeting placements. aka Website. e.g. 'www.flowers4sale.com' This
     /// group also includes mobile applications and mobile app categories.
     /// </summary>
-    PLACEMENT,
+    PLACEMENT = 5,
     /// <summary>Criteria for parental status targeting.
     /// </summary>
-    PARENT,
+    PARENT = 8,
     /// <summary>Special criteria type group used to reset the existing value.
     /// </summary>
-    NONE,
+    NONE = 6,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 7,
   }
 
 
@@ -45353,13 +45353,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
       }
     }
 
-    /// <summary>The criterion whose bid value is being overridden. Currently, bid modifier
-    /// overrides are supported only for HighEndMobile platform criterion (ID=30001) and
+    /// <summary>The criterion whose bid value is being overridden. <p>Currently, bid modifier
+    /// overrides are supported only for platform criterion (ID=30000, 30001, 30002) and
     /// preferred content criterion (ID = 400). The <a
     /// href='AdGroupBidModifierService#get'>AdGroupBidModifierService#get</a> method
-    /// returns all platform and preferred content criteria. Preferred Content Criteria
-    /// is available in versions &gt;= V201603. <span class="constraint Required">This
-    /// field is required and should not be <code>null</code>.</span>
+    /// returns all platform and preferred content criteria.</p> <p>Preferred Content
+    /// Criteria is available in versions &gt;= V201603. <span class="constraint
+    /// Required">This field is required and should not be <code>null</code>.</span></p>
     /// </summary>
     public Criterion criterion {
       get {
@@ -45370,14 +45370,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
       }
     }
 
-    /// <summary>The modifier for bids when the criterion matches. Valid modifier values for the
-    /// mobile platform criterion range from <code>0.1</code> to <code>4.0</code>, with
-    /// <code>0</code> reserved for opting out of mobile. <span class="constraint
-    /// Selectable">This field can be selected using the value
-    /// "BidModifier".</span><span class="constraint Filterable">This field can be
-    /// filtered on.</span> <span class="constraint Required">This field is required and
-    /// should not be <code>null</code> when it is contained within <a
-    /// href='Operator'>Operator</a>s : ADD, SET.</span>
+    /// <summary>The modifier for bids when the criterion matches. <p>Valid modifier values range
+    /// from <code>0.1</code> to <code>10.0</code>, with <code>0.0</code> reserved for
+    /// opting out of a platform. <span class="constraint Selectable">This field can be
+    /// selected using the value "BidModifier".</span><span class="constraint
+    /// Filterable">This field can be filtered on.</span> <span class="constraint
+    /// Required">This field is required and should not be <code>null</code> when it is
+    /// contained within <a href='Operator'>Operator</a>s : ADD, SET.</span></p>
     /// </summary>
     public double bidModifier {
       get {
@@ -45711,13 +45710,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>Subdivision of products along some product dimension.
     /// </summary>
-    SUBDIVISION,
+    SUBDIVISION = 1,
     /// <summary>Unit which either defines a bid or delegates bidding to other campaigns.
     /// </summary>
-    UNIT,
+    UNIT = 2,
   }
 
 
@@ -45824,12 +45823,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AppPaymentModelAppPaymentModelType {
     /// <summary>Represents paid-for apps.
     /// </summary>
-    APP_PAYMENT_MODEL_PAID,
+    APP_PAYMENT_MODEL_PAID = 0,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 1,
   }
 
 
@@ -45843,14 +45842,14 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>The bid modifier is specified at the campaign level, on the campaign level
     /// criterion.
     /// </summary>
-    CAMPAIGN,
+    CAMPAIGN = 1,
     /// <summary>The bid modifier is specified (overridden) at the ad group level.
     /// </summary>
-    AD_GROUP,
+    AD_GROUP = 2,
   }
 
 
@@ -46160,10 +46159,10 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum CriterionUse {
     /// <summary>Biddable (positive) criterion
     /// </summary>
-    BIDDABLE,
+    BIDDABLE = 0,
     /// <summary>Negative criterion
     /// </summary>
-    NEGATIVE,
+    NEGATIVE = 1,
   }
 
 
@@ -46673,13 +46672,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum UserStatus {
     /// <summary>Default state of a criterion (e.g. not paused).
     /// </summary>
-    ENABLED,
+    ENABLED = 0,
     /// <summary>Criterion is removed.
     /// </summary>
-    REMOVED,
+    REMOVED = 1,
     /// <summary>Criterion is paused. Also used to pause a criterion.
     /// </summary>
-    PAUSED,
+    PAUSED = 2,
   }
 
 
@@ -46691,12 +46690,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum SystemServingStatus {
     /// <summary>Criterion is eligible to serve.
     /// </summary>
-    ELIGIBLE,
+    ELIGIBLE = 0,
     /// <summary>Indicates low search volume. <p>For more information, visit <a
     /// href="https://support.google.com/adwords/answer/2616014">Low Search
     /// Volume</a>.</p>
     /// </summary>
-    RARELY_SERVED,
+    RARELY_SERVED = 1,
   }
 
 
@@ -46709,16 +46708,16 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ApprovalStatus {
     /// <summary>Criterion with no reportable policy problems.
     /// </summary>
-    APPROVED,
+    APPROVED = 0,
     /// <summary>Criterion that is yet to be reviewed.
     /// </summary>
-    PENDING_REVIEW,
+    PENDING_REVIEW = 1,
     /// <summary>Criterion that is under review.
     /// </summary>
-    UNDER_REVIEW,
+    UNDER_REVIEW = 2,
     /// <summary>Criterion disapproved due to policy violation.
     /// </summary>
-    DISAPPROVED,
+    DISAPPROVED = 3,
   }
 
 
@@ -47112,15 +47111,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum MultiplierSource {
     /// <summary>AdGroup level multiplier
     /// </summary>
-    ADGROUP,
+    ADGROUP = 0,
     /// <summary>Criterion level multiplier
     /// </summary>
-    CRITERION,
+    CRITERION = 1,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -47599,28 +47598,28 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Feed.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum FeedType {
-    NONE,
+    NONE = 0,
     /// <summary>Sitelink placeholder typed
     /// </summary>
-    SITELINK,
+    SITELINK = 1,
     /// <summary>Call placeholder typed
     /// </summary>
-    CALL,
+    CALL = 2,
     /// <summary>App placeholder typed
     /// </summary>
-    APP,
+    APP = 3,
     /// <summary>Review placeholder typed
     /// </summary>
-    REVIEW,
+    REVIEW = 4,
     /// <summary>AdCustomizer placeholder typed
     /// </summary>
-    AD_CUSTOMIZER,
+    AD_CUSTOMIZER = 5,
     /// <summary>Callout placeholder typed
     /// </summary>
-    CALLOUT,
+    CALLOUT = 6,
     /// <summary>Structured snippets placeholder typed
     /// </summary>
-    STRUCTURED_SNIPPET,
+    STRUCTURED_SNIPPET = 7,
   }
 
 
@@ -48211,7 +48210,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     private CustomParameters sitelinkUrlCustomParametersField;
 
     /// <summary>URL display text for the sitelink. <span class="constraint StringLength">The
-    /// length of this string should be between 1 and 25, inclusive.</span>
+    /// length of this string should be between 1 and 25, inclusive, (trimmed).</span>
     /// </summary>
     public string sitelinkText {
       get {
@@ -48223,7 +48222,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     }
 
     /// <summary>Destination URL for the sitelink. <span class="constraint StringLength">The
-    /// length of this string should be between 0 and 2076, inclusive.</span>
+    /// length of this string should be between 0 and 2076, inclusive, (trimmed).</span>
     /// </summary>
     public string sitelinkUrl {
       get {
@@ -48237,7 +48236,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <summary>First line of the description for the sitelink. To clear this field, set its
     /// value to the empty string. If this value is set, sitelinkLine3 must also be set.
     /// <span class="constraint StringLength">The length of this string should be
-    /// between 0 and 35, inclusive.</span>
+    /// between 0 and 35, inclusive, (trimmed).</span>
     /// </summary>
     public string sitelinkLine2 {
       get {
@@ -48251,7 +48250,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <summary>Second line of the description for the sitelink. To clear this field, set its
     /// value to the empty string. If this value is set, sitelinkLine2 must also be set.
     /// <span class="constraint StringLength">The length of this string should be
-    /// between 0 and 35, inclusive.</span>
+    /// between 0 and 35, inclusive, (trimmed).</span>
     /// </summary>
     public string sitelinkLine3 {
       get {
@@ -48375,7 +48374,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     private bool reviewTextExactlyQuotedFieldSpecified;
 
     /// <summary>An exact quote or paraphrase from a third-party source. <span class="constraint
-    /// StringLength">This string must not be empty.</span>
+    /// StringLength">This string must not be empty, (trimmed).</span>
     /// </summary>
     public string reviewText {
       get {
@@ -48387,7 +48386,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     }
 
     /// <summary>Name of the third-party publisher of the review. <span class="constraint
-    /// StringLength">This string must not be empty.</span>
+    /// StringLength">This string must not be empty, (trimmed).</span>
     /// </summary>
     public string reviewSourceName {
       get {
@@ -48399,7 +48398,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     }
 
     /// <summary>Landing page of the third-party website of the review. <span class="constraint
-    /// StringLength">This string must not be empty.</span>
+    /// StringLength">This string must not be empty, (trimmed).</span>
     /// </summary>
     public string reviewSourceUrl {
       get {
@@ -48496,7 +48495,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     private string calloutTextField;
 
     /// <summary>The callout text. <span class="constraint StringLength">The length of this
-    /// string should be between 1 and 25, inclusive.</span>
+    /// string should be between 1 and 25, inclusive, (trimmed).</span>
     /// </summary>
     public string calloutText {
       get {
@@ -48578,7 +48577,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     private bool disableCallConversionTrackingFieldSpecified;
 
     /// <summary>The advertiser's phone number to append to the ad. <span class="constraint
-    /// StringLength">This string must not be empty.</span>
+    /// StringLength">This string must not be empty, (trimmed).</span>
     /// </summary>
     public string callPhoneNumber {
       get {
@@ -48590,7 +48589,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     }
 
     /// <summary>Uppercase two-letter country code of the advertiser's phone number. <span
-    /// class="constraint StringLength">This string must not be empty.</span>
+    /// class="constraint StringLength">This string must not be empty, (trimmed).</span>
     /// </summary>
     public string callCountryCode {
       get {
@@ -48856,7 +48855,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     }
 
     /// <summary>The store-specific ID for the target application. <span class="constraint
-    /// StringLength">This string must not be empty.</span>
+    /// StringLength">This string must not be empty, (trimmed).</span>
     /// </summary>
     public string appId {
       get {
@@ -48869,7 +48868,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 
     /// <summary>The visible text displayed when the link is rendered in an ad. <span
     /// class="constraint StringLength">The length of this string should be between 1
-    /// and 25, inclusive.</span>
+    /// and 25, inclusive, (trimmed).</span>
     /// </summary>
     public string appLinkText {
       get {
@@ -48881,8 +48880,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
     }
 
     /// <summary>The destination URL of the in-app link. <span class="constraint
-    /// StringLength">The length of this string should be between 0 and 2076,
-    /// inclusive.</span>
+    /// StringLength">The length of this string should be between 0 and 2076, inclusive,
+    /// (trimmed).</span>
     /// </summary>
     public string appUrl {
       get {
@@ -48993,13 +48992,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AppFeedItem.AppStore", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum AppFeedItemAppStore {
-    APPLE_ITUNES,
-    GOOGLE_PLAY,
+    APPLE_ITUNES = 0,
+    GOOGLE_PLAY = 1,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -49011,13 +49010,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ExtensionSettingPlatform {
     /// <summary>Desktop only.
     /// </summary>
-    DESKTOP,
+    DESKTOP = 0,
     /// <summary>Mobile only.
     /// </summary>
-    MOBILE,
+    MOBILE = 1,
     /// <summary>No restriction.
     /// </summary>
-    NONE,
+    NONE = 2,
   }
 
 
@@ -50220,7 +50219,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((OfflineConversionFeedReturnValue)(results[0]));
+      return ((OfflineConversionFeedReturnValue) (results[0]));
     }
   }
 
@@ -50627,42 +50626,42 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum OfflineConversionErrorReason {
     /// <summary>This google click ID could not be decoded.
     /// </summary>
-    UNPARSEABLE_GCLID,
+    UNPARSEABLE_GCLID = 0,
     /// <summary>This conversion is reported to have happened before the click.
     /// </summary>
-    CONVERSION_PRECEDES_CLICK,
+    CONVERSION_PRECEDES_CLICK = 1,
     /// <summary>You cannot set a future conversion time.
     /// </summary>
-    FUTURE_CONVERSION_TIME,
+    FUTURE_CONVERSION_TIME = 2,
     /// <summary>This click is either too old to be imported or occurred before the conversion
     /// window for the specified combination of conversion date and conversion name
     /// (default is 90 days).
     /// </summary>
-    EXPIRED_CLICK,
+    EXPIRED_CLICK = 3,
     /// <summary>This click occurred less than 24 hours ago, please try again after a day or so.
     /// </summary>
-    TOO_RECENT_CLICK,
+    TOO_RECENT_CLICK = 4,
     /// <summary>This click does not exist in the system. This can occur if google click ids are
     /// collected for non AdWords clicks (e.g. dart search).
     /// </summary>
-    INVALID_CLICK,
+    INVALID_CLICK = 5,
     /// <summary>This customer is trying to upload conversions for a different customer that it
     /// does not manage.
     /// </summary>
-    UNAUTHORIZED_USER,
+    UNAUTHORIZED_USER = 6,
     /// <summary>This customer does not have an import conversion with a name that matches the
     /// label of this conversion.
     /// </summary>
-    INVALID_CONVERSION_TYPE,
+    INVALID_CONVERSION_TYPE = 7,
     /// <summary>Cannot process clicks that occurred when none of the effective conversion types
     /// in the account were enabled, to generate conversions.
     /// </summary>
-    CLICK_MISSING_CONVERSION_LABEL,
+    CLICK_MISSING_CONVERSION_LABEL = 8,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 9,
   }
 
 
@@ -50758,7 +50757,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CurrencyCodeError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum CurrencyCodeErrorReason {
-    UNSUPPORTED_CURRENCY_CODE,
+    UNSUPPORTED_CURRENCY_CODE = 0,
   }
 
 
@@ -50835,7 +50834,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					reportType
 				});
-      return ((ReportDefinitionField[])(results[0]));
+      return ((ReportDefinitionField[]) (results[0]));
     }
   }
 
@@ -51310,45 +51309,45 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ReportDefinitionErrorReason {
     /// <summary>Customer passed in invalid date range for a report type.
     /// </summary>
-    INVALID_DATE_RANGE_FOR_REPORT,
+    INVALID_DATE_RANGE_FOR_REPORT = 0,
     /// <summary>Customer passed in invalid field name for a report type
     /// </summary>
-    INVALID_FIELD_NAME_FOR_REPORT,
+    INVALID_FIELD_NAME_FOR_REPORT = 1,
     /// <summary>Unable to locate a field mapping for this report type.
     /// </summary>
-    UNABLE_TO_FIND_MAPPING_FOR_THIS_REPORT,
+    UNABLE_TO_FIND_MAPPING_FOR_THIS_REPORT = 2,
     /// <summary>Customer passed in invalid column name for a report type
     /// </summary>
-    INVALID_COLUMN_NAME_FOR_REPORT,
+    INVALID_COLUMN_NAME_FOR_REPORT = 3,
     /// <summary>Customer passed in invalid report definition id.
     /// </summary>
-    INVALID_REPORT_DEFINITION_ID,
+    INVALID_REPORT_DEFINITION_ID = 4,
     /// <summary>Report selector cannot be null.
     /// </summary>
-    REPORT_SELECTOR_CANNOT_BE_NULL,
+    REPORT_SELECTOR_CANNOT_BE_NULL = 5,
     /// <summary>No Enums exist for this column name.
     /// </summary>
-    NO_ENUMS_FOR_THIS_COLUMN_NAME,
+    NO_ENUMS_FOR_THIS_COLUMN_NAME = 6,
     /// <summary>Invalid view name.
     /// </summary>
-    INVALID_VIEW,
+    INVALID_VIEW = 7,
     /// <summary>Sorting is not supported for reports.
     /// </summary>
-    SORTING_NOT_SUPPORTED,
+    SORTING_NOT_SUPPORTED = 8,
     /// <summary>Paging is not supported for reports.
     /// </summary>
-    PAGING_NOT_SUPPORTED,
+    PAGING_NOT_SUPPORTED = 9,
     /// <summary>Customer can not create report of a selected type.
     /// </summary>
-    CUSTOMER_SERVING_TYPE_REPORT_MISMATCH,
+    CUSTOMER_SERVING_TYPE_REPORT_MISMATCH = 10,
     /// <summary>Cross client report has an client selector without any valid identifier for a
     /// customer.
     /// </summary>
-    CLIENT_SELECTOR_NO_CUSTOMER_IDENTIFIER,
+    CLIENT_SELECTOR_NO_CUSTOMER_IDENTIFIER = 11,
     /// <summary>Cross client report has an invalid external customer ID in the client selector.
     /// </summary>
-    CLIENT_SELECTOR_INVALID_CUSTOMER_ID,
-    REPORT_DEFINITION_ERROR,
+    CLIENT_SELECTOR_INVALID_CUSTOMER_ID = 12,
+    REPORT_DEFINITION_ERROR = 13,
   }
 
 
@@ -51445,7 +51444,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum NotWhitelistedErrorReason {
     /// <summary>Customer is not whitelisted for accessing the API.
     /// </summary>
-    CUSTOMER_NOT_WHITELISTED_FOR_API,
+    CUSTOMER_NOT_WHITELISTED_FOR_API = 0,
   }
 
 
@@ -51457,146 +51456,146 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ReportDefinitionReportType {
     /// <summary>Reports performance data for your keywords.
     /// </summary>
-    KEYWORDS_PERFORMANCE_REPORT,
+    KEYWORDS_PERFORMANCE_REPORT = 0,
     /// <summary>Reports performance data for your ads.
     /// </summary>
-    AD_PERFORMANCE_REPORT,
+    AD_PERFORMANCE_REPORT = 1,
     /// <summary>Reports performance data for URLs which triggered your ad and received clicks.
     /// </summary>
-    URL_PERFORMANCE_REPORT,
+    URL_PERFORMANCE_REPORT = 2,
     /// <summary>Reports ad group performance data for one or more of your campaigns.
     /// </summary>
-    ADGROUP_PERFORMANCE_REPORT,
+    ADGROUP_PERFORMANCE_REPORT = 3,
     /// <summary>Reports performance data for your campaigns.
     /// </summary>
-    CAMPAIGN_PERFORMANCE_REPORT,
+    CAMPAIGN_PERFORMANCE_REPORT = 4,
     /// <summary>Reports performance data for your entire account.
     /// </summary>
-    ACCOUNT_PERFORMANCE_REPORT,
+    ACCOUNT_PERFORMANCE_REPORT = 5,
     /// <summary>Reports performance data by geographic origin.
     /// </summary>
-    GEO_PERFORMANCE_REPORT,
+    GEO_PERFORMANCE_REPORT = 6,
     /// <summary>Reports performance data for search queries which triggered your ad and received
     /// clicks.
     /// </summary>
-    SEARCH_QUERY_PERFORMANCE_REPORT,
+    SEARCH_QUERY_PERFORMANCE_REPORT = 7,
     /// <summary>Reports performance data for automatic placements on the content network.
     /// </summary>
-    AUTOMATIC_PLACEMENTS_PERFORMANCE_REPORT,
+    AUTOMATIC_PLACEMENTS_PERFORMANCE_REPORT = 8,
     /// <summary>Reports performance data for negative keywords at the campaign level.
     /// </summary>
-    CAMPAIGN_NEGATIVE_KEYWORDS_PERFORMANCE_REPORT,
+    CAMPAIGN_NEGATIVE_KEYWORDS_PERFORMANCE_REPORT = 9,
     /// <summary>Reports performance data for the negative placements at the campaign level.
     /// </summary>
-    CAMPAIGN_NEGATIVE_PLACEMENTS_PERFORMANCE_REPORT,
+    CAMPAIGN_NEGATIVE_PLACEMENTS_PERFORMANCE_REPORT = 10,
     /// <summary>Reports performance data for destination urls.
     /// </summary>
-    DESTINATION_URL_REPORT,
+    DESTINATION_URL_REPORT = 11,
     /// <summary>Reports data for shared sets.
     /// </summary>
-    SHARED_SET_REPORT,
+    SHARED_SET_REPORT = 12,
     /// <summary>Reports data for campaign shared sets.
     /// </summary>
-    CAMPAIGN_SHARED_SET_REPORT,
+    CAMPAIGN_SHARED_SET_REPORT = 13,
     /// <summary>Provides a downloadable snapshot of shared set criteria.
     /// </summary>
-    SHARED_SET_CRITERIA_REPORT,
+    SHARED_SET_CRITERIA_REPORT = 14,
     /// <summary>Reports performance data for creative conversions (e.g. free clicks).
     /// </summary>
-    CREATIVE_CONVERSION_REPORT,
+    CREATIVE_CONVERSION_REPORT = 15,
     /// <summary>Reports per-phone-call details for calls tracked using call metrics.
     /// </summary>
-    CALL_METRICS_CALL_DETAILS_REPORT,
+    CALL_METRICS_CALL_DETAILS_REPORT = 16,
     /// <summary>Reports performance data for keywordless ads.
     /// </summary>
-    KEYWORDLESS_QUERY_REPORT,
+    KEYWORDLESS_QUERY_REPORT = 17,
     /// <summary>Reports performance data for keywordless ads.
     /// </summary>
-    KEYWORDLESS_CATEGORY_REPORT,
+    KEYWORDLESS_CATEGORY_REPORT = 18,
     /// <summary>Reports performance data for all published criteria types including keywords,
     /// placements, topics, user-lists in a single report.
     /// </summary>
-    CRITERIA_PERFORMANCE_REPORT,
+    CRITERIA_PERFORMANCE_REPORT = 19,
     /// <summary>Reports performance data for clicks.
     /// </summary>
-    CLICK_PERFORMANCE_REPORT,
+    CLICK_PERFORMANCE_REPORT = 20,
     /// <summary>Reports performance data for budgets.
     /// </summary>
-    BUDGET_PERFORMANCE_REPORT,
+    BUDGET_PERFORMANCE_REPORT = 21,
     /// <summary>Reports performance data for your (shared) bid strategies.
     /// </summary>
-    BID_GOAL_PERFORMANCE_REPORT,
+    BID_GOAL_PERFORMANCE_REPORT = 22,
     /// <summary>Reports performance data for your display keywords.
     /// </summary>
-    DISPLAY_KEYWORD_PERFORMANCE_REPORT,
+    DISPLAY_KEYWORD_PERFORMANCE_REPORT = 23,
     /// <summary>Reports performance data for your placeholder feed items
     /// </summary>
-    PLACEHOLDER_FEED_ITEM_REPORT,
+    PLACEHOLDER_FEED_ITEM_REPORT = 24,
     /// <summary>Reports performance data for your placements.
     /// </summary>
-    PLACEMENT_PERFORMANCE_REPORT,
+    PLACEMENT_PERFORMANCE_REPORT = 25,
     /// <summary>Reports performance data for negative location targets at campaign level.
     /// </summary>
-    CAMPAIGN_NEGATIVE_LOCATIONS_REPORT,
+    CAMPAIGN_NEGATIVE_LOCATIONS_REPORT = 26,
     /// <summary>Reports performance data for managed and automatic genders in a combined report.
     /// </summary>
-    GENDER_PERFORMANCE_REPORT,
+    GENDER_PERFORMANCE_REPORT = 27,
     /// <summary>Reports performance data for managed and automatic age ranges in a combined
     /// report.
     /// </summary>
-    AGE_RANGE_PERFORMANCE_REPORT,
+    AGE_RANGE_PERFORMANCE_REPORT = 28,
     /// <summary>Reports performance data for campaign level location targets.
     /// </summary>
-    CAMPAIGN_LOCATION_TARGET_REPORT,
+    CAMPAIGN_LOCATION_TARGET_REPORT = 29,
     /// <summary>Reports performance data for campaign level ad schedule targets.
     /// </summary>
-    CAMPAIGN_AD_SCHEDULE_TARGET_REPORT,
+    CAMPAIGN_AD_SCHEDULE_TARGET_REPORT = 30,
     /// <summary>Paid &amp; organic report
     /// </summary>
-    PAID_ORGANIC_QUERY_REPORT,
+    PAID_ORGANIC_QUERY_REPORT = 32,
     /// <summary>Reports performance data for your audience criteria.
     /// </summary>
-    AUDIENCE_PERFORMANCE_REPORT,
+    AUDIENCE_PERFORMANCE_REPORT = 33,
     /// <summary>Reports performance data for your topic criteria.
     /// </summary>
-    DISPLAY_TOPICS_PERFORMANCE_REPORT,
+    DISPLAY_TOPICS_PERFORMANCE_REPORT = 34,
     /// <summary>Distance report
     /// </summary>
-    USER_AD_DISTANCE_REPORT,
+    USER_AD_DISTANCE_REPORT = 35,
     /// <summary>Performance data for shopping campaigns.
     /// </summary>
-    SHOPPING_PERFORMANCE_REPORT,
+    SHOPPING_PERFORMANCE_REPORT = 36,
     /// <summary>Performance data for product partitions in shopping campaigns.
     /// </summary>
-    PRODUCT_PARTITION_REPORT,
+    PRODUCT_PARTITION_REPORT = 37,
     /// <summary>Reports performance data for managed and automatic parental statuses in a
     /// combined report.
     /// </summary>
-    PARENTAL_STATUS_PERFORMANCE_REPORT,
+    PARENTAL_STATUS_PERFORMANCE_REPORT = 38,
     /// <summary>Performance data for Extension placeholders
     /// </summary>
-    PLACEHOLDER_REPORT,
+    PLACEHOLDER_REPORT = 39,
     /// <summary>Reports performance of ad placeholders when instantiated with specific
     /// FeedItems.
     /// </summary>
-    AD_CUSTOMIZERS_FEED_ITEM_REPORT,
+    AD_CUSTOMIZERS_FEED_ITEM_REPORT = 40,
     /// <summary>Reports stats and settings details for labels.
     /// </summary>
-    LABEL_REPORT,
+    LABEL_REPORT = 41,
     /// <summary>Reports performance data for final urls.
     /// </summary>
-    FINAL_URL_REPORT,
+    FINAL_URL_REPORT = 42,
     /// <summary>Video performance report.
     /// </summary>
-    VIDEO_PERFORMANCE_REPORT,
+    VIDEO_PERFORMANCE_REPORT = 43,
     /// <summary>Reports performance data for top content bid modifier criteria.
     /// </summary>
-    TOP_CONTENT_PERFORMANCE_REPORT,
+    TOP_CONTENT_PERFORMANCE_REPORT = 45,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 44,
   }
 
 
@@ -51670,7 +51669,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((TargetingIdeaPage)(results[0]));
+      return ((TargetingIdeaPage) (results[0]));
     }
   }
 
@@ -52801,7 +52800,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum IdeaType {
     /// <summary>Keyword idea.
     /// </summary>
-    KEYWORD,
+    KEYWORD = 0,
   }
 
 
@@ -53114,48 +53113,48 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// version being used. (Please upgrade to the latest published WSDL.) <p>This
     /// element is not supported directly by any <a href='IdeaType'>IdeaType</a>.</p>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>Represents a category ID in the "Products and Services" taxonomy. <p>Resulting
     /// attribute is <a href='IntegerSetAttribute'>IntegerSetAttribute</a>.</p> <p>This
     /// element is supported by following <a href='IdeaType'>IdeaType</a>s: KEYWORD.</p>
     /// </summary>
-    CATEGORY_PRODUCTS_AND_SERVICES,
+    CATEGORY_PRODUCTS_AND_SERVICES = 1,
     /// <summary>Represents the relative amount of competition associated with the given keyword
     /// idea, relative to other keywords. This value will be between 0 and 1
     /// (inclusive). <p>Resulting attribute is <a
     /// href='DoubleAttribute'>DoubleAttribute</a>.</p> <p>This element is supported by
     /// following <a href='IdeaType'>IdeaType</a>s: KEYWORD.</p>
     /// </summary>
-    COMPETITION,
+    COMPETITION = 2,
     /// <summary>Represents the webpage from which this keyword idea was extracted (if
     /// applicable.) <p>Resulting attribute is <a
     /// href='WebpageDescriptorAttribute'>WebpageDescriptorAttribute</a>.</p> <p>This
     /// element is supported by following <a href='IdeaType'>IdeaType</a>s: KEYWORD.</p>
     /// </summary>
-    EXTRACTED_FROM_WEBPAGE,
+    EXTRACTED_FROM_WEBPAGE = 3,
     /// <summary>Represents the type of the given idea. <p>Resulting attribute is <a
     /// href='IdeaTypeAttribute'>IdeaTypeAttribute</a>.</p> <p>This element is supported
     /// by following <a href='IdeaType'>IdeaType</a>s: KEYWORD.</p>
     /// </summary>
-    IDEA_TYPE,
+    IDEA_TYPE = 4,
     /// <summary>Represents the keyword text for the given keyword idea. <p>Resulting attribute
     /// is <a href='StringAttribute'>StringAttribute</a>.</p> <p>This element is
     /// supported by following <a href='IdeaType'>IdeaType</a>s: KEYWORD.</p>
     /// </summary>
-    KEYWORD_TEXT,
+    KEYWORD_TEXT = 5,
     /// <summary>Represents either the (approximate) number of searches for the given keyword
     /// idea on google.com or google.com and partners, depending on the user's
     /// targeting. <p>Resulting attribute is <a
     /// href='LongAttribute'>LongAttribute</a>.</p> <p>This element is supported by
     /// following <a href='IdeaType'>IdeaType</a>s: KEYWORD.</p>
     /// </summary>
-    SEARCH_VOLUME,
+    SEARCH_VOLUME = 6,
     /// <summary>Represents the average cost per click historically paid for the keyword.
     /// <p>Resulting attribute is <a href='MoneyAttribute'>MoneyAttribute</a>.</p>
     /// <p>This element is supported by following <a href='IdeaType'>IdeaType</a>s:
     /// KEYWORD.</p>
     /// </summary>
-    AVERAGE_CPC,
+    AVERAGE_CPC = 7,
     /// <summary>Represents the (approximated) number of searches on this keyword idea (as
     /// available for the past twelve months), targeted to the specified geographies.
     /// <p>Resulting attribute is <a
@@ -53163,7 +53162,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <p>This element is supported by following <a href='IdeaType'>IdeaType</a>s:
     /// KEYWORD.</p>
     /// </summary>
-    TARGETED_MONTHLY_SEARCHES,
+    TARGETED_MONTHLY_SEARCHES = 8,
   }
 
 
@@ -53754,7 +53753,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 
 
   /// <summary>A <a href='SearchParameter'>SearchParameter</a> that specifies a set of URLs
-  /// that results should in some way be related too. For example, keyword results
+  /// that results should in some way be related to. For example, keyword results
   /// would be similar to content keywords found on the related URLs. <p>This element
   /// is supported by following <a href='IdeaType'>IdeaType</a>s: KEYWORD.</p> <p>This
   /// element is supported by following <a href='RequestType'>RequestType</a>s:
@@ -54402,13 +54401,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum CompetitionSearchParameterLevel {
     /// <summary>Low - competition rate [0.0000, 0.3333]
     /// </summary>
-    LOW,
+    LOW = 0,
     /// <summary>Medium - competition rate (0.3333, 0.6667]
     /// </summary>
-    MEDIUM,
+    MEDIUM = 1,
     /// <summary>High - competition rate (0.6667, 1.0000]
     /// </summary>
-    HIGH,
+    HIGH = 2,
   }
 
 
@@ -54719,14 +54718,14 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// href='RequestType'>RequestType</a> can be used to request other ideas using
     /// keyword/placements that the user already has.
     /// </summary>
-    IDEAS,
+    IDEAS = 0,
     /// <summary>Request for stats for entries in selector. This <a
     /// href='RequestType'>RequestType</a> can be used to request the stats for
     /// keywords/placements that the user already has. <p>Stats are generated once a
     /// month (typically on the last week of the month) from the historical data of
     /// previous months.</p>
     /// </summary>
-    STATS,
+    STATS = 1,
   }
 
 
@@ -54776,47 +54775,47 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// href='CampaignEstimateRequest'>CampaignEstimateRequest</a> contains an <a
     /// href='AdGroupEstimateRequest'>AdGroupEstimateRequest</a> with an ID.
     /// </summary>
-    NO_CAMPAIGN_FOR_AD_GROUP_ESTIMATE_REQUEST,
+    NO_CAMPAIGN_FOR_AD_GROUP_ESTIMATE_REQUEST = 0,
     /// <summary>When the request with <code>null</code> adgroup ID in <a
     /// href='AdGroupEstimateRequest'>AdGroupEstimateRequest</a> contains a <a
     /// href='KeywordEstimateRequest'>KeywordEstimateRequest</a> with an ID.
     /// </summary>
-    NO_AD_GROUP_FOR_KEYWORD_ESTIMATE_REQUEST,
+    NO_AD_GROUP_FOR_KEYWORD_ESTIMATE_REQUEST = 1,
     /// <summary>All <a href='KeywordEstimateRequest'>KeywordEstimateRequest</a> items should
     /// have maxCpc associated with them.
     /// </summary>
-    NO_MAX_CPC_FOR_KEYWORD_ESTIMATE_REQUEST,
+    NO_MAX_CPC_FOR_KEYWORD_ESTIMATE_REQUEST = 2,
     /// <summary>When there are more <a href='KeywordEstimateRequest'>KeywordEstimateRequest</a>s
     /// in the request than TrafficEstimatorService allows.
     /// </summary>
-    TOO_MANY_KEYWORD_ESTIMATE_REQUESTS,
+    TOO_MANY_KEYWORD_ESTIMATE_REQUESTS = 3,
     /// <summary>When there are more <a
     /// href='CampaignEstimateRequest'>CampaignEstimateRequest</a>s in the request than
     /// TrafficEstimatorService allows.
     /// </summary>
-    TOO_MANY_CAMPAIGN_ESTIMATE_REQUESTS,
+    TOO_MANY_CAMPAIGN_ESTIMATE_REQUESTS = 4,
     /// <summary>When there are more <a href='AdGroupEstimateRequest'>AdGroupEstimateRequest</a>s
     /// in the request than TrafficEstimatorService allows.
     /// </summary>
-    TOO_MANY_ADGROUP_ESTIMATE_REQUESTS,
+    TOO_MANY_ADGROUP_ESTIMATE_REQUESTS = 5,
     /// <summary>When there are more targets in the request than TrafficEstimatorService allows.
     /// See documentation on <a
     /// href='CampaignEstimateRequest'>CampaignEstimateRequest</a> for more information
     /// about this error.
     /// </summary>
-    TOO_MANY_TARGETS,
+    TOO_MANY_TARGETS = 6,
     /// <summary>Request contains a keyword that is too long for backends to handle.
     /// </summary>
-    KEYWORD_TOO_LONG,
+    KEYWORD_TOO_LONG = 7,
     /// <summary>Request contains a keyword that contains broad match modifiers.
     /// </summary>
-    KEYWORD_CONTAINS_BROAD_MATCH_MODIFIERS,
+    KEYWORD_CONTAINS_BROAD_MATCH_MODIFIERS = 8,
     /// <summary>When an unexpected error occurs.
     /// </summary>
-    INVALID_INPUT,
+    INVALID_INPUT = 9,
     /// <summary>When backend service calls fail.
     /// </summary>
-    SERVICE_UNAVAILABLE,
+    SERVICE_UNAVAILABLE = 10,
   }
 
 
@@ -54916,61 +54915,61 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// <summary>Error returned when there are multiple instance of same type of <a
     /// href='SearchParameter'>SearchParameter</a>s.
     /// </summary>
-    DUPLICATE_SEARCH_FILTER_TYPES_PRESENT,
+    DUPLICATE_SEARCH_FILTER_TYPES_PRESENT = 0,
     /// <summary>Error returned when the <a
     /// href='TargetingIdeaSelector'>TargetingIdeaSelector</a> doesn't have enough <a
     /// href='SearchParameter'>SearchParameter</a>s to execute request.
     /// </summary>
-    INSUFFICIENT_SEARCH_PARAMETERS,
+    INSUFFICIENT_SEARCH_PARAMETERS = 1,
     /// <summary>Error returned when an <a href='AttributeType'>AttributeType</a> doesn't match
     /// the <a href='IdeaType'>IdeaType</a> specified in the <a
     /// href='TargetingIdeaSelector'>TargetingIdeaSelector</a>. For example, if the
     /// <code>KEYWORD</code> <code>IDEAS</code> selector contains an <code>STATS</code>
     /// only AttributeType, this error will be returned.
     /// </summary>
-    INVALID_ATTRIBUTE_TYPE,
+    INVALID_ATTRIBUTE_TYPE = 2,
     /// <summary>Error returned when a <a href='SearchParameter'>SearchParameter</a> doesn't
     /// match the <a href='IdeaType'>IdeaType</a> specified in the <a
     /// href='TargetingIdeaSelector'>TargetingIdeaSelector</a> or is otherwise invalid.
     /// Error trigger usually contains the parameter name, and error details contain a
     /// more detailed explanation.
     /// </summary>
-    INVALID_SEARCH_PARAMETERS,
+    INVALID_SEARCH_PARAMETERS = 3,
     /// <summary>Error returned when the <a
     /// href='TargetingIdeaSelector'>TargetingIdeaSelector</a> contains a <a
     /// href='DomainSuffixSearchParameter'>DomainSuffixSearchParameter</a>s that
     /// contains an invalid domain suffix.
     /// </summary>
-    INVALID_DOMAIN_SUFFIX,
+    INVALID_DOMAIN_SUFFIX = 4,
     /// <summary>Error returned when a selector contains mutually exclusive parameters.
     /// </summary>
-    MUTUALLY_EXCLUSIVE_SEARCH_PARAMETERS_IN_QUERY,
+    MUTUALLY_EXCLUSIVE_SEARCH_PARAMETERS_IN_QUERY = 5,
     /// <summary>Error returned when the <a href='TargetingIdeaService'>TargetingIdeaService</a>
     /// is not available.
     /// </summary>
-    SERVICE_UNAVAILABLE,
+    SERVICE_UNAVAILABLE = 6,
     /// <summary>Error returned when the URL value specified in the <a
     /// href='TargetingIdeaSelector'>TargetingIdeaSelector</a>, such as <a
     /// href='RelatedToUrlSearchParameter'>RelatedToUrlSearchParameter</a>, is not a
     /// valid URL.
     /// </summary>
-    INVALID_URL_IN_SEARCH_PARAMETER,
+    INVALID_URL_IN_SEARCH_PARAMETER = 7,
     /// <summary>Error returned when the requested number of entries in <a
     /// href='TargetingIdeaSelector'>TargetingIdeaSelector</a>'s <a
     /// href='Paging'>Paging</a> is greater than the maximum allowed.
     /// </summary>
-    TOO_MANY_RESULTS_REQUESTED,
+    TOO_MANY_RESULTS_REQUESTED = 8,
     /// <summary>Error returned when the requested <a href='Paging'>Paging</a> is missing from
     /// the <a href='TargetingIdeaSelector'>TargetingIdeaSelector</a> when required.
     /// </summary>
-    NO_PAGING_IN_SELECTOR,
+    NO_PAGING_IN_SELECTOR = 9,
     /// <summary>Error returned when included keywords and excluded keywords in <a
     /// href='IdeaTextFilterSearchParameter'>IdeaTextFilterSearchParameter</a>, <a
     /// href='IdeaTextMatchesSearchParameter'>IdeaTextMatchesSearchParameter</a> or <a
     /// href='ExcludedKeywordSearchParameter'>ExcludedKeywordSearchParameter</a> are
     /// overlapped.
     /// </summary>
-    INVALID_INCLUDED_EXCLUDED_KEYWORDS,
+    INVALID_INCLUDED_EXCLUDED_KEYWORDS = 10,
   }
 
 
@@ -55044,7 +55043,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((AdGroupCriterionPage)(results[0]));
+      return ((AdGroupCriterionPage) (results[0]));
     }
 
     /// <summary>Adds, removes or updates adgroup criteria.
@@ -55062,7 +55061,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupCriterionReturnValue)(results[0]));
+      return ((AdGroupCriterionReturnValue) (results[0]));
     }
 
     /// <summary>Adds labels to the AdGroupCriterion or removes labels from the AdGroupCriterion
@@ -55090,7 +55089,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupCriterionLabelReturnValue)(results[0]));
+      return ((AdGroupCriterionLabelReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of AdGroupCriterion that match the query.
@@ -55107,7 +55106,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((AdGroupCriterionPage)(results[0]));
+      return ((AdGroupCriterionPage) (results[0]));
     }
   }
 
@@ -55380,7 +55379,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((TrafficEstimatorResult)(results[0]));
+      return ((TrafficEstimatorResult) (results[0]));
     }
   }
 
@@ -56857,7 +56856,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((UserListPage)(results[0]));
+      return ((UserListPage) (results[0]));
     }
 
     /// <summary>Applies a list of mutate operations (i.e. add, set): Add - creates a set of user
@@ -56873,11 +56872,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((UserListReturnValue)(results[0]));
+      return ((UserListReturnValue) (results[0]));
     }
 
     /// <summary>Mutate members of user lists by either adding or removing their lists of
-    /// members. <p>Note that operations cannot have same user list id but different
+    /// members. The following <a href='Operator'>Operator</a>s are supported: ADD and
+    /// REMOVE. <p>Note that operations cannot have same user list id but different
     /// operators. </p>
     /// </summary><param name='operations'>the mutate members operations to apply</param>
     /// <returns>a list of UserList objects</returns>
@@ -56892,7 +56892,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((MutateMembersReturnValue)(results[0]));
+      return ((MutateMembersReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of user lists that match the query.
@@ -56909,7 +56909,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((UserListPage)(results[0]));
+      return ((UserListPage) (results[0]));
     }
   }
 
@@ -57250,10 +57250,11 @@ namespace Google.Api.Ads.AdWords.v201605 {
 
     /// <summary>Number of days a user's cookie stays on your list since its most recent addition
     /// to the list. This field must be between 0 and 540 inclusive. However, for CRM
-    /// based userlists, this field can be set to 10000 which means no expiration. <span
+    /// based userlists, this field can be set to 10000 which means no expiration.
+    /// <p>It'll be ignored for <a href='LogicalUserList'>LogicalUserList</a>. <span
     /// class="constraint Selectable">This field can be selected using the value
     /// "MembershipLifeSpan".</span><span class="constraint Filterable">This field can
-    /// be filtered on.</span>
+    /// be filtered on.</span></p>
     /// </summary>
     public long membershipLifeSpan {
       get {
@@ -57640,10 +57641,10 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum UserListMembershipStatus {
     /// <summary>Open status - list is accruing members and can be targeted to.
     /// </summary>
-    OPEN,
+    OPEN = 0,
     /// <summary>Closed status - No new members being added. Can not be used for targeting.
     /// </summary>
-    CLOSED,
+    CLOSED = 1,
   }
 
 
@@ -57655,16 +57656,16 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AccessReason {
     /// <summary>The entity is owned by the user.
     /// </summary>
-    OWNED,
+    OWNED = 0,
     /// <summary>The entity is shared to the user.
     /// </summary>
-    SHARED,
+    SHARED = 1,
     /// <summary>The entity is licensed to the user.
     /// </summary>
-    LICENSED,
+    LICENSED = 2,
     /// <summary>The user subscribed to the entity.
     /// </summary>
-    SUBSCRIBED,
+    SUBSCRIBED = 3,
   }
 
 
@@ -57675,8 +57676,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/rm/v201605")]
   public enum AccountUserListStatus {
-    ACTIVE,
-    INACTIVE,
+    ACTIVE = 0,
+    INACTIVE = 1,
   }
 
 
@@ -57686,22 +57687,22 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/rm/v201605")]
   public enum SizeRange {
-    LESS_THAN_FIVE_HUNDRED,
-    LESS_THAN_ONE_THOUSAND,
-    ONE_THOUSAND_TO_TEN_THOUSAND,
-    TEN_THOUSAND_TO_FIFTY_THOUSAND,
-    FIFTY_THOUSAND_TO_ONE_HUNDRED_THOUSAND,
-    ONE_HUNDRED_THOUSAND_TO_THREE_HUNDRED_THOUSAND,
-    THREE_HUNDRED_THOUSAND_TO_FIVE_HUNDRED_THOUSAND,
-    FIVE_HUNDRED_THOUSAND_TO_ONE_MILLION,
-    ONE_MILLION_TO_TWO_MILLION,
-    TWO_MILLION_TO_THREE_MILLION,
-    THREE_MILLION_TO_FIVE_MILLION,
-    FIVE_MILLION_TO_TEN_MILLION,
-    TEN_MILLION_TO_TWENTY_MILLION,
-    TWENTY_MILLION_TO_THIRTY_MILLION,
-    THIRTY_MILLION_TO_FIFTY_MILLION,
-    OVER_FIFTY_MILLION,
+    LESS_THAN_FIVE_HUNDRED = 0,
+    LESS_THAN_ONE_THOUSAND = 1,
+    ONE_THOUSAND_TO_TEN_THOUSAND = 2,
+    TEN_THOUSAND_TO_FIFTY_THOUSAND = 3,
+    FIFTY_THOUSAND_TO_ONE_HUNDRED_THOUSAND = 4,
+    ONE_HUNDRED_THOUSAND_TO_THREE_HUNDRED_THOUSAND = 5,
+    THREE_HUNDRED_THOUSAND_TO_FIVE_HUNDRED_THOUSAND = 6,
+    FIVE_HUNDRED_THOUSAND_TO_ONE_MILLION = 7,
+    ONE_MILLION_TO_TWO_MILLION = 8,
+    TWO_MILLION_TO_THREE_MILLION = 9,
+    THREE_MILLION_TO_FIVE_MILLION = 10,
+    FIVE_MILLION_TO_TEN_MILLION = 11,
+    TEN_MILLION_TO_TWENTY_MILLION = 12,
+    TWENTY_MILLION_TO_THIRTY_MILLION = 13,
+    THIRTY_MILLION_TO_FIFTY_MILLION = 14,
+    OVER_FIFTY_MILLION = 15,
   }
 
 
@@ -57715,26 +57716,26 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// for return value only. An enumeration could not be processed, typically due to
     /// incompatibility with your WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>UserList represented as a collection of conversion types.
     /// </summary>
-    REMARKETING,
+    REMARKETING = 1,
     /// <summary>UserList represented as a combination of other user lists/interests.
     /// </summary>
-    LOGICAL,
+    LOGICAL = 2,
     /// <summary>UserList created in the DoubleClick platform.
     /// </summary>
-    EXTERNAL_REMARKETING,
+    EXTERNAL_REMARKETING = 3,
     /// <summary>UserList associated with a rule.
     /// </summary>
-    RULE_BASED,
+    RULE_BASED = 4,
     /// <summary>UserList with users similar to users of another UserList.
     /// </summary>
-    SIMILAR,
+    SIMILAR = 5,
     /// <summary>UserList of first party CRM data provided by advertiser in the form of emails or
     /// other formats.
     /// </summary>
-    CRM_BASED,
+    CRM_BASED = 6,
   }
 
 
@@ -58421,11 +58422,11 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
-    EQUALS,
-    NOT_EQUAL,
-    BEFORE,
-    AFTER,
+    UNKNOWN = 0,
+    EQUALS = 1,
+    NOT_EQUAL = 2,
+    BEFORE = 3,
+    AFTER = 4,
   }
 
 
@@ -58644,13 +58645,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
-    GREATER_THAN,
-    GREATER_THAN_OR_EQUAL,
-    EQUALS,
-    NOT_EQUAL,
-    LESS_THAN,
-    LESS_THAN_OR_EQUAL,
+    UNKNOWN = 0,
+    GREATER_THAN = 1,
+    GREATER_THAN_OR_EQUAL = 2,
+    EQUALS = 3,
+    NOT_EQUAL = 4,
+    LESS_THAN = 5,
+    LESS_THAN_OR_EQUAL = 6,
   }
 
 
@@ -58858,15 +58859,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
-    CONTAINS,
-    EQUALS,
-    STARTS_WITH,
-    ENDS_WITH,
-    NOT_EQUAL,
-    NOT_CONTAIN,
-    NOT_START_WITH,
-    NOT_END_WITH,
+    UNKNOWN = 0,
+    CONTAINS = 1,
+    EQUALS = 2,
+    STARTS_WITH = 3,
+    ENDS_WITH = 4,
+    NOT_EQUAL = 5,
+    NOT_CONTAIN = 6,
+    NOT_START_WITH = 7,
+    NOT_END_WITH = 8,
   }
 
 
@@ -59210,8 +59211,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserListConversionType.Category", Namespace = "https://adwords.google.com/api/adwords/rm/v201605")]
   public enum UserListConversionTypeCategory {
-    BOOMERANG_EVENT,
-    OTHER,
+    BOOMERANG_EVENT = 0,
+    OTHER = 1,
   }
 
 
@@ -59406,18 +59407,18 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum UserListLogicalRuleOperator {
     /// <summary>And - all of the operands.
     /// </summary>
-    ALL,
+    ALL = 0,
     /// <summary>Or - at least one of the operands.
     /// </summary>
-    ANY,
+    ANY = 1,
     /// <summary>Not - none of the operands.
     /// </summary>
-    NONE,
+    NONE = 2,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 3,
   }
 
 
@@ -59549,13 +59550,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
       }
     }
 
-    /// <summary>A list of members to be added or removed. <p>Each element in members list should
-    /// be in format according to the specified <code>dataType</code>. <span
-    /// class="constraint CollectionSize">The minimum size of this collection is 1. The
-    /// maximum size of this collection is 10000.</span> <span class="constraint
-    /// ContentsNotNull">This field must not contain <code>null</code> elements.</span>
-    /// <span class="constraint Required">This field is required and should not be
-    /// <code>null</code>.</span></p>
+    /// <summary>A list of members to be added or removed. <p>This field is required and there
+    /// must be at least one member.</p> <p>Each element in members list should be in
+    /// format according to the specified <code>dataType</code>. <span class="constraint
+    /// CollectionSize">The maximum size of this collection is 1000000.</span> <span
+    /// class="constraint ContentsNotNull">This field must not contain <code>null</code>
+    /// elements.</span></p>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("members")]
     public string[] members {
@@ -59623,7 +59623,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum MutateMembersOperandDataType {
     /// <summary>Indicates each member is a hashed email address using SHA-256 hash function.
     /// </summary>
-    EMAIL_SHA256,
+    EMAIL_SHA256 = 0,
   }
 
 
@@ -59929,60 +59929,60 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum UserListErrorReason {
     /// <summary>Creating and updating external remarketing user lists is not supported.
     /// </summary>
-    EXTERNAL_REMARKETING_USER_LIST_MUTATE_NOT_SUPPORTED,
+    EXTERNAL_REMARKETING_USER_LIST_MUTATE_NOT_SUPPORTED = 0,
     /// <summary>Concrete type of user list (logical v.s. remarketing) is required for ADD and
     /// SET operations.
     /// </summary>
-    CONCRETE_TYPE_REQUIRED,
+    CONCRETE_TYPE_REQUIRED = 1,
     /// <summary>Adding/updating user list conversion types requires specifying the conversion
     /// type id.
     /// </summary>
-    CONVERSION_TYPE_ID_REQUIRED,
+    CONVERSION_TYPE_ID_REQUIRED = 2,
     /// <summary>Remarketing user list cannot have duplicate conversion types.
     /// </summary>
-    DUPLICATE_CONVERSION_TYPES,
+    DUPLICATE_CONVERSION_TYPES = 3,
     /// <summary>Conversion type is invalid/unknown.
     /// </summary>
-    INVALID_CONVERSION_TYPE,
+    INVALID_CONVERSION_TYPE = 4,
     /// <summary>User list description is empty or invalid
     /// </summary>
-    INVALID_DESCRIPTION,
+    INVALID_DESCRIPTION = 5,
     /// <summary>User list name is empty or invalid.
     /// </summary>
-    INVALID_NAME,
+    INVALID_NAME = 6,
     /// <summary>Type of the UserList does not match.
     /// </summary>
-    INVALID_TYPE,
+    INVALID_TYPE = 7,
     /// <summary>User list rule operand is invalid.
     /// </summary>
-    INVALID_USER_LIST_LOGICAL_RULE_OPERAND,
+    INVALID_USER_LIST_LOGICAL_RULE_OPERAND = 8,
     /// <summary>Name is already being used for another user list for the account.
     /// </summary>
-    NAME_ALREADY_USED,
+    NAME_ALREADY_USED = 9,
     /// <summary>Name is required when creating a new conversion type.
     /// </summary>
-    NEW_CONVERSION_TYPE_NAME_REQUIRED,
+    NEW_CONVERSION_TYPE_NAME_REQUIRED = 10,
     /// <summary>Only an owner account may edit a user list.
     /// </summary>
-    OWNERSHIP_REQUIRED_FOR_SET,
+    OWNERSHIP_REQUIRED_FOR_SET = 11,
     /// <summary>Removing user lists is not supported.
     /// </summary>
-    REMOVE_NOT_SUPPORTED,
+    REMOVE_NOT_SUPPORTED = 12,
     /// <summary>The user list of the type is not mutable
     /// </summary>
-    USER_LIST_MUTATE_NOT_SUPPORTED,
+    USER_LIST_MUTATE_NOT_SUPPORTED = 13,
     /// <summary>Rule is invalid.
     /// </summary>
-    INVALID_RULE,
+    INVALID_RULE = 14,
     /// <summary>The specified date range is empty.
     /// </summary>
-    INVALID_DATE_RANGE,
+    INVALID_DATE_RANGE = 15,
     /// <summary>Maximum number of rulebased user lists a customer can have.
     /// </summary>
-    MAX_NUM_RULEBASED_USERLISTS,
+    MAX_NUM_RULEBASED_USERLISTS = 17,
     /// <summary>Default generic error.
     /// </summary>
-    USER_LIST_SERVICE_ERROR,
+    USER_LIST_SERVICE_ERROR = 18,
   }
 
 
@@ -60029,13 +60029,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "MutateMembersError.Reason", Namespace = "https://adwords.google.com/api/adwords/rm/v201605")]
   public enum MutateMembersErrorReason {
-    UNKNOWN,
-    UNSUPPORTED_METHOD,
-    INVALID_USER_LIST_ID,
-    INVALID_USER_LIST_TYPE,
-    INVALID_DATA_TYPE,
-    INVALID_SHA256_FORMAT,
-    OPERATOR_CONFLICT_FOR_SAME_USER_LIST_ID,
+    UNKNOWN = 0,
+    UNSUPPORTED_METHOD = 1,
+    INVALID_USER_LIST_ID = 2,
+    INVALID_USER_LIST_TYPE = 3,
+    INVALID_DATA_TYPE = 4,
+    INVALID_SHA256_FORMAT = 5,
+    OPERATOR_CONFLICT_FOR_SAME_USER_LIST_ID = 6,
   }
 
 
@@ -60097,7 +60097,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((ExpressBusinessPage)(results[0]));
+      return ((ExpressBusinessPage) (results[0]));
     }
 
     /// <summary>Performs the given <a
@@ -60114,7 +60114,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((ExpressBusiness[])(results[0]));
+      return ((ExpressBusiness[]) (results[0]));
     }
   }
 
@@ -60334,8 +60334,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ExpressBusiness.Status", Namespace = "https://adwords.google.com/api/adwords/express/v201605")]
   public enum ExpressBusinessStatus {
-    ENABLED,
-    REMOVED,
+    ENABLED = 0,
+    REMOVED = 1,
   }
 
 
@@ -60514,21 +60514,21 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ExpressBusinessErrorReason {
     /// <summary>Website is invalid.
     /// </summary>
-    INVALID_WEBSITE,
+    INVALID_WEBSITE = 0,
     /// <summary>Address is invalid or cannot be geocoded using the specified geo point.
     /// </summary>
-    INVALID_ADDRESS,
+    INVALID_ADDRESS = 1,
     /// <summary>Phone number is invalid.
     /// </summary>
-    INVALID_PHONE_NUMBER,
+    INVALID_PHONE_NUMBER = 2,
     /// <summary>Premium rate phone numbers e.g. 1-900 numbers not allowed.
     /// </summary>
-    PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED,
+    PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED = 3,
     /// <summary>Default error. <span class="constraint Rejected">Used for return value only. An
     /// enumeration could not be processed, typically due to incompatibility with your
     /// WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 4,
   }
 
 
@@ -60590,7 +60590,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((BudgetSuggestion)(results[0]));
+      return ((BudgetSuggestion) (results[0]));
     }
   }
 
@@ -60847,796 +60847,799 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum CurrencyCode {
     /// <summary>Andorran Peseta
     /// </summary>
-    ADP,
+    ADP = 0,
     /// <summary>United Arab Emirates Dirham
     /// </summary>
-    AED,
+    AED = 1,
     /// <summary>Afghan Afghani (1927?2002)
     /// </summary>
-    AFA,
+    AFA = 2,
     /// <summary>Afghan Afghani
     /// </summary>
-    AFN,
+    AFN = 3,
     /// <summary>Albanian Lek (1946?1965)
     /// </summary>
-    ALK,
+    ALK = 4,
     /// <summary>Albanian Lek
     /// </summary>
-    ALL,
+    ALL = 5,
     /// <summary>Armenian Dram
     /// </summary>
-    AMD,
+    AMD = 6,
     /// <summary>Netherlands Antillean Guilder
     /// </summary>
-    ANG,
+    ANG = 7,
     /// <summary>Angolan Kwanza
     /// </summary>
-    AOA,
+    AOA = 8,
     /// <summary>Angolan Kwanza (1977?1991)
     /// </summary>
-    AOK,
+    AOK = 9,
     /// <summary>Angolan New Kwanza (1990?2000)
     /// </summary>
-    AON,
+    AON = 10,
     /// <summary>Angolan Readjusted Kwanza (1995?1999)
     /// </summary>
-    AOR,
+    AOR = 11,
     /// <summary>Argentine Austral
     /// </summary>
-    ARA,
+    ARA = 12,
     /// <summary>Argentine Peso Ley (1970?1983)
     /// </summary>
-    ARL,
+    ARL = 13,
     /// <summary>Argentine Peso (1881?1970)
     /// </summary>
-    ARM,
+    ARM = 14,
     /// <summary>Argentine Peso (1983?1985)
     /// </summary>
-    ARP,
+    ARP = 15,
     /// <summary>Argentine Peso
     /// </summary>
-    ARS,
+    ARS = 16,
     /// <summary>Austrian Schilling
     /// </summary>
-    ATS,
+    ATS = 17,
     /// <summary>Australian Dollar
     /// </summary>
-    AUD,
+    AUD = 18,
     /// <summary>Aruban Florin
     /// </summary>
-    AWG,
+    AWG = 19,
     /// <summary>Azerbaijani Manat (1993?2006)
     /// </summary>
-    AZM,
+    AZM = 20,
     /// <summary>Azerbaijani Manat
     /// </summary>
-    AZN,
+    AZN = 21,
     /// <summary>Bosnia-Herzegovina Dinar (1992?1994)
     /// </summary>
-    BAD,
+    BAD = 22,
     /// <summary>Bosnia-Herzegovina Convertible Mark
     /// </summary>
-    BAM,
+    BAM = 23,
     /// <summary>Bosnia-Herzegovina New Dinar (1994?1997)
     /// </summary>
-    BAN,
+    BAN = 24,
     /// <summary>Barbadian Dollar
     /// </summary>
-    BBD,
+    BBD = 25,
     /// <summary>Bangladeshi Taka
     /// </summary>
-    BDT,
+    BDT = 26,
     /// <summary>Belgian Franc
     /// </summary>
-    BEF,
+    BEF = 27,
     /// <summary>Bulgarian Hard Lev
     /// </summary>
-    BGL,
+    BGL = 28,
     /// <summary>Bulgarian Socialist Lev
     /// </summary>
-    BGM,
+    BGM = 29,
     /// <summary>Bulgarian Lev
     /// </summary>
-    BGN,
+    BGN = 30,
     /// <summary>Bulgarian Lev (1879?1952)
     /// </summary>
-    BGO,
+    BGO = 31,
     /// <summary>Bahraini Dinar
     /// </summary>
-    BHD,
+    BHD = 32,
     /// <summary>Burundian Franc
     /// </summary>
-    BIF,
+    BIF = 33,
     /// <summary>Bermudan Dollar
     /// </summary>
-    BMD,
+    BMD = 34,
     /// <summary>Brunei Dollar
     /// </summary>
-    BND,
+    BND = 35,
     /// <summary>Bolivian Boliviano
     /// </summary>
-    BOB,
+    BOB = 36,
     /// <summary>Bolivian Boliviano (1863?1963)
     /// </summary>
-    BOL,
+    BOL = 37,
     /// <summary>Bolivian Peso
     /// </summary>
-    BOP,
+    BOP = 38,
     /// <summary>Brazilian New Cruzeiro (1967?1986)
     /// </summary>
-    BRB,
+    BRB = 39,
     /// <summary>Brazilian Cruzado (1986?1989)
     /// </summary>
-    BRC,
+    BRC = 40,
     /// <summary>Brazilian Cruzeiro (1990?1993)
     /// </summary>
-    BRE,
+    BRE = 41,
     /// <summary>Brazilian Real
     /// </summary>
-    BRL,
+    BRL = 42,
     /// <summary>Brazilian New Cruzado (1989?1990)
     /// </summary>
-    BRN,
+    BRN = 43,
     /// <summary>Brazilian Cruzeiro (1993?1994)
     /// </summary>
-    BRR,
+    BRR = 44,
     /// <summary>Brazilian Cruzeiro (1942?1967)
     /// </summary>
-    BRZ,
+    BRZ = 45,
     /// <summary>Bahamian Dollar
     /// </summary>
-    BSD,
+    BSD = 46,
     /// <summary>Bhutanese Ngultrum
     /// </summary>
-    BTN,
+    BTN = 47,
     /// <summary>Burmese Kyat
     /// </summary>
-    BUK,
+    BUK = 48,
     /// <summary>Botswanan Pula
     /// </summary>
-    BWP,
+    BWP = 49,
     /// <summary>Belarusian New Ruble (1994?1999)
     /// </summary>
-    BYB,
+    BYB = 50,
     /// <summary>Belarusian Ruble
     /// </summary>
-    BYR,
+    BYN = 51,
+    /// <summary>Belarusian Ruble (1999-2016)
+    /// </summary>
+    BYR = 52,
     /// <summary>Belize Dollar
     /// </summary>
-    BZD,
+    BZD = 53,
     /// <summary>Canadian Dollar
     /// </summary>
-    CAD,
+    CAD = 54,
     /// <summary>Congolese Franc
     /// </summary>
-    CDF,
+    CDF = 55,
     /// <summary>Swiss Franc
     /// </summary>
-    CHF,
+    CHF = 56,
     /// <summary>Chilean Escudo
     /// </summary>
-    CLE,
+    CLE = 57,
     /// <summary>Chilean Unit of Account - fund code (backward compatible)
     /// </summary>
-    CLF,
+    CLF = 58,
     /// <summary>Chilean Peso
     /// </summary>
-    CLP,
+    CLP = 59,
     /// <summary>Chinese Yuan
     /// </summary>
-    CNY,
+    CNY = 60,
     /// <summary>Colombian Peso
     /// </summary>
-    COP,
+    COP = 61,
     /// <summary>Costa Rican Col?n
     /// </summary>
-    CRC,
+    CRC = 62,
     /// <summary>Serbian Dinar (2002?2006)
     /// </summary>
-    CSD,
+    CSD = 63,
     /// <summary>Czechoslovak Hard Koruna
     /// </summary>
-    CSK,
+    CSK = 64,
     /// <summary>Cuban Convertible Peso
     /// </summary>
-    CUC,
+    CUC = 65,
     /// <summary>Cuban Peso
     /// </summary>
-    CUP,
+    CUP = 66,
     /// <summary>Cape Verdean Escudo
     /// </summary>
-    CVE,
+    CVE = 67,
     /// <summary>Cypriot Pound
     /// </summary>
-    CYP,
+    CYP = 68,
     /// <summary>Czech Republic Koruna
     /// </summary>
-    CZK,
+    CZK = 69,
     /// <summary>East German Mark
     /// </summary>
-    DDM,
+    DDM = 70,
     /// <summary>German Mark
     /// </summary>
-    DEM,
+    DEM = 71,
     /// <summary>Djiboutian Franc
     /// </summary>
-    DJF,
+    DJF = 72,
     /// <summary>Danish Krone
     /// </summary>
-    DKK,
+    DKK = 73,
     /// <summary>Dominican Peso
     /// </summary>
-    DOP,
+    DOP = 74,
     /// <summary>Algerian Dinar
     /// </summary>
-    DZD,
+    DZD = 75,
     /// <summary>Ecuadorian Sucre
     /// </summary>
-    ECS,
+    ECS = 76,
     /// <summary>Estonian Kroon
     /// </summary>
-    EEK,
+    EEK = 77,
     /// <summary>Egyptian Pound
     /// </summary>
-    EGP,
+    EGP = 78,
     /// <summary>Eritrean Nakfa
     /// </summary>
-    ERN,
+    ERN = 79,
     /// <summary>Spanish Peseta
     /// </summary>
-    ESP,
+    ESP = 80,
     /// <summary>Ethiopian Birr
     /// </summary>
-    ETB,
+    ETB = 81,
     /// <summary>Euro
     /// </summary>
-    EUR,
+    EUR = 82,
     /// <summary>Finnish Markka
     /// </summary>
-    FIM,
+    FIM = 83,
     /// <summary>Fijian Dollar
     /// </summary>
-    FJD,
+    FJD = 84,
     /// <summary>Falkland Islands Pound
     /// </summary>
-    FKP,
+    FKP = 85,
     /// <summary>French Franc
     /// </summary>
-    FRF,
+    FRF = 86,
     /// <summary>British Pound
     /// </summary>
-    GBP,
+    GBP = 87,
     /// <summary>Georgian Kupon Larit
     /// </summary>
-    GEK,
+    GEK = 88,
     /// <summary>Georgian Lari
     /// </summary>
-    GEL,
+    GEL = 89,
     /// <summary>Ghanaian Cedi (1979?2007)
     /// </summary>
-    GHC,
+    GHC = 90,
     /// <summary>Ghana Cedi (2007 mistake) - grandfathered non-tender
     /// </summary>
-    GHP,
+    GHP = 91,
     /// <summary>Ghanaian Cedi
     /// </summary>
-    GHS,
+    GHS = 92,
     /// <summary>Gibraltar Pound
     /// </summary>
-    GIP,
+    GIP = 93,
     /// <summary>Gambian Dalasi
     /// </summary>
-    GMD,
+    GMD = 94,
     /// <summary>Guinean Franc
     /// </summary>
-    GNF,
+    GNF = 95,
     /// <summary>Guinean Syli
     /// </summary>
-    GNS,
+    GNS = 96,
     /// <summary>Equatorial Guinean Ekwele
     /// </summary>
-    GQE,
+    GQE = 97,
     /// <summary>Greek Drachma
     /// </summary>
-    GRD,
+    GRD = 98,
     /// <summary>Guatemalan Quetzal
     /// </summary>
-    GTQ,
+    GTQ = 99,
     /// <summary>Portuguese Guinea Escudo
     /// </summary>
-    GWE,
+    GWE = 100,
     /// <summary>Guinea-Bissau Peso
     /// </summary>
-    GWP,
+    GWP = 101,
     /// <summary>Guyanaese Dollar
     /// </summary>
-    GYD,
+    GYD = 102,
     /// <summary>Hong Kong Dollar
     /// </summary>
-    HKD,
+    HKD = 103,
     /// <summary>Honduran Lempira
     /// </summary>
-    HNL,
+    HNL = 104,
     /// <summary>Croatian Dinar
     /// </summary>
-    HRD,
+    HRD = 105,
     /// <summary>Croatian Kuna
     /// </summary>
-    HRK,
+    HRK = 106,
     /// <summary>Haitian Gourde
     /// </summary>
-    HTG,
+    HTG = 107,
     /// <summary>Hungarian Forint
     /// </summary>
-    HUF,
+    HUF = 108,
     /// <summary>Indonesian Rupiah
     /// </summary>
-    IDR,
+    IDR = 109,
     /// <summary>Irish Pound
     /// </summary>
-    IEP,
+    IEP = 110,
     /// <summary>Israeli Pound
     /// </summary>
-    ILP,
+    ILP = 111,
     /// <summary>Israeli Sheqel (1980?1985)
     /// </summary>
-    ILR,
+    ILR = 112,
     /// <summary>Israeli New Sheqel
     /// </summary>
-    ILS,
+    ILS = 113,
     /// <summary>Indian Rupee
     /// </summary>
-    INR,
+    INR = 114,
     /// <summary>Iraqi Dinar
     /// </summary>
-    IQD,
+    IQD = 115,
     /// <summary>Iranian Rial
     /// </summary>
-    IRR,
+    IRR = 116,
     /// <summary>Icelandic Kr?na (1918?1981)
     /// </summary>
-    ISJ,
+    ISJ = 117,
     /// <summary>Icelandic Kr?na
     /// </summary>
-    ISK,
+    ISK = 118,
     /// <summary>Italian Lira
     /// </summary>
-    ITL,
+    ITL = 119,
     /// <summary>Jamaican Dollar
     /// </summary>
-    JMD,
+    JMD = 120,
     /// <summary>Jordanian Dinar
     /// </summary>
-    JOD,
+    JOD = 121,
     /// <summary>Japanese Yen
     /// </summary>
-    JPY,
+    JPY = 122,
     /// <summary>Kenyan Shilling
     /// </summary>
-    KES,
+    KES = 123,
     /// <summary>Kyrgystani Som
     /// </summary>
-    KGS,
+    KGS = 124,
     /// <summary>Cambodian Riel
     /// </summary>
-    KHR,
+    KHR = 125,
     /// <summary>Comorian Franc
     /// </summary>
-    KMF,
+    KMF = 126,
     /// <summary>North Korean Won
     /// </summary>
-    KPW,
+    KPW = 127,
     /// <summary>South Korean Hwan (1953?1962)
     /// </summary>
-    KRH,
+    KRH = 128,
     /// <summary>South Korean Won (1945?1953)
     /// </summary>
-    KRO,
+    KRO = 129,
     /// <summary>South Korean Won
     /// </summary>
-    KRW,
+    KRW = 130,
     /// <summary>Kuwaiti Dinar
     /// </summary>
-    KWD,
+    KWD = 131,
     /// <summary>Cayman Islands Dollar
     /// </summary>
-    KYD,
+    KYD = 132,
     /// <summary>Kazakhstani Tenge
     /// </summary>
-    KZT,
+    KZT = 133,
     /// <summary>Laotian Kip
     /// </summary>
-    LAK,
+    LAK = 134,
     /// <summary>Lebanese Pound
     /// </summary>
-    LBP,
+    LBP = 135,
     /// <summary>Sri Lankan Rupee
     /// </summary>
-    LKR,
+    LKR = 136,
     /// <summary>Liberian Dollar
     /// </summary>
-    LRD,
+    LRD = 137,
     /// <summary>Lesotho Loti
     /// </summary>
-    LSL,
+    LSL = 138,
     /// <summary>Lithuanian Litas
     /// </summary>
-    LTL,
+    LTL = 139,
     /// <summary>Lithuanian Talonas
     /// </summary>
-    LTT,
+    LTT = 140,
     /// <summary>Luxembourgian Franc
     /// </summary>
-    LUF,
+    LUF = 141,
     /// <summary>Latvian Lats
     /// </summary>
-    LVL,
+    LVL = 142,
     /// <summary>Latvian Ruble
     /// </summary>
-    LVR,
+    LVR = 143,
     /// <summary>Libyan Dinar
     /// </summary>
-    LYD,
+    LYD = 144,
     /// <summary>Moroccan Dirham
     /// </summary>
-    MAD,
+    MAD = 145,
     /// <summary>Moroccan Franc
     /// </summary>
-    MAF,
+    MAF = 146,
     /// <summary>Monegasque Franc
     /// </summary>
-    MCF,
+    MCF = 147,
     /// <summary>Moldovan Cupon
     /// </summary>
-    MDC,
+    MDC = 148,
     /// <summary>Moldovan Leu
     /// </summary>
-    MDL,
+    MDL = 149,
     /// <summary>Malagasy Ariary
     /// </summary>
-    MGA,
+    MGA = 150,
     /// <summary>Malagasy Franc
     /// </summary>
-    MGF,
+    MGF = 151,
     /// <summary>Macedonian Denar
     /// </summary>
-    MKD,
+    MKD = 152,
     /// <summary>Macedonian Denar (1992?1993)
     /// </summary>
-    MKN,
+    MKN = 153,
     /// <summary>Malian Franc
     /// </summary>
-    MLF,
+    MLF = 154,
     /// <summary>Myanmar Kyat
     /// </summary>
-    MMK,
+    MMK = 155,
     /// <summary>Mongolian Tugrik
     /// </summary>
-    MNT,
+    MNT = 156,
     /// <summary>Macanese Pataca
     /// </summary>
-    MOP,
+    MOP = 157,
     /// <summary>Mauritanian Ouguiya
     /// </summary>
-    MRO,
+    MRO = 158,
     /// <summary>Maltese Lira
     /// </summary>
-    MTL,
+    MTL = 159,
     /// <summary>Maltese Pound
     /// </summary>
-    MTP,
+    MTP = 160,
     /// <summary>Mauritian Rupee
     /// </summary>
-    MUR,
+    MUR = 161,
     /// <summary>Maldivian Rufiyaa
     /// </summary>
-    MVR,
+    MVR = 162,
     /// <summary>Malawian Kwacha
     /// </summary>
-    MWK,
+    MWK = 163,
     /// <summary>Mexican Peso
     /// </summary>
-    MXN,
+    MXN = 164,
     /// <summary>Mexican Silver Peso (1861?1992)
     /// </summary>
-    MXP,
+    MXP = 165,
     /// <summary>Malaysian Ringgit
     /// </summary>
-    MYR,
+    MYR = 166,
     /// <summary>Mozambican Escudo
     /// </summary>
-    MZE,
+    MZE = 167,
     /// <summary>Mozambican Metical (1980?2006)
     /// </summary>
-    MZM,
+    MZM = 168,
     /// <summary>Mozambican Metical
     /// </summary>
-    MZN,
+    MZN = 169,
     /// <summary>Namibian Dollar
     /// </summary>
-    NAD,
+    NAD = 170,
     /// <summary>Nigerian Naira
     /// </summary>
-    NGN,
+    NGN = 171,
     /// <summary>Nicaraguan C?rdoba (1988?1991)
     /// </summary>
-    NIC,
+    NIC = 172,
     /// <summary>Nicaraguan C?rdoba
     /// </summary>
-    NIO,
+    NIO = 173,
     /// <summary>Dutch Guilder
     /// </summary>
-    NLG,
+    NLG = 174,
     /// <summary>Norwegian Krone
     /// </summary>
-    NOK,
+    NOK = 175,
     /// <summary>Nepalese Rupee
     /// </summary>
-    NPR,
+    NPR = 176,
     /// <summary>New Zealand Dollar
     /// </summary>
-    NZD,
+    NZD = 177,
     /// <summary>Omani Rial
     /// </summary>
-    OMR,
+    OMR = 178,
     /// <summary>Panamanian Balboa
     /// </summary>
-    PAB,
+    PAB = 179,
     /// <summary>Peruvian Inti
     /// </summary>
-    PEI,
+    PEI = 180,
     /// <summary>Peruvian Nuevo Sol
     /// </summary>
-    PEN,
+    PEN = 181,
     /// <summary>Peruvian Sol (1863?1965)
     /// </summary>
-    PES,
+    PES = 182,
     /// <summary>Papua New Guinean Kina
     /// </summary>
-    PGK,
+    PGK = 183,
     /// <summary>Philippine Peso
     /// </summary>
-    PHP,
+    PHP = 184,
     /// <summary>Pakistani Rupee
     /// </summary>
-    PKR,
+    PKR = 185,
     /// <summary>Polish Zloty
     /// </summary>
-    PLN,
+    PLN = 186,
     /// <summary>Polish Zloty (1950?1995)
     /// </summary>
-    PLZ,
+    PLZ = 187,
     /// <summary>Portuguese Escudo
     /// </summary>
-    PTE,
+    PTE = 188,
     /// <summary>Paraguayan Guarani
     /// </summary>
-    PYG,
+    PYG = 189,
     /// <summary>Qatari Rial
     /// </summary>
-    QAR,
+    QAR = 190,
     /// <summary>Rhodesian Dollar
     /// </summary>
-    RHD,
+    RHD = 191,
     /// <summary>Romanian Leu (1952?2006)
     /// </summary>
-    ROL,
+    ROL = 192,
     /// <summary>Romanian Leu
     /// </summary>
-    RON,
+    RON = 193,
     /// <summary>Serbian Dinar
     /// </summary>
-    RSD,
+    RSD = 194,
     /// <summary>Russian Ruble
     /// </summary>
-    RUB,
+    RUB = 195,
     /// <summary>Russian Ruble (1991?1998)
     /// </summary>
-    RUR,
+    RUR = 196,
     /// <summary>Rwandan Franc
     /// </summary>
-    RWF,
+    RWF = 197,
     /// <summary>Saudi Riyal
     /// </summary>
-    SAR,
+    SAR = 198,
     /// <summary>Solomon Islands Dollar
     /// </summary>
-    SBD,
+    SBD = 199,
     /// <summary>Seychellois Rupee
     /// </summary>
-    SCR,
+    SCR = 200,
     /// <summary>Sudanese Dinar (1992?2007)
     /// </summary>
-    SDD,
+    SDD = 201,
     /// <summary>Sudanese Pound
     /// </summary>
-    SDG,
+    SDG = 202,
     /// <summary>Sudanese Pound (1957?1998)
     /// </summary>
-    SDP,
+    SDP = 203,
     /// <summary>Swedish Krona
     /// </summary>
-    SEK,
+    SEK = 204,
     /// <summary>Singapore Dollar
     /// </summary>
-    SGD,
+    SGD = 205,
     /// <summary>St. Helena Pound
     /// </summary>
-    SHP,
+    SHP = 206,
     /// <summary>Slovenian Tolar
     /// </summary>
-    SIT,
+    SIT = 207,
     /// <summary>Slovak Koruna
     /// </summary>
-    SKK,
+    SKK = 208,
     /// <summary>Sierra Leonean Leone
     /// </summary>
-    SLL,
+    SLL = 209,
     /// <summary>Somali Shilling
     /// </summary>
-    SOS,
+    SOS = 210,
     /// <summary>Surinamese Dollar
     /// </summary>
-    SRD,
+    SRD = 211,
     /// <summary>Surinamese Guilder
     /// </summary>
-    SRG,
+    SRG = 212,
     /// <summary>South Sudanese Pound
     /// </summary>
-    SSP,
+    SSP = 213,
     /// <summary>S?o Tom? &amp; Pr?ncipe Dobra
     /// </summary>
-    STD,
+    STD = 214,
     /// <summary>Soviet Rouble
     /// </summary>
-    SUR,
+    SUR = 215,
     /// <summary>Salvadoran Col?n
     /// </summary>
-    SVC,
+    SVC = 216,
     /// <summary>Syrian Pound
     /// </summary>
-    SYP,
+    SYP = 217,
     /// <summary>Swazi Lilangeni
     /// </summary>
-    SZL,
+    SZL = 218,
     /// <summary>Thai Baht
     /// </summary>
-    THB,
+    THB = 219,
     /// <summary>Tajikistani Ruble
     /// </summary>
-    TJR,
+    TJR = 220,
     /// <summary>Tajikistani Somoni
     /// </summary>
-    TJS,
+    TJS = 221,
     /// <summary>Turkmenistani Manat (1993?2009)
     /// </summary>
-    TMM,
+    TMM = 222,
     /// <summary>Turkmenistani Manat
     /// </summary>
-    TMT,
+    TMT = 223,
     /// <summary>Tunisian Dinar
     /// </summary>
-    TND,
+    TND = 224,
     /// <summary>Tongan Pa?anga
     /// </summary>
-    TOP,
+    TOP = 225,
     /// <summary>Timorese Escudo
     /// </summary>
-    TPE,
+    TPE = 226,
     /// <summary>Turkish Lira (1922?2005)
     /// </summary>
-    TRL,
+    TRL = 227,
     /// <summary>Turkish Lira
     /// </summary>
-    TRY,
+    TRY = 228,
     /// <summary>Trinidad &amp; Tobago Dollar
     /// </summary>
-    TTD,
+    TTD = 229,
     /// <summary>New Taiwan Dollar
     /// </summary>
-    TWD,
+    TWD = 230,
     /// <summary>Tanzanian Shilling
     /// </summary>
-    TZS,
+    TZS = 231,
     /// <summary>Ukrainian Hryvnia
     /// </summary>
-    UAH,
+    UAH = 232,
     /// <summary>Ukrainian Karbovanets
     /// </summary>
-    UAK,
+    UAK = 233,
     /// <summary>Ugandan Shilling (1966?1987)
     /// </summary>
-    UGS,
+    UGS = 234,
     /// <summary>Ugandan Shilling
     /// </summary>
-    UGX,
+    UGX = 235,
     /// <summary>US Dollar
     /// </summary>
-    USD,
+    USD = 236,
     /// <summary>Uruguayan Peso (1975?1993)
     /// </summary>
-    UYP,
+    UYP = 237,
     /// <summary>Uruguayan Peso
     /// </summary>
-    UYU,
+    UYU = 238,
     /// <summary>Uzbekistani Som
     /// </summary>
-    UZS,
+    UZS = 239,
     /// <summary>Venezuelan Bol?var (1871?2008)
     /// </summary>
-    VEB,
+    VEB = 240,
     /// <summary>Venezuelan Bol?var
     /// </summary>
-    VEF,
+    VEF = 241,
     /// <summary>Vietnamese Dong
     /// </summary>
-    VND,
+    VND = 242,
     /// <summary>Vietnamese Dong (1978?1985)
     /// </summary>
-    VNN,
+    VNN = 243,
     /// <summary>Vanuatu Vatu
     /// </summary>
-    VUV,
+    VUV = 244,
     /// <summary>Samoan Tala
     /// </summary>
-    WST,
+    WST = 245,
     /// <summary>Central African CFA Franc
     /// </summary>
-    XAF,
+    XAF = 246,
     /// <summary>East Caribbean Dollar
     /// </summary>
-    XCD,
+    XCD = 247,
     /// <summary>West African CFA Franc
     /// </summary>
-    XOF,
+    XOF = 248,
     /// <summary>CFP Franc
     /// </summary>
-    XPF,
+    XPF = 249,
     /// <summary>Unknown Currency
     /// </summary>
-    XXX,
+    XXX = 250,
     /// <summary>Yemeni Dinar
     /// </summary>
-    YDD,
+    YDD = 251,
     /// <summary>Yemeni Rial
     /// </summary>
-    YER,
+    YER = 252,
     /// <summary>Yugoslavian Hard Dinar (1966?1990)
     /// </summary>
-    YUD,
+    YUD = 253,
     /// <summary>Yugoslavian New Dinar (1994?2002)
     /// </summary>
-    YUM,
+    YUM = 254,
     /// <summary>Yugoslavian Convertible Dinar (1990?1992)
     /// </summary>
-    YUN,
+    YUN = 255,
     /// <summary>Yugoslavian Reformed Dinar (1992?1993)
     /// </summary>
-    YUR,
+    YUR = 256,
     /// <summary>South African Rand
     /// </summary>
-    ZAR,
+    ZAR = 257,
     /// <summary>Zambian Kwacha (1968?2012)
     /// </summary>
-    ZMK,
+    ZMK = 258,
     /// <summary>Zambian Kwacha
     /// </summary>
-    ZMW,
+    ZMW = 259,
     /// <summary>Zairean New Zaire (1993?1998)
     /// </summary>
-    ZRN,
+    ZRN = 260,
     /// <summary>Zairean Zaire (1971?1993)
     /// </summary>
-    ZRZ,
+    ZRZ = 261,
     /// <summary>Zimbabwean Dollar (1980?2008)
     /// </summary>
-    ZWD,
+    ZWD = 262,
     /// <summary>Zimbabwean Dollar (2009)
     /// </summary>
-    ZWL,
+    ZWL = 263,
     /// <summary>Zimbabwean Dollar (2008)
     /// </summary>
-    ZWR,
+    ZWR = 264,
   }
 
 
@@ -62100,7 +62103,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((PromotionPage)(results[0]));
+      return ((PromotionPage) (results[0]));
     }
 
     /// <summary>Performs the given <a href='PromotionOperation'>PromotionOperation</a>.
@@ -62116,7 +62119,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((Promotion[])(results[0]));
+      return ((Promotion[]) (results[0]));
     }
   }
 
@@ -62530,11 +62533,11 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "Promotion.Status", Namespace = "https://adwords.google.com/api/adwords/express/v201605")]
   public enum PromotionStatus {
-    DRAFT,
-    ENABLED,
-    PAUSED,
-    REMOVED,
-    UPGRADED_TO_ADWORDS,
+    DRAFT = 0,
+    ENABLED = 1,
+    PAUSED = 2,
+    REMOVED = 3,
+    UPGRADED_TO_ADWORDS = 4,
   }
 
 
@@ -62782,916 +62785,916 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum ExpressRegionCode {
     /// <summary>Ascension Island
     /// </summary>
-    AC,
+    AC = 0,
     /// <summary>Andorra
     /// </summary>
-    AD,
+    AD = 1,
     /// <summary>United Arab Emirates
     /// </summary>
-    AE,
+    AE = 2,
     /// <summary>Afghanistan
     /// </summary>
-    AF,
+    AF = 3,
     /// <summary>Antigua &amp; Barbuda
     /// </summary>
-    AG,
+    AG = 4,
     /// <summary>Anguilla
     /// </summary>
-    AI,
+    AI = 5,
     /// <summary>Albania
     /// </summary>
-    AL,
+    AL = 6,
     /// <summary>Armenia
     /// </summary>
-    AM,
+    AM = 7,
     /// <summary>Netherlands Antilles
     /// </summary>
-    AN,
+    AN = 8,
     /// <summary>Angola
     /// </summary>
-    AO,
+    AO = 9,
     /// <summary>Antarctica
     /// </summary>
-    AQ,
+    AQ = 10,
     /// <summary>Argentina
     /// </summary>
-    AR,
+    AR = 11,
     /// <summary>American Samoa
     /// </summary>
-    AS,
+    AS = 12,
     /// <summary>Austria
     /// </summary>
-    AT,
+    AT = 13,
     /// <summary>Australia
     /// </summary>
-    AU,
+    AU = 14,
     /// <summary>Aruba
     /// </summary>
-    AW,
+    AW = 15,
     /// <summary>?land Islands
     /// </summary>
-    AX,
+    AX = 16,
     /// <summary>Azerbaijan
     /// </summary>
-    AZ,
+    AZ = 17,
     /// <summary>Bosnia
     /// </summary>
-    BA,
+    BA = 18,
     /// <summary>Barbados
     /// </summary>
-    BB,
+    BB = 19,
     /// <summary>Bangladesh
     /// </summary>
-    BD,
+    BD = 20,
     /// <summary>Belgium
     /// </summary>
-    BE,
+    BE = 21,
     /// <summary>Burkina Faso
     /// </summary>
-    BF,
+    BF = 22,
     /// <summary>Bulgaria
     /// </summary>
-    BG,
+    BG = 23,
     /// <summary>Bahrain
     /// </summary>
-    BH,
+    BH = 24,
     /// <summary>Burundi
     /// </summary>
-    BI,
+    BI = 25,
     /// <summary>Benin
     /// </summary>
-    BJ,
+    BJ = 26,
     /// <summary>St. Barth?lemy
     /// </summary>
-    BL,
+    BL = 27,
     /// <summary>Bermuda
     /// </summary>
-    BM,
+    BM = 28,
     /// <summary>Brunei
     /// </summary>
-    BN,
+    BN = 29,
     /// <summary>Bolivia
     /// </summary>
-    BO,
+    BO = 30,
     /// <summary>Caribbean Netherlands
     /// </summary>
-    BQ,
+    BQ = 31,
     /// <summary>Brazil
     /// </summary>
-    BR,
+    BR = 32,
     /// <summary>Bahamas
     /// </summary>
-    BS,
+    BS = 33,
     /// <summary>Bhutan
     /// </summary>
-    BT,
+    BT = 34,
     /// <summary>Burma
     /// </summary>
-    BU,
+    BU = 35,
     /// <summary>Bouvet Island
     /// </summary>
-    BV,
+    BV = 36,
     /// <summary>Botswana
     /// </summary>
-    BW,
+    BW = 37,
     /// <summary>Belarus
     /// </summary>
-    BY,
+    BY = 38,
     /// <summary>Belize
     /// </summary>
-    BZ,
+    BZ = 39,
     /// <summary>Canada
     /// </summary>
-    CA,
+    CA = 40,
     /// <summary>Cocos (Keeling) Islands
     /// </summary>
-    CC,
+    CC = 41,
     /// <summary>Congo (DRC)
     /// </summary>
-    CD,
+    CD = 42,
     /// <summary>Central African Republic
     /// </summary>
-    CF,
+    CF = 43,
     /// <summary>Congo (Republic)
     /// </summary>
-    CG,
+    CG = 44,
     /// <summary>Switzerland
     /// </summary>
-    CH,
+    CH = 45,
     /// <summary>Ivory Coast
     /// </summary>
-    CI,
+    CI = 46,
     /// <summary>Cook Islands
     /// </summary>
-    CK,
+    CK = 47,
     /// <summary>Chile
     /// </summary>
-    CL,
+    CL = 48,
     /// <summary>Cameroon
     /// </summary>
-    CM,
+    CM = 49,
     /// <summary>China
     /// </summary>
-    CN,
+    CN = 50,
     /// <summary>Colombia
     /// </summary>
-    CO,
+    CO = 51,
     /// <summary>Clipperton Island
     /// </summary>
-    CP,
+    CP = 52,
     /// <summary>Costa Rica
     /// </summary>
-    CR,
+    CR = 53,
     /// <summary>Serbia and Montenegro
     /// </summary>
-    CS,
+    CS = 54,
     /// <summary>Cuba
     /// </summary>
-    CU,
+    CU = 55,
     /// <summary>Cape Verde
     /// </summary>
-    CV,
+    CV = 56,
     /// <summary>Cura?ao
     /// </summary>
-    CW,
+    CW = 57,
     /// <summary>Christmas Island
     /// </summary>
-    CX,
+    CX = 58,
     /// <summary>Cyprus
     /// </summary>
-    CY,
+    CY = 59,
     /// <summary>Czech Republic
     /// </summary>
-    CZ,
+    CZ = 60,
     /// <summary>German Democratic Republic
     /// </summary>
-    DD,
+    DD = 61,
     /// <summary>Germany
     /// </summary>
-    DE,
+    DE = 62,
     /// <summary>Diego Garcia
     /// </summary>
-    DG,
+    DG = 63,
     /// <summary>Djibouti
     /// </summary>
-    DJ,
+    DJ = 64,
     /// <summary>Denmark
     /// </summary>
-    DK,
+    DK = 65,
     /// <summary>Dominica
     /// </summary>
-    DM,
+    DM = 66,
     /// <summary>Dominican Republic
     /// </summary>
-    DO,
+    DO = 67,
     /// <summary>Algeria
     /// </summary>
-    DZ,
+    DZ = 68,
     /// <summary>Ceuta &amp; Melilla
     /// </summary>
-    EA,
+    EA = 69,
     /// <summary>Ecuador
     /// </summary>
-    EC,
+    EC = 70,
     /// <summary>Estonia
     /// </summary>
-    EE,
+    EE = 71,
     /// <summary>Egypt
     /// </summary>
-    EG,
+    EG = 72,
     /// <summary>Western Sahara
     /// </summary>
-    EH,
+    EH = 73,
     /// <summary>Eritrea
     /// </summary>
-    ER,
+    ER = 74,
     /// <summary>Spain
     /// </summary>
-    ES,
+    ES = 75,
     /// <summary>Ethiopia
     /// </summary>
-    ET,
+    ET = 76,
     /// <summary>European Union
     /// </summary>
-    EU,
+    EU = 77,
     /// <summary>Finland
     /// </summary>
-    FI,
+    FI = 78,
     /// <summary>Fiji
     /// </summary>
-    FJ,
+    FJ = 79,
     /// <summary>Falkland Islands (Islas Malvinas)
     /// </summary>
-    FK,
+    FK = 80,
     /// <summary>Micronesia
     /// </summary>
-    FM,
+    FM = 81,
     /// <summary>Faroe Islands
     /// </summary>
-    FO,
+    FO = 82,
     /// <summary>France
     /// </summary>
-    FR,
+    FR = 83,
     /// <summary>Metropolitan France
     /// </summary>
-    FX,
+    FX = 84,
     /// <summary>Gabon
     /// </summary>
-    GA,
+    GA = 85,
     /// <summary>UK
     /// </summary>
-    GB,
+    GB = 86,
     /// <summary>Grenada
     /// </summary>
-    GD,
+    GD = 87,
     /// <summary>Georgia
     /// </summary>
-    GE,
+    GE = 88,
     /// <summary>French Guiana
     /// </summary>
-    GF,
+    GF = 89,
     /// <summary>Guernsey
     /// </summary>
-    GG,
+    GG = 90,
     /// <summary>Ghana
     /// </summary>
-    GH,
+    GH = 91,
     /// <summary>Gibraltar
     /// </summary>
-    GI,
+    GI = 92,
     /// <summary>Greenland
     /// </summary>
-    GL,
+    GL = 93,
     /// <summary>Gambia
     /// </summary>
-    GM,
+    GM = 94,
     /// <summary>Guinea
     /// </summary>
-    GN,
+    GN = 95,
     /// <summary>Guadeloupe
     /// </summary>
-    GP,
+    GP = 96,
     /// <summary>Equatorial Guinea
     /// </summary>
-    GQ,
+    GQ = 97,
     /// <summary>Greece
     /// </summary>
-    GR,
+    GR = 98,
     /// <summary>South Georgia &amp; South Sandwich Islands
     /// </summary>
-    GS,
+    GS = 99,
     /// <summary>Guatemala
     /// </summary>
-    GT,
+    GT = 100,
     /// <summary>Guam
     /// </summary>
-    GU,
+    GU = 101,
     /// <summary>Guinea-Bissau
     /// </summary>
-    GW,
+    GW = 102,
     /// <summary>Guyana
     /// </summary>
-    GY,
+    GY = 103,
     /// <summary>Hong Kong
     /// </summary>
-    HK,
+    HK = 104,
     /// <summary>Heard &amp; McDonald Islands
     /// </summary>
-    HM,
+    HM = 105,
     /// <summary>Honduras
     /// </summary>
-    HN,
+    HN = 106,
     /// <summary>Croatia
     /// </summary>
-    HR,
+    HR = 107,
     /// <summary>Haiti
     /// </summary>
-    HT,
+    HT = 108,
     /// <summary>Hungary
     /// </summary>
-    HU,
+    HU = 109,
     /// <summary>Canary Islands
     /// </summary>
-    IC,
+    IC = 110,
     /// <summary>Indonesia
     /// </summary>
-    ID,
+    ID = 111,
     /// <summary>Ireland
     /// </summary>
-    IE,
+    IE = 112,
     /// <summary>Israel
     /// </summary>
-    IL,
+    IL = 113,
     /// <summary>Isle of Man
     /// </summary>
-    IM,
+    IM = 114,
     /// <summary>India
     /// </summary>
-    IN,
+    IN = 115,
     /// <summary>British Indian Ocean Territory
     /// </summary>
-    IO,
+    IO = 116,
     /// <summary>Iraq
     /// </summary>
-    IQ,
+    IQ = 117,
     /// <summary>Iran
     /// </summary>
-    IR,
+    IR = 118,
     /// <summary>Iceland
     /// </summary>
-    IS,
+    IS = 119,
     /// <summary>Italy
     /// </summary>
-    IT,
+    IT = 120,
     /// <summary>Jersey
     /// </summary>
-    JE,
+    JE = 121,
     /// <summary>Jamaica
     /// </summary>
-    JM,
+    JM = 122,
     /// <summary>Jordan
     /// </summary>
-    JO,
+    JO = 123,
     /// <summary>Japan
     /// </summary>
-    JP,
+    JP = 124,
     /// <summary>Kenya
     /// </summary>
-    KE,
+    KE = 125,
     /// <summary>Kyrgyzstan
     /// </summary>
-    KG,
+    KG = 126,
     /// <summary>Cambodia
     /// </summary>
-    KH,
+    KH = 127,
     /// <summary>Kiribati
     /// </summary>
-    KI,
+    KI = 128,
     /// <summary>Comoros
     /// </summary>
-    KM,
+    KM = 129,
     /// <summary>St. Kitts &amp; Nevis
     /// </summary>
-    KN,
+    KN = 130,
     /// <summary>North Korea
     /// </summary>
-    KP,
+    KP = 131,
     /// <summary>South Korea
     /// </summary>
-    KR,
+    KR = 132,
     /// <summary>Kuwait
     /// </summary>
-    KW,
+    KW = 133,
     /// <summary>Cayman Islands
     /// </summary>
-    KY,
+    KY = 134,
     /// <summary>Kazakhstan
     /// </summary>
-    KZ,
+    KZ = 135,
     /// <summary>Laos
     /// </summary>
-    LA,
+    LA = 136,
     /// <summary>Lebanon
     /// </summary>
-    LB,
+    LB = 137,
     /// <summary>St. Lucia
     /// </summary>
-    LC,
+    LC = 138,
     /// <summary>Liechtenstein
     /// </summary>
-    LI,
+    LI = 139,
     /// <summary>Sri Lanka
     /// </summary>
-    LK,
+    LK = 140,
     /// <summary>Liberia
     /// </summary>
-    LR,
+    LR = 141,
     /// <summary>Lesotho
     /// </summary>
-    LS,
+    LS = 142,
     /// <summary>Lithuania
     /// </summary>
-    LT,
+    LT = 143,
     /// <summary>Luxembourg
     /// </summary>
-    LU,
+    LU = 144,
     /// <summary>Latvia
     /// </summary>
-    LV,
+    LV = 145,
     /// <summary>Libya
     /// </summary>
-    LY,
+    LY = 146,
     /// <summary>Morocco
     /// </summary>
-    MA,
+    MA = 147,
     /// <summary>Monaco
     /// </summary>
-    MC,
+    MC = 148,
     /// <summary>Moldova
     /// </summary>
-    MD,
+    MD = 149,
     /// <summary>Montenegro
     /// </summary>
-    ME,
+    ME = 150,
     /// <summary>St. Martin
     /// </summary>
-    MF,
+    MF = 151,
     /// <summary>Madagascar
     /// </summary>
-    MG,
+    MG = 152,
     /// <summary>Marshall Islands
     /// </summary>
-    MH,
+    MH = 153,
     /// <summary>Macedonia (FYROM)
     /// </summary>
-    MK,
+    MK = 154,
     /// <summary>Mali
     /// </summary>
-    ML,
+    ML = 155,
     /// <summary>Myanmar
     /// </summary>
-    MM,
+    MM = 156,
     /// <summary>Mongolia
     /// </summary>
-    MN,
+    MN = 157,
     /// <summary>Macau
     /// </summary>
-    MO,
+    MO = 158,
     /// <summary>Northern Mariana Islands
     /// </summary>
-    MP,
+    MP = 159,
     /// <summary>Martinique
     /// </summary>
-    MQ,
+    MQ = 160,
     /// <summary>Mauritania
     /// </summary>
-    MR,
+    MR = 161,
     /// <summary>Montserrat
     /// </summary>
-    MS,
+    MS = 162,
     /// <summary>Malta
     /// </summary>
-    MT,
+    MT = 163,
     /// <summary>Mauritius
     /// </summary>
-    MU,
+    MU = 164,
     /// <summary>Maldives
     /// </summary>
-    MV,
+    MV = 165,
     /// <summary>Malawi
     /// </summary>
-    MW,
+    MW = 166,
     /// <summary>Mexico
     /// </summary>
-    MX,
+    MX = 167,
     /// <summary>Malaysia
     /// </summary>
-    MY,
+    MY = 168,
     /// <summary>Mozambique
     /// </summary>
-    MZ,
+    MZ = 169,
     /// <summary>Namibia
     /// </summary>
-    NA,
+    NA = 170,
     /// <summary>New Caledonia
     /// </summary>
-    NC,
+    NC = 171,
     /// <summary>Niger
     /// </summary>
-    NE,
+    NE = 172,
     /// <summary>Norfolk Island
     /// </summary>
-    NF,
+    NF = 173,
     /// <summary>Nigeria
     /// </summary>
-    NG,
+    NG = 174,
     /// <summary>Nicaragua
     /// </summary>
-    NI,
+    NI = 175,
     /// <summary>Netherlands
     /// </summary>
-    NL,
+    NL = 176,
     /// <summary>Norway
     /// </summary>
-    NO,
+    NO = 177,
     /// <summary>Nepal
     /// </summary>
-    NP,
+    NP = 178,
     /// <summary>Nauru
     /// </summary>
-    NR,
+    NR = 179,
     /// <summary>Neutral Zone
     /// </summary>
-    NT,
+    NT = 180,
     /// <summary>Niue
     /// </summary>
-    NU,
+    NU = 181,
     /// <summary>New Zealand
     /// </summary>
-    NZ,
+    NZ = 182,
     /// <summary>Oman
     /// </summary>
-    OM,
+    OM = 183,
     /// <summary>Panama
     /// </summary>
-    PA,
+    PA = 184,
     /// <summary>Peru
     /// </summary>
-    PE,
+    PE = 185,
     /// <summary>French Polynesia
     /// </summary>
-    PF,
+    PF = 186,
     /// <summary>Papua New Guinea
     /// </summary>
-    PG,
+    PG = 187,
     /// <summary>Philippines
     /// </summary>
-    PH,
+    PH = 188,
     /// <summary>Pakistan
     /// </summary>
-    PK,
+    PK = 189,
     /// <summary>Poland
     /// </summary>
-    PL,
+    PL = 190,
     /// <summary>St. Pierre &amp; Miquelon
     /// </summary>
-    PM,
+    PM = 191,
     /// <summary>Pitcairn Islands
     /// </summary>
-    PN,
+    PN = 192,
     /// <summary>Puerto Rico
     /// </summary>
-    PR,
+    PR = 193,
     /// <summary>Palestine
     /// </summary>
-    PS,
+    PS = 194,
     /// <summary>Portugal
     /// </summary>
-    PT,
+    PT = 195,
     /// <summary>Palau
     /// </summary>
-    PW,
+    PW = 196,
     /// <summary>Paraguay
     /// </summary>
-    PY,
+    PY = 197,
     /// <summary>Qatar
     /// </summary>
-    QA,
+    QA = 198,
     /// <summary>Outlying Oceania
     /// </summary>
-    QO,
+    QO = 199,
     /// <summary>European Union
     /// </summary>
-    QU,
+    QU = 200,
     /// <summary>R?union
     /// </summary>
-    RE,
+    RE = 201,
     /// <summary>Romania
     /// </summary>
-    RO,
+    RO = 202,
     /// <summary>Serbia
     /// </summary>
-    RS,
+    RS = 203,
     /// <summary>Russia
     /// </summary>
-    RU,
+    RU = 204,
     /// <summary>Rwanda
     /// </summary>
-    RW,
+    RW = 205,
     /// <summary>Saudi Arabia
     /// </summary>
-    SA,
+    SA = 206,
     /// <summary>Solomon Islands
     /// </summary>
-    SB,
+    SB = 207,
     /// <summary>Seychelles
     /// </summary>
-    SC,
+    SC = 208,
     /// <summary>Sudan
     /// </summary>
-    SD,
+    SD = 209,
     /// <summary>Sweden
     /// </summary>
-    SE,
+    SE = 210,
     /// <summary>Singapore
     /// </summary>
-    SG,
+    SG = 211,
     /// <summary>St. Helena
     /// </summary>
-    SH,
+    SH = 212,
     /// <summary>Slovenia
     /// </summary>
-    SI,
+    SI = 213,
     /// <summary>Svalbard &amp; Jan Mayen
     /// </summary>
-    SJ,
+    SJ = 214,
     /// <summary>Slovakia
     /// </summary>
-    SK,
+    SK = 215,
     /// <summary>Sierra Leone
     /// </summary>
-    SL,
+    SL = 216,
     /// <summary>San Marino
     /// </summary>
-    SM,
+    SM = 217,
     /// <summary>Senegal
     /// </summary>
-    SN,
+    SN = 218,
     /// <summary>Somalia
     /// </summary>
-    SO,
+    SO = 219,
     /// <summary>Suriname
     /// </summary>
-    SR,
+    SR = 220,
     /// <summary>South Sudan
     /// </summary>
-    SS,
+    SS = 221,
     /// <summary>S?o Tom? &amp; Pr?ncipe
     /// </summary>
-    ST,
+    ST = 222,
     /// <summary>Union of Soviet Socialist Republics
     /// </summary>
-    SU,
+    SU = 223,
     /// <summary>El Salvador
     /// </summary>
-    SV,
+    SV = 224,
     /// <summary>Sint Maarten
     /// </summary>
-    SX,
+    SX = 225,
     /// <summary>Syria
     /// </summary>
-    SY,
+    SY = 226,
     /// <summary>Swaziland
     /// </summary>
-    SZ,
+    SZ = 227,
     /// <summary>Tristan da Cunha
     /// </summary>
-    TA,
+    TA = 228,
     /// <summary>Turks &amp; Caicos Islands
     /// </summary>
-    TC,
+    TC = 229,
     /// <summary>Chad
     /// </summary>
-    TD,
+    TD = 230,
     /// <summary>French Southern Territories
     /// </summary>
-    TF,
+    TF = 231,
     /// <summary>Togo
     /// </summary>
-    TG,
+    TG = 232,
     /// <summary>Thailand
     /// </summary>
-    TH,
+    TH = 233,
     /// <summary>Tajikistan
     /// </summary>
-    TJ,
+    TJ = 234,
     /// <summary>Tokelau
     /// </summary>
-    TK,
+    TK = 235,
     /// <summary>East Timor
     /// </summary>
-    TL,
+    TL = 236,
     /// <summary>Turkmenistan
     /// </summary>
-    TM,
+    TM = 237,
     /// <summary>Tunisia
     /// </summary>
-    TN,
+    TN = 238,
     /// <summary>Tonga
     /// </summary>
-    TO,
+    TO = 239,
     /// <summary>East Timor
     /// </summary>
-    TP,
+    TP = 240,
     /// <summary>Turkey
     /// </summary>
-    TR,
+    TR = 241,
     /// <summary>Trinidad &amp; Tobago
     /// </summary>
-    TT,
+    TT = 242,
     /// <summary>Tuvalu
     /// </summary>
-    TV,
+    TV = 243,
     /// <summary>Taiwan
     /// </summary>
-    TW,
+    TW = 244,
     /// <summary>Tanzania
     /// </summary>
-    TZ,
+    TZ = 245,
     /// <summary>Ukraine
     /// </summary>
-    UA,
+    UA = 246,
     /// <summary>Uganda
     /// </summary>
-    UG,
+    UG = 247,
     /// <summary>U.S. Outlying Islands
     /// </summary>
-    UM,
+    UM = 248,
     /// <summary>US
     /// </summary>
-    US,
+    US = 249,
     /// <summary>Uruguay
     /// </summary>
-    UY,
+    UY = 250,
     /// <summary>Uzbekistan
     /// </summary>
-    UZ,
+    UZ = 251,
     /// <summary>Vatican City
     /// </summary>
-    VA,
+    VA = 252,
     /// <summary>St. Vincent &amp; Grenadines
     /// </summary>
-    VC,
+    VC = 253,
     /// <summary>Venezuela
     /// </summary>
-    VE,
+    VE = 254,
     /// <summary>British Virgin Islands
     /// </summary>
-    VG,
+    VG = 255,
     /// <summary>U.S. Virgin Islands
     /// </summary>
-    VI,
+    VI = 256,
     /// <summary>Vietnam
     /// </summary>
-    VN,
+    VN = 257,
     /// <summary>Vanuatu
     /// </summary>
-    VU,
+    VU = 258,
     /// <summary>Wallis &amp; Futuna
     /// </summary>
-    WF,
+    WF = 259,
     /// <summary>Samoa
     /// </summary>
-    WS,
+    WS = 260,
     /// <summary>Pseudo locale with accented, widened strings with brackets
     /// </summary>
-    XA,
+    XA = 261,
     /// <summary>Pseudo locale for bi-directional text layout testing
     /// </summary>
-    XB,
+    XB = 262,
     /// <summary>Pseudo locales for cracked builds
     /// </summary>
-    XC,
+    XC = 263,
     /// <summary>Kosovo
     /// </summary>
-    XK,
+    XK = 264,
     /// <summary>Democratic Yemen
     /// </summary>
-    YD,
+    YD = 265,
     /// <summary>Yemen
     /// </summary>
-    YE,
+    YE = 266,
     /// <summary>Mayotte
     /// </summary>
-    YT,
+    YT = 267,
     /// <summary>Yugoslavia
     /// </summary>
-    YU,
+    YU = 268,
     /// <summary>South Africa
     /// </summary>
-    ZA,
+    ZA = 269,
     /// <summary>Zambia
     /// </summary>
-    ZM,
+    ZM = 270,
     /// <summary>Zaire
     /// </summary>
-    ZR,
+    ZR = 271,
     /// <summary>Zimbabwe
     /// </summary>
-    ZW,
+    ZW = 272,
     /// <summary>Unknown Region
     /// </summary>
-    ZZ,
+    ZZ = 273,
     /// <summary>World
     /// </summary>
-    UN001,
+    UN001 = 274,
     /// <summary>Africa
     /// </summary>
-    UN002,
+    UN002 = 275,
     /// <summary>North America
     /// </summary>
-    UN003,
+    UN003 = 276,
     /// <summary>South America
     /// </summary>
-    UN005,
+    UN005 = 277,
     /// <summary>Oceania
     /// </summary>
-    UN009,
+    UN009 = 278,
     /// <summary>Western Africa
     /// </summary>
-    UN011,
+    UN011 = 279,
     /// <summary>Central America
     /// </summary>
-    UN013,
+    UN013 = 280,
     /// <summary>Eastern Africa
     /// </summary>
-    UN014,
+    UN014 = 281,
     /// <summary>Northern Africa
     /// </summary>
-    UN015,
+    UN015 = 282,
     /// <summary>Middle Africa
     /// </summary>
-    UN017,
+    UN017 = 283,
     /// <summary>Southern Africa
     /// </summary>
-    UN018,
+    UN018 = 284,
     /// <summary>Americas
     /// </summary>
-    UN019,
+    UN019 = 285,
     /// <summary>Northern America
     /// </summary>
-    UN021,
+    UN021 = 286,
     /// <summary>Caribbean
     /// </summary>
-    UN029,
+    UN029 = 287,
     /// <summary>Eastern Asia
     /// </summary>
-    UN030,
+    UN030 = 288,
     /// <summary>Southern Asia
     /// </summary>
-    UN034,
+    UN034 = 289,
     /// <summary>Southeast Asia
     /// </summary>
-    UN035,
+    UN035 = 290,
     /// <summary>Southern Europe
     /// </summary>
-    UN039,
+    UN039 = 291,
     /// <summary>Australasia
     /// </summary>
-    UN053,
+    UN053 = 292,
     /// <summary>Melanesia
     /// </summary>
-    UN054,
+    UN054 = 293,
     /// <summary>Micronesian Region
     /// </summary>
-    UN057,
+    UN057 = 294,
     /// <summary>Polynesia
     /// </summary>
-    UN061,
+    UN061 = 295,
     /// <summary>Asia
     /// </summary>
-    UN142,
+    UN142 = 296,
     /// <summary>Central Asia
     /// </summary>
-    UN143,
+    UN143 = 297,
     /// <summary>Western Asia
     /// </summary>
-    UN145,
+    UN145 = 298,
     /// <summary>Europe
     /// </summary>
-    UN150,
+    UN150 = 299,
     /// <summary>Eastern Europe
     /// </summary>
-    UN151,
+    UN151 = 300,
     /// <summary>Northern Europe
     /// </summary>
-    UN154,
+    UN154 = 301,
     /// <summary>Western Europe
     /// </summary>
-    UN155,
+    UN155 = 302,
     /// <summary>Latin America
     /// </summary>
-    UN419,
+    UN419 = 303,
   }
 
 
@@ -63810,63 +63813,63 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum PromotionErrorReason {
     /// <summary>The specified business does not have a public name.
     /// </summary>
-    MISSING_BUSINESS_NAME,
+    MISSING_BUSINESS_NAME = 0,
     /// <summary>The specified business is deleted.
     /// </summary>
-    BUSINESS_DELETED,
+    BUSINESS_DELETED = 1,
     /// <summary>The specified business is not owned by the current user.
     /// </summary>
-    NOT_BUSINESS_OWNER,
+    NOT_BUSINESS_OWNER = 2,
     /// <summary>No owner found for business.
     /// </summary>
-    BUSINESS_OWNER_NOT_FOUND,
+    BUSINESS_OWNER_NOT_FOUND = 3,
     /// <summary>Business owner's account doesn't match effective account.
     /// </summary>
-    BUSINESS_OWNER_ACCOUNT_NOT_MATCHED,
+    BUSINESS_OWNER_ACCOUNT_NOT_MATCHED = 4,
     /// <summary>Business is promoted by another account.
     /// </summary>
-    BUSINESS_PROMOTED_BY_ANOTHER_ACCOUNT,
+    BUSINESS_PROMOTED_BY_ANOTHER_ACCOUNT = 5,
     /// <summary>The business address is in an unsupported country.
     /// </summary>
-    BUSINESS_COUNTRY_NOT_SUPPORTED,
+    BUSINESS_COUNTRY_NOT_SUPPORTED = 6,
     /// <summary>The plus page uses an unsupported language.
     /// </summary>
-    BUSINESS_LANGUAGE_NOT_SUPPORTED,
+    BUSINESS_LANGUAGE_NOT_SUPPORTED = 7,
     /// <summary>Not supported currency.
     /// </summary>
-    CURRENCY_NOT_SUPPORTED,
+    CURRENCY_NOT_SUPPORTED = 8,
     /// <summary>AOL account.
     /// </summary>
-    AOL_ACCOUNT,
+    AOL_ACCOUNT = 9,
     /// <summary>The requested action is not supported for a manager account.
     /// </summary>
-    MANAGER_ACCOUNT,
+    MANAGER_ACCOUNT = 10,
     /// <summary>The specified destination URL is invalid.
     /// </summary>
-    INVALID_DESTINATION_URL,
+    INVALID_DESTINATION_URL = 11,
     /// <summary>Call tracking is not supported.
     /// </summary>
-    CALL_TRACKING_NOT_SUPPORTED,
+    CALL_TRACKING_NOT_SUPPORTED = 12,
     /// <summary>Phone number is invalid.
     /// </summary>
-    INVALID_PHONE_NUMBER,
+    INVALID_PHONE_NUMBER = 13,
     /// <summary>Premium rate phone numbers e.g. 1-900 numbers not allowed.
     /// </summary>
-    PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED,
+    PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED = 14,
     /// <summary>Non-local +Pages are not supported.
     /// </summary>
-    NON_LOCAL_BUSINESS,
+    NON_LOCAL_BUSINESS = 15,
     /// <summary>Promotion is already migrated to AdWords.
     /// </summary>
-    ALREADY_MIGRATED,
+    ALREADY_MIGRATED = 16,
     /// <summary>Account is no longer linked to Google My Business account.
     /// </summary>
-    BUSINESS_ACCESS_DENIED,
+    BUSINESS_ACCESS_DENIED = 17,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 18,
   }
 
 
@@ -63929,7 +63932,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((ProductServicePage)(results[0]));
+      return ((ProductServicePage) (results[0]));
     }
   }
 
@@ -64064,7 +64067,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((CampaignSharedSetPage)(results[0]));
+      return ((CampaignSharedSetPage) (results[0]));
     }
 
     /// <summary>Applies the list of mutate operations.
@@ -64080,7 +64083,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CampaignSharedSetReturnValue)(results[0]));
+      return ((CampaignSharedSetReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of CampaignSharedSets that match the query.
@@ -64097,7 +64100,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((CampaignSharedSetPage)(results[0]));
+      return ((CampaignSharedSetPage) (results[0]));
     }
   }
 
@@ -64384,13 +64387,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum SharedSetType {
-    NEGATIVE_KEYWORDS,
-    NEGATIVE_PLACEMENTS,
+    NEGATIVE_KEYWORDS = 0,
+    NEGATIVE_PLACEMENTS = 1,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -64400,13 +64403,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignSharedSet.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum CampaignSharedSetStatus {
-    ENABLED,
-    REMOVED,
+    ENABLED = 0,
+    REMOVED = 1,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -64547,9 +64550,9 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "CampaignSharedSetError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum CampaignSharedSetErrorReason {
-    CAMPAIGN_SHARED_SET_DOES_NOT_EXIST,
-    SHARED_SET_NOT_ACTIVE,
-    UNKNOWN,
+    CAMPAIGN_SHARED_SET_DOES_NOT_EXIST = 0,
+    SHARED_SET_NOT_ACTIVE = 1,
+    UNKNOWN = 2,
   }
 
 
@@ -64611,7 +64614,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((SharedCriterionPage)(results[0]));
+      return ((SharedCriterionPage) (results[0]));
     }
 
     /// <summary>Adds, removes criteria in a shared set.
@@ -64628,7 +64631,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((SharedCriterionReturnValue)(results[0]));
+      return ((SharedCriterionReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of SharedCriterion that match the query.
@@ -64644,7 +64647,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((SharedCriterionPage)(results[0]));
+      return ((SharedCriterionPage) (results[0]));
     }
   }
 
@@ -65000,15 +65003,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SharedCriterionError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum SharedCriterionErrorReason {
-    EXCEEDS_CRITERIA_LIMIT,
-    INCORRECT_CRITERION_TYPE,
+    EXCEEDS_CRITERIA_LIMIT = 0,
+    INCORRECT_CRITERION_TYPE = 1,
     /// <summary>Cannot add the same crietrion as positive and negative in the same shared set.
     /// </summary>
-    CANNOT_TARGET_AND_EXCLUDE,
+    CANNOT_TARGET_AND_EXCLUDE = 2,
     /// <summary>Negative shared set type requires a negative shared set criterion.
     /// </summary>
-    NEGATIVE_CRITERION_REQUIRED,
-    UNKNOWN,
+    NEGATIVE_CRITERION_REQUIRED = 3,
+    UNKNOWN = 4,
   }
 
 
@@ -65072,7 +65075,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((SharedSetPage)(results[0]));
+      return ((SharedSetPage) (results[0]));
     }
 
     /// <summary>Applies the list of mutate operations.
@@ -65088,7 +65091,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((SharedSetReturnValue)(results[0]));
+      return ((SharedSetReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of SharedSet entities that match the query.
@@ -65105,7 +65108,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((SharedSetPage)(results[0]));
+      return ((SharedSetPage) (results[0]));
     }
   }
 
@@ -65411,13 +65414,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SharedSet.Status", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum SharedSetStatus {
-    ENABLED,
-    REMOVED,
+    ENABLED = 0,
+    REMOVED = 1,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 2,
   }
 
 
@@ -65605,11 +65608,11 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SharedSetError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum SharedSetErrorReason {
-    CUSTOMER_CANNOT_CREATE_SHARED_SET_OF_THIS_TYPE,
-    DUPLICATE_NAME,
-    SHARED_SET_REMOVED,
-    SHARED_SET_IN_USE,
-    UNKNOWN,
+    CUSTOMER_CANNOT_CREATE_SHARED_SET_OF_THIS_TYPE = 0,
+    DUPLICATE_NAME = 1,
+    SHARED_SET_REMOVED = 2,
+    SHARED_SET_IN_USE = 3,
+    UNKNOWN = 4,
   }
 
 
@@ -65676,7 +65679,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((LabelPage)(results[0]));
+      return ((LabelPage) (results[0]));
     }
 
     /// <summary>Applies the list of mutate operations.
@@ -65694,7 +65697,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((LabelReturnValue)(results[0]));
+      return ((LabelReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of <a href='Label'>Label</a>s that match the query.
@@ -65712,7 +65715,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((LabelPage)(results[0]));
+      return ((LabelPage) (results[0]));
     }
   }
 
@@ -65973,18 +65976,18 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum LabelErrorReason {
     /// <summary>Label name must be unique.
     /// </summary>
-    DUPLICATE_NAME,
+    DUPLICATE_NAME = 0,
     /// <summary>Label names cannot be empty
     /// </summary>
-    INVALID_LABEL_NAME,
+    INVALID_LABEL_NAME = 1,
     /// <summary>Invalid Label type. A specific type of Label is required.
     /// </summary>
-    INVALID_LABEL_TYPE,
+    INVALID_LABEL_TYPE = 2,
     /// <summary>Default error. <span class="constraint Rejected">Used for return value only. An
     /// enumeration could not be processed, typically due to incompatibility with your
     /// WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 3,
   }
 
 
@@ -66053,7 +66056,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((AdGroupPage)(results[0]));
+      return ((AdGroupPage) (results[0]));
     }
 
     /// <summary>Adds, updates, or removes ad groups. <p class="note"><b>Note:</b> <a
@@ -66072,7 +66075,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupReturnValue)(results[0]));
+      return ((AdGroupReturnValue) (results[0]));
     }
 
     /// <summary>Adds labels to the <a href='AdGroup'>ad group</a> or removes <a
@@ -66100,7 +66103,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupLabelReturnValue)(results[0]));
+      return ((AdGroupLabelReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of ad groups that match the query.
@@ -66116,7 +66119,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((AdGroupPage)(results[0]));
+      return ((AdGroupPage) (results[0]));
     }
   }
 
@@ -66380,7 +66383,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((AccountLabel[])(results[0]));
+      return ((AccountLabel[]) (results[0]));
     }
 
     /// <summary>Possible actions: <ul> <li>Create a new label - create a new <a
@@ -66404,7 +66407,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AccountLabel[])(results[0]));
+      return ((AccountLabel[]) (results[0]));
     }
   }
 
@@ -66665,31 +66668,31 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum LabelServiceErrorReason {
     /// <summary>The label name is empty.
     /// </summary>
-    EMPTY_LABEL_NAME,
+    EMPTY_LABEL_NAME = 0,
     /// <summary>The label name is longer than max allowed size.
     /// </summary>
-    LABEL_NAME_TOO_LONG,
+    LABEL_NAME_TOO_LONG = 1,
     /// <summary>The customer already has an active label with the same name.
     /// </summary>
-    DUPLICATE_LABEL_NAME,
+    DUPLICATE_LABEL_NAME = 2,
     /// <summary>The label name is reserved by the system.
     /// </summary>
-    RESERVED_LABEL_NAME,
+    RESERVED_LABEL_NAME = 3,
     /// <summary>The label cannot be deleted
     /// </summary>
-    CANNOT_BE_DELETED,
+    CANNOT_BE_DELETED = 4,
     /// <summary>A customer cannot own more than 200 labels.
     /// </summary>
-    TOO_MANY_LABELS,
+    TOO_MANY_LABELS = 5,
     /// <summary>Label id was not found.
     /// </summary>
-    INVALID_LABEL_ID,
+    INVALID_LABEL_ID = 6,
     /// <summary>This customer cannot create labels. Only manager customers may create labels.
     /// </summary>
-    CUSTOMER_CANNOT_CREATE_LABELS,
+    CUSTOMER_CANNOT_CREATE_LABELS = 7,
     /// <summary>An unknown enum value has been given for this error reason.
     /// </summary>
-    SERVER_CLIENT_VERSION_MISMATCH,
+    SERVER_CLIENT_VERSION_MISMATCH = 8,
   }
 
 
@@ -66755,7 +66758,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((AdCustomizerFeedPage)(results[0]));
+      return ((AdCustomizerFeedPage) (results[0]));
     }
 
     /// <summary>Adds, removes, or modifies AdCustomizerFeeds.
@@ -66771,7 +66774,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdCustomizerFeedReturnValue)(results[0]));
+      return ((AdCustomizerFeedReturnValue) (results[0]));
     }
   }
 
@@ -67173,15 +67176,15 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdCustomizerFeedAttribute.Type", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum AdCustomizerFeedAttributeType {
-    INTEGER,
-    PRICE,
-    DATE_TIME,
-    STRING,
+    INTEGER = 0,
+    PRICE = 1,
+    DATE_TIME = 2,
+    STRING = 3,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 4,
   }
 
 
@@ -67371,26 +67374,26 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AdCustomizerFeedErrorReason {
     /// <summary>The key attribute cannot be added to an existing ad customizer feed.
     /// </summary>
-    CANNOT_ADD_KEY_ATTRIBUTE,
+    CANNOT_ADD_KEY_ATTRIBUTE = 0,
     /// <summary>The feed is not an ad customizer feed.
     /// </summary>
-    NOT_AD_CUSTOMIZER_FEED,
+    NOT_AD_CUSTOMIZER_FEED = 1,
     /// <summary>Name of AdCustomizerFeed is not allowed.
     /// </summary>
-    INVALID_FEED_NAME,
+    INVALID_FEED_NAME = 2,
     /// <summary>Too many AdCustomizerFeedAttributes for an AdCustomizerFeed.
     /// </summary>
-    TOO_MANY_FEED_ATTRIBUTES_FOR_FEED,
+    TOO_MANY_FEED_ATTRIBUTES_FOR_FEED = 3,
     /// <summary>The names of the AdCustomizerFeedAttributes must be unique.
     /// </summary>
-    ATTRIBUTE_NAMES_NOT_UNIQUE,
+    ATTRIBUTE_NAMES_NOT_UNIQUE = 4,
     /// <summary>The given id refers to a removed Feed. Removed Feeds are immutable.
     /// </summary>
-    FEED_DELETED,
+    FEED_DELETED = 5,
     /// <summary>Feed name matches that of another active Feed.
     /// </summary>
-    DUPLICATE_FEED_NAME,
-    UNKNOWN,
+    DUPLICATE_FEED_NAME = 6,
+    UNKNOWN = 7,
   }
 
 
@@ -67458,7 +67461,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((AdGroupExtensionSettingPage)(results[0]));
+      return ((AdGroupExtensionSettingPage) (results[0]));
     }
 
     /// <summary>Applies the list of mutate operations (add, remove, and set). <p>Beginning in
@@ -67482,7 +67485,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupExtensionSettingReturnValue)(results[0]));
+      return ((AdGroupExtensionSettingReturnValue) (results[0]));
     }
 
     /// <summary>Returns a list of AdGroupExtensionSettings that match the query.
@@ -67498,7 +67501,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((AdGroupExtensionSettingPage)(results[0]));
+      return ((AdGroupExtensionSettingPage) (results[0]));
     }
   }
 
@@ -67708,7 +67711,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((CampaignExtensionSettingPage)(results[0]));
+      return ((CampaignExtensionSettingPage) (results[0]));
     }
 
     /// <summary>Applies the list of mutate operations (add, remove, and set). <p>Beginning in
@@ -67732,7 +67735,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CampaignExtensionSettingReturnValue)(results[0]));
+      return ((CampaignExtensionSettingReturnValue) (results[0]));
     }
 
     /// <summary>Returns a list of CampaignExtensionSettings that match the query.
@@ -67748,7 +67751,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((CampaignExtensionSettingPage)(results[0]));
+      return ((CampaignExtensionSettingPage) (results[0]));
     }
   }
 
@@ -67958,7 +67961,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((CustomerExtensionSettingPage)(results[0]));
+      return ((CustomerExtensionSettingPage) (results[0]));
     }
 
     /// <summary>Applies the list of mutate operations (add, remove, and set). <p>Beginning in
@@ -67982,7 +67985,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((CustomerExtensionSettingReturnValue)(results[0]));
+      return ((CustomerExtensionSettingReturnValue) (results[0]));
     }
 
     /// <summary>Returns a list of CustomerExtensionSettings that match the query.
@@ -67998,7 +68001,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((CustomerExtensionSettingPage)(results[0]));
+      return ((CustomerExtensionSettingPage) (results[0]));
     }
   }
 
@@ -68191,7 +68194,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     }
 
     /// <summary>Returns a DraftPage that contains a list of Draft objects matching the selector.
-    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'>if problems occurred while retrieving the
     /// results.</exception>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -68202,14 +68205,14 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((DraftPage)(results[0]));
+      return ((DraftPage) (results[0]));
     }
 
     /// <summary>The mutate action is used for creating new Drafts and controlling the life cycle
     /// of Drafts, such as abandoning or promoting Drafts.
     /// </summary><returns>The list of updated Drafts, in the same order as the <code></code>
     /// list.</returns>
-    /// <exception cref='ApiException'> if problems occurred while processing the
+    /// <exception cref='ApiException'>if problems occurred while processing the
     /// request.</exception>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -68220,11 +68223,11 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((DraftReturnValue)(results[0]));
+      return ((DraftReturnValue) (results[0]));
     }
 
     /// <summary>Returns a DraftPage that contains a list of Draft objects matching the query.
-    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'>if problems occurred while retrieving the
     /// results.</exception>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -68235,7 +68238,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((DraftPage)(results[0]));
+      return ((DraftPage) (results[0]));
     }
   }
 
@@ -68552,26 +68555,26 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// Rejected">Used for return value only. An enumeration could not be processed,
     /// typically due to incompatibility with your WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>Initial state of the draft, the advertiser can start adding changes with no
     /// effect on serving.
     /// </summary>
-    PROPOSED,
+    PROPOSED = 1,
     /// <summary>The process to merge changes in the draft back to the original campaign has
     /// completedly successfully. The advertiser cannot set this status directly. To
     /// move the draft to this status, set the draft to status PROMOTING and the status
     /// will be updated to PROMOTED when the changes are applied to the original
     /// campaign.
     /// </summary>
-    PROMOTED,
+    PROMOTED = 2,
     /// <summary>The advertiser requested to merge changes in the draft back into the original
     /// campaigns. The update to the original campaign will be kicked off asynchronously
     /// and the status will be updated to PROMOTED or PROMOTE_FAILED upon completion.
     /// </summary>
-    PROMOTING,
+    PROMOTING = 3,
     /// <summary>The advertiser has archived the draft.
     /// </summary>
-    ARCHIVED,
+    ARCHIVED = 4,
     /// <summary>The promotion failed after it was partially applied. Promote cannot be attempted
     /// again safely, so the issue must be corrected in the original campaign. More
     /// details about the errors are available through getErrors in the DraftService
@@ -68579,7 +68582,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// the draft in state PROMOTING and the status will be updated to PROMOTE_FAILED if
     /// errors are encountered while applying changes to the original campaign.
     /// </summary>
-    PROMOTE_FAILED,
+    PROMOTE_FAILED = 5,
   }
 
 
@@ -68719,35 +68722,35 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum DraftErrorReason {
     /// <summary>The draft is archived and cannot be modified further.
     /// </summary>
-    CANNOT_CHANGE_ARCHIVED_DRAFT,
+    CANNOT_CHANGE_ARCHIVED_DRAFT = 0,
     /// <summary>The draft has been promoted and cannot be modified further.
     /// </summary>
-    CANNOT_CHANGE_PROMOTED_DRAFT,
+    CANNOT_CHANGE_PROMOTED_DRAFT = 1,
     /// <summary>The draft has failed to be promoted and cannot be modified further.
     /// </summary>
-    CANNOT_CHANGE_PROMOTE_FAILED_DRAFT,
+    CANNOT_CHANGE_PROMOTE_FAILED_DRAFT = 2,
     /// <summary>This customer is not allowed to create drafts.
     /// </summary>
-    CUSTOMER_CANNOT_CREATE_DRAFT,
+    CUSTOMER_CANNOT_CREATE_DRAFT = 3,
     /// <summary>This campaign is not allowed to create drafts.
     /// </summary>
-    CAMPAIGN_CANNOT_CREATE_DRAFT,
+    CAMPAIGN_CANNOT_CREATE_DRAFT = 4,
     /// <summary>A draft with this name already exists.
     /// </summary>
-    DUPLICATE_DRAFT_NAME,
+    DUPLICATE_DRAFT_NAME = 5,
     /// <summary>This modification cannot be made on a draft.
     /// </summary>
-    INVALID_DRAFT_CHANGE,
+    INVALID_DRAFT_CHANGE = 6,
     /// <summary>The draft cannot be transitioned to the specified status from the its current
     /// status.
     /// </summary>
-    INVALID_STATUS_TRANSITION,
+    INVALID_STATUS_TRANSITION = 7,
     /// <summary>The campaign has reached the maximum number of drafts that can be created for a
     /// campaign throughout its lifetime. No additional drafts can be created for this
     /// campaign. Archived drafts also count towards this limit.
     /// </summary>
-    MAX_NUMBER_OF_DRAFTS_PER_CAMPAIGN_REACHED,
-    DRAFT_ERROR,
+    MAX_NUMBER_OF_DRAFTS_PER_CAMPAIGN_REACHED = 8,
+    DRAFT_ERROR = 9,
   }
 
 
@@ -68797,7 +68800,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 
     /// <summary>Returns a DraftAsyncErrorPage that contains a list of DraftAsyncErrors matching
     /// the selector.
-    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'>if problems occurred while retrieving the
     /// results.</exception>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -68808,12 +68811,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((DraftAsyncErrorPage)(results[0]));
+      return ((DraftAsyncErrorPage) (results[0]));
     }
 
     /// <summary>Returns a DraftAsyncErrorPage that contains a list of DraftAsyncErrors matching
     /// the query.
-    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'>if problems occurred while retrieving the
     /// results.</exception>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -68824,7 +68827,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((DraftAsyncErrorPage)(results[0]));
+      return ((DraftAsyncErrorPage) (results[0]));
     }
   }
 
@@ -69210,11 +69213,11 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum CampaignPreferenceErrorReason {
     /// <summary>A campaign cannot have two preferences with the same preference key.
     /// </summary>
-    PREFERENCE_ALREADY_EXISTS,
+    PREFERENCE_ALREADY_EXISTS = 0,
     /// <summary>No preference matched the given preference key.
     /// </summary>
-    PREFERENCE_NOT_FOUND,
-    UNKNOWN,
+    PREFERENCE_NOT_FOUND = 1,
+    UNKNOWN = 2,
   }
 
 
@@ -69224,23 +69227,20 @@ namespace Google.Api.Ads.AdWords.v201605 {
   /// two variants (trial arms) - the base campaign and the trial - at the same time,
   /// directing a fixed share of traffic to each trial arm. A trial is created from a
   /// draft of the base campaign and will be a snapshot of changes in the draft at the
-  /// time of creation.</p> <p>Changes to entities of the base campaign after creating
-  /// the trial will be applied to the trial asynchronously, unless the changed fields
-  /// were overridden in the draft. Changes to the draft have no effect on a trial
-  /// once it has been created.</p> <h3>Constraints</h3> <ul> <li>A campaign cannot
-  /// have running/scheduled "AdWords Campaign Experiments" (ACE) and
-  /// running/scheduled trials at the same time. Trial creation will fail, if the base
-  /// campaign has a running/scheduled ACE experiment.</li> <li>Trial names must be
-  /// unique across all of the customer's non-deleted trial and campaign names.</li>
-  /// <li>When creating a trial, [startDate, endDate] cannot be in the past or overlap
-  /// with any other running/scheduled trial, must be within the base campaign's
-  /// [startDate, endDate] and endDate must be later than startDate.</li> <li>A future
-  /// startDate/endDate can be updated to a different future startDate/endDate as long
-  /// as the constraints on [startDate, endDate] are not violated.</li> <li>There is
-  /// at most one trial running and at most one trial scheduled for the future at a
-  /// time, per base campaign.</li> <li>The base campaign's budget cannot be shared
-  /// with any other campaign. Trial creation will fail if the base campaign's budget
-  /// is shared with another campaign.</li> </ul> <h3>Life cycle</h3> A trial's <a
+  /// time of creation.</p> <h3>Constraints</h3> <ul> <li>A campaign cannot have
+  /// running/scheduled "AdWords Campaign Experiments" (ACE) and running/scheduled
+  /// trials at the same time. Trial creation will fail, if the base campaign has a
+  /// running/scheduled ACE experiment.</li> <li>Trial names must be unique across all
+  /// of the customer's non-deleted trial and campaign names.</li> <li>When creating a
+  /// trial, [startDate, endDate] cannot be in the past or overlap with any other
+  /// running/scheduled trial, must be within the base campaign's [startDate, endDate]
+  /// and endDate must be later than startDate.</li> <li>A future startDate/endDate
+  /// can be updated to a different future startDate/endDate as long as the
+  /// constraints on [startDate, endDate] are not violated.</li> <li>There is at most
+  /// one trial running and at most one trial scheduled for the future at a time, per
+  /// base campaign.</li> <li>The base campaign's budget cannot be shared with any
+  /// other campaign. Trial creation will fail if the base campaign's budget is shared
+  /// with another campaign.</li> </ul> <h3>Life cycle</h3> A trial's <a
   /// href='Trial#status'>status</a> reflects the state of the trial within its life
   /// cycle. Some status transitions are performed explicitly by sending a <a
   /// href='Operator#SET'>SET</a> operation, while other status transitions occur
@@ -69253,20 +69253,16 @@ namespace Google.Api.Ads.AdWords.v201605 {
   /// href='TrialStatus#CREATION_FAILED'>CREATION_FAILED</a>.</p> <p>To promote
   /// changes in an <a href='TrialStatus#ACTIVE'>ACTIVE</a> trial back to the base
   /// campaign, set the trial status to <a href='TrialStatus#PROMOTING'>PROMOTING</a>.
-  /// The promotion itself will occur asynchronously. If it fails with recoverable
-  /// errors, the status will change to <a href=''>TrialStatus#PROMOTE_ERROR
-  /// PROMOTE_ERROR</a>. In this case, no change has been promoted to the base
-  /// campaign and clients can set the status to <a
-  /// href='TrialStatus#PROMOTING'>PROMOTING</a> to try again. If the promotion
-  /// operation fails after some of the base campaign has already been updated, the
-  /// status will change to <a
-  /// href='TrialStatus#PROMOTE_FAILED'>PROMOTE_FAILED</a>.</p> <p>To graduate an <a
-  /// href='TrialStatus#ACTIVE'>ACTIVE</a> trial, which will allow its associated
-  /// campaign to act independently of the trial and free it of restrictions from the
-  /// trial, set the status to <a href='TrialStatus#GRADUATED'>GRADUATED</a> and
-  /// provide a new <a href='Budget#budgetid'>budgetId</a> for the campaign to use
-  /// (since it can no longer share the base campaign's budget).</p> <p>Any trial that
-  /// is not <a href='TrialStatus#CREATING'>CREATING</a> or <a
+  /// The promotion itself will occur asynchronously. If the promotion operation fails
+  /// after some of the base campaign has already been updated, the status will change
+  /// to <a href='TrialStatus#PROMOTE_FAILED'>PROMOTE_FAILED</a>.</p> <p>To graduate
+  /// an <a href='TrialStatus#ACTIVE'>ACTIVE</a> trial, which will allow its
+  /// associated campaign to act independently of the trial and free it of
+  /// restrictions from the trial, set the status to <a
+  /// href='TrialStatus#GRADUATED'>GRADUATED</a> and provide a new <a
+  /// href='Budget#budgetid'>budgetId</a> for the campaign to use (since it can no
+  /// longer share the base campaign's budget).</p> <p>Any trial that is not <a
+  /// href='TrialStatus#CREATING'>CREATING</a> or <a
   /// href='TrialStatus#PROMOTING'>PROMOTING</a> can be archived by setting the status
   /// to the value of the same name.</p>
   /// </summary>
@@ -69329,7 +69325,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((TrialPage)(results[0]));
+      return ((TrialPage) (results[0]));
     }
 
     /// <summary>Creates new trials, updates properties and controls the life cycle of existing
@@ -69348,7 +69344,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((TrialReturnValue)(results[0]));
+      return ((TrialReturnValue) (results[0]));
     }
 
     /// <summary>Loads a TrialPage containing a list of <a href='Trial'>Trial</a> objects
@@ -69367,7 +69363,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((TrialPage)(results[0]));
+      return ((TrialPage) (results[0]));
     }
   }
 
@@ -69834,36 +69830,36 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// Rejected">Used for return value only. An enumeration could not be processed,
     /// typically due to incompatibility with your WSDL version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>The trial campaign is being created.
     /// </summary>
-    CREATING,
+    CREATING = 1,
     /// <summary>The trial campaign is fully created. The trial is currently running, scheduled
     /// to run in the future or has ended based on its end date.The advertiser cannot
     /// set this status directly. A trial with the status CREATING will be updated to
     /// ACTIVE when it is fully created.
     /// </summary>
-    ACTIVE,
+    ACTIVE = 2,
     /// <summary>The advertiser requested to merge changes in the trial back into the original
     /// campaigns. The update to the original campaign will be kicked off asynchronously
     /// and the status will be updated to PROMOTED or PROMOTE_FAILED upon completion.
     /// </summary>
-    PROMOTING,
+    PROMOTING = 3,
     /// <summary>The process to merge changes in the trial back to the original campaign has
     /// completedly successfully. The advertiser cannot set this status directly. To
     /// move the trial to this status, set the trial to status PROMOTING and the status
     /// will be updated to PROMOTED when the changes are applied to the original
     /// campaign.
     /// </summary>
-    PROMOTED,
+    PROMOTED = 4,
     /// <summary>The advertiser archived the campaign trial.
     /// </summary>
-    ARCHIVED,
+    ARCHIVED = 5,
     /// <summary>The materializer failed to create the materialized campaign. More details about
     /// the errors are available through getErrors in the TrialService API.The
     /// advertiser cannot set this status directly.
     /// </summary>
-    CREATION_FAILED,
+    CREATION_FAILED = 6,
     /// <summary>The promotion failed after it was partially applied. Promote cannot be attempted
     /// again safely, so the issue must be corrected in the original campaign. More
     /// details about the errors are available through getErrors in the TrialService
@@ -69871,14 +69867,14 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// the trial in state PROMOTING and the status will be updated to PROMOTE_FAILED if
     /// errors are encountered while applying changes to the original campaign.
     /// </summary>
-    PROMOTE_FAILED,
+    PROMOTE_FAILED = 7,
     /// <summary>The advertiser has graduated the trial campaign to a standalone campaign,
     /// existing independently of the trial.
     /// </summary>
-    GRADUATED,
+    GRADUATED = 8,
     /// <summary>The advertiser has halted the trial.
     /// </summary>
-    HALTED,
+    HALTED = 9,
   }
 
 
@@ -70022,40 +70018,40 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>Trial status cannot be updated from the current status to the requested target
     /// status.
     /// </summary>
-    INVALID_STATUS_TRANSITION,
+    INVALID_STATUS_TRANSITION = 1,
     /// <summary>Cannot create a trial from a campaign using an explicitly shared budget.
     /// </summary>
-    CANNOT_USE_TRIAL_WITH_SHARED_BUDGET,
+    CANNOT_USE_TRIAL_WITH_SHARED_BUDGET = 2,
     /// <summary>Cannot create a trial as long as the campaign has a running or scheduled
     /// Advertiser Campaign Experiment.
     /// </summary>
-    CANNOT_CREATE_TRIAL_WHEN_CAMPAIGN_HAS_ACTIVE_EXPERIMENTS,
+    CANNOT_CREATE_TRIAL_WHEN_CAMPAIGN_HAS_ACTIVE_EXPERIMENTS = 3,
     /// <summary>Cannot create a trial for a base campaign, which is deleted.
     /// </summary>
-    CANNOT_CREATE_TRIAL_FOR_DELETED_BASE_CAMPAIGN,
+    CANNOT_CREATE_TRIAL_FOR_DELETED_BASE_CAMPAIGN = 4,
     /// <summary>Cannot create a trial from a draft, which has a status other than proposed.
     /// </summary>
-    CANNOT_CREATE_TRIAL_FOR_NON_PROPOSED_DRAFT,
+    CANNOT_CREATE_TRIAL_FOR_NON_PROPOSED_DRAFT = 5,
     /// <summary>This customer is not allowed to create a trial.
     /// </summary>
-    CUSTOMER_CANNOT_CREATE_TRIAL,
+    CUSTOMER_CANNOT_CREATE_TRIAL = 6,
     /// <summary>This campaign is not allowed to create a trial.
     /// </summary>
-    CAMPAIGN_CANNOT_CREATE_TRIAL,
+    CAMPAIGN_CANNOT_CREATE_TRIAL = 7,
     /// <summary>Trying to use a trial name which is already assigned to another campaign or
     /// trial.
     /// </summary>
-    NAME_ALREADY_IN_USE,
+    NAME_ALREADY_IN_USE = 8,
     /// <summary>Trying to set a trial duration which overlaps with another trial.
     /// </summary>
-    TRIAL_DURATIONS_MUST_NOT_OVERLAP,
+    TRIAL_DURATIONS_MUST_NOT_OVERLAP = 9,
     /// <summary>All non-archived trials must start end end within their campaign's duration.
     /// </summary>
-    TRIAL_DURATION_MUST_BE_WITHIN_CAMPAIGN_DURATION,
+    TRIAL_DURATION_MUST_BE_WITHIN_CAMPAIGN_DURATION = 10,
   }
 
 
@@ -70105,7 +70101,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 
     /// <summary>Returns a TrialAsyncErrorPage that contains a list of TrialAsyncErrors matching
     /// the selector.
-    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'>if problems occurred while retrieving the
     /// results.</exception>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -70116,12 +70112,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((TrialAsyncErrorPage)(results[0]));
+      return ((TrialAsyncErrorPage) (results[0]));
     }
 
     /// <summary>Returns a TrialAsyncErrorPage that contains a list of TrialAsyncError matching
     /// the query.
-    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'>if problems occurred while retrieving the
     /// results.</exception>
     [System.Web.Services.Protocols.SoapHeaderAttribute("RequestHeader")]
     [System.Web.Services.Protocols.SoapHeaderAttribute("ResponseHeader", Direction = System.Web.Services.Protocols.SoapHeaderDirection.Out)]
@@ -70132,7 +70128,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((TrialAsyncErrorPage)(results[0]));
+      return ((TrialAsyncErrorPage) (results[0]));
     }
   }
 
@@ -70485,7 +70481,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((AdGroupBidModifierPage)(results[0]));
+      return ((AdGroupBidModifierPage) (results[0]));
     }
 
     /// <summary>Adds, removes or updates ad group bid modifier overrides.
@@ -70502,7 +70498,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdGroupBidModifierReturnValue)(results[0]));
+      return ((AdGroupBidModifierReturnValue) (results[0]));
     }
 
     /// <summary>Returns a list of <a href='AdGroupBidModifier'>AdGroupBidModifier</a>s that
@@ -70519,7 +70515,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((AdGroupBidModifierPage)(results[0]));
+      return ((AdGroupBidModifierPage) (results[0]));
     }
   }
 
@@ -70663,7 +70659,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((AdParamPage)(results[0]));
+      return ((AdParamPage) (results[0]));
     }
 
     /// <summary>Sets and removes ad parameters. <p class="note"><b>Note:</b> <code>ADD</code> is
@@ -70688,7 +70684,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((AdParam[])(results[0]));
+      return ((AdParam[]) (results[0]));
     }
   }
 
@@ -71183,27 +71179,27 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum AdParamErrorReason {
     /// <summary>The same ad param cannot be specified in multiple operations
     /// </summary>
-    AD_PARAM_CANNOT_BE_SPECIFIED_MULTIPLE_TIMES,
+    AD_PARAM_CANNOT_BE_SPECIFIED_MULTIPLE_TIMES = 0,
     /// <summary>Specified AdParam does not exist
     /// </summary>
-    AD_PARAM_DOES_NOT_EXIST,
+    AD_PARAM_DOES_NOT_EXIST = 1,
     /// <summary>Specified criterion is not a keyword
     /// </summary>
-    CRITERION_SPECIFIED_MUST_BE_KEYWORD,
+    CRITERION_SPECIFIED_MUST_BE_KEYWORD = 2,
     /// <summary>The (AdGroupId,CriterionId) is invalid
     /// </summary>
-    INVALID_ADGROUP_CRITERION_SPECIFIED,
+    INVALID_ADGROUP_CRITERION_SPECIFIED = 3,
     /// <summary>The insertion text is invalid
     /// </summary>
-    INVALID_INSERTION_TEXT_FORMAT,
+    INVALID_INSERTION_TEXT_FORMAT = 4,
     /// <summary>Must specify AdGroupId in selector
     /// </summary>
-    MUST_SPECIFY_ADGROUP_ID,
+    MUST_SPECIFY_ADGROUP_ID = 5,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 6,
   }
 
 
@@ -71275,7 +71271,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((BatchJobPage)(results[0]));
+      return ((BatchJobPage) (results[0]));
     }
 
     /// <summary>Creates or updates a <code>BatchJob</code>. <p class="note"><b>Note:</b> <a
@@ -71293,7 +71289,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((BatchJobReturnValue)(results[0]));
+      return ((BatchJobReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of <code>BatchJob</code>s that match the query.
@@ -71310,7 +71306,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((BatchJobPage)(results[0]));
+      return ((BatchJobPage) (results[0]));
     }
   }
 
@@ -71605,28 +71601,28 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>Initial state of a BatchJob. While a job has this status, it is awaiting a file
     /// upload to Google Cloud Storage.
     /// </summary>
-    AWAITING_FILE,
+    AWAITING_FILE = 1,
     /// <summary>Indicates that a job has an associated file and is being executed.
     /// </summary>
-    ACTIVE,
+    ACTIVE = 2,
     /// <summary>Indicates that a job is being canceled. It will remain in this status until any
     /// partial results are written, and then will be marked CANCELED. Send this status
     /// in a SET operation to cancel a job that is in progress. This is the only status
     /// that can be explicitly set.
     /// </summary>
-    CANCELING,
+    CANCELING = 3,
     /// <summary>Indicates that a job has been canceled. It will be garbage-collected 30 days
     /// after cancellation.
     /// </summary>
-    CANCELED,
+    CANCELED = 4,
     /// <summary>Indicates that a job has completed. It will be garbage-collected 30 days after
     /// completion.
     /// </summary>
-    DONE,
+    DONE = 5,
   }
 
 
@@ -71929,19 +71925,19 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BatchJobProcessingError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum BatchJobProcessingErrorReason {
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>The input file was corrupted.
     /// </summary>
-    INPUT_FILE_CORRUPTION,
+    INPUT_FILE_CORRUPTION = 1,
     /// <summary>An internal API error occurred while processing the batch.
     /// </summary>
-    INTERNAL_ERROR,
+    INTERNAL_ERROR = 2,
     /// <summary>Unable to complete a batch in the allotted time.
     /// </summary>
-    DEADLINE_EXCEEDED,
+    DEADLINE_EXCEEDED = 4,
     /// <summary>The input file had a format error.
     /// </summary>
-    FILE_FORMAT_ERROR,
+    FILE_FORMAT_ERROR = 3,
   }
 
 
@@ -72081,16 +72077,16 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "BatchJobError.Reason", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum BatchJobErrorReason {
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>The user exceeded allowed disk quota for in-flight jobs.
     /// </summary>
-    DISK_QUOTA_EXCEEDED,
+    DISK_QUOTA_EXCEEDED = 1,
     /// <summary>An internal error resulted in a failure to create the job.
     /// </summary>
-    FAILED_TO_CREATE_JOB,
+    FAILED_TO_CREATE_JOB = 2,
     /// <summary>The requested state change was invalid.
     /// </summary>
-    INVALID_STATE_CHANGE,
+    INVALID_STATE_CHANGE = 3,
   }
 
 
@@ -72154,7 +72150,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((BiddingStrategyPage)(results[0]));
+      return ((BiddingStrategyPage) (results[0]));
     }
 
     /// <summary>Applies the list of mutate operations.
@@ -72170,7 +72166,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((BiddingStrategyReturnValue)(results[0]));
+      return ((BiddingStrategyReturnValue) (results[0]));
     }
 
     /// <summary>Returns a list of bidding strategies that match the query.
@@ -72186,7 +72182,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((BiddingStrategyPage)(results[0]));
+      return ((BiddingStrategyPage) (results[0]));
     }
   }
 
@@ -72479,9 +72475,9 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SharedBiddingStrategy.BiddingStrategyStatus", Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum SharedBiddingStrategyBiddingStrategyStatus {
-    ENABLED,
-    REMOVED,
-    UNKNOWN,
+    ENABLED = 0,
+    REMOVED = 1,
+    UNKNOWN = 2,
   }
 
 
@@ -72492,93 +72488,93 @@ namespace Google.Api.Ads.AdWords.v201605 {
   [System.SerializableAttribute()]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201605")]
   public enum BiddingStrategySystemStatus {
-    UNKNOWN,
+    UNKNOWN = 0,
     /// <summary>The bid strategy is active, and AdWords cannot find any specific issues with the
     /// strategy.
     /// </summary>
-    UNCONSTRAINED,
+    UNCONSTRAINED = 1,
     /// <summary>The bid strategy is learning because it has been recently created or recently
     /// reactivated.
     /// </summary>
-    LEARNING_NEW,
+    LEARNING_NEW = 2,
     /// <summary>The bid strategy is learning because of a recent setting change.
     /// </summary>
-    LEARNING_SETTING_CHANGE,
+    LEARNING_SETTING_CHANGE = 3,
     /// <summary>The bid strategy is learning because of a recent budget change.
     /// </summary>
-    LEARNING_BUDGET_CHANGE,
+    LEARNING_BUDGET_CHANGE = 4,
     /// <summary>The bid strategy is learning because of recent change in number of campaigns, ad
     /// groups or keywords attached to it.
     /// </summary>
-    LEARNING_COMPOSITION_CHANGE,
+    LEARNING_COMPOSITION_CHANGE = 5,
     /// <summary>The bid strategy depends on conversion reporting and the customer recently
     /// modified conversion types that were relevant to the bid strategy.
     /// </summary>
-    LEARNING_CONVERSION_TYPE_CHANGE,
+    LEARNING_CONVERSION_TYPE_CHANGE = 6,
     /// <summary>The bid strategy depends on conversion reporting and the customer recently
     /// changed their conversion settings.
     /// </summary>
-    LEARNING_CONVERSION_SETTING_CHANGE,
+    LEARNING_CONVERSION_SETTING_CHANGE = 7,
     /// <summary>The bid strategy is limited by its bid constraints (bid floor, ceiling, or
     /// both). Deprecated for the specific LIMITED_BY_*_LIMIT statuses.
     /// </summary>
-    LIMITED_BY_BID_CONSTRAINTS,
+    LIMITED_BY_BID_CONSTRAINTS = 8,
     /// <summary>The bid strategy is limited by its bid ceiling.
     /// </summary>
-    LIMITED_BY_MAX_BID_LIMIT,
+    LIMITED_BY_MAX_BID_LIMIT = 9,
     /// <summary>The bid strategy is limited by its bid floor.
     /// </summary>
-    LIMITED_BY_MIN_BID_LIMIT,
+    LIMITED_BY_MIN_BID_LIMIT = 10,
     /// <summary>The bid strategy is limited by its ROAS floor.
     /// </summary>
-    LIMITED_BY_MIN_ROAS_LIMIT,
+    LIMITED_BY_MIN_ROAS_LIMIT = 11,
     /// <summary>The bid strategy is limited because there was not enough conversion traffic over
     /// the past weeks.
     /// </summary>
-    LIMITED_BY_DATA,
+    LIMITED_BY_DATA = 12,
     /// <summary>A significant fraction of keywords in this bid strategy are limited by budget.
     /// </summary>
-    LIMITED_BY_BUDGET,
+    LIMITED_BY_BUDGET = 13,
     /// <summary>The bid strategy cannot reach its target spend because its spend has been
     /// de-prioritized.
     /// </summary>
-    LIMITED_BY_LOW_PRIORITY_SPEND,
+    LIMITED_BY_LOW_PRIORITY_SPEND = 14,
     /// <summary>A significant fraction of keywords in this bid strategy have a low Quality
     /// Score.
     /// </summary>
-    LIMITED_BY_LOW_QUALITY,
+    LIMITED_BY_LOW_QUALITY = 15,
     /// <summary>The bid strategy depends on conversion reporting and the customer is lacking
     /// conversion types that might be reported against this strategy.
     /// </summary>
-    MISCONFIGURED_CONVERSION_TYPES,
+    MISCONFIGURED_CONVERSION_TYPES = 16,
     /// <summary>The bid strategy depends on conversion reporting and the customer's conversion
     /// settings are misconfigured.
     /// </summary>
-    MISCONFIGURED_CONVERSION_SETTINGS,
+    MISCONFIGURED_CONVERSION_SETTINGS = 17,
     /// <summary>The bid strategy is not active. Either there are no active campaigns, ad groups
     /// or keywords attached to the bid strategy. Or there are no active budgets
     /// connected to the bid strategy.
     /// </summary>
-    INACTIVE,
+    INACTIVE = 18,
     /// <summary>The system status is not currently available for this bid strategy.
     /// </summary>
-    UNAVAILABLE,
+    UNAVAILABLE = 19,
     /// <summary>There were multiple LEARNING_* statuses for this bid strategy during the time in
     /// question.
     /// </summary>
-    MULTIPLE_LEARNING,
+    MULTIPLE_LEARNING = 20,
     /// <summary>There were multiple LIMITED_* statuses for this bid strategy during the time in
     /// question.
     /// </summary>
-    MULTIPLE_LIMITED,
+    MULTIPLE_LIMITED = 21,
     /// <summary>There were multiple MISCONFIGURED_* system statuses for this bid strategy during
     /// the time in question.
     /// </summary>
-    MULTIPLE_MISCONFIGURED,
+    MULTIPLE_MISCONFIGURED = 22,
     /// <summary>There were multiple system statuses for this bid strategy during the time in
     /// question.
     /// </summary>
-    MULTIPLE,
+    MULTIPLE = 23,
   }
 
 
@@ -72766,18 +72762,18 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum BiddingStrategyErrorReason {
     /// <summary>Each bidding strategy must have a unique name.
     /// </summary>
-    DUPLICATE_NAME,
+    DUPLICATE_NAME = 0,
     /// <summary>Bidding strategy type is immutable.
     /// </summary>
-    CANNOT_CHANGE_BIDDING_STRATEGY_TYPE,
+    CANNOT_CHANGE_BIDDING_STRATEGY_TYPE = 1,
     /// <summary>Only bidding strategies not linked to campaigns, adgroups or adgroup criteria
     /// can be removed.
     /// </summary>
-    CANNOT_REMOVE_ASSOCIATED_STRATEGY,
+    CANNOT_REMOVE_ASSOCIATED_STRATEGY = 2,
     /// <summary>The specified bidding strategy is not supported.
     /// </summary>
-    BIDDING_STRATEGY_NOT_SUPPORTED,
-    UNKNOWN,
+    BIDDING_STRATEGY_NOT_SUPPORTED = 3,
+    UNKNOWN = 4,
   }
 
 
@@ -72848,7 +72844,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					serviceSelector
 				});
-      return ((BudgetOrderPage)(results[0]));
+      return ((BudgetOrderPage) (results[0]));
     }
 
     /// <summary>Returns all the open/active BillingAccounts associated with the current manager.
@@ -72860,7 +72856,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     [return: System.Xml.Serialization.XmlElementAttribute("rval")]
     public virtual BillingAccount[] getBillingAccounts() {
       object[] results = this.Invoke("getBillingAccounts", new object[0]);
-      return ((BillingAccount[])(results[0]));
+      return ((BillingAccount[]) (results[0]));
     }
 
     /// <summary>Mutates BudgetOrders, supported operations are: <p><code>ADD</code>: Adds a <a
@@ -72884,7 +72880,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((BudgetOrderReturnValue)(results[0]));
+      return ((BudgetOrderReturnValue) (results[0]));
     }
   }
 
@@ -73521,21 +73517,21 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum BudgetOrderRequestStatus {
     /// <summary>The budget request is under review.
     /// </summary>
-    UNDER_REVIEW,
+    UNDER_REVIEW = 0,
     /// <summary>The budget request has been approved.
     /// </summary>
-    APPROVED,
+    APPROVED = 1,
     /// <summary>The budget request has been rejected.
     /// </summary>
-    REJECTED,
+    REJECTED = 2,
     /// <summary>The budget request has been cancelled.
     /// </summary>
-    CANCELLED,
+    CANCELLED = 3,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
     /// could not be processed, typically due to incompatibility with your WSDL
     /// version.</span>
     /// </summary>
-    UNKNOWN,
+    UNKNOWN = 4,
   }
 
 
@@ -73859,71 +73855,71 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum CustomerOrderLineErrorReason {
     /// <summary>Order Line Id does not exist.
     /// </summary>
-    INVALID_ORDER_LINE_ID,
+    INVALID_ORDER_LINE_ID = 0,
     /// <summary>End date must be later than start date
     /// </summary>
-    END_DATE_BEFORE_START_DATE,
+    END_DATE_BEFORE_START_DATE = 1,
     /// <summary>Spending limit must be positive
     /// </summary>
-    NEGATIVE_SPEND,
+    NEGATIVE_SPEND = 2,
     /// <summary>Cannot create order line with start date in the past
     /// </summary>
-    CREATE_IN_PAST,
+    CREATE_IN_PAST = 3,
     /// <summary>Cannot change start date after the order line has started
     /// </summary>
-    ALREADY_STARTED,
+    ALREADY_STARTED = 4,
     /// <summary>Cannot set spending limit below what has already been spent
     /// </summary>
-    ALREADY_SPENT,
+    ALREADY_SPENT = 5,
     /// <summary>Cannot move end date into the past
     /// </summary>
-    FINISHED_IN_THE_PAST,
+    FINISHED_IN_THE_PAST = 6,
     /// <summary>Cannot cancel active order line
     /// </summary>
-    CANCEL_ACTIVE,
+    CANCEL_ACTIVE = 7,
     /// <summary>Cannot make overlapping order lines.
     /// </summary>
-    OVERLAP_DATE_RANGE,
+    OVERLAP_DATE_RANGE = 8,
     /// <summary>Cannot make a COS order line non-COS.
     /// </summary>
-    COS_CHANGE,
+    COS_CHANGE = 9,
     /// <summary>Cannot create an order line on a non-adwords account
     /// </summary>
-    NON_ADWORDS,
+    NON_ADWORDS = 10,
     /// <summary>Cannot set contract start date to be after actual start date
     /// </summary>
-    START_DATE_AFTER_ACTUAL,
+    START_DATE_AFTER_ACTUAL = 11,
     /// <summary>Cannot set contract start date to be after actual start date
     /// </summary>
-    END_DATE_PAST_MAX,
+    END_DATE_PAST_MAX = 12,
     /// <summary>only cancelled order lines may have themselves as parent
     /// </summary>
-    PARENT_IS_SELF,
+    PARENT_IS_SELF = 13,
     /// <summary>Cannot cancel new order line
     /// </summary>
-    CANNOT_CANCEL_NEW,
+    CANNOT_CANCEL_NEW = 14,
     /// <summary>Cannot cancel started order line
     /// </summary>
-    CANNOT_CANCEL_STARTED,
+    CANNOT_CANCEL_STARTED = 15,
     /// <summary>Cannot promote an order line that is not pending.
     /// </summary>
-    CANNOT_PROMOTE_NON_PENDING_ORDERLINE,
+    CANNOT_PROMOTE_NON_PENDING_ORDERLINE = 16,
     /// <summary>Updating order line will shift current order line.
     /// </summary>
-    UPDATE_ORDERLINE_WILL_SHIFT_CURRENT,
+    UPDATE_ORDERLINE_WILL_SHIFT_CURRENT = 17,
     /// <summary>Only Order lines in normal or pending state can be modified.
     /// </summary>
-    ORDERLINE_BEING_MODIFIED_IS_NOT_NORMAL_OR_PENDING,
+    ORDERLINE_BEING_MODIFIED_IS_NOT_NORMAL_OR_PENDING = 18,
     /// <summary>Invalid Status Change by client.
     /// </summary>
-    INVALID_STATUS_CHANGE,
+    INVALID_STATUS_CHANGE = 19,
     /// <summary>More than one operation not permitted per call.
     /// </summary>
-    MORE_THAN_ONE_OPERATION_NOT_PERMITTED,
+    MORE_THAN_ONE_OPERATION_NOT_PERMITTED = 20,
     /// <summary>StartDate and EndDate should pass in the customer's account timeZone.
     /// </summary>
-    INVALID_TIMEZONE_IN_DATE_RANGES,
-    UNKNOWN,
+    INVALID_TIMEZONE_IN_DATE_RANGES = 21,
+    UNKNOWN = 22,
   }
 
 
@@ -73970,63 +73966,63 @@ namespace Google.Api.Ads.AdWords.v201605 {
   public enum BudgetOrderErrorReason {
     /// <summary>Existing pending request is being approved.
     /// </summary>
-    BUDGET_APPROVAL_IN_PROGRESS,
+    BUDGET_APPROVAL_IN_PROGRESS = 0,
     /// <summary>A server backend was not available.
     /// </summary>
-    SERVICE_UNAVAILABLE,
+    SERVICE_UNAVAILABLE = 1,
     /// <summary>The request contains a field that is only available if the manager account is
     /// whitelisted for new billing backend.
     /// </summary>
-    FIELD_NOT_ELIGIBLE_FOR_CURRENT_BILLING,
+    FIELD_NOT_ELIGIBLE_FOR_CURRENT_BILLING = 2,
     /// <summary>The billing account was invalid.
     /// </summary>
-    INVALID_BILLING_ACCOUNT,
+    INVALID_BILLING_ACCOUNT = 3,
     /// <summary>Unspecified billing service error.
     /// </summary>
-    GENERIC_BILLING_ERROR,
+    GENERIC_BILLING_ERROR = 4,
     /// <summary>The billing account ID format was invalid.
     /// </summary>
-    INVALID_BILLING_ACCOUNT_ID_FORMAT,
+    INVALID_BILLING_ACCOUNT_ID_FORMAT = 5,
     /// <summary>Budget date range was invalid.
     /// </summary>
-    INVALID_BUDGET_DATE_RANGE,
+    INVALID_BUDGET_DATE_RANGE = 6,
     /// <summary>Customer's currency is different from what is in the billing system.
     /// </summary>
-    INCOMPATIBLE_CURRENCY,
+    INCOMPATIBLE_CURRENCY = 7,
     /// <summary>User does not have permission to update this budget.
     /// </summary>
-    BUDGET_UPDATE_DENIED,
+    BUDGET_UPDATE_DENIED = 8,
     /// <summary>User attempted to cancel a started budget.
     /// </summary>
-    BUDGET_ALREADY_STARTED,
+    BUDGET_ALREADY_STARTED = 9,
     /// <summary>User attempted to change an ended budget.
     /// </summary>
-    BUDGET_ALREADY_ENDED,
+    BUDGET_ALREADY_ENDED = 10,
     /// <summary>Invalid amount, start date or end date specified.
     /// </summary>
-    INVALID_CONSTRAINT,
+    INVALID_CONSTRAINT = 11,
     /// <summary>The bid is too high.
     /// </summary>
-    INVALID_BID_TOO_LARGE,
+    INVALID_BID_TOO_LARGE = 12,
     /// <summary>Budget was not found.
     /// </summary>
-    NO_SUCH_BUDGET_FOUND,
+    NO_SUCH_BUDGET_FOUND = 13,
     /// <summary>The budget cannot be lowered below the amount which has already been spent.
     /// </summary>
-    INVALID_BUDGET_ALREADY_SPENT,
+    INVALID_BUDGET_ALREADY_SPENT = 14,
     /// <summary>Time zone from user input is different from user's account time zone.
     /// </summary>
-    INVALID_TIMEZONE_IN_DATE,
+    INVALID_TIMEZONE_IN_DATE = 15,
     /// <summary>The BudgetOrder's ID was set in an add operation.
     /// </summary>
-    ACCOUNT_BUDGET_ID_SET_IN_ADD,
+    ACCOUNT_BUDGET_ID_SET_IN_ADD = 16,
     /// <summary>We don't support more than one operation per mutate call.
     /// </summary>
-    MORE_THAN_ONE_OPERATIONS,
+    MORE_THAN_ONE_OPERATIONS = 17,
     /// <summary>Manager account not found.
     /// </summary>
-    INVALID_MANAGER_ACCOUNT,
-    UNKNOWN,
+    INVALID_MANAGER_ACCOUNT = 18,
+    UNKNOWN = 19,
   }
 
 
@@ -74089,7 +74085,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					selector
 				});
-      return ((BudgetPage)(results[0]));
+      return ((BudgetPage) (results[0]));
     }
 
     /// <summary>Applies the list of mutate operations.
@@ -74106,7 +74102,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					operations
 				});
-      return ((BudgetReturnValue)(results[0]));
+      return ((BudgetReturnValue) (results[0]));
     }
 
     /// <summary>Returns the list of budgets that match the query.
@@ -74123,7 +74119,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
 				{
 					query1
 				});
-      return ((BudgetPage)(results[0]));
+      return ((BudgetPage) (results[0]));
     }
   }
 
@@ -74611,11 +74607,9 @@ namespace Google.Api.Ads.AdWords.v201605 {
     Customer get();
 
     /// <summary>Returns details of all the customers directly accessible by the user
-    /// authenticating the call. Callers are discouraged from setting the
-    /// <code>clientCustomerId</code> header field in calls to <a
-    /// href='CustomerService#getCustomers()'>CustomerService#getCustomers()</a>, as its
-    /// value is ignored by this method, and its presence will trigger an authorization
-    /// error if the caller does not have access to the customer with the included ID.
+    /// authenticating the call. <p>Following V201605, if <code>clientCustomerId</code>
+    /// is specified in the request header, only details of that customer will be
+    /// returned.</p>
     /// </summary>
     Customer[] getCustomers();
 
@@ -75494,7 +75488,8 @@ namespace Google.Api.Ads.AdWords.v201605 {
     UserListReturnValue mutate(UserListOperation[] operations);
 
     /// <summary>Mutate members of user lists by either adding or removing their lists of
-    /// members. <p>Note that operations cannot have same user list id but different
+    /// members. The following <a href='Operator'>Operator</a>s are supported: ADD and
+    /// REMOVE. <p>Note that operations cannot have same user list id but different
     /// operators. </p>
     /// </summary><param name='operations'>the mutate members operations to apply</param>
     /// <returns>a list of UserList objects</returns>
@@ -76137,7 +76132,7 @@ namespace Google.Api.Ads.AdWords.v201605 {
     }
 
     /// <summary>Returns a DraftPage that contains a list of Draft objects matching the selector.
-    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'>if problems occurred while retrieving the
     /// results.</exception>
     DraftPage get(Selector selector);
 
@@ -76145,12 +76140,12 @@ namespace Google.Api.Ads.AdWords.v201605 {
     /// of Drafts, such as abandoning or promoting Drafts.
     /// </summary><returns>The list of updated Drafts, in the same order as the <code></code>
     /// list.</returns>
-    /// <exception cref='ApiException'> if problems occurred while processing the
+    /// <exception cref='ApiException'>if problems occurred while processing the
     /// request.</exception>
     DraftReturnValue mutate(DraftOperation[] operations);
 
     /// <summary>Returns a DraftPage that contains a list of Draft objects matching the query.
-    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'>if problems occurred while retrieving the
     /// results.</exception>
     DraftPage query(string query1);
   }
@@ -76178,13 +76173,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
 
     /// <summary>Returns a DraftAsyncErrorPage that contains a list of DraftAsyncErrors matching
     /// the selector.
-    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'>if problems occurred while retrieving the
     /// results.</exception>
     DraftAsyncErrorPage get(Selector selector);
 
     /// <summary>Returns a DraftAsyncErrorPage that contains a list of DraftAsyncErrors matching
     /// the query.
-    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'>if problems occurred while retrieving the
     /// results.</exception>
     DraftAsyncErrorPage query(string query1);
   }
@@ -76196,23 +76191,20 @@ namespace Google.Api.Ads.AdWords.v201605 {
   /// two variants (trial arms) - the base campaign and the trial - at the same time,
   /// directing a fixed share of traffic to each trial arm. A trial is created from a
   /// draft of the base campaign and will be a snapshot of changes in the draft at the
-  /// time of creation.</p> <p>Changes to entities of the base campaign after creating
-  /// the trial will be applied to the trial asynchronously, unless the changed fields
-  /// were overridden in the draft. Changes to the draft have no effect on a trial
-  /// once it has been created.</p> <h3>Constraints</h3> <ul> <li>A campaign cannot
-  /// have running/scheduled "AdWords Campaign Experiments" (ACE) and
-  /// running/scheduled trials at the same time. Trial creation will fail, if the base
-  /// campaign has a running/scheduled ACE experiment.</li> <li>Trial names must be
-  /// unique across all of the customer's non-deleted trial and campaign names.</li>
-  /// <li>When creating a trial, [startDate, endDate] cannot be in the past or overlap
-  /// with any other running/scheduled trial, must be within the base campaign's
-  /// [startDate, endDate] and endDate must be later than startDate.</li> <li>A future
-  /// startDate/endDate can be updated to a different future startDate/endDate as long
-  /// as the constraints on [startDate, endDate] are not violated.</li> <li>There is
-  /// at most one trial running and at most one trial scheduled for the future at a
-  /// time, per base campaign.</li> <li>The base campaign's budget cannot be shared
-  /// with any other campaign. Trial creation will fail if the base campaign's budget
-  /// is shared with another campaign.</li> </ul> <h3>Life cycle</h3> A trial's <a
+  /// time of creation.</p> <h3>Constraints</h3> <ul> <li>A campaign cannot have
+  /// running/scheduled "AdWords Campaign Experiments" (ACE) and running/scheduled
+  /// trials at the same time. Trial creation will fail, if the base campaign has a
+  /// running/scheduled ACE experiment.</li> <li>Trial names must be unique across all
+  /// of the customer's non-deleted trial and campaign names.</li> <li>When creating a
+  /// trial, [startDate, endDate] cannot be in the past or overlap with any other
+  /// running/scheduled trial, must be within the base campaign's [startDate, endDate]
+  /// and endDate must be later than startDate.</li> <li>A future startDate/endDate
+  /// can be updated to a different future startDate/endDate as long as the
+  /// constraints on [startDate, endDate] are not violated.</li> <li>There is at most
+  /// one trial running and at most one trial scheduled for the future at a time, per
+  /// base campaign.</li> <li>The base campaign's budget cannot be shared with any
+  /// other campaign. Trial creation will fail if the base campaign's budget is shared
+  /// with another campaign.</li> </ul> <h3>Life cycle</h3> A trial's <a
   /// href='Trial#status'>status</a> reflects the state of the trial within its life
   /// cycle. Some status transitions are performed explicitly by sending a <a
   /// href='Operator#SET'>SET</a> operation, while other status transitions occur
@@ -76225,20 +76217,16 @@ namespace Google.Api.Ads.AdWords.v201605 {
   /// href='TrialStatus#CREATION_FAILED'>CREATION_FAILED</a>.</p> <p>To promote
   /// changes in an <a href='TrialStatus#ACTIVE'>ACTIVE</a> trial back to the base
   /// campaign, set the trial status to <a href='TrialStatus#PROMOTING'>PROMOTING</a>.
-  /// The promotion itself will occur asynchronously. If it fails with recoverable
-  /// errors, the status will change to <a href=''>TrialStatus#PROMOTE_ERROR
-  /// PROMOTE_ERROR</a>. In this case, no change has been promoted to the base
-  /// campaign and clients can set the status to <a
-  /// href='TrialStatus#PROMOTING'>PROMOTING</a> to try again. If the promotion
-  /// operation fails after some of the base campaign has already been updated, the
-  /// status will change to <a
-  /// href='TrialStatus#PROMOTE_FAILED'>PROMOTE_FAILED</a>.</p> <p>To graduate an <a
-  /// href='TrialStatus#ACTIVE'>ACTIVE</a> trial, which will allow its associated
-  /// campaign to act independently of the trial and free it of restrictions from the
-  /// trial, set the status to <a href='TrialStatus#GRADUATED'>GRADUATED</a> and
-  /// provide a new <a href='Budget#budgetid'>budgetId</a> for the campaign to use
-  /// (since it can no longer share the base campaign's budget).</p> <p>Any trial that
-  /// is not <a href='TrialStatus#CREATING'>CREATING</a> or <a
+  /// The promotion itself will occur asynchronously. If the promotion operation fails
+  /// after some of the base campaign has already been updated, the status will change
+  /// to <a href='TrialStatus#PROMOTE_FAILED'>PROMOTE_FAILED</a>.</p> <p>To graduate
+  /// an <a href='TrialStatus#ACTIVE'>ACTIVE</a> trial, which will allow its
+  /// associated campaign to act independently of the trial and free it of
+  /// restrictions from the trial, set the status to <a
+  /// href='TrialStatus#GRADUATED'>GRADUATED</a> and provide a new <a
+  /// href='Budget#budgetid'>budgetId</a> for the campaign to use (since it can no
+  /// longer share the base campaign's budget).</p> <p>Any trial that is not <a
+  /// href='TrialStatus#CREATING'>CREATING</a> or <a
   /// href='TrialStatus#PROMOTING'>PROMOTING</a> can be archived by setting the status
   /// to the value of the same name.</p>
   /// </summary>
@@ -76310,13 +76298,13 @@ namespace Google.Api.Ads.AdWords.v201605 {
 
     /// <summary>Returns a TrialAsyncErrorPage that contains a list of TrialAsyncErrors matching
     /// the selector.
-    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'>if problems occurred while retrieving the
     /// results.</exception>
     TrialAsyncErrorPage get(Selector selector);
 
     /// <summary>Returns a TrialAsyncErrorPage that contains a list of TrialAsyncError matching
     /// the query.
-    /// </summary><exception cref='ApiException'> if problems occurred while retrieving the
+    /// </summary><exception cref='ApiException'>if problems occurred while retrieving the
     /// results.</exception>
     TrialAsyncErrorPage query(string query1);
   }

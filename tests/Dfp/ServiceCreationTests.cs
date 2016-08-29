@@ -12,33 +12,26 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.Common.Util;
+using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Tests;
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.v201508;
 
 using NUnit.Framework;
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml;
-using System.Threading;
-using System.Reflection;
-using Google.Api.Ads.Common.Lib;
-
-
 namespace Google.Api.Ads.Dfp.Tests {
+
   /// <summary>
   /// UnitTests for service creation.
   /// </summary>
   [TestFixture]
   [Category("Smoke")]
-  public class ServiceCreationTests {
+  public class ServiceCreationTests : BaseTests {
 
     /// <summary>
     /// Default public constructor.
     /// </summary>
-    public ServiceCreationTests() {
+    public ServiceCreationTests()
+      : base() {
     }
 
     /// <summary>
@@ -46,23 +39,12 @@ namespace Google.Api.Ads.Dfp.Tests {
     /// </summary>
     [Test]
     public void TestCreateServices() {
-      DfpUser user = new DfpUser();
-      Type dfpServiceType = typeof(DfpService);
-
-      Type[] versionTypes = dfpServiceType.GetNestedTypes();
-
-      foreach (Type versionType in versionTypes) {
-        FieldInfo[] serviceFields = versionType.GetFields
-            (BindingFlags.Static | BindingFlags.Public);
-        foreach (FieldInfo fieldInfo in serviceFields) {
-          if (fieldInfo.FieldType == typeof(ServiceSignature)) {
-            ServiceSignature value = (ServiceSignature) fieldInfo.GetValue(null);
+      StubIntegrityTestHelper.EnumerateServices<DfpService>(
+          delegate(ServiceSignature serviceSignature) {
             Assert.DoesNotThrow(delegate() {
-              AdsClient service = user.GetService(value);
+              AdsClient service = user.GetService(serviceSignature);
             });
-          }
-        }
-      }
+          });
     }
   }
 }

@@ -16,6 +16,7 @@ using Google.Api.Ads.Common.Lib;
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Google.Api.Ads.AdWords.Lib {
 
@@ -130,6 +131,12 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Default value for returning raw values for enums.
     /// </summary>
     private readonly bool? DEFAULT_USE_RAW_ENUM_VALUES = null;
+
+
+    /// <summary>
+    /// Default value for user agent key.
+    /// </summary>
+    private readonly string DEFAULT_USER_AGENT = "unknown";
 
     /// <summary>
     /// ClientCustomerId to be used in SOAP headers.
@@ -357,6 +364,9 @@ namespace Google.Api.Ads.AdWords.Lib {
         return userAgent;
       }
       set {
+        if (value.Any(c => (int) c < 32 || (int) c > 127)) {
+          throw new ArgumentException(AdWordsErrorMessages.UserAgentShouldbeAscii);
+        }
         SetPropertyField("UserAgent", ref userAgent, value);
       }
     }
@@ -397,7 +407,7 @@ namespace Google.Api.Ads.AdWords.Lib {
       merchantCenterId = -1;
       gmbOAuth2RefreshToken = "";
       gmbLoginEmail = "";
-      userAgent = "";
+      userAgent = DEFAULT_USER_AGENT;
       adWordsApiServer = DEFAULT_ADWORDSAPI_SERVER;
       skipReportHeader = DEFAULT_SKIP_REPORT_HEADER;
       skipReportSummary = DEFAULT_SKIP_REPORT_SUMMARY;

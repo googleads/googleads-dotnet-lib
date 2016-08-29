@@ -13,7 +13,6 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.Common.Tests;
 
 using NUnit.Framework;
 
@@ -36,51 +35,9 @@ namespace Google.Api.Ads.AdWords.Tests {
     protected AdWordsUser user = new AdWordsUser();
 
     /// <summary>
-    /// The interceptor for AdWords API requests when running mocked code
-    /// examples.
-    /// </summary>
-    protected AdWordsRequestInterceptor awapiInterceptor =
-        AdWordsRequestInterceptor.Instance as AdWordsRequestInterceptor;
-
-    /// <summary>
     /// Default public constructor.
     /// </summary>
     public ExampleTestsBase() : base() {
-    }
-
-    /// <summary>
-    /// Runs a code example in mocked mode.
-    /// </summary>
-    /// <param name="mockData">The mock data for mocking SOAP request and
-    /// responses for API calls.</param>
-    /// <param name="exampleDelegate">The delegate that initializes and runs the
-    /// code example.</param>
-    /// <param name="callback">The callback to be called before mocked responses
-    /// are sent. You could use this callback to verify if the request was
-    /// serialized correctly.</param>
-    /// <remarks>This method is not thread safe, but since NUnit can run tests
-    /// only in a single threaded mode, thread safety is not a requirement.
-    /// </remarks>
-    protected void RunMockedExample(ExamplesMockData mockData, TestDelegate exampleDelegate,
-        WebRequestInterceptor.OnBeforeSendResponse callback) {
-      TextWriter oldWriter = Console.Out;
-      try {
-        awapiInterceptor.Intercept = true;
-        awapiInterceptor.LoadMessages(mockData.MockMessages,
-             delegate(Uri requestUri, WebHeaderCollection headers, String body) {
-               VerifyHttpHeaders(headers);
-               VerifySoapHeaders(requestUri, body);
-               callback(requestUri, headers, body);
-             }
-         );
-        StringWriter newWriter = new StringWriter();
-        Console.SetOut(newWriter);
-        exampleDelegate.Invoke();
-        Assert.AreEqual(newWriter.ToString().Trim(), mockData.ExpectedOutput.Trim());
-      } finally {
-        Console.SetOut(oldWriter);
-        awapiInterceptor.Intercept = false;
-      }
     }
 
     /// <summary>
@@ -98,36 +55,6 @@ namespace Google.Api.Ads.AdWords.Tests {
         Console.SetOut(oldWriter);
         Console.WriteLine(writer.ToString());
       });
-    }
-
-    /// <summary>
-    /// Loads the mock data for a code example.
-    /// </summary>
-    /// <param name="mockData">The mock data.</param>
-    /// <returns>The parsed mock data.</returns>
-    protected ExamplesMockData LoadMockData(string mockData) {
-      List<HttpMessage> messages = new List<HttpMessage>();
-
-      XmlDocument xDoc = new XmlDocument();
-      xDoc.LoadXml(mockData);
-      XmlNodeList soapNodes = xDoc.SelectNodes("Example/SOAP");
-
-      foreach (XmlElement soapNode in soapNodes) {
-        messages.Add(new HttpMessage(soapNode.SelectSingleNode("Request").InnerText,
-            soapNode.SelectSingleNode("Response").InnerText,
-            AdWordsRequestInterceptor.SOAP_RESPONSE_TYPE));
-      }
-      return new ExamplesMockData(messages.ToArray(), xDoc.SelectSingleNode("Example/Output").
-          InnerText);
-    }
-
-    /// <summary>
-    /// Sets the mock OAuth2 tokens.
-    /// </summary>
-    protected void SetMockOAuth2Tokens() {
-      user.OAuthProvider.UpdatedOn = DateTime.Now;
-      user.OAuthProvider.ExpiresIn = int.Parse(OAuth2RequestInterceptor.EXPIRES_IN);
-      user.OAuthProvider.AccessToken = OAuth2RequestInterceptor.TEST_ACCESS_TOKEN;
     }
 
     /// <summary>

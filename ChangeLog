@@ -1,3 +1,18 @@
+18.31.0
+=======
+AdWords:
+  - Removed support for v201601.
+  - Made UserAgent setting in App.config / Web.config optional. If not
+    specified, a default value of "unknown" will be used. If specified, this
+    should be an ASCII string.
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/1
+
+DFP:
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/1
+
+Common:
+  - Common library version was bumped to 3.16.0.
+
 18.30.0
 =======
 AdWords:

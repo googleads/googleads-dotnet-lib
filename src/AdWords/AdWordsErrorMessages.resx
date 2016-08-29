@@ -169,4 +169,8 @@
     <value>One or more AdWords Report download errors have occurred.</value>
     <comment>Used by ReportUtilities while throwing AdWordsReportException.</comment>
   </data>
+  <data name="UserAgentShouldbeAscii" xml:space="preserve">
+    <value>User Agent should contain only printable ASCII characters.</value>
+    <comment>Used for ArgumentException by AdWordsAppConfig.UserAgent property when its value is not an ASCII string.</comment>
+  </data>
 </root>

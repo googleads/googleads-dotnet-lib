@@ -33,10 +33,3 @@ Imports System.Runtime.InteropServices
 
 ' The following GUID is for the ID of the typelib if this project is exposed to COM
 <Assembly: Guid("ccc25b61-18d8-49d5-993c-5fd838a03234")>
-
-<Assembly: AssemblyCompany("Google")>
-<Assembly: AssemblyProduct("AdWords API DotNet Client Library")>
-<Assembly: AssemblyCopyright("Copyright 2011, Google Inc. All Rights Reserved.")>
-
-<Assembly: AssemblyVersion("18.30.0.0")> 
-<Assembly: AssemblyFileVersion("18.30.0.0")> 

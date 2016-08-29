@@ -85,12 +85,6 @@ namespace Google.Api.Ads.AdWords.Lib {
       public static readonly ServiceSignature BudgetService;
 
       /// <summary>
-      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201603/CampaignAdExtensionService">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature CampaignAdExtensionService;
-
-      /// <summary>
       /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201603/CampaignCriterionService">
       /// this page</a> for details.
       /// </summary>
@@ -383,8 +377,6 @@ namespace Google.Api.Ads.AdWords.Lib {
             AdWordsService.MakeServiceSignature("v201603", "cm", "BiddingStrategyService");
         BudgetService =
             AdWordsService.MakeServiceSignature("v201603", "cm", "BudgetService");
-        CampaignAdExtensionService =
-            AdWordsService.MakeServiceSignature("v201603", "cm", "CampaignAdExtensionService");
         CampaignCriterionService =
             AdWordsService.MakeServiceSignature("v201603", "cm", "CampaignCriterionService");
         CampaignFeedService =

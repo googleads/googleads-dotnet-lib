@@ -12,13 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Tests;
 
 using NUnit.Framework;
-
-using System;
-using System.Reflection;
 
 namespace Google.Api.Ads.AdWords.Tests {
 
@@ -40,22 +38,12 @@ namespace Google.Api.Ads.AdWords.Tests {
     /// </summary>
     [Test]
     public void TestCreateServices() {
-      Type adwordsServiceType = typeof(AdWordsService);
-
-      Type[] versionTypes = adwordsServiceType.GetNestedTypes();
-
-      foreach (Type versionType in versionTypes) {
-        FieldInfo[] serviceFields = versionType.GetFields
-            (BindingFlags.Static | BindingFlags.Public);
-        foreach (FieldInfo fieldInfo in serviceFields) {
-          if (fieldInfo.FieldType == typeof(ServiceSignature)) {
-            ServiceSignature value = (ServiceSignature) fieldInfo.GetValue(null);
+      StubIntegrityTestHelper.EnumerateServices<AdWordsService>(
+          delegate(ServiceSignature serviceSignature) {
             Assert.DoesNotThrow(delegate() {
-              AdsClient service = user.GetService(value);
+              AdsClient service = user.GetService(serviceSignature);
             });
-          }
-        }
-      }
+          });
     }
   }
 }

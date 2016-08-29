@@ -35,7 +35,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
   /// UnitTests for mocking a SOAP service.
   /// </summary>
   [TestFixture]
-  internal class MockTests : VersionedExampleTestsBase {
+  internal class MockTests : VersionedMockedExampleTestsBase {
 
     /// <summary>
     /// A mocked version of CampaignService. The get() method is mocked, and

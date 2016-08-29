@@ -71,6 +71,10 @@
       <Project>{CE15CE8A-532B-49DA-8CF7-2BFCDEE845DB}</Project>
       <Name>Dfp</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\Common.Tests.csproj">
+      <Project>{7AA5533E-FED0-4E0C-919C-19E7D7EE2FF6}</Project>
+      <Name>Common.Tests</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
@@ -114,6 +118,8 @@
     <Compile Include="v201605\DateTimeUtilitiesTests.cs" />
     <Compile Include="v201605\PqlUtilitiesTests.cs" />
     <Compile Include="v201605\StatementBuilderTests.cs" />
+    <Compile Include="BaseTests.cs" />
+    <Compile Include="EnumIntegrityTests.cs" />
     <Compile Include="ServiceCreationTests.cs" />
   </ItemGroup>
   <ItemGroup>

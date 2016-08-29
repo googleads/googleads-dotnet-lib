@@ -63,6 +63,7 @@
     <Compile Include="Lib\OAuth2ProviderForApplicationsTests.cs" />
     <Compile Include="Lib\OAuth2ProviderForServiceAccountsTests.cs" />
     <Compile Include="OAuth2RequestInterceptor.cs" />
+    <Compile Include="StubIntegrityTestHelper.cs" />
     <Compile Include="TestUtils.cs" />
     <Compile Include="Util\CollectionUtilitiesTest.cs" />
     <Compile Include="Util\DeprecationUtilitiesTest.cs" />

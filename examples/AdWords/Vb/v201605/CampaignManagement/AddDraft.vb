@@ -64,6 +64,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201605
       ' Get the DraftService.
       Dim draftService As DraftService = CType(user.GetService( _
           AdWordsService.v201605.DraftService), DraftService)
+      ' [START createDraft] MOE:strip_line
       Dim draft As New Draft()
       draft.baseCampaignId = baseCampaignId
       draft.draftName = "Test Draft #" + ExampleUtilities.GetRandomString()
@@ -71,6 +72,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201605
       Dim draftOperation As New DraftOperation()
       draftOperation.operator = [Operator].ADD
       draftOperation.operand = draft
+      ' [END createDraft] MOE:strip_line
 
       Try
         draft = draftService.mutate(New DraftOperation() {draftOperation}).value(0)
@@ -84,7 +86,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201605
         Dim campaignCriterionService As CampaignCriterionService =
             CType(user.GetService(AdWordsService.v201605.CampaignCriterionService),  _
                 CampaignCriterionService)
-
+        ' [START customizeDraft] MOE:strip_line
         Dim language As New Language()
         language.id = 1003L ' Spanish
 
@@ -100,6 +102,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201605
 
         campaignCriterion = campaignCriterionService.mutate(
             New CampaignCriterionOperation() {criterionOperation}).value(0)
+        ' [END customizeDraft] MOE:strip_line
 
         Console.WriteLine("Draft updated to include criteria in draft campaign ID {0}.",
             draft.draftCampaignId)

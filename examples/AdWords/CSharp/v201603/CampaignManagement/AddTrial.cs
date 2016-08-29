@@ -79,6 +79,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201603 {
       TrialService trialService = (TrialService) user.GetService(
         AdWordsService.v201603.TrialService);
 
+      // [START createTrial] MOE:strip_line
       Trial trial = new Trial() {
         draftId = draftId,
         baseCampaignId = baseCampaignId,
@@ -90,10 +91,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201603 {
         @operator = Operator.ADD,
         operand = trial
       };
-
+      // [END createTrial] MOE:strip_line
       try {
         long trialId = trialService.mutate(new TrialOperation[] { trialOperation }).value[0].id;
 
+        // [START pollForTrialCompletion] MOE:strip_line
         // Since creating a trial is asynchronous, we have to poll it to wait
         // for it to finish.
         Selector trialSelector = new Selector() {
@@ -127,6 +129,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201603 {
           // The trial creation was successful.
           Console.WriteLine("Trial created with ID {0} and trial campaign ID {1}.",
               trial.id, trial.trialCampaignId);
+          // [START retrieveTrialErrors] MOE:strip_line
         } else if (trial.status == TrialStatus.CREATION_FAILED) {
           // The trial creation failed, and errors can be fetched from the
           // TrialAsyncErrorService.
@@ -157,6 +160,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201603 {
                 asyncError.trigger, asyncError.fieldPath);
             }
           }
+          // [END retrieveTrialErrors] MOE:strip_line
         } else {
             // Most likely, the trial is still being created. You can continue
             // polling, but we have limited the number of attempts in the
@@ -164,6 +168,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201603 {
             Console.WriteLine("Timed out waiting to create trial from draft ID {0} with " +
                 "base campaign ID {1}.", draftId, baseCampaignId);
         }
+        // [END pollForTrialCompletion] MOE:strip_line
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to create trial from draft.", e);
       }

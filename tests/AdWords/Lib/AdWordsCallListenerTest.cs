@@ -37,7 +37,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
   /// <summary>
   /// Test cases for AdWordsCallListener.
   /// </summary>
-  internal class AdWordsCallListenerTest : VersionedExampleTestsBase {
+  internal class AdWordsCallListenerTest : MockedExampleTestsBase {
     private const long TEST_CAMPAIGN_ID = 12345;
 
     /// <summary>
