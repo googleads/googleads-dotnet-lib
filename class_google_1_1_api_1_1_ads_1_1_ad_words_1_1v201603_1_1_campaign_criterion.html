@@ -238,20 +238,9 @@ Selectable">This field can be selected using the value "BaseCampaignId".</span><
 </div><div class="memdoc">
 
 <p>The modifier for bids when the criterion matches. </p>
-<p>Allowable modifier values depend on the criterion:</p>
-<ul>
-<li>
-<code>0.1</code> - <code>10.0</code>: <a href="AdSchedule">AdSchedule</a> </li>
-<li>
-<code>0.1</code> - <code>10.0</code>: <a href="Location">Location</a> </li>
-<li>
-<code>0.1</code> - <code>10.0</code>: <a href="Proximity">Proximity</a> </li>
-<li>
-<code>0.1</code> - <code>10.0</code>: <a href="LocationGroups">LocationGroups</a> </li>
-<li>
-<code>0.1</code> - <code>4.0</code>: <a href="Platform">Platform</a> (mobile), <code>0</code>: to opt out of mobile </li>
-</ul>
-<p>Specify <code>-1.0</code> to clear existing bid modifier. <span class="constraint Selectable">This field can be selected using the value "BidModifier".</span><span class="constraint Filterable">This field can be filtered on.</span> </p>
+<p>Valid modifier values range from <code>0.1</code> to <code>10.0</code>, with <code>0.0</code> reserved for opting out of platform criterion.</p>
+<p>Specify <code>-1.0</code> to clear existing bid modifier. <span class="constraint Selectable">This field can be selected using the value "BidModifier".</span><span class="constraint
+Filterable">This field can be filtered on.</span></p>
 
 </div>
 </div>
@@ -438,7 +427,7 @@ Required">This field is required and should not be </span></p>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.WK3XCQ7WLL/dist/github/src/AdWords/v201603/<a class="el" href="v201603_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.KI3MUSEBUz/dist/github/src/AdWords/v201603/<a class="el" href="v201603_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -446,7 +435,7 @@ Required">This field is required and should not be </span></p>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603.html">v201603</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_campaign_criterion.html">CampaignCriterion</a></li>
-    <li class="footer">Generated on Tue Aug 23 2016 16:04:55 for Ads API .NET library by
+    <li class="footer">Generated on Mon Aug 29 2016 13:17:19 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

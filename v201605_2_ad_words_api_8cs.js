@@ -2980,6 +2980,7 @@ var v201605_2_ad_words_api_8cs =
       [ "BUK", "v201605_2_ad_words_api_8cs.html#aefffc7356d3793fef6b39fd075fe4616a5ed77d48e368a25ca71bcd612aa3efb9", null ],
       [ "BWP", "v201605_2_ad_words_api_8cs.html#aefffc7356d3793fef6b39fd075fe4616a38f2cd3fe66b7b8a64b46bc06880d4b7", null ],
       [ "BYB", "v201605_2_ad_words_api_8cs.html#aefffc7356d3793fef6b39fd075fe4616aec55d5f80be034b3ef9e247fb3b5fb0b", null ],
+      [ "BYN", "v201605_2_ad_words_api_8cs.html#aefffc7356d3793fef6b39fd075fe4616a794f2ad18c1ed9bbc1581fe4589fba1b", null ],
       [ "BYR", "v201605_2_ad_words_api_8cs.html#aefffc7356d3793fef6b39fd075fe4616ab52741e555b22de01ac3e002e30def8d", null ],
       [ "BZD", "v201605_2_ad_words_api_8cs.html#aefffc7356d3793fef6b39fd075fe4616a12f48c676c18cee9f424d11554c49415", null ],
       [ "CAD", "v201605_2_ad_words_api_8cs.html#aefffc7356d3793fef6b39fd075fe4616aeccb0954fca9f2005aea084605df5ee9", null ],

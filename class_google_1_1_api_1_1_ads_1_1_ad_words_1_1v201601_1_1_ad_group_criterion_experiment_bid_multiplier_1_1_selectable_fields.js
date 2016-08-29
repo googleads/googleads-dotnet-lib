@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad_group_criterion_experiment_bid_multiplier_1_1_selectable_fields =
-[
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201601_1_1_ad_group_criterion_experiment_bid_multiplier_1_1_selectable_fields.html#a56751d8554d5c938e5d559971a16d2b1", null ]
-];

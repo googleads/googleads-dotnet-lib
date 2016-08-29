@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a311a1b403d54a6158cf33a6812affb3e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_proposal_marketplace_info.html#a311a1b403d54a6158cf33a6812affb3e">hasLocalVersionEdits</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a311a1b403d54a6158cf33a6812affb3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the <a href="Proposal">Proposal</a> has a local version that's not sent to buyer. This attribute is read-only.  <a href="#a311a1b403d54a6158cf33a6812affb3e">More...</a><br/></td></tr>
+<tr class="memdesc:a311a1b403d54a6158cf33a6812affb3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the non-free-editable fields of a <a href="Proposal">Proposal</a> are opened for edit. A proposal that is open for edit will not receive buyer updates from Marketplace. If the buyer updates the proposal while this is open for local editing, <a class="el" href="namespace_google.html">Google</a> will set <a href="#isNewVersionFromBuyer">#isNewVersionFromBuyer</a> to  <a href="#a311a1b403d54a6158cf33a6812affb3e">More...</a><br/></td></tr>
 <tr class="separator:a311a1b403d54a6158cf33a6812affb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d905d224b540e87fbb41293718993a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_proposal_marketplace_info.html#a5d905d224b540e87fbb41293718993a1">hasLocalVersionEditsSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a5d905d224b540e87fbb41293718993a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,7 +130,7 @@ Properties</h2></td></tr>
 <tr class="memdesc:a80dc77aade069023e98b0d45df407618"><td class="mdescLeft">&#160;</td><td class="mdescRight">The comment on the <a href="Proposal">Proposal</a> to be sent to the buyer.  <a href="#a80dc77aade069023e98b0d45df407618">More...</a><br/></td></tr>
 <tr class="separator:a80dc77aade069023e98b0d45df407618"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18627c2d7dd5466a9e0ce435d774b1d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_proposal_marketplace_info.html#a18627c2d7dd5466a9e0ce435d774b1d3">isNewVersionFromBuyer</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a18627c2d7dd5466a9e0ce435d774b1d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if there is a new version from the buyer. This attribute is read-only.  <a href="#a18627c2d7dd5466a9e0ce435d774b1d3">More...</a><br/></td></tr>
+<tr class="memdesc:a18627c2d7dd5466a9e0ce435d774b1d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that the buyer has made updates to the proposal on Marketplace. This attribute is only meaningful if the proposal is open for edit (i.e., <a href="#hasLocalVersionEdits">#hasLocalVersionEdits</a> is  <a href="#a18627c2d7dd5466a9e0ce435d774b1d3">More...</a><br/></td></tr>
 <tr class="separator:a18627c2d7dd5466a9e0ce435d774b1d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b46b2c8099ac81791e6744b5eb4bcff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_proposal_marketplace_info.html#a2b46b2c8099ac81791e6744b5eb4bcff">isNewVersionFromBuyerSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a2b46b2c8099ac81791e6744b5eb4bcff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,7 +207,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Indicates if the <a href="Proposal">Proposal</a> has a local version that's not sent to buyer. This attribute is read-only. </p>
+<p>Whether the non-free-editable fields of a <a href="Proposal">Proposal</a> are opened for edit. A proposal that is open for edit will not receive buyer updates from Marketplace. If the buyer updates the proposal while this is open for local editing, <a class="el" href="namespace_google.html">Google</a> will set <a href="#isNewVersionFromBuyer">#isNewVersionFromBuyer</a> to </p>
+<p><code></code>. You will then need to call <a href="DiscardProposalDrafts">DiscardProposalDrafts</a> to revert your edits to get the buyer's latest changes. This attribute is read-only. </p>
 
 </div>
 </div>
@@ -230,7 +231,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p></p>
-<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_proposal_marketplace_info.html#a311a1b403d54a6158cf33a6812affb3e" title="Indicates if the Proposal has a local version that&#39;s not sent to buyer. This attribute is read-only...">hasLocalVersionEdits</a>, <code>false</code> otherwise. </p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_proposal_marketplace_info.html#a311a1b403d54a6158cf33a6812affb3e" title="Whether the non-free-editable fields of a Proposal are opened for edit. A proposal that is open for e...">hasLocalVersionEdits</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -252,7 +253,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Indicates if there is a new version from the buyer. This attribute is read-only. </p>
+<p>Indicates that the buyer has made updates to the proposal on Marketplace. This attribute is only meaningful if the proposal is open for edit (i.e., <a href="#hasLocalVersionEdits">#hasLocalVersionEdits</a> is </p>
+<p><code>true</code>) This attribute is read-only. </p>
 
 </div>
 </div>
@@ -275,7 +277,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p></p>
-<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_proposal_marketplace_info.html#a18627c2d7dd5466a9e0ce435d774b1d3" title="Indicates if there is a new version from the buyer. This attribute is read-only. ">isNewVersionFromBuyer</a>, <code>false</code> otherwise. </p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_proposal_marketplace_info.html#a18627c2d7dd5466a9e0ce435d774b1d3" title="Indicates that the buyer has made updates to the proposal on Marketplace. This attribute is only mean...">isNewVersionFromBuyer</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -347,7 +349,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.WK3XCQ7WLL/dist/github/src/Dfp/v201608/<a class="el" href="v201608_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.KI3MUSEBUz/dist/github/src/Dfp/v201608/<a class="el" href="v201608_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -355,7 +357,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608.html">v201608</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_proposal_marketplace_info.html">ProposalMarketplaceInfo</a></li>
-    <li class="footer">Generated on Tue Aug 23 2016 16:22:09 for Ads API .NET library by
+    <li class="footer">Generated on Mon Aug 29 2016 13:28:30 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

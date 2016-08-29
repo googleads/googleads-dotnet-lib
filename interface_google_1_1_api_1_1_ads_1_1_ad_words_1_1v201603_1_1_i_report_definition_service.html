@@ -127,7 +127,7 @@ Inheritance diagram for Google.Api.Ads.AdWords.v201603.IReportDefinitionService:
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a84a9adc4be89f09e779687b4629a7833"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_report_definition_field.html">ReportDefinitionField</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_i_report_definition_service.html#a84a9adc4be89f09e779687b4629a7833">getReportFields</a> (<a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603.html#a54746383529771784d7f1f0d89b1fb09">ReportDefinitionReportType</a> reportType)</td></tr>
-<tr class="memdesc:a84a9adc4be89f09e779687b4629a7833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the available report fields for a given report type.  <a href="#a84a9adc4be89f09e779687b4629a7833">More...</a><br/></td></tr>
+<tr class="memdesc:a84a9adc4be89f09e779687b4629a7833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the available report fields for a given report type. When using this method the  <a href="#a84a9adc4be89f09e779687b4629a7833">More...</a><br/></td></tr>
 <tr class="separator:a84a9adc4be89f09e779687b4629a7833"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -159,7 +159,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the available report fields for a given report type. </p>
+<p>Returns the available report fields for a given report type. When using this method the </p>
+<p><code>clientCustomerId</code> header field is optional. Callers are discouraged from setting the clientCustomerId header field in calls to this method as its presence will trigger an authorization error if the caller does not have access to the customer with the included ID. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">reportType</td><td>The type of report.</td></tr>
@@ -224,7 +225,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/tmp/tmp.WK3XCQ7WLL/dist/github/src/AdWords/v201603/<a class="el" href="v201603_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.KI3MUSEBUz/dist/github/src/AdWords/v201603/<a class="el" href="v201603_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -232,7 +233,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603.html">v201603</a></li><li class="navelem"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_i_report_definition_service.html">IReportDefinitionService</a></li>
-    <li class="footer">Generated on Tue Aug 23 2016 16:09:54 for Ads API .NET library by
+    <li class="footer">Generated on Mon Aug 29 2016 13:20:05 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

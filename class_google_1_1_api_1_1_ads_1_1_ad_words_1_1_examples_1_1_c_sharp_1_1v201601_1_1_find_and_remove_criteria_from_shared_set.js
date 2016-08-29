@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_find_and_remove_criteria_from_shared_set =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_find_and_remove_criteria_from_shared_set.html#a98512b592a6e2a8d13291e526f3c1d09", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_find_and_remove_criteria_from_shared_set.html#a76c5cbdf159de806f1eebf40f959bf25", null ]
-];

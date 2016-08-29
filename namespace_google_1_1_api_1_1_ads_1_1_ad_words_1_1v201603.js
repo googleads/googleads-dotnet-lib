@@ -488,6 +488,7 @@ var namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603 =
     [ "NegativeCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_negative_criterion.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_negative_criterion" ],
     [ "KeywordSet", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_keyword_set.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_keyword_set" ],
     [ "KeywordGroup", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_keyword_group.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_keyword_group" ],
+    [ "BusinessHour", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_business_hour.html", null ],
     [ "BudgetSuggestionSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_budget_suggestion_selector.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_budget_suggestion_selector" ],
     [ "PromotionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_promotion_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_promotion_service" ],
     [ "PromotionOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_promotion_operation.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_promotion_operation" ],

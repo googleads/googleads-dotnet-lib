@@ -281,7 +281,6 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_trial_service.html" title="TrialService manages the life cycle of campaign trials. It is used to create new trials from drafts...">TrialService</a> manages the life cycle of campaign trials. It is used to create new trials from drafts, modify trial properties, promote changes in a trial back to its base campaign, and to archive a trial. </p>
 <p>A trial is an experiment, running two variants (trial arms) - the base campaign and the trial - at the same time, directing a fixed share of traffic to each trial arm. A trial is created from a draft of the base campaign and will be a snapshot of changes in the draft at the time of creation.</p>
-<p>Changes to entities of the base campaign after creating the trial will be applied to the trial asynchronously, unless the changed fields were overridden in the draft. Changes to the draft have no effect on a trial once it has been created.</p>
 <h3>Constraints</h3>
 <ul>
 <li>
@@ -298,11 +297,12 @@ There is at most one trial running and at most one trial scheduled for the futur
 The base campaign's budget cannot be shared with any other campaign. <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_trial.html" title="Interface for campaign trial entities. A trial is an experiment created by an advertiser from changes...">Trial</a> creation will fail if the base campaign's budget is shared with another campaign. </li>
 </ul>
 <h3>Life cycle</h3>
-<p>A trial's <a href="com.google.ads.api.services.campaignmgmt.trial.Trial#getStatus()">status</a> reflects the state of the trial within its life cycle. Some status transitions are performed explicitly by sending a <a href="com.google.ads.api.services.common.operation.Operator#SET">com.google.ads.api.services.common.operation.Operator::SET</a> operation, while other status transitions occur asynchronously without a client operation. </p>
-<p>When a trial is first <a href="com.google.ads.api.services.common.operation.Operator#ADD">com.google.ads.api.services.common.operation.Operator::ADD</a>ed, its status is <a href="com.google.ads.api.common.sharedenums.TrialStatus#CREATING">com.google.ads.api.common.sharedenums.TrialStatus::CREATING</a>. The trial will be created asynchronously, and once it is fully created, its status will change to <a href="">com.google.ads.api.common.sharedenums.TrialStatus::ACTIVE</a>.</p>
-<p>If the asynchronous creation of the trial fails, its status will change to <a href="">com.google.ads.api.common.sharedenums.TrialStatus::CREATION_FAILED</a>.</p>
-<p>To promote changes in an <a href="com.google.ads.api.common.sharedenums.TrialStatus#ACTIVE ">ACTIVE</a> trial back to the base campaign, set the trial status to <a href="">com.google.ads.api.common.sharedenums.TrialStatus::PROMOTING PROMOTING</a>. The promotion itself will occur asynchronously. If it fails with recoverable errors, the status will change to <a href="">com.google.ads.api.common.sharedenums.TrialStatus::PROMOTE_ERROR PROMOTE_ERROR</a>. In this case, no change has been promoted to the base campaign and clients can set the status to <a href="">com.google.ads.api.common.sharedenums.TrialStatus::PROMOTING PROMOTING</a> to try again. If the promotion operation fails after some of the base campaign has already been updated, the status will change to <a href="com.google.ads.api.common.sharedenums.TrialStatus#PROMOTE_FAILED ">PROMOTE_FAILED</a>.</p>
-<p>Any trial that is not currently running or is <a href="">com.google.ads.api.common.sharedenums.TrialStatus::CREATING CREATING</a> or <a href="">com.google.ads.api.common.sharedenums.TrialStatus::PROMOTING PROMOTING</a> can be archived by setting the status to the value of the same name.</p>
+<p>A trial's <a href="Trial#status">status</a> reflects the state of the trial within its life cycle. Some status transitions are performed explicitly by sending a <a href="Operator#SET">SET</a> operation, while other status transitions occur asynchronously without a client operation. </p>
+<p>When a trial is first <a href="Operator#ADD">ADD</a>ed, its status is <a href="TrialStatus#CREATING">CREATING</a>. The trial will be created asynchronously, and once it is fully created, its status will change to <a href="TrialStatus#ACTIVE">ACTIVE</a>.</p>
+<p>If the asynchronous creation of the trial fails, its status will change to <a href="TrialStatus#CREATION_FAILED">CREATION_FAILED</a>.</p>
+<p>To promote changes in an <a href="TrialStatus#ACTIVE">ACTIVE</a> trial back to the base campaign, set the trial status to <a href="TrialStatus#PROMOTING">PROMOTING</a>. The promotion itself will occur asynchronously. If the promotion operation fails after some of the base campaign has already been updated, the status will change to <a href="TrialStatus#PROMOTE_FAILED">PROMOTE_FAILED</a>.</p>
+<p>To graduate an <a href="TrialStatus#ACTIVE">ACTIVE</a> trial, which will allow its associated campaign to act independently of the trial and free it of restrictions from the trial, set the status to <a href="TrialStatus#GRADUATED">GRADUATED</a> and provide a new <a href="Budget#budgetid">budgetId</a> for the campaign to use (since it can no longer share the base campaign's budget).</p>
+<p>Any trial that is not <a href="TrialStatus#CREATING">CREATING</a> or <a href="TrialStatus#PROMOTING">PROMOTING</a> can be archived by setting the status to the value of the same name.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a10e4330fcd87c3b09c70795db046bcc0"></a>
 <div class="memitem">
@@ -493,7 +493,7 @@ The base campaign's budget cannot be shared with any other campaign. <a class="e
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.WK3XCQ7WLL/dist/github/src/AdWords/v201603/<a class="el" href="v201603_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.KI3MUSEBUz/dist/github/src/AdWords/v201603/<a class="el" href="v201603_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -501,7 +501,7 @@ The base campaign's budget cannot be shared with any other campaign. <a class="e
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603.html">v201603</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_trial_service.html">TrialService</a></li>
-    <li class="footer">Generated on Tue Aug 23 2016 16:09:37 for Ads API .NET library by
+    <li class="footer">Generated on Mon Aug 29 2016 13:19:55 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

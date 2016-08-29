@@ -130,7 +130,9 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:aefa20d7e945cc90431545fc2094438a1"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_feed_mapping.html#aefa20d7e945cc90431545fc2094438a1">feedMappingId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aefa20d7e945cc90431545fc2094438a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of this <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_feed_mapping.html" title="A FeedMapping represents a mapping between feed attributes in a specific feed and placeholder fields ...">FeedMapping</a>. <span class="constraint Required">This field is required and should not be </span> <a href="#aefa20d7e945cc90431545fc2094438a1">More...</a><br/></td></tr>
+<tr class="memdesc:aefa20d7e945cc90431545fc2094438a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of this <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_feed_mapping.html" title="A FeedMapping represents a mapping between feed attributes in a specific feed and placeholder fields ...">FeedMapping</a>. <span class="constraint Selectable">This field can be selected using the value "FeedMappingId".</span><span class="constraint
+Filterable">This field can be filtered on.</span> <span class="constraint
+ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: ADD.</span> <span class="constraint Required">This field is required and should not be </span> <a href="#aefa20d7e945cc90431545fc2094438a1">More...</a><br/></td></tr>
 <tr class="separator:aefa20d7e945cc90431545fc2094438a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83b85e6e2213a10b69e5521054d81a11"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_feed_mapping.html#a83b85e6e2213a10b69e5521054d81a11">feedMappingIdSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a83b85e6e2213a10b69e5521054d81a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,7 +155,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 <tr class="memitem:a0b62083c85518011ec639000097dca68"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_feed_mapping.html#a0b62083c85518011ec639000097dca68">statusSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a0b62083c85518011ec639000097dca68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bdf4644f517d5aaacc3a720d3483b62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_attribute_field_mapping.html">AttributeFieldMapping</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_feed_mapping.html#a3bdf4644f517d5aaacc3a720d3483b62">attributeFieldMappings</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a3bdf4644f517d5aaacc3a720d3483b62"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of feed attributes to placeholder fields mappings. <span class="constraint Required">This field is required and should not be </span> <a href="#a3bdf4644f517d5aaacc3a720d3483b62">More...</a><br/></td></tr>
+<tr class="memdesc:a3bdf4644f517d5aaacc3a720d3483b62"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of feed attributes to placeholder fields mappings. <span class="constraint Selectable">This field can be selected using the value "AttributeFieldMappings".</span> <span class="constraint Required">This field is required and should not be </span> <a href="#a3bdf4644f517d5aaacc3a720d3483b62">More...</a><br/></td></tr>
 <tr class="separator:a3bdf4644f517d5aaacc3a720d3483b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adce6395d9fcb865ca9a1fc1769920c8f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_feed_mapping.html#adce6395d9fcb865ca9a1fc1769920c8f">criterionType</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:adce6395d9fcb865ca9a1fc1769920c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The criterion type for this mapping. This field is mutually exclusive with placeholderType. <span class="constraint Selectable">This field can be selected using the value "CriterionType".</span>  <a href="#adce6395d9fcb865ca9a1fc1769920c8f">More...</a><br/></td></tr>
@@ -183,8 +185,8 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 </table>
 </div><div class="memdoc">
 
-<p>The list of feed attributes to placeholder fields mappings. <span class="constraint Required">This field is required and should not be </span></p>
-<p><code>null</code> when it is contained within <a href="Operator">Operator</a>s : ADD. <span class="constraint Selectable">This field can be selected using the value "AttributeFieldMappings".</span> </p>
+<p>The list of feed attributes to placeholder fields mappings. <span class="constraint Selectable">This field can be selected using the value "AttributeFieldMappings".</span> <span class="constraint Required">This field is required and should not be </span></p>
+<p><code>null</code> when it is contained within <a href="Operator">Operator</a>s : ADD. </p>
 
 </div>
 </div>
@@ -298,9 +300,10 @@ Selectable">This field can be selected using the value "FeedId".</span><span cla
 </table>
 </div><div class="memdoc">
 
-<p>ID of this <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_feed_mapping.html" title="A FeedMapping represents a mapping between feed attributes in a specific feed and placeholder fields ...">FeedMapping</a>. <span class="constraint Required">This field is required and should not be </span></p>
-<p><code>null</code> when it is contained within <a href="Operator">Operator</a>s : REMOVE. <span class="constraint
-Selectable">This field can be selected using the value "FeedMappingId".</span><span class="constraint Filterable">This field can be filtered on.</span> </p>
+<p>ID of this <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_feed_mapping.html" title="A FeedMapping represents a mapping between feed attributes in a specific feed and placeholder fields ...">FeedMapping</a>. <span class="constraint Selectable">This field can be selected using the value "FeedMappingId".</span><span class="constraint
+Filterable">This field can be filtered on.</span> <span class="constraint
+ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: ADD.</span> <span class="constraint Required">This field is required and should not be </span></p>
+<p><code>null</code> when it is contained within <a href="Operator">Operator</a>s : REMOVE. </p>
 
 </div>
 </div>
@@ -323,7 +326,7 @@ Selectable">This field can be selected using the value "FeedMappingId".</span><s
 </div><div class="memdoc">
 
 <p></p>
-<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_feed_mapping.html#aefa20d7e945cc90431545fc2094438a1" title="ID of this FeedMapping. This field is required and should not be ">feedMappingId</a>, <code>false</code> otherwise. </p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_feed_mapping.html#aefa20d7e945cc90431545fc2094438a1" title="ID of this FeedMapping. This field can be selected using the value &quot;FeedMappingId&quot;.This field can be filtered on. This field is read only and will be ignored when sent to the API for the following Operators: ADD. This field is required and should not be ">feedMappingId</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -420,7 +423,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.WK3XCQ7WLL/dist/github/src/AdWords/v201603/<a class="el" href="v201603_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.KI3MUSEBUz/dist/github/src/AdWords/v201603/<a class="el" href="v201603_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -428,7 +431,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603.html">v201603</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_feed_mapping.html">FeedMapping</a></li>
-    <li class="footer">Generated on Tue Aug 23 2016 16:07:21 for Ads API .NET library by
+    <li class="footer">Generated on Mon Aug 29 2016 13:18:35 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

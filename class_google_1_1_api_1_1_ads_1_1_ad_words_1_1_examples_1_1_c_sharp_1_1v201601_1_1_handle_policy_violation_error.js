@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_handle_policy_violation_error =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_handle_policy_violation_error.html#a53e05ac1d1c892ca70c40bbd029d23ca", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201601_1_1_handle_policy_violation_error.html#af856a6c177f9e7057c90f976de741a0a", null ]
-];

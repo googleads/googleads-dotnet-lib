@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201601_1_1_product_dimension_equality_comparer =
-[
-    [ "Equals", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201601_1_1_product_dimension_equality_comparer.html#a59b619c6ab4b512e5f84b4b4c54ee730", null ],
-    [ "GetHashCode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201601_1_1_product_dimension_equality_comparer.html#a82c12ab762014acaa7887624c4909e09", null ]
-];

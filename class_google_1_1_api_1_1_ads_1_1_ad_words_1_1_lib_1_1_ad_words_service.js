@@ -1,6 +1,5 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_service =
 [
-    [ "v201601", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_service_1_1v201601.html", null ],
     [ "v201603", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_service_1_1v201603.html", null ],
     [ "v201605", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_service_1_1v201605.html", null ],
     [ "v201607", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_service_1_1v201607.html", null ],

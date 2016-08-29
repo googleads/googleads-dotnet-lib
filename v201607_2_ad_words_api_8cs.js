@@ -3004,6 +3004,7 @@ var v201607_2_ad_words_api_8cs =
       [ "BUK", "v201607_2_ad_words_api_8cs.html#ae99310a1d63f557fca2f0f79e9f04531a5ed77d48e368a25ca71bcd612aa3efb9", null ],
       [ "BWP", "v201607_2_ad_words_api_8cs.html#ae99310a1d63f557fca2f0f79e9f04531a38f2cd3fe66b7b8a64b46bc06880d4b7", null ],
       [ "BYB", "v201607_2_ad_words_api_8cs.html#ae99310a1d63f557fca2f0f79e9f04531aec55d5f80be034b3ef9e247fb3b5fb0b", null ],
+      [ "BYN", "v201607_2_ad_words_api_8cs.html#ae99310a1d63f557fca2f0f79e9f04531a794f2ad18c1ed9bbc1581fe4589fba1b", null ],
       [ "BYR", "v201607_2_ad_words_api_8cs.html#ae99310a1d63f557fca2f0f79e9f04531ab52741e555b22de01ac3e002e30def8d", null ],
       [ "BZD", "v201607_2_ad_words_api_8cs.html#ae99310a1d63f557fca2f0f79e9f04531a12f48c676c18cee9f424d11554c49415", null ],
       [ "CAD", "v201607_2_ad_words_api_8cs.html#ae99310a1d63f557fca2f0f79e9f04531aeccb0954fca9f2005aea084605df5ee9", null ],

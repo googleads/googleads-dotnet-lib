@@ -1664,6 +1664,7 @@ var v201603_2_ad_words_api_8cs =
     [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_negative_criterion_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_negative_criterion_1_1_filterable_fields" ],
     [ "KeywordSet", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_keyword_set.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_keyword_set" ],
     [ "KeywordGroup", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_keyword_group.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_keyword_group" ],
+    [ "BusinessHour", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_business_hour.html", null ],
     [ "BudgetSuggestionSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_budget_suggestion_selector.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_budget_suggestion_selector" ],
     [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_budget_suggestion_selector_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_budget_suggestion_selector_1_1_fields" ],
     [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_budget_suggestion_selector_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_budget_suggestion_selector_1_1_selectable_fields" ],
@@ -2931,6 +2932,7 @@ var v201603_2_ad_words_api_8cs =
       [ "BUK", "v201603_2_ad_words_api_8cs.html#a85c0cb350142bfef87202dcb265d9e48a5ed77d48e368a25ca71bcd612aa3efb9", null ],
       [ "BWP", "v201603_2_ad_words_api_8cs.html#a85c0cb350142bfef87202dcb265d9e48a38f2cd3fe66b7b8a64b46bc06880d4b7", null ],
       [ "BYB", "v201603_2_ad_words_api_8cs.html#a85c0cb350142bfef87202dcb265d9e48aec55d5f80be034b3ef9e247fb3b5fb0b", null ],
+      [ "BYN", "v201603_2_ad_words_api_8cs.html#a85c0cb350142bfef87202dcb265d9e48a794f2ad18c1ed9bbc1581fe4589fba1b", null ],
       [ "BYR", "v201603_2_ad_words_api_8cs.html#a85c0cb350142bfef87202dcb265d9e48ab52741e555b22de01ac3e002e30def8d", null ],
       [ "BZD", "v201603_2_ad_words_api_8cs.html#a85c0cb350142bfef87202dcb265d9e48a12f48c676c18cee9f424d11554c49415", null ],
       [ "CAD", "v201603_2_ad_words_api_8cs.html#a85c0cb350142bfef87202dcb265d9e48aeccb0954fca9f2005aea084605df5ee9", null ],
@@ -4319,6 +4321,7 @@ var v201603_2_ad_words_api_8cs =
       [ "PREMIUM_RATE_PHONE_NUMBER_NOT_ALLOWED", "v201603_2_ad_words_api_8cs.html#abf25dda2a5cf2bd8cd5215b5aaeffadeadbd85e149e1edfd3ea390effe410260d", null ],
       [ "NON_LOCAL_BUSINESS", "v201603_2_ad_words_api_8cs.html#abf25dda2a5cf2bd8cd5215b5aaeffadeab11f5c4655fbd384bc4bf12ce25f73d2", null ],
       [ "ALREADY_MIGRATED", "v201603_2_ad_words_api_8cs.html#abf25dda2a5cf2bd8cd5215b5aaeffadea912716de8dd4674efbfeba9c7c32d933", null ],
+      [ "BUSINESS_ACCESS_DENIED", "v201603_2_ad_words_api_8cs.html#abf25dda2a5cf2bd8cd5215b5aaeffadea16504944f5252e3033eb040883884719", null ],
       [ "UNKNOWN", "v201603_2_ad_words_api_8cs.html#abf25dda2a5cf2bd8cd5215b5aaeffadea696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "PromotionStatus", "v201603_2_ad_words_api_8cs.html#a686d3905510e9ed2e719f1358df3945a", [

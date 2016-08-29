@@ -145,14 +145,14 @@ Properties</h2></td></tr>
 <tr class="separator:a4783f9d0fe845562d13abdfa07576e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a283aff2e65ff418a67f154557c64c23c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_app_feed_item.html#a283aff2e65ff418a67f154557c64c23c">appId</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a283aff2e65ff418a67f154557c64c23c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The store-specific ID for the target application. <span class="constraint
-StringLength">This string must not be empty.</span>  <a href="#a283aff2e65ff418a67f154557c64c23c">More...</a><br/></td></tr>
+StringLength">This string must not be empty, (trimmed).</span>  <a href="#a283aff2e65ff418a67f154557c64c23c">More...</a><br/></td></tr>
 <tr class="separator:a283aff2e65ff418a67f154557c64c23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7706d5ba3970de6830bbc0e0eac9fc5a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_app_feed_item.html#a7706d5ba3970de6830bbc0e0eac9fc5a">appLinkText</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a7706d5ba3970de6830bbc0e0eac9fc5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The visible text displayed when the link is rendered in an ad. <span class="constraint StringLength">The length of this string should be between 1 and 25, inclusive.</span>  <a href="#a7706d5ba3970de6830bbc0e0eac9fc5a">More...</a><br/></td></tr>
+<tr class="memdesc:a7706d5ba3970de6830bbc0e0eac9fc5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The visible text displayed when the link is rendered in an ad. <span class="constraint StringLength">The length of this string should be between 1 and 25, inclusive, (trimmed).</span>  <a href="#a7706d5ba3970de6830bbc0e0eac9fc5a">More...</a><br/></td></tr>
 <tr class="separator:a7706d5ba3970de6830bbc0e0eac9fc5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4320db2425a57bea2178c63a721bf587"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_app_feed_item.html#a4320db2425a57bea2178c63a721bf587">appUrl</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a4320db2425a57bea2178c63a721bf587"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destination URL of the in-app link. <span class="constraint
-StringLength">The length of this string should be between 0 and 2076, inclusive.</span>  <a href="#a4320db2425a57bea2178c63a721bf587">More...</a><br/></td></tr>
+StringLength">The length of this string should be between 0 and 2076, inclusive, (trimmed).</span>  <a href="#a4320db2425a57bea2178c63a721bf587">More...</a><br/></td></tr>
 <tr class="separator:a4320db2425a57bea2178c63a721bf587"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a690aed87425377efa08ecf21a2d32e5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_url_list.html">UrlList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_app_feed_item.html#a690aed87425377efa08ecf21a2d32e5c">appFinalUrls</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a690aed87425377efa08ecf21a2d32e5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of possible final URLs after all cross domain redirects.  <a href="#a690aed87425377efa08ecf21a2d32e5c">More...</a><br/></td></tr>
@@ -292,7 +292,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API for t
 </div><div class="memdoc">
 
 <p>The store-specific ID for the target application. <span class="constraint
-StringLength">This string must not be empty.</span> </p>
+StringLength">This string must not be empty, (trimmed).</span> </p>
 
 </div>
 </div>
@@ -314,7 +314,7 @@ StringLength">This string must not be empty.</span> </p>
 </table>
 </div><div class="memdoc">
 
-<p>The visible text displayed when the link is rendered in an ad. <span class="constraint StringLength">The length of this string should be between 1 and 25, inclusive.</span> </p>
+<p>The visible text displayed when the link is rendered in an ad. <span class="constraint StringLength">The length of this string should be between 1 and 25, inclusive, (trimmed).</span> </p>
 
 </div>
 </div>
@@ -404,7 +404,7 @@ StringLength">This string must not be empty.</span> </p>
 </div><div class="memdoc">
 
 <p>The destination URL of the in-app link. <span class="constraint
-StringLength">The length of this string should be between 0 and 2076, inclusive.</span> </p>
+StringLength">The length of this string should be between 0 and 2076, inclusive, (trimmed).</span> </p>
 
 </div>
 </div>
@@ -431,7 +431,7 @@ StringLength">The length of this string should be between 0 and 2076, inclusive.
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.WK3XCQ7WLL/dist/github/src/AdWords/v201607/<a class="el" href="v201607_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.KI3MUSEBUz/dist/github/src/AdWords/v201607/<a class="el" href="v201607_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -439,7 +439,7 @@ StringLength">The length of this string should be between 0 and 2076, inclusive.
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607.html">v201607</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_app_feed_item.html">AppFeedItem</a></li>
-    <li class="footer">Generated on Tue Aug 23 2016 16:19:47 for Ads API .NET library by
+    <li class="footer">Generated on Mon Aug 29 2016 13:26:42 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

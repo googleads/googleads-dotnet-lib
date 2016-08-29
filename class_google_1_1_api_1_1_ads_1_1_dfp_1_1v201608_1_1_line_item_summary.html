@@ -189,7 +189,7 @@ Properties</h2></td></tr>
 <tr class="memitem:a450d10f0f09a67bfd8cde0800a39b57d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_line_item_summary.html#a450d10f0f09a67bfd8cde0800a39b57d">lineItemTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a450d10f0f09a67bfd8cde0800a39b57d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12ecd9c837b16d3c50d15f94db67120b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_line_item_summary.html#a12ecd9c837b16d3c50d15f94db67120b">priority</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a12ecd9c837b16d3c50d15f94db67120b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The priority for the line item. The priority is a value between 1 and 16. If not specified, the default priority of the <a href="LineItemType">LineItemType</a> will be assigned. The following default, minimum and maximum priority values is allowed for each line item type:  <a href="#a12ecd9c837b16d3c50d15f94db67120b">More...</a><br/></td></tr>
+<tr class="memdesc:a12ecd9c837b16d3c50d15f94db67120b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The priority for the line item. Valid values range from 1 to 16. This field is optional and defaults to the default priority of the <a href="LineItemType">LineItemType</a>.  <a href="#a12ecd9c837b16d3c50d15f94db67120b">More...</a><br/></td></tr>
 <tr class="separator:a12ecd9c837b16d3c50d15f94db67120b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8666508264431a1196be29a0a7c7d5c4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_line_item_summary.html#a8666508264431a1196be29a0a7c7d5c4">prioritySpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a8666508264431a1196be29a0a7c7d5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1782,32 +1782,33 @@ The <a href="Creative#appliedLabels">Creative::appliedLabels</a> of an associate
 </table>
 </div><div class="memdoc">
 
-<p>The priority for the line item. The priority is a value between 1 and 16. If not specified, the default priority of the <a href="LineItemType">LineItemType</a> will be assigned. The following default, minimum and maximum priority values is allowed for each line item type: </p>
+<p>The priority for the line item. Valid values range from 1 to 16. This field is optional and defaults to the default priority of the <a href="LineItemType">LineItemType</a>. </p>
+<p>The following table shows the default, minimum, and maximum priority values are for each line item type:</p>
 <table class="doxtable">
 <tr>
-<th scope="col">LineItemType </th><th scope="col">Default Priority </th><th scope="col">Minimum Priority </th><th scope="col">Maximum priority  </th></tr>
+<th colspan="2" scope="col">LineItemType - default priority (minimum priority, maximum priority)  </th></tr>
 <tr>
-<td><a href="LineItemType#SPONSORSHIP">LineItemType::SPONSORSHIP</a> </td><td>4 </td><td>2 </td><td>5  </td></tr>
+<td><a href="LineItemType#SPONSORSHIP">LineItemType::SPONSORSHIP</a> </td><td>4 (2, 5)  </td></tr>
 <tr>
-<td><a href="LineItemType#STANDARD">LineItemType::STANDARD</a> </td><td>8 </td><td>6 </td><td>10  </td></tr>
+<td><a href="LineItemType#STANDARD">LineItemType::STANDARD</a> </td><td>8 (6, 10)  </td></tr>
 <tr>
-<td><a href="LineItemType#NETWORK">LineItemType::NETWORK</a> </td><td>12 </td><td>11 </td><td>14  </td></tr>
+<td><a href="LineItemType#NETWORK">LineItemType::NETWORK</a> </td><td>12 (11, 14)  </td></tr>
 <tr>
-<td><a href="LineItemType#BULK">LineItemType::BULK</a> </td><td>12 </td><td>11 </td><td>14  </td></tr>
+<td><a href="LineItemType#BULK">LineItemType::BULK</a> </td><td>12 (11, 14)  </td></tr>
 <tr>
-<td><a href="LineItemType#PRICE_PRIORITY">LineItemType::PRICE_PRIORITY</a> </td><td>12 </td><td>11 </td><td>14  </td></tr>
+<td><a href="LineItemType#PRICE_PRIORITY">LineItemType::PRICE_PRIORITY</a> </td><td>12 (11, 14)  </td></tr>
 <tr>
-<td><a href="LineItemType#HOUSE">LineItemType::HOUSE</a> </td><td>16 </td><td>15 </td><td>16  </td></tr>
+<td><a href="LineItemType#HOUSE">LineItemType::HOUSE</a> </td><td>16 (15, 16)  </td></tr>
 <tr>
-<td><a href="LineItemType#CLICK_TRACKING">LineItemType::CLICK_TRACKING</a> </td><td>16 </td><td>1 </td><td>16  </td></tr>
+<td><a href="LineItemType#CLICK_TRACKING">LineItemType::CLICK_TRACKING</a> </td><td>16 (1, 16)  </td></tr>
 <tr>
-<td><a href="LineItemType#AD_EXCHANGE">LineItemType::AD_EXCHANGE</a> </td><td>12 </td><td>1 </td><td>16  </td></tr>
+<td><a href="LineItemType#AD_EXCHANGE">LineItemType::AD_EXCHANGE</a> </td><td>12 (1, 16)  </td></tr>
 <tr>
-<td><a href="LineItemType#ADSENSE">LineItemType::ADSENSE</a> </td><td>12 </td><td>1 </td><td>16  </td></tr>
+<td><a href="LineItemType#ADSENSE">LineItemType::ADSENSE</a> </td><td>12 (1, 16)  </td></tr>
 <tr>
-<td><a href="LineItemType#BUMPER">LineItemType::BUMPER</a> </td><td>16 </td><td>15 </td><td>16  </td></tr>
+<td><a href="LineItemType#BUMPER">LineItemType::BUMPER</a> </td><td>16 (15, 16)  </td></tr>
 </table>
-<p>This field can only be edited by certain networks, otherwise a <a href="PermissionError">PermissionError</a> will occur. </p>
+<p>This field can only be edited by certain networks, otherwise a <a href="PermissionError">PermissionError</a> will occur.</p>
 
 </div>
 </div>
@@ -1830,7 +1831,7 @@ The <a href="Creative#appliedLabels">Creative::appliedLabels</a> of an associate
 </div><div class="memdoc">
 
 <p></p>
-<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_line_item_summary.html#a12ecd9c837b16d3c50d15f94db67120b" title="The priority for the line item. The priority is a value between 1 and 16. If not specified, the default priority of the LineItemType will be assigned. The following default, minimum and maximum priority values is allowed for each line item type: ">priority</a>, <code>false</code> otherwise. </p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_line_item_summary.html#a12ecd9c837b16d3c50d15f94db67120b" title="The priority for the line item. Valid values range from 1 to 16. This field is optional and defaults ...">priority</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -2381,7 +2382,7 @@ The <a href="Creative#appliedLabels">Creative::appliedLabels</a> of an associate
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.WK3XCQ7WLL/dist/github/src/Dfp/v201608/<a class="el" href="v201608_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.KI3MUSEBUz/dist/github/src/Dfp/v201608/<a class="el" href="v201608_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -2389,7 +2390,7 @@ The <a href="Creative#appliedLabels">Creative::appliedLabels</a> of an associate
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608.html">v201608</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_line_item_summary.html">LineItemSummary</a></li>
-    <li class="footer">Generated on Tue Aug 23 2016 16:22:08 for Ads API .NET library by
+    <li class="footer">Generated on Mon Aug 29 2016 13:28:28 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>
