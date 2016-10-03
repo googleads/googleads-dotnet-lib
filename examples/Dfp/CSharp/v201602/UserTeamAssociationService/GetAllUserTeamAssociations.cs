@@ -37,7 +37,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
     public static void Main() {
       GetAllUserTeamAssociations codeExample = new GetAllUserTeamAssociations();
       Console.WriteLine(codeExample.Description);

@@ -34,7 +34,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
     public static void Main() {
       GetLicasForLineItem codeExample = new GetLicasForLineItem();
       Console.WriteLine(codeExample.Description);
@@ -46,7 +45,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// <summary>
     /// Run the code example.
     /// </summary>
-    /// <param name="user">The DFP user object running the code example.</param>
     public void Run(DfpUser user, long lineItemId) {
       LineItemCreativeAssociationService lineItemCreativeAssociationService =
           (LineItemCreativeAssociationService) user.GetService(
@@ -71,7 +69,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
             // Print out some information for each line item creative association.
             int i = page.startIndex;
             foreach (LineItemCreativeAssociation lineItemCreativeAssociation in page.results) {
-              if (lineItemCreativeAssociation.creativeSetId != null) {
+              if (lineItemCreativeAssociation.creativeSetIdSpecified) {
                 Console.WriteLine("{0}) Line item creative association with line item ID \"{1}\" "
                     + "and creative set ID \"{2}\" was found.",
                     i++,

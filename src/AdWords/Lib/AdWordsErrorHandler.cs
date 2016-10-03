@@ -51,7 +51,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <summary>
     /// Initializes a new instance of the <see cref="AdWordsErrorHandler"/> class.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     public AdWordsErrorHandler(AdWordsUser user)
       : base(user.Config) {
         this.user = user;

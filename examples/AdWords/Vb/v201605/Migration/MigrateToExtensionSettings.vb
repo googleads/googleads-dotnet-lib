@@ -526,7 +526,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201605
     ''' <summary>
     ''' Deletes a campaign feed.
     ''' </summary>
-    ''' <param name="user">The user.</param>
+    ''' <param name="user">The AdWords user.</param>
     ''' <param name="campaignFeed">The campaign feed.</param>
     ''' <returns></returns>
     Private Function DeleteCampaignFeed(ByVal user As AdWordsUser, _

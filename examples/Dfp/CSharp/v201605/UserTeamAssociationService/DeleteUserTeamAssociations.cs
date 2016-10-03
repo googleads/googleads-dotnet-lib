@@ -37,7 +37,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
     public static void Main() {
       DeleteUserTeamAssociation codeExample = new DeleteUserTeamAssociation();
       Console.WriteLine(codeExample.Description);

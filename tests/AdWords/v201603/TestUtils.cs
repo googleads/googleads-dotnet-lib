@@ -82,7 +82,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// <summary>
     /// Creates a test search campaign for running further tests.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="strategyType">The bidding strategy to be used.</param>
     /// <returns>The campaign id.</returns>
     public long CreateMobileSearchCampaign(AdWordsUser user, BiddingStrategyType strategyType) {
@@ -92,7 +92,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// <summary>
     /// Creates a test search campaign for running further tests.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="strategyType">The bidding strategy to be used.</param>
     /// <returns>The campaign id.</returns>
     public long CreateSearchCampaign(AdWordsUser user, BiddingStrategyType strategyType) {
@@ -102,7 +102,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// <summary>
     /// Creates a display campaign for running further tests.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="strategyType">The bidding strategy to be used.</param>
     /// <returns>The campaign id.</returns>
     public long CreateDisplayCampaign(AdWordsUser user, BiddingStrategyType strategyType) {
@@ -112,7 +112,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// <summary>
     /// Creates a test shopping campaign for running further tests.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="strategyType">The bidding strategy to be used.</param>
     /// <returns>The campaign id.</returns>
     public long CreateShoppingCampaign(AdWordsUser user, BiddingStrategyType strategyType) {
@@ -495,7 +495,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// <summary>
     /// Adds an experiment.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="campaignId">The campaign id.</param>
     /// <param name="adGroupId">The ad group id.</param>
     /// <param name="criterionId">The criterion id.</param>
@@ -535,7 +535,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// <summary>
     /// Adds the campaign targeting criteria to a campaign.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="campaignId">The campaign id.</param>
     /// <returns>The campaign criteria id.</returns>
     public long AddCampaignTargetingCriteria(AdWordsUser user, long campaignId) {
@@ -625,7 +625,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// <summary>
     /// Detaches the shared set from campaign.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="campaignId">The campaign identifier.</param>
     /// <param name="sharedSetId">The shared set identifier.</param>
     public void DetachSharedSetFromCampaign(AdWordsUser user, long campaignId, long sharedSetId) {
@@ -647,7 +647,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201603 {
     /// <summary>
     /// Deletes the shared set.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="sharedSetId">The shared set ID.</param>
     public void DeleteSharedSet(AdWordsUser user, long sharedSetId) {
       // Get the SharedSetService.

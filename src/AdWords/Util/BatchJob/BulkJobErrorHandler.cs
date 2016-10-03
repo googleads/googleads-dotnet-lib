@@ -29,7 +29,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
     /// <summary>
     /// Initializes a new instance of the <see cref="AdWordsErrorHandler"/> class.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     public BulkJobErrorHandler(AdsUser user)
       : base(user.Config) {
         this.user = user;

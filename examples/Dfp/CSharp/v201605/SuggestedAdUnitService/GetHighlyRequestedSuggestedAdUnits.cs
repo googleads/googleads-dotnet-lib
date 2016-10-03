@@ -35,7 +35,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
     public static void Main() {
       GetHighlyRequestedSuggestedAdUnits codeExample = new GetHighlyRequestedSuggestedAdUnits();
       Console.WriteLine(codeExample.Description);
@@ -47,7 +46,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// <summary>
     /// Run the code example.
     /// </summary>
-    /// <param name="user">The DFP user object running the code example.</param>
     public void Run(DfpUser user, long numRequests) {
       SuggestedAdUnitService suggestedAdUnitService =
           (SuggestedAdUnitService) user.GetService(DfpService.v201605.SuggestedAdUnitService);

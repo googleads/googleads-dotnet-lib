@@ -35,7 +35,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
     public static void Main() {
       GetAllOrders codeExample = new GetAllOrders();
       Console.WriteLine(codeExample.Description);
@@ -45,7 +44,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// <summary>
     /// Run the code example.
     /// </summary>
-    /// <param name="user">The DFP user object running the code example.</param>
     public void Run(DfpUser user) {
       // Get the OrderService.
       OrderService orderService = (OrderService) user.GetService(DfpService.v201602.OrderService);

@@ -384,7 +384,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
     /// <summary>
     /// Fetches the campaign stats.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="startDate">The start date.</param>
     /// <param name="endDate">The end date.</param>
     /// <returns>A dictionary, with key as campaign ID, and value as the

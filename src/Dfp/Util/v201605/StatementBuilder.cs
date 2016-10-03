@@ -42,6 +42,9 @@ namespace Google.Api.Ads.Dfp.Util.v201605 {
   /// </code>
   /// </summary>
   public class StatementBuilder {
+    /// <summary>
+    /// The suggested default page size.
+    /// </summary>
     public const int SUGGESTED_PAGE_LIMIT = 500;
 
     private const string SELECT = "SELECT";
@@ -51,12 +54,12 @@ namespace Google.Api.Ads.Dfp.Util.v201605 {
     private const string OFFSET = "OFFSET";
     private const string ORDER_BY = "ORDER BY";
 
-    protected string select;
-    protected string from;
-    protected string where;
-    protected int? limit = null;
-    protected int? offset = null;
-    protected string orderBy;
+    private string select;
+    private string from;
+    private string where;
+    private int? limit = null;
+    private int? offset = null;
+    private string orderBy;
 
     /// <summary>
     /// The list of query parameters.

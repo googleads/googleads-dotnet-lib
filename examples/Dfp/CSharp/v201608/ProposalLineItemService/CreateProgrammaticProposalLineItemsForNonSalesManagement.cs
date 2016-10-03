@@ -37,7 +37,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
     public static void Main() {
       CreateProgrammaticProposalLineItemsForNonSalesManagement codeExample
           = new CreateProgrammaticProposalLineItemsForNonSalesManagement();
@@ -52,7 +51,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     /// <summary>
     /// Run the code examples.
     /// </summary>
-    /// <param name="user">The DFP user object running the code examples.</param>
     public void Run(DfpUser user, long proposalId) {
       // Get the ProposalLineItemService.
       ProposalLineItemService proposalLineItemService =

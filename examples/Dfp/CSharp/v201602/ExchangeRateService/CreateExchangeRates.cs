@@ -37,7 +37,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
     public static void Main() {
       CreateExchangeRates codeExample = new CreateExchangeRates();
       Console.WriteLine(codeExample.Description);
@@ -47,7 +46,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// <summary>
     /// Run the code examples.
     /// </summary>
-    /// <param name="user">The DFP user object running the code examples.</param>
     public void Run(DfpUser user) {
       // Get the ExchangeRateService.
       ExchangeRateService exchangeRateService =

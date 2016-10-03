@@ -38,7 +38,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
     public static void Main() {
       GetInventoryTree codeExample = new GetInventoryTree();
       Console.WriteLine(codeExample.Description);
@@ -48,7 +47,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     /// <summary>
     /// Run the code example.
     /// </summary>
-    /// <param name="user">The DFP user object running the code example.</param>
     public void Run(DfpUser user) {
       try {
         // Get all ad units.
@@ -73,7 +71,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     /// <summary>
     /// Gets all ad units for this user.
     /// </summary>
-    /// <param name="user">The DfpUser to get the ad units for.</param>
     /// <returns>All ad units for this user.</returns>
     private static AdUnit[] GetAllAdUnits(DfpUser user) {
       // Create list to hold all ad units.
@@ -106,7 +103,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     /// <summary>
     /// Finds the root ad unit for the user.
     /// </summary>
-    /// <param name="user">The DfpUser to get the root ad unit for.</param>
     /// <returns>The ad unit representing the root ad unit or null if one
     /// is not found.</returns>
     private static AdUnit FindRootAdUnit(DfpUser user) {

@@ -58,7 +58,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201607
     End Property
 
     ''' <summary>
-    ''' Runs the specified user.
+    ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     ''' <param name="campaignId">Id of the campaign whose bid should be modified.

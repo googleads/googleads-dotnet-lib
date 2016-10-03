@@ -409,7 +409,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
     /// <summary>
     /// Deletes a campaign feed.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="campaignFeed">The campaign feed.</param>
     /// <returns></returns>
     private CampaignFeed DeleteCampaignFeed(AdWordsUser user, CampaignFeed campaignFeed) {

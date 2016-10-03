@@ -117,7 +117,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
     /// <summary>
     /// Gets the parameters for running a code example.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="codeExample">The code example.</param>
     /// <returns>The list of parameters.</returns>
     private static object[] GetParameters(AdWordsUser user, object codeExample) {
@@ -132,7 +132,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
     /// Invokes the run method.
     /// </summary>
     /// <param name="codeExample">The code example.</param>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     private static void InvokeRun(object codeExample, AdWordsUser user) {
       MethodInfo methodInfo = codeExample.GetType().GetMethod("Run");
       methodInfo.Invoke(codeExample, GetParameters(user, codeExample));

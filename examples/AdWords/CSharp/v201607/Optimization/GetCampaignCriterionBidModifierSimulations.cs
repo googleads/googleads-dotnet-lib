@@ -53,9 +53,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
     }
 
     /// <summary>
-    /// Runs the specified user.
+    /// Runs the code example.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="campaignId">Id of the campaign for which bid simulations are
     /// retrieved.</param>
     public void Run(AdWordsUser user, long campaignId) {

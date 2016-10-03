@@ -55,7 +55,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201603
     End Property
 
     ''' <summary>
-    ''' Runs the specified user.
+    ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     ''' <param name="adGroupId">Id of the ad group to which text ads are

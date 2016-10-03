@@ -47,7 +47,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     /// <summary>
     /// Run the code example.
     /// </summary>
-    /// <param name="user">The DFP user object running the code example.</param>
     public void Run(DfpUser user, long proposalId) {
       ProposalService proposalService =
           (ProposalService) user.GetService(DfpService.v201608.ProposalService);

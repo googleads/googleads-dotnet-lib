@@ -39,7 +39,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
     public static void Main() {
       FetchMatchTables codeExample = new FetchMatchTables();
       Console.WriteLine(codeExample.Description);
@@ -49,7 +48,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// <summary>
     /// Run the code example.
     /// </summary>
-    /// <param name="user">The DFP user object running the code example.</param>
     public void Run(DfpUser user) {
       // Get the PublisherQueryLanguageService.
       PublisherQueryLanguageService pqlService =
@@ -84,7 +82,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// Fetches a match table from a PQL statement and writes it to a file.
     /// </summary>
     /// <param name="pqlService">The PQL service.</param>
-    /// <param name="selectStatement">The select statement.</param>
+    /// <param name="statementBuilder">The statement builder to use.</param>
     /// <param name="fileName">Name of the file.</param>
     private static void fetchMatchTables(PublisherQueryLanguageService pqlService,
         StatementBuilder statementBuilder, string fileName) {

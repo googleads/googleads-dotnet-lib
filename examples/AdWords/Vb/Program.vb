@@ -88,7 +88,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
     ''' Invokes the Run method of code example.
     ''' </summary>
     ''' <param name="codeExample">The code example.</param>
-    ''' <param name="user">The user.</param>
+    ''' <param name="user">The AdWords user.</param>
     Private Shared Sub InvokeRun(ByVal codeExample As Object, ByVal user As AdWordsUser)
       codeExample.GetType.GetMethod("Run").Invoke(codeExample, GetParameters(user, codeExample))
     End Sub
@@ -105,7 +105,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
     ''' <summary>
     ''' Gets the parameters for running a code example.
     ''' </summary>
-    ''' <param name="user">The user.</param>
+    ''' <param name="user">The AdWords user.</param>
     ''' <param name="codeExample">The code example.</param>
     ''' <returns>The list of parameters.</returns>
     Private Shared Function GetParameters(ByVal user As AdWordsUser, ByVal codeExample As Object) _

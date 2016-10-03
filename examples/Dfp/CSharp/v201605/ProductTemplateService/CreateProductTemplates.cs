@@ -37,7 +37,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
     public static void Main() {
       CreateProductTemplates codeExample = new CreateProductTemplates();
       Console.WriteLine(codeExample.Description);
@@ -47,7 +46,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201605 {
     /// <summary>
     /// Run the code examples.
     /// </summary>
-    /// <param name="user">The DFP user object running the code examples.</param>
     public void Run(DfpUser user) {
       // [START get_product_template_service] MOE:strip_line
       // Get the ProductTemplateService.

@@ -38,7 +38,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
     public static void Main() {
       CreateProposalLineItemsFromPackage codeExample = new CreateProposalLineItemsFromPackage();
       Console.WriteLine(codeExample.Description);
@@ -48,7 +47,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
     /// <summary>
     /// Run the code example.
     /// </summary>
-    /// <param name="user">The DFP user object running the code example.</param>
     public void Run(DfpUser user) {
       // Get the PackageService.
       PackageService packageService =
@@ -67,7 +65,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201602 {
       // Set default for page.
       PackagePage page = new PackagePage();
       List<string> packageIds = new List<string>();
-      int i = 0;
 
       try {
         // Get the package.

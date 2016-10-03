@@ -16,6 +16,7 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201607;
 
 using System;
+using System.Collections.Generic;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
 
@@ -82,16 +83,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
 
         // Display the resulting location criteria.
         foreach (LocationCriterion locationCriterion in locationCriteria) {
-          string parentLocations = "";
+          string parentLocations = "N/A";
+
           if (locationCriterion.location != null &&
               locationCriterion.location.parentLocations != null) {
+            List<string> parentLocationList = new List<string>();
             foreach (Location location in locationCriterion.location.parentLocations) {
-              parentLocations += GetLocationString(location) + ", ";
+              parentLocationList.Add(GetLocationString(location));
             }
-            parentLocations = parentLocations.TrimEnd(',', ' ');
-          } else {
-            parentLocations = "N/A";
+            parentLocations = string.Join(", ", parentLocationList);
           }
+
           Console.WriteLine("The search term '{0}' returned the location '{1}' of type '{2}' " +
               "with parent locations '{3}',  reach '{4}' and targeting status '{5}.",
               locationCriterion.searchTerm, locationCriterion.location.locationName,

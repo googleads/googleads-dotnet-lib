@@ -393,7 +393,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
     /// Checks a list of keywords for policy violations, and add the errors to
     /// a list of traffic estimates.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="trafficEstimates">The list of keywords and their traffic
     /// estimates.</param>
     /// <param name="adGroupId">The ad group ID.</param>
@@ -464,7 +464,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
     /// <summary>
     /// Gets the ad group for policy checks.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="campaignId">The campaign identifier.</param>
     /// <returns></returns>
     /// <exception cref="System.ApplicationException">Failed to retrieve ad

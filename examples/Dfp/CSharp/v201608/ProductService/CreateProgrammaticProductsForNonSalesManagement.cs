@@ -45,7 +45,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     /// <summary>
     /// Run the code examples.
     /// </summary>
-    /// <param name="user">The DFP user object running the code examples.</param>
     public void Run(DfpUser user) {
       // Get the ProductService.
       ProductService productTemplateService =

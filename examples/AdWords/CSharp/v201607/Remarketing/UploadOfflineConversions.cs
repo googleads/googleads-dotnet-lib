@@ -61,9 +61,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
     }
 
     /// <summary>
-    /// Runs the specified user.
+    /// Runs the code example.
     /// </summary>
-    /// <param name="user">The user.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="conversionName">The name of the upload conversion to be
     /// created.</param>
     /// <param name="gClid">The Google Click ID of the click for which offline

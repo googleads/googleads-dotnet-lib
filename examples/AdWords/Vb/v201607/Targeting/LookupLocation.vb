@@ -79,16 +79,17 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201607
 
         ' Display the resulting location criteria.
         For Each locationCriterion As LocationCriterion In locationCriteria
-          Dim parentLocations As String = ""
+          Dim parentLocations As String = "N/A"
+
           If ((Not locationCriterion.location Is Nothing) AndAlso ( _
               Not locationCriterion.location.parentLocations Is Nothing)) Then
+            Dim parentLocationList As New List(Of String)
             For Each location As Location In locationCriterion.location.parentLocations
-              parentLocations = (parentLocations & Me.GetLocationString(location) & ", ")
+              parentLocationList.Add(GetLocationString(location))
             Next
-            parentLocations.TrimEnd(New Char() {","c, " "c})
-          Else
-            parentLocations = "N/A"
+            parentLocations = String.Join(", ", parentLocationList)
           End If
+
           Console.WriteLine("The search term '{0}' returned the location '{1}' of type '{2}' " & _
               "with parent locations '{3}',  reach '{4}' and targeting status '{5}.", _
               locationCriterion.searchTerm, locationCriterion.location.locationName, _

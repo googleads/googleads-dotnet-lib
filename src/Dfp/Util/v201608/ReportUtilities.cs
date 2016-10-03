@@ -57,6 +57,12 @@ namespace Google.Api.Ads.Dfp.Util.v201608 {
       this.reportJobId = reportJobId;
     }
 
+    /// <summary>
+    /// Returns a flag indicating whether the caller should wait more time for
+    /// the report download to complete.
+    /// </summary>
+    /// <returns>True, if the caller should wait more, false otherwise.
+    /// </returns>
     protected override bool ShouldWaitMore() {
       ReportJobStatus status = reportService.getReportJobStatus(reportJobId);
       if (status == ReportJobStatus.FAILED) {
@@ -65,6 +71,10 @@ namespace Google.Api.Ads.Dfp.Util.v201608 {
       return status != ReportJobStatus.COMPLETED;
     }
 
+    /// <summary>
+    /// Gets the report response.
+    /// </summary>
+    /// <returns>The report response.</returns>
     protected override ReportResponse GetReport() {
       PreconditionUtilities.CheckNotNull(reportDownloadOptions,
           "reportDownloadOptions cannot be null");
