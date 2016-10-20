@@ -14,27 +14,28 @@
 
 #pragma warning disable 1591
 namespace Google.Api.Ads.AdWords.v201607 {
-  using Google.Api.Ads.AdWords.Util.Selectors;
-  using Google.Api.Ads.AdWords.Lib;
   using Google.Api.Ads.AdWords.Headers;
-  using System.Collections.Generic;
-  using System.Diagnostics;
-  using System;
-  using System.Xml.Serialization;
-  using System.ComponentModel;
-  using System.Web.Services.Protocols;
-  using System.Web.Services;
+  using Google.Api.Ads.AdWords.Lib;
+  using Google.Api.Ads.AdWords.Util.Selectors;
   using Google.Api.Ads.Common.Util;
+
+  using System;
+  using System.Collections.Generic;
+  using System.ComponentModel;
+  using System.Diagnostics;
+  using System.Web.Services;
+  using System.Web.Services.Protocols;
+  using System.Xml.Serialization;
 
   /// <summary>Use this service to manage ads. Available ad types are subclasses of the base <a
   /// href='Ad'>Ad</a> type and are shown in the <a
   /// href='AdGroupAd#ad'>AdGroupAd.ad</a> documentation. Here are some of the
-  /// commonly used ad types: <dl> <dt><a href='TextAd'>Text Ad</a></dt> <dd>The
-  /// primary ad type used on both the search and display networks. A text ad contains
-  /// a headline, two lines of text, and a destination URL.</dd> <dt><a
-  /// href='ImageAd'>Image Ad</a></dt> <dd>A standard image ad.</dd> <dt><a
-  /// href='TemplateAd'>Template Ad</a> (<span class="deem">AdWords Display Ad
-  /// Builder</span>)</dt> <dd>A flexible ad type that supports various <a
+  /// commonly used ad types: <dl> <dt><a href='ExpandedTextAd'>Expanded Text
+  /// Ad</a></dt> <dd>The primary ad type used on the search network. An expanded text
+  /// ad contains two headlines, a single description line, a final url, and optional
+  /// path fields.</dd> <dt><a href='ImageAd'>Image Ad</a></dt> <dd>A standard image
+  /// ad.</dd> <dt><a href='TemplateAd'>Template Ad</a> (<span class="deem">AdWords
+  /// Display Ad Builder</span>)</dt> <dd>A flexible ad type that supports various <a
   /// href="/adwords/api/docs/appendix/templateads">Template Ad formats</a>.</dd>
   /// </dl>
   /// </summary>
@@ -876,8 +877,8 @@ namespace Google.Api.Ads.AdWords.v201607 {
     }
 
     /// <summary>Experiment data associated with this <a href='AdGroupAd'>AdGroupAd</a>. It is
-    /// returned by <a href='AdGroupAdService#get'>get()</a> only if the experimentId is
-    /// supplied.
+    /// returned by <a href=''>AdGroupAdService#get get()</a> only if the experimentId
+    /// is supplied.
     /// </summary>
     public AdGroupAdExperimentData experimentData {
       get {
@@ -4029,9 +4030,9 @@ namespace Google.Api.Ads.AdWords.v201607 {
 
     private RichMediaAdAdAttribute[] adAttributesField;
 
-    /// <summary>Name of the rich media ad. <span class="constraint Selectable">This field can be
-    /// selected using the value "RichMediaAdName".</span> <span class="constraint
-    /// Required">This field is required and should not be <code>null</code>.</span>
+    /// <summary>Name of the rich media ad. <span class="constraint Required">This field is
+    /// required and should not be <code>null</code>.</span> <span class="constraint
+    /// Selectable">This field can be selected using the value "RichMediaAdName".</span>
     /// </summary>
     public string name {
       get {
@@ -7573,9 +7574,10 @@ namespace Google.Api.Ads.AdWords.v201607 {
     }
 
     /// <summary>Range of dates for which you want to include data. If this value is omitted,
-    /// results for all dates are returned. <span class="constraint
-    /// DateRangeWithinRange">This range must be contained within the range [19700101,
-    /// 20380101].</span>
+    /// results for all dates are returned. <p class="note"><b>Note:</b> This field is
+    /// only used by the report download service. For all other services, it is
+    /// ignored.</p> <span class="constraint DateRangeWithinRange">This range must be
+    /// contained within the range [19700101, 20380101].</span>
     /// </summary>
     public DateRange dateRange {
       get {
@@ -20740,6 +20742,7 @@ namespace Google.Api.Ads.AdWords.v201607 {
   /// href='CampaignCriterionService'>CampaignCriterionService</a>). You can also set
   /// campaign-wide ad extensions using <a
   /// href='CampaignExtensionSettingService'>CampaignExtensionSettingService</a>.
+  /// <p><b>Note:</b> CampaignService does not support video campaigns.</p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -23726,19 +23729,21 @@ namespace Google.Api.Ads.AdWords.v201607 {
       }
     }
 
-    /// <summary>The type of the bidding strategy to be attached. <span class="constraint
-    /// Selectable">This field can be selected using the value
-    /// "BiddingStrategyType".</span><span class="constraint Filterable">This field can
-    /// be filtered on.</span> <span class="constraint CampaignType">This field may only
-    /// be set to the values: MANUAL_CPC, ENHANCED_CPC, TARGET_ROAS, TARGET_SPEND, NONE
-    /// for campaign channel type SHOPPING.</span> <span class="constraint
-    /// CampaignType">This field may only be set to NONE for campaign channel type
-    /// DISPLAY.</span> <span class="constraint CampaignType">This field may only be set
-    /// to NONE for campaign channel type DISPLAY with campaign channel subtype
-    /// DISPLAY_MOBILE_APP.</span> <span class="constraint CampaignType">This field may
-    /// only be set to the values: BUDGET_OPTIMIZER, MANUAL_CPC, NONE,
+    /// <summary>The type of the bidding strategy to be attached. <p>For details on portfolio vs.
+    /// standard availability, see the <a
+    /// href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+    /// guide</a>. <span class="constraint Selectable">This field can be selected using
+    /// the value "BiddingStrategyType".</span><span class="constraint Filterable">This
+    /// field can be filtered on.</span> <span class="constraint CampaignType">This
+    /// field may only be set to the values: MANUAL_CPC, ENHANCED_CPC, TARGET_ROAS,
+    /// TARGET_SPEND, NONE for campaign channel type SHOPPING.</span> <span
+    /// class="constraint CampaignType">This field may only be set to NONE for campaign
+    /// channel type DISPLAY.</span> <span class="constraint CampaignType">This field
+    /// may only be set to NONE for campaign channel type DISPLAY with campaign channel
+    /// subtype DISPLAY_MOBILE_APP.</span> <span class="constraint CampaignType">This
+    /// field may only be set to the values: BUDGET_OPTIMIZER, MANUAL_CPC, NONE,
     /// PAGE_ONE_PROMOTED, TARGET_CPA, TARGET_OUTRANK_SHARE, TARGET_ROAS, TARGET_SPEND
-    /// for campaign channel subtype SEARCH_MOBILE_APP.</span>
+    /// for campaign channel subtype SEARCH_MOBILE_APP.</span></p>
     /// </summary>
     public BiddingStrategyType biddingStrategyType {
       get {
@@ -23795,7 +23800,10 @@ namespace Google.Api.Ads.AdWords.v201607 {
 
     /// <summary>The bidding strategy metadata. Bidding strategy can be associated using the <a
     /// href='BiddingStrategyConfiguration#biddingStrategyType'>BiddingStrategyConfiguration#biddingStrategyType</a>
-    /// or the bidding scheme.
+    /// or the bidding scheme. <p>For details on portfolio vs. standard availability,
+    /// see the <a
+    /// href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+    /// guide</a>.</p>
     /// </summary>
     public BiddingScheme biddingScheme {
       get {
@@ -23934,7 +23942,7 @@ namespace Google.Api.Ads.AdWords.v201607 {
     /// </summary>
     ENHANCED_CPC = 6,
     /// <summary>Target CPA is an automated bid strategy that sets bids to help get as many
-    /// conversions as possible at the target cost-per-acquisition (CPA) you set. See <a
+    /// conversions as possible at the target cost per acquisition (CPA) you set. See <a
     /// href='TargetCpaBiddingScheme'>TargetCpaBiddingScheme</a> for more details.
     /// </summary>
     TARGET_CPA = 7,
@@ -24509,7 +24517,7 @@ namespace Google.Api.Ads.AdWords.v201607 {
 
   /// <summary><a href="https://support.google.com/adwords/answer/6268632">Target CPA</a> is an
   /// automated bid strategy that sets bids to help get as many conversions as
-  /// possible at the target cost-per-acquisition (CPA) you set. <p>A <a
+  /// possible at the target cost per acquisition (CPA) you set. <p>A <a
   /// href='#targetCpa'>target CPA</a> must be set for the strategy, but can also be
   /// optionally set for individual ad groups in the strategy. Ad group targets, if
   /// set, will override strategy targets.</p> <p>Note that campaigns must meet <a
@@ -24529,8 +24537,8 @@ namespace Google.Api.Ads.AdWords.v201607 {
 
     private Money maxCpcBidFloorField;
 
-    /// <summary>Average CPA target. This target should be greater than or equal to minimum
-    /// billable unit based on the currency for the account.
+    /// <summary>Average cost per acquisition (CPA) target. This target should be greater than or
+    /// equal to minimum billable unit based on the currency for the account.
     /// </summary>
     public Money targetCpa {
       get {
@@ -25653,7 +25661,7 @@ namespace Google.Api.Ads.AdWords.v201607 {
 
     private bool bidSourceFieldSpecified;
 
-    /// <summary>Target cost per acquisition/conversion. This is applicable only at the ad group
+    /// <summary>Target cost per acquisition (CPA). This is applicable only at the ad group
     /// level. <p>If an ad group-level target is not set and the strategy type is
     /// TARGET_CPA, the strategy level target will be used. To set the strategy-level
     /// target, set the <a
@@ -25804,7 +25812,8 @@ namespace Google.Api.Ads.AdWords.v201607 {
 
     /// <summary>The display mode for vanity pharma URLs. <span class="constraint
     /// Selectable">This field can be selected using the value
-    /// "VanityPharmaDisplayUrlMode".</span>
+    /// "VanityPharmaDisplayUrlMode".</span><span class="constraint Filterable">This
+    /// field can be filtered on.</span>
     /// </summary>
     public VanityPharmaDisplayUrlMode vanityPharmaDisplayUrlMode {
       get {
@@ -25832,7 +25841,8 @@ namespace Google.Api.Ads.AdWords.v201607 {
     /// <summary>The text that will be displayed in display URL of the text ad when website
     /// description is the selected display mode for vanity pharma URLs. <span
     /// class="constraint Selectable">This field can be selected using the value
-    /// "VanityPharmaText".</span>
+    /// "VanityPharmaText".</span><span class="constraint Filterable">This field can be
+    /// filtered on.</span>
     /// </summary>
     public VanityPharmaText vanityPharmaText {
       get {
@@ -25864,9 +25874,9 @@ namespace Google.Api.Ads.AdWords.v201607 {
       protected Fields() {
       }
 
-      public static readonly Field VanityPharmaDisplayUrlMode = new Field("VanityPharmaDisplayUrlMode", false, true);
+      public static readonly Field VanityPharmaDisplayUrlMode = new Field("VanityPharmaDisplayUrlMode", true, true);
 
-      public static readonly Field VanityPharmaText = new Field("VanityPharmaText", false, true);
+      public static readonly Field VanityPharmaText = new Field("VanityPharmaText", true, true);
 
       public static Field[] All {
         get {
@@ -25903,6 +25913,10 @@ namespace Google.Api.Ads.AdWords.v201607 {
       /// </summary>
       protected FilterableFields() {
       }
+
+      public static readonly Field VanityPharmaDisplayUrlMode = Fields.VanityPharmaDisplayUrlMode;
+
+      public static readonly Field VanityPharmaText = Fields.VanityPharmaText;
 
       public static Field[] All {
         get {
@@ -31484,9 +31498,9 @@ namespace Google.Api.Ads.AdWords.v201607 {
 
   /// <summary>An enum used to classify the types of changes that have been made to an
   /// adgroup/campaign during a specified date range. This only refers to the field of
-  /// the entity itself, and not its children. For example, if an AdGroup name
+  /// the entity itself, and not its children. <p>For example, if an AdGroup name
   /// changed, this status would be FIELDS_CHANGED, but if only bids on keywords
-  /// belonging an AdGroup were changed this status would be FIELDS_UNCHANGED.
+  /// belonging an AdGroup were changed this status would be FIELDS_UNCHANGED.</p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -32068,9 +32082,9 @@ namespace Google.Api.Ads.AdWords.v201607 {
     /// <summary>Only return entities that have changed during the specified time range. String
     /// Format: yyyyMMdd HHmmss <timezone id=""> (for example, 20100609 150223
     /// America/New_York). See the <a
-    /// href="https://developers.google.com/adwords/api/docs/appendix/timezones">
-    /// Timezones</a> page for the complete list of Timezone IDs. <span
-    /// class="constraint Required">This field is required and should not be
+    /// href="https://developers.google.com/adwords/api/docs/appendix/timezones">Timezones</a>
+    /// page for the complete list of Timezone IDs. <span class="constraint
+    /// Required">This field is required and should not be
     /// <code>null</code>.</span></timezone>
     /// </summary>
     public DateTimeRange dateTimeRange {
@@ -34652,7 +34666,7 @@ namespace Google.Api.Ads.AdWords.v201607 {
   /// of traffic that will be directed to the experiment.</li> <li>Setting up control
   /// and experimental campaign entities by setting the <code>experimentData</code>
   /// field on <a href='AdGroup'>AdGroup</a> and <a
-  /// href=''>BiddableAdGroupCriterion</a> objects. Use the <a
+  /// href='BiddableAdGroupCriterion'>BiddableAdGroupCriterion</a> objects. Use the <a
   /// href=''>AdGroup#experimentDataStatus experimentDataStatus</a> field to choose if
   /// the entity should be part of a control group, part of the experiment group, or
   /// if the entity should handle both control and experimental traffic.</li> </ol>
@@ -34662,8 +34676,8 @@ namespace Google.Api.Ads.AdWords.v201607 {
   /// ExperimentService.</p> <p>For more information on campaign experiments,
   /// including tracking the performance of an experiment, see the <a
   /// href="//support.google.com/adwords/bin/topic.py?topic=1713979">AdWords Help
-  /// Center</a>.</p> <span class="constraint AdxEnabled">This is disabled for
-  /// AdX.</span>
+  /// Center</a>. <span class="constraint AdxEnabled">This is disabled for
+  /// AdX.</span></p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -40437,7 +40451,8 @@ namespace Google.Api.Ads.AdWords.v201607 {
 
     /// <summary>The criterion type for this mapping. This field is mutually exclusive with
     /// placeholderType. <span class="constraint Selectable">This field can be selected
-    /// using the value "CriterionType".</span>
+    /// using the value "CriterionType".</span><span class="constraint Filterable">This
+    /// field can be filtered on.</span>
     /// </summary>
     public int criterionType {
       get {
@@ -40479,7 +40494,7 @@ namespace Google.Api.Ads.AdWords.v201607 {
 
       public static readonly Field AttributeFieldMappings = new Field("AttributeFieldMappings", false, true);
 
-      public static readonly Field CriterionType = new Field("CriterionType", false, true);
+      public static readonly Field CriterionType = new Field("CriterionType", true, true);
 
       public static Field[] All {
         get {
@@ -40532,6 +40547,8 @@ namespace Google.Api.Ads.AdWords.v201607 {
       public static readonly Field PlaceholderType = Fields.PlaceholderType;
 
       public static readonly Field Status = Fields.Status;
+
+      public static readonly Field CriterionType = Fields.CriterionType;
 
       public static Field[] All {
         get {
@@ -60344,9 +60361,11 @@ namespace Google.Api.Ads.AdWords.v201607 {
       }
     }
 
-    /// <summary>A list of members to be added or removed. <p>This field is required and there
-    /// must be at least one member.</p> <p>Each element in members list should be in
-    /// format according to the specified <code>dataType</code>. <span class="constraint
+    /// <summary>A list of members to be added or removed. <p>If <a
+    /// href='#removeAll'>#removeAll</a> is <code>true</code>, this list must be
+    /// <code>null</code> or empty. Otherwise, this field is required and there must be
+    /// at least one member.</p> <p>Each element in members list should be in format
+    /// according to the specified <code>dataType</code>. <span class="constraint
     /// CollectionSize">The maximum size of this collection is 1000000.</span> <span
     /// class="constraint ContentsNotNull">This field must not contain <code>null</code>
     /// elements.</span></p>
@@ -60421,7 +60440,9 @@ namespace Google.Api.Ads.AdWords.v201607 {
   }
 
 
-  /// <summary>UserList operations for adding/updating UserList entities.
+  /// <summary>UserList operations for adding/updating UserList entities. The following <a
+  /// href='Operator'>Operator</a>s are supported: ADD and SET. The REMOVE operator is
+  /// not supported.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]
@@ -63164,17 +63185,15 @@ namespace Google.Api.Ads.AdWords.v201607 {
     }
 
     /// <summary>Targeting criteria of this promotion. The following criteria are supported: <ul>
-    /// <li><a href='ProductService'>ProductService</a></li> <li><a
-    /// href='AdSchedule'>AdSchedule</a></li> <li><a
-    /// href='BusinessHour'>BusinessHour</a></li> <li><a
-    /// href='Language'>Language</a></li> <li><a href='Location'>Location</a></li>
-    /// <li><a href='Proximity'>Proximity</a></li> </ul> <p>Please note that <a
-    /// href='Address'>Address</a> is not supported in <a
-    /// href='Proximity'>Proximity</a>. Please use <a href='GeoPoint'>GeoPoint</a>
-    /// instead. <span class="constraint Selectable">This field can be selected using
-    /// the value "PromotionCriteria".</span> <span class="constraint
-    /// ContentsDistinct">This field must contain distinct elements.</span> <span
-    /// class="constraint ContentsNotNull">This field must not contain <code>null</code>
+    /// <li><code>AdSchedule</code></li> <li><code>BusinessHour</code></li>
+    /// <li><code>Language</code></li> <li><code>Location</code></li>
+    /// <li><code>ProductService</code></li> <li><code>Proximity</code></li> </ul>
+    /// <p>Please note that <code>Address</code> is not supported in <code></code>.
+    /// Please use <code>GeoPoint</code> instead. <span class="constraint
+    /// Selectable">This field can be selected using the value
+    /// "PromotionCriteria".</span> <span class="constraint ContentsDistinct">This field
+    /// must contain distinct elements.</span> <span class="constraint
+    /// ContentsNotNull">This field must not contain <code>null</code>
     /// elements.</span></p>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("criteria")]
@@ -73926,11 +73945,15 @@ namespace Google.Api.Ads.AdWords.v201607 {
     }
 
     /// <summary>The spending limit in micros. To specify an unlimited budget, set spendingLimit
-    /// to -1, otherwise spendingLimit must be greater than 0. <span class="constraint
-    /// Selectable">This field can be selected using the value
-    /// "SpendingLimit".</span><span class="constraint Filterable">This field can be
-    /// filtered on.</span> <span class="constraint Required">This field is required and
-    /// should not be <code>null</code> when it is contained within <a
+    /// to -1, otherwise spendingLimit must be greater than 0. Note, that for get
+    /// requests the spending limit includes any adjustments that have been applied to
+    /// the budget order. For mutate, the spending limit represents the maximum allowed
+    /// spend prior to considering any adjustments. When making mutate requests, make
+    /// sure to account for any adjustments that may be reported in the get value of the
+    /// spending limit. <span class="constraint Selectable">This field can be selected
+    /// using the value "SpendingLimit".</span><span class="constraint Filterable">This
+    /// field can be filtered on.</span> <span class="constraint Required">This field is
+    /// required and should not be <code>null</code> when it is contained within <a
     /// href='Operator'>Operator</a>s : ADD.</span>
     /// </summary>
     public Money spendingLimit {
@@ -74986,12 +75009,12 @@ namespace Google.Api.Ads.AdWords.v201607 {
   /// <summary>Use this service to manage ads. Available ad types are subclasses of the base <a
   /// href='Ad'>Ad</a> type and are shown in the <a
   /// href='AdGroupAd#ad'>AdGroupAd.ad</a> documentation. Here are some of the
-  /// commonly used ad types: <dl> <dt><a href='TextAd'>Text Ad</a></dt> <dd>The
-  /// primary ad type used on both the search and display networks. A text ad contains
-  /// a headline, two lines of text, and a destination URL.</dd> <dt><a
-  /// href='ImageAd'>Image Ad</a></dt> <dd>A standard image ad.</dd> <dt><a
-  /// href='TemplateAd'>Template Ad</a> (<span class="deem">AdWords Display Ad
-  /// Builder</span>)</dt> <dd>A flexible ad type that supports various <a
+  /// commonly used ad types: <dl> <dt><a href='ExpandedTextAd'>Expanded Text
+  /// Ad</a></dt> <dd>The primary ad type used on the search network. An expanded text
+  /// ad contains two headlines, a single description line, a final url, and optional
+  /// path fields.</dd> <dt><a href='ImageAd'>Image Ad</a></dt> <dd>A standard image
+  /// ad.</dd> <dt><a href='TemplateAd'>Template Ad</a> (<span class="deem">AdWords
+  /// Display Ad Builder</span>)</dt> <dd>A flexible ad type that supports various <a
   /// href="/adwords/api/docs/appendix/templateads">Template Ad formats</a>.</dd>
   /// </dl>
   /// </summary>
@@ -75130,6 +75153,7 @@ namespace Google.Api.Ads.AdWords.v201607 {
   /// href='CampaignCriterionService'>CampaignCriterionService</a>). You can also set
   /// campaign-wide ad extensions using <a
   /// href='CampaignExtensionSettingService'>CampaignExtensionSettingService</a>.
+  /// <p><b>Note:</b> CampaignService does not support video campaigns.</p>
   /// </summary>
   public interface ICampaignService {
     /// <summary>
@@ -75625,7 +75649,7 @@ namespace Google.Api.Ads.AdWords.v201607 {
   /// of traffic that will be directed to the experiment.</li> <li>Setting up control
   /// and experimental campaign entities by setting the <code>experimentData</code>
   /// field on <a href='AdGroup'>AdGroup</a> and <a
-  /// href=''>BiddableAdGroupCriterion</a> objects. Use the <a
+  /// href='BiddableAdGroupCriterion'>BiddableAdGroupCriterion</a> objects. Use the <a
   /// href=''>AdGroup#experimentDataStatus experimentDataStatus</a> field to choose if
   /// the entity should be part of a control group, part of the experiment group, or
   /// if the entity should handle both control and experimental traffic.</li> </ol>
@@ -75635,8 +75659,8 @@ namespace Google.Api.Ads.AdWords.v201607 {
   /// ExperimentService.</p> <p>For more information on campaign experiments,
   /// including tracking the performance of an experiment, see the <a
   /// href="//support.google.com/adwords/bin/topic.py?topic=1713979">AdWords Help
-  /// Center</a>.</p> <span class="constraint AdxEnabled">This is disabled for
-  /// AdX.</span>
+  /// Center</a>. <span class="constraint AdxEnabled">This is disabled for
+  /// AdX.</span></p>
   /// </summary>
   public interface IExperimentService {
     /// <summary>

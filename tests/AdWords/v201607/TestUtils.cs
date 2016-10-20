@@ -153,7 +153,10 @@ namespace Google.Api.Ads.AdWords.Tests.v201607 {
       Campaign campaign = new Campaign() {
         name = string.Format("Campaign {0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff")),
         advertisingChannelType = channelType,
+
+        // Set the test campaign to PAUSED when creating it to prevent the ads from serving.
         status = CampaignStatus.PAUSED,
+
         biddingStrategyConfiguration = new BiddingStrategyConfiguration() {
           biddingStrategyType = strategyType
         },

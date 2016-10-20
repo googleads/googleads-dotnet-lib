@@ -14,6 +14,7 @@
 
 using System;
 using System.IO;
+using System.IO.Compression;
 using System.Net;
 using System.Text;
 using System.Threading;
@@ -93,6 +94,15 @@ namespace Google.Api.Ads.Common.Util.Reports {
       get {
         this.EnsureStreamIsOpen();
         return response.GetResponseStream();
+      }
+    }
+
+    /// <summary>
+    /// Gets the report contents as a decompressed stream.
+    /// </summary>
+    public Stream DecompressedStream {
+      get {
+        return new GZipStream(this.Stream, CompressionMode.Decompress);
       }
     }
 

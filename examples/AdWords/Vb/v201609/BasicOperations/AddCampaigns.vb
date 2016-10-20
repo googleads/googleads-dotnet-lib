@@ -91,8 +91,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201609
         ' Create the campaign.
         Dim campaign As New Campaign
         campaign.name = "Interplanetary Cruise #" & ExampleUtilities.GetRandomString
-        campaign.status = CampaignStatus.PAUSED
         campaign.advertisingChannelType = AdvertisingChannelType.SEARCH
+
+        ' Recommendation: Set the campaign to PAUSED when creating it to prevent
+        ' the ads from immediately serving. Set to ENABLED once you've added
+        ' targeting and the ads are ready to serve.
+        campaign.status = CampaignStatus.PAUSED
 
         Dim biddingConfig As New BiddingStrategyConfiguration()
         biddingConfig.biddingStrategyType = BiddingStrategyType.MANUAL_CPC

@@ -175,6 +175,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201605
       campaign.name = name
       campaign.advertisingChannelType = AdvertisingChannelType.SEARCH
 
+      ' Recommendation: Set the campaign to PAUSED when creating it to prevent
+      ' the ads from immediately serving. Set to ENABLED once you've added
+      ' targeting and the ads are ready to serve.
+      campaign.status = CampaignStatus.PAUSED
+
       ' Set the budget.
       campaign.budget = New Budget()
       campaign.budget.budgetId = sharedBudgetId

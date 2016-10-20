@@ -389,7 +389,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201609
       For i As Integer = 0 To NUMBER_OF_CAMPAIGNS_TO_ADD
         Dim campaign As New Campaign()
         campaign.name = "Batch Campaign " + ExampleUtilities.GetRandomString()
+
+        ' Recommendation: Set the campaign to PAUSED when creating it to prevent
+        ' the ads from immediately serving. Set to ENABLED once you've added
+        ' targeting and the ads are ready to serve.
         campaign.status = CampaignStatus.PAUSED
+
         campaign.id = NextId()
         campaign.advertisingChannelType = AdvertisingChannelType.SEARCH
 

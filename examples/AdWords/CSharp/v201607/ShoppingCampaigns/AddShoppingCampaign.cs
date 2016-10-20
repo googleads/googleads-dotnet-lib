@@ -146,6 +146,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
       // The advertisingChannelType is what makes this a Shopping campaign.
       campaign.advertisingChannelType = AdvertisingChannelType.SHOPPING;
 
+      // Recommendation: Set the campaign to PAUSED when creating it to prevent
+      // the ads from immediately serving. Set to ENABLED once you've added
+      // targeting and the ads are ready to serve.
+      campaign.status = CampaignStatus.PAUSED;
+
       // Set shared budget (required).
       campaign.budget = new Budget();
       campaign.budget.budgetId = budgetId;

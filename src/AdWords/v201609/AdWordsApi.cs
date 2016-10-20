@@ -14,17 +14,18 @@
 
 #pragma warning disable 1591
 namespace Google.Api.Ads.AdWords.v201609 {
-  using Google.Api.Ads.AdWords.Util.Selectors;
-  using Google.Api.Ads.AdWords.Lib;
   using Google.Api.Ads.AdWords.Headers;
-  using System.Collections.Generic;
-  using System.Diagnostics;
-  using System;
-  using System.Xml.Serialization;
-  using System.ComponentModel;
-  using System.Web.Services.Protocols;
-  using System.Web.Services;
+  using Google.Api.Ads.AdWords.Lib;
+  using Google.Api.Ads.AdWords.Util.Selectors;
   using Google.Api.Ads.Common.Util;
+
+  using System;
+  using System.Collections.Generic;
+  using System.ComponentModel;
+  using System.Diagnostics;
+  using System.Web.Services;
+  using System.Web.Services.Protocols;
+  using System.Xml.Serialization;
 
   /// <summary>Use this service to manage ads. Available ad types are subclasses of the base <a
   /// href='Ad'>Ad</a> type and are shown in the <a
@@ -24580,21 +24581,23 @@ namespace Google.Api.Ads.AdWords.v201609 {
       }
     }
 
-    /// <summary>The type of the bidding strategy to be attached. <span class="constraint
-    /// Selectable">This field can be selected using the value
-    /// "BiddingStrategyType".</span><span class="constraint Filterable">This field can
-    /// be filtered on.</span> <span class="constraint CampaignType">This field may only
-    /// be set to the values: MANUAL_CPC, ENHANCED_CPC, TARGET_ROAS, TARGET_SPEND, NONE
-    /// for campaign channel type SHOPPING.</span> <span class="constraint
-    /// CampaignType">This field may only be set to NONE for campaign channel type
-    /// DISPLAY.</span> <span class="constraint CampaignType">This field may only be set
-    /// to NONE for campaign channel type DISPLAY with campaign channel subtype
-    /// DISPLAY_MOBILE_APP.</span> <span class="constraint CampaignType">This field may
-    /// only be set to the values: BUDGET_OPTIMIZER, MANUAL_CPC, NONE,
+    /// <summary>The type of the bidding strategy to be attached. <p>For details on portfolio vs.
+    /// standard availability, see the <a
+    /// href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+    /// guide</a>. <span class="constraint Selectable">This field can be selected using
+    /// the value "BiddingStrategyType".</span><span class="constraint Filterable">This
+    /// field can be filtered on.</span> <span class="constraint CampaignType">This
+    /// field may only be set to the values: MANUAL_CPC, ENHANCED_CPC, TARGET_ROAS,
+    /// TARGET_SPEND, NONE for campaign channel type SHOPPING.</span> <span
+    /// class="constraint CampaignType">This field may only be set to NONE for campaign
+    /// channel type DISPLAY.</span> <span class="constraint CampaignType">This field
+    /// may only be set to NONE for campaign channel type DISPLAY with campaign channel
+    /// subtype DISPLAY_MOBILE_APP.</span> <span class="constraint CampaignType">This
+    /// field may only be set to the values: BUDGET_OPTIMIZER, MANUAL_CPC, NONE,
     /// PAGE_ONE_PROMOTED, TARGET_CPA, TARGET_OUTRANK_SHARE, TARGET_ROAS, TARGET_SPEND
     /// for campaign channel subtype SEARCH_MOBILE_APP.</span> <span class="constraint
     /// CampaignType">This field may only be set to NONE for campaign channel subtype
-    /// UNIVERSAL_APP_CAMPAIGN.</span>
+    /// UNIVERSAL_APP_CAMPAIGN.</span></p>
     /// </summary>
     public BiddingStrategyType biddingStrategyType {
       get {
@@ -24651,7 +24654,10 @@ namespace Google.Api.Ads.AdWords.v201609 {
 
     /// <summary>The bidding strategy metadata. Bidding strategy can be associated using the <a
     /// href='BiddingStrategyConfiguration#biddingStrategyType'>BiddingStrategyConfiguration#biddingStrategyType</a>
-    /// or the bidding scheme.
+    /// or the bidding scheme. <p>For details on portfolio vs. standard availability,
+    /// see the <a
+    /// href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding
+    /// guide</a>.</p>
     /// </summary>
     public BiddingScheme biddingScheme {
       get {
@@ -24790,7 +24796,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
     /// </summary>
     ENHANCED_CPC = 6,
     /// <summary>Target CPA is an automated bid strategy that sets bids to help get as many
-    /// conversions as possible at the target cost-per-acquisition (CPA) you set. See <a
+    /// conversions as possible at the target cost per acquisition (CPA) you set. See <a
     /// href='TargetCpaBiddingScheme'>TargetCpaBiddingScheme</a> for more details.
     /// </summary>
     TARGET_CPA = 7,
@@ -25365,7 +25371,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
 
   /// <summary><a href="https://support.google.com/adwords/answer/6268632">Target CPA</a> is an
   /// automated bid strategy that sets bids to help get as many conversions as
-  /// possible at the target cost-per-acquisition (CPA) you set. <p>A <a
+  /// possible at the target cost per acquisition (CPA) you set. <p>A <a
   /// href='#targetCpa'>target CPA</a> must be set for the strategy, but can also be
   /// optionally set for individual ad groups in the strategy. Ad group targets, if
   /// set, will override strategy targets.</p> <p>Note that campaigns must meet <a
@@ -25385,8 +25391,8 @@ namespace Google.Api.Ads.AdWords.v201609 {
 
     private Money maxCpcBidFloorField;
 
-    /// <summary>Average CPA target. This target should be greater than or equal to minimum
-    /// billable unit based on the currency for the account.
+    /// <summary>Average cost per acquisition (CPA) target. This target should be greater than or
+    /// equal to minimum billable unit based on the currency for the account.
     /// </summary>
     public Money targetCpa {
       get {
@@ -26509,7 +26515,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
 
     private bool bidSourceFieldSpecified;
 
-    /// <summary>Target cost per acquisition/conversion. This is applicable only at the ad group
+    /// <summary>Target cost per acquisition (CPA). This is applicable only at the ad group
     /// level. <p>If an ad group-level target is not set and the strategy type is
     /// TARGET_CPA, the strategy level target will be used. To set the strategy-level
     /// target, set the <a
@@ -30427,9 +30433,11 @@ namespace Google.Api.Ads.AdWords.v201609 {
       }
     }
 
-    /// <summary>The active search attribution model type. <span class="constraint
-    /// Selectable">This field can be selected using the value
-    /// "AttributionModelType".</span>
+    /// <summary>Attribution models describing how to distribute credit for a particular
+    /// conversion across potentially many prior interactions. See
+    /// https://support.google.com/adwords/answer/6259715 for more information about
+    /// attribution modeling in AdWords. <span class="constraint Selectable">This field
+    /// can be selected using the value "AttributionModelType".</span>
     /// </summary>
     public AttributionModelType attributionModelType {
       get {
@@ -51083,8 +51091,8 @@ namespace Google.Api.Ads.AdWords.v201609 {
     private string conversionCurrencyCodeField;
 
     /// <summary>The caller id from which this call was placed. <p>Caller ids in E.164 format
-    /// with preceding ?+? sign. (e.g., ?+16502531234?, +443308182000), National numbers
-    /// which are treated as US numbers in formats like ?6502531234?, and International
+    /// with preceding '+' sign. (e.g., "+16502531234", +443308182000), National numbers
+    /// which are treated as US numbers in formats like "6502531234", and International
     /// Numbers with accompanying country code and preceding '+' like +64 3-331 6005
     /// <span class="constraint Required">This field is required and should not be
     /// <code>null</code>.</span> <span class="constraint StringLength">The length of
@@ -51099,13 +51107,17 @@ namespace Google.Api.Ads.AdWords.v201609 {
       }
     }
 
-    /// <summary>The time at which this call started. <p>A time in the future is not allowed. A
-    /// timezone is always required.</p> <p>When a conversion for the same caller id,
+    /// <summary>The time at which this call started. <p> A time in the future is not allowed. A
+    /// timezone is always required. </p><p> When a conversion for the same caller id,
     /// conversion name and conversion time is uploaded multiple times, the first one
     /// results in a conversion being recorded. The duplicates are ignored and reported
     /// as successes, to indicate that a conversion for this combination has been
-    /// recorded. <span class="constraint Required">This field is required and should
-    /// not be <code>null</code>.</span></p>
+    /// recorded. </p>String Format: yyyyMMdd HHmmss <timezone id=""> (for example,
+    /// 20100609 150223 America/New_York). See the <a
+    /// href="https://developers.google.com/adwords/api/docs/appendix/timezones">Timezones</a>
+    /// page for the complete list of Timezone IDs. <span class="constraint
+    /// Required">This field is required and should not be
+    /// <code>null</code>.</span></timezone>
     /// </summary>
     public string callStartTime {
       get {
@@ -51134,11 +51146,15 @@ namespace Google.Api.Ads.AdWords.v201609 {
     }
 
     /// <summary>The time that this conversion occurred at. <p>This has to be after the call
-    /// time. A time in the future is not allowed. A timezone is always required.</p>
-    /// <p>When a conversion for the same caller id, conversion name and conversion time
-    /// is uploaded multiple times, the first one results in a conversion being
+    /// time. A time in the future is not allowed. A timezone is always required.
+    /// </p><p>When a conversion for the same caller id, conversion name and conversion
+    /// time is uploaded multiple times, the first one results in a conversion being
     /// recorded. The duplicates are ignored and reported as successes, to indicate that
-    /// a conversion for this combination has been recorded.</p>
+    /// a conversion for this combination has been recorded. </p>String Format: yyyyMMdd
+    /// HHmmss <timezone id=""> (for example, 20100609 150223 America/New_York). See the
+    /// <a
+    /// href="https://developers.google.com/adwords/api/docs/appendix/timezones">Timezones</a>
+    /// page for the complete list of Timezone IDs.</timezone>
     /// </summary>
     public string conversionTime {
       get {
@@ -60306,7 +60322,9 @@ namespace Google.Api.Ads.AdWords.v201609 {
   }
 
 
-  /// <summary>UserList operations for adding/updating UserList entities.
+  /// <summary>UserList operations for adding/updating UserList entities. The following <a
+  /// href='Operator'>Operator</a>s are supported: ADD and SET. The REMOVE operator is
+  /// not supported.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.1")]
   [System.SerializableAttribute()]

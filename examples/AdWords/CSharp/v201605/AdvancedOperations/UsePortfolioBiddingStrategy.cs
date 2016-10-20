@@ -16,15 +16,15 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201605;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
+
   /// <summary>
   /// This code example adds a portfolio bidding strategy and uses it to
   /// construct a campaign.
   /// </summary>
   public class UsePortfolioBiddingStrategy : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -77,19 +77,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
       try {
         SharedBiddingStrategy portfolioBiddingStrategy = CreateBiddingStrategy(
             biddingStrategyService, BIDDINGSTRATEGY_NAME, BID_CEILING, SPEND_TARGET);
-          Console.WriteLine("Portfolio bidding strategy with name '{0}' and ID {1} of type " +
-              "{2} was created.", portfolioBiddingStrategy.name, portfolioBiddingStrategy.id,
-              portfolioBiddingStrategy.biddingScheme.BiddingSchemeType);
+        Console.WriteLine("Portfolio bidding strategy with name '{0}' and ID {1} of type " +
+            "{2} was created.", portfolioBiddingStrategy.name, portfolioBiddingStrategy.id,
+            portfolioBiddingStrategy.biddingScheme.BiddingSchemeType);
 
-          Budget sharedBudget = CreateSharedBudget(budgetService, BUDGET_NAME, BUDGET_AMOUNT);
+        Budget sharedBudget = CreateSharedBudget(budgetService, BUDGET_NAME, BUDGET_AMOUNT);
 
-          Campaign newCampaign = CreateCampaignWithBiddingStrategy(campaignService, CAMPAIGN_NAME,
-              portfolioBiddingStrategy.id, sharedBudget.budgetId);
+        Campaign newCampaign = CreateCampaignWithBiddingStrategy(campaignService, CAMPAIGN_NAME,
+            portfolioBiddingStrategy.id, sharedBudget.budgetId);
 
-          Console.WriteLine("Campaign with name '{0}', ID {1} and bidding scheme ID {2} was " +
-              "created.", newCampaign.name, newCampaign.id,
-              newCampaign.biddingStrategyConfiguration.biddingStrategyId);
-
+        Console.WriteLine("Campaign with name '{0}', ID {1} and bidding scheme ID {2} was " +
+            "created.", newCampaign.name, newCampaign.id,
+            newCampaign.biddingStrategyConfiguration.biddingStrategyId);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to create campaign that uses portfolio " +
             "bidding strategy.", e);
@@ -126,7 +125,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
       operation.@operator = Operator.ADD;
       operation.operand = portfolioBiddingStrategy;
 
-      return biddingStrategyService.mutate(new BiddingStrategyOperation[] {operation}).value[0];
+      return biddingStrategyService.mutate(new BiddingStrategyOperation[] { operation }).value[0];
     }
 
     /// <summary>
@@ -151,7 +150,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
       operation.@operator = Operator.ADD;
 
       // Make the mutate request.
-      return budgetService.mutate(new BudgetOperation[] {operation}).value[0];
+      return budgetService.mutate(new BudgetOperation[] { operation }).value[0];
     }
 
     /// <summary>
@@ -168,6 +167,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
       Campaign campaign = new Campaign();
       campaign.name = name;
       campaign.advertisingChannelType = AdvertisingChannelType.SEARCH;
+
+      // Recommendation: Set the campaign to PAUSED when creating it to prevent
+      // the ads from immediately serving. Set to ENABLED once you've added
+      // targeting and the ads are ready to serve.
+      campaign.status = CampaignStatus.PAUSED;
 
       // Set the budget.
       campaign.budget = new Budget();
@@ -192,7 +196,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
       operation.operand = campaign;
       operation.@operator = Operator.ADD;
 
-      return campaignService.mutate(new CampaignOperation[] {operation}).value[0];
+      return campaignService.mutate(new CampaignOperation[] { operation }).value[0];
     }
   }
 }

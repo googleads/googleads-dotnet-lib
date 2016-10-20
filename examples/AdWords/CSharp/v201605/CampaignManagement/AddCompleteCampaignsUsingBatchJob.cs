@@ -13,19 +13,15 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.Util.BatchJob.v201605;
 using Google.Api.Ads.AdWords.v201605;
 
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text.RegularExpressions;
 using System.Threading;
-using Google.Api.Ads.AdWords.Util.BatchJob.v201605;
-using Google.Api.Ads.Common.Util;
-using System.Xml;
-using System.Net;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
+
   /// <summary>
   /// This code sample illustrates how to use BatchJobService to create multiple
   /// complete campaigns, including ad groups and keywords.
@@ -35,7 +31,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
     /// <summary>
     /// The last ID that was automatically generated.
     /// </summary>
-    static long LAST_ID = -1;
+    private static long LAST_ID = -1;
 
     /// <summary>
     /// The number of campaigns to be added.
@@ -150,7 +146,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
         }
 
         BatchJobUtilities batchJobUploadHelper = new BatchJobUtilities(user);
- 
+
         // Create a resumable Upload URL to upload the operations.
         string resumableUploadUrl = batchJobUploadHelper.GetResumableUploadUrl(uploadUrl);
 
@@ -159,11 +155,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
 
         bool isCompleted = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
           TIME_TO_WAIT_FOR_COMPLETION, delegate(BatchJob waitBatchJob, long timeElapsed) {
-            Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
-                              timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status);
-            batchJob = waitBatchJob;
-            return false;
-          });
+          Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
+                            timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status);
+          batchJob = waitBatchJob;
+          return false;
+        });
 
         if (!isCompleted) {
           throw new TimeoutException("Job is still in pending state after waiting for " +
@@ -305,7 +301,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
       for (int i = 0; i < NUMBER_OF_CAMPAIGNS_TO_ADD; i++) {
         Campaign campaign = new Campaign() {
           name = "Batch Campaign " + ExampleUtilities.GetRandomString(),
+
+          // Recommendation: Set the campaign to PAUSED when creating it to prevent
+          // the ads from immediately serving. Set to ENABLED once you've added
+          // targeting and the ads are ready to serve.
           status = CampaignStatus.PAUSED,
+
           id = NextId(),
           advertisingChannelType = AdvertisingChannelType.SEARCH,
           budget = new Budget() {

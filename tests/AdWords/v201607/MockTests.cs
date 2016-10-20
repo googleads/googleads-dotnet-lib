@@ -179,7 +179,10 @@ namespace Google.Api.Ads.AdWords.Tests.v201607 {
 
       Campaign campaign = new Campaign();
       campaign.name = "Interplanetary Cruise #" + new TestUtils().GetTimeStamp();
+
+      // Set the test campaign to PAUSED when creating it to prevent the ads from serving.
       campaign.status = CampaignStatus.PAUSED;
+
       campaign.biddingStrategyConfiguration = new BiddingStrategyConfiguration();
       campaign.biddingStrategyConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC;
 

@@ -305,6 +305,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
       for (int i = 0; i < NUMBER_OF_CAMPAIGNS_TO_ADD; i++) {
         Campaign campaign = new Campaign() {
           name = "Batch Campaign " + ExampleUtilities.GetRandomString(),
+
+          // Recommendation: Set the campaign to PAUSED when creating it to prevent
+          // the ads from immediately serving. Set to ENABLED once you've added
+          // targeting and the ads are ready to serve.
           status = CampaignStatus.PAUSED,
           id = NextId(),
           advertisingChannelType = AdvertisingChannelType.SEARCH,

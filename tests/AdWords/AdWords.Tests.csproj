@@ -81,17 +81,11 @@
       <LastGenOutput>SoapMessages.v201605.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SoapMessages.v201603.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SoapMessages.v201603.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\UpdateCampaign.v201609.txt" />
     <Content Include="Resources\UpdateCampaign.v201607.txt" />
     <Content Include="Resources\UpdateCampaign.v201605.txt" />
-    <Content Include="Resources\UpdateCampaign.v201603.txt" />
     <Content Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -108,15 +102,9 @@
     <Compile Include="Lib\AdWordsServiceFactoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
-    <Compile Include="Util\BatchJob\v201603\BatchJobUtilitiesTest.cs" />
     <Compile Include="Util\BatchJob\v201605\BatchJobUtilitiesTest.cs" />
     <Compile Include="Util\BatchJob\v201607\BatchJobUtilitiesTest.cs" />
     <Compile Include="Util\BatchJob\v201609\BatchJobUtilitiesTest.cs" />
-    <Compile Include="Util\Shopping\v201603\ProductDimensionEqualityComparerTest.cs" />
-    <Compile Include="Util\Shopping\v201603\ProductDimensionsTest.cs" />
-    <Compile Include="Util\Shopping\v201603\ProductPartitionNodeTest.cs" />
-    <Compile Include="Util\Shopping\v201603\ProductPartitionTreeIntegrationTests.cs" />
-    <Compile Include="Util\Shopping\v201603\ProductPartitionTreeTest.cs" />
     <Compile Include="Util\Shopping\v201605\ProductDimensionEqualityComparerTest.cs" />
     <Compile Include="Util\Shopping\v201605\ProductDimensionsTest.cs" />
     <Compile Include="Util\Shopping\v201605\ProductPartitionNodeTest.cs" />
@@ -132,28 +120,9 @@
     <Compile Include="Util\Shopping\v201609\ProductPartitionNodeTest.cs" />
     <Compile Include="Util\Shopping\v201609\ProductPartitionTreeIntegrationTests.cs" />
     <Compile Include="Util\Shopping\v201609\ProductPartitionTreeTest.cs" />
-    <Compile Include="Util\v201603\MapUtilitiesTest.cs" />
     <Compile Include="Util\v201605\MapUtilitiesTest.cs" />
     <Compile Include="Util\v201607\MapUtilitiesTest.cs" />
     <Compile Include="Util\v201609\MapUtilitiesTest.cs" />
-    <Compile Include="v201603\AccountManagementTest.cs" />
-    <Compile Include="v201603\AdvancedOperationsTest.cs" />
-    <Compile Include="v201603\BasicOperationsTest.cs" />
-    <Compile Include="v201603\CampaignManagementTest.cs" />
-    <Compile Include="v201603\ErrorHandlingTest.cs" />
-    <Compile Include="v201603\ExtensionsTest.cs" />
-    <Compile Include="v201603\MigrationTest.cs" />
-    <Compile Include="v201603\MiscellaneousTest.cs" />
-    <Compile Include="v201603\MockTests.cs" />
-    <Compile Include="v201603\OptimizationTest.cs" />
-    <Compile Include="v201603\RemarketingTest.cs" />
-    <Compile Include="v201603\ReportingTest.cs" />
-    <Compile Include="v201603\ShoppingCampaignsTest.cs" />
-    <Compile Include="v201603\ShoppingTestUtils.cs" />
-    <Compile Include="v201603\TargetingTest.cs" />
-    <Compile Include="v201603\TestUtils.cs" />
-    <Compile Include="v201603\VersionedExampleTestsBase.cs" />
-    <Compile Include="v201603\VersionedMockedExampleTestsBase.cs" />
     <Compile Include="v201605\AccountManagementTest.cs" />
     <Compile Include="v201605\AdvancedOperationsTest.cs" />
     <Compile Include="v201605\BasicOperationsTest.cs" />
@@ -215,7 +184,6 @@
     <Compile Include="MockUtilities.cs" />
     <Compile Include="MockedExampleTestsBase.cs" />
     <Compile Include="ServiceCreationTests.cs" />
-    <Compile Include="SoapMessages.v201603.Designer.cs" />
     <Compile Include="SoapMessages.v201605.Designer.cs" />
     <Compile Include="SoapMessages.v201607.Designer.cs" />
     <Compile Include="SoapMessages.v201609.Designer.cs" />

@@ -66,6 +66,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201609
       ' Create the campaign.
       Dim campaign As New Campaign
       campaign.name = "Interplanetary Cruise App #" + ExampleUtilities.GetRandomString
+
+      ' Recommendation: Set the campaign to PAUSED when creating it to prevent
+      ' the ads from immediately serving. Set to ENABLED once you've added
+      ' targeting and the ads are ready to serve.
       campaign.status = CampaignStatus.PAUSED
 
       ' Set the advertising channel and subchannel types for universal app campaigns.

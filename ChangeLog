@@ -1,3 +1,20 @@
+18.33.0
+=======
+AdWords:
+  - Removed support for v201603.
+  - Regenerated all stubs for existing API versions.
+  - Added new code example for accepting a Merchant Center invite link.
+  - All code examples that create campaigns were updated to set the campaign's initial status
+  to PAUSED.
+
+DFP:
+  -
+
+Common:
+  - Added a DecompressedStream property to ReportResponse class to simplify working with gzipped
+  reports.
+  - Common library version was bumped to 3.17.0.0.
+
 18.32.0
 =======
 AdWords:

@@ -16,7 +16,6 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201605;
 
 using System;
-using System.Collections.Generic;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
 
@@ -143,8 +142,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
       // Create campaign.
       Campaign campaign = new Campaign();
       campaign.name = "Shopping campaign #" + ExampleUtilities.GetRandomString();
+
       // The advertisingChannelType is what makes this a Shopping campaign.
       campaign.advertisingChannelType = AdvertisingChannelType.SHOPPING;
+
+      // Recommendation: Set the campaign to PAUSED when creating it to prevent
+      // the ads from immediately serving. Set to ENABLED once you've added
+      // targeting and the ads are ready to serve.
+      campaign.status = CampaignStatus.PAUSED;
 
       // Set shared budget (required).
       campaign.budget = new Budget();
