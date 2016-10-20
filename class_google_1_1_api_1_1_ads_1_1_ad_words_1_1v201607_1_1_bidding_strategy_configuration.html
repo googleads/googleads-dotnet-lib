@@ -138,9 +138,7 @@ Properties</h2></td></tr>
 <tr class="memdesc:ab41de9469d758988bf9da0b1f36f6bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the bidding strategy. This is applicable only for flexible bidding strategies. <span class="constraint Selectable">This field can be selected using the value "BiddingStrategyName".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#ab41de9469d758988bf9da0b1f36f6bc9">More...</a><br/></td></tr>
 <tr class="separator:ab41de9469d758988bf9da0b1f36f6bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade475470c40b30e9238617659368181a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607.html#adb5837bf512c7bdad15c8ceeea72246e">BiddingStrategyType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_bidding_strategy_configuration.html#ade475470c40b30e9238617659368181a">biddingStrategyType</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ade475470c40b30e9238617659368181a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the bidding strategy to be attached. <span class="constraint
-Selectable">This field can be selected using the value "BiddingStrategyType".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint CampaignType">This field may only be set to the values: MANUAL_CPC, ENHANCED_CPC, TARGET_ROAS, TARGET_SPEND, NONE for campaign channel type SHOPPING.</span> <span class="constraint
-CampaignType">This field may only be set to NONE for campaign channel type DISPLAY.</span> <span class="constraint CampaignType">This field may only be set to NONE for campaign channel type DISPLAY with campaign channel subtype DISPLAY_MOBILE_APP.</span> <span class="constraint CampaignType">This field may only be set to the values: BUDGET_OPTIMIZER, MANUAL_CPC, NONE, PAGE_ONE_PROMOTED, TARGET_CPA, TARGET_OUTRANK_SHARE, TARGET_ROAS, TARGET_SPEND for campaign channel subtype SEARCH_MOBILE_APP.</span>  <a href="#ade475470c40b30e9238617659368181a">More...</a><br/></td></tr>
+<tr class="memdesc:ade475470c40b30e9238617659368181a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the bidding strategy to be attached.  <a href="#ade475470c40b30e9238617659368181a">More...</a><br/></td></tr>
 <tr class="separator:ade475470c40b30e9238617659368181a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a855dfb0afe0d4f83bbb214f5859da623"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_bidding_strategy_configuration.html#a855dfb0afe0d4f83bbb214f5859da623">biddingStrategyTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a855dfb0afe0d4f83bbb214f5859da623"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,6 +191,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 </div><div class="memdoc">
 
 <p>The bidding strategy metadata. Bidding strategy can be associated using the <a href="BiddingStrategyConfiguration#biddingStrategyType">BiddingStrategyConfiguration::biddingStrategyType</a> or the bidding scheme. </p>
+<p>For details on portfolio vs. standard availability, see the <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding guide</a>.</p>
 
 </div>
 </div>
@@ -328,9 +327,8 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 </table>
 </div><div class="memdoc">
 
-<p>The type of the bidding strategy to be attached. <span class="constraint
-Selectable">This field can be selected using the value "BiddingStrategyType".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint CampaignType">This field may only be set to the values: MANUAL_CPC, ENHANCED_CPC, TARGET_ROAS, TARGET_SPEND, NONE for campaign channel type SHOPPING.</span> <span class="constraint
-CampaignType">This field may only be set to NONE for campaign channel type DISPLAY.</span> <span class="constraint CampaignType">This field may only be set to NONE for campaign channel type DISPLAY with campaign channel subtype DISPLAY_MOBILE_APP.</span> <span class="constraint CampaignType">This field may only be set to the values: BUDGET_OPTIMIZER, MANUAL_CPC, NONE, PAGE_ONE_PROMOTED, TARGET_CPA, TARGET_OUTRANK_SHARE, TARGET_ROAS, TARGET_SPEND for campaign channel subtype SEARCH_MOBILE_APP.</span> </p>
+<p>The type of the bidding strategy to be attached. </p>
+<p>For details on portfolio vs. standard availability, see the <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding guide</a>. <span class="constraint Selectable">This field can be selected using the value "BiddingStrategyType".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint CampaignType">This field may only be set to the values: MANUAL_CPC, ENHANCED_CPC, TARGET_ROAS, TARGET_SPEND, NONE for campaign channel type SHOPPING.</span> <span class="constraint CampaignType">This field may only be set to NONE for campaign channel type DISPLAY.</span> <span class="constraint CampaignType">This field may only be set to NONE for campaign channel type DISPLAY with campaign channel subtype DISPLAY_MOBILE_APP.</span> <span class="constraint CampaignType">This field may only be set to the values: BUDGET_OPTIMIZER, MANUAL_CPC, NONE, PAGE_ONE_PROMOTED, TARGET_CPA, TARGET_OUTRANK_SHARE, TARGET_ROAS, TARGET_SPEND for campaign channel subtype SEARCH_MOBILE_APP.</span></p>
 
 </div>
 </div>
@@ -353,7 +351,7 @@ CampaignType">This field may only be set to NONE for campaign channel type DISPL
 </div><div class="memdoc">
 
 <p></p>
-<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_bidding_strategy_configuration.html#ade475470c40b30e9238617659368181a" title="The type of the bidding strategy to be attached. This field can be selected using the value &quot;BiddingS...">biddingStrategyType</a>, <code>false</code> otherwise. </p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_bidding_strategy_configuration.html#ade475470c40b30e9238617659368181a" title="The type of the bidding strategy to be attached. ">biddingStrategyType</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -380,7 +378,7 @@ CampaignType">This field may only be set to NONE for campaign channel type DISPL
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.KI3MUSEBUz/dist/github/src/AdWords/v201607/<a class="el" href="v201607_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.KsvWcRQ3aw/dist/github/src/AdWords/v201607/<a class="el" href="v201607_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -388,7 +386,7 @@ CampaignType">This field may only be set to NONE for campaign channel type DISPL
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607.html">v201607</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_bidding_strategy_configuration.html">BiddingStrategyConfiguration</a></li>
-    <li class="footer">Generated on Mon Aug 29 2016 13:25:14 for Ads API .NET library by
+    <li class="footer">Generated on Thu Oct 20 2016 13:09:34 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

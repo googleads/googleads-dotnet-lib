@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201609_1_1_product_dimension_equality_comparer =
+[
+    [ "Equals", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201609_1_1_product_dimension_equality_comparer.html#a1e231eb4043c3aa0c211ba21d2855215", null ],
+    [ "GetHashCode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201609_1_1_product_dimension_equality_comparer.html#a15d9aee3b54796ef30a63a6fa338c58a", null ]
+];

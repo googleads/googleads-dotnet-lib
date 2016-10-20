@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_conversion_tracker_operation_1_1_fields =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_conversion_tracker_operation_1_1_fields.html#a553756b826437cb1f68321bb91de9f04", null ]
-];

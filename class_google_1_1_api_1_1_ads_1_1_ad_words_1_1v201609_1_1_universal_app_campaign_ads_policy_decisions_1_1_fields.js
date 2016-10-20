@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_universal_app_campaign_ads_policy_decisions_1_1_fields =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_universal_app_campaign_ads_policy_decisions_1_1_fields.html#ae049929f1c42437b856123a947adb5bd", null ]
+];

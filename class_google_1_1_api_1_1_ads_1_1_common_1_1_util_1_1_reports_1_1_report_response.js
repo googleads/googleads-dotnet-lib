@@ -10,6 +10,7 @@ var class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_reports_1_1_report_resp
     [ "OnSaveSuccessCallback", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_reports_1_1_report_response.html#a69fa1bc89e19767c5f9df98077377083", null ],
     [ "Save", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_reports_1_1_report_response.html#af3e27e5ea98ecc961c750225ab5952ec", null ],
     [ "SaveAsync", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_reports_1_1_report_response.html#aac43ac1c8ddedbd481ddbb7c26594708", null ],
+    [ "DecompressedStream", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_reports_1_1_report_response.html#a3d27e263fcf047ddac166dfa032e4be6", null ],
     [ "OnDownloadSuccess", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_reports_1_1_report_response.html#ad8d4af73a687445fe6358e9863e92726", null ],
     [ "OnFailed", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_reports_1_1_report_response.html#ab36c8b64cd853cff569e3638f45706ba", null ],
     [ "OnSaveSuccess", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_reports_1_1_report_response.html#a3faf44ad4d418789e2a76646e22ace37", null ],

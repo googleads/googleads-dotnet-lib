@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201609_1_1_add_rule_based_remarketing_list =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201609_1_1_add_rule_based_remarketing_list.html#a47af654b847f6685977c05d5cf5e7708", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201609_1_1_add_rule_based_remarketing_list.html#a62f633eb6cd2c851d2496eafc164f24b", null ]
+];

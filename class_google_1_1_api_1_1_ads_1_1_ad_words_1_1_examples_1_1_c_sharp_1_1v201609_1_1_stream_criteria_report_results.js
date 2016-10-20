@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201609_1_1_stream_criteria_report_results =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201609_1_1_stream_criteria_report_results.html#a38536d77d764b0ccef404fc12d581dcd", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201609_1_1_stream_criteria_report_results.html#ae831b9d73a1ea0f5e73ad6916d2f504d", null ]
+];

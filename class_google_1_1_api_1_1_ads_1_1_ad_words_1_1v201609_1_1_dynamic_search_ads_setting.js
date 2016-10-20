@@ -1,0 +1,8 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_dynamic_search_ads_setting =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_dynamic_search_ads_setting_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_dynamic_search_ads_setting_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_dynamic_search_ads_setting_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_dynamic_search_ads_setting_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_dynamic_search_ads_setting_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_dynamic_search_ads_setting_1_1_selectable_fields" ],
+    [ "domainName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_dynamic_search_ads_setting.html#ad42b5e3044f6958603ffa6a56dc7b950", null ],
+    [ "languageCode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_dynamic_search_ads_setting.html#afa2c3368a18654415e5a2e96f6c4a5cd", null ]
+];

@@ -1,0 +1,8 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201609_1_1_create_and_attach_shared_keyword_set =
+[
+    [ "AddKeywordsToSharedSet", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201609_1_1_create_and_attach_shared_keyword_set.html#a51a69b043301f10fbcada47f0339eec7", null ],
+    [ "AttachSharedSetToCampaign", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201609_1_1_create_and_attach_shared_keyword_set.html#abb610f162658f3fd439afdd07672061a", null ],
+    [ "CreateSharedKeywordSet", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201609_1_1_create_and_attach_shared_keyword_set.html#ab334a1dc6ca761e5f17a2775a7a4a05e", null ],
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201609_1_1_create_and_attach_shared_keyword_set.html#a31d2b1bc8bcc7309e2daa3b7edf118af", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201609_1_1_create_and_attach_shared_keyword_set.html#ac946a517f5bee9575f97f8b55cb698b0", null ]
+];

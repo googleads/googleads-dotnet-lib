@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_criterion_bid_landscape =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_criterion_bid_landscape_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_criterion_bid_landscape_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_criterion_bid_landscape_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_criterion_bid_landscape_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_criterion_bid_landscape_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_criterion_bid_landscape_1_1_selectable_fields" ],
-    [ "criterionId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_criterion_bid_landscape.html#ab8801354ebb762604423f0629b0f0dba", null ],
-    [ "criterionIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_criterion_bid_landscape.html#abfd8a0e9f260b3f5b7b8d33c6de2be61", null ]
-];

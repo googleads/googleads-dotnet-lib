@@ -62,10 +62,10 @@ var searchData=
   ['dfpsoapheader_2ecs',['DfpSoapHeader.cs',['../_dfp_soap_header_8cs.html',1,'']]],
   ['dfptracelistener_2ecs',['DfpTraceListener.cs',['../_dfp_trace_listener_8cs.html',1,'']]],
   ['dfpuser_2ecs',['DfpUser.cs',['../_dfp_user_8cs.html',1,'']]],
+  ['downloadcriteriareport_2ecs',['DownloadCriteriaReport.cs',['../v201609_2_reporting_2_download_criteria_report_8cs.html',1,'']]],
   ['downloadcriteriareport_2ecs',['DownloadCriteriaReport.cs',['../v201607_2_reporting_2_download_criteria_report_8cs.html',1,'']]],
   ['downloadcriteriareport_2ecs',['DownloadCriteriaReport.cs',['../v201605_2_reporting_2_download_criteria_report_8cs.html',1,'']]],
-  ['downloadcriteriareport_2ecs',['DownloadCriteriaReport.cs',['../v201603_2_reporting_2_download_criteria_report_8cs.html',1,'']]],
+  ['downloadcriteriareportwithawql_2ecs',['DownloadCriteriaReportWithAwql.cs',['../v201609_2_reporting_2_download_criteria_report_with_awql_8cs.html',1,'']]],
   ['downloadcriteriareportwithawql_2ecs',['DownloadCriteriaReportWithAwql.cs',['../v201607_2_reporting_2_download_criteria_report_with_awql_8cs.html',1,'']]],
-  ['downloadcriteriareportwithawql_2ecs',['DownloadCriteriaReportWithAwql.cs',['../v201605_2_reporting_2_download_criteria_report_with_awql_8cs.html',1,'']]],
-  ['downloadcriteriareportwithawql_2ecs',['DownloadCriteriaReportWithAwql.cs',['../v201603_2_reporting_2_download_criteria_report_with_awql_8cs.html',1,'']]]
+  ['downloadcriteriareportwithawql_2ecs',['DownloadCriteriaReportWithAwql.cs',['../v201605_2_reporting_2_download_criteria_report_with_awql_8cs.html',1,'']]]
 ];

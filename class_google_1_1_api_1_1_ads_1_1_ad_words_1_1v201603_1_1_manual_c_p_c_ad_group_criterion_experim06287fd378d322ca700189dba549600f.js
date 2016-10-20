@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_manual_c_p_c_ad_group_criterion_experim06287fd378d322ca700189dba549600f =
-[
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201603_1_1_manual_c_p_c_ad_group_criterion_experim06287fd378d322ca700189dba549600f.html#a288f1b8b189cb3637bd79d639c7bd87f", null ]
-];

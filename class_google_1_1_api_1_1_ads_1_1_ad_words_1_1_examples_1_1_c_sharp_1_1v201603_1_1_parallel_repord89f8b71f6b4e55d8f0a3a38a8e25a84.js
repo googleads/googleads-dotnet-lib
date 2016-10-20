@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201603_1_1_parallel_repord89f8b71f6b4e55d8f0a3a38a8e25a84 =
-[
-    [ "CustomerId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201603_1_1_parallel_repord89f8b71f6b4e55d8f0a3a38a8e25a84.html#a5f2e9546e2bdb482df5fc55ae13a65af", null ],
-    [ "Path", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201603_1_1_parallel_repord89f8b71f6b4e55d8f0a3a38a8e25a84.html#a1461396e2dfd9d12d49383c9281504e0", null ]
-];

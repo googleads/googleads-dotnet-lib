@@ -16,11 +16,5 @@ var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201508_1_1_statement_build
     [ "Select", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201508_1_1_statement_builder.html#a73441ada41bd78940f2fdf91a984c7f0", null ],
     [ "ToStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201508_1_1_statement_builder.html#af4deab727c5357083be3a989126482fd", null ],
     [ "Where", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201508_1_1_statement_builder.html#af69b011d36b441fc545d1384cdef6f5a", null ],
-    [ "from", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201508_1_1_statement_builder.html#afb06fb5926a4f2274dd16937b4a59f58", null ],
-    [ "limit", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201508_1_1_statement_builder.html#a815c4a0cf804d10bbd3ce94368d6f998", null ],
-    [ "offset", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201508_1_1_statement_builder.html#a19b157337be3ca3a1210777f996b2a35", null ],
-    [ "orderBy", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201508_1_1_statement_builder.html#ab02d7e9f1d33a3b017d030a5ce16a315", null ],
-    [ "select", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201508_1_1_statement_builder.html#af4d45b912c64416e3dc0623f8022d537", null ],
-    [ "SUGGESTED_PAGE_LIMIT", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201508_1_1_statement_builder.html#a7021baac5938492220b99271abe6328f", null ],
-    [ "where", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201508_1_1_statement_builder.html#af7ca9b5b4cfdea3234521e7a280e975f", null ]
+    [ "SUGGESTED_PAGE_LIMIT", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201508_1_1_statement_builder.html#a7021baac5938492220b99271abe6328f", null ]
 ];
