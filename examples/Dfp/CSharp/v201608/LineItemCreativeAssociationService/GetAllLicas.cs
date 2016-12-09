@@ -11,17 +11,14 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201608;
 using Google.Api.Ads.Dfp.v201608;
-
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
   /// <summary>
-  /// This code example gets all line item creative associations (LICA). To
-  /// create LICAs, run CreateLicas.cs.
+  /// This example gets all line item creative associations.
   /// </summary>
   public class GetAllLicas : SampleBase {
     /// <summary>
@@ -29,8 +26,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all line item creative associations (LICA). To create " +
-            "LICAs, run CreateLicas.cs.";
+        return "This example gets all line item creative associations.";
       }
     }
 
@@ -40,47 +36,66 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     public static void Main() {
       GetAllLicas codeExample = new GetAllLicas();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
+      try {
+        codeExample.Run(new DfpUser());
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get line item creative associations. Exception says \"{0}\"",
+            e.Message);
+      }
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
-    public void Run(DfpUser user) {
-      // Get the LineItemCreativeAssociationService.
-      LineItemCreativeAssociationService licaService = (LineItemCreativeAssociationService)
-          user.GetService(DfpService.v201608.LineItemCreativeAssociationService);
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser dfpUser) {
+      LineItemCreativeAssociationService lineItemCreativeAssociationService =
+          (LineItemCreativeAssociationService) dfpUser.GetService(
+              DfpService.v201608.LineItemCreativeAssociationService);
 
-       // Create a statement to get all LICAs.
-       StatementBuilder statementBuilder = new StatementBuilder()
+      // Create a statement to select line item creative associations.
+      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+      StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("lineItemId ASC, creativeId ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          .Limit(pageSize);
 
-      // Set default for page.
-      LineItemCreativeAssociationPage page = new LineItemCreativeAssociationPage();
+      // Retrieve a small amount of line item creative associations at a time, paging through until
+      // all line item creative associations have been retrieved.
+      int totalResultSetSize = 0;
+      do {
+        LineItemCreativeAssociationPage page =
+            lineItemCreativeAssociationService.getLineItemCreativeAssociationsByStatement(
+                statementBuilder.ToStatement());
 
-      try {
-        do {
-          // Get LICAs by statement.
-          page = licaService.getLineItemCreativeAssociationsByStatement(
-              statementBuilder.ToStatement());
-
-          if (page.results != null) {
-            int i = page.startIndex;
-            foreach (LineItemCreativeAssociation lica in page.results) {
-              Console.WriteLine("{0}) LICA with line item ID = '{1}', creative ID ='{2}' and " +
-                  "status ='{3}' was found.", i, lica.lineItemId, lica.creativeId,
-                  lica.status);
-              i++;
+        // Print out some information for each line item creative association.
+        if (page.results != null) {
+          totalResultSetSize = page.totalResultSetSize;
+          int i = page.startIndex;
+          foreach (LineItemCreativeAssociation lica in page.results) {
+            if (lica.creativeSetId != 0) {
+              Console.WriteLine(
+                  "{0}) Line item creative association with line item ID {1} " +
+                      "and creative set ID {2} was found.",
+                  i++,
+                  lica.lineItemId,
+                  lica.creativeSetId
+              );
+            } else {
+              Console.WriteLine(
+                  "{0}) Line item creative association with line item ID {1} " +
+                      "and creative ID {2} was found.",
+                  i++,
+                  lica.lineItemId,
+                  lica.creativeId
+              );
             }
           }
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+        }
 
-        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get all LICAs. Exception says \"{0}\"", e.Message);
-      }
+        statementBuilder.IncreaseOffsetBy(pageSize);
+      } while (statementBuilder.GetOffset() < totalResultSetSize);
+
+      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
     }
   }
 }

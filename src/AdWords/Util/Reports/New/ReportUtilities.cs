@@ -264,8 +264,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     private AdWordsReportsException ParseException(Exception exception, string contents) {
       List<ReportDownloadError> errorList = new List<ReportDownloadError>();
       try {
-        XmlDocument xDoc = new XmlDocument();
-        xDoc.LoadXml(contents);
+        XmlDocument xDoc = XmlUtilities.CreateDocument(contents);
         XmlNodeList errorNodes = xDoc.DocumentElement.SelectNodes("ApiError");
         foreach (XmlElement errorNode in errorNodes) {
           ReportDownloadError downloadError = new ReportDownloadError();
@@ -290,8 +289,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     private string ConvertDefinitionToXml(IReportDefinition definition) {
       string xml = SerializationUtilities.SerializeAsXmlText(definition).Replace(
           "ReportDefinition", "reportDefinition");
-      XmlDocument doc = new XmlDocument();
-      doc.LoadXml(xml);
+      XmlDocument doc = XmlUtilities.CreateDocument(xml);
       XmlNodeList xmlNodes = doc.SelectNodes("descendant::*");
       foreach (XmlElement node in xmlNodes) {
         node.RemoveAllAttributes();

@@ -14,7 +14,7 @@
 
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests.Mocks;
-
+using Google.Api.Ads.Common.Util;
 using NUnit.Framework;
 
 using System;
@@ -84,13 +84,11 @@ namespace Google.Api.Ads.Common.Tests.Logging {
       config.SetPropertyFieldForTests("MaskCredentials", true);
       listener = new MockTraceListener(config);
 
-      XmlDocument xOutgoing = new XmlDocument();
-      xOutgoing.LoadXml(Resources.XmlRequest);
+      XmlDocument xOutgoing = XmlUtilities.CreateDocument(Resources.XmlRequest);
       listener.HandleMessage(xOutgoing, adsClient, SoapMessageDirection.OUT);
       Assert.AreEqual(xOutgoing.OuterXml, ContextStore.GetValue("SoapRequest"));
 
-      XmlDocument xIncoming = new XmlDocument();
-      xIncoming.LoadXml(Resources.XmlResponse);
+      XmlDocument xIncoming = XmlUtilities.CreateDocument(Resources.XmlResponse);
       listener.HandleMessage(xIncoming, adsClient, SoapMessageDirection.IN);
       Assert.AreEqual(xIncoming.OuterXml, ContextStore.GetValue("SoapResponse"));
       string expected = Resources.SoapLog.Replace("\r\n", "\n").Trim();
@@ -111,13 +109,11 @@ namespace Google.Api.Ads.Common.Tests.Logging {
       config.SetPropertyFieldForTests("MaskCredentials", true);
       listener = new MockTraceListener(config);
 
-      XmlDocument xOutgoing = new XmlDocument();
-      xOutgoing.LoadXml(Resources.XmlRequest);
+      XmlDocument xOutgoing = XmlUtilities.CreateDocument(Resources.XmlRequest);
       listener.HandleMessage(xOutgoing, null, SoapMessageDirection.OUT);
       Assert.AreEqual(xOutgoing.OuterXml, ContextStore.GetValue("SoapRequest"));
 
-      XmlDocument xIncoming = new XmlDocument();
-      xIncoming.LoadXml(Resources.XmlResponse);
+      XmlDocument xIncoming = XmlUtilities.CreateDocument(Resources.XmlResponse);
       listener.HandleMessage(xIncoming, null, SoapMessageDirection.IN);
       Assert.AreEqual(xIncoming.OuterXml, ContextStore.GetValue("SoapResponse"));
       Assert.IsNull(ContextStore.GetValue("FormattedSoapLog"));

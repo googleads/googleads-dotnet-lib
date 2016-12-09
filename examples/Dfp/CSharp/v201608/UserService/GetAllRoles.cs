@@ -11,16 +11,14 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201608;
 using Google.Api.Ads.Dfp.v201608;
-
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
   /// <summary>
-  /// This code example gets all roles. This example can be used to determine
-  /// which role ID is needed when getting and creating users.
+  /// This example gets all roles.
   /// </summary>
   public class GetAllRoles : SampleBase {
     /// <summary>
@@ -28,8 +26,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all roles. This example can be used to determine which " +
-            "role ID is needed when getting and creating users.";
+        return "This example gets all roles.";
       }
     }
 
@@ -39,33 +36,36 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     public static void Main() {
       GetAllRoles codeExample = new GetAllRoles();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
+      try {
+        codeExample.Run(new DfpUser());
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get roles. Exception says \"{0}\"",
+            e.Message);
+      }
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
-    public void Run(DfpUser user) {
-      // Get the UserService.
-      UserService userService = (UserService) user.GetService(DfpService.v201608.UserService);
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser dfpUser) {
+      UserService userService =
+          (UserService) dfpUser.GetService(DfpService.v201608.UserService);
 
-      try {
-        // Get all roles.
-        Role[] roles = userService.getAllRoles();
-        int numRoles = 0;
-        if (roles != null && roles.Length > 0) {
-          foreach (Role role in roles) {
-            Console.WriteLine("Role with ID = '{0}' and name ='{1}' was found.", role.id,
-                role.name);
-          }
-          numRoles = roles.Length;
-        }
+      Role[] roles = userService.getAllRoles();
 
-        Console.WriteLine("Number of results found: " + numRoles);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get all roles. Exception says \"{0}\"",
-            e.Message);
+      // Print out some information for each role.
+      int i = 0;
+      foreach (Role role in roles) {
+        Console.WriteLine(
+            "{0}) Role with ID {1} and name \"{2}\" was found.",
+            i++,
+            role.id,
+            role.name
+        );
       }
+
+      Console.WriteLine("Number of results found: {0}", roles.Length);
     }
   }
 }

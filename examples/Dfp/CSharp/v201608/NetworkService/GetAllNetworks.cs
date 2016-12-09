@@ -11,17 +11,14 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201608;
 using Google.Api.Ads.Dfp.v201608;
-
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
   /// <summary>
-  /// This code example gets all networks that you have access to with the
-  /// current login credentials. A networkCode should be left out for this
-  /// request.
+  /// This example gets all networks.
   /// </summary>
   public class GetAllNetworks : SampleBase {
     /// <summary>
@@ -29,8 +26,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example gets all networks that you have access to with the current " +
-            "login credentials. A networkCode should be left out for this request.";
+        return "This example gets all networks.";
       }
     }
 
@@ -40,36 +36,36 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     public static void Main() {
       GetAllNetworks codeExample = new GetAllNetworks();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
+      try {
+        codeExample.Run(new DfpUser());
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get networks. Exception says \"{0}\"",
+            e.Message);
+      }
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
-    public void Run(DfpUser user) {
-      // Get the NetworkService.
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser dfpUser) {
       NetworkService networkService =
-          (NetworkService) user.GetService(DfpService.v201608.NetworkService);
-      // Set the networkCode field to null to retrieve all networks you have
-      // access to.
-      networkService.RequestHeader.networkCode = null;
+          (NetworkService) dfpUser.GetService(DfpService.v201608.NetworkService);
 
-      try {
-        // Get all networks that you have access to with the current login
-        // credentials.
-        Network[] networks = networkService.getAllNetworks();
+      Network[] networks = networkService.getAllNetworks();
 
-        int i = 0;
-        foreach (Network network in networks) {
-         Console.WriteLine("{0} ) Network with network code \"{1}\" and display name \"{2}\" " +
-            "was found.", i + 1, network.networkCode, network.displayName);
-          i++;
-        }
-        Console.WriteLine("Number of networks found: {0}", i);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get all networks. Exception says \"{0}\"",
-            e.Message);
+      // Print out some information for each network.
+      int i = 0;
+      foreach (Network network in networks) {
+        Console.WriteLine(
+            "{0}) Network with code \"{1}\" and display name \"{2}\" was found.",
+            i++,
+            network.networkCode,
+            network.displayName
+        );
       }
+
+      Console.WriteLine("Number of results found: {0}", networks.Length);
     }
   }
 }

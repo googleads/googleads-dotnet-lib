@@ -11,12 +11,11 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201608;
 using Google.Api.Ads.Dfp.v201608;
-
 using System;
+
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
   /// <summary>
   /// This example gets all products created from a product template.
@@ -36,56 +35,61 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     /// </summary>
     public static void Main() {
       GetProductsForProductTemplate codeExample = new GetProductsForProductTemplate();
+      long productTemplateId = long.Parse("INSERT_PRODUCT_TEMPLATE_ID_HERE");
       Console.WriteLine(codeExample.Description);
-
-      long productTemplateId = long.Parse(_T("INSERT_PRODUCT_TEMPLATE_ID_HERE"));
-      codeExample.Run(new DfpUser(), productTemplateId);
+      try {
+        codeExample.Run(new DfpUser(), productTemplateId);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get products. Exception says \"{0}\"",
+            e.Message);
+      }
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
-    public void Run(DfpUser user, long productTemplateId) {
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser dfpUser, long productTemplateId) {
       ProductService productService =
-          (ProductService) user.GetService(DfpService.v201608.ProductService);
+          (ProductService) dfpUser.GetService(DfpService.v201608.ProductService);
 
       // [START product_statement] MOE:strip_line
       // Create a statement to select products.
+      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("productTemplateId = :productTemplateId")
           .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .Limit(pageSize)
           .AddValue("productTemplateId", productTemplateId);
       // [END product_statement] MOE:strip_line
 
-      // Retrieve a small amount of products at a time, paging through
-      // until all products have been retrieved.
-      ProductPage page = new ProductPage();
-      try {
-        do {
-          // [START get_some_products] MOE:strip_line
-          page = productService.getProductsByStatement(statementBuilder.ToStatement());
-          // [END get_some_products] MOE:strip_line
+      // Retrieve a small amount of products at a time, paging through until all
+      // products have been retrieved.
+      int totalResultSetSize = 0;
+      do {
+        // [START get_some_products] MOE:strip_line
+        ProductPage page = productService.getProductsByStatement(
+            statementBuilder.ToStatement());
+        // [END get_some_products] MOE:strip_line
 
-          if (page.results != null) {
-            // Print out some information for each product.
-            int i = page.startIndex;
-            foreach (Product product in page.results) {
-              Console.WriteLine("{0}) Product with ID \"{1}\" and name \"{2}\" was found.",
-                  i++,
-                  product.id,
-                  product.name);
-            }
+        // Print out some information for each product.
+        if (page.results != null) {
+          totalResultSetSize = page.totalResultSetSize;
+          int i = page.startIndex;
+          foreach (Product product in page.results) {
+            Console.WriteLine(
+                "{0}) Product with ID {1} and name \"{2}\" was found.",
+                i++,
+                product.id,
+                product.name
+            );
           }
+        }
 
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+        statementBuilder.IncreaseOffsetBy(pageSize);
+      } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get products. Exception says \"{0}\"",
-            e.Message);
-      }
+      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
     }
   }
 }

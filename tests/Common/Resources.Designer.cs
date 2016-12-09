@@ -151,5 +151,17 @@ namespace Google.Api.Ads.Common.Tests {
                 return ResourceManager.GetString("XmlResponse", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        /// &lt;!DOCTYPE foo [  
+        ///   &lt;!ELEMENT foo ANY &gt;
+        ///   &lt;!ENTITY xxe SYSTEM &quot;file:///c:/boot.ini&quot; &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;.
+        /// </summary>
+        internal static string XxeExample {
+            get {
+                return ResourceManager.GetString("XxeExample", resourceCulture);
+            }
+        }
     }
 }

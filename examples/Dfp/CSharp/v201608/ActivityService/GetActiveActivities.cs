@@ -11,11 +11,9 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201608;
 using Google.Api.Ads.Dfp.v201608;
-
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
@@ -38,52 +36,56 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     public static void Main() {
       GetActiveActivities codeExample = new GetActiveActivities();
       Console.WriteLine(codeExample.Description);
-
-      codeExample.Run(new DfpUser());
+      try {
+        codeExample.Run(new DfpUser());
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get activities. Exception says \"{0}\"",
+            e.Message);
+      }
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
-    public void Run(DfpUser user) {
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser dfpUser) {
       ActivityService activityService =
-          (ActivityService) user.GetService(DfpService.v201608.ActivityService);
+          (ActivityService) dfpUser.GetService(DfpService.v201608.ActivityService);
 
       // Create a statement to select activities.
+      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("status = :status")
           .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .Limit(pageSize)
           .AddValue("status", ActivityStatus.ACTIVE.ToString());
 
-      // Retrieve a small amount of activities at a time, paging through
-      // until all activities have been retrieved.
-      ActivityPage page = new ActivityPage();
-      try {
-        do {
-          page = activityService.getActivitiesByStatement(statementBuilder.ToStatement());
+      // Retrieve a small amount of activities at a time, paging through until all
+      // activities have been retrieved.
+      int totalResultSetSize = 0;
+      do {
+        ActivityPage page = activityService.getActivitiesByStatement(
+            statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            // Print out some information for each activity.
-            int i = page.startIndex;
-            foreach (Activity activity in page.results) {
-              Console.WriteLine("{0}) Activity with ID \"{1}\", name \"{2}\", "
-                  + "and type \"{3}\" was found.",
-                  i++,
-                  activity.id,
-                  activity.name,
-                  activity.type);
-            }
+        // Print out some information for each activity.
+        if (page.results != null) {
+          totalResultSetSize = page.totalResultSetSize;
+          int i = page.startIndex;
+          foreach (Activity activity in page.results) {
+            Console.WriteLine(
+                "{0}) Activity with ID {1}, name \"{2}\", and type \"{3}\" was found.",
+                i++,
+                activity.id,
+                activity.name,
+                activity.type
+            );
           }
+        }
 
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+        statementBuilder.IncreaseOffsetBy(pageSize);
+      } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get activities. Exception says \"{0}\"",
-            e.Message);
-      }
+      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
     }
   }
 }

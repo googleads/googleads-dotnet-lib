@@ -38,8 +38,7 @@ namespace Google.Api.Ads.Common.Tests.Util {
     [Test]
     public void TestMaskContents() {
       string maskedBody = new SoapTraceFormatter().MaskContents(Resources.SoapRequest, KEYS);
-      XmlDocument xDoc = new XmlDocument();
-      xDoc.LoadXml(maskedBody);
+      XmlDocument xDoc = XmlUtilities.CreateDocument(maskedBody);
       XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
       xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
       xmlns.AddNamespace("cm", "https://adwords.google.com/api/adwords/cm/v201409");

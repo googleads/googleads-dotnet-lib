@@ -13,6 +13,7 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Tests;
+using Google.Api.Ads.Common.Util;
 
 using NUnit.Framework;
 
@@ -87,8 +88,7 @@ namespace Google.Api.Ads.AdWords.Tests {
     protected ExamplesMockData LoadMockData(string mockData) {
       List<HttpMessage> messages = new List<HttpMessage>();
 
-      XmlDocument xDoc = new XmlDocument();
-      xDoc.LoadXml(mockData);
+      XmlDocument xDoc = XmlUtilities.CreateDocument(mockData);
       XmlNodeList soapNodes = xDoc.SelectNodes("Example/SOAP");
 
       foreach (XmlElement soapNode in soapNodes) {

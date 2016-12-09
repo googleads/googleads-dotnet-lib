@@ -11,11 +11,9 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201608;
 using Google.Api.Ads.Dfp.v201608;
-
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
@@ -38,52 +36,55 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     public static void Main() {
       GetSystemDefinedCreativeTemplates codeExample = new GetSystemDefinedCreativeTemplates();
       Console.WriteLine(codeExample.Description);
-
-      codeExample.Run(new DfpUser());
+      try {
+        codeExample.Run(new DfpUser());
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get creative templates. Exception says \"{0}\"",
+            e.Message);
+      }
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
-    public void Run(DfpUser user) {
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser dfpUser) {
       CreativeTemplateService creativeTemplateService =
-          (CreativeTemplateService) user.GetService(DfpService.v201608.CreativeTemplateService);
+          (CreativeTemplateService) dfpUser.GetService(DfpService.v201608.CreativeTemplateService);
 
       // Create a statement to select creative templates.
+      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("type = :type")
           .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .Limit(pageSize)
           .AddValue("type", CreativeTemplateType.SYSTEM_DEFINED.ToString());
 
-      // Retrieve a small amount of creative templates at a time, paging through
-      // until all creative templates have been retrieved.
-      CreativeTemplatePage page = new CreativeTemplatePage();
-      try {
-        do {
-          page = creativeTemplateService.getCreativeTemplatesByStatement(
-              statementBuilder.ToStatement());
+      // Retrieve a small amount of creative templates at a time, paging through until all
+      // creative templates have been retrieved.
+      int totalResultSetSize = 0;
+      do {
+        CreativeTemplatePage page = creativeTemplateService.getCreativeTemplatesByStatement(
+            statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            // Print out some information for each creative template.
-            int i = page.startIndex;
-            foreach (CreativeTemplate creativeTemplate in page.results) {
-              Console.WriteLine("{0}) Creative template with ID \"{1}\" "
-                  + "and name \"{2}\" was found.",
-                  i++,
-                  creativeTemplate.id,
-                  creativeTemplate.name);
-            }
+        // Print out some information for each creative template.
+        if (page.results != null) {
+          totalResultSetSize = page.totalResultSetSize;
+          int i = page.startIndex;
+          foreach (CreativeTemplate creativeTemplate in page.results) {
+            Console.WriteLine(
+                "{0}) Creative template with ID {1} and name \"{2}\" was found.",
+                i++,
+                creativeTemplate.id,
+                creativeTemplate.name
+            );
           }
+        }
 
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+        statementBuilder.IncreaseOffsetBy(pageSize);
+      } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get creative templates. Exception says \"{0}\"",
-            e.Message);
-      }
+      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
     }
   }
 }

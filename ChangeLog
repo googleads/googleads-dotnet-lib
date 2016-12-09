@@ -1,3 +1,16 @@
+18.34.0
+=======
+AdWords:
+  -
+
+DFP:
+  - Added support for v201611.
+  - Removed support for v201508 and v201511.
+  - Removed examples for v201602.
+
+Common:
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/95 in all libraries.
+
 18.33.0
 =======
 AdWords:

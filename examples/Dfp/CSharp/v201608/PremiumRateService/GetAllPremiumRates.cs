@@ -11,11 +11,9 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201608;
 using Google.Api.Ads.Dfp.v201608;
-
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
@@ -38,49 +36,56 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     public static void Main() {
       GetAllPremiumRates codeExample = new GetAllPremiumRates();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
+      try {
+        codeExample.Run(new DfpUser());
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get premium rates. Exception says \"{0}\"",
+            e.Message);
+      }
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
-    public void Run(DfpUser user) {
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser dfpUser) {
       PremiumRateService premiumRateService =
-          (PremiumRateService) user.GetService(DfpService.v201608.PremiumRateService);
+          (PremiumRateService) dfpUser.GetService(DfpService.v201608.PremiumRateService);
 
       // Create a statement to select premium rates.
+      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          .Limit(pageSize);
 
-      // Retrieve a small amount of premium rates at a time, paging through
-      // until all premium rates have been retrieved.
-      PremiumRatePage page = new PremiumRatePage();
-      try {
-        do {
-          page = premiumRateService.getPremiumRatesByStatement(statementBuilder.ToStatement());
+      // Retrieve a small amount of premium rates at a time, paging through until all
+      // premium rates have been retrieved.
+      int totalResultSetSize = 0;
+      do {
+        PremiumRatePage page = premiumRateService.getPremiumRatesByStatement(
+            statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            // Print out some information for each premium rate.
-            int i = page.startIndex;
-            foreach (PremiumRate premiumRate in page.results) {
-              Console.WriteLine("{0}) Premium rate with ID \"{1}\", premium feature \"{2}\", "
-                  + "and rate card id \"{3}\" was found.",
-                  i++,
-                  premiumRate.id,
-                  premiumRate.GetType().Name,
-                  premiumRate.rateCardId);
-            }
+        // Print out some information for each premium rate.
+        if (page.results != null) {
+          totalResultSetSize = page.totalResultSetSize;
+          int i = page.startIndex;
+          foreach (PremiumRate premiumRate in page.results) {
+            Console.WriteLine(
+                "{0}) Premium rate with ID {1}, " +
+                    "premium feature \"{2}\", " +
+                    "and rate card id {3} was found.",
+                i++,
+                premiumRate.id,
+                premiumRate.GetType().Name,
+                premiumRate.rateCardId
+            );
           }
+        }
 
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+        statementBuilder.IncreaseOffsetBy(pageSize);
+      } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get premium rates. Exception says \"{0}\"",
-            e.Message);
-      }
+      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
     }
   }
 }

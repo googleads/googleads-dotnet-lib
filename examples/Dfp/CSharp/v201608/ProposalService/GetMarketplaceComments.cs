@@ -11,16 +11,14 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201608;
 using Google.Api.Ads.Dfp.v201608;
-
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
   /// <summary>
-  /// This example gets Marketplace comments for a programmatic proposal.
+  /// This example gets the Marketplace comments for a programmatic proposal.
   /// </summary>
   public class GetMarketplaceComments : SampleBase {
     /// <summary>
@@ -28,7 +26,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     /// </summary>
     public override string Description {
       get {
-        return "This example gets Marketplace comments for a programmatic proposal.";
+        return "This example gets the Marketplace comments for a programmatic proposal.";
       }
     }
 
@@ -37,61 +35,64 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     /// </summary>
     public static void Main() {
       GetMarketplaceComments codeExample = new GetMarketplaceComments();
+      long proposalId = long.Parse("INSERT_PROPOSAL_ID_HERE");
       Console.WriteLine(codeExample.Description);
-
-      long proposalId = long.Parse(_T("INSERT_PROPOSAL_ID_HERE"));
-
-      codeExample.Run(new DfpUser(), proposalId);
+      try {
+        codeExample.Run(new DfpUser(), proposalId);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get Marketplace comments. Exception says \"{0}\"",
+            e.Message);
+      }
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
-    public void Run(DfpUser user, long proposalId) {
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser dfpUser, long proposalId) {
       ProposalService proposalService =
-          (ProposalService) user.GetService(DfpService.v201608.ProposalService);
+          (ProposalService) dfpUser.GetService(DfpService.v201608.ProposalService);
 
       // Create a statement to select Marketplace comments.
+      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("proposalId = :proposalId")
           .AddValue("proposalId", proposalId);
 
-      // Retrieve a small amount of Marketplace comments at a time, paging through
-      // until all Marketplace comments have been retrieved.
-      MarketplaceCommentPage page = new MarketplaceCommentPage();
-      try {
-        do {
-          page = proposalService.getMarketplaceCommentsByStatement(statementBuilder.ToStatement());
+      // Retrieve a small amount of Marketplace comments at a time, paging through until all
+      // Marketplace comments have been retrieved.
+      int totalResultSetSize = 0;
+      do {
+        MarketplaceCommentPage page = proposalService.getMarketplaceCommentsByStatement(
+            statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            // Print out some information for each proposal.
-            int i = page.startIndex;
-            foreach (MarketplaceComment marketplaceComment in page.results) {
-              Google.Api.Ads.Dfp.v201608.DateTime creationTime = marketplaceComment.creationTime;
-              string isoTimestamp = new System.DateTime(
-                  day: creationTime.date.day,
-                  month: creationTime.date.month,
-                  year: creationTime.date.year,
-                  hour: creationTime.hour,
-                  minute: creationTime.minute,
-                  second: creationTime.second
-                  ).ToString("s");
-              Console.WriteLine("{0}) Marketplace comment with creation time \"{1}\" "
-                  + "and comment \"{2}\" was found.",
-                  i++,
-                  isoTimestamp,
-                  marketplaceComment.comment);
-            }
+        // Print out some information for each Marketplace comment.
+        if (page.results != null) {
+          totalResultSetSize = page.totalResultSetSize;
+          int i = page.startIndex;
+          foreach (MarketplaceComment marketplaceComment in page.results) {
+            String creationTimeString = new System.DateTime(
+                day: marketplaceComment.creationTime.date.day,
+                month: marketplaceComment.creationTime.date.month,
+                year: marketplaceComment.creationTime.date.year,
+                hour: marketplaceComment.creationTime.hour,
+                minute: marketplaceComment.creationTime.minute,
+                second: marketplaceComment.creationTime.second
+            ).ToString("s");
+            Console.WriteLine(
+                "{0}) Marketplace comment with creation time \"{1}\" " +
+                    "and comment \"{2}\" was found.",
+                i++,
+                creationTimeString,
+                marketplaceComment.comment
+            );
           }
+        }
 
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+        statementBuilder.IncreaseOffsetBy(pageSize);
+      } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get Marketplace comments. Exception says \"{0}\"",
-            e.Message);
-      }
+      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
     }
   }
 }

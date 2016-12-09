@@ -11,11 +11,9 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201608;
 using Google.Api.Ads.Dfp.v201608;
-
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
@@ -38,50 +36,55 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     public static void Main() {
       GetUninvitedContacts codeExample = new GetUninvitedContacts();
       Console.WriteLine(codeExample.Description);
-
-      codeExample.Run(new DfpUser());
+      try {
+        codeExample.Run(new DfpUser());
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get contacts. Exception says \"{0}\"",
+            e.Message);
+      }
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
-    public void Run(DfpUser user) {
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser dfpUser) {
       ContactService contactService =
-          (ContactService) user.GetService(DfpService.v201608.ContactService);
+          (ContactService) dfpUser.GetService(DfpService.v201608.ContactService);
 
       // Create a statement to select contacts.
+      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("status = :status")
           .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .Limit(pageSize)
           .AddValue("status", ContactStatus.UNINVITED.ToString());
 
-      // Retrieve a small amount of contacts at a time, paging through
-      // until all contacts have been retrieved.
-      ContactPage page = new ContactPage();
-      try {
-        do {
-          page = contactService.getContactsByStatement(statementBuilder.ToStatement());
+      // Retrieve a small amount of contacts at a time, paging through until all
+      // contacts have been retrieved.
+      int totalResultSetSize = 0;
+      do {
+        ContactPage page = contactService.getContactsByStatement(
+            statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            // Print out some information for each contact.
-            int i = page.startIndex;
-            foreach (Contact contact in page.results) {
-              Console.WriteLine("{0}) Contact with ID \"{1}\" and name \"{2}\" was found.",
-                  i++,
-                  contact.id,
-                  contact.name);
-            }
+        // Print out some information for each contact.
+        if (page.results != null) {
+          totalResultSetSize = page.totalResultSetSize;
+          int i = page.startIndex;
+          foreach (Contact contact in page.results) {
+            Console.WriteLine(
+                "{0}) Contact with ID {1} and name \"{2}\" was found.",
+                i++,
+                contact.id,
+                contact.name
+            );
           }
+        }
 
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+        statementBuilder.IncreaseOffsetBy(pageSize);
+      } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get contacts. Exception says \"{0}\"",
-            e.Message);
-      }
+      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
     }
   }
 }

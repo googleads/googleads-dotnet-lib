@@ -11,11 +11,9 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201608;
 using Google.Api.Ads.Dfp.v201608;
-
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
@@ -37,54 +35,58 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     /// </summary>
     public static void Main() {
       GetBaseRatesForRateCard codeExample = new GetBaseRatesForRateCard();
+      long rateCardId = long.Parse("INSERT_RATE_CARD_ID_HERE");
       Console.WriteLine(codeExample.Description);
-
-      long rateCardId = long.Parse(_T("INSERT_RATE_CARD_ID_HERE"));
-      codeExample.Run(new DfpUser(), rateCardId);
+      try {
+        codeExample.Run(new DfpUser(), rateCardId);
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get base rates. Exception says \"{0}\"",
+            e.Message);
+      }
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
-    public void Run(DfpUser user, long rateCardId) {
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser dfpUser, long rateCardId) {
       BaseRateService baseRateService =
-          (BaseRateService) user.GetService(DfpService.v201608.BaseRateService);
+          (BaseRateService) dfpUser.GetService(DfpService.v201608.BaseRateService);
 
-      // Create a statement to select base rates belonging to a single rate card.
+      // Create a statement to select base rates.
+      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("rateCardId = :rateCardId")
           .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .Limit(pageSize)
           .AddValue("rateCardId", rateCardId);
 
-      // Retrieve a small amount of base rates at a time, paging through
-      // until all base rates have been retrieved.
-      BaseRatePage page = new BaseRatePage();
-      try {
-        do {
-          page = baseRateService.getBaseRatesByStatement(statementBuilder.ToStatement());
+      // Retrieve a small amount of base rates at a time, paging through until all
+      // base rates have been retrieved.
+      int totalResultSetSize = 0;
+      do {
+        BaseRatePage page = baseRateService.getBaseRatesByStatement(
+            statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            // Print out some information for each base rate.
-            int i = page.startIndex;
-            foreach (BaseRate baseRate in page.results) {
-              Console.WriteLine("{0}) Base rate with ID \"{1}\", type \"{2}\", "
-                  + "and rate card ID \"{3}\" was found.",
-                  i++,
-                  baseRate.id,
-                  baseRate.GetType().Name,
-                  baseRate.rateCardId);
-            }
+        // Print out some information for each base rate.
+        if (page.results != null) {
+          totalResultSetSize = page.totalResultSetSize;
+          int i = page.startIndex;
+          foreach (BaseRate baseRate in page.results) {
+            Console.WriteLine(
+                "{0}) Base rate with ID {1}, type \"{2}\", and rate card ID {3} was found.",
+                i++,
+                baseRate.id,
+                baseRate.GetType().Name,
+                baseRate.rateCardId
+            );
           }
+        }
 
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+        statementBuilder.IncreaseOffsetBy(pageSize);
+      } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get base rates. Exception says \"{0}\"",
-            e.Message);
-      }
+      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
     }
   }
 }

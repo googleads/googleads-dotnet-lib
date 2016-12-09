@@ -349,4 +349,10 @@ TimeStamp: Mon, 03 Nov 2014 12:25:30 GMT
   <data name="secret" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\secret.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="XxeExample" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+ &lt;!DOCTYPE foo [  
+   &lt;!ELEMENT foo ANY &gt;
+   &lt;!ENTITY xxe SYSTEM "file:///c:/boot.ini" &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</value>
+  </data>
 </root>

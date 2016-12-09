@@ -11,12 +11,11 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201608;
 using Google.Api.Ads.Dfp.v201608;
-
 using System;
+
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
   /// <summary>
   /// This example gets all orders that are starting soon.
@@ -37,53 +36,58 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     public static void Main() {
       GetOrdersStartingSoon codeExample = new GetOrdersStartingSoon();
       Console.WriteLine(codeExample.Description);
-
-      codeExample.Run(new DfpUser());
+      try {
+        codeExample.Run(new DfpUser());
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get orders. Exception says \"{0}\"",
+            e.Message);
+      }
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
-    public void Run(DfpUser user) {
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser dfpUser) {
       OrderService orderService =
-          (OrderService) user.GetService(DfpService.v201608.OrderService);
+          (OrderService) dfpUser.GetService(DfpService.v201608.OrderService);
 
       // Create a statement to select orders.
+      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("status = :status and startDateTime >= :now and startDateTime <= :soon")
           .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .Limit(pageSize)
           .AddValue("status", OrderStatus.APPROVED.ToString())
           .AddValue("now", DateTimeUtilities.FromDateTime(System.DateTime.Now, "America/New_York"))
-          .AddValue("soon", 
+          .AddValue("soon",
               DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(5), "America/New_York"));
 
-      // Retrieve a small amount of orders at a time, paging through
-      // until all orders have been retrieved.
-      OrderPage page = new OrderPage();
-      try {
-        do {
-          page = orderService.getOrdersByStatement(statementBuilder.ToStatement());
+      // Retrieve a small amount of orders at a time, paging through until all
+      // orders have been retrieved.
+      int totalResultSetSize = 0;
+      do {
+        OrderPage page = orderService.getOrdersByStatement(
+            statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            // Print out some information for each order.
-            int i = page.startIndex;
-            foreach (Order order in page.results) {
-              Console.WriteLine("{0}) Order with ID \"{1}\" and name \"{2}\" was found.",
-                  i++,
-                  order.id,
-                  order.name);
-            }
+        // Print out some information for each order.
+        if (page.results != null) {
+          totalResultSetSize = page.totalResultSetSize;
+          int i = page.startIndex;
+          foreach (Order order in page.results) {
+            Console.WriteLine(
+                "{0}) Order with ID {1} and name \"{2}\" was found.",
+                i++,
+                order.id,
+                order.name
+            );
           }
+        }
 
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+        statementBuilder.IncreaseOffsetBy(pageSize);
+      } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get orders. Exception says \"{0}\"",
-            e.Message);
-      }
+      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
     }
   }
 }

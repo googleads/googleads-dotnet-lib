@@ -85,8 +85,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
       try {
         ContextStore.AddKey("SoapMethod", "mutate");
 
-        XmlDocument xDoc = new XmlDocument();
-        xDoc.LoadXml(SoapMessages_v201609.UpdateCampaign);
+        XmlDocument xDoc = XmlUtilities.CreateDocument(SoapMessages_v201609.UpdateCampaign);
         XmlElement xRequest = (XmlElement) xDoc.SelectSingleNode("/Example/SOAP/Response");
         xDoc.LoadXml(xRequest.InnerText);
         CampaignService service = (CampaignService) user.GetService(

@@ -11,11 +11,9 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201608;
 using Google.Api.Ads.Dfp.v201608;
-
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
@@ -38,51 +36,55 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     public static void Main() {
       GetActiveProductPackages codeExample = new GetActiveProductPackages();
       Console.WriteLine(codeExample.Description);
-
-      codeExample.Run(new DfpUser());
+      try {
+        codeExample.Run(new DfpUser());
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get product packages. Exception says \"{0}\"",
+            e.Message);
+      }
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
-    public void Run(DfpUser user) {
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser dfpUser) {
       ProductPackageService productPackageService =
-          (ProductPackageService) user.GetService(DfpService.v201608.ProductPackageService);
+          (ProductPackageService) dfpUser.GetService(DfpService.v201608.ProductPackageService);
 
       // Create a statement to select product packages.
+      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("status = :status")
           .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .Limit(pageSize)
           .AddValue("status", ProductPackageStatus.ACTIVE.ToString());
 
-      // Retrieve a small amount of product packages at a time, paging through
-      // until all product packages have been retrieved.
-      ProductPackagePage page = new ProductPackagePage();
-      try {
-        do {
-          page = productPackageService.getProductPackagesByStatement(
-              statementBuilder.ToStatement());
+      // Retrieve a small amount of product packages at a time, paging through until all
+      // product packages have been retrieved.
+      int totalResultSetSize = 0;
+      do {
+        ProductPackagePage page = productPackageService.getProductPackagesByStatement(
+            statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            // Print out some information for each product package.
-            int i = page.startIndex;
-            foreach (ProductPackage productPackage in page.results) {
-              Console.WriteLine("{0}) Product package with ID \"{1}\" and name \"{2}\" was found.",
-                  i++,
-                  productPackage.id,
-                  productPackage.name);
-            }
+        // Print out some information for each product package.
+        if (page.results != null) {
+          totalResultSetSize = page.totalResultSetSize;
+          int i = page.startIndex;
+          foreach (ProductPackage productPackage in page.results) {
+            Console.WriteLine(
+                "{0}) Product package with ID {1} and name \"{2}\" was found.",
+                i++,
+                productPackage.id,
+                productPackage.name
+            );
           }
+        }
 
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+        statementBuilder.IncreaseOffsetBy(pageSize);
+      } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get product packages. Exception says \"{0}\"",
-            e.Message);
-      }
+      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
     }
   }
 }

@@ -47,7 +47,7 @@ namespace Google.Api.Ads.Common.Util {
     /// <param name="xmlText">The xml string to be loaded into DOM.</param>
     /// <returns>The xml as XmlDocument.</returns>
     public static XmlDocument LoadXml(string xmlText) {
-      XmlDocument xDoc = new XmlDocument();
+      XmlDocument xDoc = XmlUtilities.CreateDocument();
 
       try {
         xDoc.LoadXml(xmlText);

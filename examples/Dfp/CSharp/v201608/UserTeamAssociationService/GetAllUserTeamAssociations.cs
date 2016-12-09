@@ -11,11 +11,9 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201608;
 using Google.Api.Ads.Dfp.v201608;
-
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
@@ -38,50 +36,53 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     public static void Main() {
       GetAllUserTeamAssociations codeExample = new GetAllUserTeamAssociations();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
+      try {
+        codeExample.Run(new DfpUser());
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get user team associations. Exception says \"{0}\"",
+            e.Message);
+      }
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
-    public void Run(DfpUser user) {
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser dfpUser) {
       UserTeamAssociationService userTeamAssociationService =
-          (UserTeamAssociationService)
-          user.GetService(DfpService.v201608.UserTeamAssociationService);
+          (UserTeamAssociationService) dfpUser.GetService(DfpService.v201608.UserTeamAssociationService);
 
       // Create a statement to select user team associations.
+      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          .Limit(pageSize);
 
-      // Retrieve a small amount of user team associations at a time, paging through
-      // until all user team associations have been retrieved.
-      UserTeamAssociationPage page = new UserTeamAssociationPage();
-      try {
-        do {
-          page = userTeamAssociationService.getUserTeamAssociationsByStatement(
-              statementBuilder.ToStatement());
+      // Retrieve a small amount of user team associations at a time, paging through until all
+      // user team associations have been retrieved.
+      int totalResultSetSize = 0;
+      do {
+        UserTeamAssociationPage page = userTeamAssociationService.getUserTeamAssociationsByStatement(
+            statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            // Print out some information for each user team association.
-            int i = page.startIndex;
-            foreach (UserTeamAssociation userTeamAssociation in page.results) {
-              Console.WriteLine("{0}) User team association with team id \"{1}\" "
-                  + "and user id \"{2}\" was found.",
-                  i++,
-                  userTeamAssociation.teamId,
-                  userTeamAssociation.userId);
-            }
+        // Print out some information for each user team association.
+        if (page.results != null) {
+          totalResultSetSize = page.totalResultSetSize;
+          int i = page.startIndex;
+          foreach (UserTeamAssociation userTeamAssociation in page.results) {
+            Console.WriteLine(
+                "{0}) User team association with team id {1} and user id {2} was found.",
+                i++,
+                userTeamAssociation.teamId,
+                userTeamAssociation.userId
+            );
           }
+        }
 
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+        statementBuilder.IncreaseOffsetBy(pageSize);
+      } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get user team associations. Exception says \"{0}\"",
-            e.Message);
-      }
+      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
     }
   }
 }

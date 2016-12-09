@@ -426,8 +426,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
     /// <param name="contents">The XML contents.</param>
     /// <returns>The parsed object</returns>
     protected T ParseResponse<T>(string contents) {
-      XmlDocument xDoc = new XmlDocument();
-      xDoc.LoadXml(contents);
+      XmlDocument xDoc = XmlUtilities.CreateDocument(contents);
 
       string wrappedXml = string.Format(@"
           <?xml version='1.0' encoding='UTF-8'?>

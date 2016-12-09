@@ -51,9 +51,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=2.5.5.10112, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\nunit\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\lib\NUnit\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -106,18 +105,18 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
-    <Compile Include="v201508\DateTimeUtilitiesTests.cs" />
-    <Compile Include="v201508\PqlUtilitiesTests.cs" />
-    <Compile Include="v201508\StatementBuilderTests.cs" />
-    <Compile Include="v201511\DateTimeUtilitiesTests.cs" />
-    <Compile Include="v201511\PqlUtilitiesTests.cs" />
-    <Compile Include="v201511\StatementBuilderTests.cs" />
     <Compile Include="v201602\DateTimeUtilitiesTests.cs" />
     <Compile Include="v201602\PqlUtilitiesTests.cs" />
     <Compile Include="v201602\StatementBuilderTests.cs" />
     <Compile Include="v201605\DateTimeUtilitiesTests.cs" />
     <Compile Include="v201605\PqlUtilitiesTests.cs" />
     <Compile Include="v201605\StatementBuilderTests.cs" />
+    <Compile Include="v201608\DateTimeUtilitiesTests.cs" />
+    <Compile Include="v201608\PqlUtilitiesTests.cs" />
+    <Compile Include="v201608\StatementBuilderTests.cs" />
+    <Compile Include="v201611\DateTimeUtilitiesTests.cs" />
+    <Compile Include="v201611\PqlUtilitiesTests.cs" />
+    <Compile Include="v201611\StatementBuilderTests.cs" />
     <Compile Include="BaseTests.cs" />
     <Compile Include="EnumIntegrityTests.cs" />
     <Compile Include="ServiceCreationTests.cs" />

@@ -11,11 +11,9 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201608;
 using Google.Api.Ads.Dfp.v201608;
-
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
@@ -38,47 +36,53 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     public static void Main() {
       GetAllUsers codeExample = new GetAllUsers();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
+      try {
+        codeExample.Run(new DfpUser());
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get users. Exception says \"{0}\"",
+            e.Message);
+      }
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
-    public void Run(DfpUser user) {
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser dfpUser) {
       UserService userService =
-          (UserService) user.GetService(DfpService.v201608.UserService);
+          (UserService) dfpUser.GetService(DfpService.v201608.UserService);
 
       // Create a statement to select users.
+      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
       StatementBuilder statementBuilder = new StatementBuilder()
           .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          .Limit(pageSize);
 
-      // Retrieve a small amount of users at a time, paging through
-      // until all users have been retrieved.
-      UserPage page = new UserPage();
-      try {
-        do {
-          page = userService.getUsersByStatement(statementBuilder.ToStatement());
+      // Retrieve a small amount of users at a time, paging through until all
+      // users have been retrieved.
+      int totalResultSetSize = 0;
+      do {
+        UserPage page = userService.getUsersByStatement(
+            statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            // Print out some information for each user.
-            int i = page.startIndex;
-            foreach (User usr in page.results) {
-              Console.WriteLine("{0}) User with ID \"{1}\" and name \"{2}\" was found.",
-                  i++,
-                  usr.id,
-                  usr.name);
-            }
+        // Print out some information for each user.
+        if (page.results != null) {
+          totalResultSetSize = page.totalResultSetSize;
+          int i = page.startIndex;
+          foreach (User user in page.results) {
+            Console.WriteLine(
+                "{0}) User with ID {1} and name \"{2}\" was found.",
+                i++,
+                user.id,
+                user.name
+            );
           }
+        }
 
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+        statementBuilder.IncreaseOffsetBy(pageSize);
+      } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get users. Exception says \"{0}\"",
-            e.Message);
-      }
+      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
     }
   }
 }

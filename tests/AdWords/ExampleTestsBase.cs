@@ -13,6 +13,8 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Util;
 
 using NUnit.Framework;
 
@@ -22,7 +24,6 @@ using System.IO;
 using System.Net;
 using System.Threading;
 using System.Xml;
-using Google.Api.Ads.Common.Lib;
 
 namespace Google.Api.Ads.AdWords.Tests {
   /// <summary>
@@ -74,8 +75,7 @@ namespace Google.Api.Ads.AdWords.Tests {
       AdWordsAppConfig config = user.Config as AdWordsAppConfig;
 
       if (requestUri.AbsoluteUri.StartsWith(config.AdWordsApiServer)) {
-        XmlDocument xDoc = new XmlDocument();
-        xDoc.LoadXml(requestBody);
+        XmlDocument xDoc = XmlUtilities.CreateDocument(requestBody);
 
         XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
         xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");

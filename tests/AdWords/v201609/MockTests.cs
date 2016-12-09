@@ -251,8 +251,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201609 {
     /// <param name="body">The body.</param>
     private void VerifyUpdateCampaignRequest(Uri requestUri, WebHeaderCollection headers,
         string body) {
-      XmlDocument doc = new XmlDocument();
-      doc.LoadXml(body);
+      XmlDocument doc = XmlUtilities.CreateDocument(body);
       XmlElement node = (XmlElement) doc.GetElementsByTagName("operations")[0];
       CampaignOperation campaignOperation =
           (CampaignOperation) SerializationUtilities.DeserializeFromXmlTextCustomRootNs(

@@ -11,11 +11,9 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201608;
 using Google.Api.Ads.Dfp.v201608;
-
 using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
@@ -38,51 +36,55 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201608 {
     public static void Main() {
       GetSponsorshipProductTemplates codeExample = new GetSponsorshipProductTemplates();
       Console.WriteLine(codeExample.Description);
-
-      codeExample.Run(new DfpUser());
+      try {
+        codeExample.Run(new DfpUser());
+      } catch (Exception e) {
+        Console.WriteLine("Failed to get product templates. Exception says \"{0}\"",
+            e.Message);
+      }
     }
 
     /// <summary>
     /// Run the code example.
     /// </summary>
-    public void Run(DfpUser user) {
+    /// <param name="user">The DFP user object running the code example.</param>
+    public void Run(DfpUser dfpUser) {
       ProductTemplateService productTemplateService =
-          (ProductTemplateService) user.GetService(DfpService.v201608.ProductTemplateService);
+          (ProductTemplateService) dfpUser.GetService(DfpService.v201608.ProductTemplateService);
 
       // Create a statement to select product templates.
+      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("lineItemType = :lineItemType")
           .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+          .Limit(pageSize)
           .AddValue("lineItemType", LineItemType.SPONSORSHIP.ToString());
 
-      // Retrieve a small amount of product templates at a time, paging through
-      // until all product templates have been retrieved.
-      ProductTemplatePage page = new ProductTemplatePage();
-      try {
-        do {
-          page = productTemplateService.getProductTemplatesByStatement(
-              statementBuilder.ToStatement());
+      // Retrieve a small amount of product templates at a time, paging through until all
+      // product templates have been retrieved.
+      int totalResultSetSize = 0;
+      do {
+        ProductTemplatePage page = productTemplateService.getProductTemplatesByStatement(
+            statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            // Print out some information for each product template.
-            int i = page.startIndex;
-            foreach (ProductTemplate productTemplate in page.results) {
-              Console.WriteLine("{0}) Product template with ID \"{1}\" and name \"{2}\" was found.",
-                  i++,
-                  productTemplate.id,
-                  productTemplate.name);
-            }
+        // Print out some information for each product template.
+        if (page.results != null) {
+          totalResultSetSize = page.totalResultSetSize;
+          int i = page.startIndex;
+          foreach (ProductTemplate productTemplate in page.results) {
+            Console.WriteLine(
+                "{0}) Product template with ID {1} and name \"{2}\" was found.",
+                i++,
+                productTemplate.id,
+                productTemplate.name
+            );
           }
+        }
 
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+        statementBuilder.IncreaseOffsetBy(pageSize);
+      } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get product templates. Exception says \"{0}\"",
-            e.Message);
-      }
+      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
     }
   }
 }
