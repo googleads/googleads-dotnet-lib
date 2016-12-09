@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201611_1_1_get_exchange_rates_for_currency_code =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201611_1_1_get_exchange_rates_for_currency_code.html#ae4302d5105804c7edb0b09c332ab18b6", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201611_1_1_get_exchange_rates_for_currency_code.html#a7a8ae06b661c95c5876e2cfa1b5b4de9", null ]
+];

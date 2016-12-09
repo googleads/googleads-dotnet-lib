@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201611_1_1_publish_programmatic_products_to_marketplace =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201611_1_1_publish_programmatic_products_to_marketplace.html#aa96955029b398f026d30beb36d0c16af", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201611_1_1_publish_programmatic_products_to_marketplace.html#afdff013a29331c99330605c323509671", null ]
+];

@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201602_1_1_get_licas_by_statement =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201602_1_1_get_licas_by_statement.html#aae2620d259a05198d1a737f251c41082", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201602_1_1_get_licas_by_statement.html#a3a50f7810d9aa42d689ca887bcdacdda", null ]
-];

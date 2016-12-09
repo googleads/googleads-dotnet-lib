@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201611_1_1_create_programmatic_product_templates =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201611_1_1_create_programmatic_product_templates.html#ae1bd17e8b326c3b743faadc0488a309f", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201611_1_1_create_programmatic_product_templates.html#abeeed116b78bf83134aaa7d6f09469af", null ]
+];

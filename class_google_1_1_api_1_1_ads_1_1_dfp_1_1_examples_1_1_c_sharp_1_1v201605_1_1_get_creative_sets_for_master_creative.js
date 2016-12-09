@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201605_1_1_get_creative_sets_for_master_creative =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201605_1_1_get_creative_sets_for_master_creative.html#a49695eebd93782064d485fa42ccb738f", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201605_1_1_get_creative_sets_for_master_creative.html#a4a0b99fa1739729cea9e1722e371a83f", null ]
+];

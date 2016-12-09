@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201611_1_1_approve_workflow_approval_requests =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201611_1_1_approve_workflow_approval_requests.html#ad032662f4d64c97c5c8059ed0b5f7e84", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201611_1_1_approve_workflow_approval_requests.html#ac7f06c904403d15508b7c13e4faeca70", null ]
+];

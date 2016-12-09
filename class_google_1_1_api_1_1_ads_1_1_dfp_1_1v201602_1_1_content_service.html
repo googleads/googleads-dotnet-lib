@@ -269,11 +269,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Service for retrieving <a href="Content">Content</a>. </p>
-<p><code></code> entities can be targeted in video <a href="LineItem">LineItem</a>s. You can query for content that belongs to a particular category or has assigned metadata. Categories and metadata for <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201602_1_1_content.html" title="A ">Content</a></code> are stored in DFP as <a href="CustomCriteria">CustomCriteria</a>. </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201602_1_1_content.html" title="A ">Content</a></code> entities can be targeted in video <a href="LineItem">LineItem</a>s.</p>
+<p>You can query for content that belongs to a particular category or has assigned metadata. Categories and metadata for <code></code> are stored in DFP as <a href="CustomCriteria">CustomCriteria</a>.</p>
 <p>For example, to find all <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201602_1_1_content.html" title="A ">Content</a></code> that is "genre=comedy", you would:</p>
 <ul>
 <li>
-Retrieve the custom targeting key corresponding to "genre" using <a href="CustomTargetingService#getCustomTargetingKeysByStatement">CustomTargetingService::getCustomTargetingKeysByStatement</a> </li>
+Retrieve the custom targeting key corresponding to "genre" using <a href="">CustomTargetingService::getCustomTargetingKeysByStatement</a> </li>
 <li>
 Using the <a href="CustomTargetingService#getCustomTargetingValuesByStatement">CustomTargetingService::getCustomTargetingValuesByStatement</a> method and a filter like "WHERE customTargetingKeyId = :genreKeyId and name =
 'comedy'", retrieve the ID for the "comedy" custom targeting value. </li>
@@ -454,7 +455,7 @@ Call <a href="#getContentByStatementAndCustomTargetingValue">#getContentByStatem
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.KsvWcRQ3aw/dist/github/src/Dfp/v201602/<a class="el" href="v201602_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.73UTRz1H76/dist/github/src/Dfp/v201602/<a class="el" href="v201602_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -462,7 +463,7 @@ Call <a href="#getContentByStatementAndCustomTargetingValue">#getContentByStatem
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201602.html">v201602</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201602_1_1_content_service.html">ContentService</a></li>
-    <li class="footer">Generated on Thu Oct 20 2016 13:15:57 for Ads API .NET library by
+    <li class="footer">Generated on Fri Dec 9 2016 17:33:11 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

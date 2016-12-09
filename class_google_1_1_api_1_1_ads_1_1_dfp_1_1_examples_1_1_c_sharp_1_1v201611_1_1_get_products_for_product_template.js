@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201611_1_1_get_products_for_product_template =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201611_1_1_get_products_for_product_template.html#aa83fc0842e090d742bc972db17129803", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201611_1_1_get_products_for_product_template.html#abcd7deb74c76191e4aa2a8d2c6d5897c", null ]
+];

@@ -190,7 +190,7 @@ Properties</h2></td></tr>
 <tr class="memitem:a1f067a6913ebe275604bd12d67140fb0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201605_1_1_proposal_line_item.html#a1f067a6913ebe275604bd12d67140fb0">deliveryRateTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a1f067a6913ebe275604bd12d67140fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a721f9410f934ffc03381714e681aed65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201605.html#ad9147e5a65bdb85e0b7ee4798c0cd356">RoadblockingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201605_1_1_proposal_line_item.html#a721f9410f934ffc03381714e681aed65">roadblockingType</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a721f9410f934ffc03381714e681aed65"><td class="mdescLeft">&#160;</td><td class="mdescRight">The strategy for serving roadblocked creatives, i.e. instances where multiple creatives must be served together on a single web page. This attribute is optional during creation and defaults to the <a href="Product#roadblockingType">product's roadblocking type</a>, or <a href="RoadblockingType#ONLY_ONE">RoadblockingType::ONLY_ONE</a> if the product does not have one.  <a href="#a721f9410f934ffc03381714e681aed65">More...</a><br/></td></tr>
+<tr class="memdesc:a721f9410f934ffc03381714e681aed65"><td class="mdescLeft">&#160;</td><td class="mdescRight">The strategy for serving roadblocked creatives, i.e. instances where multiple creatives must be served together on a single web page. This attribute is optional during creation and defaults to the <a href="Product#roadblockingType">product's roadblocking type</a>, or <a href="RoadblockingType#ONE_OR_MORE">RoadblockingType::ONE_OR_MORE</a> if not specified by the product.  <a href="#a721f9410f934ffc03381714e681aed65">More...</a><br/></td></tr>
 <tr class="separator:a721f9410f934ffc03381714e681aed65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1941d02aed456a2ba19bdab164c8acb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201605_1_1_proposal_line_item.html#ab1941d02aed456a2ba19bdab164c8acb">roadblockingTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ab1941d02aed456a2ba19bdab164c8acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -909,7 +909,11 @@ using programmatic guaranteed, using sales management. </li>
 </div><div class="memdoc">
 
 <p>Details about the creatives that are expected to serve through the </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201605_1_1_proposal_line_item.html" title="A ">ProposalLineItem</a></code>. This attribute is optional during creation and defaults to the <a href="Product#creativePlaceholders">product's creative placeholders</a>. </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201605_1_1_proposal_line_item.html" title="A ">ProposalLineItem</a></code>. This attribute is optional during creation and defaults to the <a href="Product#creativePlaceholders">product's creative placeholders</a>. <span class="constraint Required">This attribute is required when:</span> </p>
+<ul>
+<li>
+using programmatic guaranteed, not using sales management. </li>
+</ul>
 
 </div>
 </div>
@@ -1540,7 +1544,7 @@ The line item has a percentage based goal or cap. </li>
 </div><div class="memdoc">
 
 <p>The priority for the corresponding <a href="LineItem">LineItem</a> of the </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201605_1_1_proposal_line_item.html" title="A ">ProposalLineItem</a></code>. This attribute is optional during creation and defaults to the <a href="Product#priority">product's priority</a>, or a default value assigned by <a class="el" href="namespace_google.html">Google</a>. See <a href="https://support.google.com/dfp_premium/topic/4397182">this chart</a> for help. </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201605_1_1_proposal_line_item.html" title="A ">ProposalLineItem</a></code>. This attribute is optional during creation and defaults to the <a href="Product#priority">product's priority</a>, or a default value assigned by <a class="el" href="namespace_google.html">Google</a>. See <a href="LineItem#priority">LineItem::priority</a> for more information. </p>
 
 </div>
 </div>
@@ -2129,7 +2133,7 @@ using programmatic guaranteed, not using sales management. </li>
 </table>
 </div><div class="memdoc">
 
-<p>The strategy for serving roadblocked creatives, i.e. instances where multiple creatives must be served together on a single web page. This attribute is optional during creation and defaults to the <a href="Product#roadblockingType">product's roadblocking type</a>, or <a href="RoadblockingType#ONLY_ONE">RoadblockingType::ONLY_ONE</a> if the product does not have one. </p>
+<p>The strategy for serving roadblocked creatives, i.e. instances where multiple creatives must be served together on a single web page. This attribute is optional during creation and defaults to the <a href="Product#roadblockingType">product's roadblocking type</a>, or <a href="RoadblockingType#ONE_OR_MORE">RoadblockingType::ONE_OR_MORE</a> if not specified by the product. </p>
 
 </div>
 </div>
@@ -2432,7 +2436,7 @@ not using programmatic guaranteed, using sales management. </li>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.KsvWcRQ3aw/dist/github/src/Dfp/v201605/<a class="el" href="v201605_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.73UTRz1H76/dist/github/src/Dfp/v201605/<a class="el" href="v201605_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -2440,7 +2444,7 @@ not using programmatic guaranteed, using sales management. </li>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201605.html">v201605</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201605_1_1_proposal_line_item.html">ProposalLineItem</a></li>
-    <li class="footer">Generated on Thu Oct 20 2016 13:16:05 for Ads API .NET library by
+    <li class="footer">Generated on Fri Dec 9 2016 17:33:15 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>
