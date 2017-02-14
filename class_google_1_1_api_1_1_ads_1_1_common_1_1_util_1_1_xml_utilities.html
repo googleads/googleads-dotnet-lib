@@ -116,42 +116,19 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_commo
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a708c684612b76fb7f367cd47858a2f16"><td class="memItemLeft" align="right" valign="top">static XmlDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_xml_utilities.html#a708c684612b76fb7f367cd47858a2f16">CreateDocument</a> ()</td></tr>
-<tr class="memdesc:a708c684612b76fb7f367cd47858a2f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty XML document that that has XXE disabled.  <a href="#a708c684612b76fb7f367cd47858a2f16">More...</a><br/></td></tr>
-<tr class="separator:a708c684612b76fb7f367cd47858a2f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ef8132509be3ffd7ec4b0b491ef4e60"><td class="memItemLeft" align="right" valign="top">static XmlDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_xml_utilities.html#a2ef8132509be3ffd7ec4b0b491ef4e60">CreateDocument</a> (string contents)</td></tr>
-<tr class="memdesc:a2ef8132509be3ffd7ec4b0b491ef4e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the contents into an XML document that that has XXE disabled.  <a href="#a2ef8132509be3ffd7ec4b0b491ef4e60">More...</a><br/></td></tr>
+<tr class="memdesc:a2ef8132509be3ffd7ec4b0b491ef4e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a string into an XML document that that has XXE disabled.  <a href="#a2ef8132509be3ffd7ec4b0b491ef4e60">More...</a><br/></td></tr>
 <tr class="separator:a2ef8132509be3ffd7ec4b0b491ef4e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f7901c4d4ffd0f718ea02d3fb552279"><td class="memItemLeft" align="right" valign="top">static XmlDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_xml_utilities.html#a8f7901c4d4ffd0f718ea02d3fb552279">CreateDocument</a> (byte[] contents)</td></tr>
+<tr class="memdesc:a8f7901c4d4ffd0f718ea02d3fb552279"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the contents of a byte array into an XML document that has XXE disabled.  <a href="#a8f7901c4d4ffd0f718ea02d3fb552279">More...</a><br/></td></tr>
+<tr class="separator:a8f7901c4d4ffd0f718ea02d3fb552279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa046b8f6bd663d8b8cbe5e9b1eb77e15"><td class="memItemLeft" align="right" valign="top">static XmlDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_xml_utilities.html#aa046b8f6bd663d8b8cbe5e9b1eb77e15">CreateDocument</a> (Stream stream)</td></tr>
+<tr class="memdesc:aa046b8f6bd663d8b8cbe5e9b1eb77e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the contents of a stream into an XML document that has XXE disabled.  <a href="#aa046b8f6bd663d8b8cbe5e9b1eb77e15">More...</a><br/></td></tr>
+<tr class="separator:aa046b8f6bd663d8b8cbe5e9b1eb77e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Utilities for working with XML. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a708c684612b76fb7f367cd47858a2f16"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static XmlDocument Google.Api.Ads.Common.Util.XmlUtilities.CreateDocument </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates an empty XML document that that has XXE disabled. </p>
-<dl class="section return"><dt>Returns</dt><dd>An XML Document object.</dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a2ef8132509be3ffd7ec4b0b491ef4e60"></a>
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +151,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Loads the contents into an XML document that that has XXE disabled. </p>
+<p>Loads a string into an XML document that that has XXE disabled. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">contents</td><td>The XML document contents as a text.</td></tr>
@@ -185,8 +162,74 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8f7901c4d4ffd0f718ea02d3fb552279"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static XmlDocument Google.Api.Ads.Common.Util.XmlUtilities.CreateDocument </td>
+          <td>(</td>
+          <td class="paramtype">byte[]&#160;</td>
+          <td class="paramname"><em>contents</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads the contents of a byte array into an XML document that has XXE disabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">contents</td><td>The XML document contents as a byte array.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An XML Document object, with the contents loaded into the DOM.</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa046b8f6bd663d8b8cbe5e9b1eb77e15"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static XmlDocument Google.Api.Ads.Common.Util.XmlUtilities.CreateDocument </td>
+          <td>(</td>
+          <td class="paramtype">Stream&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads the contents of a stream into an XML document that has XXE disabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The content stream.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An XML Document object, with the contents loaded into the DOM.</dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.73UTRz1H76/dist/github/src/Common/Util/<a class="el" href="_xml_utilities_8cs.html">XmlUtilities.cs</a></li>
+<li>/tmp/tmp.xBGHVds5GV/dist/github/src/Common/Util/<a class="el" href="_xml_utilities_8cs.html">XmlUtilities.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -194,7 +237,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common.html">Common</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common_1_1_util.html">Util</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_xml_utilities.html">XmlUtilities</a></li>
-    <li class="footer">Generated on Fri Dec 9 2016 17:33:01 for Ads API .NET library by
+    <li class="footer">Generated on Tue Feb 14 2017 15:23:44 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

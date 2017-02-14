@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201702_1_1_get_premium_rates_for_rate_card =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201702_1_1_get_premium_rates_for_rate_card.html#ad10d3fe8bac5d9bfa170a2d9c634ef05", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201702_1_1_get_premium_rates_for_rate_card.html#ade4089702791fdd3ec28e9902cab8154", null ]
+];

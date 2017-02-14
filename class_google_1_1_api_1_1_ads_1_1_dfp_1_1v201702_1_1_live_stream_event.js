@@ -1,0 +1,27 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event =
+[
+    [ "adBreakFillType", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#a344a0813c4a37c2e1f465fb7e4c165be", null ],
+    [ "adBreakFillTypeSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#ae3ec0f568f9ef8dc98c41b4c5341dd75", null ],
+    [ "adTags", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#a757cfcdd7002bf84d74855f00c5e1801", null ],
+    [ "authenticationKey", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#ab8ea34a91ec9f46c0eeda101189d0707", null ],
+    [ "authenticationService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#a9256770b30dec5aa374d19542d00433a", null ],
+    [ "authenticationServiceSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#af964bbf9642a5af3128c987987a7bfb7", null ],
+    [ "contentUrls", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#a8b15158e9ea8c6b8d782645a49ffcb00", null ],
+    [ "creationDateTime", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#a212bfda27c4076459169054f51d2280f", null ],
+    [ "description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#ad004adfa0ca0d00f53af9aeb853d11c3", null ],
+    [ "dvrWindowSeconds", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#ab603262b809f4dda71807b4841a93a9c", null ],
+    [ "dvrWindowSecondsSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#a9d2220f9ed2aba0d5a8fb65bb108cd58", null ],
+    [ "endDateTime", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#ae892ba9cde32cfe1d42ed4074848d30e", null ],
+    [ "id", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#a0f8aa8beb335d69f0f749db8dcb65ee8", null ],
+    [ "idSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#a0ef5f5f0a6fefaea869e1290736450c7", null ],
+    [ "lastModifiedDateTime", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#a00509b4100b2d334700a11b656093cac", null ],
+    [ "liveStreamEventCode", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#a89aa75eb5e47799a9cb2608e20dd45a6", null ],
+    [ "name", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#a7ca0a88dc89702db2c59377498ba4599", null ],
+    [ "startDateTime", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#aa3a87ef67a835cff333c33c98f8d56c3", null ],
+    [ "status", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#aa9af90b49249d240af97c3a70cf5ef67", null ],
+    [ "statusSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#ac74fdb6c7112df686d44126fc0b8efa1", null ],
+    [ "tokenAuthenticationUnsigned", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#a04c46e7d7a5b0dee6ce69ea71ba565f8", null ],
+    [ "tokenAuthenticationUnsignedSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#a8cc8d6d7459549d8056a3b04191592e3", null ],
+    [ "totalEstimatedConcurrentUsers", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#ab72749ce8cd540ed39a506e64adaec32", null ],
+    [ "totalEstimatedConcurrentUsersSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event.html#afc84b9c7ecd5850f36c69a2a3897b9f9", null ]
+];

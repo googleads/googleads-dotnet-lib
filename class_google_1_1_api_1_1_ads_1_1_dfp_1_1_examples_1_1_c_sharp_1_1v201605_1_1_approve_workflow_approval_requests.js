@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201605_1_1_approve_workflow_approval_requests =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201605_1_1_approve_workflow_approval_requests.html#afe2c3430ef8939892d22d9df3251641f", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201605_1_1_approve_workflow_approval_requests.html#a608491bf71b5a7d9283ce07c5dc7dfff", null ]
-];
