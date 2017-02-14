@@ -34,7 +34,7 @@ namespace Google.Api.Ads.Common.Logging {
     /// The formatted message body.
     /// </returns>
     public override string MaskContents(string body, ISet<string> keysToMask) {
-      XmlDocument xDoc = SerializationUtilities.LoadXml(body);
+      XmlDocument xDoc = XmlUtilities.CreateDocument(body);
       XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
       xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
       XmlNodeList nodes =

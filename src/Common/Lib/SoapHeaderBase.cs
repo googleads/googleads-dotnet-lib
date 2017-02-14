@@ -86,7 +86,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="reader">The xml reader for reading the
     /// serialized xml.</param>
     public virtual void ReadXml(XmlReader reader) {
-      XmlDocument doc = SerializationUtilities.LoadXml(reader.ReadOuterXml());
+      XmlDocument doc = XmlUtilities.CreateDocument(reader.ReadOuterXml());
 
       XmlNameTable xmlnt = doc.NameTable;
       XmlElement root = doc.CreateElement(XmlElementName, XmlNamespace);
@@ -122,7 +122,7 @@ namespace Google.Api.Ads.Common.Lib {
         }
       }
 
-      XmlDocument xDoc = SerializationUtilities.LoadXml(contents);
+      XmlDocument xDoc = XmlUtilities.CreateDocument(contents);
       writer.WriteRaw(xDoc.DocumentElement.InnerXml);
     }
 

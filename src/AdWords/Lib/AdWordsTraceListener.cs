@@ -61,7 +61,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <param name="soapRequest">The request xml for this SOAP call.</param>
     /// <returns>The summary request logs.</returns>
     protected override string GetSummaryRequestLogs(string soapRequest) {
-      XmlDocument xDoc = SerializationUtilities.LoadXml(soapRequest);
+      XmlDocument xDoc = XmlUtilities.CreateDocument(soapRequest);
       XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
       xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
       XmlNode methodNode =
@@ -90,7 +90,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <param name="soapResponse">The response xml for this SOAP call.</param>
     /// <returns>The summary response logs.</returns>
     protected override string GetSummaryResponseLogs(string soapResponse) {
-      XmlDocument xDoc = SerializationUtilities.LoadXml(soapResponse);
+      XmlDocument xDoc = XmlUtilities.CreateDocument(soapResponse);
       XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
       xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
       XmlNodeList childNodes =

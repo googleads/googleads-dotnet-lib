@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -9,7 +9,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Google.Api.Ads.Dfp.Examples.CSharp</RootNamespace>
-    <AssemblyName>Dfp.Examples.CSharp</AssemblyName>
+    <AssemblyName>Google.Dfp.Examples.CSharp</AssemblyName>
     <StartupObject>Google.Api.Ads.Dfp.Examples.CSharp.Program</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -31,8 +31,9 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFrameworkProfile />
+    <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +44,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -51,6 +53,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -98,180 +101,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
-    <Compile Include="v201605\ActivityGroupService\CreateActivityGroups.cs" />
-    <Compile Include="v201605\ActivityGroupService\GetActiveActivityGroups.cs" />
-    <Compile Include="v201605\ActivityGroupService\GetAllActivityGroups.cs" />
-    <Compile Include="v201605\ActivityGroupService\UpdateActivityGroups.cs" />
-    <Compile Include="v201605\ActivityService\CreateActivities.cs" />
-    <Compile Include="v201605\ActivityService\GetActiveActivities.cs" />
-    <Compile Include="v201605\ActivityService\GetAllActivities.cs" />
-    <Compile Include="v201605\ActivityService\UpdateActivities.cs" />
-    <Compile Include="v201605\AudienceSegmentService\CreateAudienceSegments.cs" />
-    <Compile Include="v201605\AudienceSegmentService\GetAllAudienceSegments.cs" />
-    <Compile Include="v201605\AudienceSegmentService\GetFirstPartyAudienceSegments.cs" />
-    <Compile Include="v201605\AudienceSegmentService\PopulateFirstPartyAudienceSegments.cs" />
-    <Compile Include="v201605\AudienceSegmentService\UpdateAudienceSegments.cs" />
-    <Compile Include="v201605\BaseRateService\CreateProductBaseRates.cs" />
-    <Compile Include="v201605\BaseRateService\CreateProductTemplateBaseRates.cs" />
-    <Compile Include="v201605\BaseRateService\GetAllBaseRates.cs" />
-    <Compile Include="v201605\BaseRateService\GetBaseRatesForRateCard.cs" />
-    <Compile Include="v201605\BaseRateService\UpdateBaseRates.cs" />
-    <Compile Include="v201605\CompanyService\CreateCompanies.cs" />
-    <Compile Include="v201605\CompanyService\GetAdvertisers.cs" />
-    <Compile Include="v201605\CompanyService\GetAllCompanies.cs" />
-    <Compile Include="v201605\CompanyService\UpdateCompanies.cs" />
-    <Compile Include="v201605\ContactService\CreateContacts.cs" />
-    <Compile Include="v201605\ContactService\GetAllContacts.cs" />
-    <Compile Include="v201605\ContactService\GetUninvitedContacts.cs" />
-    <Compile Include="v201605\ContactService\UpdateContacts.cs" />
-    <Compile Include="v201605\ContentMetadataKeyHierarchyService\CreateContentMetadataKeyHierarchies.cs" />
-    <Compile Include="v201605\ContentMetadataKeyHierarchyService\DeleteContentMetadataKeyHierarchies.cs" />
-    <Compile Include="v201605\ContentMetadataKeyHierarchyService\GetAllContentMetadataKeyHierarchies.cs" />
-    <Compile Include="v201605\ContentMetadataKeyHierarchyService\UpdateContentMetadataKeyHierarchies.cs" />
-    <Compile Include="v201605\ContentService\GetAllContent.cs" />
-    <Compile Include="v201605\CreativeService\CopyImageCreatives.cs" />
-    <Compile Include="v201605\CreativeService\CreateCreativeFromTemplate.cs" />
-    <Compile Include="v201605\CreativeService\CreateCreatives.cs" />
-    <Compile Include="v201605\CreativeService\CreateCustomCreative.cs" />
-    <Compile Include="v201605\CreativeService\CreateNativeCreative.cs" />
-    <Compile Include="v201605\CreativeService\GetAllCreatives.cs" />
-    <Compile Include="v201605\CreativeService\GetImageCreatives.cs" />
-    <Compile Include="v201605\CreativeService\UpdateCreatives.cs" />
-    <Compile Include="v201605\CreativeSetService\GetAllCreativeSets.cs" />
-    <Compile Include="v201605\CreativeSetService\GetCreativeSetsForMasterCreative.cs" />
-    <Compile Include="v201605\CreativeTemplateService\GetAllCreativeTemplates.cs" />
-    <Compile Include="v201605\CreativeTemplateService\GetSystemDefinedCreativeTemplates.cs" />
-    <Compile Include="v201605\CreativeWrapperService\CreateCreativeWrappers.cs" />
-    <Compile Include="v201605\CreativeWrapperService\DeactivateCreativeWrappers.cs" />
-    <Compile Include="v201605\CreativeWrapperService\GetActiveCreativeWrappers.cs" />
-    <Compile Include="v201605\CreativeWrapperService\GetAllCreativeWrappers.cs" />
-    <Compile Include="v201605\CreativeWrapperService\UpdateCreativeWrappers.cs" />
-    <Compile Include="v201605\CustomFieldService\CreateCustomFieldOptions.cs" />
-    <Compile Include="v201605\CustomFieldService\CreateCustomFields.cs" />
-    <Compile Include="v201605\CustomFieldService\DeactivateCustomFields.cs" />
-    <Compile Include="v201605\CustomFieldService\GetAllCustomFields.cs" />
-    <Compile Include="v201605\CustomFieldService\GetCustomFieldsForLineItems.cs" />
-    <Compile Include="v201605\CustomFieldService\SetLineItemCustomFieldValue.cs" />
-    <Compile Include="v201605\CustomFieldService\UpdateCustomFields.cs" />
-    <Compile Include="v201605\CustomTargetingService\CreateCustomTargetingKeysAndValues.cs" />
-    <Compile Include="v201605\CustomTargetingService\GetAllCustomTargetingKeysAndValues.cs" />
-    <Compile Include="v201605\CustomTargetingService\GetPredefinedCustomTargetingKeysAndValues.cs" />
-    <Compile Include="v201605\CustomTargetingService\UpdateCustomTargetingKeys.cs" />
-    <Compile Include="v201605\CustomTargetingService\UpdateCustomTargetingValues.cs" />
-    <Compile Include="v201605\ExchangeRateService\CreateExchangeRates.cs" />
-    <Compile Include="v201605\ExchangeRateService\GetAllExchangeRates.cs" />
-    <Compile Include="v201605\ExchangeRateService\GetExchangeRatesForCurrencyCode.cs" />
-    <Compile Include="v201605\ExchangeRateService\UpdateExchangeRates.cs" />
-    <Compile Include="v201605\ForecastService\GetAvailabilityForecast.cs" />
-    <Compile Include="v201605\ForecastService\GetAvailabilityForecastById.cs" />
-    <Compile Include="v201605\ForecastService\GetDeliveryForecastByIds.cs" />
-    <Compile Include="v201605\InventoryService\CreateAdUnits.cs" />
-    <Compile Include="v201605\InventoryService\CreateVideoAdUnit.cs" />
-    <Compile Include="v201605\InventoryService\DeActivateAdUnits.cs" />
-    <Compile Include="v201605\InventoryService\GetAdUnitSizes.cs" />
-    <Compile Include="v201605\InventoryService\GetAdUnitsByStatement.cs" />
-    <Compile Include="v201605\InventoryService\GetAllAdUnits.cs" />
-    <Compile Include="v201605\InventoryService\GetInventoryTree.cs" />
-    <Compile Include="v201605\InventoryService\UpdateAdUnits.cs" />
-    <Compile Include="v201605\LabelService\CreateLabels.cs" />
-    <Compile Include="v201605\LabelService\DeactivateActiveLabels.cs" />
-    <Compile Include="v201605\LabelService\GetActiveLabels.cs" />
-    <Compile Include="v201605\LabelService\GetAllLabels.cs" />
-    <Compile Include="v201605\LabelService\UpdateLabels.cs" />
-    <Compile Include="v201605\LineItemCreativeAssociationService\ActivateLicas.cs" />
-    <Compile Include="v201605\LineItemCreativeAssociationService\CreateLicas.cs" />
-    <Compile Include="v201605\LineItemCreativeAssociationService\DeactivateLicas.cs" />
-    <Compile Include="v201605\LineItemCreativeAssociationService\GetAllLicas.cs" />
-    <Compile Include="v201605\LineItemCreativeAssociationService\GetLicasForLineItem.cs" />
-    <Compile Include="v201605\LineItemCreativeAssociationService\UpdateLicas.cs" />
-    <Compile Include="v201605\LineItemService\ActivateLineItem.cs" />
-    <Compile Include="v201605\LineItemService\CreateLineItems.cs" />
-    <Compile Include="v201605\LineItemService\CreateVideoLineItem.cs" />
-    <Compile Include="v201605\LineItemService\GetAllLineItems.cs" />
-    <Compile Include="v201605\LineItemService\GetLineItemsThatNeedCreatives.cs" />
-    <Compile Include="v201605\LineItemService\GetRecentlyUpdatedLineItems.cs" />
-    <Compile Include="v201605\LineItemService\TargetCustomCriteria.cs" />
-    <Compile Include="v201605\LineItemService\UpdateLineItems.cs" />
-    <Compile Include="v201605\NetworkService\GetAllNetworks.cs" />
-    <Compile Include="v201605\NetworkService\GetCurrentNetwork.cs" />
-    <Compile Include="v201605\NetworkService\MakeTestNetwork.cs" />
-    <Compile Include="v201605\OrderService\ApproveOrder.cs" />
-    <Compile Include="v201605\OrderService\CreateOrders.cs" />
-    <Compile Include="v201605\OrderService\GetAllOrders.cs" />
-    <Compile Include="v201605\OrderService\GetOrdersStartingSoon.cs" />
-    <Compile Include="v201605\OrderService\UpdateOrders.cs" />
-    <Compile Include="v201605\PackageService\CreatePackages.cs" />
-    <Compile Include="v201605\PackageService\CreateProposalLineItemsFromPackage.cs" />
-    <Compile Include="v201605\PackageService\GetAllPackages.cs" />
-    <Compile Include="v201605\PackageService\GetInProgressPackages.cs" />
-    <Compile Include="v201605\PackageService\UpdatePackages.cs" />
-    <Compile Include="v201605\PlacementService\CreatePlacements.cs" />
-    <Compile Include="v201605\PlacementService\DeactivatePlacement.cs" />
-    <Compile Include="v201605\PlacementService\GetActivePlacements.cs" />
-    <Compile Include="v201605\PlacementService\GetAllPlacements.cs" />
-    <Compile Include="v201605\PlacementService\UpdatePlacements.cs" />
-    <Compile Include="v201605\PremiumRateService\CreatePremiumRates.cs" />
-    <Compile Include="v201605\PremiumRateService\GetAllPremiumRates.cs" />
-    <Compile Include="v201605\PremiumRateService\GetPremiumRatesForRateCard.cs" />
-    <Compile Include="v201605\PremiumRateService\UpdatePremiumRates.cs" />
-    <Compile Include="v201605\ProductPackageItemService\GetAllProductPackageItems.cs" />
-    <Compile Include="v201605\ProductPackageItemService\GetProductPackageItemsForProductPackage.cs" />
-    <Compile Include="v201605\ProductPackageService\ActivateProductPackage.cs" />
-    <Compile Include="v201605\ProductPackageService\CreateProductPackages.cs" />
-    <Compile Include="v201605\ProductPackageService\GetActiveProductPackages.cs" />
-    <Compile Include="v201605\ProductPackageService\GetAllProductPackages.cs" />
-    <Compile Include="v201605\ProductPackageService\UpdateProductPackages.cs" />
-    <Compile Include="v201605\ProductService\GetAllProducts.cs" />
-    <Compile Include="v201605\ProductService\GetProductsForProductTemplate.cs" />
-    <Compile Include="v201605\ProductService\UpdateProducts.cs" />
-    <Compile Include="v201605\ProductTemplateService\ActivateProductTemplates.cs" />
-    <Compile Include="v201605\ProductTemplateService\CreateProductTemplates.cs" />
-    <Compile Include="v201605\ProductTemplateService\GetAllProductTemplates.cs" />
-    <Compile Include="v201605\ProductTemplateService\GetSponsorshipProductTemplates.cs" />
-    <Compile Include="v201605\ProductTemplateService\UpdateProductTemplates.cs" />
-    <Compile Include="v201605\ProposalLineItemService\ArchiveProposalLineItems.cs" />
-    <Compile Include="v201605\ProposalLineItemService\CreateProposalLineItems.cs" />
-    <Compile Include="v201605\ProposalLineItemService\GetAllProposalLineItems.cs" />
-    <Compile Include="v201605\ProposalLineItemService\GetProposalLineItemsForProposal.cs" />
-    <Compile Include="v201605\ProposalLineItemService\UpdateProposalLineItems.cs" />
-    <Compile Include="v201605\ProposalService\CreateProposals.cs" />
-    <Compile Include="v201605\ProposalService\GetAllProposals.cs" />
-    <Compile Include="v201605\ProposalService\GetAllProposalsPendingApproval.cs" />
-    <Compile Include="v201605\ProposalService\SubmitProposalsForApproval.cs" />
-    <Compile Include="v201605\ProposalService\UpdateProposals.cs" />
-    <Compile Include="v201605\PublisherQueryLanguageService\FetchMatchTables.cs" />
-    <Compile Include="v201605\PublisherQueryLanguageService\GetAllLineItemsUsingPql.cs" />
-    <Compile Include="v201605\PublisherQueryLanguageService\GetGeoTargets.cs" />
-    <Compile Include="v201605\PublisherQueryLanguageService\GetLineItemsNamedLike.cs" />
-    <Compile Include="v201605\RateCardService\GetAllRateCards.cs" />
-    <Compile Include="v201605\RateCardService\GetUsdRateCards.cs" />
-    <Compile Include="v201605\ReportService\RunDeliveryReport.cs" />
-    <Compile Include="v201605\ReportService\RunInventoryReport.cs" />
-    <Compile Include="v201605\ReportService\RunReachReport.cs" />
-    <Compile Include="v201605\ReportService\RunReportWithCustomFields.cs" />
-    <Compile Include="v201605\ReportService\RunSalesReport.cs" />
-    <Compile Include="v201605\SuggestedAdUnitService\ApproveSuggestedAdUnits.cs" />
-    <Compile Include="v201605\SuggestedAdUnitService\GetAllSuggestedAdUnits.cs" />
-    <Compile Include="v201605\SuggestedAdUnitService\GetHighlyRequestedSuggestedAdUnits.cs" />
-    <Compile Include="v201605\TeamService\CreateTeams.cs" />
-    <Compile Include="v201605\TeamService\GetAllTeams.cs" />
-    <Compile Include="v201605\TeamService\UpdateTeams.cs" />
-    <Compile Include="v201605\UserService\CreateUsers.cs" />
-    <Compile Include="v201605\UserService\DeactivateUser.cs" />
-    <Compile Include="v201605\UserService\GetAllRoles.cs" />
-    <Compile Include="v201605\UserService\GetAllUsers.cs" />
-    <Compile Include="v201605\UserService\GetCurrentUser.cs" />
-    <Compile Include="v201605\UserService\GetUserByEmailAddress.cs" />
-    <Compile Include="v201605\UserService\UpdateUsers.cs" />
-    <Compile Include="v201605\UserTeamAssociationService\CreateUserTeamAssociations.cs" />
-    <Compile Include="v201605\UserTeamAssociationService\DeleteUserTeamAssociations.cs" />
-    <Compile Include="v201605\UserTeamAssociationService\GetAllUserTeamAssociations.cs" />
-    <Compile Include="v201605\UserTeamAssociationService\GetUserTeamAssociationsForUser.cs" />
-    <Compile Include="v201605\UserTeamAssociationService\UpdateUserTeamAssociations.cs" />
-    <Compile Include="v201605\WorkflowRequestService\ApproveWorkflowApprovalRequests.cs" />
-    <Compile Include="v201605\WorkflowRequestService\GetWorkflowApprovalRequests.cs" />
-    <Compile Include="v201605\WorkflowRequestService\GetWorkflowExternalConditionRequests.cs" />
-    <Compile Include="v201605\WorkflowRequestService\TriggerWorkflowExternalConditionRequests.cs" />
     <Compile Include="v201608\ActivityGroupService\CreateActivityGroups.cs" />
     <Compile Include="v201608\ActivityGroupService\GetActiveActivityGroups.cs" />
     <Compile Include="v201608\ActivityGroupService\GetAllActivityGroups.cs" />
@@ -652,6 +481,199 @@
     <Compile Include="v201611\WorkflowRequestService\GetWorkflowApprovalRequests.cs" />
     <Compile Include="v201611\WorkflowRequestService\GetWorkflowExternalConditionRequests.cs" />
     <Compile Include="v201611\WorkflowRequestService\TriggerWorkflowExternalConditionRequests.cs" />
+    <Compile Include="v201702\ActivityGroupService\CreateActivityGroups.cs" />
+    <Compile Include="v201702\ActivityGroupService\GetActiveActivityGroups.cs" />
+    <Compile Include="v201702\ActivityGroupService\GetAllActivityGroups.cs" />
+    <Compile Include="v201702\ActivityGroupService\UpdateActivityGroups.cs" />
+    <Compile Include="v201702\ActivityService\CreateActivities.cs" />
+    <Compile Include="v201702\ActivityService\GetActiveActivities.cs" />
+    <Compile Include="v201702\ActivityService\GetAllActivities.cs" />
+    <Compile Include="v201702\ActivityService\UpdateActivities.cs" />
+    <Compile Include="v201702\AudienceSegmentService\CreateAudienceSegments.cs" />
+    <Compile Include="v201702\AudienceSegmentService\GetAllAudienceSegments.cs" />
+    <Compile Include="v201702\AudienceSegmentService\GetFirstPartyAudienceSegments.cs" />
+    <Compile Include="v201702\AudienceSegmentService\PopulateFirstPartyAudienceSegments.cs" />
+    <Compile Include="v201702\AudienceSegmentService\UpdateAudienceSegments.cs" />
+    <Compile Include="v201702\BaseRateService\CreateProductBaseRates.cs" />
+    <Compile Include="v201702\BaseRateService\CreateProductTemplateBaseRates.cs" />
+    <Compile Include="v201702\BaseRateService\GetAllBaseRates.cs" />
+    <Compile Include="v201702\BaseRateService\GetBaseRatesForRateCard.cs" />
+    <Compile Include="v201702\BaseRateService\UpdateBaseRates.cs" />
+    <Compile Include="v201702\CompanyService\CreateCompanies.cs" />
+    <Compile Include="v201702\CompanyService\GetAdvertisers.cs" />
+    <Compile Include="v201702\CompanyService\GetAllCompanies.cs" />
+    <Compile Include="v201702\CompanyService\UpdateCompanies.cs" />
+    <Compile Include="v201702\ContactService\CreateContacts.cs" />
+    <Compile Include="v201702\ContactService\GetAllContacts.cs" />
+    <Compile Include="v201702\ContactService\GetUninvitedContacts.cs" />
+    <Compile Include="v201702\ContactService\UpdateContacts.cs" />
+    <Compile Include="v201702\ContentMetadataKeyHierarchyService\CreateContentMetadataKeyHierarchies.cs" />
+    <Compile Include="v201702\ContentMetadataKeyHierarchyService\DeleteContentMetadataKeyHierarchies.cs" />
+    <Compile Include="v201702\ContentMetadataKeyHierarchyService\GetAllContentMetadataKeyHierarchies.cs" />
+    <Compile Include="v201702\ContentMetadataKeyHierarchyService\UpdateContentMetadataKeyHierarchies.cs" />
+    <Compile Include="v201702\ContentService\GetAllContent.cs" />
+    <Compile Include="v201702\CreativeService\CopyImageCreatives.cs" />
+    <Compile Include="v201702\CreativeService\CreateCreativeFromTemplate.cs" />
+    <Compile Include="v201702\CreativeService\CreateCreatives.cs" />
+    <Compile Include="v201702\CreativeService\CreateCustomCreative.cs" />
+    <Compile Include="v201702\CreativeService\CreateNativeCreative.cs" />
+    <Compile Include="v201702\CreativeService\GetAllCreatives.cs" />
+    <Compile Include="v201702\CreativeService\GetImageCreatives.cs" />
+    <Compile Include="v201702\CreativeService\UpdateCreatives.cs" />
+    <Compile Include="v201702\CreativeSetService\GetAllCreativeSets.cs" />
+    <Compile Include="v201702\CreativeSetService\GetCreativeSetsForMasterCreative.cs" />
+    <Compile Include="v201702\CreativeTemplateService\GetAllCreativeTemplates.cs" />
+    <Compile Include="v201702\CreativeTemplateService\GetSystemDefinedCreativeTemplates.cs" />
+    <Compile Include="v201702\CreativeWrapperService\CreateCreativeWrappers.cs" />
+    <Compile Include="v201702\CreativeWrapperService\DeactivateCreativeWrappers.cs" />
+    <Compile Include="v201702\CreativeWrapperService\GetActiveCreativeWrappers.cs" />
+    <Compile Include="v201702\CreativeWrapperService\GetAllCreativeWrappers.cs" />
+    <Compile Include="v201702\CreativeWrapperService\UpdateCreativeWrappers.cs" />
+    <Compile Include="v201702\CustomFieldService\CreateCustomFieldOptions.cs" />
+    <Compile Include="v201702\CustomFieldService\CreateCustomFields.cs" />
+    <Compile Include="v201702\CustomFieldService\DeactivateCustomFields.cs" />
+    <Compile Include="v201702\CustomFieldService\GetAllCustomFields.cs" />
+    <Compile Include="v201702\CustomFieldService\GetCustomFieldsForLineItems.cs" />
+    <Compile Include="v201702\CustomFieldService\SetLineItemCustomFieldValue.cs" />
+    <Compile Include="v201702\CustomFieldService\UpdateCustomFields.cs" />
+    <Compile Include="v201702\CustomTargetingService\CreateCustomTargetingKeysAndValues.cs" />
+    <Compile Include="v201702\CustomTargetingService\GetAllCustomTargetingKeysAndValues.cs" />
+    <Compile Include="v201702\CustomTargetingService\GetPredefinedCustomTargetingKeysAndValues.cs" />
+    <Compile Include="v201702\CustomTargetingService\UpdateCustomTargetingKeys.cs" />
+    <Compile Include="v201702\CustomTargetingService\UpdateCustomTargetingValues.cs" />
+    <Compile Include="v201702\ExchangeRateService\CreateExchangeRates.cs" />
+    <Compile Include="v201702\ExchangeRateService\GetAllExchangeRates.cs" />
+    <Compile Include="v201702\ExchangeRateService\GetExchangeRatesForCurrencyCode.cs" />
+    <Compile Include="v201702\ExchangeRateService\UpdateExchangeRates.cs" />
+    <Compile Include="v201702\ForecastService\GetAvailabilityForecast.cs" />
+    <Compile Include="v201702\ForecastService\GetAvailabilityForecastById.cs" />
+    <Compile Include="v201702\ForecastService\GetDeliveryForecastByIds.cs" />
+    <Compile Include="v201702\InventoryService\CreateAdUnits.cs" />
+    <Compile Include="v201702\InventoryService\CreateVideoAdUnit.cs" />
+    <Compile Include="v201702\InventoryService\DeActivateAdUnits.cs" />
+    <Compile Include="v201702\InventoryService\GetAdUnitsByStatement.cs" />
+    <Compile Include="v201702\InventoryService\GetAllAdUnitSizes.cs" />
+    <Compile Include="v201702\InventoryService\GetAllAdUnits.cs" />
+    <Compile Include="v201702\InventoryService\GetInventoryTree.cs" />
+    <Compile Include="v201702\InventoryService\UpdateAdUnits.cs" />
+    <Compile Include="v201702\LabelService\CreateLabels.cs" />
+    <Compile Include="v201702\LabelService\DeactivateActiveLabels.cs" />
+    <Compile Include="v201702\LabelService\GetActiveLabels.cs" />
+    <Compile Include="v201702\LabelService\GetAllLabels.cs" />
+    <Compile Include="v201702\LabelService\UpdateLabels.cs" />
+    <Compile Include="v201702\LineItemCreativeAssociationService\ActivateLicas.cs" />
+    <Compile Include="v201702\LineItemCreativeAssociationService\CreateLicas.cs" />
+    <Compile Include="v201702\LineItemCreativeAssociationService\DeactivateLicas.cs" />
+    <Compile Include="v201702\LineItemCreativeAssociationService\GetAllLicas.cs" />
+    <Compile Include="v201702\LineItemCreativeAssociationService\GetLicasForLineItem.cs" />
+    <Compile Include="v201702\LineItemCreativeAssociationService\UpdateLicas.cs" />
+    <Compile Include="v201702\LineItemService\ActivateLineItem.cs" />
+    <Compile Include="v201702\LineItemService\CreateLineItems.cs" />
+    <Compile Include="v201702\LineItemService\CreateVideoLineItem.cs" />
+    <Compile Include="v201702\LineItemService\GetAllLineItems.cs" />
+    <Compile Include="v201702\LineItemService\GetLineItemsThatNeedCreatives.cs" />
+    <Compile Include="v201702\LineItemService\GetRecentlyUpdatedLineItems.cs" />
+    <Compile Include="v201702\LineItemService\TargetCustomCriteria.cs" />
+    <Compile Include="v201702\LineItemService\UpdateLineItems.cs" />
+    <Compile Include="v201702\NativeStyleService\CreateNativeStyles.cs" />
+    <Compile Include="v201702\NativeStyleService\GetAllNativeStyles.cs" />
+    <Compile Include="v201702\NetworkService\GetAllNetworks.cs" />
+    <Compile Include="v201702\NetworkService\GetCurrentNetwork.cs" />
+    <Compile Include="v201702\NetworkService\MakeTestNetwork.cs" />
+    <Compile Include="v201702\OrderService\ApproveOrder.cs" />
+    <Compile Include="v201702\OrderService\CreateOrders.cs" />
+    <Compile Include="v201702\OrderService\GetAllOrders.cs" />
+    <Compile Include="v201702\OrderService\GetOrdersStartingSoon.cs" />
+    <Compile Include="v201702\OrderService\UpdateOrders.cs" />
+    <Compile Include="v201702\PackageService\CreatePackages.cs" />
+    <Compile Include="v201702\PackageService\CreateProposalLineItemsFromPackage.cs" />
+    <Compile Include="v201702\PackageService\GetAllPackages.cs" />
+    <Compile Include="v201702\PackageService\GetInProgressPackages.cs" />
+    <Compile Include="v201702\PackageService\UpdatePackages.cs" />
+    <Compile Include="v201702\PlacementService\CreatePlacements.cs" />
+    <Compile Include="v201702\PlacementService\DeactivatePlacement.cs" />
+    <Compile Include="v201702\PlacementService\GetActivePlacements.cs" />
+    <Compile Include="v201702\PlacementService\GetAllPlacements.cs" />
+    <Compile Include="v201702\PlacementService\UpdatePlacements.cs" />
+    <Compile Include="v201702\PremiumRateService\CreatePremiumRates.cs" />
+    <Compile Include="v201702\PremiumRateService\GetAllPremiumRates.cs" />
+    <Compile Include="v201702\PremiumRateService\GetPremiumRatesForRateCard.cs" />
+    <Compile Include="v201702\PremiumRateService\UpdatePremiumRates.cs" />
+    <Compile Include="v201702\ProductPackageItemService\GetAllProductPackageItems.cs" />
+    <Compile Include="v201702\ProductPackageItemService\GetProductPackageItemsForProductPackage.cs" />
+    <Compile Include="v201702\ProductPackageService\ActivateProductPackage.cs" />
+    <Compile Include="v201702\ProductPackageService\CreateProductPackages.cs" />
+    <Compile Include="v201702\ProductPackageService\GetActiveProductPackages.cs" />
+    <Compile Include="v201702\ProductPackageService\GetAllProductPackages.cs" />
+    <Compile Include="v201702\ProductPackageService\UpdateProductPackages.cs" />
+    <Compile Include="v201702\ProductService\CreateProgrammaticProductsForNonSalesManagement.cs" />
+    <Compile Include="v201702\ProductService\GetAllProducts.cs" />
+    <Compile Include="v201702\ProductService\GetProductsForProductTemplate.cs" />
+    <Compile Include="v201702\ProductService\PublishProgrammaticProductsToMarketplace.cs" />
+    <Compile Include="v201702\ProductService\UpdateProducts.cs" />
+    <Compile Include="v201702\ProductTemplateService\ActivateProductTemplates.cs" />
+    <Compile Include="v201702\ProductTemplateService\CreateProductTemplates.cs" />
+    <Compile Include="v201702\ProductTemplateService\CreateProgrammaticProductTemplates.cs" />
+    <Compile Include="v201702\ProductTemplateService\GetAllProductTemplates.cs" />
+    <Compile Include="v201702\ProductTemplateService\GetSponsorshipProductTemplates.cs" />
+    <Compile Include="v201702\ProductTemplateService\UpdateProductTemplates.cs" />
+    <Compile Include="v201702\ProposalLineItemService\ArchiveProposalLineItems.cs" />
+    <Compile Include="v201702\ProposalLineItemService\CreateProgrammaticProposalLineItems.cs" />
+    <Compile Include="v201702\ProposalLineItemService\CreateProgrammaticProposalLineItemsForNonSalesManagement.cs" />
+    <Compile Include="v201702\ProposalLineItemService\CreateProposalLineItems.cs" />
+    <Compile Include="v201702\ProposalLineItemService\GetAllProposalLineItems.cs" />
+    <Compile Include="v201702\ProposalLineItemService\GetProposalLineItemsForProposal.cs" />
+    <Compile Include="v201702\ProposalLineItemService\UpdateProposalLineItems.cs" />
+    <Compile Include="v201702\ProposalService\CreateProgrammaticProposals.cs" />
+    <Compile Include="v201702\ProposalService\CreateProgrammaticProposalsForNonSalesManagement.cs" />
+    <Compile Include="v201702\ProposalService\CreateProposals.cs" />
+    <Compile Include="v201702\ProposalService\GetAllProposals.cs" />
+    <Compile Include="v201702\ProposalService\GetMarketplaceComments.cs" />
+    <Compile Include="v201702\ProposalService\GetProposalsPendingApproval.cs" />
+    <Compile Include="v201702\ProposalService\RequestBuyerAcceptance.cs" />
+    <Compile Include="v201702\ProposalService\SubmitProposalsForApproval.cs" />
+    <Compile Include="v201702\ProposalService\UpdateProposals.cs" />
+    <Compile Include="v201702\PublisherQueryLanguageService\FetchMatchTables.cs" />
+    <Compile Include="v201702\PublisherQueryLanguageService\GetAllLineItemsUsingPql.cs" />
+    <Compile Include="v201702\PublisherQueryLanguageService\GetAllProgrammaticBuyers.cs" />
+    <Compile Include="v201702\PublisherQueryLanguageService\GetGeoTargets.cs" />
+    <Compile Include="v201702\PublisherQueryLanguageService\GetLineItemsNamedLike.cs" />
+    <Compile Include="v201702\PublisherQueryLanguageService\GetRecentChanges.cs" />
+    <Compile Include="v201702\RateCardService\GetAllRateCards.cs" />
+    <Compile Include="v201702\RateCardService\GetMarketplaceRateCards.cs" />
+    <Compile Include="v201702\ReconciliationLineItemReportService\GetReconciliationLineItemReportsForReconciliationReport.cs" />
+    <Compile Include="v201702\ReconciliationOrderReportService\GetReconciliationOrderReportsForReconciliationReport.cs" />
+    <Compile Include="v201702\ReconciliationReportRowService\GetReconciliationReportRowsForReconciliationReport.cs" />
+    <Compile Include="v201702\ReconciliationReportService\GetAllReconciliationReports.cs" />
+    <Compile Include="v201702\ReconciliationReportService\GetReconciliationReportForLastBillingPeriod.cs" />
+    <Compile Include="v201702\ReportService\RunDeliveryReport.cs" />
+    <Compile Include="v201702\ReportService\RunInventoryReport.cs" />
+    <Compile Include="v201702\ReportService\RunReachReport.cs" />
+    <Compile Include="v201702\ReportService\RunReportWithCustomFields.cs" />
+    <Compile Include="v201702\ReportService\RunSalesReport.cs" />
+    <Compile Include="v201702\ReportService\RunSavedQuery.cs" />
+    <Compile Include="v201702\SuggestedAdUnitService\ApproveSuggestedAdUnits.cs" />
+    <Compile Include="v201702\SuggestedAdUnitService\GetAllSuggestedAdUnits.cs" />
+    <Compile Include="v201702\SuggestedAdUnitService\GetHighlyRequestedSuggestedAdUnits.cs" />
+    <Compile Include="v201702\TeamService\CreateTeams.cs" />
+    <Compile Include="v201702\TeamService\GetAllTeams.cs" />
+    <Compile Include="v201702\TeamService\UpdateTeams.cs" />
+    <Compile Include="v201702\UserService\CreateUsers.cs" />
+    <Compile Include="v201702\UserService\DeactivateUser.cs" />
+    <Compile Include="v201702\UserService\GetAllRoles.cs" />
+    <Compile Include="v201702\UserService\GetAllUsers.cs" />
+    <Compile Include="v201702\UserService\GetCurrentUser.cs" />
+    <Compile Include="v201702\UserService\GetUserByEmailAddress.cs" />
+    <Compile Include="v201702\UserService\UpdateUsers.cs" />
+    <Compile Include="v201702\UserTeamAssociationService\CreateUserTeamAssociations.cs" />
+    <Compile Include="v201702\UserTeamAssociationService\DeleteUserTeamAssociations.cs" />
+    <Compile Include="v201702\UserTeamAssociationService\GetAllUserTeamAssociations.cs" />
+    <Compile Include="v201702\UserTeamAssociationService\GetUserTeamAssociationsForUser.cs" />
+    <Compile Include="v201702\UserTeamAssociationService\UpdateUserTeamAssociations.cs" />
+    <Compile Include="v201702\WorkflowRequestService\ApproveWorkflowApprovalRequests.cs" />
+    <Compile Include="v201702\WorkflowRequestService\GetWorkflowApprovalRequests.cs" />
+    <Compile Include="v201702\WorkflowRequestService\GetWorkflowExternalConditionRequests.cs" />
+    <Compile Include="v201702\WorkflowRequestService\TriggerWorkflowExternalConditionRequests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="SampleBase.cs" />
   </ItemGroup>

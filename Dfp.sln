@@ -1,6 +1,8 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dfp", "src\Dfp\Dfp.csproj", "{CE15CE8A-532B-49DA-8CF7-2BFCDEE845DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dfp.Examples.CSharp", "examples\Dfp\csharp\Dfp.Examples.CSharp.csproj", "{65E3CAA4-8EE5-414A-AC88-02E4F33EC954}"

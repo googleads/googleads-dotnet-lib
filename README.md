@@ -15,7 +15,7 @@ This project hosts the .NET client library for the various SOAP-Based Ads APIs a
 
 ##Requirements
 
-- .NET Framework 4.0 (or above): http://msdn2.microsoft.com/en-us/netframework/default.aspx
+- .NET Framework 4.5.2 (or above): http://msdn2.microsoft.com/en-us/netframework/default.aspx
 - Microsoft Visual Studio: http://msdn2.microsoft.com/en-us/vstudio/default.aspx
 - An appropriate Google Ads account.
 

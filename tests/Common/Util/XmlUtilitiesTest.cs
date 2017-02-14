@@ -17,6 +17,8 @@ using Google.Api.Ads.Common.Util;
 using NUnit.Framework;
 
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using System.Xml;
 
 namespace Google.Api.Ads.Common.Tests.Util {
@@ -33,12 +35,47 @@ namespace Google.Api.Ads.Common.Tests.Util {
     public void Init() {
     }
 
+    /// <summary>
+    /// Tests that XmlDocument created with XmlUtililites doesn't resolve
+    /// External Xml Entities.
+    /// </summary>
     [Test]
     [Category("Small")]
     public void TestNoXxeTranslation() {
-      XmlDocument xDoc = XmlUtilities.CreateDocument(Resources.XxeExample);
-      string temp = xDoc.OuterXml;
-      Assert.That(temp.Contains("file:///c:/boot.ini"));
+      Assert.Throws<XmlException>(delegate() {
+        XmlDocument xDoc = XmlUtilities.CreateDocument(Resources.XxeExample);
+      });
+    }
+
+    /// <summary>
+    /// Tests that XmlDocument created with XmlUtililites can load an XML with
+    /// UTF-8 BOM mark from a byte array or string.
+    /// </summary>
+    [Test]
+    [Category("Small")]
+    public void TestCanLoadXmlFromDiskWithUtf8BomInMemory() {
+      Assert.DoesNotThrow(delegate() {
+        XmlUtilities.CreateDocument(Encoding.UTF8.GetString(Resources.Utf8Bom));
+        XmlUtilities.CreateDocument(Resources.Utf8Bom);
+      });
+    }
+
+    /// <summary>
+    /// Tests that XmlDocument created with XmlUtililites can load an XML with
+    /// UTF-8 BOM mark from a file.
+    /// </summary>
+    [Test]
+    [Category("Small")]
+    public void TestCanLoadXmlFromDiskWithUtf8Bom() {
+      string path = Path.GetTempFileName();
+      using (FileStream fs = File.Create(path)) {
+        fs.Write(Resources.Utf8Bom, 0, Resources.Utf8Bom.Length);
+      }
+      using (FileStream fs = File.OpenRead(path)) {
+        Assert.DoesNotThrow(delegate() {
+          XmlUtilities.CreateDocument(fs);
+        });
+      }
     }
   }
 }

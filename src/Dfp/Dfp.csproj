@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -9,9 +9,10 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Google.Api.Ads.Dfp</RootNamespace>
-    <AssemblyName>Dfp</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AssemblyName>Google.Dfp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFrameworkProfile />
+    <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,6 +49,10 @@
     <Compile Include="Headers\RequestHeaderStub.cs" />
     <Compile Include="Headers\OAuth.cs" />
     <Compile Include="Lib\DfpAuthorizationMethod.cs" />
+    <Compile Include="Util\v201702\DateTimeUtilities.cs" />
+    <Compile Include="Util\v201702\PqlUtilities.cs" />
+    <Compile Include="Util\v201702\StatementBuilder.cs" />
+    <Compile Include="Util\v201702\ReportUtilities.cs" />
     <Compile Include="Util\v201611\DateTimeUtilities.cs" />
     <Compile Include="Util\v201611\PqlUtilities.cs" />
     <Compile Include="Util\v201611\StatementBuilder.cs" />
@@ -58,10 +65,6 @@
     <Compile Include="Util\v201605\PqlUtilities.cs" />
     <Compile Include="Util\v201605\StatementBuilder.cs" />
     <Compile Include="Util\v201605\ReportUtilities.cs" />
-    <Compile Include="Util\v201602\DateTimeUtilities.cs" />
-    <Compile Include="Util\v201602\PqlUtilities.cs" />
-    <Compile Include="Util\v201602\StatementBuilder.cs" />
-    <Compile Include="Util\v201602\ReportUtilities.cs" />
     <Compile Include="DfpErrorMessages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,14 +83,14 @@
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Headers\RequestHeader.cs" />
-    <Compile Include="v201602\DfpApi.cs" />
-    <Compile Include="v201602\DfpServiceV201602.cs" />
     <Compile Include="v201605\DfpApi.cs" />
     <Compile Include="v201605\DfpServiceV201605.cs" />
     <Compile Include="v201608\DfpApi.cs" />
     <Compile Include="v201608\DfpServiceV201608.cs" />
     <Compile Include="v201611\DfpApi.cs" />
     <Compile Include="v201611\DfpServiceV201611.cs" />
+    <Compile Include="v201702\DfpApi.cs" />
+    <Compile Include="v201702\DfpServiceV201702.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

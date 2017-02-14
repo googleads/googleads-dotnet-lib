@@ -1,3 +1,20 @@
+19.0.0
+=======
+AdWords:
+  -
+
+DFP:
+  - Added support for v201702.
+  - Removed support for v201602 (sunset).
+  - Removed examples for v201605 (deprecated).
+
+Common:
+  - Changed minimum .NET Framework version to 4.5.2.
+  - Removed SerializationUtilities.LoadXml method. Use XmlUtilities.CreateDocument
+  method instead.
+  - Fixed a mono-specific crash that was introduced due to fix for
+  https://github.com/googleads/googleads-dotnet-lib/issues/95 in all libraries.
+
 18.34.0
 =======
 AdWords:

@@ -42,24 +42,6 @@ namespace Google.Api.Ads.Common.Util {
         new Dictionary<string, XmlSerializer>();
 
     /// <summary>
-    /// A mono-friendly version of XmlDocument::LoadXml.
-    /// </summary>
-    /// <param name="xmlText">The xml string to be loaded into DOM.</param>
-    /// <returns>The xml as XmlDocument.</returns>
-    public static XmlDocument LoadXml(string xmlText) {
-      XmlDocument xDoc = XmlUtilities.CreateDocument();
-
-      try {
-        xDoc.LoadXml(xmlText);
-      } catch {
-        StringReader stringReader = new StringReader(xmlText);
-        stringReader.Read(); // skip BOM
-        xDoc.Load(stringReader);
-      }
-      return xDoc;
-    }
-
-    /// <summary>
     /// Deserialize an object from xml for a custom root node and xml namespace.
     /// </summary>
     /// <param name="contents">The serialized xml.</param>

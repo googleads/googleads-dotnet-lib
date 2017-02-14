@@ -13,6 +13,8 @@
 // limitations under the License.
 
 
+using System.IO;
+using System.Text;
 using System.Xml;
 
 namespace Google.Api.Ads.Common.Util {
@@ -20,24 +22,43 @@ namespace Google.Api.Ads.Common.Util {
   /// Utilities for working with XML.
   /// </summary>
   public class XmlUtilities {
-    /// <summary>
-    /// Creates an empty XML document that that has XXE disabled.
-    /// </summary>
-    /// <returns>An XML Document object.</returns>
-    public static XmlDocument CreateDocument() {
-      return new XmlDocument() { XmlResolver = null };
-    }
 
     /// <summary>
-    /// Loads the contents into an XML document that that has XXE disabled.
+    /// Loads a string into an XML document that that has XXE disabled.
     /// </summary>
     /// <param name="contents">The XML document contents as a text.</param>
     /// <returns>An XML Document object, with the contents loaded into the
     /// DOM.</returns>
     public static XmlDocument CreateDocument(string contents) {
-      XmlDocument xDoc = CreateDocument();
-      xDoc.LoadXml(contents);
-      return xDoc;
+      return CreateDocument(Encoding.UTF8.GetBytes(contents));
+    }
+
+    /// <summary>
+    /// Loads the contents of a byte array into an XML document that
+    /// has XXE disabled.
+    /// </summary>
+    /// <param name="contents">The XML document contents as a byte array.</param>
+    /// <returns>An XML Document object, with the contents loaded into the
+    /// DOM.</returns>
+    public static XmlDocument CreateDocument(byte[] contents) {
+      return CreateDocument(new MemoryStream(contents));
+    }
+
+    /// <summary>
+    /// Loads the contents of a stream into an XML document that has XXE
+    /// disabled.
+    /// </summary>
+    /// <param name="stream">The content stream.</param>
+    /// <returns>An XML Document object, with the contents loaded into the
+    /// DOM.</returns>
+    public static XmlDocument CreateDocument(Stream stream) {
+      XmlReaderSettings settings = new XmlReaderSettings() {
+        DtdProcessing = DtdProcessing.Prohibit
+      };
+      XmlReader reader = XmlReader.Create(stream, settings);
+      XmlDocument doc = new XmlDocument();
+      doc.Load(reader);
+      return doc;
     }
   }
 }

@@ -355,4 +355,7 @@ TimeStamp: Mon, 03 Nov 2014 12:25:30 GMT
    &lt;!ELEMENT foo ANY &gt;
    &lt;!ENTITY xxe SYSTEM "file:///c:/boot.ini" &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</value>
   </data>
+  <data name="Utf8Bom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\utf8bom.xml;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
