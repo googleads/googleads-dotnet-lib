@@ -11,8 +11,6 @@
     <RootNamespace>Google.Api.Ads.Common</RootNamespace>
     <AssemblyName>Google.Ads.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>AdsApi.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkProfile />
     <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
