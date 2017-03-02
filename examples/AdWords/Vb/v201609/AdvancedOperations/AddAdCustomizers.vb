@@ -102,7 +102,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201609
       attribute3.name = "Date"
       attribute3.type = AdCustomizerFeedAttributeType.DATE_TIME
 
-
       feed.feedAttributes = New AdCustomizerFeedAttribute() { _
         attribute1, attribute2, attribute3 _
       }
@@ -223,7 +222,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201609
       expandedTextAd.description = String.Format("Offer ends in {{=countdown({0}.Date)}}!", _
                                                  feedName)
       expandedTextAd.finalUrls = New String() {"http://www.example.com"}
-      
+
       ' We add the same ad to both ad groups. When they serve, they will show
       ' different values, since they match different feed items.
       Dim adGroupAdOperations As New List(Of AdGroupAdOperation)

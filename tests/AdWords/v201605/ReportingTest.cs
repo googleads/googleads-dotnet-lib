@@ -30,7 +30,9 @@ namespace Google.Api.Ads.AdWords.Tests.v201605 {
   /// Test cases for all the code examples under v201605\Reporting.
   /// </summary>
   class ReportingTest : VersionedExampleTestsBase {
-    string outputFilePath;
+    string outputFolderPath;
+    string outputFileName;
+
     ReportDefinitionReportType reportType;
 
     /// <summary>
@@ -38,7 +40,8 @@ namespace Google.Api.Ads.AdWords.Tests.v201605 {
     /// </summary>
     [SetUp]
     public void Init() {
-      outputFilePath = Path.GetTempPath();
+      outputFolderPath = Path.GetTempPath();
+      outputFileName = utils.GetTimeStampAlpha() + ".gz";
       reportType = ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT;
     }
 
@@ -48,7 +51,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201605 {
     [Test]
     public void TestDownloadCriteriaReportVBExample() {
       RunExample(delegate() {
-        new VBExamples.DownloadCriteriaReport().Run(user, outputFilePath);
+        new VBExamples.DownloadCriteriaReport().Run(user, outputFileName);
       });
     }
 
@@ -58,7 +61,27 @@ namespace Google.Api.Ads.AdWords.Tests.v201605 {
     [Test]
     public void TestDownloadCriteriaReportCSharpExample() {
       RunExample(delegate() {
-        new CSharpExamples.DownloadCriteriaReport().Run(user, outputFilePath);
+        new CSharpExamples.DownloadCriteriaReport().Run(user, outputFileName);
+      });
+    }
+
+    /// <summary>
+    /// Tests the DownloadCriteriaReportWithAwql VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestDownloadCriteriaReportWithAwqlVBExample() {
+      RunExample(delegate() {
+        new VBExamples.DownloadCriteriaReportWithAwql().Run(user, outputFileName);
+      });
+    }
+
+    /// <summary>
+    /// Tests the DownloadCriteriaReportWithAwql C# code example.
+    /// </summary>
+    [Test]
+    public void TestDownloadCriteriaReportWithAwqlCSharpExample() {
+      RunExample(delegate() {
+        new CSharpExamples.DownloadCriteriaReportWithAwql().Run(user, outputFileName);
       });
     }
 
@@ -108,7 +131,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201605 {
     [Test]
     public void TestParallelReportDownloadCSharpExample() {
       RunExample(delegate() {
-        new CSharpExamples.ParallelReportDownload().Run(user, outputFilePath);
+        new CSharpExamples.ParallelReportDownload().Run(user, outputFolderPath);
       });
     }
   }

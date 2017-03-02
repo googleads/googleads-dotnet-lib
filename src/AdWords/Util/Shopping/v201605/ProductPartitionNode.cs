@@ -420,7 +420,9 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201605 {
       switch (fromNode.nodeState.NodeType) {
         case NodeType.BIDDABLE_UNIT:
           toNode = toNode.AsBiddableUnit();
-          toNode.CpcBid = fromNode.CpcBid;
+          if (fromNode.CpcBidSpecified) {
+            toNode.CpcBid = fromNode.CpcBid;
+          }
           break;
 
         case NodeType.EXCLUDED_UNIT:

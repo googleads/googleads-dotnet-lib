@@ -1,3 +1,16 @@
+19.1.0
+=======
+AdWords:
+  - ErrorUtilities class was removed. Use ApiError.GetOperationIndex() instead of
+  ErrorUtilities.GetOperationIndex.
+  - Added support for v201702
+  
+DFP:
+  - Regenerated DFP service stubs to fix potential unmarshalling error v201702.
+
+Common:
+  -
+
 19.0.1
 =======
 AdWords:

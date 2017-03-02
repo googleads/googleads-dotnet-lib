@@ -252,17 +252,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201605 {
     }
 
     /// <summary>
-    /// Tests the AddTextAdWithUpgradedUrls VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddTextAdWithUpgradedUrlsVBExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-      RunExample(delegate() {
-        new VBExamples.AddTextAdWithUpgradedUrls().Run(user, adGroupId1);
-      });
-    }
-
-    /// <summary>
     /// Tests the UsePortfolioBiddingStrategy C# code example.
     /// </summary>
     [Test]
@@ -281,6 +270,28 @@ namespace Google.Api.Ads.AdWords.Tests.v201605 {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
         new VBExamples.UsePortfolioBiddingStrategy().Run(user);
+      });
+    }
+
+    /// <summary>
+    /// Tests the AddExpandedTextAdWithUpgradedUrls C# code example.
+    /// </summary>
+    [Test]
+    public void TestAddExpandedTextAdWithUpgradedUrlsCSharpExample() {
+      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+      RunExample(delegate() {
+        new CSharpExamples.AddExpandedTextAdWithUpgradedUrls().Run(user, adGroupId1);
+      });
+    }
+
+    /// <summary>
+    /// Tests the AddExpandedTextAdWithUpgradedUrls VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestAddExpandedTextAdWithUpgradedUrlsVBExample() {
+      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+      RunExample(delegate() {
+        new VBExamples.AddExpandedTextAdWithUpgradedUrls().Run(user, adGroupId1);
       });
     }
   }

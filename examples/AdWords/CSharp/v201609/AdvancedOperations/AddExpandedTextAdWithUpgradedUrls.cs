@@ -139,9 +139,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201609 {
           Console.WriteLine("  Final Mobile URLs: {0}",
               string.Join(", ", newExpandedTextAd.finalMobileUrls));
           Console.WriteLine("  Tracking URL template: {0}", newExpandedTextAd.trackingUrlTemplate);
-          Console.WriteLine("  Final App URLs: {0}",
-              string.Join(", ", newExpandedTextAd.finalAppUrls.Select(finalAppUrl =>
-                  finalAppUrl.url).ToArray()));
 
           List<string> parameters = new List<string>();
           foreach (CustomParameter customParam in

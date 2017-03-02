@@ -442,7 +442,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201609 {
 
           // Examine each ApiError received from the server.
           foreach (ApiError apiError in innerException.errors) {
-            int index = ErrorUtilities.GetOperationIndex(apiError.fieldPath);
+            int index = apiError.GetOperationIndex();
             if (index == -1) {
               // This API error is not associated with an operand, so we cannot
               // recover from this error by removing one or more operations.

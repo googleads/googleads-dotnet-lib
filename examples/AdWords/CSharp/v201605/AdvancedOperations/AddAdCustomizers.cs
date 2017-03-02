@@ -164,37 +164,37 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
     /// <returns>A new FeedItemOperation for adding a FeedItem.</returns>
     private static FeedItemOperation CreateFeedItemAddOperation(AdCustomizerFeed adCustomizerFeed,
         string name, string price, String date, long adGroupId) {
-      FeedItem feedItem = new FeedItem();
-      feedItem.feedId = adCustomizerFeed.feedId;
-      List<FeedItemAttributeValue> attributeValues = new List<FeedItemAttributeValue>();
+      FeedItem feedItem = new FeedItem() {
+        feedId = adCustomizerFeed.feedId,
 
-      // FeedAttributes appear in the same order as they were created
-      // - Name, Price, Date. See CreateCustomizerFeed method for details.
-      FeedItemAttributeValue nameAttributeValue = new FeedItemAttributeValue();
-      nameAttributeValue.feedAttributeId = adCustomizerFeed.feedAttributes[0].id;
-      nameAttributeValue.stringValue = name;
-      attributeValues.Add(nameAttributeValue);
+        // FeedAttributes appear in the same order as they were created
+        // - Name, Price, Date. See CreateCustomizerFeed method for details.
+        attributeValues = new FeedItemAttributeValue[] {
+          new FeedItemAttributeValue() {
+            feedAttributeId = adCustomizerFeed.feedAttributes[0].id,
+            stringValue = name
+          },
 
-      FeedItemAttributeValue priceAttributeValue = new FeedItemAttributeValue();
-      priceAttributeValue.feedAttributeId = adCustomizerFeed.feedAttributes[1].id;
-      priceAttributeValue.stringValue = price;
-      attributeValues.Add(priceAttributeValue);
+          new FeedItemAttributeValue() {
+            feedAttributeId = adCustomizerFeed.feedAttributes[1].id,
+            stringValue = price
+          },
 
-      FeedItemAttributeValue dateAttributeValue = new FeedItemAttributeValue();
-      dateAttributeValue.feedAttributeId = adCustomizerFeed.feedAttributes[2].id;
-      dateAttributeValue.stringValue = date;
-      attributeValues.Add(dateAttributeValue);
+          new FeedItemAttributeValue() {
+            feedAttributeId = adCustomizerFeed.feedAttributes[2].id,
+            stringValue = date
+          }
+        },
 
-      feedItem.attributeValues = attributeValues.ToArray();
+        adGroupTargeting = new FeedItemAdGroupTargeting() {
+          TargetingAdGroupId = adGroupId
+        }
+      };
 
-      feedItem.adGroupTargeting = new FeedItemAdGroupTargeting();
-      feedItem.adGroupTargeting.TargetingAdGroupId = adGroupId;
-
-      FeedItemOperation feedItemOperation = new FeedItemOperation();
-      feedItemOperation.operand = feedItem;
-      feedItemOperation.@operator = Operator.ADD;
-
-      return feedItemOperation;
+      return new FeedItemOperation() {
+        operand = feedItem,
+        @operator = Operator.ADD
+      };
     }
 
     /// <summary>
@@ -211,24 +211,26 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
       AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
           AdWordsService.v201605.AdGroupAdService);
 
-      TextAd textAd = new TextAd();
-      textAd.headline = string.Format("Luxury Cruise to {{={0}.Name}}", feedName);
-      textAd.description1 = string.Format("Only {{={0}.Price}}", feedName);
-      textAd.description2 = string.Format("Offer ends in {{=countdown({0}.Date)}}!", feedName);
-      textAd.finalUrls = new string[] { "http://www.example.com" };
-      textAd.displayUrl = "www.example.com";
+      ExpandedTextAd expandedTextAd = new ExpandedTextAd() {
+        headlinePart1 = string.Format("Luxury Cruise to {{={0}.Name}}", feedName),
+        headlinePart2 = string.Format("Only {{={0}.Price}}", feedName),
+        description = string.Format("Offer ends in {{=countdown({0}.Date)}}!", feedName),
+        finalUrls = new string[] { "http://www.example.com" }
+      };
 
       // We add the same ad to both ad groups. When they serve, they will show
       // different values, since they match different feed items.
       List<AdGroupAdOperation> adGroupAdOperations = new List<AdGroupAdOperation>();
       foreach (long adGroupId in adGroupIds) {
-        AdGroupAd adGroupAd = new AdGroupAd();
-        adGroupAd.adGroupId = adGroupId;
-        adGroupAd.ad = textAd;
+        AdGroupAd adGroupAd = new AdGroupAd() {
+          adGroupId = adGroupId,
+          ad = expandedTextAd
+        };
 
-        AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
-        adGroupAdOperation.operand = adGroupAd;
-        adGroupAdOperation.@operator = Operator.ADD;
+        AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation() {
+          operand = adGroupAd,
+          @operator = Operator.ADD
+        };
 
         adGroupAdOperations.Add(adGroupAdOperation);
       }

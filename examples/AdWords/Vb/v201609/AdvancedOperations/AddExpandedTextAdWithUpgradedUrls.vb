@@ -61,7 +61,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201609
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' Get the AdGroupAdService.
       Dim service As AdGroupAdService = CType(user.GetService( _
-          AdWordsService.v201607.AdGroupAdService), AdGroupAdService)
+          AdWordsService.v201609.AdGroupAdService), AdGroupAdService)
 
       ' Create the expanded text ad.
       Dim expandedTextAd As New ExpandedTextAd

@@ -41,6 +41,15 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
     End Function
 
     ''' <summary>
+    ''' Gets a short random string. Useful for generating unique names for
+    ''' campaigns, ad groups, etc.
+    ''' </summary>
+    ''' <returns>The random string.</returns>
+    Public Shared Function GetShortRandomString() As String
+      Return Guid.NewGuid().ToString().Substring(0, 8)
+    End Function
+
+    ''' <summary>
     ''' Gets the user inputs for running a code example in command line mode.
     ''' </summary>
     ''' <param name="paramNames">The parameter names.</param>

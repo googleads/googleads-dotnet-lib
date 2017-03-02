@@ -323,6 +323,8 @@ namespace Google.Api.Ads.Dfp.v201702
 	public abstract partial class ApiError {
 		private string fieldPathField;
 
+		private FieldPathElement[] fieldPathElementsField;
+
 		private string triggerField;
 
 		private string errorStringField;
@@ -335,6 +337,20 @@ namespace Google.Api.Ads.Dfp.v201702
 			}
 			set {
 				this.fieldPathField = value;
+			}
+		}
+
+		/// <summary>A parsed copy of the field path. For example, the field path
+		/// "operations[1].operand" corresponds to this list: {FieldPathElement(field =
+		/// "operations", index = 1), FieldPathElement(field = "operand", index = null)}.
+		/// </summary>
+		[System.Xml.Serialization.XmlElementAttribute("fieldPathElements")]
+		public FieldPathElement[] fieldPathElements {
+			get {
+				return this.fieldPathElementsField;
+			}
+			set {
+				this.fieldPathElementsField = value;
 			}
 		}
 
@@ -357,6 +373,59 @@ namespace Google.Api.Ads.Dfp.v201702
 			}
 			set {
 				this.errorStringField = value;
+			}
+		}
+	}
+
+
+	/// <summary>A segment of a field path. Each dot in a field path defines a new segment.
+	/// </summary>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
+	public partial class FieldPathElement {
+		private string fieldField;
+
+		private int indexField;
+
+		private bool indexFieldSpecified;
+
+		/// <summary>The name of a field in lower camelcase. (e.g. "biddingStrategy")
+		/// </summary>
+		public string field {
+			get {
+				return this.fieldField;
+			}
+			set {
+				this.fieldField = value;
+			}
+		}
+
+		/// <summary>For list fields, this is a 0-indexed position in the list. Null for non-list
+		/// fields.
+		/// </summary>
+		public int index {
+			get {
+				return this.indexField;
+			}
+			set {
+				this.indexField = value;
+				this.indexSpecified = true;
+			}
+		}
+
+		/// <summary> <code>true</code>, if a value is specified for <see cref="index" />,
+		/// <code>false</code> otherwise. </summary>
+		[System.Xml.Serialization.XmlIgnoreAttribute()]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public bool indexSpecified {
+			get {
+				return this.indexFieldSpecified;
+			}
+			set {
+				this.indexFieldSpecified = value;
 			}
 		}
 	}
@@ -3685,7 +3754,7 @@ namespace Google.Api.Ads.Dfp.v201702
 		}
 
 		/// <summary>Performs actions on <a href='ProductPackage'>ProductPackage</a> objects that
-		/// match the given <a href='Statement#query'>Statement#query</a>.
+		/// match the given <a href=''>Statement#query</a>.
 		/// </summary><param name='action'>the action to perform</param>
 		/// <param name='statement'>a Publisher Query Language statement used to filter a
 		/// set of product packages</param>
@@ -23256,7 +23325,9 @@ namespace Google.Api.Ads.Dfp.v201702
 		}
 
 		/// <summary>Total viewable impressions delivered for all line items of this
-		/// <code>Order</code>. This value is read-only and is assigned by Google.
+		/// <code>Order</code>. This value is read-only and is assigned by Google. Starting
+		/// in v201705, this will be <code>null</code> when the order does not have line
+		/// items trafficked against a viewable impressions goal.
 		/// </summary>
 		public long totalViewableImpressionsDelivered {
 			get {
@@ -37604,7 +37675,7 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// </summary>
 		COLUMN_VIEW_NOT_ALLOWED = 5,
 		/// <summary>The user has exceeded the limit on the number of reports that can be run
-		/// concurrently. The current limit is 20 per user.
+		/// concurrently. The current limit is 30 per user.
 		/// </summary>
 		TOO_MANY_CONCURRENT_REPORTS = 6,
 		/// <summary>The report query exceeds the maximum allowed number of characters.
@@ -63969,7 +64040,7 @@ namespace Google.Api.Ads.Dfp.v201702
 		ProductPackagePage getProductPackagesByStatement(Statement statement);
 
 		/// <summary>Performs actions on <a href='ProductPackage'>ProductPackage</a> objects that
-		/// match the given <a href='Statement#query'>Statement#query</a>.
+		/// match the given <a href=''>Statement#query</a>.
 		/// </summary><param name='action'>the action to perform</param>
 		/// <param name='statement'>a Publisher Query Language statement used to filter a
 		/// set of product packages</param>

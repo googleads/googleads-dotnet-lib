@@ -164,7 +164,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201609 {
     /// <returns>A new FeedItemOperation for adding a FeedItem.</returns>
     private static FeedItemOperation CreateFeedItemAddOperation(AdCustomizerFeed adCustomizerFeed,
         string name, string price, String date, long adGroupId) {
-      
       FeedItem feedItem = new FeedItem() {
         feedId = adCustomizerFeed.feedId,
 

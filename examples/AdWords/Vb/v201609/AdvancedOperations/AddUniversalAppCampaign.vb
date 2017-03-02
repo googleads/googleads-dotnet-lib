@@ -61,7 +61,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201609
       ' [START prepareUAC] MOE:strip_line
       ' Get the CampaignService.
       Dim campaignService As CampaignService = CType(user.GetService( _
-          AdWordsService.v201609.AdGroupAdService), CampaignService)
+          AdWordsService.v201609.CampaignService), CampaignService)
 
       ' Create the campaign.
       Dim campaign As New Campaign
@@ -104,7 +104,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201609
       ' Set the campaign's assets and ad text ideas. These values will be used to
       ' generate ads.
       Dim universalAppSetting As New UniversalAppCampaignSetting()
-      universalAppSetting.appId = "com.interplanetarycruise.booking"
+      universalAppSetting.appId = "com.labpixies.colordrips"
       universalAppSetting.description1 = "Best Space Cruise Line"
       universalAppSetting.description2 = "Visit all the planets"
       universalAppSetting.description3 = "Trips 7 days a week"

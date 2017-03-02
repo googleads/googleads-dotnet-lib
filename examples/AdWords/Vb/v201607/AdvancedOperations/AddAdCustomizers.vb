@@ -102,7 +102,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201607
       attribute3.name = "Date"
       attribute3.type = AdCustomizerFeedAttributeType.DATE_TIME
 
-
       feed.feedAttributes = New AdCustomizerFeedAttribute() { _
         attribute1, attribute2, attribute3 _
       }
@@ -217,12 +216,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201607
       Dim adGroupAdService As AdGroupAdService = CType(user.GetService( _
           AdWordsService.v201607.AdGroupAdService), AdGroupAdService)
 
-      Dim textAd As New TextAd
-      textAd.headline = String.Format("Luxury Cruise to {{={0}.Name}}", feedName)
-      textAd.description1 = String.Format("Only {{={0}.Price}}", feedName)
-      textAd.description2 = String.Format("Offer ends in {{=countdown({0}.Date)}}!", feedName)
-      textAd.finalUrls = New String() {"http://www.example.com"}
-      textAd.displayUrl = "www.example.com"
+      Dim expandedTextAd As New ExpandedTextAd
+      expandedTextAd.headlinePart1 = String.Format("Luxury Cruise to {{={0}.Name}}", feedName)
+      expandedTextAd.headlinePart2 = String.Format("Only {{={0}.Price}}", feedName)
+      expandedTextAd.description = String.Format("Offer ends in {{=countdown({0}.Date)}}!", _
+                                                 feedName)
+      expandedTextAd.finalUrls = New String() {"http://www.example.com"}
 
       ' We add the same ad to both ad groups. When they serve, they will show
       ' different values, since they match different feed items.
@@ -230,7 +229,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201607
       For Each adGroupId As Long In adGroupIds
         Dim adGroupAd As New AdGroupAd
         adGroupAd.adGroupId = adGroupId
-        adGroupAd.ad = textAd
+        adGroupAd.ad = expandedTextAd
 
         Dim adGroupAdOperation As New AdGroupAdOperation
         adGroupAdOperation.operand = adGroupAd

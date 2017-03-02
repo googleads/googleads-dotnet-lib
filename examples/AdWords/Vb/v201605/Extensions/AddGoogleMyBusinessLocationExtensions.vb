@@ -192,7 +192,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201605
 
             Console.WriteLine("Added CustomerFeed for feed ID {0} and placeholder type {1}", _
                 addedCustomerFeed.feedId, addedCustomerFeed.placeholderTypes(0))
-            Exit Try
+            Exit Do
           Catch e As AdWordsApiException
             Dim apiException As ApiException = CType(e.ApiException, ApiException)
             For Each apiError As ApiError In apiException.errors

@@ -42,7 +42,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201607 {
     public void Init() {
       campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
       adGroupId = utils.CreateAdGroup(user, campaignId);
-      adId = utils.CreateTextAd(user, adGroupId, false);
+      adId = utils.CreateExpandedTextAd(user, adGroupId, false);
       keywordId = utils.CreateKeyword(user, adGroupId);
     }
 
@@ -103,26 +103,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201607 {
     public void TestAddKeywordsCSharpExample() {
       RunExample(delegate() {
         new CSharpExamples.AddKeywords().Run(user, adGroupId);
-      });
-    }
-
-    /// <summary>
-    /// Tests the AddTextAds VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddTextAdsVBExample() {
-      RunExample(delegate() {
-        new VBExamples.AddTextAds().Run(user, adGroupId);
-      });
-    }
-
-    /// <summary>
-    /// Tests the AddTextAds C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddTextAdsCSharpExample() {
-      RunExample(delegate() {
-        new CSharpExamples.AddTextAds().Run(user, adGroupId);
       });
     }
 

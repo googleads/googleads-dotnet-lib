@@ -115,6 +115,11 @@ namespace Google.Api.Ads.AdWords.Tests.v201607 {
     /// </summary>
     [Test]
     public void TestAddGoogleMyBusinessLocationExtensionCSharpExample() {
+      // Delete any enabled GMB feeds and their customer feeds, since only one enabled GMB feed
+      // is allowed per account.
+      utils.DeleteEnabledGmbFeeds(user);
+      utils.DeleteEnabledGmbCustomerFeeds(user);
+
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
 
       RunExample(delegate() {
@@ -128,6 +133,11 @@ namespace Google.Api.Ads.AdWords.Tests.v201607 {
     /// </summary>
     [Test]
     public void TestAddGoogleMyBusinessLocationExtensionVBExample() {
+      // Delete any enabled GMB feeds and their customer feeds, since only one enabled GMB feed
+      // is allowed per account.
+      utils.DeleteEnabledGmbFeeds(user);
+      utils.DeleteEnabledGmbCustomerFeeds(user);
+
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
 
       RunExample(delegate() {

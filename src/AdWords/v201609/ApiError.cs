@@ -25,6 +25,25 @@ namespace Google.Api.Ads.AdWords.v201609 {
   public partial class ApiError {
 
     /// <summary>
+    /// Gets the index of the operation.
+    /// </summary>
+    /// <returns>Index of the operation that caused this error, or -1 if
+    /// the index cannot be determined.</returns>
+    public int GetOperationIndex() {
+      if (!string.IsNullOrEmpty(this.fieldPath)) {
+        string[] parts = this.fieldPath.Split('.');
+
+        if (parts.Length > 0 && parts[0].StartsWith("operations[")) {
+          int index = 0;
+          if (int.TryParse(parts[0].Split(new char[] { '[', ']' })[1], out index)) {
+            return index;
+          }
+        }
+      }
+      return -1;
+    }
+    
+    /// <summary>
     /// Returns a <see cref="System.String" /> that represents this instance.
     /// </summary>
     /// <returns>

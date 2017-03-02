@@ -110,7 +110,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201605
         ' Display the partial failure errors.
         If ((Not result Is Nothing) AndAlso (Not result.partialFailureErrors Is Nothing)) Then
           For Each apiError As ApiError In result.partialFailureErrors
-            Dim operationIndex As Integer = ErrorUtilities.GetOperationIndex(apiError.fieldPath)
+            Dim operationIndex As Integer = apiError.GetOperationIndex()
             If (operationIndex <> -1) Then
               Dim adGroupCriterion As AdGroupCriterion = operations(operationIndex).operand
               Console.WriteLine("Keyword with ad group id '{0}' and text '{1}' " & _

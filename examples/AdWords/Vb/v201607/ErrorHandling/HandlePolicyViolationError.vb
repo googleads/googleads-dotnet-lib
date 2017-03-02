@@ -104,7 +104,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201607
 
           ' Examine each ApiError received from the server.
           For Each apiError As ApiError In innerException.errors
-            Dim index As Integer = ErrorUtilities.GetOperationIndex(apiError.fieldPath)
+            Dim index As Integer = apiError.GetOperationIndex()
             If (index = -1) Then
               ' This API error is not associated with an operand, so we cannot
               ' recover from this error by removing one or more operations.

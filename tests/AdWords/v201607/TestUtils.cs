@@ -19,21 +19,26 @@ using Google.Api.Ads.Common.Util;
 using NUnit.Framework;
 
 using System;
-using System.Threading;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace Google.Api.Ads.AdWords.Tests.v201607 {
 
   /// <summary>
   /// A utility class to assist the testing of v201607 services.
   /// </summary>
-  class TestUtils {
+  internal class TestUtils {
 
     /// <summary>
     /// The polling interval base to be used for exponential backoff.
     /// </summary>
     private const int POLL_INTERVAL_SECONDS_BASE = 30;
+
+    /// <summary>
+    /// The placeholder ID for GMB location extension feeds.
+    /// </summary>
+    private const int PLACEHOLDER_LOCATION = 7;
 
     /// <summary>
     /// The maximum number of retries.
@@ -57,10 +62,80 @@ namespace Google.Api.Ads.AdWords.Tests.v201607 {
       budgetOperation.@operator = Operator.ADD;
       budgetOperation.operand = budget;
 
-      BudgetReturnValue budgetRetval = budgetService.mutate(new BudgetOperation[] { budgetOperation });
+      BudgetReturnValue budgetRetval = budgetService.mutate(
+          new BudgetOperation[] { budgetOperation });
       return budgetRetval.value[0].budgetId;
     }
 
+    /// <summary>
+    /// Deletes the enabled GMB feeds.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    public void DeleteEnabledGmbFeeds(AdWordsUser user) {
+      FeedService feedService =
+          (FeedService) user.GetService(AdWordsService.v201607.FeedService);
+
+      List<Feed> feedsToDelete = new List<Feed>();
+      string query = "Select Id, SystemFeedGenerationData, FeedStatus where FeedStatus=ENABLED";
+
+      FeedPage page = feedService.query(query);
+
+      for (int i = 0; i < page.entries.Length; i++) {
+        Feed f = page.entries[i];
+        PlacesLocationFeedData systemData = (f.systemFeedGenerationData as PlacesLocationFeedData);
+        if (systemData != null) {
+          feedsToDelete.Add(f);
+        }
+      }
+
+      if (feedsToDelete.Count > 0) {
+        List<FeedOperation> operations = new List<FeedOperation>();
+
+        for (int i = 0; i < feedsToDelete.Count; i++) {
+          FeedOperation operation = new FeedOperation() {
+            @operator = Operator.REMOVE,
+            operand = new Feed() {
+              id = feedsToDelete[i].id
+            }
+          };
+          operations.Add(operation);
+        }
+        feedService.mutate(operations.ToArray());
+      }
+      return;
+    }
+
+    /// <summary>
+    /// Deletes the active GMB customer feeds.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    public void DeleteEnabledGmbCustomerFeeds(AdWordsUser user) {
+      CustomerFeedService customerFeedService = (CustomerFeedService) user.GetService(
+          AdWordsService.v201607.CustomerFeedService);
+
+      string query = "Select FeedId, PlaceholderTypes where PlaceholderTypes CONTAINS_ANY["
+          + PLACEHOLDER_LOCATION + "] AND Status = ENABLED";
+
+      List<CustomerFeedOperation> operations = new List<CustomerFeedOperation>();
+
+      CustomerFeedPage page = customerFeedService.query(query);
+
+      for (int i = 0; i < page.entries.Length; i++) {
+        CustomerFeed customerFeed = page.entries[i];
+        CustomerFeedOperation operation = new CustomerFeedOperation() {
+          @operator = Operator.REMOVE,
+          operand = customerFeed
+        };
+        operations.Add(operation);
+      }
+      customerFeedService.mutate(operations.ToArray());
+    }
+
+    /// <summary>
+    /// Creates a label for test purposes.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    /// <returns>ID of the newly created label.</returns>
     public long CreateLabel(AdWordsUser user) {
       LabelService labelService =
           (LabelService) user.GetService(AdWordsService.v201607.LabelService);
@@ -253,34 +328,34 @@ namespace Google.Api.Ads.AdWords.Tests.v201607 {
     }
 
     /// <summary>
-    /// Creates a test textad for running further tests.
+    /// Creates a test expanded text ad for running further tests.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     /// <param name="adGroupId">The adgroup id for which the ad is created.
     /// </param>
     /// <param name="hasAdParam">True, if an ad param placeholder should be
     /// added.</param>
-    /// <returns>The text ad id.</returns>
-    public long CreateTextAd(AdWordsUser user, long adGroupId, bool hasAdParam) {
+    /// <returns>The expanded text ad id.</returns>
+    public long CreateExpandedTextAd(AdWordsUser user, long adGroupId, bool hasAdParam) {
       AdGroupAdService adGroupAdService =
           (AdGroupAdService) user.GetService(AdWordsService.v201607.AdGroupAdService);
       AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
       adGroupAdOperation.@operator = Operator.ADD;
       adGroupAdOperation.operand = new AdGroupAd();
       adGroupAdOperation.operand.adGroupId = adGroupId;
-      TextAd ad = new TextAd();
 
-      ad.headline = "Luxury Cruise to Mars";
-      ad.description1 = "Visit the Red Planet in style.";
+      ExpandedTextAd expandedTextAd = new ExpandedTextAd();
+      expandedTextAd.headlinePart1 = "Luxury Cruise to Mars";
+      expandedTextAd.headlinePart2 = "Best Space Cruise Line";
+      expandedTextAd.description = "Buy your tickets now!";
       if (hasAdParam) {
-        ad.description2 = "Low-gravity fun for {param1:cheap}!";
+        expandedTextAd.description = "Low-gravity fun for {param1:cheap}!";
       } else {
-        ad.description2 = "Low-gravity fun for everyone!";
+        expandedTextAd.description = "Low-gravity fun for everyone!";
       }
-      ad.displayUrl = "example.com";
-      ad.finalUrls = new string[] { "http://www.example.com" };
+      expandedTextAd.finalUrls = new string[] { "http://www.example.com/" };
 
-      adGroupAdOperation.operand.ad = ad;
+      adGroupAdOperation.operand.ad = expandedTextAd;
 
       AdGroupAdReturnValue retVal =
           adGroupAdService.mutate(new AdGroupAdOperation[] { adGroupAdOperation });
@@ -309,7 +384,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201607 {
         operand = draft
       };
 
-      return draftService.mutate(new DraftOperation[] {draftOperation}).value[0];
+      return draftService.mutate(new DraftOperation[] { draftOperation }).value[0];
     }
 
     /// <summary>
@@ -370,7 +445,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201607 {
       if (trial.status == TrialStatus.ACTIVE) {
         return trial.id;
       } else {
-        throw new System.ApplicationException ("Failed to create an active trial for testing.");
+        throw new System.ApplicationException("Failed to create an active trial for testing.");
       }
     }
 

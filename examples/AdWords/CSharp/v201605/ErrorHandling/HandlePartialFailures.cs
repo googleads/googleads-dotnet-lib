@@ -109,7 +109,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201605 {
         // Display the partial failure errors.
         if (result != null && result.partialFailureErrors != null) {
           foreach (ApiError apiError in result.partialFailureErrors) {
-            int operationIndex = ErrorUtilities.GetOperationIndex(apiError.fieldPath);
+            int operationIndex = apiError.GetOperationIndex();
             if (operationIndex != -1) {
               AdGroupCriterion adGroupCriterion = operations[operationIndex].operand;
               Console.WriteLine("Keyword with ad group id '{0}' and text '{1}' "

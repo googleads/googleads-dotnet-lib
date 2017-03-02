@@ -50,7 +50,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201609 {
       labelId = utils.CreateLabel(user);
       adGroupId = utils.CreateAdGroup(user, campaignId);
       criterionId = utils.CreateKeyword(user, adGroupId);
-      adId = utils.CreateTextAd(user, adGroupId, false);
+      adId = utils.CreateExpandedTextAd(user, adGroupId, false);
       draftId = utils.AddDraft(user, campaignId).draftId;
     }
 

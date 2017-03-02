@@ -72,42 +72,36 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201605
       Dim adParamService As AdParamService = CType(user.GetService( _
           AdWordsService.v201605.AdParamService), AdParamService)
 
-      ' Create the text ad.
-      Dim textAd As New TextAd
-      textAd.finalUrls = New String() {"http://www.example.com"}
-      textAd.displayUrl = "example.com"
-      textAd.headline = " Mars Cruises"
-      textAd.description1 = "Low-gravity fun for {param1:cheap}."
-      textAd.description2 = "Only {param2:a few} seats left!"
+      ' Create the expanded text ad.
+      Dim expandedTextAd As New ExpandedTextAd()
+      expandedTextAd.headlinePart1 = "Mars Cruises"
+      expandedTextAd.headlinePart2 = "Low-gravity fun for {param1:cheap}."
+      expandedTextAd.description = "Only {param2:a few} seats left!"
+      expandedTextAd.finalUrls = New String() {"http://www.example.com"}
 
       Dim adOperand As New AdGroupAd
       adOperand.adGroupId = adGroupId
       adOperand.status = AdGroupAdStatus.ENABLED
-      adOperand.ad = textAd
+      adOperand.ad = expandedTextAd
 
       ' Create the operation.
       Dim adOperation As New AdGroupAdOperation
       adOperation.operand = adOperand
       adOperation.operator = [Operator].ADD
 
-      Try
-        ' Create the text ad.
-        Dim retVal As AdGroupAdReturnValue = adGroupAdService.mutate( _
-            New AdGroupAdOperation() {adOperation})
+      ' Create the expanded text ad.
+      Dim retVal As AdGroupAdReturnValue = adGroupAdService.mutate( _
+          New AdGroupAdOperation() {adOperation})
 
-        ' Display the results.
-        If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) _
-            AndAlso (retVal.value.Length > 0)) Then
-          Console.WriteLine("Text ad with id = ""{0}"" was successfully added.", _
-              retVal.value(0).ad.id)
-        Else
-          Console.WriteLine("No text ads were created.")
-          Return
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to create text ads.", e)
+      ' Display the results.
+      If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) _
+          AndAlso (retVal.value.Length > 0)) Then
+        Console.WriteLine("Expanded text ad with id = ""{0}"" was successfully added.", _
+            retVal.value(0).ad.id)
+      Else
+        Throw New System.ApplicationException("Failed to create expanded text ads.")
         Return
-      End Try
+      End If
 
       ' Create the ad param for price.
       Dim priceParam As New AdParam

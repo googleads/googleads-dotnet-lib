@@ -42,7 +42,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201609 {
     public void Init() {
       campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
       adGroupId = utils.CreateAdGroup(user, campaignId);
-      adId = utils.CreateTextAd(user, adGroupId, false);
+      adId = utils.CreateExpandedTextAd(user, adGroupId, false);
       keywordId = utils.CreateKeyword(user, adGroupId);
     }
 

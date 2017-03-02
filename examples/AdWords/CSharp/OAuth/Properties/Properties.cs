@@ -18,5 +18,5 @@ using System.Reflection;
 [assembly: AssemblyProduct("AdWords API DotNet Client Library")]
 [assembly: AssemblyCopyright("Copyright 2011, Google Inc. All Rights Reserved.")]
 
-[assembly: AssemblyVersion("19.0.1.0")]
-[assembly: AssemblyFileVersion("19.0.1.0")]
+[assembly: AssemblyVersion("19.1.0.0")]
+[assembly: AssemblyFileVersion("19.1.0.0")]

@@ -70,40 +70,33 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
       AdParamService adParamService = (AdParamService) user.GetService(
           AdWordsService.v201607.AdParamService);
 
-      // Create the text ad.
-      TextAd textAd = new TextAd();
-      textAd.finalUrls = new string[] { "http://www.example.com" };
-      textAd.displayUrl = "example.com";
-      textAd.headline = " Mars Cruises";
-      textAd.description1 = "Low-gravity fun for {param1:cheap}.";
-      textAd.description2 = "Only {param2:a few} seats left!";
+      // Create the expanded text ad.
+      ExpandedTextAd expandedTextAd = new ExpandedTextAd();
+      expandedTextAd.headlinePart1 = "Mars Cruises";
+      expandedTextAd.headlinePart2 = "Low-gravity fun for {param1:cheap}.";
+      expandedTextAd.description = "Only {param2:a few} seats left!";
+      expandedTextAd.finalUrls = new string[] { "http://www.example.com" };
 
       AdGroupAd adOperand = new AdGroupAd();
       adOperand.adGroupId = adGroupId;
       adOperand.status = AdGroupAdStatus.ENABLED;
-      adOperand.ad = textAd;
+      adOperand.ad = expandedTextAd;
 
       // Create the operation.
       AdGroupAdOperation adOperation = new AdGroupAdOperation();
       adOperation.operand = adOperand;
       adOperation.@operator = Operator.ADD;
 
-      try {
-        // Create the text ad.
-        AdGroupAdReturnValue retVal = adGroupAdService.mutate(
-            new AdGroupAdOperation[] {adOperation});
+      // Create the text ad.
+      AdGroupAdReturnValue retVal = adGroupAdService.mutate(
+          new AdGroupAdOperation[] {adOperation});
 
-        // Display the results.
-        if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-          Console.WriteLine("Text ad with id ='{0}' was successfully added.",
-              retVal.value[0].ad.id);
-        } else {
-          Console.WriteLine("No text ads were created.");
-          return;
-        }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create text ads. Exception says \"{0}\"", e.Message);
-        return;
+      // Display the results.
+      if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+        Console.WriteLine("Expanded text ad with id ='{0}' was successfully added.",
+            retVal.value[0].ad.id);
+      } else {
+        throw new System.ApplicationException("Failed to create expanded text ads.");
       }
 
       // Create the ad param for price.

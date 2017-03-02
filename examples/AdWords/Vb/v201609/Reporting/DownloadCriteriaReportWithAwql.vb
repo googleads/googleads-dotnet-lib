@@ -65,7 +65,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201609
     Public Sub Run(ByVal user As AdWordsUser, ByVal fileName As String)
       Dim query As String = "SELECT CampaignId, AdGroupId, Id, Criteria, CriteriaType, " & _
           "Impressions, Clicks, Cost FROM CRITERIA_PERFORMANCE_REPORT WHERE Status IN " & _
-          "[ACTIVE, PAUSED] DURING LAST_7_DAYS"
+          "[ENABLED, PAUSED] DURING LAST_7_DAYS"
 
       Dim filePath As String = ExampleUtilities.GetHomeDir() + Path.DirectorySeparatorChar & _
           fileName

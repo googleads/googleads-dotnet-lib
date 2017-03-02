@@ -102,7 +102,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201609 {
       // Set the campaign's assets and ad text ideas. These values will be used to
       // generate ads.
       UniversalAppCampaignSetting universalAppSetting = new UniversalAppCampaignSetting();
-      universalAppSetting.appId = "com.interplanetarycruise.booking";
+      universalAppSetting.appId = "com.labpixies.colordrips";
       universalAppSetting.description1 = "Best Space Cruise Line";
       universalAppSetting.description2 = "Visit all the planets";
       universalAppSetting.description3 = "Trips 7 days a week";

@@ -70,6 +70,10 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="SoapMessages.v201702.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="SoapMessages.v201609.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SoapMessages.v201609.Designer.cs</LastGenOutput>
@@ -87,19 +91,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\UpdateCampaign.v201702.txt" />
     <Content Include="Resources\UpdateCampaign.v201609.txt" />
     <Content Include="Resources\UpdateCampaign.v201607.txt" />
     <Content Include="Resources\UpdateCampaign.v201605.txt" />
     <Content Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
   <ItemGroup>
     <Compile Include="Lib\AdWordsAppConfigTest.cs" />
     <Compile Include="Lib\AdWordsCallListenerTest.cs" />
@@ -109,6 +107,7 @@
     <Compile Include="Util\BatchJob\v201605\BatchJobUtilitiesTest.cs" />
     <Compile Include="Util\BatchJob\v201607\BatchJobUtilitiesTest.cs" />
     <Compile Include="Util\BatchJob\v201609\BatchJobUtilitiesTest.cs" />
+    <Compile Include="Util\BatchJob\v201702\BatchJobUtilitiesTest.cs" />
     <Compile Include="Util\Shopping\v201605\ProductDimensionEqualityComparerTest.cs" />
     <Compile Include="Util\Shopping\v201605\ProductDimensionsTest.cs" />
     <Compile Include="Util\Shopping\v201605\ProductPartitionNodeTest.cs" />
@@ -124,6 +123,11 @@
     <Compile Include="Util\Shopping\v201609\ProductPartitionNodeTest.cs" />
     <Compile Include="Util\Shopping\v201609\ProductPartitionTreeIntegrationTests.cs" />
     <Compile Include="Util\Shopping\v201609\ProductPartitionTreeTest.cs" />
+    <Compile Include="Util\Shopping\v201702\ProductDimensionEqualityComparerTest.cs" />
+    <Compile Include="Util\Shopping\v201702\ProductDimensionsTest.cs" />
+    <Compile Include="Util\Shopping\v201702\ProductPartitionNodeTest.cs" />
+    <Compile Include="Util\Shopping\v201702\ProductPartitionTreeIntegrationTests.cs" />
+    <Compile Include="Util\Shopping\v201702\ProductPartitionTreeTest.cs" />
     <Compile Include="Util\v201605\MapUtilitiesTest.cs" />
     <Compile Include="Util\v201607\MapUtilitiesTest.cs" />
     <Compile Include="Util\v201609\MapUtilitiesTest.cs" />
@@ -181,6 +185,24 @@
     <Compile Include="v201609\TestUtils.cs" />
     <Compile Include="v201609\VersionedExampleTestsBase.cs" />
     <Compile Include="v201609\VersionedMockedExampleTestsBase.cs" />
+    <Compile Include="v201702\AccountManagementTest.cs" />
+    <Compile Include="v201702\AdvancedOperationsTest.cs" />
+    <Compile Include="v201702\BasicOperationsTest.cs" />
+    <Compile Include="v201702\CampaignManagementTest.cs" />
+    <Compile Include="v201702\ErrorHandlingTest.cs" />
+    <Compile Include="v201702\ExtensionsTest.cs" />
+    <Compile Include="v201702\MigrationTest.cs" />
+    <Compile Include="v201702\MiscellaneousTest.cs" />
+    <Compile Include="v201702\MockTests.cs" />
+    <Compile Include="v201702\OptimizationTest.cs" />
+    <Compile Include="v201702\RemarketingTest.cs" />
+    <Compile Include="v201702\ReportingTest.cs" />
+    <Compile Include="v201702\ShoppingCampaignsTest.cs" />
+    <Compile Include="v201702\ShoppingTestUtils.cs" />
+    <Compile Include="v201702\TargetingTest.cs" />
+    <Compile Include="v201702\TestUtils.cs" />
+    <Compile Include="v201702\VersionedExampleTestsBase.cs" />
+    <Compile Include="v201702\VersionedMockedExampleTestsBase.cs" />
     <Compile Include="AdWordsRequestInterceptor.cs" />
     <Compile Include="EnumIntegrityTests.cs" />
     <Compile Include="ExampleTestsBase.cs" />
@@ -191,5 +213,6 @@
     <Compile Include="SoapMessages.v201605.Designer.cs" />
     <Compile Include="SoapMessages.v201607.Designer.cs" />
     <Compile Include="SoapMessages.v201609.Designer.cs" />
+    <Compile Include="SoapMessages.v201702.Designer.cs" />
   </ItemGroup>
 </Project>

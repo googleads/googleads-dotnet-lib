@@ -31,6 +31,8 @@ namespace Google.Api.Ads.AdWords.Tests.v201609 {
   /// </summary>
   class ReportingTest : VersionedExampleTestsBase {
     string outputFolderPath;
+    string outputFileName;
+
     ReportDefinitionReportType reportType;
 
     /// <summary>
@@ -39,6 +41,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201609 {
     [SetUp]
     public void Init() {
       outputFolderPath = Path.GetTempPath();
+      outputFileName = utils.GetTimeStampAlpha() + ".gz";
       reportType = ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT;
     }
 
@@ -48,7 +51,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201609 {
     [Test]
     public void TestDownloadCriteriaReportVBExample() {
       RunExample(delegate() {
-        new VBExamples.DownloadCriteriaReport().Run(user, outputFolderPath);
+        new VBExamples.DownloadCriteriaReport().Run(user, outputFileName);
       });
     }
 
@@ -58,7 +61,27 @@ namespace Google.Api.Ads.AdWords.Tests.v201609 {
     [Test]
     public void TestDownloadCriteriaReportCSharpExample() {
       RunExample(delegate() {
-        new CSharpExamples.DownloadCriteriaReport().Run(user, outputFolderPath);
+        new CSharpExamples.DownloadCriteriaReport().Run(user, outputFileName);
+      });
+    }
+
+    /// <summary>
+    /// Tests the DownloadCriteriaReportWithAwql VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestDownloadCriteriaReportWithAwqlVBExample() {
+      RunExample(delegate() {
+        new VBExamples.DownloadCriteriaReportWithAwql().Run(user, outputFileName);
+      });
+    }
+
+    /// <summary>
+    /// Tests the DownloadCriteriaReportWithAwql C# code example.
+    /// </summary>
+    [Test]
+    public void TestDownloadCriteriaReportWithAwqlCSharpExample() {
+      RunExample(delegate() {
+        new CSharpExamples.DownloadCriteriaReportWithAwql().Run(user, outputFileName);
       });
     }
 
