@@ -3,6 +3,7 @@ var v201702_2_dfp_api_8cs =
     [ "AudienceSegmentService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_audience_segment_service.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_audience_segment_service" ],
     [ "ApiException", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_api_exception.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_api_exception" ],
     [ "ApiError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_api_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_api_error" ],
+    [ "FieldPathElement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_field_path_element.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_field_path_element" ],
     [ "UpdateResult", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_update_result.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_update_result" ],
     [ "AudienceSegmentAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_audience_segment_action.html", null ],
     [ "RejectAudienceSegments", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_reject_audience_segments.html", null ],

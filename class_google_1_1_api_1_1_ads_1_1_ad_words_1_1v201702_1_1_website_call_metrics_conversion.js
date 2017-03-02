@@ -1,0 +1,9 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_website_call_metrics_conversion =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_website_call_metrics_conversion_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_website_call_metrics_conversion_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_website_call_metrics_conversion_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_website_call_metrics_conversion_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_website_call_metrics_conversion_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_website_call_metrics_conversion_1_1_selectable_fields" ],
+    [ "phoneCallDuration", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_website_call_metrics_conversion.html#a1df9aa2dc78ffbd6e5b6420a8eed4d47", null ],
+    [ "phoneCallDurationSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_website_call_metrics_conversion.html#a7d9c23574eeb54b343bbd03d4c58b3c2", null ],
+    [ "snippet", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_website_call_metrics_conversion.html#a0cefb474e60c2ffa8c52fb0e025cd2b6", null ]
+];

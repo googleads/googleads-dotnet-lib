@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_date_specific_rule_user_list_1_1_fields =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_date_specific_rule_user_list_1_1_fields.html#ab8a3adce42401a709bf806100f68ad9e", null ]
+];

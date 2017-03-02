@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_add_universal_app_campaign =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_add_universal_app_campaign.html#a8c74db23ebd57c4dd787b0c31d5ac19f", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_add_universal_app_campaign.html#a6052699694eed7ef7f4c653409c4ef3d", null ]
+];

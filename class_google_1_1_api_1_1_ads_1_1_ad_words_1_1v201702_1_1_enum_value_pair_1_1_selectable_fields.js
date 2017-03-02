@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_enum_value_pair_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_enum_value_pair_1_1_selectable_fields.html#a95beed3d6b58d47f89eedd8d6099fb04", null ]
+];

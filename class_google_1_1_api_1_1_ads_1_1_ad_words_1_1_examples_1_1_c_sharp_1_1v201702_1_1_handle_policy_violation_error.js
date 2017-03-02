@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_handle_policy_violation_error =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_handle_policy_violation_error.html#aa20d500b3697c746c6c83fe19dfa528f", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_handle_policy_violation_error.html#a837c6587a8929547f788b97a2d138def", null ]
+];

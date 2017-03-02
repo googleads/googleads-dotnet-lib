@@ -1,0 +1,9 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_conversion_optimizer_eligibility =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_conversion_optimizer_eligibility_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_conversion_optimizer_eligibility_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_conversion_optimizer_eligibility_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_conversion_optimizer_eligibility_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_conversion_optimizer_eligibility_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_conversion_optimizer_eligibility_1_1_selectable_fields" ],
+    [ "eligible", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_conversion_optimizer_eligibility.html#aa747cc5963b45c44aa1efce337fe076a", null ],
+    [ "eligibleSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_conversion_optimizer_eligibility.html#a4a648b6dd2bfbb35591ed08f6858ac1d", null ],
+    [ "rejectionReasons", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_conversion_optimizer_eligibility.html#aa213f29b71ce123b265c0b16771e6f99", null ]
+];

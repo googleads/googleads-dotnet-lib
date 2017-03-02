@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_disapproval_reason_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_disapproval_reason_1_1_selectable_fields.html#acd61e2e2709614a66bc2d94a87a290e4", null ]
+];

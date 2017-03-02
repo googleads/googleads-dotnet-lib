@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_add_shopping_campaign_for_showcase_ads =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_add_shopping_campaign_for_showcase_ads.html#aa11f6bf2af3fdeb9c8beee57b387ae4b", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_add_shopping_campaign_for_showcase_ads.html#a8027848a2d9961aa980c8e0923c47018", null ]
+];
