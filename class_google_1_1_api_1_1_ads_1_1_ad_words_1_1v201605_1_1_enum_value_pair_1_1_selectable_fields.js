@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_enum_value_pair_1_1_selectable_fields =
-[
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_enum_value_pair_1_1_selectable_fields.html#a30a6bc87ad95bb10b278d0f0dcac0dc3", null ]
-];

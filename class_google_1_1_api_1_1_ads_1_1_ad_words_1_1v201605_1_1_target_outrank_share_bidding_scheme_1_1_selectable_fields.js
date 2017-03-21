@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_target_outrank_share_bidding_scheme_1_1_selectable_fields =
-[
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_target_outrank_share_bidding_scheme_1_1_selectable_fields.html#ae96a91359836b950f2da9bb1fa198f21", null ]
-];

@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_new_entity_creation_error_1_1_selectable_fields =
-[
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_new_entity_creation_error_1_1_selectable_fields.html#a73feefda27446e9fa89e62e81c17cc6a", null ]
-];

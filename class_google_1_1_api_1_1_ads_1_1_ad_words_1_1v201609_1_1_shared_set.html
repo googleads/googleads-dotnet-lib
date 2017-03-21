@@ -135,8 +135,7 @@ Properties</h2></td></tr>
 <tr class="memitem:ac2ebebdd1ca1e27efa2e0e08ef6d3272"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_shared_set.html#ac2ebebdd1ca1e27efa2e0e08ef6d3272">sharedSetIdSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ac2ebebdd1ca1e27efa2e0e08ef6d3272"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e920341f04c68ca170e21954111fbfa"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_shared_set.html#a4e920341f04c68ca170e21954111fbfa">name</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a4e920341f04c68ca170e21954111fbfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared Sets must have names that are case-insensitive unique across all other shared sets in the account (active and deleted). <span class="constraint
-Selectable">This field can be selected using the value "Name".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint Required">This field is required and should not be </span> <a href="#a4e920341f04c68ca170e21954111fbfa">More...</a><br/></td></tr>
+<tr class="memdesc:a4e920341f04c68ca170e21954111fbfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared Sets must have names that are unique among active shared sets of the same type. <span class="constraint Selectable">This field can be selected using the value "Name".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint Required">This field is required and should not be </span> <a href="#a4e920341f04c68ca170e21954111fbfa">More...</a><br/></td></tr>
 <tr class="separator:a4e920341f04c68ca170e21954111fbfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24383cb5f21b3576f749b870dc89ba37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609.html#aa052b66e6bd97b2143f90a0400053788">SharedSetType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_shared_set.html#a24383cb5f21b3576f749b870dc89ba37">type</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a24383cb5f21b3576f749b870dc89ba37"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="constraint Selectable">This field can be selected using the value "Type".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE and SET.</span> <span class="constraint Required">This field is required and should not be </span> <a href="#a24383cb5f21b3576f749b870dc89ba37">More...</a><br/></td></tr>
@@ -229,9 +228,9 @@ Selectable">This field can be selected using the value "MemberCount".</span> <sp
 </table>
 </div><div class="memdoc">
 
-<p>Shared Sets must have names that are case-insensitive unique across all other shared sets in the account (active and deleted). <span class="constraint
-Selectable">This field can be selected using the value "Name".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint Required">This field is required and should not be </span></p>
-<p><code>null</code> when it is contained within <a href="Operator">Operator</a>s : ADD. <span class="constraint StringLength">The length of this string should be between 1 and 255, inclusive, in UTF-8 bytes, (trimmed).</span> </p>
+<p>Shared Sets must have names that are unique among active shared sets of the same type. <span class="constraint Selectable">This field can be selected using the value "Name".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint Required">This field is required and should not be </span></p>
+<p><code>null</code> when it is contained within <a href="Operator">Operator</a>s : ADD. <span class="constraint
+StringLength">The length of this string should be between 1 and 255, inclusive, in UTF-8 bytes, (trimmed).</span> </p>
 
 </div>
 </div>
@@ -422,7 +421,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.5ulTs6gGZA/dist/github/src/AdWords/v201609/<a class="el" href="v201609_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.9oF88IYNxZ/dist/github/src/AdWords/v201609/<a class="el" href="v201609_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -430,7 +429,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609.html">v201609</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_shared_set.html">SharedSet</a></li>
-    <li class="footer">Generated on Thu Mar 2 2017 13:47:22 for Ads API .NET library by
+    <li class="footer">Generated on Tue Mar 21 2017 12:56:16 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

@@ -1,8 +1,5 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_report_definition_field =
 [
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_report_definition_field_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_report_definition_field_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_report_definition_field_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_report_definition_field_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_report_definition_field_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_report_definition_field_1_1_selectable_fields" ],
     [ "canFilter", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_report_definition_field.html#a87a908b799539e59b7d7310ecea9625f", null ],
     [ "canFilterSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_report_definition_field.html#a9caf5905a54287af42af47287ebe4da0", null ],
     [ "canSelect", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_report_definition_field.html#a6c14f4248728aa482bbab51442d9d9ec", null ],

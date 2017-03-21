@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_target_spend_bidding_scheme =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_target_spend_bidding_scheme_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_target_spend_bidding_scheme_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_target_spend_bidding_scheme_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_target_spend_bidding_scheme_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_target_spend_bidding_scheme_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_target_spend_bidding_scheme_1_1_selectable_fields" ],
-    [ "bidCeiling", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_target_spend_bidding_scheme.html#aec4a4c07ba76857c449ba6c65c114cad", null ],
-    [ "spendTarget", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201605_1_1_target_spend_bidding_scheme.html#a44cc004d528b3d45feb1ecb8da620323", null ]
-];

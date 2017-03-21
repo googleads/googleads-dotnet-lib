@@ -130,7 +130,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a6f379de84e91fbd6f5c714f567ad69fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_quality_info.html#a6f379de84e91fbd6f5c714f567ad69fc">qualityScore</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6f379de84e91fbd6f5c714f567ad69fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The keyword quality score ranges from 1 (lowest) to 10 (highest). For v201509 and later, this field may be returned as NULL if <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a> does not have enough information to determine an appropriate quality score value. <span class="constraint Selectable">This field can be selected using the value "QualityScore".</span><span class="constraint Filterable">This field can be filtered on.</span>  <a href="#a6f379de84e91fbd6f5c714f567ad69fc">More...</a><br/></td></tr>
+<tr class="memdesc:a6f379de84e91fbd6f5c714f567ad69fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The keyword quality score ranges from 1 (lowest) to 10 (highest).  <a href="#a6f379de84e91fbd6f5c714f567ad69fc">More...</a><br/></td></tr>
 <tr class="separator:a6f379de84e91fbd6f5c714f567ad69fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fd8fc91835e81e05f5b3edcd29cd345"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_quality_info.html#a1fd8fc91835e81e05f5b3edcd29cd345">qualityScoreSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a1fd8fc91835e81e05f5b3edcd29cd345"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,7 +156,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The keyword quality score ranges from 1 (lowest) to 10 (highest). For v201509 and later, this field may be returned as NULL if <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a> does not have enough information to determine an appropriate quality score value. <span class="constraint Selectable">This field can be selected using the value "QualityScore".</span><span class="constraint Filterable">This field can be filtered on.</span> </p>
+<p>The keyword quality score ranges from 1 (lowest) to 10 (highest). </p>
+<p>Beginning with <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607.html">v201607</a>, this field will return null (designated by "--") when there aren't enough impressions or clicks to determine an appropriate quality score value. <span class="constraint Selectable">This field can be selected using the value "QualityScore".</span><span class="constraint Filterable">This field can be filtered on.</span></p>
 
 </div>
 </div>
@@ -179,12 +180,12 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p></p>
-<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_quality_info.html#a6f379de84e91fbd6f5c714f567ad69fc" title="The keyword quality score ranges from 1 (lowest) to 10 (highest). For v201509 and later...">qualityScore</a>, <code>false</code> otherwise. </p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_quality_info.html#a6f379de84e91fbd6f5c714f567ad69fc" title="The keyword quality score ranges from 1 (lowest) to 10 (highest). ">qualityScore</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.5ulTs6gGZA/dist/github/src/AdWords/v201607/<a class="el" href="v201607_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.9oF88IYNxZ/dist/github/src/AdWords/v201607/<a class="el" href="v201607_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -192,7 +193,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607.html">v201607</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_quality_info.html">QualityInfo</a></li>
-    <li class="footer">Generated on Thu Mar 2 2017 13:40:18 for Ads API .NET library by
+    <li class="footer">Generated on Tue Mar 21 2017 12:51:48 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

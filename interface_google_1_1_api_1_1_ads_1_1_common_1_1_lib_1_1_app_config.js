@@ -7,8 +7,6 @@ var interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config =
     [ "IncludeUtilitiesInUserAgent", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a5dff6391b6faf8faca9713933c0f8861", null ],
     [ "MaskCredentials", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a71bf474e36154a13b196288dbebc046b", null ],
     [ "OAuth2AccessToken", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a310bf8825fa96800ebca46106a097dab", null ],
-    [ "OAuth2CertificatePassword", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#ab17b8bfc918e1510b7e89d3219fad050", null ],
-    [ "OAuth2CertificatePath", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#ad4a0709f439718513f46dfad6b2202df", null ],
     [ "OAuth2ClientId", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a88683447f712c8fa5682096ca7a622d4", null ],
     [ "OAuth2ClientSecret", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a0a6e5cd0ec8aedb1ae99f8f466ecf886", null ],
     [ "OAuth2Mode", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#ab84288b6efe6a601c4f29fb3a23dda0d", null ],

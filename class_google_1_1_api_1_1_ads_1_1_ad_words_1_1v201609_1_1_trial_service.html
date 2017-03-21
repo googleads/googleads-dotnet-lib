@@ -133,13 +133,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6ba575cb45e637e07125944f77d2b986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_service.html" title="TrialService manages the life cycle of campaign trials. It is used to create new trials from drafts...">TrialService</a> class.  <a href="#a6ba575cb45e637e07125944f77d2b986">More...</a><br/></td></tr>
 <tr class="separator:a6ba575cb45e637e07125944f77d2b986"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9109cb69379f522938c9640d3b1c8fd1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_page.html">TrialPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_service.html#a9109cb69379f522938c9640d3b1c8fd1">get</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_selector.html">Selector</a> selector)</td></tr>
-<tr class="memdesc:a9109cb69379f522938c9640d3b1c8fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_page.html" title="Contains a filtered and paged subset of campaign trials as returned by TrialService::get(Selector). ">TrialPage</a> containing a list of <a href="Trial">Trial</a> objects matching the selector.  <a href="#a9109cb69379f522938c9640d3b1c8fd1">More...</a><br/></td></tr>
+<tr class="memdesc:a9109cb69379f522938c9640d3b1c8fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_page.html" title="Contains a filtered and paged subset of campaign trials as returned by TrialService::get. ">TrialPage</a> containing a list of <a href="Trial">Trial</a> objects matching the selector.  <a href="#a9109cb69379f522938c9640d3b1c8fd1">More...</a><br/></td></tr>
 <tr class="separator:a9109cb69379f522938c9640d3b1c8fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05fb628aaeb2771c3007961d2ee992e8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_return_value.html">TrialReturnValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_service.html#a05fb628aaeb2771c3007961d2ee992e8">mutate</a> ([System.Xml.Serialization.XmlElementAttribute(&quot;operations&quot;)] TrialOperation[] operations)</td></tr>
 <tr class="memdesc:a05fb628aaeb2771c3007961d2ee992e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new trials, updates properties and controls the life cycle of existing trials. See <a href="TrialService">TrialService</a> for details on the trial life cycle.  <a href="#a05fb628aaeb2771c3007961d2ee992e8">More...</a><br/></td></tr>
 <tr class="separator:a05fb628aaeb2771c3007961d2ee992e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48ba391ef05ede4b14c8d566ee2bd62c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_page.html">TrialPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_service.html#a48ba391ef05ede4b14c8d566ee2bd62c">query</a> ([System.Xml.Serialization.XmlElementAttribute(&quot;query&quot;)] string query1)</td></tr>
-<tr class="memdesc:a48ba391ef05ede4b14c8d566ee2bd62c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_page.html" title="Contains a filtered and paged subset of campaign trials as returned by TrialService::get(Selector). ">TrialPage</a> containing a list of <a href="Trial">Trial</a> objects matching the query.  <a href="#a48ba391ef05ede4b14c8d566ee2bd62c">More...</a><br/></td></tr>
+<tr class="memdesc:a48ba391ef05ede4b14c8d566ee2bd62c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_page.html" title="Contains a filtered and paged subset of campaign trials as returned by TrialService::get. ">TrialPage</a> containing a list of <a href="Trial">Trial</a> objects matching the query.  <a href="#a48ba391ef05ede4b14c8d566ee2bd62c">More...</a><br/></td></tr>
 <tr class="separator:a48ba391ef05ede4b14c8d566ee2bd62c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -352,7 +352,7 @@ The base campaign's budget cannot be shared with any other campaign. <a class="e
 </table>
 </div><div class="memdoc">
 
-<p>Loads a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_page.html" title="Contains a filtered and paged subset of campaign trials as returned by TrialService::get(Selector). ">TrialPage</a> containing a list of <a href="Trial">Trial</a> objects matching the selector. </p>
+<p>Loads a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_page.html" title="Contains a filtered and paged subset of campaign trials as returned by TrialService::get. ">TrialPage</a> containing a list of <a href="Trial">Trial</a> objects matching the selector. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">selector</td><td>defines which subset of all available trials to return, the sort order, and which fields to include</td></tr>
@@ -428,7 +428,7 @@ The base campaign's budget cannot be shared with any other campaign. <a class="e
 </table>
 </div><div class="memdoc">
 
-<p>Loads a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_page.html" title="Contains a filtered and paged subset of campaign trials as returned by TrialService::get(Selector). ">TrialPage</a> containing a list of <a href="Trial">Trial</a> objects matching the query. </p>
+<p>Loads a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_page.html" title="Contains a filtered and paged subset of campaign trials as returned by TrialService::get. ">TrialPage</a> containing a list of <a href="Trial">Trial</a> objects matching the query. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">query1</td><td>defines which subset of all available trials to return, the sort order, and which fields to include</td></tr>
@@ -493,7 +493,7 @@ The base campaign's budget cannot be shared with any other campaign. <a class="e
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.5ulTs6gGZA/dist/github/src/AdWords/v201609/<a class="el" href="v201609_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.9oF88IYNxZ/dist/github/src/AdWords/v201609/<a class="el" href="v201609_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -501,7 +501,7 @@ The base campaign's budget cannot be shared with any other campaign. <a class="e
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609.html">v201609</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_service.html">TrialService</a></li>
-    <li class="footer">Generated on Thu Mar 2 2017 13:47:40 for Ads API .NET library by
+    <li class="footer">Generated on Tue Mar 21 2017 12:56:26 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

@@ -145,7 +145,7 @@ Required">This field is required and should not be </span> <a href="#a6a1d3981d2
 Selectable">This field can be selected using the value "ProgressStats".</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span>  <a href="#a49f9faafb8d389062bf7928338ad8146">More...</a><br/></td></tr>
 <tr class="separator:a49f9faafb8d389062bf7928338ad8146"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7b1dfd5ed6969ca32eb8afb21cf46f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_temporary_url.html">TemporaryUrl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_batch_job.html#af7b1dfd5ed6969ca32eb8afb21cf46f1">uploadUrl</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af7b1dfd5ed6969ca32eb8afb21cf46f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The URL to use to upload operations for this job. The URL is unique to this job, and will expire 1 week after the job is created. This field is only returned when calling <a href="BatchJobService#mutate">BatchJobService::mutate</a> with an  <a href="#af7b1dfd5ed6969ca32eb8afb21cf46f1">More...</a><br/></td></tr>
+<tr class="memdesc:af7b1dfd5ed6969ca32eb8afb21cf46f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The URL to use in upload operations for this job. The URL is unique to this job and will expire one week after the job was created. This field is only returned when calling <a href="BatchJobService#mutate">BatchJobService::mutate</a> with an  <a href="#af7b1dfd5ed6969ca32eb8afb21cf46f1">More...</a><br/></td></tr>
 <tr class="separator:af7b1dfd5ed6969ca32eb8afb21cf46f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9bb1a5f6ec69be1aa95f65f6020d020"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_temporary_url.html">TemporaryUrl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_batch_job.html#ac9bb1a5f6ec69be1aa95f65f6020d020">downloadUrl</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:ac9bb1a5f6ec69be1aa95f65f6020d020"><td class="mdescLeft">&#160;</td><td class="mdescRight">The URL to use to download results for this job. Results will be available for 30 days after job completion. This field is only returned once <a href="#status">#status</a> is either  <a href="#ac9bb1a5f6ec69be1aa95f65f6020d020">More...</a><br/></td></tr>
@@ -392,13 +392,14 @@ Selectable">This field can be selected using the value "ProgressStats".</span> <
 </table>
 </div><div class="memdoc">
 
-<p>The URL to use to upload operations for this job. The URL is unique to this job, and will expire 1 week after the job is created. This field is only returned when calling <a href="BatchJobService#mutate">BatchJobService::mutate</a> with an </p>
-<p><code></code> operation. To upload a file, for versions equal to or older than V201509, make a PUT request to the uploadUrl with the Content-Type header equal to "application/xml". The body of the request should contain the operations of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_batch_job.html" title="Represents a large mutation job. ">BatchJob</a> in XML format. For versions newer than V201509, make a POST request to the uploadUrl and retrieve the "Location" header from the response as the url to upload operations. For the set of operations that <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_batch_job_service.html" title="Use the ">BatchJobService</a> supports, see <a href="https://adwords.google.com/api/adwords/cm/xsd/v201509/BatchJobOps.xsd">https://adwords.google.com/api/adwords/cm/xsd/v201509/BatchJobOps.xsd</a>. For more information about how to upload files, see <a href="https://cloud.google.com/storage/docs/json_api/v1/how-tos/upload">https://cloud.google.com/storage/docs/json_api/v1/how-tos/upload</a>. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span> </p>
+<p>The URL to use in upload operations for this job. The URL is unique to this job and will expire one week after the job was created. This field is only returned when calling <a href="BatchJobService#mutate">BatchJobService::mutate</a> with an </p>
+<p><code></code> operation. </p>
+<p>To upload a file, make a POST request to <code>uploadUrl</code> and retrieve the "Location" header from the response as the URL to upload operations. For the set of supported operations, look up <code></code>. For more information about how to upload files, see <a href="https://cloud.google.com/storage/docs/json_api/v1/how-tos/upload">https://cloud.google.com/storage/docs/json_api/v1/how-tos/upload</a>. <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API.</span></p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.5ulTs6gGZA/dist/github/src/AdWords/v201607/<a class="el" href="v201607_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.9oF88IYNxZ/dist/github/src/AdWords/v201607/<a class="el" href="v201607_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -406,7 +407,7 @@ Selectable">This field can be selected using the value "ProgressStats".</span> <
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607.html">v201607</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_batch_job.html">BatchJob</a></li>
-    <li class="footer">Generated on Thu Mar 2 2017 13:42:05 for Ads API .NET library by
+    <li class="footer">Generated on Tue Mar 21 2017 12:52:59 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

@@ -1,0 +1,28 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a =
+[
+    [ "CampaignStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a13c5f20274958df03eab806d0c18368c", [
+      [ "ENABLED", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a13c5f20274958df03eab806d0c18368cac8cf6eea8f096ed51160b484d97c5bbd", null ],
+      [ "PAUSED", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a13c5f20274958df03eab806d0c18368ca99b2439e63f73ad515f7ab2447a80673", null ],
+      [ "REMOVED", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a13c5f20274958df03eab806d0c18368cab3461745d64b12346503b2980e436db5", null ],
+      [ "UNKNOWN", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a13c5f20274958df03eab806d0c18368ca696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "KeywordMatchType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a07605e2953fe4e3fbbe8d1e91598c8f4", [
+      [ "BROAD", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a07605e2953fe4e3fbbe8d1e91598c8f4a8620a3e751383e2564072eef8d2957b2", null ],
+      [ "EXACT", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a07605e2953fe4e3fbbe8d1e91598c8f4ac41e056424136b6e8c4e23dd6326efa1", null ],
+      [ "PHRASE", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a07605e2953fe4e3fbbe8d1e91598c8f4a326989110ddd70abcc96d1e4bf40afc9", null ]
+    ] ],
+    [ "accountCurrencyCode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a5cf39ac79e7cb789a6c2ce57f553115f", null ],
+    [ "accountDescriptiveName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#ac54159d0c0f196c13a8f1b4074718e72", null ],
+    [ "accountTimeZone", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a0b613d717bd52706391761f0a829b616", null ],
+    [ "baseCampaignId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a989dbca5855c635b34cab364c91df8b4", null ],
+    [ "campaignId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a70fae6d2a7073ce997e0d17440e22027", null ],
+    [ "campaignName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a6449302bcbdb115b6a3613afc432d14d", null ],
+    [ "campaignStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#aff41df2e7248eb7d9f8ca41f1f464682", null ],
+    [ "criteria", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a5480e1e3affaaad65d950619939228dc", null ],
+    [ "customerDescriptiveName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a0d2ac179b2db08e1c339705e54baccb4", null ],
+    [ "externalCustomerId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a486ff848b7b7dcbf1638dd983e37e57f", null ],
+    [ "id", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a0bac526c1b7bf5c50bcbf7c4be8f9c07", null ],
+    [ "isNegative", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a33d5ba8932517dd38a07f6864854f5b7", null ],
+    [ "keywordMatchType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#ac125753cd8364223bafecb7c05869f11", null ],
+    [ "primaryCompanyName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_campaign_negative_b137f0bb0b431c999e4c11b1040c997a.html#a1b7a0e313c848e2dfed4515e013bf6ec", null ]
+];
