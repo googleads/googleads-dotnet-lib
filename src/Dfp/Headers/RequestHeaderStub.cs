@@ -42,10 +42,5 @@ namespace Google.Api.Ads.Dfp.Headers {
     /// Application name.
     /// </summary>
     public string applicationName;
-
-    /// <summary>
-    /// The authentication field.
-    /// </summary>
-    public Authentication authentication;
   }
 }

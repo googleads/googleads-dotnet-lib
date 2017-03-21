@@ -37,9 +37,11 @@ namespace Google.Api.Ads.Common.Tests {
       foreach (string propertyName in propertyNames) {
         PropertyInfo propInfo = targetObject.GetType().GetProperty(propertyName);
         object oldValue = propInfo.GetValue(targetObject, null);
-        propInfo.SetValue(targetObject, null, null);
-        Assert.Throws<ArgumentNullException>(testDelegate);
-        propInfo.SetValue(targetObject, oldValue, null);
+        if (propInfo.CanWrite) {
+          propInfo.SetValue(targetObject, null, null);
+          Assert.Throws<ArgumentNullException>(testDelegate);
+          propInfo.SetValue(targetObject, oldValue, null);
+        }
       }
     }
   }

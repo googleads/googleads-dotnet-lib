@@ -1,3 +1,28 @@
+20.0.0
+=======
+AdWords:
+  - Addressed https://github.com/googleads/googleads-dotnet-lib/issues/39. Added
+  parser for reading XML streams to strongly typed report row objects. Added
+  predefined report row objects for all reports under Report Definition Service.
+  - Removed support for v201605.
+  - Updated the AddSitelinksUsingFeeds to add Line2 and Line3 attributes for the
+  sitelinks.
+
+DFP:
+  - Removed unused SOAP authentication header classes. OAuth authentication
+  tokens are only recognized in HTTP headers.
+
+Common:
+  - Removed support for OAuth2 service account flow using .p12 file. As part of
+   this change,
+      - `OAuth2JwtCertificatePath`, `OAuth2JwtCertificatePassword` settings were
+        removed from `App.config`, `AppConfig` interface and classes that
+        implement this interface.
+      - `OAuth2PrivateKey` and `OAuth2ServiceAccountEmail` settings were made
+        readonly in `AppConfig` class and won't be read from `App.config`. These
+        settings will be read from the file pointed to by `OAuth2SecretsJsonPath`
+        setting.
+
 19.1.0
 =======
 AdWords:

@@ -36,18 +36,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Headers\Authentication.cs" />
     <Compile Include="Headers\ResponseHeaderStub.cs" />
     <Compile Include="Headers\DfpSoapHeader.cs" />
     <Compile Include="Headers\RequestHeaderStub.cs" />
-    <Compile Include="Headers\OAuth.cs" />
     <Compile Include="Lib\DfpAuthorizationMethod.cs" />
     <Compile Include="Util\v201702\DateTimeUtilities.cs" />
     <Compile Include="Util\v201702\PqlUtilities.cs" />

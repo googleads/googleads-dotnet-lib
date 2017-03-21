@@ -12,22 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using NUnit.Framework;
-using Google.Api.Ads.Common.Lib;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
 using Google.Api.Ads.Common.Tests.Mocks;
-using System.Collections;
+
+using NUnit.Framework;
+
+using System.Collections.Generic;
 using System.Net;
 
 namespace Google.Api.Ads.Common.Tests.Lib {
+
   /// <summary>
   /// Coverage tests for AppConfigBase class.
   /// </summary>
   public class AppConfigBaseTests {
+
     /// <summary>
     /// The dictionary to hold the test data.
     /// </summary>
@@ -52,17 +50,12 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       dictSettings.Add("OAuth2ClientSecret", "OAuth2ClientSecret");
       dictSettings.Add("OAuth2ServiceAccountEmail", "OAuth2ServiceAccountEmail");
       dictSettings.Add("OAuth2PrnEmail", "OAuth2PrnEmail");
-      dictSettings.Add("OAuth2JwtCertificatePath", "OAuth2JwtCertificatePath");
-      dictSettings.Add("OAuth2JwtCertificatePassword", "OAuth2JwtCertificatePassword");
       dictSettings.Add("OAuth2AccessToken", "OAuth2AccessToken");
       dictSettings.Add("OAuth2RefreshToken", "OAuth2RefreshToken");
       dictSettings.Add("OAuth2Scope", "OAuth2Scope");
       dictSettings.Add("OAuth2RedirectUri", "OAuth2RedirectUri");
       dictSettings.Add("OAuth2Mode", "SERVICE_ACCOUNT");
 
-      dictSettings.Add("Email", "Email");
-      dictSettings.Add("Password", "Password");
-      dictSettings.Add("AuthToken", "AuthToken");
       dictSettings.Add("EnableGzipCompression", "false");
     }
 
@@ -85,17 +78,11 @@ namespace Google.Api.Ads.Common.Tests.Lib {
 
       Assert.AreEqual(dictSettings["OAuth2ClientId"].ToString(), config.OAuth2ClientId);
       Assert.AreEqual(dictSettings["OAuth2ClientSecret"].ToString(), config.OAuth2ClientSecret);
-      Assert.AreEqual(dictSettings["OAuth2ServiceAccountEmail"].ToString(),
-          config.OAuth2ServiceAccountEmail);
       Assert.AreEqual(dictSettings["OAuth2PrnEmail"].ToString(), config.OAuth2PrnEmail);
       Assert.AreEqual(dictSettings["OAuth2AccessToken"].ToString(), config.OAuth2AccessToken);
       Assert.AreEqual(dictSettings["OAuth2RefreshToken"].ToString(), config.OAuth2RefreshToken);
       Assert.AreEqual(dictSettings["OAuth2Scope"].ToString(), config.OAuth2Scope);
       Assert.AreEqual(dictSettings["OAuth2RedirectUri"].ToString(), config.OAuth2RedirectUri);
-      Assert.AreEqual(dictSettings["OAuth2JwtCertificatePath"].ToString(),
-          config.OAuth2CertificatePath);
-      Assert.AreEqual(dictSettings["OAuth2JwtCertificatePassword"].ToString(),
-          config.OAuth2CertificatePassword);
       Assert.AreEqual(dictSettings["OAuth2Mode"].ToString(), config.OAuth2Mode.ToString());
 
       Assert.AreEqual(bool.Parse(dictSettings["EnableGzipCompression"].ToString()),

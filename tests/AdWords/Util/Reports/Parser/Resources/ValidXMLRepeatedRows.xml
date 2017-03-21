@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<report>
+  <table>
+    <columns>
+      <column name= "blah" />
+    </columns>
+    <row Atrib1="1" Atrib2="2" Atrib3="3" />
+    <row Atrib1="1" Atrib2="2" Atrib3="3" />
+    <row Atrib1="1" Atrib2="2" Atrib3="3" />
+    <row Atrib1="1" Atrib2="2" Atrib3="3" />
+  </table>
+</report>

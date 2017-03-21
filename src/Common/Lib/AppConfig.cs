@@ -58,14 +58,14 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets or sets the OAuth2 redirect URI.
     /// </summary>
-    /// <remarks>This key is applicable only when using OAuth2 web flow.
+    /// <remarks>This setting is applicable only when using OAuth2 web flow.
     /// </remarks>
     string OAuth2RedirectUri { get; set; }
 
     /// <summary>
     /// OAuth2 refresh token.
     /// </summary>
-    /// <remarks>This key is applicable only when using OAuth2 web / application
+    /// <remarks>This setting is applicable only when using OAuth2 web / application
     /// flow in offline mode.</remarks>
     string OAuth2RefreshToken { get; set; }
 
@@ -77,51 +77,35 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets or sets the OAuth2 prn email.
     /// </summary>
-    /// <remarks>This key is applicable only when using OAuth2 service accounts.
+    /// <remarks>This setting is applicable only when using OAuth2 service accounts.
     /// </remarks>
     string OAuth2PrnEmail { get; set; }
 
     /// <summary>
     /// Gets or sets the OAuth2 secrets JSON file.
     /// </summary>
-    /// <remarks>This key is applicable only when using OAuth2 service accounts.
+    /// <remarks>This setting is applicable only when using OAuth2 service accounts.
     /// </remarks>
     string OAuth2SecretsJsonPath { get; set; }
 
     /// <summary>
-    /// Gets or sets the OAuth2 private key for service account flow.
+    /// Gets the OAuth2 private key for service account flow.
     /// </summary>
     /// <remarks>
-    /// This key is applicable only when using OAuth2 service accounts.
-    /// This key is not read from App.config. It is instead populated by parsing
-    /// the file referred to in <see cref="OAuth2SecretsJsonPath"/> setting.
+    /// This setting is applicable only when using OAuth2 service accounts.
+    /// This setting is read directly from the file referred to in
+    /// <see cref="OAuth2SecretsJsonPath"/> setting.
     /// </remarks>
-    string OAuth2PrivateKey { get; set; }
+    string OAuth2PrivateKey { get; }
 
     /// <summary>
-    /// Gets or sets the OAuth2 service account email.
+    /// Gets the OAuth2 service account email.
     /// </summary>
-    /// <remarks>This key is applicable only when using OAuth2 service accounts.
-    /// This property is usually read directly from the file pointed to by
+    /// <remarks>This setting is applicable only when using OAuth2 service accounts.
+    /// This property is read directly from the file pointed to by
     /// OAuth2SecretsJsonPath property.
     /// </remarks>
-    string OAuth2ServiceAccountEmail { get; set; }
-    
-    /// <summary>
-    /// Gets or sets the OAuth2 certificate path.
-    /// </summary>
-    /// <remarks>This key is applicable only when using OAuth2 service accounts.
-    /// </remarks>
-    [Obsolete("Use OAuth2SecretsJsonPath property instead.")]
-    string OAuth2CertificatePath { get; set; }
-
-    /// <summary>
-    /// Gets or sets the OAuth2 certificate password.
-    /// </summary>
-    /// <remarks>This key is applicable only when using OAuth2 service accounts.
-    /// </remarks>
-    [Obsolete("Use OAuth2SecretsJsonPath property instead.")]
-    string OAuth2CertificatePassword { get; set; }
+    string OAuth2ServiceAccountEmail { get; }
     
     /// <summary>
     /// Gets or sets whether usage information of various client library

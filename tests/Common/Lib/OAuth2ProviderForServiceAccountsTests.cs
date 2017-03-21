@@ -36,35 +36,14 @@ namespace Google.Api.Ads.Common.Tests.Lib {
         (OAuth2RequestInterceptor) OAuth2RequestInterceptor.Instance;
 
     /// <summary>
-    /// The dictionary to hold the test data, when testing
-    /// OAuth2ProviderForServiceAccounts class with certificate and password.
+    /// The dictionary to hold the test data.
     /// </summary>
-    private Dictionary<string, string> dictSettingsNoSecretJson;
+    private Dictionary<string, string> dictSettings;
 
     /// <summary>
-    /// The dictionary to hold the test data, when testing
-    /// OAuth2ProviderForServiceAccounts class with JSON secrets file.
+    /// Signed request for getting access token for a service account.
     /// </summary>
-    private Dictionary<string, string> dictSettingsWithSecretJson;
-
-    /// <summary>
-    /// Signed request for getting access token for a service account when
-    /// using a test certificate and password.
-    /// </summary>
-    private const string SERVICE_ACCOUNT_REQUEST_NO_SECRETS_FILE =
-        "grant_type=urn%3aietf%3aparams%3aoauth%3agrant-type%3ajwt-bearer&assertion=" +
-        "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJURVNUX1NFUlZJQ0VfQUNDT1VOVF" +
-        "9FTUFJTCIsICJzY29wZSI6IlRFU1RfU0NPUEUiLCAiYXVkIjoiaHR0cHM6Ly9hY2NvdW50cy5nb" +
-        "29nbGUuY29tL28vb2F1dGgyL3Rva2VuIiwgImV4cCI6MTM1MzkyODU1MSwgImlhdCI6MTM1Mzky" +
-        "NDk1MSwgInBybiI6IlRFU1RfUFJOX0VNQUlMIn0.jqRHtO6wByhYiBYcBitQNEOav1bHtnSCEmS" +
-        "eA0XolUZdtFxZk6DDMFEc3y31xNwht4MmbDf9k-h7OlC-6RRRyAhszDE4LhlieiSLmkiaryQ2PD" +
-        "vKaeDJ6iECYsm3NlpAeUzxSvnp2-bjJ0v4qOW_muUpjGtNMbxbFCOjZpkqbFo";
-
-    /// <summary>
-    /// Signed request for getting access token for a service account when
-    /// using a test json secrets file.
-    /// </summary>
-    private const string SERVICE_ACCOUNT_REQUEST_WITH_SECRETS_FILE =
+    private const string SERVICE_ACCOUNT_REQUEST =
         "grant_type=urn%3aietf%3aparams%3aoauth%3agrant-type%3ajwt-bearer&assertion=" +
         "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlZWUtODMyQHNtb290aC1sb29wLT" +
         "Q3Mi5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsICJzY29wZSI6IlRFU1RfU0NPUEUiLCAiYXVkI" +
@@ -91,21 +70,14 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     private readonly OAuthTokensObtainedCallback TEST_CALLBACK =
         delegate(AdsOAuthProvider provider) {};
     private const string TEST_PRN_EMAIL = "TEST_PRN_EMAIL";
-
-    private const string TEST_SERVICE_ACCOUNT_EMAIL = "TEST_SERVICE_ACCOUNT_EMAIL";
-    private readonly string TEST_JWT_CERTIFICATE_PATH = GetCertificatePath();
-    private const string TEST_JWT_CERTIFICATE_PASSWORD = "notasecret";
-
     private readonly string TEST_SECRETS_FILE = GetSecretsFilePath();
-    private const string TEST_JWT_PRIVATE_KEY = "TEST_JWT_PRIVATE_KEY";
 
     /// <summary>
     /// Initializes the test case.
     /// </summary>
     [SetUp]
     public void Init() {
-      dictSettingsNoSecretJson = InitSettingsDict(false);
-      dictSettingsWithSecretJson = InitSettingsDict(true);
+      dictSettings = InitSettingsDict(true);
       oauth2RequestInterceptor.Intercept = true;
     }
 
@@ -119,33 +91,12 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       Dictionary<string, string> retval = new Dictionary<string, string>();
       retval.Add("OAuth2ClientId", TEST_CLIENT_ID);
       retval.Add("OAuth2ClientSecret", TEST_CLIENT_SECRET);
-      retval.Add("OAuth2ServiceAccountEmail", TEST_SERVICE_ACCOUNT_EMAIL);
       retval.Add("OAuth2PrnEmail", TEST_PRN_EMAIL);
-
       retval.Add("OAuth2AccessToken", TEST_ACCESS_TOKEN);
       retval.Add("OAuth2Scope", TEST_SCOPE);
       retval.Add("OAuth2RedirectUri", TEST_REDIRECT_URI);
-      string tempCertificatePath = GetCertificatePath();
-
-      if (setJsonSecretsFile) {
-        retval.Add("OAuth2SecretsJsonPath", GetSecretsFilePath());
-      } else {
-        retval.Add("OAuth2JwtCertificatePath", TEST_JWT_CERTIFICATE_PATH);
-        retval.Add("OAuth2JwtCertificatePassword", TEST_JWT_CERTIFICATE_PASSWORD);
-      }
+      retval.Add("OAuth2SecretsJsonPath", GetSecretsFilePath());
       return retval;
-    }
-
-    /// <summary>
-    /// Gets the certificate path for test purposes.
-    /// </summary>
-    /// <returns>The certificate path.</returns>
-    private static string GetCertificatePath() {
-      string tempCertificatePath = Path.GetTempFileName();
-      using (FileStream fs = File.OpenWrite(tempCertificatePath)) {
-        fs.Write(Resources.certificate, 0, Resources.certificate.Length);
-      }
-      return tempCertificatePath;
     }
 
     /// <summary>
@@ -173,11 +124,8 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     /// </summary>
     [Test]
     public void TestConstructor() {
-      MockAppConfig config;
-
-      // Tests if the constructor works when JSON secrets file is not provided.
-      config = new Mocks.MockAppConfig();
-      config.MockReadSettings(dictSettingsNoSecretJson);
+      MockAppConfig config = new MockAppConfig();
+      config.MockReadSettings(dictSettings);
       provider = new OAuth2ProviderForServiceAccounts(config);
 
       Assert.AreEqual(provider.ClientId, config.OAuth2ClientId);
@@ -186,67 +134,17 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       Assert.AreEqual(provider.Scope, config.OAuth2Scope);
       Assert.AreEqual(provider.ServiceAccountEmail, config.OAuth2ServiceAccountEmail);
       Assert.AreEqual(provider.PrnEmail, config.OAuth2PrnEmail);
-      Assert.AreEqual(provider.JwtCertificatePath, config.OAuth2CertificatePath);
-      Assert.AreEqual(provider.JwtCertificatePassword, config.OAuth2CertificatePassword);
-      Assert.IsNullOrEmpty(provider.JwtPrivateKey);
-
-      // Tests if the constructor works when JSON secrets file is provided.
-      config = new Mocks.MockAppConfig();
-      config.MockReadSettings(dictSettingsWithSecretJson);
-      provider = new OAuth2ProviderForServiceAccounts(config);
-
-      Assert.AreEqual(provider.ClientId, config.OAuth2ClientId);
-      Assert.AreEqual(provider.ClientSecret, config.OAuth2ClientSecret);
-      Assert.AreEqual(provider.AccessToken, config.OAuth2AccessToken);
-      Assert.AreEqual(provider.Scope, config.OAuth2Scope);
-      Assert.AreEqual(provider.ServiceAccountEmail, config.OAuth2ServiceAccountEmail);
-      Assert.AreEqual(provider.PrnEmail, config.OAuth2PrnEmail);
-      Assert.IsNullOrEmpty(provider.JwtCertificatePath);
-      Assert.IsNullOrEmpty(provider.JwtCertificatePassword);
       Assert.AreEqual(provider.JwtPrivateKey, config.OAuth2PrivateKey);
+      Assert.AreEqual(provider.ServiceAccountEmail, config.OAuth2ServiceAccountEmail);
     }
 
     /// <summary>
-    /// Tests if we can generate an access token for service accounts when no
-    /// JSON secrets file is provided.
+    /// Tests if we can generate an access token for service accounts.
     /// </summary>
     [Test]
-    public void TestGenerateAccessTokenForServiceAccountsNoSecretsFile() {
+    public void TestGenerateAccessTokenForServiceAccounts() {
       MockAppConfig config = new Mocks.MockAppConfig();
-      config.MockReadSettings(dictSettingsNoSecretJson);
-      provider = new OAuth2ProviderForServiceAccounts(config);
-
-      TestUtils.ValidateRequiredParameters(provider, new string[] {"ServiceAccountEmail",
-          "Scope", "JwtCertificatePath", "JwtCertificatePassword"},
-          delegate() {
-            provider.GenerateAccessTokenForServiceAccount();
-          }
-      );
-      oauth2RequestInterceptor.RequestType =
-          OAuth2RequestInterceptor.OAuth2RequestType.FetchAccessTokenForServiceAccount;
-      WebRequestInterceptor.OnBeforeSendResponse callback = delegate(Uri uri,
-          WebHeaderCollection headers, String body) {
-        Assert.AreEqual(SERVICE_ACCOUNT_REQUEST_NO_SECRETS_FILE, body);
-      };
-      try {
-        oauth2RequestInterceptor.BeforeSendResponse += callback;
-        provider.GenerateAccessTokenForServiceAccount();
-        Assert.AreEqual(provider.AccessToken, OAuth2RequestInterceptor.TEST_ACCESS_TOKEN);
-        Assert.AreEqual(provider.TokenType, OAuth2RequestInterceptor.ACCESS_TOKEN_TYPE);
-        Assert.AreEqual(provider.ExpiresIn.ToString(), OAuth2RequestInterceptor.EXPIRES_IN);
-      } finally {
-        oauth2RequestInterceptor.BeforeSendResponse -= callback;
-      }
-    }
-
-    /// <summary>
-    /// Tests if we can generate an access token for service accounts when a
-    /// JSON secrets file is provided.
-    /// </summary>
-    [Test]
-    public void TestGenerateAccessTokenForServiceAccountsWithSecretsFile() {
-      MockAppConfig config = new Mocks.MockAppConfig();
-      config.MockReadSettings(dictSettingsWithSecretJson);
+      config.MockReadSettings(dictSettings);
       provider = new OAuth2ProviderForServiceAccounts(config);
 
       TestUtils.ValidateRequiredParameters(provider, new string[] {"ServiceAccountEmail",
@@ -259,7 +157,7 @@ namespace Google.Api.Ads.Common.Tests.Lib {
           OAuth2RequestInterceptor.OAuth2RequestType.FetchAccessTokenForServiceAccount;
       WebRequestInterceptor.OnBeforeSendResponse callback = delegate(Uri uri,
           WebHeaderCollection headers, String body) {
-        Assert.AreEqual(SERVICE_ACCOUNT_REQUEST_WITH_SECRETS_FILE, body);
+        Assert.AreEqual(SERVICE_ACCOUNT_REQUEST, body);
       };
       try {
         oauth2RequestInterceptor.BeforeSendResponse += callback;
@@ -278,7 +176,7 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     public void TestGetAuthHeader() {
       MockAppConfig config = new MockAppConfig();
-      config.MockReadSettings(dictSettingsNoSecretJson);
+      config.MockReadSettings(dictSettings);
       provider = new OAuth2ProviderForServiceAccounts(config);
       Assert.AreEqual(AUTHORIZATION_HEADER, provider.GetAuthHeader());
     }
@@ -289,7 +187,7 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     public void TestPropertySettersAndGetters() {
       MockAppConfig config = new MockAppConfig();
-      config.MockReadSettings(dictSettingsNoSecretJson);
+      config.MockReadSettings(dictSettings);
       provider = new OAuth2ProviderForServiceAccounts(config);
 
       provider.ClientId = TEST_CLIENT_ID;
@@ -309,21 +207,6 @@ namespace Google.Api.Ads.Common.Tests.Lib {
 
       provider.OnOAuthTokensObtained = TEST_CALLBACK;
       Assert.AreEqual(provider.OnOAuthTokensObtained, TEST_CALLBACK);
-
-      provider.ServiceAccountEmail = TEST_SERVICE_ACCOUNT_EMAIL;
-      Assert.AreEqual(provider.ServiceAccountEmail, TEST_SERVICE_ACCOUNT_EMAIL);
-
-      provider.PrnEmail = TEST_PRN_EMAIL;
-      Assert.AreEqual(provider.PrnEmail, TEST_PRN_EMAIL);
-
-      provider.JwtCertificatePath = TEST_JWT_CERTIFICATE_PATH;
-      Assert.AreEqual(provider.JwtCertificatePath, TEST_JWT_CERTIFICATE_PATH);
-
-      provider.JwtCertificatePassword = TEST_JWT_CERTIFICATE_PASSWORD;
-      Assert.AreEqual(provider.JwtCertificatePassword, TEST_JWT_CERTIFICATE_PASSWORD);
-
-      provider.JwtPrivateKey = TEST_JWT_PRIVATE_KEY;
-      Assert.AreEqual(provider.JwtPrivateKey, TEST_JWT_PRIVATE_KEY);
     }
   }
 }

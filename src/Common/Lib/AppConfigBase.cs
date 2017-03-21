@@ -14,16 +14,17 @@
 
 using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Util;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Web.Script.Serialization;
-using System.Linq;
 
 namespace Google.Api.Ads.Common.Lib {
 
@@ -129,21 +130,6 @@ namespace Google.Api.Ads.Common.Lib {
     private const string OAUTH2_PRN_EMAIL = "OAuth2PrnEmail";
 
     /// <summary>
-    /// Key name for jwt certificate path.
-    /// </summary>
-    private const string OAUTH2_JWT_CERTIFICATE_PATH = "OAuth2JwtCertificatePath";
-
-    /// <summary>
-    /// Key name for jwt certificate password.
-    /// </summary>
-    private const string OAUTH2_JWT_CERTIFICATE_PASSWORD = "OAuth2JwtCertificatePassword";
-
-    /// <summary>
-    /// Key name for service account email.
-    /// </summary>
-    private const string OAUTH2_SERVICEACCOUNT_EMAIL = "OAuth2ServiceAccountEmail";
-
-    /// <summary>
     /// Key name for OAuth2 secrets JSON file path.
     /// </summary>
     private const string OAUTH2_SECRETS_JSON_PATH = "OAuth2SecretsJsonPath";
@@ -210,29 +196,19 @@ namespace Google.Api.Ads.Common.Lib {
     private string oAuth2PrnEmail;
 
     /// <summary>
-    /// OAuth2 certificate path.
-    /// </summary>
-    private string oAuth2CertificatePath;
-
-    /// <summary>
-    /// OAuth2 certificate password.
-    /// </summary>
-    private string oAuth2CertificatePassword;
-
-    /// <summary>
-    /// OAuth2 service account email.
+    /// OAuth2 service account email loaded from secrets JSON file.
     /// </summary>
     private string oAuth2ServiceAccountEmail;
-
-    /// <summary>
-    /// OAuth2 secrets JSON file path.
-    /// </summary>
-    private string oAuth2SecretsJsonPath;
 
     /// <summary>
     /// OAuth2 private key loaded from secrets JSON file.
     /// </summary>
     private string oAuth2PrivateKey;
+
+    /// <summary>
+    /// OAuth2 secrets JSON file path.
+    /// </summary>
+    private string oAuth2SecretsJsonPath;
 
     /// <summary>
     /// OAuth2 scope.
@@ -277,7 +253,7 @@ namespace Google.Api.Ads.Common.Lib {
     private const string DEFAULT_OAUTH2_SERVER = "https://accounts.google.com";
 
     /// <summary>
-    /// Gets whether the credentials in the log file should be masked.
+    /// Gets or sets whether the credentials in the log file should be masked.
     /// </summary>
     public bool MaskCredentials {
       get {
@@ -289,7 +265,7 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Gets the web proxy to be used with the services.
+    /// Gets or sets the web proxy to be used with the services.
     /// </summary>
     public IWebProxy Proxy {
       get {
@@ -391,7 +367,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets or sets the OAuth2 refresh token.
     /// </summary>
-    /// <remarks>This key is applicable only when using OAuth2 web / application
+    /// <remarks>This setting is applicable only when using OAuth2 web / application
     /// flow in offline mode.</remarks>
     public string OAuth2RefreshToken {
       get {
@@ -417,7 +393,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets or sets the OAuth2 redirect URI.
     /// </summary>
-    /// <remarks>This key is applicable only when using OAuth2 web flow.
+    /// <remarks>This setting is applicable only when using OAuth2 web flow.
     /// </remarks>
     public string OAuth2RedirectUri {
       get {
@@ -443,7 +419,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Gets or sets the OAuth2 prn email.
     /// </summary>
-    /// <remarks>This key is applicable only when using OAuth2 service accounts.
+    /// <remarks>This setting is applicable only when using OAuth2 service accounts.
     /// </remarks>
     public string OAuth2PrnEmail {
       get {
@@ -455,44 +431,30 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Gets or sets the OAuth2 certificate path.
+    /// Gets the OAuth2 service account email.
     /// </summary>
-    /// <remarks>This key is applicable only when using OAuth2 service accounts.
-    /// </remarks>
-    public string OAuth2CertificatePath {
-      get {
-        return oAuth2CertificatePath;
-      }
-      set {
-        SetPropertyField("OAuth2CertificatePath", ref oAuth2CertificatePath, value);
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the OAuth2 certificate password.
-    /// </summary>
-    /// <remarks>This key is applicable only when using OAuth2 service accounts.
-    /// </remarks>
-    public string OAuth2CertificatePassword {
-      get {
-        return oAuth2CertificatePassword;
-      }
-      set {
-        SetPropertyField("OAuth2CertificatePassword", ref oAuth2CertificatePassword, value);
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the OAuth2 service account email.
-    /// </summary>
-    /// <remarks>This key is applicable only when using OAuth2 service accounts.
+    /// <remarks>
+    /// This setting is applicable only when using OAuth2 service accounts.
+    /// This setting is read directly from the file referred to in
+    /// <see cref="OAuth2SecretsJsonPath"/> setting.
     /// </remarks>
     public string OAuth2ServiceAccountEmail {
       get {
         return oAuth2ServiceAccountEmail;
       }
-      set {
-        SetPropertyField("OAuth2ServiceAccountEmail", ref oAuth2ServiceAccountEmail, value);
+    }
+
+    /// <summary>
+    /// Gets the OAuth2 private key for service account flow.
+    /// </summary>
+    /// <remarks>
+    /// This setting is applicable only when using OAuth2 service accounts.
+    /// This setting is read directly from the file referred to in
+    /// <see cref="OAuth2SecretsJsonPath"/> setting.
+    /// </remarks>
+    public string OAuth2PrivateKey {
+      get {
+        return oAuth2PrivateKey;
       }
     }
 
@@ -500,11 +462,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets or sets the OAuth2 secrets JSON file path.
     /// </summary>
     /// <remarks>
-    /// This key is applicable only when using OAuth2 service accounts. If this
-    /// key is specified, then <see cref="OAuth2CertificatePath"/>,
-    /// <see cref="OAuth2CertificatePassword"/> and <see cref="OAuth2ServiceAccountEmail"/>
-    /// properties will be ignored and corresponding values will be read from the
-    /// JSON secrets file.
+    /// This setting is applicable only when using OAuth2 service accounts.
     /// </remarks>
     public string OAuth2SecretsJsonPath {
       get {
@@ -513,23 +471,6 @@ namespace Google.Api.Ads.Common.Lib {
       set {
         SetPropertyField("OAuth2SecretsJsonPath", ref oAuth2SecretsJsonPath, value);
         LoadOAuth2SecretsFromFile();
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the OAuth2 private key for service account flow.
-    /// </summary>
-    /// <remarks>
-    /// This key is applicable only when using OAuth2 service accounts.
-    /// This key is not read from App.config. It is instead populated by parsing
-    /// the file referred to in <see cref="OAuth2SecretsJsonPath"/> setting.
-    /// </remarks>
-    public string OAuth2PrivateKey {
-      get {
-        return oAuth2PrivateKey;
-      }
-      set {
-        SetPropertyField("OAuth2PrivateKey", ref oAuth2PrivateKey, value);
       }
     }
 
@@ -638,8 +579,8 @@ namespace Google.Api.Ads.Common.Lib {
       oAuth2RedirectUri = null;
       oAuth2PrnEmail = "";
       oAuth2ServiceAccountEmail = "";
-      oAuth2SecretsJsonPath = "";
       oAuth2PrivateKey = "";
+      oAuth2SecretsJsonPath = "";
 
       includeFeaturesInUserAgent = true;
       enableSoapExtension = true;
@@ -653,7 +594,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// The request configuration section, or <code>null</code> if none was found.
     /// </returns>
     protected Dictionary<string, string> LoadConfigSection(string sectionName) {
-      Hashtable configTable = (Hashtable)ConfigurationManager.GetSection(sectionName);
+      Hashtable configTable = (Hashtable) ConfigurationManager.GetSection(sectionName);
 
       Dictionary<string, string> configDict = null;
       if (configTable != null) {
@@ -710,13 +651,6 @@ namespace Google.Api.Ads.Common.Lib {
 
       if (!string.IsNullOrEmpty(oAuth2SecretsJsonPath)) {
         LoadOAuth2SecretsFromFile();
-      } else {
-        oAuth2ServiceAccountEmail = ReadSetting(settings, OAUTH2_SERVICEACCOUNT_EMAIL,
-            oAuth2ServiceAccountEmail);
-        oAuth2CertificatePath = ReadSetting(settings, OAUTH2_JWT_CERTIFICATE_PATH,
-            oAuth2CertificatePath);
-        oAuth2CertificatePassword = ReadSetting(settings, OAUTH2_JWT_CERTIFICATE_PASSWORD,
-            oAuth2CertificatePassword);
       }
 
       oAuth2PrnEmail = ReadSetting(settings, OAUTH2_PRN_EMAIL, oAuth2PrnEmail);
@@ -742,12 +676,12 @@ namespace Google.Api.Ads.Common.Lib {
           Dictionary<string, string> config =
               serializer.Deserialize<Dictionary<string, string>>(contents);
 
-          this.OAuth2ServiceAccountEmail = CollectionUtilities.TryGetValue(config, "client_email");
+          this.oAuth2ServiceAccountEmail = CollectionUtilities.TryGetValue(config, "client_email");
           if (this.OAuth2ServiceAccountEmail == null) {
             throw new ApplicationException(CommonErrorMessages.ClientEmailIsMissingInJsonFile);
           }
 
-          this.OAuth2PrivateKey = CollectionUtilities.TryGetValue(config, "private_key");
+          this.oAuth2PrivateKey = CollectionUtilities.TryGetValue(config, "private_key");
           if (this.OAuth2PrivateKey == null) {
             throw new ApplicationException(CommonErrorMessages.PrivateKeyIsMissingInJsonFile);
           }

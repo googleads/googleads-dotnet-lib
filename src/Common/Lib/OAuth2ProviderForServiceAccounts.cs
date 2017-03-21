@@ -54,15 +54,21 @@ namespace Google.Api.Ads.Common.Lib {
     private const int DEFAULT_EXPIRY_PERIOD = 3600;
 
     /// <summary>
+    /// Gets or sets the JWT private key.
+    /// </summary>
+    public string JwtPrivateKey {
+      get {
+        return config.OAuth2PrivateKey;
+      }
+    }
+
+    /// <summary>
     /// Gets or sets the service account email for which access token should be
     /// retrieved.
     /// </summary>
     public string ServiceAccountEmail {
       get {
         return config.OAuth2ServiceAccountEmail;
-      }
-      set {
-        config.OAuth2ServiceAccountEmail = value;
       }
     }
 
@@ -79,42 +85,6 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Gets or sets the JWT private key.
-    /// </summary>
-    public string JwtPrivateKey {
-      get {
-        return config.OAuth2PrivateKey;
-      }
-      set {
-        config.OAuth2PrivateKey = value;
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the JWT certificate path.
-    /// </summary>
-    public string JwtCertificatePath {
-      get {
-        return config.OAuth2CertificatePath;
-      }
-      set {
-        config.OAuth2CertificatePath = value;
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the JWT certificate password.
-    /// </summary>
-    public string JwtCertificatePassword {
-      get {
-        return config.OAuth2CertificatePassword;
-      }
-      set {
-        config.OAuth2CertificatePassword = value;
-      }
-    }
-
-    /// <summary>
     /// Initializes a new instance of the OAuth2ProviderForServiceAccounts class.
     /// </summary>
     /// <param name="config">The config.</param>
@@ -126,8 +96,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets the access token for service account.
     /// </summary>
     /// <exception cref="ArgumentNullException">Thrown if one of the following
-    /// OAuth2 parameters are empty: ServiceAccountEmail, Scope,
-    /// JwtCertificatePath, JwtCertificatePassword.</exception>
+    /// OAuth2 parameters are empty: ServiceAccountEmail, JwtPrivateKey, Scope
+    /// </exception>
     public void GenerateAccessTokenForServiceAccount() {
       // Mark the usage.
       featureUsageRegistry.MarkUsage(FEATURE_ID);
@@ -136,13 +106,8 @@ namespace Google.Api.Ads.Common.Lib {
       long expiry = timestamp + DEFAULT_EXPIRY_PERIOD;
 
       ValidateOAuth2Parameter("ServiceAccountEmail", ServiceAccountEmail);
+      ValidateOAuth2Parameter("JwtPrivateKey", JwtPrivateKey);
       ValidateOAuth2Parameter("Scope", Scope);
-
-      // Validate certificate path and password only if private key is empty.
-      if (string.IsNullOrEmpty(JwtPrivateKey)) {
-        ValidateOAuth2Parameter("JwtCertificatePath", JwtCertificatePath);
-        ValidateOAuth2Parameter("JwtCertificatePassword", JwtCertificatePassword);
-      }
 
       OAuth2JwtClaimset jwtClaimset = new OAuth2JwtClaimsetBuilder()
           .WithScope(Scope)
@@ -157,13 +122,7 @@ namespace Google.Api.Ads.Common.Lib {
       string encodedClaimset = Base64UrlEncode(Encoding.UTF8.GetBytes(jwtClaimset.ToJson()));
       string inputForSignature = encodedHeader + "." + encodedClaimset;
 
-      RSAParameters rsaParameters;
-
-      if (!string.IsNullOrEmpty(JwtPrivateKey)) {
-        rsaParameters = ConvertPKCS8ToRsaParameters(JwtPrivateKey);
-      } else {
-        rsaParameters = ConvertP12ToRsaParameters(JwtCertificatePath, JwtCertificatePassword);
-      }
+      RSAParameters rsaParameters = ConvertPKCS8ToRsaParameters(JwtPrivateKey);
       
       string signature = Base64UrlEncode(GetRsaSha256Signature(rsaParameters,
           Encoding.UTF8.GetBytes(inputForSignature)));
@@ -185,7 +144,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     public override void RefreshAccessToken() {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       GenerateAccessTokenForServiceAccount();
     }

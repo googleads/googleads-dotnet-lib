@@ -21,25 +21,15 @@ namespace Google.Api.Ads.Common.Lib {
   /// </summary>
   public interface AdsOAuthProviderForServiceAccounts : AdsOAuthProvider {
     /// <summary>
-    /// Gets or sets the service account email for which access token should be
-    /// retrieved..
+    /// Gets the service account email for which access token should be
+    /// retrieved.
     /// </summary>
-    string ServiceAccountEmail { get; set; }
+    string ServiceAccountEmail { get; }
 
     /// <summary>
     /// Gets or sets the email of the account for which the call is being made.
     /// </summary>
     string PrnEmail { get; set; }
-
-    /// <summary>
-    /// Gets or sets the JWT certificate path.
-    /// </summary>
-    string JwtCertificatePath { get; set; }
-
-    /// <summary>
-    /// Gets or sets the JWT certificate password.
-    /// </summary>
-    string JwtCertificatePassword { get; set; }
 
     /// <summary>
     /// Generates the access token for service account.

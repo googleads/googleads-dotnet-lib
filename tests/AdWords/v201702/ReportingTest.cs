@@ -126,6 +126,46 @@ namespace Google.Api.Ads.AdWords.Tests.v201702 {
     }
 
     /// <summary>
+    /// Tests the StreamCriteriaReportToPoco C# code example.
+    /// </summary>
+    [Test]
+    public void TestStreamCriteriaReportToPocoCSharpExample() {
+      RunExample(delegate() {
+        new CSharpExamples.StreamCriteriaReportToPoco().Run(user);
+      });
+    }
+
+    /// <summary>
+    /// Tests the StreamCriteriaReportToPoco VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestStreamCriteriaReportToPocoVBExample() {
+      RunExample(delegate() {
+        new VBExamples.StreamCriteriaReportToPoco().Run(user);
+      });
+    }
+
+    /// <summary>
+    /// Tests the StreamReportToPredefinedReportRowType VB.NET code example.
+    /// </summary>
+    [Test]
+    public void TestStreamReportToPredefinedReportRowTypeVBExample() {
+      RunExample(delegate() {
+        new VBExamples.StreamReportToPredefinedReportRowType().Run(user);
+      });
+    }
+
+    /// <summary>
+    /// Tests the StreamReportToPredefinedReportRowType C# code example.
+    /// </summary>
+    [Test]
+    public void TestStreamReportToPredefinedReportRowTypeCSharpExample() {
+      RunExample(delegate() {
+        new CSharpExamples.StreamReportToPredefinedReportRowType().Run(user);
+      });
+    }
+
+    /// <summary>
     /// Tests the ParallelReportDownload C# code example.
     /// </summary>
     [Test]

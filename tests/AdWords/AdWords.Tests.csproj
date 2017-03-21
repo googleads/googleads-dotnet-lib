@@ -84,17 +84,14 @@
       <LastGenOutput>SoapMessages.v201607.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SoapMessages.v201605.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SoapMessages.v201605.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\UpdateCampaign.v201702.txt" />
     <Content Include="Resources\UpdateCampaign.v201609.txt" />
     <Content Include="Resources\UpdateCampaign.v201607.txt" />
-    <Content Include="Resources\UpdateCampaign.v201605.txt" />
+    <Content Include="Util\Reports\Parser\Resources\FaultyXML.xml" />
+    <Content Include="Util\Reports\Parser\Resources\ValidXMLDistinctRows.xml" />
+    <Content Include="Util\Reports\Parser\Resources\ValidXMLRepeatedRows.xml" />
     <Content Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -104,15 +101,14 @@
     <Compile Include="Lib\AdWordsServiceFactoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
-    <Compile Include="Util\BatchJob\v201605\BatchJobUtilitiesTest.cs" />
     <Compile Include="Util\BatchJob\v201607\BatchJobUtilitiesTest.cs" />
     <Compile Include="Util\BatchJob\v201609\BatchJobUtilitiesTest.cs" />
     <Compile Include="Util\BatchJob\v201702\BatchJobUtilitiesTest.cs" />
-    <Compile Include="Util\Shopping\v201605\ProductDimensionEqualityComparerTest.cs" />
-    <Compile Include="Util\Shopping\v201605\ProductDimensionsTest.cs" />
-    <Compile Include="Util\Shopping\v201605\ProductPartitionNodeTest.cs" />
-    <Compile Include="Util\Shopping\v201605\ProductPartitionTreeIntegrationTests.cs" />
-    <Compile Include="Util\Shopping\v201605\ProductPartitionTreeTest.cs" />
+    <Compile Include="Util\Reports\Parser\AwReportTest.cs" />
+    <Compile Include="Util\Reports\Parser\InputTextReaderTest.cs" />
+    <Compile Include="Util\Reports\Parser\ReportParserUtilsTest.cs" />
+    <Compile Include="Util\Reports\Parser\Resources.Designer.cs" />
+    <Compile Include="Util\Reports\Parser\TestUtils.cs" />
     <Compile Include="Util\Shopping\v201607\ProductDimensionEqualityComparerTest.cs" />
     <Compile Include="Util\Shopping\v201607\ProductDimensionsTest.cs" />
     <Compile Include="Util\Shopping\v201607\ProductPartitionNodeTest.cs" />
@@ -128,27 +124,8 @@
     <Compile Include="Util\Shopping\v201702\ProductPartitionNodeTest.cs" />
     <Compile Include="Util\Shopping\v201702\ProductPartitionTreeIntegrationTests.cs" />
     <Compile Include="Util\Shopping\v201702\ProductPartitionTreeTest.cs" />
-    <Compile Include="Util\v201605\MapUtilitiesTest.cs" />
     <Compile Include="Util\v201607\MapUtilitiesTest.cs" />
     <Compile Include="Util\v201609\MapUtilitiesTest.cs" />
-    <Compile Include="v201605\AccountManagementTest.cs" />
-    <Compile Include="v201605\AdvancedOperationsTest.cs" />
-    <Compile Include="v201605\BasicOperationsTest.cs" />
-    <Compile Include="v201605\CampaignManagementTest.cs" />
-    <Compile Include="v201605\ErrorHandlingTest.cs" />
-    <Compile Include="v201605\ExtensionsTest.cs" />
-    <Compile Include="v201605\MigrationTest.cs" />
-    <Compile Include="v201605\MiscellaneousTest.cs" />
-    <Compile Include="v201605\MockTests.cs" />
-    <Compile Include="v201605\OptimizationTest.cs" />
-    <Compile Include="v201605\RemarketingTest.cs" />
-    <Compile Include="v201605\ReportingTest.cs" />
-    <Compile Include="v201605\ShoppingCampaignsTest.cs" />
-    <Compile Include="v201605\ShoppingTestUtils.cs" />
-    <Compile Include="v201605\TargetingTest.cs" />
-    <Compile Include="v201605\TestUtils.cs" />
-    <Compile Include="v201605\VersionedExampleTestsBase.cs" />
-    <Compile Include="v201605\VersionedMockedExampleTestsBase.cs" />
     <Compile Include="v201607\AccountManagementTest.cs" />
     <Compile Include="v201607\AdvancedOperationsTest.cs" />
     <Compile Include="v201607\BasicOperationsTest.cs" />
@@ -210,7 +187,6 @@
     <Compile Include="MockUtilities.cs" />
     <Compile Include="MockedExampleTestsBase.cs" />
     <Compile Include="ServiceCreationTests.cs" />
-    <Compile Include="SoapMessages.v201605.Designer.cs" />
     <Compile Include="SoapMessages.v201607.Designer.cs" />
     <Compile Include="SoapMessages.v201609.Designer.cs" />
     <Compile Include="SoapMessages.v201702.Designer.cs" />
