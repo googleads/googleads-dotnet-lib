@@ -237,12 +237,12 @@ namespace Google.Api.Ads.AdWords.Tests.v201702 {
     }
 
     /// <summary>
-    /// Tests the AddCompleteCampaignUsingBatchJob VB.NET code example.
+    /// Tests the AddCompleteCampaignsUsingStreamingBatchJob C# code example.
     /// </summary>
     [Test]
-    public void TestAddCompleteCampaignUsingBatchJobVBExample() {
-      RunExample(delegate() {
-        new VBExamples.AddCompleteCampaignsUsingBatchJob().Run(user);
+    public void TestAddCompleteCampaignUsingStreamingBatchJobCSharpExample() {
+      RunExample(delegate () {
+        new CSharpExamples.AddCompleteCampaignsUsingStreamingBatchJob().Run(user);
       });
     }
 

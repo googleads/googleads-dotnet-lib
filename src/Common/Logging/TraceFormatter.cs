@@ -24,7 +24,7 @@ namespace Google.Api.Ads.Common.Logging {
     /// <summary>
     /// The mask pattern to be used when masking sensitive data in logs.
     /// </summary>
-    public const string MASK_PATTERN = "******";
+    public const string MASK_PATTERN = "REDACTED";
 
     /// <summary>
     /// Masks the contents of the traced message.

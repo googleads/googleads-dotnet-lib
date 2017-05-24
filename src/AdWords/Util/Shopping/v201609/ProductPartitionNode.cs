@@ -20,6 +20,10 @@ using System.Collections.Generic;
 
 namespace Google.Api.Ads.AdWords.Util.Shopping.v201609 {
 
+  /// <summary>
+  /// A node in a tree of <see cref="ProductPartition" />s. Used to construct
+  /// <see cref="AdGroupCriterion" /> objects for shopping campaigns.
+  /// </summary>
   public class ProductPartitionNode {
 
     /// <summary>

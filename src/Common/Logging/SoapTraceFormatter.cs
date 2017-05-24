@@ -34,17 +34,22 @@ namespace Google.Api.Ads.Common.Logging {
     /// The formatted message body.
     /// </returns>
     public override string MaskContents(string body, ISet<string> keysToMask) {
+      if(keysToMask.Count == 0) {
+        return body;
+      }
+
       XmlDocument xDoc = XmlUtilities.CreateDocument(body);
       XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
       xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
-      XmlNodeList nodes =
-          xDoc.SelectNodes("soap:Envelope/soap:Header/descendant::*", xmlns);
 
-      foreach (XmlElement node in nodes) {
-        if (keysToMask.Contains(node.LocalName)) {
+      foreach (string key in keysToMask) {
+        string xPath = string.Format("soap:Envelope/descendant::*[local-name()='{0}']", key);
+        XmlNodeList nodes = xDoc.SelectNodes(xPath, xmlns);
+        foreach (XmlElement node in nodes) {
           node.InnerText = MASK_PATTERN;
         }
       }
+
       return xDoc.OuterXml;
     }
   }

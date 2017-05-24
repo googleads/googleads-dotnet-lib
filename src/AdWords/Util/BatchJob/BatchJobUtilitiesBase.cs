@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Text;
 using System.Web.Script.Serialization;
 using System.Xml;
 
@@ -48,6 +49,13 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
     protected const int POLL_INTERVAL_SECONDS_BASE = 30;
 
     /// <summary>
+    /// The postamble for streamed uploads.
+    /// </summary>
+    /// <remarks>This is the trailing string when serializing BatchJobMutateRequest
+    /// type.</remarks>
+    protected const string POSTAMBLE = "</mutate>";
+
+    /// <summary>
     /// The user associated with this object.
     /// </summary>
     private AdsUser user;
@@ -71,7 +79,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
     /// <summary>
     /// The chunk size to be used for resumable upload.
     /// </summary>
-    private int CHUNK_SIZE;
+    protected int CHUNK_SIZE;
 
     /// <summary>
     /// A flag to choose determine whether chunking should be used when
@@ -116,6 +124,19 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
       Init(user, useChunking, chunkSize);
     }
 
+    /// <summary>
+    /// Initializes the class.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    /// <param name="useChunking">if the operations should be broken into
+    /// smaller chunks before uploading to the server.</param>
+    /// <param name="chunkSize">The chunk size to use for resumable upload.</param>
+    /// <exception cref="ArgumentException">Thrown if <paramref name="chunkSize"/>
+    /// is not a multiple of 256KB.</exception>
+    /// <exception cref="System.ArgumentException">
+    /// Thrown if chunked mode is used on Mono platform, or chunk size is not a
+    /// multiple of 256KB.
+    /// </exception>
     protected void Init(AdsUser user, bool useChunking, int chunkSize) {
       if (IsRunningOnMono() && useChunking) {
         // https://bugzilla.xamarin.com/show_bug.cgi?id=28287.
@@ -176,13 +197,60 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
       }
     }
 
-    protected void Upload(string url, bool resumePreviousUpload, byte[] postBody) {
-      int totalUploaded = 0;
-      int length = postBody.Length;
+    /// <summary>
+    /// Begins a streamed upload.
+    /// </summary>
+    /// <param name="url">The upload URL.</param>
+    /// <returns>A <see cref="BatchUploadProgress"/> object that tracks the
+    /// progress of upload.</returns>
+    public BatchUploadProgress BeginStreamUpload(string url) {
+      return new BatchUploadProgress() {
+        BytesUploaded = 0,
+        Url = url
+      };
+    }
 
-      if (resumePreviousUpload) {
-        totalUploaded = GetUploadProgress(url);
-      }
+    /// <summary>
+    /// Completes a streamed upload.
+    /// </summary>
+    /// <param name="uploadProgress">The upload progress.</param>
+    /// <returns>The updated <see cref="BatchUploadProgress"/> object.</returns>
+    public BatchUploadProgress EndStreamUpload(BatchUploadProgress uploadProgress) {
+      // Upload the postamble to mark the end of upload.
+      List<byte> bytes = new List<byte>(Encoding.UTF8.GetBytes(POSTAMBLE));
+
+      long totalUploadSize = (uploadProgress.BytesUploaded + bytes.Count);
+      Upload(uploadProgress.Url, bytes.ToArray(), uploadProgress.BytesUploaded, totalUploadSize);
+      uploadProgress.BytesUploaded += bytes.Count;
+      return uploadProgress;
+    }
+
+    /// <summary>
+    /// Uploads the operations to a specified URL.
+    /// </summary>
+    /// <param name="url">The temporary URL returned by a batch job.</param>
+    /// <param name="postBody">The data to be uploaded.</param>
+    /// <param name="startOffset">The start offset within the upload stream.</param>
+    protected void Upload(string url, byte[] postBody, long startOffset) {
+      Upload(url, postBody, startOffset, postBody.Length);
+    }
+
+    /// <summary>
+    /// Uploads the operations to a specified URL.
+    /// </summary>
+    /// <param name="url">The temporary URL returned by a batch job.</param>
+    /// <param name="data">The data to be uploaded.</param>
+    /// <param name="startOffset">The start offset for uploading data. If you
+    /// are performing a streamed upload, then this parameter determines the
+    /// file offset to write this data on the server.</param>
+    /// <param name="totalUploadSize">If specified, this indicates the total
+    /// size of the upload. When doing a streamed upload, this value will be
+    /// null for all except the last chunk.</param>
+    /// <exception cref="System.ApplicationException">Thrown if the upload fails.
+    /// </exception>
+    protected void Upload(string url, byte[] data, long startOffset, long? totalUploadSize) {
+      int totalUploaded = 0;
+      int length = data.Length;
 
       while (totalUploaded < length) {
         int start = totalUploaded;
@@ -190,22 +258,76 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
 
         if (this.useChunking) {
           // The payload should further be broken down into smaller chunks.
-          end = (totalUploaded + CHUNK_SIZE - 1 < postBody.Length - 1) ?
-             totalUploaded + CHUNK_SIZE - 1 : postBody.Length - 1;
+          end = (totalUploaded + CHUNK_SIZE < length) ?
+             totalUploaded + CHUNK_SIZE : length;
         } else {
           // No need to split the payload, upload the whole content in one
           // single request.
-          end = postBody.Length - 1;
+          end = length;
         }
 
-        int bytesToWrite = end - start + 1;
+        int bytesToWrite = end - start;
         try {
-          UploadChunk(url, postBody, start, end);
+          UploadChunk(url, data, start, end - 1, startOffset, totalUploadSize);
           totalUploaded += bytesToWrite;
         } catch (Exception e) {
           throw new System.ApplicationException("Failed to upload operations for batch job.", e);
         }
       }
+    }
+
+    /// <summary>
+    /// Performs a streamed upload.
+    /// </summary>
+    /// <param name="uploadProgress">The upload progress.</param>
+    /// <param name="postBody">The post body to be stream uploaded.</param>
+    /// <returns>The updated <see cref="BatchUploadProgress"/> object.</returns>
+    protected BatchUploadProgress StreamUpload(BatchUploadProgress uploadProgress,
+        string postBody) {
+      string payloadToUpload = GetPayload(uploadProgress.BytesUploaded, postBody);
+
+      // Pad the payload to match a block boundary.
+      List<byte> bytes = new List<byte>(Encoding.UTF8.GetBytes(payloadToUpload));
+      int padLength = CHUNK_SIZE_ALIGN - (bytes.Count % CHUNK_SIZE_ALIGN);
+      string padding = new String(' ', padLength);
+      bytes.AddRange(Encoding.UTF8.GetBytes(padding));
+
+      // Since we don't know the totalUploadSize at this point, we pass a null
+      // instead.
+      Upload(uploadProgress.Url, bytes.ToArray(), uploadProgress.BytesUploaded, null);
+      uploadProgress.BytesUploaded += bytes.Count;
+      return uploadProgress;
+    }
+
+    /// <summary>
+    /// Gets the payload.
+    /// </summary>
+    /// <param name="bytesUploaded">The bytes uploaded.</param>
+    /// <param name="postBody">The post body.</param>
+    /// <returns></returns>
+    protected static string GetPayload(long bytesUploaded, string postBody) {
+      XmlDocument xDoc = new XmlDocument();
+      xDoc.LoadXml(postBody);
+
+      // Extract the operations.
+      string operationsOnly = xDoc.DocumentElement.InnerXml;
+
+      // Clear the operations from the postBody, so only the envelope remains.
+      xDoc.DocumentElement.InnerXml = "";
+      string envelope = xDoc.OuterXml;
+
+      // Split the envelope into preamble and postamble.
+      int splitPoint = envelope.IndexOf(POSTAMBLE);
+      string preamble = envelope.Substring(0, splitPoint);
+
+      string payloadToUpload = "";
+      if (bytesUploaded == 0) {
+        payloadToUpload = preamble + operationsOnly;
+      } else {
+        payloadToUpload = operationsOnly;
+      }
+
+      return payloadToUpload;
     }
 
     /// <summary>
@@ -293,7 +415,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
           // https://cloud.google.com/storage/docs/resumable-uploads-xml#step_4wzxhzdk17query_title_for_the_upload_status
           // for more details.
           if (IsPartialUploadSuccessResponse(e)) {
-            retval = ExtractUpperRange(e.Response.Headers["Range"], retval);
+            retval = ExtractUpperRange(e.Response.Headers["Range"], retval) + 1;
 
             logEntry.LogResponse(e.Response, true, "");
             logEntry.Flush();
@@ -334,19 +456,33 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
     /// </summary>
     /// <param name="url">The resumable upload URL.</param>
     /// <param name="postBody">The post body.</param>
-    /// <param name="start">The start of range of bytes to be uploaded.</param>
-    /// <param name="end">The end of range of bytes to be uploaded.</param>
-    protected virtual void UploadChunk(string url, byte[] postBody, int start, int end) {
+    /// <param name="start">The start of range of bytes from the postBody to
+    /// be uploaded.</param>
+    /// <param name="end">The end of range of bytes from the postBody to be
+    /// uploaded.</param>
+    /// <param name="startOffset">The start offset in the stream to upload to.</param>
+    /// <param name="totalUploadSize">If specified, this indicates the total
+    /// size of the upload. When doing a streamed upload, this value will be
+    /// null for all except the last chunk.</param>
+    protected virtual void UploadChunk(string url, byte[] postBody, int start, int end,
+        long startOffset, long? totalUploadSize) {
       BulkJobErrorHandler errorHandler = new BulkJobErrorHandler(user);
+
+      string totalUploadSizeForRequest = (totalUploadSize == null) ? "*" :
+          totalUploadSize.ToString();
 
       while (true) {
         WebResponse response = null;
         LogEntry logEntry = new LogEntry(User.Config, new DefaultDateTimeProvider());
 
+        long rangeStart = start + startOffset;
+        long rangeEnd = end + startOffset;
+
         int bytesToWrite = end - start + 1;
+        string rangeHeader = string.Format("bytes {0}-{1}/{2}",
+            rangeStart, rangeEnd, totalUploadSizeForRequest);
         HttpWebRequest request = (HttpWebRequest) HttpUtilities.BuildRangeRequest(
-            url, bytesToWrite,
-            string.Format("bytes {0}-{1}/{2}", start, end, postBody.Length), user.Config);
+            url, bytesToWrite, rangeHeader, user.Config);
 
         request.ContentType = "application/xml";
 

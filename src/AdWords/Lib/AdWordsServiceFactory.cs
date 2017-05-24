@@ -47,10 +47,9 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Create a service object.
     /// </summary>
     /// <param name="signature">Signature of the service being created.</param>
-    /// <param name="user">The user for which the service is being created.
+    /// <param name="user">The user for which the service is being created.</param>
     /// <param name="serverUrl">The server to which the API calls should be
     /// made.</param>
-    /// </param>
     /// <returns>An object of the desired service type.</returns>
     public override AdsClient CreateService(ServiceSignature signature, AdsUser user,
         Uri serverUrl) {

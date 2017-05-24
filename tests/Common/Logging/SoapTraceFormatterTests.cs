@@ -43,9 +43,17 @@ namespace Google.Api.Ads.Common.Tests.Util {
       xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
       xmlns.AddNamespace("cm", "https://adwords.google.com/api/adwords/cm/v201409");
 
+      // Test masking on header nodes.
       XmlNodeList childNodes = xDoc.SelectNodes(
           "soap:Envelope/soap:Header/cm:RequestHeader/child::*", xmlns);
+      foreach (XmlElement childNode in childNodes) {
+        if (KEYS.Contains(childNode.LocalName)) {
+          Assert.AreEqual(childNode.InnerText, SoapTraceFormatter.MASK_PATTERN);
+        }
+      }
 
+      // Test masking on body nodes.
+      childNodes = xDoc.SelectNodes("soap:Envelope/soap:Body/cm:get/child::*", xmlns);
       foreach (XmlElement childNode in childNodes) {
         if (KEYS.Contains(childNode.LocalName)) {
           Assert.AreEqual(childNode.InnerText, SoapTraceFormatter.MASK_PATTERN);

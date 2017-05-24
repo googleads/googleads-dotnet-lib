@@ -93,7 +93,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201611 {
         file.Records.AddRange(rows.GetRange(1, rows.Count - 1).ToArray());
         file.Write("Programmatic_Buyers_" + this.GetTimeStamp() + ".csv");
       } catch (Exception e) {
-        Console.WriteLine("Failed to get programmatic buyers. Exception says \"{1}\"",
+        Console.WriteLine("Failed to get programmatic buyers. Exception says \"{0}\"",
             e.Message);
       }
     }

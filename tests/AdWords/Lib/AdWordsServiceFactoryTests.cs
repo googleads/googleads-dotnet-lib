@@ -26,7 +26,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
   /// </summary>
   [TestFixture]
   class AdWordsServiceFactoryTests {
-    private const string TEST_API_VERSION = "v201409";
+    private const string TEST_API_VERSION = "v201702";
     private const string TEST_SERVICE = "MediaService";
     private const string TEST_GROUP_NAME = "cm";
 

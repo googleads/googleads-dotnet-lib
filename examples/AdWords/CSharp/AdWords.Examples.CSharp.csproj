@@ -23,7 +23,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <NoWarn>0618</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -103,6 +102,7 @@
     <Compile Include="v201607\BasicOperations\UpdateKeyword.cs" />
     <Compile Include="v201607\CampaignManagement\AddCampaignLabels.cs" />
     <Compile Include="v201607\CampaignManagement\AddCompleteCampaignsUsingBatchJob.cs" />
+    <Compile Include="v201607\CampaignManagement\AddCompleteCampaignsUsingStreamingBatchJob.cs" />
     <Compile Include="v201607\CampaignManagement\AddDraft.cs" />
     <Compile Include="v201607\CampaignManagement\AddExperiment.cs" />
     <Compile Include="v201607\CampaignManagement\AddKeywordsUsingIncrementalBatchJob.cs" />
@@ -197,6 +197,7 @@
     <Compile Include="v201609\BasicOperations\UpdateKeyword.cs" />
     <Compile Include="v201609\CampaignManagement\AddCampaignLabels.cs" />
     <Compile Include="v201609\CampaignManagement\AddCompleteCampaignsUsingBatchJob.cs" />
+    <Compile Include="v201609\CampaignManagement\AddCompleteCampaignsUsingStreamingBatchJob.cs" />
     <Compile Include="v201609\CampaignManagement\AddDraft.cs" />
     <Compile Include="v201609\CampaignManagement\AddKeywordsUsingIncrementalBatchJob.cs" />
     <Compile Include="v201609\CampaignManagement\AddTrial.cs" />
@@ -290,6 +291,7 @@
     <Compile Include="v201702\BasicOperations\UpdateKeyword.cs" />
     <Compile Include="v201702\CampaignManagement\AddCampaignLabels.cs" />
     <Compile Include="v201702\CampaignManagement\AddCompleteCampaignsUsingBatchJob.cs" />
+    <Compile Include="v201702\CampaignManagement\AddCompleteCampaignsUsingStreamingBatchJob.cs" />
     <Compile Include="v201702\CampaignManagement\AddDraft.cs" />
     <Compile Include="v201702\CampaignManagement\AddKeywordsUsingIncrementalBatchJob.cs" />
     <Compile Include="v201702\CampaignManagement\AddTrial.cs" />

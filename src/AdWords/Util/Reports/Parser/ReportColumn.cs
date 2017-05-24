@@ -35,9 +35,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     }
 
     /// <summary>
-    /// The constructor for providing an optional column name.
+    /// Initializes a new instance of the <see cref="ReportColumn" /> class.
     /// </summary>
-    /// <param name="ColName">The column name</param>
+    /// <param name="colName">The column name</param>
     public ReportColumn(string colName) {
       this.ColumnName = colName;
     }

@@ -22,7 +22,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -65,7 +64,6 @@
     <Compile Include="Logging\KeyValueMessageFormatter.cs" />
     <Compile Include="Util\DateTimeProvider.cs" />
     <Compile Include="Util\DefaultDateTimeProvider.cs" />
-    <Compile Include="Lib\CredentialsExpiredException.cs" />
     <Compile Include="Lib\ErrorHandler.cs" />
     <Compile Include="Lib\ContextStore.cs" />
     <Compile Include="Lib\AdsOAuthProviderForApplications.cs" />

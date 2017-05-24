@@ -22,7 +22,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -74,6 +73,7 @@
     <Compile Include="Util\CsvFileTests.cs" />
     <Compile Include="Util\Reports\ReportResponseTests.cs" />
     <Compile Include="Util\TemporaryIdGeneratorTests.cs" />
+    <Compile Include="Util\TraceUtilitiesTest.cs" />
     <Compile Include="Util\XmlUtilitiesTest.cs" />
     <Compile Include="WebRequestInterceptor.cs" />
     <Compile Include="Mocks\MockAdsClient.cs" />

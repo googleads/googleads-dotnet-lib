@@ -202,32 +202,14 @@ namespace Google.Api.Ads.Common.Lib {
     /// method.</param>
     /// <returns>The results from calling the SOAP API method.</returns>
     protected virtual object[] MakeApiCall(string methodName, object[] parameters) {
-      ErrorHandler errorHandler = CreateErrorHandler();
-
-      while (true) {
-        try {
-          InitForCall(methodName, parameters);
-          return base.Invoke(methodName, parameters);
-        } catch (SoapException e) {
-          Exception customException = GetCustomException(e);
-          if (errorHandler.ShouldRetry(customException)) {
-            errorHandler.PrepareForRetry(customException);
-          } else {
-            throw customException;
-          }
-        } finally {
-          CleanupAfterCall(methodName, parameters);
-        }
+      try {
+        InitForCall(methodName, parameters);
+        return base.Invoke(methodName, parameters);
+      } catch (SoapException e) {
+        throw GetCustomException(e);
+      } finally {
+        CleanupAfterCall(methodName, parameters);
       }
-      throw new ArgumentOutOfRangeException("Retry count cannot be negative.");
-    }
-
-    /// <summary>
-    /// Creates the error handler.
-    /// </summary>
-    /// <returns>The error handler instance.</returns>
-    protected virtual ErrorHandler CreateErrorHandler() {
-      return new ErrorHandler(this.User.Config);
     }
 
     /// <summary>

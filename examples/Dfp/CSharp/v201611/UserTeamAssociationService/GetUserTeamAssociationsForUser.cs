@@ -48,7 +48,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201611 {
     /// <summary>
     /// Run the code example.
     /// </summary>
-    /// <param name="user">The DFP user object running the code example.</param>
     public void Run(DfpUser dfpUser, long userId) {
       UserTeamAssociationService userTeamAssociationService =
           (UserTeamAssociationService) dfpUser.GetService(DfpService.v201611.UserTeamAssociationService);

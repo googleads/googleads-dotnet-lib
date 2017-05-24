@@ -1,3 +1,34 @@
+21.0.0
+======
+AdWords:
+  - Removed unused AdWordsErrorHandler and AdWordsCredentialsExpiredException
+  classes. These classes are no longer used for refreshing expired credentials.
+  AdsOAuthProvider classes refresh credentials before expiry.
+
+DFP:
+  - Added support for v201705.
+  - Remove support for v201605.
+  - Removed v201608 examples.
+  - Regenerated service stubs to correct an enum consistency issue outlined in
+  #1.
+
+Common:
+  - Removed CredentialsExpiredException. This exception was no longer used.
+  AdsOAuthProvider classes refresh credentials before expiry.
+  - Removed support for writing to deprecated log sources
+  AdsClientLibs.SoapXmlLogs and AdsClientLibs.RequestInfoLogs. These have been
+  replaced by AdsClientLibs.SummaryRequestLogs and
+  AdsClientLibs.DetailedRequestLogs, respectively. Logging levels have also
+  been adjusted as follows:
+
+    | Log type                      | Old level     | New level     |
+    |-------------------------------|---------------|---------------|
+    | SummaryRequestLogs (Success)  | Information   | Information   |
+    | SummaryRequestLogs (Failure)  | Error         | Warning       |
+    | DetailedRequestLogs (Success) | Information   | Verbose       |
+    | DetailedRequestLogs (Failure) | Error         | Information   |
+
+
 20.0.0
 =======
 AdWords:

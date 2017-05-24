@@ -1,10 +1,10 @@
-#Google Ads API .NET Client Library
+# Google Ads API .NET Client Library
 
 This project hosts the .NET client library for the various SOAP-Based Ads APIs at Google -
  [AdWords API](//developers.google.com/adwords/api) and
  [Google's DoubleClick for Publishers (DFP) API](//developers.google.com/doubleclick-publishers).
 
-##Features
+## Features
 - Distributed via Nuget
 - Stub classes for all the supported API versions and services.
 - Helpful utilities
@@ -13,22 +13,22 @@ This project hosts the .NET client library for the various SOAP-Based Ads APIs a
 - Easy management of credentials, authentication, and session information
 - Docs available in HTML and XML format.
 
-##Requirements
+## Requirements
 
 - .NET Framework 4.5.2 (or above): http://msdn2.microsoft.com/en-us/netframework/default.aspx
 - Microsoft Visual Studio: http://msdn2.microsoft.com/en-us/vstudio/default.aspx
 - An appropriate Google Ads account.
 
-##Announcements and updates
+## Announcements and updates
 
 For API and client library updates and news, please follow our Google+ Ads Developers page:
 https://plus.google.com/+GoogleAdsDevelopers/posts and our Google Ads Developers blog:
 http://googleadsdeveloper.blogspot.com/.
 
-##Getting started
+## Getting started
 
 1. Install your library of choice. We recommend using the following Nuget distributions:
-  ####AdWords API
+  #### AdWords API
 
   - [Google.AdWords](https://www.nuget.org/packages/Google.AdWords/): AdWords and DoubleClick Ad
    Exchange Buyer API DotNet Client Library
@@ -37,7 +37,7 @@ http://googleadsdeveloper.blogspot.com/.
   - [Google.AdWords.Examples.VB](https://www.nuget.org/packages/Google.AdWords.Examples.VB/):
    VB.NET Code examples for AdWords API
   
-  ####DFP API
+  #### DFP API
   
   - [Google.Dfp](https://www.nuget.org/packages/Google.Dfp/): DFP API DotNet Client Library
   - [Google.Dfp.Examples.CSharp](https://www.nuget.org/packages/Google.Dfp.Examples.CSharp/):
@@ -59,7 +59,7 @@ http://googleadsdeveloper.blogspot.com/.
 
   * [Developing a web application (AdWords or DFP)](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-on-behalf-of-your-clients-(web-flow))
 
-##Alternative distribution options
+## Alternative distribution options
 
 ### Binary distribution
 
@@ -124,7 +124,7 @@ CampaignService service = (CampaignService) user.GetService(
 You can refer to [this wiki article](//github.com/googleads/googleads-dotnet-lib/wiki/Getting-Started) for
  more details.
 
-###Source distribution
+### Source distribution
 
 The source distribution of the Ads API .NET Client Library consists of individual Visual Studio
  projects for the client library, code examples and test cases, documentation, and support
@@ -186,27 +186,27 @@ To run the test cases, you need to download and install the latest version of NU
 It is recommended that you run the test cases against a test environment. Refer to the
  appropriate API documentation for details on how this may be done.
 
-##How to enable logging
+## How to enable logging
 
-See https://github.com/googleads/googleads-dotnet-lib/wiki#logging for details. 
+See https://github.com/googleads/googleads-dotnet-lib/wiki#logging for details.
  
-##Miscellaneous
+## Miscellaneous
 
-###Wiki
+### Wiki
 - https://github.com/googleads/googleads-dotnet-lib/wiki
 
-###Issue tracker
+### Issue tracker
 - https://github.com/googleads/googleads-dotnet-lib/issues
 
-###API Documentation:
+### API Documentation:
 - AdWords API: https://developers.google.com/adwords/api/
 - DFP API: https://developers.google.com/doubleclick-publishers/
 
-###Support forum
+### Support forum
 - AdWords API: https://developers.google.com/adwords/api/community/
 - DFP API: https://developers.google.com/doubleclick-publishers/community
 
-###Authors
+### Authors
 - https://github.com/AnashOommen
 - https://github.com/ChristopherSeeley
 - https://github.com/jimper

@@ -48,13 +48,11 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// <summary>
     /// Run the code example.
     /// </summary>
-    /// <param name="user">The DFP user object running the code example.</param>
     public void Run(DfpUser dfpUser, long proposalId) {
       ProposalService proposalService =
           (ProposalService) dfpUser.GetService(DfpService.v201702.ProposalService);
 
       // Create a statement to select Marketplace comments.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
       StatementBuilder statementBuilder = new StatementBuilder()
           .Where("proposalId = :proposalId")
           .AddValue("proposalId", proposalId);

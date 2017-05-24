@@ -24,25 +24,6 @@ Imports System.IO.Compression
 Imports System.Xml
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201607
-
-  ''' Deserialize the report into a list of CriteriaReportRow.
-  ''' You can also deserialize the list into your own POCOs as follows.
-  ''' 1. Annotate your class properties with ReportRow annotation.
-  '''
-  '''  Public Class MyCriteriaReportRow
-  '''
-  '''    <ReportColumn>
-  '''    Public Property KeywordID as Long
-  '''
-  '''    <ReportColumn>
-  '''    Public Property Impressions as Long
-  '''  End Class
-  '''
-  ''' 2. Deserialize into your own report rows.
-  '''
-  ''' Dim report As New AwReport(Of CriteriaReportRow) _
-  '''                        (New AwXmlTextReader(gzipStream), "Example")
-
   ''' <summary>
   ''' This code example streams the results of an ad hoc report, collecting
   ''' total impressions by network from each line. This demonstrates how you
@@ -97,6 +78,23 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201607
           Using gzipStream As GZipStream = New GZipStream(response.Stream, _
               CompressionMode.Decompress)
 
+            ' Deserialize the report into a list of CriteriaReportRow.
+            ' You can also deserialize the list into your own POCOs as follows.
+            ' 1. Annotate your class properties with ReportRow annotation.
+            '
+            '  Public Class MyCriteriaReportRow
+            '
+            '    <ReportColumn>
+            '    Public Property KeywordID as Long
+            '
+            '    <ReportColumn>
+            '    Public Property Impressions as Long
+            '  End Class
+            '
+            ' 2. Deserialize into your own report rows.
+            '
+            ' Dim report As New AwReport(Of CriteriaReportRow) _
+            '                        (New AwXmlTextReader(gzipStream), "Example")
             Using report As New AwReport(Of CriteriaReportRow) _
                 (New AwXmlTextReader(gzipStream), "Example")
               While report.MoveNext()

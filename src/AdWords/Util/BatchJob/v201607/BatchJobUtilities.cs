@@ -18,10 +18,10 @@ using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util;
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Collections.Generic;
 
 using ApiBatchJob = Google.Api.Ads.AdWords.v201607.BatchJob;
 
@@ -89,7 +89,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob.v201607 {
     /// </summary>
     /// <param name="operations">The list of operations.</param>
     /// <returns>The POST body, for using in the web request.</returns>
-    private string GetPostBody(Operation[] operations) {
+    protected string GetPostBody(IEnumerable<Operation> operations) {
       BatchJobMutateRequest request = new BatchJobMutateRequest() {
         operations = operations.ToArray()
       };
@@ -101,7 +101,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob.v201607 {
     /// </summary>
     /// <param name="url">The temporary URL returned by a batch job.</param>
     /// <param name="operations">The list of operations.</param>
-    public void Upload(string url, Operation[] operations) {
+    public void Upload(string url, IEnumerable<Operation> operations) {
       // Mark the usage.
       featureUsageRegistry.MarkUsage(FEATURE_ID);
 
@@ -115,12 +115,37 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob.v201607 {
     /// <param name="operations">The list of operations.</param>
     /// <param name="resumePreviousUpload">True, if a previously interrupted
     /// upload should be resumed.</param>
-    public void Upload(string url, Operation[] operations, bool resumePreviousUpload) {
+    public void Upload(string url, IEnumerable<Operation> operations, bool resumePreviousUpload) {
       // Mark the usage.
       featureUsageRegistry.MarkUsage(FEATURE_ID);
 
+      long totalUploaded = 0;
+
       byte[] postBody = Encoding.UTF8.GetBytes(GetPostBody(operations));
-      Upload(url, resumePreviousUpload, postBody);
+      long totalUploadSize = postBody.Length;
+
+      // If this file has been uploaded partially, just upload the remaining
+      // part.
+      if (resumePreviousUpload) {
+        totalUploaded = GetUploadProgress(url);
+        byte[] temp = new byte[totalUploadSize - totalUploaded];
+        Array.Copy(postBody, totalUploaded, temp, 0, totalUploadSize - totalUploaded);
+        postBody = temp;
+      }
+
+      Upload(url, postBody, totalUploaded, totalUploadSize);
+    }
+
+    /// <summary>
+    /// Uploads the operations to a specified URL in a streamed manner.
+    /// </summary>
+    /// <param name="uploadProgress">The upload progress tracker.</param>
+    /// <param name="operations">The list of operations.</param>
+    /// <returns>The updated progress tracker.</returns>
+    public BatchUploadProgress StreamUpload(BatchUploadProgress uploadProgress,
+        IEnumerable<Operation> operations) {
+      String postBody = GetPostBody(operations);
+      return StreamUpload(uploadProgress, postBody);
     }
 
     /// <summary>

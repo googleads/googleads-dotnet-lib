@@ -108,10 +108,10 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp {
       Console.WriteLine("Runs DFP API code examples");
       Console.WriteLine("Usage : {0} [flags]\n", exeName);
       Console.WriteLine("Available flags\n");
-      Console.WriteLine("--help\t\t : Prints this help message.", exeName);
-      Console.WriteLine("--all\t\t : Run all code examples.", exeName);
+      Console.WriteLine("--help\t\t : Prints this help message.");
+      Console.WriteLine("--all\t\t : Run all code examples.");
       Console.WriteLine("examplename1 [examplename1 ...] : " +
-          "Run specific code examples. Example name can be one of the following:\n", exeName);
+          "Run specific code examples. Example name can be one of the following:\n");
       foreach (SamplePair pair in sampleMap) {
         SampleBase sample = Activator.CreateInstance(pair.Value) as SampleBase;
         string description = (string) pair.Value

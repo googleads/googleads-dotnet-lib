@@ -47,7 +47,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// <summary>
     /// Run the code example.
     /// </summary>
-    /// <param name="user">The DFP user object running the code example.</param>
     public void Run(DfpUser dfpUser) {
       ActivityGroupService activityGroupService =
           (ActivityGroupService) dfpUser.GetService(DfpService.v201702.ActivityGroupService);

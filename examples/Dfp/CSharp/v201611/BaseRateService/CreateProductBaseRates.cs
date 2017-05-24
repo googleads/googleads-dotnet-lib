@@ -73,7 +73,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201611 {
         BaseRate[] baseRates = baseRateService.createBaseRates(new BaseRate[] {productBaseRate});
 
         foreach (BaseRate createdBaseRate in baseRates) {
-          Console.WriteLine("A product base rate with ID '{0}' and rate '{1} {2}' was created.",
+          Console.WriteLine("A product base rate with ID '{0}', name '{1}' "
+              + "and rate '{2} {3}' was created.",
               createdBaseRate.id, createdBaseRate.GetType().Name,
               (((ProductBaseRate) createdBaseRate).rate.microAmount / 1000000f),
               ((ProductBaseRate) createdBaseRate).rate.currencyCode);

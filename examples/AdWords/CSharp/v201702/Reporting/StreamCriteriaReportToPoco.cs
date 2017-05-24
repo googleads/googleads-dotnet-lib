@@ -21,39 +21,32 @@ using System;
 using System.IO.Compression;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
-
-  // Deserialize the report into a list of CriteriaReportRow.
-  // You can also deserialize the list into your own POCOs as follows.
-  // 1. Annotate your class properties with ReportRow annotation.
-  //
-  //  public class MyCriteriaReportRow {
-  //
-  //    [ReportColumn]
-  //    public long KeywordID { get; set; }
-  //
-  //    [ReportColumn]
-  //    public long Impressions { get; set; }
-  //  }
-  //
-  // 2. Deserialize into your own report rows.
-  //
-  // var report = new AwReport<MyCriteriaReportRow>(
-  //                new AwXmlTextReader(gzipStream), "Example");
-
   /// <summary>
   /// The class that holds the data of one row of the report.
   /// </summary>
   public class CriteriaReportRow {
 
+    /// <summary>
+    /// The Keyword ID column.
+    /// </summary>
     [ReportColumn("keywordID")]
     public long KeywordID { get; set; }
 
+    /// <summary>
+    /// The impressions column.
+    /// </summary>
     [ReportColumn("impressions")]
     public long Impressions { get; set; }
 
+    /// <summary>
+    /// The network column.
+    /// </summary>
     [ReportColumn("network")]
     public string NetworkType { get; set; }
 
+    /// <summary>
+    /// Returns a string that represents the current report row.
+    /// </summary>
     override public string ToString() {
       return "Id: " + KeywordID + " Impressions: "
           + Impressions + " NetworkType: " + NetworkType;
@@ -110,7 +103,23 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
             new GZipStream(response.Stream,
               CompressionMode.Decompress)) {
 
-            // Create the report object using the stream.
+            // Deserialize the report into a list of CriteriaReportRow.
+            // You can also deserialize the list into your own POCOs as follows.
+            // 1. Annotate your class properties with ReportRow annotation.
+            //
+            //  public class MyCriteriaReportRow {
+            //
+            //    [ReportColumn]
+            //    public long KeywordID { get; set; }
+            //
+            //    [ReportColumn]
+            //    public long Impressions { get; set; }
+            //  }
+            //
+            // 2. Deserialize into your own report rows.
+            //
+            // var report = new AwReport<MyCriteriaReportRow>(
+            //                new AwXmlTextReader(gzipStream), "Example");
             using (var report = new AwReport<CriteriaReportRow>(
                 new AwXmlTextReader(gzipStream), "Example")) {
               // Print the contents of each row object.

@@ -32,6 +32,9 @@ namespace Google.Api.Ads.Dfp.Tests.v201608 {
   [TestFixture]
   public class DateTimeUtilitiesTests {
 
+    /// <summary>
+    /// Tests creating from System DateTime.
+    /// </summary>
     [Test]
     public void TestFromDateTime() {
       System.DateTime dateTime = new System.DateTime(2015, 1, 30, 23, 59, 58);
@@ -46,6 +49,9 @@ namespace Google.Api.Ads.Dfp.Tests.v201608 {
       Assert.AreEqual(dfpDateTime.timeZoneID, "America/New_York");
     }
 
+    /// <summary>
+    /// Tests that fromDateTime ignores system time zone.
+    /// </summary>
     [Test]
     public void TestFromDateTimeIgnoresSystemTimeZone() {
       System.DateTime dateTime = new System.DateTime(2015, 1, 30, 23, 59, 58, DateTimeKind.Utc);
@@ -60,6 +66,9 @@ namespace Google.Api.Ads.Dfp.Tests.v201608 {
       Assert.AreEqual(dfpDateTime.timeZoneID, "America/New_York");
     }
 
+    /// <summary>
+    /// Tests creating a DFP DateTime from a string.
+    /// </summary>
     [Test]
     public void TestFromString() {
       DateTime dfpDateTime = DateTimeUtilities.FromString("20150130 23:59:58", "America/New_York");

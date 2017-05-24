@@ -27,6 +27,9 @@ using System.Web.Script.Serialization;
 
 namespace Google.Api.Ads.Common.Lib {
 
+  /// <summary>
+  /// Base class which provides OAuth authorization mechanism for Ads services.
+  /// </summary>
   public abstract class OAuth2ProviderBase : AdsOAuthProvider {
 
     /// <summary>

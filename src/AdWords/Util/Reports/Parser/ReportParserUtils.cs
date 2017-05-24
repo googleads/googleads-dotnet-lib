@@ -69,7 +69,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         }
         property.SetValue(record, val);
       }
-      catch (FormatException e) {
+      catch (FormatException) {
         onError(colVal, record);
       }
     }
@@ -78,7 +78,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// Gets the property name from type A that is associated with the given column name.
     /// </summary>
     /// <typeparam name="A">The POCO type</typeparam>
-    /// <param name="ColName">The column name</param>
+    /// <param name="colName">The column name</param>
     /// <returns>The property name associated with the column name</returns>
     public static string GetPropNameFromColName<A>(string colName) {
       var colNamePropNamePair = GetColAndPropNames<A>()

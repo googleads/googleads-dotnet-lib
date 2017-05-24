@@ -77,6 +77,9 @@ namespace Google.Api.Ads.AdWords.Tests {
       BeforeSendResponse += callback;
     }
 
+    /// <summary>
+    /// Returns the next message in a mock sequence.
+    /// </summary>
     public override HttpMessage GetNextMessage() {
       if (messageQueue.Count != 0) {
         return messageQueue.Dequeue();

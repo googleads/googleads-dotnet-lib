@@ -71,8 +71,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
         string adUnitFilePath = "Ad-Unit-Matchtable.csv";
         fetchMatchTables(pqlService, adUnitStatementBuilder, adUnitFilePath);
 
-        Console.WriteLine("Ad units saved to %s", adUnitFilePath);
-        Console.WriteLine("Line items saved to %s\n", lineItemFilePath);
+        Console.WriteLine("Ad units saved to {0}", adUnitFilePath);
+        Console.WriteLine("Line items saved to {0}\n", lineItemFilePath);
       } catch (Exception e) {
         Console.WriteLine("Failed to get match tables. Exception says \"{0}\"", e.Message);
       }

@@ -1,3 +1,17 @@
+// Copyright 2016, Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 #pragma warning disable 1591
 namespace Google.Api.Ads.Dfp.v201611
 {
@@ -1789,7 +1803,6 @@ namespace Google.Api.Ads.Dfp.v201611
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201611")]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingValue))]
-	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ChangeHistoryValue))]
 	public abstract partial class Value {
 	}
 
@@ -1962,7 +1975,6 @@ namespace Google.Api.Ads.Dfp.v201611
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201611")]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(TargetingValue))]
-	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ChangeHistoryValue))]
 	public abstract partial class ObjectValue : Value {
 	}
 
@@ -3679,7 +3691,7 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>Performs actions on <a href='ProductPackage'>ProductPackage</a> objects that
-		/// match the given <a href='Statement#query'>Statement#query</a>.
+		/// match the given <a href=''>Statement#query</a>.
 		/// </summary><param name='action'>the action to perform</param>
 		/// <param name='statement'>a Publisher Query Language statement used to filter a
 		/// set of product packages</param>
@@ -4590,23 +4602,23 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// <summary>Cannot create or activate a product package item base rate if the product
 		/// package item is archived.
 		/// </summary>
-		PRODUCT_PACKAGE_ITEM_ARCHIVED = 7,
+		PRODUCT_PACKAGE_ITEM_ARCHIVED = 9,
 		/// <summary>The PQL statement can only contain one of <code></code>, <code>productId</code>
 		/// or <code></code>.
 		/// </summary>
-		CANNOT_QUERY_ON_MULTIPLE_TYPES = 8,
+		CANNOT_QUERY_ON_MULTIPLE_TYPES = 10,
 		/// <summary>Product package must be associated with the rate card of the product package
 		/// item base rate. <p>See <a
 		/// href='ProductPackage#rateCardIds'>ProductPackage#rateCardIds</a>.</p>
 		/// </summary>
-		PRODUCT_PACKAGE_RATE_CARD_ASSOCIATION_MISSING = 9,
+		PRODUCT_PACKAGE_RATE_CARD_ASSOCIATION_MISSING = 11,
 		/// <summary>Indicates that the requested operation is not supported.
 		/// </summary>
 		UNSUPPORTED_OPERATION = 3,
 		/// <summary>Cannot delete a product package item base rate when its product package is
 		/// active.
 		/// </summary>
-		PRODUCT_PACKAGE_ACTIVE = 10,
+		PRODUCT_PACKAGE_ACTIVE = 12,
 		/// <summary>Cannot create a base rate to a product if its product template does not have a
 		/// base rate on this rate card.
 		/// </summary>
@@ -4620,11 +4632,11 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// href='BaseRate'>base rates</a>. Non-Marketplace <a href='RateCard'>rate
 		/// cards</a> should use traditional base rates.
 		/// </summary>
-		INVALID_RATE_CARD_CHANNEL = 11,
+		INVALID_RATE_CARD_CHANNEL = 7,
 		/// <summary>Marketplace does not support <a href='BaseRate'>base rates</a> with zero-value
 		/// rates.
 		/// </summary>
-		ZERO_MARKETPLACE_RATE_NOT_SUPPORTED = 12,
+		ZERO_MARKETPLACE_RATE_NOT_SUPPORTED = 8,
 		/// <summary>The value returned if the actual value is not exposed by the requested API
 		/// version.
 		/// </summary>
@@ -5053,8 +5065,9 @@ namespace Google.Api.Ads.Dfp.v201611
 			}
 		}
 
-		/// <summary>The date and time this <code>RateCard</code> was last modified. This attribute
-		/// is readonly and is assigned by Google when a <code></code> is updated.
+		/// <summary>The date and time this <code>RateCard</code> was last modified. <p>This
+		/// attribute is readonly and is assigned by Google when a <code>RateCard</code> is
+		/// updated.</p>
 		/// </summary>
 		public DateTime lastModifiedDateTime {
 			get {
@@ -6343,10 +6356,17 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// <summary>A company representing multiple advertisers and agencies.
 		/// </summary>
 		AD_NETWORK = 4,
-		/// <summary>A company representing a content owner's affiliate/distribution partner.
+		/// <summary>A company representing a content owner's affiliate/distribution partner. <p>This
+		/// field is deprecated in favor of <a href='Type#PARTNER'>Type#PARTNER</a>. All
+		/// companies of type <a
+		/// href='Type#AFFILIATE_DISTRIBUTION_PARTNER'>Type#AFFILIATE_DISTRIBUTION_PARTNER</a>
+		/// were changed to <a href='Type#PARTNER'>Type#PARTNER</a>.</p>
 		/// </summary>
 		AFFILIATE_DISTRIBUTION_PARTNER = 5,
-		/// <summary>A company representing a distributor's content partner.
+		/// <summary>A company representing a distributor's content partner. <p>This field is
+		/// deprecated in favor of <a href='Type#PARTNER'>Type#PARTNER</a>. All companies of
+		/// type <a href='Type#CONTENT_PARTNER'>Type#CONTENT_PARTNER</a> were changed to <a
+		/// href='Type#PARTNER'>Type#PARTNER</a>.</p>
 		/// </summary>
 		CONTENT_PARTNER = 6,
 		/// <summary>The value returned if the actual value is not exposed by the requested API
@@ -7134,12 +7154,15 @@ namespace Google.Api.Ads.Dfp.v201611
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CrossSellError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201611")]
 	public enum CrossSellErrorReason {
 		/// <summary>Only standard or sponsorship line item types are supported for cross selling.
+		/// <p>This field is deprecated. This error will never be returned.</p>
 		/// </summary>
 		UNSUPPORTED_RESERVATION_TYPE = 0,
-		/// <summary>A cross-sell partner must have at least one eligible line item type.
+		/// <summary>A cross-sell partner must have at least one eligible line item type. <p>This
+		/// field is deprecated. This error will never be returned.</p>
 		/// </summary>
 		NO_VALID_ELIGIBLE_RESERVATION_TYPES = 1,
-		/// <summary>A company for cross-sell partner must be an affiliate/distribution company.
+		/// <summary>A company for cross-sell partner must be of type <a
+		/// href='Company.Type#PARTNER'>Company.Type#PARTNER</a>.
 		/// </summary>
 		COMPANY_IS_NOT_DISTRIBUTION_PARTNER = 2,
 		/// <summary>The network code of a cross-sell partner cannot be changed.
@@ -9825,8 +9848,8 @@ namespace Google.Api.Ads.Dfp.v201611
 
 
 	/// <summary>Represents one or more <a href='CustomTargetingValue'>custom targeting
-	/// values</a> from different <a href='CustomTargetingKey'>custom targeting keys</a>
-	/// ANDed together.
+	/// values</a> from different <a href=''>CustomTargetingKey custom targeting
+	/// keys</a> ANDed together.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
@@ -11861,10 +11884,11 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// represents clicks; if the <a href='#rateType'>#rateType</a> is <a
 		/// href='RateType#CPM'>RateType#CPM</a>, it represents impressions; if the <a
 		/// href='#rateType'>#rateType</a> is <a href='RateType#CPD'>RateType#CPD</a>, it
-		/// represents line item days. If the <a href='#billFrom'>#billFrom</a> is <a
+		/// represents line item days. <p>If the <a href='#billFrom'>#billFrom</a> is <a
 		/// href='BillFrom#DFP'>BillFrom#DFP</a>, this attribute will be set to <a
-		/// href='#reconciledVolume'>#reconciledVolume</a> and used to calculate the <a
-		/// href='#reconciledRevenue'>#reconciledRevenue</a>. This attribute is read-only.
+		/// href=''>#reconciledVolume</a> and used to calculate the <a
+		/// href='#reconciledRevenue'>#reconciledRevenue</a>.</p> <p>This attribute is
+		/// read-only.</p>
 		/// </summary>
 		public long dfpVolume {
 			get {
@@ -11926,13 +11950,14 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// <summary>The volume manually entered. The meaning of this value depends on the <a
 		/// href='#rateType'>#rateType</a>, for example if the <a
 		/// href='#rateType'>#rateType</a> is <a href='RateType#CPC'>RateType#CPC</a>, it
-		/// represents clicks; if the <a href='#rateType'>#rateType</a> is <a
+		/// represents clicks; if the <a href=''>#rateType</a> is <a
 		/// href='RateType#CPM'>RateType#CPM</a>, it represents impressions; if the <a
 		/// href='#rateType'>#rateType</a> is <a href='RateType#CPD'>RateType#CPD</a>, it
-		/// represents line item days. If the <a href='#billFrom'>#billFrom</a> is <a
+		/// represents line item days. <p>If the <a href='#billFrom'>#billFrom</a> is <a
 		/// href='BillFrom#MANUAL'>BillFrom#MANUAL</a>, this attribute will be set to <a
-		/// href='#reconciledVolume'>#reconciledVolume</a> and used to calculate the <a
-		/// href='#reconciledRevenue'>#reconciledRevenue</a>. This attribute is optional.
+		/// href=''>#reconciledVolume</a> and used to calculate the <a
+		/// href='#reconciledRevenue'>#reconciledRevenue</a>.</p> <p>This attribute is
+		/// optional.</p>
 		/// </summary>
 		public long manualVolume {
 			get {
@@ -19087,11 +19112,11 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// <summary>Only <a href='PricingModel#NET'>PricingModel#NET</a> is supported for
 		/// programmatic <a href='ProposalLineItem'>proposal line items</a>.
 		/// </summary>
-		INVALID_PROGRAMMATIC_PRICING_MODEL = 10,
+		INVALID_PROGRAMMATIC_PRICING_MODEL = 11,
 		/// <summary>The value returned if the actual value is not exposed by the requested API
 		/// version.
 		/// </summary>
-		UNKNOWN = 11,
+		UNKNOWN = 10,
 	}
 
 
@@ -19264,7 +19289,7 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// <summary>Only the <a href='Network#timeZone'>Network#timeZone</a> is allowed for
 		/// programmatic <a href='Proposal'>proposals</a>.
 		/// </summary>
-		INVALID_TIME_ZONE_FOR_DEALS = 53,
+		INVALID_TIME_ZONE_FOR_DEALS = 55,
 		/// <summary>The <a
 		/// href='ProposalLineItem#environmentType'>ProposalLineItem#environmentType</a> is
 		/// invalid.
@@ -19336,11 +19361,11 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// <summary>Marketplace <a href='RateCard'>RateCard</a> cannot be used with a
 		/// non-programmatic <a href='ProposalLineItem'>ProposalLineItem</a>.
 		/// </summary>
-		MARKETPLACE_RATE_CARD_NOT_ALLOWED = 54,
+		MARKETPLACE_RATE_CARD_NOT_ALLOWED = 53,
 		/// <summary>Cannot create <a href='ProposalLineItem'>ProposalLineItem</a> from a <a
 		/// href='Product'>Product</a> if not using sales management.
 		/// </summary>
-		CANNOT_CREATE_FROM_PRODUCT = 55,
+		CANNOT_CREATE_FROM_PRODUCT = 54,
 		/// <summary>The value returned if the actual value is not exposed by the requested API
 		/// version.
 		/// </summary>
@@ -20056,7 +20081,7 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// href='EditProposalsForNegotiation'>EditProposalsForNegotiation</a> before
 		/// performing requested action.
 		/// </summary>
-		CAN_ONLY_EXECUTE_IF_LOCAL_EDITS = 5,
+		CAN_ONLY_EXECUTE_IF_LOCAL_EDITS = 14,
 		/// <summary><a href='Proposal'>Proposal</a> contains no <a href='ProposalLineItem'>proposal
 		/// line items</a>.
 		/// </summary>
@@ -20083,14 +20108,14 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// cannot execute the requested action before performing <a
 		/// href='SyncProposalsWithMarketplace'>SyncProposalsWithMarketplace</a>.
 		/// </summary>
-		PROPOSAL_OUT_OF_SYNC_WITH_MARKETPLACE = 12,
+		PROPOSAL_OUT_OF_SYNC_WITH_MARKETPLACE = 15,
 		/// <summary>No <a href='Proposal'>Proposal</a> changes were found.
 		/// </summary>
-		NO_PROPOSAL_CHANGES_FOUND = 13,
+		NO_PROPOSAL_CHANGES_FOUND = 12,
 		/// <summary>The value returned if the actual value is not exposed by the requested API
 		/// version.
 		/// </summary>
-		UNKNOWN = 14,
+		UNKNOWN = 13,
 	}
 
 
@@ -20989,8 +21014,8 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// </tr> <tr> <td><code>conditionStatus</code></td> <td><a
 		/// href='WorkflowExternalConditionRequest#status'>WorkflowExternalConditionRequest#status</a></td>
 		/// </tr> <tr> <td><code>type</code></td> <td><a
-		/// href='WorkflowRequest#type'>WorkflowRequest#type</a></td> </tr> </table>
-		/// <p>Starting in V201405 a <code>type</code> filter must be used</p>
+		/// href='WorkflowRequest#type'>WorkflowRequest#type</a></td> </tr> </table> <p>The
+		/// <code>type</code> filter is required. </p>
 		/// </summary><param name='filterStatement'>a Publisher Query Language statement used to
 		/// filter a set of proposals</param>
 		/// <returns>the workflow requests that match the given filter</returns>
@@ -22454,8 +22479,8 @@ namespace Google.Api.Ads.Dfp.v201611
 	}
 
 
-	/// <summary>The action used for pausing <a href='Order'>Order</a> objects. All <a
-	/// href='LineItem'>LineItem</a> objects within the order will be paused as well.
+	/// <summary>The action used for pausing all <a href='LineItem'>LineItem</a> objects within
+	/// an order.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
@@ -23213,7 +23238,9 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>Total viewable impressions delivered for all line items of this
-		/// <code>Order</code>. This value is read-only and is assigned by Google.
+		/// <code>Order</code>. This value is read-only and is assigned by Google. Starting
+		/// in v201705, this will be <code>null</code> when the order does not have line
+		/// items trafficked against a viewable impressions goal.
 		/// </summary>
 		public long totalViewableImpressionsDelivered {
 			get {
@@ -23376,8 +23403,8 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// eligible to serve.
 		/// </summary>
 		DISAPPROVED = 3,
-		/// <summary>Indicates that an approved <a href='Order'>Order</a> has been paused from
-		/// serving.
+		/// <summary>This is a legacy state. Paused status should be checked on <a
+		/// href='LineItems'>LineItems</a>s within the order.
 		/// </summary>
 		PAUSED = 4,
 		/// <summary>Indicates that the <a href='Order'>Order</a> has been canceled and cannot serve.
@@ -24883,20 +24910,7 @@ namespace Google.Api.Ads.Dfp.v201611
 	/// <td>LastModifiedDateTime</td> <td><code>Datetime</code></td> <td>The date and
 	/// time this terms and conditions was last modified.</td> </tr> <tr> <td>Name</td>
 	/// <td><code>Text</code></td> <td>The name of the terms and conditions.</td> </tr>
-	/// </table> <h2 id="Change_History">Change_History</h2> Restrictions: Offset is not
-	/// supported. Paging can be achieved by filtering on <code>ChangeDateTime</code>
-	/// ranges. The only supported sorting order is by <code>ChangeDateTime</code>
-	/// descending. Sorting on any other columns is not supported. <table> <tr>
-	/// <th>Column name</th> <th>Type</th> <th>Description</th> </tr> <tr>
-	/// <td>ChangeDateTime</td> <td><code>Datetime</code></td> <td>The date and time
-	/// this change happened.</td> </tr> <tr> <td>EntityId</td>
-	/// <td><code>Number</code></td> <td>The ID of the entity that was changed.</td>
-	/// </tr> <tr> <td>EntityType</td> <td><code>Text</code></td> <td>The <a
-	/// href='ChangeHistoryEntityType'>type</a> of the entity that was changed.</td>
-	/// </tr> <tr> <td>Operation</td> <td><code>Text</code></td> <td>The <a
-	/// href='ChangeHistoryOperation'>operation</a> that was performed on this
-	/// entity.</td> </tr> <tr> <td>UserId</td> <td><code>Number</code></td> <td>The <a
-	/// href='User#id'>ID</a> of the user that made this change.</td> </tr> </table>
+	/// </table>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -25001,110 +25015,6 @@ namespace Google.Api.Ads.Dfp.v201611
 				this.valueField = value;
 			}
 		}
-	}
-
-
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-	[System.SerializableAttribute()]
-	[System.Diagnostics.DebuggerStepThroughAttribute()]
-	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201611")]
-	public partial class ChangeHistoryValue : ObjectValue {
-		private ChangeHistoryEntityType entityTypeField;
-
-		private bool entityTypeFieldSpecified;
-
-		private ChangeHistoryOperation operationField;
-
-		private bool operationFieldSpecified;
-
-		public ChangeHistoryEntityType entityType {
-			get {
-				return this.entityTypeField;
-			}
-			set {
-				this.entityTypeField = value;
-				this.entityTypeSpecified = true;
-			}
-		}
-
-		/// <summary> <code>true</code>, if a value is specified for <see cref="entityType"
-		/// />, <code>false</code> otherwise. </summary>
-		[System.Xml.Serialization.XmlIgnoreAttribute()]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public bool entityTypeSpecified {
-			get {
-				return this.entityTypeFieldSpecified;
-			}
-			set {
-				this.entityTypeFieldSpecified = value;
-			}
-		}
-
-		public ChangeHistoryOperation operation {
-			get {
-				return this.operationField;
-			}
-			set {
-				this.operationField = value;
-				this.operationSpecified = true;
-			}
-		}
-
-		/// <summary> <code>true</code>, if a value is specified for <see cref="operation"
-		/// />, <code>false</code> otherwise. </summary>
-		[System.Xml.Serialization.XmlIgnoreAttribute()]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public bool operationSpecified {
-			get {
-				return this.operationFieldSpecified;
-			}
-			set {
-				this.operationFieldSpecified = value;
-			}
-		}
-	}
-
-
-	/// <summary>The type of entity a change occurred on.
-	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-	[System.SerializableAttribute()]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201611")]
-	public enum ChangeHistoryEntityType {
-		/// <summary>The value returned if the actual value is not exposed by the requested API
-		/// version.
-		/// </summary>
-		UNKNOWN = 0,
-		COMPANY = 1,
-		CONTACT = 2,
-		CREATIVE = 3,
-		CREATIVE_SET = 4,
-		PLACEMENT = 5,
-		AD_UNIT = 6,
-		LABEL = 7,
-		LINE_ITEM = 8,
-		NETWORK = 9,
-		ORDER = 10,
-		ROLE = 11,
-		TEAM = 12,
-		USER = 13,
-	}
-
-
-	/// <summary>An operation that was performed on an entity.
-	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
-	[System.SerializableAttribute()]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201611")]
-	public enum ChangeHistoryOperation {
-		CREATE = 0,
-		UPDATE = 1,
-		DELETE = 2,
-		/// <summary>The value returned if the actual value is not exposed by the requested API
-		/// version.
-		/// </summary>
-		UNKNOWN = 3,
 	}
 
 
@@ -26331,9 +26241,7 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>The name of the ad unit. This attribute is required and its maximum length is
-		/// 255 characters. This attribute must also be case-insensitive unique. Beginning
-		/// in V201311, this attribute can be updated. In versions before v201311, this
-		/// attribute is read-only after creation.
+		/// 255 characters. This attribute must also be case-insensitive unique.
 		/// </summary>
 		public string name {
 			get {
@@ -26414,11 +26322,9 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>A string used to uniquely identify the ad unit for the purposes of serving the
-		/// ad. Beginning in V201311, this attribute is optional and can be set during ad
-		/// unit creation. If it is not provided, it will be assigned by Google based off of
-		/// the inventory unit ID. Before V201311, this attribute is read-only and assigned
-		/// by Google. Once an ad unit is created, its <code>adUnitCode</code> cannot be
-		/// changed.
+		/// ad. This attribute is optional and can be set during ad unit creation. If it is
+		/// not provided, it will be assigned by Google based off of the inventory unit ID.
+		/// Once an ad unit is created, its <code>adUnitCode</code> cannot be changed.
 		/// </summary>
 		public string adUnitCode {
 			get {
@@ -26515,6 +26421,9 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// href='Company.Type#AFFILIATE_DISTRIBUTION_PARTNER'>Company.Type#AFFILIATE_DISTRIBUTION_PARTNER</a>,
 		/// to which this ad unit belongs. This attribute is optional. Setting this
 		/// attribute to <code>null</code> will disassociate the partner from this ad unit.
+		/// <p>This field is deprecated. All companies of type <a
+		/// href='Company.Type#AFFILIATE_DISTRIBUTION_PARTNER'>Company.Type#AFFILIATE_DISTRIBUTION_PARTNER</a>
+		/// were changed to <a href='Company.Type#PARTNER'>Company.Type#PARTNER</a>.</p>
 		/// </summary>
 		public long partnerId {
 			get {
@@ -26629,7 +26538,7 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>The smart size mode for this ad unit. This attribute is optional and defaults to
-		/// <a href='SmartSizeMode#NONE'>SmartSizeMode#NONE</a> for fixed sizes.
+		/// <a href=''>SmartSizeMode#NONE</a> for fixed sizes.
 		/// </summary>
 		public SmartSizeMode smartSizeMode {
 			get {
@@ -26684,7 +26593,8 @@ namespace Google.Api.Ads.Dfp.v201611
 
 		/// <summary>Whether this ad unit is shared by a distributor network. When this field is
 		/// <code>true</code>, then <code>crossSellingDistributor</code> will contain data
-		/// for the distributor network. This attribute is read-only.
+		/// for the distributor network. This attribute is read-only. <p>This field is
+		/// deprecated.</p>
 		/// </summary>
 		public bool isSharedByDistributor {
 			get {
@@ -26710,7 +26620,8 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>If this ad unit is shared by a distributor network, then this field will contain
-		/// data describing that distributor network. This attribute is read-only.
+		/// data describing that distributor network. This attribute is read-only. <p>This
+		/// field is deprecated.</p>
 		/// </summary>
 		public CrossSellingDistributor crossSellingDistributor {
 			get {
@@ -26850,10 +26761,10 @@ namespace Google.Api.Ads.Dfp.v201611
 	}
 
 
-	/// <summary>An <code>AdUnitSize</code> represents the size of an ad in an ad unit. Starting
-	/// with v201108 this also represents the environment, and companions of a
-	/// particular ad in an ad unit. In most cases, it is a simple size with just a
-	/// width and a height (sometimes representing an aspect ratio).
+	/// <summary>An <code>AdUnitSize</code> represents the size of an ad in an ad unit. This also
+	/// represents the environment and companions of a particular ad in an ad unit. In
+	/// most cases, it is a simple size with just a width and a height (sometimes
+	/// representing an aspect ratio).
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
@@ -27525,7 +27436,7 @@ namespace Google.Api.Ads.Dfp.v201611
 
 
 	/// <summary>Encapsulation of data describing a distributor network that has shared an ad
-	/// unit with a content provider network.
+	/// unit with a content provider network. <p>This class is deprecated.</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
@@ -27735,6 +27646,9 @@ namespace Google.Api.Ads.Dfp.v201611
 
 
 	/// <summary>Errors relating to the association of partner companies with inventory units.
+	/// <p>This class is deprecated. All companies of type <a
+	/// href='Company.Type#AFFILIATE_DISTRIBUTION_PARTNER'>Company.Type#AFFILIATE_DISTRIBUTION_PARTNER</a>
+	/// were changed to <a href='Company.Type#PARTNER'>Company.Type#PARTNER</a>.</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
@@ -28519,11 +28433,10 @@ namespace Google.Api.Ads.Dfp.v201611
 	/// <summary>Provides methods for creating and retrieving <a
 	/// href='ProductPackageItem'>ProductPackageItem</a> objects. <p>A <a
 	/// href='ProductPackageItem'>ProductPackageItem</a> represents a product which will
-	/// be associated with a <a href='ProductPackage'>ProductPackage</a>.</p> <p>To use
-	/// this service, you need to have the new sales management solution enabled on your
-	/// network. If you do not see a "Sales" tab in <a
-	/// href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you will
-	/// not be able to use this service.</p>
+	/// be associated with a <a href=''>ProductPackage</a>.</p> <p>To use this service,
+	/// you need to have the new sales management solution enabled on your network. If
+	/// you do not see a "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick
+	/// for Publishers (DFP)</a>, you will not be able to use this service.</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -29078,8 +28991,7 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// <summary>Gets the availability forecast for a <a
 		/// href='ProspectiveLineItem'>ProspectiveLineItem</a>. An availability forecast
 		/// reports the maximum number of available units that the line item can book, and
-		/// the total number of units matching the line item's targeting. <p>Note: Beginning
-		/// in v201502, this replaces the previous getForecast method. </p>
+		/// the total number of units matching the line item's targeting.
 		/// </summary><param name='lineItem'>the prospective line item (new or existing) to be
 		/// forecasted for availability</param>
 		/// <param name='forecastOptions'>options controlling the forecast</param>
@@ -29102,11 +29014,8 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// also the total number of units matching the line item's targeting. <p>Only line
 		/// items having type <a
 		/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a> or <a
-		/// href='LineItemType#STANDARD'>LineItemType#STANDARD</a> are valid. Other types
-		/// will result in <a
-		/// href='ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED'>ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED</a>.</p>
-		/// <p>Note: Beginning in v201502, this replaces the previous getForecastById
-		/// method. </p>
+		/// href=''>LineItemType#STANDARD</a> are valid. Other types will result in <a
+		/// href=''>ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED</a>. </p>
 		/// </summary><param name='lineItemId'>the ID of a <a href='LineItem'>LineItem</a> to run the
 		/// forecast on.</param>
 		/// <param name='forecastOptions'>options controlling the forecast</param>
@@ -29144,10 +29053,9 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>Gets the delivery forecast for a list of existing <a
-		/// href='LineItem'>LineItem</a> objects in a single delivery simulation with line
-		/// items potentially contending with each other. A delivery forecast reports the
-		/// number of units that will be delivered to each line item given the line item
-		/// goals and contentions from other line items.
+		/// href='LineItem'>LineItem</a> objects in a single delivery simulation. A delivery
+		/// forecast reports the number of units that will be delivered to each line item
+		/// given the line item goals and contentions from other line items.
 		/// </summary><param name='lineItemIds'>the IDs of line items to be forecasted for
 		/// delivery</param>
 		/// <param name='forecastOptions'>options controlling the forecast</param>
@@ -30892,7 +30800,7 @@ namespace Google.Api.Ads.Dfp.v201611
 
 
 	/// <summary>Contains data used to display information synchronized with Canoe for set-top
-	/// box enabled <a href='LineItem'>line items</a>.
+	/// box enabled <a href=''>LineItem line items</a>.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
@@ -31801,10 +31709,9 @@ namespace Google.Api.Ads.Dfp.v201611
 
 		/// <summary>The strategy for delivering ads over the course of the line item's duration.
 		/// This attribute is optional and defaults to <a
-		/// href='DeliveryRateType#EVENLY'>DeliveryRateType#EVENLY</a>. Starting in v201306,
-		/// it may default to <a
-		/// href='DeliveryRateType#FRONTLOADED'>DeliveryRateType#FRONTLOADED</a> if
-		/// specifically configured to on the network.
+		/// href='DeliveryRateType#EVENLY'>DeliveryRateType#EVENLY</a> or <a
+		/// href='DeliveryRateType#FRONTLOADED'>DeliveryRateType#FRONTLOADED</a> depending
+		/// on the network's configuration.
 		/// </summary>
 		public DeliveryRateType deliveryRateType {
 			get {
@@ -32107,8 +32014,7 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>This attribute is required and meaningful only if the <a
-		/// href='LineItem#costType'>LineItem#costType</a> is <a
-		/// href='CostType.CPA'>CostType.CPA</a>.
+		/// href='LineItem#costType'>LineItem#costType</a> is <a href=''>CostType.CPA</a>.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute("activityAssociations")]
 		public LineItemActivityAssociation[] activityAssociations {
@@ -32674,9 +32580,10 @@ namespace Google.Api.Ads.Dfp.v201611
 
 		/// <summary>Indicates if a <code>LineItem</code> is missing any <a
 		/// href='Creative'>creatives</a> for the <code>creativePlaceholders</code>
-		/// specified. <a href='Creative'>Creatives</a> can be considered missing for
-		/// several reasons including: <ul> <li>Not enough <a href='Creative'>creatives</a>
-		/// of a certain size have been uploaded, as determined by <a
+		/// specified. <p><a href='Creative'>Creatives</a> can be considered missing for
+		/// several reasons including:</p> <ul> <li>Not enough <a
+		/// href='Creative'>creatives</a> of a certain size have been uploaded, as
+		/// determined by <a
 		/// href='CreativePlaceholder#expectedCreativeCount'>CreativePlaceholder#expectedCreativeCount</a>.
 		/// For example a <code>LineItem</code> specifies 750x350, 400x200 but only a
 		/// 750x350 was uploaded. Or <code>LineItem</code> specifies 750x350 with an
@@ -32767,7 +32674,7 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// required and meaningful only if the <a
 		/// href='LineItem#costType'>LineItem#costType</a> is <a
 		/// href='CostType.CPA'>CostType.CPA</a> or if the <a
-		/// href='LineItem#lineItemType'>LineItem#lineItemType</a> is <a
+		/// href=''>LineItem#lineItemType</a> is <a
 		/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a> and <a
 		/// href='LineItem#costType'>LineItem#costType</a> is <a
 		/// href='CostType.CPM'>CostType.CPM</a>.
@@ -34108,8 +34015,8 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// MALE_65_PLUS, FEMALE_13_TO_17, FEMALE_18_TO_24, FEMALE_25_TO_34,
 		/// FEMALE_35_TO_44, FEMALE_45_TO_54, FEMALE_55_TO_64, FEMALE_65_PLUS,
 		/// UNKNOWN_0_TO_17 and UNKNOWN. Whenever this dimension is selected, <a
-		/// href='#COUNTRY_NAME'>#COUNTRY_NAME</a> must be selected. <p>This dimension is
-		/// supported only for GRP columns.</p>
+		/// href=''>#COUNTRY_NAME</a> must be selected. <p>This dimension is supported only
+		/// for GRP columns.</p>
 		/// </summary>
 		GRP_DEMOGRAPHICS = 61,
 		/// <summary>Size of the creative requested for an ad.
@@ -34149,10 +34056,10 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// abstraction of inventory used in the DFP Mediation.
 		/// </summary>
 		MEDIATION_GROUP_NAME = 158,
-		/// <summary>Breaks down linked Ad Exchange web property data by mediation network.
+		/// <summary>Breaks down mapped Ad Exchange web property data by mediation network.
 		/// </summary>
 		MEDIATION_NETWORK = 159,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange network tag
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange network tag
 		/// name.
 		/// </summary>
 		MEDIATION_NETWORK_TAG = 160,
@@ -34261,11 +34168,11 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// </summary>
 		PRODUCT_TEMPLATE_NAME = 82,
 		/// <summary>Breaks down reporting data by <a href='RateCard#id'>RateCard#id</a>. Can be used
-		/// to filter by <a href='RateCard#id'>RateCard#id</a>.
+		/// to filter by <a href=''>RateCard#id</a>.
 		/// </summary>
 		RATE_CARD_ID = 83,
 		/// <summary>Breaks down reporting data by <a href='RateCard#name'>RateCard#name</a>. Can be
-		/// used to filter by <a href='RateCard#name'>RateCard#name</a>.
+		/// used to filter by <a href=''>RateCard#name</a>.
 		/// </summary>
 		RATE_CARD_NAME = 84,
 		/// <summary>Used to filter by <a href='Workflow#id'>Workflow#id</a>. Not available as a
@@ -34300,244 +34207,166 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// <summary>Breaks down reporting data by audience segment data provider name.
 		/// </summary>
 		AUDIENCE_SEGMENT_DATA_PROVIDER_NAME = 89,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange ad size.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange inventory size.
 		/// </summary>
 		AD_EXCHANGE_AD_SIZE_NAME = 90,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange platforms.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange device category.
 		/// </summary>
 		AD_EXCHANGE_PLATFORM_TYPE_NAME = 91,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange pricing rule id.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange pricing rule ID.
 		/// </summary>
 		AD_EXCHANGE_PRICING_RULE_ID = 92,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange pricing rules.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange pricing rule.
 		/// </summary>
 		AD_EXCHANGE_PRICING_RULE_NAME = 93,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange tags. <p><b>This
-		/// experimental dimension only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange tag.
 		/// </summary>
 		AD_EXCHANGE_TAG_NAME = 94,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange URLs. <p><b>This
-		/// experimental dimension only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange URL.
 		/// </summary>
 		AD_EXCHANGE_URL_CHANNEL_NAME = 95,
-		/// <summary>Breaks down data by Ad Exchange linked web properties. <p><b>This experimental
-		/// dimension only works with Ad Exchange web properties linked with an active
-		/// status.</b></p>
+		/// <summary>Breaks down data by Ad Exchange mapped web property code.
 		/// </summary>
 		AD_EXCHANGE_AD_CLIENT_ID = 96,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange creative size.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange creative size.
 		/// </summary>
 		AD_EXCHANGE_CREATIVE_SIZES = 97,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange ad types.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange ad type.
 		/// </summary>
 		AD_EXCHANGE_AD_FORMAT_NAME = 98,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange channels.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange channel.
 		/// </summary>
 		AD_EXCHANGE_CHANNEL_NAME = 99,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange products.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange product.
 		/// </summary>
 		AD_EXCHANGE_PRODUCT_NAME = 100,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange sites.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange site.
 		/// </summary>
 		AD_EXCHANGE_SITE_NAME = 101,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange request sources.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange request source.
 		/// </summary>
 		AD_EXCHANGE_REQUEST_SOURCES = 102,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange ad transaction.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange ad transaction.
 		/// </summary>
 		AD_EXCHANGE_TRANSACTION_TYPE_NAME = 103,
-		/// <summary>Breaks down linked Ad Exchange web property data by the Ad Exchange advertiser
-		/// name that bids on ads. <p><b>This experimental dimension only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by the Ad Exchange advertiser
+		/// name that bids on ads.
 		/// </summary>
 		AD_EXCHANGE_ADVERTISER_NAME = 104,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange agency.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange agency.
 		/// </summary>
 		AD_EXCHANGE_AGENCY = 105,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange bid type.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange bid type.
 		/// </summary>
 		AD_EXCHANGE_BID_TYPE = 106,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange branding type.
-		/// Examples: Branded, Anonymous. <p><b>This experimental dimension only works with
-		/// Ad Exchange web properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange branding type
+		/// code.
 		/// </summary>
 		AD_EXCHANGE_BRANDING_TYPE = 107,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange ad network name.
-		/// Example: Google Adwords. <p><b>This experimental dimension only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange ad network name.
+		/// Example: Google Adwords.
 		/// </summary>
 		AD_EXCHANGE_BUYER_NETWORK_NAME = 108,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange date. <p><b>This
-		/// experimental dimension only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange date.
 		/// </summary>
 		AD_EXCHANGE_DATE = 109,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange deal CPM cost.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange deal CPM cost.
 		/// </summary>
 		AD_EXCHANGE_DEAL_CPM = 110,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange deal id.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange deal id.
 		/// </summary>
 		AD_EXCHANGE_DEAL_ID = 111,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange deal name.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange deal name.
 		/// </summary>
 		AD_EXCHANGE_DEAL_NAME = 112,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange deal/transaction
-		/// type. Example: Open auction. <p><b>This experimental dimension only works with
-		/// Ad Exchange web properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange deal/transaction
+		/// type. Example: Open auction.
 		/// </summary>
 		AD_EXCHANGE_DEAL_TYPE = 113,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange DSP buyer
-		/// network name. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange DSP buyer
+		/// network name.
 		/// </summary>
 		AD_EXCHANGE_DSP_BUYER_NETWORK_NAME = 114,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange expansion type.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange expansion type.
 		/// </summary>
 		AD_EXCHANGE_EXPANSION_TYPE = 115,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange country code.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange country code.
 		/// </summary>
 		AD_EXCHANGE_COUNTRY_CODE = 116,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange country name.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange country name.
 		/// </summary>
 		AD_EXCHANGE_COUNTRY_NAME = 117,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange inventory
-		/// ownership. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange inventory
+		/// ownership.
 		/// </summary>
 		AD_EXCHANGE_INVENTORY_OWNERSHIP = 118,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange advertiser
-		/// landing page domain. <p><b>This experimental dimension only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange advertiser
+		/// domain.
 		/// </summary>
 		AD_EXCHANGE_LANDING_PAGE_DOMAIN = 119,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange mobile app name.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile app name.
 		/// </summary>
 		AD_EXCHANGE_MOBILE_APP_NAME = 120,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange mobile carrier
-		/// name. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile carrier
+		/// name.
 		/// </summary>
 		AD_EXCHANGE_MOBILE_CARRIER_NAME = 121,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange mobile device
-		/// name. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile device
+		/// name.
 		/// </summary>
 		AD_EXCHANGE_MOBILE_DEVICE_NAME = 122,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange mobile inventory
-		/// type. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile inventory
+		/// type.
 		/// </summary>
 		AD_EXCHANGE_MOBILE_INVENTORY_TYPE = 123,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange month.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange month.
 		/// </summary>
 		AD_EXCHANGE_MONTH = 124,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange partner name.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange network partner
+		/// name.
 		/// </summary>
 		AD_EXCHANGE_NETWORK_PARTNER_NAME = 125,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange operating system
-		/// version. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange operating system
+		/// version.
 		/// </summary>
 		AD_EXCHANGE_OS_VERSION_NAME = 126,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange tags. <p><b>This
-		/// experimental dimension only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange tags.
 		/// </summary>
 		AD_EXCHANGE_TAG_CODE = 127,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange targeting type.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange targeting type
+		/// code.
 		/// </summary>
 		AD_EXCHANGE_TARGETING_TYPE = 128,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange third party
-		/// buyer account name. <p><b>This experimental dimension only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange third party
+		/// buyer account name.
 		/// </summary>
 		AD_EXCHANGE_THIRD_PARTY_BUYER_ACCOUNT_NAME = 129,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange third-party
-		/// network tag currency. <p><b>This experimental dimension only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange third-party
+		/// network tag currency.
 		/// </summary>
 		AD_EXCHANGE_THIRD_PARTY_NETWORK_TAG_CURRENCY = 130,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange network tag
-		/// name. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange network tag
+		/// name.
 		/// </summary>
 		AD_EXCHANGE_THIRD_PARTY_NETWORK_TAG_NAME = 131,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange channel id.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange URL ID.
 		/// </summary>
 		AD_EXCHANGE_URL_CHANNEL_ID = 132,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange user bandwidth.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange user bandwidth.
 		/// </summary>
 		AD_EXCHANGE_USER_BANDWIDTH_NAME = 133,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange video ad
-		/// duration. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange video ad
+		/// duration.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_AD_DURATION = 134,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange raw video ad
-		/// duration. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange raw video ad
+		/// duration.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_AD_DURATION_RAW = 135,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange video ad type.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange video ad type.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_AD_FORMAT = 136,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange week. <p><b>This
-		/// experimental dimension only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange week.
 		/// </summary>
 		AD_EXCHANGE_WEEK = 137,
 		/// <summary>Campaign date segment of Nielsen Digital Ad Ratings reporting.
@@ -34705,9 +34534,9 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// </summary>
 		DYNAMIC_ALLOCATION_INVENTORY_LEVEL_IMPRESSIONS = 24,
 		/// <summary>The number of partner network impressions a dynamic allocation ad delivered when
-		/// no <a href='LineItem'>LineItem</a> reservation could be found by the ad server
-		/// for shared inventory-level dynamic allocation. For premium networks, this
-		/// includes line item-level dynamic allocation as well.
+		/// no <a href=''>LineItem</a> reservation could be found by the ad server for
+		/// shared inventory-level dynamic allocation. For premium networks, this includes
+		/// line item-level dynamic allocation as well.
 		/// </summary>
 		TOTAL_DYNAMIC_ALLOCATION_IMPRESSIONS_OUT_OF_NETWORK = 25,
 		/// <summary>The number of impressions an AdSense ad delivered for line item-level dynamic
@@ -34814,14 +34643,13 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// dynamic allocation.
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_IMPRESSIONS = 45,
-		/// <summary>The number of impressions delivered by Ad Exchange properties linked to DFP.
-		/// <p><b>This experimental column only works with Ad Exchange web properties linked
-		/// with an active status.</b></p>
+		/// <summary>Ad impressions (legacy) on mapped Ad Exchange properties. In the case of text
+		/// ads, you may have one matched request which yields more than one ad impression,
+		/// since multiple text ads can serve in place of one display ad.
 		/// </summary>
 		AD_EXCHANGE_IMPRESSIONS = 46,
-		/// <summary>The number of matched queries delivered by Ad Exchange properties linked to DFP.
-		/// <p><b>This experimental column only works with Ad Exchange web properties linked
-		/// with an active status.</b></p>
+		/// <summary>Number of requests where a buyer was matched with the Ad request, for mapped Ad
+		/// Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_MATCHED_QUERIES = 47,
 		/// <summary>The number of viewed queries delivered by Ad Exchange properties linked to DFP.
@@ -34829,54 +34657,36 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// with an active status.</b></p>
 		/// </summary>
 		AD_EXCHANGE_VIEWED_QUERIES = 48,
-		/// <summary>The number of clicks delivered by Ad Exchange properties linked to DFP.
-		/// <p><b>This experimental column only works with Ad Exchange web properties linked
-		/// with an active status.</b></p>
+		/// <summary>The number of clicks delivered by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_CLICKS = 49,
-		/// <summary>The estimated revenue generated by Ad Exchange properties linked to DFP.
-		/// <p><b>This experimental column only works with Ad Exchange web properties linked
-		/// with an active status.</b></p>
+		/// <summary>The estimated net revenue generated by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_ESTIMATED_REVENUE = 50,
-		/// <summary>The coverage or fill rate reported by Ad Exchange properties linked to DFP.
-		/// <p><b>This experimental column only works with Ad Exchange web properties linked
-		/// with an active status.</b></p>
+		/// <summary>The coverage reported by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_COVERAGE = 51,
-		/// <summary>The matched queries click-through rate delivered by Ad Exchange properties
-		/// linked to DFP. <p><b>This experimental column only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>The matched queries click-through rate delivered by mapped Ad Exchange
+		/// properties.
 		/// </summary>
 		AD_EXCHANGE_MATCHED_QUERIES_CTR = 52,
-		/// <summary>The total lift generated by Ad Exchange properties linked to DFP. <p><b>This
-		/// experimental column only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>The total lift generated by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_LIFT = 53,
-		/// <summary>The cost-per-click revenue generated by Ad Exchange properties linked to DFP.
-		/// <p><b>This experimental column only works with Ad Exchange web properties linked
-		/// with an active status.</b></p>
+		/// <summary>The cost-per-click generated by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_CPC_REVENUE = 54,
-		/// <summary>The number of ad requests issued by Ad Exchange properties linked to DFP.
-		/// <p><b>This experimental column only works with Ad Exchange web properties linked
-		/// with an active status.</b></p>
+		/// <summary>The number of ad requests issued by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_REQUESTS = 55,
-		/// <summary>The average estimated cost-per-thousand-ad requests earned by Ad Exchange
-		/// properties linked to DFP. <p><b>This experimental column only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>The average estimated cost-per-thousand-ad requests earned by mapped Ad Exchange
+		/// properties.
 		/// </summary>
 		AD_EXCHANGE_REQUEST_ECPM = 56,
-		/// <summary>The the click-through rate of ad requests issued by Ad Exchange properties
-		/// linked to DFP. <p><b>This experimental column only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>The click-through rate of ad requests issued by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_REQUEST_CTR = 57,
-		/// <summary>The click-through rate of impressions issued by Ad Exchange properties linked to
-		/// DFP. <p><b>This experimental column only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>The click-through rate of impressions issued by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_CTR = 58,
 		/// <summary>The video ad drop off rate issued by Ad Exchange properties linked to DFP.
@@ -34889,9 +34699,8 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// with an active status.</b></p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_ABANDONMENT_RATE = 60,
-		/// <summary>The average estimated cost-per-thousand-impressions generated by Ad Exchange
-		/// properties linked to DFP. <p><b>This experimental column only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>The average estimated cost-per-thousand-impressions generated by mapped Ad
+		/// Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_ECPM = 61,
 		/// <summary>The measurement rate of Active View impressions generated by Ad Exchange
@@ -34909,29 +34718,23 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// active status.</b></p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_FILL_RATE = 64,
-		/// <summary>The first quartile (25% of video played back) of video ads by Ad Exchange
-		/// properties linked to DFP. <p><b>This experimental column only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>A count of how many users watch the first 25% of a video ad, for mapped Ad
+		/// Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_QUARTILE_1 = 65,
-		/// <summary>The third quartile (75% of video played back) of video ads by Ad Exchange
-		/// properties linked to DFP. <p><b>This experimental column only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>A count of how many users watch the first 75% of a video ad, for mapped Ad
+		/// Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_QUARTILE_3 = 66,
-		/// <summary>The Trueview video skip rate by Ad Exchange properties linked to DFP. <p><b>This
-		/// experimental column only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>Percentage of times a user clicked Skip, for mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_TRUEVIEW_SKIP_RATE = 67,
-		/// <summary>The Trueview video views by Ad Exchange properties linked to DFP. <p><b>This
-		/// experimental column only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>Number of times a video ad has been viewed to completion or watched to 30
+		/// seconds, whichever happens first, for mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_TRUEVIEWS = 68,
-		/// <summary>The video view-through rate (only applies to Trueview ads) by Ad Exchange
-		/// properties linked to DFP. <p><b>This experimental column only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>TrueView views divided by TrueView impressions, for mapped Ad Exchange
+		/// properties.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_VTR = 69,
 		/// <summary>The third-party impression discrepancy by Ad Exchange properties linked to DFP.
@@ -35231,13 +35034,12 @@ namespace Google.Api.Ads.Dfp.v201611
 		GRP_AUDIENCE_REACH = 137,
 		/// <summary>The audience average frequency calculated as <a
 		/// href='#GRP_AUDIENCE_IMPRESSIONS'>#GRP_AUDIENCE_IMPRESSIONS</a> / <a
-		/// href='#GRP_UNIQUE_AUDIENCE'>#GRP_UNIQUE_AUDIENCE</a>.
+		/// href=''>#GRP_UNIQUE_AUDIENCE</a>.
 		/// </summary>
 		GRP_AUDIENCE_AVERAGE_FREQUENCY = 138,
 		/// <summary>The gross rating points (GRP) calculated as <a
 		/// href='#GRP_AUDIENCE_REACH'>#GRP_AUDIENCE_REACH</a> * <a
-		/// href='#GRP_AUDIENCE_AVERAGE_FREQUENCY'>#GRP_AUDIENCE_AVERAGE_FREQUENCY</a> *
-		/// 100.
+		/// href=''>#GRP_AUDIENCE_AVERAGE_FREQUENCY</a> * 100.
 		/// </summary>
 		GRP_GROSS_RATING_POINTS = 139,
 		/// <summary>The number of impressions for a particular SDK mediation creative.
@@ -35404,85 +35206,85 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// <summary>Number of VAST2 video errors.
 		/// </summary>
 		VIDEO_ERRORS_VAST_2_ERROR_COUNT = 188,
-		/// <summary>Number of VAST3 video errors of type 100.
+		/// <summary>Number of VAST video errors of type 100.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_100_COUNT = 189,
-		/// <summary>Number of VAST3 video errors of type 101.
+		/// <summary>Number of VAST video errors of type 101.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_101_COUNT = 190,
-		/// <summary>Number of VAST3 video errors of type 102.
+		/// <summary>Number of VAST video errors of type 102.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_102_COUNT = 191,
-		/// <summary>Number of VAST3 video errors of type 200.
+		/// <summary>Number of VAST video errors of type 200.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_200_COUNT = 192,
-		/// <summary>Number of VAST3 video errors of type 201.
+		/// <summary>Number of VAST video errors of type 201.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_201_COUNT = 193,
-		/// <summary>Number of VAST3 video errors of type 202.
+		/// <summary>Number of VAST video errors of type 202.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_202_COUNT = 194,
-		/// <summary>Number of VAST3 video errors of type 203.
+		/// <summary>Number of VAST video errors of type 203.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_203_COUNT = 195,
-		/// <summary>Number of VAST3 video errors of type 300.
+		/// <summary>Number of VAST video errors of type 300.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_300_COUNT = 196,
-		/// <summary>Number of VAST3 video errors of type 301.
+		/// <summary>Number of VAST video errors of type 301.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_301_COUNT = 197,
-		/// <summary>Number of VAST3 video errors of type 302.
+		/// <summary>Number of VAST video errors of type 302.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_302_COUNT = 198,
-		/// <summary>Number of VAST3 video errors of type 303.
+		/// <summary>Number of VAST video errors of type 303.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_303_COUNT = 199,
-		/// <summary>Number of VAST3 video errors of type 400.
+		/// <summary>Number of VAST video errors of type 400.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_400_COUNT = 200,
-		/// <summary>Number of VAST3 video errors of type 401.
+		/// <summary>Number of VAST video errors of type 401.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_401_COUNT = 201,
-		/// <summary>Number of VAST3 video errors of type 402.
+		/// <summary>Number of VAST video errors of type 402.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_402_COUNT = 202,
-		/// <summary>Number of VAST3 video errors of type 403.
+		/// <summary>Number of VAST video errors of type 403.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_403_COUNT = 203,
-		/// <summary>Number of VAST3 video errors of type 405.
+		/// <summary>Number of VAST video errors of type 405.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_405_COUNT = 204,
-		/// <summary>Number of VAST3 video errors of type 500.
+		/// <summary>Number of VAST video errors of type 500.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_500_COUNT = 205,
-		/// <summary>Number of VAST3 video errors of type 501.
+		/// <summary>Number of VAST video errors of type 501.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_501_COUNT = 206,
-		/// <summary>Number of VAST3 video errors of type 502.
+		/// <summary>Number of VAST video errors of type 502.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_502_COUNT = 207,
-		/// <summary>Number of VAST3 video errors of type 503.
+		/// <summary>Number of VAST video errors of type 503.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_503_COUNT = 208,
-		/// <summary>Number of VAST3 video errors of type 600.
+		/// <summary>Number of VAST video errors of type 600.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_600_COUNT = 209,
-		/// <summary>Number of VAST3 video errors of type 601.
+		/// <summary>Number of VAST video errors of type 601.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_601_COUNT = 210,
-		/// <summary>Number of VAST3 video errors of type 602.
+		/// <summary>Number of VAST video errors of type 602.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_602_COUNT = 211,
-		/// <summary>Number of VAST3 video errors of type 603.
+		/// <summary>Number of VAST video errors of type 603.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_603_COUNT = 212,
-		/// <summary>Number of VAST3 video errors of type 604.
+		/// <summary>Number of VAST video errors of type 604.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_604_COUNT = 213,
-		/// <summary>Number of VAST3 video errors of type 900.
+		/// <summary>Number of VAST video errors of type 900.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_900_COUNT = 214,
-		/// <summary>Number of VAST3 video errors of type 901.
+		/// <summary>Number of VAST video errors of type 901.
 		/// </summary>
 		VIDEO_ERRORS_VAST_3_ERROR_901_COUNT = 215,
 		/// <summary>Video interaction event: The number of times user paused ad clip.
@@ -35564,10 +35366,9 @@ namespace Google.Api.Ads.Dfp.v201611
 		VIDEO_OPTIMIZATION_OPTIMIZED_VIEW_THROUGH_RATE = 238,
 		/// <summary>The percentage by which optimized view-through rate is greater than the
 		/// unoptimized view-through rate. This is calculated as (( <a
-		/// href='Column#VIDEO_OPTIMIZATION_OPTIMIZED_VIEW_THROUGH_RATE'>Column#VIDEO_OPTIMIZATION_OPTIMIZED_VIEW_THROUGH_RATE</a>/
-		/// <a
-		/// href='Column#VIDEO_OPTIMIZATION_CONTROL_VIEW_THROUGH_RATE'>Column#VIDEO_OPTIMIZATION_CONTROL_VIEW_THROUGH_RATE</a>)
-		/// - 1) * 100 for an ad for which the optimization feature has been enabled.
+		/// href=''>Column#VIDEO_OPTIMIZATION_OPTIMIZED_VIEW_THROUGH_RATE</a>/ <a
+		/// href=''>Column#VIDEO_OPTIMIZATION_CONTROL_VIEW_THROUGH_RATE</a>) - 1) * 100 for
+		/// an ad for which the optimization feature has been enabled.
 		/// </summary>
 		VIDEO_OPTIMIZATION_VIEW_THROUGH_RATE_LIFT = 239,
 		/// <summary>The total number of impressions viewed on the user's screen.
@@ -35811,55 +35612,53 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// </summary>
 		SALES_TOTAL_TOTAL_BUDGET = 297,
 		/// <summary>The total remaining budget of the <a href='Proposal'>Proposal</a>. It differs
-		/// from <a
-		/// href='#SALES_CONTRACT_REMAINING_BUDGET'>#SALES_CONTRACT_REMAINING_BUDGET</a>
-		/// since it always contains the total remaining budget, not the prorated remaining
-		/// budget.
+		/// from <a href=''>#SALES_CONTRACT_REMAINING_BUDGET</a> since it always contains
+		/// the total remaining budget, not the prorated remaining budget.
 		/// </summary>
 		SALES_TOTAL_TOTAL_REMAINING_BUDGET = 298,
 		/// <summary>The total contracted volume of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
-		/// href='#SALES_CONTRACT_CONTRACTED_VOLUME'>#SALES_CONTRACT_CONTRACTED_VOLUME</a>
-		/// that the volume is not prorated with regard to the date range.
+		/// href=''>#SALES_CONTRACT_CONTRACTED_VOLUME</a> that the volume is not prorated
+		/// with regard to the date range.
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_VOLUME = 299,
 		/// <summary>The total contracted net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
-		/// href='#CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE'>#CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range.
+		/// href=''>#CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE</a> that the revenue is not
+		/// prorated with regard to the date range.
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE = 300,
 		/// <summary>The total contracted net revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href='#CONTRACTED_REVENUE_LOCAL_CONTRACTED_NET_REVENUE'>#CONTRACTED_REVENUE_LOCAL_CONTRACTED_NET_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range. See <a
-		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE'>#SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE</a>
+		/// that the revenue is not prorated with regard to the date range. <p>See <a
+		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE'>#SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE</a></p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_NET_REVENUE = 301,
 		/// <summary>The total contracted gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
-		/// href='#CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE'>#CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range.
+		/// href=''>#CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE</a> that the revenue is not
+		/// prorated with regard to the date range.
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE = 302,
 		/// <summary>The total contracted gross revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href='#CONTRACTED_REVENUE_LOCAL_CONTRACTED_GROSS_REVENUE'>#CONTRACTED_REVENUE_LOCAL_CONTRACTED_GROSS_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range. See <a
-		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE'>#SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE</a>
+		/// that the revenue is not prorated with regard to the date range. <p>See <a
+		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE'>#SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE</a></p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_GROSS_REVENUE = 303,
 		/// <summary>The total contracted agency commission of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
-		/// href='#CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION'>#CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION</a>
-		/// that the revenue is not prorated with regard to the date range.
+		/// href=''>#CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION</a> that the revenue is
+		/// not prorated with regard to the date range.
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION = 304,
 		/// <summary>The total contracted agency commission in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href='#CONTRACTED_REVENUE_LOCAL_CONTRACTED_AGENCY_COMMISSION'>#CONTRACTED_REVENUE_LOCAL_CONTRACTED_AGENCY_COMMISSION</a>
-		/// that the revenue is not prorated with regard to the date range. See <a
-		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION'>#SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION</a>
+		/// that the revenue is not prorated with regard to the date range. <p>See <a
+		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION'>#SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION</a></p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_AGENCY_COMMISSION = 305,
 		/// <summary>The total net revenue plus its value added tax of the <a
@@ -35868,106 +35667,104 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE_WITH_VAT = 306,
 		/// <summary>The total net revenue plus its value added tax in the local currency of the <a
-		/// href='ProposalLineItem'>ProposalLineItem</a>. The revenue is not prorated with
-		/// regard to the date range. See <a
-		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_WITH_VAT'>#SALES_TOTAL_TOTAL_CONTRACTED_WITH_VAT</a>
+		/// href=''>ProposalLineItem</a>. The revenue is not prorated with regard to the
+		/// date range. <p>See <a
+		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_WITH_VAT'>#SALES_TOTAL_TOTAL_CONTRACTED_WITH_VAT</a></p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_NET_REVENUE_WITH_VAT = 307,
 		/// <summary>The total scheduled volume of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
-		/// href='#SCHEDULED_SCHEDULED_VOLUME'>#SCHEDULED_SCHEDULED_VOLUME</a> that the
-		/// volume is not prorated with regard to the date range.
+		/// href=''>#SCHEDULED_SCHEDULED_VOLUME</a> that the volume is not prorated with
+		/// regard to the date range.
 		/// </summary>
 		SALES_TOTAL_TOTAL_SCHEDULED_VOLUME = 308,
 		/// <summary>The total scheduled net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
-		/// href='#SCHEDULED_SCHEDULED_NET_REVENUE'>#SCHEDULED_SCHEDULED_NET_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range.
+		/// href=''>#SCHEDULED_SCHEDULED_NET_REVENUE</a> that the revenue is not prorated
+		/// with regard to the date range.
 		/// </summary>
 		SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE = 309,
 		/// <summary>The total scheduled net revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href='#SCHEDULED_LOCAL_SCHEDULED_NET_REVENUE'>#SCHEDULED_LOCAL_SCHEDULED_NET_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range. See <a
-		/// href='#SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE'>#SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE</a>
+		/// that the revenue is not prorated with regard to the date range. <p>See <a
+		/// href='#SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE'>#SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE</a></p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_SCHEDULED_NET_REVENUE = 310,
 		/// <summary>The total scheduled gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
-		/// href='#SCHEDULED_SCHEDULED_GROSS_REVENUE'>#SCHEDULED_SCHEDULED_GROSS_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range.
+		/// href=''>#SCHEDULED_SCHEDULED_GROSS_REVENUE</a> that the revenue is not prorated
+		/// with regard to the date range.
 		/// </summary>
 		SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE = 311,
 		/// <summary>The total scheduled gross revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href='#SCHEDULED_LOCAL_SCHEDULED_GROSS_REVENUE'>#SCHEDULED_LOCAL_SCHEDULED_GROSS_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range. See <a
-		/// href='#SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE'>#SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE</a>
+		/// that the revenue is not prorated with regard to the date range. <p>See <a
+		/// href='#SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE'>#SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE</a></p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_SCHEDULED_GROSS_REVENUE = 312,
 		/// <summary>The unreconciled net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
-		/// href='#UNIFIED_REVENUE_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a>
-		/// coming from unreconciled DFP volume.
+		/// href=''>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a> coming from unreconciled DFP
+		/// volume.
 		/// </summary>
 		UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE = 313,
 		/// <summary>The unreconciled net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> in local currency. It is the
 		/// portion of <a
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE</a>
-		/// coming from unreconciled DFP volume. See <a
-		/// href='#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE'>#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE</a>
+		/// coming from unreconciled DFP volume. <p>See <a
+		/// href='#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE'>#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE</a></p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_UNRECONCILED_NET_REVENUE = 314,
 		/// <summary>The unreconciled gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
-		/// href='#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a>
-		/// coming from unreconciled DFP volume.
+		/// href=''>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a> coming from unreconciled DFP
+		/// volume.
 		/// </summary>
 		UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE = 315,
 		/// <summary>The unreconciled gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> in local currency. It is the
 		/// portion of <a
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE</a>
-		/// coming from unreconciled DFP volume. See <a
-		/// href='#UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE'>#UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE</a>
+		/// coming from unreconciled DFP volume. <p>See <a
+		/// href='#UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE'>#UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE</a></p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_UNRECONCILED_GROSS_REVENUE = 316,
 		/// <summary>The forecasted net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
-		/// href='#UNIFIED_REVENUE_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a>
-		/// coming from forecasted DFP volume.
+		/// href=''>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a> coming from forecasted DFP
+		/// volume.
 		/// </summary>
 		UNIFIED_REVENUE_FORECASTED_NET_REVENUE = 317,
 		/// <summary>The forecasted net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> in local currency. It is the
 		/// portion of <a
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE</a>
-		/// coming from forecasted DFP volume. See <a
-		/// href='#UNIFIED_REVENUE_FORECASTED_NET_REVENUE'>#UNIFIED_REVENUE_FORECASTED_NET_REVENUE</a>
+		/// coming from forecasted DFP volume. <p>See <a
+		/// href='#UNIFIED_REVENUE_FORECASTED_NET_REVENUE'>#UNIFIED_REVENUE_FORECASTED_NET_REVENUE</a></p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_FORECASTED_NET_REVENUE = 318,
 		/// <summary>The forecasted gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
-		/// href='#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a>
-		/// coming from forecasted DFP volume.
+		/// href=''>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a> coming from forecasted DFP
+		/// volume.
 		/// </summary>
 		UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE = 319,
 		/// <summary>The forecasted gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> in local currency. It is the
 		/// portion of <a
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE</a>
-		/// coming from forecasted DFP volume. See <a
-		/// href='#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE'>#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE</a>
+		/// coming from forecasted DFP volume. <p>See <a
+		/// href='#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE'>#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE</a></p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_FORECASTED_GROSS_REVENUE = 320,
 		/// <summary>The unified net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>.
-		/// It is a combination of <a
-		/// href='#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE'>#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE</a>,
+		/// It is a combination of <a href=''>#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE</a>,
 		/// <a href='#BILLING_BILLABLE_NET_REVENUE'>#BILLING_BILLABLE_NET_REVENUE</a>, and
-		/// <a
-		/// href='#UNIFIED_REVENUE_FORECASTED_NET_REVENUE'>#UNIFIED_REVENUE_FORECASTED_NET_REVENUE</a>
-		/// when query date range spans historical delivery and forecasted delivery.
+		/// <a href=''>#UNIFIED_REVENUE_FORECASTED_NET_REVENUE</a> when query date range
+		/// spans historical delivery and forecasted delivery.
 		/// </summary>
 		UNIFIED_REVENUE_UNIFIED_NET_REVENUE = 321,
 		/// <summary>The unified net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>
@@ -36031,16 +35828,15 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE</a>
 		/// when the <a href='ProposalLineItem'>ProposalLineItem</a> is sold and <a
 		/// href='#SALES_PIPELINE_LOCAL_PIPELINE_NET_REVENUE'>#SALES_PIPELINE_LOCAL_PIPELINE_NET_REVENUE</a>
-		/// otherwise. See <a
-		/// href='#EXPECTED_REVENUE_EXPECTED_NET_REVENUE'>#EXPECTED_REVENUE_EXPECTED_NET_REVENUE</a>
+		/// otherwise. <p>See <a
+		/// href='#EXPECTED_REVENUE_EXPECTED_NET_REVENUE'>#EXPECTED_REVENUE_EXPECTED_NET_REVENUE</a></p>
 		/// </summary>
 		EXPECTED_REVENUE_LOCAL_EXPECTED_NET_REVENUE = 328,
 		/// <summary>The expected gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is equivalent to <a
-		/// href='#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a>
-		/// when the <a href='ProposalLineItem'>ProposalLineItem</a> is sold and <a
-		/// href='#SALES_PIPELINE_PIPELINE_GROSS_REVENUE'>#SALES_PIPELINE_PIPELINE_GROSS_REVENUE</a>
-		/// otherwise.
+		/// href=''>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a> when the <a
+		/// href='ProposalLineItem'>ProposalLineItem</a> is sold and <a
+		/// href=''>#SALES_PIPELINE_PIPELINE_GROSS_REVENUE</a> otherwise.
 		/// </summary>
 		EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE = 329,
 		/// <summary>The expected gross revenue of the <a
@@ -36049,19 +35845,18 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE</a>
 		/// when the <a href='ProposalLineItem'>ProposalLineItem</a> is sold and <a
 		/// href='#SALES_PIPELINE_LOCAL_PIPELINE_GROSS_REVENUE'>#SALES_PIPELINE_LOCAL_PIPELINE_GROSS_REVENUE</a>
-		/// otherwise. See <a
-		/// href='#EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE'>#EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE</a>
+		/// otherwise. <p>See <a
+		/// href='#EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE'>#EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE</a></p>
 		/// </summary>
 		EXPECTED_REVENUE_LOCAL_EXPECTED_GROSS_REVENUE = 330,
 		/// <summary>The pipeline net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>.
-		/// There is no revenue for sold <a href='ProposalLineItem'>proposal line items</a>.
-		/// For unsold <a href='ProposalLineItem'>proposal line items</a>, it is calculated
-		/// by multiplying <a
+		/// There is no revenue for sold <a href=''>ProposalLineItem proposal line
+		/// items</a>. For unsold <a href='ProposalLineItem'>proposal line items</a>, it is
+		/// calculated by multiplying <a
 		/// href='Proposal#probabilityOfClose'>Proposal#probabilityOfClose</a> by the
 		/// contracted revenue when inventory is not reserved; otherwise it is calcualted by
-		/// multiplying <a
-		/// href='Proposal#probabilityOfClose'>Proposal#probabilityOfClose</a> by the
-		/// forecasted revenue.
+		/// multiplying <a href=''>Proposal#probabilityOfClose</a> by the forecasted
+		/// revenue.
 		/// </summary>
 		SALES_PIPELINE_PIPELINE_NET_REVENUE = 331,
 		/// <summary>The pipeline net revenue in the local currency of the <a
@@ -36174,8 +35969,8 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// <summary>The billable net revenue in local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> before manual adjustment. It is
 		/// calculated from reconciled volume and rate, with cap applied, before manual
-		/// adjustment. See <a
-		/// href='#BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT'>#BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT</a>
+		/// adjustment. <p>See <a
+		/// href='#BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT'>#BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT</a></p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT = 352,
 		/// <summary>The billable gross revenue of the <a
@@ -36187,12 +35982,12 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// <summary>The billable net revenue in local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> before manual adjustment. It is
 		/// calculated from reconciled volume and rate, with cap applied, before manual
-		/// adjustment. See <a
-		/// href='#BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT'>#BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT</a>
+		/// adjustment. <p>See <a
+		/// href='#BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT'>#BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT</a></p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT = 354,
 		/// <summary>The value added tax on billable net revenue of the <a
-		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
+		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href=''>Proposal</a>.
 		/// </summary>
 		BILLING_BILLABLE_VAT = 355,
 		/// <summary>The value added tax on billable net revenue in the local currency of the <a
@@ -36443,7 +36238,7 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// </summary>
 		ADVERTISER_CREDIT_STATUS = 122,
 		/// <summary>Represents name and email address in the form of name(email) of primary contact
-		/// for <a href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>.
+		/// for <a href=''>Dimension#ADVERTISER_NAME</a>.
 		/// </summary>
 		ADVERTISER_PRIMARY_CONTACT = 6,
 		/// <summary>Represents the start date (in YYYY-MM-DD format) for <a
@@ -36661,8 +36456,9 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// </summary>
 		PROPOSAL_PROBABILITY_OF_CLOSE = 135,
 		/// <summary>Represents <a href='Proposal#status'>Proposal#status</a> for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>, including those
-		/// post-sold status, e.g. DRAFT(SOLD). Can be used for filtering.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. This attribute
+		/// includes post-sold statuses, e.g. DRAFT(SOLD) until v201611. Starting from
+		/// v201702, it will not include post-sold statuses. Can be used for filtering.
 		/// </summary>
 		PROPOSAL_STATUS = 54,
 		/// <summary>Represents <a href='Proposal#isArchived'>Proposal#isArchived</a> for <a
@@ -36724,12 +36520,11 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// </summary>
 		PROPOSAL_SECONDARY_SALESPEOPLE = 68,
 		/// <summary>Represents name and email address in the form of name(email) of creator for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href=''>Dimension#PROPOSAL_NAME</a>.
 		/// </summary>
 		PROPOSAL_CREATOR = 69,
 		/// <summary>Represents name and email addresses in the form of name(email) of <a
-		/// href='Proposal#salesPlannerIds'>Proposal#salesPlannerIds</a> as a comma
-		/// separated list string for <a
+		/// href=''>Proposal#salesPlannerIds</a> as a comma separated list string for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
 		/// </summary>
 		PROPOSAL_SALES_PLANNERS = 70,
@@ -36872,23 +36667,21 @@ namespace Google.Api.Ads.Dfp.v201611
 		PROPOSAL_LINE_ITEM_BILLING_SCHEDULE = 95,
 		/// <summary>Represents <a href='Goal#units'>Goal#units</a> of <a
 		/// href='ProposalLineItem#goal'>ProposalLineItem#goal</a> for <a
-		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>
-		/// The attribute is available only if <a
-		/// href='ProposalLineItem#lineItemType'>ProposalLineItem#lineItemType</a> is of
-		/// type <a href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a>, <a
-		/// href='LineItemType#HOUSE'>LineItemType#HOUSE</a>, <a
+		/// href=''>Dimension#PROPOSAL_LINE_ITEM_NAME</a> The attribute is available only if
+		/// <a href=''>ProposalLineItem#lineItemType</a> is of type <a
+		/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a>, <a
+		/// href=''>LineItemType#HOUSE</a>, <a
 		/// href='LineItemType#NETWORK'>LineItemType#NETWORK</a>, or <a
 		/// href='LineItemType#BUMPER'>LineItemType#BUMPER</a>.
 		/// </summary>
 		PROPOSAL_LINE_ITEM_GOAL_PERCENTAGE = 96,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#costAdjustment'>ProposalLineItem#costAdjustment</a> for
-		/// <a
-		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// <a href=''>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
 		/// </summary>
 		PROPOSAL_LINE_ITEM_COST_ADJUSTMENT = 97,
 		/// <summary>Represents the <a href='ProposalLineItem#notes'>comments</a> for <a
-		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// href=''>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
 		/// </summary>
 		PROPOSAL_LINE_ITEM_COMMENTS = 98,
 		/// <summary>Represents the monthly reconciliation status of the proposal line item for <a
@@ -36992,16 +36785,16 @@ namespace Google.Api.Ads.Dfp.v201611
 		PROPOSAL_AGENCY_COMMENT = 113,
 		/// <summary>Represents the <a
 		/// href='Dimension#ALL_SALESPEOPLE_NAME'>Dimension#ALL_SALESPEOPLE_NAME</a>'s
-		/// contribution to a <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
-		/// This is different from <a
+		/// contribution to a <a href=''>Dimension#PROPOSAL_NAME</a>. This is different from
+		/// <a
 		/// href='#SALESPERSON_PROPOSAL_CONTRIBUTION'>#SALESPERSON_PROPOSAL_CONTRIBUTION</a>
 		/// as this will include both primary and secondary salespeople.
 		/// </summary>
 		SALESPEOPLE_PROPOSAL_CONTRIBUTION = 114,
 		/// <summary>Represents the <a
 		/// href='Dimension#SALESPERSON_NAME'>Dimension#SALESPERSON_NAME</a>'s contribution
-		/// to a <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. See <a
-		/// href='#SALESPERSON_PROPOSAL_CONTRIBUTION'>#SALESPERSON_PROPOSAL_CONTRIBUTION</a>.
+		/// to a <a href=''>Dimension#PROPOSAL_NAME</a>. <p>See <a
+		/// href='#SALESPERSON_PROPOSAL_CONTRIBUTION'>#SALESPERSON_PROPOSAL_CONTRIBUTION</a>.</p>
 		/// </summary>
 		SALESPERSON_PROPOSAL_CONTRIBUTION = 115,
 		/// <summary>Represents <a href='ProductPackage#notes'>ProductPackage#notes</a> for <a
@@ -37430,11 +37223,12 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// <summary>The report file is generated as a list of Comma Separated Values, to be used
 		/// with automated machine processing. <p> <ul> <li>There is no pretty printing for
 		/// the output, and no total row.</li> <li>Column headers are the qualified name
-		/// e.g. "Dimension.ORDER_NAME".</li> <li>Monetary amounts are represented as micros
-		/// in the <a href='Network#currencyCode'>currency of the network</a>.</li>
-		/// <li>Dates are formatted according to the ISO 8601 standard YYYY-MM-DD</li>
-		/// <li>DateTimes are formatted according to the ISO 8601 standard
-		/// YYYY-MM-DDThh:mm:ss[+-]hh:mm</li> </ul></p>
+		/// e.g. "Dimension.ORDER_NAME".</li> <li>Network currency Monetary amounts are
+		/// represented as micros in the <a href='Network#currencyCode'>currency of the
+		/// network</a>.</li> <li>Starting from v201705, local currency Monetary amounts are
+		/// represented as currency symbol + ' ' + micros.</li> <li>Dates are formatted
+		/// according to the ISO 8601 standard YYYY-MM-DD</li> <li>DateTimes are formatted
+		/// according to the ISO 8601 standard YYYY-MM-DDThh:mm:ss[+-]hh:mm</li> </ul></p>
 		/// </summary>
 		CSV_DUMP = 2,
 		/// <summary>The report file is generated as XML.
@@ -37510,7 +37304,7 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// </summary>
 		COLUMN_VIEW_NOT_ALLOWED = 5,
 		/// <summary>The user has exceeded the limit on the number of reports that can be run
-		/// concurrently. The current limit is 20 per user.
+		/// concurrently. The current limit is 30 per user.
 		/// </summary>
 		TOO_MANY_CONCURRENT_REPORTS = 6,
 		/// <summary>The report query exceeds the maximum allowed number of characters.
@@ -39609,14 +39403,14 @@ namespace Google.Api.Ads.Dfp.v201611
 
 		/// <summary>The time zone ID in tz database format (e.g. "America/Los_Angeles") for this
 		/// <code>ProposalLineItem</code>. The number of serving days is calculated in this
-		/// time zone. So if <a href='#rateType'>#rateType</a> is <a
+		/// time zone. So if <a href=''>#rateType</a> is <a
 		/// href='RateType#CPD'>RateType#CPD</a>, it will affect the cost calculation. The
-		/// <a href='#startDateTime'>#startDateTime</a> and <a
-		/// href='#endDateTime'>#endDateTime</a> will be returned in this time zone. This
-		/// attribute is optional and defaults to the network's time zone. <span
-		/// class="constraint ReadOnly">This attribute is read-only when:</span> <ul>
-		/// <li>using programmatic guaranteed, using sales management.</li> <li>using
-		/// programmatic guaranteed, not using sales management.</li> </ul>
+		/// <a href=''>#startDateTime</a> and <a href='#endDateTime'>#endDateTime</a> will
+		/// be returned in this time zone. This attribute is optional and defaults to the
+		/// network's time zone. <span class="constraint ReadOnly">This attribute is
+		/// read-only when:</span> <ul> <li>using programmatic guaranteed, using sales
+		/// management.</li> <li>using programmatic guaranteed, not using sales
+		/// management.</li> </ul>
 		/// </summary>
 		public string timeZoneId {
 			get {
@@ -39703,8 +39497,8 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// <code>ProposalLineItem</code> is associated with, which is used in its pacing
 		/// and budgeting. <a href='Goal#units'>Goal#units</a> must be greater than 0 when
 		/// the proposal line item turns into a line item, <a
-		/// href='Goal#goalType'>Goal#goalType</a> and <a
-		/// href='Goal#unitType'>Goal#unitType</a> are readonly. This attribute is required.
+		/// href='Goal#goalType'>Goal#goalType</a> and <a href=''>Goal#unitType</a> are
+		/// readonly. This attribute is required.
 		/// </summary>
 		public Goal goal {
 			get {
@@ -39977,8 +39771,8 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>The unique ID of corresponding <a href='LineItem'>LineItem</a>. This will be
-		/// <code>null</code> if the <a href='Proposal'>Proposal</a> has not been pushed to
-		/// DFP. This attribute is read-only.
+		/// <code>null</code> if the <a href=''>Proposal</a> has not been pushed to DFP.
+		/// This attribute is read-only.
 		/// </summary>
 		public long dfpLineItemId {
 			get {
@@ -40530,16 +40324,15 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>Overrides the billing base of this <code>ProposalLineItem</code>. This attribute
-		/// is optional. If this field is overridden, then other required billing fields (<a
-		/// href='#billingCap'>#billingCap</a>, <a
-		/// href='#billingSchedule'>#billingSchedule</a>, or <a
+		/// is optional. <p>If this field is overridden, then other required billing fields
+		/// (<a href='#billingCap'>#billingCap</a>, <a href=''>#billingSchedule</a>, or <a
 		/// href='#billingSource'>#billingSource</a>) also need to be overridden depending
 		/// on the <a href='#billingSource'>#billingSource</a>. That is, none of the billing
-		/// fields will inherit from their <a href='Proposal'>Proposal</a> object anymore.
-		/// This attribute can be configured as editable after the proposal has been
-		/// submitted. Please check with your network administrator for editable fields
-		/// configuration. <span class="constraint Applicable">This attribute is applicable
-		/// when:</span> <ul> <li>not using programmatic guaranteed, using sales
+		/// fields will inherit from their <a href=''>Proposal</a> object anymore. This
+		/// attribute can be configured as editable after the proposal has been submitted.
+		/// Please check with your network administrator for editable fields configuration.
+		/// <span class="constraint Applicable">This attribute is applicable
+		/// when:</span></p> <ul> <li>not using programmatic guaranteed, using sales
 		/// management.</li> </ul>
 		/// </summary>
 		public BillingBase billingBase {
@@ -40565,9 +40358,9 @@ namespace Google.Api.Ads.Dfp.v201611
 			}
 		}
 
-		/// <summary>The date and time this <code>ProposalLineItem</code> was last modified. This
+		/// <summary>The date and time this <code>ProposalLineItem</code> was last modified. <p>This
 		/// attribute is assigned by Google when a <code></code> is updated. This attribute
-		/// is read-only.
+		/// is read-only.</p>
 		/// </summary>
 		public DateTime lastModifiedDateTime {
 			get {
@@ -40891,9 +40684,8 @@ namespace Google.Api.Ads.Dfp.v201611
 
 
 	/// <summary>A <code>PropoalLineItemConstraints</code> represents all the constraints set for
-	/// a <a href='ProposalLineItem'>ProposalLineItem</a> and is always readonly. It
-	/// comes from the <a href='Product'>Product</a>, based on which the proposal line
-	/// item is created.
+	/// a <a href=''>ProposalLineItem</a> and is always readonly. It comes from the <a
+	/// href='Product'>Product</a>, based on which the proposal line item is created.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
@@ -42516,7 +42308,7 @@ namespace Google.Api.Ads.Dfp.v201611
 
 	/// <summary>Provides methods for updating and retrieving <a href='Product'>Product</a>
 	/// objects. <p>A <code>Product</code> represents a line item proposal. Products are
-	/// generated from <a href='ProductTemplate'>product templates</a> on a periodic
+	/// generated from <a href=''>ProductTemplate product templates</a> on a periodic
 	/// basis using the product template's attributes. Products are typically used by
 	/// inventory managers to restrict what salespeople can sell.</p> <p>To use this
 	/// service, you need to have the new sales management solution enabled on your
@@ -43522,6 +43314,10 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// <summary>The field's value is user specified and not inherited.
 		/// </summary>
 		DIRECTLY_SPECIFIED = 1,
+		/// <summary>The value returned if the actual value is not exposed by the requested API
+		/// version.
+		/// </summary>
+		UNKNOWN = 2,
 	}
 
 
@@ -43983,16 +43779,19 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>Gets a <a href='ContentPage'>ContentPage</a> of <a href='Content'>Content</a>
-		/// objects that satisfy the given <a href='Statement#query'>Statement#query</a>.
-		/// The following fields are supported for filtering: <table> <tr> <th
-		/// scope="col">PQL Property</th> <th scope="col">Object Property</th> </tr> <tr>
+		/// objects that satisfy the given <a href=''>Statement#query</a>. The following
+		/// fields are supported for filtering: <table> <tr> <th scope="col">PQL
+		/// Property</th> <th scope="col">Object Property</th> </tr> <tr>
 		/// <td><code>id</code></td> <td><a href='Content#id'>Content#id</a></td> </tr> <tr>
 		/// <td><code>status</code></td> <td><a
 		/// href='Content#status'>Content#status</a></td> </tr> <tr>
 		/// <td><code>name</code></td> <td><a href='Content#name'>Content#name</a></td>
 		/// </tr> <tr> <td><code>lastModifiedDateTime</code></td> <td><a
 		/// href='Content#lastModifiedDateTime'>Content#lastModifiedDateTime</a></td> </tr>
-		/// </table>
+		/// <tr> <td><code>lastDaiIngestDateTime</code></td> <td><a
+		/// href='Content#lastDaiIngestDateTime'>Content#lastDaiIngestDateTime</a></td>
+		/// </tr> <tr> <td><code>daiIngestStatus</code></td> <td><a
+		/// href='Content#daiIngestStatus'>Content#daiIngestStatus</a></td> </tr> </table>
 		/// </summary><param name='statement'>a Publisher Query Language statement used to filter a
 		/// set of content</param>
 		/// <returns>the content that matches the given filter</returns>
@@ -44417,7 +44216,10 @@ namespace Google.Api.Ads.Dfp.v201611
 	}
 
 
-	/// <summary>The content partner related validation errors.
+	/// <summary>The content partner related validation errors. <p>This class is deprecated. All
+	/// companies of type <a
+	/// href='Company.Type#CONTENT_PARTNER'>Company.Type#CONTENT_PARTNER</a> were
+	/// changed to <a href='Company.Type#PARTNER'>Company.Type#PARTNER</a>.</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
@@ -49804,7 +49606,7 @@ namespace Google.Api.Ads.Dfp.v201611
 
 
 	/// <summary>A premium rate holding a set of <a href='PremiumRateValue'>PremiumRateValue</a>
-	/// objects with the same <a href='PremiumFeature'>PremiumFeature</a>.
+	/// objects with the same <a href=''>PremiumFeature</a>.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
@@ -51623,8 +51425,8 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>The device capability segmentation. <a
-		/// href='DeviceCapabilityTargeting#excludedDeviceCapabilities'>DeviceCapabilityTargeting#excludedDeviceCapabilities</a>
-		/// must be empty or null. <p>This attribute is optional.</p>
+		/// href=''>DeviceCapabilityTargeting#excludedDeviceCapabilities</a> must be empty
+		/// or null. <p>This attribute is optional.</p>
 		/// </summary>
 		public DeviceCapabilityTargeting deviceCapabilitySegment {
 			get {
@@ -51675,8 +51477,8 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>The mobile device submodel segmentation. <a
-		/// href='MobileDeviceSubmodelTargeting#excludedMobileDeviceSubmodels'>MobileDeviceSubmodelTargeting#excludedMobileDeviceSubmodels</a>
-		/// must be empty or null.
+		/// href=''>MobileDeviceSubmodelTargeting#excludedMobileDeviceSubmodels</a> must be
+		/// empty or null.
 		/// </summary>
 		public MobileDeviceSubmodelTargeting mobileDeviceSubmodelSegment {
 			get {
@@ -54613,7 +54415,8 @@ namespace Google.Api.Ads.Dfp.v201611
 			}
 		}
 
-		/// <summary>The <a href='Size'>Size</a> of the creative. This attribute is required.
+		/// <summary>The <a href='Size'>Size</a> of the creative. This attribute is required for
+		/// creation and then is read-only.
 		/// </summary>
 		public Size size {
 			get {
@@ -56012,11 +55815,10 @@ namespace Google.Api.Ads.Dfp.v201611
 	}
 
 
-	/// <summary>A <code>Creative</code> hosted by either DoubleClick for Advertisers (DFA) or
-	/// DART for Publishers. <p>Similar to third-party creatives, a DoubleClick tag is
-	/// used to retrieve a creative asset. However, DoubleClick tags are not sent to the
-	/// user's browser. Instead, they are processed internally within the DoubleClick
-	/// system..</p>
+	/// <summary>A <code>Creative</code> hosted by DoubleClick for Advertisers (DFA). <p>Similar
+	/// to third-party creatives, a DoubleClick tag is used to retrieve a creative
+	/// asset. However, DoubleClick tags are not sent to the user's browser. Instead,
+	/// they are processed internally within the DoubleClick system..</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
@@ -56425,8 +56227,10 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>The HTML5 asset. To preview the HTML5 asset, use the <a
-		/// href='CreativeAsset#assetUrl'>CreativeAsset#assetUrl</a>. This attribute is
-		/// required.
+		/// href='CreativeAsset#assetUrl'>CreativeAsset#assetUrl</a>. In this field, the <a
+		/// href='CreativeAsset#assetByteArray'>CreativeAsset#assetByteArray</a> must be a
+		/// zip bundle and the <a href='CreativeAsset#fileName'>CreativeAsset#fileName</a>
+		/// must have a zip extension. This attribute is required.
 		/// </summary>
 		public CreativeAsset html5Asset {
 			get {
@@ -57376,7 +57180,7 @@ namespace Google.Api.Ads.Dfp.v201611
 
 
 	/// <summary>A <code>Creative</code> that contains externally hosted video ads and is served
-	/// via VAST 2.0 XML.
+	/// via VAST XML.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
@@ -60373,8 +60177,8 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>Creates new <a
-		/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects. The
-		/// following fields are required: <ul> <li><a
+		/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects.
+		/// <p>The following fields are required:</p> <ul> <li><a
 		/// href='ContentMetadataKeyHierarchy#id'>ContentMetadataKeyHierarchy#id</a></li>
 		/// <li><a
 		/// href='ContentMetadataKeyHierarchy#name'>ContentMetadataKeyHierarchy#name</a></li>
@@ -60428,7 +60232,7 @@ namespace Google.Api.Ads.Dfp.v201611
 
 		/// <summary>Performs actions on <a
 		/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects that
-		/// match the given <a href='Statement#query'>Statement#query</a>.
+		/// match the given <a href=''>Statement#query</a>.
 		/// </summary><param name='contentMetadataKeyHierarchyAction'>the action to perform</param>
 		/// <param name='filterStatement'>a Publisher Query Language statement used to
 		/// filter a set of hierarchies</param>
@@ -60678,9 +60482,9 @@ namespace Google.Api.Ads.Dfp.v201611
 
 
 	/// <summary>A <code>ContentMetadataKeyHierarchyLevel</code> represents one level in a <a
-	/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a>. The level
-	/// consists of a <a href='CustomTargetingKey'>CustomTargetingKey</a> and an integer
-	/// that represents the level's position in the hierarchy.
+	/// href=''>ContentMetadataKeyHierarchy</a>. The level consists of a <a
+	/// href='CustomTargetingKey'>CustomTargetingKey</a> and an integer that represents
+	/// the level's position in the hierarchy.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
@@ -63069,7 +62873,7 @@ namespace Google.Api.Ads.Dfp.v201611
 		ProductPackagePage getProductPackagesByStatement(Statement statement);
 
 		/// <summary>Performs actions on <a href='ProductPackage'>ProductPackage</a> objects that
-		/// match the given <a href='Statement#query'>Statement#query</a>.
+		/// match the given <a href=''>Statement#query</a>.
 		/// </summary><param name='action'>the action to perform</param>
 		/// <param name='statement'>a Publisher Query Language statement used to filter a
 		/// set of product packages</param>
@@ -63715,8 +63519,8 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// </tr> <tr> <td><code>conditionStatus</code></td> <td><a
 		/// href='WorkflowExternalConditionRequest#status'>WorkflowExternalConditionRequest#status</a></td>
 		/// </tr> <tr> <td><code>type</code></td> <td><a
-		/// href='WorkflowRequest#type'>WorkflowRequest#type</a></td> </tr> </table>
-		/// <p>Starting in V201405 a <code>type</code> filter must be used</p>
+		/// href='WorkflowRequest#type'>WorkflowRequest#type</a></td> </tr> </table> <p>The
+		/// <code>type</code> filter is required. </p>
 		/// </summary><param name='filterStatement'>a Publisher Query Language statement used to
 		/// filter a set of proposals</param>
 		/// <returns>the workflow requests that match the given filter</returns>
@@ -64105,20 +63909,7 @@ namespace Google.Api.Ads.Dfp.v201611
 	/// <td>LastModifiedDateTime</td> <td><code>Datetime</code></td> <td>The date and
 	/// time this terms and conditions was last modified.</td> </tr> <tr> <td>Name</td>
 	/// <td><code>Text</code></td> <td>The name of the terms and conditions.</td> </tr>
-	/// </table> <h2 id="Change_History">Change_History</h2> Restrictions: Offset is not
-	/// supported. Paging can be achieved by filtering on <code>ChangeDateTime</code>
-	/// ranges. The only supported sorting order is by <code>ChangeDateTime</code>
-	/// descending. Sorting on any other columns is not supported. <table> <tr>
-	/// <th>Column name</th> <th>Type</th> <th>Description</th> </tr> <tr>
-	/// <td>ChangeDateTime</td> <td><code>Datetime</code></td> <td>The date and time
-	/// this change happened.</td> </tr> <tr> <td>EntityId</td>
-	/// <td><code>Number</code></td> <td>The ID of the entity that was changed.</td>
-	/// </tr> <tr> <td>EntityType</td> <td><code>Text</code></td> <td>The <a
-	/// href='ChangeHistoryEntityType'>type</a> of the entity that was changed.</td>
-	/// </tr> <tr> <td>Operation</td> <td><code>Text</code></td> <td>The <a
-	/// href='ChangeHistoryOperation'>operation</a> that was performed on this
-	/// entity.</td> </tr> <tr> <td>UserId</td> <td><code>Number</code></td> <td>The <a
-	/// href='User#id'>ID</a> of the user that made this change.</td> </tr> </table>
+	/// </table>
 	/// </summary>
 	public interface IPublisherQueryLanguageService
 	{
@@ -64310,11 +64101,10 @@ namespace Google.Api.Ads.Dfp.v201611
 	/// <summary>Provides methods for creating and retrieving <a
 	/// href='ProductPackageItem'>ProductPackageItem</a> objects. <p>A <a
 	/// href='ProductPackageItem'>ProductPackageItem</a> represents a product which will
-	/// be associated with a <a href='ProductPackage'>ProductPackage</a>.</p> <p>To use
-	/// this service, you need to have the new sales management solution enabled on your
-	/// network. If you do not see a "Sales" tab in <a
-	/// href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you will
-	/// not be able to use this service.</p>
+	/// be associated with a <a href=''>ProductPackage</a>.</p> <p>To use this service,
+	/// you need to have the new sales management solution enabled on your network. If
+	/// you do not see a "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick
+	/// for Publishers (DFP)</a>, you will not be able to use this service.</p>
 	/// </summary>
 	public interface IProductPackageItemService
 	{
@@ -64423,8 +64213,7 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// <summary>Gets the availability forecast for a <a
 		/// href='ProspectiveLineItem'>ProspectiveLineItem</a>. An availability forecast
 		/// reports the maximum number of available units that the line item can book, and
-		/// the total number of units matching the line item's targeting. <p>Note: Beginning
-		/// in v201502, this replaces the previous getForecast method. </p>
+		/// the total number of units matching the line item's targeting.
 		/// </summary><param name='lineItem'>the prospective line item (new or existing) to be
 		/// forecasted for availability</param>
 		/// <param name='forecastOptions'>options controlling the forecast</param>
@@ -64436,11 +64225,8 @@ namespace Google.Api.Ads.Dfp.v201611
 		/// also the total number of units matching the line item's targeting. <p>Only line
 		/// items having type <a
 		/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a> or <a
-		/// href='LineItemType#STANDARD'>LineItemType#STANDARD</a> are valid. Other types
-		/// will result in <a
-		/// href='ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED'>ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED</a>.</p>
-		/// <p>Note: Beginning in v201502, this replaces the previous getForecastById
-		/// method. </p>
+		/// href=''>LineItemType#STANDARD</a> are valid. Other types will result in <a
+		/// href=''>ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED</a>. </p>
 		/// </summary><param name='lineItemId'>the ID of a <a href='LineItem'>LineItem</a> to run the
 		/// forecast on.</param>
 		/// <param name='forecastOptions'>options controlling the forecast</param>
@@ -64456,10 +64242,9 @@ namespace Google.Api.Ads.Dfp.v201611
 		DeliveryForecast getDeliveryForecast(ProspectiveLineItem[] lineItems, DeliveryForecastOptions forecastOptions);
 
 		/// <summary>Gets the delivery forecast for a list of existing <a
-		/// href='LineItem'>LineItem</a> objects in a single delivery simulation with line
-		/// items potentially contending with each other. A delivery forecast reports the
-		/// number of units that will be delivered to each line item given the line item
-		/// goals and contentions from other line items.
+		/// href='LineItem'>LineItem</a> objects in a single delivery simulation. A delivery
+		/// forecast reports the number of units that will be delivered to each line item
+		/// given the line item goals and contentions from other line items.
 		/// </summary><param name='lineItemIds'>the IDs of line items to be forecasted for
 		/// delivery</param>
 		/// <param name='forecastOptions'>options controlling the forecast</param>
@@ -64759,7 +64544,7 @@ namespace Google.Api.Ads.Dfp.v201611
 
 	/// <summary>Provides methods for updating and retrieving <a href='Product'>Product</a>
 	/// objects. <p>A <code>Product</code> represents a line item proposal. Products are
-	/// generated from <a href='ProductTemplate'>product templates</a> on a periodic
+	/// generated from <a href=''>ProductTemplate product templates</a> on a periodic
 	/// basis using the product template's attributes. Products are typically used by
 	/// inventory managers to restrict what salespeople can sell.</p> <p>To use this
 	/// service, you need to have the new sales management solution enabled on your
@@ -64875,16 +64660,19 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>Gets a <a href='ContentPage'>ContentPage</a> of <a href='Content'>Content</a>
-		/// objects that satisfy the given <a href='Statement#query'>Statement#query</a>.
-		/// The following fields are supported for filtering: <table> <tr> <th
-		/// scope="col">PQL Property</th> <th scope="col">Object Property</th> </tr> <tr>
+		/// objects that satisfy the given <a href=''>Statement#query</a>. The following
+		/// fields are supported for filtering: <table> <tr> <th scope="col">PQL
+		/// Property</th> <th scope="col">Object Property</th> </tr> <tr>
 		/// <td><code>id</code></td> <td><a href='Content#id'>Content#id</a></td> </tr> <tr>
 		/// <td><code>status</code></td> <td><a
 		/// href='Content#status'>Content#status</a></td> </tr> <tr>
 		/// <td><code>name</code></td> <td><a href='Content#name'>Content#name</a></td>
 		/// </tr> <tr> <td><code>lastModifiedDateTime</code></td> <td><a
 		/// href='Content#lastModifiedDateTime'>Content#lastModifiedDateTime</a></td> </tr>
-		/// </table>
+		/// <tr> <td><code>lastDaiIngestDateTime</code></td> <td><a
+		/// href='Content#lastDaiIngestDateTime'>Content#lastDaiIngestDateTime</a></td>
+		/// </tr> <tr> <td><code>daiIngestStatus</code></td> <td><a
+		/// href='Content#daiIngestStatus'>Content#daiIngestStatus</a></td> </tr> </table>
 		/// </summary><param name='statement'>a Publisher Query Language statement used to filter a
 		/// set of content</param>
 		/// <returns>the content that matches the given filter</returns>
@@ -65969,8 +65757,8 @@ namespace Google.Api.Ads.Dfp.v201611
 		}
 
 		/// <summary>Creates new <a
-		/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects. The
-		/// following fields are required: <ul> <li><a
+		/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects.
+		/// <p>The following fields are required:</p> <ul> <li><a
 		/// href='ContentMetadataKeyHierarchy#id'>ContentMetadataKeyHierarchy#id</a></li>
 		/// <li><a
 		/// href='ContentMetadataKeyHierarchy#name'>ContentMetadataKeyHierarchy#name</a></li>
@@ -66004,7 +65792,7 @@ namespace Google.Api.Ads.Dfp.v201611
 
 		/// <summary>Performs actions on <a
 		/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects that
-		/// match the given <a href='Statement#query'>Statement#query</a>.
+		/// match the given <a href=''>Statement#query</a>.
 		/// </summary><param name='contentMetadataKeyHierarchyAction'>the action to perform</param>
 		/// <param name='filterStatement'>a Publisher Query Language statement used to
 		/// filter a set of hierarchies</param>

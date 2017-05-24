@@ -89,9 +89,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
 
         if (premiumRates != null) {
           foreach (PremiumRate updatedPremiumRate in premiumRates) {
-            Console.WriteLine("Premium rate with ID '{1}' associated with rate card ID '{2}' " +
+            Console.WriteLine("Premium rate with ID '{0}' associated with rate card ID '{1}' " +
                 "was updated.", updatedPremiumRate.id,
-                updatedPremiumRate.premiumFeature.GetType().Name,
                 updatedPremiumRate.rateCardId);
           }
         } else {

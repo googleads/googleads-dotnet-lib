@@ -28,6 +28,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     protected const int WAIT_TIME = 30000;
 
+    /// <summary>
+    /// The application configuration.
+    /// </summary>
     protected readonly AppConfig config;
 
     /// <summary>

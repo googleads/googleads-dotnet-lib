@@ -73,7 +73,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="callStartTime">The call start time.</param>
     ''' <param name="conversionValue">The conversion value to be uploaded.</param>
     ''' <param name="callerId">The caller ID to be uploaded.</param>
-    ''' <param name="conversionTime">The conversion time, in yyyymmdd hhmmss
+    ''' <param name="conversionTime">The conversion time, in yyyymmdd hhmmss format.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal conversionName As String, _
         ByVal callStartTime As String, ByVal callerId As String, _
         ByVal conversionTime As String, ByVal conversionValue As Double)

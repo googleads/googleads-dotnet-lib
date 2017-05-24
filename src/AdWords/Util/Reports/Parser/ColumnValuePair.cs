@@ -15,7 +15,7 @@
 namespace Google.Api.Ads.AdWords.Util.Reports {
 
   /// <summary>
-  /// A class to hold two strings, the column name and the Value in that column for a row in
+  /// A class to hold two strings, the column name and the value in that column for a row in
   /// a report.
   /// </summary>
   public class ColumnValuePair {
@@ -26,15 +26,15 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     public readonly string ColName;
 
     /// <summary>
-    /// The Value in this column.
+    /// The value in this column.
     /// </summary>
     public readonly string Value;
 
     /// <summary>
-    /// The constructor.
+    /// Initializes a new instance of the <see cref="ColumnValuePair" /> class.
     /// </summary>
-    /// <param name="ColName">The column name</param>
-    /// <param name="Value">The Value</param>
+    /// <param name="colName">The column name</param>
+    /// <param name="value">The column value</param>
     public ColumnValuePair(string colName, string value) {
       this.ColName = colName;
       this.Value = value;

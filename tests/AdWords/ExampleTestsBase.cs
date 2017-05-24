@@ -29,6 +29,8 @@ namespace Google.Api.Ads.AdWords.Tests {
   /// <summary>
   /// UnitTests for code examples.
   /// </summary>
+  [TestFixture]
+  [Category("ExampleTest")]
   public class ExampleTestsBase {
     /// <summary>
     /// The AdWordsUser instance for running code examples.

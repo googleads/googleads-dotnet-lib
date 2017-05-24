@@ -48,7 +48,6 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201611 {
     /// <summary>
     /// Run the code example.
     /// </summary>
-    /// <param name="user">The DFP user object running the code example.</param>
     public void Run(DfpUser dfpUser) {
       // [START reconciliation_guide_include_1] MOE:strip_line
       ReconciliationReportService reconciliationReportService =

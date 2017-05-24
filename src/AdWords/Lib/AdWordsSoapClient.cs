@@ -102,15 +102,6 @@ namespace Google.Api.Ads.AdWords.Lib {
       base.CleanupAfterCall(methodName, parameters);
     }
 
-    /// <summary>
-    /// Creates the error handler.
-    /// </summary>
-    /// <returns>
-    /// The error handler instance.
-    /// </returns>
-    protected override ErrorHandler CreateErrorHandler() {
-      return new AdWordsErrorHandler(this.User as AdWordsUser);
-    }
 
     /// <summary>
     /// Creates a WebRequest instance for the specified url.
@@ -149,12 +140,7 @@ namespace Google.Api.Ads.AdWords.Lib {
                     faultNode.OuterXml, Assembly.GetExecutingAssembly().GetType(
                     this.GetType().Namespace + ".ApiException"), defaultNs, "ApiExceptionFault"),
                     AdWordsErrorMessages.AnApiExceptionOccurred, exception);
-            if (AdWordsErrorHandler.IsOAuthTokenExpiredError(awapiException)) {
-              return new AdWordsCredentialsExpiredException(
-                  (string) ContextStore.GetValue("OAuthHeader"));
-            } else {
               return awapiException;
-            }
           } catch (Exception) {
             // deserialization failed, but we can safely ignore it.
           }

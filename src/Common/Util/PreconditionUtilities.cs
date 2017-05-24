@@ -18,6 +18,9 @@ using System.Text;
 
 namespace Google.Api.Ads.Common.Util {
 
+  /// <summary>
+  /// Provides utility methods for checking preconditions.
+  /// </summary>
   public class PreconditionUtilities {
 
     /// <summary>

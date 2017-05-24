@@ -22,7 +22,7 @@ namespace Google.Api.Ads.Common.Util {
   public static class CollectionUtilities {
 
     /// <summary>
-    /// Attempts to retrive a value associated with the specified key from the specified
+    /// Attempts to retrieve a value associated with the specified key from the specified
     /// Dictionary.</summary>
     /// <param name="dictionary">The dictionary to query.</param>
     /// <param name="key">The key to retrieve a value for.</param>
@@ -34,7 +34,7 @@ namespace Google.Api.Ads.Common.Util {
     }
 
     /// <summary>
-    /// Attempts to retrive a value associated with the specified key from the specified
+    /// Attempts to retrieve a value associated with the specified key from the specified
     /// Dictionary.</summary>
     /// <param name="dictionary">The dictionary to query.</param>
     /// <param name="key">The key to retrieve a value for.</param>

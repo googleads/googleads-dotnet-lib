@@ -22,7 +22,7 @@ using System.IO;
 
 namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
   /// <summary>
-  /// Unit tests for the <see cref="AwReport"/> class.
+  /// Unit tests for the <see cref="AwReport{A}"/> class.
   /// </summary>
   class AwReportTest {
 

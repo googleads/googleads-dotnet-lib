@@ -122,6 +122,9 @@ namespace Google.Api.Ads.Dfp.Tests.v201702 {
           && date1.year == date2.year;
     }
 
+    /// <summary>
+    /// Tests the statement builder with a blank statement.
+    /// </summary>
     [Test]
     public void TestStatementBuilderBlankStatement() {
       StatementBuilder statementBuilder = new StatementBuilder();
@@ -134,6 +137,9 @@ namespace Google.Api.Ads.Dfp.Tests.v201702 {
                                      statementBuilder.ToStatement()));
     }
 
+    /// <summary>
+    /// Tests the statement builder with a basic statement.
+    /// </summary>
     [Test]
     public void TestStatementBuilderBasicStatement() {
       StatementBuilder statementBuilder = new StatementBuilder()
@@ -147,6 +153,9 @@ namespace Google.Api.Ads.Dfp.Tests.v201702 {
                                      statementBuilder.ToStatement()));
     }
 
+    /// <summary>
+    /// Tests that the statement builder ignores keywords.
+    /// </summary>
     [Test]
     public void TestStatementBuilderIgnoresKeyword() {
       StatementBuilder statementBuilder = new StatementBuilder()
@@ -160,6 +169,9 @@ namespace Google.Api.Ads.Dfp.Tests.v201702 {
                                      statementBuilder.ToStatement()));
     }
 
+    /// <summary>
+    /// Tests that the statement builder includes a keyword prefix.
+    /// </summary>
     [Test]
     public void TestStatementBuilderIncludesKeywordPrefix() {
       StatementBuilder statementBuilder = new StatementBuilder()
@@ -173,6 +185,9 @@ namespace Google.Api.Ads.Dfp.Tests.v201702 {
         statementBuilder.ToStatement()));
     }
 
+    /// <summary>
+    /// Tests all statement builder partial functions.
+    /// </summary>
     [Test]
     public void TestAllStatementBuilderPartialFunctions() {
       StatementBuilder statementBuilder = new StatementBuilder()

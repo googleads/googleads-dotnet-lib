@@ -24,15 +24,12 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
   /// Error handler for bulk job requests.
   /// </summary>
   public class BulkJobErrorHandler : ErrorHandler {
-    private readonly AdsUser user;
-
     /// <summary>
-    /// Initializes a new instance of the <see cref="AdWordsErrorHandler"/> class.
+    /// Initializes a new instance of the <see cref="BulkJobErrorHandler"/> class.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public BulkJobErrorHandler(AdsUser user)
       : base(user.Config) {
-        this.user = user;
     }
 
     /// <summary>

@@ -21,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -52,12 +51,11 @@
     <Compile Include="Headers\RequestHeaderStub.cs" />
     <Compile Include="Headers\ResponseHeaderStub.cs" />
     <Compile Include="Util\BatchJob\AdWordsBulkRequestException.cs" />
-    <Compile Include="Lib\AdWordsCredentialsExpiredException.cs" />
     <Compile Include="Lib\AdWordsException.cs" />
     <Compile Include="Lib\AdWordsTraceListener.cs" />
     <Compile Include="Lib\AdWordsCallListener.cs" />
-    <Compile Include="Lib\AdWordsErrorHandler.cs" />
     <Compile Include="Util\BatchJob\BatchJobUtilitiesBase.cs" />
+    <Compile Include="Util\BatchJob\BatchUploadProgress.cs" />
     <Compile Include="Util\BatchJob\BulkJobErrorHandler.cs" />
     <Compile Include="Util\BatchJob\CloudStorageErrorDetail.cs" />
     <Compile Include="Util\BatchJob\CloudStorageErrorResponse.cs" />
@@ -65,13 +63,16 @@
     <Compile Include="Util\BatchJob\v201609\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\v201607\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\CloudStorageError.cs" />
-    <Compile Include="Util\Reports\New\IReportDefinitionField.cs" />
+    <Compile Include="Util\Reports\IReportDefinitionField.cs" />
     <Compile Include="Util\Reports\Parser\AwReport.cs" />
     <Compile Include="Util\Reports\Parser\AwXmlTextReader.cs" />
     <Compile Include="Util\Reports\Parser\ColumnValuePair.cs" />
     <Compile Include="Util\Reports\Parser\InputTextReader.cs" />
     <Compile Include="Util\Reports\Parser\ReportColumn.cs" />
     <Compile Include="Util\Reports\Parser\ReportParserUtils.cs" />
+    <Compile Include="Util\Reports\v201607\PredefinedReportTypes.cs" />
+    <Compile Include="Util\Reports\v201609\PredefinedReportTypes.cs" />
+    <Compile Include="Util\Reports\v201702\PredefinedReportTypes.cs" />
     <Compile Include="Util\Shopping\v201702\OperationPair.cs" />
     <Compile Include="Util\Shopping\v201702\ProductDimensionEqualityComparer.cs" />
     <Compile Include="Util\Shopping\v201702\ProductDimensions.cs" />
@@ -84,7 +85,6 @@
     <Compile Include="Util\Shopping\v201609\ProductPartitionNode.cs" />
     <Compile Include="Util\Shopping\v201609\ProductPartitionNodeAdapter.cs" />
     <Compile Include="Util\Shopping\v201609\ProductPartitionTree.cs" />
-    <Compile Include="Util\v201607\PredefinedReportTypes.cs" />
     <Compile Include="Util\v201609\MapUtilities.cs" />
     <Compile Include="Util\Shopping\v201607\OperationPair.cs" />
     <Compile Include="Util\Shopping\v201607\ProductDimensionEqualityComparer.cs" />
@@ -107,10 +107,10 @@
       <DependentUpon>ShoppingMessages.resx</DependentUpon>
     </Compile>
     <Compile Include="Util\Shopping\SubdivisionState.cs" />
-    <Compile Include="Util\Reports\New\IReportDefinition.cs" />
-    <Compile Include="Util\Reports\New\ReportUtilities.cs" />
-    <Compile Include="Util\Reports\New\ReportDownloadError.cs" />
-    <Compile Include="Util\Reports\New\AdWordsReportsException.cs" />
+    <Compile Include="Util\Reports\IReportDefinition.cs" />
+    <Compile Include="Util\Reports\ReportUtilities.cs" />
+    <Compile Include="Util\Reports\ReportDownloadError.cs" />
+    <Compile Include="Util\Reports\AdWordsReportsException.cs" />
     <Compile Include="Headers\ResponseHeader.cs" />
     <Compile Include="Headers\RequestHeader.cs" />
     <Compile Include="Lib\ApiCallEntry.cs" />
@@ -125,8 +125,6 @@
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Util\Selectors\Field.cs" />
     <Compile Include="Util\v201702\MapUtilities.cs" />
-    <Compile Include="Util\v201609\PredefinedReportTypes.cs" />
-    <Compile Include="Util\v201702\PredefinedReportTypes.cs" />
     <Compile Include="v201607\AdWordsApi.cs" />
     <Compile Include="v201607\AdWordsApi.ProductDimension.cs" />
     <Compile Include="v201607\AdWordsServiceV201607.cs" />

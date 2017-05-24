@@ -83,7 +83,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
               // Archived line items cannot be activated.
               if (!lineItem.isArchived) {
                 Console.WriteLine("{0}) Line item with ID ='{1}', belonging to order ID ='{2}' " +
-                    "and name ='{2}' will be activated.", i, lineItem.id, lineItem.orderId,
+                    "and name ='{3}' will be activated.", i, lineItem.id, lineItem.orderId,
                     lineItem.name);
                 lineItemIds.Add(lineItem.id.ToString());
                 i++;

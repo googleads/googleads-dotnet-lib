@@ -1,3 +1,17 @@
+// Copyright 2016, Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 #pragma warning disable 1591
 namespace Google.Api.Ads.Dfp.v201702
 {
@@ -13,7 +27,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides operations for creating, updating and retrieving <a
 	/// href='AudienceSegment'>AudienceSegment</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "AudienceSegmentServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -145,7 +159,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Exception class for holding a list of service errors.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -192,7 +206,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(CollectionSizeError))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthenticationError))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ApiVersionError))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -380,7 +394,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A segment of a field path. Each dot in a field path defines a new segment.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -433,7 +447,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents the result of performing an action on objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -478,7 +492,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateAudienceSegments))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ApproveAudienceSegments))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateAudienceSegments))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -491,7 +505,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='ThirdPartyAudienceSegment'>ThirdPartyAudienceSegment</a> objects to reject
 	/// them.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -504,7 +518,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='FirstPartyAudienceSegment'>FirstPartyAudienceSegment</a> objects to
 	/// populate them based on last 30 days of traffic.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -517,7 +531,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='FirstPartyAudienceSegment'>FirstPartyAudienceSegment</a> objects to
 	/// deactivate them.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -530,7 +544,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='ThirdPartyAudienceSegment'>ThirdPartyAudienceSegment</a> objects to
 	/// approve them.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -543,7 +557,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='FirstPartyAudienceSegment'>FirstPartyAudienceSegment</a> objects to
 	/// activate them.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -554,7 +568,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a page of <a href='AudienceSegment'>AudienceSegment</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -643,7 +657,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(RuleBasedFirstPartyAudienceSegmentSummary))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(RuleBasedFirstPartyAudienceSegment))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(NonRuleBasedFirstPartyAudienceSegment))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -924,7 +938,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Specifies the statuses for <a href='AudienceSegment'>AudienceSegment</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AudienceSegment.Status", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AudienceSegmentStatus {
@@ -944,7 +958,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='ThirdPartyAudienceSegment'>ThirdPartyAudienceSegment</a>, it would be the
 	/// entity that provides that <a href='AudienceSegment'>AudienceSegment</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -967,7 +981,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Specifies types for <a href='AudienceSegment'>AudienceSegment</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AudienceSegment.Type", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AudienceSegmentType {
@@ -992,7 +1006,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='AudienceSegment'>AudienceSegment</a> owned by another entity and shared
 	/// with the publisher network.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1005,7 +1019,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='AudienceSegment'>AudienceSegment</a> owned by a data provider and licensed
 	/// to the DFP publisher.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1117,7 +1131,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Approval status values for <a
 	/// href='ThirdPartyAudienceSegment'>ThirdPartyAudienceSegment</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ThirdPartyAudienceSegment.AudienceSegmentApprovalStatus", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ThirdPartyAudienceSegmentAudienceSegmentApprovalStatus {
@@ -1140,7 +1154,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a money amount.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1194,7 +1208,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Specifies the license type of a <a
 	/// href='ThirdPartyAudienceSegment'>ThirdPartyAudienceSegment</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ThirdPartyAudienceSegment.LicenseType", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ThirdPartyAudienceSegmentLicenseType {
@@ -1216,7 +1230,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a date combined with the time of day.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1329,7 +1343,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a date.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1430,7 +1444,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(RuleBasedFirstPartyAudienceSegmentSummary))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(RuleBasedFirstPartyAudienceSegment))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(NonRuleBasedFirstPartyAudienceSegment))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1445,7 +1459,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// the publisher network.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(RuleBasedFirstPartyAudienceSegment))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1558,7 +1572,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// is a <a href='FirstPartyAudienceSegment'>FirstPartyAudienceSegment</a> owned by
 	/// the publisher network. It contains a rule.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1583,7 +1597,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Rule of a <a href='FirstPartyAudienceSegment'>FirstPartyAudienceSegment</a> that
 	/// defines user's eligibility criteria to be part of a segment.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1639,7 +1653,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A collection of targeted and excluded ad units and placements.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1691,7 +1705,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents targeted or excluded ad units.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1749,7 +1763,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// The custom criteria targeting tree is subject to the rules defined on <a
 	/// href='Targeting#customTargeting'>Targeting#customTargeting</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1804,7 +1818,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Specifies the available logical operators.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomCriteriaSet.LogicalOperator", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CustomCriteriaSetLogicalOperator {
@@ -1824,7 +1838,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AudienceSegmentCriteria))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomCriteria))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomCriteriaSet))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1838,7 +1852,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AudienceSegmentCriteria))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomCriteria))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1850,7 +1864,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>An <a href='AudienceSegmentCriteria'>AudienceSegmentCriteria</a> object is used
 	/// to target <a href='AudienceSegment'>AudienceSegment</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1904,7 +1918,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Specifies the available comparison operators.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AudienceSegmentCriteria.ComparisonOperator", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AudienceSegmentCriteriaComparisonOperator {
@@ -1919,7 +1933,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// or <a
 	/// href='CustomTargetingKey.Type#FREEFORM'>CustomTargetingKey.Type#FREEFORM</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2007,7 +2021,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Specifies the available comparison operators.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomCriteria.ComparisonOperator", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CustomCriteriaComparisonOperator {
@@ -2023,7 +2037,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// this segment via cookie upload. <p>These segments are created by data management
 	/// platforms or Google Analytics. They cannot be created using the DFP API.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2071,7 +2085,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DateTimeValue))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(BooleanValue))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ObjectValue))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2084,7 +2098,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Contains a string value.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2107,7 +2121,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Contains a set of <a href='Value'>Values</a>. May not contain duplicates.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2132,7 +2146,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Contains a numeric value.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2155,7 +2169,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Contains a date value.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2178,7 +2192,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Contains a date-time value.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2201,7 +2215,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Contains a boolean value.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2244,7 +2258,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// make backwards-incompatible changes to <code>ObjectValue</code>. We will inform
 	/// the community when this feature is no longer experimental.</b></p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2258,7 +2272,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>This represents an entry in a map with a key of type String and value of type
 	/// Value.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2302,7 +2316,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <a href='NumberValue'>NumberValue</a>, <a href='TextValue'>TextValue</a> or <a
 	/// href='BooleanValue'>BooleanValue</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2359,7 +2373,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Base class for exceptions.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ApiException))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2382,7 +2396,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An error for a field which is an invalid type.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2393,7 +2407,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors for Strings which do not meet given length constraints.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2428,7 +2442,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "StringLengthError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum StringLengthErrorReason {
@@ -2443,7 +2457,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An error that occurs while parsing <a href='Statement'>Statement</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2480,7 +2494,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "StatementError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum StatementErrorReason {
@@ -2496,7 +2510,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors related to the server.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2533,7 +2547,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes reasons for server errors
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ServerError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ServerErrorReason {
@@ -2553,7 +2567,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors that could occur on audience segment related requests.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2590,7 +2604,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Reason of the given <a href='AudienceSegmentError'>AudienceSegmentError</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AudienceSegmentError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AudienceSegmentErrorReason {
@@ -2661,7 +2675,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors due to missing required field.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2700,7 +2714,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequiredError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RequiredErrorReason {
@@ -2712,7 +2726,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A list of all errors to be used for validating sizes of collections.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2747,7 +2761,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequiredCollectionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RequiredCollectionErrorReason {
@@ -2770,7 +2784,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Describes a client-side error on which a user is attempting to perform an action
 	/// to which they have no quota remaining.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2805,7 +2819,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "QuotaError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum QuotaErrorReason {
@@ -2829,7 +2843,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>An error that occurs while parsing a PQL query contained in a <a
 	/// href='Statement'>Statement</a> object.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2868,7 +2882,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "PublisherQueryLanguageSyntaxError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum PublisherQueryLanguageSyntaxErrorReason {
@@ -2885,7 +2899,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>An error that occurs while executing a PQL query contained in a <a
 	/// href='Statement'>Statement</a> object.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2924,7 +2938,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "PublisherQueryLanguageContextError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum PublisherQueryLanguageContextErrorReason {
@@ -2940,7 +2954,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors related to incorrect permission.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2977,7 +2991,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes reasons for permission errors.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "PermissionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum PermissionErrorReason {
@@ -2993,7 +3007,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists errors related to parsing.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3032,7 +3046,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ParseError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ParseErrorReason {
@@ -3048,7 +3062,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Caused by supplying a null value for an attribute that cannot be null.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3087,7 +3101,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotNullError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum NotNullErrorReason {
@@ -3108,7 +3122,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Indicates that a server-side error has occured. <code></code>s are generally not
 	/// the result of an invalid request or message sent by the client.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3147,7 +3161,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The single reason for the internal API error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "InternalApiError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum InternalApiErrorReason {
@@ -3170,7 +3184,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// available to the current network you'll receive a FeatureError with the missing
 	/// feature as the trigger.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3205,7 +3219,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "FeatureError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum FeatureErrorReason {
@@ -3222,7 +3236,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>An error that occurs when creating an entity if the limit on the number of
 	/// allowed entities for a network has already been reached.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3259,7 +3273,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the entity limit reached error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityLimitReachedError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum EntityLimitReachedErrorReason {
@@ -3289,7 +3303,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists errors relating to having too many children on an entity.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3326,7 +3340,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the entity children limit reached error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "EntityChildrenLimitReachedError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum EntityChildrenLimitReachedErrorReason {
@@ -3398,7 +3412,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A place for common errors that can be used across services.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3435,7 +3449,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes reasons for common errors
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CommonError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CommonErrorReason {
@@ -3467,7 +3481,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Error for the size of the collection being too large
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3502,7 +3516,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CollectionSizeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CollectionSizeErrorReason {
@@ -3516,7 +3530,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An error for an exception that occurred when authenticating.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3551,7 +3565,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AuthenticationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AuthenticationErrorReason {
@@ -3613,7 +3627,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors related to the usage of API versions.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3648,7 +3662,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ApiVersionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ApiVersionErrorReason {
@@ -3671,7 +3685,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
 	/// (DFP)</a>, you will not be able to use this service.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ProductPackageServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -3795,7 +3809,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateProductPackages))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchiveProductPackages))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateProductPackages))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3806,7 +3820,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used to un-archive product packages.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3817,7 +3831,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used to de-activate product packages.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3828,7 +3842,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used to archive product packages.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3839,7 +3853,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used to activate product packages.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3850,7 +3864,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='ProductPackageDto'>ProductPackageDto</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3933,7 +3947,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>ProductPackage</code> represents a group of products which will be sold
 	/// together.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4107,7 +4121,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the different statuses for <code>ProductPackage</code>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProductPackageStatus {
@@ -4124,7 +4138,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DropDownCustomFieldValue))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomFieldValue))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4167,7 +4181,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='CustomField#dataType'>CustomField#dataType</a> of <a
 	/// href='CustomFieldDataType#DROP_DOWN'>CustomFieldDataType#DROP_DOWN</a>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4209,7 +4223,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='CustomField#dataType'>CustomField#dataType</a> of <a
 	/// href='CustomFieldDataType#DROP_DOWN'>CustomFieldDataType#DROP_DOWN</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4242,7 +4256,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An error for a field which must satisfy a uniqueness constraint
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4253,7 +4267,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An error having to do with <a href='RateCard'>RateCard</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4292,7 +4306,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "RateCardError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RateCardErrorReason {
@@ -4337,7 +4351,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A list of all errors associated with the Range constraint.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4372,7 +4386,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "RangeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RangeErrorReason {
@@ -4387,7 +4401,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with product packages rate card associations.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4426,7 +4440,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the <a href='ProductPackageError'>ProductPackageError</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProductPackageRateCardAssociationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProductPackageRateCardAssociationErrorReason {
@@ -4445,7 +4459,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with product package items.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4485,7 +4499,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The reasons for the <a
 	/// href='ProductPackageItemError'>ProductPackageItemError</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProductPackageItemError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProductPackageItemErrorReason {
@@ -4504,7 +4518,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors for executing operations on product packages.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4544,7 +4558,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The reasons for the <a
 	/// href='ProductPackageActionError'>ProductPackageActionError</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProductPackageActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProductPackageActionErrorReason {
@@ -4564,7 +4578,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors associated with violation of a NOT NULL check.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4603,7 +4617,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the validation error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "NullError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum NullErrorReason {
@@ -4615,7 +4629,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An error having to do with <a href='BaseRate'>BaseRate</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4652,7 +4666,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "BaseRateError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum BaseRateErrorReason {
@@ -4665,23 +4679,23 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// <summary>Cannot create or activate a product package item base rate if the product
 		/// package item is archived.
 		/// </summary>
-		PRODUCT_PACKAGE_ITEM_ARCHIVED = 7,
+		PRODUCT_PACKAGE_ITEM_ARCHIVED = 9,
 		/// <summary>The PQL statement can only contain one of <code></code>, <code>productId</code>
 		/// or <code></code>.
 		/// </summary>
-		CANNOT_QUERY_ON_MULTIPLE_TYPES = 8,
+		CANNOT_QUERY_ON_MULTIPLE_TYPES = 10,
 		/// <summary>Product package must be associated with the rate card of the product package
 		/// item base rate. <p>See <a
 		/// href='ProductPackage#rateCardIds'>ProductPackage#rateCardIds</a>.</p>
 		/// </summary>
-		PRODUCT_PACKAGE_RATE_CARD_ASSOCIATION_MISSING = 9,
+		PRODUCT_PACKAGE_RATE_CARD_ASSOCIATION_MISSING = 11,
 		/// <summary>Indicates that the requested operation is not supported.
 		/// </summary>
 		UNSUPPORTED_OPERATION = 3,
 		/// <summary>Cannot delete a product package item base rate when its product package is
 		/// active.
 		/// </summary>
-		PRODUCT_PACKAGE_ACTIVE = 10,
+		PRODUCT_PACKAGE_ACTIVE = 12,
 		/// <summary>Cannot create a base rate to a product if its product template does not have a
 		/// base rate on this rate card.
 		/// </summary>
@@ -4695,11 +4709,11 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// href='BaseRate'>base rates</a>. Non-Marketplace <a href='RateCard'>rate
 		/// cards</a> should use traditional base rates.
 		/// </summary>
-		INVALID_RATE_CARD_CHANNEL = 11,
+		INVALID_RATE_CARD_CHANNEL = 7,
 		/// <summary>Marketplace does not support <a href='BaseRate'>base rates</a> with zero-value
 		/// rates.
 		/// </summary>
-		ZERO_MARKETPLACE_RATE_NOT_SUPPORTED = 12,
+		ZERO_MARKETPLACE_RATE_NOT_SUPPORTED = 8,
 		/// <summary>The value returned if the actual value is not exposed by the requested API
 		/// version.
 		/// </summary>
@@ -4713,7 +4727,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you will
 	/// not be able to use this service.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "RateCardServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -4832,7 +4846,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateRateCards))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateRateCards))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4843,7 +4857,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used to deactivate <a href='RateCard'>RateCard</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4854,7 +4868,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used to activate <a href='RateCard'>RateCard</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4865,7 +4879,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='RateCard'>RateCard</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4949,7 +4963,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// products, premiums, proposal line item level adjustments and proposal level
 	/// adjustments.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5128,8 +5142,9 @@ namespace Google.Api.Ads.Dfp.v201702
 			}
 		}
 
-		/// <summary>The date and time this <code>RateCard</code> was last modified. This attribute
-		/// is readonly and is assigned by Google when a <code></code> is updated.
+		/// <summary>The date and time this <code>RateCard</code> was last modified. <p>This
+		/// attribute is readonly and is assigned by Google when a <code>RateCard</code> is
+		/// updated.</p>
 		/// </summary>
 		public DateTime lastModifiedDateTime {
 			get {
@@ -5144,7 +5159,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the status of <a href='RateCard'>RateCard</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RateCardStatus {
@@ -5163,7 +5178,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The option to specify whether the proposal uses the Net or Gross pricing model.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum PricingModel {
@@ -5182,7 +5197,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors related to a Team.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5221,7 +5236,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "TeamError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum TeamErrorReason {
@@ -5256,7 +5271,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A list of all errors to be used in conjunction with required number validators.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5293,7 +5308,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes reasons for a number to be invalid.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequiredNumberError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RequiredNumberErrorReason {
@@ -5312,7 +5327,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>An error lists all error reasons associated with performing action on <a
 	/// href='RateCard'>RateCard</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5351,7 +5366,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "RateCardActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RateCardActionErrorReason {
@@ -5368,7 +5383,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides methods for adding, updating and retrieving <a
 	/// href='ExchangeRate'>ExchangeRate</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ExchangeRateServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -5506,7 +5521,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='ExchangeRate'>ExchangeRate</a> objects.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteExchangeRates))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5517,7 +5532,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used to delete <a href='ExchangeRate'>ExchangeRate</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5528,7 +5543,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='ExchangeRate'>ExchangeRate</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5613,7 +5628,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// the latest exchange rate between this currency and <a
 	/// href='Network#currencyCode'>Network#currencyCode</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5769,7 +5784,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Determines at which rate the exchange rate is refreshed.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ExchangeRateRefreshRate {
@@ -5794,7 +5809,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Determines which direction (from which currency to which currency) the exchange
 	/// rate is in.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ExchangeRateDirection {
@@ -5818,7 +5833,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all errors associated with <a href='ExchangeRate'>ExchangeRate</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5857,7 +5872,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ExchangeRateError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ExchangeRateErrorReason {
@@ -5902,7 +5917,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides operations for creating, updating and retrieving <a
 	/// href='Company'>Company</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "CompanyServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -5996,7 +6011,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='Company'>Company</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6079,7 +6094,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>Company</code> represents an agency, a single advertiser or an entire
 	/// advertising network.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6396,7 +6411,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The type of the company. Once a company is created, it is not possible to change
 	/// its type.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "Company.Type", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CompanyType {
@@ -6418,10 +6433,17 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// <summary>A company representing multiple advertisers and agencies.
 		/// </summary>
 		AD_NETWORK = 4,
-		/// <summary>A company representing a content owner's affiliate/distribution partner.
+		/// <summary>A company representing a content owner's affiliate/distribution partner. <p>This
+		/// field is deprecated in favor of <a href='Type#PARTNER'>Type#PARTNER</a>. All
+		/// companies of type <a
+		/// href='Type#AFFILIATE_DISTRIBUTION_PARTNER'>Type#AFFILIATE_DISTRIBUTION_PARTNER</a>
+		/// were changed to <a href='Type#PARTNER'>Type#PARTNER</a>.</p>
 		/// </summary>
 		AFFILIATE_DISTRIBUTION_PARTNER = 5,
-		/// <summary>A company representing a distributor's content partner.
+		/// <summary>A company representing a distributor's content partner. <p>This field is
+		/// deprecated in favor of <a href='Type#PARTNER'>Type#PARTNER</a>. All companies of
+		/// type <a href='Type#CONTENT_PARTNER'>Type#CONTENT_PARTNER</a> were changed to <a
+		/// href='Type#PARTNER'>Type#PARTNER</a>.</p>
 		/// </summary>
 		CONTENT_PARTNER = 6,
 		/// <summary>The value returned if the actual value is not exposed by the requested API
@@ -6441,7 +6463,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// Choosing an Advanced setting when only the Basic feature has been enabled, or
 	/// using the Basic setting without turning the feature on will result in an error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "Company.CreditStatus", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CompanyCreditStatus {
@@ -6481,7 +6503,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Settings for a <a href='Company'>Company</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6698,7 +6720,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// cannot be used when <a href='BillingSource'>BillingSource</a> is <a
 	/// href='BillingSource#CONTRACTED'>BillingSource#CONTRACTED</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum BillingCap {
@@ -6740,7 +6762,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='BillingSource'>BillingSource</a> is <a
 	/// href='BillingSource#CONTRACTED'>BillingSource#CONTRACTED</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum BillingSchedule {
@@ -6769,7 +6791,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Determines which billable numbers or delivery data (impressions, clicks, and so
 	/// on) will be used for billing purposes.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum BillingSource {
@@ -6794,7 +6816,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// negate an inherited label, create an <code></code> with <code>labelId</code> as
 	/// the inherited label's ID and <code>isNegated</code> set to true.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6864,7 +6886,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Caused by supplying a value for an object attribute that does not conform to a
 	/// documented valid regular expression.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6903,7 +6925,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "RegExError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RegExErrorReason {
@@ -6922,7 +6944,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An error for a network.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6959,7 +6981,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Possible reasons for <a href='NetworkError'>NetworkError</a>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "NetworkError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum NetworkErrorReason {
@@ -6985,7 +7007,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors specific to creating label entity associations.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7024,7 +7046,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "LabelEntityAssociationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LabelEntityAssociationErrorReason {
@@ -7047,7 +7069,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Caused by supplying a value for an email attribute that is not a valid email
 	/// address.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7084,7 +7106,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes reasons for an email to be invalid.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "InvalidEmailError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum InvalidEmailErrorReason {
@@ -7100,7 +7122,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors specific to editing custom field values
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7139,7 +7161,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomFieldValueError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CustomFieldValueErrorReason {
@@ -7165,7 +7187,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with cross selling.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7204,17 +7226,20 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reason of the error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CrossSellError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CrossSellErrorReason {
 		/// <summary>Only standard or sponsorship line item types are supported for cross selling.
+		/// <p>This field is deprecated. This error will never be returned.</p>
 		/// </summary>
 		UNSUPPORTED_RESERVATION_TYPE = 0,
-		/// <summary>A cross-sell partner must have at least one eligible line item type.
+		/// <summary>A cross-sell partner must have at least one eligible line item type. <p>This
+		/// field is deprecated. This error will never be returned.</p>
 		/// </summary>
 		NO_VALID_ELIGIBLE_RESERVATION_TYPES = 1,
-		/// <summary>A company for cross-sell partner must be an affiliate/distribution company.
+		/// <summary>A company for cross-sell partner must be of type <a
+		/// href='Company.Type#PARTNER'>Company.Type#PARTNER</a>.
 		/// </summary>
 		COMPANY_IS_NOT_DISTRIBUTION_PARTNER = 2,
 		/// <summary>The network code of a cross-sell partner cannot be changed.
@@ -7263,7 +7288,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A list of all errors associated with companies.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7300,7 +7325,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Enumerates all possible company specific errors.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CompanyError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CompanyErrorReason {
@@ -7348,7 +7373,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors due to <a href='Company#creditStatus'>Company#creditStatus</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7387,7 +7412,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CompanyCreditStatusError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CompanyCreditStatusErrorReason {
@@ -7436,7 +7461,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all errors associated with the availability of billing settings based on
 	/// proposal network settings.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7473,7 +7498,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The error reason represented by an enum.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AvailableBillingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AvailableBillingErrorReason {
@@ -7497,7 +7522,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='AdRule'>AdRule</a> objects. <p>Ad rules contain data that the ad server
 	/// uses to generate a playlist of video ads.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "AdRuleServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -7618,7 +7643,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteAdRules))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateAdRules))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateAdRules))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7629,7 +7654,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for deleting <a href='AdRule'>AdRule</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7640,7 +7665,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for pausing <a href='AdRule'>AdRule</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7651,7 +7676,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for resuming <a href='AdRule'>AdRule</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7662,7 +7687,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='AdRule'>AdRule</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7745,7 +7770,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>An <a href='AdRule'>AdRule</a> contains data that the ad server will use to
 	/// generate a playlist of video ads.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8103,7 +8128,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Contains targeting criteria for <a href='LineItem'>LineItem</a> objects. See <a
 	/// href='LineItem#targeting'>LineItem#targeting</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8263,7 +8288,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// you are targeting New York City, you must not have the state of New York as one
 	/// of the targeted locations</li> </ul>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8306,7 +8331,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// using, the location will be represented as just the base class, otherwise it
 	/// will be sub-classed correctly.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8402,7 +8427,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Modify the delivery times of line items for particular days of the week. By
 	/// default, line items are served at all days and times.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8460,7 +8485,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary><code>DayPart</code> represents a time-period within a day of the week which is
 	/// targeted by a <a href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8525,7 +8550,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Days of the week.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum DayOfWeek {
@@ -8555,7 +8580,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a specific time in a day.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8626,7 +8651,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Minutes in an hour. Currently, only 0, 15, 30, and 45 are supported. This field
 	/// is required.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum MinuteOfHour {
@@ -8648,7 +8673,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents the time zone to be used for <a
 	/// href='DayPartTargeting'>DayPartTargeting</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum DeliveryTimeZone {
@@ -8664,7 +8689,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides <a href='LineItem'>LineItem</a> objects the ability to target or
 	/// exclude technologies.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8820,7 +8845,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents bandwidth groups that are being targeted or excluded by the <a
 	/// href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8886,7 +8911,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(BrowserLanguage))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(Browser))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(BandwidthGroup))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8940,7 +8965,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a specific version of an operating system.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9037,7 +9062,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents an Operating System, such as Linux, Mac OS or Windows.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9048,7 +9073,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a mobile device submodel.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9117,7 +9142,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a Mobile Device.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9157,7 +9182,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents a mobile carrier. Carrier targeting is only available to DFP mobile
 	/// publishers.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9168,7 +9193,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a mobile device's manufacturer.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9179,7 +9204,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents the category of a device.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9190,7 +9215,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a capability of a physical device.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9201,7 +9226,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a Browser's language.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9212,7 +9237,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents an internet browser.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9249,7 +9274,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents a group of bandwidths that are logically organized by some well known
 	/// generic names such as 'Cable' or 'DSL'.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9261,7 +9286,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents browsers that are being targeted or excluded by the <a
 	/// href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9317,7 +9342,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents browser languages that are being targeted or excluded by the <a
 	/// href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9373,7 +9398,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents device capabilities that are being targeted or excluded by the <a
 	/// href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9414,7 +9439,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents device categories that are being targeted or excluded by the <a
 	/// href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9455,7 +9480,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents device manufacturer that are being targeted or excluded by the <a
 	/// href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9511,7 +9536,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents mobile carriers that are being targeted or excluded by the <a
 	/// href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9567,7 +9592,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents mobile devices that are being targeted or excluded by the <a
 	/// href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9606,7 +9631,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents mobile devices that are being targeted or excluded by the <a
 	/// href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9647,7 +9672,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents operating systems that are being targeted or excluded by the <a
 	/// href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9703,7 +9728,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents operating system versions that are being targeted or excluded by the
 	/// <a href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9744,7 +9769,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides line items the ability to target or exclude users visiting their
 	/// websites from a list of domains or subdomains.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9801,7 +9826,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Used to target <a href='LineItem'>LineItem</a>s to specific videos on a
 	/// publisher's site.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9900,10 +9925,10 @@ namespace Google.Api.Ads.Dfp.v201702
 
 
 	/// <summary>Represents one or more <a href='CustomTargetingValue'>custom targeting
-	/// values</a> from different <a href='CustomTargetingKey'>custom targeting keys</a>
-	/// ANDed together.
+	/// values</a> from different <a href=''>CustomTargetingKey custom targeting
+	/// keys</a> ANDed together.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9934,7 +9959,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <code>post-roll</code> (after a video has completed playback) and
 	/// <code>mid-roll</code> (during video playback).</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9959,7 +9984,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents the options for targetable positions within a video.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10030,7 +10055,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// position (pre-roll, all mid-rolls, or post-roll), or to a specific mid-roll
 	/// index.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10101,7 +10126,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a targetable position within a video.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoPosition.Type", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum VideoPositionType {
@@ -10123,7 +10148,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='VideoPositionType#MIDROLL'>VideoPositionType#MIDROLL</a>, and <a
 	/// href='VideoPositionType#POSTROLL'>VideoPositionType#POSTROLL</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum VideoBumperType {
@@ -10140,7 +10165,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// can be targeted to any position in the pod (first, second, third ... last). If
 	/// there is only 1 ad in a pod, either first or last will target that position.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10183,7 +10208,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Provides line items the ability to target or exclude users' mobile applications.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10240,7 +10265,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// example, a <a href='LineItem'>LineItem</a> or <a
 	/// href='LineItemCreativeAssociation'>LineItemCreativeAssociation</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum StartDateTimeType {
@@ -10270,7 +10295,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents the status of ad rules and ad rule slots.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdRuleStatus {
@@ -10292,7 +10317,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Types of behavior for frequency caps within ad rules.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum FrequencyCapBehavior {
@@ -10320,7 +10345,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(StandardPoddingAdRuleSlot))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(OptimizedPoddingAdRuleSlot))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(NoPoddingAdRuleSlot))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10626,7 +10651,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The types of behaviors for ads within a <a href='BaseAdRuleSlot'>ad rule
 	/// slot</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdRuleSlotBehavior {
@@ -10649,7 +10674,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Frequency types for mid-roll <a href='BaseAdRuleSlot'>ad rule slots</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum MidrollFrequencyType {
@@ -10683,7 +10708,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Types of bumper ads on an ad rule slot.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdRuleSlotBumper {
@@ -10709,7 +10734,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The <a href='BaseAdRuleSlot'>BaseAdRuleSlot</a> subtype returned if the actual
 	/// type is not exposed by the requested API version.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10723,7 +10748,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='BaseAdRuleSlot#maxAdsInPod'>BaseAdRuleSlot#maxAdsInPod</a> and a <a
 	/// href='BaseAdRuleSlot#maxVideoAdDuration'>BaseAdRuleSlot#maxVideoAdDuration</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10737,7 +10762,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='BaseAdRuleSlot#maxAdsInPod'>BaseAdRuleSlot#maxAdsInPod</a>, and the ad
 	/// server chooses the best ads for the alloted duration.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10749,7 +10774,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>An ad rule slot with no podding. It is defined by a <a
 	/// href='BaseAdRuleSlot#maxVideoAdDuration'>BaseAdRuleSlot#maxVideoAdDuration</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10760,7 +10785,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors related to podding fields in ad rule slots.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10797,7 +10822,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes reason for <code>PoddingError</code>s.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "PoddingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum PoddingErrorReason {
@@ -10826,7 +10851,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all inventory errors caused by associating a line item with a targeting
 	/// expression.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10865,7 +10890,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum InventoryTargetingErrorReason {
@@ -10914,7 +10939,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all errors related to <a href='CustomTargetingKey'>CustomTargetingKey</a>
 	/// and <a href='CustomTargetingValue'>CustomTargetingValue</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10951,7 +10976,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CustomTargetingErrorReason {
@@ -11107,7 +11132,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all errors related to <a
 	/// href='ContentMetadataTargeting'>ContentMetadataTargeting</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11144,7 +11169,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the metadata targeting error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ContentMetadataTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ContentMetadataTargetingErrorReason {
@@ -11161,7 +11186,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with ad rule targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11199,7 +11224,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Describes reasons for <code>AdRuleTargetingError ad rule targeting
 	/// errors</code>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdRuleTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdRuleTargetingErrorReason {
@@ -11215,7 +11240,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors related to ad rule slots.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11252,7 +11277,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes reason for <code>AdRuleSlotError</code>s.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdRuleSlotError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdRuleSlotErrorReason {
@@ -11301,7 +11326,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors associated with ad rule priorities.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11338,7 +11363,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Reasons for an <code>AdRulePriorityError</code>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdRulePriorityError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdRulePriorityErrorReason {
@@ -11357,7 +11382,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors related to ad rule frequency caps
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11394,7 +11419,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes reason for <code>AdRuleFrequencyCapError</code>s.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdRuleFrequencyCapError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdRuleFrequencyCapErrorReason {
@@ -11415,7 +11440,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with ad rule start and end dates.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11452,7 +11477,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes reasons for <code>AdRuleDateError</code>s.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdRuleDateError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdRuleDateErrorReason {
@@ -11479,7 +11504,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides methods for retrieving and updating the <a
 	/// href='ReconciliationReportRow'>ReconciliationReportRow</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ReconciliationReportRowServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -11600,7 +11625,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='#lineItemId'>#lineItemId</a>, <a href='#creativeId'>#creativeId</a>, and
 	/// <a href='#proposalLineItemId'>#proposalLineItemId</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11990,10 +12015,11 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// represents clicks; if the <a href='#rateType'>#rateType</a> is <a
 		/// href='RateType#CPM'>RateType#CPM</a>, it represents impressions; if the <a
 		/// href='#rateType'>#rateType</a> is <a href='RateType#CPD'>RateType#CPD</a>, it
-		/// represents line item days. If the <a href='#billFrom'>#billFrom</a> is <a
+		/// represents line item days. <p>If the <a href='#billFrom'>#billFrom</a> is <a
 		/// href='BillFrom#DFP'>BillFrom#DFP</a>, this attribute will be set to <a
-		/// href='#reconciledVolume'>#reconciledVolume</a> and used to calculate the <a
-		/// href='#reconciledRevenue'>#reconciledRevenue</a>. This attribute is read-only.
+		/// href=''>#reconciledVolume</a> and used to calculate the <a
+		/// href='#reconciledRevenue'>#reconciledRevenue</a>.</p> <p>This attribute is
+		/// read-only.</p>
 		/// </summary>
 		public long dfpVolume {
 			get {
@@ -12055,13 +12081,14 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// <summary>The volume manually entered. The meaning of this value depends on the <a
 		/// href='#rateType'>#rateType</a>, for example if the <a
 		/// href='#rateType'>#rateType</a> is <a href='RateType#CPC'>RateType#CPC</a>, it
-		/// represents clicks; if the <a href='#rateType'>#rateType</a> is <a
+		/// represents clicks; if the <a href=''>#rateType</a> is <a
 		/// href='RateType#CPM'>RateType#CPM</a>, it represents impressions; if the <a
 		/// href='#rateType'>#rateType</a> is <a href='RateType#CPD'>RateType#CPD</a>, it
-		/// represents line item days. If the <a href='#billFrom'>#billFrom</a> is <a
+		/// represents line item days. <p>If the <a href='#billFrom'>#billFrom</a> is <a
 		/// href='BillFrom#MANUAL'>BillFrom#MANUAL</a>, this attribute will be set to <a
-		/// href='#reconciledVolume'>#reconciledVolume</a> and used to calculate the <a
-		/// href='#reconciledRevenue'>#reconciledRevenue</a>. This attribute is optional.
+		/// href=''>#reconciledVolume</a> and used to calculate the <a
+		/// href='#reconciledRevenue'>#reconciledRevenue</a>.</p> <p>This attribute is
+		/// optional.</p>
 		/// </summary>
 		public long manualVolume {
 			get {
@@ -12209,7 +12236,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Values for which to bill from.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum BillFrom {
@@ -12239,7 +12266,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// correspond to the values for the <a
 	/// href='LineItem#costType'>LineItem#costType</a> field.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RateType {
@@ -12271,7 +12298,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Captures a page of <a href='ReconciliationReportRow'>ReconciliationReportRow</a>
 	/// objects
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12353,7 +12380,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The API errors for reconciliation CSV import.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12392,7 +12419,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReconciliationImportError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ReconciliationImportErrorReason {
@@ -12420,7 +12447,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with reconciliation.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12459,7 +12486,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReconciliationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ReconciliationErrorReason {
@@ -12537,7 +12564,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// start and end date and time that defines when the creative should be
 	/// displayed.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "LineItemCreativeAssociationServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -12694,7 +12721,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteLineItemCreativeAssociations))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateLineItemCreativeAssociations))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateLineItemCreativeAssociations))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12706,7 +12733,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for deleting <a
 	/// href='LineItemCreativeAssociation'>LineItemCreativeAssociation</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12718,7 +12745,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for deactivating <a
 	/// href='LineItemCreativeAssociation'>LineItemCreativeAssociation</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12730,7 +12757,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for activating <a
 	/// href='LineItemCreativeAssociation'>LineItemCreativeAssociation</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12742,7 +12769,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Captures a page of <a
 	/// href='LineItemCreativeAssociation'>LineItemCreativeAssociation</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12827,7 +12854,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='LineItem'>LineItem</a> so that the creative can be served in ad units
 	/// targeted by the line item.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13173,7 +13200,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// interstitial size (out-of-page), native, ignored and fluid size,
 	/// <code>Size</code> must be 1x1.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13272,7 +13299,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the status of the association.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemCreativeAssociation.Status", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LineItemCreativeAssociationStatus {
@@ -13298,7 +13325,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Contains statistics such as impressions, clicks delivered and cost for <a
 	/// href='LineItemCreativeAssociation'>LineItemCreativeAssociation</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13353,7 +13380,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='LineItem'>LineItem</a> and <a
 	/// href='LineItemCreativeAssociation'>LineItemCreativeAssociation</a> objects
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13509,7 +13536,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>This represents an entry in a map with a key of type Long and value of type
 	/// Stats.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13557,7 +13584,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with template instantiated creatives.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13596,7 +13623,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reason for the error
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "TemplateInstantiatedCreativeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum TemplateInstantiatedCreativeErrorReason {
@@ -13615,7 +13642,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Error for converting flash to swiffy asset.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13652,7 +13679,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Error reason for <a href='SwiffyConversionError'>SwiffyConversionError</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "SwiffyConversionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum SwiffyConversionErrorReason {
@@ -13676,7 +13703,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors associated with <a href='SetTopBoxCreative'>set-top box creatives</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13715,7 +13742,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Error reasons for set-top box creatives.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "SetTopBoxCreativeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum SetTopBoxCreativeErrorReason {
@@ -13740,7 +13767,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with Rich Media Studio creatives.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13779,7 +13806,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "RichMediaStudioCreativeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RichMediaStudioCreativeErrorReason {
@@ -13820,7 +13847,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A list of all errors to be used for validating <a href='Size'>Size</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13855,7 +13882,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "RequiredSizeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RequiredSizeErrorReason {
@@ -13877,7 +13904,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with orders.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13916,7 +13943,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "OrderError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum OrderErrorReason {
@@ -13961,7 +13988,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A catch-all error that lists all generic errors associated with LineItem.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14000,7 +14027,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LineItemErrorReason {
@@ -14239,7 +14266,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors for executing operations on line item-to-creative associations
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14278,7 +14305,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemCreativeAssociationOperationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LineItemCreativeAssociationOperationErrorReason {
@@ -14300,7 +14327,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with line item-to-creative association dates.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14339,7 +14366,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemCreativeAssociationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LineItemCreativeAssociationErrorReason {
@@ -14403,7 +14430,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with URLs.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14438,7 +14465,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "InvalidUrlError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum InvalidUrlErrorReason {
@@ -14465,7 +14492,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with phone numbers.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14500,7 +14527,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "InvalidPhoneNumberError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum InvalidPhoneNumberErrorReason {
@@ -14519,7 +14546,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with images.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14558,7 +14585,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ImageError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ImageErrorReason {
@@ -14651,7 +14678,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with html5 file processing.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14690,7 +14717,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Error reasons that may arise during HTML5 bundle processing.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "HtmlBundleProcessorError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum HtmlBundleProcessorErrorReason {
@@ -14752,7 +14779,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A list of all errors to be used for problems related to files.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14787,7 +14814,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "FileError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum FileErrorReason {
@@ -14806,7 +14833,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with custom creatives.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14845,7 +14872,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomCreativeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CustomCreativeErrorReason {
@@ -14877,7 +14904,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An error that can occur while performing an operation on a creative template.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14916,7 +14943,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CreativeTemplateOperationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CreativeTemplateOperationErrorReason {
@@ -14937,7 +14964,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A catch-all error that lists all generic errors associated with
 	/// CreativeTemplate.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -14976,7 +15003,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CreativeTemplateError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CreativeTemplateErrorReason {
@@ -15026,7 +15053,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors relating to creative sets &amp; subclasses.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15065,7 +15092,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CreativeSetError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CreativeSetErrorReason {
@@ -15100,7 +15127,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors associated with generation of creative preview URIs.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15135,7 +15162,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CreativePreviewError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CreativePreviewErrorReason {
@@ -15151,7 +15178,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with creatives.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15190,7 +15217,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CreativeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CreativeErrorReason {
@@ -15261,7 +15288,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with creative asset macros.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15300,7 +15327,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CreativeAssetMacroError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CreativeAssetMacroErrorReason {
@@ -15318,7 +15345,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors associated with audience extension enabled line items
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15357,7 +15384,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Specific audience extension error reasons.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AudienceExtensionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AudienceExtensionErrorReason {
@@ -15433,7 +15460,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with assets.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15472,7 +15499,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AssetError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AssetErrorReason {
@@ -15512,7 +15539,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Error for AdSense related API calls.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15547,7 +15574,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseAccountError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdSenseAccountErrorReason {
@@ -15587,7 +15614,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
 	/// (DFP)</a>, you will not be able to use this service.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ProposalServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -15779,7 +15806,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(CancelRetractionForProposals))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(BypassProposalWorkflowRules))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchiveProposals))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15791,7 +15818,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action to update a finalized Marketplace <a href='Order'>Order</a> with the
 	/// seller's data. This action is only applicable for programmatic proposals.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15802,7 +15829,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for unarchiving <a href='Proposal'>Proposal</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15814,7 +15841,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action for marking all negotiations on the <a href='Proposal'>Proposal</a>
 	/// as terminated in Marketplace.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15832,7 +15859,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// error will be thrown. This action is used to tell DFP to pick up the buyer
 	/// changes immediately.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15847,7 +15874,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='SubmitProposalsForArchival'>SubmitProposalsForArchival</a> is mandatory
 	/// for <a href='Proposal'>proposals</a> when they are sold, but not completed.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15859,7 +15886,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for submitting <a href='Proposal'>Proposal</a> objects for
 	/// approval.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15871,7 +15898,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for submitting <a href='Proposal'>Proposal</a> objects for
 	/// approval and bypassing workflow validation.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15882,7 +15909,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for retracting <a href='Proposal'>Proposal</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15906,7 +15933,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Details describing why a <a href='Proposal'>Proposal</a> was retracted.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15962,7 +15989,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// set to <code>true</code>. This action is only applicable for programmatic
 	/// proposals not using sales management.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16001,7 +16028,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='Proposal'>Proposal</a> through Marketplace. This action is only applicable
 	/// for programmatic proposals.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16021,7 +16048,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// your edits again.</p> <p>This action is only applicable for programmatic
 	/// proposals.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16034,7 +16061,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// to reflect the latest terms and private data in Marketplace. This action is only
 	/// applicable for programmatic proposals.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16046,7 +16073,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for canceling retraction for <a href='Proposal'>Proposal</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16059,7 +16086,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='WorkflowRequest'>WorkflowRequests</a> for <a href='Proposal'>Proposal</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16070,7 +16097,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for archiving <a href='Proposal'>Proposal</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16081,7 +16108,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='Proposal'>Proposal</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16165,7 +16192,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// advertising seller and a buyer that specifies the details of an advertising
 	/// campaign.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17444,7 +17471,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the <a href='Proposal'>Proposal</a> status.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProposalStatus {
@@ -17475,7 +17502,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='Company'>Company</a> associated with the <a href='Proposal'>Proposal</a>
 	/// and a set of <a href='Contact'>Contact</a> objects belonging to the company.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17561,7 +17588,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Describes the type of a <a href='Company'>Company</a> associated with a <a
 	/// href='Proposal'>Proposal</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProposalCompanyAssociationType {
@@ -17589,7 +17616,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Determines the base of billing calculation.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum BillingBase {
@@ -17608,7 +17635,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A <code>SalespersonSplit</code> represents a salesperson and his/her split.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17680,7 +17707,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Describes the <a href='Proposal'>Proposal</a> status in terms of pending
 	/// approvals of active user.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProposalApprovalStatus {
@@ -17702,7 +17729,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The progress indicator of a <a href='Proposal'>proposal's</a> workflow.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17840,7 +17867,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes a step in a workflow.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17893,7 +17920,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes a rule in a workflow step.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18004,7 +18031,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(SendNotificationProgressAction))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ReserveInventoryProgressAction))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(RequestApprovalProgressAction))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18057,7 +18084,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The status of various entities in a workflow. The entity can be a workflow, a
 	/// workflow step, or a workflow action.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum EvaluationStatus {
@@ -18106,7 +18133,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Action requiring a notification to be sent before the workflow can continue.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18117,7 +18144,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Action requiring inventory to be reserved before the workflow can continue.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18128,7 +18155,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Action requiring approval before the workflow can continue.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18237,7 +18264,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The status of the workflow approval request.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum WorkflowApprovalRequestStatus {
@@ -18272,7 +18299,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The status of a workflow rule during workflow execution.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum WorkflowEvaluationStatus {
@@ -18297,7 +18324,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A link that can be added as a resource to a <a href='Proposal'>Proposal</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18424,7 +18451,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents a terms and conditions that has been added to a <a
 	/// href='Proposal'>Proposal</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18495,7 +18522,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Marketplace info for a proposal with a corresponding order in Marketplace.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18647,7 +18674,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents the <a href='Proposal'>proposal's</a> negotiation status for
 	/// Marketplace.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum NegotiationStatus {
@@ -18690,7 +18717,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// For example, <a href='Proposal'>Proposal</a> workflows can have background tasks
 	/// that may have offline errors.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18753,7 +18780,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A comment associated with a programmatic <a href='Proposal'>Proposal</a> that
 	/// has been sent to Marketplace.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18847,7 +18874,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='MarketplaceComment'>MarketplaceComment</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18904,7 +18931,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='#trigger'>#trigger</a>. Beginning in V201505, it is stored in the <a
 	/// href='#errorString'>#errorString</a>.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18943,7 +18970,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "WorkflowValidationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum WorkflowValidationErrorReason {
@@ -18963,7 +18990,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all errors associated with performing actions within <a
 	/// href='WorkflowAction'>WorkflowAction</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19002,7 +19029,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "WorkflowActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum WorkflowActionErrorReason {
@@ -19049,7 +19076,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors related to timezones.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19086,7 +19113,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes reasons for invalid timezone.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "TimeZoneError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum TimeZoneErrorReason {
@@ -19107,7 +19134,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Errors associated with programmatic <a href='ProposalLineItem'>proposal line
 	/// items</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19146,7 +19173,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProposalLineItemProgrammaticError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProposalLineItemProgrammaticErrorReason {
@@ -19195,17 +19222,17 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// <summary>Only <a href='PricingModel#NET'>PricingModel#NET</a> is supported for
 		/// programmatic <a href='ProposalLineItem'>proposal line items</a>.
 		/// </summary>
-		INVALID_PROGRAMMATIC_PRICING_MODEL = 10,
+		INVALID_PROGRAMMATIC_PRICING_MODEL = 11,
 		/// <summary>The value returned if the actual value is not exposed by the requested API
 		/// version.
 		/// </summary>
-		UNKNOWN = 11,
+		UNKNOWN = 10,
 	}
 
 
 	/// <summary>Lists all errors associated with proposal line items.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19244,7 +19271,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProposalLineItemError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProposalLineItemErrorReason {
@@ -19372,7 +19399,7 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// <summary>Only the <a href='Network#timeZone'>Network#timeZone</a> is allowed for
 		/// programmatic <a href='Proposal'>proposals</a>.
 		/// </summary>
-		INVALID_TIME_ZONE_FOR_DEALS = 53,
+		INVALID_TIME_ZONE_FOR_DEALS = 55,
 		/// <summary>The <a
 		/// href='ProposalLineItem#environmentType'>ProposalLineItem#environmentType</a> is
 		/// invalid.
@@ -19444,11 +19471,11 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// <summary>Marketplace <a href='RateCard'>RateCard</a> cannot be used with a
 		/// non-programmatic <a href='ProposalLineItem'>ProposalLineItem</a>.
 		/// </summary>
-		MARKETPLACE_RATE_CARD_NOT_ALLOWED = 54,
+		MARKETPLACE_RATE_CARD_NOT_ALLOWED = 53,
 		/// <summary>Cannot create <a href='ProposalLineItem'>ProposalLineItem</a> from a <a
 		/// href='Product'>Product</a> if not using sales management.
 		/// </summary>
-		CANNOT_CREATE_FROM_PRODUCT = 55,
+		CANNOT_CREATE_FROM_PRODUCT = 54,
 		/// <summary>Contracted impressions of programmatic proposal line item must be greater than
 		/// already delivered impressions.
 		/// </summary>
@@ -19462,7 +19489,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with proposals.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19501,7 +19528,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProposalError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProposalErrorReason {
@@ -19596,7 +19623,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all errors associated with performing actions on <a
 	/// href='Proposal'>Proposal</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19635,7 +19662,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProposalActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProposalActionErrorReason {
@@ -19654,7 +19681,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all error reasons associated with <a href='Product'>products</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19691,7 +19718,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProductError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProductErrorReason {
@@ -19737,7 +19764,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>List all errors associated with number precisions.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19774,7 +19801,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes reasons for precision errors.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "PrecisionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum PrecisionErrorReason {
@@ -19790,7 +19817,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with <a href='Package'>Package</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19829,7 +19856,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the <a href='PackageError'>PackageError</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "PackageError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum PackageErrorReason {
@@ -19873,7 +19900,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors for executing actions on <a href='Package'>Package</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19912,7 +19939,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "PackageActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum PackageActionErrorReason {
@@ -19932,7 +19959,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors for executing operations on line items
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19971,7 +19998,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemOperationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LineItemOperationErrorReason {
@@ -20019,7 +20046,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors that can result from a forecast request.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20058,7 +20085,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Reason why a forecast could not be retrieved.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ForecastError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ForecastErrorReason {
@@ -20101,7 +20128,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Errors associated with creating or updating programmatic <a
 	/// href='Proposal'>proposals</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20140,7 +20167,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "DealError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum DealErrorReason {
@@ -20168,7 +20195,7 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// href='EditProposalsForNegotiation'>EditProposalsForNegotiation</a> before
 		/// performing requested action.
 		/// </summary>
-		CAN_ONLY_EXECUTE_IF_LOCAL_EDITS = 5,
+		CAN_ONLY_EXECUTE_IF_LOCAL_EDITS = 14,
 		/// <summary><a href='Proposal'>Proposal</a> contains no <a href='ProposalLineItem'>proposal
 		/// line items</a>.
 		/// </summary>
@@ -20195,21 +20222,21 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// cannot execute the requested action before performing <a
 		/// href='SyncProposalsWithMarketplace'>SyncProposalsWithMarketplace</a>.
 		/// </summary>
-		PROPOSAL_OUT_OF_SYNC_WITH_MARKETPLACE = 12,
+		PROPOSAL_OUT_OF_SYNC_WITH_MARKETPLACE = 15,
 		/// <summary>No <a href='Proposal'>Proposal</a> changes were found.
 		/// </summary>
-		NO_PROPOSAL_CHANGES_FOUND = 13,
+		NO_PROPOSAL_CHANGES_FOUND = 12,
 		/// <summary>The value returned if the actual value is not exposed by the requested API
 		/// version.
 		/// </summary>
-		UNKNOWN = 14,
+		UNKNOWN = 13,
 	}
 
 
 	/// <summary>Lists all errors associated with the billing settings of a proposal or proposal
 	/// line item.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20248,7 +20275,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "BillingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum BillingErrorReason {
@@ -20290,7 +20317,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides methods for adding, updating and retrieving <a
 	/// href='CreativeSet'>CreativeSet</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "CreativeSetServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -20386,7 +20413,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='CreativeSet'>CreativeSet</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20468,7 +20495,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A creative set is comprised of a master creative and its companion creatives.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20583,7 +20610,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// is a grouping of <a href='Content'>Content</a> that match filter rules as well
 	/// as taking into account explicitly included or excluded <code>Content</code>.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ContentBundleServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -20700,7 +20727,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ExcludeContentFromContentBundle))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateContentBundles))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateContentBundles))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20712,7 +20739,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for explicitly including specific content in a <a
 	/// href='ContentBundle'>ContentBundle</a> object.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20742,7 +20769,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for explicitly excluding specific content from a <a
 	/// href='ContentBundle'>ContentBundle</a> object.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20772,7 +20799,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for deactivating <a href='ContentBundle'>ContentBundle</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20784,7 +20811,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for activating <a href='ContentBundle'>ContentBundle</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20795,7 +20822,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='ContentBundle'>ContentBundle</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20880,7 +20907,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// the <code>Content</code> that match certain filter rules, along with the option
 	/// to explicitly include or exclude certain <code>Content</code> IDs.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -20965,7 +20992,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Status for <code>ContentBundle</code> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ContentBundleStatus {
@@ -20983,7 +21010,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Class defining all validation errors for a placement.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21020,7 +21047,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Possible reasons for the error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "PlacementError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum PlacementErrorReason {
@@ -21050,7 +21077,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// do not see a "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick for
 	/// Publishers (DFP)</a>, you will not be able to use this service.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "WorkflowRequestServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -21146,7 +21173,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(TriggerWorkflowExternalConditionRequests))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(SkipWorkflowExternalConditionRequests))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ApproveWorkflowApprovalRequests))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21158,7 +21185,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used to reject <a href='WorkflowApprovalRequest'>workflow approval
 	/// requests</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21184,7 +21211,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action to trigger <a href='WorkflowExternalConditionRequest'>workflow
 	/// external condition requests</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21196,7 +21223,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action to skip <a href='WorkflowExternalConditionRequest'>workflow external
 	/// condition requests</a>. Doing so means that the rule did not trigger.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21208,7 +21235,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used to approve <a href='WorkflowApprovalRequest'>workflow approval
 	/// requests</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21236,7 +21263,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(WorkflowExternalConditionRequest))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(WorkflowApprovalRequest))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21379,7 +21406,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The entity types that workflows can be applied to.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum WorkflowEntityType {
@@ -21395,7 +21422,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Types of a workflow request.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum WorkflowRequestType {
@@ -21414,7 +21441,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>WorkflowExternalConditionRequest</code> represents a workflow condition
 	/// that requires external system to determine the result.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21455,7 +21482,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>WorkflowApprovalRequest</code> represents a workflow action unit that
 	/// requires user approval.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21495,7 +21522,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='WorkflowRequest'>WorkflowRequest</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21577,7 +21604,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists errors associated with <a href='WorkflowRequest'>workflow requests</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21616,7 +21643,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "WorkflowRequestError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum WorkflowRequestErrorReason {
@@ -21649,7 +21676,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// applied to ad units by <a
 	/// href='AdUnit#appliedLabels'>AdUnit#appliedLabels</a>.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "CreativeWrapperServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -21773,7 +21800,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateCreativeWrappers))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateCreativeWrappers))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21785,7 +21812,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for deactivating <a href='CreativeWrapper'>CreativeWrapper</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21797,7 +21824,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for activating <a href='CreativeWrapper'>CreativeWrapper</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21808,7 +21835,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='CreativeWrapper'>CreativeWrapper</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -21895,7 +21922,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// applied to ad units by <a
 	/// href='AdUnit#appliedLabels'>AdUnit#appliedLabels</a>.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22052,7 +22079,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The <code>CreativeWrapperHtmlSnippet</code> contains the HTML snippet that is
 	/// delivered as the header or footer.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22080,7 +22107,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='CreativeWrapperOrdering'>CreativeWrapperOrdering</a>, then the order is
 	/// unspecified.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CreativeWrapperOrdering {
@@ -22101,7 +22128,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Indicates whether the <code>CreativeWrapper</code> is active. HTML snippets are
 	/// served to creatives only when the creative wrapper is active.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CreativeWrapperStatus {
@@ -22112,7 +22139,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors specific to labels.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22151,7 +22178,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "LabelError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LabelErrorReason {
@@ -22170,7 +22197,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors specific to creative wrappers.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22209,7 +22236,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the creative wrapper error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CreativeWrapperError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CreativeWrapperErrorReason {
@@ -22259,7 +22286,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// items, meaning each order can have multiple line items. An order can be used to
 	/// manage the line items it contains.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "OrderServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -22398,7 +22425,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ApproveOrdersWithoutReservationChanges))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ApproveOrders))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ApproveAndOverbookOrders))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22409,7 +22436,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for unarchiving <a href='Order'>Order</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22423,7 +22450,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='LineItem#reservationStatus'>LineItem#reservationStatus</a> of the line
 	/// items within the order.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22435,7 +22462,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for submitting <a href='Order'>Order</a> objects for approval.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(SubmitOrdersForApprovalAndOverbook))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22476,7 +22503,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for submitting and overbooking <a href='Order'>Order</a> objects
 	/// for approval.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22490,7 +22517,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='LineItem#reservationStatus'>LineItem#reservationStatus</a> of the line
 	/// items within the order.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22501,7 +22528,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for retracting <a href='Order'>Order</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22515,7 +22542,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// will resume as well.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ResumeAndOverbookOrders))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22557,7 +22584,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// All <a href='LineItem'>LineItem</a> objects within the order will resume as
 	/// well.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22569,7 +22596,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for pausing all <a href='LineItem'>LineItem</a> objects within
 	/// an order.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22584,7 +22611,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='LineItem#reservationStatus'>LineItem#reservationStatus</a> of the line
 	/// items within the order.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22597,7 +22624,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='LineItem'>LineItem</a> objects within the order will be disapproved as
 	/// well.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22611,7 +22638,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// line items have been eligible to serve. This action can be used to delete
 	/// proposed orders and line items if they are no longer valid.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22622,7 +22649,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for archiving <a href='Order'>Order</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22638,7 +22665,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// items within the order. If there are reservable line items that have not been
 	/// reserved the operation will not succeed.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22651,7 +22678,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='LineItem'>LineItem</a> objects within the order will be approved as well.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ApproveAndOverbookOrders))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22693,7 +22720,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// All <a href='LineItem'>LineItem</a> objects within the order will be approved as
 	/// well.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22704,7 +22731,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='Order'>Order</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -22788,7 +22815,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='LineItem'>LineItem</a> objects, each of which fulfill an ad request from a
 	/// particular advertiser.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23470,7 +23497,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the order statuses.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum OrderStatus {
@@ -23510,7 +23537,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all errors related to <a
 	/// href='VideoPositionTargeting'>VideoPositionTargeting</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23547,7 +23574,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the video position targeting error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoPositionTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum VideoPositionTargetingErrorReason {
@@ -23567,7 +23594,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors related to user domain targeting for a line item.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23605,7 +23632,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary><a href='ApiErrorReason'>ApiErrorReason</a> enum for user domain targeting
 	/// error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "UserDomainTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum UserDomainTargetingErrorReason {
@@ -23622,7 +23649,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Technology targeting validation errors.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23659,7 +23686,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "TechnologyTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum TechnologyTargetingErrorReason {
@@ -23687,7 +23714,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors associated with set-top box <a href='LineItem'>line items</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23726,7 +23753,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Reason for set-top box error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "SetTopBoxLineItemError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum SetTopBoxLineItemErrorReason {
@@ -23849,7 +23876,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with LineItem's reservation details.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23888,7 +23915,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReservationDetailsError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ReservationDetailsErrorReason {
@@ -23960,7 +23987,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors associated with programmatic line items.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23999,7 +24026,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Possible error reasons for a programmatic error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProgrammaticError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProgrammaticErrorReason {
@@ -24060,7 +24087,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all errors associated with performing actions on <a href='Order'>Order</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24099,7 +24126,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "OrderActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum OrderActionErrorReason {
@@ -24137,7 +24164,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with LineItem start and end dates.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24176,7 +24203,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemFlightDateError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LineItemFlightDateErrorReason {
@@ -24193,7 +24220,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors specific to associating activities to line items.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24232,7 +24259,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemActivityAssociationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LineItemActivityAssociationErrorReason {
@@ -24253,7 +24280,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors associated with line items with GRP settings.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24292,7 +24319,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Reason for GRP settings error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "GrpSettingsError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum GrpSettingsErrorReason {
@@ -24348,7 +24375,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all errors associated with geographical targeting for a <a
 	/// href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24387,7 +24414,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "GeoTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum GeoTargetingErrorReason {
@@ -24412,7 +24439,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Targeting validation errors that can be used by different targeting types.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24449,7 +24476,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "GenericTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum GenericTargetingErrorReason {
@@ -24468,7 +24495,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with frequency caps.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24505,7 +24532,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "FrequencyCapError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum FrequencyCapErrorReason {
@@ -24524,7 +24551,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with day-part targeting for a line item.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24563,7 +24590,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "DayPartTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum DayPartTargetingErrorReason {
@@ -24590,7 +24617,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all date time range errors caused by associating a line item with a
 	/// targeting expression.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24630,7 +24657,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary><a href='ApiErrorReason'>ApiErrorReason</a> enum for date time range targeting
 	/// error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "DateTimeRangeTargetingError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum DateTimeRangeTargetingErrorReason {
@@ -24678,7 +24705,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Click tracking is a special line item type with a number of unique errors as
 	/// described below.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24717,7 +24744,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ClickTrackingLineItemError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ClickTrackingLineItemErrorReason {
@@ -25018,7 +25045,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// entity.</td> </tr> <tr> <td>UserId</td> <td><code>Number</code></td> <td>The <a
 	/// href='User#id'>ID</a> of the user that made this change.</td> </tr> </table>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "PublisherQueryLanguageServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -25074,7 +25101,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Each <a href='Row'>Row</a> object represents data about one entity in a <a
 	/// href='ResultSet'>ResultSet</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25103,7 +25130,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <code>TargetingValue</code>. We will inform the community when this feature is
 	/// no longer experimental.</b></p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25124,7 +25151,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25188,7 +25215,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The type of entity a change occurred on.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ChangeHistoryEntityType {
@@ -25200,21 +25227,24 @@ namespace Google.Api.Ads.Dfp.v201702
 		CONTACT = 2,
 		CREATIVE = 3,
 		CREATIVE_SET = 4,
-		PLACEMENT = 5,
-		AD_UNIT = 6,
-		LABEL = 7,
-		LINE_ITEM = 8,
-		NETWORK = 9,
-		ORDER = 10,
-		ROLE = 11,
-		TEAM = 12,
-		USER = 13,
+		CUSTOM_FIELD = 5,
+		CUSTOM_KEY = 6,
+		CUSTOM_VALUE = 7,
+		PLACEMENT = 8,
+		AD_UNIT = 9,
+		LABEL = 10,
+		LINE_ITEM = 11,
+		NETWORK = 12,
+		ORDER = 13,
+		ROLE = 14,
+		TEAM = 15,
+		USER = 16,
 	}
 
 
 	/// <summary>An operation that was performed on an entity.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ChangeHistoryOperation {
@@ -25230,7 +25260,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Contains information about a column in a <a href='ResultSet'>ResultSet</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25254,7 +25284,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The <code>ResultSet</code> represents a table of data obtained from the
 	/// execution of a PQL <a href=''>Statement</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25292,7 +25322,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists the generic errors associated with <a href='AdUnit'>AdUnit</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25329,7 +25359,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Possible reasons for the error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryUnitError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum InventoryUnitErrorReason {
@@ -25357,7 +25387,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Caused by creating an <a href='AdUnit'>AdUnit</a> object with an invalid
 	/// hierarchy.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25392,7 +25422,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnitHierarchyError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdUnitHierarchyErrorReason {
@@ -25417,7 +25447,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists the generic errors associated with <a
 	/// href='AdUnit#adUnitCode'>AdUnit#adUnitCode</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25452,7 +25482,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnitCodeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdUnitCodeErrorReason {
@@ -25490,7 +25520,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// meaning each activity group can have multiple activities. A activity group can
 	/// be used to manage the activities it contains.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ActivityServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -25586,7 +25616,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='Activity'>Activity</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25674,7 +25704,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// clicking on an ad. When a user views an ad, then visits the page, that's one
 	/// conversion.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25831,7 +25861,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The activity status.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "Activity.Status", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ActivityStatus {
@@ -25842,7 +25872,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The activity type.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "Activity.Type", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ActivityType {
@@ -25886,7 +25916,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors relating to Activity and Activity Group services.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25925,7 +25955,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ActivityError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ActivityErrorReason {
@@ -25949,7 +25979,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// associated with the inventory in order to serve ads. For example, the ad unit
 	/// contains creative size restrictions and AdSense settings.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "InventoryServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -26093,7 +26123,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AssignAdUnitsToPlacement))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchiveAdUnits))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateAdUnits))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26105,7 +26135,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for removing a group of <a href='AdUnit'>AdUnit</a> objects from
 	/// a <a href='Placement'>Placement</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26145,7 +26175,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for deactivating <a href='AdUnit'>AdUnit</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26157,7 +26187,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for assigning a group of <a href='AdUnit'>AdUnit</a> objects to
 	/// a <a href='Placement'>Placement</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26197,7 +26227,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for archiving <a href='AdUnit'>AdUnit</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26208,7 +26238,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for activating <a href='AdUnit'>AdUnit</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26219,7 +26249,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='AdUnit'>AdUnit</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26304,7 +26334,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// inventory in order to serve ads to it. An <code></code> can also be the parent
 	/// of other ad units in the inventory hierarchy.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26631,6 +26661,9 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// href='Company.Type#AFFILIATE_DISTRIBUTION_PARTNER'>Company.Type#AFFILIATE_DISTRIBUTION_PARTNER</a>,
 		/// to which this ad unit belongs. This attribute is optional. Setting this
 		/// attribute to <code>null</code> will disassociate the partner from this ad unit.
+		/// <p>This field is deprecated. All companies of type <a
+		/// href='Company.Type#AFFILIATE_DISTRIBUTION_PARTNER'>Company.Type#AFFILIATE_DISTRIBUTION_PARTNER</a>
+		/// were changed to <a href='Company.Type#PARTNER'>Company.Type#PARTNER</a>.</p>
 		/// </summary>
 		public long partnerId {
 			get {
@@ -26745,7 +26778,7 @@ namespace Google.Api.Ads.Dfp.v201702
 		}
 
 		/// <summary>The smart size mode for this ad unit. This attribute is optional and defaults to
-		/// <a href='SmartSizeMode#NONE'>SmartSizeMode#NONE</a> for fixed sizes.
+		/// <a href=''>SmartSizeMode#NONE</a> for fixed sizes.
 		/// </summary>
 		public SmartSizeMode smartSizeMode {
 			get {
@@ -26800,7 +26833,8 @@ namespace Google.Api.Ads.Dfp.v201702
 
 		/// <summary>Whether this ad unit is shared by a distributor network. When this field is
 		/// <code>true</code>, then <code>crossSellingDistributor</code> will contain data
-		/// for the distributor network. This attribute is read-only.
+		/// for the distributor network. This attribute is read-only. <p>This field is
+		/// deprecated.</p>
 		/// </summary>
 		public bool isSharedByDistributor {
 			get {
@@ -26826,7 +26860,8 @@ namespace Google.Api.Ads.Dfp.v201702
 		}
 
 		/// <summary>If this ad unit is shared by a distributor network, then this field will contain
-		/// data describing that distributor network. This attribute is read-only.
+		/// data describing that distributor network. This attribute is read-only. <p>This
+		/// field is deprecated.</p>
 		/// </summary>
 		public CrossSellingDistributor crossSellingDistributor {
 			get {
@@ -26881,7 +26916,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The summary of a parent <a href='AdUnit'>AdUnit</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26934,7 +26969,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Corresponds to an HTML link's <code>target</code> attribute.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnit.TargetWindow", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdUnitTargetWindow {
@@ -26950,7 +26985,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents the status of objects that represent inventory - ad units and
 	/// placements.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum InventoryStatus {
@@ -26971,7 +27006,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// most cases, it is a simple size with just a width and a height (sometimes
 	/// representing an aspect ratio).
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27056,7 +27091,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Enum for the valid environments in which ads can be shown.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum EnvironmentType {
@@ -27072,7 +27107,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The platform associated with a mobile <code>AdUnit</code>, i.e. whether this ad
 	/// unit appears in a mobile application or in a mobile web site.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum MobilePlatform {
@@ -27088,7 +27123,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The property of the AdUnit that specifies how and from where the AdSenseSettings
 	/// are inherited.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27111,7 +27146,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Contains the AdSense configuration for an <a href='AdUnit'>AdUnit</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27369,7 +27404,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Specifies the type of ads that can be served through this <a
 	/// href='AdUnit'>AdUnit</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.AdType", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdSenseSettingsAdType {
@@ -27388,7 +27423,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Describes the border of the HTML elements used to surround an ad displayed by
 	/// the <a href='AdUnit'>AdUnit</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.BorderStyle", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdSenseSettingsBorderStyle {
@@ -27409,7 +27444,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>List of all possible font families.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.FontFamily", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdSenseSettingsFontFamily {
@@ -27424,7 +27459,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>List of all possible font sizes the user can choose.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseSettings.FontSize", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdSenseSettingsFontSize {
@@ -27439,7 +27474,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// frequency cap will limit the cumulative number of impressions of any ad units
 	/// with this label that may be shown to a particular user over a time unit.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27492,7 +27527,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents a limit on the number of times a single viewer can be exposed to the
 	/// same <a href='LineItem'>LineItem</a> in a specified time period.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27591,7 +27626,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represent the possible time units for frequency capping.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum TimeUnit {
@@ -27620,7 +27655,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents smart size modes.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum SmartSizeMode {
@@ -27641,9 +27676,9 @@ namespace Google.Api.Ads.Dfp.v201702
 
 
 	/// <summary>Encapsulation of data describing a distributor network that has shared an ad
-	/// unit with a content provider network.
+	/// unit with a content provider network. <p>This class is deprecated.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27667,7 +27702,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists the errors associated with the type of <a href='AdUnit'>AdUnit</a> object.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27704,7 +27739,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Possible reasons for the error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdUnitTypeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdUnitTypeErrorReason {
@@ -27721,7 +27756,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An error specifically for InventoryUnitSizes.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27758,7 +27793,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>All possible reasons the error can be thrown.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryUnitSizesError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum InventoryUnitSizesErrorReason {
@@ -27799,7 +27834,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists errors relating to <a href='AdUnit#refreshRate'>AdUnit#refreshRate</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27836,7 +27871,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Reasons for the error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryUnitRefreshRateError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum InventoryUnitRefreshRateErrorReason {
@@ -27851,8 +27886,11 @@ namespace Google.Api.Ads.Dfp.v201702
 
 
 	/// <summary>Errors relating to the association of partner companies with inventory units.
+	/// <p>This class is deprecated. All companies of type <a
+	/// href='Company.Type#AFFILIATE_DISTRIBUTION_PARTNER'>Company.Type#AFFILIATE_DISTRIBUTION_PARTNER</a>
+	/// were changed to <a href='Company.Type#PARTNER'>Company.Type#PARTNER</a>.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27889,7 +27927,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Partner association error reason types.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryUnitPartnerAssociationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum InventoryUnitPartnerAssociationErrorReason {
@@ -27915,7 +27953,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A list of all errors associated with a color attribute.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27950,7 +27988,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "InvalidColorError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum InvalidColorErrorReason {
@@ -27966,7 +28004,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Provides methods for the creation and management of Labels.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "LabelServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -28082,7 +28120,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateLabels))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateLabels))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -28093,7 +28131,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for deactivating <a href='Label'>Label</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -28104,7 +28142,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for activating <a href='Label'>Label</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -28115,7 +28153,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='Label'>Label</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -28197,7 +28235,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A <code>Label</code> is additional information that can be added to an entity.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -28308,7 +28346,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents the types of labels supported.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LabelType {
@@ -28341,7 +28379,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='ReconciliationReport'>ReconciliationReport</a> is a group of <a
 	/// href='ReconciliationReportRow'>ReconciliationReportRow</a> objects.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ReconciliationReportServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -28422,7 +28460,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A <code>ReconciliationReport</code> represents a report that can be reconciled.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -28521,7 +28559,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>ReconciliationReportStatus</code> represents the status of a <a
 	/// href='ReconciliationReport'>ReconciliationReport</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ReconciliationReportStatus {
@@ -28552,7 +28590,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Captures a page of <a href='ReconciliationReport'>ReconciliationReport</a>
 	/// objects
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -28635,13 +28673,12 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides methods for creating and retrieving <a
 	/// href='ProductPackageItem'>ProductPackageItem</a> objects. <p>A <a
 	/// href='ProductPackageItem'>ProductPackageItem</a> represents a product which will
-	/// be associated with a <a href='ProductPackage'>ProductPackage</a>.</p> <p>To use
-	/// this service, you need to have the new sales management solution enabled on your
-	/// network. If you do not see a "Sales" tab in <a
-	/// href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you will
-	/// not be able to use this service.</p>
+	/// be associated with a <a href=''>ProductPackage</a>.</p> <p>To use this service,
+	/// you need to have the new sales management solution enabled on your network. If
+	/// you do not see a "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick
+	/// for Publishers (DFP)</a>, you will not be able to use this service.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ProductPackageItemServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -28764,7 +28801,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(UnArchiveProductPackageItems))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchiveProductPackageItems))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -28775,7 +28812,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used to un-archive product package items.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -28786,7 +28823,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used to archive product package items.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -28798,7 +28835,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Captures a page of <a href='ProductPackageItemDto'>ProductPackageItemDto</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -28880,7 +28917,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A <code>ProductPackageItem</code> represents a product item in a package.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29046,7 +29083,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Archive status of product package item.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ArchiveStatus {
@@ -29068,7 +29105,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors for executing operations on product package items.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29106,7 +29143,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The reasons for the <a
 	/// href='ProductPackageItemActionError'>ProductPackageItemActionError</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProductPackageItemActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProductPackageItemActionErrorReason {
@@ -29156,7 +29193,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// 1,500,000</td> <td>unitsBought / 4</td> <td>3 * unitsBought / 2</td>
 	/// <td>600,000<br /> For prospective: 0</td> <td>#x2013;#x2013;</td> </tr> </table>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ForecastServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -29217,10 +29254,8 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// also the total number of units matching the line item's targeting. <p>Only line
 		/// items having type <a
 		/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a> or <a
-		/// href='LineItemType#STANDARD'>LineItemType#STANDARD</a> are valid. Other types
-		/// will result in <a
-		/// href='ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED'>ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED</a>.
-		/// </p>
+		/// href=''>LineItemType#STANDARD</a> are valid. Other types will result in <a
+		/// href=''>ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED</a>. </p>
 		/// </summary><param name='lineItemId'>the ID of a <a href='LineItem'>LineItem</a> to run the
 		/// forecast on.</param>
 		/// <param name='forecastOptions'>options controlling the forecast</param>
@@ -29282,7 +29317,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The forecasted delivery of a <a
 	/// href='ProspectiveLineItem'>ProspectiveLineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29482,7 +29517,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='CostType'>CostType</a> and <a href='UnitType'>UnitType</a> will refer to
 	/// the same unit.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum UnitType {
@@ -29532,7 +29567,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='ProspectiveLineItem'>ProspectiveLineItem</a> objects to be reserved at the
 	/// same time.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29556,7 +29591,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Forecasting options for line item delivery forecasts.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29580,7 +29615,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>GRP forecast breakdown counts associated with a gender and age demographic.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29739,7 +29774,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Type of unit represented in a GRP demographic breakdown.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum GrpUnitType {
@@ -29753,7 +29788,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The demographic gender associated with a GRP demographic forecast.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum GrpGender {
@@ -29772,7 +29807,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The age range associated with a GRP demographic forecast.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum GrpAge {
@@ -29807,7 +29842,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// forecast for an impressions goal may include this to express the matched,
 	/// available, and possible viewable impressions.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -29937,7 +29972,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes contending line items for a <a href='Forecast'>Forecast</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -30006,7 +30041,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A single targeting criteria breakdown result.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -30174,7 +30209,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Targeting dimension of targeting breakdowns.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum TargetingDimension {
@@ -30216,7 +30251,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// inventory might enable all inventory guarantees to be met without
 	/// overbooking.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -30533,7 +30568,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Forecasting options for line item availability forecasts.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -30607,7 +30642,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents the creative targeting criteria for a <a
 	/// href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -30646,7 +30681,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// target demographic when serving. This information will be used to set up
 	/// tracking and enable reporting on the demographic information.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -30811,7 +30846,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents the target gender for a GRP demographic targeted line item.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum GrpTargetGender {
@@ -30834,7 +30869,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents available GRP providers that a line item will have its target
 	/// demographic measured by.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum GrpProvider {
@@ -30852,7 +30887,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Defines the criteria a <a href='LineItem'>LineItem</a> needs to satisfy to meet
 	/// its delivery goal.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -30962,7 +30997,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Specifies the type of the goal for a <a href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum GoalType {
@@ -31005,9 +31040,9 @@ namespace Google.Api.Ads.Dfp.v201702
 
 
 	/// <summary>Contains data used to display information synchronized with Canoe for set-top
-	/// box enabled <a href='LineItem'>line items</a>.
+	/// box enabled <a href=''>LineItem line items</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -31104,7 +31139,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The set top box line item sync status.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum SetTopBoxSyncStatus {
@@ -31127,7 +31162,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents sync result types between set-top box enabled <a href='LineItem'>line
 	/// items</a> and Canoe.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CanoeSyncResult {
@@ -31146,7 +31181,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Indicates the delivery performance of the <a href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -31219,7 +31254,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// conversions of the <a href='Activity'>Activity</a> can be counted against the <a
 	/// href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -31294,7 +31329,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// contain companions. Companions are only valid if the line item's environment
 	/// type is <a href='EnvironmentType#VIDEO_PLAYER'>EnvironmentType#VIDEO_PLAYER</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -31481,7 +31516,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Descriptions of the types of sizes a creative can be. Not all creatives can be
 	/// described by a height-width pair, this provides additional context.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CreativeSizeType {
@@ -31507,7 +31542,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <code>LineItem</code> is derived.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(LineItem))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -32219,8 +32254,7 @@ namespace Google.Api.Ads.Dfp.v201702
 		}
 
 		/// <summary>This attribute is required and meaningful only if the <a
-		/// href='LineItem#costType'>LineItem#costType</a> is <a
-		/// href='CostType.CPA'>CostType.CPA</a>.
+		/// href='LineItem#costType'>LineItem#costType</a> is <a href=''>CostType.CPA</a>.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute("activityAssociations")]
 		public LineItemActivityAssociation[] activityAssociations {
@@ -32786,9 +32820,10 @@ namespace Google.Api.Ads.Dfp.v201702
 
 		/// <summary>Indicates if a <code>LineItem</code> is missing any <a
 		/// href='Creative'>creatives</a> for the <code>creativePlaceholders</code>
-		/// specified. <a href='Creative'>Creatives</a> can be considered missing for
-		/// several reasons including: <ul> <li>Not enough <a href='Creative'>creatives</a>
-		/// of a certain size have been uploaded, as determined by <a
+		/// specified. <p><a href='Creative'>Creatives</a> can be considered missing for
+		/// several reasons including:</p> <ul> <li>Not enough <a
+		/// href='Creative'>creatives</a> of a certain size have been uploaded, as
+		/// determined by <a
 		/// href='CreativePlaceholder#expectedCreativeCount'>CreativePlaceholder#expectedCreativeCount</a>.
 		/// For example a <code>LineItem</code> specifies 750x350, 400x200 but only a
 		/// 750x350 was uploaded. Or <code>LineItem</code> specifies 750x350 with an
@@ -32879,7 +32914,7 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// required and meaningful only if the <a
 		/// href='LineItem#costType'>LineItem#costType</a> is <a
 		/// href='CostType.CPA'>CostType.CPA</a> or if the <a
-		/// href='LineItem#lineItemType'>LineItem#lineItemType</a> is <a
+		/// href=''>LineItem#lineItemType</a> is <a
 		/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a> and <a
 		/// href='LineItem#costType'>LineItem#costType</a> is <a
 		/// href='CostType.CPM'>CostType.CPM</a>.
@@ -32910,7 +32945,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The strategy to use for displaying multiple <a href='Creative'>Creative</a>
 	/// objects that are associated with a <a href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CreativeRotationType {
@@ -32935,7 +32970,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Possible delivery rates for a <a href='LineItem'>LineItem</a>, which dictate the
 	/// manner in which they are served.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum DeliveryRateType {
@@ -32957,7 +32992,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the roadblocking types.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RoadblockingType {
@@ -32988,7 +33023,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='LineItem'>LineItem</a>, determined by the way in which impressions are
 	/// reserved to be served for it.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LineItemType {
@@ -33056,7 +33091,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the <a href='LineItem'>LineItem</a> actions that are billable.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CostType {
@@ -33109,7 +33144,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Describes the possible discount types on the cost of booking a <a
 	/// href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LineItemDiscountType {
@@ -33125,7 +33160,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The delivery option for companions. Used for line items whose environmentType is
 	/// <a href='EnvironmentType#VIDEO_PLAYER'>EnvironmentType#VIDEO_PLAYER</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CompanionDeliveryOption {
@@ -33157,7 +33192,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// other display ads can be shown in unused slots. If set to exclude all ads, no
 	/// other ads can be shown until the page is changed.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CreativePersistenceType {
@@ -33182,7 +33217,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Describes the computed <a href='LineItem'>LineItem</a> status that is derived
 	/// from the current state of the line item.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ComputedStatus {
@@ -33230,7 +33265,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Specifies the reservation status of the <a href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "LineItemSummary.ReservationStatus", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LineItemSummaryReservationStatus {
@@ -33246,7 +33281,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary><code>LineItem</code> is an advertiser's commitment to purchase a specific
 	/// number of ad impressions, clicks, or time.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -33292,7 +33327,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a prospective line item to be forecasted.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -33369,7 +33404,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// because reports require traffic history. In the test networks, reports will
 	/// consistently return no data for all reports.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ReportServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -33512,7 +33547,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents a report job that will be run to retrieve performance and statistics
 	/// information about ad campaigns, networks, inventory and sales.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -33566,7 +33601,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>ReportQuery</code> object allows you to specify the selection criteria
 	/// for generating a report.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -33895,7 +33930,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// for running a <a href='ReportJob'>ReportJob</a>. Aggregate and percentage
 	/// columns will be calculated based on these groupings.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum Dimension {
@@ -34220,8 +34255,8 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// MALE_65_PLUS, FEMALE_13_TO_17, FEMALE_18_TO_24, FEMALE_25_TO_34,
 		/// FEMALE_35_TO_44, FEMALE_45_TO_54, FEMALE_55_TO_64, FEMALE_65_PLUS,
 		/// UNKNOWN_0_TO_17 and UNKNOWN. Whenever this dimension is selected, <a
-		/// href='#COUNTRY_NAME'>#COUNTRY_NAME</a> must be selected. <p>This dimension is
-		/// supported only for GRP columns.</p>
+		/// href=''>#COUNTRY_NAME</a> must be selected. <p>This dimension is supported only
+		/// for GRP columns.</p>
 		/// </summary>
 		GRP_DEMOGRAPHICS = 61,
 		/// <summary>Size of the creative requested for an ad.
@@ -34261,10 +34296,10 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// abstraction of inventory used in the DFP Mediation.
 		/// </summary>
 		MEDIATION_GROUP_NAME = 158,
-		/// <summary>Breaks down linked Ad Exchange web property data by mediation network.
+		/// <summary>Breaks down mapped Ad Exchange web property data by mediation network.
 		/// </summary>
 		MEDIATION_NETWORK = 159,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange network tag
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange network tag
 		/// name.
 		/// </summary>
 		MEDIATION_NETWORK_TAG = 160,
@@ -34382,11 +34417,11 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// </summary>
 		PRODUCT_TEMPLATE_NAME = 82,
 		/// <summary>Breaks down reporting data by <a href='RateCard#id'>RateCard#id</a>. Can be used
-		/// to filter by <a href='RateCard#id'>RateCard#id</a>.
+		/// to filter by <a href=''>RateCard#id</a>.
 		/// </summary>
 		RATE_CARD_ID = 83,
 		/// <summary>Breaks down reporting data by <a href='RateCard#name'>RateCard#name</a>. Can be
-		/// used to filter by <a href='RateCard#name'>RateCard#name</a>.
+		/// used to filter by <a href=''>RateCard#name</a>.
 		/// </summary>
 		RATE_CARD_NAME = 84,
 		/// <summary>Used to filter by <a href='Workflow#id'>Workflow#id</a>. Not available as a
@@ -34421,244 +34456,166 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// <summary>Breaks down reporting data by audience segment data provider name.
 		/// </summary>
 		AUDIENCE_SEGMENT_DATA_PROVIDER_NAME = 89,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange ad size.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange inventory size.
 		/// </summary>
 		AD_EXCHANGE_AD_SIZE_NAME = 90,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange platforms.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange device category.
 		/// </summary>
 		AD_EXCHANGE_PLATFORM_TYPE_NAME = 91,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange pricing rule id.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange pricing rule ID.
 		/// </summary>
 		AD_EXCHANGE_PRICING_RULE_ID = 92,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange pricing rules.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange pricing rule.
 		/// </summary>
 		AD_EXCHANGE_PRICING_RULE_NAME = 93,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange tags. <p><b>This
-		/// experimental dimension only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange tag.
 		/// </summary>
 		AD_EXCHANGE_TAG_NAME = 94,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange URLs. <p><b>This
-		/// experimental dimension only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange URL.
 		/// </summary>
 		AD_EXCHANGE_URL_CHANNEL_NAME = 95,
-		/// <summary>Breaks down data by Ad Exchange linked web properties. <p><b>This experimental
-		/// dimension only works with Ad Exchange web properties linked with an active
-		/// status.</b></p>
+		/// <summary>Breaks down data by Ad Exchange mapped web property code.
 		/// </summary>
 		AD_EXCHANGE_AD_CLIENT_ID = 96,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange creative size.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange creative size.
 		/// </summary>
 		AD_EXCHANGE_CREATIVE_SIZES = 97,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange ad types.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange ad type.
 		/// </summary>
 		AD_EXCHANGE_AD_FORMAT_NAME = 98,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange channels.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange channel.
 		/// </summary>
 		AD_EXCHANGE_CHANNEL_NAME = 99,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange products.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange product.
 		/// </summary>
 		AD_EXCHANGE_PRODUCT_NAME = 100,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange sites.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange site.
 		/// </summary>
 		AD_EXCHANGE_SITE_NAME = 101,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange request sources.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange request source.
 		/// </summary>
 		AD_EXCHANGE_REQUEST_SOURCES = 102,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange ad transaction.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange ad transaction.
 		/// </summary>
 		AD_EXCHANGE_TRANSACTION_TYPE_NAME = 103,
-		/// <summary>Breaks down linked Ad Exchange web property data by the Ad Exchange advertiser
-		/// name that bids on ads. <p><b>This experimental dimension only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by the Ad Exchange advertiser
+		/// name that bids on ads.
 		/// </summary>
 		AD_EXCHANGE_ADVERTISER_NAME = 104,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange agency.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange agency.
 		/// </summary>
 		AD_EXCHANGE_AGENCY = 105,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange bid type.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange bid type.
 		/// </summary>
 		AD_EXCHANGE_BID_TYPE = 106,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange branding type.
-		/// Examples: Branded, Anonymous. <p><b>This experimental dimension only works with
-		/// Ad Exchange web properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange branding type
+		/// code.
 		/// </summary>
 		AD_EXCHANGE_BRANDING_TYPE = 107,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange ad network name.
-		/// Example: Google Adwords. <p><b>This experimental dimension only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange ad network name.
+		/// Example: Google Adwords.
 		/// </summary>
 		AD_EXCHANGE_BUYER_NETWORK_NAME = 108,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange date. <p><b>This
-		/// experimental dimension only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange date.
 		/// </summary>
 		AD_EXCHANGE_DATE = 109,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange deal CPM cost.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange deal CPM cost.
 		/// </summary>
 		AD_EXCHANGE_DEAL_CPM = 110,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange deal id.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange deal id.
 		/// </summary>
 		AD_EXCHANGE_DEAL_ID = 111,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange deal name.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange deal name.
 		/// </summary>
 		AD_EXCHANGE_DEAL_NAME = 112,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange deal/transaction
-		/// type. Example: Open auction. <p><b>This experimental dimension only works with
-		/// Ad Exchange web properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange deal/transaction
+		/// type. Example: Open auction.
 		/// </summary>
 		AD_EXCHANGE_DEAL_TYPE = 113,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange DSP buyer
-		/// network name. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange DSP buyer
+		/// network name.
 		/// </summary>
 		AD_EXCHANGE_DSP_BUYER_NETWORK_NAME = 114,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange expansion type.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange expansion type.
 		/// </summary>
 		AD_EXCHANGE_EXPANSION_TYPE = 115,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange country code.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange country code.
 		/// </summary>
 		AD_EXCHANGE_COUNTRY_CODE = 116,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange country name.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange country name.
 		/// </summary>
 		AD_EXCHANGE_COUNTRY_NAME = 117,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange inventory
-		/// ownership. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange inventory
+		/// ownership.
 		/// </summary>
 		AD_EXCHANGE_INVENTORY_OWNERSHIP = 118,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange advertiser
-		/// landing page domain. <p><b>This experimental dimension only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange advertiser
+		/// domain.
 		/// </summary>
 		AD_EXCHANGE_LANDING_PAGE_DOMAIN = 119,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange mobile app name.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile app name.
 		/// </summary>
 		AD_EXCHANGE_MOBILE_APP_NAME = 120,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange mobile carrier
-		/// name. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile carrier
+		/// name.
 		/// </summary>
 		AD_EXCHANGE_MOBILE_CARRIER_NAME = 121,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange mobile device
-		/// name. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile device
+		/// name.
 		/// </summary>
 		AD_EXCHANGE_MOBILE_DEVICE_NAME = 122,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange mobile inventory
-		/// type. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile inventory
+		/// type.
 		/// </summary>
 		AD_EXCHANGE_MOBILE_INVENTORY_TYPE = 123,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange month.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange month.
 		/// </summary>
 		AD_EXCHANGE_MONTH = 124,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange partner name.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange network partner
+		/// name.
 		/// </summary>
 		AD_EXCHANGE_NETWORK_PARTNER_NAME = 125,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange operating system
-		/// version. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange operating system
+		/// version.
 		/// </summary>
 		AD_EXCHANGE_OS_VERSION_NAME = 126,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange tags. <p><b>This
-		/// experimental dimension only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange tags.
 		/// </summary>
 		AD_EXCHANGE_TAG_CODE = 127,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange targeting type.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange targeting type
+		/// code.
 		/// </summary>
 		AD_EXCHANGE_TARGETING_TYPE = 128,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange third party
-		/// buyer account name. <p><b>This experimental dimension only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange third party
+		/// buyer account name.
 		/// </summary>
 		AD_EXCHANGE_THIRD_PARTY_BUYER_ACCOUNT_NAME = 129,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange third-party
-		/// network tag currency. <p><b>This experimental dimension only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange third-party
+		/// network tag currency.
 		/// </summary>
 		AD_EXCHANGE_THIRD_PARTY_NETWORK_TAG_CURRENCY = 130,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange network tag
-		/// name. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange network tag
+		/// name.
 		/// </summary>
 		AD_EXCHANGE_THIRD_PARTY_NETWORK_TAG_NAME = 131,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange channel id.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange URL ID.
 		/// </summary>
 		AD_EXCHANGE_URL_CHANNEL_ID = 132,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange user bandwidth.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange user bandwidth.
 		/// </summary>
 		AD_EXCHANGE_USER_BANDWIDTH_NAME = 133,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange video ad
-		/// duration. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange video ad
+		/// duration.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_AD_DURATION = 134,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange raw video ad
-		/// duration. <p><b>This experimental dimension only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange raw video ad
+		/// duration.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_AD_DURATION_RAW = 135,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange video ad type.
-		/// <p><b>This experimental dimension only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange video ad type.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_AD_FORMAT = 136,
-		/// <summary>Breaks down linked Ad Exchange web property data by Ad Exchange week. <p><b>This
-		/// experimental dimension only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange week.
 		/// </summary>
 		AD_EXCHANGE_WEEK = 137,
 		/// <summary>Campaign date segment of Nielsen Digital Ad Ratings reporting.
@@ -34694,7 +34651,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A view for an ad unit report.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReportQuery.AdUnitView", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ReportQueryAdUnitView {
@@ -34727,7 +34684,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <code>LINE_ITEM_LEVEL</code> can only be used if you have line item-level
 	/// dynamic allocation enabled on your network.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum Column {
@@ -34836,8 +34793,8 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// partner's network.
 		/// </summary>
 		AD_SERVER_CTR_OUT_OF_NETWORK = 23,
-		/// <summary>The number of impressions delivered by the ad server including impressions
-		/// recognized as spam.
+		/// <summary>The number of downloaded impressions delivered by the ad server including
+		/// impressions recognized as spam.
 		/// </summary>
 		AD_SERVER_UNFILTERED_IMPRESSIONS = 435,
 		/// <summary>The number of clicks delivered by the ad server including clicks recognized as
@@ -34851,9 +34808,9 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// </summary>
 		DYNAMIC_ALLOCATION_INVENTORY_LEVEL_IMPRESSIONS = 24,
 		/// <summary>The number of partner network impressions a dynamic allocation ad delivered when
-		/// no <a href='LineItem'>LineItem</a> reservation could be found by the ad server
-		/// for shared inventory-level dynamic allocation. For premium networks, this
-		/// includes line item-level dynamic allocation as well.
+		/// no <a href=''>LineItem</a> reservation could be found by the ad server for
+		/// shared inventory-level dynamic allocation. For premium networks, this includes
+		/// line item-level dynamic allocation as well.
 		/// </summary>
 		TOTAL_DYNAMIC_ALLOCATION_IMPRESSIONS_OUT_OF_NETWORK = 25,
 		/// <summary>The number of impressions an AdSense ad delivered for line item-level dynamic
@@ -34960,14 +34917,13 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// dynamic allocation.
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_IMPRESSIONS = 45,
-		/// <summary>The number of impressions delivered by Ad Exchange properties linked to DFP.
-		/// <p><b>This experimental column only works with Ad Exchange web properties linked
-		/// with an active status.</b></p>
+		/// <summary>Ad impressions (legacy) on mapped Ad Exchange properties. In the case of text
+		/// ads, you may have one matched request which yields more than one ad impression,
+		/// since multiple text ads can serve in place of one display ad.
 		/// </summary>
 		AD_EXCHANGE_IMPRESSIONS = 46,
-		/// <summary>The number of matched queries delivered by Ad Exchange properties linked to DFP.
-		/// <p><b>This experimental column only works with Ad Exchange web properties linked
-		/// with an active status.</b></p>
+		/// <summary>Number of requests where a buyer was matched with the Ad request, for mapped Ad
+		/// Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_MATCHED_QUERIES = 47,
 		/// <summary>The number of viewed queries delivered by Ad Exchange properties linked to DFP.
@@ -34975,54 +34931,36 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// with an active status.</b></p>
 		/// </summary>
 		AD_EXCHANGE_VIEWED_QUERIES = 48,
-		/// <summary>The number of clicks delivered by Ad Exchange properties linked to DFP.
-		/// <p><b>This experimental column only works with Ad Exchange web properties linked
-		/// with an active status.</b></p>
+		/// <summary>The number of clicks delivered by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_CLICKS = 49,
-		/// <summary>The estimated revenue generated by Ad Exchange properties linked to DFP.
-		/// <p><b>This experimental column only works with Ad Exchange web properties linked
-		/// with an active status.</b></p>
+		/// <summary>The estimated net revenue generated by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_ESTIMATED_REVENUE = 50,
-		/// <summary>The coverage or fill rate reported by Ad Exchange properties linked to DFP.
-		/// <p><b>This experimental column only works with Ad Exchange web properties linked
-		/// with an active status.</b></p>
+		/// <summary>The coverage reported by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_COVERAGE = 51,
-		/// <summary>The matched queries click-through rate delivered by Ad Exchange properties
-		/// linked to DFP. <p><b>This experimental column only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>The matched queries click-through rate delivered by mapped Ad Exchange
+		/// properties.
 		/// </summary>
 		AD_EXCHANGE_MATCHED_QUERIES_CTR = 52,
-		/// <summary>The total lift generated by Ad Exchange properties linked to DFP. <p><b>This
-		/// experimental column only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>The total lift generated by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_LIFT = 53,
-		/// <summary>The cost-per-click revenue generated by Ad Exchange properties linked to DFP.
-		/// <p><b>This experimental column only works with Ad Exchange web properties linked
-		/// with an active status.</b></p>
+		/// <summary>The cost-per-click generated by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_CPC_REVENUE = 54,
-		/// <summary>The number of ad requests issued by Ad Exchange properties linked to DFP.
-		/// <p><b>This experimental column only works with Ad Exchange web properties linked
-		/// with an active status.</b></p>
+		/// <summary>The number of ad requests issued by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_REQUESTS = 55,
-		/// <summary>The average estimated cost-per-thousand-ad requests earned by Ad Exchange
-		/// properties linked to DFP. <p><b>This experimental column only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>The average estimated cost-per-thousand-ad requests earned by mapped Ad Exchange
+		/// properties.
 		/// </summary>
 		AD_EXCHANGE_REQUEST_ECPM = 56,
-		/// <summary>The the click-through rate of ad requests issued by Ad Exchange properties
-		/// linked to DFP. <p><b>This experimental column only works with Ad Exchange web
-		/// properties linked with an active status.</b></p>
+		/// <summary>The click-through rate of ad requests issued by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_REQUEST_CTR = 57,
-		/// <summary>The click-through rate of impressions issued by Ad Exchange properties linked to
-		/// DFP. <p><b>This experimental column only works with Ad Exchange web properties
-		/// linked with an active status.</b></p>
+		/// <summary>The click-through rate of impressions issued by mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_CTR = 58,
 		/// <summary>The video ad drop off rate issued by Ad Exchange properties linked to DFP.
@@ -35035,9 +34973,8 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// with an active status.</b></p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_ABANDONMENT_RATE = 60,
-		/// <summary>The average estimated cost-per-thousand-impressions generated by Ad Exchange
-		/// properties linked to DFP. <p><b>This experimental column only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>The average estimated cost-per-thousand-impressions generated by mapped Ad
+		/// Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_ECPM = 61,
 		/// <summary>The measurement rate of Active View impressions generated by Ad Exchange
@@ -35055,29 +34992,23 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// active status.</b></p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_FILL_RATE = 64,
-		/// <summary>The first quartile (25% of video played back) of video ads by Ad Exchange
-		/// properties linked to DFP. <p><b>This experimental column only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>A count of how many users watch the first 25% of a video ad, for mapped Ad
+		/// Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_QUARTILE_1 = 65,
-		/// <summary>The third quartile (75% of video played back) of video ads by Ad Exchange
-		/// properties linked to DFP. <p><b>This experimental column only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>A count of how many users watch the first 75% of a video ad, for mapped Ad
+		/// Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_QUARTILE_3 = 66,
-		/// <summary>The Trueview video skip rate by Ad Exchange properties linked to DFP. <p><b>This
-		/// experimental column only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>Percentage of times a user clicked Skip, for mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_TRUEVIEW_SKIP_RATE = 67,
-		/// <summary>The Trueview video views by Ad Exchange properties linked to DFP. <p><b>This
-		/// experimental column only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>Number of times a video ad has been viewed to completion or watched to 30
+		/// seconds, whichever happens first, for mapped Ad Exchange properties.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_TRUEVIEWS = 68,
-		/// <summary>The video view-through rate (only applies to Trueview ads) by Ad Exchange
-		/// properties linked to DFP. <p><b>This experimental column only works with Ad
-		/// Exchange web properties linked with an active status.</b></p>
+		/// <summary>TrueView views divided by TrueView impressions, for mapped Ad Exchange
+		/// properties.
 		/// </summary>
 		AD_EXCHANGE_VIDEO_VTR = 69,
 		/// <summary>The third-party impression discrepancy by Ad Exchange properties linked to DFP.
@@ -35377,13 +35308,12 @@ namespace Google.Api.Ads.Dfp.v201702
 		GRP_AUDIENCE_REACH = 137,
 		/// <summary>The audience average frequency calculated as <a
 		/// href='#GRP_AUDIENCE_IMPRESSIONS'>#GRP_AUDIENCE_IMPRESSIONS</a> / <a
-		/// href='#GRP_UNIQUE_AUDIENCE'>#GRP_UNIQUE_AUDIENCE</a>.
+		/// href=''>#GRP_UNIQUE_AUDIENCE</a>.
 		/// </summary>
 		GRP_AUDIENCE_AVERAGE_FREQUENCY = 138,
 		/// <summary>The gross rating points (GRP) calculated as <a
 		/// href='#GRP_AUDIENCE_REACH'>#GRP_AUDIENCE_REACH</a> * <a
-		/// href='#GRP_AUDIENCE_AVERAGE_FREQUENCY'>#GRP_AUDIENCE_AVERAGE_FREQUENCY</a> *
-		/// 100.
+		/// href=''>#GRP_AUDIENCE_AVERAGE_FREQUENCY</a> * 100.
 		/// </summary>
 		GRP_GROSS_RATING_POINTS = 139,
 		/// <summary>The number of impressions for a particular SDK mediation creative.
@@ -35710,10 +35640,9 @@ namespace Google.Api.Ads.Dfp.v201702
 		VIDEO_OPTIMIZATION_OPTIMIZED_VIEW_THROUGH_RATE = 238,
 		/// <summary>The percentage by which optimized view-through rate is greater than the
 		/// unoptimized view-through rate. This is calculated as (( <a
-		/// href='Column#VIDEO_OPTIMIZATION_OPTIMIZED_VIEW_THROUGH_RATE'>Column#VIDEO_OPTIMIZATION_OPTIMIZED_VIEW_THROUGH_RATE</a>/
-		/// <a
-		/// href='Column#VIDEO_OPTIMIZATION_CONTROL_VIEW_THROUGH_RATE'>Column#VIDEO_OPTIMIZATION_CONTROL_VIEW_THROUGH_RATE</a>)
-		/// - 1) * 100 for an ad for which the optimization feature has been enabled.
+		/// href=''>Column#VIDEO_OPTIMIZATION_OPTIMIZED_VIEW_THROUGH_RATE</a>/ <a
+		/// href=''>Column#VIDEO_OPTIMIZATION_CONTROL_VIEW_THROUGH_RATE</a>) - 1) * 100 for
+		/// an ad for which the optimization feature has been enabled.
 		/// </summary>
 		VIDEO_OPTIMIZATION_VIEW_THROUGH_RATE_LIFT = 239,
 		/// <summary>The total number of impressions viewed on the user's screen.
@@ -35957,55 +35886,53 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// </summary>
 		SALES_TOTAL_TOTAL_BUDGET = 297,
 		/// <summary>The total remaining budget of the <a href='Proposal'>Proposal</a>. It differs
-		/// from <a
-		/// href='#SALES_CONTRACT_REMAINING_BUDGET'>#SALES_CONTRACT_REMAINING_BUDGET</a>
-		/// since it always contains the total remaining budget, not the prorated remaining
-		/// budget.
+		/// from <a href=''>#SALES_CONTRACT_REMAINING_BUDGET</a> since it always contains
+		/// the total remaining budget, not the prorated remaining budget.
 		/// </summary>
 		SALES_TOTAL_TOTAL_REMAINING_BUDGET = 298,
 		/// <summary>The total contracted volume of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
-		/// href='#SALES_CONTRACT_CONTRACTED_VOLUME'>#SALES_CONTRACT_CONTRACTED_VOLUME</a>
-		/// that the volume is not prorated with regard to the date range.
+		/// href=''>#SALES_CONTRACT_CONTRACTED_VOLUME</a> that the volume is not prorated
+		/// with regard to the date range.
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_VOLUME = 299,
 		/// <summary>The total contracted net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
-		/// href='#CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE'>#CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range.
+		/// href=''>#CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE</a> that the revenue is not
+		/// prorated with regard to the date range.
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE = 300,
 		/// <summary>The total contracted net revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href='#CONTRACTED_REVENUE_LOCAL_CONTRACTED_NET_REVENUE'>#CONTRACTED_REVENUE_LOCAL_CONTRACTED_NET_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range. See <a
-		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE'>#SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE</a>
+		/// that the revenue is not prorated with regard to the date range. <p>See <a
+		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE'>#SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE</a></p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_NET_REVENUE = 301,
 		/// <summary>The total contracted gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
-		/// href='#CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE'>#CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range.
+		/// href=''>#CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE</a> that the revenue is not
+		/// prorated with regard to the date range.
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE = 302,
 		/// <summary>The total contracted gross revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href='#CONTRACTED_REVENUE_LOCAL_CONTRACTED_GROSS_REVENUE'>#CONTRACTED_REVENUE_LOCAL_CONTRACTED_GROSS_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range. See <a
-		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE'>#SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE</a>
+		/// that the revenue is not prorated with regard to the date range. <p>See <a
+		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE'>#SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE</a></p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_GROSS_REVENUE = 303,
 		/// <summary>The total contracted agency commission of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
-		/// href='#CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION'>#CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION</a>
-		/// that the revenue is not prorated with regard to the date range.
+		/// href=''>#CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION</a> that the revenue is
+		/// not prorated with regard to the date range.
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION = 304,
 		/// <summary>The total contracted agency commission in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href='#CONTRACTED_REVENUE_LOCAL_CONTRACTED_AGENCY_COMMISSION'>#CONTRACTED_REVENUE_LOCAL_CONTRACTED_AGENCY_COMMISSION</a>
-		/// that the revenue is not prorated with regard to the date range. See <a
-		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION'>#SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION</a>
+		/// that the revenue is not prorated with regard to the date range. <p>See <a
+		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION'>#SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION</a></p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_AGENCY_COMMISSION = 305,
 		/// <summary>The total net revenue plus its value added tax of the <a
@@ -36014,106 +35941,104 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE_WITH_VAT = 306,
 		/// <summary>The total net revenue plus its value added tax in the local currency of the <a
-		/// href='ProposalLineItem'>ProposalLineItem</a>. The revenue is not prorated with
-		/// regard to the date range. See <a
-		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_WITH_VAT'>#SALES_TOTAL_TOTAL_CONTRACTED_WITH_VAT</a>
+		/// href=''>ProposalLineItem</a>. The revenue is not prorated with regard to the
+		/// date range. <p>See <a
+		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_WITH_VAT'>#SALES_TOTAL_TOTAL_CONTRACTED_WITH_VAT</a></p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_NET_REVENUE_WITH_VAT = 307,
 		/// <summary>The total scheduled volume of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
-		/// href='#SCHEDULED_SCHEDULED_VOLUME'>#SCHEDULED_SCHEDULED_VOLUME</a> that the
-		/// volume is not prorated with regard to the date range.
+		/// href=''>#SCHEDULED_SCHEDULED_VOLUME</a> that the volume is not prorated with
+		/// regard to the date range.
 		/// </summary>
 		SALES_TOTAL_TOTAL_SCHEDULED_VOLUME = 308,
 		/// <summary>The total scheduled net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
-		/// href='#SCHEDULED_SCHEDULED_NET_REVENUE'>#SCHEDULED_SCHEDULED_NET_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range.
+		/// href=''>#SCHEDULED_SCHEDULED_NET_REVENUE</a> that the revenue is not prorated
+		/// with regard to the date range.
 		/// </summary>
 		SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE = 309,
 		/// <summary>The total scheduled net revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href='#SCHEDULED_LOCAL_SCHEDULED_NET_REVENUE'>#SCHEDULED_LOCAL_SCHEDULED_NET_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range. See <a
-		/// href='#SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE'>#SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE</a>
+		/// that the revenue is not prorated with regard to the date range. <p>See <a
+		/// href='#SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE'>#SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE</a></p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_SCHEDULED_NET_REVENUE = 310,
 		/// <summary>The total scheduled gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
-		/// href='#SCHEDULED_SCHEDULED_GROSS_REVENUE'>#SCHEDULED_SCHEDULED_GROSS_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range.
+		/// href=''>#SCHEDULED_SCHEDULED_GROSS_REVENUE</a> that the revenue is not prorated
+		/// with regard to the date range.
 		/// </summary>
 		SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE = 311,
 		/// <summary>The total scheduled gross revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href='#SCHEDULED_LOCAL_SCHEDULED_GROSS_REVENUE'>#SCHEDULED_LOCAL_SCHEDULED_GROSS_REVENUE</a>
-		/// that the revenue is not prorated with regard to the date range. See <a
-		/// href='#SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE'>#SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE</a>
+		/// that the revenue is not prorated with regard to the date range. <p>See <a
+		/// href='#SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE'>#SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE</a></p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_SCHEDULED_GROSS_REVENUE = 312,
 		/// <summary>The unreconciled net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
-		/// href='#UNIFIED_REVENUE_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a>
-		/// coming from unreconciled DFP volume.
+		/// href=''>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a> coming from unreconciled DFP
+		/// volume.
 		/// </summary>
 		UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE = 313,
 		/// <summary>The unreconciled net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> in local currency. It is the
 		/// portion of <a
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE</a>
-		/// coming from unreconciled DFP volume. See <a
-		/// href='#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE'>#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE</a>
+		/// coming from unreconciled DFP volume. <p>See <a
+		/// href='#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE'>#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE</a></p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_UNRECONCILED_NET_REVENUE = 314,
 		/// <summary>The unreconciled gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
-		/// href='#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a>
-		/// coming from unreconciled DFP volume.
+		/// href=''>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a> coming from unreconciled DFP
+		/// volume.
 		/// </summary>
 		UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE = 315,
 		/// <summary>The unreconciled gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> in local currency. It is the
 		/// portion of <a
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE</a>
-		/// coming from unreconciled DFP volume. See <a
-		/// href='#UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE'>#UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE</a>
+		/// coming from unreconciled DFP volume. <p>See <a
+		/// href='#UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE'>#UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE</a></p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_UNRECONCILED_GROSS_REVENUE = 316,
 		/// <summary>The forecasted net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
-		/// href='#UNIFIED_REVENUE_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a>
-		/// coming from forecasted DFP volume.
+		/// href=''>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a> coming from forecasted DFP
+		/// volume.
 		/// </summary>
 		UNIFIED_REVENUE_FORECASTED_NET_REVENUE = 317,
 		/// <summary>The forecasted net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> in local currency. It is the
 		/// portion of <a
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE</a>
-		/// coming from forecasted DFP volume. See <a
-		/// href='#UNIFIED_REVENUE_FORECASTED_NET_REVENUE'>#UNIFIED_REVENUE_FORECASTED_NET_REVENUE</a>
+		/// coming from forecasted DFP volume. <p>See <a
+		/// href='#UNIFIED_REVENUE_FORECASTED_NET_REVENUE'>#UNIFIED_REVENUE_FORECASTED_NET_REVENUE</a></p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_FORECASTED_NET_REVENUE = 318,
 		/// <summary>The forecasted gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
-		/// href='#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a>
-		/// coming from forecasted DFP volume.
+		/// href=''>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a> coming from forecasted DFP
+		/// volume.
 		/// </summary>
 		UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE = 319,
 		/// <summary>The forecasted gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> in local currency. It is the
 		/// portion of <a
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE</a>
-		/// coming from forecasted DFP volume. See <a
-		/// href='#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE'>#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE</a>
+		/// coming from forecasted DFP volume. <p>See <a
+		/// href='#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE'>#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE</a></p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_FORECASTED_GROSS_REVENUE = 320,
 		/// <summary>The unified net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>.
-		/// It is a combination of <a
-		/// href='#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE'>#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE</a>,
+		/// It is a combination of <a href=''>#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE</a>,
 		/// <a href='#BILLING_BILLABLE_NET_REVENUE'>#BILLING_BILLABLE_NET_REVENUE</a>, and
-		/// <a
-		/// href='#UNIFIED_REVENUE_FORECASTED_NET_REVENUE'>#UNIFIED_REVENUE_FORECASTED_NET_REVENUE</a>
-		/// when query date range spans historical delivery and forecasted delivery.
+		/// <a href=''>#UNIFIED_REVENUE_FORECASTED_NET_REVENUE</a> when query date range
+		/// spans historical delivery and forecasted delivery.
 		/// </summary>
 		UNIFIED_REVENUE_UNIFIED_NET_REVENUE = 321,
 		/// <summary>The unified net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>
@@ -36195,16 +36120,15 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE</a>
 		/// when the <a href='ProposalLineItem'>ProposalLineItem</a> is sold and <a
 		/// href='#SALES_PIPELINE_LOCAL_PIPELINE_NET_REVENUE'>#SALES_PIPELINE_LOCAL_PIPELINE_NET_REVENUE</a>
-		/// otherwise. See <a
-		/// href='#EXPECTED_REVENUE_EXPECTED_NET_REVENUE'>#EXPECTED_REVENUE_EXPECTED_NET_REVENUE</a>
+		/// otherwise. <p>See <a
+		/// href='#EXPECTED_REVENUE_EXPECTED_NET_REVENUE'>#EXPECTED_REVENUE_EXPECTED_NET_REVENUE</a></p>
 		/// </summary>
 		EXPECTED_REVENUE_LOCAL_EXPECTED_NET_REVENUE = 328,
 		/// <summary>The expected gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is equivalent to <a
-		/// href='#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a>
-		/// when the <a href='ProposalLineItem'>ProposalLineItem</a> is sold and <a
-		/// href='#SALES_PIPELINE_PIPELINE_GROSS_REVENUE'>#SALES_PIPELINE_PIPELINE_GROSS_REVENUE</a>
-		/// otherwise.
+		/// href=''>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a> when the <a
+		/// href='ProposalLineItem'>ProposalLineItem</a> is sold and <a
+		/// href=''>#SALES_PIPELINE_PIPELINE_GROSS_REVENUE</a> otherwise.
 		/// </summary>
 		EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE = 329,
 		/// <summary>The expected gross revenue of the <a
@@ -36213,19 +36137,18 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE</a>
 		/// when the <a href='ProposalLineItem'>ProposalLineItem</a> is sold and <a
 		/// href='#SALES_PIPELINE_LOCAL_PIPELINE_GROSS_REVENUE'>#SALES_PIPELINE_LOCAL_PIPELINE_GROSS_REVENUE</a>
-		/// otherwise. See <a
-		/// href='#EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE'>#EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE</a>
+		/// otherwise. <p>See <a
+		/// href='#EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE'>#EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE</a></p>
 		/// </summary>
 		EXPECTED_REVENUE_LOCAL_EXPECTED_GROSS_REVENUE = 330,
 		/// <summary>The pipeline net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>.
-		/// There is no revenue for sold <a href='ProposalLineItem'>proposal line items</a>.
-		/// For unsold <a href='ProposalLineItem'>proposal line items</a>, it is calculated
-		/// by multiplying <a
+		/// There is no revenue for sold <a href=''>ProposalLineItem proposal line
+		/// items</a>. For unsold <a href='ProposalLineItem'>proposal line items</a>, it is
+		/// calculated by multiplying <a
 		/// href='Proposal#probabilityOfClose'>Proposal#probabilityOfClose</a> by the
 		/// contracted revenue when inventory is not reserved; otherwise it is calcualted by
-		/// multiplying <a
-		/// href='Proposal#probabilityOfClose'>Proposal#probabilityOfClose</a> by the
-		/// forecasted revenue.
+		/// multiplying <a href=''>Proposal#probabilityOfClose</a> by the forecasted
+		/// revenue.
 		/// </summary>
 		SALES_PIPELINE_PIPELINE_NET_REVENUE = 331,
 		/// <summary>The pipeline net revenue in the local currency of the <a
@@ -36338,8 +36261,8 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// <summary>The billable net revenue in local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> before manual adjustment. It is
 		/// calculated from reconciled volume and rate, with cap applied, before manual
-		/// adjustment. See <a
-		/// href='#BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT'>#BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT</a>
+		/// adjustment. <p>See <a
+		/// href='#BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT'>#BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT</a></p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT = 352,
 		/// <summary>The billable gross revenue of the <a
@@ -36351,12 +36274,12 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// <summary>The billable net revenue in local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> before manual adjustment. It is
 		/// calculated from reconciled volume and rate, with cap applied, before manual
-		/// adjustment. See <a
-		/// href='#BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT'>#BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT</a>
+		/// adjustment. <p>See <a
+		/// href='#BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT'>#BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT</a></p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT = 354,
 		/// <summary>The value added tax on billable net revenue of the <a
-		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
+		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href=''>Proposal</a>.
 		/// </summary>
 		BILLING_BILLABLE_VAT = 355,
 		/// <summary>The value added tax on billable net revenue in the local currency of the <a
@@ -36535,7 +36458,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='ReportQuery#dimensions'>ReportQuery#dimensions</a> contains <a
 	/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum DimensionAttribute {
@@ -36607,7 +36530,7 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// </summary>
 		ADVERTISER_CREDIT_STATUS = 122,
 		/// <summary>Represents name and email address in the form of name(email) of primary contact
-		/// for <a href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>.
+		/// for <a href=''>Dimension#ADVERTISER_NAME</a>.
 		/// </summary>
 		ADVERTISER_PRIMARY_CONTACT = 6,
 		/// <summary>Represents the start date (in YYYY-MM-DD format) for <a
@@ -36889,12 +36812,11 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// </summary>
 		PROPOSAL_SECONDARY_SALESPEOPLE = 68,
 		/// <summary>Represents name and email address in the form of name(email) of creator for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href=''>Dimension#PROPOSAL_NAME</a>.
 		/// </summary>
 		PROPOSAL_CREATOR = 69,
 		/// <summary>Represents name and email addresses in the form of name(email) of <a
-		/// href='Proposal#salesPlannerIds'>Proposal#salesPlannerIds</a> as a comma
-		/// separated list string for <a
+		/// href=''>Proposal#salesPlannerIds</a> as a comma separated list string for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
 		/// </summary>
 		PROPOSAL_SALES_PLANNERS = 70,
@@ -37037,23 +36959,21 @@ namespace Google.Api.Ads.Dfp.v201702
 		PROPOSAL_LINE_ITEM_BILLING_SCHEDULE = 95,
 		/// <summary>Represents <a href='Goal#units'>Goal#units</a> of <a
 		/// href='ProposalLineItem#goal'>ProposalLineItem#goal</a> for <a
-		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>
-		/// The attribute is available only if <a
-		/// href='ProposalLineItem#lineItemType'>ProposalLineItem#lineItemType</a> is of
-		/// type <a href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a>, <a
-		/// href='LineItemType#HOUSE'>LineItemType#HOUSE</a>, <a
+		/// href=''>Dimension#PROPOSAL_LINE_ITEM_NAME</a> The attribute is available only if
+		/// <a href=''>ProposalLineItem#lineItemType</a> is of type <a
+		/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a>, <a
+		/// href=''>LineItemType#HOUSE</a>, <a
 		/// href='LineItemType#NETWORK'>LineItemType#NETWORK</a>, or <a
 		/// href='LineItemType#BUMPER'>LineItemType#BUMPER</a>.
 		/// </summary>
 		PROPOSAL_LINE_ITEM_GOAL_PERCENTAGE = 96,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#costAdjustment'>ProposalLineItem#costAdjustment</a> for
-		/// <a
-		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// <a href=''>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
 		/// </summary>
 		PROPOSAL_LINE_ITEM_COST_ADJUSTMENT = 97,
 		/// <summary>Represents the <a href='ProposalLineItem#notes'>comments</a> for <a
-		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// href=''>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
 		/// </summary>
 		PROPOSAL_LINE_ITEM_COMMENTS = 98,
 		/// <summary>Represents the monthly reconciliation status of the proposal line item for <a
@@ -37157,16 +37077,16 @@ namespace Google.Api.Ads.Dfp.v201702
 		PROPOSAL_AGENCY_COMMENT = 113,
 		/// <summary>Represents the <a
 		/// href='Dimension#ALL_SALESPEOPLE_NAME'>Dimension#ALL_SALESPEOPLE_NAME</a>'s
-		/// contribution to a <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
-		/// This is different from <a
+		/// contribution to a <a href=''>Dimension#PROPOSAL_NAME</a>. This is different from
+		/// <a
 		/// href='#SALESPERSON_PROPOSAL_CONTRIBUTION'>#SALESPERSON_PROPOSAL_CONTRIBUTION</a>
 		/// as this will include both primary and secondary salespeople.
 		/// </summary>
 		SALESPEOPLE_PROPOSAL_CONTRIBUTION = 114,
 		/// <summary>Represents the <a
 		/// href='Dimension#SALESPERSON_NAME'>Dimension#SALESPERSON_NAME</a>'s contribution
-		/// to a <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. See <a
-		/// href='#SALESPERSON_PROPOSAL_CONTRIBUTION'>#SALESPERSON_PROPOSAL_CONTRIBUTION</a>.
+		/// to a <a href=''>Dimension#PROPOSAL_NAME</a>. <p>See <a
+		/// href='#SALESPERSON_PROPOSAL_CONTRIBUTION'>#SALESPERSON_PROPOSAL_CONTRIBUTION</a>.</p>
 		/// </summary>
 		SALESPERSON_PROPOSAL_CONTRIBUTION = 115,
 		/// <summary>Represents <a href='ProductPackage#notes'>ProductPackage#notes</a> for <a
@@ -37212,7 +37132,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a period of time.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum DateRangeType {
@@ -37269,7 +37189,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A saved <a href='ReportQuery'>ReportQuery</a> representing the selection
 	/// criteria for running a report.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -37368,7 +37288,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A page of <a href='SavedQuery'>SavedQuery</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -37451,7 +37371,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents the options for an API report download request. See <a
 	/// href='ReportService#getReportDownloadUrlWithOptions'>ReportService#getReportDownloadUrlWithOptions</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -37582,7 +37502,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The file formats available for creating the report.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ExportFormat {
@@ -37595,11 +37515,12 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// <summary>The report file is generated as a list of Comma Separated Values, to be used
 		/// with automated machine processing. <p> <ul> <li>There is no pretty printing for
 		/// the output, and no total row.</li> <li>Column headers are the qualified name
-		/// e.g. "Dimension.ORDER_NAME".</li> <li>Monetary amounts are represented as micros
-		/// in the <a href='Network#currencyCode'>currency of the network</a>.</li>
-		/// <li>Dates are formatted according to the ISO 8601 standard YYYY-MM-DD</li>
-		/// <li>DateTimes are formatted according to the ISO 8601 standard
-		/// YYYY-MM-DDThh:mm:ss[+-]hh:mm</li> </ul></p>
+		/// e.g. "Dimension.ORDER_NAME".</li> <li>Network currency Monetary amounts are
+		/// represented as micros in the <a href='Network#currencyCode'>currency of the
+		/// network</a>.</li> <li>Starting from v201705, local currency Monetary amounts are
+		/// represented as currency symbol + ' ' + micros.</li> <li>Dates are formatted
+		/// according to the ISO 8601 standard YYYY-MM-DD</li> <li>DateTimes are formatted
+		/// according to the ISO 8601 standard YYYY-MM-DDThh:mm:ss[+-]hh:mm</li> </ul></p>
 		/// </summary>
 		CSV_DUMP = 2,
 		/// <summary>The report file is generated as XML.
@@ -37614,7 +37535,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An error for an exception that occurred while running the report.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -37649,7 +37570,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReportError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ReportErrorReason {
@@ -37751,7 +37672,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents the status of a <a href='ReportJob'>ReportJob</a> running on the
 	/// server.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ReportJobStatus {
@@ -37776,7 +37697,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// meaning each activity group can have multiple activities. A activity group can
 	/// be used to manage the activities it contains.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ActivityGroupServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -37873,7 +37794,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='ActivityGroup'>ActivityGroup</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -37957,7 +37878,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// that share the same configuration. You create and manage activities from within
 	/// activity groups.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38126,7 +38047,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The activity group status.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ActivityGroup.Status", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ActivityGroupStatus {
@@ -38140,7 +38061,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// openly available for DFP Video publishers. Publishers will need to apply for
 	/// access for this feature through their account managers.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "LiveStreamEventServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -38282,7 +38203,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(PauseLiveStreamEventAds))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchiveLiveStreamEvents))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateLiveStreamEvents))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38294,7 +38215,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for pausing <a href='LiveStreamEvent'>LiveStreamEvent</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38306,7 +38227,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for pausing ads for <a
 	/// href='LiveStreamEvent'>LiveStreamEvent</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38318,7 +38239,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for archiving <a href='LiveStreamEvent'>LiveStreamEvent</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38330,7 +38251,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for activating <a href='LiveStreamEvent'>LiveStreamEvent</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38341,7 +38262,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='LiveStreamEvent'>LiveStreamEvent</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38427,7 +38348,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// actual content for DFP to pull and insert ads into, as well as the metadata
 	/// necessary to generate ad requests during the event.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38800,7 +38721,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the status of a <a href='LiveStreamEvent'>LiveStreamEvent</a> object.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LiveStreamEventStatus {
@@ -38829,7 +38750,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Possible authentication services used to validate credentials for live stream
 	/// events.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AuthenticationService {
@@ -38848,7 +38769,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes what should be used to fill an empty ad break during a live stream.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdBreakFillType {
@@ -38867,7 +38788,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with the Session Activity Monitor (SAM).
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38904,7 +38825,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes reasons for SAM session errors.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "SamSessionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum SamSessionErrorReason {
@@ -38924,7 +38845,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with live stream event start and end date times.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -38961,7 +38882,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes reasons for <code>LiveStreamEventDateTimeError</code>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "LiveStreamEventDateTimeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LiveStreamEventDateTimeErrorReason {
@@ -38983,7 +38904,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with live stream event action.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39020,7 +38941,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes reasons for <code>LiveStreamEventActionError</code>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "LiveStreamEventActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LiveStreamEventActionErrorReason {
@@ -39043,7 +38964,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// you do not see a "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick
 	/// for Publishers (DFP)</a>, you will not be able to use this service.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ProposalLineItemServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -39197,7 +39118,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(PauseProposalLineItems))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchiveProposalLineItems))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActualizeProposalLineItems))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39209,7 +39130,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for unlinking <a href='ProposalLineItem'>ProposalLineItem</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39221,7 +39142,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for unarchiving <a href='ProposalLineItem'>ProposalLineItem</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39233,7 +39154,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for resuming <a href='ProposalLineItem'>ProposalLineItem</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39248,7 +39169,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <code>true</code>. This action is only applicable for programmatic proposals not
 	/// using sales management.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39286,7 +39207,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for releasing inventory for <a
 	/// href='ProposalLineItem'>ProposalLineItem</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39298,7 +39219,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for pausing <a href='ProposalLineItem'>ProposalLineItem</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39310,7 +39231,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for archiving <a href='ProposalLineItem'>ProposalLineItem</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39322,7 +39243,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for actualizing <a href='ProposalLineItem'>ProposalLineItem</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39333,7 +39254,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='ProposalLineItem'>ProposalLineItem</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39420,7 +39341,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='Order'>Order</a>, this object is turned into a <a
 	/// href='LineItem'>LineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -39808,14 +39729,14 @@ namespace Google.Api.Ads.Dfp.v201702
 
 		/// <summary>The time zone ID in tz database format (e.g. "America/Los_Angeles") for this
 		/// <code>ProposalLineItem</code>. The number of serving days is calculated in this
-		/// time zone. So if <a href='#rateType'>#rateType</a> is <a
+		/// time zone. So if <a href=''>#rateType</a> is <a
 		/// href='RateType#CPD'>RateType#CPD</a>, it will affect the cost calculation. The
-		/// <a href='#startDateTime'>#startDateTime</a> and <a
-		/// href='#endDateTime'>#endDateTime</a> will be returned in this time zone. This
-		/// attribute is optional and defaults to the network's time zone. <span
-		/// class="constraint ReadOnly">This attribute is read-only when:</span> <ul>
-		/// <li>using programmatic guaranteed, using sales management.</li> <li>using
-		/// programmatic guaranteed, not using sales management.</li> </ul>
+		/// <a href=''>#startDateTime</a> and <a href='#endDateTime'>#endDateTime</a> will
+		/// be returned in this time zone. This attribute is optional and defaults to the
+		/// network's time zone. <span class="constraint ReadOnly">This attribute is
+		/// read-only when:</span> <ul> <li>using programmatic guaranteed, using sales
+		/// management.</li> <li>using programmatic guaranteed, not using sales
+		/// management.</li> </ul>
 		/// </summary>
 		public string timeZoneId {
 			get {
@@ -39902,8 +39823,8 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// <code>ProposalLineItem</code> is associated with, which is used in its pacing
 		/// and budgeting. <a href='Goal#units'>Goal#units</a> must be greater than 0 when
 		/// the proposal line item turns into a line item, <a
-		/// href='Goal#goalType'>Goal#goalType</a> and <a
-		/// href='Goal#unitType'>Goal#unitType</a> are readonly. This attribute is required.
+		/// href='Goal#goalType'>Goal#goalType</a> and <a href=''>Goal#unitType</a> are
+		/// readonly. This attribute is required.
 		/// </summary>
 		public Goal goal {
 			get {
@@ -40176,8 +40097,8 @@ namespace Google.Api.Ads.Dfp.v201702
 		}
 
 		/// <summary>The unique ID of corresponding <a href='LineItem'>LineItem</a>. This will be
-		/// <code>null</code> if the <a href='Proposal'>Proposal</a> has not been pushed to
-		/// DFP. This attribute is read-only.
+		/// <code>null</code> if the <a href=''>Proposal</a> has not been pushed to DFP.
+		/// This attribute is read-only.
 		/// </summary>
 		public long dfpLineItemId {
 			get {
@@ -40729,16 +40650,15 @@ namespace Google.Api.Ads.Dfp.v201702
 		}
 
 		/// <summary>Overrides the billing base of this <code>ProposalLineItem</code>. This attribute
-		/// is optional. If this field is overridden, then other required billing fields (<a
-		/// href='#billingCap'>#billingCap</a>, <a
-		/// href='#billingSchedule'>#billingSchedule</a>, or <a
+		/// is optional. <p>If this field is overridden, then other required billing fields
+		/// (<a href='#billingCap'>#billingCap</a>, <a href=''>#billingSchedule</a>, or <a
 		/// href='#billingSource'>#billingSource</a>) also need to be overridden depending
 		/// on the <a href='#billingSource'>#billingSource</a>. That is, none of the billing
-		/// fields will inherit from their <a href='Proposal'>Proposal</a> object anymore.
-		/// This attribute can be configured as editable after the proposal has been
-		/// submitted. Please check with your network administrator for editable fields
-		/// configuration. <span class="constraint Applicable">This attribute is applicable
-		/// when:</span> <ul> <li>not using programmatic guaranteed, using sales
+		/// fields will inherit from their <a href=''>Proposal</a> object anymore. This
+		/// attribute can be configured as editable after the proposal has been submitted.
+		/// Please check with your network administrator for editable fields configuration.
+		/// <span class="constraint Applicable">This attribute is applicable
+		/// when:</span></p> <ul> <li>not using programmatic guaranteed, using sales
 		/// management.</li> </ul>
 		/// </summary>
 		public BillingBase billingBase {
@@ -40764,9 +40684,9 @@ namespace Google.Api.Ads.Dfp.v201702
 			}
 		}
 
-		/// <summary>The date and time this <code>ProposalLineItem</code> was last modified. This
+		/// <summary>The date and time this <code>ProposalLineItem</code> was last modified. <p>This
 		/// attribute is assigned by Google when a <code></code> is updated. This attribute
-		/// is read-only.
+		/// is read-only.</p>
 		/// </summary>
 		public DateTime lastModifiedDateTime {
 			get {
@@ -41062,7 +40982,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Describes the cost adjustment of <a
 	/// href='ProposalLineItem'>ProposalLineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CostAdjustment {
@@ -41090,11 +41010,10 @@ namespace Google.Api.Ads.Dfp.v201702
 
 
 	/// <summary>A <code>PropoalLineItemConstraints</code> represents all the constraints set for
-	/// a <a href='ProposalLineItem'>ProposalLineItem</a> and is always readonly. It
-	/// comes from the <a href='Product'>Product</a>, based on which the proposal line
-	/// item is created.
+	/// a <a href=''>ProposalLineItem</a> and is always readonly. It comes from the <a
+	/// href='Product'>Product</a>, based on which the proposal line item is created.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -41324,7 +41243,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Specifies what targeting or attributes are customizable on a <a
 	/// href='ProductTemplate'>ProductTemplate</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -41964,7 +41883,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='PremiumRateValue'>PremiumRateValue</a> (formerly referred to as a
 	/// <code>RateCardCustomization</code>).
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42018,7 +41937,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A premium of a <a href='RateCard'>RateCard</a> which could be applied to the
 	/// line item and charges extra.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42185,7 +42104,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(BandwidthPremiumFeature))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AudienceSegmentPremiumFeature))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AdUnitPremiumFeature))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42196,7 +42115,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to video position targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42207,7 +42126,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to user domain targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42219,7 +42138,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The <a href='PremiumFeature'>PremiumFeature</a> returned if the actual feature
 	/// is not exposed by the requested API version.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42230,7 +42149,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to placement targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42241,7 +42160,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to operating system targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42252,7 +42171,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to mobile carrier targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42263,7 +42182,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to geography targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42274,7 +42193,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to frequency caps.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42285,7 +42204,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to device manufacturer targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42296,7 +42215,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to device category targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42307,7 +42226,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to device capability targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42318,7 +42237,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to daypart targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42329,7 +42248,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to custom criteria targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42401,7 +42320,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to content bundle targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42412,7 +42331,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to browser language targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42423,7 +42342,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to browser targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42434,7 +42353,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to bandwidth targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42445,7 +42364,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to audience segment targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42485,7 +42404,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A premium feature applied to ad unit targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42496,7 +42415,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes how to apply the adjustment to the base rate.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum PremiumAdjustmentType {
@@ -42515,7 +42434,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Status of the premium triggered by a proposal line item.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProposalLineItemPremiumStatus {
@@ -42535,7 +42454,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents the inventory reservation status for <a
 	/// href='ProposalLineItem'>ProposalLineItem</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ReservationStatus {
@@ -42562,7 +42481,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Status of the link between <a href='ProposalLineItem'>ProposalLineItem</a> and
 	/// its <a href='Product'>Product</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LinkStatus {
@@ -42578,7 +42497,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Marketplace info for <a href='ProposalLineItem'>ProposalLineItem</a> with a
 	/// corresponding deal in Marketplace.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42620,7 +42539,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Identifies the the format of inventory or "channel" in which ads serve.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdExchangeEnvironment {
@@ -42645,7 +42564,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors for executing operations on proposal line items.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42684,7 +42603,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProposalLineItemActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProposalLineItemActionErrorReason {
@@ -42715,7 +42634,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Provides methods for updating and retrieving <a href='Product'>Product</a>
 	/// objects. <p>A <code>Product</code> represents a line item proposal. Products are
-	/// generated from <a href='ProductTemplate'>product templates</a> on a periodic
+	/// generated from <a href=''>ProductTemplate product templates</a> on a periodic
 	/// basis using the product template's attributes. Products are typically used by
 	/// inventory managers to restrict what salespeople can sell.</p> <p>To use this
 	/// service, you need to have the new sales management solution enabled on your
@@ -42723,7 +42642,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you will
 	/// not be able to use this service.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ProductServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -42870,7 +42789,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(PublishProducts))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateProducts))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateProducts))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42881,7 +42800,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used to withdraw products from Marketplace.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42892,7 +42811,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used to publish products to Marketplace.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42903,7 +42822,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used to deactivate products.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42914,7 +42833,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used to activate products.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -42925,7 +42844,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='ProductDto'>ProductDto</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -43008,7 +42927,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary><a href='ProposalLineItem'>Proposal line items</a> are created from products,
 	/// from which their properties are copied.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -43711,7 +43630,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Identifies the source of a field's value.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ValueSourceType {
@@ -43721,12 +43640,16 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// <summary>The field's value is user specified and not inherited.
 		/// </summary>
 		DIRECTLY_SPECIFIED = 1,
+		/// <summary>The value returned if the actual value is not exposed by the requested API
+		/// version.
+		/// </summary>
+		UNKNOWN = 2,
 	}
 
 
 	/// <summary>Describes the different statuses for <a href='Product'>Product</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProductStatus {
@@ -43748,7 +43671,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the type of <a href='Product'>Product</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProductType {
@@ -43771,7 +43694,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Marketplace information for a programmatic <a href='Product'>Product</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -43866,7 +43789,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all programmatic errors associated with products which can be used in
 	/// Marketplace.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -43905,7 +43828,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProgrammaticProductError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProgrammaticProductErrorReason {
@@ -43930,7 +43853,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all programmatic errors associated with entities which can be used in
 	/// Marketplace.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -43969,7 +43892,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProgrammaticEntitiesError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProgrammaticEntitiesErrorReason {
@@ -44016,7 +43939,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all error reasons associated with performing actions on <a
 	/// href='Product'>products</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44055,7 +43978,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProductActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProductActionErrorReason {
@@ -44076,7 +43999,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all non-programmatic errors associated with products which can't be used
 	/// in Marketplace.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44115,7 +44038,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "NonProgrammaticProductError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum NonProgrammaticProductErrorReason {
@@ -44147,7 +44070,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// with a filter like "WHERE status = 'ACTIVE'" and the ID of the custom targeting
 	/// value from step 2.</li> </ul>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ContentServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -44244,7 +44167,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Contains information about <a href='Content'>Content</a> from the CMS it was
 	/// ingested from.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44312,7 +44235,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents an error associated with a DAI content's status.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44364,7 +44287,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes what caused the DAI content to fail during the ingestion proccess.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum DaiIngestErrorReason {
@@ -44530,7 +44453,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// targeted to <code>Content</code> to indicate what ads should match when the
 	/// <code>Content</code> is being played.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44778,7 +44701,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the status of a <a href='Content'>Content</a> object.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ContentStatus {
@@ -44802,7 +44725,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes who defined the effective status of the <code>Content</code>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ContentStatusDefinedBy {
@@ -44818,7 +44741,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The status of the DAI ingestion process. Only content with a status of <a
 	/// href='#SUCCESS'>#SUCCESS</a> will be available for dynamic ad insertion.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum DaiIngestStatus {
@@ -44841,7 +44764,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <code>Content</code> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44921,9 +44844,12 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	/// <summary>The content partner related validation errors.
+	/// <summary>The content partner related validation errors. <p>This class is deprecated. All
+	/// companies of type <a
+	/// href='Company.Type#CONTENT_PARTNER'>Company.Type#CONTENT_PARTNER</a> were
+	/// changed to <a href='Company.Type#PARTNER'>Company.Type#PARTNER</a>.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44960,7 +44886,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes reason for <code>ContentPartnerError</code>s.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ContentPartnerError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ContentPartnerErrorReason {
@@ -44983,7 +44909,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you will
 	/// not be able to use this service.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "BaseRateServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -45101,7 +45027,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// objects.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteBaseRates))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45112,7 +45038,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used to delete <a href='BaseRate'>BaseRate</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45123,7 +45049,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='BaseRate'>BaseRate</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45210,7 +45136,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductTemplateBaseRate))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductPackageItemBaseRate))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ProductBaseRate))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45281,7 +45207,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The <a href='BaseRate'>BaseRate</a> returned if the actual base rate type is not
 	/// exposed by the requested API version.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45292,7 +45218,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A base rate applied to a <a href='ProductTemplate'>ProductTemplate</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45345,7 +45271,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A base rate applied to a <a href='ProductPackageItem'>ProductPackageItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45400,7 +45326,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A base rate applied to a <a href='Product'>Product</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45456,7 +45382,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>An error having to do with <a href='BaseRate'>BaseRate</a> when performing
 	/// actions.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45495,7 +45421,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "BaseRateActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum BaseRateActionErrorReason {
@@ -45513,7 +45439,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides methods for the creation and management of <a
 	/// href='CustomField'>CustomField</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "CustomFieldServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -45689,7 +45615,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateCustomFields))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateCustomFields))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45700,7 +45626,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for deactivating <a href='CustomField'>CustomField</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45711,7 +45637,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for activating <a href='CustomField'>CustomField</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45722,7 +45648,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='CustomField'>CustomField</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45805,7 +45731,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>An additional, user-created field on an entity.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DropDownCustomField))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45993,7 +45919,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Entity types recognized by custom fields
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CustomFieldEntityType {
@@ -46030,7 +45956,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The data types allowed for <a href='CustomField'>CustomField</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CustomFieldDataType {
@@ -46056,7 +45982,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The visibility levels of a custom field.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CustomFieldVisibility {
@@ -46074,7 +46000,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A custom field that has the drop-down data type.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46100,7 +46026,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='CustomField#dataType'>CustomField#dataType</a> of <a
 	/// href='CustomFieldDataType#DROP_DOWN'>CustomFieldDataType#DROP_DOWN</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46181,7 +46107,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors specific to editing custom fields
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46220,7 +46146,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomFieldError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CustomFieldErrorReason {
@@ -46240,7 +46166,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides methods for retrieving <a
 	/// href='MobileApplication'>MobileApplication</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "MobileApplicationServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -46360,7 +46286,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchiveMobileApplications))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(UnarchiveMobileApplications))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46372,7 +46298,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used to deactivate <a href='MobileApplication'>MobileApplication</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46384,7 +46310,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used to activate <a href='MobileApplication'>MobileApplication</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46395,7 +46321,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='MobileApplication'>mobile applications</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46481,7 +46407,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// PQL table in <a
 	/// href='PublisherQueryLanguageService'>PublisherQueryLanguageService</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46710,7 +46636,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A store a <a href='MobileApplication'>MobileApplication</a> is available on.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum MobileApplicationStore {
@@ -46725,7 +46651,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A platform a <a href='MobileApplication'>MobileApplication</a> can run on.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum MobileApplicationPlatform {
@@ -46741,7 +46667,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all errors associated with <a
 	/// href='MobileApplication'>MobileApplication</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46780,7 +46706,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the <a href='MobileApplication'>MobileApplication</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "MobileApplicationError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum MobileApplicationErrorReason {
@@ -46797,7 +46723,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Lists all error reasons associated with performing actions on <a
 	/// href='MobileApplication'>MobileApplication</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -46836,7 +46762,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "MobileApplicationActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum MobileApplicationActionErrorReason {
@@ -46854,7 +46780,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='CustomTargetingKey'>CustomTargetingKey</a> and <a
 	/// href='CustomTargetingValue'>CustomTargetingValue</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "CustomTargetingServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -47069,7 +46995,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteCustomTargetingValues))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateCustomTargetingValues))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47081,7 +47007,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents the delete action that can be performed on <a
 	/// href='CustomTargetingValue'>CustomTargetingValue</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47093,7 +47019,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for activating inactive (i.e. deleted) <a
 	/// href='CustomTargetingValue'>CustomTargetingValue</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47107,7 +47033,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteCustomTargetingKeys))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateCustomTargetingKeys))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47123,7 +47049,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// recreated, any previous custom targeting values associated with it that were not
 	/// deleted will continue to exist.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47135,7 +47061,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for activating inactive (i.e. deleted) <a
 	/// href='CustomTargetingKey'>CustomTargetingKey</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47147,7 +47073,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Captures a page of <a href='CustomTargetingValue'>CustomTargetingValue</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47229,7 +47155,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary><code>CustomTargetingValue</code> represents a value used for custom targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47395,7 +47321,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='CustomTargetingValue#name'>CustomTargetingValue#name</a> strings will be
 	/// matched with ad requests.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomTargetingValue.MatchType", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CustomTargetingValueMatchType {
@@ -47449,7 +47375,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the statuses for <code>CustomTargetingValue</code> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomTargetingValue.Status", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CustomTargetingValueStatus {
@@ -47468,7 +47394,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='CustomTargetingKey'>CustomTargetingKey</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47550,7 +47476,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary><code>CustomTargetingKey</code> represents a key used for custom targeting.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47682,7 +47608,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Specifies the types for <code>CustomTargetingKey</code> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomTargetingKey.Type", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CustomTargetingKeyType {
@@ -47697,7 +47623,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the statuses for <code>CustomTargetingKey</code> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CustomTargetingKey.Status", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CustomTargetingKeyStatus {
@@ -47720,7 +47646,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
 	/// (DFP)</a>, you will not be able to use this service.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "PackageServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -47843,7 +47769,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// objects.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(CreateProposalLineItemsFromPackages))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47855,7 +47781,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for creating proposal line items from <a
 	/// href='Package'>Package</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47866,7 +47792,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='Package'>Package</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -47949,7 +47875,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>Package</code> represents a group of proposal line items which will be
 	/// sold together.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -48196,7 +48122,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the different statuses for <a href='Package'>Package</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum PackageStatus {
@@ -48218,7 +48144,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides methods for retrieving and updating <a
 	/// href='ReconciliationLineItemReport'>ReconciliationLineItemReport</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ReconciliationLineItemReportServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -48315,7 +48241,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='ReconciliationLineItemReport'>ReconciliationLineItemReport</a> to be used
 	/// instead of the Google calculated ones.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -48384,7 +48310,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Contains reconciliation data of a <a href='LineItem'>LineItem</a> and/or <a
 	/// href='ProposalLineItem'>ProposalLineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49026,7 +48952,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Captures a page of <a
 	/// href='ReconciliationLineItemReport'>ReconciliationLineItemReport</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49115,7 +49041,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// have a "fire sale" placement that includes ad units that have not been selling
 	/// and are consequently priced very attractively.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "PlacementServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -49240,7 +49166,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivatePlacements))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchivePlacements))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivatePlacements))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49251,7 +49177,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for deactivating <a href='Placement'>Placement</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49262,7 +49188,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for archiving <a href='Placement'>Placement</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49273,7 +49199,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for activating <a href='Placement'>Placement</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49284,7 +49210,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='Placement'>Placement</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49366,7 +49292,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A <code>Placement</code> groups related <code>AdUnit</code> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49551,7 +49477,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Contains information required for AdWords advertisers to place their ads.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(Placement))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49609,7 +49535,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides methods for creating and retrieving <a
 	/// href='NativeStyle'>NativeStyle</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "NativeStyleServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -49720,7 +49646,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents an action that can be performed on native styles.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchiveNativeStyles))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49731,7 +49657,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Action to archive native styles.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49742,7 +49668,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='NativeStyle'>NativeStyle</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49825,7 +49751,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Used to define the look and feel of native ads, for both web and apps. Native
 	/// styles determine how native creatives look for a segment of inventory.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -49994,7 +49920,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors for native styles.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50033,7 +49959,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "NativeStyleError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum NativeStyleErrorReason {
@@ -50075,7 +50001,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides methods for retrieving, reconciling, and reverting <a
 	/// href='ReconciliationOrderReport'>ReconciliationOrderReport</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ReconciliationOrderReportServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -50209,7 +50135,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(RevertReconciliationOrderReports))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(SubmitReconciliationOrderReports))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50221,7 +50147,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used to revert the reconciliation on the <a
 	/// href='ReconciliationOrderReport'>ReconciliationOrderReport</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50233,7 +50159,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for submit the reconciliation on the <a
 	/// href='ReconciliationOrderReport'>ReconciliationOrderReport</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50245,7 +50171,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Contains reconciliation data of an <a href='Order'>Order</a> and/or <a
 	/// href='Proposal'>Proposal</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50480,7 +50406,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The status of the reconciliation order report.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ReconciliationOrderReportStatus {
@@ -50513,7 +50439,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Captures a page of <a
 	/// href='ReconciliationOrderReport'>ReconciliationOrderReport</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50599,7 +50525,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you will
 	/// not be able to use this service.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "PremiumRateServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -50693,7 +50619,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='PremiumRate'>PremiumRate</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50774,9 +50700,9 @@ namespace Google.Api.Ads.Dfp.v201702
 
 
 	/// <summary>A premium rate holding a set of <a href='PremiumRateValue'>PremiumRateValue</a>
-	/// objects with the same <a href='PremiumFeature'>PremiumFeature</a>.
+	/// objects with the same <a href=''>PremiumFeature</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50907,7 +50833,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <a href='PremiumRate'>PremiumRate</a> to apply to a <a
 	/// href='ProposalLineItem'>ProposalLineItem</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum PricingMethod {
@@ -50932,7 +50858,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An error having to do with <a href='PremiumRate'>PremiumRate</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -50969,7 +50895,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "PremiumRateError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum PremiumRateErrorReason {
@@ -50992,7 +50918,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides methods for creating, updating and retrieving <a
 	/// href='LineItemTemplate'>LineItemTemplate</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "LineItemTemplateServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -51053,7 +50979,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents the template that populates the fields of a new line item being
 	/// created.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51348,7 +51274,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='LineItemTemplate'>LineItemTemplate</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51436,7 +51362,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
 	/// (DFP)</a>, you will not be able to use this service.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ProductTemplateServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -51564,7 +51490,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateProductTemplates))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchiveProductTemplates))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateProductTemplates))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51576,7 +51502,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for unarchiving <a href='ProductTemplate'>ProductTemplate</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51587,7 +51513,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for deactivating product templates.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51598,7 +51524,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for archiving product template.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51609,7 +51535,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for activating product templates.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51620,7 +51546,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='ProductTemplate'>ProductTemplate</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -51709,7 +51635,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// that almost all attributes in the product template are properties of the
 	/// proposal line item.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -52392,7 +52318,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the different statuses for ProductTemplate.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProductTemplateStatus {
@@ -52424,7 +52350,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// 1</code> product. A product with 3 segmentations with 2 segments for each will
 	/// produce <code>2 x 2 x 2 = 8</code> products.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -52593,8 +52519,8 @@ namespace Google.Api.Ads.Dfp.v201702
 		}
 
 		/// <summary>The device capability segmentation. <a
-		/// href='DeviceCapabilityTargeting#excludedDeviceCapabilities'>DeviceCapabilityTargeting#excludedDeviceCapabilities</a>
-		/// must be empty or null. <p>This attribute is optional.</p>
+		/// href=''>DeviceCapabilityTargeting#excludedDeviceCapabilities</a> must be empty
+		/// or null. <p>This attribute is optional.</p>
 		/// </summary>
 		public DeviceCapabilityTargeting deviceCapabilitySegment {
 			get {
@@ -52645,8 +52571,8 @@ namespace Google.Api.Ads.Dfp.v201702
 		}
 
 		/// <summary>The mobile device submodel segmentation. <a
-		/// href='MobileDeviceSubmodelTargeting#excludedMobileDeviceSubmodels'>MobileDeviceSubmodelTargeting#excludedMobileDeviceSubmodels</a>
-		/// must be empty or null.
+		/// href=''>MobileDeviceSubmodelTargeting#excludedMobileDeviceSubmodels</a> must be
+		/// empty or null.
 		/// </summary>
 		public MobileDeviceSubmodelTargeting mobileDeviceSubmodelSegment {
 			get {
@@ -52674,7 +52600,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Marketplace information for a programmatic <a
 	/// href='ProductTemplate'>ProductTemplate</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -52728,7 +52654,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A catch-all error that lists all generic errors associated with ProductTemplate.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -52765,7 +52691,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProductTemplateError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProductTemplateErrorReason {
@@ -52986,7 +52912,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>An error lists all error reasons associated with performing action on <a
 	/// href='ProductTemplate'>ProductTemplate</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53023,7 +52949,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ProductTemplateActionError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ProductTemplateActionErrorReason {
@@ -53043,7 +52969,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// from showing on portions of your site. Each rule specifies the inventory on
 	/// which the rule is in effect, and the labels to block on that inventory.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "AdExclusionRuleServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -53158,7 +53084,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateAdExclusionRules))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateAdExclusionRules))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53169,7 +53095,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Deactivate action.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53180,7 +53106,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Activate action.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53191,7 +53117,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a page of <a href='AdExclusionRule'>AdExclusionRule</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53274,7 +53200,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents an inventory blocking rule, which prevents certain ads from being
 	/// served to specified ad units.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53470,7 +53396,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The derived type of this rule: whether it is associated with labels, unified
 	/// entities, or competitive groups.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdExclusionRuleType {
@@ -53486,7 +53412,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Ad exclusion rule specific errors.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53523,7 +53449,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the ad exclusion rule error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdExclusionRuleError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AdExclusionRuleErrorReason {
@@ -53586,7 +53512,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// ad unit will host a creative through both this association and the <a
 	/// href='LineItem#targeting'>LineItem#targeting</a> to it.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "LineItemServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -53734,7 +53660,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteLineItems))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ArchiveLineItems))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateLineItems))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53745,7 +53671,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for unarchiving <a href='LineItem'>LineItem</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53757,7 +53683,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for resuming <a href='LineItem'>LineItem</a> objects.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ResumeAndOverbookLineItems))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53798,7 +53724,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for resuming and overbooking <a href='LineItem'>LineItem</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53810,7 +53736,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for reserving <a href='LineItem'>LineItem</a> objects.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ReserveAndOverbookLineItems))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53851,7 +53777,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for reserving and overbooking <a href='LineItem'>LineItem</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53862,7 +53788,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for releasing <a href='LineItem'>LineItem</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53873,7 +53799,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for pausing <a href='LineItem'>LineItem</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53885,7 +53811,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for deleting <a href='LineItem'>LineItem</a> objects. A line
 	/// item can be deleted if it has never been eligible to serve.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53896,7 +53822,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for archiving <a href='LineItem'>LineItem</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53907,7 +53833,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for activating <a href='LineItem'>LineItem</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -53918,7 +53844,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='LineItem'>LineItem</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54004,7 +53930,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// identify that role in an organization. Role types and their IDs can be retrieved
 	/// by invoking <a href='#getAllRoles'>#getAllRoles</a>.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "UserServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -54145,7 +54071,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeactivateUsers))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ActivateUsers))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54156,7 +54082,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for deactivating <a href='User'>User</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54167,7 +54093,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The action used for activating <a href='User'>User</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54178,7 +54104,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='User'>User</a> objects
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54263,7 +54189,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// perform specific operations. Without a role, they will not be able to perform
 	/// any actions.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54413,7 +54339,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <code>User</code> is derived.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(User))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54526,7 +54452,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Each <code>Role</code> provides a user with permissions to perform specific
 	/// operations in the system.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54592,7 +54518,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An error for an exception that occurred when using a token.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54627,7 +54553,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "TokenError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum TokenErrorReason {
@@ -54644,7 +54570,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// networks. This service can be used to obtain the list of all networks that the
 	/// current login has access to, or to obtain information about a specific network.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "NetworkServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -54747,7 +54673,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary><code>Network</code> represents a network.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -54919,7 +54845,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// objects. <p>Teams are used to group users in order to define access to entities
 	/// such as companies, inventory and orders.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "TeamServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -55010,7 +54936,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='Team'>Team</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -55094,7 +55020,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// access to. Users are added to teams with <a
 	/// href='UserTeamAssociation'>UserTeamAssociation</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -55251,7 +55177,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents the types of team access supported for orders.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum TeamAccessType {
@@ -55272,7 +55198,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// associated with a <a href='LineItem'>LineItem</a> managed by the <a
 	/// href='LineItemCreativeAssociationService'>LineItemCreativeAssociationService</a>.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "CreativeServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -55371,7 +55297,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='Creative'>Creative</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -55491,7 +55417,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AdSenseCreative))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AdExchangeCreative))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AdMobBackfillCreative))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -55662,7 +55588,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// violations, see <a
 	/// href="https://support.google.com/adwordspolicy/answer/6008942?hl=en">here</a>.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CreativePolicyViolation {
@@ -55711,7 +55637,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>Creative</code> that points to an externally hosted VAST ad and is
 	/// served via VAST XML as a VAST Wrapper.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -55899,7 +55825,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The types of VAST ads that a <a
 	/// href='VastRedirectCreative'>VastRedirectCreative</a> can point to.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum VastRedirectType {
@@ -55918,7 +55844,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>This represents an entry in a map with a key of type ConversionEvent and value
 	/// of type TrackingUrls.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -55968,7 +55894,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>All possible tracking event types. Not all events are supported by every kind of
 	/// creative.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ConversionEvent {
@@ -56064,7 +55990,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Enum to store the creative SSL compatibility scan result.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum SslScanResult {
@@ -56081,7 +56007,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Enum to store the creative SSL compatibility manual override. Its three states
 	/// are similar to that of <a href='SslScanResult'>SslScanResult</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum SslManualOverride {
@@ -56098,7 +56024,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>Creative</code> that isn't supported by this version of the API. This
 	/// object is readonly and when encountered should be reported on the DFP API forum.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56121,7 +56047,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A <code>Creative</code> that is served by a 3rd-party vendor.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56278,7 +56204,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the orientation that a creative should be served with.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum LockedOrientation {
@@ -56294,7 +56220,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A <code>Creative</code> that is created by the specified creative template.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56550,7 +56476,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(StringCreativeTemplateVariableValue))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(LongCreativeTemplateVariableValue))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AssetCreativeTemplateVariableValue))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56575,7 +56501,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Stores values of <a href='CreativeTemplateVariable'>CreativeTemplateVariable</a>
 	/// of <a href='VariableType#URL'>VariableType#URL</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56600,7 +56526,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// of <a href='VariableType#STRING'>VariableType#STRING</a> and <a
 	/// href='VariableType#LIST'>VariableType#LIST</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56625,7 +56551,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Stores values of <a href='CreativeTemplateVariable'>CreativeTemplateVariable</a>
 	/// of <a href='VariableType#LONG'>VariableType#LONG</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56666,7 +56592,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Stores values of <a href='CreativeTemplateVariable'>CreativeTemplateVariable</a>
 	/// of <a href='VariableType#ASSET'>VariableType#ASSET</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56691,7 +56617,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A <code>CreativeAsset</code> is an asset that can be used in creatives.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56870,7 +56796,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// click tag defines the click-through URL for a different exit. In DFP, tracking
 	/// pixels are attached to the click tags if URLs are valid.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56906,7 +56832,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Image densities.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ImageDensity {
@@ -56933,7 +56859,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// auto-created with the right approval from the buyer. This creative cannot be
 	/// created through the API. This creative can be updated.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56974,7 +56900,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>Creative</code> that isn't supported by Google DFP, but was migrated
 	/// from DART. Creatives of this type cannot be created or modified.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -56983,13 +56909,12 @@ namespace Google.Api.Ads.Dfp.v201702
 	}
 
 
-	/// <summary>A <code>Creative</code> hosted by either DoubleClick for Advertisers (DFA) or
-	/// DART for Publishers. <p>Similar to third-party creatives, a DoubleClick tag is
-	/// used to retrieve a creative asset. However, DoubleClick tags are not sent to the
-	/// user's browser. Instead, they are processed internally within the DoubleClick
-	/// system..</p>
+	/// <summary>A <code>Creative</code> hosted by DoubleClick for Advertisers (DFA). <p>Similar
+	/// to third-party creatives, a DoubleClick tag is used to retrieve a creative
+	/// asset. However, DoubleClick tags are not sent to the user's browser. Instead,
+	/// they are processed internally within the DoubleClick system..</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57178,7 +57103,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>Creative</code> that contains a zipped HTML5 bundle asset, a list of
 	/// third party impression trackers, and a third party click tracker.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57396,8 +57321,10 @@ namespace Google.Api.Ads.Dfp.v201702
 		}
 
 		/// <summary>The HTML5 asset. To preview the HTML5 asset, use the <a
-		/// href='CreativeAsset#assetUrl'>CreativeAsset#assetUrl</a>. This attribute is
-		/// required.
+		/// href='CreativeAsset#assetUrl'>CreativeAsset#assetUrl</a>. In this field, the <a
+		/// href='CreativeAsset#assetByteArray'>CreativeAsset#assetByteArray</a> must be a
+		/// zip bundle and the <a href='CreativeAsset#fileName'>CreativeAsset#fileName</a>
+		/// must have a zip extension. This attribute is required.
 		/// </summary>
 		public CreativeAsset html5Asset {
 			get {
@@ -57433,7 +57360,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashOverlayCreative))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashCreative))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AspectRatioImageCreative))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57492,7 +57419,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The valid actions that a destination URL may perform if the user clicks on the
 	/// ad.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum DestinationUrlType {
@@ -57520,7 +57447,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// served via VAST 2.0 XML. It is displayed in a linear fashion with a video
 	/// (before, after, interrupting). This creative is read only.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57711,7 +57638,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// via VAST 2.0 XML. It is displayed in a linear fashion with a video (before,
 	/// after, interrupting). This creative is read only.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57916,7 +57843,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A mobile <code>Creative</code> that isn't supported by Google DFP, but was
 	/// migrated from DART. Creatives of this type cannot be created or modified.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -57927,7 +57854,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A <code>Creative</code> that contains an arbitrary HTML snippet and file assets.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58118,7 +58045,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='CustomCreative'>CustomCreative</a> and an asset. Any assets that are
 	/// associated with a creative can be inserted into its HTML snippet.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58160,7 +58087,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoRedirectCreative))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoCreative))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(SetTopBoxCreative))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58349,7 +58276,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>Creative</code> that contains externally hosted video ads and is served
 	/// via VAST XML.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58373,7 +58300,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An externally-hosted video asset.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58396,7 +58323,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Metadata for a video asset.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58641,7 +58568,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The different ways a video/flash can scale.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ScalableType {
@@ -58663,7 +58590,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Enum of supported mime types
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum MimeType {
@@ -58862,7 +58789,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The video delivery type.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum VideoDeliveryType {
@@ -58882,7 +58809,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>An externally hosted asset.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoRedirectAsset))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58907,7 +58834,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(RedirectAsset))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoRedirectAsset))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58919,7 +58846,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>Creative</code> that contains DFP-hosted video ads and is served via
 	/// VAST 2.0 XML. This creative is read-only.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58931,7 +58858,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>Creative</code> that will be served into cable set-top boxes. There are
 	/// no assets for this creative type, as they are hosted by external cable systems.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59014,7 +58941,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageRedirectOverlayCreative))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageRedirectCreative))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59040,7 +58967,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// and is served via VAST 2.0 XML. Overlays cover part of the video content they
 	/// are displayed on top of. This creative is read only.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59152,7 +59079,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A <code>Creative</code> that loads an image asset from a specified URL.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59193,7 +59120,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageOverlayCreative))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageCreative))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59249,7 +59176,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// 2.0 XML. Overlays cover part of the video content they are displayed on top of.
 	/// This creative is read only.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59375,7 +59302,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A <code>Creative</code> that displays an image.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59463,7 +59390,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashRedirectOverlayCreative))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashRedirectCreative))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59578,7 +59505,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// and is served via VAST 2.0 XML. Overlays cover part of the video content they
 	/// are displayed on top of.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59723,7 +59650,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The various ApiFramework types.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ApiFramework {
@@ -59737,7 +59664,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// remote flash asset cannot be served, a fallback image is used at an alternate
 	/// URL.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59751,7 +59678,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashOverlayCreative))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(FlashCreative))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -59913,7 +59840,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// via VAST 2.0 XML. Overlays cover part of the video content they are displayed on
 	/// top of. This creative is read-only.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -60073,7 +60000,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>Creative</code> that displays a Flash-based ad. If the Flash ad cannot
 	/// load, a fallback image is displayed instead.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -60191,7 +60118,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A fallback swiffy asset used for flash creatives.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -60244,7 +60171,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An HTML5 features required by HTML5 assets.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum Html5Feature {
@@ -60266,7 +60193,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='Size#isAspectRatio'>Size#isAspectRatio</a>. It can have multiple images
 	/// whose dimensions conform to that aspect ratio.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -60355,7 +60282,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// the customers' web servers or media servers. NOTE: The size attribute is not
 	/// used for click tracking creative and it will not be persisted upon save.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -60379,7 +60306,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>Creative</code> that is created by a Rich Media Studio.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(RichMediaStudioCreative))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -60759,7 +60686,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Different creative format supported by Rich Media Studio creative.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RichMediaStudioCreativeFormat {
@@ -60816,7 +60743,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Rich Media Studio creative artwork types.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RichMediaStudioCreativeArtworkType {
@@ -60836,7 +60763,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// by Rich Media Studio based on the content of the creative and is not
 	/// updateable.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RichMediaStudioCreativeBillingAttribute {
@@ -60872,7 +60799,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a child asset in <code>RichMediaStudioCreative</code>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61024,7 +60951,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Type of <code>RichMediaStudioChildAssetProperty</code>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "RichMediaStudioChildAssetProperty.Type", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum RichMediaStudioChildAssetPropertyType {
@@ -61046,7 +60973,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>Creative</code> that is created by a Rich Media Studio. You cannot
 	/// create this creative, but you can update some fields of this creative.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61120,7 +61047,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AdSenseCreative))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AdExchangeCreative))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AdMobBackfillCreative))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61133,7 +61060,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AdSenseCreative))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AdExchangeCreative))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61158,7 +61085,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An AdSense dynamic allocation creative.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61169,7 +61096,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An Ad Exchange dynamic allocation creative.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61240,7 +61167,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>An AdMob backfill creative.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61309,7 +61236,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides methods for creating, updating, and retrieving <a
 	/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ContentMetadataKeyHierarchyServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -61344,8 +61271,8 @@ namespace Google.Api.Ads.Dfp.v201702
 		}
 
 		/// <summary>Creates new <a
-		/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects. The
-		/// following fields are required: <ul> <li><a
+		/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects.
+		/// <p>The following fields are required:</p> <ul> <li><a
 		/// href='ContentMetadataKeyHierarchy#id'>ContentMetadataKeyHierarchy#id</a></li>
 		/// <li><a
 		/// href='ContentMetadataKeyHierarchy#name'>ContentMetadataKeyHierarchy#name</a></li>
@@ -61399,7 +61326,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 		/// <summary>Performs actions on <a
 		/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects that
-		/// match the given <a href='Statement#query'>Statement#query</a>.
+		/// match the given <a href=''>Statement#query</a>.
 		/// </summary><param name='contentMetadataKeyHierarchyAction'>the action to perform</param>
 		/// <param name='filterStatement'>a Publisher Query Language statement used to
 		/// filter a set of hierarchies</param>
@@ -61441,7 +61368,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteContentMetadataKeyHierarchies))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61453,7 +61380,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The action used for deleting <a
 	/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61465,7 +61392,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Captures a page of <a
 	/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61548,7 +61475,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>A <code>ContentMetadataKeyHierarchy</code> defines a hierarchical relationship
 	/// between content metadata keys.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61649,11 +61576,11 @@ namespace Google.Api.Ads.Dfp.v201702
 
 
 	/// <summary>A <code>ContentMetadataKeyHierarchyLevel</code> represents one level in a <a
-	/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a>. The level
-	/// consists of a <a href='CustomTargetingKey'>CustomTargetingKey</a> and an integer
-	/// that represents the level's position in the hierarchy.
+	/// href=''>ContentMetadataKeyHierarchy</a>. The level consists of a <a
+	/// href='CustomTargetingKey'>CustomTargetingKey</a> and an integer that represents
+	/// the level's position in the hierarchy.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61725,7 +61652,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents the status of a <a
 	/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ContentMetadataKeyHierarchyStatus {
@@ -61744,7 +61671,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Lists all errors associated with content hierarchies.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61782,7 +61709,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>The reasons for the <a
 	/// href='ContentMetadataKeyHierarchyError'>ContentMetadataKeyHierarchyError</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ContentMetadataKeyHierarchyError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ContentMetadataKeyHierarchyErrorReason {
@@ -61811,7 +61738,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// access to entities such as companies, inventory and orders and to override the
 	/// team's access type to orders for a user.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "UserTeamAssociationServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -61926,7 +61853,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='UserTeamAssociation'>UserTeamAssociation</a> objects.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteUserTeamAssociations))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61938,7 +61865,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Action to delete the association between a <a href='User'>User</a> and a <a
 	/// href='Team'>Team</a>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -61950,7 +61877,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Captures a page of <a href='UserTeamAssociation'>UserTeamAssociation</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -62034,7 +61961,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='Team'>Team</a> to provide the user access to the entities that belong to
 	/// the team.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -62075,7 +62002,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='UserRecord'>UserRecord</a> and a <a href='Team'>Team</a>.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(UserTeamAssociation))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -62191,7 +62118,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='#getSuggestedAdUnitsByStatement'>#getSuggestedAdUnitsByStatement</a> will
 	/// always return an empty page.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "SuggestedAdUnitServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -62282,7 +62209,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Represents the result of performing an action on <a
 	/// href='SuggestedAdUnit'>SuggestedAdUnit</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -62338,7 +62265,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='SuggestedAdUnit'>SuggestedAdUnit</a> objects.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ApproveSuggestedAdUnits))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -62349,7 +62276,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Action to approve <a href='SuggestedAdUnit'>SuggestedAdUnit</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -62362,7 +62289,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// on an ad tag that has been served at least ten times in the past week, but which
 	/// does not correspond to a defined ad unit. This type is read-only.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -62532,7 +62459,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Indicates the target platform.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum TargetPlatform {
@@ -62550,7 +62477,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Contains a page of <a href='SuggestedAdUnit'>SuggestedAdUnit</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -62633,7 +62560,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides methods for creating, updating and retrieving <a
 	/// href='Contact'>Contact</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "ContactServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -62738,7 +62665,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='Contact'>Contact</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -62823,7 +62750,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// associated to it, and can be invited to view their company's orders, line items,
 	/// creatives, and reports.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63032,7 +62959,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes the contact statuses.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "Contact.Status", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ContactStatus {
@@ -63067,7 +62994,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Base class for a <a href='Contact'>Contact</a>.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(Contact))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63078,7 +63005,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Errors associated with <code>Contact</code>.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63115,7 +63042,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>The reasons for the target error.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ContactError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum ContactErrorReason {
@@ -63129,7 +63056,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides methods for retrieving <a href='CreativeTemplate'>CreativeTemplate</a>
 	/// objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Web.Services.WebServiceBindingAttribute(Name = "CreativeTemplateServiceSoapBinding", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
@@ -63194,7 +63121,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Stores variable choices that users can select from
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63242,7 +63169,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ListStringCreativeTemplateVariable))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(LongCreativeTemplateVariable))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AssetCreativeTemplateVariable))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63332,7 +63259,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='TemplateCreative'>TemplateCreative</a> from the <a
 	/// href='TemplateCreative'>TemplateCreative</a></p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63391,7 +63318,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='TemplateCreative'>TemplateCreative</a>.</p>
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ListStringCreativeTemplateVariable))]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63421,7 +63348,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='TemplateCreative'>TemplateCreative</a> from a <a
 	/// href='CreativeTemplate'>CreativeTemplate</a>.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63477,7 +63404,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Represents a long variable defined in a creative template.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63521,7 +63448,7 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// href='TemplateCreative'>TemplateCreative</a> from the <a
 	/// href='TemplateCreative'>TemplateCreative</a>.</p>
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63546,7 +63473,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Different mime type that the asset variable supports.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AssetCreativeTemplateVariable.MimeType", Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum AssetCreativeTemplateVariableMimeType {
@@ -63559,7 +63486,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>A template upon which a creative can be created.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -63802,7 +63729,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes status of the creative template
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CreativeTemplateStatus {
@@ -63824,7 +63751,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Describes type of the creative template.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201702")]
 	public enum CreativeTemplateType {
@@ -63841,7 +63768,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Captures a page of <a href='CreativeTemplate'>CreativeTemplate</a> objects.
 	/// </summary>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.6.81.0")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.17929")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -65287,11 +65214,10 @@ namespace Google.Api.Ads.Dfp.v201702
 	/// <summary>Provides methods for creating and retrieving <a
 	/// href='ProductPackageItem'>ProductPackageItem</a> objects. <p>A <a
 	/// href='ProductPackageItem'>ProductPackageItem</a> represents a product which will
-	/// be associated with a <a href='ProductPackage'>ProductPackage</a>.</p> <p>To use
-	/// this service, you need to have the new sales management solution enabled on your
-	/// network. If you do not see a "Sales" tab in <a
-	/// href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you will
-	/// not be able to use this service.</p>
+	/// be associated with a <a href=''>ProductPackage</a>.</p> <p>To use this service,
+	/// you need to have the new sales management solution enabled on your network. If
+	/// you do not see a "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick
+	/// for Publishers (DFP)</a>, you will not be able to use this service.</p>
 	/// </summary>
 	public interface IProductPackageItemService
 	{
@@ -65412,10 +65338,8 @@ namespace Google.Api.Ads.Dfp.v201702
 		/// also the total number of units matching the line item's targeting. <p>Only line
 		/// items having type <a
 		/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a> or <a
-		/// href='LineItemType#STANDARD'>LineItemType#STANDARD</a> are valid. Other types
-		/// will result in <a
-		/// href='ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED'>ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED</a>.
-		/// </p>
+		/// href=''>LineItemType#STANDARD</a> are valid. Other types will result in <a
+		/// href=''>ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED</a>. </p>
 		/// </summary><param name='lineItemId'>the ID of a <a href='LineItem'>LineItem</a> to run the
 		/// forecast on.</param>
 		/// <param name='forecastOptions'>options controlling the forecast</param>
@@ -65733,7 +65657,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 	/// <summary>Provides methods for updating and retrieving <a href='Product'>Product</a>
 	/// objects. <p>A <code>Product</code> represents a line item proposal. Products are
-	/// generated from <a href='ProductTemplate'>product templates</a> on a periodic
+	/// generated from <a href=''>ProductTemplate product templates</a> on a periodic
 	/// basis using the product template's attributes. Products are typically used by
 	/// inventory managers to restrict what salespeople can sell.</p> <p>To use this
 	/// service, you need to have the new sales management solution enabled on your
@@ -66994,8 +66918,8 @@ namespace Google.Api.Ads.Dfp.v201702
 		}
 
 		/// <summary>Creates new <a
-		/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects. The
-		/// following fields are required: <ul> <li><a
+		/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects.
+		/// <p>The following fields are required:</p> <ul> <li><a
 		/// href='ContentMetadataKeyHierarchy#id'>ContentMetadataKeyHierarchy#id</a></li>
 		/// <li><a
 		/// href='ContentMetadataKeyHierarchy#name'>ContentMetadataKeyHierarchy#name</a></li>
@@ -67029,7 +66953,7 @@ namespace Google.Api.Ads.Dfp.v201702
 
 		/// <summary>Performs actions on <a
 		/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects that
-		/// match the given <a href='Statement#query'>Statement#query</a>.
+		/// match the given <a href=''>Statement#query</a>.
 		/// </summary><param name='contentMetadataKeyHierarchyAction'>the action to perform</param>
 		/// <param name='filterStatement'>a Publisher Query Language statement used to
 		/// filter a set of hierarchies</param>

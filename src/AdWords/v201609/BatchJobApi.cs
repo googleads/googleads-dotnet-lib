@@ -57,6 +57,9 @@ namespace Google.Api.Ads.AdWords.v201609 {
   public class BatchJobMutateResponse {
     private MutateResult[] rvalField;
 
+    /// <summary>
+    /// Gets or sets the mutate results.
+    /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("rval")]
     public MutateResult[] rval {
       get { return rvalField; }

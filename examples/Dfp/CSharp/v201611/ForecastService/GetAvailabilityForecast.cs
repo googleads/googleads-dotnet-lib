@@ -107,7 +107,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201611 {
         long matched = forecast.matchedUnits;
         double availablePercent = (double) (forecast.availableUnits / (matched * 1.0)) * 100;
         String unitType = forecast.unitType.ToString().ToLower();
-        Console.WriteLine("{0} {1} matched.\n{2}%  available.", matched, unitType,
+        Console.WriteLine("{0} {1} matched.\n{2}% {3}  available.", matched, unitType,
             availablePercent, unitType);
 
         if (forecast.possibleUnitsSpecified) {

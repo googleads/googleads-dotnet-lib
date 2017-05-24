@@ -60,16 +60,6 @@ namespace Google.Api.Ads.Common.Util {
     public const string SUMMARY_REQUEST_LOGS_SOURCE = "AdsClientLibs.SummaryRequestLogs";
 
     /// <summary>
-    /// Deprecated Trace source for detailed HTTP request logs.
-    /// </summary>
-    public const string DEPRECATED_DETAILED_REQUEST_LOGS_SOURCE = "AdsClientLibs.SoapXmlLogs";
-
-    /// <summary>
-    /// Deprecated Trace source for summarized HTTP request logs.
-    /// </summary>
-    private const string DEPRECATED_SUMMARY_REQUEST_LOGS_SOURCE = "AdsClientLibs.RequestInfoLogs";
-
-    /// <summary>
     /// The list of known Trace sources.
     /// </summary>
     private static readonly Dictionary<string, TraceSource> KNOWN_TRACE_SOURCES =
@@ -77,20 +67,13 @@ namespace Google.Api.Ads.Common.Util {
           {DEPRECATION_MESSAGES_SOURCE, new TraceSource(DEPRECATION_MESSAGES_SOURCE)},
           {GENERAL_WARNING_MESSAGES_SOURCE, new TraceSource(GENERAL_WARNING_MESSAGES_SOURCE)},
           {SUMMARY_REQUEST_LOGS_SOURCE, new TraceSource(SUMMARY_REQUEST_LOGS_SOURCE)},
-          {DEPRECATED_DETAILED_REQUEST_LOGS_SOURCE,
-                new TraceSource(DEPRECATED_DETAILED_REQUEST_LOGS_SOURCE)},
-          {DEPRECATED_SUMMARY_REQUEST_LOGS_SOURCE,
-                new TraceSource(DEPRECATED_SUMMARY_REQUEST_LOGS_SOURCE)},
-          {DETAILED_REQUEST_LOGS_SOURCE,
-                new TraceSource(DETAILED_REQUEST_LOGS_SOURCE)},
+          {DETAILED_REQUEST_LOGS_SOURCE, new TraceSource(DETAILED_REQUEST_LOGS_SOURCE)}
     };
 
     /// <summary>
     /// Initializes the <see cref="TraceUtilities"/> class.
     /// </summary>
-    static TraceUtilities() {
-      ShowDeprecationWarningsAboutDeprecatedLogSources();
-    }
+    static TraceUtilities() {}
 
     /// <summary>
     /// The Trace message id.
@@ -101,23 +84,6 @@ namespace Google.Api.Ads.Common.Util {
     private const int ADS_API_TRACE_ID = 1;
 
     /// <summary>
-    /// Shows the deprecation warnings about deprecated log sources.
-    /// </summary>
-    private static void ShowDeprecationWarningsAboutDeprecatedLogSources() {
-      string[] deprecatedLogSources = new string[] {
-        DEPRECATED_DETAILED_REQUEST_LOGS_SOURCE,
-        DEPRECATED_SUMMARY_REQUEST_LOGS_SOURCE
-      };
-
-      foreach (string deprecatedLogSource in deprecatedLogSources) {
-        if (KNOWN_TRACE_SOURCES[deprecatedLogSource].Listeners.Count > 0) {
-          WriteDeprecationWarnings(string.Format(CommonErrorMessages.UsingDeprecatedLogSource,
-              deprecatedLogSource));
-        }
-      }
-    }
-
-    /// <summary>
     /// Gets a Trace source by name.
     /// </summary>
     /// <param name="sourceName">Name of the Trace source.</param>
@@ -126,7 +92,7 @@ namespace Google.Api.Ads.Common.Util {
     /// unknown.</exception>
     public static TraceSource GetSource(string sourceName) {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       TraceSource source = CollectionUtilities.TryGetValue(KNOWN_TRACE_SOURCES, sourceName);
       if(source == null) {
@@ -142,10 +108,10 @@ namespace Google.Api.Ads.Common.Util {
     /// </summary>
     /// <param name="message">The message.</param>
     /// <remarks>The trace levels may be controlled from App.config by setting
-    /// the level for AdsClientLibs.DeprecationMessages trace switch. </remarks>
+    /// the level for AdsClientLibs.DeprecationMessages trace switch.</remarks>
     public static void WriteDeprecationWarnings(string message) {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       Write(DEPRECATION_MESSAGES_SOURCE, TraceEventType.Warning, message);
     }
@@ -155,10 +121,10 @@ namespace Google.Api.Ads.Common.Util {
     /// </summary>
     /// <param name="message">The message.</param>
     /// <remarks>The trace levels may be controlled from App.config by setting
-    /// the level for AdsClientLibs.GeneralWarningMessages trace switch. </remarks>
+    /// the level for AdsClientLibs.GeneralWarningMessages trace switch.</remarks>
     public static void WriteGeneralWarnings(string message) {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       Write(GENERAL_WARNING_MESSAGES_SOURCE, TraceEventType.Warning, message);
     }
@@ -168,10 +134,10 @@ namespace Google.Api.Ads.Common.Util {
     /// </summary>
     /// <param name="message">The message.</param>
     /// <remarks>The trace levels may be controlled from App.config by setting
-    /// the level for AdsClientLibs.GeneralWarningMessages trace switch. </remarks>
+    /// the level for AdsClientLibs.GeneralWarningMessages trace switch.</remarks>
     public static void WriteGeneralErrors(string message) {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       Write(GENERAL_WARNING_MESSAGES_SOURCE, TraceEventType.Error, message);
     }
@@ -182,14 +148,13 @@ namespace Google.Api.Ads.Common.Util {
     /// <param name="message">The HTTP request logs.</param>
     /// <param name="isError">Indicates whether or not these are error logs.</param>
     /// <remarks>The trace levels may be controlled from App.config by setting
-    /// the level for AdsClientLibs.SoapXmlLogs trace switch. </remarks>
+    /// the level for AdsClientLibs.DetailedRequestLogs trace switch.</remarks>
     public static void WriteDetailedRequestLogs(string message, Boolean isError) {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
-      TraceEventType type = isError ? TraceEventType.Error : TraceEventType.Information;
+      TraceEventType type = isError ? TraceEventType.Information : TraceEventType.Verbose;
       Write(DETAILED_REQUEST_LOGS_SOURCE, type, message);
-      Write(DEPRECATED_DETAILED_REQUEST_LOGS_SOURCE, type, message);
     }
 
     /// <summary>
@@ -198,14 +163,13 @@ namespace Google.Api.Ads.Common.Util {
     /// <param name="message">The summarized HTTP request logs.</param>
     /// <param name="isError">Indicates whether or not these are error logs.</param>
     /// <remarks>The trace levels may be controlled from App.config by setting
-    /// the level for AdsClientLibs.RequestInfoLogs trace switch. </remarks>
+    /// the level for AdsClientLibs.SummaryRequestLogs trace switch.</remarks>
     public static void WriteSummaryRequestLogs(string message, Boolean isError) {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
-      TraceEventType type = isError ? TraceEventType.Error : TraceEventType.Information;
+      TraceEventType type = isError ? TraceEventType.Warning : TraceEventType.Information;
       Write(SUMMARY_REQUEST_LOGS_SOURCE, type, message);
-      Write(DEPRECATED_SUMMARY_REQUEST_LOGS_SOURCE, type, message);
     }
 
     /// <summary>

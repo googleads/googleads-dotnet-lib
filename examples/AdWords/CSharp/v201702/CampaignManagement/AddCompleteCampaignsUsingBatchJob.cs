@@ -13,19 +13,15 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.Util.BatchJob.v201702;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text.RegularExpressions;
 using System.Threading;
-using Google.Api.Ads.AdWords.Util.BatchJob.v201702;
-using Google.Api.Ads.Common.Util;
-using System.Xml;
-using System.Net;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code sample illustrates how to use BatchJobService to create multiple
   /// complete campaigns, including ad groups and keywords.
@@ -35,7 +31,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <summary>
     /// The last ID that was automatically generated.
     /// </summary>
-    static long LAST_ID = -1;
+    private static long LAST_ID = -1;
 
     /// <summary>
     /// The number of campaigns to be added.
@@ -139,23 +135,23 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
         }
         operations.AddRange(adGroupOperations);
 
-        // Create and add operations to create new ad group criteria (keywords).
+        // Create and add operations to create new ad group ads (expanded text ads).
         foreach (AdGroupOperation adGroupOperation in adGroupOperations) {
           operations.AddRange(BuildAdGroupAdOperations(adGroupOperation.operand.id));
         }
 
-        // Create and add operations to create new ad group ads (expanded text ads).
+        // Create and add operations to create new ad group criteria (keywords).
         foreach (AdGroupOperation adGroupOperation in adGroupOperations) {
           operations.AddRange(BuildAdGroupCriterionOperations(adGroupOperation.operand.id));
         }
 
         BatchJobUtilities batchJobUploadHelper = new BatchJobUtilities(user);
- 
+
         // Create a resumable Upload URL to upload the operations.
         string resumableUploadUrl = batchJobUploadHelper.GetResumableUploadUrl(uploadUrl);
 
         // Use the BatchJobUploadHelper to upload all operations.
-        batchJobUploadHelper.Upload(resumableUploadUrl, operations.ToArray());
+        batchJobUploadHelper.Upload(resumableUploadUrl, operations);
 
         bool isCompleted = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
           TIME_TO_WAIT_FOR_COMPLETION, delegate(BatchJob waitBatchJob, long timeElapsed) {

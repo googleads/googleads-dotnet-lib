@@ -28,7 +28,6 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <NoWarn>42353,42354,42355</NoWarn>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -114,7 +113,6 @@
     <Compile Include="v201607\BasicOperations\UpdateCampaign.vb" />
     <Compile Include="v201607\BasicOperations\UpdateKeyword.vb" />
     <Compile Include="v201607\CampaignManagement\AddCampaignLabels.vb" />
-    <Compile Include="v201607\CampaignManagement\AddCompleteCampaignsUsingBatchJob.vb" />
     <Compile Include="v201607\CampaignManagement\AddDraft.vb" />
     <Compile Include="v201607\CampaignManagement\AddExperiment.vb" />
     <Compile Include="v201607\CampaignManagement\AddKeywordsUsingIncrementalBatchJob.vb" />
@@ -197,7 +195,6 @@
     <Compile Include="v201609\BasicOperations\UpdateCampaign.vb" />
     <Compile Include="v201609\BasicOperations\UpdateKeyword.vb" />
     <Compile Include="v201609\CampaignManagement\AddCampaignLabels.vb" />
-    <Compile Include="v201609\CampaignManagement\AddCompleteCampaignsUsingBatchJob.vb" />
     <Compile Include="v201609\CampaignManagement\AddDraft.vb" />
     <Compile Include="v201609\CampaignManagement\AddKeywordsUsingIncrementalBatchJob.vb" />
     <Compile Include="v201609\CampaignManagement\AddTrial.vb" />
@@ -279,7 +276,6 @@
     <Compile Include="v201702\BasicOperations\UpdateCampaign.vb" />
     <Compile Include="v201702\BasicOperations\UpdateKeyword.vb" />
     <Compile Include="v201702\CampaignManagement\AddCampaignLabels.vb" />
-    <Compile Include="v201702\CampaignManagement\AddCompleteCampaignsUsingBatchJob.vb" />
     <Compile Include="v201702\CampaignManagement\AddDraft.vb" />
     <Compile Include="v201702\CampaignManagement\AddKeywordsUsingIncrementalBatchJob.vb" />
     <Compile Include="v201702\CampaignManagement\AddTrial.vb" />
