@@ -133,7 +133,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a50a83610361537e241a9438d776720a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_content_service.html" title="Service for retrieving Content. ">ContentService</a> class.  <a href="#a50a83610361537e241a9438d776720a1">More...</a><br/></td></tr>
 <tr class="separator:a50a83610361537e241a9438d776720a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb5d6d634cbd7debf2178e1b74cf8c85"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_content_page.html">ContentPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_content_service.html#afb5d6d634cbd7debf2178e1b74cf8c85">getContentByStatement</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_statement.html">Statement</a> statement)</td></tr>
-<tr class="memdesc:afb5d6d634cbd7debf2178e1b74cf8c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering:  <a href="#afb5d6d634cbd7debf2178e1b74cf8c85">More...</a><br/></td></tr>
+<tr class="memdesc:afb5d6d634cbd7debf2178e1b74cf8c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="">Statement::query</a>. The following fields are supported for filtering:  <a href="#afb5d6d634cbd7debf2178e1b74cf8c85">More...</a><br/></td></tr>
 <tr class="separator:afb5d6d634cbd7debf2178e1b74cf8c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e72e4bd79c361396065b5917ee09947"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_content_page.html">ContentPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_content_service.html#a1e72e4bd79c361396065b5917ee09947">getContentByStatementAndCustomTargetingValue</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_statement.html">Statement</a> filterStatement, long customTargetingValueId)</td></tr>
 <tr class="memdesc:a1e72e4bd79c361396065b5917ee09947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. Additionally, filters on the given value ID and key ID that the value belongs to. The following fields are supported for filtering:  <a href="#a1e72e4bd79c361396065b5917ee09947">More...</a><br/></td></tr>
@@ -247,9 +247,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ab26e799ff18150b7452f9eb35a360022 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">virtual object[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#ab26e799ff18150b7452f9eb35a360022">MakeApiCall</a> (string methodName, object[] parameters)</td></tr>
 <tr class="memdesc:ab26e799ff18150b7452f9eb35a360022 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method makes the actual SOAP API call. It is a thin wrapper over SOAPHttpClientProtocol:Invoke, and provide things like protection from race condition.  <a href="#ab26e799ff18150b7452f9eb35a360022">More...</a><br/></td></tr>
 <tr class="separator:ab26e799ff18150b7452f9eb35a360022 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a538adedb5a2cf40993eba575a734ea62 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_error_handler.html">ErrorHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#a538adedb5a2cf40993eba575a734ea62">CreateErrorHandler</a> ()</td></tr>
-<tr class="memdesc:a538adedb5a2cf40993eba575a734ea62 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the error handler.  <a href="#a538adedb5a2cf40993eba575a734ea62">More...</a><br/></td></tr>
-<tr class="separator:a538adedb5a2cf40993eba575a734ea62 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a431f63b149f2ce36a8ebd3a5fd03c685 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">override WebRequest&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#a431f63b149f2ce36a8ebd3a5fd03c685">GetWebRequest</a> (Uri uri)</td></tr>
 <tr class="memdesc:a431f63b149f2ce36a8ebd3a5fd03c685 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a WebRequest instance for the specified url.  <a href="#a431f63b149f2ce36a8ebd3a5fd03c685">More...</a><br/></td></tr>
 <tr class="separator:a431f63b149f2ce36a8ebd3a5fd03c685 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -330,7 +327,7 @@ Call <a href="#getContentByStatementAndCustomTargetingValue">#getContentByStatem
 </table>
 </div><div class="memdoc">
 
-<p>Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering: </p>
+<p>Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="">Statement::query</a>. The following fields are supported for filtering: </p>
 <table class="doxtable">
 <tr>
 <th scope="col">PQL Property </th><th scope="col">Object Property  </th></tr>
@@ -342,6 +339,10 @@ Call <a href="#getContentByStatementAndCustomTargetingValue">#getContentByStatem
 <td><code>name</code> </td><td><a href="Content#name">Content::name</a>  </td></tr>
 <tr>
 <td><code>lastModifiedDateTime</code> </td><td><a href="Content#lastModifiedDateTime">Content::lastModifiedDateTime</a>  </td></tr>
+<tr>
+<td><code>lastDaiIngestDateTime</code> </td><td><a href="Content#lastDaiIngestDateTime">Content::lastDaiIngestDateTime</a>  </td></tr>
+<tr>
+<td><code>daiIngestStatus</code> </td><td><a href="Content#daiIngestStatus">Content::daiIngestStatus</a>  </td></tr>
 </table>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -455,7 +456,7 @@ Call <a href="#getContentByStatementAndCustomTargetingValue">#getContentByStatem
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.9oF88IYNxZ/dist/github/src/Dfp/v201611/<a class="el" href="v201611_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.UynQoF2wfJ/dist/github/src/Dfp/v201611/<a class="el" href="v201611_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -463,7 +464,7 @@ Call <a href="#getContentByStatementAndCustomTargetingValue">#getContentByStatem
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611.html">v201611</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_content_service.html">ContentService</a></li>
-    <li class="footer">Generated on Tue Mar 21 2017 13:00:24 for Ads API .NET library by
+    <li class="footer">Generated on Wed May 24 2017 11:53:05 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

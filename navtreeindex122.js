@@ -1,5 +1,15 @@
 var NAVTREEINDEX122 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_targeting_idea_page_1_1_fields.html":[1,0,0,0,0,0,5,417,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_targeting_idea_page_1_1_fields.html#a2ed7f5a34a6b27ce2913498fd03f6100":[1,0,0,0,0,0,5,417,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_targeting_idea_page_1_1_filterable_fields.html":[1,0,0,0,0,0,5,417,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_targeting_idea_page_1_1_filterable_fields.html#a5db94ff182738d3b52b48ebfd2258338":[1,0,0,0,0,0,5,417,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_targeting_idea_page_1_1_selectable_fields.html":[1,0,0,0,0,0,5,417,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_targeting_idea_page_1_1_selectable_fields.html#aef0593b89e39b44e488a726a43eddb04":[1,0,0,0,0,0,5,417,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_targeting_idea_selector.html":[1,0,0,0,0,0,5,431],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_targeting_idea_selector.html#a1fef53d94d9ad6bb941f26725d4079c8":[1,0,0,0,0,0,5,431,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_targeting_idea_selector.html#a2be14f26827cd3f2051e9ffc45398459":[1,0,0,0,0,0,5,431,11],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_targeting_idea_selector.html#a4b84abe56b5db38e81e0991fb002803f":[1,0,0,0,0,0,5,431,5],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_targeting_idea_selector.html#a63b7f3763cd61039602ba262e284a46c":[1,0,0,0,0,0,5,431,7],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_targeting_idea_selector.html#a997cafa51be0abfb86e14192e3c0a014":[1,0,0,0,0,0,5,431,8],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_targeting_idea_selector.html#a9a5310572f95b3ebe4a52c286177c469":[1,0,0,0,0,0,5,431,6],
@@ -239,15 +249,5 @@ var NAVTREEINDEX122 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_universal_app_campaign_setting.html#acbeaf9791e4562950a0e65c1699fa9ac":[1,0,0,0,0,0,5,177,5],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_universal_app_campaign_setting.html#ad546875ab3adbae58c978e4f0ac1aac0":[1,0,0,0,0,0,5,177,10],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_universal_app_campaign_setting.html#ae0efad0a518c83122cd9d7a136ce3e02":[1,0,0,0,0,0,5,177,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_universal_app_campaign_setting.html#ae176899d98c4674d5cd4af09f65fb05f":[1,0,0,0,0,0,5,177,7],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_universal_app_campaign_setting_1_1_fields.html":[1,0,0,0,0,0,5,177,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_universal_app_campaign_setting_1_1_fields.html#a20d8524d4d9874e8c2625cc4bccd482b":[1,0,0,0,0,0,5,177,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_universal_app_campaign_setting_1_1_filterable_fields.html":[1,0,0,0,0,0,5,177,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_universal_app_campaign_setting_1_1_filterable_fields.html#a42a694d899d176f80c73430ad7784a03":[1,0,0,0,0,0,5,177,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_universal_app_campaign_setting_1_1_selectable_fields.html":[1,0,0,0,0,0,5,177,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_universal_app_campaign_setting_1_1_selectable_fields.html#aaefb96bfc28938a9d8c76190ed87c188":[1,0,0,0,0,0,5,177,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_unknown_product_dimension.html":[1,0,0,0,0,0,5,125],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_upload_call_conversion.html":[1,0,0,0,0,0,5,233],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_upload_call_conversion.html#a3d84acbc0be3cf9186f7cdf53abd25fa":[1,0,0,0,0,0,5,233,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_upload_conversion.html":[1,0,0,0,0,0,5,232]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_universal_app_campaign_setting.html#ae176899d98c4674d5cd4af09f65fb05f":[1,0,0,0,0,0,5,177,7]
 };

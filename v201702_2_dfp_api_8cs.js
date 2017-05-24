@@ -1084,6 +1084,9 @@ var v201702_2_dfp_api_8cs =
       [ "CONTACT", "v201702_2_dfp_api_8cs.html#a570317697cdc7eeb2fa9c7a7e9c373b8ac0241eae411627c19ba9835b6d194b1c", null ],
       [ "CREATIVE", "v201702_2_dfp_api_8cs.html#a570317697cdc7eeb2fa9c7a7e9c373b8a7c4ce9f5ea267332b6998e2f0315c452", null ],
       [ "CREATIVE_SET", "v201702_2_dfp_api_8cs.html#a570317697cdc7eeb2fa9c7a7e9c373b8abc52065f4d165fed7061052b962c06a8", null ],
+      [ "CUSTOM_FIELD", "v201702_2_dfp_api_8cs.html#a570317697cdc7eeb2fa9c7a7e9c373b8a64f8167c6270da0442977ba121d9d381", null ],
+      [ "CUSTOM_KEY", "v201702_2_dfp_api_8cs.html#a570317697cdc7eeb2fa9c7a7e9c373b8ab03ca52da488f8b84719626d2aa4c331", null ],
+      [ "CUSTOM_VALUE", "v201702_2_dfp_api_8cs.html#a570317697cdc7eeb2fa9c7a7e9c373b8a5690a6ad9e5b72dcb5dfaa936dd07ef0", null ],
       [ "PLACEMENT", "v201702_2_dfp_api_8cs.html#a570317697cdc7eeb2fa9c7a7e9c373b8ad5829bb83e9a51bb48fb0a1e5d77423e", null ],
       [ "AD_UNIT", "v201702_2_dfp_api_8cs.html#a570317697cdc7eeb2fa9c7a7e9c373b8a8b4140b90ca5f71abbe95bd849d45034", null ],
       [ "LABEL", "v201702_2_dfp_api_8cs.html#a570317697cdc7eeb2fa9c7a7e9c373b8a6f434c508ad901b8667ed22f713e52bb", null ],
@@ -3812,7 +3815,8 @@ var v201702_2_dfp_api_8cs =
     ] ],
     [ "ValueSourceType", "v201702_2_dfp_api_8cs.html#a8535f3c6d42c080594f3c90bebebc373", [
       [ "PARENT", "v201702_2_dfp_api_8cs.html#a8535f3c6d42c080594f3c90bebebc373a654549fd15738332e933b52baf3cbc65", null ],
-      [ "DIRECTLY_SPECIFIED", "v201702_2_dfp_api_8cs.html#a8535f3c6d42c080594f3c90bebebc373ab1b50184f1c359fc3b269d3dd92eb2d3", null ]
+      [ "DIRECTLY_SPECIFIED", "v201702_2_dfp_api_8cs.html#a8535f3c6d42c080594f3c90bebebc373ab1b50184f1c359fc3b269d3dd92eb2d3", null ],
+      [ "UNKNOWN", "v201702_2_dfp_api_8cs.html#a8535f3c6d42c080594f3c90bebebc373a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "VastRedirectType", "v201702_2_dfp_api_8cs.html#a278385885144906bd85b5b3d891f5e34", [
       [ "LINEAR", "v201702_2_dfp_api_8cs.html#a278385885144906bd85b5b3d891f5e34aaac544aacc3615aada24897a215f5046", null ],

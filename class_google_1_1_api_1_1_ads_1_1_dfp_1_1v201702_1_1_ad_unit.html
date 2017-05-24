@@ -192,7 +192,7 @@ Properties</h2></td></tr>
 <tr class="memdesc:a49c8ef330aa1ad0a90a91c3b750f4fd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The date and time this ad unit was last modified.  <a href="#a49c8ef330aa1ad0a90a91c3b750f4fd5">More...</a><br/></td></tr>
 <tr class="separator:a49c8ef330aa1ad0a90a91c3b750f4fd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a554d698c0c622354d29ceed83771e2b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702.html#ae327e2c95bde8e268b7512867732b61d">SmartSizeMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_ad_unit.html#a554d698c0c622354d29ceed83771e2b8">smartSizeMode</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a554d698c0c622354d29ceed83771e2b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The smart size mode for this ad unit. This attribute is optional and defaults to <a href="SmartSizeMode#NONE">SmartSizeMode::NONE</a> for fixed sizes.  <a href="#a554d698c0c622354d29ceed83771e2b8">More...</a><br/></td></tr>
+<tr class="memdesc:a554d698c0c622354d29ceed83771e2b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The smart size mode for this ad unit. This attribute is optional and defaults to <a href="">SmartSizeMode::NONE</a> for fixed sizes.  <a href="#a554d698c0c622354d29ceed83771e2b8">More...</a><br/></td></tr>
 <tr class="separator:a554d698c0c622354d29ceed83771e2b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ac08a1206d7779c51acc332835c1b29"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_ad_unit.html#a7ac08a1206d7779c51acc332835c1b29">smartSizeModeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a7ac08a1206d7779c51acc332835c1b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -355,6 +355,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>If this ad unit is shared by a distributor network, then this field will contain data describing that distributor network. This attribute is read-only. </p>
+<p>This field is deprecated.</p>
 
 </div>
 </div>
@@ -673,6 +674,7 @@ Properties</h2></td></tr>
 
 <p>Whether this ad unit is shared by a distributor network. When this field is </p>
 <p><code>true</code>, then <code>crossSellingDistributor</code> will contain data for the distributor network. This attribute is read-only. </p>
+<p>This field is deprecated.</p>
 
 </div>
 </div>
@@ -855,6 +857,7 @@ Properties</h2></td></tr>
 
 <p>The unique ID of the <a href="Company">Company</a>, which is of type <a href="Company.Type#AFFILIATE_DISTRIBUTION_PARTNER">Company.Type::AFFILIATE_DISTRIBUTION_PARTNER</a>, to which this ad unit belongs. This attribute is optional. Setting this attribute to </p>
 <p><code>null</code> will disassociate the partner from this ad unit. </p>
+<p>This field is deprecated. All companies of type <a href="Company.Type#AFFILIATE_DISTRIBUTION_PARTNER">Company.Type::AFFILIATE_DISTRIBUTION_PARTNER</a> were changed to <a href="Company.Type#PARTNER">Company.Type::PARTNER</a>.</p>
 
 </div>
 </div>
@@ -944,7 +947,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The smart size mode for this ad unit. This attribute is optional and defaults to <a href="SmartSizeMode#NONE">SmartSizeMode::NONE</a> for fixed sizes. </p>
+<p>The smart size mode for this ad unit. This attribute is optional and defaults to <a href="">SmartSizeMode::NONE</a> for fixed sizes. </p>
 
 </div>
 </div>
@@ -1063,7 +1066,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.9oF88IYNxZ/dist/github/src/Dfp/v201702/<a class="el" href="v201702_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.UynQoF2wfJ/dist/github/src/Dfp/v201702/<a class="el" href="v201702_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1071,7 +1074,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702.html">v201702</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_ad_unit.html">AdUnit</a></li>
-    <li class="footer">Generated on Tue Mar 21 2017 13:00:29 for Ads API .NET library by
+    <li class="footer">Generated on Wed May 24 2017 11:53:09 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

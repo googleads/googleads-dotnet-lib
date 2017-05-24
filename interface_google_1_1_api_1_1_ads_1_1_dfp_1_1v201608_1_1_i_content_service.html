@@ -127,7 +127,7 @@ Inheritance diagram for Google.Api.Ads.Dfp.v201608.IContentService:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aeebe797145226f6211c64c24ca6d2cd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_page.html">ContentPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_i_content_service.html#aeebe797145226f6211c64c24ca6d2cd7">getContentByStatement</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_statement.html">Statement</a> statement)</td></tr>
-<tr class="memdesc:aeebe797145226f6211c64c24ca6d2cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering:  <a href="#aeebe797145226f6211c64c24ca6d2cd7">More...</a><br/></td></tr>
+<tr class="memdesc:aeebe797145226f6211c64c24ca6d2cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="">Statement::query</a>. The following fields are supported for filtering:  <a href="#aeebe797145226f6211c64c24ca6d2cd7">More...</a><br/></td></tr>
 <tr class="separator:aeebe797145226f6211c64c24ca6d2cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6675685e6cab1e882af910dfbc568d1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_page.html">ContentPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_i_content_service.html#a6675685e6cab1e882af910dfbc568d1f">getContentByStatementAndCustomTargetingValue</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_statement.html">Statement</a> filterStatement, long customTargetingValueId)</td></tr>
 <tr class="memdesc:a6675685e6cab1e882af910dfbc568d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. Additionally, filters on the given value ID and key ID that the value belongs to. The following fields are supported for filtering:  <a href="#a6675685e6cab1e882af910dfbc568d1f">More...</a><br/></td></tr>
@@ -169,7 +169,7 @@ Call <a href="#getContentByStatementAndCustomTargetingValue">#getContentByStatem
       </table>
 </div><div class="memdoc">
 
-<p>Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering: </p>
+<p>Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="">Statement::query</a>. The following fields are supported for filtering: </p>
 <table class="doxtable">
 <tr>
 <th scope="col">PQL Property </th><th scope="col">Object Property  </th></tr>
@@ -181,6 +181,10 @@ Call <a href="#getContentByStatementAndCustomTargetingValue">#getContentByStatem
 <td><code>name</code> </td><td><a href="Content#name">Content::name</a>  </td></tr>
 <tr>
 <td><code>lastModifiedDateTime</code> </td><td><a href="Content#lastModifiedDateTime">Content::lastModifiedDateTime</a>  </td></tr>
+<tr>
+<td><code>lastDaiIngestDateTime</code> </td><td><a href="Content#lastDaiIngestDateTime">Content::lastDaiIngestDateTime</a>  </td></tr>
+<tr>
+<td><code>daiIngestStatus</code> </td><td><a href="Content#daiIngestStatus">Content::daiIngestStatus</a>  </td></tr>
 </table>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -286,7 +290,7 @@ Call <a href="#getContentByStatementAndCustomTargetingValue">#getContentByStatem
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/tmp/tmp.9oF88IYNxZ/dist/github/src/Dfp/v201608/<a class="el" href="v201608_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.UynQoF2wfJ/dist/github/src/Dfp/v201608/<a class="el" href="v201608_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -294,7 +298,7 @@ Call <a href="#getContentByStatementAndCustomTargetingValue">#getContentByStatem
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608.html">v201608</a></li><li class="navelem"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_i_content_service.html">IContentService</a></li>
-    <li class="footer">Generated on Tue Mar 21 2017 13:00:21 for Ads API .NET library by
+    <li class="footer">Generated on Wed May 24 2017 11:53:02 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

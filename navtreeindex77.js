@@ -1,5 +1,15 @@
 var NAVTREEINDEX77 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#accc444f2e25a23e43c9fa343b0e9c954":[1,0,0,0,0,0,3,1,2,35,37],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#acd56b9e0a6eb662d5786e044a11927c2":[1,0,0,0,0,0,3,1,2,35,53],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#ad0cdb001beb5cc144aaa7b6a783bddaa":[1,0,0,0,0,0,3,1,2,35,15],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#ad441331f0989192c80767376dd4c30f8":[1,0,0,0,0,0,3,1,2,35,31],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#ad784c5400cd17b768e7e3e4f74bf0994":[1,0,0,0,0,0,3,1,2,35,43],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#ada01e5e044dcda62fae4b81242b90365":[1,0,0,0,0,0,3,1,2,35,32],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#aee524b7efd4086d05dc19bc4e4edc90e":[1,0,0,0,0,0,3,1,2,35,14],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#aef0eac2cefa2a530ff041be33d426ec5":[1,0,0,0,0,0,3,1,2,35,45],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#af48c8b16de16ec2eff2fd208162849cb":[1,0,0,0,0,0,3,1,2,35,71],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#af677472b6b6768b05dfb02a5b662bb83":[1,0,0,0,0,0,3,1,2,35,67],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#af68802cfac2e271b3cc266691afb92d2":[1,0,0,0,0,0,3,1,2,35,23],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#afdd4365026d3d4c29cf511b4c068a7f6":[1,0,0,0,0,0,3,1,2,35,72],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#aff60d23942d466d3ac69917e5d03638b":[1,0,0,0,0,0,3,1,2,35,11],
@@ -239,15 +249,5 @@ var NAVTREEINDEX77 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_user_ad_distance_report_report_row.html#a6d96f1591d1c61b7c55c8adeac3130a6a9895fdad54073560d8fe3b17152ed246":[1,0,0,0,0,0,3,1,2,34,6,10],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_user_ad_distance_report_report_row.html#a6d96f1591d1c61b7c55c8adeac3130a6a9a0e9d43edc5fec08f768f3de838f106":[1,0,0,0,0,0,3,1,2,34,6,6],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_user_ad_distance_report_report_row.html#a6d96f1591d1c61b7c55c8adeac3130a6aa160f5f7f3e232535720591e563b8a38":[1,0,0,0,0,0,3,1,2,34,6,22],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_user_ad_distance_report_report_row.html#a6d96f1591d1c61b7c55c8adeac3130a6ab9bf5c209ccc486a92eca437562d075b":[1,0,0,0,0,0,3,1,2,34,6,5],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_user_ad_distance_report_report_row.html#a6d96f1591d1c61b7c55c8adeac3130a6abbf5547d58d0bcbca51ed6ac748a0275":[1,0,0,0,0,0,3,1,2,34,6,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_user_ad_distance_report_report_row.html#a6d96f1591d1c61b7c55c8adeac3130a6abe25776fa91444b6d85c015efeddfc0e":[1,0,0,0,0,0,3,1,2,34,6,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_user_ad_distance_report_report_row.html#a6d96f1591d1c61b7c55c8adeac3130a6ad225a057e57387a536cc92d3167f7adb":[1,0,0,0,0,0,3,1,2,34,6,13],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_user_ad_distance_report_report_row.html#a6d96f1591d1c61b7c55c8adeac3130a6aec55f7eb63ed98fc3574156cbf15edaf":[1,0,0,0,0,0,3,1,2,34,6,7],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_user_ad_distance_report_report_row.html#a6d96f1591d1c61b7c55c8adeac3130a6aed494c7bd1040ec6c72d1d93f577f48b":[1,0,0,0,0,0,3,1,2,34,6,14],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_user_ad_distance_report_report_row.html#a6d96f1591d1c61b7c55c8adeac3130a6aeec38469ba69b3a6dbd48d14a8b4e05e":[1,0,0,0,0,0,3,1,2,34,6,17],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_user_ad_distance_report_report_row.html#a6d96f1591d1c61b7c55c8adeac3130a6af34329903203943c6df6bd04e7489b06":[1,0,0,0,0,0,3,1,2,34,6,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_user_ad_distance_report_report_row.html#a73556827badbf1ddadf5371aa6c272ea":[1,0,0,0,0,0,3,1,2,34,8],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_user_ad_distance_report_report_row.html#a74d844ccacd74993d3eb225ca762b5a0":[1,0,0,0,0,0,3,1,2,34,11],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_user_ad_distance_report_report_row.html#a756cdf1ba62ff5e4fa4258708b627d17":[1,0,0,0,0,0,3,1,2,34,13]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_user_ad_distance_report_report_row.html#a6d96f1591d1c61b7c55c8adeac3130a6ab9bf5c209ccc486a92eca437562d075b":[1,0,0,0,0,0,3,1,2,34,6,5]
 };

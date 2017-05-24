@@ -472,7 +472,8 @@ not using programmatic guaranteed, using sales management. </li>
 </div><div class="memdoc">
 
 <p>Overrides the billing base of this </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_proposal_line_item.html" title="A ">ProposalLineItem</a></code>. This attribute is optional. If this field is overridden, then other required billing fields (<a href="#billingCap">#billingCap</a>, <a href="#billingSchedule">#billingSchedule</a>, or <a href="#billingSource">#billingSource</a>) also need to be overridden depending on the <a href="#billingSource">#billingSource</a>. That is, none of the billing fields will inherit from their <a href="Proposal">Proposal</a> object anymore. This attribute can be configured as editable after the proposal has been submitted. Please check with your network administrator for editable fields configuration. <span class="constraint Applicable">This attribute is applicable when:</span> </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_proposal_line_item.html" title="A ">ProposalLineItem</a></code>. This attribute is optional. </p>
+<p>If this field is overridden, then other required billing fields (<a href="#billingCap">#billingCap</a>, <a href="">#billingSchedule</a>, or <a href="#billingSource">#billingSource</a>) also need to be overridden depending on the <a href="#billingSource">#billingSource</a>. That is, none of the billing fields will inherit from their <a href="">Proposal</a> object anymore. This attribute can be configured as editable after the proposal has been submitted. Please check with your network administrator for editable fields configuration. <span class="constraint Applicable">This attribute is applicable when:</span></p>
 <ul>
 <li>
 not using programmatic guaranteed, using sales management. </li>
@@ -1162,7 +1163,7 @@ The line item has a percentage based goal or cap. </li>
 </div><div class="memdoc">
 
 <p>The unique ID of corresponding <a href="LineItem">LineItem</a>. This will be </p>
-<p><code>null</code> if the <a href="Proposal">Proposal</a> has not been pushed to DFP. This attribute is read-only. </p>
+<p><code>null</code> if the <a href="">Proposal</a> has not been pushed to DFP. This attribute is read-only. </p>
 
 </div>
 </div>
@@ -1370,7 +1371,7 @@ The line item has a percentage based goal or cap. </li>
 </div><div class="memdoc">
 
 <p>The goal(i.e. contracted quantity, quantity or limit) that this </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_proposal_line_item.html" title="A ">ProposalLineItem</a></code> is associated with, which is used in its pacing and budgeting. <a href="Goal#units">Goal::units</a> must be greater than 0 when the proposal line item turns into a line item, <a href="Goal#goalType">Goal::goalType</a> and <a href="Goal#unitType">Goal::unitType</a> are readonly. This attribute is required. </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_proposal_line_item.html" title="A ">ProposalLineItem</a></code> is associated with, which is used in its pacing and budgeting. <a href="Goal#units">Goal::units</a> must be greater than 0 when the proposal line item turns into a line item, <a href="Goal#goalType">Goal::goalType</a> and <a href="">Goal::unitType</a> are readonly. This attribute is required. </p>
 
 </div>
 </div>
@@ -1659,7 +1660,8 @@ not using programmatic guaranteed, using sales management. </li>
 </div><div class="memdoc">
 
 <p>The date and time this </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_proposal_line_item.html" title="A ">ProposalLineItem</a></code> was last modified. This attribute is assigned by <a class="el" href="namespace_google.html">Google</a> when a <code></code> is updated. This attribute is read-only. </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_proposal_line_item.html" title="A ">ProposalLineItem</a></code> was last modified. </p>
+<p>This attribute is assigned by <a class="el" href="namespace_google.html">Google</a> when a <code></code> is updated. This attribute is read-only.</p>
 
 </div>
 </div>
@@ -2608,7 +2610,7 @@ not using programmatic guaranteed, using sales management. </li>
 </div><div class="memdoc">
 
 <p>The time zone ID in tz database format (e.g. "America/Los_Angeles") for this </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_proposal_line_item.html" title="A ">ProposalLineItem</a></code>. The number of serving days is calculated in this time zone. So if <a href="#rateType">#rateType</a> is <a href="RateType#CPD">RateType::CPD</a>, it will affect the cost calculation. The <a href="#startDateTime">#startDateTime</a> and <a href="#endDateTime">#endDateTime</a> will be returned in this time zone. This attribute is optional and defaults to the network's time zone. <span class="constraint ReadOnly">This attribute is read-only when:</span> </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_proposal_line_item.html" title="A ">ProposalLineItem</a></code>. The number of serving days is calculated in this time zone. So if <a href="">#rateType</a> is <a href="RateType#CPD">RateType::CPD</a>, it will affect the cost calculation. The <a href="">#startDateTime</a> and <a href="#endDateTime">#endDateTime</a> will be returned in this time zone. This attribute is optional and defaults to the network's time zone. <span class="constraint ReadOnly">This attribute is read-only when:</span> </p>
 <ul>
 <li>
 using programmatic guaranteed, using sales management. </li>
@@ -2715,7 +2717,7 @@ not using programmatic guaranteed, using sales management. </li>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.9oF88IYNxZ/dist/github/src/Dfp/v201702/<a class="el" href="v201702_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.UynQoF2wfJ/dist/github/src/Dfp/v201702/<a class="el" href="v201702_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -2723,7 +2725,7 @@ not using programmatic guaranteed, using sales management. </li>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702.html">v201702</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_proposal_line_item.html">ProposalLineItem</a></li>
-    <li class="footer">Generated on Tue Mar 21 2017 13:00:29 for Ads API .NET library by
+    <li class="footer">Generated on Wed May 24 2017 11:53:09 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

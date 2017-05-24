@@ -329,7 +329,6 @@ var namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611 =
     [ "PublisherQueryLanguageService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_publisher_query_language_service.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_publisher_query_language_service" ],
     [ "Row", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_row.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_row" ],
     [ "TargetingValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_targeting_value.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_targeting_value" ],
-    [ "ChangeHistoryValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_change_history_value.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_change_history_value" ],
     [ "ColumnType", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_column_type.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_column_type" ],
     [ "ResultSet", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_result_set.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_result_set" ],
     [ "InventoryUnitError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_unit_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_unit_error" ],

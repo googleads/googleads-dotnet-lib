@@ -131,7 +131,7 @@ Properties</h2></td></tr>
 <tr class="memdesc:a98f414ee265fb0b91d00a6f65318424c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The path to this ad unit in the ad unit hierarchy represented as a list from the root to this ad unit's parent. For root ad units, this list is empty. This attribute is read-only and is populated by <a class="el" href="namespace_google.html">Google</a>.  <a href="#a98f414ee265fb0b91d00a6f65318424c">More...</a><br/></td></tr>
 <tr class="separator:a98f414ee265fb0b91d00a6f65318424c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25c7a7f37d9c017c9422e6083abf3ebb"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_ad_unit.html#a25c7a7f37d9c017c9422e6083abf3ebb">name</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a25c7a7f37d9c017c9422e6083abf3ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the ad unit. This attribute is required and its maximum length is 255 characters. This attribute must also be case-insensitive unique. Beginning in V201311, this attribute can be updated. In versions before v201311, this attribute is read-only after creation.  <a href="#a25c7a7f37d9c017c9422e6083abf3ebb">More...</a><br/></td></tr>
+<tr class="memdesc:a25c7a7f37d9c017c9422e6083abf3ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the ad unit. This attribute is required and its maximum length is 255 characters. This attribute must also be case-insensitive unique.  <a href="#a25c7a7f37d9c017c9422e6083abf3ebb">More...</a><br/></td></tr>
 <tr class="separator:a25c7a7f37d9c017c9422e6083abf3ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86e4435716c80cc5a3059596dab69085"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_ad_unit.html#a86e4435716c80cc5a3059596dab69085">description</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a86e4435716c80cc5a3059596dab69085"><td class="mdescLeft">&#160;</td><td class="mdescRight">A description of the ad unit. This value is optional and its maximum length is 65,535 characters.  <a href="#a86e4435716c80cc5a3059596dab69085">More...</a><br/></td></tr>
@@ -147,7 +147,7 @@ Properties</h2></td></tr>
 <tr class="memitem:a17714dcbba6c084432535e982263a7f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_ad_unit.html#a17714dcbba6c084432535e982263a7f0">statusSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a17714dcbba6c084432535e982263a7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa880ee849c947edc117f1883ce6481cd"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_ad_unit.html#aa880ee849c947edc117f1883ce6481cd">adUnitCode</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa880ee849c947edc117f1883ce6481cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A string used to uniquely identify the ad unit for the purposes of serving the ad. Beginning in V201311, this attribute is optional and can be set during ad unit creation. If it is not provided, it will be assigned by <a class="el" href="namespace_google.html">Google</a> based off of the inventory unit ID. Before V201311, this attribute is read-only and assigned by <a class="el" href="namespace_google.html">Google</a>. Once an ad unit is created, its  <a href="#aa880ee849c947edc117f1883ce6481cd">More...</a><br/></td></tr>
+<tr class="memdesc:aa880ee849c947edc117f1883ce6481cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A string used to uniquely identify the ad unit for the purposes of serving the ad. This attribute is optional and can be set during ad unit creation. If it is not provided, it will be assigned by <a class="el" href="namespace_google.html">Google</a> based off of the inventory unit ID. Once an ad unit is created, its  <a href="#aa880ee849c947edc117f1883ce6481cd">More...</a><br/></td></tr>
 <tr class="separator:aa880ee849c947edc117f1883ce6481cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54155d17ebdf3241ed40967a9f3131d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_ad_unit_size.html">AdUnitSize</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_ad_unit.html#a54155d17ebdf3241ed40967a9f3131d1">adUnitSizes</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a54155d17ebdf3241ed40967a9f3131d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The permissible creative sizes that can be served inside this ad unit. This attribute is optional. This attribute replaces the  <a href="#a54155d17ebdf3241ed40967a9f3131d1">More...</a><br/></td></tr>
@@ -192,7 +192,7 @@ Properties</h2></td></tr>
 <tr class="memdesc:a57ce44c4f665458ed7c7665ef75a953e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The date and time this ad unit was last modified.  <a href="#a57ce44c4f665458ed7c7665ef75a953e">More...</a><br/></td></tr>
 <tr class="separator:a57ce44c4f665458ed7c7665ef75a953e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae02d14f1a8ebb2d0c26580f374d44fa2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611.html#a062142c08185f3368730599f5d8b722b">SmartSizeMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_ad_unit.html#ae02d14f1a8ebb2d0c26580f374d44fa2">smartSizeMode</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ae02d14f1a8ebb2d0c26580f374d44fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The smart size mode for this ad unit. This attribute is optional and defaults to <a href="SmartSizeMode#NONE">SmartSizeMode::NONE</a> for fixed sizes.  <a href="#ae02d14f1a8ebb2d0c26580f374d44fa2">More...</a><br/></td></tr>
+<tr class="memdesc:ae02d14f1a8ebb2d0c26580f374d44fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The smart size mode for this ad unit. This attribute is optional and defaults to <a href="">SmartSizeMode::NONE</a> for fixed sizes.  <a href="#ae02d14f1a8ebb2d0c26580f374d44fa2">More...</a><br/></td></tr>
 <tr class="separator:ae02d14f1a8ebb2d0c26580f374d44fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06b5d8371ebeecfb019f2d96852f8fbf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_ad_unit.html#a06b5d8371ebeecfb019f2d96852f8fbf">smartSizeModeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a06b5d8371ebeecfb019f2d96852f8fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -240,7 +240,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>A string used to uniquely identify the ad unit for the purposes of serving the ad. Beginning in V201311, this attribute is optional and can be set during ad unit creation. If it is not provided, it will be assigned by <a class="el" href="namespace_google.html">Google</a> based off of the inventory unit ID. Before V201311, this attribute is read-only and assigned by <a class="el" href="namespace_google.html">Google</a>. Once an ad unit is created, its </p>
+<p>A string used to uniquely identify the ad unit for the purposes of serving the ad. This attribute is optional and can be set during ad unit creation. If it is not provided, it will be assigned by <a class="el" href="namespace_google.html">Google</a> based off of the inventory unit ID. Once an ad unit is created, its </p>
 <p><code>adUnitCode</code> cannot be changed. </p>
 
 </div>
@@ -355,6 +355,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>If this ad unit is shared by a distributor network, then this field will contain data describing that distributor network. This attribute is read-only. </p>
+<p>This field is deprecated.</p>
 
 </div>
 </div>
@@ -673,6 +674,7 @@ Properties</h2></td></tr>
 
 <p>Whether this ad unit is shared by a distributor network. When this field is </p>
 <p><code>true</code>, then <code>crossSellingDistributor</code> will contain data for the distributor network. This attribute is read-only. </p>
+<p>This field is deprecated.</p>
 
 </div>
 </div>
@@ -785,7 +787,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The name of the ad unit. This attribute is required and its maximum length is 255 characters. This attribute must also be case-insensitive unique. Beginning in V201311, this attribute can be updated. In versions before v201311, this attribute is read-only after creation. </p>
+<p>The name of the ad unit. This attribute is required and its maximum length is 255 characters. This attribute must also be case-insensitive unique. </p>
 
 </div>
 </div>
@@ -855,6 +857,7 @@ Properties</h2></td></tr>
 
 <p>The unique ID of the <a href="Company">Company</a>, which is of type <a href="Company.Type#AFFILIATE_DISTRIBUTION_PARTNER">Company.Type::AFFILIATE_DISTRIBUTION_PARTNER</a>, to which this ad unit belongs. This attribute is optional. Setting this attribute to </p>
 <p><code>null</code> will disassociate the partner from this ad unit. </p>
+<p>This field is deprecated. All companies of type <a href="Company.Type#AFFILIATE_DISTRIBUTION_PARTNER">Company.Type::AFFILIATE_DISTRIBUTION_PARTNER</a> were changed to <a href="Company.Type#PARTNER">Company.Type::PARTNER</a>.</p>
 
 </div>
 </div>
@@ -944,7 +947,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The smart size mode for this ad unit. This attribute is optional and defaults to <a href="SmartSizeMode#NONE">SmartSizeMode::NONE</a> for fixed sizes. </p>
+<p>The smart size mode for this ad unit. This attribute is optional and defaults to <a href="">SmartSizeMode::NONE</a> for fixed sizes. </p>
 
 </div>
 </div>
@@ -1063,7 +1066,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.9oF88IYNxZ/dist/github/src/Dfp/v201611/<a class="el" href="v201611_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.UynQoF2wfJ/dist/github/src/Dfp/v201611/<a class="el" href="v201611_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1071,7 +1074,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611.html">v201611</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_ad_unit.html">AdUnit</a></li>
-    <li class="footer">Generated on Tue Mar 21 2017 13:00:23 for Ads API .NET library by
+    <li class="footer">Generated on Wed May 24 2017 11:53:04 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

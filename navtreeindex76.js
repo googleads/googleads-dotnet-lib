@@ -1,5 +1,15 @@
 var NAVTREEINDEX76 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_search_query_performance_report_report_row.html#a6c1445427194f19ca138f677f99caa54":[1,0,0,0,0,0,3,1,2,7,38],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_search_query_performance_report_report_row.html#a711e4a9f88a98b66565b7c89134dda55":[1,0,0,0,0,0,3,1,2,7,15],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_search_query_performance_report_report_row.html#a75a41c2481f2fabf0bef799c1e2ce59f":[1,0,0,0,0,0,3,1,2,7,60],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_search_query_performance_report_report_row.html#a79a205b7e11af82ab1866664cf2bf04c":[1,0,0,0,0,0,3,1,2,7,24],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_search_query_performance_report_report_row.html#a7bc3e75eea150cc858641e97d1c069ca":[1,0,0,0,0,0,3,1,2,7,14],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_search_query_performance_report_report_row.html#a80e6d77e4402c850d60aebeab0f4e62e":[1,0,0,0,0,0,3,1,2,7,28],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_search_query_performance_report_report_row.html#a8ab16e14f0a3d5b1f8a68f413c2dae3d":[1,0,0,0,0,0,3,1,2,7,72],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_search_query_performance_report_report_row.html#a8ad8998908a11ae2645e15ed4c3ef454":[1,0,0,0,0,0,3,1,2,7,51],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_search_query_performance_report_report_row.html#a8bcdaef12c3fd83105fe8e6c7c517d00":[1,0,0,0,0,0,3,1,2,7,23],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_search_query_performance_report_report_row.html#a8ef49f6f10914b91309841bdef08c80e":[1,0,0,0,0,0,3,1,2,7,70],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_search_query_performance_report_report_row.html#a90f695750540b9ef5a41e1bdc12f3d51":[1,0,0,0,0,0,3,1,2,7,55],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_search_query_performance_report_report_row.html#a91d5c12dac53ea668719bd44dfcde65a":[1,0,0,0,0,0,3,1,2,7,21],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_search_query_performance_report_report_row.html#a993f2f169eeb37827f0e8f6a2ef8e9ae":[1,0,0,0,0,0,3,1,2,7,4],
@@ -239,15 +249,5 @@ var NAVTREEINDEX76 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#ac97831139ffa143f94ea90ff5d6f2efda24d459a81449d7210c8f9a86c2913034":[1,0,0,0,0,0,3,1,2,35,10,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#ac97831139ffa143f94ea90ff5d6f2efda317dc2774d88dfc39489e6c8b829f35c":[1,0,0,0,0,0,3,1,2,35,10,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#ac97831139ffa143f94ea90ff5d6f2efda696b031073e74bf2cb98e5ef201d4aa3":[1,0,0,0,0,0,3,1,2,35,10,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#ac97831139ffa143f94ea90ff5d6f2efdad725ec4321dfa3a30ec3b096511be30e":[1,0,0,0,0,0,3,1,2,35,10,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#accc444f2e25a23e43c9fa343b0e9c954":[1,0,0,0,0,0,3,1,2,35,37],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#acd56b9e0a6eb662d5786e044a11927c2":[1,0,0,0,0,0,3,1,2,35,53],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#ad0cdb001beb5cc144aaa7b6a783bddaa":[1,0,0,0,0,0,3,1,2,35,15],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#ad441331f0989192c80767376dd4c30f8":[1,0,0,0,0,0,3,1,2,35,31],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#ad784c5400cd17b768e7e3e4f74bf0994":[1,0,0,0,0,0,3,1,2,35,43],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#ada01e5e044dcda62fae4b81242b90365":[1,0,0,0,0,0,3,1,2,35,32],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#aee524b7efd4086d05dc19bc4e4edc90e":[1,0,0,0,0,0,3,1,2,35,14],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#aef0eac2cefa2a530ff041be33d426ec5":[1,0,0,0,0,0,3,1,2,35,45],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#af48c8b16de16ec2eff2fd208162849cb":[1,0,0,0,0,0,3,1,2,35,71],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#af677472b6b6768b05dfb02a5b662bb83":[1,0,0,0,0,0,3,1,2,35,67]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201702_1_1_shopping_performance_report_report_row.html#ac97831139ffa143f94ea90ff5d6f2efdad725ec4321dfa3a30ec3b096511be30e":[1,0,0,0,0,0,3,1,2,35,10,3]
 };

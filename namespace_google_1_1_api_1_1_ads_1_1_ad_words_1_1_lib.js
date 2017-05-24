@@ -3,8 +3,6 @@ var namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib =
     [ "AdWordsApiException", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_api_exception.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_api_exception" ],
     [ "AdWordsAppConfig", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_app_config.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_app_config" ],
     [ "AdWordsCallListener", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_call_listener.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_call_listener" ],
-    [ "AdWordsCredentialsExpiredException", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_credentials_expired_exception.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_credentials_expired_exception" ],
-    [ "AdWordsErrorHandler", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_error_handler.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_error_handler" ],
     [ "AdWordsException", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_exception.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_exception" ],
     [ "AdWordsService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_service" ],
     [ "AdWordsServiceFactory", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_service_factory.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_service_factory" ],

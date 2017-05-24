@@ -136,7 +136,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9bae2962525548d3f51fe04d0523da09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delivery forecast for a list of <a href="ProspectiveLineItem">ProspectiveLineItem</a> objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items.  <a href="#a9bae2962525548d3f51fe04d0523da09">More...</a><br/></td></tr>
 <tr class="separator:a9bae2962525548d3f51fe04d0523da09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa76eead70f944289698f5cdb6172d4d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_delivery_forecast.html">DeliveryForecast</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_forecast_service.html#aa76eead70f944289698f5cdb6172d4d4">getDeliveryForecastByIds</a> (long[] lineItemIds, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_delivery_forecast_options.html">DeliveryForecastOptions</a> forecastOptions)</td></tr>
-<tr class="memdesc:aa76eead70f944289698f5cdb6172d4d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delivery forecast for a list of existing <a href="LineItem">LineItem</a> objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items.  <a href="#aa76eead70f944289698f5cdb6172d4d4">More...</a><br/></td></tr>
+<tr class="memdesc:aa76eead70f944289698f5cdb6172d4d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delivery forecast for a list of existing <a href="LineItem">LineItem</a> objects in a single delivery simulation. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items.  <a href="#aa76eead70f944289698f5cdb6172d4d4">More...</a><br/></td></tr>
 <tr class="separator:aa76eead70f944289698f5cdb6172d4d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -207,7 +207,6 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the availability forecast for a <a href="ProspectiveLineItem">ProspectiveLineItem</a>. An availability forecast reports the maximum number of available units that the line item can book, and the total number of units matching the line item's targeting. </p>
-<p>Note: Beginning in v201502, this replaces the previous getForecast method. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lineItem</td><td>the prospective line item (new or existing) to be forecasted for availability</td></tr>
@@ -245,8 +244,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets an <a href="AvailabilityForecast">AvailabilityForecast</a> for an existing <a href="LineItem">LineItem</a> object. An availability forecast reports the maximum number of available units that the line item can be booked with, and also the total number of units matching the line item's targeting. </p>
-<p>Only line items having type <a href="LineItemType#SPONSORSHIP">LineItemType::SPONSORSHIP</a> or <a href="LineItemType#STANDARD">LineItemType::STANDARD</a> are valid. Other types will result in <a href="ReservationDetailsError.Reason#LINE_ITEM_TYPE_NOT_ALLOWED">ReservationDetailsError.Reason::LINE_ITEM_TYPE_NOT_ALLOWED</a>.</p>
-<p>Note: Beginning in v201502, this replaces the previous getForecastById method. </p>
+<p>Only line items having type <a href="LineItemType#SPONSORSHIP">LineItemType::SPONSORSHIP</a> or <a href="">LineItemType::STANDARD</a> are valid. Other types will result in <a href="">ReservationDetailsError.Reason::LINE_ITEM_TYPE_NOT_ALLOWED</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lineItemId</td><td>the ID of a <a href="LineItem">LineItem</a> to run the forecast on.</td></tr>
@@ -320,7 +318,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the delivery forecast for a list of existing <a href="LineItem">LineItem</a> objects in a single delivery simulation with line items potentially contending with each other. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. </p>
+<p>Gets the delivery forecast for a list of existing <a href="LineItem">LineItem</a> objects in a single delivery simulation. A delivery forecast reports the number of units that will be delivered to each line item given the line item goals and contentions from other line items. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lineItemIds</td><td>the IDs of line items to be forecasted for delivery</td></tr>
@@ -375,7 +373,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/tmp/tmp.9oF88IYNxZ/dist/github/src/Dfp/v201611/<a class="el" href="v201611_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.UynQoF2wfJ/dist/github/src/Dfp/v201611/<a class="el" href="v201611_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -383,7 +381,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611.html">v201611</a></li><li class="navelem"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_forecast_service.html">IForecastService</a></li>
-    <li class="footer">Generated on Tue Mar 21 2017 13:00:26 for Ads API .NET library by
+    <li class="footer">Generated on Wed May 24 2017 11:53:07 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

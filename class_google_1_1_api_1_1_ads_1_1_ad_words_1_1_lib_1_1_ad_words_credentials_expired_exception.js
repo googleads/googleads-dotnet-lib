@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_credentials_expired_exception =
-[
-    [ "AdWordsCredentialsExpiredException", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_credentials_expired_exception.html#ab9da0ca47a8f53beb9213c6c953f7a77", null ]
-];

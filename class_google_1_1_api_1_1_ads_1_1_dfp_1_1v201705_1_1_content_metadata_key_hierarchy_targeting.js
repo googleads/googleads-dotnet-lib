@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_content_metadata_key_hierarchy_targeting =
+[
+    [ "customTargetingValueIds", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_content_metadata_key_hierarchy_targeting.html#af528b90cab1dd9d70cf9edf4e28e72ce", null ]
+];

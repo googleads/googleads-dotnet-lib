@@ -1,0 +1,28 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative =
+[
+    [ "adTagKeys", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a30c46af96726d6fb243929b5bad98b0e", null ],
+    [ "allImpressionsUrl", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#abfcf304cb7d8b09a1db2a374df63b109", null ],
+    [ "artworkType", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a2e81ebf25428d24136e6e888339b4a27", null ],
+    [ "artworkTypeSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a1435954b91c3d54926e2691cbaaa7d3d", null ],
+    [ "backupImageImpressionsUrl", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#ae35ae75da18362fdfad7161ad19929e0", null ],
+    [ "billingAttribute", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a21f6356570ad5c565b9ce50d3d4fbb42", null ],
+    [ "billingAttributeSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a7a85c4bd2fe117599ec4958a9ec865c3", null ],
+    [ "creativeFormat", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a5c597e4d663065891c668583284ac99a", null ],
+    [ "creativeFormatSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#aca1cfbc7cac87f501d428f266f8a1508", null ],
+    [ "customKeyValues", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a76ef0af2b15aafa5363b45eda185b6dc", null ],
+    [ "duration", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#ae944480328c5c6689e5a9ea96c58a9d8", null ],
+    [ "durationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#ac3fc8bceb885bb218602e94a0d5d2a34", null ],
+    [ "overrideCss", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#ad97cf38fddaaa2536bae1da9ea67da14", null ],
+    [ "requiredFlashPluginVersion", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#aaf8aa95b73e78a808f8c10282adc174f", null ],
+    [ "richMediaImpressionsUrl", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a8753b66790f3e56c6e79e2365cf13b00", null ],
+    [ "richMediaStudioChildAssetProperties", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#aa1a1e72cc4a1359d56a3e868849ee592", null ],
+    [ "sslManualOverride", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a82d5a3c585039614b4c71236a7cdb34d", null ],
+    [ "sslManualOverrideSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a3ef7848445b22cb9e3fa0fff01c632ea", null ],
+    [ "sslScanResult", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a02afa1dbf0fe2ba79b3fb56aea28e78b", null ],
+    [ "sslScanResultSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a494d581b63aed3306183f445a1b79a9c", null ],
+    [ "studioCreativeId", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a5acb9ae7e06bf39be4266247a2aa7455", null ],
+    [ "studioCreativeIdSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a37c0cdc646aad5ba33745ce7f3362e18", null ],
+    [ "surveyUrl", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a989eb7abf5fd3869e0aec0b45c8bd218", null ],
+    [ "totalFileSize", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#af7a3d4d01a182a278bc084de38419e9f", null ],
+    [ "totalFileSizeSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_base_rich_media_studio_creative.html#a5706540717cac79c45d59df2f2cbba05", null ]
+];

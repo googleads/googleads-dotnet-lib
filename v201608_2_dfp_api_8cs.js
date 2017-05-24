@@ -3648,7 +3648,8 @@ var v201608_2_dfp_api_8cs =
     ] ],
     [ "ValueSourceType", "v201608_2_dfp_api_8cs.html#a41d71e8d30aacb42db947042a524df46", [
       [ "PARENT", "v201608_2_dfp_api_8cs.html#a41d71e8d30aacb42db947042a524df46a654549fd15738332e933b52baf3cbc65", null ],
-      [ "DIRECTLY_SPECIFIED", "v201608_2_dfp_api_8cs.html#a41d71e8d30aacb42db947042a524df46ab1b50184f1c359fc3b269d3dd92eb2d3", null ]
+      [ "DIRECTLY_SPECIFIED", "v201608_2_dfp_api_8cs.html#a41d71e8d30aacb42db947042a524df46ab1b50184f1c359fc3b269d3dd92eb2d3", null ],
+      [ "UNKNOWN", "v201608_2_dfp_api_8cs.html#a41d71e8d30aacb42db947042a524df46a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "VastRedirectType", "v201608_2_dfp_api_8cs.html#a50972e5b2550f660802221fa709970ed", [
       [ "LINEAR", "v201608_2_dfp_api_8cs.html#a50972e5b2550f660802221fa709970edaaac544aacc3615aada24897a215f5046", null ],

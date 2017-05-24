@@ -13,7 +13,6 @@ var namespace_google_1_1_api_1_1_ads_1_1_common_1_1_lib =
     [ "AppConfigBase", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base" ],
     [ "Configurable", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_configurable.html", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_configurable" ],
     [ "ContextStore", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_context_store.html", null ],
-    [ "CredentialsExpiredException< T >", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_credentials_expired_exception_3_01_t_01_4.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_credentials_expired_exception_3_01_t_01_4" ],
     [ "ErrorHandler", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_error_handler.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_error_handler" ],
     [ "OAuth2JwtClaimset", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_jwt_claimset.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_jwt_claimset" ],
     [ "OAuth2JwtClaimsetBuilder", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_jwt_claimset_builder.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_jwt_claimset_builder" ],

@@ -329,7 +329,6 @@ var v201611_2_dfp_api_8cs =
     [ "PublisherQueryLanguageService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_publisher_query_language_service.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_publisher_query_language_service" ],
     [ "Row", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_row.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_row" ],
     [ "TargetingValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_targeting_value.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_targeting_value" ],
-    [ "ChangeHistoryValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_change_history_value.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_change_history_value" ],
     [ "ColumnType", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_column_type.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_column_type" ],
     [ "ResultSet", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_result_set.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_result_set" ],
     [ "InventoryUnitError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_unit_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_unit_error" ],
@@ -1063,28 +1062,6 @@ var v201611_2_dfp_api_8cs =
       [ "UNKNOWN", "v201611_2_dfp_api_8cs.html#af0a1ff6982dfd4418390c820b908a07ea696b031073e74bf2cb98e5ef201d4aa3", null ],
       [ "ACCEPTED", "v201611_2_dfp_api_8cs.html#af0a1ff6982dfd4418390c820b908a07eaa806f1d2c42338ef5fa6497b66153e79", null ],
       [ "REJECTED", "v201611_2_dfp_api_8cs.html#af0a1ff6982dfd4418390c820b908a07ea9cc8ad3d99798c6726d4af0bd14e49d2", null ]
-    ] ],
-    [ "ChangeHistoryEntityType", "v201611_2_dfp_api_8cs.html#acd9fd26f2657723568cb1c45c05dc519", [
-      [ "UNKNOWN", "v201611_2_dfp_api_8cs.html#acd9fd26f2657723568cb1c45c05dc519a696b031073e74bf2cb98e5ef201d4aa3", null ],
-      [ "COMPANY", "v201611_2_dfp_api_8cs.html#acd9fd26f2657723568cb1c45c05dc519a0f025176fb8b953690ad8f20f119ed75", null ],
-      [ "CONTACT", "v201611_2_dfp_api_8cs.html#acd9fd26f2657723568cb1c45c05dc519ac0241eae411627c19ba9835b6d194b1c", null ],
-      [ "CREATIVE", "v201611_2_dfp_api_8cs.html#acd9fd26f2657723568cb1c45c05dc519a7c4ce9f5ea267332b6998e2f0315c452", null ],
-      [ "CREATIVE_SET", "v201611_2_dfp_api_8cs.html#acd9fd26f2657723568cb1c45c05dc519abc52065f4d165fed7061052b962c06a8", null ],
-      [ "PLACEMENT", "v201611_2_dfp_api_8cs.html#acd9fd26f2657723568cb1c45c05dc519ad5829bb83e9a51bb48fb0a1e5d77423e", null ],
-      [ "AD_UNIT", "v201611_2_dfp_api_8cs.html#acd9fd26f2657723568cb1c45c05dc519a8b4140b90ca5f71abbe95bd849d45034", null ],
-      [ "LABEL", "v201611_2_dfp_api_8cs.html#acd9fd26f2657723568cb1c45c05dc519a6f434c508ad901b8667ed22f713e52bb", null ],
-      [ "LINE_ITEM", "v201611_2_dfp_api_8cs.html#acd9fd26f2657723568cb1c45c05dc519ac5e43fb300d3be5b98fbb1466e4fdd05", null ],
-      [ "NETWORK", "v201611_2_dfp_api_8cs.html#acd9fd26f2657723568cb1c45c05dc519a25835188a2355e9530d3a10fcbe4c65b", null ],
-      [ "ORDER", "v201611_2_dfp_api_8cs.html#acd9fd26f2657723568cb1c45c05dc519a6575d9a58f0b41a108f2d6a565a0650d", null ],
-      [ "ROLE", "v201611_2_dfp_api_8cs.html#acd9fd26f2657723568cb1c45c05dc519a612f9988ac7994ee666d3a59dad71b28", null ],
-      [ "TEAM", "v201611_2_dfp_api_8cs.html#acd9fd26f2657723568cb1c45c05dc519a732798a292ccd22394a13db3a2ab3480", null ],
-      [ "USER", "v201611_2_dfp_api_8cs.html#acd9fd26f2657723568cb1c45c05dc519a2e40ad879e955201df4dedbf8d479a12", null ]
-    ] ],
-    [ "ChangeHistoryOperation", "v201611_2_dfp_api_8cs.html#adeb1cb8c2ecd952d8c5672860aa0b77b", [
-      [ "CREATE", "v201611_2_dfp_api_8cs.html#adeb1cb8c2ecd952d8c5672860aa0b77ba294ce20cdefa29be3be0735cb62e715d", null ],
-      [ "UPDATE", "v201611_2_dfp_api_8cs.html#adeb1cb8c2ecd952d8c5672860aa0b77ba15a8022d0ed9cd9c2a2e756822703eb4", null ],
-      [ "DELETE", "v201611_2_dfp_api_8cs.html#adeb1cb8c2ecd952d8c5672860aa0b77ba32f68a60cef40faedbc6af20298c1a1e", null ],
-      [ "UNKNOWN", "v201611_2_dfp_api_8cs.html#adeb1cb8c2ecd952d8c5672860aa0b77ba696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "ClickTrackingLineItemErrorReason", "v201611_2_dfp_api_8cs.html#a9a548cef69aaf7103fcbf972a901b1ab", [
       [ "TYPE_IMMUTABLE", "v201611_2_dfp_api_8cs.html#a9a548cef69aaf7103fcbf972a901b1aba05d2165b70e7ca4b4816b90371296ae3", null ],
@@ -3727,7 +3704,8 @@ var v201611_2_dfp_api_8cs =
     ] ],
     [ "ValueSourceType", "v201611_2_dfp_api_8cs.html#ae3bd04e72594a3845237b079ba929e86", [
       [ "PARENT", "v201611_2_dfp_api_8cs.html#ae3bd04e72594a3845237b079ba929e86a654549fd15738332e933b52baf3cbc65", null ],
-      [ "DIRECTLY_SPECIFIED", "v201611_2_dfp_api_8cs.html#ae3bd04e72594a3845237b079ba929e86ab1b50184f1c359fc3b269d3dd92eb2d3", null ]
+      [ "DIRECTLY_SPECIFIED", "v201611_2_dfp_api_8cs.html#ae3bd04e72594a3845237b079ba929e86ab1b50184f1c359fc3b269d3dd92eb2d3", null ],
+      [ "UNKNOWN", "v201611_2_dfp_api_8cs.html#ae3bd04e72594a3845237b079ba929e86a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "VastRedirectType", "v201611_2_dfp_api_8cs.html#a23ae2ff9d21ebdcb0cfdc87bdedfaab6", [
       [ "LINEAR", "v201611_2_dfp_api_8cs.html#a23ae2ff9d21ebdcb0cfdc87bdedfaab6aaac544aacc3615aada24897a215f5046", null ],

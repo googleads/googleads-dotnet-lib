@@ -1,5 +1,15 @@
 var NAVTREEINDEX127 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_adx_error_1_1_filterable_fields.html#a2003b4087f64257e724b26909f772722":[1,0,0,0,0,0,6,101,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_adx_error_1_1_selectable_fields.html":[1,0,0,0,0,0,6,101,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_adx_error_1_1_selectable_fields.html#a9bf600457af88186b4b9b28d77f0054b":[1,0,0,0,0,0,6,101,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_affiliate_location_feed_data.html":[1,0,0,0,0,0,6,288],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_affiliate_location_feed_data.html#a470a083b205e6296bc815e7333b044c4":[1,0,0,0,0,0,6,288,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_affiliate_location_feed_data.html#a4796330e06dfc67548759a39e8e12777":[1,0,0,0,0,0,6,288,4],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_affiliate_location_feed_data.html#a6ae040f02d5a010d888b810c30438d95":[1,0,0,0,0,0,6,288,5],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_affiliate_location_feed_data_1_1_fields.html":[1,0,0,0,0,0,6,288,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_affiliate_location_feed_data_1_1_fields.html#a6e84e63fab657cc08d947c6a87eae7b3":[1,0,0,0,0,0,6,288,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_affiliate_location_feed_data_1_1_filterable_fields.html":[1,0,0,0,0,0,6,288,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_affiliate_location_feed_data_1_1_filterable_fields.html#a416a156f45fe14f7dd535a115644cb9b":[1,0,0,0,0,0,6,288,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_affiliate_location_feed_data_1_1_selectable_fields.html":[1,0,0,0,0,0,6,288,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_affiliate_location_feed_data_1_1_selectable_fields.html#a91363aed4c1cbd602f66c03ee4047fb6":[1,0,0,0,0,0,6,288,2,0],
@@ -239,15 +249,5 @@ var NAVTREEINDEX127 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_bid_landscape_landscape_point.html#a3a358da10d10dcdc618a1d1cee253704":[1,0,0,0,0,0,6,270,18],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_bid_landscape_landscape_point.html#a3ff1093a0c94cdb8de8236b130c0745e":[1,0,0,0,0,0,6,270,14],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_bid_landscape_landscape_point.html#a60b725b699eba7ded05ecd904722aff7":[1,0,0,0,0,0,6,270,9],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_bid_landscape_landscape_point.html#a6cc87a4b42b3c215c46f764271b5a577":[1,0,0,0,0,0,6,270,15],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_bid_landscape_landscape_point.html#a71ad36bb4af321328228203e409050fb":[1,0,0,0,0,0,6,270,17],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_bid_landscape_landscape_point.html#aa05adce524fd7a3cdacc2435895975f0":[1,0,0,0,0,0,6,270,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_bid_landscape_landscape_point.html#ab32cc426981ab84b413f599c890f2d43":[1,0,0,0,0,0,6,270,6],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_bid_landscape_landscape_point.html#ab55ed2e12351124a7cae4d68174d18d7":[1,0,0,0,0,0,6,270,16],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_bid_landscape_landscape_point.html#ac7604f359187d9b8006c147108978c51":[1,0,0,0,0,0,6,270,20],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_bid_landscape_landscape_point.html#ac9fe9cff7045b1724576fa837d38c6b5":[1,0,0,0,0,0,6,270,11],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_bid_landscape_landscape_point.html#ad1346d0f59f38bdaedb13d734231cc5d":[1,0,0,0,0,0,6,270,10],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_bid_landscape_landscape_point.html#ad72326fc4b447077b7f3393b9845e27d":[1,0,0,0,0,0,6,270,13],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_bid_landscape_landscape_point.html#ae19b7b0ee7a9d8494d0111730dd5a8d0":[1,0,0,0,0,0,6,270,12],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_bid_landscape_landscape_point.html#ae4cb23b9c7cdd6d79f2557f440f39bd1":[1,0,0,0,0,0,6,270,4]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_bid_landscape_landscape_point.html#a6cc87a4b42b3c215c46f764271b5a577":[1,0,0,0,0,0,6,270,15]
 };
