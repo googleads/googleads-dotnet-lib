@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_add_dynamic_search_ads_campaign =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_add_dynamic_search_ads_campaign.html#a54af7e33f3be9b9f27b454fdbd728b3c", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_add_dynamic_search_ads_campaign.html#ae5afb1ca71a611a8e22cea8dd7cadda1", null ]
+];

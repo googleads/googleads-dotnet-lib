@@ -1,0 +1,8 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_forward_compatibility_error =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_forward_compatibility_error_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_forward_compatibility_error_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_forward_compatibility_error_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_forward_compatibility_error_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_forward_compatibility_error_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_forward_compatibility_error_1_1_selectable_fields" ],
+    [ "reason", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_forward_compatibility_error.html#a650b29802d64dfb57640334c1903ef72", null ],
+    [ "reasonSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_forward_compatibility_error.html#a65109a4f353fce06e975dd3eb7ef0c0c", null ]
+];

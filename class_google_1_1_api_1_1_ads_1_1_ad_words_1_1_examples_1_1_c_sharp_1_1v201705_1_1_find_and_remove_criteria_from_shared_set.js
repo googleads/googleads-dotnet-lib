@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_find_and_remove_criteria_from_shared_set =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_find_and_remove_criteria_from_shared_set.html#a1fa0c39501018adbc289ee11e3042f65", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_find_and_remove_criteria_from_shared_set.html#aefd26cd46ee38b6daefc0390d15ff583", null ]
+];

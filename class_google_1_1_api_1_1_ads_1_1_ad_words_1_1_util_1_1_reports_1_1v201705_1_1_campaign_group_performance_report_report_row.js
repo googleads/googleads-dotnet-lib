@@ -1,0 +1,38 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row =
+[
+    [ "Status", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a0ca5e96ff2f09c6e233a9844e2cf88bf", [
+      [ "DELETED", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a0ca5e96ff2f09c6e233a9844e2cf88bfa63c2867fdcae0e8e8413d7ac21b69b59", null ],
+      [ "ENABLED", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a0ca5e96ff2f09c6e233a9844e2cf88bfac8cf6eea8f096ed51160b484d97c5bbd", null ],
+      [ "UNKNOWN", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a0ca5e96ff2f09c6e233a9844e2cf88bfa696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "activeViewCpm", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#afe7f6c5e20c5d26f123a6c325b51a4e9", null ],
+    [ "activeViewCtr", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a0a641b62f4cdab324a8f955c5c3a81bc", null ],
+    [ "activeViewImpressions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a84fb1a291dc24532e8e44a60c01fe901", null ],
+    [ "activeViewMeasurability", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a447d975f7e0004c0f7de5418b78a822f", null ],
+    [ "activeViewMeasurableCost", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a80e81fa7c6244814d8cc9c880b71b97c", null ],
+    [ "activeViewMeasurableImpressions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a5e6b7d5d68a420e1accef8632f9bc985", null ],
+    [ "activeViewViewability", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#ae09d6d1e480a7bebd7c52ee99e933f0f", null ],
+    [ "allConversionRate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a5c1c581a9f39195e9014f123832fac44", null ],
+    [ "allConversions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a125136c46f5003237cbea0cb116890cf", null ],
+    [ "allConversionValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a9e8830993c372caa91ff87ebf211c807", null ],
+    [ "averageCost", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a1b6c8d728141a8b45d083335ae89d160", null ],
+    [ "averageCpe", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a19dac0525191601076b85c2c0095dd97", null ],
+    [ "averageCpv", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#ae18fe9e97273cf67adf621e60e993474", null ],
+    [ "costPerAllConversion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a77b7c79c91135edc3acdb016fa75d3e4", null ],
+    [ "costPerCurrentModelAttributedConversion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#ab9bdbda018cd35d188fd2f9a391face4", null ],
+    [ "crossDeviceConversions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#abb98a3a8f398d2eace47e9a31cf214a3", null ],
+    [ "currentModelAttributedConversions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#abd7a96cc199b31a0b6cf763e145dff5a", null ],
+    [ "currentModelAttributedConversionValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a090e39fa6073fe8f648a40e4279788d7", null ],
+    [ "engagementRate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a30fcf610dd180123a79e9a99337da1b6", null ],
+    [ "engagements", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#ab7c27ed047e3e5ad6744f955c258b656", null ],
+    [ "id", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a3d290714789f2dd416ad0808e2065379", null ],
+    [ "interactionRate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#ae918b51d1b8e2495b923916acdc2f5fe", null ],
+    [ "interactions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a2099385de64419947af16005f77be0f0", null ],
+    [ "interactionTypes", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#aab347780940616c070081152bef4c179", null ],
+    [ "name", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a6b193041aaccae6ee9d72f8f8d295456", null ],
+    [ "status", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a2cc1ec13c091284d733c3237dd03f72e", null ],
+    [ "valuePerAllConversion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#af9b9f0b0cdecfe0fad0299cfdb29c3ea", null ],
+    [ "valuePerCurrentModelAttributedConversion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a771c5dac30757170478d4cc8cf9292fc", null ],
+    [ "videoViewRate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#a7d9c8a79af333251555a14c1142cf541", null ],
+    [ "videoViews", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_campaign_group_performance_report_report_row.html#ab33c329369e30f913173f523a507b010", null ]
+];

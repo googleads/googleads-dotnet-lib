@@ -140,8 +140,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a05b9d39c944b9ab3bb69113ca88b8a38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_rule.html">Rule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_expression_rule_user_list.html#a05b9d39c944b9ab3bb69113ca88b8a38">rule</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a05b9d39c944b9ab3bb69113ca88b8a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean rule that defines this user list. The rule consists of a list of rule item groups. All the rule item groups are ORed for the evaluation. This field is selected by default. <span class="constraint Selectable">This field can be selected using the value "ExpressionListRule".</span> <span class="constraint
-Required">This field is required and should not be </span> <a href="#a05b9d39c944b9ab3bb69113ca88b8a38">More...</a><br/></td></tr>
+<tr class="memdesc:a05b9d39c944b9ab3bb69113ca88b8a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean rule that defines this user list. The rule consists of a list of rule item groups and each rule item group consists of a list of rule items. All the rule item groups are ORed together for evaluation before version V201705. Starting from version V201705, the group operator is based on <a href="Rule#getRuleType()">Rule::getRuleType()</a>. This field is selected by default. <span class="constraint Selectable">This field can be selected using the value "ExpressionListRule".</span> <span class="constraint Required">This field is required and should not be </span> <a href="#a05b9d39c944b9ab3bb69113ca88b8a38">More...</a><br/></td></tr>
 <tr class="separator:a05b9d39c944b9ab3bb69113ca88b8a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_user_list"><td colspan="2" onclick="javascript:toggleInherit('properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_user_list')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_user_list.html">Google.Api.Ads.AdWords.v201607.UserList</a></td></tr>
 <tr class="memitem:a7530bc1d7768cd23a512e3b0904e75fd inherit properties_class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_user_list"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_user_list.html#a7530bc1d7768cd23a512e3b0904e75fd">id</a><code> [get, set]</code></td></tr>
@@ -247,14 +246,13 @@ Selectable">This field can be selected using the value "SizeForSearch".</span><s
 </table>
 </div><div class="memdoc">
 
-<p>Boolean rule that defines this user list. The rule consists of a list of rule item groups. All the rule item groups are ORed for the evaluation. This field is selected by default. <span class="constraint Selectable">This field can be selected using the value "ExpressionListRule".</span> <span class="constraint
-Required">This field is required and should not be </span></p>
+<p>Boolean rule that defines this user list. The rule consists of a list of rule item groups and each rule item group consists of a list of rule items. All the rule item groups are ORed together for evaluation before version V201705. Starting from version V201705, the group operator is based on <a href="Rule#getRuleType()">Rule::getRuleType()</a>. This field is selected by default. <span class="constraint Selectable">This field can be selected using the value "ExpressionListRule".</span> <span class="constraint Required">This field is required and should not be </span></p>
 <p><code>null</code> when it is contained within <a href="Operator">Operator</a>s : ADD. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.UynQoF2wfJ/dist/github/src/AdWords/v201607/<a class="el" href="v201607_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/tmp/tmp.xGLohJmkKL/dist/github/src/AdWords/v201607/<a class="el" href="v201607_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -262,7 +260,7 @@ Required">This field is required and should not be </span></p>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607.html">v201607</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_expression_rule_user_list.html">ExpressionRuleUserList</a></li>
-    <li class="footer">Generated on Wed May 24 2017 11:45:18 for Ads API .NET library by
+    <li class="footer">Generated on Thu Jun 1 2017 15:17:47 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

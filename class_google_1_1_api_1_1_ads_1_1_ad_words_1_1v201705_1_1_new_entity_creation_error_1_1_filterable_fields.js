@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_new_entity_creation_error_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_new_entity_creation_error_1_1_filterable_fields.html#a1d2a46ff7ade6b841b56383b9781c5c2", null ]
+];

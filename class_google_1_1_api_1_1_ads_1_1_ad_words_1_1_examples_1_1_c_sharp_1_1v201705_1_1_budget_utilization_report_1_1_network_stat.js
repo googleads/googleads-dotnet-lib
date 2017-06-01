@@ -1,0 +1,14 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_budget_utilization_report_1_1_network_stat =
+[
+    [ "AverageCpc", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_budget_utilization_report_1_1_network_stat.html#ac9513aea47327c63606d189956d1cfb7", null ],
+    [ "BudgetLostClicks", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_budget_utilization_report_1_1_network_stat.html#a78e885a00dc30b88c9002b1cbd885c04", null ],
+    [ "BudgetLostCost", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_budget_utilization_report_1_1_network_stat.html#af79dd6356fcd48486a0d038c7db897dc", null ],
+    [ "BudgetLostImpressions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_budget_utilization_report_1_1_network_stat.html#a58f8dc7cc82db68f86dc8194683f586c", null ],
+    [ "BudgetLostImpressionShare", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_budget_utilization_report_1_1_network_stat.html#a319454af506b8118a39f18178c1817e4", null ],
+    [ "Clicks", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_budget_utilization_report_1_1_network_stat.html#a70d161158eaa3f0511b970541943e85e", null ],
+    [ "ClickThroughRate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_budget_utilization_report_1_1_network_stat.html#ab64f4d7d47fbd24b8b74704b0835f2ff", null ],
+    [ "Cost", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_budget_utilization_report_1_1_network_stat.html#ad2e87803e6e7a6441e86439a11697489", null ],
+    [ "EstimatedImpressions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_budget_utilization_report_1_1_network_stat.html#a5165783455ebda5fd9b87b7c9d115b76", null ],
+    [ "Impressions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_budget_utilization_report_1_1_network_stat.html#a16cfe65983e48ba31880881d7bbf50ec", null ],
+    [ "ImpressionShare", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_budget_utilization_report_1_1_network_stat.html#a8b94f2ffcd26708593930fc1f4876b35", null ]
+];

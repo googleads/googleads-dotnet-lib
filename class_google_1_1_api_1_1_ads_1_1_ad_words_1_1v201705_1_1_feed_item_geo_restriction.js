@@ -1,0 +1,8 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_geo_restriction =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_geo_restriction_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_geo_restriction_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_geo_restriction_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_geo_restriction_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_geo_restriction_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_geo_restriction_1_1_selectable_fields" ],
+    [ "geoRestriction", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_geo_restriction.html#a339b75683aa4bed2b9ea2d6739b7b99a", null ],
+    [ "geoRestrictionSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_geo_restriction.html#ac7348f27d3fdcbb7ecc76ece6c386ac3", null ]
+];
