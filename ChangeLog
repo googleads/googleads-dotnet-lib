@@ -1,3 +1,17 @@
+21.1.0
+======
+AdWords:
+  - Added support for v201705.
+  - Regenerated stubs for all versions.
+  - Fixed an issue with BatchJobUtilities when calling its methods from VB.NET on Mono.
+
+DFP:
+  -
+
+Common:
+  - Changed LogEntry method signatures to not depend on WebRequest or
+  WebResponse.
+
 21.0.0
 ======
 AdWords:

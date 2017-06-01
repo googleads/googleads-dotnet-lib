@@ -18,7 +18,7 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyCompany("Google")> 
 <Assembly: AssemblyProduct("AdWords API DotNet Client Library")> 
-<Assembly: AssemblyCopyright("Copyright 2011, Google Inc. All Rights Reserved.")> 
+<Assembly: AssemblyCopyright("Copyright 2011, Google Inc. All Rights Reserved.")>
 
-<Assembly: AssemblyVersion("21.0.0.0")> 
-<Assembly: AssemblyFileVersion("21.0.0.0")> 
+<Assembly: AssemblyVersion("21.1.0.0")>
+<Assembly: AssemblyFileVersion("21.1.0.0")>

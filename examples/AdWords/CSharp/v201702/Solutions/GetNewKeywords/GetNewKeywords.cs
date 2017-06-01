@@ -431,8 +431,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
         }
 
         try {
-          AdGroupCriterionReturnValue retVal = adGroupCriterionService.mutate(
-              operations.ToArray());
+          adGroupCriterionService.mutate(operations.ToArray());
         } catch (AdWordsApiException e) {
           ApiException innerException = e.ApiException as ApiException;
           if (innerException == null) {

@@ -424,6 +424,10 @@ namespace Google.Api.Ads.AdWords.Tests.Util.BatchJob.v201609 {
     /// <param name="postBody">The post body.</param>
     /// <param name="start">The start of range of bytes to be uploaded.</param>
     /// <param name="end">The end of range of bytes to be uploaded.</param>
+    /// <param name="startOffset">The start offset in the stream to upload to.</param>
+    /// <param name="totalUploadSize">If specified, this indicates the total
+    /// size of the upload. When doing a streamed upload, this value will be
+    /// null for all except the last chunk.</param>
     protected override void UploadChunk(string url, byte[] postBody, int start, int end,
         long startOffset, long? totalUploadSize) {
       uploadChunkRecords.Add(new UploadChunkRecord() {

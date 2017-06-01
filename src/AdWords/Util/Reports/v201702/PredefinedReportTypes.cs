@@ -13,9 +13,6 @@
 // limitations under the License.
 #pragma warning disable 1591
 
-/// <summary>
-/// Lists all of the pre-defined AdWords report row types available through this library.
-/// </summary>
 namespace Google.Api.Ads.AdWords.Util.Reports.v201702 {
 
   public class KeywordsPerformanceReportReportRow {

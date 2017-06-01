@@ -118,11 +118,11 @@ namespace Google.Api.Ads.Common.Logging {
                 HttpStatusCode.InternalServerError;
 
       LogEntry logEntry = new LogEntry(config, dateTimeProvider);
-      logEntry.LogRequestDetails(service.LastRequest, soapRequest, GetFieldsToMask(),
-          new SoapTraceFormatter());
-      logEntry.LogResponseDetails(service.LastResponse, soapResponse, new HashSet<string>(),
-          new DefaultBodyFormatter());
-      logEntry.LogRequestSummary(service.LastRequest, GetSummaryRequestLogs(soapRequest));
+      RequestInfo requestInfo = new RequestInfo(service.LastRequest, soapRequest);
+      logEntry.LogRequestDetails(requestInfo, GetFieldsToMask(), new SoapTraceFormatter());
+      logEntry.LogResponseDetails(new ResponseInfo(service.LastResponse, soapResponse),
+          new HashSet<string>(), new DefaultBodyFormatter());
+      logEntry.LogRequestSummary(requestInfo, GetSummaryRequestLogs(soapRequest));
       logEntry.LogResponseSummary(isFailure, GetSummaryResponseLogs(soapResponse));
       logEntry.Flush();
 

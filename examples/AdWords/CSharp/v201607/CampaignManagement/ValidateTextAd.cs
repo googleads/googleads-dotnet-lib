@@ -83,8 +83,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
       textAdOperation.operand = textAdGroupAd;
 
       try {
-        AdGroupAdReturnValue retVal = adGroupAdService.mutate(
-            (new AdGroupAdOperation[] {textAdOperation}));
+        adGroupAdService.mutate(new AdGroupAdOperation[] {textAdOperation});
         // Since validation is ON, result will be null.
         Console.WriteLine("text ad validated successfully.");
       } catch (AdWordsApiException e) {

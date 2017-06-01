@@ -107,94 +107,88 @@ namespace Google.Api.Ads.Common.Logging {
     /// <summary>
     /// Logs an HTTP request.
     /// </summary>
-    /// <param name="request">The HTTP web request.</param>
-    /// <param name="requestBody">The request body.</param>
+    /// <param name="requestInfo">The request information.</param>
     /// <param name="headersToMask">The headers to mask.</param>
-    public void LogRequest(WebRequest request, string requestBody, ISet<string> headersToMask) {
-      LogRequest(request, requestBody, headersToMask,
+    public void LogRequest(RequestInfo requestInfo, ISet<string> headersToMask) {
+      LogRequest(requestInfo, headersToMask,
           GetTraceFormatterForHTTPRequests(config.MaskCredentials));
     }
 
     /// <summary>
     /// Logs an HTTP request.
     /// </summary>
-    /// <param name="request">The HTTP web request.</param>
-    /// <param name="requestBody">The request body.</param>
+    /// <param name="requestInfo">The request information.</param>
     /// <param name="headersToMask">The headers to mask.</param>
     /// <param name="formatter">The <see cref="TraceFormatter"/> to use when
     /// formatting the message.</param>
     /// <returns>The request logs</returns>
-    public void LogRequest(WebRequest request, string requestBody,
-        ISet<string> headersToMask, TraceFormatter formatter) {
-      LogRequestSummary(request, requestBody, headersToMask, formatter);
-      LogRequestDetails(request, requestBody, headersToMask, formatter);
+    public void LogRequest(RequestInfo requestInfo, ISet<string> headersToMask,
+        TraceFormatter formatter) {
+      LogRequestSummary(requestInfo, headersToMask, formatter);
+      LogRequestDetails(requestInfo, headersToMask, formatter);
     }
 
     /// <summary>
     /// Logs the details of an HTTP request.
     /// </summary>
-    /// <param name="request">The HTTP web request.</param>
-    /// <param name="requestBody">The request body.</param>
+    /// <param name="requestInfo">The request information.</param>
     /// <param name="headersToMask">The headers to mask.</param>
     /// <param name="formatter">The <see cref="TraceFormatter"/> to use when
     /// formatting the message.</param>
-    public void LogRequestDetails(WebRequest request, string requestBody,
-        ISet<string> headersToMask, TraceFormatter formatter) {
-      this.DetailedRequestLog = GetFormattedRequestLog(new RequestInfo(request, requestBody),
+    public void LogRequestDetails(RequestInfo requestInfo, ISet<string> headersToMask,
+        TraceFormatter formatter) {
+      this.DetailedRequestLog = GetFormattedRequestLog(requestInfo,
           headersToMask, formatter);
     }
 
     /// <summary>
     /// Logs the summary of an HTTP request.
     /// </summary>
-    /// <param name="request">The HTTP web request.</param>
+    /// <param name="requestInfo">The request information.</param>
     /// <param name="requestSummary">The formatted request summary.</param>
-    public void LogRequestSummary(WebRequest request, string requestSummary) {
+    public void LogRequestSummary(RequestInfo requestInfo, string requestSummary) {
       this.SummaryRequestLog = string.Format(CultureInfo.InvariantCulture,
-          "host={0},url={1},{2}", request.RequestUri.Host, request.RequestUri.AbsolutePath,
+          "host={0},url={1},{2}", requestInfo.Uri.Host, requestInfo.Uri.AbsolutePath,
           requestSummary);
     }
 
     /// <summary>
     /// Logs the summary of an HTTP request.
     /// </summary>
-    /// <param name="request">The HTTP web request.</param>
-    /// <param name="requestBody">The request body.</param>
+    /// <param name="requestInfo">The request information.</param>
     /// <param name="headersToMask">The headers to mask.</param>
     /// <param name="formatter">The <see cref="TraceFormatter"/> to use when
     /// formatting the message.</param>
-    public void LogRequestSummary(WebRequest request, string requestBody,
-        ISet<string> headersToMask, TraceFormatter formatter) {
-      LogRequestSummary(request, GetRequestSummary(request.Headers, requestBody, headersToMask,
-          formatter));
+    public void LogRequestSummary(RequestInfo requestInfo, ISet<string> headersToMask,
+        TraceFormatter formatter) {
+      LogRequestSummary(requestInfo, 
+          GetRequestSummary(requestInfo.Headers, requestInfo.Body, headersToMask, formatter));
     }
 
     /// <summary>
     /// Logs an HTTP response.
     /// </summary>
-    /// <param name="response">The HTTP web response.</param>
+    /// <param name="responseInfo">The response information.</param>
     /// <param name="isFailure">True, if this is a failed response, false
     /// otherwise.</param>
-    /// <param name="formattedMessage">The formatted response message.</param>
-    public void LogResponse(WebResponse response, bool isFailure, string formattedMessage) {
-      LogResponse(response, isFailure, formattedMessage, new HashSet<string>(),
+    public void LogResponse(ResponseInfo responseInfo, bool isFailure) {
+      LogResponse(responseInfo, isFailure, new HashSet<string>(),
           new DefaultBodyFormatter());
     }
 
     /// <summary>
     /// Logs an HTTP response.
     /// </summary>
-    /// <param name="response">The HTTP web response.</param>
+    /// <param name="responseInfo">The response information.</param>
     /// <param name="isFailure">True, if this is a failed response, false
     /// otherwise.</param>
-    /// <param name="responseBody">The response body.</param>
     /// <param name="fieldsToMask">The list of fields to mask.</param>
     /// <param name="formatter">The formatter to be used for formatting the
     /// response logs.</param>
-    public void LogResponse(WebResponse response, bool isFailure, string responseBody,
+    public void LogResponse(ResponseInfo responseInfo, bool isFailure,
         ISet<string> fieldsToMask, TraceFormatter formatter) {
       LogResponseSummary(isFailure, "");
-      LogResponseDetails(response, responseBody, fieldsToMask, formatter);
+      LogResponseDetails(responseInfo, fieldsToMask, formatter);
     }
 
     /// <summary>
@@ -213,21 +207,16 @@ namespace Google.Api.Ads.Common.Logging {
     /// <summary>
     /// Logs the details of an HTTP response.
     /// </summary>
-    /// <param name="response">The HTTP web response.</param>
-    /// <param name="responseBody">The response body.</param>
+    /// <param name="responseInfo">The response information.</param>
     /// <param name="fieldsToMask">The list of fields to mask.</param>
     /// <param name="formatter">The formatter to be used for formatting the
     /// response logs.</param>
-    public void LogResponseDetails(WebResponse response, string responseBody,
-        ISet<string> fieldsToMask, TraceFormatter formatter) {
-      WebHeaderCollection collection = (response == null) ?
-          new WebHeaderCollection() : response.Headers;
+    public void LogResponseDetails(ResponseInfo responseInfo, ISet<string> fieldsToMask,
+        TraceFormatter formatter) {
       if (config.MaskCredentials) {
-        this.DetailedResponseLog = GetFormattedResponseLog(new ResponseInfo(
-            collection, responseBody), fieldsToMask, formatter);
+        this.DetailedResponseLog = GetFormattedResponseLog(responseInfo, fieldsToMask, formatter);
       } else {
-        this.DetailedResponseLog = GetFormattedResponseLog(new ResponseInfo(
-            collection, responseBody));
+        this.DetailedResponseLog = GetFormattedResponseLog(responseInfo);
       }
     }
 

@@ -59,6 +59,7 @@
     <Compile Include="Util\BatchJob\BulkJobErrorHandler.cs" />
     <Compile Include="Util\BatchJob\CloudStorageErrorDetail.cs" />
     <Compile Include="Util\BatchJob\CloudStorageErrorResponse.cs" />
+    <Compile Include="Util\BatchJob\v201705\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\v201702\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\v201609\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\v201607\BatchJobUtilities.cs" />
@@ -73,6 +74,13 @@
     <Compile Include="Util\Reports\v201607\PredefinedReportTypes.cs" />
     <Compile Include="Util\Reports\v201609\PredefinedReportTypes.cs" />
     <Compile Include="Util\Reports\v201702\PredefinedReportTypes.cs" />
+    <Compile Include="Util\Reports\v201705\PredefinedReportTypes.cs" />
+    <Compile Include="Util\Shopping\v201705\OperationPair.cs" />
+    <Compile Include="Util\Shopping\v201705\ProductDimensionEqualityComparer.cs" />
+    <Compile Include="Util\Shopping\v201705\ProductDimensions.cs" />
+    <Compile Include="Util\Shopping\v201705\ProductPartitionNode.cs" />
+    <Compile Include="Util\Shopping\v201705\ProductPartitionNodeAdapter.cs" />
+    <Compile Include="Util\Shopping\v201705\ProductPartitionTree.cs" />
     <Compile Include="Util\Shopping\v201702\OperationPair.cs" />
     <Compile Include="Util\Shopping\v201702\ProductDimensionEqualityComparer.cs" />
     <Compile Include="Util\Shopping\v201702\ProductDimensions.cs" />
@@ -124,6 +132,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="Util\Selectors\Field.cs" />
+    <Compile Include="Util\v201705\MapUtilities.cs" />
     <Compile Include="Util\v201702\MapUtilities.cs" />
     <Compile Include="v201607\AdWordsApi.cs" />
     <Compile Include="v201607\AdWordsApi.ProductDimension.cs" />
@@ -158,6 +167,17 @@
     <Compile Include="v201702\Paging.cs" />
     <Compile Include="v201702\Predicate.cs" />
     <Compile Include="v201702\ReportDefinition.cs" />
+    <Compile Include="v201705\AdWordsApi.cs" />
+    <Compile Include="v201705\AdWordsApi.ProductDimension.cs" />
+    <Compile Include="v201705\AdWordsServiceV201705.cs" />
+    <Compile Include="v201705\ApiError.cs" />
+    <Compile Include="v201705\ApiException.cs" />
+    <Compile Include="v201705\BatchJobApi.cs" />
+    <Compile Include="v201705\FeedValidationErrors.cs" />
+    <Compile Include="v201705\OrderBy.cs" />
+    <Compile Include="v201705\Paging.cs" />
+    <Compile Include="v201705\Predicate.cs" />
+    <Compile Include="v201705\ReportDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

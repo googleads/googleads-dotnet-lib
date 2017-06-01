@@ -162,7 +162,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201607 {
           while (retryCount < NUM_RETRIES) {
             try {
               // Validate the keywords.
-              AdGroupCriterionReturnValue retval = service.mutate(operations.ToArray());
+              service.mutate(operations.ToArray());
               break;
             } catch (AdWordsApiException e) {
               // Handle API errors.

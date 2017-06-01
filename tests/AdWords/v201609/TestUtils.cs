@@ -120,15 +120,17 @@ namespace Google.Api.Ads.AdWords.Tests.v201609 {
 
       CustomerFeedPage page = customerFeedService.query(query);
 
-      for (int i = 0; i < page.entries.Length; i++) {
-        CustomerFeed customerFeed = page.entries[i];
-        CustomerFeedOperation operation = new CustomerFeedOperation() {
-          @operator = Operator.REMOVE,
-          operand = customerFeed
-        };
-        operations.Add(operation);
+      if (page != null && page.entries != null) {
+        for (int i = 0; i < page.entries.Length; i++) {
+          CustomerFeed customerFeed = page.entries[i];
+          CustomerFeedOperation operation = new CustomerFeedOperation() {
+            @operator = Operator.REMOVE,
+            operand = customerFeed
+          };
+          operations.Add(operation);
+        }
+        customerFeedService.mutate(operations.ToArray());
       }
-      customerFeedService.mutate(operations.ToArray());
     }
 
     /// <summary>

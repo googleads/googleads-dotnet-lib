@@ -57,20 +57,6 @@ namespace Google.Api.Ads.AdWords.Lib {
         TraceUtilities.WriteGeneralWarnings(AdWordsErrorMessages.ClientCustomerIdIsEmpty);
       }
 
-      // Validate Express business headers.
-      if (this.Signature.ServiceName == "PromotionService") {
-        if (header.expressBusinessIdSpecified && header.pageIdSpecified) {
-          throw new ArgumentException(AdWordsErrorMessages.OnlyOneExpressHeaderShouldBeSpecified);
-        } else if (!header.expressBusinessIdSpecified && !header.pageIdSpecified) {
-          throw new ArgumentException(AdWordsErrorMessages.MissingExpressHeaders + ' ' +
-              AdWordsErrorMessages.OnlyOneExpressHeaderShouldBeSpecified);
-        }
-      } else {
-        if (header.expressBusinessIdSpecified || header.pageIdSpecified) {
-          throw new ArgumentException(AdWordsErrorMessages.ExpressHeadersShouldNotBeSpecified);
-        }
-      }
-
       header.userAgent = config.GetUserAgent();
 
       string oAuthHeader = null;

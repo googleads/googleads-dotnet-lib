@@ -208,7 +208,7 @@ namespace Google.Api.Ads.Common.Lib {
       WebRequest request = HttpUtilities.BuildRequest(url, "GET", config);
 
       LogEntry logEntry = new LogEntry(this.Config, new DefaultDateTimeProvider());
-      logEntry.LogRequest(request, "", new HashSet<string>());
+      logEntry.LogRequest(new RequestInfo(request, ""), new HashSet<string>());
 
       WebResponse response = null;
 
@@ -216,11 +216,11 @@ namespace Google.Api.Ads.Common.Lib {
         response = request.GetResponse();
 
         string contents = MediaUtilities.GetStreamContentsAsString(response.GetResponseStream());
-        logEntry.LogResponse(response, false, contents);
+        logEntry.LogResponse(new ResponseInfo(response, contents), false);
         logEntry.Flush();
       } catch (WebException e) {
         string contents = HttpUtilities.GetErrorResponseBody(e);
-        logEntry.LogResponse(response, true, contents);
+        logEntry.LogResponse(new ResponseInfo(response, contents), true);
         logEntry.Flush();
 
         throw new AdsOAuthException("Failed to revoke refresh token.\n" + contents, e);

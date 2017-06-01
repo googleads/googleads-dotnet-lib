@@ -39,10 +39,10 @@ namespace Google.Api.Ads.Common.Logging {
     /// <summary>
     /// Initializes a new instance of the <see cref="ResponseInfo"/> class.
     /// </summary>
-    /// <param name="headers">The HTTP response headers.</param>
+    /// <param name="response">The HTTP response.</param>
     /// <param name="body">The HTTP response body.</param>
-    public ResponseInfo(WebHeaderCollection headers, string body) {
-      this.Headers = headers;
+    public ResponseInfo(WebResponse response, string body) {
+      this.Headers = response != null ? response.Headers : new WebHeaderCollection();
       this.Body = body;
     }
 

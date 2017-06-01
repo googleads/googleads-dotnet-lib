@@ -270,34 +270,6 @@ namespace Google.Api.Ads.AdWords.Lib {
 
       #endregion
 
-      #region AdWords Express.
-
-      /// <summary>
-      /// See <a href="https://developers.google.com/adwords/api/docs/reference/express/v201607/BudgetSuggestionService">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature BudgetSuggestionService;
-
-      /// <summary>
-      /// See <a href="https://developers.google.com/adwords/api/docs/reference/express/v201607/ExpressBusinessService">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature ExpressBusinessService;
-
-      /// <summary>
-      /// See <a href="https://developers.google.com/adwords/api/docs/reference/express/v201607/PromotionService">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature PromotionService;
-
-      /// <summary>
-      /// See <a href="https://developers.google.com/adwords/api/docs/reference/express/v201607/ProductServiceService">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature ProductServiceService;
-
-      #endregion
-
       #region Account Management.
 
       /// <summary>
@@ -448,20 +420,6 @@ namespace Google.Api.Ads.AdWords.Lib {
             AdWordsService.MakeServiceSignature("v201607", "o", "TargetingIdeaService");
         TrafficEstimatorService =
             AdWordsService.MakeServiceSignature("v201607", "o", "TrafficEstimatorService");
-
-        #endregion
-
-        #region AdWords Express.
-
-        BudgetSuggestionService =
-              AdWordsService.MakeServiceSignature("v201607", "express", "BudgetSuggestionService");
-        ExpressBusinessService =
-            AdWordsService.MakeServiceSignature("v201607", "express",
-                "ExpressBusinessService");
-        ProductServiceService =
-            AdWordsService.MakeServiceSignature("v201607", "express", "ProductServiceService");
-        PromotionService =
-            AdWordsService.MakeServiceSignature("v201607", "express", "PromotionService");
 
         #endregion
 

@@ -46,7 +46,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <summary>
     /// Default report version.
     /// </summary>
-    internal const string DEFAULT_REPORT_VERSION = "v201607";
+    internal const string DEFAULT_REPORT_VERSION = "v201705";
 
     /// <summary>
     /// Sets the reporting API version to use.
@@ -180,14 +180,14 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         request = BuildRequest(downloadUrl, postBody, logEntry);
         response = request.GetResponse();
 
-        logEntry.LogResponse(response, false, "Response truncated.");
+        logEntry.LogResponse(new ResponseInfo(response,"Response truncated."), false);
         logEntry.Flush();
         return new ReportResponse(response);
       } catch (WebException e) {
         Exception reportsException = null;
 
         string contents = HttpUtilities.GetErrorResponseBody(e);
-        logEntry.LogResponse(e.Response, true, contents);
+        logEntry.LogResponse(new ResponseInfo(e.Response, contents), true);
         logEntry.Flush();
 
         reportsException = ParseException(e, contents);

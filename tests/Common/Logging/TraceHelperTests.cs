@@ -155,7 +155,8 @@ TimeStamp: {1}
     /// </summary>
     [Test]
     public void TestLogRequestWithMasking() {
-      logEntry.LogRequestDetails(testRequest, Resources.SoapRequest, KEYS, SOAP_FORMATTER);
+      logEntry.LogRequestDetails(new RequestInfo(testRequest, Resources.SoapRequest),
+          KEYS, SOAP_FORMATTER);
       string log = NormalizeNewLines(logEntry.DetailedRequestLog.Trim());
 
       string maskedMessage = SOAP_FORMATTER.MaskContents(Resources.SoapRequest, KEYS).Trim();
@@ -170,7 +171,8 @@ TimeStamp: {1}
     /// </summary>
     [Test]
     public void TestLogResponseWithMasking() {
-      logEntry.LogRequestDetails(testRequest, Resources.SoapRequest, KEYS, SOAP_FORMATTER);
+      logEntry.LogRequestDetails(new RequestInfo(testRequest, Resources.SoapRequest),
+          KEYS, SOAP_FORMATTER);
       string log = NormalizeNewLines(logEntry.DetailedRequestLog.Trim());
 
       string maskedMessage = SOAP_FORMATTER.MaskContents(Resources.SoapRequest, KEYS).Trim();

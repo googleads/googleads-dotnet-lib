@@ -339,7 +339,7 @@ namespace Google.Api.Ads.Common.Lib {
         response = request.GetResponse();
 
         string contents = MediaUtilities.GetStreamContentsAsString(response.GetResponseStream());
-        logEntry.LogResponse(response, false, contents, RESPONSE_FIELDS_TO_MASK,
+        logEntry.LogResponse(new ResponseInfo(response, contents), false, RESPONSE_FIELDS_TO_MASK,
             new JsonBodyFormatter());
         logEntry.Flush();
 
@@ -359,7 +359,7 @@ namespace Google.Api.Ads.Common.Lib {
         }
       } catch (WebException e) {
         string contents = HttpUtilities.GetErrorResponseBody(e);
-        logEntry.LogResponse(response, true, contents, RESPONSE_FIELDS_TO_MASK,
+        logEntry.LogResponse(new ResponseInfo(response, contents), true, RESPONSE_FIELDS_TO_MASK,
             new JsonBodyFormatter());
         logEntry.Flush();
 

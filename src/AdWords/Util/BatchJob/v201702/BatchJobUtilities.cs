@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Collections.Generic;
 
 using ApiBatchJob = Google.Api.Ads.AdWords.v201702.BatchJob;
 
@@ -261,5 +260,54 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob.v201702 {
         throw;
       }
     }
+
+    #region mono_vbnc_bug_40793_workaround
+    /* Mono VBNC compiler has issues calling generic methods whose signatures contain generic
+     * type. These methods are provided as workaround for Mono users on VB.NET.
+     * See https://bugzilla.xamarin.com/show_bug.cgi?id=40793 for details.
+     */
+
+    /// <summary>
+    /// Uploads the operations to a specified URL.
+    /// </summary>
+    /// <param name="url">The temporary URL returned by a batch job.</param>
+    /// <param name="operations">The list of operations.</param>
+    /// <remarks>Use this method as a workaround for
+    /// https://bugzilla.xamarin.com/show_bug.cgi?id=40793 if you are using VB.NET on Mono.
+    /// Otherwise use <see cref="Upload(string, IEnumerable{Operation})"/> method.</remarks>
+    public void Upload(string url, Operation[] operations) {
+      Upload(url, (IEnumerable<Operation>) operations);
+    }
+
+    /// <summary>
+    /// Uploads the operations to a specified URL.
+    /// </summary>
+    /// <param name="url">The temporary URL returned by a batch job.</param>
+    /// <param name="operations">The list of operations.</param>
+    /// <param name="resumePreviousUpload">True, if a previously interrupted
+    /// upload should be resumed.</param>
+    /// <remarks>Use this method as a workaround for
+    /// https://bugzilla.xamarin.com/show_bug.cgi?id=40793 if you are using VB.NET on Mono.
+    /// Otherwise use <see cref="Upload(string, IEnumerable{Operation}, bool)"/> method.</remarks>
+    public void Upload(string url, Operation[] operations, bool resumePreviousUpload) {
+      Upload(url, (IEnumerable<Operation>) operations, resumePreviousUpload);
+    }
+
+    /// <summary>
+    /// Uploads the operations to a specified URL in a streamed manner.
+    /// </summary>
+    /// <param name="uploadProgress">The upload progress tracker.</param>
+    /// <param name="operations">The list of operations.</param>
+    /// <returns>The updated progress tracker.</returns>
+    /// <remarks>Use this method as a workaround for
+    /// https://bugzilla.xamarin.com/show_bug.cgi?id=40793 if you are using VB.NET on Mono.
+    /// Otherwise use <see cref="StreamUpload(BatchUploadProgress, IEnumerable{Operation})"/>
+    /// method.</remarks>
+    public BatchUploadProgress StreamUpload(BatchUploadProgress uploadProgress,
+        Operation[] operations) {
+      return StreamUpload(uploadProgress, (IEnumerable<Operation>) operations);
+    }
+    #endregion
+
   }
 }

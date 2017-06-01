@@ -146,7 +146,7 @@ namespace Google.Api.Ads.Common.Util {
           writer.Write(postBody);
         }
       } finally {
-        logEntry.LogRequest(request, postBody, headersToMask);
+        logEntry.LogRequest(new RequestInfo(request, postBody), headersToMask);
       }
     }
   }
