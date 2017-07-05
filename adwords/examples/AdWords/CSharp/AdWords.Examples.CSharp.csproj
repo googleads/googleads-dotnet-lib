@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C1DE791-767A-4599-A0B9-51D6D2DFCC81}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Google.Api.Ads.AdWords.Examples.CSharp</RootNamespace>
+    <AssemblyName>Google.AdWords.Examples.CSharp</AssemblyName>
+    <StartupObject>Google.Api.Ads.AdWords.Examples.CSharp.Program</StartupObject>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0618</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(ProjectDir)..\..\..\src\Common\AdsApi.snk</AssemblyOriginatorKeyFile>
+    <AssemblyDelaySign>true</AssemblyDelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.7.4137.9688, Culture=neutral, PublicKeyToken=a4292a325f69b123, processorArchitecture=MSIL">
+      <HintPath>..\..\..\lib\BouncyCastle\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Common\Common.csproj">
+      <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\AdWords\AdWords.csproj">
+      <Project>{50C9CC2A-0664-4CFA-B72D-AEE6C91BD745}</Project>
+      <Name>AdWords</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="v201609\Solutions\BudgetUtilizationReport\README.md" />
+    <None Include="v201609\Solutions\GetNewKeywords\README.md" />
+    <None Include="v201705\Solutions\BudgetUtilizationReport\README.md" />
+    <None Include="v201705\Solutions\GetNewKeywords\README.md" />
+    <None Include="v201702\Solutions\BudgetUtilizationReport\README.md" />
+    <None Include="v201702\Solutions\GetNewKeywords\README.md" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterBuild" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Exec Command="sn -R $(OutDir)$(TargetFileName) $(ProjectDir)..\..\..\src\Common\AdsApi.snk" />
+  </Target>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Properties.cs" />
+    <Compile Include="v201609\AccountManagement\AcceptServiceLink.cs" />
+    <Compile Include="v201609\AccountManagement\CreateAccount.cs" />
+    <Compile Include="v201609\AccountManagement\GetAccountChanges.cs" />
+    <Compile Include="v201609\AccountManagement\GetAccountHierarchy.cs" />
+    <Compile Include="v201609\AdvancedOperations\AddAdCustomizers.cs" />
+    <Compile Include="v201609\AdvancedOperations\AddAdGroupBidModifier.cs" />
+    <Compile Include="v201609\AdvancedOperations\AddClickToDownloadAd.cs" />
+    <Compile Include="v201609\AdvancedOperations\AddExpandedTextAdWithUpgradedUrls.cs" />
+    <Compile Include="v201609\AdvancedOperations\AddHtml5Ad.cs" />
+    <Compile Include="v201609\AdvancedOperations\AddResponsiveDisplayAd.cs" />
+    <Compile Include="v201609\AdvancedOperations\AddUniversalAppCampaign.cs" />
+    <Compile Include="v201609\AdvancedOperations\CreateAndAttachSharedKeywordSet.cs" />
+    <Compile Include="v201609\AdvancedOperations\FindAndRemoveCriteriaFromSharedSet.cs" />
+    <Compile Include="v201609\AdvancedOperations\GetAdGroupBidModifiers.cs" />
+    <Compile Include="v201609\AdvancedOperations\UsePortfolioBiddingStrategy.cs" />
+    <Compile Include="v201609\BasicOperations\AddAdGroupDemographicCriteria.cs" />
+    <Compile Include="v201609\BasicOperations\AddAdGroups.cs" />
+    <Compile Include="v201609\BasicOperations\AddCampaigns.cs" />
+    <Compile Include="v201609\BasicOperations\AddExpandedTextAds.cs" />
+    <Compile Include="v201609\BasicOperations\AddKeywords.cs" />
+    <Compile Include="v201609\BasicOperations\GetAdGroups.cs" />
+    <Compile Include="v201609\BasicOperations\GetCampaigns.cs" />
+    <Compile Include="v201609\BasicOperations\GetCampaignsWithAwql.cs" />
+    <Compile Include="v201609\BasicOperations\GetExpandedTextAds.cs" />
+    <Compile Include="v201609\BasicOperations\GetKeywords.cs" />
+    <Compile Include="v201609\BasicOperations\GetTextAds.cs" />
+    <Compile Include="v201609\BasicOperations\PauseAd.cs" />
+    <Compile Include="v201609\BasicOperations\RemoveAd.cs" />
+    <Compile Include="v201609\BasicOperations\RemoveAdGroup.cs" />
+    <Compile Include="v201609\BasicOperations\RemoveCampaign.cs" />
+    <Compile Include="v201609\BasicOperations\RemoveKeyword.cs" />
+    <Compile Include="v201609\BasicOperations\UpdateAdGroup.cs" />
+    <Compile Include="v201609\BasicOperations\UpdateCampaign.cs" />
+    <Compile Include="v201609\BasicOperations\UpdateKeyword.cs" />
+    <Compile Include="v201609\CampaignManagement\AddCampaignLabels.cs" />
+    <Compile Include="v201609\CampaignManagement\AddCompleteCampaignsUsingBatchJob.cs" />
+    <Compile Include="v201609\CampaignManagement\AddCompleteCampaignsUsingStreamingBatchJob.cs" />
+    <Compile Include="v201609\CampaignManagement\AddDraft.cs" />
+    <Compile Include="v201609\CampaignManagement\AddKeywordsUsingIncrementalBatchJob.cs" />
+    <Compile Include="v201609\CampaignManagement\AddTrial.cs" />
+    <Compile Include="v201609\CampaignManagement\GetAllDisapprovedAds.cs" />
+    <Compile Include="v201609\CampaignManagement\GetAllDisapprovedAdsWihAwql.cs" />
+    <Compile Include="v201609\CampaignManagement\GetCampaignsByLabel.cs" />
+    <Compile Include="v201609\CampaignManagement\GraduateTrial.cs" />
+    <Compile Include="v201609\CampaignManagement\SetAdParameters.cs" />
+    <Compile Include="v201609\CampaignManagement\SetBidModifier.cs" />
+    <Compile Include="v201609\CampaignManagement\ValidateTextAd.cs" />
+    <Compile Include="v201609\ErrorHandling\HandlePartialFailures.cs" />
+    <Compile Include="v201609\ErrorHandling\HandlePolicyViolationError.cs" />
+    <Compile Include="v201609\ErrorHandling\HandleRateExceededError.cs" />
+    <Compile Include="v201609\Extensions\AddGoogleMyBusinessLocationExtensions.cs" />
+    <Compile Include="v201609\Extensions\AddPrices.cs" />
+    <Compile Include="v201609\Extensions\AddSitelinks.cs" />
+    <Compile Include="v201609\Extensions\AddSitelinksUsingFeeds.cs" />
+    <Compile Include="v201609\Migration\MigrateToExtensionSettings.cs" />
+    <Compile Include="v201609\Miscellaneous\GetAllVideosAndImages.cs" />
+    <Compile Include="v201609\Miscellaneous\UploadImage.cs" />
+    <Compile Include="v201609\Miscellaneous\UploadMediaBundle.cs" />
+    <Compile Include="v201609\Optimization\EstimateKeywordTraffic.cs" />
+    <Compile Include="v201609\Optimization\GetAdGroupBidSimulations.cs" />
+    <Compile Include="v201609\Optimization\GetCampaignCriterionBidModifierSimulations.cs" />
+    <Compile Include="v201609\Optimization\GetKeywordBidSimulations.cs" />
+    <Compile Include="v201609\Optimization\GetKeywordIdeas.cs" />
+    <Compile Include="v201609\Remarketing\AddAudience.cs" />
+    <Compile Include="v201609\Remarketing\AddConversionTracker.cs" />
+    <Compile Include="v201609\Remarketing\AddCrmBasedUserList.cs" />
+    <Compile Include="v201609\Remarketing\AddRuleBasedRemarketingList.cs" />
+    <Compile Include="v201609\Remarketing\UploadOfflineCallConversions.cs" />
+    <Compile Include="v201609\Remarketing\UploadOfflineConversions.cs" />
+    <Compile Include="v201609\Reporting\DownloadCriteriaReport.cs" />
+    <Compile Include="v201609\Reporting\DownloadCriteriaReportWithAwql.cs" />
+    <Compile Include="v201609\Reporting\GetReportFields.cs" />
+    <Compile Include="v201609\Reporting\ParallelReportDownload.cs" />
+    <Compile Include="v201609\Reporting\StreamCriteriaReportResults.cs" />
+    <Compile Include="v201609\Reporting\StreamCriteriaReportToPoco.cs" />
+    <Compile Include="v201609\Reporting\StreamReportToPredefinedReportRowType.cs" />
+    <Compile Include="v201609\ShoppingCampaigns\AddProductPartitionTree.cs" />
+    <Compile Include="v201609\ShoppingCampaigns\AddProductScope.cs" />
+    <Compile Include="v201609\ShoppingCampaigns\AddShoppingCampaign.cs" />
+    <Compile Include="v201609\ShoppingCampaigns\GetProductCategoryTaxonomy.cs" />
+    <Compile Include="v201609\Solutions\BudgetUtilizationReport\BudgetUtilizationReport.cs" />
+    <Compile Include="v201609\Solutions\GetNewKeywords\GetNewKeywords.cs" />
+    <Compile Include="v201609\Targeting\AddCampaignTargetingCriteria.cs" />
+    <Compile Include="v201609\Targeting\GetCampaignTargetingCriteria.cs" />
+    <Compile Include="v201609\Targeting\GetTargetableLanguagesAndCarriers.cs" />
+    <Compile Include="v201609\Targeting\LookupLocation.cs" />
+    <Compile Include="v201702\AccountManagement\AcceptServiceLink.cs" />
+    <Compile Include="v201702\AccountManagement\CreateAccount.cs" />
+    <Compile Include="v201702\AccountManagement\GetAccountChanges.cs" />
+    <Compile Include="v201702\AccountManagement\GetAccountHierarchy.cs" />
+    <Compile Include="v201702\AdvancedOperations\AddAdCustomizers.cs" />
+    <Compile Include="v201702\AdvancedOperations\AddAdGroupBidModifier.cs" />
+    <Compile Include="v201702\AdvancedOperations\AddClickToDownloadAd.cs" />
+    <Compile Include="v201702\AdvancedOperations\AddExpandedTextAdWithUpgradedUrls.cs" />
+    <Compile Include="v201702\AdvancedOperations\AddHtml5Ad.cs" />
+    <Compile Include="v201702\AdvancedOperations\AddResponsiveDisplayAd.cs" />
+    <Compile Include="v201702\AdvancedOperations\AddUniversalAppCampaign.cs" />
+    <Compile Include="v201702\AdvancedOperations\CreateAndAttachSharedKeywordSet.cs" />
+    <Compile Include="v201702\AdvancedOperations\FindAndRemoveCriteriaFromSharedSet.cs" />
+    <Compile Include="v201702\AdvancedOperations\GetAdGroupBidModifiers.cs" />
+    <Compile Include="v201702\AdvancedOperations\UsePortfolioBiddingStrategy.cs" />
+    <Compile Include="v201702\BasicOperations\AddAdGroupDemographicCriteria.cs" />
+    <Compile Include="v201702\BasicOperations\AddAdGroups.cs" />
+    <Compile Include="v201702\BasicOperations\AddCampaigns.cs" />
+    <Compile Include="v201702\BasicOperations\AddExpandedTextAds.cs" />
+    <Compile Include="v201702\BasicOperations\AddKeywords.cs" />
+    <Compile Include="v201702\BasicOperations\GetAdGroups.cs" />
+    <Compile Include="v201702\BasicOperations\GetCampaigns.cs" />
+    <Compile Include="v201702\BasicOperations\GetCampaignsWithAwql.cs" />
+    <Compile Include="v201702\BasicOperations\GetExpandedTextAds.cs" />
+    <Compile Include="v201702\BasicOperations\GetKeywords.cs" />
+    <Compile Include="v201702\BasicOperations\GetTextAds.cs" />
+    <Compile Include="v201702\BasicOperations\PauseAd.cs" />
+    <Compile Include="v201702\BasicOperations\RemoveAd.cs" />
+    <Compile Include="v201702\BasicOperations\RemoveAdGroup.cs" />
+    <Compile Include="v201702\BasicOperations\RemoveCampaign.cs" />
+    <Compile Include="v201702\BasicOperations\RemoveKeyword.cs" />
+    <Compile Include="v201702\BasicOperations\UpdateAdGroup.cs" />
+    <Compile Include="v201702\BasicOperations\UpdateCampaign.cs" />
+    <Compile Include="v201702\BasicOperations\UpdateKeyword.cs" />
+    <Compile Include="v201702\CampaignManagement\AddCampaignLabels.cs" />
+    <Compile Include="v201702\CampaignManagement\AddCompleteCampaignsUsingBatchJob.cs" />
+    <Compile Include="v201702\CampaignManagement\AddCompleteCampaignsUsingStreamingBatchJob.cs" />
+    <Compile Include="v201702\CampaignManagement\AddDraft.cs" />
+    <Compile Include="v201702\CampaignManagement\AddKeywordsUsingIncrementalBatchJob.cs" />
+    <Compile Include="v201702\CampaignManagement\AddTrial.cs" />
+    <Compile Include="v201702\CampaignManagement\GetAllDisapprovedAds.cs" />
+    <Compile Include="v201702\CampaignManagement\GetAllDisapprovedAdsWihAwql.cs" />
+    <Compile Include="v201702\CampaignManagement\GetCampaignsByLabel.cs" />
+    <Compile Include="v201702\CampaignManagement\GraduateTrial.cs" />
+    <Compile Include="v201702\CampaignManagement\SetAdParameters.cs" />
+    <Compile Include="v201702\CampaignManagement\SetBidModifier.cs" />
+    <Compile Include="v201702\CampaignManagement\ValidateTextAd.cs" />
+    <Compile Include="v201702\ErrorHandling\HandlePartialFailures.cs" />
+    <Compile Include="v201702\ErrorHandling\HandlePolicyViolationError.cs" />
+    <Compile Include="v201702\ErrorHandling\HandleRateExceededError.cs" />
+    <Compile Include="v201702\Extensions\AddGoogleMyBusinessLocationExtensions.cs" />
+    <Compile Include="v201702\Extensions\AddPrices.cs" />
+    <Compile Include="v201702\Extensions\AddSitelinks.cs" />
+    <Compile Include="v201702\Extensions\AddSitelinksUsingFeeds.cs" />
+    <Compile Include="v201702\Migration\MigrateToExtensionSettings.cs" />
+    <Compile Include="v201702\Miscellaneous\GetAllVideosAndImages.cs" />
+    <Compile Include="v201702\Miscellaneous\UploadImage.cs" />
+    <Compile Include="v201702\Miscellaneous\UploadMediaBundle.cs" />
+    <Compile Include="v201702\Optimization\EstimateKeywordTraffic.cs" />
+    <Compile Include="v201702\Optimization\GetAdGroupBidSimulations.cs" />
+    <Compile Include="v201702\Optimization\GetCampaignCriterionBidModifierSimulations.cs" />
+    <Compile Include="v201702\Optimization\GetKeywordBidSimulations.cs" />
+    <Compile Include="v201702\Optimization\GetKeywordIdeas.cs" />
+    <Compile Include="v201702\Remarketing\AddAudience.cs" />
+    <Compile Include="v201702\Remarketing\AddConversionTracker.cs" />
+    <Compile Include="v201702\Remarketing\AddCrmBasedUserList.cs" />
+    <Compile Include="v201702\Remarketing\AddRuleBasedRemarketingList.cs" />
+    <Compile Include="v201702\Remarketing\UploadOfflineCallConversions.cs" />
+    <Compile Include="v201702\Remarketing\UploadOfflineConversions.cs" />
+    <Compile Include="v201702\Reporting\DownloadCriteriaReportWithAwql.cs" />
+    <Compile Include="v201702\Reporting\DownloadCriteriaReportWithSelector.cs" />
+    <Compile Include="v201702\Reporting\GetReportFields.cs" />
+    <Compile Include="v201702\Reporting\ParallelReportDownload.cs" />
+    <Compile Include="v201702\Reporting\StreamCriteriaReportResults.cs" />
+    <Compile Include="v201702\Reporting\StreamCriteriaReportToPoco.cs" />
+    <Compile Include="v201702\Reporting\StreamReportToPredefinedReportRowType.cs" />
+    <Compile Include="v201702\ShoppingCampaigns\AddProductPartitionTree.cs" />
+    <Compile Include="v201702\ShoppingCampaigns\AddProductScope.cs" />
+    <Compile Include="v201702\ShoppingCampaigns\AddShoppingCampaign.cs" />
+    <Compile Include="v201702\ShoppingCampaigns\AddShoppingCampaignForShowcaseAds.cs" />
+    <Compile Include="v201702\ShoppingCampaigns\GetProductCategoryTaxonomy.cs" />
+    <Compile Include="v201702\Solutions\BudgetUtilizationReport\BudgetUtilizationReport.cs" />
+    <Compile Include="v201702\Solutions\GetNewKeywords\GetNewKeywords.cs" />
+    <Compile Include="v201702\Targeting\AddCampaignTargetingCriteria.cs" />
+    <Compile Include="v201702\Targeting\GetCampaignTargetingCriteria.cs" />
+    <Compile Include="v201702\Targeting\GetTargetableLanguagesAndCarriers.cs" />
+    <Compile Include="v201702\Targeting\LookupLocation.cs" />
+    <Compile Include="v201705\AccountManagement\AcceptServiceLink.cs" />
+    <Compile Include="v201705\AccountManagement\CreateAccount.cs" />
+    <Compile Include="v201705\AccountManagement\GetAccountChanges.cs" />
+    <Compile Include="v201705\AccountManagement\GetAccountHierarchy.cs" />
+    <Compile Include="v201705\AdvancedOperations\AddAdCustomizers.cs" />
+    <Compile Include="v201705\AdvancedOperations\AddAdGroupBidModifier.cs" />
+    <Compile Include="v201705\AdvancedOperations\AddClickToDownloadAd.cs" />
+    <Compile Include="v201705\AdvancedOperations\AddDynamicPageFeed.cs" />
+    <Compile Include="v201705\AdvancedOperations\AddDynamicSearchAdsCampaign.cs" />
+    <Compile Include="v201705\AdvancedOperations\AddExpandedTextAdWithUpgradedUrls.cs" />
+    <Compile Include="v201705\AdvancedOperations\AddHtml5Ad.cs" />
+    <Compile Include="v201705\AdvancedOperations\AddResponsiveDisplayAd.cs" />
+    <Compile Include="v201705\AdvancedOperations\AddUniversalAppCampaign.cs" />
+    <Compile Include="v201705\AdvancedOperations\CreateAndAttachSharedKeywordSet.cs" />
+    <Compile Include="v201705\AdvancedOperations\FindAndRemoveCriteriaFromSharedSet.cs" />
+    <Compile Include="v201705\AdvancedOperations\GetAdGroupBidModifiers.cs" />
+    <Compile Include="v201705\AdvancedOperations\UsePortfolioBiddingStrategy.cs" />
+    <Compile Include="v201705\BasicOperations\AddAdGroupDemographicCriteria.cs" />
+    <Compile Include="v201705\BasicOperations\AddAdGroups.cs" />
+    <Compile Include="v201705\BasicOperations\AddCampaigns.cs" />
+    <Compile Include="v201705\BasicOperations\AddExpandedTextAds.cs" />
+    <Compile Include="v201705\BasicOperations\AddKeywords.cs" />
+    <Compile Include="v201705\BasicOperations\GetAdGroups.cs" />
+    <Compile Include="v201705\BasicOperations\GetCampaigns.cs" />
+    <Compile Include="v201705\BasicOperations\GetCampaignsWithAwql.cs" />
+    <Compile Include="v201705\BasicOperations\GetExpandedTextAds.cs" />
+    <Compile Include="v201705\BasicOperations\GetKeywords.cs" />
+    <Compile Include="v201705\BasicOperations\PauseAd.cs" />
+    <Compile Include="v201705\BasicOperations\RemoveAd.cs" />
+    <Compile Include="v201705\BasicOperations\RemoveAdGroup.cs" />
+    <Compile Include="v201705\BasicOperations\RemoveCampaign.cs" />
+    <Compile Include="v201705\BasicOperations\RemoveKeyword.cs" />
+    <Compile Include="v201705\BasicOperations\UpdateAdGroup.cs" />
+    <Compile Include="v201705\BasicOperations\UpdateCampaign.cs" />
+    <Compile Include="v201705\BasicOperations\UpdateKeyword.cs" />
+    <Compile Include="v201705\CampaignManagement\AddCampaignGroupsAndPerformanceTargets.cs" />
+    <Compile Include="v201705\CampaignManagement\AddCampaignLabels.cs" />
+    <Compile Include="v201705\CampaignManagement\AddCompleteCampaignsUsingBatchJob.cs" />
+    <Compile Include="v201705\CampaignManagement\AddCompleteCampaignsUsingStreamingBatchJob.cs" />
+    <Compile Include="v201705\CampaignManagement\AddDraft.cs" />
+    <Compile Include="v201705\CampaignManagement\AddKeywordsUsingIncrementalBatchJob.cs" />
+    <Compile Include="v201705\CampaignManagement\AddTrial.cs" />
+    <Compile Include="v201705\CampaignManagement\GetAllDisapprovedAds.cs" />
+    <Compile Include="v201705\CampaignManagement\GetAllDisapprovedAdsWihAwql.cs" />
+    <Compile Include="v201705\CampaignManagement\GetCampaignsByLabel.cs" />
+    <Compile Include="v201705\CampaignManagement\GraduateTrial.cs" />
+    <Compile Include="v201705\CampaignManagement\SetAdParameters.cs" />
+    <Compile Include="v201705\CampaignManagement\SetBidModifier.cs" />
+    <Compile Include="v201705\CampaignManagement\ValidateTextAd.cs" />
+    <Compile Include="v201705\ErrorHandling\HandlePartialFailures.cs" />
+    <Compile Include="v201705\ErrorHandling\HandlePolicyViolationError.cs" />
+    <Compile Include="v201705\ErrorHandling\HandleRateExceededError.cs" />
+    <Compile Include="v201705\Extensions\AddGoogleMyBusinessLocationExtensions.cs" />
+    <Compile Include="v201705\Extensions\AddPrices.cs" />
+    <Compile Include="v201705\Extensions\AddSitelinks.cs" />
+    <Compile Include="v201705\Extensions\AddSitelinksUsingFeeds.cs" />
+    <Compile Include="v201705\Migration\MigrateToExtensionSettings.cs" />
+    <Compile Include="v201705\Miscellaneous\GetAllVideosAndImages.cs" />
+    <Compile Include="v201705\Miscellaneous\UploadImage.cs" />
+    <Compile Include="v201705\Miscellaneous\UploadMediaBundle.cs" />
+    <Compile Include="v201705\Optimization\EstimateKeywordTraffic.cs" />
+    <Compile Include="v201705\Optimization\GetAdGroupBidSimulations.cs" />
+    <Compile Include="v201705\Optimization\GetCampaignCriterionBidModifierSimulations.cs" />
+    <Compile Include="v201705\Optimization\GetKeywordBidSimulations.cs" />
+    <Compile Include="v201705\Optimization\GetKeywordIdeas.cs" />
+    <Compile Include="v201705\Remarketing\AddAudience.cs" />
+    <Compile Include="v201705\Remarketing\AddConversionTracker.cs" />
+    <Compile Include="v201705\Remarketing\AddCrmBasedUserList.cs" />
+    <Compile Include="v201705\Remarketing\AddRuleBasedRemarketingList.cs" />
+    <Compile Include="v201705\Remarketing\UploadOfflineCallConversions.cs" />
+    <Compile Include="v201705\Remarketing\UploadOfflineConversions.cs" />
+    <Compile Include="v201705\Reporting\DownloadCriteriaReportWithAwql.cs" />
+    <Compile Include="v201705\Reporting\DownloadCriteriaReportWithSelector.cs" />
+    <Compile Include="v201705\Reporting\GetReportFields.cs" />
+    <Compile Include="v201705\Reporting\ParallelReportDownload.cs" />
+    <Compile Include="v201705\Reporting\StreamCriteriaReportResults.cs" />
+    <Compile Include="v201705\Reporting\StreamCriteriaReportToPoco.cs" />
+    <Compile Include="v201705\Reporting\StreamReportToPredefinedReportRowType.cs" />
+    <Compile Include="v201705\ShoppingCampaigns\AddProductPartitionTree.cs" />
+    <Compile Include="v201705\ShoppingCampaigns\AddProductScope.cs" />
+    <Compile Include="v201705\ShoppingCampaigns\AddShoppingCampaign.cs" />
+    <Compile Include="v201705\ShoppingCampaigns\AddShoppingCampaignForShowcaseAds.cs" />
+    <Compile Include="v201705\ShoppingCampaigns\GetProductCategoryTaxonomy.cs" />
+    <Compile Include="v201705\Solutions\BudgetUtilizationReport\BudgetUtilizationReport.cs" />
+    <Compile Include="v201705\Solutions\GetNewKeywords\GetNewKeywords.cs" />
+    <Compile Include="v201705\Targeting\AddCampaignTargetingCriteria.cs" />
+    <Compile Include="v201705\Targeting\GetCampaignTargetingCriteria.cs" />
+    <Compile Include="v201705\Targeting\GetTargetableLanguagesAndCarriers.cs" />
+    <Compile Include="v201705\Targeting\LookupLocation.cs" />
+    <Compile Include="ExampleBase.cs" />
+    <Compile Include="ExampleUtilities.cs" />
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config" />
+  </ItemGroup>
+</Project>
