@@ -15,18 +15,16 @@
 using Google.Api.Ads.Common.Lib;
 
 using System;
-using System.IO;
 using System.Runtime.Serialization;
-using System.Security.Permissions;
-using System.Text;
-using System.Xml.Serialization;
 
 namespace Google.Api.Ads.AdWords.Lib {
+
   /// <summary>
   /// Base class for all exceptions specific to AdWords.
   /// </summary>
   [Serializable]
   public class AdWordsException : AdsException {
+
     /// <summary>
     /// Public constructor.
     /// </summary>

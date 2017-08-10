@@ -45,10 +45,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
       if (!reader.Read()) {
         return false;
       }
-      else
-        if (reader.NodeType == XmlNodeType.Element && reader.Name == "row") {
-          return true;
-        }
+      else if (reader.NodeType == XmlNodeType.Element && reader.Name == "row") {
+        return true;
+      }
       return Read();
     }
 

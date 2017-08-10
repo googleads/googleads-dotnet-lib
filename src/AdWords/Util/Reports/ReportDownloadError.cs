@@ -13,35 +13,35 @@
 // limitations under the License.
 
 using System;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 
 namespace Google.Api.Ads.AdWords.Util.Reports {
+
   /// <summary>
   /// Represents a report download error.
   /// </summary>
   [Serializable()]
   public class ReportDownloadError {
+
     /// <summary>
     /// Type of error.
     /// </summary>
-    string errorType;
+    private string errorType;
 
     /// <summary>
     /// The reason for triggering this error.
     /// </summary>
-    string trigger;
+    private string trigger;
 
     /// <summary>
     /// The field that triggered this error, if applicable.
     /// </summary>
-    string fieldPath;
+    private string fieldPath;
 
     /// <summary>
     /// The API version.
     /// </summary>
-    string apiVersion = ReportUtilities.DEFAULT_REPORT_VERSION;
+    private string apiVersion = ReportUtilities.DEFAULT_REPORT_VERSION;
 
     /// <summary>
     /// Gets or sets the API version.

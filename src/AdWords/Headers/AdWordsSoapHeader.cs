@@ -12,37 +12,34 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.Common.Lib;
-
 using System;
+using System.ServiceModel.Channels;
 
 namespace Google.Api.Ads.AdWords.Headers {
+
   /// <summary>
   /// Base class for AdWords API SOAP headers.
   /// </summary>
-  public abstract class AdWordsSoapHeader : SoapHeaderBase {
+  public abstract class AdWordsSoapHeader : MessageHeader {
+
     /// <summary>
     /// Gets or sets the API version.
     /// </summary>
-    public string Version {
+    public string Version { get; set; }
+
+    /// <summary>
+    /// Gets the namespace.
+    /// </summary>
+    /// <value>The namespace.</value>
+    public override string Namespace {
       get {
-        return placeHolders["{version}"].TrimStart('/');
-      }
-      set {
-        placeHolders["{version}"] = "/" + value;
+        return String.Format("https://adwords.google.com/api/adwords/{0}/{1}", GroupName, Version);
       }
     }
 
     /// <summary>
     /// Gets or sets the service namespace (e.g. cm, o, info, etc.).
     /// </summary>
-    public string GroupName {
-      get {
-        return placeHolders["{gp}"].TrimStart('/');
-      }
-      set {
-        placeHolders["{gp}"] = "/" + value;
-      }
-    }
+    public string GroupName { get; set; }
   }
 }

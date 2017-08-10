@@ -13,21 +13,20 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.v201705;
-
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Google.Api.Ads.AdWords.Util.v201705 {
+
   /// <summary>
   /// Provides utility functions for creating and handling
   /// String_StringMapEntry[] fields.
   /// </summary>
   public class MapUtilities {
+
     /// <summary>
     /// Dictionary to hold the key-value pairs.
     /// </summary>
-    Dictionary<string, string> values = new Dictionary<string, string>();
+    private Dictionary<string, string> values = new Dictionary<string, string>();
 
     /// <summary>
     /// Adds the specified key to the map.

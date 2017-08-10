@@ -45,6 +45,11 @@ namespace Google.Api.Ads.Common.Logging {
     private bool isFailure;
 
     /// <summary>
+    /// The ITraceWriter to use when writing logs.
+    /// </summary>
+    internal ITraceWriter TraceWriter { get; set; }
+
+    /// <summary>
     /// Gets or sets the summary request log.
     /// </summary>
     public string SummaryRequestLog {
@@ -99,9 +104,21 @@ namespace Google.Api.Ads.Common.Logging {
     /// </summary>
     /// <param name="config">The application configuration.</param>
     /// <param name="dateTimeProvider">The date and time provider.</param>
-    public LogEntry(AppConfig config, DateTimeProvider dateTimeProvider) {
+    public LogEntry(AppConfig config, DateTimeProvider dateTimeProvider) :
+      this(config, dateTimeProvider, new DefaultTraceWriter()) {
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="LogEntry"/> class.
+    /// </summary>
+    /// <param name="config">The application configuration.</param>
+    /// <param name="dateTimeProvider">The date and time provider.</param>
+    /// <param name="traceWriter">The trace writer to write with.</param>
+    internal LogEntry(AppConfig config, DateTimeProvider dateTimeProvider,
+        ITraceWriter traceWriter) {
       this.config = config;
       this.dateTimeProvider = dateTimeProvider;
+      TraceWriter = traceWriter;
     }
 
     /// <summary>
@@ -224,8 +241,8 @@ namespace Google.Api.Ads.Common.Logging {
     /// Writes the HTTP logs.
     /// </summary>
     public void Flush() {
-      TraceUtilities.WriteDetailedRequestLogs(this.DetailedLog, isFailure);
-      TraceUtilities.WriteSummaryRequestLogs(this.SummaryLog, isFailure);
+      TraceWriter.WriteDetailedRequestLogs(this.DetailedLog, isFailure);
+      TraceWriter.WriteSummaryRequestLogs(this.SummaryLog, isFailure);
     }
 
     /// <summary>

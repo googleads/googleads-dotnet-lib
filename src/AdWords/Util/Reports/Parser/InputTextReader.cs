@@ -16,10 +16,12 @@ using System;
 using System.Collections.Generic;
 
 namespace Google.Api.Ads.AdWords.Util.Reports {
+
   /// <summary>
   /// An Interface for use by the report parsing classes.
   /// </summary>
   public interface InputTextReader : IDisposable {
+
     /// <summary>
     /// Advances the InputTextReader to the next row in the report text.
     /// </summary>

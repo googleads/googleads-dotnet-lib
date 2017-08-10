@@ -15,6 +15,7 @@
 using Google.Api.Ads.Common.Util;
 
 using System.Collections.Generic;
+using System.Text;
 using System.Xml;
 
 namespace Google.Api.Ads.Common.Logging {
@@ -23,6 +24,11 @@ namespace Google.Api.Ads.Common.Logging {
   /// Formats a SOAP message.
   /// </summary>
   public class SoapTraceFormatter : TraceFormatter {
+
+    private static readonly XmlWriterSettings XmlWriterSettings = new XmlWriterSettings() {
+      Encoding = Encoding.UTF8,
+      Indent = true
+    };
 
     /// <summary>
     /// Masks the contents of the traced message.
@@ -50,7 +56,12 @@ namespace Google.Api.Ads.Common.Logging {
         }
       }
 
-      return xDoc.OuterXml;
+      // Pretty-print the XML.
+      StringBuilder sb = new StringBuilder();
+      using (XmlWriter xmlWriter = XmlWriter.Create(sb, XmlWriterSettings)) {
+        xDoc.WriteContentTo(xmlWriter);
+      }
+      return sb.ToString();
     }
   }
 }

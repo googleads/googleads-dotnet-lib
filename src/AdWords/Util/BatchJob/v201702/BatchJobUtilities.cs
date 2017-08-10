@@ -12,17 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.AdWords.v201702;
 using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201702;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
-
 using ApiBatchJob = Google.Api.Ads.AdWords.v201702.BatchJob;
 
 namespace Google.Api.Ads.AdWords.Util.BatchJob.v201702 {

@@ -1,3 +1,24 @@
+22.0.0
+======
+AdWords:
+  - Migrated the backend to use WCF instead of System.Web.Services. See
+  https://github.com/googleads/googleads-dotnet-lib/wiki/Upgrading-your-client-library-to-v22.0.0
+  to learn more about upgrading your codebase to use the new client
+  library.
+  - Added support for v201708.
+  - Fixed a typo in the GetAllDisapprovedAdsWithAwql.cs code example.
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/56
+
+DFP:
+  - Migrated the backend to use WCF instead of System.Web.Services. See
+  https://github.com/googleads/googleads-dotnet-lib/wiki/Upgrading-your-client-library-to-v22.0.0
+  to learn more about upgrading your codebase to use the new client
+  library.
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/56
+
+Common:
+  -
+
 21.2.0
 ======
 AdWords:

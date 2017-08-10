@@ -605,7 +605,7 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201609 {
     /// </returns>
     public override string ToString() {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       return String.Format("AdGroupID: {0}\nTree:\n{1}", this.adGroupId, this.Root);
     }

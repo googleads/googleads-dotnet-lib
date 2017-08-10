@@ -14,23 +14,21 @@
 
 using Google.Api.Ads.AdWords.Headers;
 using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Logging;
 
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Reflection;
+using System.ServiceModel;
+using System.ServiceModel.Description;
 using System.Text;
-using System.Web.Services;
-using System.Web.Services.Protocols;
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
 
 namespace Google.Api.Ads.AdWords.Lib {
+
   /// <summary>
   /// The factory class for all AdWords API services.
   /// </summary>
   public class AdWordsServiceFactory : ServiceFactory {
+    private static readonly string ENDPOINT_TEMPLATE = "{0}api/adwords/{1}/{2}/{3}";
 
     /// <summary>
     /// The request header to be used with AdWords API services.
@@ -65,23 +63,45 @@ namespace Google.Api.Ads.AdWords.Lib {
       CheckServicePreconditions(signature);
 
       AdWordsServiceSignature awapiSignature = signature as AdWordsServiceSignature;
+      EndpointAddress endpoint = new EndpointAddress(string.Format(ENDPOINT_TEMPLATE,
+        serverUrl, awapiSignature.GroupName, awapiSignature.Version,
+        awapiSignature.ServiceName));
 
-      AdsClient service = (AdsClient) Activator.CreateInstance(awapiSignature.ServiceType);
-      PropertyInfo propInfo = awapiSignature.ServiceType.GetProperty("RequestHeader");
-      if (propInfo != null) {
-        RequestHeader clonedHeader = (RequestHeader) requestHeader.Clone();
-        clonedHeader.Version = awapiSignature.Version;
-        clonedHeader.GroupName = awapiSignature.GroupName;
-        propInfo.SetValue(service, clonedHeader, null);
-      }
+      // Create the binding for the service.
+      BasicHttpBinding binding = new BasicHttpBinding();
+      binding.Security.Mode = BasicHttpSecurityMode.Transport;
+      binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.None;
+      binding.MaxReceivedMessageSize = int.MaxValue;
+      binding.TextEncoding = Encoding.UTF8;
+
+      AdsClient service = (AdsClient) Activator.CreateInstance(
+        awapiSignature.ServiceType,
+        new object[] { binding, endpoint});
+
+      ServiceEndpoint serviceEndpoint =
+        (ServiceEndpoint) service.GetType().GetProperty("Endpoint").GetValue(service, null);
+
+      AdsServiceInspectorBehavior inspectorBehavior = new AdsServiceInspectorBehavior();
+      inspectorBehavior.Add(new OAuth2ClientMessageInspector(user.OAuthProvider));
+
+      RequestHeader clonedHeader = (RequestHeader) requestHeader.Clone();
+      clonedHeader.Version = awapiSignature.Version;
+      clonedHeader.GroupName = awapiSignature.GroupName;
+      inspectorBehavior.Add(new AdWordsSoapHeaderInspector() {
+        RequestHeader = clonedHeader,
+        User = (AdWordsUser) user,
+      });
+      inspectorBehavior.Add(new SoapListenerInspector(user));
+      inspectorBehavior.Add(new SoapFaultInspector<AdWordsApiException>() {
+        ErrorType = awapiSignature.ServiceType.Assembly.GetType(
+          awapiSignature.ServiceType.Namespace + ".ApiException")
+      });
+      serviceEndpoint.Behaviors.Add(inspectorBehavior);
 
       if (awConfig.Proxy != null) {
         service.Proxy = awConfig.Proxy;
       }
       service.Timeout = awConfig.Timeout;
-      service.Url = string.Format("{0}api/adwords/{1}/{2}/{3}",
-          serverUrl.AbsoluteUri, awapiSignature.GroupName, awapiSignature.Version,
-          awapiSignature.ServiceName);
       service.EnableDecompression = awConfig.EnableGzipCompression;
       service.User = user;
       service.Signature = awapiSignature;
@@ -100,46 +120,6 @@ namespace Google.Api.Ads.AdWords.Lib {
         requestHeader.clientCustomerId = awConfig.ClientCustomerId;
       }
       requestHeader.developerToken = awConfig.DeveloperToken;
-    }
-
-    /// <summary>
-    /// Fix the request header namespace in outgoing Soap Requests, so that
-    /// cross namespace requests can work properly.
-    /// </summary>
-    /// <param name="signature">The service creation parameters.</param>
-    /// <param name="service">The service object for which RequestHeader
-    /// needs to be patched.</param>
-    private static void FixRequestHeaderNameSpace(AdWordsServiceSignature signature,
-        AdsClient service) {
-      // Set the header namespace prefix. For all /cm services, the members
-      // shouldn't have xmlns. For all other services, the members should have
-      // /cm as xmlns.
-      object[] attributes = service.GetType().GetCustomAttributes(false);
-      foreach (object attribute in attributes) {
-        if (attribute is WebServiceBindingAttribute) {
-          WebServiceBindingAttribute binding = (WebServiceBindingAttribute) attribute;
-          string delimiter = "/api/adwords/";
-          string xmlns = String.Join("", new String[] {
-              binding.Namespace.Substring(0, binding.Namespace.IndexOf(delimiter) +
-                  delimiter.Length), "cm/", signature.Version});
-          if (xmlns == binding.Namespace) {
-            xmlns = "";
-          }
-
-          RequestHeader svcRequestHeader = null;
-          PropertyInfo propInfo = service.GetType().GetProperty("RequestHeader");
-          if (propInfo != null) {
-            svcRequestHeader = (RequestHeader) propInfo.GetValue(service, null);
-
-            if (svcRequestHeader != null) {
-              PropertyInfo wsPropInfo = svcRequestHeader.GetType().GetProperty("TargetNamespace");
-              if (wsPropInfo != null) {
-                wsPropInfo.SetValue(svcRequestHeader, xmlns, null);
-              }
-            }
-          }
-        }
-      }
     }
 
     /// <summary>

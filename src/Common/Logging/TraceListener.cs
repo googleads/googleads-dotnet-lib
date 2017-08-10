@@ -14,11 +14,8 @@
 
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util;
-
 using System.Collections.Generic;
-using System.Globalization;
 using System.Net;
-using System.Xml;
 
 namespace Google.Api.Ads.Common.Logging {
 
@@ -36,6 +33,11 @@ namespace Google.Api.Ads.Common.Logging {
     /// The date and time provider.
     /// </summary>
     private DateTimeProvider dateTimeProvider;
+
+    /// <summary>
+    /// The ITraceWriter to use when writing SOAP messages.
+    /// </summary>
+    internal ITraceWriter TraceWriter { get; set; }
 
     /// <summary>
     /// Gets or sets the date and time provider.
@@ -65,6 +67,7 @@ namespace Google.Api.Ads.Common.Logging {
     protected TraceListener(AppConfig config) {
       this.config = config;
       this.dateTimeProvider = new DefaultDateTimeProvider();
+      this.TraceWriter = new DefaultTraceWriter();
     }
 
     /// <summary>
@@ -76,20 +79,10 @@ namespace Google.Api.Ads.Common.Logging {
     /// <summary>
     /// Handles the SOAP message.
     /// </summary>
-    /// <param name="soapMessage">The SOAP message.</param>
-    /// <param name="service">The SOAP service.</param>
-    /// <param name="direction">The direction of message.</param>
-    public void HandleMessage(XmlDocument soapMessage, AdsClient service,
-        SoapMessageDirection direction) {
-      if (direction == SoapMessageDirection.OUT) {
-        ContextStore.AddKey("SoapRequest", soapMessage.OuterXml);
-      } else {
-        ContextStore.AddKey("SoapResponse", soapMessage.OuterXml);
-      }
-      if (direction == SoapMessageDirection.IN) {
-        PerformLogging(service, (string) ContextStore.GetValue("SoapRequest"),
-            (string) ContextStore.GetValue("SoapResponse"));
-      }
+    /// <param name="requestInfo">Request info.</param>
+    /// <param name="responseInfo">Response info.</param>
+    public virtual void HandleMessage(RequestInfo requestInfo, ResponseInfo responseInfo) {
+      PerformLogging(requestInfo, responseInfo);
     }
 
     /// <summary>
@@ -105,25 +98,15 @@ namespace Google.Api.Ads.Common.Logging {
     /// <summary>
     /// Performs the SOAP and HTTP logging.
     /// </summary>
-    /// <param name="service">The SOAP service.</param>
-    /// <param name="soapResponse">The SOAP response xml.</param>
-    /// <param name="soapRequest">The SOAP request xml.</param>
-    private void PerformLogging(AdsClient service, string soapRequest, string soapResponse) {
-      if (service == null || service.User == null || soapRequest == null || soapResponse == null) {
-        return;
-      }
-
-      bool isFailure = service.LastResponse != null && service.LastResponse is HttpWebResponse &&
-          (service.LastResponse as HttpWebResponse).StatusCode ==
-                HttpStatusCode.InternalServerError;
-
-      LogEntry logEntry = new LogEntry(config, dateTimeProvider);
-      RequestInfo requestInfo = new RequestInfo(service.LastRequest, soapRequest);
-      logEntry.LogRequestDetails(requestInfo, GetFieldsToMask(), new SoapTraceFormatter());
-      logEntry.LogResponseDetails(new ResponseInfo(service.LastResponse, soapResponse),
-          new HashSet<string>(), new DefaultBodyFormatter());
-      logEntry.LogRequestSummary(requestInfo, GetSummaryRequestLogs(soapRequest));
-      logEntry.LogResponseSummary(isFailure, GetSummaryResponseLogs(soapResponse));
+    /// <param name="request">The request information.</param>
+    /// <param name="response">The response information.</param>
+    private void PerformLogging(RequestInfo request, ResponseInfo response) {
+      LogEntry logEntry = new LogEntry(config, dateTimeProvider, TraceWriter);
+      logEntry.LogRequestDetails(request, GetFieldsToMask(), new SoapTraceFormatter());
+      logEntry.LogResponseDetails(response, new HashSet<string>(), new DefaultBodyFormatter());
+      logEntry.LogRequestSummary(request, GetSummaryRequestLogs(request.Body));
+      logEntry.LogResponseSummary(response.StatusCode == HttpStatusCode.InternalServerError,
+          GetSummaryResponseLogs(response.Body));
       logEntry.Flush();
 
       ContextStore.AddKey("FormattedSoapLog", logEntry.DetailedLog);

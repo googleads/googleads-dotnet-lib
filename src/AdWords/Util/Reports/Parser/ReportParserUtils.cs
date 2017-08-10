@@ -14,10 +14,11 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Globalization;
+using System.Linq;
 
 namespace Google.Api.Ads.AdWords.Util.Reports {
+
   /// <summary>
   /// A class holding utility functions for parsing reports.
   /// </summary>
@@ -31,7 +32,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <param name="colVal">Holds the name of the property to set and the Value,
     /// both in string.</param>
     /// <param name="record">The object of type A whose property will be set.</param>
-    /// <param name="onError">A callback action that is given the record and the 
+    /// <param name="onError">A callback action that is given the record and the
     /// value that caused a parsing error.</param>
     public static void SetColumnValue<A>(ColumnValuePair colVal, A record,
       Action<ColumnValuePair, A> onError) {
@@ -47,29 +48,22 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         object val;
         if (attribType == typeof(double)) {
           val = Double.Parse(colVal.Value.TrimEnd('%'), NumberStyles.Any);
-        }
-        else if (attribType.IsEnum) {
+        } else if (attribType.IsEnum) {
           val = Enum.Parse(attribType, colVal.Value);
-        }
-        else if (attribType == typeof(string)) {
+        } else if (attribType == typeof(string)) {
           val = colVal.Value;
-        }
-        else if (attribType == typeof(decimal)) {
+        } else if (attribType == typeof(decimal)) {
           val = Decimal.Parse(colVal.Value.TrimEnd('%'), NumberStyles.Any);
-        }
-        else if (attribType == typeof(int)) {
+        } else if (attribType == typeof(int)) {
           val = Int32.Parse(colVal.Value);
-        }
-        else if (attribType == typeof(long)) {
+        } else if (attribType == typeof(long)) {
           val = Int64.Parse(colVal.Value);
-        }
-        else {
+        } else {
           throw new NotSupportedException("Column " + colVal.ColName + " has type "
               + attribType.Name + ", which is not a supported type.");
         }
         property.SetValue(record, val);
-      }
-      catch (FormatException) {
+      } catch (FormatException) {
         onError(colVal, record);
       }
     }

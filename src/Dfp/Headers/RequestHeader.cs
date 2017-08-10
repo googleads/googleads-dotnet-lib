@@ -15,51 +15,53 @@
 using Google.Api.Ads.Common.Lib;
 
 using System;
+using System.Xml;
+using System.ServiceModel.Channels;
+
 
 namespace Google.Api.Ads.Dfp.Headers {
   /// <summary>
   /// Soap Request header for DFP API services.
   /// </summary>
-  public class RequestHeader : DfpSoapHeader {
-    /// <summary>
-    /// The request header stub that this class wraps.
-    /// </summary>
-    RequestHeaderStub stub = new RequestHeaderStub();
+  public class RequestHeader : DfpSoapHeader, ICloneable {
 
     /// <summary>
-    /// Gets or sets the stub that is wrapped by this object.
+    /// The name of the element to be used when serializing.
     /// </summary>
-    public override object Stub {
+    public override string Name {
       get {
-        return stub;
-      }
-      protected set {
-        stub = value as RequestHeaderStub;
+        return "RequestHeader";
       }
     }
 
     /// <summary>
     /// Gets or sets the network code.
     /// </summary>
-    public string networkCode {
-      get {
-        return stub.networkCode;
-      }
-      set {
-        stub.networkCode = value;
-      }
-    }
+    public string networkCode { get; set; }
 
     /// <summary>
     /// Gets or sets the application name.
     /// </summary>
-    public string applicationName {
-      get {
-        return stub.applicationName;
-      }
-      set {
-        stub.applicationName = value;
-      }
+    public string applicationName { get; set; }
+
+    /// <summary>
+    /// Creates a new object that is a copy of the current instance.
+    /// </summary>
+    public object Clone() {
+      return new RequestHeader() {
+        networkCode = this.networkCode,
+        applicationName = this.applicationName,
+        Version = this.Version
+      };
+    }
+
+    /// <summary>
+    /// Serlalizes the RequestHeader for the SOAP XML request.
+    /// </summary>
+    protected override void OnWriteHeaderContents(XmlDictionaryWriter writer, 
+        MessageVersion messageVersion) {
+      writer.WriteElementString("networkCode", networkCode);
+      writer.WriteElementString("applicationName", applicationName);
     }
   }
 }

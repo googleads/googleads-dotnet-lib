@@ -463,7 +463,7 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201609 {
       foreach (ProductPartitionNode childNode in this.children.Values) {
         parts.Add(childNode.DebugString(level + 1));
       }
-      return(String.Join<string>("\n", parts));
+      return String.Join<string>("\n", parts);
     }
 
     /// <summary>

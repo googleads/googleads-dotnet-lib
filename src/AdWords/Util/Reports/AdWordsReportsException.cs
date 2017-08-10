@@ -26,6 +26,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
   /// </summary>
   [Serializable]
   public class AdWordsReportsException : AdsReportsException {
+
     /// <summary>
     /// The errors returned by reports server.
     /// </summary>

@@ -15,66 +15,103 @@
 using Google.Api.Ads.AdWords.Headers;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Logging;
-using Google.Api.Ads.Common.Util;
 
-using System;
-using System.IO;
-using System.Net;
-using System.Reflection;
-using System.Text;
-using System.Web;
-using System.Web.Services;
-using System.Web.Services.Protocols;
-using System.Xml;
-using System.Xml.Serialization;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
 
 namespace Google.Api.Ads.AdWords.Lib {
 
   /// <summary>
   /// Base class for AdWords API services.
   /// </summary>
-  public class AdWordsSoapClient : AdsSoapClient {
+  public class AdWordsSoapClient<TChannel> : AdsSoapClient<TChannel> where TChannel : class {
 
     /// <summary>
-    /// Service name to be used when getting auth token for AdWords.
+    /// Gets this service's SOAP header inspector if it exists. Returns null otherwise.
     /// </summary>
-    public const string SERVICE_NAME = "adwords";
-
-    /// <summary>
-    /// Initializes the service before MakeApiCall.
-    /// </summary>
-    /// <param name="methodName">Name of the method.</param>
-    /// <param name="parameters">The method parameters.</param>
-    protected override void InitForCall(string methodName, object[] parameters) {
-      AdWordsAppConfig config = this.User.Config as AdWordsAppConfig;
-      RequestHeader header = GetRequestHeader();
-
-      if (string.IsNullOrEmpty(header.developerToken)) {
-        throw new ArgumentNullException(AdWordsErrorMessages.DeveloperTokenCannotBeEmpty);
+    internal AdWordsSoapHeaderInspector HeaderInspector {
+      get {
+        AdsServiceInspectorBehavior behavior = (AdsServiceInspectorBehavior)
+            this.Endpoint.Behaviors[typeof(AdsServiceInspectorBehavior)];
+        if (behavior != null) {
+          return behavior.GetInspector<AdWordsSoapHeaderInspector>();
+        }
+        return null;
       }
-
-      if (string.IsNullOrEmpty(header.clientCustomerId)) {
-        TraceUtilities.WriteGeneralWarnings(AdWordsErrorMessages.ClientCustomerIdIsEmpty);
-      }
-
-      header.userAgent = config.GetUserAgent();
-
-      string oAuthHeader = null;
-      if (this.User.OAuthProvider != null) {
-        oAuthHeader = this.User.OAuthProvider.GetAuthHeader();
-      } else {
-        throw new AdWordsApiException(null, AdWordsErrorMessages.OAuthProviderCannotBeNull);
-      }
-      ContextStore.AddKey("OAuthHeader", oAuthHeader);
-      base.InitForCall(methodName, parameters);
     }
 
     /// <summary>
-    /// Gets the request header.
+    /// Gets or sets the request header.
     /// </summary>
-    /// <returns>The request header.</returns>
-    private RequestHeader GetRequestHeader() {
-      return (RequestHeader) this.GetType().GetProperty("RequestHeader").GetValue(this, null);
+    /// <value>The request header.</value>
+    public RequestHeader RequestHeader {
+      get { return HeaderInspector != null ? HeaderInspector.RequestHeader : null; }
+      set {
+        if (HeaderInspector != null) {
+          HeaderInspector.RequestHeader = value;
+        }
+      }
+    }
+
+    /// <summary>
+    /// Gets or sets the response header.
+    /// </summary>
+    /// <value>The response header.</value>
+    public ResponseHeader ResponseHeader {
+      get { return HeaderInspector != null ? HeaderInspector.ResponseHeader : null; }
+      set {
+        if (HeaderInspector != null) {
+          HeaderInspector.ResponseHeader = value;
+        }
+      }
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the AdWordsSoapClient class.
+    /// </summary>
+    /// <param name="endpointConfigurationName">
+    /// The name of the endpoint in the application configuration file.
+    /// </param>
+    public AdWordsSoapClient(string endpointConfigurationName)
+      : base(endpointConfigurationName) {
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the AdWordsSoapClient class.
+    /// </summary>
+    /// <param name="endpointConfigurationName">
+    /// The name of the endpoint in the application configuration file.
+    /// </param>
+    /// <param name="remoteAddress">Remote address of the service.</param>
+    public AdWordsSoapClient(string endpointConfigurationName, EndpointAddress remoteAddress)
+      : base(endpointConfigurationName, remoteAddress) {
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the AdWordsSoapClient class.
+    /// </summary>
+    /// <param name="binding">The binding with which to make calls to the service.</param>
+    /// <param name="remoteAddress">Remote address of the service.</param>
+    public AdWordsSoapClient(Binding binding, EndpointAddress remoteAddress)
+      : base(binding, remoteAddress) {
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the AdWordsSoapClient class.
+    /// </summary>
+    /// <param name="endpointConfigurationName">
+    /// The name of the endpoint in the application configuration file.
+    /// </param>
+    /// <param name="remoteAddress">Remote address of the service.</param>
+    public AdWordsSoapClient(string endpointConfigurationName, string remoteAddress)
+      : base(endpointConfigurationName, remoteAddress) {
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the AdWordsSoapClient class.
+    /// </summary>
+    public AdWordsSoapClient()
+      : base() {
     }
 
     /// <summary>
@@ -83,56 +120,8 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <param name="methodName">Name of the method.</param>
     /// <param name="parameters">The method parameters.</param>
     protected override void CleanupAfterCall(string methodName, object[] parameters) {
-      ContextStore.RemoveKey("OAuthHeader");
       AdsFeatureUsageRegistry.Instance.Clear();
       base.CleanupAfterCall(methodName, parameters);
-    }
-
-
-    /// <summary>
-    /// Creates a WebRequest instance for the specified url.
-    /// </summary>
-    /// <param name="uri">The Uri to use when creating the WebRequest.</param>
-    /// <returns>
-    /// The WebRequest instance.
-    /// </returns>
-    protected override WebRequest GetWebRequest(Uri uri) {
-      WebRequest request = base.GetWebRequest(uri);
-      string oAuthHeader = (string) ContextStore.GetValue("OAuthHeader");
-      if (!string.IsNullOrEmpty(oAuthHeader)) {
-        request.Headers["Authorization"] = oAuthHeader;
-      }
-      return request;
-    }
-
-    /// <summary>
-    /// Gets a custom exception that wraps the SOAP exception thrown
-    /// by the server.
-    /// </summary>
-    /// <param name="exception">SOAPException that was thrown by the server.</param>
-    /// <returns>A custom exception object that wraps the SOAP exception.
-    /// </returns>
-    protected override Exception GetCustomException(SoapException exception) {
-      string defaultNs = GetDefaultNamespace();
-
-      if (!string.IsNullOrEmpty(defaultNs) && exception.Detail != null) {
-        // Extract the ApiExceptionFault node.
-        XmlElement faultNode = GetFaultNode(exception, defaultNs, "ApiExceptionFault");
-
-        if (faultNode != null) {
-          try {
-            AdWordsApiException awapiException = new AdWordsApiException(
-                SerializationUtilities.DeserializeFromXmlTextCustomRootNs(
-                    faultNode.OuterXml, Assembly.GetExecutingAssembly().GetType(
-                    this.GetType().Namespace + ".ApiException"), defaultNs, "ApiExceptionFault"),
-                    AdWordsErrorMessages.AnApiExceptionOccurred, exception);
-              return awapiException;
-          } catch (Exception) {
-            // deserialization failed, but we can safely ignore it.
-          }
-        }
-      }
-      return new AdWordsApiException(null, AdWordsErrorMessages.AnApiExceptionOccurred, exception);
     }
   }
 }

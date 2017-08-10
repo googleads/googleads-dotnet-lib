@@ -388,7 +388,7 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201705 {
     /// <returns>The list of mutate operations.</returns>
     public AdGroupCriterionOperation[] GetMutateOperations() {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       List<AdGroupCriterionOperation> operations = new List<AdGroupCriterionOperation>();
       foreach (OperationPair operationPair in CreateMutateOperationPairs()) {
@@ -605,7 +605,7 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201705 {
     /// </returns>
     public override string ToString() {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       return String.Format("AdGroupID: {0}\nTree:\n{1}", this.adGroupId, this.Root);
     }

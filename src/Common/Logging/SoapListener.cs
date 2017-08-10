@@ -28,12 +28,11 @@ namespace Google.Api.Ads.Common.Logging {
     void InitForCall();
 
     /// <summary>
-    /// Handles the SOAP message.
+    /// Handles the request and response for a message.
     /// </summary>
-    /// <param name="soapMessage">The SOAP message.</param>
-    /// <param name="service">The SOAP service.</param>
-    /// <param name="direction">The direction of message.</param>
-    void HandleMessage(XmlDocument soapMessage, AdsClient service, SoapMessageDirection direction);
+    /// <param name="requestInfo">Request info.</param>
+    /// <param name="responseInfo">Response info.</param>
+    void HandleMessage(RequestInfo requestInfo, ResponseInfo responseInfo);
 
     /// <summary>
     /// Cleans up any resources after an API call.

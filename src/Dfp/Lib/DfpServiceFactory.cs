@@ -13,24 +13,22 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Dfp.Headers;
 
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Reflection;
+using System.ServiceModel;
+using System.ServiceModel.Description;
 using System.Text;
-using System.Web.Services;
-using System.Web.Services.Protocols;
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
 
 namespace Google.Api.Ads.Dfp.Lib {
   /// <summary>
   /// The factory class for all DFP API services.
   /// </summary>
   public class DfpServiceFactory : ServiceFactory {
+
+    private static readonly string ENDPOINT_TEMPLATE = "{0}apis/ads/publisher/{1}/{2}";
 
     /// <summary>
     /// The request header to be used with DFP API services.
@@ -66,22 +64,44 @@ namespace Google.Api.Ads.Dfp.Lib {
       CheckServicePreconditions(signature);
 
       DfpServiceSignature dfpapiSignature = signature as DfpServiceSignature;
+      EndpointAddress endpoint = new EndpointAddress(string.Format(ENDPOINT_TEMPLATE,
+        serverUrl, dfpapiSignature.Version, dfpapiSignature.ServiceName));
 
-      AdsClient service = (AdsClient) Activator.CreateInstance(dfpapiSignature.ServiceType);
-      PropertyInfo propInfo = dfpapiSignature.ServiceType.GetProperty("RequestHeader");
+      // Create the binding for the service
+      BasicHttpBinding binding = new BasicHttpBinding();
+      binding.Security.Mode = BasicHttpSecurityMode.Transport;
+      binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.None;
+      binding.MaxReceivedMessageSize = int.MaxValue;
+      binding.TextEncoding = Encoding.UTF8;
 
-      if (propInfo != null) {
-        RequestHeader clonedHeader = (RequestHeader) requestHeader.Clone();
-        clonedHeader.Version = dfpapiSignature.Version;
-        propInfo.SetValue(service, clonedHeader, null);
-      }
+      AdsClient service = (AdsClient) Activator.CreateInstance(
+        dfpapiSignature.ServiceType,
+        new object[] { binding, endpoint });
+
+      ServiceEndpoint serviceEndpoint =
+        (ServiceEndpoint) service.GetType().GetProperty("Endpoint").GetValue(service, null);
+
+      AdsServiceInspectorBehavior inspectorBehavior = new AdsServiceInspectorBehavior();
+      inspectorBehavior.Add(new OAuth2ClientMessageInspector(user.OAuthProvider));
+
+      RequestHeader clonedHeader = (RequestHeader) requestHeader.Clone();
+      clonedHeader.Version = dfpapiSignature.Version;
+      inspectorBehavior.Add(new DfpSoapHeaderInspector() {
+        RequestHeader = clonedHeader,
+        Config = dfpConfig
+      });
+      inspectorBehavior.Add(new SoapListenerInspector(user));
+      inspectorBehavior.Add(new SoapFaultInspector<DfpApiException>() {
+        ErrorType = dfpapiSignature.ServiceType.Assembly.GetType(
+          dfpapiSignature.ServiceType.Namespace + ".ApiException"),
+      });
+      serviceEndpoint.Behaviors.Add(inspectorBehavior);
 
       if (dfpConfig.Proxy != null) {
         service.Proxy = dfpConfig.Proxy;
       }
+      service.EnableDecompression = dfpConfig.EnableGzipCompression;
       service.Timeout = dfpConfig.Timeout;
-      service.Url = string.Format("{0}apis/ads/publisher/{1}/{2}",
-          serverUrl, dfpapiSignature.Version, dfpapiSignature.ServiceName);
       service.UserAgent = dfpConfig.GetUserAgent();
 
       service.Signature = signature;

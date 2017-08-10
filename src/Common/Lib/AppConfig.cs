@@ -151,12 +151,6 @@ namespace Google.Api.Ads.Common.Lib {
     long UnixTimestamp { get; }
 
     /// <summary>
-    /// Gets or sets whether SOAP listener extensions should be turned 
-    /// on for logging.
-    /// </summary>
-    bool EnableSoapExtension { get; set; }
-
-    /// <summary>
     /// Gets the default OAuth2 scope.
     /// </summary>
     string GetDefaultOAuth2Scope();

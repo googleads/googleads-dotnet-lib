@@ -13,18 +13,18 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Tests.Mocks;
-using Google.Api.Ads.Common.Util;
 using NUnit.Framework;
-
 using System;
-using System.Xml;
+using System.Net;
 
 namespace Google.Api.Ads.Common.Tests.Logging {
 
   /// <summary>
   /// Tests for TraceListener class.
   /// </summary>
+  [TestFixture]
   public class TraceListenerTests {
 
     /// <summary>
@@ -36,36 +36,6 @@ namespace Google.Api.Ads.Common.Tests.Logging {
     /// The TraceListener instance for testing this class.
     /// </summary>
     private MockTraceListener listener;
-
-    /// <summary>
-    /// The AdsUser instance for testing this class.
-    /// </summary>
-    private MockAdsUser user;
-
-    /// <summary>
-    /// The AdsClient instance for testing this class.
-    /// </summary>
-    private MockAdsClient adsClient;
-
-    /// <summary>
-    /// Initializes the test case.
-    /// </summary>
-    [SetUp]
-    public void Init() {
-      user = new MockAdsUser(config);
-      adsClient = new MockAdsClient();
-      adsClient.User = user;
-
-      MockWebResponse response = new MockWebResponse(null, null);
-      response.Headers["TestResponseKey"] = "TestResponseValue";
-      adsClient.LastResponse = response;
-
-      MockWebRequest request = new MockWebRequest(response, new Uri("http://localhost"), null,
-          false);
-      request.Method = "POST";
-      request.Headers["TestRequestKey"] = "TestRequestValue";
-      adsClient.LastRequest = request;
-    }
 
     /// <summary>
     /// Tears down the test case.
@@ -84,40 +54,30 @@ namespace Google.Api.Ads.Common.Tests.Logging {
       config.SetPropertyFieldForTests("MaskCredentials", true);
       listener = new MockTraceListener(config);
 
-      XmlDocument xOutgoing = XmlUtilities.CreateDocument(Resources.XmlRequest);
-      listener.HandleMessage(xOutgoing, adsClient, SoapMessageDirection.OUT);
-      Assert.AreEqual(xOutgoing.OuterXml, ContextStore.GetValue("SoapRequest"));
+      WebHeaderCollection requestHeaders = new WebHeaderCollection();
+      requestHeaders["TestRequestKey"] = "TestRequestValue";
+      RequestInfo request = new RequestInfo() {
+        Body = Resources.XmlRequest,
+        Headers = requestHeaders,
+        Uri = new Uri("https://localhost"),
+        Method = "POST"
+      };
 
-      XmlDocument xIncoming = XmlUtilities.CreateDocument(Resources.XmlResponse);
-      listener.HandleMessage(xIncoming, adsClient, SoapMessageDirection.IN);
-      Assert.AreEqual(xIncoming.OuterXml, ContextStore.GetValue("SoapResponse"));
+      WebHeaderCollection responseHeaders = new WebHeaderCollection();
+      responseHeaders["TestResponseKey"] = "TestResponseValue";
+      ResponseInfo response = new ResponseInfo() {
+        Body = Resources.XmlResponse,
+        Headers = responseHeaders,
+        StatusCode = HttpStatusCode.OK
+      };
+
+      listener.HandleMessage(request, response);
       string expected = Resources.SoapLog.Replace("\r\n", "\n").Trim();
-      string actual = ((string) ContextStore.GetValue("FormattedSoapLog")).
-          Replace("\r\n", "\n").Trim();
+      string actual = (ContextStore.GetValue("FormattedSoapLog").ToString())
+          .Replace("\r\n", "\n").Trim();
       Assert.AreEqual(expected, actual);
       Assert.AreEqual(Resources.ResponseLog.Replace("\r\n", "\n"),
-          ((string) ContextStore.GetValue("FormattedRequestLog")).Replace("\r\n", "\n"));
-    }
-
-    /// <summary>
-    /// Tests the HandleMessage method to see if logging doesn't happen if
-    /// the AdsClient instance is null.
-    /// </summary>
-    [Test]
-    [Category("Small")]
-    public void TestHandleMessageNoClient() {
-      config.SetPropertyFieldForTests("MaskCredentials", true);
-      listener = new MockTraceListener(config);
-
-      XmlDocument xOutgoing = XmlUtilities.CreateDocument(Resources.XmlRequest);
-      listener.HandleMessage(xOutgoing, null, SoapMessageDirection.OUT);
-      Assert.AreEqual(xOutgoing.OuterXml, ContextStore.GetValue("SoapRequest"));
-
-      XmlDocument xIncoming = XmlUtilities.CreateDocument(Resources.XmlResponse);
-      listener.HandleMessage(xIncoming, null, SoapMessageDirection.IN);
-      Assert.AreEqual(xIncoming.OuterXml, ContextStore.GetValue("SoapResponse"));
-      Assert.IsNull(ContextStore.GetValue("FormattedSoapLog"));
-      Assert.IsNull(ContextStore.GetValue("FormattedRequestLog"));
+          ContextStore.GetValue("FormattedRequestLog").ToString().Replace("\r\n", "\n"));
     }
 
     /// <summary>

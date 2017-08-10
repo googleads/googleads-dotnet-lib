@@ -13,11 +13,7 @@
 // limitations under the License.
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Net;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 using Google.Api.Ads.Common.Lib;
 
 namespace Google.Api.Ads.Common.Lib {
@@ -26,38 +22,6 @@ namespace Google.Api.Ads.Common.Lib {
   /// supported by the library.
   /// </summary>
   public interface AdsClient {
-    /// <summary>
-    /// Gets or sets the name of the connection group for the request.
-    /// </summary>
-    string ConnectionGroupName {
-      get;
-      set;
-    }
-
-    /// <summary>
-    /// Gets or sets security credentials for client authentication.
-    /// </summary>
-    ICredentials Credentials {
-      get;
-      set;
-    }
-
-    /// <summary>
-    /// Gets or sets whether pre-authentication is enabled.
-    /// </summary>
-    bool PreAuthenticate {
-      get;
-      set;
-    }
-
-    /// <summary>
-    /// The System.Text.Encoding used to make the client request to the service.
-    /// </summary>
-    Encoding RequestEncoding {
-      get;
-      set;
-    }
-
     /// <summary>
     /// The timeout for the request.
     /// </summary>
@@ -75,38 +39,6 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Gets or sets whether this service should use the credentials from
-    /// System.Net.CredentialCache.DefaultCredentials.
-    /// </summary>
-    bool UseDefaultCredentials {
-      get;
-      set;
-    }
-
-    /// <summary>
-    /// Gets or sets whether the client automatically follows server redirects.
-    /// </summary>
-    bool AllowAutoRedirect {
-      get;
-      set;
-    }
-
-    /// <summary>
-    /// Gets the collection of client certificates.
-    /// </summary>
-    X509CertificateCollection ClientCertificates {
-      get;
-    }
-
-    /// <summary>
-    /// Gets or sets the collection of cookies.
-    /// </summary>
-    CookieContainer CookieContainer {
-      get;
-      set;
-    }
-
-    /// <summary>
     /// Gets or sets whether gzip compression is enabled.
     /// </summary>
     bool EnableDecompression {
@@ -119,16 +51,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// a firewall.
     /// </summary>
     IWebProxy Proxy {
-      get;
-      set;
-    }
-
-    /// <summary>
-    /// Gets or sets a value that indicates whether connection sharing is
-    /// enabled when the client uses NTLM authentication to connect to the Web
-    /// server that hosts the web service.
-    /// </summary>
-    bool UnsafeAuthenticatedConnectionSharing {
       get;
       set;
     }
@@ -155,24 +77,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets or sets the signature for this service.
     /// </summary>
     ServiceSignature Signature {
-      get;
-      set;
-    }
-
-    /// <summary>
-    /// Gets or sets the web request associated with this service's
-    /// last API call.
-    /// </summary>
-    WebRequest LastRequest {
-      get;
-      set;
-    }
-
-    /// <summary>
-    /// Gets or sets the web response associated with this service's
-    /// last API call.
-    /// </summary>
-    WebResponse LastResponse {
       get;
       set;
     }

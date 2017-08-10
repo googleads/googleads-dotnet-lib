@@ -72,10 +72,13 @@ namespace Google.Api.Ads.AdWords.Util.Shopping {
       switch (nodeType) {
         case NodeType.BIDDABLE_UNIT:
           return new BiddableUnitState();
+
         case NodeType.EXCLUDED_UNIT:
           return new ExcludedUnitState();
+
         case NodeType.SUBDIVISION:
           return new SubdivisionState();
+
         default:
           throw new ArgumentException(string.Format(ShoppingMessages.UnknownNodeType, nodeType));
       }

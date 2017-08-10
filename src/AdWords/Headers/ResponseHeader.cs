@@ -12,120 +12,79 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.Common.Lib;
-using Google.Api.Ads.Common.Util;
-
-using System;
-using System.Reflection;
-using System.Xml;
+using System.Runtime.Serialization;
 
 namespace Google.Api.Ads.AdWords.Headers {
+
   /// <summary>
-  /// This class wraps the <see cref="ResponseHeaderStub"/>, adding
-  /// cross-namespace serialization capabilities.
+  /// This class represents an AdWords SOAP response header.
   /// </summary>
-  /// <remarks>The XmlSerializer provides two mutually exclusive ways of
-  /// serialization.
-  /// - Mark a class as Serializable, and allow the class to be serialized
-  /// automagically. This option does object serialization correctly, but isn't
-  /// cross-namespace aware.
-  /// - Implement IXmlSerializable, and customize the serialization. This
-  /// option allows us to customize the serialization process and add cross
-  /// namespace support.
-  ///
-  /// However since options 1 and 2 are mutually exclusive (i.e. cannot be
-  /// applied to the same object hierarchy), we cannot derive this class from
-  /// <see cref="ResponseHeaderStub"/>, instead, we have to wrap it in another
-  /// class.
-  /// </remarks>
-  public class ResponseHeader : AdWordsSoapHeader {
-    /// <summary>
-    /// The SOAP stub object that this class wraps.
-    /// </summary>
-    ResponseHeaderStub stub = new ResponseHeaderStub();
+  [DataContract(Name = "ResponseHeader", Namespace = PLACEHOLDER_NAMESPACE)]
+  public class ResponseHeader {
 
     /// <summary>
-    /// Gets or sets the stub that is wrapped by this object.
+    /// A placeholder namespace for deserializing response headers from different API versions.
     /// </summary>
-    public override object Stub {
-      get {
-        return stub;
-      }
-      protected set {
-        stub = value as ResponseHeaderStub;
-      }
-    }
+    public const string PLACEHOLDER_NAMESPACE =
+        "https://adwords.google.com/api/adwords/group/version";
+
+    private long _operations;
+    private long _responseTime;
+
+    /// <summary>
+    /// Gets or sets whether <see cref="operations"/> is specified.
+    /// </summary>
+    public bool operationsSpecified { get; set; }
+
+    /// <summary>
+    /// Gets or sets whether <see cref="responseTime"/> is specified.
+    /// </summary>
+    public bool responseTimeSpecified { get; set; }
 
     /// <summary>
     /// Gets or sets the request id for this API call.
     /// </summary>
-    public string requestId {
-      get {
-        return stub.requestId;
-      }
-      set {
-        stub.requestId = value;
-      }
-    }
+    [DataMember(Order = 0)]
+    public string requestId { get; set; }
+
+    /// <summary>
+    /// Gets or sets the name of the service that was invoked.
+    /// </summary>
+    [DataMember(Order = 1)]
+    public string serviceName { get; set; }
+
+    /// <summary>
+    /// Gets or sets the name of the method that was invoked.
+    /// </summary>
+    [DataMember(Order = 2)]
+    public string methodName { get; set; }
 
     /// <summary>
     /// Gets or sets the number of operations for this API call.
     /// </summary>
+    [DataMember(Order = 3)]
     public long operations {
       get {
-        return stub.operations;
+        return _operations;
       }
       set {
-        stub.operationsSpecified = true;
-        stub.operations = value;
+        operationsSpecified = true;
+        _operations = value;
       }
     }
 
     /// <summary>
     /// Gets or sets the response time for this API call.
     /// </summary>
+    [DataMember(Order = 4)]
     public long responseTime {
       get {
-        return stub.responseTime;
+        return _responseTime;
       }
       set {
-        stub.responseTimeSpecified = true;
-        stub.responseTime = value;
+        responseTimeSpecified = true;
+        _responseTime = value;
       }
-    }
-
-    /// <summary>
-    /// Gets or sets the number of units consumed for this API call.
-    /// </summary>
-    public long units {
-      get {
-        return stub.units;
-      }
-      set {
-        stub.unitsSpecified = true;
-        stub.units = value;
-      }
-    }
-
-    /// <summary>
-    /// Deserialize the object from xml.
-    /// </summary>
-    /// <param name="reader">The xml reader for reading the serialized xml.
-    /// </param>
-    public override void ReadXml(XmlReader reader) {
-      object service = ContextStore.GetValue("SoapService");
-      if (service != null) {
-        PropertyInfo propInfo = service.GetType().GetProperty("RequestHeader");
-        if (propInfo != null) {
-          RequestHeader reqHeader = (RequestHeader) propInfo.GetValue(service, null);
-          if (reqHeader != null) {
-            // When deserializing, namespace is not relevant, just the version
-            // is.
-            this.Version = reqHeader.Version;
-          }
-        }
-      }
-      base.ReadXml(reader);
     }
   }
 }

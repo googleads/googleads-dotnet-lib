@@ -13,129 +13,102 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Lib;
-using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Headers;
 
-using System;
-using System.IO;
-using System.Net;
-using System.Reflection;
-using System.Text;
-using System.Web.Services;
-using System.Web.Services.Protocols;
-using System.Xml;
-using System.Xml.Serialization;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
 
 namespace Google.Api.Ads.Dfp.Lib {
   /// <summary>
   /// Base class for DFP API services.
   /// </summary>
-  public class DfpSoapClient : AdsSoapClient {
+  public class DfpSoapClient<TChannel> : AdsSoapClient<TChannel> where TChannel : class {
     /// <summary>
-    /// The error thrown when an auth token expires.
+    /// Gets this service's SOAP header inspector if it exists. Returns null otherwise.
     /// </summary>
-    private const string COOKIE_INVALID_ERROR = "AuthenticationError.GOOGLE_ACCOUNT_COOKIE_INVALID";
-
-    /// <summary>
-    /// The error thrown when an oauth token expires.
-    /// </summary>
-    private const string OAUTH_TOKEN_EXPIRED_ERROR = "AuthenticationError.AUTHENTICATION_FAILED";
-
-    /// <summary>
-    /// Gets a custom exception that wraps the SOAP exception thrown
-    /// by the server.
-    /// </summary>
-    /// <param name="exception">SOAPException that was thrown by the server.</param>
-    /// <returns>A custom exception object that wraps the SOAP exception.
-    /// </returns>
-    protected override Exception GetCustomException(SoapException exception) {
-      string defaultNs = GetDefaultNamespace();
-      if (!string.IsNullOrEmpty(defaultNs)) {
-        // Extract the ApiExceptionFault node.
-        XmlElement faultNode = GetFaultNode(exception, defaultNs, "ApiExceptionFault");
-
-        if (faultNode != null) {
-          try {
-            DfpApiException dfpException = new DfpApiException(
-                SerializationUtilities.DeserializeFromXmlTextCustomRootNs(
-                    faultNode.OuterXml,
-                    Assembly.GetExecutingAssembly().GetType(
-                        this.GetType().Namespace + ".ApiException"), defaultNs,
-                        "ApiExceptionFault"),
-                exception.Message, exception);
-            return dfpException;
-          } catch (Exception) {
-            // deserialization failed, but we can safely ignore it.
-          }
+    internal DfpSoapHeaderInspector HeaderInspector {
+      get {
+        AdsServiceInspectorBehavior behavior = (AdsServiceInspectorBehavior)
+            this.Endpoint.Behaviors[typeof(AdsServiceInspectorBehavior)];
+        if (behavior != null) {
+          return behavior.GetInspector<DfpSoapHeaderInspector>();
         }
+        return null;
       }
-      return new DfpApiException(null, exception.Message, exception);
     }
 
     /// <summary>
-    /// Initializes the service before MakeApiCall.
+    /// Gets or sets the request header.
     /// </summary>
-    /// <param name="methodName">Name of the method.</param>
-    /// <param name="parameters">The method parameters.</param>
-    protected override void InitForCall(string methodName, object[] parameters) {
-      DfpAppConfig config = this.User.Config as DfpAppConfig;
-      string oAuthHeader = null;
-      RequestHeader header = GetRequestHeader();
-
-      if (header == null) {
-        throw new DfpApiException(null, DfpErrorMessages.FailedToSetAuthorizationHeader);
-      }
-
-      if (!(this.GetType().Name == "NetworkService" && (methodName == "getAllNetworks"
-          || methodName == "makeTestNetwork"))) {
-        if (string.IsNullOrEmpty(header.networkCode)) {
-          throw new SoapHeaderException("networkCode header is required in all API versions. " +
-              "The only exceptions are NetworkService.getAllNetworks and " +
-              "NetworkService.makeTestNetwork.", XmlQualifiedName.Empty);
+    /// <value>The request header.</value>
+    public RequestHeader RequestHeader {
+      get { return HeaderInspector != null ? HeaderInspector.RequestHeader : null; }
+      set {
+        if (HeaderInspector != null) {
+          HeaderInspector.RequestHeader = value;
         }
       }
-
-      if (string.IsNullOrWhiteSpace(header.applicationName) || header.applicationName.Contains(
-          DfpAppConfig.DEFAULT_APPLICATION_NAME)) {
-        throw new ApplicationException(DfpErrorMessages.RequireValidApplicationName);
-      }
-
-      if (config.AuthorizationMethod == DfpAuthorizationMethod.OAuth2) {
-        if (this.User.OAuthProvider != null) {
-          oAuthHeader = this.User.OAuthProvider.GetAuthHeader();
-        } else {
-          throw new DfpApiException(null, DfpErrorMessages.OAuthProviderCannotBeNull);
-        }
-      } else {
-        throw new DfpApiException(null, DfpErrorMessages.UnsupportedAuthorizationMethod);
-      }
-
-      ContextStore.AddKey("OAuthHeader", oAuthHeader);
-      base.InitForCall(methodName, parameters);
     }
 
     /// <summary>
-    /// Creates a WebRequest instance for the specified url.
+    /// Gets or sets the response header.
     /// </summary>
-    /// <param name="uri">The Uri to use when creating the WebRequest.</param>
-    /// <returns>
-    /// The WebRequest instance.
-    /// </returns>
-    protected override WebRequest GetWebRequest(Uri uri) {
-      WebRequest request = base.GetWebRequest(uri);
-      string oAuthHeader = (string) ContextStore.GetValue("OAuthHeader");
-      if (!string.IsNullOrEmpty(oAuthHeader)) {
-        request.Headers["Authorization"] = oAuthHeader;
+    /// <value>The response header.</value>
+    public ResponseHeader ResponseHeader {
+      get { return HeaderInspector != null ? HeaderInspector.ResponseHeader : null; }
+      set {
+        if (HeaderInspector != null) {
+          HeaderInspector.ResponseHeader = value;
+        }
       }
-      return request;
     }
 
     /// <summary>
-    /// Gets the request header.
+    /// Initializes a new instance of the DfpSoapClient class.
     /// </summary>
-    /// <returns>The request header.</returns>
-    private RequestHeader GetRequestHeader() {
-      return (RequestHeader) this.GetType().GetProperty("RequestHeader").GetValue(this, null);
+    /// <param name="endpointConfigurationName">
+    /// The name of the endpoint in the application configuration file.
+    /// </param>
+    public DfpSoapClient(string endpointConfigurationName)
+      : base(endpointConfigurationName) {
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the DfpSoapClient class.
+    /// </summary>
+    /// <param name="endpointConfigurationName">
+    /// The name of the endpoint in the application configuration file.
+    /// </param>
+    /// <param name="remoteAddress">Remote address of the service.</param>
+    public DfpSoapClient(string endpointConfigurationName, string remoteAddress)
+      : base(endpointConfigurationName, remoteAddress) {
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the DfpSoapClient class.
+    /// </summary>
+    /// <param name="binding">The binding with which to make calls to the service.</param>
+    /// <param name="remoteAddress">Remote address of the service.</param>
+    public DfpSoapClient(Binding binding, EndpointAddress remoteAddress)
+      : base(binding, remoteAddress) {
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the DfpSoapClient class.
+    /// </summary>
+    /// <param name="endpointConfigurationName">
+    /// The name of the endpoint in the application configuration file.
+    /// </param>
+    /// <param name="remoteAddress">Remote address of the service.</param>
+    public DfpSoapClient(string endpointConfigurationName, EndpointAddress remoteAddress)
+      : base(endpointConfigurationName, remoteAddress) {
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the DfpSoapClient class.
+    /// </summary>
+    public DfpSoapClient()
+      : base() {
     }
   }
 }

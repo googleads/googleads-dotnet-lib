@@ -231,11 +231,6 @@ namespace Google.Api.Ads.Common.Lib {
     private OAuth2Flow oAuth2Mode;
 
     /// <summary>
-    /// True, if SOAP extensions for logging should be turned on.
-    /// </summary>
-    private bool enableSoapExtension;
-
-    /// <summary>
     /// True, if the usage of a feature should be added to the user agent,
     /// false otherwise.
     /// </summary>
@@ -250,7 +245,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Default value for timeout for Ads services.
     /// </summary>
-    private const int DEFAULT_TIMEOUT = -1;
+    private const int DEFAULT_TIMEOUT = 1000 * 60 * 10;
 
     /// <summary>
     /// The default value of OAuth2 server URL.
@@ -480,19 +475,6 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Gets or sets whether SOAP extensions should be turned on for
-    /// logging.
-    /// </summary>
-    public bool EnableSoapExtension {
-      get {
-        return enableSoapExtension;
-      }
-      set {
-        SetPropertyField(ENABLE_SOAP_EXTENSION, ref enableSoapExtension, value);
-      }
-    }
-
-    /// <summary>
     /// Gets or sets whether usage of various client library features should be
     /// tracked.
     /// </summary>
@@ -588,7 +570,6 @@ namespace Google.Api.Ads.Common.Lib {
       oAuth2SecretsJsonPath = "";
 
       includeFeaturesInUserAgent = true;
-      enableSoapExtension = true;
     }
 
     /// <summary>

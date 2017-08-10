@@ -15,15 +15,7 @@
 using Google.Api.Ads.Common.Lib;
 
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Reflection;
-using System.Text;
-using System.Web.Services;
-using System.Web.Services.Protocols;
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
 
 namespace Google.Api.Ads.Dfp.Lib {
   /// <summary>

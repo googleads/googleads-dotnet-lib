@@ -41,12 +41,13 @@
       <HintPath>..\..\lib\BouncyCastle\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonErrorMessages.Designer.cs">
@@ -59,11 +60,16 @@
     <Compile Include="Lib\AdsOAuthException.cs" />
     <Compile Include="Lib\AdsOAuthProvider.cs" />
     <Compile Include="Lib\AdsService.cs" />
+    <Compile Include="Lib\AdsServiceInspectorBehavior.cs" />
     <Compile Include="Lib\AdsUser.cs" />
     <Compile Include="Lib\AppConfig.cs" />
     <Compile Include="Lib\AppConfigBase.cs" />
     <Compile Include="Lib\Configurable.cs" />
+    <Compile Include="Lib\GzipHeaderInspector.cs" />
+    <Compile Include="Lib\SoapFaultInspector.cs" />
     <Compile Include="Logging\AdsFeatureUsageRegistry.cs" />
+    <Compile Include="Logging\DefaultTraceWriter.cs" />
+    <Compile Include="Logging\ITraceWriter.cs" />
     <Compile Include="Logging\KeyValueMessageFormatter.cs" />
     <Compile Include="Util\DateTimeProvider.cs" />
     <Compile Include="Util\DefaultDateTimeProvider.cs" />
@@ -76,6 +82,7 @@
     <Compile Include="Logging\ResponseInfo.cs" />
     <Compile Include="Logging\UrlEncodedBodyFormatter.cs" />
     <Compile Include="Logging\TraceFormatter.cs" />
+    <Compile Include="Lib\OAuth2ClientMessageInspector.cs" />
     <Compile Include="Lib\OAuth2JwtClaimset.cs" />
     <Compile Include="Lib\OAuth2JwtClaimsetBuilder.cs" />
     <Compile Include="Lib\OAuth2ProviderBase.cs" />
@@ -87,11 +94,7 @@
     <Compile Include="Lib\ServiceFactory.cs" />
     <Compile Include="Lib\ServiceSignature.cs" />
     <Compile Include="Lib\AdsSoapClient.cs" />
-    <Compile Include="Lib\SoapHeaderBase.cs" />
-    <Compile Include="Logging\SoapListenerExtension.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Logging\SoapListenerExtensionAttribute.cs" />
+    <Compile Include="Logging\SoapListenerInspector.cs" />
     <Compile Include="Logging\SoapMessageDirection.cs" />
     <Compile Include="Logging\SoapTraceFormatter.cs" />
     <Compile Include="Logging\LogEntry.cs" />
@@ -125,6 +128,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterBuild" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Exec Command="sn -R $(OutDir)$(TargetFileName) $(ProjectDir)..\Common\AdsApi.snk"  />
+    <Exec Command="sn -R $(OutDir)$(TargetFileName) $(ProjectDir)..\Common\AdsApi.snk" />
   </Target>
 </Project>

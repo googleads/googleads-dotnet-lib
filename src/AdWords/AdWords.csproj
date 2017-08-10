@@ -38,11 +38,12 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdWordsErrorMessages.Designer.cs">
@@ -51,12 +52,10 @@
       <DependentUpon>AdWordsErrorMessages.resx</DependentUpon>
     </Compile>
     <Compile Include="Headers\AdWordsSoapHeader.cs" />
-    <Compile Include="Headers\RequestHeaderStub.cs" />
-    <Compile Include="Headers\ResponseHeaderStub.cs" />
     <Compile Include="Util\BatchJob\AdWordsBulkRequestException.cs" />
     <Compile Include="Lib\AdWordsException.cs" />
     <Compile Include="Lib\AdWordsTraceListener.cs" />
-    <Compile Include="Lib\AdWordsCallListener.cs" />
+    <Compile Include="Lib\AdWordsSoapHeaderInspector.cs" />
     <Compile Include="Util\BatchJob\BatchJobUtilitiesBase.cs" />
     <Compile Include="Util\BatchJob\BatchUploadProgress.cs" />
     <Compile Include="Util\BatchJob\BulkJobErrorHandler.cs" />
@@ -66,6 +65,7 @@
     <Compile Include="Util\BatchJob\v201702\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\v201609\BatchJobUtilities.cs" />
     <Compile Include="Util\BatchJob\CloudStorageError.cs" />
+    <Compile Include="Util\BatchJob\v201708\BatchJobUtilities.cs" />
     <Compile Include="Util\Reports\IReportDefinitionField.cs" />
     <Compile Include="Util\Reports\Parser\AwReport.cs" />
     <Compile Include="Util\Reports\Parser\AwXmlTextReader.cs" />
@@ -76,6 +76,7 @@
     <Compile Include="Util\Reports\v201609\PredefinedReportTypes.cs" />
     <Compile Include="Util\Reports\v201702\PredefinedReportTypes.cs" />
     <Compile Include="Util\Reports\v201705\PredefinedReportTypes.cs" />
+    <Compile Include="Util\Reports\v201708\PredefinedReportTypes.cs" />
     <Compile Include="Util\Shopping\v201705\OperationPair.cs" />
     <Compile Include="Util\Shopping\v201705\ProductDimensionEqualityComparer.cs" />
     <Compile Include="Util\Shopping\v201705\ProductDimensions.cs" />
@@ -94,6 +95,12 @@
     <Compile Include="Util\Shopping\v201609\ProductPartitionNode.cs" />
     <Compile Include="Util\Shopping\v201609\ProductPartitionNodeAdapter.cs" />
     <Compile Include="Util\Shopping\v201609\ProductPartitionTree.cs" />
+    <Compile Include="Util\Shopping\v201708\OperationPair.cs" />
+    <Compile Include="Util\Shopping\v201708\ProductDimensionEqualityComparer.cs" />
+    <Compile Include="Util\Shopping\v201708\ProductDimensions.cs" />
+    <Compile Include="Util\Shopping\v201708\ProductPartitionNode.cs" />
+    <Compile Include="Util\Shopping\v201708\ProductPartitionNodeAdapter.cs" />
+    <Compile Include="Util\Shopping\v201708\ProductPartitionTree.cs" />
     <Compile Include="Util\v201609\MapUtilities.cs" />
     <Compile Include="Util\Selectors\BaseFields.cs" />
     <Compile Include="Util\Shopping\BiddableUnitState.cs" />
@@ -128,6 +135,7 @@
     <Compile Include="Util\Selectors\Field.cs" />
     <Compile Include="Util\v201705\MapUtilities.cs" />
     <Compile Include="Util\v201702\MapUtilities.cs" />
+    <Compile Include="Util\v201708\MapUtilities.cs" />
     <Compile Include="v201609\AdWordsApi.cs" />
     <Compile Include="v201609\AdWordsApi.ProductDimension.cs" />
     <Compile Include="v201609\AdWordsServiceV201609.cs" />
@@ -161,6 +169,17 @@
     <Compile Include="v201705\Paging.cs" />
     <Compile Include="v201705\Predicate.cs" />
     <Compile Include="v201705\ReportDefinition.cs" />
+    <Compile Include="v201708\AdWordsApi.cs" />
+    <Compile Include="v201708\AdWordsApi.ProductDimension.cs" />
+    <Compile Include="v201708\AdWordsServiceV201708.cs" />
+    <Compile Include="v201708\ApiError.cs" />
+    <Compile Include="v201708\ApiException.cs" />
+    <Compile Include="v201708\BatchJobApi.cs" />
+    <Compile Include="v201708\FeedValidationErrors.cs" />
+    <Compile Include="v201708\OrderBy.cs" />
+    <Compile Include="v201708\Paging.cs" />
+    <Compile Include="v201708\Predicate.cs" />
+    <Compile Include="v201708\ReportDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -187,6 +206,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterBuild" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Exec Command="sn -R $(OutDir)$(TargetFileName) $(ProjectDir)..\Common\AdsApi.snk"  />
-  </Target> 
+    <Exec Command="sn -R $(OutDir)$(TargetFileName) $(ProjectDir)..\Common\AdsApi.snk" />
+  </Target>
 </Project>

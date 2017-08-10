@@ -97,9 +97,7 @@ namespace Google.Api.Ads.Common.Lib {
       this.config = config;
       MergeValuesFromHeaders(config, headers);
       RegisterServices(GetServiceTypes());
-      if (this.config.EnableSoapExtension) {
-        listeners.AddRange(GetDefaultListeners());
-      }
+      listeners.AddRange(GetDefaultListeners());
       SetHeadersFromConfig();
       config.PropertyChanged += delegate(object sender, PropertyChangedEventArgs e) {
         if (e.PropertyName == "OAuth2Mode") {
@@ -304,13 +302,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// <summary>
     /// Calls the SOAP listeners.
     /// </summary>
-    /// <param name="document">The SOAP message as an xml document.</param>
-    /// <param name="service">The service for which call is being made.</param>
-    /// <param name="direction">The direction of SOAP message.</param>
-    internal void CallListeners(XmlDocument document, AdsClient service,
-        SoapMessageDirection direction) {
-      foreach (SoapListener listener in listeners) {
-        listener.HandleMessage(document, service, direction);
+    internal void CallListeners(RequestInfo request, ResponseInfo response) {
+      foreach(SoapListener listener in listeners) {
+        listener.HandleMessage(request, response);
       }
     }
 

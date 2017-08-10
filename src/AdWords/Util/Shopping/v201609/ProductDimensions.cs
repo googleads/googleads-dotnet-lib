@@ -210,4 +210,3 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201609 {
     }
   }
 }
-

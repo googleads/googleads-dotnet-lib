@@ -13,6 +13,7 @@
 // limitations under the License.
 
 namespace Google.Api.Ads.AdWords.Util.Reports {
+
   /// <summary>
   /// A type used for annotating properties that will hold the values
   /// of a row of a report. The names of the properties that are annotated

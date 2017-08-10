@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace Google.Api.Ads.AdWords.Util.Reports {
+
   /// <summary>
   /// A class for parsing text AdWords reports into POCOs.
   /// </summary>

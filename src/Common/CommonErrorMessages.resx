@@ -161,9 +161,6 @@
     <value>Looks like your application is not configured to use OAuth2 properly. Required OAuth2 parameter {0} is missing. You may run Common\\Utils\\OAuth2TokenGenerator.cs to generate a default OAuth2 configuration.</value>
     <comment>Thrown when a required OAuth2 parameter is missing.</comment>
   </data>
-  <data name="OAuthExtensionNotLoaded" xml:space="preserve">
-    <value>Could not load an oauth extension class.</value>
-  </data>
   <data name="PasswordCannotBeNull" xml:space="preserve">
     <value>Password cannot be null</value>
     <comment>Used by AuthTokenCache when an empty password is passed to it.</comment>
@@ -183,10 +180,6 @@
   <data name="SignatureCannotBeNull" xml:space="preserve">
     <value>Cache signature cannot be null.</value>
     <comment>Used for ArgumentException by InMemoryTokenCache class.</comment>
-  </data>
-  <data name="SoapListenerExtensionNotLoaded" xml:space="preserve">
-    <value>The SoapListenerExtension class is not loaded. The most possible cause for this error is that you haven't registered Google.Api.Ads.Common.Lib.SoapListenerExtension as a soap extension under configuration/system.web/webServices/soapExtensionTypes in your your App.config or Web.config. See the sample App.config for details on how to register soap extensions.</value>
-    <comment>Thrown when SoapListenerExtension was not loaded as a soap extension from App.config.</comment>
   </data>
   <data name="SourceStreamIsNotReadable" xml:space="preserve">
     <value>Source stream is not readable.</value>
@@ -215,9 +208,5 @@
   <data name="UnregisteredServiceTypeRequested" xml:space="preserve">
     <value>Unregistered service type {0} was requested.</value>
     <comment>Used for InvalidCastException by AdsUser.GetService for serviceSignature parameter if an unregistered service type is requested.</comment>
-  </data>
-  <data name="UsingDeprecatedLogSource" xml:space="preserve">
-    <value>You are using a deprecated log source '{0}'. See https://github.com/googleads/googleads-dotnet-lib/wiki/How-to-capture-SOAP-messages for details on how to configure logging.</value>
-    <comment>Used for writng deprecation warnings if the user is using a deprecated log source.</comment>
   </data>
 </root>

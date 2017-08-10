@@ -19,7 +19,6 @@ using Google.Api.Ads.Common.Util.Reports;
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Net;
 using System.Web;
 using System.Xml;
@@ -291,7 +290,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <returns>The report response.</returns>
     public override ReportResponse GetResponse() {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       return base.GetResponse();
     }
@@ -301,7 +300,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// </summary>
     public override void GetResponseAsync() {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       base.GetResponseAsync();
     }

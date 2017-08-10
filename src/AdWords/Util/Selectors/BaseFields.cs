@@ -33,7 +33,7 @@ namespace Google.Api.Ads.AdWords.Util.Selectors {
       FieldInfo[] fields = type.GetFields(BindingFlags.Static | BindingFlags.Public |
           BindingFlags.FlattenHierarchy);
       foreach (FieldInfo field in fields) {
-        if (field.DeclaringType == typeof(Field)) {
+        if (field.FieldType == typeof(Field)) {
           Field f = (Field) field.GetValue(null);
           retval.Add(f);
         }

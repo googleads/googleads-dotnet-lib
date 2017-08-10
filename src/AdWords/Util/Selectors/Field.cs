@@ -97,7 +97,7 @@ namespace Google.Api.Ads.AdWords.Util.Selectors {
     /// </returns>
     public override string ToString() {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       return this.fieldName;
     }
@@ -110,7 +110,7 @@ namespace Google.Api.Ads.AdWords.Util.Selectors {
     /// <returns>A stringified representation of x.</returns>
     public static implicit operator string(Field x) {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       return x.ToString();
     }

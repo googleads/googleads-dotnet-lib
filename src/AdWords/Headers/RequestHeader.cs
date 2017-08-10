@@ -12,131 +12,98 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.Common.Lib;
-
 using System;
+using System.ServiceModel.Channels;
+using System.Xml;
 
 namespace Google.Api.Ads.AdWords.Headers {
+
   /// <summary>
-  /// This class wraps the <see cref="RequestHeaderStub"/>, adding
-  /// cross-namespace serialization capabilities.
+  /// This class represents an AdWords SOAP request header.
   /// </summary>
-  /// <remarks>The XmlSerializer provides two mutually exclusive ways of
-  /// serialization.
-  /// - Mark a class as Serializable, and allow the class to be serialized
-  /// automagically. This option does object serialization correctly, but isn't
-  /// cross-namespace aware.
-  /// - Implement IXmlSerializable, and customize the serialization. This
-  /// option allows us to customize the serialization process and add cross
-  /// namespace support.
-  ///
-  /// However since options 1 and 2 are mutually exclusive (i.e. cannot be
-  /// applied to the same object hierarchy), we cannot derive this class from
-  /// <see cref="ResponseHeaderStub"/>, instead, we have to wrap it in another
-  /// class.
-  /// </remarks>
-  public class RequestHeader : AdWordsSoapHeader {
-    /// <summary>
-    /// The request header stub that this class wraps.
-    /// </summary>
-    RequestHeaderStub stub = new RequestHeaderStub();
+  public class RequestHeader : AdWordsSoapHeader, ICloneable {
+    private bool _validateOnly;
+    private bool _partialFailure;
 
     /// <summary>
-    /// Gets or sets the stub that is wrapped by this object.
+    /// Gets the name of this header.
     /// </summary>
-    public override object Stub {
-      get {
-        return stub;
-      }
-      protected set {
-        stub = value as RequestHeaderStub;
-      }
+    public override string Name {
+      get { return "RequestHeader"; }
     }
 
     /// <summary>
     /// Gets or sets the client customer id.
     /// </summary>
-    public string clientCustomerId {
-      get {
-        return stub.clientCustomerId;
-      }
-      set {
-        stub.clientCustomerId = value;
-      }
-    }
+    public string clientCustomerId { get; set; }
 
     /// <summary>
     /// Gets or sets the developer token.
     /// </summary>
-    public string developerToken {
-      get {
-        return stub.developerToken;
-      }
-      set {
-        stub.developerToken = value;
-      }
-    }
+    public string developerToken { get; set; }
 
     /// <summary>
     /// Gets or sets the user agent.
     /// </summary>
-    public string userAgent {
-      get {
-        return stub.userAgent;
-      }
-      set {
-        stub.userAgent = value;
-      }
-    }
+    public string userAgent { get; set; }
 
     /// <summary>
     /// Gets or sets whether this API call is for validation only.
     /// </summary>
     public bool validateOnly {
       get {
-        return stub.validateOnly;
+        return _validateOnly;
       }
       set {
-        stub.validateOnlySpecified = true;
-        stub.validateOnly = value;
+        validateOnlySpecified = true;
+        _validateOnly = value;
       }
     }
 
     /// <summary>
     /// Gets or sets whether <see cref="validateOnly"/> is specified.
     /// </summary>
-    public bool validateOnlySpecified {
-      get {
-        return stub.validateOnlySpecified;
-      }
-      set {
-        stub.validateOnlySpecified = value;
-      }
-    }
+    public bool validateOnlySpecified { get; set; }
 
     /// <summary>
     /// Gets or sets whether partial failures should be returned.
     /// </summary>
     public bool partialFailure {
       get {
-        return stub.partialFailure;
+        return _partialFailure;
       }
       set {
-        stub.partialFailureSpecified = true;
-        stub.partialFailure = value;
+        partialFailureSpecified = true;
+        _partialFailure = value;
       }
     }
 
     /// <summary>
     /// Gets or sets whether <see cref="partialFailure"/> is specified.
     /// </summary>
-    public bool partialFailureSpecified {
-      get {
-        return stub.partialFailureSpecified;
+    public bool partialFailureSpecified { get; set; }
+
+    /// <summary>
+    /// Called when the header content is serialized using the specified XML writer.
+    /// </summary>
+    protected override void OnWriteHeaderContents(XmlDictionaryWriter writer,
+        MessageVersion messageVersion) {
+      writer.WriteElementString("clientCustomerId", clientCustomerId);
+      writer.WriteElementString("developerToken", developerToken);
+      writer.WriteElementString("userAgent", userAgent);
+      if (validateOnlySpecified) {
+        writer.WriteElementString("validateOnly", validateOnly.ToString());
       }
-      set {
-        stub.partialFailureSpecified = value;
+      if (partialFailureSpecified) {
+        writer.WriteElementString("partialFailure", partialFailure.ToString());
       }
+    }
+
+    /// <summary>
+    /// Creates a new object that is a copy of the current instance.
+    /// </summary>
+    public object Clone() {
+      return this.MemberwiseClone();
     }
   }
 }

@@ -12,23 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Util;
 
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
-using System.Net;
-using System.Runtime.Remoting.Messaging;
 using System.Text;
-using System.Threading;
-using System.Web;
-using System.Web.Services;
-using System.Web.Services.Protocols;
 using System.Xml;
-using System.Xml.Serialization;
 
 namespace Google.Api.Ads.AdWords.Lib {
   /// <summary>

@@ -16,13 +16,8 @@ using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Logging;
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Net;
-using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Web.Services;
-using System.Web.Services.Protocols;
 
 namespace Google.Api.Ads.AdWords.Lib {
   /// <summary>
@@ -72,7 +67,7 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// A list of default SOAP listeners.
     /// </returns>
     public override SoapListener[] GetDefaultListeners() {
-      return new SoapListener[] {AdWordsTraceListener.Instance, AdWordsCallListener.Instance};
+      return new SoapListener[] {AdWordsTraceListener.Instance};
     }
 
     /// <summary>

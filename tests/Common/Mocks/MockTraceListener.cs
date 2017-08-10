@@ -23,6 +23,17 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
   /// Implements a mock version of the TraceListener class for testing purposes.
   /// </summary>
   class MockTraceListener : TraceListener {
+
+    /// <summary>
+    /// The last ResponseInfo that was handled.
+    /// </summary>
+    public ResponseInfo LastResponseInfo { get; set; }
+
+    /// <summary>
+    /// The last RequestInfo that was handled.
+    /// </summary>
+    public RequestInfo LastRequestInfo { get; set; }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="MockTraceListener"/> class.
     /// </summary>
@@ -40,6 +51,17 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     protected override ISet<string> GetFieldsToMask() {
       return new HashSet<string>(new string[] { "authToken", "developerToken" },
           StringComparer.OrdinalIgnoreCase);
+    }
+
+    /// <summary>
+    /// Writes summary logs.
+    /// </summary>
+    /// <param name="message">The log content to write</param>
+    /// <param name="isFailure">If the log is for a failed request.</param>
+    public override void HandleMessage(RequestInfo requestInfo, ResponseInfo responseInfo) {
+      this.LastRequestInfo = requestInfo;
+      this.LastResponseInfo = responseInfo;
+      base.HandleMessage(requestInfo, responseInfo);
     }
   }
 }

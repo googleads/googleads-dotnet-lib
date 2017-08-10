@@ -1,4 +1,4 @@
-﻿// Copyright 2014, Google Inc. All Rights Reserved.
+﻿// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -29,6 +29,11 @@ namespace Google.Api.Ads.Common.Logging {
     /// The HTTP response body.
     /// </summary>
     private string body;
+
+    /// <summary>
+    /// The HTTP status code of the response.
+    /// </summary>
+    public HttpStatusCode StatusCode { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ResponseInfo"/> class.

@@ -15,21 +15,26 @@
 using Google.Api.Ads.Common.Lib;
 
 using System;
+using System.ServiceModel.Channels;
 
 namespace Google.Api.Ads.Dfp.Headers {
   /// <summary>
   /// Base class for Dfp API Soap headers.
   /// </summary>
-  public abstract class DfpSoapHeader : SoapHeaderBase {
+  public abstract class DfpSoapHeader : MessageHeader {
+
     /// <summary>
-    /// Gets or sets the API version.
+    /// The API version the header should be namespaced to.
     /// </summary>
-    public string Version {
+    public string Version { get; set; }
+
+    /// <summary>
+    /// Gets the namespace.
+    /// </summary>
+    /// <value>The namespace.</value>
+    public override string Namespace {
       get {
-        return placeHolders["{version}"].TrimStart('/');
-      }
-      set {
-        placeHolders["{version}"] = "/" + value;
+        return "https://www.google.com/apis/ads/publisher/" + Version;
       }
     }
   }

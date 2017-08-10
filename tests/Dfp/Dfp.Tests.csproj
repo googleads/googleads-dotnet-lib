@@ -62,11 +62,12 @@
       <HintPath>..\..\lib\NUnit\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Common\Common.csproj">
@@ -100,6 +101,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterBuild" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -121,6 +128,8 @@
     <Compile Include="v201705\PqlUtilitiesTests.cs" />
     <Compile Include="v201705\StatementBuilderTests.cs" />
     <Compile Include="BaseTests.cs" />
+    <Compile Include="DfpSoapFaultInspectorTests.cs" />
+    <Compile Include="DfpSoapHeaderInspectorTests.cs" />
     <Compile Include="EnumIntegrityTests.cs" />
     <Compile Include="ServiceCreationTests.cs" />
   </ItemGroup>
