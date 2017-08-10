@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_wrappers_1_1_product_package_item_service_1_f6c5377e7d6b489a4a600eb74a32400c =
+[
+    [ "createProductPackageItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_wrappers_1_1_product_package_item_service_1_f6c5377e7d6b489a4a600eb74a32400c.html#a3a3b9def9630aa4b89b7fe0a80ae8da9", null ],
+    [ "createProductPackageItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_wrappers_1_1_product_package_item_service_1_f6c5377e7d6b489a4a600eb74a32400c.html#a58c7c326af09af63b329235a635b8125", null ],
+    [ "rval", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_wrappers_1_1_product_package_item_service_1_f6c5377e7d6b489a4a600eb74a32400c.html#a551e551d9265eb139e532b4b557dfed2", null ]
+];

@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_constant_data_service_1_1gf8564ce18bb32a54d19097d0e9206b00 =
+[
+    [ "getProductBiddingCategoryDataResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_constant_data_service_1_1gf8564ce18bb32a54d19097d0e9206b00.html#a3fef0d8b0ce0393a6b6f90274f08e493", null ],
+    [ "getProductBiddingCategoryDataResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_constant_data_service_1_1gf8564ce18bb32a54d19097d0e9206b00.html#ac4e44dfbd0b66cd5f72c726d04b6b59f", null ],
+    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_constant_data_service_1_1gf8564ce18bb32a54d19097d0e9206b00.html#aa10333cf4229032f81a5861fee8cd2b5", null ]
+];

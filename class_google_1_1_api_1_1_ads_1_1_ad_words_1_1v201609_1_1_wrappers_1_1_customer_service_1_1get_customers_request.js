@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_customer_service_1_1get_customers_request =
+[
+    [ "getCustomersRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_customer_service_1_1get_customers_request.html#a8353bf892c04430608233340fb5c9ae2", null ]
+];

@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_user_team_association_service_18b39222c04406ee634d30b2ffc945063 =
+[
+    [ "updateUserTeamAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_user_team_association_service_18b39222c04406ee634d30b2ffc945063.html#a74c13edf0d0f481c3410228dd7a6a1d3", null ],
+    [ "updateUserTeamAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_user_team_association_service_18b39222c04406ee634d30b2ffc945063.html#a688703ed387d49238ec7fa01cbfbce5f", null ],
+    [ "userTeamAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_user_team_association_service_18b39222c04406ee634d30b2ffc945063.html#ac8f629cd30c1b2d7adc134a69ef95e0c", null ]
+];

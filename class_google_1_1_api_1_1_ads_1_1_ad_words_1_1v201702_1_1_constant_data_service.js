@@ -1,16 +1,18 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service =
 [
     [ "ConstantDataService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#ad5c0cabff9b216b3576e0b825ecbf859", null ],
-    [ "getAgeRangeCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#ab099fe22c52732d3fcb0e50a45275122", null ],
-    [ "getCarrierCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#ad7a7be2d28634716aec841ec244141be", null ],
-    [ "getGenderCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#ae0c6286836d561c7d39cb65f7a57d3b7", null ],
-    [ "getLanguageCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#a2f001b4362193a3c932dd1218aef915d", null ],
-    [ "getMobileAppCategoryCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#a9f0f84e77978524c9f1eb385215435f8", null ],
-    [ "getMobileDeviceCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#a096bc147875741e7dfab8b2f8386c053", null ],
-    [ "getOperatingSystemVersionCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#a35ba611a699172f7605fee8855c047a1", null ],
-    [ "getProductBiddingCategoryData", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#a95a99ebbd7c097b4b2a3ac3e37881367", null ],
-    [ "getUserInterestCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#ac32b6f35235f1693735636e559e6bc2b", null ],
-    [ "getVerticalCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#aaf70479dc4fec370b587616c3f111869", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#acc76a94374138d668c4a81fc6a397b89", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#af60a0c66377cf6be3bdf6cbdfab70578", null ]
+    [ "ConstantDataService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#af826bdd512296efd62c2ee1370a8e2bb", null ],
+    [ "ConstantDataService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#af98b06fc3653d9deaefc7b147b8295d3", null ],
+    [ "ConstantDataService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#a6ce19833ed9ffe91d89924155fc9952c", null ],
+    [ "ConstantDataService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#a9c216d24edf7c1c6d1f24277536bb86f", null ],
+    [ "getAgeRangeCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#a1f4cbb4531979d18d6ddefb818827a5c", null ],
+    [ "getCarrierCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#a89f7ef18a3e05bfcd5fecb538ca8657d", null ],
+    [ "getGenderCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#aed120a2b1558f251a2a1f83ea5a386df", null ],
+    [ "getLanguageCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#a7bd248430041506992054093aa74962a", null ],
+    [ "getMobileAppCategoryCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#aed788080cc23de93042c63cb592dae8e", null ],
+    [ "getMobileDeviceCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#a02be02b4fd2cd64432e8839ee8254080", null ],
+    [ "getOperatingSystemVersionCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#afd86b99ed237c3910b1dc71a168c3368", null ],
+    [ "getProductBiddingCategoryData", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#acecaba82c0447bbbb5938a0b7e7222d6", null ],
+    [ "getUserInterestCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#ad72b20f05161177b6c19cc3b0f0f57bb", null ],
+    [ "getVerticalCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_constant_data_service.html#a614838f2835815f1977c7d94d25af8d5", null ]
 ];

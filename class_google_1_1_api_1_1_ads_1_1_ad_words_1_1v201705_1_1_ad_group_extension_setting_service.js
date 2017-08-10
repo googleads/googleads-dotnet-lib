@@ -1,9 +1,11 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_extension_setting_service =
 [
     [ "AdGroupExtensionSettingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_extension_setting_service.html#a8b3fe4f3e62910c0b173cd816335b85f", null ],
-    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_extension_setting_service.html#a626502291a2834b94d447887fb12a446", null ],
-    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_extension_setting_service.html#a93797bb2bd7677395beb6d5689e4eab2", null ],
-    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_extension_setting_service.html#ad22b7a39741bb33e27ed7f289d56f7ce", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_extension_setting_service.html#a5e3b7aa8e92c1b7f35cffdde52a03220", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_extension_setting_service.html#aec73b09acb7a2e045834492852ebde2a", null ]
+    [ "AdGroupExtensionSettingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_extension_setting_service.html#a91636992f03cbce430889b7c927b3465", null ],
+    [ "AdGroupExtensionSettingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_extension_setting_service.html#ad6a3298d70d7b2896717c8cd54b83c53", null ],
+    [ "AdGroupExtensionSettingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_extension_setting_service.html#a81354fb2ca786a23672d712c3355dae0", null ],
+    [ "AdGroupExtensionSettingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_extension_setting_service.html#a6f04918b9eb1c51f10eb43e2687ea030", null ],
+    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_extension_setting_service.html#a4e76fafcba2a5585d154b9e556173453", null ],
+    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_extension_setting_service.html#a81617bcf4d970c143a0814dee7fda326", null ],
+    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_extension_setting_service.html#a5c86841acf815821be45234b955bc418", null ]
 ];

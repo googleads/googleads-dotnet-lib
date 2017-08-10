@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_frequency_cap_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_frequency_cap_1_1_selectable_fields.html#aa1b41121534c65d92e8cf6a829321a4b", null ]
+];

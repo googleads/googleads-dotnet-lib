@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_get_new_keywords =
+[
+    [ "Settings", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_get_new_keywords_1_1_settings.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_get_new_keywords_1_1_settings" ],
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_get_new_keywords.html#a8e999768745ff8c3052daf938ac69e3c", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_get_new_keywords.html#a7f4a4638ef7e9b42ff5bb3c528b5e37e", null ]
+];

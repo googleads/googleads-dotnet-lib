@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_structured_snippet_feed_item_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_structured_snippet_feed_item_1_1_selectable_fields.html#ab4d2a9aab5a58e09a5fcddf22ac0e79e", null ]
+];

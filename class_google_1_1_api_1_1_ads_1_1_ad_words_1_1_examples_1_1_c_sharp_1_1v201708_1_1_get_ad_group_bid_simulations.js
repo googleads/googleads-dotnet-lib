@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_get_ad_group_bid_simulations =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_get_ad_group_bid_simulations.html#a5678d2899e80fba49fee1f72ab24046e", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_get_ad_group_bid_simulations.html#a570b5c5a7f4fe8e03007471168a19f88", null ]
+];

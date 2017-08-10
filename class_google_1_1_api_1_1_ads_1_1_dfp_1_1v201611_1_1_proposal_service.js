@@ -1,11 +1,13 @@
 var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service =
 [
     [ "ProposalService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#af0564c5060238dd818907a4f828ee52a", null ],
-    [ "createProposals", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#a47d742f040b1619884b015335112a22e", null ],
-    [ "getMarketplaceCommentsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#ab7dcac1c3ff38ff4c067f21588b8b809", null ],
-    [ "getProposalsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#a203cb4b7760f5619438ff9350f7adb72", null ],
-    [ "performProposalAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#ab360757d550b5db5076b8f2e8b6d8555", null ],
-    [ "updateProposals", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#a9322ef229b948a1a824a294644d67bbc", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#a4fe775e0d3df5120ed93be1127124f29", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#a636ac37882a3321be821def8da38e3b9", null ]
+    [ "ProposalService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#a9c0e8bc73445c3abed05d916079847d5", null ],
+    [ "ProposalService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#a8813968d58eaf2e827f09c338e516ee3", null ],
+    [ "ProposalService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#a50b8ca15a5db549bfc0886fc0389052b", null ],
+    [ "ProposalService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#ac58eb7248c61e73881cff3ac978b479b", null ],
+    [ "createProposals", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#ade59177107ea732d93c5363a049c8d47", null ],
+    [ "getMarketplaceCommentsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#a7e5c29ffcec033104af85f7059af0b9d", null ],
+    [ "getProposalsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#ac3bf89340a9504632302831c40b4db6a", null ],
+    [ "performProposalAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#a105aa095bceffabac64041f6f7c48ce1", null ],
+    [ "updateProposals", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_proposal_service.html#aa39bd20da2510d1b24234e934895b9b3", null ]
 ];

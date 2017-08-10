@@ -1,0 +1,4 @@
+var interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_report_definition_service_interface =
+[
+    [ "getReportFields", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_report_definition_service_interface.html#a45a45ad0d00c82010071d17b4fb190a6", null ]
+];

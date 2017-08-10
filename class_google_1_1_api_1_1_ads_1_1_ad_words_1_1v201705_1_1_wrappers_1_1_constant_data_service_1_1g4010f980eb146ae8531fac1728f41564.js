@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_constant_data_service_1_1g4010f980eb146ae8531fac1728f41564 =
+[
+    [ "getOperatingSystemVersionCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_constant_data_service_1_1g4010f980eb146ae8531fac1728f41564.html#a7c3b6be63410b162e017c16f350c3183", null ]
+];

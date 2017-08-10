@@ -1,10 +1,12 @@
 var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service =
 [
     [ "AudienceSegmentService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service.html#a9f59d619561808ed6312690a20b4d7cd", null ],
-    [ "createAudienceSegments", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service.html#aba3cd15b1d3ad4ef0e26cf761703a38a", null ],
-    [ "getAudienceSegmentsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service.html#aa710ed0e25d5d9bab0e3c2df8d035b23", null ],
-    [ "performAudienceSegmentAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service.html#a83a01e3af71cb12e86975ba6da088caf", null ],
-    [ "updateAudienceSegments", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service.html#ab39199332ee8b23537baafbee91f46c3", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service.html#a3bde738449a952f4cac752a78ab4acdd", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service.html#a9cb56707bdd684d7c4cd3a45766fd1fa", null ]
+    [ "AudienceSegmentService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service.html#a190741d5435484423fb2cf2bbb011736", null ],
+    [ "AudienceSegmentService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service.html#a48cfd435740b8f3d3047dc19f280479e", null ],
+    [ "AudienceSegmentService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service.html#a87e6c51c61e78125d5ebafdb1ca320f6", null ],
+    [ "AudienceSegmentService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service.html#a8f4f24c2d233e337f7fa270f10230362", null ],
+    [ "createAudienceSegments", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service.html#a143fe8b1c631f3e2232d21b5515b9c96", null ],
+    [ "getAudienceSegmentsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service.html#a0d43bec48b89312c8f33079443b59495", null ],
+    [ "performAudienceSegmentAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service.html#a85a067816c1fb637f739d9e61c414857", null ],
+    [ "updateAudienceSegments", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_audience_segment_service.html#acc349e1bb54c47955f79a7d04ee4c566", null ]
 ];

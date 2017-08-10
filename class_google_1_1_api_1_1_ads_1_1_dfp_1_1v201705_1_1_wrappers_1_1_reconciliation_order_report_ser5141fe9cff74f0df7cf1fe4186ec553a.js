@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_reconciliation_order_report_ser5141fe9cff74f0df7cf1fe4186ec553a =
+[
+    [ "updateReconciliationOrderReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_reconciliation_order_report_ser5141fe9cff74f0df7cf1fe4186ec553a.html#aa22a3a6a40372f91d6d30f22e0a88bae", null ],
+    [ "updateReconciliationOrderReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_reconciliation_order_report_ser5141fe9cff74f0df7cf1fe4186ec553a.html#a9f95b659cad24a0d013d888f5dae42f6", null ],
+    [ "reconciliationOrderReports", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_reconciliation_order_report_ser5141fe9cff74f0df7cf1fe4186ec553a.html#a6bfef712617a7a6cff6bbaadaca96fcf", null ]
+];

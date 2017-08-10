@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_ad_customizer_feed_error =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_ad_customizer_feed_error_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_ad_customizer_feed_error_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_ad_customizer_feed_error_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_ad_customizer_feed_error_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_ad_customizer_feed_error_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_ad_customizer_feed_error_1_1_selectable_fields" ],
-    [ "reason", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_ad_customizer_feed_error.html#ae0bcdb2e031826e82ec4a4e1c5a65827", null ],
-    [ "reasonSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_ad_customizer_feed_error.html#a0528d10f2247827e72566cc3ad91f89e", null ]
-];

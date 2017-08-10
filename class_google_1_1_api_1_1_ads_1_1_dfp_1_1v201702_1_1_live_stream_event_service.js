@@ -1,11 +1,13 @@
 var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service =
 [
     [ "LiveStreamEventService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#a3a36bc8c6ccc087f297b462e32e7cb1c", null ],
-    [ "createLiveStreamEvents", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#a6f228c3916999235ce0bc9278cf5cabd", null ],
-    [ "getLiveStreamEventsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#ace40ba05d4570a28732bf04cb51686fc", null ],
-    [ "performLiveStreamEventAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#a44c5bb91feb76e6b049eb9386a0f0b53", null ],
-    [ "registerSessionsForMonitoring", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#a44d90d62866312fef20f7df18a32c373", null ],
-    [ "updateLiveStreamEvents", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#af4c3863a094de382fd47b21989a6bc86", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#aa9677b70b83527b21daaa10d823a8dc8", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#aec5511662f4326c54669e0750e1e1357", null ]
+    [ "LiveStreamEventService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#a5e226989c23c6c4ec3d795a0564a8655", null ],
+    [ "LiveStreamEventService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#af617b98d5ff5f530900d13f08e135965", null ],
+    [ "LiveStreamEventService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#afe3d9ab720342c2f5b0522e25fdfdb02", null ],
+    [ "LiveStreamEventService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#a340bb1a2f6ccf44f603721ea7a211d24", null ],
+    [ "createLiveStreamEvents", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#a74896d9fcdca6eb01d3ff8b30cbf2b96", null ],
+    [ "getLiveStreamEventsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#a47dfc654155e543d116380b06a50be74", null ],
+    [ "performLiveStreamEventAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#a9853375d41bb4440b45c20dbb64644f2", null ],
+    [ "registerSessionsForMonitoring", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#a56a55a8883f8f720e393f8efabfd7702", null ],
+    [ "updateLiveStreamEvents", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_live_stream_event_service.html#ac270371fa6d8d386b481099f723694f3", null ]
 ];

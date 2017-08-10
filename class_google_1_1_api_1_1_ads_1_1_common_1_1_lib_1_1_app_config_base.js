@@ -9,7 +9,6 @@ var class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base =
     [ "ReadSettings", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a401e39fce299c2481bd3a2b210d45700", null ],
     [ "SetPropertyField< T >", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a9d1d55c9f1cd183b75dcda1a4fa2be07", null ],
     [ "EnableGzipCompression", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a126ad483d4f0cf152f513fd6159e2d22", null ],
-    [ "EnableSoapExtension", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a7f5932e9a4d27d3c3536af529c81c0e3", null ],
     [ "IncludeUtilitiesInUserAgent", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#ad02fe89e4c3d4e8d45f56757a1e53b92", null ],
     [ "MaskCredentials", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a971649f1dabd6e6e09c4ddcb19ed10c1", null ],
     [ "OAuth2AccessToken", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a2d6bc596e0091258223c7609f39cdabc", null ],

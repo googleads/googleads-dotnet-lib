@@ -1,14 +1,16 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service =
 [
     [ "DataService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#a34ace9d43cae716954f7b48e161d5257", null ],
-    [ "getAdGroupBidLandscape", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#ad9f255d3cad3cc515f80554c39ac9aa4", null ],
-    [ "getCampaignCriterionBidLandscape", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#a743170b3bab7db600fd2c65c038ac47d", null ],
-    [ "getCriterionBidLandscape", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#a23c6156e392d5efc5a6f797ae1312dfc", null ],
-    [ "getDomainCategory", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#ac2ddf76598684c3086e94d1710848969", null ],
-    [ "queryAdGroupBidLandscape", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#a4f2e786c0f64ef8e12a036f8281a04a1", null ],
-    [ "queryCampaignCriterionBidLandscape", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#a55b8fa862f94a3a889caa7da376bea63", null ],
-    [ "queryCriterionBidLandscape", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#aa588ebbebac3bf637b8625fca0413713", null ],
-    [ "queryDomainCategory", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#a89191331a5e230e83f0b56b6b4218b26", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#a46ca9f194bd43dcd40b403272d81e3d9", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#ac0b4c83a271423c64e48556879f50122", null ]
+    [ "DataService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#a3933235091d47d6ddedf26acbe85601c", null ],
+    [ "DataService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#a6fb0b8c1ecb325cb952c1d54ec0e5e76", null ],
+    [ "DataService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#abad3dc87c6a5532c52dc8e5a4a4b008c", null ],
+    [ "DataService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#af9c935b26178bb2939b39bd9d19310f1", null ],
+    [ "getAdGroupBidLandscape", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#a8ad6762429d45ac9b8e66ee98a44074a", null ],
+    [ "getCampaignCriterionBidLandscape", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#aed3a7baac8c98b1acc619e1e97f3d0d0", null ],
+    [ "getCriterionBidLandscape", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#acf4e1b782608eed8e6cad90082ccc355", null ],
+    [ "getDomainCategory", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#a07464ca0e0df48308984d3287bca8d93", null ],
+    [ "queryAdGroupBidLandscape", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#aa6d3e3d5cb87b469fea6b4d6a1222a63", null ],
+    [ "queryCampaignCriterionBidLandscape", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#a56aec9ac4dc7a3c8098d70ddc24319f7", null ],
+    [ "queryCriterionBidLandscape", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#afeb4e7ae2a8bb53a7e050e37d7724c56", null ],
+    [ "queryDomainCategory", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_data_service.html#a37fa8ea56cb8d58235f162bb2c70a38a", null ]
 ];

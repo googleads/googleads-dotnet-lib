@@ -1,14 +1,16 @@
 var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service =
 [
     [ "CustomTargetingService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#a09d3742d0a679787d67fd3883ef941bd", null ],
-    [ "createCustomTargetingKeys", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#aabb2b6ec9d9caec93ef0ea29574ee8f2", null ],
-    [ "createCustomTargetingValues", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#abf1ecfd70c6f081e2c45ad39deba01c4", null ],
-    [ "getCustomTargetingKeysByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#ab641e4356d2c26a20c4f5c0e771f8125", null ],
-    [ "getCustomTargetingValuesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#a75497624264896df4b62713fbabfce98", null ],
-    [ "performCustomTargetingKeyAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#af3d74fe558e414b6004b71fe3bb8b305", null ],
-    [ "performCustomTargetingValueAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#a2cf8f5ca9cab9d797a21d88c2120f9c2", null ],
-    [ "updateCustomTargetingKeys", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#a2f6295efddd0f0dd8bddfc7e5dd62b70", null ],
-    [ "updateCustomTargetingValues", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#ab288beecf437b41dcde2302db1a748b5", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#a7ab9d894a06114dc61ba4f00098ee12a", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#aa3fc72b3a46bb974d54dd52f6c7d717a", null ]
+    [ "CustomTargetingService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#a898fd516c7f4456d1c6e7e3ae2fc1a17", null ],
+    [ "CustomTargetingService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#abc366871fb6a8acf67f61197bc00a2dd", null ],
+    [ "CustomTargetingService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#ab1c259ad35c4e0fe4c937e21ee204016", null ],
+    [ "CustomTargetingService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#ac8e7028f95e7f41f0b7629df48ffead9", null ],
+    [ "createCustomTargetingKeys", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#ac01d22682876b9b4b2f7b7b5957cdedd", null ],
+    [ "createCustomTargetingValues", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#a35a94dab2040b787a80fb874ef2c501e", null ],
+    [ "getCustomTargetingKeysByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#a50f7b8db4005a6b350f6a639373db4bf", null ],
+    [ "getCustomTargetingValuesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#ad97734c13938e66a5c6a05cdff50ad47", null ],
+    [ "performCustomTargetingKeyAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#a54cec76687e10776a1e08913ec269553", null ],
+    [ "performCustomTargetingValueAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#aa06eeced643b9fe16e5d2094b46dc696", null ],
+    [ "updateCustomTargetingKeys", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#a22719e5f4ff6e3b21a6843a571ed90f5", null ],
+    [ "updateCustomTargetingValues", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_custom_targeting_service.html#a221ff10fb341b13070909a0e755d9842", null ]
 ];

@@ -1,11 +1,13 @@
 var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service =
 [
     [ "InventoryService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#a6dc62fc2e15b814acc83d4eb08f0cc12", null ],
-    [ "createAdUnits", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#a58d1380771268722234f351fe1d2b9ad", null ],
-    [ "getAdUnitsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#a7cd85fad96899b3cb44e4847932ad409", null ],
-    [ "getAdUnitSizesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#a0f3d316288a230bdfb6a3ccc20ca8507", null ],
-    [ "performAdUnitAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#aaeb410c9c146f162378af6c0316d13d4", null ],
-    [ "updateAdUnits", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#acc3b493a5553b7b184eb1d068bc3dc3f", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#a44671560f0e973be5010db7d8c974693", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#a12b2d288bddcccbc640e8756d9da6024", null ]
+    [ "InventoryService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#a2498e9f9b10cd51c5e0a0b1181a9e3bd", null ],
+    [ "InventoryService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#a0cb758bbda01c11df245e0f395db84bd", null ],
+    [ "InventoryService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#ad3e5e1cf0ae1997cc15bd13d3a30bc5e", null ],
+    [ "InventoryService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#a3425e204a4dfae79431692501325357f", null ],
+    [ "createAdUnits", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#afd408a81e3af99305ea7e8ef2529841b", null ],
+    [ "getAdUnitsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#a8ce826ddda40046504229e185e2d7e4a", null ],
+    [ "getAdUnitSizesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#a56992af5be8c85ab75b3eed3644eeec7", null ],
+    [ "performAdUnitAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#a27a6f3d91cea39021432f7c39e8ce3f8", null ],
+    [ "updateAdUnits", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_inventory_service.html#aded19e8c7f1817fb9ebe7dcc438d84dc", null ]
 ];

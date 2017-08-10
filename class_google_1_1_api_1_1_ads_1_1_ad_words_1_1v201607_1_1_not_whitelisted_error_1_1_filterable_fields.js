@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_not_whitelisted_error_1_1_filterable_fields =
-[
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_not_whitelisted_error_1_1_filterable_fields.html#a46a44e73a39c4dc4552de78de5e5bcc3", null ]
-];

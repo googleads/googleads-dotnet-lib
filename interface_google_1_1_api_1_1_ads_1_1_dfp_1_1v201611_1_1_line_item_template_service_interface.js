@@ -1,0 +1,4 @@
+var interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_line_item_template_service_interface =
+[
+    [ "getLineItemTemplatesByStatement", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_line_item_template_service_interface.html#a1dd1576ef42e32e4f7a86b3e7a4d3275", null ]
+];

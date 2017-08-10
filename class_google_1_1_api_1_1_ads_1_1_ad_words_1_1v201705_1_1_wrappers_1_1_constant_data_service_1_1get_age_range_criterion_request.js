@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_constant_data_service_1_1get_age_range_criterion_request =
+[
+    [ "getAgeRangeCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_constant_data_service_1_1get_age_range_criterion_request.html#a091c5bddaf83032702ede4168401ee70", null ]
+];

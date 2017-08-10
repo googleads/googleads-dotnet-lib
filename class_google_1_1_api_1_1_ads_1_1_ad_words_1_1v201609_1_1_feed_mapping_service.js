@@ -1,9 +1,11 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_feed_mapping_service =
 [
     [ "FeedMappingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_feed_mapping_service.html#a142c86ef66ec2f983bf9ad337507f1ae", null ],
-    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_feed_mapping_service.html#a018afe4a7246c6efd8fe41c4b69d89cf", null ],
-    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_feed_mapping_service.html#a28fe01e3ad7541f1b06184aead6424e7", null ],
-    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_feed_mapping_service.html#ad656a1f00261eb5ac77d9c9fdeeb0a5a", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_feed_mapping_service.html#a8d7c03473c048042e0b59594bdb13aa6", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_feed_mapping_service.html#a89995b67b7cc1be6314d14808c94e86f", null ]
+    [ "FeedMappingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_feed_mapping_service.html#acf326c41f1a0bcc7441c45adf4a5cb83", null ],
+    [ "FeedMappingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_feed_mapping_service.html#a9250810dc47407c2c0ae77687a140aa7", null ],
+    [ "FeedMappingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_feed_mapping_service.html#a55ad92797cd6aca909bb500c081331ed", null ],
+    [ "FeedMappingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_feed_mapping_service.html#a8fc93e6054ece0ac425785f7cb1d8e9b", null ],
+    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_feed_mapping_service.html#a23248beed600670beafe2d618ccaf0c7", null ],
+    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_feed_mapping_service.html#a4a977a5b2c852f1b9460f94629bb6258", null ],
+    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_feed_mapping_service.html#a3234fde6a54782b9be0f2918beac9ad6", null ]
 ];

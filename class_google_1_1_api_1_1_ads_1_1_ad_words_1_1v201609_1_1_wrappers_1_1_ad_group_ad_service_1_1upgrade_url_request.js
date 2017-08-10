@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_ad_group_ad_service_1_1upgrade_url_request =
+[
+    [ "upgradeUrlRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_ad_group_ad_service_1_1upgrade_url_request.html#aebcc6c7fda5b891e17c03098ff001814", null ],
+    [ "upgradeUrlRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_ad_group_ad_service_1_1upgrade_url_request.html#a7a233c484cbfba880a8a103fda336380", null ],
+    [ "operations", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_ad_group_ad_service_1_1upgrade_url_request.html#a2730871b0ae3642b2d183940dcdfb630", null ]
+];

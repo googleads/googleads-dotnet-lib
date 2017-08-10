@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_not_whitelisted_error_1_1_selectable_fields =
-[
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201607_1_1_not_whitelisted_error_1_1_selectable_fields.html#abec6119d399c509c5fb3ba83325ba0e9", null ]
-];

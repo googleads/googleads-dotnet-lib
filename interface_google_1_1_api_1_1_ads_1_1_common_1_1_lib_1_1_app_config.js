@@ -3,7 +3,6 @@ var interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config =
     [ "GetDefaultOAuth2Scope", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a86aff01c208b8838710bfc860979cdca", null ],
     [ "GetUserAgent", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a2b11644dc8d00f3253e1e51d30432390", null ],
     [ "EnableGzipCompression", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#aa93c182689ae35cc4da5e794401f78c0", null ],
-    [ "EnableSoapExtension", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#ac76591bd0b057378381a6fb11c44ed38", null ],
     [ "IncludeUtilitiesInUserAgent", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a5dff6391b6faf8faca9713933c0f8861", null ],
     [ "MaskCredentials", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a71bf474e36154a13b196288dbebc046b", null ],
     [ "OAuth2AccessToken", "interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html#a310bf8825fa96800ebca46106a097dab", null ],

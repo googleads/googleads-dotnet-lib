@@ -1,9 +1,11 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_ad_group_bid_modifier_service =
 [
     [ "AdGroupBidModifierService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_ad_group_bid_modifier_service.html#ac843f64af2a9c79565d1d2668a6e51a7", null ],
-    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_ad_group_bid_modifier_service.html#a6cf351f86c54798ed1f4022efaa11731", null ],
-    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_ad_group_bid_modifier_service.html#aa542b174e8e1a2f2771ad6ad920e342b", null ],
-    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_ad_group_bid_modifier_service.html#a00b9e46293dbb13cf760a872a2ea363c", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_ad_group_bid_modifier_service.html#ada6499974c88eea564fb31905f81c32b", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_ad_group_bid_modifier_service.html#ab42aae24018418bc6db4f56ed52187dc", null ]
+    [ "AdGroupBidModifierService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_ad_group_bid_modifier_service.html#afebc91124af23541c521228969614daa", null ],
+    [ "AdGroupBidModifierService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_ad_group_bid_modifier_service.html#a4596e676755b8e79f584193161093523", null ],
+    [ "AdGroupBidModifierService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_ad_group_bid_modifier_service.html#a7fb82c46e0c7f409d645ff7cf3c1aaec", null ],
+    [ "AdGroupBidModifierService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_ad_group_bid_modifier_service.html#a4cd6d995ec345720e62ba0469c39f5ed", null ],
+    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_ad_group_bid_modifier_service.html#abbaad569a86c50f2f461367296bf4870", null ],
+    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_ad_group_bid_modifier_service.html#a4adc0eb107a179b7815bb31f67ab65e4", null ],
+    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_ad_group_bid_modifier_service.html#aa215ed2bf50cb86920aaa4fbedaecf63", null ]
 ];

@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201607_1_1_get_ad_group_bid_modifiers =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201607_1_1_get_ad_group_bid_modifiers.html#aa846fb1452790335e0c933b7363cc23e", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201607_1_1_get_ad_group_bid_modifiers.html#a84a829bf8b3575da5906d70250a7f1b3", null ]
-];

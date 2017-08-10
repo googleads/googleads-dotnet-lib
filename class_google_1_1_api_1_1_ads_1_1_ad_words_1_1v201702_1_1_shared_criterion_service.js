@@ -1,9 +1,11 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_criterion_service =
 [
     [ "SharedCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_criterion_service.html#aeba926b7ee7b43155c18dd08cd6ebbe2", null ],
-    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_criterion_service.html#a1ff9b54b991a52121a0031e7eb0d5062", null ],
-    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_criterion_service.html#a7a846465f35f6fd87676f23697fae41b", null ],
-    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_criterion_service.html#a22f99c13e98836b0d62d8d51390c1771", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_criterion_service.html#a3060b8be6f6d4d8a46ab0b5072fa349e", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_criterion_service.html#a9a886e2306fb7c47ab8016b333df3232", null ]
+    [ "SharedCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_criterion_service.html#a3ff6469985dc16ba7cbd750a797d95a6", null ],
+    [ "SharedCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_criterion_service.html#a69ffbaaceb780c2e6d8f4301dd76799e", null ],
+    [ "SharedCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_criterion_service.html#aec693759b2aa101f96bf8fe51e10f563", null ],
+    [ "SharedCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_criterion_service.html#a36d1f0306460c5c10274bc4058607fea", null ],
+    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_criterion_service.html#a1cada9247ca8ef25108a214665459d6c", null ],
+    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_criterion_service.html#a6b8e1c94231dcb1bcc2f3b32ceaa48b8", null ],
+    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_criterion_service.html#abdac3b2b690d43429d06a8f60d3e52d9", null ]
 ];

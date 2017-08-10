@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_upload_offline_call_conversions =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_upload_offline_call_conversions.html#a5cd97b37d4a994aafb869dc893134d2c", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_upload_offline_call_conversions.html#ae92efb2ba8944aa4ca734c4bc1a58582", null ]
+];

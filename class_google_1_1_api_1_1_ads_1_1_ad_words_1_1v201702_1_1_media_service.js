@@ -1,9 +1,11 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_media_service =
 [
     [ "MediaService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_media_service.html#a175487c8772be48ff7241b396511872e", null ],
-    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_media_service.html#a4b39c798cc12af888436eb8be20f1ecc", null ],
-    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_media_service.html#a28c53c884be222fd066a3af29fe18c0d", null ],
-    [ "upload", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_media_service.html#a5c49ecd365549fe8e99a8d97f011240e", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_media_service.html#a4e1429e250983f7022fd4ee5f1c6b89c", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_media_service.html#a810fbefc3eae74a1500c8cad4e43f3d3", null ]
+    [ "MediaService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_media_service.html#a70e63762f35735760cfcfb03d99a6df4", null ],
+    [ "MediaService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_media_service.html#a9a35741aca1dff711e323c5ba8d3ede8", null ],
+    [ "MediaService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_media_service.html#a8a791ad131b563d49f77352040ec3ca5", null ],
+    [ "MediaService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_media_service.html#a192d1df0ba395507c58eca129eb1de3e", null ],
+    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_media_service.html#afa66d4d62a3058ef3840fc3a50cb3f1a", null ],
+    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_media_service.html#a8d999b995b1c1bd148c17735d56bf939", null ],
+    [ "upload", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_media_service.html#acd8d0dc3d0ec1e092d6c8309278a8ce1", null ]
 ];

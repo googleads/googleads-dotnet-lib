@@ -1,10 +1,12 @@
 var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service =
 [
     [ "UserTeamAssociationService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service.html#ab2afccfcecc3ac1c27b46a8a24866e8f", null ],
-    [ "createUserTeamAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service.html#aeb12670023468c661bdf999c89ea762f", null ],
-    [ "getUserTeamAssociationsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service.html#a35ac4ec51bccb15dac4b686f126c8318", null ],
-    [ "performUserTeamAssociationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service.html#acf08da17203bf8372e4a35f127ed47e8", null ],
-    [ "updateUserTeamAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service.html#a3495cc15ea323c56492575e7e02788f1", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service.html#ab3304214cf8aef467e453df8f9ba0449", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service.html#a418372c551a48caf9b020b578953f8b0", null ]
+    [ "UserTeamAssociationService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service.html#a1cbff309063ce583582b58c42087cb89", null ],
+    [ "UserTeamAssociationService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service.html#adfa372574c8ee045102a67ff49da43d1", null ],
+    [ "UserTeamAssociationService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service.html#a893b485473667a6df91d760905674484", null ],
+    [ "UserTeamAssociationService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service.html#abdb3983a61b1c4e05b6cc9ce55357195", null ],
+    [ "createUserTeamAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service.html#a62d68e00f47cff0c741cee319d11afbe", null ],
+    [ "getUserTeamAssociationsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service.html#aa44d36716bf35a5877e935558a3ef7ae", null ],
+    [ "performUserTeamAssociationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service.html#acd30f3ab04c45255e929b830a5133282", null ],
+    [ "updateUserTeamAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_user_team_association_service.html#a94c43a164935c7a6f086056dc6907251", null ]
 ];

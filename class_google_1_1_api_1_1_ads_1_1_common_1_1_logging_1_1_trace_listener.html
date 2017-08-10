@@ -133,9 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad44a89b7b0aae4c5a21de63672b65745"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_trace_listener.html#ad44a89b7b0aae4c5a21de63672b65745">InitForCall</a> ()</td></tr>
 <tr class="memdesc:ad44a89b7b0aae4c5a21de63672b65745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the listener for handling an API call.  <a href="#ad44a89b7b0aae4c5a21de63672b65745">More...</a><br/></td></tr>
 <tr class="separator:ad44a89b7b0aae4c5a21de63672b65745"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a889befb4277e397bf06ff1632df95b48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_trace_listener.html#a889befb4277e397bf06ff1632df95b48">HandleMessage</a> (XmlDocument soapMessage, <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html">AdsClient</a> service, <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common_1_1_lib.html#a140cd4bab55a82900c2adaa752dcb4e0">SoapMessageDirection</a> direction)</td></tr>
-<tr class="memdesc:a889befb4277e397bf06ff1632df95b48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the SOAP message.  <a href="#a889befb4277e397bf06ff1632df95b48">More...</a><br/></td></tr>
-<tr class="separator:a889befb4277e397bf06ff1632df95b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afff9f88507f88156cddc5e1e4470ba9d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_trace_listener.html#afff9f88507f88156cddc5e1e4470ba9d">HandleMessage</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_request_info.html">RequestInfo</a> requestInfo, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_response_info.html">ResponseInfo</a> responseInfo)</td></tr>
+<tr class="memdesc:afff9f88507f88156cddc5e1e4470ba9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the SOAP message.  <a href="#afff9f88507f88156cddc5e1e4470ba9d">More...</a><br/></td></tr>
+<tr class="separator:afff9f88507f88156cddc5e1e4470ba9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e84bfd5345481f35f8dff9c559ca893"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_trace_listener.html#a2e84bfd5345481f35f8dff9c559ca893">CleanupAfterCall</a> ()</td></tr>
 <tr class="memdesc:a2e84bfd5345481f35f8dff9c559ca893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleans up any resources after an API call.  <a href="#a2e84bfd5345481f35f8dff9c559ca893">More...</a><br/></td></tr>
 <tr class="separator:a2e84bfd5345481f35f8dff9c559ca893"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -290,7 +290,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The summary request logs.</dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_trace_listener.html#a11e96777b48a9747c5c097e03fc26f9d">Google.Api.Ads.AdWords.Lib.AdWordsTraceListener</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_trace_listener.html#af1e0f3c24d8f63d4323b4fb623e3c9bb">Google.Api.Ads.Dfp.Lib.DfpTraceListener</a>.</p>
+<p>Reimplemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_trace_listener.html#af1e0f3c24d8f63d4323b4fb623e3c9bb">Google.Api.Ads.Dfp.Lib.DfpTraceListener</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_trace_listener.html#a11e96777b48a9747c5c097e03fc26f9d">Google.Api.Ads.AdWords.Lib.AdWordsTraceListener</a>.</p>
 
 </div>
 </div>
@@ -329,7 +329,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a889befb4277e397bf06ff1632df95b48"></a>
+<a class="anchor" id="afff9f88507f88156cddc5e1e4470ba9d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -337,22 +337,16 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Google.Api.Ads.Common.Logging.TraceListener.HandleMessage </td>
+          <td class="memname">virtual void Google.Api.Ads.Common.Logging.TraceListener.HandleMessage </td>
           <td>(</td>
-          <td class="paramtype">XmlDocument&#160;</td>
-          <td class="paramname"><em>soapMessage</em>, </td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_request_info.html">RequestInfo</a>&#160;</td>
+          <td class="paramname"><em>requestInfo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html">AdsClient</a>&#160;</td>
-          <td class="paramname"><em>service</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common_1_1_lib.html#a140cd4bab55a82900c2adaa752dcb4e0">SoapMessageDirection</a>&#160;</td>
-          <td class="paramname"><em>direction</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_response_info.html">ResponseInfo</a>&#160;</td>
+          <td class="paramname"><em>responseInfo</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -362,7 +356,7 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -370,16 +364,13 @@ Properties</h2></td></tr>
 <p>Handles the SOAP message. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">soapMessage</td><td>The SOAP message.</td></tr>
-    <tr><td class="paramname">service</td><td>The SOAP service.</td></tr>
-    <tr><td class="paramname">direction</td><td>The direction of message.</td></tr>
+    <tr><td class="paramname">requestInfo</td><td>Request info.</td></tr>
+    <tr><td class="paramname">responseInfo</td><td>Response info.</td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_soap_listener.html#abb1176b1df18861aca259c291f92e0d4">Google.Api.Ads.Common.Logging.SoapListener</a>.</p>
-
-<p>References <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_context_store.html#a3cbbb8f9e038006e95fa1414af99f3ce">Google.Api.Ads.Common.Lib.ContextStore.GetValue()</a>.</p>
+<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_soap_listener.html#aba9f17ecd9b384c6a41bace2dda95dc7">Google.Api.Ads.Common.Logging.SoapListener</a>.</p>
 
 </div>
 </div>
@@ -456,7 +447,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.xGLohJmkKL/dist/github/src/Common/Logging/<a class="el" href="_trace_listener_8cs.html">TraceListener.cs</a></li>
+<li>/tmp/tmp.dLCuyfsvFI/dist/github/src/Common/Logging/<a class="el" href="_trace_listener_8cs.html">TraceListener.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -464,7 +455,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common.html">Common</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common_1_1_logging.html">Logging</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_trace_listener.html">TraceListener</a></li>
-    <li class="footer">Generated on Thu Jun 1 2017 15:37:05 for Ads API .NET library by
+    <li class="footer">Generated on Thu Aug 10 2017 18:24:24 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

@@ -1,9 +1,11 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_campaign_extension_setting_service =
 [
     [ "CampaignExtensionSettingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_campaign_extension_setting_service.html#a65c520bd6519c72e142fc6f38e4c85fc", null ],
-    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_campaign_extension_setting_service.html#ad8ff64d9cda57d7dba07149680492d20", null ],
-    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_campaign_extension_setting_service.html#aa9b57da9e8cab55365d450cb2564f837", null ],
-    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_campaign_extension_setting_service.html#ac57ce3550fd4ebc0b24ce4db34d9ce48", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_campaign_extension_setting_service.html#add0830ab48a6cc5f389101499b617217", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_campaign_extension_setting_service.html#a8bbd1d1574879104fc16b5451405ba8f", null ]
+    [ "CampaignExtensionSettingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_campaign_extension_setting_service.html#a7f8da98abd648ebc98900959a371b8e5", null ],
+    [ "CampaignExtensionSettingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_campaign_extension_setting_service.html#a07620592641ea0f088f15d2a76d3bf31", null ],
+    [ "CampaignExtensionSettingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_campaign_extension_setting_service.html#a6782cea07d947639644ee42437c4b280", null ],
+    [ "CampaignExtensionSettingService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_campaign_extension_setting_service.html#aa89e2958d31c44167e0624cd636de80a", null ],
+    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_campaign_extension_setting_service.html#af6bed5d60a88c2b9197b805c97f0413d", null ],
+    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_campaign_extension_setting_service.html#a766a4f2b9eba7def9a210b39870b5a6c", null ],
+    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_campaign_extension_setting_service.html#acba3f4de41e4c014e4107b3d2dc564ce", null ]
 ];

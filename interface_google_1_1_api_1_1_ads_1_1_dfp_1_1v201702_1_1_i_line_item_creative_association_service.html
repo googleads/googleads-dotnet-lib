@@ -104,8 +104,6 @@ $(document).ready(function(){initNavTree('interface_google_1_1_api_1_1_ads_1_1_d
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#properties">Properties</a> &#124;
 <a href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_i_line_item_creative_association_service-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Google.Api.Ads.Dfp.v201702.ILineItemCreativeAssociationService Interface Reference</div>  </div>
@@ -120,263 +118,31 @@ Inheritance diagram for Google.Api.Ads.Dfp.v201702.ILineItemCreativeAssociationS
  <div class="center">
   <img src="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_i_line_item_creative_association_service.png" usemap="#Google.Api.Ads.Dfp.v201702.ILineItemCreativeAssociationService_map" alt=""/>
   <map id="Google.Api.Ads.Dfp.v201702.ILineItemCreativeAssociationService_map" name="Google.Api.Ads.Dfp.v201702.ILineItemCreativeAssociationService_map">
-<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service.html" title="Provides operations for creating, updating and retrieving LineItemCreativeAssociation objects..." alt="Google.Api.Ads.Dfp.v201702.LineItemCreativeAssociationService" shape="rect" coords="0,56,388,80"/>
+<area href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface.html" alt="Google.Api.Ads.Dfp.v201702.LineItemCreativeAssociationServiceInterface" shape="rect" coords="0,0,435,24"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service.html" title="Provides operations for creating, updating and retrieving LineItemCreativeAssociation objects..." alt="Google.Api.Ads.Dfp.v201702.LineItemCreativeAssociationService" shape="rect" coords="0,112,435,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a62f468a66ad873c8deffe29dac87a1a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association.html">LineItemCreativeAssociation</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_i_line_item_creative_association_service.html#a62f468a66ad873c8deffe29dac87a1a1">createLineItemCreativeAssociations</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association.html">LineItemCreativeAssociation</a>[] lineItemCreativeAssociations)</td></tr>
-<tr class="memdesc:a62f468a66ad873c8deffe29dac87a1a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new <a href="LineItemCreativeAssociation">LineItemCreativeAssociation</a> objects  <a href="#a62f468a66ad873c8deffe29dac87a1a1">More...</a><br/></td></tr>
-<tr class="separator:a62f468a66ad873c8deffe29dac87a1a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f75f37e91daf378b8c6715cf69cd16e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_page.html">LineItemCreativeAssociationPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_i_line_item_creative_association_service.html#a3f75f37e91daf378b8c6715cf69cd16e">getLineItemCreativeAssociationsByStatement</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_statement.html">Statement</a> filterStatement)</td></tr>
-<tr class="memdesc:a3f75f37e91daf378b8c6715cf69cd16e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="LineItemCreativeAssociationPage">LineItemCreativeAssociationPage</a> of <a href="LineItemCreativeAssociation">LineItemCreativeAssociation</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering:  <a href="#a3f75f37e91daf378b8c6715cf69cd16e">More...</a><br/></td></tr>
-<tr class="separator:a3f75f37e91daf378b8c6715cf69cd16e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1930507320f8ebe4aa413961d80547be"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_i_line_item_creative_association_service.html#a1930507320f8ebe4aa413961d80547be">getPreviewUrl</a> (long lineItemId, long creativeId, string siteUrl)</td></tr>
-<tr class="memdesc:a1930507320f8ebe4aa413961d80547be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an insite preview URL that references the specified site URL with the specified creative from the association served to it. For <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_creative.html" title="A ">Creative</a> Set previewing you may specify the master creative Id.  <a href="#a1930507320f8ebe4aa413961d80547be">More...</a><br/></td></tr>
-<tr class="separator:a1930507320f8ebe4aa413961d80547be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1caffbb5a69f68b0cefcad02519c1cda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_update_result.html">UpdateResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_i_line_item_creative_association_service.html#a1caffbb5a69f68b0cefcad02519c1cda">performLineItemCreativeAssociationAction</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_action.html">LineItemCreativeAssociationAction</a> lineItemCreativeAssociationAction, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_statement.html">Statement</a> filterStatement)</td></tr>
-<tr class="memdesc:a1caffbb5a69f68b0cefcad02519c1cda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs actions on <a href="LineItemCreativeAssociation">LineItemCreativeAssociation</a> objects that match the given <a href="Statement#query">Statement::query</a>.  <a href="#a1caffbb5a69f68b0cefcad02519c1cda">More...</a><br/></td></tr>
-<tr class="separator:a1caffbb5a69f68b0cefcad02519c1cda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fc91f897447302bd39622832e316abd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association.html">LineItemCreativeAssociation</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_i_line_item_creative_association_service.html#a3fc91f897447302bd39622832e316abd">updateLineItemCreativeAssociations</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association.html">LineItemCreativeAssociation</a>[] lineItemCreativeAssociations)</td></tr>
-<tr class="memdesc:a3fc91f897447302bd39622832e316abd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the specified <a href="LineItemCreativeAssociation">LineItemCreativeAssociation</a> objects  <a href="#a3fc91f897447302bd39622832e316abd">More...</a><br/></td></tr>
-<tr class="separator:a3fc91f897447302bd39622832e316abd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
-Properties</h2></td></tr>
-<tr class="memitem:a6cc7dfa67f61f87c2dff948b088560d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_request_header.html">RequestHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_i_line_item_creative_association_service.html#a6cc7dfa67f61f87c2dff948b088560d1">RequestHeader</a><code> [get, set]</code></td></tr>
-<tr class="separator:a6cc7dfa67f61f87c2dff948b088560d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a45678200dafbe24a2edc02c6c9d61e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_response_header.html">ResponseHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_i_line_item_creative_association_service.html#a8a45678200dafbe24a2edc02c6c9d61e">ResponseHeader</a><code> [get, set]</code></td></tr>
-<tr class="separator:a8a45678200dafbe24a2edc02c6c9d61e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_methods_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface.html">Google.Api.Ads.Dfp.v201702.LineItemCreativeAssociationServiceInterface</a></td></tr>
+<tr class="memitem:a44d045799b583385ad9243503a918484 inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_wrappers_1_1_line_item_creative_association_01d296291a6fe99b951e3ba3ccd60234.html">Wrappers.LineItemCreativeAssociationService.createLineItemCreativeAssociationsResponse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface.html#a44d045799b583385ad9243503a918484">createLineItemCreativeAssociations</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_wrappers_1_1_line_item_creative_association_5c6aa508263ac80046ab965436c13ec7.html">Wrappers.LineItemCreativeAssociationService.createLineItemCreativeAssociationsRequest</a> request)</td></tr>
+<tr class="separator:a44d045799b583385ad9243503a918484 inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98bd69575a634f09309a8956c1cd812e inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_page.html">Google.Api.Ads.Dfp.v201702.LineItemCreativeAssociationPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface.html#a98bd69575a634f09309a8956c1cd812e">getLineItemCreativeAssociationsByStatement</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_statement.html">Google.Api.Ads.Dfp.v201702.Statement</a> filterStatement)</td></tr>
+<tr class="separator:a98bd69575a634f09309a8956c1cd812e inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11b863979ebfd019eafdbcf5acb0440e inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface.html#a11b863979ebfd019eafdbcf5acb0440e">getPreviewUrl</a> (long lineItemId, long creativeId, string siteUrl)</td></tr>
+<tr class="separator:a11b863979ebfd019eafdbcf5acb0440e inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f2fa1ed95ade8736e36201d21cfe665 inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_update_result.html">Google.Api.Ads.Dfp.v201702.UpdateResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface.html#a0f2fa1ed95ade8736e36201d21cfe665">performLineItemCreativeAssociationAction</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_action.html">Google.Api.Ads.Dfp.v201702.LineItemCreativeAssociationAction</a> lineItemCreativeAssociationAction, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_statement.html">Google.Api.Ads.Dfp.v201702.Statement</a> filterStatement)</td></tr>
+<tr class="separator:a0f2fa1ed95ade8736e36201d21cfe665 inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad59f538e3301614d1b8f3d3a5102d467 inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_wrappers_1_1_line_item_creative_association_209f0f49b19e1e39441bb8a76c90298a.html">Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsResponse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface.html#ad59f538e3301614d1b8f3d3a5102d467">updateLineItemCreativeAssociations</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_wrappers_1_1_line_item_creative_association_dd8932c6a61ecf34142776f1c2eecc8d.html">Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsRequest</a> request)</td></tr>
+<tr class="separator:ad59f538e3301614d1b8f3d3a5102d467 inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides operations for creating, updating and retrieving <a href="LineItemCreativeAssociation">LineItemCreativeAssociation</a> objects. </p>
 <p>A line item creative association (LICA) associates a <a href="Creative">Creative</a> with a <a href="LineItem">LineItem</a>. When a line item is selected to serve, the LICAs specify which creatives can appear for the ad units that are targeted by the line item. In order to be associated with a line item, the creative must have a size that exists within the attribute <a href="LineItem#creativeSizes">LineItem::creativeSizes</a>.</p>
 <p>Each LICA has a start and end date and time that defines when the creative should be displayed.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a62f468a66ad873c8deffe29dac87a1a1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association.html">LineItemCreativeAssociation</a> [] Google.Api.Ads.Dfp.v201702.ILineItemCreativeAssociationService.createLineItemCreativeAssociations </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association.html">LineItemCreativeAssociation</a>[]&#160;</td>
-          <td class="paramname"><em>lineItemCreativeAssociations</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Creates new <a href="LineItemCreativeAssociation">LineItemCreativeAssociation</a> objects </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lineItemCreativeAssociations</td><td>the line item creative associations to create</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the created line item creative associations with their IDs filled in</dd></dl>
-
-<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service.html#a5d4b33055b5a9ce5b044033e59c4f0c1">Google.Api.Ads.Dfp.v201702.LineItemCreativeAssociationService</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a3f75f37e91daf378b8c6715cf69cd16e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_page.html">LineItemCreativeAssociationPage</a> Google.Api.Ads.Dfp.v201702.ILineItemCreativeAssociationService.getLineItemCreativeAssociationsByStatement </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_statement.html">Statement</a>&#160;</td>
-          <td class="paramname"><em>filterStatement</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets a <a href="LineItemCreativeAssociationPage">LineItemCreativeAssociationPage</a> of <a href="LineItemCreativeAssociation">LineItemCreativeAssociation</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering: </p>
-<table class="doxtable">
-<tr>
-<th scope="col">PQL Property </th><th scope="col">Object Property  </th></tr>
-<tr>
-<td><code>creativeId</code> </td><td><a href="LineItemCreativeAssociation#creativeId">LineItemCreativeAssociation::creativeId</a>  </td></tr>
-<tr>
-<td><code>manualCreativeRotationWeight</code> </td><td><a href="LineItemCreativeAssociation#manualCreativeRotationWeight">LineItemCreativeAssociation::manualCreativeRotationWeight</a>  </td></tr>
-<tr>
-<td><code>destinationUrl</code> </td><td><a href="LineItemCreativeAssociation#destinationUrl">LineItemCreativeAssociation::destinationUrl</a>  </td></tr>
-<tr>
-<td><code>lineItemId</code> </td><td><a href="LineItemCreativeAssociation#lineItemId">LineItemCreativeAssociation::lineItemId</a>  </td></tr>
-<tr>
-<td><code>status</code> </td><td><a href="LineItemCreativeAssociation#status">LineItemCreativeAssociation::status</a>  </td></tr>
-<tr>
-<td><code>lastModifiedDateTime</code> </td><td><a href="LineItemCreativeAssociation#lastModifiedDateTime">LineItemCreativeAssociation::lastModifiedDateTime</a>  </td></tr>
-</table>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">filterStatement</td><td>a Publisher Query Language statement used to filter a set of line item creative associations</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the line item creative associations that match the given filter</dd></dl>
-
-<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service.html#a70187eff3165757e9fac900d33022e00">Google.Api.Ads.Dfp.v201702.LineItemCreativeAssociationService</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1930507320f8ebe4aa413961d80547be"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Google.Api.Ads.Dfp.v201702.ILineItemCreativeAssociationService.getPreviewUrl </td>
-          <td>(</td>
-          <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>lineItemId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>creativeId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>siteUrl</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns an insite preview URL that references the specified site URL with the specified creative from the association served to it. For <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_creative.html" title="A ">Creative</a> Set previewing you may specify the master creative Id. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lineItemId</td><td>the ID of the line item, which must already exist</td></tr>
-    <tr><td class="paramname">creativeId</td><td>the ID of the creative, which must already exist</td></tr>
-    <tr><td class="paramname">siteUrl</td><td>the URL of the site that the creative should be previewed in</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a URL that references the specified site URL with the specified creative served to it</dd></dl>
-
-<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service.html#a915cf5ca01ab3dd328acc0951d7291fc">Google.Api.Ads.Dfp.v201702.LineItemCreativeAssociationService</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1caffbb5a69f68b0cefcad02519c1cda"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_update_result.html">UpdateResult</a> Google.Api.Ads.Dfp.v201702.ILineItemCreativeAssociationService.performLineItemCreativeAssociationAction </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_action.html">LineItemCreativeAssociationAction</a>&#160;</td>
-          <td class="paramname"><em>lineItemCreativeAssociationAction</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_statement.html">Statement</a>&#160;</td>
-          <td class="paramname"><em>filterStatement</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Performs actions on <a href="LineItemCreativeAssociation">LineItemCreativeAssociation</a> objects that match the given <a href="Statement#query">Statement::query</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lineItemCreativeAssociationAction</td><td>the action to perform</td></tr>
-    <tr><td class="paramname">filterStatement</td><td>a Publisher Query Language statement used to filter a set of line item creative associations</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the result of the action performed</dd></dl>
-
-<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service.html#abd8784c448d7671a0a987f42082eb210">Google.Api.Ads.Dfp.v201702.LineItemCreativeAssociationService</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a3fc91f897447302bd39622832e316abd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association.html">LineItemCreativeAssociation</a> [] Google.Api.Ads.Dfp.v201702.ILineItemCreativeAssociationService.updateLineItemCreativeAssociations </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association.html">LineItemCreativeAssociation</a>[]&#160;</td>
-          <td class="paramname"><em>lineItemCreativeAssociations</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Updates the specified <a href="LineItemCreativeAssociation">LineItemCreativeAssociation</a> objects </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lineItemCreativeAssociations</td><td>the line item creative associations to update</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the updated line item creative associations</dd></dl>
-
-<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_line_item_creative_association_service.html#a272bf1b53a51737785ff71cc9b8a0545">Google.Api.Ads.Dfp.v201702.LineItemCreativeAssociationService</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="a6cc7dfa67f61f87c2dff948b088560d1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_request_header.html">RequestHeader</a> Google.Api.Ads.Dfp.v201702.ILineItemCreativeAssociationService.RequestHeader</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a8a45678200dafbe24a2edc02c6c9d61e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_response_header.html">ResponseHeader</a> Google.Api.Ads.Dfp.v201702.ILineItemCreativeAssociationService.ResponseHeader</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/tmp/tmp.xGLohJmkKL/dist/github/src/Dfp/v201702/<a class="el" href="v201702_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+</div><hr/>The documentation for this interface was generated from the following file:<ul>
+<li>/tmp/tmp.dLCuyfsvFI/dist/github/src/Dfp/v201702/<a class="el" href="v201702_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -384,7 +150,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702.html">v201702</a></li><li class="navelem"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_i_line_item_creative_association_service.html">ILineItemCreativeAssociationService</a></li>
-    <li class="footer">Generated on Thu Jun 1 2017 15:37:36 for Ads API .NET library by
+    <li class="footer">Generated on Thu Aug 10 2017 18:24:48 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

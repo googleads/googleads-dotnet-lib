@@ -1,8 +1,10 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_location_criterion_service =
 [
     [ "LocationCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_location_criterion_service.html#a3bfdc0213cbac6bc4d8c7cf570d00371", null ],
-    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_location_criterion_service.html#a9469fbf413a013af42f38ab7bb39726b", null ],
-    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_location_criterion_service.html#a5e9eb4548878471febf9bac795a58e27", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_location_criterion_service.html#a597e68062f543e93d077ca9d7e8dd254", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_location_criterion_service.html#ab5c19560d7694717980e097d34b7ebfe", null ]
+    [ "LocationCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_location_criterion_service.html#a90a9ae91f52423bd4c4c83e7f9cbfa93", null ],
+    [ "LocationCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_location_criterion_service.html#a9c1eb05305428ed297a76017deafdb9a", null ],
+    [ "LocationCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_location_criterion_service.html#a1371d57b263db9d768078632b1b2f39b", null ],
+    [ "LocationCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_location_criterion_service.html#a4965ba45586279698641eb44215a7203", null ],
+    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_location_criterion_service.html#a7e59b4686554c3944d0ebd21860d505d", null ],
+    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_location_criterion_service.html#a743ee12a3271e6e92867612f194a5cff", null ]
 ];

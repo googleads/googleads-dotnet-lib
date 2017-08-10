@@ -1,0 +1,4 @@
+var interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_creative_template_service_interface =
+[
+    [ "getCreativeTemplatesByStatement", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_creative_template_service_interface.html#a312bc14691a479e531c786bb24f040f8", null ]
+];

@@ -1,10 +1,12 @@
 var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service =
 [
     [ "MobileApplicationService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service.html#af8f2bd93d91f84768e01a117cceb4488", null ],
-    [ "createMobileApplications", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service.html#a1f37e7ce8498c1c7ab6cbae3baf44f34", null ],
-    [ "getMobileApplicationsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service.html#ae04991811448489269f84970dc1a50f9", null ],
-    [ "performMobileApplicationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service.html#a8cbdac64b1ba441e777972109372ce36", null ],
-    [ "updateMobileApplications", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service.html#a8e5e58015b8519c781f40060a7701b1f", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service.html#a806701d2268e9fbe275cd21a5dfc0260", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service.html#a51b3f7c13b16789bd62bbf736efee008", null ]
+    [ "MobileApplicationService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service.html#afef064c8a71a69f526c92318862304f0", null ],
+    [ "MobileApplicationService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service.html#ad7c36395e74bc53ee7c9c377c864ab2c", null ],
+    [ "MobileApplicationService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service.html#a577c0b418a011b6990fe9baee41d0c7b", null ],
+    [ "MobileApplicationService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service.html#a4ea6a02159d247e9ae4dccbb4f969182", null ],
+    [ "createMobileApplications", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service.html#a685918cf99266d2e61b5f02e2cfc1a5b", null ],
+    [ "getMobileApplicationsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service.html#a6dc6b20a5e14d3aaa0591acf19a05bb2", null ],
+    [ "performMobileApplicationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service.html#aca95b2e52ab61bb44bd329690dda7fd2", null ],
+    [ "updateMobileApplications", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_mobile_application_service.html#a767abd98db03d4e1cd23fe38560a4bfa", null ]
 ];

@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_wrappers_1_1_rate_card_service_1_1create_rate_cards_request =
+[
+    [ "createRateCardsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_wrappers_1_1_rate_card_service_1_1create_rate_cards_request.html#adfe07821542662352178f3b51ba1763c", null ],
+    [ "createRateCardsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_wrappers_1_1_rate_card_service_1_1create_rate_cards_request.html#aca03be319d6050f3ae5bac8dda7f5a03", null ],
+    [ "rateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_wrappers_1_1_rate_card_service_1_1create_rate_cards_request.html#a692c445796664a9c7fcfb87cf347b879", null ]
+];

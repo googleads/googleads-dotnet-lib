@@ -1,10 +1,12 @@
 var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service =
 [
     [ "PlacementService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service.html#a892d0056eaa9365aae6e5f1b970567e8", null ],
-    [ "createPlacements", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service.html#a226a08bdedbd8635bc282f384f897fa1", null ],
-    [ "getPlacementsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service.html#a461a01f8fb2a36cef5417d234b19f8a6", null ],
-    [ "performPlacementAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service.html#a30c6b1fe43226254f13434da02ced548", null ],
-    [ "updatePlacements", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service.html#a5978768220a6c37f020185cc900ffdbe", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service.html#a1262b20618a943cefeb3f1736d7c46f0", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service.html#a3ca753d3a6c9e3afeef36eaaa0c906d1", null ]
+    [ "PlacementService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service.html#a0fb70277dfb57a76a3c549784f10f120", null ],
+    [ "PlacementService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service.html#a7044e5f37a8fea35d34cdbffa7e6c111", null ],
+    [ "PlacementService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service.html#a01e14c5aeb19ab9f5e9b666f1963df12", null ],
+    [ "PlacementService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service.html#a3f60dedf065850bd48db0f56f62280b5", null ],
+    [ "createPlacements", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service.html#a35471c8ec6d07003ac386232550b52b0", null ],
+    [ "getPlacementsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service.html#a82316496e5449a727c4ad77afc84ad1d", null ],
+    [ "performPlacementAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service.html#a91ce111ce422baf9704709943d69c22f", null ],
+    [ "updatePlacements", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_placement_service.html#ac2058af337366a661734fef430b6f2eb", null ]
 ];

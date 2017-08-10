@@ -1,8 +1,10 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_async_error_service =
 [
     [ "TrialAsyncErrorService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_async_error_service.html#ad57adb66df2f8b1b8630c7592d297c9a", null ],
-    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_async_error_service.html#a8d4d48015fd673af4703b722c7af781d", null ],
-    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_async_error_service.html#adb345687bf9600e00269686a6eb794f9", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_async_error_service.html#a0c66b2b8ebd2b17ca1cd2f2de6cbb1b6", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_async_error_service.html#a72d932bd3c8fe2ae68930e534df1f679", null ]
+    [ "TrialAsyncErrorService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_async_error_service.html#acd931b067b961d62af0cdcc385402780", null ],
+    [ "TrialAsyncErrorService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_async_error_service.html#a3fc26a0828d19684b3e44ed409ed385b", null ],
+    [ "TrialAsyncErrorService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_async_error_service.html#a291c46dd3b5e521d5293888b492bc248", null ],
+    [ "TrialAsyncErrorService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_async_error_service.html#a7f31915cfc7cc70751da6a113adc8302", null ],
+    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_async_error_service.html#a632d025d4800e793fe63762910cc6b2b", null ],
+    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_trial_async_error_service.html#abc25bd615912e83e0f89aab0559a3066", null ]
 ];

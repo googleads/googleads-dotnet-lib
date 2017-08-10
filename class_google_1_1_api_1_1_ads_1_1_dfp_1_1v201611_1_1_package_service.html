@@ -105,7 +105,6 @@ $(document).ready(function(){initNavTree('class_google_1_1_api_1_1_ads_1_1_dfp_1
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#properties">Properties</a> &#124;
 <a href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Google.Api.Ads.Dfp.v201611.PackageService Class Reference</div>  </div>
@@ -120,10 +119,8 @@ Inheritance diagram for Google.Api.Ads.Dfp.v201611.PackageService:</div>
  <div class="center">
   <img src="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.png" usemap="#Google.Api.Ads.Dfp.v201611.PackageService_map" alt=""/>
   <map id="Google.Api.Ads.Dfp.v201611.PackageService_map" name="Google.Api.Ads.Dfp.v201611.PackageService_map">
-<area href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html" title="Base class for DFP API services. " alt="Google.Api.Ads.Dfp.Lib.DfpSoapClient" shape="rect" coords="144,112,422,136"/>
-<area href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_package_service.html" title="Provides methods for creating, updating and retrieving Package objects. " alt="Google.Api.Ads.Dfp.v201611.IPackageService" shape="rect" coords="432,112,710,136"/>
-<area href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html" title="Base class for all SOAP services supported by this library. " alt="Google.Api.Ads.Common.Lib.AdsSoapClient" shape="rect" coords="144,56,422,80"/>
-<area href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html" title="This interface defines a client protocol (SOAP, WSE, REST, etc.) supported by the library..." alt="Google.Api.Ads.Common.Lib.AdsClient" shape="rect" coords="288,0,566,24"/>
+<area href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_package_service.html" title="Provides methods for creating, updating and retrieving Package objects. " alt="Google.Api.Ads.Dfp.v201611.IPackageService" shape="rect" coords="335,56,660,80"/>
+<area href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service_interface.html" alt="Google.Api.Ads.Dfp.v201611.PackageServiceInterface" shape="rect" coords="335,0,660,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -132,143 +129,34 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:affe0c0973788d16cacbe7b3d38c959d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html#affe0c0973788d16cacbe7b3d38c959d2">PackageService</a> ()</td></tr>
 <tr class="memdesc:affe0c0973788d16cacbe7b3d38c959d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html" title="Provides methods for creating, updating and retrieving Package objects. ">PackageService</a> class.  <a href="#affe0c0973788d16cacbe7b3d38c959d2">More...</a><br/></td></tr>
 <tr class="separator:affe0c0973788d16cacbe7b3d38c959d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a783cc25957541463d4eae3954ed037d3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package.html">Package</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html#a783cc25957541463d4eae3954ed037d3">createPackages</a> ([System.Xml.Serialization.XmlElementAttribute(&quot;packages&quot;)] Package[] packages)</td></tr>
-<tr class="memdesc:a783cc25957541463d4eae3954ed037d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new <a href="Package">Package</a> objects. For each package, the following fields are required:  <a href="#a783cc25957541463d4eae3954ed037d3">More...</a><br/></td></tr>
-<tr class="separator:a783cc25957541463d4eae3954ed037d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a134f93bc69d13c41118057fdbc11620d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_page.html">PackagePage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html#a134f93bc69d13c41118057fdbc11620d">getPackagesByStatement</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_statement.html">Statement</a> filterStatement)</td></tr>
-<tr class="memdesc:a134f93bc69d13c41118057fdbc11620d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="PackagePage">PackagePage</a> of <a href="Package">Package</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering:  <a href="#a134f93bc69d13c41118057fdbc11620d">More...</a><br/></td></tr>
-<tr class="separator:a134f93bc69d13c41118057fdbc11620d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a010d2b4c8722012042dcde20ae4e2a31"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_update_result.html">UpdateResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html#a010d2b4c8722012042dcde20ae4e2a31">performPackageAction</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_action.html">PackageAction</a> packageAction, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_statement.html">Statement</a> filterStatement)</td></tr>
-<tr class="memdesc:a010d2b4c8722012042dcde20ae4e2a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs actions on <a href="Package">Package</a> objects that match the given <a href="Statement">Statement</a>.  <a href="#a010d2b4c8722012042dcde20ae4e2a31">More...</a><br/></td></tr>
-<tr class="separator:a010d2b4c8722012042dcde20ae4e2a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98bae413a419716ac37cd38b3288e3d6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package.html">Package</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html#a98bae413a419716ac37cd38b3288e3d6">updatePackages</a> ([System.Xml.Serialization.XmlElementAttribute(&quot;packages&quot;)] Package[] packages)</td></tr>
-<tr class="memdesc:a98bae413a419716ac37cd38b3288e3d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the specified <a href="Package">Package</a> objects.  <a href="#a98bae413a419716ac37cd38b3288e3d6">More...</a><br/></td></tr>
-<tr class="separator:a98bae413a419716ac37cd38b3288e3d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
-Properties</h2></td></tr>
-<tr class="memitem:a597490b1a8cc0273534936b2e429fc4d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_request_header.html">RequestHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html#a597490b1a8cc0273534936b2e429fc4d">RequestHeader</a><code> [get, set]</code></td></tr>
-<tr class="separator:a597490b1a8cc0273534936b2e429fc4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5cecba8ccb8ad4a8d3a6696ed1e992e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_response_header.html">ResponseHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html#af5cecba8ccb8ad4a8d3a6696ed1e992e">ResponseHeader</a><code> [get, set]</code></td></tr>
-<tr class="separator:af5cecba8ccb8ad4a8d3a6696ed1e992e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td colspan="2" onclick="javascript:toggleInherit('properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html">Google.Api.Ads.Common.Lib.AdsSoapClient</a></td></tr>
-<tr class="memitem:a7f82182b246d465061f61c5d449a191b inherit properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_user.html">AdsUser</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#a7f82182b246d465061f61c5d449a191b">User</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a7f82182b246d465061f61c5d449a191b inherit properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_user.html" title="Represents an Ads API user. ">AdsUser</a> object that created this service.  <a href="#a7f82182b246d465061f61c5d449a191b">More...</a><br/></td></tr>
-<tr class="separator:a7f82182b246d465061f61c5d449a191b inherit properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a817da90c600a2a5e2fc4ed90adad8376 inherit properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_service_signature.html">ServiceSignature</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#a817da90c600a2a5e2fc4ed90adad8376">Signature</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a817da90c600a2a5e2fc4ed90adad8376 inherit properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the signature for this service.  <a href="#a817da90c600a2a5e2fc4ed90adad8376">More...</a><br/></td></tr>
-<tr class="separator:a817da90c600a2a5e2fc4ed90adad8376 inherit properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac484426f58d5422aa6c76d92ac9bd05 inherit properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">WebRequest&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#aac484426f58d5422aa6c76d92ac9bd05">LastRequest</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aac484426f58d5422aa6c76d92ac9bd05 inherit properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the web request associated with this service's last API call.  <a href="#aac484426f58d5422aa6c76d92ac9bd05">More...</a><br/></td></tr>
-<tr class="separator:aac484426f58d5422aa6c76d92ac9bd05 inherit properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a043e0a00d9eb66e3de53c3a5fc6769e4 inherit properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">WebResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#a043e0a00d9eb66e3de53c3a5fc6769e4">LastResponse</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a043e0a00d9eb66e3de53c3a5fc6769e4 inherit properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the web response associated with this service's last API call.  <a href="#a043e0a00d9eb66e3de53c3a5fc6769e4">More...</a><br/></td></tr>
-<tr class="separator:a043e0a00d9eb66e3de53c3a5fc6769e4 inherit properties_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html">Google.Api.Ads.Common.Lib.AdsClient</a></td></tr>
-<tr class="memitem:a3984400a1c203a9da98c76a9957a9ca2 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#a3984400a1c203a9da98c76a9957a9ca2">ConnectionGroupName</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a3984400a1c203a9da98c76a9957a9ca2 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the name of the connection group for the request.  <a href="#a3984400a1c203a9da98c76a9957a9ca2">More...</a><br/></td></tr>
-<tr class="separator:a3984400a1c203a9da98c76a9957a9ca2 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4191d6d16292117dc71258847c427132 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">ICredentials&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#a4191d6d16292117dc71258847c427132">Credentials</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a4191d6d16292117dc71258847c427132 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets security credentials for client authentication.  <a href="#a4191d6d16292117dc71258847c427132">More...</a><br/></td></tr>
-<tr class="separator:a4191d6d16292117dc71258847c427132 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbdfec194bfa742c6cb30f987fa8c83a inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#afbdfec194bfa742c6cb30f987fa8c83a">PreAuthenticate</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:afbdfec194bfa742c6cb30f987fa8c83a inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets whether pre-authentication is enabled.  <a href="#afbdfec194bfa742c6cb30f987fa8c83a">More...</a><br/></td></tr>
-<tr class="separator:afbdfec194bfa742c6cb30f987fa8c83a inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3667fcbd915aa4273090154eaf17a2e5 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">Encoding&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#a3667fcbd915aa4273090154eaf17a2e5">RequestEncoding</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a3667fcbd915aa4273090154eaf17a2e5 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">The System.Text.Encoding used to make the client request to the service.  <a href="#a3667fcbd915aa4273090154eaf17a2e5">More...</a><br/></td></tr>
-<tr class="separator:a3667fcbd915aa4273090154eaf17a2e5 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a528357f35830f426d4b92b9a5ca804 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#a6a528357f35830f426d4b92b9a5ca804">Timeout</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6a528357f35830f426d4b92b9a5ca804 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">The timeout for the request.  <a href="#a6a528357f35830f426d4b92b9a5ca804">More...</a><br/></td></tr>
-<tr class="separator:a6a528357f35830f426d4b92b9a5ca804 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3dcc3b4d93a6e2b01d0ea0a610d86d5 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#af3dcc3b4d93a6e2b01d0ea0a610d86d5">Url</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af3dcc3b4d93a6e2b01d0ea0a610d86d5 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">The url endpoint for the service.  <a href="#af3dcc3b4d93a6e2b01d0ea0a610d86d5">More...</a><br/></td></tr>
-<tr class="separator:af3dcc3b4d93a6e2b01d0ea0a610d86d5 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3264e4f78e6548ee0a3102544dad0606 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#a3264e4f78e6548ee0a3102544dad0606">UseDefaultCredentials</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a3264e4f78e6548ee0a3102544dad0606 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets whether this service should use the credentials from System.Net.CredentialCache.DefaultCredentials.  <a href="#a3264e4f78e6548ee0a3102544dad0606">More...</a><br/></td></tr>
-<tr class="separator:a3264e4f78e6548ee0a3102544dad0606 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7269f6ea9cb2f9a9753bd2f2e72aecfe inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#a7269f6ea9cb2f9a9753bd2f2e72aecfe">AllowAutoRedirect</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a7269f6ea9cb2f9a9753bd2f2e72aecfe inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets whether the client automatically follows server redirects.  <a href="#a7269f6ea9cb2f9a9753bd2f2e72aecfe">More...</a><br/></td></tr>
-<tr class="separator:a7269f6ea9cb2f9a9753bd2f2e72aecfe inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f609c68d641394e714a4022b3751db9 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">X509CertificateCollection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#a6f609c68d641394e714a4022b3751db9">ClientCertificates</a><code> [get]</code></td></tr>
-<tr class="memdesc:a6f609c68d641394e714a4022b3751db9 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the collection of client certificates.  <a href="#a6f609c68d641394e714a4022b3751db9">More...</a><br/></td></tr>
-<tr class="separator:a6f609c68d641394e714a4022b3751db9 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9cb6137fb2b2a88935e6bcecbb2924a inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">CookieContainer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#aa9cb6137fb2b2a88935e6bcecbb2924a">CookieContainer</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa9cb6137fb2b2a88935e6bcecbb2924a inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the collection of cookies.  <a href="#aa9cb6137fb2b2a88935e6bcecbb2924a">More...</a><br/></td></tr>
-<tr class="separator:aa9cb6137fb2b2a88935e6bcecbb2924a inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91a9176f406b34a0ba012b32b3a9292c inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#a91a9176f406b34a0ba012b32b3a9292c">EnableDecompression</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a91a9176f406b34a0ba012b32b3a9292c inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets whether gzip compression is enabled.  <a href="#a91a9176f406b34a0ba012b32b3a9292c">More...</a><br/></td></tr>
-<tr class="separator:a91a9176f406b34a0ba012b32b3a9292c inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae40fec56ce7d59de9b1acd72e8270b8d inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">IWebProxy&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#ae40fec56ce7d59de9b1acd72e8270b8d">Proxy</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ae40fec56ce7d59de9b1acd72e8270b8d inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets proxy information for making a service request through a firewall.  <a href="#ae40fec56ce7d59de9b1acd72e8270b8d">More...</a><br/></td></tr>
-<tr class="separator:ae40fec56ce7d59de9b1acd72e8270b8d inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afee5e01d98bb5698f5c7e7159f1fcc15 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#afee5e01d98bb5698f5c7e7159f1fcc15">UnsafeAuthenticatedConnectionSharing</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:afee5e01d98bb5698f5c7e7159f1fcc15 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets a value that indicates whether connection sharing is enabled when the client uses NTLM authentication to connect to the Web server that hosts the web service.  <a href="#afee5e01d98bb5698f5c7e7159f1fcc15">More...</a><br/></td></tr>
-<tr class="separator:afee5e01d98bb5698f5c7e7159f1fcc15 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4447befb59c0aaf3e2773cc46e854dcb inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#a4447befb59c0aaf3e2773cc46e854dcb">UserAgent</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a4447befb59c0aaf3e2773cc46e854dcb inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the value for the user agent header that is sent with each request.  <a href="#a4447befb59c0aaf3e2773cc46e854dcb">More...</a><br/></td></tr>
-<tr class="separator:a4447befb59c0aaf3e2773cc46e854dcb inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc8c6e35115da625124b008ea4b44af5 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_user.html">AdsUser</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#adc8c6e35115da625124b008ea4b44af5">User</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:adc8c6e35115da625124b008ea4b44af5 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_user.html" title="Represents an Ads API user. ">AdsUser</a> object that created this service.  <a href="#adc8c6e35115da625124b008ea4b44af5">More...</a><br/></td></tr>
-<tr class="separator:adc8c6e35115da625124b008ea4b44af5 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a638be0979b0a0095e00afdb8b9392b04 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_service_signature.html">ServiceSignature</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#a638be0979b0a0095e00afdb8b9392b04">Signature</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a638be0979b0a0095e00afdb8b9392b04 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the signature for this service.  <a href="#a638be0979b0a0095e00afdb8b9392b04">More...</a><br/></td></tr>
-<tr class="separator:a638be0979b0a0095e00afdb8b9392b04 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeabfecaff36057b0c88b49d7be6e86c1 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">WebRequest&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#aeabfecaff36057b0c88b49d7be6e86c1">LastRequest</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aeabfecaff36057b0c88b49d7be6e86c1 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the web request associated with this service's last API call.  <a href="#aeabfecaff36057b0c88b49d7be6e86c1">More...</a><br/></td></tr>
-<tr class="separator:aeabfecaff36057b0c88b49d7be6e86c1 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ab7f8a50d91ac17c78edc49bb1a86c3 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memItemLeft" align="right" valign="top">WebResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client.html#a4ab7f8a50d91ac17c78edc49bb1a86c3">LastResponse</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a4ab7f8a50d91ac17c78edc49bb1a86c3 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the web response associated with this service's last API call.  <a href="#a4ab7f8a50d91ac17c78edc49bb1a86c3">More...</a><br/></td></tr>
-<tr class="separator:a4ab7f8a50d91ac17c78edc49bb1a86c3 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header properties_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_package_service"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_package_service')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_package_service.html">Google.Api.Ads.Dfp.v201611.IPackageService</a></td></tr>
-<tr class="memitem:a94ffe3c1461bb7b09be8d0d9985280ad inherit properties_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_package_service"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_request_header.html">RequestHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_package_service.html#a94ffe3c1461bb7b09be8d0d9985280ad">RequestHeader</a><code> [get, set]</code></td></tr>
-<tr class="separator:a94ffe3c1461bb7b09be8d0d9985280ad inherit properties_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_package_service"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a403d9b4139ab2b8eaa3775fc45d803d0 inherit properties_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_package_service"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_response_header.html">ResponseHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_package_service.html#a403d9b4139ab2b8eaa3775fc45d803d0">ResponseHeader</a><code> [get, set]</code></td></tr>
-<tr class="separator:a403d9b4139ab2b8eaa3775fc45d803d0 inherit properties_interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_package_service"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html">Google.Api.Ads.Dfp.Lib.DfpSoapClient</a></td></tr>
-<tr class="memitem:adfb1cdad13d7455193ec47a7db0fa103 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memItemLeft" align="right" valign="top">override Exception&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html#adfb1cdad13d7455193ec47a7db0fa103">GetCustomException</a> (SoapException exception)</td></tr>
-<tr class="memdesc:adfb1cdad13d7455193ec47a7db0fa103 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a custom exception that wraps the SOAP exception thrown by the server.  <a href="#adfb1cdad13d7455193ec47a7db0fa103">More...</a><br/></td></tr>
-<tr class="separator:adfb1cdad13d7455193ec47a7db0fa103 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acca43da862b505be5ba3812e650ce92f inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html#acca43da862b505be5ba3812e650ce92f">InitForCall</a> (string methodName, object[] parameters)</td></tr>
-<tr class="memdesc:acca43da862b505be5ba3812e650ce92f inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the service before MakeApiCall.  <a href="#acca43da862b505be5ba3812e650ce92f">More...</a><br/></td></tr>
-<tr class="separator:acca43da862b505be5ba3812e650ce92f inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a541b5ed92166598cda686a3b5dd880f7 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memItemLeft" align="right" valign="top">override WebRequest&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client.html#a541b5ed92166598cda686a3b5dd880f7">GetWebRequest</a> (Uri uri)</td></tr>
-<tr class="memdesc:a541b5ed92166598cda686a3b5dd880f7 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a WebRequest instance for the specified url.  <a href="#a541b5ed92166598cda686a3b5dd880f7">More...</a><br/></td></tr>
-<tr class="separator:a541b5ed92166598cda686a3b5dd880f7 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html">Google.Api.Ads.Common.Lib.AdsSoapClient</a></td></tr>
-<tr class="memitem:a801bed05baa3db145ecd128e410782f0 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">new object[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#a801bed05baa3db145ecd128e410782f0">Invoke</a> (string methodName, object[] parameters)</td></tr>
-<tr class="memdesc:a801bed05baa3db145ecd128e410782f0 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes a SOAP service method synchronously using SOAP.  <a href="#a801bed05baa3db145ecd128e410782f0">More...</a><br/></td></tr>
-<tr class="separator:a801bed05baa3db145ecd128e410782f0 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4250890ffb6e9d44de3e45a3e1c1e452 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">new IAsyncResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#a4250890ffb6e9d44de3e45a3e1c1e452">BeginInvoke</a> (string methodName, object[] parameters, AsyncCallback callback, object asyncState)</td></tr>
-<tr class="memdesc:a4250890ffb6e9d44de3e45a3e1c1e452 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts an asynchronous invocation of a SOAP service method using SOAP.  <a href="#a4250890ffb6e9d44de3e45a3e1c1e452">More...</a><br/></td></tr>
-<tr class="separator:a4250890ffb6e9d44de3e45a3e1c1e452 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e75e12afd2168b6d2a355584a274180 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">new object[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#a9e75e12afd2168b6d2a355584a274180">EndInvoke</a> (IAsyncResult asyncResult)</td></tr>
-<tr class="memdesc:a9e75e12afd2168b6d2a355584a274180 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends an asynchronous invocation of a SOAP service method using SOAP.  <a href="#a9e75e12afd2168b6d2a355584a274180">More...</a><br/></td></tr>
-<tr class="separator:a9e75e12afd2168b6d2a355584a274180 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad88f0ea87c84cc05ab84f67a6e5c2b70 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#ad88f0ea87c84cc05ab84f67a6e5c2b70">CleanupAfterCall</a> (string methodName, object[] parameters)</td></tr>
-<tr class="memdesc:ad88f0ea87c84cc05ab84f67a6e5c2b70 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleans up the service after MakeApiCall.  <a href="#ad88f0ea87c84cc05ab84f67a6e5c2b70">More...</a><br/></td></tr>
-<tr class="separator:ad88f0ea87c84cc05ab84f67a6e5c2b70 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab26e799ff18150b7452f9eb35a360022 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">virtual object[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#ab26e799ff18150b7452f9eb35a360022">MakeApiCall</a> (string methodName, object[] parameters)</td></tr>
-<tr class="memdesc:ab26e799ff18150b7452f9eb35a360022 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method makes the actual SOAP API call. It is a thin wrapper over SOAPHttpClientProtocol:Invoke, and provide things like protection from race condition.  <a href="#ab26e799ff18150b7452f9eb35a360022">More...</a><br/></td></tr>
-<tr class="separator:ab26e799ff18150b7452f9eb35a360022 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a431f63b149f2ce36a8ebd3a5fd03c685 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">override WebRequest&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#a431f63b149f2ce36a8ebd3a5fd03c685">GetWebRequest</a> (Uri uri)</td></tr>
-<tr class="memdesc:a431f63b149f2ce36a8ebd3a5fd03c685 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a WebRequest instance for the specified url.  <a href="#a431f63b149f2ce36a8ebd3a5fd03c685">More...</a><br/></td></tr>
-<tr class="separator:a431f63b149f2ce36a8ebd3a5fd03c685 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad9c5780baef550e81c195d48205535e inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">override WebResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#aad9c5780baef550e81c195d48205535e">GetWebResponse</a> (WebRequest request)</td></tr>
-<tr class="memdesc:aad9c5780baef550e81c195d48205535e inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a response from a synchronous request to an XML Web service method.  <a href="#aad9c5780baef550e81c195d48205535e">More...</a><br/></td></tr>
-<tr class="separator:aad9c5780baef550e81c195d48205535e inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b8d4f0683b343c95ab87b8890492bf7 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">override WebResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#a9b8d4f0683b343c95ab87b8890492bf7">GetWebResponse</a> (WebRequest request, IAsyncResult result)</td></tr>
-<tr class="memdesc:a9b8d4f0683b343c95ab87b8890492bf7 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a response from an asynchronous request to a SOAP service method.  <a href="#a9b8d4f0683b343c95ab87b8890492bf7">More...</a><br/></td></tr>
-<tr class="separator:a9b8d4f0683b343c95ab87b8890492bf7 inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1881c9977098e4a8177d8d1309cec22f inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#a1881c9977098e4a8177d8d1309cec22f">GetDefaultNamespace</a> ()</td></tr>
-<tr class="memdesc:a1881c9977098e4a8177d8d1309cec22f inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the default XML namespace, based on the type of this object.  <a href="#a1881c9977098e4a8177d8d1309cec22f">More...</a><br/></td></tr>
-<tr class="separator:a1881c9977098e4a8177d8d1309cec22f inherit pro_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_static_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client')"><img src="closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html">Google.Api.Ads.Common.Lib.AdsSoapClient</a></td></tr>
-<tr class="memitem:a09d0abbb91ee39bc84e9992d5369a713 inherit pro_static_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memItemLeft" align="right" valign="top">static XmlElement&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client.html#a09d0abbb91ee39bc84e9992d5369a713">GetFaultNode</a> (SoapException exception, string ns, string nodeName)</td></tr>
-<tr class="memdesc:a09d0abbb91ee39bc84e9992d5369a713 inherit pro_static_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the fault xml node from soap exception.  <a href="#a09d0abbb91ee39bc84e9992d5369a713">More...</a><br/></td></tr>
-<tr class="separator:a09d0abbb91ee39bc84e9992d5369a713 inherit pro_static_methods_class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_soap_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27a97b06bf5604b992a7219e20f62a31"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html#a27a97b06bf5604b992a7219e20f62a31">PackageService</a> (string endpointConfigurationName)</td></tr>
+<tr class="memdesc:a27a97b06bf5604b992a7219e20f62a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html" title="Provides methods for creating, updating and retrieving Package objects. ">PackageService</a> class.  <a href="#a27a97b06bf5604b992a7219e20f62a31">More...</a><br/></td></tr>
+<tr class="separator:a27a97b06bf5604b992a7219e20f62a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91181ce5bfaf930e8ef06f2c724952a0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html#a91181ce5bfaf930e8ef06f2c724952a0">PackageService</a> (string endpointConfigurationName, string remoteAddress)</td></tr>
+<tr class="memdesc:a91181ce5bfaf930e8ef06f2c724952a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html" title="Provides methods for creating, updating and retrieving Package objects. ">PackageService</a> class.  <a href="#a91181ce5bfaf930e8ef06f2c724952a0">More...</a><br/></td></tr>
+<tr class="separator:a91181ce5bfaf930e8ef06f2c724952a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a260a1dd896ba404e802a9ac3fcfadd69"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html#a260a1dd896ba404e802a9ac3fcfadd69">PackageService</a> (string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress)</td></tr>
+<tr class="memdesc:a260a1dd896ba404e802a9ac3fcfadd69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html" title="Provides methods for creating, updating and retrieving Package objects. ">PackageService</a> class.  <a href="#a260a1dd896ba404e802a9ac3fcfadd69">More...</a><br/></td></tr>
+<tr class="separator:a260a1dd896ba404e802a9ac3fcfadd69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bb8a901a735445e881beb494737160b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html#a8bb8a901a735445e881beb494737160b">PackageService</a> (System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress)</td></tr>
+<tr class="memdesc:a8bb8a901a735445e881beb494737160b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html" title="Provides methods for creating, updating and retrieving Package objects. ">PackageService</a> class.  <a href="#a8bb8a901a735445e881beb494737160b">More...</a><br/></td></tr>
+<tr class="separator:a8bb8a901a735445e881beb494737160b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56a14657f2011ce2e0df6eaa0c997d5f"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
+<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package.html">Google.Api.Ads.Dfp.v201611.Package</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html#a56a14657f2011ce2e0df6eaa0c997d5f">createPackages</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package.html">Google.Api.Ads.Dfp.v201611.Package</a>[] packages)</td></tr>
+<tr class="memdesc:a56a14657f2011ce2e0df6eaa0c997d5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new <a href="Package">Package</a> objects. For each package, the following fields are required:  <a href="#a56a14657f2011ce2e0df6eaa0c997d5f">More...</a><br/></td></tr>
+<tr class="separator:a56a14657f2011ce2e0df6eaa0c997d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a1930e78fb1becde75f0b82f0087ad"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
+<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_page.html">Google.Api.Ads.Dfp.v201611.PackagePage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html#a93a1930e78fb1becde75f0b82f0087ad">getPackagesByStatement</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_statement.html">Google.Api.Ads.Dfp.v201611.Statement</a> filterStatement)</td></tr>
+<tr class="memdesc:a93a1930e78fb1becde75f0b82f0087ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="PackagePage">PackagePage</a> of <a href="Package">Package</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering:  <a href="#a93a1930e78fb1becde75f0b82f0087ad">More...</a><br/></td></tr>
+<tr class="separator:a93a1930e78fb1becde75f0b82f0087ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c65fc0388bbb6188312acbc3cdb53c0"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
+<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_update_result.html">Google.Api.Ads.Dfp.v201611.UpdateResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html#a7c65fc0388bbb6188312acbc3cdb53c0">performPackageAction</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_action.html">Google.Api.Ads.Dfp.v201611.PackageAction</a> packageAction, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_statement.html">Google.Api.Ads.Dfp.v201611.Statement</a> filterStatement)</td></tr>
+<tr class="memdesc:a7c65fc0388bbb6188312acbc3cdb53c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs actions on <a href="Package">Package</a> objects that match the given <a href="Statement">Statement</a>.  <a href="#a7c65fc0388bbb6188312acbc3cdb53c0">More...</a><br/></td></tr>
+<tr class="separator:a7c65fc0388bbb6188312acbc3cdb53c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7fc4093aee49fdc59ab96bc67ae455a"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
+<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package.html">Google.Api.Ads.Dfp.v201611.Package</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html#af7fc4093aee49fdc59ab96bc67ae455a">updatePackages</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package.html">Google.Api.Ads.Dfp.v201611.Package</a>[] packages)</td></tr>
+<tr class="memdesc:af7fc4093aee49fdc59ab96bc67ae455a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the specified <a href="Package">Package</a> objects.  <a href="#af7fc4093aee49fdc59ab96bc67ae455a">More...</a><br/></td></tr>
+<tr class="separator:af7fc4093aee49fdc59ab96bc67ae455a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides methods for creating, updating and retrieving <a href="Package">Package</a> objects. </p>
@@ -299,8 +187,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a783cc25957541463d4eae3954ed037d3"></a>
+<a class="anchor" id="a27a97b06bf5604b992a7219e20f62a31"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -308,9 +195,144 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package.html">Package</a> [] Google.Api.Ads.Dfp.v201611.PackageService.createPackages </td>
+          <td class="memname">Google.Api.Ads.Dfp.v201611.PackageService.PackageService </td>
           <td>(</td>
-          <td class="paramtype">[System.Xml.Serialization.XmlElementAttribute(&quot;packages&quot;)] <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package.html">Package</a>[]&#160;</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>endpointConfigurationName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html" title="Provides methods for creating, updating and retrieving Package objects. ">PackageService</a> class. </p>
+
+</div>
+</div>
+<a class="anchor" id="a91181ce5bfaf930e8ef06f2c724952a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Google.Api.Ads.Dfp.v201611.PackageService.PackageService </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>endpointConfigurationName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>remoteAddress</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html" title="Provides methods for creating, updating and retrieving Package objects. ">PackageService</a> class. </p>
+
+</div>
+</div>
+<a class="anchor" id="a260a1dd896ba404e802a9ac3fcfadd69"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Google.Api.Ads.Dfp.v201611.PackageService.PackageService </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>endpointConfigurationName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System.ServiceModel.EndpointAddress&#160;</td>
+          <td class="paramname"><em>remoteAddress</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html" title="Provides methods for creating, updating and retrieving Package objects. ">PackageService</a> class. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8bb8a901a735445e881beb494737160b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Google.Api.Ads.Dfp.v201611.PackageService.PackageService </td>
+          <td>(</td>
+          <td class="paramtype">System.ServiceModel.Channels.Binding&#160;</td>
+          <td class="paramname"><em>binding</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System.ServiceModel.EndpointAddress&#160;</td>
+          <td class="paramname"><em>remoteAddress</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new instance of the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html" title="Provides methods for creating, updating and retrieving Package objects. ">PackageService</a> class. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a56a14657f2011ce2e0df6eaa0c997d5f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package.html">Google.Api.Ads.Dfp.v201611.Package</a> [] Google.Api.Ads.Dfp.v201611.PackageService.createPackages </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package.html">Google.Api.Ads.Dfp.v201611.Package</a>[]&#160;</td>
           <td class="paramname"><em>packages</em></td><td>)</td>
           <td></td>
         </tr>
@@ -339,11 +361,9 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the created packages with their IDs filled in</dd></dl>
 
-<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_package_service.html#abb21a948d41cc5aa8edf04d3db569442">Google.Api.Ads.Dfp.v201611.IPackageService</a>.</p>
-
 </div>
 </div>
-<a class="anchor" id="a134f93bc69d13c41118057fdbc11620d"></a>
+<a class="anchor" id="a93a1930e78fb1becde75f0b82f0087ad"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -351,9 +371,9 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_page.html">PackagePage</a> Google.Api.Ads.Dfp.v201611.PackageService.getPackagesByStatement </td>
+          <td class="memname">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_page.html">Google.Api.Ads.Dfp.v201611.PackagePage</a> Google.Api.Ads.Dfp.v201611.PackageService.getPackagesByStatement </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_statement.html">Statement</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_statement.html">Google.Api.Ads.Dfp.v201611.Statement</a>&#160;</td>
           <td class="paramname"><em>filterStatement</em></td><td>)</td>
           <td></td>
         </tr>
@@ -390,11 +410,11 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the packages that match the given filter</dd></dl>
 
-<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_package_service.html#adb052e2406e42c7aad95f534fe053003">Google.Api.Ads.Dfp.v201611.IPackageService</a>.</p>
+<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service_interface.html#a2e69f67c8b755516d0f02515054ae050">Google.Api.Ads.Dfp.v201611.PackageServiceInterface</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a010d2b4c8722012042dcde20ae4e2a31"></a>
+<a class="anchor" id="a7c65fc0388bbb6188312acbc3cdb53c0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -402,15 +422,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_update_result.html">UpdateResult</a> Google.Api.Ads.Dfp.v201611.PackageService.performPackageAction </td>
+          <td class="memname">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_update_result.html">Google.Api.Ads.Dfp.v201611.UpdateResult</a> Google.Api.Ads.Dfp.v201611.PackageService.performPackageAction </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_action.html">PackageAction</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_action.html">Google.Api.Ads.Dfp.v201611.PackageAction</a>&#160;</td>
           <td class="paramname"><em>packageAction</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_statement.html">Statement</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_statement.html">Google.Api.Ads.Dfp.v201611.Statement</a>&#160;</td>
           <td class="paramname"><em>filterStatement</em>&#160;</td>
         </tr>
         <tr>
@@ -436,11 +456,11 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of the action performed</dd></dl>
 
-<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_package_service.html#a22a00967191b99c30db5334bbb7fd411">Google.Api.Ads.Dfp.v201611.IPackageService</a>.</p>
+<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service_interface.html#a2b1b9e8495e8d7c535d202093e4f13bb">Google.Api.Ads.Dfp.v201611.PackageServiceInterface</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a98bae413a419716ac37cd38b3288e3d6"></a>
+<a class="anchor" id="af7fc4093aee49fdc59ab96bc67ae455a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -448,9 +468,9 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package.html">Package</a> [] Google.Api.Ads.Dfp.v201611.PackageService.updatePackages </td>
+          <td class="memname">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package.html">Google.Api.Ads.Dfp.v201611.Package</a> [] Google.Api.Ads.Dfp.v201611.PackageService.updatePackages </td>
           <td>(</td>
-          <td class="paramtype">[System.Xml.Serialization.XmlElementAttribute(&quot;packages&quot;)] <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package.html">Package</a>[]&#160;</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package.html">Google.Api.Ads.Dfp.v201611.Package</a>[]&#160;</td>
           <td class="paramname"><em>packages</em></td><td>)</td>
           <td></td>
         </tr>
@@ -471,53 +491,10 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the updated packages</dd></dl>
 
-<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_package_service.html#a2def144001f367d9ed3997e982abc555">Google.Api.Ads.Dfp.v201611.IPackageService</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="a597490b1a8cc0273534936b2e429fc4d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_request_header.html">RequestHeader</a> Google.Api.Ads.Dfp.v201611.PackageService.RequestHeader</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="af5cecba8ccb8ad4a8d3a6696ed1e992e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_response_header.html">ResponseHeader</a> Google.Api.Ads.Dfp.v201611.PackageService.ResponseHeader</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/tmp.xGLohJmkKL/dist/github/src/Dfp/v201611/<a class="el" href="v201611_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/tmp/tmp.dLCuyfsvFI/dist/github/src/Dfp/v201611/<a class="el" href="v201611_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -525,7 +502,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611.html">v201611</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_package_service.html">PackageService</a></li>
-    <li class="footer">Generated on Thu Jun 1 2017 15:37:26 for Ads API .NET library by
+    <li class="footer">Generated on Thu Aug 10 2017 18:24:41 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

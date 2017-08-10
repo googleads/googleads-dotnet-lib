@@ -1,9 +1,11 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_set_service =
 [
     [ "SharedSetService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_set_service.html#a51af8adc904d774556d147b8caa7b412", null ],
-    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_set_service.html#a6e55660aa72721ed57aa3cc15bb439c4", null ],
-    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_set_service.html#a60ad8cb6715ce673e075116ff6fc67df", null ],
-    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_set_service.html#adad260e0ea57a6bc4202f41648399d49", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_set_service.html#a659a97ab4c2eaa4ce376e16a0f9ce242", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_set_service.html#ab1193483ba8e5f7e7e8f63654e4b905c", null ]
+    [ "SharedSetService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_set_service.html#a3dc57f156a59df282e5a59594bc1ebd9", null ],
+    [ "SharedSetService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_set_service.html#aa8af1acca5c732a0d498085723d8113d", null ],
+    [ "SharedSetService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_set_service.html#aa0e6407242ad46ac1fc853fc6afe1324", null ],
+    [ "SharedSetService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_set_service.html#a002ae5eedab71310fa4d1539f57e2aa9", null ],
+    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_set_service.html#a0446f5c7b34bbc14565e5a80c575791b", null ],
+    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_set_service.html#aaeb4c790042e0f6c243c6b68559b9381", null ],
+    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_shared_set_service.html#afa991123898c19a21c1aa742535de934", null ]
 ];

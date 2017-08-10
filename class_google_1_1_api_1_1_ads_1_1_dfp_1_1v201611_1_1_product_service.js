@@ -1,10 +1,12 @@
 var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service =
 [
     [ "ProductService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service.html#a95483d95c1d1e32d630b522ac206c8b1", null ],
-    [ "createProducts", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service.html#a16a7815c441277ba47bfdd1d0fa29d7d", null ],
-    [ "getProductsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service.html#ab8751f1161c8a37a9ec3563c5d61747a", null ],
-    [ "performProductAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service.html#a050361d2b7ebd273419953c4400a6e94", null ],
-    [ "updateProducts", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service.html#a2f4b9d8cb3f62183c528bc587274d6e5", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service.html#afba4a764366c0b9a2b07578cdf476c37", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service.html#aad5d71a29f2ec65c00e56114e61bb98d", null ]
+    [ "ProductService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service.html#a9df18b292b0193f1232a7d63b85c04b5", null ],
+    [ "ProductService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service.html#aed1ab21d92761dfa96a2020173c00d07", null ],
+    [ "ProductService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service.html#aecd6fbab32b02a6ed6f17ccb572fc646", null ],
+    [ "ProductService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service.html#a872d546ad0a5bc2da1a0816598a25216", null ],
+    [ "createProducts", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service.html#ab3a4d2498aeccdf2767b49409d48ebb3", null ],
+    [ "getProductsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service.html#acaf6fcdcc95d4327a55cc678cfe7bbab", null ],
+    [ "performProductAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service.html#ab10946c4725dc665b659ff0102f492b2", null ],
+    [ "updateProducts", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_product_service.html#a35d5f3187fde67880d1c41997e5b0f67", null ]
 ];

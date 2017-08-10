@@ -1,0 +1,88 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row =
+[
+    [ "AdGroupStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#ad177be3b7f3e87366fd5eb3380b51438", [
+      [ "ENABLED", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#ad177be3b7f3e87366fd5eb3380b51438ac8cf6eea8f096ed51160b484d97c5bbd", null ],
+      [ "PAUSED", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#ad177be3b7f3e87366fd5eb3380b51438a99b2439e63f73ad515f7ab2447a80673", null ],
+      [ "REMOVED", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#ad177be3b7f3e87366fd5eb3380b51438ab3461745d64b12346503b2980e436db5", null ],
+      [ "UNKNOWN", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#ad177be3b7f3e87366fd5eb3380b51438a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "CampaignStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#adc3c125c6856dc81de157c158c466d81", [
+      [ "ENABLED", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#adc3c125c6856dc81de157c158c466d81ac8cf6eea8f096ed51160b484d97c5bbd", null ],
+      [ "PAUSED", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#adc3c125c6856dc81de157c158c466d81a99b2439e63f73ad515f7ab2447a80673", null ],
+      [ "REMOVED", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#adc3c125c6856dc81de157c158c466d81ab3461745d64b12346503b2980e436db5", null ],
+      [ "UNKNOWN", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#adc3c125c6856dc81de157c158c466d81a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "DayOfWeek", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a202e6505d3d4a37301f9bf26aab25258", [
+      [ "FRIDAY", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a202e6505d3d4a37301f9bf26aab25258a86fb6d343289267f3e9edb9b7403d936", null ],
+      [ "MONDAY", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a202e6505d3d4a37301f9bf26aab25258a98617021b249af0ace0f84ee92ccc7cd", null ],
+      [ "SATURDAY", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a202e6505d3d4a37301f9bf26aab25258afd5ae113ac00b67f69541bc8c7f21ef7", null ],
+      [ "SUNDAY", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a202e6505d3d4a37301f9bf26aab25258a95fa12cb2100ce7081b71f7c44bc12a5", null ],
+      [ "THURSDAY", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a202e6505d3d4a37301f9bf26aab25258a7a61b324afb4dd8b2fb4a38afc34f755", null ],
+      [ "TUESDAY", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a202e6505d3d4a37301f9bf26aab25258a5f5140afce13197a89e848004f292f14", null ],
+      [ "WEDNESDAY", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a202e6505d3d4a37301f9bf26aab25258aaaebdc947e9f7d4ea362e5dc4fe7f825", null ]
+    ] ],
+    [ "MonthOfYear", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a1b9dcf482f901227a8e7b53eb63a59e5", [
+      [ "APRIL", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a1b9dcf482f901227a8e7b53eb63a59e5a0f707dcaa7219c412df1ef6e61bbdcd6", null ],
+      [ "AUGUST", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a1b9dcf482f901227a8e7b53eb63a59e5a10ae821f9ce5f95eecd10cad5e9ef4d4", null ],
+      [ "DECEMBER", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a1b9dcf482f901227a8e7b53eb63a59e5a3b09593007851186f5112664ce81feb0", null ],
+      [ "FEBRUARY", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a1b9dcf482f901227a8e7b53eb63a59e5a1915019c0990fae3943a1a73b3572f24", null ],
+      [ "JANUARY", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a1b9dcf482f901227a8e7b53eb63a59e5a5c247e20ee6ad8dfbccdacbfff50d3f3", null ],
+      [ "JULY", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a1b9dcf482f901227a8e7b53eb63a59e5af52a0c66f898620108698ad90f09d05e", null ],
+      [ "JUNE", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a1b9dcf482f901227a8e7b53eb63a59e5a5ed250ff3e59defd24686706d34fcdf6", null ],
+      [ "MARCH", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a1b9dcf482f901227a8e7b53eb63a59e5a1c0efa682e6461e3ca25e679b07b30bc", null ],
+      [ "MAY", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a1b9dcf482f901227a8e7b53eb63a59e5af94061e4bbcb32597c80ba304f781006", null ],
+      [ "NOVEMBER", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a1b9dcf482f901227a8e7b53eb63a59e5a72e94357409601244394f5dd0b8fa1b2", null ],
+      [ "OCTOBER", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a1b9dcf482f901227a8e7b53eb63a59e5af2141dd9e56ea6723c9a513a7cd1170b", null ],
+      [ "SEPTEMBER", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a1b9dcf482f901227a8e7b53eb63a59e5a658c25f244e0da9b8f9cd9e59f3b3df0", null ]
+    ] ],
+    [ "QueryMatchType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a5aa23871099b717c991c01e126cea8f5", [
+      [ "AUTO", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a5aa23871099b717c991c01e126cea8f5ae1f2d5134ed2543d38a0de9751cf75d9", null ],
+      [ "BROAD", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a5aa23871099b717c991c01e126cea8f5a8620a3e751383e2564072eef8d2957b2", null ],
+      [ "EXACT", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a5aa23871099b717c991c01e126cea8f5ac41e056424136b6e8c4e23dd6326efa1", null ],
+      [ "EXPANDED", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a5aa23871099b717c991c01e126cea8f5a59fd6ceac734b3855e74b57d00a1db1f", null ],
+      [ "PHRASE", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a5aa23871099b717c991c01e126cea8f5a326989110ddd70abcc96d1e4bf40afc9", null ]
+    ] ],
+    [ "SerpType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a7acf0aa1a62556f18de11cebfc9bc170", [
+      [ "ADS_AND_ORGANIC", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a7acf0aa1a62556f18de11cebfc9bc170ac00497364f9dcc008764e0e5a31d8343", null ],
+      [ "ADS_ONLY", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a7acf0aa1a62556f18de11cebfc9bc170acf0069c9e641270ca8e0beaa0281353b", null ],
+      [ "ORGANIC_ONLY", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a7acf0aa1a62556f18de11cebfc9bc170acf4841ae48f7942461b631dad8c95e8f", null ],
+      [ "UNKNOWN", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a7acf0aa1a62556f18de11cebfc9bc170a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "accountCurrencyCode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#af5ab5713d35b934bb2f10110d5a9bdf4", null ],
+    [ "accountDescriptiveName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a803540fa543c9618eea4ca6790695db1", null ],
+    [ "accountTimeZone", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a27c0f425ab05dbe09d8dd341ae87f10c", null ],
+    [ "adGroupId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#aa34b131d575910e5b99f5d34418393ba", null ],
+    [ "adGroupName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#ad4ae006e91afb00894f876794bacd37c", null ],
+    [ "adGroupStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#aaf922719841b5daa8d224a03af700ae0", null ],
+    [ "averageCpc", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#aa7480cd05940c383251d56a4010c1120", null ],
+    [ "averagePosition", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a815933495b348e428741f8d68c545478", null ],
+    [ "campaignId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#af7b89a78474fe75f9023829a1aede448", null ],
+    [ "campaignName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#ac255671caec9b5bf40ee1da03a0b0872", null ],
+    [ "campaignStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a768ca4c00b23baf3f7783c58d75c2d51", null ],
+    [ "clicks", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a6d880c9d2ad7af563bd403335f01fee2", null ],
+    [ "combinedAdsOrganicClicks", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#ac1fe0d11635ff0e5883d7578628368a0", null ],
+    [ "combinedAdsOrganicClicksPerQuery", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#afdfe12804889975a4dc47a3f45fda96a", null ],
+    [ "combinedAdsOrganicQueries", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a3c714e9a092e065d925bec7723f96fcf", null ],
+    [ "ctr", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a695fcb286d2c381c7c3d11367ab5cb73", null ],
+    [ "customerDescriptiveName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#aaeab295c784791f9727511aef8737e08", null ],
+    [ "date", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a9f81e5a05e9930cbd9a3198da0f00763", null ],
+    [ "dayOfWeek", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a3dc71235960a653a25bc3e7c4e0f18f4", null ],
+    [ "externalCustomerId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a6a8ea8b1b1b75965a87b97b292eb0166", null ],
+    [ "impressions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a35c43615af14984de9d58aaa9224afe9", null ],
+    [ "keywordId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a59d19d8e146c688aa7c767fd793f21cf", null ],
+    [ "keywordTextMatchingQuery", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a91cdaf17716e9b1b6c9b7cabba713107", null ],
+    [ "month", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a6ef2d70cf1802439ec920e881b2adadb", null ],
+    [ "monthOfYear", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#ad87f91d1401b4657066dd26368e3f6cf", null ],
+    [ "organicAveragePosition", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#af6c8ab681c9fc1ebc9771a5affa30156", null ],
+    [ "organicClicks", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a4b93a338ace3d721c3b77b7bb265a108", null ],
+    [ "organicClicksPerQuery", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#afbb5d222ad8b0d472e5799de0df46a78", null ],
+    [ "organicImpressions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#acd9e88b6aff76f4d63b60bdbb0076450", null ],
+    [ "organicImpressionsPerQuery", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a08fe677892c8d8c573e604ebb19b783e", null ],
+    [ "organicQueries", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#ae9411f1b729952080abb549b7690852f", null ],
+    [ "quarter", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a3cdbc58ae7123ad67f247e032714c6cc", null ],
+    [ "queryMatchType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a35696f7d166b90a2a378127dcbbaef75", null ],
+    [ "searchQuery", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#afd991b1dfafe61707f249c590bd76681", null ],
+    [ "serpType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a2da7cb6318c9f15ca3104aa1fe4d8cb4", null ],
+    [ "week", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a29b4539c0d1fe13573f6897f000c2428", null ],
+    [ "year", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_paid_organic_query_report_report_row.html#a64b93f96ac386cfea049e72bd671f336", null ]
+];

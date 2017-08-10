@@ -1,10 +1,12 @@
 var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service =
 [
     [ "ProductTemplateService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service.html#a4f7de0bebd3681026cf2a69a49e517a0", null ],
-    [ "createProductTemplates", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service.html#ac49fe7695633f5b219457a1aaa4db0f2", null ],
-    [ "getProductTemplatesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service.html#aef22cd299dcc0578710f1cd1a5e107ee", null ],
-    [ "performProductTemplateAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service.html#aa2fcbde0cc487f106455a0d0448c1f4d", null ],
-    [ "updateProductTemplates", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service.html#af4c1d9d9922de3de2f21aa6754c30c4c", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service.html#a1dd6a9405598d4a0be534f22f5af0fa0", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service.html#a53e3029b07216a325bc4ce75a29a51ce", null ]
+    [ "ProductTemplateService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service.html#a4c8cdaf1bf8a267f8c3bef5387a203d6", null ],
+    [ "ProductTemplateService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service.html#adc12e402b14f9597477b545c2cd54583", null ],
+    [ "ProductTemplateService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service.html#a7733078282f2b03898efac02d387cd36", null ],
+    [ "ProductTemplateService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service.html#a4b7edf7027424e073610541a101b3cef", null ],
+    [ "createProductTemplates", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service.html#a00c183491056ea7547e303319d9e1efb", null ],
+    [ "getProductTemplatesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service.html#a1cda361058901a0ef775c6a359be1b57", null ],
+    [ "performProductTemplateAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service.html#a2001c77e7e59ee04e2744e15f5ae6c7e", null ],
+    [ "updateProductTemplates", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_product_template_service.html#abdea13a85828a51d01d6c50fae4d6a2d", null ]
 ];

@@ -1,9 +1,11 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_conversion_tracker_service =
 [
     [ "ConversionTrackerService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_conversion_tracker_service.html#ace8b6b70c48e9266e6051da5dcc0a836", null ],
-    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_conversion_tracker_service.html#a1e575ad7d66f9bb859ea8adf7993804c", null ],
-    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_conversion_tracker_service.html#a8cf4729656f3816f2324f25e8d1d8d29", null ],
-    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_conversion_tracker_service.html#a5dca107aa7e62e13c66115377dd01c1f", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_conversion_tracker_service.html#ae18a7bacd87a15107d637ea71358bbe0", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_conversion_tracker_service.html#a402d9ec1be58844101de5420d32f4c46", null ]
+    [ "ConversionTrackerService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_conversion_tracker_service.html#a8a1fbc7c58b1750f6707058b4feeebc9", null ],
+    [ "ConversionTrackerService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_conversion_tracker_service.html#a5120a14286f2ced1b8ac93606cc6cb77", null ],
+    [ "ConversionTrackerService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_conversion_tracker_service.html#a15170f2b509e4cbd427b4361a8220e5d", null ],
+    [ "ConversionTrackerService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_conversion_tracker_service.html#a0b60255a76fce634d1caeaea08f067d5", null ],
+    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_conversion_tracker_service.html#afe5cd8e7449819838d3bbd4a00abbe8a", null ],
+    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_conversion_tracker_service.html#a23a198b978226cba03b9258d944ed806", null ],
+    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_conversion_tracker_service.html#ae589e058986a93df8488d81825ed2812", null ]
 ];

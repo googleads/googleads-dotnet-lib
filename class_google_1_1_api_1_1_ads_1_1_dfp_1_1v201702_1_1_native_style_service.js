@@ -1,10 +1,12 @@
 var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service =
 [
     [ "NativeStyleService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service.html#abaae8a027ab54997e1d88679653320ad", null ],
-    [ "createNativeStyles", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service.html#ac457c1cf7bfbfa68c9ad71e427768165", null ],
-    [ "getNativeStylesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service.html#a143c4d44a1233430707cfd52c201e4e4", null ],
-    [ "performNativeStyleAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service.html#afe7d759ca372352070c99cda28963b4d", null ],
-    [ "updateNativeStyles", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service.html#aa97a9e81c854bb3ffb7bd5cc2655e016", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service.html#a6b5dcb41fd737a7a5a62f42590f4be19", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service.html#a7c3138339c349f1df11dc10b6ddb290f", null ]
+    [ "NativeStyleService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service.html#ad4497b12dc6bb91e7d644849dfd699f3", null ],
+    [ "NativeStyleService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service.html#aa1a29246979f7661ef76eda3086e0f50", null ],
+    [ "NativeStyleService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service.html#ae8af25339a9010d93b8af86bb18f4992", null ],
+    [ "NativeStyleService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service.html#adfc163d5935d2786a5b7c1c78f8fa9f8", null ],
+    [ "createNativeStyles", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service.html#afe58faf9c08f0aa12ec44b4bbdf5b004", null ],
+    [ "getNativeStylesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service.html#abd1bb2862914416e20882f876dc0bd29", null ],
+    [ "performNativeStyleAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service.html#a20811c4e237a6eb6ba1afa420b739ad1", null ],
+    [ "updateNativeStyles", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_native_style_service.html#aa8fa473af76e655ea1ce0586616f2848", null ]
 ];

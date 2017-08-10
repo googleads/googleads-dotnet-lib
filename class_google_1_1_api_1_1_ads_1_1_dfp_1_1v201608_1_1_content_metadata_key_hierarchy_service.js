@@ -1,10 +1,12 @@
 var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service =
 [
     [ "ContentMetadataKeyHierarchyService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service.html#a5e8bc3d7ea62e28b2701f87a2512ef7a", null ],
-    [ "createContentMetadataKeyHierarchies", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service.html#a9c71388ac1993c7a9512683c4bdb35b9", null ],
-    [ "getContentMetadataKeyHierarchiesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service.html#a7151940c838be3e16e98f9c2b7b689f0", null ],
-    [ "performContentMetadataKeyHierarchyAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service.html#a587cec306c024b187befe3e9e5e43b3f", null ],
-    [ "updateContentMetadataKeyHierarchies", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service.html#a8f68f24b4649b730ae7d35ae39644149", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service.html#af88053124e722a2942aad88630d72e52", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service.html#ae9059e52e6f34b9f13cfc77082e1335f", null ]
+    [ "ContentMetadataKeyHierarchyService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service.html#a302a97f05e48a43d41b4cfb331d7ce7a", null ],
+    [ "ContentMetadataKeyHierarchyService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service.html#ae20682cad4a515f8ca15eb2435ce0865", null ],
+    [ "ContentMetadataKeyHierarchyService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service.html#a86c5d1dab8218ce8d4567678166b32d8", null ],
+    [ "ContentMetadataKeyHierarchyService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service.html#a9d02f613834ba9167b79f884075bf6ff", null ],
+    [ "createContentMetadataKeyHierarchies", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service.html#a8aa0f091d711bd0fe6986d19ff7f8fa0", null ],
+    [ "getContentMetadataKeyHierarchiesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service.html#adcd5225823b4347029a66c2b6ebe7513", null ],
+    [ "performContentMetadataKeyHierarchyAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service.html#ac2ebabab189d66a39f97b6e90547476d", null ],
+    [ "updateContentMetadataKeyHierarchies", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_content_metadata_key_hierarchy_service.html#abaf2bf809c5a14bea20fd2592018582e", null ]
 ];

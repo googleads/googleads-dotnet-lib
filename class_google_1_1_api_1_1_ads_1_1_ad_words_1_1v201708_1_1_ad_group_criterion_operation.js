@@ -1,0 +1,8 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_ad_group_criterion_operation =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_ad_group_criterion_operation_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_ad_group_criterion_operation_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_ad_group_criterion_operation_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_ad_group_criterion_operation_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_ad_group_criterion_operation_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_ad_group_criterion_operation_1_1_selectable_fields" ],
+    [ "exemptionRequests", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_ad_group_criterion_operation.html#abefa3ef8b14244bca1b2baa0ce97157e", null ],
+    [ "operand", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_ad_group_criterion_operation.html#a205b4975082fcb145b22c9a06c2defbf", null ]
+];

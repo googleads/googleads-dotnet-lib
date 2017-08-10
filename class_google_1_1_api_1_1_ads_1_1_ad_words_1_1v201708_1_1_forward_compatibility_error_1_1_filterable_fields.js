@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_forward_compatibility_error_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_forward_compatibility_error_1_1_filterable_fields.html#a6ad10820cc56b1e751c66113669e8b63", null ]
+];

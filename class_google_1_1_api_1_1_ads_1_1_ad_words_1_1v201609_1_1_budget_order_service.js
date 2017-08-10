@@ -1,9 +1,11 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_budget_order_service =
 [
     [ "BudgetOrderService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_budget_order_service.html#a18ea1e2e4aba892f8e935deebb89055f", null ],
-    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_budget_order_service.html#a8ccbce4259e26fab345c5669a7e7ea4c", null ],
-    [ "getBillingAccounts", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_budget_order_service.html#affc28cb68f7d235d37a64074715c3b6f", null ],
-    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_budget_order_service.html#a462ac2e1b993c5f74886e553ed7878c0", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_budget_order_service.html#aca9accb64e7379a05ea8f8ec90e269fb", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_budget_order_service.html#a3f53de1f1a88327097f9bf2611a377eb", null ]
+    [ "BudgetOrderService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_budget_order_service.html#ac5a89ab570ba8fcf11363da82b25dd02", null ],
+    [ "BudgetOrderService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_budget_order_service.html#a4401f4884201b99325776e42c9d72716", null ],
+    [ "BudgetOrderService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_budget_order_service.html#a00a666ab72add451cfc19b4cc9987097", null ],
+    [ "BudgetOrderService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_budget_order_service.html#ac229e6840952016e3d355bea3c597424", null ],
+    [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_budget_order_service.html#a7a0cfffcefbb50f6ad89a70026918833", null ],
+    [ "getBillingAccounts", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_budget_order_service.html#a8812b77a3dff7b34c0dbde0a220d44e6", null ],
+    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_budget_order_service.html#aa9200b7a2d2101a8d97032cafde299a5", null ]
 ];

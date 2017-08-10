@@ -16,5 +16,6 @@ var class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_log_entry =
     [ "DetailedResponseLog", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_log_entry.html#a4766e7d3195b694a16fd7979a6012afa", null ],
     [ "SummaryLog", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_log_entry.html#a7398d059a6056c0268f7144291a59605", null ],
     [ "SummaryRequestLog", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_log_entry.html#a8dbd937986ef1fc9e745cdb3817a8e6a", null ],
-    [ "SummaryResponseLog", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_log_entry.html#aa9eb1ba8366b6d701c29b488d1db2a0d", null ]
+    [ "SummaryResponseLog", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_log_entry.html#aa9eb1ba8366b6d701c29b488d1db2a0d", null ],
+    [ "TraceWriter", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_log_entry.html#a5f1242886b187aacf15f4026b0d5661a", null ]
 ];

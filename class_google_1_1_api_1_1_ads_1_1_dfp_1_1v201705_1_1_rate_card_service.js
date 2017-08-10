@@ -1,10 +1,12 @@
 var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service =
 [
     [ "RateCardService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service.html#a4c6138a8ef0ebd19ecb944689cc3eeb3", null ],
-    [ "createRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service.html#ae5a3d8b770b0d5f74b209971d4fa312d", null ],
-    [ "getRateCardsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service.html#abedfdeb1bf562705572c79cee976e962", null ],
-    [ "performRateCardAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service.html#abb0424aef15e6b3df74fb07c843f628c", null ],
-    [ "updateRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service.html#ac80853d23fce53f0650ea69fe2a05eca", null ],
-    [ "RequestHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service.html#a041405d9676fa063d5228a35f071b301", null ],
-    [ "ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service.html#ada4aabf6a75ef949623d78a25967e0d2", null ]
+    [ "RateCardService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service.html#ad4603add3f513fa0abb86f63fa1c2d2a", null ],
+    [ "RateCardService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service.html#a75e013373e84d5f0a774d724e511fdc0", null ],
+    [ "RateCardService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service.html#a3be3243ced9ceeb54199e8cbf4623ff1", null ],
+    [ "RateCardService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service.html#abf54c4c7fd48f5d3740a84105200d4ec", null ],
+    [ "createRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service.html#abba5ff2de2fcda9e42fa49071ac38d00", null ],
+    [ "getRateCardsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service.html#a59747389a07bc7da3d61b546115207cb", null ],
+    [ "performRateCardAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service.html#a46ebab0d6eca1b171923d0b2d50b38e6", null ],
+    [ "updateRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_rate_card_service.html#aae07b7b8988e3511fa5dc34426f6ea7d", null ]
 ];

@@ -1,0 +1,12 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_conversion_tracking_settings =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_conversion_tracking_settings_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_conversion_tracking_settings_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_conversion_tracking_settings_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_conversion_tracking_settings_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_conversion_tracking_settings_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_conversion_tracking_settings_1_1_selectable_fields" ],
+    [ "effectiveConversionTrackingId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_conversion_tracking_settings.html#a141c84a7bba62966578594b6cc7545be", null ],
+    [ "effectiveConversionTrackingIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_conversion_tracking_settings.html#a0d437444704114be3e9d216bc4ca4754", null ],
+    [ "optimizeOnEstimatedConversions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_conversion_tracking_settings.html#ab9aa22f050e6f365a2a1877817fa9c99", null ],
+    [ "optimizeOnEstimatedConversionsSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_conversion_tracking_settings.html#a6d0ae07cfc1460378e00f869948440d7", null ],
+    [ "usesCrossAccountConversionTracking", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_conversion_tracking_settings.html#a73f4fc176e85e1c23faaeed28c07d1e4", null ],
+    [ "usesCrossAccountConversionTrackingSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_conversion_tracking_settings.html#a36edad22528b42803b665fbf40f62f08", null ]
+];
