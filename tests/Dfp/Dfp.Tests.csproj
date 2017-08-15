@@ -115,9 +115,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
-    <Compile Include="v201608\DateTimeUtilitiesTests.cs" />
-    <Compile Include="v201608\PqlUtilitiesTests.cs" />
-    <Compile Include="v201608\StatementBuilderTests.cs" />
     <Compile Include="v201611\DateTimeUtilitiesTests.cs" />
     <Compile Include="v201611\PqlUtilitiesTests.cs" />
     <Compile Include="v201611\StatementBuilderTests.cs" />
@@ -127,6 +124,9 @@
     <Compile Include="v201705\DateTimeUtilitiesTests.cs" />
     <Compile Include="v201705\PqlUtilitiesTests.cs" />
     <Compile Include="v201705\StatementBuilderTests.cs" />
+    <Compile Include="v201708\DateTimeUtilitiesTests.cs" />
+    <Compile Include="v201708\PqlUtilitiesTests.cs" />
+    <Compile Include="v201708\StatementBuilderTests.cs" />
     <Compile Include="BaseTests.cs" />
     <Compile Include="DfpSoapFaultInspectorTests.cs" />
     <Compile Include="DfpSoapHeaderInspectorTests.cs" />

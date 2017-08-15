@@ -88,7 +88,9 @@ namespace Google.Api.Ads.AdWords.Headers {
     /// </summary>
     protected override void OnWriteHeaderContents(XmlDictionaryWriter writer,
         MessageVersion messageVersion) {
-      writer.WriteElementString("clientCustomerId", clientCustomerId);
+      if (!string.IsNullOrEmpty(clientCustomerId)) {
+        writer.WriteElementString("clientCustomerId", clientCustomerId);
+      }
       writer.WriteElementString("developerToken", developerToken);
       writer.WriteElementString("userAgent", userAgent);
       if (validateOnlySpecified) {

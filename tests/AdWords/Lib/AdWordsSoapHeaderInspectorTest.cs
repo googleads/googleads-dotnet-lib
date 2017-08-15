@@ -25,7 +25,7 @@ using Google.Api.Ads.Common.Util;
 
 namespace Google.Api.Ads.AdWords.Tests.Lib {
   /// <summary>
-  /// Dfp SOAP header inspector tests.
+  /// AdWords SOAP header inspector tests.
   /// </summary>
   [TestFixture]
   public class AdWordsSoapHeaderInspectorTest {
@@ -143,7 +143,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     }
 
     /// <summary>
-    /// Tests that updates to the RequestHeader in a DfpSoapService are applied in the request.
+    /// Tests that updates to the RequestHeader in a AdWordsSoapService are applied in the request.
     /// </summary>
     [Test]
     public void TestHeaderUpdatesApplied() {
@@ -166,6 +166,28 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
       // Test removing a customer ID
       expected.clientCustomerId = null;
       Assert.AreEqual(expected, inspector.RequestHeader);
+    }
+
+    /// <summary>
+    /// Tests that ClientCustomerId is not serialized when null or empty.
+    /// </summary>
+    [Test]
+    public void TestClientCustomerIdOptional() {
+      AdWordsSoapHeaderInspector inspector = new AdWordsSoapHeaderInspector() {
+        User = new AdWordsUser(),
+        RequestHeader = new RequestHeader() {
+          developerToken = "ABCDEF"
+        }
+      };
+
+      inspector.BeforeSendRequest(ref this.request, this.channel);
+      Assert.AreEqual(1, request.Headers.Count);
+      Assert.That(!request.Headers[0].ToString().Contains("<clientCustomerId>"));
+
+      inspector.RequestHeader.clientCustomerId = "";
+      inspector.BeforeSendRequest(ref this.request, this.channel);
+      Assert.AreEqual(1, request.Headers.Count);
+      Assert.That(!request.Headers[0].ToString().Contains("<clientCustomerId>"));
     }
 
     /// <summary>
