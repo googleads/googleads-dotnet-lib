@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_wrappers_1_1_user_service_1_1get_all_roles_request =
-[
-    [ "getAllRolesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_wrappers_1_1_user_service_1_1get_all_roles_request.html#a3f5c50c9815332976880d503f475c060", null ]
-];

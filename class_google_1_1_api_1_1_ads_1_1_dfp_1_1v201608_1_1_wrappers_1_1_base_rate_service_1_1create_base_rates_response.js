@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_wrappers_1_1_base_rate_service_1_1create_base_rates_response =
-[
-    [ "createBaseRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_wrappers_1_1_base_rate_service_1_1create_base_rates_response.html#a2518f2f1b24f5de28eb35b82a165a7c3", null ],
-    [ "createBaseRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_wrappers_1_1_base_rate_service_1_1create_base_rates_response.html#a4e075ca455ef6261e01cfc51b1d39c64", null ],
-    [ "rval", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_wrappers_1_1_base_rate_service_1_1create_base_rates_response.html#a7de37bb3f52e9c35ef37a2264f57ba3f", null ]
-];

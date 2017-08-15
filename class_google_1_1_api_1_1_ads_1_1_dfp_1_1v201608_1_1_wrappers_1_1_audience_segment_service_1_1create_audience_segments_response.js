@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_wrappers_1_1_audience_segment_service_1_1create_audience_segments_response =
-[
-    [ "createAudienceSegmentsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_wrappers_1_1_audience_segment_service_1_1create_audience_segments_response.html#aa59e118fd83d43e90b217b6103267e58", null ],
-    [ "createAudienceSegmentsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_wrappers_1_1_audience_segment_service_1_1create_audience_segments_response.html#a7b1d7f08254c3f16ab4f7cb6ce41c99d", null ],
-    [ "rval", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201608_1_1_wrappers_1_1_audience_segment_service_1_1create_audience_segments_response.html#aaa022a0c9fefe759a2069a360e8a166b", null ]
-];
