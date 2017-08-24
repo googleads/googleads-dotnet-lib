@@ -1,0 +1,5 @@
+var interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_content_metadata_key_hierarchy_service =
+[
+    [ "createContentMetadataKeyHierarchies", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_content_metadata_key_hierarchy_service.html#a20697147c68b516a2a84860b0840efd0", null ],
+    [ "updateContentMetadataKeyHierarchies", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_i_content_metadata_key_hierarchy_service.html#abe73a0759c9fb9cefc23dd0ee180d7f6", null ]
+];

@@ -595,7 +595,7 @@ AdxEnabled">This is enabled for AdX.</span>  <a href="class_google_1_1_api_1_1_a
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_criterion.html" title="Represents a criterion (such as a keyword, placement, or vertical). This is disabled for AdX when it ...">Criterion</a> used for IP exclusions. We allow:  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_ip_block.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_income_range.html">IncomeRange</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Income range criterion.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_income_range.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Income range criterion allows to target and exclude predefined income percentile ranges.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_income_range.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_gender.html">Gender</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_gender.html" title="Represents a Gender criterion. ">Gender</a> criterion.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_gender.html#details">More...</a><br/></td></tr>
@@ -3546,6 +3546,7 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708.html#a1a9d2e012a6aa88fab7ab40831cdadbda696b031073e74bf2cb98e5ef201d4aa3">IncomeRangeIncomeRangeType.UNKNOWN</a> = 7
 <br/>
  }</td></tr>
+<tr class="memdesc:a1a9d2e012a6aa88fab7ab40831cdadbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Income percentile ranges.  <a href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708.html#a1a9d2e012a6aa88fab7ab40831cdadbd">More...</a><br/></td></tr>
 <tr class="separator:a1a9d2e012a6aa88fab7ab40831cdadbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5448c7f073061b7582f104699904c4ea"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708.html#a5448c7f073061b7582f104699904c4ea">GenderGenderType</a> { <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708.html#a5448c7f073061b7582f104699904c4eaadc8dd7c5b3d222e7897bf83055811f9b">GenderGenderType.GENDER_MALE</a> = 0, 
 <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708.html#a5448c7f073061b7582f104699904c4eaa2187061e7b1f06bb964bf79bf8d266f6">GenderGenderType.GENDER_FEMALE</a> = 1, 
@@ -11581,20 +11582,29 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Income percentile ranges. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a1a9d2e012a6aa88fab7ab40831cdadbda7e8a5a6ca7f8464d2f18e2f47700ff27"></a>INCOME_RANGE_UNDETERMINED</em>&nbsp;</td><td class="fielddoc">
+<p>Users for which income range is undetermined. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a1a9d2e012a6aa88fab7ab40831cdadbdaf5beab663973ca549e33cb9d029493bf"></a>INCOME_RANGE_0_50</em>&nbsp;</td><td class="fielddoc">
+<p>Users in [0%, 50%) income percentile range. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a1a9d2e012a6aa88fab7ab40831cdadbda01beff616043eb873a032e5f54d8df54"></a>INCOME_RANGE_50_60</em>&nbsp;</td><td class="fielddoc">
+<p>Users in [50%, 60%) income percentile range. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a1a9d2e012a6aa88fab7ab40831cdadbda48891ddde4d9c55a4eccd6dccefcfc52"></a>INCOME_RANGE_60_70</em>&nbsp;</td><td class="fielddoc">
+<p>Users in [60%, 70%) income percentile range. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a1a9d2e012a6aa88fab7ab40831cdadbdacbf9fe0f99213687184e8fed5222051a"></a>INCOME_RANGE_70_80</em>&nbsp;</td><td class="fielddoc">
+<p>Users in [70%, 80%) income percentile range. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a1a9d2e012a6aa88fab7ab40831cdadbdaa36d84c51c70b6a17a143b876d44d645"></a>INCOME_RANGE_80_90</em>&nbsp;</td><td class="fielddoc">
+<p>Users in [80%, 90%) income percentile range. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a1a9d2e012a6aa88fab7ab40831cdadbdab0509d9575e5a8b2ece51af5058950bd"></a>INCOME_RANGE_90_UP</em>&nbsp;</td><td class="fielddoc">
+<p>Users in [90%, 100%] income percentile range. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a1a9d2e012a6aa88fab7ab40831cdadbda696b031073e74bf2cb98e5ef201d4aa3"></a>UNKNOWN</em>&nbsp;</td><td class="fielddoc">
 <p><span class="constraint Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
@@ -16135,7 +16145,7 @@ Enumerations</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708.html">v201708</a></li>
-    <li class="footer">Generated on Tue Aug 15 2017 17:00:46 for Ads API .NET library by
+    <li class="footer">Generated on Thu Aug 24 2017 19:03:41 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

@@ -9526,15 +9526,19 @@ a single number (every n milliseconds or cue points, or one specific time / cue 
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="afa752edfe11ad6176a3a3c7ef1cdc0e4afc1f36b3b19b5ef5862bb396e7c9fb34"></a>PARTNER_MANAGEMENT_HOST_REVENUE</em>&nbsp;</td><td class="fielddoc">
 <p>The host revenue in the partner management. </p>
+<p>Starting in v201711, this field is deprecated in favor of PARTNER_FINANCE_HOST_REVENUE. Note that this metric supports less dimensions.</p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="afa752edfe11ad6176a3a3c7ef1cdc0e4a8d333d27ab589e55774c8b9e4eefd855"></a>PARTNER_MANAGEMENT_HOST_ECPM</em>&nbsp;</td><td class="fielddoc">
 <p>The host eCPM in the partner management. </p>
+<p>Starting in v201711, this field is deprecated in favor of PARTNER_FINANCE_HOST_ECPM. Note that this metric supports less dimensions.</p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="afa752edfe11ad6176a3a3c7ef1cdc0e4a7184ece7bb4c08a86861e3f5be76c876"></a>PARTNER_MANAGEMENT_PARTNER_REVENUE</em>&nbsp;</td><td class="fielddoc">
 <p>The partner revenue in the partner management. </p>
+<p>Starting in v201711, this field is deprecated in favor of PARTNER_FINANCE_PARTNER_REVENUE. Note that this metric supports less dimensions.</p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="afa752edfe11ad6176a3a3c7ef1cdc0e4aa2c595fc003454aa92d9a6ad0619ad40"></a>PARTNER_MANAGEMENT_PARTNER_ECPM</em>&nbsp;</td><td class="fielddoc">
 <p>The partner eCPM in the partner management. </p>
+<p>Starting in v201711, this field is deprecated in favor of PARTNER_FINANCE_PARTNER_ECPM. Note that this metric supports less dimensions.</p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="afa752edfe11ad6176a3a3c7ef1cdc0e4a76964315de39e781ee6f70bea2d83368"></a>PARTNER_MANAGEMENT_UNFILLED_IMPRESSIONS</em>&nbsp;</td><td class="fielddoc">
 <p>The unfilled impressions in the partner management. </p>
@@ -14813,11 +14817,11 @@ DateTimes are formatted according to the ISO 8601 standard YYYY-MM-DDThh:mm:ss[+
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="aa5c01390cfa66341aec1446c241e4d04a3ee0fd97f5812a8cab2a5b7602d32db5"></a>EVERY_N_SECONDS</em>&nbsp;</td><td class="fielddoc">
 <p><code>MidrollFrequency</code> is a time interval and mentioned as a single numeric value in seconds. For example, "100" would mean "play a mid-roll every
-        100 seconds". </p>
+    100 seconds". </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="aa5c01390cfa66341aec1446c241e4d04a1e753d9eb399ebbb2e3570b3366d5ee9"></a>FIXED_TIME</em>&nbsp;</td><td class="fielddoc">
 <p><code>MidrollFrequency</code> is a comma-delimited list of points in time (in seconds) when an ad should play. For example, "100,300" would mean "play an ad
-        at 100 seconds and 300 seconds". </p>
+    at 100 seconds and 300 seconds". </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="aa5c01390cfa66341aec1446c241e4d04aad705fb6567e069b574ae6b31c041daf"></a>EVERY_N_CUEPOINTS</em>&nbsp;</td><td class="fielddoc">
 <p><code>MidrollFrequency</code> is a cue point interval and is a single integer value, such as "5", which means "play a mid-roll every 5th cue point". </p>
@@ -19223,7 +19227,7 @@ The <a href="User">User</a> is not an approver when querying the </li>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705.html">v201705</a></li>
-    <li class="footer">Generated on Tue Aug 15 2017 17:07:27 for Ads API .NET library by
+    <li class="footer">Generated on Thu Aug 24 2017 19:10:24 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

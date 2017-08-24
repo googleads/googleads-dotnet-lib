@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('interface_google_1_1_api_1_1_ads_1_1_a
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_i_trial_service-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Google.Api.Ads.AdWords.v201708.ITrialService Interface Reference</div>  </div>
@@ -123,8 +124,10 @@ Inheritance diagram for Google.Api.Ads.AdWords.v201708.ITrialService:</div>
 </map>
  </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a14b37f1127687ba65fdcdd776ce865aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_trial_return_value.html">Google.Api.Ads.AdWords.v201708.TrialReturnValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_i_trial_service.html#a14b37f1127687ba65fdcdd776ce865aa">mutate</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_trial_operation.html">Google.Api.Ads.AdWords.v201708.TrialOperation</a>[] operations)</td></tr>
+<tr class="separator:a14b37f1127687ba65fdcdd776ce865aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_trial_service_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_trial_service_interface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_trial_service_interface.html">Google.Api.Ads.AdWords.v201708.TrialServiceInterface</a></td></tr>
 <tr class="memitem:a223abbd5e1196a75cb0f87ed70a0e8b5 inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_trial_service_interface"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_trial_page.html">Google.Api.Ads.AdWords.v201708.TrialPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_trial_service_interface.html#a223abbd5e1196a75cb0f87ed70a0e8b5">get</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_selector.html">Google.Api.Ads.AdWords.v201708.Selector</a> selector)</td></tr>
 <tr class="separator:a223abbd5e1196a75cb0f87ed70a0e8b5 inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_trial_service_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,8 +161,27 @@ The base campaign's budget cannot be shared with any other campaign. <a class="e
 <p>To promote changes in an <a href="TrialStatus#ACTIVE">ACTIVE</a> trial back to the base campaign, set the trial status to <a href="TrialStatus#PROMOTING">PROMOTING</a>. The promotion itself will occur asynchronously. If the promotion operation fails after some of the base campaign has already been updated, the status will change to <a href="TrialStatus#PROMOTE_FAILED">PROMOTE_FAILED</a>.</p>
 <p>To graduate an <a href="TrialStatus#ACTIVE">ACTIVE</a> trial, which will allow its associated campaign to act independently of the trial and free it of restrictions from the trial, set the status to <a href="TrialStatus#GRADUATED">GRADUATED</a> and provide a new <a href="Budget#budgetid">budgetId</a> for the campaign to use (since it can no longer share the base campaign's budget).</p>
 <p>Any trial that is not <a href="TrialStatus#CREATING">CREATING</a> or <a href="TrialStatus#PROMOTING">PROMOTING</a> can be archived by setting the status to the value of the same name.</p>
-</div><hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.1aNObKgk4L/dist/github/src/AdWords/v201708/<a class="el" href="v201708_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a14b37f1127687ba65fdcdd776ce865aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_trial_return_value.html">Google.Api.Ads.AdWords.v201708.TrialReturnValue</a> Google.Api.Ads.AdWords.v201708.ITrialService.mutate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_trial_operation.html">Google.Api.Ads.AdWords.v201708.TrialOperation</a>[]&#160;</td>
+          <td class="paramname"><em>operations</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_trial_service.html#a948a11eddf83d333d34c9d67bf20cf13">Google.Api.Ads.AdWords.v201708.TrialService</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this interface was generated from the following file:<ul>
+<li>/usr/local/google/home/cseeley/tmp/tmp.5z7a52x0o9/dist/github/src/AdWords/v201708/<a class="el" href="v201708_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -167,7 +189,7 @@ The base campaign's budget cannot be shared with any other campaign. <a class="e
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708.html">v201708</a></li><li class="navelem"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_i_trial_service.html">ITrialService</a></li>
-    <li class="footer">Generated on Tue Aug 15 2017 17:07:05 for Ads API .NET library by
+    <li class="footer">Generated on Thu Aug 24 2017 19:10:03 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

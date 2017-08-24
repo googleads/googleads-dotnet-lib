@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('interface_google_1_1_api_1_1_ads_1_1_a
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_i_account_label_service-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Google.Api.Ads.AdWords.v201702.IAccountLabelService Interface Reference</div>  </div>
@@ -123,8 +124,12 @@ Inheritance diagram for Google.Api.Ads.AdWords.v201702.IAccountLabelService:</di
 </map>
  </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a32ec991a0e60645413ace704dbaaa6eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_account_label.html">Google.Api.Ads.AdWords.v201702.AccountLabel</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_i_account_label_service.html#a32ec991a0e60645413ace704dbaaa6eb">get</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_selector.html">Google.Api.Ads.AdWords.v201702.Selector</a> selector)</td></tr>
+<tr class="separator:a32ec991a0e60645413ace704dbaaa6eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba0ff2ce015397ed467c22671c178a2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_account_label.html">Google.Api.Ads.AdWords.v201702.AccountLabel</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_i_account_label_service.html#aba0ff2ce015397ed467c22671c178a2e">mutate</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_account_label_operation.html">Google.Api.Ads.AdWords.v201702.AccountLabelOperation</a>[] operations)</td></tr>
+<tr class="separator:aba0ff2ce015397ed467c22671c178a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_account_label_service_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_account_label_service_interface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_account_label_service_interface.html">Google.Api.Ads.AdWords.v201702.AccountLabelServiceInterface</a></td></tr>
 <tr class="memitem:aad9f8fb55314af97d093d6bc7c56324e inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_account_label_service_interface"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_wrappers_1_1_account_label_service_1_1get_response.html">Wrappers.AccountLabelService.getResponse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_account_label_service_interface.html#aad9f8fb55314af97d093d6bc7c56324e">get</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_wrappers_1_1_account_label_service_1_1get_request.html">Wrappers.AccountLabelService.getRequest</a> request)</td></tr>
 <tr class="separator:aad9f8fb55314af97d093d6bc7c56324e inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_account_label_service_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,8 +141,45 @@ Additional Inherited Members</h2></td></tr>
 <p>Labels created by a manager are not accessible to any customers managed by this manager. Only manager customers may create these labels.</p>
 <p>Note that label access works a little differently in the API than it does in the <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a> UI. In the UI, a manager will never see a submanager's labels, and will always be using his own labels regardless of which managed account he is viewing. In this API, like other API services, if you specify a submanager as the effective account for the API request, then the request will operate on the submanager's labels.</p>
 <p>To apply a label to a managed customer, see <a href="ManagedCustomerService#mutateLabel">ManagedCustomerService::mutateLabel</a>.</p>
-</div><hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.1aNObKgk4L/dist/github/src/AdWords/v201702/<a class="el" href="v201702_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a32ec991a0e60645413ace704dbaaa6eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_account_label.html">Google.Api.Ads.AdWords.v201702.AccountLabel</a> [] Google.Api.Ads.AdWords.v201702.IAccountLabelService.get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_selector.html">Google.Api.Ads.AdWords.v201702.Selector</a>&#160;</td>
+          <td class="paramname"><em>selector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_account_label_service.html#a373a421c7a063536f4f869701745c372">Google.Api.Ads.AdWords.v201702.AccountLabelService</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aba0ff2ce015397ed467c22671c178a2e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_account_label.html">Google.Api.Ads.AdWords.v201702.AccountLabel</a> [] Google.Api.Ads.AdWords.v201702.IAccountLabelService.mutate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_account_label_operation.html">Google.Api.Ads.AdWords.v201702.AccountLabelOperation</a>[]&#160;</td>
+          <td class="paramname"><em>operations</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_account_label_service.html#ace67e2fdb2fe0c709195f1ee6bccfe46">Google.Api.Ads.AdWords.v201702.AccountLabelService</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this interface was generated from the following file:<ul>
+<li>/usr/local/google/home/cseeley/tmp/tmp.5z7a52x0o9/dist/github/src/AdWords/v201702/<a class="el" href="v201702_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -145,7 +187,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702.html">v201702</a></li><li class="navelem"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_i_account_label_service.html">IAccountLabelService</a></li>
-    <li class="footer">Generated on Tue Aug 15 2017 16:54:24 for Ads API .NET library by
+    <li class="footer">Generated on Thu Aug 24 2017 18:57:21 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>
