@@ -129,6 +129,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
         clientCustomerId = "123",
         validateOnly = true,
         developerToken = "ABCDEF",
+        partialFailure = true
       };
 
       inspector.RequestHeader = (RequestHeader)header.Clone();
@@ -138,6 +139,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
         Assert.AreEqual(header.clientCustomerId, appliedHeader.clientCustomerId);
         Assert.AreEqual(header.validateOnly, appliedHeader.validateOnly);
         Assert.AreEqual(header.developerToken, appliedHeader.developerToken);
+        Assert.AreEqual(header.partialFailure, appliedHeader.partialFailure);
         Assert.AreEqual(inspector.User.Config.GetUserAgent(), appliedHeader.userAgent);
       }
     }
@@ -188,6 +190,26 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
       inspector.BeforeSendRequest(ref this.request, this.channel);
       Assert.AreEqual(1, request.Headers.Count);
       Assert.That(!request.Headers[0].ToString().Contains("<clientCustomerId>"));
+    }
+
+    /// <summary>
+    /// Tests that serialized boolean values are lowercased.
+    /// </summary>
+    [Test]
+    public void TestBooleanIsLowerCase() {
+      AdWordsSoapHeaderInspector inspector = new AdWordsSoapHeaderInspector() {
+        User = new AdWordsUser(),
+        RequestHeader = new RequestHeader() {
+          developerToken = "ABCDEF",
+          validateOnly = true,
+          partialFailure =  true
+        }
+      };
+
+      inspector.BeforeSendRequest(ref this.request, this.channel);
+      Assert.AreEqual(1, request.Headers.Count);
+      Assert.That(request.Headers[0].ToString().Contains("<validateOnly>true</validateOnly>"));
+      Assert.That(request.Headers[0].ToString().Contains("<partialFailure>true</partialFailure>"));
     }
 
     /// <summary>

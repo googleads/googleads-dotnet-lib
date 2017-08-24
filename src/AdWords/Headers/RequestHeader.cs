@@ -94,10 +94,10 @@ namespace Google.Api.Ads.AdWords.Headers {
       writer.WriteElementString("developerToken", developerToken);
       writer.WriteElementString("userAgent", userAgent);
       if (validateOnlySpecified) {
-        writer.WriteElementString("validateOnly", validateOnly.ToString());
+        writer.WriteElementString("validateOnly", validateOnly.ToString().ToLower());
       }
       if (partialFailureSpecified) {
-        writer.WriteElementString("partialFailure", partialFailure.ToString());
+        writer.WriteElementString("partialFailure", partialFailure.ToString().ToLower());
       }
     }
 

@@ -1,3 +1,12 @@
+22.1.1
+======
+AdWords:
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/106
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/107
+
+DFP:
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/106
+
 22.1.0
 ======
 AdWords:

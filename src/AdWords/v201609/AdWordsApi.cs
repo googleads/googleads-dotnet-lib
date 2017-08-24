@@ -19,7 +19,6 @@ namespace Google.Api.Ads.AdWords.v201609 {
   using Google.Api.Ads.AdWords.Util.Selectors;
   using Google.Api.Ads.AdWords.Lib;
   using Google.Api.Ads.AdWords.Headers;
-
   using System.ComponentModel;
   using System.Collections.Generic;
 
@@ -58649,9 +58648,6 @@ namespace Google.Api.Ads.AdWords.v201609 {
     /// <summary>Name is required when creating a new conversion type.
     /// </summary>
     NEW_CONVERSION_TYPE_NAME_REQUIRED = 10,
-    /// <summary>The given conversion type name has been used.
-    /// </summary>
-    CONVERSION_TYPE_NAME_ALREADY_USED = 21,
     /// <summary>Only an owner account may edit a user list.
     /// </summary>
     OWNERSHIP_REQUIRED_FOR_SET = 11,
@@ -70406,8 +70402,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
     /// overrides are supported only for platform criterion (ID=30000, 30001, 30002) and
     /// preferred content criterion (ID = 400). The <a
     /// href='AdGroupBidModifierService#get'>AdGroupBidModifierService#get</a> method
-    /// returns all platform and preferred content criteria.</p> <p>Preferred Content
-    /// Criteria is available in versions &gt;= V201603. <span class="constraint
+    /// returns all platform and preferred content criteria. <span class="constraint
     /// Required">This field is required and should not be <code>null</code>.</span></p>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
@@ -75078,6 +75073,11 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// </dl>
   /// </summary>
   public interface IAdGroupAdService : AdGroupAdServiceInterface {
+    Google.Api.Ads.AdWords.v201609.AdGroupAdReturnValue mutate(Google.Api.Ads.AdWords.v201609.AdGroupAdOperation[] operations);
+
+    Google.Api.Ads.AdWords.v201609.AdGroupAdLabelReturnValue mutateLabel(Google.Api.Ads.AdWords.v201609.AdGroupAdLabelOperation[] operations);
+
+    Google.Api.Ads.AdWords.v201609.Ad[] upgradeUrl(Google.Api.Ads.AdWords.v201609.AdUrlUpgrade[] operations);
   }
 
 
@@ -75093,6 +75093,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// href="/adwords/api/docs/appendix/platforms">documentation</a>.</p>
   /// </summary>
   public interface ICampaignCriterionService : CampaignCriterionServiceInterface {
+    Google.Api.Ads.AdWords.v201609.CampaignCriterionReturnValue mutate(Google.Api.Ads.AdWords.v201609.CampaignCriterionOperation[] operations);
   }
 
 
@@ -75105,18 +75106,41 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// <p><b>Note:</b> CampaignService does not support video campaigns.</p>
   /// </summary>
   public interface ICampaignService : CampaignServiceInterface {
+    Google.Api.Ads.AdWords.v201609.CampaignReturnValue mutate(Google.Api.Ads.AdWords.v201609.CampaignOperation[] operations);
+
+    Google.Api.Ads.AdWords.v201609.CampaignLabelReturnValue mutateLabel(Google.Api.Ads.AdWords.v201609.CampaignLabelOperation[] operations);
   }
 
 
   /// <summary>Service used to manage campaign feed links, and matching functions.
   /// </summary>
   public interface ICampaignFeedService : CampaignFeedServiceInterface {
+    Google.Api.Ads.AdWords.v201609.CampaignFeedReturnValue mutate(Google.Api.Ads.AdWords.v201609.CampaignFeedOperation[] operations);
   }
 
 
   /// <summary>A service to return constant data.
   /// </summary>
   public interface IConstantDataService : ConstantDataServiceInterface {
+    Google.Api.Ads.AdWords.v201609.AgeRange[] getAgeRangeCriterion();
+
+    Google.Api.Ads.AdWords.v201609.Carrier[] getCarrierCriterion();
+
+    Google.Api.Ads.AdWords.v201609.Gender[] getGenderCriterion();
+
+    Google.Api.Ads.AdWords.v201609.Language[] getLanguageCriterion();
+
+    Google.Api.Ads.AdWords.v201609.MobileAppCategory[] getMobileAppCategoryCriterion();
+
+    Google.Api.Ads.AdWords.v201609.MobileDevice[] getMobileDeviceCriterion();
+
+    Google.Api.Ads.AdWords.v201609.OperatingSystemVersion[] getOperatingSystemVersionCriterion();
+
+    Google.Api.Ads.AdWords.v201609.ProductBiddingCategoryData[] getProductBiddingCategoryData(Google.Api.Ads.AdWords.v201609.Selector selector);
+
+    Google.Api.Ads.AdWords.v201609.CriterionUserInterest[] getUserInterestCriterion(Google.Api.Ads.AdWords.v201609.ConstantDataServiceUserInterestTaxonomyType userInterestTaxonomyType);
+
+    Google.Api.Ads.AdWords.v201609.Vertical[] getVerticalCriterion();
   }
 
 
@@ -75126,12 +75150,18 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// keywords.
   /// </summary>
   public interface IConversionTrackerService : ConversionTrackerServiceInterface {
+    Google.Api.Ads.AdWords.v201609.ConversionTrackerReturnValue mutate(Google.Api.Ads.AdWords.v201609.ConversionTrackerOperation[] operations);
   }
 
 
   /// <summary>Service to access basic details about any customer.
   /// </summary>
   public interface ICustomerService : CustomerServiceInterface {
+    Google.Api.Ads.AdWords.v201609.Customer[] getCustomers();
+
+    Google.Api.Ads.AdWords.v201609.ServiceLink[] getServiceLinks(Google.Api.Ads.AdWords.v201609.Selector selector);
+
+    Google.Api.Ads.AdWords.v201609.ServiceLink[] mutateServiceLinks(Google.Api.Ads.AdWords.v201609.ServiceLinkOperation[] operations);
   }
 
 
@@ -75149,6 +75179,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// <summary>Service used to manage customer feed links, and matching functions.
   /// </summary>
   public interface ICustomerFeedService : CustomerFeedServiceInterface {
+    Google.Api.Ads.AdWords.v201609.CustomerFeedReturnValue mutate(Google.Api.Ads.AdWords.v201609.CustomerFeedOperation[] operations);
   }
 
 
@@ -75163,24 +75194,28 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// <summary>Service used to get and mutate Feeds.
   /// </summary>
   public interface IFeedService : FeedServiceInterface {
+    Google.Api.Ads.AdWords.v201609.FeedReturnValue mutate(Google.Api.Ads.AdWords.v201609.FeedOperation[] operations);
   }
 
 
   /// <summary>Service used to manage adgroup feed links, and matching functions.
   /// </summary>
   public interface IAdGroupFeedService : AdGroupFeedServiceInterface {
+    Google.Api.Ads.AdWords.v201609.AdGroupFeedReturnValue mutate(Google.Api.Ads.AdWords.v201609.AdGroupFeedOperation[] operations);
   }
 
 
   /// <summary>Service to operate on feed items.
   /// </summary>
   public interface IFeedItemService : FeedItemServiceInterface {
+    Google.Api.Ads.AdWords.v201609.FeedItemReturnValue mutate(Google.Api.Ads.AdWords.v201609.FeedItemOperation[] operations);
   }
 
 
   /// <summary>Service for getting and mutating FeedMappings.
   /// </summary>
   public interface IFeedMappingService : FeedMappingServiceInterface {
+    Google.Api.Ads.AdWords.v201609.FeedMappingReturnValue mutate(Google.Api.Ads.AdWords.v201609.FeedMappingOperation[] operations);
   }
 
 
@@ -75190,12 +75225,24 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// supported.</p>
   /// </summary>
   public interface ILocationCriterionService : LocationCriterionServiceInterface {
+    Google.Api.Ads.AdWords.v201609.LocationCriterion[] get(Google.Api.Ads.AdWords.v201609.Selector selector);
+
+    Google.Api.Ads.AdWords.v201609.LocationCriterion[] query(string query1);
   }
 
 
   /// <summary>Customer Manager Service.
   /// </summary>
   public interface IManagedCustomerService : ManagedCustomerServiceInterface {
+    Google.Api.Ads.AdWords.v201609.PendingInvitation[] getPendingInvitations(Google.Api.Ads.AdWords.v201609.PendingInvitationSelector selector);
+
+    Google.Api.Ads.AdWords.v201609.ManagedCustomerReturnValue mutate(Google.Api.Ads.AdWords.v201609.ManagedCustomerOperation[] operations);
+
+    Google.Api.Ads.AdWords.v201609.ManagedCustomerLabel[] mutateLabel(Google.Api.Ads.AdWords.v201609.ManagedCustomerLabelOperation[] operations);
+
+    Google.Api.Ads.AdWords.v201609.ManagedCustomerLink[] mutateLink(Google.Api.Ads.AdWords.v201609.LinkOperation[] operations);
+
+    Google.Api.Ads.AdWords.v201609.ManagedCustomerLink[] mutateManager(Google.Api.Ads.AdWords.v201609.MoveOperation[] operations);
   }
 
 
@@ -75203,6 +75250,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// and videos with this service, use the IDs when creating image or template ads.
   /// </summary>
   public interface IMediaService : MediaServiceInterface {
+    Google.Api.Ads.AdWords.v201609.Media[] upload(Google.Api.Ads.AdWords.v201609.Media[] media);
   }
 
 
@@ -75212,12 +75260,14 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// conversion tracking guide</a>.</p>
   /// </summary>
   public interface IOfflineConversionFeedService : OfflineConversionFeedServiceInterface {
+    Google.Api.Ads.AdWords.v201609.OfflineConversionFeedReturnValue mutate(Google.Api.Ads.AdWords.v201609.OfflineConversionFeedOperation[] operations);
   }
 
 
   /// <summary>Service that handles the reporting of externally provided call conversions.
   /// </summary>
   public interface IOfflineCallConversionFeedService : OfflineCallConversionFeedServiceInterface {
+    Google.Api.Ads.AdWords.v201609.OfflineCallConversionFeedReturnValue mutate(Google.Api.Ads.AdWords.v201609.OfflineCallConversionFeedOperation[] operations);
   }
 
 
@@ -75234,6 +75284,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// Basics</a>.</p>
   /// </summary>
   public interface IReportDefinitionService : ReportDefinitionServiceInterface {
+    Google.Api.Ads.AdWords.v201609.ReportDefinitionField[] getReportFields(Google.Api.Ads.AdWords.v201609.ReportDefinitionReportType reportType);
   }
 
 
@@ -75283,12 +75334,18 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// from displaying.</li> </ul>
   /// </summary>
   public interface IAdGroupCriterionService : AdGroupCriterionServiceInterface {
+    Google.Api.Ads.AdWords.v201609.AdGroupCriterionReturnValue mutate(Google.Api.Ads.AdWords.v201609.AdGroupCriterionOperation[] operations);
+
+    Google.Api.Ads.AdWords.v201609.AdGroupCriterionLabelReturnValue mutateLabel(Google.Api.Ads.AdWords.v201609.AdGroupCriterionLabelOperation[] operations);
   }
 
 
   /// <summary>Service which is used to manage user lists.
   /// </summary>
   public interface IAdwordsUserListService : AdwordsUserListServiceInterface {
+    Google.Api.Ads.AdWords.v201609.UserListReturnValue mutate(Google.Api.Ads.AdWords.v201609.UserListOperation[] operations);
+
+    Google.Api.Ads.AdWords.v201609.MutateMembersReturnValue mutateMembers(Google.Api.Ads.AdWords.v201609.MutateMembersOperation[] operations);
   }
 
 
@@ -75296,12 +75353,14 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// and <code>Campaign</code> entities.
   /// </summary>
   public interface ICampaignSharedSetService : CampaignSharedSetServiceInterface {
+    Google.Api.Ads.AdWords.v201609.CampaignSharedSetReturnValue mutate(Google.Api.Ads.AdWords.v201609.CampaignSharedSetOperation[] operations);
   }
 
 
   /// <summary>Manages which criteria are associated with shared sets.
   /// </summary>
   public interface ISharedCriterionService : SharedCriterionServiceInterface {
+    Google.Api.Ads.AdWords.v201609.SharedCriterionReturnValue mutate(Google.Api.Ads.AdWords.v201609.SharedCriterionOperation[] operations);
   }
 
 
@@ -75309,6 +75368,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// themselves and the association between sets and campaigns.
   /// </summary>
   public interface ISharedSetService : SharedSetServiceInterface {
+    Google.Api.Ads.AdWords.v201609.SharedSetReturnValue mutate(Google.Api.Ads.AdWords.v201609.SharedSetOperation[] operations);
   }
 
 
@@ -75317,6 +75377,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// creatives, criterion and etc.
   /// </summary>
   public interface ILabelService : LabelServiceInterface {
+    Google.Api.Ads.AdWords.v201609.LabelReturnValue mutate(Google.Api.Ads.AdWords.v201609.LabelOperation[] operations);
   }
 
 
@@ -75333,6 +75394,9 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// href='ManagedCustomerService#mutateLabel'>ManagedCustomerService#mutateLabel</a>.</p>
   /// </summary>
   public interface IAccountLabelService : AccountLabelServiceInterface {
+    Google.Api.Ads.AdWords.v201609.AccountLabel[] get(Google.Api.Ads.AdWords.v201609.Selector selector);
+
+    Google.Api.Ads.AdWords.v201609.AccountLabel[] mutate(Google.Api.Ads.AdWords.v201609.AccountLabelOperation[] operations);
   }
 
 
@@ -75342,6 +75406,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// CustomerFeed services.</p>
   /// </summary>
   public interface IAdCustomizerFeedService : AdCustomizerFeedServiceInterface {
+    Google.Api.Ads.AdWords.v201609.AdCustomizerFeedReturnValue mutate(Google.Api.Ads.AdWords.v201609.AdCustomizerFeedOperation[] operations);
   }
 
 
@@ -75350,6 +75415,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// modifying feeds, feed items, and adgroup feeds for the user.
   /// </summary>
   public interface IAdGroupExtensionSettingService : AdGroupExtensionSettingServiceInterface {
+    Google.Api.Ads.AdWords.v201609.AdGroupExtensionSettingReturnValue mutate(Google.Api.Ads.AdWords.v201609.AdGroupExtensionSettingOperation[] operations);
   }
 
 
@@ -75358,6 +75424,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// modifying feeds, feed items, and campaign feeds for the user.
   /// </summary>
   public interface ICampaignExtensionSettingService : CampaignExtensionSettingServiceInterface {
+    Google.Api.Ads.AdWords.v201609.CampaignExtensionSettingReturnValue mutate(Google.Api.Ads.AdWords.v201609.CampaignExtensionSettingOperation[] operations);
   }
 
 
@@ -75366,6 +75433,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// modifying feeds, feed items, and customer feeds for the user.
   /// </summary>
   public interface ICustomerExtensionSettingService : CustomerExtensionSettingServiceInterface {
+    Google.Api.Ads.AdWords.v201609.CustomerExtensionSettingReturnValue mutate(Google.Api.Ads.AdWords.v201609.CustomerExtensionSettingOperation[] operations);
   }
 
 
@@ -75375,6 +75443,9 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// belong to a campaign.
   /// </summary>
   public interface IAdGroupService : AdGroupServiceInterface {
+    Google.Api.Ads.AdWords.v201609.AdGroupReturnValue mutate(Google.Api.Ads.AdWords.v201609.AdGroupOperation[] operations);
+
+    Google.Api.Ads.AdWords.v201609.AdGroupLabelReturnValue mutateLabel(Google.Api.Ads.AdWords.v201609.AdGroupLabelOperation[] operations);
   }
 
 
@@ -75382,6 +75453,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// of drafts.
   /// </summary>
   public interface IDraftService : DraftServiceInterface {
+    Google.Api.Ads.AdWords.v201609.DraftReturnValue mutate(Google.Api.Ads.AdWords.v201609.DraftOperation[] operations);
   }
 
 
@@ -75438,6 +75510,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// to the value of the same name.</p>
   /// </summary>
   public interface ITrialService : TrialServiceInterface {
+    Google.Api.Ads.AdWords.v201609.TrialReturnValue mutate(Google.Api.Ads.AdWords.v201609.TrialOperation[] operations);
   }
 
 
@@ -75456,6 +75529,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// MutateResults.</p>
   /// </summary>
   public interface IBatchJobOpsService : BatchJobOpsServiceInterface {
+    Google.Api.Ads.AdWords.v201609.MutateResult[] mutate(Google.Api.Ads.AdWords.v201609.Operation[] operations);
   }
 
 
@@ -75464,6 +75538,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// overrides.
   /// </summary>
   public interface IAdGroupBidModifierService : AdGroupBidModifierServiceInterface {
+    Google.Api.Ads.AdWords.v201609.AdGroupBidModifierReturnValue mutate(Google.Api.Ads.AdWords.v201609.AdGroupBidModifierOperation[] operations);
   }
 
 
@@ -75483,6 +75558,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// <span class="constraint AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
   public interface IAdParamService : AdParamServiceInterface {
+    Google.Api.Ads.AdWords.v201609.AdParam[] mutate(Google.Api.Ads.AdWords.v201609.AdParamOperation[] operations);
   }
 
 
@@ -75498,6 +75574,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// to <code>DONE</code>, you can retrieve the job's results.</p>
   /// </summary>
   public interface IBatchJobService : BatchJobServiceInterface {
+    Google.Api.Ads.AdWords.v201609.BatchJobReturnValue mutate(Google.Api.Ads.AdWords.v201609.BatchJobOperation[] operations);
   }
 
 
@@ -75505,6 +75582,7 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// class="constraint AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
   public interface IBiddingStrategyService : BiddingStrategyServiceInterface {
+    Google.Api.Ads.AdWords.v201609.BiddingStrategyReturnValue mutate(Google.Api.Ads.AdWords.v201609.BiddingStrategyOperation[] operations);
   }
 
 
@@ -75516,12 +75594,16 @@ namespace Google.Api.Ads.AdWords.v201609 {
   /// <code>ApiException</code>.</p>
   /// </summary>
   public interface IBudgetOrderService : BudgetOrderServiceInterface {
+    Google.Api.Ads.AdWords.v201609.BillingAccount[] getBillingAccounts();
+
+    Google.Api.Ads.AdWords.v201609.BudgetOrderReturnValue mutate(Google.Api.Ads.AdWords.v201609.BudgetOrderOperation[] operations);
   }
 
 
   /// <summary>Budget Service to get/mutate budgets.
   /// </summary>
   public interface IBudgetService : BudgetServiceInterface {
+    Google.Api.Ads.AdWords.v201609.BudgetReturnValue mutate(Google.Api.Ads.AdWords.v201609.BudgetOperation[] operations);
   }
 
 
@@ -76417,7 +76499,6 @@ namespace Google.Api.Ads.AdWords.v201609 {
       codes["UserListErrorReason.INVALID_USER_LIST_LOGICAL_RULE_OPERAND"] = "User list rule operand is invalid.";
       codes["UserListErrorReason.NAME_ALREADY_USED"] = "Name is already being used for another user list for the account.";
       codes["UserListErrorReason.NEW_CONVERSION_TYPE_NAME_REQUIRED"] = "Name is required when creating a new conversion type.";
-      codes["UserListErrorReason.CONVERSION_TYPE_NAME_ALREADY_USED"] = "The given conversion type name has been used.";
       codes["UserListErrorReason.OWNERSHIP_REQUIRED_FOR_SET"] = "Only an owner account may edit a user list.";
       codes["UserListErrorReason.REMOVE_NOT_SUPPORTED"] = "Removing user lists is not supported.";
       codes["UserListErrorReason.USER_LIST_MUTATE_NOT_SUPPORTED"] = "The user list of the type is not mutable";
