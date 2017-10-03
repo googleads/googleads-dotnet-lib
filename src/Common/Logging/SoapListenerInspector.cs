@@ -31,8 +31,9 @@ namespace Google.Api.Ads.Common.Logging {
     /// Initializes a new instance of the <see cref="SoapListenerInspector"/>
     /// class.
     /// </summary>
-    public SoapListenerInspector(AdsUser user) {
+    public SoapListenerInspector(AdsUser user, string serviceName) {
       this.user = user;
+      this.serviceName = serviceName;
     }
 
     /// <summary>
@@ -49,6 +50,11 @@ namespace Google.Api.Ads.Common.Logging {
     /// The AdsUser to call listeners for.
     /// </summary>
     private AdsUser user;
+
+    /// <summary>
+    /// The name of the service this listener is applied to.
+    /// </summary>
+    private string serviceName;
 
     /// <summary>
     /// Gets the message body as a string.
@@ -81,8 +87,9 @@ namespace Google.Api.Ads.Common.Logging {
       this.requestInfo = new RequestInfo() {
         Headers = requestProperties.Headers,
         Body = GetMessageBody(ref request),
-        Method = requestProperties.Method,
-        Uri = channel.RemoteAddress.Uri
+        HttpMethod = requestProperties.Method,
+        Uri = channel.RemoteAddress.Uri,
+        Service = this.serviceName
       };
       return null;
     }

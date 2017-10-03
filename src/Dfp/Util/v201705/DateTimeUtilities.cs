@@ -18,7 +18,7 @@ using Google.Api.Ads.Dfp.v201705;
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using NodaTime;
 using DfpDateTime = Google.Api.Ads.Dfp.v201705.DateTime;
 
 namespace Google.Api.Ads.Dfp.Util.v201705 {
@@ -59,6 +59,28 @@ namespace Google.Api.Ads.Dfp.Util.v201705 {
       retval.minute = dateTime.Minute;
       retval.second = dateTime.Second;
       retval.timeZoneID = timeZoneId;
+      return retval;
+    }
+
+    /// <summary>
+    /// Converts a NodaTime.ZonedDateTime object to a Dfp DateTime object with its
+    /// intrinsic timezone.
+    /// </summary>
+    /// <param name="dateTime">The ZonedDateTime object.</param>
+    /// <returns>A Dfp Datetime object.</returns>
+    public static DfpDateTime FromDateTime(ZonedDateTime dateTime) {
+      PreconditionUtilities.CheckArgumentNotNull(dateTime, "dateTime");
+
+      DfpDateTime retval = new DfpDateTime();
+      retval.date = new Date();
+      retval.date.year = dateTime.Year;
+      retval.date.month = dateTime.Month;
+      retval.date.day = dateTime.Day;
+      retval.hour = dateTime.Hour;
+      retval.minute = dateTime.Minute;
+      retval.second = dateTime.Second;
+      retval.timeZoneID = dateTime.Zone.ToString();
+
       return retval;
     }
   }

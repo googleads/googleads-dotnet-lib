@@ -58,6 +58,9 @@
     <AssemblyOriginatorKeyFile>$(ProjectDir)..\..\src\Common\AdsApi.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NodaTime">
+      <HintPath>..\..\lib\NodaTime\NodaTime.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\lib\NUnit\nunit.framework.dll</HintPath>
     </Reference>
@@ -108,11 +111,18 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterBuild" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Exec Command="sn -R $(OutDir)$(TargetFileName) $(ProjectDir)..\..\src\Common\AdsApi.snk" />
   </Target>
   <ItemGroup>
+    <Compile Include="Lib\DfpTraceListenerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Properties.cs" />
     <Compile Include="v201611\DateTimeUtilitiesTests.cs" />
@@ -131,6 +141,7 @@
     <Compile Include="DfpSoapFaultInspectorTests.cs" />
     <Compile Include="DfpSoapHeaderInspectorTests.cs" />
     <Compile Include="EnumIntegrityTests.cs" />
+    <Compile Include="Resources.Designer.cs" />
     <Compile Include="ServiceCreationTests.cs" />
   </ItemGroup>
   <ItemGroup>

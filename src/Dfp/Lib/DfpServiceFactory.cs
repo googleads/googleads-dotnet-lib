@@ -90,7 +90,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         RequestHeader = clonedHeader,
         Config = dfpConfig
       });
-      inspectorBehavior.Add(new SoapListenerInspector(user));
+      inspectorBehavior.Add(new SoapListenerInspector(user, dfpapiSignature.ServiceName));
       inspectorBehavior.Add(new SoapFaultInspector<DfpApiException>() {
         ErrorType = dfpapiSignature.ServiceType.Assembly.GetType(
           dfpapiSignature.ServiceType.Namespace + ".ApiException"),

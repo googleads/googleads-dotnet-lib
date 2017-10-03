@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Util;
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -176,18 +176,18 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
       WebResponse response = null;
 
       LogEntry logEntry = new LogEntry(User.Config, new DefaultDateTimeProvider());
-      logEntry.LogRequest(new RequestInfo(request, ""), HEADERS_TO_MASK);
+      logEntry.LogRequest(GenerateRequestInfo(request, ""), HEADERS_TO_MASK);
 
       try {
         response = request.GetResponse();
         string contents = MediaUtilities.GetStreamContentsAsString(
             response.GetResponseStream());
-        logEntry.LogResponse(new ResponseInfo(response, contents), false);
+        logEntry.LogResponse(GenerateResponseInfo(response, contents, ""));
         logEntry.Flush();
         return response.Headers["Location"];
       } catch (WebException e) {
         string contents = HttpUtilities.GetErrorResponseBody(e);
-        logEntry.LogResponse(new ResponseInfo(e.Response, contents), true);
+        logEntry.LogResponse(GenerateResponseInfo(e.Response, "", contents));
         logEntry.Flush();
         throw ParseException(e, contents);
       } finally {
@@ -346,14 +346,14 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
         WebResponse response = null;
 
         LogEntry logEntry = new LogEntry(User.Config, new DefaultDateTimeProvider());
-        logEntry.LogRequest(new RequestInfo(request, ""), HEADERS_TO_MASK);
+        logEntry.LogRequest(GenerateRequestInfo(request, ""), HEADERS_TO_MASK);
 
         try {
           response = request.GetResponse();
           string contents = MediaUtilities.GetStreamContentsAsString(
               response.GetResponseStream());
 
-          logEntry.LogResponse(new ResponseInfo(response, contents), false);
+          logEntry.LogResponse(GenerateResponseInfo(response, contents, ""));
           logEntry.Flush();
 
           return contents;
@@ -387,7 +387,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
             string.Format("bytes */{0}", totalLength), user.Config);
 
         LogEntry logEntry = new LogEntry(User.Config, new DefaultDateTimeProvider());
-        logEntry.LogRequest(new RequestInfo(request, "Truncated"), HEADERS_TO_MASK);
+        logEntry.LogRequest(GenerateRequestInfo(request, "Truncated"), HEADERS_TO_MASK);
 
         try {
           response = request.GetResponse();
@@ -400,7 +400,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
           Dictionary<string, object> temp =
               (Dictionary<string, object>) serializer.DeserializeObject(contents);
           int.TryParse(temp["size"].ToString(), out retval);
-          logEntry.LogResponse(new ResponseInfo(response, ""), true);
+          logEntry.LogResponse(GenerateResponseInfo(response, "", ""));
           logEntry.Flush();
           break;
         } catch (WebException e) {
@@ -412,7 +412,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
           if (IsPartialUploadSuccessResponse(e)) {
             retval = ExtractUpperRange(e.Response.Headers["Range"], retval) + 1;
 
-            logEntry.LogResponse(new ResponseInfo(e.Response, ""), true);
+            logEntry.LogResponse(GenerateResponseInfo(e.Response, "", ""));
             logEntry.Flush();
             break;
           } else {
@@ -482,7 +482,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
         request.ContentType = "application/xml";
 
         try {
-          logEntry.LogRequest(new RequestInfo(request, "Truncated"), HEADERS_TO_MASK);
+          logEntry.LogRequest(GenerateRequestInfo(request, "Truncated"), HEADERS_TO_MASK);
 
           using (Stream requestStream = request.GetRequestStream()) {
             requestStream.Write(postBody, start, bytesToWrite);
@@ -490,13 +490,13 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
 
           response = request.GetResponse();
 
-          logEntry.LogResponse(new ResponseInfo(response, ""), true);
+          logEntry.LogResponse(GenerateResponseInfo(response, "", ""));
           logEntry.Flush();
           return;
         } catch (WebException e) {
           response = e.Response;
           if (IsPartialUploadSuccessResponse(e)) {
-            logEntry.LogResponse(new ResponseInfo(e.Response, ""), true);
+            logEntry.LogResponse(GenerateResponseInfo(e.Response, "", ""));
             logEntry.Flush();
             return;
           } else {
@@ -537,7 +537,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
 
       using (WebResponse response = e.Response) {
         string contents = HttpUtilities.GetErrorResponseBody(e);
-        logEntry.LogResponse(new ResponseInfo(response, contents), false);
+        logEntry.LogResponse(GenerateResponseInfo(response, "", contents));
         logEntry.Flush();
 
         downloadException = ParseException(e, contents);
@@ -583,6 +583,21 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
       } catch (Exception) {
         return e;
       }
+    }
+
+    private RequestInfo GenerateRequestInfo(WebRequest request, string body) {
+      return new RequestInfo(request, body) {
+        Service = "BatchJobService",
+        Method = "mutate",
+        IdentifierName = "clientCustomerId",
+        IdentifierValue = ((AdWordsAppConfig) this.user.Config).ClientCustomerId
+      };
+    }
+
+    private ResponseInfo GenerateResponseInfo(WebResponse response, string body, string error) {
+      return new ResponseInfo(response, body) {
+        ErrorMessage = error
+      };
     }
   }
 }

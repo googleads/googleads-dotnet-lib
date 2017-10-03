@@ -110,7 +110,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
       universalAppSetting.description3 = "3 difficulty levels"
       universalAppSetting.description4 = "4 colorful fun skins"
 
-      ' Optional: You can set up to 10 image assets for your campaign.
+      ' Optional: You can set up to 20 image assets for your campaign.
       ' See UploadImage.cs for an example on how to upload images.
       '
       ' universalAppSetting.imageMediaIds = new long[] { INSERT_IMAGE_MEDIA_ID_HERE };

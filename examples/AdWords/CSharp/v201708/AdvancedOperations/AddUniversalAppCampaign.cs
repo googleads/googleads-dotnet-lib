@@ -105,7 +105,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
       universalAppSetting.description3 = "3 difficulty levels";
       universalAppSetting.description4 = "4 colorful fun skins";
 
-      // Optional: You can set up to 10 image assets for your campaign.
+      // Optional: You can set up to 20 image assets for your campaign.
       // See UploadImage.cs for an example on how to upload images.
       //
       // universalAppSetting.imageMediaIds = new long[] { INSERT_IMAGE_MEDIA_ID_HERE };
@@ -155,6 +155,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
         } else {
           Console.WriteLine("No universal app campaigns were added.");
         }
+        campaignService.Close();
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to add universal app campaigns.", e);
       }
@@ -190,6 +191,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
 
       Console.WriteLine("Budget with ID = '{0}' and name = '{1}' was created.",
           newBudget.budgetId, newBudget.name);
+      budgetService.Close();
       return newBudget;
     }
 
@@ -252,6 +254,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
                             criterion.criterion.CriterionType, criterion.criterion.id);
         }
       }
+      campaignCriterionService.Close();
     }
   }
 }

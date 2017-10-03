@@ -13,13 +13,9 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Logging;
-using Google.Api.Ads.Common.Util;
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
-using System.Xml;
 
 namespace Google.Api.Ads.AdWords.Lib {
   /// <summary>
@@ -47,55 +43,15 @@ namespace Google.Api.Ads.AdWords.Lib {
     }
 
     /// <summary>
-    /// Gets the summary request logs.
+    /// Parses the body of the request and populates fields in the request info.
     /// </summary>
-    /// <param name="soapRequest">The request xml for this SOAP call.</param>
-    /// <returns>The summary request logs.</returns>
-    protected override string GetSummaryRequestLogs(string soapRequest) {
-      XmlDocument xDoc = XmlUtilities.CreateDocument(soapRequest);
-      XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
-      xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
-      XmlNode methodNode =
-          xDoc.SelectSingleNode("soap:Envelope/soap:Body/*", xmlns);
-      string operators = "None";
-      if (methodNode.Name == "mutate") {
-        StringBuilder builder = new StringBuilder();
-        foreach (XmlNode child in methodNode.ChildNodes) {
-          if (child.Name == "operations") {
-            foreach (XmlNode grandChild in child.ChildNodes) {
-              if (grandChild.Name == "operator") {
-                builder.Append(grandChild.InnerText + "|");
-              }
-            }
-          }
-        }
-        operators = builder.ToString().TrimEnd('|');
-      }
-      return string.Format(CultureInfo.InvariantCulture, "method={0},operator={1}",
-          methodNode.Name, operators);
-    }
+    /// <param name="info">The request info for this SOAP call.</param>
+    protected override void PopulateRequestInfo(ref RequestInfo info) {
+      base.PopulateRequestInfo(ref info);
 
-    /// <summary>
-    /// Gets the summary response logs.
-    /// </summary>
-    /// <param name="soapResponse">The response xml for this SOAP call.</param>
-    /// <returns>The summary response logs.</returns>
-    protected override string GetSummaryResponseLogs(string soapResponse) {
-      XmlDocument xDoc = XmlUtilities.CreateDocument(soapResponse);
-      XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
-      xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
-      XmlNodeList childNodes =
-          xDoc.SelectNodes("soap:Envelope/soap:Header/*", xmlns);
-      if (childNodes.Count == 1 && childNodes[0].Name == "ResponseHeader") {
-        childNodes = childNodes[0].ChildNodes;
-      }
-      StringBuilder responseText = new StringBuilder();
-      foreach (XmlNode childNode in childNodes) {
-        if (childNode is XmlElement) {
-          responseText.AppendFormat("{0}={1},", childNode.Name, childNode.InnerText);
-        }
-      }
-      return responseText.ToString().TrimEnd(',');
+      // Set the client customer ID.
+      info.IdentifierName = "clientCustomerId";
+      info.IdentifierValue = ((AdWordsAppConfig) this.Config).ClientCustomerId;
     }
 
     /// <summary>

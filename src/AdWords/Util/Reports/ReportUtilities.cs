@@ -179,14 +179,14 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         request = BuildRequest(downloadUrl, postBody, logEntry);
         response = request.GetResponse();
 
-        logEntry.LogResponse(new ResponseInfo(response,"Response truncated."), false);
+        logEntry.LogResponse(new ResponseInfo(response, "REDACTED REPORT DATA"));
         logEntry.Flush();
         return new ReportResponse(response);
       } catch (WebException e) {
         Exception reportsException = null;
 
         string contents = HttpUtilities.GetErrorResponseBody(e);
-        logEntry.LogResponse(new ResponseInfo(e.Response, contents), true);
+        logEntry.LogResponse(new ResponseInfo(e.Response, "") { ErrorMessage = contents });
         logEntry.Flush();
 
         reportsException = ParseException(e, contents);
@@ -238,7 +238,8 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
         request.Headers.Add("useRawEnumValues", config.UseRawEnumValues.ToString().ToLower());
       }
 
-      HttpUtilities.WritePostBodyAndLog(request, postBody, logEntry, HEADERS_TO_MASK);
+      HttpUtilities.WritePostBodyAndLog(request, postBody, "reportdownload", logEntry,
+          HEADERS_TO_MASK);
       return request;
     }
 

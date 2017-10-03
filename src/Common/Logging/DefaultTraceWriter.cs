@@ -15,7 +15,11 @@
 using Google.Api.Ads.Common.Util;
 
 namespace Google.Api.Ads.Common.Logging {
-  class DefaultTraceWriter : ITraceWriter {
+
+  /// <summary>
+  /// Default instance of TraceWriter, which just delegates to TraceUtilities.
+  /// </summary>
+  public class DefaultTraceWriter : ITraceWriter {
     void ITraceWriter.WriteDetailedRequestLogs(string message, bool isFailure) {
       TraceUtilities.WriteDetailedRequestLogs(message, isFailure);
     }

@@ -12,10 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.AdWords.Examples.CSharp.v201609;
+using Google.Api.Ads.AdWords.Examples.CSharp.v201708;
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.Common.Tests;
+
 using NUnit.Framework;
+
 using System;
 using System.Net;
 
@@ -41,7 +43,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     [Test]
     [Category("Integration")]
     public void TestUpdateCampaignsCSharpExample() {
-      ExamplesMockData mockData = LoadMockData(SoapMessages_v201609.UpdateCampaign);
+      ExamplesMockData mockData = LoadMockData(SoapMessages_v201708.UpdateCampaign);
       RunMockedExample(mockData, delegate() {
         new UpdateCampaign().Run(user, TEST_CAMPAIGN_ID);
 

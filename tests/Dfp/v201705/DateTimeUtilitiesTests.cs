@@ -12,17 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.Common.Util;
+using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.Util.v201705;
+using Google.Api.Ads.Dfp.v201705;
+using DateTime = Google.Api.Ads.Dfp.v201705.DateTime;
+using NUnit.Framework;
+using NodaTime;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Xml;
-using Google.Api.Ads.Common.Util;
-using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.Util.v201705;
-using Google.Api.Ads.Dfp.v201705;
-using NUnit.Framework;
-using DateTime = Google.Api.Ads.Dfp.v201705.DateTime;
 
 namespace Google.Api.Ads.Dfp.Tests.v201705 {
 
@@ -79,6 +80,25 @@ namespace Google.Api.Ads.Dfp.Tests.v201705 {
       Assert.AreEqual(dfpDateTime.hour, 23);
       Assert.AreEqual(dfpDateTime.minute, 59);
       Assert.AreEqual(dfpDateTime.second, 58);
+      Assert.AreEqual(dfpDateTime.timeZoneID, "America/New_York");
+    }
+
+    /// <summary>
+    /// Tests creating a DFP DateTime from a Nodatime ZonedDateTime.
+    /// </summary>
+    [Test]
+    public void TestFromZonedDateTime() {
+      LocalDateTime dateTime = new LocalDateTime(2017, 1, 2, 3, 4, 5);
+      DateTimeZone myTz = DateTimeZoneProviders.Tzdb["America/New_York"];
+      ZonedDateTime zonedDateTime = myTz.AtStrictly(dateTime);
+      DateTime dfpDateTime = DateTimeUtilities.FromDateTime(zonedDateTime);
+
+      Assert.AreEqual(dfpDateTime.date.year, 2017);
+      Assert.AreEqual(dfpDateTime.date.month, 1);
+      Assert.AreEqual(dfpDateTime.date.day, 2);
+      Assert.AreEqual(dfpDateTime.hour, 3);
+      Assert.AreEqual(dfpDateTime.minute, 4);
+      Assert.AreEqual(dfpDateTime.second, 5);
       Assert.AreEqual(dfpDateTime.timeZoneID, "America/New_York");
     }
   }

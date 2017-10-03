@@ -137,16 +137,19 @@ namespace Google.Api.Ads.Common.Util {
     /// </summary>
     /// <param name="request">The request.</param>
     /// <param name="postBody">The post body.</param>
+    /// <param name="service">The service making this request.</param>
     /// <param name="logEntry">The log entry.</param>
     /// <param name="headersToMask">The headers to mask.</param>
     public static void WritePostBodyAndLog(WebRequest request, string postBody,
-        LogEntry logEntry, ISet<string> headersToMask) {
+        string service, LogEntry logEntry, ISet<string> headersToMask) {
       try {
         using (StreamWriter writer = new StreamWriter(request.GetRequestStream())) {
           writer.Write(postBody);
         }
       } finally {
-        logEntry.LogRequest(new RequestInfo(request, postBody), headersToMask);
+        logEntry.LogRequest(new RequestInfo(request, postBody) {
+          Service = service
+        }, headersToMask);
       }
     }
   }

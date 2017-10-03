@@ -16,6 +16,7 @@ using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Tests.Mocks;
 using NUnit.Framework;
+
 using System;
 using System.Net;
 
@@ -36,6 +37,11 @@ namespace Google.Api.Ads.Common.Tests.Logging {
     /// The TraceListener instance for testing this class.
     /// </summary>
     private MockTraceListener listener;
+
+    /// <summary>
+    /// The name of the service for testing purposes.
+    /// </summary>
+    readonly string TestServiceName = "TestService";
 
     /// <summary>
     /// Tears down the test case.
@@ -60,7 +66,8 @@ namespace Google.Api.Ads.Common.Tests.Logging {
         Body = Resources.XmlRequest,
         Headers = requestHeaders,
         Uri = new Uri("https://localhost"),
-        Method = "POST"
+        HttpMethod = "POST",
+        Service = TestServiceName
       };
 
       WebHeaderCollection responseHeaders = new WebHeaderCollection();
@@ -76,8 +83,11 @@ namespace Google.Api.Ads.Common.Tests.Logging {
       string actual = (ContextStore.GetValue("FormattedSoapLog").ToString())
           .Replace("\r\n", "\n").Trim();
       Assert.AreEqual(expected, actual);
-      Assert.AreEqual(Resources.ResponseLog.Replace("\r\n", "\n"),
-          ContextStore.GetValue("FormattedRequestLog").ToString().Replace("\r\n", "\n"));
+
+      expected = Resources.ResponseLog.Replace("\r\n", "\n").Trim();
+      actual = (ContextStore.GetValue("FormattedRequestLog").ToString())
+          .Replace("\r\n", "\n").Trim();
+      Assert.AreEqual(expected, actual);
     }
 
     /// <summary>

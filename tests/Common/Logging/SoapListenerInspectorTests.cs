@@ -47,6 +47,11 @@ namespace Google.Api.Ads.Common.Tests.Logging {
         MessageVersion.CreateVersion(EnvelopeVersion.Soap11);
 
     /// <summary>
+    /// The name of the service for testing purposes.
+    /// </summary>
+    readonly string TestServiceName = "TestService";
+
+    /// <summary>
     /// Initialize this test class instance.
     /// </summary>
     [SetUp]
@@ -65,7 +70,7 @@ namespace Google.Api.Ads.Common.Tests.Logging {
     [Test]
     public void TestMessageIsValidState() {
       SoapListenerInspector inspector = new SoapListenerInspector(
-        new MockAdsUser(new MockAppConfig()));
+        new MockAdsUser(new MockAppConfig()), TestServiceName);
       inspector.BeforeSendRequest(ref request, channel);
       inspector.AfterReceiveReply(ref response, channel);
       Assert.AreEqual(MessageState.Created, request.State);
@@ -80,7 +85,7 @@ namespace Google.Api.Ads.Common.Tests.Logging {
       MockAdsUser user = new MockAdsUser(new MockAppConfig());
       MockTraceListener listener = new MockTraceListener(user.Config);
       user.Listeners.Add(listener);
-      SoapListenerInspector inspector = new SoapListenerInspector(user);
+      SoapListenerInspector inspector = new SoapListenerInspector(user, TestServiceName);
 
       HttpRequestMessageProperty requestProperties = new HttpRequestMessageProperty();
       requestProperties.Headers.Add("Authorization", "Bearer 1234");
@@ -91,8 +96,9 @@ namespace Google.Api.Ads.Common.Tests.Logging {
       inspector.AfterReceiveReply(ref response, channel);
 
       Assert.AreEqual(requestProperties.Headers, listener.LastRequestInfo.Headers);
-      Assert.AreEqual(requestProperties.Method, listener.LastRequestInfo.Method);
+      Assert.AreEqual(requestProperties.Method, listener.LastRequestInfo.HttpMethod);
       Assert.AreEqual(request.ToString(), listener.LastRequestInfo.Body);
+      Assert.AreEqual(TestServiceName, listener.LastRequestInfo.Service);
     }
 
     /// <summary>
@@ -102,7 +108,7 @@ namespace Google.Api.Ads.Common.Tests.Logging {
     public void TestCorrectResponseInfo() {
       MockAdsUser user = new MockAdsUser(new MockAppConfig());
       MockTraceListener listener = (MockTraceListener)user.Listeners[0];
-      SoapListenerInspector inspector = new SoapListenerInspector(user);
+      SoapListenerInspector inspector = new SoapListenerInspector(user, TestServiceName);
 
       HttpResponseMessageProperty responseProperties = new HttpResponseMessageProperty();
       responseProperties.Headers.Add("X-TestHeader", "Hello World");

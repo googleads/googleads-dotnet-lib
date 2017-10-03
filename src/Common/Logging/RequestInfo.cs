@@ -24,22 +24,42 @@ namespace Google.Api.Ads.Common.Logging {
     /// <summary>
     /// The request URI.
     /// </summary>
-    private Uri uri;
+    public Uri Uri { get; set; }
 
     /// <summary>
     /// The HTTP request method.
     /// </summary>
-    private string method;
+    public string HttpMethod { get; set; }
 
     /// <summary>
     /// The HTTP request headers.
     /// </summary>
-    private WebHeaderCollection headers;
+    public WebHeaderCollection Headers { get; set; }
 
     /// <summary>
     /// The HTTP request body.
     /// </summary>
-    private string body;
+    public string Body { get; set; }
+
+    /// <summary>
+    /// The service being requested.
+    /// </summary>
+    public string Service { get; set; }
+
+    /// <summary>
+    /// The method being requested.
+    /// </summary>
+    public string Method { get; set; }
+
+    /// <summary>
+    /// The identifier associated with this request.
+    /// </summary>
+    public string IdentifierName { get; set; }
+
+    /// <summary>
+    /// The value of the identifier associated with this request.
+    /// </summary>
+    public string IdentifierValue { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="RequestInfo"/> class.
@@ -54,57 +74,9 @@ namespace Google.Api.Ads.Common.Logging {
     /// <param name="body">The HTTP request body.</param>
     public RequestInfo(WebRequest request, string body) {
       this.Uri = request.RequestUri;
-      this.Method = request.Method;
+      this.HttpMethod = request.Method;
       this.Headers = request.Headers;
-      this.body = body;
-    }
-
-    /// <summary>
-    /// Gets or sets the request URI.
-    /// </summary>
-    public Uri Uri {
-      get {
-        return uri;
-      }
-      set {
-        uri = value;
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the HTTP method.
-    /// </summary>
-    public string Method {
-      get {
-        return method;
-      }
-      set {
-        method = value;
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the HTTP request headers.
-    /// </summary>
-    public WebHeaderCollection Headers {
-      get {
-        return headers;
-      }
-      set {
-        headers = value;
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets HTTP request body.
-    /// </summary>
-    public string Body {
-      get {
-        return body;
-      }
-      set {
-        body = value;
-      }
+      this.Body = body;
     }
   }
 }

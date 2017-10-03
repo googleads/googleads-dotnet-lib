@@ -216,11 +216,11 @@ namespace Google.Api.Ads.Common.Lib {
         response = request.GetResponse();
 
         string contents = MediaUtilities.GetStreamContentsAsString(response.GetResponseStream());
-        logEntry.LogResponse(new ResponseInfo(response, contents), false);
+        logEntry.LogResponse(new ResponseInfo(response, contents));
         logEntry.Flush();
       } catch (WebException e) {
         string contents = HttpUtilities.GetErrorResponseBody(e);
-        logEntry.LogResponse(new ResponseInfo(response, contents), true);
+        logEntry.LogResponse(new ResponseInfo(response, "") { ErrorMessage = contents });
         logEntry.Flush();
 
         throw new AdsOAuthException("Failed to revoke refresh token.\n" + contents, e);

@@ -335,11 +335,11 @@ namespace Google.Api.Ads.Common.Lib {
       WebResponse response = null;
 
       try {
-        HttpUtilities.WritePostBodyAndLog(request, body, logEntry, REQUEST_HEADERS_TO_MASK);
+        HttpUtilities.WritePostBodyAndLog(request, body, "", logEntry, REQUEST_HEADERS_TO_MASK);
         response = request.GetResponse();
 
         string contents = MediaUtilities.GetStreamContentsAsString(response.GetResponseStream());
-        logEntry.LogResponse(new ResponseInfo(response, contents), false, RESPONSE_FIELDS_TO_MASK,
+        logEntry.LogResponse(new ResponseInfo(response, contents), RESPONSE_FIELDS_TO_MASK,
             new JsonBodyFormatter());
         logEntry.Flush();
 
@@ -359,8 +359,8 @@ namespace Google.Api.Ads.Common.Lib {
         }
       } catch (WebException e) {
         string contents = HttpUtilities.GetErrorResponseBody(e);
-        logEntry.LogResponse(new ResponseInfo(response, contents), true, RESPONSE_FIELDS_TO_MASK,
-            new JsonBodyFormatter());
+        logEntry.LogResponse(new ResponseInfo(response, "") { ErrorMessage = contents },
+            RESPONSE_FIELDS_TO_MASK, new JsonBodyFormatter());
         logEntry.Flush();
 
         throw new ApplicationException(contents, e);

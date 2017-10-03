@@ -122,7 +122,7 @@
     <value>Resources\certificate.p12;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ResponseLog" xml:space="preserve">
-    <value>host=localhost,url=/,,Result=Success</value>
+    <value>Request made: Host: localhost, Service: TestService, Method: get, : , Request ID: 0004bf2e364aeb380ae752d50000576f, ResponseTime(ms): 1665, OperationsCount: 8, IsFault: False, FaultMessage:</value>
   </data>
   <data name="SoapLog" xml:space="preserve">
     <value>-----------------BEGIN API CALL---------------------
@@ -167,6 +167,7 @@ TestResponseKey: TestResponseValue
 TimeStamp: Mon, 03 Nov 2014 12:25:30 GMT
 
 
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;soap:Header&gt;
     &lt;ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201109"&gt;
@@ -364,7 +365,8 @@ TimeStamp: Mon, 03 Nov 2014 12:25:30 GMT
 &lt;/soap:Envelope&gt;</value>
   </data>
   <data name="XmlResponse" xml:space="preserve">
-    <value>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;soap:Header&gt;
     &lt;ResponseHeader xmlns="https://adwords.google.com/api/adwords/cm/v201109"&gt;
       &lt;requestId&gt;0004bf2e364aeb380ae752d50000576f&lt;/requestId&gt;

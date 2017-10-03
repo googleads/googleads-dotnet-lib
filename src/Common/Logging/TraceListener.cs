@@ -14,8 +14,9 @@
 
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util;
+
 using System.Collections.Generic;
-using System.Net;
+using System.Xml;
 
 namespace Google.Api.Ads.Common.Logging {
 
@@ -102,11 +103,12 @@ namespace Google.Api.Ads.Common.Logging {
     /// <param name="response">The response information.</param>
     private void PerformLogging(RequestInfo request, ResponseInfo response) {
       LogEntry logEntry = new LogEntry(config, dateTimeProvider, TraceWriter);
-      logEntry.LogRequestDetails(request, GetFieldsToMask(), new SoapTraceFormatter());
-      logEntry.LogResponseDetails(response, new HashSet<string>(), new DefaultBodyFormatter());
-      logEntry.LogRequestSummary(request, GetSummaryRequestLogs(request.Body));
-      logEntry.LogResponseSummary(response.StatusCode == HttpStatusCode.InternalServerError,
-          GetSummaryResponseLogs(response.Body));
+
+      PopulateRequestInfo(ref request);
+      logEntry.LogRequest(request, GetFieldsToMask(), new SoapTraceFormatter());
+
+      PopulateResponseInfo(ref response);
+      logEntry.LogResponse(response, GetFieldsToMask(), new SoapTraceFormatter());
       logEntry.Flush();
 
       ContextStore.AddKey("FormattedSoapLog", logEntry.DetailedLog);
@@ -120,20 +122,68 @@ namespace Google.Api.Ads.Common.Logging {
     protected abstract ISet<string> GetFieldsToMask();
 
     /// <summary>
-    /// Gets the summary request logs.
+    /// Parses the body of the request and populates fields in the request info.
     /// </summary>
-    /// <param name="soapRequest">The request xml for this SOAP call.</param>
-    /// <returns>The summary request logs.</returns>
-    protected virtual string GetSummaryRequestLogs(string soapRequest) {
-      return "";
+    /// <param name="info">The request info for this SOAP call.</param>
+    protected virtual void PopulateRequestInfo(ref RequestInfo info) {
+      XmlDocument xDoc = XmlUtilities.CreateDocument(info.Body);
+      XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
+      xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
+
+      // Retrieve method.
+      XmlNode methodNode = xDoc.SelectSingleNode("soap:Envelope/soap:Body/*", xmlns);
+      if (methodNode != null) {
+        info.Method = methodNode.Name;
+      }
     }
 
     /// <summary>
-    /// Gets the summary response logs.
+    /// Parses the body of the response and populates fields in the repsonse info.
     /// </summary>
-    /// <param name="soapResponse">The response xml for this SOAP call.</param>
-    /// <returns>The summary response logs.</returns>
-    protected virtual string GetSummaryResponseLogs(string soapResponse) {
+    /// <param name="info">The response info for this SOAP call.</param>
+    protected virtual void PopulateResponseInfo(ref ResponseInfo info) {
+      XmlDocument xDoc = XmlUtilities.CreateDocument(info.Body);
+      XmlNamespaceManager xmlns = new XmlNamespaceManager(xDoc.NameTable);
+      xmlns.AddNamespace("soap", "http://schemas.xmlsoap.org/soap/envelope/");
+
+      // Retrieve loggable headers.
+      XmlNode headerNode = xDoc.SelectSingleNode("soap:Envelope/soap:Header/*", xmlns);
+      if (headerNode != null && headerNode.Name == "ResponseHeader") {
+        info.RequestId = RetrieveLoggableHeader(headerNode, "requestId");
+
+        long operations;
+        if (long.TryParse(RetrieveLoggableHeader(headerNode, "operations"), out operations)) {
+          info.OperationCount = operations;
+        }
+
+        long responseTime;
+        if (long.TryParse(RetrieveLoggableHeader(headerNode, "responseTime"), out responseTime)) {
+          info.ResponseTimeMs = responseTime;
+        }
+      }
+
+      //Retrieve fault string (if one exists).
+      XmlNode faultNode =
+          xDoc.SelectSingleNode("soap:Envelope/soap:Body/soap:Fault/faultstring", xmlns);
+      if (faultNode != null) {
+        info.ErrorMessage = faultNode.InnerText;
+      }
+    }
+
+    /// <summary>
+    /// Returns a string containing the specified loggable headers, retrieved from the specified
+    /// header XML node.
+    /// </summary>
+    /// <param name="headerNode">An XML node containing loggable headers.</param>
+    /// <param name="loggableHeader">The loggable header to retrieve.</param>
+    /// <returns>A string containing the specified loggable headers.</returns>
+    private string RetrieveLoggableHeader(XmlNode headerNode, string loggableHeader) {
+      string xPath = string.Format("descendant::*[local-name()='{0}']", loggableHeader);
+      XmlNode childHeaderNode = headerNode.SelectSingleNode(xPath);
+      if (childHeaderNode != null) {
+        return childHeaderNode.InnerText;
+      }
+
       return "";
     }
   }

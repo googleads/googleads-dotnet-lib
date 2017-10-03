@@ -23,17 +23,37 @@ namespace Google.Api.Ads.Common.Logging {
     /// <summary>
     /// The HTTP response headers.
     /// </summary>
-    private WebHeaderCollection headers;
+    public WebHeaderCollection Headers { get; set; }
 
     /// <summary>
     /// The HTTP response body.
     /// </summary>
-    private string body;
+    public string Body { get; set; }
 
     /// <summary>
     /// The HTTP status code of the response.
     /// </summary>
     public HttpStatusCode StatusCode { get; set; }
+
+    /// <summary>
+    /// The ID of the preceeding request.
+    /// </summary>
+    public string RequestId { get; set; }
+
+    /// <summary>
+    /// The count of operations included in the preceeding request.
+    /// </summary>
+    public long OperationCount { get; set; }
+
+    /// <summary>
+    /// The response time in milliseconds.
+    /// </summary>
+    public long ResponseTimeMs { get; set; }
+
+    /// <summary>
+    /// The error message associated with this response.
+    /// </summary>
+    public string ErrorMessage { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ResponseInfo"/> class.
@@ -49,30 +69,6 @@ namespace Google.Api.Ads.Common.Logging {
     public ResponseInfo(WebResponse response, string body) {
       this.Headers = response != null ? response.Headers : new WebHeaderCollection();
       this.Body = body;
-    }
-
-    /// <summary>
-    /// Gets or sets the HTTP response headers.
-    /// </summary>
-    public WebHeaderCollection Headers {
-      get {
-        return headers;
-      }
-      set {
-        headers = value;
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the HTTP response body.
-    /// </summary>
-    public string Body {
-      get {
-        return body;
-      }
-      set {
-        body = value;
-      }
     }
   }
 }

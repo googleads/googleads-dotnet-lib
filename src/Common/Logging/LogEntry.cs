@@ -14,12 +14,12 @@
 
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util;
-
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Globalization;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 
 namespace Google.Api.Ads.Common.Logging {
@@ -50,20 +50,29 @@ namespace Google.Api.Ads.Common.Logging {
     internal ITraceWriter TraceWriter { get; set; }
 
     /// <summary>
-    /// Gets or sets the summary request log.
+    /// Gets or sets the request info.
     /// </summary>
-    public string SummaryRequestLog {
-      get;
-      private set;
-    }
+    private RequestInfo requestInfo;
 
     /// <summary>
-    /// Gets or sets the summary response log.
+    /// Gets or sets the response info.
     /// </summary>
-    public string SummaryResponseLog {
-      get;
-      private set;
-    }
+    private ResponseInfo responseInfo;
+
+    /// <summary>
+    /// The max length of a summary log error message.
+    /// </summary>
+    private const int MAX_SUMMARY_ERROR_LENGTH = 16000;
+
+    /// <summary>
+    /// The string to use when truncating a summary log error.
+    /// </summary>
+    private const string ELLIPSIS = "...";
+
+    /// <summary>
+    /// A regular expression used to find newlines.
+    /// </summary>
+    private static readonly Regex NEWLINE_REGEX = new Regex("\\n", RegexOptions.Compiled);
 
     /// <summary>
     /// Gets or sets the detailed request log.
@@ -95,7 +104,14 @@ namespace Google.Api.Ads.Common.Logging {
     /// </summary>
     public string SummaryLog {
       get {
-        return this.SummaryRequestLog + "," + this.SummaryResponseLog;
+        return string.Format(CultureInfo.InvariantCulture,
+            "Request made: "
+                + "Host: {0}, Service: {1}, Method: {2}, {3}: {4}, Request ID: {5}, "
+                + "ResponseTime(ms): {6}, OperationsCount: {7}, IsFault: {8}, FaultMessage: {9}",
+            requestInfo.Uri.Host, requestInfo.Service, requestInfo.Method,
+            requestInfo.IdentifierName, requestInfo.IdentifierValue, responseInfo.RequestId,
+            responseInfo.ResponseTimeMs, responseInfo.OperationCount,
+            this.isFailure, TruncateErrorMessage(responseInfo.ErrorMessage));
       }
     }
 
@@ -127,8 +143,8 @@ namespace Google.Api.Ads.Common.Logging {
     /// <param name="requestInfo">The request information.</param>
     /// <param name="headersToMask">The headers to mask.</param>
     public void LogRequest(RequestInfo requestInfo, ISet<string> headersToMask) {
-      LogRequest(requestInfo, headersToMask,
-          GetTraceFormatterForHTTPRequests(config.MaskCredentials));
+      TraceFormatter formatter = GetTraceFormatterForHTTPRequests(config.MaskCredentials);
+      LogRequest(requestInfo, headersToMask, formatter);
     }
 
     /// <summary>
@@ -141,84 +157,30 @@ namespace Google.Api.Ads.Common.Logging {
     /// <returns>The request logs</returns>
     public void LogRequest(RequestInfo requestInfo, ISet<string> headersToMask,
         TraceFormatter formatter) {
-      LogRequestSummary(requestInfo, headersToMask, formatter);
-      LogRequestDetails(requestInfo, headersToMask, formatter);
-    }
-
-    /// <summary>
-    /// Logs the details of an HTTP request.
-    /// </summary>
-    /// <param name="requestInfo">The request information.</param>
-    /// <param name="headersToMask">The headers to mask.</param>
-    /// <param name="formatter">The <see cref="TraceFormatter"/> to use when
-    /// formatting the message.</param>
-    public void LogRequestDetails(RequestInfo requestInfo, ISet<string> headersToMask,
-        TraceFormatter formatter) {
-      this.DetailedRequestLog = GetFormattedRequestLog(requestInfo,
-          headersToMask, formatter);
-    }
-
-    /// <summary>
-    /// Logs the summary of an HTTP request.
-    /// </summary>
-    /// <param name="requestInfo">The request information.</param>
-    /// <param name="requestSummary">The formatted request summary.</param>
-    public void LogRequestSummary(RequestInfo requestInfo, string requestSummary) {
-      this.SummaryRequestLog = string.Format(CultureInfo.InvariantCulture,
-          "host={0},url={1},{2}", requestInfo.Uri.Host, requestInfo.Uri.AbsolutePath,
-          requestSummary);
-    }
-
-    /// <summary>
-    /// Logs the summary of an HTTP request.
-    /// </summary>
-    /// <param name="requestInfo">The request information.</param>
-    /// <param name="headersToMask">The headers to mask.</param>
-    /// <param name="formatter">The <see cref="TraceFormatter"/> to use when
-    /// formatting the message.</param>
-    public void LogRequestSummary(RequestInfo requestInfo, ISet<string> headersToMask,
-        TraceFormatter formatter) {
-      LogRequestSummary(requestInfo, 
-          GetRequestSummary(requestInfo.Headers, requestInfo.Body, headersToMask, formatter));
+      this.requestInfo = requestInfo;
+      this.DetailedRequestLog = GetFormattedRequestLog(requestInfo, headersToMask, formatter);
     }
 
     /// <summary>
     /// Logs an HTTP response.
     /// </summary>
     /// <param name="responseInfo">The response information.</param>
-    /// <param name="isFailure">True, if this is a failed response, false
-    /// otherwise.</param>
-    public void LogResponse(ResponseInfo responseInfo, bool isFailure) {
-      LogResponse(responseInfo, isFailure, new HashSet<string>(),
-          new DefaultBodyFormatter());
+    public void LogResponse(ResponseInfo responseInfo) {
+      LogResponse(responseInfo, new HashSet<string>(), new DefaultBodyFormatter());
     }
 
     /// <summary>
     /// Logs an HTTP response.
     /// </summary>
     /// <param name="responseInfo">The response information.</param>
-    /// <param name="isFailure">True, if this is a failed response, false
-    /// otherwise.</param>
     /// <param name="fieldsToMask">The list of fields to mask.</param>
     /// <param name="formatter">The formatter to be used for formatting the
     /// response logs.</param>
-    public void LogResponse(ResponseInfo responseInfo, bool isFailure,
-        ISet<string> fieldsToMask, TraceFormatter formatter) {
-      LogResponseSummary(isFailure, "");
+    public void LogResponse(ResponseInfo responseInfo, ISet<string> fieldsToMask,
+        TraceFormatter formatter) {
+      this.responseInfo = responseInfo;
+      this.isFailure = !string.IsNullOrEmpty(responseInfo.ErrorMessage);
       LogResponseDetails(responseInfo, fieldsToMask, formatter);
-    }
-
-    /// <summary>
-    /// Logs the summary of an HTTP response..
-    /// </summary>
-    /// <param name="isFailure">True, if this is a failed response, false
-    /// otherwise.</param>
-    /// <param name="formattedMessage">Any additional details to be appended to the
-    /// response logs.</param>
-    public void LogResponseSummary(bool isFailure, string formattedMessage) {
-      this.isFailure = isFailure;
-      this.SummaryResponseLog = string.Format("Result={0},{1}", isFailure ? "Failure" : "Success",
-          formattedMessage).TrimEnd(',');
     }
 
     /// <summary>
@@ -262,7 +224,7 @@ namespace Google.Api.Ads.Common.Logging {
 
       StringBuilder headerBuilder = new StringBuilder();
 
-      headerBuilder.AppendFormat("{0} {1}\r\n", requestInfo.Method, requestInfo.Uri.AbsolutePath);
+      headerBuilder.AppendFormat("{0} {1}\r\n", requestInfo.HttpMethod, requestInfo.Uri.AbsolutePath);
       headerBuilder.AppendFormat("{0}", GetFormattedHttpHeaderLogs(MaskHeaders(
           requestInfo.Headers, headersToMask), "\r\n"));
       builder.AppendFormat("{0}\r\n\r\n{1}\r\n", headerBuilder.ToString(),
@@ -376,6 +338,27 @@ namespace Google.Api.Ads.Common.Logging {
     /// <returns>The current timestamp.</returns>
     private string GetTimeStamp() {
       return dateTimeProvider.Now.ToString("R");
+    }
+
+    /// <summary>
+    /// Truncates an error message for display, if necessary.
+    /// </summary>
+    /// <param name="errorMessage">The error message to be displayed.</param>
+    /// <returns>An error message suitable for display, possibly truncated.</returns>
+    private string TruncateErrorMessage(string errorMessage) {
+      if (string.IsNullOrEmpty(errorMessage)) {
+        return null;
+      }
+
+      string truncatedMessage = NEWLINE_REGEX.Replace(errorMessage, " ");
+      if (truncatedMessage.Length > MAX_SUMMARY_ERROR_LENGTH) {
+        truncatedMessage = new StringBuilder(MAX_SUMMARY_ERROR_LENGTH)
+            .Append(truncatedMessage.Substring(0, MAX_SUMMARY_ERROR_LENGTH - ELLIPSIS.Length))
+            .Append(ELLIPSIS)
+            .ToString();
+      }
+
+      return truncatedMessage;
     }
   }
 }

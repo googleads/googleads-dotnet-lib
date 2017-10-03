@@ -1,3 +1,15 @@
+22.2.0
+======
+AdWords:
+  - Removed support for v201609.
+
+DFP:
+  - Added NodaTime support in DateTimeUtilities.
+
+Common:
+  - Changes to logging implementation. By default the library logs to Console.Error instead of a
+  file.
+
 22.1.1
 ======
 AdWords:

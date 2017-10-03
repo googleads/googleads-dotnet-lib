@@ -91,7 +91,7 @@ namespace Google.Api.Ads.AdWords.Lib {
         RequestHeader = clonedHeader,
         User = (AdWordsUser) user,
       });
-      inspectorBehavior.Add(new SoapListenerInspector(user));
+      inspectorBehavior.Add(new SoapListenerInspector(user, awapiSignature.ServiceName));
       inspectorBehavior.Add(new SoapFaultInspector<AdWordsApiException>() {
         ErrorType = awapiSignature.ServiceType.Assembly.GetType(
           awapiSignature.ServiceType.Namespace + ".ApiException")
