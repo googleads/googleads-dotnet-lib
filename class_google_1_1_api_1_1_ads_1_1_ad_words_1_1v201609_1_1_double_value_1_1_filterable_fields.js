@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_double_value_1_1_filterable_fields =
-[
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_double_value_1_1_filterable_fields.html#acd7097301d52e70f71782a8e9325a907", null ]
-];

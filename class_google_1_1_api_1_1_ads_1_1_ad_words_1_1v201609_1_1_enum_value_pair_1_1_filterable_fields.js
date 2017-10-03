@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_enum_value_pair_1_1_filterable_fields =
-[
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_enum_value_pair_1_1_filterable_fields.html#a3274e5bb9d78d7384f9aba3806faff61", null ]
-];

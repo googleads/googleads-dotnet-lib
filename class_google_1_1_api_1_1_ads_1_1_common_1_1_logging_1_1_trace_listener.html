@@ -148,12 +148,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:afe7e1ab332b133244e0d37d067f6ecc8"><td class="memItemLeft" align="right" valign="top">abstract ISet&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_trace_listener.html#afe7e1ab332b133244e0d37d067f6ecc8">GetFieldsToMask</a> ()</td></tr>
 <tr class="memdesc:afe7e1ab332b133244e0d37d067f6ecc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list of fields to be masked in xml logs.  <a href="#afe7e1ab332b133244e0d37d067f6ecc8">More...</a><br/></td></tr>
 <tr class="separator:afe7e1ab332b133244e0d37d067f6ecc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bef6a9192e5000838d4577ab3ab5678"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_trace_listener.html#a8bef6a9192e5000838d4577ab3ab5678">GetSummaryRequestLogs</a> (string soapRequest)</td></tr>
-<tr class="memdesc:a8bef6a9192e5000838d4577ab3ab5678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the summary request logs.  <a href="#a8bef6a9192e5000838d4577ab3ab5678">More...</a><br/></td></tr>
-<tr class="separator:a8bef6a9192e5000838d4577ab3ab5678"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa15c0977b8b3291bd4622b10fec21ef"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_trace_listener.html#afa15c0977b8b3291bd4622b10fec21ef">GetSummaryResponseLogs</a> (string soapResponse)</td></tr>
-<tr class="memdesc:afa15c0977b8b3291bd4622b10fec21ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the summary response logs.  <a href="#afa15c0977b8b3291bd4622b10fec21ef">More...</a><br/></td></tr>
-<tr class="separator:afa15c0977b8b3291bd4622b10fec21ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affba5f895ca1589d83a23900e31abd1f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_trace_listener.html#affba5f895ca1589d83a23900e31abd1f">PopulateRequestInfo</a> (ref <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_request_info.html">RequestInfo</a> info)</td></tr>
+<tr class="memdesc:affba5f895ca1589d83a23900e31abd1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the body of the request and populates fields in the request info.  <a href="#affba5f895ca1589d83a23900e31abd1f">More...</a><br/></td></tr>
+<tr class="separator:affba5f895ca1589d83a23900e31abd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77f10702e4834f1bec1b1bfcc798540a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_trace_listener.html#a77f10702e4834f1bec1b1bfcc798540a">PopulateResponseInfo</a> (ref <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_response_info.html">ResponseInfo</a> info)</td></tr>
+<tr class="memdesc:a77f10702e4834f1bec1b1bfcc798540a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the body of the response and populates fields in the repsonse info.  <a href="#a77f10702e4834f1bec1b1bfcc798540a">More...</a><br/></td></tr>
+<tr class="separator:a77f10702e4834f1bec1b1bfcc798540a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -255,77 +255,7 @@ Properties</h2></td></tr>
 <p>Gets a list of fields to be masked in xml logs. </p>
 <dl class="section return"><dt>Returns</dt><dd>The list of fields to be masked.</dd></dl>
 
-<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_trace_listener.html#a5372302d628a75d14690b6aecb10a4c2">Google.Api.Ads.AdWords.Lib.AdWordsTraceListener</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_trace_listener.html#a8a4249c0f944e443a999999f3a039d39">Google.Api.Ads.Dfp.Lib.DfpTraceListener</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8bef6a9192e5000838d4577ab3ab5678"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual string Google.Api.Ads.Common.Logging.TraceListener.GetSummaryRequestLogs </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>soapRequest</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the summary request logs. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">soapRequest</td><td>The request xml for this SOAP call.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The summary request logs.</dd></dl>
-
-<p>Reimplemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_trace_listener.html#af1e0f3c24d8f63d4323b4fb623e3c9bb">Google.Api.Ads.Dfp.Lib.DfpTraceListener</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_trace_listener.html#a11e96777b48a9747c5c097e03fc26f9d">Google.Api.Ads.AdWords.Lib.AdWordsTraceListener</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afa15c0977b8b3291bd4622b10fec21ef"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual string Google.Api.Ads.Common.Logging.TraceListener.GetSummaryResponseLogs </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>soapResponse</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the summary response logs. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">soapResponse</td><td>The response xml for this SOAP call.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The summary response logs.</dd></dl>
-
-<p>Reimplemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_trace_listener.html#a9acd366182fe7c287b04675571b8af66">Google.Api.Ads.AdWords.Lib.AdWordsTraceListener</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_trace_listener.html#a746394e50258ef77c7c73e8e1fa07e88">Google.Api.Ads.Dfp.Lib.DfpTraceListener</a>.</p>
+<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_trace_listener.html#a8a4249c0f944e443a999999f3a039d39">Google.Api.Ads.Dfp.Lib.DfpTraceListener</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_trace_listener.html#a5372302d628a75d14690b6aecb10a4c2">Google.Api.Ads.AdWords.Lib.AdWordsTraceListener</a>.</p>
 
 </div>
 </div>
@@ -401,6 +331,72 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="affba5f895ca1589d83a23900e31abd1f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Google.Api.Ads.Common.Logging.TraceListener.PopulateRequestInfo </td>
+          <td>(</td>
+          <td class="paramtype">ref <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_request_info.html">RequestInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parses the body of the request and populates fields in the request info. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>The request info for this SOAP call.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_trace_listener.html#a696a9f5901b814ffceddb61833f649e0">Google.Api.Ads.Dfp.Lib.DfpTraceListener</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_trace_listener.html#a2029fb9f621ab9342d325f87645b0c00">Google.Api.Ads.AdWords.Lib.AdWordsTraceListener</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a77f10702e4834f1bec1b1bfcc798540a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Google.Api.Ads.Common.Logging.TraceListener.PopulateResponseInfo </td>
+          <td>(</td>
+          <td class="paramtype">ref <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_response_info.html">ResponseInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parses the body of the response and populates fields in the repsonse info. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>The response info for this SOAP call.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="aea6df91ca5111502b74b4a1c8f988c88"></a>
 <div class="memitem">
@@ -447,7 +443,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/home/cseeley/tmp/tmp.5z7a52x0o9/dist/github/src/Common/Logging/<a class="el" href="_trace_listener_8cs.html">TraceListener.cs</a></li>
+<li>/usr/local/google/users/cseeley/tmp/tmp.3J9JaahViC/dist/github/src/Common/Logging/<a class="el" href="_trace_listener_8cs.html">TraceListener.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -455,7 +451,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common.html">Common</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common_1_1_logging.html">Logging</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_trace_listener.html">TraceListener</a></li>
-    <li class="footer">Generated on Thu Aug 24 2017 19:10:04 for Ads API .NET library by
+    <li class="footer">Generated on Tue Oct 3 2017 16:48:32 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

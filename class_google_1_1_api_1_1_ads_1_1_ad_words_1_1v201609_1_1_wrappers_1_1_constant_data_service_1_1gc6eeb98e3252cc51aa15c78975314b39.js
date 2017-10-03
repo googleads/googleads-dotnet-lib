@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_constant_data_service_1_1gc6eeb98e3252cc51aa15c78975314b39 =
-[
-    [ "getOperatingSystemVersionCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_constant_data_service_1_1gc6eeb98e3252cc51aa15c78975314b39.html#ae37ca98b364f708c3184efa1f26862e0", null ],
-    [ "getOperatingSystemVersionCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_constant_data_service_1_1gc6eeb98e3252cc51aa15c78975314b39.html#a3b3a2ea3ba461b27fe174e326a843a1c", null ],
-    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_constant_data_service_1_1gc6eeb98e3252cc51aa15c78975314b39.html#a519026ea7bdeaafadb3dda6eb294749a", null ]
-];

@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201609_1_1_parallel_repor83932c51b99101edbff6b6b33096e3a1 =
-[
-    [ "CustomerId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201609_1_1_parallel_repor83932c51b99101edbff6b6b33096e3a1.html#aac78ae9a806831894346f737b520e1f9", null ],
-    [ "Path", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201609_1_1_parallel_repor83932c51b99101edbff6b6b33096e3a1.html#a5f210290efca330a8811c80b14fea72a", null ]
-];

@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_budget_order_service_1_1get_billing_accounts_request =
-[
-    [ "getBillingAccountsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_budget_order_service_1_1get_billing_accounts_request.html#a163f401d3df28f95d0592236049b4221", null ]
-];

@@ -122,6 +122,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aab0ad7b5a302f896ce3d3ec22dbb3e0b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="v201611_2_date_time_utilities_8cs.html#a7816f024b8063815ef64ea0162635f5c">DfpDateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201705_1_1_date_time_utilities.html#aab0ad7b5a302f896ce3d3ec22dbb3e0b">FromDateTime</a> (<a class="el" href="v201708_2_publisher_query_language_service_2_get_recent_changes_8cs.html#a689b0ce6b3682a09a54fc6aa85c0644d">System.DateTime</a> dateTime, string timeZoneId)</td></tr>
 <tr class="memdesc:aab0ad7b5a302f896ce3d3ec22dbb3e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a System.DateTime object to a <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a> DateTime object with the specified timeZoneId. Does not perform time zone conversion. This means the returned DateTime value may not represent the same instant as the System.DateTime value.  <a href="#aab0ad7b5a302f896ce3d3ec22dbb3e0b">More...</a><br/></td></tr>
 <tr class="separator:aab0ad7b5a302f896ce3d3ec22dbb3e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7594bd569d828be7ad6da3b34bf6b19"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="v201611_2_date_time_utilities_8cs.html#a7816f024b8063815ef64ea0162635f5c">DfpDateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201705_1_1_date_time_utilities.html#ab7594bd569d828be7ad6da3b34bf6b19">FromDateTime</a> (ZonedDateTime dateTime)</td></tr>
+<tr class="memdesc:ab7594bd569d828be7ad6da3b34bf6b19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a NodaTime.ZonedDateTime object to a <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a> DateTime object with its intrinsic timezone.  <a href="#ab7594bd569d828be7ad6da3b34bf6b19">More...</a><br/></td></tr>
+<tr class="separator:ab7594bd569d828be7ad6da3b34bf6b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A utility class that allows you to build Datetime objects from strings. </p>
@@ -172,6 +175,39 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab7594bd569d828be7ad6da3b34bf6b19"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="v201611_2_date_time_utilities_8cs.html#a7816f024b8063815ef64ea0162635f5c">DfpDateTime</a> Google.Api.Ads.Dfp.Util.v201705.DateTimeUtilities.FromDateTime </td>
+          <td>(</td>
+          <td class="paramtype">ZonedDateTime&#160;</td>
+          <td class="paramname"><em>dateTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts a NodaTime.ZonedDateTime object to a <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a> DateTime object with its intrinsic timezone. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dateTime</td><td>The ZonedDateTime object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a> Datetime object.</dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a812dca6f3a427c10501213303c4e1d94"></a>
 <div class="memitem">
 <div class="memproto">
@@ -217,7 +253,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/home/cseeley/tmp/tmp.5z7a52x0o9/dist/github/src/Dfp/Util/v201705/<a class="el" href="v201705_2_date_time_utilities_8cs.html">DateTimeUtilities.cs</a></li>
+<li>/usr/local/google/users/cseeley/tmp/tmp.3J9JaahViC/dist/github/src/Dfp/Util/v201705/<a class="el" href="v201705_2_date_time_utilities_8cs.html">DateTimeUtilities.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -225,7 +261,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1_util.html">Util</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201705.html">v201705</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201705_1_1_date_time_utilities.html">DateTimeUtilities</a></li>
-    <li class="footer">Generated on Thu Aug 24 2017 19:10:10 for Ads API .NET library by
+    <li class="footer">Generated on Tue Oct 3 2017 16:48:38 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

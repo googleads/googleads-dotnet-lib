@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_constant_data_service_1_1get_age_range_criterion_response =
-[
-    [ "getAgeRangeCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_constant_data_service_1_1get_age_range_criterion_response.html#aedecd95c50d2e27ad0dc7fe6e5e09782", null ],
-    [ "getAgeRangeCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_constant_data_service_1_1get_age_range_criterion_response.html#a7e5d9756751ba390ae207f95f106fe96", null ],
-    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_constant_data_service_1_1get_age_range_criterion_response.html#a4c9a0f09fd19aaa41244384197165f6d", null ]
-];

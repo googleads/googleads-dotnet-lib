@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_constant_data_service_1_1get_carrier_criterion_request =
-[
-    [ "getCarrierCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_constant_data_service_1_1get_carrier_criterion_request.html#a5a87d59f603488cb2e39efdecc919e1d", null ]
-];

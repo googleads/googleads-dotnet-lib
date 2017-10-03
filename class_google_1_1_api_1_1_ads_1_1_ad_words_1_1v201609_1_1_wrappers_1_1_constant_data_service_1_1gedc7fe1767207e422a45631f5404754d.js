@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_constant_data_service_1_1gedc7fe1767207e422a45631f5404754d =
-[
-    [ "getMobileAppCategoryCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_constant_data_service_1_1gedc7fe1767207e422a45631f5404754d.html#aa0e8f8e1908231aec929291e55300df3", null ],
-    [ "getMobileAppCategoryCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_constant_data_service_1_1gedc7fe1767207e422a45631f5404754d.html#aaff9c50cb56d4bc1041c354865f7cfcf", null ],
-    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201609_1_1_wrappers_1_1_constant_data_service_1_1gedc7fe1767207e422a45631f5404754d.html#a07ef8fc7c8d053a74545e7ed63c4ba5b", null ]
-];

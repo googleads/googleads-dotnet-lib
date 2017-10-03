@@ -125,9 +125,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a029d513375235bdcaeb3421f25af5d32"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_http_utilities.html#a029d513375235bdcaeb3421f25af5d32">GetErrorResponseBody</a> (WebException e)</td></tr>
 <tr class="memdesc:a029d513375235bdcaeb3421f25af5d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the error response body.  <a href="#a029d513375235bdcaeb3421f25af5d32">More...</a><br/></td></tr>
 <tr class="separator:a029d513375235bdcaeb3421f25af5d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa26baedecb928d56a100fa1f8fca5cc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_http_utilities.html#afa26baedecb928d56a100fa1f8fca5cc">WritePostBodyAndLog</a> (WebRequest request, string postBody, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_log_entry.html">LogEntry</a> logEntry, ISet&lt; string &gt; headersToMask)</td></tr>
-<tr class="memdesc:afa26baedecb928d56a100fa1f8fca5cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to write a post body and log the request.  <a href="#afa26baedecb928d56a100fa1f8fca5cc">More...</a><br/></td></tr>
-<tr class="separator:afa26baedecb928d56a100fa1f8fca5cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb74542cd9a874c1213e61a1ba00c40e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_http_utilities.html#adb74542cd9a874c1213e61a1ba00c40e">WritePostBodyAndLog</a> (WebRequest request, string postBody, string service, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_log_entry.html">LogEntry</a> logEntry, ISet&lt; string &gt; headersToMask)</td></tr>
+<tr class="memdesc:adb74542cd9a874c1213e61a1ba00c40e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to write a post body and log the request.  <a href="#adb74542cd9a874c1213e61a1ba00c40e">More...</a><br/></td></tr>
+<tr class="separator:adb74542cd9a874c1213e61a1ba00c40e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Utility class for various HTTP tasks. </p>
@@ -288,7 +288,7 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afa26baedecb928d56a100fa1f8fca5cc"></a>
+<a class="anchor" id="adb74542cd9a874c1213e61a1ba00c40e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -306,6 +306,12 @@ Static Public Member Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>postBody</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>service</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -337,6 +343,7 @@ Static Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">request</td><td>The request.</td></tr>
     <tr><td class="paramname">postBody</td><td>The post body.</td></tr>
+    <tr><td class="paramname">service</td><td>The service making this request.</td></tr>
     <tr><td class="paramname">logEntry</td><td>The log entry.</td></tr>
     <tr><td class="paramname">headersToMask</td><td>The headers to mask.</td></tr>
   </table>
@@ -346,7 +353,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/home/cseeley/tmp/tmp.5z7a52x0o9/dist/github/src/Common/Util/<a class="el" href="_http_utilities_8cs.html">HttpUtilities.cs</a></li>
+<li>/usr/local/google/users/cseeley/tmp/tmp.3J9JaahViC/dist/github/src/Common/Util/<a class="el" href="_http_utilities_8cs.html">HttpUtilities.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -354,7 +361,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common.html">Common</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common_1_1_util.html">Util</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_http_utilities.html">HttpUtilities</a></li>
-    <li class="footer">Generated on Thu Aug 24 2017 19:10:04 for Ads API .NET library by
+    <li class="footer">Generated on Tue Oct 3 2017 16:48:32 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>
