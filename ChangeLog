@@ -1,3 +1,21 @@
+22.3.0
+======
+AdWords:
+  - Fixed issue #117.
+  - Fixed issue #111.
+  - Fixed issue #76
+  - Added support for v201710.
+  - MapUtilities class was rewritten to use generics. New extension method ToDict() can be
+ used on MediaEntry[] fields to convert them into a Dictionary. See Miscellaneous\UploadImage.cs
+ for an example.
+
+DFP:
+  - Fixed issue #117.
+  - Fixed issue #111.
+
+Common:
+  -
+
 22.2.0
 ======
 AdWords:

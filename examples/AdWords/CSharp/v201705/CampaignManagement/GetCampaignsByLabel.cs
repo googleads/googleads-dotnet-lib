@@ -58,52 +58,52 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="labelId">ID of the label.</param>
     public void Run(AdWordsUser user, long labelId) {
-      // Get the CampaignService.
-      CampaignService campaignService =
-          (CampaignService) user.GetService(AdWordsService.v201705.CampaignService);
+      using (CampaignService campaignService =
+          (CampaignService) user.GetService(AdWordsService.v201705.CampaignService)) {
 
-      // Create the selector.
-      Selector selector = new Selector() {
-        fields = new string[] { 
+        // Create the selector.
+        Selector selector = new Selector() {
+          fields = new string[] {
           Campaign.Fields.Id, Campaign.Fields.Name, Campaign.Fields.Labels
         },
-        predicates = new Predicate[] {
+          predicates = new Predicate[] {
           // Labels filtering is performed by ID. You can use CONTAINS_ANY to
           // select campaigns with any of the label IDs, CONTAINS_ALL to select
           // campaigns with all of the label IDs, or CONTAINS_NONE to select
           // campaigns with none of the label IDs.
           Predicate.ContainsAny(Campaign.Fields.Labels, new string[] { labelId.ToString() })
         },
-        paging = Paging.Default
-      };
+          paging = Paging.Default
+        };
 
-      CampaignPage page = new CampaignPage();
+        CampaignPage page = new CampaignPage();
 
-      try {
-        do {
-          // Get the campaigns.
-          page = campaignService.get(selector);
+        try {
+          do {
+            // Get the campaigns.
+            page = campaignService.get(selector);
 
-          // Display the results.
-          if (page != null && page.entries != null) {
-            int i = selector.paging.startIndex;
-            foreach (Campaign campaign in page.entries) {
-              List<string> labelNames = new List<string>();
-              foreach (Label label in campaign.labels) {
-                labelNames.Add(label.name);
+            // Display the results.
+            if (page != null && page.entries != null) {
+              int i = selector.paging.startIndex;
+              foreach (Campaign campaign in page.entries) {
+                List<string> labelNames = new List<string>();
+                foreach (Label label in campaign.labels) {
+                  labelNames.Add(label.name);
+                }
+
+                Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and " +
+                    "labels = '{3}' was found.", i + 1, campaign.id, campaign.name,
+                    string.Join(", ", labelNames.ToArray()));
+                i++;
               }
-
-              Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and labels = '{3}'" +
-                  " was found.", i + 1, campaign.id, campaign.name,
-                  string.Join(", ", labelNames.ToArray()));
-              i++;
             }
-          }
-          selector.paging.IncreaseOffset();
-        } while (selector.paging.startIndex < page.totalNumEntries);
-        Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to retrieve campaigns by label", e);
+            selector.paging.IncreaseOffset();
+          } while (selector.paging.startIndex < page.totalNumEntries);
+          Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to retrieve campaigns by label", e);
+        }
       }
     }
   }

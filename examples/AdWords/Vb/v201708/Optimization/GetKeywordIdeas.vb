@@ -15,17 +15,14 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201708
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-Imports System.Text
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
+
   ''' <summary>
   ''' This code example retrieves keywords that are related to a given keyword.
   ''' </summary>
   Public Class GetKeywordIdeas
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -34,9 +31,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
       Dim codeExample As New GetKeywordIdeas
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser)
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+        codeExample.Run(New AdWordsUser, adGroupId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -54,98 +52,128 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' Runs the code example.
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
-    Public Sub Run(ByVal user As AdWordsUser)
-      ' Get the TargetingIdeaService.
-      Dim targetingIdeaService As TargetingIdeaService = CType(user.GetService( _
+    ''' <param name="adGroupId">ID of the ad group to use for generating ideas.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long?)
+      Using targetingIdeaService As TargetingIdeaService = CType(user.GetService(
           AdWordsService.v201708.TargetingIdeaService), TargetingIdeaService)
 
-      ' Create selector.
-      Dim selector As New TargetingIdeaSelector()
-      selector.requestType = RequestType.IDEAS
-      selector.ideaType = IdeaType.KEYWORD
-      selector.requestedAttributeTypes = New AttributeType() { _
-        AttributeType.KEYWORD_TEXT,
-        AttributeType.SEARCH_VOLUME,
-        AttributeType.CATEGORY_PRODUCTS_AND_SERVICES _
-      }
+        ' Create selector.
+        ' [START prepareRequestTypes] MOE:strip_line
+        Dim selector As New TargetingIdeaSelector()
+        selector.requestType = RequestType.IDEAS
+        selector.ideaType = IdeaType.KEYWORD
+        ' [END prepareRequestTypes] MOE:strip_line
+        ' [START prepareRequestAttributeTypes] MOE:strip_line
+        selector.requestedAttributeTypes = New AttributeType() {
+          AttributeType.KEYWORD_TEXT,
+          AttributeType.SEARCH_VOLUME,
+          AttributeType.CATEGORY_PRODUCTS_AND_SERVICES
+        }
+        ' [END prepareRequestAttributeTypes] MOE:strip_line
 
-      ' Create the search parameters.
-      Dim keywordText As String = "mars cruise"
+        Dim searchParameters As New List(Of SearchParameter)
 
-      ' Create related to query search parameter.
-      Dim relatedToQuerySearchParameter As New RelatedToQuerySearchParameter()
-      relatedToQuerySearchParameter.queries = new String() {keywordText}
+        ' [START prepareRequestQueryParameter] MOE:strip_line
+        ' Create related to query search parameter.
+        Dim relatedToQuerySearchParameter As New RelatedToQuerySearchParameter()
+        relatedToQuerySearchParameter.queries = New String() {
+          "bakery", "pastries", "birthday cake"
+        }
+        searchParameters.Add(relatedToQuerySearchParameter)
+        ' [END prepareRequestQueryParameter] MOE:strip_line
 
-      ' Add a language search parameter (optional).
-      ' The ID can be found in the documentation:
-      '   https://developers.google.com/adwords/api/docs/appendix/languagecodes
-      Dim languageParameter As New LanguageSearchParameter()
-      Dim english As New Language()
-      english.id = 1000
-      languageParameter.languages = New Language() {english}
+        ' Add a language search parameter (optional).
+        ' The ID can be found in the documentation:
+        '   https://developers.google.com/adwords/api/docs/appendix/languagecodes
+        Dim languageParameter As New LanguageSearchParameter()
+        Dim english As New Language()
+        english.id = 1000
+        languageParameter.languages = New Language() {english}
+        searchParameters.Add(languageParameter)
 
-      ' Add network search parameter (optional).
-      Dim networkSetting As New NetworkSetting()
-      networkSetting.targetGoogleSearch = True
-      networkSetting.targetSearchNetwork = False
-      networkSetting.targetContentNetwork = False
-      networkSetting.targetPartnerSearchNetwork = False
+        ' [START prepareRequestNetworkSetting] MOE:strip_line
+        ' Add network search parameter (optional).
+        Dim networkSetting As New NetworkSetting()
+        networkSetting.targetGoogleSearch = True
+        networkSetting.targetSearchNetwork = False
+        networkSetting.targetContentNetwork = False
+        networkSetting.targetPartnerSearchNetwork = False
 
-      Dim networkSearchParameter As New NetworkSearchParameter()
-      networkSearchParameter.networkSetting = networkSetting
+        Dim networkSearchParameter As New NetworkSearchParameter()
+        networkSearchParameter.networkSetting = networkSetting
+        searchParameters.Add(networkSearchParameter)
+        ' [END prepareRequestNetworkSetting] MOE:strip_line
 
-      ' Set the search parameters.
-      selector.searchParameters = New SearchParameter() { _
-        relatedToQuerySearchParameter, languageParameter, networkSearchParameter
-      }
+        ' Optional: Use an existing ad group to generate ideas.
+        If adGroupId.HasValue() Then
+          ' [START setSeedAdGroupId] MOE:strip_line
+          Dim seedAdGroupIdSearchParameter As New SeedAdGroupIdSearchParameter()
+          seedAdGroupIdSearchParameter.adGroupId = adGroupId.Value
+          searchParameters.Add(seedAdGroupIdSearchParameter)
+          ' [END setSeedAdGroupId] MOE:strip_line
+        End If
 
-      ' Set selector paging (required for targeting idea service).
-      Dim paging As Paging = paging.Default
-      Dim page As New TargetingIdeaPage()
+        ' Set the search parameters.
+        selector.searchParameters = searchParameters.ToArray()
 
-      Try
-        Dim i As Integer = 0
-        Do
-          ' Get related keywords.
-          page = targetingIdeaService.get(selector)
+        ' [START preparePaging] MOE:strip_line
 
-          'Display the results.
+        ' Set selector paging (required for targeting idea service).
+        Dim paging As Paging = Paging.Default
+        ' [END preparePaging] MOE:strip_line
 
-          If Not page.entries Is Nothing AndAlso page.entries.Length > 0 Then
-            For Each targetingIdea As TargetingIdea In page.entries
-              Dim keyword As String = Nothing
-              Dim categories As String = Nothing
-              Dim averageMonthlySearches As Long = 0
+        Dim page As New TargetingIdeaPage()
 
-              For Each entry As Type_AttributeMapEntry In targetingIdea.data
-                If entry.key = AttributeType.KEYWORD_TEXT Then
-                  keyword = DirectCast(entry.value, StringAttribute).value
-                End If
-                If entry.key = AttributeType.CATEGORY_PRODUCTS_AND_SERVICES Then
-                  Dim categorySet As IntegerSetAttribute = CType(entry.value, IntegerSetAttribute)
-                  Dim builder As New StringBuilder()
-                  For Each value As Integer In categorySet.value
-                    builder.AppendFormat("{0}, ", value)
-                  Next
-                  Dim trimChars As Char() = New Char() {CChar(","), CChar(" ")}
-                  categories = builder.ToString().Trim(trimChars)
-                End If
-                If entry.key = AttributeType.SEARCH_VOLUME Then
-                  averageMonthlySearches = DirectCast(entry.value, LongAttribute).value
-                End If
+        Try
+          Dim i As Integer = 0
+          Do
+            ' [START getKeywordIdeas] MOE:strip_line
+            ' Get related keywords.
+            page = targetingIdeaService.get(selector)
+            ' [END getKeywordIdeas] MOE:strip_line
+
+            ' [START displayKeywordIdeas] MOE:strip_line
+            'Display the results.
+            If Not page.entries Is Nothing AndAlso page.entries.Length > 0 Then
+              For Each targetingIdea As TargetingIdea In page.entries
+                For Each entry As Type_AttributeMapEntry In targetingIdea.data
+                  ' Preferred: Use targetingIdea.data.ToDict() if you are not on Mono.
+                  Dim ideas As Dictionary(Of AttributeType, AdWords.v201708.Attribute) =
+                      MapEntryExtensions.ToDict(Of AttributeType, AdWords.v201708.Attribute)(
+                          targetingIdea.data)
+
+                  Dim keyword As String =
+                    DirectCast(ideas(AttributeType.KEYWORD_TEXT), StringAttribute).value
+                  Dim categorySet As IntegerSetAttribute =
+                  DirectCast(ideas(AttributeType.CATEGORY_PRODUCTS_AND_SERVICES),
+                      IntegerSetAttribute)
+
+                  Dim categories As String = String.Join(", ", categorySet.value)
+
+                  Dim averageMonthlySearches As Long =
+                  DirectCast(ideas(AttributeType.SEARCH_VOLUME), LongAttribute).value
+
+                  Dim averageCpc As Money = DirectCast(ideas(AttributeType.AVERAGE_CPC),
+                    MoneyAttribute).value
+                  Dim competition As Double = DirectCast(ideas(AttributeType.COMPETITION),
+                    DoubleAttribute).value
+                  Console.WriteLine("Keyword with text '{0}', average monthly search " +
+                  "volume {1}, average CPC {2}, and competition {3:F2} was found with " +
+                  "categories: {4}", keyword, averageMonthlySearches, averageCpc.microAmount,
+                  competition, categories)
+                Next
+                i = i + 1
               Next
-              Console.WriteLine("Keyword with text '{0}', and average monthly search volume " & _
-                  "'{1}' was found with categories: {2}", keyword, averageMonthlySearches, _
-                  categories)
-              i = i + 1
-            Next
-          End If
-          selector.paging.IncreaseOffset()
-        Loop While (selector.paging.startIndex < page.totalNumEntries)
-        Console.WriteLine("Number of related keywords found: {0}", page.totalNumEntries)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to retrieve related keywords.", e)
-      End Try
+            End If
+            selector.paging.IncreaseOffset()
+          Loop While (selector.paging.startIndex < page.totalNumEntries)
+          Console.WriteLine("Number of related keywords found: {0}", page.totalNumEntries)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to retrieve related keywords.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace

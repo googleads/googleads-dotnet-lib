@@ -15,11 +15,8 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201705
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
+
   ''' <summary>
   ''' This code example illustrates how to retrieve ad group level mobile bid
   ''' modifiers for a campaign.
@@ -28,6 +25,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
   ''' </summary>
   Public Class GetAdGroupBidModifiers
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -39,7 +37,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
         Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
         codeExample.Run(New AdWordsUser, campaignId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -49,7 +47,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example illustrates how to retrieve ad group level mobile bid" & _
+        Return "This code example illustrates how to retrieve ad group level mobile bid" &
             " modifiers for a campaign."
       End Get
     End Property
@@ -62,58 +60,60 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' modifiers are retrieved.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
       ' Get the AdGroupBidModifierService.
-      Dim adGroupBidModifierService As AdGroupBidModifierService = CType(user.GetService( _
-          AdWordsService.v201705.AdGroupBidModifierService),  _
-          AdGroupBidModifierService)
+      Using adGroupBidModifierService As AdGroupBidModifierService = CType(user.GetService(
+          AdWordsService.v201705.AdGroupBidModifierService), AdGroupBidModifierService)
 
-      ' Get all ad group bid modifiers for the campaign.
-      Dim selector As New Selector()
-      selector.fields = New String() {
-        AdGroupBidModifier.Fields.CampaignId, AdGroupBidModifier.Fields.AdGroupId,
-        AdGroupBidModifier.Fields.BidModifier, AdGroupBidModifier.Fields.BidModifierSource,
-        Criterion.Fields.CriteriaType, Criterion.Fields.Id
-      }
+        ' Get all ad group bid modifiers for the campaign.
+        Dim selector As New Selector()
+        selector.fields = New String() {
+          AdGroupBidModifier.Fields.CampaignId, AdGroupBidModifier.Fields.AdGroupId,
+          AdGroupBidModifier.Fields.BidModifier, AdGroupBidModifier.Fields.BidModifierSource,
+          Criterion.Fields.CriteriaType, Criterion.Fields.Id
+        }
 
-      Dim predicate As New Predicate()
-      predicate.field = "CampaignId"
-      predicate.[operator] = PredicateOperator.EQUALS
-      predicate.values = New String() {campaignId.ToString()}
-      selector.predicates = New Predicate() {
-        Predicate.Equals(AdGroupBidModifier.Fields.CampaignId, campaignId)
-      }
-      selector.paging = Paging.Default
+        Dim predicate As New Predicate()
+        predicate.field = "CampaignId"
+        predicate.[operator] = PredicateOperator.EQUALS
+        predicate.values = New String() {campaignId.ToString()}
+        selector.predicates = New Predicate() {
+          Predicate.Equals(AdGroupBidModifier.Fields.CampaignId, campaignId)
+        }
+        selector.paging = Paging.Default
 
-      Dim page As New AdGroupBidModifierPage()
+        Dim page As New AdGroupBidModifierPage()
 
-      Try
-        Do
-          ' Get the ad group bids.
-          page = adGroupBidModifierService.get(selector)
+        Try
+          Do
+            ' Get the ad group bids.
+            page = adGroupBidModifierService.get(selector)
 
-          ' Display the results.
-          If (Not page Is Nothing) AndAlso (Not page.entries Is Nothing) Then
-            Dim i As Integer = selector.paging.startIndex
-            For Each adGroupBidModifier As AdGroupBidModifier In page.entries
-              Dim bidModifier As String = ""
-              If adGroupBidModifier.bidModifierSpecified Then
-                bidModifier = adGroupBidModifier.bidModifier.ToString()
-              Else
-                bidModifier = "UNSET"
-              End If
-              Console.WriteLine("{0}) Campaign ID {1}, AdGroup ID {2}, Criterion ID {3} has " & _
-                  "ad group level modifier: {4}, source = {5}.", _
-                  i + 1, adGroupBidModifier.campaignId, _
-                  adGroupBidModifier.adGroupId, adGroupBidModifier.criterion.id, _
+            ' Display the results.
+            If (Not page Is Nothing) AndAlso (Not page.entries Is Nothing) Then
+              Dim i As Integer = selector.paging.startIndex
+              For Each adGroupBidModifier As AdGroupBidModifier In page.entries
+                Dim bidModifier As String = ""
+                If adGroupBidModifier.bidModifierSpecified Then
+                  bidModifier = adGroupBidModifier.bidModifier.ToString()
+                Else
+                  bidModifier = "UNSET"
+                End If
+                Console.WriteLine("{0}) Campaign ID {1}, AdGroup ID {2}, Criterion ID {3} has " &
+                  "ad group level modifier: {4}, source = {5}.",
+                  i + 1, adGroupBidModifier.campaignId,
+                  adGroupBidModifier.adGroupId, adGroupBidModifier.criterion.id,
                   bidModifier, adGroupBidModifier.bidModifierSource)
-              i = i + 1
-            Next
-          End If
-          selector.paging.IncreaseOffset()
-        Loop While selector.paging.startIndex < page.totalNumEntries
-        Console.WriteLine("Number of adgroup bid modifiers found: {0}", page.totalNumEntries)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to retrieve adgroup bid modifiers.", e)
-      End Try
+                i = i + 1
+              Next
+            End If
+            selector.paging.IncreaseOffset()
+          Loop While selector.paging.startIndex < page.totalNumEntries
+          Console.WriteLine("Number of adgroup bid modifiers found: {0}", page.totalNumEntries)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to retrieve adgroup bid modifiers.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace

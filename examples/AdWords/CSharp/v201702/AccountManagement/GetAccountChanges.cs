@@ -20,11 +20,13 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example gets the changes in the account during the last 24
   /// hours.
   /// </summary>
   public class GetAccountChanges : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -54,68 +56,70 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the CustomerSyncService.
-      CustomerSyncService customerSyncService =
+      using (CustomerSyncService customerSyncService =
           (CustomerSyncService) user.GetService(AdWordsService.v201702.
-              CustomerSyncService);
+              CustomerSyncService)) {
 
-      // The date time string should be of the form  yyyyMMdd HHmmss zzz
-      string minDateTime = DateTime.Now.AddDays(-1).ToUniversalTime().ToString(
-          "yyyyMMdd HHmmss") + " UTC";
-      string maxDateTime = DateTime.Now.ToUniversalTime().ToString("yyyyMMdd HHmmss") +
-          " UTC";
+        // The date time string should be of the form  yyyyMMdd HHmmss zzz
+        string minDateTime = DateTime.Now.AddDays(-1).ToUniversalTime().ToString(
+            "yyyyMMdd HHmmss") + " UTC";
+        string maxDateTime = DateTime.Now.ToUniversalTime().ToString("yyyyMMdd HHmmss") +
+            " UTC";
 
-      // Create date time range.
-      DateTimeRange dateTimeRange = new DateTimeRange();
-      dateTimeRange.min = minDateTime;
-      dateTimeRange.max = maxDateTime;
+        // Create date time range.
+        DateTimeRange dateTimeRange = new DateTimeRange();
+        dateTimeRange.min = minDateTime;
+        dateTimeRange.max = maxDateTime;
 
-      try {
-        // Create the selector.
-        CustomerSyncSelector selector = new CustomerSyncSelector();
-        selector.dateTimeRange = dateTimeRange;
-        selector.campaignIds = GetAllCampaignIds(user);
+        try {
+          // Create the selector.
+          CustomerSyncSelector selector = new CustomerSyncSelector();
+          selector.dateTimeRange = dateTimeRange;
+          selector.campaignIds = GetAllCampaignIds(user);
 
-        // Get all account changes for campaign.
-        CustomerChangeData accountChanges = customerSyncService.get(selector);
+          // Get all account changes for campaign.
+          CustomerChangeData accountChanges = customerSyncService.get(selector);
 
-        // Display the changes.
-        if (accountChanges != null && accountChanges.changedCampaigns != null) {
-          Console.WriteLine("Displaying changes up to: {0}", accountChanges.lastChangeTimestamp);
-          foreach (CampaignChangeData campaignChanges in accountChanges.changedCampaigns) {
-            Console.WriteLine("Campaign with id \"{0}\" was changed:", campaignChanges.campaignId);
-            Console.WriteLine("  Campaign changed status: {0}",
-                campaignChanges.campaignChangeStatus);
-            if (campaignChanges.campaignChangeStatus != ChangeStatus.NEW) {
-              Console.WriteLine("  Added campaign criteria: {0}",
-                  GetFormattedList(campaignChanges.addedCampaignCriteria));
-              Console.WriteLine("  Removed campaign criteria: {0}",
-                  GetFormattedList(campaignChanges.removedCampaignCriteria));
+          // Display the changes.
+          if (accountChanges != null && accountChanges.changedCampaigns != null) {
+            Console.WriteLine("Displaying changes up to: {0}",
+                accountChanges.lastChangeTimestamp);
+            foreach (CampaignChangeData campaignChanges in accountChanges.changedCampaigns) {
+              Console.WriteLine("Campaign with id \"{0}\" was changed:",
+                  campaignChanges.campaignId);
+              Console.WriteLine("  Campaign changed status: {0}",
+                  campaignChanges.campaignChangeStatus);
+              if (campaignChanges.campaignChangeStatus != ChangeStatus.NEW) {
+                Console.WriteLine("  Added campaign criteria: {0}",
+                    GetFormattedList(campaignChanges.addedCampaignCriteria));
+                Console.WriteLine("  Removed campaign criteria: {0}",
+                    GetFormattedList(campaignChanges.removedCampaignCriteria));
 
-              if (campaignChanges.changedAdGroups != null) {
-                foreach (AdGroupChangeData adGroupChanges in campaignChanges.changedAdGroups) {
-                  Console.WriteLine("  Ad group with id \"{0}\" was changed:",
-                      adGroupChanges.adGroupId);
-                  Console.WriteLine("    Ad group changed status: {0}",
-                      adGroupChanges.adGroupChangeStatus);
-                  if (adGroupChanges.adGroupChangeStatus != ChangeStatus.NEW) {
-                    Console.WriteLine("    Ads changed: {0}",
-                        GetFormattedList(adGroupChanges.changedAds));
-                    Console.WriteLine("    Criteria changed: {0}",
-                        GetFormattedList(adGroupChanges.changedCriteria));
-                    Console.WriteLine("    Criteria removed: {0}",
-                        GetFormattedList(adGroupChanges.removedCriteria));
+                if (campaignChanges.changedAdGroups != null) {
+                  foreach (AdGroupChangeData adGroupChanges in campaignChanges.changedAdGroups) {
+                    Console.WriteLine("  Ad group with id \"{0}\" was changed:",
+                        adGroupChanges.adGroupId);
+                    Console.WriteLine("    Ad group changed status: {0}",
+                        adGroupChanges.adGroupChangeStatus);
+                    if (adGroupChanges.adGroupChangeStatus != ChangeStatus.NEW) {
+                      Console.WriteLine("    Ads changed: {0}",
+                          GetFormattedList(adGroupChanges.changedAds));
+                      Console.WriteLine("    Criteria changed: {0}",
+                          GetFormattedList(adGroupChanges.changedCriteria));
+                      Console.WriteLine("    Criteria removed: {0}",
+                          GetFormattedList(adGroupChanges.removedCriteria));
+                    }
                   }
                 }
               }
+              Console.WriteLine();
             }
-            Console.WriteLine();
+          } else {
+            Console.WriteLine("No account changes were found.");
           }
-        } else {
-          Console.WriteLine("No account changes were found.");
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to get account changes.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to get account changes.", e);
       }
     }
 
@@ -142,26 +146,26 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <returns>The list of campaign ids.</returns>
     private long[] GetAllCampaignIds(AdWordsUser user) {
       // Get the CampaignService.
-      CampaignService campaignService =
-          (CampaignService) user.GetService(AdWordsService.v201702.CampaignService);
+      using (CampaignService campaignService =
+          (CampaignService) user.GetService(AdWordsService.v201702.CampaignService)) {
+        List<long> allCampaigns = new List<long>();
 
-      List<long> allCampaigns = new List<long>();
+        // Create the selector.
+        Selector selector = new Selector() {
+          fields = new string[] { Campaign.Fields.Id }
+        };
 
-      // Create the selector.
-      Selector selector = new Selector() {
-        fields = new string[] { Campaign.Fields.Id }
-      };
+        // Get all campaigns.
+        CampaignPage page = campaignService.get(selector);
 
-      // Get all campaigns.
-      CampaignPage page = campaignService.get(selector);
-
-      // Return the results.
-      if (page != null && page.entries != null) {
-        foreach (Campaign campaign in page.entries) {
-          allCampaigns.Add(campaign.id);
+        // Return the results.
+        if (page != null && page.entries != null) {
+          foreach (Campaign campaign in page.entries) {
+            allCampaigns.Add(campaign.id);
+          }
         }
+        return allCampaigns.ToArray();
       }
-      return allCampaigns.ToArray();
     }
   }
 }

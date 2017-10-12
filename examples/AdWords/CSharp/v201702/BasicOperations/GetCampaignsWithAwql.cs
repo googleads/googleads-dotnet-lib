@@ -16,16 +16,16 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example lists all campaigns using an AWQL query. See
   /// https://developers.google.com/adwords/api/docs/guides/awql for AWQL
   /// documentation. To add a campaign, run AddCampaign.cs.
   /// </summary>
   public class GetCampaignsWithAwql : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -57,39 +57,39 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the CampaignService.
-      CampaignService campaignService =
-          (CampaignService) user.GetService(AdWordsService.v201702.CampaignService);
+      using (CampaignService campaignService =
+          (CampaignService) user.GetService(AdWordsService.v201702.CampaignService)) {
 
-      // Create the query.
-      string query = "SELECT Id, Name, Status ORDER BY Name";
+        // Create the query.
+        string query = "SELECT Id, Name, Status ORDER BY Name";
 
-      int offset = 0;
-      int pageSize = 500;
+        int offset = 0;
+        int pageSize = 500;
 
-      CampaignPage page = new CampaignPage();
+        CampaignPage page = new CampaignPage();
 
-      try {
-        do {
-          string queryWithPaging = string.Format("{0} LIMIT {1}, {2}", query, offset, pageSize);
+        try {
+          do {
+            string queryWithPaging = string.Format("{0} LIMIT {1}, {2}", query, offset, pageSize);
 
-          // Get the campaigns.
-          page = campaignService.query(queryWithPaging);
+            // Get the campaigns.
+            page = campaignService.query(queryWithPaging);
 
-          // Display the results.
-          if (page != null && page.entries != null) {
-            int i = offset;
-            foreach (Campaign campaign in page.entries) {
-              Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = '{3}'" +
-                " was found.", i + 1, campaign.id, campaign.name, campaign.status);
-              i++;
+            // Display the results.
+            if (page != null && page.entries != null) {
+              int i = offset;
+              foreach (Campaign campaign in page.entries) {
+                Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = " +
+                    "'{3}' was found.", i + 1, campaign.id, campaign.name, campaign.status);
+                i++;
+              }
             }
-          }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
-        Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to retrieve campaigns", e);
+            offset += pageSize;
+          } while (offset < page.totalNumEntries);
+          Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to retrieve campaigns", e);
+        }
       }
     }
   }

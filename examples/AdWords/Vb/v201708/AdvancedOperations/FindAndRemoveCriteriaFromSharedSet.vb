@@ -15,9 +15,6 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201708
 
-Imports System
-Imports System.Collections.Generic
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
 
   ''' <summary>
@@ -39,7 +36,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
         Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
         codeExample.Run(New AdWordsUser(), campaignId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -49,7 +46,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example demonstrates how to find and remove shared sets and shared " & _
+        Return "This code example demonstrates how to find and remove shared sets and shared " &
             "set criteria."
       End Get
     End Property
@@ -78,49 +75,50 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <returns>The list of shared set IDs associated with the campaign.</returns>
     Private Function GetSharedSetIds(ByVal user As AdWordsUser, ByVal campaignId As Long) _
         As List(Of String)
-      Dim campaignSharedSetService As CampaignSharedSetService = DirectCast(user.GetService( _
-              AdWordsService.v201708.CampaignSharedSetService), CampaignSharedSetService)
+      Using campaignSharedSetService As CampaignSharedSetService = DirectCast(user.GetService(
+          AdWordsService.v201708.CampaignSharedSetService), CampaignSharedSetService)
 
-      Dim selector As New Selector()
-      selector.fields = New String() {
-        CampaignSharedSet.Fields.SharedSetId,
-        CampaignSharedSet.Fields.CampaignId,
-        CampaignSharedSet.Fields.SharedSetName,
-        CampaignSharedSet.Fields.SharedSetType
-      }
+        Dim selector As New Selector()
+        selector.fields = New String() {
+          CampaignSharedSet.Fields.SharedSetId,
+          CampaignSharedSet.Fields.CampaignId,
+          CampaignSharedSet.Fields.SharedSetName,
+          CampaignSharedSet.Fields.SharedSetType
+        }
 
-      selector.predicates = New Predicate() {
-        Predicate.Equals(CampaignSharedSet.Fields.CampaignId, campaignId),
-        Predicate.In(CampaignSharedSet.Fields.SharedSetType,
-            New String() {SharedSetType.NEGATIVE_KEYWORDS.ToString()})
-      }
-      selector.paging = Paging.Default
-      Dim sharedSetIds As New List(Of String)
+        selector.predicates = New Predicate() {
+          Predicate.Equals(CampaignSharedSet.Fields.CampaignId, campaignId),
+          Predicate.In(CampaignSharedSet.Fields.SharedSetType,
+              New String() {SharedSetType.NEGATIVE_KEYWORDS.ToString()})
+        }
+        selector.paging = Paging.Default
+        Dim sharedSetIds As New List(Of String)
 
-      Dim page As New CampaignSharedSetPage()
+        Dim page As New CampaignSharedSetPage()
 
-      Try
-        Do
-          ' Get the campaigns.
-          page = campaignSharedSetService.get(selector)
+        Try
+          Do
+            ' Get the campaigns.
+            page = campaignSharedSetService.get(selector)
 
-          ' Display the results.
-          If (Not page Is Nothing) AndAlso (Not page.entries Is Nothing) Then
-            Dim i As Integer = selector.paging.startIndex
-            For Each campaignSharedSet As CampaignSharedSet In page.entries
-              sharedSetIds.Add(campaignSharedSet.sharedSetId.ToString())
-              Console.WriteLine("{0}) Campaign shared set ID {1} and name '{2}' found for " & _
-                  "campaign ID {3}.\n", i + 1, campaignSharedSet.sharedSetId, _
+            ' Display the results.
+            If (Not page Is Nothing) AndAlso (Not page.entries Is Nothing) Then
+              Dim i As Integer = selector.paging.startIndex
+              For Each campaignSharedSet As CampaignSharedSet In page.entries
+                sharedSetIds.Add(campaignSharedSet.sharedSetId.ToString())
+                Console.WriteLine("{0}) Campaign shared set ID {1} and name '{2}' found for " &
+                  "campaign ID {3}.\n", i + 1, campaignSharedSet.sharedSetId,
                   campaignSharedSet.sharedSetName, campaignSharedSet.campaignId)
-              i = i + 1
-            Next
-          End If
-          selector.paging.IncreaseOffset()
-        Loop While (selector.paging.startIndex < page.totalNumEntries)
-        Return sharedSetIds
-      Catch e As Exception
-        Throw New Exception("Failed to get shared set ids for campaign.", e)
-      End Try
+                i = i + 1
+              Next
+            End If
+            selector.paging.IncreaseOffset()
+          Loop While (selector.paging.startIndex < page.totalNumEntries)
+          Return sharedSetIds
+        Catch e As Exception
+          Throw New Exception("Failed to get shared set ids for campaign.", e)
+        End Try
+      End Using
     End Function
 
     ''' <summary>
@@ -129,64 +127,65 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="user">The user that owns the shared set.</param>
     ''' <param name="sharedSetIds">The shared criteria IDs.</param>
     ''' <returns>The list of shared criteria.</returns>
-    Private Function GetSharedCriteria(ByVal user As AdWordsUser, ByVal sharedSetIds As  _
+    Private Function GetSharedCriteria(ByVal user As AdWordsUser, ByVal sharedSetIds As _
                                        List(Of String)) As List(Of SharedCriterion)
-      Dim sharedCriterionService As SharedCriterionService = DirectCast(user.GetService( _
+      Using sharedCriterionService As SharedCriterionService = DirectCast(user.GetService(
           AdWordsService.v201708.SharedCriterionService), SharedCriterionService)
 
-      Dim selector As New Selector()
-      selector.fields = New String() {
-        SharedSet.Fields.SharedSetId, Criterion.Fields.Id, Keyword.Fields.KeywordText, _
-        Keyword.Fields.KeywordMatchType, Placement.Fields.PlacementUrl
-      }
+        Dim selector As New Selector()
+        selector.fields = New String() {
+          SharedSet.Fields.SharedSetId, Criterion.Fields.Id, Keyword.Fields.KeywordText,
+          Keyword.Fields.KeywordMatchType, Placement.Fields.PlacementUrl
+        }
 
-      selector.predicates = New Predicate() {
-        Predicate.In(SharedSet.Fields.SharedSetId, sharedSetIds)
-      }
+        selector.predicates = New Predicate() {
+          Predicate.In(SharedSet.Fields.SharedSetId, sharedSetIds)
+        }
 
-      selector.paging = Paging.Default
+        selector.paging = Paging.Default
 
-      Dim sharedCriteria As New List(Of SharedCriterion)
-      Dim page As New SharedCriterionPage()
+        Dim sharedCriteria As New List(Of SharedCriterion)
+        Dim page As New SharedCriterionPage()
 
-      Try
-        Do
-          ' Get the criteria.
-          page = sharedCriterionService.get(selector)
+        Try
+          Do
+            ' Get the criteria.
+            page = sharedCriterionService.get(selector)
 
-          ' Display the results.
-          If (Not page Is Nothing) AndAlso (Not page.entries Is Nothing) Then
-            Dim i As Integer = selector.paging.startIndex
-            For Each sharedCriterion As SharedCriterion In page.entries
-              Select Case sharedCriterion.criterion.type
-                Case CriterionType.KEYWORD
-                  Dim keyword As Keyword = DirectCast(sharedCriterion.criterion, Keyword)
-                  Console.WriteLine("Shared negative keyword with ID {0} and text '{1}' was " & _
+            ' Display the results.
+            If (Not page Is Nothing) AndAlso (Not page.entries Is Nothing) Then
+              Dim i As Integer = selector.paging.startIndex
+              For Each sharedCriterion As SharedCriterion In page.entries
+                Select Case sharedCriterion.criterion.type
+                  Case CriterionType.KEYWORD
+                    Dim keyword As Keyword = DirectCast(sharedCriterion.criterion, Keyword)
+                    Console.WriteLine("Shared negative keyword with ID {0} and text '{1}' was " &
                       "found.", keyword.id, keyword.text)
-                  Exit Select
+                    Exit Select
 
-                Case CriterionType.PLACEMENT
-                  Dim placement As Placement = DirectCast(sharedCriterion.criterion, Placement)
-                  Console.WriteLine("{0}) Shared negative placement with ID {1} and URL '{2}' " & _
+                  Case CriterionType.PLACEMENT
+                    Dim placement As Placement = DirectCast(sharedCriterion.criterion, Placement)
+                    Console.WriteLine("{0}) Shared negative placement with ID {1} and URL '{2}' " &
                       "was found.", i + 1, placement.id, placement.url)
-                  Exit Select
+                    Exit Select
 
-                Case Else
-                  Console.WriteLine("{0}) Shared criteria with ID {1} was found.", _
+                  Case Else
+                    Console.WriteLine("{0}) Shared criteria with ID {1} was found.",
                       i + 1, sharedCriterion.criterion.id)
-              End Select
+                End Select
 
-              i = i + 1
-              sharedCriteria.Add(sharedCriterion)
-            Next
-          End If
-          selector.paging.IncreaseOffset()
-        Loop While (selector.paging.startIndex < page.totalNumEntries)
+                i = i + 1
+                sharedCriteria.Add(sharedCriterion)
+              Next
+            End If
+            selector.paging.IncreaseOffset()
+          Loop While (selector.paging.startIndex < page.totalNumEntries)
 
-        Return sharedCriteria
-      Catch e As Exception
-        Throw New Exception("Failed to get shared criteria.", e)
-      End Try
+          Return sharedCriteria
+        Catch e As Exception
+          Throw New Exception("Failed to get shared criteria.", e)
+        End Try
+      End Using
     End Function
 
     ''' <summary>
@@ -201,35 +200,38 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
         Return
       End If
 
-      Dim sharedCriterionService As SharedCriterionService = DirectCast(user.GetService( _
+      Using sharedCriterionService As SharedCriterionService = DirectCast(user.GetService(
           AdWordsService.v201708.SharedCriterionService), SharedCriterionService)
 
-      Dim operations As New List(Of SharedCriterionOperation)
+        Dim operations As New List(Of SharedCriterionOperation)
 
-      For Each sharedCriterion As SharedCriterion In sharedCriteria
+        For Each sharedCriterion As SharedCriterion In sharedCriteria
 
-        Dim operation As New SharedCriterionOperation()
-        operation.operator = [Operator].REMOVE
+          Dim operation As New SharedCriterionOperation()
+          operation.operator = [Operator].REMOVE
 
-        Dim tempSharedCriterion As New SharedCriterion()
-        tempSharedCriterion.sharedSetId = sharedCriterion.sharedSetId
-        tempSharedCriterion.criterion = New Criterion()
-        tempSharedCriterion.criterion.id = sharedCriterion.criterion.id
+          Dim tempSharedCriterion As New SharedCriterion()
+          tempSharedCriterion.sharedSetId = sharedCriterion.sharedSetId
+          tempSharedCriterion.criterion = New Criterion()
+          tempSharedCriterion.criterion.id = sharedCriterion.criterion.id
 
-        operation.operand = tempSharedCriterion
-        operations.Add(operation)
-      Next
-      Try
-        Dim sharedCriterionReturnValue As SharedCriterionReturnValue = _
+          operation.operand = tempSharedCriterion
+          operations.Add(operation)
+        Next
+        Try
+          Dim sharedCriterionReturnValue As SharedCriterionReturnValue =
             sharedCriterionService.mutate(operations.ToArray())
 
-        For Each removedCriterion As SharedCriterion In sharedCriterionReturnValue.value
-          Console.WriteLine("Shared criterion ID {0} was successfully removed from shared " & _
+          For Each removedCriterion As SharedCriterion In sharedCriterionReturnValue.value
+            Console.WriteLine("Shared criterion ID {0} was successfully removed from shared " &
               "set ID {1}.", removedCriterion.criterion.id, removedCriterion.sharedSetId)
-        Next
-      Catch e As Exception
-        Throw New Exception("Failed to remove shared criteria.", e)
-      End Try
+          Next
+        Catch e As Exception
+          Throw New Exception("Failed to remove shared criteria.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace

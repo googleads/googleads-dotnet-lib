@@ -14,23 +14,21 @@
 
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.Util.Reports
+Imports Google.Api.Ads.AdWords.Util.Reports.v201705
 Imports Google.Api.Ads.AdWords.v201705
 Imports Google.Api.Ads.Common.Util.Reports
-Imports Google.Api.Ads.AdWords.Util.Reports.v201705
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
 Imports System.IO.Compression
-Imports System.Xml
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
+
   ''' <summary>
   ''' This code example streams the results of an ad hoc report, and
   ''' returns the data in the report as objects of a predefined report row type.
   ''' </summary>
   Public Class StreamReportToPredefinedReportRowType
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -41,7 +39,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
       Try
         codeExample.Run(New AdWordsUser)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -51,8 +49,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example streams the results of an ad hoc report, and " & _
-    "returns the data in the report as objects of a predefined report row type."
+        Return "This code example streams the results of an ad hoc report, and " &
+            "returns the data in the report as objects of a predefined report row type."
       End Get
     End Property
 
@@ -62,17 +60,17 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Create the query.
-      Dim query As String = "SELECT AccountCurrencyCode, AccountDescriptiveName" & _
+      Dim query As String = "SELECT AccountCurrencyCode, AccountDescriptiveName" &
           " FROM FINAL_URL_REPORT DURING LAST_7_DAYS"
 
-      Dim reportUtilities As New ReportUtilities(user, "v201705", query, _
-                                     DownloadFormat.GZIPPED_XML.ToString())
+      Dim reportUtilities As New ReportUtilities(user, "v201705", query,
+          DownloadFormat.GZIPPED_XML.ToString())
 
       Dim impressionsByAdNetworkType1 As New Dictionary(Of String, Long)
 
       Try
         Using response As ReportResponse = reportUtilities.GetResponse
-          Using gzipStream As GZipStream = New GZipStream(response.Stream, _
+          Using gzipStream As GZipStream = New GZipStream(response.Stream,
               CompressionMode.Decompress)
 
             Using report As New AwReport(Of FinalUrlReportReportRow) _
@@ -94,5 +92,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
         Throw New System.ApplicationException("Failed to download report.", e)
       End Try
     End Sub
+
   End Class
+
 End Namespace

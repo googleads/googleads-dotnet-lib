@@ -14,22 +14,22 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201702;
-using Google.Api.Ads.Common.Util;
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example adds expanded text ads to a given ad group. To list
   /// ad groups, run GetAdGroups.cs.
   /// </summary>
   public class AddExpandedTextAds : ExampleBase {
+
     /// <summary>
     /// Number of ads being added / updated in this code example.
     /// </summary>
-    const int NUMBER_OF_ADS = 5;
+    private const int NUMBER_OF_ADS = 5;
 
     /// <summary>
     /// Main method, to run this code example as a standalone application.
@@ -64,53 +64,53 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="adGroupId">Id of the ad group to which ads are added.
     /// </param>
     public void Run(AdWordsUser user, long adGroupId) {
-      // Get the AdGroupAdService.
-      AdGroupAdService service =
-          (AdGroupAdService) user.GetService(AdWordsService.v201702.AdGroupAdService);
+      using (AdGroupAdService adGroupAdService =
+          (AdGroupAdService) user.GetService(AdWordsService.v201702.AdGroupAdService)) {
 
-      List<AdGroupAdOperation> operations = new List<AdGroupAdOperation>();
+        List<AdGroupAdOperation> operations = new List<AdGroupAdOperation>();
 
-      for (int i = 0; i < NUMBER_OF_ADS; i++) {
-        // Create the expanded text ad.
-        ExpandedTextAd expandedTextAd = new ExpandedTextAd();
-        expandedTextAd.headlinePart1 = "Cruise #" + i .ToString() + " to Mars";
-        expandedTextAd.headlinePart2 = "Best Space Cruise Line";
-        expandedTextAd.description = "Buy your tickets now!";
-        expandedTextAd.finalUrls = new string[] { "http://www.example.com/" + i };
+        for (int i = 0; i < NUMBER_OF_ADS; i++) {
+          // Create the expanded text ad.
+          ExpandedTextAd expandedTextAd = new ExpandedTextAd();
+          expandedTextAd.headlinePart1 = "Cruise #" + i.ToString() + " to Mars";
+          expandedTextAd.headlinePart2 = "Best Space Cruise Line";
+          expandedTextAd.description = "Buy your tickets now!";
+          expandedTextAd.finalUrls = new string[] { "http://www.example.com/" + i };
 
-        AdGroupAd expandedTextAdGroupAd = new AdGroupAd();
-        expandedTextAdGroupAd.adGroupId = adGroupId;
-        expandedTextAdGroupAd.ad = expandedTextAd;
+          AdGroupAd expandedTextAdGroupAd = new AdGroupAd();
+          expandedTextAdGroupAd.adGroupId = adGroupId;
+          expandedTextAdGroupAd.ad = expandedTextAd;
 
-        // Optional: Set the status.
-        expandedTextAdGroupAd.status = AdGroupAdStatus.PAUSED;
+          // Optional: Set the status.
+          expandedTextAdGroupAd.status = AdGroupAdStatus.PAUSED;
 
-        // Create the operation.
-        AdGroupAdOperation operation = new AdGroupAdOperation();
-        operation.@operator = Operator.ADD;
-        operation.operand = expandedTextAdGroupAd;
+          // Create the operation.
+          AdGroupAdOperation operation = new AdGroupAdOperation();
+          operation.@operator = Operator.ADD;
+          operation.operand = expandedTextAdGroupAd;
 
-        operations.Add(operation);
-      }
-
-      AdGroupAdReturnValue retVal = null;
-
-      try {
-        // Create the ads.
-        retVal = service.mutate(operations.ToArray());
-
-        // Display the results.
-        if (retVal != null && retVal.value != null) {
-          foreach (AdGroupAd adGroupAd in retVal.value) {
-            ExpandedTextAd newAd = adGroupAd.ad as ExpandedTextAd;
-            Console.WriteLine("Expanded text ad with ID '{0}' and headline '{1} - {2}' was added.",
-                newAd.id, newAd.headlinePart1, newAd.headlinePart2);
-          }
-        } else {
-          Console.WriteLine("No expanded text ads were created.");
+          operations.Add(operation);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to create expanded text ad.", e);
+
+        AdGroupAdReturnValue retVal = null;
+
+        try {
+          // Create the ads.
+          retVal = adGroupAdService.mutate(operations.ToArray());
+
+          // Display the results.
+          if (retVal != null && retVal.value != null) {
+            foreach (AdGroupAd adGroupAd in retVal.value) {
+              ExpandedTextAd newAd = adGroupAd.ad as ExpandedTextAd;
+              Console.WriteLine("Expanded text ad with ID '{0}' and headline '{1} - {2}' " +
+                  "was added.", newAd.id, newAd.headlinePart1, newAd.headlinePart2);
+            }
+          } else {
+            Console.WriteLine("No expanded text ads were created.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create expanded text ad.", e);
+        }
       }
     }
   }

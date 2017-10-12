@@ -21,6 +21,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   using Google.Api.Ads.AdWords.Headers;
   using System.ComponentModel;
   using System.Collections.Generic;
+  using System;
 
   /// <summary>Exception class for holding a list of service errors.
   /// </summary>
@@ -14259,7 +14260,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.AdGroupAdReturnValue mutate(Google.Api.Ads.AdWords.v201702.AdGroupAdOperation[] operations) {
       Wrappers.AdGroupAdService.mutateRequest inValue = new Wrappers.AdGroupAdService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.AdGroupAdService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupAdServiceInterface)(this)).mutate(inValue);
+      Wrappers.AdGroupAdService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupAdServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -14286,7 +14287,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.AdGroupAdLabelReturnValue mutateLabel(Google.Api.Ads.AdWords.v201702.AdGroupAdLabelOperation[] operations) {
       Wrappers.AdGroupAdService.mutateLabelRequest inValue = new Wrappers.AdGroupAdService.mutateLabelRequest();
       inValue.operations = operations;
-      Wrappers.AdGroupAdService.mutateLabelResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupAdServiceInterface)(this)).mutateLabel(inValue);
+      Wrappers.AdGroupAdService.mutateLabelResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupAdServiceInterface) (this)).mutateLabel(inValue);
       return retVal.rval;
     }
 
@@ -14310,7 +14311,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.Ad[] upgradeUrl(Google.Api.Ads.AdWords.v201702.AdUrlUpgrade[] operations) {
       Wrappers.AdGroupAdService.upgradeUrlRequest inValue = new Wrappers.AdGroupAdService.upgradeUrlRequest();
       inValue.operations = operations;
-      Wrappers.AdGroupAdService.upgradeUrlResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupAdServiceInterface)(this)).upgradeUrl(inValue);
+      Wrappers.AdGroupAdService.upgradeUrlResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupAdServiceInterface) (this)).upgradeUrl(inValue);
       return retVal.rval;
     }
   }
@@ -20122,13 +20123,18 @@ namespace Google.Api.Ads.AdWords.v201702 {
     /// <summary>Sexually suggestive content
     /// </summary>
     ADULTISH = 0,
-    /// <summary>Error pages
+    /// <summary>Error pages <p class="note"><b>Note:</b> Starting with v201710, this label is
+    /// deprecated and can only be removed from campaigns - it can no longer be added. A
+    /// future release will remove this label entirely.</p>
     /// </summary>
     AFE = 1,
     /// <summary>Below the fold placements
     /// </summary>
     BELOW_THE_FOLD = 2,
-    /// <summary>Military &amp; international conflict
+    /// <summary>Military &amp; international conflict <p class="note"><b>Note:</b> Starting with
+    /// v201710, this label is deprecated and can only be removed from campaigns - it
+    /// can no longer be added. A future release will remove this label entirely. Please
+    /// use the <code>TRAGEDY</code> label instead of this one going forward.</p>
     /// </summary>
     CONFLICT = 3,
     /// <summary>Parked domains
@@ -20140,28 +20146,39 @@ namespace Google.Api.Ads.AdWords.v201702 {
     /// <summary>Games
     /// </summary>
     GAMES = 6,
-    /// <summary>Juvenile, gross &amp; bizarre content
+    /// <summary>Sensational &amp; shocking
     /// </summary>
     JUVENILE = 7,
     /// <summary>Profanity &amp; rough language
     /// </summary>
     PROFANITY = 8,
-    /// <summary>Forums
+    /// <summary>Forums <p class="note"><b>Note:</b> Starting with v201710, this label is
+    /// deprecated and can only be removed from campaigns - it can no longer be added. A
+    /// future release will remove this label entirely.</p>
     /// </summary>
     UGC_FORUMS = 9,
-    /// <summary>Image-sharing pages
+    /// <summary>Image-sharing pages <p class="note"><b>Note:</b> Starting with v201710, this
+    /// label is deprecated and can only be removed from campaigns - it can no longer be
+    /// added. A future release will remove this label entirely.</p>
     /// </summary>
     UGC_IMAGES = 10,
-    /// <summary>Social networks
+    /// <summary>Social networks <p class="note"><b>Note:</b> Starting with v201710, this label
+    /// is deprecated and can only be removed from campaigns - it can no longer be
+    /// added. A future release will remove this label entirely.</p>
     /// </summary>
     UGC_SOCIAL = 11,
-    /// <summary>Video-sharing pages
+    /// <summary>Video-sharing pages <p class="note"><b>Note:</b> Starting with v201710, this
+    /// label is deprecated and can only be removed from campaigns - it can no longer be
+    /// added. A future release will remove this label entirely.</p>
     /// </summary>
     UGC_VIDEOS = 12,
-    /// <summary>Crime, police &amp; emergency
+    /// <summary>Crime, police &amp; emergency <p class="note"><b>Note:</b> Starting with
+    /// v201710, this label is deprecated and can only be removed from campaigns - it
+    /// can no longer be added. A future release will remove this label entirely. Please
+    /// use the <code>TRAGEDY</code> label instead of this one going forward.</p>
     /// </summary>
     SIRENS = 13,
-    /// <summary>Death &amp; tragedy
+    /// <summary>Tragedy &amp; conflict
     /// </summary>
     TRAGEDY = 14,
     /// <summary>Video
@@ -20185,7 +20202,9 @@ namespace Google.Api.Ads.AdWords.v201702 {
     /// <summary>Live streaming video
     /// </summary>
     LIVE_STREAMING_VIDEO = 21,
-    /// <summary>Allowed gambling content.
+    /// <summary>Allowed gambling content. <p class="note"><b>Note:</b> Starting with v201710,
+    /// this label is deprecated and can only be removed from campaigns - it can no
+    /// longer be added. A future release will remove this label entirely.</p>
     /// </summary>
     ALLOWED_GAMBLING_CONTENT = 22,
     /// <summary><span class="constraint Rejected">Used for return value only. An enumeration
@@ -21906,7 +21925,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.CampaignCriterionReturnValue mutate(Google.Api.Ads.AdWords.v201702.CampaignCriterionOperation[] operations) {
       Wrappers.CampaignCriterionService.mutateRequest inValue = new Wrappers.CampaignCriterionService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.CampaignCriterionService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.CampaignCriterionServiceInterface)(this)).mutate(inValue);
+      Wrappers.CampaignCriterionService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.CampaignCriterionServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -29636,7 +29655,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.CampaignReturnValue mutate(Google.Api.Ads.AdWords.v201702.CampaignOperation[] operations) {
       Wrappers.CampaignService.mutateRequest inValue = new Wrappers.CampaignService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.CampaignService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.CampaignServiceInterface)(this)).mutate(inValue);
+      Wrappers.CampaignService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.CampaignServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -29663,7 +29682,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.CampaignLabelReturnValue mutateLabel(Google.Api.Ads.AdWords.v201702.CampaignLabelOperation[] operations) {
       Wrappers.CampaignService.mutateLabelRequest inValue = new Wrappers.CampaignService.mutateLabelRequest();
       inValue.operations = operations;
-      Wrappers.CampaignService.mutateLabelResponse retVal = ((Google.Api.Ads.AdWords.v201702.CampaignServiceInterface)(this)).mutateLabel(inValue);
+      Wrappers.CampaignService.mutateLabelResponse retVal = ((Google.Api.Ads.AdWords.v201702.CampaignServiceInterface) (this)).mutateLabel(inValue);
       return retVal.rval;
     }
 
@@ -30853,7 +30872,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.CampaignFeedReturnValue mutate(Google.Api.Ads.AdWords.v201702.CampaignFeedOperation[] operations) {
       Wrappers.CampaignFeedService.mutateRequest inValue = new Wrappers.CampaignFeedService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.CampaignFeedService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.CampaignFeedServiceInterface)(this)).mutate(inValue);
+      Wrappers.CampaignFeedService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.CampaignFeedServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -31650,7 +31669,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     /// request.</exception>
     public virtual Google.Api.Ads.AdWords.v201702.AgeRange[] getAgeRangeCriterion() {
       Wrappers.ConstantDataService.getAgeRangeCriterionRequest inValue = new Wrappers.ConstantDataService.getAgeRangeCriterionRequest();
-      Wrappers.ConstantDataService.getAgeRangeCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface)(this)).getAgeRangeCriterion(inValue);
+      Wrappers.ConstantDataService.getAgeRangeCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface) (this)).getAgeRangeCriterion(inValue);
       return retVal.rval;
     }
 
@@ -31665,7 +31684,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     /// request.</exception>
     public virtual Google.Api.Ads.AdWords.v201702.Carrier[] getCarrierCriterion() {
       Wrappers.ConstantDataService.getCarrierCriterionRequest inValue = new Wrappers.ConstantDataService.getCarrierCriterionRequest();
-      Wrappers.ConstantDataService.getCarrierCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface)(this)).getCarrierCriterion(inValue);
+      Wrappers.ConstantDataService.getCarrierCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface) (this)).getCarrierCriterion(inValue);
       return retVal.rval;
     }
 
@@ -31680,7 +31699,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     /// request.</exception>
     public virtual Google.Api.Ads.AdWords.v201702.Gender[] getGenderCriterion() {
       Wrappers.ConstantDataService.getGenderCriterionRequest inValue = new Wrappers.ConstantDataService.getGenderCriterionRequest();
-      Wrappers.ConstantDataService.getGenderCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface)(this)).getGenderCriterion(inValue);
+      Wrappers.ConstantDataService.getGenderCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface) (this)).getGenderCriterion(inValue);
       return retVal.rval;
     }
 
@@ -31695,7 +31714,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     /// request.</exception>
     public virtual Google.Api.Ads.AdWords.v201702.Language[] getLanguageCriterion() {
       Wrappers.ConstantDataService.getLanguageCriterionRequest inValue = new Wrappers.ConstantDataService.getLanguageCriterionRequest();
-      Wrappers.ConstantDataService.getLanguageCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface)(this)).getLanguageCriterion(inValue);
+      Wrappers.ConstantDataService.getLanguageCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface) (this)).getLanguageCriterion(inValue);
       return retVal.rval;
     }
 
@@ -31710,7 +31729,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     /// request.</exception>
     public virtual Google.Api.Ads.AdWords.v201702.MobileAppCategory[] getMobileAppCategoryCriterion() {
       Wrappers.ConstantDataService.getMobileAppCategoryCriterionRequest inValue = new Wrappers.ConstantDataService.getMobileAppCategoryCriterionRequest();
-      Wrappers.ConstantDataService.getMobileAppCategoryCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface)(this)).getMobileAppCategoryCriterion(inValue);
+      Wrappers.ConstantDataService.getMobileAppCategoryCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface) (this)).getMobileAppCategoryCriterion(inValue);
       return retVal.rval;
     }
 
@@ -31725,7 +31744,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     /// request.</exception>
     public virtual Google.Api.Ads.AdWords.v201702.MobileDevice[] getMobileDeviceCriterion() {
       Wrappers.ConstantDataService.getMobileDeviceCriterionRequest inValue = new Wrappers.ConstantDataService.getMobileDeviceCriterionRequest();
-      Wrappers.ConstantDataService.getMobileDeviceCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface)(this)).getMobileDeviceCriterion(inValue);
+      Wrappers.ConstantDataService.getMobileDeviceCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface) (this)).getMobileDeviceCriterion(inValue);
       return retVal.rval;
     }
 
@@ -31740,7 +31759,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     /// request.</exception>
     public virtual Google.Api.Ads.AdWords.v201702.OperatingSystemVersion[] getOperatingSystemVersionCriterion() {
       Wrappers.ConstantDataService.getOperatingSystemVersionCriterionRequest inValue = new Wrappers.ConstantDataService.getOperatingSystemVersionCriterionRequest();
-      Wrappers.ConstantDataService.getOperatingSystemVersionCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface)(this)).getOperatingSystemVersionCriterion(inValue);
+      Wrappers.ConstantDataService.getOperatingSystemVersionCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface) (this)).getOperatingSystemVersionCriterion(inValue);
       return retVal.rval;
     }
 
@@ -31761,7 +31780,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.ProductBiddingCategoryData[] getProductBiddingCategoryData(Google.Api.Ads.AdWords.v201702.Selector selector) {
       Wrappers.ConstantDataService.getProductBiddingCategoryDataRequest inValue = new Wrappers.ConstantDataService.getProductBiddingCategoryDataRequest();
       inValue.selector = selector;
-      Wrappers.ConstantDataService.getProductBiddingCategoryDataResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface)(this)).getProductBiddingCategoryData(inValue);
+      Wrappers.ConstantDataService.getProductBiddingCategoryDataResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface) (this)).getProductBiddingCategoryData(inValue);
       return retVal.rval;
     }
 
@@ -31779,7 +31798,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.CriterionUserInterest[] getUserInterestCriterion(Google.Api.Ads.AdWords.v201702.ConstantDataServiceUserInterestTaxonomyType userInterestTaxonomyType) {
       Wrappers.ConstantDataService.getUserInterestCriterionRequest inValue = new Wrappers.ConstantDataService.getUserInterestCriterionRequest();
       inValue.userInterestTaxonomyType = userInterestTaxonomyType;
-      Wrappers.ConstantDataService.getUserInterestCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface)(this)).getUserInterestCriterion(inValue);
+      Wrappers.ConstantDataService.getUserInterestCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface) (this)).getUserInterestCriterion(inValue);
       return retVal.rval;
     }
 
@@ -31794,7 +31813,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     /// request.</exception>
     public virtual Google.Api.Ads.AdWords.v201702.Vertical[] getVerticalCriterion() {
       Wrappers.ConstantDataService.getVerticalCriterionRequest inValue = new Wrappers.ConstantDataService.getVerticalCriterionRequest();
-      Wrappers.ConstantDataService.getVerticalCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface)(this)).getVerticalCriterion(inValue);
+      Wrappers.ConstantDataService.getVerticalCriterionResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConstantDataServiceInterface) (this)).getVerticalCriterion(inValue);
       return retVal.rval;
     }
   }
@@ -33930,7 +33949,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.ConversionTrackerReturnValue mutate(Google.Api.Ads.AdWords.v201702.ConversionTrackerOperation[] operations) {
       Wrappers.ConversionTrackerService.mutateRequest inValue = new Wrappers.ConversionTrackerService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.ConversionTrackerService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConversionTrackerServiceInterface)(this)).mutate(inValue);
+      Wrappers.ConversionTrackerService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.ConversionTrackerServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -35012,14 +35031,15 @@ namespace Google.Api.Ads.AdWords.v201702 {
     }
 
     /// <summary>Returns details of all the customers directly accessible by the user
-    /// authenticating the call. <p>Starting with v201607, if
+    /// authenticating the call. <p>Note: This method will return only test accounts if
+    /// the developer token used has not been approved.</p> <p>Starting with v201607, if
     /// <code>clientCustomerId</code> is specified in the request header, only details
     /// of that customer will be returned. To do this for prior versions, use the
     /// <code>get()</code> method instead.</p>
     /// </summary>
     public virtual Google.Api.Ads.AdWords.v201702.Customer[] getCustomers() {
       Wrappers.CustomerService.getCustomersRequest inValue = new Wrappers.CustomerService.getCustomersRequest();
-      Wrappers.CustomerService.getCustomersResponse retVal = ((Google.Api.Ads.AdWords.v201702.CustomerServiceInterface)(this)).getCustomers(inValue);
+      Wrappers.CustomerService.getCustomersResponse retVal = ((Google.Api.Ads.AdWords.v201702.CustomerServiceInterface) (this)).getCustomers(inValue);
       return retVal.rval;
     }
 
@@ -35036,7 +35056,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.ServiceLink[] getServiceLinks(Google.Api.Ads.AdWords.v201702.Selector selector) {
       Wrappers.CustomerService.getServiceLinksRequest inValue = new Wrappers.CustomerService.getServiceLinksRequest();
       inValue.selector = selector;
-      Wrappers.CustomerService.getServiceLinksResponse retVal = ((Google.Api.Ads.AdWords.v201702.CustomerServiceInterface)(this)).getServiceLinks(inValue);
+      Wrappers.CustomerService.getServiceLinksResponse retVal = ((Google.Api.Ads.AdWords.v201702.CustomerServiceInterface) (this)).getServiceLinks(inValue);
       return retVal.rval;
     }
 
@@ -35063,7 +35083,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.ServiceLink[] mutateServiceLinks(Google.Api.Ads.AdWords.v201702.ServiceLinkOperation[] operations) {
       Wrappers.CustomerService.mutateServiceLinksRequest inValue = new Wrappers.CustomerService.mutateServiceLinksRequest();
       inValue.operations = operations;
-      Wrappers.CustomerService.mutateServiceLinksResponse retVal = ((Google.Api.Ads.AdWords.v201702.CustomerServiceInterface)(this)).mutateServiceLinks(inValue);
+      Wrappers.CustomerService.mutateServiceLinksResponse retVal = ((Google.Api.Ads.AdWords.v201702.CustomerServiceInterface) (this)).mutateServiceLinks(inValue);
       return retVal.rval;
     }
   }
@@ -36680,7 +36700,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.CustomerFeedReturnValue mutate(Google.Api.Ads.AdWords.v201702.CustomerFeedOperation[] operations) {
       Wrappers.CustomerFeedService.mutateRequest inValue = new Wrappers.CustomerFeedService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.CustomerFeedService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.CustomerFeedServiceInterface)(this)).mutate(inValue);
+      Wrappers.CustomerFeedService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.CustomerFeedServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -40087,7 +40107,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.FeedReturnValue mutate(Google.Api.Ads.AdWords.v201702.FeedOperation[] operations) {
       Wrappers.FeedService.mutateRequest inValue = new Wrappers.FeedService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.FeedService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.FeedServiceInterface)(this)).mutate(inValue);
+      Wrappers.FeedService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.FeedServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -40908,7 +40928,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.AdGroupFeedReturnValue mutate(Google.Api.Ads.AdWords.v201702.AdGroupFeedOperation[] operations) {
       Wrappers.AdGroupFeedService.mutateRequest inValue = new Wrappers.AdGroupFeedService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.AdGroupFeedService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupFeedServiceInterface)(this)).mutate(inValue);
+      Wrappers.AdGroupFeedService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupFeedServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -43461,7 +43481,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.FeedItemReturnValue mutate(Google.Api.Ads.AdWords.v201702.FeedItemOperation[] operations) {
       Wrappers.FeedItemService.mutateRequest inValue = new Wrappers.FeedItemService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.FeedItemService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.FeedItemServiceInterface)(this)).mutate(inValue);
+      Wrappers.FeedItemService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.FeedItemServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -44387,7 +44407,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.FeedMappingReturnValue mutate(Google.Api.Ads.AdWords.v201702.FeedMappingOperation[] operations) {
       Wrappers.FeedMappingService.mutateRequest inValue = new Wrappers.FeedMappingService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.FeedMappingService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.FeedMappingServiceInterface)(this)).mutate(inValue);
+      Wrappers.FeedMappingService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.FeedMappingServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -44816,7 +44836,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.LocationCriterion[] get(Google.Api.Ads.AdWords.v201702.Selector selector) {
       Wrappers.LocationCriterionService.getRequest inValue = new Wrappers.LocationCriterionService.getRequest();
       inValue.selector = selector;
-      Wrappers.LocationCriterionService.getResponse retVal = ((Google.Api.Ads.AdWords.v201702.LocationCriterionServiceInterface)(this)).get(inValue);
+      Wrappers.LocationCriterionService.getResponse retVal = ((Google.Api.Ads.AdWords.v201702.LocationCriterionServiceInterface) (this)).get(inValue);
       return retVal.rval;
     }
 
@@ -44834,7 +44854,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.LocationCriterion[] query(string query1) {
       Wrappers.LocationCriterionService.queryRequest inValue = new Wrappers.LocationCriterionService.queryRequest();
       inValue.query = query1;
-      Wrappers.LocationCriterionService.queryResponse retVal = ((Google.Api.Ads.AdWords.v201702.LocationCriterionServiceInterface)(this)).query(inValue);
+      Wrappers.LocationCriterionService.queryResponse retVal = ((Google.Api.Ads.AdWords.v201702.LocationCriterionServiceInterface) (this)).query(inValue);
       return retVal.rval;
     }
   }
@@ -46748,7 +46768,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.PendingInvitation[] getPendingInvitations(Google.Api.Ads.AdWords.v201702.PendingInvitationSelector selector) {
       Wrappers.ManagedCustomerService.getPendingInvitationsRequest inValue = new Wrappers.ManagedCustomerService.getPendingInvitationsRequest();
       inValue.selector = selector;
-      Wrappers.ManagedCustomerService.getPendingInvitationsResponse retVal = ((Google.Api.Ads.AdWords.v201702.ManagedCustomerServiceInterface)(this)).getPendingInvitations(inValue);
+      Wrappers.ManagedCustomerService.getPendingInvitationsResponse retVal = ((Google.Api.Ads.AdWords.v201702.ManagedCustomerServiceInterface) (this)).getPendingInvitations(inValue);
       return retVal.rval;
     }
 
@@ -46767,7 +46787,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.ManagedCustomerReturnValue mutate(Google.Api.Ads.AdWords.v201702.ManagedCustomerOperation[] operations) {
       Wrappers.ManagedCustomerService.mutateRequest inValue = new Wrappers.ManagedCustomerService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.ManagedCustomerService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.ManagedCustomerServiceInterface)(this)).mutate(inValue);
+      Wrappers.ManagedCustomerService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.ManagedCustomerServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -46795,7 +46815,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.ManagedCustomerLabel[] mutateLabel(Google.Api.Ads.AdWords.v201702.ManagedCustomerLabelOperation[] operations) {
       Wrappers.ManagedCustomerService.mutateLabelRequest inValue = new Wrappers.ManagedCustomerService.mutateLabelRequest();
       inValue.operations = operations;
-      Wrappers.ManagedCustomerService.mutateLabelResponse retVal = ((Google.Api.Ads.AdWords.v201702.ManagedCustomerServiceInterface)(this)).mutateLabel(inValue);
+      Wrappers.ManagedCustomerService.mutateLabelResponse retVal = ((Google.Api.Ads.AdWords.v201702.ManagedCustomerServiceInterface) (this)).mutateLabel(inValue);
       return retVal.rval;
     }
 
@@ -46820,7 +46840,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.ManagedCustomerLink[] mutateLink(Google.Api.Ads.AdWords.v201702.LinkOperation[] operations) {
       Wrappers.ManagedCustomerService.mutateLinkRequest inValue = new Wrappers.ManagedCustomerService.mutateLinkRequest();
       inValue.operations = operations;
-      Wrappers.ManagedCustomerService.mutateLinkResponse retVal = ((Google.Api.Ads.AdWords.v201702.ManagedCustomerServiceInterface)(this)).mutateLink(inValue);
+      Wrappers.ManagedCustomerService.mutateLinkResponse retVal = ((Google.Api.Ads.AdWords.v201702.ManagedCustomerServiceInterface) (this)).mutateLink(inValue);
       return retVal.rval;
     }
 
@@ -46839,7 +46859,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.ManagedCustomerLink[] mutateManager(Google.Api.Ads.AdWords.v201702.MoveOperation[] operations) {
       Wrappers.ManagedCustomerService.mutateManagerRequest inValue = new Wrappers.ManagedCustomerService.mutateManagerRequest();
       inValue.operations = operations;
-      Wrappers.ManagedCustomerService.mutateManagerResponse retVal = ((Google.Api.Ads.AdWords.v201702.ManagedCustomerServiceInterface)(this)).mutateManager(inValue);
+      Wrappers.ManagedCustomerService.mutateManagerResponse retVal = ((Google.Api.Ads.AdWords.v201702.ManagedCustomerServiceInterface) (this)).mutateManager(inValue);
       return retVal.rval;
     }
   }
@@ -47315,7 +47335,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.Media[] upload(Google.Api.Ads.AdWords.v201702.Media[] media) {
       Wrappers.MediaService.uploadRequest inValue = new Wrappers.MediaService.uploadRequest();
       inValue.media = media;
-      Wrappers.MediaService.uploadResponse retVal = ((Google.Api.Ads.AdWords.v201702.MediaServiceInterface)(this)).upload(inValue);
+      Wrappers.MediaService.uploadResponse retVal = ((Google.Api.Ads.AdWords.v201702.MediaServiceInterface) (this)).upload(inValue);
       return retVal.rval;
     }
   }
@@ -48071,7 +48091,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.OfflineConversionFeedReturnValue mutate(Google.Api.Ads.AdWords.v201702.OfflineConversionFeedOperation[] operations) {
       Wrappers.OfflineConversionFeedService.mutateRequest inValue = new Wrappers.OfflineConversionFeedService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.OfflineConversionFeedService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.OfflineConversionFeedServiceInterface)(this)).mutate(inValue);
+      Wrappers.OfflineConversionFeedService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.OfflineConversionFeedServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
   }
@@ -48640,7 +48660,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.OfflineCallConversionFeedReturnValue mutate(Google.Api.Ads.AdWords.v201702.OfflineCallConversionFeedOperation[] operations) {
       Wrappers.OfflineCallConversionFeedService.mutateRequest inValue = new Wrappers.OfflineCallConversionFeedService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.OfflineCallConversionFeedService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.OfflineCallConversionFeedServiceInterface)(this)).mutate(inValue);
+      Wrappers.OfflineCallConversionFeedService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.OfflineCallConversionFeedServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
   }
@@ -49497,7 +49517,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.ReportDefinitionField[] getReportFields(Google.Api.Ads.AdWords.v201702.ReportDefinitionReportType reportType) {
       Wrappers.ReportDefinitionService.getReportFieldsRequest inValue = new Wrappers.ReportDefinitionService.getReportFieldsRequest();
       inValue.reportType = reportType;
-      Wrappers.ReportDefinitionService.getReportFieldsResponse retVal = ((Google.Api.Ads.AdWords.v201702.ReportDefinitionServiceInterface)(this)).getReportFields(inValue);
+      Wrappers.ReportDefinitionService.getReportFieldsResponse retVal = ((Google.Api.Ads.AdWords.v201702.ReportDefinitionServiceInterface) (this)).getReportFields(inValue);
       return retVal.rval;
     }
   }
@@ -56911,7 +56931,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.AdGroupCriterionReturnValue mutate(Google.Api.Ads.AdWords.v201702.AdGroupCriterionOperation[] operations) {
       Wrappers.AdGroupCriterionService.mutateRequest inValue = new Wrappers.AdGroupCriterionService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.AdGroupCriterionService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupCriterionServiceInterface)(this)).mutate(inValue);
+      Wrappers.AdGroupCriterionService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupCriterionServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -56939,7 +56959,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.AdGroupCriterionLabelReturnValue mutateLabel(Google.Api.Ads.AdWords.v201702.AdGroupCriterionLabelOperation[] operations) {
       Wrappers.AdGroupCriterionService.mutateLabelRequest inValue = new Wrappers.AdGroupCriterionService.mutateLabelRequest();
       inValue.operations = operations;
-      Wrappers.AdGroupCriterionService.mutateLabelResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupCriterionServiceInterface)(this)).mutateLabel(inValue);
+      Wrappers.AdGroupCriterionService.mutateLabelResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupCriterionServiceInterface) (this)).mutateLabel(inValue);
       return retVal.rval;
     }
 
@@ -60838,7 +60858,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.UserListReturnValue mutate(Google.Api.Ads.AdWords.v201702.UserListOperation[] operations) {
       Wrappers.AdwordsUserListService.mutateRequest inValue = new Wrappers.AdwordsUserListService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.AdwordsUserListService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdwordsUserListServiceInterface)(this)).mutate(inValue);
+      Wrappers.AdwordsUserListService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdwordsUserListServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -60858,7 +60878,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.MutateMembersReturnValue mutateMembers(Google.Api.Ads.AdWords.v201702.MutateMembersOperation[] operations) {
       Wrappers.AdwordsUserListService.mutateMembersRequest inValue = new Wrappers.AdwordsUserListService.mutateMembersRequest();
       inValue.operations = operations;
-      Wrappers.AdwordsUserListService.mutateMembersResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdwordsUserListServiceInterface)(this)).mutateMembers(inValue);
+      Wrappers.AdwordsUserListService.mutateMembersResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdwordsUserListServiceInterface) (this)).mutateMembers(inValue);
       return retVal.rval;
     }
 
@@ -61463,7 +61483,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.CampaignSharedSetReturnValue mutate(Google.Api.Ads.AdWords.v201702.CampaignSharedSetOperation[] operations) {
       Wrappers.CampaignSharedSetService.mutateRequest inValue = new Wrappers.CampaignSharedSetService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.CampaignSharedSetService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.CampaignSharedSetServiceInterface)(this)).mutate(inValue);
+      Wrappers.CampaignSharedSetService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.CampaignSharedSetServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -61981,7 +62001,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.SharedCriterionReturnValue mutate(Google.Api.Ads.AdWords.v201702.SharedCriterionOperation[] operations) {
       Wrappers.SharedCriterionService.mutateRequest inValue = new Wrappers.SharedCriterionService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.SharedCriterionService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.SharedCriterionServiceInterface)(this)).mutate(inValue);
+      Wrappers.SharedCriterionService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.SharedCriterionServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -62638,7 +62658,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.SharedSetReturnValue mutate(Google.Api.Ads.AdWords.v201702.SharedSetOperation[] operations) {
       Wrappers.SharedSetService.mutateRequest inValue = new Wrappers.SharedSetService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.SharedSetService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.SharedSetServiceInterface)(this)).mutate(inValue);
+      Wrappers.SharedSetService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.SharedSetServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -63063,7 +63083,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.LabelReturnValue mutate(Google.Api.Ads.AdWords.v201702.LabelOperation[] operations) {
       Wrappers.LabelService.mutateRequest inValue = new Wrappers.LabelService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.LabelService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.LabelServiceInterface)(this)).mutate(inValue);
+      Wrappers.LabelService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.LabelServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -63537,7 +63557,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.AccountLabel[] get(Google.Api.Ads.AdWords.v201702.Selector selector) {
       Wrappers.AccountLabelService.getRequest inValue = new Wrappers.AccountLabelService.getRequest();
       inValue.selector = selector;
-      Wrappers.AccountLabelService.getResponse retVal = ((Google.Api.Ads.AdWords.v201702.AccountLabelServiceInterface)(this)).get(inValue);
+      Wrappers.AccountLabelService.getResponse retVal = ((Google.Api.Ads.AdWords.v201702.AccountLabelServiceInterface) (this)).get(inValue);
       return retVal.rval;
     }
 
@@ -63560,7 +63580,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.AccountLabel[] mutate(Google.Api.Ads.AdWords.v201702.AccountLabelOperation[] operations) {
       Wrappers.AccountLabelService.mutateRequest inValue = new Wrappers.AccountLabelService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.AccountLabelService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AccountLabelServiceInterface)(this)).mutate(inValue);
+      Wrappers.AccountLabelService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AccountLabelServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
   }
@@ -64318,7 +64338,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.AdCustomizerFeedReturnValue mutate(Google.Api.Ads.AdWords.v201702.AdCustomizerFeedOperation[] operations) {
       Wrappers.AdCustomizerFeedService.mutateRequest inValue = new Wrappers.AdCustomizerFeedService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.AdCustomizerFeedService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdCustomizerFeedServiceInterface)(this)).mutate(inValue);
+      Wrappers.AdCustomizerFeedService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdCustomizerFeedServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
   }
@@ -67178,7 +67198,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.AdGroupExtensionSettingReturnValue mutate(Google.Api.Ads.AdWords.v201702.AdGroupExtensionSettingOperation[] operations) {
       Wrappers.AdGroupExtensionSettingService.mutateRequest inValue = new Wrappers.AdGroupExtensionSettingService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.AdGroupExtensionSettingService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupExtensionSettingServiceInterface)(this)).mutate(inValue);
+      Wrappers.AdGroupExtensionSettingService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupExtensionSettingServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -67721,7 +67741,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.CampaignExtensionSettingReturnValue mutate(Google.Api.Ads.AdWords.v201702.CampaignExtensionSettingOperation[] operations) {
       Wrappers.CampaignExtensionSettingService.mutateRequest inValue = new Wrappers.CampaignExtensionSettingService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.CampaignExtensionSettingService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.CampaignExtensionSettingServiceInterface)(this)).mutate(inValue);
+      Wrappers.CampaignExtensionSettingService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.CampaignExtensionSettingServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -68222,7 +68242,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.CustomerExtensionSettingReturnValue mutate(Google.Api.Ads.AdWords.v201702.CustomerExtensionSettingOperation[] operations) {
       Wrappers.CustomerExtensionSettingService.mutateRequest inValue = new Wrappers.CustomerExtensionSettingService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.CustomerExtensionSettingService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.CustomerExtensionSettingServiceInterface)(this)).mutate(inValue);
+      Wrappers.CustomerExtensionSettingService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.CustomerExtensionSettingServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -69625,7 +69645,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.AdGroupReturnValue mutate(Google.Api.Ads.AdWords.v201702.AdGroupOperation[] operations) {
       Wrappers.AdGroupService.mutateRequest inValue = new Wrappers.AdGroupService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.AdGroupService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupServiceInterface)(this)).mutate(inValue);
+      Wrappers.AdGroupService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -69653,7 +69673,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.AdGroupLabelReturnValue mutateLabel(Google.Api.Ads.AdWords.v201702.AdGroupLabelOperation[] operations) {
       Wrappers.AdGroupService.mutateLabelRequest inValue = new Wrappers.AdGroupService.mutateLabelRequest();
       inValue.operations = operations;
-      Wrappers.AdGroupService.mutateLabelResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupServiceInterface)(this)).mutateLabel(inValue);
+      Wrappers.AdGroupService.mutateLabelResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupServiceInterface) (this)).mutateLabel(inValue);
       return retVal.rval;
     }
 
@@ -70318,7 +70338,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.DraftReturnValue mutate(Google.Api.Ads.AdWords.v201702.DraftOperation[] operations) {
       Wrappers.DraftService.mutateRequest inValue = new Wrappers.DraftService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.DraftService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.DraftServiceInterface)(this)).mutate(inValue);
+      Wrappers.DraftService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.DraftServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -71684,7 +71704,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.TrialReturnValue mutate(Google.Api.Ads.AdWords.v201702.TrialOperation[] operations) {
       Wrappers.TrialService.mutateRequest inValue = new Wrappers.TrialService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.TrialService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.TrialServiceInterface)(this)).mutate(inValue);
+      Wrappers.TrialService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.TrialServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -72942,7 +72962,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.AdGroupBidModifierReturnValue mutate(Google.Api.Ads.AdWords.v201702.AdGroupBidModifierOperation[] operations) {
       Wrappers.AdGroupBidModifierService.mutateRequest inValue = new Wrappers.AdGroupBidModifierService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.AdGroupBidModifierService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupBidModifierServiceInterface)(this)).mutate(inValue);
+      Wrappers.AdGroupBidModifierService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdGroupBidModifierServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -73620,7 +73640,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.AdParam[] mutate(Google.Api.Ads.AdWords.v201702.AdParamOperation[] operations) {
       Wrappers.AdParamService.mutateRequest inValue = new Wrappers.AdParamService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.AdParamService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdParamServiceInterface)(this)).mutate(inValue);
+      Wrappers.AdParamService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.AdParamServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
   }
@@ -74556,7 +74576,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.BatchJobReturnValue mutate(Google.Api.Ads.AdWords.v201702.BatchJobOperation[] operations) {
       Wrappers.BatchJobService.mutateRequest inValue = new Wrappers.BatchJobService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.BatchJobService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.BatchJobServiceInterface)(this)).mutate(inValue);
+      Wrappers.BatchJobService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.BatchJobServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -75165,7 +75185,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.BiddingStrategyReturnValue mutate(Google.Api.Ads.AdWords.v201702.BiddingStrategyOperation[] operations) {
       Wrappers.BiddingStrategyService.mutateRequest inValue = new Wrappers.BiddingStrategyService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.BiddingStrategyService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.BiddingStrategyServiceInterface)(this)).mutate(inValue);
+      Wrappers.BiddingStrategyService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.BiddingStrategyServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -75619,12 +75639,15 @@ namespace Google.Api.Ads.AdWords.v201702 {
     }
 
     /// <summary>A 12 digit billing ID assigned to the user by Google. This must be passed in as
-    /// a string with dashes, e.g. "1234-5678-9012". For mutate.add, this field is
-    /// required if billingAccountId is not specified. <span class="constraint
-    /// Selectable">This field can be selected using the value
-    /// "PrimaryBillingId".</span><span class="constraint Filterable">This field can be
-    /// filtered on.</span> <span class="constraint StringLength">The length of this
-    /// string should be between 0 and 14, inclusive, (trimmed).</span>
+    /// a string with dashes, e.g. "1234-5678-9012". <p>This field is required in an
+    /// <code>ADD</code> operation if billingAccountId is not specified.</p> <p
+    /// class="note"><b>Note:</b>Starting with v201708, this field is required in any
+    /// <code>ADD</code> operation that sets or changes the billing account of a client
+    /// account. <span class="constraint Selectable">This field can be selected using
+    /// the value "PrimaryBillingId".</span><span class="constraint Filterable">This
+    /// field can be filtered on.</span> <span class="constraint StringLength">The
+    /// length of this string should be between 0 and 14, inclusive,
+    /// (trimmed).</span></p>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
     public string primaryBillingId {
@@ -76529,7 +76552,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     /// ApiException
     public virtual Google.Api.Ads.AdWords.v201702.BillingAccount[] getBillingAccounts() {
       Wrappers.BudgetOrderService.getBillingAccountsRequest inValue = new Wrappers.BudgetOrderService.getBillingAccountsRequest();
-      Wrappers.BudgetOrderService.getBillingAccountsResponse retVal = ((Google.Api.Ads.AdWords.v201702.BudgetOrderServiceInterface)(this)).getBillingAccounts(inValue);
+      Wrappers.BudgetOrderService.getBillingAccountsResponse retVal = ((Google.Api.Ads.AdWords.v201702.BudgetOrderServiceInterface) (this)).getBillingAccounts(inValue);
       return retVal.rval;
     }
 
@@ -76555,7 +76578,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.BudgetOrderReturnValue mutate(Google.Api.Ads.AdWords.v201702.BudgetOrderOperation[] operations) {
       Wrappers.BudgetOrderService.mutateRequest inValue = new Wrappers.BudgetOrderService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.BudgetOrderService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.BudgetOrderServiceInterface)(this)).mutate(inValue);
+      Wrappers.BudgetOrderService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.BudgetOrderServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
   }
@@ -76753,7 +76776,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
     public virtual Google.Api.Ads.AdWords.v201702.BudgetReturnValue mutate(Google.Api.Ads.AdWords.v201702.BudgetOperation[] operations) {
       Wrappers.BudgetService.mutateRequest inValue = new Wrappers.BudgetService.mutateRequest();
       inValue.operations = operations;
-      Wrappers.BudgetService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.BudgetServiceInterface)(this)).mutate(inValue);
+      Wrappers.BudgetService.mutateResponse retVal = ((Google.Api.Ads.AdWords.v201702.BudgetServiceInterface) (this)).mutate(inValue);
       return retVal.rval;
     }
 
@@ -76780,7 +76803,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// href="/adwords/api/docs/appendix/templateads">Template Ad formats</a>.</dd>
   /// </dl>
   /// </summary>
-  public interface IAdGroupAdService : AdGroupAdServiceInterface {
+  public interface IAdGroupAdService : AdGroupAdServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.AdGroupAdReturnValue mutate(Google.Api.Ads.AdWords.v201702.AdGroupAdOperation[] operations);
 
     Google.Api.Ads.AdWords.v201702.AdGroupAdLabelReturnValue mutateLabel(Google.Api.Ads.AdWords.v201702.AdGroupAdLabelOperation[] operations);
@@ -76800,7 +76823,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// can be added using the Criterion Id listed in the <a
   /// href="/adwords/api/docs/appendix/platforms">documentation</a>.</p>
   /// </summary>
-  public interface ICampaignCriterionService : CampaignCriterionServiceInterface {
+  public interface ICampaignCriterionService : CampaignCriterionServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.CampaignCriterionReturnValue mutate(Google.Api.Ads.AdWords.v201702.CampaignCriterionOperation[] operations);
   }
 
@@ -76813,7 +76836,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// href='CampaignExtensionSettingService'>CampaignExtensionSettingService</a>.
   /// <p><b>Note:</b> CampaignService does not support video campaigns.</p>
   /// </summary>
-  public interface ICampaignService : CampaignServiceInterface {
+  public interface ICampaignService : CampaignServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.CampaignReturnValue mutate(Google.Api.Ads.AdWords.v201702.CampaignOperation[] operations);
 
     Google.Api.Ads.AdWords.v201702.CampaignLabelReturnValue mutateLabel(Google.Api.Ads.AdWords.v201702.CampaignLabelOperation[] operations);
@@ -76822,14 +76845,14 @@ namespace Google.Api.Ads.AdWords.v201702 {
 
   /// <summary>Service used to manage campaign feed links, and matching functions.
   /// </summary>
-  public interface ICampaignFeedService : CampaignFeedServiceInterface {
+  public interface ICampaignFeedService : CampaignFeedServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.CampaignFeedReturnValue mutate(Google.Api.Ads.AdWords.v201702.CampaignFeedOperation[] operations);
   }
 
 
   /// <summary>A service to return constant data.
   /// </summary>
-  public interface IConstantDataService : ConstantDataServiceInterface {
+  public interface IConstantDataService : ConstantDataServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.AgeRange[] getAgeRangeCriterion();
 
     Google.Api.Ads.AdWords.v201702.Carrier[] getCarrierCriterion();
@@ -76857,14 +76880,14 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// The data this provides can be used to gauge the effectiveness of your ads and
   /// keywords.
   /// </summary>
-  public interface IConversionTrackerService : ConversionTrackerServiceInterface {
+  public interface IConversionTrackerService : ConversionTrackerServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.ConversionTrackerReturnValue mutate(Google.Api.Ads.AdWords.v201702.ConversionTrackerOperation[] operations);
   }
 
 
   /// <summary>Service to access basic details about any customer.
   /// </summary>
-  public interface ICustomerService : CustomerServiceInterface {
+  public interface ICustomerService : CustomerServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.Customer[] getCustomers();
 
     Google.Api.Ads.AdWords.v201702.ServiceLink[] getServiceLinks(Google.Api.Ads.AdWords.v201702.Selector selector);
@@ -76880,13 +76903,13 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// data.</p> <p class="note"><b>Note:</b> CustomerSyncService only supports queries
   /// for dates within the last 90 days.</p>
   /// </summary>
-  public interface ICustomerSyncService : CustomerSyncServiceInterface {
+  public interface ICustomerSyncService : CustomerSyncServiceInterface, IDisposable {
   }
 
 
   /// <summary>Service used to manage customer feed links, and matching functions.
   /// </summary>
-  public interface ICustomerFeedService : CustomerFeedServiceInterface {
+  public interface ICustomerFeedService : CustomerFeedServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.CustomerFeedReturnValue mutate(Google.Api.Ads.AdWords.v201702.CustomerFeedOperation[] operations);
   }
 
@@ -76895,34 +76918,34 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// href='Selector'>Selector</a>. <span class="constraint AdxEnabled">This is
   /// disabled for AdX.</span>
   /// </summary>
-  public interface IDataService : DataServiceInterface {
+  public interface IDataService : DataServiceInterface, IDisposable {
   }
 
 
   /// <summary>Service used to get and mutate Feeds.
   /// </summary>
-  public interface IFeedService : FeedServiceInterface {
+  public interface IFeedService : FeedServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.FeedReturnValue mutate(Google.Api.Ads.AdWords.v201702.FeedOperation[] operations);
   }
 
 
   /// <summary>Service used to manage adgroup feed links, and matching functions.
   /// </summary>
-  public interface IAdGroupFeedService : AdGroupFeedServiceInterface {
+  public interface IAdGroupFeedService : AdGroupFeedServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.AdGroupFeedReturnValue mutate(Google.Api.Ads.AdWords.v201702.AdGroupFeedOperation[] operations);
   }
 
 
   /// <summary>Service to operate on feed items.
   /// </summary>
-  public interface IFeedItemService : FeedItemServiceInterface {
+  public interface IFeedItemService : FeedItemServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.FeedItemReturnValue mutate(Google.Api.Ads.AdWords.v201702.FeedItemOperation[] operations);
   }
 
 
   /// <summary>Service for getting and mutating FeedMappings.
   /// </summary>
-  public interface IFeedMappingService : FeedMappingServiceInterface {
+  public interface IFeedMappingService : FeedMappingServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.FeedMappingReturnValue mutate(Google.Api.Ads.AdWords.v201702.FeedMappingOperation[] operations);
   }
 
@@ -76932,7 +76955,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// selector. <p> </p><p>Please note that filtering by date range is not
   /// supported.</p>
   /// </summary>
-  public interface ILocationCriterionService : LocationCriterionServiceInterface {
+  public interface ILocationCriterionService : LocationCriterionServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.LocationCriterion[] get(Google.Api.Ads.AdWords.v201702.Selector selector);
 
     Google.Api.Ads.AdWords.v201702.LocationCriterion[] query(string query1);
@@ -76941,7 +76964,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
 
   /// <summary>Customer Manager Service.
   /// </summary>
-  public interface IManagedCustomerService : ManagedCustomerServiceInterface {
+  public interface IManagedCustomerService : ManagedCustomerServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.PendingInvitation[] getPendingInvitations(Google.Api.Ads.AdWords.v201702.PendingInvitationSelector selector);
 
     Google.Api.Ads.AdWords.v201702.ManagedCustomerReturnValue mutate(Google.Api.Ads.AdWords.v201702.ManagedCustomerOperation[] operations);
@@ -76957,7 +76980,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// <summary>Use this service to manage media for your template ads. After uploading images
   /// and videos with this service, use the IDs when creating image or template ads.
   /// </summary>
-  public interface IMediaService : MediaServiceInterface {
+  public interface IMediaService : MediaServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.Media[] upload(Google.Api.Ads.AdWords.v201702.Media[] media);
   }
 
@@ -76967,14 +76990,14 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// href="https://developers.google.com/adwords/api/docs/guides/conversion-tracking">
   /// conversion tracking guide</a>.</p>
   /// </summary>
-  public interface IOfflineConversionFeedService : OfflineConversionFeedServiceInterface {
+  public interface IOfflineConversionFeedService : OfflineConversionFeedServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.OfflineConversionFeedReturnValue mutate(Google.Api.Ads.AdWords.v201702.OfflineConversionFeedOperation[] operations);
   }
 
 
   /// <summary>Service that handles the reporting of externally provided call conversions.
   /// </summary>
-  public interface IOfflineCallConversionFeedService : OfflineCallConversionFeedServiceInterface {
+  public interface IOfflineCallConversionFeedService : OfflineCallConversionFeedServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.OfflineCallConversionFeedReturnValue mutate(Google.Api.Ads.AdWords.v201702.OfflineCallConversionFeedOperation[] operations);
   }
 
@@ -76991,7 +77014,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// retrieving reports, see <a href="/adwords/api/docs/guides/reporting">Reporting
   /// Basics</a>.</p>
   /// </summary>
-  public interface IReportDefinitionService : ReportDefinitionServiceInterface {
+  public interface IReportDefinitionService : ReportDefinitionServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.ReportDefinitionField[] getReportFields(Google.Api.Ads.AdWords.v201702.ReportDefinitionReportType reportType);
   }
 
@@ -77004,7 +77027,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// href='RequestType#STATS'>RequestType#STATS</a> and passing in the appropriate
   /// search parameters.</p>
   /// </summary>
-  public interface ITargetingIdeaService : TargetingIdeaServiceInterface {
+  public interface ITargetingIdeaService : TargetingIdeaServiceInterface, IDisposable {
   }
 
 
@@ -77027,7 +77050,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// comparing numbers, use the same account for the API and UI.</p> <span
   /// class="constraint AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
-  public interface ITrafficEstimatorService : TrafficEstimatorServiceInterface {
+  public interface ITrafficEstimatorService : TrafficEstimatorServiceInterface, IDisposable {
   }
 
 
@@ -77041,7 +77064,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// criterion</a> defines conditions that will prevent the parent ad group's ads
   /// from displaying.</li> </ul>
   /// </summary>
-  public interface IAdGroupCriterionService : AdGroupCriterionServiceInterface {
+  public interface IAdGroupCriterionService : AdGroupCriterionServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.AdGroupCriterionReturnValue mutate(Google.Api.Ads.AdWords.v201702.AdGroupCriterionOperation[] operations);
 
     Google.Api.Ads.AdWords.v201702.AdGroupCriterionLabelReturnValue mutateLabel(Google.Api.Ads.AdWords.v201702.AdGroupCriterionLabelOperation[] operations);
@@ -77050,7 +77073,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
 
   /// <summary>Service which is used to manage user lists.
   /// </summary>
-  public interface IAdwordsUserListService : AdwordsUserListServiceInterface {
+  public interface IAdwordsUserListService : AdwordsUserListServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.UserListReturnValue mutate(Google.Api.Ads.AdWords.v201702.UserListOperation[] operations);
 
     Google.Api.Ads.AdWords.v201702.MutateMembersReturnValue mutateMembers(Google.Api.Ads.AdWords.v201702.MutateMembersOperation[] operations);
@@ -77060,14 +77083,14 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// <summary>This service is used for managing associations between <code></code> entities
   /// and <code>Campaign</code> entities.
   /// </summary>
-  public interface ICampaignSharedSetService : CampaignSharedSetServiceInterface {
+  public interface ICampaignSharedSetService : CampaignSharedSetServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.CampaignSharedSetReturnValue mutate(Google.Api.Ads.AdWords.v201702.CampaignSharedSetOperation[] operations);
   }
 
 
   /// <summary>Manages which criteria are associated with shared sets.
   /// </summary>
-  public interface ISharedCriterionService : SharedCriterionServiceInterface {
+  public interface ISharedCriterionService : SharedCriterionServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.SharedCriterionReturnValue mutate(Google.Api.Ads.AdWords.v201702.SharedCriterionOperation[] operations);
   }
 
@@ -77075,7 +77098,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// <summary>This service is used for managing <a href='SharedSet'>SharedSet</a> entities
   /// themselves and the association between sets and campaigns.
   /// </summary>
-  public interface ISharedSetService : SharedSetServiceInterface {
+  public interface ISharedSetService : SharedSetServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.SharedSetReturnValue mutate(Google.Api.Ads.AdWords.v201702.SharedSetOperation[] operations);
   }
 
@@ -77084,7 +77107,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// attached to campaign management entities such as campaigns, ad groups,
   /// creatives, criterion and etc.
   /// </summary>
-  public interface ILabelService : LabelServiceInterface {
+  public interface ILabelService : LabelServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.LabelReturnValue mutate(Google.Api.Ads.AdWords.v201702.LabelOperation[] operations);
   }
 
@@ -77101,7 +77124,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// customer, see <a
   /// href='ManagedCustomerService#mutateLabel'>ManagedCustomerService#mutateLabel</a>.</p>
   /// </summary>
-  public interface IAccountLabelService : AccountLabelServiceInterface {
+  public interface IAccountLabelService : AccountLabelServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.AccountLabel[] get(Google.Api.Ads.AdWords.v201702.Selector selector);
 
     Google.Api.Ads.AdWords.v201702.AccountLabel[] mutate(Google.Api.Ads.AdWords.v201702.AccountLabelOperation[] operations);
@@ -77113,7 +77136,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// such Feeds can also be managed using a combination of the Feed, FeedMapping, and
   /// CustomerFeed services.</p>
   /// </summary>
-  public interface IAdCustomizerFeedService : AdCustomizerFeedServiceInterface {
+  public interface IAdCustomizerFeedService : AdCustomizerFeedServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.AdCustomizerFeedReturnValue mutate(Google.Api.Ads.AdWords.v201702.AdCustomizerFeedOperation[] operations);
   }
 
@@ -77122,7 +77145,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// managed by AdWords using existing feed services, including creating and
   /// modifying feeds, feed items, and adgroup feeds for the user.
   /// </summary>
-  public interface IAdGroupExtensionSettingService : AdGroupExtensionSettingServiceInterface {
+  public interface IAdGroupExtensionSettingService : AdGroupExtensionSettingServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.AdGroupExtensionSettingReturnValue mutate(Google.Api.Ads.AdWords.v201702.AdGroupExtensionSettingOperation[] operations);
   }
 
@@ -77131,7 +77154,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// managed by AdWords using existing feed services, including creating and
   /// modifying feeds, feed items, and campaign feeds for the user.
   /// </summary>
-  public interface ICampaignExtensionSettingService : CampaignExtensionSettingServiceInterface {
+  public interface ICampaignExtensionSettingService : CampaignExtensionSettingServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.CampaignExtensionSettingReturnValue mutate(Google.Api.Ads.AdWords.v201702.CampaignExtensionSettingOperation[] operations);
   }
 
@@ -77140,7 +77163,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// managed by AdWords using existing feed services, including creating and
   /// modifying feeds, feed items, and customer feeds for the user.
   /// </summary>
-  public interface ICustomerExtensionSettingService : CustomerExtensionSettingServiceInterface {
+  public interface ICustomerExtensionSettingService : CustomerExtensionSettingServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.CustomerExtensionSettingReturnValue mutate(Google.Api.Ads.AdWords.v201702.CustomerExtensionSettingOperation[] operations);
   }
 
@@ -77150,7 +77173,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// href='AdGroup#bids'>default bid</a> for its criteria. One or more ad groups
   /// belong to a campaign.
   /// </summary>
-  public interface IAdGroupService : AdGroupServiceInterface {
+  public interface IAdGroupService : AdGroupServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.AdGroupReturnValue mutate(Google.Api.Ads.AdWords.v201702.AdGroupOperation[] operations);
 
     Google.Api.Ads.AdWords.v201702.AdGroupLabelReturnValue mutateLabel(Google.Api.Ads.AdWords.v201702.AdGroupLabelOperation[] operations);
@@ -77160,7 +77183,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// <summary>The DraftService is used for creating new drafts and controlling the life cycle
   /// of drafts.
   /// </summary>
-  public interface IDraftService : DraftServiceInterface {
+  public interface IDraftService : DraftServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.DraftReturnValue mutate(Google.Api.Ads.AdWords.v201702.DraftOperation[] operations);
   }
 
@@ -77168,7 +77191,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// <summary>The DraftAsyncErrorService is retrieving asynchronous errors from promoting
   /// drafts.
   /// </summary>
-  public interface IDraftAsyncErrorService : DraftAsyncErrorServiceInterface {
+  public interface IDraftAsyncErrorService : DraftAsyncErrorServiceInterface, IDisposable {
   }
 
 
@@ -77217,7 +77240,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// href='TrialStatus#PROMOTING'>PROMOTING</a> can be archived by setting the status
   /// to the value of the same name.</p>
   /// </summary>
-  public interface ITrialService : TrialServiceInterface {
+  public interface ITrialService : TrialServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.TrialReturnValue mutate(Google.Api.Ads.AdWords.v201702.TrialOperation[] operations);
   }
 
@@ -77225,7 +77248,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// <summary>The TrialAsyncErrorService is retrieving asynchronous errors from creating and
   /// promoting trials.
   /// </summary>
-  public interface ITrialAsyncErrorService : TrialAsyncErrorServiceInterface {
+  public interface ITrialAsyncErrorService : TrialAsyncErrorServiceInterface, IDisposable {
   }
 
 
@@ -77236,7 +77259,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// Operations. The output will be a single MutateResponse with the same number of
   /// MutateResults.</p>
   /// </summary>
-  public interface IBatchJobOpsService : BatchJobOpsServiceInterface {
+  public interface IBatchJobOpsService : BatchJobOpsServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.MutateResult[] mutate(Google.Api.Ads.AdWords.v201702.Operation[] operations);
   }
 
@@ -77245,7 +77268,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// Currently this service supports Platform and PreferredContent bid multiplier
   /// overrides.
   /// </summary>
-  public interface IAdGroupBidModifierService : AdGroupBidModifierServiceInterface {
+  public interface IAdGroupBidModifierService : AdGroupBidModifierServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.AdGroupBidModifierReturnValue mutate(Google.Api.Ads.AdWords.v201702.AdGroupBidModifierOperation[] operations);
   }
 
@@ -77265,7 +77288,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// href='NetworkTarget#networkCoverageType'>Google Display Network</a>.</li> </ul>
   /// <span class="constraint AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
-  public interface IAdParamService : AdParamServiceInterface {
+  public interface IAdParamService : AdParamServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.AdParam[] mutate(Google.Api.Ads.AdWords.v201702.AdParamOperation[] operations);
   }
 
@@ -77281,7 +77304,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// will risk getting your customer rate-limited.</p> <p>Once a job's status changes
   /// to <code>DONE</code>, you can retrieve the job's results.</p>
   /// </summary>
-  public interface IBatchJobService : BatchJobServiceInterface {
+  public interface IBatchJobService : BatchJobServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.BatchJobReturnValue mutate(Google.Api.Ads.AdWords.v201702.BatchJobOperation[] operations);
   }
 
@@ -77289,7 +77312,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// <summary>BiddingStrategy Service to get/mutate bidding strategies. <span
   /// class="constraint AdxEnabled">This is disabled for AdX.</span>
   /// </summary>
-  public interface IBiddingStrategyService : BiddingStrategyServiceInterface {
+  public interface IBiddingStrategyService : BiddingStrategyServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.BiddingStrategyReturnValue mutate(Google.Api.Ads.AdWords.v201702.BiddingStrategyOperation[] operations);
   }
 
@@ -77301,7 +77324,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
   /// Any attempt to make more than one operation will result in an
   /// <code>ApiException</code>.</p>
   /// </summary>
-  public interface IBudgetOrderService : BudgetOrderServiceInterface {
+  public interface IBudgetOrderService : BudgetOrderServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.BillingAccount[] getBillingAccounts();
 
     Google.Api.Ads.AdWords.v201702.BudgetOrderReturnValue mutate(Google.Api.Ads.AdWords.v201702.BudgetOrderOperation[] operations);
@@ -77310,7 +77333,7 @@ namespace Google.Api.Ads.AdWords.v201702 {
 
   /// <summary>Budget Service to get/mutate budgets.
   /// </summary>
-  public interface IBudgetService : BudgetServiceInterface {
+  public interface IBudgetService : BudgetServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201702.BudgetReturnValue mutate(Google.Api.Ads.AdWords.v201702.BudgetOperation[] operations);
   }
 

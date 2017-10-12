@@ -604,6 +604,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201705 {
     [ReportColumn("valueConvCurrentModel")]
     public double valuePerCurrentModelAttributedConversion { get; set; }
 
+    [ReportColumn("verticalID")]
+    public long verticalId { get; set; }
+
     [ReportColumn("videoPlayedTo100")]
     public double videoQuartile100Rate { get; set; }
 
@@ -663,6 +666,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201705 {
       CALL_ONLY_AD,
       DEPRECATED_AD,
       DYNAMIC_SEARCH_AD,
+      EXPANDED_DYNAMIC_SEARCH_AD,
       EXPANDED_TEXT_AD,
       IMAGE_AD,
       PRODUCT_AD,
@@ -705,6 +709,14 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201705 {
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
+      SWIPEABLE_GALLERY_AD_HEADLINE,
+      SWIPEABLE_GALLERY_AD_SEE_MORE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FIVE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FOUR,
+      SWIPEABLE_GALLERY_AD_SITELINK_ONE,
+      SWIPEABLE_GALLERY_AD_SITELINK_THREE,
+      SWIPEABLE_GALLERY_AD_SITELINK_TWO,
+      SWIPEABLE_GALLERY_AD_SWIPES,
       TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
@@ -4000,6 +4012,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201705 {
     [ReportColumn("matchType")]
     public KeywordMatchType keywordMatchType { get; set; }
 
+    [ReportColumn("verticalID")]
+    public long verticalId { get; set; }
+
   }
 
   public class DestinationUrlReportReportRow {
@@ -5720,6 +5735,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201705 {
     [ReportColumn("valueConvCurrentModel")]
     public double valuePerCurrentModelAttributedConversion { get; set; }
 
+    [ReportColumn("verticalID")]
+    public long verticalId { get; set; }
+
     [ReportColumn("videoPlayedTo100")]
     public double videoQuartile100Rate { get; set; }
 
@@ -6267,11 +6285,20 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201705 {
     [ReportColumn("clicks")]
     public long clicks { get; set; }
 
+    [ReportColumn("conversionCategory")]
+    public string conversionCategoryName { get; set; }
+
     [ReportColumn("convRate")]
     public double conversionRate { get; set; }
 
     [ReportColumn("conversions")]
     public double conversions { get; set; }
+
+    [ReportColumn("conversionTrackerId")]
+    public long conversionTrackerId { get; set; }
+
+    [ReportColumn("conversionName")]
+    public string conversionTypeName { get; set; }
 
     [ReportColumn("totalConvValue")]
     public double conversionValue { get; set; }
@@ -8796,11 +8823,20 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201705 {
     [ReportColumn("clicks")]
     public long clicks { get; set; }
 
+    [ReportColumn("conversionCategory")]
+    public string conversionCategoryName { get; set; }
+
     [ReportColumn("convRate")]
     public double conversionRate { get; set; }
 
     [ReportColumn("conversions")]
     public double conversions { get; set; }
+
+    [ReportColumn("conversionTrackerId")]
+    public long conversionTrackerId { get; set; }
+
+    [ReportColumn("conversionName")]
+    public string conversionTypeName { get; set; }
 
     [ReportColumn("totalConvValue")]
     public double conversionValue { get; set; }
@@ -9892,6 +9928,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201705 {
 
     [ReportColumn("valueConv")]
     public double valuePerConversion { get; set; }
+
+    [ReportColumn("verticalID")]
+    public long verticalId { get; set; }
 
     [ReportColumn("videoPlayedTo100")]
     public double videoQuartile100Rate { get; set; }
@@ -12191,6 +12230,14 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201705 {
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
+      SWIPEABLE_GALLERY_AD_HEADLINE,
+      SWIPEABLE_GALLERY_AD_SEE_MORE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FIVE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FOUR,
+      SWIPEABLE_GALLERY_AD_SITELINK_ONE,
+      SWIPEABLE_GALLERY_AD_SITELINK_THREE,
+      SWIPEABLE_GALLERY_AD_SITELINK_TWO,
+      SWIPEABLE_GALLERY_AD_SWIPES,
       TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,

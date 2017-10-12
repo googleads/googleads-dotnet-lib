@@ -154,6 +154,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
       Dim digestBytes(digest.GetDigestSize() - 1) As Byte
       digest.BlockUpdate(data, 0, data.Length)
       digest.DoFinal(digestBytes, 0)
+
+      ' Convert the byte array into an unhyphenated hexadecimal string.
       Return BitConverter.ToString(digestBytes).Replace("-", String.Empty)
     End Function
 

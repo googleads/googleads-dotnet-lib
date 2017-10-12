@@ -91,23 +91,25 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// and handed back to the client application.</param>
     /// <param name="correlationState">Correlation state data returned by BeforeSendRequest</param>
     public void AfterReceiveReply(ref Message reply, object correlationState) {
-      // DataContract is strict with namespacing. Change the namespace to be the same
-      // as the DataContract attribute.
-      XmlReader reader = reply.Headers.GetReaderAtHeader(0);
-      String ns = reader.NamespaceURI;
-      String headerText = reader.ReadOuterXml();
-      headerText = headerText.Replace(ns, ResponseHeader.PLACEHOLDER_NAMESPACE);
-      XmlObjectSerializer ser = new DataContractSerializer(typeof(ResponseHeader));
+      if (reply.Headers.Count > 0) {
+        // DataContract is strict with namespacing. Change the namespace to be the same
+        // as the DataContract attribute.
+        XmlReader reader = reply.Headers.GetReaderAtHeader(0);
+        String ns = reader.NamespaceURI;
+        String headerText = reader.ReadOuterXml();
+        headerText = headerText.Replace(ns, ResponseHeader.PLACEHOLDER_NAMESPACE);
+        XmlObjectSerializer ser = new DataContractSerializer(typeof(ResponseHeader));
 
-      ApiCallEntry entry = new ApiCallEntry();
-      using (MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(headerText))) {
-        ResponseHeader = (ResponseHeader)ser.ReadObject(stream);
-        entry.OperationCount = (int)ResponseHeader.operations;
-        entry.Method = ResponseHeader.methodName;
-        entry.Service = ResponseHeader.serviceName;
+        ApiCallEntry entry = new ApiCallEntry();
+        using (MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(headerText))) {
+          ResponseHeader = (ResponseHeader)ser.ReadObject(stream);
+          entry.OperationCount = (int)ResponseHeader.operations;
+          entry.Method = ResponseHeader.methodName;
+          entry.Service = ResponseHeader.serviceName;
+        }
+
+        this.User.AddCallDetails(entry);
       }
-
-      this.User.AddCallDetails(entry);
       AdsFeatureUsageRegistry.Instance.Clear();
     }
   }

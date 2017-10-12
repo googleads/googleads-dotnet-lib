@@ -62,10 +62,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// added.</param>
     /// <param name="labelId">ID of the label to apply.</param>
     public void Run(AdWordsUser user, long campaignId1, long campaignId2, long labelId) {
-      try {
-        // Get the CampaignService.
-        CampaignService campaignService =
-            (CampaignService) user.GetService(AdWordsService.v201702.CampaignService);
+      using (CampaignService campaignService =
+            (CampaignService) user.GetService(AdWordsService.v201702.CampaignService)) {
 
         // Create label operations.
         List<CampaignLabelOperation> operations = new List<CampaignLabelOperation>();
@@ -81,20 +79,23 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
 
           operations.Add(operation);
         }
-        CampaignLabelReturnValue retval = campaignService.mutateLabel(
-        operations.ToArray());
 
-        // Display campaign labels.
-        if (retval != null && retval.value != null) {
-          foreach (CampaignLabel newCampaignLabel in retval.value) {
-            Console.WriteLine("Campaign label for campaign ID {0} and label ID {1} was added.\n",
-                newCampaignLabel.campaignId, newCampaignLabel.labelId);
+        try {
+          CampaignLabelReturnValue retval = campaignService.mutateLabel(
+          operations.ToArray());
+
+          // Display campaign labels.
+          if (retval != null && retval.value != null) {
+            foreach (CampaignLabel newCampaignLabel in retval.value) {
+              Console.WriteLine("Campaign label for campaign ID {0} and label ID {1} was added.\n",
+                  newCampaignLabel.campaignId, newCampaignLabel.labelId);
+            }
+          } else {
+            Console.WriteLine("No campaign labels were added.");
           }
-        } else {
-          Console.WriteLine("No campaign labels were added.");
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to add campaign label.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to add campaign label.", e);
       }
     }
   }

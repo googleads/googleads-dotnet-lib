@@ -15,11 +15,8 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201708
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
+
   ''' <summary>
   ''' This code example retrieves all expanded text ads given an existing ad
   ''' group. To add expanded text ads to an existing ad group, run
@@ -27,6 +24,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
   ''' </summary>
   Public Class GetExpandedTextAds
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -38,7 +36,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -48,7 +46,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example retrieves all expanded text ads given an existing ad group. " & _
+        Return "This code example retrieves all expanded text ads given an existing ad group. " &
             "To add expanded text ads to an existing ad group, run AddExpandedTextAds.vb."
       End Get
     End Property
@@ -61,60 +59,62 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' are retrieved.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' [START getExpandedTextAds] MOE:strip_line
-      ' Get the AdGroupAdService.
-      Dim service As AdGroupAdService = CType(user.GetService( _
+      Using service As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201708.AdGroupAdService), AdGroupAdService)
 
-      ' Create a selector.
-      Dim selector As New Selector
+        ' Create a selector.
+        Dim selector As New Selector
 
-      selector.fields = New String() {
-        ExpandedTextAd.Fields.Id, AdGroupAd.Fields.Status, ExpandedTextAd.Fields.HeadlinePart1,
-        ExpandedTextAd.Fields.HeadlinePart2, ExpandedTextAd.Fields.Description
-      }
+        selector.fields = New String() {
+          ExpandedTextAd.Fields.Id, AdGroupAd.Fields.Status, ExpandedTextAd.Fields.HeadlinePart1,
+          ExpandedTextAd.Fields.HeadlinePart2, ExpandedTextAd.Fields.Description
+        }
 
-      selector.ordering = New OrderBy() {OrderBy.Asc(TextAd.Fields.Id)}
+        selector.ordering = New OrderBy() {OrderBy.Asc(TextAd.Fields.Id)}
 
-      selector.predicates = New Predicate() {
-        Predicate.Equals(AdGroupAd.Fields.AdGroupId, adGroupId),
-        Predicate.Equals("AdType", "EXPANDED_TEXT_AD"),
-        Predicate.In(AdGroupAd.Fields.Status, New String() {
-          AdGroupAdStatus.ENABLED.ToString(),
-          AdGroupAdStatus.PAUSED.ToString(),
-          AdGroupAdStatus.DISABLED.ToString()
-        })
-      }
+        selector.predicates = New Predicate() {
+          Predicate.Equals(AdGroupAd.Fields.AdGroupId, adGroupId),
+          Predicate.Equals("AdType", "EXPANDED_TEXT_AD"),
+          Predicate.In(AdGroupAd.Fields.Status, New String() {
+            AdGroupAdStatus.ENABLED.ToString(),
+            AdGroupAdStatus.PAUSED.ToString(),
+            AdGroupAdStatus.DISABLED.ToString()
+          })
+        }
 
-      ' Select the selector paging.
-      selector.paging = Paging.Default
+        ' Select the selector paging.
+        selector.paging = Paging.Default
 
-      Dim page As New AdGroupAdPage
+        Dim page As New AdGroupAdPage
 
-      Try
-        Do
-          ' Get the expanded text ads.
-          page = service.get(selector)
+        Try
+          Do
+            ' Get the expanded text ads.
+            page = service.get(selector)
 
-          ' Display the results.
-          If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = selector.paging.startIndex
+            ' Display the results.
+            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+              Dim i As Integer = selector.paging.startIndex
 
-            For Each adGroupAd As AdGroupAd In page.entries
-              Dim expandedTextAd As ExpandedTextAd = CType(adGroupAd.ad, ExpandedTextAd)
-              Console.WriteLine("{0} : Expanded text ad with ID '{1}', headline '{2} - {3}' " & _
-                  "and description '{4} was found.", i + 1, expandedTextAd.id,
-                  expandedTextAd.headlinePart1, expandedTextAd.headlinePart2,
-                  expandedTextAd.description)
-            Next
-            i += 1
-          End If
-          selector.paging.IncreaseOffset()
-        Loop While (selector.paging.startIndex < page.totalNumEntries)
-        Console.WriteLine("Number of expanded text ads found: {0}", page.totalNumEntries)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to get expanded text ads.", e)
-      End Try
+              For Each adGroupAd As AdGroupAd In page.entries
+                Dim expandedTextAd As ExpandedTextAd = CType(adGroupAd.ad, ExpandedTextAd)
+                Console.WriteLine("{0} : Expanded text ad with ID '{1}', headline '{2} - {3}' " &
+                    "and description '{4} was found.", i + 1, expandedTextAd.id,
+                    expandedTextAd.headlinePart1, expandedTextAd.headlinePart2,
+                    expandedTextAd.description)
+              Next
+              i += 1
+            End If
+            selector.paging.IncreaseOffset()
+          Loop While (selector.paging.startIndex < page.totalNumEntries)
+          Console.WriteLine("Number of expanded text ads found: {0}", page.totalNumEntries)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to get expanded text ads.", e)
+        End Try
+      End Using
       ' [END getExpandedTextAds] MOE:strip_line
     End Sub
+
   End Class
+
 End Namespace

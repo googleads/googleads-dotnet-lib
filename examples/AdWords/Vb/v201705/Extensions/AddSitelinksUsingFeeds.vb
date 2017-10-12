@@ -15,10 +15,6 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201705
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
 
   ''' <summary>
@@ -101,6 +97,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
         line3FeedAttributeIdField = value
       End Set
     End Property
+
   End Class
 
   ''' <summary>
@@ -122,7 +119,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
         Dim feedName As String = "INSERT_FEED_NAME_HERE"
         codeExample.Run(New AdWordsUser, campaignId, feedName)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -151,93 +148,93 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
       createSitelinksCampaignFeed(user, siteLinksData, campaignId)
     End Sub
 
-    Private Sub createSitelinksFeed( _
-      ByVal user As AdWordsUser, ByVal sitelinksData As SitelinksDataHolder, _
-      ByVal feedName As String)
-      ' Get the FeedService.
-      Dim feedService As FeedService = CType(user.GetService( _
+    Private Sub createSitelinksFeed(
+        ByVal user As AdWordsUser, ByVal sitelinksData As SitelinksDataHolder,
+        ByVal feedName As String)
+      Using feedService As FeedService = CType(user.GetService(
           AdWordsService.v201705.FeedService), FeedService)
 
-      ' Create attributes.
-      Dim textAttribute As New FeedAttribute
-      textAttribute.type = FeedAttributeType.STRING
-      textAttribute.name = "Link Text"
+        ' Create attributes.
+        Dim textAttribute As New FeedAttribute
+        textAttribute.type = FeedAttributeType.STRING
+        textAttribute.name = "Link Text"
 
-      Dim finalUrlAttribute As New FeedAttribute
-      finalUrlAttribute.type = FeedAttributeType.URL_LIST
-      finalUrlAttribute.name = "Link Final URLs"
+        Dim finalUrlAttribute As New FeedAttribute
+        finalUrlAttribute.type = FeedAttributeType.URL_LIST
+        finalUrlAttribute.name = "Link Final URLs"
 
-      Dim line2Attribute As New FeedAttribute
-      line2Attribute.type = FeedAttributeType.STRING
-      line2Attribute.name = "Line 2"
+        Dim line2Attribute As New FeedAttribute
+        line2Attribute.type = FeedAttributeType.STRING
+        line2Attribute.name = "Line 2"
 
-      Dim line3Attribute As New FeedAttribute
-      line3Attribute.type = FeedAttributeType.STRING
-      line3Attribute.name = "Line 3"
+        Dim line3Attribute As New FeedAttribute
+        line3Attribute.type = FeedAttributeType.STRING
+        line3Attribute.name = "Line 3"
 
-      ' Create the feed.
-      Dim sitelinksFeed As New Feed
-      sitelinksFeed.name = feedName
-      sitelinksFeed.attributes = New FeedAttribute() { _
+        ' Create the feed.
+        Dim sitelinksFeed As New Feed
+        sitelinksFeed.name = feedName
+        sitelinksFeed.attributes = New FeedAttribute() {
           textAttribute, finalUrlAttribute, line2Attribute, line3Attribute}
-      sitelinksFeed.origin = FeedOrigin.USER
+        sitelinksFeed.origin = FeedOrigin.USER
 
-      ' Create operation.
-      Dim operation As New FeedOperation
-      operation.operand = sitelinksFeed
-      operation.operator = [Operator].ADD
+        ' Create operation.
+        Dim operation As New FeedOperation
+        operation.operand = sitelinksFeed
+        operation.operator = [Operator].ADD
 
-      ' Add the feed.
-      Dim result As FeedReturnValue = feedService.mutate(New FeedOperation() {operation})
+        ' Add the feed.
+        Dim result As FeedReturnValue = feedService.mutate(New FeedOperation() {operation})
 
-      Dim savedFeed As Feed = result.value(0)
+        Dim savedFeed As Feed = result.value(0)
 
-      sitelinksData.FeedId = savedFeed.id
+        sitelinksData.FeedId = savedFeed.id
 
-      Dim savedAttributes As FeedAttribute() = savedFeed.attributes
-      sitelinksData.LinkTextFeedAttributeId = savedAttributes(0).id
-      sitelinksData.LinkFinalUrlFeedAttributeId = savedAttributes(1).id
-      sitelinksData.Line2FeedAttributeId = savedAttributes(2).id
-      sitelinksData.Line3FeedAttributeId = savedAttributes(3).id
+        Dim savedAttributes As FeedAttribute() = savedFeed.attributes
+        sitelinksData.LinkTextFeedAttributeId = savedAttributes(0).id
+        sitelinksData.LinkFinalUrlFeedAttributeId = savedAttributes(1).id
+        sitelinksData.Line2FeedAttributeId = savedAttributes(2).id
+        sitelinksData.Line3FeedAttributeId = savedAttributes(3).id
 
-      Console.WriteLine("Feed with name {0}, ID {1} with linkTextAttributeId {2}, " & _
-          "linkFinalUrlAttributeId {3}, line2AttributeId {4}, line3AttributeId {5} was created.", _
-          savedFeed.name, savedFeed.id, savedAttributes(0).id, savedAttributes(1).id, _
+        Console.WriteLine("Feed with name {0}, ID {1} with linkTextAttributeId {2}, " &
+          "linkFinalUrlAttributeId {3}, line2AttributeId {4}, line3AttributeId {5} was created.",
+          savedFeed.name, savedFeed.id, savedAttributes(0).id, savedAttributes(1).id,
           savedAttributes(2).id, savedAttributes(3).id)
+      End Using
     End Sub
 
-    Private Sub createSitelinksFeedItems( _
+    Private Sub createSitelinksFeedItems(
         ByVal user As AdWordsUser, ByVal sitelinksData As SitelinksDataHolder)
-      ' Get the FeedItemService.
-      Dim feedItemService As FeedItemService = CType(user.GetService( _
+      Using feedItemService As FeedItemService = CType(user.GetService(
           AdWordsService.v201705.FeedItemService), FeedItemService)
 
-      ' Create operations to add FeedItems.
-      Dim home As FeedItemOperation = newSitelinkFeedItemAddOperation(sitelinksData, _
+        ' Create operations to add FeedItems.
+        Dim home As FeedItemOperation = newSitelinkFeedItemAddOperation(sitelinksData,
           "Home", "http://www.example.com", "Home line 2", "Home line 3")
-      Dim stores As FeedItemOperation = newSitelinkFeedItemAddOperation(sitelinksData, _
+        Dim stores As FeedItemOperation = newSitelinkFeedItemAddOperation(sitelinksData,
           "Stores", "http://www.example.com/stores", "Stores line 2", "Stores line 3")
-      Dim onSale As FeedItemOperation = newSitelinkFeedItemAddOperation(sitelinksData, _
+        Dim onSale As FeedItemOperation = newSitelinkFeedItemAddOperation(sitelinksData,
           "On Sale", "http://www.example.com/sale", "On Sale line 2", "On sale line 3")
-      Dim support As FeedItemOperation = newSitelinkFeedItemAddOperation(sitelinksData, _
+        Dim support As FeedItemOperation = newSitelinkFeedItemAddOperation(sitelinksData,
           "Support", "http://www.example.com/support", "Support line 2", "Support line 3")
-      Dim products As FeedItemOperation = newSitelinkFeedItemAddOperation(sitelinksData, _
+        Dim products As FeedItemOperation = newSitelinkFeedItemAddOperation(sitelinksData,
           "Products", "http://www.example.com/prods", "Products line 2", "Products line 3")
 
-      ' This site link is using geographical targeting by specifying the
-      ' criterion ID for California.
-      Dim aboutUs As FeedItemOperation = newSitelinkFeedItemAddOperation(sitelinksData, _
+        ' This site link is using geographical targeting by specifying the
+        ' criterion ID for California.
+        Dim aboutUs As FeedItemOperation = newSitelinkFeedItemAddOperation(sitelinksData,
           "About Us", "http://www.example.com/about", "About Us line 2", "About Us line 3", 21137)
 
-      Dim operations As FeedItemOperation() = _
+        Dim operations As FeedItemOperation() =
           New FeedItemOperation() {home, stores, onSale, support, products, aboutUs}
 
-      Dim result As FeedItemReturnValue = feedItemService.mutate(operations)
+        Dim result As FeedItemReturnValue = feedItemService.mutate(operations)
 
-      For Each item As FeedItem In result.value
-        Console.WriteLine("FeedItem with feedItemId {0} was added.", item.feedItemId)
-        sitelinksData.FeedItemIds.Add(item.feedItemId)
-      Next
+        For Each item As FeedItem In result.value
+          Console.WriteLine("FeedItem with feedItemId {0} was added.", item.feedItemId)
+          sitelinksData.FeedItemIds.Add(item.feedItemId)
+        Next
+      End Using
     End Sub
 
     ' See the Placeholder reference page for a list of all the placeholder types and fields.
@@ -246,104 +243,105 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
 
     ' See the Placeholder reference page for a list of all the placeholder types and fields.
     Private Const PLACEHOLDER_FIELD_SITELINK_LINK_TEXT As Integer = 1
+
     Private Const PLACEHOLDER_FIELD_SITELINK_FINAL_URL As Integer = 5
     Private Const PLACEHOLDER_FIELD_SITELINK_LINE_2_TEXT As Integer = 3
     Private Const PLACEHOLDER_FIELD_SITELINK_LINE_3_TEXT As Integer = 4
 
-    Private Sub createSitelinksFeedMapping( _
+    Private Sub createSitelinksFeedMapping(
        ByVal user As AdWordsUser, ByVal sitelinksData As SitelinksDataHolder)
-      ' Get the FeedItemService.
-      Dim feedMappingService As FeedMappingService = CType(user.GetService( _
+      Using feedMappingService As FeedMappingService = CType(user.GetService(
           AdWordsService.v201705.FeedMappingService), FeedMappingService)
 
-      ' Map the FeedAttributeIds to the fieldId constants.
-      Dim linkTextFieldMapping As New AttributeFieldMapping
-      linkTextFieldMapping.feedAttributeId = sitelinksData.LinkTextFeedAttributeId
-      linkTextFieldMapping.fieldId = PLACEHOLDER_FIELD_SITELINK_LINK_TEXT
+        ' Map the FeedAttributeIds to the fieldId constants.
+        Dim linkTextFieldMapping As New AttributeFieldMapping
+        linkTextFieldMapping.feedAttributeId = sitelinksData.LinkTextFeedAttributeId
+        linkTextFieldMapping.fieldId = PLACEHOLDER_FIELD_SITELINK_LINK_TEXT
 
-      Dim linkFinalUrlFieldMapping As New AttributeFieldMapping
-      linkFinalUrlFieldMapping.feedAttributeId = sitelinksData.LinkFinalUrlFeedAttributeId
-      linkFinalUrlFieldMapping.fieldId = PLACEHOLDER_FIELD_SITELINK_FINAL_URL
+        Dim linkFinalUrlFieldMapping As New AttributeFieldMapping
+        linkFinalUrlFieldMapping.feedAttributeId = sitelinksData.LinkFinalUrlFeedAttributeId
+        linkFinalUrlFieldMapping.fieldId = PLACEHOLDER_FIELD_SITELINK_FINAL_URL
 
-      Dim line2FieldMapping As New AttributeFieldMapping
-      line2FieldMapping.feedAttributeId = sitelinksData.Line2FeedAttributeId
-      line2FieldMapping.fieldId = PLACEHOLDER_FIELD_SITELINK_LINE_2_TEXT
+        Dim line2FieldMapping As New AttributeFieldMapping
+        line2FieldMapping.feedAttributeId = sitelinksData.Line2FeedAttributeId
+        line2FieldMapping.fieldId = PLACEHOLDER_FIELD_SITELINK_LINE_2_TEXT
 
-      Dim line3FieldMapping As New AttributeFieldMapping
-      line3FieldMapping.feedAttributeId = sitelinksData.Line3FeedAttributeId
-      line3FieldMapping.fieldId = PLACEHOLDER_FIELD_SITELINK_LINE_3_TEXT
+        Dim line3FieldMapping As New AttributeFieldMapping
+        line3FieldMapping.feedAttributeId = sitelinksData.Line3FeedAttributeId
+        line3FieldMapping.fieldId = PLACEHOLDER_FIELD_SITELINK_LINE_3_TEXT
 
-      ' Create the FieldMapping and operation.
-      Dim feedMapping As New FeedMapping
-      feedMapping.placeholderType = PLACEHOLDER_SITELINKS
-      feedMapping.feedId = sitelinksData.FeedId
-      feedMapping.attributeFieldMappings = New AttributeFieldMapping() { _
+        ' Create the FieldMapping and operation.
+        Dim feedMapping As New FeedMapping
+        feedMapping.placeholderType = PLACEHOLDER_SITELINKS
+        feedMapping.feedId = sitelinksData.FeedId
+        feedMapping.attributeFieldMappings = New AttributeFieldMapping() {
           linkTextFieldMapping, linkFinalUrlFieldMapping, line2FieldMapping, line3FieldMapping}
-      _
-      Dim operation As New FeedMappingOperation
-      operation.operand = feedMapping
-      operation.operator = [Operator].ADD
 
-      ' Save the field mapping.
-      Dim result As FeedMappingReturnValue = _
+        Dim operation As New FeedMappingOperation
+        operation.operand = feedMapping
+        operation.operator = [Operator].ADD
+
+        ' Save the field mapping.
+        Dim result As FeedMappingReturnValue =
           feedMappingService.mutate(New FeedMappingOperation() {operation})
 
-      For Each savedFeedMapping As FeedMapping In result.value
-        Console.WriteLine("Feed mapping with ID {0} and placeholderType {1} was saved for " & _
-            "feed with ID {2}.", savedFeedMapping.feedMappingId, savedFeedMapping.placeholderType, _
+        For Each savedFeedMapping As FeedMapping In result.value
+          Console.WriteLine("Feed mapping with ID {0} and placeholderType {1} was saved for " &
+            "feed with ID {2}.", savedFeedMapping.feedMappingId, savedFeedMapping.placeholderType,
             savedFeedMapping.feedId)
-      Next
+        Next
+      End Using
     End Sub
 
-    Private Sub createSitelinksCampaignFeed(ByVal user As AdWordsUser, _
+    Private Sub createSitelinksCampaignFeed(ByVal user As AdWordsUser,
       ByVal sitelinksData As SitelinksDataHolder, ByVal campaignId As Long)
-      ' Get the CampaignFeedService.
-      Dim campaignFeedService As CampaignFeedService = CType(user.GetService( _
+      Using campaignFeedService As CampaignFeedService = CType(user.GetService(
           AdWordsService.v201705.CampaignFeedService), CampaignFeedService)
 
-      ' Construct a matching function that associates the sitelink feeditems to
-      ' the campaign, and set the device preference to Mobile. See the matching
-      ' function guide at
-      ' https://developers.google.com/adwords/api/docs/guides/feed-matching-functions
-      ' for more details.
-      Dim matchingFunctionString As String = String.Format( _
-          "AND(" & _
-          "  IN(FEED_ITEM_ID, {{{0}}})," & _
-          "  EQUALS(CONTEXT.DEVICE, 'Mobile')" & _
-          ")", _
+        ' Construct a matching function that associates the sitelink feeditems to
+        ' the campaign, and set the device preference to Mobile. See the matching
+        ' function guide at
+        ' https://developers.google.com/adwords/api/docs/guides/feed-matching-functions
+        ' for more details.
+        Dim matchingFunctionString As String = String.Format(
+          "AND(" &
+          "  IN(FEED_ITEM_ID, {{{0}}})," &
+          "  EQUALS(CONTEXT.DEVICE, 'Mobile')" &
+          ")",
           String.Join(",", sitelinksData.FeedItemIds))
 
-      Dim campaignFeed As New CampaignFeed()
-      campaignFeed.feedId = sitelinksData.FeedId
-      campaignFeed.campaignId = campaignId
-      campaignFeed.matchingFunction = New [Function]()
-      campaignFeed.matchingFunction.functionString = matchingFunctionString
+        Dim campaignFeed As New CampaignFeed()
+        campaignFeed.feedId = sitelinksData.FeedId
+        campaignFeed.campaignId = campaignId
+        campaignFeed.matchingFunction = New [Function]()
+        campaignFeed.matchingFunction.functionString = matchingFunctionString
 
-      ' Specifying placeholder types on the CampaignFeed allows the same feed
-      ' to be used for different placeholders in different Campaigns.
-      campaignFeed.placeholderTypes = New Integer() {PLACEHOLDER_SITELINKS}
+        ' Specifying placeholder types on the CampaignFeed allows the same feed
+        ' to be used for different placeholders in different Campaigns.
+        campaignFeed.placeholderTypes = New Integer() {PLACEHOLDER_SITELINKS}
 
-      Dim operation As New CampaignFeedOperation
-      operation.operand = campaignFeed
-      operation.operator = [Operator].ADD
+        Dim operation As New CampaignFeedOperation
+        operation.operand = campaignFeed
+        operation.operator = [Operator].ADD
 
-      Dim result As CampaignFeedReturnValue = _
+        Dim result As CampaignFeedReturnValue =
           campaignFeedService.mutate(New CampaignFeedOperation() {operation})
 
-      For Each savedCampaignFeed As CampaignFeed In result.value
-        Console.WriteLine("Campaign with ID {0} was associated with feed with ID {1}", _
+        For Each savedCampaignFeed As CampaignFeed In result.value
+          Console.WriteLine("Campaign with ID {0} was associated with feed with ID {1}",
             savedCampaignFeed.campaignId, savedCampaignFeed.feedId)
-      Next
+        Next
+      End Using
     End Sub
 
-    Function newSitelinkFeedItemAddOperation(ByVal sitelinksData As SitelinksDataHolder, _
-        ByVal text As String, ByVal finalUrl As String, ByVal line2 As String, _
+    Function newSitelinkFeedItemAddOperation(ByVal sitelinksData As SitelinksDataHolder,
+        ByVal text As String, ByVal finalUrl As String, ByVal line2 As String,
         ByVal line3 As String) As FeedItemOperation
       Return newSitelinkFeedItemAddOperation(sitelinksData, text, finalUrl, line2, line3, Nothing)
     End Function
 
-    Function newSitelinkFeedItemAddOperation(ByVal sitelinksData As SitelinksDataHolder, _
-        ByVal text As String, ByVal finalUrl As String, ByVal line2 As String, _
+    Function newSitelinkFeedItemAddOperation(ByVal sitelinksData As SitelinksDataHolder,
+        ByVal text As String, ByVal finalUrl As String, ByVal line2 As String,
         ByVal line3 As String, ByVal locationId As Nullable(Of Long)) _
         As FeedItemOperation
       ' Create the FeedItemAttributeValues for our text values.
@@ -381,8 +379,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
         item.geoTargetingRestriction = geoTargetingRestriction
       End If
 
-      item.attributeValues = New FeedItemAttributeValue() { _
-        linkTextAttributeValue, linkFinalUrlAttributeValue, _
+      item.attributeValues = New FeedItemAttributeValue() {
+        linkTextAttributeValue, linkFinalUrlAttributeValue,
         line2AttributeValue, line3AttributeValue}
 
       Dim operation As New FeedItemOperation
@@ -390,6 +388,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
       operation.operator = [Operator].ADD
       Return operation
     End Function
+
   End Class
 
 End Namespace

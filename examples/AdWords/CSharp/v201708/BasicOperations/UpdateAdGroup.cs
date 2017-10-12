@@ -16,15 +16,15 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201708;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
+
   /// <summary>
   /// This code example illustrates how to update an ad group, setting its
   /// status to 'PAUSED'. To create an ad group, run AddAdGroup.cs.
   /// </summary>
   public class UpdateAdGroup : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -57,34 +57,34 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="adGroupId">Id of the ad group to be updated.</param>
     public void Run(AdWordsUser user, long adGroupId) {
-      // Get the AdGroupService.
-      AdGroupService adGroupService =
-          (AdGroupService) user.GetService(AdWordsService.v201708.AdGroupService);
+      using (AdGroupService adGroupService =
+          (AdGroupService) user.GetService(AdWordsService.v201708.AdGroupService)) {
 
-      // Create the ad group.
-      AdGroup adGroup = new AdGroup();
-      adGroup.status = AdGroupStatus.PAUSED;
-      adGroup.id = adGroupId;
+        // Create the ad group.
+        AdGroup adGroup = new AdGroup();
+        adGroup.status = AdGroupStatus.PAUSED;
+        adGroup.id = adGroupId;
 
-      // Create the operation.
-      AdGroupOperation operation = new AdGroupOperation();
-      operation.@operator = Operator.SET;
-      operation.operand = adGroup;
+        // Create the operation.
+        AdGroupOperation operation = new AdGroupOperation();
+        operation.@operator = Operator.SET;
+        operation.operand = adGroup;
 
-      try {
-        // Update the ad group.
-        AdGroupReturnValue retVal = adGroupService.mutate(new AdGroupOperation[] {operation});
+        try {
+          // Update the ad group.
+          AdGroupReturnValue retVal = adGroupService.mutate(new AdGroupOperation[] { operation });
 
-        // Display the results.
-        if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-          AdGroup pausedAdGroup = retVal.value[0];
-          Console.WriteLine("Ad group with id = '{0}' was successfully updated.",
-              pausedAdGroup.id);
-        } else {
-          Console.WriteLine("No ad groups were updated.");
+          // Display the results.
+          if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+            AdGroup pausedAdGroup = retVal.value[0];
+            Console.WriteLine("Ad group with id = '{0}' was successfully updated.",
+                pausedAdGroup.id);
+          } else {
+            Console.WriteLine("No ad groups were updated.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to update ad group.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to update ad group.", e);
       }
     }
   }

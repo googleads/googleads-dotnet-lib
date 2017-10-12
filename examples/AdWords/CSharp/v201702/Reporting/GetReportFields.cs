@@ -16,14 +16,14 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example gets report fields.
   /// </summary>
   public class GetReportFields : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -32,7 +32,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
       GetReportFields codeExample = new GetReportFields();
       Console.WriteLine(codeExample.Description);
       try {
-        ReportDefinitionReportType reportType = (ReportDefinitionReportType) Enum.Parse(
+        ReportDefinitionReportType reportType = (ReportDefinitionReportType)Enum.Parse(
             typeof(ReportDefinitionReportType), "INSERT_REPORT_TYPE_HERE");
         codeExample.Run(new AdWordsUser(), reportType);
       } catch (Exception e) {
@@ -56,31 +56,32 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="reportType">The report type to be run.</param>
     public void Run(AdWordsUser user, ReportDefinitionReportType reportType) {
-      // Get the ReportDefinitionService.
-      ReportDefinitionService reportDefinitionService = (ReportDefinitionService) user.GetService(
-          AdWordsService.v201702.ReportDefinitionService);
+      using (ReportDefinitionService reportDefinitionService =
+          (ReportDefinitionService) user.GetService(
+              AdWordsService.v201702.ReportDefinitionService)) {
 
-      try {
-        // Get the report fields.
-        ReportDefinitionField[] reportDefinitionFields = reportDefinitionService.getReportFields(
-            reportType);
-        if (reportDefinitionFields != null && reportDefinitionFields.Length > 0) {
-          // Display report fields.
-          Console.WriteLine("The report type '{0}' contains the following fields:", reportType);
+        try {
+          // Get the report fields.
+          ReportDefinitionField[] reportDefinitionFields = reportDefinitionService.getReportFields(
+              reportType);
+          if (reportDefinitionFields != null && reportDefinitionFields.Length > 0) {
+            // Display report fields.
+            Console.WriteLine("The report type '{0}' contains the following fields:", reportType);
 
-          foreach (ReportDefinitionField reportDefinitionField in reportDefinitionFields) {
-            Console.Write("- {0} ({1})", reportDefinitionField.fieldName,
-                reportDefinitionField.fieldType);
-            if (reportDefinitionField.enumValues != null) {
-              Console.Write(" := [{0}]", String.Join(", ", reportDefinitionField.enumValues));
+            foreach (ReportDefinitionField reportDefinitionField in reportDefinitionFields) {
+              Console.Write("- {0} ({1})", reportDefinitionField.fieldName,
+                  reportDefinitionField.fieldType);
+              if (reportDefinitionField.enumValues != null) {
+                Console.Write(" := [{0}]", String.Join(", ", reportDefinitionField.enumValues));
+              }
+              Console.WriteLine();
             }
-            Console.WriteLine();
+          } else {
+            Console.WriteLine("This report type has no fields.");
           }
-        } else {
-          Console.WriteLine("This report type has no fields.");
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to retrieve fields for report type.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to retrieve fields for report type.", e);
       }
     }
   }

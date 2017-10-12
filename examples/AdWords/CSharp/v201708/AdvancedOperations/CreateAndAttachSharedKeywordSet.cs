@@ -14,19 +14,19 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201708;
-using Google.Api.Ads.Common.Util;
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
+
   /// <summary>
   /// This code example creates a shared keyword list, adds keywords to the list
   /// and attaches it to an existing campaign. To get the list of campaigns,
   /// run GetCampaigns.cs.
   /// </summary>
   public class CreateAndAttachSharedKeywordSet : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -69,7 +69,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
             sharedSet.status);
 
         // Add new keywords to the shared set.
-        string[] keywordTexts = new string[] {"mars cruise", "mars hotels"};
+        string[] keywordTexts = new string[] { "mars cruise", "mars hotels" };
         SharedCriterion[] sharedCriteria = AddKeywordsToSharedSet(user, sharedSet.sharedSetId,
             keywordTexts);
         foreach (SharedCriterion sharedCriterion in sharedCriteria) {
@@ -97,19 +97,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="user">The AdWords user.</param>
     /// <returns>The shared set.</returns>
     public SharedSet CreateSharedKeywordSet(AdWordsUser user) {
-      // Get the SharedSetService.
-      SharedSetService sharedSetService = (SharedSetService)
-          user.GetService(AdWordsService.v201708.SharedSetService);
+      using (SharedSetService sharedSetService = (SharedSetService)
+          user.GetService(AdWordsService.v201708.SharedSetService)) {
+        SharedSetOperation operation = new SharedSetOperation();
+        operation.@operator = Operator.ADD;
+        SharedSet sharedSet = new SharedSet();
+        sharedSet.name = "API Negative keyword list - " + ExampleUtilities.GetRandomString();
+        sharedSet.type = SharedSetType.NEGATIVE_KEYWORDS;
+        operation.operand = sharedSet;
 
-      SharedSetOperation operation = new SharedSetOperation();
-      operation.@operator = Operator.ADD;
-      SharedSet sharedSet = new SharedSet();
-      sharedSet.name = "API Negative keyword list - " + ExampleUtilities.GetRandomString();
-      sharedSet.type = SharedSetType.NEGATIVE_KEYWORDS;
-      operation.operand = sharedSet;
-
-      SharedSetReturnValue retval = sharedSetService.mutate(new SharedSetOperation[] {operation});
-      return retval.value[0];
+        SharedSetReturnValue retval = sharedSetService.mutate(
+            new SharedSetOperation[] { operation });
+        return retval.value[0];
+      }
     }
 
     /// <summary>
@@ -121,28 +121,28 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <returns>The newly added set of shared criteria.</returns>
     public SharedCriterion[] AddKeywordsToSharedSet(AdWordsUser user, long sharedSetId,
         string[] keywordTexts) {
-      // Get the SharedCriterionService.
-      SharedCriterionService sharedCriterionService = (SharedCriterionService)
-          user.GetService(AdWordsService.v201708.SharedCriterionService);
+      using (SharedCriterionService sharedCriterionService = (SharedCriterionService)
+          user.GetService(AdWordsService.v201708.SharedCriterionService)) {
 
-      List<SharedCriterionOperation> operations = new List<SharedCriterionOperation>();
-      foreach (string keywordText in keywordTexts) {
-        Keyword keyword = new Keyword();
-        keyword.text = keywordText;
-        keyword.matchType = KeywordMatchType.BROAD;
+        List<SharedCriterionOperation> operations = new List<SharedCriterionOperation>();
+        foreach (string keywordText in keywordTexts) {
+          Keyword keyword = new Keyword();
+          keyword.text = keywordText;
+          keyword.matchType = KeywordMatchType.BROAD;
 
-        SharedCriterion sharedCriterion = new SharedCriterion();
-        sharedCriterion.criterion = keyword;
-        sharedCriterion.negative = true;
-        sharedCriterion.sharedSetId = sharedSetId;
-        SharedCriterionOperation operation = new SharedCriterionOperation();
-        operation.@operator = Operator.ADD;
-        operation.operand = sharedCriterion;
-        operations.Add(operation);
+          SharedCriterion sharedCriterion = new SharedCriterion();
+          sharedCriterion.criterion = keyword;
+          sharedCriterion.negative = true;
+          sharedCriterion.sharedSetId = sharedSetId;
+          SharedCriterionOperation operation = new SharedCriterionOperation();
+          operation.@operator = Operator.ADD;
+          operation.operand = sharedCriterion;
+          operations.Add(operation);
+        }
+
+        SharedCriterionReturnValue retval = sharedCriterionService.mutate(operations.ToArray());
+        return retval.value;
       }
-
-      SharedCriterionReturnValue retval = sharedCriterionService.mutate(operations.ToArray());
-      return retval.value;
     }
 
     /// <summary>
@@ -155,21 +155,21 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// the specified campaign and the shared set.</returns>
     public CampaignSharedSet AttachSharedSetToCampaign(AdWordsUser user, long campaignId,
         long sharedSetId) {
-      // Get the CampaignSharedSetService.
-      CampaignSharedSetService campaignSharedSetService = (CampaignSharedSetService)
-          user.GetService(AdWordsService.v201708.CampaignSharedSetService);
+      using (CampaignSharedSetService campaignSharedSetService = (CampaignSharedSetService)
+          user.GetService(AdWordsService.v201708.CampaignSharedSetService)) {
 
-      CampaignSharedSet campaignSharedSet = new CampaignSharedSet();
-      campaignSharedSet.campaignId = campaignId;
-      campaignSharedSet.sharedSetId = sharedSetId;
+        CampaignSharedSet campaignSharedSet = new CampaignSharedSet();
+        campaignSharedSet.campaignId = campaignId;
+        campaignSharedSet.sharedSetId = sharedSetId;
 
-      CampaignSharedSetOperation operation = new CampaignSharedSetOperation();
-      operation.@operator = Operator.ADD;
-      operation.operand = campaignSharedSet;
+        CampaignSharedSetOperation operation = new CampaignSharedSetOperation();
+        operation.@operator = Operator.ADD;
+        operation.operand = campaignSharedSet;
 
-      CampaignSharedSetReturnValue retval = campaignSharedSetService.mutate(
-          new CampaignSharedSetOperation[] {operation});
-      return retval.value[0];
+        CampaignSharedSetReturnValue retval = campaignSharedSetService.mutate(
+            new CampaignSharedSetOperation[] { operation });
+        return retval.value[0];
+      }
     }
   }
 }

@@ -54,39 +54,40 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the CampaignService.
-      CampaignService campaignService =
-          (CampaignService)user.GetService(AdWordsService.v201708.CampaignService);
+      using (CampaignService campaignService =
+          (CampaignService) user.GetService(AdWordsService.v201708.CampaignService)) {
 
-      // Create the selector.
-      Selector selector = new Selector() {
-        fields = new string[] {
-          Campaign.Fields.Id, Campaign.Fields.Name, Campaign.Fields.Status
-        },
-        paging = Paging.Default
-      };
+        // Create the selector.
+        Selector selector = new Selector() {
+          fields = new string[] {
+            Campaign.Fields.Id, Campaign.Fields.Name, Campaign.Fields.Status
+          },
+          paging = Paging.Default
+        };
 
-      CampaignPage page = new CampaignPage();
+        CampaignPage page = new CampaignPage();
 
-      try {
-        do {
-          // Get the campaigns.
-          page = campaignService.get(selector);
+        try {
+          do {
+            // Get the campaigns.
+            page = campaignService.get(selector);
 
-          // Display the results.
-          if (page != null && page.entries != null) {
-            int i = selector.paging.startIndex;
-            foreach (Campaign campaign in page.entries) {
-              Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = '{3}'" +
-                " was found.", i + 1, campaign.id, campaign.name, campaign.status);
-              i++;
+            // Display the results.
+            if (page != null && page.entries != null) {
+              int i = selector.paging.startIndex;
+              foreach (Campaign campaign in page.entries) {
+                Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and " +
+                    "status = '{3}' was found.", i + 1, campaign.id,
+                    campaign.name, campaign.status);
+                i++;
+              }
             }
-          }
-          selector.paging.IncreaseOffset();
-        } while (selector.paging.startIndex < page.totalNumEntries);
-        Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to retrieve campaigns", e);
+            selector.paging.IncreaseOffset();
+          } while (selector.paging.startIndex < page.totalNumEntries);
+          Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to retrieve campaigns", e);
+        }
       }
     }
   }

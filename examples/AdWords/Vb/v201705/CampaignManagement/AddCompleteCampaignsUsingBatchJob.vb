@@ -12,16 +12,13 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
+Imports System.Threading
 Imports Google.Api.Ads.AdWords.Lib
+Imports Google.Api.Ads.AdWords.Util.BatchJob.v201705
 Imports Google.Api.Ads.AdWords.v201705
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-Imports System.Threading
-Imports Google.Api.Ads.AdWords.Util.BatchJob.v201705
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
+
   ''' <summary>
   ''' This code example illustrates how to use BatchJobService to create multiple
   ''' complete campaigns, including ad groups and keywords.
@@ -93,107 +90,107 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
-      ' Get the BatchJobService.
-      Dim batchJobService As BatchJobService = CType(user.GetService(
+      Using batchJobService As BatchJobService = CType(user.GetService(
           AdWordsService.v201705.BatchJobService), BatchJobService)
 
-      Try
-        ' Create a BatchJob.
-        Dim addOp As New BatchJobOperation()
-        addOp.operator = [Operator].ADD
-        addOp.operand = New BatchJob()
+        Try
+          ' Create a BatchJob.
+          Dim addOp As New BatchJobOperation()
+          addOp.operator = [Operator].ADD
+          addOp.operand = New BatchJob()
 
-        Dim batchJob As BatchJob = batchJobService.mutate(
-            New BatchJobOperation() {addOp}).value(0)
+          Dim batchJob As BatchJob = batchJobService.mutate(
+              New BatchJobOperation() {addOp}).value(0)
 
-        ' Get the upload URL from the new job.
-        Dim uploadUrl As String = batchJob.uploadUrl.url
+          ' Get the upload URL from the new job.
+          Dim uploadUrl As String = batchJob.uploadUrl.url
 
-        Console.WriteLine("Created BatchJob with ID {0}, status '{1}' and upload URL {2}.",
-            batchJob.id, batchJob.status, batchJob.uploadUrl.url)
+          Console.WriteLine("Created BatchJob with ID {0}, status '{1}' and upload URL {2}.",
+              batchJob.id, batchJob.status, batchJob.uploadUrl.url)
 
-        ' Create the mutate request that will be sent to the upload URL.
-        Dim operations As New List(Of Operation)()
+          ' Create the mutate request that will be sent to the upload URL.
+          Dim operations As New List(Of Operation)()
 
-        ' Create and add an operation to create a new budget.
-        Dim budgetOperation As BudgetOperation = BuildBudgetOperation()
-        operations.Add(budgetOperation)
+          ' Create and add an operation to create a new budget.
+          Dim budgetOperation As BudgetOperation = BuildBudgetOperation()
+          operations.Add(budgetOperation)
 
-        ' Create and add operations to create new campaigns.
-        Dim campaignOperations As List(Of CampaignOperation) =
-            BuildCampaignOperations(budgetOperation.operand.budgetId)
-        operations.AddRange(campaignOperations.ToArray())
+          ' Create and add operations to create new campaigns.
+          Dim campaignOperations As List(Of CampaignOperation) =
+              BuildCampaignOperations(budgetOperation.operand.budgetId)
+          operations.AddRange(campaignOperations.ToArray())
 
-        Dim adGroupOperations As New List(Of AdGroupOperation)()
+          Dim adGroupOperations As New List(Of AdGroupOperation)()
 
-        ' Create and add operations to create new ad groups.
-        For Each campaignOperation As CampaignOperation In campaignOperations
-          adGroupOperations.AddRange(BuildAdGroupOperations(campaignOperation.operand.id))
-        Next
-        operations.AddRange(adGroupOperations.ToArray())
-
-        ' Create and add operations to create new ad group ads (expanded text ads).
-        For Each adGroupOperation As AdGroupOperation In adGroupOperations
-          operations.AddRange(BuildAdGroupAdOperations(adGroupOperation.operand.id).ToArray())
-        Next
-
-        ' Create and add operations to create new ad group criteria (keywords).
-        For Each adGroupOperation As AdGroupOperation In adGroupOperations
-          operations.AddRange(BuildAdGroupCriterionOperations(
-              adGroupOperation.operand.id).ToArray())
-        Next
-
-        Dim batchJobUploadHelper As New BatchJobUtilities(user)
-
-        ' Create a resumable Upload URL to upload the operations.
-        Dim resumableUploadUrl As String = batchJobUploadHelper.GetResumableUploadUrl(uploadUrl)
-
-        ' Use the BatchJobUploadHelper to upload all operations.
-        batchJobUploadHelper.Upload(resumableUploadUrl, operations.ToArray())
-
-        Dim waitHandler As WaitHandler
-
-        ' Create a wait handler.
-        waitHandler = New WaitHandler(batchJob, False)
-
-        Dim isComplete As Boolean = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
-            TIME_TO_WAIT_FOR_COMPLETION, AddressOf waitHandler.OnJobWaitForCompletion)
-
-        ' Restore the latest value for batchJob from waithandler.
-        batchJob = waitHandler.Job
-
-        If Not isComplete Then
-          Throw New TimeoutException("Job is still in pending state after waiting for " &
-             TIME_TO_WAIT_FOR_COMPLETION & " seconds.")
-        End If
-
-        If Not (batchJob.processingErrors Is Nothing) Then
-          For Each processingError As BatchJobProcessingError In batchJob.processingErrors
-            Console.WriteLine("  Processing error: {0}, {1}, {2}, {3}, {4}",
-                processingError.ApiErrorType, processingError.trigger,
-                processingError.errorString, processingError.fieldPath,
-                processingError.reason)
+          ' Create and add operations to create new ad groups.
+          For Each campaignOperation As CampaignOperation In campaignOperations
+            adGroupOperations.AddRange(BuildAdGroupOperations(campaignOperation.operand.id))
           Next
-        End If
+          operations.AddRange(adGroupOperations.ToArray())
 
-        If (Not (batchJob.downloadUrl Is Nothing)) AndAlso
-           (Not (batchJob.downloadUrl.url Is Nothing)) Then
-          Dim mutateResponse As BatchJobMutateResponse = batchJobUploadHelper.Download(
-              batchJob.downloadUrl.url)
-          Console.WriteLine("Downloaded results from {0}.", batchJob.downloadUrl.url)
-          For Each mutateResult As MutateResult In mutateResponse.rval
-            Dim outcome As String = ""
-            If mutateResult.errorList Is Nothing Then
-              outcome = "SUCCESS"
-            Else
-              outcome = "FAILURE"
-            End If
-            Console.WriteLine("  Operation [{0}] - {1}", mutateResult.index, outcome)
+          ' Create and add operations to create new ad group ads (expanded text ads).
+          For Each adGroupOperation As AdGroupOperation In adGroupOperations
+            operations.AddRange(BuildAdGroupAdOperations(adGroupOperation.operand.id).ToArray())
           Next
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to add campaigns using batch job.", e)
-      End Try
+
+          ' Create and add operations to create new ad group criteria (keywords).
+          For Each adGroupOperation As AdGroupOperation In adGroupOperations
+            operations.AddRange(BuildAdGroupCriterionOperations(
+                adGroupOperation.operand.id).ToArray())
+          Next
+
+          Dim batchJobUploadHelper As New BatchJobUtilities(user)
+
+          ' Create a resumable Upload URL to upload the operations.
+          Dim resumableUploadUrl As String = batchJobUploadHelper.GetResumableUploadUrl(uploadUrl)
+
+          ' Use the BatchJobUploadHelper to upload all operations.
+          batchJobUploadHelper.Upload(resumableUploadUrl, operations.ToArray())
+
+          Dim waitHandler As WaitHandler
+
+          ' Create a wait handler.
+          waitHandler = New WaitHandler(batchJob, False)
+
+          Dim isComplete As Boolean = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
+              TIME_TO_WAIT_FOR_COMPLETION, AddressOf waitHandler.OnJobWaitForCompletion)
+
+          ' Restore the latest value for batchJob from waithandler.
+          batchJob = waitHandler.Job
+
+          If Not isComplete Then
+            Throw New TimeoutException("Job is still in pending state after waiting for " &
+                TIME_TO_WAIT_FOR_COMPLETION & " seconds.")
+          End If
+
+          If Not (batchJob.processingErrors Is Nothing) Then
+            For Each processingError As BatchJobProcessingError In batchJob.processingErrors
+              Console.WriteLine("  Processing error: {0}, {1}, {2}, {3}, {4}",
+                  processingError.ApiErrorType, processingError.trigger,
+                  processingError.errorString, processingError.fieldPath,
+                  processingError.reason)
+            Next
+          End If
+
+          If (Not (batchJob.downloadUrl Is Nothing)) AndAlso
+              (Not (batchJob.downloadUrl.url Is Nothing)) Then
+            Dim mutateResponse As BatchJobMutateResponse = batchJobUploadHelper.Download(
+                batchJob.downloadUrl.url)
+            Console.WriteLine("Downloaded results from {0}.", batchJob.downloadUrl.url)
+            For Each mutateResult As MutateResult In mutateResponse.rval
+              Dim outcome As String = ""
+              If mutateResult.errorList Is Nothing Then
+                outcome = "SUCCESS"
+              Else
+                outcome = "FAILURE"
+              End If
+              Console.WriteLine("  Operation [{0}] - {1}", mutateResult.index, outcome)
+            Next
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to add campaigns using batch job.", e)
+        End Try
+      End Using
     End Sub
 
     ''' <summary>
@@ -258,7 +255,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
       Public Function OnJobWaitForCancellation(ByVal waitBatchJob As BatchJob,
                                                ByVal timeElapsed As Long) As Boolean
         Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
-                          timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status)
+            timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status)
         batchJob = waitBatchJob
         Return False
       End Function
@@ -273,10 +270,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
       Public Function OnJobWaitForCompletion(ByVal waitBatchJob As BatchJob,
                                              ByVal timeElapsed As Long) As Boolean
         Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
-                                timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status)
+            timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status)
         batchJob = waitBatchJob
         Return Me.WasCancelRequested
       End Function
+
     End Class
 
     ''' <summary>
@@ -442,5 +440,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
 
       Return budgetOperation
     End Function
+
   End Class
+
 End Namespace

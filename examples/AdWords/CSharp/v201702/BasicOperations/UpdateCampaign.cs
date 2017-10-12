@@ -16,15 +16,15 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example updates a campaign. To get campaigns, run
   /// GetCampaigns.cs.
   /// </summary>
   public class UpdateCampaign : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -56,34 +56,35 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="campaignId">Id of the campaign to be updated.</param>
     public void Run(AdWordsUser user, long campaignId) {
-      // Get the CampaignService.
-      CampaignService campaignService =
-          (CampaignService)user.GetService(AdWordsService.v201702.CampaignService);
+      using (CampaignService campaignService =
+          (CampaignService) user.GetService(AdWordsService.v201702.CampaignService)) {
 
-      // Create the campaign.
-      Campaign campaign = new Campaign();
-      campaign.id = campaignId;
-      campaign.status = CampaignStatus.PAUSED;
+        // Create the campaign.
+        Campaign campaign = new Campaign();
+        campaign.id = campaignId;
+        campaign.status = CampaignStatus.PAUSED;
 
-      // Create the operation.
-      CampaignOperation operation = new CampaignOperation();
-      operation.@operator = Operator.SET;
-      operation.operand = campaign;
+        // Create the operation.
+        CampaignOperation operation = new CampaignOperation();
+        operation.@operator = Operator.SET;
+        operation.operand = campaign;
 
-      try {
-        // Update the campaign.
-        CampaignReturnValue retVal = campaignService.mutate((new CampaignOperation[] {operation}));
+        try {
+          // Update the campaign.
+          CampaignReturnValue retVal = campaignService.mutate(
+              new CampaignOperation[] { operation });
 
-        // Display the results.
-        if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-          Campaign updatedCampaign = retVal.value[0];
-          Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was updated.",
-              updatedCampaign.name, updatedCampaign.id);
-        } else {
-          Console.WriteLine("No campaigns were updated.");
+          // Display the results.
+          if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+            Campaign updatedCampaign = retVal.value[0];
+            Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was updated.",
+                updatedCampaign.name, updatedCampaign.id);
+          } else {
+            Console.WriteLine("No campaigns were updated.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to update campaign.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to update campaign.", e);
       }
     }
   }

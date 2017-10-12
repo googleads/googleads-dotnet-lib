@@ -16,15 +16,15 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example removes a keyword using the 'REMOVE' operator. To get
   /// keywords, run GetKeywords.cs.
   /// </summary>
   public class RemoveKeyword : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -60,39 +60,40 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// </param>
     /// <param name="keywordId">Id of the keyword to be removed.</param>
     public void Run(AdWordsUser user, long adGroupId, long keywordId) {
-      // Get the AdGroupCriterionService.
-      AdGroupCriterionService adGroupCriterionService = (AdGroupCriterionService)user.GetService(
-          AdWordsService.v201702.AdGroupCriterionService);
+      using (AdGroupCriterionService adGroupCriterionService =
+          (AdGroupCriterionService) user.GetService(
+              AdWordsService.v201702.AdGroupCriterionService)) {
 
-      // Create base class criterion to avoid setting keyword-specific fields.
-      Criterion criterion = new Criterion();
-      criterion.id = keywordId;
+        // Create base class criterion to avoid setting keyword-specific fields.
+        Criterion criterion = new Criterion();
+        criterion.id = keywordId;
 
-      // Create the ad group criterion.
-      BiddableAdGroupCriterion adGroupCriterion = new BiddableAdGroupCriterion();
-      adGroupCriterion.adGroupId = adGroupId;
-      adGroupCriterion.criterion = criterion;
+        // Create the ad group criterion.
+        BiddableAdGroupCriterion adGroupCriterion = new BiddableAdGroupCriterion();
+        adGroupCriterion.adGroupId = adGroupId;
+        adGroupCriterion.criterion = criterion;
 
-      // Create the operation.
-      AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
-      operation.operand = adGroupCriterion;
-      operation.@operator = Operator.REMOVE;
+        // Create the operation.
+        AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
+        operation.operand = adGroupCriterion;
+        operation.@operator = Operator.REMOVE;
 
-      try {
-        // Remove the keyword.
-        AdGroupCriterionReturnValue retVal = adGroupCriterionService.mutate(
-            new AdGroupCriterionOperation[] {operation});
+        try {
+          // Remove the keyword.
+          AdGroupCriterionReturnValue retVal = adGroupCriterionService.mutate(
+              new AdGroupCriterionOperation[] { operation });
 
-        // Display the results.
-        if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-          AdGroupCriterion removedKeyword = retVal.value[0];
-          Console.WriteLine("Keyword with ad group id = \"{0}\" and id = \"{1}\" was removed.",
-              removedKeyword.adGroupId, removedKeyword.criterion.id);
-        } else {
-          Console.WriteLine("No keywords were removed.");
+          // Display the results.
+          if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+            AdGroupCriterion removedKeyword = retVal.value[0];
+            Console.WriteLine("Keyword with ad group id = \"{0}\" and id = \"{1}\" was removed.",
+                removedKeyword.adGroupId, removedKeyword.criterion.id);
+          } else {
+            Console.WriteLine("No keywords were removed.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to remove keyword.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to remove keyword.", e);
       }
     }
   }

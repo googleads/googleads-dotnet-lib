@@ -16,15 +16,15 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201708;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
+
   /// <summary>
   /// This code example removes an ad using the 'REMOVE' operator. To list ads,
   /// run GetTextAds.cs.
   /// </summary>
   public class RemoveAd : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -59,40 +59,40 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="adGroupId">Id of the ad group that contains the ad.</param>
     /// <param name="adId">Id of the ad being removed.</param>
     public void Run(AdWordsUser user, long adGroupId, long adId) {
-      // Get the AdGroupAdService.
-      AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
-          AdWordsService.v201708.AdGroupAdService);
+      using (AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
+          AdWordsService.v201708.AdGroupAdService)) {
 
-      // Since we do not need to update any ad-specific fields, it is enough to
-      // create the base type.
-      Ad ad = new Ad();
-      ad.id = adId;
+        // Since we do not need to update any ad-specific fields, it is enough to
+        // create the base type.
+        Ad ad = new Ad();
+        ad.id = adId;
 
-      // Create the ad group ad.
-      AdGroupAd adGroupAd = new AdGroupAd();
-      adGroupAd.adGroupId = adGroupId;
+        // Create the ad group ad.
+        AdGroupAd adGroupAd = new AdGroupAd();
+        adGroupAd.adGroupId = adGroupId;
 
-      adGroupAd.ad = ad;
+        adGroupAd.ad = ad;
 
-      // Create the operation.
-      AdGroupAdOperation operation = new AdGroupAdOperation();
-      operation.operand = adGroupAd;
-      operation.@operator = Operator.REMOVE;
+        // Create the operation.
+        AdGroupAdOperation operation = new AdGroupAdOperation();
+        operation.operand = adGroupAd;
+        operation.@operator = Operator.REMOVE;
 
-      try {
-        // Remove the ad.
-        AdGroupAdReturnValue retVal = adGroupAdService.mutate(
-            new AdGroupAdOperation[] {operation});
+        try {
+          // Remove the ad.
+          AdGroupAdReturnValue retVal = adGroupAdService.mutate(
+              new AdGroupAdOperation[] { operation });
 
-        if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-          AdGroupAd removedAdGroupAd = retVal.value[0];
-          Console.WriteLine("Ad with id = \"{0}\" and type = \"{1}\" was removed.",
-              removedAdGroupAd.ad.id, removedAdGroupAd.ad.AdType);
-        } else {
-          Console.WriteLine("No ads were removed.");
+          if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+            AdGroupAd removedAdGroupAd = retVal.value[0];
+            Console.WriteLine("Ad with id = \"{0}\" and type = \"{1}\" was removed.",
+                removedAdGroupAd.ad.id, removedAdGroupAd.ad.AdType);
+          } else {
+            Console.WriteLine("No ads were removed.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to remove ad.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to remove ad.", e);
       }
     }
   }

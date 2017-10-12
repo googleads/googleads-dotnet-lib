@@ -63,102 +63,102 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="campaignId">Id of the campaign to which sitelinks will
     /// be added.</param>
     public void Run(AdWordsUser user, long campaignId) {
-      // Get the CustomerExtensionSettingService.
-      CustomerExtensionSettingService customerExtensionSettingService =
+      using (CustomerExtensionSettingService customerExtensionSettingService =
           (CustomerExtensionSettingService) user.GetService(
-               AdWordsService.v201702.CustomerExtensionSettingService);
+               AdWordsService.v201702.CustomerExtensionSettingService)) {
 
-      // Create the price extension feed item.
-      PriceFeedItem priceFeedItem = new PriceFeedItem() {
-        priceExtensionType = PriceExtensionType.SERVICES,
+        // Create the price extension feed item.
+        PriceFeedItem priceFeedItem = new PriceFeedItem() {
+          priceExtensionType = PriceExtensionType.SERVICES,
 
-        // Price qualifier is optional.
-        priceQualifier = PriceExtensionPriceQualifier.FROM,
-        trackingUrlTemplate = "http://tracker.example.com/?u={lpurl}",
-        language = "en",
+          // Price qualifier is optional.
+          priceQualifier = PriceExtensionPriceQualifier.FROM,
+          trackingUrlTemplate = "http://tracker.example.com/?u={lpurl}",
+          language = "en",
 
-        campaignTargeting = new FeedItemCampaignTargeting() {
-          TargetingCampaignId = campaignId,
-        },
-        scheduling = new FeedItemSchedule[] {
-          new FeedItemSchedule() {
-            dayOfWeek = DayOfWeek.SATURDAY,
-            startHour = 10,
-            startMinute = MinuteOfHour.ZERO,
-            endHour = 22,
-            endMinute = MinuteOfHour.ZERO
+          campaignTargeting = new FeedItemCampaignTargeting() {
+            TargetingCampaignId = campaignId,
           },
-          new FeedItemSchedule() {
-            dayOfWeek = DayOfWeek.SUNDAY,
-            startHour = 10,
-            startMinute = MinuteOfHour.ZERO,
-            endHour = 18,
-            endMinute = MinuteOfHour.ZERO
+          scheduling = new FeedItemSchedule[] {
+            new FeedItemSchedule() {
+              dayOfWeek = DayOfWeek.SATURDAY,
+              startHour = 10,
+              startMinute = MinuteOfHour.ZERO,
+              endHour = 22,
+              endMinute = MinuteOfHour.ZERO
+            },
+            new FeedItemSchedule() {
+              dayOfWeek = DayOfWeek.SUNDAY,
+              startHour = 10,
+              startMinute = MinuteOfHour.ZERO,
+              endHour = 18,
+              endMinute = MinuteOfHour.ZERO
+            }
           }
+        };
+
+        // To create a price extension, at least three table rows are needed.
+        List<PriceTableRow> priceTableRows = new List<PriceTableRow>();
+        String currencyCode = "USD";
+        priceTableRows.Add(
+            CreatePriceTableRow(
+                "Scrubs",
+                "Body Scrub, Salt Scrub",
+                "http://www.example.com/scrubs",
+                "http://m.example.com/scrubs",
+                60000000,
+                currencyCode,
+                PriceExtensionPriceUnit.PER_HOUR));
+        priceTableRows.Add(
+            CreatePriceTableRow(
+                "Hair Cuts",
+                "Once a month",
+                "http://www.example.com/haircuts",
+                "http://m.example.com/haircuts",
+                75000000,
+                currencyCode,
+                PriceExtensionPriceUnit.PER_MONTH));
+        priceTableRows.Add(
+            CreatePriceTableRow(
+                "Skin Care Package",
+                "Four times a month",
+                "http://www.example.com/skincarepackage",
+                null,
+                250000000,
+                currencyCode,
+                PriceExtensionPriceUnit.PER_MONTH));
+
+        priceFeedItem.tableRows = priceTableRows.ToArray();
+
+        // Create your campaign extension settings. This associates the sitelinks
+        // to your campaign.
+        CustomerExtensionSetting customerExtensionSetting = new CustomerExtensionSetting() {
+          extensionType = FeedType.PRICE,
+          extensionSetting = new ExtensionSetting() {
+            extensions = new ExtensionFeedItem[] { priceFeedItem }
+          }
+        };
+
+        CustomerExtensionSettingOperation operation = new CustomerExtensionSettingOperation() {
+          operand = customerExtensionSetting,
+          @operator = Operator.ADD
+        };
+
+        try {
+          // Add the extensions.
+          CustomerExtensionSettingReturnValue retVal =
+              customerExtensionSettingService.mutate(
+                  new CustomerExtensionSettingOperation[] { operation });
+          if (retVal.value != null && retVal.value.Length > 0) {
+            CustomerExtensionSetting newExtensionSetting = retVal.value[0];
+            Console.WriteLine("Extension setting with type '{0}' was added.",
+                newExtensionSetting.extensionType);
+          } else {
+            Console.WriteLine("No extension settings were created.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create extension settings.", e);
         }
-      };
-
-      // To create a price extension, at least three table rows are needed.
-      List<PriceTableRow> priceTableRows = new List<PriceTableRow>();
-      String currencyCode = "USD";
-      priceTableRows.Add(
-          CreatePriceTableRow(
-              "Scrubs",
-              "Body Scrub, Salt Scrub",
-              "http://www.example.com/scrubs",
-              "http://m.example.com/scrubs",
-              60000000,
-              currencyCode,
-              PriceExtensionPriceUnit.PER_HOUR));
-      priceTableRows.Add(
-          CreatePriceTableRow(
-              "Hair Cuts",
-              "Once a month",
-              "http://www.example.com/haircuts",
-              "http://m.example.com/haircuts",
-              75000000,
-              currencyCode,
-              PriceExtensionPriceUnit.PER_MONTH));
-      priceTableRows.Add(
-          CreatePriceTableRow(
-              "Skin Care Package",
-              "Four times a month",
-              "http://www.example.com/skincarepackage",
-              null,
-              250000000,
-              currencyCode,
-              PriceExtensionPriceUnit.PER_MONTH));
-
-      priceFeedItem.tableRows = priceTableRows.ToArray();
-
-      // Create your campaign extension settings. This associates the sitelinks
-      // to your campaign.
-      CustomerExtensionSetting customerExtensionSetting = new CustomerExtensionSetting() {
-        extensionType = FeedType.PRICE,
-        extensionSetting = new ExtensionSetting() {
-          extensions = new ExtensionFeedItem[] { priceFeedItem }
-        }
-      };
-
-      CustomerExtensionSettingOperation operation = new CustomerExtensionSettingOperation() {
-        operand = customerExtensionSetting,
-        @operator = Operator.ADD
-      };
-
-      try {
-        // Add the extensions.
-        CustomerExtensionSettingReturnValue retVal =
-            customerExtensionSettingService.mutate(
-                new CustomerExtensionSettingOperation[] { operation });
-        if (retVal.value != null && retVal.value.Length > 0) {
-          CustomerExtensionSetting newExtensionSetting = retVal.value[0];
-          Console.WriteLine("Extension setting with type '{0}' was added.",
-              newExtensionSetting.extensionType);
-        } else {
-          Console.WriteLine("No extension settings were created.");
-        }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to create extension settings.", e);
       }
     }
 
@@ -194,7 +194,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
 
       // Optional: set the mobile final URLs.
       if (!string.IsNullOrEmpty(finalMobileUrl)) {
-        retval.finalMobileUrls = new UrlList () {
+        retval.finalMobileUrls = new UrlList() {
           urls = new String[] { finalMobileUrl }
         };
       }

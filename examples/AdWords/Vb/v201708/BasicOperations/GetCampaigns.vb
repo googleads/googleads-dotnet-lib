@@ -54,40 +54,40 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' [START get_campaigns] MOE:strip_line
-      ' Get the CampaignService.
-      Dim campaignService As CampaignService = CType(user.GetService(
+      Using campaignService As CampaignService = CType(user.GetService(
           AdWordsService.v201708.CampaignService), CampaignService)
 
-      ' Create the selector.
-      Dim selector As New Selector
-      selector.fields = New String() {
-        Campaign.Fields.Id, Campaign.Fields.Name, Campaign.Fields.Status
-      }
-      selector.paging = Paging.Default
+        ' Create the selector.
+        Dim selector As New Selector
+        selector.fields = New String() {
+          Campaign.Fields.Id, Campaign.Fields.Name, Campaign.Fields.Status
+        }
+        selector.paging = Paging.Default
 
-      Dim page As New CampaignPage
+        Dim page As New CampaignPage
 
-      Try
-        Do
-          ' Get the campaigns.
-          page = campaignService.get(selector)
+        Try
+          Do
+            ' Get the campaigns.
+            page = campaignService.get(selector)
 
-          ' Display the results.
-          If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = selector.paging.startIndex
-            For Each campaign As Campaign In page.entries
-              Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = " &
+            ' Display the results.
+            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+              Dim i As Integer = selector.paging.startIndex
+              For Each campaign As Campaign In page.entries
+                Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = " &
                   "'{3}' was found.", i + 1, campaign.id, campaign.name, campaign.status)
-              i += 1
-            Next
-          End If
-          selector.paging.IncreaseOffset()
-        Loop While (selector.paging.startIndex < page.totalNumEntries)
-        Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to retrieve campaign(s).", e)
-      End Try
-      ' [END get_campaigns] MOE:strip_line
+                i += 1
+              Next
+            End If
+            selector.paging.IncreaseOffset()
+          Loop While (selector.paging.startIndex < page.totalNumEntries)
+          Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to retrieve campaign(s).", e)
+        End Try
+        ' [END get_campaigns] MOE:strip_line
+      End Using
     End Sub
 
   End Class

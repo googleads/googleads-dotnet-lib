@@ -16,16 +16,16 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201705;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
+
   /// <summary>
   /// This code example illustrates how to create a text ad with ad parameters.
   /// To add an ad group, run AddAdGroup.cs. To add a keyword, run
   /// run AddKeyword.cs.
   /// </summary>
   public class SetAdParameters : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -62,79 +62,78 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
     /// <param name="criterionId">Id of the keyword for which the ad
     /// parameters are set.</param>
     public void Run(AdWordsUser user, long adGroupId, long criterionId) {
-      // Get the AdGroupAdService.
-      AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
-          AdWordsService.v201705.AdGroupAdService);
+      using (AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
+            AdWordsService.v201705.AdGroupAdService))
+      using (AdParamService adParamService = (AdParamService) user.GetService(
+            AdWordsService.v201705.AdParamService)) {
 
-      // Get the AdParamService.
-      AdParamService adParamService = (AdParamService) user.GetService(
-          AdWordsService.v201705.AdParamService);
+        // Create the expanded text ad.
+        ExpandedTextAd expandedTextAd = new ExpandedTextAd();
+        expandedTextAd.headlinePart1 = "Mars Cruises";
+        expandedTextAd.headlinePart2 = "Low-gravity fun for {param1:cheap}.";
+        expandedTextAd.description = "Only {param2:a few} seats left!";
+        expandedTextAd.finalUrls = new string[] { "http://www.example.com" };
 
-      // Create the expanded text ad.
-      ExpandedTextAd expandedTextAd = new ExpandedTextAd();
-      expandedTextAd.headlinePart1 = "Mars Cruises";
-      expandedTextAd.headlinePart2 = "Low-gravity fun for {param1:cheap}.";
-      expandedTextAd.description = "Only {param2:a few} seats left!";
-      expandedTextAd.finalUrls = new string[] { "http://www.example.com" };
+        AdGroupAd adOperand = new AdGroupAd();
+        adOperand.adGroupId = adGroupId;
+        adOperand.status = AdGroupAdStatus.ENABLED;
+        adOperand.ad = expandedTextAd;
 
-      AdGroupAd adOperand = new AdGroupAd();
-      adOperand.adGroupId = adGroupId;
-      adOperand.status = AdGroupAdStatus.ENABLED;
-      adOperand.ad = expandedTextAd;
+        // Create the operation.
+        AdGroupAdOperation adOperation = new AdGroupAdOperation();
+        adOperation.operand = adOperand;
+        adOperation.@operator = Operator.ADD;
 
-      // Create the operation.
-      AdGroupAdOperation adOperation = new AdGroupAdOperation();
-      adOperation.operand = adOperand;
-      adOperation.@operator = Operator.ADD;
 
-      // Create the text ad.
-      AdGroupAdReturnValue retVal = adGroupAdService.mutate(
-          new AdGroupAdOperation[] {adOperation});
-
-      // Display the results.
-      if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-        Console.WriteLine("Expanded text ad with id ='{0}' was successfully added.",
-            retVal.value[0].ad.id);
-      } else {
-        throw new System.ApplicationException("Failed to create expanded text ads.");
-      }
-
-      // Create the ad param for price.
-      AdParam priceParam = new AdParam();
-      priceParam.adGroupId = adGroupId;
-      priceParam.criterionId = criterionId;
-      priceParam.paramIndex = 1;
-      priceParam.insertionText = "$100";
-
-      // Create the ad param for seats.
-      AdParam seatParam = new AdParam();
-      seatParam.adGroupId = adGroupId;
-      seatParam.criterionId = criterionId;
-      seatParam.paramIndex = 2;
-      seatParam.insertionText = "50";
-
-      // Create the operations.
-      AdParamOperation priceOperation = new AdParamOperation();
-      priceOperation.@operator = Operator.SET;
-      priceOperation.operand = priceParam;
-
-      AdParamOperation seatOperation = new AdParamOperation();
-      seatOperation.@operator = Operator.SET;
-      seatOperation.operand = seatParam;
-
-      try {
-        // Set the ad parameters.
-        AdParam [] newAdParams = adParamService.mutate(new AdParamOperation[]
-            {priceOperation, seatOperation});
+        // Create the text ad.
+        AdGroupAdReturnValue retVal = adGroupAdService.mutate(
+            new AdGroupAdOperation[] { adOperation });
 
         // Display the results.
-        if (newAdParams != null) {
-          Console.WriteLine("Ad parameters were successfully updated.");
+        if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+          Console.WriteLine("Expanded text ad with id ='{0}' was successfully added.",
+              retVal.value[0].ad.id);
         } else {
-          Console.WriteLine("No ad parameters were set.");
+          throw new System.ApplicationException("Failed to create expanded text ads.");
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to set ad parameters.", e);
+
+        // Create the ad param for price.
+        AdParam priceParam = new AdParam();
+        priceParam.adGroupId = adGroupId;
+        priceParam.criterionId = criterionId;
+        priceParam.paramIndex = 1;
+        priceParam.insertionText = "$100";
+
+        // Create the ad param for seats.
+        AdParam seatParam = new AdParam();
+        seatParam.adGroupId = adGroupId;
+        seatParam.criterionId = criterionId;
+        seatParam.paramIndex = 2;
+        seatParam.insertionText = "50";
+
+        // Create the operations.
+        AdParamOperation priceOperation = new AdParamOperation();
+        priceOperation.@operator = Operator.SET;
+        priceOperation.operand = priceParam;
+
+        AdParamOperation seatOperation = new AdParamOperation();
+        seatOperation.@operator = Operator.SET;
+        seatOperation.operand = seatParam;
+
+        try {
+          // Set the ad parameters.
+          AdParam[] newAdParams = adParamService.mutate(new AdParamOperation[]
+              {priceOperation, seatOperation});
+
+          // Display the results.
+          if (newAdParams != null) {
+            Console.WriteLine("Ad parameters were successfully updated.");
+          } else {
+            Console.WriteLine("No ad parameters were set.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to set ad parameters.", e);
+        }
       }
     }
   }

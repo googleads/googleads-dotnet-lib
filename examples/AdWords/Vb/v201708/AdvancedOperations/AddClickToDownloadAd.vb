@@ -16,11 +16,8 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201708
 Imports Google.Api.Ads.Common.Util
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
+
   ''' <summary>
   ''' This code example creates a click-to-download ad, also known as an
   ''' app promotion ad to a given ad group. To list ad groups, run
@@ -40,7 +37,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -50,7 +47,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example creates a click-to-download ad, also known as an app " & _
+        Return "This code example creates a click-to-download ad, also known as an app " &
             "promotion ad to a given ad group. To list ad groups, run GetAdGroups.vb."
       End Get
     End Property
@@ -62,96 +59,97 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="adGroupId">Id of the ad group to which ads are added.
     ''' </param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-      ' Get the AdGroupAdService.
-      Dim adGroupAdService As AdGroupAdService = CType(user.GetService( _
+      Using adGroupAdService As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201708.AdGroupAdService), AdGroupAdService)
 
-      ' Create the template ad.
-      Dim clickToDownloadAppAd As New TemplateAd()
+        ' Create the template ad.
+        Dim clickToDownloadAppAd As New TemplateAd()
 
-      clickToDownloadAppAd.name = "Ad for demo game"
-      clickToDownloadAppAd.templateId = 353
-      clickToDownloadAppAd.finalUrls = New String() { _
-          "http://play.google.com/store/apps/details?id=com.example.demogame" _
-      }
-      clickToDownloadAppAd.displayUrl = "play.google.com"
+        clickToDownloadAppAd.name = "Ad for demo game"
+        clickToDownloadAppAd.templateId = 353
+        clickToDownloadAppAd.finalUrls = New String() {
+          "http://play.google.com/store/apps/details?id=com.example.demogame"
+        }
+        clickToDownloadAppAd.displayUrl = "play.google.com"
 
-      ' Create the template elements for the ad. You can refer to
-      ' https://developers.google.com/adwords/api/docs/appendix/templateads
-      ' for the list of avaliable template fields.
-      Dim headline As New TemplateElementField()
-      headline.name = "headline"
-      headline.fieldText = "Enjoy your drive in Mars"
-      headline.type = TemplateElementFieldType.TEXT
+        ' Create the template elements for the ad. You can refer to
+        ' https://developers.google.com/adwords/api/docs/appendix/templateads
+        ' for the list of avaliable template fields.
+        Dim headline As New TemplateElementField()
+        headline.name = "headline"
+        headline.fieldText = "Enjoy your drive in Mars"
+        headline.type = TemplateElementFieldType.TEXT
 
-      Dim description1 As New TemplateElementField()
-      description1.name = "description1"
-      description1.fieldText = "Realistic physics simulation"
-      description1.type = TemplateElementFieldType.TEXT
+        Dim description1 As New TemplateElementField()
+        description1.name = "description1"
+        description1.fieldText = "Realistic physics simulation"
+        description1.type = TemplateElementFieldType.TEXT
 
-      Dim description2 As New TemplateElementField()
-      description2.name = "description2"
-      description2.fieldText = "Race against players online"
-      description2.type = TemplateElementFieldType.TEXT
+        Dim description2 As New TemplateElementField()
+        description2.name = "description2"
+        description2.fieldText = "Race against players online"
+        description2.type = TemplateElementFieldType.TEXT
 
-      Dim appId As New TemplateElementField()
-      appId.name = "appId"
-      appId.fieldText = "com.example.demogame"
-      appId.type = TemplateElementFieldType.TEXT
+        Dim appId As New TemplateElementField()
+        appId.name = "appId"
+        appId.fieldText = "com.example.demogame"
+        appId.type = TemplateElementFieldType.TEXT
 
-      Dim appStore As New TemplateElementField()
-      appStore.name = "appStore"
-      appStore.fieldText = "2"
-      appStore.type = TemplateElementFieldType.ENUM
+        Dim appStore As New TemplateElementField()
+        appStore.name = "appStore"
+        appStore.fieldText = "2"
+        appStore.type = TemplateElementFieldType.ENUM
 
-      ' Optionally specify a landscape image. The image needs to be in a BASE64
-      ' encoded form. Here we download a demo image and encode it for this ad.
-      Dim imageData As Byte() = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9JmyKk")
-      Dim fieldMediaImage As New Image()
-      fieldMediaImage.data = imageData
-      Dim landscapeImage As New TemplateElementField()
-      landscapeImage.name = "landscapeImage"
-      landscapeImage.fieldMedia = fieldMediaImage
-      landscapeImage.type = TemplateElementFieldType.IMAGE
+        ' Optionally specify a landscape image. The image needs to be in a BASE64
+        ' encoded form. Here we download a demo image and encode it for this ad.
+        Dim imageData As Byte() = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9JmyKk")
+        Dim fieldMediaImage As New Image()
+        fieldMediaImage.data = imageData
+        Dim landscapeImage As New TemplateElementField()
+        landscapeImage.name = "landscapeImage"
+        landscapeImage.fieldMedia = fieldMediaImage
+        landscapeImage.type = TemplateElementFieldType.IMAGE
 
-      Dim adData As New TemplateElement()
-      adData.uniqueName = "adData"
-      adData.fields = New TemplateElementField() {headline, description1, description2, appId, _
-          appStore, landscapeImage}
+        Dim adData As New TemplateElement()
+        adData.uniqueName = "adData"
+        adData.fields = New TemplateElementField() {headline, description1, description2, appId,
+            appStore, landscapeImage}
 
-      clickToDownloadAppAd.templateElements = New TemplateElement() {adData}
+        clickToDownloadAppAd.templateElements = New TemplateElement() {adData}
 
-      ' Create the adgroupad.
-      Dim clickToDownloadAppAdGroupAd As New AdGroupAd()
-      clickToDownloadAppAdGroupAd.adGroupId = adGroupId
-      clickToDownloadAppAdGroupAd.ad = clickToDownloadAppAd
+        ' Create the adgroupad.
+        Dim clickToDownloadAppAdGroupAd As New AdGroupAd()
+        clickToDownloadAppAdGroupAd.adGroupId = adGroupId
+        clickToDownloadAppAdGroupAd.ad = clickToDownloadAppAd
 
-      ' Optional: Set the status.
-      clickToDownloadAppAdGroupAd.status = AdGroupAdStatus.PAUSED
+        ' Optional: Set the status.
+        clickToDownloadAppAdGroupAd.status = AdGroupAdStatus.PAUSED
 
-      ' Create the operation.
-      Dim operation As New AdGroupAdOperation()
-      operation.operator = [Operator].ADD
-      operation.operand = clickToDownloadAppAdGroupAd
+        ' Create the operation.
+        Dim operation As New AdGroupAdOperation()
+        operation.operator = [Operator].ADD
+        operation.operand = clickToDownloadAppAdGroupAd
 
-      Try
-        ' Create the ads.
-        Dim retval As AdGroupAdReturnValue = adGroupAdService.mutate(New AdGroupAdOperation() _
+        Try
+          ' Create the ads.
+          Dim retval As AdGroupAdReturnValue = adGroupAdService.mutate(New AdGroupAdOperation() _
                                                                      {operation})
 
-        ' Display the results.
-        If Not retval Is Nothing AndAlso Not retval.value Is Nothing Then
-          For Each adGroupAd As AdGroupAd In retval.value
-            Console.WriteLine("New click-to-download ad with id = '{0}' and url = '{1}' " & _
+          ' Display the results.
+          If Not retval Is Nothing AndAlso Not retval.value Is Nothing Then
+            For Each adGroupAd As AdGroupAd In retval.value
+              Console.WriteLine("New click-to-download ad with id = '{0}' and url = '{1}' " &
                 "was created.", adGroupAd.ad.id, adGroupAd.ad.finalUrls(0))
-          Next
-        Else
-          Console.WriteLine("No click-to-download ads were created.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to create click-to-download ad.", e)
-      End Try
+            Next
+          Else
+            Console.WriteLine("No click-to-download ads were created.")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to create click-to-download ad.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
 
 End Namespace

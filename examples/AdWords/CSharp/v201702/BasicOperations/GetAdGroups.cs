@@ -16,15 +16,15 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example illustrates how to retrieve all the ad groups for a
   /// campaign. To create an ad group, run AddAdGroup.cs.
   /// </summary>
   public class GetAdGroups : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -58,42 +58,42 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="campaignId">Id of the campaign for which ad groups are
     /// retrieved.</param>
     public void Run(AdWordsUser user, long campaignId) {
-      // Get the AdGroupService.
-      AdGroupService adGroupService =
-          (AdGroupService) user.GetService(AdWordsService.v201702.AdGroupService);
+      using (AdGroupService adGroupService =
+          (AdGroupService) user.GetService(AdWordsService.v201702.AdGroupService)) {
 
-      // Create the selector.
-      Selector selector = new Selector() {
-        fields = new string[] { AdGroup.Fields.Id, AdGroup.Fields.Name },
-        predicates = new Predicate[] {
-          Predicate.Equals(AdGroup.Fields.CampaignId, campaignId)
-        },
-        paging = Paging.Default,
-        ordering = new OrderBy[] {OrderBy.Asc(AdGroup.Fields.Name)}
-      };
+        // Create the selector.
+        Selector selector = new Selector() {
+          fields = new string[] { AdGroup.Fields.Id, AdGroup.Fields.Name },
+          predicates = new Predicate[] {
+            Predicate.Equals(AdGroup.Fields.CampaignId, campaignId)
+          },
+          paging = Paging.Default,
+          ordering = new OrderBy[] { OrderBy.Asc(AdGroup.Fields.Name) }
+        };
 
-      AdGroupPage page = new AdGroupPage();
+        AdGroupPage page = new AdGroupPage();
 
-      try {
-        do {
-          // Get the ad groups.
-          page = adGroupService.get(selector);
+        try {
+          do {
+            // Get the ad groups.
+            page = adGroupService.get(selector);
 
-          // Display the results.
-          if (page != null && page.entries != null) {
-            int i = selector.paging.startIndex;
-            foreach (AdGroup adGroup in page.entries) {
-              Console.WriteLine("{0}) Ad group name is '{1}' and id is {2}.", i + 1, adGroup.name,
-                  adGroup.id);
-              i++;
+            // Display the results.
+            if (page != null && page.entries != null) {
+              int i = selector.paging.startIndex;
+              foreach (AdGroup adGroup in page.entries) {
+                Console.WriteLine("{0}) Ad group name is '{1}' and id is {2}.", i + 1,
+                    adGroup.name, adGroup.id);
+                i++;
+              }
             }
-          }
-          // Note: You can also use selector.paging.IncrementOffsetBy(customPageSize)
-          selector.paging.IncreaseOffset();
-        } while (selector.paging.startIndex < page.totalNumEntries);
-        Console.WriteLine("Number of ad groups found: {0}", page.totalNumEntries);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to retrieve ad groups.", e);
+            // Note: You can also use selector.paging.IncrementOffsetBy(customPageSize)
+            selector.paging.IncreaseOffset();
+          } while (selector.paging.startIndex < page.totalNumEntries);
+          Console.WriteLine("Number of ad groups found: {0}", page.totalNumEntries);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to retrieve ad groups.", e);
+        }
       }
     }
   }

@@ -378,6 +378,35 @@ namespace Google.Api.Ads.AdWords.Tests.Util.BatchJob.v201708 {
     }
 
     /// <summary>
+    /// Tests for GetTextToLog method.
+    /// </summary>
+    [Test]
+    public void TestGetTextToLog() {
+      // When using ASCII characters only, you should get the actual number of chars requested,
+      // since 1 byte == 1 char.
+      string textToLog = "ABCDE";
+      Assert.AreEqual("ABC", GetTextToLog(Encoding.UTF8.GetBytes(textToLog), 0, 3));
+
+      // If you pass indices out of range of the array, exception is thrown.
+      Assert.Throws<ArgumentOutOfRangeException>(delegate () {
+        GetTextToLog(Encoding.UTF8.GetBytes(textToLog), 10, 20);
+      });
+      string utf8TextToLog = "こんにちは"; // Hello
+
+      // こ is // \u3053, and its UTF-8 representation is \xe3\x81\x93. So you get back 1 char.
+      Assert.AreEqual("こ", GetTextToLog(Encoding.UTF8.GetBytes(utf8TextToLog), 0, 3));
+
+      // When you request 4 bytes, the first 3 bytes are used to decode to こ, and the fourth
+      // byte is malformed. So unicode replacement character (\uFFFD) is used.
+      Assert.AreEqual("こ\uFFFD", GetTextToLog(Encoding.UTF8.GetBytes(utf8TextToLog), 0, 4));
+
+      // When you request 3 bytes, the stream is misaligned, so you get three unicode replacement
+      // characters (\uFFFD\uFFFD\uFFFD).
+      Assert.AreEqual("\uFFFD\uFFFD\uFFFD",
+          GetTextToLog(Encoding.UTF8.GetBytes(utf8TextToLog), 1, 3));
+    }
+
+    /// <summary>
     /// Gets an array of keyword operations for testing upload.
     /// </summary>
     /// <param name="adGroupId">The ad group ID.</param>

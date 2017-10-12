@@ -132,92 +132,94 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
 
     private static void createSitelinksFeed(AdWordsUser user, SitelinksDataHolder sitelinksData,
         string feedName) {
-      // Get the FeedService.
-      FeedService feedService = (FeedService) user.GetService(AdWordsService.v201708.FeedService);
+      using (FeedService feedService = (FeedService) user.GetService(
+          AdWordsService.v201708.FeedService)) {
 
-      // Create attributes.
-      FeedAttribute textAttribute = new FeedAttribute();
-      textAttribute.type = FeedAttributeType.STRING;
-      textAttribute.name = "Link Text";
+        // Create attributes.
+        FeedAttribute textAttribute = new FeedAttribute();
+        textAttribute.type = FeedAttributeType.STRING;
+        textAttribute.name = "Link Text";
 
-      FeedAttribute finalUrlAttribute = new FeedAttribute();
-      finalUrlAttribute.type = FeedAttributeType.URL_LIST;
-      finalUrlAttribute.name = "Link Final URLs";
+        FeedAttribute finalUrlAttribute = new FeedAttribute();
+        finalUrlAttribute.type = FeedAttributeType.URL_LIST;
+        finalUrlAttribute.name = "Link Final URLs";
 
-      FeedAttribute line2Attribute = new FeedAttribute();
-      line2Attribute.type = FeedAttributeType.STRING;
-      line2Attribute.name = "Line 2";
+        FeedAttribute line2Attribute = new FeedAttribute();
+        line2Attribute.type = FeedAttributeType.STRING;
+        line2Attribute.name = "Line 2";
 
-      FeedAttribute line3Attribute = new FeedAttribute();
-      line3Attribute.type = FeedAttributeType.STRING;
-      line3Attribute.name = "Line 3";
+        FeedAttribute line3Attribute = new FeedAttribute();
+        line3Attribute.type = FeedAttributeType.STRING;
+        line3Attribute.name = "Line 3";
 
-      // Create the feed.
-      Feed sitelinksFeed = new Feed();
-      sitelinksFeed.name = feedName;
-      sitelinksFeed.attributes = new FeedAttribute[] { textAttribute, finalUrlAttribute,
+        // Create the feed.
+        Feed sitelinksFeed = new Feed();
+        sitelinksFeed.name = feedName;
+        sitelinksFeed.attributes = new FeedAttribute[] { textAttribute, finalUrlAttribute,
           line2Attribute, line3Attribute };
-      sitelinksFeed.origin = FeedOrigin.USER;
+        sitelinksFeed.origin = FeedOrigin.USER;
 
-      // Create operation.
-      FeedOperation operation = new FeedOperation();
-      operation.operand = sitelinksFeed;
-      operation.@operator = Operator.ADD;
+        // Create operation.
+        FeedOperation operation = new FeedOperation();
+        operation.operand = sitelinksFeed;
+        operation.@operator = Operator.ADD;
 
-      // Add the feed.
-      FeedReturnValue result = feedService.mutate(new FeedOperation[] { operation });
+        // Add the feed.
+        FeedReturnValue result = feedService.mutate(new FeedOperation[] { operation });
 
-      Feed savedFeed = result.value[0];
-      sitelinksData.FeedId = savedFeed.id;
+        Feed savedFeed = result.value[0];
+        sitelinksData.FeedId = savedFeed.id;
 
-      FeedAttribute[] savedAttributes = savedFeed.attributes;
-      sitelinksData.LinkTextFeedAttributeId = savedAttributes[0].id;
-      sitelinksData.LinkFinalUrlFeedAttributeId = savedAttributes[1].id;
-      sitelinksData.Line2FeedAttributeId = savedAttributes[2].id;
-      sitelinksData.Line3FeedAttributeId = savedAttributes[3].id;
+        FeedAttribute[] savedAttributes = savedFeed.attributes;
+        sitelinksData.LinkTextFeedAttributeId = savedAttributes[0].id;
+        sitelinksData.LinkFinalUrlFeedAttributeId = savedAttributes[1].id;
+        sitelinksData.Line2FeedAttributeId = savedAttributes[2].id;
+        sitelinksData.Line3FeedAttributeId = savedAttributes[3].id;
 
-      Console.WriteLine("Feed with name {0} and ID {1} with linkTextAttributeId {2}, " +
-          "linkFinalUrlAttributeId {3}, line2AttributeId {4} and line3AttributeId {5} " +
-          "was created.", savedFeed.name, savedFeed.id, savedAttributes[0].id,
-          savedAttributes[1].id, savedAttributes[2].id, savedAttributes[3].id);
+        Console.WriteLine("Feed with name {0} and ID {1} with linkTextAttributeId {2}, " +
+            "linkFinalUrlAttributeId {3}, line2AttributeId {4} and line3AttributeId {5} " +
+            "was created.", savedFeed.name, savedFeed.id, savedAttributes[0].id,
+            savedAttributes[1].id, savedAttributes[2].id, savedAttributes[3].id);
+      }
     }
 
     private static void createSitelinksFeedItems(
         AdWordsUser user, SitelinksDataHolder siteLinksData) {
-      // Get the FeedItemService.
-      FeedItemService feedItemService =
-        (FeedItemService) user.GetService(AdWordsService.v201708.FeedItemService);
+      using (FeedItemService feedItemService =
+          (FeedItemService) user.GetService(AdWordsService.v201708.FeedItemService)) {
 
-      // Create operations to add FeedItems.
-      FeedItemOperation home =
-          newSitelinkFeedItemAddOperation(siteLinksData,
-          "Home", "http://www.example.com", "Home line 2", "Home line 3");
-      FeedItemOperation stores =
-          newSitelinkFeedItemAddOperation(siteLinksData,
-          "Stores", "http://www.example.com/stores", "Stores line 2", "Stores line 3");
-      FeedItemOperation onSale =
-          newSitelinkFeedItemAddOperation(siteLinksData,
-          "On Sale", "http://www.example.com/sale", "On Sale line 2", "On Sale line 3");
-      FeedItemOperation support =
-          newSitelinkFeedItemAddOperation(siteLinksData,
-          "Support", "http://www.example.com/support", "Support line 2", "Support line 3");
-      FeedItemOperation products =
-          newSitelinkFeedItemAddOperation(siteLinksData,
-          "Products", "http://www.example.com/prods", "Products line 2", "Products line 3");
+        // Create operations to add FeedItems.
+        FeedItemOperation home =
+            newSitelinkFeedItemAddOperation(siteLinksData,
+            "Home", "http://www.example.com", "Home line 2", "Home line 3");
+        FeedItemOperation stores =
+            newSitelinkFeedItemAddOperation(siteLinksData,
+            "Stores", "http://www.example.com/stores", "Stores line 2", "Stores line 3");
+        FeedItemOperation onSale =
+            newSitelinkFeedItemAddOperation(siteLinksData,
+            "On Sale", "http://www.example.com/sale", "On Sale line 2", "On Sale line 3");
+        FeedItemOperation support =
+            newSitelinkFeedItemAddOperation(siteLinksData,
+            "Support", "http://www.example.com/support", "Support line 2", "Support line 3");
+        FeedItemOperation products =
+            newSitelinkFeedItemAddOperation(siteLinksData,
+            "Products", "http://www.example.com/prods", "Products line 2", "Products line 3");
 
-      // This site link is using geographical targeting by specifying the
-      // criterion ID for California.
-      FeedItemOperation aboutUs =
-          newSitelinkFeedItemAddOperation(siteLinksData,
-          "About Us", "http://www.example.com/about", "About Us line 2", "About Us line 3", 21137);
+        // This site link is using geographical targeting by specifying the
+        // criterion ID for California.
+        FeedItemOperation aboutUs =
+            newSitelinkFeedItemAddOperation(siteLinksData,
+                "About Us", "http://www.example.com/about", "About Us line 2",
+                "About Us line 3", 21137);
 
-      FeedItemOperation[] operations =
-          new FeedItemOperation[] { home, stores, onSale, support, products, aboutUs };
+        FeedItemOperation[] operations =
+            new FeedItemOperation[] { home, stores, onSale, support, products, aboutUs };
 
-      FeedItemReturnValue result = feedItemService.mutate(operations);
-      foreach (FeedItem item in result.value) {
-        Console.WriteLine("FeedItem with feedItemId {0} was added.", item.feedItemId);
-        siteLinksData.FeedItemIds.Add(item.feedItemId);
+        FeedItemReturnValue result = feedItemService.mutate(operations);
+        foreach (FeedItem item in result.value) {
+          Console.WriteLine("FeedItem with feedItemId {0} was added.", item.feedItemId);
+          siteLinksData.FeedItemIds.Add(item.feedItemId);
+        }
       }
     }
 
@@ -232,91 +234,91 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     private const int PLACEHOLDER_FIELD_LINE_2_TEXT = 3;
     private const int PLACEHOLDER_FIELD_LINE_3_TEXT = 4;
 
-    private static void createSitelinksFeedMapping(
-        AdWordsUser user, SitelinksDataHolder sitelinksData) {
-      // Get the FeedItemService.
-      FeedMappingService feedMappingService =
-        (FeedMappingService) user.GetService(AdWordsService.v201708.FeedMappingService);
+    private static void createSitelinksFeedMapping(AdWordsUser user,
+        SitelinksDataHolder sitelinksData) {
+      using (FeedMappingService feedMappingService =
+          (FeedMappingService) user.GetService(AdWordsService.v201708.FeedMappingService)) {
 
-      // Map the FeedAttributeIds to the fieldId constants.
-      AttributeFieldMapping linkTextFieldMapping = new AttributeFieldMapping();
-      linkTextFieldMapping.feedAttributeId = sitelinksData.LinkTextFeedAttributeId;
-      linkTextFieldMapping.fieldId = PLACEHOLDER_FIELD_SITELINK_LINK_TEXT;
+        // Map the FeedAttributeIds to the fieldId constants.
+        AttributeFieldMapping linkTextFieldMapping = new AttributeFieldMapping();
+        linkTextFieldMapping.feedAttributeId = sitelinksData.LinkTextFeedAttributeId;
+        linkTextFieldMapping.fieldId = PLACEHOLDER_FIELD_SITELINK_LINK_TEXT;
 
-      AttributeFieldMapping linkFinalUrlFieldMapping = new AttributeFieldMapping();
-      linkFinalUrlFieldMapping.feedAttributeId = sitelinksData.LinkFinalUrlFeedAttributeId;
-      linkFinalUrlFieldMapping.fieldId = PLACEHOLDER_FIELD_SITELINK_FINAL_URL;
+        AttributeFieldMapping linkFinalUrlFieldMapping = new AttributeFieldMapping();
+        linkFinalUrlFieldMapping.feedAttributeId = sitelinksData.LinkFinalUrlFeedAttributeId;
+        linkFinalUrlFieldMapping.fieldId = PLACEHOLDER_FIELD_SITELINK_FINAL_URL;
 
-      AttributeFieldMapping line2FieldMapping = new AttributeFieldMapping();
-      line2FieldMapping.feedAttributeId = sitelinksData.Line2FeedAttributeId;
-      line2FieldMapping.fieldId = PLACEHOLDER_FIELD_LINE_2_TEXT;
+        AttributeFieldMapping line2FieldMapping = new AttributeFieldMapping();
+        line2FieldMapping.feedAttributeId = sitelinksData.Line2FeedAttributeId;
+        line2FieldMapping.fieldId = PLACEHOLDER_FIELD_LINE_2_TEXT;
 
-      AttributeFieldMapping line3FieldMapping = new AttributeFieldMapping();
-      line3FieldMapping.feedAttributeId = sitelinksData.Line3FeedAttributeId;
-      line3FieldMapping.fieldId = PLACEHOLDER_FIELD_LINE_3_TEXT;
+        AttributeFieldMapping line3FieldMapping = new AttributeFieldMapping();
+        line3FieldMapping.feedAttributeId = sitelinksData.Line3FeedAttributeId;
+        line3FieldMapping.fieldId = PLACEHOLDER_FIELD_LINE_3_TEXT;
 
-      // Create the FieldMapping and operation.
-      FeedMapping feedMapping = new FeedMapping();
-      feedMapping.placeholderType = PLACEHOLDER_SITELINKS;
-      feedMapping.feedId = sitelinksData.FeedId;
-      feedMapping.attributeFieldMappings = new AttributeFieldMapping[] {
+        // Create the FieldMapping and operation.
+        FeedMapping feedMapping = new FeedMapping();
+        feedMapping.placeholderType = PLACEHOLDER_SITELINKS;
+        feedMapping.feedId = sitelinksData.FeedId;
+        feedMapping.attributeFieldMappings = new AttributeFieldMapping[] {
         linkTextFieldMapping, linkFinalUrlFieldMapping, line2FieldMapping, line3FieldMapping };
 
-      FeedMappingOperation operation = new FeedMappingOperation();
-      operation.operand = feedMapping;
-      operation.@operator = Operator.ADD;
+        FeedMappingOperation operation = new FeedMappingOperation();
+        operation.operand = feedMapping;
+        operation.@operator = Operator.ADD;
 
-      // Save the field mapping.
-      FeedMappingReturnValue result =
-          feedMappingService.mutate(new FeedMappingOperation[] { operation });
+        // Save the field mapping.
+        FeedMappingReturnValue result =
+            feedMappingService.mutate(new FeedMappingOperation[] { operation });
 
-      foreach (FeedMapping savedFeedMapping in result.value) {
-        Console.WriteLine(
-            "Feed mapping with ID {0} and placeholderType {1} was saved for feed with ID {2}.",
-            savedFeedMapping.feedMappingId, savedFeedMapping.placeholderType,
-            savedFeedMapping.feedId);
+        foreach (FeedMapping savedFeedMapping in result.value) {
+          Console.WriteLine(
+              "Feed mapping with ID {0} and placeholderType {1} was saved for feed with ID {2}.",
+              savedFeedMapping.feedMappingId, savedFeedMapping.placeholderType,
+              savedFeedMapping.feedId);
+        }
       }
     }
 
     private static void createSitelinksCampaignFeed(AdWordsUser user,
-      SitelinksDataHolder sitelinksData, long campaignId) {
-      // Get the CampaignFeedService.
-      CampaignFeedService campaignFeedService =
-        (CampaignFeedService) user.GetService(AdWordsService.v201708.CampaignFeedService);
+        SitelinksDataHolder sitelinksData, long campaignId) {
+      using (CampaignFeedService campaignFeedService =
+          (CampaignFeedService) user.GetService(AdWordsService.v201708.CampaignFeedService)) {
 
-      // Construct a matching function that associates the sitelink feeditems
-      // to the campaign, and set the device preference to Mobile. See the
-      // matching function guide at
-      // https://developers.google.com/adwords/api/docs/guides/feed-matching-functions
-      // for more details.
-      string matchingFunctionString = string.Format(@"
+        // Construct a matching function that associates the sitelink feeditems
+        // to the campaign, and set the device preference to Mobile. See the
+        // matching function guide at
+        // https://developers.google.com/adwords/api/docs/guides/feed-matching-functions
+        // for more details.
+        string matchingFunctionString = string.Format(@"
           AND(
             IN(FEED_ITEM_ID, {{{0}}}),
             EQUALS(CONTEXT.DEVICE, 'Mobile')
           )",
-          string.Join(",", sitelinksData.FeedItemIds));
+            string.Join(",", sitelinksData.FeedItemIds));
 
-      CampaignFeed campaignFeed = new CampaignFeed() {
-        feedId = sitelinksData.FeedId,
-        campaignId = campaignId,
-        matchingFunction = new Function() {
-          functionString = matchingFunctionString
-        },
-        // Specifying placeholder types on the CampaignFeed allows the same feed
-        // to be used for different placeholders in different Campaigns.
-        placeholderTypes = new int[] { PLACEHOLDER_SITELINKS }
-      };
+        CampaignFeed campaignFeed = new CampaignFeed() {
+          feedId = sitelinksData.FeedId,
+          campaignId = campaignId,
+          matchingFunction = new Function() {
+            functionString = matchingFunctionString
+          },
+          // Specifying placeholder types on the CampaignFeed allows the same feed
+          // to be used for different placeholders in different Campaigns.
+          placeholderTypes = new int[] { PLACEHOLDER_SITELINKS }
+        };
 
-      CampaignFeedOperation operation = new CampaignFeedOperation();
-      operation.operand = campaignFeed;
-      operation.@operator = Operator.ADD;
+        CampaignFeedOperation operation = new CampaignFeedOperation();
+        operation.operand = campaignFeed;
+        operation.@operator = Operator.ADD;
 
-      CampaignFeedReturnValue result = campaignFeedService.mutate(
-          new CampaignFeedOperation[] { operation });
+        CampaignFeedReturnValue result = campaignFeedService.mutate(
+            new CampaignFeedOperation[] { operation });
 
-      foreach (CampaignFeed savedCampaignFeed in result.value) {
-        Console.WriteLine("Campaign with ID {0} was associated with feed with ID {1}",
-            savedCampaignFeed.campaignId, savedCampaignFeed.feedId);
+        foreach (CampaignFeed savedCampaignFeed in result.value) {
+          Console.WriteLine("Campaign with ID {0} was associated with feed with ID {1}",
+              savedCampaignFeed.campaignId, savedCampaignFeed.feedId);
+        }
       }
     }
 

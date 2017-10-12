@@ -15,11 +15,8 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201705
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
+
   ''' <summary>
   ''' This code example adds a page feed to specify precisely which URLs to use with your
   ''' Dynamic Search Ads campaign. To create a Dynamic Search Ads campaign, run
@@ -79,6 +76,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
           labelAttributeIdField = value
         End Set
       End Property
+
     End Class
 
     ''' <summary>
@@ -114,19 +112,22 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long, ByVal adgroupId As Long)
       Dim dsaPageUrlLabel As String = "discounts"
 
-      ' Get the page feed details. This code example creates a new feed, but you can
-      ' fetch and re-use an existing feed.
-      Dim feedDetails As DSAFeedDetails = CreateFeed(user)
-      CreateFeedMapping(user, feedDetails)
-      CreateFeedItems(user, feedDetails, dsaPageUrlLabel)
+      Try
+        ' Get the page feed details. This code example creates a new feed, but you can
+        ' fetch and re-use an existing feed.
+        Dim feedDetails As DSAFeedDetails = CreateFeed(user)
+        CreateFeedMapping(user, feedDetails)
+        CreateFeedItems(user, feedDetails, dsaPageUrlLabel)
 
-      ' Associate the page feed with the campaign.
-      UpdateCampaignDsaSetting(user, campaignId, feedDetails.feedId)
+        ' Associate the page feed with the campaign.
+        UpdateCampaignDsaSetting(user, campaignId, feedDetails.FeedId)
 
-      ' Optional: Target Web pages matching the feed's label in the ad group.
-      AddDsaTargeting(user, adGroupId, dsaPageUrlLabel)
-
-      Console.WriteLine("Dynamic page feed setup is complete for campaign ID '{0}'.", campaignId)
+        ' Optional: Target Web pages matching the feed's label in the ad group.
+        AddDsaTargeting(user, adgroupId, dsaPageUrlLabel)
+        Console.WriteLine("Dynamic page feed setup is complete for campaign ID '{0}'.", campaignId)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to setup dynamic page feed for campaign.", e)
+      End Try
     End Sub
 
     ''' <summary>
@@ -135,40 +136,40 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <param name="user">The AdWords User.</param>
     ''' <returns>The feed details.</returns>
     Private Function CreateFeed(ByVal user As AdWordsUser) As DSAFeedDetails
-      ' Get the FeedService.
-      Dim feedService As FeedService = CType(user.GetService(
+      Using feedService As FeedService = CType(user.GetService(
           AdWordsService.v201705.FeedService), FeedService)
 
-      ' Create attributes.
-      Dim urlAttribute As New FeedAttribute()
-      urlAttribute.type = FeedAttributeType.URL_LIST
-      urlAttribute.name = "Page URL"
+        ' Create attributes.
+        Dim urlAttribute As New FeedAttribute()
+        urlAttribute.type = FeedAttributeType.URL_LIST
+        urlAttribute.name = "Page URL"
 
-      Dim labelAttribute As New FeedAttribute()
-      labelAttribute.type = FeedAttributeType.STRING_LIST
-      labelAttribute.name = "Label"
+        Dim labelAttribute As New FeedAttribute()
+        labelAttribute.type = FeedAttributeType.STRING_LIST
+        labelAttribute.name = "Label"
 
-      ' Create the feed.
-      Dim sitelinksFeed As New Feed()
-      sitelinksFeed.name = "DSA Feed " + ExampleUtilities.GetRandomString()
-      sitelinksFeed.attributes = New FeedAttribute() {urlAttribute, labelAttribute}
-      sitelinksFeed.origin = FeedOrigin.USER
+        ' Create the feed.
+        Dim sitelinksFeed As New Feed()
+        sitelinksFeed.name = "DSA Feed " + ExampleUtilities.GetRandomString()
+        sitelinksFeed.attributes = New FeedAttribute() {urlAttribute, labelAttribute}
+        sitelinksFeed.origin = FeedOrigin.USER
 
-      ' Create operation.
-      Dim operation As New FeedOperation()
-      operation.operand = sitelinksFeed
-      operation.operator = [Operator].ADD
+        ' Create operation.
+        Dim operation As New FeedOperation()
+        operation.operand = sitelinksFeed
+        operation.operator = [Operator].ADD
 
-      ' Add the feed.
-      Dim result As FeedReturnValue = feedService.mutate(New FeedOperation() {operation})
+        ' Add the feed.
+        Dim result As FeedReturnValue = feedService.mutate(New FeedOperation() {operation})
 
-      Dim savedFeed As Feed = result.value(0)
+        Dim savedFeed As Feed = result.value(0)
 
-      Dim retval As New DSAFeedDetails
-      retval.FeedId = savedFeed.id
-      retval.UrlAttributeId = savedFeed.attributes(0).id
-      retval.LabelAttributeId = savedFeed.attributes(1).id
-      Return retval
+        Dim retval As New DSAFeedDetails
+        retval.FeedId = savedFeed.id
+        retval.UrlAttributeId = savedFeed.attributes(0).id
+        retval.LabelAttributeId = savedFeed.attributes(1).id
+        Return retval
+      End Using
     End Function
 
     ''' <summary>
@@ -177,34 +178,33 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <param name="user">The AdWords user.</param>
     ''' <param name="feedDetails">The feed details.</param>
     Private Sub CreateFeedMapping(ByVal user As AdWordsUser, ByVal feedDetails As DSAFeedDetails)
-      ' Get the FeedMappingService.
-      Dim feedMappingService As FeedMappingService = CType(user.GetService(
+      Using feedMappingService As FeedMappingService = CType(user.GetService(
           AdWordsService.v201705.FeedMappingService), FeedMappingService)
 
-      ' Map the FeedAttributeIds to the fieldId constants.
-      Dim urlFieldMapping As New AttributeFieldMapping()
-      urlFieldMapping.feedAttributeId = feedDetails.UrlAttributeId
-      urlFieldMapping.fieldId = DSA_PAGE_URLS_FIELD_ID
+        ' Map the FeedAttributeIds to the fieldId constants.
+        Dim urlFieldMapping As New AttributeFieldMapping()
+        urlFieldMapping.feedAttributeId = feedDetails.UrlAttributeId
+        urlFieldMapping.fieldId = DSA_PAGE_URLS_FIELD_ID
 
-      Dim labelFieldMapping As New AttributeFieldMapping()
-      labelFieldMapping.feedAttributeId = feedDetails.LabelAttributeId
-      labelFieldMapping.fieldId = DSA_LABEL_FIELD_ID
+        Dim labelFieldMapping As New AttributeFieldMapping()
+        labelFieldMapping.feedAttributeId = feedDetails.LabelAttributeId
+        labelFieldMapping.fieldId = DSA_LABEL_FIELD_ID
 
-      ' Create the fieldMapping and operation.
-      Dim feedMapping As New FeedMapping()
-      feedMapping.criterionType = DSA_PAGE_FEED_CRITERION_TYPE
-      feedMapping.feedId = feedDetails.FeedId
-      feedMapping.attributeFieldMappings = New AttributeFieldMapping() {
+        ' Create the fieldMapping and operation.
+        Dim feedMapping As New FeedMapping()
+        feedMapping.criterionType = DSA_PAGE_FEED_CRITERION_TYPE
+        feedMapping.feedId = feedDetails.FeedId
+        feedMapping.attributeFieldMappings = New AttributeFieldMapping() {
         urlFieldMapping, labelFieldMapping
       }
 
-      Dim operation As New FeedMappingOperation()
-      operation.operand = feedMapping
-      operation.operator = [Operator].ADD
+        Dim operation As New FeedMappingOperation()
+        operation.operand = feedMapping
+        operation.operator = [Operator].ADD
 
-      ' Add the field mapping.
-      feedMappingService.mutate(New FeedMappingOperation() {operation})
-      Return
+        ' Add the field mapping.
+        feedMappingService.mutate(New FeedMappingOperation() {operation})
+      End Using
     End Sub
 
     ''' <summary>
@@ -215,19 +215,19 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <param name="labelName">The pagefeed url label.</param>
     Private Sub CreateFeedItems(ByVal user As AdWordsUser, ByVal feedDetails As DSAFeedDetails,
         ByVal labelName As String)
-      ' Get the FeedItemService.
-      Dim feedItemService As FeedItemService = CType(user.GetService(
+      Using feedItemService As FeedItemService = CType(user.GetService(
           AdWordsService.v201705.FeedItemService), FeedItemService)
 
-      Dim operations() As FeedItemOperation = {
-        CreateDsaUrlAddOperation(feedDetails, "http://www.example.com/discounts/rental-cars",
-            labelName),
-        CreateDsaUrlAddOperation(feedDetails, "http://www.example.com/discounts/hotel-deals",
-            labelName),
-        CreateDsaUrlAddOperation(feedDetails, "http://www.example.com/discounts/flight-deals",
-            labelName)
-      }
-      feedItemService.mutate(operations)
+        Dim operations() As FeedItemOperation = {
+          CreateDsaUrlAddOperation(feedDetails, "http://www.example.com/discounts/rental-cars",
+              labelName),
+          CreateDsaUrlAddOperation(feedDetails, "http://www.example.com/discounts/hotel-deals",
+              labelName),
+          CreateDsaUrlAddOperation(feedDetails, "http://www.example.com/discounts/flight-deals",
+              labelName)
+        }
+        feedItemService.mutate(operations)
+      End Using
     End Sub
 
     ''' <summary>
@@ -276,74 +276,74 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     Private Sub UpdateCampaignDsaSetting(ByVal user As AdWordsUser, ByVal campaignId As Long,
         ByVal feedId As Long)
       ' [START getDsaSetting] MOE:strip_line
-      ' Get the CampaignService.
-      Dim campaignService As CampaignService = CType(user.GetService(
+      Using campaignService As CampaignService = CType(user.GetService(
           AdWordsService.v201705.CampaignService), CampaignService)
 
-      Dim selector As New Selector()
-      selector.fields = New String() {Campaign.Fields.Id, Campaign.Fields.Settings}
-      selector.predicates = New Predicate() {
-          Predicate.Equals(Campaign.Fields.Id, campaignId)
-      }
-      selector.paging = Paging.Default
+        Dim selector As New Selector()
+        selector.fields = New String() {Campaign.Fields.Id, Campaign.Fields.Settings}
+        selector.predicates = New Predicate() {
+            Predicate.Equals(Campaign.Fields.Id, campaignId)
+        }
+        selector.paging = Paging.Default
 
-      Dim page As CampaignPage = campaignService.get(selector)
+        Dim page As CampaignPage = campaignService.get(selector)
 
-      If page Is Nothing Or page.entries Is Nothing Or page.entries.Length = 0 Then
-        Throw New System.ApplicationException(String.Format(
-            "Failed to retrieve campaign with ID = {0}.", campaignId))
-      End If
-
-      Dim selectedCampaign As Campaign = page.entries(0)
-
-      If selectedCampaign.settings Is Nothing Then
-        Throw New System.ApplicationException("This is not a DSA campaign.")
-      End If
-
-      Dim dsaSetting As DynamicSearchAdsSetting = Nothing
-      Dim campaignSettings() As Setting = selectedCampaign.settings
-
-      For i As Integer = 0 To selectedCampaign.settings.Length - 1
-        Dim setting As Setting = campaignSettings(i)
-        If TypeOf setting Is DynamicSearchAdsSetting Then
-          dsaSetting = CType(setting, DynamicSearchAdsSetting)
-          Exit For
+        If page Is Nothing Or page.entries Is Nothing Or page.entries.Length = 0 Then
+          Throw New System.ApplicationException(String.Format(
+              "Failed to retrieve campaign with ID = {0}.", campaignId))
         End If
-      Next
 
-      If dsaSetting Is Nothing Then
-        Throw New System.ApplicationException("This is not a DSA campaign.")
-      End If
-      ' [END getDsaSetting] MOE:strip_line
+        Dim selectedCampaign As Campaign = page.entries(0)
 
-      ' [START updateDsaSetting] MOE:strip_line
-      ' Use a page feed to specify precisely which URLs to use with your
-      ' Dynamic Search Ads.
-      dsaSetting.pageFeed = New PageFeed()
-      dsaSetting.pageFeed.feedIds = New Long() {
-        feedId
-      }
+        If selectedCampaign.settings Is Nothing Then
+          Throw New System.ApplicationException("This is not a DSA campaign.")
+        End If
 
-      ' Optional: Specify whether only the supplied URLs should be used with your
-      ' Dynamic Search Ads.
-      dsaSetting.useSuppliedUrlsOnly = True
+        Dim dsaSetting As DynamicSearchAdsSetting = Nothing
+        Dim campaignSettings() As Setting = selectedCampaign.settings
 
-      Dim campaignToUpdate As New Campaign()
-      campaignToUpdate.id = campaignId
-      campaignToUpdate.settings = campaignSettings
+        For i As Integer = 0 To selectedCampaign.settings.Length - 1
+          Dim setting As Setting = campaignSettings(i)
+          If TypeOf setting Is DynamicSearchAdsSetting Then
+            dsaSetting = CType(setting, DynamicSearchAdsSetting)
+            Exit For
+          End If
+        Next
 
-      Dim operation As New CampaignOperation()
-      operation.operand = campaignToUpdate
-      operation.operator = [Operator].SET
+        If dsaSetting Is Nothing Then
+          Throw New System.ApplicationException("This is not a DSA campaign.")
+        End If
+        ' [END getDsaSetting] MOE:strip_line
 
-      Try
-        Dim retval As CampaignReturnValue = campaignService.mutate(
-            New CampaignOperation() {operation})
-        Console.WriteLine("DSA page feed for campaign ID '{0}' was updated with feed ID '{1}'.",
-            campaignToUpdate.id, feedId)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to set page feed for campaign.", e)
-      End Try
+        ' [START updateDsaSetting] MOE:strip_line
+        ' Use a page feed to specify precisely which URLs to use with your
+        ' Dynamic Search Ads.
+        dsaSetting.pageFeed = New PageFeed()
+        dsaSetting.pageFeed.feedIds = New Long() {
+          feedId
+        }
+
+        ' Optional: Specify whether only the supplied URLs should be used with your
+        ' Dynamic Search Ads.
+        dsaSetting.useSuppliedUrlsOnly = True
+
+        Dim campaignToUpdate As New Campaign()
+        campaignToUpdate.id = campaignId
+        campaignToUpdate.settings = campaignSettings
+
+        Dim operation As New CampaignOperation()
+        operation.operand = campaignToUpdate
+        operation.operator = [Operator].SET
+
+        Try
+          Dim retval As CampaignReturnValue = campaignService.mutate(
+              New CampaignOperation() {operation})
+          Console.WriteLine("DSA page feed for campaign ID '{0}' was updated with feed ID '{1}'.",
+              campaignToUpdate.id, feedId)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to set page feed for campaign.", e)
+        End Try
+      End Using
       ' [END updateDsaSetting] MOE:strip_line
     End Sub
 
@@ -357,57 +357,59 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     Private Function AddDsaTargeting(ByVal user As AdWordsUser, ByVal adgroupId As Long,
         ByVal labelName As String) As BiddableAdGroupCriterion
       ' [START addCustomLabelTargeting] MOE:strip_line
-      ' Get the AdGroupCriterionService.
-      Dim adGroupCriterionService As AdGroupCriterionService = CType(user.GetService(
+      Using adGroupCriterionService As AdGroupCriterionService = CType(user.GetService(
           AdWordsService.v201705.AdGroupCriterionService), AdGroupCriterionService)
 
-      ' Create a webpage criterion.
-      Dim webpage As New Webpage()
+        ' Create a webpage criterion.
+        Dim webpage As New Webpage()
 
-      Dim parameter As New WebpageParameter()
-      parameter.criterionName = "Test criterion"
-      webpage.parameter = parameter
+        Dim parameter As New WebpageParameter()
+        parameter.criterionName = "Test criterion"
+        webpage.parameter = parameter
 
-      ' Add a condition for label=specified_label_name.
-      Dim condition As New WebpageCondition()
-      condition.operand = WebpageConditionOperand.CUSTOM_LABEL
-      condition.argument = labelName
-      parameter.conditions = New WebpageCondition() {condition}
+        ' Add a condition for label=specified_label_name.
+        Dim condition As New WebpageCondition()
+        condition.operand = WebpageConditionOperand.CUSTOM_LABEL
+        condition.argument = labelName
+        parameter.conditions = New WebpageCondition() {condition}
 
-      Dim criterion As New BiddableAdGroupCriterion()
-      criterion.adGroupId = adgroupId
-      criterion.criterion = webpage
+        Dim criterion As New BiddableAdGroupCriterion()
+        criterion.adGroupId = adgroupId
+        criterion.criterion = webpage
 
-      ' Set a custom bid for this criterion.
-      Dim biddingStrategyConfiguration As New BiddingStrategyConfiguration()
+        ' Set a custom bid for this criterion.
+        Dim biddingStrategyConfiguration As New BiddingStrategyConfiguration()
 
-      Dim cpcBid As New CpcBid
-      cpcBid.bid = New Money()
-      cpcBid.bid.microAmount = 1500000
+        Dim cpcBid As New CpcBid
+        cpcBid.bid = New Money()
+        cpcBid.bid.microAmount = 1500000
 
-      biddingStrategyConfiguration.bids = New Bids() {cpcBid}
+        biddingStrategyConfiguration.bids = New Bids() {cpcBid}
 
-      criterion.biddingStrategyConfiguration = biddingStrategyConfiguration
+        criterion.biddingStrategyConfiguration = biddingStrategyConfiguration
 
-      Dim operation As New AdGroupCriterionOperation()
-      operation.operand = criterion
-      operation.operator = [Operator].ADD
+        Dim operation As New AdGroupCriterionOperation()
+        operation.operand = criterion
+        operation.operator = [Operator].ADD
 
-      Try
-        Dim retval As AdGroupCriterionReturnValue = adGroupCriterionService.mutate(
+        Try
+          Dim retval As AdGroupCriterionReturnValue = adGroupCriterionService.mutate(
             New AdGroupCriterionOperation() {operation})
-        Dim newCriterion As BiddableAdGroupCriterion =
+          Dim newCriterion As BiddableAdGroupCriterion =
             CType(retval.value(0), BiddableAdGroupCriterion)
 
-        Console.WriteLine("Web page criterion with ID = {0} and status = {1} was created.",
+          Console.WriteLine("Web page criterion with ID = {0} and status = {1} was created.",
           newCriterion.criterion.id, newCriterion.userStatus)
 
-        Return newCriterion
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to create webpage criterion for " +
+          Return newCriterion
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to create webpage criterion for " +
             "custom page feed label.", e)
-      End Try
+        End Try
+      End Using
     End Function
+
     ' [END addCustomLabelTargeting] MOE:strip_line
   End Class
+
 End Namespace

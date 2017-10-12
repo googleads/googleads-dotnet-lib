@@ -17,11 +17,10 @@ Imports Google.Api.Ads.AdWords.Util.Reports
 Imports Google.Api.Ads.AdWords.v201702
 Imports Google.Api.Ads.Common.Util.Reports
 
-Imports System
-Imports System.Collections.Generic
 Imports System.IO
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
+
   ''' <summary>
   ''' This code example gets and downloads a criteria Ad Hoc report from an AWQL
   ''' query. See https://developers.google.com/adwords/api/docs/guides/awql for
@@ -29,6 +28,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
   ''' </summary>
   Public Class DownloadCriteriaReportWithAwql
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -40,7 +40,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
         Dim fileName As String = "INSERT_OUTPUT_FILE_NAME"
         codeExample.Run(New AdWordsUser, fileName)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -50,8 +50,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example gets and downloads a criteria Ad Hoc report from an AWQL" & _
-            " query. See https://developers.google.com/adwords/api/docs/guides/awql for" & _
+        Return "This code example gets and downloads a criteria Ad Hoc report from an AWQL" &
+            " query. See https://developers.google.com/adwords/api/docs/guides/awql for" &
             " AWQL documentation."
       End Get
     End Property
@@ -63,16 +63,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="fileName">The file to which the report is downloaded.
     ''' </param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal fileName As String)
-      Dim query As String = "SELECT CampaignId, AdGroupId, Id, Criteria, CriteriaType, " & _
-          "Impressions, Clicks, Cost FROM CRITERIA_PERFORMANCE_REPORT WHERE Status IN " & _
+      Dim query As String = "SELECT CampaignId, AdGroupId, Id, Criteria, CriteriaType, " &
+          "Impressions, Clicks, Cost FROM CRITERIA_PERFORMANCE_REPORT WHERE Status IN " &
           "[ENABLED, PAUSED] DURING LAST_7_DAYS"
 
-      Dim filePath As String = ExampleUtilities.GetHomeDir() + Path.DirectorySeparatorChar & _
+      Dim filePath As String = ExampleUtilities.GetHomeDir() + Path.DirectorySeparatorChar &
           fileName
 
       Try
-        Dim utilities As New ReportUtilities(user, "v201702", query, _
-                                             DownloadFormat.GZIPPED_CSV.ToString())
+        Dim utilities As New ReportUtilities(user, "v201702", query,
+            DownloadFormat.GZIPPED_CSV.ToString())
         Using reportResponse As ReportResponse = utilities.GetResponse()
           reportResponse.Save(filePath)
         End Using
@@ -82,5 +82,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
       End Try
 
     End Sub
+
   End Class
+
 End Namespace

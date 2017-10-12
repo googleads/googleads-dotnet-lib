@@ -17,13 +17,11 @@ Imports Google.Api.Ads.AdWords.Util.Reports
 Imports Google.Api.Ads.AdWords.v201708
 Imports Google.Api.Ads.Common.Util.Reports
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
 Imports System.IO.Compression
 Imports System.Xml
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
+
   ''' <summary>
   ''' This code example streams the results of an ad hoc report, collecting
   ''' total impressions by network from each line. This demonstrates how you
@@ -32,6 +30,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
   ''' </summary>
   Public Class StreamCriteriaReportResults
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -42,7 +41,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
       Try
         codeExample.Run(New AdWordsUser)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -52,9 +51,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example streams the results of an ad hoc report, collecting" & _
-            " total impressions by network from each line. This demonstrates how you" & _
-            " can extract data from a large report without holding the entire result" & _
+        Return "This code example streams the results of an ad hoc report, collecting" &
+            " total impressions by network from each line. This demonstrates how you" &
+            " can extract data from a large report without holding the entire result" &
             " set in memory or using files."
       End Get
     End Property
@@ -65,17 +64,17 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Create the query.
-      Dim query As String = "SELECT Id, AdNetworkType1, Impressions FROM " & _
+      Dim query As String = "SELECT Id, AdNetworkType1, Impressions FROM " &
           "CRITERIA_PERFORMANCE_REPORT WHERE Status IN [ENABLED, PAUSED] DURING LAST_7_DAYS"
 
-      Dim reportUtilities As New ReportUtilities(user, "v201708", query, _
-                                     DownloadFormat.GZIPPED_XML.ToString())
+      Dim reportUtilities As New ReportUtilities(user, "v201708", query,
+          DownloadFormat.GZIPPED_XML.ToString())
 
       Dim impressionsByAdNetworkType1 As New Dictionary(Of String, Long)
 
       Try
         Using response As ReportResponse = reportUtilities.GetResponse
-          Using gzipStream As GZipStream = New GZipStream(response.Stream, _
+          Using gzipStream As GZipStream = New GZipStream(response.Stream,
               CompressionMode.Decompress)
             Using reader As XmlTextReader = New XmlTextReader(gzipStream)
               While reader.Read
@@ -105,7 +104,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="impressionsByAdNetworkType1">The map that keeps track of
     ''' the impressions grouped by by ad network type1.</param>
     ''' <param name="reader">The XML reader that parses the report.</param>
-    Private Sub ParseRow(ByVal impressionsByAdNetworkType1 As Dictionary(Of String, Long), _
+    Private Sub ParseRow(ByVal impressionsByAdNetworkType1 As Dictionary(Of String, Long),
         ByVal reader As XmlTextReader)
       Dim network As String = Nothing
       Dim impressions As Long = 0
@@ -127,5 +126,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
         impressionsByAdNetworkType1(network) += impressions
       End If
     End Sub
+
   End Class
+
 End Namespace

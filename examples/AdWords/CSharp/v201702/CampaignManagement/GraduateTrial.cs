@@ -16,14 +16,12 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
-using System.Collections.Generic;
-using System.Threading;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
 
   /// <summary>
   /// This code example illustrates how to graduate a trial. See the Campaign
-  /// Drafts and Experiments guide for more information: 
+  /// Drafts and Experiments guide for more information:
   /// https://developers.google.com/adwords/api/docs/guides/campaign-drafts-experiments
   /// </summary>
   public class GraduateTrial : ExampleBase {
@@ -61,17 +59,49 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="trialId">Id of the trial to be graduated.</param>
     public void Run(AdWordsUser user, long trialId) {
-      // Get the TrialService and BudgetService.
-      TrialService trialService = (TrialService) user.GetService(
-          AdWordsService.v201702.TrialService);
-      BudgetService budgetService = (BudgetService) user.GetService(
-          AdWordsService.v201702.BudgetService);
-
-      try {
+      using (TrialService trialService = (TrialService) user.GetService(
+          AdWordsService.v201702.TrialService)) {
         // To graduate a trial, you must specify a different budget from the
         // base campaign. The base campaign (in order to have had a trial based
         // on it) must have a non-shared budget, so it cannot be shared with
         // the new independent campaign created by graduation.
+        Budget budget = CreateBudget(user);
+
+        Trial trial = new Trial() {
+          id = trialId,
+          budgetId = budget.budgetId,
+          status = TrialStatus.GRADUATED
+        };
+
+        TrialOperation trialOperation = new TrialOperation() {
+          @operator = Operator.SET,
+          operand = trial
+        };
+        try {
+          // Update the trial.
+          trial = trialService.mutate(new TrialOperation[] { trialOperation }).value[0];
+
+          // Graduation is a synchronous operation, so the campaign is already
+          // ready. If you promote instead, make sure to see the polling scheme
+          // demonstrated in AddTrial.cs to wait for the asynchronous operation
+          // to finish.
+          Console.WriteLine("Trial ID {0} graduated. Campaign ID {1} was given a new budget " +
+              "ID {2} and is no longer dependent on this trial.", trial.id, trial.trialCampaignId,
+              budget.budgetId);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to graduate trial.", e);
+        }
+      }
+    }
+
+    /// <summary>
+    /// Creates the budget.
+    /// </summary>
+    /// <param name="user">The user.</param>
+    /// <returns>The new budget.</returns>
+    public Budget CreateBudget(AdWordsUser user) {
+      using (BudgetService budgetService = (BudgetService) user.GetService(
+          AdWordsService.v201702.BudgetService)) {
         Budget budget = new Budget() {
           name = "Budget #" + ExampleUtilities.GetRandomString(),
           amount = new Money() {
@@ -85,33 +115,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
           operand = budget
         };
 
-        // Add budget.
-        long budgetId = budgetService.mutate(
-            new BudgetOperation[] {budgetOperation}).value[0].budgetId;
-
-        Trial trial = new Trial() {
-          id = trialId,
-          budgetId = budgetId,
-          status = TrialStatus.GRADUATED
-        };
-
-        TrialOperation trialOperation = new TrialOperation() {
-          @operator = Operator.SET,
-          operand = trial
-        };
-
-        // Update the trial.
-        trial = trialService.mutate(new TrialOperation[] {trialOperation}).value[0];
-
-        // Graduation is a synchronous operation, so the campaign is already
-        // ready. If you promote instead, make sure to see the polling scheme
-        // demonstrated in AddTrial.cs to wait for the asynchronous operation
-        // to finish.
-        Console.WriteLine("Trial ID {0} graduated. Campaign ID {1} was given a new budget " +
-            "ID {2} and is no longer dependent on this trial.", trial.id, trial.trialCampaignId,
-            budgetId);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to graduate trial.", e);
+        return budgetService.mutate(new BudgetOperation[] { budgetOperation }).value[0];
       }
     }
   }

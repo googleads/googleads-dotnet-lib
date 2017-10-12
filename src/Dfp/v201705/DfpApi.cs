@@ -14,6 +14,7 @@
 
 #pragma warning disable 1591
 namespace Google.Api.Ads.Dfp.v201705 {
+  using System;
   using System.ComponentModel;
   using Google.Api.Ads.Dfp.Lib;
   using Google.Api.Ads.Dfp.Headers;
@@ -2386,10 +2387,9 @@ namespace Google.Api.Ads.Dfp.v201705 {
 
   /// <summary>Provides methods for creating, updating and retrieving <a
   /// href='ActivityGroup'>ActivityGroup</a> objects. <p>An activity group contains <a
-  /// href='Activity'>Activity</a> objects. Activities have a one-to-one relationship
-  /// with activity groups. Each activity can belong to only one activity group.
-  /// Activity groups, however, have a one-to-many relationship with activities,
-  /// meaning each activity group can have multiple activities. A activity group can
+  /// href='Activity'>Activity</a> objects. Activities have a many-to-one relationship
+  /// with activity groups, meaning each activity can belong to only one activity
+  /// group, but activity groups can have multiple activities. An activity group can
   /// be used to manage the activities it contains.</p>
   /// </summary>
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -28973,10 +28973,9 @@ namespace Google.Api.Ads.Dfp.v201705 {
 
   /// <summary>Provides methods for creating, updating and retrieving <a
   /// href='Activity'>Activity</a> objects. <p>An activity group contains <a
-  /// href='Activity'>Activity</a> objects. Activities have a one-to-one relationship
-  /// with activity groups. Each activity can belong to only one activity group.
-  /// Activity groups, however, have a one-to-many relationship with activities,
-  /// meaning each activity group can have multiple activities. A activity group can
+  /// href='Activity'>Activity</a> objects. Activities have a many-to-one relationship
+  /// with activity groups, meaning each activity can belong to only one activity
+  /// group, but activity groups can have multiple activities. An activity group can
   /// be used to manage the activities it contains.</p>
   /// </summary>
   [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -31854,7 +31853,12 @@ namespace Google.Api.Ads.Dfp.v201705 {
     }
 
     /// <summary>The start date and time of this <code>LiveStreamEvent</code>. This attribute is
-    /// required.
+    /// required if the <a
+    /// href='LiveStreamEvent#startDateTimeType'>LiveStreamEvent#startDateTimeType</a>
+    /// is <a
+    /// href='StartDateTimeType#USE_START_DATE_TIME'>StartDateTimeType#USE_START_DATE_TIME</a>
+    /// and is ignored for all other values of <a
+    /// href='StartDateTimeType'>StartDateTimeType</a>.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
     public DateTime startDateTime {
@@ -31946,9 +31950,14 @@ namespace Google.Api.Ads.Dfp.v201705 {
       }
     }
 
-    /// <summary>The authentication service used to validate credientials and create a tokenized
-    /// version of the content URL. This value is optional and defaults to <a
-    /// href='AuthenticationService#NONE'>AuthenticationService#NONE</a>.
+    /// <summary>This field is deprecated and should not be set or read. Please update the API
+    /// version to v201711 or later and use the <a
+    /// href='LiveStreamEvent#sourceContentConfigurations'>LiveStreamEvent#sourceContentConfigurations</a>
+    /// field to specify security policies for <a
+    /// href='LiveStreamEvent#contentUrls'>LiveStreamEvent#contentUrls</a>. The value
+    /// for this field will be out-of-date once <a
+    /// href='LiveStreamEvent#sourceContentConfigurations'>LiveStreamEvent#sourceContentConfigurations</a>
+    /// is used.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 12)]
     public AuthenticationService authenticationService {
@@ -31974,11 +31983,14 @@ namespace Google.Api.Ads.Dfp.v201705 {
       }
     }
 
-    /// <summary>The secure key used to generate a tokenized URL for authentication. This value
-    /// is required if <a
-    /// href='LiveStreamEvent#authenticationService'>LiveStreamEvent#authenticationService</a>
-    /// is not equal to <a
-    /// href='AuthenticationService#NONE'>AuthenticationService#NONE</a>.
+    /// <summary>This field is deprecated and should not be set or read. Please update the API
+    /// version to v201711 or later and use the <a
+    /// href='LiveStreamEvent#sourceContentConfigurations'>LiveStreamEvent#sourceContentConfigurations</a>
+    /// field to specify security policies for <a
+    /// href='LiveStreamEvent#contentUrls'>LiveStreamEvent#contentUrls</a>. The value
+    /// for this field will be out-of-date once <a
+    /// href='LiveStreamEvent#sourceContentConfigurations'>LiveStreamEvent#sourceContentConfigurations</a>
+    /// is used.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 13)]
     public string authenticationKey {
@@ -31990,12 +32002,14 @@ namespace Google.Api.Ads.Dfp.v201705 {
       }
     }
 
-    /// <summary>Whether the segment URLs should be signed using the <a
-    /// href='#authenticationKey'>#authenticationKey</a> on the server-side. This field
-    /// is only applicable when the value of <a
-    /// href='#authenticationService'>#authenticationService</a> is equal to <a
-    /// href='AuthenticationService#AKAMAI'>AuthenticationService#AKAMAI</a>, and will
-    /// be set to false otherwise. This field is optional and defaults to false.
+    /// <summary>This field is deprecated and should not be set or read. Please update the API
+    /// version to v201711 or later and use the <a
+    /// href='LiveStreamEvent#sourceContentConfigurations'>LiveStreamEvent#sourceContentConfigurations</a>
+    /// field to specify security policies for <a
+    /// href='LiveStreamEvent#contentUrls'>LiveStreamEvent#contentUrls</a>. The value
+    /// for this field will be out-of-date once <a
+    /// href='LiveStreamEvent#sourceContentConfigurations'>LiveStreamEvent#sourceContentConfigurations</a>
+    /// is used.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 14)]
     public bool tokenAuthenticationUnsigned {
@@ -32021,11 +32035,14 @@ namespace Google.Api.Ads.Dfp.v201705 {
       }
     }
 
-    /// <summary>The type of origin forwarding used to support Akamai authentication policies.
-    /// This field is only applicable when the value of <a
-    /// href='#authenticationService'>#authenticationService</a> is equal to <a
-    /// href='AuthenticationService#AKAMAI'>AuthenticationService#AKAMAI</a> and will be
-    /// set to null otherwise.
+    /// <summary>This field is deprecated and should not be set or read. Please update the API
+    /// version to v201711 or later and use the <a
+    /// href='LiveStreamEvent#sourceContentConfigurations'>LiveStreamEvent#sourceContentConfigurations</a>
+    /// field to specify security policies for <a
+    /// href='LiveStreamEvent#contentUrls'>LiveStreamEvent#contentUrls</a>. The value
+    /// for this field will be out-of-date once <a
+    /// href='LiveStreamEvent#sourceContentConfigurations'>LiveStreamEvent#sourceContentConfigurations</a>
+    /// is used.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 15)]
     public OriginForwardingType originForwardingType {
@@ -32051,11 +32068,14 @@ namespace Google.Api.Ads.Dfp.v201705 {
       }
     }
 
-    /// <summary>The origin path prefix provided by the publisher. This field is only applicable
-    /// when the value of <a href='#originForwardingType'>#originForwardingType</a> is
-    /// equal to <a
-    /// href='OriginForwardingType#CONVENTIONAL'>OriginForwardingType#CONVENTIONAL</a>,
-    /// and will be set to null otherwise.
+    /// <summary>This field is deprecated and should not be set or read. Please update the API
+    /// version to v201711 or later and use the <a
+    /// href='LiveStreamEvent#sourceContentConfigurations'>LiveStreamEvent#sourceContentConfigurations</a>
+    /// field to specify security policies for <a
+    /// href='LiveStreamEvent#contentUrls'>LiveStreamEvent#contentUrls</a>. The value
+    /// for this field will be out-of-date once <a
+    /// href='LiveStreamEvent#sourceContentConfigurations'>LiveStreamEvent#sourceContentConfigurations</a>
+    /// is used.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 16)]
     public string originPathPrefix {
@@ -69725,13 +69745,12 @@ namespace Google.Api.Ads.Dfp.v201705 {
 
   /// <summary>Provides methods for creating, updating and retrieving <a
   /// href='ActivityGroup'>ActivityGroup</a> objects. <p>An activity group contains <a
-  /// href='Activity'>Activity</a> objects. Activities have a one-to-one relationship
-  /// with activity groups. Each activity can belong to only one activity group.
-  /// Activity groups, however, have a one-to-many relationship with activities,
-  /// meaning each activity group can have multiple activities. A activity group can
+  /// href='Activity'>Activity</a> objects. Activities have a many-to-one relationship
+  /// with activity groups, meaning each activity can belong to only one activity
+  /// group, but activity groups can have multiple activities. An activity group can
   /// be used to manage the activities it contains.</p>
   /// </summary>
-  public interface IActivityGroupService : ActivityGroupServiceInterface {
+  public interface IActivityGroupService : ActivityGroupServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.ActivityGroup[] createActivityGroups(Google.Api.Ads.Dfp.v201705.ActivityGroup[] activityGroups);
 
     Google.Api.Ads.Dfp.v201705.ActivityGroup[] updateActivityGroups(Google.Api.Ads.Dfp.v201705.ActivityGroup[] activityGroups);
@@ -69755,7 +69774,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// with a filter like "WHERE status = 'ACTIVE'" and the ID of the custom targeting
   /// value from step 2.</li> </ul>
   /// </summary>
-  public interface IContentService : ContentServiceInterface {
+  public interface IContentService : ContentServiceInterface, IDisposable {
   }
 
 
@@ -69764,7 +69783,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// associated with a <a href='LineItem'>LineItem</a> managed by the <a
   /// href='LineItemCreativeAssociationService'>LineItemCreativeAssociationService</a>.</p>
   /// </summary>
-  public interface ICreativeService : CreativeServiceInterface {
+  public interface ICreativeService : CreativeServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.Creative[] createCreatives(Google.Api.Ads.Dfp.v201705.Creative[] creatives);
 
     Google.Api.Ads.Dfp.v201705.Creative[] updateCreatives(Google.Api.Ads.Dfp.v201705.Creative[] creatives);
@@ -69774,14 +69793,14 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// <summary>Provides methods for adding, updating and retrieving <a
   /// href='CreativeSet'>CreativeSet</a> objects.
   /// </summary>
-  public interface ICreativeSetService : CreativeSetServiceInterface {
+  public interface ICreativeSetService : CreativeSetServiceInterface, IDisposable {
   }
 
 
   /// <summary>Provides methods for retrieving <a href='CreativeTemplate'>CreativeTemplate</a>
   /// objects.
   /// </summary>
-  public interface ICreativeTemplateService : CreativeTemplateServiceInterface {
+  public interface ICreativeTemplateService : CreativeTemplateServiceInterface, IDisposable {
   }
 
 
@@ -69792,7 +69811,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// applied to ad units by <a
   /// href='AdUnit#appliedLabels'>AdUnit#appliedLabels</a>.</p>
   /// </summary>
-  public interface ICreativeWrapperService : CreativeWrapperServiceInterface {
+  public interface ICreativeWrapperService : CreativeWrapperServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.CreativeWrapper[] createCreativeWrappers(Google.Api.Ads.Dfp.v201705.CreativeWrapper[] creativeWrappers);
 
     Google.Api.Ads.Dfp.v201705.CreativeWrapper[] updateCreativeWrappers(Google.Api.Ads.Dfp.v201705.CreativeWrapper[] creativeWrappers);
@@ -69803,7 +69822,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// href='CustomTargetingKey'>CustomTargetingKey</a> and <a
   /// href='CustomTargetingValue'>CustomTargetingValue</a> objects.
   /// </summary>
-  public interface ICustomTargetingService : CustomTargetingServiceInterface {
+  public interface ICustomTargetingService : CustomTargetingServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.CustomTargetingKey[] createCustomTargetingKeys(Google.Api.Ads.Dfp.v201705.CustomTargetingKey[] keys);
 
     Google.Api.Ads.Dfp.v201705.CustomTargetingValue[] createCustomTargetingValues(Google.Api.Ads.Dfp.v201705.CustomTargetingValue[] values);
@@ -69817,7 +69836,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// <summary>Provides methods for the creation and management of <a
   /// href='CustomField'>CustomField</a> objects.
   /// </summary>
-  public interface ICustomFieldService : CustomFieldServiceInterface {
+  public interface ICustomFieldService : CustomFieldServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.CustomFieldOption[] createCustomFieldOptions(Google.Api.Ads.Dfp.v201705.CustomFieldOption[] customFieldOptions);
 
     Google.Api.Ads.Dfp.v201705.CustomField[] createCustomFields(Google.Api.Ads.Dfp.v201705.CustomField[] customFields);
@@ -69831,7 +69850,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// <summary>Provides methods for adding, updating and retrieving <a
   /// href='ExchangeRate'>ExchangeRate</a> objects.
   /// </summary>
-  public interface IExchangeRateService : ExchangeRateServiceInterface {
+  public interface IExchangeRateService : ExchangeRateServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.ExchangeRate[] createExchangeRates(Google.Api.Ads.Dfp.v201705.ExchangeRate[] exchangeRates);
 
     Google.Api.Ads.Dfp.v201705.ExchangeRate[] updateExchangeRates(Google.Api.Ads.Dfp.v201705.ExchangeRate[] exchangeRates);
@@ -69874,14 +69893,14 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// 1,500,000</td> <td>unitsBought / 4</td> <td>3 * unitsBought / 2</td>
   /// <td>600,000<br /> For prospective: 0</td> <td>#x2013;#x2013;</td> </tr> </table>
   /// </summary>
-  public interface IForecastService : ForecastServiceInterface {
+  public interface IForecastService : ForecastServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.DeliveryForecast getDeliveryForecast(Google.Api.Ads.Dfp.v201705.ProspectiveLineItem[] lineItems, Google.Api.Ads.Dfp.v201705.DeliveryForecastOptions forecastOptions);
 
     Google.Api.Ads.Dfp.v201705.DeliveryForecast getDeliveryForecastByIds(long[] lineItemIds, Google.Api.Ads.Dfp.v201705.DeliveryForecastOptions forecastOptions);
   }
 
 
-  public interface IInventoryService : InventoryServiceInterface {
+  public interface IInventoryService : InventoryServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.AdUnit[] createAdUnits(Google.Api.Ads.Dfp.v201705.AdUnit[] adUnits);
 
     Google.Api.Ads.Dfp.v201705.AdUnitSize[] getAdUnitSizesByStatement(Google.Api.Ads.Dfp.v201705.Statement filterStatement);
@@ -69892,13 +69911,12 @@ namespace Google.Api.Ads.Dfp.v201705 {
 
   /// <summary>Provides methods for creating, updating and retrieving <a
   /// href='Activity'>Activity</a> objects. <p>An activity group contains <a
-  /// href='Activity'>Activity</a> objects. Activities have a one-to-one relationship
-  /// with activity groups. Each activity can belong to only one activity group.
-  /// Activity groups, however, have a one-to-many relationship with activities,
-  /// meaning each activity group can have multiple activities. A activity group can
+  /// href='Activity'>Activity</a> objects. Activities have a many-to-one relationship
+  /// with activity groups, meaning each activity can belong to only one activity
+  /// group, but activity groups can have multiple activities. An activity group can
   /// be used to manage the activities it contains.</p>
   /// </summary>
-  public interface IActivityService : ActivityServiceInterface {
+  public interface IActivityService : ActivityServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.Activity[] createActivities(Google.Api.Ads.Dfp.v201705.Activity[] activities);
 
     Google.Api.Ads.Dfp.v201705.Activity[] updateActivities(Google.Api.Ads.Dfp.v201705.Activity[] activities);
@@ -69907,7 +69925,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
 
   /// <summary>Provides methods for the creation and management of Labels.
   /// </summary>
-  public interface ILabelService : LabelServiceInterface {
+  public interface ILabelService : LabelServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.Label[] createLabels(Google.Api.Ads.Dfp.v201705.Label[] labels);
 
     Google.Api.Ads.Dfp.v201705.Label[] updateLabels(Google.Api.Ads.Dfp.v201705.Label[] labels);
@@ -69925,7 +69943,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// start and end date and time that defines when the creative should be
   /// displayed.</p>
   /// </summary>
-  public interface ILineItemCreativeAssociationService : LineItemCreativeAssociationServiceInterface {
+  public interface ILineItemCreativeAssociationService : LineItemCreativeAssociationServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.LineItemCreativeAssociation[] createLineItemCreativeAssociations(Google.Api.Ads.Dfp.v201705.LineItemCreativeAssociation[] lineItemCreativeAssociations);
 
     Google.Api.Ads.Dfp.v201705.LineItemCreativeAssociation[] updateLineItemCreativeAssociations(Google.Api.Ads.Dfp.v201705.LineItemCreativeAssociation[] lineItemCreativeAssociations);
@@ -69941,7 +69959,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// objects. An ad unit will host a creative through both this association and the
   /// <a href='LineItem#targeting'>LineItem#targeting</a> to it.</p>
   /// </summary>
-  public interface ILineItemService : LineItemServiceInterface {
+  public interface ILineItemService : LineItemServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.LineItem[] createLineItems(Google.Api.Ads.Dfp.v201705.LineItem[] lineItems);
 
     Google.Api.Ads.Dfp.v201705.LineItem[] updateLineItems(Google.Api.Ads.Dfp.v201705.LineItem[] lineItems);
@@ -69951,7 +69969,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// <summary>Provides methods for creating, updating and retrieving <a
   /// href='LineItemTemplate'>LineItemTemplate</a> objects.
   /// </summary>
-  public interface ILineItemTemplateService : LineItemTemplateServiceInterface {
+  public interface ILineItemTemplateService : LineItemTemplateServiceInterface, IDisposable {
   }
 
 
@@ -69960,7 +69978,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// openly available for DFP Video publishers. Publishers will need to apply for
   /// access for this feature through their account managers.</p>
   /// </summary>
-  public interface ILiveStreamEventService : LiveStreamEventServiceInterface {
+  public interface ILiveStreamEventService : LiveStreamEventServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.LiveStreamEvent[] createLiveStreamEvents(Google.Api.Ads.Dfp.v201705.LiveStreamEvent[] liveStreamEvents);
 
     string[] registerSessionsForMonitoring(string[] sessionIds);
@@ -69972,7 +69990,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// <summary>Provides methods for retrieving <a
   /// href='MobileApplication'>MobileApplication</a> objects.
   /// </summary>
-  public interface IMobileApplicationService : MobileApplicationServiceInterface {
+  public interface IMobileApplicationService : MobileApplicationServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.MobileApplication[] createMobileApplications(Google.Api.Ads.Dfp.v201705.MobileApplication[] mobileApplications);
 
     Google.Api.Ads.Dfp.v201705.MobileApplication[] updateMobileApplications(Google.Api.Ads.Dfp.v201705.MobileApplication[] mobileApplications);
@@ -69983,7 +70001,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// networks. This service can be used to obtain the list of all networks that the
   /// current login has access to, or to obtain information about a specific network.
   /// </summary>
-  public interface INetworkService : NetworkServiceInterface {
+  public interface INetworkService : NetworkServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.Network[] getAllNetworks();
   }
 
@@ -69995,7 +70013,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// items, meaning each order can have multiple line items. An order can be used to
   /// manage the line items it contains.</p>
   /// </summary>
-  public interface IOrderService : OrderServiceInterface {
+  public interface IOrderService : OrderServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.Order[] createOrders(Google.Api.Ads.Dfp.v201705.Order[] orders);
 
     Google.Api.Ads.Dfp.v201705.Order[] updateOrders(Google.Api.Ads.Dfp.v201705.Order[] orders);
@@ -70009,7 +70027,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// have a "fire sale" placement that includes ad units that have not been selling
   /// and are consequently priced very attractively.</p>
   /// </summary>
-  public interface IPlacementService : PlacementServiceInterface {
+  public interface IPlacementService : PlacementServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.Placement[] createPlacements(Google.Api.Ads.Dfp.v201705.Placement[] placements);
 
     Google.Api.Ads.Dfp.v201705.Placement[] updatePlacements(Google.Api.Ads.Dfp.v201705.Placement[] placements);
@@ -70022,7 +70040,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you will
   /// not be able to use this service.</p>
   /// </summary>
-  public interface IPremiumRateService : PremiumRateServiceInterface {
+  public interface IPremiumRateService : PremiumRateServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.PremiumRate[] createPremiumRates(Google.Api.Ads.Dfp.v201705.PremiumRate[] premiumRates);
 
     Google.Api.Ads.Dfp.v201705.PremiumRate[] updatePremiumRates(Google.Api.Ads.Dfp.v201705.PremiumRate[] premiumRates);
@@ -70035,7 +70053,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// from showing on portions of your site. Each rule specifies the inventory on
   /// which the rule is in effect, and the labels to block on that inventory.</p>
   /// </summary>
-  public interface IAdExclusionRuleService : AdExclusionRuleServiceInterface {
+  public interface IAdExclusionRuleService : AdExclusionRuleServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.AdExclusionRule[] createAdExclusionRules(Google.Api.Ads.Dfp.v201705.AdExclusionRule[] adExclusionRules);
 
     Google.Api.Ads.Dfp.v201705.AdExclusionRule[] updateAdExclusionRules(Google.Api.Ads.Dfp.v201705.AdExclusionRule[] adExclusionRules);
@@ -70052,7 +70070,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you will
   /// not be able to use this service.</p>
   /// </summary>
-  public interface IProductService : ProductServiceInterface {
+  public interface IProductService : ProductServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.Product[] createProducts(Google.Api.Ads.Dfp.v201705.Product[] products);
 
     Google.Api.Ads.Dfp.v201705.Product[] updateProducts(Google.Api.Ads.Dfp.v201705.Product[] products);
@@ -70067,7 +70085,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
   /// (DFP)</a>, you will not be able to use this service.</p>
   /// </summary>
-  public interface IProductTemplateService : ProductTemplateServiceInterface {
+  public interface IProductTemplateService : ProductTemplateServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.ProductTemplate[] createProductTemplates(Google.Api.Ads.Dfp.v201705.ProductTemplate[] productTemplates);
 
     Google.Api.Ads.Dfp.v201705.ProductTemplate[] updateProductTemplates(Google.Api.Ads.Dfp.v201705.ProductTemplate[] productTemplates);
@@ -70080,7 +70098,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
   /// (DFP)</a>, you will not be able to use this service.</p>
   /// </summary>
-  public interface IProposalService : ProposalServiceInterface {
+  public interface IProposalService : ProposalServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.Proposal[] createProposals(Google.Api.Ads.Dfp.v201705.Proposal[] proposals);
 
     Google.Api.Ads.Dfp.v201705.Proposal[] updateProposals(Google.Api.Ads.Dfp.v201705.Proposal[] proposals);
@@ -70093,7 +70111,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// you do not see a "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick
   /// for Publishers (DFP)</a>, you will not be able to use this service.</p>
   /// </summary>
-  public interface IProposalLineItemService : ProposalLineItemServiceInterface {
+  public interface IProposalLineItemService : ProposalLineItemServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.ProposalLineItem[] createProposalLineItems(Google.Api.Ads.Dfp.v201705.ProposalLineItem[] proposalLineItems);
 
     Google.Api.Ads.Dfp.v201705.ProposalLineItem[] updateProposalLineItems(Google.Api.Ads.Dfp.v201705.ProposalLineItem[] proposalLineItems);
@@ -70367,7 +70385,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// entity.</td> </tr> <tr> <td>UserId</td> <td><code>Number</code></td> <td>The <a
   /// href='User#id'>ID</a> of the user that made this change.</td> </tr> </table>
   /// </summary>
-  public interface IPublisherQueryLanguageService : PublisherQueryLanguageServiceInterface {
+  public interface IPublisherQueryLanguageService : PublisherQueryLanguageServiceInterface, IDisposable {
   }
 
 
@@ -70377,7 +70395,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you will
   /// not be able to use this service.</p>
   /// </summary>
-  public interface IRateCardService : RateCardServiceInterface {
+  public interface IRateCardService : RateCardServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.RateCard[] createRateCards(Google.Api.Ads.Dfp.v201705.RateCard[] rateCards);
 
     Google.Api.Ads.Dfp.v201705.RateCard[] updateRateCards(Google.Api.Ads.Dfp.v201705.RateCard[] rateCards);
@@ -70387,7 +70405,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// <summary>Provides methods for retrieving, reconciling, and reverting <a
   /// href='ReconciliationOrderReport'>ReconciliationOrderReport</a> objects.
   /// </summary>
-  public interface IReconciliationOrderReportService : ReconciliationOrderReportServiceInterface {
+  public interface IReconciliationOrderReportService : ReconciliationOrderReportServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.ReconciliationOrderReport[] updateReconciliationOrderReports(Google.Api.Ads.Dfp.v201705.ReconciliationOrderReport[] reconciliationOrderReports);
   }
 
@@ -70395,7 +70413,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// <summary>Provides methods for retrieving and updating <a
   /// href='ReconciliationLineItemReport'>ReconciliationLineItemReport</a> objects.
   /// </summary>
-  public interface IReconciliationLineItemReportService : ReconciliationLineItemReportServiceInterface {
+  public interface IReconciliationLineItemReportService : ReconciliationLineItemReportServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.ReconciliationLineItemReport[] updateReconciliationLineItemReports(Google.Api.Ads.Dfp.v201705.ReconciliationLineItemReport[] reconciliationLineItemReports);
   }
 
@@ -70405,7 +70423,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// href='ReconciliationReport'>ReconciliationReport</a> is a group of <a
   /// href='ReconciliationReportRow'>ReconciliationReportRow</a> objects.</p>
   /// </summary>
-  public interface IReconciliationReportService : ReconciliationReportServiceInterface {
+  public interface IReconciliationReportService : ReconciliationReportServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.ReconciliationReport[] updateReconciliationReports(Google.Api.Ads.Dfp.v201705.ReconciliationReport[] reconciliationReports);
   }
 
@@ -70413,7 +70431,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// <summary>Provides methods for retrieving and updating the <a
   /// href='ReconciliationReportRow'>ReconciliationReportRow</a> objects.
   /// </summary>
-  public interface IReconciliationReportRowService : ReconciliationReportRowServiceInterface {
+  public interface IReconciliationReportRowService : ReconciliationReportRowServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.ReconciliationReportRow[] updateReconciliationReportRows(Google.Api.Ads.Dfp.v201705.ReconciliationReportRow[] reconciliationReportRows);
   }
 
@@ -70422,7 +70440,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// href='AdRule'>AdRule</a> objects. <p>Ad rules contain data that the ad server
   /// uses to generate a playlist of video ads.</p>
   /// </summary>
-  public interface IAdRuleService : AdRuleServiceInterface {
+  public interface IAdRuleService : AdRuleServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.AdRule[] createAdRules(Google.Api.Ads.Dfp.v201705.AdRule[] adRules);
 
     Google.Api.Ads.Dfp.v201705.AdRule[] updateAdRules(Google.Api.Ads.Dfp.v201705.AdRule[] adRules);
@@ -70449,7 +70467,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// because reports require traffic history. In the test networks, reports will
   /// consistently return no data for all reports.</p>
   /// </summary>
-  public interface IReportService : ReportServiceInterface {
+  public interface IReportService : ReportServiceInterface, IDisposable {
   }
 
 
@@ -70471,7 +70489,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// href='#getSuggestedAdUnitsByStatement'>#getSuggestedAdUnitsByStatement</a> will
   /// always return an empty page.</p>
   /// </summary>
-  public interface ISuggestedAdUnitService : SuggestedAdUnitServiceInterface {
+  public interface ISuggestedAdUnitService : SuggestedAdUnitServiceInterface, IDisposable {
   }
 
 
@@ -70479,7 +70497,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// objects. <p>Teams are used to group users in order to define access to entities
   /// such as companies, inventory and orders.</p>
   /// </summary>
-  public interface ITeamService : TeamServiceInterface {
+  public interface ITeamService : TeamServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.Team[] createTeams(Google.Api.Ads.Dfp.v201705.Team[] teams);
 
     Google.Api.Ads.Dfp.v201705.Team[] updateTeams(Google.Api.Ads.Dfp.v201705.Team[] teams);
@@ -70492,7 +70510,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// identify that role in an organization. Role types and their IDs can be retrieved
   /// by invoking <a href='#getAllRoles'>#getAllRoles</a>.</p>
   /// </summary>
-  public interface IUserService : UserServiceInterface {
+  public interface IUserService : UserServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.User[] createUsers(Google.Api.Ads.Dfp.v201705.User[] users);
 
     Google.Api.Ads.Dfp.v201705.Role[] getAllRoles();
@@ -70507,7 +70525,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// access to entities such as companies, inventory and orders and to override the
   /// team's access type to orders for a user.</p>
   /// </summary>
-  public interface IUserTeamAssociationService : UserTeamAssociationServiceInterface {
+  public interface IUserTeamAssociationService : UserTeamAssociationServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.UserTeamAssociation[] createUserTeamAssociations(Google.Api.Ads.Dfp.v201705.UserTeamAssociation[] userTeamAssociations);
 
     Google.Api.Ads.Dfp.v201705.UserTeamAssociation[] updateUserTeamAssociations(Google.Api.Ads.Dfp.v201705.UserTeamAssociation[] userTeamAssociations);
@@ -70520,7 +70538,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// do not see a "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick for
   /// Publishers (DFP)</a>, you will not be able to use this service.</p>
   /// </summary>
-  public interface IWorkflowRequestService : WorkflowRequestServiceInterface {
+  public interface IWorkflowRequestService : WorkflowRequestServiceInterface, IDisposable {
   }
 
 
@@ -70530,7 +70548,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
   /// (DFP)</a>, you will not be able to use this service.</p>
   /// </summary>
-  public interface IPackageService : PackageServiceInterface {
+  public interface IPackageService : PackageServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.Package[] createPackages(Google.Api.Ads.Dfp.v201705.Package[] packages);
 
     Google.Api.Ads.Dfp.v201705.Package[] updatePackages(Google.Api.Ads.Dfp.v201705.Package[] packages);
@@ -70545,7 +70563,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
   /// (DFP)</a>, you will not be able to use this service.</p>
   /// </summary>
-  public interface IProductPackageService : ProductPackageServiceInterface {
+  public interface IProductPackageService : ProductPackageServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.ProductPackage[] createProductPackages(Google.Api.Ads.Dfp.v201705.ProductPackage[] productPackages);
 
     Google.Api.Ads.Dfp.v201705.ProductPackage[] updateProductPackages(Google.Api.Ads.Dfp.v201705.ProductPackage[] productPackages);
@@ -70560,7 +70578,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// you do not see a "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick
   /// for Publishers (DFP)</a>, you will not be able to use this service.</p>
   /// </summary>
-  public interface IProductPackageItemService : ProductPackageItemServiceInterface {
+  public interface IProductPackageItemService : ProductPackageItemServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.ProductPackageItem[] createProductPackageItems(Google.Api.Ads.Dfp.v201705.ProductPackageItem[] productPackageItems);
 
     Google.Api.Ads.Dfp.v201705.ProductPackageItem[] updateProductPackageItems(Google.Api.Ads.Dfp.v201705.ProductPackageItem[] productPackageItems);
@@ -70570,7 +70588,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// <summary>Provides methods for creating and retrieving <a
   /// href='NativeStyle'>NativeStyle</a> objects.
   /// </summary>
-  public interface INativeStyleService : NativeStyleServiceInterface {
+  public interface INativeStyleService : NativeStyleServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.NativeStyle[] createNativeStyles(Google.Api.Ads.Dfp.v201705.NativeStyle[] nativeStyles);
 
     Google.Api.Ads.Dfp.v201705.NativeStyle[] updateNativeStyles(Google.Api.Ads.Dfp.v201705.NativeStyle[] nativeStyles);
@@ -70580,7 +70598,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// <summary>Provides methods for creating, updating and retrieving <a
   /// href='Contact'>Contact</a> objects.
   /// </summary>
-  public interface IContactService : ContactServiceInterface {
+  public interface IContactService : ContactServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.Contact[] createContacts(Google.Api.Ads.Dfp.v201705.Contact[] contacts);
 
     Google.Api.Ads.Dfp.v201705.Contact[] updateContacts(Google.Api.Ads.Dfp.v201705.Contact[] contacts);
@@ -70590,7 +70608,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// <summary>Provides operations for creating, updating and retrieving <a
   /// href='AudienceSegment'>AudienceSegment</a> objects.
   /// </summary>
-  public interface IAudienceSegmentService : AudienceSegmentServiceInterface {
+  public interface IAudienceSegmentService : AudienceSegmentServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.FirstPartyAudienceSegment[] createAudienceSegments(Google.Api.Ads.Dfp.v201705.FirstPartyAudienceSegment[] segments);
 
     Google.Api.Ads.Dfp.v201705.FirstPartyAudienceSegment[] updateAudienceSegments(Google.Api.Ads.Dfp.v201705.FirstPartyAudienceSegment[] segments);
@@ -70603,7 +70621,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// href="https://www.google.com/dfp">DoubleClick for Publishers (DFP)</a>, you will
   /// not be able to use this service.</p>
   /// </summary>
-  public interface IBaseRateService : BaseRateServiceInterface {
+  public interface IBaseRateService : BaseRateServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.BaseRate[] createBaseRates(Google.Api.Ads.Dfp.v201705.BaseRate[] baseRates);
 
     Google.Api.Ads.Dfp.v201705.BaseRate[] updateBaseRates(Google.Api.Ads.Dfp.v201705.BaseRate[] baseRates);
@@ -70613,7 +70631,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// <summary>Provides operations for creating, updating and retrieving <a
   /// href='Company'>Company</a> objects.
   /// </summary>
-  public interface ICompanyService : CompanyServiceInterface {
+  public interface ICompanyService : CompanyServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.Company[] createCompanies(Google.Api.Ads.Dfp.v201705.Company[] companies);
 
     Google.Api.Ads.Dfp.v201705.Company[] updateCompanies(Google.Api.Ads.Dfp.v201705.Company[] companies);
@@ -70625,7 +70643,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// is a grouping of <a href='Content'>Content</a> that match filter rules as well
   /// as taking into account explicitly included or excluded <code>Content</code>.</p>
   /// </summary>
-  public interface IContentBundleService : ContentBundleServiceInterface {
+  public interface IContentBundleService : ContentBundleServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.ContentBundle[] createContentBundles(Google.Api.Ads.Dfp.v201705.ContentBundle[] contentBundles);
 
     Google.Api.Ads.Dfp.v201705.ContentBundle[] updateContentBundles(Google.Api.Ads.Dfp.v201705.ContentBundle[] contentBundles);
@@ -70635,7 +70653,7 @@ namespace Google.Api.Ads.Dfp.v201705 {
   /// <summary>Provides methods for creating, updating, and retrieving <a
   /// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects.
   /// </summary>
-  public interface IContentMetadataKeyHierarchyService : ContentMetadataKeyHierarchyServiceInterface {
+  public interface IContentMetadataKeyHierarchyService : ContentMetadataKeyHierarchyServiceInterface, IDisposable {
     Google.Api.Ads.Dfp.v201705.ContentMetadataKeyHierarchy[] createContentMetadataKeyHierarchies(Google.Api.Ads.Dfp.v201705.ContentMetadataKeyHierarchy[] contentMetadataKeyHierarchies);
 
     Google.Api.Ads.Dfp.v201705.ContentMetadataKeyHierarchy[] updateContentMetadataKeyHierarchies(Google.Api.Ads.Dfp.v201705.ContentMetadataKeyHierarchy[] contentMetadataKeyHierarchies);

@@ -15,17 +15,15 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201708
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
+
   ''' <summary>
   ''' This code example gets bid landscapes for an ad group. To get ad groups,
   ''' run GetAdGroups.vb.
   ''' </summary>
   Public Class GetAdGroupBidSimulations
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -37,7 +35,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -47,7 +45,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example gets bid landscapes for an ad group. To get ad groups, run " & _
+        Return "This code example gets bid landscapes for an ad group. To get ad groups, run " &
             "GetAdGroups.vb"
       End Get
     End Property
@@ -59,54 +57,56 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="adGroupId">Id of the ad group for which bid simulations are
     ''' retrieved.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-      ' Get the DataService.
-      Dim dataService As DataService = CType(user.GetService( _
+      Using dataService As DataService = CType(user.GetService(
           AdWordsService.v201708.DataService), DataService)
 
-      ' Create the selector.
-      Dim selector As New Selector
-      selector.fields = New String() {
-        AdGroupBidLandscape.Fields.AdGroupId, AdGroupBidLandscape.Fields.LandscapeType,
-        AdGroupBidLandscape.Fields.LandscapeCurrent, AdGroupBidLandscape.Fields.StartDate,
-        AdGroupBidLandscape.Fields.EndDate, BidLandscapeLandscapePoint.Fields.Bid,
-        BidLandscapeLandscapePoint.Fields.LocalClicks,
-        BidLandscapeLandscapePoint.Fields.LocalCost,
-        BidLandscapeLandscapePoint.Fields.LocalImpressions
-      }
+        ' Create the selector.
+        Dim selector As New Selector
+        selector.fields = New String() {
+          AdGroupBidLandscape.Fields.AdGroupId, AdGroupBidLandscape.Fields.LandscapeType,
+          AdGroupBidLandscape.Fields.LandscapeCurrent, AdGroupBidLandscape.Fields.StartDate,
+          AdGroupBidLandscape.Fields.EndDate, BidLandscapeLandscapePoint.Fields.Bid,
+          BidLandscapeLandscapePoint.Fields.LocalClicks,
+          BidLandscapeLandscapePoint.Fields.LocalCost,
+          BidLandscapeLandscapePoint.Fields.LocalImpressions
+        }
 
-      ' Set the filters.
-      Dim adGroupPredicate As New Predicate
-      adGroupPredicate.field = "AdGroupId"
-      adGroupPredicate.operator = PredicateOperator.IN
-      adGroupPredicate.values = New String() {adGroupId.ToString}
+        ' Set the filters.
+        Dim adGroupPredicate As New Predicate
+        adGroupPredicate.field = "AdGroupId"
+        adGroupPredicate.operator = PredicateOperator.IN
+        adGroupPredicate.values = New String() {adGroupId.ToString}
 
-      selector.predicates = New Predicate() {
-        Predicate.Equals(AdGroupBidLandscape.Fields.AdGroupId, adGroupId)
-      }
+        selector.predicates = New Predicate() {
+          Predicate.Equals(AdGroupBidLandscape.Fields.AdGroupId, adGroupId)
+        }
 
-      Try
-        ' Get bid landscape for ad group.
-        Dim page As AdGroupBidLandscapePage = dataService.getAdGroupBidLandscape(selector)
-        If (((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) AndAlso _
-            (page.entries.Length > 0)) Then
-          For Each bidLandscape As AdGroupBidLandscape In page.entries
-            Console.WriteLine("Found ad group bid landscape with ad group id '{0}', " & _
-                "type '{1}', current: '{2}', start date '{3}', end date '{4}', and " & _
-                "landscape points", bidLandscape.adGroupId, bidLandscape.type, _
-                bidLandscape.landscapeCurrent, bidLandscape.startDate, bidLandscape.endDate)
-            Dim point As BidLandscapeLandscapePoint
-            For Each point In bidLandscape.landscapePoints
-              Console.WriteLine("- bid: {0} => clicks: {1}, cost: {2}, impressions: {3}", _
-                  point.bid.microAmount, point.bid.microAmount, _
-                  point.clicks, point.cost.microAmount, point.impressions)
+        Try
+          ' Get bid landscape for ad group.
+          Dim page As AdGroupBidLandscapePage = dataService.getAdGroupBidLandscape(selector)
+          If (((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) AndAlso
+              (page.entries.Length > 0)) Then
+            For Each bidLandscape As AdGroupBidLandscape In page.entries
+              Console.WriteLine("Found ad group bid landscape with ad group id '{0}', " &
+                  "type '{1}', current: '{2}', start date '{3}', end date '{4}', and " &
+                  "landscape points", bidLandscape.adGroupId, bidLandscape.type,
+                  bidLandscape.landscapeCurrent, bidLandscape.startDate, bidLandscape.endDate)
+              Dim point As BidLandscapeLandscapePoint
+              For Each point In bidLandscape.landscapePoints
+                Console.WriteLine("- bid: {0} => clicks: {1}, cost: {2}, impressions: {3}",
+                    point.bid.microAmount, point.bid.microAmount,
+                    point.clicks, point.cost.microAmount, point.impressions)
+              Next
             Next
-          Next
-        Else
-          Console.WriteLine("No ad group bid landscapes were found.\n")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to get ad group bid landscapes.", e)
-      End Try
+          Else
+            Console.WriteLine("No ad group bid landscapes were found.\n")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to get ad group bid landscapes.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace

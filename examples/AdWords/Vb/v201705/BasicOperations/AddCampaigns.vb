@@ -15,16 +15,14 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201705
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
+
   ''' <summary>
   ''' This code example adds campaigns. To get campaigns, run GetCampaigns.vb.
   ''' </summary>
   Public Class AddCampaigns
     Inherits ExampleBase
+
     ''' <summary>
     ''' Number of items being added / updated in this code example.
     ''' </summary>
@@ -40,7 +38,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
       Try
         codeExample.Run(New AdWordsUser)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -59,107 +57,121 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
-      ' Get the BudgetService.
-      Dim budgetService As BudgetService = CType(user.GetService( _
-          AdWordsService.v201705.BudgetService), BudgetService)
-
-      ' Get the CampaignService.
-      Dim campaignService As CampaignService = CType(user.GetService( _
+      Using campaignService As CampaignService = CType(user.GetService(
           AdWordsService.v201705.CampaignService), CampaignService)
 
-      ' Create the campaign budget.
-      Dim budget As New Budget
-      budget.name = "Interplanetary Cruise Budget #" & ExampleUtilities.GetRandomString
-      budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD
-      budget.amount = New Money
-      budget.amount.microAmount = 50000000
+        Dim budget As Budget = CreateBudget(user)
 
-      Dim budgetOperation As New BudgetOperation
-      budgetOperation.operator = [Operator].ADD
-      budgetOperation.operand = budget
+        ' [START create_campaigns] MOE:strip_line
+        Dim operations As New List(Of CampaignOperation)
 
-      Try
-        Dim budgetRetval As BudgetReturnValue = budgetService.mutate(New BudgetOperation() {budgetOperation})
-        budget = budgetRetval.value(0)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to add shared budget.", e)
-      End Try
+        For i As Integer = 1 To NUM_ITEMS
+          ' Create the campaign.
+          Dim campaign As New Campaign
+          campaign.name = "Interplanetary Cruise #" & ExampleUtilities.GetRandomString
+          campaign.advertisingChannelType = AdvertisingChannelType.SEARCH
 
-      Dim operations As New List(Of CampaignOperation)
+          ' Recommendation: Set the campaign to PAUSED when creating it to prevent
+          ' the ads from immediately serving. Set to ENABLED once you've added
+          ' targeting and the ads are ready to serve.
+          campaign.status = CampaignStatus.PAUSED
 
-      For i As Integer = 1 To NUM_ITEMS
-        ' Create the campaign.
-        Dim campaign As New Campaign
-        campaign.name = "Interplanetary Cruise #" & ExampleUtilities.GetRandomString
-        campaign.advertisingChannelType = AdvertisingChannelType.SEARCH
+          Dim biddingConfig As New BiddingStrategyConfiguration()
+          biddingConfig.biddingStrategyType = BiddingStrategyType.MANUAL_CPC
+          campaign.biddingStrategyConfiguration = biddingConfig
 
-        ' Recommendation: Set the campaign to PAUSED when creating it to prevent
-        ' the ads from immediately serving. Set to ENABLED once you've added
-        ' targeting and the ads are ready to serve.
-        campaign.status = CampaignStatus.PAUSED
+          ' Set the campaign budget.
+          campaign.budget = New Budget
+          campaign.budget.budgetId = budget.budgetId
 
-        Dim biddingConfig As New BiddingStrategyConfiguration()
-        biddingConfig.biddingStrategyType = BiddingStrategyType.MANUAL_CPC
-        campaign.biddingStrategyConfiguration = biddingConfig
+          ' Set the campaign network options.
+          campaign.networkSetting = New NetworkSetting
+          campaign.networkSetting.targetGoogleSearch = True
+          campaign.networkSetting.targetSearchNetwork = True
+          campaign.networkSetting.targetContentNetwork = False
+          campaign.networkSetting.targetPartnerSearchNetwork = False
 
-        ' Set the campaign budget.
-        campaign.budget = New Budget
-        campaign.budget.budgetId = budget.budgetId
+          ' Set the campaign geo target and keyword match settings.
+          Dim geoSetting As New GeoTargetTypeSetting
+          geoSetting.positiveGeoTargetType = GeoTargetTypeSettingPositiveGeoTargetType.DONT_CARE
+          geoSetting.negativeGeoTargetType = GeoTargetTypeSettingNegativeGeoTargetType.DONT_CARE
 
-        ' Set the campaign network options.
-        campaign.networkSetting = New NetworkSetting
-        campaign.networkSetting.targetGoogleSearch = True
-        campaign.networkSetting.targetSearchNetwork = True
-        campaign.networkSetting.targetContentNetwork = False
-        campaign.networkSetting.targetPartnerSearchNetwork = False
+          campaign.settings = New Setting() {geoSetting}
 
-        ' Set the campaign geo target and keyword match settings.
-        Dim geoSetting As New GeoTargetTypeSetting
-        geoSetting.positiveGeoTargetType = GeoTargetTypeSettingPositiveGeoTargetType.DONT_CARE
-        geoSetting.negativeGeoTargetType = GeoTargetTypeSettingNegativeGeoTargetType.DONT_CARE
+          ' Optional: Set the start date.
+          campaign.startDate = DateTime.Now.AddDays(1).ToString("yyyyMMdd")
 
-        campaign.settings = New Setting() {geoSetting}
+          ' Optional: Set the end date.
+          campaign.endDate = DateTime.Now.AddYears(1).ToString("yyyyMMdd")
 
-        ' Optional: Set the start date.
-        campaign.startDate = DateTime.Now.AddDays(1).ToString("yyyyMMdd")
+          ' Optional: Set the campaign ad serving optimization status.
+          campaign.adServingOptimizationStatus = AdServingOptimizationStatus.ROTATE
 
-        ' Optional: Set the end date.
-        campaign.endDate = DateTime.Now.AddYears(1).ToString("yyyyMMdd")
+          ' Optional: Set the frequency cap.
+          Dim frequencyCap As New FrequencyCap
+          frequencyCap.impressions = 5
+          frequencyCap.level = Level.ADGROUP
+          frequencyCap.timeUnit = TimeUnit.DAY
+          campaign.frequencyCap = frequencyCap
 
-        ' Optional: Set the campaign ad serving optimization status.
-        campaign.adServingOptimizationStatus = AdServingOptimizationStatus.ROTATE
+          ' Create the operation.
+          Dim operation As New CampaignOperation
+          operation.operator = [Operator].ADD
+          operation.operand = campaign
+          operations.Add(operation)
+        Next
 
-        ' Optional: Set the frequency cap.
-        Dim frequencyCap As New FrequencyCap
-        frequencyCap.impressions = 5
-        frequencyCap.level = Level.ADGROUP
-        frequencyCap.timeUnit = TimeUnit.DAY
-        campaign.frequencyCap = frequencyCap
+        Try
+          ' Add the campaign.
+          Dim retVal As CampaignReturnValue = campaignService.mutate(operations.ToArray())
 
-        ' Create the operation.
-        Dim operation As New CampaignOperation
-        operation.operator = [Operator].ADD
-        operation.operand = campaign
-        operations.Add(operation)
-      Next
-
-      Try
-        ' Add the campaign.
-        Dim retVal As CampaignReturnValue = campaignService.mutate(operations.ToArray())
-
-        ' Display the results.
-        If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
+          ' Display the results.
+          If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso
             (retVal.value.Length > 0)) Then
-          For Each newCampaign As Campaign In retVal.value
-            Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was added.", _
+            For Each newCampaign As Campaign In retVal.value
+              Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was added.",
                   newCampaign.name, newCampaign.id)
-          Next
-        Else
-          Console.WriteLine("No campaigns were added.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to add campaigns.", e)
-      End Try
+            Next
+          Else
+            Console.WriteLine("No campaigns were added.")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to add campaigns.", e)
+        End Try
+      End Using
+      ' [END create_campaigns] MOE:strip_line
     End Sub
+
+    ''' <summary>
+    ''' Creates the budget.
+    ''' </summary>
+    ''' <param name="user">The AdWords user.</param>
+    ''' <returns>The budget instance.</returns>
+    Private Shared Function CreateBudget(user As AdWordsUser) As Budget
+      Using budgetService As BudgetService = CType(user.GetService(
+          AdWordsService.v201705.BudgetService), BudgetService)
+
+        ' Create the campaign budget.
+        Dim budget As New Budget
+        budget.name = "Interplanetary Cruise Budget #" & ExampleUtilities.GetRandomString
+        budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD
+        budget.amount = New Money
+        budget.amount.microAmount = 50000000
+
+        Dim budgetOperation As New BudgetOperation
+        budgetOperation.operator = [Operator].ADD
+        budgetOperation.operand = budget
+
+        Try
+          Dim budgetRetval As BudgetReturnValue = budgetService.mutate(
+              New BudgetOperation() {budgetOperation})
+          Return budgetRetval.value(0)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to add shared budget.", e)
+        End Try
+      End Using
+    End Function
+
   End Class
+
 End Namespace

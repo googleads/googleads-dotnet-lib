@@ -13,19 +13,19 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.Util;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example adds a text ad, and shows how to handle a policy
   /// violation.
   /// </summary>
   public class HandlePolicyViolationError : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -58,111 +58,111 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="adGroupId">Id of the ad group to which ads are added.
     /// </param>
     public void Run(AdWordsUser user, long adGroupId) {
-      // Get the AdGroupAdService.
-      AdGroupAdService service =
-          (AdGroupAdService) user.GetService(AdWordsService.v201702.AdGroupAdService);
+      using (AdGroupAdService adGroupAdService =
+          (AdGroupAdService) user.GetService(AdWordsService.v201702.AdGroupAdService)) {
 
-      // Create the text ad.
-      TextAd textAd = new TextAd();
-      textAd.headline = "Luxury Cruise to Mars";
-      textAd.description1 = "Visit the Red Planet in style.";
-      textAd.description2 = "Low-gravity fun for everyone!!";
-      textAd.displayUrl = "www.example.com";
-      textAd.finalUrls = new string[] { "http://www.example.com" };
+        // Create the text ad.
+        TextAd textAd = new TextAd();
+        textAd.headline = "Luxury Cruise to Mars";
+        textAd.description1 = "Visit the Red Planet in style.";
+        textAd.description2 = "Low-gravity fun for everyone!!";
+        textAd.displayUrl = "www.example.com";
+        textAd.finalUrls = new string[] { "http://www.example.com" };
 
-      AdGroupAd textadGroupAd = new AdGroupAd();
-      textadGroupAd.adGroupId = adGroupId;
-      textadGroupAd.ad = textAd;
+        AdGroupAd textadGroupAd = new AdGroupAd();
+        textadGroupAd.adGroupId = adGroupId;
+        textadGroupAd.ad = textAd;
 
-      // Create the operations.
-      AdGroupAdOperation textAdOperation = new AdGroupAdOperation();
-      textAdOperation.@operator = Operator.ADD;
-      textAdOperation.operand = textadGroupAd;
-
-      try {
-        AdGroupAdReturnValue retVal = null;
-
-        // Setup two arrays, one to hold the list of all operations to be
-        // validated, and another to hold the list of operations that cannot be
-        // fixed after validation.
-        List<AdGroupAdOperation> allOperations = new List<AdGroupAdOperation>();
-        List<AdGroupAdOperation> operationsToBeRemoved = new List<AdGroupAdOperation>();
-
-        allOperations.Add(textAdOperation);
+        // Create the operations.
+        AdGroupAdOperation textAdOperation = new AdGroupAdOperation();
+        textAdOperation.@operator = Operator.ADD;
+        textAdOperation.operand = textadGroupAd;
 
         try {
-          // Validate the operations.
-          service.RequestHeader.validateOnly = true;
-          retVal = service.mutate(allOperations.ToArray());
-        } catch (AdWordsApiException e) {
-          ApiException innerException = e.ApiException as ApiException;
-          if (innerException == null) {
-            throw new Exception("Failed to retrieve ApiError. See inner exception for more " +
-                "details.", e);
-          }
+          AdGroupAdReturnValue retVal = null;
 
-          // Examine each ApiError received from the server.
-          foreach (ApiError apiError in innerException.errors) {
-           int index = apiError.GetOperationIndex();
-            if (index == -1) {
-              // This API error is not associated with an operand, so we cannot
-              // recover from this error by removing one or more operations.
-              // Rethrow the exception for manual inspection.
-              throw;
+          // Setup two arrays, one to hold the list of all operations to be
+          // validated, and another to hold the list of operations that cannot be
+          // fixed after validation.
+          List<AdGroupAdOperation> allOperations = new List<AdGroupAdOperation>();
+          List<AdGroupAdOperation> operationsToBeRemoved = new List<AdGroupAdOperation>();
+
+          allOperations.Add(textAdOperation);
+
+          try {
+            // Validate the operations.
+            adGroupAdService.RequestHeader.validateOnly = true;
+            retVal = adGroupAdService.mutate(allOperations.ToArray());
+          } catch (AdWordsApiException e) {
+            ApiException innerException = e.ApiException as ApiException;
+            if (innerException == null) {
+              throw new Exception("Failed to retrieve ApiError. See inner exception for more " +
+                  "details.", e);
             }
 
-            // Handle policy violation errors.
-            if (apiError is PolicyViolationError) {
-              PolicyViolationError policyError = (PolicyViolationError) apiError;
+            // Examine each ApiError received from the server.
+            foreach (ApiError apiError in innerException.errors) {
+              int index = apiError.GetOperationIndex();
+              if (index == -1) {
+                // This API error is not associated with an operand, so we cannot
+                // recover from this error by removing one or more operations.
+                // Rethrow the exception for manual inspection.
+                throw;
+              }
 
-              if (policyError.isExemptable) {
-                // If the policy violation error is exemptable, add an exemption
-                // request.
-                List<ExemptionRequest> exemptionRequests = new List<ExemptionRequest>();
-                if (allOperations[index].exemptionRequests != null) {
-                  exemptionRequests.AddRange(allOperations[index].exemptionRequests);
+              // Handle policy violation errors.
+              if (apiError is PolicyViolationError) {
+                PolicyViolationError policyError = (PolicyViolationError) apiError;
+
+                if (policyError.isExemptable) {
+                  // If the policy violation error is exemptable, add an exemption
+                  // request.
+                  List<ExemptionRequest> exemptionRequests = new List<ExemptionRequest>();
+                  if (allOperations[index].exemptionRequests != null) {
+                    exemptionRequests.AddRange(allOperations[index].exemptionRequests);
+                  }
+
+                  ExemptionRequest exemptionRequest = new ExemptionRequest();
+                  exemptionRequest.key = policyError.key;
+                  exemptionRequests.Add(exemptionRequest);
+                  allOperations[index].exemptionRequests = exemptionRequests.ToArray();
+                } else {
+                  // Policy violation error is not exemptable, remove this
+                  // operation from the list of operations.
+                  operationsToBeRemoved.Add(allOperations[index]);
                 }
-
-                ExemptionRequest exemptionRequest = new ExemptionRequest();
-                exemptionRequest.key = policyError.key;
-                exemptionRequests.Add(exemptionRequest);
-                allOperations[index].exemptionRequests = exemptionRequests.ToArray();
               } else {
-                // Policy violation error is not exemptable, remove this
-                // operation from the list of operations.
+                // This is not a policy violation error, remove this operation
+                // from the list of operations.
                 operationsToBeRemoved.Add(allOperations[index]);
               }
-            } else {
-              // This is not a policy violation error, remove this operation
-              // from the list of operations.
-              operationsToBeRemoved.Add(allOperations[index]);
+            }
+            // Remove all operations that aren't exemptable.
+            foreach (AdGroupAdOperation operation in operationsToBeRemoved) {
+              allOperations.Remove(operation);
             }
           }
-          // Remove all operations that aren't exemptable.
-          foreach (AdGroupAdOperation operation in operationsToBeRemoved) {
-            allOperations.Remove(operation);
-          }
-        }
 
-        if (allOperations.Count > 0) {
-          // Perform the operations exemptible of a policy violation.
-          service.RequestHeader.validateOnly = false;
-          retVal = service.mutate(allOperations.ToArray());
+          if (allOperations.Count > 0) {
+            // Perform the operations exemptible of a policy violation.
+            adGroupAdService.RequestHeader.validateOnly = false;
+            retVal = adGroupAdService.mutate(allOperations.ToArray());
 
-          // Display the results.
-          if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-            foreach (AdGroupAd newAdGroupAd in retVal.value) {
-              Console.WriteLine("New ad with id = \"{0}\" and displayUrl = \"{1}\" was created.",
-                  newAdGroupAd.ad.id, newAdGroupAd.ad.displayUrl);
+            // Display the results.
+            if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+              foreach (AdGroupAd newAdGroupAd in retVal.value) {
+                Console.WriteLine("New ad with id = \"{0}\" and displayUrl = \"{1}\" was created.",
+                    newAdGroupAd.ad.id, newAdGroupAd.ad.displayUrl);
+              }
+            } else {
+              Console.WriteLine("No ads were created.");
             }
           } else {
-            Console.WriteLine("No ads were created.");
+            Console.WriteLine("There are no ads to create after policy violation checks.");
           }
-        } else {
-          Console.WriteLine("There are no ads to create after policy violation checks.");
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create ads.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to create ads.", e);
       }
     }
   }

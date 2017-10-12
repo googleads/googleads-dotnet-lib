@@ -59,6 +59,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MANUAL_CPC,
       MANUAL_CPM,
       MANUAL_CPV,
+      MAXIMIZE_CONVERSIONS,
       NONE,
       PAGE_ONE_PROMOTED,
       TARGET_CPA,
@@ -98,12 +99,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -163,6 +164,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -604,6 +606,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
     [ReportColumn("valueConvCurrentModel")]
     public double valuePerCurrentModelAttributedConversion { get; set; }
 
+    [ReportColumn("verticalID")]
+    public long verticalId { get; set; }
+
     [ReportColumn("videoPlayedTo100")]
     public double videoQuartile100Rate { get; set; }
 
@@ -663,6 +668,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       CALL_ONLY_AD,
       DEPRECATED_AD,
       DYNAMIC_SEARCH_AD,
+      EXPANDED_DYNAMIC_SEARCH_AD,
       EXPANDED_TEXT_AD,
       IMAGE_AD,
       PRODUCT_AD,
@@ -700,12 +706,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -795,6 +801,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -803,6 +810,13 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       UPLOAD_CALLS,
       WEBPAGE,
       WEBSITE_CALL_METRICS
+    }
+
+    public enum FormatSetting {
+      ALL_FORMATS,
+      NATIVE,
+      NON_NATIVE,
+      UNKNOWN
     }
 
     public enum MonthOfYear {
@@ -844,6 +858,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
 
     [ReportColumn("policy")]
     public string policySummary { get; set; }
+
+    [ReportColumn("accentColorResponsive")]
+    public string accentColor { get; set; }
 
     [ReportColumn("currency")]
     public string accountCurrencyCode { get; set; }
@@ -902,6 +919,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
     [ReportColumn("allConvValue")]
     public double allConversionValue { get; set; }
 
+    [ReportColumn("allowFlexibleColorResponsive")]
+    public bool allowFlexibleColor { get; set; }
+
     [ReportColumn("avgCost")]
     public decimal averageCost { get; set; }
 
@@ -937,6 +957,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
 
     [ReportColumn("businessName")]
     public string businessName { get; set; }
+
+    [ReportColumn("callToActionTextResponsive")]
+    public string callToActionText { get; set; }
 
     [ReportColumn("campaignID")]
     public long campaignId { get; set; }
@@ -1064,17 +1087,26 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
     [ReportColumn("engagements")]
     public long engagements { get; set; }
 
+    [ReportColumn("landscapeLogoIDResponsive")]
+    public long enhancedDisplayCreativeLandscapeLogoImageMediaId { get; set; }
+
     [ReportColumn("logoIDResponsive")]
     public long enhancedDisplayCreativeLogoImageMediaId { get; set; }
 
     [ReportColumn("imageIDResponsive")]
     public long enhancedDisplayCreativeMarketingImageMediaId { get; set; }
 
+    [ReportColumn("squareImageIDResponsive")]
+    public long enhancedDisplayCreativeMarketingImageSquareMediaId { get; set; }
+
     [ReportColumn("conversionSource")]
     public ExternalConversionSource externalConversionSource { get; set; }
 
     [ReportColumn("customerID")]
     public long externalCustomerId { get; set; }
+
+    [ReportColumn("adFormatPreferenceResponsive")]
+    public FormatSetting formatSetting { get; set; }
 
     [ReportColumn("gmailForwards")]
     public long gmailForwards { get; set; }
@@ -1142,6 +1174,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
     [ReportColumn("longHeadline")]
     public string longHeadline { get; set; }
 
+    [ReportColumn("mainColorResponsive")]
+    public string mainColor { get; set; }
+
     [ReportColumn("month")]
     public string month { get; set; }
 
@@ -1156,6 +1191,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
 
     [ReportColumn("newSessions")]
     public double percentNewVisitors { get; set; }
+
+    [ReportColumn("pricePrefixResponsive")]
+    public string pricePrefix { get; set; }
+
+    [ReportColumn("promotionTextResponsive")]
+    public string promoText { get; set; }
 
     [ReportColumn("quarter")]
     public string quarter { get; set; }
@@ -1293,6 +1334,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -1585,6 +1627,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MANUAL_CPC,
       MANUAL_CPM,
       MANUAL_CPV,
+      MAXIMIZE_CONVERSIONS,
       NONE,
       PAGE_ONE_PROMOTED,
       TARGET_CPA,
@@ -1624,12 +1667,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -1694,6 +1737,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -2137,6 +2181,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MANUAL_CPC,
       MANUAL_CPM,
       MANUAL_CPV,
+      MAXIMIZE_CONVERSIONS,
       NONE,
       PAGE_ONE_PROMOTED,
       TARGET_CPA,
@@ -2183,12 +2228,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -2234,6 +2279,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -2683,12 +2729,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -2734,6 +2780,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -3061,6 +3108,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -3351,6 +3399,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -3384,6 +3433,13 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       NEAR_EXACT,
       NEAR_PHRASE,
       PHRASE
+    }
+
+    public enum QueryTargetingStatus {
+      ADDED,
+      BOTH,
+      EXCLUDED,
+      NONE
     }
 
     [ReportColumn("keywordID")]
@@ -3551,6 +3607,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
     [ReportColumn("matchType")]
     public QueryMatchTypeWithVariant queryMatchTypeWithVariant { get; set; }
 
+    [ReportColumn("addedExcluded")]
+    public QueryTargetingStatus queryTargetingStatus { get; set; }
+
     [ReportColumn("trackingTemplate")]
     public string trackingUrlTemplate { get; set; }
 
@@ -3662,6 +3721,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -4000,6 +4060,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
     [ReportColumn("matchType")]
     public KeywordMatchType keywordMatchType { get; set; }
 
+    [ReportColumn("verticalID")]
+    public long verticalId { get; set; }
+
   }
 
   public class DestinationUrlReportReportRow {
@@ -4054,12 +4117,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -4111,6 +4174,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -4814,6 +4878,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -4837,6 +4902,13 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       NOVEMBER,
       OCTOBER,
       SEPTEMBER
+    }
+
+    public enum QueryTargetingStatus {
+      ADDED,
+      BOTH,
+      EXCLUDED,
+      NONE
     }
 
     [ReportColumn("currency")]
@@ -4959,6 +5031,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
     [ReportColumn("searchTerm")]
     public string query { get; set; }
 
+    [ReportColumn("addedExcluded")]
+    public QueryTargetingStatus queryTargetingStatus { get; set; }
+
     [ReportColumn("landingPageTitle")]
     public string title { get; set; }
 
@@ -5022,6 +5097,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -5244,12 +5320,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -5291,6 +5367,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       CUSTOM_AFFINITY,
       CUSTOM_IN_MARKET,
       GENDER,
+      INCOME_RANGE,
       INTERACTION_TYPE,
       IP_BLOCK,
       KEYWORD,
@@ -5351,6 +5428,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -5720,6 +5798,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
     [ReportColumn("valueConvCurrentModel")]
     public double valuePerCurrentModelAttributedConversion { get; set; }
 
+    [ReportColumn("verticalID")]
+    public long verticalId { get; set; }
+
     [ReportColumn("videoPlayedTo100")]
     public double videoQuartile100Rate { get; set; }
 
@@ -5814,12 +5895,20 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
+      SWIPEABLE_GALLERY_AD_HEADLINE,
+      SWIPEABLE_GALLERY_AD_SEE_MORE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FIVE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FOUR,
+      SWIPEABLE_GALLERY_AD_SITELINK_ONE,
+      SWIPEABLE_GALLERY_AD_SITELINK_THREE,
+      SWIPEABLE_GALLERY_AD_SITELINK_TWO,
+      SWIPEABLE_GALLERY_AD_SWIPES,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -6165,6 +6254,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -6201,6 +6291,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MANUAL_CPC,
       MANUAL_CPM,
       MANUAL_CPV,
+      MAXIMIZE_CONVERSIONS,
       NONE,
       PAGE_ONE_PROMOTED,
       TARGET_CPA,
@@ -6267,11 +6358,20 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
     [ReportColumn("clicks")]
     public long clicks { get; set; }
 
+    [ReportColumn("conversionCategory")]
+    public string conversionCategoryName { get; set; }
+
     [ReportColumn("convRate")]
     public double conversionRate { get; set; }
 
     [ReportColumn("conversions")]
     public double conversions { get; set; }
+
+    [ReportColumn("conversionTrackerId")]
+    public long conversionTrackerId { get; set; }
+
+    [ReportColumn("conversionName")]
+    public string conversionTypeName { get; set; }
 
     [ReportColumn("totalConvValue")]
     public double conversionValue { get; set; }
@@ -6448,12 +6548,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -6520,6 +6620,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -6869,12 +6970,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -6920,6 +7021,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -7264,12 +7366,20 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
+      SWIPEABLE_GALLERY_AD_HEADLINE,
+      SWIPEABLE_GALLERY_AD_SEE_MORE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FIVE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FOUR,
+      SWIPEABLE_GALLERY_AD_SITELINK_ONE,
+      SWIPEABLE_GALLERY_AD_SITELINK_THREE,
+      SWIPEABLE_GALLERY_AD_SITELINK_TWO,
+      SWIPEABLE_GALLERY_AD_SWIPES,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -7329,6 +7439,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -7726,12 +7837,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -7791,6 +7902,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -8141,12 +8253,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -8206,6 +8318,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -8526,6 +8639,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -8720,6 +8834,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -8796,11 +8911,20 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
     [ReportColumn("clicks")]
     public long clicks { get; set; }
 
+    [ReportColumn("conversionCategory")]
+    public string conversionCategoryName { get; set; }
+
     [ReportColumn("convRate")]
     public double conversionRate { get; set; }
 
     [ReportColumn("conversions")]
     public double conversions { get; set; }
+
+    [ReportColumn("conversionTrackerId")]
+    public long conversionTrackerId { get; set; }
+
+    [ReportColumn("conversionName")]
+    public string conversionTypeName { get; set; }
 
     [ReportColumn("totalConvValue")]
     public double conversionValue { get; set; }
@@ -9122,12 +9246,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -9194,6 +9318,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -9563,12 +9688,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -9628,6 +9753,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -9893,6 +10019,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
     [ReportColumn("valueConv")]
     public double valuePerConversion { get; set; }
 
+    [ReportColumn("verticalID")]
+    public long verticalId { get; set; }
+
     [ReportColumn("videoPlayedTo100")]
     public double videoQuartile100Rate { get; set; }
 
@@ -10017,6 +10146,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -10231,12 +10361,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -10282,6 +10412,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -10455,6 +10586,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
     [ReportColumn("condition")]
     public ProductCondition productCondition { get; set; }
 
+    [ReportColumn("productTitle")]
+    public string productTitle { get; set; }
+
     [ReportColumn("productType1stLevel")]
     public string productTypeL1 { get; set; }
 
@@ -10548,12 +10682,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -10808,12 +10942,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -10873,6 +11007,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -11216,12 +11351,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -11267,6 +11402,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -11522,6 +11658,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -11845,12 +11982,12 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -11896,6 +12033,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -12186,12 +12324,20 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       MOBILE_CALL_TRACKING,
       OFFER_PRINTS,
       OTHER,
+      PRICE_EXTENSION,
       PRODUCT_EXTENSION_CLICKS,
       PRODUCT_LISTING_AD_CLICKS,
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
-      TABLE_EXTENSION,
+      SWIPEABLE_GALLERY_AD_HEADLINE,
+      SWIPEABLE_GALLERY_AD_SEE_MORE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FIVE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FOUR,
+      SWIPEABLE_GALLERY_AD_SITELINK_ONE,
+      SWIPEABLE_GALLERY_AD_SITELINK_THREE,
+      SWIPEABLE_GALLERY_AD_SITELINK_TWO,
+      SWIPEABLE_GALLERY_AD_SWIPES,
       UNKNOWN,
       URL_CLICKS,
       VIDEO_APP_STORE_CLICKS,
@@ -12243,6 +12389,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       OFFERS,
       SALESFORCE,
       STORE_SALES_CRM,
+      STORE_SALES_DIRECT,
       STORE_SALES_PAYMENT_NETWORK,
       STORE_VISITS,
       THIRD_PARTY_APP_ANALYTICS,
@@ -12522,6 +12669,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201708 {
       CUSTOM_AFFINITY,
       CUSTOM_IN_MARKET,
       GENDER,
+      INCOME_RANGE,
       INTERACTION_TYPE,
       IP_BLOCK,
       KEYWORD,

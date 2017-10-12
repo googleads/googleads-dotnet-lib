@@ -13,20 +13,17 @@
 ' limitations under the License.
 
 Imports Google.Api.Ads.AdWords.Lib
-Imports Google.Api.Ads.AdWords.Util
 Imports Google.Api.Ads.AdWords.v201702
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
+
   ''' <summary>
   ''' This code example adds a text ad, and shows how to handle a policy
   ''' violation.
   ''' </summary>
   Public Class HandlePolicyViolationError
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -38,7 +35,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -59,113 +56,115 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="adGroupId">Id of the ad group to which ads are added.
     ''' </param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-      ' Get the AdGroupAdService.
-      Dim service As AdGroupAdService = CType(user.GetService( _
+      Using service As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201702.AdGroupAdService), AdGroupAdService)
 
-      ' Create the text ad.
-      Dim textAd As New TextAd
-      textAd.headline = "Luxury Cruise to Mars"
-      textAd.description1 = "Visit the Red Planet in style."
-      textAd.description2 = "Low-gravity fun for everyone!!"
-      textAd.displayUrl = "www.example.com"
-      textAd.url = "http://www.example.com"
+        ' Create the text ad.
+        Dim textAd As New TextAd
+        textAd.headline = "Luxury Cruise to Mars"
+        textAd.description1 = "Visit the Red Planet in style."
+        textAd.description2 = "Low-gravity fun for everyone!!"
+        textAd.displayUrl = "www.example.com"
+        textAd.url = "http://www.example.com"
 
-      Dim textadGroupAd As New AdGroupAd
-      textadGroupAd.adGroupId = adGroupId
-      textadGroupAd.ad = textAd
+        Dim textadGroupAd As New AdGroupAd
+        textadGroupAd.adGroupId = adGroupId
+        textadGroupAd.ad = textAd
 
-      ' Create the operations.
-      Dim textAdOperation As New AdGroupAdOperation
-      textAdOperation.operator = [Operator].ADD
-      textAdOperation.operand = textadGroupAd
-
-      Try
-        Dim retVal As AdGroupAdReturnValue = Nothing
-
-        ' Setup two arrays, one to hold the list of all operations to be
-        ' validated, and another to hold the list of operations that cannot be
-        ' fixed after validation.
-        Dim allOperations As New List(Of AdGroupAdOperation)
-        Dim operationsToBeRemoved As New List(Of AdGroupAdOperation)
-
-        allOperations.Add(textAdOperation)
+        ' Create the operations.
+        Dim textAdOperation As New AdGroupAdOperation
+        textAdOperation.operator = [Operator].ADD
+        textAdOperation.operand = textadGroupAd
 
         Try
-          ' Validate the operations.
-          service.RequestHeader.validateOnly = True
-          retVal = service.mutate(allOperations.ToArray)
-        Catch e As AdWordsApiException
-          Dim innerException As ApiException = TryCast(e.ApiException, ApiException)
-          If (innerException Is Nothing) Then
-            Throw New Exception("Failed to retrieve ApiError. See inner exception for more " & _
-                "details.", e)
-          End If
+          Dim retVal As AdGroupAdReturnValue = Nothing
 
-          ' Examine each ApiError received from the server.
-          For Each apiError As ApiError In innerException.errors
-            Dim index As Integer = apiError.GetOperationIndex()
-            If (index = -1) Then
-              ' This API error is not associated with an operand, so we cannot
-              ' recover from this error by removing one or more operations.
-              ' Rethrow the exception for manual inspection.
-              Throw
+          ' Setup two arrays, one to hold the list of all operations to be
+          ' validated, and another to hold the list of operations that cannot be
+          ' fixed after validation.
+          Dim allOperations As New List(Of AdGroupAdOperation)
+          Dim operationsToBeRemoved As New List(Of AdGroupAdOperation)
+
+          allOperations.Add(textAdOperation)
+
+          Try
+            ' Validate the operations.
+            service.RequestHeader.validateOnly = True
+            retVal = service.mutate(allOperations.ToArray)
+          Catch e As AdWordsApiException
+            Dim innerException As ApiException = TryCast(e.ApiException, ApiException)
+            If (innerException Is Nothing) Then
+              Throw New Exception("Failed to retrieve ApiError. See inner exception for more " &
+                  "details.", e)
             End If
 
-            ' Handle policy violation errors.
-            If TypeOf apiError Is PolicyViolationError Then
-              Dim policyError As PolicyViolationError = CType(apiError, PolicyViolationError)
+            ' Examine each ApiError received from the server.
+            For Each apiError As ApiError In innerException.errors
+              Dim index As Integer = apiError.GetOperationIndex()
+              If (index = -1) Then
+                ' This API error is not associated with an operand, so we cannot
+                ' recover from this error by removing one or more operations.
+                ' Rethrow the exception for manual inspection.
+                Throw
+              End If
 
-              If policyError.isExemptable Then
-                ' If the policy violation error is exemptable, add an exemption
-                ' request.
-                Dim exemptionRequests As New List(Of ExemptionRequest)
-                If (Not allOperations.Item(index).exemptionRequests Is Nothing) Then
-                  exemptionRequests.AddRange(allOperations.Item(index).exemptionRequests)
+              ' Handle policy violation errors.
+              If TypeOf apiError Is PolicyViolationError Then
+                Dim policyError As PolicyViolationError = CType(apiError, PolicyViolationError)
+
+                If policyError.isExemptable Then
+                  ' If the policy violation error is exemptable, add an exemption
+                  ' request.
+                  Dim exemptionRequests As New List(Of ExemptionRequest)
+                  If (Not allOperations.Item(index).exemptionRequests Is Nothing) Then
+                    exemptionRequests.AddRange(allOperations.Item(index).exemptionRequests)
+                  End If
+
+                  Dim exemptionRequest As New ExemptionRequest
+                  exemptionRequest.key = policyError.key
+                  exemptionRequests.Add(exemptionRequest)
+                  allOperations.Item(index).exemptionRequests = exemptionRequests.ToArray
+                Else
+                  ' Policy violation error is not exemptable, remove this
+                  ' operation from the list of operations.
+                  operationsToBeRemoved.Add(allOperations.Item(index))
                 End If
-
-                Dim exemptionRequest As New ExemptionRequest
-                exemptionRequest.key = policyError.key
-                exemptionRequests.Add(exemptionRequest)
-                allOperations.Item(index).exemptionRequests = exemptionRequests.ToArray
               Else
-                ' Policy violation error is not exemptable, remove this
-                ' operation from the list of operations.
+                ' This is not a policy violation error, remove this operation
+                ' from the list of operations.
                 operationsToBeRemoved.Add(allOperations.Item(index))
               End If
-            Else
-              ' This is not a policy violation error, remove this operation
-              ' from the list of operations.
-              operationsToBeRemoved.Add(allOperations.Item(index))
-            End If
-          Next
-
-          ' Remove all operations that aren't exemptable.
-          For Each operation As AdGroupAdOperation In operationsToBeRemoved
-            allOperations.Remove(operation)
-          Next
-        End Try
-        If (allOperations.Count > 0) Then
-          ' Perform the operations exemptible of a policy violation.
-          service.RequestHeader.validateOnly = False
-          retVal = service.mutate(allOperations.ToArray)
-
-          ' Display the results.
-          If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) _
-              AndAlso (retVal.value.Length > 0)) Then
-            For Each newAdGroupAd As AdGroupAd In retVal.value
-              Console.WriteLine("New ad with id = ""{0}"" and displayUrl = ""{1}"" was created.", _
-                  newAdGroupAd.ad.id, newAdGroupAd.ad.displayUrl)
             Next
+
+            ' Remove all operations that aren't exemptable.
+            For Each operation As AdGroupAdOperation In operationsToBeRemoved
+              allOperations.Remove(operation)
+            Next
+          End Try
+          If (allOperations.Count > 0) Then
+            ' Perform the operations exemptible of a policy violation.
+            service.RequestHeader.validateOnly = False
+            retVal = service.mutate(allOperations.ToArray)
+
+            ' Display the results.
+            If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) _
+                AndAlso (retVal.value.Length > 0)) Then
+              For Each newAdGroupAd As AdGroupAd In retVal.value
+                Console.WriteLine("New ad with id = ""{0}"" and displayUrl = ""{1}"" was created.",
+                    newAdGroupAd.ad.id, newAdGroupAd.ad.displayUrl)
+              Next
+            Else
+              Console.WriteLine("No ads were created.")
+            End If
           Else
-            Console.WriteLine("No ads were created.")
+            Console.WriteLine("There are no ads to create after policy violation checks.")
           End If
-        Else
-          Console.WriteLine("There are no ads to create after policy violation checks.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to create Ad(s).", e)
-      End Try
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to create Ad(s).", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace

@@ -14,19 +14,16 @@
 
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201708
-Imports Google.Api.Ads.Common.Util
-
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
+
   ''' <summary>
   ''' This code example adds expanded text ads to a given ad group. To list
   ''' ad groups, run GetAdGroups.vb.
   ''' </summary>
   Public Class AddExpandedTextAds
     Inherits ExampleBase
+
     ''' <summary>
     ''' Number of ads being added / updated in this code example.
     ''' </summary>
@@ -43,7 +40,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -53,7 +50,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example adds expanded text ads to a given ad group. To list " & _
+        Return "This code example adds expanded text ads to a given ad group. To list " &
             "ad groups, run GetAdGroups.vb."
       End Get
     End Property
@@ -66,55 +63,57 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' [START addExpandedTextAds] MOE:strip_line
-      ' Get the AdGroupAdService.
-      Dim service As AdGroupAdService = CType(user.GetService( _
+      Using service As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201708.AdGroupAdService), AdGroupAdService)
 
-      Dim operations As New List(Of AdGroupAdOperation)
+        Dim operations As New List(Of AdGroupAdOperation)
 
-      For i As Integer = 1 To NUMBER_OF_ADS
-        ' Create the expanded text ad.
-        Dim expandedTextAd As New ExpandedTextAd
-        expandedTextAd.headlinePart1 = "Cruise #" & i.ToString() & " to Mars"
-        expandedTextAd.headlinePart2 = "Best Space Cruise Line"
-        expandedTextAd.description = "Buy your tickets now!"
-        expandedTextAd.finalUrls = New String() {"http://www.example.com/" & i}
+        For i As Integer = 1 To NUMBER_OF_ADS
+          ' Create the expanded text ad.
+          Dim expandedTextAd As New ExpandedTextAd
+          expandedTextAd.headlinePart1 = "Cruise #" & i.ToString() & " to Mars"
+          expandedTextAd.headlinePart2 = "Best Space Cruise Line"
+          expandedTextAd.description = "Buy your tickets now!"
+          expandedTextAd.finalUrls = New String() {"http://www.example.com/" & i}
 
-        Dim expandedTextAdGroupAd As New AdGroupAd
-        expandedTextAdGroupAd.adGroupId = adGroupId
-        expandedTextAdGroupAd.ad = expandedTextAd
+          Dim expandedTextAdGroupAd As New AdGroupAd
+          expandedTextAdGroupAd.adGroupId = adGroupId
+          expandedTextAdGroupAd.ad = expandedTextAd
 
-        ' Optional: Set the status.
-        expandedTextAdGroupAd.status = AdGroupAdStatus.PAUSED
+          ' Optional: Set the status.
+          expandedTextAdGroupAd.status = AdGroupAdStatus.PAUSED
 
-        ' Create the operations.
-        Dim operation As New AdGroupAdOperation
-        operation.operator = [Operator].ADD
-        operation.operand = expandedTextAdGroupAd
+          ' Create the operations.
+          Dim operation As New AdGroupAdOperation
+          operation.operator = [Operator].ADD
+          operation.operand = expandedTextAdGroupAd
 
-        operations.Add(operation)
-      Next
+          operations.Add(operation)
+        Next
 
-      Dim retVal As AdGroupAdReturnValue = Nothing
+        Dim retVal As AdGroupAdReturnValue = Nothing
 
-      Try
-        ' Create the ads.
-        retVal = service.mutate(operations.ToArray())
+        Try
+          ' Create the ads.
+          retVal = service.mutate(operations.ToArray())
 
-        ' Display the results.
-        If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing)) Then
-          For Each adGroupAd As AdGroupAd In retVal.value
-            Dim newAd As ExpandedTextAd = CType(adGroupAd.ad, ExpandedTextAd)
-            Console.WriteLine("Expanded text ad with ID '{0}' and headline '{1} - {2}' was added.",
-                newAd.id, newAd.headlinePart1, newAd.headlinePart2)
-          Next
-        Else
-          Console.WriteLine("No expanded text ads were created.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to create expanded text ads.", e)
-      End Try
-      ' [END addExpandedTextAds] MOE:strip_line
+          ' Display the results.
+          If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing)) Then
+            For Each adGroupAd As AdGroupAd In retVal.value
+              Dim newAd As ExpandedTextAd = CType(adGroupAd.ad, ExpandedTextAd)
+              Console.WriteLine("Expanded text ad with ID '{0}' and headline '{1} - {2}' " +
+                  "was added.", newAd.id, newAd.headlinePart1, newAd.headlinePart2)
+            Next
+          Else
+            Console.WriteLine("No expanded text ads were created.")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to create expanded text ads.", e)
+        End Try
+        ' [END addExpandedTextAds] MOE:strip_line
+      End Using
     End Sub
+
   End Class
+
 End Namespace

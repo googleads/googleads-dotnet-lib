@@ -169,7 +169,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
       /// The callback method for the report download thread.
       /// </summary>
       public void ThreadCallback(object arg) {
-        string query = (string) arg;
+        string query = (string)arg;
 
         AdWordsUser user = new AdWordsUser(this.Config);
 
@@ -316,7 +316,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
         for (int i = 0; i < MAX_NUMBER_OF_THREADS; i++) {
           doneEvents[i] = new ManualResetEvent(false);
           threadData[i] = new ReportDownloadData() {
-            Config = (AdWordsAppConfig) (user.Config.Clone()),
+            Config = (AdWordsAppConfig)(user.Config.Clone()),
             DownloadFolder = downloadFolder,
             SignalEvent = doneEvents[i],
             ThreadIndex = i,

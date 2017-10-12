@@ -15,11 +15,8 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201702
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
+
   ''' <summary>
   ''' This code example illustrates how to add ad group level mobile bid
   ''' modifier override.
@@ -39,7 +36,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
         Dim bidModifier As Double = Double.Parse("INSERT_ADGROUP_BID_MODIFIER_HERE")
         codeExample.Run(New AdWordsUser, adGroupId, bidModifier)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -49,7 +46,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example illustrates how to add ad group level mobile bid" & _
+        Return "This code example illustrates how to add ad group level mobile bid" &
             " modifier override."
       End Get
     End Property
@@ -62,47 +59,48 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' set.</param>
     ''' <param name="bidModifier">The mobile bid modifier for adgroup</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal bidModifier As Double)
-      ' Get the AdGroupBidModifierService.
-      Dim adGroupBidModifierService As AdGroupBidModifierService = CType(user.GetService( _
-          AdWordsService.v201702.AdGroupBidModifierService), 
+      Using adGroupBidModifierService As AdGroupBidModifierService = CType(user.GetService(
+          AdWordsService.v201702.AdGroupBidModifierService),
               AdGroupBidModifierService)
 
-      ' Mobile criterion ID.
-      Dim criterionId As Long = 30001
+        ' Mobile criterion ID.
+        Dim criterionId As Long = 30001
 
-      ' Create the adgroup bid modifier.
-      Dim adGroupBidModifier As New AdGroupBidModifier()
-      adGroupBidModifier.bidModifier = bidModifier
-      adGroupBidModifier.adGroupId = adGroupId
+        ' Create the adgroup bid modifier.
+        Dim adGroupBidModifier As New AdGroupBidModifier()
+        adGroupBidModifier.bidModifier = bidModifier
+        adGroupBidModifier.adGroupId = adGroupId
 
-      Dim platform As New Platform()
-      platform.id = criterionId
+        Dim platform As New Platform()
+        platform.id = criterionId
 
-      adGroupBidModifier.criterion = platform
+        adGroupBidModifier.criterion = platform
 
-      Dim operation As New AdGroupBidModifierOperation()
-      operation.operator = [Operator].ADD
-      operation.operand = adGroupBidModifier
+        Dim operation As New AdGroupBidModifierOperation()
+        operation.operator = [Operator].ADD
+        operation.operand = adGroupBidModifier
 
-      Try
-        ' Add ad group level mobile bid modifier.
-        Dim retval As AdGroupBidModifierReturnValue = adGroupBidModifierService.mutate( _
+        Try
+          ' Add ad group level mobile bid modifier.
+          Dim retval As AdGroupBidModifierReturnValue = adGroupBidModifierService.mutate(
             New AdGroupBidModifierOperation() {operation})
 
-        ' Display the results.
-        If Not retval Is Nothing AndAlso Not retval.value Is Nothing AndAlso _
+          ' Display the results.
+          If Not retval Is Nothing AndAlso Not retval.value Is Nothing AndAlso
             retval.value.Length > 0 Then
-          Dim newBidModifier As AdGroupBidModifier = retval.value(0)
-          Console.WriteLine("AdGroup ID {0}, Criterion ID {1} was updated with ad group " & _
-              "level modifier: {2}", newBidModifier.adGroupId, newBidModifier.criterion.id, _
+            Dim newBidModifier As AdGroupBidModifier = retval.value(0)
+            Console.WriteLine("AdGroup ID {0}, Criterion ID {1} was updated with ad group " &
+              "level modifier: {2}", newBidModifier.adGroupId, newBidModifier.criterion.id,
               newBidModifier.bidModifier)
-        Else
-          Console.WriteLine("No bid modifiers were added to the adgroup.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to add bid modifiers to adgroup.", e)
-      End Try
+          Else
+            Console.WriteLine("No bid modifiers were added to the adgroup.")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to add bid modifiers to adgroup.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
 
 End Namespace

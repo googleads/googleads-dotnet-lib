@@ -84,7 +84,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
       assetVariableValue.uniqueName = "Imagefile";
       CreativeAsset asset = new CreativeAsset();
       asset.assetByteArray = MediaUtilities.GetAssetDataFromUrl(
-          "http://www.google.com/intl/en/adwords/select/images/samples/inline.jpg");
+          "https://goo.gl/3b9Wfh");
       asset.fileName = String.Format("image{0}.jpg", this.GetTimeStamp());
       assetVariableValue.asset = asset;
 

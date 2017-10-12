@@ -158,6 +158,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
       byte[] digestBytes = new byte[digest.GetDigestSize()];
       digest.BlockUpdate(data, 0, data.Length);
       digest.DoFinal(digestBytes, 0);
+
+      // Convert the byte array into an unhyphenated hexadecimal string.
       return BitConverter.ToString(digestBytes).Replace("-", string.Empty);
     }
 

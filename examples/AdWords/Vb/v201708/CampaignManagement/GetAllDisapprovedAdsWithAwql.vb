@@ -15,11 +15,8 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201708
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
+
   ''' <summary>
   ''' This code example retrieves all the disapproved ads in a given campaign
   ''' using an AWQL query. See
@@ -28,6 +25,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
   ''' </summary>
   Public Class GetAllDisapprovedAdsWithAwql
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -62,47 +60,49 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="campaignId">Id of the campaign for which disapproved ads
     ''' are retrieved.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
-      ' Get the AdGroupAdService.
-      Dim service As AdGroupAdService = CType(user.GetService(
+      Using service As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201708.AdGroupAdService), AdGroupAdService)
 
-      ' Get all the disapproved ads for this campaign.
-      Dim query As String = String.Format("SELECT Id, PolicySummary WHERE CampaignId = {0} " &
-          "and CombinedApprovalStatus = DISAPPROVED ORDER BY Id", campaignId)
+        ' Get all the disapproved ads for this campaign.
+        Dim query As String = String.Format("SELECT Id, PolicySummary WHERE CampaignId = {0} " &
+            "and CombinedApprovalStatus = DISAPPROVED ORDER BY Id", campaignId)
 
-      Dim offset As Long = 0
-      Dim pageSize As Long = 500
+        Dim offset As Long = 0
+        Dim pageSize As Long = 500
 
-      Dim page As New AdGroupAdPage()
-      Dim disapprovedAdsCount As Integer = 0
+        Dim page As New AdGroupAdPage()
+        Dim disapprovedAdsCount As Integer = 0
 
-      Try
-        Do
-          Dim queryWithPaging As String = String.Format("{0} LIMIT {1}, {2}", query, offset,
-              pageSize)
-          ' Get the disapproved ads.
-          page = service.query(queryWithPaging)
+        Try
+          Do
+            Dim queryWithPaging As String = String.Format("{0} LIMIT {1}, {2}", query, offset,
+                pageSize)
+            ' Get the disapproved ads.
+            page = service.query(queryWithPaging)
 
-          ' Display the results.
-          If Not (page Is Nothing) AndAlso Not (page.entries Is Nothing) Then
-            For Each AdGroupAd As AdGroupAd In page.entries
-              Dim policySummary As AdGroupAdPolicySummary = AdGroupAd.policySummary
-              disapprovedAdsCount += 1
-              Console.WriteLine("Ad with ID {0} and type '{1}' was disapproved with the " +
-                "following policy topic entries: ", AdGroupAd.ad.id, AdGroupAd.ad.AdType)
-              For Each PolicyTopicEntry As PolicyTopicEntry In policySummary.policyTopicEntries
-                Console.WriteLine("  topic id: {0}, topic name: '{1}'",
-                  PolicyTopicEntry.policyTopicId, PolicyTopicEntry.policyTopicName)
+            ' Display the results.
+            If Not (page Is Nothing) AndAlso Not (page.entries Is Nothing) Then
+              For Each AdGroupAd As AdGroupAd In page.entries
+                Dim policySummary As AdGroupAdPolicySummary = AdGroupAd.policySummary
+                disapprovedAdsCount += 1
+                Console.WriteLine("Ad with ID {0} and type '{1}' was disapproved with the " +
+                    "following policy topic entries: ", AdGroupAd.ad.id, AdGroupAd.ad.AdType)
+                For Each PolicyTopicEntry As PolicyTopicEntry In policySummary.policyTopicEntries
+                  Console.WriteLine("  topic id: {0}, topic name: '{1}'",
+                      PolicyTopicEntry.policyTopicId, PolicyTopicEntry.policyTopicName)
+                Next
               Next
-            Next
-          End If
+            End If
 
-          offset = offset + pageSize
-        Loop While (offset < page.totalNumEntries)
-        Console.WriteLine("Number of disapproved ads found: {0}", disapprovedAdsCount)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to get disapproved ads.", e)
-      End Try
+            offset = offset + pageSize
+          Loop While (offset < page.totalNumEntries)
+          Console.WriteLine("Number of disapproved ads found: {0}", disapprovedAdsCount)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to get disapproved ads.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace

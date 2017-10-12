@@ -56,45 +56,45 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
-      ' Get the CampaignService.
-      Dim campaignService As CampaignService = CType(user.GetService(
+      Using campaignService As CampaignService = CType(user.GetService(
           AdWordsService.v201708.CampaignService), CampaignService)
 
-      ' [START create_query] MOE:strip_line
-      ' Create the query.
-      Dim query As String = "SELECT Id, Name, Status ORDER BY Name"
-      ' [END create_query] MOE:strip_line
+        ' [START create_query] MOE:strip_line
+        ' Create the query.
+        Dim query As String = "SELECT Id, Name, Status ORDER BY Name"
+        ' [END create_query] MOE:strip_line
 
-      ' [START execute_query] MOE:strip_line
-      Dim offset As Long = 0
-      Dim pageSize As Long = 500
+        ' [START execute_query] MOE:strip_line
+        Dim offset As Long = 0
+        Dim pageSize As Long = 500
 
-      Dim page As New CampaignPage()
+        Dim page As New CampaignPage()
 
-      Try
-        Do
-          Dim queryWithPaging As String = String.Format("{0} LIMIT {1}, {2}", query, offset,
-              pageSize)
+        Try
+          Do
+            Dim queryWithPaging As String = String.Format("{0} LIMIT {1}, {2}", query, offset,
+                pageSize)
 
-          ' Get the campaigns.
-          page = campaignService.query(queryWithPaging)
+            ' Get the campaigns.
+            page = campaignService.query(queryWithPaging)
 
-          ' Display the results.
-          If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = CInt(offset)
-            For Each campaign As Campaign In page.entries
-              Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = " &
-                  "'{3}' was found.", i, campaign.id, campaign.name, campaign.status)
-              i += 1
-            Next
-          End If
-          offset = offset + pageSize
-        Loop While (offset < page.totalNumEntries)
-        Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to retrieve campaign(s).", e)
-      End Try
-      ' [END execute_query] MOE:strip_line
+            ' Display the results.
+            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+              Dim i As Integer = CInt(offset)
+              For Each campaign As Campaign In page.entries
+                Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = " &
+                    "'{3}' was found.", i, campaign.id, campaign.name, campaign.status)
+                i += 1
+              Next
+            End If
+            offset = offset + pageSize
+          Loop While (offset < page.totalNumEntries)
+          Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to retrieve campaign(s).", e)
+        End Try
+        ' [END execute_query] MOE:strip_line
+      End Using
     End Sub
 
   End Class

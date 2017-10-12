@@ -57,52 +57,52 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="campaignId">Id of the campaign for which disapproved ads
     ''' are retrieved.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
-      ' Get the AdGroupAdService.
-      Dim service As AdGroupAdService = CType(user.GetService( _
+      Using service As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201702.AdGroupAdService), AdGroupAdService)
 
-      ' Create the selector.
-      Dim selector As New Selector
-      selector.fields = New String() {
-        Ad.Fields.Id, AdGroupAd.Fields.AdGroupCreativeApprovalStatus,
-        AdGroupAd.Fields.AdGroupAdDisapprovalReasons
-      }
+        ' Create the selector.
+        Dim selector As New Selector
+        selector.fields = New String() {
+          Ad.Fields.Id, AdGroupAd.Fields.AdGroupCreativeApprovalStatus,
+          AdGroupAd.Fields.AdGroupAdDisapprovalReasons
+        }
 
-      ' Set the filters.
-      selector.predicates = New Predicate() {
-        Predicate.Equals(AdGroup.Fields.CampaignId, campaignId),
-        Predicate.Equals(AdGroupAd.Fields.AdGroupCreativeApprovalStatus,
-            AdGroupAdApprovalStatus.DISAPPROVED.ToString())
-      }
+        ' Set the filters.
+        selector.predicates = New Predicate() {
+          Predicate.Equals(AdGroup.Fields.CampaignId, campaignId),
+          Predicate.Equals(AdGroupAd.Fields.AdGroupCreativeApprovalStatus,
+              AdGroupAdApprovalStatus.DISAPPROVED.ToString())
+        }
 
-      ' Set the selector paging.
-      selector.paging = Paging.Default
+        ' Set the selector paging.
+        selector.paging = Paging.Default
 
-      Dim page As New AdGroupAdPage
+        Dim page As New AdGroupAdPage
 
-      Try
-        Do
-          ' Get the disapproved ads.
-          page = service.get(selector)
+        Try
+          Do
+            ' Get the disapproved ads.
+            page = service.get(selector)
 
-          ' Display the results.
-          If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = selector.paging.startIndex
-            For Each adGroupAd As AdGroupAd In page.entries
-              Console.WriteLine("{0}) Ad id {1} has been disapproved for the following " & _
+            ' Display the results.
+            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+              Dim i As Integer = selector.paging.startIndex
+              For Each adGroupAd As AdGroupAd In page.entries
+                Console.WriteLine("{0}) Ad id {1} has been disapproved for the following " &
                     "reason(s):", i, adGroupAd.ad.id)
-              For Each reason As String In adGroupAd.disapprovalReasons
-                Console.WriteLine("    {0}", reason)
+                For Each reason As String In adGroupAd.disapprovalReasons
+                  Console.WriteLine("    {0}", reason)
+                Next
+                i += 1
               Next
-              i += 1
-            Next
-          End If
-          selector.paging.IncreaseOffset()
-        Loop While (selector.paging.startIndex < page.totalNumEntries)
-        Console.WriteLine("Number of disapproved ads found: {0}", page.totalNumEntries)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to get disapproved ads.", e)
-      End Try
+            End If
+            selector.paging.IncreaseOffset()
+          Loop While (selector.paging.startIndex < page.totalNumEntries)
+          Console.WriteLine("Number of disapproved ads found: {0}", page.totalNumEntries)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to get disapproved ads.", e)
+        End Try
+      End Using
     End Sub
   End Class
 End Namespace

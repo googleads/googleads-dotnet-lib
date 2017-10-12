@@ -15,11 +15,8 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201708
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
+
   ''' <summary>
   ''' This code example gets all videos and images. To upload video, see
   ''' http://adwords.google.com/support/aw/bin/answer.py?hl=en&amp;answer=39454.
@@ -27,6 +24,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
   ''' </summary>
   Public Class GetAllVideosAndImages
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -37,7 +35,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
       Try
         codeExample.Run(New AdWordsUser)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -47,8 +45,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example gets all videos and images. To upload video, see " & _
-            "http://adwords.google.com/support/aw/bin/answer.py?hl=en&amp;answer=39454. To " & _
+        Return "This code example gets all videos and images. To upload video, see " &
+            "http://adwords.google.com/support/aw/bin/answer.py?hl=en&amp;answer=39454. To " &
             "upload image, run UploadImage.vb."
       End Get
     End Property
@@ -58,81 +56,64 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
-      ' Get the MediaService.
-      Dim mediaService As MediaService = CType(user.GetService( _
+      Using mediaService As MediaService = CType(user.GetService(
           AdWordsService.v201708.MediaService), MediaService)
 
-      ' Create the video selector.
-      Dim selector As New Selector
-      selector.fields = New String() {
-        Media.Fields.MediaId, Dimensions.Fields.Width,
-        Dimensions.Fields.Height, Media.Fields.MimeType
-      }
+        ' Create the video selector.
+        Dim selector As New Selector
+        selector.fields = New String() {
+          Media.Fields.MediaId, Dimensions.Fields.Width,
+          Dimensions.Fields.Height, Media.Fields.MimeType
+        }
 
-      ' Set the filter.
-      Dim predicate As New Predicate
-      predicate.operator = PredicateOperator.IN
-      predicate.field = "Type"
-      predicate.values = New String() {MediaMediaType.VIDEO.ToString(), _
-          MediaMediaType.IMAGE.ToString()}
+        ' Set the filter.
+        selector.predicates = New Predicate() {
+          Predicate.In(Media.Fields.Type, New String() {
+            MediaMediaType.VIDEO.ToString(),
+            MediaMediaType.IMAGE.ToString()
+          })
+        }
 
-      selector.predicates = New Predicate() {
-        predicate.In(Media.Fields.Type, New String() {
-          MediaMediaType.VIDEO.ToString(),
-          MediaMediaType.IMAGE.ToString()
-        })
-      }
+        selector.paging = Paging.Default
 
-      selector.paging = Paging.Default
+        Dim page As New MediaPage
 
-      Dim page As New MediaPage
+        Try
+          Do
+            page = mediaService.get(selector)
 
-      Try
-        Do
-          page = mediaService.get(selector)
+            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+              Dim i As Integer = selector.paging.startIndex
 
-          If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = selector.paging.startIndex
+              For Each media As Media In page.entries
+                If TypeOf media Is Video Then
+                  Dim video As Video = CType(media, [Video])
+                  Console.WriteLine("{0}) Video with id '{1}' and name '{2}' was found.",
+                      i + 1, video.mediaId, video.name)
+                ElseIf TypeOf media Is Image Then
+                  Dim image As Image = CType(media, [Image])
 
-            For Each media As Media In page.entries
-              If TypeOf media Is Video Then
-                Dim video As Video = CType(media, [Video])
-                Console.WriteLine("{0}) Video with id '{1}' and name '{2}' was found.", _
-                    i + 1, video.mediaId, video.name)
-              ElseIf TypeOf media Is Image Then
-                Dim image As Image = CType(media, [Image])
-                Dim dimensions As Dictionary(Of MediaSize, Dimensions) = _
-                    CreateMediaDimensionMap(image.dimensions)
-                Console.WriteLine("{0}) Image with id '{1}', dimensions '{2}x{3}', and MIME " & _
-                    "type '{4}' was found.", i + 1, image.mediaId, _
-                    dimensions(MediaSize.FULL).width, _
-                    dimensions(MediaSize.FULL).height, image.mimeType)
-              End If
-              i = i + 1
-            Next
-          End If
-          selector.paging.IncreaseOffset()
-        Loop While (selector.paging.startIndex < page.totalNumEntries)
-        Console.WriteLine("Number of images and videos found: {0}", page.totalNumEntries)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to get images and videos.", e)
-      End Try
+                  ' Preferred: Use image.dimensions.ToDict() if you are not on Mono.
+                  Dim dimensions As Dictionary(Of MediaSize, Dimensions) =
+                      MapEntryExtensions.ToDict(Of MediaSize, Dimensions)(image.dimensions)
+
+                  Console.WriteLine("{0}) Image with id '{1}', dimensions '{2}x{3}', and MIME " &
+                      "type '{4}' was found.", i + 1, image.mediaId,
+                      dimensions(MediaSize.FULL).width,
+                      dimensions(MediaSize.FULL).height, image.mimeType)
+                End If
+                i = i + 1
+              Next
+            End If
+            selector.paging.IncreaseOffset()
+          Loop While (selector.paging.startIndex < page.totalNumEntries)
+          Console.WriteLine("Number of images and videos found: {0}", page.totalNumEntries)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to get images and videos.", e)
+        End Try
+      End Using
     End Sub
 
-    ''' <summary>
-    ''' Converts an array of Media_Size_DimensionsMapEntry into a dictionary.
-    ''' </summary>
-    ''' <param name="dimensions">The array of Media_Size_DimensionsMapEntry to be
-    ''' converted into a dictionary.</param>
-    ''' <returns>A dictionary with key as MediaSize, and value as Dimensions.
-    ''' </returns>
-    Private Function CreateMediaDimensionMap(ByVal dimensions As Media_Size_DimensionsMapEntry()) _
-            As Dictionary(Of MediaSize, Dimensions)
-      Dim mediaMap As New Dictionary(Of MediaSize, Dimensions)
-      For Each dimension As Media_Size_DimensionsMapEntry In dimensions
-        mediaMap.Add(dimension.key, dimension.value)
-      Next
-      Return mediaMap
-    End Function
   End Class
+
 End Namespace

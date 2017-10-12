@@ -17,7 +17,6 @@ using Google.Api.Ads.AdWords.v201705;
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
 
@@ -60,97 +59,98 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
     /// <param name="adGroupId">ID of the ad group to which ad is added.
     /// </param>
     public void Run(AdWordsUser user, long adGroupId) {
-      // Get the AdGroupAdService.
-      AdGroupAdService service =
-          (AdGroupAdService) user.GetService(AdWordsService.v201705.AdGroupAdService);
+      using (AdGroupAdService adGroupAdService =
+          (AdGroupAdService) user.GetService(AdWordsService.v201705.AdGroupAdService)) {
 
-      // Create the expanded text ad.
-      ExpandedTextAd expandedTextAd = new ExpandedTextAd() {
-        headlinePart1 = "Luxury Cruise to Mars",
-        headlinePart2 = "Visit the Red Planet in style.",
-        description = "Low-gravity fun for everyone!",
-      };
+        // Create the expanded text ad.
+        ExpandedTextAd expandedTextAd = new ExpandedTextAd() {
+          headlinePart1 = "Luxury Cruise to Mars",
+          headlinePart2 = "Visit the Red Planet in style.",
+          description = "Low-gravity fun for everyone!",
+        };
 
-      // Specify a tracking URL for 3rd party tracking provider. You may
-      // specify one at customer, campaign, ad group, ad, criterion or
-      // feed item levels.
-      expandedTextAd.trackingUrlTemplate =
-          "http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}";
+        // Specify a tracking URL for 3rd party tracking provider. You may
+        // specify one at customer, campaign, ad group, ad, criterion or
+        // feed item levels.
+        expandedTextAd.trackingUrlTemplate =
+            "http://tracker.example.com/?season={_season}&promocode={_promocode}&u={lpurl}";
 
-      // Since your tracking URL has two custom parameters, provide their
-      // values too. This can be provided at campaign, ad group, ad, criterion
-      // or feed item levels.
-      CustomParameter seasonParameter = new CustomParameter();
-      seasonParameter.key = "season";
-      seasonParameter.value = "christmas";
+        // Since your tracking URL has two custom parameters, provide their
+        // values too. This can be provided at campaign, ad group, ad, criterion
+        // or feed item levels.
+        CustomParameter seasonParameter = new CustomParameter();
+        seasonParameter.key = "season";
+        seasonParameter.value = "christmas";
 
-      CustomParameter promoCodeParameter = new CustomParameter();
-      promoCodeParameter.key = "promocode";
-      promoCodeParameter.value = "NYC123";
+        CustomParameter promoCodeParameter = new CustomParameter();
+        promoCodeParameter.key = "promocode";
+        promoCodeParameter.value = "NYC123";
 
-      expandedTextAd.urlCustomParameters = new CustomParameters();
-      expandedTextAd.urlCustomParameters.parameters =
-          new CustomParameter[] { seasonParameter, promoCodeParameter };
+        expandedTextAd.urlCustomParameters = new CustomParameters();
+        expandedTextAd.urlCustomParameters.parameters =
+            new CustomParameter[] { seasonParameter, promoCodeParameter };
 
-      // Specify a list of final URLs. This field cannot be set if URL field is
-      // set. This may be specified at ad, criterion and feed item levels.
-      expandedTextAd.finalUrls = new string[] {
+        // Specify a list of final URLs. This field cannot be set if URL field is
+        // set. This may be specified at ad, criterion and feed item levels.
+        expandedTextAd.finalUrls = new string[] {
         "http://www.example.com/cruise/space/",
         "http://www.example.com/locations/mars/"
       };
 
-      // Specify a list of final mobile URLs. This field cannot be set if URL
-      // field is set, or finalUrls is unset. This may be specified at ad,
-      // criterion and feed item levels.
-      expandedTextAd.finalMobileUrls = new string[] {
+        // Specify a list of final mobile URLs. This field cannot be set if URL
+        // field is set, or finalUrls is unset. This may be specified at ad,
+        // criterion and feed item levels.
+        expandedTextAd.finalMobileUrls = new string[] {
         "http://mobile.example.com/cruise/space/",
         "http://mobile.example.com/locations/mars/"
       };
 
-      AdGroupAd adGroupAd = new AdGroupAd();
-      adGroupAd.adGroupId = adGroupId;
-      adGroupAd.ad = expandedTextAd;
+        AdGroupAd adGroupAd = new AdGroupAd();
+        adGroupAd.adGroupId = adGroupId;
+        adGroupAd.ad = expandedTextAd;
 
-      // Optional: Set the status.
-      adGroupAd.status = AdGroupAdStatus.PAUSED;
+        // Optional: Set the status.
+        adGroupAd.status = AdGroupAdStatus.PAUSED;
 
-      // Create the operation.
-      AdGroupAdOperation operation = new AdGroupAdOperation();
-      operation.@operator = Operator.ADD;
-      operation.operand = adGroupAd;
+        // Create the operation.
+        AdGroupAdOperation operation = new AdGroupAdOperation();
+        operation.@operator = Operator.ADD;
+        operation.operand = adGroupAd;
 
-      AdGroupAdReturnValue retVal = null;
+        AdGroupAdReturnValue retVal = null;
 
-      try {
-        // Create the ads.
-        retVal = service.mutate(new AdGroupAdOperation[] { operation });
+        try {
+          // Create the ads.
+          retVal = adGroupAdService.mutate(new AdGroupAdOperation[] { operation });
 
-        // Display the results.
-        if (retVal != null && retVal.value != null) {
-          ExpandedTextAd newExpandedTextAd = retVal.value[0].ad as ExpandedTextAd;
+          // Display the results.
+          if (retVal != null && retVal.value != null) {
+            ExpandedTextAd newExpandedTextAd = retVal.value[0].ad as ExpandedTextAd;
 
-          Console.WriteLine("Expanded text ad with ID '{0}' and headline '{1} - {2}' was added.",
-              newExpandedTextAd.id, newExpandedTextAd.headlinePart1,
-              newExpandedTextAd.headlinePart2);
+            Console.WriteLine("Expanded text ad with ID '{0}' and headline '{1} - {2}' was added.",
+                newExpandedTextAd.id, newExpandedTextAd.headlinePart1,
+                newExpandedTextAd.headlinePart2);
 
-          Console.WriteLine("Upgraded URL properties:");
+            Console.WriteLine("Upgraded URL properties:");
 
-          Console.WriteLine("  Final URLs: {0}", string.Join(", ", newExpandedTextAd.finalUrls));
-          Console.WriteLine("  Final Mobile URLs: {0}",
-              string.Join(", ", newExpandedTextAd.finalMobileUrls));
-          Console.WriteLine("  Tracking URL template: {0}", newExpandedTextAd.trackingUrlTemplate);
+            Console.WriteLine("  Final URLs: {0}", string.Join(", ", newExpandedTextAd.finalUrls));
+            Console.WriteLine("  Final Mobile URLs: {0}",
+                string.Join(", ", newExpandedTextAd.finalMobileUrls));
+            Console.WriteLine("  Tracking URL template: {0}",
+                newExpandedTextAd.trackingUrlTemplate);
 
-          List<string> parameters = new List<string>();
-          foreach (CustomParameter customParam in
-              newExpandedTextAd.urlCustomParameters.parameters) {
-            parameters.Add(string.Format("{0}={1}", customParam.key, customParam.value));
+            List<string> parameters = new List<string>();
+            foreach (CustomParameter customParam in
+                newExpandedTextAd.urlCustomParameters.parameters) {
+              parameters.Add(string.Format("{0}={1}", customParam.key, customParam.value));
+            }
+            Console.WriteLine("  Custom parameters: {0}", string.Join(", ", parameters.ToArray()));
+          } else {
+            Console.WriteLine("No expanded text ads were created.");
           }
-          Console.WriteLine("  Custom parameters: {0}", string.Join(", ", parameters.ToArray()));
-        } else {
-          Console.WriteLine("No expanded text ads were created.");
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create expanded text ad.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to create expanded text ad.", e);
       }
     }
   }

@@ -15,17 +15,15 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201705
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
+
   ''' <summary>
   ''' This code example illustrates how to update an ad group, setting its
   ''' status to 'PAUSED'. To create an ad group, run AddAdGroup.vb.
   ''' </summary>
   Public Class UpdateAdGroup
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -37,7 +35,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -47,7 +45,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example illustrates how to update an ad group, setting its status " & _
+        Return "This code example illustrates how to update an ad group, setting its status " &
             "to 'PAUSED'. To create an ad group, run AddAdGroup.vb"
       End Get
     End Property
@@ -58,36 +56,39 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <param name="user">The AdWords user.</param>
     ''' <param name="adGroupId">Id of the ad group to be updated.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-      ' Get the AdGroupService.
-      Dim adGroupService As AdGroupService = CType(user.GetService( _
+      Using adGroupService As AdGroupService = CType(user.GetService(
           AdWordsService.v201705.AdGroupService), AdGroupService)
 
-      ' Create the ad group.
-      Dim adGroup As New AdGroup
-      adGroup.status = AdGroupStatus.PAUSED
-      adGroup.id = adGroupId
+        ' Create the ad group.
+        Dim adGroup As New AdGroup
+        adGroup.status = AdGroupStatus.PAUSED
+        adGroup.id = adGroupId
 
-      ' Create the operation.
-      Dim operation As New AdGroupOperation
-      operation.operator = [Operator].SET
-      operation.operand = adGroup
+        ' Create the operation.
+        Dim operation As New AdGroupOperation
+        operation.operator = [Operator].SET
+        operation.operand = adGroup
 
-      Try
-        ' Update the ad group.
-        Dim retVal As AdGroupReturnValue = adGroupService.mutate(New AdGroupOperation() {operation})
+        Try
+          ' Update the ad group.
+          Dim retVal As AdGroupReturnValue = adGroupService.mutate(
+              New AdGroupOperation() {operation})
 
-        ' Display the results.
-        If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
-            (retVal.value.Length > 0)) Then
-          Dim pausedAdGroup As AdGroup = retVal.value(0)
-          Console.WriteLine("Ad group with id = '{0}' was successfully updated.", _
-              pausedAdGroup.id)
-        Else
-          Console.WriteLine("No ad groups were updated.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to update ad groups.", e)
-      End Try
+          ' Display the results.
+          If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso
+              (retVal.value.Length > 0)) Then
+            Dim pausedAdGroup As AdGroup = retVal.value(0)
+            Console.WriteLine("Ad group with id = '{0}' was successfully updated.",
+                pausedAdGroup.id)
+          Else
+            Console.WriteLine("No ad groups were updated.")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to update ad groups.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace

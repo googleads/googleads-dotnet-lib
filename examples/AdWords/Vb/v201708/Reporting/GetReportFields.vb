@@ -15,16 +15,14 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201708
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
+
   ''' <summary>
   ''' This code example gets report fields.
   ''' </summary>
   Public Class GetReportFields
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -33,12 +31,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
       Dim codeExample As New GetReportFields
       Console.WriteLine(codeExample.Description)
       Try
-        Dim reportType As ReportDefinitionReportType = CType( _
-            [Enum].Parse(GetType(ReportDefinitionReportType), "INSERT_REPORT_TYPE_HERE"),  _
+        Dim reportType As ReportDefinitionReportType = CType(
+            [Enum].Parse(GetType(ReportDefinitionReportType), "INSERT_REPORT_TYPE_HERE"),
             ReportDefinitionReportType)
         codeExample.Run(New AdWordsUser, reportType)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -58,37 +56,39 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="user">The AdWords user.</param>
     ''' <param name="reportType">The report type to be run.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal reportType As ReportDefinitionReportType)
-      ' Get the ReportDefinitionService.
-      Dim reportDefinitionService As ReportDefinitionService = CType(user.GetService( _
+      Using reportDefinitionService As ReportDefinitionService = CType(user.GetService(
           AdWordsService.v201708.ReportDefinitionService), ReportDefinitionService)
 
-      ' The type of the report to get fields for.
-      ' E.g.: KEYWORDS_PERFORMANCE_REPORT
+        ' The type of the report to get fields for.
+        ' E.g.: KEYWORDS_PERFORMANCE_REPORT
 
-      Try
-        ' Get the report fields.
-        Dim reportDefinitionFields As ReportDefinitionField() = _
-            reportDefinitionService.getReportFields(reportType)
+        Try
+          ' Get the report fields.
+          Dim reportDefinitionFields As ReportDefinitionField() =
+              reportDefinitionService.getReportFields(reportType)
 
-        If ((Not reportDefinitionFields Is Nothing) AndAlso _
+          If ((Not reportDefinitionFields Is Nothing) AndAlso
             (reportDefinitionFields.Length > 0)) Then
-          ' Display report fields.
-          Console.WriteLine("The report type '{0}' contains the following fields:", reportType)
+            ' Display report fields.
+            Console.WriteLine("The report type '{0}' contains the following fields:", reportType)
 
-          For Each reportDefinitionField As ReportDefinitionField In reportDefinitionFields
-            Console.Write("- {0} ({1})", reportDefinitionField.fieldName, _
-                reportDefinitionField.fieldType)
-            If (Not reportDefinitionField.enumValues Is Nothing) Then
-              Console.Write(" := [{0}]", String.Join(", ", reportDefinitionField.enumValues))
-            End If
-            Console.WriteLine()
-          Next
-        Else
-          Console.WriteLine("This report type has no fields.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to retrieve fields for report type.", e)
-      End Try
+            For Each reportDefinitionField As ReportDefinitionField In reportDefinitionFields
+              Console.Write("- {0} ({1})", reportDefinitionField.fieldName,
+                  reportDefinitionField.fieldType)
+              If (Not reportDefinitionField.enumValues Is Nothing) Then
+                Console.Write(" := [{0}]", String.Join(", ", reportDefinitionField.enumValues))
+              End If
+              Console.WriteLine()
+            Next
+          Else
+            Console.WriteLine("This report type has no fields.")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to retrieve fields for report type.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace

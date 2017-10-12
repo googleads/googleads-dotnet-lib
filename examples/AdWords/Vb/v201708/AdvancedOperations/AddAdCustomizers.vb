@@ -15,14 +15,11 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201708
 
-Imports System
-Imports System.Collections.Generic
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
 
   ''' <summary>
   ''' This code example adds an ad customizer feed. Then it adds an ad in two
-  ''' different adgroups that uses the feed to populate dynamic data.
+  ''' different ad groups that uses the feed to populate dynamic data.
   ''' </summary>
   Public Class AddAdCustomizers
     Inherits ExampleBase
@@ -40,7 +37,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
         Dim feedName As String = "INSERT_FEED_NAME_HERE"
         codeExample.Run(New AdWordsUser(), adGroupId1, adGroupId2, feedName)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -50,8 +47,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example adds an ad customizer feed. Then it adds an ad in two " & _
-            "different adgroups that uses the feed to populate dynamic data."
+        Return "This code example adds an ad customizer feed. Then it adds an ad in two " &
+            "different ad groups that uses the feed to populate dynamic data."
       End Get
     End Property
 
@@ -64,16 +61,21 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="adGroupId2">Id of the second adgroup to which ads with ad
     ''' customizers are added.</param>
     ''' <param name="feedName">Name of the feed to be created.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId1 As Long, ByVal adGroupId2 As Long, _
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId1 As Long, ByVal adGroupId2 As Long,
                    ByVal feedName As String)
-      ' Create a customizer feed. One feed per account can be used for all ads.
-      Dim adCustomizerFeed As AdCustomizerFeed = CreateCustomizerFeed(user, feedName)
+      Try
+        ' Create a customizer feed. One feed per account can be used for all ads.
+        Dim adCustomizerFeed As AdCustomizerFeed = CreateCustomizerFeed(user, feedName)
 
-      ' Add feed items containing the values we'd like to place in ads.
-      CreateCustomizerFeedItems(user, New Long() {adGroupId1, adGroupId2}, adCustomizerFeed)
+        ' Add feed items containing the values we'd like to place in ads.
+        CreateCustomizerFeedItems(user, New Long() {adGroupId1, adGroupId2}, adCustomizerFeed)
 
-      ' All set! We can now create ads with customizations.
-      CreateAdsWithCustomizations(user, New Long() {adGroupId1, adGroupId2}, feedName)
+        ' All set! We can now create ads with customizations.
+        CreateAdsWithCustomizations(user, New Long() {adGroupId1, adGroupId2}, feedName)
+      Catch e As Exception
+        Throw New System.ApplicationException("Failed to add ad customizers modifiers to " +
+            "ad group.", e)
+      End Try
     End Sub
 
     ''' <summary>
@@ -82,40 +84,41 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="user">The AdWords user.</param>
     ''' <param name="feedName">Name of the feed to be created.</param>
     ''' <returns>An ad customizer feed.</returns>
-    Private Shared Function CreateCustomizerFeed(ByVal user As AdWordsUser, _
+    Private Shared Function CreateCustomizerFeed(ByVal user As AdWordsUser,
         ByVal feedName As String) As AdCustomizerFeed
-      Dim adCustomizerFeedService As AdCustomizerFeedService = DirectCast(user.GetService( _
+      Using adCustomizerFeedService As AdCustomizerFeedService = DirectCast(user.GetService(
           AdWordsService.v201708.AdCustomizerFeedService), AdCustomizerFeedService)
 
-      Dim feed As New AdCustomizerFeed()
-      feed.feedName = feedName
+        Dim feed As New AdCustomizerFeed()
+        feed.feedName = feedName
 
-      Dim attribute1 As New AdCustomizerFeedAttribute
-      attribute1.name = "Name"
-      attribute1.type = AdCustomizerFeedAttributeType.STRING
+        Dim attribute1 As New AdCustomizerFeedAttribute
+        attribute1.name = "Name"
+        attribute1.type = AdCustomizerFeedAttributeType.STRING
 
-      Dim attribute2 As New AdCustomizerFeedAttribute
-      attribute2.name = "Price"
-      attribute2.type = AdCustomizerFeedAttributeType.PRICE
+        Dim attribute2 As New AdCustomizerFeedAttribute
+        attribute2.name = "Price"
+        attribute2.type = AdCustomizerFeedAttributeType.PRICE
 
-      Dim attribute3 As New AdCustomizerFeedAttribute
-      attribute3.name = "Date"
-      attribute3.type = AdCustomizerFeedAttributeType.DATE_TIME
+        Dim attribute3 As New AdCustomizerFeedAttribute
+        attribute3.name = "Date"
+        attribute3.type = AdCustomizerFeedAttributeType.DATE_TIME
 
-      feed.feedAttributes = New AdCustomizerFeedAttribute() { _
-        attribute1, attribute2, attribute3 _
+        feed.feedAttributes = New AdCustomizerFeedAttribute() {
+        attribute1, attribute2, attribute3
       }
 
-      Dim feedOperation As New AdCustomizerFeedOperation()
-      feedOperation.operand = feed
-      feedOperation.operator = [Operator].ADD
+        Dim feedOperation As New AdCustomizerFeedOperation()
+        feedOperation.operand = feed
+        feedOperation.operator = [Operator].ADD
 
-      Dim addedFeed As AdCustomizerFeed = adCustomizerFeedService.mutate( _
+        Dim addedFeed As AdCustomizerFeed = adCustomizerFeedService.mutate(
           New AdCustomizerFeedOperation() {feedOperation}).value(0)
 
-      Console.WriteLine("Created ad customizer feed with ID = {0} and name = '{1}'.", _
+        Console.WriteLine("Created ad customizer feed with ID = {0} and name = '{1}'.",
                         addedFeed.feedId, addedFeed.feedName)
-      Return addedFeed
+        Return addedFeed
+      End Using
     End Function
 
     ''' <summary>
@@ -126,28 +129,28 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="adGroupIds">IDs of adgroups to which ad customizations are
     ''' made.</param>
     ''' <param name="adCustomizerFeed">The ad customizer feed.</param>
-    Private Shared Sub CreateCustomizerFeedItems(ByVal user As AdWordsUser, _
-                                                 ByVal adGroupIds As Long(), _
+    Private Shared Sub CreateCustomizerFeedItems(ByVal user As AdWordsUser,
+                                                 ByVal adGroupIds As Long(),
                                                  ByVal adCustomizerFeed As AdCustomizerFeed)
-      ' Get the FeedItemService.
-      Dim feedItemService As FeedItemService = CType(user.GetService( _
+      Using feedItemService As FeedItemService = CType(user.GetService(
           AdWordsService.v201708.FeedItemService), FeedItemService)
 
-      Dim feedItemOperations As New List(Of FeedItemOperation)
+        Dim feedItemOperations As New List(Of FeedItemOperation)
 
-      Dim marsDate As New DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)
-      feedItemOperations.Add(CreateFeedItemAddOperation(adCustomizerFeed, "Mars", "$1234.56",
+        Dim marsDate As New DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)
+        feedItemOperations.Add(CreateFeedItemAddOperation(adCustomizerFeed, "Mars", "$1234.56",
           marsDate.ToString("yyyyMMdd HHmmss"), adGroupIds(0)))
 
-      Dim venusDate As New DateTime(DateTime.Now.Year, DateTime.Now.Month, 15)
-      feedItemOperations.Add(CreateFeedItemAddOperation(adCustomizerFeed, "Venus", "$1450.00",
+        Dim venusDate As New DateTime(DateTime.Now.Year, DateTime.Now.Month, 15)
+        feedItemOperations.Add(CreateFeedItemAddOperation(adCustomizerFeed, "Venus", "$1450.00",
           venusDate.ToString("yyyyMMdd HHmmss"), adGroupIds(1)))
-      Dim feedItemReturnValue As FeedItemReturnValue = feedItemService.mutate( _
+        Dim feedItemReturnValue As FeedItemReturnValue = feedItemService.mutate(
           feedItemOperations.ToArray)
 
-      For Each addedFeedItem As FeedItem In feedItemReturnValue.value
-        Console.WriteLine("Added feed item with ID {0}", addedFeedItem.feedItemId)
-      Next
+        For Each addedFeedItem As FeedItem In feedItemReturnValue.value
+          Console.WriteLine("Added feed item with ID {0}", addedFeedItem.feedItemId)
+        Next
+      End Using
     End Sub
 
     ''' <summary>
@@ -165,8 +168,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="adGroupId">The ID of the ad group to target with the
     ''' FeedItem.</param>
     ''' <returns>A new FeedItemOperation for adding a FeedItem.</returns>
-    Private Shared Function CreateFeedItemAddOperation(ByVal adCustomizerFeed As  _
-        AdCustomizerFeed, ByVal nameValue As String, ByVal priceValue As String, _
+    Private Shared Function CreateFeedItemAddOperation(ByVal adCustomizerFeed As _
+        AdCustomizerFeed, ByVal nameValue As String, ByVal priceValue As String,
         ByVal dateValue As String, ByVal adGroupId As Long) As FeedItemOperation
       Dim feedItem As New FeedItem
       feedItem.feedId = adCustomizerFeed.feedId
@@ -209,42 +212,44 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="adGroupIds">IDs of the ad groups to which customized ads
     ''' are added.</param>
     ''' <param name="feedName">Name of the feed to use.</param>
-    Private Shared Sub CreateAdsWithCustomizations(ByVal user As AdWordsUser, _
-                                                   ByVal adGroupIds As Long(), _
+    Private Shared Sub CreateAdsWithCustomizations(ByVal user As AdWordsUser,
+                                                   ByVal adGroupIds As Long(),
                                                    ByVal feedName As String)
-      ' Get the AdGroupAdService.
-      Dim adGroupAdService As AdGroupAdService = CType(user.GetService( _
+      Using adGroupAdService As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201708.AdGroupAdService), AdGroupAdService)
 
-      Dim expandedTextAd As New ExpandedTextAd
-      expandedTextAd.headlinePart1 = String.Format("Luxury Cruise to {{={0}.Name}}", feedName)
-      expandedTextAd.headlinePart2 = String.Format("Only {{={0}.Price}}", feedName)
-      expandedTextAd.description = String.Format("Offer ends in {{=countdown({0}.Date)}}!", _
+        Dim expandedTextAd As New ExpandedTextAd
+        expandedTextAd.headlinePart1 = String.Format("Luxury Cruise to {{={0}.Name}}", feedName)
+        expandedTextAd.headlinePart2 = String.Format("Only {{={0}.Price}}", feedName)
+        expandedTextAd.description = String.Format("Offer ends in {{=countdown({0}.Date)}}!",
                                                  feedName)
-      expandedTextAd.finalUrls = New String() {"http://www.example.com"}
+        expandedTextAd.finalUrls = New String() {"http://www.example.com"}
 
-      ' We add the same ad to both ad groups. When they serve, they will show
-      ' different values, since they match different feed items.
-      Dim adGroupAdOperations As New List(Of AdGroupAdOperation)
-      For Each adGroupId As Long In adGroupIds
-        Dim adGroupAd As New AdGroupAd
-        adGroupAd.adGroupId = adGroupId
-        adGroupAd.ad = expandedTextAd
+        ' We add the same ad to both ad groups. When they serve, they will show
+        ' different values, since they match different feed items.
+        Dim adGroupAdOperations As New List(Of AdGroupAdOperation)
+        For Each adGroupId As Long In adGroupIds
+          Dim adGroupAd As New AdGroupAd
+          adGroupAd.adGroupId = adGroupId
+          adGroupAd.ad = expandedTextAd
 
-        Dim adGroupAdOperation As New AdGroupAdOperation
-        adGroupAdOperation.operand = adGroupAd
-        adGroupAdOperation.operator = [Operator].ADD
+          Dim adGroupAdOperation As New AdGroupAdOperation
+          adGroupAdOperation.operand = adGroupAd
+          adGroupAdOperation.operator = [Operator].ADD
 
-        adGroupAdOperations.Add(adGroupAdOperation)
-      Next
+          adGroupAdOperations.Add(adGroupAdOperation)
+        Next
 
-      Dim adGroupAdReturnValue As AdGroupAdReturnValue = adGroupAdService.mutate( _
+        Dim adGroupAdReturnValue As AdGroupAdReturnValue = adGroupAdService.mutate(
           adGroupAdOperations.ToArray)
 
-      For Each addedAd As AdGroupAd In adGroupAdReturnValue.value
-        Console.WriteLine("Created an ad with ID {0}, type '{1}' and status '{2}'.", _
+        For Each addedAd As AdGroupAd In adGroupAdReturnValue.value
+          Console.WriteLine("Created an ad with ID {0}, type '{1}' and status '{2}'.",
             addedAd.ad.id, addedAd.ad.AdType, addedAd.status)
-      Next
+        Next
+      End Using
     End Sub
+
   End Class
+
 End Namespace

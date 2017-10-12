@@ -58,60 +58,60 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="adGroupId">Id of the ad group from which expanded text ads
     /// are retrieved.</param>
     public void Run(AdWordsUser user, long adGroupId) {
-      // Get the AdGroupAdService.
-      AdGroupAdService service =
-          (AdGroupAdService) user.GetService(AdWordsService.v201702.AdGroupAdService);
+      using (AdGroupAdService adGroupAdService =
+          (AdGroupAdService) user.GetService(AdWordsService.v201702.AdGroupAdService)) {
 
-      // Create a selector.
-      Selector selector = new Selector() {
-        fields = new string[] {
-          ExpandedTextAd.Fields.Id, AdGroupAd.Fields.Status, ExpandedTextAd.Fields.HeadlinePart1,
-          ExpandedTextAd.Fields.HeadlinePart2, ExpandedTextAd.Fields.Description
-        },
-        ordering = new OrderBy[] { OrderBy.Asc(ExpandedTextAd.Fields.Id) },
-        predicates = new Predicate[] {
-          // Restrict the fetch to only the selected ad group id.
-          Predicate.Equals(AdGroupAd.Fields.AdGroupId, adGroupId),
+        // Create a selector.
+        Selector selector = new Selector() {
+          fields = new string[] {
+            ExpandedTextAd.Fields.Id, AdGroupAd.Fields.Status, ExpandedTextAd.Fields.HeadlinePart1,
+            ExpandedTextAd.Fields.HeadlinePart2, ExpandedTextAd.Fields.Description
+          },
+          ordering = new OrderBy[] { OrderBy.Asc(ExpandedTextAd.Fields.Id) },
+          predicates = new Predicate[] {
+            // Restrict the fetch to only the selected ad group id.
+            Predicate.Equals(AdGroupAd.Fields.AdGroupId, adGroupId),
 
-          // Retrieve only expanded text ads.
-          Predicate.Equals("AdType", "EXPANDED_TEXT_AD"),
+            // Retrieve only expanded text ads.
+            Predicate.Equals("AdType", "EXPANDED_TEXT_AD"),
 
-          // By default disabled ads aren't returned by the selector. To return
-          // them include the DISABLED status in the statuses field.
-          Predicate.In(AdGroupAd.Fields.Status, new string[] {
-            AdGroupAdStatus.ENABLED.ToString(),
-            AdGroupAdStatus.PAUSED.ToString(),
-            AdGroupAdStatus.DISABLED.ToString()
-          })
-        },
-        paging = Paging.Default
-      };
+            // By default disabled ads aren't returned by the selector. To return
+            // them include the DISABLED status in the statuses field.
+            Predicate.In(AdGroupAd.Fields.Status, new string[] {
+              AdGroupAdStatus.ENABLED.ToString(),
+              AdGroupAdStatus.PAUSED.ToString(),
+              AdGroupAdStatus.DISABLED.ToString()
+            })
+          },
+          paging = Paging.Default
+        };
 
-      AdGroupAdPage page = new AdGroupAdPage();
+        AdGroupAdPage page = new AdGroupAdPage();
 
-      try {
-        do {
-          // Get the expanded text ads.
-          page = service.get(selector);
+        try {
+          do {
+            // Get the expanded text ads.
+            page = adGroupAdService.get(selector);
 
-          // Display the results.
-          if (page != null && page.entries != null) {
-            int i = selector.paging.startIndex;
+            // Display the results.
+            if (page != null && page.entries != null) {
+              int i = selector.paging.startIndex;
 
-            foreach (AdGroupAd adGroupAd in page.entries) {
-              ExpandedTextAd expandedTextAd = (ExpandedTextAd) adGroupAd.ad;
-              Console.WriteLine("{0} : Expanded text ad with ID '{1}', headline '{2} - {3}' " +
-                  "and description '{4} was found.", i + 1, expandedTextAd.id,
-                  expandedTextAd.headlinePart1, expandedTextAd.headlinePart2,
-                  expandedTextAd.description);
-              i++;
+              foreach (AdGroupAd adGroupAd in page.entries) {
+                ExpandedTextAd expandedTextAd = (ExpandedTextAd) adGroupAd.ad;
+                Console.WriteLine("{0} : Expanded text ad with ID '{1}', headline '{2} - {3}' " +
+                    "and description '{4} was found.", i + 1, expandedTextAd.id,
+                    expandedTextAd.headlinePart1, expandedTextAd.headlinePart2,
+                    expandedTextAd.description);
+                i++;
+              }
             }
-          }
-          selector.paging.IncreaseOffset();
-        } while (selector.paging.startIndex < page.totalNumEntries);
-        Console.WriteLine("Number of expanded text ads found: {0}", page.totalNumEntries);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to get expanded text ads", e);
+            selector.paging.IncreaseOffset();
+          } while (selector.paging.startIndex < page.totalNumEntries);
+          Console.WriteLine("Number of expanded text ads found: {0}", page.totalNumEntries);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to get expanded text ads", e);
+        }
       }
     }
   }

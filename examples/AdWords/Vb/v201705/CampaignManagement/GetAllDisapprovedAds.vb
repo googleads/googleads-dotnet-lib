@@ -15,16 +15,14 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201705
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
+
   ''' <summary>
   ''' This code example retrieves all the disapproved ads in a given campaign.
   ''' </summary>
   Public Class GetAllDisapprovedAds
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -57,54 +55,56 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <param name="campaignId">Id of the campaign for which disapproved ads
     ''' are retrieved.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
-      ' Get the AdGroupAdService.
-      Dim service As AdGroupAdService = CType(user.GetService(
+      Using service As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201705.AdGroupAdService), AdGroupAdService)
 
-      ' Create the selector.
-      Dim selector As New Selector
-      selector.fields = New String() {
-        Ad.Fields.Id, AdGroupAd.Fields.PolicySummary
-      }
+        ' Create the selector.
+        Dim selector As New Selector
+        selector.fields = New String() {
+          Ad.Fields.Id, AdGroupAd.Fields.PolicySummary
+        }
 
-      ' Set the filters.
-      selector.predicates = New Predicate() {
-        Predicate.Equals(AdGroup.Fields.CampaignId, campaignId),
-        Predicate.Equals(AdGroupAdPolicySummary.Fields.CombinedApprovalStatus,
-             PolicyApprovalStatus.DISAPPROVED.ToString())
-      }
+        ' Set the filters.
+        selector.predicates = New Predicate() {
+          Predicate.Equals(AdGroup.Fields.CampaignId, campaignId),
+          Predicate.Equals(AdGroupAdPolicySummary.Fields.CombinedApprovalStatus,
+              PolicyApprovalStatus.DISAPPROVED.ToString())
+        }
 
-      ' Set the selector paging.
-      selector.paging = Paging.Default
+        ' Set the selector paging.
+        selector.paging = Paging.Default
 
-      Dim page As New AdGroupAdPage
-      Dim disapprovedAdsCount As Integer = 0
+        Dim page As New AdGroupAdPage
+        Dim disapprovedAdsCount As Integer = 0
 
-      Try
-        Do
-          ' Get the disapproved ads.
-          page = service.get(selector)
+        Try
+          Do
+            ' Get the disapproved ads.
+            page = service.get(selector)
 
-          ' Display the results.
-          If Not (page Is Nothing) AndAlso Not (page.entries Is Nothing) Then
-            For Each AdGroupAd As AdGroupAd In page.entries
-              Dim policySummary As AdGroupAdPolicySummary = AdGroupAd.policySummary
-              disapprovedAdsCount += 1
-              Console.WriteLine("Ad with ID {0} and type '{1}' was disapproved with the " +
-                "following policy topic entries: ", AdGroupAd.ad.id, AdGroupAd.ad.AdType)
-              For Each PolicyTopicEntry As PolicyTopicEntry In policySummary.policyTopicEntries
-                Console.WriteLine("  topic id: {0}, topic name: '{1}'",
-                  PolicyTopicEntry.policyTopicId, PolicyTopicEntry.policyTopicName)
+            ' Display the results.
+            If Not (page Is Nothing) AndAlso Not (page.entries Is Nothing) Then
+              For Each AdGroupAd As AdGroupAd In page.entries
+                Dim policySummary As AdGroupAdPolicySummary = AdGroupAd.policySummary
+                disapprovedAdsCount += 1
+                Console.WriteLine("Ad with ID {0} and type '{1}' was disapproved with the " +
+                    "following policy topic entries: ", AdGroupAd.ad.id, AdGroupAd.ad.AdType)
+                For Each PolicyTopicEntry As PolicyTopicEntry In policySummary.policyTopicEntries
+                  Console.WriteLine("  topic id: {0}, topic name: '{1}'",
+                      PolicyTopicEntry.policyTopicId, PolicyTopicEntry.policyTopicName)
+                Next
               Next
-            Next
-          End If
+            End If
 
-          selector.paging.IncreaseOffset()
-        Loop While selector.paging.startIndex < page.totalNumEntries
-        Console.WriteLine("Number of disapproved ads found: {0}", disapprovedAdsCount)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to get disapproved ads.", e)
-      End Try
+            selector.paging.IncreaseOffset()
+          Loop While selector.paging.startIndex < page.totalNumEntries
+          Console.WriteLine("Number of disapproved ads found: {0}", disapprovedAdsCount)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to get disapproved ads.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace

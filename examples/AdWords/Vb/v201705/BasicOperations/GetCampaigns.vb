@@ -15,17 +15,15 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201705
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
+
   ''' <summary>
   ''' This code example lists all campaigns. To add a campaign, run
   ''' AddCampaign.vb.
   ''' </summary>
   Public Class GetCampaigns
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -36,7 +34,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
       Try
         codeExample.Run(New AdWordsUser)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -55,39 +53,43 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
-      ' Get the CampaignService.
-      Dim campaignService As CampaignService = CType(user.GetService( _
+      ' [START get_campaigns] MOE:strip_line
+      Using campaignService As CampaignService = CType(user.GetService(
           AdWordsService.v201705.CampaignService), CampaignService)
 
-      ' Create the selector.
-      Dim selector As New Selector
-      selector.fields = New String() {
-        Campaign.Fields.Id, Campaign.Fields.Name, Campaign.Fields.Status
-      }
-      selector.paging = Paging.Default
+        ' Create the selector.
+        Dim selector As New Selector
+        selector.fields = New String() {
+          Campaign.Fields.Id, Campaign.Fields.Name, Campaign.Fields.Status
+        }
+        selector.paging = Paging.Default
 
-      Dim page As New CampaignPage
+        Dim page As New CampaignPage
 
-      Try
-        Do
-          ' Get the campaigns.
-          page = campaignService.get(selector)
+        Try
+          Do
+            ' Get the campaigns.
+            page = campaignService.get(selector)
 
-          ' Display the results.
-          If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = selector.paging.startIndex
-            For Each campaign As Campaign In page.entries
-              Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = " & _
+            ' Display the results.
+            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+              Dim i As Integer = selector.paging.startIndex
+              For Each campaign As Campaign In page.entries
+                Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = " &
                   "'{3}' was found.", i + 1, campaign.id, campaign.name, campaign.status)
-              i += 1
-            Next
-          End If
-          selector.paging.IncreaseOffset()
-        Loop While (selector.paging.startIndex < page.totalNumEntries)
-        Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to retrieve campaign(s).", e)
-      End Try
+                i += 1
+              Next
+            End If
+            selector.paging.IncreaseOffset()
+          Loop While (selector.paging.startIndex < page.totalNumEntries)
+          Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to retrieve campaign(s).", e)
+        End Try
+        ' [END get_campaigns] MOE:strip_line
+      End Using
     End Sub
+
   End Class
+
 End Namespace

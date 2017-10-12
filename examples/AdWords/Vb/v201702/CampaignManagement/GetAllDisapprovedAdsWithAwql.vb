@@ -15,11 +15,8 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201702
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
+
   ''' <summary>
   ''' This code example retrieves all the disapproved ads in a given campaign
   ''' using an AWQL query. See
@@ -28,6 +25,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
   ''' </summary>
   Public Class GetAllDisapprovedAdsWithAwql
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -39,7 +37,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
         Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
         codeExample.Run(New AdWordsUser, campaignId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -49,8 +47,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example retrieves all the disapproved ads in a given campaign using " & _
-            "an AWQL query. See https://developers.google.com/adwords/api/docs/guides/awql for " & _
+        Return "This code example retrieves all the disapproved ads in a given campaign using " &
+            "an AWQL query. See https://developers.google.com/adwords/api/docs/guides/awql for " &
             "AWQL documentation."
       End Get
     End Property
@@ -62,47 +60,49 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="campaignId">Id of the campaign for which disapproved ads
     ''' are retrieved.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
-      ' Get the AdGroupAdService.
-      Dim service As AdGroupAdService = CType(user.GetService( _
+      Using service As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201702.AdGroupAdService), AdGroupAdService)
 
-      ' Get all the disapproved ads for this campaign.
-      Dim query As String = String.Format("SELECT Id, AdGroupAdDisapprovalReasons WHERE " & _
-          "CampaignId = {0} AND AdGroupCreativeApprovalStatus = DISAPPROVED ORDER BY Id", _
-          campaignId)
+        ' Get all the disapproved ads for this campaign.
+        Dim query As String = String.Format("SELECT Id, AdGroupAdDisapprovalReasons WHERE " &
+            "CampaignId = {0} AND AdGroupCreativeApprovalStatus = DISAPPROVED ORDER BY Id",
+            campaignId)
 
-      Dim offset As Long = 0
-      Dim pageSize As Long = 500
+        Dim offset As Long = 0
+        Dim pageSize As Long = 500
 
-      Dim page As New AdGroupAdPage()
+        Dim page As New AdGroupAdPage()
 
-      Try
-        Do
-          Dim queryWithPaging As String = String.Format("{0} LIMIT {1}, {2}", query, offset, _
-              pageSize)
+        Try
+          Do
+            Dim queryWithPaging As String = String.Format("{0} LIMIT {1}, {2}", query, offset,
+                pageSize)
 
-          ' Get the disapproved ads.
-          page = service.query(queryWithPaging)
+            ' Get the disapproved ads.
+            page = service.query(queryWithPaging)
 
-          ' Display the results.
-          If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = CInt(offset)
-            For Each adGroupAd As AdGroupAd In page.entries
-              Console.WriteLine("{0}) Ad id {1} has been disapproved for the following " & _
-                  "reason(s):", i, adGroupAd.ad.id)
-              For Each reason As String In adGroupAd.disapprovalReasons
-                Console.WriteLine("    {0}", reason)
+            ' Display the results.
+            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+              Dim i As Integer = CInt(offset)
+              For Each adGroupAd As AdGroupAd In page.entries
+                Console.WriteLine("{0}) Ad id {1} has been disapproved for the following " &
+                    "reason(s):", i, adGroupAd.ad.id)
+                For Each reason As String In adGroupAd.disapprovalReasons
+                  Console.WriteLine("    {0}", reason)
+                Next
+                i = i + 1
               Next
-              i = i + 1
-            Next
-          End If
+            End If
 
-          offset = offset + pageSize
-        Loop While (offset < page.totalNumEntries)
-        Console.WriteLine("Number of disapproved ads found: {0}", page.totalNumEntries)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to get disapproved ads.", e)
-      End Try
+            offset = offset + pageSize
+          Loop While (offset < page.totalNumEntries)
+          Console.WriteLine("Number of disapproved ads found: {0}", page.totalNumEntries)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to get disapproved ads.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace

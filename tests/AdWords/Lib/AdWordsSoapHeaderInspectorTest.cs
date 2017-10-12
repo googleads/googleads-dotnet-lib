@@ -305,5 +305,15 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
       Assert.AreEqual(MessageState.Created, request.State);
       Assert.AreEqual(MessageState.Created, response.State);
     }
+
+    /// <summary>
+    /// Tests that a response with no header does not cause an exception.
+    /// </summary>
+    [Test]
+    public void TestEmptyResponseHeader() {
+      AdWordsSoapHeaderInspector inspector = new AdWordsSoapHeaderInspector();
+      this.response.Headers.Clear();
+      Assert.DoesNotThrow(() => inspector.AfterReceiveReply(ref this.response, null));
+    }
   }
 }

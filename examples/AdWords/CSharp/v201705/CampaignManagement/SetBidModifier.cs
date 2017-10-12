@@ -16,10 +16,9 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201705;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
+
   /// <summary>
   /// This code example sets a bid modifier for the mobile platform on given
   /// campaign. The campaign must be an enhanced type of campaign. To get
@@ -27,6 +26,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
   /// SetCampaignEnhanced.cs.
   /// </summary>
   public class SetBidModifier : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -63,44 +63,45 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
     /// </param>
     /// <param name="bidModifier">The bid modifier.</param>
     public void Run(AdWordsUser user, long campaignId, double bidModifier) {
-      // Get the CampaignCriterionService.
-      CampaignCriterionService campaignCriterionService =
+      using (CampaignCriterionService campaignCriterionService =
           (CampaignCriterionService) user.GetService(
-              AdWordsService.v201705.CampaignCriterionService);
+              AdWordsService.v201705.CampaignCriterionService)) {
 
-      // Create mobile platform. The ID can be found in the documentation.
-      // https://developers.google.com/adwords/api/docs/appendix/platforms
-      Platform mobile = new Platform();
-      mobile.id = 30001;
+        // Create mobile platform. The ID can be found in the documentation.
+        // https://developers.google.com/adwords/api/docs/appendix/platforms
+        Platform mobile = new Platform();
+        mobile.id = 30001;
 
-      // Create criterion with modified bid.
-      CampaignCriterion criterion = new CampaignCriterion();
-      criterion.campaignId = campaignId;
-      criterion.criterion = mobile;
-      criterion.bidModifier = bidModifier;
+        // Create criterion with modified bid.
+        CampaignCriterion criterion = new CampaignCriterion();
+        criterion.campaignId = campaignId;
+        criterion.criterion = mobile;
+        criterion.bidModifier = bidModifier;
 
-      // Create SET operation.
-      CampaignCriterionOperation operation = new CampaignCriterionOperation();
-      operation.@operator = Operator.SET;
-      operation.operand = criterion;
+        // Create SET operation.
+        CampaignCriterionOperation operation = new CampaignCriterionOperation();
+        operation.@operator = Operator.SET;
+        operation.operand = criterion;
 
-      try {
-        // Update campaign criteria.
-        CampaignCriterionReturnValue result = campaignCriterionService.mutate(
-            new CampaignCriterionOperation[] {operation});
+        try {
+          // Update campaign criteria.
+          CampaignCriterionReturnValue result = campaignCriterionService.mutate(
+              new CampaignCriterionOperation[] { operation });
 
-        // Display campaign criteria.
-        if (result.value != null) {
-          foreach (CampaignCriterion newCriterion in result.value) {
-            Console.WriteLine("Campaign criterion with campaign id '{0}', criterion id '{1}', " +
-                "and type '{2}' was modified with bid {3:F2}.", newCriterion.campaignId,
-                newCriterion.criterion.id, newCriterion.criterion.type, newCriterion.bidModifier);
+          // Display campaign criteria.
+          if (result.value != null) {
+            foreach (CampaignCriterion newCriterion in result.value) {
+              Console.WriteLine("Campaign criterion with campaign id '{0}', criterion id '{1}', " +
+                  "and type '{2}' was modified with bid {3:F2}.", newCriterion.campaignId,
+                  newCriterion.criterion.id, newCriterion.criterion.type,
+                  newCriterion.bidModifier);
+            }
+          } else {
+            Console.WriteLine("No campaign criteria were modified.");
           }
-        } else {
-          Console.WriteLine("No campaign criteria were modified.");
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to set bid modifier for campaign.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to set bid modifier for campaign.", e);
       }
     }
   }

@@ -270,27 +270,29 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// the set of all fields which the attribute has a mapping to.</returns>
     private Dictionary<long, HashSet<long>> GetFeedMapping(AdWordsUser user, long feedId,
     long placeHolderType) {
-      FeedMappingService feedMappingService = (FeedMappingService) user.GetService(
-          AdWordsService.v201708.FeedMappingService);
-      FeedMappingPage page = feedMappingService.query(string.Format("SELECT FeedMappingId, " +
-          "AttributeFieldMappings where FeedId='{0}' and PlaceholderType={1} and Status='ENABLED'",
-          feedId, placeHolderType));
+      using (FeedMappingService feedMappingService = (FeedMappingService) user.GetService(
+          AdWordsService.v201708.FeedMappingService)) {
+        FeedMappingPage page = feedMappingService.query(string.Format("SELECT FeedMappingId, " +
+            "AttributeFieldMappings where FeedId='{0}' and PlaceholderType={1} and " +
+            "Status='ENABLED'", feedId, placeHolderType));
 
-      Dictionary<long, HashSet<long>> attributeMappings = new Dictionary<long, HashSet<long>>();
+        Dictionary<long, HashSet<long>> attributeMappings = new Dictionary<long, HashSet<long>>();
 
-      if (page.entries != null) {
-        // Normally, a feed attribute is mapped only to one field. However,
-        // you may map it to more than one field if needed.
-        foreach (FeedMapping feedMapping in page.entries) {
-          foreach (AttributeFieldMapping attributeMapping in feedMapping.attributeFieldMappings) {
-            if (!attributeMappings.ContainsKey(attributeMapping.feedAttributeId)) {
-              attributeMappings[attributeMapping.feedAttributeId] = new HashSet<long>();
+        if (page.entries != null) {
+          // Normally, a feed attribute is mapped only to one field. However,
+          // you may map it to more than one field if needed.
+          foreach (FeedMapping feedMapping in page.entries) {
+            foreach (AttributeFieldMapping attributeMapping in
+                feedMapping.attributeFieldMappings) {
+              if (!attributeMappings.ContainsKey(attributeMapping.feedAttributeId)) {
+                attributeMappings[attributeMapping.feedAttributeId] = new HashSet<long>();
+              }
+              attributeMappings[attributeMapping.feedAttributeId].Add(attributeMapping.fieldId);
             }
-            attributeMappings[attributeMapping.feedAttributeId].Add(attributeMapping.fieldId);
           }
         }
+        return attributeMappings;
       }
-      return attributeMappings;
     }
 
     /// <summary>
@@ -299,10 +301,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="user">The user for which feeds are retrieved.</param>
     /// <returns>The list of feeds.</returns>
     private Feed[] GetFeeds(AdWordsUser user) {
-      FeedService feedService = (FeedService) user.GetService(AdWordsService.v201708.FeedService);
-      FeedPage page = feedService.query("SELECT Id, Name, Attributes where " +
-          "Origin='USER' and FeedStatus='ENABLED'");
-      return page.entries;
+      using (FeedService feedService = (FeedService) user.GetService(
+          AdWordsService.v201708.FeedService)) {
+        FeedPage page = feedService.query("SELECT Id, Name, Attributes where " +
+            "Origin='USER' and FeedStatus='ENABLED'");
+        return page.entries;
+      }
     }
 
     /// <summary>
@@ -312,11 +316,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="feedId">The feed ID.</param>
     /// <returns>The list of feed items in the feed.</returns>
     private FeedItem[] GetFeedItems(AdWordsUser user, long feedId) {
-      FeedItemService feedItemService = (FeedItemService) user.GetService(
-          AdWordsService.v201708.FeedItemService);
-      FeedItemPage page = feedItemService.query(string.Format("Select FeedItemId, " +
-          "AttributeValues, Scheduling  where Status = 'ENABLED' and FeedId = '{0}'", feedId));
-      return page.entries;
+      using (FeedItemService feedItemService = (FeedItemService) user.GetService(
+          AdWordsService.v201708.FeedItemService)) {
+        FeedItemPage page = feedItemService.query(string.Format("Select FeedItemId, " +
+            "AttributeValues, Scheduling  where Status = 'ENABLED' and FeedId = '{0}'", feedId));
+        return page.entries;
+      }
     }
 
     /// <summary>
@@ -341,10 +346,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
         };
         operations.Add(operation);
       }
-      FeedItemService feedItemService = (FeedItemService) user.GetService(
-          AdWordsService.v201708.FeedItemService);
-      feedItemService.mutate(operations.ToArray());
-      return;
+      using (FeedItemService feedItemService = (FeedItemService) user.GetService(
+          AdWordsService.v201708.FeedItemService)) {
+        feedItemService.mutate(operations.ToArray());
+        return;
+      }
     }
 
     /// <summary>
@@ -394,15 +400,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
       extensionSetting.extensionSetting.platformRestrictions = platformRestrictions;
       extensionSetting.extensionType = FeedType.SITELINK;
 
-      CampaignExtensionSettingService campaignExtensionSettingService =
+      using (CampaignExtensionSettingService campaignExtensionSettingService =
           (CampaignExtensionSettingService) user.GetService(
-              AdWordsService.v201708.CampaignExtensionSettingService);
-      CampaignExtensionSettingOperation operation = new CampaignExtensionSettingOperation() {
-        operand = extensionSetting,
-        @operator = Operator.ADD
-      };
+              AdWordsService.v201708.CampaignExtensionSettingService)) {
+        CampaignExtensionSettingOperation operation = new CampaignExtensionSettingOperation() {
+          operand = extensionSetting,
+          @operator = Operator.ADD
+        };
 
-      campaignExtensionSettingService.mutate(new CampaignExtensionSettingOperation[] { operation });
+        campaignExtensionSettingService.mutate(
+            new CampaignExtensionSettingOperation[] { operation });
+      }
       return;
     }
 
@@ -413,15 +421,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="campaignFeed">The campaign feed.</param>
     /// <returns></returns>
     private CampaignFeed DeleteCampaignFeed(AdWordsUser user, CampaignFeed campaignFeed) {
-      CampaignFeedService campaignFeedService = (CampaignFeedService) user.GetService(
-          AdWordsService.v201708.CampaignFeedService);
+      using (CampaignFeedService campaignFeedService = (CampaignFeedService) user.GetService(
+          AdWordsService.v201708.CampaignFeedService)) {
 
-      CampaignFeedOperation operation = new CampaignFeedOperation() {
-        operand = campaignFeed,
-        @operator = Operator.REMOVE
-      };
+        CampaignFeedOperation operation = new CampaignFeedOperation() {
+          operand = campaignFeed,
+          @operator = Operator.REMOVE
+        };
 
-      return campaignFeedService.mutate(new CampaignFeedOperation[] { operation }).value[0];
+        CampaignFeed retval = campaignFeedService.mutate(
+            new CampaignFeedOperation[] { operation }).value[0];
+        return retval;
+      }
     }
 
     /// <summary>
@@ -436,16 +447,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
       if (campaignFeed.matchingFunction.@operator == FunctionOperator.AND) {
         foreach (FunctionArgumentOperand argument in campaignFeed.matchingFunction.lhsOperand) {
           // Check if matchingFunction is of the form EQUALS(CONTEXT.DEVICE, 'Mobile').
-          if (argument is FunctionOperand) {
-            FunctionOperand operand = (argument as FunctionOperand);
-            if (operand.value.@operator == FunctionOperator.EQUALS) {
-              RequestContextOperand requestContextOperand = operand.value.lhsOperand[0] as
-                  RequestContextOperand;
-              if (requestContextOperand != null && requestContextOperand.contextType ==
-                  RequestContextOperandContextType.DEVICE_PLATFORM) {
-                platformRestrictions = (operand.value.rhsOperand[0] as ConstantOperand)
-                      .stringValue;
-              }
+          FunctionOperand operand = argument as FunctionOperand;
+          if (operand?.value.@operator == FunctionOperator.EQUALS) {
+            RequestContextOperand requestContextOperand = operand.value.lhsOperand[0] as
+              RequestContextOperand;
+            if (requestContextOperand != null && requestContextOperand.contextType ==
+                RequestContextOperandContextType.DEVICE_PLATFORM) {
+              platformRestrictions = (operand.value.rhsOperand[0] as ConstantOperand)
+                .stringValue;
             }
           }
         }
@@ -520,13 +529,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// search.</param>
     /// <returns>The list of campaignfeeds.</returns>
     private CampaignFeed[] GetCampaignFeeds(AdWordsUser user, Feed feed, int placeholderType) {
-      CampaignFeedService campaignFeedService = (CampaignFeedService) user.GetService(
-          AdWordsService.v201708.CampaignFeedService);
+      using (CampaignFeedService campaignFeedService = (CampaignFeedService) user.GetService(
+          AdWordsService.v201708.CampaignFeedService)) {
 
-      CampaignFeedPage page = campaignFeedService.query(string.Format(
-          "SELECT CampaignId, MatchingFunction, PlaceholderTypes where Status='ENABLED' " +
-          "and FeedId = '{0}' and PlaceholderTypes CONTAINS_ANY[{1}]", feed.id, placeholderType));
-      return page.entries;
+        CampaignFeedPage page = campaignFeedService.query(string.Format(
+            "SELECT CampaignId, MatchingFunction, PlaceholderTypes where Status='ENABLED' " +
+            "and FeedId = '{0}' and PlaceholderTypes CONTAINS_ANY[{1}]",
+            feed.id, placeholderType));
+        return page.entries;
+      }
     }
   }
 }

@@ -159,6 +159,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
                             "name '{0}' and id '{1}'.",
                             userListResult.name, userListResult.id);
         }
+        userListService.Close();
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to add user lists " +
             "(a.k.a. audiences) and upload email addresses.", e);
@@ -176,6 +177,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
       byte[] digestBytes = new byte[digest.GetDigestSize()];
       digest.BlockUpdate(data, 0, data.Length);
       digest.DoFinal(digestBytes, 0);
+
+      // Convert the byte array into an unhyphenated hexadecimal string.
       return BitConverter.ToString(digestBytes).Replace("-", string.Empty);
     }
 

@@ -12,14 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Util.BatchJob.v201702;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
-using Google.Api.Ads.AdWords.Lib;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
 
@@ -73,102 +72,101 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="adGroupId">Id of the ad groups to which keywords are
     /// added.</param>
     public void Run(AdWordsUser user, long adGroupId) {
-      // Get the MutateJobService.
-      BatchJobService batchJobService = (BatchJobService) user.GetService(
-          AdWordsService.v201702.BatchJobService);
+      using (BatchJobService batchJobService = (BatchJobService) user.GetService(
+          AdWordsService.v201702.BatchJobService)) {
+        BatchJobOperation addOp = new BatchJobOperation() {
+          @operator = Operator.ADD,
+          operand = new BatchJob()
+        };
 
-      BatchJobOperation addOp = new BatchJobOperation() {
-        @operator = Operator.ADD,
-        operand = new BatchJob()
-      };
+        try {
+          BatchJob batchJob = batchJobService.mutate(new BatchJobOperation[] { addOp }).value[0];
 
-      try {
-        BatchJob batchJob = batchJobService.mutate(new BatchJobOperation[] { addOp }).value[0];
+          Console.WriteLine("Created BatchJob with ID {0}, status '{1}' and upload URL {2}.",
+              batchJob.id, batchJob.status, batchJob.uploadUrl.url);
 
-        Console.WriteLine("Created BatchJob with ID {0}, status '{1}' and upload URL {2}.",
-            batchJob.id, batchJob.status, batchJob.uploadUrl.url);
+          List<AdGroupCriterionOperation> operations = CreateOperations(adGroupId);
 
-        List<AdGroupCriterionOperation> operations = CreateOperations(adGroupId);
+          // Create a BatchJobUtilities instance for uploading operations. Use a
+          // chunked upload.
+          BatchJobUtilities batchJobUploadHelper = new BatchJobUtilities(user, true, CHUNK_SIZE);
 
-        // Create a BatchJobUtilities instance for uploading operations. Use a
-        // chunked upload.
-        BatchJobUtilities batchJobUploadHelper = new BatchJobUtilities(user, true, CHUNK_SIZE);
+          // Create a resumable Upload URL to upload the operations.
+          string resumableUploadUrl = batchJobUploadHelper.GetResumableUploadUrl(
+              batchJob.uploadUrl.url);
 
-        // Create a resumable Upload URL to upload the operations.
-        string resumableUploadUrl = batchJobUploadHelper.GetResumableUploadUrl(
-            batchJob.uploadUrl.url);
+          // Use the BatchJobUploadHelper to upload all operations.
+          batchJobUploadHelper.Upload(resumableUploadUrl, operations.ToArray());
 
-        // Use the BatchJobUploadHelper to upload all operations.
-        batchJobUploadHelper.Upload(resumableUploadUrl, operations.ToArray());
+          // A flag to determine if the job was requested to be cancelled. This
+          // typically comes from the user.
+          bool wasCancelRequested = false;
 
-        // A flag to determine if the job was requested to be cancelled. This
-        // typically comes from the user.
-        bool wasCancelRequested = false;
+          bool isComplete = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
+            TIME_TO_WAIT_FOR_COMPLETION, delegate (BatchJob waitBatchJob, long timeElapsed) {
+              Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
+                                timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status);
+              batchJob = waitBatchJob;
+              return wasCancelRequested;
+            });
 
-        bool isComplete = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
-          TIME_TO_WAIT_FOR_COMPLETION, delegate(BatchJob waitBatchJob, long timeElapsed) {
-            Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
-                              timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status);
-            batchJob = waitBatchJob;
-            return wasCancelRequested;
-          });
+          // Optional: Cancel the job if it has not completed after waiting for
+          // TIME_TO_WAIT_FOR_COMPLETION.
+          bool shouldWaitForCancellation = false;
+          if (!isComplete && wasCancelRequested) {
+            BatchJobError cancellationError = null;
+            try {
+              batchJobUploadHelper.TryToCancelJob(batchJob.id);
+            } catch (AdWordsApiException e) {
+              cancellationError = GetBatchJobError(e);
+            }
+            if (cancellationError == null) {
+              Console.WriteLine("Successfully requested job cancellation.");
+              shouldWaitForCancellation = true;
+            } else {
+              Console.WriteLine("Job cancellation failed. Error says: {0}.",
+                  cancellationError.reason);
+            }
 
-        // Optional: Cancel the job if it has not completed after waiting for
-        // TIME_TO_WAIT_FOR_COMPLETION.
-        bool shouldWaitForCancellation = false;
-        if (!isComplete && wasCancelRequested) {
-          BatchJobError cancellationError = null;
-          try {
-            batchJobUploadHelper.TryToCancelJob(batchJob.id);
-          } catch (AdWordsApiException e) {
-            cancellationError = GetBatchJobError(e);
+            if (shouldWaitForCancellation) {
+              isComplete = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
+                TIME_TO_WAIT_FOR_COMPLETION, delegate (BatchJob waitBatchJob, long timeElapsed) {
+                  Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
+                                    timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status);
+                  batchJob = waitBatchJob;
+                  return false;
+                });
+            }
           }
-          if (cancellationError == null) {
-            Console.WriteLine("Successfully requested job cancellation.");
-            shouldWaitForCancellation = true;
+
+          if (!isComplete) {
+            throw new TimeoutException("Job is still in pending state after waiting for " +
+                TIME_TO_WAIT_FOR_COMPLETION + " seconds.");
+          }
+
+          if (batchJob.processingErrors != null) {
+            foreach (BatchJobProcessingError processingError in batchJob.processingErrors) {
+              Console.WriteLine("  Processing error: {0}, {1}, {2}, {3}, {4}",
+                  processingError.ApiErrorType, processingError.trigger,
+                  processingError.errorString, processingError.fieldPath,
+                  processingError.reason);
+            }
+          }
+
+          if (batchJob.downloadUrl != null && batchJob.downloadUrl.url != null) {
+            BatchJobMutateResponse mutateResponse = batchJobUploadHelper.Download(
+                batchJob.downloadUrl.url);
+            Console.WriteLine("Downloaded results from {0}.", batchJob.downloadUrl.url);
+            foreach (MutateResult mutateResult in mutateResponse.rval) {
+              String outcome = mutateResult.errorList == null ? "SUCCESS" : "FAILURE";
+              Console.WriteLine("  Operation [{0}] - {1}", mutateResult.index, outcome);
+            }
           } else {
-            Console.WriteLine("Job cancellation failed. Error says: {0}.",
-                cancellationError.reason);
+            Console.WriteLine("No results available for download.");
           }
-
-          if (shouldWaitForCancellation) {
-            isComplete = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
-              TIME_TO_WAIT_FOR_COMPLETION, delegate(BatchJob waitBatchJob, long timeElapsed) {
-                Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
-                                  timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status);
-                batchJob = waitBatchJob;
-                return false;
-              });
-          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create keywords using batch job.", e);
         }
-
-        if (!isComplete) {
-          throw new TimeoutException("Job is still in pending state after waiting for " +
-              TIME_TO_WAIT_FOR_COMPLETION + " seconds.");
-        }
-
-        if (batchJob.processingErrors != null) {
-          foreach (BatchJobProcessingError processingError in batchJob.processingErrors) {
-            Console.WriteLine("  Processing error: {0}, {1}, {2}, {3}, {4}",
-                processingError.ApiErrorType, processingError.trigger,
-                processingError.errorString, processingError.fieldPath,
-                processingError.reason);
-          }
-        }
-
-        if (batchJob.downloadUrl != null && batchJob.downloadUrl.url != null) {
-          BatchJobMutateResponse mutateResponse = batchJobUploadHelper.Download(
-              batchJob.downloadUrl.url);
-          Console.WriteLine("Downloaded results from {0}.", batchJob.downloadUrl.url);
-          foreach (MutateResult mutateResult in mutateResponse.rval) {
-            String outcome = mutateResult.errorList == null ? "SUCCESS" : "FAILURE";
-            Console.WriteLine("  Operation [{0}] - {1}", mutateResult.index, outcome);
-          }
-        } else {
-          Console.WriteLine("No results available for download.");
-        }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to create keywords using batch job.", e);
       }
     }
 

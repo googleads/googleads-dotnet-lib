@@ -17,17 +17,17 @@ Imports Google.Api.Ads.AdWords.Util.Reports
 Imports Google.Api.Ads.AdWords.v201705
 Imports Google.Api.Ads.Common.Util.Reports
 
-Imports System
-Imports System.Collections.Generic
 Imports System.IO
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
+
   ''' <summary>
   ''' This code example gets and downloads a criteria Ad Hoc report from an XML
   ''' report definition.
   ''' </summary>
   Public Class DownloadCriteriaReportWithSelector
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -39,7 +39,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
         Dim fileName As String = "INSERT_OUTPUT_FILE_NAME"
         codeExample.Run(New AdWordsUser, fileName)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -49,8 +49,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example gets and downloads a criteria Ad Hoc report from an XML report" & _
-          " definition."
+        Return "This code example gets and downloads a criteria Ad Hoc report from an XML report" &
+            " definition."
       End Get
     End Property
 
@@ -70,7 +70,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
 
       ' Create the selector.
       Dim selector As New Selector
-      selector.fields = New String() {"CampaignId", "AdGroupId", "Id", "CriteriaType", "Criteria", _
+      selector.fields = New String() {"CampaignId", "AdGroupId", "Id", "CriteriaType", "Criteria",
           "FinalUrls", "Clicks", "Impressions", "Cost"}
 
       selector.predicates = New Predicate() {
@@ -88,7 +88,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
       ' DirectCast(user.Config, AdWordsAppConfig).SkipReportHeader = True
       ' DirectCast(user.Config, AdWordsAppConfig).SkipReportSummary = True
 
-      Dim filePath As String = ExampleUtilities.GetHomeDir() & Path.DirectorySeparatorChar & _
+      Dim filePath As String = ExampleUtilities.GetHomeDir() & Path.DirectorySeparatorChar &
           fileName
 
       Try
@@ -102,5 +102,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
       End Try
 
     End Sub
+
   End Class
+
 End Namespace

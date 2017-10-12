@@ -950,7 +950,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201702 {
     [ReportColumn("clickType")]
     public ClickType clickType { get; set; }
 
-    [ReportColumn("policyApprovalStatus")]
+    [ReportColumn("approvalStatus")]
     public CombinedApprovalStatus combinedApprovalStatus { get; set; }
 
     [ReportColumn("conversionCategory")]
@@ -2675,6 +2675,14 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201702 {
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
+      SWIPEABLE_GALLERY_AD_HEADLINE,
+      SWIPEABLE_GALLERY_AD_SEE_MORE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FIVE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FOUR,
+      SWIPEABLE_GALLERY_AD_SITELINK_ONE,
+      SWIPEABLE_GALLERY_AD_SITELINK_THREE,
+      SWIPEABLE_GALLERY_AD_SITELINK_TWO,
+      SWIPEABLE_GALLERY_AD_SWIPES,
       TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
@@ -4060,6 +4068,14 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201702 {
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
+      SWIPEABLE_GALLERY_AD_HEADLINE,
+      SWIPEABLE_GALLERY_AD_SEE_MORE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FIVE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FOUR,
+      SWIPEABLE_GALLERY_AD_SITELINK_ONE,
+      SWIPEABLE_GALLERY_AD_SITELINK_THREE,
+      SWIPEABLE_GALLERY_AD_SITELINK_TWO,
+      SWIPEABLE_GALLERY_AD_SWIPES,
       TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,
@@ -6282,11 +6298,20 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201702 {
     [ReportColumn("clicks")]
     public long clicks { get; set; }
 
+    [ReportColumn("conversionCategory")]
+    public string conversionCategoryName { get; set; }
+
     [ReportColumn("convRate")]
     public double conversionRate { get; set; }
 
     [ReportColumn("conversions")]
     public double conversions { get; set; }
+
+    [ReportColumn("conversionTrackerId")]
+    public long conversionTrackerId { get; set; }
+
+    [ReportColumn("conversionName")]
+    public string conversionTypeName { get; set; }
 
     [ReportColumn("totalConvValue")]
     public double conversionValue { get; set; }
@@ -6988,9 +7013,6 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201702 {
       UNKNOWN
     }
 
-    [ReportColumn("attributeValues")]
-    public string attributeValues { get; set; }
-
     [ReportColumn("scheduling")]
     public string scheduling { get; set; }
 
@@ -7035,6 +7057,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201702 {
 
     [ReportColumn("allConvValue")]
     public double allConversionValue { get; set; }
+
+    [ReportColumn("attributeValues")]
+    public string attributeValues { get; set; }
 
     [ReportColumn("avgCost")]
     public decimal averageCost { get; set; }
@@ -8825,11 +8850,20 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201702 {
     [ReportColumn("clicks")]
     public long clicks { get; set; }
 
+    [ReportColumn("conversionCategory")]
+    public string conversionCategoryName { get; set; }
+
     [ReportColumn("convRate")]
     public double conversionRate { get; set; }
 
     [ReportColumn("conversions")]
     public double conversions { get; set; }
+
+    [ReportColumn("conversionTrackerId")]
+    public long conversionTrackerId { get; set; }
+
+    [ReportColumn("conversionName")]
+    public string conversionTypeName { get; set; }
 
     [ReportColumn("totalConvValue")]
     public double conversionValue { get; set; }
@@ -9162,6 +9196,14 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201702 {
       PROMOTION_EXTENSION,
       SITELINKS,
       STORE_LOCATOR,
+      SWIPEABLE_GALLERY_AD_HEADLINE,
+      SWIPEABLE_GALLERY_AD_SEE_MORE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FIVE,
+      SWIPEABLE_GALLERY_AD_SITELINK_FOUR,
+      SWIPEABLE_GALLERY_AD_SITELINK_ONE,
+      SWIPEABLE_GALLERY_AD_SITELINK_THREE,
+      SWIPEABLE_GALLERY_AD_SITELINK_TWO,
+      SWIPEABLE_GALLERY_AD_SWIPES,
       TABLE_EXTENSION,
       UNKNOWN,
       URL_CLICKS,

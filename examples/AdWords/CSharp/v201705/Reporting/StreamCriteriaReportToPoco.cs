@@ -21,6 +21,7 @@ using System;
 using System.IO.Compression;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
+
   /// <summary>
   /// The class that holds the data of one row of the report.
   /// </summary>
@@ -58,6 +59,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
   /// returns the data in the report as objects of a given type.
   /// </summary>
   public class StreamCriteriaReportToPoco : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -67,8 +69,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
       Console.WriteLine(codeExample.Description);
       try {
         codeExample.Run(new AdWordsUser());
-      }
-      catch (Exception e) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e));
       }
@@ -102,7 +103,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
           using (GZipStream gzipStream =
             new GZipStream(response.Stream,
               CompressionMode.Decompress)) {
-
             // Deserialize the report into a list of CriteriaReportRow.
             // You can also deserialize the list into your own POCOs as follows.
             // 1. Annotate your class properties with ReportRow annotation.
@@ -129,8 +129,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
             }
           }
         }
-      }
-      catch (Exception e) {
+      } catch (Exception e) {
         throw new System.ApplicationException("Failed to download and parse report.", e);
       }
     }

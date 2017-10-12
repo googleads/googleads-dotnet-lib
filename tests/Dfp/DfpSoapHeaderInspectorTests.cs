@@ -156,6 +156,15 @@ namespace Google.Api.Ads.Dfp.Tests {
       expected.networkCode = null;
       Assert.AreEqual(expected, inspector.RequestHeader);
     }
+
+    /// <summary>
+    /// Tests that a response with no header does not cause an exception.
+    /// </summary>
+    [Test]
+    public void TestEmptyResponseHeader() {
+      DfpSoapHeaderInspector inspector = new DfpSoapHeaderInspector();
+      Assert.DoesNotThrow(() => inspector.AfterReceiveReply(ref this.message, this.channel));
+    }
   }
 }
   

@@ -15,10 +15,6 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201702
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
 
   ''' <summary>
@@ -228,6 +224,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
           schedulingField = value
         End Set
       End Property
+
     End Class
 
     ''' <summary>
@@ -240,7 +237,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
       Try
         codeExample.Run(New AdWordsUser)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -250,10 +247,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example migrates your feed based sitelinks at campaign level to " & _
-            "use extension settings. To learn more about extensionsettings, see " & _
-            "https://developers.google.com/adwords/api/docs/guides/extension-settings. To " & _
-            "learn more about migrating Feed based extensions to extension settings, see " & _
+        Return "This code example migrates your feed based sitelinks at campaign level to " &
+            "use extension settings. To learn more about extensionsettings, see " &
+            "https://developers.google.com/adwords/api/docs/guides/extension-settings. To " &
+            "learn more about migrating Feed based extensions to extension settings, see " &
             "https://developers.google.com/adwords/api/docs/guides/migrate-to-extension-settings."
       End Get
     End Property
@@ -268,12 +265,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
 
       For Each feed As Feed In feeds
         ' Retrieve all the sitelinks from the current feed.
-        Dim feedItems As Dictionary(Of Long, SiteLinkFromFeed) = GetSiteLinksFromFeed(user, _
+        Dim feedItems As Dictionary(Of Long, SiteLinkFromFeed) = GetSiteLinksFromFeed(user,
                                                                                       feed.id)
 
         ' Get all the instances where a sitelink from this feed has been added
         ' to a campaign.
-        Dim campaignFeeds As CampaignFeed() = GetCampaignFeeds(user, feed, _
+        Dim campaignFeeds As CampaignFeed() = GetCampaignFeeds(user, feed,
                                                                PLACEHOLDER_TYPE_SITELINKS)
 
         If Not campaignFeeds Is Nothing Then
@@ -283,12 +280,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
             ' Retrieve the sitelinks that have been associated with this
             ' campaign.
             Dim feedItemIds As List(Of Long) = GetFeedItemsForCampaign(campaignFeed)
-            Dim platformRestrictions As ExtensionSettingPlatform = _
+            Dim platformRestrictions As ExtensionSettingPlatform =
                 GetPlatformRestrictionsForCampaign(campaignFeed)
 
             If feedItemIds.Count = 0 Then
-              Console.WriteLine("Migration skipped for campaign feed with campaign ID {0} " & _
-                  "and feed ID {1} because no mapped feed item IDs were found in the campaign " & _
+              Console.WriteLine("Migration skipped for campaign feed with campaign ID {0} " &
+                  "and feed ID {1} because no mapped feed item IDs were found in the campaign " &
                   "feed's matching function.", campaignFeed.campaignId, campaignFeed.feedId)
             Else
               ' Delete the campaign feed that associates the sitelinks from the
@@ -296,7 +293,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
               DeleteCampaignFeed(user, campaignFeed)
 
               ' Create extension settings instead of sitelinks.
-              CreateExtensionSetting(user, feedItems, campaignFeed.campaignId, feedItemIds, _
+              CreateExtensionSetting(user, feedItems, campaignFeed.campaignId, feedItemIds,
                                      platformRestrictions)
 
               ' Mark the sitelinks from the feed for deletion.
@@ -309,7 +306,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
       Next
     End Sub
 
-
     ''' <summary>
     ''' Gets the site links from a feed.
     ''' </summary>
@@ -317,7 +313,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="feedId">The feed ID.</param>
     ''' <returns>A dictionary of sitelinks from the feed, with key as the feed
     ''' item ID, and value as the sitelink.</returns>
-    Private Function GetSiteLinksFromFeed(ByVal user As AdWordsUser, ByVal feedId As Long) As  _
+    Private Function GetSiteLinksFromFeed(ByVal user As AdWordsUser, ByVal feedId As Long) As _
         Dictionary(Of Long, SiteLinkFromFeed)
       Dim siteLinks As New Dictionary(Of Long, SiteLinkFromFeed)()
 
@@ -384,30 +380,32 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' mappings should be retrieved.</param>
     ''' <returns>A dictionary, with key as the feed attribute ID, and value as
     ''' the set of all fields which the attribute has a mapping to.</returns>
-    Private Function GetFeedMapping(ByVal user As AdWordsUser, ByVal feedId As Long, _
+    Private Function GetFeedMapping(ByVal user As AdWordsUser, ByVal feedId As Long,
                                     ByVal placeHolderType As Long) _
                                     As Dictionary(Of Long, HashSet(Of Long))
-      Dim feedMappingService As FeedMappingService = DirectCast(user.GetService( _
+      Using feedMappingService As FeedMappingService = DirectCast(user.GetService(
           AdWordsService.v201702.FeedMappingService), FeedMappingService)
-      Dim page As FeedMappingPage = feedMappingService.query(String.Format( _
-          "SELECT FeedMappingId, AttributeFieldMappings where FeedId='{0}' and " & _
+        Dim page As FeedMappingPage = feedMappingService.query(String.Format(
+          "SELECT FeedMappingId, AttributeFieldMappings where FeedId='{0}' and " &
           "PlaceholderType={1} and Status='ENABLED'", feedId, placeHolderType))
 
-      Dim attributeMappings As New Dictionary(Of Long, HashSet(Of Long))()
+        Dim attributeMappings As New Dictionary(Of Long, HashSet(Of Long))()
 
-      If Not (page.entries Is Nothing) Then
-        ' Normally, a feed attribute is mapped only to one field. However,
-        ' you may map it to more than one field if needed.
-        For Each feedMapping As FeedMapping In page.entries
-          For Each attributeMapping As AttributeFieldMapping In feedMapping.attributeFieldMappings
-            If Not attributeMappings.ContainsKey(attributeMapping.feedAttributeId) Then
-              attributeMappings(attributeMapping.feedAttributeId) = New HashSet(Of Long)()
-            End If
-            attributeMappings(attributeMapping.feedAttributeId).Add(attributeMapping.fieldId)
+        If Not (page.entries Is Nothing) Then
+          ' Normally, a feed attribute is mapped only to one field. However,
+          ' you may map it to more than one field if needed.
+          For Each feedMapping As FeedMapping In page.entries
+            For Each attributeMapping As AttributeFieldMapping In
+                feedMapping.attributeFieldMappings
+              If Not attributeMappings.ContainsKey(attributeMapping.feedAttributeId) Then
+                attributeMappings(attributeMapping.feedAttributeId) = New HashSet(Of Long)()
+              End If
+              attributeMappings(attributeMapping.feedAttributeId).Add(attributeMapping.fieldId)
+            Next
           Next
-        Next
-      End If
-      Return attributeMappings
+        End If
+        Return attributeMappings
+      End Using
     End Function
 
     ''' <summary>
@@ -416,11 +414,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="user">The user for which feeds are retrieved.</param>
     ''' <returns>The list of feeds.</returns>
     Private Function GetFeeds(ByVal user As AdWordsUser) As Feed()
-      Dim feedService As FeedService = DirectCast(user.GetService( _
+      Using feedService As FeedService = DirectCast(user.GetService(
           AdWordsService.v201702.FeedService), FeedService)
-      Dim page As FeedPage = feedService.query("SELECT Id, Name, Attributes where " & _
+        Dim page As FeedPage = feedService.query("SELECT Id, Name, Attributes where " &
           "Origin='USER' and FeedStatus='ENABLED'")
-      Return page.entries
+        Return page.entries
+      End Using
     End Function
 
     ''' <summary>
@@ -430,11 +429,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="feedId">The feed ID.</param>
     ''' <returns>The list of feed items in the feed.</returns>
     Private Function GetFeedItems(ByVal user As AdWordsUser, ByVal feedId As Long) As FeedItem()
-      Dim feedItemService As FeedItemService = DirectCast(user.GetService( _
+      Using FeedItemService As FeedItemService = DirectCast(user.GetService(
           AdWordsService.v201702.FeedItemService), FeedItemService)
-      Dim page As FeedItemPage = feedItemService.query(String.Format("Select FeedItemId, " & _
+        Dim page As FeedItemPage = feedItemService.query(String.Format("Select FeedItemId, " &
           "AttributeValues, Scheduling  where Status = 'ENABLED' and FeedId = '{0}'", feedId))
-      Return page.entries
+        Return page.entries
+      End Using
     End Function
 
     ''' <summary>
@@ -444,7 +444,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="user">The user that owns the feed items.</param>
     ''' <param name="feedItemIds">IDs of the feed items to be removed.</param>
     ''' <param name="feedId">ID of the feed that holds the feed items.</param>
-    Private Sub DeleteOldFeedItems(ByVal user As AdWordsUser, ByVal feedItemIds As List(Of Long), _
+    Private Sub DeleteOldFeedItems(ByVal user As AdWordsUser, ByVal feedItemIds As List(Of Long),
                                    ByVal feedId As Long)
       If feedItemIds.Count = 0 Then
         Return
@@ -460,10 +460,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
 
         operations.Add(operation)
       Next
-      Dim feedItemService As FeedItemService = DirectCast(user.GetService( _
+      Using feedItemService As FeedItemService = DirectCast(user.GetService(
           AdWordsService.v201702.FeedItemService), FeedItemService)
-      feedItemService.mutate(operations.ToArray())
-      Return
+        feedItemService.mutate(operations.ToArray())
+        Return
+      End Using
     End Sub
 
     ''' <summary>
@@ -478,9 +479,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' settings should be created.</param>
     ''' <param name="platformRestrictions">The platform restrictions for the
     ''' extension setting.</param>
-    Private Sub CreateExtensionSetting(ByVal user As AdWordsUser, ByVal feedItems As  _
-                                       Dictionary(Of Long, SiteLinkFromFeed), _
-                                       ByVal campaignId As Long, _
+    Private Sub CreateExtensionSetting(ByVal user As AdWordsUser, ByVal feedItems As _
+                                       Dictionary(Of Long, SiteLinkFromFeed),
+                                       ByVal campaignId As Long,
                                        ByVal feedItemIds As List(Of Long),
                                        ByVal platformRestrictions As ExtensionSettingPlatform)
       Dim extensionSetting As New CampaignExtensionSetting()
@@ -511,16 +512,18 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
       extensionSetting.extensionSetting.platformRestrictions = platformRestrictions
       extensionSetting.extensionType = FeedType.SITELINK
 
-      Dim campaignExtensionSettingService As CampaignExtensionSettingService = _
-          DirectCast(user.GetService(AdWordsService.v201702.CampaignExtensionSettingService),  _
+      Using campaignExtensionSettingService As CampaignExtensionSettingService =
+          DirectCast(user.GetService(AdWordsService.v201702.CampaignExtensionSettingService),
             CampaignExtensionSettingService)
 
-      Dim operation As New CampaignExtensionSettingOperation()
-      operation.operand = extensionSetting
-      operation.operator = [Operator].ADD
+        Dim operation As New CampaignExtensionSettingOperation()
+        operation.operand = extensionSetting
+        operation.operator = [Operator].ADD
 
-      campaignExtensionSettingService.mutate(New CampaignExtensionSettingOperation() {operation})
-      Return
+        campaignExtensionSettingService.mutate(New CampaignExtensionSettingOperation() {operation})
+
+        Return
+      End Using
     End Sub
 
     ''' <summary>
@@ -529,16 +532,17 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="user">The AdWords user.</param>
     ''' <param name="campaignFeed">The campaign feed.</param>
     ''' <returns></returns>
-    Private Function DeleteCampaignFeed(ByVal user As AdWordsUser, _
+    Private Function DeleteCampaignFeed(ByVal user As AdWordsUser,
                                         ByVal campaignFeed As CampaignFeed) As CampaignFeed
-      Dim campaignFeedService As CampaignFeedService = DirectCast(user.GetService( _
+      Using campaignFeedService As CampaignFeedService = DirectCast(user.GetService(
           AdWordsService.v201702.CampaignFeedService), CampaignFeedService)
 
-      Dim operation As New CampaignFeedOperation()
-      operation.operand = campaignFeed
-      operation.operator = [Operator].REMOVE
+        Dim operation As New CampaignFeedOperation()
+        operation.operand = campaignFeed
+        operation.operator = [Operator].REMOVE
 
-      Return campaignFeedService.mutate(New CampaignFeedOperation() {operation}).value(0)
+        Return campaignFeedService.mutate(New CampaignFeedOperation() {operation}).value(0)
+      End Using
     End Function
 
     ''' <summary>
@@ -546,7 +550,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' </summary>
     ''' <param name="campaignFeed">The campaign feed.</param>
     ''' <returns>The platform restrictions.</returns>
-    Private Function GetPlatformRestrictionsForCampaign(ByVal campaignFeed As CampaignFeed) As  _
+    Private Function GetPlatformRestrictionsForCampaign(ByVal campaignFeed As CampaignFeed) As _
         ExtensionSettingPlatform
       Dim platformRestrictions As String = "NONE"
 
@@ -557,12 +561,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
           If TypeOf argument Is FunctionOperand Then
             Dim operand As FunctionOperand = CType(argument, FunctionOperand)
             If operand.value.operator = FunctionOperator.EQUALS Then
-              Dim requestContextOperand As RequestContextOperand = _
+              Dim requestContextOperand As RequestContextOperand =
                   CType(operand.value.lhsOperand(0), RequestContextOperand)
-              If (Not requestContextOperand Is Nothing) AndAlso _
-                (requestContextOperand.contextType = _
+              If (Not requestContextOperand Is Nothing) AndAlso
+                (requestContextOperand.contextType =
                     RequestContextOperandContextType.DEVICE_PLATFORM) Then
-                platformRestrictions = DirectCast(operand.value.rhsOperand(0),  _
+                platformRestrictions = DirectCast(operand.value.rhsOperand(0),
                     ConstantOperand).stringValue
               End If
             End If
@@ -570,10 +574,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
         Next
       End If
 
-      Return CType([Enum].Parse(GetType(ExtensionSettingPlatform), platformRestrictions, True),  _
+      Return CType([Enum].Parse(GetType(ExtensionSettingPlatform), platformRestrictions, True),
               ExtensionSettingPlatform)
     End Function
-
 
     ''' <summary>
     ''' Gets the list of feed items that are used by a campaign through a given
@@ -615,9 +618,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
       Dim feedItems As New List(Of Long)()
 
       If func.lhsOperand.Length = 1 Then
-        Dim requestContextOperand As RequestContextOperand = _
+        Dim requestContextOperand As RequestContextOperand =
             CType(func.lhsOperand(0), RequestContextOperand)
-        If Not (requestContextOperand Is Nothing) AndAlso _
+        If Not (requestContextOperand Is Nothing) AndAlso
             (requestContextOperand.contextType = RequestContextOperandContextType.FEED_ITEM_ID) Then
           For Each argument As ConstantOperand In func.rhsOperand
             feedItems.Add(argument.longValue)
@@ -637,15 +640,18 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="placeholderType">The type of placeholder to restrict
     ''' search.</param>
     ''' <returns>The list of campaignfeeds.</returns>
-    Private Function GetCampaignFeeds(ByVal user As AdWordsUser, ByVal feed As Feed, _
+    Private Function GetCampaignFeeds(ByVal user As AdWordsUser, ByVal feed As Feed,
                                       ByVal placeholderType As Integer) As CampaignFeed()
-      Dim campaignFeedService As CampaignFeedService = DirectCast(user.GetService( _
+      Using campaignFeedService As CampaignFeedService = DirectCast(user.GetService(
           AdWordsService.v201702.CampaignFeedService), CampaignFeedService)
 
-      Dim page As CampaignFeedPage = campaignFeedService.query(String.Format( _
-          "SELECT CampaignId, MatchingFunction, PlaceholderTypes where Status='ENABLED' " & _
+        Dim page As CampaignFeedPage = campaignFeedService.query(String.Format(
+          "SELECT CampaignId, MatchingFunction, PlaceholderTypes where Status='ENABLED' " &
           "and FeedId = '{0}' and PlaceholderTypes CONTAINS_ANY[{1}]", feed.id, placeholderType))
-      Return page.entries
+        Return page.entries
+      End Using
     End Function
+
   End Class
+
 End Namespace

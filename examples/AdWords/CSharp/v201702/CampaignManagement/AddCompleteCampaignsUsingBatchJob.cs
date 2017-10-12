@@ -97,95 +97,95 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the BatchJobService.
-      BatchJobService batchJobService = (BatchJobService) user.GetService(
-          AdWordsService.v201702.BatchJobService);
+      using (BatchJobService batchJobService = (BatchJobService) user.GetService(
+          AdWordsService.v201702.BatchJobService)) {
 
-      try {
-        // Create a BatchJob.
-        BatchJobOperation addOp = new BatchJobOperation() {
-          @operator = Operator.ADD,
-          operand = new BatchJob()
-        };
+        try {
+          // Create a BatchJob.
+          BatchJobOperation addOp = new BatchJobOperation() {
+            @operator = Operator.ADD,
+            operand = new BatchJob()
+          };
 
-        BatchJob batchJob = batchJobService.mutate(new BatchJobOperation[] { addOp }).value[0];
+          BatchJob batchJob = batchJobService.mutate(new BatchJobOperation[] { addOp }).value[0];
 
-        // Get the upload URL from the new job.
-        string uploadUrl = batchJob.uploadUrl.url;
+          // Get the upload URL from the new job.
+          string uploadUrl = batchJob.uploadUrl.url;
 
-        Console.WriteLine("Created BatchJob with ID {0}, status '{1}' and upload URL {2}.",
-            batchJob.id, batchJob.status, batchJob.uploadUrl.url);
+          Console.WriteLine("Created BatchJob with ID {0}, status '{1}' and upload URL {2}.",
+              batchJob.id, batchJob.status, batchJob.uploadUrl.url);
 
-        // Create the mutate request that will be sent to the upload URL.
-        List<Operation> operations = new List<Operation>();
+          // Create the mutate request that will be sent to the upload URL.
+          List<Operation> operations = new List<Operation>();
 
-        // Create and add an operation to create a new budget.
-        BudgetOperation budgetOperation = BuildBudgetOperation();
-        operations.Add(budgetOperation);
+          // Create and add an operation to create a new budget.
+          BudgetOperation budgetOperation = BuildBudgetOperation();
+          operations.Add(budgetOperation);
 
-        // Create and add operations to create new campaigns.
-        List<CampaignOperation> campaignOperations =
-            BuildCampaignOperations(budgetOperation.operand.budgetId);
-        operations.AddRange(campaignOperations);
+          // Create and add operations to create new campaigns.
+          List<CampaignOperation> campaignOperations =
+              BuildCampaignOperations(budgetOperation.operand.budgetId);
+          operations.AddRange(campaignOperations);
 
-        // Create and add operations to create new ad groups.
-        List<AdGroupOperation> adGroupOperations = new List<AdGroupOperation>();
-        foreach (CampaignOperation campaignOperation in campaignOperations) {
-          adGroupOperations.AddRange(BuildAdGroupOperations(campaignOperation.operand.id));
-        }
-        operations.AddRange(adGroupOperations);
-
-        // Create and add operations to create new ad group ads (expanded text ads).
-        foreach (AdGroupOperation adGroupOperation in adGroupOperations) {
-          operations.AddRange(BuildAdGroupAdOperations(adGroupOperation.operand.id));
-        }
-
-        // Create and add operations to create new ad group criteria (keywords).
-        foreach (AdGroupOperation adGroupOperation in adGroupOperations) {
-          operations.AddRange(BuildAdGroupCriterionOperations(adGroupOperation.operand.id));
-        }
-
-        BatchJobUtilities batchJobUploadHelper = new BatchJobUtilities(user);
-
-        // Create a resumable Upload URL to upload the operations.
-        string resumableUploadUrl = batchJobUploadHelper.GetResumableUploadUrl(uploadUrl);
-
-        // Use the BatchJobUploadHelper to upload all operations.
-        batchJobUploadHelper.Upload(resumableUploadUrl, operations);
-
-        bool isCompleted = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
-          TIME_TO_WAIT_FOR_COMPLETION, delegate(BatchJob waitBatchJob, long timeElapsed) {
-            Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
-                              timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status);
-            batchJob = waitBatchJob;
-            return false;
-          });
-
-        if (!isCompleted) {
-          throw new TimeoutException("Job is still in pending state after waiting for " +
-             TIME_TO_WAIT_FOR_COMPLETION + " seconds.");
-        }
-
-        if (batchJob.processingErrors != null) {
-          foreach (BatchJobProcessingError processingError in batchJob.processingErrors) {
-            Console.WriteLine("  Processing error: {0}, {1}, {2}, {3}, {4}",
-                processingError.ApiErrorType, processingError.trigger,
-                processingError.errorString, processingError.fieldPath,
-                processingError.reason);
+          // Create and add operations to create new ad groups.
+          List<AdGroupOperation> adGroupOperations = new List<AdGroupOperation>();
+          foreach (CampaignOperation campaignOperation in campaignOperations) {
+            adGroupOperations.AddRange(BuildAdGroupOperations(campaignOperation.operand.id));
           }
-        }
+          operations.AddRange(adGroupOperations);
 
-        if (batchJob.downloadUrl != null && batchJob.downloadUrl.url != null) {
-          BatchJobMutateResponse mutateResponse = batchJobUploadHelper.Download(
-              batchJob.downloadUrl.url);
-          Console.WriteLine("Downloaded results from {0}.", batchJob.downloadUrl.url);
-          foreach (MutateResult mutateResult in mutateResponse.rval) {
-            String outcome = mutateResult.errorList == null ? "SUCCESS" : "FAILURE";
-            Console.WriteLine("  Operation [{0}] - {1}", mutateResult.index, outcome);
+          // Create and add operations to create new ad group ads (expanded text ads).
+          foreach (AdGroupOperation adGroupOperation in adGroupOperations) {
+            operations.AddRange(BuildAdGroupAdOperations(adGroupOperation.operand.id));
           }
+
+          // Create and add operations to create new ad group criteria (keywords).
+          foreach (AdGroupOperation adGroupOperation in adGroupOperations) {
+            operations.AddRange(BuildAdGroupCriterionOperations(adGroupOperation.operand.id));
+          }
+
+          BatchJobUtilities batchJobUploadHelper = new BatchJobUtilities(user);
+
+          // Create a resumable Upload URL to upload the operations.
+          string resumableUploadUrl = batchJobUploadHelper.GetResumableUploadUrl(uploadUrl);
+
+          // Use the BatchJobUploadHelper to upload all operations.
+          batchJobUploadHelper.Upload(resumableUploadUrl, operations);
+
+          bool isCompleted = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
+            TIME_TO_WAIT_FOR_COMPLETION, delegate (BatchJob waitBatchJob, long timeElapsed) {
+              Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
+                                timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status);
+              batchJob = waitBatchJob;
+              return false;
+            });
+
+          if (!isCompleted) {
+            throw new TimeoutException("Job is still in pending state after waiting for " +
+               TIME_TO_WAIT_FOR_COMPLETION + " seconds.");
+          }
+
+          if (batchJob.processingErrors != null) {
+            foreach (BatchJobProcessingError processingError in batchJob.processingErrors) {
+              Console.WriteLine("  Processing error: {0}, {1}, {2}, {3}, {4}",
+                  processingError.ApiErrorType, processingError.trigger,
+                  processingError.errorString, processingError.fieldPath,
+                  processingError.reason);
+            }
+          }
+
+          if (batchJob.downloadUrl != null && batchJob.downloadUrl.url != null) {
+            BatchJobMutateResponse mutateResponse = batchJobUploadHelper.Download(
+                batchJob.downloadUrl.url);
+            Console.WriteLine("Downloaded results from {0}.", batchJob.downloadUrl.url);
+            foreach (MutateResult mutateResult in mutateResponse.rval) {
+              String outcome = mutateResult.errorList == null ? "SUCCESS" : "FAILURE";
+              Console.WriteLine("  Operation [{0}] - {1}", mutateResult.index, outcome);
+            }
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to add campaigns using batch job.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to add campaigns using batch job.", e);
       }
     }
 

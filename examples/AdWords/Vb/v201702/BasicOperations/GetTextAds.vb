@@ -57,59 +57,59 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="adGroupId">Id of the ad group from which text ads are
     ''' retrieved.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-      ' Get the AdGroupAdService.
-      Dim service As AdGroupAdService = CType(user.GetService( _
+      Using service As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201702.AdGroupAdService), AdGroupAdService)
 
-      ' Create a selector.
-      Dim selector As New Selector
+        ' Create a selector.
+        Dim selector As New Selector
 
-      selector.fields = New String() {
-        TextAd.Fields.Id, AdGroupAd.Fields.Status, TextAd.Fields.Headline,
-        TextAd.Fields.Description1, TextAd.Fields.Description2, TextAd.Fields.DisplayUrl
-      }
+        selector.fields = New String() {
+          TextAd.Fields.Id, AdGroupAd.Fields.Status, TextAd.Fields.Headline,
+          TextAd.Fields.Description1, TextAd.Fields.Description2, TextAd.Fields.DisplayUrl
+        }
 
-      selector.ordering = New OrderBy() {OrderBy.Asc(TextAd.Fields.Id)}
+        selector.ordering = New OrderBy() {OrderBy.Asc(TextAd.Fields.Id)}
 
-      selector.predicates = New Predicate() {
-        Predicate.Equals(AdGroupAd.Fields.AdGroupId, adGroupId),
-        Predicate.Equals("AdType", "TEXT_AD"),
-        Predicate.In(AdGroupAd.Fields.Status, New String() {
-          AdGroupAdStatus.ENABLED.ToString(),
-          AdGroupAdStatus.PAUSED.ToString(),
-          AdGroupAdStatus.DISABLED.ToString()
-        })
-      }
+        selector.predicates = New Predicate() {
+          Predicate.Equals(AdGroupAd.Fields.AdGroupId, adGroupId),
+          Predicate.Equals("AdType", "TEXT_AD"),
+          Predicate.In(AdGroupAd.Fields.Status, New String() {
+            AdGroupAdStatus.ENABLED.ToString(),
+            AdGroupAdStatus.PAUSED.ToString(),
+            AdGroupAdStatus.DISABLED.ToString()
+          })
+        }
 
-      ' Select the selector paging.
-      selector.paging = Paging.Default
+        ' Select the selector paging.
+        selector.paging = Paging.Default
 
-      Dim page As New AdGroupAdPage
+        Dim page As New AdGroupAdPage
 
-      Try
-        Do
-          ' Get the text ads.
-          page = service.get(selector)
+        Try
+          Do
+            ' Get the text ads.
+            page = service.get(selector)
 
-          ' Display the results.
-          If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            Dim i As Integer = selector.paging.startIndex
+            ' Display the results.
+            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+              Dim i As Integer = selector.paging.startIndex
 
-            For Each adGroupAd As AdGroupAd In page.entries
-              Dim textAd As TextAd = CType(adGroupAd.ad, TextAd)
-              Console.WriteLine("{0}) Ad id is {1} and status is {2}", i + 1, textAd.id, _
-                  adGroupAd.status)
-              Console.WriteLine("  {0}\n  {1}\n  {2}\n  {3}", textAd.headline, _
-                  textAd.description1, textAd.description2, textAd.displayUrl)
-            Next
-            i += 1
-          End If
-          selector.paging.IncreaseOffset()
-        Loop While (selector.paging.startIndex < page.totalNumEntries)
-        Console.WriteLine("Number of text ads found: {0}", page.totalNumEntries)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to get text ads.", e)
-      End Try
+              For Each adGroupAd As AdGroupAd In page.entries
+                Dim textAd As TextAd = CType(adGroupAd.ad, TextAd)
+                Console.WriteLine("{0}) Ad id is {1} and status is {2}", i + 1, textAd.id,
+                    adGroupAd.status)
+                Console.WriteLine("  {0}\n  {1}\n  {2}\n  {3}", textAd.headline,
+                    textAd.description1, textAd.description2, textAd.displayUrl)
+              Next
+              i += 1
+            End If
+            selector.paging.IncreaseOffset()
+          Loop While (selector.paging.startIndex < page.totalNumEntries)
+          Console.WriteLine("Number of text ads found: {0}", page.totalNumEntries)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to get text ads.", e)
+        End Try
+      End Using
     End Sub
   End Class
 End Namespace

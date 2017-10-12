@@ -66,80 +66,80 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
       ' [START addResponsiveDisplayAd] MOE:strip_line
-      ' Get the AdGroupAdService.
-      Dim adGroupAdService As AdGroupAdService = CType(user.GetService(
+      Using adGroupAdService As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201708.AdGroupAdService), AdGroupAdService)
 
-      Try
-        ' Create a responsive display ad.
-        Dim responsiveDisplayAd As New ResponsiveDisplayAd()
+        Try
+          ' Create a responsive display ad.
+          Dim responsiveDisplayAd As New ResponsiveDisplayAd()
 
-        ' This ad format does not allow the creation of an image using the
-        ' Image.data field. An image must first be created using the MediaService,
-        ' and Image.mediaId must be populated when creating the ad.
-        responsiveDisplayAd.marketingImage = New Image()
-        responsiveDisplayAd.marketingImage.mediaId = UploadImage(user, "https://goo.gl/3b9Wfh")
+          ' This ad format does not allow the creation of an image using the
+          ' Image.data field. An image must first be created using the MediaService,
+          ' and Image.mediaId must be populated when creating the ad.
+          responsiveDisplayAd.marketingImage = New Image()
+          responsiveDisplayAd.marketingImage.mediaId = UploadImage(user, "https://goo.gl/3b9Wfh")
 
-        responsiveDisplayAd.shortHeadline = "Travel"
-        responsiveDisplayAd.longHeadline = "Travel the World"
-        responsiveDisplayAd.description = "Take to the air!"
-        responsiveDisplayAd.businessName = "Google"
-        responsiveDisplayAd.finalUrls = New String() {"http://www.example.com"}
+          responsiveDisplayAd.shortHeadline = "Travel"
+          responsiveDisplayAd.longHeadline = "Travel the World"
+          responsiveDisplayAd.description = "Take to the air!"
+          responsiveDisplayAd.businessName = "Google"
+          responsiveDisplayAd.finalUrls = New String() {"http://www.example.com"}
 
-        ' Optional Create a square marketing image Using MediaService, And set it
-        ' to the ad.
-        responsiveDisplayAd.squareMarketingImage = New Image()
-        responsiveDisplayAd.squareMarketingImage.mediaId =
-            UploadImage(user, "https://goo.gl/mtt54n")
+          ' Optional: Create a square marketing image Using MediaService, And set it
+          ' to the ad.
+          responsiveDisplayAd.squareMarketingImage = New Image()
+          responsiveDisplayAd.squareMarketingImage.mediaId =
+              UploadImage(user, "https://goo.gl/mtt54n")
 
-        ' Optional set call to action text.
-        responsiveDisplayAd.callToActionText = "Shop Now"
+          ' Optional: set call to action text.
+          responsiveDisplayAd.callToActionText = "Shop Now"
 
-        ' Optional Set dynamic display ad settings, composed of landscape logo
-        ' image, promotion text, And price prefix.
-        responsiveDisplayAd.dynamicDisplayAdSettings = CreateDynamicDisplayAdSettings(user)
+          ' Optional: Set dynamic display ad settings, composed of landscape logo
+          ' image, promotion text, And price prefix.
+          responsiveDisplayAd.dynamicDisplayAdSettings = CreateDynamicDisplayAdSettings(user)
 
-        ' Whitelisted accounts only Set color settings using hexadecimal values.
-        ' Set allowFlexibleColor to false if you want your ads to render by always
-        ' using your colors strictly.
+          ' Whitelisted accounts only Set color settings using hexadecimal values.
+          ' Set allowFlexibleColor to false if you want your ads to render by always
+          ' using your colors strictly.
 
-        ' responsiveDisplayAd.mainColor = "#0000ff"
-        ' responsiveDisplayAd.accentColor = "#ffff00"
-        ' responsiveDisplayAd.allowFlexibleColor = false
+          ' responsiveDisplayAd.mainColor = "#0000ff"
+          ' responsiveDisplayAd.accentColor = "#ffff00"
+          ' responsiveDisplayAd.allowFlexibleColor = false
 
-        ' Whitelisted accounts only Set the format setting that the ad will be
-        ' served in.
+          ' Whitelisted accounts only Set the format setting that the ad will be
+          ' served in.
 
-        ' responsiveDisplayAd.formatSetting = DisplayAdFormatSetting.NON_NATIVE;
+          ' responsiveDisplayAd.formatSetting = DisplayAdFormatSetting.NON_NATIVE;
 
-        ' Create ad group ad.
-        Dim adGroupAd As New AdGroupAd()
-        adGroupAd.adGroupId = adGroupId
-        adGroupAd.ad = responsiveDisplayAd
-        adGroupAd.status = AdGroupAdStatus.PAUSED
+          ' Create ad group ad.
+          Dim adGroupAd As New AdGroupAd()
+          adGroupAd.adGroupId = adGroupId
+          adGroupAd.ad = responsiveDisplayAd
+          adGroupAd.status = AdGroupAdStatus.PAUSED
 
-        ' Create operation.
-        Dim operation As New AdGroupAdOperation()
-        operation.operand = adGroupAd
-        operation.operator = [Operator].ADD
+          ' Create operation.
+          Dim operation As New AdGroupAdOperation()
+          operation.operand = adGroupAd
+          operation.operator = [Operator].ADD
 
-        ' Make the mutate request.
-        Dim result As AdGroupAdReturnValue = adGroupAdService.mutate(
-            New AdGroupAdOperation() {operation})
+          ' Make the mutate request.
+          Dim result As AdGroupAdReturnValue = adGroupAdService.mutate(
+              New AdGroupAdOperation() {operation})
 
-        ' Display results.
-        If (Not result Is Nothing) AndAlso (Not result.value Is Nothing) Then
-          For Each newAdGroupAd As AdGroupAd In result.value
-            Dim newAd As ResponsiveDisplayAd = CType(newAdGroupAd.ad, ResponsiveDisplayAd)
-            Console.WriteLine("Responsive display ad with ID '{0}' and short headline '{1}'" &
-                " was added.", newAd.id, newAd.shortHeadline)
-          Next
-        Else
-          Console.WriteLine("No responsive display ads were created.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to create responsive display ads.", e)
-      End Try
+          ' Display results.
+          If (Not result Is Nothing) AndAlso (Not result.value Is Nothing) Then
+            For Each newAdGroupAd As AdGroupAd In result.value
+              Dim newAd As ResponsiveDisplayAd = CType(newAdGroupAd.ad, ResponsiveDisplayAd)
+              Console.WriteLine("Responsive display ad with ID '{0}' and short headline '{1}'" &
+                  " was added.", newAd.id, newAd.shortHeadline)
+            Next
+          Else
+            Console.WriteLine("No responsive display ads were created.")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to create responsive display ads.", e)
+        End Try
+      End Using
       ' [END addResponsiveDisplayAd] MOE:strip_line
     End Sub
 
@@ -168,15 +168,17 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="url">The image URL.</param>
     ''' <returns>ID of the uploaded image.</returns>
     Private Shared Function UploadImage(ByVal user As AdWordsUser, ByVal url As String) As Long
-      Dim mediaService As MediaService = CType(user.GetService(
+      Using mediaService As MediaService = CType(user.GetService(
           AdWordsService.v201708.MediaService), MediaService)
 
-      ' Create the image.
-      Dim image As New Image()
-      image.data = MediaUtilities.GetAssetDataFromUrl(url, user.Config)
+        ' Create the image.
+        Dim image As New Image()
+        image.data = MediaUtilities.GetAssetDataFromUrl(url, user.Config)
+        image.type = MediaMediaType.IMAGE
 
-      ' Upload the image.
-      Return mediaService.upload(New Media() {image})(0).mediaId
+        ' Upload the image.
+        Return mediaService.upload(New Media() {image})(0).mediaId
+      End Using
     End Function
 
   End Class

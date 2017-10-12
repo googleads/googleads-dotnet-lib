@@ -16,15 +16,15 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example removes an ad group by setting the status to 'REMOVED'.
   /// To get ad groups, run GetAdGroups.cs.
   /// </summary>
   public class RemoveAdGroup : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -57,34 +57,34 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="adGroupId">Id of the ad group to be removed.</param>
     public void Run(AdWordsUser user, long adGroupId) {
-      // Get the AdGroupService.
-      AdGroupService adGroupService = (AdGroupService) user.GetService(
-          AdWordsService.v201702.AdGroupService);
+      using (AdGroupService adGroupService = (AdGroupService) user.GetService(
+          AdWordsService.v201702.AdGroupService)) {
 
-      // Create ad group with REMOVED status.
-      AdGroup adGroup = new AdGroup();
-      adGroup.id = adGroupId;
-      adGroup.status = AdGroupStatus.REMOVED;
+        // Create ad group with REMOVED status.
+        AdGroup adGroup = new AdGroup();
+        adGroup.id = adGroupId;
+        adGroup.status = AdGroupStatus.REMOVED;
 
-      // Create the operation.
-      AdGroupOperation operation = new AdGroupOperation();
-      operation.operand = adGroup;
-      operation.@operator = Operator.SET;
+        // Create the operation.
+        AdGroupOperation operation = new AdGroupOperation();
+        operation.operand = adGroup;
+        operation.@operator = Operator.SET;
 
-      try {
-        // Remove the ad group.
-        AdGroupReturnValue retVal = adGroupService.mutate(new AdGroupOperation[] {operation});
+        try {
+          // Remove the ad group.
+          AdGroupReturnValue retVal = adGroupService.mutate(new AdGroupOperation[] { operation });
 
-        // Display the results.
-        if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-          AdGroup removedAdGroup = retVal.value[0];
-          Console.WriteLine("Ad group with id = \"{0}\" and name = \"{1}\" was removed.",
-              removedAdGroup.id, removedAdGroup.name);
-        } else {
-          Console.WriteLine("No ad groups were removed.");
+          // Display the results.
+          if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+            AdGroup removedAdGroup = retVal.value[0];
+            Console.WriteLine("Ad group with id = \"{0}\" and name = \"{1}\" was removed.",
+                removedAdGroup.id, removedAdGroup.name);
+          } else {
+            Console.WriteLine("No ad groups were removed.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to remove ad group.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to remove ad group.", e);
       }
     }
   }

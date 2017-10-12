@@ -387,7 +387,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
             string.Format("bytes */{0}", totalLength), user.Config);
 
         LogEntry logEntry = new LogEntry(User.Config, new DefaultDateTimeProvider());
-        logEntry.LogRequest(GenerateRequestInfo(request, "Truncated"), HEADERS_TO_MASK);
+        logEntry.LogRequest(GenerateRequestInfo(request, ""), HEADERS_TO_MASK);
 
         try {
           response = request.GetResponse();
@@ -481,8 +481,10 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
 
         request.ContentType = "application/xml";
 
+        string textToLog = GetTextToLog(postBody, start, bytesToWrite);
+
         try {
-          logEntry.LogRequest(GenerateRequestInfo(request, "Truncated"), HEADERS_TO_MASK);
+          logEntry.LogRequest(GenerateRequestInfo(request, textToLog), HEADERS_TO_MASK);
 
           using (Stream requestStream = request.GetRequestStream()) {
             requestStream.Write(postBody, start, bytesToWrite);
@@ -508,6 +510,19 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
           }
         }
       }
+    }
+
+    /// <summary>
+    /// Attempt to convert a byte array into a UTF-8 string for logging.
+    /// </summary>
+    /// <param name="bytesToDecode">The bytes to decode.</param>
+    /// <param name="start">The start byte index.</param>
+    /// <param name="numBytes">The number of bytes to decode.</param>
+    /// <returns>The partially decoded string.</returns>
+    /// <remarks>It is possible that the encoder cannot decode correctly, if the byte array is
+    /// not aligned with a UTF-8 boundary. In such cases, a \uFFFD character is used.</remarks>
+    protected static string GetTextToLog(byte[] bytesToDecode, int start, int numBytes) {
+      return new string(new UTF8Encoding().GetChars(bytesToDecode, start, numBytes));
     }
 
     /// <summary>

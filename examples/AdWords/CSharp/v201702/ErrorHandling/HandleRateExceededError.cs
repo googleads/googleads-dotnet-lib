@@ -17,10 +17,10 @@ using Google.Api.Ads.AdWords.v201702;
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Threading;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example shows how to handle RateExceededError in your
   /// application. To trigger the rate exceeded error, this code example runs
@@ -28,7 +28,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
   /// in a single request. Note that spawning 100 parallel threads is for
   /// illustrative purposes only, you shouldn't do this in your application.
   /// </summary>
-  public class HandleRateExceededError: ExampleBase {
+  public class HandleRateExceededError : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -90,26 +91,27 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <summary>
     /// Thread class for validating keywords.
     /// </summary>
-    class KeywordThread {
+    private class KeywordThread {
+
       /// <summary>
       /// Index of this thread, for identifying and debugging.
       /// </summary>
-      int threadIndex;
+      private int threadIndex;
 
       /// <summary>
       /// The ad group id to which keywords are added.
       /// </summary>
-      long adGroupId;
+      private long adGroupId;
 
       /// <summary>
       /// The AdWords user who owns this ad group.
       /// </summary>
-      AdWordsUser user;
+      private AdWordsUser user;
 
       /// <summary>
       /// Number of keywords to be validated in each API call.
       /// </summary>
-      const int NUM_KEYWORDS = 100;
+      private const int NUM_KEYWORDS = 100;
 
       /// <summary>
       /// Initializes a new instance of the <see cref="KeywordThread" /> class.
@@ -153,46 +155,48 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
         // Get the AdGroupCriterionService. This should be done within the
         // thread, since a service can only handle one outgoing HTTP request
         // at a time.
-        AdGroupCriterionService service = (AdGroupCriterionService) user.GetService(
-            AdWordsService.v201702.AdGroupCriterionService);
-        service.RequestHeader.validateOnly = true;
-        int retryCount = 0;
-        const int NUM_RETRIES = 3;
-        try {
-          while (retryCount < NUM_RETRIES) {
-            try {
-              // Validate the keywords.
-              service.mutate(operations.ToArray());
-              break;
-            } catch (AdWordsApiException e) {
-              // Handle API errors.
-              ApiException innerException = e.ApiException as ApiException;
-              if (innerException == null) {
-                throw new Exception("Failed to retrieve ApiError. See inner exception for more " +
-                    "details.", e);
-              }
-              foreach (ApiError apiError in innerException.errors) {
-                if (!(apiError is RateExceededError)) {
-                  // Rethrow any errors other than RateExceededError.
-                  throw;
+        using (AdGroupCriterionService adGroupCriterionService =
+            (AdGroupCriterionService) user.GetService(
+                AdWordsService.v201702.AdGroupCriterionService)) {
+          adGroupCriterionService.RequestHeader.validateOnly = true;
+          int retryCount = 0;
+          const int NUM_RETRIES = 3;
+          try {
+            while (retryCount < NUM_RETRIES) {
+              try {
+                // Validate the keywords.
+                adGroupCriterionService.mutate(operations.ToArray());
+                break;
+              } catch (AdWordsApiException e) {
+                // Handle API errors.
+                ApiException innerException = e.ApiException as ApiException;
+                if (innerException == null) {
+                  throw new Exception("Failed to retrieve ApiError. See inner exception " +
+                      "for more details.", e);
                 }
-                // Handle rate exceeded errors.
-                RateExceededError rateExceededError = (RateExceededError) apiError;
-                Console.WriteLine("Got Rate exceeded error - rate name = '{0}', scope = '{1}', " +
-                    "retry After {2} seconds.", rateExceededError.rateScope,
-                    rateExceededError.rateName, rateExceededError.retryAfterSeconds);
-                Thread.Sleep(rateExceededError.retryAfterSeconds * 1000);
-                retryCount = retryCount + 1;
-              }
-            } finally {
-              if (retryCount == NUM_RETRIES) {
-                throw new Exception(String.Format("Could not recover after making {0} attempts.",
-                    retryCount));
+                foreach (ApiError apiError in innerException.errors) {
+                  if (!(apiError is RateExceededError)) {
+                    // Rethrow any errors other than RateExceededError.
+                    throw;
+                  }
+                  // Handle rate exceeded errors.
+                  RateExceededError rateExceededError = (RateExceededError) apiError;
+                  Console.WriteLine("Got Rate exceeded error - rate name = '{0}', " +
+                      "scope = '{1}', retry After {2} seconds.", rateExceededError.rateScope,
+                      rateExceededError.rateName, rateExceededError.retryAfterSeconds);
+                  Thread.Sleep(rateExceededError.retryAfterSeconds * 1000);
+                  retryCount = retryCount + 1;
+                }
+              } finally {
+                if (retryCount == NUM_RETRIES) {
+                  throw new Exception(String.Format("Could not recover after making {0} attempts.",
+                      retryCount));
+                }
               }
             }
+          } catch (Exception e) {
+            throw new System.ApplicationException("Failed to validate keywords.", e);
           }
-        } catch (Exception e) {
-          throw new System.ApplicationException("Failed to validate keywords.", e);
         }
       }
     }

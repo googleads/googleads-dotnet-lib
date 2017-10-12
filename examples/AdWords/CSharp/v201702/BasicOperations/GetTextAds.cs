@@ -56,60 +56,60 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="adGroupId">Id of the ad group from which text ads are
     /// retrieved.</param>
     public void Run(AdWordsUser user, long adGroupId) {
-      // Get the AdGroupAdService.
-      AdGroupAdService service =
-          (AdGroupAdService) user.GetService(AdWordsService.v201702.AdGroupAdService);
+      using (AdGroupAdService service =
+          (AdGroupAdService) user.GetService(AdWordsService.v201702.AdGroupAdService)) {
 
-      // Create a selector.
-      Selector selector = new Selector() {
-        fields = new string[] {
-          TextAd.Fields.Id, AdGroupAd.Fields.Status, TextAd.Fields.Headline,
-          TextAd.Fields.Description1, TextAd.Fields.Description2, TextAd.Fields.DisplayUrl
-        },
-        ordering = new OrderBy[] { OrderBy.Asc(TextAd.Fields.Id) },
-        predicates = new Predicate[] {
-          // Restrict the fetch to only the selected ad group id.
-          Predicate.Equals(AdGroupAd.Fields.AdGroupId, adGroupId),
+        // Create a selector.
+        Selector selector = new Selector() {
+          fields = new string[] {
+            TextAd.Fields.Id, AdGroupAd.Fields.Status, TextAd.Fields.Headline,
+            TextAd.Fields.Description1, TextAd.Fields.Description2, TextAd.Fields.DisplayUrl
+          },
+          ordering = new OrderBy[] { OrderBy.Asc(TextAd.Fields.Id) },
+          predicates = new Predicate[] {
+            // Restrict the fetch to only the selected ad group id.
+            Predicate.Equals(AdGroupAd.Fields.AdGroupId, adGroupId),
 
-          // Retrieve only text ads.
-          Predicate.Equals("AdType", "TEXT_AD"),
+            // Retrieve only text ads.
+            Predicate.Equals("AdType", "TEXT_AD"),
 
-          // By default disabled ads aren't returned by the selector. To return
-          // them include the DISABLED status in the statuses field.
-          Predicate.In(AdGroupAd.Fields.Status, new string[] {
-            AdGroupAdStatus.ENABLED.ToString(),
-            AdGroupAdStatus.PAUSED.ToString(),
-            AdGroupAdStatus.DISABLED.ToString()
-          })
-        },
-        paging = Paging.Default
-      };
+            // By default disabled ads aren't returned by the selector. To return
+            // them include the DISABLED status in the statuses field.
+            Predicate.In(AdGroupAd.Fields.Status, new string[] {
+              AdGroupAdStatus.ENABLED.ToString(),
+              AdGroupAdStatus.PAUSED.ToString(),
+              AdGroupAdStatus.DISABLED.ToString()
+            })
+          },
+          paging = Paging.Default
+        };
 
-      AdGroupAdPage page = new AdGroupAdPage();
+        AdGroupAdPage page = new AdGroupAdPage();
 
-      try {
-        do {
-          // Get the text ads.
-          page = service.get(selector);
+        try {
+          do {
+            // Get the text ads.
+            page = service.get(selector);
 
-          // Display the results.
-          if (page != null && page.entries != null) {
-            int i = selector.paging.startIndex;
+            // Display the results.
+            if (page != null && page.entries != null) {
+              int i = selector.paging.startIndex;
 
-            foreach (AdGroupAd adGroupAd in page.entries) {
-              TextAd textAd = (TextAd) adGroupAd.ad;
-              Console.WriteLine("{0}) Ad id is {1} and status is {2}", i + 1, textAd.id,
-                  adGroupAd.status);
-              Console.WriteLine("  {0}\n  {1}\n  {2}\n  {3}", textAd.headline,
-                  textAd.description1, textAd.description2, textAd.displayUrl);
-              i++;
+              foreach (AdGroupAd adGroupAd in page.entries) {
+                TextAd textAd = (TextAd) adGroupAd.ad;
+                Console.WriteLine("{0}) Ad id is {1} and status is {2}", i + 1, textAd.id,
+                    adGroupAd.status);
+                Console.WriteLine("  {0}\n  {1}\n  {2}\n  {3}", textAd.headline,
+                    textAd.description1, textAd.description2, textAd.displayUrl);
+                i++;
+              }
             }
-          }
-          selector.paging.IncreaseOffset();
-        } while (selector.paging.startIndex < page.totalNumEntries);
-        Console.WriteLine("Number of text ads found: {0}", page.totalNumEntries);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to get text ads", e);
+            selector.paging.IncreaseOffset();
+          } while (selector.paging.startIndex < page.totalNumEntries);
+          Console.WriteLine("Number of text ads found: {0}", page.totalNumEntries);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to get text ads", e);
+        }
       }
     }
   }

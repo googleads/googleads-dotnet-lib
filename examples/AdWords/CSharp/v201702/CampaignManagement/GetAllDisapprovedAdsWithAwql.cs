@@ -60,44 +60,44 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="campaignId">Id of the campaign for which disapproved ads
     /// are retrieved.</param>
     public void Run(AdWordsUser user, long campaignId) {
-      // Get the AdGroupAdService.
-      AdGroupAdService service =
-          (AdGroupAdService) user.GetService(AdWordsService.v201702.AdGroupAdService);
+      using (AdGroupAdService service =
+          (AdGroupAdService) user.GetService(AdWordsService.v201702.AdGroupAdService)) {
 
-      // Get all the disapproved ads for this campaign.
-      string query = string.Format("SELECT Id, AdGroupAdDisapprovalReasons WHERE " +
-          "CampaignId = {0} AND AdGroupCreativeApprovalStatus = DISAPPROVED ORDER BY Id",
-          campaignId);
+        // Get all the disapproved ads for this campaign.
+        string query = string.Format("SELECT Id, AdGroupAdDisapprovalReasons WHERE " +
+            "CampaignId = {0} AND AdGroupCreativeApprovalStatus = DISAPPROVED ORDER BY Id",
+            campaignId);
 
-      int offset = 0;
-      int pageSize = 500;
+        int offset = 0;
+        int pageSize = 500;
 
-      AdGroupAdPage page = new AdGroupAdPage();
+        AdGroupAdPage page = new AdGroupAdPage();
 
-      try {
-        do {
-          string queryWithPaging = string.Format("{0} LIMIT {1}, {2}", query, offset, pageSize);
+        try {
+          do {
+            string queryWithPaging = string.Format("{0} LIMIT {1}, {2}", query, offset, pageSize);
 
-          // Get the disapproved ads.
-          page = service.query(queryWithPaging);
+            // Get the disapproved ads.
+            page = service.query(queryWithPaging);
 
-          // Display the results.
-          if (page != null && page.entries != null) {
-            int i = offset;
-            foreach (AdGroupAd adGroupAd in page.entries) {
-              Console.WriteLine("{0}) Ad id {1} has been disapproved for the following " +
-                  "reason(s):", i, adGroupAd.ad.id);
-              foreach (string reason in adGroupAd.disapprovalReasons) {
-                Console.WriteLine("    {0}", reason);
+            // Display the results.
+            if (page != null && page.entries != null) {
+              int i = offset;
+              foreach (AdGroupAd adGroupAd in page.entries) {
+                Console.WriteLine("{0}) Ad id {1} has been disapproved for the following " +
+                    "reason(s):", i, adGroupAd.ad.id);
+                foreach (string reason in adGroupAd.disapprovalReasons) {
+                  Console.WriteLine("    {0}", reason);
+                }
+                i++;
               }
-              i++;
             }
-          }
-          offset += pageSize;
-        } while (offset < page.totalNumEntries);
-        Console.WriteLine("Number of disapproved ads found: {0}", page.totalNumEntries);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to get disapproved ads.", e);
+            offset += pageSize;
+          } while (offset < page.totalNumEntries);
+          Console.WriteLine("Number of disapproved ads found: {0}", page.totalNumEntries);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to get disapproved ads.", e);
+        }
       }
     }
   }

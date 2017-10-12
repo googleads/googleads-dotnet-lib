@@ -16,7 +16,6 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
-using System.Collections.Generic;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
 
@@ -63,54 +62,55 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="baseCampaignId">Id of the campaign to use as base of the
     /// draft.</param>
     public void Run(AdWordsUser user, long baseCampaignId) {
-      // Get the DraftService.
-      DraftService draftService = (DraftService) user.GetService(
-          AdWordsService.v201702.DraftService);
-      Draft draft = new Draft() {
-        baseCampaignId = baseCampaignId,
-        draftName = "Test Draft #" + ExampleUtilities.GetRandomString()
-      };
-
-      DraftOperation draftOperation = new DraftOperation() {
-        @operator = Operator.ADD,
-        operand = draft
-      };
-
-      try {
-        draft = draftService.mutate(new DraftOperation[] {draftOperation}).value[0];
-
-        Console.WriteLine("Draft with ID {0}, base campaign ID {1} and draft campaign ID " +
-            "{2} created.", draft.draftId, draft.baseCampaignId, draft.draftCampaignId);
-
-        // Once the draft is created, you can modify the draft campaign as if it
-        // were a real campaign. For example, you may add criteria, adjust bids,
-        // or even include additional ads. Adding a criterion is shown here.
-        CampaignCriterionService campaignCriterionService =
-          (CampaignCriterionService) user.GetService(
-              AdWordsService.v201702.CampaignCriterionService);
-        Language language = new Language() {
-          id = 1003L // Spanish
+      using (DraftService draftService = (DraftService) user.GetService(
+          AdWordsService.v201702.DraftService))
+      using (CampaignCriterionService campaignCriterionService =
+         (CampaignCriterionService) user.GetService(
+             AdWordsService.v201702.CampaignCriterionService)) {
+        Draft draft = new Draft() {
+          baseCampaignId = baseCampaignId,
+          draftName = "Test Draft #" + ExampleUtilities.GetRandomString()
         };
 
-        // Make sure to use the draftCampaignId when modifying the virtual draft
-        // campaign.
-        CampaignCriterion campaignCriterion = new CampaignCriterion() {
-          campaignId = draft.draftCampaignId,
-          criterion = language
-        };
-
-        CampaignCriterionOperation criterionOperation = new CampaignCriterionOperation() {
+        DraftOperation draftOperation = new DraftOperation() {
           @operator = Operator.ADD,
-          operand = campaignCriterion
+          operand = draft
         };
 
-        campaignCriterion = campaignCriterionService.mutate(
-            new CampaignCriterionOperation[] {criterionOperation}).value[0];
-        Console.WriteLine("Draft updated to include criteria in draft campaign ID {0}.",
-            draft.draftCampaignId);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to create draft campaign and add " +
-            "criteria.", e);
+        try {
+          draft = draftService.mutate(new DraftOperation[] { draftOperation }).value[0];
+
+          Console.WriteLine("Draft with ID {0}, base campaign ID {1} and draft campaign ID " +
+              "{2} created.", draft.draftId, draft.baseCampaignId, draft.draftCampaignId);
+
+          // Once the draft is created, you can modify the draft campaign as if it
+          // were a real campaign. For example, you may add criteria, adjust bids,
+          // or even include additional ads. Adding a criterion is shown here.
+
+          Language language = new Language() {
+            id = 1003L // Spanish
+          };
+
+          // Make sure to use the draftCampaignId when modifying the virtual draft
+          // campaign.
+          CampaignCriterion campaignCriterion = new CampaignCriterion() {
+            campaignId = draft.draftCampaignId,
+            criterion = language
+          };
+
+          CampaignCriterionOperation criterionOperation = new CampaignCriterionOperation() {
+            @operator = Operator.ADD,
+            operand = campaignCriterion
+          };
+
+          campaignCriterion = campaignCriterionService.mutate(
+              new CampaignCriterionOperation[] { criterionOperation }).value[0];
+          Console.WriteLine("Draft updated to include criteria in draft campaign ID {0}.",
+              draft.draftCampaignId);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create draft campaign and add " +
+              "criteria.", e);
+        }
       }
     }
   }

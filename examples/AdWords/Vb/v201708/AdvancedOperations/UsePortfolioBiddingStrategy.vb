@@ -57,16 +57,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
-      ' Get the services.
-      Dim biddingStrategyService As BiddingStrategyService = CType(user.GetService( _
-          AdWordsService.v201708.BiddingStrategyService), BiddingStrategyService)
-
-      Dim budgetService As BudgetService = CType(user.GetService( _
-          AdWordsService.v201708.BudgetService), BudgetService)
-
-      Dim campaignService As CampaignService = CType(user.GetService( _
-          AdWordsService.v201708.CampaignService), CampaignService)
-
       Dim biddingStrategyName As String = "Maximize Clicks " & ExampleUtilities.GetRandomString()
       Dim bidCeiling As Long = 2000000
       Dim spendTarget As Long = 20000000
@@ -78,15 +68,15 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
       Dim campaignName As String = "Interplanetary Cruise #" + ExampleUtilities.GetRandomString()
 
       Try
-        Dim portfolioBiddingStrategy As SharedBiddingStrategy = CreateBiddingStrategy( _
-            biddingStrategyService, biddingStrategyName, bidCeiling, spendTarget)
+        Dim portfolioBiddingStrategy As SharedBiddingStrategy = CreateBiddingStrategy(user,
+            biddingStrategyName, bidCeiling, spendTarget)
         Console.WriteLine("Portfolio bidding strategy with name '{0}' and ID {1} of type {2} " & _
             "was created.", portfolioBiddingStrategy.name, portfolioBiddingStrategy.id, _
             portfolioBiddingStrategy.biddingScheme.BiddingSchemeType)
 
-        Dim sharedBudget As Budget = CreateSharedBudget(budgetService, budgetName, budgetAmount)
+        Dim sharedBudget As Budget = CreateSharedBudget(user, budgetName, budgetAmount)
 
-        Dim newCampaign As Campaign = CreateCampaignWithBiddingStrategy(campaignService, _
+        Dim newCampaign As Campaign = CreateCampaignWithBiddingStrategy(user,
             campaignName, portfolioBiddingStrategy.id, sharedBudget.budgetId)
 
         Console.WriteLine("Campaign with name '{0}', ID {1} and bidding scheme ID {2} was " & _
@@ -103,106 +93,117 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <summary>
     ''' Creates the portfolio bidding strategy.
     ''' </summary>
-    ''' <param name="biddingStrategyService">The bidding strategy service.</param>
+    ''' <param name="user">The AdWords user.</param>
     ''' <param name="name">The bidding strategy name.</param>
     ''' <param name="bidCeiling">The bid ceiling.</param>
     ''' <param name="spendTarget">The spend target.</param>
     ''' <returns>The bidding strategy object.</returns>
-    Private Function CreateBiddingStrategy(ByVal biddingStrategyService As BiddingStrategyService, _
+    Private Function CreateBiddingStrategy(ByVal user As AdWordsUser,
         ByVal name As String, ByVal bidCeiling As Long, ByVal spendTarget As Long) _
         As SharedBiddingStrategy
-      ' Create a portfolio bidding strategy.
-      Dim portfolioBiddingStrategy As New SharedBiddingStrategy()
-      portfolioBiddingStrategy.name = name
+      Using biddingStrategyService As BiddingStrategyService = CType(user.GetService(
+          AdWordsService.v201708.BiddingStrategyService), BiddingStrategyService)
+        ' Create a portfolio bidding strategy.
+        Dim portfolioBiddingStrategy As New SharedBiddingStrategy()
+        portfolioBiddingStrategy.name = name
 
-      Dim biddingScheme As New TargetSpendBiddingScheme()
-      ' Optionally set additional bidding scheme parameters.
-      biddingScheme.bidCeiling = New Money()
-      biddingScheme.bidCeiling.microAmount = bidCeiling
+        Dim biddingScheme As New TargetSpendBiddingScheme()
+        ' Optionally set additional bidding scheme parameters.
+        biddingScheme.bidCeiling = New Money()
+        biddingScheme.bidCeiling.microAmount = bidCeiling
 
-      biddingScheme.spendTarget = New Money()
-      biddingScheme.spendTarget.microAmount = spendTarget
+        biddingScheme.spendTarget = New Money()
+        biddingScheme.spendTarget.microAmount = spendTarget
 
-      portfolioBiddingStrategy.biddingScheme = biddingScheme
+        portfolioBiddingStrategy.biddingScheme = biddingScheme
 
-      ' Create operation.
-      Dim operation As New BiddingStrategyOperation()
-      operation.operator = [Operator].ADD
-      operation.operand = portfolioBiddingStrategy
+        ' Create operation.
+        Dim operation As New BiddingStrategyOperation()
+        operation.operator = [Operator].ADD
+        operation.operand = portfolioBiddingStrategy
 
-      Return biddingStrategyService.mutate(New BiddingStrategyOperation() {operation}).value(0)
+        Return biddingStrategyService.mutate(New BiddingStrategyOperation() {operation}).value(0)
+      End Using
     End Function
 
     ''' <summary>
     ''' Creates an explicit budget to be used only to create the Campaign.
     ''' </summary>
-    ''' <param name="budgetService">The budget service.</param>
+    ''' <param name="user">The AdWords user.</param>
     ''' <param name="name">The budget name.</param>
     ''' <param name="amount">The budget amount.</param>
     ''' <returns>The budget object.</returns>
-    Private Function CreateSharedBudget(ByVal budgetService As BudgetService, _
+    Private Function CreateSharedBudget(ByVal user As AdWordsUser,
         ByVal name As String, ByVal amount As Long) As Budget
-      ' Create a shared budget
-      Dim budget As New Budget()
-      budget.name = name
-      budget.amount = New Money()
-      budget.amount.microAmount = amount
-      budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD
-      budget.isExplicitlyShared = True
+      Using budgetService As BudgetService = CType(user.GetService(
+          AdWordsService.v201708.BudgetService), BudgetService)
 
-      ' Create operation.
-      Dim operation As New BudgetOperation()
-      operation.operand = budget
-      operation.operator = [Operator].ADD
+        ' Create a shared budget
+        Dim budget As New Budget()
+        budget.name = name
+        budget.amount = New Money()
+        budget.amount.microAmount = amount
+        budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD
+        budget.isExplicitlyShared = True
 
-      ' Make the mutate request.
-      Return budgetService.mutate(New BudgetOperation() {operation}).value(0)
+        ' Create operation.
+        Dim operation As New BudgetOperation()
+        operation.operand = budget
+        operation.operator = [Operator].ADD
+
+        ' Make the mutate request.
+        Return budgetService.mutate(New BudgetOperation() {operation}).value(0)
+      End Using
     End Function
 
     ''' <summary>
     ''' Creates the campaign with a portfolio bidding strategy.
     ''' </summary>
-    ''' <param name="campaignService">The campaign service.</param>
+    ''' <param name="user">The AdWords user.</param>
     ''' <param name="name">The campaign name.</param>
     ''' <param name="biddingStrategyId">The bidding strategy id.</param>
     ''' <param name="sharedBudgetId">The shared budget id.</param>
     ''' <returns>The campaign object.</returns>
-    Private Function CreateCampaignWithBiddingStrategy(ByVal campaignService As CampaignService, _
+    Private Function CreateCampaignWithBiddingStrategy(ByVal user As AdWordsUser,
         ByVal name As String, ByVal biddingStrategyId As Long, ByVal sharedBudgetId As Long) _
         As Campaign
-      ' Create campaign.
-      Dim campaign As New Campaign()
-      campaign.name = name
-      campaign.advertisingChannelType = AdvertisingChannelType.SEARCH
+      Using campaignService As CampaignService = CType(user.GetService(
+          AdWordsService.v201708.CampaignService), CampaignService)
 
-      ' Recommendation: Set the campaign to PAUSED when creating it to prevent
-      ' the ads from immediately serving. Set to ENABLED once you've added
-      ' targeting and the ads are ready to serve.
-      campaign.status = CampaignStatus.PAUSED
+        ' Create campaign.
+        Dim campaign As New Campaign()
+        campaign.name = name
+        campaign.advertisingChannelType = AdvertisingChannelType.SEARCH
 
-      ' Set the budget.
-      campaign.budget = New Budget()
-      campaign.budget.budgetId = sharedBudgetId
+        ' Recommendation: Set the campaign to PAUSED when creating it to prevent
+        ' the ads from immediately serving. Set to ENABLED once you've added
+        ' targeting and the ads are ready to serve.
+        campaign.status = CampaignStatus.PAUSED
 
-      ' Set bidding strategy (required).
-      Dim biddingStrategyConfiguration As New BiddingStrategyConfiguration()
-      biddingStrategyConfiguration.biddingStrategyId = biddingStrategyId
+        ' Set the budget.
+        campaign.budget = New Budget()
+        campaign.budget.budgetId = sharedBudgetId
 
-      campaign.biddingStrategyConfiguration = biddingStrategyConfiguration
+        ' Set bidding strategy (required).
+        Dim biddingStrategyConfiguration As New BiddingStrategyConfiguration()
+        biddingStrategyConfiguration.biddingStrategyId = biddingStrategyId
 
-      ' Set network targeting (recommended).
-      Dim networkSetting As New NetworkSetting()
-      networkSetting.targetGoogleSearch = True
-      networkSetting.targetSearchNetwork = True
-      networkSetting.targetContentNetwork = True
-      campaign.networkSetting = networkSetting
+        campaign.biddingStrategyConfiguration = biddingStrategyConfiguration
 
-      ' Create operation.
-      Dim operation As New CampaignOperation()
-      operation.operand = campaign
-      operation.operator = [Operator].ADD
+        ' Set network targeting (recommended).
+        Dim networkSetting As New NetworkSetting()
+        networkSetting.targetGoogleSearch = True
+        networkSetting.targetSearchNetwork = True
+        networkSetting.targetContentNetwork = True
+        campaign.networkSetting = networkSetting
 
-      Return campaignService.mutate(New CampaignOperation() {operation}).value(0)
+        ' Create operation.
+        Dim operation As New CampaignOperation()
+        operation.operand = campaign
+        operation.operator = [Operator].ADD
+
+        Return campaignService.mutate(New CampaignOperation() {operation}).value(0)
+      End Using
     End Function
   End Class
 End Namespace

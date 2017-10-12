@@ -16,16 +16,14 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201702
 Imports Google.Api.Ads.Common.Util
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
+
   ''' <summary>
   ''' This code example uploads an image. To get images, run GetAllVideosAndImages.vb.
   ''' </summary>
   Public Class UploadImage
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -36,7 +34,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
       Try
         codeExample.Run(New AdWordsUser)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -55,49 +53,38 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
-      ' Get the MediaService.
-      Dim mediaService As MediaService = CType(user.GetService( _
+      Using mediaService As MediaService = CType(user.GetService(
           AdWordsService.v201702.MediaService), MediaService)
 
-      ' Create the image.
-      Dim image As New Image
-      image.data = MediaUtilities.GetAssetDataFromUrl("http://goo.gl/HJM3L")
-      image.type = MediaMediaType.IMAGE
+        ' Create the image.
+        Dim image As New Image
+        image.data = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/3b9Wfh")
+        image.type = MediaMediaType.IMAGE
 
-      Try
-        ' Upload the image.
-        Dim result As Media() = mediaService.upload(New Media() {image})
+        Try
+          ' Upload the image.
+          Dim result As Media() = mediaService.upload(New Media() {image})
 
-        ' Display the results.
-        If ((Not result Is Nothing) AndAlso (result.Length > 0)) Then
-          Dim newImage As Media = result(0)
-          Dim dimensions As Dictionary(Of MediaSize, Dimensions) = _
-                CreateMediaDimensionMap(newImage.dimensions)
-          Console.WriteLine("Image with id '{0}', dimensions '{1}x{2}', and MIME type '{3}'" & _
-              " was uploaded.", newImage.mediaId, dimensions.Item(MediaSize.FULL).width, _
-              dimensions.Item(MediaSize.FULL).height, newImage.mimeType)
-        Else
-          Console.WriteLine("No images were uploaded.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to upload images.", e)
-      End Try
+          ' Display the results.
+          If ((Not result Is Nothing) AndAlso (result.Length > 0)) Then
+            Dim newImage As Media = result(0)
+
+            ' Preferred: Use newImage.dimensions.ToDict() if you are not on Mono.
+            Dim dimensions As Dictionary(Of MediaSize, Dimensions) =
+                MapEntryExtensions.ToDict(Of MediaSize, Dimensions)(newImage.dimensions)
+
+            Console.WriteLine("Image with id '{0}', dimensions '{1}x{2}', and MIME type '{3}'" &
+                " was uploaded.", newImage.mediaId, dimensions.Item(MediaSize.FULL).width,
+                dimensions.Item(MediaSize.FULL).height, newImage.mimeType)
+          Else
+            Console.WriteLine("No images were uploaded.")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to upload images.", e)
+        End Try
+      End Using
     End Sub
 
-    ''' <summary>
-    ''' Converts an array of Media_Size_DimensionsMapEntry into a dictionary.
-    ''' </summary>
-    ''' <param name="dimensions">The array of Media_Size_DimensionsMapEntry to
-    ''' be converted into a dictionary.</param>
-    ''' <returns>A dictionary with key as MediaSize, and value as Dimensions.
-    ''' </returns>
-    Private Function CreateMediaDimensionMap(ByVal dimensions As Media_Size_DimensionsMapEntry()) _
-        As Dictionary(Of MediaSize, Dimensions)
-      Dim mediaMap As New Dictionary(Of MediaSize, Dimensions)
-      For Each dimension As Media_Size_DimensionsMapEntry In dimensions
-        mediaMap.Add(dimension.key, dimension.value)
-      Next
-      Return mediaMap
-    End Function
   End Class
+
 End Namespace

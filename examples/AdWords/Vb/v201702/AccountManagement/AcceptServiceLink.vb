@@ -15,18 +15,15 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201702
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-Imports System.Text
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
+
   ''' <summary>
   ''' This code example accepts a pending invitation to link your AdWords
   ''' account to a Google Merchant Center account.
   ''' </summary>
   Public Class AcceptServiceLink
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -38,7 +35,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
         Dim serviceLinkId As Long = Long.Parse("INSERT_SERVICE_LINK_ID_HERE")
         codeExample.Run(New AdWordsUser, serviceLinkId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -48,7 +45,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example accepts a pending invitation to link your AdWords " & _
+        Return "This code example accepts a pending invitation to link your AdWords " &
             "account to a Google Merchant Center account."
       End Get
     End Property
@@ -60,34 +57,36 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="serviceLinkId">The service link ID to accept.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal serviceLinkId As Long)
       ' [START acceptServiceLink] MOE:strip_line
-      ' Get the CustomerService.
-      Dim customerService As CustomerService = CType(user.GetService( _
+      Using customerService As CustomerService = CType(user.GetService(
           AdWordsService.v201702.CustomerService), CustomerService)
 
-      ' Create the operation to set the status to ACTIVE.
-      Dim op As New ServiceLinkOperation()
-      op.operator = [Operator].SET
-      Dim serviceLink As New ServiceLink()
-      serviceLink.serviceLinkId = serviceLinkId
-      serviceLink.serviceType = ServiceType.MERCHANT_CENTER
-      serviceLink.linkStatus = ServiceLinkLinkStatus.ACTIVE
-      op.operand = serviceLink
+        ' Create the operation to set the status to ACTIVE.
+        Dim op As New ServiceLinkOperation()
+        op.operator = [Operator].SET
+        Dim serviceLink As New ServiceLink()
+        serviceLink.serviceLinkId = serviceLinkId
+        serviceLink.serviceType = ServiceType.MERCHANT_CENTER
+        serviceLink.linkStatus = ServiceLinkLinkStatus.ACTIVE
+        op.operand = serviceLink
 
-      Try
-        ' Update the service link.
-        Dim mutatedServiceLinks As ServiceLink() = _
+        Try
+          ' Update the service link.
+          Dim mutatedServiceLinks As ServiceLink() =
             customerService.mutateServiceLinks(New ServiceLinkOperation() {op})
 
-        ' Display the results.
-        For Each mutatedServiceLink As ServiceLink In mutatedServiceLinks
-          Console.WriteLine("Service link with service link ID {0}, type '{1}' updated to " & _
+          ' Display the results.
+          For Each mutatedServiceLink As ServiceLink In mutatedServiceLinks
+            Console.WriteLine("Service link with service link ID {0}, type '{1}' updated to " &
               "status: {2}.", mutatedServiceLink.serviceLinkId, mutatedServiceLink.serviceType,
               mutatedServiceLink.linkStatus)
-        Next
-        ' [END acceptServiceLink] MOE:strip_line
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to update service link.", e)
-      End Try
+          Next
+          ' [END acceptServiceLink] MOE:strip_line
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to update service link.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace

@@ -22,7 +22,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
 
   /// <summary>
   /// This code example adds an ad customizer feed. Then it adds an ad in two
-  /// different adgroups that uses the feed to populate dynamic data.
+  /// different ad groups that uses the feed to populate dynamic data.
   /// </summary>
   public class AddAdCustomizers : ExampleBase {
 
@@ -50,7 +50,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     public override string Description {
       get {
         return "This code example adds an ad customizer feed. Then it adds an ad in two " +
-            "different adgroups that uses the feed to populate dynamic data.";
+            "different ad groups that uses the feed to populate dynamic data.";
       }
     }
 
@@ -64,14 +64,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// customizers are added.</param>
     /// <param name="feedName">Name of the feed to be created.</param>
     public void Run(AdWordsUser user, long adGroupId1, long adGroupId2, string feedName) {
-      // Create a customizer feed. One feed per account can be used for all ads.
-      AdCustomizerFeed adCustomizerFeed = CreateCustomizerFeed(user, feedName);
+      try {
+        // Create a customizer feed. One feed per account can be used for all ads.
+        AdCustomizerFeed adCustomizerFeed = CreateCustomizerFeed(user, feedName);
 
-      // Add feed items containing the values we'd like to place in ads.
-      CreateCustomizerFeedItems(user, new long[] { adGroupId1, adGroupId2 }, adCustomizerFeed);
+        // Add feed items containing the values we'd like to place in ads.
+        CreateCustomizerFeedItems(user, new long[] { adGroupId1, adGroupId2 }, adCustomizerFeed);
 
-      // All set! We can now create ads with customizations.
-      CreateAdsWithCustomizations(user, new long[] { adGroupId1, adGroupId2 }, feedName);
+        // All set! We can now create ads with customizations.
+        CreateAdsWithCustomizations(user, new long[] { adGroupId1, adGroupId2 }, feedName);
+      } catch (Exception e) {
+        throw new System.ApplicationException("Failed to add ad customizers.", e);
+      }
     }
 
     /// <summary>
@@ -81,38 +85,43 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="feedName">Name of the feed to be created.</param>
     /// <returns>A new Ad customizer feed.</returns>
     private static AdCustomizerFeed CreateCustomizerFeed(AdWordsUser user, string feedName) {
-      AdCustomizerFeedService adCustomizerFeedService = (AdCustomizerFeedService) user.GetService(
-          AdWordsService.v201708.AdCustomizerFeedService);
+      using (AdCustomizerFeedService adCustomizerFeedService =
+          (AdCustomizerFeedService) user.GetService(
+              AdWordsService.v201708.AdCustomizerFeedService)) {
+        AdCustomizerFeed feed = new AdCustomizerFeed() {
+          feedName = feedName,
+          feedAttributes = new AdCustomizerFeedAttribute[] {
+            new AdCustomizerFeedAttribute() {
+              name = "Name",
+              type = AdCustomizerFeedAttributeType.STRING
+            },
+            new AdCustomizerFeedAttribute() {
+              name = "Price",
+              type = AdCustomizerFeedAttributeType.PRICE
+            },
+            new AdCustomizerFeedAttribute() {
+              name = "Date",
+              type = AdCustomizerFeedAttributeType.DATE_TIME
+            },
+          }
+        };
 
-      AdCustomizerFeed feed = new AdCustomizerFeed() {
-        feedName = feedName,
-        feedAttributes = new AdCustomizerFeedAttribute[] {
-          new AdCustomizerFeedAttribute() {
-            name = "Name",
-            type = AdCustomizerFeedAttributeType.STRING
-          },
-          new AdCustomizerFeedAttribute() {
-            name = "Price",
-            type = AdCustomizerFeedAttributeType.PRICE
-          },
-          new AdCustomizerFeedAttribute() {
-            name = "Date",
-            type = AdCustomizerFeedAttributeType.DATE_TIME
-          },
+        AdCustomizerFeedOperation feedOperation = new AdCustomizerFeedOperation();
+        feedOperation.operand = feed;
+        feedOperation.@operator = (Operator.ADD);
+
+        AdCustomizerFeed addedFeed = adCustomizerFeedService.mutate(
+            new AdCustomizerFeedOperation[] { feedOperation }).value[0];
+
+        Console.WriteLine("Created ad customizer feed with ID = {0} and name = '{1}' and " +
+            "attributes: ", addedFeed.feedId, addedFeed.feedName);
+
+        foreach (AdCustomizerFeedAttribute feedAttribute in addedFeed.feedAttributes) {
+          Console.WriteLine("  ID: {0}, name: '{1}', type: {2}",
+              feedAttribute.id, feedAttribute.name, feedAttribute.type);
         }
-      };
-
-      AdCustomizerFeedOperation feedOperation = new AdCustomizerFeedOperation();
-      feedOperation.operand = feed;
-      feedOperation.@operator = (Operator.ADD);
-
-      AdCustomizerFeed addedFeed = adCustomizerFeedService.mutate(
-          new AdCustomizerFeedOperation[] { feedOperation }).value[0];
-
-      Console.WriteLine("Created ad customizer feed with ID = {0} and name = '{1}'.",
-          addedFeed.feedId, addedFeed.feedName);
-
-      return addedFeed;
+        return addedFeed;
+      }
     }
 
     /// <summary>
@@ -125,25 +134,24 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="adCustomizerFeed">The ad customizer feed.</param>
     private static void CreateCustomizerFeedItems(AdWordsUser user, long[] adGroupIds,
         AdCustomizerFeed adCustomizerFeed) {
-      // Get the FeedItemService.
-      FeedItemService feedItemService = (FeedItemService) user.GetService(
-          AdWordsService.v201708.FeedItemService);
+      using (FeedItemService feedItemService = (FeedItemService) user.GetService(
+          AdWordsService.v201708.FeedItemService)) {
+        List<FeedItemOperation> feedItemOperations = new List<FeedItemOperation>();
 
-      List<FeedItemOperation> feedItemOperations = new List<FeedItemOperation>();
+        DateTime marsDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+        feedItemOperations.Add(CreateFeedItemAddOperation(adCustomizerFeed, "Mars", "$1234.56",
+            marsDate.ToString("yyyyMMdd HHmmss"), adGroupIds[0]));
 
-      DateTime marsDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-      feedItemOperations.Add(CreateFeedItemAddOperation(adCustomizerFeed, "Mars", "$1234.56",
-          marsDate.ToString("yyyyMMdd HHmmss"), adGroupIds[0]));
+        DateTime venusDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 15);
+        feedItemOperations.Add(CreateFeedItemAddOperation(adCustomizerFeed, "Venus", "$1450.00",
+            venusDate.ToString("yyyyMMdd HHmmss"), adGroupIds[1]));
 
-      DateTime venusDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 15);
-      feedItemOperations.Add(CreateFeedItemAddOperation(adCustomizerFeed, "Venus", "$1450.00",
-          venusDate.ToString("yyyyMMdd HHmmss"), adGroupIds[1]));
+        FeedItemReturnValue feedItemReturnValue = feedItemService.mutate(
+            feedItemOperations.ToArray());
 
-      FeedItemReturnValue feedItemReturnValue = feedItemService.mutate(
-          feedItemOperations.ToArray());
-
-      foreach (FeedItem addedFeedItem in feedItemReturnValue.value) {
-        Console.WriteLine("Added feed item with ID {0}", addedFeedItem.feedItemId);
+        foreach (FeedItem addedFeedItem in feedItemReturnValue.value) {
+          Console.WriteLine("Added feed item with ID {0}", addedFeedItem.feedItemId);
+        }
       }
     }
 
@@ -207,40 +215,39 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="feedName">Name of the feed to be used.</param>
     private static void CreateAdsWithCustomizations(AdWordsUser user, long[] adGroupIds,
         string feedName) {
-      // Get the AdGroupAdService.
-      AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
-          AdWordsService.v201708.AdGroupAdService);
-
-      ExpandedTextAd expandedTextAd = new ExpandedTextAd() {
-        headlinePart1 = string.Format("Luxury Cruise to {{={0}.Name}}", feedName),
-        headlinePart2 = string.Format("Only {{={0}.Price}}", feedName),
-        description = string.Format("Offer ends in {{=countdown({0}.Date)}}!", feedName),
-        finalUrls = new string[] { "http://www.example.com" }
-      };
-
-      // We add the same ad to both ad groups. When they serve, they will show
-      // different values, since they match different feed items.
-      List<AdGroupAdOperation> adGroupAdOperations = new List<AdGroupAdOperation>();
-      foreach (long adGroupId in adGroupIds) {
-        AdGroupAd adGroupAd = new AdGroupAd() {
-          adGroupId = adGroupId,
-          ad = expandedTextAd
+      using (AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
+          AdWordsService.v201708.AdGroupAdService)) {
+        ExpandedTextAd expandedTextAd = new ExpandedTextAd() {
+          headlinePart1 = string.Format("Luxury Cruise to {{={0}.Name}}", feedName),
+          headlinePart2 = string.Format("Only {{={0}.Price}}", feedName),
+          description = string.Format("Offer ends in {{=countdown({0}.Date)}}!", feedName),
+          finalUrls = new string[] { "http://www.example.com" }
         };
 
-        AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation() {
-          operand = adGroupAd,
-          @operator = Operator.ADD
-        };
+        // We add the same ad to both ad groups. When they serve, they will show
+        // different values, since they match different feed items.
+        List<AdGroupAdOperation> adGroupAdOperations = new List<AdGroupAdOperation>();
+        foreach (long adGroupId in adGroupIds) {
+          AdGroupAd adGroupAd = new AdGroupAd() {
+            adGroupId = adGroupId,
+            ad = expandedTextAd
+          };
 
-        adGroupAdOperations.Add(adGroupAdOperation);
-      }
+          AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation() {
+            operand = adGroupAd,
+            @operator = Operator.ADD
+          };
 
-      AdGroupAdReturnValue adGroupAdReturnValue = adGroupAdService.mutate(
-          adGroupAdOperations.ToArray());
+          adGroupAdOperations.Add(adGroupAdOperation);
+        }
 
-      foreach (AdGroupAd addedAd in adGroupAdReturnValue.value) {
-        Console.WriteLine("Created an ad with ID {0}, type '{1}' and status '{2}'.",
-            addedAd.ad.id, addedAd.ad.AdType, addedAd.status);
+        AdGroupAdReturnValue adGroupAdReturnValue = adGroupAdService.mutate(
+            adGroupAdOperations.ToArray());
+
+        foreach (AdGroupAd addedAd in adGroupAdReturnValue.value) {
+          Console.WriteLine("Created an ad with ID {0}, type '{1}' and status '{2}'.",
+              addedAd.ad.id, addedAd.ad.AdType, addedAd.status);
+        }
       }
     }
   }

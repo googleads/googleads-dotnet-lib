@@ -54,97 +54,99 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the TargetingIdeaService.
-      TargetingIdeaService targetingIdeaService =
-          (TargetingIdeaService) user.GetService(AdWordsService.v201705.TargetingIdeaService);
+      using (TargetingIdeaService targetingIdeaService =
+          (TargetingIdeaService) user.GetService(AdWordsService.v201705.TargetingIdeaService)) {
 
-      // Create selector.
-      TargetingIdeaSelector selector = new TargetingIdeaSelector();
-      selector.requestType = RequestType.IDEAS;
-      selector.ideaType = IdeaType.KEYWORD;
-      selector.requestedAttributeTypes = new AttributeType[] {
-        AttributeType.KEYWORD_TEXT,
-        AttributeType.SEARCH_VOLUME,
-        AttributeType.CATEGORY_PRODUCTS_AND_SERVICES};
+        // Create selector.
+        TargetingIdeaSelector selector = new TargetingIdeaSelector();
+        selector.requestType = RequestType.IDEAS;
+        selector.ideaType = IdeaType.KEYWORD;
+        selector.requestedAttributeTypes = new AttributeType[] {
+          AttributeType.KEYWORD_TEXT,
+          AttributeType.SEARCH_VOLUME,
+          AttributeType.CATEGORY_PRODUCTS_AND_SERVICES
+        };
 
-      // Create the search parameters.
-      string keywordText = "mars cruise";
+        // Create the search parameters.
+        string keywordText = "mars cruise";
 
-      // Create related to query search parameter.
-      RelatedToQuerySearchParameter relatedToQuerySearchParameter =
-          new RelatedToQuerySearchParameter();
-      relatedToQuerySearchParameter.queries = new String[] { keywordText };
+        // Create related to query search parameter.
+        RelatedToQuerySearchParameter relatedToQuerySearchParameter =
+            new RelatedToQuerySearchParameter();
+        relatedToQuerySearchParameter.queries = new String[] { keywordText };
 
-      // Add a language search parameter (optional).
-      // The ID can be found in the documentation:
-      //   https://developers.google.com/adwords/api/docs/appendix/languagecodes
-      LanguageSearchParameter languageParameter = new LanguageSearchParameter();
-      Language english = new Language();
-      english.id = 1000;
-      languageParameter.languages = new Language[] { english };
+        // Add a language search parameter (optional).
+        // The ID can be found in the documentation:
+        //   https://developers.google.com/adwords/api/docs/appendix/languagecodes
+        LanguageSearchParameter languageParameter = new LanguageSearchParameter();
+        Language english = new Language();
+        english.id = 1000;
+        languageParameter.languages = new Language[] { english };
 
-      // Add network search parameter (optional).
-      NetworkSetting networkSetting = new NetworkSetting();
-      networkSetting.targetGoogleSearch = true;
-      networkSetting.targetSearchNetwork = false;
-      networkSetting.targetContentNetwork = false;
-      networkSetting.targetPartnerSearchNetwork = false;
+        // Add network search parameter (optional).
+        NetworkSetting networkSetting = new NetworkSetting();
+        networkSetting.targetGoogleSearch = true;
+        networkSetting.targetSearchNetwork = false;
+        networkSetting.targetContentNetwork = false;
+        networkSetting.targetPartnerSearchNetwork = false;
 
-      NetworkSearchParameter networkSearchParameter = new NetworkSearchParameter();
-      networkSearchParameter.networkSetting = networkSetting;
+        NetworkSearchParameter networkSearchParameter = new NetworkSearchParameter();
+        networkSearchParameter.networkSetting = networkSetting;
 
-      // Set the search parameters.
-      selector.searchParameters = new SearchParameter[] {
+        // Set the search parameters.
+        selector.searchParameters = new SearchParameter[] {
           relatedToQuerySearchParameter, languageParameter, networkSearchParameter
-      };
+        };
 
-      // Set selector paging (required for targeting idea service).
-      Paging paging = Paging.Default;
+        // Set selector paging (required for targeting idea service).
+        Paging paging = Paging.Default;
 
-      TargetingIdeaPage page = new TargetingIdeaPage();
+        TargetingIdeaPage page = new TargetingIdeaPage();
 
-      try {
-        int i = 0;
-        do {
-          // Get related keywords.
-          page = targetingIdeaService.get(selector);
+        try {
+          int i = 0;
+          do {
+            // Get related keywords.
+            page = targetingIdeaService.get(selector);
 
-          // Display related keywords.
-          if (page.entries != null && page.entries.Length > 0) {
-            foreach (TargetingIdea targetingIdea in page.entries) {
-              string keyword = null;
-              string categories = null;
-              long averageMonthlySearches = 0;
+            // Display related keywords.
+            if (page.entries != null && page.entries.Length > 0) {
+              foreach (TargetingIdea targetingIdea in page.entries) {
+                string keyword = null;
+                string categories = null;
+                long averageMonthlySearches = 0;
 
-              foreach (Type_AttributeMapEntry entry in targetingIdea.data) {
-                if (entry.key == AttributeType.KEYWORD_TEXT) {
-                  keyword = (entry.value as StringAttribute).value;
-                }
-                if (entry.key == AttributeType.CATEGORY_PRODUCTS_AND_SERVICES) {
-                  IntegerSetAttribute categorySet = entry.value as IntegerSetAttribute;
-                  StringBuilder builder = new StringBuilder();
-                  if (categorySet.value != null) {
-                    foreach (int value in categorySet.value) {
-                      builder.AppendFormat("{0}, ", value);
+                foreach (Type_AttributeMapEntry entry in targetingIdea.data) {
+                  if (entry.key == AttributeType.KEYWORD_TEXT) {
+                    keyword = (entry.value as StringAttribute).value;
+                  }
+                  if (entry.key == AttributeType.CATEGORY_PRODUCTS_AND_SERVICES) {
+                    IntegerSetAttribute categorySet = entry.value as IntegerSetAttribute;
+                    StringBuilder builder = new StringBuilder();
+                    if (categorySet.value != null) {
+                      foreach (int value in categorySet.value) {
+                        builder.AppendFormat("{0}, ", value);
+                      }
+                      categories = builder.ToString().Trim(new char[] { ',', ' ' });
                     }
-                    categories = builder.ToString().Trim(new char[] { ',', ' ' });
+                  }
+                  if (entry.key == AttributeType.SEARCH_VOLUME) {
+                    averageMonthlySearches = (entry.value as LongAttribute).value;
                   }
                 }
-                if (entry.key == AttributeType.SEARCH_VOLUME) {
-                  averageMonthlySearches = (entry.value as LongAttribute).value;
-                }
+                Console.WriteLine("Keyword with text '{0}', and average monthly search volume " +
+                    "'{1}' was found with categories: {2}", keyword, averageMonthlySearches,
+                    categories);
+                i++;
               }
-              Console.WriteLine("Keyword with text '{0}', and average monthly search volume " +
-                  "'{1}' was found with categories: {2}", keyword, averageMonthlySearches,
-                  categories);
-              i++;
             }
-          }
-          selector.paging.IncreaseOffset();
-        } while (selector.paging.startIndex < page.totalNumEntries);
-        Console.WriteLine("Number of related keywords found: {0}", page.totalNumEntries);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to retrieve related keywords.", e);
+            selector.paging.IncreaseOffset();
+          } while (selector.paging.startIndex < page.totalNumEntries);
+          Console.WriteLine("Number of related keywords found: {0}", page.totalNumEntries);
+          targetingIdeaService.Close();
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to retrieve related keywords.", e);
+        }
       }
     }
   }

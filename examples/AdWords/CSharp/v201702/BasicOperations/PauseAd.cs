@@ -16,14 +16,14 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example pauses a given ad. To list all ads, run GetExpandedTextAds.cs.
   /// </summary>
   public class PauseAd : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -58,39 +58,40 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// </param>
     /// <param name="adId">Id of the ad to be paused.</param>
     public void Run(AdWordsUser user, long adGroupId, long adId) {
-      // Get the AdGroupAdService.
-      AdGroupAdService service =
-          (AdGroupAdService) user.GetService(AdWordsService.v201702.AdGroupAdService);
+      using (AdGroupAdService adGroupAdService =
+          (AdGroupAdService) user.GetService(AdWordsService.v201702.AdGroupAdService)) {
 
-      AdGroupAdStatus status = AdGroupAdStatus.PAUSED;
+        AdGroupAdStatus status = AdGroupAdStatus.PAUSED;
 
-      // Create the ad group ad.
-      AdGroupAd adGroupAd = new AdGroupAd();
-      adGroupAd.status = status;
-      adGroupAd.adGroupId = adGroupId;
+        // Create the ad group ad.
+        AdGroupAd adGroupAd = new AdGroupAd();
+        adGroupAd.status = status;
+        adGroupAd.adGroupId = adGroupId;
 
-      adGroupAd.ad = new Ad();
-      adGroupAd.ad.id = adId;
+        adGroupAd.ad = new Ad();
+        adGroupAd.ad.id = adId;
 
-      // Create the operation.
-      AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
-      adGroupAdOperation.@operator = Operator.SET;
-      adGroupAdOperation.operand = adGroupAd;
+        // Create the operation.
+        AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
+        adGroupAdOperation.@operator = Operator.SET;
+        adGroupAdOperation.operand = adGroupAd;
 
-      try {
-        // Update the ad.
-        AdGroupAdReturnValue retVal = service.mutate(new AdGroupAdOperation[]{adGroupAdOperation});
+        try {
+          // Update the ad.
+          AdGroupAdReturnValue retVal = adGroupAdService.mutate(
+              new AdGroupAdOperation[] { adGroupAdOperation });
 
-        // Display the results.
-        if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-          AdGroupAd pausedAdGroupAd = retVal.value[0];
-          Console.WriteLine("Ad with id \"{0}\" and ad group id \"{1}\"was paused.",
-              pausedAdGroupAd.ad.id, pausedAdGroupAd.adGroupId);
-        } else {
-          Console.WriteLine("No ads were paused.");
+          // Display the results.
+          if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+            AdGroupAd pausedAdGroupAd = retVal.value[0];
+            Console.WriteLine("Ad with id \"{0}\" and ad group id \"{1}\"was paused.",
+                pausedAdGroupAd.ad.id, pausedAdGroupAd.adGroupId);
+          } else {
+            Console.WriteLine("No ads were paused.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to pause ad.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to pause ad.", e);
       }
     }
   }

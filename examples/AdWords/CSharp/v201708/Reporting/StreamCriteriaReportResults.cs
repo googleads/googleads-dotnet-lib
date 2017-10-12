@@ -19,11 +19,11 @@ using Google.Api.Ads.Common.Util.Reports;
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.IO.Compression;
 using System.Xml;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
+
   /// <summary>
   /// This code example streams the results of an ad hoc report, collecting
   /// total impressions by network from each line. This demonstrates how you
@@ -31,6 +31,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
   /// set in memory or using files.
   /// </summary>
   public class StreamCriteriaReportResults : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>

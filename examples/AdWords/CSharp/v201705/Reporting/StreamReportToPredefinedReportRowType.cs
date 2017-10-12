@@ -14,10 +14,9 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Util.Reports;
+using Google.Api.Ads.AdWords.Util.Reports.v201705;
 using Google.Api.Ads.AdWords.v201705;
 using Google.Api.Ads.Common.Util.Reports;
-using Google.Api.Ads.AdWords.Util.Reports.v201705;
-
 using System;
 using System.IO.Compression;
 
@@ -28,18 +27,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
   /// returns the data in the report as objects of a predefined report row type.
   /// </summary>
   public class StreamReportToPredefinedReportRowType : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     /// <param name="args">The command line arguments.</param>
     public static void Main(string[] args) {
-      StreamReportToPredefinedReportRowType codeExample 
-        = new StreamReportToPredefinedReportRowType();
+      StreamReportToPredefinedReportRowType codeExample =
+          new StreamReportToPredefinedReportRowType();
       Console.WriteLine(codeExample.Description);
       try {
         codeExample.Run(new AdWordsUser());
-      }
-      catch (Exception e) {
+      } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e));
       }
@@ -61,7 +60,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-
       // Retreiving the raw values of enum-type fields instead of display values
       (user.Config as AdWordsAppConfig).UseRawEnumValues = true;
 
@@ -77,7 +75,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
           using (GZipStream gzipStream =
             new GZipStream(response.Stream,
               CompressionMode.Decompress)) {
-
             // Create the report object using the stream.
             using (var report = new AwReport<FinalUrlReportReportRow>(
                 new AwXmlTextReader(gzipStream), "Example")) {
@@ -89,8 +86,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
             }
           }
         }
-      }
-      catch (Exception e) {
+      } catch (Exception e) {
         throw new System.ApplicationException("Failed to download and parse report.", e);
       }
     }

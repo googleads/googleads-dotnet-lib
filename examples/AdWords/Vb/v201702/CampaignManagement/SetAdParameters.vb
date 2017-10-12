@@ -15,11 +15,8 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201702
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
+
   ''' <summary>
   ''' This code example illustrates how to create a text ad with ad parameters.
   ''' To add an ad group, run AddAdGroup.vb. To add a keyword, run
@@ -27,6 +24,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
   ''' </summary>
   Public Class SetAdParameters
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -40,7 +38,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
 
         codeExample.Run(New AdWordsUser, adGroupId, criterionId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -50,7 +48,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example illustrates how to create a text ad with ad parameters. To " & _
+        Return "This code example illustrates how to create a text ad with ad parameters. To " &
             "add an ad group, run AddAdGroup.vb. To add a keyword, run AddKeyword.vb."
       End Get
     End Property
@@ -64,82 +62,83 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="criterionId">Id of the keyword for which the ad
     ''' parameters are set.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal criterionId As Long)
-      ' Get the AdGroupAdService.
-      Dim adGroupAdService As AdGroupAdService = CType(user.GetService( _
+      Using adGroupAdService As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201702.AdGroupAdService), AdGroupAdService)
+        Using adParamService As AdParamService = CType(user.GetService(
+            AdWordsService.v201702.AdParamService), AdParamService)
 
-      ' Get the AdParamService.
-      Dim adParamService As AdParamService = CType(user.GetService( _
-          AdWordsService.v201702.AdParamService), AdParamService)
+          ' Create the expanded text ad.
+          Dim expandedTextAd As New ExpandedTextAd()
+          expandedTextAd.headlinePart1 = "Mars Cruises"
+          expandedTextAd.headlinePart2 = "Low-gravity fun for {param1:cheap}."
+          expandedTextAd.description = "Only {param2:a few} seats left!"
+          expandedTextAd.finalUrls = New String() {"http://www.example.com"}
 
-      ' Create the expanded text ad.
-      Dim expandedTextAd As New ExpandedTextAd()
-      expandedTextAd.headlinePart1 = "Mars Cruises"
-      expandedTextAd.headlinePart2 = "Low-gravity fun for {param1:cheap}."
-      expandedTextAd.description = "Only {param2:a few} seats left!"
-      expandedTextAd.finalUrls = New String() {"http://www.example.com"}
+          Dim adOperand As New AdGroupAd
+          adOperand.adGroupId = adGroupId
+          adOperand.status = AdGroupAdStatus.ENABLED
+          adOperand.ad = expandedTextAd
 
-      Dim adOperand As New AdGroupAd
-      adOperand.adGroupId = adGroupId
-      adOperand.status = AdGroupAdStatus.ENABLED
-      adOperand.ad = expandedTextAd
+          ' Create the operation.
+          Dim adOperation As New AdGroupAdOperation
+          adOperation.operand = adOperand
+          adOperation.operator = [Operator].ADD
 
-      ' Create the operation.
-      Dim adOperation As New AdGroupAdOperation
-      adOperation.operand = adOperand
-      adOperation.operator = [Operator].ADD
+          ' Create the expanded text ad.
+          Dim retVal As AdGroupAdReturnValue = adGroupAdService.mutate(
+              New AdGroupAdOperation() {adOperation})
 
-      ' Create the expanded text ad.
-      Dim retVal As AdGroupAdReturnValue = adGroupAdService.mutate( _
-          New AdGroupAdOperation() {adOperation})
+          ' Display the results.
+          If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) _
+              AndAlso (retVal.value.Length > 0)) Then
+            Console.WriteLine("Expanded text ad with id = ""{0}"" was successfully added.",
+                retVal.value(0).ad.id)
+          Else
+            Throw New System.ApplicationException("Failed to create expanded text ads.")
+            Return
+          End If
 
-      ' Display the results.
-      If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) _
-          AndAlso (retVal.value.Length > 0)) Then
-        Console.WriteLine("Expanded text ad with id = ""{0}"" was successfully added.", _
-            retVal.value(0).ad.id)
-      Else
-        Throw New System.ApplicationException("Failed to create expanded text ads.")
-        Return
-      End If
+          ' Create the ad param for price.
+          Dim priceParam As New AdParam
+          priceParam.adGroupId = adGroupId
+          priceParam.criterionId = criterionId
+          priceParam.paramIndex = 1
+          priceParam.insertionText = "$100"
 
-      ' Create the ad param for price.
-      Dim priceParam As New AdParam
-      priceParam.adGroupId = adGroupId
-      priceParam.criterionId = criterionId
-      priceParam.paramIndex = 1
-      priceParam.insertionText = "$100"
+          ' Create the ad param for seats.
+          Dim seatParam As New AdParam
+          seatParam.adGroupId = adGroupId
+          seatParam.criterionId = criterionId
+          seatParam.paramIndex = 2
+          seatParam.insertionText = "50"
 
-      ' Create the ad param for seats.
-      Dim seatParam As New AdParam
-      seatParam.adGroupId = adGroupId
-      seatParam.criterionId = criterionId
-      seatParam.paramIndex = 2
-      seatParam.insertionText = "50"
+          ' Create the operations.
+          Dim priceOperation As New AdParamOperation
+          priceOperation.operator = [Operator].SET
+          priceOperation.operand = priceParam
 
-      ' Create the operations.
-      Dim priceOperation As New AdParamOperation
-      priceOperation.operator = [Operator].SET
-      priceOperation.operand = priceParam
+          Dim seatOperation As New AdParamOperation
+          seatOperation.operator = [Operator].SET
+          seatOperation.operand = seatParam
 
-      Dim seatOperation As New AdParamOperation
-      seatOperation.operator = [Operator].SET
-      seatOperation.operand = seatParam
+          Try
+            ' Set the ad parameters.
+            Dim newAdParams As AdParam() = adParamService.mutate(New AdParamOperation() _
+                {priceOperation, seatOperation})
 
-      Try
-        ' Set the ad parameters.
-        Dim newAdParams As AdParam() = adParamService.mutate(New AdParamOperation() _
-            {priceOperation, seatOperation})
-
-        'Display the results.
-        If (Not newAdParams Is Nothing) Then
-          Console.WriteLine("Ad parameters were successfully updated.")
-        Else
-          Console.WriteLine("No ad parameters were set.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to set ad parameter(s).", e)
-      End Try
+            'Display the results.
+            If (Not newAdParams Is Nothing) Then
+              Console.WriteLine("Ad parameters were successfully updated.")
+            Else
+              Console.WriteLine("No ad parameters were set.")
+            End If
+          Catch e As Exception
+            Throw New System.ApplicationException("Failed to set ad parameter(s).", e)
+          End Try
+        End Using
+      End Using
     End Sub
+
   End Class
+
 End Namespace

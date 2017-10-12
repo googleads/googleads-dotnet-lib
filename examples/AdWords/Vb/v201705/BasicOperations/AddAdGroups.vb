@@ -15,17 +15,15 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201705
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
+
   ''' <summary>
   ''' This code example illustrates how to create ad groups. To create
   ''' campaigns, run AddCampaigns.vb.
   ''' </summary>
   Public Class AddAdGroups
     Inherits ExampleBase
+
     ''' <summary>
     ''' Number of items being added / updated in this code example.
     ''' </summary>
@@ -42,7 +40,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
         Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
         codeExample.Run(New AdWordsUser, campaignId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -52,7 +50,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example illustrates how to create ad groups. To create campaigns," & _
+        Return "This code example illustrates how to create ad groups. To create campaigns," &
             " run AddCampaigns.vb"
       End Get
     End Property
@@ -64,78 +62,81 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <param name="campaignId">Id of the campaign to which ad groups are
     ''' added.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
-      ' Get the AdGroupService.
-      Dim adGroupService As AdGroupService = CType(user.GetService( _
+      Using adGroupService As AdGroupService = CType(user.GetService(
           AdWordsService.v201705.AdGroupService), AdGroupService)
 
-      Dim operations As New List(Of AdGroupOperation)
+        Dim operations As New List(Of AdGroupOperation)
 
-      For i As Integer = 1 To NUM_ITEMS
-        ' Create the ad group.
-        Dim adGroup As New AdGroup
-        adGroup.name = String.Format("Earth to Mars Cruises #{0}", ExampleUtilities.GetRandomString)
-        adGroup.status = AdGroupStatus.ENABLED
-        adGroup.campaignId = campaignId
+        For i As Integer = 1 To NUM_ITEMS
+          ' Create the ad group.
+          Dim adGroup As New AdGroup
+          adGroup.name = String.Format("Earth to Mars Cruises #{0}",
+              ExampleUtilities.GetRandomString)
+          adGroup.status = AdGroupStatus.ENABLED
+          adGroup.campaignId = campaignId
 
-        ' Set the ad group bids.
-        Dim biddingConfig As New BiddingStrategyConfiguration()
+          ' Set the ad group bids.
+          Dim biddingConfig As New BiddingStrategyConfiguration()
 
-        Dim cpcBid As New CpcBid()
-        cpcBid.bid = New Money()
-        cpcBid.bid.microAmount = 10000000
+          Dim cpcBid As New CpcBid()
+          cpcBid.bid = New Money()
+          cpcBid.bid.microAmount = 10000000
 
-        biddingConfig.bids = New Bids() {cpcBid}
+          biddingConfig.bids = New Bids() {cpcBid}
 
-        adGroup.biddingStrategyConfiguration = biddingConfig
+          adGroup.biddingStrategyConfiguration = biddingConfig
 
-        ' Optional: Set targeting restrictions.
-        ' Depending on the criterionTypeGroup value, most TargetingSettingDetail
-        ' only affect Display campaigns. However, the USER_INTEREST_AND_LIST value
-        ' works for RLSA campaigns - Search campaigns targeting using a
-        ' remarketing list.
-        Dim targetingSetting As New TargetingSetting()
+          ' Optional: Set targeting restrictions.
+          ' Depending on the criterionTypeGroup value, most TargetingSettingDetail
+          ' only affect Display campaigns. However, the USER_INTEREST_AND_LIST value
+          ' works for RLSA campaigns - Search campaigns targeting using a
+          ' remarketing list.
+          Dim targetingSetting As New TargetingSetting()
 
-        ' Restricting to serve ads that match your ad group placements.
-        ' This is equivalent to choosing "Target and bid" in the UI.
-        Dim placementDetail As New TargetingSettingDetail()
-        placementDetail.criterionTypeGroup = CriterionTypeGroup.PLACEMENT
-        placementDetail.targetAll = False
+          ' Restricting to serve ads that match your ad group placements.
+          ' This is equivalent to choosing "Target and bid" in the UI.
+          Dim placementDetail As New TargetingSettingDetail()
+          placementDetail.criterionTypeGroup = CriterionTypeGroup.PLACEMENT
+          placementDetail.targetAll = False
 
-        ' Using your ad group verticals only for bidding. This is equivalent
-        ' to choosing "Bid only" in the UI.
-        Dim verticalDetail As New TargetingSettingDetail()
-        verticalDetail.criterionTypeGroup = CriterionTypeGroup.VERTICAL
-        verticalDetail.targetAll = True
+          ' Using your ad group verticals only for bidding. This is equivalent
+          ' to choosing "Bid only" in the UI.
+          Dim verticalDetail As New TargetingSettingDetail()
+          verticalDetail.criterionTypeGroup = CriterionTypeGroup.VERTICAL
+          verticalDetail.targetAll = True
 
-        targetingSetting.details = New TargetingSettingDetail() {placementDetail, verticalDetail}
+          targetingSetting.details = New TargetingSettingDetail() {placementDetail, verticalDetail}
 
-        adGroup.settings = New Setting() {targetingSetting}
+          adGroup.settings = New Setting() {targetingSetting}
 
-        ' Create the operation.
-        Dim operation As New AdGroupOperation
-        operation.operator = [Operator].ADD
-        operation.operand = adGroup
+          ' Create the operation.
+          Dim operation As New AdGroupOperation
+          operation.operator = [Operator].ADD
+          operation.operand = adGroup
 
-        operations.Add(operation)
-      Next
+          operations.Add(operation)
+        Next
 
-      Try
-        ' Create the ad group.
-        Dim retVal As AdGroupReturnValue = adGroupService.mutate(operations.ToArray())
+        Try
+          ' Create the ad group.
+          Dim retVal As AdGroupReturnValue = adGroupService.mutate(operations.ToArray())
 
-        ' Display the results.
-        If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
-            (retVal.value.Length > 0)) Then
-          For Each newAdGroup As AdGroup In retVal.value
-            Console.WriteLine("Ad group with id = '{0}' and name = '{1}' was created.", _
-                newAdGroup.id, newAdGroup.name)
-          Next
-        Else
-          Console.WriteLine("No ad groups were created.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to create ad groups.", e)
-      End Try
+          ' Display the results.
+          If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso
+              (retVal.value.Length > 0)) Then
+            For Each newAdGroup As AdGroup In retVal.value
+              Console.WriteLine("Ad group with id = '{0}' and name = '{1}' was created.",
+                  newAdGroup.id, newAdGroup.name)
+            Next
+          Else
+            Console.WriteLine("No ad groups were created.")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to create ad groups.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace

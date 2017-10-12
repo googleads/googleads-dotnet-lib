@@ -15,11 +15,8 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201705
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
+
   ''' <summary>
   ''' This code example shows how to use the validateOnly header to validate
   ''' an expanded text ad. No objects will be created, but exceptions will
@@ -27,6 +24,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
   ''' </summary>
   Public Class ValidateTextAd
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -38,7 +36,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -49,7 +47,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     '''
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example shows how to use the validateOnly header to validate an " & _
+        Return "This code example shows how to use the validateOnly header to validate an " &
             "expanded text ad. No objects will be created, but exceptions will still be thrown."
       End Get
     End Property
@@ -61,45 +59,47 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <param name="adGroupId">Id of the ad group to which text ads are
     ''' added.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-      ' Get the AdGroupAdService.
-      Dim adGroupAdService As AdGroupAdService = CType(user.GetService( _
+      Using adGroupAdService As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201705.AdGroupAdService), AdGroupAdService)
 
-      ' Set the validateOnly headers.
-      adGroupAdService.RequestHeader.validateOnly = True
+        ' Set the validateOnly headers.
+        adGroupAdService.RequestHeader.validateOnly = True
 
-      ' Create your expanded text ad.
-      Dim expandedTextAd As New ExpandedTextAd()
-      expandedTextAd.headlinePart1 = "Luxury Cruise to Mars"
-      expandedTextAd.headlinePart2 = "Visit the Red Planet in style."
-      expandedTextAd.description = "Low-gravity fun for everyone!!"
-      expandedTextAd.finalUrls = New String() {"http://www.example.com"}
+        ' Create your expanded text ad.
+        Dim expandedTextAd As New ExpandedTextAd()
+        expandedTextAd.headlinePart1 = "Luxury Cruise to Mars"
+        expandedTextAd.headlinePart2 = "Visit the Red Planet in style."
+        expandedTextAd.description = "Low-gravity fun for everyone!!"
+        expandedTextAd.finalUrls = New String() {"http://www.example.com"}
 
-      Dim adGroupAd As New AdGroupAd
-      adGroupAd.adGroupId = adGroupId
-      adGroupAd.ad = expandedTextAd
+        Dim adGroupAd As New AdGroupAd
+        adGroupAd.adGroupId = adGroupId
+        adGroupAd.ad = expandedTextAd
 
-      Dim operation As New AdGroupAdOperation
-      operation.operator = [Operator].ADD
-      operation.operand = adGroupAd
-      Try
-        Dim retVal As AdGroupAdReturnValue = adGroupAdService.mutate( _
-            New AdGroupAdOperation() {operation})
-        ' Since validation is ON, result will be null.
-        Console.WriteLine("Expanded text ad validated successfully.")
-      Catch e As AdWordsApiException
-        ' This block will be hit if there is a validation error from the server.
-        Console.WriteLine("There were validation error(s) while adding expanded text ad.")
+        Dim operation As New AdGroupAdOperation
+        operation.operator = [Operator].ADD
+        operation.operand = adGroupAd
+        Try
+          Dim retVal As AdGroupAdReturnValue = adGroupAdService.mutate(
+              New AdGroupAdOperation() {operation})
+          ' Since validation is ON, result will be null.
+          Console.WriteLine("Expanded text ad validated successfully.")
+        Catch e As AdWordsApiException
+          ' This block will be hit if there is a validation error from the server.
+          Console.WriteLine("There were validation error(s) while adding expanded text ad.")
 
-        If (Not e.ApiException Is Nothing) Then
-          For Each apiError As ApiError In DirectCast(e.ApiException, ApiException).errors
-            Console.WriteLine("  Error type is '{0}' and fieldPath is '{1}'.", _
-                apiError.ApiErrorType, apiError.fieldPath)
-          Next
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to validate expanded text ad.", e)
-      End Try
+          If (Not e.ApiException Is Nothing) Then
+            For Each apiError As ApiError In DirectCast(e.ApiException, ApiException).errors
+              Console.WriteLine("  Error type is '{0}' and fieldPath is '{1}'.",
+                  apiError.ApiErrorType, apiError.fieldPath)
+            Next
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to validate expanded text ad.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace

@@ -12,16 +12,13 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
+Imports System.Net
+Imports System.Threading
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201708
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-Imports System.Net
-Imports System.Threading
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
+
   ''' <summary>
   ''' This code example shows how to handle RateExceededError in your
   ''' application. To trigger the rate exceeded error, this code example runs
@@ -31,6 +28,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
   ''' </summary>
   Public Class HandleRateExceededError
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -42,7 +40,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -52,10 +50,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example shows how to handle RateExceededError in your application. " & _
-            "To trigger the rate exceeded error, this code example runs 100 threads in " & _
-            "parallel, each thread attempting to validate 100 keywords in a single request. " & _
-            "Note that spawning 100 parallel threads is for illustrative purposes only, you " & _
+        Return "This code example shows how to handle RateExceededError in your application. " &
+            "To trigger the rate exceeded error, this code example runs 100 threads in " &
+            "parallel, each thread attempting to validate 100 keywords in a single request. " &
+            "Note that spawning 100 parallel threads is for illustrative purposes only, you " &
             "shouldn't do this in your application."
       End Get
     End Property
@@ -93,6 +91,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' Thread class for validating keywords.
     ''' </summary>
     Public Class KeywordThread
+
       ''' <summary>
       ''' Index of this thread, for identifying and debugging.
       ''' </summary>
@@ -119,7 +118,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
       ''' <param name="threadIndex">Index of the thread.</param>
       ''' <param name="adGroupId">The ad group id.</param>
       ''' <param name="user">The AdWords user who owns the ad group.</param>
-      Public Sub New(ByVal user As AdWordsUser, ByVal threadIndex As Integer, _
+      Public Sub New(ByVal user As AdWordsUser, ByVal threadIndex As Integer,
           ByVal adGroupId As Long)
         Me.user = user
         Me.threadIndex = threadIndex
@@ -131,72 +130,78 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
       ''' </summary>
       ''' <param name="obj">The thread parameter.</param>
       Public Sub Run(ByVal obj As Object)
-        ' Create the operations.
-        Dim operations As New List(Of AdGroupCriterionOperation)
-        For j As Integer = 0 To NUM_KEYWORDS
-          ' Create the keyword.
-          Dim keyword As New Keyword
-          keyword.text = "mars cruise thread " & threadIndex.ToString & " seed " & j.ToString
-          keyword.matchType = KeywordMatchType.BROAD
-
-          ' Create the biddable ad group criterion.
-          Dim keywordCriterion As AdGroupCriterion = New BiddableAdGroupCriterion
-          keywordCriterion.adGroupId = adGroupId
-          keywordCriterion.criterion = keyword
-
-          ' Create the operations.
-          Dim keywordOperation As New AdGroupCriterionOperation
-          keywordOperation.operator = [Operator].ADD
-          keywordOperation.operand = keywordCriterion
-
-          operations.Add(keywordOperation)
-        Next j
-
         ' Get the AdGroupCriterionService. This should be done within the
         ' thread, since a service can only handle one outgoing HTTP request
         ' at a time.
-        Dim service As AdGroupCriterionService = CType(user.GetService( _
+        Using service As AdGroupCriterionService = CType(user.GetService(
             AdWordsService.v201708.AdGroupCriterionService), AdGroupCriterionService)
-        service.RequestHeader.validateOnly = True
-        Dim retryCount As Integer = 0
-        Const NUM_RETRIES As Integer = 3
-        Try
-          While (retryCount < NUM_RETRIES)
-            Try
-              ' Validate the keywords.
-              Dim retval As AdGroupCriterionReturnValue = service.mutate(operations.ToArray)
-              Exit While
-            Catch e As AdWordsApiException
-              ' Handle API errors.
-              Dim innerException As ApiException = TryCast(e.ApiException, ApiException)
-              If (innerException Is Nothing) Then
-                Throw New Exception("Failed to retrieve ApiError. See inner exception for more " & _
-                    "details.", e)
-              End If
-              For Each apiError As ApiError In innerException.errors
-                If Not TypeOf apiError Is RateExceededError Then
-                  ' Rethrow any errors other than RateExceededError.
-                  Throw
+          service.RequestHeader.validateOnly = True
+
+          ' Create the operations.
+          Dim operations As New List(Of AdGroupCriterionOperation)
+          For j As Integer = 0 To NUM_KEYWORDS
+            ' Create the keyword.
+            Dim keyword As New Keyword
+            keyword.text = "mars cruise thread " & threadIndex.ToString & " seed " & j.ToString
+            keyword.matchType = KeywordMatchType.BROAD
+
+            ' Create the biddable ad group criterion.
+            Dim keywordCriterion As AdGroupCriterion = New BiddableAdGroupCriterion
+            keywordCriterion.adGroupId = adGroupId
+            keywordCriterion.criterion = keyword
+
+            ' Create the operations.
+            Dim keywordOperation As New AdGroupCriterionOperation
+            keywordOperation.operator = [Operator].ADD
+            keywordOperation.operand = keywordCriterion
+
+            operations.Add(keywordOperation)
+          Next j
+
+          Dim retryCount As Integer = 0
+          Const NUM_RETRIES As Integer = 3
+          Try
+            While (retryCount < NUM_RETRIES)
+              Try
+                ' Validate the keywords.
+                Dim retval As AdGroupCriterionReturnValue = service.mutate(operations.ToArray)
+                Exit While
+              Catch e As AdWordsApiException
+                ' Handle API errors.
+                Dim innerException As ApiException = TryCast(e.ApiException, ApiException)
+                If (innerException Is Nothing) Then
+                  Throw New Exception("Failed to retrieve ApiError. See inner exception for " &
+                      "more details.", e)
                 End If
-                ' Handle rate exceeded errors.
-                Dim rateExceededError As RateExceededError = DirectCast(apiError, RateExceededError)
-                Console.WriteLine("Got Rate exceeded error - rate name = '{0}', scope = '{1}', " & _
-                    "retry After {2} seconds.", rateExceededError.rateScope, _
-                    rateExceededError.rateName, rateExceededError.retryAfterSeconds)
-                Thread.Sleep(rateExceededError.retryAfterSeconds)
-                retryCount = retryCount + 1
-              Next
-            Finally
-              If (retryCount = NUM_RETRIES) Then
-                Throw New Exception(String.Format("Could not recover after making {0} attempts.", _
-                    retryCount))
-              End If
-            End Try
-          End While
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to validate keywords.", e)
-        End Try
+                For Each apiError As ApiError In innerException.errors
+                  If Not TypeOf apiError Is RateExceededError Then
+                    ' Rethrow any errors other than RateExceededError.
+                    Throw
+                  End If
+                  ' Handle rate exceeded errors.
+                  Dim rateExceededError As RateExceededError =
+                      DirectCast(apiError, RateExceededError)
+                  Console.WriteLine("Got Rate exceeded error - rate name = '{0}', " &
+                      "scope = '{1}', retry After {2} seconds.", rateExceededError.rateScope,
+                      rateExceededError.rateName, rateExceededError.retryAfterSeconds)
+                  Thread.Sleep(rateExceededError.retryAfterSeconds)
+                  retryCount = retryCount + 1
+                Next
+              Finally
+                If (retryCount = NUM_RETRIES) Then
+                  Throw New Exception(String.Format("Could not recover after making {0} attempts.",
+                      retryCount))
+                End If
+              End Try
+            End While
+          Catch e As Exception
+            Throw New System.ApplicationException("Failed to validate keywords.", e)
+          End Try
+        End Using
       End Sub
+
     End Class
+
   End Class
+
 End Namespace

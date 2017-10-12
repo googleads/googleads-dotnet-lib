@@ -16,15 +16,15 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201705;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
+
   /// <summary>
   /// This code example adds demographic target criteria to an ad group. To get
   /// ad groups, run AddAdGroup.cs.
   /// </summary>
   public class AddAdGroupDemographicCriteria : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -58,61 +58,63 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
     /// <param name="adGroupId">Id of the ad group to which criteria are
     /// added.</param>
     public void Run(AdWordsUser user, long adGroupId) {
-      // Get the AdGroupCriterionService.
-      AdGroupCriterionService adGroupCriterionService =
-          (AdGroupCriterionService) user.GetService(AdWordsService.v201705.AdGroupCriterionService);
+      using (AdGroupCriterionService adGroupCriterionService =
+          (AdGroupCriterionService) user.GetService(
+              AdWordsService.v201705.AdGroupCriterionService)) {
 
-      // Create biddable ad group criterion for gender
-      Gender genderTarget = new Gender();
-      // Criterion Id for male. The IDs can be found here
-      // https://developers.google.com/adwords/api/docs/appendix/genders
-      genderTarget.id = 10;
+        // Create biddable ad group criterion for gender
+        Gender genderTarget = new Gender();
+        // Criterion Id for male. The IDs can be found here
+        // https://developers.google.com/adwords/api/docs/appendix/genders
+        genderTarget.id = 10;
 
-      BiddableAdGroupCriterion genderBiddableAdGroupCriterion = new BiddableAdGroupCriterion();
-      genderBiddableAdGroupCriterion.adGroupId = adGroupId;
-      genderBiddableAdGroupCriterion.criterion = genderTarget;
+        BiddableAdGroupCriterion genderBiddableAdGroupCriterion = new BiddableAdGroupCriterion();
+        genderBiddableAdGroupCriterion.adGroupId = adGroupId;
+        genderBiddableAdGroupCriterion.criterion = genderTarget;
 
-      // Create negative ad group criterion for age range
-      AgeRange ageRangeNegative = new AgeRange();
-      // Criterion Id for age 18 to 24. The IDs can be found here
-      // https://developers.google.com/adwords/api/docs/appendix/ages
+        // Create negative ad group criterion for age range
+        AgeRange ageRangeNegative = new AgeRange();
+        // Criterion Id for age 18 to 24. The IDs can be found here
+        // https://developers.google.com/adwords/api/docs/appendix/ages
 
-      ageRangeNegative.id = 503001;
-      NegativeAdGroupCriterion ageRangeNegativeAdGroupCriterion = new NegativeAdGroupCriterion();
-      ageRangeNegativeAdGroupCriterion.adGroupId = adGroupId;
-      ageRangeNegativeAdGroupCriterion.criterion = ageRangeNegative;
+        ageRangeNegative.id = 503001;
+        NegativeAdGroupCriterion ageRangeNegativeAdGroupCriterion = new NegativeAdGroupCriterion();
+        ageRangeNegativeAdGroupCriterion.adGroupId = adGroupId;
+        ageRangeNegativeAdGroupCriterion.criterion = ageRangeNegative;
 
-      // Create operations.
-      AdGroupCriterionOperation genderBiddableAdGroupCriterionOperation =
-          new AdGroupCriterionOperation();
-      genderBiddableAdGroupCriterionOperation.operand = genderBiddableAdGroupCriterion;
-      genderBiddableAdGroupCriterionOperation.@operator = Operator.ADD;
+        // Create operations.
+        AdGroupCriterionOperation genderBiddableAdGroupCriterionOperation =
+            new AdGroupCriterionOperation();
+        genderBiddableAdGroupCriterionOperation.operand = genderBiddableAdGroupCriterion;
+        genderBiddableAdGroupCriterionOperation.@operator = Operator.ADD;
 
-      AdGroupCriterionOperation ageRangeNegativeAdGroupCriterionOperation =
-          new AdGroupCriterionOperation();
-      ageRangeNegativeAdGroupCriterionOperation.operand = ageRangeNegativeAdGroupCriterion;
-      ageRangeNegativeAdGroupCriterionOperation.@operator = Operator.ADD;
+        AdGroupCriterionOperation ageRangeNegativeAdGroupCriterionOperation =
+            new AdGroupCriterionOperation();
+        ageRangeNegativeAdGroupCriterionOperation.operand = ageRangeNegativeAdGroupCriterion;
+        ageRangeNegativeAdGroupCriterionOperation.@operator = Operator.ADD;
 
-      AdGroupCriterionOperation[] operations = new AdGroupCriterionOperation[] {
-          genderBiddableAdGroupCriterionOperation, ageRangeNegativeAdGroupCriterionOperation};
+        AdGroupCriterionOperation[] operations = new AdGroupCriterionOperation[] {
+          genderBiddableAdGroupCriterionOperation, ageRangeNegativeAdGroupCriterionOperation
+        };
 
-      try {
-        // Add ad group criteria.
-        AdGroupCriterionReturnValue result = adGroupCriterionService.mutate(operations);
+        try {
+          // Add ad group criteria.
+          AdGroupCriterionReturnValue result = adGroupCriterionService.mutate(operations);
 
-        // Display ad group criteria.
-        if (result != null && result.value != null) {
-          foreach (AdGroupCriterion adGroupCriterionResult in result.value) {
-            Console.WriteLine("Ad group criterion with ad group id \"{0}\", criterion id " +
-                "\"{1}\", and type \"{2}\" was added.", adGroupCriterionResult.adGroupId,
-                adGroupCriterionResult.criterion.id,
-                adGroupCriterionResult.criterion.CriterionType);
+          // Display ad group criteria.
+          if (result != null && result.value != null) {
+            foreach (AdGroupCriterion adGroupCriterionResult in result.value) {
+              Console.WriteLine("Ad group criterion with ad group id \"{0}\", criterion id " +
+                  "\"{1}\", and type \"{2}\" was added.", adGroupCriterionResult.adGroupId,
+                  adGroupCriterionResult.criterion.id,
+                  adGroupCriterionResult.criterion.CriterionType);
+            }
+          } else {
+            Console.WriteLine("No ad group criteria were added.");
           }
-        } else {
-          Console.WriteLine("No ad group criteria were added.");
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create ad group criteria.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to create ad group criteria.", e);
       }
     }
   }

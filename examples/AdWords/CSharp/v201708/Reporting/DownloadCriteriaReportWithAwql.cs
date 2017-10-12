@@ -18,16 +18,17 @@ using Google.Api.Ads.AdWords.v201708;
 using Google.Api.Ads.Common.Util.Reports;
 
 using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
+
   /// <summary>
   /// This code example gets and downloads a criteria Ad Hoc report from an AWQL
   /// query. See https://developers.google.com/adwords/api/docs/guides/awql for
   /// AWQL documentation.
   /// </summary>
   public class DownloadCriteriaReportWithAwql : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -70,7 +71,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
 
       try {
         ReportUtilities utilities = new ReportUtilities(user, "v201708", query,
-            DownloadFormat.CSV.ToString());
+            DownloadFormat.GZIPPED_CSV.ToString());
         using (ReportResponse response = utilities.GetResponse()) {
           response.Save(filePath);
         }

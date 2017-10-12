@@ -58,53 +58,53 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="adGroupId">ID of the ad group from which keywords are
     /// retrieved.</param>
     public void Run(AdWordsUser user, long adGroupId) {
-      // Get the AdGroupCriterionService.
-      AdGroupCriterionService adGroupCriterionService =
+      using (AdGroupCriterionService adGroupCriterionService =
           (AdGroupCriterionService) user.GetService(
-              AdWordsService.v201702.AdGroupCriterionService);
+              AdWordsService.v201702.AdGroupCriterionService)) {
 
-      // Create a selector.
-      Selector selector = new Selector() {
-        fields = new string[] {
-          Keyword.Fields.Id, Keyword.Fields.KeywordMatchType,
-          Keyword.Fields.KeywordText, Keyword.Fields.CriteriaType
-        },
-        predicates = new Predicate[] {
-          // Select only keywords.
-          Predicate.In(Keyword.Fields.CriteriaType, new string[] {"KEYWORD"}),
+        // Create a selector.
+        Selector selector = new Selector() {
+          fields = new string[] {
+            Keyword.Fields.Id, Keyword.Fields.KeywordMatchType,
+            Keyword.Fields.KeywordText, Keyword.Fields.CriteriaType
+          },
+          predicates = new Predicate[] {
+            // Select only keywords.
+            Predicate.In(Keyword.Fields.CriteriaType, new string[] {"KEYWORD"}),
 
-          // Restrict search to an ad group.
-          Predicate.Equals(AdGroupCriterion.Fields.AdGroupId, adGroupId),
-        },
-        ordering = new OrderBy[] {OrderBy.Asc(Keyword.Fields.KeywordText)},
-        paging = Paging.Default
-      };
+            // Restrict search to an ad group.
+            Predicate.Equals(AdGroupCriterion.Fields.AdGroupId, adGroupId),
+          },
+          ordering = new OrderBy[] { OrderBy.Asc(Keyword.Fields.KeywordText) },
+          paging = Paging.Default
+        };
 
-      AdGroupCriterionPage page = new AdGroupCriterionPage();
+        AdGroupCriterionPage page = new AdGroupCriterionPage();
 
-      try {
-        do {
-          // Get the keywords.
-          page = adGroupCriterionService.get(selector);
+        try {
+          do {
+            // Get the keywords.
+            page = adGroupCriterionService.get(selector);
 
-          // Display the results.
-          if (page != null && page.entries != null) {
-            int i = selector.paging.startIndex;
+            // Display the results.
+            if (page != null && page.entries != null) {
+              int i = selector.paging.startIndex;
 
-            foreach (AdGroupCriterion adGroupCriterion in page.entries) {
-              Keyword keyword = (Keyword) adGroupCriterion.criterion;
+              foreach (AdGroupCriterion adGroupCriterion in page.entries) {
+                Keyword keyword = (Keyword) adGroupCriterion.criterion;
 
-              Console.WriteLine("{0}) Keyword with text '{1}', match type '{2}', criteria " +
-                  "type '{3}', and ID {4} was found.", i + 1, keyword.text, keyword.matchType,
-                  keyword.type, keyword.id);
-              i++;
+                Console.WriteLine("{0}) Keyword with text '{1}', match type '{2}', criteria " +
+                    "type '{3}', and ID {4} was found.", i + 1, keyword.text, keyword.matchType,
+                    keyword.type, keyword.id);
+                i++;
+              }
             }
-          }
-          selector.paging.IncreaseOffset();
-        } while (selector.paging.startIndex < page.totalNumEntries);
-        Console.WriteLine("Number of keywords found: {0}", page.totalNumEntries);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to retrieve keywords.", e);
+            selector.paging.IncreaseOffset();
+          } while (selector.paging.startIndex < page.totalNumEntries);
+          Console.WriteLine("Number of keywords found: {0}", page.totalNumEntries);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to retrieve keywords.", e);
+        }
       }
     }
   }

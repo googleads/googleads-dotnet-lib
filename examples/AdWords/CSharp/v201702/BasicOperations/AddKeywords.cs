@@ -17,19 +17,20 @@ using Google.Api.Ads.AdWords.v201702;
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Web;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example adds keywords to an ad group. To get ad groups, run
   /// GetAdGroups.cs.
   /// </summary>
   public class AddKeywords : ExampleBase {
+
     /// <summary>
     /// Items being added in this code example.
     /// </summary>
-    readonly string[] KEYWORDS = new string[] { "mars cruise", "space hotel" };
+    private readonly string[] KEYWORDS = new string[] { "mars cruise", "space hotel" };
 
     /// <summary>
     /// Main method, to run this code example as a standalone application.
@@ -64,63 +65,65 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="adGroupId">Id of the ad group to which keywords are added.
     /// </param>
     public void Run(AdWordsUser user, long adGroupId) {
-      // Get the AdGroupCriterionService.
-      AdGroupCriterionService adGroupCriterionService =
+      using (AdGroupCriterionService adGroupCriterionService =
           (AdGroupCriterionService) user.GetService(
-              AdWordsService.v201702.AdGroupCriterionService);
+              AdWordsService.v201702.AdGroupCriterionService)) {
 
-      List<AdGroupCriterionOperation> operations = new List<AdGroupCriterionOperation>();
+        List<AdGroupCriterionOperation> operations = new List<AdGroupCriterionOperation>();
 
-      foreach (string keywordText in KEYWORDS) {
-        // Create the keyword.
-        Keyword keyword = new Keyword();
-        keyword.text = keywordText;
-        keyword.matchType = KeywordMatchType.BROAD;
+        foreach (string keywordText in KEYWORDS) {
+          // Create the keyword.
+          Keyword keyword = new Keyword();
+          keyword.text = keywordText;
+          keyword.matchType = KeywordMatchType.BROAD;
 
-        // Create the biddable ad group criterion.
-        BiddableAdGroupCriterion keywordCriterion = new BiddableAdGroupCriterion();
-        keywordCriterion.adGroupId = adGroupId;
-        keywordCriterion.criterion = keyword;
+          // Create the biddable ad group criterion.
+          BiddableAdGroupCriterion keywordCriterion = new BiddableAdGroupCriterion();
+          keywordCriterion.adGroupId = adGroupId;
+          keywordCriterion.criterion = keyword;
 
-        // Optional: Set the user status.
-        keywordCriterion.userStatus = UserStatus.PAUSED;
+          // Optional: Set the user status.
+          keywordCriterion.userStatus = UserStatus.PAUSED;
 
-        // Optional: Set the keyword destination url.
-        keywordCriterion.finalUrls = new UrlList() {
-          urls = new string[] { "http://example.com/mars/cruise/?kw=" +
-              HttpUtility.UrlEncode(keywordText) }
-        };
+          // Optional: Set the keyword destination url.
+          keywordCriterion.finalUrls = new UrlList() {
+            urls = new string[] {
+                "http://example.com/mars/cruise/?kw=" + HttpUtility.UrlEncode(keywordText)
+            }
+          };
 
-        // Create the operations.
-        AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
-        operation.@operator = Operator.ADD;
-        operation.operand = keywordCriterion;
+          // Create the operations.
+          AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
+          operation.@operator = Operator.ADD;
+          operation.operand = keywordCriterion;
 
-        operations.Add(operation);
-      }
-      try {
-        // Create the keywords.
-        AdGroupCriterionReturnValue retVal = adGroupCriterionService.mutate(operations.ToArray());
-
-        // Display the results.
-        if (retVal != null && retVal.value != null) {
-          foreach (AdGroupCriterion adGroupCriterion in retVal.value) {
-            // If you are adding multiple type of criteria, then you may need to
-            // check for
-            //
-            // if (adGroupCriterion is Keyword) { ... }
-            //
-            // to identify the criterion type.
-            Console.WriteLine("Keyword with ad group id = '{0}', keyword id = '{1}', text = " +
-                "'{2}' and match type = '{3}' was created.", adGroupCriterion.adGroupId,
-                adGroupCriterion.criterion.id, (adGroupCriterion.criterion as Keyword).text,
-                (adGroupCriterion.criterion as Keyword).matchType);
-          }
-        } else {
-          Console.WriteLine("No keywords were added.");
+          operations.Add(operation);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to create keywords.", e);
+        try {
+          // Create the keywords.
+          AdGroupCriterionReturnValue retVal = adGroupCriterionService.mutate(
+              operations.ToArray());
+
+          // Display the results.
+          if (retVal != null && retVal.value != null) {
+            foreach (AdGroupCriterion adGroupCriterion in retVal.value) {
+              // If you are adding multiple type of criteria, then you may need to
+              // check for
+              //
+              // if (adGroupCriterion is Keyword) { ... }
+              //
+              // to identify the criterion type.
+              Console.WriteLine("Keyword with ad group id = '{0}', keyword id = '{1}', text = " +
+                  "'{2}' and match type = '{3}' was created.", adGroupCriterion.adGroupId,
+                  adGroupCriterion.criterion.id, (adGroupCriterion.criterion as Keyword).text,
+                  (adGroupCriterion.criterion as Keyword).matchType);
+            }
+          } else {
+            Console.WriteLine("No keywords were added.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create keywords.", e);
+        }
       }
     }
   }

@@ -57,50 +57,50 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="campaignId">Id of the campaign.</param>
     public void Run(AdWordsUser user, long campaignId) {
-      // Get the AdGroupAdService.
-      AdGroupBidModifierService adGroupBidModifierService =
+      using (AdGroupBidModifierService adGroupBidModifierService =
           (AdGroupBidModifierService) user.GetService(
-              AdWordsService.v201705.AdGroupBidModifierService);
+              AdWordsService.v201705.AdGroupBidModifierService)) {
 
-      // Get all ad group bid modifiers for the campaign.
-      Selector selector = new Selector() {
-        fields = new String[] {
+        // Get all ad group bid modifiers for the campaign.
+        Selector selector = new Selector() {
+          fields = new String[] {
           AdGroupBidModifier.Fields.CampaignId, AdGroupBidModifier.Fields.AdGroupId,
           AdGroupBidModifier.Fields.BidModifier, AdGroupBidModifier.Fields.BidModifierSource,
           Criterion.Fields.CriteriaType, Criterion.Fields.Id
         },
-        predicates = new Predicate[] {
+          predicates = new Predicate[] {
           Predicate.Equals(AdGroupBidModifier.Fields.CampaignId, campaignId)
         },
-        paging = Paging.Default
-      };
+          paging = Paging.Default
+        };
 
-      AdGroupBidModifierPage page = new AdGroupBidModifierPage();
+        AdGroupBidModifierPage page = new AdGroupBidModifierPage();
 
-      try {
-        do {
-          // Get the campaigns.
-          page = adGroupBidModifierService.get(selector);
+        try {
+          do {
+            // Get the campaigns.
+            page = adGroupBidModifierService.get(selector);
 
-          // Display the results.
-          if (page != null && page.entries != null) {
-            int i = selector.paging.startIndex;
-            foreach (AdGroupBidModifier adGroupBidModifier in page.entries) {
-              string bidModifier = (adGroupBidModifier.bidModifierSpecified) ?
-                  adGroupBidModifier.bidModifier.ToString() : "UNSET";
-              Console.WriteLine("{0}) Campaign ID {1}, AdGroup ID {2}, Criterion ID {3} has " +
-                  "ad group level modifier: {4} and source = {5}.",
-                  i + 1, adGroupBidModifier.campaignId,
-                  adGroupBidModifier.adGroupId, adGroupBidModifier.criterion.id, bidModifier,
-                  adGroupBidModifier.bidModifierSource);
-              i++;
+            // Display the results.
+            if (page != null && page.entries != null) {
+              int i = selector.paging.startIndex;
+              foreach (AdGroupBidModifier adGroupBidModifier in page.entries) {
+                string bidModifier = (adGroupBidModifier.bidModifierSpecified) ?
+                    adGroupBidModifier.bidModifier.ToString() : "UNSET";
+                Console.WriteLine("{0}) Campaign ID {1}, AdGroup ID {2}, Criterion ID {3} has " +
+                    "ad group level modifier: {4} and source = {5}.",
+                    i + 1, adGroupBidModifier.campaignId,
+                    adGroupBidModifier.adGroupId, adGroupBidModifier.criterion.id, bidModifier,
+                    adGroupBidModifier.bidModifierSource);
+                i++;
+              }
             }
-          }
-          selector.paging.IncreaseOffset();
-        } while (selector.paging.startIndex < page.totalNumEntries);
-        Console.WriteLine("Number of adgroup bid modifiers found: {0}", page.totalNumEntries);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to retrieve adgroup bid modifiers.", e);
+            selector.paging.IncreaseOffset();
+          } while (selector.paging.startIndex < page.totalNumEntries);
+          Console.WriteLine("Number of adgroup bid modifiers found: {0}", page.totalNumEntries);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to retrieve adgroup bid modifiers.", e);
+        }
       }
     }
   }

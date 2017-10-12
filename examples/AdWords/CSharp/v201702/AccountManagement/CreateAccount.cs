@@ -16,16 +16,16 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example illustrates how to create an account. Note by default,
   /// this account will only be accessible via its parent AdWords manager
   /// account.
   /// </summary>
   public class CreateAccount : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -56,36 +56,37 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the ManagedCustomerService.
-      ManagedCustomerService managedCustomerService = (ManagedCustomerService) user.GetService(
-          AdWordsService.v201702.ManagedCustomerService);
+      using (ManagedCustomerService managedCustomerService =
+          (ManagedCustomerService) user.GetService(
+              AdWordsService.v201702.ManagedCustomerService)) {
 
-      // Create account.
-      ManagedCustomer customer = new ManagedCustomer();
-      customer.name = "Customer created with ManagedCustomerService on " +
-          new DateTime().ToString();
-      customer.currencyCode = "EUR";
-      customer.dateTimeZone = "Europe/London";
+        // Create account.
+        ManagedCustomer customer = new ManagedCustomer();
+        customer.name = "Customer created with ManagedCustomerService on " +
+            new DateTime().ToString();
+        customer.currencyCode = "EUR";
+        customer.dateTimeZone = "Europe/London";
 
-      // Create operations.
-      ManagedCustomerOperation operation = new ManagedCustomerOperation();
-      operation.operand = customer;
-      operation.@operator = Operator.ADD;
-      try {
-        ManagedCustomerOperation[] operations = new ManagedCustomerOperation[] {operation};
-        // Add account.
-        ManagedCustomerReturnValue result = managedCustomerService.mutate(operations);
+        // Create operations.
+        ManagedCustomerOperation operation = new ManagedCustomerOperation();
+        operation.operand = customer;
+        operation.@operator = Operator.ADD;
+        try {
+          ManagedCustomerOperation[] operations = new ManagedCustomerOperation[] { operation };
+          // Add account.
+          ManagedCustomerReturnValue result = managedCustomerService.mutate(operations);
 
-        // Display accounts.
-        if (result.value != null && result.value.Length > 0) {
-          ManagedCustomer customerResult = result.value[0];
-          Console.WriteLine("Account with customer ID \"{0}\" was created.",
-              customerResult.customerId);
-        } else {
-          Console.WriteLine("No accounts were created.");
+          // Display accounts.
+          if (result.value != null && result.value.Length > 0) {
+            ManagedCustomer customerResult = result.value[0];
+            Console.WriteLine("Account with customer ID \"{0}\" was created.",
+                customerResult.customerId);
+          } else {
+            Console.WriteLine("No accounts were created.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create accounts.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to create accounts.", e);
       }
     }
   }

@@ -76,32 +76,33 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="user">The AdWords user.</param>
     /// <returns>The campaign group.</returns>
     private static CampaignGroup CreateCampaignGroup(AdWordsUser user) {
-      // Get the CampaignGroupService.
-      CampaignGroupService campaignGroupService =
-          (CampaignGroupService) user.GetService(AdWordsService.v201708.CampaignGroupService);
+      using (CampaignGroupService campaignGroupService =
+          (CampaignGroupService) user.GetService(AdWordsService.v201708.CampaignGroupService)) {
 
-      // Create the campaign group.
-      CampaignGroup campaignGroup = new CampaignGroup();
-      campaignGroup.name = "Mars campaign group - " + ExampleUtilities.GetShortRandomString();
+        // Create the campaign group.
+        CampaignGroup campaignGroup = new CampaignGroup();
+        campaignGroup.name = "Mars campaign group - " + ExampleUtilities.GetShortRandomString();
 
-      // Create the operation.
-      CampaignGroupOperation operation = new CampaignGroupOperation();
-      operation.operand = campaignGroup;
-      operation.@operator = Operator.ADD;
+        // Create the operation.
+        CampaignGroupOperation operation = new CampaignGroupOperation();
+        operation.operand = campaignGroup;
+        operation.@operator = Operator.ADD;
 
-      try {
-        CampaignGroupReturnValue retval = campaignGroupService.mutate(
-            new CampaignGroupOperation[] { operation });
+        try {
+          CampaignGroupReturnValue retval = campaignGroupService.mutate(
+              new CampaignGroupOperation[] { operation });
 
-        // Display the results.
-        CampaignGroup newCampaignGroup = retval.value[0];
-        Console.WriteLine("Campaign group with ID = '{0}' and name = '{1}' was created.",
-            newCampaignGroup.id, newCampaignGroup.name);
-        return newCampaignGroup;
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to add campaign group.", e);
+          // Display the results.
+          CampaignGroup newCampaignGroup = retval.value[0];
+          Console.WriteLine("Campaign group with ID = '{0}' and name = '{1}' was created.",
+              newCampaignGroup.id, newCampaignGroup.name);
+          return newCampaignGroup;
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to add campaign group.", e);
+        }
       }
     }
+
 
     /// <summary>
     /// Adds multiple campaigns to a campaign group.
@@ -111,36 +112,37 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="campaignIds">IDs of the campaigns to be added to the campaign group.</param>
     private static void AddCampaignsToGroup(AdWordsUser user, long campaignGroupId,
         long[] campaignIds) {
-      // Get the CampaignService.
-      CampaignService campaignService = (CampaignService) user.GetService(
-          AdWordsService.v201708.CampaignService);
+      using (CampaignService campaignService = (CampaignService) user.GetService(
+          AdWordsService.v201708.CampaignService)) {
 
-      List<CampaignOperation> operations = new List<CampaignOperation>();
+        List<CampaignOperation> operations = new List<CampaignOperation>();
 
-      for (int i = 0; i < campaignIds.Length; i++) {
-        Campaign campaign = new Campaign();
-        campaign.id = campaignIds[i];
-        campaign.campaignGroupId = campaignGroupId;
+        for (int i = 0; i < campaignIds.Length; i++) {
+          Campaign campaign = new Campaign();
+          campaign.id = campaignIds[i];
+          campaign.campaignGroupId = campaignGroupId;
 
-        CampaignOperation operation = new CampaignOperation();
-        operation.operand = campaign;
-        operation.@operator = Operator.SET;
-        operations.Add(operation);
-      }
+          CampaignOperation operation = new CampaignOperation();
+          operation.operand = campaign;
+          operation.@operator = Operator.SET;
+          operations.Add(operation);
+        }
 
-      try {
-        CampaignReturnValue retval = campaignService.mutate(operations.ToArray());
-        List<long> updatedCampaignIds = new List<long>();
-        retval.value.ToList().ForEach(
-            updatedCampaign => updatedCampaignIds.Add(updatedCampaign.id));
+        try {
+          CampaignReturnValue retval = campaignService.mutate(operations.ToArray());
+          List<long> updatedCampaignIds = new List<long>();
+          retval.value.ToList().ForEach(
+              updatedCampaign => updatedCampaignIds.Add(updatedCampaign.id));
 
-        // Display the results.
-        Console.WriteLine("The following campaign IDs were added to the campaign group " +
-          "with ID '{0}':\n\t{1}'", campaignGroupId, string.Join(", ", updatedCampaignIds));
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to add campaigns to campaign group.", e);
+          // Display the results.
+          Console.WriteLine("The following campaign IDs were added to the campaign group " +
+            "with ID '{0}':\n\t{1}'", campaignGroupId, string.Join(", ", updatedCampaignIds));
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to add campaigns to campaign group.", e);
+        }
       }
     }
+
 
     /// <summary>
     /// Creates a performance target for the campaign group.
@@ -150,61 +152,63 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <returns>The newly created performance target.</returns>
     private static CampaignGroupPerformanceTarget CreatePerformanceTarget(AdWordsUser user,
         long campaignGroupId) {
-      // Get the CampaignGroupPerformanceTargetService.
-      CampaignGroupPerformanceTargetService campaignGroupPerformanceTargetService =
+      using (CampaignGroupPerformanceTargetService campaignGroupPerformanceTargetService =
           (CampaignGroupPerformanceTargetService) user.GetService(
-              AdWordsService.v201708.CampaignGroupPerformanceTargetService);
+              AdWordsService.v201708.CampaignGroupPerformanceTargetService)) {
 
-      // Create the performance target.
-      CampaignGroupPerformanceTarget campaignGroupPerformanceTarget =
-        new CampaignGroupPerformanceTarget();
-      campaignGroupPerformanceTarget.campaignGroupId = campaignGroupId;
+        // Create the performance target.
+        CampaignGroupPerformanceTarget campaignGroupPerformanceTarget =
+          new CampaignGroupPerformanceTarget();
+        campaignGroupPerformanceTarget.campaignGroupId = campaignGroupId;
 
-      PerformanceTarget performanceTarget = new PerformanceTarget();
-      // Keep the CPC for the campaigns < $3.
-      performanceTarget.efficiencyTargetType = EfficiencyTargetType.CPC_LESS_THAN_OR_EQUAL_TO;
-      performanceTarget.efficiencyTargetValue = 3000000;
+        PerformanceTarget performanceTarget = new PerformanceTarget();
+        // Keep the CPC for the campaigns < $3.
+        performanceTarget.efficiencyTargetType = EfficiencyTargetType.CPC_LESS_THAN_OR_EQUAL_TO;
+        performanceTarget.efficiencyTargetValue = 3000000;
 
-      // Keep the maximum spend under $50.
-      performanceTarget.spendTargetType = SpendTargetType.MAXIMUM;
-      Money maxSpend = new Money();
-      maxSpend.microAmount = 500000000;
-      performanceTarget.spendTarget = maxSpend;
+        // Keep the maximum spend under $50.
+        performanceTarget.spendTargetType = SpendTargetType.MAXIMUM;
+        Money maxSpend = new Money();
+        maxSpend.microAmount = 500000000;
+        performanceTarget.spendTarget = maxSpend;
 
-      // Aim for at least 3000 clicks.
-      performanceTarget.volumeTargetValue = 3000;
-      performanceTarget.volumeGoalType = VolumeGoalType.MAXIMIZE_CLICKS;
+        // Aim for at least 3000 clicks.
+        performanceTarget.volumeTargetValue = 3000;
+        performanceTarget.volumeGoalType = VolumeGoalType.MAXIMIZE_CLICKS;
 
-      // Start the performance target today, and run it for the next 90 days.
-      System.DateTime startDate = System.DateTime.Now;
-      System.DateTime endDate = startDate.AddDays(90);
+        // Start the performance target today, and run it for the next 90 days.
+        System.DateTime startDate = System.DateTime.Now;
+        System.DateTime endDate = startDate.AddDays(90);
 
-      performanceTarget.startDate = startDate.ToString("yyyyMMdd");
-      performanceTarget.endDate = endDate.ToString("yyyyMMdd");
+        performanceTarget.startDate = startDate.ToString("yyyyMMdd");
+        performanceTarget.endDate = endDate.ToString("yyyyMMdd");
 
-      campaignGroupPerformanceTarget.performanceTarget = performanceTarget;
+        campaignGroupPerformanceTarget.performanceTarget = performanceTarget;
 
-      // Create the operation.
-      CampaignGroupPerformanceTargetOperation operation =
-          new CampaignGroupPerformanceTargetOperation();
-      operation.operand = campaignGroupPerformanceTarget;
-      operation.@operator = Operator.ADD;
+        // Create the operation.
+        CampaignGroupPerformanceTargetOperation operation =
+            new CampaignGroupPerformanceTargetOperation();
+        operation.operand = campaignGroupPerformanceTarget;
+        operation.@operator = Operator.ADD;
 
-      try {
-        CampaignGroupPerformanceTargetReturnValue retval =
-            campaignGroupPerformanceTargetService.mutate(
-                new CampaignGroupPerformanceTargetOperation[] { operation });
+        try {
+          CampaignGroupPerformanceTargetReturnValue retval =
+              campaignGroupPerformanceTargetService.mutate(
+                  new CampaignGroupPerformanceTargetOperation[] { operation });
 
-        // Display the results.
-        CampaignGroupPerformanceTarget newCampaignPerfTarget = retval.value[0];
+          // Display the results.
+          CampaignGroupPerformanceTarget newCampaignPerfTarget = retval.value[0];
 
-        Console.WriteLine("Campaign performance target with id = '{0}' was added for " +
-            "campaign group ID '{1}'.", newCampaignPerfTarget.id,
-            newCampaignPerfTarget.campaignGroupId);
-        return newCampaignPerfTarget;
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to create campaign performance target.", e);
+          Console.WriteLine("Campaign performance target with id = '{0}' was added for " +
+              "campaign group ID '{1}'.", newCampaignPerfTarget.id,
+              newCampaignPerfTarget.campaignGroupId);
+          return newCampaignPerfTarget;
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create campaign performance target.",
+              e);
+        }
       }
     }
+
   }
 }

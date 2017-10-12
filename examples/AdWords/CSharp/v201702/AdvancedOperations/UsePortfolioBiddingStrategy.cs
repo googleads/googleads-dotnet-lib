@@ -16,15 +16,15 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example adds a portfolio bidding strategy and uses it to
   /// construct a campaign.
   /// </summary>
   public class UsePortfolioBiddingStrategy : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -55,16 +55,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the services.
-      BiddingStrategyService biddingStrategyService = (BiddingStrategyService) user.GetService(
-          AdWordsService.v201702.BiddingStrategyService);
-
-      BudgetService budgetService = (BudgetService) user.GetService(
-          AdWordsService.v201702.BudgetService);
-
-      CampaignService campaignService = (CampaignService) user.GetService(
-          AdWordsService.v201702.CampaignService);
-
       String BIDDINGSTRATEGY_NAME = "Maximize Clicks " + ExampleUtilities.GetRandomString();
       const long BID_CEILING = 2000000;
       const long SPEND_TARGET = 20000000;
@@ -76,20 +66,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
 
       try {
         SharedBiddingStrategy portfolioBiddingStrategy = CreateBiddingStrategy(
-            biddingStrategyService, BIDDINGSTRATEGY_NAME, BID_CEILING, SPEND_TARGET);
-          Console.WriteLine("Portfolio bidding strategy with name '{0}' and ID {1} of type " +
-              "{2} was created.", portfolioBiddingStrategy.name, portfolioBiddingStrategy.id,
-              portfolioBiddingStrategy.biddingScheme.BiddingSchemeType);
+            user, BIDDINGSTRATEGY_NAME, BID_CEILING, SPEND_TARGET);
+        Console.WriteLine("Portfolio bidding strategy with name '{0}' and ID {1} of type " +
+            "{2} was created.", portfolioBiddingStrategy.name, portfolioBiddingStrategy.id,
+            portfolioBiddingStrategy.biddingScheme.BiddingSchemeType);
 
-          Budget sharedBudget = CreateSharedBudget(budgetService, BUDGET_NAME, BUDGET_AMOUNT);
+        Budget sharedBudget = CreateSharedBudget(user, BUDGET_NAME, BUDGET_AMOUNT);
 
-          Campaign newCampaign = CreateCampaignWithBiddingStrategy(campaignService, CAMPAIGN_NAME,
-              portfolioBiddingStrategy.id, sharedBudget.budgetId);
+        Campaign newCampaign = CreateCampaignWithBiddingStrategy(user, CAMPAIGN_NAME,
+            portfolioBiddingStrategy.id, sharedBudget.budgetId);
 
-          Console.WriteLine("Campaign with name '{0}', ID {1} and bidding scheme ID {2} was " +
-              "created.", newCampaign.name, newCampaign.id,
-              newCampaign.biddingStrategyConfiguration.biddingStrategyId);
-
+        Console.WriteLine("Campaign with name '{0}', ID {1} and bidding scheme ID {2} was " +
+            "created.", newCampaign.name, newCampaign.id,
+            newCampaign.biddingStrategyConfiguration.biddingStrategyId);
       } catch (Exception e) {
         throw new System.ApplicationException("Failed to create campaign that uses portfolio " +
             "bidding strategy.", e);
@@ -99,105 +88,117 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <summary>
     /// Creates the portfolio bidding strategy.
     /// </summary>
-    /// <param name="biddingStrategyService">The bidding strategy service.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="name">The bidding strategy name.</param>
     /// <param name="bidCeiling">The bid ceiling.</param>
     /// <param name="spendTarget">The spend target.</param>
     /// <returns>The bidding strategy object.</returns>
-    private SharedBiddingStrategy CreateBiddingStrategy(
-        BiddingStrategyService biddingStrategyService, String name, long bidCeiling,
-        long spendTarget) {
-      // Create a portfolio bidding strategy.
-      SharedBiddingStrategy portfolioBiddingStrategy = new SharedBiddingStrategy();
-      portfolioBiddingStrategy.name = name;
+    private SharedBiddingStrategy CreateBiddingStrategy(AdWordsUser user, String name,
+        long bidCeiling,long spendTarget) {
+      using (BiddingStrategyService biddingStrategyService =
+          (BiddingStrategyService) user.GetService(
+              AdWordsService.v201702.BiddingStrategyService)) {
 
-      TargetSpendBiddingScheme biddingScheme = new TargetSpendBiddingScheme();
-      // Optionally set additional bidding scheme parameters.
-      biddingScheme.bidCeiling = new Money();
-      biddingScheme.bidCeiling.microAmount = bidCeiling;
+        // Create a portfolio bidding strategy.
+        SharedBiddingStrategy portfolioBiddingStrategy = new SharedBiddingStrategy();
+        portfolioBiddingStrategy.name = name;
 
-      biddingScheme.spendTarget = new Money();
-      biddingScheme.spendTarget.microAmount = spendTarget;
+        TargetSpendBiddingScheme biddingScheme = new TargetSpendBiddingScheme();
+        // Optionally set additional bidding scheme parameters.
+        biddingScheme.bidCeiling = new Money();
+        biddingScheme.bidCeiling.microAmount = bidCeiling;
 
-      portfolioBiddingStrategy.biddingScheme = biddingScheme;
+        biddingScheme.spendTarget = new Money();
+        biddingScheme.spendTarget.microAmount = spendTarget;
 
-      // Create operation.
-      BiddingStrategyOperation operation = new BiddingStrategyOperation();
-      operation.@operator = Operator.ADD;
-      operation.operand = portfolioBiddingStrategy;
+        portfolioBiddingStrategy.biddingScheme = biddingScheme;
 
-      return biddingStrategyService.mutate(new BiddingStrategyOperation[] {operation}).value[0];
+        // Create operation.
+        BiddingStrategyOperation operation = new BiddingStrategyOperation();
+        operation.@operator = Operator.ADD;
+        operation.operand = portfolioBiddingStrategy;
+
+        return biddingStrategyService.mutate(
+            new BiddingStrategyOperation[] { operation }).value[0];
+      }
     }
 
     /// <summary>
     /// Creates an explicit budget to be used only to create the Campaign.
     /// </summary>
-    /// <param name="budgetService">The budget service.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="name">The budget name.</param>
     /// <param name="amount">The budget amount.</param>
     /// <returns>The budget object.</returns>
-    private Budget CreateSharedBudget(BudgetService budgetService, String name, long amount) {
-      // Create a shared budget
-      Budget budget = new Budget();
-      budget.name = name;
-      budget.amount = new Money();
-      budget.amount.microAmount = amount;
-      budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
-      budget.isExplicitlyShared = true;
+    private Budget CreateSharedBudget(AdWordsUser user, String name, long amount) {
+      using (BudgetService budgetService = (BudgetService) user.GetService(
+          AdWordsService.v201702.BudgetService)) {
 
-      // Create operation.
-      BudgetOperation operation = new BudgetOperation();
-      operation.operand = budget;
-      operation.@operator = Operator.ADD;
+        // Create a shared budget
+        Budget budget = new Budget();
+        budget.name = name;
+        budget.amount = new Money();
+        budget.amount.microAmount = amount;
+        budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
+        budget.isExplicitlyShared = true;
 
-      // Make the mutate request.
-      return budgetService.mutate(new BudgetOperation[] {operation}).value[0];
+        // Create operation.
+        BudgetOperation operation = new BudgetOperation();
+        operation.operand = budget;
+        operation.@operator = Operator.ADD;
+
+        // Make the mutate request.
+        return budgetService.mutate(new BudgetOperation[] { operation }).value[0];
+      }
     }
 
     /// <summary>
     /// Creates the campaign with a portfolio bidding strategy.
     /// </summary>
-    /// <param name="campaignService">The campaign service.</param>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="name">The campaign name.</param>
     /// <param name="biddingStrategyId">The bidding strategy id.</param>
     /// <param name="sharedBudgetId">The shared budget id.</param>
     /// <returns>The campaign object.</returns>
-    private Campaign CreateCampaignWithBiddingStrategy(CampaignService campaignService, string name,
+    private Campaign CreateCampaignWithBiddingStrategy(AdWordsUser user, string name,
         long biddingStrategyId, long sharedBudgetId) {
-      // Create campaign.
-      Campaign campaign = new Campaign();
-      campaign.name = name;
-      campaign.advertisingChannelType = AdvertisingChannelType.SEARCH;
+      using (CampaignService campaignService = (CampaignService) user.GetService(
+          AdWordsService.v201702.CampaignService)) {
+        // Create campaign.
+        Campaign campaign = new Campaign();
+        campaign.name = name;
+        campaign.advertisingChannelType = AdvertisingChannelType.SEARCH;
 
-      // Recommendation: Set the campaign to PAUSED when creating it to prevent
-      // the ads from immediately serving. Set to ENABLED once you've added
-      // targeting and the ads are ready to serve.
-      campaign.status = CampaignStatus.PAUSED;
+        // Recommendation: Set the campaign to PAUSED when creating it to prevent
+        // the ads from immediately serving. Set to ENABLED once you've added
+        // targeting and the ads are ready to serve.
+        campaign.status = CampaignStatus.PAUSED;
 
-      // Set the budget.
-      campaign.budget = new Budget();
-      campaign.budget.budgetId = sharedBudgetId;
+        // Set the budget.
+        campaign.budget = new Budget();
+        campaign.budget.budgetId = sharedBudgetId;
 
-      // Set bidding strategy (required).
-      BiddingStrategyConfiguration biddingStrategyConfiguration =
-          new BiddingStrategyConfiguration();
-      biddingStrategyConfiguration.biddingStrategyId = biddingStrategyId;
+        // Set bidding strategy (required).
+        BiddingStrategyConfiguration biddingStrategyConfiguration =
+            new BiddingStrategyConfiguration();
+        biddingStrategyConfiguration.biddingStrategyId = biddingStrategyId;
 
-      campaign.biddingStrategyConfiguration = biddingStrategyConfiguration;
+        campaign.biddingStrategyConfiguration = biddingStrategyConfiguration;
 
-      // Set network targeting (recommended).
-      NetworkSetting networkSetting = new NetworkSetting();
-      networkSetting.targetGoogleSearch = true;
-      networkSetting.targetSearchNetwork = true;
-      networkSetting.targetContentNetwork = true;
-      campaign.networkSetting = networkSetting;
+        // Set network targeting (recommended).
+        NetworkSetting networkSetting = new NetworkSetting();
+        networkSetting.targetGoogleSearch = true;
+        networkSetting.targetSearchNetwork = true;
+        networkSetting.targetContentNetwork = true;
+        campaign.networkSetting = networkSetting;
 
-      // Create operation.
-      CampaignOperation operation = new CampaignOperation();
-      operation.operand = campaign;
-      operation.@operator = Operator.ADD;
+        // Create operation.
+        CampaignOperation operation = new CampaignOperation();
+        operation.operand = campaign;
+        operation.@operator = Operator.ADD;
 
-      return campaignService.mutate(new CampaignOperation[] {operation}).value[0];
+        return campaignService.mutate(new CampaignOperation[] { operation }).value[0];
+      }
     }
   }
 }

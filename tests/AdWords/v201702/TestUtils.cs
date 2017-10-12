@@ -477,7 +477,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201702 {
 
       // This field normally contains the javascript ad tag.
       redirectAd.snippet =
-          "<img src=\"http://www.google.com/intl/en/adwords/select/images/samples/inline.jpg\"/>";
+          "<img src=\"https://goo.gl/3b9Wfh\"/>";
       redirectAd.impressionBeaconUrl = "http://www.examples.com/beacon";
       redirectAd.certifiedVendorFormatId = 119;
       redirectAd.isCookieTargeted = false;
@@ -614,7 +614,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201702 {
     /// </summary>
     /// <returns>The image data, as an array of bytes.</returns>
     public byte[] GetTestImage() {
-      return MediaUtilities.GetAssetDataFromUrl("http://goo.gl/HJM3L");
+      return MediaUtilities.GetAssetDataFromUrl("https://goo.gl/3b9Wfh");
     }
 
     /// <summary>

@@ -12,10 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201705;
 using Google.Api.Ads.Common.Util;
+
+using System;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
 
@@ -57,43 +58,42 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="adGroupId">Id of the first adgroup to which ad is added.</param>
     public void Run(AdWordsUser user, long adGroupId) {
-      // Get the AdGroupAdService.
-      AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
-          AdWordsService.v201705.AdGroupAdService);
+      using (AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
+          AdWordsService.v201705.AdGroupAdService)) {
 
-      // Create the HTML5 template ad. See
-      // https://developers.google.com/adwords/api/docs/guides/template-ads#html5_ads
-      // for more details.
-      TemplateAd html5Ad = new TemplateAd() {
-        name = "Ad for HTML5",
-        templateId = 419,
-        finalUrls = new string[] { "http://example.com/html5" },
-        displayUrl = "www.example.com/html5",
-        dimensions = new Dimensions() {
-          width = 300,
-          height = 250
-        }
-      };
+        // Create the HTML5 template ad. See
+        // https://developers.google.com/adwords/api/docs/guides/template-ads#html5_ads
+        // for more details.
+        TemplateAd html5Ad = new TemplateAd() {
+          name = "Ad for HTML5",
+          templateId = 419,
+          finalUrls = new string[] { "http://example.com/html5" },
+          displayUrl = "www.example.com/html5",
+          dimensions = new Dimensions() {
+            width = 300,
+            height = 250
+          }
+        };
 
-      // The HTML5 zip file contains all the HTML, CSS, and images needed for the
-      // HTML5 ad. For help on creating an HTML5 zip file, check out Google Web
-      // Designer (https://www.google.com/webdesigner/).
-      byte[] html5Zip = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9Y7qI2");
+        // The HTML5 zip file contains all the HTML, CSS, and images needed for the
+        // HTML5 ad. For help on creating an HTML5 zip file, check out Google Web
+        // Designer (https://www.google.com/webdesigner/).
+        byte[] html5Zip = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9Y7qI2");
 
-      // Create a media bundle containing the zip file with all the HTML5 components.
-      MediaBundle mediaBundle = new MediaBundle() {
-        // You may also upload an HTML5 zip using MediaService.upload() method
-        // set the mediaId field. See UploadMediaBundle.cs for an example on
-        // how to upload HTML5 zip files.
-        data = html5Zip,
-        entryPoint = "carousel/index.html",
-        type = MediaMediaType.MEDIA_BUNDLE
-      };
+        // Create a media bundle containing the zip file with all the HTML5 components.
+        MediaBundle mediaBundle = new MediaBundle() {
+          // You may also upload an HTML5 zip using MediaService.upload() method
+          // set the mediaId field. See UploadMediaBundle.cs for an example on
+          // how to upload HTML5 zip files.
+          data = html5Zip,
+          entryPoint = "carousel/index.html",
+          type = MediaMediaType.MEDIA_BUNDLE
+        };
 
-      // Create the template elements for the ad. You can refer to
-      // https://developers.google.com/adwords/api/docs/appendix/templateads
-      // for the list of available template fields.
-      html5Ad.templateElements = new TemplateElement[] {
+        // Create the template elements for the ad. You can refer to
+        // https://developers.google.com/adwords/api/docs/appendix/templateads
+        // for the list of available template fields.
+        html5Ad.templateElements = new TemplateElement[] {
         new TemplateElement() {
           uniqueName = "adData",
           fields = new TemplateElementField[] {
@@ -111,34 +111,35 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
         }
       };
 
-      // Create the AdGroupAd.
-      AdGroupAd html5AdGroupAd = new AdGroupAd() {
-        adGroupId = adGroupId,
-        ad = html5Ad,
-        // Additional properties (non-required).
-        status = AdGroupAdStatus.PAUSED
-      };
-      AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation() {
-        @operator = Operator.ADD,
-        operand = html5AdGroupAd
-      };
+        // Create the AdGroupAd.
+        AdGroupAd html5AdGroupAd = new AdGroupAd() {
+          adGroupId = adGroupId,
+          ad = html5Ad,
+          // Additional properties (non-required).
+          status = AdGroupAdStatus.PAUSED
+        };
+        AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation() {
+          @operator = Operator.ADD,
+          operand = html5AdGroupAd
+        };
 
-      try {
-        // Add HTML5 ad.
-        AdGroupAdReturnValue result =
-          adGroupAdService.mutate(new AdGroupAdOperation[] { adGroupAdOperation });
+        try {
+          // Add HTML5 ad.
+          AdGroupAdReturnValue result =
+            adGroupAdService.mutate(new AdGroupAdOperation[] { adGroupAdOperation });
 
-        // Display results.
-        if (result != null && result.value != null && result.value.Length > 0) {
-          foreach (AdGroupAd adGroupAd in result.value) {
-            Console.WriteLine("New HTML5 ad with id \"{0}\" and display url \"{1}\" was added.",
-              adGroupAd.ad.id, adGroupAd.ad.displayUrl);
+          // Display results.
+          if (result != null && result.value != null && result.value.Length > 0) {
+            foreach (AdGroupAd adGroupAd in result.value) {
+              Console.WriteLine("New HTML5 ad with id \"{0}\" and display url \"{1}\" was added.",
+                adGroupAd.ad.id, adGroupAd.ad.displayUrl);
+            }
+          } else {
+            Console.WriteLine("No HTML5 ads were added.");
           }
-        } else {
-          Console.WriteLine("No HTML5 ads were added.");
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create HTML5 ad.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to create HTML5 ad.", e);
       }
     }
   }

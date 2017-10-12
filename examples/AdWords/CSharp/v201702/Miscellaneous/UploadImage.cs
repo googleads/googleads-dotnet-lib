@@ -18,13 +18,14 @@ using Google.Api.Ads.Common.Util;
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example uploads an image. To get images, run GetAllVideosAndImages.cs.
   /// </summary>
   public class UploadImage : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -54,49 +55,32 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the MediaService.
-      MediaService mediaService = (MediaService) user.GetService(
-          AdWordsService.v201702.MediaService);
+      using (MediaService mediaService = (MediaService) user.GetService(
+          AdWordsService.v201702.MediaService)) {
 
-      // Create the image.
-      Image image = new Image();
-      image.data = MediaUtilities.GetAssetDataFromUrl("http://goo.gl/HJM3L");
-      image.type = MediaMediaType.IMAGE;
+        // Create the image.
+        Image image = new Image();
+        image.data = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/3b9Wfh");
+        image.type = MediaMediaType.IMAGE;
 
-      try {
-        // Upload the image.
-        Media[] result = mediaService.upload(new Media[] {image});
+        try {
+          // Upload the image.
+          Media[] result = mediaService.upload(new Media[] { image });
 
-        // Display the results.
-        if (result != null && result.Length > 0) {
-          Media newImage = result[0];
-          Dictionary<MediaSize, Dimensions> dimensions =
-              CreateMediaDimensionMap(newImage.dimensions);
-          Console.WriteLine("Image with id '{0}', dimensions '{1}x{2}', and MIME type '{3}'" +
-              " was uploaded.", newImage.mediaId, dimensions[MediaSize.FULL].width,
-              dimensions[MediaSize.FULL].height, newImage.mimeType);
-        } else {
-          Console.WriteLine("No images were uploaded.");
+          // Display the results.
+          if (result != null && result.Length > 0) {
+            Media newImage = result[0];
+            Dictionary<MediaSize, Dimensions> dimensions = newImage.dimensions.ToDict();
+            Console.WriteLine("Image with id '{0}', dimensions '{1}x{2}', and MIME type '{3}'" +
+                " was uploaded.", newImage.mediaId, dimensions[MediaSize.FULL].width,
+                dimensions[MediaSize.FULL].height, newImage.mimeType);
+          } else {
+            Console.WriteLine("No images were uploaded.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to upload image.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to upload image.", e);
       }
-    }
-
-    /// <summary>
-    /// Converts an array of Media_Size_DimensionsMapEntry into a dictionary.
-    /// </summary>
-    /// <param name="dimensions">The array of Media_Size_DimensionsMapEntry to be
-    /// converted into a dictionary.</param>
-    /// <returns>A dictionary with key as MediaSize, and value as Dimensions.
-    /// </returns>
-    private Dictionary<MediaSize, Dimensions> CreateMediaDimensionMap(
-        Media_Size_DimensionsMapEntry[] dimensions) {
-      Dictionary<MediaSize, Dimensions> mediaMap = new Dictionary<MediaSize, Dimensions>();
-      foreach (Media_Size_DimensionsMapEntry dimension in dimensions) {
-        mediaMap.Add(dimension.key, dimension.value);
-      }
-      return mediaMap;
     }
   }
 }

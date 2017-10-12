@@ -16,14 +16,8 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.Util.BatchJob.v201705
 Imports Google.Api.Ads.AdWords.v201705
 
-Imports System
-Imports System.Collections.Generic
-Imports System.Linq
-Imports System.IO
-Imports System.Text.RegularExpressions
-Imports System.Threading
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
+
   ''' <summary>
   ''' This code sample illustrates how to perform asynchronous requests using
   ''' BatchJobService and incremental uploads of operations. It also
@@ -55,7 +49,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -65,8 +59,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code sample illustrates how to perform asynchronous requests using " & _
-            "BatchJobService and incremental uploads of operations. It also demonstrates " & _
+        Return "This code sample illustrates how to perform asynchronous requests using " &
+            "BatchJobService and incremental uploads of operations. It also demonstrates " &
             "how to cancel a running batch job."
       End Get
     End Property
@@ -78,109 +72,110 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <param name="adGroupId">Id of the ad groups to which keywords are
     ''' added.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-      ' Get the MutateJobService.
-      Dim batchJobService As BatchJobService = CType(user.GetService( _
+      Using batchJobService As BatchJobService = CType(user.GetService(
           AdWordsService.v201705.BatchJobService), BatchJobService)
 
-      Dim addOp As New BatchJobOperation
-      addOp.operator = [Operator].ADD
-      addOp.operand = New BatchJob()
+        Dim addOp As New BatchJobOperation
+        addOp.operator = [Operator].ADD
+        addOp.operand = New BatchJob()
 
-      Try
-        Dim batchJob As BatchJob = batchJobService.mutate(New BatchJobOperation() {addOp}).value(0)
+        Try
+          Dim batchJob As BatchJob = batchJobService.mutate(
+              New BatchJobOperation() {addOp}).value(0)
 
-        Console.WriteLine("Created BatchJob with ID {0}, status '{1}' and upload URL {2}.",
-            batchJob.id, batchJob.status, batchJob.uploadUrl.url)
+          Console.WriteLine("Created BatchJob with ID {0}, status '{1}' and upload URL {2}.",
+              batchJob.id, batchJob.status, batchJob.uploadUrl.url)
 
-        Dim operations As List(Of AdGroupCriterionOperation) = CreateOperations(adGroupId)
+          Dim operations As List(Of AdGroupCriterionOperation) = CreateOperations(adGroupId)
 
-        ' Create a BatchJobUtilities instance for uploading operations. Use a
-        ' chunked upload.
-        Dim batchJobUploadHelper As New BatchJobUtilities(user, True, CHUNK_SIZE)
+          ' Create a BatchJobUtilities instance for uploading operations. Use a
+          ' chunked upload.
+          Dim batchJobUploadHelper As New BatchJobUtilities(user, True, CHUNK_SIZE)
 
-        ' Create a resumable Upload URL to upload the operations.
-        Dim resumableUploadUrl As String = batchJobUploadHelper.GetResumableUploadUrl( _
-            batchJob.uploadUrl.url)
+          ' Create a resumable Upload URL to upload the operations.
+          Dim resumableUploadUrl As String = batchJobUploadHelper.GetResumableUploadUrl(
+              batchJob.uploadUrl.url)
 
-        ' Use the BatchJobUploadHelper to upload all operations.
-        batchJobUploadHelper.Upload(resumableUploadUrl, operations.ToArray())
+          ' Use the BatchJobUploadHelper to upload all operations.
+          batchJobUploadHelper.Upload(resumableUploadUrl, operations.ToArray())
 
-        Dim waitHandler As WaitHandler
-        Dim wasCancelRequested As Boolean = False
+          Dim waitHandler As WaitHandler
+          Dim wasCancelRequested As Boolean = False
 
-        ' Create a wait handler.
-        waitHandler = New WaitHandler(batchJob, wasCancelRequested)
+          ' Create a wait handler.
+          waitHandler = New WaitHandler(batchJob, wasCancelRequested)
 
-        Dim isComplete As Boolean = batchJobUploadHelper.WaitForPendingJob(batchJob.id, _
-            TIME_TO_WAIT_FOR_COMPLETION, AddressOf waitHandler.OnJobWaitForCompletion)
+          Dim isComplete As Boolean = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
+              TIME_TO_WAIT_FOR_COMPLETION, AddressOf waitHandler.OnJobWaitForCompletion)
 
-        ' Restore the latest value for batchJob from waithandler.
-        batchJob = waitHandler.Job
-        wasCancelRequested = waitHandler.WasCancelRequested
+          ' Restore the latest value for batchJob from waithandler.
+          batchJob = waitHandler.Job
+          wasCancelRequested = waitHandler.WasCancelRequested
 
-        ' Optional: Cancel the job if it has not completed after waiting for
-        ' TIME_TO_WAIT_FOR_COMPLETION.
-        Dim shouldWaitForCancellation As Boolean = False
-        If Not isComplete AndAlso wasCancelRequested Then
-          Dim cancellationError As BatchJobError = Nothing
-          Try
-            batchJobUploadHelper.TryToCancelJob(batchJob.id)
-          Catch e As AdWordsApiException
-            cancellationError = GetBatchJobError(e)
-          End Try
-          If cancellationError Is Nothing Then
-            Console.WriteLine("Successfully requested job cancellation.")
-            shouldWaitForCancellation = True
-          Else
-            Console.WriteLine("Job cancellation failed. Error says: {0}.",
-                cancellationError.reason)
-          End If
-
-          If shouldWaitForCancellation Then
-            waitHandler = New WaitHandler(batchJob, wasCancelRequested)
-
-            isComplete = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
-              TIME_TO_WAIT_FOR_COMPLETION, AddressOf waitHandler.OnJobWaitForCancellation)
-
-            batchJob = waitHandler.Job
-            wasCancelRequested = waitHandler.WasCancelRequested
-          End If
-        End If
-
-        If Not isComplete Then
-          Throw New TimeoutException("Job is still in pending state after waiting for " & _
-              TIME_TO_WAIT_FOR_COMPLETION & " seconds.")
-        End If
-
-        If Not batchJob.processingErrors Is Nothing Then
-          For Each processingError As BatchJobProcessingError In batchJob.processingErrors
-            Console.WriteLine("  Processing error: {0}, {1}, {2}, {3}, {4}",
-                processingError.ApiErrorType, processingError.trigger,
-                processingError.errorString, processingError.fieldPath,
-                processingError.reason)
-          Next
-        End If
-
-        If (Not batchJob.downloadUrl Is Nothing) AndAlso _
-           (Not batchJob.downloadUrl.url Is Nothing) Then
-          Dim mutateResponse As BatchJobMutateResponse = batchJobUploadHelper.Download( _
-              batchJob.downloadUrl.url)
-          Console.WriteLine("Downloaded results from {0}.", batchJob.downloadUrl.url)
-          For Each mutateResult As MutateResult In mutateResponse.rval
-            Dim outcome As String
-            If mutateResult.errorList Is Nothing Then
-              outcome = "SUCCESS"
+          ' Optional: Cancel the job if it has not completed after waiting for
+          ' TIME_TO_WAIT_FOR_COMPLETION.
+          Dim shouldWaitForCancellation As Boolean = False
+          If Not isComplete AndAlso wasCancelRequested Then
+            Dim cancellationError As BatchJobError = Nothing
+            Try
+              batchJobUploadHelper.TryToCancelJob(batchJob.id)
+            Catch e As AdWordsApiException
+              cancellationError = GetBatchJobError(e)
+            End Try
+            If cancellationError Is Nothing Then
+              Console.WriteLine("Successfully requested job cancellation.")
+              shouldWaitForCancellation = True
             Else
-              outcome = "FAILURE"
+              Console.WriteLine("Job cancellation failed. Error says: {0}.",
+                  cancellationError.reason)
             End If
-            Console.WriteLine("  Operation [{0}] - {1}", mutateResult.index, outcome)
-          Next
-        Else
-          Console.WriteLine("No results available for download.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to create keywords using batch job.", e)
-      End Try
+
+            If shouldWaitForCancellation Then
+              waitHandler = New WaitHandler(batchJob, wasCancelRequested)
+
+              isComplete = batchJobUploadHelper.WaitForPendingJob(batchJob.id,
+                  TIME_TO_WAIT_FOR_COMPLETION, AddressOf waitHandler.OnJobWaitForCancellation)
+
+              batchJob = waitHandler.Job
+              wasCancelRequested = waitHandler.WasCancelRequested
+            End If
+          End If
+
+          If Not isComplete Then
+            Throw New TimeoutException("Job is still in pending state after waiting for " &
+                TIME_TO_WAIT_FOR_COMPLETION & " seconds.")
+          End If
+
+          If Not batchJob.processingErrors Is Nothing Then
+            For Each processingError As BatchJobProcessingError In batchJob.processingErrors
+              Console.WriteLine("  Processing error: {0}, {1}, {2}, {3}, {4}",
+                  processingError.ApiErrorType, processingError.trigger,
+                  processingError.errorString, processingError.fieldPath,
+                  processingError.reason)
+            Next
+          End If
+
+          If (Not batchJob.downloadUrl Is Nothing) AndAlso
+              (Not batchJob.downloadUrl.url Is Nothing) Then
+            Dim mutateResponse As BatchJobMutateResponse = batchJobUploadHelper.Download(
+                batchJob.downloadUrl.url)
+            Console.WriteLine("Downloaded results from {0}.", batchJob.downloadUrl.url)
+            For Each mutateResult As MutateResult In mutateResponse.rval
+              Dim outcome As String
+              If mutateResult.errorList Is Nothing Then
+                outcome = "SUCCESS"
+              Else
+                outcome = "FAILURE"
+              End If
+              Console.WriteLine("  Operation [{0}] - {1}", mutateResult.index, outcome)
+            Next
+          Else
+            Console.WriteLine("No results available for download.")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to create keywords using batch job.", e)
+        End Try
+      End Using
     End Sub
 
     ''' <summary>
@@ -235,7 +230,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
         End Set
       End Property
 
-
       ''' <summary>
       ''' Callback method when the job is waiting for cancellation.
       ''' </summary>
@@ -243,10 +237,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
       ''' <param name="timeElapsed">The time elapsed.</param>
       ''' <returns>True, if the wait loop should be cancelled, false otherwise.
       '''</returns>
-      Public Function OnJobWaitForCancellation(ByVal waitBatchJob As BatchJob, _
+      Public Function OnJobWaitForCancellation(ByVal waitBatchJob As BatchJob,
                                                ByVal timeElapsed As Long) As Boolean
         Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
-                          timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status)
+            timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status)
         batchJob = waitBatchJob
         Return False
       End Function
@@ -258,13 +252,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
       ''' <param name="timeElapsed">The time elapsed.</param>
       ''' <returns>True, if the wait loop should be cancelled, false otherwise.
       '''</returns>
-      Public Function OnJobWaitForCompletion(ByVal waitBatchJob As BatchJob, _
+      Public Function OnJobWaitForCompletion(ByVal waitBatchJob As BatchJob,
                                              ByVal timeElapsed As Long) As Boolean
         Console.WriteLine("[{0} seconds]: Batch job ID {1} has status '{2}'.",
-                                timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status)
+            timeElapsed / 1000, waitBatchJob.id, waitBatchJob.status)
         batchJob = waitBatchJob
         Return Me.WasCancelRequested
       End Function
+
     End Class
 
     ''' <summary>
@@ -273,7 +268,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <param name="e">The AdWords API Exception.</param>
     ''' <returns>The underlying batch job error if available, null otherwise.</returns>
     Private Function GetBatchJobError(ByVal e As AdWordsApiException) As BatchJobError
-      Dim temp As List(Of BatchJobError) = TryCast(e.ApiException, ApiException). _
+      Dim temp As List(Of BatchJobError) = TryCast(e.ApiException, ApiException).
           GetAllErrorsByType(Of BatchJobError)()
       ' MOE:begin_strip
       ' Reinvent FirstOrDefault since you cannot use FirstOrDefault with Mono and VBNC. It
@@ -326,4 +321,5 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     End Function
 
   End Class
+
 End Namespace

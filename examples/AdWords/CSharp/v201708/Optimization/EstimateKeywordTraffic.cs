@@ -54,124 +54,126 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the TrafficEstimatorService.
-      TrafficEstimatorService trafficEstimatorService = (TrafficEstimatorService) user.GetService(
-          AdWordsService.v201708.TrafficEstimatorService);
+      using (TrafficEstimatorService trafficEstimatorService =
+          (TrafficEstimatorService) user.GetService(
+              AdWordsService.v201708.TrafficEstimatorService)) {
 
-      // Create keywords. Refer to the TrafficEstimatorService documentation for the maximum
-      // number of keywords that can be passed in a single request.
-      //   https://developers.google.com/adwords/api/docs/reference/latest/TrafficEstimatorService
-      Keyword keyword1 = new Keyword();
-      keyword1.text = "mars cruise";
-      keyword1.matchType = KeywordMatchType.BROAD;
+        // Create keywords. Refer to the TrafficEstimatorService documentation for the maximum
+        // number of keywords that can be passed in a single request.
+        //   https://developers.google.com/adwords/api/docs/reference/latest/TrafficEstimatorService
+        Keyword keyword1 = new Keyword();
+        keyword1.text = "mars cruise";
+        keyword1.matchType = KeywordMatchType.BROAD;
 
-      Keyword keyword2 = new Keyword();
-      keyword2.text = "cheap cruise";
-      keyword2.matchType = KeywordMatchType.PHRASE;
+        Keyword keyword2 = new Keyword();
+        keyword2.text = "cheap cruise";
+        keyword2.matchType = KeywordMatchType.PHRASE;
 
-      Keyword keyword3 = new Keyword();
-      keyword3.text = "cruise";
-      keyword3.matchType = KeywordMatchType.EXACT;
+        Keyword keyword3 = new Keyword();
+        keyword3.text = "cruise";
+        keyword3.matchType = KeywordMatchType.EXACT;
 
-      Keyword[] keywords = new Keyword[] { keyword1, keyword2, keyword3 };
+        Keyword[] keywords = new Keyword[] { keyword1, keyword2, keyword3 };
 
-      // Create a keyword estimate request for each keyword.
-      List<KeywordEstimateRequest> keywordEstimateRequests = new List<KeywordEstimateRequest>();
+        // Create a keyword estimate request for each keyword.
+        List<KeywordEstimateRequest> keywordEstimateRequests = new List<KeywordEstimateRequest>();
 
-      foreach (Keyword keyword in keywords) {
-        KeywordEstimateRequest keywordEstimateRequest = new KeywordEstimateRequest();
-        keywordEstimateRequest.keyword = keyword;
-        keywordEstimateRequests.Add(keywordEstimateRequest);
-      }
+        foreach (Keyword keyword in keywords) {
+          KeywordEstimateRequest keywordEstimateRequest = new KeywordEstimateRequest();
+          keywordEstimateRequest.keyword = keyword;
+          keywordEstimateRequests.Add(keywordEstimateRequest);
+        }
 
-      // Create negative keywords.
-      Keyword negativeKeyword1 = new Keyword();
-      negativeKeyword1.text = "moon walk";
-      negativeKeyword1.matchType = KeywordMatchType.BROAD;
+        // Create negative keywords.
+        Keyword negativeKeyword1 = new Keyword();
+        negativeKeyword1.text = "moon walk";
+        negativeKeyword1.matchType = KeywordMatchType.BROAD;
 
-      KeywordEstimateRequest negativeKeywordEstimateRequest = new KeywordEstimateRequest();
-      negativeKeywordEstimateRequest.keyword = negativeKeyword1;
-      negativeKeywordEstimateRequest.isNegative = true;
-      keywordEstimateRequests.Add(negativeKeywordEstimateRequest);
+        KeywordEstimateRequest negativeKeywordEstimateRequest = new KeywordEstimateRequest();
+        negativeKeywordEstimateRequest.keyword = negativeKeyword1;
+        negativeKeywordEstimateRequest.isNegative = true;
+        keywordEstimateRequests.Add(negativeKeywordEstimateRequest);
 
-      // Create ad group estimate requests.
-      AdGroupEstimateRequest adGroupEstimateRequest = new AdGroupEstimateRequest();
-      adGroupEstimateRequest.keywordEstimateRequests = keywordEstimateRequests.ToArray();
-      adGroupEstimateRequest.maxCpc = new Money();
-      adGroupEstimateRequest.maxCpc.microAmount = 1000000;
+        // Create ad group estimate requests.
+        AdGroupEstimateRequest adGroupEstimateRequest = new AdGroupEstimateRequest();
+        adGroupEstimateRequest.keywordEstimateRequests = keywordEstimateRequests.ToArray();
+        adGroupEstimateRequest.maxCpc = new Money();
+        adGroupEstimateRequest.maxCpc.microAmount = 1000000;
 
-      // Create campaign estimate requests.
-      CampaignEstimateRequest campaignEstimateRequest = new CampaignEstimateRequest();
-      campaignEstimateRequest.adGroupEstimateRequests = new AdGroupEstimateRequest[] {
-          adGroupEstimateRequest};
+        // Create campaign estimate requests.
+        CampaignEstimateRequest campaignEstimateRequest = new CampaignEstimateRequest();
+        campaignEstimateRequest.adGroupEstimateRequests = new AdGroupEstimateRequest[] {
+            adGroupEstimateRequest};
 
-      // Optional: Set additional criteria for filtering estimates.
-      // See http://code.google.com/apis/adwords/docs/appendix/countrycodes.html
-      // for a detailed list of country codes.
-      Location countryCriterion = new Location();
-      countryCriterion.id = 2840; //US
+        // Optional: Set additional criteria for filtering estimates.
+        // See http://code.google.com/apis/adwords/docs/appendix/countrycodes.html
+        // for a detailed list of country codes.
+        Location countryCriterion = new Location();
+        countryCriterion.id = 2840; //US
 
-      // See http://code.google.com/apis/adwords/docs/appendix/languagecodes.html
-      // for a detailed list of language codes.
-      Language languageCriterion = new Language();
-      languageCriterion.id = 1000; //en
+        // See http://code.google.com/apis/adwords/docs/appendix/languagecodes.html
+        // for a detailed list of language codes.
+        Language languageCriterion = new Language();
+        languageCriterion.id = 1000; //en
 
-      campaignEstimateRequest.criteria = new Criterion[] { countryCriterion, languageCriterion };
-      
-      try {
-        // Create the selector.
-        TrafficEstimatorSelector selector = new TrafficEstimatorSelector() {
-          campaignEstimateRequests = new CampaignEstimateRequest[] { campaignEstimateRequest },
+        campaignEstimateRequest.criteria = new Criterion[] { countryCriterion, languageCriterion };
 
-          // Optional: Request a list of campaign level estimates segmented by platform.
-          platformEstimateRequested = true
-        };
+        try {
+          // Create the selector.
+          TrafficEstimatorSelector selector = new TrafficEstimatorSelector() {
+            campaignEstimateRequests = new CampaignEstimateRequest[] { campaignEstimateRequest },
 
-        // Get traffic estimates.
-        TrafficEstimatorResult result = trafficEstimatorService.get(selector);
+            // Optional: Request a list of campaign level estimates segmented by platform.
+            platformEstimateRequested = true
+          };
 
-        // Display traffic estimates.
-        if (result != null && result.campaignEstimates != null &&
-            result.campaignEstimates.Length > 0) {
-          CampaignEstimate campaignEstimate = result.campaignEstimates[0];
+          // Get traffic estimates.
+          TrafficEstimatorResult result = trafficEstimatorService.get(selector);
 
-          // Display the campaign level estimates segmented by platform.
-          if (campaignEstimate.platformEstimates != null) {
-            foreach (PlatformCampaignEstimate platformEstimate in
-                campaignEstimate.platformEstimates) {
-              string platformMessage = string.Format("Results for the platform with ID: " +
-                  "{0} and name : {1}.", platformEstimate.platform.id,
-                  platformEstimate.platform.platformName);
+          // Display traffic estimates.
+          if (result != null && result.campaignEstimates != null &&
+              result.campaignEstimates.Length > 0) {
+            CampaignEstimate campaignEstimate = result.campaignEstimates[0];
 
-              DisplayMeanEstimates(platformMessage, platformEstimate.minEstimate,
-                  platformEstimate.maxEstimate);
-            }
-          }
+            // Display the campaign level estimates segmented by platform.
+            if (campaignEstimate.platformEstimates != null) {
+              foreach (PlatformCampaignEstimate platformEstimate in
+                  campaignEstimate.platformEstimates) {
+                string platformMessage = string.Format("Results for the platform with ID: " +
+                    "{0} and name : {1}.", platformEstimate.platform.id,
+                    platformEstimate.platform.platformName);
 
-          // Display the keyword estimates.
-          if (campaignEstimate.adGroupEstimates != null &&
-              campaignEstimate.adGroupEstimates.Length > 0) {
-            AdGroupEstimate adGroupEstimate = campaignEstimate.adGroupEstimates[0];
-
-            if (adGroupEstimate.keywordEstimates != null) {
-              for (int i = 0; i < adGroupEstimate.keywordEstimates.Length; i++) {
-                Keyword keyword = keywordEstimateRequests[i].keyword;
-                KeywordEstimate keywordEstimate = adGroupEstimate.keywordEstimates[i];
-
-                if (keywordEstimateRequests[i].isNegative) {
-                  continue;
-                }
-                string kwdMessage = string.Format("Results for the keyword with text = '{0}' " +
-                    "and match type = '{1}':", keyword.text, keyword.matchType);
-                DisplayMeanEstimates(kwdMessage, keywordEstimate.min, keywordEstimate.max);
+                DisplayMeanEstimates(platformMessage, platformEstimate.minEstimate,
+                    platformEstimate.maxEstimate);
               }
             }
+
+            // Display the keyword estimates.
+            if (campaignEstimate.adGroupEstimates != null &&
+                campaignEstimate.adGroupEstimates.Length > 0) {
+              AdGroupEstimate adGroupEstimate = campaignEstimate.adGroupEstimates[0];
+
+              if (adGroupEstimate.keywordEstimates != null) {
+                for (int i = 0; i < adGroupEstimate.keywordEstimates.Length; i++) {
+                  Keyword keyword = keywordEstimateRequests[i].keyword;
+                  KeywordEstimate keywordEstimate = adGroupEstimate.keywordEstimates[i];
+
+                  if (keywordEstimateRequests[i].isNegative) {
+                    continue;
+                  }
+                  string kwdMessage = string.Format("Results for the keyword with text = '{0}' " +
+                      "and match type = '{1}':", keyword.text, keyword.matchType);
+                  DisplayMeanEstimates(kwdMessage, keywordEstimate.min, keywordEstimate.max);
+                }
+              }
+            }
+          } else {
+            Console.WriteLine("No traffic estimates were returned.");
           }
-        } else {
-          Console.WriteLine("No traffic estimates were returned.");
+          trafficEstimatorService.Close();
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to retrieve traffic estimates.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to retrieve traffic estimates.", e);
       }
     }
 

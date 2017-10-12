@@ -85,15 +85,17 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// <param name="reply">The response Message</param>
     /// <param name="correlationState">The </param>
     public void AfterReceiveReply(ref Message reply, object correlationState) {
-      // DataContract is strict with namespacing. Change the namespace to be the same
-      // as the DataContract attribute.
-      XmlReader reader = reply.Headers.GetReaderAtHeader(0);
-      String ns = reader.NamespaceURI;
-      String headerText = reader.ReadOuterXml();
-      headerText = headerText.Replace(ns, ResponseHeader.PLACEHOLDER_NAMESPACE);
-      XmlObjectSerializer ser = new DataContractSerializer(typeof(ResponseHeader));
-      using (MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(headerText))) {
-        ResponseHeader = (ResponseHeader)ser.ReadObject(stream);
+      if (reply.Headers.Count > 0) {
+        // DataContract is strict with namespacing. Change the namespace to be the same
+        // as the DataContract attribute.
+        XmlReader reader = reply.Headers.GetReaderAtHeader(0);
+        String ns = reader.NamespaceURI;
+        String headerText = reader.ReadOuterXml();
+        headerText = headerText.Replace(ns, ResponseHeader.PLACEHOLDER_NAMESPACE);
+        XmlObjectSerializer ser = new DataContractSerializer(typeof(ResponseHeader));
+        using (MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(headerText))) {
+          ResponseHeader = (ResponseHeader)ser.ReadObject(stream);
+        }
       }
       AdsFeatureUsageRegistry.Instance.Clear();
     }

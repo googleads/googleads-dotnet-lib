@@ -14,18 +14,17 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201702;
-using Google.Api.Ads.Common.Util;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example illustrates how to add ad group level mobile bid
   /// modifier override.
   /// </summary>
   public class AddAdGroupBidModifier : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -61,46 +60,44 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// set.</param>
     /// <param name="bidModifier">The mobile bid modifier for adgroup</param>
     public void Run(AdWordsUser user, long adGroupId, double bidModifier) {
-      // Get the AdGroupAdService.
-      AdGroupBidModifierService adGroupBidModifierService =
+      using (AdGroupBidModifierService adGroupBidModifierService =
           (AdGroupBidModifierService) user.GetService(
-              AdWordsService.v201702.AdGroupBidModifierService);
+              AdWordsService.v201702.AdGroupBidModifierService)) {
 
-      // Mobile criterion ID.
-      long criterionId = 30001;
+        // Mobile criterion ID.
+        long criterionId = 30001;
 
+        // Create the adgroup bid modifier.
+        AdGroupBidModifier adGroupBidModifier = new AdGroupBidModifier();
+        adGroupBidModifier.bidModifier = bidModifier;
+        adGroupBidModifier.adGroupId = adGroupId;
 
-      // Create the adgroup bid modifier.
-      AdGroupBidModifier adGroupBidModifier = new AdGroupBidModifier();
-      adGroupBidModifier.bidModifier = bidModifier;
-      adGroupBidModifier.adGroupId = adGroupId;
+        Platform platform = new Platform();
+        platform.id = criterionId;
 
-      Platform platform = new Platform();
-      platform.id = criterionId;
+        adGroupBidModifier.criterion = platform;
 
-      adGroupBidModifier.criterion = platform;
+        AdGroupBidModifierOperation operation = new AdGroupBidModifierOperation();
+        operation.@operator = Operator.ADD;
+        operation.operand = adGroupBidModifier;
 
-      AdGroupBidModifierOperation operation = new AdGroupBidModifierOperation();
-      operation.@operator = Operator.ADD;
-      operation.operand = adGroupBidModifier;
+        try {
+          // Add ad group level mobile bid modifier.
+          AdGroupBidModifierReturnValue retval = adGroupBidModifierService.mutate(
+              new AdGroupBidModifierOperation[] { operation });
 
-
-      try {
-        // Add ad group level mobile bid modifier.
-        AdGroupBidModifierReturnValue retval  = adGroupBidModifierService.mutate(
-            new AdGroupBidModifierOperation[] {operation});
-
-        // Display the results.
-        if (retval != null && retval.value != null && retval.value.Length > 0) {
-          AdGroupBidModifier newBidModifier = retval.value[0];
-          Console.WriteLine("AdGroup ID {0}, Criterion ID {1} was updated with ad group level " +
-              "modifier: {2}", newBidModifier.adGroupId, newBidModifier.criterion.id,
-              newBidModifier.bidModifier);
-        } else {
-          Console.WriteLine("No bid modifiers were added to the adgroup.");
+          // Display the results.
+          if (retval != null && retval.value != null && retval.value.Length > 0) {
+            AdGroupBidModifier newBidModifier = retval.value[0];
+            Console.WriteLine("AdGroup ID {0}, Criterion ID {1} was updated with ad group level " +
+                "modifier: {2}", newBidModifier.adGroupId, newBidModifier.criterion.id,
+                newBidModifier.bidModifier);
+          } else {
+            Console.WriteLine("No bid modifiers were added to the adgroup.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to add bid modifiers to adgroup.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to add bid modifiers to adgroup.", e);
       }
     }
   }

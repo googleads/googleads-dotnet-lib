@@ -101,7 +101,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
       // Optional: Target web pages matching the feed's label in the ad group.
       AddDsaTargeting(user, adGroupId, dsaPageUrlLabel);
 
-      Console.WriteLine("Dynamic page feed setup is complete for campaign ID '{0}'.", campaignId);
+      Console.WriteLine("Dynamic page feed setup is complete for campaign ID '{0}'.",
+          campaignId);
     }
 
     /// <summary>
@@ -110,38 +111,43 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="user">The AdWords User.</param>
     /// <returns>The feed details.</returns>
     private static DSAFeedDetails CreateFeed(AdWordsUser user) {
-      // Get the FeedService.
-      FeedService feedService = (FeedService) user.GetService(AdWordsService.v201708.FeedService);
+      using (FeedService feedService = (FeedService) user.GetService(
+          AdWordsService.v201708.FeedService)) {
 
-      // Create attributes.
-      FeedAttribute urlAttribute = new FeedAttribute();
-      urlAttribute.type = FeedAttributeType.URL_LIST;
-      urlAttribute.name = "Page URL";
+        // Create attributes.
+        FeedAttribute urlAttribute = new FeedAttribute();
+        urlAttribute.type = FeedAttributeType.URL_LIST;
+        urlAttribute.name = "Page URL";
 
-      FeedAttribute labelAttribute = new FeedAttribute();
-      labelAttribute.type = FeedAttributeType.STRING_LIST;
-      labelAttribute.name = "Label";
+        FeedAttribute labelAttribute = new FeedAttribute();
+        labelAttribute.type = FeedAttributeType.STRING_LIST;
+        labelAttribute.name = "Label";
 
-      // Create the feed.
-      Feed sitelinksFeed = new Feed();
-      sitelinksFeed.name = "DSA Feed " + ExampleUtilities.GetRandomString();
-      sitelinksFeed.attributes = new FeedAttribute[] { urlAttribute, labelAttribute };
-      sitelinksFeed.origin = FeedOrigin.USER;
+        // Create the feed.
+        Feed sitelinksFeed = new Feed();
+        sitelinksFeed.name = "DSA Feed " + ExampleUtilities.GetRandomString();
+        sitelinksFeed.attributes = new FeedAttribute[] { urlAttribute, labelAttribute };
+        sitelinksFeed.origin = FeedOrigin.USER;
 
-      // Create operation.
-      FeedOperation operation = new FeedOperation();
-      operation.operand = sitelinksFeed;
-      operation.@operator = Operator.ADD;
+        // Create operation.
+        FeedOperation operation = new FeedOperation();
+        operation.operand = sitelinksFeed;
+        operation.@operator = Operator.ADD;
 
-      // Add the feed.
-      FeedReturnValue result = feedService.mutate(new FeedOperation[] { operation });
+        try {
+          // Add the feed.
+          FeedReturnValue result = feedService.mutate(new FeedOperation[] { operation });
 
-      Feed savedFeed = result.value[0];
-      return new DSAFeedDetails {
-        feedId = savedFeed.id,
-        urlAttributeId = savedFeed.attributes[0].id,
-        labelAttributeId = savedFeed.attributes[1].id,
-      };
+          Feed savedFeed = result.value[0];
+          return new DSAFeedDetails {
+            feedId = savedFeed.id,
+            urlAttributeId = savedFeed.attributes[0].id,
+            labelAttributeId = savedFeed.attributes[1].id,
+          };
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create DSA feed.", e);
+        }
+      }
     }
 
     /// <summary>
@@ -150,34 +156,38 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="feedDetails">The feed details.</param>
     private static void CreateFeedMapping(AdWordsUser user, DSAFeedDetails feedDetails) {
-      // Get the FeedMappingService.
-      FeedMappingService feedMappingService =
-          (FeedMappingService) user.GetService(AdWordsService.v201708.FeedMappingService);
+      using (FeedMappingService feedMappingService =
+          (FeedMappingService) user.GetService(AdWordsService.v201708.FeedMappingService)) {
 
-      // Map the FeedAttributeIds to the fieldId constants.
-      AttributeFieldMapping urlFieldMapping = new AttributeFieldMapping();
-      urlFieldMapping.feedAttributeId = feedDetails.urlAttributeId;
-      urlFieldMapping.fieldId = DSA_PAGE_URLS_FIELD_ID;
+        // Map the FeedAttributeIds to the fieldId constants.
+        AttributeFieldMapping urlFieldMapping = new AttributeFieldMapping();
+        urlFieldMapping.feedAttributeId = feedDetails.urlAttributeId;
+        urlFieldMapping.fieldId = DSA_PAGE_URLS_FIELD_ID;
 
-      AttributeFieldMapping labelFieldMapping = new AttributeFieldMapping();
-      labelFieldMapping.feedAttributeId = feedDetails.labelAttributeId;
-      labelFieldMapping.fieldId = DSA_LABEL_FIELD_ID;
+        AttributeFieldMapping labelFieldMapping = new AttributeFieldMapping();
+        labelFieldMapping.feedAttributeId = feedDetails.labelAttributeId;
+        labelFieldMapping.fieldId = DSA_LABEL_FIELD_ID;
 
-      // Create the FieldMapping and operation.
-      FeedMapping feedMapping = new FeedMapping();
-      feedMapping.criterionType = DSA_PAGE_FEED_CRITERION_TYPE;
-      feedMapping.feedId = feedDetails.feedId;
-      feedMapping.attributeFieldMappings = new AttributeFieldMapping[] {
-        urlFieldMapping, labelFieldMapping
-      };
+        // Create the FieldMapping and operation.
+        FeedMapping feedMapping = new FeedMapping();
+        feedMapping.criterionType = DSA_PAGE_FEED_CRITERION_TYPE;
+        feedMapping.feedId = feedDetails.feedId;
+        feedMapping.attributeFieldMappings = new AttributeFieldMapping[] {
+          urlFieldMapping, labelFieldMapping
+        };
 
-      FeedMappingOperation operation = new FeedMappingOperation();
-      operation.operand = feedMapping;
-      operation.@operator = Operator.ADD;
+        FeedMappingOperation operation = new FeedMappingOperation();
+        operation.operand = feedMapping;
+        operation.@operator = Operator.ADD;
 
-      // Add the field mapping.
-      feedMappingService.mutate(new FeedMappingOperation[] { operation });
-      return;
+        try {
+          // Add the field mapping.
+          feedMappingService.mutate(new FeedMappingOperation[] { operation });
+          return;
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create feed mapping.", e);
+        }
+      }
     }
 
     /// <summary>
@@ -188,19 +198,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="labelName">The pagefeed url label.</param>
     private static void CreateFeedItems(AdWordsUser user, DSAFeedDetails feedDetails,
         string labelName) {
-      // Get the FeedItemService.
-      FeedItemService feedItemService = (FeedItemService) user.GetService(
-        AdWordsService.v201708.FeedItemService);
+      using (FeedItemService feedItemService = (FeedItemService) user.GetService(
+        AdWordsService.v201708.FeedItemService)) {
 
-      FeedItemOperation[] operations = new FeedItemOperation[] {
-        CreateDsaUrlAddOperation(feedDetails, "http://www.example.com/discounts/rental-cars",
-            labelName),
-        CreateDsaUrlAddOperation(feedDetails, "http://www.example.com/discounts/hotel-deals",
-            labelName),
-        CreateDsaUrlAddOperation(feedDetails, "http://www.example.com/discounts/flight-deals",
-            labelName),
-      };
-      feedItemService.mutate(operations);
+        FeedItemOperation[] operations = new FeedItemOperation[] {
+          CreateDsaUrlAddOperation(feedDetails, "http://www.example.com/discounts/rental-cars",
+              labelName),
+          CreateDsaUrlAddOperation(feedDetails, "http://www.example.com/discounts/hotel-deals",
+              labelName),
+          CreateDsaUrlAddOperation(feedDetails, "http://www.example.com/discounts/flight-deals",
+              labelName),
+        };
+        feedItemService.mutate(operations);
+      }
     }
 
     /// <summary>
@@ -247,72 +257,73 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="campaignId">The Campaign ID.</param>
     /// <param name="feedId">The page feed ID.</param>
     private static void UpdateCampaignDsaSetting(AdWordsUser user, long campaignId, long feedId) {
-      // Get the CampaignService.
-      CampaignService campaignService = (CampaignService) user.GetService(
-          AdWordsService.v201708.CampaignService);
+      using (CampaignService campaignService = (CampaignService) user.GetService(
+          AdWordsService.v201708.CampaignService)) {
 
-      Selector selector = new Selector() {
-        fields = new string[] { Campaign.Fields.Id, Campaign.Fields.Settings },
-        predicates = new Predicate[]{
+        Selector selector = new Selector() {
+          fields = new string[] { Campaign.Fields.Id, Campaign.Fields.Settings },
+          predicates = new Predicate[]{
           Predicate.Equals(Campaign.Fields.Id, campaignId)
         },
-        paging = Paging.Default
-      };
+          paging = Paging.Default
+        };
 
-      CampaignPage page = campaignService.get(selector);
+        CampaignPage page = campaignService.get(selector);
 
-      if (page == null || page.entries == null || page.entries.Length == 0) {
-        throw new System.ApplicationException(string.Format(
-            "Failed to retrieve campaign with ID = {0}.", campaignId));
-      }
-      Campaign campaign = page.entries[0];
-
-      if (campaign.settings == null) {
-        throw new System.ApplicationException("This is not a DSA campaign.");
-      }
-
-      DynamicSearchAdsSetting dsaSetting = null;
-      Setting[] campaignSettings = campaign.settings;
-
-      for (int i = 0; i < campaign.settings.Length; i++) {
-        Setting setting = campaignSettings[i];
-        if (setting is DynamicSearchAdsSetting) {
-          dsaSetting = (DynamicSearchAdsSetting) setting;
-          break;
+        if (page == null || page.entries == null || page.entries.Length == 0) {
+          throw new System.ApplicationException(string.Format(
+              "Failed to retrieve campaign with ID = {0}.", campaignId));
         }
-      }
+        Campaign campaign = page.entries[0];
 
-      if (dsaSetting == null) {
-        throw new System.ApplicationException("This is not a DSA campaign.");
-      }
+        if (campaign.settings == null) {
+          throw new System.ApplicationException("This is not a DSA campaign.");
+        }
 
-      // Use a page feed to specify precisely which URLs to use with your
-      // Dynamic Search Ads.
-      dsaSetting.pageFeed = new PageFeed() {
-        feedIds = new long[] {
-          feedId
-        },
-      };
+        DynamicSearchAdsSetting dsaSetting = null;
+        Setting[] campaignSettings = campaign.settings;
 
-      // Optional: Specify whether only the supplied URLs should be used with your
-      // Dynamic Search Ads.
-      dsaSetting.useSuppliedUrlsOnly = true;
+        for (int i = 0; i < campaign.settings.Length; i++) {
+          Setting setting = campaignSettings[i];
+          if (setting is DynamicSearchAdsSetting) {
+            dsaSetting = (DynamicSearchAdsSetting) setting;
+            break;
+          }
+        }
 
-      Campaign campaignToUpdate = new Campaign();
-      campaignToUpdate.id = campaignId;
-      campaignToUpdate.settings = campaignSettings;
+        if (dsaSetting == null) {
+          throw new System.ApplicationException("This is not a DSA campaign.");
+        }
 
-      CampaignOperation operation = new CampaignOperation();
-      operation.operand = campaignToUpdate;
-      operation.@operator = Operator.SET;
+        // Use a page feed to specify precisely which URLs to use with your
+        // Dynamic Search Ads.
+        dsaSetting.pageFeed = new PageFeed() {
+          feedIds = new long[] {
+            feedId
+          },
+        };
 
-      try {
-        CampaignReturnValue retval = campaignService.mutate(new CampaignOperation[] { operation });
-        Campaign updatedCampaign = retval.value[0];
-        Console.WriteLine("DSA page feed for campaign ID '{0}' was updated with feed ID '{1}'.",
-            updatedCampaign.id, feedId);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to set page feed for campaign.", e);
+        // Optional: Specify whether only the supplied URLs should be used with your
+        // Dynamic Search Ads.
+        dsaSetting.useSuppliedUrlsOnly = true;
+
+        Campaign campaignToUpdate = new Campaign();
+        campaignToUpdate.id = campaignId;
+        campaignToUpdate.settings = campaignSettings;
+
+        CampaignOperation operation = new CampaignOperation();
+        operation.operand = campaignToUpdate;
+        operation.@operator = Operator.SET;
+
+        try {
+          CampaignReturnValue retval = campaignService.mutate(
+              new CampaignOperation[] { operation });
+          Campaign updatedCampaign = retval.value[0];
+          Console.WriteLine("DSA page feed for campaign ID '{0}' was updated with feed ID '{1}'.",
+              updatedCampaign.id, feedId);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to set page feed for campaign.", e);
+        }
       }
     }
 
@@ -325,32 +336,32 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <returns>The newly created webpage criterion.</returns>
     private static BiddableAdGroupCriterion AddDsaTargeting(AdWordsUser user, long adGroupId,
         string labelName) {
-      // Get the AdGroupCriterionService.
-      AdGroupCriterionService adGroupCriterionService =
-        (AdGroupCriterionService) user.GetService(AdWordsService.v201708.AdGroupCriterionService);
+      using (AdGroupCriterionService adGroupCriterionService =
+          (AdGroupCriterionService) user.GetService(
+              AdWordsService.v201708.AdGroupCriterionService)) {
 
-      // Create a webpage criterion.
-      Webpage webpage = new Webpage();
+        // Create a webpage criterion.
+        Webpage webpage = new Webpage();
 
-      WebpageParameter parameter = new WebpageParameter();
-      parameter.criterionName = "Test criterion";
-      webpage.parameter = parameter;
+        WebpageParameter parameter = new WebpageParameter();
+        parameter.criterionName = "Test criterion";
+        webpage.parameter = parameter;
 
-      // Add a condition for label=specified_label_name.
-      WebpageCondition condition = new WebpageCondition();
-      condition.operand = WebpageConditionOperand.CUSTOM_LABEL;
-      condition.argument = labelName;
-      parameter.conditions = new WebpageCondition[] { condition };
+        // Add a condition for label=specified_label_name.
+        WebpageCondition condition = new WebpageCondition();
+        condition.operand = WebpageConditionOperand.CUSTOM_LABEL;
+        condition.argument = labelName;
+        parameter.conditions = new WebpageCondition[] { condition };
 
-      BiddableAdGroupCriterion criterion = new BiddableAdGroupCriterion();
-      criterion.adGroupId = adGroupId;
-      criterion.criterion = webpage;
+        BiddableAdGroupCriterion criterion = new BiddableAdGroupCriterion();
+        criterion.adGroupId = adGroupId;
+        criterion.criterion = webpage;
 
-      // Set a custom bid for this criterion.
-      BiddingStrategyConfiguration biddingStrategyConfiguration =
-          new BiddingStrategyConfiguration();
+        // Set a custom bid for this criterion.
+        BiddingStrategyConfiguration biddingStrategyConfiguration =
+            new BiddingStrategyConfiguration();
 
-      biddingStrategyConfiguration.bids = new Bids[] {
+        biddingStrategyConfiguration.bids = new Bids[] {
         new CpcBid() {
           bid = new Money() {
             microAmount = 1500000
@@ -358,24 +369,24 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
         }
       };
 
-      criterion.biddingStrategyConfiguration = biddingStrategyConfiguration;
+        criterion.biddingStrategyConfiguration = biddingStrategyConfiguration;
 
-      AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
-      operation.operand = criterion;
-      operation.@operator = Operator.ADD;
+        AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
+        operation.operand = criterion;
+        operation.@operator = Operator.ADD;
 
-      try {
-        AdGroupCriterionReturnValue retval = adGroupCriterionService.mutate(
-            new AdGroupCriterionOperation[] { operation });
-        BiddableAdGroupCriterion newCriterion = (BiddableAdGroupCriterion) retval.value[0];
+        try {
+          AdGroupCriterionReturnValue retval = adGroupCriterionService.mutate(
+              new AdGroupCriterionOperation[] { operation });
+          BiddableAdGroupCriterion newCriterion = (BiddableAdGroupCriterion) retval.value[0];
 
-        Console.WriteLine("Web page criterion with ID = {0} and status = {1} was created.",
-          newCriterion.criterion.id, newCriterion.userStatus);
-
-        return newCriterion;
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to create webpage criterion for " +
-            "custom page feed label.", e);
+          Console.WriteLine("Web page criterion with ID = {0} and status = {1} was created.",
+            newCriterion.criterion.id, newCriterion.userStatus);
+          return newCriterion;
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create webpage criterion for " +
+              "custom page feed label.", e);
+        }
       }
     }
   }

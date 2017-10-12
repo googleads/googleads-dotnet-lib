@@ -15,17 +15,15 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201705
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
+
   ''' <summary>
   ''' This code example removes an ad using the 'REMOVE' operator. To list ads,
   ''' run GetTextAds.vb.
   ''' </summary>
   Public Class RemoveAd
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -38,7 +36,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
         Dim adId As Long = Long.Parse("INSERT_AD_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId, adId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -48,7 +46,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example removes an ad using the 'REMOVE' operator. To list ads, " & _
+        Return "This code example removes an ad using the 'REMOVE' operator. To list ads, " &
             "run GetTextAds.vb."
       End Get
     End Property
@@ -60,42 +58,44 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <param name="adGroupId">Id of the ad group that contains the ad.</param>
     ''' <param name="adId">Id of the ad being removed.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal adId As Long)
-      ' Get the AdGroupAdService.
-      Dim adGroupAdService As AdGroupAdService = CType(user.GetService( _
+      Using adGroupAdService As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201705.AdGroupAdService), AdGroupAdService)
 
-      ' Since we do not need to update any ad-specific fields, it is enough to
-      ' create the base type.
-      Dim ad As New Ad
-      ad.id = adId
+        ' Since we do not need to update any ad-specific fields, it is enough to
+        ' create the base type.
+        Dim ad As New Ad
+        ad.id = adId
 
-      ' Create the ad group ad.
-      Dim adGroupAd As New AdGroupAd
-      adGroupAd.adGroupId = adGroupId
+        ' Create the ad group ad.
+        Dim adGroupAd As New AdGroupAd
+        adGroupAd.adGroupId = adGroupId
 
-      adGroupAd.ad = ad
+        adGroupAd.ad = ad
 
-      ' Create the operation.
-      Dim operation As New AdGroupAdOperation
-      operation.operand = adGroupAd
-      operation.operator = [Operator].REMOVE
+        ' Create the operation.
+        Dim operation As New AdGroupAdOperation
+        operation.operand = adGroupAd
+        operation.operator = [Operator].REMOVE
 
-      Try
-        ' Remove the ad.
-        Dim retVal As AdGroupAdReturnValue = adGroupAdService.mutate( _
-            New AdGroupAdOperation() {operation})
+        Try
+          ' Remove the ad.
+          Dim retVal As AdGroupAdReturnValue = adGroupAdService.mutate(
+              New AdGroupAdOperation() {operation})
 
-        If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
-            (retVal.value.Length > 0)) Then
-          Dim removedAdGroupAd As AdGroupAd = retVal.value(0)
-          Console.WriteLine("Ad with id = ""{0}"" and type = ""{1}"" was removed.", _
-              removedAdGroupAd.ad.id, removedAdGroupAd.ad.AdType)
-        Else
-          Console.WriteLine("No ads were removed.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to remove ad.", e)
-      End Try
+          If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso
+              (retVal.value.Length > 0)) Then
+            Dim removedAdGroupAd As AdGroupAd = retVal.value(0)
+            Console.WriteLine("Ad with id = ""{0}"" and type = ""{1}"" was removed.",
+                removedAdGroupAd.ad.id, removedAdGroupAd.ad.AdType)
+          Else
+            Console.WriteLine("No ads were removed.")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to remove ad.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace

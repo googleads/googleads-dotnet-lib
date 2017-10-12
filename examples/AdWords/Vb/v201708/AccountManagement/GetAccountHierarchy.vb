@@ -15,12 +15,10 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201708
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
 Imports System.Text
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
+
   ''' <summary>
   ''' This code example illustrates how to retrieve the account hierarchy under
   ''' an account. This code example won't work with Test Accounts. See
@@ -28,6 +26,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
   ''' </summary>
   Public Class GetAccountHierarchy
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -38,7 +37,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
       Try
         codeExample.Run(New AdWordsUser)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -48,8 +47,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example illustrates how to retrieve the account hierarchy under " & _
-            "an account. This code example won't work with Test Accounts. See " & _
+        Return "This code example illustrates how to retrieve the account hierarchy under " &
+            "an account. This code example won't work with Test Accounts. See " &
             "https://developers.google.com/adwords/api/docs/test-accounts"
       End Get
     End Property
@@ -59,81 +58,82 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
-      ' Get the ManagedCustomerService.
-      Dim mcService As ManagedCustomerService = CType(user.GetService( _
+      Using managedCustomerService As ManagedCustomerService = CType(user.GetService(
           AdWordsService.v201708.ManagedCustomerService), ManagedCustomerService)
 
-      ' Create selector.
-      Dim selector As New Selector()
-      selector.fields = New String() {
-        ManagedCustomer.Fields.CustomerId, ManagedCustomer.Fields.Name
-      }
-      selector.paging = Paging.Default
+        ' Create selector.
+        Dim selector As New Selector()
+        selector.fields = New String() {
+          ManagedCustomer.Fields.CustomerId, ManagedCustomer.Fields.Name
+        }
+        selector.paging = Paging.Default
 
-      ' Map from customerId to customer node.
-      Dim customerIdToCustomerNode As Dictionary(Of Long, ManagedCustomerTreeNode) = _
+        ' Map from customerId to customer node.
+        Dim customerIdToCustomerNode As Dictionary(Of Long, ManagedCustomerTreeNode) =
           New Dictionary(Of Long, ManagedCustomerTreeNode)()
 
-      ' Temporary cache to save links.
-      Dim allLinks As New List(Of ManagedCustomerLink)
+        ' Temporary cache to save links.
+        Dim allLinks As New List(Of ManagedCustomerLink)
 
-      Dim page As ManagedCustomerPage = Nothing
-      Try
-        Do
-          page = mcService.get(selector)
+        Dim page As ManagedCustomerPage = Nothing
+        Try
+          Do
+            page = managedCustomerService.get(selector)
 
-          ' Display serviced account graph.
-          If Not page.entries Is Nothing Then
-            ' Create account tree nodes for each customer.
-            For Each customer As ManagedCustomer In page.entries
-              Dim node As New ManagedCustomerTreeNode()
-              node.Account = customer
-              customerIdToCustomerNode.Add(customer.customerId, node)
-            Next
+            ' Display serviced account graph.
+            If Not page.entries Is Nothing Then
+              ' Create account tree nodes for each customer.
+              For Each customer As ManagedCustomer In page.entries
+                Dim node As New ManagedCustomerTreeNode()
+                node.Account = customer
+                customerIdToCustomerNode.Add(customer.customerId, node)
+              Next
 
-            If Not page.links Is Nothing Then
-              allLinks.AddRange(page.links)
+              If Not page.links Is Nothing Then
+                allLinks.AddRange(page.links)
+              End If
             End If
-          End If
 
-          selector.paging.IncreaseOffset()
-        Loop While (selector.paging.startIndex < page.totalNumEntries)
+            selector.paging.IncreaseOffset()
+          Loop While (selector.paging.startIndex < page.totalNumEntries)
 
-        ' For each link, connect nodes in tree.
-        For Each link As ManagedCustomerLink In allLinks
-          Dim managerNode As ManagedCustomerTreeNode = _
+          ' For each link, connect nodes in tree.
+          For Each link As ManagedCustomerLink In allLinks
+            Dim managerNode As ManagedCustomerTreeNode =
               customerIdToCustomerNode(link.managerCustomerId)
-          Dim childNode As ManagedCustomerTreeNode = _
+            Dim childNode As ManagedCustomerTreeNode =
               customerIdToCustomerNode(link.clientCustomerId)
-          childNode.ParentNode = managerNode
-          If (Not managerNode Is Nothing) Then
-            managerNode.ChildAccounts.Add(childNode)
-          End If
-        Next
+            childNode.ParentNode = managerNode
+            If (Not managerNode Is Nothing) Then
+              managerNode.ChildAccounts.Add(childNode)
+            End If
+          Next
 
-        ' Find the root account node in the tree.
-        Dim rootNode As ManagedCustomerTreeNode = Nothing
-        For Each node As ManagedCustomerTreeNode In customerIdToCustomerNode.Values
-          If node.ParentNode Is Nothing Then
-            rootNode = node
-            Exit For
-          End If
-        Next
+          ' Find the root account node in the tree.
+          Dim rootNode As ManagedCustomerTreeNode = Nothing
+          For Each node As ManagedCustomerTreeNode In customerIdToCustomerNode.Values
+            If node.ParentNode Is Nothing Then
+              rootNode = node
+              Exit For
+            End If
+          Next
 
-        ' Display account tree.
-        Console.WriteLine("CustomerId, Name")
-        Console.WriteLine(rootNode.ToTreeString(0, New StringBuilder()))
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to get accounts.", e)
-      End Try
+          ' Display account tree.
+          Console.WriteLine("CustomerId, Name")
+          Console.WriteLine(rootNode.ToTreeString(0, New StringBuilder()))
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to get accounts.", e)
+        End Try
+      End Using
     End Sub
-  End Class
 
+  End Class
 
   ''' <summary>
   '''Example implementation of a node that would exist in an account tree.
   ''' </summary>
   Class ManagedCustomerTreeNode
+
     ''' <summary>
     ''' The parent node.
     ''' </summary>
@@ -160,7 +160,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
         _parentNode = value
       End Set
     End Property
-
 
     ''' <summary>
     ''' Gets or sets the account.
@@ -204,7 +203,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="sb">The String Builder containing the tree
     ''' representation.</param>
     ''' <returns>The tree string representation.</returns>
-    Public Function ToTreeString(ByVal depth As Integer, ByVal sb As StringBuilder) As StringBuilder
+    Public Function ToTreeString(ByVal depth As Integer, ByVal sb As StringBuilder) _
+        As StringBuilder
       sb.Append("-"c, depth * 2)
       sb.Append(Me)
       sb.AppendLine()
@@ -213,5 +213,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
       Next
       Return sb
     End Function
+
   End Class
+
 End Namespace

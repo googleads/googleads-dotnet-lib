@@ -16,7 +16,6 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201705;
 
 using System;
-using System.Collections.Generic;
 using System.Threading;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
@@ -75,96 +74,94 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
     /// trial.</param>
     /// <param name="draftId">Id of the draft.</param>
     public void Run(AdWordsUser user, long draftId, long baseCampaignId) {
-      // Get the TrialService.
-      TrialService trialService = (TrialService) user.GetService(
-        AdWordsService.v201705.TrialService);
-
-      Trial trial = new Trial() {
-        draftId = draftId,
-        baseCampaignId = baseCampaignId,
-        name = "Test Trial #" + ExampleUtilities.GetRandomString(),
-        trafficSplitPercent = 50
-      };
-
-      TrialOperation trialOperation = new TrialOperation() {
-        @operator = Operator.ADD,
-        operand = trial
-      };
-      try {
-        long trialId = trialService.mutate(new TrialOperation[] { trialOperation }).value[0].id;
-
-        // Since creating a trial is asynchronous, we have to poll it to wait
-        // for it to finish.
-        Selector trialSelector = new Selector() {
-          fields = new string[] {
-            Trial.Fields.Id, Trial.Fields.Status, Trial.Fields.BaseCampaignId,
-            Trial.Fields.TrialCampaignId
-          },
-          predicates = new Predicate[] {
-            Predicate.Equals(Trial.Fields.Id, trialId)
-          }
+      using (TrialService trialService = (TrialService) user.GetService(
+        AdWordsService.v201705.TrialService))
+      using (TrialAsyncErrorService trialAsyncErrorService =
+            (TrialAsyncErrorService) user.GetService(
+                AdWordsService.v201705.TrialAsyncErrorService)) {
+        Trial trial = new Trial() {
+          draftId = draftId,
+          baseCampaignId = baseCampaignId,
+          name = "Test Trial #" + ExampleUtilities.GetRandomString(),
+          trafficSplitPercent = 50
         };
 
-        trial = null;
-        bool isPending = true;
-        int pollAttempts = 0;
+        TrialOperation trialOperation = new TrialOperation() {
+          @operator = Operator.ADD,
+          operand = trial
+        };
+        try {
+          long trialId = trialService.mutate(new TrialOperation[] { trialOperation }).value[0].id;
 
-        do {
-          int sleepMillis = (int) Math.Pow(2, pollAttempts) *
-              POLL_INTERVAL_SECONDS_BASE * 1000;
-          Console.WriteLine("Sleeping {0} millis...", sleepMillis);
-          Thread.Sleep(sleepMillis);
-
-          trial = trialService.get(trialSelector).entries[0];
-
-          Console.WriteLine("Trial ID {0} has status '{1}'.", trial.id, trial.status);
-          pollAttempts++;
-          isPending = (trial.status == TrialStatus.CREATING);
-        } while (isPending && pollAttempts <= MAX_RETRIES);
-
-        if (trial.status == TrialStatus.ACTIVE) {
-          // The trial creation was successful.
-          Console.WriteLine("Trial created with ID {0} and trial campaign ID {1}.",
-              trial.id, trial.trialCampaignId);
-        } else if (trial.status == TrialStatus.CREATION_FAILED) {
-          // The trial creation failed, and errors can be fetched from the
-          // TrialAsyncErrorService.
-          Selector errorsSelector = new Selector() {
+          // Since creating a trial is asynchronous, we have to poll it to wait
+          // for it to finish.
+          Selector trialSelector = new Selector() {
             fields = new string[] {
-              TrialAsyncError.Fields.TrialId, TrialAsyncError.Fields.AsyncError
+              Trial.Fields.Id, Trial.Fields.Status, Trial.Fields.BaseCampaignId,
+              Trial.Fields.TrialCampaignId
             },
             predicates = new Predicate[] {
-              Predicate.Equals(TrialAsyncError.Fields.TrialId, trial.id)
+              Predicate.Equals(Trial.Fields.Id, trialId)
             }
           };
 
-          TrialAsyncErrorService trialAsyncErrorService =
-              (TrialAsyncErrorService) user.GetService(
-                  AdWordsService.v201705.TrialAsyncErrorService);
+          trial = null;
+          bool isPending = true;
+          int pollAttempts = 0;
 
-          TrialAsyncErrorPage trialAsyncErrorPage = trialAsyncErrorService.get(errorsSelector);
-          if (trialAsyncErrorPage.entries == null || trialAsyncErrorPage.entries.Length == 0) {
-            Console.WriteLine("Could not retrieve errors for trial {0}.", trial.id);
-          } else {
-            Console.WriteLine("Could not create trial ID {0} for draft ID {1} due to the " +
-                "following errors:", trial.id, draftId);
-            int i = 0;
-            foreach (TrialAsyncError error in trialAsyncErrorPage.entries) {
-              ApiError asyncError = error.asyncError;
-              Console.WriteLine("Error #{0}: errorType='{1}', errorString='{2}', trigger='{3}'," +
-                " fieldPath='{4}'", i++, asyncError.ApiErrorType, asyncError.errorString,
-                asyncError.trigger, asyncError.fieldPath);
+          do {
+            int sleepMillis = (int) Math.Pow(2, pollAttempts) *
+                POLL_INTERVAL_SECONDS_BASE * 1000;
+            Console.WriteLine("Sleeping {0} millis...", sleepMillis);
+            Thread.Sleep(sleepMillis);
+
+            trial = trialService.get(trialSelector).entries[0];
+
+            Console.WriteLine("Trial ID {0} has status '{1}'.", trial.id, trial.status);
+            pollAttempts++;
+            isPending = (trial.status == TrialStatus.CREATING);
+          } while (isPending && pollAttempts <= MAX_RETRIES);
+
+          if (trial.status == TrialStatus.ACTIVE) {
+            // The trial creation was successful.
+            Console.WriteLine("Trial created with ID {0} and trial campaign ID {1}.",
+                trial.id, trial.trialCampaignId);
+          } else if (trial.status == TrialStatus.CREATION_FAILED) {
+            // The trial creation failed, and errors can be fetched from the
+            // TrialAsyncErrorService.
+            Selector errorsSelector = new Selector() {
+              fields = new string[] {
+                TrialAsyncError.Fields.TrialId, TrialAsyncError.Fields.AsyncError
+              },
+              predicates = new Predicate[] {
+                Predicate.Equals(TrialAsyncError.Fields.TrialId, trial.id)
+              }
+            };
+
+            TrialAsyncErrorPage trialAsyncErrorPage = trialAsyncErrorService.get(errorsSelector);
+            if (trialAsyncErrorPage.entries == null || trialAsyncErrorPage.entries.Length == 0) {
+              Console.WriteLine("Could not retrieve errors for trial {0}.", trial.id);
+            } else {
+              Console.WriteLine("Could not create trial ID {0} for draft ID {1} due to the " +
+                  "following errors:", trial.id, draftId);
+              int i = 0;
+              foreach (TrialAsyncError error in trialAsyncErrorPage.entries) {
+                ApiError asyncError = error.asyncError;
+                Console.WriteLine("Error #{0}: errorType='{1}', errorString='{2}', " +
+                    "trigger='{3}', fieldPath='{4}'", i++, asyncError.ApiErrorType,
+                    asyncError.errorString, asyncError.trigger, asyncError.fieldPath);
+              }
             }
-          }
-        } else {
+          } else {
             // Most likely, the trial is still being created. You can continue
             // polling, but we have limited the number of attempts in the
             // example.
             Console.WriteLine("Timed out waiting to create trial from draft ID {0} with " +
                 "base campaign ID {1}.", draftId, baseCampaignId);
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create trial from draft.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to create trial from draft.", e);
       }
     }
   }

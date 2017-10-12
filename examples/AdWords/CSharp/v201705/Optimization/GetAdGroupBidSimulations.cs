@@ -16,15 +16,15 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201705;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
+
   /// <summary>
   /// This code example gets bid landscapes for an ad group. To get ad groups,
   /// run GetAdGroups.cs.
   /// </summary>
   public class GetAdGroupBidSimulations : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -58,44 +58,46 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
     /// <param name="adGroupId">Id of the ad group for which bid simulations are
     /// retrieved.</param>
     public void Run(AdWordsUser user, long adGroupId) {
-      // Get the DataService.
-      DataService dataService = (DataService) user.GetService(AdWordsService.v201705.DataService);
+      using (DataService dataService = (DataService) user.GetService(
+          AdWordsService.v201705.DataService)) {
 
-      // Create the selector.
-      Selector selector = new Selector() {
-        fields = new string[] {
-          AdGroupBidLandscape.Fields.AdGroupId, AdGroupBidLandscape.Fields.LandscapeType,
-          AdGroupBidLandscape.Fields.LandscapeCurrent, AdGroupBidLandscape.Fields.StartDate,
-          AdGroupBidLandscape.Fields.EndDate, BidLandscapeLandscapePoint.Fields.Bid,
-          BidLandscapeLandscapePoint.Fields.LocalClicks,
-          BidLandscapeLandscapePoint.Fields.LocalCost,
-          BidLandscapeLandscapePoint.Fields.LocalImpressions
-        },
-        predicates = new Predicate[] {
-          Predicate.Equals(AdGroupBidLandscape.Fields.AdGroupId, adGroupId)
-        }
-      };
-
-      try {
-        // Get bid landscape for ad group.
-        AdGroupBidLandscapePage page = dataService.getAdGroupBidLandscape(selector);
-        if (page != null && page.entries != null && page.entries.Length > 0) {
-          foreach (AdGroupBidLandscape bidLandscape in page.entries) {
-            Console.WriteLine("Found ad group bid landscape with ad group id '{0}', type '{1}', " +
-                "current: '{2}', start date '{3}', end date '{4}', and landscape points",
-                bidLandscape.adGroupId, bidLandscape.type, bidLandscape.landscapeCurrent,
-                bidLandscape.startDate, bidLandscape.endDate);
-            foreach (BidLandscapeLandscapePoint point in bidLandscape.landscapePoints) {
-              Console.WriteLine("- bid: {0} => clicks: {1}, cost: {2}, impressions: {3}",
-                  point.bid.microAmount, point.bid.microAmount,
-                  point.clicks, point.cost.microAmount, point.impressions);
-            }
+        // Create the selector.
+        Selector selector = new Selector() {
+          fields = new string[] {
+            AdGroupBidLandscape.Fields.AdGroupId, AdGroupBidLandscape.Fields.LandscapeType,
+            AdGroupBidLandscape.Fields.LandscapeCurrent, AdGroupBidLandscape.Fields.StartDate,
+            AdGroupBidLandscape.Fields.EndDate, BidLandscapeLandscapePoint.Fields.Bid,
+            BidLandscapeLandscapePoint.Fields.LocalClicks,
+            BidLandscapeLandscapePoint.Fields.LocalCost,
+            BidLandscapeLandscapePoint.Fields.LocalImpressions
+          },
+          predicates = new Predicate[] {
+            Predicate.Equals(AdGroupBidLandscape.Fields.AdGroupId, adGroupId)
           }
-        } else {
-          Console.WriteLine("No ad group bid landscapes were found.");
+        };
+
+        try {
+          // Get bid landscape for ad group.
+          AdGroupBidLandscapePage page = dataService.getAdGroupBidLandscape(selector);
+          if (page != null && page.entries != null && page.entries.Length > 0) {
+            foreach (AdGroupBidLandscape bidLandscape in page.entries) {
+              Console.WriteLine("Found ad group bid landscape with ad group id '{0}', " +
+                  "type '{1}', current: '{2}', start date '{3}', end date '{4}', and landscape " +
+                  "points",
+                  bidLandscape.adGroupId, bidLandscape.type, bidLandscape.landscapeCurrent,
+                  bidLandscape.startDate, bidLandscape.endDate);
+              foreach (BidLandscapeLandscapePoint point in bidLandscape.landscapePoints) {
+                Console.WriteLine("- bid: {0} => clicks: {1}, cost: {2}, impressions: {3}",
+                    point.bid.microAmount, point.clicks, point.cost.microAmount,
+                    point.impressions);
+              }
+            }
+          } else {
+            Console.WriteLine("No ad group bid landscapes were found.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to get ad group bid landscapes.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to get ad group bid landscapes.", e);
       }
     }
   }

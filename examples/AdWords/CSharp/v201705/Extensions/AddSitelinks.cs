@@ -61,92 +61,91 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
     /// <param name="campaignId">Id of the campaign to which sitelinks will
     /// be added.</param>
     public void Run(AdWordsUser user, long campaignId) {
-      // Get the CampaignExtensionSettingService.
-      CampaignExtensionSettingService campaignExtensionSettingService =
+      using (CampaignExtensionSettingService campaignExtensionSettingService =
           (CampaignExtensionSettingService) user.GetService(
-               AdWordsService.v201705.CampaignExtensionSettingService);
+               AdWordsService.v201705.CampaignExtensionSettingService)) {
 
-      CustomerService customerService = (CustomerService) user.GetService(
-          AdWordsService.v201705.CustomerService);
-
-      // Find the matching customer and its time zone. The getCustomers method
-      // will return a single Customer object corresponding to the session's
-      // clientCustomerId.
-      Customer customer = customerService.getCustomers()[0];
-      Console.WriteLine("Found customer ID {0:###-###-####} with time zone '{1}'.",
-        customer.customerId, customer.dateTimeZone);
-
-      List<ExtensionFeedItem> extensions = new List<ExtensionFeedItem>();
-
-      // Create your sitelinks.
-      SitelinkFeedItem sitelink1 = new SitelinkFeedItem() {
-        sitelinkText = "Store Hours",
-        sitelinkFinalUrls = new UrlList() {
-          urls = new string[] { "http://www.example.com/storehours" }
+        Customer customer = null;
+        using (CustomerService customerService = (CustomerService) user.GetService(
+            AdWordsService.v201705.CustomerService)) {
+          // Find the matching customer and its time zone. The getCustomers method
+          // will return a single Customer object corresponding to the session's
+          // clientCustomerId.
+          customer = customerService.getCustomers()[0];
+          Console.WriteLine("Found customer ID {0:###-###-####} with time zone '{1}'.",
+              customer.customerId, customer.dateTimeZone);
         }
-      };
-      extensions.Add(sitelink1);
+        List<ExtensionFeedItem> extensions = new List<ExtensionFeedItem>();
 
-      DateTime startOfThanksGiving = new DateTime(DateTime.Now.Year, 11, 20, 0, 0, 0);
-      DateTime endOfThanksGiving = new DateTime(DateTime.Now.Year, 11, 27, 23, 59, 59);
-
-      // Add check to make sure we don't create a sitelink with end date in the
-      // past.
-      if (DateTime.Now < endOfThanksGiving) {
-        // Show the Thanksgiving specials link only from 20 - 27 Nov.
-        SitelinkFeedItem sitelink2 = new SitelinkFeedItem() {
-          sitelinkText = "Thanksgiving Specials",
+        // Create your sitelinks.
+        SitelinkFeedItem sitelink1 = new SitelinkFeedItem() {
+          sitelinkText = "Store Hours",
           sitelinkFinalUrls = new UrlList() {
-            urls = new string[] { "http://www.example.com/thanksgiving" }
-          },
-          startTime = string.Format("{0} {1}", startOfThanksGiving.ToString("yyyyMMdd HHmmss"),
-              customer.dateTimeZone),
-          endTime = string.Format("{0} {1}", endOfThanksGiving.ToString("yyyyMMdd HHmmss"),
-              customer.dateTimeZone),
-
-          // Target this sitelink for United States only. See
-          // https://developers.google.com/adwords/api/docs/appendix/geotargeting
-          // for valid geolocation codes.
-          geoTargeting = new Location() {
-            id = 2840
-          },
-
-          // Restrict targeting only to people physically within the United States.
-          // Otherwise, this could also show to people interested in the United States
-          // but not physically located there.
-          geoTargetingRestriction = new FeedItemGeoRestriction() {
-            geoRestriction = GeoRestriction.LOCATION_OF_PRESENCE
+            urls = new string[] { "http://www.example.com/storehours" }
           }
         };
-        extensions.Add(sitelink2);
-      }
-      // Show the wifi details primarily for high end mobile users.
-      SitelinkFeedItem sitelink3 = new SitelinkFeedItem() {
-        sitelinkText = "Wifi available",
-        sitelinkFinalUrls = new UrlList() {
-          urls = new string[] { "http://www.example.com/mobile/wifi" }
-        },
-        devicePreference = new FeedItemDevicePreference() {
-          // See https://developers.google.com/adwords/api/docs/appendix/platforms
-          // for device criteria IDs.
-          devicePreference = 30001
-        },
+        extensions.Add(sitelink1);
 
-        // Target this sitelink for the keyword "free wifi".
-        keywordTargeting = new Keyword() {
-          text = "free wifi",
-          matchType = KeywordMatchType.BROAD
+        DateTime startOfThanksGiving = new DateTime(DateTime.Now.Year, 11, 20, 0, 0, 0);
+        DateTime endOfThanksGiving = new DateTime(DateTime.Now.Year, 11, 27, 23, 59, 59);
+
+        // Add check to make sure we don't create a sitelink with end date in the
+        // past.
+        if (DateTime.Now < endOfThanksGiving) {
+          // Show the Thanksgiving specials link only from 20 - 27 Nov.
+          SitelinkFeedItem sitelink2 = new SitelinkFeedItem() {
+            sitelinkText = "Thanksgiving Specials",
+            sitelinkFinalUrls = new UrlList() {
+              urls = new string[] { "http://www.example.com/thanksgiving" }
+            },
+            startTime = string.Format("{0} {1}", startOfThanksGiving.ToString("yyyyMMdd HHmmss"),
+                customer.dateTimeZone),
+            endTime = string.Format("{0} {1}", endOfThanksGiving.ToString("yyyyMMdd HHmmss"),
+                customer.dateTimeZone),
+
+            // Target this sitelink for United States only. See
+            // https://developers.google.com/adwords/api/docs/appendix/geotargeting
+            // for valid geolocation codes.
+            geoTargeting = new Location() {
+              id = 2840
+            },
+
+            // Restrict targeting only to people physically within the United States.
+            // Otherwise, this could also show to people interested in the United States
+            // but not physically located there.
+            geoTargetingRestriction = new FeedItemGeoRestriction() {
+              geoRestriction = GeoRestriction.LOCATION_OF_PRESENCE
+            }
+          };
+          extensions.Add(sitelink2);
         }
-      };
-      extensions.Add(sitelink3);
+        // Show the wifi details primarily for high end mobile users.
+        SitelinkFeedItem sitelink3 = new SitelinkFeedItem() {
+          sitelinkText = "Wifi available",
+          sitelinkFinalUrls = new UrlList() {
+            urls = new string[] { "http://www.example.com/mobile/wifi" }
+          },
+          devicePreference = new FeedItemDevicePreference() {
+            // See https://developers.google.com/adwords/api/docs/appendix/platforms
+            // for device criteria IDs.
+            devicePreference = 30001
+          },
 
-      // Show the happy hours link only during Mon - Fri 6PM to 9PM.
-      SitelinkFeedItem sitelink4 = new SitelinkFeedItem() {
-        sitelinkText = "Happy hours",
-        sitelinkFinalUrls = new UrlList() {
-          urls = new string[] { "http://www.example.com/happyhours" },
-        },
-        scheduling = new FeedItemSchedule[] {
+          // Target this sitelink for the keyword "free wifi".
+          keywordTargeting = new Keyword() {
+            text = "free wifi",
+            matchType = KeywordMatchType.BROAD
+          }
+        };
+        extensions.Add(sitelink3);
+
+        // Show the happy hours link only during Mon - Fri 6PM to 9PM.
+        SitelinkFeedItem sitelink4 = new SitelinkFeedItem() {
+          sitelinkText = "Happy hours",
+          sitelinkFinalUrls = new UrlList() {
+            urls = new string[] { "http://www.example.com/happyhours" },
+          },
+          scheduling = new FeedItemSchedule[] {
             new FeedItemSchedule() {
                 dayOfWeek = DayOfWeek.MONDAY,
                 startHour = 18,
@@ -182,39 +181,40 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
                 endHour = 21,
                 endMinute = MinuteOfHour.ZERO
             }
+          }
+        };
+        extensions.Add(sitelink4);
+
+        // Create your campaign extension settings. This associates the sitelinks
+        // to your campaign.
+        CampaignExtensionSetting campaignExtensionSetting = new CampaignExtensionSetting();
+        campaignExtensionSetting.campaignId = campaignId;
+        campaignExtensionSetting.extensionType = FeedType.SITELINK;
+        campaignExtensionSetting.extensionSetting = new ExtensionSetting() {
+          extensions = extensions.ToArray()
+        };
+
+        CampaignExtensionSettingOperation operation = new CampaignExtensionSettingOperation() {
+          operand = campaignExtensionSetting,
+          @operator = Operator.ADD
+        };
+
+        try {
+          // Add the extensions.
+          CampaignExtensionSettingReturnValue retVal = campaignExtensionSettingService.mutate(
+              new CampaignExtensionSettingOperation[] { operation });
+
+          // Display the results.
+          if (retVal.value != null && retVal.value.Length > 0) {
+            CampaignExtensionSetting newExtensionSetting = retVal.value[0];
+            Console.WriteLine("Extension setting with type = {0} was added to campaign ID {1}.",
+                newExtensionSetting.extensionType, newExtensionSetting.campaignId);
+          } else {
+            Console.WriteLine("No extension settings were created.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to create extension settings.", e);
         }
-      };
-      extensions.Add(sitelink4);
-
-      // Create your campaign extension settings. This associates the sitelinks
-      // to your campaign.
-      CampaignExtensionSetting campaignExtensionSetting = new CampaignExtensionSetting();
-      campaignExtensionSetting.campaignId = campaignId;
-      campaignExtensionSetting.extensionType = FeedType.SITELINK;
-      campaignExtensionSetting.extensionSetting = new ExtensionSetting() {
-        extensions = extensions.ToArray()
-      };
-
-      CampaignExtensionSettingOperation operation = new CampaignExtensionSettingOperation() {
-        operand = campaignExtensionSetting,
-        @operator = Operator.ADD
-      };
-
-      try {
-        // Add the extensions.
-        CampaignExtensionSettingReturnValue retVal = campaignExtensionSettingService.mutate(
-            new CampaignExtensionSettingOperation[] { operation });
-
-        // Display the results.
-        if (retVal.value != null && retVal.value.Length > 0) {
-          CampaignExtensionSetting newExtensionSetting = retVal.value[0];
-          Console.WriteLine("Extension setting with type = {0} was added to campaign ID {1}.",
-              newExtensionSetting.extensionType, newExtensionSetting.campaignId);
-        } else {
-          Console.WriteLine("No extension settings were created.");
-        }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to create extension settings.", e);
       }
     }
   }

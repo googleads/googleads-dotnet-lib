@@ -57,32 +57,32 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="serviceLinkId">The service link ID to accept.</param>
     public void Run(AdWordsUser user, long serviceLinkId) {
-      // Get the CustomerService.
-      CustomerService customerService = (CustomerService) user.GetService(
-          AdWordsService.v201708.CustomerService);
+      using (CustomerService customerService = (CustomerService) user.GetService(
+          AdWordsService.v201708.CustomerService)) {
 
-      // Create the operation to set the status to ACTIVE.
-      ServiceLinkOperation op = new ServiceLinkOperation();
-      op.@operator = Operator.SET;
-      ServiceLink serviceLink = new ServiceLink();
-      serviceLink.serviceLinkId = serviceLinkId;
-      serviceLink.serviceType = ServiceType.MERCHANT_CENTER;
-      serviceLink.linkStatus = ServiceLinkLinkStatus.ACTIVE;
-      op.operand = serviceLink;
+        // Create the operation to set the status to ACTIVE.
+        ServiceLinkOperation op = new ServiceLinkOperation();
+        op.@operator = Operator.SET;
+        ServiceLink serviceLink = new ServiceLink();
+        serviceLink.serviceLinkId = serviceLinkId;
+        serviceLink.serviceType = ServiceType.MERCHANT_CENTER;
+        serviceLink.linkStatus = ServiceLinkLinkStatus.ACTIVE;
+        op.operand = serviceLink;
 
-      try {
-        // Update the service link.
-        ServiceLink[] mutatedServiceLinks =
-            customerService.mutateServiceLinks(new ServiceLinkOperation[] { op });
+        try {
+          // Update the service link.
+          ServiceLink[] mutatedServiceLinks =
+              customerService.mutateServiceLinks(new ServiceLinkOperation[] { op });
 
-        // Display the results.
-        foreach (ServiceLink mutatedServiceLink in mutatedServiceLinks) {
-          Console.WriteLine("Service link with service link ID {0}, type '{1}' updated to " +
-              "status: {2}.", mutatedServiceLink.serviceLinkId, mutatedServiceLink.serviceType,
-              mutatedServiceLink.linkStatus);
+          // Display the results.
+          foreach (ServiceLink mutatedServiceLink in mutatedServiceLinks) {
+            Console.WriteLine("Service link with service link ID {0}, type '{1}' updated to " +
+                "status: {2}.", mutatedServiceLink.serviceLinkId, mutatedServiceLink.serviceType,
+                mutatedServiceLink.linkStatus);
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to update service link.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to update service link.", e);
       }
     }
   }

@@ -151,12 +151,6 @@ namespace Google.Api.Ads.AdWords.Lib {
       public static readonly ServiceSignature DataService;
 
       /// <summary>
-      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201705/ExperimentService">
-      /// this page</a> for details.
-      /// </summary>
-      public static readonly ServiceSignature ExperimentService;
-
-      /// <summary>
       /// Factory type for v201705 services.
       /// </summary>
       public static readonly Type factoryType = typeof(AdWordsServiceFactory);
@@ -398,8 +392,6 @@ namespace Google.Api.Ads.AdWords.Lib {
             AdWordsService.MakeServiceSignature("v201705", "cm", "CustomerFeedService");
         DataService =
             AdWordsService.MakeServiceSignature("v201705", "cm", "DataService");
-        ExperimentService =
-            AdWordsService.MakeServiceSignature("v201705", "cm", "ExperimentService");
         FeedItemService =
             AdWordsService.MakeServiceSignature("v201705", "cm", "FeedItemService");
         FeedMappingService =

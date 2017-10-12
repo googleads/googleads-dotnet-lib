@@ -15,17 +15,15 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201702
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
+
   ''' <summary>
   ''' This code example removes a campaign by setting the status to 'REMOVED'.
   ''' To get campaigns, run GetCampaigns.vb.
   ''' </summary>
   Public Class RemoveCampaign
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -37,7 +35,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
         Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
         codeExample.Run(New AdWordsUser, campaignId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -47,7 +45,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example removes a campaign by setting the status to 'REMOVED'. To " & _
+        Return "This code example removes a campaign by setting the status to 'REMOVED'. To " &
             "get campaigns, run GetCampaigns.vb."
       End Get
     End Property
@@ -58,37 +56,39 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="user">The AdWords user.</param>
     ''' <param name="campaignId">Id of the campaign to be removed.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
-      ' Get the CampaignService.
-      Dim campaignService As CampaignService = CType(user.GetService( _
+      Using campaignService As CampaignService = CType(user.GetService(
           AdWordsService.v201702.CampaignService), CampaignService)
 
-      ' Create campaign with REMOVED status.
-      Dim campaign As New Campaign
-      campaign.id = campaignId
-      campaign.status = CampaignStatus.REMOVED
+        ' Create campaign with REMOVED status.
+        Dim campaign As New Campaign
+        campaign.id = campaignId
+        campaign.status = CampaignStatus.REMOVED
 
-      ' Create the operation.
-      Dim operation As New CampaignOperation
-      operation.operand = campaign
-      operation.operator = [Operator].SET
+        ' Create the operation.
+        Dim operation As New CampaignOperation
+        operation.operand = campaign
+        operation.operator = [Operator].SET
 
-      Try
-        ' Remove the campaign.
-        Dim retVal As CampaignReturnValue = campaignService.mutate( _
-            New CampaignOperation() {operation})
+        Try
+          ' Remove the campaign.
+          Dim retVal As CampaignReturnValue = campaignService.mutate(
+              New CampaignOperation() {operation})
 
-        ' Display the results.
-        If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
-            (retVal.value.Length > 0)) Then
-          Dim removedCampaign As Campaign = retVal.value(0)
-          Console.WriteLine("Campaign with id = ""{0}"" was renamed to ""{1}"" and removed.", _
-              removedCampaign.id, removedCampaign.name)
-        Else
-          Console.WriteLine("No campaigns were removed.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to remove campaigns.", e)
-      End Try
+          ' Display the results.
+          If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso
+              (retVal.value.Length > 0)) Then
+            Dim removedCampaign As Campaign = retVal.value(0)
+            Console.WriteLine("Campaign with id = ""{0}"" was renamed to ""{1}"" and removed.",
+                removedCampaign.id, removedCampaign.name)
+          Else
+            Console.WriteLine("No campaigns were removed.")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to remove campaigns.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace

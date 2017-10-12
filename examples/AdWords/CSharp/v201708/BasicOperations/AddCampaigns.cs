@@ -59,106 +59,115 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the BudgetService.
-      BudgetService budgetService =
-          (BudgetService)user.GetService(AdWordsService.v201708.BudgetService);
+      using (CampaignService campaignService =
+          (CampaignService) user.GetService(AdWordsService.v201708.CampaignService)) {
 
-      // Get the CampaignService.
-      CampaignService campaignService =
-          (CampaignService)user.GetService(AdWordsService.v201708.CampaignService);
+        Budget budget = CreateBudget(user);
 
-      // Create the campaign budget.
-      Budget budget = new Budget();
-      budget.name = "Interplanetary Cruise Budget #" + ExampleUtilities.GetRandomString();
-      budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
-      budget.amount = new Money();
-      budget.amount.microAmount = 500000;
+        List<CampaignOperation> operations = new List<CampaignOperation>();
 
-      BudgetOperation budgetOperation = new BudgetOperation();
-      budgetOperation.@operator = Operator.ADD;
-      budgetOperation.operand = budget;
+        for (int i = 0; i < NUM_ITEMS; i++) {
+          // Create the campaign.
+          Campaign campaign = new Campaign();
+          campaign.name = "Interplanetary Cruise #" + ExampleUtilities.GetRandomString();
+          campaign.advertisingChannelType = AdvertisingChannelType.SEARCH;
 
-      try {
-        BudgetReturnValue budgetRetval = budgetService.mutate(
-            new BudgetOperation[] { budgetOperation });
-        budget = budgetRetval.value[0];
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to add shared budget.", e);
-      }
+          // Recommendation: Set the campaign to PAUSED when creating it to prevent
+          // the ads from immediately serving. Set to ENABLED once you've added
+          // targeting and the ads are ready to serve.
+          campaign.status = CampaignStatus.PAUSED;
 
-      List<CampaignOperation> operations = new List<CampaignOperation>();
+          BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
+          biddingConfig.biddingStrategyType = BiddingStrategyType.MANUAL_CPC;
+          campaign.biddingStrategyConfiguration = biddingConfig;
 
-      for (int i = 0; i < NUM_ITEMS; i++) {
-        // Create the campaign.
-        Campaign campaign = new Campaign();
-        campaign.name = "Interplanetary Cruise #" + ExampleUtilities.GetRandomString();
-        campaign.advertisingChannelType = AdvertisingChannelType.SEARCH;
+          campaign.budget = new Budget();
+          campaign.budget.budgetId = budget.budgetId;
 
-        // Recommendation: Set the campaign to PAUSED when creating it to prevent
-        // the ads from immediately serving. Set to ENABLED once you've added
-        // targeting and the ads are ready to serve.
-        campaign.status = CampaignStatus.PAUSED;
+          // Set the campaign network options.
+          campaign.networkSetting = new NetworkSetting();
+          campaign.networkSetting.targetGoogleSearch = true;
+          campaign.networkSetting.targetSearchNetwork = true;
+          campaign.networkSetting.targetContentNetwork = false;
+          campaign.networkSetting.targetPartnerSearchNetwork = false;
 
-        BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
-        biddingConfig.biddingStrategyType = BiddingStrategyType.MANUAL_CPC;
-        campaign.biddingStrategyConfiguration = biddingConfig;
+          // Set the campaign settings for Advanced location options.
+          GeoTargetTypeSetting geoSetting = new GeoTargetTypeSetting();
+          geoSetting.positiveGeoTargetType = GeoTargetTypeSettingPositiveGeoTargetType.DONT_CARE;
+          geoSetting.negativeGeoTargetType = GeoTargetTypeSettingNegativeGeoTargetType.DONT_CARE;
 
-        campaign.budget = new Budget();
-        campaign.budget.budgetId = budget.budgetId;
+          campaign.settings = new Setting[] { geoSetting };
 
-        // Set the campaign network options.
-        campaign.networkSetting = new NetworkSetting();
-        campaign.networkSetting.targetGoogleSearch = true;
-        campaign.networkSetting.targetSearchNetwork = true;
-        campaign.networkSetting.targetContentNetwork = false;
-        campaign.networkSetting.targetPartnerSearchNetwork = false;
+          // Optional: Set the start date.
+          campaign.startDate = DateTime.Now.AddDays(1).ToString("yyyyMMdd");
 
-        // Set the campaign settings for Advanced location options.
-        GeoTargetTypeSetting geoSetting = new GeoTargetTypeSetting();
-        geoSetting.positiveGeoTargetType = GeoTargetTypeSettingPositiveGeoTargetType.DONT_CARE;
-        geoSetting.negativeGeoTargetType = GeoTargetTypeSettingNegativeGeoTargetType.DONT_CARE;
+          // Optional: Set the end date.
+          campaign.endDate = DateTime.Now.AddYears(1).ToString("yyyyMMdd");
 
-        campaign.settings = new Setting[] { geoSetting };
+          // Optional: Set the campaign ad serving optimization status.
+          campaign.adServingOptimizationStatus = AdServingOptimizationStatus.ROTATE;
 
-        // Optional: Set the start date.
-        campaign.startDate = DateTime.Now.AddDays(1).ToString("yyyyMMdd");
+          // Optional: Set the frequency cap.
+          FrequencyCap frequencyCap = new FrequencyCap();
+          frequencyCap.impressions = 5;
+          frequencyCap.level = Level.ADGROUP;
+          frequencyCap.timeUnit = TimeUnit.DAY;
+          campaign.frequencyCap = frequencyCap;
 
-        // Optional: Set the end date.
-        campaign.endDate = DateTime.Now.AddYears(1).ToString("yyyyMMdd");
+          // Create the operation.
+          CampaignOperation operation = new CampaignOperation();
+          operation.@operator = Operator.ADD;
+          operation.operand = campaign;
 
-        // Optional: Set the campaign ad serving optimization status.
-        campaign.adServingOptimizationStatus = AdServingOptimizationStatus.ROTATE;
-
-        // Optional: Set the frequency cap.
-        FrequencyCap frequencyCap = new FrequencyCap();
-        frequencyCap.impressions = 5;
-        frequencyCap.level = Level.ADGROUP;
-        frequencyCap.timeUnit = TimeUnit.DAY;
-        campaign.frequencyCap = frequencyCap;
-
-        // Create the operation.
-        CampaignOperation operation = new CampaignOperation();
-        operation.@operator = Operator.ADD;
-        operation.operand = campaign;
-
-        operations.Add(operation);
-      }
-
-      try {
-        // Add the campaign.
-        CampaignReturnValue retVal = campaignService.mutate(operations.ToArray());
-
-        // Display the results.
-        if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-          foreach (Campaign newCampaign in retVal.value) {
-            Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was added.",
-                newCampaign.name, newCampaign.id);
-          }
-        } else {
-          Console.WriteLine("No campaigns were added.");
+          operations.Add(operation);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to add campaigns.", e);
+
+        try {
+          // Add the campaign.
+          CampaignReturnValue retVal = campaignService.mutate(operations.ToArray());
+
+          // Display the results.
+          if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
+            foreach (Campaign newCampaign in retVal.value) {
+              Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was added.",
+                  newCampaign.name, newCampaign.id);
+            }
+          } else {
+            Console.WriteLine("No campaigns were added.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to add campaigns.", e);
+        }
+      }
+    }
+
+    /// <summary>
+    /// Creates the budget for the campaign.
+    /// </summary>
+    /// <param name="user">The AdWords user.</param>
+    /// <returns>The budget instance.</returns>
+    private static Budget CreateBudget(AdWordsUser user) {
+      using (BudgetService budgetService =
+          (BudgetService) user.GetService(AdWordsService.v201708.BudgetService)) {
+
+        // Create the campaign budget.
+        Budget budget = new Budget();
+        budget.name = "Interplanetary Cruise Budget #" + ExampleUtilities.GetRandomString();
+        budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
+        budget.amount = new Money();
+        budget.amount.microAmount = 500000;
+
+        BudgetOperation budgetOperation = new BudgetOperation();
+        budgetOperation.@operator = Operator.ADD;
+        budgetOperation.operand = budget;
+
+        try {
+          BudgetReturnValue budgetRetval = budgetService.mutate(
+              new BudgetOperation[] { budgetOperation });
+          return budgetRetval.value[0];
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to add shared budget.", e);
+        }
       }
     }
   }

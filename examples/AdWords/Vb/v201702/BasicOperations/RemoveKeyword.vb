@@ -15,17 +15,15 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201702
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
+
   ''' <summary>
   ''' This code example removes a keyword using the 'REMOVE' operator. To get
   ''' keywords, run GetKeywords.vb.
   ''' </summary>
   Public Class RemoveKeyword
     Inherits ExampleBase
+
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
     ''' </summary>
@@ -38,7 +36,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
         Dim keywordId As Long = Long.Parse("INSERT_KEYWORD_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId, keywordId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -48,7 +46,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example removes a keyword using the 'REMOVE' operator. To get " & _
+        Return "This code example removes a keyword using the 'REMOVE' operator. To get " &
             "keywords, run GetKeywords.vb."
       End Get
     End Property
@@ -61,42 +59,44 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' </param>
     ''' <param name="keywordId">Id of the keyword to be removed.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal keywordId As Long)
-      ' Get the AdGroupCriterionService.
-      Dim adGroupCriterionService As AdGroupCriterionService = CType(user.GetService( _
+      Using adGroupCriterionService As AdGroupCriterionService = CType(user.GetService(
           AdWordsService.v201702.AdGroupCriterionService), AdGroupCriterionService)
 
-      ' Create base class criterion to avoid setting keyword-specific
-      ' fields.
-      Dim criterion As New Criterion
-      criterion.id = keywordId
+        ' Create base class criterion to avoid setting keyword-specific
+        ' fields.
+        Dim criterion As New Criterion
+        criterion.id = keywordId
 
-      ' Create the ad group criterion.
-      Dim adGroupCriterion As New BiddableAdGroupCriterion
-      adGroupCriterion.adGroupId = adGroupId
-      adGroupCriterion.criterion = criterion
+        ' Create the ad group criterion.
+        Dim adGroupCriterion As New BiddableAdGroupCriterion
+        adGroupCriterion.adGroupId = adGroupId
+        adGroupCriterion.criterion = criterion
 
-      ' Create the operation.
-      Dim operation As New AdGroupCriterionOperation
-      operation.operand = adGroupCriterion
-      operation.operator = [Operator].REMOVE
+        ' Create the operation.
+        Dim operation As New AdGroupCriterionOperation
+        operation.operand = adGroupCriterion
+        operation.operator = [Operator].REMOVE
 
-      Try
-        ' Remove the keyword.
-        Dim retVal As AdGroupCriterionReturnValue = adGroupCriterionService.mutate( _
-            New AdGroupCriterionOperation() {operation})
+        Try
+          ' Remove the keyword.
+          Dim retVal As AdGroupCriterionReturnValue = adGroupCriterionService.mutate(
+              New AdGroupCriterionOperation() {operation})
 
-        ' Display the results.
-        If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso _
-            (retVal.value.Length > 0)) Then
-          Dim removedKeyword As AdGroupCriterion = retVal.value(0)
-          Console.WriteLine("Keyword with ad group id = ""{0}"" and id = ""{1}"" was " & _
+          ' Display the results.
+          If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso
+              (retVal.value.Length > 0)) Then
+            Dim removedKeyword As AdGroupCriterion = retVal.value(0)
+            Console.WriteLine("Keyword with ad group id = ""{0}"" and id = ""{1}"" was " &
                 "removed.", removedKeyword.adGroupId, removedKeyword.criterion.id)
-        Else
-          Console.WriteLine("No keywords were removed.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to remove keywords.", e)
-      End Try
+          Else
+            Console.WriteLine("No keywords were removed.")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to remove keywords.", e)
+        End Try
+      End Using
     End Sub
+
   End Class
+
 End Namespace
