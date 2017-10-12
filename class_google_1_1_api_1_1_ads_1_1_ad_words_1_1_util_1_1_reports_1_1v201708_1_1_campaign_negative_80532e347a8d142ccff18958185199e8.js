@@ -24,5 +24,6 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_
     [ "externalCustomerId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_campaign_negative_80532e347a8d142ccff18958185199e8.html#ae2ee90ac2219c0c15f87ddf8ca4e6ccf", null ],
     [ "id", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_campaign_negative_80532e347a8d142ccff18958185199e8.html#a75775d587fbfb7835279cef5802c56b7", null ],
     [ "isNegative", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_campaign_negative_80532e347a8d142ccff18958185199e8.html#ac8bb4fee9395a8e52e586c0657ba9b28", null ],
-    [ "keywordMatchType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_campaign_negative_80532e347a8d142ccff18958185199e8.html#a1796a5eb238af6590d35988dc069194f", null ]
+    [ "keywordMatchType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_campaign_negative_80532e347a8d142ccff18958185199e8.html#a1796a5eb238af6590d35988dc069194f", null ],
+    [ "verticalId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_campaign_negative_80532e347a8d142ccff18958185199e8.html#a4967695b10f3eea82c81846a906b4f43", null ]
 ];

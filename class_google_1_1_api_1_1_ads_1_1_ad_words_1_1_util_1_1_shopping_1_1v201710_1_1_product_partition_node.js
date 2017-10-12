@@ -1,0 +1,28 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node =
+[
+    [ "ProductPartitionNode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#ab5e8be974de8c6d193fcc1e23c0e83a4", null ],
+    [ "ProductPartitionNode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#a09d471bd79c46ed448bba2a262f62d51", null ],
+    [ "ProductPartitionNode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#a9a0b92785943352028e3f0474fc32897", null ],
+    [ "AddChild", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#a8b7ec3797ff7079ab0775c96bf8dc120", null ],
+    [ "AddChild", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#a5d2dd8bee39c92a81a4cfedfaabc887e", null ],
+    [ "AsBiddableUnit", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#aea6dddfa3aceedd7cb213e82de1411a0", null ],
+    [ "AsExcludedUnit", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#a11cd9c3555d780f00482d3cec8a2fba2", null ],
+    [ "AsSubdivision", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#a0e0948c0a3487ed4d940c233277e8b7b", null ],
+    [ "GetChild", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#a9e38468e0b3709afdb44a9629e9c1d86", null ],
+    [ "HasChild", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#ae9406effce8cc69f879288d94498aa34", null ],
+    [ "RemoveAllChildren", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#ae193e51e5fdf9f872f22ce523e459aa6", null ],
+    [ "RemoveChild", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#a3c1baf9b1d876a53ec225ade93d25bf2", null ],
+    [ "RemoveChild", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#aa87b5d187aab90eb87187a719d4fc166", null ],
+    [ "ToString", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#ae26998d04ee991ec2aed691821744c56", null ],
+    [ "Children", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#a3d732f821cf82befa9410555b9786aca", null ],
+    [ "CpcBid", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#ab9395e7f0085d4b681cde0e7e5011848", null ],
+    [ "CpcBidSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#a863df6034ccbf698c3fd7598b81ad115", null ],
+    [ "Dimension", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#a8d7a3aca18ff1266558d6ea359660626", null ],
+    [ "HasChildren", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#a30e416966ab1a40332b6a0b33d9aa780", null ],
+    [ "IsBiddableUnit", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#a044a49f21ca6c0a4bf23606fe38441b6", null ],
+    [ "IsExcludedUnit", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#a89564ee5bfc04fccc9518015fd4754db", null ],
+    [ "IsSubdivision", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#a6458bba58855a3e88a3f56a7db882d70", null ],
+    [ "IsUnit", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#ac26ccec40bdbb4a7121a4ed1a989222c", null ],
+    [ "Parent", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#aef84fc4a08afc05565a1f1d43e027704", null ],
+    [ "ProductPartitionId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html#ad1e0215a166570f16e9d90aed5f73a7c", null ]
+];

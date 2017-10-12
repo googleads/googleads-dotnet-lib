@@ -311,6 +311,7 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_
     [ "valuePerAllConversion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_criteria_performance_report_report_row.html#ab12c2546bda265bc5a515669a539cc3e", null ],
     [ "valuePerConversion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_criteria_performance_report_report_row.html#af0ba0b1ce781316616839c29be2540d4", null ],
     [ "valuePerCurrentModelAttributedConversion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_criteria_performance_report_report_row.html#ad5f512123eef73485eb66e39f4047b45", null ],
+    [ "verticalId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_criteria_performance_report_report_row.html#afcc73932808c14f1b361537dbf79aac0", null ],
     [ "videoQuartile100Rate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_criteria_performance_report_report_row.html#acc08496784d39b8184e7b3a53d2a9ce4", null ],
     [ "videoQuartile25Rate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_criteria_performance_report_report_row.html#a025eea669c39ff9978ba9697c3c4c195", null ],
     [ "videoQuartile50Rate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201705_1_1_criteria_performance_report_report_row.html#add1ff26a5000c85a567cc347dd899adf", null ],

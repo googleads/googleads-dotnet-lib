@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_offline_data_upload_return_value_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_offline_data_upload_return_value_1_1_selectable_fields.html#aafda0094a0b48868e6b977914018138b", null ]
+];

@@ -1,0 +1,4 @@
+var interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_offline_conversion_feed_service_interface =
+[
+    [ "mutate", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_offline_conversion_feed_service_interface.html#a0a605b34e718c69186edd9f1b6858b2a", null ]
+];

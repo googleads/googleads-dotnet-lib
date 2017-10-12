@@ -38,6 +38,7 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_
       [ "OFFERS", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#abb33d12e6dd2504fed9ae36d7e8de0e4a627d160cc59276c532a6111d9fbb2b7d", null ],
       [ "SALESFORCE", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#abb33d12e6dd2504fed9ae36d7e8de0e4ad225a057e57387a536cc92d3167f7adb", null ],
       [ "STORE_SALES_CRM", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#abb33d12e6dd2504fed9ae36d7e8de0e4aed494c7bd1040ec6c72d1d93f577f48b", null ],
+      [ "STORE_SALES_DIRECT", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#abb33d12e6dd2504fed9ae36d7e8de0e4a6356b0c3ca4f76556d1b6e250f15601d", null ],
       [ "STORE_SALES_PAYMENT_NETWORK", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#abb33d12e6dd2504fed9ae36d7e8de0e4a62788f81662ceb632360ac5e8b3db6fc", null ],
       [ "STORE_VISITS", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#abb33d12e6dd2504fed9ae36d7e8de0e4a122f9aa550bf4fa5922c1fb882996609", null ],
       [ "THIRD_PARTY_APP_ANALYTICS", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#abb33d12e6dd2504fed9ae36d7e8de0e4aeec38469ba69b3a6dbd48d14a8b4e05e", null ],
@@ -60,6 +61,12 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_
       [ "NOVEMBER", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#a4b90a525a2c3db113805cc0deee0c862a72e94357409601244394f5dd0b8fa1b2", null ],
       [ "OCTOBER", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#a4b90a525a2c3db113805cc0deee0c862af2141dd9e56ea6723c9a513a7cd1170b", null ],
       [ "SEPTEMBER", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#a4b90a525a2c3db113805cc0deee0c862a658c25f244e0da9b8f9cd9e59f3b3df0", null ]
+    ] ],
+    [ "QueryTargetingStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#aaa478f50966bc65657edfac601841858", [
+      [ "ADDED", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#aaa478f50966bc65657edfac601841858a55771bcb939a8afbf4d119d6e0099317", null ],
+      [ "BOTH", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#aaa478f50966bc65657edfac601841858a6328e5e3186c227a021ef2ff77e40197", null ],
+      [ "EXCLUDED", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#aaa478f50966bc65657edfac601841858a486284c11ae629b126629809e82daed4", null ],
+      [ "NONE", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#aaa478f50966bc65657edfac601841858ab50339a10e1de285ac99d4c3990b8693", null ]
     ] ],
     [ "accountCurrencyCode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#aa0a6ef709fe0a2dcd0d437f028307626", null ],
     [ "accountDescriptiveName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#a1a80c8055cc31e6b6de59a6cb32270ff", null ],
@@ -101,6 +108,7 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_
     [ "monthOfYear", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#a1f0248db6c32f4d9e9e3e019d111f81e", null ],
     [ "quarter", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#acc5f9268941e7938eb3aef0d84434244", null ],
     [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#a9ef9d49115250a29842cd1aaa7b377ae", null ],
+    [ "queryTargetingStatus", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#a9e689a980765267c6c7a52eb7b2a6894", null ],
     [ "title", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#a8ff0751225a2f59aba8a26a28bc2f741", null ],
     [ "url", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#a30717eb91af11a6e9b851393352107d8", null ],
     [ "valuePerAllConversion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201708_1_1_keywordless_query_report_report_row.html#af16da100e4f8657b1d19544245fe8928", null ],

@@ -159,25 +159,25 @@ Properties</h2></td></tr>
 <tr class="memdesc:ae77cc54c756b9c44cd7776693237581a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This code is used in constructing a live stream event master playlist URL. This attribute is read-only and is assigned by <a class="el" href="namespace_google.html">Google</a>.  <a href="#ae77cc54c756b9c44cd7776693237581a">More...</a><br/></td></tr>
 <tr class="separator:ae77cc54c756b9c44cd7776693237581a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af998bfd5f6d6af92c8318598cb6395d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708.html#af22ccd8baa8674b1df7591d4a41bfee1">AuthenticationService</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html#af998bfd5f6d6af92c8318598cb6395d9">authenticationService</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af998bfd5f6d6af92c8318598cb6395d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The authentication service used to validate credientials and create a tokenized version of the content URL. This value is optional and defaults to <a href="AuthenticationService#NONE">AuthenticationService::NONE</a>.  <a href="#af998bfd5f6d6af92c8318598cb6395d9">More...</a><br/></td></tr>
+<tr class="memdesc:af998bfd5f6d6af92c8318598cb6395d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This field is deprecated and should not be set or read. Please update the API version to v201711 or later and use the <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> field to specify security policies for <a href="LiveStreamEvent#contentUrls">LiveStreamEvent::contentUrls</a>. The value for this field will be out-of-date once <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> is used.  <a href="#af998bfd5f6d6af92c8318598cb6395d9">More...</a><br/></td></tr>
 <tr class="separator:af998bfd5f6d6af92c8318598cb6395d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a00e00e4ea4b5c3511d73166c675727"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html#a4a00e00e4ea4b5c3511d73166c675727">authenticationServiceSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a4a00e00e4ea4b5c3511d73166c675727"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a572d3cfa73ddc326fca6ac320bba87c9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html#a572d3cfa73ddc326fca6ac320bba87c9">authenticationKey</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a572d3cfa73ddc326fca6ac320bba87c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The secure key used to generate a tokenized URL for authentication. This value is required if <a href="LiveStreamEvent#authenticationService">LiveStreamEvent::authenticationService</a> is not equal to <a href="AuthenticationService#NONE">AuthenticationService::NONE</a>.  <a href="#a572d3cfa73ddc326fca6ac320bba87c9">More...</a><br/></td></tr>
+<tr class="memdesc:a572d3cfa73ddc326fca6ac320bba87c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This field is deprecated and should not be set or read. Please update the API version to v201711 or later and use the <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> field to specify security policies for <a href="LiveStreamEvent#contentUrls">LiveStreamEvent::contentUrls</a>. The value for this field will be out-of-date once <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> is used.  <a href="#a572d3cfa73ddc326fca6ac320bba87c9">More...</a><br/></td></tr>
 <tr class="separator:a572d3cfa73ddc326fca6ac320bba87c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b4f088669fff68b039fd88a47ce201b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html#a8b4f088669fff68b039fd88a47ce201b">tokenAuthenticationUnsigned</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a8b4f088669fff68b039fd88a47ce201b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the segment URLs should be signed using the <a href="#authenticationKey">#authenticationKey</a> on the server-side. This field is only applicable when the value of <a href="#authenticationService">#authenticationService</a> is equal to <a href="AuthenticationService#AKAMAI">AuthenticationService::AKAMAI</a>, and will be set to false otherwise. This field is optional and defaults to false.  <a href="#a8b4f088669fff68b039fd88a47ce201b">More...</a><br/></td></tr>
+<tr class="memdesc:a8b4f088669fff68b039fd88a47ce201b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This field is deprecated and should not be set or read. Please update the API version to v201711 or later and use the <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> field to specify security policies for <a href="LiveStreamEvent#contentUrls">LiveStreamEvent::contentUrls</a>. The value for this field will be out-of-date once <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> is used.  <a href="#a8b4f088669fff68b039fd88a47ce201b">More...</a><br/></td></tr>
 <tr class="separator:a8b4f088669fff68b039fd88a47ce201b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4108a5b80c850e2ecf1abf1cc1ad850e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html#a4108a5b80c850e2ecf1abf1cc1ad850e">tokenAuthenticationUnsignedSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a4108a5b80c850e2ecf1abf1cc1ad850e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cce0125515666b20b4eed6856e5dfbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708.html#a58483eada4386e67f3a1782ece069e82">OriginForwardingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html#a9cce0125515666b20b4eed6856e5dfbe">originForwardingType</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a9cce0125515666b20b4eed6856e5dfbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of origin forwarding used to support Akamai authentication policies. This field is only applicable when the value of <a href="#authenticationService">#authenticationService</a> is equal to <a href="AuthenticationService#AKAMAI">AuthenticationService::AKAMAI</a> and will be set to null otherwise.  <a href="#a9cce0125515666b20b4eed6856e5dfbe">More...</a><br/></td></tr>
+<tr class="memdesc:a9cce0125515666b20b4eed6856e5dfbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">This field is deprecated and should not be set or read. Please update the API version to v201711 or later and use the <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> field to specify security policies for <a href="LiveStreamEvent#contentUrls">LiveStreamEvent::contentUrls</a>. The value for this field will be out-of-date once <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> is used.  <a href="#a9cce0125515666b20b4eed6856e5dfbe">More...</a><br/></td></tr>
 <tr class="separator:a9cce0125515666b20b4eed6856e5dfbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae55892cd0ddcaf9463debff85f0a0d57"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html#ae55892cd0ddcaf9463debff85f0a0d57">originForwardingTypeSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:ae55892cd0ddcaf9463debff85f0a0d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90c5a41a8e238af6c273f63a8658a1a1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html#a90c5a41a8e238af6c273f63a8658a1a1">originPathPrefix</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a90c5a41a8e238af6c273f63a8658a1a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The origin path prefix provided by the publisher. This field is only applicable when the value of <a href="#originForwardingType">#originForwardingType</a> is equal to <a href="OriginForwardingType#CONVENTIONAL">OriginForwardingType::CONVENTIONAL</a>, and will be set to null otherwise.  <a href="#a90c5a41a8e238af6c273f63a8658a1a1">More...</a><br/></td></tr>
+<tr class="memdesc:a90c5a41a8e238af6c273f63a8658a1a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This field is deprecated and should not be set or read. Please update the API version to v201711 or later and use the <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> field to specify security policies for <a href="LiveStreamEvent#contentUrls">LiveStreamEvent::contentUrls</a>. The value for this field will be out-of-date once <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> is used.  <a href="#a90c5a41a8e238af6c273f63a8658a1a1">More...</a><br/></td></tr>
 <tr class="separator:a90c5a41a8e238af6c273f63a8658a1a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7732d3c034a2f3752b2b3d4c710d5ec0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html#a7732d3c034a2f3752b2b3d4c710d5ec0">dvrWindowSeconds</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a7732d3c034a2f3752b2b3d4c710d5ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of the DVR window in seconds. This value is optional. If unset the default window as provided by the input encoder will be used.  <a href="#a7732d3c034a2f3752b2b3d4c710d5ec0">More...</a><br/></td></tr>
@@ -340,7 +340,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The secure key used to generate a tokenized URL for authentication. This value is required if <a href="LiveStreamEvent#authenticationService">LiveStreamEvent::authenticationService</a> is not equal to <a href="AuthenticationService#NONE">AuthenticationService::NONE</a>. </p>
+<p>This field is deprecated and should not be set or read. Please update the API version to v201711 or later and use the <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> field to specify security policies for <a href="LiveStreamEvent#contentUrls">LiveStreamEvent::contentUrls</a>. The value for this field will be out-of-date once <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> is used. </p>
 
 </div>
 </div>
@@ -362,7 +362,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The authentication service used to validate credientials and create a tokenized version of the content URL. This value is optional and defaults to <a href="AuthenticationService#NONE">AuthenticationService::NONE</a>. </p>
+<p>This field is deprecated and should not be set or read. Please update the API version to v201711 or later and use the <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> field to specify security policies for <a href="LiveStreamEvent#contentUrls">LiveStreamEvent::contentUrls</a>. The value for this field will be out-of-date once <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> is used. </p>
 
 </div>
 </div>
@@ -385,7 +385,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p></p>
-<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html#af998bfd5f6d6af92c8318598cb6395d9" title="The authentication service used to validate credientials and create a tokenized version of the conten...">authenticationService</a>, <code>false</code> otherwise. </p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html#af998bfd5f6d6af92c8318598cb6395d9" title="This field is deprecated and should not be set or read. Please update the API version to v201711 or l...">authenticationService</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -747,7 +747,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The type of origin forwarding used to support Akamai authentication policies. This field is only applicable when the value of <a href="#authenticationService">#authenticationService</a> is equal to <a href="AuthenticationService#AKAMAI">AuthenticationService::AKAMAI</a> and will be set to null otherwise. </p>
+<p>This field is deprecated and should not be set or read. Please update the API version to v201711 or later and use the <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> field to specify security policies for <a href="LiveStreamEvent#contentUrls">LiveStreamEvent::contentUrls</a>. The value for this field will be out-of-date once <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> is used. </p>
 
 </div>
 </div>
@@ -770,7 +770,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p></p>
-<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html#a9cce0125515666b20b4eed6856e5dfbe" title="The type of origin forwarding used to support Akamai authentication policies. This field is only appl...">originForwardingType</a>, <code>false</code> otherwise. </p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html#a9cce0125515666b20b4eed6856e5dfbe" title="This field is deprecated and should not be set or read. Please update the API version to v201711 or l...">originForwardingType</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -792,7 +792,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The origin path prefix provided by the publisher. This field is only applicable when the value of <a href="#originForwardingType">#originForwardingType</a> is equal to <a href="OriginForwardingType#CONVENTIONAL">OriginForwardingType::CONVENTIONAL</a>, and will be set to null otherwise. </p>
+<p>This field is deprecated and should not be set or read. Please update the API version to v201711 or later and use the <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> field to specify security policies for <a href="LiveStreamEvent#contentUrls">LiveStreamEvent::contentUrls</a>. The value for this field will be out-of-date once <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> is used. </p>
 
 </div>
 </div>
@@ -815,7 +815,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The start date and time of this </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html" title="A ">LiveStreamEvent</a></code>. This attribute is required. </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html" title="A ">LiveStreamEvent</a></code>. This attribute is required if the <a href="LiveStreamEvent#startDateTimeType">LiveStreamEvent::startDateTimeType</a> is <a href="StartDateTimeType#USE_START_DATE_TIME">StartDateTimeType::USE_START_DATE_TIME</a> and is ignored for all other values of <a href="StartDateTimeType">StartDateTimeType</a>. </p>
 
 </div>
 </div>
@@ -883,7 +883,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Whether the segment URLs should be signed using the <a href="#authenticationKey">#authenticationKey</a> on the server-side. This field is only applicable when the value of <a href="#authenticationService">#authenticationService</a> is equal to <a href="AuthenticationService#AKAMAI">AuthenticationService::AKAMAI</a>, and will be set to false otherwise. This field is optional and defaults to false. </p>
+<p>This field is deprecated and should not be set or read. Please update the API version to v201711 or later and use the <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> field to specify security policies for <a href="LiveStreamEvent#contentUrls">LiveStreamEvent::contentUrls</a>. The value for this field will be out-of-date once <a href="LiveStreamEvent#sourceContentConfigurations">LiveStreamEvent::sourceContentConfigurations</a> is used. </p>
 
 </div>
 </div>
@@ -906,7 +906,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p></p>
-<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html#a8b4f088669fff68b039fd88a47ce201b" title="Whether the segment URLs should be signed using the #authenticationKey on the server-side. This field is only applicable when the value of #authenticationService is equal to AuthenticationService::AKAMAI, and will be set to false otherwise. This field is optional and defaults to false. ">tokenAuthenticationUnsigned</a>, <code>false</code> otherwise. </p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html#a8b4f088669fff68b039fd88a47ce201b" title="This field is deprecated and should not be set or read. Please update the API version to v201711 or l...">tokenAuthenticationUnsigned</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -956,7 +956,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.3J9JaahViC/dist/github/src/Dfp/v201708/<a class="el" href="v201708_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>/usr/local/google/users/cseeley/tmp/tmp.iaIv0epvcJ/dist/github/src/Dfp/v201708/<a class="el" href="v201708_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -964,7 +964,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708.html">v201708</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event.html">LiveStreamEvent</a></li>
-    <li class="footer">Generated on Tue Oct 3 2017 16:49:00 for Ads API .NET library by
+    <li class="footer">Generated on Thu Oct 12 2017 15:31:48 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

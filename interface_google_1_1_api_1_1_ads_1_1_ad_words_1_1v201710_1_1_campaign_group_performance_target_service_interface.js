@@ -1,0 +1,5 @@
+var interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_campaign_group_performance_target_service_interface =
+[
+    [ "get", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_campaign_group_performance_target_service_interface.html#a2a22776f08a73be140483d8d0ef5b7a5", null ],
+    [ "mutate", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_campaign_group_performance_target_service_interface.html#ae58fc96e68ead3c20bec82a2c4f3e328", null ]
+];

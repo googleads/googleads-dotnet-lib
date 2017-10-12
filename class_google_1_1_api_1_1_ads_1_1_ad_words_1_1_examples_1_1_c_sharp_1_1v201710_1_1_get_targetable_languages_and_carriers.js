@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_get_targetable_languages_and_carriers =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_get_targetable_languages_and_carriers.html#aceb921761937290bbb14443c9c87855c", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_get_targetable_languages_and_carriers.html#aa8caf752c487cfc29560cc4839b3c702", null ]
+];

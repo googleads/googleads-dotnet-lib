@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_constant_data_service_1_1get_gender_criterion_request =
+[
+    [ "getGenderCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_constant_data_service_1_1get_gender_criterion_request.html#a3dce4e56f9250af0fbdab19d719cbfb3", null ]
+];

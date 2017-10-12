@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_third_party_redirect_ad_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_third_party_redirect_ad_1_1_selectable_fields.html#a57311765b3426daf2bea0f993ef8fe37", null ]
+];

@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_similar_user_list_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_similar_user_list_1_1_filterable_fields.html#a0851b777b561fc2e7dbb147b795a5182", null ]
+];
