@@ -24,7 +24,7 @@ var NAVTREEINDEX1 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_add_rule_based_remarketing_list.html#afff763ac2a67bcba113fcd09bc80f6b1":[1,0,0,0,0,0,0,0,1,66,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_add_shopping_campaign.html":[1,0,0,0,0,0,0,0,1,79],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_add_shopping_campaign.html#a51418f5a54d469176846866d7f2728d2":[1,0,0,0,0,0,0,0,1,79,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_add_shopping_campaign.html#aef65bb1c1935492c6499a0ff8f6a22b2":[1,0,0,0,0,0,0,0,1,79,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_add_shopping_campaign.html#a521e2c3e4e62039a302c2a8f56e403e8":[1,0,0,0,0,0,0,0,1,79,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_add_shopping_campaign_for_showcase_ads.html":[1,0,0,0,0,0,0,0,1,80],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_add_shopping_campaign_for_showcase_ads.html#a8027848a2d9961aa980c8e0923c47018":[1,0,0,0,0,0,0,0,1,80,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201702_1_1_add_shopping_campaign_for_showcase_ads.html#aa11f6bf2af3fdeb9c8beee57b387ae4b":[1,0,0,0,0,0,0,0,1,80,0],

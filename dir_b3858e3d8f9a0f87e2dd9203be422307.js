@@ -1,0 +1,5 @@
+var dir_b3858e3d8f9a0f87e2dd9203be422307 =
+[
+    [ "AssemblyInfo.cs", "examples_2_ad_words_2_c_sharp_2_o_auth_2_properties_2_assembly_info_8cs.html", null ],
+    [ "Properties.cs", "examples_2_ad_words_2_c_sharp_2_o_auth_2_properties_2_properties_8cs.html", null ]
+];
