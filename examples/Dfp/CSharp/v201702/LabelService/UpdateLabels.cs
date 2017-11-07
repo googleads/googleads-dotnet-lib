@@ -49,39 +49,39 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the LabelService.
-      LabelService labelService =
-          (LabelService) user.GetService(DfpService.v201702.LabelService);
+      using (LabelService labelService =
+          (LabelService) user.GetService(DfpService.v201702.LabelService)) {
 
-      // Set the ID of the label to deactivate.
-      int labelId = int.Parse(_T("INSERT_LABEL_ID_HERE"));
+        // Set the ID of the label to deactivate.
+        int labelId = int.Parse(_T("INSERT_LABEL_ID_HERE"));
 
-      // Create a statement to select the label.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", labelId);
+        // Create a statement to select the label.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", labelId);
 
-      try {
-        // Get the labels by statement.
-        LabelPage page = labelService.getLabelsByStatement(statementBuilder.ToStatement());
+        try {
+          // Get the labels by statement.
+          LabelPage page = labelService.getLabelsByStatement(statementBuilder.ToStatement());
 
-        Label label = page.results[0];
+          Label label = page.results[0];
 
-        // Update the label description.
-        label.description = "New label description.";
+          // Update the label description.
+          label.description = "New label description.";
 
-        // Update the label on the server.
-        Label[] labels = labelService.updateLabels(new Label[] {label});
+          // Update the label on the server.
+          Label[] labels = labelService.updateLabels(new Label[] { label });
 
-        foreach (Label updatedLabel in labels) {
-          Console.WriteLine("A label with ID '{0}' and name '{1}' was updated.",
-              updatedLabel.id, updatedLabel.name);
+          foreach (Label updatedLabel in labels) {
+            Console.WriteLine("A label with ID '{0}' and name '{1}' was updated.",
+                updatedLabel.id, updatedLabel.name);
+          }
+
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update labels. Exception says \"{0}\"", e.Message);
         }
-
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update labels. Exception says \"{0}\"", e.Message);
       }
     }
   }

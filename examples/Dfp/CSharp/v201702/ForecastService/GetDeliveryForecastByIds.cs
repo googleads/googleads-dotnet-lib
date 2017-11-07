@@ -46,32 +46,33 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ForecastService.
-      ForecastService forecastService =
-          (ForecastService) user.GetService(DfpService.v201702.ForecastService);
+      using (ForecastService forecastService =
+          (ForecastService) user.GetService(DfpService.v201702.ForecastService)) {
 
-      // Set the line item to get a forecast for.
-      long lineItemId1 = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
-      long lineItemId2 = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
+        // Set the line item to get a forecast for.
+        long lineItemId1 = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
+        long lineItemId2 = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
 
-      try {
-        // Get a delivery forecast for the line items.
-        DeliveryForecastOptions options = new DeliveryForecastOptions();
-        options.ignoredLineItemIds = new long[]{};
-        DeliveryForecast forecast = forecastService.getDeliveryForecastByIds(
-            new long[] {lineItemId1, lineItemId2}, options);
+        try {
+          // Get a delivery forecast for the line items.
+          DeliveryForecastOptions options = new DeliveryForecastOptions();
+          options.ignoredLineItemIds = new long[] { };
+          DeliveryForecast forecast = forecastService.getDeliveryForecastByIds(
+              new long[] { lineItemId1, lineItemId2 }, options);
 
-        // Display results.
-        foreach (LineItemDeliveryForecast lineItemForecast in forecast.lineItemDeliveryForecasts) {
-          String unitType = lineItemForecast.unitType.GetType().Name.ToLower();
-          Console.WriteLine("Forecast for line item {0}:", lineItemForecast.lineItemId);
-          Console.WriteLine("\t{0} {1} matched", lineItemForecast.matchedUnits, unitType);
-          Console.WriteLine("\t{0} {1} delivered", lineItemForecast.deliveredUnits, unitType);
-          Console.WriteLine("\t{0} {1} predicted", lineItemForecast.predictedDeliveryUnits,
-              unitType);
+          // Display results.
+          foreach (LineItemDeliveryForecast lineItemForecast in
+              forecast.lineItemDeliveryForecasts) {
+            String unitType = lineItemForecast.unitType.GetType().Name.ToLower();
+            Console.WriteLine("Forecast for line item {0}:", lineItemForecast.lineItemId);
+            Console.WriteLine("\t{0} {1} matched", lineItemForecast.matchedUnits, unitType);
+            Console.WriteLine("\t{0} {1} delivered", lineItemForecast.deliveredUnits, unitType);
+            Console.WriteLine("\t{0} {1} predicted", lineItemForecast.predictedDeliveryUnits,
+                unitType);
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to get forecast by id. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get forecast by id. Exception says \"{0}\"", e.Message);
       }
     }
   }

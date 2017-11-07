@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,41 +48,42 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      BaseRateService baseRateService =
-          (BaseRateService) dfpUser.GetService(DfpService.v201705.BaseRateService);
+      using (BaseRateService baseRateService =
+          (BaseRateService) dfpUser.GetService(DfpService.v201705.BaseRateService)) {
 
-      // Create a statement to select base rates.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .OrderBy("id ASC")
-          .Limit(pageSize);
+        // Create a statement to select base rates.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .OrderBy("id ASC")
+            .Limit(pageSize);
 
-      // Retrieve a small amount of base rates at a time, paging through until all
-      // base rates have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        BaseRatePage page = baseRateService.getBaseRatesByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of base rates at a time, paging through until all
+        // base rates have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          BaseRatePage page = baseRateService.getBaseRatesByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each base rate.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (BaseRate baseRate in page.results) {
-            Console.WriteLine(
-                "{0}) Base rate with ID {1}, type \"{2}\", and rate card ID {3} was found.",
-                i++,
-                baseRate.id,
-                baseRate.GetType().Name,
-                baseRate.rateCardId
-            );
+          // Print out some information for each base rate.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (BaseRate baseRate in page.results) {
+              Console.WriteLine(
+                  "{0}) Base rate with ID {1}, type \"{2}\", and rate card ID {3} was found.",
+                  i++,
+                  baseRate.id,
+                  baseRate.GetType().Name,
+                  baseRate.rateCardId
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

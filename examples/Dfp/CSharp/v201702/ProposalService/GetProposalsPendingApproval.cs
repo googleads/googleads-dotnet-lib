@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,42 +48,43 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      ProposalService proposalService =
-          (ProposalService) dfpUser.GetService(DfpService.v201702.ProposalService);
+      using (ProposalService proposalService =
+          (ProposalService) dfpUser.GetService(DfpService.v201702.ProposalService)) {
 
-      // Create a statement to select proposals.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("status = :status")
-          .OrderBy("id ASC")
-          .Limit(pageSize)
-          .AddValue("status", ProposalStatus.PENDING_APPROVAL.ToString());
+        // Create a statement to select proposals.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("status = :status")
+            .OrderBy("id ASC")
+            .Limit(pageSize)
+            .AddValue("status", ProposalStatus.PENDING_APPROVAL.ToString());
 
-      // Retrieve a small amount of proposals at a time, paging through until all
-      // proposals have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        ProposalPage page = proposalService.getProposalsByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of proposals at a time, paging through until all
+        // proposals have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          ProposalPage page = proposalService.getProposalsByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each proposal.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (Proposal proposal in page.results) {
-            Console.WriteLine(
-                "{0}) Proposal with ID {1} and name \"{2}\" was found.",
-                i++,
-                proposal.id,
-                proposal.name
-            );
+          // Print out some information for each proposal.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (Proposal proposal in page.results) {
+              Console.WriteLine(
+                  "{0}) Proposal with ID {1} and name \"{2}\" was found.",
+                  i++,
+                  proposal.id,
+                  proposal.name
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

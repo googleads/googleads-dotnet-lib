@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,40 +48,41 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      ActivityGroupService activityGroupService =
-          (ActivityGroupService) dfpUser.GetService(DfpService.v201708.ActivityGroupService);
+      using (ActivityGroupService activityGroupService =
+          (ActivityGroupService) dfpUser.GetService(DfpService.v201708.ActivityGroupService)) {
 
-      // Create a statement to select activity groups.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .OrderBy("id ASC")
-          .Limit(pageSize);
+        // Create a statement to select activity groups.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .OrderBy("id ASC")
+            .Limit(pageSize);
 
-      // Retrieve a small amount of activity groups at a time, paging through until all
-      // activity groups have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        ActivityGroupPage page = activityGroupService.getActivityGroupsByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of activity groups at a time, paging through until all
+        // activity groups have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          ActivityGroupPage page = activityGroupService.getActivityGroupsByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each activity group.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (ActivityGroup activityGroup in page.results) {
-            Console.WriteLine(
-                "{0}) Activity group with ID {1} and name \"{2}\" was found.",
-                i++,
-                activityGroup.id,
-                activityGroup.name
-            );
+          // Print out some information for each activity group.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (ActivityGroup activityGroup in page.results) {
+              Console.WriteLine(
+                  "{0}) Activity group with ID {1} and name \"{2}\" was found.",
+                  i++,
+                  activityGroup.id,
+                  activityGroup.name
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

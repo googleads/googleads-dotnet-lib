@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,45 +48,46 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      ReconciliationReportService reconciliationReportService =
-          (ReconciliationReportService) dfpUser.GetService(DfpService.v201705.ReconciliationReportService);
+      using (ReconciliationReportService reconciliationReportService =
+          (ReconciliationReportService) dfpUser.GetService(DfpService.v201705.ReconciliationReportService)) {
 
-      // Create a statement to select reconciliation reports.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .OrderBy("id ASC")
-          .Limit(pageSize);
+        // Create a statement to select reconciliation reports.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .OrderBy("id ASC")
+            .Limit(pageSize);
 
-      // Retrieve a small amount of reconciliation reports at a time, paging through until all
-      // reconciliation reports have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        ReconciliationReportPage page = reconciliationReportService.getReconciliationReportsByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of reconciliation reports at a time, paging through until all
+        // reconciliation reports have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          ReconciliationReportPage page = reconciliationReportService.getReconciliationReportsByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each reconciliation report.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (ReconciliationReport reconciliationReport in page.results) {
-            String startDateString = new System.DateTime(
-                day: reconciliationReport.startDate.day,
-                month: reconciliationReport.startDate.month,
-                year: reconciliationReport.startDate.year
-            ).ToString("d");
-            Console.WriteLine(
-                "{0}) Reconciliation report with ID {1} and start date \"{2}\" was found.",
-                i++,
-                reconciliationReport.id,
-                startDateString
-            );
+          // Print out some information for each reconciliation report.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (ReconciliationReport reconciliationReport in page.results) {
+              String startDateString = new System.DateTime(
+                  day: reconciliationReport.startDate.day,
+                  month: reconciliationReport.startDate.month,
+                  year: reconciliationReport.startDate.year
+              ).ToString("d");
+              Console.WriteLine(
+                  "{0}) Reconciliation report with ID {1} and start date \"{2}\" was found.",
+                  i++,
+                  reconciliationReport.id,
+                  startDateString
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

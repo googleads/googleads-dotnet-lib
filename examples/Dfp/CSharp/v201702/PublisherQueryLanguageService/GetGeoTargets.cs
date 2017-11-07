@@ -54,56 +54,56 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the PublisherQueryLanguageService.
-      PublisherQueryLanguageService pqlService =
+      using (PublisherQueryLanguageService pqlService =
           (PublisherQueryLanguageService) user.GetService(
-              DfpService.v201702.PublisherQueryLanguageService);
+              DfpService.v201702.PublisherQueryLanguageService)) {
 
-      string geoType = "City";
+        string geoType = "City";
 
-      // Create statement to select all targetable cities.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Select("Id, Name, CanonicalParentId, ParentIds, CountryCode")
-          .From("Geo_Target")
-          .Where("Type = :type and Targetable = true")
-          .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-          .AddValue("type", geoType);
+        // Create statement to select all targetable cities.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Select("Id, Name, CanonicalParentId, ParentIds, CountryCode")
+            .From("Geo_Target")
+            .Where("Type = :type and Targetable = true")
+            .OrderBy("id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+            .AddValue("type", geoType);
 
-      int resultSetSize = 0;
-      List<Row> allRows = new List<Row>();
-      ResultSet resultSet;
+        int resultSetSize = 0;
+        List<Row> allRows = new List<Row>();
+        ResultSet resultSet;
 
-      try {
-        do {
-          // Get all cities.
-          resultSet = pqlService.select(statementBuilder.ToStatement());
+        try {
+          do {
+            // Get all cities.
+            resultSet = pqlService.select(statementBuilder.ToStatement());
 
-          // Collect all cities from each page.
-          allRows.AddRange(resultSet.rows);
+            // Collect all cities from each page.
+            allRows.AddRange(resultSet.rows);
 
-          // Display results.
-          Console.WriteLine(PqlUtilities.ResultSetToString(resultSet));
+            // Display results.
+            Console.WriteLine(PqlUtilities.ResultSetToString(resultSet));
 
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-          resultSetSize = resultSet.rows == null ? 0 : resultSet.rows.Length;
-        } while (resultSetSize == StatementBuilder.SUGGESTED_PAGE_LIMIT);
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+            resultSetSize = resultSet.rows == null ? 0 : resultSet.rows.Length;
+          } while (resultSetSize == StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-        Console.WriteLine("Number of results found: " + allRows.Count);
+          Console.WriteLine("Number of results found: " + allRows.Count);
 
-        // Optionally, save all rows to a CSV.
-        // Get a string array representation of the data rows.
-        resultSet.rows = allRows.ToArray();
-        List<String[]> rows = PqlUtilities.ResultSetToStringArrayList(resultSet);
+          // Optionally, save all rows to a CSV.
+          // Get a string array representation of the data rows.
+          resultSet.rows = allRows.ToArray();
+          List<String[]> rows = PqlUtilities.ResultSetToStringArrayList(resultSet);
 
-        // Write the contents to a csv file.
-        CsvFile file = new CsvFile();
-        file.Headers.AddRange(rows[0]);
-        file.Records.AddRange(rows.GetRange(1, rows.Count - 1).ToArray());
-        file.Write(geoType + "_" + this.GetTimeStamp() + ".csv");
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get Geo type = '{0}'. Exception says \"{1}\"",
-            geoType, e.Message);
+          // Write the contents to a csv file.
+          CsvFile file = new CsvFile();
+          file.Headers.AddRange(rows[0]);
+          file.Records.AddRange(rows.GetRange(1, rows.Count - 1).ToArray());
+          file.Write(geoType + "_" + this.GetTimeStamp() + ".csv");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to get Geo type = '{0}'. Exception says \"{1}\"",
+              geoType, e.Message);
+        }
       }
     }
   }

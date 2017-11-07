@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -49,42 +49,43 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser, string emailAddress) {
-      UserService userService =
-          (UserService) dfpUser.GetService(DfpService.v201702.UserService);
+      using (UserService userService =
+          (UserService) dfpUser.GetService(DfpService.v201702.UserService)) {
 
-      // Create a statement to select users.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("email = :email")
-          .OrderBy("id ASC")
-          .Limit(pageSize)
-          .AddValue("email", emailAddress);
+        // Create a statement to select users.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("email = :email")
+            .OrderBy("id ASC")
+            .Limit(pageSize)
+            .AddValue("email", emailAddress);
 
-      // Retrieve a small amount of users at a time, paging through until all
-      // users have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        UserPage page = userService.getUsersByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of users at a time, paging through until all
+        // users have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          UserPage page = userService.getUsersByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each user.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (User user in page.results) {
-            Console.WriteLine(
-                "{0}) User with ID {1} and name \"{2}\" was found.",
-                i++,
-                user.id,
-                user.name
-            );
+          // Print out some information for each user.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (User user in page.results) {
+              Console.WriteLine(
+                  "{0}) User with ID {1} and name \"{2}\" was found.",
+                  i++,
+                  user.id,
+                  user.name
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

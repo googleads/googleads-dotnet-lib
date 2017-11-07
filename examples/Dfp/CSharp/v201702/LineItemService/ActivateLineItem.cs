@@ -35,10 +35,10 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     public override string Description {
       get {
         return "This code example activates all line items for the given order. To be activated," +
-            " line items need to be in the approved (needs creatives) state and have at least one" +
-            " creative associated with them. To approve line items, approve the order to which" +
-            " they belong by running ApproveOrders.cs. To create LICAs, run CreateLicas.cs." +
-            " To determine which line items exist, run GetAllLineItem.cs.";
+            " line items need to be in the approved (needs creatives) state and have at" +
+            " least one creative associated with them. To approve line items, approve the order" +
+            " to which they belong by running ApproveOrders.cs. To create LICAs, run" +
+            " CreateLicas.cs. To determine which line items exist, run GetAllLineItem.cs.";
       }
     }
 
@@ -55,69 +55,69 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the LineItemService.
-      LineItemService lineItemService =
-          (LineItemService) user.GetService(DfpService.v201702.LineItemService);
+      using (LineItemService lineItemService =
+          (LineItemService) user.GetService(DfpService.v201702.LineItemService)) {
 
-      // Set the ID of the order to get line items from.
-      long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
+        // Set the ID of the order to get line items from.
+        long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
 
-      // Create statement to select approved line items from a given order.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("orderId = :orderId and status = :status")
-          .AddValue("orderId", orderId)
-          .AddValue("status", ComputedStatus.INACTIVE.ToString());
+        // Create statement to select approved line items from a given order.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("orderId = :orderId and status = :status")
+            .AddValue("orderId", orderId)
+            .AddValue("status", ComputedStatus.INACTIVE.ToString());
 
-      // Set default for page.
-      LineItemPage page = new LineItemPage();
-      List<string> lineItemIds = new List<string>();
+        // Set default for page.
+        LineItemPage page = new LineItemPage();
+        List<string> lineItemIds = new List<string>();
 
-      try {
-        do {
-          // Get line items by statement.
-          page = lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
+        try {
+          do {
+            // Get line items by statement.
+            page = lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            int i = page.startIndex;
-            foreach (LineItemSummary lineItem in page.results) {
-              // Archived line items cannot be activated.
-              if (!lineItem.isArchived) {
-                Console.WriteLine("{0}) Line item with ID ='{1}', belonging to order ID ='{2}' " +
-                    "and name ='{3}' will be activated.", i, lineItem.id, lineItem.orderId,
-                    lineItem.name);
-                lineItemIds.Add(lineItem.id.ToString());
-                i++;
+            if (page.results != null) {
+              int i = page.startIndex;
+              foreach (LineItemSummary lineItem in page.results) {
+                // Archived line items cannot be activated.
+                if (!lineItem.isArchived) {
+                  Console.WriteLine("{0}) Line item with ID ='{1}', belonging to order " +
+                      "ID ='{2}' and name ='{3}' will be activated.",
+                      i, lineItem.id, lineItem.orderId, lineItem.name);
+                  lineItemIds.Add(lineItem.id.ToString());
+                  i++;
+                }
               }
             }
+
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+
+          Console.WriteLine("Number of line items to be activated: {0}", lineItemIds.Count);
+
+          if (lineItemIds.Count > 0) {
+            // Modify statement.
+            statementBuilder.RemoveLimitAndOffset();
+
+            // Create action.
+            ActivateLineItems action = new ActivateLineItems();
+
+            // Perform action.
+            UpdateResult result = lineItemService.performLineItemAction(action,
+                statementBuilder.ToStatement());
+
+            // Display results.
+            if (result != null && result.numChanges > 0) {
+              Console.WriteLine("Number of line items activated: {0}", result.numChanges);
+            } else {
+              Console.WriteLine("No line items were activated.");
+            }
           }
-
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-
-
-        Console.WriteLine("Number of line items to be activated: {0}", lineItemIds.Count);
-
-        if (lineItemIds.Count > 0) {
-          // Modify statement.
-          statementBuilder.RemoveLimitAndOffset();
-
-          // Create action.
-          ActivateLineItems action = new ActivateLineItems();
-
-          // Perform action.
-          UpdateResult result = lineItemService.performLineItemAction(action,
-              statementBuilder.ToStatement());
-
-          // Display results.
-          if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of line items activated: {0}", result.numChanges);
-          } else {
-            Console.WriteLine("No line items were activated.");
-          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to activate line items. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to activate line items. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

@@ -47,40 +47,40 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code examples.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ExchangeRateService.
-      ExchangeRateService exchangeRateService =
-          (ExchangeRateService) user.GetService(DfpService.v201702.ExchangeRateService);
+      using (ExchangeRateService exchangeRateService =
+          (ExchangeRateService) user.GetService(DfpService.v201702.ExchangeRateService)) {
 
-      // Create an exchange rate.
-      ExchangeRate exchangeRate = new ExchangeRate();
+        // Create an exchange rate.
+        ExchangeRate exchangeRate = new ExchangeRate();
 
-      // Set the currency code.
-      exchangeRate.currencyCode = "AUD";
+        // Set the currency code.
+        exchangeRate.currencyCode = "AUD";
 
-      // Set the direction of the conversion (from the network currency).
-      exchangeRate.direction = ExchangeRateDirection.FROM_NETWORK;
+        // Set the direction of the conversion (from the network currency).
+        exchangeRate.direction = ExchangeRateDirection.FROM_NETWORK;
 
-      // Set the conversion value as 1.5 (this value is multiplied by 10,000,000,000)
-      exchangeRate.exchangeRate = 15000000000L;
+        // Set the conversion value as 1.5 (this value is multiplied by 10,000,000,000)
+        exchangeRate.exchangeRate = 15000000000L;
 
-      // Do not refresh exchange rate from Google data. Update manually only.
-      exchangeRate.refreshRate = ExchangeRateRefreshRate.FIXED;
+        // Do not refresh exchange rate from Google data. Update manually only.
+        exchangeRate.refreshRate = ExchangeRateRefreshRate.FIXED;
 
-      try {
-        // Create the exchange rate on the server.
-        ExchangeRate[] exchangeRates = exchangeRateService.createExchangeRates(
-            new ExchangeRate[] {exchangeRate});
+        try {
+          // Create the exchange rate on the server.
+          ExchangeRate[] exchangeRates = exchangeRateService.createExchangeRates(
+              new ExchangeRate[] { exchangeRate });
 
-        foreach (ExchangeRate createdExchangeRate in exchangeRates) {
-          Console.WriteLine("An exchange rate with ID '{0}', currency code '{1}', " +
-              "direction '{2}' and exchange rate '{3}' was created.", exchangeRate.id,
-              exchangeRate.currencyCode, exchangeRate.direction,
-              (exchangeRate.exchangeRate / 10000000000f));
+          foreach (ExchangeRate createdExchangeRate in exchangeRates) {
+            Console.WriteLine("An exchange rate with ID '{0}', currency code '{1}', " +
+                "direction '{2}' and exchange rate '{3}' was created.", exchangeRate.id,
+                exchangeRate.currencyCode, exchangeRate.direction,
+                (exchangeRate.exchangeRate / 10000000000f));
+          }
+
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create exchange rates. Exception says \"{0}\"",
+              e.Message);
         }
-
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create exchange rates. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

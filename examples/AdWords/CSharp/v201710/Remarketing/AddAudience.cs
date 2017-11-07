@@ -54,98 +54,97 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the UserListService.
-      AdwordsUserListService userListService =
-          (AdwordsUserListService) user.GetService(AdWordsService.v201710.AdwordsUserListService);
-
-      // Get the ConversionTrackerService.
-      ConversionTrackerService conversionTrackerService =
+      using (AdwordsUserListService userListService =
+          (AdwordsUserListService) user.GetService(
+              AdWordsService.v201710.AdwordsUserListService))
+      using (ConversionTrackerService conversionTrackerService =
           (ConversionTrackerService) user.GetService(AdWordsService.v201710.
-              ConversionTrackerService);
+              ConversionTrackerService)) {
 
-      BasicUserList userList = new BasicUserList();
-      userList.name = "Mars cruise customers #" + ExampleUtilities.GetRandomString();
-      userList.description = "A list of mars cruise customers in the last year.";
-      userList.status = UserListMembershipStatus.OPEN;
-      userList.membershipLifeSpan = 365;
+        BasicUserList userList = new BasicUserList();
+        userList.name = "Mars cruise customers #" + ExampleUtilities.GetRandomString();
+        userList.description = "A list of mars cruise customers in the last year.";
+        userList.status = UserListMembershipStatus.OPEN;
+        userList.membershipLifeSpan = 365;
 
-      UserListConversionType conversionType = new UserListConversionType();
-      conversionType.name = userList.name;
-      userList.conversionTypes = new UserListConversionType[] { conversionType };
+        UserListConversionType conversionType = new UserListConversionType();
+        conversionType.name = userList.name;
+        userList.conversionTypes = new UserListConversionType[] { conversionType };
 
-      // Optional: Set the user list status.
-      userList.status = UserListMembershipStatus.OPEN;
+        // Optional: Set the user list status.
+        userList.status = UserListMembershipStatus.OPEN;
 
-      // Create the operation.
-      UserListOperation operation = new UserListOperation();
-      operation.operand = userList;
-      operation.@operator = Operator.ADD;
+        // Create the operation.
+        UserListOperation operation = new UserListOperation();
+        operation.operand = userList;
+        operation.@operator = Operator.ADD;
 
-      try {
-        // Add the user list.
-        UserListReturnValue retval = userListService.mutate(new UserListOperation[] { operation });
+        try {
+          // Add the user list.
+          UserListReturnValue retval = userListService.mutate(
+              new UserListOperation[] { operation });
 
-        UserList[] userLists = null;
-        if (retval != null && retval.value != null) {
-          userLists = retval.value;
-          // Get all conversion snippets
-          List<string> conversionIds = new List<string>();
-          foreach (BasicUserList newUserList in userLists) {
-            if (newUserList.conversionTypes != null) {
-              foreach (UserListConversionType newConversionType in newUserList.conversionTypes) {
-                conversionIds.Add(newConversionType.id.ToString());
-              }
-            }
-          }
-
-          Dictionary<long, ConversionTracker> conversionsMap =
-              new Dictionary<long, ConversionTracker>();
-
-          if (conversionIds.Count > 0) {
-            // Create the selector.
-            Selector selector = new Selector() {
-              fields = new string[] { ConversionTracker.Fields.Id },
-              predicates = new Predicate[] {
-                Predicate.In(ConversionTracker.Fields.Id, conversionIds)
-              }
-            };
-
-            // Get all conversion trackers.
-            ConversionTrackerPage page = conversionTrackerService.get(selector);
-
-            if (page != null && page.entries != null) {
-              foreach (ConversionTracker tracker in page.entries) {
-                conversionsMap[tracker.id] = tracker;
-              }
-            }
-          }
-
-          // Display the results.
-          foreach (BasicUserList newUserList in userLists) {
-            Console.WriteLine("User list with name '{0}' and id '{1}' was added.",
-                newUserList.name, newUserList.id);
-
-            // Display user list associated conversion code snippets.
-            if (newUserList.conversionTypes != null) {
-              foreach (UserListConversionType userListConversionType in
-                  newUserList.conversionTypes) {
-                if (conversionsMap.ContainsKey(userListConversionType.id)) {
-                  AdWordsConversionTracker conversionTracker =
-                      (AdWordsConversionTracker) conversionsMap[userListConversionType.id];
-                  Console.WriteLine("Conversion type code snippet associated to the list:\n{0}\n",
-                      conversionTracker.snippet);
-                } else {
-                  throw new Exception("Failed to associate conversion type code snippet.");
+          UserList[] userLists = null;
+          if (retval != null && retval.value != null) {
+            userLists = retval.value;
+            // Get all conversion snippets
+            List<string> conversionIds = new List<string>();
+            foreach (BasicUserList newUserList in userLists) {
+              if (newUserList.conversionTypes != null) {
+                foreach (UserListConversionType newConversionType in newUserList.conversionTypes) {
+                  conversionIds.Add(newConversionType.id.ToString());
                 }
               }
             }
+
+            Dictionary<long, ConversionTracker> conversionsMap =
+                new Dictionary<long, ConversionTracker>();
+
+            if (conversionIds.Count > 0) {
+              // Create the selector.
+              Selector selector = new Selector() {
+                fields = new string[] { ConversionTracker.Fields.Id },
+                predicates = new Predicate[] {
+                  Predicate.In(ConversionTracker.Fields.Id, conversionIds)
+                }
+              };
+
+              // Get all conversion trackers.
+              ConversionTrackerPage page = conversionTrackerService.get(selector);
+
+              if (page != null && page.entries != null) {
+                foreach (ConversionTracker tracker in page.entries) {
+                  conversionsMap[tracker.id] = tracker;
+                }
+              }
+            }
+
+            // Display the results.
+            foreach (BasicUserList newUserList in userLists) {
+              Console.WriteLine("User list with name '{0}' and id '{1}' was added.",
+                  newUserList.name, newUserList.id);
+
+              // Display user list associated conversion code snippets.
+              if (newUserList.conversionTypes != null) {
+                foreach (UserListConversionType userListConversionType in
+                    newUserList.conversionTypes) {
+                  if (conversionsMap.ContainsKey(userListConversionType.id)) {
+                    AdWordsConversionTracker conversionTracker =
+                        (AdWordsConversionTracker) conversionsMap[userListConversionType.id];
+                    Console.WriteLine("Conversion type code snippet associated to the " +
+                        "list:\n{0}\n", conversionTracker.snippet);
+                  } else {
+                    throw new Exception("Failed to associate conversion type code snippet.");
+                  }
+                }
+              }
+            }
+          } else {
+            Console.WriteLine("No user lists (a.k.a. audiences) were added.");
           }
-        } else {
-          Console.WriteLine("No user lists (a.k.a. audiences) were added.");
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to add user lists (a.k.a. audiences).", e);
         }
-        conversionTrackerService.Close();
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to add user lists (a.k.a. audiences).", e);
       }
     }
   }

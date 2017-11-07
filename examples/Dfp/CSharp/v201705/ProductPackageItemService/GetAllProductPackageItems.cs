@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,43 +48,46 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      ProductPackageItemService productPackageItemService =
-          (ProductPackageItemService) dfpUser.GetService(DfpService.v201705.ProductPackageItemService);
+      using (ProductPackageItemService productPackageItemService =
+          (ProductPackageItemService) dfpUser.GetService(
+              DfpService.v201705.ProductPackageItemService)) {
 
-      // Create a statement to select product package items.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .OrderBy("id ASC")
-          .Limit(pageSize);
+        // Create a statement to select product package items.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .OrderBy("id ASC")
+            .Limit(pageSize);
 
-      // Retrieve a small amount of product package items at a time, paging through until all
-      // product package items have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        ProductPackageItemPage page = productPackageItemService.getProductPackageItemsByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of product package items at a time, paging through until all
+        // product package items have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          ProductPackageItemPage page =
+              productPackageItemService.getProductPackageItemsByStatement(
+                  statementBuilder.ToStatement());
 
-        // Print out some information for each product package item.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (ProductPackageItem productPackageItem in page.results) {
-            Console.WriteLine(
-                "{0}) Product package item with ID {1}, " +
+          // Print out some information for each product package item.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (ProductPackageItem productPackageItem in page.results) {
+              Console.WriteLine(
+                  "{0}) Product package item with ID {1}, " +
                     "product id {2}, " +
                     "and product package id {3} was found.",
-                i++,
-                productPackageItem.id,
-                productPackageItem.productId,
-                productPackageItem.productPackageId
-            );
+                  i++,
+                  productPackageItem.id,
+                  productPackageItem.productId,
+                  productPackageItem.productPackageId
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

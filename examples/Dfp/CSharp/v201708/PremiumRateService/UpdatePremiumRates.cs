@@ -48,57 +48,58 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the PremiumRateService.
-      PremiumRateService premiumRateService =
-          (PremiumRateService) user.GetService(DfpService.v201708.PremiumRateService);
+      using (PremiumRateService premiumRateService =
+          (PremiumRateService) user.GetService(DfpService.v201708.PremiumRateService)) {
 
-      long premiumRateId = long.Parse(_T("INSERT_PREMIUM_RATE_ID_HERE"));
+        long premiumRateId = long.Parse(_T("INSERT_PREMIUM_RATE_ID_HERE"));
 
-      // Create a statement to get the premium rate.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", premiumRateId);
+        // Create a statement to get the premium rate.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", premiumRateId);
 
-      try {
-        // Get premium rates by statement.
-        PremiumRatePage page =
-            premiumRateService.getPremiumRatesByStatement(statementBuilder.ToStatement());
+        try {
+          // Get premium rates by statement.
+          PremiumRatePage page =
+              premiumRateService.getPremiumRatesByStatement(statementBuilder.ToStatement());
 
-        PremiumRate premiumRate = page.results[0];
+          PremiumRate premiumRate = page.results[0];
 
-        // Create a flat fee based premium rate value with a 10% increase.
-        PremiumRateValue flatFeePremiumRateValue = new PremiumRateValue();
-        flatFeePremiumRateValue.premiumFeature = premiumRate.premiumFeature;
-        flatFeePremiumRateValue.rateType = RateType.CPM;
-        flatFeePremiumRateValue.adjustmentSize = 10000L;
-        flatFeePremiumRateValue.adjustmentType = PremiumAdjustmentType.PERCENTAGE;
+          // Create a flat fee based premium rate value with a 10% increase.
+          PremiumRateValue flatFeePremiumRateValue = new PremiumRateValue();
+          flatFeePremiumRateValue.premiumFeature = premiumRate.premiumFeature;
+          flatFeePremiumRateValue.rateType = RateType.CPM;
+          flatFeePremiumRateValue.adjustmentSize = 10000L;
+          flatFeePremiumRateValue.adjustmentType = PremiumAdjustmentType.PERCENTAGE;
 
-        // Update the premium rate's values to include a flat fee premium rate.
-        List<PremiumRateValue> existingPremiumRateValues = (premiumRate.premiumRateValues != null)
-            ? new List<PremiumRateValue>(premiumRate.premiumRateValues)
-            : new List<PremiumRateValue>();
+          // Update the premium rate's values to include a flat fee premium rate.
+          List<PremiumRateValue> existingPremiumRateValues =
+              (premiumRate.premiumRateValues != null) ?
+                  new List<PremiumRateValue>(premiumRate.premiumRateValues)
+                  : new List<PremiumRateValue>();
 
-        existingPremiumRateValues.Add(flatFeePremiumRateValue);
-        premiumRate.premiumRateValues = existingPremiumRateValues.ToArray();
+          existingPremiumRateValues.Add(flatFeePremiumRateValue);
+          premiumRate.premiumRateValues = existingPremiumRateValues.ToArray();
 
-        // Update the premium rates on the server.
-        PremiumRate[] premiumRates =
-            premiumRateService.updatePremiumRates(new PremiumRate[] {premiumRate});
+          // Update the premium rates on the server.
+          PremiumRate[] premiumRates =
+              premiumRateService.updatePremiumRates(new PremiumRate[] { premiumRate });
 
-        if (premiumRates != null) {
-          foreach (PremiumRate updatedPremiumRate in premiumRates) {
-            Console.WriteLine("Premium rate with ID '{0}' associated with rate card ID '{1}' " +
-                "was updated.", updatedPremiumRate.id,
-                updatedPremiumRate.rateCardId);
+          if (premiumRates != null) {
+            foreach (PremiumRate updatedPremiumRate in premiumRates) {
+              Console.WriteLine("Premium rate with ID '{0}' associated with rate card ID '{1}' " +
+                  "was updated.", updatedPremiumRate.id,
+                  updatedPremiumRate.rateCardId);
+            }
+          } else {
+            Console.WriteLine("No premium rates updated.");
           }
-        } else {
-          Console.WriteLine("No premium rates updated.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update premium rates. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update premium rates. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

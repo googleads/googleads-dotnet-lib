@@ -47,67 +47,69 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the InventoryService.
-      InventoryService inventoryService =
-          (InventoryService) user.GetService(DfpService.v201705.InventoryService);
+      using (InventoryService inventoryService =
+          (InventoryService) user.GetService(DfpService.v201705.InventoryService)) {
 
-      // Get the NetworkService.
-      NetworkService networkService =
-          (NetworkService) user.GetService(DfpService.v201705.NetworkService);
+        // Get the NetworkService.
+        NetworkService networkService =
+            (NetworkService) user.GetService(DfpService.v201705.NetworkService);
 
-      // Set the parent ad unit's ID for all ad units to be created under.
-      String effectiveRootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
+        // Set the parent ad unit's ID for all ad units to be created under.
+        String effectiveRootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
 
-      // Create local ad unit object.
-      AdUnit adUnit = new AdUnit();
-      adUnit.name = "Video_Ad_Unit";
-      adUnit.parentId = effectiveRootAdUnitId;
-      adUnit.description = "Ad unit description.";
-      adUnit.targetWindow = AdUnitTargetWindow.BLANK;
-      adUnit.explicitlyTargeted = true;
+        // Create local ad unit object.
+        AdUnit adUnit = new AdUnit();
+        adUnit.name = "Video_Ad_Unit";
+        adUnit.parentId = effectiveRootAdUnitId;
+        adUnit.description = "Ad unit description.";
+        adUnit.targetWindow = AdUnitTargetWindow.BLANK;
+        adUnit.explicitlyTargeted = true;
 
-      // Create master ad unit size.
-      AdUnitSize masterAdUnitSize = new AdUnitSize();
-      Size size1 = new Size();
-      size1.width = 400;
-      size1.height = 300;
-      size1.isAspectRatio = false;
-      masterAdUnitSize.size = size1;
-      masterAdUnitSize.environmentType = EnvironmentType.VIDEO_PLAYER;
+        // Create master ad unit size.
+        AdUnitSize masterAdUnitSize = new AdUnitSize();
+        Size size1 = new Size();
+        size1.width = 400;
+        size1.height = 300;
+        size1.isAspectRatio = false;
+        masterAdUnitSize.size = size1;
+        masterAdUnitSize.environmentType = EnvironmentType.VIDEO_PLAYER;
 
-      // Create companion sizes.
-      AdUnitSize companionAdUnitSize1 = new AdUnitSize();
-      Size size2 = new Size();
-      size2.width = 300;
-      size2.height = 250;
-      size2.isAspectRatio = false;
-      companionAdUnitSize1.size = size2;
-      companionAdUnitSize1.environmentType = EnvironmentType.BROWSER;
+        // Create companion sizes.
+        AdUnitSize companionAdUnitSize1 = new AdUnitSize();
+        Size size2 = new Size();
+        size2.width = 300;
+        size2.height = 250;
+        size2.isAspectRatio = false;
+        companionAdUnitSize1.size = size2;
+        companionAdUnitSize1.environmentType = EnvironmentType.BROWSER;
 
-      AdUnitSize companionAdUnitSize2 = new AdUnitSize();
-      Size size3 = new Size();
-      size3.width = 728;
-      size3.height = 90;
-      size3.isAspectRatio = false;
-      companionAdUnitSize2.size = size3;
-      companionAdUnitSize2.environmentType = EnvironmentType.BROWSER;
+        AdUnitSize companionAdUnitSize2 = new AdUnitSize();
+        Size size3 = new Size();
+        size3.width = 728;
+        size3.height = 90;
+        size3.isAspectRatio = false;
+        companionAdUnitSize2.size = size3;
+        companionAdUnitSize2.environmentType = EnvironmentType.BROWSER;
 
-      // Add companions to master ad unit size.
-      masterAdUnitSize.companions = new AdUnitSize[] {companionAdUnitSize1, companionAdUnitSize2};
+        // Add companions to master ad unit size.
+        masterAdUnitSize.companions = new AdUnitSize[] {
+          companionAdUnitSize1, companionAdUnitSize2
+        };
 
-      // Set the size of possible creatives that can match this ad unit.
-      adUnit.adUnitSizes = new AdUnitSize[] {masterAdUnitSize};
+        // Set the size of possible creatives that can match this ad unit.
+        adUnit.adUnitSizes = new AdUnitSize[] { masterAdUnitSize };
 
-      try {
-        // Create the ad unit on the server.
-        AdUnit[] createdAdUnits = inventoryService.createAdUnits(new AdUnit[] {adUnit});
+        try {
+          // Create the ad unit on the server.
+          AdUnit[] createdAdUnits = inventoryService.createAdUnits(new AdUnit[] { adUnit });
 
-        foreach (AdUnit createdAdUnit in createdAdUnits) {
-          Console.WriteLine("A video ad unit with ID \"{0}\" was created under parent with ID " +
-              "\"{1}\".", createdAdUnit.id, createdAdUnit.parentId);
+          foreach (AdUnit createdAdUnit in createdAdUnits) {
+            Console.WriteLine("A video ad unit with ID \"{0}\" was created under parent with ID " +
+                "\"{1}\".", createdAdUnit.id, createdAdUnit.parentId);
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create video ad units. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create video ad units. Exception says \"{0}\"", e.Message);
       }
     }
   }

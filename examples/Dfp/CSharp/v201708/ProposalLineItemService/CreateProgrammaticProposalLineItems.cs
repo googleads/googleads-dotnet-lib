@@ -54,54 +54,54 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code examples.
     /// </summary>
     public void Run(DfpUser user, long proposalId, long rateCardId, long productId) {
-      // Get the ProposalLineItemService.
-      ProposalLineItemService proposalLineItemService =
-          (ProposalLineItemService) user.GetService(DfpService.v201708.ProposalLineItemService);
+      using (ProposalLineItemService proposalLineItemService =
+          (ProposalLineItemService) user.GetService(DfpService.v201708.ProposalLineItemService)) {
 
-      // Create a proposal line item.
-      ProposalLineItem proposalLineItem = new ProposalLineItem();
-      proposalLineItem.name =
-          "Programmatic proposal line item #" + new Random().Next(int.MaxValue);
-      proposalLineItem.proposalId = proposalId;
-      proposalLineItem.rateCardId = rateCardId;
-      proposalLineItem.productId = productId;
+        // Create a proposal line item.
+        ProposalLineItem proposalLineItem = new ProposalLineItem();
+        proposalLineItem.name =
+            "Programmatic proposal line item #" + new Random().Next(int.MaxValue);
+        proposalLineItem.proposalId = proposalId;
+        proposalLineItem.rateCardId = rateCardId;
+        proposalLineItem.productId = productId;
 
-      // Set the Marketplace information.
-      proposalLineItem.marketplaceInfo = new ProposalLineItemMarketplaceInfo() {
-        adExchangeEnvironment = AdExchangeEnvironment.DISPLAY
-      };
+        // Set the Marketplace information.
+        proposalLineItem.marketplaceInfo = new ProposalLineItemMarketplaceInfo() {
+          adExchangeEnvironment = AdExchangeEnvironment.DISPLAY
+        };
 
-      // Set the length of the proposal line item to run.
-      proposalLineItem.startDateTime =
-          DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(7), "America/New_York");
-      proposalLineItem.endDateTime =
-          DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(30), "America/New_York");
+        // Set the length of the proposal line item to run.
+        proposalLineItem.startDateTime =
+            DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(7), "America/New_York");
+        proposalLineItem.endDateTime =
+            DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(30), "America/New_York");
 
-      // Set pricing for the proposal line item for 1000 impressions at a CPM of $2
-      // for a total value of $2.
-      proposalLineItem.goal = new Goal() {
-        unitType = UnitType.IMPRESSIONS,
-        units = 1000L
-      };
-      proposalLineItem.netCost = new Money() { currencyCode = "USD", microAmount = 2000000L };
-      proposalLineItem.netRate = new Money() { currencyCode = "USD", microAmount = 2000000L };
-      proposalLineItem.rateType = RateType.CPM;
+        // Set pricing for the proposal line item for 1000 impressions at a CPM of $2
+        // for a total value of $2.
+        proposalLineItem.goal = new Goal() {
+          unitType = UnitType.IMPRESSIONS,
+          units = 1000L
+        };
+        proposalLineItem.netCost = new Money() { currencyCode = "USD", microAmount = 2000000L };
+        proposalLineItem.netRate = new Money() { currencyCode = "USD", microAmount = 2000000L };
+        proposalLineItem.rateType = RateType.CPM;
 
-      try {
-        // Create the proposal line item on the server.
-        ProposalLineItem[] proposalLineItems = proposalLineItemService.createProposalLineItems(
-            new ProposalLineItem[] {proposalLineItem});
+        try {
+          // Create the proposal line item on the server.
+          ProposalLineItem[] proposalLineItems = proposalLineItemService.createProposalLineItems(
+              new ProposalLineItem[] { proposalLineItem });
 
-        foreach (ProposalLineItem createdProposalLineItem in proposalLineItems) {
-          Console.WriteLine("A programmatic proposal line item with ID \"{0}\" "
-              + "and name \"{1}\" was created.",
-              createdProposalLineItem.id, 
-              createdProposalLineItem.name);
+          foreach (ProposalLineItem createdProposalLineItem in proposalLineItems) {
+            Console.WriteLine("A programmatic proposal line item with ID \"{0}\" "
+                + "and name \"{1}\" was created.",
+                createdProposalLineItem.id,
+                createdProposalLineItem.name);
+          }
+
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create proposal line items. Exception says \"{0}\"",
+              e.Message);
         }
-
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create proposal line items. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

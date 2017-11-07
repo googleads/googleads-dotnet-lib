@@ -29,8 +29,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// </summary>
     public override string Description {
       get {
-        return "This example sends programmatic proposals to Marketplace "
-            + "to request buyer acceptance.";
+        return "This example sends programmatic proposals to Marketplace to request buyer " +
+            "acceptance.";
       }
     }
 
@@ -51,67 +51,68 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user, long proposalId) {
-      // Get the ProposalService.
-      ProposalService proposalService =
-          (ProposalService) user.GetService(DfpService.v201705.ProposalService);
+      using (ProposalService proposalService =
+          (ProposalService) user.GetService(DfpService.v201705.ProposalService)) {
 
-      // Create statement to select the proposal.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", proposalId);
+        // Create statement to select the proposal.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", proposalId);
 
-      // Set default for page.
-      ProposalPage page = new ProposalPage();
-      List<string> proposalIds = new List<string>();
-      int i = 0;
+        // Set default for page.
+        ProposalPage page = new ProposalPage();
+        List<string> proposalIds = new List<string>();
+        int i = 0;
 
-      try {
-        do {
-          // Get proposals by statement.
-          page = proposalService.getProposalsByStatement(statementBuilder.ToStatement());
+        try {
+          do {
+            // Get proposals by statement.
+            page = proposalService.getProposalsByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            foreach (Proposal proposal in page.results) {
-              Console.WriteLine("{0}) Proposal with ID = '{1}', name = '{2}', and status ='{3}' " +
-                  "will be sent to Marketplace for buyer acceptance.",
-                  i++,
-                  proposal.id,
-                  proposal.name,
-                  proposal.status);
-              proposalIds.Add(proposal.id.ToString());
+            if (page.results != null) {
+              foreach (Proposal proposal in page.results) {
+                Console.WriteLine("{0}) Proposal with ID = '{1}', name = '{2}', and " +
+                    "status = '{3}' will be sent to Marketplace for buyer acceptance.",
+                    i++,
+                    proposal.id,
+                    proposal.name,
+                    proposal.status);
+                proposalIds.Add(proposal.id.ToString());
+              }
+            }
+
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+          Console.WriteLine("Number of proposals to be sent to Marketplace: {0}",
+              proposalIds.Count);
+
+          if (proposalIds.Count > 0) {
+            // Modify statement for action.
+            statementBuilder.RemoveLimitAndOffset();
+
+            // Create action.
+            Google.Api.Ads.Dfp.v201705.RequestBuyerAcceptance action =
+                new Google.Api.Ads.Dfp.v201705.RequestBuyerAcceptance();
+
+            // Perform action.
+            UpdateResult result = proposalService.performProposalAction(action,
+                statementBuilder.ToStatement());
+
+            // Display results.
+            if (result != null && result.numChanges > 0) {
+              Console.WriteLine("Number of proposals that were sent to Marketplace: {0}",
+                  result.numChanges);
+            } else {
+              Console.WriteLine("No proposals were sent to Marketplace.");
             }
           }
-
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-
-        Console.WriteLine("Number of proposals to be sent to Marketplace: {0}", proposalIds.Count);
-
-        if (proposalIds.Count > 0) {
-          // Modify statement for action.
-          statementBuilder.RemoveLimitAndOffset();
-
-          // Create action.
-          Google.Api.Ads.Dfp.v201705.RequestBuyerAcceptance action =
-              new Google.Api.Ads.Dfp.v201705.RequestBuyerAcceptance();
-
-          // Perform action.
-          UpdateResult result = proposalService.performProposalAction(action,
-              statementBuilder.ToStatement());
-
-          // Display results.
-          if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of proposals that were sent to Marketplace: {0}",
-                result.numChanges);
-          } else {
-            Console.WriteLine("No proposals were sent to Marketplace.");
-          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to send proposals to Marketplace. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to send proposals to Marketplace. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

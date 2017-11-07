@@ -17,7 +17,6 @@ using Google.Api.Ads.Dfp.Util.v201702;
 using Google.Api.Ads.Dfp.v201702;
 
 using System;
-using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
   /// <summary>
@@ -48,43 +47,43 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ProductService.
-      ProductService productService =
-          (ProductService) user.GetService(DfpService.v201702.ProductService);
+      using (ProductService productService =
+          (ProductService) user.GetService(DfpService.v201702.ProductService)) {
 
-      long productId = long.Parse(_T("INSERT_PRODUCT_ID_HERE"));
+        long productId = long.Parse(_T("INSERT_PRODUCT_ID_HERE"));
 
-      // Create a statement to get the product.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", productId);
+        // Create a statement to get the product.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", productId);
 
-      try {
-        // Get products by statement.
-        ProductPage page =
-            productService.getProductsByStatement(statementBuilder.ToStatement());
+        try {
+          // Get products by statement.
+          ProductPage page =
+              productService.getProductsByStatement(statementBuilder.ToStatement());
 
-        Product product = page.results[0];
+          Product product = page.results[0];
 
-        // Update the product object by changing its note.
-        product.notes = "Product needs further review before approval.";
+          // Update the product object by changing its note.
+          product.notes = "Product needs further review before approval.";
 
-        // Update the products on the server.
-        Product[] products = productService.updateProducts(new Product[] {product});
+          // Update the products on the server.
+          Product[] products = productService.updateProducts(new Product[] { product });
 
-        if (products != null) {
-          foreach (Product updatedProduct in products) {
-            Console.WriteLine("Product with ID = '{0}', name = '{1}', and notes = '{2}' was " +
-                "updated.", updatedProduct.id, updatedProduct.name, updatedProduct.notes);
+          if (products != null) {
+            foreach (Product updatedProduct in products) {
+              Console.WriteLine("Product with ID = '{0}', name = '{1}', and notes = '{2}' was " +
+                  "updated.", updatedProduct.id, updatedProduct.name, updatedProduct.notes);
+            }
+          } else {
+            Console.WriteLine("No products updated.");
           }
-        } else {
-          Console.WriteLine("No products updated.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update products. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update products. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

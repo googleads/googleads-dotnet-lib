@@ -47,48 +47,48 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ExchangeRateService.
-      ExchangeRateService exchangeRateService =
-          (ExchangeRateService) user.GetService(DfpService.v201705.ExchangeRateService);
+      using (ExchangeRateService exchangeRateService =
+          (ExchangeRateService) user.GetService(DfpService.v201705.ExchangeRateService)) {
 
-      // Set the ID of the exchange rate.
-      long exchangeRateId = long.Parse(_T("INSERT_EXCHANGE_RATE_ID_HERE"));
+        // Set the ID of the exchange rate.
+        long exchangeRateId = long.Parse(_T("INSERT_EXCHANGE_RATE_ID_HERE"));
 
-      // Create a statement to get the exchange rate.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :exchangeRateId and refreshRate = :refreshRate")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("exchangeRateId", exchangeRateId)
-          .AddValue("refreshRate", ExchangeRateRefreshRate.FIXED.ToString());
+        // Create a statement to get the exchange rate.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :exchangeRateId and refreshRate = :refreshRate")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("exchangeRateId", exchangeRateId)
+            .AddValue("refreshRate", ExchangeRateRefreshRate.FIXED.ToString());
 
-      try {
-        // Get exchange rates by statement.
-        ExchangeRatePage page = exchangeRateService
-            .getExchangeRatesByStatement(statementBuilder.ToStatement());
+        try {
+          // Get exchange rates by statement.
+          ExchangeRatePage page = exchangeRateService
+              .getExchangeRatesByStatement(statementBuilder.ToStatement());
 
-        ExchangeRate exchangeRate = page.results[0];
+          ExchangeRate exchangeRate = page.results[0];
 
-        // Update the exchange rate value to 1.5.
-        exchangeRate.exchangeRate = 15000000000L;
+          // Update the exchange rate value to 1.5.
+          exchangeRate.exchangeRate = 15000000000L;
 
-        // Update the exchange rate on the server.
-        ExchangeRate[] exchangeRates = exchangeRateService
-            .updateExchangeRates(new ExchangeRate[] {exchangeRate});
+          // Update the exchange rate on the server.
+          ExchangeRate[] exchangeRates = exchangeRateService
+              .updateExchangeRates(new ExchangeRate[] { exchangeRate });
 
-        if (exchangeRates != null) {
-          foreach (ExchangeRate updatedExchangeRate in exchangeRates) {
-            Console.WriteLine("An exchange rate with ID '{0}', currency code '{1}', " +
-                "direction '{2}' and exchange rate '{3}' was updated.", exchangeRate.id,
-                exchangeRate.currencyCode, exchangeRate.direction,
-                (exchangeRate.exchangeRate / 10000000000f));
+          if (exchangeRates != null) {
+            foreach (ExchangeRate updatedExchangeRate in exchangeRates) {
+              Console.WriteLine("An exchange rate with ID '{0}', currency code '{1}', " +
+                  "direction '{2}' and exchange rate '{3}' was updated.", exchangeRate.id,
+                  exchangeRate.currencyCode, exchangeRate.direction,
+                  (exchangeRate.exchangeRate / 10000000000f));
+            }
+          } else {
+            Console.WriteLine("No exchange rates updated.");
           }
-        } else {
-          Console.WriteLine("No exchange rates updated.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update exchange rates. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update exchange rates. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

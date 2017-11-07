@@ -55,49 +55,49 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
-      ' Get the ConversionTrackerService.
-      Dim conversionTrackerService As ConversionTrackerService = CType(user.GetService( _
-          AdWordsService.v201705.ConversionTrackerService),  _
-          ConversionTrackerService)
+      Using conversionTrackerService As ConversionTrackerService = CType(user.GetService(
+          AdWordsService.v201705.ConversionTrackerService),
+              ConversionTrackerService)
 
-      ' Create AdWords conversion tracker.
-      Dim conversionTracker As New AdWordsConversionTracker
-      conversionTracker.name = "Earth to Mars Cruises Conversion #" & _
-          ExampleUtilities.GetRandomString
-      conversionTracker.category = ConversionTrackerCategory.DEFAULT
-      conversionTracker.textFormat = AdWordsConversionTrackerTextFormat.HIDDEN
+        ' Create AdWords conversion tracker.
+        Dim conversionTracker As New AdWordsConversionTracker
+        conversionTracker.name = "Earth to Mars Cruises Conversion #" &
+            ExampleUtilities.GetRandomString
+        conversionTracker.category = ConversionTrackerCategory.DEFAULT
+        conversionTracker.textFormat = AdWordsConversionTrackerTextFormat.HIDDEN
 
-      ' Set optional fields.
-      conversionTracker.status = ConversionTrackerStatus.ENABLED
-      conversionTracker.viewthroughLookbackWindow = 15
-      conversionTracker.conversionPageLanguage = "en"
-      conversionTracker.backgroundColor = "#0000FF"
-      conversionTracker.defaultRevenueValue = 12.34
-      conversionTracker.alwaysUseDefaultRevenueValue = True
+        ' Set optional fields.
+        conversionTracker.status = ConversionTrackerStatus.ENABLED
+        conversionTracker.viewthroughLookbackWindow = 15
+        conversionTracker.conversionPageLanguage = "en"
+        conversionTracker.backgroundColor = "#0000FF"
+        conversionTracker.defaultRevenueValue = 12.34
+        conversionTracker.alwaysUseDefaultRevenueValue = True
 
-      ' Create the operation.
-      Dim operation As New ConversionTrackerOperation
-      operation.operator = [Operator].ADD
-      operation.operand = conversionTracker
+        ' Create the operation.
+        Dim operation As New ConversionTrackerOperation
+        operation.operator = [Operator].ADD
+        operation.operand = conversionTracker
 
-      Try
-        ' Add conversion tracker.
-        Dim retval As ConversionTrackerReturnValue = conversionTrackerService.mutate( _
-            New ConversionTrackerOperation() {operation})
+        Try
+          ' Add conversion tracker.
+          Dim retval As ConversionTrackerReturnValue = conversionTrackerService.mutate(
+              New ConversionTrackerOperation() {operation})
 
-        ' Display the results.
-        If ((Not retval Is Nothing) AndAlso (Not retval.value Is Nothing) AndAlso _
-            retval.value.Length > 0) Then
-          Dim newConversionTracker As ConversionTracker = retval.value(0)
-          Console.WriteLine("Conversion tracker with id '{0}', name '{1}', status '{2}', " & _
-              "category '{3}' was added.", newConversionTracker.id, newConversionTracker.name, _
-              newConversionTracker.status, newConversionTracker.category)
-        Else
-          Console.WriteLine("No conversion trackers were added.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to add conversion tracker.", e)
-      End Try
+          ' Display the results.
+          If ((Not retval Is Nothing) AndAlso (Not retval.value Is Nothing) AndAlso
+              retval.value.Length > 0) Then
+            Dim newConversionTracker As ConversionTracker = retval.value(0)
+            Console.WriteLine("Conversion tracker with id '{0}', name '{1}', status '{2}', " &
+                "category '{3}' was added.", newConversionTracker.id, newConversionTracker.name,
+                newConversionTracker.status, newConversionTracker.category)
+          Else
+            Console.WriteLine("No conversion trackers were added.")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to add conversion tracker.", e)
+        End Try
+      End Using
     End Sub
   End Class
 End Namespace

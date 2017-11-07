@@ -15,8 +15,6 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201702
 
-Imports System
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
   ''' <summary>
   ''' This code example imports offline call conversion values for calls related
@@ -47,10 +45,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
       Dim codeExample As New UploadOfflineCallConversions
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, conversionName, callStartTime, callerId, _
+        codeExample.Run(New AdWordsUser, conversionName, callStartTime, callerId,
                         conversionTime, conversionValue)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -60,7 +58,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example imports offline call conversion values for calls related " & _
+        Return "This code example imports offline call conversion values for calls related " &
             " to the ads in your account."
       End Get
     End Property
@@ -74,43 +72,44 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="conversionValue">The conversion value to be uploaded.</param>
     ''' <param name="callerId">The caller ID to be uploaded.</param>
     ''' <param name="conversionTime">The conversion time, in yyyymmdd hhmmss format.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal conversionName As String, _
-        ByVal callStartTime As String, ByVal callerId As String, _
+    Public Sub Run(ByVal user As AdWordsUser, ByVal conversionName As String,
+        ByVal callStartTime As String, ByVal callerId As String,
         ByVal conversionTime As String, ByVal conversionValue As Double)
       ' [START uploadOfflineCallConversions] MOE:strip_line
-      ' Get the OfflineConversionFeedService.
-      Dim offlineCallConversionFeedService As OfflineCallConversionFeedService = _
-          CType(user.GetService(AdWordsService.v201702.OfflineCallConversionFeedService),  _
+      Using offlineCallConversionFeedService As OfflineCallConversionFeedService =
+          CType(user.GetService(AdWordsService.v201702.OfflineCallConversionFeedService),
               OfflineCallConversionFeedService)
 
-      ' Associate offline call conversions with the existing named conversion tracker. If this
-      ' tracker was newly created, it may be a few hours before it can accept conversions.
-      Dim feed As New OfflineCallConversionFeed()
-      feed.callerId = callerId
-      feed.callStartTime = callStartTime
-      feed.conversionName = conversionName
-      feed.conversionTime = conversionTime
-      feed.conversionValue = conversionValue
+        ' Associate offline call conversions with the existing named conversion tracker. If this
+        ' tracker was newly created, it may be a few hours before it can accept conversions.
+        Dim feed As New OfflineCallConversionFeed()
+        feed.callerId = callerId
+        feed.callStartTime = callStartTime
+        feed.conversionName = conversionName
+        feed.conversionTime = conversionTime
+        feed.conversionValue = conversionValue
 
-      Dim offlineCallConversionOperation As New OfflineCallConversionFeedOperation()
-      offlineCallConversionOperation.operator = [Operator].ADD
-      offlineCallConversionOperation.operand = feed
+        Dim offlineCallConversionOperation As New OfflineCallConversionFeedOperation()
+        offlineCallConversionOperation.operator = [Operator].ADD
+        offlineCallConversionOperation.operand = feed
 
-      Try
-        ' This example uploads only one call conversion, but you can upload
-        ' multiple call conversions by passing additional operations.
-        Dim offlineCallConversionReturnValue As OfflineCallConversionFeedReturnValue = _
+        Try
+          ' This example uploads only one call conversion, but you can upload
+          ' multiple call conversions by passing additional operations.
+          Dim offlineCallConversionReturnValue As OfflineCallConversionFeedReturnValue =
             offlineCallConversionFeedService.mutate(
                 New OfflineCallConversionFeedOperation() {offlineCallConversionOperation})
 
-        ' Display results.
-        For Each feedResult As OfflineCallConversionFeed In offlineCallConversionReturnValue.value
-          Console.WriteLine("Uploaded offline call conversion value of {0} for caller ID '{1}'.",
-              feedResult.conversionValue, feedResult.callerId)
-        Next
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to upload offline call conversions.", e)
-      End Try
+          ' Display results.
+          For Each feedResult As OfflineCallConversionFeed In
+              offlineCallConversionReturnValue.value
+            Console.WriteLine("Uploaded offline call conversion value of {0} for caller ID '{1}'.",
+                feedResult.conversionValue, feedResult.callerId)
+          Next
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to upload offline call conversions.", e)
+        End Try
+      End Using
       ' [END uploadOfflineCallConversions] MOE:strip_line
     End Sub
   End Class

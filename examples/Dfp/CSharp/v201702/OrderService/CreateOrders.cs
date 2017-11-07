@@ -46,44 +46,44 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the OrderService.
-      OrderService orderService =
-          (OrderService) user.GetService(DfpService.v201702.OrderService);
+      using (OrderService orderService =
+          (OrderService) user.GetService(DfpService.v201702.OrderService)) {
 
-      // Set the advertiser, salesperson, and trafficker to assign to each
-      // order.
-      long advertiserId = long.Parse(_T("INSERT_ADVERTISER_ID_HERE"));
-      long salespersonId = long.Parse(_T("INSERT_SALESPERSON_ID_HERE"));
-      long traffickerId = long.Parse(_T("INSERT_TRAFFICKER_ID_HERE"));
+        // Set the advertiser, salesperson, and trafficker to assign to each
+        // order.
+        long advertiserId = long.Parse(_T("INSERT_ADVERTISER_ID_HERE"));
+        long salespersonId = long.Parse(_T("INSERT_SALESPERSON_ID_HERE"));
+        long traffickerId = long.Parse(_T("INSERT_TRAFFICKER_ID_HERE"));
 
-      // Create an array to store local order objects.
-      Order[] orders = new Order[5];
+        // Create an array to store local order objects.
+        Order[] orders = new Order[5];
 
-      for (int i = 0; i < 5; i++) {
-        Order order = new Order();
-        order.name = string.Format("Order #{0}", i);
-        order.advertiserId = advertiserId;
-        order.salespersonId = salespersonId;
-        order.traffickerId = traffickerId;
+        for (int i = 0; i < 5; i++) {
+          Order order = new Order();
+          order.name = string.Format("Order #{0}", i);
+          order.advertiserId = advertiserId;
+          order.salespersonId = salespersonId;
+          order.traffickerId = traffickerId;
 
-        orders[i] = order;
-      }
-
-      try {
-        // Create the orders on the server.
-        orders = orderService.createOrders(orders);
-
-        if (orders != null) {
-          foreach (Order order in orders) {
-            Console.WriteLine("An order with ID ='{0}' and named '{1}' was created.",
-                order.id, order.name);
-          }
-        } else {
-          Console.WriteLine("No orders created.");
+          orders[i] = order;
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create orders. Exception says \"{0}\"",
-            e.Message);
+
+        try {
+          // Create the orders on the server.
+          orders = orderService.createOrders(orders);
+
+          if (orders != null) {
+            foreach (Order order in orders) {
+              Console.WriteLine("An order with ID ='{0}' and named '{1}' was created.",
+                  order.id, order.name);
+            }
+          } else {
+            Console.WriteLine("No orders created.");
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create orders. Exception says \"{0}\"",
+              e.Message);
+        }
       }
     }
   }

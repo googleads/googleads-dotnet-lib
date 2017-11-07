@@ -49,32 +49,32 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the PublisherQueryLanguageService.
-      PublisherQueryLanguageService pqlService =
+      using (PublisherQueryLanguageService pqlService =
           (PublisherQueryLanguageService) user.GetService(
-              DfpService.v201705.PublisherQueryLanguageService);
+              DfpService.v201705.PublisherQueryLanguageService)) {
 
-      try {
-        StatementBuilder lineItemStatementBuilder = new StatementBuilder()
-            .Select("Id, Name, Status")
-            .From("Line_Item")
-            .OrderBy("Id ASC")
-            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        string lineItemFilePath = "Line-Item-Matchtable.csv";
-        fetchMatchTables(pqlService, lineItemStatementBuilder, lineItemFilePath);
+        try {
+          StatementBuilder lineItemStatementBuilder = new StatementBuilder()
+              .Select("Id, Name, Status")
+              .From("Line_Item")
+              .OrderBy("Id ASC")
+              .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          string lineItemFilePath = "Line-Item-Matchtable.csv";
+          fetchMatchTables(pqlService, lineItemStatementBuilder, lineItemFilePath);
 
-        StatementBuilder adUnitStatementBuilder = new StatementBuilder()
-            .Select("Id, Name")
-            .From("Ad_Unit")
-            .OrderBy("Id ASC")
-            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        string adUnitFilePath = "Ad-Unit-Matchtable.csv";
-        fetchMatchTables(pqlService, adUnitStatementBuilder, adUnitFilePath);
+          StatementBuilder adUnitStatementBuilder = new StatementBuilder()
+              .Select("Id, Name")
+              .From("Ad_Unit")
+              .OrderBy("Id ASC")
+              .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          string adUnitFilePath = "Ad-Unit-Matchtable.csv";
+          fetchMatchTables(pqlService, adUnitStatementBuilder, adUnitFilePath);
 
-        Console.WriteLine("Ad units saved to {0}", adUnitFilePath);
-        Console.WriteLine("Line items saved to {0}\n", lineItemFilePath);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get match tables. Exception says \"{0}\"", e.Message);
+          Console.WriteLine("Ad units saved to {0}", adUnitFilePath);
+          Console.WriteLine("Line items saved to {0}\n", lineItemFilePath);
+        } catch (Exception e) {
+          Console.WriteLine("Failed to get match tables. Exception says \"{0}\"", e.Message);
+        }
       }
     }
 

@@ -49,46 +49,47 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the sample code.
     /// </summary>
     public void Run(DfpUser user, long adUnitId) {
-      // Get the InventoryService.
-      InventoryService inventoryService =
-          (InventoryService) user.GetService(DfpService.v201708.InventoryService);
+      using (InventoryService inventoryService =
+          (InventoryService) user.GetService(DfpService.v201708.InventoryService)) {
 
-      // Create a statement to get the ad unit.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", adUnitId);
+        // Create a statement to get the ad unit.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", adUnitId);
 
-      try {
-        // Get ad units by statement.
-        AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
+        try {
+          // Get ad units by statement.
+          AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
-        // Create a 480x60 web ad unit size.
-        AdUnitSize adUnitSize = new AdUnitSize() {
-          size = new Size() {
-            width = 480,
-            height = 60
-          },
-          environmentType = EnvironmentType.BROWSER
-        };
+          // Create a 480x60 web ad unit size.
+          AdUnitSize adUnitSize = new AdUnitSize() {
+            size = new Size() {
+              width = 480,
+              height = 60
+            },
+            environmentType = EnvironmentType.BROWSER
+          };
 
-        AdUnit adUnit = page.results[0];
-        adUnit.adUnitSizes = new AdUnitSize[] {adUnitSize};
+          AdUnit adUnit = page.results[0];
+          adUnit.adUnitSizes = new AdUnitSize[] { adUnitSize };
 
-        // Update the ad units on the server.
-        AdUnit[] updatedAdUnits = inventoryService.updateAdUnits(new AdUnit[] {adUnit});
+          // Update the ad units on the server.
+          AdUnit[] updatedAdUnits = inventoryService.updateAdUnits(new AdUnit[] { adUnit });
 
-        foreach (AdUnit updatedAdUnit in updatedAdUnits) {
-          List<string> adUnitSizeStrings = new List<string>();
-          foreach(AdUnitSize size in updatedAdUnit.adUnitSizes) {
-            adUnitSizeStrings.Add(size.fullDisplayString);
+          foreach (AdUnit updatedAdUnit in updatedAdUnits) {
+            List<string> adUnitSizeStrings = new List<string>();
+            foreach (AdUnitSize size in updatedAdUnit.adUnitSizes) {
+              adUnitSizeStrings.Add(size.fullDisplayString);
+            }
+            Console.WriteLine("Ad unit with ID \"{0}\", name \"{1}\", and sizes [{2}] was " +
+                "updated.", updatedAdUnit.id, updatedAdUnit.name,
+                String.Join(",", adUnitSizeStrings));
           }
-          Console.WriteLine("Ad unit with ID \"{0}\", name \"{1}\", and sizes [{2}] was updated.",
-              updatedAdUnit.id, updatedAdUnit.name, String.Join(",", adUnitSizeStrings));
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update ad units. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update ad units. Exception says \"{0}\"", e.Message);
       }
     }
   }

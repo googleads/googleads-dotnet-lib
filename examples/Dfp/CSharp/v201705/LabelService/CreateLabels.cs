@@ -48,39 +48,39 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the LabelService.
-      LabelService labelService =
-          (LabelService) user.GetService(DfpService.v201705.LabelService);
+      using (LabelService labelService =
+          (LabelService) user.GetService(DfpService.v201705.LabelService)) {
 
-      try {
-        // Create an array to store local label objects.
-        Label[] labels = new Label[5];
+        try {
+          // Create an array to store local label objects.
+          Label[] labels = new Label[5];
 
-        for (int i = 0; i < 5; i++) {
-          Label label = new Label();
-          label.name = "Label #" + GetTimeStamp();
-          label.types = new LabelType[] {LabelType.COMPETITIVE_EXCLUSION};
-          labels[i] = label;
-        }
-
-        // Create the labels on the server.
-        labels = labelService.createLabels(labels);
-
-        if (labels != null) {
-          foreach (Label label in labels) {
-            StringBuilder builder = new StringBuilder();
-            foreach (LabelType labelType in label.types) {
-              builder.AppendFormat("{0} | ", labelType);
-            }
-
-            Console.WriteLine("A label with ID '{0}', name '{1}', and type '{2}' was created.",
-                label.id, label.name, builder.ToString().TrimEnd(' ', '|'));
+          for (int i = 0; i < 5; i++) {
+            Label label = new Label();
+            label.name = "Label #" + GetTimeStamp();
+            label.types = new LabelType[] { LabelType.COMPETITIVE_EXCLUSION };
+            labels[i] = label;
           }
-        } else {
-          Console.WriteLine("No labels created.");
+
+          // Create the labels on the server.
+          labels = labelService.createLabels(labels);
+
+          if (labels != null) {
+            foreach (Label label in labels) {
+              StringBuilder builder = new StringBuilder();
+              foreach (LabelType labelType in label.types) {
+                builder.AppendFormat("{0} | ", labelType);
+              }
+
+              Console.WriteLine("A label with ID '{0}', name '{1}', and type '{2}' was created.",
+                  label.id, label.name, builder.ToString().TrimEnd(' ', '|'));
+            }
+          } else {
+            Console.WriteLine("No labels created.");
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create labels. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create labels. Exception says \"{0}\"", e.Message);
       }
     }
   }

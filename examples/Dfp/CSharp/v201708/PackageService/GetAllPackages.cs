@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,41 +48,42 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      PackageService packageService =
-          (PackageService) dfpUser.GetService(DfpService.v201708.PackageService);
+      using (PackageService packageService =
+          (PackageService) dfpUser.GetService(DfpService.v201708.PackageService)) {
 
-      // Create a statement to select packages.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .OrderBy("id ASC")
-          .Limit(pageSize);
+        // Create a statement to select packages.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .OrderBy("id ASC")
+            .Limit(pageSize);
 
-      // Retrieve a small amount of packages at a time, paging through until all
-      // packages have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        PackagePage page = packageService.getPackagesByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of packages at a time, paging through until all
+        // packages have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          PackagePage page = packageService.getPackagesByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each package.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (Package pkg in page.results) {
-            Console.WriteLine(
-                "{0}) Package with ID {1}, name \"{2}\", and proposal id {3} was found.",
-                i++,
-                pkg.id,
-                pkg.name,
-                pkg.proposalId
-            );
+          // Print out some information for each package.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (Package pkg in page.results) {
+              Console.WriteLine(
+                  "{0}) Package with ID {1}, name \"{2}\", and proposal id {3} was found.",
+                  i++,
+                  pkg.id,
+                  pkg.name,
+                  pkg.proposalId
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

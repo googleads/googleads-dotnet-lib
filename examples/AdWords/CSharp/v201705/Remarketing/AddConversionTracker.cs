@@ -16,14 +16,14 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201705;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
+
   /// <summary>
   /// This code example adds an AdWords conversion tracker.
   /// </summary>
   public class AddConversionTracker : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -53,47 +53,47 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the ConversionTrackerService.
-      ConversionTrackerService conversionTrackerService =
-          (ConversionTrackerService)user.GetService(AdWordsService.v201705.
-              ConversionTrackerService);
+      using (ConversionTrackerService conversionTrackerService =
+          (ConversionTrackerService) user.GetService(AdWordsService.v201705.
+              ConversionTrackerService)) {
 
-      // Create Adwords conversion tracker.
-      AdWordsConversionTracker conversionTracker = new AdWordsConversionTracker();
-      conversionTracker.name = "Earth to Mars Cruises Conversion #" +
-          ExampleUtilities.GetRandomString();
-      conversionTracker.category = ConversionTrackerCategory.DEFAULT;
-      conversionTracker.textFormat = AdWordsConversionTrackerTextFormat.HIDDEN;
+        // Create Adwords conversion tracker.
+        AdWordsConversionTracker conversionTracker = new AdWordsConversionTracker();
+        conversionTracker.name = "Earth to Mars Cruises Conversion #" +
+            ExampleUtilities.GetRandomString();
+        conversionTracker.category = ConversionTrackerCategory.DEFAULT;
+        conversionTracker.textFormat = AdWordsConversionTrackerTextFormat.HIDDEN;
 
-      // Set optional fields.
-      conversionTracker.status = ConversionTrackerStatus.ENABLED;
-      conversionTracker.viewthroughLookbackWindow = 15;
-      conversionTracker.conversionPageLanguage = "en";
-      conversionTracker.backgroundColor = "#0000FF";
-      conversionTracker.defaultRevenueValue = 23.41;
-      conversionTracker.alwaysUseDefaultRevenueValue = true;
+        // Set optional fields.
+        conversionTracker.status = ConversionTrackerStatus.ENABLED;
+        conversionTracker.viewthroughLookbackWindow = 15;
+        conversionTracker.conversionPageLanguage = "en";
+        conversionTracker.backgroundColor = "#0000FF";
+        conversionTracker.defaultRevenueValue = 23.41;
+        conversionTracker.alwaysUseDefaultRevenueValue = true;
 
-      // Create the operation.
-      ConversionTrackerOperation operation = new ConversionTrackerOperation();
-      operation.@operator = Operator.ADD;
-      operation.operand = conversionTracker;
+        // Create the operation.
+        ConversionTrackerOperation operation = new ConversionTrackerOperation();
+        operation.@operator = Operator.ADD;
+        operation.operand = conversionTracker;
 
-      try {
-        // Add conversion tracker.
-        ConversionTrackerReturnValue retval = conversionTrackerService.mutate(
-            new ConversionTrackerOperation[] {operation});
+        try {
+          // Add conversion tracker.
+          ConversionTrackerReturnValue retval = conversionTrackerService.mutate(
+              new ConversionTrackerOperation[] { operation });
 
-        // Display the results.
-        if (retval != null && retval.value != null && retval.value.Length > 0) {
-          ConversionTracker newConversionTracker = retval.value[0];
-          Console.WriteLine("Conversion tracker with id '{0}', name '{1}', status '{2}', " +
-              "category '{3}' was added.", newConversionTracker.id, newConversionTracker.name,
-              newConversionTracker.status, newConversionTracker.category);
-        } else {
-          Console.WriteLine("No conversion trackers were added.");
+          // Display the results.
+          if (retval != null && retval.value != null && retval.value.Length > 0) {
+            ConversionTracker newConversionTracker = retval.value[0];
+            Console.WriteLine("Conversion tracker with id '{0}', name '{1}', status '{2}', " +
+                "category '{3}' was added.", newConversionTracker.id, newConversionTracker.name,
+                newConversionTracker.status, newConversionTracker.category);
+          } else {
+            Console.WriteLine("No conversion trackers were added.");
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to add conversion tracker.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to add conversion tracker.", e);
       }
     }
   }

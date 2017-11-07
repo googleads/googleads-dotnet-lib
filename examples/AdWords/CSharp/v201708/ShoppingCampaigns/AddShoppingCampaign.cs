@@ -65,24 +65,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// false.</param>
     public void Run(AdWordsUser user, long budgetId, long merchantId,
         bool createDefaultPartition) {
-      // Get the required services.
-      CampaignService campaignService = (CampaignService) user.GetService(
-          AdWordsService.v201708.CampaignService);
-      AdGroupService adGroupService = (AdGroupService) user.GetService(
-          AdWordsService.v201708.AdGroupService);
-      AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
-          AdWordsService.v201708.AdGroupAdService);
-
       try {
-        Campaign campaign = CreateCampaign(budgetId, merchantId, campaignService);
+        Campaign campaign = CreateCampaign(user, budgetId, merchantId);
         Console.WriteLine("Campaign with name '{0}' and ID '{1}' was added.", campaign.name,
               campaign.id);
 
-        AdGroup adGroup = CreateAdGroup(adGroupService, campaign);
+        AdGroup adGroup = CreateAdGroup(user, campaign.id);
         Console.WriteLine("Ad group with name '{0}' and ID '{1}' was added.", adGroup.name,
               adGroup.id);
 
-        AdGroupAd adGroupAd = CreateProductAd(adGroupAdService, adGroup);
+        AdGroupAd adGroupAd = CreateProductAd(user, adGroup.id);
         Console.WriteLine("Product ad with ID {0}' was added.", adGroupAd.ad.id);
 
         if (createDefaultPartition) {
@@ -98,139 +90,149 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     /// <param name="adGroupId">The ad group ID.</param>
-    void CreateDefaultPartitionTree(AdWordsUser user, long adGroupId) {
-      // Get the AdGroupCriterionService.
-      AdGroupCriterionService adGroupCriterionService =
+    private void CreateDefaultPartitionTree(AdWordsUser user, long adGroupId) {
+      using (AdGroupCriterionService adGroupCriterionService =
           (AdGroupCriterionService) user.GetService(
-              AdWordsService.v201708.AdGroupCriterionService);
+              AdWordsService.v201708.AdGroupCriterionService)) {
 
-      // Build a new ProductPartitionTree using an empty set of criteria.
-      ProductPartitionTree partitionTree =
-          ProductPartitionTree.CreateAdGroupTree(adGroupId, new List<AdGroupCriterion>());
-      partitionTree.Root.AsBiddableUnit().CpcBid = 1000000;
+        // Build a new ProductPartitionTree using an empty set of criteria.
+        ProductPartitionTree partitionTree =
+            ProductPartitionTree.CreateAdGroupTree(adGroupId, new List<AdGroupCriterion>());
+        partitionTree.Root.AsBiddableUnit().CpcBid = 1000000;
 
-      try {
-        // Make the mutate request, using the operations returned by the ProductPartitionTree.
-        AdGroupCriterionOperation[] mutateOperations = partitionTree.GetMutateOperations();
+        try {
+          // Make the mutate request, using the operations returned by the ProductPartitionTree.
+          AdGroupCriterionOperation[] mutateOperations = partitionTree.GetMutateOperations();
 
-        if (mutateOperations.Length == 0) {
-          Console.WriteLine("Skipping the mutate call because the original tree and the current " +
-              "tree are logically identical.");
-        } else {
-          adGroupCriterionService.mutate(mutateOperations);
+          if (mutateOperations.Length == 0) {
+            Console.WriteLine("Skipping the mutate call because the original tree and the " + 
+                "current tree are logically identical.");
+          } else {
+            adGroupCriterionService.mutate(mutateOperations);
+          }
+
+          // The request was successful, so create a new ProductPartitionTree based on the updated
+          // state of the ad group.
+          partitionTree = ProductPartitionTree.DownloadAdGroupTree(user, adGroupId);
+
+          Console.WriteLine("Final tree: {0}", partitionTree);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to set shopping product partition.", e);
         }
-
-        // The request was successful, so create a new ProductPartitionTree based on the updated
-        // state of the ad group.
-        partitionTree = ProductPartitionTree.DownloadAdGroupTree(user, adGroupId);
-
-        Console.WriteLine("Final tree: {0}", partitionTree);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to set shopping product partition.", e);
       }
     }
 
     /// <summary>
     /// Creates the Product Ad.
     /// </summary>
-    /// <param name="adGroupAdService">The AdGroupAdService instance.</param>
-    /// <param name="adGroup">The ad group.</param>
+    /// <param name="user">The AdWords user.</param>
+    /// <param name="adGroupId">The ad group ID.</param>
     /// <returns>The Product Ad.</returns>
-    private static AdGroupAd CreateProductAd(AdGroupAdService adGroupAdService, AdGroup adGroup) {
-      // Create product ad.
-      ProductAd productAd = new ProductAd();
+    private static AdGroupAd CreateProductAd(AdWordsUser user, long adGroupId) {
+      using (AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
+          AdWordsService.v201708.AdGroupAdService)) {
 
-      // Create ad group ad.
-      AdGroupAd adGroupAd = new AdGroupAd();
-      adGroupAd.adGroupId = adGroup.id;
-      adGroupAd.ad = productAd;
+        // Create product ad.
+        ProductAd productAd = new ProductAd();
 
-      // Create operation.
-      AdGroupAdOperation operation = new AdGroupAdOperation();
-      operation.operand = adGroupAd;
-      operation.@operator = Operator.ADD;
+        // Create ad group ad.
+        AdGroupAd adGroupAd = new AdGroupAd();
+        adGroupAd.adGroupId = adGroupId;
+        adGroupAd.ad = productAd;
 
-      // Make the mutate request.
-      AdGroupAdReturnValue retval = adGroupAdService.mutate(
-          new AdGroupAdOperation[] { operation });
+        // Create operation.
+        AdGroupAdOperation operation = new AdGroupAdOperation();
+        operation.operand = adGroupAd;
+        operation.@operator = Operator.ADD;
 
-      return retval.value[0];
+        // Make the mutate request.
+        AdGroupAdReturnValue retval = adGroupAdService.mutate(
+            new AdGroupAdOperation[] { operation });
+        return retval.value[0];
+      }
     }
 
     /// <summary>
     /// Creates the ad group in a Shopping campaign.
     /// </summary>
-    /// <param name="adGroupService">The AdGroupService instance.</param>
-    /// <param name="campaign">The Shopping campaign.</param>
+    /// <param name="user">The AdWords user.</param>
+    /// <param name="campaignId">The campaign ID.</param>
     /// <returns>The ad group.</returns>
-    private static AdGroup CreateAdGroup(AdGroupService adGroupService, Campaign campaign) {
-      // Create ad group.
-      AdGroup adGroup = new AdGroup();
-      adGroup.campaignId = campaign.id;
-      adGroup.name = "Ad Group #" + ExampleUtilities.GetRandomString();
+    private static AdGroup CreateAdGroup(AdWordsUser user, long campaignId) {
+      using (AdGroupService adGroupService = (AdGroupService) user.GetService(
+          AdWordsService.v201708.AdGroupService)) {
 
-      // Create operation.
-      AdGroupOperation operation = new AdGroupOperation();
-      operation.operand = adGroup;
-      operation.@operator = Operator.ADD;
+        // Create ad group.
+        AdGroup adGroup = new AdGroup();
+        adGroup.campaignId = campaignId;
+        adGroup.name = "Ad Group #" + ExampleUtilities.GetRandomString();
 
-      // Make the mutate request.
-      AdGroupReturnValue retval = adGroupService.mutate(new AdGroupOperation[] { operation });
-      return retval.value[0];
+        // Create operation.
+        AdGroupOperation operation = new AdGroupOperation();
+        operation.operand = adGroup;
+        operation.@operator = Operator.ADD;
+
+        // Make the mutate request.
+        AdGroupReturnValue retval = adGroupService.mutate(new AdGroupOperation[] { operation });
+        return retval.value[0];
+      }
     }
 
     /// <summary>
     /// Creates the shopping campaign.
     /// </summary>
+    /// <param name="user">The AdWords user.</param>
     /// <param name="budgetId">The budget id.</param>
     /// <param name="merchantId">The Merchant Center id.</param>
-    /// <param name="campaignService">The CampaignService instance.</param>
     /// <returns>The Shopping campaign.</returns>
-    private static Campaign CreateCampaign(long budgetId, long merchantId,
-        CampaignService campaignService) {
-      // Create campaign.
-      Campaign campaign = new Campaign();
-      campaign.name = "Shopping campaign #" + ExampleUtilities.GetRandomString();
+    private static Campaign CreateCampaign(AdWordsUser user, long budgetId, long merchantId) {
+      using (CampaignService campaignService = (CampaignService) user.GetService(
+          AdWordsService.v201708.CampaignService)) {
 
-      // The advertisingChannelType is what makes this a Shopping campaign.
-      campaign.advertisingChannelType = AdvertisingChannelType.SHOPPING;
+        // Create campaign.
+        Campaign campaign = new Campaign();
+        campaign.name = "Shopping campaign #" + ExampleUtilities.GetRandomString();
 
-      // Recommendation: Set the campaign to PAUSED when creating it to prevent
-      // the ads from immediately serving. Set to ENABLED once you've added
-      // targeting and the ads are ready to serve.
-      campaign.status = CampaignStatus.PAUSED;
+        // The advertisingChannelType is what makes this a Shopping campaign.
+        campaign.advertisingChannelType = AdvertisingChannelType.SHOPPING;
 
-      // Set shared budget (required).
-      campaign.budget = new Budget();
-      campaign.budget.budgetId = budgetId;
+        // Recommendation: Set the campaign to PAUSED when creating it to prevent
+        // the ads from immediately serving. Set to ENABLED once you've added
+        // targeting and the ads are ready to serve.
+        campaign.status = CampaignStatus.PAUSED;
 
-      // Set bidding strategy (required).
-      BiddingStrategyConfiguration biddingStrategyConfiguration =
-          new BiddingStrategyConfiguration();
-      biddingStrategyConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC;
+        // Set shared budget (required).
+        campaign.budget = new Budget();
+        campaign.budget.budgetId = budgetId;
 
-      campaign.biddingStrategyConfiguration = biddingStrategyConfiguration;
+        // Set bidding strategy (required).
+        BiddingStrategyConfiguration biddingStrategyConfiguration =
+            new BiddingStrategyConfiguration();
+        biddingStrategyConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC;
 
-      // All Shopping campaigns need a ShoppingSetting.
-      ShoppingSetting shoppingSetting = new ShoppingSetting();
-      shoppingSetting.salesCountry = "US";
-      shoppingSetting.campaignPriority = 0;
-      shoppingSetting.merchantId = merchantId;
+        campaign.biddingStrategyConfiguration = biddingStrategyConfiguration;
 
-      // Set to "true" to enable Local Inventory Ads in your campaign.
-      shoppingSetting.enableLocal = true;
-      campaign.settings = new Setting[] { shoppingSetting };
+        // All Shopping campaigns need a ShoppingSetting.
+        ShoppingSetting shoppingSetting = new ShoppingSetting();
+        shoppingSetting.salesCountry = "US";
+        shoppingSetting.campaignPriority = 0;
+        shoppingSetting.merchantId = merchantId;
 
-      // Create operation.
-      CampaignOperation campaignOperation = new CampaignOperation();
-      campaignOperation.operand = campaign;
-      campaignOperation.@operator = Operator.ADD;
+        // Set to "true" to enable Local Inventory Ads in your campaign.
+        shoppingSetting.enableLocal = true;
+        campaign.settings = new Setting[] { shoppingSetting };
 
-      // Make the mutate request.
-      CampaignReturnValue retval = campaignService.mutate(
-          new CampaignOperation[] { campaignOperation });
+        // Create operation.
+        CampaignOperation campaignOperation = new CampaignOperation();
+        campaignOperation.operand = campaign;
+        campaignOperation.@operator = Operator.ADD;
 
-      return retval.value[0];
+        // Make the mutate request.
+        CampaignReturnValue retval = campaignService.mutate(
+            new CampaignOperation[] { campaignOperation });
+
+        return retval.value[0];
+      }
     }
   }
 }

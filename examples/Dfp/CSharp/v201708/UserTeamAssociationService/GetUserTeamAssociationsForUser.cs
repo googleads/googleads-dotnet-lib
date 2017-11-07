@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -49,42 +49,43 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser, long userId) {
-      UserTeamAssociationService userTeamAssociationService =
-          (UserTeamAssociationService) dfpUser.GetService(DfpService.v201708.UserTeamAssociationService);
+      using (UserTeamAssociationService userTeamAssociationService =
+          (UserTeamAssociationService) dfpUser.GetService(DfpService.v201708.UserTeamAssociationService)) {
 
-      // Create a statement to select user team associations.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("userId = :userId")
-          .OrderBy("userId ASC, teamId ASC")
-          .Limit(pageSize)
-          .AddValue("userId", userId);
+        // Create a statement to select user team associations.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("userId = :userId")
+            .OrderBy("userId ASC, teamId ASC")
+            .Limit(pageSize)
+            .AddValue("userId", userId);
 
-      // Retrieve a small amount of user team associations at a time, paging through until all
-      // user team associations have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        UserTeamAssociationPage page = userTeamAssociationService.getUserTeamAssociationsByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of user team associations at a time, paging through until all
+        // user team associations have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          UserTeamAssociationPage page = userTeamAssociationService.getUserTeamAssociationsByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each user team association.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (UserTeamAssociation userTeamAssociation in page.results) {
-            Console.WriteLine(
-                "{0}) User team association with user ID {1} and team ID {2} was found.",
-                i++,
-                userTeamAssociation.userId,
-                userTeamAssociation.teamId
-            );
+          // Print out some information for each user team association.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (UserTeamAssociation userTeamAssociation in page.results) {
+              Console.WriteLine(
+                  "{0}) User team association with user ID {1} and team ID {2} was found.",
+                  i++,
+                  userTeamAssociation.userId,
+                  userTeamAssociation.teamId
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

@@ -47,47 +47,45 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the InventoryService.
-      InventoryService inventoryService =
-          (InventoryService) user.GetService(DfpService.v201702.InventoryService);
+      using (InventoryService inventoryService =
+          (InventoryService) user.GetService(DfpService.v201702.InventoryService))
+      using (NetworkService networkService =
+          (NetworkService) user.GetService(DfpService.v201702.NetworkService)) {
 
-      // Get the NetworkService.
-      NetworkService networkService =
-          (NetworkService) user.GetService(DfpService.v201702.NetworkService);
+        // Get the effective root ad unit ID of the network.
+        string effectiveRootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
 
-      // Get the effective root ad unit ID of the network.
-      string effectiveRootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
+        // Create a statement to select the children of the effective root ad
+        // unit.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("parentId = :parentId")
+            .OrderBy("id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+            .AddValue("parentId", effectiveRootAdUnitId);
 
-      // Create a statement to select the children of the effective root ad
-      // unit.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("parentId = :parentId")
-          .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-          .AddValue("parentId", effectiveRootAdUnitId);
+        // Set default for page.
+        AdUnitPage page = new AdUnitPage();
 
-      // Set default for page.
-      AdUnitPage page = new AdUnitPage();
+        try {
+          do {
+            // Get ad units by statement.
+            page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
-      try {
-        do {
-          // Get ad units by statement.
-          page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
-
-          if (page.results != null) {
-            int i = page.startIndex;
-            foreach (AdUnit adUnit in page.results) {
-              Console.WriteLine("{0}) Ad unit with ID = '{1}', name = '{2}' and status = '{3}' " +
-                  "was found.", i, adUnit.id, adUnit.name, adUnit.status);
-              i++;
+            if (page.results != null) {
+              int i = page.startIndex;
+              foreach (AdUnit adUnit in page.results) {
+                Console.WriteLine("{0}) Ad unit with ID = '{1}', name = '{2}' and " +
+                    "status = '{3}' was found.", i, adUnit.id, adUnit.name, adUnit.status);
+                i++;
+              }
             }
-          }
 
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get ad unit. Exception says \"{0}\"", e.Message);
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+          Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
+        } catch (Exception e) {
+          Console.WriteLine("Failed to get ad unit. Exception says \"{0}\"", e.Message);
+        }
       }
     }
   }

@@ -17,12 +17,11 @@ using Google.Api.Ads.Dfp.Util.v201702;
 using Google.Api.Ads.Dfp.v201702;
 
 using System;
+using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
   /// <summary>
-  /// This code example updates an ad unit by enabling AdSense to the first
-  /// 500. To determine which ad units exist, run GetAllAdUnits.cs or
-  /// GetInventoryTree.cs.
+  /// This code example updates an ad unit's sizes by adding a banner ad size.
   /// </summary>
   public class UpdateAdUnits : SampleBase {
     /// <summary>
@@ -30,8 +29,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example updates an ad unit by enabling AdSense. To determine which " +
-            "ad units exist, run GetAllAdUnits.cs or GetInventoryTree.cs.";
+        return "This code example updates an ad unit's sizes by adding a banner ad size.";
       }
     }
 
@@ -41,44 +39,57 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     public static void Main() {
       UpdateAdUnits codeExample = new UpdateAdUnits();
       Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
+
+      // Set the ID of the ad unit to update.
+      long adUnitId = long.Parse(_T("INSERT_AD_UNIT_ID_HERE"));
+      codeExample.Run(new DfpUser(), adUnitId);
     }
 
     /// <summary>
     /// Run the sample code.
     /// </summary>
-    public void Run(DfpUser user) {
-      // Get the InventoryService.
-      InventoryService inventoryService =
-          (InventoryService) user.GetService(DfpService.v201702.InventoryService);
+    public void Run(DfpUser user, long adUnitId) {
+      using (InventoryService inventoryService =
+          (InventoryService) user.GetService(DfpService.v201702.InventoryService)) {
 
-      // Set the ID of the ad unit to update.
-      int adUnitId = int.Parse(_T("INSERT_AD_UNIT_ID_HERE"));
+        // Create a statement to get the ad unit.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", adUnitId);
 
-      // Create a statement to get the ad unit.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", adUnitId);
+        try {
+          // Get ad units by statement.
+          AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
-      try {
-        // Get ad units by statement.
-        AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
+          // Create a 480x60 web ad unit size.
+          AdUnitSize adUnitSize = new AdUnitSize() {
+            size = new Size() {
+              width = 480,
+              height = 60
+            },
+            environmentType = EnvironmentType.BROWSER
+          };
 
-        AdUnit adUnit = page.results[0];
-        adUnit.inheritedAdSenseSettings.value.adSenseEnabled = true;
+          AdUnit adUnit = page.results[0];
+          adUnit.adUnitSizes = new AdUnitSize[] { adUnitSize };
 
-        // Update the ad units on the server.
-        AdUnit[] updatedAdUnits = inventoryService.updateAdUnits(new AdUnit[] {adUnit});
+          // Update the ad units on the server.
+          AdUnit[] updatedAdUnits = inventoryService.updateAdUnits(new AdUnit[] { adUnit });
 
-        foreach (AdUnit updatedAdUnit in updatedAdUnits) {
-          Console.WriteLine("Ad unit with ID \"{0}\", name \"{1}\", and is AdSense enabled " +
-              "\"{2}\" was updated.", updatedAdUnit.id, updatedAdUnit.name,
-              updatedAdUnit.inheritedAdSenseSettings.value.adSenseEnabled);
+          foreach (AdUnit updatedAdUnit in updatedAdUnits) {
+            List<string> adUnitSizeStrings = new List<string>();
+            foreach (AdUnitSize size in updatedAdUnit.adUnitSizes) {
+              adUnitSizeStrings.Add(size.fullDisplayString);
+            }
+            Console.WriteLine("Ad unit with ID \"{0}\", name \"{1}\", and sizes [{2}] was " +
+                "updated.", updatedAdUnit.id, updatedAdUnit.name,
+                String.Join(",", adUnitSizeStrings));
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update ad units. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update ad units. Exception says \"{0}\"", e.Message);
       }
     }
   }

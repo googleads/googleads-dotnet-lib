@@ -77,40 +77,42 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// format.</param>
     public void Run(AdWordsUser user, String conversionName, String callStartTime, String callerId,
         String conversionTime, double conversionValue) {
-      // Get the OfflineConversionFeedService.
-      OfflineCallConversionFeedService offlineCallConversionFeedService =
-          (OfflineCallConversionFeedService) user.GetService(
-              AdWordsService.v201702.OfflineCallConversionFeedService);
+      using (OfflineCallConversionFeedService offlineCallConversionFeedService =
+           (OfflineCallConversionFeedService) user.GetService(
+               AdWordsService.v201702.OfflineCallConversionFeedService)) {
 
-      // Associate offline call conversions with the existing named conversion tracker. If this
-      // tracker was newly created, it may be a few hours before it can accept conversions.
-      OfflineCallConversionFeed feed = new OfflineCallConversionFeed();
-      feed.callerId = callerId;
-      feed.callStartTime = callStartTime;
-      feed.conversionName = conversionName;
-      feed.conversionTime = conversionTime;
-      feed.conversionValue = conversionValue;
+        // Associate offline call conversions with the existing named conversion tracker. If this
+        // tracker was newly created, it may be a few hours before it can accept conversions.
+        OfflineCallConversionFeed feed = new OfflineCallConversionFeed();
+        feed.callerId = callerId;
+        feed.callStartTime = callStartTime;
+        feed.conversionName = conversionName;
+        feed.conversionTime = conversionTime;
+        feed.conversionValue = conversionValue;
 
-      OfflineCallConversionFeedOperation offlineCallConversionOperation =
-          new OfflineCallConversionFeedOperation();
-      offlineCallConversionOperation.@operator = Operator.ADD;
-      offlineCallConversionOperation.operand = feed;
+        OfflineCallConversionFeedOperation offlineCallConversionOperation =
+            new OfflineCallConversionFeedOperation();
+        offlineCallConversionOperation.@operator = Operator.ADD;
+        offlineCallConversionOperation.operand = feed;
 
-      try {
-        // This example uploads only one call conversion, but you can upload
-        // multiple call conversions by passing additional operations.
-        OfflineCallConversionFeedReturnValue offlineCallConversionReturnValue =
-            offlineCallConversionFeedService.mutate(
-                new OfflineCallConversionFeedOperation[] { offlineCallConversionOperation });
+        try {
+          // This example uploads only one call conversion, but you can upload
+          // multiple call conversions by passing additional operations.
+          OfflineCallConversionFeedReturnValue offlineCallConversionReturnValue =
+              offlineCallConversionFeedService.mutate(
+                  new OfflineCallConversionFeedOperation[] { offlineCallConversionOperation });
 
-        // Display results.
-        foreach (OfflineCallConversionFeed feedResult in offlineCallConversionReturnValue.value) {
-          Console.WriteLine("Uploaded offline call conversion value of {0} for caller ID '{1}'.",
-              feedResult.conversionValue, feedResult.callerId);
+          // Display results.
+          foreach (OfflineCallConversionFeed feedResult in
+              offlineCallConversionReturnValue.value) {
+            Console.WriteLine("Uploaded offline call conversion value of {0} for caller ID '{1}'.",
+                feedResult.conversionValue, feedResult.callerId);
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to upload offline call conversions.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to upload offline call conversions.", e);
       }
     }
+
   }
 }

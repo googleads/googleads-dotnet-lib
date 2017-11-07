@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,40 +48,41 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      OrderService orderService =
-          (OrderService) dfpUser.GetService(DfpService.v201702.OrderService);
+      using (OrderService orderService =
+          (OrderService) dfpUser.GetService(DfpService.v201702.OrderService)) {
 
-      // Create a statement to select orders.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .OrderBy("id ASC")
-          .Limit(pageSize);
+        // Create a statement to select orders.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .OrderBy("id ASC")
+            .Limit(pageSize);
 
-      // Retrieve a small amount of orders at a time, paging through until all
-      // orders have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        OrderPage page = orderService.getOrdersByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of orders at a time, paging through until all
+        // orders have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          OrderPage page = orderService.getOrdersByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each order.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (Order order in page.results) {
-            Console.WriteLine(
-                "{0}) Order with ID {1} and name \"{2}\" was found.",
-                i++,
-                order.id,
-                order.name
-            );
+          // Print out some information for each order.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (Order order in page.results) {
+              Console.WriteLine(
+                  "{0}) Order with ID {1} and name \"{2}\" was found.",
+                  i++,
+                  order.id,
+                  order.name
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,42 +48,43 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      CreativeWrapperService creativeWrapperService =
-          (CreativeWrapperService) dfpUser.GetService(DfpService.v201708.CreativeWrapperService);
+      using (CreativeWrapperService creativeWrapperService =
+          (CreativeWrapperService) dfpUser.GetService(DfpService.v201708.CreativeWrapperService)) {
 
-      // Create a statement to select creative wrappers.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("status = :status")
-          .OrderBy("id ASC")
-          .Limit(pageSize)
-          .AddValue("status", CreativeWrapperStatus.ACTIVE.ToString());
+        // Create a statement to select creative wrappers.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("status = :status")
+            .OrderBy("id ASC")
+            .Limit(pageSize)
+            .AddValue("status", CreativeWrapperStatus.ACTIVE.ToString());
 
-      // Retrieve a small amount of creative wrappers at a time, paging through until all
-      // creative wrappers have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        CreativeWrapperPage page = creativeWrapperService.getCreativeWrappersByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of creative wrappers at a time, paging through until all
+        // creative wrappers have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          CreativeWrapperPage page = creativeWrapperService.getCreativeWrappersByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each creative wrapper.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (CreativeWrapper creativeWrapper in page.results) {
-            Console.WriteLine(
-                "{0}) Creative wrapper with ID {1} and label ID {2} was found.",
-                i++,
-                creativeWrapper.id,
-                creativeWrapper.labelId
-            );
+          // Print out some information for each creative wrapper.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (CreativeWrapper creativeWrapper in page.results) {
+              Console.WriteLine(
+                  "{0}) Creative wrapper with ID {1} and label ID {2} was found.",
+                  i++,
+                  creativeWrapper.id,
+                  creativeWrapper.labelId
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

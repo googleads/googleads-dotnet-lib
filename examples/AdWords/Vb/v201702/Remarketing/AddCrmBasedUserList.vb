@@ -36,7 +36,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     Inherits ExampleBase
 
     Private Shared ReadOnly EMAILS As String() = New String() {
-      "customer1@example.com", "customer2@example.com", _
+      "customer1@example.com", "customer2@example.com",
       " Customer3@example.com "
     }
 
@@ -52,7 +52,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
       Try
         codeExample.Run(New AdWordsUser)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code " & _
+        Console.WriteLine("An exception occurred while running this code " &
             "example. {0}", ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -62,7 +62,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' </summary>
     Public Overrides ReadOnly Property Description() As String
       Get
-        Return "This code example adds a user list (a.k.a. audience) and " & _
+        Return "This code example adds a user list (a.k.a. audience) and " &
             "uploads hashed email addresses to populate the list."
       End Get
     End Property
@@ -72,74 +72,73 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
-      ' Get the UserListService.
-      Dim userListService As AdwordsUserListService = CType(user.GetService( _
-          AdWordsService.v201702.AdwordsUserListService),  _
-          AdwordsUserListService)
+      Using userListService As AdwordsUserListService = CType(user.GetService(
+          AdWordsService.v201702.AdwordsUserListService),
+              AdwordsUserListService)
 
-      ' Create a user list.
-      Dim userList As New CrmBasedUserList
-      userList.name = "Customer relationship management list #" & _
-          ExampleUtilities.GetRandomString()
-      userList.description = "A list of customers that originated from " & _
-          "email addresses"
+        ' Create a user list.
+        Dim userList As New CrmBasedUserList
+        userList.name = "Customer relationship management list #" &
+            ExampleUtilities.GetRandomString()
+        userList.description = "A list of customers that originated from " &
+            "email addresses"
 
-      ' CRM Userlist has a maximum membership lifespan of 180 days. See
-      ' https://support.google.com/adwords/answer/6276125 for details.
-      userList.membershipLifeSpan = 180L
+        ' CRM Userlist has a maximum membership lifespan of 180 days. See
+        ' https://support.google.com/adwords/answer/6276125 for details.
+        userList.membershipLifeSpan = 180L
 
-      ' Create operation.
-      Dim operation As New UserListOperation
-      operation.operand = userList
-      operation.operator = [Operator].ADD
+        ' Create operation.
+        Dim operation As New UserListOperation
+        operation.operand = userList
+        operation.operator = [Operator].ADD
 
-      Try
-        ' Add user list.
-        Dim result As UserListReturnValue = userListService.mutate( _
-            New UserListOperation() {operation})
+        Try
+          ' Add user list.
+          Dim result As UserListReturnValue = userListService.mutate(
+              New UserListOperation() {operation})
 
-        Console.WriteLine("Created new user list with name = '{0}' and " & _
-            "id = '{1}'.", result.value(0).name, result.value(0).id)
+          Console.WriteLine("Created new user list with name = '{0}' and " &
+              "id = '{1}'.", result.value(0).name, result.value(0).id)
 
-        ' Get user list ID.
-        Dim userListId As Long = result.value(0).id
+          ' Get user list ID.
+          Dim userListId As Long = result.value(0).id
 
-        ' Create operation to add members to the user list based on email
-        ' addresses.
-        Dim mutateMembersOperation As New MutateMembersOperation
-        mutateMembersOperation.operand = New MutateMembersOperand()
-        mutateMembersOperation.operand.userListId = userListId
-        mutateMembersOperation.operand.dataType = _
-            MutateMembersOperandDataType.EMAIL_SHA256
-        mutateMembersOperation.operator = [Operator].ADD
+          ' Create operation to add members to the user list based on email
+          ' addresses.
+          Dim mutateMembersOperation As New MutateMembersOperation
+          mutateMembersOperation.operand = New MutateMembersOperand()
+          mutateMembersOperation.operand.userListId = userListId
+          mutateMembersOperation.operand.dataType =
+              MutateMembersOperandDataType.EMAIL_SHA256
+          mutateMembersOperation.operator = [Operator].ADD
 
-        ' Hash normalized email addresses based on SHA-256 hashing algorithm.
-        Dim emailHashes(EMAILS.Length - 1) As String
-        For i As Integer = 0 To EMAILS.Length - 1
-          Dim normalizedEmail As String = ToNormalizedEmail(EMAILS(i))
-          emailHashes(i) = ToSha256String(digest, normalizedEmail)
-        Next
+          ' Hash normalized email addresses based on SHA-256 hashing algorithm.
+          Dim emailHashes(EMAILS.Length - 1) As String
+          For i As Integer = 0 To EMAILS.Length - 1
+            Dim normalizedEmail As String = ToNormalizedEmail(EMAILS(i))
+            emailHashes(i) = ToSha256String(digest, normalizedEmail)
+          Next
 
-        ' Add email address hashes.
-        mutateMembersOperation.operand.members = emailHashes
+          ' Add email address hashes.
+          mutateMembersOperation.operand.members = emailHashes
 
-        ' Add members to the user list based on email addresses.
-        Dim mutateMembersResult As MutateMembersReturnValue =
-            userListService.mutateMembers( _
+          ' Add members to the user list based on email addresses.
+          Dim mutateMembersResult As MutateMembersReturnValue =
+            userListService.mutateMembers(
                 New MutateMembersOperation() {mutateMembersOperation})
 
-        ' Display results.
-        ' Reminder: it may take several hours for the list to be populated with
-        ' members.
-        For Each userListResult As UserList In mutateMembersResult.userLists
-          Console.WriteLine("Email addresses were added to user list with " & _
-              "name '{0}' and id '{1}'.", _
-              userListResult.name, userListResult.id)
-        Next
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to add user lists " & _
-            "(a.k.a. audiences) and upload email addresses.", e)
-      End Try
+          ' Display results.
+          ' Reminder: it may take several hours for the list to be populated with
+          ' members.
+          For Each userListResult As UserList In mutateMembersResult.userLists
+            Console.WriteLine("Email addresses were added to user list with " &
+                "name '{0}' and id '{1}'.", userListResult.name, userListResult.id)
+          Next
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to add user lists " &
+              "(a.k.a. audiences) and upload email addresses.", e)
+        End Try
+      End Using
     End Sub
 
     ''' <summary>
@@ -148,7 +147,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
     ''' <param name="digest">Provides the algorithm for SHA-256.</param>
     ''' <param name="email">The email address to hash.</param>
     ''' <returns>Hash email address using SHA-256 hashing algorithm.</returns>
-    Private Shared Function ToSha256String(ByVal digest As GeneralDigest, _
+    Private Shared Function ToSha256String(ByVal digest As GeneralDigest,
                                            ByVal email As String) As String
       Dim data As Byte() = Encoding.UTF8.GetBytes(email)
       Dim digestBytes(digest.GetDigestSize() - 1) As Byte

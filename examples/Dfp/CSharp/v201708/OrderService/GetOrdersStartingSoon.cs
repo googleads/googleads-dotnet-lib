@@ -48,45 +48,48 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      OrderService orderService =
-          (OrderService) dfpUser.GetService(DfpService.v201708.OrderService);
+      using (OrderService orderService =
+          (OrderService) dfpUser.GetService(DfpService.v201708.OrderService)) {
 
-      // Create a statement to select orders.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("status = :status and startDateTime >= :now and startDateTime <= :soon")
-          .OrderBy("id ASC")
-          .Limit(pageSize)
-          .AddValue("status", OrderStatus.APPROVED.ToString())
-          .AddValue("now", DateTimeUtilities.FromDateTime(System.DateTime.Now, "America/New_York"))
-          .AddValue("soon",
-              DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(5), "America/New_York"));
+        // Create a statement to select orders.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("status = :status and startDateTime >= :now and startDateTime <= :soon")
+            .OrderBy("id ASC")
+            .Limit(pageSize)
+            .AddValue("status", OrderStatus.APPROVED.ToString())
+            .AddValue("now", DateTimeUtilities.FromDateTime(System.DateTime.Now,
+                "America/New_York"))
+            .AddValue("soon",
+                DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(5),
+                    "America/New_York"));
 
-      // Retrieve a small amount of orders at a time, paging through until all
-      // orders have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        OrderPage page = orderService.getOrdersByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of orders at a time, paging through until all
+        // orders have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          OrderPage page = orderService.getOrdersByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each order.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (Order order in page.results) {
-            Console.WriteLine(
-                "{0}) Order with ID {1} and name \"{2}\" was found.",
-                i++,
-                order.id,
-                order.name
-            );
+          // Print out some information for each order.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (Order order in page.results) {
+              Console.WriteLine(
+                  "{0}) Order with ID {1} and name \"{2}\" was found.",
+                  i++,
+                  order.id,
+                  order.name
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

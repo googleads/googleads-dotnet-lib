@@ -13,7 +13,6 @@
 // limitations under the License.
 
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.Util.v201705;
 using Google.Api.Ads.Dfp.v201705;
 
 using System;
@@ -56,42 +55,43 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the LineItemCreativeAssociationService.
-      LineItemCreativeAssociationService licaService =
+      using (LineItemCreativeAssociationService licaService =
           (LineItemCreativeAssociationService) user.GetService(
-              DfpService.v201705.LineItemCreativeAssociationService);
+              DfpService.v201705.LineItemCreativeAssociationService)) {
 
-      // Set the line item ID and creative IDs to associate.
-      long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
-      long[] creativeIds = new long[] {long.Parse(_T("INSERT_CREATIVE_ID_HERE"))};
+        // Set the line item ID and creative IDs to associate.
+        long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
+        long[] creativeIds = new long[] { long.Parse(_T("INSERT_CREATIVE_ID_HERE")) };
 
-      // Create an array to store local LICA objects.
-      LineItemCreativeAssociation[] licas = new LineItemCreativeAssociation[creativeIds.Length];
+        // Create an array to store local LICA objects.
+        LineItemCreativeAssociation[] licas = new LineItemCreativeAssociation[creativeIds.Length];
 
-      // For each line item, associate it with the given creative.
-      int i = 0;
-      foreach (long creativeId in creativeIds) {
-        LineItemCreativeAssociation lica = new LineItemCreativeAssociation();
-        lica.creativeId = creativeId;
-        lica.lineItemId = lineItemId;
-        licas[i++] = lica;
-      }
-
-      try {
-        // Create the LICAs on the server.
-        licas = licaService.createLineItemCreativeAssociations(licas);
-
-        if (licas != null) {
-          foreach (LineItemCreativeAssociation lica in licas) {
-            Console.WriteLine("A LICA with line item ID \"{0}\", creative ID \"{1}\", and status " +
-                "\"{2}\" was created.", lica.lineItemId, lica.creativeId, lica.status);
-          }
-        } else {
-          Console.WriteLine("No LICAs created.");
+        // For each line item, associate it with the given creative.
+        int i = 0;
+        foreach (long creativeId in creativeIds) {
+          LineItemCreativeAssociation lica = new LineItemCreativeAssociation();
+          lica.creativeId = creativeId;
+          lica.lineItemId = lineItemId;
+          licas[i++] = lica;
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to associate creative with line item. Exception says \"{0}\"",
-            e.Message);
+
+        try {
+          // Create the LICAs on the server.
+          licas = licaService.createLineItemCreativeAssociations(licas);
+
+          if (licas != null) {
+            foreach (LineItemCreativeAssociation lica in licas) {
+              Console.WriteLine("A LICA with line item ID \"{0}\", creative ID \"{1}\", " +
+                  "and status \"{2}\" was created.", lica.lineItemId, lica.creativeId,
+                  lica.status);
+            }
+          } else {
+            Console.WriteLine("No LICAs created.");
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to associate creative with line item. Exception says \"{0}\"",
+              e.Message);
+        }
       }
     }
   }

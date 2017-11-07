@@ -87,7 +87,8 @@ namespace Google.Api.Ads.AdWords.Tests.v201702 {
     public void TestAddShoppingCampaignCSharpExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
-        new CSharpExamples.AddShoppingCampaign().Run(user, budgetId, config.MerchantCenterId);
+        new CSharpExamples.AddShoppingCampaign().Run(user, budgetId, config.MerchantCenterId,
+            true);
       });
     }
 
@@ -98,7 +99,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201702 {
     public void TestAddShoppingCampaignVBExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
-        new VBExamples.AddShoppingCampaign().Run(user, budgetId, config.MerchantCenterId);
+        new VBExamples.AddShoppingCampaign().Run(user, budgetId, config.MerchantCenterId, true);
       });
     }
 

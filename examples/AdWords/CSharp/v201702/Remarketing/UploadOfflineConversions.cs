@@ -16,17 +16,17 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example imports offline conversion values for specific clicks to
   /// your account. To get Google Click ID for a click, run
   /// CLICK_PERFORMANCE_REPORT. To set up a conversion tracker, run the
-  /// AddConversionTracker.cs example.
+  /// AddConversionTrackers.cs example.
   /// </summary>
   public class UploadOfflineConversions : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -56,7 +56,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
       get {
         return "This code example imports offline conversion values for specific clicks to " +
           "your account. To get Google Click ID for a click, run CLICK_PERFORMANCE_REPORT. " +
-            " To set up a conversion tracker, run the AddConversionTracker.cs example.";
+            " To set up a conversion tracker, run the AddConversionTrackers.cs example.";
       }
     }
 
@@ -74,38 +74,39 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// format.</param>
     public void Run(AdWordsUser user, String conversionName, String gClid, String conversionTime,
         double conversionValue) {
-       // Get the OfflineConversionFeedService.
-      OfflineConversionFeedService offlineConversionFeedService =
+      using (OfflineConversionFeedService offlineConversionFeedService =
           (OfflineConversionFeedService) user.GetService(
-              AdWordsService.v201702.OfflineConversionFeedService);
+              AdWordsService.v201702.OfflineConversionFeedService)) {
 
-      try {
-        // Associate offline conversions with the existing named conversion tracker. If
-        // this tracker was newly created, it may be a few hours before it can accept
-        // conversions.
-        OfflineConversionFeed feed = new OfflineConversionFeed();
-        feed.conversionName = conversionName;
-        feed.conversionTime = conversionTime;
-        feed.conversionValue = conversionValue;
-        feed.googleClickId = gClid;
+        try {
+          // Associate offline conversions with the existing named conversion tracker. If
+          // this tracker was newly created, it may be a few hours before it can accept
+          // conversions.
+          OfflineConversionFeed feed = new OfflineConversionFeed();
+          feed.conversionName = conversionName;
+          feed.conversionTime = conversionTime;
+          feed.conversionValue = conversionValue;
+          feed.googleClickId = gClid;
 
-        OfflineConversionFeedOperation offlineConversionOperation =
-            new OfflineConversionFeedOperation();
-        offlineConversionOperation.@operator = Operator.ADD;
-        offlineConversionOperation.operand = feed;
+          OfflineConversionFeedOperation offlineConversionOperation =
+              new OfflineConversionFeedOperation();
+          offlineConversionOperation.@operator = Operator.ADD;
+          offlineConversionOperation.operand = feed;
 
-        OfflineConversionFeedReturnValue offlineConversionRetval =
-            offlineConversionFeedService.mutate(
-                new OfflineConversionFeedOperation[] {offlineConversionOperation});
+          OfflineConversionFeedReturnValue offlineConversionRetval =
+              offlineConversionFeedService.mutate(
+                  new OfflineConversionFeedOperation[] { offlineConversionOperation });
 
-        OfflineConversionFeed newFeed = offlineConversionRetval.value[0];
+          OfflineConversionFeed newFeed = offlineConversionRetval.value[0];
 
-        Console.WriteLine("Uploaded offline conversion value of {0} for Google Click ID = " +
-            "'{1}' to '{2}'.", newFeed.conversionValue, newFeed.googleClickId,
-            newFeed.conversionName);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed upload offline conversions.", e);
+          Console.WriteLine("Uploaded offline conversion value of {0} for Google Click ID = " +
+              "'{1}' to '{2}'.", newFeed.conversionValue, newFeed.googleClickId,
+              newFeed.conversionName);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed upload offline conversions.", e);
+        }
       }
     }
+
   }
 }

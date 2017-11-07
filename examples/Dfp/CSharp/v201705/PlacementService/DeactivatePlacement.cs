@@ -48,62 +48,62 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the PlacementService.
-      PlacementService placementService =
-          (PlacementService) user.GetService(DfpService.v201705.PlacementService);
+      using (PlacementService placementService =
+          (PlacementService) user.GetService(DfpService.v201705.PlacementService)) {
 
-      // Create statement to select active placements.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("status = :status")
-          .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-          .AddValue("status", InventoryStatus.ACTIVE.ToString());
+        // Create statement to select active placements.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("status = :status")
+            .OrderBy("id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+            .AddValue("status", InventoryStatus.ACTIVE.ToString());
 
-      // Sets default for page.
-      PlacementPage page = new PlacementPage();
-      List<string> placementIds = new List<string>();
+        // Sets default for page.
+        PlacementPage page = new PlacementPage();
+        List<string> placementIds = new List<string>();
 
-      try {
-        do {
-          // Get placements by statement.
-          page = placementService.getPlacementsByStatement(statementBuilder.ToStatement());
+        try {
+          do {
+            // Get placements by statement.
+            page = placementService.getPlacementsByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            int i = page.startIndex;
-            foreach (Placement placement in page.results) {
-              Console.WriteLine("{0}) Placement with ID ='{1}', name ='{2}', and status ='{3}'" +
-                  " will be deactivated.", i, placement.id, placement.name, placement.status);
-              placementIds.Add(placement.id.ToString());
-              i++;
+            if (page.results != null) {
+              int i = page.startIndex;
+              foreach (Placement placement in page.results) {
+                Console.WriteLine("{0}) Placement with ID ='{1}', name ='{2}', and status ='{3}'" +
+                    " will be deactivated.", i, placement.id, placement.name, placement.status);
+                placementIds.Add(placement.id.ToString());
+                i++;
+              }
+            }
+
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+          Console.WriteLine("Number of placements to be deactivated: {0}", placementIds.Count);
+
+          if (placementIds.Count > 0) {
+            // Modify statement for action.
+            statementBuilder.RemoveLimitAndOffset();
+
+            // Create action.
+            DeactivatePlacements action = new DeactivatePlacements();
+
+            // Perform action.
+            UpdateResult result = placementService.performPlacementAction(action,
+                statementBuilder.ToStatement());
+
+            // Display results.
+            if (result != null && result.numChanges > 0) {
+              Console.WriteLine("Number of placements deactivated: {0}", result.numChanges);
+            } else {
+              Console.WriteLine("No placements were deactivated.");
             }
           }
-
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-
-        Console.WriteLine("Number of placements to be deactivated: {0}", placementIds.Count);
-
-        if (placementIds.Count > 0) {
-          // Modify statement for action.
-          statementBuilder.RemoveLimitAndOffset();
-
-          // Create action.
-          DeactivatePlacements action = new DeactivatePlacements();
-
-          // Perform action.
-          UpdateResult result = placementService.performPlacementAction(action,
-              statementBuilder.ToStatement());
-
-          // Display results.
-          if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of placements deactivated: {0}", result.numChanges);
-          } else {
-            Console.WriteLine("No placements were deactivated.");
-          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to deactivate placements. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to deactivate placements. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

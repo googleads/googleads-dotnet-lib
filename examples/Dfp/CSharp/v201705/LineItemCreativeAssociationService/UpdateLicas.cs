@@ -47,49 +47,50 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the LineItemCreativeAssociationService.
-      LineItemCreativeAssociationService licaService = (LineItemCreativeAssociationService)
-          user.GetService(DfpService.v201705.LineItemCreativeAssociationService);
+      using (LineItemCreativeAssociationService licaService = (LineItemCreativeAssociationService)
+          user.GetService(DfpService.v201705.LineItemCreativeAssociationService)) {
 
-      // Set the line item to get LICAs by.
-      long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
+        // Set the line item to get LICAs by.
+        long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
 
-      // Set the creative to get LICAs by.
-      long creativeId = long.Parse(_T("INSERT_CREATIVE_ID_HERE"));
+        // Set the creative to get LICAs by.
+        long creativeId = long.Parse(_T("INSERT_CREATIVE_ID_HERE"));
 
-      // Create a statement to get all LICAs.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("lineItemId = :lineItemId AND creativeId = :creativeId")
-          .OrderBy("lineItemId ASC, creativeId ASC")
-          .Limit(1)
-          .AddValue("lineItemId", lineItemId)
-          .AddValue("creativeId", creativeId);
+        // Create a statement to get all LICAs.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("lineItemId = :lineItemId AND creativeId = :creativeId")
+            .OrderBy("lineItemId ASC, creativeId ASC")
+            .Limit(1)
+            .AddValue("lineItemId", lineItemId)
+            .AddValue("creativeId", creativeId);
 
-      try {
-        // Get LICAs by statement.
-        LineItemCreativeAssociationPage page =
-            licaService.getLineItemCreativeAssociationsByStatement(statementBuilder.ToStatement());
+        try {
+          // Get LICAs by statement.
+          LineItemCreativeAssociationPage page =
+              licaService.getLineItemCreativeAssociationsByStatement(
+                  statementBuilder.ToStatement());
 
-        LineItemCreativeAssociation lica = page.results[0];
+          LineItemCreativeAssociation lica = page.results[0];
 
-        // Update the LICA object by changing its destination URL.
-        lica.destinationUrl = "http://news.google.com";
+          // Update the LICA object by changing its destination URL.
+          lica.destinationUrl = "http://news.google.com";
 
-        // Update the LICA on the server.
-        LineItemCreativeAssociation[] licas = licaService.updateLineItemCreativeAssociations(
-            new LineItemCreativeAssociation[] {lica});
+          // Update the LICA on the server.
+          LineItemCreativeAssociation[] licas = licaService.updateLineItemCreativeAssociations(
+              new LineItemCreativeAssociation[] { lica });
 
-        if (licas != null) {
-          foreach (LineItemCreativeAssociation updatedLica in licas) {
-            Console.WriteLine("LICA with line item ID = '{0}, creative ID ='{1}' and " +
-                "destination URL '{2}' was updated.", updatedLica.lineItemId,
-                updatedLica.creativeId, updatedLica.destinationUrl);
+          if (licas != null) {
+            foreach (LineItemCreativeAssociation updatedLica in licas) {
+              Console.WriteLine("LICA with line item ID = '{0}, creative ID ='{1}' and " +
+                  "destination URL '{2}' was updated.", updatedLica.lineItemId,
+                  updatedLica.creativeId, updatedLica.destinationUrl);
+            }
+          } else {
+            Console.WriteLine("No LICAs updated.");
           }
-        } else {
-          Console.WriteLine("No LICAs updated.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update LICAs. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update LICAs. Exception says \"{0}\"", e.Message);
       }
     }
   }

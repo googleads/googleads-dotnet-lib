@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.Util.v201705;
 using Google.Api.Ads.Dfp.v201705;
 using System;
 
@@ -48,23 +47,24 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      NetworkService networkService =
-          (NetworkService) dfpUser.GetService(DfpService.v201705.NetworkService);
+      using (NetworkService networkService =
+          (NetworkService) dfpUser.GetService(DfpService.v201705.NetworkService)) {
 
-      Network[] networks = networkService.getAllNetworks();
+        Network[] networks = networkService.getAllNetworks();
 
-      // Print out some information for each network.
-      int i = 0;
-      foreach (Network network in networks) {
-        Console.WriteLine(
-            "{0}) Network with code \"{1}\" and display name \"{2}\" was found.",
-            i++,
-            network.networkCode,
-            network.displayName
-        );
+        // Print out some information for each network.
+        int i = 0;
+        foreach (Network network in networks) {
+          Console.WriteLine(
+              "{0}) Network with code \"{1}\" and display name \"{2}\" was found.",
+              i++,
+              network.networkCode,
+              network.displayName
+          );
+        }
+
+        Console.WriteLine("Number of results found: {0}", networks.Length);
       }
-
-      Console.WriteLine("Number of results found: {0}", networks.Length);
     }
   }
 }

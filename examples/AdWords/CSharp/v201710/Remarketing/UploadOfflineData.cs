@@ -73,75 +73,75 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// <param name="emailAddresses">The email addresses for creating user identifiers.</param>
     public void Run(AdWordsUser user, string conversionName, long externalUploadId,
         string[] emailAddresses) {
-      // Get the OfflineDataUploadService.
-      OfflineDataUploadService offlineDataUploadService =
+      using (OfflineDataUploadService offlineDataUploadService =
           (OfflineDataUploadService) user.GetService(
-              AdWordsService.v201710.OfflineDataUploadService);
+              AdWordsService.v201710.OfflineDataUploadService)) {
 
-      // Create the first offline data row for upload.
-      // This transaction occurred 7 days ago with amount of 200 USD.
-      DateTime transactionTime1 = new DateTime();
-      transactionTime1.AddDays(-7);
-      long transactionAmount1 = 200000000;
-      string transactionCurrencyCode1 = "USD";
-      UserIdentifier[] userIdentifierList1 = new UserIdentifier[] {
-        CreateUserIdentifier(OfflineDataUploadUserIdentifierType.HASHED_EMAIL,
-            emailAddresses[0]),
-        CreateUserIdentifier(OfflineDataUploadUserIdentifierType.STATE, "New York")
-      };
-      OfflineData offlineData1 = CreateOfflineDataRow(transactionTime1, transactionAmount1,
-          transactionCurrencyCode1, conversionName, userIdentifierList1);
+        // Create the first offline data row for upload.
+        // This transaction occurred 7 days ago with amount of 200 USD.
+        DateTime transactionTime1 = new DateTime();
+        transactionTime1.AddDays(-7);
+        long transactionAmount1 = 200000000;
+        string transactionCurrencyCode1 = "USD";
+        UserIdentifier[] userIdentifierList1 = new UserIdentifier[] {
+          CreateUserIdentifier(OfflineDataUploadUserIdentifierType.HASHED_EMAIL,
+              emailAddresses[0]),
+          CreateUserIdentifier(OfflineDataUploadUserIdentifierType.STATE, "New York")
+        };
+        OfflineData offlineData1 = CreateOfflineDataRow(transactionTime1, transactionAmount1,
+            transactionCurrencyCode1, conversionName, userIdentifierList1);
 
-      // Create the second offline data row for upload.
-      // This transaction occurred 14 days ago with amount of 450 EUR.
-      DateTime transactionTime2 = new DateTime();
-      transactionTime2.AddDays(-14);
-      long transactionAmount2 = 450000000;
-      string transactionCurrencyCode2 = "EUR";
-      UserIdentifier[] userIdentifierList2 = new UserIdentifier[] {
-        CreateUserIdentifier(OfflineDataUploadUserIdentifierType.HASHED_EMAIL,
-            emailAddresses[1]),
-        CreateUserIdentifier(OfflineDataUploadUserIdentifierType.STATE, "California")
-      };
-      OfflineData offlineData2 = CreateOfflineDataRow(transactionTime2, transactionAmount2,
-        transactionCurrencyCode2, conversionName, userIdentifierList2);
+        // Create the second offline data row for upload.
+        // This transaction occurred 14 days ago with amount of 450 EUR.
+        DateTime transactionTime2 = new DateTime();
+        transactionTime2.AddDays(-14);
+        long transactionAmount2 = 450000000;
+        string transactionCurrencyCode2 = "EUR";
+        UserIdentifier[] userIdentifierList2 = new UserIdentifier[] {
+          CreateUserIdentifier(OfflineDataUploadUserIdentifierType.HASHED_EMAIL,
+              emailAddresses[1]),
+          CreateUserIdentifier(OfflineDataUploadUserIdentifierType.STATE, "California")
+        };
+        OfflineData offlineData2 = CreateOfflineDataRow(transactionTime2, transactionAmount2,
+          transactionCurrencyCode2, conversionName, userIdentifierList2);
 
-      // Create offline data upload object.
-      OfflineDataUpload offlineDataUpload = new OfflineDataUpload();
-      offlineDataUpload.externalUploadId = externalUploadId;
-      offlineDataUpload.offlineDataList = new OfflineData[] { offlineData1, offlineData2 };
+        // Create offline data upload object.
+        OfflineDataUpload offlineDataUpload = new OfflineDataUpload();
+        offlineDataUpload.externalUploadId = externalUploadId;
+        offlineDataUpload.offlineDataList = new OfflineData[] { offlineData1, offlineData2 };
 
-      // Optional: You can set the type of this upload.
-      // offlineDataUpload.uploadType = OfflineDataUploadType.STORE_SALES_UPLOAD_FIRST_PARTY;
+        // Optional: You can set the type of this upload.
+        // offlineDataUpload.uploadType = OfflineDataUploadType.STORE_SALES_UPLOAD_FIRST_PARTY;
 
-      // Create an offline data upload operation.
-      OfflineDataUploadOperation offlineDataUploadOperation = new OfflineDataUploadOperation();
-      offlineDataUploadOperation.@operator = Operator.ADD;
-      offlineDataUploadOperation.operand = offlineDataUpload;
+        // Create an offline data upload operation.
+        OfflineDataUploadOperation offlineDataUploadOperation = new OfflineDataUploadOperation();
+        offlineDataUploadOperation.@operator = Operator.ADD;
+        offlineDataUploadOperation.operand = offlineDataUpload;
 
-      try {
-        // Upload offline data to the server.
-        OfflineDataUploadReturnValue result = offlineDataUploadService.mutate(
-            new OfflineDataUploadOperation[] { offlineDataUploadOperation });
-        offlineDataUpload = result.value[0];
+        try {
+          // Upload offline data to the server.
+          OfflineDataUploadReturnValue result = offlineDataUploadService.mutate(
+              new OfflineDataUploadOperation[] { offlineDataUploadOperation });
+          offlineDataUpload = result.value[0];
 
-        // Print the upload ID and status.
-        Console.WriteLine("Uploaded offline data with external upload ID {0}, " +
-            "and upload status {1}.", offlineDataUpload.externalUploadId,
-            offlineDataUpload.uploadStatus);
+          // Print the upload ID and status.
+          Console.WriteLine("Uploaded offline data with external upload ID {0}, " +
+              "and upload status {1}.", offlineDataUpload.externalUploadId,
+              offlineDataUpload.uploadStatus);
 
-        // Print any partial data errors from the response. The order of the partial
-        // data errors list is the same as the uploaded offline data list in the
-        // request.
-        if (offlineDataUpload.partialDataErrors != null) {
-          for (int i = 0; i < offlineDataUpload.partialDataErrors.Length; i++) {
-            ApiError partialDataError = offlineDataUpload.partialDataErrors[i];
-            Console.WriteLine("Found a partial error for offline data {0} with error string: {1}.",
-                i + 1, partialDataError.errorString);
+          // Print any partial data errors from the response. The order of the partial
+          // data errors list is the same as the uploaded offline data list in the
+          // request.
+          if (offlineDataUpload.partialDataErrors != null) {
+            for (int i = 0; i < offlineDataUpload.partialDataErrors.Length; i++) {
+              ApiError partialDataError = offlineDataUpload.partialDataErrors[i];
+              Console.WriteLine("Found a partial error for offline data {0} with error " +
+                  "string: {1}.", i + 1, partialDataError.errorString);
+            }
           }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed upload offline data conversions.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed upload offline data conversions.", e);
       }
     }
 

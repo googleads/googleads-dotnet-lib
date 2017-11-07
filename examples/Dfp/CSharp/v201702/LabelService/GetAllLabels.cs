@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,40 +48,41 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      LabelService labelService =
-          (LabelService) dfpUser.GetService(DfpService.v201702.LabelService);
+      using (LabelService labelService =
+          (LabelService) dfpUser.GetService(DfpService.v201702.LabelService)) {
 
-      // Create a statement to select labels.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .OrderBy("id ASC")
-          .Limit(pageSize);
+        // Create a statement to select labels.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .OrderBy("id ASC")
+            .Limit(pageSize);
 
-      // Retrieve a small amount of labels at a time, paging through until all
-      // labels have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        LabelPage page = labelService.getLabelsByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of labels at a time, paging through until all
+        // labels have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          LabelPage page = labelService.getLabelsByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each label.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (Label label in page.results) {
-            Console.WriteLine(
-                "{0}) Label with ID {1} and name \"{2}\" was found.",
-                i++,
-                label.id,
-                label.name
-            );
+          // Print out some information for each label.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (Label label in page.results) {
+              Console.WriteLine(
+                  "{0}) Label with ID {1} and name \"{2}\" was found.",
+                  i++,
+                  label.id,
+                  label.name
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

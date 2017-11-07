@@ -17,7 +17,6 @@ using Google.Api.Ads.Dfp.Util.v201702;
 using Google.Api.Ads.Dfp.v201702;
 
 using System;
-using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
   /// <summary>
@@ -49,46 +48,46 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ProductPackageService.
-      ProductPackageService productPackageService =
-          (ProductPackageService) user.GetService(DfpService.v201702.ProductPackageService);
+      using (ProductPackageService productPackageService =
+          (ProductPackageService) user.GetService(DfpService.v201702.ProductPackageService)) {
 
-      long productPackageId = long.Parse(_T("INSERT_PRODUCT_PACKAGE_ID_HERE"));
+        long productPackageId = long.Parse(_T("INSERT_PRODUCT_PACKAGE_ID_HERE"));
 
-      // Create a statement to get the product package.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", productPackageId);
+        // Create a statement to get the product package.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", productPackageId);
 
-      try {
-        // Get the product package.
-        ProductPackagePage page =
-            productPackageService.getProductPackagesByStatement(statementBuilder.ToStatement());
+        try {
+          // Get the product package.
+          ProductPackagePage page =
+              productPackageService.getProductPackagesByStatement(statementBuilder.ToStatement());
 
-        ProductPackage productPackage = page.results[0];
+          ProductPackage productPackage = page.results[0];
 
-        // Update the product package object by changing its notes.
-        productPackage.notes = "This product package is not to be sold before the end of the "
-            + "month.";
+          // Update the product package object by changing its notes.
+          productPackage.notes = "This product package is not to be sold before the end of the "
+              + "month.";
 
-        // Update the product packages on the server.
-        ProductPackage[] productPackages =
-            productPackageService.updateProductPackages(new ProductPackage[] {productPackage});
+          // Update the product packages on the server.
+          ProductPackage[] productPackages =
+              productPackageService.updateProductPackages(new ProductPackage[] { productPackage });
 
-        if (productPackages != null) {
-          foreach (ProductPackage updatedProductPackage in productPackages) {
-            Console.WriteLine("Product package with ID = \"{0}\", name = \"{1}\", and " +
-                "notes = \"{2}\" was updated.", updatedProductPackage.id,
-                updatedProductPackage.name, updatedProductPackage.notes);
+          if (productPackages != null) {
+            foreach (ProductPackage updatedProductPackage in productPackages) {
+              Console.WriteLine("Product package with ID = \"{0}\", name = \"{1}\", and " +
+                  "notes = \"{2}\" was updated.", updatedProductPackage.id,
+                  updatedProductPackage.name, updatedProductPackage.notes);
+            }
+          } else {
+            Console.WriteLine("No product packages updated.");
           }
-        } else {
-          Console.WriteLine("No product packages updated.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update product packages. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update product packages. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

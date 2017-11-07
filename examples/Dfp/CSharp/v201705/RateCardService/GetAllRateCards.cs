@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,41 +48,42 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      RateCardService rateCardService =
-          (RateCardService) dfpUser.GetService(DfpService.v201705.RateCardService);
+      using (RateCardService rateCardService =
+          (RateCardService) dfpUser.GetService(DfpService.v201705.RateCardService)) {
 
-      // Create a statement to select rate cards.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .OrderBy("id ASC")
-          .Limit(pageSize);
+        // Create a statement to select rate cards.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .OrderBy("id ASC")
+            .Limit(pageSize);
 
-      // Retrieve a small amount of rate cards at a time, paging through until all
-      // rate cards have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        RateCardPage page = rateCardService.getRateCardsByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of rate cards at a time, paging through until all
+        // rate cards have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          RateCardPage page = rateCardService.getRateCardsByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each rate card.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (RateCard rateCard in page.results) {
-            Console.WriteLine(
-                "{0}) Rate card with ID {1}, name \"{2}\", and currency code \"{3}\" was found.",
-                i++,
-                rateCard.id,
-                rateCard.name,
-                rateCard.currencyCode
-            );
+          // Print out some information for each rate card.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (RateCard rateCard in page.results) {
+              Console.WriteLine(
+                  "{0}) Rate card with ID {1}, name \"{2}\", and currency code \"{3}\" was found.",
+                  i++,
+                  rateCard.id,
+                  rateCard.name,
+                  rateCard.currencyCode
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

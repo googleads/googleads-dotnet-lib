@@ -14,10 +14,6 @@
 
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201705
-
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
 Imports Google.Api.Ads.AdWords.Util.Shopping.v201705
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
@@ -38,7 +34,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         codeExample.Run(New AdWordsUser, adGroupId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -59,86 +55,86 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <param name="adGroupId">The ad group to which product partition is
     ''' added.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-      ' Get the AdGroupCriterionService.
-      Dim adGroupCriterionService As AdGroupCriterionService = CType(user.GetService( _
+      Using adGroupCriterionService As AdGroupCriterionService = CType(user.GetService(
           AdWordsService.v201705.AdGroupCriterionService), AdGroupCriterionService)
 
-      ' Build a new ProductPartitionTree using the ad group's current set of criteria.
-      Dim partitionTree As ProductPartitionTree = _
-          ProductPartitionTree.DownloadAdGroupTree(user, adGroupId)
+        ' Build a new ProductPartitionTree using the ad group's current set of criteria.
+        Dim partitionTree As ProductPartitionTree =
+            ProductPartitionTree.DownloadAdGroupTree(user, adGroupId)
 
-      Console.WriteLine("Original tree: {0}", partitionTree)
+        Console.WriteLine("Original tree: {0}", partitionTree)
 
-      ' Clear out any existing criteria.
-      Dim rootNode As ProductPartitionNode = partitionTree.Root.RemoveAllChildren()
+        ' Clear out any existing criteria.
+        Dim rootNode As ProductPartitionNode = partitionTree.Root.RemoveAllChildren()
 
-      ' Make the root node a subdivision.
-      rootNode = rootNode.AsSubdivision()
+        ' Make the root node a subdivision.
+        rootNode = rootNode.AsSubdivision()
 
-      ' Add a unit node for condition = NEW.
-      Dim newConditionNode As ProductPartitionNode = rootNode.AddChild(
-          ProductDimensions.CreateCanonicalCondition(ProductCanonicalConditionCondition.NEW))
-      newConditionNode.AsBiddableUnit().CpcBid = 200000
+        ' Add a unit node for condition = NEW.
+        Dim newConditionNode As ProductPartitionNode = rootNode.AddChild(
+            ProductDimensions.CreateCanonicalCondition(ProductCanonicalConditionCondition.NEW))
+        newConditionNode.AsBiddableUnit().CpcBid = 200000
 
-      Dim usedConditionNode As ProductPartitionNode = rootNode.AddChild(
-          ProductDimensions.CreateCanonicalCondition(ProductCanonicalConditionCondition.USED))
-      usedConditionNode.AsBiddableUnit().CpcBid = 100000
+        Dim usedConditionNode As ProductPartitionNode = rootNode.AddChild(
+            ProductDimensions.CreateCanonicalCondition(ProductCanonicalConditionCondition.USED))
+        usedConditionNode.AsBiddableUnit().CpcBid = 100000
 
-      ' Add a subdivision node for condition = null (everything else).
-      Dim otherConditionNode As ProductPartitionNode =
-          rootNode.AddChild(ProductDimensions.CreateCanonicalCondition()).AsSubdivision()
+        ' Add a subdivision node for condition = null (everything else).
+        Dim otherConditionNode As ProductPartitionNode =
+            rootNode.AddChild(ProductDimensions.CreateCanonicalCondition()).AsSubdivision()
 
-      ' Add a unit node under condition = null for brand = "CoolBrand".
-      Dim coolBrandNode As ProductPartitionNode = otherConditionNode.AddChild(
-          ProductDimensions.CreateBrand("CoolBrand"))
-      coolBrandNode.AsBiddableUnit().CpcBid = 900000L
+        ' Add a unit node under condition = null for brand = "CoolBrand".
+        Dim coolBrandNode As ProductPartitionNode = otherConditionNode.AddChild(
+            ProductDimensions.CreateBrand("CoolBrand"))
+        coolBrandNode.AsBiddableUnit().CpcBid = 900000L
 
-      ' Add a unit node under condition = null for brand = "CheapBrand".
-      Dim cheapBrandNode As ProductPartitionNode = otherConditionNode.AddChild(
-          ProductDimensions.CreateBrand("CheapBrand"))
-      cheapBrandNode.AsBiddableUnit().CpcBid = 10000L
+        ' Add a unit node under condition = null for brand = "CheapBrand".
+        Dim cheapBrandNode As ProductPartitionNode = otherConditionNode.AddChild(
+            ProductDimensions.CreateBrand("CheapBrand"))
+        cheapBrandNode.AsBiddableUnit().CpcBid = 10000L
 
-      ' Add a subdivision node under condition = null for brand = null (everything else).
-      Dim otherBrandNode As ProductPartitionNode = otherConditionNode.AddChild(
-          ProductDimensions.CreateBrand()).AsSubdivision()
+        ' Add a subdivision node under condition = null for brand = null (everything else).
+        Dim otherBrandNode As ProductPartitionNode = otherConditionNode.AddChild(
+            ProductDimensions.CreateBrand()).AsSubdivision()
 
-      ' Add unit nodes under condition = null/brand = null.
-      ' The value for each bidding category is a fixed ID for a specific
-      ' category. You can retrieve IDs for categories from the ConstantDataService.
-      ' See the 'GetProductCategoryTaxonomy' example for more details.
+        ' Add unit nodes under condition = null/brand = null.
+        ' The value for each bidding category is a fixed ID for a specific
+        ' category. You can retrieve IDs for categories from the ConstantDataService.
+        ' See the 'GetProductCategoryTaxonomy' example for more details.
 
-      ' Add a unit node under condition = null/brand = null for product type
-      ' level 1 = 'Luggage & Bags'.
-      Dim luggageAndBagNode As ProductPartitionNode = otherBrandNode.AddChild(
-          ProductDimensions.CreateBiddingCategory(ProductDimensionType.BIDDING_CATEGORY_L1,
-          -5914235892932915235L))
-      luggageAndBagNode.AsBiddableUnit().CpcBid = 750000L
+        ' Add a unit node under condition = null/brand = null for product type
+        ' level 1 = 'Luggage & Bags'.
+        Dim luggageAndBagNode As ProductPartitionNode = otherBrandNode.AddChild(
+            ProductDimensions.CreateBiddingCategory(ProductDimensionType.BIDDING_CATEGORY_L1,
+                -5914235892932915235L))
+        luggageAndBagNode.AsBiddableUnit().CpcBid = 750000L
 
-      ' Add a unit node under condition = null/brand = null for product type
-      ' level 1 = null (everything else).
-      Dim everythingElseNode As ProductPartitionNode = otherBrandNode.AddChild(
+        ' Add a unit node under condition = null/brand = null for product type
+        ' level 1 = null (everything else).
+        Dim everythingElseNode As ProductPartitionNode = otherBrandNode.AddChild(
           ProductDimensions.CreateBiddingCategory(ProductDimensionType.BIDDING_CATEGORY_L1))
-      everythingElseNode.AsBiddableUnit().CpcBid = 110000L
+        everythingElseNode.AsBiddableUnit().CpcBid = 110000L
 
-      Try
-        ' Make the mutate request, using the operations returned by the ProductPartitionTree.
-        Dim mutateOperations As AdGroupCriterionOperation() = partitionTree.GetMutateOperations()
+        Try
+          ' Make the mutate request, using the operations returned by the ProductPartitionTree.
+          Dim mutateOperations As AdGroupCriterionOperation() = partitionTree.GetMutateOperations()
 
-        If mutateOperations.Length = 0 Then
-          Console.WriteLine("Skipping the mutate call because the original tree and the " & _
-              "current tree are logically identical.")
-        Else
-          adGroupCriterionService.mutate(mutateOperations)
-        End If
+          If mutateOperations.Length = 0 Then
+            Console.WriteLine("Skipping the mutate call because the original tree and the " &
+                "current tree are logically identical.")
+          Else
+            adGroupCriterionService.mutate(mutateOperations)
+          End If
 
-        ' The request was successful, so create a new ProductPartitionTree based on the updated
-        ' state of the ad group.
-        partitionTree = ProductPartitionTree.DownloadAdGroupTree(user, adGroupId)
+          ' The request was successful, so create a new ProductPartitionTree based on the updated
+          ' state of the ad group.
+          partitionTree = ProductPartitionTree.DownloadAdGroupTree(user, adGroupId)
 
-        Console.WriteLine("Final tree: {0}", partitionTree)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to add bid modifiers to adgroup.", e)
-      End Try
+          Console.WriteLine("Final tree: {0}", partitionTree)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to add bid modifiers to adgroup.", e)
+        End Try
+      End Using
     End Sub
   End Class
 End Namespace

@@ -49,55 +49,56 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser, long lineItemId) {
-      LineItemCreativeAssociationService lineItemCreativeAssociationService =
+      using (LineItemCreativeAssociationService lineItemCreativeAssociationService =
           (LineItemCreativeAssociationService) dfpUser.GetService(
-              DfpService.v201702.LineItemCreativeAssociationService);
+              DfpService.v201702.LineItemCreativeAssociationService)) {
 
-      // Create a statement to select line item creative associations.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("lineItemId = :lineItemId")
-          .OrderBy("lineItemId ASC, creativeId ASC")
-          .Limit(pageSize)
-          .AddValue("lineItemId", lineItemId);
+        // Create a statement to select line item creative associations.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("lineItemId = :lineItemId")
+            .OrderBy("lineItemId ASC, creativeId ASC")
+            .Limit(pageSize)
+            .AddValue("lineItemId", lineItemId);
 
-      // Retrieve a small amount of line item creative associations at a time, paging through until
-      // all line item creative associations have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        LineItemCreativeAssociationPage page =
-            lineItemCreativeAssociationService.getLineItemCreativeAssociationsByStatement(
-                statementBuilder.ToStatement());
+        // Retrieve a small amount of line item creative associations at a time, paging through
+        // until all line item creative associations have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          LineItemCreativeAssociationPage page =
+              lineItemCreativeAssociationService.getLineItemCreativeAssociationsByStatement(
+                  statementBuilder.ToStatement());
 
-        // Print out some information for each line item creative association.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (LineItemCreativeAssociation lica in page.results) {
-            if (lica.creativeSetId != 0) {
-              Console.WriteLine(
-                  "{0}) Line item creative association with line item ID {1} " +
-                      "and creative set ID {2} was found.",
-                  i++,
-                  lica.lineItemId,
-                  lica.creativeSetId
-              );
-            } else {
-              Console.WriteLine(
-                  "{0}) Line item creative association with line item ID {1} " +
-                      "and creative ID {2} was found.",
-                  i++,
-                  lica.lineItemId,
-                  lica.creativeId
-              );
+          // Print out some information for each line item creative association.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (LineItemCreativeAssociation lica in page.results) {
+              if (lica.creativeSetId != 0) {
+                Console.WriteLine(
+                    "{0}) Line item creative association with line item ID {1} " +
+                        "and creative set ID {2} was found.",
+                    i++,
+                    lica.lineItemId,
+                    lica.creativeSetId
+                );
+              } else {
+                Console.WriteLine(
+                    "{0}) Line item creative association with line item ID {1} " +
+                        "and creative ID {2} was found.",
+                    i++,
+                    lica.lineItemId,
+                    lica.creativeId
+                );
+              }
             }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

@@ -76,37 +76,37 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' format.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal conversionName As String, _
         ByVal gClid As String, ByVal conversionTime As String, ByVal conversionValue As Double)
-      ' Get the OfflineConversionFeedService.
-      Dim offlineConversionFeedService As OfflineConversionFeedService = CType(user.GetService( _
-              AdWordsService.v201705.OfflineConversionFeedService),  _
+      Using offlineConversionFeedService As OfflineConversionFeedService = CType(user.GetService(
+          AdWordsService.v201705.OfflineConversionFeedService),
               OfflineConversionFeedService)
 
-      Try
-        ' Associate offline conversions with the existing named conversion tracker. If
-        ' this tracker was newly created, it may be a few hours before it can accept
-        ' conversions.
-        Dim feed As New OfflineConversionFeed()
-        feed.conversionName = conversionName
-        feed.conversionTime = conversionTime
-        feed.conversionValue = conversionValue
-        feed.googleClickId = gClid
+        Try
+          ' Associate offline conversions with the existing named conversion tracker. If
+          ' this tracker was newly created, it may be a few hours before it can accept
+          ' conversions.
+          Dim feed As New OfflineConversionFeed()
+          feed.conversionName = conversionName
+          feed.conversionTime = conversionTime
+          feed.conversionValue = conversionValue
+          feed.googleClickId = gClid
 
-        Dim offlineConversionOperation As New OfflineConversionFeedOperation()
-        offlineConversionOperation.operator = [Operator].ADD
-        offlineConversionOperation.operand = feed
+          Dim offlineConversionOperation As New OfflineConversionFeedOperation()
+          offlineConversionOperation.operator = [Operator].ADD
+          offlineConversionOperation.operand = feed
 
-        Dim offlineConversionRetval As OfflineConversionFeedReturnValue = _
-            offlineConversionFeedService.mutate( _
-                New OfflineConversionFeedOperation() {offlineConversionOperation})
+          Dim offlineConversionRetval As OfflineConversionFeedReturnValue =
+              offlineConversionFeedService.mutate(
+                  New OfflineConversionFeedOperation() {offlineConversionOperation})
 
-        Dim newFeed As OfflineConversionFeed = offlineConversionRetval.value(0)
+          Dim newFeed As OfflineConversionFeed = offlineConversionRetval.value(0)
 
-        Console.WriteLine("Uploaded offline conversion value of {0} for Google Click ID = " & _
-            "'{1}' to '{2}'.", newFeed.conversionValue, newFeed.googleClickId, _
-            newFeed.conversionName)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to upload offline conversions.", e)
-      End Try
+          Console.WriteLine("Uploaded offline conversion value of {0} for Google Click ID = " &
+              "'{1}' to '{2}'.", newFeed.conversionValue, newFeed.googleClickId,
+              newFeed.conversionName)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to upload offline conversions.", e)
+        End Try
+      End Using
     End Sub
   End Class
 End Namespace

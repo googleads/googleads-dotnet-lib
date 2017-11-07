@@ -58,66 +58,67 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <param name="user">The AdWords user.</param>
     ''' <param name="campaignId">The campaign id to add product scope.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
-      ' Get the CampaignCriterionService.
-      Dim campaignCriterionService As CampaignCriterionService = CType(user.GetService( _
-          AdWordsService.v201705.CampaignCriterionService),  _
-          CampaignCriterionService)
+      Using campaignCriterionService As CampaignCriterionService = CType(user.GetService(
+          AdWordsService.v201705.CampaignCriterionService),
+              CampaignCriterionService)
 
-      Dim productScope As New ProductScope()
-      ' This set of dimensions is for demonstration purposes only. It would be
-      ' extremely unlikely that you want to include so many dimensions in your
-      ' product scope.
-      Dim nexusBrand As New ProductBrand()
-      nexusBrand.value = "Nexus"
+        Dim productScope As New ProductScope()
+        ' This set of dimensions is for demonstration purposes only. It would be
+        ' extremely unlikely that you want to include so many dimensions in your
+        ' product scope.
+        Dim nexusBrand As New ProductBrand()
+        nexusBrand.value = "Nexus"
 
-      Dim newProducts As New ProductCanonicalCondition()
-      newProducts.condition = ProductCanonicalConditionCondition.NEW
+        Dim newProducts As New ProductCanonicalCondition()
+        newProducts.condition = ProductCanonicalConditionCondition.NEW
 
-      Dim customAttribute As New ProductCustomAttribute()
-      customAttribute.type = ProductDimensionType.CUSTOM_ATTRIBUTE_0
-      customAttribute.value = "my attribute value"
+        Dim customAttribute As New ProductCustomAttribute()
+        customAttribute.type = ProductDimensionType.CUSTOM_ATTRIBUTE_0
+        customAttribute.value = "my attribute value"
 
-      Dim bookOffer As New ProductOfferId()
-      bookOffer.value = "book1"
+        Dim bookOffer As New ProductOfferId()
+        bookOffer.value = "book1"
 
-      Dim mediaProducts As New ProductType()
-      mediaProducts.type = ProductDimensionType.PRODUCT_TYPE_L1
-      mediaProducts.value = "Media"
+        Dim mediaProducts As New ProductType()
+        mediaProducts.type = ProductDimensionType.PRODUCT_TYPE_L1
+        mediaProducts.value = "Media"
 
-      Dim bookProducts As New ProductType()
-      bookProducts.type = ProductDimensionType.PRODUCT_TYPE_L2
-      bookProducts.value = "Books"
+        Dim bookProducts As New ProductType()
+        bookProducts.type = ProductDimensionType.PRODUCT_TYPE_L2
+        bookProducts.value = "Books"
 
-      ' The value for the bidding category is a fixed ID for the
-      ' 'Luggage & Bags' category. You can retrieve IDs for categories from
-      ' the ConstantDataService. See the 'GetProductCategoryTaxonomy' example
-      ' for more details.
-      Dim luggageBiddingCategory As New ProductBiddingCategory()
-      luggageBiddingCategory.type = ProductDimensionType.BIDDING_CATEGORY_L1
-      luggageBiddingCategory.value = -5914235892932915235
+        ' The value for the bidding category is a fixed ID for the
+        ' 'Luggage & Bags' category. You can retrieve IDs for categories from
+        ' the ConstantDataService. See the 'GetProductCategoryTaxonomy' example
+        ' for more details.
+        Dim luggageBiddingCategory As New ProductBiddingCategory()
+        luggageBiddingCategory.type = ProductDimensionType.BIDDING_CATEGORY_L1
+        luggageBiddingCategory.value = -5914235892932915235
 
-      productScope.dimensions = New ProductDimension() {nexusBrand, newProducts, bookOffer, _
-          mediaProducts, luggageBiddingCategory}
+        productScope.dimensions = New ProductDimension() {
+          nexusBrand, newProducts, bookOffer, mediaProducts, luggageBiddingCategory
+        }
 
-      Dim campaignCriterion As New CampaignCriterion()
-      campaignCriterion.campaignId = campaignId
-      campaignCriterion.criterion = productScope
+        Dim campaignCriterion As New CampaignCriterion()
+        campaignCriterion.campaignId = campaignId
+        campaignCriterion.criterion = productScope
 
-      ' Create operation.
-      Dim operation As New CampaignCriterionOperation()
-      operation.operand = campaignCriterion
-      operation.operator = [Operator].ADD
+        ' Create operation.
+        Dim operation As New CampaignCriterionOperation()
+        operation.operand = campaignCriterion
+        operation.operator = [Operator].ADD
 
-      Try
-        ' Make the mutate request.
-        Dim result As CampaignCriterionReturnValue = campaignCriterionService.mutate( _
-            New CampaignCriterionOperation() {operation})
+        Try
+          ' Make the mutate request.
+          Dim result As CampaignCriterionReturnValue = campaignCriterionService.mutate(
+              New CampaignCriterionOperation() {operation})
 
-        Console.WriteLine("Created a ProductScope criterion with ID '{0}'", _
+          Console.WriteLine("Created a ProductScope criterion with ID '{0}'",
               result.value(0).criterion.id)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to set shopping product scope.", e)
-      End Try
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to set shopping product scope.", e)
+        End Try
+      End Using
     End Sub
   End Class
 

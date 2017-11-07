@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,42 +48,43 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      ProductTemplateService productTemplateService =
-          (ProductTemplateService) dfpUser.GetService(DfpService.v201705.ProductTemplateService);
+      using (ProductTemplateService productTemplateService =
+          (ProductTemplateService) dfpUser.GetService(DfpService.v201705.ProductTemplateService)) {
 
-      // Create a statement to select product templates.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("lineItemType = :lineItemType")
-          .OrderBy("id ASC")
-          .Limit(pageSize)
-          .AddValue("lineItemType", LineItemType.SPONSORSHIP.ToString());
+        // Create a statement to select product templates.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("lineItemType = :lineItemType")
+            .OrderBy("id ASC")
+            .Limit(pageSize)
+            .AddValue("lineItemType", LineItemType.SPONSORSHIP.ToString());
 
-      // Retrieve a small amount of product templates at a time, paging through until all
-      // product templates have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        ProductTemplatePage page = productTemplateService.getProductTemplatesByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of product templates at a time, paging through until all
+        // product templates have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          ProductTemplatePage page = productTemplateService.getProductTemplatesByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each product template.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (ProductTemplate productTemplate in page.results) {
-            Console.WriteLine(
-                "{0}) Product template with ID {1} and name \"{2}\" was found.",
-                i++,
-                productTemplate.id,
-                productTemplate.name
-            );
+          // Print out some information for each product template.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (ProductTemplate productTemplate in page.results) {
+              Console.WriteLine(
+                  "{0}) Product template with ID {1} and name \"{2}\" was found.",
+                  i++,
+                  productTemplate.id,
+                  productTemplate.name
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

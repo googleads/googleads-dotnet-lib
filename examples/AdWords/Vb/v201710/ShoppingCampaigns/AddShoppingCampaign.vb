@@ -61,24 +61,16 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
     ''' false.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal budgetId As Long, ByVal merchantId As Long,
                    ByVal createDefaultPartition As Boolean)
-      ' Get the required services.
-      Dim campaignService As CampaignService = CType(user.GetService(
-          AdWordsService.v201710.CampaignService), CampaignService)
-      Dim adGroupService As AdGroupService = CType(user.GetService(
-          AdWordsService.v201710.AdGroupService), AdGroupService)
-      Dim adGroupAdService As AdGroupAdService = CType(user.GetService(
-          AdWordsService.v201710.AdGroupAdService), AdGroupAdService)
-
       Try
-        Dim campaign As Campaign = CreateCampaign(budgetId, merchantId, campaignService)
+        Dim campaign As Campaign = CreateCampaign(user, budgetId, merchantId)
         Console.WriteLine("Campaign with name '{0}' and ID '{1}' was added.", campaign.name,
               campaign.id)
 
-        Dim adGroup As AdGroup = CreateAdGroup(adGroupService, campaign)
+        Dim adGroup As AdGroup = CreateAdGroup(user, campaign)
         Console.WriteLine("Ad group with name '{0}' and ID '{1}' was added.", adGroup.name,
               adGroup.id)
 
-        Dim adGroupAd As AdGroupAd = CreateProductAd(adGroupAdService, adGroup)
+        Dim adGroupAd As AdGroupAd = CreateProductAd(user, adGroup)
         Console.WriteLine("Product ad with ID {0}' was added.", adGroupAd.ad.id)
 
         If (createDefaultPartition) Then
@@ -129,64 +121,75 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
     ''' <summary>
     ''' Creates the Product Ad.
     ''' </summary>
-    ''' <param name="adGroupAdService">The AdGroupAdService instance.</param>
+    ''' <param name="user">The AdWords user.</param>
     ''' <param name="adGroup">The ad group.</param>
     ''' <returns>The Product Ad.</returns>
-    Private Function CreateProductAd(ByVal adGroupAdService As AdGroupAdService,
-                                     ByVal adGroup As AdGroup) As AdGroupAd
-      ' Create product ad.
-      Dim productAd As New ProductAd()
+    Private Function CreateProductAd(ByVal user As AdWordsUser,
+        ByVal adGroup As AdGroup) As AdGroupAd
+      Using adGroupAdService As AdGroupAdService = CType(user.GetService(
+          AdWordsService.v201710.AdGroupAdService), AdGroupAdService)
 
-      ' Create ad group ad.
-      Dim adGroupAd As New AdGroupAd()
-      adGroupAd.adGroupId = adGroup.id
-      adGroupAd.ad = productAd
+        ' Create product ad.
+        Dim productAd As New ProductAd()
 
-      ' Create operation.
-      Dim operation As New AdGroupAdOperation()
-      operation.operand = adGroupAd
-      operation.operator = [Operator].ADD
+        ' Create ad group ad.
+        Dim adGroupAd As New AdGroupAd()
+        adGroupAd.adGroupId = adGroup.id
+        adGroupAd.ad = productAd
 
-      ' Make the mutate request.
-      Dim retval As AdGroupAdReturnValue = adGroupAdService.mutate(
-          New AdGroupAdOperation() {operation})
+        ' Create operation.
+        Dim operation As New AdGroupAdOperation()
+        operation.operand = adGroupAd
+        operation.operator = [Operator].ADD
 
-      Return retval.value(0)
+        ' Make the mutate request.
+        Dim retval As AdGroupAdReturnValue = adGroupAdService.mutate(
+            New AdGroupAdOperation() {operation})
+
+        Return retval.value(0)
+      End Using
     End Function
 
     ''' <summary>
     ''' Creates the ad group in a Shopping campaign.
     ''' </summary>
-    ''' <param name="adGroupService">The AdGroupService instance.</param>
+    ''' <param name="user">The AdWords user.</param>
     ''' <param name="campaign">The Shopping campaign.</param>
     ''' <returns>The ad group.</returns>
-    Private Function CreateAdGroup(ByVal adGroupService As AdGroupService,
-                                   ByVal campaign As Campaign) As AdGroup
-      ' Create ad group.
-      Dim adGroup As New AdGroup()
-      adGroup.campaignId = campaign.id
-      adGroup.name = "Ad Group #" & ExampleUtilities.GetRandomString()
+    Private Function CreateAdGroup(ByVal user As AdWordsUser,
+        ByVal campaign As Campaign) As AdGroup
+      Using adGroupService As AdGroupService = CType(user.GetService(
+          AdWordsService.v201710.AdGroupService), AdGroupService)
+        ' Create ad group.
+        Dim adGroup As New AdGroup()
+        adGroup.campaignId = campaign.id
+        adGroup.name = "Ad Group #" & ExampleUtilities.GetRandomString()
 
-      ' Create operation.
-      Dim operation As New AdGroupOperation()
-      operation.operand = adGroup
-      operation.operator = [Operator].ADD
+        ' Create operation.
+        Dim operation As New AdGroupOperation()
+        operation.operand = adGroup
+        operation.operator = [Operator].ADD
 
-      ' Make the mutate request.
-      Dim retval As AdGroupReturnValue = adGroupService.mutate(
-          New AdGroupOperation() {operation})
-      Return retval.value(0)
+        ' Make the mutate request.
+        Dim retval As AdGroupReturnValue = adGroupService.mutate(
+            New AdGroupOperation() {operation})
+        Return retval.value(0)
+      End Using
     End Function
 
     ''' <summary>
     ''' Creates the shopping campaign.
     ''' </summary>
+    ''' <param name="user">The AdWords user.</param>
     ''' <param name="budgetId">The budget id.</param>
     ''' <param name="merchantId">The Merchant Center id.</param>
-    ''' <param name="campaignService">The CampaignService instance.</param>
     ''' <returns>The Shopping campaign.</returns>
-    Private Function CreateCampaign(ByVal budgetId As Long, ByVal merchantId As Long,
-                                    ByVal campaignService As CampaignService) As Campaign
+    Private Function CreateCampaign(ByVal user As AdWordsUser, ByVal budgetId As Long,
+        ByVal merchantId As Long) As Campaign
+      ' Get the required services.
+      Dim campaignService As CampaignService = CType(user.GetService(
+          AdWordsService.v201710.CampaignService), CampaignService)
+
       ' Create campaign.
       Dim campaign As New Campaign()
       campaign.name = "Shopping campaign #" & ExampleUtilities.GetRandomString()

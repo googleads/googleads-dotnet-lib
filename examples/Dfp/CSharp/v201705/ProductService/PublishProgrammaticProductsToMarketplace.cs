@@ -49,63 +49,63 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user, long productId) {
-      // Get the ProductService.
-      ProductService productService =
-          (ProductService) user.GetService(DfpService.v201705.ProductService);
+      using (ProductService productService =
+          (ProductService) user.GetService(DfpService.v201705.ProductService)) {
 
-      // Create statement to select a product template by ID.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-          .AddValue("id", productId);
+        // Create statement to select a product template by ID.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+            .AddValue("id", productId);
 
-      // Set default for page.
-      ProductPage page = new ProductPage();
-      List<long> productIds = new List<long>();
+        // Set default for page.
+        ProductPage page = new ProductPage();
+        List<long> productIds = new List<long>();
 
-      try {
-        do {
-          // Get products by statement.
-          page = productService.getProductsByStatement(
-              statementBuilder.ToStatement());
+        try {
+          do {
+            // Get products by statement.
+            page = productService.getProductsByStatement(
+                statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            int i = page.startIndex;
-            foreach (Product product in page.results) {
-              Console.WriteLine("{0}) Product with ID ='{1}' will be published.",
-                  i++, product.id);
-              productIds.Add(product.id);
+            if (page.results != null) {
+              int i = page.startIndex;
+              foreach (Product product in page.results) {
+                Console.WriteLine("{0}) Product with ID ='{1}' will be published.",
+                    i++, product.id);
+                productIds.Add(product.id);
+              }
+            }
+
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+          Console.WriteLine("Number of products to be published: {0}", productIds.Count);
+
+          if (productIds.Count > 0) {
+            // Modify statement.
+            statementBuilder.RemoveLimitAndOffset();
+
+            // Create action.
+            Google.Api.Ads.Dfp.v201705.PublishProducts action =
+                new Google.Api.Ads.Dfp.v201705.PublishProducts();
+
+            // Perform action.
+            UpdateResult result = productService.performProductAction(action,
+                statementBuilder.ToStatement());
+
+            // Display results.
+            if (result != null && result.numChanges > 0) {
+              Console.WriteLine("Number of products published: {0}", result.numChanges);
+            } else {
+              Console.WriteLine("No products were published.");
             }
           }
-
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-
-        Console.WriteLine("Number of products to be published: {0}", productIds.Count);
-
-        if (productIds.Count > 0) {
-          // Modify statement.
-          statementBuilder.RemoveLimitAndOffset();
-
-          // Create action.
-          Google.Api.Ads.Dfp.v201705.PublishProducts action =
-              new Google.Api.Ads.Dfp.v201705.PublishProducts();
-
-          // Perform action.
-          UpdateResult result = productService.performProductAction(action,
-              statementBuilder.ToStatement());
-
-          // Display results.
-          if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of products published: {0}", result.numChanges);
-          } else {
-            Console.WriteLine("No products were published.");
-          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to publish products. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to publish products. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

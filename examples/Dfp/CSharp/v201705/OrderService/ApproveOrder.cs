@@ -48,65 +48,65 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the OrderService.
-      OrderService orderService =
-          (OrderService) user.GetService(DfpService.v201705.OrderService);
+      using (OrderService orderService =
+          (OrderService) user.GetService(DfpService.v201705.OrderService)) {
 
-      // Set the ID of the order.
-      long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
+        // Set the ID of the order.
+        long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
 
-      // Create statement to select the order.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", orderId);
+        // Create statement to select the order.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", orderId);
 
-      // Set default for page.
-      OrderPage page = new OrderPage();
-      List<string> orderIds = new List<string>();
-      int i = 0;
+        // Set default for page.
+        OrderPage page = new OrderPage();
+        List<string> orderIds = new List<string>();
+        int i = 0;
 
-      try {
-        do {
-          // Get orders by statement.
-          page = orderService.getOrdersByStatement(statementBuilder.ToStatement());
+        try {
+          do {
+            // Get orders by statement.
+            page = orderService.getOrdersByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            foreach (Order order in page.results) {
-              Console.WriteLine("{0}) Order with ID = '{1}', name = '{2}', and status ='{3}' " +
-                  "will be approved.", i, order.id, order.name, order.status);
-              orderIds.Add(order.id.ToString());
-              i++;
+            if (page.results != null) {
+              foreach (Order order in page.results) {
+                Console.WriteLine("{0}) Order with ID = '{1}', name = '{2}', and status ='{3}' " +
+                    "will be approved.", i, order.id, order.name, order.status);
+                orderIds.Add(order.id.ToString());
+                i++;
+              }
+            }
+
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+          Console.WriteLine("Number of orders to be approved: {0}", orderIds.Count);
+
+          if (orderIds.Count > 0) {
+            // Modify statement for action.
+            statementBuilder.RemoveLimitAndOffset();
+
+            // Create action.
+            ApproveAndOverbookOrders action = new ApproveAndOverbookOrders();
+
+            // Perform action.
+            UpdateResult result = orderService.performOrderAction(action,
+                statementBuilder.ToStatement());
+
+            // Display results.
+            if (result != null && result.numChanges > 0) {
+              Console.WriteLine("Number of orders approved: {0}", result.numChanges);
+            } else {
+              Console.WriteLine("No orders were approved.");
             }
           }
-
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-
-        Console.WriteLine("Number of orders to be approved: {0}", orderIds.Count);
-
-        if (orderIds.Count > 0) {
-          // Modify statement for action.
-          statementBuilder.RemoveLimitAndOffset();
-
-          // Create action.
-          ApproveAndOverbookOrders action = new ApproveAndOverbookOrders();
-
-          // Perform action.
-          UpdateResult result = orderService.performOrderAction(action,
-              statementBuilder.ToStatement());
-
-          // Display results.
-          if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of orders approved: {0}", result.numChanges);
-          } else {
-            Console.WriteLine("No orders were approved.");
-          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to approve orders. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to approve orders. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

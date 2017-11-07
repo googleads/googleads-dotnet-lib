@@ -65,6 +65,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
           DirectCast(user.GetService(AdWordsService.v201710.CustomerExtensionSettingService),
                                     CustomerExtensionSettingService)
 
+        ' [START createFeedItems] MOE:strip_line
         ' Create the price extension feed item.
         Dim priceFeedItem As New PriceFeedItem
         priceFeedItem.priceExtensionType = PriceExtensionType.SERVICES
@@ -135,6 +136,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
         customerExtensionSetting.extensionSetting = New ExtensionSetting
         customerExtensionSetting.extensionSetting.extensions =
             New ExtensionFeedItem() {priceFeedItem}
+        ' [END createFeedItems] MOE:strip_line
 
         Dim operation As New CustomerExtensionSettingOperation
         operation.operand = customerExtensionSetting
@@ -158,6 +160,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
       End Using
     End Sub
 
+    '  [START createPriceTableRow] MOE:strip_line
     ''' <summary>
     ''' Creates a price table row.
     ''' </summary>
@@ -197,6 +200,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
 
       Return retval
     End Function
+    ' [END createPriceTableRow] MOE:strip_line
 
   End Class
 

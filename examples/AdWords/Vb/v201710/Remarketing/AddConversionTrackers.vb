@@ -15,10 +15,6 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201710
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
   ''' <summary>
   ''' This code example adds an AdWords conversion tracker and an upload conversion tracker.
@@ -57,99 +53,100 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Get the ConversionTrackerService.
-      Dim conversionTrackerService As ConversionTrackerService = CType(user.GetService(
+      Using conversionTrackerService As ConversionTrackerService = CType(user.GetService(
           AdWordsService.v201710.ConversionTrackerService),
-          ConversionTrackerService)
+              ConversionTrackerService)
 
-      Dim conversionTrackers As New List(Of ConversionTracker)
+        Dim conversionTrackers As New List(Of ConversionTracker)
 
-      ' [START createAdWordsConversion] MOE:strip_line
-      ' Create an Adwords conversion tracker.
-      Dim adWordsConversionTracker As New AdWordsConversionTracker()
-      adWordsConversionTracker.name = "Earth to Mars Cruises Conversion #" &
-          ExampleUtilities.GetRandomString()
-      adWordsConversionTracker.category = ConversionTrackerCategory.DEFAULT
+        ' [START createAdWordsConversion] MOE:strip_line
+        ' Create an Adwords conversion tracker.
+        Dim adWordsConversionTracker As New AdWordsConversionTracker()
+        adWordsConversionTracker.name = "Earth to Mars Cruises Conversion #" &
+            ExampleUtilities.GetRandomString()
+        adWordsConversionTracker.category = ConversionTrackerCategory.DEFAULT
 
-      ' Set optional fields.
-      adWordsConversionTracker.status = ConversionTrackerStatus.ENABLED
-      adWordsConversionTracker.viewthroughLookbackWindow = 15
-      adWordsConversionTracker.defaultRevenueValue = 23.41
-      adWordsConversionTracker.alwaysUseDefaultRevenueValue = True
-      conversionTrackers.Add(adWordsConversionTracker)
-      ' [END createAdWordsConversion] MOE:strip_line
+        ' Set optional fields.
+        adWordsConversionTracker.status = ConversionTrackerStatus.ENABLED
+        adWordsConversionTracker.viewthroughLookbackWindow = 15
+        adWordsConversionTracker.defaultRevenueValue = 23.41
+        adWordsConversionTracker.alwaysUseDefaultRevenueValue = True
+        conversionTrackers.Add(adWordsConversionTracker)
+        ' [END createAdWordsConversion] MOE:strip_line
 
-      ' [START createUploadConversion] MOE:strip_line
-      ' Create an upload conversion for offline conversion imports.
-      Dim uploadConversion As New UploadConversion()
-      ' Set an appropriate category. This field is optional, and will be set to
-      ' DEFAULT if not mentioned.
-      uploadConversion.category = ConversionTrackerCategory.LEAD
-      uploadConversion.name = "Upload Conversion #" + ExampleUtilities.GetRandomString()
-      uploadConversion.viewthroughLookbackWindow = 30
-      uploadConversion.ctcLookbackWindow = 90
+        ' [START createUploadConversion] MOE:strip_line
+        ' Create an upload conversion for offline conversion imports.
+        Dim uploadConversion As New UploadConversion()
+        ' Set an appropriate category. This field is optional, and will be set to
+        ' DEFAULT if not mentioned.
+        uploadConversion.category = ConversionTrackerCategory.LEAD
+        uploadConversion.name = "Upload Conversion #" + ExampleUtilities.GetRandomString()
+        uploadConversion.viewthroughLookbackWindow = 30
+        uploadConversion.ctcLookbackWindow = 90
 
-      ' Optional: Set the default currency code to use for conversions
-      ' that do not specify a conversion currency. This must be an ISO 4217
-      ' 3-character currency code such as "EUR" or "USD".
-      ' If this field is not set on this UploadConversion, AdWords will use
-      ' the account's currency.
-      uploadConversion.defaultRevenueCurrencyCode = "EUR"
+        ' Optional: Set the default currency code to use for conversions
+        ' that do not specify a conversion currency. This must be an ISO 4217
+        ' 3-character currency code such as "EUR" or "USD".
+        ' If this field is not set on this UploadConversion, AdWords will use
+        ' the account's currency.
+        uploadConversion.defaultRevenueCurrencyCode = "EUR"
 
-      ' Optional: Set the default revenue value to use for conversions
-      ' that do not specify a conversion value. Note that this value
-      ' should NOT be in micros.
-      uploadConversion.defaultRevenueValue = 2.5
+        ' Optional: Set the default revenue value to use for conversions
+        ' that do not specify a conversion value. Note that this value
+        ' should NOT be in micros.
+        uploadConversion.defaultRevenueValue = 2.5
 
-      ' Optional: To upload fractional conversion credits, mark the upload conversion
-      ' as externally attributed. See
-      ' https://developers.google.com/adwords/api/docs/guides/conversion-tracking#importing_externally_attributed_conversions
-      ' to learn more about importing externally attributed conversions.
+        ' Optional: To upload fractional conversion credits, mark the upload conversion
+        ' as externally attributed. See
+        ' https://developers.google.com/adwords/api/docs/guides/conversion-tracking#importing_externally_attributed_conversions
+        ' to learn more about importing externally attributed conversions.
 
-      ' uploadConversion.isExternallyAttributed = True
+        ' uploadConversion.isExternallyAttributed = True
 
-      conversionTrackers.Add(uploadConversion)
-      ' [END createUploadConversion] MOE:strip_line
+        conversionTrackers.Add(uploadConversion)
+        ' [END createUploadConversion] MOE:strip_line
 
-      Try
-        ' [START mutateRequest] MOE:strip_line
-        ' Create operations.
-        Dim operations As New List(Of ConversionTrackerOperation)
-        For Each conversionTracker As ConversionTracker In conversionTrackers
-          Dim operation As New ConversionTrackerOperation()
-          operation.operator = [Operator].ADD
-          operation.operand = conversionTracker
-          operations.Add(operation)
-        Next
-
-        ' Add conversion tracker.
-        Dim retval As ConversionTrackerReturnValue = conversionTrackerService.mutate(
-            operations.ToArray())
-        ' [END mutateRequest] MOE:strip_line
-
-        ' Display the results.
-        If ((Not retval Is Nothing) AndAlso (Not retval.value Is Nothing) AndAlso
-            retval.value.Length > 0) Then
-          For Each conversionTracker As ConversionTracker In retval.value
-            If TypeOf conversionTracker Is AdWordsConversionTracker Then
-              Dim newAdWordsConversionTracker As AdWordsConversionTracker =
-                  CType(conversionTracker, AdWordsConversionTracker)
-              Console.WriteLine("Conversion with ID {0}, name '{1}', status '{2}', category " &
-                  "'{3}' and snippet '{4}' was added.",
-                  newAdWordsConversionTracker.id, newAdWordsConversionTracker.name,
-                  newAdWordsConversionTracker.status, newAdWordsConversionTracker.category,
-                  newAdWordsConversionTracker.snippet)
-            Else
-              Console.WriteLine("Conversion with ID {0}, name '{1}', status '{2}' and category " &
-                  "'{3}' was added.", conversionTracker.id, conversionTracker.name,
-                  conversionTracker.status, conversionTracker.category)
-            End If
+        Try
+          ' [START mutateRequest] MOE:strip_line
+          ' Create operations.
+          Dim operations As New List(Of ConversionTrackerOperation)
+          For Each conversionTracker As ConversionTracker In conversionTrackers
+            Dim operation As New ConversionTrackerOperation()
+            operation.operator = [Operator].ADD
+            operation.operand = conversionTracker
+            operations.Add(operation)
           Next
-        Else
-          Console.WriteLine("No conversion trackers were added.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to add conversion trackers.", e)
-      End Try
+
+          ' Add conversion tracker.
+          Dim retval As ConversionTrackerReturnValue = conversionTrackerService.mutate(
+              operations.ToArray())
+          ' [END mutateRequest] MOE:strip_line
+
+          ' Display the results.
+          If (Not retval Is Nothing) AndAlso (Not retval.value Is Nothing) AndAlso
+              retval.value.Length > 0 Then
+            For Each conversionTracker As ConversionTracker In retval.value
+              If TypeOf conversionTracker Is AdWordsConversionTracker Then
+                Dim newAdWordsConversionTracker As AdWordsConversionTracker =
+                    CType(conversionTracker, AdWordsConversionTracker)
+                Console.WriteLine("Conversion with ID {0}, name '{1}', status '{2}', category " &
+                    "'{3}' and snippet '{4}' was added.",
+                    newAdWordsConversionTracker.id, newAdWordsConversionTracker.name,
+                    newAdWordsConversionTracker.status, newAdWordsConversionTracker.category,
+                    newAdWordsConversionTracker.snippet)
+              Else
+                Console.WriteLine("Conversion with ID {0}, name '{1}', status '{2}' and " &
+                    "category '{3}' was added.", conversionTracker.id, conversionTracker.name,
+                    conversionTracker.status, conversionTracker.category)
+              End If
+            Next
+          Else
+            Console.WriteLine("No conversion trackers were added.")
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to add conversion trackers.", e)
+        End Try
+      End Using
     End Sub
   End Class
 End Namespace

@@ -48,43 +48,45 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      LineItemService lineItemService =
-          (LineItemService) dfpUser.GetService(DfpService.v201708.LineItemService);
+      using (LineItemService lineItemService =
+          (LineItemService) dfpUser.GetService(DfpService.v201708.LineItemService)) {
 
-      // Create a statement to select line items.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("lastModifiedDateTime >= :lastModifiedDateTime")
-          .OrderBy("id ASC")
-          .Limit(pageSize)
-          .AddValue("lastModifiedDateTime",
-              DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(-1), "America/New_York"));
+        // Create a statement to select line items.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("lastModifiedDateTime >= :lastModifiedDateTime")
+            .OrderBy("id ASC")
+            .Limit(pageSize)
+            .AddValue("lastModifiedDateTime",
+                DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(-1),
+                    "America/New_York"));
 
-      // Retrieve a small amount of line items at a time, paging through until all
-      // line items have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        LineItemPage page = lineItemService.getLineItemsByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of line items at a time, paging through until all
+        // line items have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          LineItemPage page = lineItemService.getLineItemsByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each line item.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (LineItem lineItem in page.results) {
-            Console.WriteLine(
-                "{0}) Line item with ID {1} and name \"{2}\" was found.",
-                i++,
-                lineItem.id,
-                lineItem.name
-            );
+          // Print out some information for each line item.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (LineItem lineItem in page.results) {
+              Console.WriteLine(
+                  "{0}) Line item with ID {1} and name \"{2}\" was found.",
+                  i++,
+                  lineItem.id,
+                  lineItem.name
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

@@ -48,66 +48,66 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ProductTemplateService.
-      ProductTemplateService productTemplateService =
-          (ProductTemplateService) user.GetService(DfpService.v201705.ProductTemplateService);
+      using (ProductTemplateService productTemplateService =
+          (ProductTemplateService) user.GetService(DfpService.v201705.ProductTemplateService)) {
 
-      // Set the ID of the product template.
-      long productTemplateId = long.Parse(_T("INSERT_PRODUCT_TEMPLATE_ID_HERE"));
+        // Set the ID of the product template.
+        long productTemplateId = long.Parse(_T("INSERT_PRODUCT_TEMPLATE_ID_HERE"));
 
-      // Create a statement to get the product template.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", productTemplateId);
+        // Create a statement to get the product template.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", productTemplateId);
 
-      try {
-        // Get product templates by statement.
-        ProductTemplatePage page = productTemplateService
-            .getProductTemplatesByStatement(statementBuilder.ToStatement());
+        try {
+          // Get product templates by statement.
+          ProductTemplatePage page = productTemplateService
+              .getProductTemplatesByStatement(statementBuilder.ToStatement());
 
-        ProductTemplate productTemplate = page.results[0];
+          ProductTemplate productTemplate = page.results[0];
 
-        // Add geo targeting for Canada to the product template.
-        Location countryLocation = new Location();
-        countryLocation.id = 2124L;
+          // Add geo targeting for Canada to the product template.
+          Location countryLocation = new Location();
+          countryLocation.id = 2124L;
 
-        Targeting productTemplateTargeting = productTemplate.builtInTargeting;
-        GeoTargeting geoTargeting = productTemplateTargeting.geoTargeting;
+          Targeting productTemplateTargeting = productTemplate.builtInTargeting;
+          GeoTargeting geoTargeting = productTemplateTargeting.geoTargeting;
 
-        List<Location> existingTargetedLocations = new List<Location>();
+          List<Location> existingTargetedLocations = new List<Location>();
 
-        if (geoTargeting == null) {
-          geoTargeting = new GeoTargeting();
-        } else if (geoTargeting.targetedLocations != null) {
-          existingTargetedLocations = new List<Location>(geoTargeting.targetedLocations);
-        }
-
-        existingTargetedLocations.Add(countryLocation);
-
-        Location[] newTargetedLocations = new Location[existingTargetedLocations.Count];
-        existingTargetedLocations.CopyTo(newTargetedLocations);
-        geoTargeting.targetedLocations = newTargetedLocations;
-
-        productTemplateTargeting.geoTargeting = geoTargeting;
-        productTemplate.builtInTargeting = productTemplateTargeting;
-
-        // Update the product template on the server.
-        ProductTemplate[] productTemplates = productTemplateService
-            .updateProductTemplates(new ProductTemplate[] {productTemplate});
-
-        if (productTemplates != null) {
-          foreach (ProductTemplate updatedProductTemplate in productTemplates) {
-            Console.WriteLine("A product template with ID = '{0}' and name '{1}' was updated.",
-                updatedProductTemplate.id, updatedProductTemplate.name);
+          if (geoTargeting == null) {
+            geoTargeting = new GeoTargeting();
+          } else if (geoTargeting.targetedLocations != null) {
+            existingTargetedLocations = new List<Location>(geoTargeting.targetedLocations);
           }
-        } else {
-          Console.WriteLine("No product templates updated.");
+
+          existingTargetedLocations.Add(countryLocation);
+
+          Location[] newTargetedLocations = new Location[existingTargetedLocations.Count];
+          existingTargetedLocations.CopyTo(newTargetedLocations);
+          geoTargeting.targetedLocations = newTargetedLocations;
+
+          productTemplateTargeting.geoTargeting = geoTargeting;
+          productTemplate.builtInTargeting = productTemplateTargeting;
+
+          // Update the product template on the server.
+          ProductTemplate[] productTemplates = productTemplateService
+              .updateProductTemplates(new ProductTemplate[] { productTemplate });
+
+          if (productTemplates != null) {
+            foreach (ProductTemplate updatedProductTemplate in productTemplates) {
+              Console.WriteLine("A product template with ID = '{0}' and name '{1}' was updated.",
+                  updatedProductTemplate.id, updatedProductTemplate.name);
+            }
+          } else {
+            Console.WriteLine("No product templates updated.");
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update product templates. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update product templates. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

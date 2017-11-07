@@ -58,21 +58,21 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the NetworkService.
-      NetworkService networkService =
-          (NetworkService) user.GetService(DfpService.v201705.NetworkService);
-      // Set the networkCode field to null.
-      networkService.RequestHeader.networkCode = null;
+      using (NetworkService networkService =
+           (NetworkService) user.GetService(DfpService.v201705.NetworkService)) {
+        // Set the networkCode field to null.
+        networkService.RequestHeader.networkCode = null;
 
-      try {
-        Network network = networkService.makeTestNetwork();
+        try {
+          Network network = networkService.makeTestNetwork();
 
-        Console.WriteLine("Test network with network code \"{0}\" and display name \"{1}\" " +
-            "created.\nYou may now sign in at http://www.google.com/dfp/main?networkCode={0}",
-            network.networkCode, network.displayName);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to make test network. Exception says \"{0}\"",
-            e.Message);
+          Console.WriteLine("Test network with network code \"{0}\" and display name \"{1}\" " +
+              "created.\nYou may now sign in at http://www.google.com/dfp/main?networkCode={0}",
+              network.networkCode, network.displayName);
+        } catch (Exception e) {
+          Console.WriteLine("Failed to make test network. Exception says \"{0}\"",
+              e.Message);
+        }
       }
     }
   }

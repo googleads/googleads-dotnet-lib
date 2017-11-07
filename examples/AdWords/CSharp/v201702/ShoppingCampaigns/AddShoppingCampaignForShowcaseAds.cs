@@ -87,51 +87,53 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="merchantId">The Merchant Center ID.</param>
     /// <returns>The newly created Shopping campaign.</returns>
     private static Campaign CreateCampaign(AdWordsUser user, long budgetId, long merchantId) {
-      CampaignService campaignService = (CampaignService) user.GetService(
-          AdWordsService.v201702.CampaignService);
-      // Create the campaign.
-      Campaign campaign = new Campaign();
-      campaign.name = "Shopping campaign #" + ExampleUtilities.GetRandomString();
+      using (CampaignService campaignService = (CampaignService) user.GetService(
+          AdWordsService.v201702.CampaignService)) {
+        // Create the campaign.
+        Campaign campaign = new Campaign();
+        campaign.name = "Shopping campaign #" + ExampleUtilities.GetRandomString();
 
-      // The advertisingChannelType is what makes this a Shopping campaign.
-      campaign.advertisingChannelType = AdvertisingChannelType.SHOPPING;
+        // The advertisingChannelType is what makes this a Shopping campaign.
+        campaign.advertisingChannelType = AdvertisingChannelType.SHOPPING;
 
-      // Recommendation: Set the campaign to PAUSED when creating it to prevent
-      // the ads from immediately serving. Set to ENABLED once you've added
-      // targeting and the ads are ready to serve.
-      campaign.status = CampaignStatus.PAUSED;
+        // Recommendation: Set the campaign to PAUSED when creating it to prevent
+        // the ads from immediately serving. Set to ENABLED once you've added
+        // targeting and the ads are ready to serve.
+        campaign.status = CampaignStatus.PAUSED;
 
-      // Set shared budget (required).
-      campaign.budget = new Budget();
-      campaign.budget.budgetId = budgetId;
+        // Set shared budget (required).
+        campaign.budget = new Budget();
+        campaign.budget.budgetId = budgetId;
 
-      // Set bidding strategy (required).
-      BiddingStrategyConfiguration biddingStrategyConfiguration =
-          new BiddingStrategyConfiguration();
-      biddingStrategyConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC;
+        // Set bidding strategy (required).
+        BiddingStrategyConfiguration biddingStrategyConfiguration =
+            new BiddingStrategyConfiguration();
 
-      campaign.biddingStrategyConfiguration = biddingStrategyConfiguration;
+        // Showcase ads require either ManualCpc or EnhancedCpc.
+        biddingStrategyConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC;
 
-      // All Shopping campaigns need a ShoppingSetting.
-      ShoppingSetting shoppingSetting = new ShoppingSetting();
-      shoppingSetting.salesCountry = "US";
-      shoppingSetting.campaignPriority = 0;
-      shoppingSetting.merchantId = merchantId;
+        campaign.biddingStrategyConfiguration = biddingStrategyConfiguration;
 
-      // Set to "true" to enable Local Inventory Ads in your campaign.
-      shoppingSetting.enableLocal = true;
-      campaign.settings = new Setting[] { shoppingSetting };
+        // All Shopping campaigns need a ShoppingSetting.
+        ShoppingSetting shoppingSetting = new ShoppingSetting();
+        shoppingSetting.salesCountry = "US";
+        shoppingSetting.campaignPriority = 0;
+        shoppingSetting.merchantId = merchantId;
 
-      // Create operation.
-      CampaignOperation campaignOperation = new CampaignOperation();
-      campaignOperation.operand = campaign;
-      campaignOperation.@operator = Operator.ADD;
+        // Set to "true" to enable Local Inventory Ads in your campaign.
+        shoppingSetting.enableLocal = true;
+        campaign.settings = new Setting[] { shoppingSetting };
 
-      // Make the mutate request.
-      CampaignReturnValue retval = campaignService.mutate(
-          new CampaignOperation[] { campaignOperation });
+        // Create operation.
+        CampaignOperation campaignOperation = new CampaignOperation();
+        campaignOperation.operand = campaign;
+        campaignOperation.@operator = Operator.ADD;
 
-      return retval.value[0];
+        // Make the mutate request.
+        CampaignReturnValue retval = campaignService.mutate(
+            new CampaignOperation[] { campaignOperation });
+        return retval.value[0];
+      }
     }
 
     /// <summary>
@@ -141,41 +143,39 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="campaign">The Shopping campaign.</param>
     /// <returns>The newly created ad group.</returns>
     private static AdGroup CreateAdGroup(AdWordsUser user, Campaign campaign) {
-      AdGroupService adGroupService = (AdGroupService) user.GetService(
-        AdWordsService.v201702.AdGroupService);
-      // Create ad group.
-      AdGroup adGroup = new AdGroup();
-      adGroup.campaignId = campaign.id;
-      adGroup.name = "Ad Group #" + ExampleUtilities.GetRandomString();
+      using (AdGroupService adGroupService = (AdGroupService) user.GetService(
+        AdWordsService.v201702.AdGroupService)) {
+        // Create ad group.
+        AdGroup adGroup = new AdGroup();
+        adGroup.campaignId = campaign.id;
+        adGroup.name = "Ad Group #" + ExampleUtilities.GetRandomString();
 
-      // Required: Set the ad group type to SHOPPING_SHOWCASE_ADS.
-      adGroup.adGroupType = AdGroupType.SHOPPING_SHOWCASE_ADS;
+        // Required: Set the ad group type to SHOPPING_SHOWCASE_ADS.
+        adGroup.adGroupType = AdGroupType.SHOPPING_SHOWCASE_ADS;
 
-      // Required: Set the ad group's bidding strategy configuration.
-      BiddingStrategyConfiguration biddingConfiguration = new BiddingStrategyConfiguration();
+        // Required: Set the ad group's bidding strategy configuration.
+        BiddingStrategyConfiguration biddingConfiguration = new BiddingStrategyConfiguration();
 
-      // Showcase ads require either ManualCpc or EnhancedCpc.
-      biddingConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC;
-
-      // Optional: Set the bids.
-      biddingConfiguration.bids = new Bids[] {
-        new CpcBid() {
-          bid = new Money() {
-            microAmount = 100000
+        // Optional: Set the bids.
+        biddingConfiguration.bids = new Bids[] {
+          new CpcBid() {
+            bid = new Money() {
+              microAmount = 100000
+            }
           }
-        }
-      };
+        };
 
-      adGroup.biddingStrategyConfiguration = biddingConfiguration;
+        adGroup.biddingStrategyConfiguration = biddingConfiguration;
 
-      // Create the operation.
-      AdGroupOperation operation = new AdGroupOperation();
-      operation.operand = adGroup;
-      operation.@operator = Operator.ADD;
+        // Create the operation.
+        AdGroupOperation operation = new AdGroupOperation();
+        operation.operand = adGroup;
+        operation.@operator = Operator.ADD;
 
-      // Make the mutate request.
-      AdGroupReturnValue retval = adGroupService.mutate(new AdGroupOperation[] { operation });
-      return retval.value[0];
+        // Make the mutate request.
+        AdGroupReturnValue retval = adGroupService.mutate(new AdGroupOperation[] { operation });
+        return retval.value[0];
+      }
     }
 
     /// <summary>
@@ -185,41 +185,41 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="adGroup">The ad group in which the ad is created.</param>
     /// <returns>The newly created Showcase ad.</returns>
     private static AdGroupAd CreateShowcaseAd(AdWordsUser user, AdGroup adGroup) {
-      AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
-        AdWordsService.v201702.AdGroupAdService);
-      // Create the Showcase ad.
-      ShowcaseAd showcaseAd = new ShowcaseAd();
+      using (AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
+          AdWordsService.v201702.AdGroupAdService)) {
+        // Create the Showcase ad.
+        ShowcaseAd showcaseAd = new ShowcaseAd();
 
-      // Required: set the ad's name, final URLs and display URL.
-      showcaseAd.name = "Showcase ad " + ExampleUtilities.GetShortRandomString();
-      showcaseAd.finalUrls = new string[] { "http://example.com/showcase" };
-      showcaseAd.displayUrl = "example.com";
+        // Required: set the ad's name, final URLs and display URL.
+        showcaseAd.name = "Showcase ad " + ExampleUtilities.GetShortRandomString();
+        showcaseAd.finalUrls = new string[] { "http://example.com/showcase" };
+        showcaseAd.displayUrl = "example.com";
 
-      // Required: Set the ad's expanded image.
-      Image expandedImage = new Image();
-      expandedImage.mediaId = UploadImage(user, "https://goo.gl/IfVlpF");
-      showcaseAd.expandedImage = expandedImage;
+        // Required: Set the ad's expanded image.
+        Image expandedImage = new Image();
+        expandedImage.mediaId = UploadImage(user, "https://goo.gl/IfVlpF");
+        showcaseAd.expandedImage = expandedImage;
 
-      // Optional: Set the collapsed image.
-      Image collapsedImage = new Image();
-      collapsedImage.mediaId = UploadImage(user, "https://goo.gl/NqTxAE");
-      showcaseAd.collapsedImage = collapsedImage;
+        // Optional: Set the collapsed image.
+        Image collapsedImage = new Image();
+        collapsedImage.mediaId = UploadImage(user, "https://goo.gl/NqTxAE");
+        showcaseAd.collapsedImage = collapsedImage;
 
-      // Create ad group ad.
-      AdGroupAd adGroupAd = new AdGroupAd();
-      adGroupAd.adGroupId = adGroup.id;
-      adGroupAd.ad = showcaseAd;
+        // Create ad group ad.
+        AdGroupAd adGroupAd = new AdGroupAd();
+        adGroupAd.adGroupId = adGroup.id;
+        adGroupAd.ad = showcaseAd;
 
-      // Create operation.
-      AdGroupAdOperation operation = new AdGroupAdOperation();
-      operation.operand = adGroupAd;
-      operation.@operator = Operator.ADD;
+        // Create operation.
+        AdGroupAdOperation operation = new AdGroupAdOperation();
+        operation.operand = adGroupAd;
+        operation.@operator = Operator.ADD;
 
-      // Make the mutate request.
-      AdGroupAdReturnValue retval = adGroupAdService.mutate(
-        new AdGroupAdOperation[] { operation });
-
-      return retval.value[0];
+        // Make the mutate request.
+        AdGroupAdReturnValue retval = adGroupAdService.mutate(
+            new AdGroupAdOperation[] { operation });
+        return retval.value[0];
+      }
     }
 
     /// <summary>
@@ -229,47 +229,47 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="adGroupId">Ad group ID.</param>
     /// <returns>The product partition.</returns>
     private static ProductPartitionTree CreateProductPartition(AdWordsUser user, long adGroupId) {
-      AdGroupCriterionService adGroupCriterionService =
-        (AdGroupCriterionService) user.GetService(
-          AdWordsService.v201702.AdGroupCriterionService);
+      using (AdGroupCriterionService adGroupCriterionService =
+          (AdGroupCriterionService) user.GetService(
+              AdWordsService.v201702.AdGroupCriterionService)) {
 
-      // Build a new ProductPartitionTree using the ad group's current set of criteria.
-      ProductPartitionTree partitionTree =
-        ProductPartitionTree.DownloadAdGroupTree(user, adGroupId);
+        // Build a new ProductPartitionTree using the ad group's current set of criteria.
+        ProductPartitionTree partitionTree =
+            ProductPartitionTree.DownloadAdGroupTree(user, adGroupId);
 
-      Console.WriteLine("Original tree: {0}", partitionTree);
+        Console.WriteLine("Original tree: {0}", partitionTree);
 
-      // Clear out any existing criteria.
-      ProductPartitionNode rootNode = partitionTree.Root.RemoveAllChildren();
+        // Clear out any existing criteria.
+        ProductPartitionNode rootNode = partitionTree.Root.RemoveAllChildren();
 
-      // Make the root node a subdivision.
-      rootNode = rootNode.AsSubdivision();
+        // Make the root node a subdivision.
+        rootNode = rootNode.AsSubdivision();
 
-      // Add a unit node for condition = NEW to include it.
-      rootNode.AddChild(ProductDimensions.CreateCanonicalCondition(
-          ProductCanonicalConditionCondition.NEW));
+        // Add a unit node for condition = NEW to include it.
+        rootNode.AddChild(ProductDimensions.CreateCanonicalCondition(
+            ProductCanonicalConditionCondition.NEW));
 
-      // Add a unit node for condition = USED to include it.
-      rootNode.AddChild(ProductDimensions.CreateCanonicalCondition(
-          ProductCanonicalConditionCondition.USED));
+        // Add a unit node for condition = USED to include it.
+        rootNode.AddChild(ProductDimensions.CreateCanonicalCondition(
+            ProductCanonicalConditionCondition.USED));
 
-      // Exclude everything else.
-      rootNode.AddChild(ProductDimensions.CreateCanonicalCondition()).AsExcludedUnit();
+        // Exclude everything else.
+        rootNode.AddChild(ProductDimensions.CreateCanonicalCondition()).AsExcludedUnit();
 
-      // Make the mutate request, using the operations returned by the ProductPartitionTree.
-      AdGroupCriterionOperation[] mutateOperations = partitionTree.GetMutateOperations();
+        // Make the mutate request, using the operations returned by the ProductPartitionTree.
+        AdGroupCriterionOperation[] mutateOperations = partitionTree.GetMutateOperations();
 
-      if (mutateOperations.Length == 0) {
-        Console.WriteLine("Skipping the mutate call because the original tree and the current " +
-                          "tree are logically identical.");
-      } else {
-        adGroupCriterionService.mutate(mutateOperations);
+        if (mutateOperations.Length == 0) {
+          Console.WriteLine("Skipping the mutate call because the original tree and the current " +
+                            "tree are logically identical.");
+        } else {
+          adGroupCriterionService.mutate(mutateOperations);
+        }
+        // The request was successful, so create a new ProductPartitionTree based on the updated
+        // state of the ad group.
+        partitionTree = ProductPartitionTree.DownloadAdGroupTree(user, adGroupId);
+        return partitionTree;
       }
-
-      // The request was successful, so create a new ProductPartitionTree based on the updated
-      // state of the ad group.
-      partitionTree = ProductPartitionTree.DownloadAdGroupTree(user, adGroupId);
-      return partitionTree;
     }
 
     /// <summary>
@@ -279,17 +279,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// <param name="url">The image URL.</param>
     /// <returns>The uploaded image.</returns>
     private static long UploadImage(AdWordsUser user, string url) {
-      MediaService mediaService = (MediaService) user.GetService(
-        AdWordsService.v201702.MediaService);
+      using (MediaService mediaService = (MediaService) user.GetService(
+          AdWordsService.v201702.MediaService)) {
 
-      // Create the image.
-      Image image = new Image();
-      image.data = MediaUtilities.GetAssetDataFromUrl(url);
-      image.type = MediaMediaType.IMAGE;
+        // Create the image.
+        Image image = new Image();
+        image.data = MediaUtilities.GetAssetDataFromUrl(url);
+        image.type = MediaMediaType.IMAGE;
 
-      // Upload the image.
-      Media[] result = mediaService.upload(new Media[] { image });
-      return result[0].mediaId;
+        // Upload the image.
+        Media[] result = mediaService.upload(new Media[] { image });
+        return result[0].mediaId;
+      }
     }
   }
 }

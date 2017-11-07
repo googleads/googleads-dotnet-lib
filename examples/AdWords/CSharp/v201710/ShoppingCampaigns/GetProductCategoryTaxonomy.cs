@@ -108,57 +108,56 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the ConstantDataService.
-      ConstantDataService constantDataService = (ConstantDataService) user.GetService(
-          AdWordsService.v201710.ConstantDataService);
+      using (ConstantDataService constantDataService = (ConstantDataService) user.GetService(
+          AdWordsService.v201710.ConstantDataService)) {
 
-      Selector selector = new Selector() {
-        predicates = new Predicate[] {
-          Predicate.In(ProductBiddingCategoryData.Fields.Country, new string[] { "US" })
-        }
-      };
-
-      try {
-        ProductBiddingCategoryData[] results =
-            constantDataService.getProductBiddingCategoryData(selector);
-
-        Dictionary<long, ProductCategory> biddingCategories =
-            new Dictionary<long, ProductCategory>();
-        List<ProductCategory> rootCategories = new List<ProductCategory>();
-
-        foreach (ProductBiddingCategoryData productBiddingCategory in results) {
-          long id = productBiddingCategory.dimensionValue.value;
-          long parentId = 0;
-          string name = productBiddingCategory.displayValue[0].value;
-
-          if (productBiddingCategory.parentDimensionValue != null) {
-            parentId = productBiddingCategory.parentDimensionValue.value;
+        Selector selector = new Selector() {
+          predicates = new Predicate[] {
+            Predicate.In(ProductBiddingCategoryData.Fields.Country, new string[] { "US" })
           }
+        };
 
-          if (!biddingCategories.ContainsKey(id)) {
-            biddingCategories.Add(id, new ProductCategory());
-          }
+        try {
+          ProductBiddingCategoryData[] results =
+              constantDataService.getProductBiddingCategoryData(selector);
 
-          ProductCategory category = biddingCategories[id];
+          Dictionary<long, ProductCategory> biddingCategories =
+              new Dictionary<long, ProductCategory>();
+          List<ProductCategory> rootCategories = new List<ProductCategory>();
 
-          if (parentId != 0) {
-            if (!biddingCategories.ContainsKey(parentId)) {
-              biddingCategories.Add(parentId, new ProductCategory());
+          foreach (ProductBiddingCategoryData productBiddingCategory in results) {
+            long id = productBiddingCategory.dimensionValue.value;
+            long parentId = 0;
+            string name = productBiddingCategory.displayValue[0].value;
+
+            if (productBiddingCategory.parentDimensionValue != null) {
+              parentId = productBiddingCategory.parentDimensionValue.value;
             }
-            ProductCategory parent = biddingCategories[parentId];
-            parent.Children.Add(category);
-          } else {
-            rootCategories.Add(category);
+
+            if (!biddingCategories.ContainsKey(id)) {
+              biddingCategories.Add(id, new ProductCategory());
+            }
+
+            ProductCategory category = biddingCategories[id];
+
+            if (parentId != 0) {
+              if (!biddingCategories.ContainsKey(parentId)) {
+                biddingCategories.Add(parentId, new ProductCategory());
+              }
+              ProductCategory parent = biddingCategories[parentId];
+              parent.Children.Add(category);
+            } else {
+              rootCategories.Add(category);
+            }
+
+            category.Id = id;
+            category.Name = name;
           }
 
-          category.Id = id;
-          category.Name = name;
+          DisplayProductCategories(rootCategories, "");
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to set shopping product category.", e);
         }
-
-        DisplayProductCategories(rootCategories, "");
-        constantDataService.Close();
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to set shopping product category.", e);
       }
     }
 

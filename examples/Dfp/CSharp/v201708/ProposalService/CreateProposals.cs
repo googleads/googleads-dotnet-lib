@@ -47,69 +47,68 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// </summary>
     public void Run(DfpUser user) {
 
-      // Get the ProposalService.
-      ProposalService proposalService =
-          (ProposalService) user.GetService(DfpService.v201708.ProposalService);
+      using (ProposalService proposalService =
+          (ProposalService) user.GetService(DfpService.v201708.ProposalService))
 
-      // Get the NetworkService.
-      NetworkService networkService =
-          (NetworkService) user.GetService(DfpService.v201708.NetworkService);
+      using (NetworkService networkService =
+          (NetworkService) user.GetService(DfpService.v201708.NetworkService)) {
 
-      // Set the advertiser, salesperson, and trafficker to assign to each
-      // order.
-      long advertiserId = long.Parse(_T("INSERT_ADVERTISER_ID_HERE"));
-      long primarySalespersonId = long.Parse(_T("INSERT_PRIMARY_SALESPERSON_ID_HERE"));
-      long secondarySalespersonId = long.Parse(_T("INSERT_SECONDARY_SALESPERSON_ID_HERE"));
-      long primaryTraffickerId = long.Parse(_T("INSERT_PRIMARY_TRAFFICKER_ID_HERE"));
-      long secondaryTraffickerId = long.Parse(_T("INSERT_SECONDARY_TRAFFICKER_ID_HERE"));
+        // Set the advertiser, salesperson, and trafficker to assign to each
+        // order.
+        long advertiserId = long.Parse(_T("INSERT_ADVERTISER_ID_HERE"));
+        long primarySalespersonId = long.Parse(_T("INSERT_PRIMARY_SALESPERSON_ID_HERE"));
+        long secondarySalespersonId = long.Parse(_T("INSERT_SECONDARY_SALESPERSON_ID_HERE"));
+        long primaryTraffickerId = long.Parse(_T("INSERT_PRIMARY_TRAFFICKER_ID_HERE"));
+        long secondaryTraffickerId = long.Parse(_T("INSERT_SECONDARY_TRAFFICKER_ID_HERE"));
 
-      // Create a proposal.
-      Proposal proposal = new Proposal();
-      proposal.name = "Proposal #" + new Random().Next(int.MaxValue);
+        // Create a proposal.
+        Proposal proposal = new Proposal();
+        proposal.name = "Proposal #" + new Random().Next(int.MaxValue);
 
-      // Create a proposal company association.
-      ProposalCompanyAssociation proposalCompanyAssociation = new ProposalCompanyAssociation();
-      proposalCompanyAssociation.companyId = advertiserId;
-      proposalCompanyAssociation.type = ProposalCompanyAssociationType.ADVERTISER;
-      proposal.advertiser = proposalCompanyAssociation;
+        // Create a proposal company association.
+        ProposalCompanyAssociation proposalCompanyAssociation = new ProposalCompanyAssociation();
+        proposalCompanyAssociation.companyId = advertiserId;
+        proposalCompanyAssociation.type = ProposalCompanyAssociationType.ADVERTISER;
+        proposal.advertiser = proposalCompanyAssociation;
 
-      // Create salesperson splits for the primary salesperson and secondary salespeople.
-      SalespersonSplit primarySalesperson = new SalespersonSplit();
-      primarySalesperson.userId = primarySalespersonId;
-      primarySalesperson.split = 75000;
-      proposal.primarySalesperson = primarySalesperson;
+        // Create salesperson splits for the primary salesperson and secondary salespeople.
+        SalespersonSplit primarySalesperson = new SalespersonSplit();
+        primarySalesperson.userId = primarySalespersonId;
+        primarySalesperson.split = 75000;
+        proposal.primarySalesperson = primarySalesperson;
 
-      SalespersonSplit secondarySalesperson = new SalespersonSplit();
-      secondarySalesperson.userId = secondarySalespersonId;
-      secondarySalesperson.split = 25000;
-      proposal.secondarySalespeople = new SalespersonSplit[] {secondarySalesperson};
+        SalespersonSplit secondarySalesperson = new SalespersonSplit();
+        secondarySalesperson.userId = secondarySalespersonId;
+        secondarySalesperson.split = 25000;
+        proposal.secondarySalespeople = new SalespersonSplit[] { secondarySalesperson };
 
-      // Set the probability to close to 100%.
-      proposal.probabilityOfClose = 100000L;
+        // Set the probability to close to 100%.
+        proposal.probabilityOfClose = 100000L;
 
-      // Set the primary trafficker on the proposal for when it becomes an order.
-      proposal.primaryTraffickerId = primaryTraffickerId;
+        // Set the primary trafficker on the proposal for when it becomes an order.
+        proposal.primaryTraffickerId = primaryTraffickerId;
 
-      // Create a budget for the proposal worth 100 in the network local currency.
-      Money budget = new Money();
-      budget.microAmount = 100000000L;
-      budget.currencyCode = networkService.getCurrentNetwork().currencyCode;
-      proposal.budget = budget;
+        // Create a budget for the proposal worth 100 in the network local currency.
+        Money budget = new Money();
+        budget.microAmount = 100000000L;
+        budget.currencyCode = networkService.getCurrentNetwork().currencyCode;
+        proposal.budget = budget;
 
-      proposal.billingCap = BillingCap.CAPPED_CUMULATIVE;
-      proposal.billingSource = BillingSource.DFP_VOLUME;
+        proposal.billingCap = BillingCap.CAPPED_CUMULATIVE;
+        proposal.billingSource = BillingSource.DFP_VOLUME;
 
-      try {
-        // Create the proposal on the server.
-        Proposal[] proposals = proposalService.createProposals(new Proposal[] {proposal});
+        try {
+          // Create the proposal on the server.
+          Proposal[] proposals = proposalService.createProposals(new Proposal[] { proposal });
 
-        foreach (Proposal createdProposal in proposals) {
-          Console.WriteLine("A proposal with ID \"{0}\" and name \"{1}\" was created.",
-              createdProposal.id, createdProposal.name);
-        }
-      } catch (Exception e) {
+          foreach (Proposal createdProposal in proposals) {
+            Console.WriteLine("A proposal with ID \"{0}\" and name \"{1}\" was created.",
+                createdProposal.id, createdProposal.name);
+          }
+        } catch (Exception e) {
           Console.WriteLine("Failed to create proposals. Exception says \"{0}\"",
                             e.Message);
+        }
       }
     }
   }

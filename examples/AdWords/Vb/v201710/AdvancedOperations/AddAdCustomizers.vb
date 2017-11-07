@@ -86,6 +86,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
     ''' <returns>An ad customizer feed.</returns>
     Private Shared Function CreateCustomizerFeed(ByVal user As AdWordsUser,
         ByVal feedName As String) As AdCustomizerFeed
+      ' [START createFeed] MOE:strip_line
       Using adCustomizerFeedService As AdCustomizerFeedService = DirectCast(user.GetService(
           AdWordsService.v201710.AdCustomizerFeedService), AdCustomizerFeedService)
 
@@ -107,7 +108,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
         feed.feedAttributes = New AdCustomizerFeedAttribute() {
         attribute1, attribute2, attribute3
       }
+      ' [END createFeed] MOE:strip_line
 
+        ' [START mutateFeed] MOE:strip_line
         Dim feedOperation As New AdCustomizerFeedOperation()
         feedOperation.operand = feed
         feedOperation.operator = [Operator].ADD
@@ -117,6 +120,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
 
         Console.WriteLine("Created ad customizer feed with ID = {0} and name = '{1}'.",
                         addedFeed.feedId, addedFeed.feedName)
+        ' [END mutateFeed] MOE:strip_line
         Return addedFeed
       End Using
     End Function
@@ -137,6 +141,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
 
         Dim feedItemOperations As New List(Of FeedItemOperation)
 
+        ' [START specifyFeedItemValues] MOE:strip_line
         Dim marsDate As New DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)
         feedItemOperations.Add(CreateFeedItemAddOperation(adCustomizerFeed, "Mars", "$1234.56",
           marsDate.ToString("yyyyMMdd HHmmss"), adGroupIds(0)))
@@ -144,6 +149,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
         Dim venusDate As New DateTime(DateTime.Now.Year, DateTime.Now.Month, 15)
         feedItemOperations.Add(CreateFeedItemAddOperation(adCustomizerFeed, "Venus", "$1450.00",
           venusDate.ToString("yyyyMMdd HHmmss"), adGroupIds(1)))
+        ' [END specifyFeedItemValues] MOE:strip_line
         Dim feedItemReturnValue As FeedItemReturnValue = feedItemService.mutate(
           feedItemOperations.ToArray)
 
@@ -171,6 +177,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
     Private Shared Function CreateFeedItemAddOperation(ByVal adCustomizerFeed As _
         AdCustomizerFeed, ByVal nameValue As String, ByVal priceValue As String,
         ByVal dateValue As String, ByVal adGroupId As Long) As FeedItemOperation
+      ' [START createFeedItem] MOE:strip_line
       Dim feedItem As New FeedItem
       feedItem.feedId = adCustomizerFeed.feedId
       Dim attributeValues As New List(Of FeedItemAttributeValue)
@@ -196,6 +203,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
 
       feedItem.adGroupTargeting = New FeedItemAdGroupTargeting
       feedItem.adGroupTargeting.TargetingAdGroupId = adGroupId
+      ' [END createFeedItem] MOE:strip_line
 
       Dim feedItemOperation As New FeedItemOperation
       feedItemOperation.operand = feedItem
@@ -218,12 +226,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
       Using adGroupAdService As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201710.AdGroupAdService), AdGroupAdService)
 
+        ' [START createAd] MOE:strip_line
         Dim expandedTextAd As New ExpandedTextAd
         expandedTextAd.headlinePart1 = String.Format("Luxury Cruise to {{={0}.Name}}", feedName)
         expandedTextAd.headlinePart2 = String.Format("Only {{={0}.Price}}", feedName)
         expandedTextAd.description = String.Format("Offer ends in {{=countdown({0}.Date)}}!",
                                                  feedName)
         expandedTextAd.finalUrls = New String() {"http://www.example.com"}
+        ' [END createAd] MOE:strip_line
 
         ' We add the same ad to both ad groups. When they serve, they will show
         ' different values, since they match different feed items.

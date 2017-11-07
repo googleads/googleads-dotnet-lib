@@ -71,76 +71,77 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
     ''' <param name="emailAddresses">The email addresses for creating user identifiers.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal conversionName As String,
         ByVal externalUploadId As Long, ByVal emailAddresses As String())
-      Dim offlineDataUploadService As OfflineDataUploadService = CType(user.GetService(
+      Using offlineDataUploadService As OfflineDataUploadService = CType(user.GetService(
           AdWordsService.v201710.OfflineDataUploadService),
-          OfflineDataUploadService)
+              OfflineDataUploadService)
 
-      ' Create the first offline data row for upload.
-      ' This transaction occurred 7 days ago with amount of 200 USD.
-      Dim transactionTime1 As New DateTime()
-      transactionTime1.AddDays(-7)
-      Dim transactionAmount1 As Long = 200000000
-      Dim transactionCurrencyCode1 As String = "USD"
-      Dim userIdentifierList1 As UserIdentifier() = {
-        CreateUserIdentifier(OfflineDataUploadUserIdentifierType.HASHED_EMAIL,
-            emailAddresses(0)),
-        CreateUserIdentifier(OfflineDataUploadUserIdentifierType.STATE, "New York")
-      }
+        ' Create the first offline data row for upload.
+        ' This transaction occurred 7 days ago with amount of 200 USD.
+        Dim transactionTime1 As New DateTime()
+        transactionTime1.AddDays(-7)
+        Dim transactionAmount1 As Long = 200000000
+        Dim transactionCurrencyCode1 As String = "USD"
+        Dim userIdentifierList1 As UserIdentifier() = {
+          CreateUserIdentifier(OfflineDataUploadUserIdentifierType.HASHED_EMAIL,
+              emailAddresses(0)),
+          CreateUserIdentifier(OfflineDataUploadUserIdentifierType.STATE, "New York")
+        }
 
-      Dim offlineData1 As OfflineData = CreateOfflineDataRow(transactionTime1, transactionAmount1,
-          transactionCurrencyCode1, conversionName, userIdentifierList1)
+        Dim offlineData1 As OfflineData = CreateOfflineDataRow(transactionTime1,
+            transactionAmount1, transactionCurrencyCode1, conversionName, userIdentifierList1)
 
-      ' Create the second offline data row for upload.
-      ' This transaction occurred 14 days ago with amount of 450 EUR.
-      Dim transactionTime2 As New DateTime()
-      transactionTime2.AddDays(-14)
-      Dim transactionAmount2 As Long = 450000000
-      Dim transactionCurrencyCode2 As String = "EUR"
-      Dim userIdentifierList2 As UserIdentifier() = {
-        CreateUserIdentifier(OfflineDataUploadUserIdentifierType.HASHED_EMAIL,
-            emailAddresses(1)),
-        CreateUserIdentifier(OfflineDataUploadUserIdentifierType.STATE, "California")
-      }
-      Dim offlineData2 As OfflineData = CreateOfflineDataRow(transactionTime2, transactionAmount2,
-          transactionCurrencyCode2, conversionName, userIdentifierList2)
+        ' Create the second offline data row for upload.
+        ' This transaction occurred 14 days ago with amount of 450 EUR.
+        Dim transactionTime2 As New DateTime()
+        transactionTime2.AddDays(-14)
+        Dim transactionAmount2 As Long = 450000000
+        Dim transactionCurrencyCode2 As String = "EUR"
+        Dim userIdentifierList2 As UserIdentifier() = {
+          CreateUserIdentifier(OfflineDataUploadUserIdentifierType.HASHED_EMAIL,
+              emailAddresses(1)),
+          CreateUserIdentifier(OfflineDataUploadUserIdentifierType.STATE, "California")
+        }
+        Dim offlineData2 As OfflineData = CreateOfflineDataRow(transactionTime2,
+            transactionAmount2, transactionCurrencyCode2, conversionName, userIdentifierList2)
 
-      ' Create offline data upload object.
-      Dim offlineDataUpload As New OfflineDataUpload()
-      offlineDataUpload.externalUploadId = externalUploadId
-      offlineDataUpload.offlineDataList = New OfflineData() {offlineData1, offlineData2}
+        ' Create offline data upload object.
+        Dim offlineDataUpload As New OfflineDataUpload()
+        offlineDataUpload.externalUploadId = externalUploadId
+        offlineDataUpload.offlineDataList = New OfflineData() {offlineData1, offlineData2}
 
-      ' Optional: You can set the type of this upload.
-      ' offlineDataUpload.uploadType = OfflineDataUploadType.STORE_SALES_UPLOAD_FIRST_PARTY
+        ' Optional: You can set the type of this upload.
+        ' offlineDataUpload.uploadType = OfflineDataUploadType.STORE_SALES_UPLOAD_FIRST_PARTY
 
-      ' Create an offline data upload operation.
-      Dim offlineDataUploadOperation As New OfflineDataUploadOperation()
-      offlineDataUploadOperation.operator = [Operator].ADD
-      offlineDataUploadOperation.operand = offlineDataUpload
+        ' Create an offline data upload operation.
+        Dim offlineDataUploadOperation As New OfflineDataUploadOperation()
+        offlineDataUploadOperation.operator = [Operator].ADD
+        offlineDataUploadOperation.operand = offlineDataUpload
 
-      Try
-        ' Upload offline data to the server.
-        Dim result As OfflineDataUploadReturnValue = offlineDataUploadService.mutate(
+        Try
+          ' Upload offline data to the server.
+          Dim result As OfflineDataUploadReturnValue = offlineDataUploadService.mutate(
             New OfflineDataUploadOperation() {offlineDataUploadOperation})
-        offlineDataUpload = result.value(0)
+          offlineDataUpload = result.value(0)
 
-        ' Print the upload ID and status.
-        Console.WriteLine("Uploaded offline data with external upload ID {0}, " +
-            "and upload status {1}.", offlineDataUpload.externalUploadId,
-            offlineDataUpload.uploadStatus)
+          ' Print the upload ID and status.
+          Console.WriteLine("Uploaded offline data with external upload ID {0}, " +
+              "and upload status {1}.", offlineDataUpload.externalUploadId,
+              offlineDataUpload.uploadStatus)
 
-        ' Print any partial data errors from the response. The order of the partial
-        ' data errors list Is the same as the uploaded offline data list in the
-        ' request.
-        If Not offlineDataUpload.partialDataErrors Is Nothing Then
-          For i As Integer = 0 To offlineDataUpload.partialDataErrors.Length
-            Dim partialDataError As ApiError = offlineDataUpload.partialDataErrors(i)
-            Console.WriteLine("Found a partial error for offline data {0} with error string: {1}.",
-                i + 1, partialDataError.errorString)
-          Next
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to upload offline conversions.", e)
-      End Try
+          ' Print any partial data errors from the response. The order of the partial
+          ' data errors list Is the same as the uploaded offline data list in the
+          ' request.
+          If Not offlineDataUpload.partialDataErrors Is Nothing Then
+            For i As Integer = 0 To offlineDataUpload.partialDataErrors.Length
+              Dim partialDataError As ApiError = offlineDataUpload.partialDataErrors(i)
+              Console.WriteLine("Found a partial error for offline data {0} with error " +
+                  "string: {1}.", i + 1, partialDataError.errorString)
+            Next
+          End If
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to upload offline conversions.", e)
+        End Try
+      End Using
     End Sub
 
     ''' <summary>

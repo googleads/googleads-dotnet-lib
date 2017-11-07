@@ -15,10 +15,6 @@
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201705
 
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
   ''' <summary>
   ''' This code example illustrates how to create a user list a.k.a. audience.
@@ -35,7 +31,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
       Try
         codeExample.Run(New AdWordsUser)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -54,96 +50,98 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
-      ' Get the UserListService.
-      Dim userListService As AdwordsUserListService = CType(user.GetService( _
+      Using userListService As AdwordsUserListService = CType(user.GetService(
           AdWordsService.v201705.AdwordsUserListService), AdwordsUserListService)
 
-      ' Get the ConversionTrackerService.
-      Dim conversionTrackerService As ConversionTrackerService = CType(user.GetService( _
-          AdWordsService.v201705.ConversionTrackerService),  _
-          ConversionTrackerService)
+        Using conversionTrackerService As ConversionTrackerService = CType(user.GetService(
+          AdWordsService.v201705.ConversionTrackerService),
+            ConversionTrackerService)
 
-      Dim userList As New BasicUserList
+          Dim userList As New BasicUserList
 
-      userList.name = ("Mars cruise customers #" & ExampleUtilities.GetRandomString)
-      userList.description = "A list of mars cruise customers in the last year."
-      userList.status = UserListMembershipStatus.OPEN
-      userList.membershipLifeSpan = 365
+          userList.name = ("Mars cruise customers #" & ExampleUtilities.GetRandomString)
+          userList.description = "A list of mars cruise customers in the last year."
+          userList.status = UserListMembershipStatus.OPEN
+          userList.membershipLifeSpan = 365
 
-      Dim conversionType As New UserListConversionType
-      conversionType.name = userList.name
-      userList.conversionTypes = New UserListConversionType() {conversionType}
+          Dim conversionType As New UserListConversionType
+          conversionType.name = userList.name
+          userList.conversionTypes = New UserListConversionType() {conversionType}
 
-      ' Optional: Set the user list status.
-      userList.status = UserListMembershipStatus.OPEN
+          ' Optional: Set the user list status.
+          userList.status = UserListMembershipStatus.OPEN
 
-      ' Create the operation.
-      Dim operation As New UserListOperation
-      operation.operand = userList
-      operation.operator = [Operator].ADD
+          ' Create the operation.
+          Dim operation As New UserListOperation
+          operation.operand = userList
+          operation.operator = [Operator].ADD
 
-      Try
-        ' Add the user list.
-        Dim retval As UserListReturnValue = userListService.mutate(New UserListOperation() _
-            {operation})
+          Try
+            ' Add the user list.
+            Dim retval As UserListReturnValue = userListService.mutate(
+                New UserListOperation() {operation})
 
-        Dim userLists As UserList() = Nothing
-        If ((Not retval Is Nothing) AndAlso (Not retval.value Is Nothing)) Then
-          userLists = retval.value
-          ' Get all conversion snippets.
-          Dim conversionIds As New List(Of String)
-          For Each newUserList As BasicUserList In userLists
-            If (Not newUserList.conversionTypes Is Nothing) Then
-              For Each newConversionType As UserListConversionType In _
-                  newUserList.conversionTypes
-                conversionIds.Add(newConversionType.id.ToString)
+            Dim userLists As UserList() = Nothing
+            If (Not retval Is Nothing) AndAlso (Not retval.value Is Nothing) Then
+              userLists = retval.value
+              ' Get all conversion snippets.
+              Dim conversionIds As New List(Of String)
+              For Each newUserList As BasicUserList In userLists
+                If (Not newUserList.conversionTypes Is Nothing) Then
+                  For Each newConversionType As UserListConversionType In
+                      newUserList.conversionTypes
+                    conversionIds.Add(newConversionType.id.ToString)
+                  Next
+                End If
               Next
-            End If
-          Next
 
-          Dim conversionsMap As New Dictionary(Of Long, ConversionTracker)
+              Dim conversionsMap As New Dictionary(Of Long, ConversionTracker)
 
-          If (conversionIds.Count > 0) Then
-            ' Create the selector.
-            Dim selector As New Selector
-            selector.fields = New String() {ConversionTracker.Fields.Id}
+              If (conversionIds.Count > 0) Then
+                ' Create the selector.
+                Dim selector As New Selector
+                selector.fields = New String() {ConversionTracker.Fields.Id}
 
-            selector.predicates = New Predicate() {
-              Predicate.In(ConversionTracker.Fields.Id, conversionIds)
-            }
+                selector.predicates = New Predicate() {
+                  Predicate.In(ConversionTracker.Fields.Id, conversionIds)
+                }
 
-            ' Get all conversion trackers.
-            Dim page As ConversionTrackerPage = conversionTrackerService.get(selector)
+                ' Get all conversion trackers.
+                Dim page As ConversionTrackerPage = conversionTrackerService.get(selector)
 
-            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-              For Each tracker As ConversionTracker In page.entries
-                conversionsMap.Item(tracker.id) = tracker
+                If (Not page Is Nothing) AndAlso (Not page.entries Is Nothing) Then
+                  For Each tracker As ConversionTracker In page.entries
+                    conversionsMap.Item(tracker.id) = tracker
+                  Next
+                End If
+              End If
+
+              ' Display the results.
+              For Each newUserList As BasicUserList In userLists
+                Console.WriteLine("User list with name '{0}' and id '{1}' was added.",
+                    newUserList.name, newUserList.id)
+
+                ' Display user list associated conversion code snippets.
+                If (Not newUserList.conversionTypes Is Nothing) Then
+                  For Each newConversionType As UserListConversionType In
+                      newUserList.conversionTypes
+                    Dim conversionTracker As AdWordsConversionTracker =
+                        DirectCast(conversionsMap.Item(newConversionType.id),
+                            AdWordsConversionTracker)
+                    Console.WriteLine("Conversion type code snippet associated to the list:\n{0}",
+                        conversionTracker.snippet)
+                  Next
+                End If
               Next
+            Else
+              Console.WriteLine("No user lists (a.k.a. audiences) were added.")
             End If
-          End If
-
-          ' Display the results.
-          For Each newUserList As BasicUserList In userLists
-            Console.WriteLine("User list with name '{0}' and id '{1}' was added.", _
-                newUserList.name, newUserList.id)
-
-            ' Display user list associated conversion code snippets.
-            If (Not newUserList.conversionTypes Is Nothing) Then
-              For Each newConversionType As UserListConversionType In newUserList.conversionTypes
-                Dim conversionTracker As AdWordsConversionTracker = _
-                    DirectCast(conversionsMap.Item(newConversionType.id),  _
-                        AdWordsConversionTracker)
-                Console.WriteLine("Conversion type code snippet associated to the list:\n{0}", _
-                    conversionTracker.snippet)
-              Next
-            End If
-          Next
-        Else
-          Console.WriteLine("No user lists (a.k.a. audiences) were added.")
-        End If
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to add user lists (a.k.a. audiences).", e)
-      End Try
+          Catch e As Exception
+            Throw New System.ApplicationException("Failed to add user lists (a.k.a. " +
+                "audiences).", e)
+          End Try
+        End Using
+      End Using
     End Sub
   End Class
 End Namespace

@@ -48,45 +48,46 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the LineItemService.
-      LineItemService lineItemService =
-          (LineItemService) user.GetService(DfpService.v201708.LineItemService);
+      using (LineItemService lineItemService =
+          (LineItemService) user.GetService(DfpService.v201708.LineItemService)) {
 
-      // Set the ID of the line item.
-      long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
+        // Set the ID of the line item.
+        long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
 
-      // Create a statement to get the line item.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :lineItemId")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("lineItemId", lineItemId);
+        // Create a statement to get the line item.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :lineItemId")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("lineItemId", lineItemId);
 
-      try {
-        // Get line items by statement.
-        LineItemPage page = lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
+        try {
+          // Get line items by statement.
+          LineItemPage page = lineItemService.getLineItemsByStatement(
+              statementBuilder.ToStatement());
 
-        LineItem lineItem = page.results[0];
+          LineItem lineItem = page.results[0];
 
-        // Update line item object by changing its delivery rate.
-       lineItem.deliveryRateType = DeliveryRateType.AS_FAST_AS_POSSIBLE;
+          // Update line item object by changing its delivery rate.
+          lineItem.deliveryRateType = DeliveryRateType.AS_FAST_AS_POSSIBLE;
 
-        // Update the line item on the server.
-        LineItem[] lineItems = lineItemService.updateLineItems(new LineItem[] {lineItem});
+          // Update the line item on the server.
+          LineItem[] lineItems = lineItemService.updateLineItems(new LineItem[] { lineItem });
 
-        if (lineItems != null) {
-          foreach (LineItem updatedLineItem in lineItems) {
-            Console.WriteLine("A line item with ID = '{0}', belonging to order ID = '{1}', " +
-                "named '{2}', and having delivery rate = '{3}' was updated.",
-                updatedLineItem.id, updatedLineItem.orderId, updatedLineItem.name,
-                updatedLineItem.deliveryRateType);
+          if (lineItems != null) {
+            foreach (LineItem updatedLineItem in lineItems) {
+              Console.WriteLine("A line item with ID = '{0}', belonging to order ID = '{1}', " +
+                  "named '{2}', and having delivery rate = '{3}' was updated.",
+                  updatedLineItem.id, updatedLineItem.orderId, updatedLineItem.name,
+                  updatedLineItem.deliveryRateType);
+            }
+          } else {
+            Console.WriteLine("No line items updated.");
           }
-        } else {
-          Console.WriteLine("No line items updated.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update line items. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update line items. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

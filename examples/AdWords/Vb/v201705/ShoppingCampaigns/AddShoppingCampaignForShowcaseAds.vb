@@ -88,53 +88,52 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <returns>The newly created Shopping campaign.</returns>
     Private Shared Function CreateCampaign(ByVal user As AdWordsUser, ByVal budgetId As Long, _
         ByVal merchantId As Long) As Campaign
-      Dim campaignService As CampaignService = CType(user.GetService( _
+      Using campaignService As CampaignService = CType(user.GetService(
           AdWordsService.v201705.CampaignService), CampaignService)
 
-      ' Create the campaign.
-      Dim campaign As New Campaign()
-      campaign.name = "Shopping campaign #" & ExampleUtilities.GetRandomString()
+        ' Create the campaign.
+        Dim campaign As New Campaign()
+        campaign.name = "Shopping campaign #" & ExampleUtilities.GetRandomString()
 
-      ' The advertisingChannelType is what makes this a Shopping campaign.
-      campaign.advertisingChannelType = AdvertisingChannelType.SHOPPING
+        ' The advertisingChannelType is what makes this a Shopping campaign.
+        campaign.advertisingChannelType = AdvertisingChannelType.SHOPPING
 
-      ' Recommendation: Set the campaign to PAUSED when creating it to prevent
-      ' the ads from immediately serving. Set to ENABLED once you've added
-      ' targeting and the ads are ready to serve.
-      campaign.status = CampaignStatus.PAUSED
+        ' Recommendation: Set the campaign to PAUSED when creating it to prevent
+        ' the ads from immediately serving. Set to ENABLED once you've added
+        ' targeting and the ads are ready to serve.
+        campaign.status = CampaignStatus.PAUSED
 
-      ' Set shared budget (required).
-      campaign.budget = New Budget()
-      campaign.budget.budgetId = budgetId
+        ' Set shared budget (required).
+        campaign.budget = New Budget()
+        campaign.budget.budgetId = budgetId
 
-      ' Set bidding strategy (required).
-      Dim biddingStrategyConfiguration As New BiddingStrategyConfiguration()
+        ' Set bidding strategy (required).
+        Dim biddingStrategyConfiguration As New BiddingStrategyConfiguration()
+        biddingStrategyConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC
 
-      ' Showcase ads require either ManualCpc or EnhancedCpc.
-      biddingStrategyConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC
+        campaign.biddingStrategyConfiguration = biddingStrategyConfiguration
 
-      campaign.biddingStrategyConfiguration = biddingStrategyConfiguration
+        ' All Shopping campaigns need a ShoppingSetting.
+        Dim shoppingSetting As New ShoppingSetting()
+        shoppingSetting.salesCountry = "US"
+        shoppingSetting.campaignPriority = 0
+        shoppingSetting.merchantId = merchantId
 
-      ' All Shopping campaigns need a ShoppingSetting.
-      Dim shoppingSetting As New ShoppingSetting()
-      shoppingSetting.salesCountry = "US"
-      shoppingSetting.campaignPriority = 0
-      shoppingSetting.merchantId = merchantId
+        ' Set to "true" to enable Local Inventory Ads in your campaign.
+        shoppingSetting.enableLocal = True
+        campaign.settings = New Setting() {shoppingSetting}
 
-      ' Set to "true" to enable Local Inventory Ads in your campaign.
-      shoppingSetting.enableLocal = True
-      campaign.settings = New Setting() {shoppingSetting}
+        ' Create operation.
+        Dim campaignOperation As New CampaignOperation()
+        campaignOperation.operand = campaign
+        campaignOperation.operator = [Operator].ADD
 
-      ' Create operation.
-      Dim campaignOperation As New CampaignOperation()
-      campaignOperation.operand = campaign
-      campaignOperation.operator = [Operator].ADD
-
-      ' Make the mutate request.
-      Dim retval As CampaignReturnValue = campaignService.mutate( _
+        ' Make the mutate request.
+        Dim retval As CampaignReturnValue = campaignService.mutate(
           New CampaignOperation() {campaignOperation})
 
-      Return retval.value(0)
+        Return retval.value(0)
+      End Using
     End Function
 
     ''' <summary>
@@ -145,38 +144,42 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <returns>The newly created ad group.</returns>
     Private Shared Function CreateAdGroup(ByVal user As AdWordsUser, ByVal campaign As Campaign) _
         As AdGroup
-      Dim adGroupService As AdGroupService = CType(user.GetService( _
+      Using adGroupService As AdGroupService = CType(user.GetService(
           AdWordsService.v201705.AdGroupService), AdGroupService)
 
-      ' Create ad group.
-      Dim adGroup As New AdGroup()
-      adGroup.campaignId = campaign.id
-      adGroup.name = "Ad Group #" & ExampleUtilities.GetRandomString()
+        ' Create ad group.
+        Dim adGroup As New AdGroup()
+        adGroup.campaignId = campaign.id
+        adGroup.name = "Ad Group #" & ExampleUtilities.GetRandomString()
 
-      ' Required: Set the ad group type to SHOPPING_SHOWCASE_ADS.
-      adGroup.adGroupType = AdGroupType.SHOPPING_SHOWCASE_ADS
+        ' Required: Set the ad group type to SHOPPING_SHOWCASE_ADS.
+        adGroup.adGroupType = AdGroupType.SHOPPING_SHOWCASE_ADS
 
-      ' Required: Set the ad group's bidding strategy configuration.
-      Dim biddingConfiguration As New BiddingStrategyConfiguration()
+        ' Required: Set the ad group's bidding strategy configuration.
+        Dim biddingConfiguration As New BiddingStrategyConfiguration()
 
-      ' Optional: Set the bids.
-      Dim cpcBid As New CpcBid()
-      cpcBid.bid = New Money()
-      cpcBid.bid.microAmount = 100000
+        ' Showcase ads require either ManualCpc or EnhancedCpc.
+        biddingConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC
 
-      biddingConfiguration.bids = New Bids() {cpcBid}
+        ' Optional: Set the bids.
+        Dim cpcBid As New CpcBid()
+        cpcBid.bid = New Money()
+        cpcBid.bid.microAmount = 100000
 
-      adGroup.biddingStrategyConfiguration = biddingConfiguration
+        biddingConfiguration.bids = New Bids() {cpcBid}
 
-      ' Create the operation.
-      Dim operation As New AdGroupOperation()
-      operation.operand = adGroup
-      operation.operator = [Operator].ADD
+        adGroup.biddingStrategyConfiguration = biddingConfiguration
 
-      ' Make the mutate request.
-      Dim retval As AdGroupReturnValue = adGroupService.mutate( _
-          New AdGroupOperation() {operation})
-      Return retval.value(0)
+        ' Create the operation.
+        Dim operation As New AdGroupOperation()
+        operation.operand = adGroup
+        operation.operator = [Operator].ADD
+
+        ' Make the mutate request.
+        Dim retval As AdGroupReturnValue = adGroupService.mutate(
+            New AdGroupOperation() {operation})
+        Return retval.value(0)
+      End Using
     End Function
 
     ''' <summary>
@@ -187,42 +190,43 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <returns>The newly created Showcase ad.</returns>
     Private Shared Function CreateShowcaseAd(ByVal user As AdWordsUser, ByVal adGroup As AdGroup) _
         As AdGroupAd
-      Dim adGroupAdService As AdGroupAdService = CType(user.GetService( _
+      Using adGroupAdService As AdGroupAdService = CType(user.GetService(
           AdWordsService.v201705.AdGroupAdService), AdGroupAdService)
 
-      ' Create the Showcase ad.
-      Dim showcaseAd As New ShowcaseAd()
+        ' Create the Showcase ad.
+        Dim showcaseAd As New ShowcaseAd()
 
-      ' Required: set the ad's name, final URLs and display URL.
-      showcaseAd.name = "Showcase ad " & ExampleUtilities.GetShortRandomString()
-      showcaseAd.finalUrls = New String() {"http://example.com/showcase"}
-      showcaseAd.displayUrl = "example.com"
+        ' Required: set the ad's name, final URLs and display URL.
+        showcaseAd.name = "Showcase ad " & ExampleUtilities.GetShortRandomString()
+        showcaseAd.finalUrls = New String() {"http://example.com/showcase"}
+        showcaseAd.displayUrl = "example.com"
 
-      ' Required: Set the ad's expanded image.
-      Dim expandedImage As New Image()
-      expandedImage.mediaId = UploadImage(user, "https://goo.gl/IfVlpF")
-      showcaseAd.expandedImage = expandedImage
+        ' Required: Set the ad's expanded image.
+        Dim expandedImage As New Image()
+        expandedImage.mediaId = UploadImage(user, "https://goo.gl/IfVlpF")
+        showcaseAd.expandedImage = expandedImage
 
-      ' Optional: Set the collapsed image.
-      Dim collapsedImage As New Image()
-      collapsedImage.mediaId = UploadImage(user, "https://goo.gl/NqTxAE")
-      showcaseAd.collapsedImage = collapsedImage
+        ' Optional: Set the collapsed image.
+        Dim collapsedImage As New Image()
+        collapsedImage.mediaId = UploadImage(user, "https://goo.gl/NqTxAE")
+        showcaseAd.collapsedImage = collapsedImage
 
-      ' Create ad group ad.
-      Dim adGroupAd As New AdGroupAd()
-      adGroupAd.adGroupId = adGroup.id
-      adGroupAd.ad = showcaseAd
+        ' Create ad group ad.
+        Dim adGroupAd As New AdGroupAd()
+        adGroupAd.adGroupId = adGroup.id
+        adGroupAd.ad = showcaseAd
 
-      ' Create operation.
-      Dim operation As New AdGroupAdOperation()
-      operation.operand = adGroupAd
-      operation.operator = [Operator].ADD
+        ' Create operation.
+        Dim operation As New AdGroupAdOperation()
+        operation.operand = adGroupAd
+        operation.operator = [Operator].ADD
 
-      ' Make the mutate request.
-      Dim retval As AdGroupAdReturnValue = adGroupAdService.mutate( _
-        New AdGroupAdOperation() {operation})
+        ' Make the mutate request.
+        Dim retval As AdGroupAdReturnValue = adGroupAdService.mutate(
+          New AdGroupAdOperation() {operation})
 
-      Return retval.value(0)
+        Return retval.value(0)
+      End Using
     End Function
 
     ''' <summary>
@@ -234,46 +238,47 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     Private Shared Function CreateProductPartition(ByVal user As AdWordsUser, _
         ByVal adGroupId As Long) As ProductPartitionTree
 
-      Dim adGroupCriterionService As AdGroupCriterionService = CType(user.GetService( _
+      Using adGroupCriterionService As AdGroupCriterionService = CType(user.GetService(
           AdWordsService.v201705.AdGroupCriterionService), AdGroupCriterionService)
 
-      ' Build a new ProductPartitionTree using the ad group's current set of criteria.
-      Dim partitionTree As ProductPartitionTree = ProductPartitionTree.DownloadAdGroupTree( _
+        ' Build a new ProductPartitionTree using the ad group's current set of criteria.
+        Dim partitionTree As ProductPartitionTree = ProductPartitionTree.DownloadAdGroupTree(
           user, adGroupId)
 
-      Console.WriteLine("Original tree: {0}", partitionTree)
+        Console.WriteLine("Original tree: {0}", partitionTree)
 
-      ' Clear out any existing criteria.
-      Dim rootNode As ProductPartitionNode = partitionTree.Root.RemoveAllChildren()
+        ' Clear out any existing criteria.
+        Dim rootNode As ProductPartitionNode = partitionTree.Root.RemoveAllChildren()
 
-      ' Make the root node a subdivision.
-      rootNode = rootNode.AsSubdivision()
+        ' Make the root node a subdivision.
+        rootNode = rootNode.AsSubdivision()
 
-      ' Add a unit node for condition = NEW to include it.
-      rootNode.AddChild(ProductDimensions.CreateCanonicalCondition( _
-          ProductCanonicalConditionCondition.NEW))
+        ' Add a unit node for condition = NEW to include it.
+        rootNode.AddChild(ProductDimensions.CreateCanonicalCondition(
+            ProductCanonicalConditionCondition.NEW))
 
-      ' Add a unit node for condition = USED to include it.
-      rootNode.AddChild(ProductDimensions.CreateCanonicalCondition( _
-          ProductCanonicalConditionCondition.USED))
+        ' Add a unit node for condition = USED to include it.
+        rootNode.AddChild(ProductDimensions.CreateCanonicalCondition(
+            ProductCanonicalConditionCondition.USED))
 
-      ' Exclude everything else.
-      rootNode.AddChild(ProductDimensions.CreateCanonicalCondition()).AsExcludedUnit()
+        ' Exclude everything else.
+        rootNode.AddChild(ProductDimensions.CreateCanonicalCondition()).AsExcludedUnit()
 
-      ' Make the mutate request, using the operations returned by the ProductPartitionTree.
-      Dim mutateOperations As AdGroupCriterionOperation() = partitionTree.GetMutateOperations()
+        ' Make the mutate request, using the operations returned by the ProductPartitionTree.
+        Dim mutateOperations As AdGroupCriterionOperation() = partitionTree.GetMutateOperations()
 
-      If mutateOperations.Length = 0 Then
-        Console.WriteLine("Skipping the mutate call because the original tree and the current " & _
-                          "tree are logically identical.")
-      Else
-        adGroupCriterionService.mutate(mutateOperations)
-      End If
+        If mutateOperations.Length = 0 Then
+          Console.WriteLine("Skipping the mutate call because the original tree and the current " &
+              "tree are logically identical.")
+        Else
+          adGroupCriterionService.mutate(mutateOperations)
+        End If
 
-      ' The request was successful, so create a new ProductPartitionTree based on the updated
-      ' state of the ad group.
-      partitionTree = ProductPartitionTree.DownloadAdGroupTree(user, adGroupId)
-      Return partitionTree
+        ' The request was successful, so create a new ProductPartitionTree based on the updated
+        ' state of the ad group.
+        partitionTree = ProductPartitionTree.DownloadAdGroupTree(user, adGroupId)
+        Return partitionTree
+      End Using
     End Function
 
     ''' <summary>
@@ -283,17 +288,18 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' <param name="url">The image URL.</param>
     ''' <returns>The uploaded image.</returns>
     Private Shared Function UploadImage(ByVal user As AdWordsUser, ByVal url As String) As Long
-      Dim mediaService As MediaService = CType(user.GetService( _
+      Using mediaService As MediaService = CType(user.GetService(
           AdWordsService.v201705.MediaService), MediaService)
 
-      ' Create the image.
-      Dim image As New Image()
-      image.data = MediaUtilities.GetAssetDataFromUrl(url)
-      image.type = MediaMediaType.IMAGE
+        ' Create the image.
+        Dim image As New Image()
+        image.data = MediaUtilities.GetAssetDataFromUrl(url)
+        image.type = MediaMediaType.IMAGE
 
-      ' Upload the image.
-      Dim result As Media() = mediaService.upload(New Media() {image})
-      Return result(0).mediaId
+        ' Upload the image.
+        Dim result As Media() = mediaService.upload(New Media() {image})
+        Return result(0).mediaId
+      End Using
     End Function
 
   End Class

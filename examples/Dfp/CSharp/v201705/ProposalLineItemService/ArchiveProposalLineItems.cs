@@ -48,67 +48,67 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ProposalLineItemService.
-      ProposalLineItemService proposalLineItemService =
-          (ProposalLineItemService) user.GetService(DfpService.v201705.ProposalLineItemService);
+      using (ProposalLineItemService proposalLineItemService =
+          (ProposalLineItemService) user.GetService(DfpService.v201705.ProposalLineItemService)) {
 
-      // Set the ID of the proposal line item to archive.
-      long proposalLineItemId = long.Parse(_T("INSERT_PROPOSAL_LINE_ITEM_ID_HERE"));
+        // Set the ID of the proposal line item to archive.
+        long proposalLineItemId = long.Parse(_T("INSERT_PROPOSAL_LINE_ITEM_ID_HERE"));
 
-      // Create statement to select a proposal line item by ID.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-          .AddValue("id", proposalLineItemId);
+        // Create statement to select a proposal line item by ID.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+            .AddValue("id", proposalLineItemId);
 
-      // Set default for page.
-      ProposalLineItemPage page = new ProposalLineItemPage();
-      List<string> proposalLineItemIds = new List<string>();
+        // Set default for page.
+        ProposalLineItemPage page = new ProposalLineItemPage();
+        List<string> proposalLineItemIds = new List<string>();
 
-      try {
-        do {
-          // Get proposal line items by statement.
-          page = proposalLineItemService.getProposalLineItemsByStatement(
-              statementBuilder.ToStatement());
+        try {
+          do {
+            // Get proposal line items by statement.
+            page = proposalLineItemService.getProposalLineItemsByStatement(
+                statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            int i = page.startIndex;
-            foreach (ProposalLineItem proposalLineItem in page.results) {
-              Console.WriteLine("{0}) Proposal line item with ID ='{1}' will be archived.",
-                  i++, proposalLineItem.id);
-              proposalLineItemIds.Add(proposalLineItem.id.ToString());
+            if (page.results != null) {
+              int i = page.startIndex;
+              foreach (ProposalLineItem proposalLineItem in page.results) {
+                Console.WriteLine("{0}) Proposal line item with ID ='{1}' will be archived.",
+                    i++, proposalLineItem.id);
+                proposalLineItemIds.Add(proposalLineItem.id.ToString());
+              }
+            }
+
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+          Console.WriteLine("Number of proposal line items to be archived: {0}",
+              proposalLineItemIds.Count);
+
+          if (proposalLineItemIds.Count > 0) {
+            // Modify statement.
+            statementBuilder.RemoveLimitAndOffset();
+
+            // Create action.
+            Google.Api.Ads.Dfp.v201705.ArchiveProposalLineItems action =
+                new Google.Api.Ads.Dfp.v201705.ArchiveProposalLineItems();
+
+            // Perform action.
+            UpdateResult result = proposalLineItemService.performProposalLineItemAction(action,
+                statementBuilder.ToStatement());
+
+            // Display results.
+            if (result != null && result.numChanges > 0) {
+              Console.WriteLine("Number of proposal line items archived: {0}", result.numChanges);
+            } else {
+              Console.WriteLine("No proposal line items were archived.");
             }
           }
-
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-
-        Console.WriteLine("Number of proposal line items to be archived: {0}",
-            proposalLineItemIds.Count);
-
-        if (proposalLineItemIds.Count > 0) {
-          // Modify statement.
-          statementBuilder.RemoveLimitAndOffset();
-
-          // Create action.
-          Google.Api.Ads.Dfp.v201705.ArchiveProposalLineItems action =
-              new Google.Api.Ads.Dfp.v201705.ArchiveProposalLineItems();
-
-          // Perform action.
-          UpdateResult result = proposalLineItemService.performProposalLineItemAction(action,
-              statementBuilder.ToStatement());
-
-          // Display results.
-          if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of proposal line items archived: {0}", result.numChanges);
-          } else {
-            Console.WriteLine("No proposal line items were archived.");
-          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to archive proposal line items. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to archive proposal line items. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

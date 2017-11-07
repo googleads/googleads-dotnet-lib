@@ -46,30 +46,30 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ProductPackageService.
-      ProductPackageService productPackageService =
-          (ProductPackageService) user.GetService(DfpService.v201705.ProductPackageService);
+      using (ProductPackageService productPackageService =
+          (ProductPackageService) user.GetService(DfpService.v201705.ProductPackageService)) {
 
-      // Set the ID of the rate card to associate the product package with.
-      long rateCardId = long.Parse(_T("INSERT_RATE_CARD_ID_HERE"));
+        // Set the ID of the rate card to associate the product package with.
+        long rateCardId = long.Parse(_T("INSERT_RATE_CARD_ID_HERE"));
 
-      // Create a product package.
-      ProductPackage productPackage = new ProductPackage();
-      productPackage.name = "Product package #" + new Random().Next(int.MaxValue);
-      productPackage.rateCardIds = new long[] {rateCardId};
+        // Create a product package.
+        ProductPackage productPackage = new ProductPackage();
+        productPackage.name = "Product package #" + new Random().Next(int.MaxValue);
+        productPackage.rateCardIds = new long[] { rateCardId };
 
-      try {
-        // Create the product packages on the server.
-        ProductPackage[] packages =
-            productPackageService.createProductPackages(new ProductPackage[] {productPackage});
+        try {
+          // Create the product packages on the server.
+          ProductPackage[] packages =
+              productPackageService.createProductPackages(new ProductPackage[] { productPackage });
 
-        foreach (ProductPackage createdProductPackage in packages) {
-          Console.WriteLine("A product package with ID \"{0}\" and name \"{1}\" was created.",
-              createdProductPackage.id, createdProductPackage.name);
-        }
-      } catch (Exception e) {
+          foreach (ProductPackage createdProductPackage in packages) {
+            Console.WriteLine("A product package with ID \"{0}\" and name \"{1}\" was created.",
+                createdProductPackage.id, createdProductPackage.name);
+          }
+        } catch (Exception e) {
           Console.WriteLine("Failed to create product packages. Exception says \"{0}\"",
-                            e.Message);
+              e.Message);
+        }
       }
     }
   }

@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -49,45 +49,46 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser, long rateCardId) {
-      PremiumRateService premiumRateService =
-          (PremiumRateService) dfpUser.GetService(DfpService.v201708.PremiumRateService);
+      using (PremiumRateService premiumRateService =
+          (PremiumRateService) dfpUser.GetService(DfpService.v201708.PremiumRateService)) {
 
-      // Create a statement to select premium rates.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("rateCardId = :rateCardId")
-          .OrderBy("id ASC")
-          .Limit(pageSize)
-          .AddValue("rateCardId", rateCardId);
+        // Create a statement to select premium rates.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("rateCardId = :rateCardId")
+            .OrderBy("id ASC")
+            .Limit(pageSize)
+            .AddValue("rateCardId", rateCardId);
 
-      // Retrieve a small amount of premium rates at a time, paging through until all
-      // premium rates have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        PremiumRatePage page = premiumRateService.getPremiumRatesByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of premium rates at a time, paging through until all
+        // premium rates have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          PremiumRatePage page = premiumRateService.getPremiumRatesByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each premium rate.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (PremiumRate premiumRate in page.results) {
-            Console.WriteLine(
-                "{0}) Premium rate with ID {1}, " +
+          // Print out some information for each premium rate.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (PremiumRate premiumRate in page.results) {
+              Console.WriteLine(
+                  "{0}) Premium rate with ID {1}, " +
                     "premium feature \"{2}\", " +
                     "and rate card ID {3} was found.",
-                i++,
-                premiumRate.id,
-                premiumRate.GetType().Name,
-                premiumRate.rateCardId
-            );
+                  i++,
+                  premiumRate.id,
+                  premiumRate.GetType().Name,
+                  premiumRate.rateCardId
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

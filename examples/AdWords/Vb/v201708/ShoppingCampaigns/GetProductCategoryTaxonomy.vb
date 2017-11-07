@@ -108,55 +108,55 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
-      ' Get the ConstantDataService.
-      Dim constantDataService As ConstantDataService = CType(user.GetService( _
+      Using constantDataService As ConstantDataService = CType(user.GetService(
           AdWordsService.v201708.ConstantDataService), ConstantDataService)
 
-      Dim selector As New Selector()
-      selector.predicates = New Predicate() {
-        Predicate.In(ProductBiddingCategoryData.Fields.Country, New String() {"US"})
-      }
+        Dim selector As New Selector()
+        selector.predicates = New Predicate() {
+          Predicate.In(ProductBiddingCategoryData.Fields.Country, New String() {"US"})
+        }
 
-      Try
-        Dim results As ProductBiddingCategoryData() = _
+        Try
+          Dim results As ProductBiddingCategoryData() =
             constantDataService.getProductBiddingCategoryData(selector)
 
-        Dim biddingCategories As New Dictionary(Of Long, ProductCategory)()
-        Dim rootCategories As New List(Of ProductCategory)()
+          Dim biddingCategories As New Dictionary(Of Long, ProductCategory)()
+          Dim rootCategories As New List(Of ProductCategory)()
 
-        For Each productBiddingCategory As ProductBiddingCategoryData In results
-          Dim id As Long = productBiddingCategory.dimensionValue.value
-          Dim parentId As Long = 0
-          Dim name As String = productBiddingCategory.displayValue(0).value
+          For Each productBiddingCategory As ProductBiddingCategoryData In results
+            Dim id As Long = productBiddingCategory.dimensionValue.value
+            Dim parentId As Long = 0
+            Dim name As String = productBiddingCategory.displayValue(0).value
 
-          If Not (productBiddingCategory.parentDimensionValue Is Nothing) Then
-            parentId = productBiddingCategory.parentDimensionValue.value
-          End If
-
-          If Not biddingCategories.ContainsKey(id) Then
-            biddingCategories.Add(id, New ProductCategory())
-          End If
-
-          Dim category As ProductCategory = biddingCategories(id)
-
-          If (parentId <> 0) Then
-            If Not biddingCategories.ContainsKey(parentId) Then
-              biddingCategories.Add(parentId, New ProductCategory())
+            If Not (productBiddingCategory.parentDimensionValue Is Nothing) Then
+              parentId = productBiddingCategory.parentDimensionValue.value
             End If
-            Dim parent As ProductCategory = biddingCategories(parentId)
-            parent.Children.Add(category)
-          Else
-            rootCategories.Add(category)
-          End If
 
-          category.Id = id
-          category.Name = name
-        Next
+            If Not biddingCategories.ContainsKey(id) Then
+              biddingCategories.Add(id, New ProductCategory())
+            End If
 
-        DisplayProductCategories(rootCategories, "")
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to create shopping campaign.", e)
-      End Try
+            Dim category As ProductCategory = biddingCategories(id)
+
+            If (parentId <> 0) Then
+              If Not biddingCategories.ContainsKey(parentId) Then
+                biddingCategories.Add(parentId, New ProductCategory())
+              End If
+              Dim parent As ProductCategory = biddingCategories(parentId)
+              parent.Children.Add(category)
+            Else
+              rootCategories.Add(category)
+            End If
+
+            category.Id = id
+            category.Name = name
+          Next
+
+          DisplayProductCategories(rootCategories, "")
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to create shopping campaign.", e)
+        End Try
+      End Using
     End Sub
 
     ''' <summary>

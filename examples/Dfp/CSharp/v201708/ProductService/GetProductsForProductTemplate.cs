@@ -49,42 +49,43 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser, long productTemplateId) {
-      ProductService productService =
-          (ProductService) dfpUser.GetService(DfpService.v201708.ProductService);
+      using (ProductService productService =
+          (ProductService) dfpUser.GetService(DfpService.v201708.ProductService)) {
 
-      // Create a statement to select products.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("productTemplateId = :productTemplateId")
-          .OrderBy("id ASC")
-          .Limit(pageSize)
-          .AddValue("productTemplateId", productTemplateId);
+        // Create a statement to select products.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("productTemplateId = :productTemplateId")
+            .OrderBy("id ASC")
+            .Limit(pageSize)
+            .AddValue("productTemplateId", productTemplateId);
 
-      // Retrieve a small amount of products at a time, paging through until all
-      // products have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        ProductPage page = productService.getProductsByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of products at a time, paging through until all
+        // products have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          ProductPage page = productService.getProductsByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each product.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (Product product in page.results) {
-            Console.WriteLine(
-                "{0}) Product with ID {1} and name \"{2}\" was found.",
-                i++,
-                product.id,
-                product.name
-            );
+          // Print out some information for each product.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (Product product in page.results) {
+              Console.WriteLine(
+                  "{0}) Product with ID {1} and name \"{2}\" was found.",
+                  i++,
+                  product.id,
+                  product.name
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

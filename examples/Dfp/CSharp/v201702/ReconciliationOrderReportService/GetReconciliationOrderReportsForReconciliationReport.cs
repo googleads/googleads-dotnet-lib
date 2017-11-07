@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -49,42 +49,43 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser, long reconciliationReportId) {
-      ReconciliationOrderReportService reconciliationOrderReportService =
-          (ReconciliationOrderReportService) dfpUser.GetService(DfpService.v201702.ReconciliationOrderReportService);
+      using (ReconciliationOrderReportService reconciliationOrderReportService =
+          (ReconciliationOrderReportService) dfpUser.GetService(DfpService.v201702.ReconciliationOrderReportService)) {
 
-      // Create a statement to select reconciliation order reports.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("reconciliationReportId = :reconciliationReportId")
-          .OrderBy("id ASC")
-          .Limit(pageSize)
-          .AddValue("reconciliationReportId", reconciliationReportId);
+        // Create a statement to select reconciliation order reports.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("reconciliationReportId = :reconciliationReportId")
+            .OrderBy("id ASC")
+            .Limit(pageSize)
+            .AddValue("reconciliationReportId", reconciliationReportId);
 
-      // Retrieve a small amount of reconciliation order reports at a time, paging through until all
-      // reconciliation order reports have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        ReconciliationOrderReportPage page = reconciliationOrderReportService.getReconciliationOrderReportsByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of reconciliation order reports at a time, paging through until all
+        // reconciliation order reports have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          ReconciliationOrderReportPage page = reconciliationOrderReportService.getReconciliationOrderReportsByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each reconciliation order report.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (ReconciliationOrderReport reconciliationOrderReport in page.results) {
-            Console.WriteLine(
-                "{0}) Reconciliation order report with ID {1} and status \"{2}\" was found.",
-                i++,
-                reconciliationOrderReport.id,
-                reconciliationOrderReport.status
-            );
+          // Print out some information for each reconciliation order report.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (ReconciliationOrderReport reconciliationOrderReport in page.results) {
+              Console.WriteLine(
+                  "{0}) Reconciliation order report with ID {1} and status \"{2}\" was found.",
+                  i++,
+                  reconciliationOrderReport.id,
+                  reconciliationOrderReport.status
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

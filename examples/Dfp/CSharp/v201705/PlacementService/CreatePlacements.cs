@@ -30,8 +30,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example creates new placements for various ad unit sizes. To determine " +
-            "which placements exist, run GetAllPlacements.cs.";
+        return "This code example creates new placements for various ad unit sizes. To " +
+            "determine which placements exist, run GetAllPlacements.cs.";
       }
     }
 
@@ -48,111 +48,110 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the InventoryService.
-      InventoryService inventoryService =
-          (InventoryService) user.GetService(DfpService.v201705.InventoryService);
+      using (InventoryService inventoryService =
+          (InventoryService) user.GetService(DfpService.v201705.InventoryService))
 
-      // Get the PlacementService.
-      PlacementService placementService =
-          (PlacementService) user.GetService(DfpService.v201705.PlacementService);
+      using (PlacementService placementService =
+          (PlacementService) user.GetService(DfpService.v201705.PlacementService)) {
 
-      // Create local placement object to store skyscraper ad units.
-      Placement skyscraperAdUnitPlacement = new Placement();
-      skyscraperAdUnitPlacement.name = string.Format("Skyscraper AdUnit Placement #{0}",
-          this.GetTimeStamp());
-      skyscraperAdUnitPlacement.description = "Contains ad units that can hold creatives " +
-          "of size 120x600";
+        // Create local placement object to store skyscraper ad units.
+        Placement skyscraperAdUnitPlacement = new Placement();
+        skyscraperAdUnitPlacement.name = string.Format("Skyscraper AdUnit Placement #{0}",
+            this.GetTimeStamp());
+        skyscraperAdUnitPlacement.description = "Contains ad units that can hold creatives " +
+            "of size 120x600";
 
-      // Create local placement object to store medium square ad units.
-      Placement mediumSquareAdUnitPlacement = new Placement();
-      mediumSquareAdUnitPlacement.name = string.Format("Medium Square AdUnit Placement #{0}",
-          this.GetTimeStamp());
-      mediumSquareAdUnitPlacement.description = "Contains ad units that can hold creatives " +
-          "of size 300x250";
+        // Create local placement object to store medium square ad units.
+        Placement mediumSquareAdUnitPlacement = new Placement();
+        mediumSquareAdUnitPlacement.name = string.Format("Medium Square AdUnit Placement #{0}",
+            this.GetTimeStamp());
+        mediumSquareAdUnitPlacement.description = "Contains ad units that can hold creatives " +
+            "of size 300x250";
 
-      // Create local placement object to store banner ad units.
-      Placement bannerAdUnitPlacement = new Placement();
-      bannerAdUnitPlacement.name = string.Format("Banner AdUnit Placement #{0}",
-          this.GetTimeStamp());
-      bannerAdUnitPlacement.description = "Contains ad units that can hold creatives " +
-          "of size 468x60";
+        // Create local placement object to store banner ad units.
+        Placement bannerAdUnitPlacement = new Placement();
+        bannerAdUnitPlacement.name = string.Format("Banner AdUnit Placement #{0}",
+            this.GetTimeStamp());
+        bannerAdUnitPlacement.description = "Contains ad units that can hold creatives " +
+            "of size 468x60";
 
-      List<Placement> placementList = new List<Placement>();
+        List<Placement> placementList = new List<Placement>();
 
-      // Get the first 500 ad units.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        // Get the first 500 ad units.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .OrderBy("id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      List<string> mediumSquareTargetedUnitIds = new List<string>();
-      List<string> skyscraperTargetedUnitIds = new List<string>();
-      List<string> bannerTargetedUnitIds = new List<string>();
+        List<string> mediumSquareTargetedUnitIds = new List<string>();
+        List<string> skyscraperTargetedUnitIds = new List<string>();
+        List<string> bannerTargetedUnitIds = new List<string>();
 
-      try {
-        AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
+        try {
+          AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
-        // Separate the ad units by size.
-        if (page.results != null) {
-          foreach (AdUnit adUnit in page.results) {
-            if (adUnit.parentId != null && adUnit.adUnitSizes != null) {
-              foreach (AdUnitSize adUnitSize in adUnit.adUnitSizes) {
-                Size size = adUnitSize.size;
-                if (size.width == 300 && size.height == 250) {
-                  if (!mediumSquareTargetedUnitIds.Contains(adUnit.id)) {
-                    mediumSquareTargetedUnitIds.Add(adUnit.id);
-                  }
-                } else if (size.width == 120 && size.height == 600) {
-                  if (!skyscraperTargetedUnitIds.Contains(adUnit.id)) {
-                    skyscraperTargetedUnitIds.Add(adUnit.id);
-                  }
-                } else if (size.width == 468 && size.height == 60) {
-                  if (!bannerTargetedUnitIds.Contains(adUnit.id)) {
-                    bannerTargetedUnitIds.Add(adUnit.id);
+          // Separate the ad units by size.
+          if (page.results != null) {
+            foreach (AdUnit adUnit in page.results) {
+              if (adUnit.parentId != null && adUnit.adUnitSizes != null) {
+                foreach (AdUnitSize adUnitSize in adUnit.adUnitSizes) {
+                  Size size = adUnitSize.size;
+                  if (size.width == 300 && size.height == 250) {
+                    if (!mediumSquareTargetedUnitIds.Contains(adUnit.id)) {
+                      mediumSquareTargetedUnitIds.Add(adUnit.id);
+                    }
+                  } else if (size.width == 120 && size.height == 600) {
+                    if (!skyscraperTargetedUnitIds.Contains(adUnit.id)) {
+                      skyscraperTargetedUnitIds.Add(adUnit.id);
+                    }
+                  } else if (size.width == 468 && size.height == 60) {
+                    if (!bannerTargetedUnitIds.Contains(adUnit.id)) {
+                      bannerTargetedUnitIds.Add(adUnit.id);
+                    }
                   }
                 }
               }
             }
           }
-        }
-        mediumSquareAdUnitPlacement.targetedAdUnitIds = mediumSquareTargetedUnitIds.ToArray();
-        skyscraperAdUnitPlacement.targetedAdUnitIds = skyscraperTargetedUnitIds.ToArray();
-        bannerAdUnitPlacement.targetedAdUnitIds = bannerTargetedUnitIds.ToArray();
+          mediumSquareAdUnitPlacement.targetedAdUnitIds = mediumSquareTargetedUnitIds.ToArray();
+          skyscraperAdUnitPlacement.targetedAdUnitIds = skyscraperTargetedUnitIds.ToArray();
+          bannerAdUnitPlacement.targetedAdUnitIds = bannerTargetedUnitIds.ToArray();
 
 
-        // Only create placements with one or more ad unit.
-        if (mediumSquareAdUnitPlacement.targetedAdUnitIds.Length != 0) {
-          placementList.Add(mediumSquareAdUnitPlacement);
-        }
-
-        if (skyscraperAdUnitPlacement.targetedAdUnitIds.Length != 0) {
-          placementList.Add(skyscraperAdUnitPlacement);
-        }
-
-        if (bannerAdUnitPlacement.targetedAdUnitIds.Length != 0) {
-          placementList.Add(bannerAdUnitPlacement);
-        }
-
-        Placement[] placements =
-          placementService.createPlacements(placementList.ToArray());
-
-        // Display results.
-        if (placements != null) {
-          foreach (Placement placement in placements) {
-            Console.Write("A placement with ID = '{0}', name ='{1}', and containing " +
-                "ad units {{", placement.id, placement.name);
-
-            foreach (string adUnitId in placement.targetedAdUnitIds) {
-              Console.Write("{0}, ", adUnitId);
-            }
-            Console.WriteLine("} was created.");
+          // Only create placements with one or more ad unit.
+          if (mediumSquareAdUnitPlacement.targetedAdUnitIds.Length != 0) {
+            placementList.Add(mediumSquareAdUnitPlacement);
           }
-        } else {
-          Console.WriteLine("No placements created.");
-        }
 
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create placements. Exception says \"{0}\"",
-            e.Message);
+          if (skyscraperAdUnitPlacement.targetedAdUnitIds.Length != 0) {
+            placementList.Add(skyscraperAdUnitPlacement);
+          }
+
+          if (bannerAdUnitPlacement.targetedAdUnitIds.Length != 0) {
+            placementList.Add(bannerAdUnitPlacement);
+          }
+
+          Placement[] placements =
+            placementService.createPlacements(placementList.ToArray());
+
+          // Display results.
+          if (placements != null) {
+            foreach (Placement placement in placements) {
+              Console.Write("A placement with ID = '{0}', name ='{1}', and containing " +
+                  "ad units {{", placement.id, placement.name);
+
+              foreach (string adUnitId in placement.targetedAdUnitIds) {
+                Console.Write("{0}, ", adUnitId);
+              }
+              Console.WriteLine("} was created.");
+            }
+          } else {
+            Console.WriteLine("No placements created.");
+          }
+
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create placements. Exception says \"{0}\"",
+              e.Message);
+        }
       }
     }
   }

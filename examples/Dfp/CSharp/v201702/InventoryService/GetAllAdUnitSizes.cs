@@ -48,26 +48,27 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      InventoryService inventoryService =
-          (InventoryService) dfpUser.GetService(DfpService.v201702.InventoryService);
+      using (InventoryService inventoryService =
+          (InventoryService) dfpUser.GetService(DfpService.v201702.InventoryService)) {
 
-      // Create a statement to select ad unit sizes.
-      StatementBuilder statementBuilder = new StatementBuilder();
+        // Create a statement to select ad unit sizes.
+        StatementBuilder statementBuilder = new StatementBuilder();
 
-      AdUnitSize[] adUnitSizes = inventoryService.getAdUnitSizesByStatement(
-          statementBuilder.ToStatement());
+        AdUnitSize[] adUnitSizes = inventoryService.getAdUnitSizesByStatement(
+            statementBuilder.ToStatement());
 
-      // Print out some information for each ad unit size.
-      int i = 0;
-      foreach (AdUnitSize adUnitSize in adUnitSizes) {
-        Console.WriteLine(
-            "{0}) Ad unit size with dimensions \"{1}\" was found.",
-            i++,
-            adUnitSize.fullDisplayString
-        );
+        // Print out some information for each ad unit size.
+        int i = 0;
+        foreach (AdUnitSize adUnitSize in adUnitSizes) {
+          Console.WriteLine(
+              "{0}) Ad unit size with dimensions \"{1}\" was found.",
+              i++,
+              adUnitSize.fullDisplayString
+          );
+        }
+
+        Console.WriteLine("Number of results found: {0}", adUnitSizes.Length);
       }
-
-      Console.WriteLine("Number of results found: {0}", adUnitSizes.Length);
     }
   }
 }

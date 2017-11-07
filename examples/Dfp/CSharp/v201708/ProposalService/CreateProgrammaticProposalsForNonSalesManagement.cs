@@ -56,40 +56,38 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// </summary>
     public void Run(DfpUser user, long primarySalespersonId, long primaryTraffickerId,
         long programmaticBuyerId) {
-      // Get the ProposalService.
-      ProposalService proposalService =
-          (ProposalService) user.GetService(DfpService.v201708.ProposalService);
+      using (ProposalService proposalService =
+          (ProposalService) user.GetService(DfpService.v201708.ProposalService)) {
 
-      // Create a proposal.
-      Proposal proposal = new Proposal();
-      proposal.name = "Programmatic proposal #" + new Random().Next(int.MaxValue);
+        // Create a proposal.
+        Proposal proposal = new Proposal();
+        proposal.name = "Programmatic proposal #" + new Random().Next(int.MaxValue);
 
-      // Set required Marketplace information
-      proposal.marketplaceInfo = new ProposalMarketplaceInfo() {
-        buyerAccountId = programmaticBuyerId
-      };
-      proposal.isProgrammatic = true;
-      proposal.primaryTraffickerId = primaryTraffickerId;
+        // Set required Marketplace information
+        proposal.marketplaceInfo = new ProposalMarketplaceInfo() {
+          buyerAccountId = programmaticBuyerId
+        };
+        proposal.isProgrammatic = true;
+        proposal.primaryTraffickerId = primaryTraffickerId;
 
-      // Create salesperson splits for the primary salesperson and secondary salespeople.
-      SalespersonSplit primarySalesperson = new SalespersonSplit();
-      primarySalesperson.userId = primarySalespersonId;
-      primarySalesperson.split = 100000;
-      proposal.primarySalesperson = primarySalesperson;
+        // Create salesperson splits for the primary salesperson and secondary salespeople.
+        SalespersonSplit primarySalesperson = new SalespersonSplit();
+        primarySalesperson.userId = primarySalespersonId;
+        primarySalesperson.split = 100000;
+        proposal.primarySalesperson = primarySalesperson;
 
-      try {
-        // Create the proposal on the server.
-        Proposal[] proposals = proposalService.createProposals(new Proposal[] {proposal});
+        try {
+          // Create the proposal on the server.
+          Proposal[] proposals = proposalService.createProposals(new Proposal[] { proposal });
 
-        foreach (Proposal createdProposal in proposals) {
-          Console.WriteLine("A programmatic proposal with ID \"{0}\" "
-              + "and name \"{1}\" was created.",
-              createdProposal.id,
-              createdProposal.name);
-        }
-      } catch (Exception e) {
+          foreach (Proposal createdProposal in proposals) {
+            Console.WriteLine("A programmatic proposal with ID \"{0}\" and name \"{1}\" " +
+                "was created.", createdProposal.id, createdProposal.name);
+          }
+        } catch (Exception e) {
           Console.WriteLine("Failed to create proposals. Exception says \"{0}\"",
-                            e.Message);
+              e.Message);
+        }
       }
     }
   }

@@ -49,40 +49,41 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// </summary>
     /// <param name="dfpUser">The DFP user object running the code example.</param>
     public void Run(DfpUser dfpUser) {
-      NativeStyleService NativeStyleService =
-          (NativeStyleService) dfpUser.GetService(DfpService.v201705.NativeStyleService);
+      using (NativeStyleService NativeStyleService =
+          (NativeStyleService) dfpUser.GetService(DfpService.v201705.NativeStyleService)) {
 
-      // Create a statement to select NativeStyles.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .OrderBy("id ASC")
-          .Limit(pageSize);
+        // Create a statement to select NativeStyles.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .OrderBy("id ASC")
+            .Limit(pageSize);
 
-      // Retrieve a small amount of native styles at a time, paging through until all
-      // native styles have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        NativeStylePage page = NativeStyleService.getNativeStylesByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of native styles at a time, paging through until all
+        // native styles have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          NativeStylePage page = NativeStyleService.getNativeStylesByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each native style.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (NativeStyle nativeStyle in page.results) {
-            Console.WriteLine(
-                "{0}) Native style with ID {1} and name \"{2}\" was found.",
-                i++,
-                nativeStyle.id,
-                nativeStyle.name
-            );
+          // Print out some information for each native style.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (NativeStyle nativeStyle in page.results) {
+              Console.WriteLine(
+                  "{0}) Native style with ID {1} and name \"{2}\" was found.",
+                  i++,
+                  nativeStyle.id,
+                  nativeStyle.name
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

@@ -58,67 +58,68 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the PublisherQueryLanguageService.
-      PublisherQueryLanguageService pqlService =
+      using (PublisherQueryLanguageService pqlService =
           (PublisherQueryLanguageService) user.GetService(
-              DfpService.v201708.PublisherQueryLanguageService);
+              DfpService.v201708.PublisherQueryLanguageService)) {
 
-      // Create statement to select recent changes. Change_History only supports ordering by
-      // descending ChangeDateTime. Offset is not supported. To page, use the change ID of the
-      // earliest change as a pagination token. A date time range is required
-      // when querying this table.
-      System.DateTime endDateTime = System.DateTime.Now;
-      System.DateTime startDateTime = endDateTime.AddDays(-1);
+        // Create statement to select recent changes. Change_History only supports ordering by
+        // descending ChangeDateTime. Offset is not supported. To page, use the change ID of the
+        // earliest change as a pagination token. A date time range is required
+        // when querying this table.
+        System.DateTime endDateTime = System.DateTime.Now;
+        System.DateTime startDateTime = endDateTime.AddDays(-1);
 
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Select("Id, ChangeDateTime, EntityId, EntityType, Operation, UserId")
-          .From("Change_History")
-          .Where("ChangeDateTime < :endDateTime AND ChangeDateTime > :startDateTime")
-          .OrderBy("ChangeDateTime DESC")
-          .AddValue("startDateTime",
-              DateTimeUtilities.FromDateTime(startDateTime, "America/New_York"))
-          .AddValue("endDateTime",
-              DateTimeUtilities.FromDateTime(endDateTime, "America/New_York"))
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Select("Id, ChangeDateTime, EntityId, EntityType, Operation, UserId")
+            .From("Change_History")
+            .Where("ChangeDateTime < :endDateTime AND ChangeDateTime > :startDateTime")
+            .OrderBy("ChangeDateTime DESC")
+            .AddValue("startDateTime",
+                DateTimeUtilities.FromDateTime(startDateTime, "America/New_York"))
+            .AddValue("endDateTime",
+                DateTimeUtilities.FromDateTime(endDateTime, "America/New_York"))
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      int resultSetSize = 0;
-      List<Row> allRows = new List<Row>();
-      ResultSet resultSet;
+        int resultSetSize = 0;
+        List<Row> allRows = new List<Row>();
+        ResultSet resultSet;
 
-      do {
-        resultSet = pqlService.select(statementBuilder.ToStatement());
+        do {
+          resultSet = pqlService.select(statementBuilder.ToStatement());
 
-        if (resultSet.rows != null && resultSet.rows.Length > 0) {
-          // Get the earliest change ID in the result set.
-          Row lastRow = resultSet.rows[resultSet.rows.Length - 1];
-          string lastId = (string) PqlUtilities.GetValue(lastRow.values[0]);
+          if (resultSet.rows != null && resultSet.rows.Length > 0) {
+            // Get the earliest change ID in the result set.
+            Row lastRow = resultSet.rows[resultSet.rows.Length - 1];
+            string lastId = (string) PqlUtilities.GetValue(lastRow.values[0]);
 
-          // Collect all changes from each page.
-          allRows.AddRange(resultSet.rows);
+            // Collect all changes from each page.
+            allRows.AddRange(resultSet.rows);
 
-          // Display results.
-          Console.WriteLine(PqlUtilities.ResultSetToString(resultSet));
+            // Display results.
+            Console.WriteLine(PqlUtilities.ResultSetToString(resultSet));
 
-          // Use the earliest change ID in the result set to page.
-          statementBuilder
-            .Where("Id < :id AND ChangeDateTime < :endDateTime AND ChangeDateTime > :startDateTime")
-            .AddValue("id", lastId);
-        }
-        resultSetSize = resultSet.rows == null ? 0 : resultSet.rows.Length;
-      } while (resultSetSize == StatementBuilder.SUGGESTED_PAGE_LIMIT);
+            // Use the earliest change ID in the result set to page.
+            statementBuilder
+              .Where("Id < :id AND ChangeDateTime < :endDateTime AND " +
+                  "ChangeDateTime > :startDateTime")
+              .AddValue("id", lastId);
+          }
+          resultSetSize = resultSet.rows == null ? 0 : resultSet.rows.Length;
+        } while (resultSetSize == StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      Console.WriteLine("Number of results found: " + allRows.Count);
+        Console.WriteLine("Number of results found: " + allRows.Count);
 
-      // Optionally, save all rows to a CSV.
-      // Get a string array representation of the data rows.
-      resultSet.rows = allRows.ToArray();
-      List<String[]> rows = PqlUtilities.ResultSetToStringArrayList(resultSet);
+        // Optionally, save all rows to a CSV.
+        // Get a string array representation of the data rows.
+        resultSet.rows = allRows.ToArray();
+        List<String[]> rows = PqlUtilities.ResultSetToStringArrayList(resultSet);
 
-      // Write the contents to a csv file.
-      CsvFile file = new CsvFile();
-      file.Headers.AddRange(rows[0]);
-      file.Records.AddRange(rows.GetRange(1, rows.Count - 1).ToArray());
-      file.Write("recent_changes_" + this.GetTimeStamp() + ".csv");
+        // Write the contents to a csv file.
+        CsvFile file = new CsvFile();
+        file.Headers.AddRange(rows[0]);
+        file.Records.AddRange(rows.GetRange(1, rows.Count - 1).ToArray());
+        file.Write("recent_changes_" + this.GetTimeStamp() + ".csv");
+      }
     }
   }
 }

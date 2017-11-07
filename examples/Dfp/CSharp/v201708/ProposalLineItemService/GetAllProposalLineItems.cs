@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,40 +48,42 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      ProposalLineItemService proposalLineItemService =
-          (ProposalLineItemService) dfpUser.GetService(DfpService.v201708.ProposalLineItemService);
+      using (ProposalLineItemService proposalLineItemService =
+          (ProposalLineItemService) dfpUser.GetService(
+              DfpService.v201708.ProposalLineItemService)) {
 
-      // Create a statement to select proposal line items.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .OrderBy("id ASC")
-          .Limit(pageSize);
+        // Create a statement to select proposal line items.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .OrderBy("id ASC")
+            .Limit(pageSize);
 
-      // Retrieve a small amount of proposal line items at a time, paging through until all
-      // proposal line items have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        ProposalLineItemPage page = proposalLineItemService.getProposalLineItemsByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of proposal line items at a time, paging through until all
+        // proposal line items have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          ProposalLineItemPage page = proposalLineItemService.getProposalLineItemsByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each proposal line item.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (ProposalLineItem proposalLineItem in page.results) {
-            Console.WriteLine(
-                "{0}) Proposal line item with ID {1} and name \"{2}\" was found.",
-                i++,
-                proposalLineItem.id,
-                proposalLineItem.name
-            );
+          // Print out some information for each proposal line item.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (ProposalLineItem proposalLineItem in page.results) {
+              Console.WriteLine(
+                  "{0}) Proposal line item with ID {1} and name \"{2}\" was found.",
+                  i++,
+                  proposalLineItem.id,
+                  proposalLineItem.name
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

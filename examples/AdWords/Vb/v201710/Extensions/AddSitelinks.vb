@@ -59,6 +59,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
     ''' <param name="campaignId">Id of the campaign with which sitelinks are associated.
     ''' </param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
+      ' [START createExtSetting] MOE:strip_line
       Using campaignExtensionSettingService As CampaignExtensionSettingService =
           DirectCast(user.GetService(AdWordsService.v201710.CampaignExtensionSettingService),
                                     CampaignExtensionSettingService)
@@ -201,6 +202,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
           Throw New System.ApplicationException("Failed to create extension settings.", e)
         End Try
       End Using
+      ' [END createExtSetting] MOE:strip_line
     End Sub
 
   End Class

@@ -1,3 +1,14 @@
+22.3.1
+======
+AdWords:
+  - Updated code examples to dispose services.
+
+DFP:
+  - Updated code examples to dispose services.
+
+Common:
+  - Fixed issue #124.
+
 22.3.0
 ======
 AdWords:

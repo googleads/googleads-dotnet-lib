@@ -50,59 +50,59 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the LabelService.
-      LabelService labelService =
-          (LabelService) user.GetService(DfpService.v201708.LabelService);
+      using (LabelService labelService =
+          (LabelService) user.GetService(DfpService.v201708.LabelService)) {
 
-      // Set the ID of the label to deactivate.
-      int labelId = int.Parse(_T("INSERT_LABEL_ID_HERE"));
+        // Set the ID of the label to deactivate.
+        int labelId = int.Parse(_T("INSERT_LABEL_ID_HERE"));
 
-      // Create statement text to select the label.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", labelId);
+        // Create statement text to select the label.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", labelId);
 
-      // Set default for page.
-      LabelPage page = new LabelPage();
+        // Set default for page.
+        LabelPage page = new LabelPage();
 
-      try {
-        do {
-          // Get labels by statement.
-          page = labelService.getLabelsByStatement(statementBuilder.ToStatement());
+        try {
+          do {
+            // Get labels by statement.
+            page = labelService.getLabelsByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            int i = page.startIndex;
-            foreach (Label label in page.results) {
-              Console.WriteLine("{0}) Label with ID '{1}', name '{2}' will be deactivated.",
-                  i, label.id, label.name);
-              i++;
+            if (page.results != null) {
+              int i = page.startIndex;
+              foreach (Label label in page.results) {
+                Console.WriteLine("{0}) Label with ID '{1}', name '{2}' will be deactivated.",
+                    i, label.id, label.name);
+                i++;
+              }
             }
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+          Console.WriteLine("Number of labels to be deactivated: " + page.totalResultSetSize);
+
+          // Modify statement for action.
+          statementBuilder.RemoveLimitAndOffset();
+
+          // Create action.
+          DeactivateLabels action = new DeactivateLabels();
+
+          // Perform action.
+          UpdateResult result = labelService.performLabelAction(action,
+              statementBuilder.ToStatement());
+
+          // Display results.
+          if (result != null && result.numChanges > 0) {
+            Console.WriteLine("Number of labels deactivated: " + result.numChanges);
+          } else {
+            Console.WriteLine("No labels were deactivated.");
           }
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-
-        Console.WriteLine("Number of labels to be deactivated: " + page.totalResultSetSize);
-
-        // Modify statement for action.
-        statementBuilder.RemoveLimitAndOffset();
-
-        // Create action.
-        DeactivateLabels action = new DeactivateLabels();
-
-        // Perform action.
-        UpdateResult result = labelService.performLabelAction(action,
-            statementBuilder.ToStatement());
-
-        // Display results.
-        if (result != null && result.numChanges > 0) {
-          Console.WriteLine("Number of labels deactivated: " + result.numChanges);
-        } else {
-          Console.WriteLine("No labels were deactivated.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to deactivate labels. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to deactivate labels. Exception says \"{0}\"", e.Message);
       }
     }
   }

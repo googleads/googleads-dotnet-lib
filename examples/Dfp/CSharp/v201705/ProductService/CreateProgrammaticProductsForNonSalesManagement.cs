@@ -13,7 +13,6 @@
 // limitations under the License.
 
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.Util.v201705;
 using Google.Api.Ads.Dfp.v201705;
 
 using System;
@@ -46,62 +45,61 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code examples.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ProductService.
-      ProductService productTemplateService =
-          (ProductService) user.GetService(DfpService.v201705.ProductService);
+      using (ProductService productTemplateService =
+          (ProductService) user.GetService(DfpService.v201705.ProductService))
 
-      // Get the NetworkService.
-      NetworkService networkService =
-          (NetworkService) user.GetService(DfpService.v201705.NetworkService);
+      using (NetworkService networkService =
+          (NetworkService) user.GetService(DfpService.v201705.NetworkService)) {
 
-      // Create a product.
-      Product product = new Product();
-      product.name = "Non-sales programmatic product #" + new Random().Next(int.MaxValue);
-      
-      // Set required Marketplace information.
-      product.productMarketplaceInfo = new ProductMarketplaceInfo() {
-        additionalTerms = "Additional terms for the product",
-        adExchangeEnvironment = AdExchangeEnvironment.DISPLAY
-      };
+        // Create a product.
+        Product product = new Product();
+        product.name = "Non-sales programmatic product #" + new Random().Next(int.MaxValue);
 
-      // Set common required fields for a programmatic product.
-      product.productType = ProductType.DFP;
-      product.rateType = RateType.CPM;
-      product.lineItemType = LineItemType.STANDARD;
-      product.priority = 8;
-      product.environmentType = EnvironmentType.BROWSER;
-      product.rate = new Money() {currencyCode = "USD", microAmount = 6000000L};
-      
-      CreativePlaceholder placeholder = new CreativePlaceholder();
-      placeholder.size = new Size() {width = 300, height = 250, isAspectRatio = false};
-      product.creativePlaceholders = new CreativePlaceholder[] { placeholder };
+        // Set required Marketplace information.
+        product.productMarketplaceInfo = new ProductMarketplaceInfo() {
+          additionalTerms = "Additional terms for the product",
+          adExchangeEnvironment = AdExchangeEnvironment.DISPLAY
+        };
 
-      // Create inventory targeting to serve to run of network..
-      String rootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
-      AdUnitTargeting adUnitTargeting = new AdUnitTargeting();
-      adUnitTargeting.adUnitId = rootAdUnitId;
-      adUnitTargeting.includeDescendants = true;
+        // Set common required fields for a programmatic product.
+        product.productType = ProductType.DFP;
+        product.rateType = RateType.CPM;
+        product.lineItemType = LineItemType.STANDARD;
+        product.priority = 8;
+        product.environmentType = EnvironmentType.BROWSER;
+        product.rate = new Money() { currencyCode = "USD", microAmount = 6000000L };
 
-      Targeting productTargeting = new Targeting();
-      productTargeting.inventoryTargeting = new InventoryTargeting() {
-        targetedAdUnits = new AdUnitTargeting[] { adUnitTargeting }
-      };
+        CreativePlaceholder placeholder = new CreativePlaceholder();
+        placeholder.size = new Size() { width = 300, height = 250, isAspectRatio = false };
+        product.creativePlaceholders = new CreativePlaceholder[] { placeholder };
 
-      product.builtInTargeting = productTargeting;
-  
-      try {
-        // Create the product on the server.
-        Product[] products = productTemplateService.createProducts(
-            new Product[] {product});
+        // Create inventory targeting to serve to run of network..
+        String rootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
+        AdUnitTargeting adUnitTargeting = new AdUnitTargeting();
+        adUnitTargeting.adUnitId = rootAdUnitId;
+        adUnitTargeting.includeDescendants = true;
 
-        foreach (Product createdProduct in products) {
-          Console.WriteLine("A programmatic product with ID \"{0}\" and name \"{1}\" was created.",
-              createdProduct.id, createdProduct.name);
+        Targeting productTargeting = new Targeting();
+        productTargeting.inventoryTargeting = new InventoryTargeting() {
+          targetedAdUnits = new AdUnitTargeting[] { adUnitTargeting }
+        };
+
+        product.builtInTargeting = productTargeting;
+
+        try {
+          // Create the product on the server.
+          Product[] products = productTemplateService.createProducts(
+              new Product[] { product });
+
+          foreach (Product createdProduct in products) {
+            Console.WriteLine("A programmatic product with ID \"{0}\" and name \"{1}\" " +
+                "was created.", createdProduct.id, createdProduct.name);
+          }
+
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create products. Exception says \"{0}\"",
+              e.Message);
         }
-
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create products. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

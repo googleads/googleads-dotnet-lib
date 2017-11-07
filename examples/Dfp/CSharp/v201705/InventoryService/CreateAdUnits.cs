@@ -47,55 +47,55 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the InventoryService.
-      InventoryService inventoryService =
-          (InventoryService) user.GetService(DfpService.v201705.InventoryService);
+      using (InventoryService inventoryService =
+          (InventoryService) user.GetService(DfpService.v201705.InventoryService)) {
 
-      // Get the NetworkService.
-      NetworkService networkService =
-          (NetworkService) user.GetService(DfpService.v201705.NetworkService);
+        // Get the NetworkService.
+        NetworkService networkService =
+            (NetworkService) user.GetService(DfpService.v201705.NetworkService);
 
-      string effectiveRootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
+        string effectiveRootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
 
-      // Create an array to store local ad unit objects.
-      AdUnit[] adUnits = new AdUnit[5];
+        // Create an array to store local ad unit objects.
+        AdUnit[] adUnits = new AdUnit[5];
 
-      for (int i = 0; i < 5; i++) {
-        AdUnit adUnit = new AdUnit();
-        adUnit.name = string.Format("Ad_Unit_{0}", i);
-        adUnit.parentId = effectiveRootAdUnitId;
+        for (int i = 0; i < 5; i++) {
+          AdUnit adUnit = new AdUnit();
+          adUnit.name = string.Format("Ad_Unit_{0}", i);
+          adUnit.parentId = effectiveRootAdUnitId;
 
-        adUnit.description = "Ad unit description.";
-        adUnit.targetWindow = AdUnitTargetWindow.BLANK;
+          adUnit.description = "Ad unit description.";
+          adUnit.targetWindow = AdUnitTargetWindow.BLANK;
 
-        // Set the size of possible creatives that can match this ad unit.
-        Size size = new Size();
-        size.width = 300;
-        size.height = 250;
+          // Set the size of possible creatives that can match this ad unit.
+          Size size = new Size();
+          size.width = 300;
+          size.height = 250;
 
-        // Create ad unit size.
-        AdUnitSize adUnitSize = new AdUnitSize();
-        adUnitSize.size = size;
-        adUnitSize.environmentType = EnvironmentType.BROWSER;
+          // Create ad unit size.
+          AdUnitSize adUnitSize = new AdUnitSize();
+          adUnitSize.size = size;
+          adUnitSize.environmentType = EnvironmentType.BROWSER;
 
-        adUnit.adUnitSizes = new AdUnitSize[] {adUnitSize};
-        adUnits[i] = adUnit;
-      }
-
-      try {
-        // Create the ad units on the server.
-        adUnits = inventoryService.createAdUnits(adUnits);
-
-        if (adUnits != null) {
-          foreach (AdUnit adUnit in adUnits) {
-            Console.WriteLine("An ad unit with ID = '{0}' was created under parent with " +
-                "ID = '{1}'.", adUnit.id, adUnit.parentId);
-          }
-        } else {
-          Console.WriteLine("No ad units created.");
+          adUnit.adUnitSizes = new AdUnitSize[] { adUnitSize };
+          adUnits[i] = adUnit;
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create ad units. Exception says \"{0}\"", e.Message);
+
+        try {
+          // Create the ad units on the server.
+          adUnits = inventoryService.createAdUnits(adUnits);
+
+          if (adUnits != null) {
+            foreach (AdUnit adUnit in adUnits) {
+              Console.WriteLine("An ad unit with ID = '{0}' was created under parent with " +
+                  "ID = '{1}'.", adUnit.id, adUnit.parentId);
+            }
+          } else {
+            Console.WriteLine("No ad units created.");
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create ad units. Exception says \"{0}\"", e.Message);
+        }
       }
     }
   }

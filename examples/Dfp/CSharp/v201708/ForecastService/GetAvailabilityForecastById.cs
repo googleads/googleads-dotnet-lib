@@ -46,36 +46,36 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ForecastService.
-      ForecastService forecastService =
-          (ForecastService) user.GetService(DfpService.v201708.ForecastService);
+      using (ForecastService forecastService =
+          (ForecastService) user.GetService(DfpService.v201708.ForecastService)) {
 
-      // Set the line item to get a forecast for.
-      long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
+        // Set the line item to get a forecast for.
+        long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
 
-      try {
-        // Get forecast for line item.
-        AvailabilityForecastOptions options = new AvailabilityForecastOptions();
-        options.includeContendingLineItems = true;
-        options.includeTargetingCriteriaBreakdown = true;
-        AvailabilityForecast forecast =
-            forecastService.getAvailabilityForecastById(lineItemId, options);
+        try {
+          // Get forecast for line item.
+          AvailabilityForecastOptions options = new AvailabilityForecastOptions();
+          options.includeContendingLineItems = true;
+          options.includeTargetingCriteriaBreakdown = true;
+          AvailabilityForecast forecast =
+              forecastService.getAvailabilityForecastById(lineItemId, options);
 
-        // Display results.
-        long matched = forecast.matchedUnits;
-        double availablePercent = (double) (forecast.availableUnits / (matched * 1.0)) * 100;
-        String unitType = forecast.unitType.ToString().ToLower();
+          // Display results.
+          long matched = forecast.matchedUnits;
+          double availablePercent = (double) (forecast.availableUnits / (matched * 1.0)) * 100;
+          String unitType = forecast.unitType.ToString().ToLower();
 
-        Console.WriteLine("{0} {1} matched.\n{2} % {3} available.", matched, unitType,
-            availablePercent, unitType);
-        if (forecast.possibleUnitsSpecified) {
-          double possiblePercent = (double) (forecast.possibleUnits / (matched * 1.0)) * 100;
-          Console.WriteLine(possiblePercent + "% " + unitType + " possible.\n");
+          Console.WriteLine("{0} {1} matched.\n{2} % {3} available.", matched, unitType,
+              availablePercent, unitType);
+          if (forecast.possibleUnitsSpecified) {
+            double possiblePercent = (double) (forecast.possibleUnits / (matched * 1.0)) * 100;
+            Console.WriteLine(possiblePercent + "% " + unitType + " possible.\n");
+          }
+          Console.WriteLine("{0} contending line items.", (forecast.contendingLineItems != null) ?
+              forecast.contendingLineItems.Length : 0);
+        } catch (Exception e) {
+          Console.WriteLine("Failed to get forecast by id. Exception says \"{0}\"", e.Message);
         }
-        Console.WriteLine("{0} contending line items.", (forecast.contendingLineItems != null)?
-            forecast.contendingLineItems.Length : 0);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get forecast by id. Exception says \"{0}\"", e.Message);
       }
     }
   }

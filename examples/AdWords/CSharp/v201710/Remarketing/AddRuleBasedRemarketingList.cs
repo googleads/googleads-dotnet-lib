@@ -63,171 +63,171 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the UserListService.
-      AdwordsUserListService userListService =
-          (AdwordsUserListService) user.GetService(AdWordsService.v201710.AdwordsUserListService);
+      using (AdwordsUserListService userListService =
+          (AdwordsUserListService) user.GetService(
+              AdWordsService.v201710.AdwordsUserListService)) {
 
-      // First rule item group - users who visited the checkout page and had
-      // more than one item in their shopping cart.
-      StringRuleItem checkoutStringRuleItem = new StringRuleItem();
-      checkoutStringRuleItem.key = new StringKey();
-      checkoutStringRuleItem.key.name = "ecomm_pagetype";
-      checkoutStringRuleItem.op = StringRuleItemStringOperator.EQUALS;
-      checkoutStringRuleItem.value = "checkout";
+        // First rule item group - users who visited the checkout page and had
+        // more than one item in their shopping cart.
+        StringRuleItem checkoutStringRuleItem = new StringRuleItem();
+        checkoutStringRuleItem.key = new StringKey();
+        checkoutStringRuleItem.key.name = "ecomm_pagetype";
+        checkoutStringRuleItem.op = StringRuleItemStringOperator.EQUALS;
+        checkoutStringRuleItem.value = "checkout";
 
-      RuleItem checkoutRuleItem = new RuleItem();
-      checkoutRuleItem.Item = checkoutStringRuleItem;
+        RuleItem checkoutRuleItem = new RuleItem();
+        checkoutRuleItem.Item = checkoutStringRuleItem;
 
-      NumberRuleItem cartSizeNumberRuleItem = new NumberRuleItem();
-      cartSizeNumberRuleItem.key = new NumberKey();
-      cartSizeNumberRuleItem.key.name = "cartsize";
-      cartSizeNumberRuleItem.op = NumberRuleItemNumberOperator.GREATER_THAN;
-      cartSizeNumberRuleItem.value = 1;
+        NumberRuleItem cartSizeNumberRuleItem = new NumberRuleItem();
+        cartSizeNumberRuleItem.key = new NumberKey();
+        cartSizeNumberRuleItem.key.name = "cartsize";
+        cartSizeNumberRuleItem.op = NumberRuleItemNumberOperator.GREATER_THAN;
+        cartSizeNumberRuleItem.value = 1;
 
-      RuleItem cartSizeRuleItem = new RuleItem();
-      cartSizeRuleItem.Item = cartSizeNumberRuleItem;
+        RuleItem cartSizeRuleItem = new RuleItem();
+        cartSizeRuleItem.Item = cartSizeNumberRuleItem;
 
-      // Combine the two rule items into a RuleItemGroup so AdWords will AND
-      // their rules together.
-      RuleItemGroup checkoutMultipleItemGroup = new RuleItemGroup();
-      checkoutMultipleItemGroup.items = new RuleItem[] { checkoutRuleItem, cartSizeRuleItem };
+        // Combine the two rule items into a RuleItemGroup so AdWords will AND
+        // their rules together.
+        RuleItemGroup checkoutMultipleItemGroup = new RuleItemGroup();
+        checkoutMultipleItemGroup.items = new RuleItem[] { checkoutRuleItem, cartSizeRuleItem };
 
-      // Second rule item group - users who check out within the next 3 months.
-      DateRuleItem startDateDateRuleItem = new DateRuleItem();
-      startDateDateRuleItem.key = new DateKey();
-      startDateDateRuleItem.key.name = "checkoutdate";
-      startDateDateRuleItem.op = DateRuleItemDateOperator.AFTER;
-      startDateDateRuleItem.value = DateTime.Now.ToString(DATE_FORMAT_STRING);
-      RuleItem startDateRuleItem = new RuleItem();
-      startDateRuleItem.Item = startDateDateRuleItem;
+        // Second rule item group - users who check out within the next 3 months.
+        DateRuleItem startDateDateRuleItem = new DateRuleItem();
+        startDateDateRuleItem.key = new DateKey();
+        startDateDateRuleItem.key.name = "checkoutdate";
+        startDateDateRuleItem.op = DateRuleItemDateOperator.AFTER;
+        startDateDateRuleItem.value = DateTime.Now.ToString(DATE_FORMAT_STRING);
+        RuleItem startDateRuleItem = new RuleItem();
+        startDateRuleItem.Item = startDateDateRuleItem;
 
-      DateRuleItem endDateDateRuleItem = new DateRuleItem();
-      endDateDateRuleItem.key = new DateKey();
-      endDateDateRuleItem.key.name = "checkoutdate";
-      endDateDateRuleItem.op = DateRuleItemDateOperator.BEFORE;
-      endDateDateRuleItem.value = DateTime.Now.AddMonths(3).ToString(DATE_FORMAT_STRING);
-      RuleItem endDateRuleItem = new RuleItem();
-      endDateRuleItem.Item = endDateDateRuleItem;
+        DateRuleItem endDateDateRuleItem = new DateRuleItem();
+        endDateDateRuleItem.key = new DateKey();
+        endDateDateRuleItem.key.name = "checkoutdate";
+        endDateDateRuleItem.op = DateRuleItemDateOperator.BEFORE;
+        endDateDateRuleItem.value = DateTime.Now.AddMonths(3).ToString(DATE_FORMAT_STRING);
+        RuleItem endDateRuleItem = new RuleItem();
+        endDateRuleItem.Item = endDateDateRuleItem;
 
-      // Combine the date rule items into a RuleItemGroup.
-      RuleItemGroup checkedOutNextThreeMonthsItemGroup = new RuleItemGroup();
-      checkedOutNextThreeMonthsItemGroup.items =
-          new RuleItem[] { startDateRuleItem, endDateRuleItem };
+        // Combine the date rule items into a RuleItemGroup.
+        RuleItemGroup checkedOutNextThreeMonthsItemGroup = new RuleItemGroup();
+        checkedOutNextThreeMonthsItemGroup.items =
+            new RuleItem[] { startDateRuleItem, endDateRuleItem };
 
-      // Combine the rule item groups into a Rule so AdWords knows how to apply the rules.
-      Rule rule = new Rule();
-      rule.groups = new RuleItemGroup[] {checkoutMultipleItemGroup,
-          checkedOutNextThreeMonthsItemGroup};
+        // Combine the rule item groups into a Rule so AdWords knows how to apply the rules.
+        Rule rule = new Rule();
+        rule.groups = new RuleItemGroup[] {checkoutMultipleItemGroup,
+            checkedOutNextThreeMonthsItemGroup};
 
-      // ExpressionRuleUserLists can use either CNF Or DNF For matching. CNF means
-      // 'at least one item in each rule item group must match', and DNF means 'at
-      // least one entire rule item group must match'.
-      // DateSpecificRuleUserList only supports DNF. You can also omit the rule
-      // type altogether To Default To DNF.
-      rule.ruleType = UserListRuleTypeEnumsEnum.DNF;
+        // ExpressionRuleUserLists can use either CNF Or DNF For matching. CNF means
+        // 'at least one item in each rule item group must match', and DNF means 'at
+        // least one entire rule item group must match'.
+        // DateSpecificRuleUserList only supports DNF. You can also omit the rule
+        // type altogether To Default To DNF.
+        rule.ruleType = UserListRuleTypeEnumsEnum.DNF;
 
-      // Third and fourth rule item groups.
-      // Visitors of a page who visited another page. See
-      // https://developers.google.com/adwords/api/docs/reference/latest/AdwordsUserListService.StringKey
-      // for more details.
-      StringKey urlStringKey = new StringKey() {
-        name = "url__"
-      };
+        // Third and fourth rule item groups.
+        // Visitors of a page who visited another page. See
+        // https://developers.google.com/adwords/api/docs/reference/latest/AdwordsUserListService.StringKey
+        // for more details.
+        StringKey urlStringKey = new StringKey() {
+          name = "url__"
+        };
 
-      StringRuleItem site1StringRuleItem = new StringRuleItem();
-      site1StringRuleItem.key = urlStringKey;
-      site1StringRuleItem.op = StringRuleItemStringOperator.EQUALS;
-      site1StringRuleItem.value = "example.com/example1";
-      RuleItem site1RuleItem = new RuleItem();
-      site1RuleItem.Item = site1StringRuleItem;
+        StringRuleItem site1StringRuleItem = new StringRuleItem();
+        site1StringRuleItem.key = urlStringKey;
+        site1StringRuleItem.op = StringRuleItemStringOperator.EQUALS;
+        site1StringRuleItem.value = "example.com/example1";
+        RuleItem site1RuleItem = new RuleItem();
+        site1RuleItem.Item = site1StringRuleItem;
 
-      StringRuleItem site2StringRuleItem = new StringRuleItem();
-      site2StringRuleItem.key = (urlStringKey);
-      site2StringRuleItem.op = (StringRuleItemStringOperator.EQUALS);
-      site2StringRuleItem.value = ("example.com/example2");
-      RuleItem site2RuleItem = new RuleItem();
-      site2RuleItem.Item = (site2StringRuleItem);
+        StringRuleItem site2StringRuleItem = new StringRuleItem();
+        site2StringRuleItem.key = (urlStringKey);
+        site2StringRuleItem.op = (StringRuleItemStringOperator.EQUALS);
+        site2StringRuleItem.value = ("example.com/example2");
+        RuleItem site2RuleItem = new RuleItem();
+        site2RuleItem.Item = (site2StringRuleItem);
 
-      // Create two RuleItemGroups to show that a visitor browsed two sites.
-      RuleItemGroup site1RuleItemGroup = new RuleItemGroup();
-      site1RuleItemGroup.items = new RuleItem[] { site1RuleItem };
-      RuleItemGroup site2RuleItemGroup = new RuleItemGroup();
-      site2RuleItemGroup.items = new RuleItem[] { site2RuleItem };
+        // Create two RuleItemGroups to show that a visitor browsed two sites.
+        RuleItemGroup site1RuleItemGroup = new RuleItemGroup();
+        site1RuleItemGroup.items = new RuleItem[] { site1RuleItem };
+        RuleItemGroup site2RuleItemGroup = new RuleItemGroup();
+        site2RuleItemGroup.items = new RuleItem[] { site2RuleItem };
 
-      // Create two rules to show that a visitor browsed two sites.
-      Rule userVisitedSite1Rule = new Rule();
-      userVisitedSite1Rule.groups = new RuleItemGroup[] { site1RuleItemGroup };
+        // Create two rules to show that a visitor browsed two sites.
+        Rule userVisitedSite1Rule = new Rule();
+        userVisitedSite1Rule.groups = new RuleItemGroup[] { site1RuleItemGroup };
 
-      Rule userVisitedSite2Rule = new Rule();
-      userVisitedSite2Rule.groups = new RuleItemGroup[] { site2RuleItemGroup };
+        Rule userVisitedSite2Rule = new Rule();
+        userVisitedSite2Rule.groups = new RuleItemGroup[] { site2RuleItemGroup };
 
-      // Create the user list with no restrictions on site visit date.
-      ExpressionRuleUserList expressionUserList = new ExpressionRuleUserList();
-      String creationTimeString = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-      expressionUserList.name = "Expression based user list created at " + creationTimeString;
-      expressionUserList.description = "Users who checked out in three month window OR visited " +
-          "the checkout page with more than one item in their cart.";
-      expressionUserList.rule = rule;
+        // Create the user list with no restrictions on site visit date.
+        ExpressionRuleUserList expressionUserList = new ExpressionRuleUserList();
+        String creationTimeString = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+        expressionUserList.name = "Expression based user list created at " + creationTimeString;
+        expressionUserList.description = "Users who checked out in three month window OR " +
+            "visited the checkout page with more than one item in their cart.";
+        expressionUserList.rule = rule;
 
-      // Optional: Set the prepopulationStatus to REQUESTED to include past users
-      // in the user list.
-      expressionUserList.prepopulationStatus = RuleBasedUserListPrepopulationStatus.REQUESTED;
+        // Optional: Set the prepopulationStatus to REQUESTED to include past users
+        // in the user list.
+        expressionUserList.prepopulationStatus = RuleBasedUserListPrepopulationStatus.REQUESTED;
 
-      // Create the user list restricted to users who visit your site within
-      // the next six months.
-      DateTime startDate = DateTime.Now;
-      DateTime endDate = startDate.AddMonths(6);
+        // Create the user list restricted to users who visit your site within
+        // the next six months.
+        DateTime startDate = DateTime.Now;
+        DateTime endDate = startDate.AddMonths(6);
 
-      DateSpecificRuleUserList dateUserList = new DateSpecificRuleUserList();
-      dateUserList.name = "Date rule user list created at " + creationTimeString;
-      dateUserList.description = String.Format("Users who visited the site between {0} and " +
-          "{1} and checked out in three month window OR visited the checkout page " +
-          "with more than one item in their cart.", startDate.ToString(DATE_FORMAT_STRING),
-          endDate.ToString(DATE_FORMAT_STRING));
-      dateUserList.rule = rule;
+        DateSpecificRuleUserList dateUserList = new DateSpecificRuleUserList();
+        dateUserList.name = "Date rule user list created at " + creationTimeString;
+        dateUserList.description = String.Format("Users who visited the site between {0} and " +
+            "{1} and checked out in three month window OR visited the checkout page " +
+            "with more than one item in their cart.", startDate.ToString(DATE_FORMAT_STRING),
+            endDate.ToString(DATE_FORMAT_STRING));
+        dateUserList.rule = rule;
 
-      // Set the start and end dates of the user list.
-      dateUserList.startDate = startDate.ToString(DATE_FORMAT_STRING);
-      dateUserList.endDate = endDate.ToString(DATE_FORMAT_STRING);
+        // Set the start and end dates of the user list.
+        dateUserList.startDate = startDate.ToString(DATE_FORMAT_STRING);
+        dateUserList.endDate = endDate.ToString(DATE_FORMAT_STRING);
 
-      // Create the user list where "Visitors of a page who did visit another page".
-      // To create a user list where "Visitors of a page who did not visit another
-      // page", change the ruleOperator from AND to AND_NOT.
-      CombinedRuleUserList combinedRuleUserList = new CombinedRuleUserList();
-      combinedRuleUserList.name = "Combined rule user list created at " + creationTimeString;
-      combinedRuleUserList.description = "Users who visited two sites.";
-      combinedRuleUserList.leftOperand = userVisitedSite1Rule;
-      combinedRuleUserList.rightOperand = userVisitedSite2Rule;
-      combinedRuleUserList.ruleOperator = CombinedRuleUserListRuleOperator.AND;
+        // Create the user list where "Visitors of a page who did visit another page".
+        // To create a user list where "Visitors of a page who did not visit another
+        // page", change the ruleOperator from AND to AND_NOT.
+        CombinedRuleUserList combinedRuleUserList = new CombinedRuleUserList();
+        combinedRuleUserList.name = "Combined rule user list created at " + creationTimeString;
+        combinedRuleUserList.description = "Users who visited two sites.";
+        combinedRuleUserList.leftOperand = userVisitedSite1Rule;
+        combinedRuleUserList.rightOperand = userVisitedSite2Rule;
+        combinedRuleUserList.ruleOperator = CombinedRuleUserListRuleOperator.AND;
 
-      // Create operations to add the user lists.
-      List<UserListOperation> operations = new List<UserListOperation>();
-      foreach (UserList userList in new UserList[] { expressionUserList, dateUserList,
+        // Create operations to add the user lists.
+        List<UserListOperation> operations = new List<UserListOperation>();
+        foreach (UserList userList in new UserList[] { expressionUserList, dateUserList,
           combinedRuleUserList }) {
-        UserListOperation operation = new UserListOperation();
-        operation.operand = userList;
-        operation.@operator = Operator.ADD;
-        operations.Add(operation);
-      }
-
-      try {
-        // Submit the operations.
-        UserListReturnValue result = userListService.mutate(operations.ToArray());
-
-        // Display the results.
-        foreach (UserList userListResult in result.value) {
-          Console.WriteLine("User list added with ID {0}, name '{1}', status '{2}', " +
-              "list type '{3}', accountUserListStatus '{4}', description '{5}'.",
-              userListResult.id,
-              userListResult.name,
-              userListResult.status,
-              userListResult.listType,
-              userListResult.accountUserListStatus,
-              userListResult.description);
+          UserListOperation operation = new UserListOperation();
+          operation.operand = userList;
+          operation.@operator = Operator.ADD;
+          operations.Add(operation);
         }
-        userListService.Close();
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to add rule based user lists.", e);
+
+        try {
+          // Submit the operations.
+          UserListReturnValue result = userListService.mutate(operations.ToArray());
+
+          // Display the results.
+          foreach (UserList userListResult in result.value) {
+            Console.WriteLine("User list added with ID {0}, name '{1}', status '{2}', " +
+                "list type '{3}', accountUserListStatus '{4}', description '{5}'.",
+                userListResult.id,
+                userListResult.name,
+                userListResult.status,
+                userListResult.listType,
+                userListResult.accountUserListStatus,
+                userListResult.description);
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to add rule based user lists.", e);
+        }
       }
     }
   }

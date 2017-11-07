@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.Common.Util;
+
 using System;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
@@ -30,6 +32,9 @@ namespace Google.Api.Ads.Common.Lib {
       where TException : AdsException {
 
     private const string FAULT_ELEMENT_NAME = "ApiExceptionFault";
+
+    private const string FAULT_ELEMENT_XPATH = "descendant::*[local-name()='" +
+        FAULT_ELEMENT_NAME + "']";
 
     /// <summary>
     /// Gets or sets the type to deserialize faults into.
@@ -56,21 +61,31 @@ namespace Google.Api.Ads.Common.Lib {
           // Message can only be read once, so replace it with a copy.
           reply = buffer.CreateMessage();
           Message copy = buffer.CreateMessage();
+
+          // Get the body contents.
           XmlReader reader = copy.GetReaderAtBodyContents();
-          if (reader.ReadToDescendant(FAULT_ELEMENT_NAME)) {
-            string ns = reader.GetAttribute("xmlns");
+
+          // Try locating the ApiExceptionFault node and deserializing it. Make sure to ignore
+          // the namespace and look only for the local name.
+          XmlDocument xDoc = new XmlDocument();
+          xDoc.LoadXml(reader.ReadOuterXml());
+          XmlElement faultNode = (XmlElement) xDoc.SelectSingleNode(FAULT_ELEMENT_XPATH);
+
+          if (faultNode != null) {
+            // Deserialize the correct exception type and raise it.
+            string faultNodeNamespaceUri = faultNode.NamespaceURI;
+            string faultNodeContents = faultNode.OuterXml;
             object apiError = SerializationUtilities.DeserializeFromXmlTextCustomRootNs(
-                reader.ReadOuterXml(),
+                faultNodeContents,
                 ErrorType,
-                ns,
+                faultNodeNamespaceUri,
                 FAULT_ELEMENT_NAME);
-            throw (TException)Activator.CreateInstance(
+            throw (TException) Activator.CreateInstance(
                 typeof(TException),
                 new object[] { apiError });
           }
         }
       }
-
     }
   }
 }

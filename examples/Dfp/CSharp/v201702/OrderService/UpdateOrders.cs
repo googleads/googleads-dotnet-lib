@@ -17,7 +17,6 @@ using Google.Api.Ads.Dfp.Util.v201702;
 using Google.Api.Ads.Dfp.v201702;
 
 using System;
-using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
   /// <summary>
@@ -48,42 +47,44 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the OrderService.
-      OrderService orderService = (OrderService) user.GetService(DfpService.v201702.OrderService);
+      using (OrderService orderService = (OrderService) user.GetService(
+          DfpService.v201702.OrderService)) {
 
-      long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
 
-      // Create a statement to get the order.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", orderId);
+        long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
 
-      try {
-        // Get orders by statement.
-        OrderPage page = orderService.getOrdersByStatement(statementBuilder.ToStatement());
+        // Create a statement to get the order.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", orderId);
 
-        Order order = page.results[0];
+        try {
+          // Get orders by statement.
+          OrderPage page = orderService.getOrdersByStatement(statementBuilder.ToStatement());
 
-        // Update the order object by changing its note.
-        order.notes = "Spoke to advertiser. All is well.";
+          Order order = page.results[0];
 
-        // Update the orders on the server.
-        Order[] orders = orderService.updateOrders(new Order[] {order});
+          // Update the order object by changing its note.
+          order.notes = "Spoke to advertiser. All is well.";
 
-        if (orders != null) {
-          foreach (Order updatedOrder in orders) {
-            Console.WriteLine("Order with ID = '{0}', name = '{1}', advertiser ID = '{2}', " +
-                "and notes = '{3}' was updated.", updatedOrder.id, updatedOrder.name,
-                updatedOrder.advertiserId, updatedOrder.notes);
+          // Update the orders on the server.
+          Order[] orders = orderService.updateOrders(new Order[] { order });
+
+          if (orders != null) {
+            foreach (Order updatedOrder in orders) {
+              Console.WriteLine("Order with ID = '{0}', name = '{1}', advertiser ID = '{2}', " +
+                  "and notes = '{3}' was updated.", updatedOrder.id, updatedOrder.name,
+                  updatedOrder.advertiserId, updatedOrder.notes);
+            }
+          } else {
+            Console.WriteLine("No orders updated.");
           }
-        } else {
-          Console.WriteLine("No orders updated.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update orders. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update orders. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

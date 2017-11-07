@@ -46,59 +46,59 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the PremiumRateService.
-      PremiumRateService premiumRateService =
-          (PremiumRateService) user.GetService(DfpService.v201702.PremiumRateService);
+      using (PremiumRateService premiumRateService =
+          (PremiumRateService) user.GetService(DfpService.v201702.PremiumRateService)) {
 
-      // Set the rate card ID to add the premium rate to.
-      long rateCardId = long.Parse(_T("INSERT_RATE_CARD_ID_HERE"));
+        // Set the rate card ID to add the premium rate to.
+        long rateCardId = long.Parse(_T("INSERT_RATE_CARD_ID_HERE"));
 
-      PremiumRate premiumRate = new PremiumRate();
+        PremiumRate premiumRate = new PremiumRate();
 
-      // Create an ad unit premium to apply to the rate card.
-      AdUnitPremiumFeature adUnitPremiumFeature = new AdUnitPremiumFeature();
+        // Create an ad unit premium to apply to the rate card.
+        AdUnitPremiumFeature adUnitPremiumFeature = new AdUnitPremiumFeature();
 
-      // Create a CPM based premium rate value with adjustments in micro amounts.
-      // This will adjust a CPM priced proposal line item that has
-      // inventory targeting specified by 2 units of the currency associated with
-      // the rate card (this comes from absolute value adjustment).
-      PremiumRateValue cpmPremiumRateValue = new PremiumRateValue();
-      cpmPremiumRateValue.premiumFeature = adUnitPremiumFeature;
-      cpmPremiumRateValue.rateType = RateType.CPM;
-      cpmPremiumRateValue.adjustmentSize = 2000000L;
-      cpmPremiumRateValue.adjustmentType = PremiumAdjustmentType.ABSOLUTE_VALUE;
+        // Create a CPM based premium rate value with adjustments in micro amounts.
+        // This will adjust a CPM priced proposal line item that has
+        // inventory targeting specified by 2 units of the currency associated with
+        // the rate card (this comes from absolute value adjustment).
+        PremiumRateValue cpmPremiumRateValue = new PremiumRateValue();
+        cpmPremiumRateValue.premiumFeature = adUnitPremiumFeature;
+        cpmPremiumRateValue.rateType = RateType.CPM;
+        cpmPremiumRateValue.adjustmentSize = 2000000L;
+        cpmPremiumRateValue.adjustmentType = PremiumAdjustmentType.ABSOLUTE_VALUE;
 
-      // Create a CPC based premium rate value with adjustments in milli amounts.
-      // This will adjust a CPC priced proposal line item that has
-      // inventory targeting specified by 10% of the cost associated with the rate
-      // card (this comes from a percentage adjustment).
-      PremiumRateValue cpcPremiumRateValue = new PremiumRateValue();
-      cpcPremiumRateValue.premiumFeature = adUnitPremiumFeature;
-      cpcPremiumRateValue.rateType = RateType.CPC;
-      cpcPremiumRateValue.adjustmentSize = 10000L;
-      cpcPremiumRateValue.adjustmentType = PremiumAdjustmentType.PERCENTAGE;
+        // Create a CPC based premium rate value with adjustments in milli amounts.
+        // This will adjust a CPC priced proposal line item that has
+        // inventory targeting specified by 10% of the cost associated with the rate
+        // card (this comes from a percentage adjustment).
+        PremiumRateValue cpcPremiumRateValue = new PremiumRateValue();
+        cpcPremiumRateValue.premiumFeature = adUnitPremiumFeature;
+        cpcPremiumRateValue.rateType = RateType.CPC;
+        cpcPremiumRateValue.adjustmentSize = 10000L;
+        cpcPremiumRateValue.adjustmentType = PremiumAdjustmentType.PERCENTAGE;
 
-      // Associate premium rate with the rate card and set premium information.
-      // This premium will apply for proposal line items targeting 'any' ad unit
-      // for both CPM and CPC rate types.
-      premiumRate.rateCardId = rateCardId;
-      premiumRate.pricingMethod = PricingMethod.ANY_VALUE;
-      premiumRate.premiumFeature = adUnitPremiumFeature;
-      premiumRate.premiumRateValues =
-          new PremiumRateValue[] {cpmPremiumRateValue, cpcPremiumRateValue};
+        // Associate premium rate with the rate card and set premium information.
+        // This premium will apply for proposal line items targeting 'any' ad unit
+        // for both CPM and CPC rate types.
+        premiumRate.rateCardId = rateCardId;
+        premiumRate.pricingMethod = PricingMethod.ANY_VALUE;
+        premiumRate.premiumFeature = adUnitPremiumFeature;
+        premiumRate.premiumRateValues =
+            new PremiumRateValue[] { cpmPremiumRateValue, cpcPremiumRateValue };
 
-      try {
-        // Create the premium rate on the server.
-        PremiumRate[] premiumRates = premiumRateService
-            .createPremiumRates(new PremiumRate[] {premiumRate});
+        try {
+          // Create the premium rate on the server.
+          PremiumRate[] premiumRates = premiumRateService
+              .createPremiumRates(new PremiumRate[] { premiumRate });
 
-        foreach (PremiumRate createdPremiumRate in premiumRates) {
-          Console.WriteLine("A premium rate for '{0}' was added to the rate card with "
-              + "ID of '{1}'.", createdPremiumRate.premiumFeature.GetType().Name,
-              createdPremiumRate.rateCardId);
-        }
-      } catch (Exception e) {
+          foreach (PremiumRate createdPremiumRate in premiumRates) {
+            Console.WriteLine("A premium rate for '{0}' was added to the rate card with "
+                + "ID of '{1}'.", createdPremiumRate.premiumFeature.GetType().Name,
+                createdPremiumRate.rateCardId);
+          }
+        } catch (Exception e) {
           Console.WriteLine("Failed to create premium rates. Exception says \"{0}\"", e.Message);
+        }
       }
     }
   }

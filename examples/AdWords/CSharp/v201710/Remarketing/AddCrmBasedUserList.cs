@@ -59,8 +59,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
       try {
         codeExample.Run(new AdWordsUser());
       } catch (Exception e) {
-        Console.WriteLine("An exception occurred while running this code " +
-                          "example. {0}", ExampleUtilities.FormatException(e));
+        Console.WriteLine("An exception occurred while running this code example. {0}",
+            ExampleUtilities.FormatException(e));
       }
     }
 
@@ -79,90 +79,88 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the UserListService.
-      AdwordsUserListService userListService =
+      using (AdwordsUserListService userListService =
           (AdwordsUserListService) user.GetService(
-            AdWordsService.v201710.AdwordsUserListService);
+              AdWordsService.v201710.AdwordsUserListService)) {
 
-      // Create a user list.
-      CrmBasedUserList userList = new CrmBasedUserList() {
-        name = "Customer relationship management list #" +
-          ExampleUtilities.GetRandomString(),
-        description = "A list of customers that originated from email " +
-          "addresses",
+        // Create a user list.
+        CrmBasedUserList userList = new CrmBasedUserList() {
+          name = "Customer relationship management list #" +
+            ExampleUtilities.GetRandomString(),
+          description = "A list of customers that originated from email addresses",
 
-        // CRM Userlist has a maximum membership lifespan of 180 days. See
-        // https://support.google.com/adwords/answer/6276125 for details.
-        membershipLifeSpan = 180L,
-      };
-
-      // Create operation.
-      UserListOperation operation = new UserListOperation() {
-        operand = userList,
-        @operator = Operator.ADD
-      };
-
-      try {
-        // Add user list.
-        UserListReturnValue result = userListService.mutate(
-          new UserListOperation[] { operation });
-
-        Console.WriteLine("Created new user list with name = '{0}' and id = " +
-                          "'{1}'.", result.value[0].name, result.value[0].id);
-
-        // Get user list ID.
-        long userListId = result.value[0].id;
-
-        // Prepare the emails for upload.
-        List<Member> memberList = new List<Member>();
-
-        // Hash normalized email addresses based on SHA-256 hashing algorithm.
-        String[] emailHashes = new String[EMAILS.Length];
-        for (int i = 0; i < EMAILS.Length; i++) {
-          Member member = new Member();
-          member.hashedEmail = ToSha256String(digest, ToNormalizedEmail(EMAILS[i]));
-
-          // Adding address info is currently available on a whitelist-only basis. This
-          // code demonstrates how to do it, but if you are not on the whitelist, you
-          // will need to remove this block for the example to run.
-          AddressInfo addressInfo = new AddressInfo();
-          addressInfo.hashedFirstName = ToSha256String(digest, FIRST_NAME);
-          addressInfo.hashedLastName = ToSha256String(digest, LAST_NAME);
-          addressInfo.zipCode = ZIP_CODE;
-          addressInfo.countryCode = COUNTRY_CODE;
-          member.addressInfo = addressInfo;
-
-          memberList.Add(member);
+          // CRM Userlist has a maximum membership lifespan of 180 days. See
+          // https://support.google.com/adwords/answer/6276125 for details.
+          membershipLifeSpan = 180L,
         };
 
-        // Create operation to add members to the user list based on email
-        // addresses.
-        MutateMembersOperation mutateMembersOperation =
-          new MutateMembersOperation() {
-            operand = new MutateMembersOperand() {
-              userListId = userListId,
-              membersList = memberList.ToArray()
-            },
-            @operator = Operator.ADD
+        // Create operation.
+        UserListOperation operation = new UserListOperation() {
+          operand = userList,
+          @operator = Operator.ADD
+        };
+
+        try {
+          // Add user list.
+          UserListReturnValue result = userListService.mutate(
+            new UserListOperation[] { operation });
+
+          Console.WriteLine("Created new user list with name = '{0}' and id = " +
+                            "'{1}'.", result.value[0].name, result.value[0].id);
+
+          // Get user list ID.
+          long userListId = result.value[0].id;
+
+          // Prepare the emails for upload.
+          List<Member> memberList = new List<Member>();
+
+          // Hash normalized email addresses based on SHA-256 hashing algorithm.
+          String[] emailHashes = new String[EMAILS.Length];
+          for (int i = 0; i < EMAILS.Length; i++) {
+            Member member = new Member();
+            member.hashedEmail = ToSha256String(digest, ToNormalizedEmail(EMAILS[i]));
+
+            // Adding address info is currently available on a whitelist-only basis. This
+            // code demonstrates how to do it, but if you are not on the whitelist, you
+            // will need to remove this block for the example to run.
+            AddressInfo addressInfo = new AddressInfo();
+            addressInfo.hashedFirstName = ToSha256String(digest, FIRST_NAME);
+            addressInfo.hashedLastName = ToSha256String(digest, LAST_NAME);
+            addressInfo.zipCode = ZIP_CODE;
+            addressInfo.countryCode = COUNTRY_CODE;
+            member.addressInfo = addressInfo;
+
+            memberList.Add(member);
           };
 
-        // Add members to the user list based on email addresses.
-        MutateMembersReturnValue mutateMembersResult =
-            userListService.mutateMembers(
-              new MutateMembersOperation[] { mutateMembersOperation });
+          // Create operation to add members to the user list based on email
+          // addresses.
+          MutateMembersOperation mutateMembersOperation =
+            new MutateMembersOperation() {
+              operand = new MutateMembersOperand() {
+                userListId = userListId,
+                membersList = memberList.ToArray()
+              },
+              @operator = Operator.ADD
+            };
 
-        // Display results.
-        // Reminder: it may take several hours for the list to be populated
-        // with members.
-        foreach (UserList userListResult in mutateMembersResult.userLists) {
-          Console.WriteLine("Email addresses were added to user list with " +
-                            "name '{0}' and id '{1}'.",
-                            userListResult.name, userListResult.id);
+          // Add members to the user list based on email addresses.
+          MutateMembersReturnValue mutateMembersResult =
+              userListService.mutateMembers(
+                new MutateMembersOperation[] { mutateMembersOperation });
+
+          // Display results.
+          // Reminder: it may take several hours for the list to be populated
+          // with members.
+          foreach (UserList userListResult in mutateMembersResult.userLists) {
+            Console.WriteLine("Email addresses were added to user list with " +
+                              "name '{0}' and id '{1}'.",
+                              userListResult.name, userListResult.id);
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to add user lists " +
+              "(a.k.a. audiences) and upload email addresses.", e);
         }
-        userListService.Close();
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to add user lists " +
-            "(a.k.a. audiences) and upload email addresses.", e);
       }
     }
 

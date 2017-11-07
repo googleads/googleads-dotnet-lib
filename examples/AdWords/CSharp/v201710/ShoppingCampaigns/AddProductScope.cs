@@ -57,66 +57,66 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="campaignId">The campaign id to add product scope.</param>
     public void Run(AdWordsUser user, long campaignId) {
-      // Get the CampaignCriterionService.
-      CampaignCriterionService campaignCriterionService =
+      using (CampaignCriterionService campaignCriterionService =
           (CampaignCriterionService) user.GetService(
-              AdWordsService.v201710.CampaignCriterionService);
+              AdWordsService.v201710.CampaignCriterionService)) {
 
-      ProductScope productScope = new ProductScope();
-      // This set of dimensions is for demonstration purposes only. It would be
-      // extremely unlikely that you want to include so many dimensions in your
-      // product scope.
-      ProductBrand nexusBrand = new ProductBrand();
-      nexusBrand.value = "Nexus";
+        ProductScope productScope = new ProductScope();
+        // This set of dimensions is for demonstration purposes only. It would be
+        // extremely unlikely that you want to include so many dimensions in your
+        // product scope.
+        ProductBrand nexusBrand = new ProductBrand();
+        nexusBrand.value = "Nexus";
 
-      ProductCanonicalCondition newProducts = new ProductCanonicalCondition();
-      newProducts.condition = ProductCanonicalConditionCondition.NEW;
+        ProductCanonicalCondition newProducts = new ProductCanonicalCondition();
+        newProducts.condition = ProductCanonicalConditionCondition.NEW;
 
-      ProductCustomAttribute customAttribute = new ProductCustomAttribute();
-      customAttribute.type = ProductDimensionType.CUSTOM_ATTRIBUTE_0;
-      customAttribute.value = "my attribute value";
+        ProductCustomAttribute customAttribute = new ProductCustomAttribute();
+        customAttribute.type = ProductDimensionType.CUSTOM_ATTRIBUTE_0;
+        customAttribute.value = "my attribute value";
 
-      ProductOfferId bookOffer = new ProductOfferId();
-      bookOffer.value = "book1";
+        ProductOfferId bookOffer = new ProductOfferId();
+        bookOffer.value = "book1";
 
-      ProductType mediaProducts = new ProductType();
-      mediaProducts.type = ProductDimensionType.PRODUCT_TYPE_L1;
-      mediaProducts.value = "Media";
+        ProductType mediaProducts = new ProductType();
+        mediaProducts.type = ProductDimensionType.PRODUCT_TYPE_L1;
+        mediaProducts.value = "Media";
 
-      ProductType bookProducts = new ProductType();
-      bookProducts.type = ProductDimensionType.PRODUCT_TYPE_L2;
-      bookProducts.value = "Books";
+        ProductType bookProducts = new ProductType();
+        bookProducts.type = ProductDimensionType.PRODUCT_TYPE_L2;
+        bookProducts.value = "Books";
 
-      // The value for the bidding category is a fixed ID for the
-      // 'Luggage & Bags' category. You can retrieve IDs for categories from
-      // the ConstantDataService. See the 'GetProductCategoryTaxonomy' example
-      // for more details.
-      ProductBiddingCategory luggageBiddingCategory = new ProductBiddingCategory();
-      luggageBiddingCategory.type = ProductDimensionType.BIDDING_CATEGORY_L1;
-      luggageBiddingCategory.value = -5914235892932915235;
+        // The value for the bidding category is a fixed ID for the
+        // 'Luggage & Bags' category. You can retrieve IDs for categories from
+        // the ConstantDataService. See the 'GetProductCategoryTaxonomy' example
+        // for more details.
+        ProductBiddingCategory luggageBiddingCategory = new ProductBiddingCategory();
+        luggageBiddingCategory.type = ProductDimensionType.BIDDING_CATEGORY_L1;
+        luggageBiddingCategory.value = -5914235892932915235;
 
-      productScope.dimensions = new ProductDimension[] {nexusBrand, newProducts, bookOffer,
-          mediaProducts, luggageBiddingCategory};
+        productScope.dimensions = new ProductDimension[] {
+          nexusBrand, newProducts, bookOffer, mediaProducts, luggageBiddingCategory
+        };
 
-      CampaignCriterion campaignCriterion = new CampaignCriterion();
-      campaignCriterion.campaignId = campaignId;
-      campaignCriterion.criterion = productScope;
+        CampaignCriterion campaignCriterion = new CampaignCriterion();
+        campaignCriterion.campaignId = campaignId;
+        campaignCriterion.criterion = productScope;
 
-      // Create operation.
-      CampaignCriterionOperation operation = new CampaignCriterionOperation();
-      operation.operand = campaignCriterion;
-      operation.@operator = Operator.ADD;
+        // Create operation.
+        CampaignCriterionOperation operation = new CampaignCriterionOperation();
+        operation.operand = campaignCriterion;
+        operation.@operator = Operator.ADD;
 
-      try {
-        // Make the mutate request.
-        CampaignCriterionReturnValue result = campaignCriterionService.mutate(
-            new CampaignCriterionOperation[] { operation });
+        try {
+          // Make the mutate request.
+          CampaignCriterionReturnValue result = campaignCriterionService.mutate(
+              new CampaignCriterionOperation[] { operation });
 
-        Console.WriteLine("Created a ProductScope criterion with ID '{0}'",
+          Console.WriteLine("Created a ProductScope criterion with ID '{0}'",
               result.value[0].criterion.id);
-        campaignCriterionService.Close();
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to set shopping product scope.", e);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to set shopping product scope.", e);
+        }
       }
     }
   }

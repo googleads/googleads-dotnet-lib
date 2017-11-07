@@ -73,31 +73,31 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// </summary>
     /// <returns>All ad units for this user.</returns>
     private static AdUnit[] GetAllAdUnits(DfpUser user) {
-      // Create list to hold all ad units.
-      List<AdUnit> adUnits = new List<AdUnit>();
+      using (InventoryService inventoryService =
+          (InventoryService) user.GetService(DfpService.v201705.InventoryService)) {
 
-      // Get InventoryService.
-      InventoryService inventoryService =
-          (InventoryService) user.GetService(DfpService.v201705.InventoryService);
+        // Create list to hold all ad units.
+        List<AdUnit> adUnits = new List<AdUnit>();
 
-      // Create a statement to get all ad units.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        // Create a statement to get all ad units.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .OrderBy("id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
 
-      // Set default for page.
-      AdUnitPage page = new AdUnitPage();
+        // Set default for page.
+        AdUnitPage page = new AdUnitPage();
 
-      do {
-        // Get ad units by statement.
-        page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
+        do {
+          // Get ad units by statement.
+          page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
-        if (page.results != null) {
-          adUnits.AddRange(page.results);
-        }
-        statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-      } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-      return adUnits.ToArray();
+          if (page.results != null) {
+            adUnits.AddRange(page.results);
+          }
+          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+        return adUnits.ToArray();
+      }
     }
 
     /// <summary>
@@ -106,23 +106,23 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// <returns>The ad unit representing the root ad unit or null if one
     /// is not found.</returns>
     private static AdUnit FindRootAdUnit(DfpUser user) {
-      // Get InventoryService.
-      InventoryService inventoryService =
-          (InventoryService) user.GetService(DfpService.v201705.InventoryService);
+      using (InventoryService inventoryService =
+          (InventoryService) user.GetService(DfpService.v201705.InventoryService)) {
 
-      // Create a statement to only select the root ad unit.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("parentId IS NULL")
-          .OrderBy("id ASC")
-          .Limit(1);
+        // Create a statement to only select the root ad unit.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("parentId IS NULL")
+            .OrderBy("id ASC")
+            .Limit(1);
 
-      // Get ad units by statement.
-      AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
+        // Get ad units by statement.
+        AdUnitPage page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
 
-      if (page.results != null) {
-        return page.results[0];
+        if (page.results != null) {
+          return page.results[0];
+        }
+        return null;
       }
-      return null;
     }
 
     /// <summary>

@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,40 +48,41 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      SuggestedAdUnitService suggestedAdUnitService =
-          (SuggestedAdUnitService) dfpUser.GetService(DfpService.v201702.SuggestedAdUnitService);
+      using (SuggestedAdUnitService suggestedAdUnitService =
+          (SuggestedAdUnitService) dfpUser.GetService(DfpService.v201702.SuggestedAdUnitService)) {
 
-      // Create a statement to select suggested ad units.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .OrderBy("id ASC")
-          .Limit(pageSize);
+        // Create a statement to select suggested ad units.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .OrderBy("id ASC")
+            .Limit(pageSize);
 
-      // Retrieve a small amount of suggested ad units at a time, paging through until all
-      // suggested ad units have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        SuggestedAdUnitPage page = suggestedAdUnitService.getSuggestedAdUnitsByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of suggested ad units at a time, paging through until all
+        // suggested ad units have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          SuggestedAdUnitPage page = suggestedAdUnitService.getSuggestedAdUnitsByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each suggested ad unit.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (SuggestedAdUnit suggestedAdUnit in page.results) {
-            Console.WriteLine(
-                "{0}) Suggested ad unit with ID \"{1}\" and num requests {2} was found.",
-                i++,
-                suggestedAdUnit.id,
-                suggestedAdUnit.numRequests
-            );
+          // Print out some information for each suggested ad unit.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (SuggestedAdUnit suggestedAdUnit in page.results) {
+              Console.WriteLine(
+                  "{0}) Suggested ad unit with ID \"{1}\" and num requests {2} was found.",
+                  i++,
+                  suggestedAdUnit.id,
+                  suggestedAdUnit.numRequests
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

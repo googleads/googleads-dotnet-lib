@@ -49,39 +49,40 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201702 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser, long proposalId) {
-      ProposalService proposalService =
-          (ProposalService) dfpUser.GetService(DfpService.v201702.ProposalService);
+      using (ProposalService proposalService =
+          (ProposalService) dfpUser.GetService(DfpService.v201702.ProposalService)) {
 
-      // Create a statement to select Marketplace comments.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("proposalId = :proposalId")
-          .AddValue("proposalId", proposalId);
+        // Create a statement to select Marketplace comments.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("proposalId = :proposalId")
+            .AddValue("proposalId", proposalId);
 
-      MarketplaceCommentPage page = proposalService.getMarketplaceCommentsByStatement(
-          statementBuilder.ToStatement());
+        MarketplaceCommentPage page = proposalService.getMarketplaceCommentsByStatement(
+            statementBuilder.ToStatement());
 
-      // Print out some information for each Marketplace comment.
-      if (page.results != null) {
-        int i = page.startIndex;
-        foreach (MarketplaceComment marketplaceComment in page.results) {
-          String creationTimeString = new System.DateTime(
-              day: marketplaceComment.creationTime.date.day,
-              month: marketplaceComment.creationTime.date.month,
-              year: marketplaceComment.creationTime.date.year,
-              hour: marketplaceComment.creationTime.hour,
-              minute: marketplaceComment.creationTime.minute,
-              second: marketplaceComment.creationTime.second
-          ).ToString("s");
-          Console.WriteLine(
-              "{0}) Marketplace comment with creation time \"{1}\" " +
-                  "and comment \"{2}\" was found.",
-              i++,
-              creationTimeString,
-              marketplaceComment.comment
-          );
+        // Print out some information for each Marketplace comment.
+        if (page.results != null) {
+          int i = page.startIndex;
+          foreach (MarketplaceComment marketplaceComment in page.results) {
+            String creationTimeString = new System.DateTime(
+                day: marketplaceComment.creationTime.date.day,
+                month: marketplaceComment.creationTime.date.month,
+                year: marketplaceComment.creationTime.date.year,
+                hour: marketplaceComment.creationTime.hour,
+                minute: marketplaceComment.creationTime.minute,
+                second: marketplaceComment.creationTime.second
+            ).ToString("s");
+            Console.WriteLine(
+                "{0}) Marketplace comment with creation time \"{1}\" " +
+                    "and comment \"{2}\" was found.",
+                i++,
+                creationTimeString,
+                marketplaceComment.comment
+            );
+          }
+        } else {
+          Console.WriteLine("No Marketplace comments found.");
         }
-      } else {
-        Console.WriteLine("No Marketplace comments found.");
       }
     }
   }

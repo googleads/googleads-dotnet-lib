@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,43 +48,44 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      CompanyService companyService =
-          (CompanyService) dfpUser.GetService(DfpService.v201705.CompanyService);
+      using (CompanyService companyService =
+          (CompanyService) dfpUser.GetService(DfpService.v201705.CompanyService)) {
 
-      // Create a statement to select companies.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("type = :type")
-          .OrderBy("id ASC")
-          .Limit(pageSize)
-          .AddValue("type", CompanyType.ADVERTISER.ToString());
+        // Create a statement to select companies.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("type = :type")
+            .OrderBy("id ASC")
+            .Limit(pageSize)
+            .AddValue("type", CompanyType.ADVERTISER.ToString());
 
-      // Retrieve a small amount of companies at a time, paging through until all
-      // companies have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        CompanyPage page = companyService.getCompaniesByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of companies at a time, paging through until all
+        // companies have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          CompanyPage page = companyService.getCompaniesByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each company.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (Company company in page.results) {
-            Console.WriteLine(
-                "{0}) Company with ID {1}, name \"{2}\", and type \"{3}\" was found.",
-                i++,
-                company.id,
-                company.name,
-                company.type
-            );
+          // Print out some information for each company.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (Company company in page.results) {
+              Console.WriteLine(
+                  "{0}) Company with ID {1}, name \"{2}\", and type \"{3}\" was found.",
+                  i++,
+                  company.id,
+                  company.name,
+                  company.type
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

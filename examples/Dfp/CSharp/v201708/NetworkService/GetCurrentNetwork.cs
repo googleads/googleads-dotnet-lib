@@ -45,19 +45,19 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the NetworkService.
-      NetworkService networkService =
-          (NetworkService) user.GetService(DfpService.v201708.NetworkService);
+      using (NetworkService networkService =
+          (NetworkService) user.GetService(DfpService.v201708.NetworkService)) {
 
-      try {
-        // Get the current network.
-        Network network = networkService.getCurrentNetwork();
+        try {
+          // Get the current network.
+          Network network = networkService.getCurrentNetwork();
 
-        Console.WriteLine("Current network has network code \"{0}\" and display name \"{1}\".",
-            network.networkCode, network.displayName);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get current network. Exception says \"{0}\"",
-            e.Message);
+          Console.WriteLine("Current network has network code \"{0}\" and display name \"{1}\".",
+              network.networkCode, network.displayName);
+        } catch (Exception e) {
+          Console.WriteLine("Failed to get current network. Exception says \"{0}\"",
+              e.Message);
+        }
       }
     }
   }

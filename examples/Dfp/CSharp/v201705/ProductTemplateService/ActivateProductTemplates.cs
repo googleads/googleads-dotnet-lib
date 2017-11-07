@@ -48,67 +48,67 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ProductTemplateService.
-      ProductTemplateService productTemplateService =
-          (ProductTemplateService) user.GetService(DfpService.v201705.ProductTemplateService);
+      using (ProductTemplateService productTemplateService =
+          (ProductTemplateService) user.GetService(DfpService.v201705.ProductTemplateService)) {
 
-      // Set the ID of the product template to activate.
-      long productTemplateId = long.Parse(_T("INSERT_PRODUCT_TEMPLATE_ID_HERE"));
+        // Set the ID of the product template to activate.
+        long productTemplateId = long.Parse(_T("INSERT_PRODUCT_TEMPLATE_ID_HERE"));
 
-      // Create statement to select a product template by ID.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-          .AddValue("id", productTemplateId);
+        // Create statement to select a product template by ID.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+            .AddValue("id", productTemplateId);
 
-      // Set default for page.
-      ProductTemplatePage page = new ProductTemplatePage();
-      List<string> productTemplateIds = new List<string>();
+        // Set default for page.
+        ProductTemplatePage page = new ProductTemplatePage();
+        List<string> productTemplateIds = new List<string>();
 
-      try {
-        do {
-          // Get product templates by statement.
-          page = productTemplateService.getProductTemplatesByStatement(
-              statementBuilder.ToStatement());
+        try {
+          do {
+            // Get product templates by statement.
+            page = productTemplateService.getProductTemplatesByStatement(
+                statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            int i = page.startIndex;
-            foreach (ProductTemplate productTemplate in page.results) {
-              Console.WriteLine("{0}) Product template with ID ='{1}' will be activated.",
-                  i++, productTemplate.id);
-              productTemplateIds.Add(productTemplate.id.ToString());
+            if (page.results != null) {
+              int i = page.startIndex;
+              foreach (ProductTemplate productTemplate in page.results) {
+                Console.WriteLine("{0}) Product template with ID ='{1}' will be activated.",
+                    i++, productTemplate.id);
+                productTemplateIds.Add(productTemplate.id.ToString());
+              }
+            }
+
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+          Console.WriteLine("Number of product templates to be activated: {0}",
+              productTemplateIds.Count);
+
+          if (productTemplateIds.Count > 0) {
+            // Modify statement.
+            statementBuilder.RemoveLimitAndOffset();
+
+            // Create action.
+            Google.Api.Ads.Dfp.v201705.ActivateProductTemplates action =
+                new Google.Api.Ads.Dfp.v201705.ActivateProductTemplates();
+
+            // Perform action.
+            UpdateResult result = productTemplateService.performProductTemplateAction(action,
+                statementBuilder.ToStatement());
+
+            // Display results.
+            if (result != null && result.numChanges > 0) {
+              Console.WriteLine("Number of product templates activated: {0}", result.numChanges);
+            } else {
+              Console.WriteLine("No product templates were activated.");
             }
           }
-
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-
-        Console.WriteLine("Number of product templates to be activated: {0}",
-            productTemplateIds.Count);
-
-        if (productTemplateIds.Count > 0) {
-          // Modify statement.
-          statementBuilder.RemoveLimitAndOffset();
-
-          // Create action.
-          Google.Api.Ads.Dfp.v201705.ActivateProductTemplates action =
-              new Google.Api.Ads.Dfp.v201705.ActivateProductTemplates();
-
-          // Perform action.
-          UpdateResult result = productTemplateService.performProductTemplateAction(action,
-              statementBuilder.ToStatement());
-
-          // Display results.
-          if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of product templates activated: {0}", result.numChanges);
-          } else {
-            Console.WriteLine("No product templates were activated.");
-          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to activate product templates. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to activate product templates. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

@@ -18,7 +18,6 @@ Imports Google.Api.Ads.AdWords.v201710
 Imports Org.BouncyCastle.Crypto.Digests
 
 Imports System.Text
-Imports System.Collections.Generic
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
   ''' <summary>
@@ -78,84 +77,83 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
-      ' Get the UserListService.
-      Dim userListService As AdwordsUserListService = CType(user.GetService(
+      Using userListService As AdwordsUserListService = CType(user.GetService(
           AdWordsService.v201710.AdwordsUserListService),
-          AdwordsUserListService)
+              AdwordsUserListService)
 
-      ' Create a user list.
-      Dim userList As New CrmBasedUserList
-      userList.name = "Customer relationship management list #" &
-          ExampleUtilities.GetRandomString()
-      userList.description = "A list of customers that originated from " &
-          "email addresses"
+        ' Create a user list.
+        Dim userList As New CrmBasedUserList
+        userList.name = "Customer relationship management list #" &
+            ExampleUtilities.GetRandomString()
+        userList.description = "A list of customers that originated from email addresses"
 
-      ' CRM Userlist has a maximum membership lifespan of 180 days. See
-      ' https://support.google.com/adwords/answer/6276125 for details.
-      userList.membershipLifeSpan = 180L
+        ' CRM Userlist has a maximum membership lifespan of 180 days. See
+        ' https://support.google.com/adwords/answer/6276125 for details.
+        userList.membershipLifeSpan = 180L
 
-      ' Create operation.
-      Dim operation As New UserListOperation
-      operation.operand = userList
-      operation.operator = [Operator].ADD
+        ' Create operation.
+        Dim operation As New UserListOperation
+        operation.operand = userList
+        operation.operator = [Operator].ADD
 
-      Try
-        ' Add user list.
-        Dim result As UserListReturnValue = userListService.mutate(
-            New UserListOperation() {operation})
+        Try
+          ' Add user list.
+          Dim result As UserListReturnValue = userListService.mutate(
+              New UserListOperation() {operation})
 
-        Console.WriteLine("Created new user list with name = '{0}' and " &
-            "id = '{1}'.", result.value(0).name, result.value(0).id)
+          Console.WriteLine("Created new user list with name = '{0}' and " &
+              "id = '{1}'.", result.value(0).name, result.value(0).id)
 
-        ' Get user list ID.
-        Dim userListId As Long = result.value(0).id
+          ' Get user list ID.
+          Dim userListId As Long = result.value(0).id
 
-        ' Prepare the emails for upload.
-        Dim memberList As New List(Of Member)()
+          ' Prepare the emails for upload.
+          Dim memberList As New List(Of Member)()
 
-        ' Hash normalized email addresses based on SHA-256 hashing algorithm.
-        For i As Integer = 0 To EMAILS.Length - 1
-          Dim member As New Member()
-          member.hashedEmail = ToSha256String(digest, ToNormalizedEmail(EMAILS(i)))
+          ' Hash normalized email addresses based on SHA-256 hashing algorithm.
+          For i As Integer = 0 To EMAILS.Length - 1
+            Dim member As New Member()
+            member.hashedEmail = ToSha256String(digest, ToNormalizedEmail(EMAILS(i)))
 
-          ' Adding address info Is currently available on a whitelist-only basis. This
-          ' code demonstrates how to do it, but if you are Not on the whitelist, you
-          ' will need to remove this block for the example to run.
-          Dim addressInfo As New AddressInfo()
-          addressInfo.hashedFirstName = ToSha256String(digest, FIRST_NAME)
-          addressInfo.hashedLastName = ToSha256String(digest, LAST_NAME)
-          addressInfo.zipCode = ZIP_CODE
-          addressInfo.countryCode = COUNTRY_CODE
-          member.addressInfo = addressInfo
+            ' Adding address info Is currently available on a whitelist-only basis. This
+            ' code demonstrates how to do it, but if you are Not on the whitelist, you
+            ' will need to remove this block for the example to run.
+            Dim addressInfo As New AddressInfo()
+            addressInfo.hashedFirstName = ToSha256String(digest, FIRST_NAME)
+            addressInfo.hashedLastName = ToSha256String(digest, LAST_NAME)
+            addressInfo.zipCode = ZIP_CODE
+            addressInfo.countryCode = COUNTRY_CODE
+            member.addressInfo = addressInfo
 
-          memberList.Add(member)
-        Next
-        ' Create operation to add members to the user list based on email
-        ' addresses.
-        Dim mutateMembersOperation As New MutateMembersOperation
-        mutateMembersOperation.operand = New MutateMembersOperand()
-        mutateMembersOperation.operand.userListId = userListId
-        mutateMembersOperation.operand.membersList = memberList.ToArray()
-        mutateMembersOperation.operator = [Operator].ADD
+            memberList.Add(member)
+          Next
+          ' Create operation to add members to the user list based on email
+          ' addresses.
+          Dim mutateMembersOperation As New MutateMembersOperation
+          mutateMembersOperation.operand = New MutateMembersOperand()
+          mutateMembersOperation.operand.userListId = userListId
+          mutateMembersOperation.operand.membersList = memberList.ToArray()
+          mutateMembersOperation.operator = [Operator].ADD
 
 
-        ' Add members to the user list based on email addresses.
-        Dim mutateMembersResult As MutateMembersReturnValue =
+          ' Add members to the user list based on email addresses.
+          Dim mutateMembersResult As MutateMembersReturnValue =
               userListService.mutateMembers(
                   New MutateMembersOperation() {mutateMembersOperation})
 
-        ' Display results.
-        ' Reminder: it may take several hours for the list to be populated with
-        ' members.
-        For Each userListResult As UserList In mutateMembersResult.userLists
-          Console.WriteLine("Email addresses were added to user list with " &
-              "name '{0}' and id '{1}'.",
-              userListResult.name, userListResult.id)
-        Next
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to add user lists " &
-            "(a.k.a. audiences) and upload email addresses.", e)
-      End Try
+          ' Display results.
+          ' Reminder: it may take several hours for the list to be populated with
+          ' members.
+          For Each userListResult As UserList In mutateMembersResult.userLists
+            Console.WriteLine("Email addresses were added to user list with " &
+                "name '{0}' and id '{1}'.",
+                userListResult.name, userListResult.id)
+          Next
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to add user lists " &
+              "(a.k.a. audiences) and upload email addresses.", e)
+        End Try
+      End Using
     End Sub
 
     ''' <summary>
