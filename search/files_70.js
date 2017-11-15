@@ -12,13 +12,13 @@ var searchData=
   ['pausead_2ecs',['PauseAd.cs',['../v201708_2_basic_operations_2_pause_ad_8cs.html',1,'']]],
   ['pausead_2ecs',['PauseAd.cs',['../v201702_2_basic_operations_2_pause_ad_8cs.html',1,'']]],
   ['pausead_2ecs',['PauseAd.cs',['../v201710_2_basic_operations_2_pause_ad_8cs.html',1,'']]],
-  ['populatefirstpartyaudiencesegments_2ecs',['PopulateFirstPartyAudienceSegments.cs',['../v201702_2_audience_segment_service_2_populate_first_party_audience_segments_8cs.html',1,'']]],
   ['populatefirstpartyaudiencesegments_2ecs',['PopulateFirstPartyAudienceSegments.cs',['../v201705_2_audience_segment_service_2_populate_first_party_audience_segments_8cs.html',1,'']]],
   ['populatefirstpartyaudiencesegments_2ecs',['PopulateFirstPartyAudienceSegments.cs',['../v201708_2_audience_segment_service_2_populate_first_party_audience_segments_8cs.html',1,'']]],
-  ['pqlutilities_2ecs',['PqlUtilities.cs',['../v201705_2_pql_utilities_8cs.html',1,'']]],
-  ['pqlutilities_2ecs',['PqlUtilities.cs',['../v201611_2_pql_utilities_8cs.html',1,'']]],
-  ['pqlutilities_2ecs',['PqlUtilities.cs',['../v201702_2_pql_utilities_8cs.html',1,'']]],
+  ['populatefirstpartyaudiencesegments_2ecs',['PopulateFirstPartyAudienceSegments.cs',['../v201711_2_audience_segment_service_2_populate_first_party_audience_segments_8cs.html',1,'']]],
   ['pqlutilities_2ecs',['PqlUtilities.cs',['../v201708_2_pql_utilities_8cs.html',1,'']]],
+  ['pqlutilities_2ecs',['PqlUtilities.cs',['../v201702_2_pql_utilities_8cs.html',1,'']]],
+  ['pqlutilities_2ecs',['PqlUtilities.cs',['../v201705_2_pql_utilities_8cs.html',1,'']]],
+  ['pqlutilities_2ecs',['PqlUtilities.cs',['../v201711_2_pql_utilities_8cs.html',1,'']]],
   ['preconditionutilities_2ecs',['PreconditionUtilities.cs',['../_precondition_utilities_8cs.html',1,'']]],
   ['predefinedreporttypes_2ecs',['PredefinedReportTypes.cs',['../v201702_2_predefined_report_types_8cs.html',1,'']]],
   ['predefinedreporttypes_2ecs',['PredefinedReportTypes.cs',['../v201705_2_predefined_report_types_8cs.html',1,'']]],
@@ -57,7 +57,7 @@ var searchData=
   ['properties_2ecs',['Properties.cs',['../src_2_common_2_properties_2_properties_8cs.html',1,'']]],
   ['properties_2ecs',['Properties.cs',['../examples_2_dfp_2_c_sharp_2_o_auth_2_properties_2_properties_8cs.html',1,'']]],
   ['properties_2ecs',['Properties.cs',['../examples_2_dfp_2_c_sharp_2_properties_2_properties_8cs.html',1,'']]],
-  ['publishprogrammaticproductstomarketplace_2ecs',['PublishProgrammaticProductsToMarketplace.cs',['../v201708_2_product_service_2_publish_programmatic_products_to_marketplace_8cs.html',1,'']]],
-  ['publishprogrammaticproductstomarketplace_2ecs',['PublishProgrammaticProductsToMarketplace.cs',['../v201702_2_product_service_2_publish_programmatic_products_to_marketplace_8cs.html',1,'']]],
-  ['publishprogrammaticproductstomarketplace_2ecs',['PublishProgrammaticProductsToMarketplace.cs',['../v201705_2_product_service_2_publish_programmatic_products_to_marketplace_8cs.html',1,'']]]
+  ['publishprogrammaticproductstomarketplace_2ecs',['PublishProgrammaticProductsToMarketplace.cs',['../v201711_2_product_service_2_publish_programmatic_products_to_marketplace_8cs.html',1,'']]],
+  ['publishprogrammaticproductstomarketplace_2ecs',['PublishProgrammaticProductsToMarketplace.cs',['../v201705_2_product_service_2_publish_programmatic_products_to_marketplace_8cs.html',1,'']]],
+  ['publishprogrammaticproductstomarketplace_2ecs',['PublishProgrammaticProductsToMarketplace.cs',['../v201708_2_product_service_2_publish_programmatic_products_to_marketplace_8cs.html',1,'']]]
 ];

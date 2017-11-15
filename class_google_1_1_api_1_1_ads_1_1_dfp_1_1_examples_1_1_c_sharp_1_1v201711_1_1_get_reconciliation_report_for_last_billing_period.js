@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201711_1_1_get_reconciliation_report_for_last_billing_period =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201711_1_1_get_reconciliation_report_for_last_billing_period.html#aeca2b2a9ff3fecfdef0c08ed0adb65be", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201711_1_1_get_reconciliation_report_for_last_billing_period.html#aa8c43e7978ed601ab34f08d8b7a9ed8f", null ]
+];

@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_live_stream_event_service_1_1update_live_stream_events_request =
-[
-    [ "updateLiveStreamEventsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_live_stream_event_service_1_1update_live_stream_events_request.html#a4b93e561c54cba84e25448bc913ed124", null ],
-    [ "updateLiveStreamEventsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_live_stream_event_service_1_1update_live_stream_events_request.html#a49874733ed9034bf519f10a4a2ab2881", null ],
-    [ "liveStreamEvents", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_live_stream_event_service_1_1update_live_stream_events_request.html#a9f876a4a6480f4a902cfdff22edd37bf", null ]
-];

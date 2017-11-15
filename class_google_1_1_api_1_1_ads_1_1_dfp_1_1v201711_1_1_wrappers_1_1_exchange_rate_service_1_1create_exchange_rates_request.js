@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_exchange_rate_service_1_1create_exchange_rates_request =
+[
+    [ "createExchangeRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_exchange_rate_service_1_1create_exchange_rates_request.html#af6a02742aed2a3ab27bd44021bc14e5f", null ],
+    [ "createExchangeRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_exchange_rate_service_1_1create_exchange_rates_request.html#a2d3ec046bb80f5601dda2ab3ae74226e", null ],
+    [ "exchangeRates", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_exchange_rate_service_1_1create_exchange_rates_request.html#a60d45bedf9aaceaf0362c8c8fa688e0b", null ]
+];

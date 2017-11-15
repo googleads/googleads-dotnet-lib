@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_request =
+[
+    [ "updateAdUnitsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_request.html#a72838387f3213e311768ab492bc7c978", null ],
+    [ "updateAdUnitsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_request.html#aaaaaa0140573b1d175b02babf615f63a", null ],
+    [ "adUnits", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_request.html#a11d11ea6552d8c26d1ef048085bbe437", null ]
+];

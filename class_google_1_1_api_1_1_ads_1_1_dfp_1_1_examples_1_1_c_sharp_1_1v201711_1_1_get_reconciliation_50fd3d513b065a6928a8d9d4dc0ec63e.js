@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201711_1_1_get_reconciliation_50fd3d513b065a6928a8d9d4dc0ec63e =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201711_1_1_get_reconciliation_50fd3d513b065a6928a8d9d4dc0ec63e.html#a65486084275d1b0e12ed0c7c2579ba50", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201711_1_1_get_reconciliation_50fd3d513b065a6928a8d9d4dc0ec63e.html#a5603288f23586f10fbc61c20e5f48afe", null ]
+];

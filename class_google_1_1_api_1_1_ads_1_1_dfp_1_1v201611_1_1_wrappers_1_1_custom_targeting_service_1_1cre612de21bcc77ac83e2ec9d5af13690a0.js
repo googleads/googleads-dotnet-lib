@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_custom_targeting_service_1_1cre612de21bcc77ac83e2ec9d5af13690a0 =
-[
-    [ "createCustomTargetingValuesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_custom_targeting_service_1_1cre612de21bcc77ac83e2ec9d5af13690a0.html#a41e3b36a2abb631d1b6b9cae81bad1fa", null ],
-    [ "createCustomTargetingValuesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_custom_targeting_service_1_1cre612de21bcc77ac83e2ec9d5af13690a0.html#a8c322b456725896a88a22a0e1b9b4fb8", null ],
-    [ "values", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_custom_targeting_service_1_1cre612de21bcc77ac83e2ec9d5af13690a0.html#abb1402d55b67078289a7c97eab490ea3", null ]
-];

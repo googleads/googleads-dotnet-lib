@@ -1,5 +1,0 @@
-var interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_reconciliation_report_service_interface =
-[
-    [ "getReconciliationReportsByStatement", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_reconciliation_report_service_interface.html#a4faf3d165bb6c80d0ed21988ff82f036", null ],
-    [ "updateReconciliationReports", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_reconciliation_report_service_interface.html#a8d96bacf7e51d60a3049b45c9c745be9", null ]
-];

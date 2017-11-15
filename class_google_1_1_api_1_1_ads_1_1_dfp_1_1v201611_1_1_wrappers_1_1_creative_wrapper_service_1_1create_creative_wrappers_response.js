@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_creative_wrapper_service_1_1create_creative_wrappers_response =
-[
-    [ "createCreativeWrappersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_creative_wrapper_service_1_1create_creative_wrappers_response.html#a2ae35faad2b4b8fad91a689c62bbe3b1", null ],
-    [ "createCreativeWrappersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_creative_wrapper_service_1_1create_creative_wrappers_response.html#a33bb12ab8d1fbe73fb6cb0f64e94cd7b", null ],
-    [ "rval", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201611_1_1_wrappers_1_1_creative_wrapper_service_1_1create_creative_wrappers_response.html#a024da7853adbda39f0eacbcbd3565f62", null ]
-];

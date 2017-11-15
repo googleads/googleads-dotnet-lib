@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201711_1_1_create_product_template_base_rates =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201711_1_1_create_product_template_base_rates.html#ae7cf9b2a6397abf9ee0297cfe8e9c345", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201711_1_1_create_product_template_base_rates.html#ac39657280b36cef9306bd9d8b3cdd028", null ]
+];
