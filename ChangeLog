@@ -1,3 +1,16 @@
+22.4.0
+======
+AdWords:
+  -
+
+DFP:
+  - Added support for v201711.
+  - Removed support for v201611.
+  - Removed examples for v201702.
+
+Common:
+  -
+
 22.3.1
 ======
 AdWords:

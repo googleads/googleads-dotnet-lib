@@ -47,44 +47,48 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      ReportService reportService = (ReportService) user.GetService(
-          DfpService.v201705.ReportService);
+      using (ReportService reportService = (ReportService) user.GetService(
+          DfpService.v201705.ReportService)) {
 
-      // Set the file path where the report will be saved.
-      String filePath = _T("INSERT_FILE_PATH_HERE");
+        // Set the file path where the report will be saved.
+        String filePath = _T("INSERT_FILE_PATH_HERE");
 
-      // Create report job.
-      ReportJob reportJob = new ReportJob();
+        // Create report job.
+        ReportJob reportJob = new ReportJob();
 
-      // Create report query.
-      ReportQuery reportQuery = new ReportQuery();
-      reportQuery.dateRangeType = DateRangeType.REACH_LIFETIME;
-      reportQuery.dimensions = new Dimension[] {Dimension.LINE_ITEM_ID, Dimension.LINE_ITEM_NAME};
-      reportQuery.columns = new Column[] {Column.REACH_FREQUENCY, Column.REACH_AVERAGE_REVENUE,
-          Column.REACH};
-      reportJob.reportQuery = reportQuery;
+        // Create report query.
+        ReportQuery reportQuery = new ReportQuery();
+        reportQuery.dateRangeType = DateRangeType.REACH_LIFETIME;
+        reportQuery.dimensions = new Dimension[] {
+          Dimension.LINE_ITEM_ID,
+          Dimension.LINE_ITEM_NAME
+        };
+        reportQuery.columns = new Column[] {Column.REACH_FREQUENCY, Column.REACH_AVERAGE_REVENUE,
+            Column.REACH};
+        reportJob.reportQuery = reportQuery;
 
-      try {
-        // Run report.
-        reportJob = reportService.runReportJob(reportJob);
+        try {
+          // Run report.
+          reportJob = reportService.runReportJob(reportJob);
 
-        ReportUtilities reportUtilities = new ReportUtilities(reportService, reportJob.id);
+          ReportUtilities reportUtilities = new ReportUtilities(reportService, reportJob.id);
 
-        // Set download options.
-        ReportDownloadOptions options = new ReportDownloadOptions();
-        options.exportFormat = ExportFormat.CSV_DUMP;
-        options.useGzipCompression = true;
-        reportUtilities.reportDownloadOptions = options;
+          // Set download options.
+          ReportDownloadOptions options = new ReportDownloadOptions();
+          options.exportFormat = ExportFormat.CSV_DUMP;
+          options.useGzipCompression = true;
+          reportUtilities.reportDownloadOptions = options;
 
-        // Download the report.
-        using (ReportResponse reportResponse = reportUtilities.GetResponse()) {
-          reportResponse.Save(filePath);
+          // Download the report.
+          using (ReportResponse reportResponse = reportUtilities.GetResponse()) {
+            reportResponse.Save(filePath);
+          }
+          Console.WriteLine("Report saved to \"{0}\".", filePath);
+
+        } catch (Exception e) {
+          Console.WriteLine("Failed to run delivery report. Exception says \"{0}\"",
+              e.Message);
         }
-        Console.WriteLine("Report saved to \"{0}\".", filePath);
-
-      } catch (Exception e) {
-        Console.WriteLine("Failed to run delivery report. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

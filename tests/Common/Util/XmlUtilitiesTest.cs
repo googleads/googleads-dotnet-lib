@@ -55,8 +55,8 @@ namespace Google.Api.Ads.Common.Tests.Util {
     [Category("Small")]
     public void TestCanLoadXmlFromDiskWithUtf8BomInMemory() {
       Assert.DoesNotThrow(delegate() {
-        XmlUtilities.CreateDocument(Encoding.UTF8.GetString(Resources.Utf8Bom));
         XmlUtilities.CreateDocument(Resources.Utf8Bom);
+        XmlUtilities.CreateDocument(Encoding.UTF8.GetBytes(Resources.Utf8Bom));
       });
     }
 
@@ -69,7 +69,8 @@ namespace Google.Api.Ads.Common.Tests.Util {
     public void TestCanLoadXmlFromDiskWithUtf8Bom() {
       string path = Path.GetTempFileName();
       using (FileStream fs = File.Create(path)) {
-        fs.Write(Resources.Utf8Bom, 0, Resources.Utf8Bom.Length);
+        byte[] bytes = Encoding.UTF8.GetBytes(Resources.Utf8Bom);
+        fs.Write(bytes, 0, bytes.Length);
       }
       using (FileStream fs = File.OpenRead(path)) {
         Assert.DoesNotThrow(delegate() {

@@ -47,37 +47,37 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ActivityService.
-      ActivityService activityService =
-          (ActivityService) user.GetService(DfpService.v201705.ActivityService);
+      using (ActivityService activityService =
+          (ActivityService) user.GetService(DfpService.v201705.ActivityService)) {
 
-      // Set the ID of the activity to update.
-      int activityId = int.Parse(_T("INSERT_ACTIVITY_ID_HERE"));
+        // Set the ID of the activity to update.
+        int activityId = int.Parse(_T("INSERT_ACTIVITY_ID_HERE"));
 
-      try {
-        // Get the activity.
-        StatementBuilder statemetnBuilder = new StatementBuilder()
-            .Where("id = :id")
-            .OrderBy("id ASC")
-            .Limit(1)
-            .AddValue("id", activityId);
+        try {
+          // Get the activity.
+          StatementBuilder statemetnBuilder = new StatementBuilder()
+              .Where("id = :id")
+              .OrderBy("id ASC")
+              .Limit(1)
+              .AddValue("id", activityId);
 
-        ActivityPage page = activityService.getActivitiesByStatement(
-            statemetnBuilder.ToStatement());
-        Activity activity = page.results[0];
+          ActivityPage page = activityService.getActivitiesByStatement(
+              statemetnBuilder.ToStatement());
+          Activity activity = page.results[0];
 
-        // Update the expected URL.
-        activity.expectedURL = "https://www.google.com";
+          // Update the expected URL.
+          activity.expectedURL = "https://www.google.com";
 
-        // Update the activity on the server.
-        Activity[] activities = activityService.updateActivities(new Activity[] {activity});
+          // Update the activity on the server.
+          Activity[] activities = activityService.updateActivities(new Activity[] { activity });
 
-        foreach (Activity updatedActivity in activities) {
-          Console.WriteLine("Activity with ID \"{0}\" and name \"{1}\" was updated.",
-              updatedActivity.id, updatedActivity.name);
+          foreach (Activity updatedActivity in activities) {
+            Console.WriteLine("Activity with ID \"{0}\" and name \"{1}\" was updated.",
+                updatedActivity.id, updatedActivity.name);
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update activities. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update activities. Exception says \"{0}\"", e.Message);
       }
     }
   }

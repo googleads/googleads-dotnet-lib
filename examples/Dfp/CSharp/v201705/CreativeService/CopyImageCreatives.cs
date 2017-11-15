@@ -50,54 +50,56 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the CreativeService.
-      CreativeService creativeService =
-          (CreativeService) user.GetService(DfpService.v201705.CreativeService);
+      using (CreativeService creativeService =
+          (CreativeService) user.GetService(DfpService.v201705.CreativeService)) {
 
-      long creativeId = long.Parse(_T("INSERT_IMAGE_CREATIVE_ID_HERE"));
+        long creativeId = long.Parse(_T("INSERT_IMAGE_CREATIVE_ID_HERE"));
 
-      // Create a statement to get the image creative.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-          .AddValue("id", creativeId);
+        // Create a statement to get the image creative.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+            .AddValue("id", creativeId);
 
-      try {
-        // Get the creative.
-        CreativePage page = creativeService.getCreativesByStatement(statementBuilder.ToStatement());
+        try {
+          // Get the creative.
+          CreativePage page = creativeService.getCreativesByStatement(
+              statementBuilder.ToStatement());
 
-        if (page.results != null) {
-          ImageCreative imageCreative = (ImageCreative) page.results[0];
-          // Since we cannot set id to null, we mark it as not specified.
-          imageCreative.idSpecified = false;
+          if (page.results != null) {
+            ImageCreative imageCreative = (ImageCreative) page.results[0];
+            // Since we cannot set id to null, we mark it as not specified.
+            imageCreative.idSpecified = false;
 
-          imageCreative.advertiserId = imageCreative.advertiserId;
-          imageCreative.name = imageCreative.name + " (Copy #" + GetTimeStamp() + ")";
+            imageCreative.advertiserId = imageCreative.advertiserId;
+            imageCreative.name = imageCreative.name + " (Copy #" + GetTimeStamp() + ")";
 
-          // Create image asset.
-          CreativeAsset creativeAsset = new CreativeAsset();
-          creativeAsset.fileName = "image.jpg";
-          creativeAsset.assetByteArray = MediaUtilities.GetAssetDataFromUrl(
-              imageCreative.primaryImageAsset.assetUrl);
+            // Create image asset.
+            CreativeAsset creativeAsset = new CreativeAsset();
+            creativeAsset.fileName = "image.jpg";
+            creativeAsset.assetByteArray = MediaUtilities.GetAssetDataFromUrl(
+                imageCreative.primaryImageAsset.assetUrl);
 
-          creativeAsset.size = imageCreative.primaryImageAsset.size;
-          imageCreative.primaryImageAsset = creativeAsset;
+            creativeAsset.size = imageCreative.primaryImageAsset.size;
+            imageCreative.primaryImageAsset = creativeAsset;
 
-          // Create the copied creative.
-          Creative[] creatives = creativeService.createCreatives(new Creative[] {imageCreative});
+            // Create the copied creative.
+            Creative[] creatives = creativeService.createCreatives(
+                new Creative[] { imageCreative });
 
-          // Display copied creatives.
-          foreach (Creative copiedCreative in creatives) {
-            Console.WriteLine("Image creative with ID \"{0}\", name \"{1}\", and type \"{2}\" " +
-                "was created and can be previewed at {3}", copiedCreative.id, copiedCreative.name,
-                 copiedCreative.GetType().Name, copiedCreative.previewUrl);
+            // Display copied creatives.
+            foreach (Creative copiedCreative in creatives) {
+              Console.WriteLine("Image creative with ID \"{0}\", name \"{1}\", and type \"{2}\" " +
+                  "was created and can be previewed at {3}", copiedCreative.id,
+                  copiedCreative.name, copiedCreative.GetType().Name, copiedCreative.previewUrl);
+            }
+          } else {
+            Console.WriteLine("No creatives were copied.");
           }
-        } else {
-          Console.WriteLine("No creatives were copied.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to copy creatives. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to copy creatives. Exception says \"{0}\"", e.Message);
       }
     }
   }

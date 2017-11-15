@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="certificate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\certificate.p12;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="ResponseLog" xml:space="preserve">
     <value>Request made: Host: localhost, Service: TestService, Method: get, : , Request ID: 0004bf2e364aeb380ae752d50000576f, ResponseTime(ms): 1665, OperationsCount: 8, IsFault: False, FaultMessage:</value>
   </data>
@@ -538,16 +535,28 @@ TimeStamp: Mon, 03 Nov 2014 12:25:30 GMT
   <data name="SoapRequest" xml:space="preserve">
     <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;soap:Header&gt;&lt;RequestHeader xmlns="https://adwords.google.com/api/adwords/cm/v201409"&gt;&lt;KEY1&gt;VALUE1&lt;/KEY1&gt;&lt;KEY2&gt;VALUE2&lt;/KEY2&gt;&lt;KEY3&gt;VALUE3&lt;/KEY3&gt;&lt;/RequestHeader&gt;&lt;/soap:Header&gt;&lt;soap:Body&gt;&lt;get xmlns="https://adwords.google.com/api/adwords/cm/v201409"&gt;&lt;KEY1&gt;VALUE1&lt;/KEY1&gt;&lt;KEY2&gt;VALUE2&lt;/KEY2&gt;&lt;KEY3&gt;VALUE3&lt;/KEY3&gt;&lt;/get&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;</value>
   </data>
-  <data name="secret" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\secret.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="XxeExample" xml:space="preserve">
     <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
  &lt;!DOCTYPE foo [  
    &lt;!ELEMENT foo ANY &gt;
    &lt;!ENTITY xxe SYSTEM "file:///c:/boot.ini" &gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</value>
   </data>
-  <data name="Utf8Bom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\utf8bom.xml;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Utf8Bom" xml:space="preserve">
+    <value>&lt;?xml version = "1.0" encoding="utf-8"?&gt;
+&lt;test&gt;&lt;/test&gt;</value>
+  </data>
+  <data name="secret" xml:space="preserve">
+    <value>{
+  "type": "service_account",
+  "project_id": "project-id-123",
+  "private_key_id": "654321",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDw6CCpKHEF373IJ6exzsHT1SPaUbSxSEA7iOpMNr45OxaAUfQf8UQKUvUphGIp0qn6cTvMZShqMBzoJw/aFzdmNdlXUnou3L6ay78sqBXiMVVxclDn/sTMyfWIY4w4UwqZGANsbUwkR3A7twAJynsqzgN6YAzfjaO3TdoIDIH9sxARhZVRUYDBY6ul5k/BF+rKsvXZS7MKOUq/uyYyAjPx1xLiybvb09kuVK8m9Hk4RJI+bZKCFadUetb1LFgDn7FiysNYHbsNInctIv075gW/QahIxPyOKUjFU/03nvcIH4kM1NEjlZh7VS/kUHA+CSDN736xcruoepLveyScF5M7AgMBAAECggEBAIe3rla+EtZlUyyEsqOoQGgPppAjAbHya0Ve/+gJ2yaw1B9cjDTGnjdWvwkxrH+1T89opXCj+J3CFzbucq7B75LkeVoJfA4UjEj2ye/ljdaNRn6QEWZxj/tzN6Eru94rYkgXUC5wcLnriR4LHblmWfcmcq0pmXcD+5yT/mYUbdM3Ssr2Ou4gmMlzSx8KfDhS50OFlnlmKC8EZfMp9DlDZwkR/0XAcdktx4VFIOeHOpyZT1K4JBhVTV3Rs35za8AQB7WwoX6OIfI91MXqzlaajVoBlTCYbfPkr/ULqdpgKl1pgvP7YuGcrYKKjUvFPC/b7wsEmSvbEV+RhFSvfTTS1eECgYEA/pNOps+gaNfjBnNf+8FflZNkNVUlm5lRqrhpNUKSskk1tciOjSaZ2qcTND3BOMmTSNeT1M9jYaxPq1ZX1LAo2+pjMtsEwdPjCFzBEM5p0kjpByy2hDvgRQ70kN7HwKZBuPrz4ClSoEO97hlFEne1hdFOZo9wLayqSdbMN63sXasCgYEA8kE9P8DlXEOyIl6a6ZvzKVReLfjYjfxWgmruPQuWzgQ7ROfPpKc1ibcvId0O7o9oCFCP9eZGCewK2aKRaDKtF4JRQeE3VvqVE/9x0iAOmZeYB6pBhrFbIiOxRQTIc8wVw/B4OqtROXgKFKGuWce9f3ebuCVrckdtN5nqUEgQcLECgYAD3HQa75c9P9j/pgxUozAx8pRYgrwZShAFCNr/pczXy2h3I12WInm+6T3PUwh1Ngl31100oxicyKJEtQCMB0f3Xey3Pr8puW7+F3oOKTNNrzFpnHIAO3BBW+K1t8tLzrm8doHwanAIYj6lN9jmWM52AyCvSYmoB7Blgk6Coa6uFQKBgQDCl7r+UhEq2snlJ78h9X4ObdG09dXlv5Mx8XjrGjsJw4ZkZBx780BjHf1DI1GSOSlkvGnXKSCLacqRZS+N1l8JqklhNOqB+Ij1ZlRkaBGyOH4LcixuaFp/AtKrURs/QOke2jOJVQHKuuzGA9WMEpDaKhawhYZYZp2Jcx4vXKOwEQKBgDWGwMGDF1tDMzhmku18vruMXs3aOsdbWsPew4qRXTY+kikipfP87kJMiMg0N7VTLN/LuED1rl5kdLy2YyE63V3NwseXAA35QUR6/vrwDw0utXAxX96XFMUz3BK2WqWi5Bfh0fSg9EV6fKJkvDaksSCbRpvrQGXkdEPgqrVVgGPq\n-----END PRIVATE KEY-----\n",
+  "client_email": "test@project-id-123.example.com",
+  "client_id": "123456",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/test%40project-id-123.example.com"
+}</value>
   </data>
 </root>

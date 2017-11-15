@@ -16,7 +16,7 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201705;
 
 using System;
-using System.Text;
+using System.Collections.Generic;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
 
@@ -33,7 +33,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
       GetKeywordIdeas codeExample = new GetKeywordIdeas();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser());
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+        codeExample.Run(new AdWordsUser(), adGroupId);
       } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e));
@@ -53,7 +54,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
     /// Runs the code example.
     /// </summary>
     /// <param name="user">The AdWords user.</param>
-    public void Run(AdWordsUser user) {
+    /// <param name="adGroupId">ID of the ad group to use for generating ideas.</param>
+    public void Run(AdWordsUser user, long? adGroupId) {
       using (TargetingIdeaService targetingIdeaService =
           (TargetingIdeaService) user.GetService(AdWordsService.v201705.TargetingIdeaService)) {
 
@@ -64,16 +66,20 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
         selector.requestedAttributeTypes = new AttributeType[] {
           AttributeType.KEYWORD_TEXT,
           AttributeType.SEARCH_VOLUME,
+          AttributeType.AVERAGE_CPC,
+          AttributeType.COMPETITION,
           AttributeType.CATEGORY_PRODUCTS_AND_SERVICES
         };
 
-        // Create the search parameters.
-        string keywordText = "mars cruise";
+        List<SearchParameter> searchParameters = new List<SearchParameter>();
 
         // Create related to query search parameter.
         RelatedToQuerySearchParameter relatedToQuerySearchParameter =
             new RelatedToQuerySearchParameter();
-        relatedToQuerySearchParameter.queries = new String[] { keywordText };
+        relatedToQuerySearchParameter.queries = new String[] {
+          "bakery", "pastries", "birthday cake"
+        };
+        searchParameters.Add(relatedToQuerySearchParameter);
 
         // Add a language search parameter (optional).
         // The ID can be found in the documentation:
@@ -82,6 +88,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
         Language english = new Language();
         english.id = 1000;
         languageParameter.languages = new Language[] { english };
+        searchParameters.Add(languageParameter);
 
         // Add network search parameter (optional).
         NetworkSetting networkSetting = new NetworkSetting();
@@ -92,11 +99,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
 
         NetworkSearchParameter networkSearchParameter = new NetworkSearchParameter();
         networkSearchParameter.networkSetting = networkSetting;
+        searchParameters.Add(networkSearchParameter);
+
+        // Optional: Use an existing ad group to generate ideas.
+        if (adGroupId != null) {
+          SeedAdGroupIdSearchParameter seedAdGroupIdSearchParameter =
+              new SeedAdGroupIdSearchParameter();
+          seedAdGroupIdSearchParameter.adGroupId = adGroupId.Value;
+          searchParameters.Add(seedAdGroupIdSearchParameter);
+        }
 
         // Set the search parameters.
-        selector.searchParameters = new SearchParameter[] {
-          relatedToQuerySearchParameter, languageParameter, networkSearchParameter
-        };
+        selector.searchParameters = searchParameters.ToArray();
 
         // Set selector paging (required for targeting idea service).
         Paging paging = Paging.Default;
@@ -112,28 +126,29 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
             // Display related keywords.
             if (page.entries != null && page.entries.Length > 0) {
               foreach (TargetingIdea targetingIdea in page.entries) {
-                string keyword = null;
-                string categories = null;
-                long averageMonthlySearches = 0;
+                Dictionary<AttributeType, AdWords.v201705.Attribute> ideas =
+                    targetingIdea.data.ToDict();
 
-                foreach (Type_AttributeMapEntry entry in targetingIdea.data) {
-                  if (entry.key == AttributeType.KEYWORD_TEXT) {
-                    keyword = (entry.value as StringAttribute).value;
-                  }
-                  if (entry.key == AttributeType.CATEGORY_PRODUCTS_AND_SERVICES) {
-                    IntegerSetAttribute categorySet = entry.value as IntegerSetAttribute;
-                    StringBuilder builder = new StringBuilder();
-                    if (categorySet.value != null) {
-                      foreach (int value in categorySet.value) {
-                        builder.AppendFormat("{0}, ", value);
-                      }
-                      categories = builder.ToString().Trim(new char[] { ',', ' ' });
-                    }
-                  }
-                  if (entry.key == AttributeType.SEARCH_VOLUME) {
-                    averageMonthlySearches = (entry.value as LongAttribute).value;
-                  }
+                string keyword = (ideas[AttributeType.KEYWORD_TEXT] as StringAttribute).value;
+                IntegerSetAttribute categorySet =
+                    ideas[AttributeType.CATEGORY_PRODUCTS_AND_SERVICES] as IntegerSetAttribute;
+
+                string categories = "";
+
+                if (categorySet != null && categorySet.value != null) {
+                  categories = string.Join(", ", categorySet.value);
                 }
+
+                long averageMonthlySearches =
+                    (ideas[AttributeType.SEARCH_VOLUME] as LongAttribute).value;
+
+                Money averageCpc = (ideas[AttributeType.AVERAGE_CPC] as MoneyAttribute).value;
+                double competition = (ideas[AttributeType.COMPETITION] as DoubleAttribute).value;
+                Console.WriteLine("Keyword with text '{0}', average monthly search " +
+                    "volume {1}, average CPC {2}, and competition {3:F2} was found with " +
+                    "categories: {4}", keyword, averageMonthlySearches, averageCpc?.microAmount,
+                    competition, categories);
+
                 Console.WriteLine("Keyword with text '{0}', and average monthly search volume " +
                     "'{1}' was found with categories: {2}", keyword, averageMonthlySearches,
                     categories);
@@ -143,7 +158,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
             selector.paging.IncreaseOffset();
           } while (selector.paging.startIndex < page.totalNumEntries);
           Console.WriteLine("Number of related keywords found: {0}", page.totalNumEntries);
-          targetingIdeaService.Close();
         } catch (Exception e) {
           throw new System.ApplicationException("Failed to retrieve related keywords.", e);
         }

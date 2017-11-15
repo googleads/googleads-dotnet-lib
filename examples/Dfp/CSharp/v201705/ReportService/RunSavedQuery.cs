@@ -49,56 +49,58 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user, long savedQueryId) {
-      ReportService reportService = (ReportService) user.GetService(
-          DfpService.v201705.ReportService);
+      using (ReportService reportService = (ReportService) user.GetService(
+          DfpService.v201705.ReportService)) {
 
-      // Set the file path where the report will be saved.
-      String filePath = _T("INSERT_FILE_PATH_HERE");
+        // Set the file path where the report will be saved.
+        String filePath = _T("INSERT_FILE_PATH_HERE");
 
-      // Create statement to retrieve the saved query.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", savedQueryId);
+        // Create statement to retrieve the saved query.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", savedQueryId);
 
-      SavedQueryPage page =
-          reportService.getSavedQueriesByStatement(statementBuilder.ToStatement());
-      SavedQuery savedQuery = page.results[0];
+        SavedQueryPage page =
+            reportService.getSavedQueriesByStatement(statementBuilder.ToStatement());
+        SavedQuery savedQuery = page.results[0];
 
-      if (!savedQuery.isCompatibleWithApiVersion) {
-        throw new InvalidOperationException("Saved query is not compatible with this API version");
-      }
-
-      // Optionally modify the query.
-      ReportQuery reportQuery = savedQuery.reportQuery;
-      reportQuery.adUnitView = ReportQueryAdUnitView.HIERARCHICAL;
-
-      // Create a report job using the saved query.
-      ReportJob reportJob = new ReportJob();
-      reportJob.reportQuery = reportQuery;
-
-      try {
-        // Run report.
-        reportJob = reportService.runReportJob(reportJob);
-
-        ReportUtilities reportUtilities = new ReportUtilities(reportService, reportJob.id);
-
-        // Set download options.
-        ReportDownloadOptions options = new ReportDownloadOptions();
-        options.exportFormat = ExportFormat.CSV_DUMP;
-        options.useGzipCompression = true;
-        reportUtilities.reportDownloadOptions = options;
-
-        // Download the report.
-        using (ReportResponse reportResponse = reportUtilities.GetResponse()) {
-          reportResponse.Save(filePath);
+        if (!savedQuery.isCompatibleWithApiVersion) {
+          throw new InvalidOperationException("Saved query is not compatible with this " +
+              "API version");
         }
-        Console.WriteLine("Report saved to \"{0}\".", filePath);
 
-      } catch (Exception e) {
-        Console.WriteLine("Failed to run saved query. Exception says \"{0}\"",
-            e.Message);
+        // Optionally modify the query.
+        ReportQuery reportQuery = savedQuery.reportQuery;
+        reportQuery.adUnitView = ReportQueryAdUnitView.HIERARCHICAL;
+
+        // Create a report job using the saved query.
+        ReportJob reportJob = new ReportJob();
+        reportJob.reportQuery = reportQuery;
+
+        try {
+          // Run report.
+          reportJob = reportService.runReportJob(reportJob);
+
+          ReportUtilities reportUtilities = new ReportUtilities(reportService, reportJob.id);
+
+          // Set download options.
+          ReportDownloadOptions options = new ReportDownloadOptions();
+          options.exportFormat = ExportFormat.CSV_DUMP;
+          options.useGzipCompression = true;
+          reportUtilities.reportDownloadOptions = options;
+
+          // Download the report.
+          using (ReportResponse reportResponse = reportUtilities.GetResponse()) {
+            reportResponse.Save(filePath);
+          }
+          Console.WriteLine("Report saved to \"{0}\".", filePath);
+
+        } catch (Exception e) {
+          Console.WriteLine("Failed to run saved query. Exception says \"{0}\"",
+              e.Message);
+        }
       }
     }
   }

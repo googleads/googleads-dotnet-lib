@@ -46,41 +46,41 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ActivityService.
-      ActivityService activityService =
-          (ActivityService) user.GetService(DfpService.v201708.ActivityService);
+      using (ActivityService activityService =
+          (ActivityService) user.GetService(DfpService.v201708.ActivityService)) {
 
-      // Set the ID of the activity group this activity is associated with.
-      int activityGroupId = int.Parse(_T("INSERT_ACTIVITY_GROUP_ID_HERE"));
+        // Set the ID of the activity group this activity is associated with.
+        int activityGroupId = int.Parse(_T("INSERT_ACTIVITY_GROUP_ID_HERE"));
 
-      // Create a daily visits activity.
-      Activity dailyVisitsActivity = new Activity();
-      dailyVisitsActivity.name = "Activity #" + GetTimeStamp();
-      dailyVisitsActivity.activityGroupId = activityGroupId;
-      dailyVisitsActivity.type = ActivityType.DAILY_VISITS;
+        // Create a daily visits activity.
+        Activity dailyVisitsActivity = new Activity();
+        dailyVisitsActivity.name = "Activity #" + GetTimeStamp();
+        dailyVisitsActivity.activityGroupId = activityGroupId;
+        dailyVisitsActivity.type = ActivityType.DAILY_VISITS;
 
-      // Create a custom activity.
-      Activity customActivity = new Activity();
-      customActivity.name = "Activity #" + GetTimeStamp();
-      customActivity.activityGroupId = activityGroupId;
-      customActivity.type = ActivityType.CUSTOM;
+        // Create a custom activity.
+        Activity customActivity = new Activity();
+        customActivity.name = "Activity #" + GetTimeStamp();
+        customActivity.activityGroupId = activityGroupId;
+        customActivity.type = ActivityType.CUSTOM;
 
-      try {
-        // Create the activities on the server.
-        Activity[] activities = activityService.createActivities(
-            new Activity[] {dailyVisitsActivity, customActivity});
+        try {
+          // Create the activities on the server.
+          Activity[] activities = activityService.createActivities(
+              new Activity[] { dailyVisitsActivity, customActivity });
 
-        // Display results.
-        if (activities != null) {
-          foreach (Activity newActivity in activities) {
-            Console.WriteLine("An activity with ID \"{0}\", name \"{1}\", and type \"{2}\" was " +
-                "created.\n", newActivity.id, newActivity.name, newActivity.type);
+          // Display results.
+          if (activities != null) {
+            foreach (Activity newActivity in activities) {
+              Console.WriteLine("An activity with ID \"{0}\", name \"{1}\", and type \"{2}\" " +
+                  "was created.", newActivity.id, newActivity.name, newActivity.type);
+            }
+          } else {
+            Console.WriteLine("No activities were created.");
           }
-        } else {
-          Console.WriteLine("No activities were created.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create activities. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create activities. Exception says \"{0}\"", e.Message);
       }
     }
   }

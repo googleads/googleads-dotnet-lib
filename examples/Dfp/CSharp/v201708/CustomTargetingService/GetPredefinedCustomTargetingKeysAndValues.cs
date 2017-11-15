@@ -50,104 +50,106 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      CustomTargetingService customTargetingService =
-          (CustomTargetingService) dfpUser.GetService(DfpService.v201708.CustomTargetingService);
+      using (CustomTargetingService customTargetingService =
+          (CustomTargetingService) dfpUser.GetService(DfpService.v201708.CustomTargetingService)) {
 
-      // Create a statement to select custom targeting values for a custom
-      // targeting key.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("customTargetingKeyId = :customTargetingKeyId")
-          .OrderBy("id ASC")
-          .Limit(pageSize);
+        // Create a statement to select custom targeting values for a custom
+        // targeting key.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("customTargetingKeyId = :customTargetingKeyId")
+            .OrderBy("id ASC")
+            .Limit(pageSize);
 
-      List<long> customTargetingKeyIds = getPredefinedCustomTargetingKeyIds(dfpUser);
+        List<long> customTargetingKeyIds = getPredefinedCustomTargetingKeyIds(dfpUser);
 
-      // For each key, retrieve all its values.
-      int totalValueCounter = 0;
-      foreach (long customTargetingKeyId in customTargetingKeyIds) {
-        // Set the custom targeting key ID to select from.
-        statementBuilder.AddValue("customTargetingKeyId", customTargetingKeyId);
+        // For each key, retrieve all its values.
+        int totalValueCounter = 0;
+        foreach (long customTargetingKeyId in customTargetingKeyIds) {
+          // Set the custom targeting key ID to select from.
+          statementBuilder.AddValue("customTargetingKeyId", customTargetingKeyId);
 
-        // Retrieve a small amount of custom targeting values at a time, paging through until all
-        // custom targeting values have been retrieved.
-        int totalResultSetSize = 0;
-        statementBuilder.Offset(0);
-        do {
-          CustomTargetingValuePage page =
-              customTargetingService.getCustomTargetingValuesByStatement(
-                  statementBuilder.ToStatement());
+          // Retrieve a small amount of custom targeting values at a time, paging through until all
+          // custom targeting values have been retrieved.
+          int totalResultSetSize = 0;
+          statementBuilder.Offset(0);
+          do {
+            CustomTargetingValuePage page =
+                customTargetingService.getCustomTargetingValuesByStatement(
+                    statementBuilder.ToStatement());
 
-          // Print out some information for each custom targeting value.
-          if (page.results != null) {
-            totalResultSetSize = page.totalResultSetSize;
-            foreach (CustomTargetingValue customTargetingValue in page.results) {
-              Console.WriteLine(
-                  "{0}) Custom targeting value with ID {1}, " +
-                      "name \"{2}\", " +
-                      "display name \"{3}\", " +
-                      "and custom targeting key ID {4} was found.",
-                  totalValueCounter++,
-                  customTargetingValue.id,
-                  customTargetingValue.name,
-                  customTargetingValue.displayName,
-                  customTargetingValue.customTargetingKeyId
-              );
+            // Print out some information for each custom targeting value.
+            if (page.results != null) {
+              totalResultSetSize = page.totalResultSetSize;
+              foreach (CustomTargetingValue customTargetingValue in page.results) {
+                Console.WriteLine(
+                    "{0}) Custom targeting value with ID {1}, " +
+                        "name \"{2}\", " +
+                        "display name \"{3}\", " +
+                        "and custom targeting key ID {4} was found.",
+                    totalValueCounter++,
+                    customTargetingValue.id,
+                    customTargetingValue.name,
+                    customTargetingValue.displayName,
+                    customTargetingValue.customTargetingKeyId
+                );
+              }
             }
-          }
 
-          statementBuilder.IncreaseOffsetBy(pageSize);
-        } while (statementBuilder.GetOffset() < totalResultSetSize);
+            statementBuilder.IncreaseOffsetBy(pageSize);
+          } while (statementBuilder.GetOffset() < totalResultSetSize);
+        }
+
+        Console.WriteLine("Number of results found: {0}", totalValueCounter);
       }
-
-      Console.WriteLine("Number of results found: {0}", totalValueCounter);
     }
 
     private List<long> getPredefinedCustomTargetingKeyIds(DfpUser dfpUser) {
       List<long> customTargetingKeyIds = new List<long>();
 
-      CustomTargetingService customTargetingService =
-          (CustomTargetingService) dfpUser.GetService(DfpService.v201708.CustomTargetingService);
+      using (CustomTargetingService customTargetingService =
+          (CustomTargetingService) dfpUser.GetService(DfpService.v201708.CustomTargetingService)) {
 
-      // Create a statement to select custom targeting keys.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("type = :type")
-          .OrderBy("id ASC")
-          .Limit(pageSize)
-          .AddValue("type", CustomTargetingKeyType.PREDEFINED.ToString());
+        // Create a statement to select custom targeting keys.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("type = :type")
+            .OrderBy("id ASC")
+            .Limit(pageSize)
+            .AddValue("type", CustomTargetingKeyType.PREDEFINED.ToString());
 
-      // Retrieve a small amount of custom targeting keys at a time, paging through until all
-      // custom targeting keys have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        CustomTargetingKeyPage page = customTargetingService.getCustomTargetingKeysByStatement(
-            statementBuilder.ToStatement());
+        // Retrieve a small amount of custom targeting keys at a time, paging through until all
+        // custom targeting keys have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          CustomTargetingKeyPage page = customTargetingService.getCustomTargetingKeysByStatement(
+              statementBuilder.ToStatement());
 
-        // Print out some information for each custom targeting key.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (CustomTargetingKey customTargetingKey in page.results) {
-            Console.WriteLine(
-                "{0}) Custom targeting key with ID {1}, " +
-                    "name \"{2}\", " +
-                    "and display name \"{3}\" was found.",
-                i++,
-                customTargetingKey.id,
-                customTargetingKey.name,
-                customTargetingKey.displayName
-            );
-            customTargetingKeyIds.Add(customTargetingKey.id);
+          // Print out some information for each custom targeting key.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (CustomTargetingKey customTargetingKey in page.results) {
+              Console.WriteLine(
+                  "{0}) Custom targeting key with ID {1}, " +
+                      "name \"{2}\", " +
+                      "and display name \"{3}\" was found.",
+                  i++,
+                  customTargetingKey.id,
+                  customTargetingKey.name,
+                  customTargetingKey.displayName
+              );
+              customTargetingKeyIds.Add(customTargetingKey.id);
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of keys found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of keys found: {0}", totalResultSetSize);
 
-      return customTargetingKeyIds;
+        return customTargetingKeyIds;
+      }
     }
   }
 }

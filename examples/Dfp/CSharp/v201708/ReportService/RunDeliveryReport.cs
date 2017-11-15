@@ -50,60 +50,64 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      ReportService reportService = (ReportService) user.GetService(
-          DfpService.v201708.ReportService);
+      using (ReportService reportService = (ReportService) user.GetService(
+          DfpService.v201708.ReportService)) {
 
-      // Set the file path where the report will be saved.
-      String filePath = _T("INSERT_FILE_PATH_HERE");
+        // Set the file path where the report will be saved.
+        String filePath = _T("INSERT_FILE_PATH_HERE");
 
-      long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
+        long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
 
-      // Create report job.
-      ReportJob reportJob = new ReportJob();
-      reportJob.reportQuery = new ReportQuery();
-      reportJob.reportQuery.dimensions = new Dimension[] {Dimension.ORDER_ID, Dimension.ORDER_NAME};
-      reportJob.reportQuery.dimensionAttributes = new DimensionAttribute[] {
+        // Create report job.
+        ReportJob reportJob = new ReportJob();
+        reportJob.reportQuery = new ReportQuery();
+        reportJob.reportQuery.dimensions = new Dimension[] {
+          Dimension.ORDER_ID,
+          Dimension.ORDER_NAME
+        };
+        reportJob.reportQuery.dimensionAttributes = new DimensionAttribute[] {
           DimensionAttribute.ORDER_TRAFFICKER, DimensionAttribute.ORDER_START_DATE_TIME,
           DimensionAttribute.ORDER_END_DATE_TIME};
-      reportJob.reportQuery.columns = new Column[] {Column.AD_SERVER_IMPRESSIONS,
+        reportJob.reportQuery.columns = new Column[] {Column.AD_SERVER_IMPRESSIONS,
           Column.AD_SERVER_CLICKS, Column.AD_SERVER_CTR, Column.AD_SERVER_CPM_AND_CPC_REVENUE,
           Column.AD_SERVER_WITHOUT_CPD_AVERAGE_ECPM};
 
-      // Set a custom date range for the last 8 days
-      reportJob.reportQuery.dateRangeType = DateRangeType.CUSTOM_DATE;
-      System.DateTime endDateTime = System.DateTime.Now;
-      reportJob.reportQuery.startDate =
-        DateTimeUtilities.FromDateTime(endDateTime.AddDays(-8), "America/New_York").date;
-      reportJob.reportQuery.endDate =
-        DateTimeUtilities.FromDateTime(endDateTime, "America/New_York").date;
+        // Set a custom date range for the last 8 days
+        reportJob.reportQuery.dateRangeType = DateRangeType.CUSTOM_DATE;
+        System.DateTime endDateTime = System.DateTime.Now;
+        reportJob.reportQuery.startDate =
+          DateTimeUtilities.FromDateTime(endDateTime.AddDays(-8), "America/New_York").date;
+        reportJob.reportQuery.endDate =
+          DateTimeUtilities.FromDateTime(endDateTime, "America/New_York").date;
 
-      // Create statement object to filter for an order.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("ORDER_ID = :id")
-          .AddValue("id", orderId);
-      reportJob.reportQuery.statement = statementBuilder.ToStatement();
+        // Create statement object to filter for an order.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("ORDER_ID = :id")
+            .AddValue("id", orderId);
+        reportJob.reportQuery.statement = statementBuilder.ToStatement();
 
-      try {
-        // Run report job.
-        reportJob = reportService.runReportJob(reportJob);
+        try {
+          // Run report job.
+          reportJob = reportService.runReportJob(reportJob);
 
-        ReportUtilities reportUtilities = new ReportUtilities(reportService, reportJob.id);
+          ReportUtilities reportUtilities = new ReportUtilities(reportService, reportJob.id);
 
-        // Set download options.
-        ReportDownloadOptions options = new ReportDownloadOptions();
-        options.exportFormat = ExportFormat.CSV_DUMP;
-        options.useGzipCompression = true;
-        reportUtilities.reportDownloadOptions = options;
+          // Set download options.
+          ReportDownloadOptions options = new ReportDownloadOptions();
+          options.exportFormat = ExportFormat.CSV_DUMP;
+          options.useGzipCompression = true;
+          reportUtilities.reportDownloadOptions = options;
 
-        // Download the report.
-        using (ReportResponse reportResponse = reportUtilities.GetResponse()) {
-          reportResponse.Save(filePath);
+          // Download the report.
+          using (ReportResponse reportResponse = reportUtilities.GetResponse()) {
+            reportResponse.Save(filePath);
+          }
+          Console.WriteLine("Report saved to \"{0}\".", filePath);
+
+        } catch (Exception e) {
+          Console.WriteLine("Failed to run delivery report. Exception says \"{0}\"",
+              e.Message);
         }
-        Console.WriteLine("Report saved to \"{0}\".", filePath);
-
-      } catch (Exception e) {
-        Console.WriteLine("Failed to run delivery report. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

@@ -45,59 +45,60 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Create the CreativeWrapperService.
-      CreativeWrapperService creativeWrapperService = (CreativeWrapperService) user.GetService(
-          DfpService.v201705.CreativeWrapperService);
+      using (CreativeWrapperService creativeWrapperService =
+          (CreativeWrapperService) user.GetService(DfpService.v201705.CreativeWrapperService)) {
 
-      long labelId = long.Parse(_T("INSERT_CREATIVE_WRAPPER_LABEL_ID_HERE"));
+        long labelId = long.Parse(_T("INSERT_CREATIVE_WRAPPER_LABEL_ID_HERE"));
 
-      try {
-        // Create a query to select the active creative wrapper for the given
-        // label.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where ("labelId = :labelId AND status = :status")
-            .OrderBy("id ASC")
-            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-            .AddValue("status", CreativeWrapperStatus.ACTIVE.ToString())
-            .AddValue("labelId", labelId);
+        try {
+          // Create a query to select the active creative wrapper for the given
+          // label.
+          StatementBuilder statementBuilder = new StatementBuilder()
+              .Where("labelId = :labelId AND status = :status")
+              .OrderBy("id ASC")
+              .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+              .AddValue("status", CreativeWrapperStatus.ACTIVE.ToString())
+              .AddValue("labelId", labelId);
 
-        // Set default for page.
-        CreativeWrapperPage page = new CreativeWrapperPage();
+          // Set default for page.
+          CreativeWrapperPage page = new CreativeWrapperPage();
 
-        do {
-          page =
-              creativeWrapperService.getCreativeWrappersByStatement(statementBuilder.ToStatement());
-          CreativeWrapper[] creativeWrappers = page.results;
-          if (creativeWrappers != null) {
-            foreach (CreativeWrapper wrapper in creativeWrappers) {
-              Console.WriteLine("Creative wrapper with ID \'{0}\' applying to label \'{1}\' with " +
-                  "status \'{2}\' will be deactivated.", wrapper.id, wrapper.labelId,
-                   wrapper.status);
+          do {
+            page = creativeWrapperService.getCreativeWrappersByStatement(
+                statementBuilder.ToStatement());
+            CreativeWrapper[] creativeWrappers = page.results;
+            if (creativeWrappers != null) {
+              foreach (CreativeWrapper wrapper in creativeWrappers) {
+                Console.WriteLine("Creative wrapper with ID \'{0}\' applying to label " +
+                    "\'{1}\' with status \'{2}\' will be deactivated.", wrapper.id,
+                    wrapper.labelId, wrapper.status);
+              }
             }
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+          Console.WriteLine("Number of creative wrappers to be deactivated: {0}",
+              page.totalResultSetSize);
+
+          // Modify statement for action.
+          statementBuilder.RemoveLimitAndOffset();
+
+          // Perform action.
+          CreativeWrapperAction action = new DeactivateCreativeWrappers();
+          UpdateResult result = creativeWrapperService.performCreativeWrapperAction(action,
+              statementBuilder.ToStatement());
+
+          // Display results.
+          if (result.numChanges > 0) {
+            Console.WriteLine("Number of creative wrappers deactivated: {0}", result.numChanges);
+          } else {
+            Console.WriteLine("No creative wrappers were deactivated.");
           }
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
 
-        Console.WriteLine("Number of creative wrappers to be deactivated: {0}",
-            page.totalResultSetSize);
-
-        // Modify statement for action.
-        statementBuilder.RemoveLimitAndOffset();
-
-        // Perform action.
-        CreativeWrapperAction action = new DeactivateCreativeWrappers();
-        UpdateResult result = creativeWrapperService.performCreativeWrapperAction(action,
-            statementBuilder.ToStatement());
-
-        // Display results.
-        if (result.numChanges > 0) {
-          Console.WriteLine("Number of creative wrappers deactivated: {0}", result.numChanges);
-        } else {
-          Console.WriteLine("No creative wrappers were deactivated.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create creative wrappers. Exception says \"{0}\"",
+              e.Message);
         }
-
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create creative wrappers. Exception says \"{0}\"", e.Message);
       }
     }
   }

@@ -18,7 +18,8 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
   /// <summary>
-  /// This example gets workflow approval requests. Workflow approval requests must be approved or rejected for a workflow to finish.
+  /// This example gets workflow approval requests. Workflow approval requests must be
+  /// approved or rejected for a workflow to finish.
   /// </summary>
   public class GetWorkflowApprovalRequests : SampleBase {
     /// <summary>
@@ -26,7 +27,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// </summary>
     public override string Description {
       get {
-        return "This example gets workflow approval requests. Workflow approval requests must be approved or rejected for a workflow to finish.";
+        return "This example gets workflow approval requests. Workflow approval requests must " +
+            "be approved or rejected for a workflow to finish.";
       }
     }
 

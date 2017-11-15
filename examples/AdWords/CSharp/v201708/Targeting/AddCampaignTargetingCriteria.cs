@@ -18,7 +18,7 @@ using Google.Api.Ads.AdWords.v201708;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708{
 
   /// <summary>
   /// This code example adds various types of targeting criteria to a campaign.
@@ -72,99 +72,101 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// 77. Feeds linked to a GMB account automatically have this FeedMapping.
     /// If you don't have such a feed, set this value to null.</param>
     public void Run(AdWordsUser user, long campaignId, long? feedId) {
-      // Get the CampaignCriterionService.
-      CampaignCriterionService campaignCriterionService =
+      using (CampaignCriterionService campaignCriterionService =
           (CampaignCriterionService) user.GetService(
-              AdWordsService.v201708.CampaignCriterionService);
+              AdWordsService.v201708.CampaignCriterionService)) {
 
-      // Create locations. The IDs can be found in the documentation or
-      // retrieved with the LocationCriterionService.
-      Location california = new Location() {
-        id = 21137L
-      };
+        // Create locations. The IDs can be found in the documentation or
+        // retrieved with the LocationCriterionService.
+        Location california = new Location() {
+          id = 21137L
+        };
 
-      Location mexico = new Location() {
-        id = 2484L
-      };
+        Location mexico = new Location() {
+          id = 2484L
+        };
 
-      // Create languages. The IDs can be found in the documentation or
-      // retrieved with the ConstantDataService.
-      Language english = new Language() {
-        id = 1000L
-      };
+        // Create languages. The IDs can be found in the documentation or
+        // retrieved with the ConstantDataService.
+        Language english = new Language() {
+          id = 1000L
+        };
 
-      Language spanish = new Language() {
-        id = 1003L
-      };
+        Language spanish = new Language() {
+          id = 1003L
+        };
 
-      List<Criterion> criteria = new List<Criterion>() {
-          california, mexico, english, spanish};
+        List<Criterion> criteria = new List<Criterion>() {
+          california, mexico, english, spanish
+        };
 
-      // Distance targeting. Area of 10 miles around the locations in the location feed.
-      if (feedId != null) {
-        LocationGroups radiusLocationGroup = new LocationGroups() {
-          feedId = feedId.Value,
-          matchingFunction = new Function() {
-            @operator = FunctionOperator.IDENTITY,
-            lhsOperand = new FunctionArgumentOperand[] {
-              new LocationExtensionOperand() {
-                radius = new ConstantOperand() {
-                  type = ConstantOperandConstantType.DOUBLE,
-                  unit  = ConstantOperandUnit.MILES,
-                  doubleValue = 10
+        // Distance targeting. Area of 10 miles around the locations in the location feed.
+        if (feedId != null) {
+          LocationGroups radiusLocationGroup = new LocationGroups() {
+            feedId = feedId.Value,
+            matchingFunction = new Function() {
+              @operator = FunctionOperator.IDENTITY,
+              lhsOperand = new FunctionArgumentOperand[] {
+                new LocationExtensionOperand() {
+                  radius = new ConstantOperand() {
+                    type = ConstantOperandConstantType.DOUBLE,
+                    unit  = ConstantOperandUnit.MILES,
+                    doubleValue = 10
+                  }
                 }
               }
             }
+          };
+
+          criteria.Add(radiusLocationGroup);
+        }
+
+        // Create operations to add each of the criteria above.
+        List<CampaignCriterionOperation> operations = new List<CampaignCriterionOperation>();
+        foreach (Criterion criterion in criteria) {
+          CampaignCriterionOperation operation = new CampaignCriterionOperation() {
+            operand = new CampaignCriterion() {
+              campaignId = campaignId,
+              criterion = criterion
+            },
+            @operator = Operator.ADD
+          };
+
+          operations.Add(operation);
+        }
+
+        // Add a negative campaign criterion.
+
+        CampaignCriterion negativeCriterion = new NegativeCampaignCriterion() {
+          campaignId = campaignId,
+          criterion = new Keyword() {
+            text = "jupiter cruise",
+            matchType = KeywordMatchType.BROAD
           }
         };
 
-        criteria.Add(radiusLocationGroup);
-      }
-
-      // Create operations to add each of the criteria above.
-      List<CampaignCriterionOperation> operations = new List<CampaignCriterionOperation>();
-      foreach (Criterion criterion in criteria) {
-        CampaignCriterionOperation operation = new CampaignCriterionOperation() {
-          operand = new CampaignCriterion() {
-            campaignId = campaignId,
-            criterion = criterion
-          },
+        CampaignCriterionOperation negativeCriterionOperation = new CampaignCriterionOperation() {
+          operand = negativeCriterion,
           @operator = Operator.ADD
         };
 
-        operations.Add(operation);
-      }
+        operations.Add(negativeCriterionOperation);
 
-      // Add a negative campaign criterion.
+        try {
+          // Set the campaign targets.
+          CampaignCriterionReturnValue retVal = campaignCriterionService.mutate(
+              operations.ToArray());
 
-      CampaignCriterion negativeCriterion = new NegativeCampaignCriterion() {
-        campaignId = campaignId,
-        criterion = new Keyword() {
-          text = "jupiter cruise",
-          matchType = KeywordMatchType.BROAD
-        }
-      };
-
-      CampaignCriterionOperation negativeCriterionOperation = new CampaignCriterionOperation() {
-        operand = negativeCriterion,
-        @operator = Operator.ADD
-      };
-
-      operations.Add(negativeCriterionOperation);
-
-      try {
-        // Set the campaign targets.
-        CampaignCriterionReturnValue retVal = campaignCriterionService.mutate(operations.ToArray());
-
-        if (retVal != null && retVal.value != null) {
-          // Display campaign targets.
-          foreach (CampaignCriterion criterion in retVal.value) {
-            Console.WriteLine("Campaign criteria of type '{0}' was set to campaign with" +
-                " id = '{1}'.", criterion.criterion.CriterionType, criterion.campaignId);
+          if (retVal != null && retVal.value != null) {
+            // Display campaign targets.
+            foreach (CampaignCriterion criterion in retVal.value) {
+              Console.WriteLine("Campaign criteria of type '{0}' was set to campaign with" +
+                  " id = '{1}'.", criterion.criterion.CriterionType, criterion.campaignId);
+            }
           }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to set Campaign criteria.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to set Campaign criteria.", e);
       }
     }
   }

@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201705;
 using Google.Api.Ads.Dfp.v201705;
@@ -49,65 +48,66 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the CustomFieldService.
-      CustomFieldService customFieldService = (CustomFieldService) user.GetService(
-          DfpService.v201705.CustomFieldService);
+      using (CustomFieldService customFieldService = (CustomFieldService) user.GetService(
+          DfpService.v201705.CustomFieldService)) {
 
-      // Set the ID of the custom field to update.
-      int customFieldId = int.Parse(_T("INSERT_CUSTOM_FIELD_ID_HERE"));
+        // Set the ID of the custom field to update.
+        int customFieldId = int.Parse(_T("INSERT_CUSTOM_FIELD_ID_HERE"));
 
-      // Create statement to select only active custom fields that apply to
-      // line items.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", customFieldId);
+        // Create statement to select only active custom fields that apply to
+        // line items.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", customFieldId);
 
-      // Set default for page.
-      CustomFieldPage page = new CustomFieldPage();
-      int i = 0;
-      List<string> customFieldIds = new List<string>();
+        // Set default for page.
+        CustomFieldPage page = new CustomFieldPage();
+        int i = 0;
+        List<string> customFieldIds = new List<string>();
 
-      try {
-        do {
-          // Get custom fields by statement.
-          page = customFieldService.getCustomFieldsByStatement(statementBuilder.ToStatement());
+        try {
+          do {
+            // Get custom fields by statement.
+            page = customFieldService.getCustomFieldsByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            foreach (CustomField customField in page.results) {
-              Console.WriteLine("{0}) Custom field with ID \"{1}\" and name \"{2}\" will be " +
-                  "deactivated.", i, customField.id, customField.name);
-              customFieldIds.Add(customField.id.ToString());
-              i++;
+            if (page.results != null) {
+              foreach (CustomField customField in page.results) {
+                Console.WriteLine("{0}) Custom field with ID \"{1}\" and name \"{2}\" will be " +
+                    "deactivated.", i, customField.id, customField.name);
+                customFieldIds.Add(customField.id.ToString());
+                i++;
+              }
+            }
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+          Console.WriteLine("Number of custom fields to be deactivated: " + customFieldIds.Count);
+
+          if (customFieldIds.Count > 0) {
+            // Remove limit and offset from statement.
+            statementBuilder.RemoveLimitAndOffset();
+
+            // Create action.
+            Google.Api.Ads.Dfp.v201705.DeactivateCustomFields action =
+                new Google.Api.Ads.Dfp.v201705.DeactivateCustomFields();
+
+            // Perform action.
+            UpdateResult result = customFieldService.performCustomFieldAction(action,
+                statementBuilder.ToStatement());
+
+            // Display results.
+            if (result != null && result.numChanges > 0) {
+              Console.WriteLine("Number of custom fields deactivated: " + result.numChanges);
+            } else {
+              Console.WriteLine("No custom fields were deactivated.");
             }
           }
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-
-        Console.WriteLine("Number of custom fields to be deactivated: " + customFieldIds.Count);
-
-        if (customFieldIds.Count > 0) {
-          // Remove limit and offset from statement.
-          statementBuilder.RemoveLimitAndOffset();
-
-          // Create action.
-          Google.Api.Ads.Dfp.v201705.DeactivateCustomFields action =
-              new Google.Api.Ads.Dfp.v201705.DeactivateCustomFields();
-
-          // Perform action.
-          UpdateResult result = customFieldService.performCustomFieldAction(action,
-              statementBuilder.ToStatement());
-
-          // Display results.
-          if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of custom fields deactivated: " + result.numChanges);
-          } else {
-            Console.WriteLine("No custom fields were deactivated.");
-          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to deactivate custom fields. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to deactivate custom fields. Exception says \"{0}\"", e.Message);
       }
     }
   }

@@ -46,34 +46,34 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the CompanyService.
-      CompanyService companyService =
-          (CompanyService) user.GetService(DfpService.v201705.CompanyService);
+      using (CompanyService companyService =
+          (CompanyService) user.GetService(DfpService.v201705.CompanyService)) {
 
-      // Create an array to store local company objects.
-      Company[] companies = new Company[5];
+        // Create an array to store local company objects.
+        Company[] companies = new Company[5];
 
-      for (int i = 0; i < 5; i++) {
-        Company company = new Company();
-        company.name = string.Format("Advertiser #{0}", i);
-        company.type = CompanyType.ADVERTISER;
-        companies[i] = company;
-      }
-
-      try {
-        // Create the companies on the server.
-        companies = companyService.createCompanies(companies);
-
-        if (companies != null && companies.Length > 0) {
-          foreach (Company company in companies) {
-            Console.WriteLine("A company with ID = '{0}', name = '{1}' and type = '{2}' was" +
-                " created.", company.id, company.name, company.type);
-          }
-        } else {
-          Console.WriteLine("No companies created.");
+        for (int i = 0; i < 5; i++) {
+          Company company = new Company();
+          company.name = string.Format("Advertiser #{0}", i);
+          company.type = CompanyType.ADVERTISER;
+          companies[i] = company;
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create company. Exception says \"{0}\"", e.Message);
+
+        try {
+          // Create the companies on the server.
+          companies = companyService.createCompanies(companies);
+
+          if (companies != null && companies.Length > 0) {
+            foreach (Company company in companies) {
+              Console.WriteLine("A company with ID = '{0}', name = '{1}' and type = '{2}' was" +
+                  " created.", company.id, company.name, company.type);
+            }
+          } else {
+            Console.WriteLine("No companies created.");
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create company. Exception says \"{0}\"", e.Message);
+        }
       }
     }
   }

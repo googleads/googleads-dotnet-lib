@@ -47,38 +47,39 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the CompanyService.
-      CompanyService companyService =
-          (CompanyService) user.GetService(DfpService.v201705.CompanyService);
+      using (CompanyService companyService =
+          (CompanyService) user.GetService(DfpService.v201705.CompanyService)) {
 
-      // Set the ID of the company to update.
-      int companyId = int.Parse(_T("INSERT_COMPANY_ID_HERE"));
+        // Set the ID of the company to update.
+        int companyId = int.Parse(_T("INSERT_COMPANY_ID_HERE"));
 
-      // Create a statement to select the company by ID.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :companyId")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("companyId", companyId);
+        // Create a statement to select the company by ID.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :companyId")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("companyId", companyId);
 
-      try {
-        // Get the companies by statement.
-        CompanyPage page = companyService.getCompaniesByStatement(statementBuilder.ToStatement());
+        try {
+          // Get the companies by statement.
+          CompanyPage page = companyService.getCompaniesByStatement(
+              statementBuilder.ToStatement());
 
-        Company company = page.results[0];
+          Company company = page.results[0];
 
-        // Update the company comment
-        company.comment = company.comment + " Updated.";
+          // Update the company comment
+          company.comment = company.comment + " Updated.";
 
-        // Update the company on the server.
-        Company[] companies = companyService.updateCompanies(new Company[] {company});
+          // Update the company on the server.
+          Company[] companies = companyService.updateCompanies(new Company[] { company });
 
-        foreach (Company updatedCompany in companies) {
-          Console.WriteLine("Company with ID = {0}, name = {1}, and comment \"{2}\" was updated.",
-              updatedCompany.id, updatedCompany.name, updatedCompany.comment);
+          foreach (Company updatedCompany in companies) {
+            Console.WriteLine("Company with ID = {0}, name = {1}, and comment \"{2}\" " +
+                "was updated.", updatedCompany.id, updatedCompany.name, updatedCompany.comment);
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update companies. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update companies. Exception says \"{0}\"", e.Message);
       }
     }
   }

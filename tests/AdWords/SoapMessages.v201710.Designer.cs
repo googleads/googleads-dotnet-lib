@@ -19,7 +19,7 @@ namespace Google.Api.Ads.AdWords.Tests {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class SoapMessages_v201710 {
@@ -64,7 +64,7 @@ namespace Google.Api.Ads.AdWords.Tests {
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
         ///&lt;Example&gt;
         ///  &lt;SOAP&gt;
-        ///    &lt;Request&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&amp;lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&amp;gt;&amp;lt;soap:Header&amp;gt;&amp;lt;RequestHeader xmlns=&quot;https://adwords.google.com/api/adwords/cm/v201710&quot;&amp;gt;&amp;lt;developerToken xmlns=&quot;https://adwords.google.com/api/adwords/cm/v201710&quot;&amp;gt;******&amp;lt;/developerToken&amp;gt;&amp;lt;clientCustomerId xmlns=&quot;http [rest of string was truncated]&quot;;.
+        ///    &lt;Request&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&amp;lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&amp;gt;&amp;lt;soap:Header&amp;gt;&amp;lt;RequestHeader xmlns=&quot;https://adwords.google.com/api/adwords/cm/v201710&quot;&amp;gt;&amp;lt;developerToken xmlns=&quot;https://adwords.google.com/api/adwords/cm/v201710&quot;&amp;gt;******&amp;lt;/developerToken&amp;gt;&amp;lt;clientCustomerId xmlns=&quot;h [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string UpdateCampaign {
             get {

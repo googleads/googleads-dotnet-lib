@@ -47,46 +47,52 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the UserService.
-      UserService userService = (UserService) user.GetService(DfpService.v201708.UserService);
+      using (UserService userService = (UserService) user.GetService(
+          DfpService.v201708.UserService)) {
 
-      // Set the user's email addresses and names.
-      List<string[]> emailAndNames = new List<String[]>();
-      emailAndNames.Add(new String[] {_T("INSERT_EMAIL_ADDRESS_HERE"), _T("INSERT_NAME_HERE")});
-      emailAndNames.Add(new String[] {_T("INSERT_ANOTHER_EMAIL_ADDRESS_HERE"),
-          _T("INSERT_ANOTHER_NAME_HERE")});
+        // Set the user's email addresses and names.
+        List<string[]> emailAndNames = new List<String[]>();
+        emailAndNames.Add(new String[] {
+          _T("INSERT_EMAIL_ADDRESS_HERE"),
+          _T("INSERT_NAME_HERE")
+        });
+        emailAndNames.Add(new String[] {
+          _T("INSERT_ANOTHER_EMAIL_ADDRESS_HERE"),
+          _T("INSERT_ANOTHER_NAME_HERE")
+        });
 
-      // Roles can be obtained by running GetAllRoles.cs.
-      long roleId = long.Parse(_T("INSERT_ROLE_ID_HERE"));
+        // Roles can be obtained by running GetAllRoles.cs.
+        long roleId = long.Parse(_T("INSERT_ROLE_ID_HERE"));
 
-      // Create an array to store local user objects.
-      User[] users = new User[emailAndNames.Count];
+        // Create an array to store local user objects.
+        User[] users = new User[emailAndNames.Count];
 
-      for (int i = 0; i < users.Length; i++) {
-        // Create the new user structure.
-        User newUser = new User();
-        newUser.email = emailAndNames[i][0];
-        newUser.name = emailAndNames[i][1];
-        newUser.roleId = roleId;
+        for (int i = 0; i < users.Length; i++) {
+          // Create the new user structure.
+          User newUser = new User();
+          newUser.email = emailAndNames[i][0];
+          newUser.name = emailAndNames[i][1];
+          newUser.roleId = roleId;
 
-        users[i] = newUser;
-      }
-
-      try {
-        // Create the users.
-        users = userService.createUsers(users);
-
-        if (users != null) {
-          foreach (User newUser in users) {
-            Console.WriteLine("A user with ID = '{0}', email = '{1}', and role = '{2}' " +
-                "was created.", newUser.id, newUser.email, newUser.roleName);
-          }
-        } else {
-          Console.WriteLine("No users created.");
+          users[i] = newUser;
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create users. Exception says \"{0}\"",
-            e.Message);
+
+        try {
+          // Create the users.
+          users = userService.createUsers(users);
+
+          if (users != null) {
+            foreach (User newUser in users) {
+              Console.WriteLine("A user with ID = '{0}', email = '{1}', and role = '{2}' " +
+                  "was created.", newUser.id, newUser.email, newUser.roleName);
+            }
+          } else {
+            Console.WriteLine("No users created.");
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create users. Exception says \"{0}\"",
+              e.Message);
+        }
       }
     }
   }

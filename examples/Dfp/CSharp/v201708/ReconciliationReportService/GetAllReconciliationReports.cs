@@ -49,7 +49,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// </summary>
     public void Run(DfpUser dfpUser) {
       using (ReconciliationReportService reconciliationReportService =
-          (ReconciliationReportService) dfpUser.GetService(DfpService.v201708.ReconciliationReportService)) {
+          (ReconciliationReportService) dfpUser.GetService(
+              DfpService.v201708.ReconciliationReportService)) {
 
         // Create a statement to select reconciliation reports.
         int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
@@ -61,8 +62,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
         // reconciliation reports have been retrieved.
         int totalResultSetSize = 0;
         do {
-          ReconciliationReportPage page = reconciliationReportService.getReconciliationReportsByStatement(
-              statementBuilder.ToStatement());
+          ReconciliationReportPage page =
+              reconciliationReportService.getReconciliationReportsByStatement(
+                  statementBuilder.ToStatement());
 
           // Print out some information for each reconciliation report.
           if (page.results != null) {

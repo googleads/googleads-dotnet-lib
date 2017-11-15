@@ -77,6 +77,11 @@
     <Compile Include="Lib\OAuth2ProviderForApplicationsTests.cs" />
     <Compile Include="Lib\OAuth2ProviderForServiceAccountsTests.cs" />
     <Compile Include="OAuth2RequestInterceptor.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="StubIntegrityTestHelper.cs" />
     <Compile Include="TestUtils.cs" />
     <Compile Include="Util\CollectionUtilitiesTest.cs" />
@@ -95,11 +100,6 @@
     <Compile Include="Mocks\MockServiceFactory.cs" />
     <Compile Include="Mocks\MockServiceSignature.cs" />
     <Compile Include="Mocks\MockTraceListener.cs" />
-    <Compile Include="Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Common\Common.csproj">
@@ -110,17 +110,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\certificate.p12" />
-    <None Include="Resources\secret.json" />
-    <None Include="Resources\utf8bom.xml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

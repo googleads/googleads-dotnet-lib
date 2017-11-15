@@ -18,7 +18,8 @@ using System;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
   /// <summary>
-  /// This example gets workflow external condition requests. Workflow external condition requests must be triggered or skipped for a workflow to finish.
+  /// This example gets workflow external condition requests. Workflow external condition
+  /// requests must be triggered or skipped for a workflow to finish.
   /// </summary>
   public class GetWorkflowExternalConditionRequests : SampleBase {
     /// <summary>
@@ -26,7 +27,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// </summary>
     public override string Description {
       get {
-        return "This example gets workflow external condition requests. Workflow external condition requests must be triggered or skipped for a workflow to finish.";
+        return "This example gets workflow external condition requests. Workflow external " +
+            "condition requests must be triggered or skipped for a workflow to finish.";
       }
     }
 

@@ -46,41 +46,42 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the BaseRateService.
-      BaseRateService baseRateService =
-          (BaseRateService) user.GetService(DfpService.v201708.BaseRateService);
+      using (BaseRateService baseRateService =
+          (BaseRateService) user.GetService(DfpService.v201708.BaseRateService)) {
 
-      // Set the rate card ID to add the base rate to.
-      long rateCardId = long.Parse(_T("INSERT_RATE_CARD_ID_HERE"));
+        // Set the rate card ID to add the base rate to.
+        long rateCardId = long.Parse(_T("INSERT_RATE_CARD_ID_HERE"));
 
-      // Set the product to apply this base rate to.
-      long productId = long.Parse(_T("INSERT_PRODUCT_ID_HERE"));
+        // Set the product to apply this base rate to.
+        long productId = long.Parse(_T("INSERT_PRODUCT_ID_HERE"));
 
-      // Create a base rate for a product.
-      ProductBaseRate productBaseRate = new ProductBaseRate();
+        // Create a base rate for a product.
+        ProductBaseRate productBaseRate = new ProductBaseRate();
 
-      // Set the rate card ID that the product base rate belongs to.
-      productBaseRate.rateCardId = rateCardId;
+        // Set the rate card ID that the product base rate belongs to.
+        productBaseRate.rateCardId = rateCardId;
 
-      // Set the product the base rate will be applied to.
-      productBaseRate.productId = productId;
+        // Set the product the base rate will be applied to.
+        productBaseRate.productId = productId;
 
-      // Create a rate worth $2 and set that on the product base rate.
-      productBaseRate.rate = new Money() {currencyCode = "USD", microAmount = 2000000L};
+        // Create a rate worth $2 and set that on the product base rate.
+        productBaseRate.rate = new Money() { currencyCode = "USD", microAmount = 2000000L };
 
-      try {
-        // Create the base rate on the server.
-        BaseRate[] baseRates = baseRateService.createBaseRates(new BaseRate[] {productBaseRate});
+        try {
+          // Create the base rate on the server.
+          BaseRate[] baseRates = baseRateService.createBaseRates(
+              new BaseRate[] { productBaseRate });
 
-        foreach (BaseRate createdBaseRate in baseRates) {
-          Console.WriteLine("A product base rate with ID '{0}', name '{1}' "
-              + "and rate '{2} {3}' was created.",
-              createdBaseRate.id, createdBaseRate.GetType().Name,
-              (((ProductBaseRate) createdBaseRate).rate.microAmount / 1000000f),
-              ((ProductBaseRate) createdBaseRate).rate.currencyCode);
-        }
-      } catch (Exception e) {
+          foreach (BaseRate createdBaseRate in baseRates) {
+            Console.WriteLine("A product base rate with ID '{0}', name '{1}' "
+                + "and rate '{2} {3}' was created.",
+                createdBaseRate.id, createdBaseRate.GetType().Name,
+                (((ProductBaseRate) createdBaseRate).rate.microAmount / 1000000f),
+                ((ProductBaseRate) createdBaseRate).rate.currencyCode);
+          }
+        } catch (Exception e) {
           Console.WriteLine("Failed to create base rates. Exception says \"{0}\"", e.Message);
+        }
       }
     }
   }

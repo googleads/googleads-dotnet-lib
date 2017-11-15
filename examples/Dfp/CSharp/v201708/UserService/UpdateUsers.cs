@@ -48,43 +48,44 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// </summary>
     /// <param name="dfpUser">The DFP user object running the code example.</param>
     public void Run(DfpUser dfpUser) {
-      // Get the UserService.
-      UserService userService = (UserService) dfpUser.GetService(DfpService.v201708.UserService);
+      using (UserService userService = (UserService) dfpUser.GetService(
+          DfpService.v201708.UserService)) {
 
-      // Set the user to update.
-      long userId = long.Parse(_T("INSERT_USER_ID_HERE"));
+        // Set the user to update.
+        long userId = long.Parse(_T("INSERT_USER_ID_HERE"));
 
-      // Create a statement to get all users.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :userId")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("userId", userId);
+        // Create a statement to get all users.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :userId")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("userId", userId);
 
 
-      try {
-        // Get users by statement.
-        UserPage page = userService.getUsersByStatement(statementBuilder.ToStatement());
+        try {
+          // Get users by statement.
+          UserPage page = userService.getUsersByStatement(statementBuilder.ToStatement());
 
-        User user = page.results[0];
+          User user = page.results[0];
 
-        // Update user object by changing its name.
-        user.name = user.name + " Sr.";
+          // Update user object by changing its name.
+          user.name = user.name + " Sr.";
 
-        // Update the users on the server.
-        User[] users = userService.updateUsers(new User[] {user});
+          // Update the users on the server.
+          User[] users = userService.updateUsers(new User[] { user });
 
-        if (users != null) {
-          foreach (User updatedUser in users) {
-            Console.WriteLine("A user with ID = '{0}', name ='{1}', and role = '{2}'" +
-                " was updated.", updatedUser.id, updatedUser.name, updatedUser.roleName);
+          if (users != null) {
+            foreach (User updatedUser in users) {
+              Console.WriteLine("A user with ID = '{0}', name ='{1}', and role = '{2}'" +
+                  " was updated.", updatedUser.id, updatedUser.name, updatedUser.roleName);
+            }
+          } else {
+            Console.WriteLine("No users updated.");
           }
-        } else {
-          Console.WriteLine("No users updated.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to get user by ID. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get user by ID. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

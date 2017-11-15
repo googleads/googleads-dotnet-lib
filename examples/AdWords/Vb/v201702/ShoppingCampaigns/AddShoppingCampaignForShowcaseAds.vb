@@ -17,9 +17,8 @@ Imports Google.Api.Ads.AdWords.Util.Shopping.v201705
 Imports Google.Api.Ads.AdWords.v201705
 Imports Google.Api.Ads.Common.Util
 
-Imports System
-
-Namespace Google.Api.Ads.AdWords.Examples.VB.v201702  ''' <summary>
+Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
+  ''' <summary>
   ''' This code example adds a Shopping campaign for Showcase ads.
   ''' </summary>
   Public Class AddShoppingCampaignForShowcaseAds
@@ -37,7 +36,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702  ''' <summary>
         Dim merchantId As Long = Long.Parse("INSERT_MERCHANT_ID_HERE")
         codeExample.Run(New AdWordsUser(), budgetId, merchantId)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -60,11 +59,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702  ''' <summary>
     Public Sub Run(ByVal user As AdWordsUser, ByVal budgetId As Long, ByVal merchantId As Long)
       Try
         Dim campaign As Campaign = CreateCampaign(user, budgetId, merchantId)
-        Console.WriteLine("Campaign with name '{0}' and ID '{1}' was added.", campaign.name, _
+        Console.WriteLine("Campaign with name '{0}' and ID '{1}' was added.", campaign.name,
             campaign.id)
 
         Dim adGroup As AdGroup = CreateAdGroup(user, campaign)
-        Console.WriteLine("Ad group with name '{0}' and ID '{1}' was added.", adGroup.name, _
+        Console.WriteLine("Ad group with name '{0}' and ID '{1}' was added.", adGroup.name,
             adGroup.id)
 
         Dim adGroupAd As AdGroupAd = CreateShowcaseAd(user, adGroup)
@@ -73,7 +72,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702  ''' <summary>
         Dim partitionTree As ProductPartitionTree = CreateProductPartition(user, adGroup.id)
         Console.WriteLine("Final tree: {0}", partitionTree)
       Catch e As Exception
-        Throw New System.ApplicationException("Failed to create shopping campaign for " & _
+        Throw New System.ApplicationException("Failed to create shopping campaign for " &
             "showcase ads", e)
       End Try
     End Sub
@@ -85,7 +84,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702  ''' <summary>
     ''' <param name="budgetId">The budget ID.</param>
     ''' <param name="merchantId">The Merchant Center ID.</param>
     ''' <returns>The newly created Shopping campaign.</returns>
-    Private Shared Function CreateCampaign(ByVal user As AdWordsUser, ByVal budgetId As Long, _
+    Private Shared Function CreateCampaign(ByVal user As AdWordsUser, ByVal budgetId As Long,
         ByVal merchantId As Long) As Campaign
       Using campaignService As CampaignService = CType(user.GetService(
           AdWordsService.v201705.CampaignService), CampaignService)
@@ -234,7 +233,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702  ''' <summary>
     ''' <param name="user">The AdWords user for which the product partition is created.</param>
     ''' <param name="adGroupId">Ad group ID.</param>
     ''' <returns>The product partition.</returns>
-    Private Shared Function CreateProductPartition(ByVal user As AdWordsUser, _
+    Private Shared Function CreateProductPartition(ByVal user As AdWordsUser,
         ByVal adGroupId As Long) As ProductPartitionTree
 
       Using adGroupCriterionService As AdGroupCriterionService = CType(user.GetService(

@@ -117,14 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="FaultyXML" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\FaultyXML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="FaultyXML" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;report&gt;
+  &lt;table&gt;
+    &lt;columns&gt;
+      &lt;column name= "blah" /&gt;
+    &lt;/columns&gt;
+    &lt;row Atrib11="1" Atrib12="2"  /&gt;
+    &lt;row Atrib11="3" Atrib12="4" Atrib13="5" /&gt;
+    &lt;row Atrib11="6" Atrib12="7"  /&gt;
+    &lt;row Atrib11="9" Atrib12="10" Atrib13="11" /&gt;
+  &lt;/table&gt;
+&lt;/report&gt;</value>
   </data>
-  <data name="ValidXMLDistinctRows" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\ValidXMLDistinctRows.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="ValidXMLDistinctRows" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;report&gt;
+  &lt;table&gt;
+    &lt;columns&gt;
+      &lt;column name= "blah" /&gt;
+    &lt;/columns&gt;
+    &lt;row Atrib1="1" Atrib2="2" Atrib3="3" /&gt;
+    &lt;row Atrib1="3" Atrib2="4" Atrib3="5" /&gt;
+    &lt;row Atrib1="6" Atrib2="7" Atrib3="8" /&gt;
+    &lt;row Atrib1="9" Atrib2="10" Atrib3="11"/&gt;
+  &lt;/table&gt;
+&lt;/report&gt;</value>
   </data>
-  <data name="ValidXMLRepeatedRows" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\ValidXMLRepeatedRows.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="ValidXMLRepeatedRows" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;report&gt;
+  &lt;table&gt;
+    &lt;columns&gt;
+      &lt;column name= "blah" /&gt;
+    &lt;/columns&gt;
+    &lt;row Atrib1="1" Atrib2="2" Atrib3="3" /&gt;
+    &lt;row Atrib1="1" Atrib2="2" Atrib3="3" /&gt;
+    &lt;row Atrib1="1" Atrib2="2" Atrib3="3" /&gt;
+    &lt;row Atrib1="1" Atrib2="2" Atrib3="3" /&gt;
+  &lt;/table&gt;
+&lt;/report&gt;</value>
   </data>
 </root>

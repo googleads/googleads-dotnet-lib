@@ -18,7 +18,8 @@ Imports System
 Imports System.Collections.Generic
 Imports System.IO
 
-Namespace Google.Api.Ads.AdWords.Examples.VB.v201702  ''' <summary>
+Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
+  ''' <summary>
   ''' This code example restricts the products that will be included in the
   ''' campaign by setting a ProductScope.
   ''' </summary>

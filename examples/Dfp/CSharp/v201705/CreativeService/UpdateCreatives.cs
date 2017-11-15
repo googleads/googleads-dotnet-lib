@@ -47,44 +47,44 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the CreativeService.
-      CreativeService creativeService =
-          (CreativeService) user.GetService(DfpService.v201705.CreativeService);
+      using (CreativeService creativeService =
+          (CreativeService) user.GetService(DfpService.v201705.CreativeService)) {
 
-      // Set the ID of the creative to update.
-      long creativeId = long.Parse(_T("INSERT_CREATIVE_ID_HERE"));
+        // Set the ID of the creative to update.
+        long creativeId = long.Parse(_T("INSERT_CREATIVE_ID_HERE"));
 
-      // Create a statement to get all image creatives.
-      Statement statement = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", creativeId).ToStatement();
+        // Create a statement to get all image creatives.
+        Statement statement = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", creativeId).ToStatement();
 
-      try {
-        // Get creatives by statement.
-        CreativePage page = creativeService.getCreativesByStatement(statement);
+        try {
+          // Get creatives by statement.
+          CreativePage page = creativeService.getCreativesByStatement(statement);
 
-        Creative creative = page.results[0];
+          Creative creative = page.results[0];
 
-        // Update local creative object by changing its destination URL.
-        if (creative is ImageCreative) {
-          ImageCreative imageCreative = (ImageCreative) creative;
-          imageCreative.destinationUrl = "http://news.google.com";
-        }
-
-        // Update the creatives on the server.
-        Creative[] creatives = creativeService.updateCreatives(new Creative[] {creative});
-
-        foreach (Creative updatedCreative in creatives) {
+          // Update local creative object by changing its destination URL.
           if (creative is ImageCreative) {
-            ImageCreative imageCreative = (ImageCreative) updatedCreative;
-            Console.WriteLine("An image creative with ID = '{0}' and destination URL ='{1}' " +
-                "was updated.", imageCreative.id, imageCreative.destinationUrl);
+            ImageCreative imageCreative = (ImageCreative) creative;
+            imageCreative.destinationUrl = "http://news.google.com";
           }
+
+          // Update the creatives on the server.
+          Creative[] creatives = creativeService.updateCreatives(new Creative[] { creative });
+
+          foreach (Creative updatedCreative in creatives) {
+            if (creative is ImageCreative) {
+              ImageCreative imageCreative = (ImageCreative) updatedCreative;
+              Console.WriteLine("An image creative with ID = '{0}' and destination URL ='{1}' " +
+                  "was updated.", imageCreative.id, imageCreative.destinationUrl);
+            }
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update creatives. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update creatives. Exception says \"{0}\"", e.Message);
       }
     }
   }

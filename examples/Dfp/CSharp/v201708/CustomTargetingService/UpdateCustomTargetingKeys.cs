@@ -50,46 +50,47 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the CustomTargetingService.
-      CustomTargetingService customTargetingService =
-          (CustomTargetingService) user.GetService(DfpService.v201708.CustomTargetingService);
+      using (CustomTargetingService customTargetingService =
+          (CustomTargetingService) user.GetService(DfpService.v201708.CustomTargetingService)) {
 
-      // Set the ID of the custom targeting key to update.
-      int customTargetingKeyId = int.Parse(_T("INSERT_CUSTOM_TARGETING_KEY_ID_HERE"));
+        // Set the ID of the custom targeting key to update.
+        int customTargetingKeyId = int.Parse(_T("INSERT_CUSTOM_TARGETING_KEY_ID_HERE"));
 
-      // Create a statement to get the custom targeting key.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", customTargetingKeyId);
+        // Create a statement to get the custom targeting key.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", customTargetingKeyId);
 
-      try {
-        // Get custom targeting keys by statement.
-        CustomTargetingKeyPage page =
-            customTargetingService.getCustomTargetingKeysByStatement(
-            statementBuilder.ToStatement());
+        try {
+          // Get custom targeting keys by statement.
+          CustomTargetingKeyPage page =
+              customTargetingService.getCustomTargetingKeysByStatement(
+              statementBuilder.ToStatement());
 
-        CustomTargetingKey customTargetingKey = page.results[0];
+          CustomTargetingKey customTargetingKey = page.results[0];
 
-        // Update each local custom targeting key object by changing its display name.
-        if (customTargetingKey.displayName == null) {
-          customTargetingKey.displayName = customTargetingKey.name;
+          // Update each local custom targeting key object by changing its display name.
+          if (customTargetingKey.displayName == null) {
+            customTargetingKey.displayName = customTargetingKey.name;
+          }
+          customTargetingKey.displayName = customTargetingKey.displayName + " (Deprecated)";
+
+          // Update the custom targeting keys on the server.
+          CustomTargetingKey[] customTargetingKeys =
+              customTargetingService.updateCustomTargetingKeys(
+                  new CustomTargetingKey[] { customTargetingKey });
+
+          foreach (CustomTargetingKey updatedCustomTargetingKey in customTargetingKeys) {
+            Console.WriteLine("Custom targeting key with ID \"{0}\", name \"{1}\", and " +
+                "display name \"{2}\" was updated.", updatedCustomTargetingKey.id,
+                updatedCustomTargetingKey.name, updatedCustomTargetingKey.displayName);
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update display name of custom targeting keys. Exception " +
+              "says \"{0}\"", e.Message);
         }
-        customTargetingKey.displayName = customTargetingKey.displayName + " (Deprecated)";
-
-        // Update the custom targeting keys on the server.
-        CustomTargetingKey[] customTargetingKeys = customTargetingService.updateCustomTargetingKeys(
-            new CustomTargetingKey[] {customTargetingKey});
-
-        foreach (CustomTargetingKey updatedCustomTargetingKey in customTargetingKeys) {
-          Console.WriteLine("Custom targeting key with ID \"{0}\", name \"{1}\", and " +
-              "display name \"{2}\" was updated.", updatedCustomTargetingKey.id,
-              updatedCustomTargetingKey.name, updatedCustomTargetingKey.displayName);
-        }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update display name of custom targeting keys. Exception " +
-            "says \"{0}\"", e.Message);
       }
     }
   }

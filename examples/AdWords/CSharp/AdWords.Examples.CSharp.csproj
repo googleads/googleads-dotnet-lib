@@ -60,14 +60,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="v201705\Solutions\BudgetUtilizationReport\README.md" />
-    <None Include="v201705\Solutions\GetNewKeywords\README.md" />
-    <None Include="v201702\Solutions\BudgetUtilizationReport\README.md" />
-    <None Include="v201702\Solutions\GetNewKeywords\README.md" />
-    <None Include="v201708\Solutions\BudgetUtilizationReport\README.md" />
-    <None Include="v201708\Solutions\GetNewKeywords\README.md" />
-    <None Include="v201710\Solutions\BudgetUtilizationReport\README.md" />
-    <None Include="v201710\Solutions\GetNewKeywords\README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterBuild" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -157,8 +149,6 @@
     <Compile Include="v201702\ShoppingCampaigns\AddShoppingCampaign.cs" />
     <Compile Include="v201702\ShoppingCampaigns\AddShoppingCampaignForShowcaseAds.cs" />
     <Compile Include="v201702\ShoppingCampaigns\GetProductCategoryTaxonomy.cs" />
-    <Compile Include="v201702\Solutions\BudgetUtilizationReport\BudgetUtilizationReport.cs" />
-    <Compile Include="v201702\Solutions\GetNewKeywords\GetNewKeywords.cs" />
     <Compile Include="v201702\Targeting\AddCampaignTargetingCriteria.cs" />
     <Compile Include="v201702\Targeting\GetCampaignTargetingCriteria.cs" />
     <Compile Include="v201702\Targeting\GetTargetableLanguagesAndCarriers.cs" />
@@ -246,8 +236,6 @@
     <Compile Include="v201705\ShoppingCampaigns\AddShoppingCampaign.cs" />
     <Compile Include="v201705\ShoppingCampaigns\AddShoppingCampaignForShowcaseAds.cs" />
     <Compile Include="v201705\ShoppingCampaigns\GetProductCategoryTaxonomy.cs" />
-    <Compile Include="v201705\Solutions\BudgetUtilizationReport\BudgetUtilizationReport.cs" />
-    <Compile Include="v201705\Solutions\GetNewKeywords\GetNewKeywords.cs" />
     <Compile Include="v201705\Targeting\AddCampaignTargetingCriteria.cs" />
     <Compile Include="v201705\Targeting\GetCampaignTargetingCriteria.cs" />
     <Compile Include="v201705\Targeting\GetTargetableLanguagesAndCarriers.cs" />
@@ -335,8 +323,6 @@
     <Compile Include="v201708\ShoppingCampaigns\AddShoppingCampaign.cs" />
     <Compile Include="v201708\ShoppingCampaigns\AddShoppingCampaignForShowcaseAds.cs" />
     <Compile Include="v201708\ShoppingCampaigns\GetProductCategoryTaxonomy.cs" />
-    <Compile Include="v201708\Solutions\BudgetUtilizationReport\BudgetUtilizationReport.cs" />
-    <Compile Include="v201708\Solutions\GetNewKeywords\GetNewKeywords.cs" />
     <Compile Include="v201708\Targeting\AddCampaignTargetingCriteria.cs" />
     <Compile Include="v201708\Targeting\GetCampaignTargetingCriteria.cs" />
     <Compile Include="v201708\Targeting\GetTargetableLanguagesAndCarriers.cs" />
@@ -425,8 +411,6 @@
     <Compile Include="v201710\ShoppingCampaigns\AddShoppingCampaign.cs" />
     <Compile Include="v201710\ShoppingCampaigns\AddShoppingCampaignForShowcaseAds.cs" />
     <Compile Include="v201710\ShoppingCampaigns\GetProductCategoryTaxonomy.cs" />
-    <Compile Include="v201710\Solutions\BudgetUtilizationReport\BudgetUtilizationReport.cs" />
-    <Compile Include="v201710\Solutions\GetNewKeywords\GetNewKeywords.cs" />
     <Compile Include="v201710\Targeting\AddCampaignTargetingCriteria.cs" />
     <Compile Include="v201710\Targeting\AddCustomerNegativeCriteria.cs" />
     <Compile Include="v201710\Targeting\GetCampaignTargetingCriteria.cs" />

@@ -49,53 +49,53 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the UserTeamAssociationService.
-      UserTeamAssociationService userTeamAssociationService =
+      using (UserTeamAssociationService userTeamAssociationService =
           (UserTeamAssociationService) user.GetService(
-              DfpService.v201708.UserTeamAssociationService);
+              DfpService.v201708.UserTeamAssociationService)) {
 
-      // Set the user id of the user team association to update.
-      long userId = long.Parse(_T("INSERT_USER_ID_HERE"));
+        // Set the user id of the user team association to update.
+        long userId = long.Parse(_T("INSERT_USER_ID_HERE"));
 
-      // Set the team id of the user team association to update.
-      long teamId = long.Parse(_T("INSERT_TEAM_ID_HERE"));
+        // Set the team id of the user team association to update.
+        long teamId = long.Parse(_T("INSERT_TEAM_ID_HERE"));
 
-      // Create a statement to select the user team association.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("userId = :userId and teamId = :teamId")
-          .OrderBy("userId ASC, teamId ASC")
-          .Limit(1)
-          .AddValue("userId", userId)
-          .AddValue("teamId", teamId);
+        // Create a statement to select the user team association.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("userId = :userId and teamId = :teamId")
+            .OrderBy("userId ASC, teamId ASC")
+            .Limit(1)
+            .AddValue("userId", userId)
+            .AddValue("teamId", teamId);
 
-      try {
-        // Get user team associations by statement.
-        UserTeamAssociationPage page =
-            userTeamAssociationService.getUserTeamAssociationsByStatement(
-            statementBuilder.ToStatement());
+        try {
+          // Get user team associations by statement.
+          UserTeamAssociationPage page =
+              userTeamAssociationService.getUserTeamAssociationsByStatement(
+              statementBuilder.ToStatement());
 
-        UserTeamAssociation userTeamAssociation = page.results[0];
+          UserTeamAssociation userTeamAssociation = page.results[0];
 
-        userTeamAssociation.overriddenTeamAccessType = TeamAccessType.READ_ONLY;
+          userTeamAssociation.overriddenTeamAccessType = TeamAccessType.READ_ONLY;
 
-        // Update the user team associations on the server.
-        UserTeamAssociation[] userTeamAssociations =
-            userTeamAssociationService.updateUserTeamAssociations(
-            new UserTeamAssociation[] {userTeamAssociation});
+          // Update the user team associations on the server.
+          UserTeamAssociation[] userTeamAssociations =
+              userTeamAssociationService.updateUserTeamAssociations(
+              new UserTeamAssociation[] { userTeamAssociation });
 
-        if (userTeamAssociations != null) {
-          foreach (UserTeamAssociation updatedUserTeamAssociation in userTeamAssociations) {
-            Console.WriteLine("User team association between user with ID \"{0}\" and team " +
-                "with ID \"{1}\" was updated to access type \"{2}\".",
-                updatedUserTeamAssociation.userId, updatedUserTeamAssociation.teamId,
-                updatedUserTeamAssociation.overriddenTeamAccessType);
+          if (userTeamAssociations != null) {
+            foreach (UserTeamAssociation updatedUserTeamAssociation in userTeamAssociations) {
+              Console.WriteLine("User team association between user with ID \"{0}\" and team " +
+                  "with ID \"{1}\" was updated to access type \"{2}\".",
+                  updatedUserTeamAssociation.userId, updatedUserTeamAssociation.teamId,
+                  updatedUserTeamAssociation.overriddenTeamAccessType);
+            }
+          } else {
+            Console.WriteLine("No user team associations updated.");
           }
-        } else {
-          Console.WriteLine("No user team associations updated.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update user team associations. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update user team associations. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

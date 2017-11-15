@@ -48,23 +48,24 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      UserService userService =
-          (UserService) dfpUser.GetService(DfpService.v201705.UserService);
+      using (UserService userService =
+          (UserService) dfpUser.GetService(DfpService.v201705.UserService)) {
 
-      Role[] roles = userService.getAllRoles();
+        Role[] roles = userService.getAllRoles();
 
-      // Print out some information for each role.
-      int i = 0;
-      foreach (Role role in roles) {
-        Console.WriteLine(
-            "{0}) Role with ID {1} and name \"{2}\" was found.",
-            i++,
-            role.id,
-            role.name
-        );
+        // Print out some information for each role.
+        int i = 0;
+        foreach (Role role in roles) {
+          Console.WriteLine(
+              "{0}) Role with ID {1} and name \"{2}\" was found.",
+              i++,
+              role.id,
+              role.name
+          );
+        }
+
+        Console.WriteLine("Number of results found: {0}", roles.Length);
       }
-
-      Console.WriteLine("Number of results found: {0}", roles.Length);
     }
   }
 }

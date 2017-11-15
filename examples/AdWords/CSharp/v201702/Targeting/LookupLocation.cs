@@ -54,54 +54,55 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the LocationCriterionService.
-      LocationCriterionService locationCriterionService =
+      using (LocationCriterionService locationCriterionService =
           (LocationCriterionService) user.GetService(AdWordsService.v201702.
-              LocationCriterionService);
+              LocationCriterionService)) {
 
-      string[] locationNames = new string[] { "Paris", "Quebec", "Spain", "Deutschland" };
+        string[] locationNames = new string[] { "Paris", "Quebec", "Spain", "Deutschland" };
 
-      Selector selector = new Selector() {
-        fields = new string[] {
-          Location.Fields.Id, Location.Fields.LocationName, LocationCriterion.Fields.CanonicalName,
-          Location.Fields.DisplayType, Location.Fields.ParentLocations,
-          LocationCriterion.Fields.Reach, Location.Fields.TargetingStatus
-        },
+        Selector selector = new Selector() {
+          fields = new string[] {
+            Location.Fields.Id, Location.Fields.LocationName,
+            LocationCriterion.Fields.CanonicalName, Location.Fields.DisplayType,
+            Location.Fields.ParentLocations, LocationCriterion.Fields.Reach,
+            Location.Fields.TargetingStatus
+          },
 
-        predicates = new Predicate[] {
-          // Location names must match exactly, only EQUALS and IN are supported.
-          Predicate.In(Location.Fields.LocationName, locationNames),
+          predicates = new Predicate[] {
+            // Location names must match exactly, only EQUALS and IN are supported.
+            Predicate.In(Location.Fields.LocationName, locationNames),
 
-          // Set the locale of the returned location names.
-          Predicate.Equals(LocationCriterion.Fields.Locale, "en")
-        }
-      };
-
-      try {
-        // Make the get request.
-        LocationCriterion[] locationCriteria = locationCriterionService.get(selector);
-
-        // Display the resulting location criteria.
-        foreach (LocationCriterion locationCriterion in locationCriteria) {
-          string parentLocations = "N/A";
-
-          if (locationCriterion.location != null &&
-              locationCriterion.location.parentLocations != null) {
-            List<string> parentLocationList = new List<string>();
-            foreach (Location location in locationCriterion.location.parentLocations) {
-              parentLocationList.Add(GetLocationString(location));
-            }
-            parentLocations = string.Join(", ", parentLocationList);
+            // Set the locale of the returned location names.
+            Predicate.Equals(LocationCriterion.Fields.Locale, "en")
           }
+        };
 
-          Console.WriteLine("The search term '{0}' returned the location '{1}' of type '{2}' " +
-              "with parent locations '{3}',  reach '{4}' and targeting status '{5}.",
-              locationCriterion.searchTerm, locationCriterion.location.locationName,
-              locationCriterion.location.displayType, parentLocations, locationCriterion.reach,
-              locationCriterion.location.targetingStatus);
+        try {
+          // Make the get request.
+          LocationCriterion[] locationCriteria = locationCriterionService.get(selector);
+
+          // Display the resulting location criteria.
+          foreach (LocationCriterion locationCriterion in locationCriteria) {
+            string parentLocations = "N/A";
+
+            if (locationCriterion.location != null &&
+                locationCriterion.location.parentLocations != null) {
+              List<string> parentLocationList = new List<string>();
+              foreach (Location location in locationCriterion.location.parentLocations) {
+                parentLocationList.Add(GetLocationString(location));
+              }
+              parentLocations = string.Join(", ", parentLocationList);
+            }
+
+            Console.WriteLine("The search term '{0}' returned the location '{1}' of type '{2}' " +
+                "with parent locations '{3}',  reach '{4}' and targeting status '{5}.",
+                locationCriterion.searchTerm, locationCriterion.location.locationName,
+                locationCriterion.location.displayType, parentLocations, locationCriterion.reach,
+                locationCriterion.location.targetingStatus);
+          }
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to get location criteria.", e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to get location criteria.", e);
       }
     }
 

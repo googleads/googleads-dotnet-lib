@@ -51,50 +51,52 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser, long reconciliationReportId) {
-      ReconciliationLineItemReportService reconciliationLineItemReportService =
+      using (ReconciliationLineItemReportService reconciliationLineItemReportService =
           (ReconciliationLineItemReportService) dfpUser.GetService(
-              DfpService.v201708.ReconciliationLineItemReportService);
+              DfpService.v201708.ReconciliationLineItemReportService)) {
 
-      // Create a statement to select reconciliation line item reports.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("reconciliationReportId = :reconciliationReportId AND lineItemId != :lineItemId")
-          .OrderBy("lineItemId ASC")
-          .Limit(pageSize)
-          .AddValue("reconciliationReportId", reconciliationReportId)
-          .AddValue("lineItemId", 0);
+        // Create a statement to select reconciliation line item reports.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("reconciliationReportId = :reconciliationReportId AND " +
+                "lineItemId != :lineItemId")
+            .OrderBy("lineItemId ASC")
+            .Limit(pageSize)
+            .AddValue("reconciliationReportId", reconciliationReportId)
+            .AddValue("lineItemId", 0);
 
-      // Retrieve a small amount of reconciliation line item reports at a time, paging through until
-      // all reconciliation line item reports have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        ReconciliationLineItemReportPage page =
-            reconciliationLineItemReportService.getReconciliationLineItemReportsByStatement(
-                statementBuilder.ToStatement());
+        // Retrieve a small amount of reconciliation line item reports at a time, paging
+        // through until all reconciliation line item reports have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          ReconciliationLineItemReportPage page =
+              reconciliationLineItemReportService.getReconciliationLineItemReportsByStatement(
+                  statementBuilder.ToStatement());
 
-        // Print out some information for each reconciliation line item report.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (ReconciliationLineItemReport reconciliationLineItemReport in page.results) {
-            Console.WriteLine(
-                "{0}) Reconciliation line item report with ID {1}, " +
-                    "line item ID {2}, " +
-                    "reconciliation source \"{3}\", " +
-                    "and reconciled volume {4} was found.",
-                i++,
-                reconciliationLineItemReport.id,
-                reconciliationLineItemReport.lineItemId,
-                reconciliationLineItemReport.reconciliationSource,
-                reconciliationLineItemReport.reconciledVolume
-            );
+          // Print out some information for each reconciliation line item report.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (ReconciliationLineItemReport reconciliationLineItemReport in page.results) {
+              Console.WriteLine(
+                  "{0}) Reconciliation line item report with ID {1}, " +
+                      "line item ID {2}, " +
+                      "reconciliation source \"{3}\", " +
+                      "and reconciled volume {4} was found.",
+                  i++,
+                  reconciliationLineItemReport.id,
+                  reconciliationLineItemReport.lineItemId,
+                  reconciliationLineItemReport.reconciliationSource,
+                  reconciliationLineItemReport.reconciledVolume
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

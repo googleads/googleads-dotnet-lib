@@ -44,21 +44,22 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the UserService.
-      UserService userService = (UserService) user.GetService(DfpService.v201708.UserService);
+      using (UserService userService = (UserService) user.GetService(
+          DfpService.v201708.UserService)) {
 
-      try {
-        // Get the current user.
-        User usr = userService.getCurrentUser();
+        try {
+          // Get the current user.
+          User usr = userService.getCurrentUser();
 
-        if (usr != null) {
-          Console.WriteLine("User with ID = '{0}', email = '{1}', and role = '{2}' is the " +
-              "current user.", usr.id, usr.email, usr.roleName);
-        } else {
-          Console.WriteLine("The current user could not be retrieved.");
+          if (usr != null) {
+            Console.WriteLine("User with ID = '{0}', email = '{1}', and role = '{2}' is the " +
+                "current user.", usr.id, usr.email, usr.roleName);
+          } else {
+            Console.WriteLine("The current user could not be retrieved.");
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to get current user. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get current user. Exception says \"{0}\"", e.Message);
       }
     }
   }

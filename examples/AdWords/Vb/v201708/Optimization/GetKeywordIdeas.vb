@@ -148,18 +148,27 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
                   DirectCast(ideas(AttributeType.CATEGORY_PRODUCTS_AND_SERVICES),
                       IntegerSetAttribute)
 
-                  Dim categories As String = String.Join(", ", categorySet.value)
+                  Dim categories As String = ""
+
+                  If (Not categorySet Is Nothing) AndAlso (Not categorySet.value Is Nothing) Then
+                    categories = String.Join(", ", categorySet.value)
+                  End If
 
                   Dim averageMonthlySearches As Long =
                   DirectCast(ideas(AttributeType.SEARCH_VOLUME), LongAttribute).value
 
-                  Dim averageCpc As Money = DirectCast(ideas(AttributeType.AVERAGE_CPC),
+                  Dim averageCpcMoney As Money = DirectCast(ideas(AttributeType.AVERAGE_CPC),
                     MoneyAttribute).value
+                  Dim averageCpc As Long
+                  If (Not averageCpcMoney Is Nothing) Then
+                    averageCpc = averageCpcMoney.microAmount
+                  End If
+
                   Dim competition As Double = DirectCast(ideas(AttributeType.COMPETITION),
                     DoubleAttribute).value
                   Console.WriteLine("Keyword with text '{0}', average monthly search " +
                   "volume {1}, average CPC {2}, and competition {3:F2} was found with " +
-                  "categories: {4}", keyword, averageMonthlySearches, averageCpc.microAmount,
+                  "categories: {4}", keyword, averageMonthlySearches, averageCpc,
                   competition, categories)
                 Next
                 i = i + 1

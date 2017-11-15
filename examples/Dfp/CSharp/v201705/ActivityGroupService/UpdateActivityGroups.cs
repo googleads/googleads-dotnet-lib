@@ -48,43 +48,43 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ActivityGroupService.
-      ActivityGroupService activityGroupService =
-          (ActivityGroupService) user.GetService(DfpService.v201705.ActivityGroupService);
+      using (ActivityGroupService activityGroupService =
+          (ActivityGroupService) user.GetService(DfpService.v201705.ActivityGroupService)) {
 
-      // Set the ID of the activity group and the company to update it with.
-      int activityGroupId = int.Parse(_T("INSERT_ACTIVITY_GROUP_ID_HERE"));
-      long advertiserCompanyId = long.Parse(_T("INSERT_ADVERTISER_COMPANY_ID_HERE"));
+        // Set the ID of the activity group and the company to update it with.
+        int activityGroupId = int.Parse(_T("INSERT_ACTIVITY_GROUP_ID_HERE"));
+        long advertiserCompanyId = long.Parse(_T("INSERT_ADVERTISER_COMPANY_ID_HERE"));
 
-      try {
-        // Get the activity group.
-        StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", activityGroupId);
+        try {
+          // Get the activity group.
+          StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", activityGroupId);
 
-        ActivityGroupPage page = activityGroupService.getActivityGroupsByStatement(
-          statementBuilder.ToStatement());
+          ActivityGroupPage page = activityGroupService.getActivityGroupsByStatement(
+            statementBuilder.ToStatement());
 
-        ActivityGroup activityGroup = page.results[0];
+          ActivityGroup activityGroup = page.results[0];
 
-        // Update the companies.
-        List<long> companyIds = new List<long>(activityGroup.companyIds);
-        companyIds.Add(advertiserCompanyId);
-        activityGroup.companyIds = companyIds.ToArray();
+          // Update the companies.
+          List<long> companyIds = new List<long>(activityGroup.companyIds);
+          companyIds.Add(advertiserCompanyId);
+          activityGroup.companyIds = companyIds.ToArray();
 
-        // Update the activity groups on the server.
-        ActivityGroup[] activityGroups = activityGroupService.updateActivityGroups(
-            new ActivityGroup[] {activityGroup});
+          // Update the activity groups on the server.
+          ActivityGroup[] activityGroups = activityGroupService.updateActivityGroups(
+              new ActivityGroup[] { activityGroup });
 
-        // Display results.
-        foreach (ActivityGroup updatedActivityGroup in activityGroups) {
-          Console.WriteLine("Activity group with ID \"{0}\" and name \"{1}\" was updated.",
-              updatedActivityGroup.id, updatedActivityGroup.name);
+          // Display results.
+          foreach (ActivityGroup updatedActivityGroup in activityGroups) {
+            Console.WriteLine("Activity group with ID \"{0}\" and name \"{1}\" was updated.",
+                updatedActivityGroup.id, updatedActivityGroup.name);
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update activity groups. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update activity groups. Exception says \"{0}\"", e.Message);
       }
     }
   }

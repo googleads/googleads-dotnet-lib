@@ -14,11 +14,9 @@
 
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201702
-Imports System
-Imports System.Collections.Generic
-Imports System.IO
 
-Namespace Google.Api.Ads.AdWords.Examples.VB.v201702  ''' <summary>
+Namespace Google.Api.Ads.AdWords.Examples.VB.v201702
+  ''' <summary>
   ''' This code example fetches the set of valid ProductBiddingCategories.
   ''' </summary>
   Public Class GetProductCategoryTaxonomy
@@ -55,9 +53,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702  ''' <summary>
         End Set
       End Property
 
-          ''' <summary>
-          ''' Gets or sets the product category name.
-          ''' </summary>
+      ''' <summary>
+      ''' Gets or sets the product category name.
+      ''' </summary>
       Public Property Name() As String
         Get
           Return nameField
@@ -67,9 +65,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702  ''' <summary>
         End Set
       End Property
 
-          ''' <summary>
-          ''' Gets or sets the product category children.
-          ''' </summary>
+      ''' <summary>
+      ''' Gets or sets the product category children.
+      ''' </summary>
       Public ReadOnly Property Children() As List(Of ProductCategory)
         Get
           Return childrenField
@@ -96,7 +94,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702  ''' <summary>
       Try
         codeExample.Run(New AdWordsUser)
       Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
+        Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
       End Try
     End Sub
@@ -162,11 +160,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201702  ''' <summary>
     ''' </summary>
     ''' <param name="categories">The product categories.</param>
     ''' <param name="prefix">The prefix for display purposes.</param>
-    Sub DisplayProductCategories(ByVal categories As List(Of ProductCategory), _
+    Sub DisplayProductCategories(ByVal categories As List(Of ProductCategory),
                                  ByVal prefix As String)
       For Each category As ProductCategory In categories
         Console.WriteLine("{0}{1} [{2}]", prefix, category.Name, category.Id)
-        DisplayProductCategories(category.Children, String.Format("{0}{1} > ", _
+        DisplayProductCategories(category.Children, String.Format("{0}{1} > ",
             prefix, category.Name))
       Next
     End Sub

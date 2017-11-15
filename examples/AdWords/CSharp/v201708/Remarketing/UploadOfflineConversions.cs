@@ -74,47 +74,48 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// format.</param>
     public void Run(AdWordsUser user, String conversionName, String gClid, String conversionTime,
         double conversionValue) {
-      // Get the OfflineConversionFeedService.
-      OfflineConversionFeedService offlineConversionFeedService =
-          (OfflineConversionFeedService)user.GetService(
-              AdWordsService.v201708.OfflineConversionFeedService);
+      using (OfflineConversionFeedService offlineConversionFeedService =
+          (OfflineConversionFeedService) user.GetService(
+              AdWordsService.v201708.OfflineConversionFeedService)) {
 
-      try {
-        // Associate offline conversions with the existing named conversion tracker. If
-        // this tracker was newly created, it may be a few hours before it can accept
-        // conversions.
-        OfflineConversionFeed feed = new OfflineConversionFeed();
-        feed.conversionName = conversionName;
-        feed.conversionTime = conversionTime;
-        feed.conversionValue = conversionValue;
-        feed.googleClickId = gClid;
+        try {
+          // Associate offline conversions with the existing named conversion tracker. If
+          // this tracker was newly created, it may be a few hours before it can accept
+          // conversions.
+          OfflineConversionFeed feed = new OfflineConversionFeed();
+          feed.conversionName = conversionName;
+          feed.conversionTime = conversionTime;
+          feed.conversionValue = conversionValue;
+          feed.googleClickId = gClid;
 
-        // Optional: To upload fractional conversion credits, set the external attribution model
-        // and credit. To use this feature, your conversion tracker should be marked as externally
-        // attributed. See
-        // https://developers.google.com/adwords/api/docs/guides/conversion-tracking#importing_externally_attributed_conversions
-        // to learn more about importing externally attributed conversions.
+          // Optional: To upload fractional conversion credits, set the external attribution model
+          // and credit. To use this feature, your conversion tracker should be marked as externally
+          // attributed. See
+          // https://developers.google.com/adwords/api/docs/guides/conversion-tracking#importing_externally_attributed_conversions
+          // to learn more about importing externally attributed conversions.
 
-        // feed.externalAttributionModel = "Linear";
-        // feed.externalAttributionCredit = 0.3;
+          // feed.externalAttributionModel = "Linear";
+          // feed.externalAttributionCredit = 0.3;
 
-        OfflineConversionFeedOperation offlineConversionOperation =
-            new OfflineConversionFeedOperation();
-        offlineConversionOperation.@operator = Operator.ADD;
-        offlineConversionOperation.operand = feed;
+          OfflineConversionFeedOperation offlineConversionOperation =
+              new OfflineConversionFeedOperation();
+          offlineConversionOperation.@operator = Operator.ADD;
+          offlineConversionOperation.operand = feed;
 
-        OfflineConversionFeedReturnValue offlineConversionRetval =
-            offlineConversionFeedService.mutate(
-                new OfflineConversionFeedOperation[] { offlineConversionOperation });
+          OfflineConversionFeedReturnValue offlineConversionRetval =
+              offlineConversionFeedService.mutate(
+                  new OfflineConversionFeedOperation[] { offlineConversionOperation });
 
-        OfflineConversionFeed newFeed = offlineConversionRetval.value[0];
+          OfflineConversionFeed newFeed = offlineConversionRetval.value[0];
 
-        Console.WriteLine("Uploaded offline conversion value of {0} for Google Click ID = " +
-            "'{1}' to '{2}'.", newFeed.conversionValue, newFeed.googleClickId,
-            newFeed.conversionName);
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed upload offline conversions.", e);
+          Console.WriteLine("Uploaded offline conversion value of {0} for Google Click ID = " +
+              "'{1}' to '{2}'.", newFeed.conversionValue, newFeed.googleClickId,
+              newFeed.conversionName);
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed upload offline conversions.", e);
+        }
       }
     }
+
   }
 }

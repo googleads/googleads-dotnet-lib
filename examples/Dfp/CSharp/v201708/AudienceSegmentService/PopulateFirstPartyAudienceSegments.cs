@@ -48,43 +48,43 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the AudienceSegmentService.
-      AudienceSegmentService audienceSegmentService =
-          (AudienceSegmentService) user.GetService(DfpService.v201708.AudienceSegmentService);
+      using (AudienceSegmentService audienceSegmentService =
+          (AudienceSegmentService) user.GetService(DfpService.v201708.AudienceSegmentService)) {
 
-      long audienceSegmentId = long.Parse(_T("INSERT_AUDIENCE_SEGMENT_ID_HERE"));
+        long audienceSegmentId = long.Parse(_T("INSERT_AUDIENCE_SEGMENT_ID_HERE"));
 
-      // Create a statement to only select a specified first party audience
-      // segment.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :audienceSegmentId")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("audienceSegmentId", audienceSegmentId);
+        // Create a statement to only select a specified first party audience
+        // segment.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :audienceSegmentId")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("audienceSegmentId", audienceSegmentId);
 
-      try {
-        // Get audience segment by statement.
-        AudienceSegment audienceSegment =
-            audienceSegmentService.getAudienceSegmentsByStatement(statementBuilder.ToStatement())
-            .results[0];
+        try {
+          // Get audience segment by statement.
+          AudienceSegment audienceSegment =
+              audienceSegmentService.getAudienceSegmentsByStatement(statementBuilder.ToStatement())
+              .results[0];
 
-        Console.WriteLine("Audience segment with id \"{0}\" and name \"{1}\" " +
-                  "will be populated", audienceSegment.id, audienceSegment.name);
-        // Create action.
-        PopulateAudienceSegments action = new PopulateAudienceSegments();
+          Console.WriteLine("Audience segment with id \"{0}\" and name \"{1}\" " +
+                    "will be populated", audienceSegment.id, audienceSegment.name);
+          // Create action.
+          PopulateAudienceSegments action = new PopulateAudienceSegments();
 
-        // Perform action.
-        UpdateResult result = audienceSegmentService.performAudienceSegmentAction(
-            action, statementBuilder.ToStatement());
+          // Perform action.
+          UpdateResult result = audienceSegmentService.performAudienceSegmentAction(
+              action, statementBuilder.ToStatement());
 
-        if (result != null && result.numChanges > 0) {
-          Console.WriteLine("Number of audience segments populated: {0}", result.numChanges);
-        } else {
-          Console.WriteLine("No audience segments were populated.");
+          if (result != null && result.numChanges > 0) {
+            Console.WriteLine("Number of audience segments populated: {0}", result.numChanges);
+          } else {
+            Console.WriteLine("No audience segments were populated.");
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to populate audience segment. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to populate audience segment. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

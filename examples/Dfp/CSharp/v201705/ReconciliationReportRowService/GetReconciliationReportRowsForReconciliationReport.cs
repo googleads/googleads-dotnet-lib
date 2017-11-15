@@ -51,48 +51,50 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser, long reconciliationReportId) {
-      ReconciliationReportRowService reconciliationReportRowService =
+      using (ReconciliationReportRowService reconciliationReportRowService =
           (ReconciliationReportRowService) dfpUser.GetService(
-              DfpService.v201705.ReconciliationReportRowService);
+              DfpService.v201705.ReconciliationReportRowService)) {
 
-      // Create a statement to select reconciliation report rows.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("reconciliationReportId = :reconciliationReportId AND lineItemId != :lineItemId")
-          .OrderBy("id ASC")
-          .Limit(pageSize)
-          .AddValue("reconciliationReportId", reconciliationReportId)
-          .AddValue("lineItemId", 0);
+        // Create a statement to select reconciliation report rows.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("reconciliationReportId = :reconciliationReportId AND " +
+                "lineItemId != :lineItemId")
+            .OrderBy("id ASC")
+            .Limit(pageSize)
+            .AddValue("reconciliationReportId", reconciliationReportId)
+            .AddValue("lineItemId", 0);
 
-      // Retrieve a small amount of reconciliation report rows at a time, paging through until all
-      // reconciliation report rows have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        ReconciliationReportRowPage page =
-            reconciliationReportRowService.getReconciliationReportRowsByStatement(
-                statementBuilder.ToStatement());
+        // Retrieve a small amount of reconciliation report rows at a time, paging through
+        // until all reconciliation report rows have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          ReconciliationReportRowPage page =
+              reconciliationReportRowService.getReconciliationReportRowsByStatement(
+                  statementBuilder.ToStatement());
 
-        // Print out some information for each reconciliation report row.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (ReconciliationReportRow reconciliationReportRow in page.results) {
-            Console.WriteLine(
-                "{0}) Reconciliation report row with ID {1}, " +
-                    "reconciliation source \"{2}\", " +
-                    "and reconciled volume {3} was found.",
-                i++,
-                reconciliationReportRow.id,
-                reconciliationReportRow.reconciliationSource,
-                reconciliationReportRow.reconciledVolume
-            );
+          // Print out some information for each reconciliation report row.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (ReconciliationReportRow reconciliationReportRow in page.results) {
+              Console.WriteLine(
+                  "{0}) Reconciliation report row with ID {1}, " +
+                      "reconciliation source \"{2}\", " +
+                      "and reconciled volume {3} was found.",
+                  i++,
+                  reconciliationReportRow.id,
+                  reconciliationReportRow.reconciliationSource,
+                  reconciliationReportRow.reconciledVolume
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

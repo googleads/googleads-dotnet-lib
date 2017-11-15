@@ -19,7 +19,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -112,8 +112,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
         ///    &lt;row Atrib1=&quot;1&quot; Atrib2=&quot;2&quot; Atrib3=&quot;3&quot; /&gt;
         ///    &lt;row Atrib1=&quot;1&quot; Atrib2=&quot;2&quot; Atrib3=&quot;3&quot; /&gt;
         ///  &lt;/table&gt;
-        ///&lt;/report&gt;
-        ///.
+        ///&lt;/report&gt;.
         /// </summary>
         internal static string ValidXMLRepeatedRows {
             get {

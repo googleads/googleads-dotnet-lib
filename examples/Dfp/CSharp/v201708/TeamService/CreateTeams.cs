@@ -16,8 +16,6 @@ using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201708;
 
 using System;
-using Google.Api.Ads.Dfp.Util.v201708;
-using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
   /// <summary>
@@ -48,34 +46,35 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the TeamService.
-      TeamService teamService = (TeamService) user.GetService(DfpService.v201708.TeamService);
+      using (TeamService teamService = (TeamService) user.GetService(
+          DfpService.v201708.TeamService)) {
 
-      try {
-        // Create an array to store local team objects.
-        Team[] teams = new Team[5];
+        try {
+          // Create an array to store local team objects.
+          Team[] teams = new Team[5];
 
-        for (int i = 0; i < 5; i++) {
-          Team team = new Team();
-          team.name = "Team #" + i;
-          team.hasAllCompanies = false;
-          team.hasAllInventory = false;
-          teams[i] = team;
-        }
-
-        // Create the teams on the server.
-        teams = teamService.createTeams(teams);
-
-        if (teams != null && teams.Length > 0) {
-          foreach (Team newTeam in teams) {
-            Console.WriteLine("A team with ID \"{0}\", and name \"{1}\" was created.",
-                newTeam.id, newTeam.name);
+          for (int i = 0; i < 5; i++) {
+            Team team = new Team();
+            team.name = "Team #" + i;
+            team.hasAllCompanies = false;
+            team.hasAllInventory = false;
+            teams[i] = team;
           }
-        } else {
-          Console.WriteLine("No teams created.");
+
+          // Create the teams on the server.
+          teams = teamService.createTeams(teams);
+
+          if (teams != null && teams.Length > 0) {
+            foreach (Team newTeam in teams) {
+              Console.WriteLine("A team with ID \"{0}\", and name \"{1}\" was created.",
+                  newTeam.id, newTeam.name);
+            }
+          } else {
+            Console.WriteLine("No teams created.");
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create teams. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create teams. Exception says \"{0}\"", e.Message);
       }
     }
   }

@@ -14,7 +14,6 @@
 
 using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.Util.v201708;
 using Google.Api.Ads.Dfp.v201708;
 
 using System;
@@ -50,57 +49,58 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the CreativeService.
-      CreativeService creativeService =
-          (CreativeService) user.GetService(DfpService.v201708.CreativeService);
+      using (CreativeService creativeService =
+          (CreativeService) user.GetService(DfpService.v201708.CreativeService)) {
 
-      // Set the ID of the advertiser (company) that all creatives will be
-      // assigned to.
-      long advertiserId = long.Parse(_T("INSERT_ADVERTISER_ID_HERE"));
+        // Set the ID of the advertiser (company) that all creatives will be
+        // assigned to.
+        long advertiserId = long.Parse(_T("INSERT_ADVERTISER_ID_HERE"));
 
-      // Create the local custom creative object.
-      CustomCreative customCreative = new CustomCreative();
-      customCreative.name = "Custom creative " + GetTimeStamp();
-      customCreative.advertiserId = advertiserId;
-      customCreative.destinationUrl = "http://google.com";
+        // Create the local custom creative object.
+        CustomCreative customCreative = new CustomCreative();
+        customCreative.name = "Custom creative " + GetTimeStamp();
+        customCreative.advertiserId = advertiserId;
+        customCreative.destinationUrl = "http://google.com";
 
-      // Set the custom creative image asset.
-      CustomCreativeAsset customCreativeAsset = new CustomCreativeAsset();
-      customCreativeAsset.macroName = "IMAGE_ASSET";
-      CreativeAsset asset = new CreativeAsset();
-      asset.fileName = string.Format("inline{0}.jpg", GetTimeStamp());
-      asset.assetByteArray = MediaUtilities.GetAssetDataFromUrl(
-          "https://goo.gl/3b9Wfh");
-      customCreativeAsset.asset = asset;
+        // Set the custom creative image asset.
+        CustomCreativeAsset customCreativeAsset = new CustomCreativeAsset();
+        customCreativeAsset.macroName = "IMAGE_ASSET";
+        CreativeAsset asset = new CreativeAsset();
+        asset.fileName = string.Format("inline{0}.jpg", GetTimeStamp());
+        asset.assetByteArray = MediaUtilities.GetAssetDataFromUrl(
+            "https://goo.gl/3b9Wfh");
+        customCreativeAsset.asset = asset;
 
-      customCreative.customCreativeAssets = new CustomCreativeAsset[] {customCreativeAsset};
+        customCreative.customCreativeAssets = new CustomCreativeAsset[] { customCreativeAsset };
 
-      // Set the HTML snippet using the custom creative asset macro.
-      customCreative.htmlSnippet = "<a href='%%CLICK_URL_UNESC%%%%DEST_URL%%'>" +
-          "<img src='%%FILE:" + customCreativeAsset.macroName + "%%'/>" +
-          "</a><br>Click above for great deals!";
+        // Set the HTML snippet using the custom creative asset macro.
+        customCreative.htmlSnippet = "<a href='%%CLICK_URL_UNESC%%%%DEST_URL%%'>" +
+            "<img src='%%FILE:" + customCreativeAsset.macroName + "%%'/>" +
+            "</a><br>Click above for great deals!";
 
-      // Set the creative size.
-      Size size = new Size();
-      size.width = 300;
-      size.height = 250;
-      size.isAspectRatio = false;
+        // Set the creative size.
+        Size size = new Size();
+        size.width = 300;
+        size.height = 250;
+        size.isAspectRatio = false;
 
-      customCreative.size = size;
+        customCreative.size = size;
 
-      try {
-        // Create the custom creative on the server.
-        Creative[] createdCreatives = creativeService.createCreatives(
-            new Creative[] {customCreative});
+        try {
+          // Create the custom creative on the server.
+          Creative[] createdCreatives = creativeService.createCreatives(
+              new Creative[] { customCreative });
 
-        foreach (Creative createdCreative in createdCreatives) {
-          Console.WriteLine("A custom creative with ID \"{0}\", name \"{1}\", and size ({2}, " +
-              "{3}) was created and can be previewed at {4}", createdCreative.id,
-              createdCreative.name, createdCreative.size.width, createdCreative.size.height,
-              createdCreative.previewUrl);
+          foreach (Creative createdCreative in createdCreatives) {
+            Console.WriteLine("A custom creative with ID \"{0}\", name \"{1}\", and size ({2}, " +
+                "{3}) was created and can be previewed at {4}", createdCreative.id,
+                createdCreative.name, createdCreative.size.width, createdCreative.size.height,
+                createdCreative.previewUrl);
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create custom creatives. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create custom creatives. Exception says \"{0}\"", e.Message);
       }
     }
   }

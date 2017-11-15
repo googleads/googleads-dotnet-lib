@@ -49,42 +49,42 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the AudienceSegmentService.
-      AudienceSegmentService audienceSegmentService =
-          (AudienceSegmentService) user.GetService(DfpService.v201708.AudienceSegmentService);
+      using (AudienceSegmentService audienceSegmentService =
+          (AudienceSegmentService) user.GetService(DfpService.v201708.AudienceSegmentService)) {
 
-      // Set the ID of the audience segment to update.
-      int audienceSegmentId = int.Parse(_T("INSERT_AUDIENCE_SEGMENT_ID_HERE"));
+        // Set the ID of the audience segment to update.
+        int audienceSegmentId = int.Parse(_T("INSERT_AUDIENCE_SEGMENT_ID_HERE"));
 
-      // Create a statement to only select a specified first party audience
-      // segment.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :audienceSegmentId")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("audienceSegmentId", audienceSegmentId);
+        // Create a statement to only select a specified first party audience
+        // segment.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :audienceSegmentId")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("audienceSegmentId", audienceSegmentId);
 
-      try {
-        // Get the audience segment.
-        RuleBasedFirstPartyAudienceSegment audienceSegment =
-            (RuleBasedFirstPartyAudienceSegment) audienceSegmentService
-                .getAudienceSegmentsByStatement(statementBuilder.ToStatement()).results[0];
+        try {
+          // Get the audience segment.
+          RuleBasedFirstPartyAudienceSegment audienceSegment =
+              (RuleBasedFirstPartyAudienceSegment) audienceSegmentService
+                  .getAudienceSegmentsByStatement(statementBuilder.ToStatement()).results[0];
 
-        // Update the member expiration days.
-        audienceSegment.membershipExpirationDays = 180;
+          // Update the member expiration days.
+          audienceSegment.membershipExpirationDays = 180;
 
-        // Update the audience segment on the server.
-        AudienceSegment[] audienceSegments = audienceSegmentService.updateAudienceSegments(
-            new FirstPartyAudienceSegment[] {audienceSegment});
+          // Update the audience segment on the server.
+          AudienceSegment[] audienceSegments = audienceSegmentService.updateAudienceSegments(
+              new FirstPartyAudienceSegment[] { audienceSegment });
 
-        foreach (AudienceSegment updatedAudienceSegment in audienceSegments) {
-          Console.WriteLine(
-              "Audience segment with ID \"{0}\" and name \"{1}\" was updated.\n",
-              updatedAudienceSegment.id, updatedAudienceSegment.name);
+          foreach (AudienceSegment updatedAudienceSegment in audienceSegments) {
+            Console.WriteLine(
+                "Audience segment with ID \"{0}\" and name \"{1}\" was updated.\n",
+                updatedAudienceSegment.id, updatedAudienceSegment.name);
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update audience segment. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update audience segment. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

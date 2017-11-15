@@ -50,65 +50,66 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the UserService.
-      UserService userService = (UserService) user.GetService(DfpService.v201708.UserService);
+      using (UserService userService = (UserService) user.GetService(
+          DfpService.v201708.UserService)) {
 
-      // Set the ID of the user to deactivate
-      long userId = long.Parse(_T("INSERT_USER_ID_HERE"));
+        // Set the ID of the user to deactivate
+        long userId = long.Parse(_T("INSERT_USER_ID_HERE"));
 
-      // Create statement text to select user by id.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :userId")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("userId", userId);
+        // Create statement text to select user by id.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :userId")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("userId", userId);
 
-      // Sets default for page.
-      UserPage page = new UserPage();
-      List<string> userIds = new List<string>();
+        // Sets default for page.
+        UserPage page = new UserPage();
+        List<string> userIds = new List<string>();
 
-      try {
-        do {
-          // Get users by statement.
-          page = userService.getUsersByStatement(statementBuilder.ToStatement());
+        try {
+          do {
+            // Get users by statement.
+            page = userService.getUsersByStatement(statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            int i = page.startIndex;
-            foreach (User userResult in page.results) {
-              Console.WriteLine("{0}) User with ID = '{1}', email = '{2}', and status = '{3}'" +
-                 " will be deactivated.", i, userResult.id, userResult.email,
-                 userResult.isActive ? "ACTIVE" : "INACTIVE");
-              userIds.Add(userResult.id.ToString());
-              i++;
+            if (page.results != null) {
+              int i = page.startIndex;
+              foreach (User userResult in page.results) {
+                Console.WriteLine("{0}) User with ID = '{1}', email = '{2}', and status = '{3}'" +
+                   " will be deactivated.", i, userResult.id, userResult.email,
+                   userResult.isActive ? "ACTIVE" : "INACTIVE");
+                userIds.Add(userResult.id.ToString());
+                i++;
+              }
+            }
+
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+          Console.WriteLine("Number of users to be deactivated: {0}", page.totalResultSetSize);
+
+          if (userIds.Count > 0) {
+            // Modify statement for action.
+            statementBuilder.RemoveLimitAndOffset();
+
+            // Create action.
+            DeactivateUsers action = new DeactivateUsers();
+
+            // Perform action.
+            UpdateResult result = userService.performUserAction(action,
+                statementBuilder.ToStatement());
+
+            // Display results.
+            if (result != null && result.numChanges > 0) {
+              Console.WriteLine("Number of users deactivated: {0}" + result.numChanges);
+            } else {
+              Console.WriteLine("No users were deactivated.");
             }
           }
-
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-
-        Console.WriteLine("Number of users to be deactivated: {0}", page.totalResultSetSize);
-
-        if (userIds.Count > 0) {
-          // Modify statement for action.
-          statementBuilder.RemoveLimitAndOffset();
-
-          // Create action.
-          DeactivateUsers action = new DeactivateUsers();
-
-          // Perform action.
-          UpdateResult result = userService.performUserAction(action,
-              statementBuilder.ToStatement());
-
-          // Display results.
-          if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of users deactivated: {0}" + result.numChanges);
-          } else {
-            Console.WriteLine("No users were deactivated.");
-          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to deactivate users. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to deactivate users. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

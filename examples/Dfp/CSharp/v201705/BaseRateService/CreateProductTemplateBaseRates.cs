@@ -46,42 +46,45 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the BaseRateService.
-      BaseRateService baseRateService =
-          (BaseRateService) user.GetService(DfpService.v201705.BaseRateService);
+      using (BaseRateService baseRateService =
+          (BaseRateService) user.GetService(DfpService.v201705.BaseRateService)) {
 
-      // Set the rate card ID to add the base rate to.
-      long rateCardId = long.Parse(_T("INSERT_RATE_CARD_ID_HERE"));
+        // Set the rate card ID to add the base rate to.
+        long rateCardId = long.Parse(_T("INSERT_RATE_CARD_ID_HERE"));
 
-      // Set the product template to apply this base rate to.
-      long productTemplateId = long.Parse(_T("INSERT_PRODUCT_TEMPLATE_ID_HERE"));
+        // Set the product template to apply this base rate to.
+        long productTemplateId = long.Parse(_T("INSERT_PRODUCT_TEMPLATE_ID_HERE"));
 
-      // Create a base rate for a product template.
-      ProductTemplateBaseRate productTemplateBaseRate = new ProductTemplateBaseRate();
+        // Create a base rate for a product template.
+        ProductTemplateBaseRate productTemplateBaseRate = new ProductTemplateBaseRate();
 
-      // Set the rate card ID that the product template base rate belongs to.
-      productTemplateBaseRate.rateCardId = rateCardId;
+        // Set the rate card ID that the product template base rate belongs to.
+        productTemplateBaseRate.rateCardId = rateCardId;
 
-      // Set the product template the base rate will be applied to.
-      productTemplateBaseRate.productTemplateId = productTemplateId;
+        // Set the product template the base rate will be applied to.
+        productTemplateBaseRate.productTemplateId = productTemplateId;
 
-      // Create a rate worth $2 and set that on the product template base rate.
-      productTemplateBaseRate.rate = new Money() {currencyCode = "USD", microAmount = 2000000L};
+        // Create a rate worth $2 and set that on the product template base rate.
+        productTemplateBaseRate.rate = new Money() {
+          currencyCode = "USD",
+          microAmount = 2000000L
+        };
 
-      try {
-        // Create the base rate on the server.
-        BaseRate[] baseRates = baseRateService.createBaseRates(
-            new BaseRate[] {productTemplateBaseRate});
+        try {
+          // Create the base rate on the server.
+          BaseRate[] baseRates = baseRateService.createBaseRates(
+              new BaseRate[] { productTemplateBaseRate });
 
-        foreach (BaseRate createdBaseRate in baseRates) {
-          Console.WriteLine("A product template base rate with ID '{0}', name '{1}' "
-              + "and rate '{2} {3}' was created.",
-              createdBaseRate.id, createdBaseRate.GetType().Name,
-              (((ProductTemplateBaseRate) createdBaseRate).rate.microAmount / 1000000f),
-              ((ProductTemplateBaseRate) createdBaseRate).rate.currencyCode);
-        }
-      } catch (Exception e) {
+          foreach (BaseRate createdBaseRate in baseRates) {
+            Console.WriteLine("A product template base rate with ID '{0}', name '{1}' "
+                + "and rate '{2} {3}' was created.",
+                createdBaseRate.id, createdBaseRate.GetType().Name,
+                (((ProductTemplateBaseRate) createdBaseRate).rate.microAmount / 1000000f),
+                ((ProductTemplateBaseRate) createdBaseRate).rate.currencyCode);
+          }
+        } catch (Exception e) {
           Console.WriteLine("Failed to create base rates. Exception says \"{0}\"", e.Message);
+        }
       }
     }
   }

@@ -48,72 +48,72 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the WorkflowRequestService.
-      WorkflowRequestService workflowRequestService =
-          (WorkflowRequestService) user.GetService(DfpService.v201705.WorkflowRequestService);
+      using (WorkflowRequestService workflowRequestService =
+          (WorkflowRequestService) user.GetService(DfpService.v201705.WorkflowRequestService)) {
 
-      // Set the ID of the proposal to approve workflow approval requests for.
-      long proposalId = long.Parse(_T("INSERT_PROPOSAL_ID_HERE"));
+        // Set the ID of the proposal to approve workflow approval requests for.
+        long proposalId = long.Parse(_T("INSERT_PROPOSAL_ID_HERE"));
 
-      // Create a statement to select workflow approval requests for a proposal.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("WHERE entityId = :entityId and entityType = :entityType and type = :type")
-          .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-          .AddValue("entityId", proposalId)
-          .AddValue("entityType", WorkflowEntityType.PROPOSAL.ToString())
-          .AddValue("type", WorkflowRequestType.WORKFLOW_APPROVAL_REQUEST.ToString());
+        // Create a statement to select workflow approval requests for a proposal.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("WHERE entityId = :entityId and entityType = :entityType and type = :type")
+            .OrderBy("id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+            .AddValue("entityId", proposalId)
+            .AddValue("entityType", WorkflowEntityType.PROPOSAL.ToString())
+            .AddValue("type", WorkflowRequestType.WORKFLOW_APPROVAL_REQUEST.ToString());
 
-      // Set default for page.
-      WorkflowRequestPage page = new WorkflowRequestPage();
-      List<long> worflowRequestIds = new List<long>();
+        // Set default for page.
+        WorkflowRequestPage page = new WorkflowRequestPage();
+        List<long> worflowRequestIds = new List<long>();
 
-      try {
-        do {
-          // Get workflow requests by statement.
-          page = workflowRequestService.getWorkflowRequestsByStatement(
-              statementBuilder.ToStatement());
+        try {
+          do {
+            // Get workflow requests by statement.
+            page = workflowRequestService.getWorkflowRequestsByStatement(
+                statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            int i = page.startIndex;
-            foreach (WorkflowRequest workflowRequest in page.results) {
-              Console.WriteLine("{0})  Workflow approval request with ID '{1}' will be approved.",
-                  i++, workflowRequest.id);
-              worflowRequestIds.Add(workflowRequest.id);
+            if (page.results != null) {
+              int i = page.startIndex;
+              foreach (WorkflowRequest workflowRequest in page.results) {
+                Console.WriteLine("{0})  Workflow approval request with ID '{1}' will be " +
+                    "approved.", i++, workflowRequest.id);
+                worflowRequestIds.Add(workflowRequest.id);
+              }
+            }
+
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+          Console.WriteLine("Number of workflow approval requests to be approved: {0}",
+              worflowRequestIds.Count);
+
+          if (worflowRequestIds.Count > 0) {
+            // Modify statement.
+            statementBuilder.RemoveLimitAndOffset();
+
+            // Create action.
+            Google.Api.Ads.Dfp.v201705.ApproveWorkflowApprovalRequests action =
+                new Google.Api.Ads.Dfp.v201705.ApproveWorkflowApprovalRequests();
+
+            // Add a comment to the approval.
+            action.comment = "The proposal looks good to me. Approved.";
+
+            // Perform action.
+            UpdateResult result = workflowRequestService.performWorkflowRequestAction(action,
+                statementBuilder.ToStatement());
+
+            // Display results.
+            if (result != null && result.numChanges > 0) {
+              Console.WriteLine("Number of workflow requests approved: {0}", result.numChanges);
+            } else {
+              Console.WriteLine("No workflow requests were approved.");
             }
           }
-
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-
-        Console.WriteLine("Number of workflow approval requests to be approved: {0}",
-            worflowRequestIds.Count);
-
-        if (worflowRequestIds.Count > 0) {
-          // Modify statement.
-          statementBuilder.RemoveLimitAndOffset();
-
-          // Create action.
-          Google.Api.Ads.Dfp.v201705.ApproveWorkflowApprovalRequests action =
-              new Google.Api.Ads.Dfp.v201705.ApproveWorkflowApprovalRequests();
-
-          // Add a comment to the approval.
-          action.comment = "The proposal looks good to me. Approved.";
-
-          // Perform action.
-          UpdateResult result = workflowRequestService.performWorkflowRequestAction(action,
-              statementBuilder.ToStatement());
-
-          // Display results.
-          if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of workflow requests approved: {0}", result.numChanges);
-          } else {
-            Console.WriteLine("No workflow requests were approved.");
-          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to archive workflow requests. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to archive workflow requests. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

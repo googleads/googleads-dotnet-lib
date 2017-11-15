@@ -105,7 +105,8 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     private static string GetSecretsFilePath() {
       string tempSecretsPath = Path.GetTempFileName();
       using (FileStream fs = File.OpenWrite(tempSecretsPath)) {
-        fs.Write(Resources.secret, 0, Resources.secret.Length);
+        byte[] bytes = Encoding.UTF8.GetBytes(Resources.secret);
+        fs.Write(bytes, 0, bytes.Length);
       }
       return tempSecretsPath;
     }

@@ -16,15 +16,15 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201702;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
+
   /// <summary>
   /// This code example illustrates how to retrieve all carriers and languages
   /// available for targeting.
   /// </summary>
   public class GetTargetableLanguagesAndCarriers : ExampleBase {
+
     /// <summary>
     /// Main method, to run this code example as a standalone application.
     /// </summary>
@@ -55,39 +55,39 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201702 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      // Get the ConstantDataService.
-      ConstantDataService constantDataService = (ConstantDataService) user.GetService(
-          AdWordsService.v201702.ConstantDataService);
+      using (ConstantDataService constantDataService = (ConstantDataService) user.GetService(
+          AdWordsService.v201702.ConstantDataService)) {
 
-      try {
-        // Get all carriers.
-        Carrier[] carriers = constantDataService.getCarrierCriterion();
+        try {
+          // Get all carriers.
+          Carrier[] carriers = constantDataService.getCarrierCriterion();
 
-        // Display the results.
-        if (carriers != null) {
-          foreach (Carrier carrier in carriers) {
-            Console.WriteLine("Carrier name is '{0}', ID is {1} and country code is '{2}'.",
-                carrier.name, carrier.id, carrier.countryCode);
+          // Display the results.
+          if (carriers != null) {
+            foreach (Carrier carrier in carriers) {
+              Console.WriteLine("Carrier name is '{0}', ID is {1} and country code is '{2}'.",
+                  carrier.name, carrier.id, carrier.countryCode);
+            }
+          } else {
+            Console.WriteLine("No carriers were retrieved.");
           }
-        } else {
-          Console.WriteLine("No carriers were retrieved.");
-        }
 
-        // Get all languages.
-        Language[] languages = constantDataService.getLanguageCriterion();
+          // Get all languages.
+          Language[] languages = constantDataService.getLanguageCriterion();
 
-        // Display the results.
-        if (languages != null) {
-          foreach (Language language in languages) {
-            Console.WriteLine("Language name is '{0}', ID is {1} and code is '{2}'.",
-                language.name, language.id, language.code);
+          // Display the results.
+          if (languages != null) {
+            foreach (Language language in languages) {
+              Console.WriteLine("Language name is '{0}', ID is {1} and code is '{2}'.",
+                  language.name, language.id, language.code);
+            }
+          } else {
+            Console.WriteLine("No languages were found.");
           }
-        } else {
-          Console.WriteLine("No languages were found.");
+        } catch (Exception e) {
+          throw new System.ApplicationException("Failed to get targetable carriers and languages.",
+              e);
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to get targetable carriers and languages.",
-            e);
       }
     }
   }

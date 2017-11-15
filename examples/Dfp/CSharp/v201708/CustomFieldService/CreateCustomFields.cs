@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201708;
 
@@ -47,39 +46,40 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the CustomFieldService.
-      CustomFieldService customFieldService = (CustomFieldService) user.GetService(
-          DfpService.v201708.CustomFieldService);
+      using (CustomFieldService customFieldService = (CustomFieldService) user.GetService(
+          DfpService.v201708.CustomFieldService)) {
 
-      // Create custom fields.
-      CustomField customField1 = new CustomField();
-      customField1.name = "Customer comments #" + GetTimeStamp();
-      customField1.entityType = CustomFieldEntityType.LINE_ITEM;
-      customField1.dataType = CustomFieldDataType.STRING;
-      customField1.visibility = CustomFieldVisibility.FULL;
+        // Create custom fields.
+        CustomField customField1 = new CustomField();
+        customField1.name = "Customer comments #" + GetTimeStamp();
+        customField1.entityType = CustomFieldEntityType.LINE_ITEM;
+        customField1.dataType = CustomFieldDataType.STRING;
+        customField1.visibility = CustomFieldVisibility.FULL;
 
-      CustomField customField2 = new CustomField();
-      customField2.name = "Internal approval status #" + GetTimeStamp();
-      customField2.entityType = CustomFieldEntityType.LINE_ITEM;
-      customField2.dataType = CustomFieldDataType.DROP_DOWN;
-      customField2.visibility = CustomFieldVisibility.FULL;
+        CustomField customField2 = new CustomField();
+        customField2.name = "Internal approval status #" + GetTimeStamp();
+        customField2.entityType = CustomFieldEntityType.LINE_ITEM;
+        customField2.dataType = CustomFieldDataType.DROP_DOWN;
+        customField2.visibility = CustomFieldVisibility.FULL;
 
-      try {
-        // Add custom fields.
-        CustomField[] customFields =
-            customFieldService.createCustomFields(new CustomField[] {customField1, customField2});
+        try {
+          // Add custom fields.
+          CustomField[] customFields =
+              customFieldService.createCustomFields(
+                  new CustomField[] { customField1, customField2 });
 
-        // Display results.
-        if (customFields != null) {
-          foreach (CustomField customField in customFields) {
-            Console.WriteLine("Custom field with ID \"{0}\" and name \"{1}\" was created.",
-                customField.id, customField.name);
+          // Display results.
+          if (customFields != null) {
+            foreach (CustomField customField in customFields) {
+              Console.WriteLine("Custom field with ID \"{0}\" and name \"{1}\" was created.",
+                  customField.id, customField.name);
+            }
+          } else {
+            Console.WriteLine("No custom fields created.");
           }
-        } else {
-          Console.WriteLine("No custom fields created.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create custom fields. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create custom fields. Exception says \"{0}\"", e.Message);
       }
     }
   }

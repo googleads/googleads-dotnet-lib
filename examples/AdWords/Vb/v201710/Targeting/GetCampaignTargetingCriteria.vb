@@ -61,55 +61,56 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
     ''' <param name="campaignId">Id of the campaign from which targeting
     ''' criteria are retrieved.</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
-      ' Get the CampaignCriterionService.
-      Dim campaignCriterionService As CampaignCriterionService = CType(user.GetService( _
-          AdWordsService.v201710.CampaignCriterionService),  _
-          CampaignCriterionService)
+      Using campaignCriterionService As CampaignCriterionService = CType(user.GetService(
+          AdWordsService.v201710.CampaignCriterionService),
+              CampaignCriterionService)
 
-      ' Create the selector.
-      Dim selector As New Selector
-      selector.fields = New String() {
-        Criterion.Fields.Id, Criterion.Fields.CriteriaType, CampaignCriterion.Fields.CampaignId
-      }
+        ' Create the selector.
+        Dim selector As New Selector
+        selector.fields = New String() {
+          Criterion.Fields.Id, Criterion.Fields.CriteriaType, CampaignCriterion.Fields.CampaignId
+        }
 
-      ' Set the filters.
-      Dim predicate As New Predicate
-      predicate.field = "CampaignId"
-      predicate.operator = PredicateOperator.EQUALS
-      predicate.values = New String() {campaignId.ToString}
+        ' Set the filters.
+        Dim predicate As New Predicate
+        predicate.field = "CampaignId"
+        predicate.operator = PredicateOperator.EQUALS
+        predicate.values = New String() {campaignId.ToString}
 
-      selector.predicates = New Predicate() {predicate}
+        selector.predicates = New Predicate() {predicate}
 
-      ' Set the selector paging.
-      selector.paging = Paging.Default
-      Dim page As New CampaignCriterionPage
+        ' Set the selector paging.
+        selector.paging = Paging.Default
+        Dim page As New CampaignCriterionPage
 
-      Try
-        Dim i As Integer = 0
-        Do
-          ' Get all campaign targets.
-          page = campaignCriterionService.get(selector)
+        Try
+          Dim i As Integer = 0
+          Do
+            ' Get all campaign targets.
+            page = campaignCriterionService.get(selector)
 
-          ' Display the results.
-          If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-            For Each campaignCriterion As CampaignCriterion In page.entries
-              Dim negative As String = ""
-              If (TypeOf campaignCriterion Is NegativeCampaignCriterion) Then
-                negative = "Negative "
-              End If
-              Console.WriteLine("{0}) {1}Campaign targeting criterion with id = '{2}' and " & _
-                  "Type = {3} was found for campaign id '{4}'", i, negative, _
-                  campaignCriterion.criterion.id, campaignCriterion.criterion.type, _
-                  campaignCriterion.campaignId)
-              i += 1
-            Next
-          End If
-          selector.paging.IncreaseOffset()
-        Loop While (selector.paging.startIndex < page.totalNumEntries)
-        Console.WriteLine("Number of campaign targeting criteria found: {0}", page.totalNumEntries)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to get campaign targeting criteria.", e)
-      End Try
+            ' Display the results.
+            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+              For Each campaignCriterion As CampaignCriterion In page.entries
+                Dim negative As String = ""
+                If (TypeOf campaignCriterion Is NegativeCampaignCriterion) Then
+                  negative = "Negative "
+                End If
+                Console.WriteLine("{0}) {1}Campaign targeting criterion with id = '{2}' and " &
+                    "Type = {3} was found for campaign id '{4}'", i, negative,
+                    campaignCriterion.criterion.id, campaignCriterion.criterion.type,
+                    campaignCriterion.campaignId)
+                i += 1
+              Next
+            End If
+            selector.paging.IncreaseOffset()
+          Loop While (selector.paging.startIndex < page.totalNumEntries)
+          Console.WriteLine("Number of campaign targeting criteria found: {0}",
+              page.totalNumEntries)
+        Catch e As Exception
+          Throw New System.ApplicationException("Failed to get campaign targeting criteria.", e)
+        End Try
+      End Using
     End Sub
   End Class
 End Namespace

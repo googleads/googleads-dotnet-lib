@@ -46,44 +46,44 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ActivityGroupService.
-      ActivityGroupService activityGroupService =
-          (ActivityGroupService) user.GetService(DfpService.v201705.ActivityGroupService);
+      using (ActivityGroupService activityGroupService =
+          (ActivityGroupService) user.GetService(DfpService.v201705.ActivityGroupService)) {
 
-      // Set the ID of the advertiser company this activity group is associated
-      // with.
-      long advertiserCompanyId = long.Parse(_T("INSERT_ADVERTISER_COMPANY_ID_HERE"));
+        // Set the ID of the advertiser company this activity group is associated
+        // with.
+        long advertiserCompanyId = long.Parse(_T("INSERT_ADVERTISER_COMPANY_ID_HERE"));
 
-      // Create a short-term activity group.
-      ActivityGroup shortTermActivityGroup = new ActivityGroup();
-      shortTermActivityGroup.name = "Short-term activity group #" + GetTimeStamp();
-      shortTermActivityGroup.companyIds = new long[] {advertiserCompanyId};
-      shortTermActivityGroup.clicksLookback = 1;
-      shortTermActivityGroup.impressionsLookback = 1;
+        // Create a short-term activity group.
+        ActivityGroup shortTermActivityGroup = new ActivityGroup();
+        shortTermActivityGroup.name = "Short-term activity group #" + GetTimeStamp();
+        shortTermActivityGroup.companyIds = new long[] { advertiserCompanyId };
+        shortTermActivityGroup.clicksLookback = 1;
+        shortTermActivityGroup.impressionsLookback = 1;
 
-      // Create a long-term activity group.
-      ActivityGroup longTermActivityGroup = new ActivityGroup();
-      longTermActivityGroup.name = "Long-term activity group #" + GetTimeStamp();
-      longTermActivityGroup.companyIds = new long[] {advertiserCompanyId};
-      longTermActivityGroup.clicksLookback = 30;
-      longTermActivityGroup.impressionsLookback = 30;
+        // Create a long-term activity group.
+        ActivityGroup longTermActivityGroup = new ActivityGroup();
+        longTermActivityGroup.name = "Long-term activity group #" + GetTimeStamp();
+        longTermActivityGroup.companyIds = new long[] { advertiserCompanyId };
+        longTermActivityGroup.clicksLookback = 30;
+        longTermActivityGroup.impressionsLookback = 30;
 
-      try {
-        // Create the activity groups on the server.
-        ActivityGroup[] activityGroups = activityGroupService.createActivityGroups(
-            new ActivityGroup[] {shortTermActivityGroup, longTermActivityGroup});
+        try {
+          // Create the activity groups on the server.
+          ActivityGroup[] activityGroups = activityGroupService.createActivityGroups(
+              new ActivityGroup[] { shortTermActivityGroup, longTermActivityGroup });
 
-        // Display results.
-        if (activityGroups != null) {
-          foreach (ActivityGroup activityGroup in activityGroups) {
-            Console.WriteLine("An activity group with ID \"{0}\" and name \"{1}\" was created.",
-                activityGroup.id, activityGroup.name);
+          // Display results.
+          if (activityGroups != null) {
+            foreach (ActivityGroup activityGroup in activityGroups) {
+              Console.WriteLine("An activity group with ID \"{0}\" and name \"{1}\" was created.",
+                  activityGroup.id, activityGroup.name);
+            }
+          } else {
+            Console.WriteLine("No activity groups were created.");
           }
-        } else {
-          Console.WriteLine("No activity groups were created.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create activity groups. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create activity groups. Exception says \"{0}\"", e.Message);
       }
     }
   }

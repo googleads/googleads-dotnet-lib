@@ -50,31 +50,33 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Create the CreativeWrapperService.
-      CreativeWrapperService creativeWrapperService = (CreativeWrapperService) user.GetService(
-          DfpService.v201708.CreativeWrapperService);
+      using (CreativeWrapperService creativeWrapperService =
+          (CreativeWrapperService) user.GetService(
+              DfpService.v201708.CreativeWrapperService)) {
 
-      long labelId = long.Parse(_T("INSERT_CREATIVE_WRAPPER_LABEL_ID_HERE"));
+        long labelId = long.Parse(_T("INSERT_CREATIVE_WRAPPER_LABEL_ID_HERE"));
 
-      // Create creative wrapper objects.
-      CreativeWrapper creativeWrapper = new CreativeWrapper();
-      creativeWrapper.labelId = labelId;
-      creativeWrapper.ordering = CreativeWrapperOrdering.INNER;
-      creativeWrapper.htmlHeader = "<b>My creative wrapper header</b>";
-      creativeWrapper.htmlFooter = "<b>My creative wrapper footer</b>";
+        // Create creative wrapper objects.
+        CreativeWrapper creativeWrapper = new CreativeWrapper();
+        creativeWrapper.labelId = labelId;
+        creativeWrapper.ordering = CreativeWrapperOrdering.INNER;
+        creativeWrapper.htmlHeader = "<b>My creative wrapper header</b>";
+        creativeWrapper.htmlFooter = "<b>My creative wrapper footer</b>";
 
-      try {
-        // Add creative wrapper.
-        CreativeWrapper[] creativeWrappers = creativeWrapperService.createCreativeWrappers(
-            new CreativeWrapper[] {creativeWrapper});
+        try {
+          // Add creative wrapper.
+          CreativeWrapper[] creativeWrappers = creativeWrapperService.createCreativeWrappers(
+              new CreativeWrapper[] { creativeWrapper });
 
-        // Display results.
-        foreach (CreativeWrapper wrapper in creativeWrappers) {
-          Console.WriteLine("Creative wrapper with ID \'{0}\' applying to label \'{1}\' was " +
-              "created.", wrapper.id, wrapper.labelId);
+          // Display results.
+          foreach (CreativeWrapper wrapper in creativeWrappers) {
+            Console.WriteLine("Creative wrapper with ID \'{0}\' applying to label \'{1}\' was " +
+                "created.", wrapper.id, wrapper.labelId);
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create creative wrappers. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create creative wrappers. Exception says \"{0}\"", e.Message);
       }
     }
   }

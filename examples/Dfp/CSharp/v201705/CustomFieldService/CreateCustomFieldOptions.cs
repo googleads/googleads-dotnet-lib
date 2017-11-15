@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201705;
 
@@ -51,40 +50,42 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the CustomFieldService.
-      CustomFieldService customFieldService =
-          (CustomFieldService) user.GetService(DfpService.v201705.CustomFieldService);
+      using (CustomFieldService customFieldService =
+          (CustomFieldService) user.GetService(DfpService.v201705.CustomFieldService)) {
 
-      // Set the ID of the drop-down custom field to create options for.
-      long customFieldId = long.Parse(_T("INSERT_DROP_DOWN_CUSTOM_FIELD_ID_HERE"));
+        // Set the ID of the drop-down custom field to create options for.
+        long customFieldId = long.Parse(_T("INSERT_DROP_DOWN_CUSTOM_FIELD_ID_HERE"));
 
-      // Create custom field options.
-      CustomFieldOption customFieldOption1 = new CustomFieldOption();
-      customFieldOption1.displayName = "Approved";
-      customFieldOption1.customFieldId = customFieldId;
+        // Create custom field options.
+        CustomFieldOption customFieldOption1 = new CustomFieldOption();
+        customFieldOption1.displayName = "Approved";
+        customFieldOption1.customFieldId = customFieldId;
 
-      CustomFieldOption customFieldOption2 = new CustomFieldOption();
-      customFieldOption2.displayName = "Unapproved";
-      customFieldOption2.customFieldId = customFieldId;
+        CustomFieldOption customFieldOption2 = new CustomFieldOption();
+        customFieldOption2.displayName = "Unapproved";
+        customFieldOption2.customFieldId = customFieldId;
 
-      try {
-        // Add custom field options.
-        CustomFieldOption[] customFieldOptions =
-            customFieldService.createCustomFieldOptions(new CustomFieldOption[] {customFieldOption1,
-              customFieldOption2});
+        try {
+          // Add custom field options.
+          CustomFieldOption[] customFieldOptions =
+              customFieldService.createCustomFieldOptions(new CustomFieldOption[] {
+              customFieldOption1,
+              customFieldOption2
+              });
 
-        // Display results.
-        if (customFieldOptions != null) {
-          foreach (CustomFieldOption customFieldOption in customFieldOptions) {
-            Console.WriteLine("Custom field option with ID \"{0}\" and name \"{1}\" was created.",
-                customFieldOption.id, customFieldOption.displayName);
+          // Display results.
+          if (customFieldOptions != null) {
+            foreach (CustomFieldOption customFieldOption in customFieldOptions) {
+              Console.WriteLine("Custom field option with ID \"{0}\" and name \"{1}\" was " +
+                  "created.", customFieldOption.id, customFieldOption.displayName);
+            }
+          } else {
+            Console.WriteLine("No custom field options created.");
           }
-        } else {
-          Console.WriteLine("No custom field options created.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create custom field options. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create custom field options. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

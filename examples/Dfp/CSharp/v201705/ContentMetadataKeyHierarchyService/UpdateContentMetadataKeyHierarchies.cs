@@ -51,60 +51,60 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ContentMetadataKeyHierarchy service.
-      ContentMetadataKeyHierarchyService contentMetadataKeyHierarchyService =
+      using (ContentMetadataKeyHierarchyService contentMetadataKeyHierarchyService =
           (ContentMetadataKeyHierarchyService) user.GetService(
-          DfpService.v201705.ContentMetadataKeyHierarchyService);
+              DfpService.v201705.ContentMetadataKeyHierarchyService)) {
 
-      // Set the ID of the content metadata key hierarchy to update.
-      long contentMetadataKeyHierarchyId =
-          long.Parse(_T("INSERT_CONTENT_METADATA_KEY_HIERARCHY_ID_HERE"));
+        // Set the ID of the content metadata key hierarchy to update.
+        long contentMetadataKeyHierarchyId =
+            long.Parse(_T("INSERT_CONTENT_METADATA_KEY_HIERARCHY_ID_HERE"));
 
-      // Set the ID of the custom targeting key to be added as a hierarchy level
-      long customTargetingKeyId = long.Parse(_T("INSERT_CUSTOM_TARGETING_KEY_ID_HERE"));
+        // Set the ID of the custom targeting key to be added as a hierarchy level
+        long customTargetingKeyId = long.Parse(_T("INSERT_CUSTOM_TARGETING_KEY_ID_HERE"));
 
-      // Create a statement to get content metadata key hierarchies.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("WHERE id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", contentMetadataKeyHierarchyId);
+        // Create a statement to get content metadata key hierarchies.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("WHERE id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", contentMetadataKeyHierarchyId);
 
-      try {
-        ContentMetadataKeyHierarchyPage page = contentMetadataKeyHierarchyService
-            .getContentMetadataKeyHierarchiesByStatement(statementBuilder.ToStatement());
+        try {
+          ContentMetadataKeyHierarchyPage page = contentMetadataKeyHierarchyService
+              .getContentMetadataKeyHierarchiesByStatement(statementBuilder.ToStatement());
 
-        ContentMetadataKeyHierarchy contentMetadataKeyHierarchy = page.results[0];
+          ContentMetadataKeyHierarchy contentMetadataKeyHierarchy = page.results[0];
 
-        // Update the content metadata key hierarchy by adding a hierarchy level.
-        ContentMetadataKeyHierarchyLevel[] hierarchyLevels = contentMetadataKeyHierarchy
-            .hierarchyLevels;
+          // Update the content metadata key hierarchy by adding a hierarchy level.
+          ContentMetadataKeyHierarchyLevel[] hierarchyLevels = contentMetadataKeyHierarchy
+              .hierarchyLevels;
 
-        ContentMetadataKeyHierarchyLevel hierarchyLevel = new ContentMetadataKeyHierarchyLevel();
-        hierarchyLevel.customTargetingKeyId = customTargetingKeyId;
-        hierarchyLevel.hierarchyLevel = hierarchyLevels.Length + 1;
+          ContentMetadataKeyHierarchyLevel hierarchyLevel = new ContentMetadataKeyHierarchyLevel();
+          hierarchyLevel.customTargetingKeyId = customTargetingKeyId;
+          hierarchyLevel.hierarchyLevel = hierarchyLevels.Length + 1;
 
-        List<ContentMetadataKeyHierarchyLevel> updatedHieratchyLevels =
-           new List<ContentMetadataKeyHierarchyLevel>();
-        updatedHieratchyLevels.AddRange(hierarchyLevels);
-        updatedHieratchyLevels.Add(hierarchyLevel);
+          List<ContentMetadataKeyHierarchyLevel> updatedHieratchyLevels =
+             new List<ContentMetadataKeyHierarchyLevel>();
+          updatedHieratchyLevels.AddRange(hierarchyLevels);
+          updatedHieratchyLevels.Add(hierarchyLevel);
 
-        contentMetadataKeyHierarchy.hierarchyLevels = updatedHieratchyLevels.ToArray();
+          contentMetadataKeyHierarchy.hierarchyLevels = updatedHieratchyLevels.ToArray();
 
-        // Update the content hierarchy on the server.
-        ContentMetadataKeyHierarchy[] contentMetadataKeyHierarchies =
-            contentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchies(
-            new ContentMetadataKeyHierarchy[] {contentMetadataKeyHierarchy});
+          // Update the content hierarchy on the server.
+          ContentMetadataKeyHierarchy[] contentMetadataKeyHierarchies =
+              contentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchies(
+              new ContentMetadataKeyHierarchy[] { contentMetadataKeyHierarchy });
 
-        foreach (ContentMetadataKeyHierarchy updatedContentMetadataKeyHierarchy in
-            contentMetadataKeyHierarchies) {
-          Console.WriteLine("Content metadata key hierarchy with ID \"{0}\", name " +
-              "\"{1}\" was updated.", updatedContentMetadataKeyHierarchy.id,
-              updatedContentMetadataKeyHierarchy.name);
+          foreach (ContentMetadataKeyHierarchy updatedContentMetadataKeyHierarchy in
+              contentMetadataKeyHierarchies) {
+            Console.WriteLine("Content metadata key hierarchy with ID \"{0}\", name " +
+                "\"{1}\" was updated.", updatedContentMetadataKeyHierarchy.id,
+                updatedContentMetadataKeyHierarchy.name);
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update content metadata key hierarchies. Exception " +
+              "says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update content metadata key hierarchies. Exception " +
-            "says \"{0}\"", e.Message);
       }
     }
   }

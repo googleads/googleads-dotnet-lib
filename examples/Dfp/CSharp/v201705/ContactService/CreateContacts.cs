@@ -46,37 +46,37 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ContactService.
-      ContactService contactService =
-          (ContactService) user.GetService(DfpService.v201705.ContactService);
+      using (ContactService contactService =
+          (ContactService) user.GetService(DfpService.v201705.ContactService)) {
 
-      // Set the IDs of the companies for the contacts.
-      long advertiserCompanyId = long.Parse(_T("INSERT_ADVERTISER_COMPANY_ID_HERE"));
-      long agencyCompanyId = long.Parse(_T("INSERT_AGENCY_COMPANY_ID_HERE"));
+        // Set the IDs of the companies for the contacts.
+        long advertiserCompanyId = long.Parse(_T("INSERT_ADVERTISER_COMPANY_ID_HERE"));
+        long agencyCompanyId = long.Parse(_T("INSERT_AGENCY_COMPANY_ID_HERE"));
 
-      // Create an advertiser contact.
-      Contact advertiserContact = new Contact();
-      advertiserContact.name = "Mr. Advertiser #" + GetTimeStamp();
-      advertiserContact.email = "advertiser@advertising.com";
-      advertiserContact.companyId = advertiserCompanyId;
+        // Create an advertiser contact.
+        Contact advertiserContact = new Contact();
+        advertiserContact.name = "Mr. Advertiser #" + GetTimeStamp();
+        advertiserContact.email = "advertiser@advertising.com";
+        advertiserContact.companyId = advertiserCompanyId;
 
-      // Create an agency contact.
-      Contact agencyContact = new Contact();
-      agencyContact.name = "Ms. Agency #" + GetTimeStamp();
-      agencyContact.email = "agency@agencies.com";
-      agencyContact.companyId = agencyCompanyId;
+        // Create an agency contact.
+        Contact agencyContact = new Contact();
+        agencyContact.name = "Ms. Agency #" + GetTimeStamp();
+        agencyContact.email = "agency@agencies.com";
+        agencyContact.companyId = agencyCompanyId;
 
-      try {
-        // Create the contacts on the server.
-        Contact[] contacts =
-            contactService.createContacts(new Contact[] {advertiserContact, agencyContact});
+        try {
+          // Create the contacts on the server.
+          Contact[] contacts =
+              contactService.createContacts(new Contact[] { advertiserContact, agencyContact });
 
-        foreach (Contact contact in contacts) {
-          Console.WriteLine("A contact with ID \"{0}\" and name \"{1}\" was created.",
-              contact.id, contact.name);
+          foreach (Contact contact in contacts) {
+            Console.WriteLine("A contact with ID \"{0}\" and name \"{1}\" was created.",
+                contact.id, contact.name);
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create contacts. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create contacts. Exception says \"{0}\"", e.Message);
       }
     }
   }

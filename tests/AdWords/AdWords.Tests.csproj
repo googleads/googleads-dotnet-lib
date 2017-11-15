@@ -103,16 +103,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\UpdateCampaign.v201710.txt" />
-    <Content Include="Resources\UpdateCampaign.v201708.txt" />
-    <Content Include="Resources\UpdateCampaign.v201705.txt" />
-    <Content Include="Resources\UpdateCampaign.v201702.txt" />
-    <Content Include="Util\Reports\Parser\Resources\FaultyXML.xml" />
-    <Content Include="Util\Reports\Parser\Resources\ValidXMLDistinctRows.xml" />
-    <Content Include="Util\Reports\Parser\Resources\ValidXMLRepeatedRows.xml" />
-    <Content Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -227,5 +217,8 @@
     <Compile Include="SoapMessages.v201705.Designer.cs" />
     <Compile Include="SoapMessages.v201708.Designer.cs" />
     <Compile Include="SoapMessages.v201710.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config" />
   </ItemGroup>
 </Project>

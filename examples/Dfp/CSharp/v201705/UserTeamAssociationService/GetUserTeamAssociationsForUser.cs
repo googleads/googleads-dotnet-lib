@@ -50,7 +50,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// </summary>
     public void Run(DfpUser dfpUser, long userId) {
       using (UserTeamAssociationService userTeamAssociationService =
-          (UserTeamAssociationService) dfpUser.GetService(DfpService.v201705.UserTeamAssociationService)) {
+          (UserTeamAssociationService) dfpUser.GetService(
+              DfpService.v201705.UserTeamAssociationService)) {
 
         // Create a statement to select user team associations.
         int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
@@ -64,8 +65,9 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
         // user team associations have been retrieved.
         int totalResultSetSize = 0;
         do {
-          UserTeamAssociationPage page = userTeamAssociationService.getUserTeamAssociationsByStatement(
-              statementBuilder.ToStatement());
+          UserTeamAssociationPage page =
+              userTeamAssociationService.getUserTeamAssociationsByStatement(
+                  statementBuilder.ToStatement());
 
           // Print out some information for each user team association.
           if (page.results != null) {

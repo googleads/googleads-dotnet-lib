@@ -48,45 +48,46 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      ReportService reportService = (ReportService) user.GetService(
-          DfpService.v201708.ReportService);
+      using (ReportService reportService = (ReportService) user.GetService(
+          DfpService.v201708.ReportService)) {
 
-      // Set the file path where the report will be saved.
-      String filePath = _T("INSERT_FILE_PATH_HERE");
+        // Set the file path where the report will be saved.
+        String filePath = _T("INSERT_FILE_PATH_HERE");
 
-      // Create report job.
-      ReportJob reportJob = new ReportJob();
-      reportJob.reportQuery = new ReportQuery();
-      reportJob.reportQuery.dimensions = new Dimension[] {Dimension.SALESPERSON_ID,
+        // Create report job.
+        ReportJob reportJob = new ReportJob();
+        reportJob.reportQuery = new ReportQuery();
+        reportJob.reportQuery.dimensions = new Dimension[] {Dimension.SALESPERSON_ID,
           Dimension.SALESPERSON_NAME};
-      reportJob.reportQuery.columns = new Column[] {
+        reportJob.reportQuery.columns = new Column[] {
           Column.AD_SERVER_IMPRESSIONS,
           Column.AD_SERVER_CPM_AND_CPC_REVENUE,
           Column.AD_SERVER_WITHOUT_CPD_AVERAGE_ECPM
-      };
-      reportJob.reportQuery.dateRangeType = DateRangeType.LAST_MONTH;
+        };
+        reportJob.reportQuery.dateRangeType = DateRangeType.LAST_MONTH;
 
-      try {
-        // Run report.
-        reportJob = reportService.runReportJob(reportJob);
+        try {
+          // Run report.
+          reportJob = reportService.runReportJob(reportJob);
 
-        ReportUtilities reportUtilities = new ReportUtilities(reportService, reportJob.id);
+          ReportUtilities reportUtilities = new ReportUtilities(reportService, reportJob.id);
 
-        // Set download options.
-        ReportDownloadOptions options = new ReportDownloadOptions();
-        options.exportFormat = ExportFormat.CSV_DUMP;
-        options.useGzipCompression = true;
-        reportUtilities.reportDownloadOptions = options;
+          // Set download options.
+          ReportDownloadOptions options = new ReportDownloadOptions();
+          options.exportFormat = ExportFormat.CSV_DUMP;
+          options.useGzipCompression = true;
+          reportUtilities.reportDownloadOptions = options;
 
-        // Download the report.
-        using (ReportResponse reportResponse = reportUtilities.GetResponse()) {
-          reportResponse.Save(filePath);
+          // Download the report.
+          using (ReportResponse reportResponse = reportUtilities.GetResponse()) {
+            reportResponse.Save(filePath);
+          }
+          Console.WriteLine("Report saved to \"{0}\".", filePath);
+
+        } catch (Exception e) {
+          Console.WriteLine("Failed to run sales report. Exception says \"{0}\"",
+              e.Message);
         }
-        Console.WriteLine("Report saved to \"{0}\".", filePath);
-
-      } catch (Exception e) {
-        Console.WriteLine("Failed to run sales report. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

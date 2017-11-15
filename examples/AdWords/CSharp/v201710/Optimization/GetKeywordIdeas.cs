@@ -58,7 +58,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     public void Run(AdWordsUser user, long? adGroupId) {
       using (TargetingIdeaService targetingIdeaService =
           (TargetingIdeaService) user.GetService(AdWordsService.v201710.TargetingIdeaService)) {
-
         // Create selector.
         TargetingIdeaSelector selector = new TargetingIdeaSelector();
         selector.requestType = RequestType.IDEAS;
@@ -70,6 +69,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
           AttributeType.COMPETITION,
           AttributeType.CATEGORY_PRODUCTS_AND_SERVICES
         };
+
 
         List<SearchParameter> searchParameters = new List<SearchParameter>();
 
@@ -133,7 +133,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
                 IntegerSetAttribute categorySet =
                     ideas[AttributeType.CATEGORY_PRODUCTS_AND_SERVICES] as IntegerSetAttribute;
 
-                string categories = string.Join(", ", categorySet.value);
+                string categories = "";
+
+                if (categorySet != null && categorySet.value != null) {
+                  categories = string.Join(", ", categorySet.value);
+                }
 
                 long averageMonthlySearches =
                     (ideas[AttributeType.SEARCH_VOLUME] as LongAttribute).value;
@@ -142,7 +146,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
                 double competition = (ideas[AttributeType.COMPETITION] as DoubleAttribute).value;
                 Console.WriteLine("Keyword with text '{0}', average monthly search " +
                     "volume {1}, average CPC {2}, and competition {3:F2} was found with " +
-                    "categories: {4}", keyword, averageMonthlySearches, averageCpc.microAmount,
+                    "categories: {4}", keyword, averageMonthlySearches, averageCpc?.microAmount,
                     competition, categories);
 
                 Console.WriteLine("Keyword with text '{0}', and average monthly search volume " +

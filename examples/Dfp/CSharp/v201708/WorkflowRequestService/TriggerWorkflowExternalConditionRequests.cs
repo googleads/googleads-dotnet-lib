@@ -42,7 +42,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     public static void Main() {
-      TriggerWorkflowExternalConditionRequests codeExample = new TriggerWorkflowExternalConditionRequests();
+      TriggerWorkflowExternalConditionRequests codeExample =
+          new TriggerWorkflowExternalConditionRequests();
       Console.WriteLine(codeExample.Description);
       codeExample.Run(new DfpUser());
     }
@@ -51,71 +52,71 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the WorkflowRequestService.
-      WorkflowRequestService proposalLineItemService =
-          (WorkflowRequestService) user.GetService(DfpService.v201708.WorkflowRequestService);
+      using (WorkflowRequestService proposalLineItemService =
+          (WorkflowRequestService) user.GetService(DfpService.v201708.WorkflowRequestService)) {
 
-      // Set the ID of the proposal to trigger workflow external conditions for.c
-      long proposalId = long.Parse(_T("INSERT_PROPOSAL_ID_HERE"));
+        // Set the ID of the proposal to trigger workflow external conditions for.c
+        long proposalId = long.Parse(_T("INSERT_PROPOSAL_ID_HERE"));
 
-      // Create a statement to select workflow external condition requests for a proposal.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("entityId = :entityId and entityType = :entityType and type = :type")
-          .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-          .AddValue("entityId", proposalId)
-          .AddValue("entityType", WorkflowEntityType.PROPOSAL.ToString())
-          .AddValue("type", WorkflowRequestType.WORKFLOW_EXTERNAL_CONDITION_REQUEST.ToString());
+        // Create a statement to select workflow external condition requests for a proposal.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("entityId = :entityId and entityType = :entityType and type = :type")
+            .OrderBy("id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+            .AddValue("entityId", proposalId)
+            .AddValue("entityType", WorkflowEntityType.PROPOSAL.ToString())
+            .AddValue("type", WorkflowRequestType.WORKFLOW_EXTERNAL_CONDITION_REQUEST.ToString());
 
-      // Set default for page.
-      WorkflowRequestPage page = new WorkflowRequestPage();
-      List<long> workflowRequestIds = new List<long>();
+        // Set default for page.
+        WorkflowRequestPage page = new WorkflowRequestPage();
+        List<long> workflowRequestIds = new List<long>();
 
-      try {
-        do {
-          // Get workflow requests by statement.
-          page = proposalLineItemService.getWorkflowRequestsByStatement(
-              statementBuilder.ToStatement());
+        try {
+          do {
+            // Get workflow requests by statement.
+            page = proposalLineItemService.getWorkflowRequestsByStatement(
+                statementBuilder.ToStatement());
 
-          if (page.results != null) {
-            int i = page.startIndex;
-            foreach (WorkflowRequest workflowRequest in page.results) {
-              Console.WriteLine("{0}) Workflow external condition request with ID '{1}'" +
-                  " for {2} with ID '{3}' will be triggered.", i++, workflowRequest.id,
-                  workflowRequest.entityType.ToString(), workflowRequest.entityId);
-              workflowRequestIds.Add(workflowRequest.id);
+            if (page.results != null) {
+              int i = page.startIndex;
+              foreach (WorkflowRequest workflowRequest in page.results) {
+                Console.WriteLine("{0}) Workflow external condition request with ID '{1}'" +
+                    " for {2} with ID '{3}' will be triggered.", i++, workflowRequest.id,
+                    workflowRequest.entityType.ToString(), workflowRequest.entityId);
+                workflowRequestIds.Add(workflowRequest.id);
+              }
+            }
+
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+          Console.WriteLine("Number of workflow external condition requests to be triggered: {0}",
+              workflowRequestIds.Count);
+
+          if (workflowRequestIds.Count > 0) {
+            // Modify statement.
+            statementBuilder.RemoveLimitAndOffset();
+
+            // Create action.
+            Google.Api.Ads.Dfp.v201708.TriggerWorkflowExternalConditionRequests action =
+                new Google.Api.Ads.Dfp.v201708.TriggerWorkflowExternalConditionRequests();
+
+            // Perform action.
+            UpdateResult result = proposalLineItemService.performWorkflowRequestAction(action,
+                statementBuilder.ToStatement());
+
+            // Display results.
+            if (result != null && result.numChanges > 0) {
+              Console.WriteLine("Number of workflow external condition requests triggered: {0}",
+                  result.numChanges);
+            } else {
+              Console.WriteLine("No workflow external condition requests were triggered.");
             }
           }
-
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-
-        Console.WriteLine("Number of workflow external condition requests to be triggered: {0}",
-            workflowRequestIds.Count);
-
-        if (workflowRequestIds.Count > 0) {
-          // Modify statement.
-          statementBuilder.RemoveLimitAndOffset();
-
-          // Create action.
-          Google.Api.Ads.Dfp.v201708.TriggerWorkflowExternalConditionRequests action =
-              new Google.Api.Ads.Dfp.v201708.TriggerWorkflowExternalConditionRequests();
-
-          // Perform action.
-          UpdateResult result = proposalLineItemService.performWorkflowRequestAction(action,
-              statementBuilder.ToStatement());
-
-          // Display results.
-          if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of workflow external condition requests triggered: {0}",
-                result.numChanges);
-          } else {
-            Console.WriteLine("No workflow external condition requests were triggered.");
-          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to tirgger workflow external condition requests. Exception " +
+              "says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to tirgger workflow external condition requests. Exception " +
-            "says \"{0}\"", e.Message);
       }
     }
   }

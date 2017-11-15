@@ -48,63 +48,64 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the SuggestedAdUnitService.
-      SuggestedAdUnitService suggestedAdUnitService = (SuggestedAdUnitService) user.GetService(
-          DfpService.v201708.SuggestedAdUnitService);
+      using (SuggestedAdUnitService suggestedAdUnitService =
+          (SuggestedAdUnitService) user.GetService(
+              DfpService.v201708.SuggestedAdUnitService)) {
 
-      // Set the number of requests for suggested ad units greater than which to approve.
-      long NUMBER_OF_REQUESTS = 50L;
+        // Set the number of requests for suggested ad units greater than which to approve.
+        long NUMBER_OF_REQUESTS = 50L;
 
-      // Create statement to select all suggested ad units that are highly requested.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("numRequests > :numRequests")
-          .OrderBy("id ASC")
-          .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-          .AddValue("numRequests", NUMBER_OF_REQUESTS);
+        // Create statement to select all suggested ad units that are highly requested.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("numRequests > :numRequests")
+            .OrderBy("id ASC")
+            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+            .AddValue("numRequests", NUMBER_OF_REQUESTS);
 
-      // Set default for page.
-      SuggestedAdUnitPage page = new SuggestedAdUnitPage();
+        // Set default for page.
+        SuggestedAdUnitPage page = new SuggestedAdUnitPage();
 
-      try {
-        do {
-          // Get suggested ad units by statement.
-          page = suggestedAdUnitService.getSuggestedAdUnitsByStatement(
-              statementBuilder.ToStatement());
+        try {
+          do {
+            // Get suggested ad units by statement.
+            page = suggestedAdUnitService.getSuggestedAdUnitsByStatement(
+                statementBuilder.ToStatement());
 
-          int i = 0;
-          if (page != null && page.results != null) {
-            foreach (SuggestedAdUnit suggestedAdUnit in page.results) {
-              Console.WriteLine("{0}) Suggested ad unit with ID \"{1}\", and \"{2}\" will be " +
-                  "approved.", i, suggestedAdUnit.id, suggestedAdUnit.numRequests);
-              i++;
+            int i = 0;
+            if (page != null && page.results != null) {
+              foreach (SuggestedAdUnit suggestedAdUnit in page.results) {
+                Console.WriteLine("{0}) Suggested ad unit with ID \"{1}\", and \"{2}\" will be " +
+                    "approved.", i, suggestedAdUnit.id, suggestedAdUnit.numRequests);
+                i++;
+              }
             }
+            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+          Console.WriteLine("Number of suggested ad units to be approved: " +
+              page.totalResultSetSize);
+
+          // Modify statement for action.
+          statementBuilder.RemoveLimitAndOffset();
+
+          // Create action.
+          Google.Api.Ads.Dfp.v201708.ApproveSuggestedAdUnits action =
+              new Google.Api.Ads.Dfp.v201708.ApproveSuggestedAdUnits();
+
+          // Perform action.
+          SuggestedAdUnitUpdateResult result = suggestedAdUnitService.performSuggestedAdUnitAction(
+              action, statementBuilder.ToStatement());
+
+          // Display results.
+          if (result != null && result.numChanges > 0) {
+            Console.WriteLine("Number of new ad units created: " + result.newAdUnitIds.Length);
+          } else {
+            Console.WriteLine("No suggested ad units were approved.");
           }
-          statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        } while(statementBuilder.GetOffset() < page.totalResultSetSize);
-
-        Console.WriteLine("Number of suggested ad units to be approved: " +
-            page.totalResultSetSize);
-
-        // Modify statement for action.
-        statementBuilder.RemoveLimitAndOffset();
-
-        // Create action.
-        Google.Api.Ads.Dfp.v201708.ApproveSuggestedAdUnits action =
-            new Google.Api.Ads.Dfp.v201708.ApproveSuggestedAdUnits();
-
-        // Perform action.
-        SuggestedAdUnitUpdateResult result = suggestedAdUnitService.performSuggestedAdUnitAction(
-            action, statementBuilder.ToStatement());
-
-        // Display results.
-        if (result != null && result.numChanges > 0) {
-          Console.WriteLine("Number of new ad units created: " + result.newAdUnitIds.Length);
-        } else {
-          Console.WriteLine("No suggested ad units were approved.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to approve suggested ad units. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to approve suggested ad units. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

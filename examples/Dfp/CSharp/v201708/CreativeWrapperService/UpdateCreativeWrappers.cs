@@ -48,35 +48,36 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Create the CreativeWrapperService.
-      CreativeWrapperService creativeWrapperService = (CreativeWrapperService) user.GetService(
-          DfpService.v201708.CreativeWrapperService);
+      using (CreativeWrapperService creativeWrapperService =
+          (CreativeWrapperService) user.GetService(
+              DfpService.v201708.CreativeWrapperService)) {
 
-      long creativeWrapperId = long.Parse(_T("INSERT_CREATIVE_WRAPPER_ID_HERE"));
+        long creativeWrapperId = long.Parse(_T("INSERT_CREATIVE_WRAPPER_ID_HERE"));
 
-      try {
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("id = :id")
-            .OrderBy("id ASC")
-            .Limit(1)
-            .AddValue("id", creativeWrapperId);
-        CreativeWrapperPage page = creativeWrapperService.getCreativeWrappersByStatement(
-            statementBuilder.ToStatement());
-        CreativeWrapper wrapper = page.results[0];
+        try {
+          StatementBuilder statementBuilder = new StatementBuilder()
+              .Where("id = :id")
+              .OrderBy("id ASC")
+              .Limit(1)
+              .AddValue("id", creativeWrapperId);
+          CreativeWrapperPage page = creativeWrapperService.getCreativeWrappersByStatement(
+              statementBuilder.ToStatement());
+          CreativeWrapper wrapper = page.results[0];
 
-        wrapper.ordering = CreativeWrapperOrdering.OUTER;
-        // Update the creative wrappers on the server.
-        CreativeWrapper[] creativeWrappers = creativeWrapperService.updateCreativeWrappers(
-            new CreativeWrapper[] {wrapper});
+          wrapper.ordering = CreativeWrapperOrdering.OUTER;
+          // Update the creative wrappers on the server.
+          CreativeWrapper[] creativeWrappers = creativeWrapperService.updateCreativeWrappers(
+              new CreativeWrapper[] { wrapper });
 
-        // Display results.
-        foreach (CreativeWrapper createdCreativeWrapper in creativeWrappers) {
-          Console.WriteLine("Creative wrapper with ID '{0}' and wrapping order '{1}' was " +
-              "updated.", createdCreativeWrapper.id, createdCreativeWrapper.ordering);
+          // Display results.
+          foreach (CreativeWrapper createdCreativeWrapper in creativeWrappers) {
+            Console.WriteLine("Creative wrapper with ID '{0}' and wrapping order '{1}' was " +
+                "updated.", createdCreativeWrapper.id, createdCreativeWrapper.ordering);
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update creative wrappers. Exception says \"{0}\"",
+              e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update creative wrappers. Exception says \"{0}\"",
-            e.Message);
       }
     }
   }

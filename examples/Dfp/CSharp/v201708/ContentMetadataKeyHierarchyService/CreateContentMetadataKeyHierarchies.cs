@@ -12,9 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.Common.Util;
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.Util.v201708;
 using Google.Api.Ads.Dfp.v201708;
 
 using System;
@@ -50,48 +48,51 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ContentMetadataKeyHierarchy service.
-      ContentMetadataKeyHierarchyService contentMetadataKeyHierarchyService =
+      using (ContentMetadataKeyHierarchyService contentMetadataKeyHierarchyService =
           (ContentMetadataKeyHierarchyService) user.GetService(
-          DfpService.v201708.ContentMetadataKeyHierarchyService);
+              DfpService.v201708.ContentMetadataKeyHierarchyService)) {
 
-      // Set the IDs of the custom targeting keys for the hierarchy.
-      long customTargetingKeyId1 = long.Parse(_T("INSERT_LEVEL_ONE_CUSTOM_TARGETING_KEY_ID_HERE"));
-      long customTargetingKeyId2 = long.Parse(_T("INSERT_LEVEL_TWO_CUSTOM_TARGETING_KEY_ID_HERE"));
+        // Set the IDs of the custom targeting keys for the hierarchy.
+        long customTargetingKeyId1 =
+            long.Parse(_T("INSERT_LEVEL_ONE_CUSTOM_TARGETING_KEY_ID_HERE"));
+        long customTargetingKeyId2 =
+              long.Parse(_T("INSERT_LEVEL_TWO_CUSTOM_TARGETING_KEY_ID_HERE"));
 
-      List<ContentMetadataKeyHierarchyLevel> hierarchyLevels =
-          new List<ContentMetadataKeyHierarchyLevel>();
+        List<ContentMetadataKeyHierarchyLevel> hierarchyLevels =
+            new List<ContentMetadataKeyHierarchyLevel>();
 
-      ContentMetadataKeyHierarchyLevel hierarchyLevel1 = new ContentMetadataKeyHierarchyLevel();
-      hierarchyLevel1.customTargetingKeyId = customTargetingKeyId1;
-      hierarchyLevel1.hierarchyLevel = 1;
-      hierarchyLevels.Add(hierarchyLevel1);
+        ContentMetadataKeyHierarchyLevel hierarchyLevel1 = new ContentMetadataKeyHierarchyLevel();
+        hierarchyLevel1.customTargetingKeyId = customTargetingKeyId1;
+        hierarchyLevel1.hierarchyLevel = 1;
+        hierarchyLevels.Add(hierarchyLevel1);
 
-      ContentMetadataKeyHierarchyLevel hierarchyLevel2 = new ContentMetadataKeyHierarchyLevel();
-      hierarchyLevel2.customTargetingKeyId = customTargetingKeyId2;
-      hierarchyLevel2.hierarchyLevel = 2;
-      hierarchyLevels.Add(hierarchyLevel2);
+        ContentMetadataKeyHierarchyLevel hierarchyLevel2 = new ContentMetadataKeyHierarchyLevel();
+        hierarchyLevel2.customTargetingKeyId = customTargetingKeyId2;
+        hierarchyLevel2.hierarchyLevel = 2;
+        hierarchyLevels.Add(hierarchyLevel2);
 
-      ContentMetadataKeyHierarchy contentMetadataKeyHierarchy = new ContentMetadataKeyHierarchy();
-      contentMetadataKeyHierarchy.name = "Content hierarchy #" + new Random().Next(int.MaxValue);
-      contentMetadataKeyHierarchy.hierarchyLevels = hierarchyLevels.ToArray();
+        ContentMetadataKeyHierarchy contentMetadataKeyHierarchy =
+            new ContentMetadataKeyHierarchy();
+        contentMetadataKeyHierarchy.name = "Content hierarchy #" + new Random().Next(int.MaxValue);
+        contentMetadataKeyHierarchy.hierarchyLevels = hierarchyLevels.ToArray();
 
-      try {
-        // Create the content metadata key hierarchy on the server.
-        ContentMetadataKeyHierarchy[] contentMetadataKeyHierarchies =
-            contentMetadataKeyHierarchyService.createContentMetadataKeyHierarchies(
-            new ContentMetadataKeyHierarchy[] {contentMetadataKeyHierarchy});
+        try {
+          // Create the content metadata key hierarchy on the server.
+          ContentMetadataKeyHierarchy[] contentMetadataKeyHierarchies =
+              contentMetadataKeyHierarchyService.createContentMetadataKeyHierarchies(
+              new ContentMetadataKeyHierarchy[] { contentMetadataKeyHierarchy });
 
-        foreach (ContentMetadataKeyHierarchy createdContentMetadataKeyHierarchy in
-            contentMetadataKeyHierarchies) {
-          Console.WriteLine("A content metadata key hierarchy with ID \"{0}\", name " +
-              "\"{1}\" and {2} levels was created.", createdContentMetadataKeyHierarchy.id,
-              createdContentMetadataKeyHierarchy.name,
-              createdContentMetadataKeyHierarchy.hierarchyLevels.Length);
+          foreach (ContentMetadataKeyHierarchy createdContentMetadataKeyHierarchy in
+              contentMetadataKeyHierarchies) {
+            Console.WriteLine("A content metadata key hierarchy with ID \"{0}\", name " +
+                "\"{1}\" and {2} levels was created.", createdContentMetadataKeyHierarchy.id,
+                createdContentMetadataKeyHierarchy.name,
+                createdContentMetadataKeyHierarchy.hierarchyLevels.Length);
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to create content metadata key hierarchies. Exception says " +
+              "\"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to create content metadata key hierarchies. Exception says " +
-            "\"{0}\"", e.Message);
       }
     }
   }

@@ -26,7 +26,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// </summary>
     public override string Description {
       get {
-        return "This example gets all reconciliation order reports for a given reconciliation report.";
+        return "This example gets all reconciliation order reports for a given " +
+            "reconciliation report.";
       }
     }
 
@@ -34,7 +35,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// Main method, to run this code example as a standalone application.
     /// </summary>
     public static void Main() {
-      GetReconciliationOrderReportsForReconciliationReport codeExample = new GetReconciliationOrderReportsForReconciliationReport();
+      GetReconciliationOrderReportsForReconciliationReport codeExample =
+          new GetReconciliationOrderReportsForReconciliationReport();
       long reconciliationReportId = long.Parse("INSERT_RECONCILIATION_REPORT_ID_HERE");
       Console.WriteLine(codeExample.Description);
       try {
@@ -50,7 +52,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
     /// </summary>
     public void Run(DfpUser dfpUser, long reconciliationReportId) {
       using (ReconciliationOrderReportService reconciliationOrderReportService =
-          (ReconciliationOrderReportService) dfpUser.GetService(DfpService.v201705.ReconciliationOrderReportService)) {
+          (ReconciliationOrderReportService) dfpUser.GetService(
+              DfpService.v201705.ReconciliationOrderReportService)) {
 
         // Create a statement to select reconciliation order reports.
         int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
@@ -60,12 +63,13 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201705 {
             .Limit(pageSize)
             .AddValue("reconciliationReportId", reconciliationReportId);
 
-        // Retrieve a small amount of reconciliation order reports at a time, paging through until all
-        // reconciliation order reports have been retrieved.
+        // Retrieve a small amount of reconciliation order reports at a time, paging through
+        // until all reconciliation order reports have been retrieved.
         int totalResultSetSize = 0;
         do {
-          ReconciliationOrderReportPage page = reconciliationOrderReportService.getReconciliationOrderReportsByStatement(
-              statementBuilder.ToStatement());
+          ReconciliationOrderReportPage page =
+              reconciliationOrderReportService.getReconciliationOrderReportsByStatement(
+                  statementBuilder.ToStatement());
 
           // Print out some information for each reconciliation order report.
           if (page.results != null) {

@@ -49,52 +49,53 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser dfpUser) {
-      ReconciliationReportService reconciliationReportService =
+      using (ReconciliationReportService reconciliationReportService =
           (ReconciliationReportService) dfpUser
-              .GetService(DfpService.v201708.ReconciliationReportService);
+              .GetService(DfpService.v201708.ReconciliationReportService)) {
 
-      // Create a statement to select reconciliation reports.
-      int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("startDate = :startDate")
-          .OrderBy("id ASC")
-          .Limit(pageSize)
-          .AddValue("startDate", DateTimeUtilities.FromDateTime(
-              new System.DateTime(System.DateTime.Today.Year, System.DateTime.Today.Month - 1, 1),
-              "America/New_York").date
-          );
-
-      // Retrieve a small amount of reconciliation reports at a time, paging through until all
-      // reconciliation reports have been retrieved.
-      int totalResultSetSize = 0;
-      do {
-        ReconciliationReportPage page =
-            reconciliationReportService.getReconciliationReportsByStatement(
-                statementBuilder.ToStatement());
-
-        // Print out some information for each reconciliation report.
-        if (page.results != null) {
-          totalResultSetSize = page.totalResultSetSize;
-          int i = page.startIndex;
-          foreach (ReconciliationReport reconciliationReport in page.results) {
-            String startDateString = new System.DateTime(
-                day: reconciliationReport.startDate.day,
-                month: reconciliationReport.startDate.month,
-                year: reconciliationReport.startDate.year
-            ).ToString("d");
-            Console.WriteLine(
-                "{0}) Reconciliation report with ID {1} and start date \"{2}\" was found.",
-                i++,
-                reconciliationReport.id,
-                startDateString
+        // Create a statement to select reconciliation reports.
+        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("startDate = :startDate")
+            .OrderBy("id ASC")
+            .Limit(pageSize)
+            .AddValue("startDate", DateTimeUtilities.FromDateTime(
+                new System.DateTime(System.DateTime.Today.Year,
+                    System.DateTime.Today.Month - 1, 1), "America/New_York").date
             );
+
+        // Retrieve a small amount of reconciliation reports at a time, paging through until all
+        // reconciliation reports have been retrieved.
+        int totalResultSetSize = 0;
+        do {
+          ReconciliationReportPage page =
+              reconciliationReportService.getReconciliationReportsByStatement(
+                  statementBuilder.ToStatement());
+
+          // Print out some information for each reconciliation report.
+          if (page.results != null) {
+            totalResultSetSize = page.totalResultSetSize;
+            int i = page.startIndex;
+            foreach (ReconciliationReport reconciliationReport in page.results) {
+              String startDateString = new System.DateTime(
+                  day: reconciliationReport.startDate.day,
+                  month: reconciliationReport.startDate.month,
+                  year: reconciliationReport.startDate.year
+              ).ToString("d");
+              Console.WriteLine(
+                  "{0}) Reconciliation report with ID {1} and start date \"{2}\" was found.",
+                  i++,
+                  reconciliationReport.id,
+                  startDateString
+              );
+            }
           }
-        }
 
-        statementBuilder.IncreaseOffsetBy(pageSize);
-      } while (statementBuilder.GetOffset() < totalResultSetSize);
+          statementBuilder.IncreaseOffsetBy(pageSize);
+        } while (statementBuilder.GetOffset() < totalResultSetSize);
 
-      Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+      }
     }
   }
 }

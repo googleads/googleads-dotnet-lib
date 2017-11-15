@@ -17,7 +17,6 @@ using Google.Api.Ads.Dfp.v201708;
 
 using System;
 using Google.Api.Ads.Dfp.Util.v201708;
-using System.Collections.Generic;
 
 namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
   /// <summary>
@@ -50,42 +49,43 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the TeamService.
-      TeamService teamService = (TeamService) user.GetService(DfpService.v201708.TeamService);
+      using (TeamService teamService = (TeamService) user.GetService(
+          DfpService.v201708.TeamService)) {
 
-      // Set the ID of the team to update.
-      long teamId = long.Parse(_T("INSERT_TEAM_ID_HERE"));
+        // Set the ID of the team to update.
+        long teamId = long.Parse(_T("INSERT_TEAM_ID_HERE"));
 
-      // Set the ID of the ad unit to add to the team.
-      String adUnitId = _T("INSERT_AD_UNIT_ID_HERE");
+        // Set the ID of the ad unit to add to the team.
+        String adUnitId = _T("INSERT_AD_UNIT_ID_HERE");
 
-      // Create a statement to select the team.
-      StatementBuilder statementBuilder = new StatementBuilder()
-          .Where("id = :id")
-          .OrderBy("id ASC")
-          .Limit(1)
-          .AddValue("id", teamId);
+        // Create a statement to select the team.
+        StatementBuilder statementBuilder = new StatementBuilder()
+            .Where("id = :id")
+            .OrderBy("id ASC")
+            .Limit(1)
+            .AddValue("id", teamId);
 
-      try {
-        // Get the teams by statement.
-        TeamPage page = teamService.getTeamsByStatement(statementBuilder.ToStatement());
+        try {
+          // Get the teams by statement.
+          TeamPage page = teamService.getTeamsByStatement(statementBuilder.ToStatement());
 
-        Team team = page.results[0];
-        team.description = team.description + " - UPDATED";
+          Team team = page.results[0];
+          team.description = team.description + " - UPDATED";
 
-        // Update the teams on the server.
-        Team[] teams = teamService.updateTeams(new Team[] {team});
+          // Update the teams on the server.
+          Team[] teams = teamService.updateTeams(new Team[] { team });
 
-        if (teams != null) {
-          foreach (Team updatedTeam in teams) {
-            Console.WriteLine("A team with ID \"{0}\" and name \"{1}\" was updated.",
-                updatedTeam.id, updatedTeam.name);
+          if (teams != null) {
+            foreach (Team updatedTeam in teams) {
+              Console.WriteLine("A team with ID \"{0}\" and name \"{1}\" was updated.",
+                  updatedTeam.id, updatedTeam.name);
+            }
+          } else {
+            Console.WriteLine("No teams updated.");
           }
-        } else {
-          Console.WriteLine("No teams updated.");
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update teams. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update teams. Exception says \"{0}\"", e.Message);
       }
     }
   }

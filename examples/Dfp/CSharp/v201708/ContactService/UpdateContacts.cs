@@ -47,37 +47,37 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201708 {
     /// Run the code example.
     /// </summary>
     public void Run(DfpUser user) {
-      // Get the ContactService.
-      ContactService contactService =
-          (ContactService) user.GetService(DfpService.v201708.ContactService);
+      using (ContactService contactService =
+          (ContactService) user.GetService(DfpService.v201708.ContactService)) {
 
-      // Set the ID of the contact to update.
-      long contactId = long.Parse(_T("INSERT_CONTACT_ID_HERE"));
+        // Set the ID of the contact to update.
+        long contactId = long.Parse(_T("INSERT_CONTACT_ID_HERE"));
 
-      try {
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("id = :id")
-            .OrderBy("id ASC")
-            .Limit(1)
-            .AddValue("id", contactId);
+        try {
+          StatementBuilder statementBuilder = new StatementBuilder()
+              .Where("id = :id")
+              .OrderBy("id ASC")
+              .Limit(1)
+              .AddValue("id", contactId);
 
-        // Get the contact.
-        ContactPage page = contactService.getContactsByStatement(statementBuilder.ToStatement());
-        Contact contact = page.results[0];
+          // Get the contact.
+          ContactPage page = contactService.getContactsByStatement(statementBuilder.ToStatement());
+          Contact contact = page.results[0];
 
-        // Update the address of the contact.
-        contact.address = "123 New Street, New York, NY, 10011";
+          // Update the address of the contact.
+          contact.address = "123 New Street, New York, NY, 10011";
 
-        // Update the contact on the server.
-        Contact[] contacts = contactService.updateContacts(new Contact[] {contact});
+          // Update the contact on the server.
+          Contact[] contacts = contactService.updateContacts(new Contact[] { contact });
 
-        // Display results.
-        foreach (Contact updatedContact in contacts) {
-          Console.WriteLine("Contact with ID \"{0}\", name \"{1}\", and comment \"{2}\" was " +
-              "updated.", updatedContact.id, updatedContact.name, updatedContact.comment);
+          // Display results.
+          foreach (Contact updatedContact in contacts) {
+            Console.WriteLine("Contact with ID \"{0}\", name \"{1}\", and comment \"{2}\" was " +
+                "updated.", updatedContact.id, updatedContact.name, updatedContact.comment);
+          }
+        } catch (Exception e) {
+          Console.WriteLine("Failed to update contacts. Exception says \"{0}\"", e.Message);
         }
-      } catch (Exception e) {
-        Console.WriteLine("Failed to update contacts. Exception says \"{0}\"", e.Message);
       }
     }
   }
