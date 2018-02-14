@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_inventory_service_1_1get_ad_unit_sizes_by_statement_response =
+[
+    [ "getAdUnitSizesByStatementResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_inventory_service_1_1get_ad_unit_sizes_by_statement_response.html#af86213ecc11a38b8d3777e0040b9f385", null ],
+    [ "getAdUnitSizesByStatementResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_inventory_service_1_1get_ad_unit_sizes_by_statement_response.html#aa50d9f79e90328f7e080b757cc3fb016", null ],
+    [ "rval", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_inventory_service_1_1get_ad_unit_sizes_by_statement_response.html#aa5cfbe40c271ef26fed1fc9bca173a2f", null ]
+];

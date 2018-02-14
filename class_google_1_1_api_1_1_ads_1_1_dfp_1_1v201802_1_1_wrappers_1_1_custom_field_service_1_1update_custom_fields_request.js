@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_custom_field_service_1_1update_custom_fields_request =
+[
+    [ "updateCustomFieldsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_custom_field_service_1_1update_custom_fields_request.html#aae9c87ee04e0aa6992385832b3a6865e", null ],
+    [ "updateCustomFieldsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_custom_field_service_1_1update_custom_fields_request.html#a55bf47295df7d5edb1d47a5180a6cb42", null ],
+    [ "customFields", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_custom_field_service_1_1update_custom_fields_request.html#a2153f652e82265ecd611f9a29ac28f71", null ]
+];

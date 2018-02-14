@@ -127,9 +127,9 @@ Inheritance diagram for Google.Api.Ads.AdWords.Examples.CSharp.v201710.UploadOff
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a20bc87d327696c3d3f8fa52fc305aff9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_upload_offline_data.html#a20bc87d327696c3d3f8fa52fc305aff9">Run</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_user.html">AdWordsUser</a> user, string conversionName, long externalUploadId, string[] emailAddresses)</td></tr>
-<tr class="memdesc:a20bc87d327696c3d3f8fa52fc305aff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the code example.  <a href="#a20bc87d327696c3d3f8fa52fc305aff9">More...</a><br/></td></tr>
-<tr class="separator:a20bc87d327696c3d3f8fa52fc305aff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae98e8c8c91ed65449783dfc5ef41fcdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_upload_offline_data.html#ae98e8c8c91ed65449783dfc5ef41fcdc">Run</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_user.html">AdWordsUser</a> user, string conversionName, long externalUploadId, string[] emailAddresses, string advertiserUploadTime, string bridgeMapVersionId, <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html#a766eec59747b43b4fed8ddaa349b1450">OfflineDataUploadType</a> uploadType, int partnerId)</td></tr>
+<tr class="memdesc:ae98e8c8c91ed65449783dfc5ef41fcdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the code example.  <a href="#ae98e8c8c91ed65449783dfc5ef41fcdc">More...</a><br/></td></tr>
+<tr class="separator:ae98e8c8c91ed65449783dfc5ef41fcdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -182,7 +182,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a20bc87d327696c3d3f8fa52fc305aff9"></a>
+<a class="anchor" id="ae98e8c8c91ed65449783dfc5ef41fcdc"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -211,7 +211,31 @@ Properties</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string[]&#160;</td>
-          <td class="paramname"><em>emailAddresses</em>&#160;</td>
+          <td class="paramname"><em>emailAddresses</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>advertiserUploadTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>bridgeMapVersionId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html#a766eec59747b43b4fed8ddaa349b1450">OfflineDataUploadType</a>&#160;</td>
+          <td class="paramname"><em>uploadType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>partnerId</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -233,6 +257,10 @@ Properties</h2></td></tr>
     <tr><td class="paramname">conversionName</td><td>The conversion type name that you'd like to attribute this upload to.</td></tr>
     <tr><td class="paramname">externalUploadId</td><td>The external upload ID can be any number that you use to keep track of your uploads.</td></tr>
     <tr><td class="paramname">emailAddresses</td><td>The email addresses for creating user identifiers.</td></tr>
+    <tr><td class="paramname">advertiserUploadTime</td><td>The advertiser upload time. For times, use the format yyyyMMdd HHmmss tz. For more details on formats, see: <a href="https://developers.google.com/adwords/api/docs/appendix/codes-formats#date-and-time-formats">https://developers.google.com/adwords/api/docs/appendix/codes-formats#date-and-time-formats</a> For time zones, see: <a href="https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids">https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids</a></td></tr>
+    <tr><td class="paramname">bridgeMapVersionId</td><td>The version ID of the bridge map.</td></tr>
+    <tr><td class="paramname">uploadType</td><td>The type of data upload.</td></tr>
+    <tr><td class="paramname">partnerId</td><td>The partner ID</td></tr>
   </table>
   </dd>
 </dl>
@@ -265,7 +293,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.aw3Sqx33Br/dist/github/examples/AdWords/CSharp/v201710/Remarketing/<a class="el" href="_upload_offline_data_8cs.html">UploadOfflineData.cs</a></li>
+<li>/usr/local/google/users/cseeley/tmp/tmp.qoFWxNjlRu/dist/github/examples/AdWords/CSharp/v201710/Remarketing/<a class="el" href="_upload_offline_data_8cs.html">UploadOfflineData.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -273,7 +301,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples.html">Examples</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp.html">CSharp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710.html">v201710</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_upload_offline_data.html">UploadOfflineData</a></li>
-    <li class="footer">Generated on Wed Nov 15 2017 11:31:28 for Ads API .NET library by
+    <li class="footer">Generated on Wed Feb 14 2018 12:30:06 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

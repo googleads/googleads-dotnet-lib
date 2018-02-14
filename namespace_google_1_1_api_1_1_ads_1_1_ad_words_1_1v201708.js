@@ -418,6 +418,7 @@ var namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708 =
     [ "OfflineConversionFeedServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_offline_conversion_feed_service_interface.html", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_offline_conversion_feed_service_interface" ],
     [ "OfflineConversionFeedServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_offline_conversion_feed_service_interface_channel.html", null ],
     [ "OfflineConversionFeedService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_offline_conversion_feed_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_offline_conversion_feed_service" ],
+    [ "RemarketingMoneyWithCurrency", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_remarketing_money_with_currency.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_remarketing_money_with_currency" ],
     [ "UserIdentifier", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_user_identifier.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_user_identifier" ],
     [ "StoreSalesTransaction", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_store_sales_transaction.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_store_sales_transaction" ],
     [ "OfflineData", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_offline_data.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_offline_data" ],

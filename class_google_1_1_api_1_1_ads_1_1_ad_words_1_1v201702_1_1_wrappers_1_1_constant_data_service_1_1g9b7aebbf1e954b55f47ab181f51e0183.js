@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_wrappers_1_1_constant_data_service_1_1g9b7aebbf1e954b55f47ab181f51e0183 =
-[
-    [ "getMobileDeviceCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_wrappers_1_1_constant_data_service_1_1g9b7aebbf1e954b55f47ab181f51e0183.html#afe638728ac4c2527a13b251347c7eb41", null ]
-];

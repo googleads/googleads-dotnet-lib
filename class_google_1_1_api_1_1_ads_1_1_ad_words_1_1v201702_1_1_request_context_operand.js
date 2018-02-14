@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_request_context_operand =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_request_context_operand_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_request_context_operand_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_request_context_operand_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_request_context_operand_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_request_context_operand_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_request_context_operand_1_1_selectable_fields" ],
-    [ "contextType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_request_context_operand.html#a884d2ad8f16d40d8daf59f77da090bd2", null ],
-    [ "contextTypeSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201702_1_1_request_context_operand.html#af9e7a0f655495766688b527e0d9a2f9f", null ]
-];

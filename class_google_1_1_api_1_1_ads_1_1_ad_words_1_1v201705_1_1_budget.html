@@ -140,8 +140,7 @@ Selectable">This field can be selected using the value "BudgetId".</span><span c
 StringLength">The length of this string should be between 1 and 255, inclusive, in UTF-8 bytes, (trimmed).</span>  <a href="#a1cb1f020fb2ecab7670ea2f5ccefde2a">More...</a><br/></td></tr>
 <tr class="separator:a1cb1f020fb2ecab7670ea2f5ccefde2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa18cbd1c836d217ca05549e00bfb20e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_money.html">Money</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_budget.html#aa18cbd1c836d217ca05549e00bfb20e0">amount</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa18cbd1c836d217ca05549e00bfb20e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amount of budget in the local currency for the account. <span class="constraint
-Selectable">This field can be selected using the value "Amount".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint InRange">This field must be greater than or equal to 1.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span>  <a href="#aa18cbd1c836d217ca05549e00bfb20e0">More...</a><br/></td></tr>
+<tr class="memdesc:aa18cbd1c836d217ca05549e00bfb20e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amount of budget in the local currency for the account. This value represents an average daily budget amount; the actual daily costs might vary. See <a href="https://support.google.com/adwords/answer/1704443">Charges and your daily budget</a>. <span class="constraint Selectable">This field can be selected using the value "Amount".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint InRange">This field must be greater than or equal to 1.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span>  <a href="#aa18cbd1c836d217ca05549e00bfb20e0">More...</a><br/></td></tr>
 <tr class="separator:aa18cbd1c836d217ca05549e00bfb20e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9c06d0d34a30717870eec583f6d2221"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705.html#a13d570230cc97db933d848ec9f9b76e4">BudgetBudgetDeliveryMethod</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_budget.html#aa9c06d0d34a30717870eec583f6d2221">deliveryMethod</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:aa9c06d0d34a30717870eec583f6d2221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delivery method for the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> which determines the rate at which the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_budget.html" title="Budgets are used for managing the amount of money spent on AdWords. ">Budget</a> is spent. Defaults to STANDARD and can be changed through <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_budget_service.html" title="Budget Service to get/mutate budgets. ">BudgetService</a> ADD or SET operations. <span class="constraint Selectable">This field can be selected using the value "DeliveryMethod".</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span>  <a href="#aa9c06d0d34a30717870eec583f6d2221">More...</a><br/></td></tr>
@@ -187,8 +186,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 </table>
 </div><div class="memdoc">
 
-<p>Amount of budget in the local currency for the account. <span class="constraint
-Selectable">This field can be selected using the value "Amount".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint InRange">This field must be greater than or equal to 1.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span> </p>
+<p>Amount of budget in the local currency for the account. This value represents an average daily budget amount; the actual daily costs might vary. See <a href="https://support.google.com/adwords/answer/1704443">Charges and your daily budget</a>. <span class="constraint Selectable">This field can be selected using the value "Amount".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint InRange">This field must be greater than or equal to 1.</span> <span class="constraint ReadOnly">This field is read only and will be ignored when sent to the API for the following <a href="Operator">Operator</a>s: REMOVE.</span> </p>
 
 </div>
 </div>
@@ -446,7 +444,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.aw3Sqx33Br/dist/github/src/AdWords/v201705/<a class="el" href="v201705_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/usr/local/google/users/cseeley/tmp/tmp.qoFWxNjlRu/dist/github/src/AdWords/v201705/<a class="el" href="v201705_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -454,7 +452,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705.html">v201705</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_budget.html">Budget</a></li>
-    <li class="footer">Generated on Wed Nov 15 2017 11:39:26 for Ads API .NET library by
+    <li class="footer">Generated on Wed Feb 14 2018 12:31:39 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

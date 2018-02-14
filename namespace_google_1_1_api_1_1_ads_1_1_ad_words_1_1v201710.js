@@ -447,6 +447,7 @@ var namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710 =
     [ "AdGroupCriterionLabelReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_criterion_label_return_value.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_criterion_label_return_value" ],
     [ "AdGroupCriterionServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_criterion_service_interface_channel.html", null ],
     [ "AdGroupCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_criterion_service.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_criterion_service" ],
+    [ "RemarketingMoneyWithCurrency", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency" ],
     [ "UserIdentifier", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_identifier.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_identifier" ],
     [ "StoreSalesTransaction", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_store_sales_transaction.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_store_sales_transaction" ],
     [ "OfflineData", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_offline_data.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_offline_data" ],

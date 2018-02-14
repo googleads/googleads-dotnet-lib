@@ -374,6 +374,7 @@ Public Member Functions</h2></td></tr>
 <p>Applies a list of mutate operations (i.e. add, set) to offline data upload: </p>
 <p>Add - uploads offline data for each entry in operations. Some operations can fail for upload level errors like invalid <code></code>. Check <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_offline_data_upload_return_value.html" title="A container for return values from OfflineDataUploadService. ">OfflineDataUploadReturnValue</a></code> for partial failure list.</p>
 <p>Set - updates the upload result for each upload. It is for internal use only.</p>
+<p><b>Note:</b> For <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a> API, one ADD request can have at most 2000 operations.</p>
 <p><b>Note:</b> Add operation might possibly succeed even with errors in <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_offline_data.html" title="Interface for all offline data upload rows. ">OfflineData</a></code>. Data errors are reported in <a href="OfflineDataUpload#partialDataErrors">OfflineDataUpload::partialDataErrors</a></p>
 <p><b>Note:</b> Supports only the <code>ADD</code> operator. <code>SET</code> operator is internally used only.(<code>REMOVE</code> is not supported). </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -395,7 +396,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.aw3Sqx33Br/dist/github/src/AdWords/v201708/<a class="el" href="v201708_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/usr/local/google/users/cseeley/tmp/tmp.qoFWxNjlRu/dist/github/src/AdWords/v201708/<a class="el" href="v201708_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -403,7 +404,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708.html">v201708</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_offline_data_upload_service.html">OfflineDataUploadService</a></li>
-    <li class="footer">Generated on Wed Nov 15 2017 11:47:33 for Ads API .NET library by
+    <li class="footer">Generated on Wed Feb 14 2018 12:36:47 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

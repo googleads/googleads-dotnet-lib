@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_wrappers_1_1_company_service_1_1create_companies_request =
-[
-    [ "createCompaniesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_wrappers_1_1_company_service_1_1create_companies_request.html#a5830056730dea8b6e7cc5cac74a308dd", null ],
-    [ "createCompaniesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_wrappers_1_1_company_service_1_1create_companies_request.html#aca3cdede925bdc294156a271c8962eb1", null ],
-    [ "companies", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201702_1_1_wrappers_1_1_company_service_1_1create_companies_request.html#ad8bf83291818369137d9e53478b04fd7", null ]
-];

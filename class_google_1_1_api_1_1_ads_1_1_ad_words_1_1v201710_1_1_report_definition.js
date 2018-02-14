@@ -1,5 +1,6 @@
 var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_report_definition =
 [
+    [ "GetDuringClause", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_report_definition.html#ab481c2b1a2376f2a76393d861aedc916", null ],
     [ "creationTime", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_report_definition.html#ae0c084f0a3eef0f9449cf1f057ad66bb", null ],
     [ "dateRangeType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_report_definition.html#a1d28a8c80b2a2eccf6c7c18e11373f31", null ],
     [ "dateRangeTypeSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_report_definition.html#a2a0d0359e024c9b6922b3a9cacce8e27", null ],
