@@ -13,8 +13,11 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Lib;
+using Google.Api.Ads.Common.Util;
 
 using System;
+using System.Text;
+using System.Xml;
 using System.ServiceModel.Dispatcher;
 using System.ServiceModel.Channels;
 using System.ServiceModel;
@@ -26,6 +29,12 @@ namespace Google.Api.Ads.Common.Logging {
   /// for the XML Web service method the SOAP extension is applied to.
   /// </summary>
   public class SoapListenerInspector : IClientMessageInspector {
+
+    private static readonly XmlWriterSettings xmlWriterSettings = new XmlWriterSettings() {
+     Encoding = Encoding.UTF8,
+     Indent = true,
+     OmitXmlDeclaration = true
+    };
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SoapListenerInspector"/>
@@ -65,7 +74,16 @@ namespace Google.Api.Ads.Common.Logging {
       using (MessageBuffer buffer = message.CreateBufferedCopy(Int32.MaxValue)) {
         // Message can only be read once, so replace it with a copy.
         message = buffer.CreateMessage();
-        return buffer.CreateMessage().ToString();
+        StringBuilder sb = new StringBuilder();
+        try {
+          using (XmlWriter xmlWriter = XmlWriter.Create(sb, xmlWriterSettings)) {
+            buffer.CreateMessage().WriteMessage(xmlWriter);
+          }
+          return sb.ToString();
+        } catch (Exception e) {
+          TraceUtilities.WriteGeneralWarnings(string.Format(CommonErrorMessages.MalformedSoap, e));
+          return "<soap />";
+        }
       }
     }
 

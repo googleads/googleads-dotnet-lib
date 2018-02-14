@@ -13,12 +13,10 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Logging;
-using Google.Api.Ads.Common.Util;
 
 using NUnit.Framework;
 
 using System.Collections.Generic;
-using System.Web.Script.Serialization;
 
 namespace Google.Api.Ads.Common.Tests.Util {
 

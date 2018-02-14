@@ -12,21 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.Common.Lib;
 using NUnit.Framework;
-
+using System;
 
 namespace Google.Api.Ads.AdWords.Tests.Lib {
+
   /// <summary>
   /// Tests for the AdWordsServiceFactory
   /// </summary>
   [TestFixture]
-  class AdWordsServiceFactoryTests {
-    private const string TEST_API_VERSION = "v201702";
+  internal class AdWordsServiceFactoryTests {
+    private const string TEST_API_VERSION = "v201710";
     private const string TEST_SERVICE = "MediaService";
     private const string TEST_GROUP_NAME = "cm";
 
@@ -38,7 +36,6 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     /// Default public constructor.
     /// </summary>
     public AdWordsServiceFactoryTests() {
-
     }
 
     [SetUp]

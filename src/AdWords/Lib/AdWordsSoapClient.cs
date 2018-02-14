@@ -31,8 +31,13 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// </summary>
     internal AdWordsSoapHeaderInspector HeaderInspector {
       get {
+#if NET452
         AdsServiceInspectorBehavior behavior = (AdsServiceInspectorBehavior)
             this.Endpoint.Behaviors[typeof(AdsServiceInspectorBehavior)];
+#else
+        AdsServiceInspectorBehavior behavior = (AdsServiceInspectorBehavior)
+            this.Endpoint.EndpointBehaviors[typeof(AdsServiceInspectorBehavior)];
+#endif
         if (behavior != null) {
           return behavior.GetInspector<AdWordsSoapHeaderInspector>();
         }

@@ -12,16 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System.Runtime.Remoting.Messaging;
-using System.Web;
+using System.Collections.Concurrent;
 
 namespace Google.Api.Ads.Common.Lib {
 
   /// <summary>
-  /// This class provides access to the call context, and hides the differences
-  /// when the library is running as a web application or a normal application.
+  /// This class provides an environment agnostic context store.
   /// </summary>
-  public class ContextStore {
+  public static class ContextStore {
+
+    private static ConcurrentDictionary<string, object> store =
+        new ConcurrentDictionary<string, object>();
 
     /// <summary>
     /// Adds a key-value pair to the context store.
@@ -29,11 +30,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="key">The key for the value being stored.</param>
     /// <param name="value">The value being stored.</param>
     public static void AddKey(string key, object value) {
-      if (HttpContext.Current != null) {
-        HttpContext.Current.Items[key] = value;
-      } else {
-        CallContext.SetData(key, value);
-      }
+      store.AddOrUpdate(key, value, (k, v) => value);
     }
 
     /// <summary>
@@ -41,11 +38,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     /// <param name="key">The key for the value to be removed.</param>
     public static void RemoveKey(string key) {
-      if (HttpContext.Current != null) {
-        HttpContext.Current.Items.Remove(key);
-      } else {
-        CallContext.FreeNamedDataSlot(key);
-      }
+      store.TryRemove(key, out object ignored);
     }
 
     /// <summary>
@@ -54,15 +47,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="key">The key for which value should be retrieved.</param>
     /// <returns>The object's value, or null if the key is missing.</returns>
     public static object GetValue(string key) {
-      if (HttpContext.Current != null) {
-        if (HttpContext.Current.Items.Contains(key)) {
-          return HttpContext.Current.Items[key];
-        } else {
-          return null;
-        }
-      } else {
-        return CallContext.GetData(key);
-      }
+      return store.TryGetValue(key, out object value) ? value : null;
     }
   }
 }

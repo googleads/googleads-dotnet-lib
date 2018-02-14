@@ -12,13 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.Common.Lib;
-using Google.Api.Ads.Common.Tests;
-
-using System;
-using System.Collections.Generic;
 using System.Net;
-using System.Text;
 
 namespace Google.Api.Ads.Common.Tests {
   /// <summary>
@@ -30,7 +24,6 @@ namespace Google.Api.Ads.Common.Tests {
     /// </summary>
     public enum OAuth2RequestType {
       FetchAccessAndRefreshToken,
-      FetchAccessTokenForServiceAccount,
       RefreshAccessToken,
       RevokeRefreshToken
     }
@@ -65,12 +58,6 @@ namespace Google.Api.Ads.Common.Tests {
     /// </summary>
     public const string EXPIRES_IN = "3600";
 
-    /// <summary>
-    /// Mock response when requesting access token for serviced accounts.
-    /// </summary>
-    private const string SERVICED_ACCOUNT_RESPONSE = "{\r\n\"access_token\" : \"" +
-        TEST_ACCESS_TOKEN + "\",\r\n\"token_type\" : \"" + ACCESS_TOKEN_TYPE +
-        "\",\r\n \"expires_in\" : " + EXPIRES_IN + "\r\n}";
 
     /// <summary>
     /// Mock response when reqquesting access token in offline mode for
@@ -137,10 +124,6 @@ namespace Google.Api.Ads.Common.Tests {
     public override HttpMessage GetNextMessage() {
       string message = null;
       switch (RequestType) {
-        case OAuth2RequestType.FetchAccessTokenForServiceAccount:
-          message = SERVICED_ACCOUNT_RESPONSE;
-          break;
-
         case OAuth2RequestType.FetchAccessAndRefreshToken:
           message = ACCESS_REFRESH_TOKEN_RESPONSE;
           break;

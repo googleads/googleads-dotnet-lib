@@ -96,7 +96,11 @@ namespace Google.Api.Ads.AdWords.Lib {
         ErrorType = awapiSignature.ServiceType.Assembly.GetType(
           awapiSignature.ServiceType.Namespace + ".ApiException")
       });
+#if NET452
       serviceEndpoint.Behaviors.Add(inspectorBehavior);
+#else
+      serviceEndpoint.EndpointBehaviors.Add(inspectorBehavior);
+#endif
 
       if (awConfig.Proxy != null) {
         service.Proxy = awConfig.Proxy;

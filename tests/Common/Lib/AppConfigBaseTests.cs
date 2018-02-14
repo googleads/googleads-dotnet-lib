@@ -29,35 +29,25 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     /// <summary>
     /// The dictionary to hold the test data.
     /// </summary>
-    private Dictionary<string, string> dictSettings;
-
-    /// <summary>
-    /// Inits this instance.
-    /// </summary>
-    [SetUp]
-    [Category("Small")]
-    public void Init() {
-      dictSettings = new Dictionary<string, string>();
-      dictSettings.Add("ProxyServer", "http://localhost/");
-      dictSettings.Add("ProxyUser", "ProxyUser");
-      dictSettings.Add("ProxyPassword", "ProxyPassword");
-      dictSettings.Add("ProxyDomain", "ProxyDomain");
-      dictSettings.Add("MaskCredentials", "false");
-      dictSettings.Add("Timeout", "20");
-      dictSettings.Add("RetryCount", "5");
-
-      dictSettings.Add("OAuth2ClientId", "OAuth2ClientId");
-      dictSettings.Add("OAuth2ClientSecret", "OAuth2ClientSecret");
-      dictSettings.Add("OAuth2ServiceAccountEmail", "OAuth2ServiceAccountEmail");
-      dictSettings.Add("OAuth2PrnEmail", "OAuth2PrnEmail");
-      dictSettings.Add("OAuth2AccessToken", "OAuth2AccessToken");
-      dictSettings.Add("OAuth2RefreshToken", "OAuth2RefreshToken");
-      dictSettings.Add("OAuth2Scope", "OAuth2Scope");
-      dictSettings.Add("OAuth2RedirectUri", "OAuth2RedirectUri");
-      dictSettings.Add("OAuth2Mode", "SERVICE_ACCOUNT");
-
-      dictSettings.Add("EnableGzipCompression", "false");
-    }
+    private Dictionary<string, string> dictSettings = new Dictionary<string, string>() {
+      { "ProxyServer", "http://localhost/" },
+      { "ProxyUser", "ProxyUser" },
+      { "ProxyPassword", "ProxyPassword" },
+      { "ProxyDomain", "ProxyDomain" },
+      { "MaskCredentials", "false" },
+      { "Timeout", "20" },
+      { "RetryCount", "5" },
+      { "OAuth2ClientId", "OAuth2ClientId" },
+      { "OAuth2ClientSecret", "OAuth2ClientSecret" },
+      { "OAuth2ServiceAccountEmail", "OAuth2ServiceAccountEmail" },
+      { "OAuth2PrnEmail", "OAuth2PrnEmail" },
+      { "OAuth2AccessToken", "OAuth2AccessToken" },
+      { "OAuth2RefreshToken", "OAuth2RefreshToken" },
+      { "OAuth2Scope", "OAuth2Scope" },
+      { "OAuth2RedirectUri", "OAuth2RedirectUri" },
+      { "OAuth2Mode", "SERVICE_ACCOUNT" },
+      { "EnableGzipCompression", "false" },
+    };
 
     /// <summary>
     /// Tests the overloaded constructors.
@@ -87,6 +77,10 @@ namespace Google.Api.Ads.Common.Tests.Lib {
 
       Assert.AreEqual(bool.Parse(dictSettings["EnableGzipCompression"].ToString()),
           config.EnableGzipCompression);
+
+      // Since SettingWithNonEmptyDefaultValue is missing in dictSettings, default value should be
+      // retained.
+      Assert.AreEqual(MockAppConfig.TEST_DEFAULT_VALUE, config.SettingWithNonEmptyDefaultValue);
     }
 
     /// <summary>

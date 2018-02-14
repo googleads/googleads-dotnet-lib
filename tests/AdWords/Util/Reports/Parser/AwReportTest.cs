@@ -61,12 +61,13 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
     /// because none of the columns needed by <see ref="TestRow" /> appear in the XML.
     /// </summary>
     [Test]
-    [ExpectedException(typeof(AdWordsReportsException))]
     public void getFaultyRowsTest() {
-      TestUtils.testActionWithXmlTextReader(reader => {
-        var report = new AwReport<TestRow>(reader, "test");
-        report.GetRows();
-      }, faultyTestXml);
+      Assert.Throws<AdWordsReportsException>(() =>
+        TestUtils.testActionWithXmlTextReader(reader => {
+          var report = new AwReport<TestRow>(reader, "test");
+          report.GetRows();
+        }, faultyTestXml)
+      );
     }
 
     /// <summary>
@@ -124,11 +125,12 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
     /// MoveNext.
     /// </summary>
     [Test]
-    [ExpectedException(typeof(AdWordsReportsException))]
     public void getCurrentRowBeforeMoveNextTest() {
-      testActionWithXmlReport(report => {
-        var unused = report.Current;
-      });
+      Assert.Throws<AdWordsReportsException>(() =>
+        testActionWithXmlReport(report => {
+          var unused = report.Current;
+        })
+      );
     }
   }
 }

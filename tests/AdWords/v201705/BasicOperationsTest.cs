@@ -1,4 +1,4 @@
-﻿// Copyright 2016, Google Inc. All Rights Reserved.
+﻿// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,24 +16,20 @@ using Google.Api.Ads.AdWords.v201705;
 
 using NUnit.Framework;
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Threading;
-
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201705;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201705;
 
 namespace Google.Api.Ads.AdWords.Tests.v201705 {
+
   /// <summary>
   /// Test cases for all the code examples under v201705\BasicOperations.
   /// </summary>
-  class BasicOperationsTest : VersionedExampleTestsBase {
-    long campaignId;
-    long adGroupId;
-    long adId;
-    long keywordId;
+  internal class BasicOperationsTest : VersionedExampleTestsBase {
+    private long campaignId;
+    private long adGroupId;
+    private long adId;
+    private long keywordId;
+    private const long CPC_BID = 4000000;
 
     /// <summary>
     /// Inits this instance.
@@ -311,8 +307,10 @@ namespace Google.Api.Ads.AdWords.Tests.v201705 {
     /// </summary>
     [Test]
     public void TestUpdateAdGroupVBExample() {
-      RunExample(delegate() {
-        new VBExamples.UpdateAdGroup().Run(user, adGroupId);
+      VBExamples.UpdateAdGroup example = new VBExamples.UpdateAdGroup();
+      RunExample(delegate () {
+        example.Run(user, adGroupId, CPC_BID);
+        example.Run(user, adGroupId, null);
       });
     }
 
@@ -321,8 +319,10 @@ namespace Google.Api.Ads.AdWords.Tests.v201705 {
     /// </summary>
     [Test]
     public void TestUpdateAdGroupCSharpExample() {
-      RunExample(delegate() {
-        new CSharpExamples.UpdateAdGroup().Run(user, adGroupId);
+      CSharpExamples.UpdateAdGroup example = new CSharpExamples.UpdateAdGroup();
+      RunExample(delegate () {
+        example.Run(user, adGroupId, CPC_BID);
+        example.Run(user, adGroupId, null);
       });
     }
 

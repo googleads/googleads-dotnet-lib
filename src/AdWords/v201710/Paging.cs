@@ -46,7 +46,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
     public static Paging Default {
       get {
         // Mark the usage.
-        featureUsageRegistry.MarkUsage(FEATURE_ID);;
+        featureUsageRegistry.MarkUsage(FEATURE_ID);
 
         return new Paging() {
           startIndex = 0,
@@ -61,7 +61,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// <param name="pageSize">Size of the page.</param>
     public void IncreaseOffsetBy(int pageSize) {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       this.startIndex += pageSize;
     }
@@ -74,6 +74,16 @@ namespace Google.Api.Ads.AdWords.v201710 {
       featureUsageRegistry.MarkUsage(FEATURE_ID);;
 
       this.startIndex += this.numberResults;
+    }
+
+    /// <summary>
+    /// Returns a string that represents this instance.
+    /// </summary>
+    /// <returns>
+    /// A string that represents this instance.
+    /// </returns>
+    public override string ToString() {
+      return string.Format("LIMIT {0}, {1}", startIndex, numberResults);
     }
   }
 }

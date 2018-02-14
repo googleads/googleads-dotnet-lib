@@ -22,7 +22,7 @@ namespace Google.Api.Ads.Common.Lib {
   /// Base class for all SOAP services supported by this library.
   /// </summary>
   [System.ComponentModel.DesignerCategoryAttribute("code")]
-  public abstract class AdsSoapClient<TChannel> : ClientBase<TChannel>, AdsClient
+  public abstract class AdsSoapClient<TChannel> : ClientBase<TChannel>, AdsClient, IDisposable
       where TChannel : class {
 
     /// <summary>
@@ -56,13 +56,23 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     public bool EnableDecompression {
       get {
+#if NET452
         AdsServiceInspectorBehavior behavior = (AdsServiceInspectorBehavior)
             this.Endpoint.Behaviors[typeof(AdsServiceInspectorBehavior)];
+#else
+        AdsServiceInspectorBehavior behavior = (AdsServiceInspectorBehavior)
+            this.Endpoint.EndpointBehaviors[typeof(AdsServiceInspectorBehavior)];
+#endif
         return behavior != null && behavior.GetInspector<GzipHeaderInspector>() != null;
       }
       set {
+#if NET452
         AdsServiceInspectorBehavior behavior = (AdsServiceInspectorBehavior)
             this.Endpoint.Behaviors[typeof(AdsServiceInspectorBehavior)];
+#else
+        AdsServiceInspectorBehavior behavior = (AdsServiceInspectorBehavior)
+            this.Endpoint.EndpointBehaviors[typeof(AdsServiceInspectorBehavior)];
+#endif
         if (value && behavior.GetInspector<GzipHeaderInspector>() == null) {
           behavior.Add(new GzipHeaderInspector());
         } else if (!value && behavior.GetInspector<GzipHeaderInspector>() != null) {
@@ -175,6 +185,13 @@ namespace Google.Api.Ads.Common.Lib {
       User.CleanupListeners();
       ContextStore.RemoveKey("SoapService");
       ContextStore.RemoveKey("SoapMethod");
+    }
+
+    /// <summary>
+    /// Disposes of this AdsSoapClient.
+    /// </summary>
+    public void Dispose() {
+      ((ICommunicationObject)this).Close();
     }
   }
 }

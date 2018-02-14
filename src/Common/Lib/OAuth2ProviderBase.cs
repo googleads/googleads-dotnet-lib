@@ -14,16 +14,10 @@
 
 using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Util;
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Pkcs;
-using Org.BouncyCastle.Security;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Net;
-using System.Security.Cryptography;
-using System.Web.Script.Serialization;
 
 namespace Google.Api.Ads.Common.Lib {
 
@@ -81,7 +75,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// Indicates the type of token returned by the server. This field will
     /// always have the value Bearer for now.
     /// </summary>
-    private string tokenType;
+    private string tokenType = "Bearer";
 
     /// <summary>
     /// The time at which access token was updated.
@@ -372,60 +366,6 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Converts the PKCS8 private key to RSA parameters.
-    /// </summary>
-    /// <param name="privateKey">The private key read from the JSON secrets file.</param>
-    /// <returns>The RSA parameters for generating signature.</returns>
-    protected static RSAParameters ConvertPKCS8ToRsaParameters(string privateKey) {
-      var base64PrivateKey = privateKey.Replace(PRIVATE_KEY_PREFIX, "").Replace("\n", "")
-                .Replace(PRIVATE_KEY_SUFFIX, "");
-      var privateKeyBytes = Convert.FromBase64String(base64PrivateKey);
-      AsymmetricKeyParameter key = PrivateKeyFactory.CreateKey(privateKeyBytes);
-      return DotNetUtilities.ToRSAParameters((RsaPrivateCrtKeyParameters) key);
-    }
-
-    /// <summary>
-    /// Converts the provided P12 file to RSA parameters.
-    /// </summary>
-    /// <param name="pathToP12File">The file system path to the P12 file.</param>
-    /// <param name="password">The P12 file password.</param>
-    /// <returns>The RSA parameters for generating signature.</returns>
-    protected static RSAParameters ConvertP12ToRsaParameters(String pathToP12File,
-      String password) {
-      using (FileStream stream = File.OpenRead(pathToP12File)) {
-        Pkcs12Store store = new Pkcs12Store(stream, password.ToCharArray());
-
-        foreach (string alias in store.Aliases) {
-          if (store.IsKeyEntry(alias)) {
-            AsymmetricKeyParameter key = store.GetKey(alias).Key;
-            if (key.IsPrivate) {
-              return DotNetUtilities.ToRSAParameters((RsaPrivateCrtKeyParameters) key);
-            }
-          }
-        }
-      }
-
-      // If we get here then no private key could be found, which warrants an error.
-      throw new ArgumentException(CommonErrorMessages.OAuth2JwtCertificateInvalid);
-    }
-
-    /// <summary>
-    /// Gets the RSA sha256 signature for data.
-    /// </summary>
-    /// <param name="rsaParameters">The RSA parameters to use for signing.</param>
-    /// <param name="data">The data for which signature should be calculated.
-    /// </param>
-    /// <returns>The signature.</returns>
-    protected static byte[] GetRsaSha256Signature(RSAParameters rsaParameters, byte[] data) {
-      RSACryptoServiceProvider rsaCsp = new RSACryptoServiceProvider();
-      rsaCsp.ImportParameters(rsaParameters);
-
-      byte[] signature = rsaCsp.SignData(data, "SHA256");
-      bool results = rsaCsp.VerifyData(data, "SHA256", signature);
-      return signature;
-    }
-
-    /// <summary>
     /// Generates a url-safe base64 encoded string.
     /// </summary>
     /// <param name="data">The data to be base64-encoded.</param>
@@ -441,8 +381,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="contents">The JSON contents.</param>
     /// <returns>A dictionary of key-value pairs.</returns>
     protected Dictionary<string, string> ParseJsonObjectResponse(string contents) {
-      JavaScriptSerializer serializer = new JavaScriptSerializer();
-      return serializer.Deserialize<Dictionary<string, string>>(contents);
+      return JsonConvert.DeserializeObject<Dictionary<string, string>>(contents);
     }
 
     /// <summary>

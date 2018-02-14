@@ -1,4 +1,4 @@
-﻿// Copyright 2016, Google Inc. All Rights Reserved.
+﻿// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -291,7 +291,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201708 {
     [Test]
     public void TestAddDynamicSearchAdsCampaignCSharpExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-      RunExample(delegate () {
+      RunExample(delegate() {
         new CSharpExamples.AddDynamicSearchAdsCampaign().Run(user);
       });
     }
@@ -302,7 +302,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201708 {
     [Test]
     public void TestAddDynamicSearchAdsCampaignVBExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-      RunExample(delegate () {
+      RunExample(delegate() {
         new VBExamples.AddDynamicSearchAdsCampaign().Run(user);
       });
     }
@@ -313,7 +313,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201708 {
     [Test]
     public void TestAddDynamicPageFeedCSharpExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-      RunExample(delegate () {
+      RunExample(delegate() {
         new CSharpExamples.AddDynamicPageFeed().Run(user, dsaCampaignId, dsaAdGroupId);
       });
     }
@@ -324,7 +324,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201708 {
     [Test]
     public void TestAddDynamicPageFeedVBExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-      RunExample(delegate () {
+      RunExample(delegate() {
         new VBExamples.AddDynamicPageFeed().Run(user, dsaCampaignId, dsaAdGroupId);
       });
     }

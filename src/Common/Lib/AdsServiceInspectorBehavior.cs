@@ -75,7 +75,11 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="clientRuntime">Client runtime.</param>
     public void ApplyClientBehavior(ServiceEndpoint endpoint, ClientRuntime clientRuntime) {
       foreach(IClientMessageInspector inspector in inspectors) {
+#if NET452
         clientRuntime.MessageInspectors.Add(inspector);
+#else
+        clientRuntime.ClientMessageInspectors.Add(inspector);
+#endif
       }
     }
 

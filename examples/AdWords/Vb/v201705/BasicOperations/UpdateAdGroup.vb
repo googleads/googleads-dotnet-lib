@@ -19,7 +19,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
 
   ''' <summary>
   ''' This code example illustrates how to update an ad group, setting its
-  ''' status to 'PAUSED'. To create an ad group, run AddAdGroup.vb.
+  ''' status to 'PAUSED', and its CPC bid to a new value if specified.
+  ''' To create an ad group, run AddAdGroup.vb.
   ''' </summary>
   Public Class UpdateAdGroup
     Inherits ExampleBase
@@ -33,7 +34,15 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
       Console.WriteLine(codeExample.Description)
       Try
         Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
-        codeExample.Run(New AdWordsUser, adGroupId)
+        Dim bidMicroAmount As Long? = Nothing
+
+        ' Optional: Provide a cpc bid for the ad group, in micro amounts.
+        Dim tempVal As Long = 0
+        If Long.TryParse("INSERT_CPC_BID_IN_MICROS_HERE", tempVal) Then
+          bidMicroAmount = New Nullable(Of Long)(tempVal)
+        End If
+
+        codeExample.Run(New AdWordsUser, adGroupId, bidMicroAmount)
       Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
@@ -46,7 +55,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     Public Overrides ReadOnly Property Description() As String
       Get
         Return "This code example illustrates how to update an ad group, setting its status " &
-            "to 'PAUSED'. To create an ad group, run AddAdGroup.vb"
+            "to 'PAUSED', and its CPC bid to a new value if specified. To create an ad group, " &
+            "run AddAdGroup.vb."
       End Get
     End Property
 
@@ -55,14 +65,30 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
     ''' </summary>
     ''' <param name="user">The AdWords user.</param>
     ''' <param name="adGroupId">Id of the ad group to be updated.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
+    ''' <param name="bidMicroAmount">The CPC bid amount in micros.</param>
+    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long,
+        ByVal bidMicroAmount As Long?)
       Using adGroupService As AdGroupService = CType(user.GetService(
           AdWordsService.v201705.AdGroupService), AdGroupService)
 
-        ' Create the ad group.
+        ' [START updateAdGroup] MOE:strip_line
+        ' Create an ad group with the specified ID.
         Dim adGroup As New AdGroup
-        adGroup.status = AdGroupStatus.PAUSED
         adGroup.id = adGroupId
+
+        ' Pause the ad group.
+        adGroup.status = AdGroupStatus.PAUSED
+
+        ' Update the CPC bid if specified.
+        If bidMicroAmount.HasValue() Then
+          Dim biddingStrategyConfiguration As New BiddingStrategyConfiguration()
+          Dim cpcBidMoney As New Money()
+          cpcBidMoney.microAmount = bidMicroAmount.Value
+          Dim cpcBid As New CpcBid()
+          cpcBid.bid = cpcBidMoney
+          biddingStrategyConfiguration.bids = New Bids() {cpcBid}
+          adGroup.biddingStrategyConfiguration = biddingStrategyConfiguration
+        End If
 
         ' Create the operation.
         Dim operation As New AdGroupOperation
@@ -73,13 +99,28 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
           ' Update the ad group.
           Dim retVal As AdGroupReturnValue = adGroupService.mutate(
               New AdGroupOperation() {operation})
+          ' [END updateAdGroup] MOE:strip_line
 
           ' Display the results.
           If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso
               (retVal.value.Length > 0)) Then
-            Dim pausedAdGroup As AdGroup = retVal.value(0)
-            Console.WriteLine("Ad group with id = '{0}' was successfully updated.",
-                pausedAdGroup.id)
+            Dim adGroupResult As AdGroup = retVal.value(0)
+            Dim bsConfig As BiddingStrategyConfiguration =
+                adGroupResult.biddingStrategyConfiguration
+
+            ' Find the CpcBid in the bidding strategy configuration's bids collection.
+            Dim cpcBidMicros As Long = 0L
+            If (Not bsConfig Is Nothing) AndAlso (Not bsConfig.bids Is Nothing) Then
+              For Each Bid As Bids In bsConfig.bids
+                If TypeOf Bid Is CpcBid Then
+                  cpcBidMicros = DirectCast(Bid, CpcBid).bid.microAmount
+                  Exit For
+                End If
+              Next
+            End If
+            Console.WriteLine("Ad group with ID {0} and name '{1}' updated to have status '{2}'" &
+                " and CPC bid {3}", adGroupResult.id, adGroupResult.name,
+                adGroupResult.status, cpcBidMicros)
           Else
             Console.WriteLine("No ad groups were updated.")
           End If

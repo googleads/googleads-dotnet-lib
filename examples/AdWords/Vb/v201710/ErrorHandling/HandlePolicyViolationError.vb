@@ -92,6 +92,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
             service.RequestHeader.validateOnly = True
             retVal = service.mutate(allOperations.ToArray)
           Catch e As AdWordsApiException
+            ' [START processApiErrors] MOE:strip_line
             Dim innerException As ApiException = TryCast(e.ApiException, ApiException)
             If (innerException Is Nothing) Then
               Throw New Exception("Failed to retrieve ApiError. See inner exception for more " &
@@ -108,6 +109,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
                 Throw
               End If
 
+              ' [START handleApiError] MOE:strip_line
               ' Handle policy violation errors.
               If TypeOf apiError Is PolicyViolationError Then
                 Dim policyError As PolicyViolationError = CType(apiError, PolicyViolationError)
@@ -134,7 +136,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
                 ' from the list of operations.
                 operationsToBeRemoved.Add(allOperations.Item(index))
               End If
+              ' [END handleApiError] MOE:strip_line
             Next
+            ' [END processApiErrors] MOE:strip_line
 
             ' Remove all operations that aren't exemptable.
             For Each operation As AdGroupAdOperation In operationsToBeRemoved

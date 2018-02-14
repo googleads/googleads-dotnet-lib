@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.Common.Config;
 using Google.Api.Ads.Common.Lib;
 
 using System;
@@ -31,73 +32,6 @@ namespace Google.Api.Ads.AdWords.Lib {
     private const string SHORT_NAME = "AwApi-DotNet";
 
     /// <summary>
-    /// Key name for clientCustomerId.
-    /// </summary>
-    private const string CLIENT_CUSTOMER_ID = "ClientCustomerId";
-
-    /// <summary>
-    /// Key name for merchantCenterId.
-    /// </summary>
-    private const string MERCHANT_CENTER_ID = "MerchantCenter.AccountId";
-
-    /// <summary>
-    /// Key name for gmbLoginEmail.
-    /// </summary>
-    /// <remarks>This field is used only for testing purposes.</remarks>
-    private const string GMB_LOGIN_EMAIL = "GoogleMyBusiness.LoginEmail";
-
-    /// <summary>
-    /// Key name for gmbOAuth2RefreshToken.
-    /// </summary>
-    /// <remarks>This field is used only for testing purposes.</remarks>
-    private const string GMB_OAUTH2_REFRESH_TOKEN = "GoogleMyBusiness.OAuth2RefreshToken";
-
-    /// <summary>
-    /// Key name for developerToken.
-    /// </summary>
-    private const string DEVELOPER_TOKEN = "DeveloperToken";
-
-    /// <summary>
-    /// Key name for userAgent.
-    /// </summary>
-    private const string USER_AGENT = "UserAgent";
-
-    /// <summary>
-    /// Key name for AdWords API URL.
-    /// </summary>
-    private const string ADWORDSAPI_SERVER = "AdWordsApi.Server";
-
-    /// <summary>
-    /// Key name for authorizationMethod.
-    /// </summary>
-    private const string AUTHORIZATION_METHOD = "AuthorizationMethod";
-
-    /// <summary>
-    /// Key name for skipReportingHeader.
-    /// </summary>
-    private const string SKIP_REPORT_HEADER = "SkipReportHeader";
-
-    /// <summary>
-    /// Key name for skipReportingSummary.
-    /// </summary>
-    private const string SKIP_REPORT_SUMMARY = "SkipReportSummary";
-
-    /// <summary>
-    /// Key name for skipColumnHeader.
-    /// </summary>
-    private const string SKIP_COLUMN_HEADER = "SkipColumnHeader";
-
-    /// <summary>
-    /// Key name for includeZeroImpressions.
-    /// </summary>
-    private const string INCLUDE_ZERO_IMPRESSIONS = "IncludeZeroImpressions";
-
-    /// <summary>
-    /// Key name for useRawEnumValues.
-    /// </summary>
-    private const string USE_RAW_ENUM_VALUES = "UseRawEnumValues";
-
-    /// <summary>
     /// Default value for AdWords API URL.
     /// </summary>
     private const string DEFAULT_ADWORDSAPI_SERVER = "https://adwords.google.com";
@@ -108,87 +42,70 @@ namespace Google.Api.Ads.AdWords.Lib {
     private const string DEFAULT_OAUTH_SCOPE = "https://www.googleapis.com/auth/adwords";
 
     /// <summary>
-    /// Default value for skipping reports header.
-    /// </summary>
-    private const bool DEFAULT_SKIP_REPORT_HEADER = false;
-
-    /// <summary>
-    /// Default value for skipping reports summary.
-    /// </summary>
-    private const bool DEFAULT_SKIP_REPORT_SUMMARY = false;
-
-    /// <summary>
-    /// Default value for skipping column header.
-    /// </summary>
-    private const bool DEFAULT_SKIP_COLUMN_HEADER = false;
-
-    /// <summary>
-    /// Default value for including zero impression rows.
-    /// </summary>
-    private readonly bool? DEFAULT_INCLUDE_ZERO_IMPRESSIONS = null;
-
-    /// <summary>
-    /// Default value for returning raw values for enums.
-    /// </summary>
-    private readonly bool? DEFAULT_USE_RAW_ENUM_VALUES = null;
-
-
-    /// <summary>
     /// Default value for user agent key.
     /// </summary>
-    private readonly string DEFAULT_USER_AGENT = "unknown";
+    private const string DEFAULT_USER_AGENT = "unknown";
 
     /// <summary>
     /// ClientCustomerId to be used in SOAP headers.
     /// </summary>
-    private string clientCustomerId;
+    private ConfigSetting<string> clientCustomerId = new ConfigSetting<string>(
+        "ClientCustomerId", "");
 
     /// <summary>
     /// DeveloperToken to be used in the SOAP header.
     /// </summary>
-    private string developerToken;
+    private ConfigSetting<string> developerToken = new ConfigSetting<string>("DeveloperToken", "");
 
     /// <summary>
     /// Login email to be used with Google My Business account.
     /// </summary>
     /// <remarks>This field is used only for testing purposes.</remarks>
-    private string gmbLoginEmail;
+    private ConfigSetting<string> gmbLoginEmail = new ConfigSetting<string>(
+        "GoogleMyBusiness.LoginEmail", "");
 
     /// <summary>
     /// OAuth2 refresh token to be used for Google My Business account.
     /// </summary>
     /// <remarks>This field is used only for testing purposes.</remarks>
-    private string gmbOAuth2RefreshToken;
+    private ConfigSetting<string> gmbOAuth2RefreshToken = new ConfigSetting<string>(
+        "GoogleMyBusiness.OAuth2RefreshToken", "");
 
     /// <summary>
     /// Merchant Center ID to be used for Shopping campaigns.
     /// </summary>
-    private long merchantCenterId;
+    private ConfigSetting<long> merchantCenterId = new ConfigSetting<long>(
+        "MerchantCenter.AccountId", 0);
 
     /// <summary>
     /// Useragent to be used in the SOAP header.
     /// </summary>
-    private string userAgent;
+    private ConfigSetting<string> userAgent = new ConfigSetting<string>(
+        "UserAgent", DEFAULT_USER_AGENT);
 
     /// <summary>
     /// Url for AdWords API.
     /// </summary>
-    private string adWordsApiServer;
+    private ConfigSetting<string> adWordsApiServer = new ConfigSetting<string>(
+        "AdWordsApi.Server", DEFAULT_ADWORDSAPI_SERVER);
 
     /// <summary>
     /// Flag to decide whether or not to skip report header.
     /// </summary>
-    private bool skipReportHeader;
+    private ConfigSetting<bool> skipReportHeader = new ConfigSetting<bool>(
+        "SkipReportHeader", false);
 
     /// <summary>
     /// Flag to decide whether or not to skip report summary.
     /// </summary>
-    private bool skipReportSummary;
+    private ConfigSetting<bool> skipReportSummary = new ConfigSetting<bool>(
+        "SkipReportSummary", false);
 
     /// <summary>
     /// Flag to decide whether or not to skip column header.
     /// </summary>
-    private bool skipColumnHeader;
+    private ConfigSetting<bool> skipColumnHeader = new ConfigSetting<bool>(
+        "SkipColumnHeader", false);
 
     /// <summary>
     /// Flag to decide whether or not to include zero impression rows.
@@ -201,7 +118,8 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// not sent to the server, and the server behaves as explained on
     /// https://developers.google.com/adwords/api/docs/guides/zero-impression-reports#default_behavior.
     /// </remarks>
-    private bool? includeZeroImpressions;
+    private ConfigSetting<bool?> includeZeroImpressions = new ConfigSetting<bool?>(
+        "IncludeZeroImpressions", null);
 
     /// <summary>
     /// Flag to decide whether enum values should be returned as actual enum values
@@ -215,42 +133,31 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// not sent to the server, and the server behaves as explained on
     /// https://developers.google.com/adwords/api/docs/guides/reporting#request-headers.
     /// </remarks>
-    private bool? useRawEnumValues;
+    private ConfigSetting<bool?> useRawEnumValues = new ConfigSetting<bool?>(
+        "UseRawEnumValues", null);
 
     /// <summary>
     /// Gets or sets the client customerId to be used in SOAP headers.
     /// </summary>
     public string ClientCustomerId {
-      get {
-        return clientCustomerId;
-      }
-      set {
-        SetPropertyField(CLIENT_CUSTOMER_ID, ref clientCustomerId, value);
-      }
+      get => clientCustomerId.Value;
+      set => SetPropertyAndNotify(clientCustomerId, value);
     }
 
     /// <summary>
     /// Gets or sets the developer token to be used in SOAP headers.
     /// </summary>
     public string DeveloperToken {
-      get {
-        return developerToken;
-      }
-      set {
-        SetPropertyField(DEVELOPER_TOKEN, ref developerToken, value);
-      }
+      get => developerToken.Value;
+      set => SetPropertyAndNotify(developerToken, value);
     }
 
     /// <summary>
     /// Gets or sets the Merchant Center ID to be used with Shopping campaigns.
     /// </summary>
     public long MerchantCenterId {
-      get {
-        return merchantCenterId;
-      }
-      set {
-        SetPropertyField(MERCHANT_CENTER_ID, ref merchantCenterId, value);
-      }
+      get => merchantCenterId.Value;
+      set => SetPropertyAndNotify(merchantCenterId, value);
     }
 
     /// <summary>
@@ -258,12 +165,8 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// </summary>
     /// <remarks>This property is used only for testing purposes.</remarks>
     public string GMBLoginEmail {
-      get {
-        return gmbLoginEmail;
-      }
-      set {
-        SetPropertyField(GMB_LOGIN_EMAIL, ref gmbLoginEmail, value);
-      }
+      get => gmbLoginEmail.Value;
+      set => SetPropertyAndNotify(gmbLoginEmail, value);
     }
 
     /// <summary>
@@ -271,48 +174,32 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// </summary>
     /// <remarks>This property is used only for testing purposes.</remarks>
     public string GMBOAuth2RefreshToken {
-      get {
-        return gmbOAuth2RefreshToken;
-      }
-      set {
-        SetPropertyField(GMB_OAUTH2_REFRESH_TOKEN, ref gmbOAuth2RefreshToken, value);
-      }
+      get => gmbOAuth2RefreshToken.Value;
+      set => SetPropertyAndNotify(gmbOAuth2RefreshToken, value);
     }
 
     /// <summary>
     /// Gets or sets whether reporting headers should be skipped.
     /// </summary>
     public bool SkipReportHeader {
-      get {
-        return skipReportHeader;
-      }
-      set {
-        SetPropertyField(SKIP_REPORT_HEADER, ref skipReportHeader, value);
-      }
+      get => skipReportHeader.Value;
+      set => SetPropertyAndNotify(skipReportHeader, value);
     }
 
     /// <summary>
     /// Gets or sets whether report summary should be skipped.
     /// </summary>
     public bool SkipReportSummary {
-      get {
-        return skipReportSummary;
-      }
-      set {
-        SetPropertyField(SKIP_REPORT_SUMMARY, ref skipReportSummary, value);
-      }
+      get => skipReportSummary.Value;
+      set => SetPropertyAndNotify(skipReportSummary, value);
     }
 
     /// <summary>
     /// Gets or sets whether report column header should be skipped.
     /// </summary>
     public bool SkipColumnHeader {
-      get {
-        return skipColumnHeader;
-      }
-      set {
-        SetPropertyField(SKIP_COLUMN_HEADER, ref skipColumnHeader, value);
-      }
+      get => skipColumnHeader.Value;
+      set => SetPropertyAndNotify(skipColumnHeader, value);
     }
 
     /// <summary>
@@ -327,12 +214,8 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// https://developers.google.com/adwords/api/docs/guides/zero-impression-reports#default_behavior.
     /// </remarks>
     public bool? IncludeZeroImpressions {
-      get {
-        return includeZeroImpressions;
-      }
-      set {
-        SetPropertyField(INCLUDE_ZERO_IMPRESSIONS, ref includeZeroImpressions, value);
-      }
+      get => includeZeroImpressions.Value;
+      set => SetPropertyAndNotify(includeZeroImpressions, value);
     }
 
     /// <summary>
@@ -348,26 +231,20 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// https://developers.google.com/adwords/api/docs/guides/reporting#request-headers.
     /// </remarks>
     public bool? UseRawEnumValues {
-      get {
-        return useRawEnumValues;
-      }
-      set {
-        SetPropertyField(USE_RAW_ENUM_VALUES, ref useRawEnumValues, value);
-      }
+      get => useRawEnumValues.Value;
+      set => SetPropertyAndNotify(useRawEnumValues, value);
     }
 
     /// <summary>
     /// Gets or sets the useragent to be used in SOAP headers.
     /// </summary>
     public string UserAgent {
-      get {
-        return userAgent;
-      }
+      get => userAgent.Value;
       set {
         if (value.Any(c => (int) c < 32 || (int) c > 127)) {
           throw new ArgumentException(AdWordsErrorMessages.UserAgentShouldbeAscii);
         }
-        SetPropertyField(USER_AGENT, ref userAgent, value);
+        SetPropertyAndNotify(userAgent, value);
       }
     }
 
@@ -375,20 +252,16 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Gets or sets the URL for AdWords API.
     /// </summary>
     public string AdWordsApiServer {
-      get {
-        return adWordsApiServer;
-      }
-      set {
-        SetPropertyField(ADWORDSAPI_SERVER, ref adWordsApiServer, value);
-      }
+      get => adWordsApiServer.Value;
+      set => SetPropertyAndNotify(adWordsApiServer, value);
     }
 
     /// <summary>
     /// Gets a useragent string that can be used with the library.
     /// </summary>
     public override string GetUserAgent() {
-      return String.Format("{0} ({1}{2})", this.UserAgent, this.Signature,
-          this.EnableGzipCompression ? ", gzip" : "");
+      return String.Format("{0} ({1}{2})", UserAgent, Signature,
+          EnableGzipCompression ? ", gzip" : "");
     }
 
     /// <summary>
@@ -402,19 +275,6 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Public constructor.
     /// </summary>
     public AdWordsAppConfig() : base() {
-      clientCustomerId = "";
-      developerToken = "";
-      merchantCenterId = -1;
-      gmbOAuth2RefreshToken = "";
-      gmbLoginEmail = "";
-      userAgent = DEFAULT_USER_AGENT;
-      adWordsApiServer = DEFAULT_ADWORDSAPI_SERVER;
-      skipReportHeader = DEFAULT_SKIP_REPORT_HEADER;
-      skipReportSummary = DEFAULT_SKIP_REPORT_SUMMARY;
-      skipColumnHeader = DEFAULT_SKIP_COLUMN_HEADER;
-      includeZeroImpressions = DEFAULT_INCLUDE_ZERO_IMPRESSIONS;
-      useRawEnumValues = DEFAULT_USE_RAW_ENUM_VALUES;
-
       ReadSettings(LoadConfigSection("AdWordsApi"));
     }
 
@@ -425,50 +285,31 @@ namespace Google.Api.Ads.AdWords.Lib {
     protected override void ReadSettings(Dictionary<string, string> settings) {
       base.ReadSettings(settings);
 
-      clientCustomerId = ReadSetting(settings, CLIENT_CUSTOMER_ID, clientCustomerId);
-      developerToken = ReadSetting(settings, DEVELOPER_TOKEN, developerToken);
+      ReadSetting(settings, clientCustomerId);
+      ReadSetting(settings, developerToken);
 
       // Configuration keys where AdWords API integrates with other products
       // that have their own settings.
-      long.TryParse(ReadSetting(settings, MERCHANT_CENTER_ID, merchantCenterId.ToString()),
-          out merchantCenterId);
-      gmbLoginEmail = ReadSetting(settings, GMB_LOGIN_EMAIL, gmbLoginEmail);
-      gmbOAuth2RefreshToken = ReadSetting(settings, GMB_OAUTH2_REFRESH_TOKEN,
-          gmbOAuth2RefreshToken);
+      ReadSetting(settings, merchantCenterId);
+      ReadSetting(settings, gmbLoginEmail);
+      ReadSetting(settings, gmbOAuth2RefreshToken);
 
-      userAgent = ReadSetting(settings, USER_AGENT, userAgent);
-      adWordsApiServer = ReadSetting(settings, ADWORDSAPI_SERVER, adWordsApiServer);
+      ReadSetting(settings, userAgent);
+      ReadSetting(settings, adWordsApiServer);
 
       // If there is an OAuth2 scope mentioned in App.config, this will be
-      // loaded by the above call. If there isn't one, we will initialize it
+      // loaded by the base.ReadSettings() call above. If there isn't one, we will initialize it
       // with a library-specific default value.
       if (string.IsNullOrEmpty(this.OAuth2Scope)) {
         this.OAuth2Scope = GetDefaultOAuth2Scope();
       }
 
       // Configure report downloading settings.
-      bool.TryParse(ReadSetting(settings, SKIP_REPORT_HEADER, skipReportHeader.ToString()),
-          out skipReportHeader);
-      bool.TryParse(ReadSetting(settings, SKIP_REPORT_SUMMARY, skipReportSummary.ToString()),
-          out skipReportSummary);
-      bool.TryParse(ReadSetting(settings, SKIP_COLUMN_HEADER, skipColumnHeader.ToString()),
-          out skipColumnHeader);
-
-      bool tempFlag = false;
-
-      if (!bool.TryParse(ReadSetting(settings, INCLUDE_ZERO_IMPRESSIONS, ""),
-          out tempFlag)) {
-        includeZeroImpressions = DEFAULT_INCLUDE_ZERO_IMPRESSIONS;
-      } else {
-        includeZeroImpressions = tempFlag;
-      }
-
-      if (!bool.TryParse(ReadSetting(settings, USE_RAW_ENUM_VALUES, ""),
-          out tempFlag)) {
-        useRawEnumValues = DEFAULT_USE_RAW_ENUM_VALUES;
-      } else {
-        useRawEnumValues = tempFlag;
-      }
+      ReadSetting(settings, skipReportHeader);
+      ReadSetting(settings, skipReportSummary);
+      ReadSetting(settings, skipColumnHeader);
+      ReadSetting(settings, includeZeroImpressions);
+      ReadSetting(settings, useRawEnumValues);
     }
   }
 }

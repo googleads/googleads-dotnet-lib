@@ -1,4 +1,4 @@
-﻿// Copyright 2016, Google Inc. All Rights Reserved.
+﻿// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -177,6 +177,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.BatchJob.v201710 {
     /// Tests for streaming upload with chunking.
     /// </summary>
     [Test]
+    [Category("MissingMonoSupport")]
     public void TestStreamedUploadWithChunking() {
       uploadChunkRecords.Clear();
 
@@ -280,6 +281,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.BatchJob.v201710 {
     /// Tests for <see cref="Init"/> method.
     /// </summary>
     [Test]
+    [Category("MissingMonoSupport")]
     public void TestInit() {
       // Any chunk size that is not a multiple of 256K should throw an
       // exception if chunking is turned on.
@@ -320,6 +322,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.BatchJob.v201710 {
     /// Tests for uploads with chunking.
     /// </summary>
     [Test]
+    [Category("MissingMonoSupport")]
     public void TestUploadWithChunking() {
       uploadChunkRecords.Clear();
 
@@ -351,6 +354,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.BatchJob.v201710 {
     /// Tests for uploads with chunking and resuming an interrupted upload.
     /// </summary>
     [Test]
+    [Category("MissingMonoSupport")]
     public void TestUploadWithResumeAndChunking() {
       uploadChunkRecords.Clear();
 
@@ -388,7 +392,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.BatchJob.v201710 {
       Assert.AreEqual("ABC", GetTextToLog(Encoding.UTF8.GetBytes(textToLog), 0, 3));
 
       // If you pass indices out of range of the array, exception is thrown.
-      Assert.Throws<ArgumentOutOfRangeException>(delegate () {
+      Assert.Throws<ArgumentOutOfRangeException>(delegate() {
         GetTextToLog(Encoding.UTF8.GetBytes(textToLog), 10, 20);
       });
       string utf8TextToLog = "こんにちは"; // Hello

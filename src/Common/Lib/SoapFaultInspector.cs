@@ -18,9 +18,8 @@ using System;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Dispatcher;
+using System.Text;
 using System.Xml;
-
-using Google.Api.Ads.Common.Util;
 
 namespace Google.Api.Ads.Common.Lib {
 
@@ -35,6 +34,11 @@ namespace Google.Api.Ads.Common.Lib {
 
     private const string FAULT_ELEMENT_XPATH = "descendant::*[local-name()='" +
         FAULT_ELEMENT_NAME + "']";
+
+    private static readonly XmlWriterSettings xmlWriterSettings = new XmlWriterSettings() {
+      Encoding = Encoding.UTF8,
+      Indent = true
+    };
 
     /// <summary>
     /// Gets or sets the type to deserialize faults into.
@@ -57,33 +61,32 @@ namespace Google.Api.Ads.Common.Lib {
     /// <param name="correlationState">The correlation state returned by BeforeSendRequest</param>
     public void AfterReceiveReply(ref Message reply, object correlationState) {
       if (reply.IsFault) {
+        StringBuilder xmlStringBuilder = new StringBuilder();
+        using (XmlWriter xmlWriter = XmlWriter.Create(xmlStringBuilder, xmlWriterSettings))
         using (MessageBuffer buffer = reply.CreateBufferedCopy(Int32.MaxValue)) {
           // Message can only be read once, so replace it with a copy.
           reply = buffer.CreateMessage();
-          Message copy = buffer.CreateMessage();
+          buffer.CreateMessage().WriteBody(xmlWriter);
+        }
 
-          // Get the body contents.
-          XmlReader reader = copy.GetReaderAtBodyContents();
+        // Try locating the ApiExceptionFault node and deserializing it. Make sure to ignore
+        // the namespace and look only for the local name.
+        XmlDocument xDoc = new XmlDocument();
+        xDoc.LoadXml(xmlStringBuilder.ToString());
+        XmlElement faultNode = (XmlElement) xDoc.SelectSingleNode(FAULT_ELEMENT_XPATH);
 
-          // Try locating the ApiExceptionFault node and deserializing it. Make sure to ignore
-          // the namespace and look only for the local name.
-          XmlDocument xDoc = new XmlDocument();
-          xDoc.LoadXml(reader.ReadOuterXml());
-          XmlElement faultNode = (XmlElement) xDoc.SelectSingleNode(FAULT_ELEMENT_XPATH);
-
-          if (faultNode != null) {
-            // Deserialize the correct exception type and raise it.
-            string faultNodeNamespaceUri = faultNode.NamespaceURI;
-            string faultNodeContents = faultNode.OuterXml;
-            object apiError = SerializationUtilities.DeserializeFromXmlTextCustomRootNs(
-                faultNodeContents,
-                ErrorType,
-                faultNodeNamespaceUri,
-                FAULT_ELEMENT_NAME);
-            throw (TException) Activator.CreateInstance(
-                typeof(TException),
-                new object[] { apiError });
-          }
+        if (faultNode != null) {
+           // Deserialize the correct exception type and raise it.
+           string faultNodeNamespaceUri = faultNode.NamespaceURI;
+           string faultNodeContents = faultNode.OuterXml;
+           object apiError = SerializationUtilities.DeserializeFromXmlTextCustomRootNs(
+               faultNodeContents,
+               ErrorType,
+               faultNodeNamespaceUri,
+               FAULT_ELEMENT_NAME);
+           throw (TException) Activator.CreateInstance(
+               typeof(TException),
+               new object[] { apiError });
         }
       }
     }

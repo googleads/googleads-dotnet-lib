@@ -1,4 +1,4 @@
-﻿// Copyright 2016, Google Inc. All Rights Reserved.
+﻿// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -231,7 +231,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddCampaignGroupsAndPerformanceTargetsCSharpExample() {
-      RunExample(delegate () {
+      RunExample(delegate() {
         new CSharpExamples.AddCampaignGroupsAndPerformanceTargets().Run(
             user, campaignId, anotherCampaignId);
       });
@@ -242,7 +242,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddCampaignGroupsAndPerformanceTargetsVBExample() {
-      RunExample(delegate () {
+      RunExample(delegate() {
         new VBExamples.AddCampaignGroupsAndPerformanceTargets().Run(
             user, campaignId, anotherCampaignId);
       });
@@ -275,7 +275,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddCompleteCampaignUsingStreamingBatchJobCSharpExample() {
-      RunExample(delegate () {
+      RunExample(delegate() {
         new CSharpExamples.AddCompleteCampaignsUsingStreamingBatchJob().Run(user);
       });
     }
@@ -285,7 +285,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddCompleteCampaignsUsingStreamingBatchJobVBExample() {
-      RunExample(delegate () {
+      RunExample(delegate() {
         new VBExamples.AddCompleteCampaignsUsingStreamingBatchJob().Run(user);
       });
     }

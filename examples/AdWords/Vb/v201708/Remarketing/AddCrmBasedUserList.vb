@@ -12,14 +12,13 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
+Imports System.Security.Cryptography
+Imports System.Text
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201708
 
-Imports Org.BouncyCastle.Crypto.Digests
-
-Imports System.Text
-
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
+
   ''' <summary>
   ''' This code example adds a user list (a.k.a. audience) and uploads hashed
   ''' email addresses to populate the list.
@@ -45,7 +44,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     Private Const COUNTRY_CODE As String = "US"
     Private Const ZIP_CODE As String = "10001"
 
-    Private Shared ReadOnly digest As GeneralDigest = New Sha256Digest()
+    Private Shared digest As SHA256 = SHA256.Create()
 
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -135,7 +134,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
           mutateMembersOperation.operand.membersList = memberList.ToArray()
           mutateMembersOperation.operator = [Operator].ADD
 
-
           ' Add members to the user list based on email addresses.
           Dim mutateMembersResult As MutateMembersReturnValue =
               userListService.mutateMembers(
@@ -162,13 +160,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     ''' <param name="digest">Provides the algorithm for SHA-256.</param>
     ''' <param name="email">The email address to hash.</param>
     ''' <returns>Hash email address using SHA-256 hashing algorithm.</returns>
-    Private Shared Function ToSha256String(ByVal digest As GeneralDigest,
+    Private Shared Function ToSha256String(ByVal digest As SHA256,
                                            ByVal email As String) As String
-      Dim data As Byte() = Encoding.UTF8.GetBytes(email)
-      Dim digestBytes(digest.GetDigestSize() - 1) As Byte
-      digest.BlockUpdate(data, 0, data.Length)
-      digest.DoFinal(digestBytes, 0)
-
+      Dim digestBytes As Byte() = digest.ComputeHash(Encoding.UTF8.GetBytes(email))
       ' Convert the byte array into an unhyphenated hexadecimal string.
       Return BitConverter.ToString(digestBytes).Replace("-", String.Empty)
     End Function
@@ -182,5 +176,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
     Private Shared Function ToNormalizedEmail(ByVal email As String) As String
       Return email.Trim().ToLower()
     End Function
+
   End Class
+
 End Namespace

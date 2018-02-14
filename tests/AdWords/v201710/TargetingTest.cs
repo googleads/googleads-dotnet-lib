@@ -1,4 +1,4 @@
-﻿// Copyright 2016, Google Inc. All Rights Reserved.
+﻿// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -128,7 +128,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddCustomerNegativeCriteriaVBExample() {
-      RunExample(delegate () {
+      RunExample(delegate() {
         new VBExamples.AddCustomerNegativeCriteria().Run(user);
       });
     }
@@ -138,7 +138,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddCustomerNegativeCriteriaCSharpExample() {
-      RunExample(delegate () {
+      RunExample(delegate() {
         new CSharpExamples.AddCustomerNegativeCriteria().Run(user);
       });
     }

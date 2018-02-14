@@ -15,9 +15,8 @@
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201710;
 
-using Org.BouncyCastle.Crypto.Digests;
-
 using System;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
@@ -26,8 +25,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
   /// This code example shows how to upload offline data for store sales transactions.
   /// </summary>
   public class UploadOfflineData : ExampleBase {
-
-    private static readonly GeneralDigest digest = new Sha256Digest();
+    private SHA256 digest = SHA256.Create();
 
     /// <summary>
     /// Main method, to run this code example as a standalone application.
@@ -43,10 +41,28 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
       // Insert email addresses below for creating user identifiers.
       string[] emailAddresses = { "EMAIL_ADDRESS_1", "EMAIL_ADDRESS_2" };
 
+      // Insert advertiser upload time. // For times, use the format yyyyMMdd HHmmss tz. For
+      // more details on formats, see:
+      // https://developers.google.com/adwords/api/docs/appendix/codes-formats#date-and-time-formats
+      // For time zones, see:
+      // https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids
+      string advertiserUploadTime = "INSERT_ADVERTISER_UPLOAD_TIME";
+
+      // Insert bridge map version ID.
+      string bridgeMapVersionId = "INSERT_BRIDGEMAP_VERSION_ID";
+
+      // Insert partner ID.
+      int partnerId = int.Parse("INSERT_PARTNER_ID");
+
+      // Specify the upload type (STORE_SALES_UPLOAD_FIRST_PARTY or STORE_SALES_UPLOAD_THIRD_PARTY)
+      OfflineDataUploadType uploadType = (OfflineDataUploadType) Enum.Parse(
+          typeof(OfflineDataUploadType), "INSERT_UPLOAD_TYPE");
+
       UploadOfflineData codeExample = new UploadOfflineData();
       Console.WriteLine(codeExample.Description);
       try {
-        codeExample.Run(new AdWordsUser(), conversionName, externalUploadId, emailAddresses);
+        codeExample.Run(new AdWordsUser(), conversionName, externalUploadId, emailAddresses,
+            advertiserUploadTime, bridgeMapVersionId, uploadType, partnerId);
       } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e));
@@ -71,12 +87,20 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// <param name="externalUploadId">The external upload ID can be any number that you use to
     /// keep track of your uploads.</param>
     /// <param name="emailAddresses">The email addresses for creating user identifiers.</param>
+    /// <param name="advertiserUploadTime">The advertiser upload time. For times, use the format
+    /// yyyyMMdd HHmmss tz. For more details on formats, see:
+    /// https://developers.google.com/adwords/api/docs/appendix/codes-formats#date-and-time-formats
+    /// For time zones, see:
+    /// https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids</param>
+    /// <param name="bridgeMapVersionId">The version ID of the bridge map.</param>
+    /// <param name="uploadType">The type of data upload.</param>
+    /// <param name="partnerId">The partner ID</param>
     public void Run(AdWordsUser user, string conversionName, long externalUploadId,
-        string[] emailAddresses) {
+        string[] emailAddresses, string advertiserUploadTime, string bridgeMapVersionId,
+        OfflineDataUploadType uploadType, int partnerId) {
       using (OfflineDataUploadService offlineDataUploadService =
           (OfflineDataUploadService) user.GetService(
               AdWordsService.v201710.OfflineDataUploadService)) {
-
         // Create the first offline data row for upload.
         // This transaction occurred 7 days ago with amount of 200 USD.
         DateTime transactionTime1 = new DateTime();
@@ -110,8 +134,35 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
         offlineDataUpload.externalUploadId = externalUploadId;
         offlineDataUpload.offlineDataList = new OfflineData[] { offlineData1, offlineData2 };
 
-        // Optional: You can set the type of this upload.
-        // offlineDataUpload.uploadType = OfflineDataUploadType.STORE_SALES_UPLOAD_FIRST_PARTY;
+        // Set the type and metadata of this upload.
+        offlineDataUpload.uploadType = uploadType;
+        StoreSalesUploadCommonMetadata storeSalesMetaData = null;
+
+        switch (uploadType) {
+          case OfflineDataUploadType.STORE_SALES_UPLOAD_FIRST_PARTY:
+            storeSalesMetaData = new FirstPartyUploadMetadata() {
+              loyaltyRate = 1,
+              transactionUploadRate = 1
+            };
+            break;
+
+          case OfflineDataUploadType.STORE_SALES_UPLOAD_THIRD_PARTY:
+            storeSalesMetaData = new ThirdPartyUploadMetadata() {
+              loyaltyRate = 1.0,
+              transactionUploadRate = 1.0,
+              advertiserUploadTime = advertiserUploadTime,
+              validTransactionRate = 1.0,
+              partnerMatchRate = 1.0,
+              partnerUploadRate = 1.0,
+              bridgeMapVersionId = bridgeMapVersionId,
+              partnerId = partnerId
+            };
+            break;
+        }
+
+        UploadMetadata uploadMetadata = new UploadMetadata();
+        uploadMetadata.Item = storeSalesMetaData;
+        offlineDataUpload.uploadMetadata = uploadMetadata;
 
         // Create an offline data upload operation.
         OfflineDataUploadOperation offlineDataUploadOperation = new OfflineDataUploadOperation();
@@ -155,7 +206,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// <param name="conversionName">Name of the conversion.</param>
     /// <param name="userIdentifierList">The user identifier list.</param>
     /// <returns>The offline data row.</returns>
-    OfflineData CreateOfflineDataRow(DateTime transactionTime, long transactionMicroAmount,
+    private OfflineData CreateOfflineDataRow(DateTime transactionTime, long transactionMicroAmount,
         string transactionCurrency, string conversionName, UserIdentifier[] userIdentifierList) {
       StoreSalesTransaction storeSalesTransaction = new StoreSalesTransaction();
 
@@ -168,7 +219,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
 
       Money money = new Money();
       money.microAmount = transactionMicroAmount;
-      MoneyWithCurrency moneyWithCurrency = new MoneyWithCurrency();
+      RemarketingMoneyWithCurrency moneyWithCurrency = new RemarketingMoneyWithCurrency();
       moneyWithCurrency.money = money;
       moneyWithCurrency.currencyCode = transactionCurrency;
       storeSalesTransaction.transactionAmount = moneyWithCurrency;
@@ -185,12 +236,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// <param name="digest">Provides the algorithm for SHA-256.</param>
     /// <param name="value">The string value (e.g. an email address) to hash.</param>
     /// <returns>The hashed value.</returns>
-    private static String ToSha256String(GeneralDigest digest, String value) {
-      byte[] data = Encoding.UTF8.GetBytes(value);
-      byte[] digestBytes = new byte[digest.GetDigestSize()];
-      digest.BlockUpdate(data, 0, data.Length);
-      digest.DoFinal(digestBytes, 0);
-
+    private static String ToSha256String(SHA256 digest, String value) {
+      byte[] digestBytes = digest.ComputeHash(Encoding.UTF8.GetBytes(value));
       // Convert the byte array into an unhyphenated hexadecimal string.
       return BitConverter.ToString(digestBytes).Replace("-", string.Empty);
     }
@@ -201,7 +248,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// <param name="type">The user identifier type.</param>
     /// <param name="value">The user identifier value.</param>
     /// <returns></returns>
-    UserIdentifier CreateUserIdentifier(OfflineDataUploadUserIdentifierType type, string value) {
+    private UserIdentifier CreateUserIdentifier(OfflineDataUploadUserIdentifierType type, string value) {
       // If the user identifier type is a hashed type, also call hash function
       // on the value.
       if (type.ToString().StartsWith("HASHED_")) {

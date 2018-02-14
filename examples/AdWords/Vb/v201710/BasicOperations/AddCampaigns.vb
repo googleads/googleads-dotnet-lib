@@ -145,6 +145,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
     ''' <param name="user">The AdWords user.</param>
     ''' <returns>The budget instance.</returns>
     Private Shared Function CreateBudget(user As AdWordsUser) As Budget
+      ' [START create_budget] MOE:strip_line
       Using budgetService As BudgetService = CType(user.GetService(
           AdWordsService.v201710.BudgetService), BudgetService)
 
@@ -167,6 +168,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
           Throw New System.ApplicationException("Failed to add shared budget.", e)
         End Try
       End Using
+      ' [END create_budget] MOE:strip_line
     End Function
 
   End Class

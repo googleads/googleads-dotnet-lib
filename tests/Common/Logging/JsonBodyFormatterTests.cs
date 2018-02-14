@@ -13,12 +13,10 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Logging;
-using Google.Api.Ads.Common.Util;
-
+using Newtonsoft.Json;
 using NUnit.Framework;
 
 using System.Collections.Generic;
-using System.Web.Script.Serialization;
 
 namespace Google.Api.Ads.Common.Tests.Util {
 
@@ -52,9 +50,8 @@ namespace Google.Api.Ads.Common.Tests.Util {
     [Test]
     public void TestMaskContents() {
       string maskedBody = new JsonBodyFormatter().MaskContents(BODY, KEYS);
-      JavaScriptSerializer serializer = new JavaScriptSerializer();
       Dictionary<string, string> jsonDict =
-          serializer.Deserialize<Dictionary<string, string>>(maskedBody);
+          JsonConvert.DeserializeObject<Dictionary<string, string>>(maskedBody);
 
       Assert.AreEqual(jsonDict[KEY1], TraceFormatter.MASK_PATTERN);
       Assert.AreEqual(jsonDict[KEY2], TraceFormatter.MASK_PATTERN);

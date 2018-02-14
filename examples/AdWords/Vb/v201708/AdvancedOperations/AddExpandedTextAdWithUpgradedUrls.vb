@@ -65,12 +65,15 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
         expandedTextAd.headlinePart2 = "Visit the Red Planet in style."
         expandedTextAd.description = "Low-gravity fun for everyone!"
 
+        ' [START setTrackingUrlTemplate] MOE:strip_line
         ' Specify a tracking URL for 3rd party tracking provider. You may
         ' specify one at customer, campaign, ad group, ad, criterion or
         ' feed item levels.
         expandedTextAd.trackingUrlTemplate =
             "http://tracker.example.com/?cid={_season}&promocode={_promocode}&u={lpurl}"
+        ' [END setTrackingUrlTemplate] MOE:strip_line
 
+        ' [START setCustomParameters] MOE:strip_line
         ' Since your tracking URL has two custom parameters, provide their
         ' values too. This can be provided at campaign, ad group, ad, criterion
         ' or feed item levels.
@@ -85,6 +88,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201708
         expandedTextAd.urlCustomParameters = New CustomParameters
         expandedTextAd.urlCustomParameters.parameters =
             New CustomParameter() {seasonParameter, promoCodeParameter}
+        ' [END setCustomParameters] MOE:strip_line
 
         ' Specify a list of final URLs. This field cannot be set if URL field is
         ' set. This may be specified at ad, criterion and feed item levels.

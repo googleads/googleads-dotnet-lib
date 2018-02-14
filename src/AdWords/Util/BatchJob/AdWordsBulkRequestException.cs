@@ -13,11 +13,11 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.Lib;
+using Newtonsoft.Json;
 
 using System;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
-using System.Web.Script.Serialization;
 
 namespace Google.Api.Ads.AdWords.Util.BatchJob {
 
@@ -26,8 +26,6 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
   /// a batch job.
   /// </summary>
   public class AdWordsBulkRequestException : AdWordsException {
-    private JavaScriptSerializer serializer = new JavaScriptSerializer();
-
     private CloudStorageError errorField;
 
     /// <summary>
@@ -82,7 +80,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
     /// <param name="jsonErrorText">The JSON error response from the cloud
     /// storage server.</param>
     private void ParseJsonError(string jsonErrorText) {
-      CloudStorageErrorResponse temp = serializer.Deserialize<CloudStorageErrorResponse>(
+      CloudStorageErrorResponse temp = JsonConvert.DeserializeObject<CloudStorageErrorResponse>(
           jsonErrorText);
       this.errorField = temp.error;
     }
@@ -116,7 +114,7 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
       }
       base.GetObjectData(info, context);
       if (error != null) {
-        info.AddValue("error", serializer.Serialize(error));
+        info.AddValue("error", JsonConvert.SerializeObject(error));
       }
     }
   }

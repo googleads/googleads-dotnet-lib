@@ -155,8 +155,11 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
 
       AdWordsSoapClient<IMockAdsService> service = new AdWordsSoapClient<IMockAdsService>(
           new BasicHttpBinding(), new EndpointAddress("https://www.google.com"));
+#if NET452
+      service.Endpoint.Behaviors.Add(behavior);
+#else
       service.Endpoint.EndpointBehaviors.Add(behavior);
-
+#endif
       Assert.IsNull(service.RequestHeader);
       RequestHeader expected = new RequestHeader() {
         userAgent = "Google Test",

@@ -157,7 +157,6 @@ namespace Google.Api.Ads.Dfp.Tests.v201711 {
     }
 
     [Test]
-    [ExpectedException(typeof(ArgumentException))]
     public void TestGetObjectMixedSetValue() {
       TextValue textValue = new TextValue();
       DateValue dateValue = new DateValue();
@@ -170,11 +169,10 @@ namespace Google.Api.Ads.Dfp.Tests.v201711 {
 
       SetValue setValue = new SetValue();
       setValue.values = new Value[] { textValue, dateValue };
-      PqlUtilities.GetValue(setValue);
+      Assert.Throws<ArgumentException>(() => PqlUtilities.GetValue(setValue));
     }
 
     [Test]
-    [ExpectedException(typeof(ArgumentException))]
     public void TestGetObjectNestedSetValue() {
       SetValue setValue = new SetValue();
       SetValue innerSetValue = new SetValue();
@@ -182,7 +180,7 @@ namespace Google.Api.Ads.Dfp.Tests.v201711 {
       textValue.value = "value1";
       innerSetValue.values = new Value[] { textValue };
       setValue.values = new Value[] {innerSetValue};
-      PqlUtilities.GetValue(setValue);
+      Assert.Throws<ArgumentException>(() => PqlUtilities.GetValue(setValue));
     }
 
     [Test]

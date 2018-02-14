@@ -28,8 +28,13 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// </summary>
     internal DfpSoapHeaderInspector HeaderInspector {
       get {
+#if NET452
         AdsServiceInspectorBehavior behavior = (AdsServiceInspectorBehavior)
             this.Endpoint.Behaviors[typeof(AdsServiceInspectorBehavior)];
+#else
+        AdsServiceInspectorBehavior behavior = (AdsServiceInspectorBehavior)
+            this.Endpoint.EndpointBehaviors[typeof(AdsServiceInspectorBehavior)];
+#endif
         if (behavior != null) {
           return behavior.GetInspector<DfpSoapHeaderInspector>();
         }

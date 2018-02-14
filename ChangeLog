@@ -1,3 +1,26 @@
+23.0.0
+======
+AdWords:
+  - Added support for .NET Standard 2.0. Fixes issue #96.
+  - Added ReportQueryBuilder and SelectQueryBuilder, two utility classes to assist building AWQL queries.
+  - Removed support for v201702.
+  - Updated the UploadOfflineData code example to support multiple upload types.
+  - Regenerated stub code for all versions.
+  - Renamed MoneyWithCurrency in OfflineDataUploadService.wsdl to RemarketingMoneyWithCurrency.
+  Fixed https://github.com/googleads/googleads-dotnet-lib/issues/130.
+  - Rewrote remarketing code examples to use SHA256 hashing algorithm.
+  - Removed dependency on BouncyCastle library.
+DFP:
+  - Added support for .NET Standard 2.0. Fixes issue #96.
+  - Added support for v201802.
+  - Removed support for v201702.
+  - Removed examples for v201705.
+Common:
+  - Added support for .NET Standard 2.0. Fixes issue #96.
+  - Replaced BouncyCastle with Google.Apis.Auth. Fixes issue #125.
+  - Replaced System.Web.Serialization with JSON.net. Fixes issue #126.
+  - Replaced System.Configuration with Microsoft Extension Configuration. Fixes issue #127.
+
 22.4.0
 ======
 AdWords:

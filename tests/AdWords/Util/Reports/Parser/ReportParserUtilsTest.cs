@@ -64,9 +64,10 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
     /// Tests that an invalid POCO type with repeated column names is detected.
     /// </summary>
     [Test]
-    [ExpectedException(typeof(ArgumentException))]
     public void testValidatePocoType() {
-      ReportParserUtils.ValidatePocoType<InvalidTestRow>();
+      Assert.Throws<ArgumentException>(() =>
+        ReportParserUtils.ValidatePocoType<InvalidTestRow>()
+      );
     }
 
     /// <summary>

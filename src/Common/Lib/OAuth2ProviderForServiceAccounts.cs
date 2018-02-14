@@ -13,10 +13,10 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Logging;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Http;
+using Google.Apis.Util;
 using System;
-using System.Security.Cryptography;
-using System.Text;
-using System.Web;
 
 namespace Google.Api.Ads.Common.Lib {
 
@@ -34,24 +34,19 @@ namespace Google.Api.Ads.Common.Lib {
         AdsFeatureUsageRegistry.Features.OAuthServiceAccountFlow;
 
     /// <summary>
-    /// Audience for generating JWT string.
-    /// </summary>
-    private const string JWT_AUDIENCE = "https://accounts.google.com/o/oauth2/token";
-
-    /// <summary>
-    /// Grant type for generating JWT string.
-    /// </summary>
-    private const string JWT_GRANT_TYPE = "urn:ietf:params:oauth:grant-type:jwt-bearer";
-
-    /// <summary>
-    /// Header for generating JWT string.
-    /// </summary>
-    private const string JWT_HEADER = "{\"alg\":\"RS256\",\"typ\":\"JWT\"}";
-
-    /// <summary>
     /// Default expiry period for access token.
     /// </summary>
     private const int DEFAULT_EXPIRY_PERIOD = 3600;
+
+    /// <summary>
+    /// The HttpClientFactory used for requesting Access tokens.
+    /// </summary>
+    public IHttpClientFactory HttpClientFactory { get; set; } = null;
+
+    /// <summary>
+    /// The clock used for requesting Access tokens.
+    /// </summary>
+    public IClock Clock { get; set; } = SystemClock.Default;
 
     /// <summary>
     /// Gets or sets the JWT private key.
@@ -109,34 +104,22 @@ namespace Google.Api.Ads.Common.Lib {
       ValidateOAuth2Parameter("JwtPrivateKey", JwtPrivateKey);
       ValidateOAuth2Parameter("Scope", Scope);
 
-      OAuth2JwtClaimset jwtClaimset = new OAuth2JwtClaimsetBuilder()
-          .WithScope(Scope)
-          .WithServiceAccountEmail(ServiceAccountEmail)
-          .WithImpersonationEmail(PrnEmail)
-          .WithAudience(JWT_AUDIENCE)
-          .WithTimestamp(timestamp)
-          .WithExpiry(expiry)
-          .Build();
+      ServiceAccountCredential credential = new ServiceAccountCredential(
+          new ServiceAccountCredential.Initializer(ServiceAccountEmail) {
+            Scopes = new[] { Scope },
+            HttpClientFactory = this.HttpClientFactory,
+            Clock = this.Clock
+          }.FromPrivateKey(JwtPrivateKey)
+      );
 
-      string encodedHeader = Base64UrlEncode(Encoding.UTF8.GetBytes(JWT_HEADER));
-      string encodedClaimset = Base64UrlEncode(Encoding.UTF8.GetBytes(jwtClaimset.ToJson()));
-      string inputForSignature = encodedHeader + "." + encodedClaimset;
-
-      RSAParameters rsaParameters = ConvertPKCS8ToRsaParameters(JwtPrivateKey);
-      
-      string signature = Base64UrlEncode(GetRsaSha256Signature(rsaParameters,
-          Encoding.UTF8.GetBytes(inputForSignature)));
-      string jwt = inputForSignature + "." + signature;
-
-      string body = "grant_type=" + HttpUtility.UrlEncode(JWT_GRANT_TYPE) + "&assertion=" +
-          HttpUtility.UrlEncode(jwt);
-
-      try {
-          CallTokenEndpoint(body);
-      } catch (ApplicationException e) {
-          throw new AdsOAuthException("Failed to get access token for service account." + "\n" +
-              e.Message);
+      credential.GetAccessTokenForRequestAsync().Wait();
+      this.AccessToken = credential.Token.AccessToken;
+      ExpiresIn = (int)credential.Token.ExpiresInSeconds.GetValueOrDefault();
+      UpdatedOn = DateTime.UtcNow;
+      if (this.OnOAuthTokensObtained != null) {
+        this.OnOAuthTokensObtained(this);
       }
+
     }
 
     /// <summary>

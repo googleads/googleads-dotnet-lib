@@ -12,26 +12,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.Common.Config;
 using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Util;
 
+using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Reflection;
-using System.Web.Script.Serialization;
+using System.Runtime.CompilerServices;
 
 namespace Google.Api.Ads.Common.Lib {
 
   /// <summary>
   /// This class reads the configuration keys from App.config.
   /// </summary>
-  public class AppConfigBase : INotifyPropertyChanged, AppConfig {
+  public class AppConfigBase : AppConfig, INotifyPropertyChanged {
 
     /// <summary>
     /// The registry for saving feature usage information..
@@ -45,202 +47,106 @@ namespace Google.Api.Ads.Common.Lib {
     private const string SHORT_NAME = "Common-Dotnet";
 
     /// <summary>
-    /// Key name for proxyServer.
-    /// </summary>
-    private const string PROXY_SERVER = "ProxyServer";
-
-    /// <summary>
-    /// Key name for proxyUser.
-    /// </summary>
-    private const string PROXY_USER = "ProxyUser";
-
-    /// <summary>
-    /// Key name for proxyPassword.
-    /// </summary>
-    private const string PROXY_PASSWORD = "ProxyPassword";
-
-    /// <summary>
-    /// Key name for proxyDomain.
-    /// </summary>
-    private const string PROXY_DOMAIN = "ProxyDomain";
-
-    /// <summary>
-    /// Key name for maskCredentials.
-    /// </summary>
-    private const string MASK_CREDENTIALS = "MaskCredentials";
-
-    /// <summary>
-    /// Key name for timeout.
-    /// </summary>
-    private const string TIMEOUT = "Timeout";
-
-    /// <summary>
-    /// Key name for retryCount.
-    /// </summary>
-    private const string RETRYCOUNT = "RetryCount";
-
-    /// <summary>
-    /// Key name for enableGzipCompression.
-    /// </summary>
-    private const string ENABLE_GZIP_COMPRESSION = "EnableGzipCompression";
-
-    /// <summary>
-    /// Key name for OAuth2 mode.
-    /// </summary>
-    private const string OAUTH2_MODE = "OAuth2Mode";
-
-    /// <summary>
-    /// Key name for OAuth2 server.
-    /// </summary>
-    private const string OAUTH2_SERVER_URL = "OAuth2ServerUrl";
-
-    /// <summary>
-    /// Key name for OAuth2 client id.
-    /// </summary>
-    private const string OAUTH2_CLIENTID = "OAuth2ClientId";
-
-    /// <summary>
-    /// Key name for OAuth2 client secret.
-    /// </summary>
-    private const string OAUTH2_CLIENTSECRET = "OAuth2ClientSecret";
-
-    /// <summary>
-    /// Key name for OAuth2 access token.
-    /// </summary>
-    private const string OAUTH2_ACCESSTOKEN = "OAuth2AccessToken";
-
-    /// <summary>
-    /// Key name for OAuth2 refresh token.
-    /// </summary>
-    private const string OAUTH2_REFRESHTOKEN = "OAuth2RefreshToken";
-
-    /// <summary>
-    /// Key name for OAuth2 scope.
-    /// </summary>
-    private const string OAUTH2_SCOPE = "OAuth2Scope";
-
-    /// <summary>
-    /// Key name for redirect uri.
-    /// </summary>
-    private const string OAUTH2_REDIRECTURI = "OAuth2RedirectUri";
-
-    /// <summary>
-    /// Key name for prn account email.
-    /// </summary>
-    private const string OAUTH2_PRN_EMAIL = "OAuth2PrnEmail";
-
-    /// <summary>
-    /// Key name for OAuth2 secrets JSON file path.
-    /// </summary>
-    private const string OAUTH2_SECRETS_JSON_PATH = "OAuth2SecretsJsonPath";
-
-    /// <summary>
-    /// Key name for includeFeaturesInUserAgent.
-    /// </summary>
-    private const string INCLUDE_FEATURES_IN_USERAGENT = "IncludeUtilitiesInUserAgent";
-
-    /// <summary>
-    /// Key name for enableSoapExtension.
-    /// </summary>
-    private const string ENABLE_SOAP_EXTENSION = "EnableSoapExtension";
-
-    /// <summary>
     /// Web proxy to be used with the services.
     /// </summary>
-    private IWebProxy proxy;
+    private ConfigSetting<IWebProxy> proxy = new ConfigSetting<IWebProxy>("Proxy", null);
 
     /// <summary>
     /// True, if the credentials in the log file should be masked.
     /// </summary>
-    private bool maskCredentials;
+    private ConfigSetting<bool> maskCredentials = new ConfigSetting<bool>("MaskCredentials", true);
 
     /// <summary>
     /// Timeout to be used for Ads services in milliseconds.
     /// </summary>
-    private int timeout;
+    private ConfigSetting<int> timeout = new ConfigSetting<int>("Timeout", DEFAULT_TIMEOUT);
 
     /// <summary>
     /// Number of times to retry a call if an API call fails and can be retried.
     /// </summary>
-    private int retryCount;
+    private ConfigSetting<int> retryCount = new ConfigSetting<int>("RetryCount", 0);
 
     /// <summary>
     /// True, if gzip compression should be turned on for SOAP requests and
     /// responses.
     /// </summary>
-    private bool enableGzipCompression;
+    private ConfigSetting<bool> enableGzipCompression = new ConfigSetting<bool>(
+        "EnableGzipCompression", true);
 
     /// <summary>
     /// OAuth2 client ID.
     /// </summary>
-    private string oAuth2ClientId;
+    private ConfigSetting<string> oAuth2ClientId = new ConfigSetting<string>("OAuth2ClientId", "");
 
     /// <summary>
     /// OAuth2 server URL.
     /// </summary>
-    private string oAuth2ServerUrl;
+    private ConfigSetting<string> oAuth2ServerUrl = new ConfigSetting<string>("OAuth2ServerUrl",
+        DEFAULT_OAUTH2_SERVER);
 
     /// <summary>
     /// OAuth2 client secret.
     /// </summary>
-    private string oAuth2ClientSecret;
+    private ConfigSetting<string> oAuth2ClientSecret = new ConfigSetting<string>(
+        "OAuth2ClientSecret", "");
 
     /// <summary>
     /// OAuth2 access token.
     /// </summary>
-    private string oAuth2AccessToken;
+    private ConfigSetting<string> oAuth2AccessToken = new ConfigSetting<string>(
+        "OAuth2AccessToken", "");
 
     /// <summary>
     /// OAuth2 refresh token.
     /// </summary>
-    private string oAuth2RefreshToken;
+    private ConfigSetting<string> oAuth2RefreshToken = new ConfigSetting<string>(
+        "OAuth2RefreshToken", "");
 
     /// <summary>
     /// OAuth2 prn email.
     /// </summary>
-    private string oAuth2PrnEmail;
+    private ConfigSetting<string> oAuth2PrnEmail = new ConfigSetting<string>("OAuth2PrnEmail", "");
 
     /// <summary>
     /// OAuth2 service account email loaded from secrets JSON file.
     /// </summary>
-    private string oAuth2ServiceAccountEmail;
+    private ConfigSetting<string> oAuth2ServiceAccountEmail = new ConfigSetting<string>(
+        "client_email", null);
 
     /// <summary>
     /// OAuth2 private key loaded from secrets JSON file.
     /// </summary>
-    private string oAuth2PrivateKey;
+    private ConfigSetting<string> oAuth2PrivateKey = new ConfigSetting<string>("private_key", "");
 
     /// <summary>
     /// OAuth2 secrets JSON file path.
     /// </summary>
-    private string oAuth2SecretsJsonPath;
+    private ConfigSetting<string> oAuth2SecretsJsonPath = new ConfigSetting<string>(
+        "OAuth2SecretsJsonPath", "");
 
     /// <summary>
     /// OAuth2 scope.
     /// </summary>
-    private string oAuth2Scope;
+    private ConfigSetting<string> oAuth2Scope = new ConfigSetting<string>("OAuth2Scope", "");
 
     /// <summary>
     /// Redirect uri.
     /// </summary>
-    private string oAuth2RedirectUri;
+    private ConfigSetting<string> oAuth2RedirectUri = new ConfigSetting<string>(
+        "OAuth2RedirectUri", "");
 
     /// <summary>
     /// OAuth2 mode.
     /// </summary>
-    private OAuth2Flow oAuth2Mode;
+    private ConfigSetting<OAuth2Flow> oAuth2Mode = new ConfigSetting<OAuth2Flow>("OAuth2Mode",
+        OAuth2Flow.APPLICATION);
 
     /// <summary>
     /// True, if the usage of a feature should be added to the user agent,
     /// false otherwise.
     /// </summary>
-    private static bool includeFeaturesInUserAgent;
-
-    /// <summary>
-    /// Default value for number of times to retry a call if an API call fails
-    /// and can be retried.
-    /// </summary>
-    private const int DEFAULT_RETRYCOUNT = 0;
+    private ConfigSetting<bool> includeUtilitiesInUserAgent = new ConfigSetting<bool>(
+        "IncludeUtilitiesInUserAgent", false);
 
     /// <summary>
     /// Default value for timeout for Ads services.
@@ -253,39 +159,33 @@ namespace Google.Api.Ads.Common.Lib {
     private const string DEFAULT_OAUTH2_SERVER = "https://accounts.google.com";
 
     /// <summary>
+    /// Contains the configuration information from the underlying config
+    /// file.
+    /// </summary>
+    private IConfigurationRoot configuration;
+
+    /// <summary>
     /// Gets or sets whether the credentials in the log file should be masked.
     /// </summary>
     public bool MaskCredentials {
-      get {
-        return maskCredentials;
-      }
-      protected set {
-        maskCredentials = value;
-      }
+      get => maskCredentials.Value;
+      set => SetPropertyAndNotify(maskCredentials, value);
     }
 
     /// <summary>
     /// Gets or sets the web proxy to be used with the services.
     /// </summary>
     public IWebProxy Proxy {
-      get {
-        return proxy;
-      }
-      set {
-        SetPropertyField("Proxy", ref proxy, value);
-      }
+      get => proxy.Value;
+      set => SetPropertyAndNotify(proxy, value);
     }
 
     /// <summary>
     /// Gets or sets the timeout for Ads services in milliseconds.
     /// </summary>
     public int Timeout {
-      get {
-        return timeout;
-      }
-      set {
-        SetPropertyField(TIMEOUT, ref timeout, value);
-      }
+      get => timeout.Value;
+      set => SetPropertyAndNotify(timeout, value);
     }
 
     /// <summary>
@@ -293,12 +193,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// and can be retried.
     /// </summary>
     public int RetryCount {
-      get {
-        return retryCount;
-      }
-      set {
-        SetPropertyField(RETRYCOUNT, ref retryCount, value);
-      }
+      get => retryCount.Value;
+      set => SetPropertyAndNotify(retryCount, value);
     }
 
     /// <summary>
@@ -306,12 +202,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// requests and responses.
     /// </summary>
     public bool EnableGzipCompression {
-      get {
-        return enableGzipCompression;
-      }
-      set {
-        SetPropertyField(ENABLE_GZIP_COMPRESSION, ref enableGzipCompression, value);
-      }
+      get => enableGzipCompression.Value;
+      set => SetPropertyAndNotify(enableGzipCompression, value);
     }
 
     /// <summary>
@@ -320,48 +212,32 @@ namespace Google.Api.Ads.Common.Lib {
     /// <remarks>This property's setter is primarily used for testing purposes.
     /// </remarks>
     public string OAuth2ServerUrl {
-      get {
-        return oAuth2ServerUrl;
-      }
-      set {
-        SetPropertyField(OAUTH2_SERVER_URL, ref oAuth2ServerUrl, value);
-      }
+      get => oAuth2ServerUrl.Value;
+      set => SetPropertyAndNotify(oAuth2ServerUrl, value);
     }
 
     /// <summary>
     /// Gets or sets the OAuth2 client ID.
     /// </summary>
     public string OAuth2ClientId {
-      get {
-        return oAuth2ClientId;
-      }
-      set {
-        SetPropertyField(OAUTH2_CLIENTID, ref oAuth2ClientId, value);
-      }
+      get => oAuth2ClientId.Value;
+      set => SetPropertyAndNotify(oAuth2ClientId, value);
     }
 
     /// <summary>
     /// Gets or sets the OAuth2 client secret.
     /// </summary>
     public string OAuth2ClientSecret {
-      get {
-        return oAuth2ClientSecret;
-      }
-      set {
-        SetPropertyField(OAUTH2_CLIENTSECRET, ref oAuth2ClientSecret, value);
-      }
+      get => oAuth2ClientSecret.Value;
+      set => SetPropertyAndNotify(oAuth2ClientSecret, value);
     }
 
     /// <summary>
     /// Gets or sets the OAuth2 access token.
     /// </summary>
     public string OAuth2AccessToken {
-      get {
-        return oAuth2AccessToken;
-      }
-      set {
-        SetPropertyField(OAUTH2_ACCESSTOKEN, ref oAuth2AccessToken, value);
-      }
+      get => oAuth2AccessToken.Value;
+      set => SetPropertyAndNotify(oAuth2AccessToken, value);
     }
 
     /// <summary>
@@ -370,24 +246,16 @@ namespace Google.Api.Ads.Common.Lib {
     /// <remarks>This setting is applicable only when using OAuth2 web / application
     /// flow in offline mode.</remarks>
     public string OAuth2RefreshToken {
-      get {
-        return oAuth2RefreshToken;
-      }
-      set {
-        SetPropertyField(OAUTH2_REFRESHTOKEN, ref oAuth2RefreshToken, value);
-      }
+      get => oAuth2RefreshToken.Value;
+      set => SetPropertyAndNotify(oAuth2RefreshToken, value);
     }
 
     /// <summary>
     /// Gets or sets the OAuth2 scope.
     /// </summary>
     public string OAuth2Scope {
-      get {
-        return oAuth2Scope;
-      }
-      set {
-        SetPropertyField(OAUTH2_SCOPE, ref oAuth2Scope, value);
-      }
+      get => oAuth2Scope.Value;
+      set => SetPropertyAndNotify(oAuth2Scope, value);
     }
 
     /// <summary>
@@ -396,24 +264,16 @@ namespace Google.Api.Ads.Common.Lib {
     /// <remarks>This setting is applicable only when using OAuth2 web flow.
     /// </remarks>
     public string OAuth2RedirectUri {
-      get {
-        return oAuth2RedirectUri;
-      }
-      set {
-        SetPropertyField(OAUTH2_REDIRECTURI, ref oAuth2RedirectUri, value);
-      }
+      get => oAuth2RedirectUri.Value;
+      set => SetPropertyAndNotify(oAuth2RedirectUri, value);
     }
 
     /// <summary>
     /// Gets or sets the OAuth2 mode.
     /// </summary>
     public OAuth2Flow OAuth2Mode {
-      get {
-        return oAuth2Mode;
-      }
-      set {
-        SetPropertyField(OAUTH2_MODE, ref oAuth2Mode, value);
-      }
+      get => oAuth2Mode.Value;
+      set => SetPropertyAndNotify(oAuth2Mode, value);
     }
 
     /// <summary>
@@ -422,12 +282,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// <remarks>This setting is applicable only when using OAuth2 service accounts.
     /// </remarks>
     public string OAuth2PrnEmail {
-      get {
-        return oAuth2PrnEmail;
-      }
-      set {
-        SetPropertyField(OAUTH2_PRN_EMAIL, ref oAuth2PrnEmail, value);
-      }
+      get => oAuth2PrnEmail.Value;
+      set => SetPropertyAndNotify(oAuth2PrnEmail, value);
     }
 
     /// <summary>
@@ -439,9 +295,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// <see cref="OAuth2SecretsJsonPath"/> setting.
     /// </remarks>
     public string OAuth2ServiceAccountEmail {
-      get {
-        return oAuth2ServiceAccountEmail;
-      }
+      get => oAuth2ServiceAccountEmail.Value;
+      private set => SetPropertyAndNotify(oAuth2ServiceAccountEmail, value);
     }
 
     /// <summary>
@@ -453,9 +308,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// <see cref="OAuth2SecretsJsonPath"/> setting.
     /// </remarks>
     public string OAuth2PrivateKey {
-      get {
-        return oAuth2PrivateKey;
-      }
+      get => oAuth2PrivateKey.Value;
+      private set => SetPropertyAndNotify(oAuth2PrivateKey, value);
     }
 
     /// <summary>
@@ -465,11 +319,9 @@ namespace Google.Api.Ads.Common.Lib {
     /// This setting is applicable only when using OAuth2 service accounts.
     /// </remarks>
     public string OAuth2SecretsJsonPath {
-      get {
-        return oAuth2SecretsJsonPath;
-      }
+      get => oAuth2SecretsJsonPath.Value;
       set {
-        SetPropertyField(OAUTH2_SECRETS_JSON_PATH, ref oAuth2SecretsJsonPath, value);
+        SetPropertyAndNotify(oAuth2SecretsJsonPath, value);
         LoadOAuth2SecretsFromFile();
       }
     }
@@ -481,12 +333,8 @@ namespace Google.Api.Ads.Common.Lib {
     /// <remarks>The name of the property is kept different to match the setting
     /// name for other client libraries.</remarks>
     public bool IncludeUtilitiesInUserAgent {
-      get {
-        return includeFeaturesInUserAgent;
-      }
-      set {
-        SetPropertyField(INCLUDE_FEATURES_IN_USERAGENT, ref includeFeaturesInUserAgent, value);
-      }
+      get => includeUtilitiesInUserAgent.Value;
+      set => SetPropertyAndNotify(includeUtilitiesInUserAgent, value);
     }
 
     /// <summary>
@@ -530,10 +378,10 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     public string Signature {
       get {
-        string utilsAgent = (this.IncludeUtilitiesInUserAgent) ? featureUsageRegistry.Text : "";
+        string utilsAgent = (IncludeUtilitiesInUserAgent) ? featureUsageRegistry.Text : "";
         return string.Format("{0}, {1}, .NET CLR/{2}, {3}",
-            GetAssemblySignatureFromAppConfigType(this.GetType()),
-            GetAssemblySignatureFromAppConfigType(this.GetType().BaseType), Environment.Version,
+            GetAssemblySignatureFromAppConfigType(GetType()),
+            GetAssemblySignatureFromAppConfigType(GetType().BaseType), Environment.Version,
             utilsAgent);
       }
     }
@@ -549,27 +397,9 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Default constructor for the object.
+    /// The default constructor.
     /// </summary>
     public AppConfigBase() {
-      proxy = null;
-      maskCredentials = true;
-      timeout = DEFAULT_TIMEOUT;
-      enableGzipCompression = true;
-      oAuth2Mode = OAuth2Flow.APPLICATION;
-      oAuth2ServerUrl = DEFAULT_OAUTH2_SERVER;
-      oAuth2ClientId = "";
-      oAuth2ClientSecret = "";
-      oAuth2AccessToken = "";
-      oAuth2RefreshToken = "";
-      oAuth2Scope = "";
-      oAuth2RedirectUri = null;
-      oAuth2PrnEmail = "";
-      oAuth2ServiceAccountEmail = "";
-      oAuth2PrivateKey = "";
-      oAuth2SecretsJsonPath = "";
-
-      includeFeaturesInUserAgent = true;
     }
 
     /// <summary>
@@ -580,16 +410,12 @@ namespace Google.Api.Ads.Common.Lib {
     /// The request configuration section, or <code>null</code> if none was found.
     /// </returns>
     protected Dictionary<string, string> LoadConfigSection(string sectionName) {
-      Hashtable configTable = (Hashtable) ConfigurationManager.GetSection(sectionName);
+      configuration = XmlDictionarySectionConfigurationExtensions.AddXmlFileSection(
+          new ConfigurationBuilder(), sectionName).Build();
 
-      Dictionary<string, string> configDict = null;
-      if (configTable != null) {
-        configDict = configTable.Cast<DictionaryEntry>().ToDictionary(
+      return configuration.AsEnumerable().ToDictionary(
           setting => setting.Key.ToString(),
           setting => setting.Value.ToString());
-      }
-
-      return configDict;
     }
 
     /// <summary>
@@ -597,57 +423,62 @@ namespace Google.Api.Ads.Common.Lib {
     /// </summary>
     /// <param name="settings">The parsed app.config settings.</param>
     protected virtual void ReadSettings(Dictionary<string, string> settings) {
-      // Common keys.
-      string proxyUrl = ReadSetting(settings, PROXY_SERVER, "");
+      ReadProxySettings(settings);
 
-      if (!string.IsNullOrEmpty(proxyUrl)) {
-        WebProxy proxy = new WebProxy();
-        proxy.Address = new Uri(proxyUrl);
+      ReadSetting(settings, maskCredentials);
+      ReadSetting(settings, oAuth2Mode);
+      ReadSetting(settings, retryCount);
 
-        string proxyUser = ReadSetting(settings, PROXY_USER, "");
-        string proxyPassword = ReadSetting(settings, PROXY_PASSWORD, "");
-        string proxyDomain = ReadSetting(settings, PROXY_DOMAIN, "");
-
-        if (!string.IsNullOrEmpty(proxyUrl)) {
-          proxy.Credentials = new NetworkCredential(proxyUser,
-              proxyPassword, proxyDomain);
-        }
-        this.proxy = proxy;
-      } else {
-        // System.Net.WebRequest will find a proxy if needed.
-        this.proxy = null;
-      }
-      maskCredentials = bool.Parse(ReadSetting(settings, MASK_CREDENTIALS,
-          maskCredentials.ToString()));
-
-      Enum.TryParse<OAuth2Flow>(ReadSetting(settings, OAUTH2_MODE, oAuth2Mode.ToString()),
-          out oAuth2Mode);
-
-      oAuth2ServerUrl = ReadSetting(settings, OAUTH2_SERVER_URL, oAuth2ServerUrl);
-      oAuth2ClientId = ReadSetting(settings, OAUTH2_CLIENTID, oAuth2ClientId);
-      oAuth2ClientSecret = ReadSetting(settings, OAUTH2_CLIENTSECRET, oAuth2ClientSecret);
-      oAuth2AccessToken = ReadSetting(settings, OAUTH2_ACCESSTOKEN, oAuth2AccessToken);
-      oAuth2RefreshToken = ReadSetting(settings, OAUTH2_REFRESHTOKEN, oAuth2RefreshToken);
-      oAuth2Scope = ReadSetting(settings, OAUTH2_SCOPE, oAuth2Scope);
-      oAuth2RedirectUri = ReadSetting(settings, OAUTH2_REDIRECTURI, oAuth2RedirectUri);
+      ReadSetting(settings, oAuth2ServerUrl);
+      ReadSetting(settings, oAuth2ClientId);
+      ReadSetting(settings, oAuth2ClientSecret);
+      ReadSetting(settings, oAuth2AccessToken);
+      ReadSetting(settings, oAuth2RefreshToken);
+      ReadSetting(settings, oAuth2Scope);
+      ReadSetting(settings, oAuth2RedirectUri);
 
       // Read and parse the OAuth2 JSON secrets file if applicable.
-      oAuth2SecretsJsonPath = ReadSetting(settings, OAUTH2_SECRETS_JSON_PATH,
-          oAuth2SecretsJsonPath);
+      ReadSetting(settings, oAuth2SecretsJsonPath);
 
-      if (!string.IsNullOrEmpty(oAuth2SecretsJsonPath)) {
+      if (!string.IsNullOrEmpty(oAuth2SecretsJsonPath.Value)) {
         LoadOAuth2SecretsFromFile();
       }
 
-      oAuth2PrnEmail = ReadSetting(settings, OAUTH2_PRN_EMAIL, oAuth2PrnEmail);
+      ReadSetting(settings, oAuth2PrnEmail);
+      ReadSetting(settings, timeout);
+      ReadSetting(settings, enableGzipCompression);
+      ReadSetting(settings, includeUtilitiesInUserAgent);
+    }
 
-      int.TryParse(ReadSetting(settings, TIMEOUT, timeout.ToString()), out timeout);
-      int.TryParse(ReadSetting(settings, RETRYCOUNT, retryCount.ToString()), out retryCount);
-      bool.TryParse(ReadSetting(settings, ENABLE_GZIP_COMPRESSION,
-          enableGzipCompression.ToString()), out enableGzipCompression);
+    /// <summary>
+    /// Reads the proxy settings.
+    /// </summary>
+    /// <param name="settings">The parsed app.config settings.</param>
+    private void ReadProxySettings(Dictionary<string, string> settings) {
+      ConfigSetting<string> proxyServer = new ConfigSetting<string>("ProxyServer", null);
+      ConfigSetting<string> proxyUser = new ConfigSetting<string>("ProxyUser", null);
+      ConfigSetting<string> proxyPassword = new ConfigSetting<string>("ProxyPassword", null);
+      ConfigSetting<string> proxyDomain = new ConfigSetting<string>("ProxyDomain", null);
 
-      bool.TryParse(ReadSetting(settings, INCLUDE_FEATURES_IN_USERAGENT,
-          includeFeaturesInUserAgent.ToString()), out includeFeaturesInUserAgent);
+      ReadSetting(settings, proxyServer);
+
+      if (!string.IsNullOrEmpty(proxyServer.Value)) {
+        WebProxy proxy = new WebProxy() {
+          Address = new Uri(proxyServer.Value)
+        };
+        ReadSetting(settings, proxyUser);
+        ReadSetting(settings, proxyPassword);
+        ReadSetting(settings, proxyDomain);
+
+        if (!string.IsNullOrEmpty(proxyUser.Value)) {
+          proxy.Credentials = new NetworkCredential(proxyUser.Value,
+              proxyPassword.Value, proxyDomain.Value);
+        }
+        this.proxy.Value = proxy;
+      } else {
+        // System.Net.WebRequest will find a proxy if needed.
+        this.proxy.Value = null;
+      }
     }
 
     /// <summary>
@@ -658,17 +489,16 @@ namespace Google.Api.Ads.Common.Lib {
       try {
         using (StreamReader reader = new StreamReader(OAuth2SecretsJsonPath)) {
           string contents = reader.ReadToEnd();
-          JavaScriptSerializer serializer = new JavaScriptSerializer();
           Dictionary<string, string> config =
-              serializer.Deserialize<Dictionary<string, string>>(contents);
+              JsonConvert.DeserializeObject<Dictionary<string, string>>(contents);
 
-          this.oAuth2ServiceAccountEmail = CollectionUtilities.TryGetValue(config, "client_email");
-          if (this.OAuth2ServiceAccountEmail == null) {
+          ReadSetting(config, oAuth2ServiceAccountEmail);
+          if (string.IsNullOrEmpty(this.OAuth2ServiceAccountEmail)) {
             throw new ApplicationException(CommonErrorMessages.ClientEmailIsMissingInJsonFile);
           }
 
-          this.oAuth2PrivateKey = CollectionUtilities.TryGetValue(config, "private_key");
-          if (this.OAuth2PrivateKey == null) {
+          ReadSetting(config, oAuth2PrivateKey);
+          if (string.IsNullOrEmpty(this.OAuth2PrivateKey)) {
             throw new ApplicationException(CommonErrorMessages.PrivateKeyIsMissingInJsonFile);
           }
         }
@@ -678,47 +508,30 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
-    /// Reads a setting from a given NameValueCollection, and sets
-    /// default value if the key is not available in the collection.
+    /// Reads a setting from a given dictionary.
     /// </summary>
     /// <param name="settings">The settings collection from which the keys
     /// are to be read.</param>
-    /// <param name="key">Key name to be read.</param>
-    /// <param name="defaultValue">Default value for the key.</param>
-    /// <returns>Actual value from settings, or defaultValue if settings
-    /// does not have this key.</returns>
-    protected static string ReadSetting(Dictionary<string, string> settings, string key,
-        string defaultValue) {
-      if (settings == null) {
-        return defaultValue;
-      } else {
-        return CollectionUtilities.TryGetValue(settings, key, defaultValue);
+    /// <param name="settingField">The field that holds the setting value.</param>
+    protected void ReadSetting(Dictionary<string, string> settings,
+        ConfigSetting settingField) {
+      if (settings != null && settings.ContainsKey(settingField.Name)) {
+        settingField.TryParse(settings[settingField.Name]);
       }
     }
 
     /// <summary>
-    /// Raises the <see cref="E:PropertyChanged"/> event.
+    /// Sets the specified property and notify any listeners.
     /// </summary>
-    /// <param name="e">The <see cref="System.ComponentModel.PropertyChangedEventArgs"/>
-    /// instance containing the event data.</param>
-    protected void OnPropertyChanged(PropertyChangedEventArgs e) {
-      PropertyChangedEventHandler handler = PropertyChanged;
-      if (handler != null) {
-        handler(this, e);
-      }
-    }
-
-    /// <summary>
-    /// Sets the specified property field.
-    /// </summary>
-    /// <typeparam name="T">Type of the property field to be set.</typeparam>
+    /// <typeparam name="T">Type of the property.</typeparam>
+    /// <param name="field">The field that store property value.</param>
+    /// <param name="newValue">The new value to be set.</param>
     /// <param name="propertyName">Name of the property.</param>
-    /// <param name="field">The property field to be set.</param>
-    /// <param name="newValue">The new value to be set to the propery.</param>
-    protected void SetPropertyField<T>(string propertyName, ref T field, T newValue) {
-      if (!EqualityComparer<T>.Default.Equals(field, newValue)) {
-        field = newValue;
-        OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
+    protected void SetPropertyAndNotify<T>(ConfigSetting<T> field, T newValue,
+        [CallerMemberName] String propertyName = "") {
+      if (!EqualityComparer<T>.Default.Equals(field.Value, newValue)) {
+        field.Value = newValue;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
       }
     }
 
@@ -734,7 +547,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// A new object that is a copy of this instance.
     /// </returns>
     public virtual object Clone() {
-      return this.MemberwiseClone();
+      return MemberwiseClone();
     }
   }
 }

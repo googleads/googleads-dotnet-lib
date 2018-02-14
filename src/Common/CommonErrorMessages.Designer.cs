@@ -19,7 +19,7 @@ namespace Google.Api.Ads.Common {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class CommonErrorMessages {
@@ -79,6 +79,15 @@ namespace Google.Api.Ads.Common {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to parse value for setting name &apos;{0}&apos;. Value provided: &apos;{1}&apos;..
+        /// </summary>
+        internal static string ConfigSettingParseError {
+            get {
+                return ResourceManager.GetString("ConfigSettingParseError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email cannot be null.
         /// </summary>
         internal static string EmailCannotBeNull {
@@ -111,6 +120,15 @@ namespace Google.Api.Ads.Common {
         internal static string InvalidStageForSoapMessage {
             get {
                 return ResourceManager.GetString("InvalidStageForSoapMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to parse SOAP Document. Underlying error: {0}.
+        /// </summary>
+        internal static string MalformedSoap {
+            get {
+                return ResourceManager.GetString("MalformedSoap", resourceCulture);
             }
         }
         

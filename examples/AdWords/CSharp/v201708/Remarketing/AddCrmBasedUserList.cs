@@ -15,10 +15,9 @@
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201708;
 
-using Org.BouncyCastle.Crypto.Digests;
-
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
@@ -47,7 +46,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     private const string COUNTRY_CODE = "US";
     private const string ZIP_CODE = "10001";
 
-    private static readonly GeneralDigest digest = new Sha256Digest();
+    private SHA256 digest = SHA256.Create();
 
     /// <summary>
     /// Main method, to run this code example as a standalone application.
@@ -82,7 +81,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
       using (AdwordsUserListService userListService =
           (AdwordsUserListService) user.GetService(
               AdWordsService.v201708.AdwordsUserListService)) {
-
         // Create a user list.
         CrmBasedUserList userList = new CrmBasedUserList() {
           name = "Customer relationship management list #" +
@@ -170,12 +168,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
     /// <param name="digest">Provides the algorithm for SHA-256.</param>
     /// <param name="email">The email address to hash.</param>
     /// <returns>Hash email address using SHA-256 hashing algorithm.</returns>
-    private static String ToSha256String(GeneralDigest digest, String email) {
-      byte[] data = Encoding.UTF8.GetBytes(email);
-      byte[] digestBytes = new byte[digest.GetDigestSize()];
-      digest.BlockUpdate(data, 0, data.Length);
-      digest.DoFinal(digestBytes, 0);
-
+    private static String ToSha256String(SHA256 digest, String email) {
+      byte[] digestBytes = digest.ComputeHash(Encoding.UTF8.GetBytes(email));
       // Convert the byte array into an unhyphenated hexadecimal string.
       return BitConverter.ToString(digestBytes).Replace("-", string.Empty);
     }

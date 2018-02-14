@@ -13,11 +13,10 @@ This project hosts the .NET client library for the various SOAP-Based Ads APIs a
 - Easy management of credentials, authentication, and session information
 - Docs available in HTML and XML format.
 
-## Requirements
+## Supported Frameworks
 
-- .NET Framework 4.5.2 (or above): http://msdn2.microsoft.com/en-us/netframework/default.aspx
-- Microsoft Visual Studio: http://msdn2.microsoft.com/en-us/vstudio/default.aspx
-- An appropriate Google Ads account.
+- .NET Framework 4.5.2+
+- .NET Standard 2.0 ([limited support](https://github.com/googleads/googleads-dotnet-lib/wiki/Cross-Platorm-Development))
 
 ## Announcements and updates
 

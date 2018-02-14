@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.Common.Config;
 using Google.Api.Ads.Common.Lib;
 using System;
 using System.Collections.Generic;
@@ -27,26 +28,6 @@ namespace Google.Api.Ads.Dfp.Lib {
     private const string SHORT_NAME = "DfpApi-DotNet";
 
     /// <summary>
-    /// Key name for networkCode.
-    /// </summary>
-    private const string NETWORK_CODE = "NetworkCode";
-
-    /// <summary>
-    /// Key name for applicationName.
-    /// </summary>
-    private const string APPLICATION_NAME = "ApplicationName";
-
-    /// <summary>
-    /// Key name for Dfp API URL.
-    /// </summary>
-    private const string DFPAPI_SERVER = "DfpApi.Server";
-
-    /// <summary>
-    /// Key name for authorizationMethod.
-    /// </summary>
-    private const string AUTHORIZATION_METHOD = "AuthorizationMethod";
-
-    /// <summary>
     /// Default value for DFPAPI_SERVER.
     /// </summary>
     private const string DEFAULT_DFPAPI_SERVER = "https://ads.google.com";
@@ -57,12 +38,6 @@ namespace Google.Api.Ads.Dfp.Lib {
     private const string DFP_OAUTH2_SCOPE = "https://www.googleapis.com/auth/dfp";
 
     /// <summary>
-    /// Default value for authorizationMethod.
-    /// </summary>
-    private const DfpAuthorizationMethod DEFAULT_AUTHORIZATION_METHOD =
-        DfpAuthorizationMethod.OAuth2;
-
-    /// <summary>
     /// The default value for application name.
     /// </summary>
     public const string DEFAULT_APPLICATION_NAME = "INSERT_YOUR_APPLICATION_NAME_HERE";
@@ -70,88 +45,71 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// <summary>
     /// NetworkCode to be used in SOAP headers.
     /// </summary>
-    private string networkCode;
+    private ConfigSetting<string> networkCode = new ConfigSetting<string>("NetworkCode", "");
 
     /// <summary>
     /// Application name to be used in SOAP headers.
     /// </summary>
-    private string applicationName;
+    private ConfigSetting<string> applicationName = new ConfigSetting<string>(
+        "ApplicationName", DEFAULT_APPLICATION_NAME);
 
     /// <summary>
     /// URL for DFP API.
     /// </summary>
-    private string dfpApiServer;
+    private ConfigSetting<string> dfpApiServer = new ConfigSetting<string>("DfpApi.Server",
+        DEFAULT_DFPAPI_SERVER);
 
     /// <summary>
     /// Authorization method to be used when making API calls.
     /// </summary>
-    private DfpAuthorizationMethod authorizationMethod;
+    private ConfigSetting<DfpAuthorizationMethod> authorizationMethod =
+        new ConfigSetting<DfpAuthorizationMethod>(
+            "AuthorizationMethod", DfpAuthorizationMethod.OAuth2);
 
     /// <summary>
     /// Gets or sets networkCode to be used in SOAP headers.
     /// </summary>
     public string NetworkCode {
-      get {
-        return networkCode;
-      }
-      set {
-        SetPropertyField(NETWORK_CODE, ref networkCode, value);
-      }
+      get => networkCode.Value;
+      set => SetPropertyAndNotify(networkCode, value);
     }
 
     /// <summary>
     /// Gets or sets application name to be used in SOAP headers.
     /// </summary>
     public string ApplicationName {
-      get {
-        return applicationName;
-      }
-      set {
-        SetPropertyField(APPLICATION_NAME, ref applicationName, value);
-      }
+      get => applicationName.Value;
+      set => SetPropertyAndNotify(applicationName, value);
     }
 
     /// <summary>
     /// Gets or sets URL for DFP API.
     /// </summary>
     public string DfpApiServer {
-      get {
-        return dfpApiServer;
-      }
-      set {
-        SetPropertyField(DFPAPI_SERVER, ref dfpApiServer, value);
-      }
+      get => dfpApiServer.Value;
+      set => SetPropertyAndNotify(dfpApiServer, value);
     }
 
     /// <summary>
     /// Gets or sets the authorization method to be used when making API calls.
     /// </summary>
     public DfpAuthorizationMethod AuthorizationMethod {
-      get {
-        return authorizationMethod;
-      }
-      set {
-        SetPropertyField(AUTHORIZATION_METHOD, ref authorizationMethod, value);
-      }
+      get => authorizationMethod.Value;
+      set => SetPropertyAndNotify(authorizationMethod, value);
     }
 
     /// <summary>
     /// Gets a useragent string that can be used with the library.
     /// </summary>
     public override string GetUserAgent() {
-      return String.Format("{0} ({1}{2})", this.applicationName, this.Signature,
-          this.EnableGzipCompression ? ", gzip" : "");
+      return String.Format("{0} ({1}{2})", ApplicationName, Signature,
+          EnableGzipCompression ? ", gzip" : "");
     }
 
     /// <summary>
     /// Public constructor.
     /// </summary>
     public DfpAppConfig() : base() {
-      networkCode = "";
-      applicationName = DEFAULT_APPLICATION_NAME;
-      dfpApiServer = DEFAULT_DFPAPI_SERVER;
-      authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
-
       ReadSettings(LoadConfigSection("DfpApi"));
     }
 
@@ -162,23 +120,16 @@ namespace Google.Api.Ads.Dfp.Lib {
     protected override void ReadSettings(Dictionary<string, string> settings) {
       base.ReadSettings(settings);
 
-      networkCode = ReadSetting(settings, NETWORK_CODE, networkCode);
-      applicationName = ReadSetting(settings, APPLICATION_NAME, applicationName);
-      dfpApiServer = ReadSetting(settings, DFPAPI_SERVER, dfpApiServer);
-
-      try {
-        authorizationMethod = (DfpAuthorizationMethod) Enum.Parse(
-            typeof(DfpAuthorizationMethod),
-            ReadSetting(settings, AUTHORIZATION_METHOD, authorizationMethod.ToString()));
-      } catch {
-        authorizationMethod = DEFAULT_AUTHORIZATION_METHOD;
-      }
+      ReadSetting(settings, networkCode);
+      ReadSetting(settings, applicationName);
+      ReadSetting(settings, dfpApiServer);
+      ReadSetting(settings, authorizationMethod);
 
       // If there is an OAuth2 scope mentioned in App.config, this will be
       // loaded by the above call. If there isn't one, we will initialize it
       // with a library-specific default value.
-      if (string.IsNullOrEmpty(this.OAuth2Scope)) {
-        this.OAuth2Scope = GetDefaultOAuth2Scope();
+      if (string.IsNullOrEmpty(OAuth2Scope)) {
+        OAuth2Scope = GetDefaultOAuth2Scope();
       }
     }
 

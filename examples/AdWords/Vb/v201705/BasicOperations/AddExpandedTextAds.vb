@@ -69,6 +69,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
         Dim operations As New List(Of AdGroupAdOperation)
 
         For i As Integer = 1 To NUMBER_OF_ADS
+          ' [START addExpandedTextAd] MOE:strip_line
           ' Create the expanded text ad.
           Dim expandedTextAd As New ExpandedTextAd
           expandedTextAd.headlinePart1 = "Cruise #" & i.ToString() & " to Mars"
@@ -82,6 +83,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
 
           ' Optional: Set the status.
           expandedTextAdGroupAd.status = AdGroupAdStatus.PAUSED
+          ' [END addExpandedTextAd] MOE:strip_line
 
           ' Create the operations.
           Dim operation As New AdGroupAdOperation

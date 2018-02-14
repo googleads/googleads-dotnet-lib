@@ -21,7 +21,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
 
   /// <summary>
   /// This code example illustrates how to update an ad group, setting its
-  /// status to 'PAUSED'. To create an ad group, run AddAdGroup.cs.
+  /// status to 'PAUSED', and its CPC bid to a new value if specified.
+  /// To create an ad group, run AddAdGroup.cs.
   /// </summary>
   public class UpdateAdGroup : ExampleBase {
 
@@ -34,7 +35,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
       Console.WriteLine(codeExample.Description);
       try {
         long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
-        codeExample.Run(new AdWordsUser(), adGroupId);
+        long? bidMicroAmount = null;
+
+        // Optional: Provide a cpc bid for the ad group, in micro amounts.
+        long tempVal = 0;
+        if (long.TryParse("INSERT_CPC_BID_IN_MICROS_HERE", out tempVal)) {
+          bidMicroAmount = tempVal;
+        }
+
+        codeExample.Run(new AdWordsUser(), adGroupId, bidMicroAmount);
       } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e));
@@ -46,8 +55,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// </summary>
     public override string Description {
       get {
-        return "This code example illustrates how to update an ad group, setting its status to " +
-            "'PAUSED'. To create an ad group, run AddAdGroup.cs";
+        return " This code example illustrates how to update an ad group, setting its status " +
+            "to 'PAUSED', and its CPC bid to a new value if specified. To create an ad group, " +
+            "run AddAdGroup.cs.";
       }
     }
 
@@ -56,14 +66,29 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     /// <param name="adGroupId">Id of the ad group to be updated.</param>
-    public void Run(AdWordsUser user, long adGroupId) {
+    /// <param name="bidMicroAmount">The CPC bid amount in micros.</param>
+    public void Run(AdWordsUser user, long adGroupId, long? bidMicroAmount) {
       using (AdGroupService adGroupService =
           (AdGroupService) user.GetService(AdWordsService.v201710.AdGroupService)) {
 
-        // Create the ad group.
+        // Create an ad group with the specified ID.
         AdGroup adGroup = new AdGroup();
-        adGroup.status = AdGroupStatus.PAUSED;
         adGroup.id = adGroupId;
+
+        // Pause the ad group.
+        adGroup.status = AdGroupStatus.PAUSED;
+
+        // Update the CPC bid if specified.
+        if (bidMicroAmount != null) {
+          BiddingStrategyConfiguration biddingStrategyConfiguration =
+              new BiddingStrategyConfiguration();
+          Money cpcBidMoney = new Money();
+          cpcBidMoney.microAmount = bidMicroAmount.Value;
+          CpcBid cpcBid = new CpcBid();
+          cpcBid.bid = cpcBidMoney;
+          biddingStrategyConfiguration.bids = new Bids[] { cpcBid };
+          adGroup.biddingStrategyConfiguration = biddingStrategyConfiguration;
+        }
 
         // Create the operation.
         AdGroupOperation operation = new AdGroupOperation();
@@ -76,9 +101,22 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
 
           // Display the results.
           if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-            AdGroup pausedAdGroup = retVal.value[0];
-            Console.WriteLine("Ad group with id = '{0}' was successfully updated.",
-                pausedAdGroup.id);
+            AdGroup adGroupResult = retVal.value[0];
+            BiddingStrategyConfiguration bsConfig = adGroupResult.biddingStrategyConfiguration;
+
+            // Find the CpcBid in the bidding strategy configuration's bids collection.
+            long cpcBidMicros = 0L;
+            if (bsConfig != null && bsConfig.bids != null) {
+              foreach (Bids bid in bsConfig.bids) {
+                if (bid is CpcBid) {
+                  cpcBidMicros = ((CpcBid) bid).bid.microAmount;
+                  break;
+                }
+              }
+            }
+            Console.WriteLine("Ad group with ID {0} and name '{1}' updated to have status '{2}'" +
+                " and CPC bid {3}", adGroupResult.id, adGroupResult.name,
+                adGroupResult.status, cpcBidMicros);
           } else {
             Console.WriteLine("No ad groups were updated.");
           }

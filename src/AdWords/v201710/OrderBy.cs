@@ -41,7 +41,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// ascending order by <paramref name="field"/> value.</returns>
     public static OrderBy Asc(string field) {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       return new OrderBy() {
         field = field,
@@ -63,6 +63,33 @@ namespace Google.Api.Ads.AdWords.v201710 {
         field = field,
         sortOrder = SortOrder.DESCENDING
       };
+    }
+
+    /// <summary>
+    /// Gets the sort order clause when used in AWQL.
+    /// </summary>
+    /// <returns>The sort order clause for AWQL.</returns>
+    private string GetSortOrderForQuery() {
+      switch (sortOrder) {
+        case SortOrder.ASCENDING:
+          return "ASC";
+
+        case SortOrder.DESCENDING:
+          return "DESC";
+
+        default:
+          return string.Empty;
+      }
+    }
+
+    /// <summary>
+    /// Returns a string that represents this instance.
+    /// </summary>
+    /// <returns>
+    /// A string that represents this instance.
+    /// </returns>
+    public override string ToString() {
+      return string.Format("{0} {1}", field, GetSortOrderForQuery());
     }
   }
 }

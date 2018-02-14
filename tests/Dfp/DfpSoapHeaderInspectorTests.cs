@@ -95,16 +95,17 @@ namespace Google.Api.Ads.Dfp.Tests {
       };
       inspector.RequestHeader = header;
 
+      inspector.Config.ApplicationName = null;
       Assert.Throws(typeof(DfpApiException), delegate() {
         inspector.BeforeSendRequest(ref this.message, this.channel);
       }, "No exception was thrown for a null application name");
 
-      header.applicationName = DfpAppConfig.DEFAULT_APPLICATION_NAME;
+      inspector.Config.ApplicationName = DfpAppConfig.DEFAULT_APPLICATION_NAME;
       Assert.Throws(typeof(DfpApiException), delegate() {
         inspector.BeforeSendRequest(ref this.message, this.channel);
       }, "No exception was thrown for the default application name");
 
-      header.applicationName = "";
+      inspector.Config.ApplicationName = "";
       Assert.Throws(typeof(DfpApiException), delegate() {
         inspector.BeforeSendRequest(ref this.message, this.channel);
       }, "No exception was thrown for an empty string application name");
@@ -143,7 +144,11 @@ namespace Google.Api.Ads.Dfp.Tests {
       DfpSoapClient<IMockAdsService> service = new DfpSoapClient<IMockAdsService>(
           new BasicHttpBinding(),
           new EndpointAddress("https://www.google.com"));
+#if NET452
+      service.Endpoint.Behaviors.Add(behavior);
+#else
       service.Endpoint.EndpointBehaviors.Add(behavior);
+#endif
 
       Assert.IsNull(service.RequestHeader);
       RequestHeader expected = new RequestHeader() {

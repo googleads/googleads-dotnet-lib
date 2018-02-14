@@ -1,212 +1,65 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <!-- nupkg properties -->
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{50C9CC2A-0664-4CFA-B72D-AEE6C91BD745}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Google.Api.Ads.AdWords</RootNamespace>
+    <Title>AdWords API Dotnet Client Library</Title>
+    <PackageId>Google.AdWords</PackageId>
+    <Version>23.0.0</Version>
+    <Description>This library provides you with functionality to access the AdWords API.</Description>
+    <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
+    <PackageTags>AdWords Google</PackageTags>
+    <Copyright>Copyright 2011, Google Inc. All Rights Reserved.</Copyright>
+    <Authors>https://github.com/AnashOommen, https://github.com/ChristopherSeeley, https://github.com/jimper</Authors>
+    <PackageIconUrl>https://www.gstatic.com/images/branding/product/1x/google_developers_64dp.png</PackageIconUrl>
+    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/googleads/googleads-dotnet-lib</PackageProjectUrl>
+    <Company>Google</Company>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/googleads/googleads-dotnet-lib</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  <!-- build properties -->
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <AssemblyName>Google.AdWords</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <AssemblyDelaySign>true</AssemblyDelaySign>
+    <RootNamespace>Google.Api.Ads.AdWords</RootNamespace>
+    <PublicSign Condition="'$(OS)' != 'Windows_NT'">true</PublicSign>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(ProjectDir)..\Common\AdsApi.snk</AssemblyOriginatorKeyFile>
+    <DebugType>pdbonly</DebugType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.ServiceModel" />
+    <PackageReference Include="Google.Ads.Common" Version="9.0.0" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.4.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)'=='net452'">
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdWordsErrorMessages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AdWordsErrorMessages.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Headers\AdWordsSoapHeader.cs" />
-    <Compile Include="Util\BatchJob\AdWordsBulkRequestException.cs" />
-    <Compile Include="Lib\AdWordsException.cs" />
-    <Compile Include="Lib\AdWordsTraceListener.cs" />
-    <Compile Include="Lib\AdWordsSoapHeaderInspector.cs" />
-    <Compile Include="Util\BatchJob\BatchJobUtilitiesBase.cs" />
-    <Compile Include="Util\BatchJob\BatchUploadProgress.cs" />
-    <Compile Include="Util\BatchJob\BulkJobErrorHandler.cs" />
-    <Compile Include="Util\BatchJob\CloudStorageErrorDetail.cs" />
-    <Compile Include="Util\BatchJob\CloudStorageErrorResponse.cs" />
-    <Compile Include="Util\BatchJob\v201705\BatchJobUtilities.cs" />
-    <Compile Include="Util\BatchJob\v201702\BatchJobUtilities.cs" />
-    <Compile Include="Util\BatchJob\CloudStorageError.cs" />
-    <Compile Include="Util\BatchJob\v201710\BatchJobUtilities.cs" />
-    <Compile Include="Util\BatchJob\v201708\BatchJobUtilities.cs" />
-    <Compile Include="Util\Reports\IReportDefinitionField.cs" />
-    <Compile Include="Util\Reports\Parser\AwReport.cs" />
-    <Compile Include="Util\Reports\Parser\AwXmlTextReader.cs" />
-    <Compile Include="Util\Reports\Parser\ColumnValuePair.cs" />
-    <Compile Include="Util\Reports\Parser\InputTextReader.cs" />
-    <Compile Include="Util\Reports\Parser\ReportColumn.cs" />
-    <Compile Include="Util\Reports\Parser\ReportParserUtils.cs" />
-    <Compile Include="Util\Reports\v201702\PredefinedReportTypes.cs" />
-    <Compile Include="Util\Reports\v201705\PredefinedReportTypes.cs" />
-    <Compile Include="Util\Reports\v201710\PredefinedReportTypes.cs" />
-    <Compile Include="Util\Reports\v201708\PredefinedReportTypes.cs" />
-    <Compile Include="Util\Shopping\v201705\OperationPair.cs" />
-    <Compile Include="Util\Shopping\v201705\ProductDimensionEqualityComparer.cs" />
-    <Compile Include="Util\Shopping\v201705\ProductDimensions.cs" />
-    <Compile Include="Util\Shopping\v201705\ProductPartitionNode.cs" />
-    <Compile Include="Util\Shopping\v201705\ProductPartitionNodeAdapter.cs" />
-    <Compile Include="Util\Shopping\v201705\ProductPartitionTree.cs" />
-    <Compile Include="Util\Shopping\v201702\OperationPair.cs" />
-    <Compile Include="Util\Shopping\v201702\ProductDimensionEqualityComparer.cs" />
-    <Compile Include="Util\Shopping\v201702\ProductDimensions.cs" />
-    <Compile Include="Util\Shopping\v201702\ProductPartitionNode.cs" />
-    <Compile Include="Util\Shopping\v201702\ProductPartitionNodeAdapter.cs" />
-    <Compile Include="Util\Shopping\v201702\ProductPartitionTree.cs" />
-    <Compile Include="Util\Shopping\v201710\OperationPair.cs" />
-    <Compile Include="Util\Shopping\v201710\ProductDimensionEqualityComparer.cs" />
-    <Compile Include="Util\Shopping\v201710\ProductDimensions.cs" />
-    <Compile Include="Util\Shopping\v201710\ProductPartitionNode.cs" />
-    <Compile Include="Util\Shopping\v201710\ProductPartitionNodeAdapter.cs" />
-    <Compile Include="Util\Shopping\v201710\ProductPartitionTree.cs" />
-    <Compile Include="Util\Shopping\v201708\OperationPair.cs" />
-    <Compile Include="Util\Shopping\v201708\ProductDimensionEqualityComparer.cs" />
-    <Compile Include="Util\Shopping\v201708\ProductDimensions.cs" />
-    <Compile Include="Util\Shopping\v201708\ProductPartitionNode.cs" />
-    <Compile Include="Util\Shopping\v201708\ProductPartitionNodeAdapter.cs" />
-    <Compile Include="Util\Shopping\v201708\ProductPartitionTree.cs" />
-    <Compile Include="Util\Selectors\BaseFields.cs" />
-    <Compile Include="Util\Shopping\BiddableUnitState.cs" />
-    <Compile Include="Util\Shopping\ExcludedUnitState.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Util\Shopping\NodeDifference.cs" />
-    <Compile Include="Util\Shopping\NodeState.cs" />
-    <Compile Include="Util\Shopping\NodeType.cs" />
-    <Compile Include="Util\Shopping\ShoppingMessages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ShoppingMessages.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Util\Shopping\SubdivisionState.cs" />
-    <Compile Include="Util\Reports\IReportDefinition.cs" />
-    <Compile Include="Util\Reports\ReportUtilities.cs" />
-    <Compile Include="Util\Reports\ReportDownloadError.cs" />
-    <Compile Include="Util\Reports\AdWordsReportsException.cs" />
-    <Compile Include="Headers\ResponseHeader.cs" />
-    <Compile Include="Headers\RequestHeader.cs" />
-    <Compile Include="Lib\ApiCallEntry.cs" />
-    <Compile Include="Lib\AdWordsServiceSignature.cs" />
-    <Compile Include="Lib\AdWordsApiException.cs" />
-    <Compile Include="Lib\AdWordsSoapClient.cs" />
-    <Compile Include="Lib\AdWordsServiceFactory.cs" />
-    <Compile Include="Lib\AdWordsAppConfig.cs" />
-    <Compile Include="Lib\AdWordsService.cs" />
-    <Compile Include="Lib\AdWordsUser.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Properties.cs" />
-    <Compile Include="Util\Selectors\Field.cs" />
-    <Compile Include="Util\MapUtilities.cs" />
-    <Compile Include="v201702\AdWordsApi.cs" />
-    <Compile Include="v201702\AdWordsApi.ProductDimension.cs" />
-    <Compile Include="v201702\AdWordsServiceV201702.cs" />
-    <Compile Include="v201702\ApiError.cs" />
-    <Compile Include="v201702\ApiException.cs" />
-    <Compile Include="v201702\BatchJobApi.cs" />
-    <Compile Include="v201702\FeedValidationErrors.cs" />
-    <Compile Include="v201702\MapEntries.cs" />
-    <Compile Include="v201702\OrderBy.cs" />
-    <Compile Include="v201702\Paging.cs" />
-    <Compile Include="v201702\Predicate.cs" />
-    <Compile Include="v201702\ReportDefinition.cs" />
-    <Compile Include="v201705\AdWordsApi.cs" />
-    <Compile Include="v201705\AdWordsApi.ProductDimension.cs" />
-    <Compile Include="v201705\AdWordsServiceV201705.cs" />
-    <Compile Include="v201705\ApiError.cs" />
-    <Compile Include="v201705\ApiException.cs" />
-    <Compile Include="v201705\BatchJobApi.cs" />
-    <Compile Include="v201705\FeedValidationErrors.cs" />
-    <Compile Include="v201705\MapEntries.cs" />
-    <Compile Include="v201705\OrderBy.cs" />
-    <Compile Include="v201705\Paging.cs" />
-    <Compile Include="v201705\Predicate.cs" />
-    <Compile Include="v201705\ReportDefinition.cs" />
-    <Compile Include="v201708\AdWordsApi.cs" />
-    <Compile Include="v201708\AdWordsApi.ProductDimension.cs" />
-    <Compile Include="v201708\AdWordsServiceV201708.cs" />
-    <Compile Include="v201708\ApiError.cs" />
-    <Compile Include="v201708\ApiException.cs" />
-    <Compile Include="v201708\BatchJobApi.cs" />
-    <Compile Include="v201708\FeedValidationErrors.cs" />
-    <Compile Include="v201708\MapEntries.cs" />
-    <Compile Include="v201708\OrderBy.cs" />
-    <Compile Include="v201708\Paging.cs" />
-    <Compile Include="v201708\Predicate.cs" />
-    <Compile Include="v201708\ReportDefinition.cs" />
-    <Compile Include="v201710\AdWordsApi.cs" />
-    <Compile Include="v201710\AdWordsApi.ProductDimension.cs" />
-    <Compile Include="v201710\AdWordsServiceV201710.cs" />
-    <Compile Include="v201710\ApiError.cs" />
-    <Compile Include="v201710\ApiException.cs" />
-    <Compile Include="v201710\BatchJobApi.cs" />
-    <Compile Include="v201710\FeedValidationErrors.cs" />
-    <Compile Include="v201710\MapEntries.cs" />
-    <Compile Include="v201710\OrderBy.cs" />
-    <Compile Include="v201710\Paging.cs" />
-    <Compile Include="v201710\Predicate.cs" />
-    <Compile Include="v201710\ReportDefinition.cs" />
+    <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <Content Include="app.config.transform" PackagePath="content" />
+    <Content Include="web.config.transform" PackagePath="content" />
   </ItemGroup>
+  <Target Name="CopyAppConfig" BeforeTargets="pack;Build">
+    <Copy SourceFiles="App.config" DestinationFiles="app.config.transform" />
+    <Copy SourceFiles="App.config" DestinationFiles="web.config.transform" />
+  </Target>
+  <!-- Exclude Properties until all projects are migrated to Core format -->
   <ItemGroup>
-    <EmbeddedResource Include="AdWordsErrorMessages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AdWordsErrorMessages.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Util\Shopping\ShoppingMessages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ShoppingMessages.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <Compile Remove="Properties\**" />
+    <Content Remove="Properties\**" />
+    <None Remove="Properties\**" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Target Name="AfterBuild" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Exec Command="sn -R $(OutDir)$(TargetFileName) $(ProjectDir)..\Common\AdsApi.snk" />
+  <PropertyGroup Condition="'$(TargetFramework)'=='net452'">
+    <DefineConstants>NET452</DefineConstants>
+  </PropertyGroup>
+  <Target Name="StrongName" AfterTargets="Build"
+    Condition="'$(OS)' != 'Windows_NT' AND $(Configuration) == 'Release' AND '$(TargetFramework)' != ''">
+    <Exec Command="sn -R $(OutputPath)$(AssemblyName).dll $(ProjectDir)..\Common\AdsApi.snk" />
   </Target>
 </Project>

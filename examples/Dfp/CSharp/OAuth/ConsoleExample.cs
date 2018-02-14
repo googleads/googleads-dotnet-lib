@@ -13,8 +13,8 @@
 // limitations under the License.
 
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.Util.v201702;
-using Google.Api.Ads.Dfp.v201702;
+using Google.Api.Ads.Dfp.Util.v201802;
+using Google.Api.Ads.Dfp.v201802;
 using Google.Api.Ads.Common.Lib;
 
 using System;
@@ -68,7 +68,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.OAuth {
       }
 
       // Get the UserService.
-      UserService userService = (UserService)user.GetService(DfpService.v201702.UserService);
+      UserService userService = (UserService)user.GetService(DfpService.v201802.UserService);
 
       // Create a Statement to get all users.
       StatementBuilder statementBuilder = new StatementBuilder()

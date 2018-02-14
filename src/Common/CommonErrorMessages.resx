@@ -125,6 +125,10 @@
     <value>Required key 'client_email' is missing in JSON secrets file.</value>
     <comment>Used by AppConfigBase class when trying to load various settings from the JSON secrets file when using OAuth2 service account flow. Thrown if client_email key is missing in the JSON file.</comment>
   </data>
+  <data name="ConfigSettingParseError" xml:space="preserve">
+    <value>Failed to parse value for setting name '{0}'. Value provided: '{1}'.</value>
+    <comment>Used when a ConfigSetting cannot parse a value.</comment>
+  </data>
   <data name="EmailCannotBeNull" xml:space="preserve">
     <value>Email cannot be null</value>
     <comment>Used by AuthTokenCache when an empty email is passed to it.</comment>
@@ -140,6 +144,10 @@
   <data name="InvalidStageForSoapMessage" xml:space="preserve">
     <value>Invalid stage for Soap message.</value>
     <comment>Used for ArgumentException by TraceExtension.ProcessMessage if message parameter has an invalid value for Stage field.</comment>
+  </data>
+  <data name="MalformedSoap" xml:space="preserve">
+    <value>Failed to parse SOAP Document. Underlying error: {0}</value>
+    <comment>Used for errors parsing SOAP Documents.</comment>
   </data>
   <data name="MissingFactoryType" xml:space="preserve">
     <value>Could not locate factoryType field in Type {0}</value>

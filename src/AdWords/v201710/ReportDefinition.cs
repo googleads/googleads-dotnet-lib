@@ -17,11 +17,12 @@
 namespace Google.Api.Ads.AdWords.v201710 {
 
   using Google.Api.Ads.AdWords.Util.Reports;
+  using System;
   using System.ComponentModel;
+  using System.Linq;
 
   [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "2.0.50727.1432")]
   [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201710")]
   public partial class ReportDefinition : IReportDefinition {
@@ -139,6 +140,47 @@ namespace Google.Api.Ads.AdWords.v201710 {
     public string creationTime {
       get { return this.creationTimeField; }
       set { this.creationTimeField = value; }
+    }
+
+    /// <summary>
+    /// Gets the DURING clause for AWQL query.
+    /// </summary>
+    /// <returns>The DURING clause for AWQL query.</returns>
+    public string GetDuringClause() {
+      if (!dateRangeTypeFieldSpecified) {
+        return string.Empty;
+      }
+      if (dateRangeType == ReportDefinitionDateRangeType.CUSTOM_DATE) {
+        return string.Format("DURING {0}, {1}", this.selector.dateRange.min,
+            this.selector.dateRange.max);
+      } else {
+        return string.Format("DURING {0}",dateRangeType);
+      }
+    }
+
+    /// <summary>
+    /// Gets the FROM clause for AWQL query.
+    /// </summary>
+    /// <returns>The FROM clause for AWQL query.</returns>
+    private string GetFromClause() {
+      return string.Format("FROM {0}", reportType);
+    }
+
+    /// <summary>
+    /// Converts this object into an AWQL query.
+    /// </summary>
+    /// <returns>The AWQL query.</returns>
+    internal string ToQuery() {
+      if (!reportTypeFieldSpecified) {
+        throw new System.ApplicationException("Report type is not specified.");
+      }
+      string[] parts = new string[] {
+        selector.GetSelectClause(),
+        GetFromClause(),
+        selector.GetWhereClause(),
+        GetDuringClause()
+      }.Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
+      return string.Join<string>(" ", parts);
     }
   }
 

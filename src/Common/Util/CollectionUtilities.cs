@@ -46,5 +46,18 @@ namespace Google.Api.Ads.Common.Util {
       T value;
       return dictionary.TryGetValue(key, out value) ? value : defaultValue;
     }
+
+    /// <summary>
+    /// Expands an array and adds a value to it.
+    /// </summary>
+    /// <typeparam name="T">Type of the array.</typeparam>
+    /// <param name="oldArray">The old array.</param>
+    /// <param name="newValue">The new value.</param>
+    /// <returns>The expanded array.</returns>
+    public static T[] AddValueToArray<T>(T[] oldArray, T newValue) {
+      List<T> retval = oldArray == null? new List<T>() : new List<T>(oldArray);
+      retval.Add(newValue);
+      return retval.ToArray();
+    }
   }
 }

@@ -95,7 +95,11 @@ namespace Google.Api.Ads.Dfp.Lib {
         ErrorType = dfpapiSignature.ServiceType.Assembly.GetType(
           dfpapiSignature.ServiceType.Namespace + ".ApiException"),
       });
+#if NET452
       serviceEndpoint.Behaviors.Add(inspectorBehavior);
+#else
+      serviceEndpoint.EndpointBehaviors.Add(inspectorBehavior);
+#endif
 
       if (dfpConfig.Proxy != null) {
         service.Proxy = dfpConfig.Proxy;

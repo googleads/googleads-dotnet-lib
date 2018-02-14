@@ -43,7 +43,11 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       BasicHttpBinding binding = new BasicHttpBinding();
       service = new MockAdsSoapClient<IMockAdsService>(binding, endpoint);
       behavior = new AdsServiceInspectorBehavior();
+#if NET452
       service.Endpoint.Behaviors.Add(behavior);
+#else
+      service.Endpoint.EndpointBehaviors.Add(behavior);
+#endif
     }
 
     /// <summary>

@@ -1,121 +1,63 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <!-- nupkg properties -->
+   <PropertyGroup>
+    <Title>Google's DoubleClick for Publishers API Dotnet Client Library</Title>
+    <PackageId>Google.Dfp</PackageId>
+    <Version>23.0.0</Version>
+    <Description>This library provides you with functionality to access the Google's DoubleClick for Publishers API.</Description>
+    <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
+    <PackageTags>DFP Google</PackageTags>
+    <Copyright>Copyright 2011, Google Inc. All Rights Reserved.</Copyright>
+    <Authors>https://github.com/AnashOommen, https://github.com/ChristopherSeeley, https://github.com/jimper</Authors>
+    <PackageIconUrl>https://www.gstatic.com/images/branding/product/1x/google_developers_64dp.png</PackageIconUrl>
+    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/googleads/googleads-dotnet-lib</PackageProjectUrl>
+    <Company>Google</Company>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/googleads/googleads-dotnet-lib</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  <!-- build properties -->
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{CE15CE8A-532B-49DA-8CF7-2BFCDEE845DB}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Google.Api.Ads.Dfp</RootNamespace>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <AssemblyName>Google.Dfp</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
-    <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <AssemblyDelaySign>true</AssemblyDelaySign>
+    <RootNamespace>Google.Api.Ads.Dfp</RootNamespace>
+    <PublicSign Condition="'$(OS)' != 'Windows_NT'">true</PublicSign>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\Common\AdsApi.snk</AssemblyOriginatorKeyFile>
+    <DebugType>pdbonly</DebugType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NodaTime">
-      <HintPath>..\..\lib\NodaTime\NodaTime.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Runtime.Serialization" />
+    <PackageReference Include="NodaTime" Version="2.2.0" />
+    <PackageReference Include="Google.Ads.Common" Version="9.0.0" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.4.0" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Headers\DfpSoapHeader.cs" />
-    <Compile Include="Lib\DfpAuthorizationMethod.cs" />
-    <Compile Include="Util\v201711\DateTimeUtilities.cs" />
-    <Compile Include="Util\v201711\PqlUtilities.cs" />
-    <Compile Include="Util\v201711\StatementBuilder.cs" />
-    <Compile Include="Util\v201711\ReportUtilities.cs" />
-    <Compile Include="Util\v201708\DateTimeUtilities.cs" />
-    <Compile Include="Util\v201708\PqlUtilities.cs" />
-    <Compile Include="Util\v201708\StatementBuilder.cs" />
-    <Compile Include="Util\v201708\ReportUtilities.cs" />
-    <Compile Include="Util\v201705\DateTimeUtilities.cs" />
-    <Compile Include="Util\v201705\PqlUtilities.cs" />
-    <Compile Include="Util\v201705\StatementBuilder.cs" />
-    <Compile Include="Util\v201705\ReportUtilities.cs" />
-    <Compile Include="Util\v201702\DateTimeUtilities.cs" />
-    <Compile Include="Util\v201702\PqlUtilities.cs" />
-    <Compile Include="Util\v201702\StatementBuilder.cs" />
-    <Compile Include="Util\v201702\ReportUtilities.cs" />
-    <Compile Include="DfpErrorMessages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DfpErrorMessages.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Lib\DfpTraceListener.cs" />
-    <Compile Include="Lib\DfpException.cs" />
-    <Compile Include="Headers\ResponseHeader.cs" />
-    <Compile Include="Lib\DfpServiceSignature.cs" />
-    <Compile Include="Lib\DfpApiException.cs" />
-    <Compile Include="Lib\DfpSoapClient.cs" />
-    <Compile Include="Lib\DfpSoapHeaderInspector.cs" />
-    <Compile Include="Lib\DfpServiceFactory.cs" />
-    <Compile Include="Lib\DfpAppConfig.cs" />
-    <Compile Include="Lib\DfpService.cs" />
-    <Compile Include="Lib\DfpUser.cs" />
-    <Compile Include="Properties\Properties.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Headers\RequestHeader.cs" />
-    <Compile Include="v201702\DfpApi.cs" />
-    <Compile Include="v201702\DfpServiceV201702.cs" />
-    <Compile Include="v201705\DfpApi.cs" />
-    <Compile Include="v201705\DfpServiceV201705.cs" />
-    <Compile Include="v201708\DfpApi.cs" />
-    <Compile Include="v201708\DfpServiceV201708.cs" />
-    <Compile Include="v201711\DfpApi.cs" />
-    <Compile Include="v201711\DfpServiceV201711.cs" />
+    <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
+    <Content Include="app.config.transform" PackagePath="content" />
+    <Content Include="web.config.transform" PackagePath="content" />
   </ItemGroup>
+  <Target Name="CopyAppConfig" BeforeTargets="pack;Build">
+    <Copy SourceFiles="App.config" DestinationFiles="app.config.transform" />
+    <Copy SourceFiles="App.config" DestinationFiles="web.config.transform" />
+  </Target>
+  <!-- Exclude Properties until all solution projects are migrated to Core format -->
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <Compile Remove="Properties\**" />
+    <Content Remove="Properties\**" />
+    <None Remove="Properties\**" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="DfpErrorMessages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>DfpErrorMessages.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Target Name="AfterBuild" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Exec Command="sn -R $(OutDir)$(TargetFileName) $(ProjectDir)..\Common\AdsApi.snk" />
+  <PropertyGroup Condition="'$(TargetFramework)'=='net452'">
+    <DefineConstants>NET452</DefineConstants>
+  </PropertyGroup>
+  <Target Name="StrongName" AfterTargets="Build"
+    Condition="'$(OS)' != 'Windows_NT' AND $(Configuration) == 'Release' AND '$(TargetFramework)' != ''">
+    <Exec Command="sn -R $(OutputPath)$(AssemblyName).dll $(ProjectDir)..\Common\AdsApi.snk" />
   </Target>
 </Project>

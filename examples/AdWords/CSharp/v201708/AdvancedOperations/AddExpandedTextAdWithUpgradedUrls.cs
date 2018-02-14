@@ -93,17 +93,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201708 {
         // Specify a list of final URLs. This field cannot be set if URL field is
         // set. This may be specified at ad, criterion and feed item levels.
         expandedTextAd.finalUrls = new string[] {
-        "http://www.example.com/cruise/space/",
-        "http://www.example.com/locations/mars/"
-      };
+          "http://www.example.com/cruise/space/",
+          "http://www.example.com/locations/mars/"
+        };
 
         // Specify a list of final mobile URLs. This field cannot be set if URL
         // field is set, or finalUrls is unset. This may be specified at ad,
         // criterion and feed item levels.
         expandedTextAd.finalMobileUrls = new string[] {
-        "http://mobile.example.com/cruise/space/",
-        "http://mobile.example.com/locations/mars/"
-      };
+          "http://mobile.example.com/cruise/space/",
+          "http://mobile.example.com/locations/mars/"
+        };
 
         AdGroupAd adGroupAd = new AdGroupAd();
         adGroupAd.adGroupId = adGroupId;

@@ -1,4 +1,4 @@
-// Copyright 2016, Google Inc. All Rights Reserved.
+// Copyright 2017, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,8 +15,6 @@
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201708;
 using Google.Api.Ads.Common.Util;
-
-using NUnit.Framework;
 
 using System;
 using System.Collections.Generic;
@@ -45,6 +43,11 @@ namespace Google.Api.Ads.AdWords.Tests.v201708 {
     /// </summary>
     private const long MAX_RETRIES = 5;
 
+    /// <summary>
+    /// The default budget to be used when creating campaigns.
+    /// </summary>
+    private const long DEFAULT_BUDGET = 500000;
+
     public long CreateBudget(AdWordsUser user) {
       BudgetService budgetService =
           (BudgetService) user.GetService(AdWordsService.v201708.BudgetService);
@@ -55,7 +58,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201708 {
           "yyyy-MM-dd HH:mm:ss.ffffff");
       budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
       budget.amount = new Money();
-      budget.amount.microAmount = 500000;
+      budget.amount.microAmount = DEFAULT_BUDGET;
       budget.isExplicitlyShared = false;
 
       BudgetOperation budgetOperation = new BudgetOperation();

@@ -137,6 +137,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
                 operationsToBeRemoved.Add(allOperations[index]);
               }
             }
+
             // Remove all operations that aren't exemptable.
             foreach (AdGroupAdOperation operation in operationsToBeRemoved) {
               allOperations.Remove(operation);

@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Web.Script.Serialization;
+using Newtonsoft.Json;
 
 
 namespace Google.Api.Ads.Common.Logging {
@@ -35,11 +35,10 @@ namespace Google.Api.Ads.Common.Logging {
     /// The formatted message body.
     /// </returns>
     public override string MaskContents(string body, ISet<string> keysToMask) {
-      JavaScriptSerializer serializer = new JavaScriptSerializer();
       Dictionary<string, string> jsonDict = null;
 
       try {
-        jsonDict = serializer.Deserialize<Dictionary<string, string>>(body);
+        jsonDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(body);
       } catch {
         // This block could be hit if
         // - ArgumentException is thrown. This happens if the body being passed
@@ -55,7 +54,7 @@ namespace Google.Api.Ads.Common.Logging {
             jsonDict[key] = MASK_PATTERN;
           }
         }
-        return serializer.Serialize(jsonDict);
+        return JsonConvert.SerializeObject(jsonDict);
       } else {
         return body;
       }

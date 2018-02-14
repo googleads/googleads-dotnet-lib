@@ -2040,9 +2040,10 @@ namespace Google.Api.Ads.AdWords.v201705 {
 
     /// <summary>Type of media object. Required when using <a
     /// href='MediaService#upload'>MediaService#upload</a> to upload a new media file.
-    /// <span class="constraint Selectable">This field can be selected using the value
-    /// "Type".</span> <span class="constraint ReadOnly">This field is read only and
-    /// will be ignored when sent to the API for the following <a
+    /// MEDIA_BUNDLE, ICON, IMAGE, and DYNAMIC_IMAGE are the supported MediaTypes to
+    /// upload. <span class="constraint Selectable">This field can be selected using the
+    /// value "Type".</span> <span class="constraint ReadOnly">This field is read only
+    /// and will be ignored when sent to the API for the following <a
     /// href='Operator'>Operator</a>s: REMOVE and SET.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
@@ -26990,13 +26991,15 @@ namespace Google.Api.Ads.AdWords.v201705 {
       }
     }
 
-    /// <summary>Amount of budget in the local currency for the account. <span class="constraint
-    /// Selectable">This field can be selected using the value "Amount".</span><span
-    /// class="constraint Filterable">This field can be filtered on.</span> <span
-    /// class="constraint InRange">This field must be greater than or equal to 1.</span>
-    /// <span class="constraint ReadOnly">This field is read only and will be ignored
-    /// when sent to the API for the following <a href='Operator'>Operator</a>s:
-    /// REMOVE.</span>
+    /// <summary>Amount of budget in the local currency for the account. This value represents an
+    /// average daily budget amount; the actual daily costs might vary. See <a
+    /// href="https://support.google.com/adwords/answer/1704443">Charges and your daily
+    /// budget</a>. <span class="constraint Selectable">This field can be selected using
+    /// the value "Amount".</span><span class="constraint Filterable">This field can be
+    /// filtered on.</span> <span class="constraint InRange">This field must be greater
+    /// than or equal to 1.</span> <span class="constraint ReadOnly">This field is read
+    /// only and will be ignored when sent to the API for the following <a
+    /// href='Operator'>Operator</a>s: REMOVE.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
     public Money amount {
@@ -27824,8 +27827,8 @@ namespace Google.Api.Ads.AdWords.v201705 {
     /// conversion types to optimize this campaign towards. <span class="constraint
     /// Selectable">This field can be selected using the value
     /// "SelectiveOptimization".</span> <span class="constraint CampaignType">This field
-    /// may only be set for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
-    /// <span class="constraint CampaignType">This field may not be set.</span>
+    /// may only be set for campaign channel type MULTI_CHANNEL.</span> <span
+    /// class="constraint CampaignType">This field may not be set.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 23)]
     public SelectiveOptimization selectiveOptimization {
@@ -34622,7 +34625,7 @@ namespace Google.Api.Ads.AdWords.v201705 {
     /// are ignored.</p> <p>This field is only editable for Adwords Conversions and
     /// Upload Conversions, but has a system defined default for other types of
     /// conversions. The allowed range of values for this window depends on the type of
-    /// conversion and may expand, but 7-90 days is the currently-allowed range. <span
+    /// conversion and may expand, but 1-90 days is the currently allowed range. <span
     /// class="constraint Selectable">This field can be selected using the value
     /// "CtcLookbackWindow".</span><span class="constraint Filterable">This field can be
     /// filtered on.</span></p>
@@ -63209,7 +63212,8 @@ namespace Google.Api.Ads.AdWords.v201705 {
       }
     }
 
-    /// <summary>Mobile device ID (advertising ID/IDFA).
+    /// <summary>Mobile device ID (advertising ID/IDFA). Accessible to whitelisted customers
+    /// only.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
     public string mobileId {
@@ -63221,7 +63225,7 @@ namespace Google.Api.Ads.AdWords.v201705 {
       }
     }
 
-    /// <summary>Address info. Accessible to whitelisted customers only.
+    /// <summary>Address info.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
     public AddressInfo addressInfo {
@@ -78696,7 +78700,7 @@ namespace Google.Api.Ads.AdWords.v201705 {
     /// <span class="constraint Selectable">This field can be selected using the value
     /// "PoNumber".</span><span class="constraint Filterable">This field can be filtered
     /// on.</span> <span class="constraint StringLength">The length of this string
-    /// should be between 0 and 30, inclusive, (trimmed).</span>
+    /// should be between 0 and 80, inclusive, (trimmed).</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
     public string poNumber {
@@ -78713,7 +78717,7 @@ namespace Google.Api.Ads.AdWords.v201705 {
     /// the monthly invoices. <span class="constraint Selectable">This field can be
     /// selected using the value "BudgetOrderName".</span><span class="constraint
     /// Filterable">This field can be filtered on.</span> <span class="constraint
-    /// StringLength">The length of this string should be between 0 and 40, inclusive,
+    /// StringLength">The length of this string should be between 0 and 150, inclusive,
     /// (trimmed).</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 4)]

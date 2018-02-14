@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.Common.Config;
 using Google.Api.Ads.Common.Lib;
 
 using System;
@@ -32,6 +33,11 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
 
     private const string TEST_OAUTH2_SCOPE = "TEST_OAUTH2_SCOPE";
 
+    public const string TEST_DEFAULT_VALUE = "TEST_DEFAULT_VALUE";
+
+    private ConfigSetting<string> settingWithNonEmptyDefaultValue = new ConfigSetting<string>(
+        "SettingWithNonEmptyDefaultValue", TEST_DEFAULT_VALUE);
+
     /// <summary>
     /// Default constuctor.
     /// </summary>
@@ -45,6 +51,11 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
       get {
         return TEST_TIMESTAMP;
       }
+    }
+
+    public string SettingWithNonEmptyDefaultValue {
+      get => settingWithNonEmptyDefaultValue.Value;
+      set => SetPropertyAndNotify(settingWithNonEmptyDefaultValue, value);
     }
 
     /// <summary>
@@ -66,6 +77,7 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     /// </remarks>
     public void MockReadSettings(Dictionary<string, string> dictSettings) {
       base.ReadSettings(dictSettings);
+      ReadSetting(dictSettings, settingWithNonEmptyDefaultValue);
     }
 
     /// <summary>

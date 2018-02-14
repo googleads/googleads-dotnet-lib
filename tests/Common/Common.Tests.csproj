@@ -1,127 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7AA5533E-FED0-4E0C-919C-19E7D7EE2FF6}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Google.Api.Ads.Common.Tests</RootNamespace>
+    <TargetFrameworks>netcoreapp2.0;net452</TargetFrameworks>
     <AssemblyName>Google.Ads.Common.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <RootNamespace>Google.Api.Ads.Common.Tests</RootNamespace>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <AssemblyDelaySign>true</AssemblyDelaySign>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
+    <PublicSign Condition="'$(OS)' != 'Windows_NT'">true</PublicSign>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(ProjectDir)..\..\src\Common\AdsApi.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="NUnit" Version="3.9.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.9.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)'=='net452'">
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.Xml" />
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\lib\NUnit\nunit.framework.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lib\AdsOAuthExceptionTests.cs" />
-    <Compile Include="Lib\AdsExceptionTests.cs" />
-    <Compile Include="Lib\AdsSoapClientTests.cs" />
-    <Compile Include="Lib\AppConfigBaseTests.cs" />
-    <Compile Include="HttpMessage.cs" />
-    <Compile Include="Lib\GzipHeaderInspectorTests.cs" />
-    <Compile Include="Lib\OAuth2JwtClaimsetTests.cs" />
-    <Compile Include="Logging\SoapListenerInspectorTests.cs" />
-    <Compile Include="Logging\UrlEncodedBodyFormatterTests.cs" />
-    <Compile Include="Logging\KeyValueMessageFormatterTests.cs" />
-    <Compile Include="Logging\TraceHelperTests.cs" />
-    <Compile Include="Logging\SoapTraceFormatterTests.cs" />
-    <Compile Include="Logging\DefaultBodyFormatterTests.cs" />
-    <Compile Include="Logging\JsonBodyFormatterTests.cs" />
-    <Compile Include="Mocks\IMockAdsService.cs" />
-    <Compile Include="Mocks\MockAdsService.cs" />
-    <Compile Include="Mocks\MockAdsSoapClient.cs" />
-    <Compile Include="Mocks\MockDateTimeProvider.cs" />
-    <Compile Include="Mocks\MockTraceWriter.cs" />
-    <Compile Include="MockWebRequest.cs" />
-    <Compile Include="MockWebResponse.cs" />
-    <Compile Include="Logging\TraceListenerTests.cs" />
-    <Compile Include="Lib\ServiceFactoryTests.cs" />
-    <Compile Include="Lib\ServiceSignatureTests.cs" />
-    <Compile Include="Lib\OAuth2ProviderForApplicationsTests.cs" />
-    <Compile Include="Lib\OAuth2ProviderForServiceAccountsTests.cs" />
-    <Compile Include="OAuth2RequestInterceptor.cs" />
-    <Compile Include="Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="StubIntegrityTestHelper.cs" />
-    <Compile Include="TestUtils.cs" />
-    <Compile Include="Util\CollectionUtilitiesTest.cs" />
-    <Compile Include="Util\DeprecationUtilitiesTest.cs" />
-    <Compile Include="Util\MediaUtilitiesTests.cs" />
-    <Compile Include="Util\CsvFileTests.cs" />
-    <Compile Include="Util\Reports\ReportResponseTests.cs" />
-    <Compile Include="Util\TemporaryIdGeneratorTests.cs" />
-    <Compile Include="Util\TraceUtilitiesTest.cs" />
-    <Compile Include="Util\XmlUtilitiesTest.cs" />
-    <Compile Include="WebRequestInterceptor.cs" />
-    <Compile Include="Mocks\MockAdsClient.cs" />
-    <Compile Include="Mocks\MockAdsException.cs" />
-    <Compile Include="Mocks\MockAdsUser.cs" />
-    <Compile Include="Mocks\MockAppConfig.cs" />
-    <Compile Include="Mocks\MockServiceFactory.cs" />
-    <Compile Include="Mocks\MockServiceSignature.cs" />
-    <Compile Include="Mocks\MockTraceListener.cs" />
+    <ProjectReference Include="..\..\src\Common\Common.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Common\Common.csproj">
-      <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="AfterBuild" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Exec Command="sn -R $(OutDir)$(TargetFileName) $(ProjectDir)..\..\src\Common\AdsApi.snk" />
+  <PropertyGroup Condition="'$(TargetFramework)'=='net452'">
+    <DefineConstants>NET452</DefineConstants>
+  </PropertyGroup>
+  <Target Name="StrongName" AfterTargets="Build"
+    Condition="'$(OS)' != 'Windows_NT' AND $(Configuration) == 'Release' AND '$(TargetFramework)' != ''">
+    <Exec Command="sn -R $(OutputPath)$(AssemblyName).dll $(ProjectDir)..\..\src\Common\AdsApi.snk" />
   </Target>
 </Project>
+

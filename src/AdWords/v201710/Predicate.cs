@@ -15,6 +15,7 @@
 using Google.Api.Ads.Common.Logging;
 
 using System.Collections.Generic;
+using System.Text;
 
 namespace Google.Api.Ads.AdWords.v201710 {
 
@@ -31,7 +32,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
         AdsFeatureUsageRegistry.Features.SelectorBuilder;
 
     /// <summary>
-    /// The registry for saving feature usage information..
+    /// The registry for saving feature usage information.
     /// </summary>
     private static readonly AdsFeatureUsageRegistry featureUsageRegistry =
         AdsFeatureUsageRegistry.Instance;
@@ -48,7 +49,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
     private static Predicate WithCondition(string field, PredicateOperator @operator,
         string[] values) {
       // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);;
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       return new Predicate() {
         field = field,
@@ -314,6 +315,84 @@ namespace Google.Api.Ads.AdWords.v201710 {
     ///  provided in <paramref name="values"/>.</returns>
     public static Predicate ContainsNone(string field, string[] values) {
       return WithCondition(field, PredicateOperator.CONTAINS_NONE, values);
+    }
+
+    /// <summary>
+    /// Determines whether the operator is multi-valued or not.
+    /// </summary>
+    /// <returns>
+    ///   <c>true</c> if the operator is multi-valued; otherwise, <c>false</c>.
+    /// </returns>
+    private bool IsMultiValueOperator() {
+      switch (@operator) {
+        case PredicateOperator.EQUALS:
+        case PredicateOperator.NOT_EQUALS:
+        case PredicateOperator.GREATER_THAN:
+        case PredicateOperator.GREATER_THAN_EQUALS:
+        case PredicateOperator.LESS_THAN:
+        case PredicateOperator.LESS_THAN_EQUALS:
+        case PredicateOperator.STARTS_WITH:
+        case PredicateOperator.STARTS_WITH_IGNORE_CASE:
+        case PredicateOperator.CONTAINS:
+        case PredicateOperator.CONTAINS_IGNORE_CASE:
+        case PredicateOperator.DOES_NOT_CONTAIN:
+        case PredicateOperator.DOES_NOT_CONTAIN_IGNORE_CASE:
+          return false;
+
+        case PredicateOperator.IN:
+        case PredicateOperator.NOT_IN:
+        case PredicateOperator.CONTAINS_ANY:
+        case PredicateOperator.CONTAINS_ALL:
+        case PredicateOperator.CONTAINS_NONE:
+        default:
+          return true;
+      }
+    }
+
+    /// <summary>
+    /// Gets the operator value when used in AWQL.
+    /// </summary>
+    /// <returns>The operator query.</returns>
+    private string GetOperatorForQuery() {
+      switch (@operator) {
+        case PredicateOperator.EQUALS:
+          return "=";
+
+        case PredicateOperator.NOT_EQUALS:
+          return "!=";
+
+        case PredicateOperator.GREATER_THAN:
+          return ">";
+
+        case PredicateOperator.GREATER_THAN_EQUALS:
+          return ">=";
+
+        case PredicateOperator.LESS_THAN:
+          return "<";
+
+        case PredicateOperator.LESS_THAN_EQUALS:
+          return "<=";
+
+        default:
+          return @operator.ToString();
+      }
+    }
+
+    /// <summary>
+    /// Returns a <see cref="string" /> that represents this instance.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="string" /> that represents this instance.
+    /// </returns>
+    public override string ToString() {
+      StringBuilder builder = new StringBuilder();
+      builder.AppendFormat("{0} {1}", field, GetOperatorForQuery());
+      if (IsMultiValueOperator()) {
+        builder.AppendFormat(" [{0}]", string.Join(", ", values));
+      } else {
+        builder.AppendFormat(" {0}", values[0]);
+      }
+      return builder.ToString();
     }
   }
 }

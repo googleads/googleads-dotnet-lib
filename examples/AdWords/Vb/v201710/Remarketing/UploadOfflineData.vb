@@ -12,10 +12,10 @@
 ' See the License for the specific language governing permissions and
 ' limitations under the License.
 
+Imports System.Security.Cryptography
 Imports System.Text
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201710
-Imports Org.BouncyCastle.Crypto.Digests
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
 
@@ -25,7 +25,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
   Public Class UploadOfflineData
     Inherits ExampleBase
 
-    Private Shared ReadOnly digest As New Sha256Digest()
+    Private digest As SHA256 = SHA256.Create()
 
     ''' <summary>
     ''' Main method, to run this code example as a standalone application.
@@ -41,10 +41,28 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
       ' Insert email addresses below for creating user identifiers.
       Dim emailAddresses As String() = {"EMAIL_ADDRESS_1", "EMAIL_ADDRESS_2"}
 
+      ' Insert advertiser upload time. // For times, use the format yyyyMMdd HHmmss tz. For
+      ' more details on formats, see:
+      ' https//developers.google.com/adwords/api/docs/appendix/codes-formats#date-And-time-formats
+      ' For time zones, see:
+      ' https//developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids
+      Dim advertiserUploadTime As String = "INSERT_ADVERTISER_UPLOAD_TIME"
+
+      ' Insert bridge map version ID.
+      Dim bridgeMapVersionId As String = "INSERT_BRIDGEMAP_VERSION_ID"
+
+      ' Specify the upload type (STORE_SALES_UPLOAD_FIRST_PARTY or STORE_SALES_UPLOAD_THIRD_PARTY)
+      Dim uploadType As OfflineDataUploadType = DirectCast([Enum].Parse(
+          GetType(OfflineDataUploadType), "INSERT_UPLOAD_TYPE"), OfflineDataUploadType)
+
+      ' Insert partner ID.
+      Dim partnerId As Integer = Integer.Parse("INSERT_PARTNER_ID")
+
       Dim codeExample As New UploadOfflineData
       Console.WriteLine(codeExample.Description)
       Try
-        codeExample.Run(New AdWordsUser, conversionName, externalUploadId, emailAddresses)
+        codeExample.Run(New AdWordsUser, conversionName, externalUploadId, emailAddresses,
+            advertiserUploadTime, bridgeMapVersionId, uploadType, partnerId)
       Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
@@ -69,8 +87,18 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
     ''' <param name="externalUploadId">The external upload ID can be any number that you use to
     ''' keep track of your uploads.</param>
     ''' <param name="emailAddresses">The email addresses for creating user identifiers.</param>
+    ''' <param name="advertiserUploadTime">The advertiser upload time. For times, use the format
+    ''' yyyyMMdd HHmmss tz. For more details on formats, see
+    ''' https//developers.google.com/adwords/api/docs/appendix/codes-formats#date-And-time-formats
+    ''' For time zones, see:
+    ''' https//developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids</param>
+    ''' <param name="bridgeMapVersionId">The version ID of the bridge map.</param>
+    ''' <param name="uploadType">The offline data upload type.</param>
+    ''' <param name="partnerId">The partner ID</param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal conversionName As String,
-        ByVal externalUploadId As Long, ByVal emailAddresses As String())
+        ByVal externalUploadId As Long, ByVal emailAddresses As String(),
+        ByVal advertiserUploadTime As String, ByVal bridgeMapVersionId As String,
+        ByVal uploadType As OfflineDataUploadType, ByVal partnerId As Integer)
       Using offlineDataUploadService As OfflineDataUploadService = CType(user.GetService(
           AdWordsService.v201710.OfflineDataUploadService),
               OfflineDataUploadService)
@@ -109,8 +137,31 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
         offlineDataUpload.externalUploadId = externalUploadId
         offlineDataUpload.offlineDataList = New OfflineData() {offlineData1, offlineData2}
 
-        ' Optional: You can set the type of this upload.
-        ' offlineDataUpload.uploadType = OfflineDataUploadType.STORE_SALES_UPLOAD_FIRST_PARTY
+        ' Set the type And metadata of this upload.
+        offlineDataUpload.uploadType = uploadType
+        Dim uploadMetadata As New UploadMetadata()
+
+        Select Case uploadType
+          Case OfflineDataUploadType.STORE_SALES_UPLOAD_FIRST_PARTY
+            Dim firstPartyMetaData As New FirstPartyUploadMetadata()
+            firstPartyMetaData.loyaltyRate = 1
+            firstPartyMetaData.transactionUploadRate = 1
+            uploadMetadata.Item = firstPartyMetaData
+
+          Case OfflineDataUploadType.STORE_SALES_UPLOAD_THIRD_PARTY
+            Dim thirdPartyMetadata As New ThirdPartyUploadMetadata()
+            thirdPartyMetadata.loyaltyRate = 1.0
+            thirdPartyMetadata.transactionUploadRate = 1.0
+            thirdPartyMetadata.advertiserUploadTime = advertiserUploadTime
+            thirdPartyMetadata.validTransactionRate = 1.0
+            thirdPartyMetadata.partnerMatchRate = 1.0
+            thirdPartyMetadata.partnerUploadRate = 1.0
+            thirdPartyMetadata.bridgeMapVersionId = bridgeMapVersionId
+            thirdPartyMetadata.partnerId = partnerId
+            uploadMetadata.Item = thirdPartyMetadata
+        End Select
+
+        offlineDataUpload.uploadMetadata = uploadMetadata
 
         ' Create an offline data upload operation.
         Dim offlineDataUploadOperation As New OfflineDataUploadOperation()
@@ -169,7 +220,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
 
       Dim money As New Money()
       money.microAmount = transactionMicroAmount
-      Dim moneyWithCurrency As New MoneyWithCurrency()
+      Dim moneyWithCurrency As New RemarketingMoneyWithCurrency()
       moneyWithCurrency.money = money
       moneyWithCurrency.currencyCode = transactionCurrency
       storeSalesTransaction.transactionAmount = moneyWithCurrency
@@ -186,13 +237,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
     ''' <param name="digest">Provides the algorithm for SHA-256.</param>
     ''' <param name="value">The string value (e.g. an email address) to hash.</param>
     ''' <returns>The hashed value.</returns>
-    Private Shared Function ToSha256String(ByVal digest As GeneralDigest,
-        ByVal value As String) As String
-      Dim data As Byte() = Encoding.UTF8.GetBytes(value)
-      Dim digestBytes(digest.GetDigestSize()) As Byte
-      digest.BlockUpdate(data, 0, data.Length)
-      digest.DoFinal(digestBytes, 0)
-
+    Private Shared Function ToSha256String(ByVal digest As SHA256,
+                                           ByVal value As String) As String
+      Dim digestBytes As Byte() = digest.ComputeHash(Encoding.UTF8.GetBytes(value))
       ' Convert the byte array into an unhyphenated hexadecimal string.
       Return BitConverter.ToString(digestBytes).Replace("-", String.Empty)
     End Function
@@ -226,6 +273,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
     Private Shared Function ToNormalizedValue(ByVal value As String) As String
       Return value.Trim().ToLower()
     End Function
+
   End Class
 
 End Namespace

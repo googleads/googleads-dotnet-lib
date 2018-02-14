@@ -16,12 +16,12 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Util;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Web.Script.Serialization;
 using System.Xml;
 
 namespace Google.Api.Ads.AdWords.Util.BatchJob {
@@ -396,9 +396,8 @@ namespace Google.Api.Ads.AdWords.Util.BatchJob {
           // then called this method.
           string contents = MediaUtilities.GetStreamContentsAsString(
             response.GetResponseStream());
-          JavaScriptSerializer serializer = new JavaScriptSerializer();
           Dictionary<string, object> temp =
-              (Dictionary<string, object>) serializer.DeserializeObject(contents);
+              JsonConvert.DeserializeObject<Dictionary<string,object>>(contents);
           int.TryParse(temp["size"].ToString(), out retval);
           logEntry.LogResponse(GenerateResponseInfo(response, "", ""));
           logEntry.Flush();

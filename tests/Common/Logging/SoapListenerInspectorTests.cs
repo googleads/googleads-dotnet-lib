@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using Google.Api.Ads.Common.Logging;
@@ -49,7 +50,21 @@ namespace Google.Api.Ads.Common.Tests.Logging {
     /// <summary>
     /// The name of the service for testing purposes.
     /// </summary>
-    readonly string TestServiceName = "TestService";
+    const string TestServiceName = "TestService";
+
+    static readonly string ExpectedRequestXml = string.Format(
+        "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">{0}" +
+        "  <s:Body>{0}" +
+        "    <string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">request body</string>{0}" +
+        "  </s:Body>{0}" +
+        "</s:Envelope>", Environment.NewLine);
+
+    static readonly string ExpectedResponseXml = string.Format(
+        "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">{0}" +
+        "  <s:Body>{0}" +
+        "    <string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">response body</string>{0}" +
+        "  </s:Body>{0}" +
+        "</s:Envelope>", Environment.NewLine);
 
     /// <summary>
     /// Initialize this test class instance.
@@ -60,7 +75,9 @@ namespace Google.Api.Ads.Common.Tests.Logging {
       BasicHttpBinding binding = new BasicHttpBinding();
       this.channel = new MockAdsService(binding, endpoint).InnerChannel;
       this.request = Message.CreateMessage(TestMessageVersion, "", "request body");
+      this.request.Headers.Clear();
       this.response = Message.CreateMessage(TestMessageVersion, "", "response body");
+      this.response.Headers.Clear();
     }
 
     /// <summary>
@@ -97,7 +114,7 @@ namespace Google.Api.Ads.Common.Tests.Logging {
 
       Assert.AreEqual(requestProperties.Headers, listener.LastRequestInfo.Headers);
       Assert.AreEqual(requestProperties.Method, listener.LastRequestInfo.HttpMethod);
-      Assert.AreEqual(request.ToString(), listener.LastRequestInfo.Body);
+      Assert.AreEqual(ExpectedRequestXml, listener.LastRequestInfo.Body);
       Assert.AreEqual(TestServiceName, listener.LastRequestInfo.Service);
     }
 
@@ -120,7 +137,18 @@ namespace Google.Api.Ads.Common.Tests.Logging {
 
       Assert.AreEqual(responseProperties.Headers, listener.LastResponseInfo.Headers);
       Assert.AreEqual(responseProperties.StatusCode, listener.LastResponseInfo.StatusCode);
-      Assert.AreEqual(response.ToString(), listener.LastResponseInfo.Body);
+      Assert.AreEqual(ExpectedResponseXml, listener.LastResponseInfo.Body);
+    }
+
+    [Test]
+    public void TestInvalidXmlDoesNotThrow() {
+      MockAdsUser user = new MockAdsUser(new MockAppConfig());
+      MockTraceListener listener = (MockTraceListener)user.Listeners[0];
+      SoapListenerInspector inspector = new SoapListenerInspector(user, TestServiceName);
+
+      Message invalidXmlRequest = Message.CreateMessage(TestMessageVersion, "", "\u0003");
+      Assert.DoesNotThrow(() => inspector.BeforeSendRequest(ref invalidXmlRequest, channel));
+      Assert.DoesNotThrow(() => inspector.AfterReceiveReply(ref response, channel));
     }
   }
 }

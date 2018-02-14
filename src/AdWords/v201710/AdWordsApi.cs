@@ -2067,9 +2067,10 @@ namespace Google.Api.Ads.AdWords.v201710 {
 
     /// <summary>Type of media object. Required when using <a
     /// href='MediaService#upload'>MediaService#upload</a> to upload a new media file.
-    /// <span class="constraint Selectable">This field can be selected using the value
-    /// "Type".</span> <span class="constraint ReadOnly">This field is read only and
-    /// will be ignored when sent to the API for the following <a
+    /// MEDIA_BUNDLE, ICON, IMAGE, and DYNAMIC_IMAGE are the supported MediaTypes to
+    /// upload. <span class="constraint Selectable">This field can be selected using the
+    /// value "Type".</span> <span class="constraint ReadOnly">This field is read only
+    /// and will be ignored when sent to the API for the following <a
     /// href='Operator'>Operator</a>s: REMOVE and SET.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
@@ -4194,10 +4195,9 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
 
-    /// <summary>Indicates if this ad is automatically created by AdWords. <span
-    /// class="constraint Selectable">This field can be selected using the value
-    /// "Automated".</span><span class="constraint Filterable">This field can be
-    /// filtered on.</span>
+    /// <summary>Indicates if this ad was added by AdWords. <span class="constraint
+    /// Selectable">This field can be selected using the value "Automated".</span><span
+    /// class="constraint Filterable">This field can be filtered on.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 9)]
     public bool automated {
@@ -23317,6 +23317,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
   [System.ComponentModel.DesignerCategoryAttribute("code")]
   [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201710")]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(MoneyWithCurrency))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(RemarketingMoneyWithCurrency))]
   public abstract partial class ComparableValue {
     private string comparableValueTypeField;
 
@@ -27572,13 +27573,15 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
 
-    /// <summary>Amount of budget in the local currency for the account. <span class="constraint
-    /// Selectable">This field can be selected using the value "Amount".</span><span
-    /// class="constraint Filterable">This field can be filtered on.</span> <span
-    /// class="constraint InRange">This field must be greater than or equal to 1.</span>
-    /// <span class="constraint ReadOnly">This field is read only and will be ignored
-    /// when sent to the API for the following <a href='Operator'>Operator</a>s:
-    /// REMOVE.</span>
+    /// <summary>Amount of budget in the local currency for the account. This value represents an
+    /// average daily budget amount; the actual daily costs might vary. See <a
+    /// href="https://support.google.com/adwords/answer/1704443">Charges and your daily
+    /// budget</a>. <span class="constraint Selectable">This field can be selected using
+    /// the value "Amount".</span><span class="constraint Filterable">This field can be
+    /// filtered on.</span> <span class="constraint InRange">This field must be greater
+    /// than or equal to 1.</span> <span class="constraint ReadOnly">This field is read
+    /// only and will be ignored when sent to the API for the following <a
+    /// href='Operator'>Operator</a>s: REMOVE.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
     public Money amount {
@@ -28406,8 +28409,8 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// conversion types to optimize this campaign towards. <span class="constraint
     /// Selectable">This field can be selected using the value
     /// "SelectiveOptimization".</span> <span class="constraint CampaignType">This field
-    /// may only be set for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
-    /// <span class="constraint CampaignType">This field may not be set.</span>
+    /// may only be set for campaign channel type MULTI_CHANNEL.</span> <span
+    /// class="constraint CampaignType">This field may not be set.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 23)]
     public SelectiveOptimization selectiveOptimization {
@@ -35225,7 +35228,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// are ignored.</p> <p>This field is only editable for Adwords Conversions and
     /// Upload Conversions, but has a system defined default for other types of
     /// conversions. The allowed range of values for this window depends on the type of
-    /// conversion and may expand, but 7-90 days is the currently-allowed range. <span
+    /// conversion and may expand, but 1-90 days is the currently allowed range. <span
     /// class="constraint Selectable">This field can be selected using the value
     /// "CtcLookbackWindow".</span><span class="constraint Filterable">This field can be
     /// filtered on.</span></p>
@@ -54151,6 +54154,92 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
   }
+  /// <summary>Represents a money amount with currency.
+  /// </summary>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/rm/v201710")]
+  public partial class RemarketingMoneyWithCurrency : ComparableValue {
+    private Money moneyField;
+
+    private string currencyCodeField;
+
+    /// <summary>The amount of money. <span class="constraint InRange">This field must be greater
+    /// than or equal to 0.</span>
+    /// </summary>
+    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+    public Money money {
+      get {
+        return this.moneyField;
+      }
+      set {
+        this.moneyField = value;
+      }
+    }
+
+    /// <summary>Currency code. <span class="constraint StringLength">The length of this string
+    /// should be between 3 and 3, inclusive, (trimmed).</span>
+    /// </summary>
+    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+    public string currencyCode {
+      get {
+        return this.currencyCodeField;
+      }
+      set {
+        this.currencyCodeField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='RemarketingMoneyWithCurrency' /> class.
+    /// </summary>
+    public new class Fields : ComparableValue.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='RemarketingMoneyWithCurrency' />
+    /// class. </summary>
+    public new class SelectableFields : ComparableValue.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='RemarketingMoneyWithCurrency' />
+    /// class. </summary>
+    public new class FilterableFields : ComparableValue.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+  }
+
+
   /// <summary>Hashed user identifying information.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
@@ -54306,7 +54395,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
 
     private string transactionTimeField;
 
-    private MoneyWithCurrency transactionAmountField;
+    private RemarketingMoneyWithCurrency transactionAmountField;
 
     private string conversionNameField;
 
@@ -54336,11 +54425,12 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
 
-    /// <summary>Transaction amount. <span class="constraint Required">This field is required and
+    /// <summary>Transaction amount. We support the ISO 4217 3-character currency code. For
+    /// example: USD, EUR. <span class="constraint Required">This field is required and
     /// should not be <code>null</code>.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public MoneyWithCurrency transactionAmount {
+    public RemarketingMoneyWithCurrency transactionAmount {
       get {
         return this.transactionAmountField;
       }
@@ -54948,9 +55038,10 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
 
-    /// <summary>List of offline data in this upload. <span class="constraint Required">This
-    /// field is required and should not be <code>null</code> when it is contained
-    /// within <a href='Operator'>Operator</a>s : ADD.</span>
+    /// <summary>List of offline data in this upload. For AdWords API, each offlineDataList can
+    /// have at most 50 OfflineData. <span class="constraint Required">This field is
+    /// required and should not be <code>null</code> when it is contained within <a
+    /// href='Operator'>Operator</a>s : ADD.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("offlineDataList", Order = 4)]
     public OfflineData[] offlineDataList {
@@ -55589,8 +55680,9 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// fail for upload level errors like invalid <code></code>. Check
     /// <code>OfflineDataUploadReturnValue</code> for partial failure list.</p> <p>Set -
     /// updates the upload result for each upload. It is for internal use only.</p>
-    /// <p><b>Note:</b> Add operation might possibly succeed even with errors in
-    /// <code>OfflineData</code>. Data errors are reported in <a
+    /// <p><b>Note:</b> For AdWords API, one ADD request can have at most 2000
+    /// operations.</p> <p><b>Note:</b> Add operation might possibly succeed even with
+    /// errors in <code>OfflineData</code>. Data errors are reported in <a
     /// href='OfflineDataUpload#partialDataErrors'>OfflineDataUpload#partialDataErrors</a></p>
     /// <p><b>Note:</b> Supports only the <code>ADD</code> operator. <code>SET</code>
     /// operator is internally used only.(<code>REMOVE</code> is not supported). </p>
@@ -65918,7 +66010,8 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
 
-    /// <summary>Mobile device ID (advertising ID/IDFA).
+    /// <summary>Mobile device ID (advertising ID/IDFA). Accessible to whitelisted customers
+    /// only.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
     public string mobileId {
@@ -65942,7 +66035,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
 
-    /// <summary>Address info. Accessible to whitelisted customers only.
+    /// <summary>Address info.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
     public AddressInfo addressInfo {
@@ -65954,9 +66047,9 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
 
-    /// <summary>Advertiser generated and assigned user ID. Accessible to whitelisted customers
-    /// only. <span class="constraint StringLength">The length of this string should be
-    /// between 1 and 512, inclusive.</span>
+    /// <summary>Advertiser generated and assigned user ID. Accessible to whitelisted US
+    /// customers only. <span class="constraint StringLength">The length of this string
+    /// should be between 1 and 512, inclusive.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
     public string userId {
@@ -81634,7 +81727,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// <span class="constraint Selectable">This field can be selected using the value
     /// "PoNumber".</span><span class="constraint Filterable">This field can be filtered
     /// on.</span> <span class="constraint StringLength">The length of this string
-    /// should be between 0 and 30, inclusive, (trimmed).</span>
+    /// should be between 0 and 80, inclusive, (trimmed).</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
     public string poNumber {
@@ -81651,7 +81744,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// the monthly invoices. <span class="constraint Selectable">This field can be
     /// selected using the value "BudgetOrderName".</span><span class="constraint
     /// Filterable">This field can be filtered on.</span> <span class="constraint
-    /// StringLength">The length of this string should be between 0 and 40, inclusive,
+    /// StringLength">The length of this string should be between 0 and 150, inclusive,
     /// (trimmed).</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 4)]

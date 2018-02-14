@@ -15,7 +15,6 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Web.Script.Serialization;
 
 namespace Google.Api.Ads.Common.Logging {
 
