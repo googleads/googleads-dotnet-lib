@@ -16,7 +16,7 @@ This project hosts the .NET client library for the various SOAP-Based Ads APIs a
 ## Supported Frameworks
 
 - .NET Framework 4.5.2+
-- .NET Standard 2.0 ([limited support](https://github.com/googleads/googleads-dotnet-lib/wiki/Cross-Platorm-Development))
+- .NET Standard 2.0 ([limited support](https://github.com/googleads/googleads-dotnet-lib/wiki/Cross-Platform-Development))
 
 ## Announcements and updates
 
