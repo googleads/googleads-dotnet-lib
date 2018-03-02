@@ -36,7 +36,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
     ''' </summary>
     ''' <returns>The random string.</returns>
     Public Shared Function GetRandomString() As String
-      Return String.Format("{0} - {1}", Guid.NewGuid, _
+      Return String.Format("{0} - {1}", Guid.NewGuid,
                            DateTime.Now.ToString("yyyy-M-d H-m-s.ffffff"))
     End Function
 
@@ -55,7 +55,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
     ''' <param name="paramNames">The parameter names.</param>
     ''' <returns>A dictionary, with key as parameter name and value as
     ''' parameter value.</returns>
-    Public Shared Function GetUserInputs(ByVal paramNames As String()) As  _
+    Public Shared Function GetUserInputs(ByVal paramNames As String()) As _
         Dictionary(Of String, String)
       Dim parameters As New Dictionary(Of String, String)
       Dim paramName As String
@@ -75,7 +75,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
       Dim messages As New List(Of String)
       Dim rootEx As Exception = ex
       Do While (Not rootEx Is Nothing)
-        messages.Add(String.Format("{0} ({1})\n\n{2}\n", rootEx.GetType.ToString, _
+        messages.Add(String.Format("{0} ({1})\n\n{2}\n", rootEx.GetType.ToString,
             rootEx.Message, rootEx.StackTrace))
         rootEx = rootEx.InnerException
       Loop
@@ -129,18 +129,34 @@ Namespace Google.Api.Ads.AdWords.Examples.VB
           Console.Write("[Optional] ")
         End If
 
+        If underlyingType.IsArray Then
+          Console.Write("[Comma Separated] ")
+        End If
+
         Console.Write("Enter {0}: ", paramInfo.Name)
         Dim value As String = Console.ReadLine()
         Dim objValue As Object = Nothing
 
-        Dim typeConverter As TypeConverter = TypeDescriptor.GetConverter(underlyingType)
-        Try
-          objValue = typeConverter.ConvertFromString(value)
-        Catch
-          If Not isNullable Then
-            Throw
+        If underlyingType.IsArray Then
+          Dim items As String() = value.Split(","c)
+          For j As Integer = 0 To items.Length
+            items(j) = items(j).Trim()
+          Next
+          If underlyingType.GetElementType() <> GetType(String) Then
+            Throw New Exception("Only string[] array parameters are supported.")
+          Else
+            objValue = items
           End If
-        End Try
+        Else
+          Dim typeConverter As TypeConverter = TypeDescriptor.GetConverter(underlyingType)
+          Try
+            objValue = typeConverter.ConvertFromString(value)
+          Catch
+            If Not isNullable Then
+              Throw
+            End If
+          End Try
+        End If
 
         retval.Add(objValue)
       Next

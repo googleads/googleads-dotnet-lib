@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Reflection;
 
 namespace Google.Api.Ads.AdWords.Examples.CSharp {
@@ -101,20 +102,33 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
         if (isNullable) {
           Console.Write("[Optional] ");
         }
+        if (underlyingType.IsArray) {
+          Console.Write("[Comma Separated] ");
+        }
 
         Console.Write("Enter {0}: ", paramInfo.Name);
         string value = Console.ReadLine();
         object objValue = null;
 
-        TypeConverter typeConverter = TypeDescriptor.GetConverter(underlyingType);
-        try {
-          objValue = typeConverter.ConvertFromString(value);
-        } catch {
-          if (!isNullable) {
-            throw;
+        if (underlyingType.IsArray) {
+          string[] items = value.Split(',');
+          items.ToList().ForEach(x => x.Trim());
+          if (underlyingType.GetElementType() != typeof(string)) {
+            throw new Exception("Only string[] array parameters are supported.");
+          } else {
+            objValue = items;
+          }
+        } else {
+
+          TypeConverter typeConverter = TypeDescriptor.GetConverter(underlyingType);
+          try {
+            objValue = typeConverter.ConvertFromString(value);
+          } catch {
+            if (!isNullable) {
+              throw;
+            }
           }
         }
-
         retval.Add(objValue);
       }
       return retval;

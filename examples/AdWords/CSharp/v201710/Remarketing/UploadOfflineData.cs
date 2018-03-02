@@ -103,7 +103,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
               AdWordsService.v201710.OfflineDataUploadService)) {
         // Create the first offline data row for upload.
         // This transaction occurred 7 days ago with amount of 200 USD.
-        DateTime transactionTime1 = new DateTime();
+        DateTime transactionTime1 = DateTime.Now;
         transactionTime1.AddDays(-7);
         long transactionAmount1 = 200000000;
         string transactionCurrencyCode1 = "USD";
@@ -117,7 +117,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
 
         // Create the second offline data row for upload.
         // This transaction occurred 14 days ago with amount of 450 EUR.
-        DateTime transactionTime2 = new DateTime();
+        DateTime transactionTime2 = DateTime.Now;
         transactionTime2.AddDays(-14);
         long transactionAmount2 = 450000000;
         string transactionCurrencyCode2 = "EUR";
@@ -213,7 +213,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
       // For times use the format yyyyMMdd HHmmss [tz].
       // For details, see
       // https://developers.google.com/adwords/api/docs/appendix/codes-formats#date-and-time-formats
-      storeSalesTransaction.transactionTime = transactionTime.ToString("Ymd His");
+      storeSalesTransaction.transactionTime = transactionTime.ToString("yyyyMMdd HHmmss");
       storeSalesTransaction.conversionName = conversionName;
       storeSalesTransaction.userIdentifiers = userIdentifierList;
 

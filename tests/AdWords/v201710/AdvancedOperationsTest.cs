@@ -200,7 +200,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddAdCustomizersCSharpExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       string feedName = "AdCustomizerFeed" + utils.GetTimeStampAlpha();
       RunExample(delegate() {
         new CSharpExamples.AddAdCustomizers().Run(user, adGroupId1, adGroupId2, feedName);
@@ -212,7 +211,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddAdCustomizersVBExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       string feedName = "AdCustomizerFeed" + utils.GetTimeStampAlpha();
       RunExample(delegate() {
         new VBExamples.AddAdCustomizers().Run(user, adGroupId1, adGroupId2, feedName);
@@ -224,7 +222,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestCreateAndAttachSharedKeywordSetCSharpExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
         new CSharpExamples.CreateAndAttachSharedKeywordSet().Run(user, campaignId);
       });
@@ -235,7 +232,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestCreateAndAttachSharedKeywordSetVBExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
         new VBExamples.CreateAndAttachSharedKeywordSet().Run(user, campaignId);
       });
@@ -246,7 +242,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestFindAndRemoveCriteriaFromSharedSetCSharpExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
         new CSharpExamples.FindAndRemoveCriteriaFromSharedSet().Run(user, campaignId);
       });
@@ -257,7 +252,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestFindAndRemoveCriteriaFromSharedSetVBExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
         new VBExamples.FindAndRemoveCriteriaFromSharedSet().Run(user, campaignId);
       });
@@ -268,7 +262,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddHtml5AdCSharpExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
         new CSharpExamples.AddHtml5Ad().Run(user, adGroupId1);
       });
@@ -279,7 +272,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddHtml5AdVBExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
         new VBExamples.AddHtml5Ad().Run(user, adGroupId1);
       });
@@ -290,7 +282,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddDynamicSearchAdsCampaignCSharpExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
         new CSharpExamples.AddDynamicSearchAdsCampaign().Run(user);
       });
@@ -301,7 +292,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddDynamicSearchAdsCampaignVBExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
         new VBExamples.AddDynamicSearchAdsCampaign().Run(user);
       });
@@ -312,7 +302,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddDynamicPageFeedCSharpExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
         new CSharpExamples.AddDynamicPageFeed().Run(user, dsaCampaignId, dsaAdGroupId);
       });
@@ -323,7 +312,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddDynamicPageFeedVBExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
         new VBExamples.AddDynamicPageFeed().Run(user, dsaCampaignId, dsaAdGroupId);
       });
@@ -334,7 +322,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestUsePortfolioBiddingStrategyCSharpExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
         new CSharpExamples.UsePortfolioBiddingStrategy().Run(user);
       });
@@ -345,7 +332,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestUsePortfolioBiddingStrategyVBExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
         new VBExamples.UsePortfolioBiddingStrategy().Run(user);
       });
@@ -356,7 +342,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddExpandedTextAdWithUpgradedUrlsCSharpExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
         new CSharpExamples.AddExpandedTextAdWithUpgradedUrls().Run(user, adGroupId1);
       });
@@ -367,7 +352,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddExpandedTextAdWithUpgradedUrlsVBExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
       RunExample(delegate() {
         new VBExamples.AddExpandedTextAdWithUpgradedUrls().Run(user, adGroupId1);
       });

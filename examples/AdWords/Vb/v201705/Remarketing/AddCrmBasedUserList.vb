@@ -113,19 +113,24 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
           For i As Integer = 0 To EMAILS.Length - 1
             Dim member As New Member()
             member.hashedEmail = ToSha256String(digest, ToNormalizedEmail(EMAILS(i)))
-
-            ' Adding address info Is currently available on a whitelist-only basis. This
-            ' code demonstrates how to do it, but if you are Not on the whitelist, you
-            ' will need to remove this block for the example to run.
-            Dim addressInfo As New AddressInfo()
-            addressInfo.hashedFirstName = ToSha256String(digest, FIRST_NAME)
-            addressInfo.hashedLastName = ToSha256String(digest, LAST_NAME)
-            addressInfo.zipCode = ZIP_CODE
-            addressInfo.countryCode = COUNTRY_CODE
-            member.addressInfo = addressInfo
-
             memberList.Add(member)
           Next
+
+          ' Add a user by first and last name.
+          Dim addressInfo As New AddressInfo()
+          ' First and last name must be normalized and hashed.
+
+          addressInfo.hashedFirstName = ToSha256String(digest, FIRST_NAME)
+          addressInfo.hashedLastName = ToSha256String(digest, LAST_NAME)
+          ' Country code and zip code are sent in plaintext.
+
+          addressInfo.zipCode = ZIP_CODE
+          addressInfo.countryCode = COUNTRY_CODE
+
+          Dim memberByAddress As New Member()
+          memberByAddress.addressInfo = addressInfo
+          memberList.Add(memberByAddress)
+
           ' Create operation to add members to the user list based on email
           ' addresses.
           Dim mutateMembersOperation As New MutateMembersOperation

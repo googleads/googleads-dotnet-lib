@@ -158,9 +158,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
         ' Required: Set the ad group's bidding strategy configuration.
         Dim biddingConfiguration As New BiddingStrategyConfiguration()
 
-        ' Showcase ads require either ManualCpc or EnhancedCpc.
-        biddingConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC
-
         ' Optional: Set the bids.
         Dim cpcBid As New CpcBid()
         cpcBid.bid = New Money()

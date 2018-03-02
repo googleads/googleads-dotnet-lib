@@ -218,7 +218,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201708 {
     /// <param name="strategyType">The bidding strategy to be used for
     /// this campaign.</param>
     /// <returns>The campaign id.</returns>
-    public long CreateCampaign(AdWordsUser user, AdvertisingChannelType channelType,
+    private long CreateCampaign(AdWordsUser user, AdvertisingChannelType channelType,
         BiddingStrategyType strategyType) {
       return CreateCampaign(user, channelType, strategyType, false, false);
     }
@@ -236,7 +236,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201708 {
     /// <param name="isDsa">True, if this campaign is for DSA, false
     /// otherwise.</param>
     /// <returns>The campaign id.</returns>
-    public long CreateCampaign(AdWordsUser user, AdvertisingChannelType channelType,
+    private long CreateCampaign(AdWordsUser user, AdvertisingChannelType channelType,
         BiddingStrategyType strategyType, bool isMobile, bool isDsa) {
       CampaignService campaignService =
           (CampaignService) user.GetService(AdWordsService.v201708.CampaignService);
@@ -260,6 +260,10 @@ namespace Google.Api.Ads.AdWords.Tests.v201708 {
         }
       };
 
+      // Campaign setups that cannot be inferred just from AdvertisingChannelType uses flags.
+      List<Setting> settings = new List<Setting>();
+
+      // The following flags are all mutually exclusive for the purpose of testing.
       if (isMobile) {
         switch (campaign.advertisingChannelType) {
           case AdvertisingChannelType.SEARCH:
@@ -270,11 +274,15 @@ namespace Google.Api.Ads.AdWords.Tests.v201708 {
             campaign.advertisingChannelSubType = AdvertisingChannelSubType.DISPLAY_MOBILE_APP;
             break;
         }
-      }
+      } else if (isDsa) {
+        // Required: Set the campaign's Dynamic Search Ads settings.
+        DynamicSearchAdsSetting dynamicSearchAdsSetting = new DynamicSearchAdsSetting();
 
-      List<Setting> settings = new List<Setting>();
-
-      if (channelType == AdvertisingChannelType.SHOPPING) {
+        // Required: Set the domain name and language.
+        dynamicSearchAdsSetting.domainName = "example.com";
+        dynamicSearchAdsSetting.languageCode = "en";
+        settings.Add(dynamicSearchAdsSetting);
+      } else if (channelType == AdvertisingChannelType.SHOPPING) {
         // All Shopping campaigns need a ShoppingSetting.
         ShoppingSetting shoppingSetting = new ShoppingSetting() {
           salesCountry = "US",
@@ -282,15 +290,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201708 {
           merchantId = (user.Config as AdWordsAppConfig).MerchantCenterId
         };
         settings.Add(shoppingSetting);
-      }
-
-      if (isDsa) {
-        // Required: Set the campaign's Dynamic Search Ads settings.
-        DynamicSearchAdsSetting dynamicSearchAdsSetting = new DynamicSearchAdsSetting();
-        // Required: Set the domain name and language.
-        dynamicSearchAdsSetting.domainName = "example.com";
-        dynamicSearchAdsSetting.languageCode = "en";
-        settings.Add(dynamicSearchAdsSetting);
       }
 
       campaign.settings = settings.ToArray();

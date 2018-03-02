@@ -105,7 +105,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
 
         ' Create the first offline data row for upload.
         ' This transaction occurred 7 days ago with amount of 200 USD.
-        Dim transactionTime1 As New DateTime()
+        Dim transactionTime1 As DateTime = DateTime.Now
         transactionTime1.AddDays(-7)
         Dim transactionAmount1 As Long = 200000000
         Dim transactionCurrencyCode1 As String = "USD"
@@ -120,7 +120,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
 
         ' Create the second offline data row for upload.
         ' This transaction occurred 14 days ago with amount of 450 EUR.
-        Dim transactionTime2 As New DateTime()
+        Dim transactionTime2 As DateTime = DateTime.Now
         transactionTime2.AddDays(-14)
         Dim transactionAmount2 As Long = 450000000
         Dim transactionCurrencyCode2 As String = "EUR"
@@ -214,7 +214,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
       ' For times use the format yyyyMMdd HHmmss [tz].
       ' For details, see
       ' https://developers.google.com/adwords/api/docs/appendix/codes-formats#date-And-time-formats
-      storeSalesTransaction.transactionTime = transactionTime.ToString("Ymd His")
+      storeSalesTransaction.transactionTime = transactionTime.ToString("yyyyMMdd HHmmss")
       storeSalesTransaction.conversionName = conversionName
       storeSalesTransaction.userIdentifiers = userIdentifierList
 

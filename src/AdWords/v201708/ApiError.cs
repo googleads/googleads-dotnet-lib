@@ -30,22 +30,24 @@ namespace Google.Api.Ads.AdWords.v201708 {
     /// <returns>Index of the operation that caused this error, or -1 if
     /// the index cannot be determined.</returns>
     public int GetOperationIndex() {
-      FieldPathElement[] fieldPathElements = this.fieldPathElements;
-      
-      if (fieldPathElements == null || fieldPathElements.Length == 0) {
-        return -1;
-      } 
-      
-      FieldPathElement firstFieldPathElement = fieldPathElements[0];
+      return GetFieldPathIndex("operations");
+    }
 
-      if (string.Compare(firstFieldPathElement.field, "operations") != 0) {
-        return -1;
+    /// <summary>
+    /// Gets the index of a field in a field path expression.
+    /// </summary>
+    /// <param name="field">Name of the field to search for.</param>
+    /// <returns>Index of the field name in the field path, or -1 if
+    /// the index cannot be determined.</returns>
+    public int GetFieldPathIndex(string field) {
+      if (this.fieldPathElements != null) {
+        foreach (FieldPathElement element in this.fieldPathElements) {
+          if (string.Compare(element.field, field) == 0 && element.indexSpecified) {
+            return element.index;
+          }
+        }
       }
-
-      if (!firstFieldPathElement.indexSpecified) {
-             return -1;
-      }
-      return firstFieldPathElement.index;
+      return -1;
     }
 
     /// <summary>
