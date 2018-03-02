@@ -244,6 +244,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0c2dce2315292dd201594b95b2ff5701"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_api_error.html#a0c2dce2315292dd201594b95b2ff5701">GetOperationIndex</a> ()</td></tr>
 <tr class="memdesc:a0c2dce2315292dd201594b95b2ff5701"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the index of the operation.  <a href="#a0c2dce2315292dd201594b95b2ff5701">More...</a><br/></td></tr>
 <tr class="separator:a0c2dce2315292dd201594b95b2ff5701"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91c6d839141d2f58efcb39bf1eabf2b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_api_error.html#a91c6d839141d2f58efcb39bf1eabf2b1">GetFieldPathIndex</a> (string field)</td></tr>
+<tr class="memdesc:a91c6d839141d2f58efcb39bf1eabf2b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the index of a field in a field path expression.  <a href="#a91c6d839141d2f58efcb39bf1eabf2b1">More...</a><br/></td></tr>
+<tr class="separator:a91c6d839141d2f58efcb39bf1eabf2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a524cc769d2617322e85cadad348a4eb4"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_api_error.html#a524cc769d2617322e85cadad348a4eb4">ToString</a> ()</td></tr>
 <tr class="memdesc:a524cc769d2617322e85cadad348a4eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a System.String that represents this instance.  <a href="#a524cc769d2617322e85cadad348a4eb4">More...</a><br/></td></tr>
 <tr class="separator:a524cc769d2617322e85cadad348a4eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -271,6 +274,41 @@ Properties</h2></td></tr>
 <p>The API error base class that provides details about an error that occurred while processing a service request.</p>
 <p>The OGNL field path is provided for parsers to identify the request data element that may have caused the error.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a91c6d839141d2f58efcb39bf1eabf2b1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Google.Api.Ads.AdWords.v201710.ApiError.GetFieldPathIndex </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the index of a field in a field path expression. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">field</td><td>Name of the field to search for.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Index of the field name in the field path, or -1 if the index cannot be determined.</dd></dl>
+
+<p>References <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_field_path_element.html#aae771553a6f34b7bafdc04bf9689a000">Google.Api.Ads.AdWords.v201710.FieldPathElement.field</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_field_path_element.html#ad380b8d4043fb648b2f4f5071e66b9b8">Google.Api.Ads.AdWords.v201710.FieldPathElement.indexSpecified</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a0c2dce2315292dd201594b95b2ff5701"></a>
 <div class="memitem">
 <div class="memproto">
@@ -294,8 +332,6 @@ Properties</h2></td></tr>
 
 <p>Gets the index of the operation. </p>
 <dl class="section return"><dt>Returns</dt><dd>Index of the operation that caused this error, or -1 if the index cannot be determined.</dd></dl>
-
-<p>References <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_field_path_element.html#aae771553a6f34b7bafdc04bf9689a000">Google.Api.Ads.AdWords.v201710.FieldPathElement.field</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_field_path_element.html#ad380b8d4043fb648b2f4f5071e66b9b8">Google.Api.Ads.AdWords.v201710.FieldPathElement.indexSpecified</a>.</p>
 
 </div>
 </div>
@@ -437,8 +473,8 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.qoFWxNjlRu/dist/github/src/AdWords/v201710/<a class="el" href="v201710_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
-<li>/usr/local/google/users/cseeley/tmp/tmp.qoFWxNjlRu/dist/github/src/AdWords/v201710/<a class="el" href="v201710_2_api_error_8cs.html">ApiError.cs</a></li>
+<li>/usr/local/google/users/cseeley/tmp/tmp.VtIi6tbYNY/dist/github/src/AdWords/v201710/<a class="el" href="v201710_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/usr/local/google/users/cseeley/tmp/tmp.VtIi6tbYNY/dist/github/src/AdWords/v201710/<a class="el" href="v201710_2_api_error_8cs.html">ApiError.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -446,7 +482,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html">v201710</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_api_error.html">ApiError</a></li>
-    <li class="footer">Generated on Wed Feb 14 2018 12:38:18 for Ads API .NET library by
+    <li class="footer">Generated on Fri Mar 2 2018 11:44:07 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

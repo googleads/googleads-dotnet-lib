@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_campaign_groups_and_performance_targets =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_campaign_groups_and_performance_targets.html#a4973789f38fbd93a8fc569a8f1fde052", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_campaign_groups_and_performance_targets.html#a28e3b7f1cb781f2478c8d6f51a30b1e0", null ]
+];

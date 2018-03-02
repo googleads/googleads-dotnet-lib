@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_complete_campaigns_using_batch_job =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_complete_campaigns_using_batch_job.html#aa656ca85f447a147c62a067333fe5c25", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_complete_campaigns_using_batch_job.html#aa8e8d0f7cca753c0479dfc471da2ef3b", null ]
+];

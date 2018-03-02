@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_report_definition_service_1_1get_report_fields_response =
+[
+    [ "getReportFieldsResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_report_definition_service_1_1get_report_fields_response.html#a2fa54e67d06a59d0d2ece8ceb0185aac", null ],
+    [ "getReportFieldsResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_report_definition_service_1_1get_report_fields_response.html#a8822cf47cf943bc2c2ba7e72108da988", null ],
+    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_report_definition_service_1_1get_report_fields_response.html#a4cdf81f74cd1d090af2a04d905483f31", null ]
+];

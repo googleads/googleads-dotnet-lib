@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_customer_negative_criterion_page_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_customer_negative_criterion_page_1_1_filterable_fields.html#a8a71158d2aed2be868e9895db3f7a14c", null ]
+];

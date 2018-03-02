@@ -1,6 +1,0 @@
-var dir_cb88102f0f2b5a1aa6c37f912be4c4f1 =
-[
-    [ "GetReconciliationLineItemReportsForReconciliationReport.cs", "v201802_2_reconciliation_line_item_report_service_2_get_reconciliation_line_item_reports_for_reconciliation_report_8cs.html", [
-      [ "GetReconciliationLineItemReportsForReconciliationReport", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201802_1_1_get_reconciliation_0980ef4efb7557aab7a5c4626a1e2d95.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201802_1_1_get_reconciliation_0980ef4efb7557aab7a5c4626a1e2d95" ]
-    ] ]
-];

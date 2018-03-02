@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_bid_landscape_landscape_point_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_bid_landscape_landscape_point_1_1_filterable_fields.html#a2563d7e80b67f60516c2d6e2d10d72b9", null ]
+];

@@ -1,0 +1,9 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_affiliate_location_feed_data =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_affiliate_location_feed_data_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_affiliate_location_feed_data_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_affiliate_location_feed_data_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_affiliate_location_feed_data_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_affiliate_location_feed_data_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_affiliate_location_feed_data_1_1_selectable_fields" ],
+    [ "chains", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_affiliate_location_feed_data.html#a118f726ed013a13f90439b42d4d61edf", null ],
+    [ "relationshipType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_affiliate_location_feed_data.html#a2e44f53e34849f80e026614235e0238e", null ],
+    [ "relationshipTypeSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_affiliate_location_feed_data.html#af34bc2d95abcba2a244e3c3d084bff8c", null ]
+];

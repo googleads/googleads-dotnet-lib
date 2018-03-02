@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_not_whitelisted_error_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_not_whitelisted_error_1_1_selectable_fields.html#a1a0921a5a936ac2bb5f2a6452a2b7a44", null ]
+];

@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_customer_negative_criterion_page_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_customer_negative_criterion_page_1_1_selectable_fields.html#a6fa37d359f66cf150a01640bc207e142", null ]
+];

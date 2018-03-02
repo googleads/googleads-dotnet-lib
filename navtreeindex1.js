@@ -1,8 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_add_conversion_tracker.html#a316b6c584c0e467f8ee2f20a8aabe820":[1,0,0,0,0,0,0,0,1,66,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_add_crm_based_user_list.html":[1,0,0,0,0,0,0,0,1,67],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_add_crm_based_user_list.html#a93c67d131b4988b4e3fb13942fead581":[1,0,0,0,0,0,0,0,1,67,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_add_crm_based_user_list.html#ab953a977ad8fef12028d22e68ebaadfc":[1,0,0,0,0,0,0,0,1,67,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_add_draft.html":[1,0,0,0,0,0,0,0,1,39],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_add_draft.html#a61518b0458dc4130139798a288034954":[1,0,0,0,0,0,0,0,1,39,0],
@@ -249,5 +246,8 @@ var NAVTREEINDEX1 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_accept_service_link.html":[1,0,0,0,0,0,0,0,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_accept_service_link.html#a323c876983c11fab5dcef53950f3011e":[1,0,0,0,0,0,0,0,2,0,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_accept_service_link.html#a3e3e2e2487b448479e36ad776487c6b2":[1,0,0,0,0,0,0,0,2,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_add_ad_customizers.html":[1,0,0,0,0,0,0,0,2,4]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_add_ad_customizers.html":[1,0,0,0,0,0,0,0,2,4],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_add_ad_customizers.html#aa67fb23b777941ca06f630d98cbeabb5":[1,0,0,0,0,0,0,0,2,4,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_add_ad_customizers.html#aeba33b6b14f1e83bfa547733de4ed8e1":[1,0,0,0,0,0,0,0,2,4,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201708_1_1_add_ad_group_bid_modifier.html":[1,0,0,0,0,0,0,0,2,5]
 };

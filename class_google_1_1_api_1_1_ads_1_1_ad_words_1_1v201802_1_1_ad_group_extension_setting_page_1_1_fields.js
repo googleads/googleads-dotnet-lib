@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_group_extension_setting_page_1_1_fields =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_group_extension_setting_page_1_1_fields.html#a4ac1f59c79d5a48e511ebbf3fd5fed12", null ]
+];

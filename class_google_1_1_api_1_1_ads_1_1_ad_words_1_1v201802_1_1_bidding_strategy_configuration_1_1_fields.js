@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_bidding_strategy_configuration_1_1_fields =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_bidding_strategy_configuration_1_1_fields.html#aa26392146a2a655bdf56124fc3f21cc2", null ]
+];
