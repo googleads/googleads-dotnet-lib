@@ -14,6 +14,7 @@
 
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201705
+Imports Attribute =  Google.Api.Ads.AdWords.v201705.Attribute
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
 
@@ -138,8 +139,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201705
               For Each targetingIdea As TargetingIdea In page.entries
                 For Each entry As Type_AttributeMapEntry In targetingIdea.data
                   ' Preferred: Use targetingIdea.data.ToDict() if you are not on Mono.
-                  Dim ideas As Dictionary(Of AttributeType, AdWords.v201705.Attribute) =
-                      MapEntryExtensions.ToDict(Of AttributeType, AdWords.v201705.Attribute)(
+                  Dim ideas As Dictionary(Of AttributeType, Attribute) =
+                      MapEntryExtensions.ToDict(Of AttributeType, Attribute)(
                           targetingIdea.data)
 
                   Dim keyword As String =

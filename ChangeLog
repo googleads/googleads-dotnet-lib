@@ -1,3 +1,13 @@
+23.1.1
+======
+AdWords:
+  -
+DFP:
+  -
+Common:
+  - Fixed issue #151.
+  - Fixed issue #152.
+
 23.1.0
 ======
 AdWords:

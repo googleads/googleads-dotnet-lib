@@ -47,9 +47,23 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     private MockClock mockClock;
 
     /// <summary>
-    /// Signed request for getting access token for a service account.
+    /// Signed request for getting access token for a service account with impersonation.
     /// </summary>
     private const string SERVICE_ACCOUNT_REQUEST =
+        "assertion=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6IlRFU1RfU0NPUEUiLCJlbWFpbF92" +
+        "ZXJpZmllZCI6ZmFsc2UsImlzcyI6InRlc3RAcHJvamVjdC1pZC0xMjMuZXhhbXBsZS5jb20iLCJzdWIiOiJURVN" +
+        "UX1BSTl9FTUFJTCIsImF1ZCI6Imh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL29hdXRoMi92NC90b2tlbiIsIm" +
+        "V4cCI6MTUxNDc3MjA2MSwiaWF0IjoxNTE0NzY4NDYxfQ.B-9BTTQFIzGsL8n_qxWDNxAmkpksYKe_PRp7Bc3pcD" +
+        "dk86HpvYbCjxjnw__KDFBRexyHN1fnhvtgFZBsQd9IAU4PjcpF_yD8P9yswpQPL-AOgjBIPHSqA0Lf27fUG87pP" +
+        "76KASSdkxAbkjAKXV6vsntNZM72ck23otTwiQ6ZvQz9LvXftsWSUpsWGRbhVOZeqrPoPCjKjrPd4djqIgirQz8W" +
+        "eTqn-utbaiYU7EHWPeJsgWBg85su6ppMo9eOl7LEOswcyaBLW_9hnXpydLwRrxQ2on_05V1NOroMzQblRBlYNNE" +
+        "O6e8kB6OekgM-HeBTlboaZDRYnnYPn8gzPSrRDQ&grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-" +
+        "type%3Ajwt-bearer";
+
+    /// <summary>
+    /// Signed request for getting access token for a service account without impersonation.
+    /// </summary>
+    private const string SERVICE_ACCOUNT_REQUEST_NO_PRN =
         "assertion=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6IlRFU1RfU0NPUEUiLCJlbWFpbF92" +
         "ZXJpZmllZCI6ZmFsc2UsImlzcyI6InRlc3RAcHJvamVjdC1pZC0xMjMuZXhhbXBsZS5jb20iLCJhdWQiOiJodHR" +
         "wczovL3d3dy5nb29nbGVhcGlzLmNvbS9vYXV0aDIvdjQvdG9rZW4iLCJleHAiOjE1MTQ3NzIwNjEsImlhdCI6MT" +
@@ -171,6 +185,18 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       Assert.AreEqual(provider.AccessToken, OAuth2RequestInterceptor.TEST_ACCESS_TOKEN);
       Assert.AreEqual(provider.TokenType, OAuth2RequestInterceptor.ACCESS_TOKEN_TYPE);
       Assert.AreEqual(provider.ExpiresIn.ToString(), OAuth2RequestInterceptor.EXPIRES_IN);
+
+      // Test no impersonation with empty string.
+      config.SetPropertyFieldForTests("OAuth2PrnEmail", "");
+      provider.GenerateAccessTokenForServiceAccount();
+      Assert.AreEqual(mockHttpClientFactory.messageHandler.LastRequest,
+          SERVICE_ACCOUNT_REQUEST_NO_PRN);
+
+      // Test no impersonation with null.
+      config.SetPropertyFieldForTests("OAuth2PrnEmail", null);
+      provider.GenerateAccessTokenForServiceAccount();
+      Assert.AreEqual(mockHttpClientFactory.messageHandler.LastRequest,
+          SERVICE_ACCOUNT_REQUEST_NO_PRN);
     }
 
     /// <summary>

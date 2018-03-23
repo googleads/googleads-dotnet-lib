@@ -108,7 +108,8 @@ namespace Google.Api.Ads.Common.Lib {
           new ServiceAccountCredential.Initializer(ServiceAccountEmail) {
             Scopes = new[] { Scope },
             HttpClientFactory = this.HttpClientFactory,
-            Clock = this.Clock
+            Clock = this.Clock,
+            User = string.IsNullOrEmpty(this.PrnEmail) ? null : this.PrnEmail
           }.FromPrivateKey(JwtPrivateKey)
       );
 

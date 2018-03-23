@@ -126,7 +126,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201705 {
             // Display related keywords.
             if (page.entries != null && page.entries.Length > 0) {
               foreach (TargetingIdea targetingIdea in page.entries) {
-                Dictionary<AttributeType, AdWords.v201705.Attribute> ideas =
+                Dictionary<AttributeType, Google.Api.Ads.AdWords.v201705.Attribute> ideas =
                     targetingIdea.data.ToDict();
 
                 string keyword = (ideas[AttributeType.KEYWORD_TEXT] as StringAttribute).value;
