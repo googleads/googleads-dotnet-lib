@@ -1,5 +1,0 @@
-var interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_campaign_group_performance_target_service_interface =
-[
-    [ "get", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_campaign_group_performance_target_service_interface.html#a4907fc23d6afcb4f7417985422dc67ce", null ],
-    [ "mutate", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_campaign_group_performance_target_service_interface.html#ade4bde7c66cac560fbcad62ab0c88c00", null ]
-];

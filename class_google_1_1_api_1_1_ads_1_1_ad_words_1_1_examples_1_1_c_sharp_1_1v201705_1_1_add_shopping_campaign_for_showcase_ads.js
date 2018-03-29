@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_add_shopping_campaign_for_showcase_ads =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_add_shopping_campaign_for_showcase_ads.html#ad8a28739b3280187720ff2426b0b6a4d", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_add_shopping_campaign_for_showcase_ads.html#acfd6af497a085d03077c39fdef5058c7", null ]
-];

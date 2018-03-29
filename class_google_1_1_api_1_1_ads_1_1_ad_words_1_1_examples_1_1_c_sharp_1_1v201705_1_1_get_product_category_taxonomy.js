@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_get_product_category_taxonomy =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_get_product_category_taxonomy.html#a3a27183d0f79450cfa4c803c364cb638", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_get_product_category_taxonomy.html#a67373bbdb1c4f8398781644da4dab26b", null ]
-];

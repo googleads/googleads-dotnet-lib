@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_constant_data_service_1_1get_gender_criterion_request =
-[
-    [ "getGenderCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_constant_data_service_1_1get_gender_criterion_request.html#a80023a5a549f48e2140d2221437b57f2", null ]
-];

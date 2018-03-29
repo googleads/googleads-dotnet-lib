@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_real_time_bidding_setting =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_real_time_bidding_setting_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_real_time_bidding_setting_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_real_time_bidding_setting_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_real_time_bidding_setting_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_real_time_bidding_setting_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_real_time_bidding_setting_1_1_selectable_fields" ],
-    [ "optIn", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_real_time_bidding_setting.html#ac71bd299ada5de0210cac96a8854d4e0", null ],
-    [ "optInSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_real_time_bidding_setting.html#a5f64648a18bbecb67ef0581f13d6e9ba", null ]
-];

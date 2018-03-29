@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_new_entity_creation_error =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_new_entity_creation_error_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_new_entity_creation_error_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_new_entity_creation_error_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_new_entity_creation_error_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_new_entity_creation_error_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_new_entity_creation_error_1_1_selectable_fields" ],
-    [ "reason", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_new_entity_creation_error.html#a49537b3f87fd424fe849d33d34b5321e", null ],
-    [ "reasonSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_new_entity_creation_error.html#a10d4bdea078d2bf3ac57b0c8dc14be2f", null ]
-];

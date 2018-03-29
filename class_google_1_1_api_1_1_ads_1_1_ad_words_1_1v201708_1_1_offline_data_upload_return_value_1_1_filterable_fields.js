@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_offline_data_upload_return_value_1_1_filterable_fields =
-[
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_offline_data_upload_return_value_1_1_filterable_fields.html#a15f530d695ff2d40f2db6eeaa5a90def", null ]
-];

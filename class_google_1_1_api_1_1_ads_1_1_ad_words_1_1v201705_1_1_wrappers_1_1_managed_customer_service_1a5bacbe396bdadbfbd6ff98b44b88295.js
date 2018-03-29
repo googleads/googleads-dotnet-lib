@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_managed_customer_service_1a5bacbe396bdadbfbd6ff98b44b88295 =
-[
-    [ "getPendingInvitationsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_managed_customer_service_1a5bacbe396bdadbfbd6ff98b44b88295.html#abf88f8117854403b8514ddbad2a4074d", null ],
-    [ "getPendingInvitationsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_managed_customer_service_1a5bacbe396bdadbfbd6ff98b44b88295.html#ab0704526b282cf30502e3ceb37de46bb", null ],
-    [ "selector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_managed_customer_service_1a5bacbe396bdadbfbd6ff98b44b88295.html#a97e071346a1a602d5e6ab0ef09483caf", null ]
-];

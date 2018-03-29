@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_ad_policy_summary_1_1_selectable_fields =
-[
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_ad_group_ad_policy_summary_1_1_selectable_fields.html#a1b04eee9485884ded1d909f9dc05d5d4", null ]
-];

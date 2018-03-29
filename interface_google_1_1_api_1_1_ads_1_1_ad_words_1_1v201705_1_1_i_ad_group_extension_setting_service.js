@@ -1,4 +1,0 @@
-var interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_i_ad_group_extension_setting_service =
-[
-    [ "mutate", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_i_ad_group_extension_setting_service.html#a805128c9134aa321c206221e382e4a22", null ]
-];

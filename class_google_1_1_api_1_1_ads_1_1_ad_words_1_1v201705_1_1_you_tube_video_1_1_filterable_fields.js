@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_you_tube_video_1_1_filterable_fields =
-[
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_you_tube_video_1_1_filterable_fields.html#a2d9d7390d74dbd6342c84f76cd804eb7", null ]
-];

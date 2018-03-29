@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_constant_data_service_1_1get_vertical_criterion_request =
-[
-    [ "getVerticalCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_wrappers_1_1_constant_data_service_1_1get_vertical_criterion_request.html#a69427241c97f68198f1adf5a1eb00217", null ]
-];

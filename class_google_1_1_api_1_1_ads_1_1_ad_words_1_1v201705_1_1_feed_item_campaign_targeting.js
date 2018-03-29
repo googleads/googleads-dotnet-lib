@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_campaign_targeting =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_campaign_targeting_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_campaign_targeting_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_campaign_targeting_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_campaign_targeting_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_campaign_targeting_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_campaign_targeting_1_1_selectable_fields" ],
-    [ "TargetingCampaignId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_campaign_targeting.html#acac3d17c2b4b91a29bd6873b61339cc1", null ],
-    [ "TargetingCampaignIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201705_1_1_feed_item_campaign_targeting.html#a1bfc63aa65e1e12f55dd899cd04e654d", null ]
-];

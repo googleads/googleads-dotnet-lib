@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_bid_landscape_landscape_point_1_1_fields =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201708_1_1_bid_landscape_landscape_point_1_1_fields.html#aa9e0dee5ff6af479493520d8ebfd4337", null ]
-];

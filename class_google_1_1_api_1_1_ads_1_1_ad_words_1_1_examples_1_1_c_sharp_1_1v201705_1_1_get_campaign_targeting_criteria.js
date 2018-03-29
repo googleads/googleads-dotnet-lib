@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_get_campaign_targeting_criteria =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_get_campaign_targeting_criteria.html#af62477bddb94b87fb24a7ffea94e1d66", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201705_1_1_get_campaign_targeting_criteria.html#aab283e3042cbe19ca22e99a41c4a0815", null ]
-];
