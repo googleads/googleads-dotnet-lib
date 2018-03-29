@@ -180,6 +180,12 @@ namespace Google.Api.Ads.AdWords.Lib {
       public static readonly ServiceSignature FeedService;
 
       /// <summary>
+      /// See <a href="https://developers.google.com/adwords/api/docs/reference/v201802/FeedItemTargetService">
+      /// this page</a> for details.
+      /// </summary>
+      public static readonly ServiceSignature FeedItemTargetService;
+
+      /// <summary>
       /// See <a href="https://developers.google.com/adwords/api/docs/reference/cm/v201802/SharedSetService">
       /// this page</a> for details.
       /// </summary>
@@ -412,6 +418,8 @@ namespace Google.Api.Ads.AdWords.Lib {
             AdWordsService.MakeServiceSignature("v201802", "cm", "FeedMappingService");
         FeedService =
             AdWordsService.MakeServiceSignature("v201802", "cm", "FeedService");
+        FeedItemTargetService =
+            AdWordsService.MakeServiceSignature("v201802", "cm", "FeedItemTargetService");
         LabelService =
             AdWordsService.MakeServiceSignature("v201802", "cm", "LabelService");
         LocationCriterionService =

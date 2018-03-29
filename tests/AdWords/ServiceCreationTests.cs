@@ -12,7 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System;
+using System.Linq;
+
 using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.v201802;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests;
 
@@ -44,6 +48,23 @@ namespace Google.Api.Ads.AdWords.Tests {
               AdsClient service = user.GetService(serviceSignature);
             });
           });
+    }
+
+    /// <summary>
+    /// Test that a generated service interface has expected methods.
+    /// </summary>
+    [Test]
+    public void TestServiceInterface() {
+      Type serviceInterface = typeof(IAdGroupService);
+      var methodDictionary = serviceInterface.GetInterfaces()
+          .SelectMany(t => t.GetMethods())
+          .Where(m => !m.ReturnType.FullName.Contains("Wrappers"))
+          .Concat(serviceInterface.GetMethods())
+          .ToDictionary(m => m.Name);
+      Assert.That(methodDictionary, Contains.Key("get"));
+      Assert.That(methodDictionary, Contains.Key("mutate"));
+      Assert.That(methodDictionary, Contains.Key("mutateLabel"));
+      Assert.That(methodDictionary, Contains.Key("query"));
     }
   }
 }

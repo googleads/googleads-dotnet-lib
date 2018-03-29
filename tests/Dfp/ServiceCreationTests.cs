@@ -12,9 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System;
+using System.Linq;
+
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests;
 using Google.Api.Ads.Dfp.Lib;
+using Google.Api.Ads.Dfp.v201802;
 
 using NUnit.Framework;
 
@@ -45,6 +49,23 @@ namespace Google.Api.Ads.Dfp.Tests {
               user.GetService(serviceSignature);
             });
           });
+    }
+
+    /// <summary>
+    /// Test that a generated service interface has expected methods.
+    /// </summary>
+    [Test]
+    public void TestServiceInterface() {
+      Type serviceInterface = typeof(ILineItemService);
+      var methodDictionary = serviceInterface.GetInterfaces()
+          .SelectMany(t => t.GetMethods())
+          .Where(m => !m.ReturnType.FullName.Contains("Wrappers"))
+          .Concat(serviceInterface.GetMethods())
+          .ToDictionary(m => m.Name);
+      Assert.That(methodDictionary, Contains.Key("getLineItemsByStatement"));
+      Assert.That(methodDictionary, Contains.Key("createLineItems"));
+      Assert.That(methodDictionary, Contains.Key("updateLineItems"));
+      Assert.That(methodDictionary, Contains.Key("performLineItemAction"));
     }
   }
 }

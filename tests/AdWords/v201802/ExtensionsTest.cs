@@ -28,6 +28,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
   /// </summary>
   internal class ExtensionsTest : VersionedExampleTestsBase {
     private long campaignId;
+    private long adGroupId;
     private string gmbAccessToken = "";
 
     /// <summary>
@@ -36,6 +37,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     [SetUp]
     public void Init() {
       campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
+      adGroupId = utils.CreateAdGroup(user, campaignId);
 
       // Load defaults from config file.
       AdWordsAppConfig appConfig = new AdWordsAppConfig();
@@ -95,7 +97,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     public void TestAddSitelinksUsingFeedsVBExample() {
       string feedName = "SitelinkFeed" + utils.GetTimeStampAlpha();
       RunExample(delegate() {
-        new VBExamples.AddSitelinksUsingFeeds().Run(user, campaignId, feedName);
+        new VBExamples.AddSitelinksUsingFeeds().Run(user, campaignId, feedName, adGroupId);
       });
     }
 
@@ -106,7 +108,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     public void TestAddSitelinksUsingFeedsCSharpExample() {
       string feedName = "SitelinkFeed" + utils.GetTimeStampAlpha();
       RunExample(delegate() {
-        new CSharpExamples.AddSitelinksUsingFeeds().Run(user, campaignId, feedName);
+        new CSharpExamples.AddSitelinksUsingFeeds().Run(user, campaignId, feedName, adGroupId);
       });
     }
 

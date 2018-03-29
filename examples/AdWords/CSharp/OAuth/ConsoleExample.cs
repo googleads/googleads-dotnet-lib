@@ -13,7 +13,7 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201705;
+using Google.Api.Ads.AdWords.v201802;
 using Google.Api.Ads.Common.Lib;
 
 using System;
@@ -76,7 +76,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth {
 
       // Get the CampaignService.
       CampaignService campaignService =
-          (CampaignService) user.GetService(AdWordsService.v201705.CampaignService);
+          (CampaignService) user.GetService(AdWordsService.v201802.CampaignService);
 
       Selector selector = new Selector() {
         fields = new string[] { Campaign.Fields.Id, Campaign.Fields.Name, Campaign.Fields.Status },

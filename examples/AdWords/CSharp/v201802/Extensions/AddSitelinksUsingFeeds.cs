@@ -96,8 +96,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
       Console.WriteLine(codeExample.Description);
       try {
         long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
         string feedName = "INSERT_FEED_NAME_HERE";
-        codeExample.Run(new AdWordsUser(), campaignId, feedName);
+        codeExample.Run(new AdWordsUser(), campaignId, feedName, adGroupId);
       } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e));
@@ -121,13 +122,40 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="campaignId">Id of the campaign with which sitelinks are associated.
     /// </param>
+    /// <param name="adGroupId">Id of the adgroup to restrict targeting to.</param>
     /// <param name="feedName">Name of the feed to be created.</param>
-    public void Run(AdWordsUser user, long campaignId, string feedName) {
+    public void Run(AdWordsUser user, long campaignId, string feedName, long? adGroupId) {
       SitelinksDataHolder sitelinksData = new SitelinksDataHolder();
       createSitelinksFeed(user, sitelinksData, feedName);
       createSitelinksFeedItems(user, sitelinksData);
       createSitelinksFeedMapping(user, sitelinksData);
       createSitelinksCampaignFeed(user, sitelinksData, campaignId);
+      restrictFeedItemToAdGroup(user, sitelinksData, adGroupId);
+    }
+
+    private static void restrictFeedItemToAdGroup(AdWordsUser user,
+        SitelinksDataHolder sitelinksData, long? adGroupId) {
+
+      // Optional: Restrict the first feed item to only serve with ads for the
+      // specified ad group ID.
+      FeedItemAdGroupTarget adGroupTarget = new FeedItemAdGroupTarget();
+      adGroupTarget.feedId = sitelinksData.FeedId;
+      adGroupTarget.feedItemId = sitelinksData.FeedItemIds[0];
+      adGroupTarget.adGroupId = adGroupId.Value;
+
+      using (FeedItemTargetService feedItemTargetService = (FeedItemTargetService) user.GetService(
+          AdWordsService.v201802.FeedItemTargetService)) {
+        FeedItemTargetOperation operation = new FeedItemTargetOperation();
+        operation.@operator = Operator.ADD;
+        operation.operand = adGroupTarget;
+
+        FeedItemTargetReturnValue retval = feedItemTargetService.mutate(
+            new FeedItemTargetOperation[] { operation });
+        FeedItemAdGroupTarget newAdGroupTarget = (FeedItemAdGroupTarget) retval.value[0];
+        Console.WriteLine("Feed item target for feed ID {0} and feed item ID {1}" +
+            " was created to restrict serving to ad group ID {2}",
+            newAdGroupTarget.feedId, newAdGroupTarget.feedItemId, newAdGroupTarget.adGroupId);
+      }
     }
 
     private static void createSitelinksFeed(AdWordsUser user, SitelinksDataHolder sitelinksData,

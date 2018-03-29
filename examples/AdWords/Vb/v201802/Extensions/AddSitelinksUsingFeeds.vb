@@ -116,8 +116,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
       Console.WriteLine(codeExample.Description)
       Try
         Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
+        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
         Dim feedName As String = "INSERT_FEED_NAME_HERE"
-        codeExample.Run(New AdWordsUser, campaignId, feedName)
+        codeExample.Run(New AdWordsUser, campaignId, feedName, adGroupId)
       Catch e As Exception
         Console.WriteLine("An exception occurred while running this code example. {0}",
             ExampleUtilities.FormatException(e))
@@ -139,13 +140,42 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
     ''' <param name="user">The AdWords user.</param>
     ''' <param name="campaignId">Id of the campaign with which sitelinks are associated.
     ''' </param>
+    ''' <param name="adGroupId">Id of the adgroup to restrict targeting to.</param>
     ''' <param name="feedName">Name of the feed.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long, ByVal feedName As String)
+    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long, ByVal feedName As String,
+        ByVal adGroupId As Long?)
       Dim siteLinksData As New SitelinksDataHolder
       createSitelinksFeed(user, siteLinksData, feedName)
       createSitelinksFeedItems(user, siteLinksData)
       createSitelinksFeedMapping(user, siteLinksData)
       createSitelinksCampaignFeed(user, siteLinksData, campaignId)
+      restrictFeedItemToAdGroup(user, siteLinksData, adGroupId)
+    End Sub
+
+    Private Sub restrictFeedItemToAdGroup(user As AdWordsUser,
+        siteLinksData As SitelinksDataHolder, adGroupId As Long?)
+
+      ' Optional: Restrict the first feed item to only serve with ads for the
+      ' specified ad group ID.
+      Dim adGroupTarget As New FeedItemAdGroupTarget()
+      adGroupTarget.feedId = siteLinksData.FeedId
+      adGroupTarget.feedItemId = siteLinksData.FeedItemIds(0)
+      adGroupTarget.adGroupId = adGroupId.Value
+
+      Using feedItemTargetService As FeedItemTargetService = CType(user.GetService(
+          AdWordsService.v201802.FeedItemTargetService), FeedItemTargetService)
+        Dim operation As New FeedItemTargetOperation()
+        operation.operator = [Operator].ADD
+        operation.operand = adGroupTarget
+
+        Dim retval As FeedItemTargetReturnValue = feedItemTargetService.mutate(
+            New FeedItemTargetOperation() {operation})
+        Dim newAdGroupTarget As FeedItemAdGroupTarget =
+            CType(retval.value(0), FeedItemAdGroupTarget)
+        Console.WriteLine("Feed item target for feed ID {0} and feed item ID {1}" +
+            " was created to restrict serving to ad group ID {2}",
+            newAdGroupTarget.feedId, newAdGroupTarget.feedItemId, newAdGroupTarget.adGroupId)
+      End Using
     End Sub
 
     Private Sub createSitelinksFeed(

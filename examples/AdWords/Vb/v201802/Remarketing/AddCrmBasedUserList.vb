@@ -86,9 +86,9 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
             ExampleUtilities.GetRandomString()
         userList.description = "A list of customers that originated from email addresses"
 
-        ' CRM Userlist has a maximum membership lifespan of 180 days. See
-        ' https://support.google.com/adwords/answer/6276125 for details.
-        userList.membershipLifeSpan = 180L
+        ' CRM-based user lists can use a membershipLifeSpan of 10000 to indicate
+        ' unlimited; otherwise normal values apply.
+        userList.membershipLifeSpan = 30L
         userList.uploadKeyType = CustomerMatchUploadKeyType.CONTACT_INFO
 
         ' Create operation.

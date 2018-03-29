@@ -254,7 +254,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
       AdWordsSoapHeaderInspector inspector = new AdWordsSoapHeaderInspector() {
         User = user
       };
-      XmlDocument xDoc = XmlUtilities.CreateDocument(SoapMessages_v201708.UpdateCampaign);
+      XmlDocument xDoc = XmlUtilities.CreateDocument(SoapMessages_v201802.UpdateCampaign);
       XmlElement xResponse = (XmlElement)xDoc.SelectSingleNode("/Example/SOAP/Response");
       xDoc.LoadXml(xResponse.InnerText);
       this.response =

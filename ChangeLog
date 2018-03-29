@@ -1,3 +1,17 @@
+23.2.0
+======
+
+AdWords:
+  - Removed support for v201705 and v201708.
+  - Updated the AddSitelinksUsingFeeds example to illustrate the usage of
+  FeedItemTargetService.
+  - Updated the AddDynamicPageFeed example to include comments about page
+  feed URL recommendations and rules.
+DFP:
+  -
+Common:
+  -
+
 23.1.1
 ======
 AdWords:

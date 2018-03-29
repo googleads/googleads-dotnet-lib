@@ -243,9 +243,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
       Dim urlAttributeValue As New FeedItemAttributeValue()
       urlAttributeValue.feedAttributeId = feedDetails.UrlAttributeId
 
-      ' Optional: Add the {feeditem} valuetrack parameter to track which page feed items lead
-      ' to each click.
-      url = url + "?id={feeditem}"
+      ' See https://support.google.com/adwords/answer/7166527 for page feed URL recommendations and
+      ' rules.
       urlAttributeValue.stringValues = New String() {url}
 
       Dim labelAttributeValue As New FeedItemAttributeValue()

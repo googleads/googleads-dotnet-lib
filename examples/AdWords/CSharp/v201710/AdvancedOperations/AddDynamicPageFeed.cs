@@ -226,9 +226,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
       FeedItemAttributeValue urlAttributeValue = new FeedItemAttributeValue();
       urlAttributeValue.feedAttributeId = details.urlAttributeId;
 
-      // Optional: Add the {feeditem} valuetrack parameter to track which page feed items lead
-      // to each click.
-      url = url + "?id={feeditem}";
+      // See https://support.google.com/adwords/answer/7166527 for page feed URL recommendations
+      // and rules.
       urlAttributeValue.stringValues = new string[] { url };
 
       FeedItemAttributeValue labelAttributeValue = new FeedItemAttributeValue();
