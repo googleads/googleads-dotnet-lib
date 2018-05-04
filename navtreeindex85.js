@@ -1,13 +1,5 @@
 var NAVTREEINDEX85 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_adwords_user_list_service_1_1mutate_response.html#a0aa8e87a03f5b7a272caf7d53bdad16d":[1,0,0,0,0,0,4,0,9,1,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_adwords_user_list_service_1_1mutate_response.html#a2038d46c550e732bd25b3e6f39e1b34d":[1,0,0,0,0,0,4,0,9,1,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_adwords_user_list_service_1_1mutate_response.html#a65a4821c0d6ed3d16587eec6200a9f0d":[1,0,0,0,0,0,4,0,9,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_request.html":[1,0,0,0,0,0,4,0,10,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_request.html#a50d07746f5b39c2eefee1108336aae14":[1,0,0,0,0,0,4,0,10,0,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_request.html#ab9b06b47b9425676b27e372cd905e874":[1,0,0,0,0,0,4,0,10,0,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_request.html#aec71ca5b7ac5fdf36cf0b6e0572490cb":[1,0,0,0,0,0,4,0,10,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_response.html":[1,0,0,0,0,0,4,0,10,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_response.html#a6cbfd14e737ed59c0c1ce1127bd65539":[1,0,0,0,0,0,4,0,10,1,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_response.html#a814012873b1068383afca4e99bfd31a7":[1,0,0,0,0,0,4,0,10,1,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_response.html#ae27e334efe296fdb10ff6f631333ae4c":[1,0,0,0,0,0,4,0,10,1,0],
@@ -249,5 +241,13 @@ var NAVTREEINDEX85 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_draft_service_1_1mutate_response.html#aadb178304477e8576fb482e5cb87938b":[1,0,0,0,0,0,4,0,32,1,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_item_service_1_1mutate_request.html":[1,0,0,0,0,0,4,0,33,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_item_service_1_1mutate_request.html#a7039e056cce1a0e973ac2e7c795ae395":[1,0,0,0,0,0,4,0,33,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_item_service_1_1mutate_request.html#a9bc3a9d15e3a84d239291f7d2cdef21a":[1,0,0,0,0,0,4,0,33,0,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_item_service_1_1mutate_request.html#a9bc3a9d15e3a84d239291f7d2cdef21a":[1,0,0,0,0,0,4,0,33,0,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_item_service_1_1mutate_request.html#aa5509fed2ac7d06b99f7aab31dd39542":[1,0,0,0,0,0,4,0,33,0,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_item_service_1_1mutate_response.html":[1,0,0,0,0,0,4,0,33,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_item_service_1_1mutate_response.html#a352ae1c73d51420ca1751cf5afe18963":[1,0,0,0,0,0,4,0,33,1,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_item_service_1_1mutate_response.html#a7e6cd0b2b2bc56cd73fd273f491ea38d":[1,0,0,0,0,0,4,0,33,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_item_service_1_1mutate_response.html#addf04bc9e69554876f549a2f6d2c7f81":[1,0,0,0,0,0,4,0,33,1,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_mapping_service_1_1mutate_request.html":[1,0,0,0,0,0,4,0,34,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_mapping_service_1_1mutate_request.html#a93b35004fb3d08bfb0b429e9633d0b74":[1,0,0,0,0,0,4,0,34,0,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_mapping_service_1_1mutate_request.html#aa7388b85ab40e8344a82b00e4cb74c18":[1,0,0,0,0,0,4,0,34,0,0]
 };

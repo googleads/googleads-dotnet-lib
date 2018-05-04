@@ -1,17 +1,5 @@
 var NAVTREEINDEX160 =
 {
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_asset.html#a3cae3a44e0073c7aa4b793ac1fc3154c":[1,0,0,0,0,2,6,68,4],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_asset.html#a4b3dbf664bb8e7c67bc3883b205eec4c":[1,0,0,0,0,2,6,68,6],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_asset.html#a544adec9dcc960d3277dc5ad6279ac9d":[1,0,0,0,0,2,6,68,5],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_asset.html#a551e99f8778a97782bab83c55c5a4db0":[1,0,0,0,0,2,6,68,7],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_asset.html#a8a93806fdc082e4ad57d73464a541d9f":[1,0,0,0,0,2,6,68,8],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_asset.html#a8f7f11948f826025a1d80871133e947b":[1,0,0,0,0,2,6,68,9],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_asset.html#a943954a88dd9df6bedc8700108259246":[1,0,0,0,0,2,6,68,3],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_asset.html#afa174c39ccc01920b1ecf77502b00c33":[1,0,0,0,0,2,6,68,1],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_asset_macro_error.html":[1,0,0,0,0,2,6,140],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_asset_macro_error.html#a9dad4e0bf2ac0255218931934b436123":[1,0,0,0,0,2,6,140,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_asset_macro_error.html#ae7272c360049bc1b3fd3fad1c8ce995b":[1,0,0,0,0,2,6,140,1],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_error.html":[1,0,0,0,0,2,6,139],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_error.html#acccb203c4e5be7406459e094feefa950":[1,0,0,0,0,2,6,139,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_error.html#aec7be6a29bf79642e58e59e12264b3c1":[1,0,0,0,0,2,6,139,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_native_style_preview.html":[1,0,0,0,0,2,6,348],
@@ -249,5 +237,17 @@ var NAVTREEINDEX160 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_key_action.html":[1,0,0,0,0,2,6,180],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_key_page.html":[1,0,0,0,0,2,6,178],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_key_page.html#a1bef9bc24ae3e51764dfc7efbc8de20e":[1,0,0,0,0,2,6,178,3],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_key_page.html#a38fe23f3e19e670f8dbd1c76fb007e0b":[1,0,0,0,0,2,6,178,4]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_key_page.html#a38fe23f3e19e670f8dbd1c76fb007e0b":[1,0,0,0,0,2,6,178,4],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_key_page.html#a8e09717858747b49db3be00b7e611a9a":[1,0,0,0,0,2,6,178,1],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_key_page.html#ab7d93744623d2a2f4bd719bb49d02752":[1,0,0,0,0,2,6,178,0],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_key_page.html#ad2f4aab516546a58fabe364a5b3d06ef":[1,0,0,0,0,2,6,178,2],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_premium_feature.html":[1,0,0,0,0,2,6,468],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_premium_feature.html#a277e98b113aacd082ef4a07d31f42223":[1,0,0,0,0,2,6,468,2],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_premium_feature.html#a8fffa38de94a66002cb64686998675b3":[1,0,0,0,0,2,6,468,1],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_premium_feature.html#a95a20518aa6e2c0ade87a6983df0ddf3":[1,0,0,0,0,2,6,468,0],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_premium_feature.html#afe01187691d5ffd258d62c4f3ea68acb":[1,0,0,0,0,2,6,468,3],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_service.html":[1,0,0,0,0,2,6,187],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_service.html#a04912299e2ad101bfe2843bf4e338b20":[1,0,0,0,0,2,6,187,2],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_service.html#a141a9773bf74f9142982dfecdc1853f4":[1,0,0,0,0,2,6,187,6],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_service.html#a248122cf74b228fd04abb71fb6c06cd0":[1,0,0,0,0,2,6,187,11]
 };

@@ -1,13 +1,5 @@
 var NAVTREEINDEX112 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_bidding_strategy_service_1_1mutate_request.html#adbc4fd5fdeb4e8e6e2e04b7f514706ba":[1,0,0,0,0,0,5,0,12,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_bidding_strategy_service_1_1mutate_response.html":[1,0,0,0,0,0,5,0,12,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_bidding_strategy_service_1_1mutate_response.html#a2d721e006e2c471ba68efca6730798b6":[1,0,0,0,0,0,5,0,12,1,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_bidding_strategy_service_1_1mutate_response.html#a525654c2382b62adbd8e844dac7b4691":[1,0,0,0,0,0,5,0,12,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_bidding_strategy_service_1_1mutate_response.html#ad663a6725d9d8caed71940f82ad19219":[1,0,0,0,0,0,5,0,12,1,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1get_billing_accounts_request.html":[1,0,0,0,0,0,5,0,13,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1get_billing_accounts_request.html#a92509d2f341ba83e7cc390d509abfc1d":[1,0,0,0,0,0,5,0,13,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1get_billing_accounts_response.html":[1,0,0,0,0,0,5,0,13,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1get_billing_accounts_response.html#a50ad6f5e688b4f79ef3a88045161e761":[1,0,0,0,0,0,5,0,13,1,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1get_billing_accounts_response.html#a73eddd1285186854fdca45d867ff04b5":[1,0,0,0,0,0,5,0,13,1,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1get_billing_accounts_response.html#acdcbb41d9956264a960663d96cceda5d":[1,0,0,0,0,0,5,0,13,1,0],
@@ -249,5 +241,13 @@ var NAVTREEINDEX112 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_mapping_service_1_1mutate_response.html#a117d5f691046f55f2eb46da73f31594f":[1,0,0,0,0,0,5,0,35,1,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_mapping_service_1_1mutate_response.html#a35770768323e50858ab82a5940e6ac11":[1,0,0,0,0,0,5,0,35,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_mapping_service_1_1mutate_response.html#af9c7ae3ad8a592522a3fb3c213b55c68":[1,0,0,0,0,0,5,0,35,1,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_service_1_1mutate_request.html":[1,0,0,0,0,0,5,0,36,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_service_1_1mutate_request.html":[1,0,0,0,0,0,5,0,36,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_service_1_1mutate_request.html#a1c3dc52d8f5dbc5de3f074fd67c3e3e9":[1,0,0,0,0,0,5,0,36,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_service_1_1mutate_request.html#a8952c443803944683850ba998a8ec72a":[1,0,0,0,0,0,5,0,36,0,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_service_1_1mutate_request.html#a9258f9dad0a56b68b1e4fa85a5a0a05b":[1,0,0,0,0,0,5,0,36,0,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_service_1_1mutate_response.html":[1,0,0,0,0,0,5,0,36,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_service_1_1mutate_response.html#a5c0a16fcb863322a10710e56327aa750":[1,0,0,0,0,0,5,0,36,1,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_service_1_1mutate_response.html#aa3f16059fb7e2f2b9f17d2692862f522":[1,0,0,0,0,0,5,0,36,1,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_service_1_1mutate_response.html#ae805540ab179300485c308aff0b7905b":[1,0,0,0,0,0,5,0,36,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_label_service_1_1mutate_request.html":[1,0,0,0,0,0,5,0,37,0]
 };

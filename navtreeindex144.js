@@ -1,17 +1,5 @@
 var NAVTREEINDEX144 =
 {
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_customizable_attributes.html#a3ec6254b60d6604279cf313bccb01572":[1,0,0,0,0,2,5,465,6],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_customizable_attributes.html#a4cb7a79f4f7ed8fec95b9df44b406bbe":[1,0,0,0,0,2,5,465,14],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_customizable_attributes.html#a53a7f501c9c1afc66795624bd84010e8":[1,0,0,0,0,2,5,465,18],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_customizable_attributes.html#a5b3f9b1dfc15cdbda9920949019f40c4":[1,0,0,0,0,2,5,465,24],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_customizable_attributes.html#a6b8dad94a3f3e5d591f5df8d89b94a3d":[1,0,0,0,0,2,5,465,36],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_customizable_attributes.html#a7056acde300ad34d34fed6e94bf4f773":[1,0,0,0,0,2,5,465,16],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_customizable_attributes.html#a71d3b23c07decc62af66fc46a0515f1e":[1,0,0,0,0,2,5,465,5],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_customizable_attributes.html#a7316b188825e96c8c655e320c67803e9":[1,0,0,0,0,2,5,465,23],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_customizable_attributes.html#a7ccc476f6be46c547ca4cb5039c02f71":[1,0,0,0,0,2,5,465,34],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_customizable_attributes.html#a7e4c32a2721a39f6b22cbe1f51ffb1af":[1,0,0,0,0,2,5,465,1],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_customizable_attributes.html#a7f1f24eda52edb5fff92c7e969d623d0":[1,0,0,0,0,2,5,465,19],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_customizable_attributes.html#a8308a79b242ac038c4afde9d16248157":[1,0,0,0,0,2,5,465,38],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_customizable_attributes.html#a8ea5a27e29ad00a68f5352a4c218fb1c":[1,0,0,0,0,2,5,465,27],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_customizable_attributes.html#a903a4575c88b9975a55cda636895427d":[1,0,0,0,0,2,5,465,7],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_customizable_attributes.html#a931bd9cbdb81c0e9ce2cf6f39906bd74":[1,0,0,0,0,2,5,465,12],
@@ -249,5 +237,17 @@ var NAVTREEINDEX144 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_geo_targeting_error.html#aabc35c4e26fc156afc6c9e54404a559b":[1,0,0,0,0,2,5,281,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_geo_targeting_error.html#ac3432400821de19f472af4f6f4a23d8b":[1,0,0,0,0,2,5,281,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_geography_premium_feature.html":[1,0,0,0,0,2,5,436],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_goal.html":[1,0,0,0,0,2,5,251]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_goal.html":[1,0,0,0,0,2,5,251],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_goal.html#a0b9207adff2627800e81ee799e56ad4f":[1,0,0,0,0,2,5,251,4],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_goal.html#a280524a3293a1a1352c26fafba921351":[1,0,0,0,0,2,5,251,1],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_goal.html#a4c6addd9de7f75d72550556377c688c1":[1,0,0,0,0,2,5,251,0],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_goal.html#a4ea5004d6a7d9a728fc88d98f361acff":[1,0,0,0,0,2,5,251,5],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_goal.html#a8c5c4d9fd3396b87b07ccf2168318165":[1,0,0,0,0,2,5,251,3],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_goal.html#af3a55e5e658c835bca66ad40674d3347":[1,0,0,0,0,2,5,251,2],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_grp_demographic_breakdown.html":[1,0,0,0,0,2,5,198],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_grp_demographic_breakdown.html#a0ed1f9325f727d219702d25a1272ac23":[1,0,0,0,0,2,5,198,9],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_grp_demographic_breakdown.html#a288be500dd593a0a00794f2b6f1029a1":[1,0,0,0,0,2,5,198,7],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_grp_demographic_breakdown.html#a63f522909a6aacd85c6c3178a523384d":[1,0,0,0,0,2,5,198,5],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_grp_demographic_breakdown.html#a9b31d5340a67d756a4227a0fb4fa7bf3":[1,0,0,0,0,2,5,198,0],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_grp_demographic_breakdown.html#abbee2ffc370b574732c43ceb899d3d8a":[1,0,0,0,0,2,5,198,6]
 };

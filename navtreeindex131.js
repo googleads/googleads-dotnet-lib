@@ -1,17 +1,5 @@
 var NAVTREEINDEX131 =
 {
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_pause_live_stream_event_ads.html":[1,0,0,0,0,2,4,373],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_pause_live_stream_events.html":[1,0,0,0,0,2,4,372],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_pause_orders.html":[1,0,0,0,0,2,4,408],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_pause_proposal_line_items.html":[1,0,0,0,0,2,4,558],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_permission_error.html":[1,0,0,0,0,2,4,16],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_permission_error.html#a2b23557d39bea236eec6b30e9e3c07ac":[1,0,0,0,0,2,4,16,1],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_permission_error.html#a8434ccf612c11a0ec3f36224cceeaaf5":[1,0,0,0,0,2,4,16,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_placement.html":[1,0,0,0,0,2,4,419],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_placement.html#a42b23bccd8503e27276ea1ed60d9bcfd":[1,0,0,0,0,2,4,419,3],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_placement.html#a4c6da6c9ebc3d0d08aab063d8531d01c":[1,0,0,0,0,2,4,419,7],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_placement.html#a5e8010d732c41f54693b2d5a13bd34e1":[1,0,0,0,0,2,4,419,5],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_placement.html#a63cfb07b2ea79eddf9069791d2e9e2c9":[1,0,0,0,0,2,4,419,4],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_placement.html#a6447ce168fb959056dfccca455a52545":[1,0,0,0,0,2,4,419,6],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_placement.html#a754ebcc433f8cb100f49a5d1d722317e":[1,0,0,0,0,2,4,419,8],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_placement.html#a9093a39f09f61fbf792699a612018a55":[1,0,0,0,0,2,4,419,1],
@@ -249,5 +237,17 @@ var NAVTREEINDEX131 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html":[1,0,0,0,0,2,4,485],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a0d98db95e2b478a0c9a8c9e3a9845e1d":[1,0,0,0,0,2,4,485,2],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a1430482a27f5312b50b02696001276a8":[1,0,0,0,0,2,4,485,23],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a1de6e727da1de3fa577f471408b35cb8":[1,0,0,0,0,2,4,485,37]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a1de6e727da1de3fa577f471408b35cb8":[1,0,0,0,0,2,4,485,37],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a2051f0496b5278f8245f86990b03337c":[1,0,0,0,0,2,4,485,31],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a254702a56b1c01c6a9e5a94ef52d7f2d":[1,0,0,0,0,2,4,485,0],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a25622de54c37b5a16074eb885f00950e":[1,0,0,0,0,2,4,485,27],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a25b69a115c8217686549d26651edf0e1":[1,0,0,0,0,2,4,485,13],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a25da64768bf79478d6c5cbd2dfb2f38e":[1,0,0,0,0,2,4,485,6],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a2a093beca7f3977d250f82593dc48f06":[1,0,0,0,0,2,4,485,3],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a2acba06f738eab17ad02f68145d3cb51":[1,0,0,0,0,2,4,485,30],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a3e20d702c91d63afacc44dc2479b429c":[1,0,0,0,0,2,4,485,21],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a40ea00a6aa2f1afc7a2582b9f3ea6f89":[1,0,0,0,0,2,4,485,1],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a54b92db5a2c0d3521ebda78d53a221c2":[1,0,0,0,0,2,4,485,15],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a56dbde4fc065af6da3b83d72eb4c7ac2":[1,0,0,0,0,2,4,485,32],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_product_template.html#a5cd51302c0421a7ab3e1ed0ac18ae79a":[1,0,0,0,0,2,4,485,11]
 };

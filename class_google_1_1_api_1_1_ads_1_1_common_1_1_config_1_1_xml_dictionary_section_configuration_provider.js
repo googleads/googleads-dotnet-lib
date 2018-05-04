@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_common_1_1_config_1_1_xml_dictionary_section_configuration_provider =
-[
-    [ "XmlDictionarySectionConfigurationProvider", "class_google_1_1_api_1_1_ads_1_1_common_1_1_config_1_1_xml_dictionary_section_configuration_provider.html#a69b8390f06a52d252d40f49e8a6612a7", null ],
-    [ "Load", "class_google_1_1_api_1_1_ads_1_1_common_1_1_config_1_1_xml_dictionary_section_configuration_provider.html#ab9254d3c4d534a567b1692df9a9d96b3", null ]
-];

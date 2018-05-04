@@ -1,17 +1,5 @@
 var NAVTREEINDEX140 =
 {
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule.html#a3cd4de3a3a477cf3a3be839b70c09334":[1,0,0,0,0,2,5,455,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule.html#a47b0868e6178795d1ca3c1369b198feb":[1,0,0,0,0,2,5,455,3],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule.html#a59a1b3cd1c898d883d56b4fcef5588eb":[1,0,0,0,0,2,5,455,11],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule.html#a6902a0887b913f8720a95ff22006522c":[1,0,0,0,0,2,5,455,1],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule.html#a7b997ea881281a32193dd0a23b980029":[1,0,0,0,0,2,5,455,2],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule.html#a8990d61f464a7bd19c77258ba1abb7b3":[1,0,0,0,0,2,5,455,9],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule.html#aa100ada8e7bd6ac62b43fd27bb762fa7":[1,0,0,0,0,2,5,455,8],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule.html#aa838e9fca298d5764e992e7ad99fe07e":[1,0,0,0,0,2,5,455,10],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule_action.html":[1,0,0,0,0,2,5,459],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule_error.html":[1,0,0,0,0,2,5,456],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule_error.html#a25740dd46a14fd181a4ee6dd61dda7de":[1,0,0,0,0,2,5,456,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule_error.html#a282e667b847c6b87ac51f93e55979c24":[1,0,0,0,0,2,5,456,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule_page.html":[1,0,0,0,0,2,5,458],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule_page.html#a1dafce5b4d292b9770c1a2d288a81cf0":[1,0,0,0,0,2,5,458,2],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule_page.html#a30cb614a2e477ebfbbe7b79675c502f1":[1,0,0,0,0,2,5,458,1],
@@ -249,5 +237,17 @@ var NAVTREEINDEX140 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment.html#a9b20d1e62e84d6846e3871ec38c12ba7":[1,0,0,0,0,2,5,728,12],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment.html#a9c837211167e817fb6c0cf86d1d29618":[1,0,0,0,0,2,5,728,17],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment.html#aa4851117c53e8fad9482034436016fb8":[1,0,0,0,0,2,5,728,15],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment.html#ad2ed0b13e6f67f16d9b58e1c72809cf6":[1,0,0,0,0,2,5,728,2]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment.html#ad2ed0b13e6f67f16d9b58e1c72809cf6":[1,0,0,0,0,2,5,728,2],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment.html#ae87572d977a52dc8a7b3e73d1bd3081a":[1,0,0,0,0,2,5,728,1],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment.html#aefec53c0f0f5d2e0d40d00dec95942ca":[1,0,0,0,0,2,5,728,0],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment.html#af8c4f38f252a16089fc181dec7c31c5f":[1,0,0,0,0,2,5,728,9],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_action.html":[1,0,0,0,0,2,5,737],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_criteria.html":[1,0,0,0,0,2,5,240],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_criteria.html#a2788ea7422bca307c38fd07125d77931":[1,0,0,0,0,2,5,240,0],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_criteria.html#a4363198d47d0ff457f6b3a4628031f1f":[1,0,0,0,0,2,5,240,2],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_criteria.html#ab8ec1e6e0312f3021426f784f0365220":[1,0,0,0,0,2,5,240,1],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_data_provider.html":[1,0,0,0,0,2,5,727],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_data_provider.html#a779c16de59f91bf9f1f57f0419f555f6":[1,0,0,0,0,2,5,727,0],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_error.html":[1,0,0,0,0,2,5,268],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_error.html#a531b172453b0af99e40530fa6c620341":[1,0,0,0,0,2,5,268,0]
 };

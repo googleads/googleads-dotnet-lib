@@ -1,9 +1,11 @@
 var class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base =
 [
     [ "AppConfigBase", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a2c7bf31a65a93b6bacdade838d5aaf3d", null ],
+    [ "AppConfigBase", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a42c60b54760739861965809e6c75254f", null ],
     [ "Clone", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a5fb19784119deff998b82db2308af588", null ],
     [ "GetDefaultOAuth2Scope", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#af0391b99de77e1843488071c0a42eef9", null ],
     [ "GetUserAgent", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a34b64f05661375da24baa0954610d5ee", null ],
+    [ "LoadConfigRoot", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a1dd3264515411f6eeeeda87789ab80b8", null ],
     [ "LoadConfigSection", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a3f160037022a2b30581585316907926a", null ],
     [ "ReadSetting", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a3aadfeb4331167c7e2f7da387bece800", null ],
     [ "ReadSettings", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config_base.html#a401e39fce299c2481bd3a2b210d45700", null ],

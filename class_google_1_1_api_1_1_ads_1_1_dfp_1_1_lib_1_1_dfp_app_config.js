@@ -1,6 +1,7 @@
 var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_app_config =
 [
     [ "DfpAppConfig", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_app_config.html#aaf5192cee4fda3726f24cff0e41c1df5", null ],
+    [ "DfpAppConfig", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_app_config.html#a327ab0b01a19a8521fb531f8088eeb44", null ],
     [ "GetDefaultOAuth2Scope", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_app_config.html#ac9d63ef6bbf28e463816c90f77e07e74", null ],
     [ "GetUserAgent", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_app_config.html#a9783274ea6e2c2c6c8308a7f0f55f460", null ],
     [ "ReadSettings", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_app_config.html#a8eb578245d214ffe0c258c92bd2dc32d", null ],

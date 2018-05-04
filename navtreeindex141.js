@@ -1,17 +1,5 @@
 var NAVTREEINDEX141 =
 {
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment.html#ae87572d977a52dc8a7b3e73d1bd3081a":[1,0,0,0,0,2,5,728,1],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment.html#aefec53c0f0f5d2e0d40d00dec95942ca":[1,0,0,0,0,2,5,728,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment.html#af8c4f38f252a16089fc181dec7c31c5f":[1,0,0,0,0,2,5,728,9],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_action.html":[1,0,0,0,0,2,5,737],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_criteria.html":[1,0,0,0,0,2,5,240],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_criteria.html#a2788ea7422bca307c38fd07125d77931":[1,0,0,0,0,2,5,240,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_criteria.html#a4363198d47d0ff457f6b3a4628031f1f":[1,0,0,0,0,2,5,240,2],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_criteria.html#ab8ec1e6e0312f3021426f784f0365220":[1,0,0,0,0,2,5,240,1],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_data_provider.html":[1,0,0,0,0,2,5,727],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_data_provider.html#a779c16de59f91bf9f1f57f0419f555f6":[1,0,0,0,0,2,5,727,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_error.html":[1,0,0,0,0,2,5,268],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_error.html#a531b172453b0af99e40530fa6c620341":[1,0,0,0,0,2,5,268,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_error.html#a965bf7595b552dc1cac70ed1d1c83133":[1,0,0,0,0,2,5,268,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_page.html":[1,0,0,0,0,2,5,736],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_page.html#a367c5d1c54c51d080f58dc3601041d52":[1,0,0,0,0,2,5,736,0],
@@ -249,5 +237,17 @@ var NAVTREEINDEX141 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#a1e06f3fc4ed202246b54ace7b76b09d5":[1,0,0,0,0,2,5,758,5],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#a327ff73a49578cbfe94b8b748b298552":[1,0,0,0,0,2,5,758,19],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#a390e2916c563def4f4835504eae6389d":[1,0,0,0,0,2,5,758,4],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#a5a4878c248db9d96db2f17236edb42e2":[1,0,0,0,0,2,5,758,10]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#a5a4878c248db9d96db2f17236edb42e2":[1,0,0,0,0,2,5,758,10],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#a5ff707627703330ae267c40e1a92abcd":[1,0,0,0,0,2,5,758,1],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#a6b1dd5bf82c4437633a50a41ad4ebd90":[1,0,0,0,0,2,5,758,18],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#a9a6fcc7eb27dc7752b814cb13ce47b8b":[1,0,0,0,0,2,5,758,3],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#aaf647707b15dc77614def9e871bee856":[1,0,0,0,0,2,5,758,11],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#ac245c2f7d7dc1c35a087b2531ac27800":[1,0,0,0,0,2,5,758,15],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#ac9dbae2676e1b1a97a1238f411fc9e90":[1,0,0,0,0,2,5,758,2],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#ae21e99b8f42dd5cb29211296aca3c3c3":[1,0,0,0,0,2,5,758,7],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#ae26b49df3dbd637d59561a278f9d75b3":[1,0,0,0,0,2,5,758,6],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#ae357084945550a9a7658cca46b5cfdaf":[1,0,0,0,0,2,5,758,0],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#ae687f8be56737c85f4e34dd03137146d":[1,0,0,0,0,2,5,758,9],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#aec86fcdb4094db76b0ebdbc792f38bde":[1,0,0,0,0,2,5,758,20],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#af2899f74f36e4ae24ba863c53c31a89c":[1,0,0,0,0,2,5,758,8]
 };
