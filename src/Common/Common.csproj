@@ -2,7 +2,7 @@
   <!-- nupkg properties -->
   <PropertyGroup>
     <Title>Ads API Dotnet Common Library</Title>
-    <Version>9.0.1</Version>
+    <Version>9.1.0</Version>
     <Description>This library provides you with common functionality to access Google's Ads APIs.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
     <PackageTags>AdWords DFP DoubleClick Google</PackageTags>
@@ -35,11 +35,13 @@
     <PackageReference Include="System.ServiceModel.Http" Version="4.4.0" />
     <PackageReference Include="System.ServiceModel.Security" Version="4.4.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.2" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="1.1.2" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="1.0.2" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.4.1" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)'=='net452'">
     <Reference Include="System.Web" />
+    <Reference Include="System.Configuration" />
   </ItemGroup>
   <!-- Exclude Properties until all solution projects are migrated to Core format -->
   <ItemGroup>

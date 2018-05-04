@@ -14,7 +14,7 @@
 
 using Google.Api.Ads.Common.Config;
 using Google.Api.Ads.Common.Lib;
-
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -276,6 +276,12 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// </summary>
     public AdWordsAppConfig() : base() {
       ReadSettings(LoadConfigSection("AdWordsApi"));
+    }
+
+    /// <summary>
+    /// Public constructor.
+    /// </summary>
+    public AdWordsAppConfig(IConfigurationRoot configurationRoot) : base(configurationRoot) {
     }
 
     /// <summary>

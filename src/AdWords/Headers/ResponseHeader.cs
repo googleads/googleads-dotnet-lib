@@ -12,79 +12,75 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System.Runtime.Serialization;
+using System.ComponentModel;
+using System.Reflection;
+using System.Xml;
+using System.Xml.XPath;
 
 namespace Google.Api.Ads.AdWords.Headers {
 
   /// <summary>
   /// This class represents an AdWords SOAP response header.
   /// </summary>
-  [DataContract(Name = "ResponseHeader", Namespace = PLACEHOLDER_NAMESPACE)]
   public class ResponseHeader {
-
-    /// <summary>
-    /// A placeholder namespace for deserializing response headers from different API versions.
-    /// </summary>
-    public const string PLACEHOLDER_NAMESPACE =
-        "https://adwords.google.com/api/adwords/group/version";
-
-    private long _operations;
-    private long _responseTime;
-
-    /// <summary>
-    /// Gets or sets whether <see cref="operations"/> is specified.
-    /// </summary>
-    public bool operationsSpecified { get; set; }
-
-    /// <summary>
-    /// Gets or sets whether <see cref="responseTime"/> is specified.
-    /// </summary>
-    public bool responseTimeSpecified { get; set; }
 
     /// <summary>
     /// Gets or sets the request id for this API call.
     /// </summary>
-    [DataMember(Order = 0)]
-    public string requestId { get; set; }
+    public string requestId {
+      get; set;
+    }
 
     /// <summary>
     /// Gets or sets the name of the service that was invoked.
     /// </summary>
-    [DataMember(Order = 1)]
-    public string serviceName { get; set; }
+    public string serviceName {
+      get; set;
+    }
 
     /// <summary>
     /// Gets or sets the name of the method that was invoked.
     /// </summary>
-    [DataMember(Order = 2)]
-    public string methodName { get; set; }
+    public string methodName {
+      get; set;
+    }
 
     /// <summary>
     /// Gets or sets the number of operations for this API call.
     /// </summary>
-    [DataMember(Order = 3)]
-    public long operations {
-      get {
-        return _operations;
-      }
-      set {
-        operationsSpecified = true;
-        _operations = value;
-      }
+    public long? operations {
+      get; set;
     }
 
     /// <summary>
     /// Gets or sets the response time for this API call.
     /// </summary>
-    [DataMember(Order = 4)]
-    public long responseTime {
-      get {
-        return _responseTime;
+    public long? responseTime {
+      get; set;
+    }
+
+    /// <summary>
+    /// Reads a response header from an xml reader.
+    /// </summary>
+    /// <param name="reader">The xml reader.</param>
+    /// <param name="rootNamespace"></param>
+    /// <returns>A deserialized response header.</returns>
+    internal static ResponseHeader ReadFrom(XmlReader reader, string rootNamespace) {
+      ResponseHeader retval = new ResponseHeader();
+      XmlReader childReader = reader.ReadSubtree();
+      XPathNavigator root = new XPathDocument(childReader).CreateNavigator();
+
+      var ns = new XmlNamespaceManager(root.NameTable);
+      ns.AddNamespace("root", rootNamespace);
+
+      foreach (XPathNavigator childNode in root.Select("root:ResponseHeader/child::*", ns)) {
+        string content = childNode.Value;
+        string name = childNode.Name;
+        PropertyInfo pi = typeof(ResponseHeader).GetProperty(name);
+        TypeConverter typeConverter = TypeDescriptor.GetConverter(pi.PropertyType);
+        pi.SetValue(retval, typeConverter.ConvertFrom(content));
       }
-      set {
-        responseTimeSpecified = true;
-        _responseTime = value;
-      }
+      return retval;
     }
   }
 }

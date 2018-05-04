@@ -114,6 +114,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
 
         // Set selector paging (required for targeting idea service).
         Paging paging = Paging.Default;
+        selector.paging = paging;
 
         TargetingIdeaPage page = new TargetingIdeaPage();
 

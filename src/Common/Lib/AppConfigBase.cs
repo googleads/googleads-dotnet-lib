@@ -14,14 +14,15 @@
 
 using Google.Api.Ads.Common.Config;
 using Google.Api.Ads.Common.Logging;
-using Google.Api.Ads.Common.Util;
 
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -157,12 +158,6 @@ namespace Google.Api.Ads.Common.Lib {
     /// The default value of OAuth2 server URL.
     /// </summary>
     private const string DEFAULT_OAUTH2_SERVER = "https://accounts.google.com";
-
-    /// <summary>
-    /// Contains the configuration information from the underlying config
-    /// file.
-    /// </summary>
-    private IConfigurationRoot configuration;
 
     /// <summary>
     /// Gets or sets whether the credentials in the log file should be masked.
@@ -403,6 +398,14 @@ namespace Google.Api.Ads.Common.Lib {
     }
 
     /// <summary>
+    /// Initializes a new instance of the <see cref="AppConfigBase"/> class.
+    /// </summary>
+    /// <param name="configurationRoot">The configuration root.</param>
+    public AppConfigBase(IConfigurationRoot configurationRoot) : base() {
+      ReadSettings(LoadConfigRoot(configurationRoot));
+    }
+
+    /// <summary>
     /// Attempts to load the configuration section with the given name.
     /// </summary>
     /// <param name="sectionName">The name of the configuration section to load.</param>
@@ -410,10 +413,37 @@ namespace Google.Api.Ads.Common.Lib {
     /// The request configuration section, or <code>null</code> if none was found.
     /// </returns>
     protected Dictionary<string, string> LoadConfigSection(string sectionName) {
-      configuration = XmlDictionarySectionConfigurationExtensions.AddXmlFileSection(
-          new ConfigurationBuilder(), sectionName).Build();
+      IConfigurationRoot configurationRoot =
+          MemoryConfigurationBuilderExtensions.AddInMemoryCollection(
+              new ConfigurationBuilder(), LoadAppConfig(sectionName)).Build();
+      return LoadConfigRoot(configurationRoot);
+    }
 
-      return configuration.AsEnumerable().ToDictionary(
+    /// <summary>
+    /// Loads the application configuration XML.
+    /// </summary>
+    /// <param name="sectionName">Name of the section.</param>
+    /// <returns>The App.config loaded as a list of KeyValuePair.</returns>
+    private IEnumerable<KeyValuePair<string, string>> LoadAppConfig(string sectionName) {
+      Hashtable config = (Hashtable) ConfigurationManager.GetSection(sectionName);
+
+      Dictionary<string, string> retval = new Dictionary<string, string>();
+      if (config != null) {
+        foreach (string key in config.Keys) {
+          retval.Add(key, (string) config[key]);
+        }
+      }
+
+      return retval;
+    }
+
+    /// <summary>
+    /// Attempts to load the configuration from a configuration root.
+    /// </summary>
+    /// <param name="configurationRoot">The configuration root.</param>
+    /// The configuration, or <code>null</code> if none was found.
+    protected Dictionary<string, string> LoadConfigRoot(IConfigurationRoot configurationRoot) {
+      return configurationRoot.AsEnumerable().ToDictionary(
           setting => setting.Key.ToString(),
           setting => setting.Value.ToString());
     }

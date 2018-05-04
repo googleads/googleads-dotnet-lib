@@ -1,3 +1,18 @@
+23.3.0
+======
+
+AdWords:
+  - Fixed issue #160.
+  - Fixed issue #150.
+  - Fixed issue #157.
+  - Fixed issue #158.
+  - Fixed issue #159.
+  - Fixed issue #162.
+DFP:
+  -
+Common:
+  - Fixed issue #157.
+
 23.2.0
 ======
 
@@ -8,7 +23,7 @@ AdWords:
   - Updated the AddDynamicPageFeed example to include comments about page
   feed URL recommendations and rules.
 DFP:
-  -
+  - Regenerated stub code.
 Common:
   -
 

@@ -17,12 +17,9 @@ using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.Util;
 
 using System;
-using System.IO;
-using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Dispatcher;
-using System.Text;
 using System.Xml;
 
 namespace Google.Api.Ads.AdWords.Lib {
@@ -37,18 +34,24 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// Gets or sets the SOAP request header.
     /// </summary>
     /// <value>The request header.</value>
-    public RequestHeader RequestHeader { get; set; }
+    public RequestHeader RequestHeader {
+      get; set;
+    }
 
     /// <summary>
     /// Gets or sets the SOAP response header.
     /// </summary>
-    public ResponseHeader ResponseHeader { get; set; }
+    public ResponseHeader ResponseHeader {
+      get; set;
+    }
 
     /// <summary>
     /// Gets or sets the user making the requests.
     /// </summary>
     /// <value>The user.</value>
-    public AdWordsUser User { get; set; }
+    public AdWordsUser User {
+      get; set;
+    }
 
     private void Validate() {
       // TODO (cseeley): add real error messages
@@ -92,21 +95,14 @@ namespace Google.Api.Ads.AdWords.Lib {
     /// <param name="correlationState">Correlation state data returned by BeforeSendRequest</param>
     public void AfterReceiveReply(ref Message reply, object correlationState) {
       if (reply.Headers.Count > 0) {
-        // DataContract is strict with namespacing. Change the namespace to be the same
-        // as the DataContract attribute.
         XmlReader reader = reply.Headers.GetReaderAtHeader(0);
-        String ns = reader.NamespaceURI;
-        String headerText = reader.ReadOuterXml();
-        headerText = headerText.Replace(ns, ResponseHeader.PLACEHOLDER_NAMESPACE);
-        XmlObjectSerializer ser = new DataContractSerializer(typeof(ResponseHeader));
+        ResponseHeader = ResponseHeader.ReadFrom(reader, RequestHeader.Namespace);
 
-        ApiCallEntry entry = new ApiCallEntry();
-        using (MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(headerText))) {
-          ResponseHeader = (ResponseHeader)ser.ReadObject(stream);
-          entry.OperationCount = (int)ResponseHeader.operations;
-          entry.Method = ResponseHeader.methodName;
-          entry.Service = ResponseHeader.serviceName;
-        }
+        ApiCallEntry entry = new ApiCallEntry() {
+          OperationCount = (int) ResponseHeader.operations,
+          Method = ResponseHeader.methodName,
+          Service = ResponseHeader.serviceName
+        };
 
         this.User.AddCallDetails(entry);
       }

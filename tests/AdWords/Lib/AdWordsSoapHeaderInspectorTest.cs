@@ -12,18 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using NUnit.Framework;
-using System.ServiceModel.Channels;
-using System.ServiceModel;
-using System.Xml;
-using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Headers;
+using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests.Mocks;
 using Google.Api.Ads.Common.Util;
+using NUnit.Framework;
+using System;
+using System.Linq;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Google.Api.Ads.AdWords.Tests.Lib {
+
   /// <summary>
   /// AdWords SOAP header inspector tests.
   /// </summary>
@@ -33,22 +36,22 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     /// <summary>
     /// The service to test applying headers to.
     /// </summary>
-    IClientChannel channel;
+    private IClientChannel channel;
 
     /// <summary>
     /// The request message to test applying headers to.
     /// </summary>
-    Message request;
+    private Message request;
 
     /// <summary>
     /// The response message to test reading headers from.
     /// </summary>
-    Message response;
+    private Message response;
 
     /// <summary>
     /// The test message version.
     /// </summary>
-    readonly MessageVersion TestMessageVersion =
+    private readonly MessageVersion TestMessageVersion =
         MessageVersion.CreateVersion(EnvelopeVersion.Soap11);
 
     /// <summary>
@@ -132,10 +135,10 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
         partialFailure = true
       };
 
-      inspector.RequestHeader = (RequestHeader)header.Clone();
+      inspector.RequestHeader = (RequestHeader) header.Clone();
       inspector.BeforeSendRequest(ref this.request, this.channel);
       Assert.AreEqual(1, this.request.Headers.Count);
-      foreach(RequestHeader appliedHeader in request.Headers) {
+      foreach (RequestHeader appliedHeader in request.Headers) {
         Assert.AreEqual(header.clientCustomerId, appliedHeader.clientCustomerId);
         Assert.AreEqual(header.validateOnly, appliedHeader.validateOnly);
         Assert.AreEqual(header.developerToken, appliedHeader.developerToken);
@@ -185,14 +188,22 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
         }
       };
 
-      inspector.BeforeSendRequest(ref this.request, this.channel);
-      Assert.AreEqual(1, request.Headers.Count);
-      Assert.That(!request.Headers[0].ToString().Contains("<clientCustomerId>"));
+      // If clientCustomerId is not specified in request header, it should not be in
+      // serialized xml.
+      XElement xRoot1 = SetCustomerIdAndReturnHeaderXml(inspector, null);
+      Assert.False(xRoot1.Elements("clientCustomerId").Any());
 
-      inspector.RequestHeader.clientCustomerId = "";
+      // If clientCustomerId is set to empty string in request header, it should not be in
+      // serialized xml.
+      XElement xRoot2 = SetCustomerIdAndReturnHeaderXml(inspector, "");
+      Assert.False(xRoot2.Elements("clientCustomerId").Any());
+    }
+
+    private XElement SetCustomerIdAndReturnHeaderXml(AdWordsSoapHeaderInspector inspector,
+        string customerId) {
+      inspector.RequestHeader.clientCustomerId = customerId;
       inspector.BeforeSendRequest(ref this.request, this.channel);
-      Assert.AreEqual(1, request.Headers.Count);
-      Assert.That(!request.Headers[0].ToString().Contains("<clientCustomerId>"));
+      return XDocument.Parse(request.Headers[0].ToString()).Root;
     }
 
     /// <summary>
@@ -205,14 +216,17 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
         RequestHeader = new RequestHeader() {
           developerToken = "ABCDEF",
           validateOnly = true,
-          partialFailure =  true
+          partialFailure = false,
         }
       };
 
       inspector.BeforeSendRequest(ref this.request, this.channel);
       Assert.AreEqual(1, request.Headers.Count);
-      Assert.That(request.Headers[0].ToString().Contains("<validateOnly>true</validateOnly>"));
-      Assert.That(request.Headers[0].ToString().Contains("<partialFailure>true</partialFailure>"));
+      XElement root = XDocument.Parse(request.Headers[0].ToString()).Root;
+      Assert.AreEqual("true", root.Element(XName.Get("validateOnly",
+          inspector.RequestHeader.ChildNamespace)).Value);
+      Assert.AreEqual("false", root.Element(XName.Get("partialFailure",
+          inspector.RequestHeader.ChildNamespace)).Value);
     }
 
     /// <summary>
@@ -222,6 +236,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     public void TestCallEntryAddedToUser() {
       AdWordsSoapHeaderInspector inspector = new AdWordsSoapHeaderInspector() {
         User = new AdWordsUser(),
+        RequestHeader = new RequestHeader()
       };
 
       ResponseHeader responseHeader = new ResponseHeader() {
@@ -231,10 +246,8 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
         methodName = "mutate"
       };
       response.Headers.Clear();
-      response.Headers.Add(MessageHeader.CreateHeader(
-          "ResponseHeader", 
-          ResponseHeader.PLACEHOLDER_NAMESPACE,
-          responseHeader));
+      response.Headers.Add(MessageHeader.CreateHeader("ResponseHeader",
+          inspector.RequestHeader.Namespace, responseHeader));
       inspector.AfterReceiveReply(ref this.response, null);
 
       ApiCallEntry[] entries = inspector.User.GetCallDetails();
@@ -252,10 +265,14 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     public void TestCallEntryExtractedFromXml() {
       AdWordsUser user = new AdWordsUser();
       AdWordsSoapHeaderInspector inspector = new AdWordsSoapHeaderInspector() {
-        User = user
+        User = user,
+        RequestHeader = new RequestHeader() {
+          Version = "v201802",
+          GroupName = "cm"
+        }
       };
       XmlDocument xDoc = XmlUtilities.CreateDocument(SoapMessages_v201802.UpdateCampaign);
-      XmlElement xResponse = (XmlElement)xDoc.SelectSingleNode("/Example/SOAP/Response");
+      XmlElement xResponse = (XmlElement) xDoc.SelectSingleNode("/Example/SOAP/Response");
       xDoc.LoadXml(xResponse.InnerText);
       this.response =
           Message.CreateMessage(new XmlNodeReader(xDoc), Int32.MaxValue, TestMessageVersion);
@@ -275,7 +292,6 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
       Assert.AreEqual("CampaignService", callEntry.Service);
     }
 
-
     /// <summary>
     /// Tests that the Message state is valid and can be read after the inspector
     /// is applied.
@@ -290,17 +306,15 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
         validateOnly = true,
         developerToken = "ABCDEF"
       };
-      inspector.RequestHeader = (RequestHeader)requestHeader.Clone();
+      inspector.RequestHeader = (RequestHeader) requestHeader.Clone();
 
       ResponseHeader responseHeader = new ResponseHeader() {
         operations = 10,
         responseTime = 1000,
       };
       response.Headers.Clear();
-      response.Headers.Add(MessageHeader.CreateHeader(
-          "ResponseHeader",
-          ResponseHeader.PLACEHOLDER_NAMESPACE,
-          responseHeader));
+      response.Headers.Add(MessageHeader.CreateHeader("ResponseHeader",
+          inspector.RequestHeader.Namespace, responseHeader));
 
       inspector.BeforeSendRequest(ref this.request, this.channel);
       inspector.AfterReceiveReply(ref this.response, null);

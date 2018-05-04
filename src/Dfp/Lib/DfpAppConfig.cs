@@ -14,6 +14,7 @@
 
 using Google.Api.Ads.Common.Config;
 using Google.Api.Ads.Common.Lib;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 
@@ -111,6 +112,13 @@ namespace Google.Api.Ads.Dfp.Lib {
     /// </summary>
     public DfpAppConfig() : base() {
       ReadSettings(LoadConfigSection("DfpApi"));
+    }
+
+    /// <summary>
+    /// Public constructor.
+    /// </summary>
+    /// <param name="configurationRoot">The configuration root to read from.</param>
+    public DfpAppConfig(IConfigurationRoot configurationRoot) : base(configurationRoot) {
     }
 
     /// <summary>
