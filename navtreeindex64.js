@@ -1,9 +1,5 @@
 var NAVTREEINDEX64 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_attribute_1_1_filterable_fields.html":[1,0,0,0,0,0,4,480,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_attribute_1_1_filterable_fields.html#ae7abc75d98345e5d0b78e8e148049a27":[1,0,0,0,0,0,4,480,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_attribute_1_1_selectable_fields.html":[1,0,0,0,0,0,4,480,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_attribute_1_1_selectable_fields.html#a03decd7ca5f10d5ae7a57ccebe34e1c0":[1,0,0,0,0,0,4,480,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_attribute_field_mapping.html":[1,0,0,0,0,0,4,382],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_attribute_field_mapping.html#a3ff1fca2b7c0040e72b4fd7d54274a77":[1,0,0,0,0,0,4,382,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_attribute_field_mapping.html#a7556f9c47c1ef2177261387cf934cdb6":[1,0,0,0,0,0,4,382,3],
@@ -249,5 +245,9 @@ var NAVTREEINDEX64 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_bidding_strategy_service.html#a739356ada6b9dc4f666ec2ccc863d599":[1,0,0,0,0,0,4,727,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_bidding_strategy_service.html#a891dabe435d0469442829af4af08563a":[1,0,0,0,0,0,4,727,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_bidding_strategy_service.html#aab0bc31f9cadab4ce1eed6b3408535ac":[1,0,0,0,0,0,4,727,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_bidding_strategy_service.html#adf350cff081ff81e67048fcc8f128c05":[1,0,0,0,0,0,4,727,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_bidding_strategy_service.html#adf350cff081ff81e67048fcc8f128c05":[1,0,0,0,0,0,4,727,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_bidding_strategy_service.html#af32bf6fcd000d30c71bb360b1aab06ef":[1,0,0,0,0,0,4,727,6],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_bids.html":[1,0,0,0,0,0,4,179],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_bids.html#a18cc09bc2c92adc3443c8373bec2ddad":[1,0,0,0,0,0,4,179,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_bids_1_1_fields.html":[1,0,0,0,0,0,4,179,0]
 };

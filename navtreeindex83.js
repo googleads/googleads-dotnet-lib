@@ -1,9 +1,5 @@
 var NAVTREEINDEX83 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_result_1_1_filterable_fields.html#a4b65c7a7e01ee234a2b98e2a905b3c33":[1,0,0,0,0,0,4,522,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_result_1_1_selectable_fields.html":[1,0,0,0,0,0,4,522,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_result_1_1_selectable_fields.html#a351d0fbc14df511edf0f977645839899":[1,0,0,0,0,0,4,522,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_selector.html":[1,0,0,0,0,0,4,527],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_selector.html#a055ead3242bd8390baf8960d8970ec92":[1,0,0,0,0,0,4,527,5],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_selector.html#a337737a9c0704bb292566c56a3b9e8fd":[1,0,0,0,0,0,4,527,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_selector.html#aeda6334e4420824aa5b338baba4ce76a":[1,0,0,0,0,0,4,527,3],
@@ -249,5 +245,9 @@ var NAVTREEINDEX83 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_logical_rule.html#ab3cda06665bb1a913abadb63e1c862a0":[1,0,0,0,0,0,4,551,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_logical_rule_1_1_fields.html":[1,0,0,0,0,0,4,551,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_logical_rule_1_1_fields.html#ad0cb5cb0c952dc36215a2f3c65603e9f":[1,0,0,0,0,0,4,551,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_logical_rule_1_1_filterable_fields.html":[1,0,0,0,0,0,4,551,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_logical_rule_1_1_filterable_fields.html":[1,0,0,0,0,0,4,551,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_logical_rule_1_1_filterable_fields.html#a1350a3abcf68323c067e7a87a6249b95":[1,0,0,0,0,0,4,551,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_logical_rule_1_1_selectable_fields.html":[1,0,0,0,0,0,4,551,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_logical_rule_1_1_selectable_fields.html#ac000e59017db8f07b79fe2d984270274":[1,0,0,0,0,0,4,551,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_operation.html":[1,0,0,0,0,0,4,558]
 };

@@ -1,9 +1,5 @@
 var NAVTREEINDEX82 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_string_length_error_1_1_filterable_fields.html":[1,0,0,0,0,0,4,57,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_string_length_error_1_1_filterable_fields.html#a067cd1b2f4baef94efe8bde657b36ea8":[1,0,0,0,0,0,4,57,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_string_length_error_1_1_selectable_fields.html":[1,0,0,0,0,0,4,57,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_string_length_error_1_1_selectable_fields.html#aedd25839a625eddb8c383c1d1fd22a4c":[1,0,0,0,0,0,4,57,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_string_rule_item.html":[1,0,0,0,0,0,4,532],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_string_rule_item.html#a0df596e3e3836d5ddec836a83158139d":[1,0,0,0,0,0,4,532,6],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_string_rule_item.html#aad9470fb0fad6cacaf8be282dd20b2f1":[1,0,0,0,0,0,4,532,4],
@@ -249,5 +245,9 @@ var NAVTREEINDEX82 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_result.html#aaebfce46d91cf468e88acf5761e1e2ad":[1,0,0,0,0,0,4,522,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_result_1_1_fields.html":[1,0,0,0,0,0,4,522,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_result_1_1_fields.html#ac916782b9a1f9c8725f922e094724c89":[1,0,0,0,0,0,4,522,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_result_1_1_filterable_fields.html":[1,0,0,0,0,0,4,522,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_result_1_1_filterable_fields.html":[1,0,0,0,0,0,4,522,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_result_1_1_filterable_fields.html#a4b65c7a7e01ee234a2b98e2a905b3c33":[1,0,0,0,0,0,4,522,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_result_1_1_selectable_fields.html":[1,0,0,0,0,0,4,522,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_result_1_1_selectable_fields.html#a351d0fbc14df511edf0f977645839899":[1,0,0,0,0,0,4,522,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_selector.html":[1,0,0,0,0,0,4,527]
 };

@@ -1,9 +1,5 @@
 var NAVTREEINDEX110 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_trial.html#a39209f44f3ef9c197c3ec2e2fff60f8a":[1,0,0,0,0,0,5,697,14],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_trial.html#a3a85902475de1ee11cd09cfa8ef8f61f":[1,0,0,0,0,0,5,697,15],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_trial.html#a51df884f272c85419eeb9eb2209bccf2":[1,0,0,0,0,0,5,697,7],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_trial.html#a60bebb8fc005f952e29916b0f05c9462":[1,0,0,0,0,0,5,697,10],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_trial.html#a7709b7380ca9e45c4972c8381489186c":[1,0,0,0,0,0,5,697,8],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_trial.html#a91b06532c367ddbe475ec1747f09558b":[1,0,0,0,0,0,5,697,18],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_trial.html#a927d234fde4ea8459a2a4407ed786981":[1,0,0,0,0,0,5,697,11],
@@ -249,5 +245,9 @@ var NAVTREEINDEX110 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_user_list_page_1_1_selectable_fields.html":[1,0,0,0,0,0,5,576,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_user_list_page_1_1_selectable_fields.html#a4fdab5a8b6ef5eb6a34ed43599b67137":[1,0,0,0,0,0,5,576,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_user_list_return_value.html":[1,0,0,0,0,0,5,585],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_user_list_return_value.html#a4a0ac21add6b60a8324e499368b98f3b":[1,0,0,0,0,0,5,585,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_user_list_return_value.html#a4a0ac21add6b60a8324e499368b98f3b":[1,0,0,0,0,0,5,585,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_vanity_pharma.html":[1,0,0,0,0,0,5,187],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_vanity_pharma.html#a43b995079a4f6ae15f5ca4fc624bb243":[1,0,0,0,0,0,5,187,6],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_vanity_pharma.html#a4861709783663a3c9f0ef0bd65dca417":[1,0,0,0,0,0,5,187,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_vanity_pharma.html#a67cc7d3db9a163f7ead6792d5f383fc6":[1,0,0,0,0,0,5,187,4]
 };

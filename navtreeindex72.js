@@ -1,9 +1,5 @@
 var NAVTREEINDEX72 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_attribute.html":[1,0,0,0,0,0,4,354],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_attribute.html#a0e7fa0b96835df2849857a10e70d2b68":[1,0,0,0,0,0,4,354,7],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_attribute.html#a190f6c83a1235b6c4352aeb8de02a768":[1,0,0,0,0,0,4,354,9],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_attribute.html#a2b2ab7c9c1f2d913a1fd527b536aff31":[1,0,0,0,0,0,4,354,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_attribute.html#a2d1a8c0d7991836ecf6a19680cbddf51":[1,0,0,0,0,0,4,354,8],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_attribute.html#a88773a41026525d013bcc7061245c99b":[1,0,0,0,0,0,4,354,5],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_attribute.html#ab88d7216a952c27205aa4ae4d07e6a32":[1,0,0,0,0,0,4,354,3],
@@ -249,5 +245,9 @@ var NAVTREEINDEX72 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_mapping_error_1_1_fields.html#af140c72c1fbb4834d1ef30b819ea6b01":[1,0,0,0,0,0,4,385,0,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_mapping_error_1_1_filterable_fields.html":[1,0,0,0,0,0,4,385,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_mapping_error_1_1_filterable_fields.html#ab4ee1722f8dd75a1b5c429af4d3fe14b":[1,0,0,0,0,0,4,385,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_mapping_error_1_1_selectable_fields.html":[1,0,0,0,0,0,4,385,2]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_mapping_error_1_1_selectable_fields.html":[1,0,0,0,0,0,4,385,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_mapping_error_1_1_selectable_fields.html#aeba0dc5734372082cb1a56fe65c7d161":[1,0,0,0,0,0,4,385,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_mapping_operation.html":[1,0,0,0,0,0,4,387],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_mapping_operation.html#a885d5e94da079ac5fa7df0f8a39150ac":[1,0,0,0,0,0,4,387,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_mapping_operation_1_1_fields.html":[1,0,0,0,0,0,4,387,0]
 };

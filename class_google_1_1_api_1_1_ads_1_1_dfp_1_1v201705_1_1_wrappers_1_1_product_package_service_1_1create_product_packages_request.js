@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_product_package_service_1_1create_product_packages_request =
-[
-    [ "createProductPackagesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_product_package_service_1_1create_product_packages_request.html#acc8f199026b824e1637450378a808740", null ],
-    [ "createProductPackagesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_product_package_service_1_1create_product_packages_request.html#a865cd03fba9b3f0eca2b8809228ae2c6", null ],
-    [ "productPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_product_package_service_1_1create_product_packages_request.html#a226df680b7fa559851d478172cf91b54", null ]
-];

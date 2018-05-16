@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_proposal_service_1_1update_proposals_request =
-[
-    [ "updateProposalsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_proposal_service_1_1update_proposals_request.html#a75f6634b1351daacc0144d04722a317c", null ],
-    [ "updateProposalsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_proposal_service_1_1update_proposals_request.html#af36aefcaf175f67ed1981fe45ecd5433", null ],
-    [ "proposals", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_proposal_service_1_1update_proposals_request.html#a030a91799fb70c6ea4d04843c9b38bc2", null ]
-];

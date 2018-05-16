@@ -1,9 +1,5 @@
 var NAVTREEINDEX84 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_logical_rule_1_1_filterable_fields.html#a1350a3abcf68323c067e7a87a6249b95":[1,0,0,0,0,0,4,551,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_logical_rule_1_1_selectable_fields.html":[1,0,0,0,0,0,4,551,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_logical_rule_1_1_selectable_fields.html#ac000e59017db8f07b79fe2d984270274":[1,0,0,0,0,0,4,551,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_operation.html":[1,0,0,0,0,0,4,558],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_operation.html#a7bb6e0ee1051f4eee685a51f8c4cbc71":[1,0,0,0,0,0,4,558,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_operation_1_1_fields.html":[1,0,0,0,0,0,4,558,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_operation_1_1_fields.html#aeacf3b63ad365c50b3f7dc07c3ea6b4b":[1,0,0,0,0,0,4,558,0,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX84 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_request.html#a50d07746f5b39c2eefee1108336aae14":[1,0,0,0,0,0,4,0,10,0,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_request.html#ab9b06b47b9425676b27e372cd905e874":[1,0,0,0,0,0,4,0,10,0,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_request.html#aec71ca5b7ac5fdf36cf0b6e0572490cb":[1,0,0,0,0,0,4,0,10,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_response.html":[1,0,0,0,0,0,4,0,10,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_response.html":[1,0,0,0,0,0,4,0,10,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_response.html#a6cbfd14e737ed59c0c1ce1127bd65539":[1,0,0,0,0,0,4,0,10,1,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_response.html#a814012873b1068383afca4e99bfd31a7":[1,0,0,0,0,0,4,0,10,1,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_response.html#ae27e334efe296fdb10ff6f631333ae4c":[1,0,0,0,0,0,4,0,10,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_service_1_1mutate_request.html":[1,0,0,0,0,0,4,0,11,0]
 };

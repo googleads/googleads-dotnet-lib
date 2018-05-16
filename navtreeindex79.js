@@ -1,9 +1,5 @@
 var NAVTREEINDEX79 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_product_bidding_category_data_1_1_selectable_fields.html":[1,0,0,0,0,0,4,271,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_product_bidding_category_data_1_1_selectable_fields.html#a6bcb67c573c6ba287195d6b53489c22f":[1,0,0,0,0,0,4,271,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_product_brand.html":[1,0,0,0,0,0,4,134],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_product_brand.html#a01dac74f4ecec8f396d66641f610d222":[1,0,0,0,0,0,4,134,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_product_brand.html#a04682b3c5955b3c31b2f106d553a749f":[1,0,0,0,0,0,4,134,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_product_brand_1_1_fields.html":[1,0,0,0,0,0,4,134,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_product_brand_1_1_fields.html#ad6b00db46a69594d0c984cf7ed929d13":[1,0,0,0,0,0,4,134,0,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX79 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_relative_date_1_1_selectable_fields.html":[1,0,0,0,0,0,4,535,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_relative_date_1_1_selectable_fields.html#acd84b18fc6dffed4916168d827c63b70":[1,0,0,0,0,0,4,535,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency.html":[1,0,0,0,0,0,4,447],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency.html#a151bbb7d8dd96c5449c35d8a33a54992":[1,0,0,0,0,0,4,447,3]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency.html#a151bbb7d8dd96c5449c35d8a33a54992":[1,0,0,0,0,0,4,447,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency.html#a19679b642ef10a79e83a098f104c7fcb":[1,0,0,0,0,0,4,447,4],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency_1_1_fields.html":[1,0,0,0,0,0,4,447,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency_1_1_fields.html#a0429a8ef29ae06beb91e1d8b739b85e7":[1,0,0,0,0,0,4,447,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency_1_1_filterable_fields.html":[1,0,0,0,0,0,4,447,1]
 };

@@ -1,9 +1,5 @@
 var NAVTREEINDEX100 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_forward_compatibility_error_1_1_fields.html":[1,0,0,0,0,0,5,93,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_forward_compatibility_error_1_1_fields.html#a4be8639930a0e176871490b3d15201d0":[1,0,0,0,0,0,5,93,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_forward_compatibility_error_1_1_filterable_fields.html":[1,0,0,0,0,0,5,93,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_forward_compatibility_error_1_1_filterable_fields.html#a16d22039ff84ef47746c41adb4955a9c":[1,0,0,0,0,0,5,93,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_forward_compatibility_error_1_1_selectable_fields.html":[1,0,0,0,0,0,5,93,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_forward_compatibility_error_1_1_selectable_fields.html#ab3c50171ec7825c905a2d32ce8df276d":[1,0,0,0,0,0,5,93,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_frequency_cap.html":[1,0,0,0,0,0,5,221],
@@ -249,5 +245,9 @@ var NAVTREEINDEX100 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_keyword_attribute.html":[1,0,0,0,0,0,5,509],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_keyword_attribute.html#ae3dac9960bb3565f2286e08e2597bf1a":[1,0,0,0,0,0,5,509,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_keyword_attribute_1_1_fields.html":[1,0,0,0,0,0,5,509,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_keyword_attribute_1_1_fields.html#a693916e5e2483db7f98ee1bc0d86334d":[1,0,0,0,0,0,5,509,0,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_keyword_attribute_1_1_fields.html#a693916e5e2483db7f98ee1bc0d86334d":[1,0,0,0,0,0,5,509,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_keyword_attribute_1_1_filterable_fields.html":[1,0,0,0,0,0,5,509,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_keyword_attribute_1_1_filterable_fields.html#aca9a5ebbfa2f1bd21d6791330b782c93":[1,0,0,0,0,0,5,509,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_keyword_attribute_1_1_selectable_fields.html":[1,0,0,0,0,0,5,509,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_keyword_attribute_1_1_selectable_fields.html#abeee119087cc251271354b3ee7d0ef7f":[1,0,0,0,0,0,5,509,2,0]
 };

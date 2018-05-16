@@ -1,9 +1,5 @@
 var NAVTREEINDEX91 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_bidding_scheme_1_1_fields.html#aa857689a9aaec0e036c76e58e1350372":[1,0,0,0,0,0,5,197,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_bidding_scheme_1_1_filterable_fields.html":[1,0,0,0,0,0,5,197,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_bidding_scheme_1_1_filterable_fields.html#abf7b3e7f0ba60a2e900db5b381760903":[1,0,0,0,0,0,5,197,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_bidding_scheme_1_1_selectable_fields.html":[1,0,0,0,0,0,5,197,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_bidding_scheme_1_1_selectable_fields.html#aad44529175a13afb94e62e82247f06ee":[1,0,0,0,0,0,5,197,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_bidding_strategy_configuration.html":[1,0,0,0,0,0,5,208],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_bidding_strategy_configuration.html#a070c6c2be946a37456a9e78099fd1950":[1,0,0,0,0,0,5,208,8],
@@ -249,5 +245,9 @@ var NAVTREEINDEX91 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_callout_feed_item.html":[1,0,0,0,0,0,5,657],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_callout_feed_item.html#a8a5c2eb51b17cea0390c9a9e149b6175":[1,0,0,0,0,0,5,657,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_callout_feed_item_1_1_fields.html":[1,0,0,0,0,0,5,657,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_callout_feed_item_1_1_fields.html#a26e0dd2fa0ab6073fd949d9258e1341c":[1,0,0,0,0,0,5,657,0,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_callout_feed_item_1_1_fields.html#a26e0dd2fa0ab6073fd949d9258e1341c":[1,0,0,0,0,0,5,657,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_callout_feed_item_1_1_filterable_fields.html":[1,0,0,0,0,0,5,657,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_callout_feed_item_1_1_filterable_fields.html#a67bbd0564a437ef280423ac1ecf1e93a":[1,0,0,0,0,0,5,657,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_callout_feed_item_1_1_selectable_fields.html":[1,0,0,0,0,0,5,657,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_callout_feed_item_1_1_selectable_fields.html#a9234a19c088866b3f2141bc546053629":[1,0,0,0,0,0,5,657,2,0]
 };

@@ -1,9 +1,5 @@
 var NAVTREEINDEX111 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_vanity_pharma.html":[1,0,0,0,0,0,5,187],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_vanity_pharma.html#a43b995079a4f6ae15f5ca4fc624bb243":[1,0,0,0,0,0,5,187,6],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_vanity_pharma.html#a4861709783663a3c9f0ef0bd65dca417":[1,0,0,0,0,0,5,187,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_vanity_pharma.html#a67cc7d3db9a163f7ead6792d5f383fc6":[1,0,0,0,0,0,5,187,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_vanity_pharma.html#abced33b5358b307484c238bb643cdaa8":[1,0,0,0,0,0,5,187,5],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_vanity_pharma_1_1_fields.html":[1,0,0,0,0,0,5,187,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_vanity_pharma_1_1_fields.html#a325572db7d02cc0d1586724023932ecb":[1,0,0,0,0,0,5,187,0,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX111 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_bidding_strategy_service_1_1mutate_response.html#ad663a6725d9d8caed71940f82ad19219":[1,0,0,0,0,0,5,0,12,1,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1get_billing_accounts_request.html":[1,0,0,0,0,0,5,0,13,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1get_billing_accounts_request.html#a92509d2f341ba83e7cc390d509abfc1d":[1,0,0,0,0,0,5,0,13,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1get_billing_accounts_response.html":[1,0,0,0,0,0,5,0,13,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1get_billing_accounts_response.html":[1,0,0,0,0,0,5,0,13,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1get_billing_accounts_response.html#a50ad6f5e688b4f79ef3a88045161e761":[1,0,0,0,0,0,5,0,13,1,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1get_billing_accounts_response.html#a73eddd1285186854fdca45d867ff04b5":[1,0,0,0,0,0,5,0,13,1,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1get_billing_accounts_response.html#acdcbb41d9956264a960663d96cceda5d":[1,0,0,0,0,0,5,0,13,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1mutate_request.html":[1,0,0,0,0,0,5,0,13,2]
 };

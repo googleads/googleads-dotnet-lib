@@ -1,9 +1,5 @@
 var NAVTREEINDEX87 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_customizer_feed_attribute.html#a4853a88ffa28a903cc7def6b08371716":[1,0,0,0,0,0,5,639,6],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_customizer_feed_attribute.html#aace66ccc1a38562b48a9371aada9962f":[1,0,0,0,0,0,5,639,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_customizer_feed_attribute.html#aeb65aa3354de3dc75679ce6b78f176ae":[1,0,0,0,0,0,5,639,7],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_customizer_feed_attribute.html#af350b325fc7e914b28900b1777853a3b":[1,0,0,0,0,0,5,639,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_customizer_feed_attribute_1_1_fields.html":[1,0,0,0,0,0,5,639,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_customizer_feed_attribute_1_1_fields.html#ad2b76cbe9443938ce46bcf156756466e":[1,0,0,0,0,0,5,639,0,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_customizer_feed_attribute_1_1_filterable_fields.html":[1,0,0,0,0,0,5,639,1],
@@ -249,5 +245,9 @@ var NAVTREEINDEX87 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_group_bid_modifier_return_value.html#a81663a6509028796d2000d18df98513a":[1,0,0,0,0,0,5,715,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_group_bid_modifier_service.html":[1,0,0,0,0,0,5,717],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_group_bid_modifier_service.html#a1173e7f94f7979ba4190c6b9bbbb218c":[1,0,0,0,0,0,5,717,7],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_group_bid_modifier_service.html#a27c822db38065bb7b6679284c3e12d76":[1,0,0,0,0,0,5,717,3]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_group_bid_modifier_service.html#a27c822db38065bb7b6679284c3e12d76":[1,0,0,0,0,0,5,717,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_group_bid_modifier_service.html#a374b1147360388f273e730aa4b2afd05":[1,0,0,0,0,0,5,717,4],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_group_bid_modifier_service.html#a52161c8863a3b6b566794befaf362347":[1,0,0,0,0,0,5,717,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_group_bid_modifier_service.html#a72472b9c50c7cb3f5971db205a12fc82":[1,0,0,0,0,0,5,717,6],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_group_bid_modifier_service.html#a99d0148b91d2a1acf54958d40b938a91":[1,0,0,0,0,0,5,717,5]
 };

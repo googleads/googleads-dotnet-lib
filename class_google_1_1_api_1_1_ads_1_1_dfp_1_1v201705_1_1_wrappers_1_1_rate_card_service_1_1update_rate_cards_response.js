@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_rate_card_service_1_1update_rate_cards_response =
-[
-    [ "updateRateCardsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_rate_card_service_1_1update_rate_cards_response.html#a9698226d52679db6dab9b6f7c3c83a33", null ],
-    [ "updateRateCardsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_rate_card_service_1_1update_rate_cards_response.html#afeac1059829825180df4a9cbe1ae08d9", null ],
-    [ "rval", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201705_1_1_wrappers_1_1_rate_card_service_1_1update_rate_cards_response.html#a58048fdd0d1282226c18a6d697a80bcf", null ]
-];

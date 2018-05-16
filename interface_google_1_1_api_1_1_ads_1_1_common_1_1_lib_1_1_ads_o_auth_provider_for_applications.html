@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('interface_google_1_1_api_1_1_ads_1_1_c
 </div><!--header-->
 <div class="contents">
 
-<p>Provides OAuth authorization mechanism for <a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a> services when using Web and Installed application flows.  
+<p>Provides <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth.html">OAuth</a> authorization mechanism for <a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a> services when using Web and Installed application flows.  
  <a href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider_for_applications.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Google.Api.Ads.Common.Lib.AdsOAuthProviderForApplications:</div>
@@ -120,9 +120,12 @@ Inheritance diagram for Google.Api.Ads.Common.Lib.AdsOAuthProviderForApplication
  <div class="center">
   <img src="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider_for_applications.png" usemap="#Google.Api.Ads.Common.Lib.AdsOAuthProviderForApplications_map" alt=""/>
   <map id="Google.Api.Ads.Common.Lib.AdsOAuthProviderForApplications_map" name="Google.Api.Ads.Common.Lib.AdsOAuthProviderForApplications_map">
-<area href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider.html" title="Provides OAuth authorization mechanism for Ads services. " alt="Google.Api.Ads.Common.Lib.AdsOAuthProvider" shape="rect" coords="0,56,374,80"/>
-<area href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_configurable.html" title="Marks a class as configurable. " alt="Google.Api.Ads.Common.Lib.Configurable" shape="rect" coords="0,0,374,24"/>
-<area href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications.html" title="Provides OAuth authorization mechanism for Ads services when using Web and installed application flow..." alt="Google.Api.Ads.Common.Lib.OAuth2ProviderForApplications" shape="rect" coords="0,168,374,192"/>
+<area href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider.html" title="Provides OAuth authorization mechanism for Ads services. " alt="Google.Api.Ads.Common.Lib.AdsOAuthProvider" shape="rect" coords="198,56,585,80"/>
+<area href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_configurable.html" title="Marks a class as configurable. " alt="Google.Api.Ads.Common.Lib.Configurable" shape="rect" coords="198,0,585,24"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html" title="Default implementation of OAuth2 provider. " alt="Google.Api.Ads.Common.OAuth.AdsOAuthProviderImpl" shape="rect" coords="198,168,585,192"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_base.html" title="Legacy base class for OAuth provider. Maintained for backward compatibility purposes. " alt="Google.Api.Ads.Common.Lib.OAuth2ProviderBase" shape="rect" coords="198,224,585,248"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications.html" title="Legacy base class for OAuth provider. Maintained for backward compatibility purposes. " alt="Google.Api.Ads.Common.Lib.OAuth2ProviderForApplications" shape="rect" coords="0,280,387,304"/>
+<area href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_service_accounts.html" title="Legacy base class for OAuth provider. Maintained for backward compatibility purposes. " alt="Google.Api.Ads.Common.Lib.OAuth2ProviderForServiceAccounts" shape="rect" coords="397,280,784,304"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -148,7 +151,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a80837af3bd71d8d8caa508d4f0074826 inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refreshes the access token if expiring.  <a href="#a80837af3bd71d8d8caa508d4f0074826">More...</a><br/></td></tr>
 <tr class="separator:a80837af3bd71d8d8caa508d4f0074826 inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56cebcf3dbd0d0b7be9993bff8f20fdc inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider.html#a56cebcf3dbd0d0b7be9993bff8f20fdc">GetAuthHeader</a> ()</td></tr>
-<tr class="memdesc:a56cebcf3dbd0d0b7be9993bff8f20fdc inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the OAuth authorization header to be used with HTTP requests.  <a href="#a56cebcf3dbd0d0b7be9993bff8f20fdc">More...</a><br/></td></tr>
+<tr class="memdesc:a56cebcf3dbd0d0b7be9993bff8f20fdc inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth.html">OAuth</a> authorization header to be used with HTTP requests.  <a href="#a56cebcf3dbd0d0b7be9993bff8f20fdc">More...</a><br/></td></tr>
 <tr class="separator:a56cebcf3dbd0d0b7be9993bff8f20fdc inherit pub_methods_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -173,7 +176,7 @@ Properties</h2></td></tr>
 <tr class="memdesc:aedaddb0f56a9e11bf7a0e522621e9295 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the API access your application is requesting. This is space delimited.  <a href="#aedaddb0f56a9e11bf7a0e522621e9295">More...</a><br/></td></tr>
 <tr class="separator:aedaddb0f56a9e11bf7a0e522621e9295 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab940f650f7d8b0dc8a1b824cea4c8f3d inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider.html#ab940f650f7d8b0dc8a1b824cea4c8f3d">State</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ab940f650f7d8b0dc8a1b824cea4c8f3d inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets a parameter that your application can use for keeping state. The OAuth Authorization Server roundtrips this parameter.  <a href="#ab940f650f7d8b0dc8a1b824cea4c8f3d">More...</a><br/></td></tr>
+<tr class="memdesc:ab940f650f7d8b0dc8a1b824cea4c8f3d inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets a parameter that your application can use for keeping state. The <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth.html">OAuth</a> Authorization Server roundtrips this parameter.  <a href="#ab940f650f7d8b0dc8a1b824cea4c8f3d">More...</a><br/></td></tr>
 <tr class="separator:ab940f650f7d8b0dc8a1b824cea4c8f3d inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a326f6b6bc37c8910cff4a493f28702d2 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider.html#a326f6b6bc37c8910cff4a493f28702d2">TokenType</a><code> [get]</code></td></tr>
 <tr class="memdesc:a326f6b6bc37c8910cff4a493f28702d2 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of token returned by the server. This field will always have the value Bearer for now.  <a href="#a326f6b6bc37c8910cff4a493f28702d2">More...</a><br/></td></tr>
@@ -181,14 +184,14 @@ Properties</h2></td></tr>
 <tr class="memitem:a39f2e957acb018bb8fb71602c56175a4 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider.html#a39f2e957acb018bb8fb71602c56175a4">AccessToken</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a39f2e957acb018bb8fb71602c56175a4 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the token that can be sent to a <a class="el" href="namespace_google.html">Google</a> API for authentication.  <a href="#a39f2e957acb018bb8fb71602c56175a4">More...</a><br/></td></tr>
 <tr class="separator:a39f2e957acb018bb8fb71602c56175a4 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5e4eff8606f3e09fee98e7f9ee2011d inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memItemLeft" align="right" valign="top"><a class="el" href="v201705_2_statement_builder_8cs.html#a758728487efed3b55b6b883006ec3741">DateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider.html#ac5e4eff8606f3e09fee98e7f9ee2011d">UpdatedOn</a><code> [get, set]</code></td></tr>
+<tr class="memitem:ac5e4eff8606f3e09fee98e7f9ee2011d inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memItemLeft" align="right" valign="top"><a class="el" href="v201708_2_statement_builder_8cs.html#a689b0ce6b3682a09a54fc6aa85c0644d">DateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider.html#ac5e4eff8606f3e09fee98e7f9ee2011d">UpdatedOn</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:ac5e4eff8606f3e09fee98e7f9ee2011d inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the time at which access token was retrieved.  <a href="#ac5e4eff8606f3e09fee98e7f9ee2011d">More...</a><br/></td></tr>
 <tr class="separator:ac5e4eff8606f3e09fee98e7f9ee2011d inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e5752e8349e5eaae237eaba8ec0e898 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider.html#a7e5752e8349e5eaae237eaba8ec0e898">ExpiresIn</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a7e5752e8349e5eaae237eaba8ec0e898 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the remaining lifetime on the access token.  <a href="#a7e5752e8349e5eaae237eaba8ec0e898">More...</a><br/></td></tr>
 <tr class="separator:a7e5752e8349e5eaae237eaba8ec0e898 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae00b88474d0cdb74a3a5dde3bc485aeb inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common_1_1_lib.html#a7587154738fe20b820c93b5aaf5dc9a0">OAuthTokensObtainedCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider.html#ae00b88474d0cdb74a3a5dde3bc485aeb">OnOAuthTokensObtained</a><code> [get]</code></td></tr>
-<tr class="memdesc:ae00b88474d0cdb74a3a5dde3bc485aeb inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback triggered when this provider obtains a new access token or refresh token from the OAuth server.  <a href="#ae00b88474d0cdb74a3a5dde3bc485aeb">More...</a><br/></td></tr>
+<tr class="memdesc:ae00b88474d0cdb74a3a5dde3bc485aeb inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback triggered when this provider obtains a new access token or refresh token from the <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth.html">OAuth</a> server.  <a href="#ae00b88474d0cdb74a3a5dde3bc485aeb">More...</a><br/></td></tr>
 <tr class="separator:ae00b88474d0cdb74a3a5dde3bc485aeb inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_configurable"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_configurable')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_configurable.html">Google.Api.Ads.Common.Lib.Configurable</a></td></tr>
 <tr class="memitem:a36dd294013a3fe27c3925064df467228 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_configurable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_app_config.html">AppConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_configurable.html#a36dd294013a3fe27c3925064df467228">Config</a><code> [get]</code></td></tr>
@@ -196,7 +199,7 @@ Properties</h2></td></tr>
 <tr class="separator:a36dd294013a3fe27c3925064df467228 inherit properties_interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_configurable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Provides OAuth authorization mechanism for <a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a> services when using Web and Installed application flows. </p>
+<div class="textblock"><p>Provides <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth.html">OAuth</a> authorization mechanism for <a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a> services when using Web and Installed application flows. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a6cb7bdc72b2112cec1cd8ffdd224dd3b"></a>
 <div class="memitem">
@@ -215,13 +218,13 @@ Properties</h2></td></tr>
 <p>Fetches the access and optionally the refresh token if applicable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">authorizationCode</td><td>The authorization code returned by OAuth server.</td></tr>
+    <tr><td class="paramname">authorizationCode</td><td>The authorization code returned by <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth.html">OAuth</a> server.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the tokens were fetched successfully, false otherwise. </dd></dl>
 
-<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications.html#a929a8dd623354a44a3a7a7d205c89d04">Google.Api.Ads.Common.Lib.OAuth2ProviderForApplications</a>.</p>
+<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#ab0f98b79e0c3e1a31e50034298423e33">Google.Api.Ads.Common.OAuth.AdsOAuthProviderImpl</a>.</p>
 
 </div>
 </div>
@@ -241,7 +244,7 @@ Properties</h2></td></tr>
 <p>Gets the authorization URL. </p>
 <dl class="section return"><dt>Returns</dt><dd>The authorization url.</dd></dl>
 
-<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications.html#a0ac7d6a41a7f3e48ef1919e9c0b76b99">Google.Api.Ads.Common.Lib.OAuth2ProviderForApplications</a>.</p>
+<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#a113987ff999efecf87183ccf2da2faf0">Google.Api.Ads.Common.OAuth.AdsOAuthProviderImpl</a>.</p>
 
 </div>
 </div>
@@ -260,7 +263,7 @@ Properties</h2></td></tr>
 
 <p>Refreshes the access token if offline mode is used. </p>
 
-<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications.html#aed3277c71e85f37e92b3a690085514f1">Google.Api.Ads.Common.Lib.OAuth2ProviderForApplications</a>.</p>
+<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#aabc8f9876ee06730f73a7fd943b340f5">Google.Api.Ads.Common.OAuth.AdsOAuthProviderImpl</a>.</p>
 
 </div>
 </div>
@@ -279,7 +282,7 @@ Properties</h2></td></tr>
 
 <p>Revokes the refresh token if offline mode is used. </p>
 
-<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications.html#a6c6062c26864d47d1ecc82210001988c">Google.Api.Ads.Common.Lib.OAuth2ProviderForApplications</a>.</p>
+<p>Implemented in <a class="el" href="class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#a55cc7d4466129b5ad81b82d1e90177c4">Google.Api.Ads.Common.OAuth.AdsOAuthProviderImpl</a>.</p>
 
 </div>
 </div>
@@ -351,7 +354,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.9vs2NmQEjx/dist/github/src/Common/Lib/<a class="el" href="_ads_o_auth_provider_for_applications_8cs.html">AdsOAuthProviderForApplications.cs</a></li>
+<li>/usr/local/google/users/cseeley/tmp/tmp.6ZCvQFMIdZ/dist/github/src/Common/OAuth/<a class="el" href="_ads_o_auth_interfaces_8cs.html">AdsOAuthInterfaces.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -359,7 +362,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common.html">Common</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common_1_1_lib.html">Lib</a></li><li class="navelem"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_ads_o_auth_provider_for_applications.html">AdsOAuthProviderForApplications</a></li>
-    <li class="footer">Generated on Thu May 3 2018 15:25:55 for Ads API .NET library by
+    <li class="footer">Generated on Wed May 16 2018 14:42:14 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

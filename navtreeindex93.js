@@ -1,9 +1,5 @@
 var NAVTREEINDEX93 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_feed.html#adba8e2193758e411f503fc42809e8355":[1,0,0,0,0,0,5,252,9],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_feed.html#ae1c8ed3645c3c138461fb5eb0a6ead04":[1,0,0,0,0,0,5,252,4],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_feed.html#ae4284770da95b73e73911b6c750c59fd":[1,0,0,0,0,0,5,252,5],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_feed.html#af7b5d745dacb47eee6d0e671c1d44973":[1,0,0,0,0,0,5,252,8],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_feed_1_1_fields.html":[1,0,0,0,0,0,5,252,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_feed_1_1_fields.html#a6a040f0351ebad5d0ef2d69d7bb29039":[1,0,0,0,0,0,5,252,0,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_feed_1_1_filterable_fields.html":[1,0,0,0,0,0,5,252,1],
@@ -249,5 +245,9 @@ var NAVTREEINDEX93 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_shared_set_operation_1_1_filterable_fields.html#ae750619f2a39bb8eb30df5f603c4d7b1":[1,0,0,0,0,0,5,593,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_shared_set_operation_1_1_selectable_fields.html":[1,0,0,0,0,0,5,593,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_shared_set_operation_1_1_selectable_fields.html#a61cc832a654b28196cf16e18020b5934":[1,0,0,0,0,0,5,593,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_shared_set_page.html":[1,0,0,0,0,0,5,590]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_shared_set_page.html":[1,0,0,0,0,0,5,590],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_shared_set_page.html#a1d480dfc8bcc1d05f6faadccb20a9994":[1,0,0,0,0,0,5,590,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_shared_set_return_value.html":[1,0,0,0,0,0,5,594],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_shared_set_return_value.html#a02acbc2e74ac625ad0e5d3ae7dda84b1":[1,0,0,0,0,0,5,594,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_shared_set_return_value.html#ae91ae0f004c1909a094eebab5779e237":[1,0,0,0,0,0,5,594,1]
 };

@@ -1,0 +1,7 @@
+var interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_metadata_key_hierarchy_service_interface =
+[
+    [ "createContentMetadataKeyHierarchies", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_metadata_key_hierarchy_service_interface.html#a25e078c1041b5fcc171e32f9c12b295b", null ],
+    [ "getContentMetadataKeyHierarchiesByStatement", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_metadata_key_hierarchy_service_interface.html#afb581a9e8315f936792fc485b8387390", null ],
+    [ "performContentMetadataKeyHierarchyAction", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_metadata_key_hierarchy_service_interface.html#a1f917175e138dabb74780aa1a84f49c5", null ],
+    [ "updateContentMetadataKeyHierarchies", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_metadata_key_hierarchy_service_interface.html#acd5b81f748df64c51f42fd2671499996", null ]
+];

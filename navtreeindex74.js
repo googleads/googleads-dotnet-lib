@@ -1,9 +1,5 @@
 var NAVTREEINDEX74 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_income_range.html#afd030513e0fe4199aa933dff3ca082c3":[1,0,0,0,0,0,4,159,4],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_income_range_1_1_fields.html":[1,0,0,0,0,0,4,159,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_income_range_1_1_fields.html#adad94fab0f62e635b14b2d6670510a49":[1,0,0,0,0,0,4,159,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_income_range_1_1_filterable_fields.html":[1,0,0,0,0,0,4,159,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_income_range_1_1_filterable_fields.html#a53209f7defa16ee201c89f6a4a2732d7":[1,0,0,0,0,0,4,159,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_income_range_1_1_selectable_fields.html":[1,0,0,0,0,0,4,159,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_income_range_1_1_selectable_fields.html#a0d20ec8ffea70416ee9d5b992c44d0ee":[1,0,0,0,0,0,4,159,2,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX74 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_location_extension_operand_1_1_fields.html#aa73fffb76ef27f4464524ee425831732":[1,0,0,0,0,0,4,117,0,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_location_extension_operand_1_1_filterable_fields.html":[1,0,0,0,0,0,4,117,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_location_extension_operand_1_1_filterable_fields.html#ad1033edf41e60b99a5a804c8142819b6":[1,0,0,0,0,0,4,117,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_location_extension_operand_1_1_selectable_fields.html":[1,0,0,0,0,0,4,117,2]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_location_extension_operand_1_1_selectable_fields.html":[1,0,0,0,0,0,4,117,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_location_extension_operand_1_1_selectable_fields.html#a6af475dd8291163f1c210706b09c2496":[1,0,0,0,0,0,4,117,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_location_groups.html":[1,0,0,0,0,0,4,145],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_location_groups.html#a04467e675deb6e3c112cf22ab0da1948":[1,0,0,0,0,0,4,145,4],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_location_groups.html#a0a5ea8845cbc25367d9aeccddb8a254e":[1,0,0,0,0,0,4,145,5]
 };

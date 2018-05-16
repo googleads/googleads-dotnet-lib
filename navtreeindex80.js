@@ -1,9 +1,5 @@
 var NAVTREEINDEX80 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency.html#a19679b642ef10a79e83a098f104c7fcb":[1,0,0,0,0,0,4,447,4],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency_1_1_fields.html":[1,0,0,0,0,0,4,447,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency_1_1_fields.html#a0429a8ef29ae06beb91e1d8b739b85e7":[1,0,0,0,0,0,4,447,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency_1_1_filterable_fields.html":[1,0,0,0,0,0,4,447,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency_1_1_filterable_fields.html#aafbae4daf0e92e5e1248c9761a5016af":[1,0,0,0,0,0,4,447,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency_1_1_selectable_fields.html":[1,0,0,0,0,0,4,447,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_remarketing_money_with_currency_1_1_selectable_fields.html#a01acfff591b1da79d764c6c1544bb863":[1,0,0,0,0,0,4,447,2,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX80 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_setting_error_1_1_filterable_fields.html":[1,0,0,0,0,0,4,216,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_setting_error_1_1_filterable_fields.html#a1043e442608692635249c1e80fdba6ee":[1,0,0,0,0,0,4,216,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_setting_error_1_1_selectable_fields.html":[1,0,0,0,0,0,4,216,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_setting_error_1_1_selectable_fields.html#ac87fb82c06476b7848f733617d3e499d":[1,0,0,0,0,0,4,216,2,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_setting_error_1_1_selectable_fields.html#ac87fb82c06476b7848f733617d3e499d":[1,0,0,0,0,0,4,216,2,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_bidding_strategy.html":[1,0,0,0,0,0,4,720],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_bidding_strategy.html#a59f0a00e516abe34dd7de68c680c3d89":[1,0,0,0,0,0,4,720,9],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_bidding_strategy.html#a5de5c970000fc9d5a1d51ad03b45e9c1":[1,0,0,0,0,0,4,720,10],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_bidding_strategy.html#a7ca6c1800a48d86f0f25e63987f6df77":[1,0,0,0,0,0,4,720,4]
 };

@@ -1,9 +1,5 @@
 var NAVTREEINDEX67 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_campaign_group.html":[1,0,0,0,0,0,4,252],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_campaign_group.html#a47e285a1329c39f06e8f926cefb84560":[1,0,0,0,0,0,4,252,4],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_campaign_group.html#a77bf47fc8c55a602d863b4aba7738af0":[1,0,0,0,0,0,4,252,5],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_campaign_group.html#ab2c10e16ed7da459dff7c03d0f6c419f":[1,0,0,0,0,0,4,252,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_campaign_group.html#add46e6af138198aafadbee8b9d99e138":[1,0,0,0,0,0,4,252,6],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_campaign_group.html#aefd257e460afe157a609629354d19335":[1,0,0,0,0,0,4,252,7],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_campaign_group_1_1_fields.html":[1,0,0,0,0,0,4,252,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX67 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_collection_size_error_1_1_filterable_fields.html#aa54b621ff7f2fb4c5a0bfe48ba8e6af8":[1,0,0,0,0,0,4,245,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_collection_size_error_1_1_selectable_fields.html":[1,0,0,0,0,0,4,245,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_collection_size_error_1_1_selectable_fields.html#aee14345355fcbec8b24629d4f3e22a69":[1,0,0,0,0,0,4,245,2,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_combined_rule_user_list.html":[1,0,0,0,0,0,4,548]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_combined_rule_user_list.html":[1,0,0,0,0,0,4,548],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_combined_rule_user_list.html#a35494c94c46ecdd606a3baf61d117012":[1,0,0,0,0,0,4,548,5],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_combined_rule_user_list.html#a6d89835af9be2bbfec3e7a88ed1b4295":[1,0,0,0,0,0,4,548,6],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_combined_rule_user_list.html#a72a61c3e4f925da9cb8b6bb54da54b9c":[1,0,0,0,0,0,4,548,4],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_combined_rule_user_list.html#a88b7565f081357a533299b2a4614b890":[1,0,0,0,0,0,4,548,3]
 };

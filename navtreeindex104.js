@@ -1,9 +1,5 @@
 var NAVTREEINDEX104 =
 {
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_offline_call_conversion_feed_return_value_1_1_fields.html":[1,0,0,0,0,0,5,486,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_offline_call_conversion_feed_return_value_1_1_fields.html#ab7ea0bb2187e4c8716e1d9c0e93d1525":[1,0,0,0,0,0,5,486,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_offline_call_conversion_feed_return_value_1_1_filterable_fields.html":[1,0,0,0,0,0,5,486,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_offline_call_conversion_feed_return_value_1_1_filterable_fields.html#a0adff628bfb9edb237182d079ebff97e":[1,0,0,0,0,0,5,486,1,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_offline_call_conversion_feed_return_value_1_1_selectable_fields.html":[1,0,0,0,0,0,5,486,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_offline_call_conversion_feed_return_value_1_1_selectable_fields.html#ab01922398f31b08e5a9f79643f3a5244":[1,0,0,0,0,0,5,486,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_offline_call_conversion_feed_service.html":[1,0,0,0,0,0,5,492],
@@ -249,5 +245,9 @@ var NAVTREEINDEX104 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_performance_target.html#aea51de4ec70a34f6e52159de405c9eaa":[1,0,0,0,0,0,5,270,7],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_performance_target.html#af6426c050761052fe23ac22972ca9b83":[1,0,0,0,0,0,5,270,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_performance_target.html#afd0c5f3492fb79f0a9833468c11650ff":[1,0,0,0,0,0,5,270,12],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_performance_target_1_1_fields.html":[1,0,0,0,0,0,5,270,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_performance_target_1_1_fields.html":[1,0,0,0,0,0,5,270,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_performance_target_1_1_fields.html#af92de8e1dc0a0eda183b8c44032a5c2d":[1,0,0,0,0,0,5,270,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_performance_target_1_1_filterable_fields.html":[1,0,0,0,0,0,5,270,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_performance_target_1_1_filterable_fields.html#ae7ceebce389f5b94b11b6e28424e157c":[1,0,0,0,0,0,5,270,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_performance_target_1_1_selectable_fields.html":[1,0,0,0,0,0,5,270,2]
 };

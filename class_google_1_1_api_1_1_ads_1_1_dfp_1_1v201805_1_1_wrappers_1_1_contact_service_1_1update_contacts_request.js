@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_contact_service_1_1update_contacts_request =
+[
+    [ "updateContactsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_contact_service_1_1update_contacts_request.html#ab87b51bb2f31f9a78b8657458ce2d6cf", null ],
+    [ "updateContactsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_contact_service_1_1update_contacts_request.html#a790be28c2a1ab2d540bf418ad494fb70", null ],
+    [ "contacts", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_contact_service_1_1update_contacts_request.html#a63d363a6351b55148a987c5fb4ecaa6d", null ]
+];
