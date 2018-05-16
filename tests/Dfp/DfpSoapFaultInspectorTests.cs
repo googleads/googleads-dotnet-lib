@@ -18,7 +18,7 @@ using System.ServiceModel.Channels;
 using System.ServiceModel;
 using System.Xml;
 using Google.Api.Ads.Dfp.Lib;
-using Google.Api.Ads.Dfp.v201705;
+using Google.Api.Ads.Dfp.v201802;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests.Mocks;
 using Google.Api.Ads.Common.Util;
@@ -37,7 +37,7 @@ namespace Google.Api.Ads.Dfp.Tests {
     const string fault_xml =
 @"<soap:Envelope xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/"">
   <soap:Header>
-    <ResponseHeader xmlns=""https://www.google.com/apis/ads/publisher/v201705"">
+    <ResponseHeader xmlns=""https://www.google.com/apis/ads/publisher/v201802"">
       <requestId>1234567890</requestId>
       <responseTime>123</responseTime>
     </ResponseHeader>
@@ -47,7 +47,7 @@ namespace Google.Api.Ads.Dfp.Tests {
       <faultcode>soap:Server</faultcode>
       <faultstring>[PublisherQueryLanguageContextError.UNEXECUTABLE]</faultstring>
       <detail>
-        <ApiExceptionFault xmlns=""https://www.google.com/apis/ads/publisher/v201705"">
+        <ApiExceptionFault xmlns=""https://www.google.com/apis/ads/publisher/v201802"">
           <message>[PublisherQueryLanguageContextError.UNEXECUTABLE]</message>
           <errors xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xsi:type=""PublisherQueryLanguageContextError"">
             <fieldPath>Mapping requested for unknown identifer</fieldPath>
@@ -99,7 +99,7 @@ namespace Google.Api.Ads.Dfp.Tests {
     [Test]
     public void TestDfpApiExceptionForFault() {
       SoapFaultInspector<DfpApiException> inspector = new SoapFaultInspector<DfpApiException>() {
-        ErrorType = typeof(Dfp.v201705.ApiException)
+        ErrorType = typeof(Dfp.v201802.ApiException)
       };
 
       XmlDocument xDoc = XmlUtilities.CreateDocument(fault_xml);

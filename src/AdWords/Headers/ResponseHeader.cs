@@ -65,7 +65,7 @@ namespace Google.Api.Ads.AdWords.Headers {
     /// <param name="reader">The xml reader.</param>
     /// <param name="rootNamespace"></param>
     /// <returns>A deserialized response header.</returns>
-    internal static ResponseHeader ReadFrom(XmlReader reader, string rootNamespace) {
+    public static ResponseHeader ReadFrom(XmlReader reader, string rootNamespace) {
       ResponseHeader retval = new ResponseHeader();
       XmlReader childReader = reader.ReadSubtree();
       XPathNavigator root = new XPathDocument(childReader).CreateNavigator();
@@ -75,7 +75,7 @@ namespace Google.Api.Ads.AdWords.Headers {
 
       foreach (XPathNavigator childNode in root.Select("root:ResponseHeader/child::*", ns)) {
         string content = childNode.Value;
-        string name = childNode.Name;
+        string name = childNode.LocalName;
         PropertyInfo pi = typeof(ResponseHeader).GetProperty(name);
         TypeConverter typeConverter = TypeDescriptor.GetConverter(pi.PropertyType);
         pi.SetValue(retval, typeConverter.ConvertFrom(content));

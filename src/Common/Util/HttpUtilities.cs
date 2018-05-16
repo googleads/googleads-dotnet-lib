@@ -33,17 +33,6 @@ namespace Google.Api.Ads.Common.Util {
     /// <param name="url">The URL.</param>
     /// <param name="contentLength">Length of the content.</param>
     /// <param name="range">The range heaer notation.</param>
-    /// <returns>The web request for making HTTP call.</returns>
-    private static WebRequest BuildRangeRequest(string url, int contentLength, string range) {
-      return BuildRangeRequest(url, contentLength, range, new AppConfigBase());
-    }
-
-    /// <summary>
-    /// Builds an HTTP PUT request with a Range header.
-    /// </summary>
-    /// <param name="url">The URL.</param>
-    /// <param name="contentLength">Length of the content.</param>
-    /// <param name="range">The range heaer notation.</param>
     /// <param name="config">The configuration instance for customizing the
     /// connection settings.</param>
     /// <returns>The web request for making HTTP call.</returns>
@@ -61,16 +50,6 @@ namespace Google.Api.Ads.Common.Util {
       request.Headers["Content-Range"] = range;
 
       return request;
-    }
-
-    /// <summary>
-    /// Builds an HTTP request with a specified method.
-    /// </summary>
-    /// <param name="url">The URL.</param>
-    /// <param name="method">The HTTP method.</param>
-    /// <returns>The web request for making HTTP call.</returns>
-    private static WebRequest BuildRequest(string url, string method) {
-      return BuildRequest(url, method, new AppConfigBase());
     }
 
     /// <summary>

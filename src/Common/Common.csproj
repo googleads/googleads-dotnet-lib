@@ -2,7 +2,7 @@
   <!-- nupkg properties -->
   <PropertyGroup>
     <Title>Ads API Dotnet Common Library</Title>
-    <Version>9.1.0</Version>
+    <Version>9.2.0</Version>
     <Description>This library provides you with common functionality to access Google's Ads APIs.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
     <PackageTags>AdWords DFP DoubleClick Google</PackageTags>
@@ -30,10 +30,10 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Google.Apis.Auth" Version="1.32.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-    <PackageReference Include="System.ServiceModel.Http" Version="4.4.0" />
-    <PackageReference Include="System.ServiceModel.Security" Version="4.4.0" />
+    <PackageReference Include="Google.Apis.Auth" Version="1.33.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.4.2" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.4.2" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.2" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
@@ -42,12 +42,6 @@
   <ItemGroup Condition="'$(TargetFramework)'=='net452'">
     <Reference Include="System.Web" />
     <Reference Include="System.Configuration" />
-  </ItemGroup>
-  <!-- Exclude Properties until all solution projects are migrated to Core format -->
-  <ItemGroup>
-    <Compile Remove="Properties\**" />
-    <Content Remove="Properties\**" />
-    <None Remove="Properties\**" />
   </ItemGroup>
   <PropertyGroup Condition="'$(TargetFramework)'=='net452'">
     <DefineConstants>NET452</DefineConstants>

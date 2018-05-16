@@ -15,7 +15,7 @@
 using Google.Api.Ads.AdWords.Headers;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Logging;
-
+using Google.Api.Ads.Common.OAuth;
 using System;
 using System.Globalization;
 using System.ServiceModel;
@@ -76,13 +76,13 @@ namespace Google.Api.Ads.AdWords.Lib {
 
       AdsClient service = (AdsClient) Activator.CreateInstance(
         awapiSignature.ServiceType,
-        new object[] { binding, endpoint});
+        new object[] { binding, endpoint });
 
       ServiceEndpoint serviceEndpoint =
         (ServiceEndpoint) service.GetType().GetProperty("Endpoint").GetValue(service, null);
 
       AdsServiceInspectorBehavior inspectorBehavior = new AdsServiceInspectorBehavior();
-      inspectorBehavior.Add(new OAuth2ClientMessageInspector(user.OAuthProvider));
+      inspectorBehavior.Add(new OAuthClientMessageInspector(user.OAuthProvider));
 
       RequestHeader clonedHeader = (RequestHeader) requestHeader.Clone();
       clonedHeader.Version = awapiSignature.Version;

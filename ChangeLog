@@ -1,3 +1,21 @@
+23.4.0
+======
+AdWords:
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/163
+DFP:
+  - Added support for v201805.
+  - Removed support for v201705.
+  - Removed examples for v201708.
+Common:
+  - Common library now fully provides OAuth functionality using the Google.Auth library. Custom
+  implementations have been sunset. Several properties and methods that are
+  no longer relevant or have alternatives have been marked as obsolete, and
+  will be removed in a future release. See the
+  compilation warnings for appropriate alternatives.
+  - AdsOAuthException exposes underlying OAuth errors and HTTP errors (if any). You
+  may use these properties for granular handling of user authentication errors.
+  - OAuthTokenGenerator was rewritten to be a .NET Core Console application.
+
 23.3.0
 ======
 

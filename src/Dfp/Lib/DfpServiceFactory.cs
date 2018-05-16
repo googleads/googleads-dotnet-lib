@@ -14,6 +14,7 @@
 
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Logging;
+using Google.Api.Ads.Common.OAuth;
 using Google.Api.Ads.Dfp.Headers;
 
 using System;
@@ -82,7 +83,7 @@ namespace Google.Api.Ads.Dfp.Lib {
         (ServiceEndpoint) service.GetType().GetProperty("Endpoint").GetValue(service, null);
 
       AdsServiceInspectorBehavior inspectorBehavior = new AdsServiceInspectorBehavior();
-      inspectorBehavior.Add(new OAuth2ClientMessageInspector(user.OAuthProvider));
+      inspectorBehavior.Add(new OAuthClientMessageInspector(user.OAuthProvider));
 
       RequestHeader clonedHeader = (RequestHeader) requestHeader.Clone();
       clonedHeader.Version = dfpapiSignature.Version;

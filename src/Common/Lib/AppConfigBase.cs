@@ -14,7 +14,7 @@
 
 using Google.Api.Ads.Common.Config;
 using Google.Api.Ads.Common.Logging;
-
+using Google.Apis.Auth.OAuth2;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 
@@ -134,7 +134,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// Redirect uri.
     /// </summary>
     private ConfigSetting<string> oAuth2RedirectUri = new ConfigSetting<string>(
-        "OAuth2RedirectUri", "");
+        "OAuth2RedirectUri", GoogleAuthConsts.InstalledAppRedirectUri);
 
     /// <summary>
     /// OAuth2 mode.
@@ -524,14 +524,16 @@ namespace Google.Api.Ads.Common.Lib {
 
           ReadSetting(config, oAuth2ServiceAccountEmail);
           if (string.IsNullOrEmpty(this.OAuth2ServiceAccountEmail)) {
-            throw new ApplicationException(CommonErrorMessages.ClientEmailIsMissingInJsonFile);
+            throw new AdsOAuthException(CommonErrorMessages.ClientEmailIsMissingInJsonFile);
           }
 
           ReadSetting(config, oAuth2PrivateKey);
           if (string.IsNullOrEmpty(this.OAuth2PrivateKey)) {
-            throw new ApplicationException(CommonErrorMessages.PrivateKeyIsMissingInJsonFile);
+            throw new AdsOAuthException(CommonErrorMessages.PrivateKeyIsMissingInJsonFile);
           }
         }
+      } catch (AdsOAuthException) {
+        throw;
       } catch (Exception e) {
         throw new AdsOAuthException(CommonErrorMessages.FailedToLoadJsonSecretsFile, e);
       }
