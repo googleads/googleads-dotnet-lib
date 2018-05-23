@@ -1,5 +1,7 @@
 var NAVTREEINDEX172 =
 {
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_base_rate_service_1_1create_base_rates_request.html#af858a00d24bd888160715b086f396736":[1,0,0,0,0,2,6,0,5,0,2],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_base_rate_service_1_1create_base_rates_response.html":[1,0,0,0,0,2,6,0,5,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_base_rate_service_1_1create_base_rates_response.html#a32abd0d9117562db9eb7a351e288f469":[1,0,0,0,0,2,6,0,5,1,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_base_rate_service_1_1create_base_rates_response.html#a4ab8c9d3ee76ebcf15d60e762665fa98":[1,0,0,0,0,2,6,0,5,1,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_base_rate_service_1_1create_base_rates_response.html#a861a78af638e8957063337e312d0a4de":[1,0,0,0,0,2,6,0,5,1,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX172 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_response.html#ae129bd1d74319e988b1718d0f3c2bfd5":[1,0,0,0,0,2,6,0,20,5,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_label_service_1_1create_labels_request.html":[1,0,0,0,0,2,6,0,21,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_label_service_1_1create_labels_request.html#a1d6b3b218c81d4bc51b7fb5f5fd42aa2":[1,0,0,0,0,2,6,0,21,0,2],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_label_service_1_1create_labels_request.html#a1f7415e2e91beca070be4d5bd0c206bf":[1,0,0,0,0,2,6,0,21,0,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_label_service_1_1create_labels_request.html#aacabd73801845d96e42c89c20e5a709f":[1,0,0,0,0,2,6,0,21,0,1],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_label_service_1_1create_labels_response.html":[1,0,0,0,0,2,6,0,21,1]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_label_service_1_1create_labels_request.html#a1f7415e2e91beca070be4d5bd0c206bf":[1,0,0,0,0,2,6,0,21,0,0]
 };

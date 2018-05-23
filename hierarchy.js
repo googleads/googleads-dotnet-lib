@@ -1341,6 +1341,7 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201805.CompanyCreditStatusError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_company_credit_status_error.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.CompanyError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_company_error.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.ContactError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_contact_error.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.ContentFilterError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_filter_error.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.ContentMetadataKeyHierarchyError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_metadata_key_hierarchy_error.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.ContentMetadataTargetingError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_metadata_targeting_error.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.CreativeAssetMacroError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_creative_asset_macro_error.html", null ],
@@ -5583,12 +5584,12 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.CdnConfigurationService.createCdnConfigurationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_cdn_configuration_service_1_1cre03b7ac27621e6e5e2bd6a335470ee85.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.CdnConfigurationService.createCdnConfigurationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_cdn_configuration_service_1_1cr57ca146decd9ca4e7ba787e4674e3b10.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CdnConfigurationService.createCdnConfigurationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_cdn_configuration_service_1_1cr5e42795d1775a1873419e77d7005d75c.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CompanyService.createCompaniesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_company_service_1_1create_companies_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.CompanyService.createCompaniesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_company_service_1_1create_companies_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.CompanyService.createCompaniesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_company_service_1_1create_companies_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CompanyService.createCompaniesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_company_service_1_1create_companies_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CompanyService.createCompaniesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_company_service_1_1create_companies_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CompanyService.createCompaniesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_company_service_1_1create_companies_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.CompanyService.createCompaniesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_company_service_1_1create_companies_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CompanyService.createCompaniesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_company_service_1_1create_companies_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.CompanyService.createCompaniesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_company_service_1_1create_companies_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CompanyService.createCompaniesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_company_service_1_1create_companies_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ContactService.createContactsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_contact_service_1_1create_contacts_request.html", null ],
@@ -7231,16 +7232,16 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201708.ExchangeRatePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_exchange_rate_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ExchangeRatePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_exchange_rate_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ExchangeRatePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_exchange_rate_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.ExchangeRateServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_exchange_rate_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201708.ExchangeRateServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_exchange_rate_service_interface_channel.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.IExchangeRateService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_exchange_rate_service.html", [
-        [ "Google.Api.Ads.Dfp.v201708.ExchangeRateService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_exchange_rate_service.html", null ]
-      ] ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201805.ExchangeRateServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_exchange_rate_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201805.ExchangeRateServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_exchange_rate_service_interface_channel.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.IExchangeRateService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_exchange_rate_service.html", [
         [ "Google.Api.Ads.Dfp.v201805.ExchangeRateService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_exchange_rate_service.html", null ]
+      ] ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201708.ExchangeRateServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_exchange_rate_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201708.ExchangeRateServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_exchange_rate_service_interface_channel.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.IExchangeRateService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_exchange_rate_service.html", [
+        [ "Google.Api.Ads.Dfp.v201708.ExchangeRateService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_exchange_rate_service.html", null ]
       ] ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201711.ExchangeRateServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_exchange_rate_service_interface.html", [
@@ -7356,8 +7357,8 @@ var hierarchy =
         [ "Google.Api.Ads.AdWords.v201802.FeedService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_feed_service.html", null ]
       ] ]
     ] ],
-    [ "Google.Api.Ads.AdWords.v201710.FeedValidationErrors", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_validation_errors.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.FeedValidationErrors", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_feed_validation_errors.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.FeedValidationErrors", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_feed_validation_errors.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Selectors.Field", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_selectors_1_1_field.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.FieldPathElement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_field_path_element.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.FieldPathElement", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_field_path_element.html", null ],
@@ -7365,6 +7366,20 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201711.FieldPathElement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_field_path_element.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.FieldPathElement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_field_path_element.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.FieldPathElement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_field_path_element.html", null ],
+    [ "Fields", null, [
+      [ "Google.Api.Ads.AdWords.v201710.AdGroupBidLandscapePage.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_bid_landscape_page_1_1_fields.html", null ],
+      [ "Google.Api.Ads.AdWords.v201710.ConversionTrackerPage.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_conversion_tracker_page_1_1_fields.html", null ],
+      [ "Google.Api.Ads.AdWords.v201710.CriterionBidLandscapePage.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_criterion_bid_landscape_page_1_1_fields.html", null ],
+      [ "Google.Api.Ads.AdWords.v201710.LabelPage.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_label_page_1_1_fields.html", null ],
+      [ "Google.Api.Ads.AdWords.v201802.CriterionBidLandscapePage.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_criterion_bid_landscape_page_1_1_fields.html", null ]
+    ] ],
+    [ "Fields", null, [
+      [ "Google.Api.Ads.AdWords.v201802.DoubleValue.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_double_value_1_1_fields.html", null ],
+      [ "Google.Api.Ads.AdWords.v201802.LongValue.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_long_value_1_1_fields.html", null ]
+    ] ],
+    [ "Fields", null, [
+      [ "Google.Api.Ads.AdWords.v201802.DomainCategory.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_domain_category_1_1_fields.html", null ]
+    ] ],
     [ "Fields", null, [
       [ "Google.Api.Ads.AdWords.v201710.AdGroupFeedPage.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_feed_page_1_1_fields.html", null ],
       [ "Google.Api.Ads.AdWords.v201710.CampaignFeedPage.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_campaign_feed_page_1_1_fields.html", null ],
@@ -7377,24 +7392,6 @@ var hierarchy =
       [ "Google.Api.Ads.AdWords.v201802.FeedItemPage.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_feed_item_page_1_1_fields.html", null ],
       [ "Google.Api.Ads.AdWords.v201802.FeedMappingPage.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_feed_mapping_page_1_1_fields.html", null ],
       [ "Google.Api.Ads.AdWords.v201802.FeedPage.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_feed_page_1_1_fields.html", null ]
-    ] ],
-    [ "Fields", null, [
-      [ "Google.Api.Ads.AdWords.v201802.DoubleValue.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_double_value_1_1_fields.html", null ],
-      [ "Google.Api.Ads.AdWords.v201802.LongValue.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_long_value_1_1_fields.html", null ]
-    ] ],
-    [ "Fields", null, [
-      [ "Google.Api.Ads.AdWords.v201710.AdGroupBidLandscapePage.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_bid_landscape_page_1_1_fields.html", null ],
-      [ "Google.Api.Ads.AdWords.v201710.ConversionTrackerPage.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_conversion_tracker_page_1_1_fields.html", null ],
-      [ "Google.Api.Ads.AdWords.v201710.CriterionBidLandscapePage.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_criterion_bid_landscape_page_1_1_fields.html", null ],
-      [ "Google.Api.Ads.AdWords.v201710.LabelPage.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_label_page_1_1_fields.html", null ],
-      [ "Google.Api.Ads.AdWords.v201802.CriterionBidLandscapePage.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_criterion_bid_landscape_page_1_1_fields.html", null ]
-    ] ],
-    [ "Fields", null, [
-      [ "Google.Api.Ads.AdWords.v201802.DomainCategory.Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_domain_category_1_1_fields.html", null ]
-    ] ],
-    [ "FilterableFields", null, [
-      [ "Google.Api.Ads.AdWords.v201710.DomainCategory.FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_domain_category_1_1_filterable_fields.html", null ],
-      [ "Google.Api.Ads.AdWords.v201802.DomainCategory.FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_domain_category_1_1_filterable_fields.html", null ]
     ] ],
     [ "FilterableFields", null, [
       [ "Google.Api.Ads.AdWords.v201710.AdGroupFeedPage.FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_feed_page_1_1_filterable_fields.html", null ],
@@ -7410,6 +7407,10 @@ var hierarchy =
       [ "Google.Api.Ads.AdWords.v201802.FeedItemPage.FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_feed_item_page_1_1_filterable_fields.html", null ],
       [ "Google.Api.Ads.AdWords.v201802.FeedMappingPage.FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_feed_mapping_page_1_1_filterable_fields.html", null ],
       [ "Google.Api.Ads.AdWords.v201802.FeedPage.FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_feed_page_1_1_filterable_fields.html", null ]
+    ] ],
+    [ "FilterableFields", null, [
+      [ "Google.Api.Ads.AdWords.v201710.DomainCategory.FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_domain_category_1_1_filterable_fields.html", null ],
+      [ "Google.Api.Ads.AdWords.v201802.DomainCategory.FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_domain_category_1_1_filterable_fields.html", null ]
     ] ],
     [ "FilterableFields", null, [
       [ "Google.Api.Ads.AdWords.v201710.ConversionTrackerPage.FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_conversion_tracker_page_1_1_filterable_fields.html", null ],
@@ -7450,10 +7451,10 @@ var hierarchy =
         [ "Google.Api.Ads.Dfp.v201802.ForecastService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_forecast_service.html", null ]
       ] ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201805.FrequencyCap", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_frequency_cap.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.FrequencyCap", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_frequency_cap.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.FrequencyCap", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_frequency_cap.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.FrequencyCap", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_frequency_cap.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.FrequencyCap", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_frequency_cap.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.FrequencyCap", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_frequency_cap.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.FrequencyCap", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_frequency_cap.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Function", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_function.html", null ],
@@ -7544,8 +7545,8 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ForecastService.getDeliveryForecastResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_forecast_service_1_1get_delivery_forecast_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ForecastService.getDeliveryForecastResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_forecast_service_1_1get_delivery_forecast_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ForecastService.getDeliveryForecastResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_forecast_service_1_1get_delivery_forecast_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.ConstantDataService.getGenderCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_constant_data_service_1_1get_gender_criterion_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.ConstantDataService.getGenderCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_constant_data_service_1_1get_gender_criterion_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.ConstantDataService.getGenderCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_constant_data_service_1_1get_gender_criterion_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.ConstantDataService.getGenderCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_constant_data_service_1_1get_gender_criterion_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.ConstantDataService.getGenderCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_constant_data_service_1_1get_gender_criterion_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.ConstantDataService.getLanguageCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_constant_data_service_1_1get_language_criterion_request.html", null ],
@@ -7562,15 +7563,15 @@ var hierarchy =
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.ConstantDataService.getMobileDeviceCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_constant_data_service_1_1g71c889bfd9bcafe4945cdffcbb45dee2.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.ConstantDataService.getOperatingSystemVersionCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_constant_data_service_1_1gd5b8fdd327a9bfde8490bc40e48da2f8.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.ConstantDataService.getOperatingSystemVersionCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_constant_data_service_1_1gc8c2bcb2ddf8ba2459c3f8fddaba446d.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.ConstantDataService.getOperatingSystemVersionCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_constant_data_service_1_1g1a26af481527b94e33c140a7b732b959.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.ConstantDataService.getOperatingSystemVersionCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_constant_data_service_1_1g01f76e32751d658e93073a676309ba87.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.ConstantDataService.getOperatingSystemVersionCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_constant_data_service_1_1g1a26af481527b94e33c140a7b732b959.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.ManagedCustomerService.getPendingInvitationsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_managed_customer_service_15ad6ebc962a2b516b586661c5d0c79fe.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.ManagedCustomerService.getPendingInvitationsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_managed_customer_service_1056c59e47e6c40ddf6574aa79b78cc54.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.ManagedCustomerService.getPendingInvitationsResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_managed_customer_service_1d1e8fffc4737282ddec23414ae0a2d1b.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.ManagedCustomerService.getPendingInvitationsResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_managed_customer_service_106b7fe8952fbe6c3e6a8c05bb275817c.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.LineItemCreativeAssociationService.getPreviewUrlsForNativeStylesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_line_item_creative_association_b25a45251aa1e12c1e7a88ee3a0098ee.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.LineItemCreativeAssociationService.getPreviewUrlsForNativeStylesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_line_item_creative_association_8ec17eb3789640958ef6c1447fe0ca78.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.LineItemCreativeAssociationService.getPreviewUrlsForNativeStylesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_line_item_creative_association_ac4362cafd4f993d05aab403174b26bf.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.LineItemCreativeAssociationService.getPreviewUrlsForNativeStylesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_line_item_creative_association_8ec17eb3789640958ef6c1447fe0ca78.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.LineItemCreativeAssociationService.getPreviewUrlsForNativeStylesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_line_item_creative_association_537c64b0861daa904bb79de06bc1a237.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.LineItemCreativeAssociationService.getPreviewUrlsForNativeStylesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_line_item_creative_association_75894c2408676615ba81a9bbdfc24bad.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.LineItemCreativeAssociationService.getPreviewUrlsForNativeStylesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_line_item_creative_association_d9f6c9e35540ff6344fc2b5e40b66914.html", null ],
@@ -7582,13 +7583,13 @@ var hierarchy =
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.ReportDefinitionService.getReportFieldsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_report_definition_service_1_1get_report_fields_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.ReportDefinitionService.getReportFieldsResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_report_definition_service_1_1get_report_fields_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.ReportDefinitionService.getReportFieldsResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_report_definition_service_1_1get_report_fields_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AccountLabelService.getRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_account_label_service_1_1get_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.LocationCriterionService.getRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_location_criterion_service_1_1get_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AccountLabelService.getRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_account_label_service_1_1get_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.LocationCriterionService.getRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_location_criterion_service_1_1get_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AccountLabelService.getRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_account_label_service_1_1get_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.LocationCriterionService.getRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_location_criterion_service_1_1get_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AccountLabelService.getResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_account_label_service_1_1get_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AccountLabelService.getResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_account_label_service_1_1get_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.LocationCriterionService.getResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_location_criterion_service_1_1get_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AccountLabelService.getResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_account_label_service_1_1get_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.LocationCriterionService.getResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_location_criterion_service_1_1get_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CustomerService.getServiceLinksRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_service_1_1get_service_links_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CustomerService.getServiceLinksRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_customer_service_1_1get_service_links_request.html", null ],
@@ -7611,8 +7612,8 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201708.GrpDemographicBreakdown", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_grp_demographic_breakdown.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.GrpDemographicBreakdown", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_grp_demographic_breakdown.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.GrpDemographicBreakdown", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_grp_demographic_breakdown.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.GrpSettings", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_grp_settings.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.GrpSettings", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_grp_settings.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.GrpSettings", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_grp_settings.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.GrpSettings", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_grp_settings.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.GrpSettings", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_grp_settings.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.HlsSettings", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_hls_settings.html", null ],
@@ -8674,9 +8675,9 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201802.LabelPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_label_page.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201710.LabelReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_label_report_report_row.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201802.LabelReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_label_report_report_row.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.LabelServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_label_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201805.ILabelService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_label_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.LabelServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_label_service_interface_channel.html", null ]
+    [ "Google.Api.Ads.AdWords.v201802.LabelServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_label_service_interface.html", [
+      [ "Google.Api.Ads.AdWords.v201802.ILabelService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_i_label_service.html", null ],
+      [ "Google.Api.Ads.AdWords.v201802.LabelServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_label_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201802.LabelServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_label_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.ILabelService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_label_service.html", null ],
@@ -8690,13 +8691,13 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201708.ILabelService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_label_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.LabelServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_label_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.AdWords.v201802.LabelServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_label_service_interface.html", [
-      [ "Google.Api.Ads.AdWords.v201802.ILabelService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_i_label_service.html", null ],
-      [ "Google.Api.Ads.AdWords.v201802.LabelServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_label_service_interface_channel.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201711.LabelServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_label_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201711.ILabelService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_label_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.LabelServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_label_service_interface_channel.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201805.LabelServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_label_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201805.ILabelService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_label_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.LabelServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_label_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201802.LandingPageReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_landing_page_report_report_row.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.LevelOfDetail", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_level_of_detail.html", null ],
@@ -8757,23 +8758,23 @@ var hierarchy =
       ] ],
       [ "Google.Api.Ads.Dfp.v201802.UnarchiveLineItems", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_unarchive_line_items.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201805.LineItemActivityAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_activity_association.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.LineItemActivityAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_activity_association.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.LineItemActivityAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_line_item_activity_association.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.LineItemActivityAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_activity_association.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.LineItemActivityAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_line_item_activity_association.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.LineItemCreativeAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_creative_association.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.LineItemCreativeAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_creative_association.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_line_item_creative_association.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.LineItemCreativeAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_line_item_creative_association.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.LineItemCreativeAssociationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_creative_association_action.html", [
-      [ "Google.Api.Ads.Dfp.v201805.ActivateLineItemCreativeAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activate_line_item_creative_associations.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.DeactivateLineItemCreativeAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_deactivate_line_item_creative_associations.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.DeleteLineItemCreativeAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_delete_line_item_creative_associations.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201708.LineItemCreativeAssociationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_creative_association_action.html", [
       [ "Google.Api.Ads.Dfp.v201708.ActivateLineItemCreativeAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_activate_line_item_creative_associations.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.DeactivateLineItemCreativeAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_deactivate_line_item_creative_associations.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.DeleteLineItemCreativeAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_delete_line_item_creative_associations.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201805.LineItemCreativeAssociationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_creative_association_action.html", [
+      [ "Google.Api.Ads.Dfp.v201805.ActivateLineItemCreativeAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activate_line_item_creative_associations.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.DeactivateLineItemCreativeAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_deactivate_line_item_creative_associations.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.DeleteLineItemCreativeAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_delete_line_item_creative_associations.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_line_item_creative_association_action.html", [
       [ "Google.Api.Ads.Dfp.v201711.ActivateLineItemCreativeAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_activate_line_item_creative_associations.html", null ],
@@ -8797,26 +8798,30 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201711.ILineItemCreativeAssociationService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_line_item_creative_association_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_line_item_creative_association_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201805.LineItemCreativeAssociationServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_creative_association_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201805.ILineItemCreativeAssociationService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_line_item_creative_association_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.LineItemCreativeAssociationServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_creative_association_service_interface_channel.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201802.LineItemCreativeAssociationServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_line_item_creative_association_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.ILineItemCreativeAssociationService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_line_item_creative_association_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.LineItemCreativeAssociationServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_line_item_creative_association_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201805.LineItemCreativeAssociationStats", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_creative_association_stats.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.LineItemCreativeAssociationServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_creative_association_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201805.ILineItemCreativeAssociationService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_line_item_creative_association_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.LineItemCreativeAssociationServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_creative_association_service_interface_channel.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201708.LineItemCreativeAssociationStats", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_creative_association_stats.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.LineItemCreativeAssociationStats", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_creative_association_stats.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationStats", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_line_item_creative_association_stats.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.LineItemCreativeAssociationStats", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_line_item_creative_association_stats.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.LineItemDeliveryForecast", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_line_item_delivery_forecast.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.LineItemDeliveryForecast", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_delivery_forecast.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.LineItemDeliveryForecast", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_line_item_delivery_forecast.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.LineItemDeliveryForecast", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_delivery_forecast.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.LineItemPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.LineItemPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.LineItemPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_line_item_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.LineItemPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.LineItemPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_line_item_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.LineItemServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201805.ILineItemService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_line_item_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.LineItemServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_service_interface_channel.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201708.LineItemServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201708.ILineItemService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_line_item_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.LineItemServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_service_interface_channel.html", null ]
@@ -8824,10 +8829,6 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201711.LineItemServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_line_item_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201711.ILineItemService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_line_item_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.LineItemServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_line_item_service_interface_channel.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201805.LineItemServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201805.ILineItemService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_line_item_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.LineItemServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201802.LineItemServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_line_item_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.ILineItemService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_line_item_service.html", null ],
@@ -8850,9 +8851,13 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201711.LineItemTemplate", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_line_item_template.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.LineItemTemplate", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_line_item_template.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.LineItemTemplatePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_line_item_template_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.LineItemTemplatePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_template_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.LineItemTemplatePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_template_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.LineItemTemplatePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_line_item_template_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.LineItemTemplatePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_template_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.LineItemTemplateServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_template_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201805.ILineItemTemplateService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_line_item_template_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.LineItemTemplateServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_template_service_interface_channel.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201802.LineItemTemplateServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_line_item_template_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.ILineItemTemplateService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_line_item_template_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.LineItemTemplateServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_line_item_template_service_interface_channel.html", null ]
@@ -8864,10 +8869,6 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201711.LineItemTemplateServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_line_item_template_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201711.ILineItemTemplateService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_line_item_template_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.LineItemTemplateServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_line_item_template_service_interface_channel.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201805.LineItemTemplateServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_template_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201805.ILineItemTemplateService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_line_item_template_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.LineItemTemplateServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_template_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.AdWords.v201710.ListOperations", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_list_operations.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.ListOperations", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_list_operations.html", null ],
@@ -8987,8 +8988,8 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201802.PauseLiveStreamEvents", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_pause_live_stream_events.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201805.LiveStreamEventPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_live_stream_event_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.LiveStreamEventPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_live_stream_event_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.LiveStreamEventPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.LiveStreamEventPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_live_stream_event_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.LiveStreamEventPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_live_stream_event_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.LiveStreamEventServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_live_stream_event_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201708.ILiveStreamEventService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_live_stream_event_service.html", null ],
@@ -8998,13 +8999,13 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201802.ILiveStreamEventService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_live_stream_event_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.LiveStreamEventServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_live_stream_event_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201805.LiveStreamEventServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_live_stream_event_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201805.ILiveStreamEventService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_live_stream_event_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.LiveStreamEventServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_live_stream_event_service_interface_channel.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201711.LiveStreamEventServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_live_stream_event_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201711.ILiveStreamEventService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_live_stream_event_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.LiveStreamEventServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_live_stream_event_service_interface_channel.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201805.LiveStreamEventServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_live_stream_event_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201805.ILiveStreamEventService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_live_stream_event_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.LiveStreamEventServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_live_stream_event_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201802.Location", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_location.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Location", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_location.html", null ],
@@ -9023,14 +9024,14 @@ var hierarchy =
     [ "Google.Api.Ads.Common.Logging.LogEntry", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_log_entry.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.LogicalUserListOperand", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_logical_user_list_operand.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.LogicalUserListOperand", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_logical_user_list_operand.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Long_StatsMapEntry", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_long___stats_map_entry.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Long_StatsMapEntry", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_long___stats_map_entry.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Long_StatsMapEntry", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_long___stats_map_entry.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Long_StatsMapEntry", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_long___stats_map_entry.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Long_StatsMapEntry", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_long___stats_map_entry.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.LongComparisonOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_long_comparison_operation.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.LongComparisonOperation", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_long_comparison_operation.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.ManagedCustomer", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_managed_customer.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.ManagedCustomer", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_managed_customer.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.ManagedCustomer", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_managed_customer.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.ManagedCustomerLabel", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_managed_customer_label.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.ManagedCustomerLabel", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_managed_customer_label.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.ManagedCustomerLink", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_managed_customer_link.html", null ],
@@ -9088,17 +9089,17 @@ var hierarchy =
         [ "Google.Api.Ads.Dfp.Headers.RequestHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_request_header.html", null ]
       ] ]
     ] ],
+    [ "Google.Api.Ads.Dfp.v201805.MobileApplication", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_mobile_application.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.MobileApplication", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_mobile_application.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.MobileApplication", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_mobile_application.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.MobileApplication", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_mobile_application.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.MobileApplication", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_mobile_application.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.MobileApplicationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_mobile_application_action.html", [
-      [ "Google.Api.Ads.Dfp.v201708.ArchiveMobileApplications", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_archive_mobile_applications.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.UnarchiveMobileApplications", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_unarchive_mobile_applications.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201805.MobileApplicationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_mobile_application_action.html", [
       [ "Google.Api.Ads.Dfp.v201805.ArchiveMobileApplications", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_archive_mobile_applications.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.UnarchiveMobileApplications", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_unarchive_mobile_applications.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201708.MobileApplicationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_mobile_application_action.html", [
+      [ "Google.Api.Ads.Dfp.v201708.ArchiveMobileApplications", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_archive_mobile_applications.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.UnarchiveMobileApplications", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_unarchive_mobile_applications.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201711.MobileApplicationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_mobile_application_action.html", [
       [ "Google.Api.Ads.Dfp.v201711.ArchiveMobileApplications", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_archive_mobile_applications.html", null ],
@@ -9108,8 +9109,8 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201802.ArchiveMobileApplications", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_archive_mobile_applications.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.UnarchiveMobileApplications", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_unarchive_mobile_applications.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201805.MobileApplicationPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_mobile_application_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.MobileApplicationPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_mobile_application_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.MobileApplicationPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_mobile_application_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.MobileApplicationPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_mobile_application_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.MobileApplicationPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_mobile_application_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.MobileApplicationServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_mobile_application_service_interface.html", [
@@ -9128,36 +9129,36 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201708.IMobileApplicationService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_mobile_application_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.MobileApplicationServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_mobile_application_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201802.MobileApplicationTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_mobile_application_targeting.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.MobileApplicationTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_mobile_application_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.MobileApplicationTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_mobile_application_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.MobileApplicationTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_mobile_application_targeting.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.MobileApplicationTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_mobile_application_targeting.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.MobileApplicationTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_mobile_application_targeting.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.MobileCarrierTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_mobile_carrier_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.MobileCarrierTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_mobile_carrier_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.MobileCarrierTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_mobile_carrier_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.MobileCarrierTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_mobile_carrier_targeting.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.MobileCarrierTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_mobile_carrier_targeting.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.MobileDeviceSubmodelTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_mobile_device_submodel_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.MobileDeviceSubmodelTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_mobile_device_submodel_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.MobileDeviceSubmodelTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_mobile_device_submodel_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.MobileDeviceSubmodelTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_mobile_device_submodel_targeting.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.MobileDeviceSubmodelTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_mobile_device_submodel_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.MobileDeviceTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_mobile_device_targeting.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.MobileDeviceTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_mobile_device_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.MobileDeviceTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_mobile_device_targeting.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.MobileDeviceTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_mobile_device_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.MobileDeviceTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_mobile_device_targeting.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Money", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_money.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Money", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_money.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Money", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_money.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Money", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_money.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Money", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_money.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Money", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_money.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.MonthlySearchVolume", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_monthly_search_volume.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.MonthlySearchVolume", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_monthly_search_volume.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.ManagedCustomerService.mutateLabelRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_managed_customer_service_1_1mutate_label_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupService.mutateLabelRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_service_1_1mutate_label_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupService.mutateLabelRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_service_1_1mutate_label_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupAdService.mutateLabelRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_ad_service_1_1mutate_label_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.ManagedCustomerService.mutateLabelRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_managed_customer_service_1_1mutate_label_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignService.mutateLabelRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_service_1_1mutate_label_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupService.mutateLabelRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_service_1_1mutate_label_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupCriterionService.mutateLabelRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_criterion_service_1_1mutate_label_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignService.mutateLabelRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_service_1_1mutate_label_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.ManagedCustomerService.mutateLabelRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_managed_customer_service_1_1mutate_label_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupCriterionService.mutateLabelRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_criterion_service_1_1mutate_label_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupAdService.mutateLabelRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_ad_service_1_1mutate_label_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupService.mutateLabelResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_service_1_1mutate_label_response.html", null ],
@@ -9186,54 +9187,58 @@ var hierarchy =
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdwordsUserListService.mutateMembersResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_adwords_user_list_service_1_1mutate_members_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.MutateMembersReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_mutate_members_return_value.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.MutateMembersReturnValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_mutate_members_return_value.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.OfflineCallConversionFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_offline_call_conversion_feed_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AccountLabelService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_account_label_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BiddingStrategyService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_bidding_strategy_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AccountLabelService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_account_label_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdCustomizerFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_customizer_feed_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupAdService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_ad_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BatchJobService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdCustomizerFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_customizer_feed_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignCriterionService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_criterion_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.OfflineCallConversionFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_offline_call_conversion_feed_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdwordsUserListService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_adwords_user_list_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupExtensionSettingService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_extension_setting_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.ConversionTrackerService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_conversion_tracker_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupBidModifierService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_bid_modifier_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignSharedSetService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_shared_set_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.SharedCriterionService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_shared_criterion_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.SharedSetService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_shared_set_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.OfflineConversionFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_offline_conversion_feed_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignExtensionSettingService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_extension_setting_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.TrialService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_trial_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.CustomerExtensionSettingService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_extension_setting_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AccountLabelService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_account_label_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BudgetService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_budget_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.BudgetService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignSharedSetService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_shared_set_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.DraftService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_draft_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.TrialService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_trial_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdParamService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_param_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.BatchJobService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_batch_job_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BatchJobOpsService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.LabelService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_label_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.BudgetOrderService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignExtensionSettingService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_extension_setting_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.SharedSetService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_shared_set_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdParamService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_param_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupBidModifierService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_bid_modifier_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupBidModifierService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_bid_modifier_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.BatchJobOpsService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.DraftService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_draft_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdCustomizerFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_customizer_feed_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BudgetService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_budget_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BudgetOrderService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_budget_order_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.FeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.CustomerExtensionSettingService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_extension_setting_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BatchJobService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.OfflineCallConversionFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_offline_call_conversion_feed_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CustomerNegativeCriterionService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_negative_criterion_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.FeedMappingService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_mapping_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.CustomerFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_feed_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BatchJobOpsService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignExtensionSettingService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_extension_setting_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupBidModifierService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_bid_modifier_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdParamService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_param_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_feed_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.CustomerExtensionSettingService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_customer_extension_setting_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignExtensionSettingService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_extension_setting_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.FeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.OfflineCallConversionFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_offline_call_conversion_feed_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupExtensionSettingService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_extension_setting_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.FeedMappingService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_mapping_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.BatchJobOpsService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupAdService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_ad_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignCriterionService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_criterion_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.ManagedCustomerService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_managed_customer_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.TrialService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_trial_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_feed_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.CustomerFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_feed_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.SharedSetService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_shared_set_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupCriterionService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_criterion_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.OfflineDataUploadService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_offline_data_upload_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.LabelService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_label_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.BatchJobService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_batch_job_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.BiddingStrategyService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_bidding_strategy_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BudgetOrderService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_budget_order_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignGroupService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_group_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignBidModifierService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_bid_modifier_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.FeedItemService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_item_service_1_1mutate_request.html", null ],
@@ -9242,110 +9247,106 @@ var hierarchy =
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignGroupPerformanceTargetService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_group_performancee4f26cca3a91ced8ffa48134e4645147.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.ConversionTrackerService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_conversion_tracker_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CustomerNegativeCriterionService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_customer_negative_criterion_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.CustomerExtensionSettingService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_customer_extension_setting_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdCustomizerFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_customizer_feed_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AccountLabelService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_account_label_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.DraftService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_draft_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_feed_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.OfflineDataUploadService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_offline_data_upload_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_service_1_1mutate_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BiddingStrategyService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_bidding_strategy_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignGroupPerformanceTargetService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_group_performance33a6733c75772f1733f79257979391b4.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CustomerFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_customer_feed_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupAdService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_ad_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.FeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.FeedItemService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_item_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdwordsUserListService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_adwords_user_list_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.BudgetService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.FeedItemTargetService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_item_target_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignBidModifierService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_bid_modifier_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.SharedSetService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_shared_set_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.FeedMappingService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_mapping_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.ManagedCustomerService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_managed_customer_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_feed_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.OfflineConversionFeedService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_offline_conversion_feed_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupCriterionService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_criterion_service_1_1mutate_request.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.BiddingStrategyService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_bidding_strategy_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.SharedCriterionService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_shared_criterion_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.OfflineDataUploadService.mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_offline_data_upload_service_1_1mutate_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignGroupService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_group_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.DraftService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_draft_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.BudgetService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.SharedSetService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_shared_set_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AccountLabelService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_account_label_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupBidModifierService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_bid_modifier_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignCriterionService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_criterion_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.ConversionTrackerService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_conversion_tracker_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdwordsUserListService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_adwords_user_list_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupExtensionSettingService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_extension_setting_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignSharedSetService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_shared_set_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.SharedCriterionService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_shared_criterion_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.OfflineCallConversionFeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_offline_call_conversion_feed_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignExtensionSettingService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_extension_setting_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BudgetService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_budget_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupFeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_feed_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AccountLabelService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_account_label_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CustomerNegativeCriterionService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_negative_criterion_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdCustomizerFeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_customizer_feed_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignSharedSetService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_shared_set_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupExtensionSettingService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_extension_setting_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.TrialService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_trial_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BiddingStrategyService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_bidding_strategy_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupAdService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_ad_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.BatchJobService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_batch_job_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.TrialService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_trial_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.BatchJobOpsService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.LabelService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_label_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdParamService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_param_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignSharedSetService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_shared_set_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.SharedSetService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_shared_set_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BatchJobOpsService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdParamService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_param_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.DraftService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_draft_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupBidModifierService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_bid_modifier_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.FeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BatchJobOpsService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.DraftService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_draft_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdParamService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_param_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdParamService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_param_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.LabelService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_label_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.BatchJobOpsService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_batch_job_ops_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.CustomerExtensionSettingService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_customer_extension_setting_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignGroupPerformanceTargetService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_group_performance07bb63c3422e8bc81148b17c382e3f14.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.FeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.BudgetOrderService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_budget_order_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.BudgetService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupFeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_feed_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.FeedMappingService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_mapping_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.CustomerExtensionSettingService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_extension_setting_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BatchJobService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.BudgetOrderService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_budget_order_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupFeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_feed_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AccountLabelService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_account_label_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.FeedMappingService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_mapping_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.CustomerFeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_feed_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupAdService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_ad_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignCriterionService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_criterion_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.ManagedCustomerService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_managed_customer_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.CustomerExtensionSettingService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_customer_extension_setting_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignExtensionSettingService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_extension_setting_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdCustomizerFeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_customizer_feed_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.OfflineConversionFeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_offline_conversion_feed_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdGroupCriterionService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_criterion_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupExtensionSettingService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_extension_setting_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.BiddingStrategyService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_bidding_strategy_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.OfflineDataUploadService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_offline_data_upload_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.LabelService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_label_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BatchJobService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_batch_job_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.FeedItemService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_feed_item_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.OfflineCallConversionFeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_offline_call_conversion_feed_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.ConversionTrackerService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_conversion_tracker_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AccountLabelService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_account_label_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignBidModifierService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_bid_modifier_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.SharedCriterionService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_shared_criterion_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BudgetService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_budget_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignFeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_feed_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.OfflineConversionFeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_offline_conversion_feed_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.CustomerFeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_feed_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignGroupService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_group_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignGroupPerformanceTargetService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_group_performanceb21fffc6366e87b7f70f667c9d546d02.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.ConversionTrackerService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_conversion_tracker_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Wrappers.ManagedCustomerService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_managed_customer_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CustomerNegativeCriterionService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_customer_negative_criterion_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.DraftService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_draft_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.BiddingStrategyService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_bidding_strategy_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.CustomerExtensionSettingService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_extension_setting_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CustomerFeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_customer_feed_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.CampaignExtensionSettingService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_campaign_extension_setting_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.FeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupBidModifierService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_bid_modifier_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignExtensionSettingService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_extension_setting_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.FeedItemService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_item_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.AdwordsUserListService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_adwords_user_list_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.FeedItemTargetService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_item_target_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignBidModifierService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_bid_modifier_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.FeedMappingService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_feed_mapping_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Wrappers.ManagedCustomerService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_managed_customer_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CampaignFeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_campaign_feed_service_1_1mutate_response.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.OfflineConversionFeedService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_offline_conversion_feed_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.AdGroupCriterionService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_ad_group_criterion_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.OfflineDataUploadService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_offline_data_upload_service_1_1mutate_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.SharedCriterionService.mutateResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_shared_criterion_service_1_1mutate_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.MutateResult", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_mutate_result.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.MutateResult", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_mutate_result.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.MutateResult", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_mutate_result.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CustomerService.mutateServiceLinksRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_service_1_1mutate_service_links_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.CustomerService.mutateServiceLinksRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_customer_service_1_1mutate_service_links_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.CustomerService.mutateServiceLinksResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_service_1_1mutate_service_links_response.html", null ],
@@ -9357,26 +9358,22 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201711.NativeStyleAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_native_style_action.html", [
       [ "Google.Api.Ads.Dfp.v201711.ArchiveNativeStyles", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_archive_native_styles.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201805.NativeStyleAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_native_style_action.html", [
-      [ "Google.Api.Ads.Dfp.v201805.ArchiveNativeStyles", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_archive_native_styles.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201708.NativeStyleAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_native_style_action.html", [
       [ "Google.Api.Ads.Dfp.v201708.ArchiveNativeStyles", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_archive_native_styles.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201805.NativeStyleAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_native_style_action.html", [
+      [ "Google.Api.Ads.Dfp.v201805.ArchiveNativeStyles", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_archive_native_styles.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201802.NativeStyleAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_native_style_action.html", [
       [ "Google.Api.Ads.Dfp.v201802.ArchiveNativeStyles", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_archive_native_styles.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201802.NativeStylePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_native_style_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.NativeStylePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_native_style_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.NativeStylePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_native_style_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.NativeStylePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_native_style_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.NativeStylePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_native_style_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.NativeStyleServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_native_style_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201711.INativeStyleService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_native_style_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.NativeStyleServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_native_style_service_interface_channel.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201805.NativeStyleServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_native_style_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201805.INativeStyleService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_native_style_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.NativeStyleServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_native_style_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201708.NativeStyleServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_native_style_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201708.INativeStyleService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_native_style_service.html", null ],
@@ -9386,10 +9383,18 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201802.INativeStyleService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_native_style_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.NativeStyleServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_native_style_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201708.Network", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_network.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.NativeStyleServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_native_style_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201805.INativeStyleService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_native_style_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.NativeStyleServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_native_style_service_interface_channel.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201805.Network", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_network.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Network", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_network.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Network", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_network.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Network", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_network.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.NetworkServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_network_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201805.INetworkService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_network_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.NetworkServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_network_service_interface_channel.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201708.NetworkServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_network_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201708.INetworkService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_network_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.NetworkServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_network_service_interface_channel.html", null ]
@@ -9397,10 +9402,6 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201711.NetworkServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_network_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201711.INetworkService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_network_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.NetworkServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_network_service_interface_channel.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201805.NetworkServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_network_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201805.INetworkService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_network_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.NetworkServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_network_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201802.NetworkServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_network_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.INetworkService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_network_service.html", null ],
@@ -9414,8 +9415,8 @@ var hierarchy =
     [ "Google.Api.Ads.AdWords.v201710.NumberRuleItem", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_number_rule_item.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.OAuthInfo", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_o_auth_info.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.OAuthInfo", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_o_auth_info.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.OfflineCallConversionFeed", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_offline_call_conversion_feed.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.OfflineCallConversionFeed", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_offline_call_conversion_feed.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.OfflineCallConversionFeed", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_offline_call_conversion_feed.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.OfflineCallConversionFeedServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_offline_call_conversion_feed_service_interface.html", [
       [ "Google.Api.Ads.AdWords.v201802.IOfflineCallConversionFeedService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_i_offline_call_conversion_feed_service.html", null ],
       [ "Google.Api.Ads.AdWords.v201802.OfflineCallConversionFeedServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_offline_call_conversion_feed_service_interface_channel.html", null ]
@@ -9424,8 +9425,8 @@ var hierarchy =
       [ "Google.Api.Ads.AdWords.v201710.IOfflineCallConversionFeedService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_offline_call_conversion_feed_service.html", null ],
       [ "Google.Api.Ads.AdWords.v201710.OfflineCallConversionFeedServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_offline_call_conversion_feed_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.AdWords.v201802.OfflineConversionFeed", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_offline_conversion_feed.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.OfflineConversionFeed", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_offline_conversion_feed.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.OfflineConversionFeed", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_offline_conversion_feed.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.OfflineConversionFeedServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_offline_conversion_feed_service_interface.html", [
       [ "Google.Api.Ads.AdWords.v201710.IOfflineConversionFeedService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_offline_conversion_feed_service.html", null ],
       [ "Google.Api.Ads.AdWords.v201710.OfflineConversionFeedServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_offline_conversion_feed_service_interface_channel.html", null ]
@@ -9447,13 +9448,13 @@ var hierarchy =
       [ "Google.Api.Ads.AdWords.v201710.OfflineDataUploadServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_offline_data_upload_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201802.OfflineError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_offline_error.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.OfflineError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_offline_error.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.OfflineError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_offline_error.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.OfflineError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_offline_error.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.OfflineError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_offline_error.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Operand", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_operand.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Operand", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_operand.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.OperatingSystemTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_operating_system_targeting.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Operand", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_operand.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.OperatingSystemTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_operating_system_targeting.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.OperatingSystemTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_operating_system_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.OperatingSystemTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_operating_system_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.OperatingSystemTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_operating_system_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.OperatingSystemVersionTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_operating_system_version_targeting.html", null ],
@@ -9563,27 +9564,6 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201708.Order", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_order.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Order", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_order.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Order", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_order.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.OrderAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_order_action.html", [
-      [ "Google.Api.Ads.Dfp.v201805.ApproveOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_approve_orders.html", [
-        [ "Google.Api.Ads.Dfp.v201805.ApproveAndOverbookOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_approve_and_overbook_orders.html", null ]
-      ] ],
-      [ "Google.Api.Ads.Dfp.v201805.ApproveOrdersWithoutReservationChanges", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_approve_orders_without_reservation_changes.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.ArchiveOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_archive_orders.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.DeleteOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_delete_orders.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.DisapproveOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_disapprove_orders.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.DisapproveOrdersWithoutReservationChanges", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_disapprove_orders_without_reservation_changes.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.PauseOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_pause_orders.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.ResumeOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_resume_orders.html", [
-        [ "Google.Api.Ads.Dfp.v201805.ResumeAndOverbookOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_resume_and_overbook_orders.html", null ]
-      ] ],
-      [ "Google.Api.Ads.Dfp.v201805.RetractOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_retract_orders.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.RetractOrdersWithoutReservationChanges", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_retract_orders_without_reservation_changes.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.SubmitOrdersForApproval", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_submit_orders_for_approval.html", [
-        [ "Google.Api.Ads.Dfp.v201805.SubmitOrdersForApprovalAndOverbook", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_submit_orders_for_approval_and_overbook.html", null ]
-      ] ],
-      [ "Google.Api.Ads.Dfp.v201805.SubmitOrdersForApprovalWithoutReservationChanges", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_submit_orders_for_approval_without_reservation_changes.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.UnarchiveOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_unarchive_orders.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201708.OrderAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_order_action.html", [
       [ "Google.Api.Ads.Dfp.v201708.ApproveOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_approve_orders.html", [
         [ "Google.Api.Ads.Dfp.v201708.ApproveAndOverbookOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_approve_and_overbook_orders.html", null ]
@@ -9626,6 +9606,27 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201802.SubmitOrdersForApprovalWithoutReservationChanges", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_submit_orders_for_approval_without_reservation_changes.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.UnarchiveOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_unarchive_orders.html", null ]
     ] ],
+    [ "Google.Api.Ads.Dfp.v201805.OrderAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_order_action.html", [
+      [ "Google.Api.Ads.Dfp.v201805.ApproveOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_approve_orders.html", [
+        [ "Google.Api.Ads.Dfp.v201805.ApproveAndOverbookOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_approve_and_overbook_orders.html", null ]
+      ] ],
+      [ "Google.Api.Ads.Dfp.v201805.ApproveOrdersWithoutReservationChanges", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_approve_orders_without_reservation_changes.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.ArchiveOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_archive_orders.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.DeleteOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_delete_orders.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.DisapproveOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_disapprove_orders.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.DisapproveOrdersWithoutReservationChanges", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_disapprove_orders_without_reservation_changes.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.PauseOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_pause_orders.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.ResumeOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_resume_orders.html", [
+        [ "Google.Api.Ads.Dfp.v201805.ResumeAndOverbookOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_resume_and_overbook_orders.html", null ]
+      ] ],
+      [ "Google.Api.Ads.Dfp.v201805.RetractOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_retract_orders.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.RetractOrdersWithoutReservationChanges", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_retract_orders_without_reservation_changes.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.SubmitOrdersForApproval", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_submit_orders_for_approval.html", [
+        [ "Google.Api.Ads.Dfp.v201805.SubmitOrdersForApprovalAndOverbook", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_submit_orders_for_approval_and_overbook.html", null ]
+      ] ],
+      [ "Google.Api.Ads.Dfp.v201805.SubmitOrdersForApprovalWithoutReservationChanges", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_submit_orders_for_approval_without_reservation_changes.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.UnarchiveOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_unarchive_orders.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201711.OrderAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_order_action.html", [
       [ "Google.Api.Ads.Dfp.v201711.ApproveOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_approve_orders.html", [
         [ "Google.Api.Ads.Dfp.v201711.ApproveAndOverbookOrders", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_approve_and_overbook_orders.html", null ]
@@ -9653,6 +9654,10 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201802.OrderPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_order_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.OrderPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_order_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.OrderPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_order_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.OrderServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_order_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201805.IOrderService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_order_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.OrderServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_order_service_interface_channel.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201708.OrderServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_order_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201708.IOrderService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_order_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.OrderServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_order_service_interface_channel.html", null ]
@@ -9660,10 +9665,6 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201711.OrderServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_order_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201711.IOrderService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_order_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.OrderServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_order_service_interface_channel.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201805.OrderServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_order_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201805.IOrderService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_order_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.OrderServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_order_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201802.OrderServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_order_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.IOrderService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_order_service.html", null ],
@@ -9673,22 +9674,22 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201708.Package", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_package.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Package", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_package.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Package", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_package.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.PackageAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_package_action.html", [
+      [ "Google.Api.Ads.Dfp.v201805.CreateProposalLineItemsFromPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_create_proposal_line_items_from_packages.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201708.PackageAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_package_action.html", [
       [ "Google.Api.Ads.Dfp.v201708.CreateProposalLineItemsFromPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_create_proposal_line_items_from_packages.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201711.PackageAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_package_action.html", [
       [ "Google.Api.Ads.Dfp.v201711.CreateProposalLineItemsFromPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_create_proposal_line_items_from_packages.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201805.PackageAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_package_action.html", [
-      [ "Google.Api.Ads.Dfp.v201805.CreateProposalLineItemsFromPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_create_proposal_line_items_from_packages.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201802.PackageAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_package_action.html", [
       [ "Google.Api.Ads.Dfp.v201802.CreateProposalLineItemsFromPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_create_proposal_line_items_from_packages.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201708.PackagePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_package_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.PackagePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_package_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.PackagePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_package_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.PackagePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_package_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.PackagePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_package_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.PackageServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_package_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.IPackageService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_package_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.PackageServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_package_service_interface_channel.html", null ]
@@ -9802,8 +9803,8 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.Examples.CSharp.OAuth.Default", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_default.html", null ],
       [ "Google.Api.Ads.Dfp.Examples.CSharp.OAuth.OAuthLogin", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1_o_auth_1_1_o_auth_login.html", null ]
     ] ],
-    [ "Google.Api.Ads.AdWords.v201802.PageFeed", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_page_feed.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.PageFeed", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_page_feed.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.PageFeed", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_page_feed.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Paging", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_paging.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Paging", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_paging.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201710.PaidOrganicQueryReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_paid_organic_query_report_report_row.html", null ],
@@ -9820,11 +9821,6 @@ var hierarchy =
     [ "Google.Api.Ads.AdWords.Util.Reports.v201710.PlaceholderFeedItemReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_placeholder_feed_item_report_report_row.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201710.PlaceholderReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_placeholder_report_report_row.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201802.PlaceholderReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_placeholder_report_report_row.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.PlacementAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_placement_action.html", [
-      [ "Google.Api.Ads.Dfp.v201805.ActivatePlacements", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activate_placements.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.ArchivePlacements", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_archive_placements.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.DeactivatePlacements", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_deactivate_placements.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201802.PlacementAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_placement_action.html", [
       [ "Google.Api.Ads.Dfp.v201802.ActivatePlacements", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_activate_placements.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.ArchivePlacements", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_archive_placements.html", null ],
@@ -9840,20 +9836,17 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201711.ArchivePlacements", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_archive_placements.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.DeactivatePlacements", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_deactivate_placements.html", null ]
     ] ],
+    [ "Google.Api.Ads.Dfp.v201805.PlacementAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_placement_action.html", [
+      [ "Google.Api.Ads.Dfp.v201805.ActivatePlacements", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activate_placements.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.ArchivePlacements", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_archive_placements.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.DeactivatePlacements", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_deactivate_placements.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201805.PlacementPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_placement_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.PlacementPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_placement_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.PlacementPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_placement_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.PlacementPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_placement_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.PlacementPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_placement_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.PlacementPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_placement_page.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201802.PlacementPerformanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_placement_performance_report_report_row.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201710.PlacementPerformanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_placement_performance_report_report_row.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.PlacementServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_placement_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201711.IPlacementService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_placement_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.PlacementServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_placement_service_interface_channel.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201805.PlacementServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_placement_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201805.IPlacementService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_placement_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.PlacementServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_placement_service_interface_channel.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201802.PlacementServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_placement_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.IPlacementService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_placement_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.PlacementServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_placement_service_interface_channel.html", null ]
@@ -9861,6 +9854,14 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201708.PlacementServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_placement_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201708.IPlacementService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_placement_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.PlacementServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_placement_service_interface_channel.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201711.PlacementServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_placement_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201711.IPlacementService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_placement_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.PlacementServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_placement_service_interface_channel.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201805.PlacementServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_placement_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201805.IPlacementService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_placement_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.PlacementServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_placement_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.AdWords.v201802.PlatformCampaignEstimate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_platform_campaign_estimate.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.PlatformCampaignEstimate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_platform_campaign_estimate.html", null ],
@@ -9917,27 +9918,6 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201805.UserDomainPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user_domain_premium_feature.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.VideoPositionPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_video_position_premium_feature.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201708.PremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_premium_feature.html", [
-      [ "Google.Api.Ads.Dfp.v201708.AdUnitPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_unit_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.AudienceSegmentPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.BandwidthPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_bandwidth_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.BrowserLanguagePremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_browser_language_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.BrowserPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_browser_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.ContentBundlePremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_content_bundle_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.CustomTargetingPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_custom_targeting_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.DaypartPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_daypart_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.DeviceCapabilityPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_device_capability_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.DeviceCategoryPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_device_category_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.DeviceManufacturerPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_device_manufacturer_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.FrequencyCapPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_frequency_cap_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.GeographyPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_geography_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.MobileCarrierPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_mobile_carrier_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.OperatingSystemPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_operating_system_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.PlacementPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_placement_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.UnknownPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_unknown_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.UserDomainPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_domain_premium_feature.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.VideoPositionPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_video_position_premium_feature.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201802.PremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_premium_feature.html", [
       [ "Google.Api.Ads.Dfp.v201802.AdUnitPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_ad_unit_premium_feature.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.AudienceSegmentPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_audience_segment_premium_feature.html", null ],
@@ -9958,6 +9938,27 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201802.UnknownPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_unknown_premium_feature.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.UserDomainPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_domain_premium_feature.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.VideoPositionPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_video_position_premium_feature.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201708.PremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_premium_feature.html", [
+      [ "Google.Api.Ads.Dfp.v201708.AdUnitPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_unit_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.AudienceSegmentPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.BandwidthPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_bandwidth_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.BrowserLanguagePremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_browser_language_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.BrowserPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_browser_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.ContentBundlePremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_content_bundle_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.CustomTargetingPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_custom_targeting_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.DaypartPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_daypart_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.DeviceCapabilityPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_device_capability_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.DeviceCategoryPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_device_category_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.DeviceManufacturerPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_device_manufacturer_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.FrequencyCapPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_frequency_cap_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.GeographyPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_geography_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.MobileCarrierPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_mobile_carrier_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.OperatingSystemPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_operating_system_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.PlacementPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_placement_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.UnknownPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_unknown_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.UserDomainPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_domain_premium_feature.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.VideoPositionPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_video_position_premium_feature.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201711.PremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_premium_feature.html", [
       [ "Google.Api.Ads.Dfp.v201711.AdUnitPremiumFeature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_ad_unit_premium_feature.html", null ],
@@ -10004,10 +10005,10 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201708.IPremiumRateService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_premium_rate_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.PremiumRateServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_premium_rate_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201805.PremiumRateValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_premium_rate_value.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.PremiumRateValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_premium_rate_value.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.PremiumRateValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_premium_rate_value.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.PremiumRateValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_premium_rate_value.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.PremiumRateValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_premium_rate_value.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.PriceTableRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_price_table_row.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.PriceTableRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_price_table_row.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Product", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_product.html", null ],
@@ -10087,8 +10088,8 @@ var hierarchy =
     [ "Google.Api.Ads.AdWords.v201802.ProductImage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_product_image.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ProductMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_product_marketplace_info.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ProductMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_marketplace_info.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.ProductMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_marketplace_info.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProductMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_product_marketplace_info.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.ProductMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_marketplace_info.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ProductPackage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_product_package.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProductPackage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_product_package.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ProductPackage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_package.html", null ],
@@ -10105,20 +10106,20 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201708.DeactivateProductPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_deactivate_product_packages.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.UnarchiveProductPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_unarchive_product_packages.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201711.ProductPackageAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_package_action.html", [
-      [ "Google.Api.Ads.Dfp.v201711.ActivateProductPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_activate_product_packages.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.ArchiveProductPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_archive_product_packages.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.DeactivateProductPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_deactivate_product_packages.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.UnarchiveProductPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_unarchive_product_packages.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201802.ProductPackageAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_action.html", [
       [ "Google.Api.Ads.Dfp.v201802.ActivateProductPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_activate_product_packages.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.ArchiveProductPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_archive_product_packages.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.DeactivateProductPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_deactivate_product_packages.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.UnarchiveProductPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_unarchive_product_packages.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201711.ProductPackageItem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_package_item.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.ProductPackageAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_package_action.html", [
+      [ "Google.Api.Ads.Dfp.v201711.ActivateProductPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_activate_product_packages.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.ArchiveProductPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_archive_product_packages.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.DeactivateProductPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_deactivate_product_packages.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.UnarchiveProductPackages", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_unarchive_product_packages.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201805.ProductPackageItem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_product_package_item.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.ProductPackageItem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_package_item.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProductPackageItem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_product_package_item.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ProductPackageItem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_item.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ProductPackageItemAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_product_package_item_action.html", [
@@ -10138,9 +10139,9 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201802.UnArchiveProductPackageItems", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_un_archive_product_package_items.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201802.ProductPackageItemPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_item_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.ProductPackageItemPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_product_package_item_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ProductPackageItemPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_package_item_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProductPackageItemPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_product_package_item_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.ProductPackageItemPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_product_package_item_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ProductPackageItemServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_package_item_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201711.IProductPackageItemService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_product_package_item_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.ProductPackageItemServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_package_item_service_interface_channel.html", null ]
@@ -10159,8 +10160,8 @@ var hierarchy =
     ] ],
     [ "Google.Api.Ads.Dfp.v201805.ProductPackagePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_product_package_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProductPackagePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_product_package_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.ProductPackagePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ProductPackagePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_package_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.ProductPackagePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ProductPackageServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_package_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201711.IProductPackageService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_product_package_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.ProductPackageServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_package_service_interface_channel.html", null ]
@@ -10178,13 +10179,13 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201802.ProductPackageServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201802.ProductPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.ProductPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProductPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_product_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ProductPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_product_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.ProductPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_page.html", null ],
-    [ "Google.Api.Ads.AdWords.Util.Shopping.v201802.ProductPartitionNode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201802_1_1_product_partition_node.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Shopping.v201710.ProductPartitionNode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_node.html", null ],
-    [ "Google.Api.Ads.AdWords.Util.Reports.v201710.ProductPartitionReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_product_partition_report_report_row.html", null ],
+    [ "Google.Api.Ads.AdWords.Util.Shopping.v201802.ProductPartitionNode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201802_1_1_product_partition_node.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201802.ProductPartitionReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_product_partition_report_report_row.html", null ],
+    [ "Google.Api.Ads.AdWords.Util.Reports.v201710.ProductPartitionReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_product_partition_report_report_row.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Shopping.v201710.ProductPartitionTree", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201710_1_1_product_partition_tree.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Shopping.v201802.ProductPartitionTree", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_shopping_1_1v201802_1_1_product_partition_tree.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProductSegmentation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_product_segmentation.html", null ],
@@ -10239,21 +10240,21 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201802.ProductTemplateMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_template_marketplace_info.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProductTemplateMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_product_template_marketplace_info.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ProductTemplateMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_template_marketplace_info.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.ProductTemplatePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_product_template_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ProductTemplatePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_template_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.ProductTemplatePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_product_template_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProductTemplatePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_product_template_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ProductTemplatePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_template_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ProductTemplateServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_template_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.IProductTemplateService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_product_template_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.ProductTemplateServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_template_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201711.ProductTemplateServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_template_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201711.IProductTemplateService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_product_template_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.ProductTemplateServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_template_service_interface_channel.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201708.ProductTemplateServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_product_template_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201708.IProductTemplateService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_product_template_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.ProductTemplateServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_product_template_service_interface_channel.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201711.ProductTemplateServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_template_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201711.IProductTemplateService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_product_template_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.ProductTemplateServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_product_template_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201805.ProductTemplateServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_product_template_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201805.IProductTemplateService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_product_template_service.html", null ],
@@ -10261,6 +10262,11 @@ var hierarchy =
     ] ],
     [ "Google.Api.Ads.AdWords.Examples.CSharp.Program", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1_program.html", null ],
     [ "Google.Api.Ads.Dfp.Examples.CSharp.Program", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1_program.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.ProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_progress_action.html", [
+      [ "Google.Api.Ads.Dfp.v201805.RequestApprovalProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_request_approval_progress_action.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.ReserveInventoryProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reserve_inventory_progress_action.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.SendNotificationProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_send_notification_progress_action.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201802.ProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_progress_action.html", [
       [ "Google.Api.Ads.Dfp.v201802.RequestApprovalProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_request_approval_progress_action.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.ReserveInventoryProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reserve_inventory_progress_action.html", null ],
@@ -10271,26 +10277,21 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201708.ReserveInventoryProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reserve_inventory_progress_action.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.SendNotificationProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_send_notification_progress_action.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201805.ProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_progress_action.html", [
-      [ "Google.Api.Ads.Dfp.v201805.RequestApprovalProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_request_approval_progress_action.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.ReserveInventoryProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reserve_inventory_progress_action.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.SendNotificationProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_send_notification_progress_action.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201711.ProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_progress_action.html", [
       [ "Google.Api.Ads.Dfp.v201711.RequestApprovalProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_request_approval_progress_action.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.ReserveInventoryProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reserve_inventory_progress_action.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.SendNotificationProgressAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_send_notification_progress_action.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201802.ProgressRule", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_progress_rule.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.ProgressRule", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_progress_rule.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ProgressRule", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_progress_rule.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProgressRule", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_progress_rule.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.ProgressRule", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_progress_rule.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.ProgressStats", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_progress_stats.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.ProgressStats", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_progress_stats.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.ProgressStep", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_progress_step.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.ProgressStep", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_progress_step.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.ProgressStep", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_progress_step.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ProgressStep", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_progress_step.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.ProgressStep", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_progress_step.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.ProgressStep", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_progress_step.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.ProgressStep", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_progress_step.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Proposal", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Proposal", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Proposal", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal.html", null ],
@@ -10361,12 +10362,12 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201711.UpdateOrderWithSellerData", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_update_order_with_seller_data.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201805.ProposalCompanyAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_company_association.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.ProposalCompanyAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_company_association.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProposalCompanyAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_company_association.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ProposalCompanyAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_company_association.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.ProposalCompanyAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_company_association.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ProposalLineItem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_line_item.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.ProposalLineItem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_line_item.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ProposalLineItem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.ProposalLineItem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_line_item.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ProposalLineItem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_line_item.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ProposalLineItemAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_line_item_action.html", [
       [ "Google.Api.Ads.Dfp.v201802.ActualizeProposalLineItems", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_actualize_proposal_line_items.html", null ],
@@ -10408,22 +10409,22 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201711.UnarchiveProposalLineItems", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_unarchive_proposal_line_items.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.UnlinkProposalLineItems", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_unlink_proposal_line_items.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201711.ProposalLineItemConstraints", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_constraints.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.ProposalLineItemConstraints", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_line_item_constraints.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ProposalLineItemConstraints", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_line_item_constraints.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.ProposalLineItemConstraints", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_line_item_constraints.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.ProposalLineItemConstraints", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_constraints.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ProposalLineItemConstraints", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_line_item_constraints.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ProposalLineItemMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_line_item_marketplace_info.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.ProposalLineItemMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_line_item_marketplace_info.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProposalLineItemMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_line_item_marketplace_info.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ProposalLineItemMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_marketplace_info.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.ProposalLineItemPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.ProposalLineItemMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_line_item_marketplace_info.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProposalLineItemPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_line_item_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.ProposalLineItemPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ProposalLineItemPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_line_item_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ProposalLineItemPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_line_item_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.ProposalLineItemPremium", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_line_item_premium.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ProposalLineItemPremium", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_line_item_premium.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.ProposalLineItemPremium", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_premium.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProposalLineItemPremium", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_line_item_premium.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.ProposalLineItemPremium", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_line_item_premium.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.ProposalLineItemPremium", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_premium.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ProposalLineItemServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_line_item_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.IProposalLineItemService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_proposal_line_item_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.ProposalLineItemServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_line_item_service_interface_channel.html", null ]
@@ -10440,22 +10441,18 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201708.IProposalLineItemService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_proposal_line_item_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.ProposalLineItemServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_line_item_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201711.ProposalLink", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_link.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProposalLink", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_link.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ProposalLink", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_link.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.ProposalLink", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_link.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ProposalLink", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_link.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.ProposalMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_marketplace_info.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.ProposalMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_marketplace_info.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ProposalMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_marketplace_info.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProposalMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_marketplace_info.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.ProposalMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_marketplace_info.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.ProposalPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.ProposalMarketplaceInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_marketplace_info.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ProposalPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.ProposalPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ProposalPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.ProposalServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201805.IProposalService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_proposal_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.ProposalServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_service_interface_channel.html", null ]
-    ] ],
+    [ "Google.Api.Ads.Dfp.v201708.ProposalPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.ProposalPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProposalServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201708.IProposalService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_proposal_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.ProposalServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_service_interface_channel.html", null ]
@@ -10464,13 +10461,17 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201802.IProposalService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_proposal_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.ProposalServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_service_interface_channel.html", null ]
     ] ],
+    [ "Google.Api.Ads.Dfp.v201805.ProposalServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201805.IProposalService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_proposal_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.ProposalServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_service_interface_channel.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201711.ProposalServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201711.IProposalService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_proposal_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.ProposalServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201805.ProposalTermsAndConditions", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_proposal_terms_and_conditions.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.ProposalTermsAndConditions", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_terms_and_conditions.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ProposalTermsAndConditions", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_terms_and_conditions.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.ProposalTermsAndConditions", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal_terms_and_conditions.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ProposalTermsAndConditions", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_proposal_terms_and_conditions.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ProspectiveLineItem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_prospective_line_item.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ProspectiveLineItem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_prospective_line_item.html", null ],
@@ -10480,13 +10481,13 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201805.IPublisherQueryLanguageService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_publisher_query_language_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.PublisherQueryLanguageServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_publisher_query_language_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201802.PublisherQueryLanguageServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_publisher_query_language_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201802.IPublisherQueryLanguageService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_publisher_query_language_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.PublisherQueryLanguageServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_publisher_query_language_service_interface_channel.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201708.PublisherQueryLanguageServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_publisher_query_language_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201708.IPublisherQueryLanguageService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_publisher_query_language_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.PublisherQueryLanguageServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_publisher_query_language_service_interface_channel.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201802.PublisherQueryLanguageServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_publisher_query_language_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201802.IPublisherQueryLanguageService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_publisher_query_language_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.PublisherQueryLanguageServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_publisher_query_language_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201711.PublisherQueryLanguageServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_publisher_query_language_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201711.IPublisherQueryLanguageService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_publisher_query_language_service.html", null ],
@@ -10498,20 +10499,12 @@ var hierarchy =
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.LocationCriterionService.queryRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_location_criterion_service_1_1query_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.LocationCriterionService.queryResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_location_criterion_service_1_1query_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.LocationCriterionService.queryResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_location_criterion_service_1_1query_response.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.Range", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_range.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Range", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_range.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.Range", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_range.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.RateCard", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_rate_card.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.RateCard", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_rate_card.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.RateCard", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_rate_card.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.RateCard", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_rate_card.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.RateCard", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_rate_card.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.RateCardAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_rate_card_action.html", [
-      [ "Google.Api.Ads.Dfp.v201805.ActivateRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activate_rate_cards.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.DeactivateRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_deactivate_rate_cards.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201711.RateCardAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_rate_card_action.html", [
-      [ "Google.Api.Ads.Dfp.v201711.ActivateRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_activate_rate_cards.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.DeactivateRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_deactivate_rate_cards.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201708.RateCardAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_rate_card_action.html", [
       [ "Google.Api.Ads.Dfp.v201708.ActivateRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_activate_rate_cards.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.DeactivateRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_deactivate_rate_cards.html", null ]
@@ -10520,10 +10513,18 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201802.ActivateRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_activate_rate_cards.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.DeactivateRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_deactivate_rate_cards.html", null ]
     ] ],
+    [ "Google.Api.Ads.Dfp.v201711.RateCardAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_rate_card_action.html", [
+      [ "Google.Api.Ads.Dfp.v201711.ActivateRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_activate_rate_cards.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.DeactivateRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_deactivate_rate_cards.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201805.RateCardAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_rate_card_action.html", [
+      [ "Google.Api.Ads.Dfp.v201805.ActivateRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activate_rate_cards.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.DeactivateRateCards", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_deactivate_rate_cards.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201802.RateCardPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_rate_card_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.RateCardPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_rate_card_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.RateCardPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_rate_card_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.RateCardPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_rate_card_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.RateCardPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_rate_card_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.RateCardServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_rate_card_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.IRateCardService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_rate_card_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.RateCardServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_rate_card_service_interface_channel.html", null ]
@@ -10548,10 +10549,6 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201708.ReconciliationLineItemReportPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_line_item_report_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ReconciliationLineItemReportPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_line_item_report_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReportPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_line_item_report_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.ReconciliationLineItemReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reconciliation_line_item_report_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201805.IReconciliationLineItemReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_reconciliation_line_item_report_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.ReconciliationLineItemReportServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reconciliation_line_item_report_service_interface_channel.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_line_item_report_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201711.IReconciliationLineItemReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_reconciliation_line_item_report_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReportServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_line_item_report_service_interface_channel.html", null ]
@@ -10559,6 +10556,10 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201708.ReconciliationLineItemReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_line_item_report_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201708.IReconciliationLineItemReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_reconciliation_line_item_report_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.ReconciliationLineItemReportServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_line_item_report_service_interface_channel.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201805.ReconciliationLineItemReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reconciliation_line_item_report_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201805.IReconciliationLineItemReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_reconciliation_line_item_report_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.ReconciliationLineItemReportServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reconciliation_line_item_report_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201802.ReconciliationLineItemReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_line_item_report_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.IReconciliationLineItemReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_reconciliation_line_item_report_service.html", null ],
@@ -10585,8 +10586,8 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201711.SubmitReconciliationOrderReports", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_submit_reconciliation_order_reports.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201711.ReconciliationOrderReportPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_order_report_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.ReconciliationOrderReportPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_order_report_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ReconciliationOrderReportPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reconciliation_order_report_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.ReconciliationOrderReportPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_order_report_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ReconciliationOrderReportPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_order_report_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ReconciliationOrderReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_order_report_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.IReconciliationOrderReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_reconciliation_order_report_service.html", null ],
@@ -10604,22 +10605,26 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201708.IReconciliationOrderReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_reconciliation_order_report_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.ReconciliationOrderReportServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_order_report_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201805.ReconciliationReport", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reconciliation_report.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ReconciliationReport", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_report.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.ReconciliationReport", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reconciliation_report.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ReconciliationReport", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_report.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ReconciliationReport", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_report.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ReconciliationReportPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reconciliation_report_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.ReconciliationReportPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_report_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ReconciliationReportPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_report_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.ReconciliationReportPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_report_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ReconciliationReportPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_report_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ReconciliationReportRow", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reconciliation_report_row.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ReconciliationReportRow", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_report_row.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ReconciliationReportRow", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_report_row.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ReconciliationReportRow", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_report_row.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.ReconciliationReportRowPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reconciliation_report_row_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ReconciliationReportRowPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_report_row_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ReconciliationReportRowPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_report_row_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.ReconciliationReportRowPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reconciliation_report_row_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ReconciliationReportRowPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_report_row_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.ReconciliationReportRowServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_report_row_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201802.IReconciliationReportRowService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_reconciliation_report_row_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.ReconciliationReportRowServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_report_row_service_interface_channel.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201805.ReconciliationReportRowServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reconciliation_report_row_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201805.IReconciliationReportRowService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_reconciliation_report_row_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.ReconciliationReportRowServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reconciliation_report_row_service_interface_channel.html", null ]
@@ -10628,21 +10633,17 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201711.IReconciliationReportRowService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_reconciliation_report_row_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.ReconciliationReportRowServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_report_row_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201802.ReconciliationReportRowServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_report_row_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201802.IReconciliationReportRowService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_reconciliation_report_row_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.ReconciliationReportRowServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_report_row_service_interface_channel.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201708.ReconciliationReportRowServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_report_row_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201708.IReconciliationReportRowService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_reconciliation_report_row_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.ReconciliationReportRowServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_report_row_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201802.ReconciliationReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_report_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201802.IReconciliationReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_reconciliation_report_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.ReconciliationReportServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_report_service_interface_channel.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201805.ReconciliationReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reconciliation_report_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201805.IReconciliationReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_reconciliation_report_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.ReconciliationReportServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_reconciliation_report_service_interface_channel.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201802.ReconciliationReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_report_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201802.IReconciliationReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_reconciliation_report_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.ReconciliationReportServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reconciliation_report_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201711.ReconciliationReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_report_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201711.IReconciliationReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_reconciliation_report_service.html", null ],
@@ -10656,8 +10657,8 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.LiveStreamEventService.registerSessionsForMonitoringRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_live_stream_event_service_1_1reb89df7602ddb3c59ce9ae43188f835ce.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.LiveStreamEventService.registerSessionsForMonitoringRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_live_stream_event_service_1_1re5a6fc4c3dc355d2ebb977789c210e283.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.LiveStreamEventService.registerSessionsForMonitoringRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_live_stream_event_service_1_1reb4cebf6361fa11b518f1cd8f35d169ae.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.LiveStreamEventService.registerSessionsForMonitoringResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_live_stream_event_service_1_1re7df4c295933e37d22cab5867a61547e1.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.LiveStreamEventService.registerSessionsForMonitoringResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_live_stream_event_service_1_1re5c7174eeb3e7a83ea28daa9ad146004a.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.LiveStreamEventService.registerSessionsForMonitoringResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_live_stream_event_service_1_1re7df4c295933e37d22cab5867a61547e1.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.LiveStreamEventService.registerSessionsForMonitoringResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_live_stream_event_service_1_1re17585b1d6d586ac40ca36553f03c4c67.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.LiveStreamEventService.registerSessionsForMonitoringResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_live_stream_event_service_1_1re3a5f919ae8ccda850b657bcc84343849.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.RelativeDate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_relative_date.html", null ],
@@ -10676,69 +10677,69 @@ var hierarchy =
     [ "Google.Api.Ads.AdWords.Examples.CSharp.v201802.ParallelReportDownload.ReportDownloadData", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_parallel_repor7f7bdeb7846390d2411c2d68352556e3.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.ReportDownloadError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1_report_download_error.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ReportDownloadOptions", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_report_download_options.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.ReportDownloadOptions", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_report_download_options.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ReportDownloadOptions", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_report_download_options.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.ReportDownloadOptions", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_report_download_options.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ReportDownloadOptions", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_report_download_options.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ReportJob", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_report_job.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ReportJob", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_report_job.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ReportJob", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_report_job.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.ReportJob", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_report_job.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.ReportQuery", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_report_query.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ReportQuery", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_report_query.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.ReportQuery", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_report_query.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.ReportQuery", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_report_query.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ReportQuery", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_report_query.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.ReportQuery", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_report_query.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201802.ReportQueryBuilder", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_report_query_builder.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201710.ReportQueryBuilder", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_report_query_builder.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.ReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_report_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201805.IReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_report_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.ReportServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_report_service_interface_channel.html", null ]
+    [ "Google.Api.Ads.Dfp.v201711.ReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_report_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201711.IReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_report_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.ReportServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_report_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201708.ReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_report_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201708.IReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_report_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.ReportServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_report_service_interface_channel.html", null ]
     ] ],
+    [ "Google.Api.Ads.Dfp.v201805.ReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_report_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201805.IReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_report_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.ReportServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_report_service_interface_channel.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201802.ReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_report_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.IReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_report_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.ReportServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_report_service_interface_channel.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201711.ReportServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_report_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201711.IReportService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_report_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.ReportServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_report_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Common.Logging.RequestInfo", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_request_info.html", null ],
     [ "Google.Api.Ads.Dfp.Headers.ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_headers_1_1_response_header.html", null ],
     [ "Google.Api.Ads.AdWords.Headers.ResponseHeader", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_headers_1_1_response_header.html", null ],
     [ "Google.Api.Ads.Common.Logging.ResponseInfo", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_response_info.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.ResultSet", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_result_set.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.ResultSet", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_result_set.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.ResultSet", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_result_set.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.ResultSet", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_result_set.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ResultSet", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_result_set.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.RetractionDetails", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_retraction_details.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.RetractionDetails", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_retraction_details.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.RetractionDetails", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_retraction_details.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.RetractionDetails", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_retraction_details.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.RetractionDetails", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_retraction_details.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.RetractionDetails", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_retraction_details.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.RichMediaStudioChildAssetProperty", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_rich_media_studio_child_asset_property.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.RichMediaStudioChildAssetProperty", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_rich_media_studio_child_asset_property.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.RichMediaStudioChildAssetProperty", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_rich_media_studio_child_asset_property.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.RichMediaStudioChildAssetProperty", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_rich_media_studio_child_asset_property.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.RichMediaStudioChildAssetProperty", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_rich_media_studio_child_asset_property.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Role", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_role.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Role", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_role.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Role", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_role.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Role", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_role.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Role", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_role.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Role", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_role.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Row", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_row.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Row", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_row.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Row", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_row.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Row", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_row.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Rule", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_rule.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Row", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_row.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Rule", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_rule.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Rule", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_rule.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.RuleItem", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_rule_item.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.RuleItem", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_rule_item.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.RuleItemGroup", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_rule_item_group.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.RuleItemGroup", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_rule_item_group.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.RuleItemGroup", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_rule_item_group.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.SalespersonSplit", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_salesperson_split.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.SalespersonSplit", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_salesperson_split.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.SalespersonSplit", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_salesperson_split.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.SalespersonSplit", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_salesperson_split.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.SalespersonSplit", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_salesperson_split.html", null ],
     [ "Google.Api.Ads.Dfp.Examples.CSharp.SampleBase", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1_sample_base.html", [
       [ "Google.Api.Ads.Dfp.Examples.CSharp.v201711.ActivateLicas", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201711_1_1_activate_licas.html", null ],
       [ "Google.Api.Ads.Dfp.Examples.CSharp.v201711.ActivateLineItem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201711_1_1_activate_line_item.html", null ],
@@ -11326,8 +11327,8 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201711.SavedQuery", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_saved_query.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.SavedQuery", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_saved_query.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.SavedQuery", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_saved_query.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.SavedQueryPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_saved_query_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.SavedQueryPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_saved_query_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.SavedQueryPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_saved_query_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.SavedQueryPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_saved_query_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.SavedQueryPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_saved_query_page.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.SearchParameter", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_search_parameter.html", [
@@ -11356,11 +11357,17 @@ var hierarchy =
       [ "Google.Api.Ads.AdWords.v201710.SearchVolumeSearchParameter", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_search_volume_search_parameter.html", null ],
       [ "Google.Api.Ads.AdWords.v201710.SeedAdGroupIdSearchParameter", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_seed_ad_group_id_search_parameter.html", null ]
     ] ],
-    [ "Google.Api.Ads.AdWords.Util.Reports.v201802.SearchQueryPerformanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_search_query_performance_report_report_row.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201710.SearchQueryPerformanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_search_query_performance_report_report_row.html", null ],
+    [ "Google.Api.Ads.AdWords.Util.Reports.v201802.SearchQueryPerformanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_search_query_performance_report_report_row.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.SecurityPolicySettings", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_security_policy_settings.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.SecurityPolicySettings", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_security_policy_settings.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.SecurityPolicySettings", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_security_policy_settings.html", null ],
+    [ "SelectableFields", null, [
+      [ "Google.Api.Ads.AdWords.v201710.ConversionTrackerPage.SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_conversion_tracker_page_1_1_selectable_fields.html", null ],
+      [ "Google.Api.Ads.AdWords.v201710.CriterionBidLandscapePage.SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_criterion_bid_landscape_page_1_1_selectable_fields.html", null ],
+      [ "Google.Api.Ads.AdWords.v201710.LabelPage.SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_label_page_1_1_selectable_fields.html", null ],
+      [ "Google.Api.Ads.AdWords.v201802.ConversionTrackerPage.SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_conversion_tracker_page_1_1_selectable_fields.html", null ]
+    ] ],
     [ "SelectableFields", null, [
       [ "Google.Api.Ads.AdWords.v201710.AdGroupFeedPage.SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_feed_page_1_1_selectable_fields.html", null ],
       [ "Google.Api.Ads.AdWords.v201710.CampaignFeedPage.SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_campaign_feed_page_1_1_selectable_fields.html", null ],
@@ -11376,36 +11383,20 @@ var hierarchy =
       [ "Google.Api.Ads.AdWords.v201802.SharedSetPage.SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_shared_set_page_1_1_selectable_fields.html", null ]
     ] ],
     [ "SelectableFields", null, [
-      [ "Google.Api.Ads.AdWords.v201710.ConversionTrackerPage.SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_conversion_tracker_page_1_1_selectable_fields.html", null ],
-      [ "Google.Api.Ads.AdWords.v201710.CriterionBidLandscapePage.SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_criterion_bid_landscape_page_1_1_selectable_fields.html", null ],
-      [ "Google.Api.Ads.AdWords.v201710.LabelPage.SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_label_page_1_1_selectable_fields.html", null ],
-      [ "Google.Api.Ads.AdWords.v201802.ConversionTrackerPage.SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_conversion_tracker_page_1_1_selectable_fields.html", null ]
-    ] ],
-    [ "SelectableFields", null, [
       [ "Google.Api.Ads.AdWords.v201802.DoubleValue.SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_double_value_1_1_selectable_fields.html", null ]
     ] ],
     [ "Google.Api.Ads.AdWords.v201802.SelectiveOptimization", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_selective_optimization.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.SelectiveOptimization", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_selective_optimization.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Selector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_selector.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Selector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_selector.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Selector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_selector.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201802.SelectQueryBuilder", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_select_query_builder.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201710.SelectQueryBuilder", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_select_query_builder.html", null ],
     [ "Google.Api.Ads.Common.Util.SerializationUtilities", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_serialization_utilities.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.ServiceLink", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_service_link.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.ServiceLink", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_service_link.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.ServiceLink", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_service_link.html", null ],
     [ "Google.Api.Ads.Common.Lib.ServiceSignature", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_service_signature.html", [
       [ "Google.Api.Ads.AdWords.Lib.AdWordsServiceSignature", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_service_signature.html", null ],
       [ "Google.Api.Ads.Dfp.Lib.DfpServiceSignature", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_service_signature.html", null ]
-    ] ],
-    [ "Google.Api.Ads.AdWords.v201710.Setting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_setting.html", [
-      [ "Google.Api.Ads.AdWords.v201710.DynamicSearchAdsSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_dynamic_search_ads_setting.html", null ],
-      [ "Google.Api.Ads.AdWords.v201710.ExplorerAutoOptimizerSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_explorer_auto_optimizer_setting.html", null ],
-      [ "Google.Api.Ads.AdWords.v201710.GeoTargetTypeSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_geo_target_type_setting.html", null ],
-      [ "Google.Api.Ads.AdWords.v201710.RealTimeBiddingSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_real_time_bidding_setting.html", null ],
-      [ "Google.Api.Ads.AdWords.v201710.ShoppingSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shopping_setting.html", null ],
-      [ "Google.Api.Ads.AdWords.v201710.TargetingSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_targeting_setting.html", null ],
-      [ "Google.Api.Ads.AdWords.v201710.TrackingSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_tracking_setting.html", null ],
-      [ "Google.Api.Ads.AdWords.v201710.UniversalAppCampaignSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_universal_app_campaign_setting.html", null ]
     ] ],
     [ "Google.Api.Ads.AdWords.v201802.Setting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_setting.html", [
       [ "Google.Api.Ads.AdWords.v201802.DynamicSearchAdsSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_dynamic_search_ads_setting.html", null ],
@@ -11417,14 +11408,24 @@ var hierarchy =
       [ "Google.Api.Ads.AdWords.v201802.TrackingSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_tracking_setting.html", null ],
       [ "Google.Api.Ads.AdWords.v201802.UniversalAppCampaignSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_universal_app_campaign_setting.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201802.SetTopBoxInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_set_top_box_info.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.SetTopBoxInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_set_top_box_info.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Setting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_setting.html", [
+      [ "Google.Api.Ads.AdWords.v201710.DynamicSearchAdsSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_dynamic_search_ads_setting.html", null ],
+      [ "Google.Api.Ads.AdWords.v201710.ExplorerAutoOptimizerSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_explorer_auto_optimizer_setting.html", null ],
+      [ "Google.Api.Ads.AdWords.v201710.GeoTargetTypeSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_geo_target_type_setting.html", null ],
+      [ "Google.Api.Ads.AdWords.v201710.RealTimeBiddingSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_real_time_bidding_setting.html", null ],
+      [ "Google.Api.Ads.AdWords.v201710.ShoppingSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shopping_setting.html", null ],
+      [ "Google.Api.Ads.AdWords.v201710.TargetingSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_targeting_setting.html", null ],
+      [ "Google.Api.Ads.AdWords.v201710.TrackingSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_tracking_setting.html", null ],
+      [ "Google.Api.Ads.AdWords.v201710.UniversalAppCampaignSetting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_universal_app_campaign_setting.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201708.SetTopBoxInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_set_top_box_info.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.SetTopBoxInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_set_top_box_info.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.SetTopBoxInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_set_top_box_info.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.SharedBiddingStrategy", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_bidding_strategy.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.SetTopBoxInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_set_top_box_info.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.SharedBiddingStrategy", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_shared_bidding_strategy.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.SharedCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_criterion.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.SharedBiddingStrategy", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_bidding_strategy.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.SharedCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_shared_criterion.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.SharedCriterion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_criterion.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.SharedCriterionServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_criterion_service_interface.html", [
       [ "Google.Api.Ads.AdWords.v201710.ISharedCriterionService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_shared_criterion_service.html", null ],
       [ "Google.Api.Ads.AdWords.v201710.SharedCriterionServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_criterion_service_interface_channel.html", null ]
@@ -11433,27 +11434,27 @@ var hierarchy =
       [ "Google.Api.Ads.AdWords.v201802.ISharedCriterionService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_i_shared_criterion_service.html", null ],
       [ "Google.Api.Ads.AdWords.v201802.SharedCriterionServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_shared_criterion_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.AdWords.v201710.SharedSet", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_set.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.SharedSet", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_shared_set.html", null ],
-    [ "Google.Api.Ads.AdWords.Util.Reports.v201802.SharedSetCriteriaReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_shared_set_criteria_report_report_row.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.SharedSet", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_set.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201710.SharedSetCriteriaReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_shared_set_criteria_report_report_row.html", null ],
+    [ "Google.Api.Ads.AdWords.Util.Reports.v201802.SharedSetCriteriaReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_shared_set_criteria_report_report_row.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201710.SharedSetReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_shared_set_report_report_row.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201802.SharedSetReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_shared_set_report_report_row.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.SharedSetServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_set_service_interface.html", [
-      [ "Google.Api.Ads.AdWords.v201710.ISharedSetService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_shared_set_service.html", null ],
-      [ "Google.Api.Ads.AdWords.v201710.SharedSetServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_set_service_interface_channel.html", null ]
-    ] ],
     [ "Google.Api.Ads.AdWords.v201802.SharedSetServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_shared_set_service_interface.html", [
       [ "Google.Api.Ads.AdWords.v201802.ISharedSetService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_i_shared_set_service.html", null ],
       [ "Google.Api.Ads.AdWords.v201802.SharedSetServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_shared_set_service_interface_channel.html", null ]
     ] ],
+    [ "Google.Api.Ads.AdWords.v201710.SharedSetServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_set_service_interface.html", [
+      [ "Google.Api.Ads.AdWords.v201710.ISharedSetService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_shared_set_service.html", null ],
+      [ "Google.Api.Ads.AdWords.v201710.SharedSetServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_shared_set_service_interface_channel.html", null ]
+    ] ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201710.ShoppingPerformanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_shopping_performance_report_report_row.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201802.ShoppingPerformanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_shopping_performance_report_report_row.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.SiteTargetingInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_site_targeting_info.html", [
-      [ "Google.Api.Ads.Dfp.v201802.Placement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_placement.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201711.SiteTargetingInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_site_targeting_info.html", [
       [ "Google.Api.Ads.Dfp.v201711.Placement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_placement.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201802.SiteTargetingInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_site_targeting_info.html", [
+      [ "Google.Api.Ads.Dfp.v201802.Placement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_placement.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201805.SiteTargetingInfo", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_site_targeting_info.html", [
       [ "Google.Api.Ads.Dfp.v201805.Placement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_placement.html", null ]
@@ -11462,28 +11463,28 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201708.Placement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_placement.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201802.Size", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_size.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Size", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_size.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Size", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_size.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Size", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_size.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.SourceContentConfiguration", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_source_content_configuration.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.SourceContentConfiguration", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_source_content_configuration.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Size", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_size.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.SourceContentConfiguration", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_source_content_configuration.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.SourceContentConfiguration", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_source_content_configuration.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.SourceContentConfiguration", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_source_content_configuration.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Statement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_statement.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Statement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_statement.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Statement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_statement.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Statement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_statement.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Statement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_statement.html", null ],
-    [ "Google.Api.Ads.Dfp.Util.v201805.StatementBuilder", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201805_1_1_statement_builder.html", null ],
-    [ "Google.Api.Ads.Dfp.Util.v201708.StatementBuilder", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201708_1_1_statement_builder.html", null ],
-    [ "Google.Api.Ads.Dfp.Util.v201802.StatementBuilder", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201802_1_1_statement_builder.html", null ],
     [ "Google.Api.Ads.Dfp.Util.v201711.StatementBuilder", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201711_1_1_statement_builder.html", null ],
+    [ "Google.Api.Ads.Dfp.Util.v201708.StatementBuilder", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201708_1_1_statement_builder.html", null ],
+    [ "Google.Api.Ads.Dfp.Util.v201805.StatementBuilder", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201805_1_1_statement_builder.html", null ],
+    [ "Google.Api.Ads.Dfp.Util.v201802.StatementBuilder", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201802_1_1_statement_builder.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Stats", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_stats.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Stats", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_stats.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Stats", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_stats.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Stats", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_stats.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Stats", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_stats.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.StatsEstimate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_stats_estimate.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.StatsEstimate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_stats_estimate.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.StoreSalesTransaction", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_store_sales_transaction.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.StoreSalesTransaction", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_store_sales_transaction.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.StoreSalesTransaction", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_store_sales_transaction.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.StoreSalesUploadCommonMetadata", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_store_sales_upload_common_metadata.html", [
       [ "Google.Api.Ads.AdWords.v201710.FirstPartyUploadMetadata", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_first_party_upload_metadata.html", null ],
       [ "Google.Api.Ads.AdWords.v201710.ThirdPartyUploadMetadata", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_third_party_upload_metadata.html", null ]
@@ -11493,9 +11494,9 @@ var hierarchy =
       [ "Google.Api.Ads.AdWords.v201802.ThirdPartyUploadMetadata", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_third_party_upload_metadata.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201805.String_ValueMapEntry", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_string___value_map_entry.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.String_ValueMapEntry", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_string___value_map_entry.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.String_ValueMapEntry", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_string___value_map_entry.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.String_ValueMapEntry", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_string___value_map_entry.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.String_ValueMapEntry", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_string___value_map_entry.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.String_ValueMapEntry", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_string___value_map_entry.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.StringKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_string_key.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.StringKey", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_string_key.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.StringRuleItem", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_string_rule_item.html", null ],
@@ -11509,22 +11510,26 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201802.SuggestedAdUnitAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_action.html", [
       [ "Google.Api.Ads.Dfp.v201802.ApproveSuggestedAdUnits", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_approve_suggested_ad_units.html", null ]
     ] ],
+    [ "Google.Api.Ads.Dfp.v201711.SuggestedAdUnitAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_suggested_ad_unit_action.html", [
+      [ "Google.Api.Ads.Dfp.v201711.ApproveSuggestedAdUnits", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_approve_suggested_ad_units.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201708.SuggestedAdUnitAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_suggested_ad_unit_action.html", [
       [ "Google.Api.Ads.Dfp.v201708.ApproveSuggestedAdUnits", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_approve_suggested_ad_units.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201805.SuggestedAdUnitAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_suggested_ad_unit_action.html", [
       [ "Google.Api.Ads.Dfp.v201805.ApproveSuggestedAdUnits", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_approve_suggested_ad_units.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201711.SuggestedAdUnitAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_suggested_ad_unit_action.html", [
-      [ "Google.Api.Ads.Dfp.v201711.ApproveSuggestedAdUnits", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_approve_suggested_ad_units.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201805.SuggestedAdUnitPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_suggested_ad_unit_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.SuggestedAdUnitPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_suggested_ad_unit_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.SuggestedAdUnitPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.SuggestedAdUnitPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_suggested_ad_unit_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.SuggestedAdUnitPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_suggested_ad_unit_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.SuggestedAdUnitPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_suggested_ad_unit_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.SuggestedAdUnitServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_suggested_ad_unit_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201708.ISuggestedAdUnitService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_suggested_ad_unit_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.SuggestedAdUnitServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_suggested_ad_unit_service_interface_channel.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201711.SuggestedAdUnitServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_suggested_ad_unit_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201711.ISuggestedAdUnitService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_suggested_ad_unit_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.SuggestedAdUnitServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_suggested_ad_unit_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201805.SuggestedAdUnitServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_suggested_ad_unit_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201805.ISuggestedAdUnitService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_suggested_ad_unit_service.html", null ],
@@ -11534,18 +11539,14 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201802.ISuggestedAdUnitService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_suggested_ad_unit_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.SuggestedAdUnitServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201711.SuggestedAdUnitServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_suggested_ad_unit_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201711.ISuggestedAdUnitService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_suggested_ad_unit_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.SuggestedAdUnitServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_suggested_ad_unit_service_interface_channel.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201802.SuggestedAdUnitUpdateResult", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_update_result.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.SuggestedAdUnitUpdateResult", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_suggested_ad_unit_update_result.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.SuggestedAdUnitUpdateResult", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_suggested_ad_unit_update_result.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.SuggestedAdUnitUpdateResult", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_update_result.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.SuggestedAdUnitUpdateResult", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_suggested_ad_unit_update_result.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.SwiffyFallbackAsset", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_swiffy_fallback_asset.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.SwiffyFallbackAsset", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_swiffy_fallback_asset.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.SwiffyFallbackAsset", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_swiffy_fallback_asset.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.SuggestedAdUnitUpdateResult", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_suggested_ad_unit_update_result.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.SwiffyFallbackAsset", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_swiffy_fallback_asset.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.SwiffyFallbackAsset", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_swiffy_fallback_asset.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.SwiffyFallbackAsset", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_swiffy_fallback_asset.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.SwiffyFallbackAsset", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_swiffy_fallback_asset.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.SystemFeedGenerationData", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_system_feed_generation_data.html", [
       [ "Google.Api.Ads.AdWords.v201710.AffiliateLocationFeedData", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_affiliate_location_feed_data.html", null ],
       [ "Google.Api.Ads.AdWords.v201710.PlacesLocationFeedData", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_places_location_feed_data.html", null ]
@@ -11554,54 +11555,62 @@ var hierarchy =
       [ "Google.Api.Ads.AdWords.v201802.AffiliateLocationFeedData", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_affiliate_location_feed_data.html", null ],
       [ "Google.Api.Ads.AdWords.v201802.PlacesLocationFeedData", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_places_location_feed_data.html", null ]
     ] ],
+    [ "Google.Api.Ads.Dfp.v201802.Targeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Targeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Targeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_targeting.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Targeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Targeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_targeting.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.TargetingCriteriaBreakdown", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_targeting_criteria_breakdown.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.TargetingCriteriaBreakdown", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_targeting_criteria_breakdown.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.TargetingCriteriaBreakdown", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_targeting_criteria_breakdown.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.TargetingCriteriaBreakdown", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_targeting_criteria_breakdown.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.TargetingCriteriaBreakdown", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_targeting_criteria_breakdown.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.TargetingIdea", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_targeting_idea.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.TargetingCriteriaBreakdown", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_targeting_criteria_breakdown.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.TargetingIdea", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_targeting_idea.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.TargetingIdeaPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_targeting_idea_page.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.TargetingIdea", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_targeting_idea.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.TargetingIdeaPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_targeting_idea_page.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.TargetingIdeaSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_targeting_idea_selector.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.TargetingIdeaPage", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_targeting_idea_page.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.TargetingIdeaSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_targeting_idea_selector.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.TargetingIdeaServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_targeting_idea_service_interface.html", [
-      [ "Google.Api.Ads.AdWords.v201710.ITargetingIdeaService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_targeting_idea_service.html", null ],
-      [ "Google.Api.Ads.AdWords.v201710.TargetingIdeaServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_targeting_idea_service_interface_channel.html", null ]
-    ] ],
+    [ "Google.Api.Ads.AdWords.v201710.TargetingIdeaSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_targeting_idea_selector.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.TargetingIdeaServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_targeting_idea_service_interface.html", [
       [ "Google.Api.Ads.AdWords.v201802.ITargetingIdeaService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_i_targeting_idea_service.html", null ],
       [ "Google.Api.Ads.AdWords.v201802.TargetingIdeaServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_targeting_idea_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.AdWords.v201710.TargetingSettingDetail", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_targeting_setting_detail.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.TargetingIdeaServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_targeting_idea_service_interface.html", [
+      [ "Google.Api.Ads.AdWords.v201710.ITargetingIdeaService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_targeting_idea_service.html", null ],
+      [ "Google.Api.Ads.AdWords.v201710.TargetingIdeaServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_targeting_idea_service_interface_channel.html", null ]
+    ] ],
     [ "Google.Api.Ads.AdWords.v201802.TargetingSettingDetail", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_targeting_setting_detail.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.TargetingSettingDetail", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_targeting_setting_detail.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Team", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_team.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Team", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_team.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Team", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_team.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Team", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_team.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.TeamAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_team_action.html", [
-      [ "Google.Api.Ads.Dfp.v201802.ActivateTeams", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_activate_teams.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.DeactivateTeams", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_deactivate_teams.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201711.TeamAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_team_action.html", [
       [ "Google.Api.Ads.Dfp.v201711.ActivateTeams", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_activate_teams.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.DeactivateTeams", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_deactivate_teams.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201805.TeamAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_team_action.html", [
-      [ "Google.Api.Ads.Dfp.v201805.ActivateTeams", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activate_teams.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.DeactivateTeams", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_deactivate_teams.html", null ]
+    [ "Google.Api.Ads.Dfp.v201802.TeamAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_team_action.html", [
+      [ "Google.Api.Ads.Dfp.v201802.ActivateTeams", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_activate_teams.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.DeactivateTeams", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_deactivate_teams.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201708.TeamAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_team_action.html", [
       [ "Google.Api.Ads.Dfp.v201708.ActivateTeams", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_activate_teams.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.DeactivateTeams", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_deactivate_teams.html", null ]
     ] ],
+    [ "Google.Api.Ads.Dfp.v201805.TeamAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_team_action.html", [
+      [ "Google.Api.Ads.Dfp.v201805.ActivateTeams", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activate_teams.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.DeactivateTeams", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_deactivate_teams.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201805.TeamPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_team_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.TeamPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_team_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.TeamPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_team_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.TeamPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_team_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.TeamPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_team_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.TeamServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_team_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201805.ITeamService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_team_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.TeamServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_team_service_interface_channel.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201708.TeamServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_team_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201708.ITeamService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_team_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.TeamServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_team_service_interface_channel.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201802.TeamServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_team_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.ITeamService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_team_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.TeamServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_team_service_interface_channel.html", null ]
@@ -11609,27 +11618,6 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201711.TeamServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_team_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201711.ITeamService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_team_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.TeamServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_team_service_interface_channel.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201708.TeamServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_team_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201708.ITeamService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_team_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.TeamServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_team_service_interface_channel.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201805.TeamServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_team_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201805.ITeamService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_team_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.TeamServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_team_service_interface_channel.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201711.Technology", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_technology.html", [
-      [ "Google.Api.Ads.Dfp.v201711.BandwidthGroup", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_bandwidth_group.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.Browser", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_browser.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.BrowserLanguage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_browser_language.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.DeviceCapability", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_device_capability.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.DeviceCategory", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_device_category.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.DeviceManufacturer", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_device_manufacturer.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.MobileCarrier", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_mobile_carrier.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.MobileDevice", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_mobile_device.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.MobileDeviceSubmodel", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_mobile_device_submodel.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.OperatingSystem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_operating_system.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.OperatingSystemVersion", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_operating_system_version.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201708.Technology", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_technology.html", [
       [ "Google.Api.Ads.Dfp.v201708.BandwidthGroup", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_bandwidth_group.html", null ],
@@ -11644,18 +11632,18 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201708.OperatingSystem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_operating_system.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.OperatingSystemVersion", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_operating_system_version.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201802.Technology", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_technology.html", [
-      [ "Google.Api.Ads.Dfp.v201802.BandwidthGroup", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_bandwidth_group.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.Browser", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_browser.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.BrowserLanguage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_browser_language.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.DeviceCapability", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_device_capability.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.DeviceCategory", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_device_category.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.DeviceManufacturer", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_device_manufacturer.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.MobileCarrier", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_mobile_carrier.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.MobileDevice", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_mobile_device.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.MobileDeviceSubmodel", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_mobile_device_submodel.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.OperatingSystem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_operating_system.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.OperatingSystemVersion", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_operating_system_version.html", null ]
+    [ "Google.Api.Ads.Dfp.v201711.Technology", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_technology.html", [
+      [ "Google.Api.Ads.Dfp.v201711.BandwidthGroup", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_bandwidth_group.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.Browser", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_browser.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.BrowserLanguage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_browser_language.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.DeviceCapability", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_device_capability.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.DeviceCategory", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_device_category.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.DeviceManufacturer", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_device_manufacturer.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.MobileCarrier", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_mobile_carrier.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.MobileDevice", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_mobile_device.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.MobileDeviceSubmodel", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_mobile_device_submodel.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.OperatingSystem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_operating_system.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.OperatingSystemVersion", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_operating_system_version.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201805.Technology", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_technology.html", [
       [ "Google.Api.Ads.Dfp.v201805.BandwidthGroup", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_bandwidth_group.html", null ],
@@ -11670,23 +11658,36 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201805.OperatingSystem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_operating_system.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.OperatingSystemVersion", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_operating_system_version.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201802.TechnologyTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_technology_targeting.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Technology", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_technology.html", [
+      [ "Google.Api.Ads.Dfp.v201802.BandwidthGroup", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_bandwidth_group.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.Browser", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_browser.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.BrowserLanguage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_browser_language.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.DeviceCapability", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_device_capability.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.DeviceCategory", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_device_category.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.DeviceManufacturer", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_device_manufacturer.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.MobileCarrier", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_mobile_carrier.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.MobileDevice", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_mobile_device.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.MobileDeviceSubmodel", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_mobile_device_submodel.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.OperatingSystem", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_operating_system.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.OperatingSystemVersion", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_operating_system_version.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201805.TechnologyTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_technology_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.TechnologyTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_technology_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.TechnologyTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_technology_targeting.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.TemplateElement", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_template_element.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.TechnologyTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_technology_targeting.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.TemplateElement", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_template_element.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.TemplateElementField", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_template_element_field.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.TemplateElement", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_template_element.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.TemplateElementField", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_template_element_field.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.TemplateElementField", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_template_element_field.html", null ],
     [ "Google.Api.Ads.Common.Util.TemporaryIdGenerator", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_temporary_id_generator.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.TemporaryUrl", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_temporary_url.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.TemporaryUrl", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_temporary_url.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.TimeOfDay", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_time_of_day.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.TimeOfDay", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_time_of_day.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.TimeOfDay", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_time_of_day.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.TimeOfDay", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_time_of_day.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.TimeOfDay", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_time_of_day.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.TimeOfDay", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_time_of_day.html", null ],
-    [ "Google.Api.Ads.AdWords.Util.Reports.v201802.TopContentPerformanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_top_content_performance_report_report_row.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201710.TopContentPerformanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_top_content_performance_report_report_row.html", null ],
+    [ "Google.Api.Ads.AdWords.Util.Reports.v201802.TopContentPerformanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_top_content_performance_report_report_row.html", null ],
     [ "Google.Api.Ads.Common.Logging.TraceFormatter", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_trace_formatter.html", [
       [ "Google.Api.Ads.Common.Logging.DefaultBodyFormatter", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_default_body_formatter.html", null ],
       [ "Google.Api.Ads.Common.Logging.JsonBodyFormatter", "class_google_1_1_api_1_1_ads_1_1_common_1_1_logging_1_1_json_body_formatter.html", null ],
@@ -11697,20 +11698,20 @@ var hierarchy =
     [ "Google.Api.Ads.Common.Util.TraceUtilities", "class_google_1_1_api_1_1_ads_1_1_common_1_1_util_1_1_trace_utilities.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.TrafficEstimatorResult", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_result.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.TrafficEstimatorResult", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_traffic_estimator_result.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.TrafficEstimatorSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_selector.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.TrafficEstimatorSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_traffic_estimator_selector.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.TrafficEstimatorServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_traffic_estimator_service_interface.html", [
-      [ "Google.Api.Ads.AdWords.v201802.ITrafficEstimatorService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_i_traffic_estimator_service.html", null ],
-      [ "Google.Api.Ads.AdWords.v201802.TrafficEstimatorServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_traffic_estimator_service_interface_channel.html", null ]
-    ] ],
+    [ "Google.Api.Ads.AdWords.v201710.TrafficEstimatorSelector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_selector.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.TrafficEstimatorServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_service_interface.html", [
       [ "Google.Api.Ads.AdWords.v201710.ITrafficEstimatorService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_traffic_estimator_service.html", null ],
       [ "Google.Api.Ads.AdWords.v201710.TrafficEstimatorServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_traffic_estimator_service_interface_channel.html", null ]
     ] ],
+    [ "Google.Api.Ads.AdWords.v201802.TrafficEstimatorServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_traffic_estimator_service_interface.html", [
+      [ "Google.Api.Ads.AdWords.v201802.ITrafficEstimatorService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_i_traffic_estimator_service.html", null ],
+      [ "Google.Api.Ads.AdWords.v201802.TrafficEstimatorServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_traffic_estimator_service_interface_channel.html", null ]
+    ] ],
     [ "Google.Api.Ads.AdWords.v201802.Trial", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_trial.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Trial", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_trial.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.TrialAsyncError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_trial_async_error.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.TrialAsyncError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_trial_async_error.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.TrialAsyncError", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_trial_async_error.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.TrialAsyncErrorServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_trial_async_error_service_interface.html", [
       [ "Google.Api.Ads.AdWords.v201710.ITrialAsyncErrorService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_trial_async_error_service.html", null ],
       [ "Google.Api.Ads.AdWords.v201710.TrialAsyncErrorServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_trial_async_error_service_interface_channel.html", null ]
@@ -11727,371 +11728,375 @@ var hierarchy =
       [ "Google.Api.Ads.AdWords.v201802.ITrialService", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_i_trial_service.html", null ],
       [ "Google.Api.Ads.AdWords.v201802.TrialServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_trial_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.AdWords.v201710.UniversalAppCampaignAdsPolicyDecisions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_universal_app_campaign_ads_policy_decisions.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.UniversalAppCampaignAdsPolicyDecisions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_universal_app_campaign_ads_policy_decisions.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.UniversalAppCampaignAdsPolicyDecisions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_universal_app_campaign_ads_policy_decisions.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ActivityService.updateActivitiesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_activity_service_1_1update_activities_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ActivityService.updateActivitiesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_activity_service_1_1update_activities_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.ActivityService.updateActivitiesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_activity_service_1_1update_activities_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ActivityService.updateActivitiesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_activity_service_1_1update_activities_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ActivityService.updateActivitiesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_activity_service_1_1update_activities_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ActivityService.updateActivitiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_activity_service_1_1update_activities_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ActivityService.updateActivitiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_activity_service_1_1update_activities_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ActivityService.updateActivitiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_activity_service_1_1update_activities_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ActivityService.updateActivitiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_activity_service_1_1update_activities_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ActivityGroupService.updateActivityGroupsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_activity_group_service_1_1update_activity_groups_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ActivityService.updateActivitiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_activity_service_1_1update_activities_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ActivityService.updateActivitiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_activity_service_1_1update_activities_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ActivityService.updateActivitiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_activity_service_1_1update_activities_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.ActivityGroupService.updateActivityGroupsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_activity_group_service_1_1update_activity_groups_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ActivityGroupService.updateActivityGroupsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_activity_group_service_1_1update_activity_groups_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ActivityGroupService.updateActivityGroupsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_activity_group_service_1_1update_activity_groups_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ActivityGroupService.updateActivityGroupsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_activity_group_service_1_1update_activity_groups_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ActivityGroupService.updateActivityGroupsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_activity_group_service_1_1update_activity_groups_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ActivityGroupService.updateActivityGroupsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_activity_group_service_1_1update_activity_groups_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ActivityGroupService.updateActivityGroupsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_activity_group_service_1_1update_activity_groups_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ActivityGroupService.updateActivityGroupsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_activity_group_service_1_1update_activity_groups_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ActivityGroupService.updateActivityGroupsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_activity_group_service_1_1update_activity_groups_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ActivityGroupService.updateActivityGroupsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_activity_group_service_1_1update_activity_groups_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.AdExclusionRuleService.updateAdExclusionRulesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_ad_exclusion_rule_service_1_1update_ad_exclusion_rules_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.AdExclusionRuleService.updateAdExclusionRulesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_ad_exclusion_rule_service_1_1update_ad_exclusion_rules_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.AdExclusionRuleService.updateAdExclusionRulesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_ad_exclusion_rule_service_1_1update_ad_exclusion_rules_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.AdExclusionRuleService.updateAdExclusionRulesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_ad_exclusion_rule_service_1_1update_ad_exclusion_rules_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.AdExclusionRuleService.updateAdExclusionRulesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_ad_exclusion_rule_service_1_1update_ad_exclusion_rules_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.AdExclusionRuleService.updateAdExclusionRulesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_ad_exclusion_rule_service_1_1update_ad_exclusion_rules_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.AdExclusionRuleService.updateAdExclusionRulesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_ad_exclusion_rule_service_1_1upffc48d569d532f0e7500029f3a496bb3.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.AdExclusionRuleService.updateAdExclusionRulesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_ad_exclusion_rule_service_1_1upf06032847d12bae06ae7f0908d6e827e.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.AdExclusionRuleService.updateAdExclusionRulesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_ad_exclusion_rule_service_1_1up1a584d45467e5c505bee931e6d10da15.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.AdExclusionRuleService.updateAdExclusionRulesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_ad_exclusion_rule_service_1_1up2102b84a37ace91ba2baabc981a74dbe.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.AdRuleService.updateAdRulesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1update_ad_rules_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.AdRuleService.updateAdRulesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_ad_rule_service_1_1update_ad_rules_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.AdRuleService.updateAdRulesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_ad_rule_service_1_1update_ad_rules_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.AdExclusionRuleService.updateAdExclusionRulesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_ad_exclusion_rule_service_1_1up1a584d45467e5c505bee931e6d10da15.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.AdRuleService.updateAdRulesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_ad_rule_service_1_1update_ad_rules_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.AdRuleService.updateAdRulesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_ad_rule_service_1_1update_ad_rules_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.AdRuleService.updateAdRulesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1update_ad_rules_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.AdRuleService.updateAdRulesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_ad_rule_service_1_1update_ad_rules_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.AdRuleService.updateAdRulesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_ad_rule_service_1_1update_ad_rules_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.AdRuleService.updateAdRulesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_ad_rule_service_1_1update_ad_rules_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.AdRuleService.updateAdRulesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_ad_rule_service_1_1update_ad_rules_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.AdRuleService.updateAdRulesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_ad_rule_service_1_1update_ad_rules_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.AdRuleService.updateAdRulesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1update_ad_rules_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.InventoryService.updateAdUnitsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.InventoryService.updateAdUnitsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.InventoryService.updateAdUnitsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.InventoryService.updateAdUnitsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.InventoryService.updateAdUnitsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.InventoryService.updateAdUnitsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.InventoryService.updateAdUnitsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.InventoryService.updateAdUnitsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.InventoryService.updateAdUnitsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.AudienceSegmentService.updateAudienceSegmentsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_audience_segment_service_1_1update_audience_segments_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.AudienceSegmentService.updateAudienceSegmentsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_audience_segment_service_1_1update_audience_segments_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.AudienceSegmentService.updateAudienceSegmentsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_audience_segment_service_1_1update_audience_segments_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.AudienceSegmentService.updateAudienceSegmentsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_audience_segment_service_1_1update_audience_segments_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.AudienceSegmentService.updateAudienceSegmentsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_audience_segment_service_1_1update_audience_segments_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.AudienceSegmentService.updateAudienceSegmentsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_audience_segment_service_1_1update_audience_segments_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.AudienceSegmentService.updateAudienceSegmentsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_audience_segment_service_1_1update_audience_segments_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.AudienceSegmentService.updateAudienceSegmentsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_audience_segment_service_1_1update_audience_segments_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.AudienceSegmentService.updateAudienceSegmentsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_audience_segment_service_1_1update_audience_segments_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.AudienceSegmentService.updateAudienceSegmentsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_audience_segment_service_1_1update_audience_segments_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.BaseRateService.updateBaseRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_base_rate_service_1_1update_base_rates_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.BaseRateService.updateBaseRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_base_rate_service_1_1update_base_rates_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.BaseRateService.updateBaseRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_base_rate_service_1_1update_base_rates_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.BaseRateService.updateBaseRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_base_rate_service_1_1update_base_rates_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.BaseRateService.updateBaseRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_base_rate_service_1_1update_base_rates_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.BaseRateService.updateBaseRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_base_rate_service_1_1update_base_rates_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.BaseRateService.updateBaseRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_base_rate_service_1_1update_base_rates_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.BaseRateService.updateBaseRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_base_rate_service_1_1update_base_rates_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.BaseRateService.updateBaseRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_base_rate_service_1_1update_base_rates_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.BaseRateService.updateBaseRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_base_rate_service_1_1update_base_rates_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.CdnConfigurationService.updateCdnConfigurationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_cdn_configuration_service_1_1update_cdn_configurations_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.BaseRateService.updateBaseRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_base_rate_service_1_1update_base_rates_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.CdnConfigurationService.updateCdnConfigurationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_cdn_configuration_service_1_1update_cdn_configurations_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.CdnConfigurationService.updateCdnConfigurationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_cdn_configuration_service_1_1update_cdn_configurations_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.CdnConfigurationService.updateCdnConfigurationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_cdn_configuration_service_1_1update_cdn_configurations_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.CdnConfigurationService.updateCdnConfigurationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_cdn_configuration_service_1_1up047268e8f0a4c28d0de3ab322c6cad86.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.CdnConfigurationService.updateCdnConfigurationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_cdn_configuration_service_1_1up28094bd214805c3f12c5333cf692765b.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CdnConfigurationService.updateCdnConfigurationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_cdn_configuration_service_1_1up7731a1cd0a71941db820f7e0bcc8d6c6.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.CdnConfigurationService.updateCdnConfigurationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_cdn_configuration_service_1_1up047268e8f0a4c28d0de3ab322c6cad86.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CompanyService.updateCompaniesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_company_service_1_1update_companies_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.CompanyService.updateCompaniesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_company_service_1_1update_companies_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.CompanyService.updateCompaniesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_company_service_1_1update_companies_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CompanyService.updateCompaniesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_company_service_1_1update_companies_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CompanyService.updateCompaniesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_company_service_1_1update_companies_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.CompanyService.updateCompaniesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_company_service_1_1update_companies_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CompanyService.updateCompaniesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_company_service_1_1update_companies_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.CompanyService.updateCompaniesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_company_service_1_1update_companies_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.CompanyService.updateCompaniesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_company_service_1_1update_companies_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.CompanyService.updateCompaniesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_company_service_1_1update_companies_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ContactService.updateContactsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_contact_service_1_1update_contacts_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ContactService.updateContactsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_contact_service_1_1update_contacts_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ContactService.updateContactsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_contact_service_1_1update_contacts_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ContactService.updateContactsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_contact_service_1_1update_contacts_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ContactService.updateContactsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_contact_service_1_1update_contacts_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ContactService.updateContactsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_contact_service_1_1update_contacts_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ContactService.updateContactsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_contact_service_1_1update_contacts_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ContactService.updateContactsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_contact_service_1_1update_contacts_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ContactService.updateContactsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_contact_service_1_1update_contacts_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ContactService.updateContactsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_contact_service_1_1update_contacts_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ContactService.updateContactsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_contact_service_1_1update_contacts_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ContactService.updateContactsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_contact_service_1_1update_contacts_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ContactService.updateContactsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_contact_service_1_1update_contacts_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ContentBundleService.updateContentBundlesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ContentBundleService.updateContentBundlesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ContentBundleService.updateContentBundlesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ContentBundleService.updateContentBundlesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ContentBundleService.updateContentBundlesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ContentBundleService.updateContentBundlesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ContentBundleService.updateContentBundlesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.ContentBundleService.updateContentBundlesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ContentBundleService.updateContentBundlesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_content_metadata_key_hierarchy_f168c36dd4d61676b09fd6219291cca6.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ContentBundleService.updateContentBundlesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ContentBundleService.updateContentBundlesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_content_metadata_key_hierarchy_c8187f423006e4262ff28e70b6bcf4cf.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_content_metadata_key_hierarchy_d568dc1bb4bff42cd94b74c2b5d92eef.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_content_metadata_key_hierarchy_7fff9ca5c19f6b510e9406f9d06dd251.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_content_metadata_key_hierarchy_b622d1062822c7523ab176578aebf60b.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_content_metadata_key_hierarchy_5acfbc89c69d6b97f92b1bd5e46443b1.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_content_metadata_key_hierarchy_5517f10b85300032e3885f963c627b50.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_content_metadata_key_hierarchy_f168c36dd4d61676b09fd6219291cca6.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_content_metadata_key_hierarchy_d568dc1bb4bff42cd94b74c2b5d92eef.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_content_metadata_key_hierarchy_2a920a7b85ca1e70dfa619cc6d261007.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_content_metadata_key_hierarchy_5517f10b85300032e3885f963c627b50.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_content_metadata_key_hierarchy_5acfbc89c69d6b97f92b1bd5e46443b1.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_content_metadata_key_hierarchy_b622d1062822c7523ab176578aebf60b.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.CreativeService.updateCreativesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_creative_service_1_1update_creatives_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.CreativeService.updateCreativesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_creative_service_1_1update_creatives_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CreativeService.updateCreativesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_creative_service_1_1update_creatives_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.CreativeService.updateCreativesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_creative_service_1_1update_creatives_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.CreativeService.updateCreativesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_creative_service_1_1update_creatives_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.CreativeService.updateCreativesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_creative_service_1_1update_creatives_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CreativeService.updateCreativesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_creative_service_1_1update_creatives_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CreativeService.updateCreativesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_creative_service_1_1update_creatives_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.CreativeService.updateCreativesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_creative_service_1_1update_creatives_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.CreativeWrapperService.updateCreativeWrappersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_creative_wrapper_service_1_1update_creative_wrappers_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CreativeService.updateCreativesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_creative_service_1_1update_creatives_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CreativeWrapperService.updateCreativeWrappersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_creative_wrapper_service_1_1update_creative_wrappers_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.CreativeWrapperService.updateCreativeWrappersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_creative_wrapper_service_1_1update_creative_wrappers_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CreativeWrapperService.updateCreativeWrappersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_creative_wrapper_service_1_1update_creative_wrappers_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CreativeWrapperService.updateCreativeWrappersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_creative_wrapper_service_1_1update_creative_wrappers_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CreativeWrapperService.updateCreativeWrappersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_creative_wrapper_service_1_1update_creative_wrappers_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.CreativeWrapperService.updateCreativeWrappersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_creative_wrapper_service_1_1update_creative_wrappers_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CreativeWrapperService.updateCreativeWrappersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_creative_wrapper_service_1_1update_creative_wrappers_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.CreativeWrapperService.updateCreativeWrappersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_creative_wrapper_service_1_1update_creative_wrappers_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.CreativeWrapperService.updateCreativeWrappersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_creative_wrapper_service_1_1update_creative_wrappers_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CustomFieldService.updateCustomFieldOptionsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_custom_field_service_1_1update_custom_field_options_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.CustomFieldService.updateCustomFieldOptionsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_custom_field_service_1_1update_custom_field_options_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.CustomFieldService.updateCustomFieldOptionsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_custom_field_service_1_1update_custom_field_options_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CreativeWrapperService.updateCreativeWrappersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_creative_wrapper_service_1_1update_creative_wrappers_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.CustomFieldService.updateCustomFieldOptionsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_custom_field_service_1_1update_custom_field_options_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.CustomFieldService.updateCustomFieldOptionsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_custom_field_service_1_1update_custom_field_options_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.CustomFieldService.updateCustomFieldOptionsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_custom_field_service_1_1update_custom_field_options_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CustomFieldService.updateCustomFieldOptionsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_custom_field_service_1_1update_custom_field_options_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.CustomFieldService.updateCustomFieldOptionsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_custom_field_service_1_1update_custom_field_options_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.CustomFieldService.updateCustomFieldOptionsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_custom_field_service_1_1update_custom_field_options_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CustomFieldService.updateCustomFieldOptionsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_custom_field_service_1_1update_custom_field_options_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CustomFieldService.updateCustomFieldOptionsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_custom_field_service_1_1update_custom_field_options_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CustomFieldService.updateCustomFieldOptionsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_custom_field_service_1_1update_custom_field_options_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.CustomFieldService.updateCustomFieldOptionsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_custom_field_service_1_1update_custom_field_options_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CustomFieldService.updateCustomFieldsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_custom_field_service_1_1update_custom_fields_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CustomFieldService.updateCustomFieldsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_custom_field_service_1_1update_custom_fields_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.CustomFieldService.updateCustomFieldsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_custom_field_service_1_1update_custom_fields_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CustomFieldService.updateCustomFieldsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_custom_field_service_1_1update_custom_fields_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.CustomFieldService.updateCustomFieldsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_custom_field_service_1_1update_custom_fields_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CustomFieldService.updateCustomFieldsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_custom_field_service_1_1update_custom_fields_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.CustomFieldService.updateCustomFieldsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_custom_field_service_1_1update_custom_fields_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CustomFieldService.updateCustomFieldsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_custom_field_service_1_1update_custom_fields_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CustomFieldService.updateCustomFieldsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_custom_field_service_1_1update_custom_fields_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.CustomFieldService.updateCustomFieldsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_custom_field_service_1_1update_custom_fields_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.CustomTargetingService.updateCustomTargetingKeysRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_custom_targeting_service_1_1upd0a4d6b9af2cd94a91d2c4668f4d08aff.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.CustomTargetingService.updateCustomTargetingKeysRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_custom_targeting_service_1_1updf6240d139162f983f035e9069622198d.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.CustomTargetingService.updateCustomTargetingKeysRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_custom_targeting_service_1_1upd8974554ce03fd062f50aaaeb37ad99e0.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CustomTargetingService.updateCustomTargetingKeysRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_custom_targeting_service_1_1upd98095826a0236d5d61ee388424e5c8c2.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.CustomTargetingService.updateCustomTargetingKeysResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_custom_targeting_service_1_1upde3140e3dd4c9177bd9ebe97e1559edde.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.CustomTargetingService.updateCustomTargetingKeysRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_custom_targeting_service_1_1upd8974554ce03fd062f50aaaeb37ad99e0.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.CustomTargetingService.updateCustomTargetingKeysRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_custom_targeting_service_1_1updf6240d139162f983f035e9069622198d.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.CustomTargetingService.updateCustomTargetingKeysResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_custom_targeting_service_1_1upd001a388a304d51287d5689e971f7bcf9.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.CustomTargetingService.updateCustomTargetingKeysResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_custom_targeting_service_1_1updab808ddce228ad2cc1c21f13533c85f8.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CustomTargetingService.updateCustomTargetingKeysResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_custom_targeting_service_1_1upd4433d9f5f1d2a4af67b579595e11a45e.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.CustomTargetingService.updateCustomTargetingKeysResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_custom_targeting_service_1_1upd001a388a304d51287d5689e971f7bcf9.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.CustomTargetingService.updateCustomTargetingKeysResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_custom_targeting_service_1_1upde3140e3dd4c9177bd9ebe97e1559edde.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CustomTargetingService.updateCustomTargetingValuesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_custom_targeting_service_1_1updbb09433a8967a0968f9e31d5dc6c4858.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.CustomTargetingService.updateCustomTargetingValuesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_custom_targeting_service_1_1upd501437c25cd5a4cf4d0ccebbcfc3313c.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.CustomTargetingService.updateCustomTargetingValuesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_custom_targeting_service_1_1upd80fa65e7a7baddd15afd310bd8ef5934.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CustomTargetingService.updateCustomTargetingValuesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_custom_targeting_service_1_1upd4a8db42e3f6dd83e1461898e61fe58a9.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.CustomTargetingService.updateCustomTargetingValuesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_custom_targeting_service_1_1upd501437c25cd5a4cf4d0ccebbcfc3313c.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.CustomTargetingService.updateCustomTargetingValuesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_custom_targeting_service_1_1updbb09433a8967a0968f9e31d5dc6c4858.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.CustomTargetingService.updateCustomTargetingValuesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_custom_targeting_service_1_1upd8b50cfd831fb5d983487dac39296647c.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.CustomTargetingService.updateCustomTargetingValuesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_custom_targeting_service_1_1upd96022d724d0cf165ed080aacd5225eb5.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.CustomTargetingService.updateCustomTargetingValuesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_custom_targeting_service_1_1upd9c19fe7b428a5e673768a40b02d83ed1.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.CustomTargetingService.updateCustomTargetingValuesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_custom_targeting_service_1_1upde1f49cc49680b772080c96a86f7392b4.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.CustomTargetingService.updateCustomTargetingValuesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_custom_targeting_service_1_1upd8b50cfd831fb5d983487dac39296647c.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.DaiAuthenticationKeyService.updateDaiAuthenticationKeysRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_dai_authentication_key_service_850c1cba57bc56f25566dfd04e372528.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.DaiAuthenticationKeyService.updateDaiAuthenticationKeysResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_dai_authentication_key_service_d5e0bedcd1574b92a0205722af3db926.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ExchangeRateService.updateExchangeRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ExchangeRateService.updateExchangeRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ExchangeRateService.updateExchangeRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.ExchangeRateService.updateExchangeRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ExchangeRateService.updateExchangeRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ExchangeRateService.updateExchangeRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ExchangeRateService.updateExchangeRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ExchangeRateService.updateExchangeRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ExchangeRateService.updateExchangeRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ExchangeRateService.updateExchangeRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.LabelService.updateLabelsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_label_service_1_1update_labels_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.LabelService.updateLabelsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_label_service_1_1update_labels_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.LabelService.updateLabelsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_label_service_1_1update_labels_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.LabelService.updateLabelsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_label_service_1_1update_labels_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.LabelService.updateLabelsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_label_service_1_1update_labels_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.LabelService.updateLabelsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_label_service_1_1update_labels_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.LabelService.updateLabelsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_label_service_1_1update_labels_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.LabelService.updateLabelsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_label_service_1_1update_labels_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.LabelService.updateLabelsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_label_service_1_1update_labels_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.LabelService.updateLabelsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_label_service_1_1update_labels_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.LabelService.updateLabelsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_label_service_1_1update_labels_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_line_item_creative_association_7ece96626cf51f4bfe6e2c56f768352f.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_line_item_creative_association_cda8283c8ea9b24442cd6d6bff98a997.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_line_item_creative_association_5dcfb510da21d020014f7ad90e4030fc.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.LabelService.updateLabelsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_label_service_1_1update_labels_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_line_item_creative_association_92b0cc4a8d62d6470167a059b947b3de.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_line_item_creative_association_4b01f6f9b7ac6884383b6b0a9c97e148.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_line_item_creative_association_cda8283c8ea9b24442cd6d6bff98a997.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_line_item_creative_association_7ece96626cf51f4bfe6e2c56f768352f.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_line_item_creative_association_5dcfb510da21d020014f7ad90e4030fc.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_line_item_creative_association_6bfe2a0bee0461f7e49fa91055ab5bf4.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_line_item_creative_association_ddeb58a0f5208966ddaa0463b26ae308.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_line_item_creative_association_4b01f6f9b7ac6884383b6b0a9c97e148.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_line_item_creative_association_18aab74c676c453444fb41d9e1ad033d.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_line_item_creative_association_ddeb58a0f5208966ddaa0463b26ae308.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.LineItemService.updateLineItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_line_item_service_1_1update_line_items_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.LineItemService.updateLineItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_line_item_service_1_1update_line_items_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.LineItemService.updateLineItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_line_item_service_1_1update_line_items_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.LineItemService.updateLineItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_line_item_service_1_1update_line_items_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.LineItemService.updateLineItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_line_item_service_1_1update_line_items_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.LineItemService.updateLineItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_line_item_service_1_1update_line_items_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.LineItemService.updateLineItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_line_item_service_1_1update_line_items_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.LineItemService.updateLineItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_line_item_service_1_1update_line_items_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.LineItemService.updateLineItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_line_item_service_1_1update_line_items_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.LineItemService.updateLineItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_line_item_service_1_1update_line_items_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.LiveStreamEventService.updateLiveStreamEventsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_live_stream_event_service_1_1update_live_stream_events_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.LiveStreamEventService.updateLiveStreamEventsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_live_stream_event_service_1_1update_live_stream_events_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.LiveStreamEventService.updateLiveStreamEventsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_live_stream_event_service_1_1update_live_stream_events_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.LiveStreamEventService.updateLiveStreamEventsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_live_stream_event_service_1_1update_live_stream_events_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.LiveStreamEventService.updateLiveStreamEventsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_live_stream_event_service_1_1update_live_stream_events_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.LiveStreamEventService.updateLiveStreamEventsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_live_stream_event_service_1_1up34ff037369b2f226259e27dcd67a2ee1.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.LiveStreamEventService.updateLiveStreamEventsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_live_stream_event_service_1_1up3856714cdc580f58fd63d19bbca31048.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.LiveStreamEventService.updateLiveStreamEventsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_live_stream_event_service_1_1up0ef7e5c3d70ff4748456ab5174bcf115.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.LiveStreamEventService.updateLiveStreamEventsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_live_stream_event_service_1_1up34ff037369b2f226259e27dcd67a2ee1.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.LiveStreamEventService.updateLiveStreamEventsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_live_stream_event_service_1_1upb318fdb31645c0efbe63d71508b11c53.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.MobileApplicationService.updateMobileApplicationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_mobile_application_service_1_1uf72654e7a36518547acde948662748e8.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.MobileApplicationService.updateMobileApplicationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_mobile_application_service_1_1ub996dea7682195220bdd0bdee0a3ca3c.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.MobileApplicationService.updateMobileApplicationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_mobile_application_service_1_1u6aaaa04e31d04a0c6b8c3f176eb6fe29.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.MobileApplicationService.updateMobileApplicationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_mobile_application_service_1_1udf314054f80691f2e6ca79dec7818204.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.MobileApplicationService.updateMobileApplicationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_mobile_application_service_1_1u361bc61dea80c63739e2cc4df4248074.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.MobileApplicationService.updateMobileApplicationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_mobile_application_service_1_1uf72654e7a36518547acde948662748e8.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.MobileApplicationService.updateMobileApplicationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_mobile_application_service_1_1u6aaaa04e31d04a0c6b8c3f176eb6fe29.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.MobileApplicationService.updateMobileApplicationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_mobile_application_service_1_1ub996dea7682195220bdd0bdee0a3ca3c.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.MobileApplicationService.updateMobileApplicationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_mobile_application_service_1_1u657d6354ad0748571481f14eb4f57c37.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.MobileApplicationService.updateMobileApplicationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_mobile_application_service_1_1u361bc61dea80c63739e2cc4df4248074.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.MobileApplicationService.updateMobileApplicationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_mobile_application_service_1_1u914831e593d9ecdf381ff304ed576c62.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.MobileApplicationService.updateMobileApplicationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_mobile_application_service_1_1ucc5bddcfd9539e7b91385e1b609d97d7.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.NativeStyleService.updateNativeStylesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_native_style_service_1_1update_native_styles_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.NativeStyleService.updateNativeStylesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_native_style_service_1_1update_native_styles_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.NativeStyleService.updateNativeStylesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_native_style_service_1_1update_native_styles_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.NativeStyleService.updateNativeStylesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_native_style_service_1_1update_native_styles_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.NativeStyleService.updateNativeStylesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_native_style_service_1_1update_native_styles_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.NativeStyleService.updateNativeStylesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_native_style_service_1_1update_native_styles_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.NativeStyleService.updateNativeStylesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_native_style_service_1_1update_native_styles_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.NativeStyleService.updateNativeStylesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_native_style_service_1_1update_native_styles_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.NativeStyleService.updateNativeStylesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_native_style_service_1_1update_native_styles_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.NativeStyleService.updateNativeStylesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_native_style_service_1_1update_native_styles_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.NativeStyleService.updateNativeStylesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_native_style_service_1_1update_native_styles_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.NativeStyleService.updateNativeStylesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_native_style_service_1_1update_native_styles_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.OrderService.updateOrdersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_order_service_1_1update_orders_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.OrderService.updateOrdersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_order_service_1_1update_orders_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.OrderService.updateOrdersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_order_service_1_1update_orders_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.OrderService.updateOrdersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_order_service_1_1update_orders_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.OrderService.updateOrdersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_order_service_1_1update_orders_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.OrderService.updateOrdersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_order_service_1_1update_orders_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.OrderService.updateOrdersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_order_service_1_1update_orders_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.OrderService.updateOrdersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_order_service_1_1update_orders_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.OrderService.updateOrdersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_order_service_1_1update_orders_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.OrderService.updateOrdersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_order_service_1_1update_orders_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.OrderService.updateOrdersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_order_service_1_1update_orders_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.OrderService.updateOrdersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_order_service_1_1update_orders_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.PackageService.updatePackagesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_package_service_1_1update_packages_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.PackageService.updatePackagesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_package_service_1_1update_packages_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.PackageService.updatePackagesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_package_service_1_1update_packages_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.PackageService.updatePackagesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_package_service_1_1update_packages_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.PackageService.updatePackagesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_package_service_1_1update_packages_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.PackageService.updatePackagesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_package_service_1_1update_packages_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.PackageService.updatePackagesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_package_service_1_1update_packages_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.PackageService.updatePackagesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_package_service_1_1update_packages_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.PackageService.updatePackagesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_package_service_1_1update_packages_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.PackageService.updatePackagesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_package_service_1_1update_packages_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.PlacementService.updatePlacementsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_placement_service_1_1update_placements_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.PlacementService.updatePlacementsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_placement_service_1_1update_placements_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.PlacementService.updatePlacementsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_placement_service_1_1update_placements_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.PlacementService.updatePlacementsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_placement_service_1_1update_placements_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.PlacementService.updatePlacementsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_placement_service_1_1update_placements_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.PlacementService.updatePlacementsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_placement_service_1_1update_placements_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.PlacementService.updatePlacementsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_placement_service_1_1update_placements_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.PlacementService.updatePlacementsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_placement_service_1_1update_placements_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.PlacementService.updatePlacementsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_placement_service_1_1update_placements_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.PlacementService.updatePlacementsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_placement_service_1_1update_placements_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.PlacementService.updatePlacementsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_placement_service_1_1update_placements_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.PremiumRateService.updatePremiumRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_premium_rate_service_1_1update_premium_rates_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.PremiumRateService.updatePremiumRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_premium_rate_service_1_1update_premium_rates_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.PremiumRateService.updatePremiumRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_premium_rate_service_1_1update_premium_rates_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.PremiumRateService.updatePremiumRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_premium_rate_service_1_1update_premium_rates_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.PremiumRateService.updatePremiumRatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_premium_rate_service_1_1update_premium_rates_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.PremiumRateService.updatePremiumRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_premium_rate_service_1_1update_premium_rates_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.PremiumRateService.updatePremiumRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_premium_rate_service_1_1update_premium_rates_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.PremiumRateService.updatePremiumRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_premium_rate_service_1_1update_premium_rates_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.PremiumRateService.updatePremiumRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_premium_rate_service_1_1update_premium_rates_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.PremiumRateService.updatePremiumRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_premium_rate_service_1_1update_premium_rates_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.PremiumRateService.updatePremiumRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_premium_rate_service_1_1update_premium_rates_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProductPackageItemService.updateProductPackageItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_product_package_item_service_1_a2a8ed12bdbff7f8069ddd6444aae52f.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProductPackageItemService.updateProductPackageItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_package_item_service_1_4d12bec114398fa035df70f2ea08894d.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProductPackageItemService.updateProductPackageItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_product_package_item_service_1_bc94edb1b4df50cd8b9f90961def2b40.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ProductPackageItemService.updateProductPackageItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_product_package_item_service_1_957f54447483f58418f3e6661b643aa2.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ProductPackageItemService.updateProductPackageItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_product_package_item_service_1_ead43ca7069bf48e3125e38630ebc035.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProductPackageItemService.updateProductPackageItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_product_package_item_service_1_e3f16c082e096e00c761cff530f2fda8.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProductPackageItemService.updateProductPackageItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_product_package_item_service_1_8916c62b70623bb34a27bf9bffec9599.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProductPackageItemService.updateProductPackageItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_product_package_item_service_1_e3f16c082e096e00c761cff530f2fda8.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProductPackageItemService.updateProductPackageItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_package_item_service_1_3b14d59464571c2363f6b23d3e835c7d.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProductPackageService.updateProductPackagesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ProductPackageItemService.updateProductPackageItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_product_package_item_service_1_ead43ca7069bf48e3125e38630ebc035.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProductPackageService.updateProductPackagesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProductPackageService.updateProductPackagesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ProductPackageService.updateProductPackagesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProductPackageService.updateProductPackagesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProductPackageService.updateProductPackagesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProductPackageService.updateProductPackagesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProductPackageService.updateProductPackagesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProductPackageService.updateProductPackagesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProductPackageService.updateProductPackagesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ProductPackageService.updateProductPackagesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProductService.updateProductsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_product_service_1_1update_products_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProductPackageService.updateProductPackagesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProductService.updateProductsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_service_1_1update_products_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProductService.updateProductsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_product_service_1_1update_products_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProductService.updateProductsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_product_service_1_1update_products_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ProductService.updateProductsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_product_service_1_1update_products_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProductService.updateProductsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_product_service_1_1update_products_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProductService.updateProductsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_product_service_1_1update_products_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProductService.updateProductsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_service_1_1update_products_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProductService.updateProductsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_product_service_1_1update_products_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ProductService.updateProductsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_product_service_1_1update_products_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProductTemplateService.updateProductTemplatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_product_template_service_1_1update_product_templates_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProductTemplateService.updateProductTemplatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_template_service_1_1update_product_templates_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProductService.updateProductsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_product_service_1_1update_products_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ProductTemplateService.updateProductTemplatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_product_template_service_1_1update_product_templates_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProductTemplateService.updateProductTemplatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_product_template_service_1_1update_product_templates_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProductTemplateService.updateProductTemplatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_template_service_1_1update_product_templates_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProductTemplateService.updateProductTemplatesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_product_template_service_1_1update_product_templates_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ProductTemplateService.updateProductTemplatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_product_template_service_1_1update_product_templates_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProductTemplateService.updateProductTemplatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_product_template_service_1_1update_product_templates_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProductTemplateService.updateProductTemplatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_product_template_service_1_1update_product_templates_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProductTemplateService.updateProductTemplatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_template_service_1_1update_product_templates_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ProposalLineItemService.updateProposalLineItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_proposal_line_item_service_1_1u7b7d1e46d6a903323a85ffa8205017b4.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProposalLineItemService.updateProposalLineItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_proposal_line_item_service_1_1u7c435fdae74213e1b0c82397a119865e.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProposalLineItemService.updateProposalLineItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_proposal_line_item_service_1_1u00b76e7f559f0a41ce2668b1a1fbf266.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProposalLineItemService.updateProposalLineItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_proposal_line_item_service_1_1u63431e929392e564780d2d5abadf2763.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ProposalLineItemService.updateProposalLineItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_proposal_line_item_service_1_1u7b7d1e46d6a903323a85ffa8205017b4.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProposalLineItemService.updateProposalLineItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_proposal_line_item_service_1_1u00b76e7f559f0a41ce2668b1a1fbf266.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProposalLineItemService.updateProposalLineItemsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_proposal_line_item_service_1_1u7c435fdae74213e1b0c82397a119865e.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ProposalLineItemService.updateProposalLineItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_proposal_line_item_service_1_1u1b867603d70bfa3d025841c3631d3fa0.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProposalLineItemService.updateProposalLineItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_proposal_line_item_service_1_1u66cc036fe14b03409f6114c00e8817f3.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProposalLineItemService.updateProposalLineItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_proposal_line_item_service_1_1u44fb53dbfc268668d04593d8bbc2c33b.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProposalLineItemService.updateProposalLineItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_proposal_line_item_service_1_1u3a850df711528aa25d9c4750c8344e7b.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProposalService.updateProposalsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_proposal_service_1_1update_proposals_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProposalLineItemService.updateProposalLineItemsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_proposal_line_item_service_1_1u44fb53dbfc268668d04593d8bbc2c33b.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ProposalService.updateProposalsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_proposal_service_1_1update_proposals_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProposalService.updateProposalsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_proposal_service_1_1update_proposals_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProposalService.updateProposalsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_proposal_service_1_1update_proposals_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProposalService.updateProposalsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_proposal_service_1_1update_proposals_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProposalService.updateProposalsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_proposal_service_1_1update_proposals_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProposalService.updateProposalsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_proposal_service_1_1update_proposals_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ProposalService.updateProposalsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_proposal_service_1_1update_proposals_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ProposalService.updateProposalsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_proposal_service_1_1update_proposals_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ProposalService.updateProposalsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_proposal_service_1_1update_proposals_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ProposalService.updateProposalsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_proposal_service_1_1update_proposals_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.RateCardService.updateRateCardsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_rate_card_service_1_1update_rate_cards_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.RateCardService.updateRateCardsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_rate_card_service_1_1update_rate_cards_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.RateCardService.updateRateCardsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_rate_card_service_1_1update_rate_cards_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.RateCardService.updateRateCardsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_rate_card_service_1_1update_rate_cards_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.RateCardService.updateRateCardsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_rate_card_service_1_1update_rate_cards_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.RateCardService.updateRateCardsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_rate_card_service_1_1update_rate_cards_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.RateCardService.updateRateCardsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_rate_card_service_1_1update_rate_cards_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.RateCardService.updateRateCardsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_rate_card_service_1_1update_rate_cards_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.RateCardService.updateRateCardsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_rate_card_service_1_1update_rate_cards_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.RateCardService.updateRateCardsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_rate_card_service_1_1update_rate_cards_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.RateCardService.updateRateCardsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_rate_card_service_1_1update_rate_cards_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_reconciliation_line_item_report517faf210df6fba58fe0e398bc19c3fc.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_reconciliation_line_item_reportb6192e4bd5d5debd5bbedb2acd9fd27f.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_reconciliation_line_item_reportd2247065d9480492b875fd56c8e937c4.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_reconciliation_line_item_report8c1e986d3b1b393c8c87b50b4f886dd7.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_reconciliation_line_item_reportb24dea66c0265812631a37ee27957ede.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_reconciliation_line_item_report17be4962c6383a34d5726fc76b0d70d2.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_reconciliation_line_item_report8d9b09615b8b6d32b524d24b1d8725c1.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_reconciliation_line_item_reportd2247065d9480492b875fd56c8e937c4.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_reconciliation_line_item_reportb6192e4bd5d5debd5bbedb2acd9fd27f.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_reconciliation_line_item_report296abc1a732c7f7452ae7dbfcc098ca4.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_reconciliation_line_item_report17be4962c6383a34d5726fc76b0d70d2.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_reconciliation_line_item_reportb24dea66c0265812631a37ee27957ede.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_reconciliation_line_item_report8d9b09615b8b6d32b524d24b1d8725c1.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_reconciliation_order_report_ser121a0016657e541f0621dde75fd04237.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_reconciliation_order_report_ser713d25c0709fd8e561aabae329156178.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_reconciliation_order_report_ser29dd6171902eb5fef770689ca35dc04c.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_reconciliation_order_report_sera6f782b89f844d5d7fd5872b0a2208b7.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_reconciliation_order_report_ser713d25c0709fd8e561aabae329156178.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_reconciliation_order_report_ser38d3430ab2cdc96f6135428909edb256.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_reconciliation_order_report_ser7f64bb7f8516b859e67a37d5753d449d.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_reconciliation_order_report_serf229c71949863b3275d7b8516567c4a5.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_reconciliation_order_report_sera7885973e74e635595154c45dc0e80fb.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_reconciliation_report_row_servi97d229c5359729272f8945784f875f54.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_reconciliation_order_report_serf229c71949863b3275d7b8516567c4a5.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_reconciliation_order_report_ser7f64bb7f8516b859e67a37d5753d449d.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_reconciliation_report_row_servi99209151ad7ab75d13c38c6a3fa25b00.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_reconciliation_report_row_servie92cfc6e585d8dce37a39352450dd3d2.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_reconciliation_report_row_servi97d229c5359729272f8945784f875f54.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_reconciliation_report_row_servi3830f3404b9db3cb7574c18e46b4b25c.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_reconciliation_report_row_servi5cfac9e2c2d1f9b5567785aa456805f2.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_reconciliation_report_row_servie08a0e5eaedf7778e33aca404092e0b9.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_reconciliation_report_row_servi8e0adee56421a8a9667e1e90512a3ae0.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_reconciliation_report_row_servi318a962f3728ab059032fdb242c1cbc3.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_reconciliation_report_row_servie08a0e5eaedf7778e33aca404092e0b9.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_reconciliation_report_row_servi5cfac9e2c2d1f9b5567785aa456805f2.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ReconciliationReportService.updateReconciliationReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_reconciliation_report_service_1a7816e64039b789717a55be46b161dc1.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.ReconciliationReportService.updateReconciliationReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_reconciliation_report_service_16032490d17d7bec10866bac5703391b2.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.ReconciliationReportService.updateReconciliationReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_reconciliation_report_service_14a98d42afb688a23865e7cdaba5b5150.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.ReconciliationReportService.updateReconciliationReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_reconciliation_report_service_1a7816e64039b789717a55be46b161dc1.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ReconciliationReportService.updateReconciliationReportsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_reconciliation_report_service_11ec058c536820262b8019bba662e7a8a.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.ReconciliationReportService.updateReconciliationReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_reconciliation_report_service_13a8a4c1a7c7b1bce45190c24335519d2.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ReconciliationReportService.updateReconciliationReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_reconciliation_report_service_19883f5f607b4fc3768307b1e927629d4.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.ReconciliationReportService.updateReconciliationReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_reconciliation_report_service_1fb45021a75f22f1663db1cc1f6137fb5.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.ReconciliationReportService.updateReconciliationReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_reconciliation_report_service_19883f5f607b4fc3768307b1e927629d4.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.ReconciliationReportService.updateReconciliationReportsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_reconciliation_report_service_12267b4d20317bbfe8ececf2e9e294dd5.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.UpdateResult", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_update_result.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.UpdateResult", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_update_result.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.UpdateResult", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_update_result.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.UpdateResult", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_update_result.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.UpdateResult", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_update_result.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.TeamService.updateTeamsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_team_service_1_1update_teams_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.TeamService.updateTeamsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_team_service_1_1update_teams_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.UpdateResult", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_update_result.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.TeamService.updateTeamsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_team_service_1_1update_teams_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.TeamService.updateTeamsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_team_service_1_1update_teams_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.TeamService.updateTeamsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_team_service_1_1update_teams_request.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.TeamService.updateTeamsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_team_service_1_1update_teams_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.TeamService.updateTeamsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_team_service_1_1update_teams_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.TeamService.updateTeamsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_team_service_1_1update_teams_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.TeamService.updateTeamsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_team_service_1_1update_teams_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.TeamService.updateTeamsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_team_service_1_1update_teams_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.TeamService.updateTeamsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_team_service_1_1update_teams_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.TeamService.updateTeamsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_team_service_1_1update_teams_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.UserService.updateUsersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_user_service_1_1update_users_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.UserService.updateUsersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_user_service_1_1update_users_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.UserService.updateUsersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_user_service_1_1update_users_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.UserService.updateUsersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_user_service_1_1update_users_request.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.Wrappers.UserService.updateUsersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_user_service_1_1update_users_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.UserService.updateUsersRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_user_service_1_1update_users_request.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.Wrappers.UserService.updateUsersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_user_service_1_1update_users_response.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.UserService.updateUsersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_user_service_1_1update_users_response.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.UserService.updateUsersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_user_service_1_1update_users_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.Wrappers.UserService.updateUsersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_user_service_1_1update_users_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.UserService.updateUsersResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_user_service_1_1update_users_response.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.UserTeamAssociationService.updateUserTeamAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_user_team_association_service_1a4c896a4b1aeca53de12c8aa35e4e305.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.Wrappers.UserTeamAssociationService.updateUserTeamAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_user_team_association_service_1604601ce4f78474d3a69e47818e84648.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.UserTeamAssociationService.updateUserTeamAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_user_team_association_service_11e979ced6f520fa7bc8dc73c016a3015.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Wrappers.UserTeamAssociationService.updateUserTeamAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_user_team_association_service_164675844f63049dcc6b9c38c745d5c4b.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.Wrappers.UserTeamAssociationService.updateUserTeamAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_user_team_association_service_1604601ce4f78474d3a69e47818e84648.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.UserTeamAssociationService.updateUserTeamAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_user_team_association_service_1a4c896a4b1aeca53de12c8aa35e4e305.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.Wrappers.UserTeamAssociationService.updateUserTeamAssociationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_user_team_association_service_195d96f3b3451e485a6427d59c46ffe6d.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.Wrappers.UserTeamAssociationService.updateUserTeamAssociationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_user_team_association_service_19e216e73094c1d22c3dbb9b7c0f68a63.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.Wrappers.UserTeamAssociationService.updateUserTeamAssociationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_user_team_association_service_1341b452a683a556076545034353af80e.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.Wrappers.UserTeamAssociationService.updateUserTeamAssociationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_wrappers_1_1_user_team_association_service_157ebf8a05387b5b7486332f6607f1fc6.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.Wrappers.UserTeamAssociationService.updateUserTeamAssociationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_user_team_association_service_19e216e73094c1d22c3dbb9b7c0f68a63.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.Wrappers.UserTeamAssociationService.updateUserTeamAssociationsResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_user_team_association_service_195d96f3b3451e485a6427d59c46ffe6d.html", null ],
-    [ "Google.Api.Ads.AdWords.v201802.UploadMetadata", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_upload_metadata.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.UploadMetadata", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_upload_metadata.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.Wrappers.MediaService.uploadRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_media_service_1_1upload_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201802.UploadMetadata", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_upload_metadata.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.MediaService.uploadRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_media_service_1_1upload_request.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.Wrappers.MediaService.uploadRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_media_service_1_1upload_request.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.Wrappers.MediaService.uploadResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_media_service_1_1upload_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.Wrappers.MediaService.uploadResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_media_service_1_1upload_response.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.UrlData", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_url_data.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.UrlData", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_url_data.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.UrlList", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_url_list.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.UrlList", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_url_list.html", null ],
-    [ "Google.Api.Ads.AdWords.Util.Reports.v201802.UrlPerformanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_url_performance_report_report_row.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201710.UrlPerformanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_url_performance_report_report_row.html", null ],
+    [ "Google.Api.Ads.AdWords.Util.Reports.v201802.UrlPerformanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_url_performance_report_report_row.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.UserAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_action.html", [
       [ "Google.Api.Ads.Dfp.v201708.ActivateUsers", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_activate_users.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.DeactivateUsers", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_deactivate_users.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201802.UserAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_action.html", [
+      [ "Google.Api.Ads.Dfp.v201802.ActivateUsers", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_activate_users.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.DeactivateUsers", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_deactivate_users.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201711.UserAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_user_action.html", [
       [ "Google.Api.Ads.Dfp.v201711.ActivateUsers", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_activate_users.html", null ],
@@ -12101,16 +12106,12 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201805.ActivateUsers", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activate_users.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.DeactivateUsers", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_deactivate_users.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201802.UserAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_action.html", [
-      [ "Google.Api.Ads.Dfp.v201802.ActivateUsers", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_activate_users.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.DeactivateUsers", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_deactivate_users.html", null ]
-    ] ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201802.UserAdDistanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_user_ad_distance_report_report_row.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201710.UserAdDistanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_user_ad_distance_report_report_row.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.UserDomainTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_domain_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.UserDomainTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_user_domain_targeting.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.UserDomainTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user_domain_targeting.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.UserDomainTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_domain_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.UserDomainTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_domain_targeting.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.UserDomainTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user_domain_targeting.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.UserIdentifier", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_user_identifier.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.UserIdentifier", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_identifier.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.UserList", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_user_list.html", [
@@ -12137,26 +12138,23 @@ var hierarchy =
     ] ],
     [ "Google.Api.Ads.AdWords.v201802.UserListConversionType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_user_list_conversion_type.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.UserListConversionType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_conversion_type.html", null ],
-    [ "Google.Api.Ads.AdWords.v201710.UserListLogicalRule", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_logical_rule.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.UserListLogicalRule", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_user_list_logical_rule.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.UserPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.UserPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.UserPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user_page.html", null ],
+    [ "Google.Api.Ads.AdWords.v201710.UserListLogicalRule", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_user_list_logical_rule.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.UserPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_user_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.UserPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.UserPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.UserPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.UserRecord", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_record.html", [
+      [ "Google.Api.Ads.Dfp.v201802.User", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201805.UserRecord", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user_record.html", [
       [ "Google.Api.Ads.Dfp.v201805.User", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201711.UserRecord", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_user_record.html", [
       [ "Google.Api.Ads.Dfp.v201711.User", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_user.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201802.UserRecord", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_record.html", [
-      [ "Google.Api.Ads.Dfp.v201802.User", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201708.UserRecord", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_record.html", [
       [ "Google.Api.Ads.Dfp.v201708.User", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201708.UserRecordTeamAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_record_team_association.html", [
-      [ "Google.Api.Ads.Dfp.v201708.UserTeamAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_team_association.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201805.UserRecordTeamAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user_record_team_association.html", [
       [ "Google.Api.Ads.Dfp.v201805.UserTeamAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user_team_association.html", null ]
@@ -12167,9 +12165,8 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201802.UserRecordTeamAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_record_team_association.html", [
       [ "Google.Api.Ads.Dfp.v201802.UserTeamAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_team_association.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201708.UserServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201708.IUserService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_user_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.UserServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_service_interface_channel.html", null ]
+    [ "Google.Api.Ads.Dfp.v201708.UserRecordTeamAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_record_team_association.html", [
+      [ "Google.Api.Ads.Dfp.v201708.UserTeamAssociation", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_team_association.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201805.UserServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201805.IUserService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_user_service.html", null ],
@@ -12183,8 +12180,9 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201711.IUserService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_user_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.UserServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_user_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201802.UserTeamAssociationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_team_association_action.html", [
-      [ "Google.Api.Ads.Dfp.v201802.DeleteUserTeamAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_delete_user_team_associations.html", null ]
+    [ "Google.Api.Ads.Dfp.v201708.UserServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201708.IUserService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_user_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.UserServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201711.UserTeamAssociationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_user_team_association_action.html", [
       [ "Google.Api.Ads.Dfp.v201711.DeleteUserTeamAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_delete_user_team_associations.html", null ]
@@ -12195,31 +12193,34 @@ var hierarchy =
     [ "Google.Api.Ads.Dfp.v201805.UserTeamAssociationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user_team_association_action.html", [
       [ "Google.Api.Ads.Dfp.v201805.DeleteUserTeamAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_delete_user_team_associations.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201805.UserTeamAssociationPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user_team_association_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.UserTeamAssociationAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_team_association_action.html", [
+      [ "Google.Api.Ads.Dfp.v201802.DeleteUserTeamAssociations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_delete_user_team_associations.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201711.UserTeamAssociationPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_user_team_association_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.UserTeamAssociationPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user_team_association_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.UserTeamAssociationPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_team_association_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.UserTeamAssociationPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_team_association_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.UserTeamAssociationServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_team_association_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201708.IUserTeamAssociationService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_user_team_association_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.UserTeamAssociationServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_team_association_service_interface_channel.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201805.UserTeamAssociationServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user_team_association_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201805.IUserTeamAssociationService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_user_team_association_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.UserTeamAssociationServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user_team_association_service_interface_channel.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201711.UserTeamAssociationServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_user_team_association_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201711.IUserTeamAssociationService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_user_team_association_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.UserTeamAssociationServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_user_team_association_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201802.UserTeamAssociationServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_team_association_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.IUserTeamAssociationService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_user_team_association_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.UserTeamAssociationServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_user_team_association_service_interface_channel.html", null ]
     ] ],
+    [ "Google.Api.Ads.Dfp.v201708.UserTeamAssociationServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_team_association_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201708.IUserTeamAssociationService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_user_team_association_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.UserTeamAssociationServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_user_team_association_service_interface_channel.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201711.UserTeamAssociationServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_user_team_association_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201711.IUserTeamAssociationService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_user_team_association_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.UserTeamAssociationServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_user_team_association_service_interface_channel.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.Lib.DfpService.v201708", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_service_1_1v201708.html", null ],
     [ "Google.Api.Ads.AdWords.Lib.AdWordsService.v201710", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_service_1_1v201710.html", null ],
     [ "Google.Api.Ads.Dfp.Lib.DfpService.v201711", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_service_1_1v201711.html", null ],
-    [ "Google.Api.Ads.AdWords.Lib.AdWordsService.v201802", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_service_1_1v201802.html", null ],
     [ "Google.Api.Ads.Dfp.Lib.DfpService.v201802", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_service_1_1v201802.html", null ],
+    [ "Google.Api.Ads.AdWords.Lib.AdWordsService.v201802", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib_1_1_ad_words_service_1_1v201802.html", null ],
     [ "Google.Api.Ads.Dfp.Lib.DfpService.v201805", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_service_1_1v201805.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.Value", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_value.html", [
       [ "Google.Api.Ads.Dfp.v201802.BooleanValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_boolean_value.html", null ],
@@ -12232,18 +12233,6 @@ var hierarchy =
       ] ],
       [ "Google.Api.Ads.Dfp.v201802.SetValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_set_value.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.TextValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_text_value.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201805.Value", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_value.html", [
-      [ "Google.Api.Ads.Dfp.v201805.BooleanValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_boolean_value.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.DateTimeValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_date_time_value.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.DateValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_date_value.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.NumberValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_number_value.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.ObjectValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_object_value.html", [
-        [ "Google.Api.Ads.Dfp.v201805.ChangeHistoryValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_change_history_value.html", null ],
-        [ "Google.Api.Ads.Dfp.v201805.TargetingValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_targeting_value.html", null ]
-      ] ],
-      [ "Google.Api.Ads.Dfp.v201805.SetValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_set_value.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.TextValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_text_value.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201711.Value", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_value.html", [
       [ "Google.Api.Ads.Dfp.v201711.BooleanValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_boolean_value.html", null ],
@@ -12269,47 +12258,51 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201708.SetValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_set_value.html", null ],
       [ "Google.Api.Ads.Dfp.v201708.TextValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_text_value.html", null ]
     ] ],
+    [ "Google.Api.Ads.Dfp.v201805.Value", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_value.html", [
+      [ "Google.Api.Ads.Dfp.v201805.BooleanValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_boolean_value.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.DateTimeValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_date_time_value.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.DateValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_date_value.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.NumberValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_number_value.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.ObjectValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_object_value.html", [
+        [ "Google.Api.Ads.Dfp.v201805.ChangeHistoryValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_change_history_value.html", null ],
+        [ "Google.Api.Ads.Dfp.v201805.TargetingValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_targeting_value.html", null ]
+      ] ],
+      [ "Google.Api.Ads.Dfp.v201805.SetValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_set_value.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.TextValue", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_text_value.html", null ]
+    ] ],
     [ "Google.Api.Ads.AdWords.v201710.VanityPharma", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_vanity_pharma.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.VanityPharma", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_vanity_pharma.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.VideoMetadata", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_video_metadata.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.VideoMetadata", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_video_metadata.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.VideoMetadata", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_video_metadata.html", null ],
-    [ "Google.Api.Ads.Dfp.v201708.VideoMetadata", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_video_metadata.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.VideoMetadata", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_video_metadata.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201710.VideoPerformanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_video_performance_report_report_row.html", null ],
     [ "Google.Api.Ads.AdWords.Util.Reports.v201802.VideoPerformanceReportReportRow", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_video_performance_report_report_row.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.VideoPosition", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_video_position.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.VideoPosition", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_video_position.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.VideoPosition", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_video_position.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.VideoPosition", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_video_position.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.VideoPosition", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_video_position.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.VideoPositionTarget", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_video_position_target.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.VideoPositionTarget", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_video_position_target.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.VideoPositionTarget", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_video_position_target.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.VideoPositionTarget", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_video_position_target.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.VideoPositionTarget", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_video_position_target.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.VideoPositionTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_video_position_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.VideoPositionTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_video_position_targeting.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.VideoPositionTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_video_position_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.VideoPositionTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_video_position_targeting.html", null ],
+    [ "Google.Api.Ads.Dfp.v201805.VideoPositionTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_video_position_targeting.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.VideoPositionTargeting", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_video_position_targeting.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.VideoPositionWithinPod", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_video_position_within_pod.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.VideoPositionWithinPod", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_video_position_within_pod.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.VideoPositionWithinPod", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_video_position_within_pod.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.VideoPositionWithinPod", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_video_position_within_pod.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.VideoPositionWithinPod", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_video_position_within_pod.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.VideoPositionWithinPod", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_video_position_within_pod.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.ViewabilityProvider", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_viewability_provider.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.WebpageCondition", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_webpage_condition.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.WebpageCondition", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_webpage_condition.html", null ],
     [ "Google.Api.Ads.AdWords.v201802.WebpageDescriptor", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_webpage_descriptor.html", null ],
     [ "Google.Api.Ads.AdWords.v201710.WebpageDescriptor", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_webpage_descriptor.html", null ],
+    [ "Google.Api.Ads.Dfp.v201711.WorkflowProgress", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_workflow_progress.html", null ],
     [ "Google.Api.Ads.Dfp.v201805.WorkflowProgress", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_workflow_progress.html", null ],
     [ "Google.Api.Ads.Dfp.v201802.WorkflowProgress", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_workflow_progress.html", null ],
-    [ "Google.Api.Ads.Dfp.v201711.WorkflowProgress", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_workflow_progress.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.WorkflowProgress", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_progress.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.WorkflowRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_workflow_request.html", [
-      [ "Google.Api.Ads.Dfp.v201802.WorkflowApprovalRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_workflow_approval_request.html", null ],
-      [ "Google.Api.Ads.Dfp.v201802.WorkflowExternalConditionRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_workflow_external_condition_request.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201708.WorkflowRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request.html", [
-      [ "Google.Api.Ads.Dfp.v201708.WorkflowApprovalRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_approval_request.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.WorkflowExternalConditionRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_external_condition_request.html", null ]
-    ] ],
     [ "Google.Api.Ads.Dfp.v201711.WorkflowRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_workflow_request.html", [
       [ "Google.Api.Ads.Dfp.v201711.WorkflowApprovalRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_workflow_approval_request.html", null ],
       [ "Google.Api.Ads.Dfp.v201711.WorkflowExternalConditionRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_workflow_external_condition_request.html", null ]
@@ -12318,11 +12311,25 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201805.WorkflowApprovalRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_workflow_approval_request.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.WorkflowExternalConditionRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_workflow_external_condition_request.html", null ]
     ] ],
+    [ "Google.Api.Ads.Dfp.v201802.WorkflowRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_workflow_request.html", [
+      [ "Google.Api.Ads.Dfp.v201802.WorkflowApprovalRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_workflow_approval_request.html", null ],
+      [ "Google.Api.Ads.Dfp.v201802.WorkflowExternalConditionRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_workflow_external_condition_request.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201708.WorkflowRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request.html", [
+      [ "Google.Api.Ads.Dfp.v201708.WorkflowApprovalRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_approval_request.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.WorkflowExternalConditionRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_external_condition_request.html", null ]
+    ] ],
     [ "Google.Api.Ads.Dfp.v201802.WorkflowRequestAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_workflow_request_action.html", [
       [ "Google.Api.Ads.Dfp.v201802.ApproveWorkflowApprovalRequests", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_approve_workflow_approval_requests.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.RejectWorkflowApprovalRequests", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_reject_workflow_approval_requests.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.SkipWorkflowExternalConditionRequests", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_skip_workflow_external_condition_requests.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.TriggerWorkflowExternalConditionRequests", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_trigger_workflow_external_condition_requests.html", null ]
+    ] ],
+    [ "Google.Api.Ads.Dfp.v201711.WorkflowRequestAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_workflow_request_action.html", [
+      [ "Google.Api.Ads.Dfp.v201711.ApproveWorkflowApprovalRequests", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_approve_workflow_approval_requests.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.RejectWorkflowApprovalRequests", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reject_workflow_approval_requests.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.SkipWorkflowExternalConditionRequests", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_skip_workflow_external_condition_requests.html", null ],
+      [ "Google.Api.Ads.Dfp.v201711.TriggerWorkflowExternalConditionRequests", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_trigger_workflow_external_condition_requests.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201708.WorkflowRequestAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request_action.html", [
       [ "Google.Api.Ads.Dfp.v201708.ApproveWorkflowApprovalRequests", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_approve_workflow_approval_requests.html", null ],
@@ -12336,27 +12343,21 @@ var hierarchy =
       [ "Google.Api.Ads.Dfp.v201805.SkipWorkflowExternalConditionRequests", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_skip_workflow_external_condition_requests.html", null ],
       [ "Google.Api.Ads.Dfp.v201805.TriggerWorkflowExternalConditionRequests", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_trigger_workflow_external_condition_requests.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201711.WorkflowRequestAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_workflow_request_action.html", [
-      [ "Google.Api.Ads.Dfp.v201711.ApproveWorkflowApprovalRequests", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_approve_workflow_approval_requests.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.RejectWorkflowApprovalRequests", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reject_workflow_approval_requests.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.SkipWorkflowExternalConditionRequests", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_skip_workflow_external_condition_requests.html", null ],
-      [ "Google.Api.Ads.Dfp.v201711.TriggerWorkflowExternalConditionRequests", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_trigger_workflow_external_condition_requests.html", null ]
-    ] ],
-    [ "Google.Api.Ads.Dfp.v201805.WorkflowRequestPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_workflow_request_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201802.WorkflowRequestPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_workflow_request_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201708.WorkflowRequestPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201802.WorkflowRequestPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_workflow_request_page.html", null ],
     [ "Google.Api.Ads.Dfp.v201711.WorkflowRequestPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_workflow_request_page.html", null ],
-    [ "Google.Api.Ads.Dfp.v201805.WorkflowRequestServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_workflow_request_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201805.IWorkflowRequestService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_workflow_request_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201805.WorkflowRequestServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_workflow_request_service_interface_channel.html", null ]
+    [ "Google.Api.Ads.Dfp.v201805.WorkflowRequestPage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_workflow_request_page.html", null ],
+    [ "Google.Api.Ads.Dfp.v201708.WorkflowRequestServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201708.IWorkflowRequestService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_workflow_request_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201708.WorkflowRequestServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201802.WorkflowRequestServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_workflow_request_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201802.IWorkflowRequestService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_workflow_request_service.html", null ],
       [ "Google.Api.Ads.Dfp.v201802.WorkflowRequestServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_workflow_request_service_interface_channel.html", null ]
     ] ],
-    [ "Google.Api.Ads.Dfp.v201708.WorkflowRequestServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request_service_interface.html", [
-      [ "Google.Api.Ads.Dfp.v201708.IWorkflowRequestService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_workflow_request_service.html", null ],
-      [ "Google.Api.Ads.Dfp.v201708.WorkflowRequestServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request_service_interface_channel.html", null ]
+    [ "Google.Api.Ads.Dfp.v201805.WorkflowRequestServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_workflow_request_service_interface.html", [
+      [ "Google.Api.Ads.Dfp.v201805.IWorkflowRequestService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_i_workflow_request_service.html", null ],
+      [ "Google.Api.Ads.Dfp.v201805.WorkflowRequestServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_workflow_request_service_interface_channel.html", null ]
     ] ],
     [ "Google.Api.Ads.Dfp.v201711.WorkflowRequestServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_workflow_request_service_interface.html", [
       [ "Google.Api.Ads.Dfp.v201711.IWorkflowRequestService", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_i_workflow_request_service.html", null ],

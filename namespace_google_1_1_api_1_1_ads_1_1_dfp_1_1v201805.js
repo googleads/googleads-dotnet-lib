@@ -46,6 +46,7 @@ var namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805 =
     [ "ContentBundle", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_bundle.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_bundle" ],
     [ "RequestError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_request_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_request_error" ],
     [ "PlacementError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_placement_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_placement_error" ],
+    [ "ContentFilterError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_filter_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_filter_error" ],
     [ "ContentBundleServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_bundle_service_interface.html", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_bundle_service_interface" ],
     [ "ContentBundlePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_bundle_page.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_bundle_page" ],
     [ "ContentBundleAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_bundle_action.html", null ],

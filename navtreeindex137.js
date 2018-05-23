@@ -1,5 +1,7 @@
 var NAVTREEINDEX137 =
 {
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_activity_service_1_1create_activities_response.html":[1,0,0,0,0,2,4,0,1,1],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_activity_service_1_1create_activities_response.html#a5b47ccce0c97ce1c31829e2eaa4aa2c4":[1,0,0,0,0,2,4,0,1,1,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_activity_service_1_1create_activities_response.html#ab0dbcbb19a36234347a89a91b0e991d5":[1,0,0,0,0,2,4,0,1,1,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_activity_service_1_1create_activities_response.html#ad542f0b86e688b731d9da63442f592c7":[1,0,0,0,0,2,4,0,1,1,2],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_activity_service_1_1update_activities_request.html":[1,0,0,0,0,2,4,0,1,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX137 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_request.html#a7892f91bf9bb8714d9f37abcf1c8bd19":[1,0,0,0,0,2,4,0,17,2,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_request.html#a9f400b422d56012ca58e045f18e27315":[1,0,0,0,0,2,4,0,17,2,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_response.html":[1,0,0,0,0,2,4,0,17,3],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_response.html#a0488dab2716bbd7c8febcb83431946a3":[1,0,0,0,0,2,4,0,17,3,2],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_response.html#a71ab0aa4ca639028230e42210f3c0d0d":[1,0,0,0,0,2,4,0,17,3,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_response.html#a977cbd0433827dd79e42400180dc0ab3":[1,0,0,0,0,2,4,0,17,3,1]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_response.html#a0488dab2716bbd7c8febcb83431946a3":[1,0,0,0,0,2,4,0,17,3,2]
 };

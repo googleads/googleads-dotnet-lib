@@ -1,5 +1,7 @@
 var NAVTREEINDEX19 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_final_url_report_report_row.html#ae5bd5557d9faf78e8d6d235ccc83b3c4":[1,0,0,0,0,0,3,1,0,41,59],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_final_url_report_report_row.html#ae65fde766e6547f5053a21774cd21396":[1,0,0,0,0,0,3,1,0,41,20],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_final_url_report_report_row.html#ae8da1d1fdaf47e97c18769d791007c3b":[1,0,0,0,0,0,3,1,0,41,22],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_final_url_report_report_row.html#ae95eaf51de3a84f8114434ef9f8b02c9":[1,0,0,0,0,0,3,1,0,41,77],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_final_url_report_report_row.html#aea279c82e4524fbee4fe7374c871c28b":[1,0,0,0,0,0,3,1,0,41,74],
@@ -247,7 +249,5 @@ var NAVTREEINDEX19 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_geo_performance_report_report_row.html#a0e5606425f0af9df0ac773d9267d1612":[1,0,0,0,0,0,3,1,0,6,49],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_geo_performance_report_report_row.html#a105f3ea1c9819c36f41f670c53639dbb":[1,0,0,0,0,0,3,1,0,6,57],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_geo_performance_report_report_row.html#a163f1e87af86bc94c2f5e15bf9868c38":[1,0,0,0,0,0,3,1,0,6,35],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_geo_performance_report_report_row.html#a1711a824290e8bdf7e36c4a68b3c9e78":[1,0,0,0,0,0,3,1,0,6,22],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_geo_performance_report_report_row.html#a18a08f1b5d2109978d0c40eed33e031d":[1,0,0,0,0,0,3,1,0,6,39],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_geo_performance_report_report_row.html#a1a7b0b0a8bb9e505becd27ea298fd407":[1,0,0,0,0,0,3,1,0,6,10]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201710_1_1_geo_performance_report_report_row.html#a1711a824290e8bdf7e36c4a68b3c9e78":[1,0,0,0,0,0,3,1,0,6,22]
 };

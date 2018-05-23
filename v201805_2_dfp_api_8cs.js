@@ -53,6 +53,7 @@ var v201805_2_dfp_api_8cs =
     [ "ContentBundle", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_bundle.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_bundle" ],
     [ "RequestError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_request_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_request_error" ],
     [ "PlacementError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_placement_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_placement_error" ],
+    [ "ContentFilterError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_filter_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_filter_error" ],
     [ "ContentBundleServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_bundle_service_interface.html", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_bundle_service_interface" ],
     [ "ContentBundlePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_bundle_page.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_bundle_page" ],
     [ "ContentBundleAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_content_bundle_action.html", null ],
@@ -1933,6 +1934,11 @@ var v201805_2_dfp_api_8cs =
       [ "ACTIVE", "v201805_2_dfp_api_8cs.html#a703133d65d3defae1a722568a1d81bf8a18ff74f43da410c5529f7d6fca84f115", null ],
       [ "INACTIVE", "v201805_2_dfp_api_8cs.html#a703133d65d3defae1a722568a1d81bf8a6b273343c454f9c53dcfc9c4ccf171d2", null ],
       [ "ARCHIVED", "v201805_2_dfp_api_8cs.html#a703133d65d3defae1a722568a1d81bf8a75b8b0f4c0aee5b8df95a0541307c9f4", null ]
+    ] ],
+    [ "ContentFilterErrorReason", "v201805_2_dfp_api_8cs.html#a113f665d838d3d9b1e00c81c5bfd95f0", [
+      [ "UNKNOWN", "v201805_2_dfp_api_8cs.html#a113f665d838d3d9b1e00c81c5bfd95f0a696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "WRONG_NUMBER_OF_ARGUMENTS", "v201805_2_dfp_api_8cs.html#a113f665d838d3d9b1e00c81c5bfd95f0ad6433654849fd1709e5deba667900136", null ],
+      [ "ANY_FILTER_NOT_SUPPORTED", "v201805_2_dfp_api_8cs.html#a113f665d838d3d9b1e00c81c5bfd95f0aee5b1ce5d382245c4cea551653a59b67", null ]
     ] ],
     [ "ContentMetadataKeyHierarchyErrorReason", "v201805_2_dfp_api_8cs.html#a3ba19992ffc88c6f79059d7b8ed4d3e1", [
       [ "LEVEL_MISSING", "v201805_2_dfp_api_8cs.html#a3ba19992ffc88c6f79059d7b8ed4d3e1a401c58c69631caf1ee34a9db858b9425", null ],
@@ -4241,6 +4247,12 @@ var v201805_2_dfp_api_8cs =
       [ "TOTAL_CPA_CONVERSIONS", "v201805_2_dfp_api_8cs.html#ac843caf8ddce6c82c3a1c8d5737c4004a0df2f2d51977e60a6100f291ba045e0e", null ],
       [ "VIEWABLE_IMPRESSIONS", "v201805_2_dfp_api_8cs.html#ac843caf8ddce6c82c3a1c8d5737c4004a948986c7383e26bdc82d132693f75c58", null ],
       [ "UNKNOWN", "v201805_2_dfp_api_8cs.html#ac843caf8ddce6c82c3a1c8d5737c4004a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "UserConsentEligibility", "v201805_2_dfp_api_8cs.html#a577e0b3873f94ec574d50492ffe8d393", [
+      [ "NONE", "v201805_2_dfp_api_8cs.html#a577e0b3873f94ec574d50492ffe8d393ab50339a10e1de285ac99d4c3990b8693", null ],
+      [ "CONSENTED_OR_NPA", "v201805_2_dfp_api_8cs.html#a577e0b3873f94ec574d50492ffe8d393a4d7e08676965c3113f6e68d39fd84e97", null ],
+      [ "CONSENTED_ONLY", "v201805_2_dfp_api_8cs.html#a577e0b3873f94ec574d50492ffe8d393ab3419027d4b0262c1ef100825130de92", null ],
+      [ "UNKNOWN", "v201805_2_dfp_api_8cs.html#a577e0b3873f94ec574d50492ffe8d393a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "UserDomainTargetingErrorReason", "v201805_2_dfp_api_8cs.html#a846239cd58841531afb86dc9e16b8da8", [
       [ "INVALID_DOMAIN_NAMES", "v201805_2_dfp_api_8cs.html#a846239cd58841531afb86dc9e16b8da8a1e9d736726da822905d7304ca260484c", null ],

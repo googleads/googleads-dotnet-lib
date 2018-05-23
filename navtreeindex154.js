@@ -1,5 +1,7 @@
 var NAVTREEINDEX154 =
 {
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_vpaid_linear_redirect_creative.html#a89faaec167811e8ad2abf160cce32e48":[1,0,0,0,0,2,5,93,3],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_vpaid_linear_redirect_creative.html#acd894cf79d894937b297b5359149fb82":[1,0,0,0,0,2,5,93,8],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_vpaid_linear_redirect_creative.html#ace51d258284a0c44ed933e7f6125fdfc":[1,0,0,0,0,2,5,93,5],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_vpaid_linear_redirect_creative.html#acf5d5c668195926c60ee98e51d238948":[1,0,0,0,0,2,5,93,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_vpaid_linear_redirect_creative.html#aeec383619ee5bdae787a9c49c0b8d300":[1,0,0,0,0,2,5,93,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX154 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_creative_service_1_1update_creatives_response.html#a05f07b1d6426842ccc2d06d39bb2b8d6":[1,0,0,0,0,2,5,0,12,3,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_creative_service_1_1update_creatives_response.html#a78c4f9895bb00198e06f8558c910f1e1":[1,0,0,0,0,2,5,0,12,3,2],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_creative_service_1_1update_creatives_response.html#a7eef9d93dbd57924b1410330ecf4c967":[1,0,0,0,0,2,5,0,12,3,1],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_creative_wrapper_service_1_1create_creative_wrappers_request.html":[1,0,0,0,0,2,5,0,15,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_creative_wrapper_service_1_1create_creative_wrappers_request.html#a4280a073e1a1f6e4bc0a6834e35abffb":[1,0,0,0,0,2,5,0,15,0,2],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_creative_wrapper_service_1_1create_creative_wrappers_request.html#a5c3fbe0961cdf04d6b0b3d75057a0827":[1,0,0,0,0,2,5,0,15,0,0]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_creative_wrapper_service_1_1create_creative_wrappers_request.html":[1,0,0,0,0,2,5,0,15,0]
 };

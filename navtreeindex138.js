@@ -1,5 +1,7 @@
 var NAVTREEINDEX138 =
 {
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_response.html#a71ab0aa4ca639028230e42210f3c0d0d":[1,0,0,0,0,2,4,0,17,3,0],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_response.html#a977cbd0433827dd79e42400180dc0ab3":[1,0,0,0,0,2,4,0,17,3,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_forecast_service_1_1get_delivery_forecast_by_ids_request.html":[1,0,0,0,0,2,4,0,18,2],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_forecast_service_1_1get_delivery_forecast_by_ids_request.html#a552e398f35de5935e751ef51c8fa5362":[1,0,0,0,0,2,4,0,18,2,2],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_forecast_service_1_1get_delivery_forecast_by_ids_request.html#a85fce5c6bd60494a6c0dface63680f38":[1,0,0,0,0,2,4,0,18,2,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX138 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_response.html":[1,0,0,0,0,2,4,0,33,3],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_response.html#a1fbe10e2670ff3488f6ad75c6ca0f627":[1,0,0,0,0,2,4,0,33,3,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_response.html#a83a0f524a61c5b1bc6deb39ee7709352":[1,0,0,0,0,2,4,0,33,3,1],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_response.html#ae58146fc7097f6e5f7bd2e7293619b3d":[1,0,0,0,0,2,4,0,33,3,2],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_service_1_1create_products_request.html":[1,0,0,0,0,2,4,0,34,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_service_1_1create_products_request.html#aa8cd143b08714af6c425d42f2a22fc32":[1,0,0,0,0,2,4,0,34,0,1]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_product_package_service_1_1update_product_packages_response.html#ae58146fc7097f6e5f7bd2e7293619b3d":[1,0,0,0,0,2,4,0,33,3,2]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX173 =
 {
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_label_service_1_1create_labels_request.html#aacabd73801845d96e42c89c20e5a709f":[1,0,0,0,0,2,6,0,21,0,1],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_label_service_1_1create_labels_response.html":[1,0,0,0,0,2,6,0,21,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_label_service_1_1create_labels_response.html#a484ed91052a574213bf3f1cfd4d01e4b":[1,0,0,0,0,2,6,0,21,1,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_label_service_1_1create_labels_response.html#a9e22c2aa3d7e5db61c9fa82c2122fe1a":[1,0,0,0,0,2,6,0,21,1,2],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_label_service_1_1create_labels_response.html#af45a5b5c5445bdf945d91a058e0e3dfe":[1,0,0,0,0,2,6,0,21,1,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX173 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_proposal_line_item_service_1_1c182e8f67a0cde68f66cb835a68352d3f.html#a25fc219b409e7ff9902e59e7b262ce58":[1,0,0,0,0,2,6,0,37,1,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_proposal_line_item_service_1_1c182e8f67a0cde68f66cb835a68352d3f.html#a3805c948c63742aa2506115616e45f67":[1,0,0,0,0,2,6,0,37,1,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_proposal_line_item_service_1_1c182e8f67a0cde68f66cb835a68352d3f.html#ab747b14274f51c93f3b71fa2d86f9035":[1,0,0,0,0,2,6,0,37,1,2],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_proposal_line_item_service_1_1cfe777a11a6653fa8d6b78b33d6f4ba55.html":[1,0,0,0,0,2,6,0,37,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_proposal_line_item_service_1_1cfe777a11a6653fa8d6b78b33d6f4ba55.html#a75c5f7e1342326df5888f9059d49295f":[1,0,0,0,0,2,6,0,37,0,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_proposal_line_item_service_1_1cfe777a11a6653fa8d6b78b33d6f4ba55.html#ac46b3821eec5177fb5e41bf30427e228":[1,0,0,0,0,2,6,0,37,0,1]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_proposal_line_item_service_1_1cfe777a11a6653fa8d6b78b33d6f4ba55.html":[1,0,0,0,0,2,6,0,37,0]
 };

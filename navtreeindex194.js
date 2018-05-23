@@ -1,7 +1,5 @@
 var NAVTREEINDEX194 =
 {
-"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_extension_setting_service_interface.html#a7bebe5375a3fade4ffbb7c6a9e7a09a2":[1,0,0,0,0,0,4,642,1],
-"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_extension_setting_service_interface.html#aa70d15d1f8698a5ef6523ec8d6ad1383":[1,0,0,0,0,0,4,642,0],
 "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_extension_setting_service_interface.html#ae25aa68a301a02b3f5f0722b2caa6c2d":[1,0,0,0,0,0,4,642,2],
 "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_extension_setting_service_interface_channel.html":[1,0,0,0,0,0,4,645],
 "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_feed_service_interface.html":[1,0,0,0,0,0,4,311],
@@ -249,5 +247,7 @@ var NAVTREEINDEX194 =
 "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_feed_mapping_service.html#a5533cb4e553f1f1f73ab8e0e35eb40c1":[1,0,0,0,0,0,4,761,0],
 "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_feed_service.html":[1,0,0,0,0,0,4,759],
 "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_feed_service.html#af346b90d904f5e82cff37dc97a2825ce":[1,0,0,0,0,0,4,759,0],
-"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_label_service.html":[1,0,0,0,0,0,4,776]
+"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_label_service.html":[1,0,0,0,0,0,4,776],
+"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_label_service.html#accf03e2b7449f2a0d3e8f5eaa1203ebc":[1,0,0,0,0,0,4,776,0],
+"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_location_criterion_service.html":[1,0,0,0,0,0,4,762]
 };

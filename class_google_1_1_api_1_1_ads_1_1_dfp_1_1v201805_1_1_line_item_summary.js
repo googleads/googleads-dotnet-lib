@@ -82,6 +82,8 @@ var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary =
     [ "statusSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html#a5e83d01a532544941ab7042ac66a98c3", null ],
     [ "unlimitedEndDateTime", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html#a9b4e85f07c04df7fb3dee2fc70faeacd", null ],
     [ "unlimitedEndDateTimeSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html#ab5d3d294d3d0d637f26eb98cd5e63d21", null ],
+    [ "userConsentEligibility", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html#aa7339c1ff566369421acb88669689674", null ],
+    [ "userConsentEligibilitySpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html#a26871f48052ca70d4d9e9570f1a71480", null ],
     [ "valueCostPerUnit", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html#a3ef6a93229a51099848c7eb7d1c64e05", null ],
     [ "videoMaxDuration", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html#a95f63f6b8797852ed294a537d27fbffa", null ],
     [ "videoMaxDurationSpecified", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html#a85f4f92a5c80884de7c3450c240fa8ba", null ],

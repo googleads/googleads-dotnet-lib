@@ -1,5 +1,7 @@
 var NAVTREEINDEX124 =
 {
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_page.html#a367c5d1c54c51d080f58dc3601041d52":[1,0,0,0,0,2,4,736,0],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_page.html#a4b81f2f51eb2d13e5b9784ec848d9fb9":[1,0,0,0,0,2,4,736,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_page.html#a9a0297546fc2a0fc1f542cf9166548d7":[1,0,0,0,0,2,4,736,4],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_page.html#a9f27ba7e9f7687e2308f9fe9d0365da0":[1,0,0,0,0,2,4,736,2],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_segment_page.html#ab049330cf4fb378b29df549dd34b7fc0":[1,0,0,0,0,2,4,736,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX124 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#aec86fcdb4094db76b0ebdbc792f38bde":[1,0,0,0,0,2,4,758,20],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#af2899f74f36e4ae24ba863c53c31a89c":[1,0,0,0,0,2,4,758,8],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#af585b5c02e417e7e8ff4937395a974fd":[1,0,0,0,0,2,4,758,14],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#af630665085235019713bfef92ab23114":[1,0,0,0,0,2,4,758,13],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#af9158e303186878a79616f7c294bd759":[1,0,0,0,0,2,4,758,12],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company_credit_status_error.html":[1,0,0,0,0,2,4,289]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company.html#af630665085235019713bfef92ab23114":[1,0,0,0,0,2,4,758,13]
 };

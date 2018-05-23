@@ -1,5 +1,7 @@
 var NAVTREEINDEX60 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_where_builder_3_01_t_parent_01_4.html#a33f7a9a56bd589966f4d3b8fd8034ef1":[1,0,0,0,0,0,3,1,1,50,23],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_where_builder_3_01_t_parent_01_4.html#a371635af72ccb842d8a3bc42531e0a8c":[1,0,0,0,0,0,3,1,1,50,9],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_where_builder_3_01_t_parent_01_4.html#a3f175fc012e71511b59bc8a1b1a0ce04":[1,0,0,0,0,0,3,1,1,50,18],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_where_builder_3_01_t_parent_01_4.html#a41f66c9159253e90dbac50aa6b7146b2":[1,0,0,0,0,0,3,1,1,50,19],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_where_builder_3_01_t_parent_01_4.html#a5150a1dc7fda8c5dca5fdbc5af27c125":[1,0,0,0,0,0,3,1,1,50,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX60 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_error.html":[1,0,0,0,0,0,4,99],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_error.html#a3ac9f32f107ee95d942f7919de94e93d":[1,0,0,0,0,0,4,99,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_error.html#adc0a28180ccf81902cd3b401d8ca77d2":[1,0,0,0,0,0,4,99,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_error_1_1_fields.html":[1,0,0,0,0,0,4,99,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_error_1_1_fields.html#aaece0a7e187177a55aab87f5f035bf56":[1,0,0,0,0,0,4,99,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_error_1_1_filterable_fields.html":[1,0,0,0,0,0,4,99,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_error_1_1_fields.html":[1,0,0,0,0,0,4,99,0]
 };

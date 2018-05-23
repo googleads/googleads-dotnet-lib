@@ -1,5 +1,7 @@
 var NAVTREEINDEX37 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_automatic_placemen002c212b60e6e740cc61e051934db1bd.html#aa9ed20b524372fc2e27ceff0c3603d71":[1,0,0,0,0,0,3,1,1,8,19],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_automatic_placemen002c212b60e6e740cc61e051934db1bd.html#aabfa3f31d1a39b21a5b0825620789ed5":[1,0,0,0,0,0,3,1,1,8,6],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_automatic_placemen002c212b60e6e740cc61e051934db1bd.html#aabfa3f31d1a39b21a5b0825620789ed5a0470087b5c0baa65c8ee50461855871f":[1,0,0,0,0,0,3,1,1,8,6,22],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_automatic_placemen002c212b60e6e740cc61e051934db1bd.html#aabfa3f31d1a39b21a5b0825620789ed5a122f9aa550bf4fa5922c1fb882996609":[1,0,0,0,0,0,3,1,1,8,6,18],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_automatic_placemen002c212b60e6e740cc61e051934db1bd.html#aabfa3f31d1a39b21a5b0825620789ed5a59d51f6f74e8216818e6e6f7db7c61eb":[1,0,0,0,0,0,3,1,1,8,6,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX37 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_budget_performance_report_report_row.html#a2b2b8235a4d07b6278d580d63c8e4b90":[1,0,0,0,0,0,3,1,1,21,27],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_budget_performance_report_report_row.html#a2f63023c51b0bbdcac4750a7309addd2":[1,0,0,0,0,0,3,1,1,21,14],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_budget_performance_report_report_row.html#a39f064c26f31d93bd82dd6930bf6bfbf":[1,0,0,0,0,0,3,1,1,21,47],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_budget_performance_report_report_row.html#a3ca88c26985fccd4d36efc4c66d0652a":[1,0,0,0,0,0,3,1,1,21,28],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_budget_performance_report_report_row.html#a4020810c759a30181d654216907facce":[1,0,0,0,0,0,3,1,1,21,31],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_budget_performance_report_report_row.html#a47eac8bbe60d18bd00e20f7dc8397a35":[1,0,0,0,0,0,3,1,1,21,38]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201802_1_1_budget_performance_report_report_row.html#a3ca88c26985fccd4d36efc4c66d0652a":[1,0,0,0,0,0,3,1,1,21,28]
 };

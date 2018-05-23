@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_add_dynamic_page_feed.html#ab4628916f1d096d1c2c359e93cc5cb46":[1,0,0,0,0,0,0,0,1,7,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_add_dynamic_search_ads_campaign.html":[1,0,0,0,0,0,0,0,1,8],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_add_dynamic_search_ads_campaign.html#a05afbfd07b57227d0edc354f7c605011":[1,0,0,0,0,0,0,0,1,8,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_add_dynamic_search_ads_campaign.html#a5791220fa19e83a7b8d154aa6eb5b466":[1,0,0,0,0,0,0,0,1,8,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_add_expanded_text_ad_with_upgraded_urls.html":[1,0,0,0,0,0,0,0,1,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_ad_group_bid_modifier.html":[1,0,0,0,0,0,0,0,2,5],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_ad_group_bid_modifier.html#a7d047f70384cf1b9370359d75d91c1d4":[1,0,0,0,0,0,0,0,2,5,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_ad_group_bid_modifier.html#aaf15652d1cd1ad49d82ca194c6a32de5":[1,0,0,0,0,0,0,0,2,5,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_ad_group_demographic_criteria.html":[1,0,0,0,0,0,0,0,2,19],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_ad_group_demographic_criteria.html#a048a25498c86642d429f1d7135e04d26":[1,0,0,0,0,0,0,0,2,19,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_ad_group_demographic_criteria.html#af4fdfb49bc45811a6caee3ce9c94a9c6":[1,0,0,0,0,0,0,0,2,19,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_ad_group_demographic_criteria.html":[1,0,0,0,0,0,0,0,2,19]
 };
