@@ -68,9 +68,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="My Project\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Condition="Exists('App.config')" Include="App.config" />
+    <Content Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <ItemGroup>
@@ -257,8 +258,5 @@
     <Compile Include="ExampleBase.vb" />
     <Compile Include="ExampleUtilities.vb" />
     <Compile Include="Program.vb" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App.config" />
   </ItemGroup>
 </Project>
