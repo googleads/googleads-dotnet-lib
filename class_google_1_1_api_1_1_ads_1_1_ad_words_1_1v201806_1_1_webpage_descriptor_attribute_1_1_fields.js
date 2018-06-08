@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_webpage_descriptor_attribute_1_1_fields =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_webpage_descriptor_attribute_1_1_fields.html#ae29e22a2a9d973a7ce37a92b4d696d02", null ]
+];

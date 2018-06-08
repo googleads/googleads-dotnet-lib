@@ -1,0 +1,10 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_universal_app_campaign_ads_policy_decisions =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_universal_app_campaign_ads_policy_decisions_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_universal_app_campaign_ads_policy_decisions_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_universal_app_campaign_ads_policy_decisions_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_universal_app_campaign_ads_policy_decisions_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_universal_app_campaign_ads_policy_decisions_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_universal_app_campaign_ads_policy_decisions_1_1_selectable_fields" ],
+    [ "assetId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_universal_app_campaign_ads_policy_decisions.html#a4c40d19729c5c96a405c7b04f309ebe9", null ],
+    [ "policyTopicEntries", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_universal_app_campaign_ads_policy_decisions.html#a7106ee5f304b96d336d34ba462c4f4d0", null ],
+    [ "universalAppCampaignAsset", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_universal_app_campaign_ads_policy_decisions.html#a783e4a6da134114cee4c03905282cbde", null ],
+    [ "universalAppCampaignAssetSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_universal_app_campaign_ads_policy_decisions.html#a2b57db5461fa338476373b78d6ae11c2", null ]
+];

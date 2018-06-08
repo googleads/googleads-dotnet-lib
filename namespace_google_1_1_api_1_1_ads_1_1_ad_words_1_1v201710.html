@@ -154,7 +154,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A target which caused a policy finding.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_policy_topic_constraint.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_country_constraint.html">CountryConstraint</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information about countries that were targeted that caused a policy finding.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_country_constraint.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information about countries that were targeted that caused a policy finding. If a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_country_constraint.html" title="Information about countries that were targeted that caused a policy finding. If a CountryConstraint h...">CountryConstraint</a> has 0 targeted countries and an empty list of constrained countries, it means that the constraint applies globally.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_country_constraint.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_policy_topic_evidence.html">PolicyTopicEvidence</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evidence that caused this policy topic to be reported.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_policy_topic_evidence.html#details">More...</a><br/></td></tr>
@@ -504,7 +504,7 @@ AdxEnabled">This is enabled for AdX.</span>  <a href="class_google_1_1_api_1_1_a
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A custom attribute value. As a product can have multiple custom attributes, the user must specify a dimension type that indicates the index of the attribute by which to subdivide. All cases of the same subdivision must have the same dimension type (attribute index).  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_product_custom_attribute.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_product_legacy_condition.html">ProductLegacyCondition</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A plain condition string. Not supported by campaigns of <a href="AdvertisingChannelType#SHOPPING">AdvertisingChannelType::SHOPPING</a>.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_product_legacy_condition.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A plain condition string. Not supported by campaigns of <a href="AdvertisingChannelType#SHOPPING">AdvertisingChannelType::SHOPPING</a> so is only used in <a href="ProductScope">ProductScope</a>s.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_product_legacy_condition.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_product_channel_exclusivity.html">ProductChannelExclusivity</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The product channel exclusivity dimension, which limits the availability of an offer between only local, only online, or both. Only supported by campaigns of <a href="AdvertisingChannelType#SHOPPING">AdvertisingChannelType::SHOPPING</a>.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_product_channel_exclusivity.html#details">More...</a><br/></td></tr>
@@ -644,7 +644,7 @@ AdxEnabled">This is enabled for AdX.</span>  <a href="class_google_1_1_api_1_1_a
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this service to manage campaign-level criteria.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_campaign_criterion_service.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_selective_optimization.html">SelectiveOptimization</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selected set of conversion types for optimizing campaigns. For e.g. For universal app campaigns, these are the set of in-app actions to optimize the campaign towards.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_selective_optimization.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selected set of conversion types or a selective optimization set id for optimizing campaigns. For e.g. For universal app campaigns, these are the set of in-app actions to optimize the campaign towards.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_selective_optimization.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_list_operations.html">ListOperations</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes the behavior of elements in a list. Instances of <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_list_operations.html" title="Describes the behavior of elements in a list. Instances of ListOperations will always be defined alon...">ListOperations</a> will always be defined alongside some list in an API POJO. The number of operators in the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_list_operations.html" title="Describes the behavior of elements in a list. Instances of ListOperations will always be defined alon...">ListOperations</a> must be equal to the number of elements in the POJO list. Each operator, together with its corresponding list element, describe an intended change.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_list_operations.html#details">More...</a><br/></td></tr>
@@ -1297,14 +1297,14 @@ AdxEnabled">This is disabled for AdX.</span>  <a href="class_google_1_1_api_1_1_
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_move_operation.html">MoveOperation</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_operation.html" title="This represents an operation that includes an operator and an operand specified type. ">Operation</a> for moving <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_managed_customer.html" title="Data object that represents a managed customer. Member of ManagedCustomerPage. ">ManagedCustomer</a> links. See <a href="ManagedCustomerService#mutateManager">ManagedCustomerService::mutateManager</a>.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_move_operation.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_link_operation.html">LinkOperation</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_operation.html" title="This represents an operation that includes an operator and an operand specified type. ">Operation</a> for modifying <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_managed_customer.html" title="Data object that represents a managed customer. Member of ManagedCustomerPage. ">ManagedCustomer</a> links. See <a href="ManagedCustomerService#mutateLink">ManagedCustomerService::mutateLink</a>.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_link_operation.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_managed_customer_label_operation.html">ManagedCustomerLabelOperation</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An operation to apply or remove an account label from a managed customer. <b>Note:</b> The  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_managed_customer_label_operation.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_managed_customer_label.html">ManagedCustomerLabel</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A label ID and customer ID the label applies to.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_managed_customer_label.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_link_operation.html">LinkOperation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_operation.html" title="This represents an operation that includes an operator and an operand specified type. ">Operation</a> for modifying <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_managed_customer.html" title="Data object that represents a managed customer. Member of ManagedCustomerPage. ">ManagedCustomer</a> links. See <a href="ManagedCustomerService#mutateLink">ManagedCustomerService::mutateLink</a>.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_link_operation.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_managed_customer_return_value.html">ManagedCustomerReturnValue</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A container for return values from the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_managed_customer_service.html" title="Customer Manager Service. ">ManagedCustomerService</a>.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_managed_customer_return_value.html#details">More...</a><br/></td></tr>
@@ -1328,7 +1328,7 @@ AdxEnabled">This is disabled for AdX.</span>  <a href="class_google_1_1_api_1_1_
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_media_service_interface_channel.html">MediaServiceInterfaceChannel</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_media_service.html">MediaService</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this service to manage media for your template ads. After uploading images and videos with this service, use the IDs when creating image or template ads.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_media_service.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this service to manage media.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_media_service.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_offline_conversion_feed_return_value.html">OfflineConversionFeedReturnValue</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A container for return values from the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_offline_conversion_feed_service.html" title="Service that handles the reporting of offline conversion data from external third parties...">OfflineConversionFeedService</a>.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_offline_conversion_feed_return_value.html#details">More...</a><br/></td></tr>
@@ -1429,7 +1429,7 @@ AdxEnabled">This is disabled for AdX.</span>  <a href="class_google_1_1_api_1_1_
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_common.html">Common</a> metadata for Store Sales uploads.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_store_sales_upload_common_metadata.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_third_party_upload_metadata.html">ThirdPartyUploadMetadata</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metadata for a Third party Store Sales upload.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_third_party_upload_metadata.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metadata for a Third party Store Sales upload. Note: This is a whitelisted only product. Please contact your <a class="el" href="namespace_google.html">Google</a> business development representative for details on upload configuration.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_third_party_upload_metadata.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_first_party_upload_metadata.html">FirstPartyUploadMetadata</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metadata for a First party Store Sales upload.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_first_party_upload_metadata.html#details">More...</a><br/></td></tr>
@@ -1881,6 +1881,9 @@ AdxEnabled">This is disabled for AdX.</span>  <a href="class_google_1_1_api_1_1_
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_service.html">AdGroupService</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this service to manage ad groups. An <a href="AdGroup">ad group</a> organizes a set of ads and criteria together, and also provides the <a href="AdGroup#bids">default bid</a> for its criteria. One or more ad groups belong to a campaign.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_service.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_account_label_page.html">AccountLabelPage</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains a list of AccountLabels.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_account_label_page.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_date.html">Date</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a date.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_date.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2309,7 +2312,7 @@ AdxEnabled">This is disabled for AdX.</span>  <a href="class_google_1_1_api_1_1_
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_customer.html" title="Represents a customer for the CustomerService. ">Customer</a> Manager Service.  <a href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_managed_customer_service.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_media_service.html">IMediaService</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this service to manage media for your template ads. After uploading images and videos with this service, use the IDs when creating image or template ads.  <a href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_media_service.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this service to manage media.  <a href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_media_service.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_offline_conversion_feed_service.html">IOfflineConversionFeedService</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service that handles the reporting of offline conversion data from external third parties.  <a href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_i_offline_conversion_feed_service.html#details">More...</a><br/></td></tr>
@@ -3143,7 +3146,7 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html#ab77084e381197ede9abcfd3c7672a7dda9456a2a109a4d4147f1e15aa93fd7174">AuthorizationErrorReason.SERVICE_ACCESS_DENIED</a> = 6
 <br/>
  }</td></tr>
-<tr class="memdesc:ab77084e381197ede9abcfd3c7672a7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The reasons for the database error.  <a href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html#ab77084e381197ede9abcfd3c7672a7dd">More...</a><br/></td></tr>
+<tr class="memdesc:ab77084e381197ede9abcfd3c7672a7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The reasons for the authorization error.  <a href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html#ab77084e381197ede9abcfd3c7672a7dd">More...</a><br/></td></tr>
 <tr class="separator:ab77084e381197ede9abcfd3c7672a7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d1fff04d0f18d9b9f7f4571573ba1c0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html#a6d1fff04d0f18d9b9f7f4571573ba1c0">AuthenticationErrorReason</a> { <br/>
 &#160;&#160;<a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html#a6d1fff04d0f18d9b9f7f4571573ba1c0a589b1e3a3d0a06a04b8167f1593d5c17">AuthenticationErrorReason.AUTHENTICATION_FAILED</a> = 0, 
@@ -7587,7 +7590,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The reasons for the database error. </p>
+<p>The reasons for the authorization error. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ab77084e381197ede9abcfd3c7672a7ddab85e7074a94abfd734ae396c10b75568"></a>UNABLE_TO_AUTHORIZE</em>&nbsp;</td><td class="fielddoc">
 <p>Could not complete authorization due to an internal problem. </p>
@@ -8515,7 +8518,7 @@ Enumerations</h2></td></tr>
 <p>The campaign group is active. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ac08c1845b60c9b25833537d122eb2d77a63c2867fdcae0e8e8413d7ac21b69b59"></a>DELETED</em>&nbsp;</td><td class="fielddoc">
-<p>The campaign group is deleted. </p>
+<p>The campaign group has been removed. </p>
 </td></tr>
 </table>
 
@@ -12169,7 +12172,7 @@ Enumerations</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a9c821213178343359c12a346025e7b3ba2826a4ab7864a8d6e53f9ec8dcd472b4"></a>ENTRY_POINT_CANNOT_BE_SET_USING_MEDIA_SERVICE</em>&nbsp;</td><td class="fielddoc">
 <p>The entryPoint field cannot be set using the </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_media_service.html" title="Use this service to manage media for your template ads. After uploading images and videos with this s...">MediaService</a></code>. </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_media_service.html" title="Use this service to manage media. ">MediaService</a></code>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a9c821213178343359c12a346025e7b3ba0bbffe9eb8bbfc49246e867fccaefb73"></a>BAD_REQUEST</em>&nbsp;</td><td class="fielddoc">
 <p>There was a problem with the request. </p>
@@ -12991,7 +12994,7 @@ Enumerations</h2></td></tr>
 <p>Indicates the zip code. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a22ec7269b523e8c07451272f2f7d084daa29c360794920f54a9471ac73492c95f"></a>COUNTRY_CODE</em>&nbsp;</td><td class="fielddoc">
-<p>Indicates the country. </p>
+<p>ISO two-letter country codes. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a22ec7269b523e8c07451272f2f7d084da990db0fb585e6f4196cfb9c5c7b78305"></a>EXTERNAL_USER_ID</em>&nbsp;</td><td class="fielddoc">
 <p>Indicates the external id like third party id. </p>
@@ -15504,7 +15507,7 @@ Enumerations</h2></td></tr>
 <p>The advertiser archived the campaign trial. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a1fa1c8674ee0ade3c8268f8f4ae812bdacfef2b302e0fa5d373026e8597d5555c"></a>CREATION_FAILED</em>&nbsp;</td><td class="fielddoc">
-<p>The materializer failed to create the materialized campaign. More details about the errors are available through getErrors in the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_trial_service.html" title="TrialService manages the life cycle of campaign trials. It is used to create new trials from drafts...">TrialService</a> API.The advertiser cannot set this status directly. </p>
+<p>The trial campaign failed to create. More details about the errors are available through getErrors in the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_trial_service.html" title="TrialService manages the life cycle of campaign trials. It is used to create new trials from drafts...">TrialService</a> API.The advertiser cannot set this status directly. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a1fa1c8674ee0ade3c8268f8f4ae812bdad610f88b9a1caca1627837e8da4a3575"></a>PROMOTE_FAILED</em>&nbsp;</td><td class="fielddoc">
 <p>The promotion failed after it was partially applied. Promote cannot be attempted again safely, so the issue must be corrected in the original campaign. More details about the errors are available through getErrors in the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_trial_service.html" title="TrialService manages the life cycle of campaign trials. It is used to create new trials from drafts...">TrialService</a> API.The advertiser cannot set this status directly. To promote the trial, set the trial in state PROMOTING and the status will be updated to PROMOTE_FAILED if errors are encountered while applying changes to the original campaign. </p>
@@ -16265,7 +16268,7 @@ Enumerations</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html">v201710</a></li>
-    <li class="footer">Generated on Tue May 22 2018 18:32:57 for Ads API .NET library by
+    <li class="footer">Generated on Fri Jun 8 2018 09:05:07 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

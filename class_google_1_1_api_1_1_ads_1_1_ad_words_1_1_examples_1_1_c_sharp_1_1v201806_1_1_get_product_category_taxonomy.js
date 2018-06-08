@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201806_1_1_get_product_category_taxonomy =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201806_1_1_get_product_category_taxonomy.html#a62ddcbc0f843585dfcbe7fb32cfdc6ad", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201806_1_1_get_product_category_taxonomy.html#a01babf27d4e49d479977ece30663d9dd", null ]
+];

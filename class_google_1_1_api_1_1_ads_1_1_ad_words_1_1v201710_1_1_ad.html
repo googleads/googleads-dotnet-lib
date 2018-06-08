@@ -202,7 +202,7 @@ Filterable">This field can be filtered on.</span>  <a href="#a4a6018674aacd9574b
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The base class of all ad types. </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad.html" title="The base class of all ad types. ">Ad</a></code> objects themselves cannot be modified. If you want to make a change to an <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad.html" title="The base class of all ad types. ">Ad</a></code> object, you must REMOVE its <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_ad.html" title="Represents an ad in an ad group. ">AdGroupAd</a> and ADD a new <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_ad.html" title="Represents an ad in an ad group. ">AdGroupAd</a> with the new <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad.html" title="The base class of all ad types. ">Ad</a></code>. This will result in a new <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad.html" title="The base class of all ad types. ">Ad</a></code> ID, so stats for the original <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad.html" title="The base class of all ad types. ">Ad</a></code> and the new <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad.html" title="The base class of all ad types. ">Ad</a></code> will appear under separate IDs in reports. </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad.html" title="The base class of all ad types. ">Ad</a></code>s are created using the <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_ad_service.html" title="Use this service to manage ads. Available ad types are subclasses of the base Ad type and are shown i...">AdGroupAdService</a></code>. Some ad types such as <code></code>s may be modified using the <code>AdService</code>. </p>
 <p>When calling <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_ad_service.html" title="Use this service to manage ads. Available ad types are subclasses of the base Ad type and are shown i...">AdGroupAdService</a></code> to update the <code></code> of an <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_group_ad.html" title="Represents an ad in an ad group. ">AdGroupAd</a></code>, you can construct an <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad.html" title="The base class of all ad types. ">Ad</a></code> object (instead of the <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad.html" title="The base class of all ad types. ">Ad</a></code>'s concrete type) with the <a href="#id">#id</a> field set. <span class="constraint AdxEnabled">This is enabled for AdX.</span></p>
 </div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="a6dbbf2f522df695b2bc77fdfa0e9dff6"></a>
@@ -596,7 +596,7 @@ Selectable">This field can be selected using the value "UrlData".</span> </p>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.Yca5IS5hYB/dist/github/src/AdWords/v201710/<a class="el" href="v201710_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>/usr/local/google/users/cseeley/tmp/tmp.XjSxk619HT/dist/github/src/AdWords/v201710/<a class="el" href="v201710_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -604,7 +604,7 @@ Selectable">This field can be selected using the value "UrlData".</span> </p>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html">v201710</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad.html">Ad</a></li>
-    <li class="footer">Generated on Tue May 22 2018 18:33:05 for Ads API .NET library by
+    <li class="footer">Generated on Fri Jun 8 2018 09:05:22 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_money_with_currency_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_money_with_currency_1_1_filterable_fields.html#a7258e9885ede6a36258b2eff788830b5", null ]
+];

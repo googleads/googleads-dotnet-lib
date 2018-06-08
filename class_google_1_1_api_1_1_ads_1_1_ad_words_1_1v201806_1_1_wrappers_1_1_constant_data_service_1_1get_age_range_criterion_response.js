@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_wrappers_1_1_constant_data_service_1_1get_age_range_criterion_response =
+[
+    [ "getAgeRangeCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_wrappers_1_1_constant_data_service_1_1get_age_range_criterion_response.html#ad0a09406aca74debf6d90b0bd17bbf32", null ],
+    [ "getAgeRangeCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_wrappers_1_1_constant_data_service_1_1get_age_range_criterion_response.html#ada91ff0613e54a81f106520b5df15120", null ],
+    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_wrappers_1_1_constant_data_service_1_1get_age_range_criterion_response.html#ae7fdab95d5c9e5fa9ce277d1b3076b84", null ]
+];

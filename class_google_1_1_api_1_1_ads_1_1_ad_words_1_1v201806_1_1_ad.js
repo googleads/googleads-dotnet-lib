@@ -1,0 +1,26 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad_1_1_selectable_fields" ],
+    [ "AdType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a6d5fedc0e8ed6086b6e1f73140d60018", null ],
+    [ "automated", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a46e2fff7b64ea62005849bd463a5a6a5", null ],
+    [ "automatedSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a25c9009f89a59200b51c5884e2c9b737", null ],
+    [ "devicePreference", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a582ac75f14345bc4a52b7db606b0c1e7", null ],
+    [ "devicePreferenceSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a29a549bff6e916b065ba59d11de2b149", null ],
+    [ "displayUrl", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a72c56f54d71535776471a48afea7269b", null ],
+    [ "finalAppUrls", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a3d637ff85a697fa9e671e41ec75801f3", null ],
+    [ "finalMobileUrls", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a9876ac9ca69930f51bee8e443907ef4c", null ],
+    [ "finalUrls", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a48e3eaf52f6f789ce0f675f9dea6125a", null ],
+    [ "finalUrlSuffix", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a154e325a6029f683eb920fbfd5ef099d", null ],
+    [ "id", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a4de37bacabcc6fed360ca806d2ae4c56", null ],
+    [ "idSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a5b5bf21bf1ebf0ccefb1bcd4782f4165", null ],
+    [ "systemManagedEntitySource", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#af719ea99c0d37d202bc0d278b336123e", null ],
+    [ "systemManagedEntitySourceSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a8e4360461cecfff6f8b59a4dd964ddc8", null ],
+    [ "trackingUrlTemplate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a7c1d0b65313f9627df8e851be0b02e53", null ],
+    [ "type", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a4a813dd351eb880568f13cf6e9c06f86", null ],
+    [ "typeSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#acbf5dfced804e5ba9918e49132718951", null ],
+    [ "url", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a543bab2e6dc7b6b878a28de769635515", null ],
+    [ "urlCustomParameters", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a40301cf03ad293e2b39bc2e0afc70597", null ],
+    [ "urlData", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html#a0da8b6a61f955a688dc97806d6e20777", null ]
+];

@@ -5,11 +5,11 @@ var class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_i
     [ "ExchangeCodeForToken", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#af7bbbe7fe9db6d2b6ea611cbb30040af", null ],
     [ "FetchAccessAndRefreshTokens", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#ab0f98b79e0c3e1a31e50034298423e33", null ],
     [ "GenerateAccessTokenForServiceAccount", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#af26e3a56d4acee2e4a6aefde099cd5cd", null ],
+    [ "GetAccessTokenForAuthorizationCodeFlow", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#acdb528438c9152354e9a0800f3bd10b5", null ],
     [ "GetAccessTokenForServiceAccount", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#a3a32ff3d380fa98dd52cb9a245ab39c9", null ],
     [ "GetAuthHeader", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#a8092decdfb3949fddac54991017aa001", null ],
     [ "GetAuthorizationUrl", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#a113987ff999efecf87183ccf2da2faf0", null ],
     [ "RefreshAccessToken", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#af002cd6325595c5d3eb636c596206355", null ],
-    [ "RefreshAccessToken", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#acf0b317246dbd1151ec3fe25ca0457d0", null ],
     [ "RefreshAccessTokenIfExpiring", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#ac1767e39da319f2e0c294faf13bab4d3", null ],
     [ "RefreshAccessTokenInOfflineMode", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#aabc8f9876ee06730f73a7fd943b340f5", null ],
     [ "RevokeRefreshToken", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#a55cc7d4466129b5ad81b82d1e90177c4", null ],
@@ -32,8 +32,8 @@ var class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_i
     [ "RefreshToken", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#a6604063883cad15b68aad59bb9a320e8", null ],
     [ "Scope", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#a0877937abe24e46480fc6e6f3a15d2ff", null ],
     [ "ServiceAccountEmail", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#a75bfe345ab450639454a2042e038c21b", null ],
-    [ "ServiceAccountFlow", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#a30a8b6d8b9a161c804123cff0c68bfe1", null ],
     [ "State", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#a815f45c5ebcf64ba0fb6e852e6a86723", null ],
+    [ "TokenResponse", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#a8174dc1c75515fefbb8e350f9bec14ad", null ],
     [ "TokenType", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#aeaf1279e2a07a9dfbe467949d63e2654", null ],
     [ "UpdatedOn", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#ad756d92f05c640d12fbe1d29f6eb25df", null ]
 ];

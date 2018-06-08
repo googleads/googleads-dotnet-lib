@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_wrappers_1_1_custom_affinity_service_1_1mutate_token_response =
+[
+    [ "mutateTokenResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_wrappers_1_1_custom_affinity_service_1_1mutate_token_response.html#ac3c6ba33e6d45728513a01f711ea1a07", null ],
+    [ "mutateTokenResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_wrappers_1_1_custom_affinity_service_1_1mutate_token_response.html#a8baa3f3938789656f2c8ae2cc04f4358", null ],
+    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_wrappers_1_1_custom_affinity_service_1_1mutate_token_response.html#a7d8be3463e43fb83379dbbcebc6f82a6", null ]
+];

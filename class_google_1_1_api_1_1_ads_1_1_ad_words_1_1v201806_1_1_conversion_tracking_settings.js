@@ -1,0 +1,10 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_conversion_tracking_settings =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_conversion_tracking_settings_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_conversion_tracking_settings_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_conversion_tracking_settings_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_conversion_tracking_settings_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_conversion_tracking_settings_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_conversion_tracking_settings_1_1_selectable_fields" ],
+    [ "effectiveConversionTrackingId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_conversion_tracking_settings.html#a69f1a93c7fc85138d533152a0225e7ed", null ],
+    [ "effectiveConversionTrackingIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_conversion_tracking_settings.html#a8c0fc1407e024db1c59a9bb4d695b9df", null ],
+    [ "usesCrossAccountConversionTracking", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_conversion_tracking_settings.html#ac1dfa1a6fee65abfa2c60c1b527826fd", null ],
+    [ "usesCrossAccountConversionTrackingSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_conversion_tracking_settings.html#a02ac210a125b89e39abb8c50e100d59d", null ]
+];

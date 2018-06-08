@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_new_entity_creation_error_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_new_entity_creation_error_1_1_selectable_fields.html#ad09931be23e41e1400958bd93757d4f1", null ]
+];
