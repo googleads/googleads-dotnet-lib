@@ -76,7 +76,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
         ' The HTML5 zip file contains all the HTML, CSS, and images needed for the
         ' HTML5 ad. For help on creating an HTML5 zip file, check out Google Web
         ' Designer (https://www.google.com/webdesigner/).
-        Dim html5Zip As Byte() = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9Y7qI2")
+        Dim html5Zip As Byte() = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9Y7qI2",
+            user.Config)
 
         ' Create a media bundle containing the zip file with all the HTML5 components.
         Dim mediaBundle As New MediaBundle()

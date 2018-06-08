@@ -144,8 +144,7 @@ namespace Google.Api.Ads.Common.Tests.OAuth {
       /// <returns>
       /// The token response.
       /// </returns>
-      protected override TokenResponse RefreshAccessToken(string refreshToken) {
-        Assert.AreEqual(Config.OAuth2RefreshToken, refreshToken);
+      protected override TokenResponse GetAccessTokenForAuthorizationCodeFlow() {
         return GetResponse();
       }
 
@@ -207,52 +206,13 @@ namespace Google.Api.Ads.Common.Tests.OAuth {
     }
 
     /// <summary>
-    /// Tests the default constructor.
-    /// </summary>
-    [Test]
-    public void TestConstructor() {
-      MockAdsOAuthProviderImpl provider = new MockAdsOAuthProviderImpl(appConfig, newAppConfig);
-      Assert.AreEqual(TEST_CLIENT_ID, provider.ClientId);
-      Assert.AreEqual(TEST_CLIENT_SECRET, provider.ClientSecret);
-      Assert.AreEqual(TEST_REDIRECT_URI, provider.RedirectUri);
-      Assert.AreEqual(TEST_ACCESS_TOKEN, provider.AccessToken);
-      Assert.AreEqual(TEST_SCOPE, provider.Scope);
-      Assert.AreEqual(TEST_REFRESH_TOKEN, provider.RefreshToken);
-      Assert.AreEqual(appConfig.OAuth2ServiceAccountEmail, provider.ServiceAccountEmail);
-      Assert.AreEqual(TEST_PRN_EMAIL, provider.PrnEmail);
-      Assert.AreEqual(appConfig.OAuth2PrivateKey, provider.JwtPrivateKey);
-    }
-
-    /// <summary>
     /// Tests the property setters and getters.
     /// </summary>
     [Test]
     public void TestProperties() {
       MockAdsOAuthProviderImpl provider = new MockAdsOAuthProviderImpl(appConfig, newAppConfig);
 
-      const string NEW_VALUE_PROPERTY_TESTING = "NEW_VALUE_PROPERTY_TESTING";
       TimeSpan EXPIRES_IN_PROPERTY_TESTING = TimeSpan.FromSeconds(800);
-
-      provider.ClientId = NEW_VALUE_PROPERTY_TESTING;
-      Assert.AreEqual(NEW_VALUE_PROPERTY_TESTING, provider.ClientId);
-
-      provider.ClientSecret = NEW_VALUE_PROPERTY_TESTING;
-      Assert.AreEqual(NEW_VALUE_PROPERTY_TESTING, provider.ClientSecret);
-
-      provider.RedirectUri = NEW_VALUE_PROPERTY_TESTING;
-      Assert.AreEqual(NEW_VALUE_PROPERTY_TESTING, provider.RedirectUri);
-
-      provider.AccessToken = NEW_VALUE_PROPERTY_TESTING;
-      Assert.AreEqual(NEW_VALUE_PROPERTY_TESTING, provider.AccessToken);
-
-      provider.Scope = NEW_VALUE_PROPERTY_TESTING;
-      Assert.AreEqual(NEW_VALUE_PROPERTY_TESTING, provider.Scope);
-
-      provider.RefreshToken = NEW_VALUE_PROPERTY_TESTING;
-      Assert.AreEqual(NEW_VALUE_PROPERTY_TESTING, provider.RefreshToken);
-
-      provider.PrnEmail = NEW_VALUE_PROPERTY_TESTING;
-      Assert.AreEqual(NEW_VALUE_PROPERTY_TESTING, provider.PrnEmail);
 
       provider.ExpiresIn = (int) EXPIRES_IN_PROPERTY_TESTING.TotalSeconds;
       Assert.AreEqual(EXPIRES_IN_PROPERTY_TESTING.TotalSeconds, provider.ExpiresIn);
@@ -270,20 +230,20 @@ namespace Google.Api.Ads.Common.Tests.OAuth {
       string temp;
 
       // Scope is a required parameter.
-      temp = provider.Scope;
-      provider.Scope = "";
+      temp = provider.Config.OAuth2Scope;
+      provider.Config.OAuth2Scope = "";
       Assert.Throws<ArgumentNullException>(delegate () {
         provider.GetAuthorizationUrl();
       });
-      provider.Scope = temp;
+      provider.Config.OAuth2Scope = temp;
 
       // RedirectUri is a required parameter.
-      temp = provider.RedirectUri;
-      provider.RedirectUri = "";
+      temp = provider.Config.OAuth2RedirectUri;
+      provider.Config.OAuth2RedirectUri = "";
       Assert.Throws<ArgumentNullException>(delegate () {
         provider.GetAuthorizationUrl();
       });
-      provider.RedirectUri = temp;
+      provider.Config.OAuth2RedirectUri = temp;
 
       // Attempt a normal call, to validate the parameter passing.
       Assert.DoesNotThrow(delegate () {
@@ -296,19 +256,12 @@ namespace Google.Api.Ads.Common.Tests.OAuth {
     /// </summary>
     [Test]
     public void TestGetAuthHeader() {
-      MockAdsOAuthProviderImpl provider = new MockAdsOAuthProviderImpl(appConfig, newAppConfig);
-      string expected = "";
+      MockAdsOAuthProviderImpl provider = new MockAdsOAuthProviderImpl(appConfig, appConfig);
 
-      // If not expiring, then we should get back the current access token.
-      expected = $"Bearer {TEST_ACCESS_TOKEN}";
-      provider.UpdatedOn = DateTime.UtcNow;
-      provider.ExpiresIn = (int) EXPIRES_IN.TotalSeconds;
-      Assert.AreEqual(expected, provider.GetAuthHeader());
-
-      // If expiring, then we should get back the new access token after an implicit refresh.
-      expected = $"Bearer {TEST_ACCESS_TOKEN_NEW}";
-      provider.UpdatedOn = ISSUED_AT;
-      provider.ExpiresIn = (int) EXPIRES_IN_NEW.TotalSeconds;
+      // Note: The logic of expiring v/s non-expiring token refresh is in the Google.Auth library.
+      // Since the test mocks out calls to the Google.Auth library, we restrict this test to verify
+      // that the header formatting is correct.
+      string expected = $"Bearer {TEST_ACCESS_TOKEN}";
       Assert.AreEqual(expected, provider.GetAuthHeader());
     }
 
@@ -322,8 +275,8 @@ namespace Google.Api.Ads.Common.Tests.OAuth {
 
       provider.FetchAccessAndRefreshTokens(TEST_AUTHORIZATION_CODE);
 
-      Assert.AreEqual(TEST_ACCESS_TOKEN_NEW, provider.AccessToken);
-      Assert.AreEqual(TEST_REFRESH_TOKEN_NEW, provider.RefreshToken);
+      Assert.AreEqual(TEST_ACCESS_TOKEN_NEW, provider.Config.OAuth2AccessToken);
+      Assert.AreEqual(TEST_REFRESH_TOKEN_NEW, provider.Config.OAuth2RefreshToken);
       Assert.AreEqual(EXPIRES_IN_NEW.TotalSeconds, provider.ExpiresIn);
       Assert.AreEqual(ISSUED_AT_NEW, provider.UpdatedOn);
     }
@@ -351,7 +304,7 @@ namespace Google.Api.Ads.Common.Tests.OAuth {
       appConfig.OAuth2Mode = OAuth2Flow.SERVICE_ACCOUNT;
       provider.GenerateAccessTokenForServiceAccount();
 
-      Assert.AreEqual(TEST_ACCESS_TOKEN_NEW, provider.AccessToken);
+      Assert.AreEqual(TEST_ACCESS_TOKEN_NEW, provider.Config.OAuth2AccessToken);
       Assert.AreEqual((int) EXPIRES_IN_NEW.TotalSeconds, provider.ExpiresIn);
       Assert.AreEqual(ISSUED_AT_NEW, provider.UpdatedOn);
     }
@@ -375,7 +328,7 @@ namespace Google.Api.Ads.Common.Tests.OAuth {
       provider.IsOffline = true;
       provider.RefreshAccessToken();
 
-      Assert.AreEqual(TEST_ACCESS_TOKEN_NEW, provider.AccessToken);
+      Assert.AreEqual(TEST_ACCESS_TOKEN_NEW, provider.Config.OAuth2AccessToken);
       Assert.AreEqual((int) EXPIRES_IN_NEW.TotalSeconds, provider.ExpiresIn);
       Assert.AreEqual(ISSUED_AT_NEW, provider.UpdatedOn);
 
@@ -383,7 +336,7 @@ namespace Google.Api.Ads.Common.Tests.OAuth {
       appConfig.OAuth2Mode = OAuth2Flow.SERVICE_ACCOUNT;
       provider.RefreshAccessToken();
 
-      Assert.AreEqual(TEST_ACCESS_TOKEN_NEW, provider.AccessToken);
+      Assert.AreEqual(TEST_ACCESS_TOKEN_NEW, provider.Config.OAuth2AccessToken);
       Assert.AreEqual((int) EXPIRES_IN_NEW.TotalSeconds, provider.ExpiresIn);
       Assert.AreEqual(ISSUED_AT_NEW, provider.UpdatedOn);
     }

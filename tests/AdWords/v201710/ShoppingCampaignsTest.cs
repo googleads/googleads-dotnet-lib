@@ -45,7 +45,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddProductPartitionTreeCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddProductPartitionTree().Run(user, adGroupId);
       });
     }
@@ -55,7 +55,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddProductPartitionTreeVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddProductPartitionTree().Run(user, adGroupId);
       });
     }
@@ -65,7 +65,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddProductScopeCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddProductScope().Run(user, campaignId);
       });
     }
@@ -75,7 +75,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddProductScopeVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddProductScope().Run(user, campaignId);
       });
     }
@@ -86,7 +86,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     [Test]
     public void TestAddShoppingCampaignCSharpExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddShoppingCampaign().Run(user, budgetId, config.MerchantCenterId,
             true);
       });
@@ -98,7 +98,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     [Test]
     public void TestAddShoppingCampaignVBExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddShoppingCampaign().Run(user, budgetId, config.MerchantCenterId, true);
       });
     }
@@ -108,7 +108,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestGetProductCategoryTaxonomyCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.GetProductCategoryTaxonomy().Run(user);
       });
     }
@@ -118,7 +118,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestGetProductCategoryTaxonomyVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.GetProductCategoryTaxonomy().Run(user);
       });
     }
@@ -129,7 +129,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     [Test]
     public void TestAddShoppingCampaignForShowcaseAdsCSharpExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddShoppingCampaignForShowcaseAds().Run(user, budgetId,
             config.MerchantCenterId);
       });
@@ -141,7 +141,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     [Test]
     public void TestAddShoppingCampaignForShowcaseAdsVBExample() {
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddShoppingCampaignForShowcaseAds().Run(user, budgetId,
             config.MerchantCenterId);
       });

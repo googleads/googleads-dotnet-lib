@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-
 namespace Google.Api.Ads.AdWords.Tests.v201710 {
+
   /// <summary>
   /// Base class for code examples that adds version-specific features.
   /// </summary>
-  class VersionedExampleTestsBase : ExampleTestsBase {
+  internal class VersionedExampleTestsBase : ExampleTestsBase {
+
     /// <summary>
     /// Test utilities instance for support functionality when running tests.
     /// </summary>

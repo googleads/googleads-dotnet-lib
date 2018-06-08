@@ -32,7 +32,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     /// a protected method, so we expose ReadSettings in the mock version to
     /// allow easier configuration of AppConfig while running test cases.
     /// </remarks>
-    public void MockReadSettings(Dictionary<string, string> dictSettings) => 
+    public void MockReadSettings(Dictionary<string, string> dictSettings) =>
       base.ReadSettings(dictSettings);
   }
 

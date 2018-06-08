@@ -24,15 +24,14 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
   /// Test cases for <see cref="ResponseHeader"/> class.
   /// </summary>
   internal class ResponseHeaderTests {
+    private const string XML_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201705";
+    private const int OPERATION_COUNT = 5;
+    private const string REQUEST_ID = "abcdefghijklmnopqrstuvwxyz1234567890";
+    private const string SERVICE_NAME = "BudgetService";
+    private const string METHOD_NAME = "mutate";
+    private const int RESPONSE_TIME = 324;
 
-    const string XML_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201705";
-    const int OPERATION_COUNT = 5;
-    const string REQUEST_ID = "abcdefghijklmnopqrstuvwxyz1234567890";
-    const string SERVICE_NAME = "BudgetService";
-    const string METHOD_NAME = "mutate";
-    const int RESPONSE_TIME = 324;
-
-    private readonly string SOAP_XML_HEADER = 
+    private readonly string SOAP_XML_HEADER =
       $@"<ResponseHeader xmlns='{XML_NAMESPACE}'>
             <requestId>{REQUEST_ID}</requestId>
             <serviceName>{SERVICE_NAME}</serviceName>

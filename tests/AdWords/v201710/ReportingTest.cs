@@ -15,25 +15,21 @@
 using Google.Api.Ads.AdWords.v201710;
 
 using NUnit.Framework;
-
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using System.Threading;
 
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201710;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201710;
 
 namespace Google.Api.Ads.AdWords.Tests.v201710 {
+
   /// <summary>
   /// Test cases for all the code examples under v201710\Reporting.
   /// </summary>
-  class ReportingTest : VersionedExampleTestsBase {
-    string outputFolderPath;
-    string outputFileName;
+  internal class ReportingTest : VersionedExampleTestsBase {
+    private string outputFolderPath;
+    private string outputFileName;
 
-    ReportDefinitionReportType reportType;
+    private ReportDefinitionReportType reportType;
 
     /// <summary>
     /// Inits this instance.
@@ -50,7 +46,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestDownloadCriteriaReportWithSelectorVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.DownloadCriteriaReportWithSelector().Run(user, outputFileName);
       });
     }
@@ -60,7 +56,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestDownloadCriteriaReportWithSelectorCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.DownloadCriteriaReportWithSelector().Run(user, outputFileName);
       });
     }
@@ -70,7 +66,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestDownloadCriteriaReportWithAwqlVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.DownloadCriteriaReportWithAwql().Run(user, outputFileName);
       });
     }
@@ -80,7 +76,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestDownloadCriteriaReportWithAwqlCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.DownloadCriteriaReportWithAwql().Run(user, outputFileName);
       });
     }
@@ -90,7 +86,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestGetReportFieldsVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.GetReportFields().Run(user, reportType);
       });
     }
@@ -100,7 +96,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestGetReportFieldsCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.GetReportFields().Run(user, reportType);
       });
     }
@@ -110,7 +106,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestStreamCriteriaReportResultsVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.StreamCriteriaReportResults().Run(user);
       });
     }
@@ -120,7 +116,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestStreamCriteriaReportResultsCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.StreamCriteriaReportResults().Run(user);
       });
     }
@@ -130,7 +126,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestStreamCriteriaReportToPocoCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.StreamCriteriaReportToPoco().Run(user);
       });
     }
@@ -140,7 +136,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestStreamCriteriaReportToPocoVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.StreamCriteriaReportToPoco().Run(user);
       });
     }
@@ -150,7 +146,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestStreamReportToPredefinedReportRowTypeVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.StreamReportToPredefinedReportRowType().Run(user);
       });
     }
@@ -160,7 +156,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestStreamReportToPredefinedReportRowTypeCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.StreamReportToPredefinedReportRowType().Run(user);
       });
     }
@@ -170,7 +166,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestParallelReportDownloadCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.ParallelReportDownload().Run(user, outputFolderPath);
       });
     }

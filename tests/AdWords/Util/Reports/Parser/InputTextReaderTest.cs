@@ -12,19 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.AdWords.Util.Reports;
+using NUnit.Framework;
 using System;
 using System.Linq;
 
-using Google.Api.Ads.AdWords.Util.Reports;
-
-using NUnit.Framework;
-using System.IO;
-
 namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
+
   /// <summary>
   /// Tests for the <see ref="InputTextReader" /> classes.
   /// </summary>
-  class InputReaderTest {
+  internal class InputReaderTest {
 
     // A sample fake XML report for testing.
     private readonly string testXml = Resources.ValidXMLRepeatedRows;

@@ -58,7 +58,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
 
         Try
           ' Create HTML5 media.
-          Dim html5Zip As Byte() = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9Y7qI2")
+          Dim html5Zip As Byte() = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9Y7qI2",
+              user.Config)
           ' Create a media bundle containing the zip file with all the HTML5 components.
           Dim mediaBundleArray(1) As Media
 

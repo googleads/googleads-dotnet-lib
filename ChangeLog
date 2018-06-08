@@ -1,3 +1,31 @@
+23.5.0
+======
+AdWords:
+  - Added support for v201806.
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/166
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/169
+  - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/164
+  - Fixed several code examples to use the MediaUtilities.GetAssetDataFromUrl method that
+  accepts an AppConfig parameter.
+DFP:
+  - Fixed several code examples to use the MediaUtilities.GetAssetDataFromUrl method that
+  accepts an AppConfig parameter.
+Common:
+ - Added support for overriding OAuth endpoints.
+ - Added support to check for expiry of access tokens before they are refreshed.
+ - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/156. As a result,
+ MediaUtilities.GetAssetDataFromUrl(Uri url) and MediaUtilities.GetAssetDataFromUrl(string url)
+ were removed. These methods attempt to use the config settings from an App.config file, and
+ wouldn't work properly when invoked from a method which uses a config that is constructed at
+ runtime. You can use the overloaded method that accepts an AppConfig parameter as a
+ replacement. You can obtain an AppConfig instance from the AdWordsUser or DfpUser object's Config
+ property.
+
+ - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/170. Use Stream.CopyTo followed by
+ Stream.Read as a replacement for the discontinued MediaUtilities.CopyStreamWithPreview method.
+ - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/171. Use Stream.CopyTo as a
+ replacement for the discontinued MediaUtilities.CopyStream method.
+
 23.4.1
 ======
 AdWords:

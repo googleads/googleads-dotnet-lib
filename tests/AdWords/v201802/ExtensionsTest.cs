@@ -47,7 +47,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
           new OAuth2ProviderForApplications(appConfig);
       oAuth2Provider.RefreshAccessToken();
 
-      gmbAccessToken = oAuth2Provider.AccessToken;
+      gmbAccessToken = oAuth2Provider.Config.OAuth2AccessToken;
     }
 
     /// <summary>
@@ -55,7 +55,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddSitelinksVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddSitelinks().Run(user, campaignId);
       });
     }
@@ -65,7 +65,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddSitelinksCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddSitelinks().Run(user, campaignId);
       });
     }
@@ -75,7 +75,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddPricesVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddPrices().Run(user, campaignId);
       });
     }
@@ -85,7 +85,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddPricesCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddPrices().Run(user, campaignId);
       });
     }
@@ -96,7 +96,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     [Test]
     public void TestAddSitelinksUsingFeedsVBExample() {
       string feedName = "SitelinkFeed" + utils.GetTimeStampAlpha();
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddSitelinksUsingFeeds().Run(user, campaignId, feedName, adGroupId);
       });
     }
@@ -107,7 +107,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     [Test]
     public void TestAddSitelinksUsingFeedsCSharpExample() {
       string feedName = "SitelinkFeed" + utils.GetTimeStampAlpha();
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddSitelinksUsingFeeds().Run(user, campaignId, feedName, adGroupId);
       });
     }
@@ -124,7 +124,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
 
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
 
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddGoogleMyBusinessLocationExtensions().Run(user,
             config.GMBLoginEmail, gmbAccessToken, null);
       });
@@ -142,7 +142,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
 
       AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
 
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddGoogleMyBusinessLocationExtensions().Run(user, config.GMBLoginEmail,
             gmbAccessToken, null);
       });

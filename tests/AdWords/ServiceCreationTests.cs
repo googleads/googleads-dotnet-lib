@@ -12,15 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Linq;
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201802;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests;
-
 using NUnit.Framework;
+using System;
+using System.Linq;
 
 namespace Google.Api.Ads.AdWords.Tests {
 
@@ -43,8 +41,8 @@ namespace Google.Api.Ads.AdWords.Tests {
     [Test]
     public void TestCreateServices() {
       StubIntegrityTestHelper.EnumerateServices<AdWordsService>(
-          delegate(ServiceSignature serviceSignature) {
-            Assert.DoesNotThrow(delegate() {
+          delegate (ServiceSignature serviceSignature) {
+            Assert.DoesNotThrow(delegate () {
               AdsClient service = user.GetService(serviceSignature);
             });
           });

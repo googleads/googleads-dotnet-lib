@@ -3,7 +3,7 @@
    <PropertyGroup>
     <Title>Google's DoubleClick for Publishers API Dotnet Client Library</Title>
     <PackageId>Google.Dfp</PackageId>
-    <Version>23.4.1</Version>
+    <Version>23.5.0</Version>
     <Description>This library provides you with functionality to access the Google's DoubleClick for Publishers API.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
     <PackageTags>DFP Google</PackageTags>
@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NodaTime" Version="2.2.0" />
-    <PackageReference Include="Google.Ads.Common" Version="9.2.0" />
+    <PackageReference Include="Google.Ads.Common" Version="9.3.0" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.4.2" />
   </ItemGroup>
   <ItemGroup>

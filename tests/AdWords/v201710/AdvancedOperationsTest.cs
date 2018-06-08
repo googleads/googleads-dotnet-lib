@@ -100,7 +100,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddUniversalAppCampaignVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddUniversalAppCampaign().Run(user);
       });
     }
@@ -110,7 +110,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddUniversalAppCampaignCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddUniversalAppCampaign().Run(user);
       });
     }
@@ -120,7 +120,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddClickToDownloadAdVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddClickToDownloadAd().Run(user, mobileAdGroupId);
       });
     }
@@ -130,7 +130,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddClickToDownloadAdCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddClickToDownloadAd().Run(user, mobileAdGroupId);
       });
     }
@@ -140,7 +140,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddResponsiveDisplayAdVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddResponsiveDisplayAd().Run(user, displayAdGroupId);
       });
     }
@@ -150,7 +150,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddResponsiveDisplayAdCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddResponsiveDisplayAd().Run(user, displayAdGroupId);
       });
     }
@@ -160,7 +160,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddAdGroupBidModifierCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddAdGroupBidModifier().Run(user, adGroupId1, BID_MODIFIER);
       });
     }
@@ -170,7 +170,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddAdGroupBidModifierVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddAdGroupBidModifier().Run(user, adGroupId1, BID_MODIFIER);
       });
     }
@@ -180,7 +180,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestGetAdGroupBidModifiersCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.GetAdGroupBidModifiers().Run(user, campaignId);
       });
     }
@@ -190,7 +190,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestGetAdGroupBidModifiersVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.GetAdGroupBidModifiers().Run(user, campaignId);
       });
     }
@@ -201,7 +201,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     [Test]
     public void TestAddAdCustomizersCSharpExample() {
       string feedName = "AdCustomizerFeed" + utils.GetTimeStampAlpha();
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddAdCustomizers().Run(user, adGroupId1, adGroupId2, feedName);
       });
     }
@@ -212,7 +212,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     [Test]
     public void TestAddAdCustomizersVBExample() {
       string feedName = "AdCustomizerFeed" + utils.GetTimeStampAlpha();
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddAdCustomizers().Run(user, adGroupId1, adGroupId2, feedName);
       });
     }
@@ -222,7 +222,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestCreateAndAttachSharedKeywordSetCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.CreateAndAttachSharedKeywordSet().Run(user, campaignId);
       });
     }
@@ -232,7 +232,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestCreateAndAttachSharedKeywordSetVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.CreateAndAttachSharedKeywordSet().Run(user, campaignId);
       });
     }
@@ -242,7 +242,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestFindAndRemoveCriteriaFromSharedSetCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.FindAndRemoveCriteriaFromSharedSet().Run(user, campaignId);
       });
     }
@@ -252,7 +252,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestFindAndRemoveCriteriaFromSharedSetVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.FindAndRemoveCriteriaFromSharedSet().Run(user, campaignId);
       });
     }
@@ -262,7 +262,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddHtml5AdCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddHtml5Ad().Run(user, adGroupId1);
       });
     }
@@ -272,7 +272,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddHtml5AdVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddHtml5Ad().Run(user, adGroupId1);
       });
     }
@@ -282,7 +282,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddDynamicSearchAdsCampaignCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddDynamicSearchAdsCampaign().Run(user);
       });
     }
@@ -292,7 +292,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddDynamicSearchAdsCampaignVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddDynamicSearchAdsCampaign().Run(user);
       });
     }
@@ -302,7 +302,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddDynamicPageFeedCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddDynamicPageFeed().Run(user, dsaCampaignId, dsaAdGroupId);
       });
     }
@@ -312,7 +312,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddDynamicPageFeedVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddDynamicPageFeed().Run(user, dsaCampaignId, dsaAdGroupId);
       });
     }
@@ -322,7 +322,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestUsePortfolioBiddingStrategyCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.UsePortfolioBiddingStrategy().Run(user);
       });
     }
@@ -332,7 +332,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestUsePortfolioBiddingStrategyVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.UsePortfolioBiddingStrategy().Run(user);
       });
     }
@@ -342,7 +342,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddExpandedTextAdWithUpgradedUrlsCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddExpandedTextAdWithUpgradedUrls().Run(user, adGroupId1);
       });
     }
@@ -352,7 +352,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddExpandedTextAdWithUpgradedUrlsVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddExpandedTextAdWithUpgradedUrls().Run(user, adGroupId1);
       });
     }

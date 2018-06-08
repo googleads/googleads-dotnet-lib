@@ -22,7 +22,8 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
   /// <summary>
   /// Utility functions for testing shopping utility classes.
   /// </summary>
-  class ShoppingTestUtils {
+  internal class ShoppingTestUtils {
+
     /// <summary>
     /// A ProductBrand node for Google brand.
     /// </summary>
@@ -42,7 +43,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// A ProductOfferId node for Offer A.
     /// </summary>
     internal readonly ProductDimension OFFER_A = ProductDimensions.CreateOfferId("A");
-    
+
     /// <summary>
     /// A ProductOfferId node for Offer B.
     /// </summary>
@@ -52,7 +53,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// A ProductOfferId node for Offer C.
     /// </summary>
     internal readonly ProductDimension OFFER_C = ProductDimensions.CreateOfferId("C");
-    
+
     /// <summary>
     /// A ProductOfferId node for Everything else.
     /// </summary>

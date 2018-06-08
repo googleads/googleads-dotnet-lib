@@ -132,7 +132,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201710 {
         adGroupCriterionService.mutate(new AdGroupCriterionOperation[] { removeOp });
       }
 
-      Assert.DoesNotThrow(delegate() {
+      Assert.DoesNotThrow(delegate () {
         tree = ProductPartitionTree.DownloadAdGroupTree(user, ADGROUP_ID);
       });
     }
@@ -147,7 +147,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201710 {
     private void RebuildSingleNodeTree() {
       // Clear out the tree and set the root bid.
       tree.Root.RemoveAllChildren().AsBiddableUnit().CpcBid = 2500000L;
-      Assert.DoesNotThrow(delegate() {
+      Assert.DoesNotThrow(delegate () {
         tree = ExecuteTreeOperations();
       });
     }
@@ -163,7 +163,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201710 {
             ProductDimensions.CreateType(ProductDimensionType.PRODUCT_TYPE_L1,
                 productTypeValues[i])).AsBiddableUnit().CpcBid = bids[i];
       }
-      Assert.DoesNotThrow(delegate() {
+      Assert.DoesNotThrow(delegate () {
         tree = ExecuteTreeOperations();
       });
     }
@@ -264,7 +264,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201710 {
       rootNode.AddChild(ProductDimensions.CreateType(ProductDimensionType.PRODUCT_TYPE_L1, null))
           .AsExcludedUnit();
 
-      Assert.DoesNotThrow(delegate() {
+      Assert.DoesNotThrow(delegate () {
         tree = ExecuteTreeOperations();
       });
     }
@@ -289,7 +289,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201710 {
           ProductCanonicalConditionCondition.REFURBISHED)).AsBiddableUnit().CpcBid = 1500000L;
       shoesLevel1.AddChild(ProductDimensions.CreateCanonicalCondition()).AsExcludedUnit();
 
-      Assert.DoesNotThrow(delegate() {
+      Assert.DoesNotThrow(delegate () {
         tree = ExecuteTreeOperations();
       });
     }
@@ -333,7 +333,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201710 {
         newShoesLevel2.AddChild(offerId).AsBiddableUnit().CpcBid = i * 1000000L;
       }
 
-      Assert.DoesNotThrow(delegate() {
+      Assert.DoesNotThrow(delegate () {
         tree = ExecuteTreeOperations();
       });
     }
@@ -371,7 +371,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201710 {
       shoesLevel1.GetChild(ProductDimensions.CreateCanonicalCondition()).AsBiddableUnit()
           .CpcBid = 500000L;
 
-      Assert.DoesNotThrow(delegate() {
+      Assert.DoesNotThrow(delegate () {
         tree = ExecuteTreeOperations();
       });
     }
@@ -391,7 +391,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201710 {
       tree.Root.RemoveChild(ProductDimensions.CreateType(ProductDimensionType.PRODUCT_TYPE_L1,
           "shoes"));
 
-      Assert.DoesNotThrow(delegate() {
+      Assert.DoesNotThrow(delegate () {
         tree = ExecuteTreeOperations();
       });
     }
@@ -402,7 +402,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201710 {
     private void CollapseShoes() {
       tree.Root.GetChild(ProductDimensions.CreateType(ProductDimensionType.PRODUCT_TYPE_L1,
           "shoes")).AsBiddableUnit().CpcBid = (1500000L);
-      Assert.DoesNotThrow(delegate() {
+      Assert.DoesNotThrow(delegate () {
         tree = ExecuteTreeOperations();
       });
     }
@@ -422,7 +422,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201710 {
       tree.Root.GetChild(ProductDimensions.CreateType(
         ProductDimensionType.PRODUCT_TYPE_L1, "clothing")).AsBiddableUnit().CpcBid = bid;
 
-      Assert.DoesNotThrow(delegate() {
+      Assert.DoesNotThrow(delegate () {
         tree = ExecuteTreeOperations();
       });
     }

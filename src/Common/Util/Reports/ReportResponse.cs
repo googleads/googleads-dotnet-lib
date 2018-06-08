@@ -122,7 +122,7 @@ namespace Google.Api.Ads.Common.Util.Reports {
       try {
         using (FileStream fileStream = File.OpenWrite(path)) {
           fileStream.SetLength(0);
-          MediaUtilities.CopyStream(this.Stream, fileStream);
+          this.Stream.CopyTo(fileStream);
           this.CloseWebResponse();
         }
         this.Path = path;
@@ -168,7 +168,7 @@ namespace Google.Api.Ads.Common.Util.Reports {
 
       try {
         MemoryStream memStream = new MemoryStream();
-        MediaUtilities.CopyStream(this.Stream, memStream);
+        this.Stream.CopyTo(memStream);
         this.contents = memStream.ToArray();
         this.CloseWebResponse();
       } catch (Exception e) {

@@ -14,24 +14,22 @@
 
 using Google.Api.Ads.Common.Tests;
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Google.Api.Ads.AdWords.Tests {
+
   /// <summary>
   /// Contains mock data for a given code example.
   /// </summary>
   public class ExamplesMockData {
+
     /// <summary>
     /// List of HTTP messages to be mocked.
     /// </summary>
-    HttpMessage[] mockMessages = null;
+    private HttpMessage[] mockMessages = null;
 
     /// <summary>
     /// Expected output from the code example.
     /// </summary>
-    string expectedOutput = "";
+    private string expectedOutput = "";
 
     /// <summary>
     /// Overloaded constructor.

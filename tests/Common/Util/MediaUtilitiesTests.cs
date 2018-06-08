@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.Common.Tests.Mocks;
 using Google.Api.Ads.Common.Util;
 
 using NUnit.Framework;
@@ -76,7 +77,7 @@ namespace Google.Api.Ads.Common.Tests.Util {
     [Test]
     [Category("Small")]
     public void TestGetAssetDataFromUrl1() {
-      byte[] data = MediaUtilities.GetAssetDataFromUrl(fileUri);
+      byte[] data = MediaUtilities.GetAssetDataFromUrl(fileUri, new MockAppConfig());
       Assert.AreEqual(FILE_CONTENTS, Encoding.UTF8.GetString(data));
     }
 
@@ -86,7 +87,7 @@ namespace Google.Api.Ads.Common.Tests.Util {
     [Test]
     [Category("Small")]
     public void TestGetAssetDataFromUrl2() {
-      byte[] data = MediaUtilities.GetAssetDataFromUrl(fileUri.AbsoluteUri);
+      byte[] data = MediaUtilities.GetAssetDataFromUrl(fileUri.AbsoluteUri, new MockAppConfig());
       Assert.AreEqual(FILE_CONTENTS, Encoding.UTF8.GetString(data));
     }
 
@@ -98,28 +99,6 @@ namespace Google.Api.Ads.Common.Tests.Util {
     public void TestDeflateGZipData() {
       byte[] deflatedData = MediaUtilities.DeflateGZipData(compressedData);
       Assert.AreEqual(FILE_CONTENTS, Encoding.UTF8.GetString(deflatedData));
-    }
-
-    /// <summary>
-    /// Tests if data can be copied from one stream to another correctly.
-    /// </summary>
-    [Test]
-    [Category("Small")]
-    public void TestCopyStream() {
-      MediaUtilities.CopyStream(sourceStream, targetStream);
-      Assert.AreEqual(FILE_CONTENTS, Encoding.UTF8.GetString(sourceStream.ToArray()));
-    }
-
-    /// <summary>
-    /// Tests if data can be copied from one stream to another correctly with
-    /// preview.
-    /// </summary>
-    [Test]
-    [Category("Small")]
-    public void TestCopyStreamWithPreview() {
-      byte[] preview = MediaUtilities.CopyStreamWithPreview(sourceStream, targetStream, 5);
-      Assert.AreEqual(FILE_CONTENTS.Substring(0, 5), Encoding.UTF8.GetString(preview));
-      Assert.AreEqual(FILE_CONTENTS, Encoding.UTF8.GetString(sourceStream.ToArray()));
     }
 
     /// <summary>

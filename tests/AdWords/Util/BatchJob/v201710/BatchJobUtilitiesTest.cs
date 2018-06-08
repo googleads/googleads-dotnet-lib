@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Util.BatchJob;
 using Google.Api.Ads.AdWords.Util.BatchJob.v201710;
@@ -77,22 +76,30 @@ namespace Google.Api.Ads.AdWords.Tests.Util.BatchJob.v201710 {
       /// <summary>
       /// Gets or sets the start of the chunk.
       /// </summary>
-      public int Start { get; set; }
+      public int Start {
+        get; set;
+      }
 
       /// <summary>
       /// Gets or sets the end of the chunk.
       /// </summary>
-      public int End { get; set; }
+      public int End {
+        get; set;
+      }
 
       /// <summary>
       /// Gets or sets the start file offset on the server.
       /// </summary>
-      public long StartOffset { get; set; }
+      public long StartOffset {
+        get; set;
+      }
 
       /// <summary>
       /// Gets or sets the total size of the upload.
       /// </summary>
-      public long? TotalUploadSize { get; set; }
+      public long? TotalUploadSize {
+        get; set;
+      }
     }
 
     /// <summary>
@@ -285,18 +292,18 @@ namespace Google.Api.Ads.AdWords.Tests.Util.BatchJob.v201710 {
     public void TestInit() {
       // Any chunk size that is not a multiple of 256K should throw an
       // exception if chunking is turned on.
-      Assert.Throws(typeof(ArgumentException), delegate() {
+      Assert.Throws(typeof(ArgumentException), delegate () {
         this.Init(TEST_USER, true, TEST_NON_MULTIPLE_CHUNK_SIZE);
       });
 
       // Any chunk size that is a multiple of 256K should not throw an
       // exception if chunking is turned on.
-      Assert.DoesNotThrow(delegate() {
+      Assert.DoesNotThrow(delegate () {
         this.Init(TEST_USER, true, CHUNK_SIZE_ALIGN * 12);
       });
 
       // Chunk size ignored if chunking is false.
-      Assert.DoesNotThrow(delegate() {
+      Assert.DoesNotThrow(delegate () {
         this.Init(TEST_USER, false, TEST_NON_MULTIPLE_CHUNK_SIZE);
       });
     }
@@ -392,7 +399,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.BatchJob.v201710 {
       Assert.AreEqual("ABC", GetTextToLog(Encoding.UTF8.GetBytes(textToLog), 0, 3));
 
       // If you pass indices out of range of the array, exception is thrown.
-      Assert.Throws<ArgumentOutOfRangeException>(delegate() {
+      Assert.Throws<ArgumentOutOfRangeException>(delegate () {
         GetTextToLog(Encoding.UTF8.GetBytes(textToLog), 10, 20);
       });
       string utf8TextToLog = "こんにちは"; // Hello

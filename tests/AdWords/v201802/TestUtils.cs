@@ -673,8 +673,8 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// Returns an image which can be used for creating image ads.
     /// </summary>
     /// <returns>The image data, as an array of bytes.</returns>
-    public byte[] GetTestImage() {
-      return MediaUtilities.GetAssetDataFromUrl("http://goo.gl/HJM3L");
+    public byte[] GetTestImage(AdWordsAppConfig config) {
+      return MediaUtilities.GetAssetDataFromUrl("http://goo.gl/HJM3L", config);
     }
 
     /// <summary>

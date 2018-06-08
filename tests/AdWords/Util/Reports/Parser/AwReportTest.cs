@@ -12,19 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.AdWords.Util.Reports;
+using NUnit.Framework;
 using System;
 using System.Linq;
 
-using Google.Api.Ads.AdWords.Util.Reports;
-
-using NUnit.Framework;
-using System.IO;
-
 namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
+
   /// <summary>
   /// Unit tests for the <see cref="AwReport{A}"/> class.
   /// </summary>
-  class AwReportTest {
+  internal class AwReportTest {
 
     // A valid XML report for use with the <see ref="TestRow" /> POCO type.
     private readonly string testXml = Resources.ValidXMLDistinctRows;
@@ -34,14 +32,16 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
 
     private void testActionWithXmlReport(Action<AwReport<TestRow>> action) {
       TestUtils.testActionWithXmlTextReader(
-        reader => { action(new AwReport<TestRow>(reader, "test")); },
+        reader => {
+          action(new AwReport<TestRow>(reader, "test"));
+        },
         testXml);
     }
 
     /// <summary>
     /// Tests the MoveNext function. The provided report only has 4 rows, but this
     /// test tries to move to next row 10 times, however only 4 of those calls
-    /// must return true. 
+    /// must return true.
     /// </summary>
     [Test]
     public void moveNextRowTest() {
@@ -99,7 +99,6 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
     [Test]
     public void getCurrentRowTest() {
       testActionWithXmlReport(report => {
-
         report.MoveNext();
         var currentRow = report.Current;
         Assert.AreEqual("2", currentRow.Atrib2);
@@ -115,7 +114,6 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
         report.MoveNext();
         currentRow = report.Current;
         Assert.AreEqual("10", currentRow.Atrib2);
-
       });
     }
 

@@ -128,7 +128,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
       using (MediaService mediaService = (MediaService) user.GetService(
           AdWordsService.v201802.MediaService)) {
         Image image = new Image();
-        image.data = MediaUtilities.GetAssetDataFromUrl(url);
+        image.data = MediaUtilities.GetAssetDataFromUrl(url, user.Config);
         image.type = MediaMediaType.IMAGE;
         return mediaService.upload(new Media[] { image })[0];
       }

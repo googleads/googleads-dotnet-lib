@@ -50,34 +50,9 @@ namespace Google.Api.Ads.Common.Util {
 
       MemoryStream memStream = new MemoryStream();
       using (Stream responseStream = response.GetResponseStream()) {
-        CopyStream(responseStream, memStream);
+        responseStream.CopyTo(memStream);
       }
       return memStream.ToArray();
-    }
-
-    /// <summary>
-    /// Retrieves an asset from the web given its url.
-    /// </summary>
-    /// <param name="assetUrl">The url of the asset to be retrieved.</param>
-    /// <returns>Asset data, as an array of bytes.</returns>
-    /// <exception cref="ArgumentNullException">Thrown if
-    /// <paramref name="assetUrl"/> is null.</exception>
-    public static byte[] GetAssetDataFromUrl(Uri assetUrl) {
-      return GetAssetDataFromUrl(assetUrl, new AppConfigBase());
-    }
-
-    /// <summary>
-    /// Retrieves an asset from the web given its url.
-    /// </summary>
-    /// <param name="assetUrl">The url of the asset to be retrieved.</param>
-    /// <returns>Asset data, as an array of bytes.</returns>
-    /// <exception cref="ArgumentNullException">Thrown if
-    /// <paramref name="assetUrl"/> is null.</exception>
-    public static byte[] GetAssetDataFromUrl(string assetUrl) {
-      if (string.IsNullOrEmpty(assetUrl)) {
-        throw new ArgumentNullException("assetUrl");
-      }
-      return GetAssetDataFromUrl(new Uri(assetUrl));
     }
 
     /// <summary>
@@ -90,14 +65,6 @@ namespace Google.Api.Ads.Common.Util {
     /// <paramref name="assetUrl"/> or <paramref name="config" /> is null.
     /// </exception>
     public static byte[] GetAssetDataFromUrl(string assetUrl, AppConfig config) {
-      if (string.IsNullOrEmpty(assetUrl)) {
-        throw new ArgumentNullException("assetUrl");
-      }
-
-      if (config == null) {
-        throw new ArgumentNullException("config");
-      }
-
       return GetAssetDataFromUrl(new Uri(assetUrl), config);
     }
 
@@ -115,73 +82,9 @@ namespace Google.Api.Ads.Common.Util {
       MemoryStream memStream = new MemoryStream();
       using (GZipStream gzipStream = new GZipStream(new MemoryStream(gzipData),
           CompressionMode.Decompress)) {
-        CopyStream(gzipStream, memStream);
+        gzipStream.CopyTo(memStream);
       }
       return memStream.ToArray();
-    }
-
-    /// <summary>
-    /// Copies a stream from source to destination and returns the first n
-    /// bytes as preview.
-    /// </summary>
-    /// <param name="sourceStream">Source stream.</param>
-    /// <param name="targetStream">Destination stream.</param>
-    /// <param name="maxPreviewBytes">The maximum number of preview bytes to
-    /// return.</param>
-    /// <returns>An array of bytes, whose max size is maxPreviewBytes.</returns>
-    /// <exception cref="ArgumentException">Thrown if source stream is not
-    /// readable, or if the target stream is not writable.
-    /// </exception>
-    /// <exception cref="ArgumentNullException">
-    /// Thrown if <paramref name="sourceStream"/> or
-    /// <paramref name="targetStream"/> is null.</exception>
-    public static byte[] CopyStreamWithPreview(Stream sourceStream, Stream targetStream,
-        int maxPreviewBytes) {
-      if (sourceStream == null) {
-        throw new ArgumentNullException("sourceStream");
-      }
-
-      if (targetStream == null) {
-        throw new ArgumentNullException("targetStream");
-      }
-
-      if (!sourceStream.CanRead) {
-        throw new System.ArgumentException(CommonErrorMessages.SourceStreamIsNotReadable);
-      }
-
-      if (!targetStream.CanWrite) {
-        throw new System.ArgumentException(CommonErrorMessages.TargetStreamIsNotWritable);
-      }
-
-      int bufferSize = 2 << 20;
-      byte[] buffer = new byte[bufferSize];
-      List<Byte> byteArray = new List<byte>();
-
-      int bytesRead = 0;
-      while ((bytesRead = sourceStream.Read(buffer, 0, bufferSize)) != 0) {
-        int index = 0;
-        while (byteArray.Count < maxPreviewBytes && index < bytesRead) {
-          byteArray.Add(buffer[index]);
-          index++;
-        }
-        targetStream.Write(buffer, 0, bytesRead);
-      }
-      return byteArray.ToArray();
-    }
-
-    /// <summary>
-    /// Copies a stream from source to destination.
-    /// </summary>
-    /// <param name="sourceStream">Source stream.</param>
-    /// <param name="targetStream">Destination stream.</param>
-    /// <exception cref="ArgumentException">Thrown if source stream is not
-    /// readable, or if the target stream is not writable.
-    /// </exception>
-    /// <exception cref="ArgumentNullException">
-    /// Thrown if <paramref name="sourceStream"/> or
-    /// <paramref name="targetStream"/> is null.</exception>
-    public static void CopyStream(Stream sourceStream, Stream targetStream) {
-      CopyStreamWithPreview(sourceStream, targetStream, 0);
     }
 
     /// <summary>

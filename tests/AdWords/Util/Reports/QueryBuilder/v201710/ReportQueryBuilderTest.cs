@@ -12,19 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
-
-using NUnit.Framework;
 using Google.Api.Ads.AdWords.Util.Reports.v201710;
 using Google.Api.Ads.AdWords.v201710;
+using NUnit.Framework;
 using System;
-using System.Text.RegularExpressions;
 
 namespace Google.Api.Ads.AdWords.Tests.Util.Reports.QueryBuilder.v201710 {
+
   /// <summary>
   /// Unit tests for the <see cref="ReportQueryBuilder"/> class.
   /// </summary>
-  class ReportQueryBuilderTest {
+  internal class ReportQueryBuilderTest {
 
     /// <summary>
     /// Tests the standard query construction.

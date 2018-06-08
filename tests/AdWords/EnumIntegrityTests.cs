@@ -47,7 +47,7 @@ namespace Google.Api.Ads.AdWords.Tests {
       StubIntegrityTestHelper.EnumerateEnumFields<AdWordsService>(ROOT_NAMESPACE,
 
         // For each matching enum and field, process it.
-        delegate(string hashedFieldName, int enumValue) {
+        delegate (string hashedFieldName, int enumValue) {
           // If this key exists in the lookup table, then the value of that
           // entry should match the value of the enum field we are examining.
           int existingEnumValue = 0;

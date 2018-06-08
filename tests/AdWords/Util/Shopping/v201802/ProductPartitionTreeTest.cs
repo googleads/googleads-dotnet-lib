@@ -22,7 +22,6 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 
-
 namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201802 {
 
   /// <summary>

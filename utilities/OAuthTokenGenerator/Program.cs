@@ -14,14 +14,14 @@
 
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Util.Store;
-
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Google.Api.Ads.Common.Utilities.OAuthTokenGenerator {
+
   /// <summary>
   /// Entry point for the application.
   /// </summary>
@@ -68,12 +68,12 @@ namespace Google.Api.Ads.Common.Utilities.OAuthTokenGenerator {
       string clientSecret = Console.ReadLine();
 
       // Should API scopes include AdWords API?
-      Console.Write("Authenticate for AdWords API? (yes/no): ");
-      string useAdWordsApiScope = Console.ReadLine();
+      string useAdWordsApiScope = AcceptInputWithLimitedOptions("Authenticate for AdWords API?",
+          new string[] { "yes", "no" });
 
       // Should API scopes include AdWords API?
-      Console.Write("Authenticate for DFP API? (yes/no): ");
-      string useDfpApiScope = Console.ReadLine();
+      string useDfpApiScope = AcceptInputWithLimitedOptions("Authenticate for DFP API?",
+          new string[] { "yes", "no" });
 
       // Accept any additional scopes.
       Console.Write("Enter additional OAuth2 scopes to authenticate for (space separated): ");
@@ -124,6 +124,36 @@ namespace Google.Api.Ads.Common.Utilities.OAuthTokenGenerator {
       } catch (AggregateException) {
         Console.WriteLine("An error occured while authorizing the user.");
       }
+    }
+
+    /// <summary>
+    /// Accepts the input with limited options.
+    /// </summary>
+    /// <param name="prompt">The user prompt.</param>
+    /// <param name="options">The acceptable options.</param>
+    /// <returns>The user response.</returns>
+    /// <remarks>The options and user responses are converted to lower case.</remarks>
+    private static string AcceptInputWithLimitedOptions(string prompt,
+        IEnumerable<string> options) {
+      List<string> sanitizedOptions = new List<string>(options).Select(delegate (string item) {
+        return item.ToLower();
+      }).ToList();
+
+      string allowedOptionsPrompt = string.Join(" / ", sanitizedOptions);
+      bool foundMatch = false;
+      string response = "";
+
+      while (!foundMatch) {
+        Console.Write($"{prompt} ({allowedOptionsPrompt}): ");
+        response = Console.ReadLine().Trim().ToLower();
+        if (sanitizedOptions.Contains(response)) {
+          foundMatch = true;
+        } else {
+          foundMatch = false;
+          Console.WriteLine($"Invalid input: please enter {allowedOptionsPrompt}.");
+        }
+      }
+      return response;
     }
   }
 }

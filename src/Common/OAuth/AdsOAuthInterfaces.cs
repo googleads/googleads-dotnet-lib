@@ -50,6 +50,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// obtained from the <a href="https://code.google.com/apis/console">
     /// API console</a> during application registration.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     string ClientId { get; set; }
 
     /// <summary>
@@ -57,12 +58,14 @@ namespace Google.Api.Ads.Common.Lib {
     /// <a href="https://code.google.com/apis/console">API console</a>
     /// during application registration.during application registration.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     string ClientSecret { get; set; }
 
     /// <summary>
     /// Gets or sets the API access your application is requesting. This is
     /// space delimited.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     string Scope { get; set; }
 
     /// <summary>
@@ -81,6 +84,7 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets or sets the token that can be sent to a Google API for
     /// authentication.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     string AccessToken { get; set; }
 
     /// <summary>
@@ -135,12 +139,14 @@ namespace Google.Api.Ads.Common.Lib {
     /// registered redirect uri on the
     /// <a href="https://code.google.com/apis/console">API console</a>.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     string RedirectUri { get; set; }
 
     /// <summary>
     /// Gets or sets a token that may be used to obtain a new access token.
     /// Refresh tokens are valid until the user revokes access.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     string RefreshToken { get; set; }
 
     /// <summary>
@@ -179,11 +185,13 @@ namespace Google.Api.Ads.Common.Lib {
     /// Gets the service account email for which access token should be
     /// retrieved.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     string ServiceAccountEmail { get; }
 
     /// <summary>
     /// Gets or sets the email of the account for which the call is being made.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     string PrnEmail { get; set; }
 
     /// <summary>

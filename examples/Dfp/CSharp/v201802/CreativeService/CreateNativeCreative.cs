@@ -96,7 +96,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
           asset = new CreativeAsset() {
             fileName = String.Format("image{0}.png", this.GetTimeStamp()),
             assetByteArray = MediaUtilities.GetAssetDataFromUrl("https://lh4.ggpht.com/"
-                + "GIGNKdGHMEHFDw6TM2bgAUDKPQQRIReKZPqEpMeEhZOPYnTdOQGaSpGSEZflIFs0iw=h300")
+                + "GIGNKdGHMEHFDw6TM2bgAUDKPQQRIReKZPqEpMeEhZOPYnTdOQGaSpGSEZflIFs0iw=h300",
+                user.Config)
           }
         });
 
@@ -112,7 +113,8 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
           asset = new CreativeAsset() {
             fileName = String.Format("icon{0}.png", this.GetTimeStamp()),
             assetByteArray = MediaUtilities.GetAssetDataFromUrl("https://lh6.ggpht.com/"
-                + "Jzvjne5CLs6fJ1MHF-XeuUfpABzl0YNMlp4RpHnvPRCIj4--eTDwtyouwUDzVVekXw=w300")
+                + "Jzvjne5CLs6fJ1MHF-XeuUfpABzl0YNMlp4RpHnvPRCIj4--eTDwtyouwUDzVVekXw=w300",
+                user.Config)
           }
         });
 

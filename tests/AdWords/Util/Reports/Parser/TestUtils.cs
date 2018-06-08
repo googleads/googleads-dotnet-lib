@@ -12,12 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Text;
-
 using Google.Api.Ads.AdWords.Util.Reports;
-
+using System;
 using System.IO;
+using System.Text;
 
 namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
 
@@ -53,27 +51,41 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
   /// <summary>
   /// An example of a POCO that can be used to hold report data. Used for unit testing.
   /// </summary>
-  class TestRow {
-    [ReportColumn]
-    public double Atrib1 { get; set; }
+  internal class TestRow {
 
     [ReportColumn]
-    public string Atrib2 { get; set; }
+    public double Atrib1 {
+      get; set;
+    }
+
+    [ReportColumn]
+    public string Atrib2 {
+      get; set;
+    }
 
     [ReportColumn("Atrib3")]
-    public long AtribX { get; set; }
+    public long AtribX {
+      get; set;
+    }
 
-    public decimal NonReportMember { get; set; }
+    public decimal NonReportMember {
+      get; set;
+    }
   }
 
   /// <summary>
   /// An example of a POCO that has a duplicate column name.
   /// </summary>
-  class InvalidTestRow {
+  internal class InvalidTestRow {
+
     [ReportColumn]
-    public double Atrib1 { get; set; }
+    public double Atrib1 {
+      get; set;
+    }
 
     [ReportColumn("Atrib1")]
-    public string Atrib2 { get; set; }
+    public string Atrib2 {
+      get; set;
+    }
   }
 }

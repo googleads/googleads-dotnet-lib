@@ -12,26 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201802;
-
 using NUnit.Framework;
-
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Threading;
 
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201802;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201802;
 
 namespace Google.Api.Ads.AdWords.Tests.v201802 {
+
   /// <summary>
   /// Test cases for all the code examples under
   /// v201802\AudienceAndConversionManagement.
   /// </summary>
-  class RemarketingTest : VersionedExampleTestsBase {
+  internal class RemarketingTest : VersionedExampleTestsBase {
+
     /// <summary>
     /// Inits this instance.
     /// </summary>
@@ -44,7 +37,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddAudienceVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddAudience().Run(user);
       });
     }
@@ -54,7 +47,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddAudienceCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddAudience().Run(user);
       });
     }
@@ -64,7 +57,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddRuleBasedRemarketingListVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddRuleBasedRemarketingList().Run(user);
       });
     }
@@ -74,7 +67,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddRuleBasedRemarketingListCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddRuleBasedRemarketingList().Run(user);
       });
     }
@@ -84,7 +77,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddConversionTrackerVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddConversionTrackers().Run(user);
       });
     }
@@ -94,7 +87,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddConversionTrackerCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddConversionTrackers().Run(user);
       });
     }
@@ -104,7 +97,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddCrmBasedUserListVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddCrmBasedUserList().Run(user);
       });
     }
@@ -114,7 +107,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddCrmBasedUserListCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddCrmBasedUserList().Run(user);
       });
     }

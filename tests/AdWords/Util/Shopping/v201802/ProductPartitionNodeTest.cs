@@ -97,7 +97,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201802 {
     [Test]
     public void TestAddChildToUnitFails() {
       Assert.True(rootNode.IsUnit, "Root should be a unit by default.");
-      Assert.Throws<ArgumentException>(delegate() {
+      Assert.Throws<ArgumentException>(delegate () {
         rootNode.AddChild(ProductDimensions.CreateBrand("google"));
       });
     }
@@ -107,7 +107,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201802 {
     /// </summary>
     [Test]
     public void TestCreateExcludedRootFails() {
-      Assert.Throws<InvalidOperationException>(delegate() {
+      Assert.Throws<InvalidOperationException>(delegate () {
         rootNode.AsExcludedUnit();
       });
     }
@@ -118,7 +118,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201802 {
     [Test]
     public void TestGetChildThatDoesNotExistFails() {
       rootNode = rootNode.AsSubdivision();
-      Assert.Throws<ArgumentException>(delegate() {
+      Assert.Throws<ArgumentException>(delegate () {
         rootNode.GetChild(ProductDimensions.CreateBrand("google"));
       });
     }
@@ -129,7 +129,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201802 {
     [Test]
     public void TestRemoveChildThatDoesNotExistFails() {
       rootNode = rootNode.AsSubdivision();
-      Assert.Throws<ArgumentException>(delegate() {
+      Assert.Throws<ArgumentException>(delegate () {
         rootNode.RemoveChild(ProductDimensions.CreateBrand("google"));
       });
     }
@@ -143,13 +143,13 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201802 {
       rootNode.AddChild(ProductDimensions.CreateBrand("google"));
 
       // Add the same child again. The call should fail.
-      Assert.Throws<ArgumentException>(delegate() {
+      Assert.Throws<ArgumentException>(delegate () {
         rootNode.AddChild(ProductDimensions.CreateBrand("google"));
       });
 
       // Add the same child again, this time with a different case.
       // The call should fail.
-      Assert.Throws<ArgumentException>(delegate() {
+      Assert.Throws<ArgumentException>(delegate () {
         rootNode.AddChild(ProductDimensions.CreateBrand("GOOGLE"));
       });
     }
@@ -160,7 +160,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201802 {
     [Test]
     public void TestSetBidOnSubdivisionFails() {
       rootNode = rootNode.AsSubdivision();
-      Assert.Throws<InvalidOperationException>(delegate() {
+      Assert.Throws<InvalidOperationException>(delegate () {
         rootNode.CpcBid = 1;
       });
     }
@@ -171,7 +171,7 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Shopping.v201802 {
     [Test]
     public void TestSetNegativeBidFails() {
       Assert.True(rootNode.IsUnit, "root should be a unit by default.");
-      Assert.Throws<ArgumentException>(delegate() {
+      Assert.Throws<ArgumentException>(delegate () {
         rootNode.CpcBid = -1;
       });
     }

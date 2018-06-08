@@ -12,27 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201802;
 
 using NUnit.Framework;
-
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Threading;
 
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201802;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201802;
 
 namespace Google.Api.Ads.AdWords.Tests.v201802 {
+
   /// <summary>
   /// Test cases for all the code examples under v201802\ErrorHandling.
   /// </summary>
-  class ErrorHandlingTest : VersionedExampleTestsBase {
-    long campaignId;
-    long adGroupId;
+  internal class ErrorHandlingTest : VersionedExampleTestsBase {
+    private long campaignId;
+    private long adGroupId;
 
     /// <summary>
     /// Inits this instance.
@@ -48,7 +42,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestHandlePartialFailuresVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.HandlePartialFailures().Run(user, adGroupId);
       });
     }
@@ -58,7 +52,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestHandlePartialFailuresCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.HandlePartialFailures().Run(user, adGroupId);
       });
     }
@@ -68,7 +62,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestHandlePolicyViolationErrorVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.HandlePolicyViolationError().Run(user, adGroupId);
       });
     }
@@ -78,7 +72,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestHandlePolicyViolationErrorCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.HandlePolicyViolationError().Run(user, adGroupId);
       });
     }

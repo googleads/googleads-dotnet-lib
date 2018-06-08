@@ -13,25 +13,25 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util;
 
 using NUnit.Framework;
 
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading;
 using System.Xml;
 
 namespace Google.Api.Ads.AdWords.Tests {
+
   /// <summary>
   /// UnitTests for code examples.
   /// </summary>
   [TestFixture]
   [Category("ExampleTest")]
   public class ExampleTestsBase {
+
     /// <summary>
     /// The AdWordsUser instance for running code examples.
     /// </summary>
@@ -51,7 +51,7 @@ namespace Google.Api.Ads.AdWords.Tests {
     protected void RunExample(TestDelegate exampleDelegate) {
       Thread.Sleep(3000);
       StringWriter writer = new StringWriter();
-      Assert.DoesNotThrow(delegate() {
+      Assert.DoesNotThrow(delegate () {
         TextWriter oldWriter = Console.Out;
         Console.SetOut(writer);
         exampleDelegate.Invoke();
@@ -67,7 +67,7 @@ namespace Google.Api.Ads.AdWords.Tests {
     protected void VerifyHttpHeaders(WebHeaderCollection headers) {
       Assert.AreEqual(headers["Authorization"], user.OAuthProvider.GetAuthHeader());
     }
-    
+
     /// <summary>
     /// Verifies the SOAP headers.
     /// </summary>

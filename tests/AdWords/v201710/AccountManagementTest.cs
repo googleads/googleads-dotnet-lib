@@ -12,36 +12,24 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201710;
-using Google.Api.Ads.Common.Tests;
-using Google.Api.Ads.Common.Util;
-
 using NUnit.Framework;
-
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Text;
-using System.Threading;
-using System.Xml;
 
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201710;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201710;
 
 namespace Google.Api.Ads.AdWords.Tests.v201710 {
+
   /// <summary>
   /// Test cases for all the code examples under v201710\AccountManagement.
   /// </summary>
-  class AccountManagementTest : VersionedExampleTestsBase {
+  internal class AccountManagementTest : VersionedExampleTestsBase {
 
     /// <summary>
     /// Tests the GetAccountChanges VB.NET code example.
     /// </summary>
     [Test]
     public void TestGetAccountChangesVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.GetAccountChanges().Run(user);
       });
     }
@@ -51,7 +39,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestGetAccountChangesCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.GetAccountChanges().Run(user);
       });
     }

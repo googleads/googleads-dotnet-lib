@@ -71,6 +71,7 @@ namespace Google.Api.Ads.Common.OAuth {
     /// <a href="http://console.developers.google.com">Google Cloud Console</a> during
     /// application registration.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     public string ClientId {
       get {
         return Config.OAuth2ClientId;
@@ -83,6 +84,7 @@ namespace Google.Api.Ads.Common.OAuth {
     /// Gets or sets the client secret obtained from the <a href="http://console.developers.google.com">
     /// Google Cloud Console</a> during application registration.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     public string ClientSecret {
       get {
         return Config.OAuth2ClientSecret;
@@ -95,6 +97,7 @@ namespace Google.Api.Ads.Common.OAuth {
     /// <summary>
     /// Gets or sets the API access your application is requesting. This is space delimited.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     public string Scope {
       get {
         return Config.OAuth2Scope;
@@ -119,6 +122,7 @@ namespace Google.Api.Ads.Common.OAuth {
     /// <summary>
     /// Gets or sets the token that can be sent to a Google API for authentication.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     public string AccessToken {
       get {
         return Config.OAuth2AccessToken;
@@ -169,6 +173,7 @@ namespace Google.Api.Ads.Common.OAuth {
     /// redirect uri on the <a href="http://console.developers.google.com">Google Cloud
     /// Console</a>.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     public string RedirectUri {
       get {
         return Config.OAuth2RedirectUri;
@@ -181,6 +186,7 @@ namespace Google.Api.Ads.Common.OAuth {
     /// Gets or sets a token that may be used to obtain a new access token. Refresh tokens are
     /// valid until the user revokes access.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     public string RefreshToken {
       get {
         return Config.OAuth2RefreshToken;
@@ -193,6 +199,7 @@ namespace Google.Api.Ads.Common.OAuth {
     /// <summary>
     /// Gets the service account email for which access token should be retrieved.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     public string ServiceAccountEmail {
       get {
         return Config.OAuth2ServiceAccountEmail;
@@ -202,6 +209,7 @@ namespace Google.Api.Ads.Common.OAuth {
     /// <summary>
     /// Gets or sets the email of the account for which the call is being made.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     public string PrnEmail {
       get {
         return Config.OAuth2PrnEmail;
@@ -214,6 +222,7 @@ namespace Google.Api.Ads.Common.OAuth {
     /// <summary>
     /// Gets or sets the JWT private key.
     /// </summary>
+    [Obsolete("Use the Config property to read or write settings.")]
     public string JwtPrivateKey {
       get {
         return Config.OAuth2PrivateKey;
@@ -239,9 +248,9 @@ namespace Google.Api.Ads.Common.OAuth {
     public string GetAuthorizationUrl() {
       // Mark the usage.
       featureUsageRegistry.MarkUsage(FEATURE_ID);
-      ValidateOAuth2Parameter("Scope", Scope);
-      ValidateOAuth2Parameter("RedirectUri", RedirectUri);
-      return CreateAuthorizationUrl(RedirectUri);
+      ValidateOAuth2Parameter("Scope", Config.OAuth2Scope);
+      ValidateOAuth2Parameter("RedirectUri", Config.OAuth2RedirectUri);
+      return CreateAuthorizationUrl(Config.OAuth2RedirectUri);
     }
 
     /// <summary>
@@ -262,49 +271,17 @@ namespace Google.Api.Ads.Common.OAuth {
     }
 
     /// <summary>
-    /// Refreshes the access token if offline mode is used.
-    /// </summary>
-    public void RefreshAccessTokenInOfflineMode() {
-      // Mark the usage.
-      featureUsageRegistry.MarkUsage(FEATURE_ID);
-      ValidateOAuth2Parameter("RefreshToken", RefreshToken);
-
-      try {
-        ExtractTokensFromTaskResult(RefreshAccessToken(RefreshToken), false);
-      } catch (AggregateException e) {
-        throw CreateOAuthException(e, "Failed to refresh access token.");
-      }
-    }
-
-    /// <summary>
     /// Revokes the refresh token if offline mode is used.
     /// </summary>
     public void RevokeRefreshToken() {
       // Mark the usage.
       featureUsageRegistry.MarkUsage(FEATURE_ID);
-      ValidateOAuth2Parameter("RefreshToken", RefreshToken);
+      ValidateOAuth2Parameter("RefreshToken", Config.OAuth2RefreshToken);
 
       try {
-        RevokeRefreshToken(RefreshToken);
+        RevokeRefreshToken(Config.OAuth2RefreshToken);
       } catch (AggregateException e) {
         throw CreateOAuthException(e, "Failed to revoke refresh token.");
-      }
-    }
-
-    /// <summary>
-    /// Generates the access token for service account.
-    /// </summary>
-    public void GenerateAccessTokenForServiceAccount() {
-      featureUsageRegistry.MarkUsage(FEATURE_ID);
-
-      ValidateOAuth2Parameter("ServiceAccountEmail", ServiceAccountEmail);
-      ValidateOAuth2Parameter("JwtPrivateKey", JwtPrivateKey);
-      ValidateOAuth2Parameter("Scope", Scope);
-
-      try {
-        ExtractTokensFromTaskResult(GetAccessTokenForServiceAccount(), false);
-      } catch (AggregateException e) {
-        throw CreateOAuthException(e, "Failed to generate access token in service account flow.");
       }
     }
 
@@ -316,7 +293,7 @@ namespace Google.Api.Ads.Common.OAuth {
       featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       if (Config.OAuth2Mode == OAuth2Flow.APPLICATION) {
-        ValidateOAuth2Parameter("RefreshToken", RefreshToken);
+        ValidateOAuth2Parameter("RefreshToken", Config.OAuth2RefreshToken);
         if (!IsOffline) {
           throw new ArgumentException(CommonErrorMessages.OAuth2IsNotInOfflineMode);
         }
@@ -327,13 +304,43 @@ namespace Google.Api.Ads.Common.OAuth {
     }
 
     /// <summary>
+    /// Refreshes the access token if offline mode is used.
+    /// </summary>
+    public void RefreshAccessTokenInOfflineMode() {
+      // Mark the usage.
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
+      ValidateOAuth2Parameter("RefreshToken", Config.OAuth2RefreshToken);
+
+      try {
+        ExtractTokensFromTaskResult(GetAccessTokenForAuthorizationCodeFlow(), false);
+      } catch (AggregateException e) {
+        throw CreateOAuthException(e, "Failed to refresh access token.");
+      }
+    }
+
+    /// <summary>
+    /// Generates the access token for service account.
+    /// </summary>
+    public void GenerateAccessTokenForServiceAccount() {
+      featureUsageRegistry.MarkUsage(FEATURE_ID);
+
+      ValidateOAuth2Parameter("ServiceAccountEmail", Config.OAuth2ServiceAccountEmail);
+      ValidateOAuth2Parameter("JwtPrivateKey", Config.OAuth2PrivateKey);
+      ValidateOAuth2Parameter("Scope", Config.OAuth2Scope);
+
+      try {
+        ExtractTokensFromTaskResult(GetAccessTokenForServiceAccount(), false);
+      } catch (AggregateException e) {
+        throw CreateOAuthException(e, "Failed to generate access token in service account flow.");
+      }
+    }
+
+    /// <summary>
     /// Refreshes the access token if expiring.
     /// </summary>
+    [Obsolete("Use the RefreshAccessToken method instead.")]
     public void RefreshAccessTokenIfExpiring() {
-      // TODO (Anash): Mark as deprecated in a followup CL.
-      if (IsAccessTokenExpiring()) {
-        RefreshAccessToken();
-      }
+      RefreshAccessToken();
     }
 
     /// <summary>
@@ -341,8 +348,8 @@ namespace Google.Api.Ads.Common.OAuth {
     /// </summary>
     /// <returns>The authorization header.</returns>
     public virtual string GetAuthHeader() {
-      RefreshAccessTokenIfExpiring();
-      return $"Bearer {AccessToken}";
+      RefreshAccessToken();
+      return $"Bearer {Config.OAuth2AccessToken}";
     }
 
     #endregion
@@ -356,26 +363,14 @@ namespace Google.Api.Ads.Common.OAuth {
     /// <param name="extractRefreshToken">True, if refresh token should be extracted from the token
     /// response, False otherwise.</param>
     private void ExtractTokensFromTaskResult(TokenResponse response, bool extractRefreshToken) {
-      this.AccessToken = response.AccessToken;
+      Config.OAuth2AccessToken = response.AccessToken;
       this.ExpiresInDuration = TimeSpan.FromSeconds(response.ExpiresInSeconds.GetValueOrDefault());
 
       if (extractRefreshToken) {
-        this.RefreshToken = response.RefreshToken;
+        Config.OAuth2RefreshToken = response.RefreshToken;
       }
       UpdatedOn = response.IssuedUtc;
       OnOAuthTokensObtained?.Invoke(this);
-    }
-
-    /// <summary>
-    /// Determines whether the access token is expiring.
-    /// </summary>
-    /// <returns>True if the access token is expiring, false otherwise.</returns>
-    private bool IsAccessTokenExpiring() {
-      if (this.UpdatedOn == DateTime.MinValue) {
-        return true;
-      }
-      return (this.UpdatedOn + this.ExpiresInDuration - OAUTH2_EXPIRATION_CUTOFF)
-          < DateTime.UtcNow;
     }
 
     /// <summary>
@@ -406,54 +401,82 @@ namespace Google.Api.Ads.Common.OAuth {
       }
     }
 
-    #endregion
-
-    #region Google.Auth interfacing code.
-
     /// <summary>
     /// Gets the authorization code flow.
     /// </summary>
     private GoogleAuthorizationCodeFlow AuthorizationCodeFlow {
       get {
-        ValidateOAuth2Parameter("ClientId", ClientId);
-        ValidateOAuth2Parameter("ClientSecret", ClientSecret);
+        ValidateOAuth2Parameter("ClientId", Config.OAuth2ClientId);
+        ValidateOAuth2Parameter("ClientSecret", Config.OAuth2ClientSecret);
+        var initializer = new AdsAuthorizationCodeFlowInitializer(this.Config) {
+          ClientSecrets = new ClientSecrets() {
+            ClientId = Config.OAuth2ClientId,
+            ClientSecret = Config.OAuth2ClientSecret,
+          },
+          Clock = this.Clock,
+          Scopes = Config.OAuth2Scope.Split(' '),
+          HttpClientFactory = this.HttpClientFactory,
 
-        return new GoogleAuthorizationCodeFlow(
-            new GoogleAuthorizationCodeFlow.Initializer {
-              ClientSecrets = new ClientSecrets() {
-                ClientId = ClientId,
-                ClientSecret = ClientSecret,
-              },
-              Clock = this.Clock,
-              Scopes = Scope.Split(' '),
-              HttpClientFactory = HttpClientFactory,
-              // Set the state parameter so we can distinguish between a normal
-              // page load and a callback.
-              UserDefinedQueryParams = new KeyValuePair<string, string>[] {
-                new KeyValuePair<string, string>("state", State)
-              }
-            });
+          // Set the state parameter so we can distinguish between a normal
+          // page load and a callback.
+          UserDefinedQueryParams = new KeyValuePair<string, string>[] {
+            new KeyValuePair<string, string>("state", this.State)
+          }
+        };
+        return new GoogleAuthorizationCodeFlow(initializer);
       }
     }
 
     /// <summary>
-    /// Gets the service account flow.
+    /// Gets the token response based on current credentials.
     /// </summary>
-    private ServiceAccountCredential ServiceAccountFlow {
+    private TokenResponse TokenResponse {
       get {
-        ValidateOAuth2Parameter("ServiceAccountEmail", ServiceAccountEmail);
-        ValidateOAuth2Parameter("JwtPrivateKey", JwtPrivateKey);
+        TokenResponse response = new TokenResponse() {
+          AccessToken = this.Config.OAuth2AccessToken,
+          RefreshToken = this.Config.OAuth2RefreshToken,
+        };
 
-        return new ServiceAccountCredential(
-            new ServiceAccountCredential.Initializer(ServiceAccountEmail) {
-              Scopes = Config.OAuth2Scope.Split(' '),
-              HttpClientFactory = this.HttpClientFactory,
-              Clock = this.Clock,
-              User = string.IsNullOrEmpty(PrnEmail) ? null : PrnEmail,
-            }.FromPrivateKey(JwtPrivateKey)
-        );
+        if (this.UpdatedOn != DateTime.MinValue) {
+          response.IssuedUtc = this.UpdatedOn;
+          response.ExpiresInSeconds = this.ExpiresIn;
+        }
+        return response;
       }
     }
+
+    /// <summary>
+    /// Gets the user credential for installed application flow or web flow.
+    /// </summary>
+    private UserCredential GetAuthorizationCodeFlowCredential() {
+      return new UserCredential(this.AuthorizationCodeFlow, null, this.TokenResponse);
+    }
+
+    /// <summary>
+    /// Gets the service account credentials for service account flow.
+    /// </summary>
+    private ServiceAccountCredential GetServiceAccountCredential() {
+      ValidateOAuth2Parameter("ServiceAccountEmail", Config.OAuth2ServiceAccountEmail);
+      ValidateOAuth2Parameter("JwtPrivateKey", Config.OAuth2PrivateKey);
+
+      ServiceAccountCredential retval = new ServiceAccountCredential(
+          new ServiceAccountCredential.Initializer(
+              Config.OAuth2ServiceAccountEmail,
+              HttpUtilities.UpdateEndpointHostInUrl(GoogleAuthConsts.TokenUrl,
+                  Config.OAuth2ServerUrl)) {
+            Scopes = Config.OAuth2Scope.Split(' '),
+            HttpClientFactory = this.HttpClientFactory,
+            Clock = this.Clock,
+            User = string.IsNullOrEmpty(Config.OAuth2PrnEmail) ? null : Config.OAuth2PrnEmail,
+          }.FromPrivateKey(Config.OAuth2PrivateKey)
+      );
+      retval.Token = this.TokenResponse;
+      return retval;
+    }
+
+    #endregion
+
+    #region Google.Auth interfacing code.
 
     /// <summary>
     /// Creates the authorization URL.
@@ -462,7 +485,7 @@ namespace Google.Api.Ads.Common.OAuth {
     /// <returns>The authorization URL.</returns>
     protected virtual string CreateAuthorizationUrl(string redirectUri) {
       Uri requestUrl = this.AuthorizationCodeFlow.CreateAuthorizationCodeRequest(
-                RedirectUri).Build();
+          Config.OAuth2RedirectUri).Build();
 
       if (IsOffline) {
         requestUrl = new GoogleAuthorizationCodeRequestUrl(requestUrl).Build();
@@ -478,21 +501,20 @@ namespace Google.Api.Ads.Common.OAuth {
     /// <returns>The token response.</returns>
     protected virtual TokenResponse ExchangeCodeForToken(string code) {
       Task<TokenResponse> task = this.AuthorizationCodeFlow.ExchangeCodeForTokenAsync(
-          String.Empty, code, this.RedirectUri, CancellationToken.None);
+          String.Empty, code, Config.OAuth2RedirectUri, CancellationToken.None);
       task.Wait();
       return task.Result;
     }
 
     /// <summary>
-    /// Refreshes the access token.
+    /// Refreshes the access token in authorization code flow.
     /// </summary>
-    /// <param name="refreshToken">The refresh token.</param>
     /// <returns>The token response.</returns>
-    protected virtual TokenResponse RefreshAccessToken(string refreshToken) {
-      Task<TokenResponse> task = this.AuthorizationCodeFlow.RefreshTokenAsync(
-          String.Empty, refreshToken, CancellationToken.None);
+    protected virtual TokenResponse GetAccessTokenForAuthorizationCodeFlow() {
+      UserCredential userCredential = this.GetAuthorizationCodeFlowCredential();
+      Task<string> task = userCredential.GetAccessTokenForRequestAsync();
       task.Wait();
-      return task.Result;
+      return userCredential.Token;
     }
 
     /// <summary>
@@ -500,7 +522,7 @@ namespace Google.Api.Ads.Common.OAuth {
     /// </summary>
     /// <returns>The token response.</returns>
     protected virtual TokenResponse GetAccessTokenForServiceAccount() {
-      ServiceAccountCredential credential = this.ServiceAccountFlow;
+      ServiceAccountCredential credential = this.GetServiceAccountCredential();
       Task<string> task = credential.GetAccessTokenForRequestAsync();
       task.Wait();
       return credential.Token;
@@ -511,9 +533,32 @@ namespace Google.Api.Ads.Common.OAuth {
     /// </summary>
     /// <param name="refreshToken">The refresh token.</param>
     protected virtual void RevokeRefreshToken(string refreshToken) {
-      Task task = this.AuthorizationCodeFlow.RevokeTokenAsync(String.Empty, refreshToken,
-          CancellationToken.None);
+      UserCredential userCredential = this.GetAuthorizationCodeFlowCredential();
+      Task<bool> task = userCredential.RefreshTokenAsync(CancellationToken.None);
       task.Wait();
+    }
+    #endregion
+
+    #region AdsAuthorizationCodeFlowInitializer
+
+    /// <summary>
+    /// A version of <see cref="GoogleAuthorizationCodeFlow.Initializer"/> that overrides hosts
+    /// for the the end point URLs.
+    /// </summary>
+    private class AdsAuthorizationCodeFlowInitializer : GoogleAuthorizationCodeFlow.Initializer {
+      /// <summary>
+      /// Initializes a new instance of the <see cref="AdsAuthorizationCodeFlowInitializer"/> class.
+      /// </summary>
+      /// <param name="config">The application configuration.</param>
+      internal AdsAuthorizationCodeFlowInitializer(AppConfig config) :
+          base(
+              HttpUtilities.UpdateEndpointHostInUrl(GoogleAuthConsts.AuthorizationUrl,
+                  config.OAuth2ServerUrl),
+              HttpUtilities.UpdateEndpointHostInUrl(GoogleAuthConsts.TokenUrl,
+                  config.OAuth2ServerUrl),
+              HttpUtilities.UpdateEndpointHostInUrl(GoogleAuthConsts.RevokeTokenUrl,
+                  config.OAuth2ServerUrl)) {
+      }
     }
 
     #endregion

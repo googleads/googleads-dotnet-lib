@@ -79,7 +79,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
             CreativeAsset creativeAsset = new CreativeAsset();
             creativeAsset.fileName = "image.jpg";
             creativeAsset.assetByteArray = MediaUtilities.GetAssetDataFromUrl(
-                imageCreative.primaryImageAsset.assetUrl);
+                imageCreative.primaryImageAsset.assetUrl, user.Config);
 
             creativeAsset.size = imageCreative.primaryImageAsset.size;
             imageCreative.primaryImageAsset = creativeAsset;

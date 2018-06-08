@@ -102,7 +102,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
 
         ' Optionally specify a landscape image. The image needs to be in a BASE64
         ' encoded form. Here we download a demo image and encode it for this ad.
-        Dim imageData As Byte() = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9JmyKk")
+        Dim imageData As Byte() = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9JmyKk",
+            user.Config)
         Dim fieldMediaImage As New Image()
         fieldMediaImage.data = imageData
         Dim landscapeImage As New TemplateElementField()

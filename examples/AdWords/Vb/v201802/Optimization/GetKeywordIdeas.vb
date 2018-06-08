@@ -120,7 +120,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
         ' [START preparePaging] MOE:strip_line
 
         ' Set selector paging (required for targeting idea service).
-        Dim paging As Paging = Paging.Default
+        selector.paging = Paging.Default
         ' [END preparePaging] MOE:strip_line
 
         Dim page As New TargetingIdeaPage()

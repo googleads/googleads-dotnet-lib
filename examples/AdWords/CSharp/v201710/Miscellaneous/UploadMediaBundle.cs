@@ -60,7 +60,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
 
         try {
           // Create HTML5 media.
-          byte[] html5Zip = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9Y7qI2");
+          byte[] html5Zip = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9Y7qI2",
+              user.Config);
           // Create a media bundle containing the zip file with all the HTML5 components.
           Media[] mediaBundle = new Media[] {
             new MediaBundle() {

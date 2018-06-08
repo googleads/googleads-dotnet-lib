@@ -103,7 +103,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
 
         // Optionally specify a landscape image. The image needs to be in a BASE64
         // encoded form. Here we download a demo image and encode it for this ad.
-        byte[] imageData = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9JmyKk");
+        byte[] imageData = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9JmyKk",
+            user.Config);
         Image image = new Image();
         image.data = imageData;
         TemplateElementField landscapeImage = new TemplateElementField();

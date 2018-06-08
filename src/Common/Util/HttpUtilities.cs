@@ -131,5 +131,20 @@ namespace Google.Api.Ads.Common.Util {
         }, headersToMask);
       }
     }
+
+    /// <summary>
+    /// Updates a URL endpoint with a new host.
+    /// </summary>
+    /// <param name="originalUri">The original URI.</param>
+    /// <param name="newHost">The new host.</param>
+    /// <returns>The updated URL.</returns>
+    public static string UpdateEndpointHostInUrl(string originalUri, string newHost) {
+      Uri newHostUri = new Uri(newHost);
+      return new UriBuilder(originalUri) {
+        Host = newHostUri.Host,
+        Port = newHostUri.Port,
+        Scheme = newHostUri.Scheme
+      }.Uri.ToString();
+    }
   }
 }

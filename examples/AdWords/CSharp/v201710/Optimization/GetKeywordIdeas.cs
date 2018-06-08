@@ -113,7 +113,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
         selector.searchParameters = searchParameters.ToArray();
 
         // Set selector paging (required for targeting idea service).
-        Paging paging = Paging.Default;
+        selector.paging = Paging.Default;
 
         TargetingIdeaPage page = new TargetingIdeaPage();
 

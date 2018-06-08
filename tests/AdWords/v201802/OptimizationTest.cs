@@ -12,28 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201802;
 
 using NUnit.Framework;
-
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Threading;
 
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201802;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201802;
 
 namespace Google.Api.Ads.AdWords.Tests.v201802 {
+
   /// <summary>
   /// Test cases for all the code examples under v201802\Optimization.
   /// </summary>
-  class OptimizationTest : VersionedExampleTestsBase {
-    long campaignId;
-    long adGroupId;
-    long keywordId;
+  internal class OptimizationTest : VersionedExampleTestsBase {
+    private long campaignId;
+    private long adGroupId;
+    private long keywordId;
 
     /// <summary>
     /// Inits this instance.
@@ -50,7 +44,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestEstimateKeywordTrafficVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.EstimateKeywordTraffic().Run(user);
       });
     }
@@ -60,7 +54,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestEstimateKeywordTrafficCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.EstimateKeywordTraffic().Run(user);
       });
     }
@@ -70,7 +64,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestGetAdGroupBidSimulationsVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.GetAdGroupBidSimulations().Run(user, adGroupId);
       });
     }
@@ -80,7 +74,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestGetAdGroupBidSimulationsCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.GetAdGroupBidSimulations().Run(user, adGroupId);
       });
     }
@@ -90,7 +84,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestGetKeywordBidSimulationsVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.GetKeywordBidSimulations().Run(user, adGroupId, keywordId);
       });
     }
@@ -100,7 +94,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestGetKeywordBidSimulationsCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.GetKeywordBidSimulations().Run(user, adGroupId, keywordId);
       });
     }
@@ -110,7 +104,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestGetCampaignCriterionBidModifierSimulationsVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.GetCampaignCriterionBidModifierSimulations().Run(user, campaignId);
       });
     }
@@ -120,7 +114,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestGetCampaignCriterionBidModifierSimulationsCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.GetCampaignCriterionBidModifierSimulations().Run(user, campaignId);
       });
     }

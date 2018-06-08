@@ -14,11 +14,10 @@
 
 #pragma warning disable 1591
 namespace Google.Api.Ads.AdWords.v201710 {
+  using Google.Api.Ads.AdWords.Util.Selectors;
   using Google.Api.Ads.AdWords.Util.Reports;
   using Google.Api.Ads.Common.Util;
-  using Google.Api.Ads.AdWords.Util.Selectors;
   using Google.Api.Ads.AdWords.Lib;
-  using Google.Api.Ads.AdWords.Headers;
   using System.ComponentModel;
   using System.Collections.Generic;
   using System;
@@ -1161,7 +1160,9 @@ namespace Google.Api.Ads.AdWords.v201710 {
   }
 
 
-  /// <summary>Information about countries that were targeted that caused a policy finding.
+  /// <summary>Information about countries that were targeted that caused a policy finding. If
+  /// a CountryConstraint has 0 targeted countries and an empty list of constrained
+  /// countries, it means that the constraint applies globally.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
   [System.SerializableAttribute()]
@@ -3967,16 +3968,13 @@ namespace Google.Api.Ads.AdWords.v201710 {
   }
 
 
-  /// <summary>The base class of all ad types. <code>Ad</code> objects themselves cannot be
-  /// modified. If you want to make a change to an <code>Ad</code> object, you must
-  /// REMOVE its AdGroupAd and ADD a new AdGroupAd with the new <code>Ad</code>. This
-  /// will result in a new <code>Ad</code> ID, so stats for the original
-  /// <code>Ad</code> and the new <code>Ad</code> will appear under separate IDs in
-  /// reports. <p>When calling <code>AdGroupAdService</code> to update the
-  /// <code></code> of an <code>AdGroupAd</code>, you can construct an <code>Ad</code>
-  /// object (instead of the <code>Ad</code>'s concrete type) with the <a
-  /// href='#id'>#id</a> field set. <span class="constraint AdxEnabled">This is
-  /// enabled for AdX.</span></p>
+  /// <summary>The base class of all ad types. <code>Ad</code>s are created using the
+  /// <code>AdGroupAdService</code>. Some ad types such as <code></code>s may be
+  /// modified using the <code>AdService</code>. <p>When calling
+  /// <code>AdGroupAdService</code> to update the <code></code> of an
+  /// <code>AdGroupAd</code>, you can construct an <code>Ad</code> object (instead of
+  /// the <code>Ad</code>'s concrete type) with the <a href='#id'>#id</a> field set.
+  /// <span class="constraint AdxEnabled">This is enabled for AdX.</span></p>
   /// </summary>
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(DynamicSearchAd))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(TextAd))]
@@ -12512,7 +12510,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
   }
 
 
-  /// <summary>The reasons for the database error.
+  /// <summary>The reasons for the authorization error.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
   [System.SerializableAttribute()]
@@ -13822,10 +13820,10 @@ namespace Google.Api.Ads.AdWords.v201710 {
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FeedOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FeedItemOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(FeedMappingOperation))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManagedCustomerOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(MoveOperation))]
-  [System.Xml.Serialization.XmlIncludeAttribute(typeof(LinkOperation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManagedCustomerOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(ManagedCustomerLabelOperation))]
+  [System.Xml.Serialization.XmlIncludeAttribute(typeof(LinkOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(OfflineConversionFeedOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupCriterionOperation))]
   [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdGroupCriterionLabelOperation))]
@@ -16396,7 +16394,8 @@ namespace Google.Api.Ads.AdWords.v201710 {
   /// own classification. Example: <pre> <code>"Home &amp; Garden &gt; Kitchen &amp;
   /// Dining &gt; Kitchen Appliances &gt; Refrigerators"</code> </pre> <p>Not
   /// supported by campaigns of <a
-  /// href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a>.</p>
+  /// href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a> so is
+  /// only used in <a href='ProductScope'>ProductScope</a>s.</p>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
   [System.SerializableAttribute()]
@@ -16791,7 +16790,8 @@ namespace Google.Api.Ads.AdWords.v201710 {
 
 
   /// <summary>A plain condition string. Not supported by campaigns of <a
-  /// href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a>.
+  /// href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a> so is
+  /// only used in <a href='ProductScope'>ProductScope</a>s.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
   [System.SerializableAttribute()]
@@ -17204,7 +17204,8 @@ namespace Google.Api.Ads.AdWords.v201710 {
 
 
   /// <summary>An <code>adwords labels</code> string. Not supported by campaigns of <a
-  /// href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a>.
+  /// href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a> so is
+  /// only used in <a href='ProductScope'>ProductScope</a>s.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
   [System.SerializableAttribute()]
@@ -17275,7 +17276,8 @@ namespace Google.Api.Ads.AdWords.v201710 {
 
 
   /// <summary>An <code>adwords grouping</code> string. Not supported by campaigns of <a
-  /// href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a>.
+  /// href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a> so is
+  /// only used in <a href='ProductScope'>ProductScope</a>s.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
   [System.SerializableAttribute()]
@@ -18550,10 +18552,9 @@ namespace Google.Api.Ads.AdWords.v201710 {
   /// PlacesOfInterestOperand(PlacesOfInterestOperand.Category.AIRPORT));
   /// function.setOperator(Operator.AND); function.setRhsOperand(Arrays.asList(
   /// (Operand) new GeoTargetOperand(Lists.newArrayList(new CriterionId(2250L))));
-  /// </code> </pre> <p>NOTE: Starting v201607 places of interest targeting is read
-  /// only.</p> <p>NOTE: Starting v201702 income targeting is read only.</p> <span
-  /// class="constraint AdxEnabled">This is disabled for AdX when it is contained
-  /// within Operators: ADD, SET.</span>
+  /// </code> </pre> <p>NOTE: Places of interest and income targeting are read
+  /// only.</p> <span class="constraint AdxEnabled">This is disabled for AdX when it
+  /// is contained within Operators: ADD, SET.</span>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
   [System.SerializableAttribute()]
@@ -22597,9 +22598,9 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
   }
-  /// <summary>Selected set of conversion types for optimizing campaigns. For e.g. For
-  /// universal app campaigns, these are the set of in-app actions to optimize the
-  /// campaign towards.
+  /// <summary>Selected set of conversion types or a selective optimization set id for
+  /// optimizing campaigns. For e.g. For universal app campaigns, these are the set of
+  /// in-app actions to optimize the campaign towards.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
   [System.SerializableAttribute()]
@@ -25055,9 +25056,12 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// class="constraint Selectable">This field can be selected using the value
     /// "BiddingStrategyType".</span><span class="constraint Filterable">This field can
     /// be filtered on.</span> <span class="constraint CampaignType">This field may only
-    /// be set to NONE for campaign channel type SHOPPING with ad group type
-    /// SHOPPING_SHOWCASE_ADS.</span> <span class="constraint CampaignType">This field
-    /// may only be set to the values: MANUAL_CPC, ENHANCED_CPC, TARGET_ROAS,
+    /// be set to the values: MANUAL_CPC, PAGE_ONE_PROMOTED, TARGET_SPEND, ENHANCED_CPC,
+    /// TARGET_CPA, TARGET_ROAS, MAXIMIZE_CONVERSIONS, TARGET_OUTRANK_SHARE, NONE for
+    /// campaign channel type SEARCH.</span> <span class="constraint CampaignType">This
+    /// field may only be set to NONE for campaign channel type SHOPPING with ad group
+    /// type SHOPPING_SHOWCASE_ADS.</span> <span class="constraint CampaignType">This
+    /// field may only be set to the values: MANUAL_CPC, ENHANCED_CPC, TARGET_ROAS,
     /// TARGET_SPEND, NONE for campaign channel type SHOPPING.</span> <span
     /// class="constraint CampaignType">This field may only be set to NONE for campaign
     /// channel type DISPLAY.</span> <span class="constraint CampaignType">This field
@@ -25384,9 +25388,9 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// be filtered on.</span> <span class="constraint AdxEnabled">This is disabled for
     /// AdX.</span> <span class="constraint CampaignType">This field may only be set to
     /// true for campaign channel type SEARCH.</span> <span class="constraint
-    /// CampaignType">This field may only be set to true for campaign channel subtype
-    /// UNIVERSAL_APP_CAMPAIGN.</span> <span class="constraint CampaignType">This field
-    /// may only be set to false for campaign channel type DISPLAY.</span>
+    /// CampaignType">This field may only be set to true for campaign channel type
+    /// MULTI_CHANNEL.</span> <span class="constraint CampaignType">This field may only
+    /// be set to false for campaign channel type DISPLAY.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
     public bool targetGoogleSearch {
@@ -25417,8 +25421,8 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// be selected using the value "TargetSearchNetwork".</span><span class="constraint
     /// Filterable">This field can be filtered on.</span> <span class="constraint
     /// AdxEnabled">This is disabled for AdX.</span> <span class="constraint
-    /// CampaignType">This field may only be set to true for campaign channel subtype
-    /// UNIVERSAL_APP_CAMPAIGN.</span>
+    /// CampaignType">This field may only be set to true for campaign channel type
+    /// MULTI_CHANNEL.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
     public bool targetSearchNetwork {
@@ -25449,7 +25453,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// class="constraint Selectable">This field can be selected using the value
     /// "TargetContentNetwork".</span><span class="constraint Filterable">This field can
     /// be filtered on.</span> <span class="constraint CampaignType">This field may only
-    /// be set to true for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span> <span
+    /// be set to true for campaign channel type MULTI_CHANNEL.</span> <span
     /// class="constraint CampaignType">This field may only be set to false for campaign
     /// channel subtype SEARCH_MOBILE_APP.</span>
     /// </summary>
@@ -25483,7 +25487,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// class="constraint Filterable">This field can be filtered on.</span> <span
     /// class="constraint AdxEnabled">This is disabled for AdX.</span> <span
     /// class="constraint CampaignType">This field may only be set to false for campaign
-    /// channel subtype UNIVERSAL_APP_CAMPAIGN.</span>
+    /// channel type MULTI_CHANNEL.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
     public bool targetPartnerSearchNetwork {
@@ -26264,9 +26268,12 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
 
-    /// <summary>Sales country of products to include in the campaign. <span class="constraint
-    /// Required">This field is required and should not be <code>null</code> when it is
-    /// contained within <a href='Operator'>Operator</a>s : ADD.</span>
+    /// <summary>Sales country of products to include in the campaign. This must be set to 'ZZ'
+    /// for Campaigns of types other than <a
+    /// href='AdvertisingChannelType#SHOPPING'>AdvertisingChannelType#SHOPPING</a> <span
+    /// class="constraint Required">This field is required and should not be
+    /// <code>null</code> when it is contained within <a href='Operator'>Operator</a>s :
+    /// ADD.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
     public string salesCountry {
@@ -26839,9 +26846,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
   /// negatively geotargeted region must be contained within the positive region.</p>
   /// <p>Geotargeting settings allow ads to be targeted in the following way:</p> <ul>
   /// <li>Positively geotargeted using solely AOI, solely LOP, or either.</li>
-  /// <li>Negatively geotargeted using solely LOP, or both.</li> </ul> <p>This setting
-  /// applies only to ads shown on the search network, and does not affect ads shown
-  /// on the Google Display Network.</p>
+  /// <li>Negatively geotargeted using solely LOP, or both.</li> </ul>
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
   [System.SerializableAttribute()]
@@ -28080,7 +28085,8 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
 
-    /// <summary>Current base budget of campaign; default if no custom budgets are enabled.
+    /// <summary>Current base budget of campaign; default if no custom budgets are enabled. This
+    /// field is readonly for draft campaigns and will be ignored when sent to the API.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 7)]
     public Budget budget {
@@ -28408,9 +28414,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// <summary>Selective optimization setting for this campaign, which includes a set of
     /// conversion types to optimize this campaign towards. <span class="constraint
     /// Selectable">This field can be selected using the value
-    /// "SelectiveOptimization".</span> <span class="constraint CampaignType">This field
-    /// may only be set for campaign channel type MULTI_CHANNEL.</span> <span
-    /// class="constraint CampaignType">This field may not be set.</span>
+    /// "SelectiveOptimization".</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 23)]
     public SelectiveOptimization selectiveOptimization {
@@ -32235,7 +32239,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// <summary>The campaign group is active.
     /// </summary>
     ENABLED = 4,
-    /// <summary>The campaign group is deleted.
+    /// <summary>The campaign group has been removed.
     /// </summary>
     DELETED = 2,
   }
@@ -41281,10 +41285,9 @@ namespace Google.Api.Ads.AdWords.v201710 {
     }
 
     /// <summary>Required daily budget to achieve the predicted stats at this bid. Only available
-    /// for campaign criterion bid landscapes (versions &gt;= v201603). <span
-    /// class="constraint Selectable">This field can be selected using the value
-    /// "RequiredBudget".</span><span class="constraint Filterable">This field can be
-    /// filtered on.</span>
+    /// for campaign criterion bid landscapes. <span class="constraint Selectable">This
+    /// field can be selected using the value "RequiredBudget".</span><span
+    /// class="constraint Filterable">This field can be filtered on.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
     public Money requiredBudget {
@@ -41297,9 +41300,9 @@ namespace Google.Api.Ads.AdWords.v201710 {
     }
 
     /// <summary>The bid modifier value of this point. Only available for campaign criterion bid
-    /// landscapes (versions &gt;= v201603). <span class="constraint Selectable">This
-    /// field can be selected using the value "BidModifier".</span><span
-    /// class="constraint Filterable">This field can be filtered on.</span>
+    /// landscapes. <span class="constraint Selectable">This field can be selected using
+    /// the value "BidModifier".</span><span class="constraint Filterable">This field
+    /// can be filtered on.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
     public double bidModifier {
@@ -41326,8 +41329,8 @@ namespace Google.Api.Ads.AdWords.v201710 {
     }
 
     /// <summary>Estimated total impressions for all devices in mobile bid modifier landscape.
-    /// Only available for campaign criterion bid landscapes (versions &gt;= v201603).
-    /// <span class="constraint Selectable">This field can be selected using the value
+    /// Only available for campaign criterion bid landscapes. <span class="constraint
+    /// Selectable">This field can be selected using the value
     /// "TotalLocalImpressions".</span><span class="constraint Filterable">This field
     /// can be filtered on.</span>
     /// </summary>
@@ -41356,8 +41359,8 @@ namespace Google.Api.Ads.AdWords.v201710 {
     }
 
     /// <summary>Estimated total clicks for all devices in mobile bid modifier landscape. Only
-    /// available for campaign criterion bid landscapes (versions &gt;= v201603). <span
-    /// class="constraint Selectable">This field can be selected using the value
+    /// available for campaign criterion bid landscapes. <span class="constraint
+    /// Selectable">This field can be selected using the value
     /// "TotalLocalClicks".</span><span class="constraint Filterable">This field can be
     /// filtered on.</span>
     /// </summary>
@@ -41386,8 +41389,8 @@ namespace Google.Api.Ads.AdWords.v201710 {
     }
 
     /// <summary>Estimated total cost for all devices in mobile bid modifier landscape. Only
-    /// available for campaign criterion bid landscapes (versions &gt;= v201603). <span
-    /// class="constraint Selectable">This field can be selected using the value
+    /// available for campaign criterion bid landscapes. <span class="constraint
+    /// Selectable">This field can be selected using the value
     /// "TotalLocalCost".</span><span class="constraint Filterable">This field can be
     /// filtered on.</span>
     /// </summary>
@@ -41402,10 +41405,10 @@ namespace Google.Api.Ads.AdWords.v201710 {
     }
 
     /// <summary>Estimated total promoted impressions for all devices in mobile bid modifier
-    /// landscape. Only available for campaign criterion bid landscapes (versions &gt;=
-    /// v201603). <span class="constraint Selectable">This field can be selected using
-    /// the value "TotalLocalPromotedImpressions".</span><span class="constraint
-    /// Filterable">This field can be filtered on.</span>
+    /// landscape. Only available for campaign criterion bid landscapes. <span
+    /// class="constraint Selectable">This field can be selected using the value
+    /// "TotalLocalPromotedImpressions".</span><span class="constraint Filterable">This
+    /// field can be filtered on.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 10)]
     public long totalLocalPromotedImpressions {
@@ -45729,7 +45732,9 @@ namespace Google.Api.Ads.AdWords.v201710 {
     private string currencyCodeField;
 
     /// <summary>The amount of money. <span class="constraint InRange">This field must be greater
-    /// than or equal to 0.</span>
+    /// than or equal to 0.</span> <span class="constraint Required">This field is
+    /// required and should not be <code>null</code> when it is contained within <a
+    /// href='Operator'>Operator</a>s : SET, ADD.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
     public Money money {
@@ -49862,78 +49867,6 @@ namespace Google.Api.Ads.AdWords.v201710 {
   }
 
 
-  /// <summary>Operation for modifying ManagedCustomer links. See <a
-  /// href='ManagedCustomerService#mutateLink'>ManagedCustomerService#mutateLink</a>.
-  /// </summary>
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
-  [System.SerializableAttribute()]
-  [System.Diagnostics.DebuggerStepThroughAttribute()]
-  [System.ComponentModel.DesignerCategoryAttribute("code")]
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201710")]
-  public partial class LinkOperation : Operation {
-    private ManagedCustomerLink operandField;
-
-    /// <summary><span class="constraint Required">This field is required and should not be
-    /// <code>null</code>.</span>
-    /// </summary>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public ManagedCustomerLink operand {
-      get {
-        return this.operandField;
-      }
-      set {
-        this.operandField = value;
-      }
-    }
-
-    /// <summary> List of all supported fields for the <see cref='LinkOperation' /> class.
-    /// </summary>
-    public new class Fields : Operation.Fields {
-      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
-      protected Fields() {
-      }
-
-      public static new Field[] All {
-        get {
-          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        }
-      }
-    }
-
-
-    /// <summary> List of all supported selectable fields for the <see cref='LinkOperation' />
-    /// class. </summary>
-    public new class SelectableFields : Operation.SelectableFields {
-      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
-      /// </summary>
-      protected SelectableFields() {
-      }
-
-      public static new Field[] All {
-        get {
-          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        }
-      }
-    }
-
-
-    /// <summary> List of all supported filterable fields for the <see cref='LinkOperation' />
-    /// class. </summary>
-    public new class FilterableFields : Operation.FilterableFields {
-      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
-      /// </summary>
-      protected FilterableFields() {
-      }
-
-      public static new Field[] All {
-        get {
-          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        }
-      }
-    }
-  }
-
-
   /// <summary>An operation to apply or remove an account label from a managed customer. <p
   /// class="note"><b>Note:</b> The <code>SET</code> operator is not supported.</p>
   /// </summary>
@@ -50120,6 +50053,78 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
 
       public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+  }
+
+
+  /// <summary>Operation for modifying ManagedCustomer links. See <a
+  /// href='ManagedCustomerService#mutateLink'>ManagedCustomerService#mutateLink</a>.
+  /// </summary>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201710")]
+  public partial class LinkOperation : Operation {
+    private ManagedCustomerLink operandField;
+
+    /// <summary><span class="constraint Required">This field is required and should not be
+    /// <code>null</code>.</span>
+    /// </summary>
+    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+    public ManagedCustomerLink operand {
+      get {
+        return this.operandField;
+      }
+      set {
+        this.operandField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='LinkOperation' /> class.
+    /// </summary>
+    public new class Fields : Operation.Fields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='LinkOperation' />
+    /// class. </summary>
+    public new class SelectableFields : Operation.SelectableFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static new Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='LinkOperation' />
+    /// class. </summary>
+    public new class FilterableFields : Operation.FilterableFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static new Field[] All {
         get {
           return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         }
@@ -50760,8 +50765,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
   }
 
 
-  /// <summary>Use this service to manage media for your template ads. After uploading images
-  /// and videos with this service, use the IDs when creating image or template ads.
+  /// <summary>Use this service to manage media.
   /// </summary>
   [System.Diagnostics.DebuggerStepThroughAttribute()]
   [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -54374,7 +54378,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// <summary>Indicates the zip code.
     /// </summary>
     ZIPCODE = 7,
-    /// <summary>Indicates the country.
+    /// <summary>ISO two-letter country codes.
     /// </summary>
     COUNTRY_CODE = 8,
     /// <summary>Indicates the external id like third party id.
@@ -54543,9 +54547,10 @@ namespace Google.Api.Ads.AdWords.v201710 {
 
     private string storeSalesUploadCommonMetadataTypeField;
 
-    /// <summary>The fraction of store transactions that are loyalty transactions. Range (0.0 to
-    /// 1.0] <span class="constraint Required">This field is required and should not be
-    /// <code>null</code>.</span>
+    /// <summary>This is the fraction of all transactions that are identifiable (i.e., associated
+    /// with any form of customer information). The fraction needs to be between 0 and 1
+    /// (excluding 0). <span class="constraint Required">This field is required and
+    /// should not be <code>null</code>.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
     public double loyaltyRate {
@@ -54571,7 +54576,10 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
 
-    /// <summary>The fraction of loyalty transactions that are uploaded. Range (0.0 to 1.0] <span
+    /// <summary>This is the ratio of sales you?re uploading compared to the overall sales that
+    /// you can associate with a customer. The fraction needs to be between 0 and 1. For
+    /// example, if you upload half the sales that you are able to associate with a
+    /// customer, your Transaction Upload Rate would be 0.5 (excluding 0). <span
     /// class="constraint Required">This field is required and should not be
     /// <code>null</code>.</span>
     /// </summary>
@@ -54661,7 +54669,9 @@ namespace Google.Api.Ads.AdWords.v201710 {
   }
 
 
-  /// <summary>Metadata for a Third party Store Sales upload.
+  /// <summary>Metadata for a Third party Store Sales upload. Note: This is a whitelisted only
+  /// product. Please contact your Google business development representative for
+  /// details on upload configuration.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
   [System.SerializableAttribute()]
@@ -54786,8 +54796,9 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
 
-    /// <summary>Indicates the version of the bridge map. <span class="constraint Required">This
-    /// field is required and should not be <code>null</code>.</span>
+    /// <summary>Indicates the version of partnerIds to be used for uploads. <span
+    /// class="constraint Required">This field is required and should not be
+    /// <code>null</code>.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
     public string bridgeMapVersionId {
@@ -54799,7 +54810,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
 
-    /// <summary>The id of the third party uploading the transaction feed. <span
+    /// <summary>The ID of the third party partner uploading the transaction feed. <span
     /// class="constraint Required">This field is required and should not be
     /// <code>null</code>.</span>
     /// </summary>
@@ -55054,9 +55065,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
     }
 
     /// <summary>List of errors if any in offlineDataList for mutate. Errors will be in the same
-    /// order of <code>#offlineDataList</code> with null for valid data. <span
-    /// class="constraint ReadOnly">This field is read only and will be ignored when
-    /// sent to the API.</span>
+    /// order of <code>#offlineDataList</code> with null for valid data.
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("partialDataErrors", Order = 5)]
     public ApiError[] partialDataErrors {
@@ -55560,8 +55569,12 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
 
-    /// <summary>List of partial operation failure errors. Used for upload level failures. List
-    /// Element will be null if no error is reported for that operation.
+    /// <summary>In v201710 and previous, this field stores a list of operation level errors.
+    /// Starting in v201802, this field stores both operation-level and row-level
+    /// errors. For row-level errors, offlineDataList will be shown in the fieldPath
+    /// along with row index. In this case, the operation will be processed and just the
+    /// rows with errors will not be used. For more information about partial failure,
+    /// see: https://developers.google.com/adwords/api/docs/guides/partial-failure
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute("partialFailureErrors", Order = 1)]
     public ApiError[] partialFailureErrors {
@@ -65029,10 +65042,12 @@ namespace Google.Api.Ads.AdWords.v201710 {
     private DataUploadResult dataUploadResultField;
 
     /// <summary>Matching key type of the list. This field is read only and set on the first
-    /// upload by API and remains immutable afterwards. Mixed data types are not allowed
-    /// on the same list. <span class="constraint Selectable">This field can be selected
-    /// using the value "UploadKeyType".</span> <span class="constraint ReadOnly">This
-    /// field is read only and will be ignored when sent to the API.</span>
+    /// upload by API. Mixed data types are not allowed on the same list. From v201802,
+    /// this field will be required for an ADD operation. <span class="constraint
+    /// Selectable">This field can be selected using the value "UploadKeyType".</span>
+    /// <span class="constraint ReadOnly">This field is read only and will be ignored
+    /// when sent to the API for the following <a href='Operator'>Operator</a>s:
+    /// SET.</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
     public CustomerMatchUploadKeyType uploadKeyType {
@@ -65978,9 +65993,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
   /// identifier are supported: <ul> <li>Contact info (email, phone number,
   /// address)</li> <li>Mobile advertising ID</li> <li>User IDs generated and assigned
   /// by advertiser</li> </ul> A list can be uploaded with only one type of data and
-  /// once uploaded will not accept any other ID types. Multiple member identifiers of
-  /// the same type for the same member can be provided at the same time. At least one
-  /// identifier is required to be provided.
+  /// once uploaded will not accept any other ID types.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
   [System.SerializableAttribute()]
@@ -66010,8 +66023,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
 
-    /// <summary>Mobile device ID (advertising ID/IDFA). Accessible to whitelisted customers
-    /// only.
+    /// <summary>Mobile device ID (advertising ID/IDFA).
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
     public string mobileId {
@@ -69220,8 +69232,9 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// <summary>ID of the base adgroup from which this draft/trial adgroup was created. For base
     /// adgroups this is equal to the adgroup ID. If the adgroup was created in the
     /// draft or trial and has no corresponding base adgroup, this field is null. This
-    /// field is readonly and only returned on get requests. <span class="constraint
-    /// Selectable">This field can be selected using the value "BaseAdGroupId".</span>
+    /// field is readonly and will be ignored when sent to the API. <span
+    /// class="constraint Selectable">This field can be selected using the value
+    /// "BaseAdGroupId".</span>
     /// </summary>
     [System.Xml.Serialization.XmlElementAttribute(Order = 11)]
     public long baseAdGroupId {
@@ -70237,49 +70250,6 @@ namespace Google.Api.Ads.AdWords.v201710 {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName = "get", WrapperNamespace = "https://adwords.google.com/api/adwords/mcm/v201710", IsWrapped = true)]
-    public partial class getRequest {
-      [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201710", Order = 0)]
-      public Google.Api.Ads.AdWords.v201710.Selector selector;
-
-      /// <summary> Creates a new instance of the <see cref="getRequest"/> class.
-      /// </summary>
-      public getRequest() {
-      }
-
-      /// <summary> Creates a new instance of the <see cref="getRequest"/> class.
-      /// </summary>
-      public getRequest(Google.Api.Ads.AdWords.v201710.Selector selector) {
-        this.selector = selector;
-      }
-    }
-
-
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName = "getResponse", WrapperNamespace = "https://adwords.google.com/api/adwords/mcm/v201710", IsWrapped = true)]
-    public partial class getResponse {
-      [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201710", Order = 0)]
-      [System.Xml.Serialization.XmlArrayItemAttribute("labels", IsNullable = false)]
-      public Google.Api.Ads.AdWords.v201710.AccountLabel[] rval;
-
-      /// <summary> Creates a new instance of the <see cref="getResponse"/> class.
-      /// </summary>
-      public getResponse() {
-      }
-
-      /// <summary> Creates a new instance of the <see cref="getResponse"/> class.
-      /// </summary>
-      public getResponse(Google.Api.Ads.AdWords.v201710.AccountLabel[] rval) {
-        this.rval = rval;
-      }
-    }
-
-
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName = "mutate", WrapperNamespace = "https://adwords.google.com/api/adwords/mcm/v201710", IsWrapped = true)]
     public partial class mutateRequest {
       [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201710", Order = 0)]
@@ -70320,6 +70290,76 @@ namespace Google.Api.Ads.AdWords.v201710 {
       }
     }
   }
+  /// <summary>Contains a list of AccountLabels.
+  /// </summary>
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
+  [System.SerializableAttribute()]
+  [System.Diagnostics.DebuggerStepThroughAttribute()]
+  [System.ComponentModel.DesignerCategoryAttribute("code")]
+  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201710")]
+  public partial class AccountLabelPage {
+    private AccountLabel[] labelsField;
+
+    /// <summary>List of account labels.
+    /// </summary>
+    [System.Xml.Serialization.XmlElementAttribute("labels", Order = 0)]
+    public AccountLabel[] labels {
+      get {
+        return this.labelsField;
+      }
+      set {
+        this.labelsField = value;
+      }
+    }
+
+    /// <summary> List of all supported fields for the <see cref='AccountLabelPage' /> class.
+    /// </summary>
+    public class Fields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="Fields"/> class. </summary>
+      protected Fields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported selectable fields for the <see cref='AccountLabelPage' />
+    /// class. </summary>
+    public class SelectableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="SelectableFields"/> class.
+      /// </summary>
+      protected SelectableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+
+
+    /// <summary> List of all supported filterable fields for the <see cref='AccountLabelPage' />
+    /// class. </summary>
+    public class FilterableFields : BaseFields {
+      /// <summary> Creates a new instance of the <see cref="FilterableFields"/> class.
+      /// </summary>
+      protected FilterableFields() {
+      }
+
+      public static Field[] All {
+        get {
+          return BaseFields.GetAllFields(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        }
+      }
+    }
+  }
+
+
   /// <summary>Represents a date.
   /// </summary>
   [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
@@ -70541,13 +70581,12 @@ namespace Google.Api.Ads.AdWords.v201710 {
   [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
   [System.ServiceModel.ServiceContractAttribute(Namespace = "https://adwords.google.com/api/adwords/mcm/v201710", ConfigurationName = "Google.Api.Ads.AdWords.v201710.AccountLabelServiceInterface")]
   public interface AccountLabelServiceInterface {
-    // CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlArrayItemAttribute'.
     [System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
     [System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.AdWords.v201710.ApiException), Action = "", Name = "ApiExceptionFault")]
     [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
     [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
     [return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
-    Wrappers.AccountLabelService.getResponse get(Wrappers.AccountLabelService.getRequest request);
+    Google.Api.Ads.AdWords.v201710.AccountLabelPage get(Google.Api.Ads.AdWords.v201710.Selector selector);
 
     // CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlArrayItemAttribute'.
     [System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -70679,22 +70718,14 @@ namespace Google.Api.Ads.AdWords.v201710 {
       : base(binding, remoteAddress) {
     }
 
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    Wrappers.AccountLabelService.getResponse Google.Api.Ads.AdWords.v201710.AccountLabelServiceInterface.get(Wrappers.AccountLabelService.getRequest request) {
-      return base.Channel.get(request);
-    }
-
     /// <summary>Returns a list of labels specified by the selector for the authenticated user.
     /// </summary><param name='selector'>filters the list of labels to return</param>
     /// <returns>response containing lists of labels that meet all the criteria of the
     /// selector</returns>
     /// <exception cref='ApiException'>if a problem occurs fetching the information
     /// requested</exception>
-    public virtual Google.Api.Ads.AdWords.v201710.AccountLabel[] get(Google.Api.Ads.AdWords.v201710.Selector selector) {
-      Wrappers.AccountLabelService.getRequest inValue = new Wrappers.AccountLabelService.getRequest();
-      inValue.selector = selector;
-      Wrappers.AccountLabelService.getResponse retVal = ((Google.Api.Ads.AdWords.v201710.AccountLabelServiceInterface) (this)).get(inValue);
-      return retVal.rval;
+    public virtual Google.Api.Ads.AdWords.v201710.AccountLabelPage get(Google.Api.Ads.AdWords.v201710.Selector selector) {
+      return base.Channel.get(selector);
     }
 
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -77444,9 +77475,9 @@ namespace Google.Api.Ads.AdWords.v201710 {
     /// <summary>The advertiser archived the campaign trial.
     /// </summary>
     ARCHIVED = 5,
-    /// <summary>The materializer failed to create the materialized campaign. More details about
-    /// the errors are available through getErrors in the TrialService API.The
-    /// advertiser cannot set this status directly.
+    /// <summary>The trial campaign failed to create. More details about the errors are available
+    /// through getErrors in the TrialService API.The advertiser cannot set this status
+    /// directly.
     /// </summary>
     CREATION_FAILED = 6,
     /// <summary>The promotion failed after it was partially applied. Promote cannot be attempted
@@ -83101,8 +83132,7 @@ namespace Google.Api.Ads.AdWords.v201710 {
   }
 
 
-  /// <summary>Use this service to manage media for your template ads. After uploading images
-  /// and videos with this service, use the IDs when creating image or template ads.
+  /// <summary>Use this service to manage media.
   /// </summary>
   public interface IMediaService : MediaServiceInterface, IDisposable {
     Google.Api.Ads.AdWords.v201710.Media[] upload(Google.Api.Ads.AdWords.v201710.Media[] media);
@@ -83269,8 +83299,6 @@ namespace Google.Api.Ads.AdWords.v201710 {
   /// href='ManagedCustomerService#mutateLabel'>ManagedCustomerService#mutateLabel</a>.</p>
   /// </summary>
   public interface IAccountLabelService : AccountLabelServiceInterface, IDisposable {
-    Google.Api.Ads.AdWords.v201710.AccountLabel[] get(Google.Api.Ads.AdWords.v201710.Selector selector);
-
     Google.Api.Ads.AdWords.v201710.AccountLabel[] mutate(Google.Api.Ads.AdWords.v201710.AccountLabelOperation[] operations);
   }
 

@@ -37,7 +37,6 @@ namespace Google.Api.Ads.AdWords.Tests {
     private IClientChannel channel;
 
     private readonly string[] faultXmls = new string[] {
-
       // ApiExceptionFault has a namespace prefix, and not in the default namespace.
 @"<soap:Envelope xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/"">
   <soap:Header>

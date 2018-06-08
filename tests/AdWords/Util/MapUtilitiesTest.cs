@@ -26,8 +26,14 @@ namespace Google.Api.Ads.AdWords.Tests.Util {
   public class MapUtilitiesTest {
 
     private class MockString_StringMapEntry : IMapEntry<string, string> {
-      public string key { get; set; }
-      public string value { get; set; }
+
+      public string key {
+        get; set;
+      }
+
+      public string value {
+        get; set;
+      }
     }
 
     /// <summary>

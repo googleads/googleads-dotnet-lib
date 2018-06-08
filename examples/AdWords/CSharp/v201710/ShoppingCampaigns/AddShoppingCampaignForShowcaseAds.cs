@@ -284,7 +284,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
 
         // Create the image.
         Image image = new Image();
-        image.data = MediaUtilities.GetAssetDataFromUrl(url);
+        image.data = MediaUtilities.GetAssetDataFromUrl(url, user.Config);
         image.type = MediaMediaType.IMAGE;
 
         // Upload the image.

@@ -13,6 +13,8 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Logging;
+using System;
+using System.Linq;
 
 namespace Google.Api.Ads.AdWords.Util.Selectors {
 
@@ -113,6 +115,23 @@ namespace Google.Api.Ads.AdWords.Util.Selectors {
       featureUsageRegistry.MarkUsage(FEATURE_ID);
 
       return x.ToString();
+    }
+  }
+
+  /// <summary>
+  /// Extension methods for <see cref="Field"/> class.
+  /// </summary>
+  public static class FieldExtensions {
+    
+    /// <summary>
+    /// Returns the names of the fields as an array of strings.
+    /// </summary>
+    /// <param name="fields">The array of fields to convert.</param>
+    /// <returns>The names of fields as a string array.</returns>
+    public static string[] Names(this Field[] fields) {
+      return Array.ConvertAll(fields, delegate (Field field) {
+        return field.ToString();
+      });
     }
   }
 }

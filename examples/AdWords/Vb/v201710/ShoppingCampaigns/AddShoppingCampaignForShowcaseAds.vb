@@ -290,7 +290,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201710
 
         ' Create the image.
         Dim image As New Image()
-        image.data = MediaUtilities.GetAssetDataFromUrl(url)
+        image.data = MediaUtilities.GetAssetDataFromUrl(url, user.Config)
         image.type = MediaMediaType.IMAGE
 
         ' Upload the image.

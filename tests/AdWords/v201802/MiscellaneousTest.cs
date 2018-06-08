@@ -12,25 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201802;
-
 using NUnit.Framework;
-
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Threading;
 
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201802;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201802;
 
 namespace Google.Api.Ads.AdWords.Tests.v201802 {
+
   /// <summary>
   /// Test cases for all the code examples under v201802\Miscellaneous.
   /// </summary>
-  class MiscellaneousTest : VersionedExampleTestsBase {
+  internal class MiscellaneousTest : VersionedExampleTestsBase {
+
     /// <summary>
     /// Inits this instance.
     /// </summary>
@@ -43,7 +36,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestGetAllVideosAndImagesVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.GetAllVideosAndImages().Run(user);
       });
     }
@@ -53,7 +46,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestGetAllVideosAndImagesCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.GetAllVideosAndImages().Run(user);
       });
     }
@@ -63,7 +56,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestUploadImageVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.UploadImage().Run(user);
       });
     }
@@ -73,7 +66,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestUploadImageCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.UploadImage().Run(user);
       });
     }
@@ -83,7 +76,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestUploadHtml5VBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.UploadMediaBundle().Run(user);
       });
     }
@@ -93,7 +86,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestUploadHtml5CSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.UploadMediaBundle().Run(user);
       });
     }

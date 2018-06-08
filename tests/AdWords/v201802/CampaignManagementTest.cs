@@ -12,35 +12,31 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201802;
 
 using NUnit.Framework;
 
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Threading;
 
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201802;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201802;
 
 namespace Google.Api.Ads.AdWords.Tests.v201802 {
+
   /// <summary>
   /// Test cases for all the code examples under v201802\CampaignManagement.
   /// </summary>
-  class CampaignManagementTest : VersionedExampleTestsBase {
-    long campaignId;
-    long anotherCampaignId;
-    long adGroupId;
-    long criterionId;
-    long adId;
-    long draftId;
+  internal class CampaignManagementTest : VersionedExampleTestsBase {
+    private long campaignId;
+    private long anotherCampaignId;
+    private long adGroupId;
+    private long criterionId;
+    private long adId;
+    private long draftId;
 
-    long labelId;
+    private long labelId;
 
-    const Double BID_MODIFIER = 1.5;
+    private const Double BID_MODIFIER = 1.5;
 
     /// <summary>
     /// Inits this instance.
@@ -65,7 +61,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
           BiddingStrategyType.MANUAL_CPC);
       long campaignId2ForLabeling = utils.CreateSearchCampaign(user,
           BiddingStrategyType.MANUAL_CPC);
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddCampaignLabels().Run(user, campaignId1ForLabeling,
             campaignId2ForLabeling, labelId);
       });
@@ -80,7 +76,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
           BiddingStrategyType.MANUAL_CPC);
       long campaignId2ForLabeling = utils.CreateSearchCampaign(user,
           BiddingStrategyType.MANUAL_CPC);
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddCampaignLabels().Run(user, campaignId1ForLabeling,
             campaignId2ForLabeling, labelId);
       });
@@ -91,7 +87,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestGetCampaignsByLabelVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.GetCampaignsByLabel().Run(user, labelId);
       });
     }
@@ -101,7 +97,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestGetCampaignsByLabelCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.GetCampaignsByLabel().Run(user, labelId);
       });
     }
@@ -111,7 +107,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestGetAllDisapprovedAdsVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.GetAllDisapprovedAds().Run(user, campaignId);
       });
     }
@@ -121,7 +117,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestGetAllDisapprovedAdsCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.GetAllDisapprovedAds().Run(user, campaignId);
       });
     }
@@ -131,7 +127,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestGetAllDisapprovedAdsWithAwqlVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.GetAllDisapprovedAdsWithAwql().Run(user, campaignId);
       });
     }
@@ -141,7 +137,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestGetAllDisapprovedAdsWithAwqlCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.GetAllDisapprovedAdsWithAwql().Run(user, campaignId);
       });
     }
@@ -151,7 +147,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestSetAdParametersVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.SetAdParameters().Run(user, adGroupId, criterionId);
       });
     }
@@ -161,7 +157,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestSetAdParametersCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.SetAdParameters().Run(user, adGroupId, criterionId);
       });
     }
@@ -171,7 +167,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestValidateTextAdVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.ValidateTextAd().Run(user, adGroupId);
       });
     }
@@ -181,7 +177,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestValidateTextAdCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.ValidateTextAd().Run(user, adGroupId);
       });
     }
@@ -191,7 +187,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestSetBidModifierCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.SetBidModifier().Run(user, campaignId, BID_MODIFIER);
       });
     }
@@ -201,7 +197,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestSetBidModifierVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.SetBidModifier().Run(user, campaignId, BID_MODIFIER);
       });
     }
@@ -211,7 +207,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddDraftCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddDraft().Run(user, campaignId);
       });
     }
@@ -221,7 +217,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddDraftVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddDraft().Run(user, campaignId);
       });
     }
@@ -231,7 +227,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddCampaignGroupsAndPerformanceTargetsCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddCampaignGroupsAndPerformanceTargets().Run(
             user, campaignId, anotherCampaignId);
       });
@@ -242,7 +238,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddCampaignGroupsAndPerformanceTargetsVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddCampaignGroupsAndPerformanceTargets().Run(
             user, campaignId, anotherCampaignId);
       });
@@ -255,7 +251,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddCompleteCampaignUsingBatchJobCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddCompleteCampaignsUsingBatchJob().Run(user);
       });
     }
@@ -265,7 +261,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddCompleteCampaignUsingBatchJobVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddCompleteCampaignsUsingBatchJob().Run(user);
       });
     }
@@ -275,7 +271,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddCompleteCampaignUsingStreamingBatchJobCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddCompleteCampaignsUsingStreamingBatchJob().Run(user);
       });
     }
@@ -285,7 +281,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddCompleteCampaignsUsingStreamingBatchJobVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddCompleteCampaignsUsingStreamingBatchJob().Run(user);
       });
     }
@@ -295,7 +291,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddKeywordsUsingIncrementalBatchJobCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddKeywordsUsingIncrementalBatchJob().Run(user, adGroupId);
       });
     }
@@ -305,7 +301,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddTrialCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddTrial().Run(user, draftId, campaignId);
       });
     }
@@ -315,7 +311,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
     /// </summary>
     [Test]
     public void TestAddTrialVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddTrial().Run(user, draftId, campaignId);
       });
     }
@@ -328,7 +324,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
       // Moving the initialization code here, since creating a trial ID is
       // very expensive and slows down other tests significantly.
       long trialId = utils.CreateTrial(user, draftId, campaignId);
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.GraduateTrial().Run(user, trialId);
       });
     }
@@ -341,11 +337,11 @@ namespace Google.Api.Ads.AdWords.Tests.v201802 {
       // Moving the initialization code here, since creating a trial ID is
       // very expensive and slows down other tests significantly.
       long trialId = utils.CreateTrial(user, draftId, campaignId);
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.GraduateTrial().Run(user, trialId);
       });
     }
 
-    #endregion
+    #endregion tests that take a long while.
   }
 }

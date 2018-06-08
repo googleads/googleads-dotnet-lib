@@ -130,7 +130,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
       Using mediaService As MediaService = DirectCast(user.GetService(
           AdWordsService.v201802.MediaService), MediaService)
         Dim image As New Image()
-        image.data = MediaUtilities.GetAssetDataFromUrl(url)
+        image.data = MediaUtilities.GetAssetDataFromUrl(url, user.Config)
         image.type = MediaMediaType.IMAGE
         Return mediaService.upload(New Media() {image})(0)
       End Using

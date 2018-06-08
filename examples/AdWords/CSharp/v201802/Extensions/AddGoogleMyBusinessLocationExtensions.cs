@@ -68,7 +68,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
         // OAuth Token generator utility while logged in as the same user as
         // gmbEmailAddress. Copy and paste the AccessToken value into the
         // assignment below.
-        string gmbAccessToken = user.OAuthProvider.AccessToken;
+        string gmbAccessToken = user.OAuthProvider.Config.OAuth2AccessToken;
 
         // If the gmbEmailAddress above is for a GMB manager instead of the GMB
         // account owner, then set businessAccountIdentifier to the +Page ID of

@@ -12,18 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Google.Api.Ads.AdWords.Util.Reports;
+using NUnit.Framework;
 using System;
 using System.Linq;
 
-using Google.Api.Ads.AdWords.Util.Reports;
-
-using NUnit.Framework;
-
 namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
+
   /// <summary>
   /// Unit tests for <see cref="ReportParserUtils"/> class.
   /// </summary>
-  class ReportParserUtilsTest {
+  internal class ReportParserUtilsTest {
 
     /// <summary>
     /// Tests the function for getting property names from a POCO
@@ -50,7 +49,8 @@ namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
     [Test]
     public void setColumnValueTest() {
       var testRow = new TestRow();
-      Action<ColumnValuePair,TestRow> doNothing = (a,b) => {};
+      Action<ColumnValuePair, TestRow> doNothing = (a, b) => {
+      };
       ReportParserUtils.SetColumnValue(new ColumnValuePair("Atrib1", "1"), testRow, doNothing);
       ReportParserUtils.SetColumnValue(new ColumnValuePair("Atrib2", "2"), testRow, doNothing);
       ReportParserUtils.SetColumnValue(new ColumnValuePair("Atrib3", "3"), testRow, doNothing);

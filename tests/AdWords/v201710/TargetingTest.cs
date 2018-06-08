@@ -12,27 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201710;
 
 using NUnit.Framework;
-
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Threading;
 
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201710;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201710;
 
 namespace Google.Api.Ads.AdWords.Tests.v201710 {
+
   /// <summary>
   /// Test cases for all the code examples under v201710\Targeting.
   /// </summary>
-  class TargetingTest : VersionedExampleTestsBase {
-    long campaignId;
-    long campaignCriterionId;
+  internal class TargetingTest : VersionedExampleTestsBase {
+    private long campaignId;
+    private long campaignCriterionId;
 
     /// <summary>
     /// Inits this instance.
@@ -48,7 +42,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddCampaignTargetingCriteriaVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddCampaignTargetingCriteria().Run(user, campaignId, null);
       });
     }
@@ -58,7 +52,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddCampaignTargetingCriteriaCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddCampaignTargetingCriteria().Run(user, campaignId, null);
       });
     }
@@ -68,7 +62,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestGetCampaignTargetingCriteriaVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.GetCampaignTargetingCriteria().Run(user, campaignId);
       });
     }
@@ -78,7 +72,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestGetCampaignTargetingCriteriaCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.GetCampaignTargetingCriteria().Run(user, campaignId);
       });
     }
@@ -88,7 +82,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestGetTargetableLanguagesAndCarriersVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.GetTargetableLanguagesAndCarriers().Run(user);
       });
     }
@@ -98,7 +92,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestGetTargetableLanguagesAndCarriersCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.GetTargetableLanguagesAndCarriers().Run(user);
       });
     }
@@ -108,7 +102,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestLookupLocationVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.LookupLocation().Run(user);
       });
     }
@@ -118,7 +112,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestLookupLocationCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.LookupLocation().Run(user);
       });
     }
@@ -128,7 +122,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddCustomerNegativeCriteriaVBExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new VBExamples.AddCustomerNegativeCriteria().Run(user);
       });
     }
@@ -138,7 +132,7 @@ namespace Google.Api.Ads.AdWords.Tests.v201710 {
     /// </summary>
     [Test]
     public void TestAddCustomerNegativeCriteriaCSharpExample() {
-      RunExample(delegate() {
+      RunExample(delegate () {
         new CSharpExamples.AddCustomerNegativeCriteria().Run(user);
       });
     }

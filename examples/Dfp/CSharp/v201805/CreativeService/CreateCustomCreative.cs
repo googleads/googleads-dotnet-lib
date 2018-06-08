@@ -68,7 +68,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
         CreativeAsset asset = new CreativeAsset();
         asset.fileName = string.Format("inline{0}.jpg", GetTimeStamp());
         asset.assetByteArray = MediaUtilities.GetAssetDataFromUrl(
-            "https://goo.gl/3b9Wfh");
+            "https://goo.gl/3b9Wfh", user.Config);
         customCreativeAsset.asset = asset;
 
         customCreative.customCreativeAssets = new CustomCreativeAsset[] { customCreativeAsset };

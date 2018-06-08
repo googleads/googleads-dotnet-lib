@@ -26,7 +26,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
   /// Tests for AdWordsTraceListener class.
   /// </summary>
   [TestFixture]
-  class AdWordsTraceListenerTests {
+  internal class AdWordsTraceListenerTests {
 
     /// <summary>
     /// The SoapeListener instance for testing this class.
@@ -36,12 +36,12 @@ namespace Google.Api.Ads.AdWords.Tests.Lib {
     /// <summary>
     /// The name of the service for testing purposes.
     /// </summary>
-    readonly string TestServiceName = "TestService";
+    private readonly string TestServiceName = "TestService";
 
     /// <summary>
     /// The client customer ID for testing purposes.
     /// </summary>
-    readonly string TestCustomerId = "TEST_CLIENT_CUSTOMER_ID";
+    private readonly string TestCustomerId = "TEST_CLIENT_CUSTOMER_ID";
 
     /// <summary>
     /// Initializes the test case.
