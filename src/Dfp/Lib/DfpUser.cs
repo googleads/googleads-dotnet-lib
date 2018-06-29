@@ -51,11 +51,11 @@ namespace Google.Api.Ads.Dfp.Lib {
     {
     }
 
-        /// <summary>
-        /// Gets all the service types to be registered against this user.
-        /// </summary>
-        /// <returns>The type of all service classes to be registered.</returns>
-        public override Type[] GetServiceTypes() {
+    /// <summary>
+    /// Gets all the service types to be registered against this user.
+    /// </summary>
+    /// <returns>The type of all service classes to be registered.</returns>
+    public override Type[] GetServiceTypes() {
       return new DfpService().GetServiceTypes();
     }
 
