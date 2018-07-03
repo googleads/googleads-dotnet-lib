@@ -43,6 +43,15 @@ namespace Google.Api.Ads.Dfp.Lib {
     }
 
     /// <summary>
+    /// Public constructor. Use this version if you want to construct
+    /// a DfpUser with a custom configuration.
+    /// </summary>
+    public DfpUser(DfpAppConfig config)
+        : base(config)
+    {
+    }
+
+    /// <summary>
     /// Gets all the service types to be registered against this user.
     /// </summary>
     /// <returns>The type of all service classes to be registered.</returns>
