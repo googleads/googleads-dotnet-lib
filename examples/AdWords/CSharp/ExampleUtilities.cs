@@ -48,21 +48,21 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp {
     /// <param name="ex">The exception.</param>
     /// <returns>The formatted exception string.</returns>
     public static string FormatException(Exception ex) {
-      List<String> messages = new List<string>();
+      List<string> messages = new List<string>();
       Exception rootEx = ex;
       while (rootEx != null) {
-        messages.Add(String.Format("{0} ({1})\n\n{2}\n", rootEx.GetType().ToString(),
+        messages.Add(string.Format("{0} ({1})\n\n{2}\n", rootEx.GetType().ToString(),
             rootEx.Message, rootEx.StackTrace));
         rootEx = rootEx.InnerException;
       }
-      return String.Join("\nCaused by\n\n", messages.ToArray());
+      return string.Join("\nCaused by\n\n", messages.ToArray());
     }
 
     /// <summary>
     /// Gets the current user's home directory.
     /// </summary>
     /// <returns>The current user's home directory.</returns>
-    public static String GetHomeDir() {
+    public static string GetHomeDir() {
       return Environment.GetEnvironmentVariable("USERPROFILE");
     }
 

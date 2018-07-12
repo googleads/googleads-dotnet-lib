@@ -60,34 +60,39 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           (CampaignService) user.GetService(AdWordsService.v201802.CampaignService)) {
 
         // Create the campaign.
-        Campaign campaign = new Campaign();
-        campaign.name = "Interplanetary Cruise App #" + ExampleUtilities.GetRandomString();
+        Campaign campaign = new Campaign {
+          name = "Interplanetary Cruise App #" + ExampleUtilities.GetRandomString(),
 
-        // Recommendation: Set the campaign to PAUSED when creating it to prevent
-        // the ads from immediately serving. Set to ENABLED once you've added
-        // targeting and the ads are ready to serve.
-        campaign.status = CampaignStatus.PAUSED;
+          // Recommendation: Set the campaign to PAUSED when creating it to prevent
+          // the ads from immediately serving. Set to ENABLED once you've added
+          // targeting and the ads are ready to serve.
+          status = CampaignStatus.PAUSED,
 
-        // Set the advertising channel and subchannel types for universal app campaigns.
-        campaign.advertisingChannelType = AdvertisingChannelType.MULTI_CHANNEL;
-        campaign.advertisingChannelSubType = AdvertisingChannelSubType.UNIVERSAL_APP_CAMPAIGN;
+          // Set the advertising channel and subchannel types for universal app campaigns.
+          advertisingChannelType = AdvertisingChannelType.MULTI_CHANNEL,
+          advertisingChannelSubType = AdvertisingChannelSubType.UNIVERSAL_APP_CAMPAIGN
+        };
 
         // Set the campaign's bidding strategy. Universal app campaigns
         // only support TARGET_CPA bidding strategy.
-        BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
-        biddingConfig.biddingStrategyType = BiddingStrategyType.TARGET_CPA;
+        BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration {
+          biddingStrategyType = BiddingStrategyType.TARGET_CPA
+        };
 
         // Set the target CPA to $1 / app install.
-        TargetCpaBiddingScheme biddingScheme = new TargetCpaBiddingScheme();
-        biddingScheme.targetCpa = new Money();
-        biddingScheme.targetCpa.microAmount = 1000000;
+        TargetCpaBiddingScheme biddingScheme = new TargetCpaBiddingScheme {
+          targetCpa = new Money {
+            microAmount = 1000000
+          }
+        };
 
         biddingConfig.biddingScheme = biddingScheme;
         campaign.biddingStrategyConfiguration = biddingConfig;
 
         // Set the campaign's budget.
-        campaign.budget = new Budget();
-        campaign.budget.budgetId = CreateBudget(user).budgetId;
+        campaign.budget = new Budget {
+          budgetId = CreateBudget(user).budgetId
+        };
 
         // Optional: Set the start date.
         campaign.startDate = DateTime.Now.AddDays(1).ToString("yyyyMMdd");
@@ -97,22 +102,23 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
 
         // Set the campaign's assets and ad text ideas. These values will be used to
         // generate ads.
-        UniversalAppCampaignSetting universalAppSetting = new UniversalAppCampaignSetting();
-        universalAppSetting.appId = "com.labpixies.colordrips";
-        universalAppSetting.appVendor = MobileApplicationVendor.VENDOR_GOOGLE_MARKET;
-        universalAppSetting.description1 = "A cool puzzle game";
-        universalAppSetting.description2 = "Remove connected blocks";
-        universalAppSetting.description3 = "3 difficulty levels";
-        universalAppSetting.description4 = "4 colorful fun skins";
+        UniversalAppCampaignSetting universalAppSetting = new UniversalAppCampaignSetting {
+          appId = "com.labpixies.colordrips",
+          appVendor = MobileApplicationVendor.VENDOR_GOOGLE_MARKET,
+          description1 = "A cool puzzle game",
+          description2 = "Remove connected blocks",
+          description3 = "3 difficulty levels",
+          description4 = "4 colorful fun skins",
 
-        // Optional: You can set up to 20 image assets for your campaign.
-        // See UploadImage.cs for an example on how to upload images.
-        //
-        // universalAppSetting.imageMediaIds = new long[] { INSERT_IMAGE_MEDIA_ID_HERE };
+          // Optional: You can set up to 20 image assets for your campaign.
+          // See UploadImage.cs for an example on how to upload images.
+          //
+          // universalAppSetting.imageMediaIds = new long[] { INSERT_IMAGE_MEDIA_ID_HERE };
 
-        // Optimize this campaign for getting new users for your app.
-        universalAppSetting.universalAppBiddingStrategyGoalType =
-            UniversalAppBiddingStrategyGoalType.OPTIMIZE_FOR_INSTALL_CONVERSION_VOLUME;
+          // Optimize this campaign for getting new users for your app.
+          universalAppBiddingStrategyGoalType =
+            UniversalAppBiddingStrategyGoalType.OPTIMIZE_FOR_INSTALL_CONVERSION_VOLUME
+        };
 
         // Optional: If you select the OPTIMIZE_FOR_IN_APP_CONVERSION_VOLUME goal
         // type, then also specify your in-app conversion types so AdWords can
@@ -125,18 +131,20 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
         //    new long[] { INSERT_CONVERSION_TYPE_ID_1_HERE, INSERT_CONVERSION_TYPE_ID_2_HERE };
 
         // Optional: Set the campaign settings for Advanced location options.
-        GeoTargetTypeSetting geoSetting = new GeoTargetTypeSetting();
-        geoSetting.positiveGeoTargetType =
-            GeoTargetTypeSettingPositiveGeoTargetType.LOCATION_OF_PRESENCE;
-        geoSetting.negativeGeoTargetType =
-            GeoTargetTypeSettingNegativeGeoTargetType.DONT_CARE;
+        GeoTargetTypeSetting geoSetting = new GeoTargetTypeSetting {
+          positiveGeoTargetType =
+            GeoTargetTypeSettingPositiveGeoTargetType.LOCATION_OF_PRESENCE,
+          negativeGeoTargetType =
+            GeoTargetTypeSettingNegativeGeoTargetType.DONT_CARE
+        };
 
         campaign.settings = new Setting[] { universalAppSetting, geoSetting };
 
         // Create the operation.
-        CampaignOperation operation = new CampaignOperation();
-        operation.@operator = Operator.ADD;
-        operation.operand = campaign;
+        CampaignOperation operation = new CampaignOperation {
+          @operator = Operator.ADD,
+          operand = campaign
+        };
 
         try {
           // Add the campaign.
@@ -173,18 +181,21 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           (BudgetService) user.GetService(AdWordsService.v201802.BudgetService)) {
 
         // Create the campaign budget.
-        Budget budget = new Budget();
-        budget.name = "Interplanetary Cruise App Budget #" + ExampleUtilities.GetRandomString();
-        budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
-        budget.amount = new Money();
-        budget.amount.microAmount = 5000000;
+        Budget budget = new Budget {
+          name = "Interplanetary Cruise App Budget #" + ExampleUtilities.GetRandomString(),
+          deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD,
+          amount = new Money {
+            microAmount = 5000000
+          },
 
-        // Universal app campaigns don't support shared budgets.
-        budget.isExplicitlyShared = false;
+          // Universal app campaigns don't support shared budgets.
+          isExplicitlyShared = false
+        };
 
-        BudgetOperation budgetOperation = new BudgetOperation();
-        budgetOperation.@operator = Operator.ADD;
-        budgetOperation.operand = budget;
+        BudgetOperation budgetOperation = new BudgetOperation {
+          @operator = Operator.ADD,
+          operand = budget
+        };
 
         BudgetReturnValue budgetRetval = budgetService.mutate(
           new BudgetOperation[] { budgetOperation });

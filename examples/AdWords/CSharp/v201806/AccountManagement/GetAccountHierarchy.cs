@@ -64,11 +64,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
               AdWordsService.v201806.ManagedCustomerService)) {
 
         // Create selector.
-        Selector selector = new Selector();
-        selector.fields = new String[] {
-          ManagedCustomer.Fields.CustomerId, ManagedCustomer.Fields.Name
+        Selector selector = new Selector {
+          fields = new string[] {
+            ManagedCustomer.Fields.CustomerId, ManagedCustomer.Fields.Name
+          },
+          paging = Paging.Default
         };
-        selector.paging = Paging.Default;
 
         // Map from customerId to customer node.
         Dictionary<long, ManagedCustomerTreeNode> customerIdToCustomerNode =
@@ -85,8 +86,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
             if (page.entries != null) {
               // Create account tree nodes for each customer.
               foreach (ManagedCustomer customer in page.entries) {
-                ManagedCustomerTreeNode node = new ManagedCustomerTreeNode();
-                node.Account = customer;
+                ManagedCustomerTreeNode node = new ManagedCustomerTreeNode {
+                  Account = customer
+                };
                 customerIdToCustomerNode.Add(customer.customerId, node);
               }
 
@@ -175,8 +177,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
       /// <returns>
       /// A <see cref="System.String"/> that represents this instance.
       /// </returns>
-      public override String ToString() {
-        return String.Format("{0}, {1}", account.customerId, account.name);
+      public override string ToString() {
+        return string.Format("{0}, {1}", account.customerId, account.name);
       }
 
       /// <summary>

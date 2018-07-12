@@ -65,7 +65,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
       (user.Config as AdWordsAppConfig).UseRawEnumValues = true;
 
       // Create the query.
-      String query = "SELECT AccountCurrencyCode, AccountDescriptiveName FROM FINAL_URL_REPORT " +
+      string query = "SELECT AccountCurrencyCode, AccountDescriptiveName FROM FINAL_URL_REPORT " +
           "DURING LAST_7_DAYS";
 
       ReportUtilities reportUtilities = new ReportUtilities(user, "v201806", query,

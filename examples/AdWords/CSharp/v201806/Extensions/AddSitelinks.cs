@@ -187,11 +187,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
 
         // Create your campaign extension settings. This associates the sitelinks
         // to your campaign.
-        CampaignExtensionSetting campaignExtensionSetting = new CampaignExtensionSetting();
-        campaignExtensionSetting.campaignId = campaignId;
-        campaignExtensionSetting.extensionType = FeedType.SITELINK;
-        campaignExtensionSetting.extensionSetting = new ExtensionSetting() {
-          extensions = extensions.ToArray()
+        CampaignExtensionSetting campaignExtensionSetting = new CampaignExtensionSetting {
+          campaignId = campaignId,
+          extensionType = FeedType.SITELINK,
+          extensionSetting = new ExtensionSetting() {
+            extensions = extensions.ToArray()
+          }
         };
 
         CampaignExtensionSettingOperation operation = new CampaignExtensionSettingOperation() {

@@ -71,15 +71,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
       using (BudgetService budgetService =
           (BudgetService) user.GetService(AdWordsService.v201802.BudgetService)) {
         // Create the campaign budget.
-        Budget budget = new Budget();
-        budget.name = "Interplanetary Cruise Budget #" + ExampleUtilities.GetRandomString();
-        budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
-        budget.amount = new Money();
-        budget.amount.microAmount = 500000;
+        Budget budget = new Budget {
+          name = "Interplanetary Cruise Budget #" + ExampleUtilities.GetRandomString(),
+          deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD,
+          amount = new Money {
+            microAmount = 500000
+          }
+        };
 
-        BudgetOperation budgetOperation = new BudgetOperation();
-        budgetOperation.@operator = Operator.ADD;
-        budgetOperation.operand = budget;
+        BudgetOperation budgetOperation = new BudgetOperation {
+          @operator = Operator.ADD,
+          operand = budget
+        };
 
         try {
           BudgetReturnValue budgetRetval = budgetService.mutate(
@@ -106,27 +109,31 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
       using (CampaignService campaignService =
           (CampaignService) user.GetService(AdWordsService.v201802.CampaignService)) {
         // Create a Dynamic Search Ads campaign.
-        Campaign campaign = new Campaign();
-        campaign.name = "Interplanetary Cruise #" + ExampleUtilities.GetRandomString();
-        campaign.advertisingChannelType = AdvertisingChannelType.SEARCH;
+        Campaign campaign = new Campaign {
+          name = "Interplanetary Cruise #" + ExampleUtilities.GetRandomString(),
+          advertisingChannelType = AdvertisingChannelType.SEARCH,
 
-        // Recommendation: Set the campaign to PAUSED when creating it to prevent
-        // the ads from immediately serving. Set to ENABLED once you've added
-        // targeting and the ads are ready to serve.
-        campaign.status = CampaignStatus.PAUSED;
+          // Recommendation: Set the campaign to PAUSED when creating it to prevent
+          // the ads from immediately serving. Set to ENABLED once you've added
+          // targeting and the ads are ready to serve.
+          status = CampaignStatus.PAUSED
+        };
 
-        BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
-        biddingConfig.biddingStrategyType = BiddingStrategyType.MANUAL_CPC;
+        BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration {
+          biddingStrategyType = BiddingStrategyType.MANUAL_CPC
+        };
         campaign.biddingStrategyConfiguration = biddingConfig;
 
-        campaign.budget = new Budget();
-        campaign.budget.budgetId = budget.budgetId;
+        campaign.budget = new Budget {
+          budgetId = budget.budgetId
+        };
 
         // Required: Set the campaign's Dynamic Search Ads settings.
-        DynamicSearchAdsSetting dynamicSearchAdsSetting = new DynamicSearchAdsSetting();
-        // Required: Set the domain name and language.
-        dynamicSearchAdsSetting.domainName = "example.com";
-        dynamicSearchAdsSetting.languageCode = "en";
+        DynamicSearchAdsSetting dynamicSearchAdsSetting = new DynamicSearchAdsSetting {
+          // Required: Set the domain name and language.
+          domainName = "example.com",
+          languageCode = "en"
+        };
 
         // Set the campaign settings.
         campaign.settings = new Setting[] { dynamicSearchAdsSetting };
@@ -138,9 +145,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
         campaign.endDate = DateTime.Now.AddYears(1).ToString("yyyyMMdd");
 
         // Create the operation.
-        CampaignOperation operation = new CampaignOperation();
-        operation.@operator = Operator.ADD;
-        operation.operand = campaign;
+        CampaignOperation operation = new CampaignOperation {
+          @operator = Operator.ADD,
+          operand = campaign
+        };
 
         try {
           // Add the campaign.
@@ -169,35 +177,39 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
       using (AdGroupService adGroupService =
           (AdGroupService) user.GetService(AdWordsService.v201802.AdGroupService)) {
         // Create the ad group.
-        AdGroup adGroup = new AdGroup();
+        AdGroup adGroup = new AdGroup {
 
-        // Required: Set the ad group's type to Dynamic Search Ads.
-        adGroup.adGroupType = AdGroupType.SEARCH_DYNAMIC_ADS;
+          // Required: Set the ad group's type to Dynamic Search Ads.
+          adGroupType = AdGroupType.SEARCH_DYNAMIC_ADS,
 
-        adGroup.name = string.Format("Earth to Mars Cruises #{0}",
-          ExampleUtilities.GetRandomString());
-        adGroup.campaignId = campaignId;
-        adGroup.status = AdGroupStatus.PAUSED;
+          name = string.Format("Earth to Mars Cruises #{0}",
+          ExampleUtilities.GetRandomString()),
+          campaignId = campaignId,
+          status = AdGroupStatus.PAUSED,
 
-        // Recommended: Set a tracking URL template for your ad group if you want to use URL
-        // tracking software.
-        adGroup.trackingUrlTemplate = "http://tracker.example.com/traveltracker/{escapedlpurl}";
+          // Recommended: Set a tracking URL template for your ad group if you want to use URL
+          // tracking software.
+          trackingUrlTemplate = "http://tracker.example.com/traveltracker/{escapedlpurl}"
+        };
 
         // Set the ad group bids.
         BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
 
-        CpcBid cpcBid = new CpcBid();
-        cpcBid.bid = new Money();
-        cpcBid.bid.microAmount = 3000000;
+        CpcBid cpcBid = new CpcBid {
+          bid = new Money {
+            microAmount = 3000000
+          }
+        };
 
         biddingConfig.bids = new Bids[] { cpcBid };
 
         adGroup.biddingStrategyConfiguration = biddingConfig;
 
         // Create the operation.
-        AdGroupOperation operation = new AdGroupOperation();
-        operation.@operator = Operator.ADD;
-        operation.operand = adGroup;
+        AdGroupOperation operation = new AdGroupOperation {
+          @operator = Operator.ADD,
+          operand = adGroup
+        };
 
         try {
           // Create the ad group.
@@ -227,22 +239,25 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
         // Create an Expanded Dynamic Search Ad. This ad will have its headline, display URL and
         // final URL auto-generated at serving time according to domain name specific information
         // provided by DynamicSearchAdsSetting at the campaign level.
-        ExpandedDynamicSearchAd expandedDSA = new ExpandedDynamicSearchAd();
-        // Set the ad description.
-        expandedDSA.description = "Buy your tickets now!";
+        ExpandedDynamicSearchAd expandedDSA = new ExpandedDynamicSearchAd {
+          // Set the ad description.
+          description = "Buy your tickets now!"
+        };
 
         // Create the ad group ad.
-        AdGroupAd adGroupAd = new AdGroupAd();
-        adGroupAd.adGroupId = adGroupId;
-        adGroupAd.ad = expandedDSA;
+        AdGroupAd adGroupAd = new AdGroupAd {
+          adGroupId = adGroupId,
+          ad = expandedDSA,
 
-        // Optional: Set the status.
-        adGroupAd.status = AdGroupAdStatus.PAUSED;
+          // Optional: Set the status.
+          status = AdGroupAdStatus.PAUSED
+        };
 
         // Create the operation.
-        AdGroupAdOperation operation = new AdGroupAdOperation();
-        operation.@operator = Operator.ADD;
-        operation.operand = adGroupAd;
+        AdGroupAdOperation operation = new AdGroupAdOperation {
+          @operator = Operator.ADD,
+          operand = adGroupAd
+        };
 
         try {
           // Create the ad.
@@ -273,27 +288,32 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           (AdGroupCriterionService) user.GetService(
                 AdWordsService.v201802.AdGroupCriterionService)) {
         // Create a webpage criterion for special offers for mars cruise.
-        WebpageParameter param = new WebpageParameter();
-        param.criterionName = "Special offers for mars";
+        WebpageParameter param = new WebpageParameter {
+          criterionName = "Special offers for mars"
+        };
 
-        WebpageCondition urlCondition = new WebpageCondition();
-        urlCondition.operand = WebpageConditionOperand.URL;
-        urlCondition.argument = "/marscruise/special";
+        WebpageCondition urlCondition = new WebpageCondition {
+          operand = WebpageConditionOperand.URL,
+          argument = "/marscruise/special"
+        };
 
-        WebpageCondition titleCondition = new WebpageCondition();
-        titleCondition.operand = WebpageConditionOperand.PAGE_TITLE;
-        titleCondition.argument = "Special Offer";
+        WebpageCondition titleCondition = new WebpageCondition {
+          operand = WebpageConditionOperand.PAGE_TITLE,
+          argument = "Special Offer"
+        };
 
         param.conditions = new WebpageCondition[] { urlCondition, titleCondition };
 
-        Webpage webpage = new Webpage();
-        webpage.parameter = param;
+        Webpage webpage = new Webpage {
+          parameter = param
+        };
 
         // Create biddable ad group criterion.
-        BiddableAdGroupCriterion biddableAdGroupCriterion = new BiddableAdGroupCriterion();
-        biddableAdGroupCriterion.adGroupId = adGroupId;
-        biddableAdGroupCriterion.criterion = webpage;
-        biddableAdGroupCriterion.userStatus = UserStatus.PAUSED;
+        BiddableAdGroupCriterion biddableAdGroupCriterion = new BiddableAdGroupCriterion {
+          adGroupId = adGroupId,
+          criterion = webpage,
+          userStatus = UserStatus.PAUSED
+        };
 
         // Optional: set a custom bid.
         BiddingStrategyConfiguration biddingStrategyConfiguration =
@@ -307,9 +327,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
         biddableAdGroupCriterion.biddingStrategyConfiguration = biddingStrategyConfiguration;
 
         // Create the operation.
-        AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
-        operation.@operator = Operator.ADD;
-        operation.operand = biddableAdGroupCriterion;
+        AdGroupCriterionOperation operation = new AdGroupCriterionOperation {
+          @operator = Operator.ADD,
+          operand = biddableAdGroupCriterion
+        };
 
         try {
           AdGroupCriterionReturnValue result = adGroupCriterionService.mutate(

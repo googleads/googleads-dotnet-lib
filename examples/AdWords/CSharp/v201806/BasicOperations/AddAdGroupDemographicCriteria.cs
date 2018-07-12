@@ -63,35 +63,41 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
               AdWordsService.v201806.AdGroupCriterionService)) {
 
         // Create biddable ad group criterion for gender
-        Gender genderTarget = new Gender();
-        // Criterion Id for male. The IDs can be found here
-        // https://developers.google.com/adwords/api/docs/appendix/genders
-        genderTarget.id = 10;
+        Gender genderTarget = new Gender {
+          // Criterion Id for male. The IDs can be found here
+          // https://developers.google.com/adwords/api/docs/appendix/genders
+          id = 10
+        };
 
-        BiddableAdGroupCriterion genderBiddableAdGroupCriterion = new BiddableAdGroupCriterion();
-        genderBiddableAdGroupCriterion.adGroupId = adGroupId;
-        genderBiddableAdGroupCriterion.criterion = genderTarget;
+        BiddableAdGroupCriterion genderBiddableAdGroupCriterion = new BiddableAdGroupCriterion {
+          adGroupId = adGroupId,
+          criterion = genderTarget
+        };
 
         // Create negative ad group criterion for age range
-        AgeRange ageRangeNegative = new AgeRange();
-        // Criterion Id for age 18 to 24. The IDs can be found here
-        // https://developers.google.com/adwords/api/docs/appendix/ages
+        AgeRange ageRangeNegative = new AgeRange {
+          // Criterion Id for age 18 to 24. The IDs can be found here
+          // https://developers.google.com/adwords/api/docs/appendix/ages
 
-        ageRangeNegative.id = 503001;
-        NegativeAdGroupCriterion ageRangeNegativeAdGroupCriterion = new NegativeAdGroupCriterion();
-        ageRangeNegativeAdGroupCriterion.adGroupId = adGroupId;
-        ageRangeNegativeAdGroupCriterion.criterion = ageRangeNegative;
+          id = 503001
+        };
+        NegativeAdGroupCriterion ageRangeNegativeAdGroupCriterion = new NegativeAdGroupCriterion {
+          adGroupId = adGroupId,
+          criterion = ageRangeNegative
+        };
 
         // Create operations.
         AdGroupCriterionOperation genderBiddableAdGroupCriterionOperation =
-            new AdGroupCriterionOperation();
-        genderBiddableAdGroupCriterionOperation.operand = genderBiddableAdGroupCriterion;
-        genderBiddableAdGroupCriterionOperation.@operator = Operator.ADD;
+            new AdGroupCriterionOperation {
+              operand = genderBiddableAdGroupCriterion,
+              @operator = Operator.ADD
+            };
 
         AdGroupCriterionOperation ageRangeNegativeAdGroupCriterionOperation =
-            new AdGroupCriterionOperation();
-        ageRangeNegativeAdGroupCriterionOperation.operand = ageRangeNegativeAdGroupCriterion;
-        ageRangeNegativeAdGroupCriterionOperation.@operator = Operator.ADD;
+            new AdGroupCriterionOperation {
+              operand = ageRangeNegativeAdGroupCriterion,
+              @operator = Operator.ADD
+            };
 
         AdGroupCriterionOperation[] operations = new AdGroupCriterionOperation[] {
           genderBiddableAdGroupCriterionOperation, ageRangeNegativeAdGroupCriterionOperation

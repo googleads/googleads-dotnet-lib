@@ -61,14 +61,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
           AdWordsService.v201806.AdGroupService)) {
 
         // Create ad group with REMOVED status.
-        AdGroup adGroup = new AdGroup();
-        adGroup.id = adGroupId;
-        adGroup.status = AdGroupStatus.REMOVED;
+        AdGroup adGroup = new AdGroup {
+          id = adGroupId,
+          status = AdGroupStatus.REMOVED
+        };
 
         // Create the operation.
-        AdGroupOperation operation = new AdGroupOperation();
-        operation.operand = adGroup;
-        operation.@operator = Operator.SET;
+        AdGroupOperation operation = new AdGroupOperation {
+          operand = adGroup,
+          @operator = Operator.SET
+        };
 
         try {
           // Remove the ad group.

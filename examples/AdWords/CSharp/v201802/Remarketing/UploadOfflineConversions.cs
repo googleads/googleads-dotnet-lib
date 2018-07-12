@@ -72,7 +72,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     /// </param>
     /// <param name="conversionTime">The conversion time, in yyyymmdd hhmmss
     /// format.</param>
-    public void Run(AdWordsUser user, String conversionName, String gClid, String conversionTime,
+    public void Run(AdWordsUser user, string conversionName, string gClid, string conversionTime,
         double conversionValue) {
       using (OfflineConversionFeedService offlineConversionFeedService =
           (OfflineConversionFeedService) user.GetService(
@@ -82,11 +82,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           // Associate offline conversions with the existing named conversion tracker. If
           // this tracker was newly created, it may be a few hours before it can accept
           // conversions.
-          OfflineConversionFeed feed = new OfflineConversionFeed();
-          feed.conversionName = conversionName;
-          feed.conversionTime = conversionTime;
-          feed.conversionValue = conversionValue;
-          feed.googleClickId = gClid;
+          OfflineConversionFeed feed = new OfflineConversionFeed {
+            conversionName = conversionName,
+            conversionTime = conversionTime,
+            conversionValue = conversionValue,
+            googleClickId = gClid
+          };
 
           // Optional: To upload fractional conversion credits, set the external attribution model
           // and credit. To use this feature, your conversion tracker should be marked as externally
@@ -98,9 +99,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           // feed.externalAttributionCredit = 0.3;
 
           OfflineConversionFeedOperation offlineConversionOperation =
-              new OfflineConversionFeedOperation();
-          offlineConversionOperation.@operator = Operator.ADD;
-          offlineConversionOperation.operand = feed;
+              new OfflineConversionFeedOperation {
+                @operator = Operator.ADD,
+                operand = feed
+              };
 
           OfflineConversionFeedReturnValue offlineConversionRetval =
               offlineConversionFeedService.mutate(

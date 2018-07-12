@@ -75,25 +75,27 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     /// <param name="callerId">The caller ID to be uploaded.</param>
     /// <param name="conversionTime">The conversion time, in yyyymmdd hhmmss
     /// format.</param>
-    public void Run(AdWordsUser user, String conversionName, String callStartTime, String callerId,
-        String conversionTime, double conversionValue) {
+    public void Run(AdWordsUser user, string conversionName, string callStartTime, string callerId,
+        string conversionTime, double conversionValue) {
       using (OfflineCallConversionFeedService offlineCallConversionFeedService =
            (OfflineCallConversionFeedService) user.GetService(
                AdWordsService.v201802.OfflineCallConversionFeedService)) {
 
         // Associate offline call conversions with the existing named conversion tracker. If this
         // tracker was newly created, it may be a few hours before it can accept conversions.
-        OfflineCallConversionFeed feed = new OfflineCallConversionFeed();
-        feed.callerId = callerId;
-        feed.callStartTime = callStartTime;
-        feed.conversionName = conversionName;
-        feed.conversionTime = conversionTime;
-        feed.conversionValue = conversionValue;
+        OfflineCallConversionFeed feed = new OfflineCallConversionFeed {
+          callerId = callerId,
+          callStartTime = callStartTime,
+          conversionName = conversionName,
+          conversionTime = conversionTime,
+          conversionValue = conversionValue
+        };
 
         OfflineCallConversionFeedOperation offlineCallConversionOperation =
-            new OfflineCallConversionFeedOperation();
-        offlineCallConversionOperation.@operator = Operator.ADD;
-        offlineCallConversionOperation.operand = feed;
+            new OfflineCallConversionFeedOperation {
+              @operator = Operator.ADD,
+              operand = feed
+            };
 
         try {
           // This example uploads only one call conversion, but you can upload

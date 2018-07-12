@@ -63,13 +63,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
         List<Criterion> criteria = new List<Criterion>();
 
         // Exclude tragedy & conflict content.
-        ContentLabel tragedyContentLabel = new ContentLabel();
-        tragedyContentLabel.contentLabelType = ContentLabelType.TRAGEDY;
+        ContentLabel tragedyContentLabel = new ContentLabel {
+          contentLabelType = ContentLabelType.TRAGEDY
+        };
         criteria.Add(tragedyContentLabel);
 
         // Exclude a specific placement.
-        Placement placement = new Placement();
-        placement.url = "http://www.example.com";
+        Placement placement = new Placement {
+          url = "http://www.example.com"
+        };
         criteria.Add(placement);
 
         // Additional criteria types are available for this service. See the types listed
@@ -80,11 +82,13 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
         List<CustomerNegativeCriterionOperation> operations =
             new List<CustomerNegativeCriterionOperation>();
         foreach (Criterion criterion in criteria) {
-          CustomerNegativeCriterion negativeCriterion = new CustomerNegativeCriterion();
-          negativeCriterion.criterion = criterion;
-          CustomerNegativeCriterionOperation operation = new CustomerNegativeCriterionOperation();
-          operation.@operator = Operator.ADD;
-          operation.operand = negativeCriterion;
+          CustomerNegativeCriterion negativeCriterion = new CustomerNegativeCriterion {
+            criterion = criterion
+          };
+          CustomerNegativeCriterionOperation operation = new CustomerNegativeCriterionOperation {
+            @operator = Operator.ADD,
+            operand = negativeCriterion
+          };
           operations.Add(operation);
         }
 

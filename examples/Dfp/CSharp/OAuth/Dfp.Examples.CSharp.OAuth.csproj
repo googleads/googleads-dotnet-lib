@@ -77,14 +77,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\src\Common\Common.csproj">
-      <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\src\Dfp\Dfp.csproj">
-      <Project>{CE15CE8A-532B-49DA-8CF7-2BFCDEE845DB}</Project>
-      <Name>Dfp</Name>
-    </ProjectReference>
+    <!-- Include local projects over nuget dependencies if available -->
+    <ProjectReference Condition="Exists('..\..\..\..\src\Common\Common.csproj')"
+        Include="..\..\..\..\src\Common\Common.csproj" />
+    <ProjectReference Condition="Exists('..\..\..\..\src\Dfp\Dfp.csproj')"
+        Include="..\..\..\..\src\Dfp\Dfp.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Google.Ads.Common" Version="9.3.1" />
+    <PackageReference Include="Google.Dfp" Version="23.5.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

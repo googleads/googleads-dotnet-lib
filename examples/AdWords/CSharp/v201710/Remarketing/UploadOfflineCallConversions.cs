@@ -75,8 +75,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// <param name="callerId">The caller ID to be uploaded.</param>
     /// <param name="conversionTime">The conversion time, in yyyymmdd hhmmss
     /// format.</param>
-    public void Run(AdWordsUser user, String conversionName, String callStartTime, String callerId,
-        String conversionTime, double conversionValue) {
+    public void Run(AdWordsUser user, string conversionName, string callStartTime, string callerId,
+        string conversionTime, double conversionValue) {
       using (OfflineCallConversionFeedService offlineCallConversionFeedService =
            (OfflineCallConversionFeedService) user.GetService(
                AdWordsService.v201710.OfflineCallConversionFeedService)) {

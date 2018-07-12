@@ -76,7 +76,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
         // extensions guide at
         // https://developers.google.com/adwords/api/docs/guides/feed-services-locations
         // for details.
-        String businessAccountIdentifier = null;
+        string businessAccountIdentifier = null;
         codeExample.Run(user, gmbEmailAddress, gmbAccessToken, businessAccountIdentifier);
       } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
@@ -120,7 +120,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
         // as AdWords will add them automatically because this will be a
         // system generated feed.
         Feed gmbFeed = new Feed();
-        gmbFeed.name = String.Format("Google My Business feed #{0}",
+        gmbFeed.name = string.Format("Google My Business feed #{0}",
             ExampleUtilities.GetRandomString());
 
         PlacesLocationFeedData feedData = new PlacesLocationFeedData();

@@ -123,50 +123,55 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     private static Campaign CreateCampaign(AdWordsUser user, long merchantId, long budgetId) {
       using (CampaignService campaignService =
           (CampaignService) user.GetService(AdWordsService.v201802.CampaignService)) {
-        Campaign campaign = new Campaign();
-        campaign.name = "Shopping campaign #" + ExampleUtilities.GetRandomString();
-        // Dynamic remarketing campaigns are only available on the Google Display Network.
-        campaign.advertisingChannelType = AdvertisingChannelType.DISPLAY;
-        campaign.status = CampaignStatus.PAUSED;
+        Campaign campaign = new Campaign {
+          name = "Shopping campaign #" + ExampleUtilities.GetRandomString(),
+          // Dynamic remarketing campaigns are only available on the Google Display Network.
+          advertisingChannelType = AdvertisingChannelType.DISPLAY,
+          status = CampaignStatus.PAUSED
+        };
 
-        Budget budget = new Budget();
-        budget.budgetId = budgetId;
+        Budget budget = new Budget {
+          budgetId = budgetId
+        };
         campaign.budget = budget;
 
         // This example uses a Manual CPC bidding strategy, but you should select the strategy
         // that best aligns with your sales goals. More details here:
         //   https://support.google.com/adwords/answer/2472725
         BiddingStrategyConfiguration biddingStrategyConfiguration =
-            new BiddingStrategyConfiguration();
-        biddingStrategyConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC;
+            new BiddingStrategyConfiguration {
+              biddingStrategyType = BiddingStrategyType.MANUAL_CPC
+            };
         campaign.biddingStrategyConfiguration = biddingStrategyConfiguration;
 
-        ShoppingSetting setting = new ShoppingSetting();
-        // Campaigns with numerically higher priorities take precedence over those with lower
-        // priorities.
-        setting.campaignPriority = 0;
+        ShoppingSetting setting = new ShoppingSetting {
+          // Campaigns with numerically higher priorities take precedence over those with lower
+          // priorities.
+          campaignPriority = 0,
 
-        // Set the Merchant Center account ID from which to source products.
-        setting.merchantId = merchantId;
+          // Set the Merchant Center account ID from which to source products.
+          merchantId = merchantId,
 
-        // Display Network campaigns do not support partition by country. The only supported
-        // value is "ZZ". This signals that products from all countries are available in the
-        // campaign. The actual products which serve are based on the products tagged in the
-        // user list entry.
-        setting.salesCountry = "ZZ";
+          // Display Network campaigns do not support partition by country. The only supported
+          // value is "ZZ". This signals that products from all countries are available in the
+          // campaign. The actual products which serve are based on the products tagged in the
+          // user list entry.
+          salesCountry = "ZZ",
 
-        // Optional: Enable local inventory ads (items for sale in physical stores.)
-        setting.enableLocal = true;
+          // Optional: Enable local inventory ads (items for sale in physical stores.)
+          enableLocal = true,
 
-        // Optional: Declare whether purchases are only made on the merchant store, or
-        // completed on Google.
-        setting.purchasePlatform = ShoppingPurchasePlatform.MERCHANT;
+          // Optional: Declare whether purchases are only made on the merchant store, or
+          // completed on Google.
+          purchasePlatform = ShoppingPurchasePlatform.MERCHANT
+        };
 
         campaign.settings = new Setting[] { setting };
 
-        CampaignOperation op = new CampaignOperation();
-        op.operand = campaign;
-        op.@operator = Operator.ADD;
+        CampaignOperation op = new CampaignOperation {
+          operand = campaign,
+          @operator = Operator.ADD
+        };
 
         CampaignReturnValue result = campaignService.mutate(new CampaignOperation[] { op });
         return result.value[0];
@@ -182,14 +187,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     private static AdGroup CreateAdGroup(AdWordsUser user, Campaign campaign) {
       using (AdGroupService adGroupService =
           (AdGroupService) user.GetService(AdWordsService.v201802.AdGroupService)) {
-        AdGroup group = new AdGroup();
-        group.name = "Dynamic remarketing ad group";
-        group.campaignId = campaign.id;
-        group.status = AdGroupStatus.ENABLED;
+        AdGroup group = new AdGroup {
+          name = "Dynamic remarketing ad group",
+          campaignId = campaign.id,
+          status = AdGroupStatus.ENABLED
+        };
 
-        AdGroupOperation op = new AdGroupOperation();
-        op.operand = group;
-        op.@operator = Operator.ADD;
+        AdGroupOperation op = new AdGroupOperation {
+          operand = group,
+          @operator = Operator.ADD
+        };
         AdGroupReturnValue result = adGroupService.mutate(new AdGroupOperation[] { op });
         return result.value[0];
       }
@@ -208,15 +215,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
       using (AdGroupCriterionService adGroupCriterionService =
           (AdGroupCriterionService) user.GetService(
               AdWordsService.v201802.AdGroupCriterionService)) {
-        CriterionUserList userList = new CriterionUserList();
-        userList.userListId = userListId;
-        BiddableAdGroupCriterion adGroupCriterion = new BiddableAdGroupCriterion();
-        adGroupCriterion.criterion = userList;
-        adGroupCriterion.adGroupId = adGroup.id;
+        CriterionUserList userList = new CriterionUserList {
+          userListId = userListId
+        };
+        BiddableAdGroupCriterion adGroupCriterion = new BiddableAdGroupCriterion {
+          criterion = userList,
+          adGroupId = adGroup.id
+        };
 
-        AdGroupCriterionOperation op = new AdGroupCriterionOperation();
-        op.operand = adGroupCriterion;
-        op.@operator = Operator.ADD;
+        AdGroupCriterionOperation op = new AdGroupCriterionOperation {
+          operand = adGroupCriterion,
+          @operator = Operator.ADD
+        };
 
         adGroupCriterionService.mutate(new AdGroupCriterionOperation[] { op });
       }
@@ -231,32 +241,33 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     private static AdGroupAd CreateAd(AdWordsUser user, AdGroup adGroup) {
       using (AdGroupAdService adService = (AdGroupAdService) user.GetService(
           AdWordsService.v201802.AdGroupAdService)) {
-        ResponsiveDisplayAd ad = new ResponsiveDisplayAd();
+        ResponsiveDisplayAd ad = new ResponsiveDisplayAd {
 
-        // This ad format does not allow the creation of an image using the
-        // Image.data field. An image must first be created using the MediaService,
-        // and Image.mediaId must be populated when creating the ad.
-        ad.marketingImage = UploadImage(user, "https://goo.gl/3b9Wfh");
+          // This ad format does not allow the creation of an image using the
+          // Image.data field. An image must first be created using the MediaService,
+          // and Image.mediaId must be populated when creating the ad.
+          marketingImage = UploadImage(user, "https://goo.gl/3b9Wfh"),
 
-        ad.shortHeadline = "Travel";
-        ad.longHeadline = "Travel the World";
-        ad.description = "Take to the air!";
-        ad.businessName = "Interplanetary Cruises";
-        ad.finalUrls = new string[] { "http://www.example.com/" };
+          shortHeadline = "Travel",
+          longHeadline = "Travel the World",
+          description = "Take to the air!",
+          businessName = "Interplanetary Cruises",
+          finalUrls = new string[] { "http://www.example.com/" },
 
-        // Optional: Call to action text.
-        // Valid texts: https://support.google.com/adwords/answer/7005917
-        ad.callToActionText = "Apply Now";
+          // Optional: Call to action text.
+          // Valid texts: https://support.google.com/adwords/answer/7005917
+          callToActionText = "Apply Now",
 
-        // Optional: Set dynamic display ad settings, composed of landscape logo
-        // image, promotion text, and price prefix.
-        ad.dynamicDisplayAdSettings = CreateDynamicDisplayAdSettings(user);
+          // Optional: Set dynamic display ad settings, composed of landscape logo
+          // image, promotion text, and price prefix.
+          dynamicDisplayAdSettings = CreateDynamicDisplayAdSettings(user),
 
-        // Optional: Create a logo image and set it to the ad.
-        ad.logoImage = UploadImage(user, "https://goo.gl/mtt54n");
+          // Optional: Create a logo image and set it to the ad.
+          logoImage = UploadImage(user, "https://goo.gl/mtt54n"),
 
-        // Optional: Create a square marketing image and set it to the ad.
-        ad.squareMarketingImage = UploadImage(user, "https://goo.gl/mtt54n");
+          // Optional: Create a square marketing image and set it to the ad.
+          squareMarketingImage = UploadImage(user, "https://goo.gl/mtt54n")
+        };
 
         // Whitelisted accounts only: Set color settings using hexadecimal values.
         // Set allowFlexibleColor to false if you want your ads to render by always
@@ -269,13 +280,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
         // served in.
         // ad.formatSetting = DisplayAdFormatSetting.NON_NATIVE;
 
-        AdGroupAd adGroupAd = new AdGroupAd();
-        adGroupAd.ad = ad;
-        adGroupAd.adGroupId = adGroup.id;
+        AdGroupAd adGroupAd = new AdGroupAd {
+          ad = ad,
+          adGroupId = adGroup.id
+        };
 
-        AdGroupAdOperation op = new AdGroupAdOperation();
-        op.operand = adGroupAd;
-        op.@operator = Operator.ADD;
+        AdGroupAdOperation op = new AdGroupAdOperation {
+          operand = adGroupAd,
+          @operator = Operator.ADD
+        };
 
         AdGroupAdReturnValue result = adService.mutate(new AdGroupAdOperation[] { op });
         return result.value[0];
@@ -290,10 +303,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     private static DynamicSettings CreateDynamicDisplayAdSettings(AdWordsUser user) {
       Image logo = UploadImage(user, "https://goo.gl/dEvQeF");
 
-      DynamicSettings dynamicSettings = new DynamicSettings();
-      dynamicSettings.landscapeLogoImage = logo;
-      dynamicSettings.pricePrefix = "as low as";
-      dynamicSettings.promoText = "Free shipping!";
+      DynamicSettings dynamicSettings = new DynamicSettings {
+        landscapeLogoImage = logo,
+        pricePrefix = "as low as",
+        promoText = "Free shipping!"
+      };
       return dynamicSettings;
     }
 

@@ -61,16 +61,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
               AdWordsService.v201802.ManagedCustomerService)) {
 
         // Create account.
-        ManagedCustomer customer = new ManagedCustomer();
-        customer.name = "Customer created with ManagedCustomerService on " +
-            new DateTime().ToString();
-        customer.currencyCode = "EUR";
-        customer.dateTimeZone = "Europe/London";
+        ManagedCustomer customer = new ManagedCustomer {
+          name = "Customer created with ManagedCustomerService on " +
+            new DateTime().ToString(),
+          currencyCode = "EUR",
+          dateTimeZone = "Europe/London"
+        };
 
         // Create operations.
-        ManagedCustomerOperation operation = new ManagedCustomerOperation();
-        operation.operand = customer;
-        operation.@operator = Operator.ADD;
+        ManagedCustomerOperation operation = new ManagedCustomerOperation {
+          operand = customer,
+          @operator = Operator.ADD
+        };
 
         // For whitelisted users only, uncomment two commands below as part of the
         // ADD operation to invite a user to have access to an account. An email

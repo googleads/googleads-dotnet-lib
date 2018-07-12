@@ -78,14 +78,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\src\Common\Common.csproj">
-      <Project>{277404DB-A439-4450-B3A5-186294CDF245}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\src\AdWords\AdWords.csproj">
-      <Project>{50C9CC2A-0664-4CFA-B72D-AEE6C91BD745}</Project>
-      <Name>AdWords</Name>
-    </ProjectReference>
+    <!-- Include local projects over nuget dependencies if available -->
+    <ProjectReference Condition="Exists('..\..\..\..\src\Common\Common.csproj')"
+        Include="..\..\..\..\src\Common\Common.csproj"/>
+    <ProjectReference Condition="Exists('..\..\..\..\src\AdWords\AdWords.csproj')"
+        Include="..\..\..\..\src\AdWords\AdWords.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Google.Ads.Common" Version="9.3.1" />
+    <PackageReference Include="Google.AdWords" Version="23.5.1" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>

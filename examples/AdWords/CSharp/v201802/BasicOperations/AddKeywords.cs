@@ -73,29 +73,32 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
 
         foreach (string keywordText in KEYWORDS) {
           // Create the keyword.
-          Keyword keyword = new Keyword();
-          keyword.text = keywordText;
-          keyword.matchType = KeywordMatchType.BROAD;
+          Keyword keyword = new Keyword {
+            text = keywordText,
+            matchType = KeywordMatchType.BROAD
+          };
 
           // Create the biddable ad group criterion.
-          BiddableAdGroupCriterion keywordCriterion = new BiddableAdGroupCriterion();
-          keywordCriterion.adGroupId = adGroupId;
-          keywordCriterion.criterion = keyword;
+          BiddableAdGroupCriterion keywordCriterion = new BiddableAdGroupCriterion {
+            adGroupId = adGroupId,
+            criterion = keyword,
 
-          // Optional: Set the user status.
-          keywordCriterion.userStatus = UserStatus.PAUSED;
+            // Optional: Set the user status.
+            userStatus = UserStatus.PAUSED,
 
-          // Optional: Set the keyword destination url.
-          keywordCriterion.finalUrls = new UrlList() {
-            urls = new string[] {
-              "http://example.com/mars/cruise/?kw=" + HttpUtility.UrlEncode(keywordText)
+            // Optional: Set the keyword destination url.
+            finalUrls = new UrlList() {
+              urls = new string[] {
+                  "http://example.com/mars/cruise/?kw=" + HttpUtility.UrlEncode(keywordText)
+              }
             }
           };
 
           // Create the operations.
-          AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
-          operation.@operator = Operator.ADD;
-          operation.operand = keywordCriterion;
+          AdGroupCriterionOperation operation = new AdGroupCriterionOperation {
+            @operator = Operator.ADD,
+            operand = keywordCriterion
+          };
 
           operations.Add(operation);
         }

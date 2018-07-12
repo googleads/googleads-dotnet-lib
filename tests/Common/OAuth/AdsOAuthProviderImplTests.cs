@@ -23,6 +23,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Web;
 
 namespace Google.Api.Ads.Common.Tests.OAuth {
 
@@ -157,18 +159,6 @@ namespace Google.Api.Ads.Common.Tests.OAuth {
       }
 
       /// <summary>
-      /// Creates the authorization URL.
-      /// </summary>
-      /// <param name="redirectUri">The redirect URI.</param>
-      /// <returns>
-      /// The authorization URL.
-      /// </returns>
-      protected override string CreateAuthorizationUrl(string redirectUri) {
-        Assert.AreEqual(Config.OAuth2RedirectUri, redirectUri);
-        return TEST_AUTHORIZATION_URL;
-      }
-
-      /// <summary>
       /// Gets the access token in service account flow.
       /// </summary>
       /// <returns>
@@ -249,6 +239,12 @@ namespace Google.Api.Ads.Common.Tests.OAuth {
       Assert.DoesNotThrow(delegate () {
         provider.GetAuthorizationUrl();
       });
+    }
+
+    [Test]
+    public void TestGetAuthorizationUrl_NoDuplicateParameters() {
+      MockAdsOAuthProviderImpl provider = new MockAdsOAuthProviderImpl(appConfig, newAppConfig);
+      Assert.AreEqual(1, Regex.Matches(provider.GetAuthorizationUrl(), "access_type=").Count);
     }
 
     /// <summary>

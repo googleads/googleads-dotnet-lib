@@ -62,23 +62,26 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
           (ConversionTrackerService) user.GetService(AdWordsService.v201806.
               ConversionTrackerService)) {
 
-        BasicUserList userList = new BasicUserList();
-        userList.name = "Mars cruise customers #" + ExampleUtilities.GetRandomString();
-        userList.description = "A list of mars cruise customers in the last year.";
-        userList.status = UserListMembershipStatus.OPEN;
-        userList.membershipLifeSpan = 365;
+        BasicUserList userList = new BasicUserList {
+          name = "Mars cruise customers #" + ExampleUtilities.GetRandomString(),
+          description = "A list of mars cruise customers in the last year.",
+          status = UserListMembershipStatus.OPEN,
+          membershipLifeSpan = 365
+        };
 
-        UserListConversionType conversionType = new UserListConversionType();
-        conversionType.name = userList.name;
+        UserListConversionType conversionType = new UserListConversionType {
+          name = userList.name
+        };
         userList.conversionTypes = new UserListConversionType[] { conversionType };
 
         // Optional: Set the user list status.
         userList.status = UserListMembershipStatus.OPEN;
 
         // Create the operation.
-        UserListOperation operation = new UserListOperation();
-        operation.operand = userList;
-        operation.@operator = Operator.ADD;
+        UserListOperation operation = new UserListOperation {
+          operand = userList,
+          @operator = Operator.ADD
+        };
 
         try {
           // Add the user list.

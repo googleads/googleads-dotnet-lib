@@ -71,23 +71,26 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
 
         for (int i = 0; i < NUMBER_OF_ADS; i++) {
           // Create the expanded text ad.
-          ExpandedTextAd expandedTextAd = new ExpandedTextAd();
-          expandedTextAd.headlinePart1 = "Cruise #" + i.ToString() + " to Mars";
-          expandedTextAd.headlinePart2 = "Best Space Cruise Line";
-          expandedTextAd.description = "Buy your tickets now!";
-          expandedTextAd.finalUrls = new string[] { "http://www.example.com/" + i };
+          ExpandedTextAd expandedTextAd = new ExpandedTextAd {
+            headlinePart1 = "Cruise #" + i.ToString() + " to Mars",
+            headlinePart2 = "Best Space Cruise Line",
+            description = "Buy your tickets now!",
+            finalUrls = new string[] { "http://www.example.com/" + i }
+          };
 
-          AdGroupAd expandedTextAdGroupAd = new AdGroupAd();
-          expandedTextAdGroupAd.adGroupId = adGroupId;
-          expandedTextAdGroupAd.ad = expandedTextAd;
+          AdGroupAd expandedTextAdGroupAd = new AdGroupAd {
+            adGroupId = adGroupId,
+            ad = expandedTextAd,
 
-          // Optional: Set the status.
-          expandedTextAdGroupAd.status = AdGroupAdStatus.PAUSED;
+            // Optional: Set the status.
+            status = AdGroupAdStatus.PAUSED
+          };
 
           // Create the operation.
-          AdGroupAdOperation operation = new AdGroupAdOperation();
-          operation.@operator = Operator.ADD;
-          operation.operand = expandedTextAdGroupAd;
+          AdGroupAdOperation operation = new AdGroupAdOperation {
+            @operator = Operator.ADD,
+            operand = expandedTextAdGroupAd
+          };
 
           operations.Add(operation);
         }

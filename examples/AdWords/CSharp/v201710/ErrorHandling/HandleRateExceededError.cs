@@ -129,7 +129,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
       /// Main method for the thread.
       /// </summary>
       /// <param name="obj">The thread parameter.</param>
-      public void Run(Object obj) {
+      public void Run(object obj) {
         // Create the operations.
         List<AdGroupCriterionOperation> operations = new List<AdGroupCriterionOperation>();
 
@@ -189,7 +189,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
                 }
               } finally {
                 if (retryCount == NUM_RETRIES) {
-                  throw new Exception(String.Format("Could not recover after making {0} attempts.",
+                  throw new Exception(string.Format("Could not recover after making {0} attempts.",
                       retryCount));
                 }
               }

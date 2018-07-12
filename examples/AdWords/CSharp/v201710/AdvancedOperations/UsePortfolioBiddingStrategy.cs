@@ -55,14 +55,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      String BIDDINGSTRATEGY_NAME = "Maximize Clicks " + ExampleUtilities.GetRandomString();
+      string BIDDINGSTRATEGY_NAME = "Maximize Clicks " + ExampleUtilities.GetRandomString();
       const long BID_CEILING = 2000000;
       const long SPEND_TARGET = 20000000;
 
-      String BUDGET_NAME = "Shared Interplanetary Budget #" + ExampleUtilities.GetRandomString();
+      string BUDGET_NAME = "Shared Interplanetary Budget #" + ExampleUtilities.GetRandomString();
       const long BUDGET_AMOUNT = 30000000;
 
-      String CAMPAIGN_NAME = "Interplanetary Cruise #" + ExampleUtilities.GetRandomString();
+      string CAMPAIGN_NAME = "Interplanetary Cruise #" + ExampleUtilities.GetRandomString();
 
       try {
         SharedBiddingStrategy portfolioBiddingStrategy = CreateBiddingStrategy(
@@ -93,7 +93,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// <param name="bidCeiling">The bid ceiling.</param>
     /// <param name="spendTarget">The spend target.</param>
     /// <returns>The bidding strategy object.</returns>
-    private SharedBiddingStrategy CreateBiddingStrategy(AdWordsUser user, String name,
+    private SharedBiddingStrategy CreateBiddingStrategy(AdWordsUser user, string name,
         long bidCeiling,long spendTarget) {
       using (BiddingStrategyService biddingStrategyService =
           (BiddingStrategyService) user.GetService(
@@ -130,7 +130,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// <param name="name">The budget name.</param>
     /// <param name="amount">The budget amount.</param>
     /// <returns>The budget object.</returns>
-    private Budget CreateSharedBudget(AdWordsUser user, String name, long amount) {
+    private Budget CreateSharedBudget(AdWordsUser user, string name, long amount) {
       using (BudgetService budgetService = (BudgetService) user.GetService(
           AdWordsService.v201710.BudgetService)) {
 

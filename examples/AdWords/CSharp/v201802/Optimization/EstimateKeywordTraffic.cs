@@ -61,17 +61,20 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
         // Create keywords. Refer to the TrafficEstimatorService documentation for the maximum
         // number of keywords that can be passed in a single request.
         //   https://developers.google.com/adwords/api/docs/reference/latest/TrafficEstimatorService
-        Keyword keyword1 = new Keyword();
-        keyword1.text = "mars cruise";
-        keyword1.matchType = KeywordMatchType.BROAD;
+        Keyword keyword1 = new Keyword {
+          text = "mars cruise",
+          matchType = KeywordMatchType.BROAD
+        };
 
-        Keyword keyword2 = new Keyword();
-        keyword2.text = "cheap cruise";
-        keyword2.matchType = KeywordMatchType.PHRASE;
+        Keyword keyword2 = new Keyword {
+          text = "cheap cruise",
+          matchType = KeywordMatchType.PHRASE
+        };
 
-        Keyword keyword3 = new Keyword();
-        keyword3.text = "cruise";
-        keyword3.matchType = KeywordMatchType.EXACT;
+        Keyword keyword3 = new Keyword {
+          text = "cruise",
+          matchType = KeywordMatchType.EXACT
+        };
 
         Keyword[] keywords = new Keyword[] { keyword1, keyword2, keyword3 };
 
@@ -79,42 +82,51 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
         List<KeywordEstimateRequest> keywordEstimateRequests = new List<KeywordEstimateRequest>();
 
         foreach (Keyword keyword in keywords) {
-          KeywordEstimateRequest keywordEstimateRequest = new KeywordEstimateRequest();
-          keywordEstimateRequest.keyword = keyword;
+          KeywordEstimateRequest keywordEstimateRequest = new KeywordEstimateRequest {
+            keyword = keyword
+          };
           keywordEstimateRequests.Add(keywordEstimateRequest);
         }
 
         // Create negative keywords.
-        Keyword negativeKeyword1 = new Keyword();
-        negativeKeyword1.text = "moon walk";
-        negativeKeyword1.matchType = KeywordMatchType.BROAD;
+        Keyword negativeKeyword1 = new Keyword {
+          text = "moon walk",
+          matchType = KeywordMatchType.BROAD
+        };
 
-        KeywordEstimateRequest negativeKeywordEstimateRequest = new KeywordEstimateRequest();
-        negativeKeywordEstimateRequest.keyword = negativeKeyword1;
-        negativeKeywordEstimateRequest.isNegative = true;
+        KeywordEstimateRequest negativeKeywordEstimateRequest = new KeywordEstimateRequest {
+          keyword = negativeKeyword1,
+          isNegative = true
+        };
         keywordEstimateRequests.Add(negativeKeywordEstimateRequest);
 
         // Create ad group estimate requests.
-        AdGroupEstimateRequest adGroupEstimateRequest = new AdGroupEstimateRequest();
-        adGroupEstimateRequest.keywordEstimateRequests = keywordEstimateRequests.ToArray();
-        adGroupEstimateRequest.maxCpc = new Money();
-        adGroupEstimateRequest.maxCpc.microAmount = 1000000;
+        AdGroupEstimateRequest adGroupEstimateRequest = new AdGroupEstimateRequest {
+          keywordEstimateRequests = keywordEstimateRequests.ToArray(),
+          maxCpc = new Money {
+            microAmount = 1000000
+          }
+        };
 
         // Create campaign estimate requests.
-        CampaignEstimateRequest campaignEstimateRequest = new CampaignEstimateRequest();
-        campaignEstimateRequest.adGroupEstimateRequests = new AdGroupEstimateRequest[] {
-            adGroupEstimateRequest};
+        CampaignEstimateRequest campaignEstimateRequest = new CampaignEstimateRequest {
+          adGroupEstimateRequests = new AdGroupEstimateRequest[] {
+            adGroupEstimateRequest
+          }
+        };
 
         // Optional: Set additional criteria for filtering estimates.
         // See http://code.google.com/apis/adwords/docs/appendix/countrycodes.html
         // for a detailed list of country codes.
-        Location countryCriterion = new Location();
-        countryCriterion.id = 2840; //US
+        Location countryCriterion = new Location {
+          id = 2840 //US
+        };
 
         // See http://code.google.com/apis/adwords/docs/appendix/languagecodes.html
         // for a detailed list of language codes.
-        Language languageCriterion = new Language();
-        languageCriterion.id = 1000; //en
+        Language languageCriterion = new Language {
+          id = 1000 //en
+        };
 
         campaignEstimateRequest.criteria = new Criterion[] { countryCriterion, languageCriterion };
 

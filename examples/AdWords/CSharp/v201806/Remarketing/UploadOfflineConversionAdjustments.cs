@@ -40,7 +40,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
             (OfflineConversionAdjustmentType) Enum.Parse(
                 typeof(OfflineConversionAdjustmentType), "INSERT_ADJUSTMENT_TYPE_HERE");
         string adjustmentTime = "INSERT_ADJUSTMENT_TIME_HERE";
-        double adjustedValue = Double.Parse("INSERT_ADJUSTED_VALUE_HERE");
+        double adjustedValue = double.Parse("INSERT_ADJUSTED_VALUE_HERE");
 
         codeExample.Run(new AdWordsUser(), conversionName, gclid, conversionTime, adjustmentType,
             adjustmentTime, adjustedValue);

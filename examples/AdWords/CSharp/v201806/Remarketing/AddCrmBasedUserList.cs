@@ -36,7 +36,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
   /// </summary>
   public class AddCrmBasedUserList : ExampleBase {
 
-    private static readonly String[] EMAILS = new String[] {
+    private static readonly string[] EMAILS = new string[] {
       "customer1@example.com", "customer2@example.com",
       " Customer3@example.com "
     };
@@ -114,24 +114,27 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
           List<Member> memberList = new List<Member>();
 
           // Hash normalized email addresses based on SHA-256 hashing algorithm.
-          String[] emailHashes = new String[EMAILS.Length];
+          string[] emailHashes = new string[EMAILS.Length];
           for (int i = 0; i < EMAILS.Length; i++) {
-            Member member = new Member();
-            member.hashedEmail = ToSha256String(digest, ToNormalizedEmail(EMAILS[i]));
+            Member member = new Member {
+              hashedEmail = ToSha256String(digest, ToNormalizedEmail(EMAILS[i]))
+            };
             memberList.Add(member);
           };
 
           // Add a user by first and last name.
-          AddressInfo addressInfo = new AddressInfo();
-          // First and last name must be normalized and hashed.
-          addressInfo.hashedFirstName = ToSha256String(digest, FIRST_NAME);
-          addressInfo.hashedLastName = ToSha256String(digest, LAST_NAME);
-          // Country code and zip code are sent in plaintext.
-          addressInfo.zipCode = ZIP_CODE;
-          addressInfo.countryCode = COUNTRY_CODE;
+          AddressInfo addressInfo = new AddressInfo {
+            // First and last name must be normalized and hashed.
+            hashedFirstName = ToSha256String(digest, FIRST_NAME),
+            hashedLastName = ToSha256String(digest, LAST_NAME),
+            // Country code and zip code are sent in plaintext.
+            zipCode = ZIP_CODE,
+            countryCode = COUNTRY_CODE
+          };
 
-          Member memberByAddress = new Member();
-          memberByAddress.addressInfo = addressInfo;
+          Member memberByAddress = new Member {
+            addressInfo = addressInfo
+          };
           memberList.Add(memberByAddress);
 
           // Create operation to add members to the user list based on email
@@ -171,7 +174,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
     /// <param name="digest">Provides the algorithm for SHA-256.</param>
     /// <param name="email">The email address to hash.</param>
     /// <returns>Hash email address using SHA-256 hashing algorithm.</returns>
-    private static String ToSha256String(SHA256 digest, String email) {
+    private static string ToSha256String(SHA256 digest, string email) {
       byte[] digestBytes = digest.ComputeHash(Encoding.UTF8.GetBytes(email));
       // Convert the byte array into an unhyphenated hexadecimal string.
       return BitConverter.ToString(digestBytes).Replace("-", string.Empty);
@@ -183,7 +186,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
     /// </summary>
     /// <param name="email">The email address to normalize.</param>
     /// <returns>A normalized copy of the string.</returns>
-    private static String ToNormalizedEmail(String email) {
+    private static string ToNormalizedEmail(string email) {
       return email.Trim().ToLower();
     }
   }

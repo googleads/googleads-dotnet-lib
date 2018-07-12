@@ -60,21 +60,23 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
       using (AdService adService =
           (AdService) user.GetService(AdWordsService.v201806.AdService)) {
         // Create an expanded text ad using the provided ad ID.
-        ExpandedTextAd expandedTextAd = new ExpandedTextAd();
-        expandedTextAd.id = adId;
+        ExpandedTextAd expandedTextAd = new ExpandedTextAd {
+          id = adId,
 
-        // Update some properties of the expanded text ad.
-        expandedTextAd.headlinePart1 = "Cruise to Pluto #" +
-            ExampleUtilities.GetShortRandomString();
-        expandedTextAd.headlinePart2 = "Tickets on sale now";
-        expandedTextAd.description = "Best space cruise ever.";
-        expandedTextAd.finalUrls = new string[] { "http://www.example.com/" };
-        expandedTextAd.finalMobileUrls = new string[] { "http://www.example.com/mobile" };
+          // Update some properties of the expanded text ad.
+          headlinePart1 = "Cruise to Pluto #" +
+              ExampleUtilities.GetShortRandomString(),
+          headlinePart2 = "Tickets on sale now",
+          description = "Best space cruise ever.",
+          finalUrls = new string[] { "http://www.example.com/" },
+          finalMobileUrls = new string[] { "http://www.example.com/mobile" }
+        };
 
         // Create ad group ad operation and add it to the list.
-        AdOperation operation = new AdOperation();
-        operation.operand = expandedTextAd;
-        operation.@operator = Operator.SET;
+        AdOperation operation = new AdOperation {
+          operand = expandedTextAd,
+          @operator = Operator.SET
+        };
 
         try {
           // Update the ad on the server.

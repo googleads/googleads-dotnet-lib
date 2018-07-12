@@ -76,7 +76,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
         // extensions guide at
         // https://developers.google.com/adwords/api/docs/guides/feed-services-locations
         // for details.
-        String businessAccountIdentifier = null;
+        string businessAccountIdentifier = null;
         codeExample.Run(user, gmbEmailAddress, gmbAccessToken, businessAccountIdentifier);
       } catch (Exception e) {
         Console.WriteLine("An exception occurred while running this code example. {0}",
@@ -119,25 +119,28 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
         // specified by gmbEmailAddress. Do not add FeedAttributes to this object,
         // as AdWords will add them automatically because this will be a
         // system generated feed.
-        Feed gmbFeed = new Feed();
-        gmbFeed.name = String.Format("Google My Business feed #{0}",
-            ExampleUtilities.GetRandomString());
+        Feed gmbFeed = new Feed {
+          name = string.Format("Google My Business feed #{0}",
+              ExampleUtilities.GetRandomString())
+        };
 
-        PlacesLocationFeedData feedData = new PlacesLocationFeedData();
-        feedData.emailAddress = gmbEmailAddress;
-        feedData.businessAccountIdentifier = businessAccountIdentifier;
+        PlacesLocationFeedData feedData = new PlacesLocationFeedData {
+          emailAddress = gmbEmailAddress,
+          businessAccountIdentifier = businessAccountIdentifier,
 
-        // Optional: specify labels to filter Google My Business listings. If
-        // specified, only listings that have any of the labels set are
-        // synchronized into FeedItems.
-        feedData.labelFilters = new string[] { "Stores in New York City" };
+          // Optional: specify labels to filter Google My Business listings. If
+          // specified, only listings that have any of the labels set are
+          // synchronized into FeedItems.
+          labelFilters = new string[] { "Stores in New York City" }
+        };
 
-        OAuthInfo oAuthInfo = new OAuthInfo();
-        oAuthInfo.httpMethod = "GET";
+        OAuthInfo oAuthInfo = new OAuthInfo {
+          httpMethod = "GET",
 
-        // Permissions for the AdWords API scope will also cover GMB.
-        oAuthInfo.httpRequestUrl = user.Config.GetDefaultOAuth2Scope();
-        oAuthInfo.httpAuthorizationHeader = string.Format("Bearer {0}", gmbAccessToken);
+          // Permissions for the AdWords API scope will also cover GMB.
+          httpRequestUrl = user.Config.GetDefaultOAuth2Scope(),
+          httpAuthorizationHeader = string.Format("Bearer {0}", gmbAccessToken)
+        };
         feedData.oAuthInfo = oAuthInfo;
 
         gmbFeed.systemFeedGenerationData = feedData;
@@ -147,9 +150,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
         gmbFeed.origin = FeedOrigin.ADWORDS;
 
         // Create an operation to add the feed.
-        FeedOperation feedOperation = new FeedOperation();
-        feedOperation.operand = gmbFeed;
-        feedOperation.@operator = Operator.ADD;
+        FeedOperation feedOperation = new FeedOperation {
+          operand = gmbFeed,
+          @operator = Operator.ADD
+        };
 
         try {
           // Add the feed. Since it is a system generated feed, AdWords will
@@ -181,23 +185,26 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
 
         // Add a CustomerFeed that associates the feed with this customer for
         // the LOCATION placeholder type.
-        CustomerFeed customerFeed = new CustomerFeed();
-        customerFeed.feedId = feed.id;
-        customerFeed.placeholderTypes = new int[] { PLACEHOLDER_LOCATION };
+        CustomerFeed customerFeed = new CustomerFeed {
+          feedId = feed.id,
+          placeholderTypes = new int[] { PLACEHOLDER_LOCATION }
+        };
 
         // Create a matching function that will always evaluate to true.
         Function customerMatchingFunction = new Function();
-        ConstantOperand constOperand = new ConstantOperand();
-        constOperand.type = ConstantOperandConstantType.BOOLEAN;
-        constOperand.booleanValue = true;
+        ConstantOperand constOperand = new ConstantOperand {
+          type = ConstantOperandConstantType.BOOLEAN,
+          booleanValue = true
+        };
         customerMatchingFunction.lhsOperand = new FunctionArgumentOperand[] { constOperand };
         customerMatchingFunction.@operator = FunctionOperator.IDENTITY;
         customerFeed.matchingFunction = customerMatchingFunction;
 
         // Create an operation to add the customer feed.
-        CustomerFeedOperation customerFeedOperation = new CustomerFeedOperation();
-        customerFeedOperation.operand = customerFeed;
-        customerFeedOperation.@operator = Operator.ADD;
+        CustomerFeedOperation customerFeedOperation = new CustomerFeedOperation {
+          operand = customerFeed,
+          @operator = Operator.ADD
+        };
 
         // After the completion of the Feed ADD operation above the added feed
         // will not be available for usage in a CustomerFeed until the sync
@@ -206,8 +213,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
         // exponential back-off policy.
         CustomerFeed addedCustomerFeed = null;
 
-        AdWordsAppConfig config = new AdWordsAppConfig();
-        config.RetryCount = 10;
+        AdWordsAppConfig config = new AdWordsAppConfig {
+          RetryCount = 10
+        };
 
         ErrorHandler errorHandler = new ErrorHandler(config);
         try {

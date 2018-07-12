@@ -70,18 +70,21 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
 
         for (int i = 0; i < NUM_ITEMS; i++) {
           // Create the ad group.
-          AdGroup adGroup = new AdGroup();
-          adGroup.name = string.Format("Earth to Mars Cruises #{0}",
-              ExampleUtilities.GetRandomString());
-          adGroup.status = AdGroupStatus.ENABLED;
-          adGroup.campaignId = campaignId;
+          AdGroup adGroup = new AdGroup {
+            name = string.Format("Earth to Mars Cruises #{0}",
+                ExampleUtilities.GetRandomString()),
+            status = AdGroupStatus.ENABLED,
+            campaignId = campaignId
+          };
 
           // Set the ad group bids.
           BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
 
-          CpcBid cpcBid = new CpcBid();
-          cpcBid.bid = new Money();
-          cpcBid.bid.microAmount = 10000000;
+          CpcBid cpcBid = new CpcBid {
+            bid = new Money {
+              microAmount = 10000000
+            }
+          };
 
           biddingConfig.bids = new Bids[] { cpcBid };
 
@@ -96,15 +99,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
 
           // Restricting to serve ads that match your ad group placements.
           // This is equivalent to choosing "Target and bid" in the UI.
-          TargetingSettingDetail placementDetail = new TargetingSettingDetail();
-          placementDetail.criterionTypeGroup = CriterionTypeGroup.PLACEMENT;
-          placementDetail.targetAll = false;
+          TargetingSettingDetail placementDetail = new TargetingSettingDetail {
+            criterionTypeGroup = CriterionTypeGroup.PLACEMENT,
+            targetAll = false
+          };
 
           // Using your ad group verticals only for bidding. This is equivalent
           // to choosing "Bid only" in the UI.
-          TargetingSettingDetail verticalDetail = new TargetingSettingDetail();
-          verticalDetail.criterionTypeGroup = CriterionTypeGroup.VERTICAL;
-          verticalDetail.targetAll = true;
+          TargetingSettingDetail verticalDetail = new TargetingSettingDetail {
+            criterionTypeGroup = CriterionTypeGroup.VERTICAL,
+            targetAll = true
+          };
 
           targetingSetting.details = new TargetingSettingDetail[] {
             placementDetail, verticalDetail
@@ -113,14 +118,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           adGroup.settings = new Setting[] { targetingSetting };
 
           // Set the rotation mode.
-          AdGroupAdRotationMode rotationMode = new AdGroupAdRotationMode();
-          rotationMode.adRotationMode = AdRotationMode.OPTIMIZE;
+          AdGroupAdRotationMode rotationMode = new AdGroupAdRotationMode {
+            adRotationMode = AdRotationMode.OPTIMIZE
+          };
           adGroup.adGroupAdRotationMode = rotationMode;
 
           // Create the operation.
-          AdGroupOperation operation = new AdGroupOperation();
-          operation.@operator = Operator.ADD;
-          operation.operand = adGroup;
+          AdGroupOperation operation = new AdGroupOperation {
+            @operator = Operator.ADD,
+            operand = adGroup
+          };
 
           operations.Add(operation);
         }

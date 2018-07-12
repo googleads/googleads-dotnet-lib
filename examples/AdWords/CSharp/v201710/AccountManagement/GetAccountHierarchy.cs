@@ -65,7 +65,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
 
         // Create selector.
         Selector selector = new Selector();
-        selector.fields = new String[] {
+        selector.fields = new string[] {
           ManagedCustomer.Fields.CustomerId, ManagedCustomer.Fields.Name
         };
         selector.paging = Paging.Default;
@@ -175,8 +175,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
       /// <returns>
       /// A <see cref="System.String"/> that represents this instance.
       /// </returns>
-      public override String ToString() {
-        return String.Format("{0}, {1}", account.customerId, account.name);
+      public override string ToString() {
+        return string.Format("{0}, {1}", account.customerId, account.name);
       }
 
       /// <summary>

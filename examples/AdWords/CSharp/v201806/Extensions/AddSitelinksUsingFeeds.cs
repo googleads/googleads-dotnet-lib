@@ -399,13 +399,13 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
     }
 
     private static FeedItemOperation NewSitelinkFeedItemAddOperation(
-        SitelinksDataHolder sitelinksData, String text, String finalUrl,
+        SitelinksDataHolder sitelinksData, string text, string finalUrl,
         string line2, string line3) {
       return NewSitelinkFeedItemAddOperation(sitelinksData, text, finalUrl, line2, line3, false);
     }
 
     private static FeedItemOperation NewSitelinkFeedItemAddOperation(
-        SitelinksDataHolder sitelinksData, String text, String finalUrl, string line2,
+        SitelinksDataHolder sitelinksData, string text, string finalUrl, string line2,
         string line3, bool restrictToLop) {
 
       // Create the FeedItemAttributeValues for our text values.

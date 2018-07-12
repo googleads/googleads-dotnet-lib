@@ -72,7 +72,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// </param>
     /// <param name="conversionTime">The conversion time, in yyyymmdd hhmmss
     /// format.</param>
-    public void Run(AdWordsUser user, String conversionName, String gClid, String conversionTime,
+    public void Run(AdWordsUser user, string conversionName, string gClid, string conversionTime,
         double conversionValue) {
       using (OfflineConversionFeedService offlineConversionFeedService =
           (OfflineConversionFeedService) user.GetService(

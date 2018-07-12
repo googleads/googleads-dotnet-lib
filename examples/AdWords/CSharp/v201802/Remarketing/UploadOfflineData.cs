@@ -134,12 +134,13 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           transactionCurrencyCode2, conversionName, userIdentifierList2);
 
         // Create offline data upload object.
-        OfflineDataUpload offlineDataUpload = new OfflineDataUpload();
-        offlineDataUpload.externalUploadId = externalUploadId;
-        offlineDataUpload.offlineDataList = new OfflineData[] { offlineData1, offlineData2 };
+        OfflineDataUpload offlineDataUpload = new OfflineDataUpload {
+          externalUploadId = externalUploadId,
+          offlineDataList = new OfflineData[] { offlineData1, offlineData2 },
 
-        // Set the type and metadata of this upload.
-        offlineDataUpload.uploadType = uploadType;
+          // Set the type and metadata of this upload.
+          uploadType = uploadType
+        };
         StoreSalesUploadCommonMetadata storeSalesMetaData = null;
 
         switch (uploadType) {
@@ -164,14 +165,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
             break;
         }
 
-        UploadMetadata uploadMetadata = new UploadMetadata();
-        uploadMetadata.Item = storeSalesMetaData;
+        UploadMetadata uploadMetadata = new UploadMetadata {
+          Item = storeSalesMetaData
+        };
         offlineDataUpload.uploadMetadata = uploadMetadata;
 
         // Create an offline data upload operation.
-        OfflineDataUploadOperation offlineDataUploadOperation = new OfflineDataUploadOperation();
-        offlineDataUploadOperation.@operator = Operator.ADD;
-        offlineDataUploadOperation.operand = offlineDataUpload;
+        OfflineDataUploadOperation offlineDataUploadOperation = new OfflineDataUploadOperation {
+          @operator = Operator.ADD,
+          operand = offlineDataUpload
+        };
 
         // Keep the operations in an array, so it may be reused later for error processing.
         List<OfflineDataUploadOperation> operations = new List<OfflineDataUploadOperation>();
@@ -230,24 +233,28 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     /// <returns>The offline data row.</returns>
     private OfflineData CreateOfflineDataRow(DateTime transactionTime, long transactionMicroAmount,
         string transactionCurrency, string conversionName, UserIdentifier[] userIdentifierList) {
-      StoreSalesTransaction storeSalesTransaction = new StoreSalesTransaction();
+      StoreSalesTransaction storeSalesTransaction = new StoreSalesTransaction {
 
-      // For times use the format yyyyMMdd HHmmss [tz].
-      // For details, see
-      // https://developers.google.com/adwords/api/docs/appendix/codes-formats#date-and-time-formats
-      storeSalesTransaction.transactionTime = transactionTime.ToString("yyyyMMdd HHmmss");
-      storeSalesTransaction.conversionName = conversionName;
-      storeSalesTransaction.userIdentifiers = userIdentifierList;
+        // For times use the format yyyyMMdd HHmmss [tz].
+        // For details, see
+        // https://developers.google.com/adwords/api/docs/appendix/codes-formats#date-and-time-formats
+        transactionTime = transactionTime.ToString("yyyyMMdd HHmmss"),
+        conversionName = conversionName,
+        userIdentifiers = userIdentifierList
+      };
 
-      Money money = new Money();
-      money.microAmount = transactionMicroAmount;
-      RemarketingMoneyWithCurrency moneyWithCurrency = new RemarketingMoneyWithCurrency();
-      moneyWithCurrency.money = money;
-      moneyWithCurrency.currencyCode = transactionCurrency;
+      Money money = new Money {
+        microAmount = transactionMicroAmount
+      };
+      RemarketingMoneyWithCurrency moneyWithCurrency = new RemarketingMoneyWithCurrency {
+        money = money,
+        currencyCode = transactionCurrency
+      };
       storeSalesTransaction.transactionAmount = moneyWithCurrency;
 
-      OfflineData offlineData = new OfflineData();
-      offlineData.Item = storeSalesTransaction;
+      OfflineData offlineData = new OfflineData {
+        Item = storeSalesTransaction
+      };
 
       return offlineData;
     }
@@ -258,7 +265,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     /// <param name="digest">Provides the algorithm for SHA-256.</param>
     /// <param name="value">The string value (e.g. an email address) to hash.</param>
     /// <returns>The hashed value.</returns>
-    private static String ToSha256String(SHA256 digest, String value) {
+    private static string ToSha256String(SHA256 digest, string value) {
       byte[] digestBytes = digest.ComputeHash(Encoding.UTF8.GetBytes(value));
       // Convert the byte array into an unhyphenated hexadecimal string.
       return BitConverter.ToString(digestBytes).Replace("-", string.Empty);
@@ -276,9 +283,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
       if (type.ToString().StartsWith("HASHED_")) {
         value = ToSha256String(digest, ToNormalizedValue(value));
       }
-      UserIdentifier userIdentifier = new UserIdentifier();
-      userIdentifier.userIdentifierType = type;
-      userIdentifier.value = value;
+      UserIdentifier userIdentifier = new UserIdentifier {
+        userIdentifierType = type,
+        value = value
+      };
 
       return userIdentifier;
     }
@@ -289,7 +297,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     /// </summary>
     /// <param name="value">The value to normalize.</param>
     /// <returns>The normalized value.</returns>
-    private static String ToNormalizedValue(String value) {
+    private static string ToNormalizedValue(string value) {
       return value.Trim().ToLower();
     }
   }

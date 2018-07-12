@@ -64,73 +64,83 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           (AdGroupAdService) user.GetService(AdWordsService.v201802.AdGroupAdService)) {
 
         // Create the template ad.
-        TemplateAd clickToDownloadAppAd = new TemplateAd();
-
-        clickToDownloadAppAd.name = "Ad for demo game";
-        clickToDownloadAppAd.templateId = 353;
-        clickToDownloadAppAd.finalUrls = new string[] {
-          "http://play.google.com/store/apps/details?id=com.example.demogame"
-      };
-        clickToDownloadAppAd.displayUrl = "play.google.com";
+        TemplateAd clickToDownloadAppAd = new TemplateAd {
+          name = "Ad for demo game",
+          templateId = 353,
+          finalUrls = new string[] {
+            "http://play.google.com/store/apps/details?id=com.example.demogame"
+          },
+          displayUrl = "play.google.com"
+        };
 
         // Create the template elements for the ad. You can refer to
         // https://developers.google.com/adwords/api/docs/appendix/templateads
         // for the list of avaliable template fields.
-        TemplateElementField headline = new TemplateElementField();
-        headline.name = "headline";
-        headline.fieldText = "Enjoy your drive in Mars";
-        headline.type = TemplateElementFieldType.TEXT;
+        TemplateElementField headline = new TemplateElementField {
+          name = "headline",
+          fieldText = "Enjoy your drive in Mars",
+          type = TemplateElementFieldType.TEXT
+        };
 
-        TemplateElementField description1 = new TemplateElementField();
-        description1.name = "description1";
-        description1.fieldText = "Realistic physics simulation";
-        description1.type = TemplateElementFieldType.TEXT;
+        TemplateElementField description1 = new TemplateElementField {
+          name = "description1",
+          fieldText = "Realistic physics simulation",
+          type = TemplateElementFieldType.TEXT
+        };
 
-        TemplateElementField description2 = new TemplateElementField();
-        description2.name = "description2";
-        description2.fieldText = "Race against players online";
-        description2.type = TemplateElementFieldType.TEXT;
+        TemplateElementField description2 = new TemplateElementField {
+          name = "description2",
+          fieldText = "Race against players online",
+          type = TemplateElementFieldType.TEXT
+        };
 
-        TemplateElementField appId = new TemplateElementField();
-        appId.name = "appId";
-        appId.fieldText = "com.example.demogame";
-        appId.type = TemplateElementFieldType.TEXT;
+        TemplateElementField appId = new TemplateElementField {
+          name = "appId",
+          fieldText = "com.example.demogame",
+          type = TemplateElementFieldType.TEXT
+        };
 
-        TemplateElementField appStore = new TemplateElementField();
-        appStore.name = "appStore";
-        appStore.fieldText = "2";
-        appStore.type = TemplateElementFieldType.ENUM;
+        TemplateElementField appStore = new TemplateElementField {
+          name = "appStore",
+          fieldText = "2",
+          type = TemplateElementFieldType.ENUM
+        };
 
         // Optionally specify a landscape image. The image needs to be in a BASE64
         // encoded form. Here we download a demo image and encode it for this ad.
         byte[] imageData = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9JmyKk",
             user.Config);
-        Image image = new Image();
-        image.data = imageData;
-        TemplateElementField landscapeImage = new TemplateElementField();
-        landscapeImage.name = "landscapeImage";
-        landscapeImage.fieldMedia = image;
-        landscapeImage.type = TemplateElementFieldType.IMAGE;
+        Image image = new Image {
+          data = imageData
+        };
+        TemplateElementField landscapeImage = new TemplateElementField {
+          name = "landscapeImage",
+          fieldMedia = image,
+          type = TemplateElementFieldType.IMAGE
+        };
 
-        TemplateElement adData = new TemplateElement();
-        adData.uniqueName = "adData";
-        adData.fields = new TemplateElementField[] {headline, description1, description2, appId,
-          appStore, landscapeImage};
+        TemplateElement adData = new TemplateElement {
+          uniqueName = "adData",
+          fields = new TemplateElementField[] {headline, description1, description2, appId,
+          appStore, landscapeImage}
+        };
 
         clickToDownloadAppAd.templateElements = new TemplateElement[] { adData };
 
         // Create the adgroupad.
-        AdGroupAd clickToDownloadAppAdGroupAd = new AdGroupAd();
-        clickToDownloadAppAdGroupAd.adGroupId = adGroupId;
-        clickToDownloadAppAdGroupAd.ad = clickToDownloadAppAd;
+        AdGroupAd clickToDownloadAppAdGroupAd = new AdGroupAd {
+          adGroupId = adGroupId,
+          ad = clickToDownloadAppAd,
 
-        // Optional: Set the status.
-        clickToDownloadAppAdGroupAd.status = AdGroupAdStatus.PAUSED;
+          // Optional: Set the status.
+          status = AdGroupAdStatus.PAUSED
+        };
 
         // Create the operation.
-        AdGroupAdOperation operation = new AdGroupAdOperation();
-        operation.@operator = Operator.ADD;
-        operation.operand = clickToDownloadAppAdGroupAd;
+        AdGroupAdOperation operation = new AdGroupAdOperation {
+          @operator = Operator.ADD,
+          operand = clickToDownloadAppAdGroupAd
+        };
 
         try {
           // Create the ads.

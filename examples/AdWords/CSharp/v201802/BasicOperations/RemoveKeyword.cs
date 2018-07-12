@@ -65,18 +65,21 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
               AdWordsService.v201802.AdGroupCriterionService)) {
 
         // Create base class criterion to avoid setting keyword-specific fields.
-        Criterion criterion = new Criterion();
-        criterion.id = keywordId;
+        Criterion criterion = new Criterion {
+          id = keywordId
+        };
 
         // Create the ad group criterion.
-        BiddableAdGroupCriterion adGroupCriterion = new BiddableAdGroupCriterion();
-        adGroupCriterion.adGroupId = adGroupId;
-        adGroupCriterion.criterion = criterion;
+        BiddableAdGroupCriterion adGroupCriterion = new BiddableAdGroupCriterion {
+          adGroupId = adGroupId,
+          criterion = criterion
+        };
 
         // Create the operation.
-        AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
-        operation.operand = adGroupCriterion;
-        operation.@operator = Operator.REMOVE;
+        AdGroupCriterionOperation operation = new AdGroupCriterionOperation {
+          operand = adGroupCriterion,
+          @operator = Operator.REMOVE
+        };
 
         try {
           // Remove the keyword.

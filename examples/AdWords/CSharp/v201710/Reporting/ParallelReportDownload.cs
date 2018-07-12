@@ -380,7 +380,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
 
       // Create selector.
       Selector selector = new Selector() {
-        fields = new String[] {
+        fields = new string[] {
             ManagedCustomer.Fields.CustomerId
         },
         predicates = new Predicate[] {

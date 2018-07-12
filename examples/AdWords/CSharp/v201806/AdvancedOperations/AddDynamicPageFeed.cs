@@ -115,24 +115,28 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
           AdWordsService.v201806.FeedService)) {
 
         // Create attributes.
-        FeedAttribute urlAttribute = new FeedAttribute();
-        urlAttribute.type = FeedAttributeType.URL_LIST;
-        urlAttribute.name = "Page URL";
+        FeedAttribute urlAttribute = new FeedAttribute {
+          type = FeedAttributeType.URL_LIST,
+          name = "Page URL"
+        };
 
-        FeedAttribute labelAttribute = new FeedAttribute();
-        labelAttribute.type = FeedAttributeType.STRING_LIST;
-        labelAttribute.name = "Label";
+        FeedAttribute labelAttribute = new FeedAttribute {
+          type = FeedAttributeType.STRING_LIST,
+          name = "Label"
+        };
 
         // Create the feed.
-        Feed sitelinksFeed = new Feed();
-        sitelinksFeed.name = "DSA Feed " + ExampleUtilities.GetRandomString();
-        sitelinksFeed.attributes = new FeedAttribute[] { urlAttribute, labelAttribute };
-        sitelinksFeed.origin = FeedOrigin.USER;
+        Feed sitelinksFeed = new Feed {
+          name = "DSA Feed " + ExampleUtilities.GetRandomString(),
+          attributes = new FeedAttribute[] { urlAttribute, labelAttribute },
+          origin = FeedOrigin.USER
+        };
 
         // Create operation.
-        FeedOperation operation = new FeedOperation();
-        operation.operand = sitelinksFeed;
-        operation.@operator = Operator.ADD;
+        FeedOperation operation = new FeedOperation {
+          operand = sitelinksFeed,
+          @operator = Operator.ADD
+        };
 
         try {
           // Add the feed.
@@ -160,25 +164,29 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
           (FeedMappingService) user.GetService(AdWordsService.v201806.FeedMappingService)) {
 
         // Map the FeedAttributeIds to the fieldId constants.
-        AttributeFieldMapping urlFieldMapping = new AttributeFieldMapping();
-        urlFieldMapping.feedAttributeId = feedDetails.urlAttributeId;
-        urlFieldMapping.fieldId = DSA_PAGE_URLS_FIELD_ID;
-
-        AttributeFieldMapping labelFieldMapping = new AttributeFieldMapping();
-        labelFieldMapping.feedAttributeId = feedDetails.labelAttributeId;
-        labelFieldMapping.fieldId = DSA_LABEL_FIELD_ID;
-
-        // Create the FieldMapping and operation.
-        FeedMapping feedMapping = new FeedMapping();
-        feedMapping.criterionType = DSA_PAGE_FEED_CRITERION_TYPE;
-        feedMapping.feedId = feedDetails.feedId;
-        feedMapping.attributeFieldMappings = new AttributeFieldMapping[] {
-          urlFieldMapping, labelFieldMapping
+        AttributeFieldMapping urlFieldMapping = new AttributeFieldMapping {
+          feedAttributeId = feedDetails.urlAttributeId,
+          fieldId = DSA_PAGE_URLS_FIELD_ID
         };
 
-        FeedMappingOperation operation = new FeedMappingOperation();
-        operation.operand = feedMapping;
-        operation.@operator = Operator.ADD;
+        AttributeFieldMapping labelFieldMapping = new AttributeFieldMapping {
+          feedAttributeId = feedDetails.labelAttributeId,
+          fieldId = DSA_LABEL_FIELD_ID
+        };
+
+        // Create the FieldMapping and operation.
+        FeedMapping feedMapping = new FeedMapping {
+          criterionType = DSA_PAGE_FEED_CRITERION_TYPE,
+            feedId = feedDetails.feedId,
+            attributeFieldMappings = new AttributeFieldMapping[] {
+            urlFieldMapping, labelFieldMapping
+          }
+        };
+
+        FeedMappingOperation operation = new FeedMappingOperation {
+          operand = feedMapping,
+          @operator = Operator.ADD
+        };
 
         try {
           // Add the field mapping.
@@ -223,28 +231,32 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
     private static FeedItemOperation CreateDsaUrlAddOperation(DSAFeedDetails details, string url,
         string label) {
       // Create the FeedItemAttributeValues for our text values.
-      FeedItemAttributeValue urlAttributeValue = new FeedItemAttributeValue();
-      urlAttributeValue.feedAttributeId = details.urlAttributeId;
+      FeedItemAttributeValue urlAttributeValue = new FeedItemAttributeValue {
+        feedAttributeId = details.urlAttributeId,
 
-      // See https://support.google.com/adwords/answer/7166527 for page feed URL recommendations
-      // and rules.
-      urlAttributeValue.stringValues = new string[] { url };
-
-      FeedItemAttributeValue labelAttributeValue = new FeedItemAttributeValue();
-      labelAttributeValue.feedAttributeId = details.labelAttributeId;
-      labelAttributeValue.stringValues = new string[] { label };
-
-      // Create the feed item and operation.
-      FeedItem item = new FeedItem();
-      item.feedId = details.feedId;
-
-      item.attributeValues = new FeedItemAttributeValue[] {
-        urlAttributeValue, labelAttributeValue
+        // See https://support.google.com/adwords/answer/7166527 for page feed URL recommendations
+        // and rules.
+        stringValues = new string[] { url }
       };
 
-      FeedItemOperation operation = new FeedItemOperation();
-      operation.operand = item;
-      operation.@operator = Operator.ADD;
+      FeedItemAttributeValue labelAttributeValue = new FeedItemAttributeValue {
+        feedAttributeId = details.labelAttributeId,
+        stringValues = new string[] { label }
+      };
+
+      // Create the feed item and operation.
+      FeedItem item = new FeedItem {
+        feedId = details.feedId,
+
+        attributeValues = new FeedItemAttributeValue[] {
+          urlAttributeValue, labelAttributeValue
+        }
+      };
+
+      FeedItemOperation operation = new FeedItemOperation {
+        operand = item,
+        @operator = Operator.ADD
+      };
 
       return operation;
     }
@@ -261,9 +273,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
 
         Selector selector = new Selector() {
           fields = new string[] { Campaign.Fields.Id, Campaign.Fields.Settings },
-          predicates = new Predicate[]{
-          Predicate.Equals(Campaign.Fields.Id, campaignId)
-        },
+            predicates = new Predicate[]{
+            Predicate.Equals(Campaign.Fields.Id, campaignId)
+          },
           paging = Paging.Default
         };
 
@@ -306,13 +318,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
         // Dynamic Search Ads.
         dsaSetting.useSuppliedUrlsOnly = true;
 
-        Campaign campaignToUpdate = new Campaign();
-        campaignToUpdate.id = campaignId;
-        campaignToUpdate.settings = campaignSettings;
+        Campaign campaignToUpdate = new Campaign {
+          id = campaignId,
+          settings = campaignSettings
+        };
 
-        CampaignOperation operation = new CampaignOperation();
-        operation.operand = campaignToUpdate;
-        operation.@operator = Operator.SET;
+        CampaignOperation operation = new CampaignOperation {
+          operand = campaignToUpdate,
+          @operator = Operator.SET
+        };
 
         try {
           CampaignReturnValue retval = campaignService.mutate(
@@ -342,37 +356,41 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
         // Create a webpage criterion.
         Webpage webpage = new Webpage();
 
-        WebpageParameter parameter = new WebpageParameter();
-        parameter.criterionName = "Test criterion";
+        WebpageParameter parameter = new WebpageParameter {
+          criterionName = "Test criterion"
+        };
         webpage.parameter = parameter;
 
         // Add a condition for label=specified_label_name.
-        WebpageCondition condition = new WebpageCondition();
-        condition.operand = WebpageConditionOperand.CUSTOM_LABEL;
-        condition.argument = labelName;
+        WebpageCondition condition = new WebpageCondition {
+          operand = WebpageConditionOperand.CUSTOM_LABEL,
+          argument = labelName
+        };
         parameter.conditions = new WebpageCondition[] { condition };
 
-        BiddableAdGroupCriterion criterion = new BiddableAdGroupCriterion();
-        criterion.adGroupId = adGroupId;
-        criterion.criterion = webpage;
+        BiddableAdGroupCriterion criterion = new BiddableAdGroupCriterion {
+          adGroupId = adGroupId,
+          criterion = webpage
+        };
 
         // Set a custom bid for this criterion.
         BiddingStrategyConfiguration biddingStrategyConfiguration =
-            new BiddingStrategyConfiguration();
-
-        biddingStrategyConfiguration.bids = new Bids[] {
-        new CpcBid() {
-          bid = new Money() {
-            microAmount = 1500000
-          }
-        }
-      };
+            new BiddingStrategyConfiguration {
+              bids = new Bids[] {
+                new CpcBid() {
+                  bid = new Money() {
+                    microAmount = 1500000
+                  }
+                }
+              }
+            };
 
         criterion.biddingStrategyConfiguration = biddingStrategyConfiguration;
 
-        AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
-        operation.operand = criterion;
-        operation.@operator = Operator.ADD;
+        AdGroupCriterionOperation operation = new AdGroupCriterionOperation {
+          operand = criterion,
+          @operator = Operator.ADD
+        };
 
         try {
           AdGroupCriterionReturnValue retval = adGroupCriterionService.mutate(

@@ -138,16 +138,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
 
       // Optional: Restrict the first feed item to only serve with ads for the
       // specified ad group ID.
-      FeedItemAdGroupTarget adGroupTarget = new FeedItemAdGroupTarget();
-      adGroupTarget.feedId = sitelinksData.FeedId;
-      adGroupTarget.feedItemId = sitelinksData.FeedItemIds[0];
-      adGroupTarget.adGroupId = adGroupId.Value;
+      FeedItemAdGroupTarget adGroupTarget = new FeedItemAdGroupTarget {
+        feedId = sitelinksData.FeedId,
+        feedItemId = sitelinksData.FeedItemIds[0],
+        adGroupId = adGroupId.Value
+      };
 
       using (FeedItemTargetService feedItemTargetService = (FeedItemTargetService) user.GetService(
           AdWordsService.v201802.FeedItemTargetService)) {
-        FeedItemTargetOperation operation = new FeedItemTargetOperation();
-        operation.@operator = Operator.ADD;
-        operation.operand = adGroupTarget;
+        FeedItemTargetOperation operation = new FeedItemTargetOperation {
+          @operator = Operator.ADD,
+          operand = adGroupTarget
+        };
 
         FeedItemTargetReturnValue retval = feedItemTargetService.mutate(
             new FeedItemTargetOperation[] { operation });
@@ -164,33 +166,40 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           AdWordsService.v201802.FeedService)) {
 
         // Create attributes.
-        FeedAttribute textAttribute = new FeedAttribute();
-        textAttribute.type = FeedAttributeType.STRING;
-        textAttribute.name = "Link Text";
+        FeedAttribute textAttribute = new FeedAttribute {
+          type = FeedAttributeType.STRING,
+          name = "Link Text"
+        };
 
-        FeedAttribute finalUrlAttribute = new FeedAttribute();
-        finalUrlAttribute.type = FeedAttributeType.URL_LIST;
-        finalUrlAttribute.name = "Link Final URLs";
+        FeedAttribute finalUrlAttribute = new FeedAttribute {
+          type = FeedAttributeType.URL_LIST,
+          name = "Link Final URLs"
+        };
 
-        FeedAttribute line2Attribute = new FeedAttribute();
-        line2Attribute.type = FeedAttributeType.STRING;
-        line2Attribute.name = "Line 2";
+        FeedAttribute line2Attribute = new FeedAttribute {
+          type = FeedAttributeType.STRING,
+          name = "Line 2"
+        };
 
-        FeedAttribute line3Attribute = new FeedAttribute();
-        line3Attribute.type = FeedAttributeType.STRING;
-        line3Attribute.name = "Line 3";
+        FeedAttribute line3Attribute = new FeedAttribute {
+          type = FeedAttributeType.STRING,
+          name = "Line 3"
+        };
 
         // Create the feed.
-        Feed sitelinksFeed = new Feed();
-        sitelinksFeed.name = feedName;
-        sitelinksFeed.attributes = new FeedAttribute[] { textAttribute, finalUrlAttribute,
-          line2Attribute, line3Attribute };
-        sitelinksFeed.origin = FeedOrigin.USER;
+        Feed sitelinksFeed = new Feed {
+          name = feedName,
+          attributes = new FeedAttribute[] {
+            textAttribute, finalUrlAttribute, line2Attribute, line3Attribute
+          },
+          origin = FeedOrigin.USER
+        };
 
         // Create operation.
-        FeedOperation operation = new FeedOperation();
-        operation.operand = sitelinksFeed;
-        operation.@operator = Operator.ADD;
+        FeedOperation operation = new FeedOperation {
+          operand = sitelinksFeed,
+          @operator = Operator.ADD
+        };
 
         // Add the feed.
         FeedReturnValue result = feedService.mutate(new FeedOperation[] { operation });
@@ -268,32 +277,39 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           (FeedMappingService) user.GetService(AdWordsService.v201802.FeedMappingService)) {
 
         // Map the FeedAttributeIds to the fieldId constants.
-        AttributeFieldMapping linkTextFieldMapping = new AttributeFieldMapping();
-        linkTextFieldMapping.feedAttributeId = sitelinksData.LinkTextFeedAttributeId;
-        linkTextFieldMapping.fieldId = PLACEHOLDER_FIELD_SITELINK_LINK_TEXT;
+        AttributeFieldMapping linkTextFieldMapping = new AttributeFieldMapping {
+          feedAttributeId = sitelinksData.LinkTextFeedAttributeId,
+          fieldId = PLACEHOLDER_FIELD_SITELINK_LINK_TEXT
+        };
 
-        AttributeFieldMapping linkFinalUrlFieldMapping = new AttributeFieldMapping();
-        linkFinalUrlFieldMapping.feedAttributeId = sitelinksData.LinkFinalUrlFeedAttributeId;
-        linkFinalUrlFieldMapping.fieldId = PLACEHOLDER_FIELD_SITELINK_FINAL_URL;
+        AttributeFieldMapping linkFinalUrlFieldMapping = new AttributeFieldMapping {
+          feedAttributeId = sitelinksData.LinkFinalUrlFeedAttributeId,
+          fieldId = PLACEHOLDER_FIELD_SITELINK_FINAL_URL
+        };
 
-        AttributeFieldMapping line2FieldMapping = new AttributeFieldMapping();
-        line2FieldMapping.feedAttributeId = sitelinksData.Line2FeedAttributeId;
-        line2FieldMapping.fieldId = PLACEHOLDER_FIELD_LINE_2_TEXT;
+        AttributeFieldMapping line2FieldMapping = new AttributeFieldMapping {
+          feedAttributeId = sitelinksData.Line2FeedAttributeId,
+          fieldId = PLACEHOLDER_FIELD_LINE_2_TEXT
+        };
 
-        AttributeFieldMapping line3FieldMapping = new AttributeFieldMapping();
-        line3FieldMapping.feedAttributeId = sitelinksData.Line3FeedAttributeId;
-        line3FieldMapping.fieldId = PLACEHOLDER_FIELD_LINE_3_TEXT;
+        AttributeFieldMapping line3FieldMapping = new AttributeFieldMapping {
+          feedAttributeId = sitelinksData.Line3FeedAttributeId,
+          fieldId = PLACEHOLDER_FIELD_LINE_3_TEXT
+        };
 
         // Create the FieldMapping and operation.
-        FeedMapping feedMapping = new FeedMapping();
-        feedMapping.placeholderType = PLACEHOLDER_SITELINKS;
-        feedMapping.feedId = sitelinksData.FeedId;
-        feedMapping.attributeFieldMappings = new AttributeFieldMapping[] {
-        linkTextFieldMapping, linkFinalUrlFieldMapping, line2FieldMapping, line3FieldMapping };
+        FeedMapping feedMapping = new FeedMapping {
+          placeholderType = PLACEHOLDER_SITELINKS,
+          feedId = sitelinksData.FeedId,
+          attributeFieldMappings = new AttributeFieldMapping[] {
+            linkTextFieldMapping, linkFinalUrlFieldMapping, line2FieldMapping, line3FieldMapping
+          }
+        };
 
-        FeedMappingOperation operation = new FeedMappingOperation();
-        operation.operand = feedMapping;
-        operation.@operator = Operator.ADD;
+        FeedMappingOperation operation = new FeedMappingOperation {
+          operand = feedMapping,
+          @operator = Operator.ADD
+        };
 
         // Save the field mapping.
         FeedMappingReturnValue result =
@@ -336,9 +352,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           placeholderTypes = new int[] { PLACEHOLDER_SITELINKS }
         };
 
-        CampaignFeedOperation operation = new CampaignFeedOperation();
-        operation.operand = campaignFeed;
-        operation.@operator = Operator.ADD;
+        CampaignFeedOperation operation = new CampaignFeedOperation {
+          operand = campaignFeed,
+          @operator = Operator.ADD
+        };
 
         CampaignFeedReturnValue result = campaignFeedService.mutate(
             new CampaignFeedOperation[] { operation });
@@ -351,34 +368,39 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     }
 
     private static FeedItemOperation newSitelinkFeedItemAddOperation(
-        SitelinksDataHolder sitelinksData, String text, String finalUrl,
+        SitelinksDataHolder sitelinksData, string text, string finalUrl,
         string line2, string line3) {
       return newSitelinkFeedItemAddOperation(sitelinksData, text, finalUrl, line2, line3, null);
     }
 
     private static FeedItemOperation newSitelinkFeedItemAddOperation(
-        SitelinksDataHolder sitelinksData, String text, String finalUrl, string line2,
+        SitelinksDataHolder sitelinksData, string text, string finalUrl, string line2,
         string line3, long? locationId) {
       // Create the FeedItemAttributeValues for our text values.
-      FeedItemAttributeValue linkTextAttributeValue = new FeedItemAttributeValue();
-      linkTextAttributeValue.feedAttributeId = sitelinksData.LinkTextFeedAttributeId;
-      linkTextAttributeValue.stringValue = text;
+      FeedItemAttributeValue linkTextAttributeValue = new FeedItemAttributeValue {
+        feedAttributeId = sitelinksData.LinkTextFeedAttributeId,
+        stringValue = text
+      };
 
-      FeedItemAttributeValue linkFinalUrlAttributeValue = new FeedItemAttributeValue();
-      linkFinalUrlAttributeValue.feedAttributeId = sitelinksData.LinkFinalUrlFeedAttributeId;
-      linkFinalUrlAttributeValue.stringValues = new string[] { finalUrl };
+      FeedItemAttributeValue linkFinalUrlAttributeValue = new FeedItemAttributeValue {
+        feedAttributeId = sitelinksData.LinkFinalUrlFeedAttributeId,
+        stringValues = new string[] { finalUrl }
+      };
 
-      FeedItemAttributeValue line2AttributeValue = new FeedItemAttributeValue();
-      line2AttributeValue.feedAttributeId = sitelinksData.Line2FeedAttributeId;
-      line2AttributeValue.stringValue = line2;
+      FeedItemAttributeValue line2AttributeValue = new FeedItemAttributeValue {
+        feedAttributeId = sitelinksData.Line2FeedAttributeId,
+        stringValue = line2
+      };
 
-      FeedItemAttributeValue line3AttributeValue = new FeedItemAttributeValue();
-      line3AttributeValue.feedAttributeId = sitelinksData.Line3FeedAttributeId;
-      line3AttributeValue.stringValue = line3;
+      FeedItemAttributeValue line3AttributeValue = new FeedItemAttributeValue {
+        feedAttributeId = sitelinksData.Line3FeedAttributeId,
+        stringValue = line3
+      };
 
       // Create the feed item and operation.
-      FeedItem item = new FeedItem();
-      item.feedId = sitelinksData.FeedId;
+      FeedItem item = new FeedItem {
+        feedId = sitelinksData.FeedId
+      };
 
       // OPTIONAL: Use geographical targeting on a feed item.
       // The IDs can be found in the documentation or retrieved with the
@@ -398,9 +420,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           new FeedItemAttributeValue[] { linkTextAttributeValue, linkFinalUrlAttributeValue,
             line2AttributeValue, line3AttributeValue };
 
-      FeedItemOperation operation = new FeedItemOperation();
-      operation.operand = item;
-      operation.@operator = Operator.ADD;
+      FeedItemOperation operation = new FeedItemOperation {
+        operand = item,
+        @operator = Operator.ADD
+      };
 
       return operation;
     }

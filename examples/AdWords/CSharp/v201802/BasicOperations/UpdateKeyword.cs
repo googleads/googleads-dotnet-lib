@@ -66,27 +66,32 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
 
         // Since we are not updating any keyword-specific fields, it is enough to
         // create a criterion object.
-        Criterion criterion = new Criterion();
-        criterion.id = keywordId;
+        Criterion criterion = new Criterion {
+          id = keywordId
+        };
 
         // Create ad group criterion.
-        BiddableAdGroupCriterion biddableAdGroupCriterion = new BiddableAdGroupCriterion();
-        biddableAdGroupCriterion.adGroupId = adGroupId;
-        biddableAdGroupCriterion.criterion = criterion;
+        BiddableAdGroupCriterion biddableAdGroupCriterion = new BiddableAdGroupCriterion {
+          adGroupId = adGroupId,
+          criterion = criterion
+        };
 
         // Create the bids.
         BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
-        CpcBid cpcBid = new CpcBid();
-        cpcBid.bid = new Money();
-        cpcBid.bid.microAmount = 1000000;
+        CpcBid cpcBid = new CpcBid {
+          bid = new Money {
+            microAmount = 1000000
+          }
+        };
         biddingConfig.bids = new Bids[] { cpcBid };
 
         biddableAdGroupCriterion.biddingStrategyConfiguration = biddingConfig;
 
         // Create the operation.
-        AdGroupCriterionOperation operation = new AdGroupCriterionOperation();
-        operation.@operator = Operator.SET;
-        operation.operand = biddableAdGroupCriterion;
+        AdGroupCriterionOperation operation = new AdGroupCriterionOperation {
+          @operator = Operator.SET,
+          operand = biddableAdGroupCriterion
+        };
 
         try {
           // Update the keyword.

@@ -67,15 +67,17 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
             " UTC";
 
         // Create date time range.
-        DateTimeRange dateTimeRange = new DateTimeRange();
-        dateTimeRange.min = minDateTime;
-        dateTimeRange.max = maxDateTime;
+        DateTimeRange dateTimeRange = new DateTimeRange {
+          min = minDateTime,
+          max = maxDateTime
+        };
 
         try {
           // Create the selector.
-          CustomerSyncSelector selector = new CustomerSyncSelector();
-          selector.dateTimeRange = dateTimeRange;
-          selector.campaignIds = GetAllCampaignIds(user);
+          CustomerSyncSelector selector = new CustomerSyncSelector {
+            dateTimeRange = dateTimeRange,
+            campaignIds = GetAllCampaignIds(user)
+          };
 
           // Get all account changes for campaign.
           CustomerChangeData accountChanges = customerSyncService.get(selector);

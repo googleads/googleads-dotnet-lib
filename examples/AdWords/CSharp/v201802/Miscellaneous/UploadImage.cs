@@ -59,9 +59,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           AdWordsService.v201802.MediaService)) {
 
         // Create the image.
-        Image image = new Image();
-        image.data = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/3b9Wfh", user.Config);
-        image.type = MediaMediaType.IMAGE;
+        Image image = new Image {
+          data = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/3b9Wfh", user.Config),
+          type = MediaMediaType.IMAGE
+        };
 
         try {
           // Upload the image.

@@ -136,14 +136,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
         ProductAd productAd = new ProductAd();
 
         // Create ad group ad.
-        AdGroupAd adGroupAd = new AdGroupAd();
-        adGroupAd.adGroupId = adGroupId;
-        adGroupAd.ad = productAd;
+        AdGroupAd adGroupAd = new AdGroupAd {
+          adGroupId = adGroupId,
+          ad = productAd
+        };
 
         // Create operation.
-        AdGroupAdOperation operation = new AdGroupAdOperation();
-        operation.operand = adGroupAd;
-        operation.@operator = Operator.ADD;
+        AdGroupAdOperation operation = new AdGroupAdOperation {
+          operand = adGroupAd,
+          @operator = Operator.ADD
+        };
 
         // Make the mutate request.
         AdGroupAdReturnValue retval = adGroupAdService.mutate(
@@ -163,14 +165,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           AdWordsService.v201802.AdGroupService)) {
 
         // Create ad group.
-        AdGroup adGroup = new AdGroup();
-        adGroup.campaignId = campaignId;
-        adGroup.name = "Ad Group #" + ExampleUtilities.GetRandomString();
+        AdGroup adGroup = new AdGroup {
+          campaignId = campaignId,
+          name = "Ad Group #" + ExampleUtilities.GetRandomString()
+        };
 
         // Create operation.
-        AdGroupOperation operation = new AdGroupOperation();
-        operation.operand = adGroup;
-        operation.@operator = Operator.ADD;
+        AdGroupOperation operation = new AdGroupOperation {
+          operand = adGroup,
+          @operator = Operator.ADD
+        };
 
         // Make the mutate request.
         AdGroupReturnValue retval = adGroupService.mutate(new AdGroupOperation[] { operation });
@@ -190,42 +194,47 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           AdWordsService.v201802.CampaignService)) {
 
         // Create campaign.
-        Campaign campaign = new Campaign();
-        campaign.name = "Shopping campaign #" + ExampleUtilities.GetRandomString();
+        Campaign campaign = new Campaign {
+          name = "Shopping campaign #" + ExampleUtilities.GetRandomString(),
 
-        // The advertisingChannelType is what makes this a Shopping campaign.
-        campaign.advertisingChannelType = AdvertisingChannelType.SHOPPING;
+          // The advertisingChannelType is what makes this a Shopping campaign.
+          advertisingChannelType = AdvertisingChannelType.SHOPPING,
 
-        // Recommendation: Set the campaign to PAUSED when creating it to prevent
-        // the ads from immediately serving. Set to ENABLED once you've added
-        // targeting and the ads are ready to serve.
-        campaign.status = CampaignStatus.PAUSED;
+          // Recommendation: Set the campaign to PAUSED when creating it to prevent
+          // the ads from immediately serving. Set to ENABLED once you've added
+          // targeting and the ads are ready to serve.
+          status = CampaignStatus.PAUSED,
 
-        // Set shared budget (required).
-        campaign.budget = new Budget();
-        campaign.budget.budgetId = budgetId;
+          // Set shared budget (required).
+          budget = new Budget {
+            budgetId = budgetId
+          }
+        };
 
         // Set bidding strategy (required).
         BiddingStrategyConfiguration biddingStrategyConfiguration =
-            new BiddingStrategyConfiguration();
-        biddingStrategyConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC;
+            new BiddingStrategyConfiguration {
+              biddingStrategyType = BiddingStrategyType.MANUAL_CPC
+            };
 
         campaign.biddingStrategyConfiguration = biddingStrategyConfiguration;
 
         // All Shopping campaigns need a ShoppingSetting.
-        ShoppingSetting shoppingSetting = new ShoppingSetting();
-        shoppingSetting.salesCountry = "US";
-        shoppingSetting.campaignPriority = 0;
-        shoppingSetting.merchantId = merchantId;
+        ShoppingSetting shoppingSetting = new ShoppingSetting {
+          salesCountry = "US",
+          campaignPriority = 0,
+          merchantId = merchantId,
 
-        // Set to "true" to enable Local Inventory Ads in your campaign.
-        shoppingSetting.enableLocal = true;
+          // Set to "true" to enable Local Inventory Ads in your campaign.
+          enableLocal = true
+        };
         campaign.settings = new Setting[] { shoppingSetting };
 
         // Create operation.
-        CampaignOperation campaignOperation = new CampaignOperation();
-        campaignOperation.operand = campaign;
-        campaignOperation.@operator = Operator.ADD;
+        CampaignOperation campaignOperation = new CampaignOperation {
+          operand = campaign,
+          @operator = Operator.ADD
+        };
 
         // Make the mutate request.
         CampaignReturnValue retval = campaignService.mutate(

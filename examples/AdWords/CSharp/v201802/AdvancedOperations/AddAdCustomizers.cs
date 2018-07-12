@@ -106,9 +106,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           }
         };
 
-        AdCustomizerFeedOperation feedOperation = new AdCustomizerFeedOperation();
-        feedOperation.operand = feed;
-        feedOperation.@operator = (Operator.ADD);
+        AdCustomizerFeedOperation feedOperation = new AdCustomizerFeedOperation {
+          operand = feed,
+          @operator = (Operator.ADD)
+        };
 
         AdCustomizerFeed addedFeed = adCustomizerFeedService.mutate(
             new AdCustomizerFeedOperation[] { feedOperation }).value[0];
@@ -171,7 +172,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     /// FeedItem.</param>
     /// <returns>A new FeedItemOperation for adding a FeedItem.</returns>
     private static FeedItemOperation CreateFeedItemAddOperation(AdCustomizerFeed adCustomizerFeed,
-        string name, string price, String date, long adGroupId) {
+        string name, string price, string date, long adGroupId) {
       FeedItem feedItem = new FeedItem() {
         feedId = adCustomizerFeed.feedId,
 

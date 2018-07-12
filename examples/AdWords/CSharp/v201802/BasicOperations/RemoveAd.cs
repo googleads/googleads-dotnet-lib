@@ -64,19 +64,22 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
 
         // Since we do not need to update any ad-specific fields, it is enough to
         // create the base type.
-        Ad ad = new Ad();
-        ad.id = adId;
+        Ad ad = new Ad {
+          id = adId
+        };
 
         // Create the ad group ad.
-        AdGroupAd adGroupAd = new AdGroupAd();
-        adGroupAd.adGroupId = adGroupId;
+        AdGroupAd adGroupAd = new AdGroupAd {
+          adGroupId = adGroupId,
 
-        adGroupAd.ad = ad;
+          ad = ad
+        };
 
         // Create the operation.
-        AdGroupAdOperation operation = new AdGroupAdOperation();
-        operation.operand = adGroupAd;
-        operation.@operator = Operator.REMOVE;
+        AdGroupAdOperation operation = new AdGroupAdOperation {
+          operand = adGroupAd,
+          @operator = Operator.REMOVE
+        };
 
         try {
           // Remove the ad.

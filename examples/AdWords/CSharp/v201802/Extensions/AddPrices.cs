@@ -99,7 +99,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
 
         // To create a price extension, at least three table rows are needed.
         List<PriceTableRow> priceTableRows = new List<PriceTableRow>();
-        String currencyCode = "USD";
+        string currencyCode = "USD";
         priceTableRows.Add(
             CreatePriceTableRow(
                 "Scrubs",
@@ -174,14 +174,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     /// <param name="currencyCode">The currency code.</param>
     /// <param name="priceUnit">The price unit.</param>
     /// <returns>A price table row for creating price extension.</returns>
-    private static PriceTableRow CreatePriceTableRow(String header, String description,
-        String finalUrl, String finalMobileUrl, long priceInMicros, String currencyCode,
+    private static PriceTableRow CreatePriceTableRow(string header, string description,
+        string finalUrl, string finalMobileUrl, long priceInMicros, string currencyCode,
         PriceExtensionPriceUnit priceUnit) {
       PriceTableRow retval = new PriceTableRow() {
         header = header,
         description = description,
         finalUrls = new UrlList() {
-          urls = new String[] { finalUrl }
+          urls = new string[] { finalUrl }
         },
         price = new MoneyWithCurrency() {
           currencyCode = currencyCode,
@@ -195,7 +195,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
       // Optional: set the mobile final URLs.
       if (!string.IsNullOrEmpty(finalMobileUrl)) {
         retval.finalMobileUrls = new UrlList() {
-          urls = new String[] { finalMobileUrl }
+          urls = new string[] { finalMobileUrl }
         };
       }
       return retval;

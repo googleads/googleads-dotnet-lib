@@ -62,38 +62,40 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
         List<ConversionTracker> conversionTrackers = new List<ConversionTracker>();
 
         // Create an Adwords conversion tracker.
-        AdWordsConversionTracker adWordsConversionTracker = new AdWordsConversionTracker();
-        adWordsConversionTracker.name = "Earth to Mars Cruises Conversion #" +
-            ExampleUtilities.GetRandomString();
-        adWordsConversionTracker.category = ConversionTrackerCategory.DEFAULT;
+        AdWordsConversionTracker adWordsConversionTracker = new AdWordsConversionTracker {
+          name = "Earth to Mars Cruises Conversion #" +
+              ExampleUtilities.GetRandomString(),
+          category = ConversionTrackerCategory.DEFAULT,
 
-        // Set optional fields.
-        adWordsConversionTracker.status = ConversionTrackerStatus.ENABLED;
-        adWordsConversionTracker.viewthroughLookbackWindow = 15;
-        adWordsConversionTracker.defaultRevenueValue = 23.41;
-        adWordsConversionTracker.alwaysUseDefaultRevenueValue = true;
+          // Set optional fields.
+          status = ConversionTrackerStatus.ENABLED,
+          viewthroughLookbackWindow = 15,
+          defaultRevenueValue = 23.41,
+          alwaysUseDefaultRevenueValue = true
+        };
         conversionTrackers.Add(adWordsConversionTracker);
 
         // Create an upload conversion for offline conversion imports.
-        UploadConversion uploadConversion = new UploadConversion();
-        // Set an appropriate category. This field is optional, and will be set to
-        // DEFAULT if not mentioned.
-        uploadConversion.category = ConversionTrackerCategory.LEAD;
-        uploadConversion.name = "Upload Conversion #" + ExampleUtilities.GetRandomString();
-        uploadConversion.viewthroughLookbackWindow = 30;
-        uploadConversion.ctcLookbackWindow = 90;
+        UploadConversion uploadConversion = new UploadConversion {
+          // Set an appropriate category. This field is optional, and will be set to
+          // DEFAULT if not mentioned.
+          category = ConversionTrackerCategory.LEAD,
+          name = "Upload Conversion #" + ExampleUtilities.GetRandomString(),
+          viewthroughLookbackWindow = 30,
+          ctcLookbackWindow = 90,
 
-        // Optional: Set the default currency code to use for conversions
-        // that do not specify a conversion currency. This must be an ISO 4217
-        // 3-character currency code such as "EUR" or "USD".
-        // If this field is not set on this UploadConversion, AdWords will use
-        // the account's currency.
-        uploadConversion.defaultRevenueCurrencyCode = "EUR";
+          // Optional: Set the default currency code to use for conversions
+          // that do not specify a conversion currency. This must be an ISO 4217
+          // 3-character currency code such as "EUR" or "USD".
+          // If this field is not set on this UploadConversion, AdWords will use
+          // the account's currency.
+          defaultRevenueCurrencyCode = "EUR",
 
-        // Optional: Set the default revenue value to use for conversions
-        // that do not specify a conversion value. Note that this value
-        // should NOT be in micros.
-        uploadConversion.defaultRevenueValue = 2.50;
+          // Optional: Set the default revenue value to use for conversions
+          // that do not specify a conversion value. Note that this value
+          // should NOT be in micros.
+          defaultRevenueValue = 2.50
+        };
 
         // Optional: To upload fractional conversion credits, mark the upload conversion
         // as externally attributed. See

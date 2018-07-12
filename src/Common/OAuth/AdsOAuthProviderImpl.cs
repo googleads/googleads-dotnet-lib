@@ -49,8 +49,6 @@ namespace Google.Api.Ads.Common.OAuth {
     protected readonly AdsFeatureUsageRegistry featureUsageRegistry =
         AdsFeatureUsageRegistry.Instance;
 
-    private readonly TimeSpan OAUTH2_EXPIRATION_CUTOFF = TimeSpan.FromSeconds(60);
-
     /// <summary>
     /// The HttpClientFactory used for requesting access tokens.
     /// </summary>
@@ -250,7 +248,7 @@ namespace Google.Api.Ads.Common.OAuth {
       featureUsageRegistry.MarkUsage(FEATURE_ID);
       ValidateOAuth2Parameter("Scope", Config.OAuth2Scope);
       ValidateOAuth2Parameter("RedirectUri", Config.OAuth2RedirectUri);
-      return CreateAuthorizationUrl(Config.OAuth2RedirectUri);
+      return CreateAuthorizationUrl();
     }
 
     /// <summary>
@@ -420,7 +418,7 @@ namespace Google.Api.Ads.Common.OAuth {
           // Set the state parameter so we can distinguish between a normal
           // page load and a callback.
           UserDefinedQueryParams = new KeyValuePair<string, string>[] {
-            new KeyValuePair<string, string>("state", this.State)
+            new KeyValuePair<string, string>("state", this.State ?? "")
           }
         };
         return new GoogleAuthorizationCodeFlow(initializer);
@@ -481,16 +479,10 @@ namespace Google.Api.Ads.Common.OAuth {
     /// <summary>
     /// Creates the authorization URL.
     /// </summary>
-    /// <param name="redirectUri">The redirect URI.</param>
     /// <returns>The authorization URL.</returns>
-    protected virtual string CreateAuthorizationUrl(string redirectUri) {
+    protected virtual string CreateAuthorizationUrl() {
       Uri requestUrl = this.AuthorizationCodeFlow.CreateAuthorizationCodeRequest(
           Config.OAuth2RedirectUri).Build();
-
-      if (IsOffline) {
-        requestUrl = new GoogleAuthorizationCodeRequestUrl(requestUrl).Build();
-      }
-
       return requestUrl.AbsoluteUri;
     }
 

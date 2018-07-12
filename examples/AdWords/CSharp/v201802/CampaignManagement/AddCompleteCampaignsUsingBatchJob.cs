@@ -179,7 +179,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
                 batchJob.downloadUrl.url);
             Console.WriteLine("Downloaded results from {0}.", batchJob.downloadUrl.url);
             foreach (MutateResult mutateResult in mutateResponse.rval) {
-              String outcome = mutateResult.errorList == null ? "SUCCESS" : "FAILURE";
+              string outcome = mutateResult.errorList == null ? "SUCCESS" : "FAILURE";
               Console.WriteLine("  Operation [{0}] - {1}", mutateResult.index, outcome);
             }
           }
@@ -202,7 +202,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           headlinePart1 = "Luxury Cruise to Mars",
           headlinePart2 = "Visit the Red Planet in style.",
           description = "Low-gravity fun for everyone!",
-          finalUrls = new String[] { "http://www.example.com/1" }
+          finalUrls = new string[] { "http://www.example.com/1" }
         }
       };
 
@@ -229,7 +229,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
 
       for (int i = 0; i < NUMBER_OF_KEYWORDS_TO_ADD; i++) {
         // Create Keyword.
-        String text = String.Format("mars{0}", i);
+        string text = string.Format("mars{0}", i);
 
         // Make 50% of keywords invalid to demonstrate error handling.
         if ((i % 2) == 0) {

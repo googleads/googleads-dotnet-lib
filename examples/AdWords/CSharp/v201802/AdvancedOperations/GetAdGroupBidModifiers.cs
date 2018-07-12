@@ -63,7 +63,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
 
         // Get all ad group bid modifiers for the campaign.
         Selector selector = new Selector() {
-          fields = new String[] {
+          fields = new string[] {
           AdGroupBidModifier.Fields.CampaignId, AdGroupBidModifier.Fields.AdGroupId,
           AdGroupBidModifier.Fields.BidModifier, AdGroupBidModifier.Fields.BidModifierSource,
           Criterion.Fields.CriteriaType, Criterion.Fields.Id

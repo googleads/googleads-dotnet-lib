@@ -163,7 +163,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
 
         // Create the user list with no restrictions on site visit date.
         ExpressionRuleUserList expressionUserList = new ExpressionRuleUserList();
-        String creationTimeString = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+        string creationTimeString = DateTime.Now.ToString("yyyyMMdd_HHmmss");
         expressionUserList.name = "Expression based user list created at " + creationTimeString;
         expressionUserList.description = "Users who checked out in three month window OR " +
             "visited the checkout page with more than one item in their cart.";
@@ -180,7 +180,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
 
         DateSpecificRuleUserList dateUserList = new DateSpecificRuleUserList();
         dateUserList.name = "Date rule user list created at " + creationTimeString;
-        dateUserList.description = String.Format("Users who visited the site between {0} and " +
+        dateUserList.description = string.Format("Users who visited the site between {0} and " +
             "{1} and checked out in three month window OR visited the checkout page " +
             "with more than one item in their cart.", startDate.ToString(DATE_FORMAT_STRING),
             endDate.ToString(DATE_FORMAT_STRING));

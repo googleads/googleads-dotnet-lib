@@ -92,7 +92,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
       // Create the query.
-      String query = "SELECT Id, AdNetworkType1, Impressions FROM CRITERIA_PERFORMANCE_REPORT " +
+      string query = "SELECT Id, AdNetworkType1, Impressions FROM CRITERIA_PERFORMANCE_REPORT " +
           "WHERE Status IN [ENABLED, PAUSED] DURING LAST_7_DAYS";
 
       ReportUtilities reportUtilities = new ReportUtilities(user, "v201806", query,

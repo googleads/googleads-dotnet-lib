@@ -60,14 +60,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
           (CampaignService) user.GetService(AdWordsService.v201806.CampaignService)) {
 
         // Create the campaign.
-        Campaign campaign = new Campaign();
-        campaign.id = campaignId;
-        campaign.status = CampaignStatus.PAUSED;
+        Campaign campaign = new Campaign {
+          id = campaignId,
+          status = CampaignStatus.PAUSED
+        };
 
         // Create the operation.
-        CampaignOperation operation = new CampaignOperation();
-        operation.@operator = Operator.SET;
-        operation.operand = campaign;
+        CampaignOperation operation = new CampaignOperation {
+          @operator = Operator.SET,
+          operand = campaign
+        };
 
         try {
           // Update the campaign.

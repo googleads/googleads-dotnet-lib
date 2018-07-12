@@ -55,14 +55,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     /// </summary>
     /// <param name="user">The AdWords user.</param>
     public void Run(AdWordsUser user) {
-      String BIDDINGSTRATEGY_NAME = "Maximize Clicks " + ExampleUtilities.GetRandomString();
+      string BIDDINGSTRATEGY_NAME = "Maximize Clicks " + ExampleUtilities.GetRandomString();
       const long BID_CEILING = 2000000;
       const long SPEND_TARGET = 20000000;
 
-      String BUDGET_NAME = "Shared Interplanetary Budget #" + ExampleUtilities.GetRandomString();
+      string BUDGET_NAME = "Shared Interplanetary Budget #" + ExampleUtilities.GetRandomString();
       const long BUDGET_AMOUNT = 30000000;
 
-      String CAMPAIGN_NAME = "Interplanetary Cruise #" + ExampleUtilities.GetRandomString();
+      string CAMPAIGN_NAME = "Interplanetary Cruise #" + ExampleUtilities.GetRandomString();
 
       try {
         SharedBiddingStrategy portfolioBiddingStrategy = CreateBiddingStrategy(
@@ -93,30 +93,35 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     /// <param name="bidCeiling">The bid ceiling.</param>
     /// <param name="spendTarget">The spend target.</param>
     /// <returns>The bidding strategy object.</returns>
-    private SharedBiddingStrategy CreateBiddingStrategy(AdWordsUser user, String name,
+    private SharedBiddingStrategy CreateBiddingStrategy(AdWordsUser user, string name,
         long bidCeiling,long spendTarget) {
       using (BiddingStrategyService biddingStrategyService =
           (BiddingStrategyService) user.GetService(
               AdWordsService.v201802.BiddingStrategyService)) {
 
         // Create a portfolio bidding strategy.
-        SharedBiddingStrategy portfolioBiddingStrategy = new SharedBiddingStrategy();
-        portfolioBiddingStrategy.name = name;
+        SharedBiddingStrategy portfolioBiddingStrategy = new SharedBiddingStrategy {
+          name = name
+        };
 
-        TargetSpendBiddingScheme biddingScheme = new TargetSpendBiddingScheme();
-        // Optionally set additional bidding scheme parameters.
-        biddingScheme.bidCeiling = new Money();
-        biddingScheme.bidCeiling.microAmount = bidCeiling;
+        TargetSpendBiddingScheme biddingScheme = new TargetSpendBiddingScheme {
+          // Optionally set additional bidding scheme parameters.
+          bidCeiling = new Money {
+            microAmount = bidCeiling
+          },
 
-        biddingScheme.spendTarget = new Money();
-        biddingScheme.spendTarget.microAmount = spendTarget;
+          spendTarget = new Money {
+            microAmount = spendTarget
+          }
+        };
 
         portfolioBiddingStrategy.biddingScheme = biddingScheme;
 
         // Create operation.
-        BiddingStrategyOperation operation = new BiddingStrategyOperation();
-        operation.@operator = Operator.ADD;
-        operation.operand = portfolioBiddingStrategy;
+        BiddingStrategyOperation operation = new BiddingStrategyOperation {
+          @operator = Operator.ADD,
+          operand = portfolioBiddingStrategy
+        };
 
         return biddingStrategyService.mutate(
             new BiddingStrategyOperation[] { operation }).value[0];
@@ -130,22 +135,25 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     /// <param name="name">The budget name.</param>
     /// <param name="amount">The budget amount.</param>
     /// <returns>The budget object.</returns>
-    private Budget CreateSharedBudget(AdWordsUser user, String name, long amount) {
+    private Budget CreateSharedBudget(AdWordsUser user, string name, long amount) {
       using (BudgetService budgetService = (BudgetService) user.GetService(
           AdWordsService.v201802.BudgetService)) {
 
         // Create a shared budget
-        Budget budget = new Budget();
-        budget.name = name;
-        budget.amount = new Money();
-        budget.amount.microAmount = amount;
-        budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
-        budget.isExplicitlyShared = true;
+        Budget budget = new Budget {
+          name = name,
+          amount = new Money {
+            microAmount = amount
+          },
+          deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD,
+          isExplicitlyShared = true
+        };
 
         // Create operation.
-        BudgetOperation operation = new BudgetOperation();
-        operation.operand = budget;
-        operation.@operator = Operator.ADD;
+        BudgetOperation operation = new BudgetOperation {
+          operand = budget,
+          @operator = Operator.ADD
+        };
 
         // Make the mutate request.
         return budgetService.mutate(new BudgetOperation[] { operation }).value[0];
@@ -165,37 +173,42 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
       using (CampaignService campaignService = (CampaignService) user.GetService(
           AdWordsService.v201802.CampaignService)) {
         // Create campaign.
-        Campaign campaign = new Campaign();
-        campaign.name = name;
-        campaign.advertisingChannelType = AdvertisingChannelType.SEARCH;
+        Campaign campaign = new Campaign {
+          name = name,
+          advertisingChannelType = AdvertisingChannelType.SEARCH,
 
-        // Recommendation: Set the campaign to PAUSED when creating it to prevent
-        // the ads from immediately serving. Set to ENABLED once you've added
-        // targeting and the ads are ready to serve.
-        campaign.status = CampaignStatus.PAUSED;
+          // Recommendation: Set the campaign to PAUSED when creating it to prevent
+          // the ads from immediately serving. Set to ENABLED once you've added
+          // targeting and the ads are ready to serve.
+          status = CampaignStatus.PAUSED,
 
-        // Set the budget.
-        campaign.budget = new Budget();
-        campaign.budget.budgetId = sharedBudgetId;
+          // Set the budget.
+          budget = new Budget {
+            budgetId = sharedBudgetId
+          }
+        };
 
         // Set bidding strategy (required).
         BiddingStrategyConfiguration biddingStrategyConfiguration =
-            new BiddingStrategyConfiguration();
-        biddingStrategyConfiguration.biddingStrategyId = biddingStrategyId;
+            new BiddingStrategyConfiguration {
+              biddingStrategyId = biddingStrategyId
+            };
 
         campaign.biddingStrategyConfiguration = biddingStrategyConfiguration;
 
         // Set network targeting (recommended).
-        NetworkSetting networkSetting = new NetworkSetting();
-        networkSetting.targetGoogleSearch = true;
-        networkSetting.targetSearchNetwork = true;
-        networkSetting.targetContentNetwork = true;
+        NetworkSetting networkSetting = new NetworkSetting {
+          targetGoogleSearch = true,
+          targetSearchNetwork = true,
+          targetContentNetwork = true
+        };
         campaign.networkSetting = networkSetting;
 
         // Create operation.
-        CampaignOperation operation = new CampaignOperation();
-        operation.operand = campaign;
-        operation.@operator = Operator.ADD;
+        CampaignOperation operation = new CampaignOperation {
+          operand = campaign,
+          @operator = Operator.ADD
+        };
 
         return campaignService.mutate(new CampaignOperation[] { operation }).value[0];
       }

@@ -69,19 +69,22 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
 
         // Create mobile platform. The ID can be found in the documentation.
         // https://developers.google.com/adwords/api/docs/appendix/platforms
-        Platform mobile = new Platform();
-        mobile.id = 30001;
+        Platform mobile = new Platform {
+          id = 30001
+        };
 
         // Create criterion with modified bid.
-        CampaignCriterion criterion = new CampaignCriterion();
-        criterion.campaignId = campaignId;
-        criterion.criterion = mobile;
-        criterion.bidModifier = bidModifier;
+        CampaignCriterion criterion = new CampaignCriterion {
+          campaignId = campaignId,
+          criterion = mobile,
+          bidModifier = bidModifier
+        };
 
         // Create SET operation.
-        CampaignCriterionOperation operation = new CampaignCriterionOperation();
-        operation.@operator = Operator.SET;
-        operation.operand = criterion;
+        CampaignCriterionOperation operation = new CampaignCriterionOperation {
+          @operator = Operator.SET,
+          operand = criterion
+        };
 
         try {
           // Update campaign criteria.

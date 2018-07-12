@@ -78,17 +78,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
         // Since your tracking URL has two custom parameters, provide their
         // values too. This can be provided at campaign, ad group, ad, criterion
         // or feed item levels.
-        CustomParameter seasonParameter = new CustomParameter();
-        seasonParameter.key = "season";
-        seasonParameter.value = "christmas";
+        CustomParameter seasonParameter = new CustomParameter {
+          key = "season",
+          value = "christmas"
+        };
 
-        CustomParameter promoCodeParameter = new CustomParameter();
-        promoCodeParameter.key = "promocode";
-        promoCodeParameter.value = "NYC123";
+        CustomParameter promoCodeParameter = new CustomParameter {
+          key = "promocode",
+          value = "NYC123"
+        };
 
-        expandedTextAd.urlCustomParameters = new CustomParameters();
-        expandedTextAd.urlCustomParameters.parameters =
-            new CustomParameter[] { seasonParameter, promoCodeParameter };
+        expandedTextAd.urlCustomParameters = new CustomParameters {
+          parameters = new CustomParameter[] { seasonParameter, promoCodeParameter }
+        };
 
         // Specify a list of final URLs. This field cannot be set if URL field is
         // set. This may be specified at ad, criterion and feed item levels.
@@ -105,17 +107,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
           "http://mobile.example.com/locations/mars/"
         };
 
-        AdGroupAd adGroupAd = new AdGroupAd();
-        adGroupAd.adGroupId = adGroupId;
-        adGroupAd.ad = expandedTextAd;
+        AdGroupAd adGroupAd = new AdGroupAd {
+          adGroupId = adGroupId,
+          ad = expandedTextAd,
 
-        // Optional: Set the status.
-        adGroupAd.status = AdGroupAdStatus.PAUSED;
+          // Optional: Set the status.
+          status = AdGroupAdStatus.PAUSED
+        };
 
         // Create the operation.
-        AdGroupAdOperation operation = new AdGroupAdOperation();
-        operation.@operator = Operator.ADD;
-        operation.operand = adGroupAd;
+        AdGroupAdOperation operation = new AdGroupAdOperation {
+          @operator = Operator.ADD,
+          operand = adGroupAd
+        };
 
         AdGroupAdReturnValue retVal = null;
 

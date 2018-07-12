@@ -68,26 +68,29 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           List<AdGroupCriterionOperation> operations = new List<AdGroupCriterionOperation>();
 
           // Create the keywords.
-          string[] keywords = new String[] {
+          string[] keywords = new string[] {
             "mars cruise", "inv@lid cruise", "venus cruise", "b(a)d keyword cruise"
           };
 
-          foreach (String keywordText in keywords) {
-            Keyword keyword = new Keyword();
-            keyword.text = keywordText;
-            keyword.matchType = KeywordMatchType.BROAD;
+          foreach (string keywordText in keywords) {
+            Keyword keyword = new Keyword {
+              text = keywordText,
+              matchType = KeywordMatchType.BROAD
+            };
 
             // Create biddable ad group criterion.
             BiddableAdGroupCriterion keywordBiddableAdGroupCriterion =
-                new BiddableAdGroupCriterion();
-            keywordBiddableAdGroupCriterion.adGroupId = adGroupId;
-            keywordBiddableAdGroupCriterion.criterion = keyword;
+                new BiddableAdGroupCriterion {
+                  adGroupId = adGroupId,
+                  criterion = keyword
+                };
 
             // Create the operation.
             AdGroupCriterionOperation keywordAdGroupCriterionOperation =
-                new AdGroupCriterionOperation();
-            keywordAdGroupCriterionOperation.operand = keywordBiddableAdGroupCriterion;
-            keywordAdGroupCriterionOperation.@operator = Operator.ADD;
+                new AdGroupCriterionOperation {
+                  operand = keywordBiddableAdGroupCriterion,
+                  @operator = Operator.ADD
+                };
             operations.Add(keywordAdGroupCriterionOperation);
           }
 

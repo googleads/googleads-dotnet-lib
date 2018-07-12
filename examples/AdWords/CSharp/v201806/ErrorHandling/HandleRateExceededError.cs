@@ -129,25 +129,28 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
       /// Main method for the thread.
       /// </summary>
       /// <param name="obj">The thread parameter.</param>
-      public void Run(Object obj) {
+      public void Run(object obj) {
         // Create the operations.
         List<AdGroupCriterionOperation> operations = new List<AdGroupCriterionOperation>();
 
         for (int j = 0; j < NUM_KEYWORDS; j++) {
           // Create the keyword.
-          Keyword keyword = new Keyword();
-          keyword.text = "mars cruise thread " + threadIndex.ToString() + " seed " + j.ToString();
-          keyword.matchType = KeywordMatchType.BROAD;
+          Keyword keyword = new Keyword {
+            text = "mars cruise thread " + threadIndex.ToString() + " seed " + j.ToString(),
+            matchType = KeywordMatchType.BROAD
+          };
 
           // Create the biddable ad group criterion.
-          AdGroupCriterion keywordCriterion = new BiddableAdGroupCriterion();
-          keywordCriterion.adGroupId = adGroupId;
-          keywordCriterion.criterion = keyword;
+          AdGroupCriterion keywordCriterion = new BiddableAdGroupCriterion {
+            adGroupId = adGroupId,
+            criterion = keyword
+          };
 
           // Create the operations.
-          AdGroupCriterionOperation keywordOperation = new AdGroupCriterionOperation();
-          keywordOperation.@operator = Operator.ADD;
-          keywordOperation.operand = keywordCriterion;
+          AdGroupCriterionOperation keywordOperation = new AdGroupCriterionOperation {
+            @operator = Operator.ADD,
+            operand = keywordCriterion
+          };
 
           operations.Add(keywordOperation);
         }
@@ -189,7 +192,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
                 }
               } finally {
                 if (retryCount == NUM_RETRIES) {
-                  throw new Exception(String.Format("Could not recover after making {0} attempts.",
+                  throw new Exception(string.Format("Could not recover after making {0} attempts.",
                       retryCount));
                 }
               }

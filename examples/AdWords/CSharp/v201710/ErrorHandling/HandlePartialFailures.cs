@@ -68,11 +68,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
           List<AdGroupCriterionOperation> operations = new List<AdGroupCriterionOperation>();
 
           // Create the keywords.
-          string[] keywords = new String[] {
+          string[] keywords = new string[] {
             "mars cruise", "inv@lid cruise", "venus cruise", "b(a)d keyword cruise"
           };
 
-          foreach (String keywordText in keywords) {
+          foreach (string keywordText in keywords) {
             Keyword keyword = new Keyword();
             keyword.text = keywordText;
             keyword.matchType = KeywordMatchType.BROAD;

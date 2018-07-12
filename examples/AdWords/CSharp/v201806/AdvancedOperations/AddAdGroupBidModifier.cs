@@ -68,18 +68,21 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
         long criterionId = 30001;
 
         // Create the adgroup bid modifier.
-        AdGroupBidModifier adGroupBidModifier = new AdGroupBidModifier();
-        adGroupBidModifier.bidModifier = bidModifier;
-        adGroupBidModifier.adGroupId = adGroupId;
+        AdGroupBidModifier adGroupBidModifier = new AdGroupBidModifier {
+          bidModifier = bidModifier,
+          adGroupId = adGroupId
+        };
 
-        Platform platform = new Platform();
-        platform.id = criterionId;
+        Platform platform = new Platform {
+          id = criterionId
+        };
 
         adGroupBidModifier.criterion = platform;
 
-        AdGroupBidModifierOperation operation = new AdGroupBidModifierOperation();
-        operation.@operator = Operator.ADD;
-        operation.operand = adGroupBidModifier;
+        AdGroupBidModifierOperation operation = new AdGroupBidModifierOperation {
+          @operator = Operator.ADD,
+          operand = adGroupBidModifier
+        };
 
         try {
           // Add ad group level mobile bid modifier.

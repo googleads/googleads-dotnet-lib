@@ -186,7 +186,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="url">The image URL.</param>
     /// <returns>ID of the uploaded image.</returns>
-    private static long UploadImageAsset(AdWordsUser user, String url) {
+    private static long UploadImageAsset(AdWordsUser user, string url) {
       using (AssetService assetService = (AssetService) user.GetService(
           AdWordsService.v201806.AssetService)) {
         // Create the image asset.

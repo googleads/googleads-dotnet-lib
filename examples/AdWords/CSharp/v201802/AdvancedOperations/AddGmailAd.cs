@@ -66,37 +66,43 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
         // Image.data field. An image must first be created using the
         // MediaService, and Image.mediaId must be populated when creating the
         // ad.
-        Image logoImage = new Image();
-        logoImage.mediaId = UploadImage(user, "https://goo.gl/mtt54n").mediaId;
+        Image logoImage = new Image {
+          mediaId = UploadImage(user, "https://goo.gl/mtt54n").mediaId
+        };
 
-        Image marketingImage = new Image();
-        marketingImage.mediaId = UploadImage(user, "https://goo.gl/3b9Wfh").mediaId;
+        Image marketingImage = new Image {
+          mediaId = UploadImage(user, "https://goo.gl/3b9Wfh").mediaId
+        };
 
-        GmailTeaser teaser = new GmailTeaser();
-        teaser.headline = "Dream";
-        teaser.description = "Create your own adventure";
-        teaser.businessName = "Interplanetary Ships";
-        teaser.logoImage = logoImage;
+        GmailTeaser teaser = new GmailTeaser {
+          headline = "Dream",
+          description = "Create your own adventure",
+          businessName = "Interplanetary Ships",
+          logoImage = logoImage
+        };
 
         // Creates a Gmail ad.
-        GmailAd gmailAd = new GmailAd();
-        gmailAd.teaser = teaser;
-        gmailAd.marketingImage = marketingImage;
-        gmailAd.marketingImageHeadline = "Travel";
-        gmailAd.marketingImageDescription = "Take to the skies!";
-        gmailAd.finalUrls = new string[] { "http://www.example.com/" };
+        GmailAd gmailAd = new GmailAd {
+          teaser = teaser,
+          marketingImage = marketingImage,
+          marketingImageHeadline = "Travel",
+          marketingImageDescription = "Take to the skies!",
+          finalUrls = new string[] { "http://www.example.com/" }
+        };
 
         // Creates ad group ad for the Gmail ad.
-        AdGroupAd adGroupAd = new AdGroupAd();
-        adGroupAd.adGroupId = adGroupId;
-        adGroupAd.ad = gmailAd;
-        // Optional: Set additional settings.
-        adGroupAd.status = AdGroupAdStatus.PAUSED;
+        AdGroupAd adGroupAd = new AdGroupAd {
+          adGroupId = adGroupId,
+          ad = gmailAd,
+          // Optional: Set additional settings.
+          status = AdGroupAdStatus.PAUSED
+        };
 
         // Creates ad group ad operation and add it to the list.
-        AdGroupAdOperation operation = new AdGroupAdOperation();
-        operation.operand = adGroupAd;
-        operation.@operator = Operator.ADD;
+        AdGroupAdOperation operation = new AdGroupAdOperation {
+          operand = adGroupAd,
+          @operator = Operator.ADD
+        };
 
         try {
           // Adds a responsive display ad on the server.
@@ -127,9 +133,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
     private static Media UploadImage(AdWordsUser user, string url) {
       using (MediaService mediaService = (MediaService) user.GetService(
           AdWordsService.v201802.MediaService)) {
-        Image image = new Image();
-        image.data = MediaUtilities.GetAssetDataFromUrl(url, user.Config);
-        image.type = MediaMediaType.IMAGE;
+        Image image = new Image {
+          data = MediaUtilities.GetAssetDataFromUrl(url, user.Config),
+          type = MediaMediaType.IMAGE
+        };
         return mediaService.upload(new Media[] { image })[0];
       }
     }

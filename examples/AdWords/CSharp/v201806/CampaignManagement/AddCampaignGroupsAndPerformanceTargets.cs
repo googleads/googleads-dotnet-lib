@@ -80,13 +80,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
           (CampaignGroupService) user.GetService(AdWordsService.v201806.CampaignGroupService)) {
 
         // Create the campaign group.
-        CampaignGroup campaignGroup = new CampaignGroup();
-        campaignGroup.name = "Mars campaign group - " + ExampleUtilities.GetShortRandomString();
+        CampaignGroup campaignGroup = new CampaignGroup {
+          name = "Mars campaign group - " + ExampleUtilities.GetShortRandomString()
+        };
 
         // Create the operation.
-        CampaignGroupOperation operation = new CampaignGroupOperation();
-        operation.operand = campaignGroup;
-        operation.@operator = Operator.ADD;
+        CampaignGroupOperation operation = new CampaignGroupOperation {
+          operand = campaignGroup,
+          @operator = Operator.ADD
+        };
 
         try {
           CampaignGroupReturnValue retval = campaignGroupService.mutate(
@@ -118,13 +120,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
         List<CampaignOperation> operations = new List<CampaignOperation>();
 
         for (int i = 0; i < campaignIds.Length; i++) {
-          Campaign campaign = new Campaign();
-          campaign.id = campaignIds[i];
-          campaign.campaignGroupId = campaignGroupId;
+          Campaign campaign = new Campaign {
+            id = campaignIds[i],
+            campaignGroupId = campaignGroupId
+          };
 
-          CampaignOperation operation = new CampaignOperation();
-          operation.operand = campaign;
-          operation.@operator = Operator.SET;
+          CampaignOperation operation = new CampaignOperation {
+            operand = campaign,
+            @operator = Operator.SET
+          };
           operations.Add(operation);
         }
 
@@ -158,18 +162,21 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
 
         // Create the performance target.
         CampaignGroupPerformanceTarget campaignGroupPerformanceTarget =
-          new CampaignGroupPerformanceTarget();
-        campaignGroupPerformanceTarget.campaignGroupId = campaignGroupId;
+          new CampaignGroupPerformanceTarget {
+            campaignGroupId = campaignGroupId
+          };
 
-        PerformanceTarget performanceTarget = new PerformanceTarget();
-        // Keep the CPC for the campaigns < $3.
-        performanceTarget.efficiencyTargetType = EfficiencyTargetType.CPC_LESS_THAN_OR_EQUAL_TO;
-        performanceTarget.efficiencyTargetValue = 3000000;
+        PerformanceTarget performanceTarget = new PerformanceTarget {
+          // Keep the CPC for the campaigns < $3.
+          efficiencyTargetType = EfficiencyTargetType.CPC_LESS_THAN_OR_EQUAL_TO,
+          efficiencyTargetValue = 3000000,
 
-        // Keep the maximum spend under $50.
-        performanceTarget.spendTargetType = SpendTargetType.MAXIMUM;
-        Money maxSpend = new Money();
-        maxSpend.microAmount = 500000000;
+          // Keep the maximum spend under $50.
+          spendTargetType = SpendTargetType.MAXIMUM
+        };
+        Money maxSpend = new Money {
+          microAmount = 500000000
+        };
         performanceTarget.spendTarget = maxSpend;
 
         // Aim for at least 3000 clicks.
@@ -187,9 +194,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
 
         // Create the operation.
         CampaignGroupPerformanceTargetOperation operation =
-            new CampaignGroupPerformanceTargetOperation();
-        operation.operand = campaignGroupPerformanceTarget;
-        operation.@operator = Operator.ADD;
+            new CampaignGroupPerformanceTargetOperation {
+              operand = campaignGroupPerformanceTarget,
+              @operator = Operator.ADD
+            };
 
         try {
           CampaignGroupPerformanceTargetReturnValue retval =

@@ -72,28 +72,32 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           (AdGroupService) user.GetService(AdWordsService.v201802.AdGroupService)) {
 
         // Create an ad group with the specified ID.
-        AdGroup adGroup = new AdGroup();
-        adGroup.id = adGroupId;
+        AdGroup adGroup = new AdGroup {
+          id = adGroupId,
 
-        // Pause the ad group.
-        adGroup.status = AdGroupStatus.PAUSED;
+          // Pause the ad group.
+          status = AdGroupStatus.PAUSED
+        };
 
         // Update the CPC bid if specified.
         if (bidMicroAmount != null) {
           BiddingStrategyConfiguration biddingStrategyConfiguration =
               new BiddingStrategyConfiguration();
-          Money cpcBidMoney = new Money();
-          cpcBidMoney.microAmount = bidMicroAmount.Value;
-          CpcBid cpcBid = new CpcBid();
-          cpcBid.bid = cpcBidMoney;
+          Money cpcBidMoney = new Money {
+            microAmount = bidMicroAmount.Value
+          };
+          CpcBid cpcBid = new CpcBid {
+            bid = cpcBidMoney
+          };
           biddingStrategyConfiguration.bids = new Bids[] { cpcBid };
           adGroup.biddingStrategyConfiguration = biddingStrategyConfiguration;
         }
 
         // Create the operation.
-        AdGroupOperation operation = new AdGroupOperation();
-        operation.@operator = Operator.SET;
-        operation.operand = adGroup;
+        AdGroupOperation operation = new AdGroupOperation {
+          @operator = Operator.SET,
+          operand = adGroup
+        };
 
         try {
           // Update the ad group.

@@ -90,44 +90,49 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
       using (CampaignService campaignService = (CampaignService) user.GetService(
           AdWordsService.v201802.CampaignService)) {
         // Create the campaign.
-        Campaign campaign = new Campaign();
-        campaign.name = "Shopping campaign #" + ExampleUtilities.GetRandomString();
+        Campaign campaign = new Campaign {
+          name = "Shopping campaign #" + ExampleUtilities.GetRandomString(),
 
-        // The advertisingChannelType is what makes this a Shopping campaign.
-        campaign.advertisingChannelType = AdvertisingChannelType.SHOPPING;
+          // The advertisingChannelType is what makes this a Shopping campaign.
+          advertisingChannelType = AdvertisingChannelType.SHOPPING,
 
-        // Recommendation: Set the campaign to PAUSED when creating it to prevent
-        // the ads from immediately serving. Set to ENABLED once you've added
-        // targeting and the ads are ready to serve.
-        campaign.status = CampaignStatus.PAUSED;
+          // Recommendation: Set the campaign to PAUSED when creating it to prevent
+          // the ads from immediately serving. Set to ENABLED once you've added
+          // targeting and the ads are ready to serve.
+          status = CampaignStatus.PAUSED,
 
-        // Set shared budget (required).
-        campaign.budget = new Budget();
-        campaign.budget.budgetId = budgetId;
+          // Set shared budget (required).
+          budget = new Budget {
+            budgetId = budgetId
+          }
+        };
 
         // Set bidding strategy (required).
         BiddingStrategyConfiguration biddingStrategyConfiguration =
-            new BiddingStrategyConfiguration();
+            new BiddingStrategyConfiguration {
 
-        // Showcase ads require either ManualCpc or EnhancedCpc.
-        biddingStrategyConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC;
+              // Showcase ads require either ManualCpc or EnhancedCpc.
+              biddingStrategyType = BiddingStrategyType.MANUAL_CPC
+            };
 
         campaign.biddingStrategyConfiguration = biddingStrategyConfiguration;
 
         // All Shopping campaigns need a ShoppingSetting.
-        ShoppingSetting shoppingSetting = new ShoppingSetting();
-        shoppingSetting.salesCountry = "US";
-        shoppingSetting.campaignPriority = 0;
-        shoppingSetting.merchantId = merchantId;
+        ShoppingSetting shoppingSetting = new ShoppingSetting {
+          salesCountry = "US",
+          campaignPriority = 0,
+          merchantId = merchantId,
 
-        // Set to "true" to enable Local Inventory Ads in your campaign.
-        shoppingSetting.enableLocal = true;
+          // Set to "true" to enable Local Inventory Ads in your campaign.
+          enableLocal = true
+        };
         campaign.settings = new Setting[] { shoppingSetting };
 
         // Create operation.
-        CampaignOperation campaignOperation = new CampaignOperation();
-        campaignOperation.operand = campaign;
-        campaignOperation.@operator = Operator.ADD;
+        CampaignOperation campaignOperation = new CampaignOperation {
+          operand = campaign,
+          @operator = Operator.ADD
+        };
 
         // Make the mutate request.
         CampaignReturnValue retval = campaignService.mutate(
@@ -146,31 +151,34 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
       using (AdGroupService adGroupService = (AdGroupService) user.GetService(
         AdWordsService.v201802.AdGroupService)) {
         // Create ad group.
-        AdGroup adGroup = new AdGroup();
-        adGroup.campaignId = campaign.id;
-        adGroup.name = "Ad Group #" + ExampleUtilities.GetRandomString();
+        AdGroup adGroup = new AdGroup {
+          campaignId = campaign.id,
+          name = "Ad Group #" + ExampleUtilities.GetRandomString(),
 
-        // Required: Set the ad group type to SHOPPING_SHOWCASE_ADS.
-        adGroup.adGroupType = AdGroupType.SHOPPING_SHOWCASE_ADS;
+          // Required: Set the ad group type to SHOPPING_SHOWCASE_ADS.
+          adGroupType = AdGroupType.SHOPPING_SHOWCASE_ADS
+        };
 
         // Required: Set the ad group's bidding strategy configuration.
-        BiddingStrategyConfiguration biddingConfiguration = new BiddingStrategyConfiguration();
+        BiddingStrategyConfiguration biddingConfiguration = new BiddingStrategyConfiguration {
 
-        // Optional: Set the bids.
-        biddingConfiguration.bids = new Bids[] {
+          // Optional: Set the bids.
+          bids = new Bids[] {
           new CpcBid() {
             bid = new Money() {
               microAmount = 100000
             }
           }
+        }
         };
 
         adGroup.biddingStrategyConfiguration = biddingConfiguration;
 
         // Create the operation.
-        AdGroupOperation operation = new AdGroupOperation();
-        operation.operand = adGroup;
-        operation.@operator = Operator.ADD;
+        AdGroupOperation operation = new AdGroupOperation {
+          operand = adGroup,
+          @operator = Operator.ADD
+        };
 
         // Make the mutate request.
         AdGroupReturnValue retval = adGroupService.mutate(new AdGroupOperation[] { operation });
@@ -188,32 +196,37 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
       using (AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
           AdWordsService.v201802.AdGroupAdService)) {
         // Create the Showcase ad.
-        ShowcaseAd showcaseAd = new ShowcaseAd();
+        ShowcaseAd showcaseAd = new ShowcaseAd {
 
-        // Required: set the ad's name, final URLs and display URL.
-        showcaseAd.name = "Showcase ad " + ExampleUtilities.GetShortRandomString();
-        showcaseAd.finalUrls = new string[] { "http://example.com/showcase" };
-        showcaseAd.displayUrl = "example.com";
+          // Required: set the ad's name, final URLs and display URL.
+          name = "Showcase ad " + ExampleUtilities.GetShortRandomString(),
+          finalUrls = new string[] { "http://example.com/showcase" },
+          displayUrl = "example.com"
+        };
 
         // Required: Set the ad's expanded image.
-        Image expandedImage = new Image();
-        expandedImage.mediaId = UploadImage(user, "https://goo.gl/IfVlpF");
+        Image expandedImage = new Image {
+          mediaId = UploadImage(user, "https://goo.gl/IfVlpF")
+        };
         showcaseAd.expandedImage = expandedImage;
 
         // Optional: Set the collapsed image.
-        Image collapsedImage = new Image();
-        collapsedImage.mediaId = UploadImage(user, "https://goo.gl/NqTxAE");
+        Image collapsedImage = new Image {
+          mediaId = UploadImage(user, "https://goo.gl/NqTxAE")
+        };
         showcaseAd.collapsedImage = collapsedImage;
 
         // Create ad group ad.
-        AdGroupAd adGroupAd = new AdGroupAd();
-        adGroupAd.adGroupId = adGroup.id;
-        adGroupAd.ad = showcaseAd;
+        AdGroupAd adGroupAd = new AdGroupAd {
+          adGroupId = adGroup.id,
+          ad = showcaseAd
+        };
 
         // Create operation.
-        AdGroupAdOperation operation = new AdGroupAdOperation();
-        operation.operand = adGroupAd;
-        operation.@operator = Operator.ADD;
+        AdGroupAdOperation operation = new AdGroupAdOperation {
+          operand = adGroupAd,
+          @operator = Operator.ADD
+        };
 
         // Make the mutate request.
         AdGroupAdReturnValue retval = adGroupAdService.mutate(
@@ -283,9 +296,10 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           AdWordsService.v201802.MediaService)) {
 
         // Create the image.
-        Image image = new Image();
-        image.data = MediaUtilities.GetAssetDataFromUrl(url, user.Config);
-        image.type = MediaMediaType.IMAGE;
+        Image image = new Image {
+          data = MediaUtilities.GetAssetDataFromUrl(url, user.Config),
+          type = MediaMediaType.IMAGE
+        };
 
         // Upload the image.
         Media[] result = mediaService.upload(new Media[] { image });

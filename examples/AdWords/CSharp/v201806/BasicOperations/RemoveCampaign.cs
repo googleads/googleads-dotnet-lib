@@ -61,14 +61,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
           AdWordsService.v201806.CampaignService)) {
 
         // Create campaign with REMOVED status.
-        Campaign campaign = new Campaign();
-        campaign.id = campaignId;
-        campaign.status = CampaignStatus.REMOVED;
+        Campaign campaign = new Campaign {
+          id = campaignId,
+          status = CampaignStatus.REMOVED
+        };
 
         // Create the operation.
-        CampaignOperation operation = new CampaignOperation();
-        operation.operand = campaign;
-        operation.@operator = Operator.SET;
+        CampaignOperation operation = new CampaignOperation {
+          operand = campaign,
+          @operator = Operator.SET
+        };
 
         try {
           // Remove the campaign.

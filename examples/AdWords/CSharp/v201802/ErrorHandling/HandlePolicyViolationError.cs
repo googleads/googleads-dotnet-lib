@@ -62,21 +62,24 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           (AdGroupAdService) user.GetService(AdWordsService.v201802.AdGroupAdService)) {
 
         // Create the text ad.
-        TextAd textAd = new TextAd();
-        textAd.headline = "Luxury Cruise to Mars";
-        textAd.description1 = "Visit the Red Planet in style.";
-        textAd.description2 = "Low-gravity fun for everyone!!";
-        textAd.displayUrl = "www.example.com";
-        textAd.finalUrls = new string[] { "http://www.example.com" };
+        TextAd textAd = new TextAd {
+          headline = "Luxury Cruise to Mars",
+          description1 = "Visit the Red Planet in style.",
+          description2 = "Low-gravity fun for everyone!!",
+          displayUrl = "www.example.com",
+          finalUrls = new string[] { "http://www.example.com" }
+        };
 
-        AdGroupAd textadGroupAd = new AdGroupAd();
-        textadGroupAd.adGroupId = adGroupId;
-        textadGroupAd.ad = textAd;
+        AdGroupAd textadGroupAd = new AdGroupAd {
+          adGroupId = adGroupId,
+          ad = textAd
+        };
 
         // Create the operations.
-        AdGroupAdOperation textAdOperation = new AdGroupAdOperation();
-        textAdOperation.@operator = Operator.ADD;
-        textAdOperation.operand = textadGroupAd;
+        AdGroupAdOperation textAdOperation = new AdGroupAdOperation {
+          @operator = Operator.ADD,
+          operand = textadGroupAd
+        };
 
         try {
           AdGroupAdReturnValue retVal = null;
@@ -122,8 +125,9 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
                     exemptionRequests.AddRange(allOperations[index].exemptionRequests);
                   }
 
-                  ExemptionRequest exemptionRequest = new ExemptionRequest();
-                  exemptionRequest.key = policyError.key;
+                  ExemptionRequest exemptionRequest = new ExemptionRequest {
+                    key = policyError.key
+                  };
                   exemptionRequests.Add(exemptionRequest);
                   allOperations[index].exemptionRequests = exemptionRequests.ToArray();
                 } else {

@@ -65,47 +65,56 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
         // This set of dimensions is for demonstration purposes only. It would be
         // extremely unlikely that you want to include so many dimensions in your
         // product scope.
-        ProductBrand nexusBrand = new ProductBrand();
-        nexusBrand.value = "Nexus";
+        ProductBrand nexusBrand = new ProductBrand {
+          value = "Nexus"
+        };
 
-        ProductCanonicalCondition newProducts = new ProductCanonicalCondition();
-        newProducts.condition = ProductCanonicalConditionCondition.NEW;
+        ProductCanonicalCondition newProducts = new ProductCanonicalCondition {
+          condition = ProductCanonicalConditionCondition.NEW
+        };
 
-        ProductCustomAttribute customAttribute = new ProductCustomAttribute();
-        customAttribute.type = ProductDimensionType.CUSTOM_ATTRIBUTE_0;
-        customAttribute.value = "my attribute value";
+        ProductCustomAttribute customAttribute = new ProductCustomAttribute {
+          type = ProductDimensionType.CUSTOM_ATTRIBUTE_0,
+          value = "my attribute value"
+        };
 
-        ProductOfferId bookOffer = new ProductOfferId();
-        bookOffer.value = "book1";
+        ProductOfferId bookOffer = new ProductOfferId {
+          value = "book1"
+        };
 
-        ProductType mediaProducts = new ProductType();
-        mediaProducts.type = ProductDimensionType.PRODUCT_TYPE_L1;
-        mediaProducts.value = "Media";
+        ProductType mediaProducts = new ProductType {
+          type = ProductDimensionType.PRODUCT_TYPE_L1,
+          value = "Media"
+        };
 
-        ProductType bookProducts = new ProductType();
-        bookProducts.type = ProductDimensionType.PRODUCT_TYPE_L2;
-        bookProducts.value = "Books";
+        ProductType bookProducts = new ProductType {
+          type = ProductDimensionType.PRODUCT_TYPE_L2,
+          value = "Books"
+        };
 
         // The value for the bidding category is a fixed ID for the
         // 'Luggage & Bags' category. You can retrieve IDs for categories from
         // the ConstantDataService. See the 'GetProductCategoryTaxonomy' example
         // for more details.
-        ProductBiddingCategory luggageBiddingCategory = new ProductBiddingCategory();
-        luggageBiddingCategory.type = ProductDimensionType.BIDDING_CATEGORY_L1;
-        luggageBiddingCategory.value = -5914235892932915235;
+        ProductBiddingCategory luggageBiddingCategory = new ProductBiddingCategory {
+          type = ProductDimensionType.BIDDING_CATEGORY_L1,
+          value = -5914235892932915235
+        };
 
         productScope.dimensions = new ProductDimension[] {
           nexusBrand, newProducts, bookOffer, mediaProducts, luggageBiddingCategory
         };
 
-        CampaignCriterion campaignCriterion = new CampaignCriterion();
-        campaignCriterion.campaignId = campaignId;
-        campaignCriterion.criterion = productScope;
+        CampaignCriterion campaignCriterion = new CampaignCriterion {
+          campaignId = campaignId,
+          criterion = productScope
+        };
 
         // Create operation.
-        CampaignCriterionOperation operation = new CampaignCriterionOperation();
-        operation.operand = campaignCriterion;
-        operation.@operator = Operator.ADD;
+        CampaignCriterionOperation operation = new CampaignCriterionOperation {
+          operand = campaignCriterion,
+          @operator = Operator.ADD
+        };
 
         try {
           // Make the mutate request.

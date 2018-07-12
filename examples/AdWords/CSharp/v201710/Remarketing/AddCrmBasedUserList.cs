@@ -36,7 +36,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
   /// </summary>
   public class AddCrmBasedUserList : ExampleBase {
 
-    private static readonly String[] EMAILS = new String[] {
+    private static readonly string[] EMAILS = new string[] {
       "customer1@example.com", "customer2@example.com",
       " Customer3@example.com "
     };
@@ -113,7 +113,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
           List<Member> memberList = new List<Member>();
 
           // Hash normalized email addresses based on SHA-256 hashing algorithm.
-          String[] emailHashes = new String[EMAILS.Length];
+          string[] emailHashes = new string[EMAILS.Length];
           for (int i = 0; i < EMAILS.Length; i++) {
             Member member = new Member();
             member.hashedEmail = ToSha256String(digest, ToNormalizedEmail(EMAILS[i]));
@@ -170,7 +170,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// <param name="digest">Provides the algorithm for SHA-256.</param>
     /// <param name="email">The email address to hash.</param>
     /// <returns>Hash email address using SHA-256 hashing algorithm.</returns>
-    private static String ToSha256String(SHA256 digest, String email) {
+    private static string ToSha256String(SHA256 digest, string email) {
       byte[] digestBytes = digest.ComputeHash(Encoding.UTF8.GetBytes(email));
       // Convert the byte array into an unhyphenated hexadecimal string.
       return BitConverter.ToString(digestBytes).Replace("-", string.Empty);
@@ -182,7 +182,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// </summary>
     /// <param name="email">The email address to normalize.</param>
     /// <returns>A normalized copy of the string.</returns>
-    private static String ToNormalizedEmail(String email) {
+    private static string ToNormalizedEmail(string email) {
       return email.Trim().ToLower();
     }
   }

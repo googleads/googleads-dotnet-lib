@@ -61,12 +61,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           AdWordsService.v201802.CustomerService)) {
 
         // Create the operation to set the status to ACTIVE.
-        ServiceLinkOperation op = new ServiceLinkOperation();
-        op.@operator = Operator.SET;
-        ServiceLink serviceLink = new ServiceLink();
-        serviceLink.serviceLinkId = serviceLinkId;
-        serviceLink.serviceType = ServiceType.MERCHANT_CENTER;
-        serviceLink.linkStatus = ServiceLinkLinkStatus.ACTIVE;
+        ServiceLinkOperation op = new ServiceLinkOperation {
+          @operator = Operator.SET
+        };
+        ServiceLink serviceLink = new ServiceLink {
+          serviceLinkId = serviceLinkId,
+          serviceType = ServiceType.MERCHANT_CENTER,
+          linkStatus = ServiceLinkLinkStatus.ACTIVE
+        };
         op.operand = serviceLink;
 
         try {

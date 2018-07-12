@@ -68,21 +68,24 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
             AdWordsService.v201802.AdParamService)) {
 
         // Create the expanded text ad.
-        ExpandedTextAd expandedTextAd = new ExpandedTextAd();
-        expandedTextAd.headlinePart1 = "Mars Cruises";
-        expandedTextAd.headlinePart2 = "Low-gravity fun for {param1:cheap}.";
-        expandedTextAd.description = "Only {param2:a few} seats left!";
-        expandedTextAd.finalUrls = new string[] { "http://www.example.com" };
+        ExpandedTextAd expandedTextAd = new ExpandedTextAd {
+          headlinePart1 = "Mars Cruises",
+          headlinePart2 = "Low-gravity fun for {param1:cheap}.",
+          description = "Only {param2:a few} seats left!",
+          finalUrls = new string[] { "http://www.example.com" }
+        };
 
-        AdGroupAd adOperand = new AdGroupAd();
-        adOperand.adGroupId = adGroupId;
-        adOperand.status = AdGroupAdStatus.ENABLED;
-        adOperand.ad = expandedTextAd;
+        AdGroupAd adOperand = new AdGroupAd {
+          adGroupId = adGroupId,
+          status = AdGroupAdStatus.ENABLED,
+          ad = expandedTextAd
+        };
 
         // Create the operation.
-        AdGroupAdOperation adOperation = new AdGroupAdOperation();
-        adOperation.operand = adOperand;
-        adOperation.@operator = Operator.ADD;
+        AdGroupAdOperation adOperation = new AdGroupAdOperation {
+          operand = adOperand,
+          @operator = Operator.ADD
+        };
 
 
         // Create the text ad.
@@ -98,27 +101,31 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
         }
 
         // Create the ad param for price.
-        AdParam priceParam = new AdParam();
-        priceParam.adGroupId = adGroupId;
-        priceParam.criterionId = criterionId;
-        priceParam.paramIndex = 1;
-        priceParam.insertionText = "$100";
+        AdParam priceParam = new AdParam {
+          adGroupId = adGroupId,
+          criterionId = criterionId,
+          paramIndex = 1,
+          insertionText = "$100"
+        };
 
         // Create the ad param for seats.
-        AdParam seatParam = new AdParam();
-        seatParam.adGroupId = adGroupId;
-        seatParam.criterionId = criterionId;
-        seatParam.paramIndex = 2;
-        seatParam.insertionText = "50";
+        AdParam seatParam = new AdParam {
+          adGroupId = adGroupId,
+          criterionId = criterionId,
+          paramIndex = 2,
+          insertionText = "50"
+        };
 
         // Create the operations.
-        AdParamOperation priceOperation = new AdParamOperation();
-        priceOperation.@operator = Operator.SET;
-        priceOperation.operand = priceParam;
+        AdParamOperation priceOperation = new AdParamOperation {
+          @operator = Operator.SET,
+          operand = priceParam
+        };
 
-        AdParamOperation seatOperation = new AdParamOperation();
-        seatOperation.@operator = Operator.SET;
-        seatOperation.operand = seatParam;
+        AdParamOperation seatOperation = new AdParamOperation {
+          @operator = Operator.SET,
+          operand = seatParam
+        };
 
         try {
           // Set the ad parameters.

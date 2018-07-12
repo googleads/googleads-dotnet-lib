@@ -163,7 +163,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="url">The image URL.</param>
     /// <returns>ID of the uploaded image.</returns>
-    private static long UploadImage(AdWordsUser user, String url) {
+    private static long UploadImage(AdWordsUser user, string url) {
       using (MediaService mediaService =
           (MediaService) user.GetService(AdWordsService.v201710.MediaService)) {
 

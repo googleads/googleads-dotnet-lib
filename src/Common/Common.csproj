@@ -2,7 +2,7 @@
   <!-- nupkg properties -->
   <PropertyGroup>
     <Title>Ads API Dotnet Common Library</Title>
-    <Version>9.3.0</Version>
+    <Version>9.3.1</Version>
     <Description>This library provides you with common functionality to access Google's Ads APIs.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
     <PackageTags>AdWords DFP DoubleClick Google</PackageTags>
@@ -48,6 +48,6 @@
   </PropertyGroup>
   <Target Name="StrongName" AfterTargets="Build"
     Condition="'$(OS)' != 'Windows_NT' AND $(Configuration) == 'Release' AND '$(TargetFramework)' != ''">
-    <Exec Command="sn -R $(OutputPath)$(AssemblyName).dll $(ProjectDir)..\Common\AdsApi.snk" />
+    <Exec Command="sn -R $(OutputPath)$(AssemblyName).dll $(ProjectDir)../Common/AdsApi.snk" />
   </Target>
 </Project>

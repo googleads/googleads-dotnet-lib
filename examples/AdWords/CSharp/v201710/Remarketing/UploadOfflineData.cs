@@ -236,7 +236,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// <param name="digest">Provides the algorithm for SHA-256.</param>
     /// <param name="value">The string value (e.g. an email address) to hash.</param>
     /// <returns>The hashed value.</returns>
-    private static String ToSha256String(SHA256 digest, String value) {
+    private static string ToSha256String(SHA256 digest, string value) {
       byte[] digestBytes = digest.ComputeHash(Encoding.UTF8.GetBytes(value));
       // Convert the byte array into an unhyphenated hexadecimal string.
       return BitConverter.ToString(digestBytes).Replace("-", string.Empty);
@@ -267,7 +267,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
     /// </summary>
     /// <param name="value">The value to normalize.</param>
     /// <returns>The normalized value.</returns>
-    private static String ToNormalizedValue(String value) {
+    private static string ToNormalizedValue(string value) {
       return value.Trim().ToLower();
     }
   }

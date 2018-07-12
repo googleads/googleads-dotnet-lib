@@ -59,15 +59,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
       using (TargetingIdeaService targetingIdeaService =
           (TargetingIdeaService) user.GetService(AdWordsService.v201802.TargetingIdeaService)) {
         // Create selector.
-        TargetingIdeaSelector selector = new TargetingIdeaSelector();
-        selector.requestType = RequestType.IDEAS;
-        selector.ideaType = IdeaType.KEYWORD;
-        selector.requestedAttributeTypes = new AttributeType[] {
-          AttributeType.KEYWORD_TEXT,
-          AttributeType.SEARCH_VOLUME,
-          AttributeType.AVERAGE_CPC,
-          AttributeType.COMPETITION,
-          AttributeType.CATEGORY_PRODUCTS_AND_SERVICES
+        TargetingIdeaSelector selector = new TargetingIdeaSelector {
+          requestType = RequestType.IDEAS,
+          ideaType = IdeaType.KEYWORD,
+          requestedAttributeTypes = new AttributeType[] {
+            AttributeType.KEYWORD_TEXT,
+            AttributeType.SEARCH_VOLUME,
+            AttributeType.AVERAGE_CPC,
+            AttributeType.COMPETITION,
+            AttributeType.CATEGORY_PRODUCTS_AND_SERVICES
+          }
         };
 
 
@@ -75,37 +76,42 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
 
         // Create related to query search parameter.
         RelatedToQuerySearchParameter relatedToQuerySearchParameter =
-            new RelatedToQuerySearchParameter();
-        relatedToQuerySearchParameter.queries = new String[] {
-          "bakery", "pastries", "birthday cake"
-        };
+            new RelatedToQuerySearchParameter {
+              queries = new string[] {
+                "bakery", "pastries", "birthday cake"
+              }
+            };
         searchParameters.Add(relatedToQuerySearchParameter);
 
         // Add a language search parameter (optional).
         // The ID can be found in the documentation:
         //   https://developers.google.com/adwords/api/docs/appendix/languagecodes
         LanguageSearchParameter languageParameter = new LanguageSearchParameter();
-        Language english = new Language();
-        english.id = 1000;
+        Language english = new Language {
+          id = 1000
+        };
         languageParameter.languages = new Language[] { english };
         searchParameters.Add(languageParameter);
 
         // Add network search parameter (optional).
-        NetworkSetting networkSetting = new NetworkSetting();
-        networkSetting.targetGoogleSearch = true;
-        networkSetting.targetSearchNetwork = false;
-        networkSetting.targetContentNetwork = false;
-        networkSetting.targetPartnerSearchNetwork = false;
+        NetworkSetting networkSetting = new NetworkSetting {
+          targetGoogleSearch = true,
+          targetSearchNetwork = false,
+          targetContentNetwork = false,
+          targetPartnerSearchNetwork = false
+        };
 
-        NetworkSearchParameter networkSearchParameter = new NetworkSearchParameter();
-        networkSearchParameter.networkSetting = networkSetting;
+        NetworkSearchParameter networkSearchParameter = new NetworkSearchParameter {
+          networkSetting = networkSetting
+        };
         searchParameters.Add(networkSearchParameter);
 
         // Optional: Use an existing ad group to generate ideas.
         if (adGroupId != null) {
           SeedAdGroupIdSearchParameter seedAdGroupIdSearchParameter =
-              new SeedAdGroupIdSearchParameter();
-          seedAdGroupIdSearchParameter.adGroupId = adGroupId.Value;
+              new SeedAdGroupIdSearchParameter {
+                adGroupId = adGroupId.Value
+              };
           searchParameters.Add(seedAdGroupIdSearchParameter);
         }
 

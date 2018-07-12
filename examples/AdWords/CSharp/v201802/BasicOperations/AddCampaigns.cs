@@ -68,33 +68,38 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
 
         for (int i = 0; i < NUM_ITEMS; i++) {
           // Create the campaign.
-          Campaign campaign = new Campaign();
-          campaign.name = "Interplanetary Cruise #" + ExampleUtilities.GetRandomString();
-          campaign.advertisingChannelType = AdvertisingChannelType.SEARCH;
+          Campaign campaign = new Campaign {
+            name = "Interplanetary Cruise #" + ExampleUtilities.GetRandomString(),
+            advertisingChannelType = AdvertisingChannelType.SEARCH,
 
-          // Recommendation: Set the campaign to PAUSED when creating it to prevent
-          // the ads from immediately serving. Set to ENABLED once you've added
-          // targeting and the ads are ready to serve.
-          campaign.status = CampaignStatus.PAUSED;
+            // Recommendation: Set the campaign to PAUSED when creating it to prevent
+            // the ads from immediately serving. Set to ENABLED once you've added
+            // targeting and the ads are ready to serve.
+            status = CampaignStatus.PAUSED
+          };
 
-          BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
-          biddingConfig.biddingStrategyType = BiddingStrategyType.MANUAL_CPC;
+          BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration {
+            biddingStrategyType = BiddingStrategyType.MANUAL_CPC
+          };
           campaign.biddingStrategyConfiguration = biddingConfig;
 
-          campaign.budget = new Budget();
-          campaign.budget.budgetId = budget.budgetId;
+          campaign.budget = new Budget {
+            budgetId = budget.budgetId
+          };
 
           // Set the campaign network options.
-          campaign.networkSetting = new NetworkSetting();
-          campaign.networkSetting.targetGoogleSearch = true;
-          campaign.networkSetting.targetSearchNetwork = true;
-          campaign.networkSetting.targetContentNetwork = false;
-          campaign.networkSetting.targetPartnerSearchNetwork = false;
+          campaign.networkSetting = new NetworkSetting {
+            targetGoogleSearch = true,
+            targetSearchNetwork = true,
+            targetContentNetwork = false,
+            targetPartnerSearchNetwork = false
+          };
 
           // Set the campaign settings for Advanced location options.
-          GeoTargetTypeSetting geoSetting = new GeoTargetTypeSetting();
-          geoSetting.positiveGeoTargetType = GeoTargetTypeSettingPositiveGeoTargetType.DONT_CARE;
-          geoSetting.negativeGeoTargetType = GeoTargetTypeSettingNegativeGeoTargetType.DONT_CARE;
+          GeoTargetTypeSetting geoSetting = new GeoTargetTypeSetting {
+            positiveGeoTargetType = GeoTargetTypeSettingPositiveGeoTargetType.DONT_CARE,
+            negativeGeoTargetType = GeoTargetTypeSettingNegativeGeoTargetType.DONT_CARE
+          };
 
           campaign.settings = new Setting[] { geoSetting };
 
@@ -105,16 +110,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           campaign.endDate = DateTime.Now.AddYears(1).ToString("yyyyMMdd");
 
           // Optional: Set the frequency cap.
-          FrequencyCap frequencyCap = new FrequencyCap();
-          frequencyCap.impressions = 5;
-          frequencyCap.level = Level.ADGROUP;
-          frequencyCap.timeUnit = TimeUnit.DAY;
+          FrequencyCap frequencyCap = new FrequencyCap {
+            impressions = 5,
+            level = Level.ADGROUP,
+            timeUnit = TimeUnit.DAY
+          };
           campaign.frequencyCap = frequencyCap;
 
           // Create the operation.
-          CampaignOperation operation = new CampaignOperation();
-          operation.@operator = Operator.ADD;
-          operation.operand = campaign;
+          CampaignOperation operation = new CampaignOperation {
+            @operator = Operator.ADD,
+            operand = campaign
+          };
 
           operations.Add(operation);
         }
@@ -148,15 +155,18 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           (BudgetService) user.GetService(AdWordsService.v201802.BudgetService)) {
 
         // Create the campaign budget.
-        Budget budget = new Budget();
-        budget.name = "Interplanetary Cruise Budget #" + ExampleUtilities.GetRandomString();
-        budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD;
-        budget.amount = new Money();
-        budget.amount.microAmount = 500000;
+        Budget budget = new Budget {
+          name = "Interplanetary Cruise Budget #" + ExampleUtilities.GetRandomString(),
+          deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD,
+          amount = new Money {
+            microAmount = 500000
+          }
+        };
 
-        BudgetOperation budgetOperation = new BudgetOperation();
-        budgetOperation.@operator = Operator.ADD;
-        budgetOperation.operand = budget;
+        BudgetOperation budgetOperation = new BudgetOperation {
+          @operator = Operator.ADD,
+          operand = budget
+        };
 
         try {
           BudgetReturnValue budgetRetval = budgetService.mutate(

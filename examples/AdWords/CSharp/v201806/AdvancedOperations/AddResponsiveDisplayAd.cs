@@ -66,32 +66,33 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
 
         try {
           // Create a responsive display ad.
-          ResponsiveDisplayAd responsiveDisplayAd = new ResponsiveDisplayAd();
+          ResponsiveDisplayAd responsiveDisplayAd = new ResponsiveDisplayAd {
 
-          // This ad format does not allow the creation of an image using the
-          // Image.data field. An image must first be created using the MediaService,
-          // and Image.mediaId must be populated when creating the ad.
-          responsiveDisplayAd.marketingImage = new Image() {
-            mediaId = UploadImage(user, "https://goo.gl/3b9Wfh")
+            // This ad format does not allow the creation of an image using the
+            // Image.data field. An image must first be created using the MediaService,
+            // and Image.mediaId must be populated when creating the ad.
+            marketingImage = new Image() {
+              mediaId = UploadImage(user, "https://goo.gl/3b9Wfh")
+            },
+            shortHeadline = "Travel",
+            longHeadline = "Travel the World",
+            description = "Take to the air!",
+            businessName = "Google",
+            finalUrls = new string[] { "http://www.example.com" },
+
+            // Optional: Create a square marketing image using MediaService, and set it
+            // to the ad.
+            squareMarketingImage = new Image() {
+              mediaId = UploadImage(user, "https://goo.gl/mtt54n"),
+            },
+
+            // Optional: set call to action text.
+            callToActionText = "Shop Now",
+
+            // Optional: Set dynamic display ad settings, composed of landscape logo
+            // image, promotion text, and price prefix.
+            dynamicDisplayAdSettings = CreateDynamicDisplayAdSettings(user)
           };
-          responsiveDisplayAd.shortHeadline = "Travel";
-          responsiveDisplayAd.longHeadline = "Travel the World";
-          responsiveDisplayAd.description = "Take to the air!";
-          responsiveDisplayAd.businessName = "Google";
-          responsiveDisplayAd.finalUrls = new string[] { "http://www.example.com" };
-
-          // Optional: Create a square marketing image using MediaService, and set it
-          // to the ad.
-          responsiveDisplayAd.squareMarketingImage = new Image() {
-            mediaId = UploadImage(user, "https://goo.gl/mtt54n"),
-          };
-
-          // Optional: set call to action text.
-          responsiveDisplayAd.callToActionText = "Shop Now";
-
-          // Optional: Set dynamic display ad settings, composed of landscape logo
-          // image, promotion text, and price prefix.
-          responsiveDisplayAd.dynamicDisplayAdSettings = CreateDynamicDisplayAdSettings(user);
 
           // Whitelisted accounts only: Set color settings using hexadecimal values.
           // Set allowFlexibleColor to false if you want your ads to render by always
@@ -163,7 +164,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
     /// <param name="user">The AdWords user.</param>
     /// <param name="url">The image URL.</param>
     /// <returns>ID of the uploaded image.</returns>
-    private static long UploadImage(AdWordsUser user, String url) {
+    private static long UploadImage(AdWordsUser user, string url) {
       using (MediaService mediaService =
           (MediaService) user.GetService(AdWordsService.v201806.MediaService)) {
 

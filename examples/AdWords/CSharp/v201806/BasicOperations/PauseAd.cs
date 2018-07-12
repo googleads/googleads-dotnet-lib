@@ -64,17 +64,20 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
         AdGroupAdStatus status = AdGroupAdStatus.PAUSED;
 
         // Create the ad group ad.
-        AdGroupAd adGroupAd = new AdGroupAd();
-        adGroupAd.status = status;
-        adGroupAd.adGroupId = adGroupId;
+        AdGroupAd adGroupAd = new AdGroupAd {
+          status = status,
+          adGroupId = adGroupId,
 
-        adGroupAd.ad = new Ad();
-        adGroupAd.ad.id = adId;
+          ad = new Ad {
+            id = adId
+          }
+        };
 
         // Create the operation.
-        AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation();
-        adGroupAdOperation.@operator = Operator.SET;
-        adGroupAdOperation.operand = adGroupAd;
+        AdGroupAdOperation adGroupAdOperation = new AdGroupAdOperation {
+          @operator = Operator.SET,
+          operand = adGroupAd
+        };
 
         try {
           // Update the ad.

@@ -69,13 +69,15 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
         List<CampaignLabelOperation> operations = new List<CampaignLabelOperation>();
 
         foreach (long campaignId in new long[] { campaignId1, campaignId2 }) {
-          CampaignLabel campaignLabel = new CampaignLabel();
-          campaignLabel.campaignId = campaignId;
-          campaignLabel.labelId = labelId;
+          CampaignLabel campaignLabel = new CampaignLabel {
+            campaignId = campaignId,
+            labelId = labelId
+          };
 
-          CampaignLabelOperation operation = new CampaignLabelOperation();
-          operation.operand = campaignLabel;
-          operation.@operator = Operator.ADD;
+          CampaignLabelOperation operation = new CampaignLabelOperation {
+            operand = campaignLabel,
+            @operator = Operator.ADD
+          };
 
           operations.Add(operation);
         }

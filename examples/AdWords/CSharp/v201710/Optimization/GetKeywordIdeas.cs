@@ -76,7 +76,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201710 {
         // Create related to query search parameter.
         RelatedToQuerySearchParameter relatedToQuerySearchParameter =
             new RelatedToQuerySearchParameter();
-        relatedToQuerySearchParameter.queries = new String[] {
+        relatedToQuerySearchParameter.queries = new string[] {
           "bakery", "pastries", "birthday cake"
         };
         searchParameters.Add(relatedToQuerySearchParameter);

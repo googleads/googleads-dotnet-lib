@@ -223,17 +223,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
           }
 
           // Mark this report download as success.
-          SuccessfulReportDownload success = new SuccessfulReportDownload();
-          success.CustomerId = customerId;
-          success.Path = downloadFile;
+          SuccessfulReportDownload success = new SuccessfulReportDownload {
+            CustomerId = customerId,
+            Path = downloadFile
+          };
           SuccessfulReports.TryAdd(success);
 
           Console.WriteLine("Report was downloaded to '{0}'.", downloadFile);
         } catch (AdWordsReportsException e) {
           // Mark this report download as failure.
-          FailedReportDownload failure = new FailedReportDownload();
-          failure.CustomerId = customerId;
-          failure.Exception = e;
+          FailedReportDownload failure = new FailedReportDownload {
+            CustomerId = customerId,
+            Exception = e
+          };
           FailedReports.TryAdd(failure);
 
           Console.WriteLine("Failed to download report for customer: {0}. Exception says {1}",
@@ -380,7 +382,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
 
       // Create selector.
       Selector selector = new Selector() {
-        fields = new String[] {
+        fields = new string[] {
             ManagedCustomer.Fields.CustomerId
         },
         predicates = new Predicate[] {

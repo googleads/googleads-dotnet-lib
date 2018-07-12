@@ -72,7 +72,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
               Console.Write("- {0} ({1})", reportDefinitionField.fieldName,
                   reportDefinitionField.fieldType);
               if (reportDefinitionField.enumValues != null) {
-                Console.Write(" := [{0}]", String.Join(", ", reportDefinitionField.enumValues));
+                Console.Write(" := [{0}]", string.Join(", ", reportDefinitionField.enumValues));
               }
               Console.WriteLine();
             }

@@ -15,8 +15,8 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Google.Ads.Common" Version="9.2.0" />
-    <PackageReference Include="Google.Dfp" Version="23.4.1" />
+    <PackageReference Include="Google.Ads.Common" Version="9.3.1" />
+    <PackageReference Include="Google.Dfp" Version="23.5.1" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.4.2" />
   </ItemGroup>
   <ItemGroup>
