@@ -1,5 +1,6 @@
 var NAVTREEINDEX248 =
 {
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_team.html":[1,0,0,0,0,2,7,666],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_team.html#a288f0a592df78907fafc4442c3ec2977":[1,0,0,0,0,2,7,666,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_team.html#a3312f297f109d35d0b71fe79e104420b":[1,0,0,0,0,2,7,666,2],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_team.html#a3ca312ccf7c98d4fcafcec5b92e6da9f":[1,0,0,0,0,2,7,666,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX248 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_video_position_target.html#aef4ec100e9d7170c645cec44498d2896":[1,0,0,0,0,2,7,270,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_video_position_targeting.html":[1,0,0,0,0,2,7,269],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_video_position_targeting.html#ad323410d65c77fb4c9f38129493269b6":[1,0,0,0,0,2,7,269,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_video_position_targeting_error.html":[1,0,0,0,0,2,7,286],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_video_position_targeting_error.html#a0fc38f143101c7ae76b70468077f8565":[1,0,0,0,0,2,7,286,1]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_video_position_targeting_error.html":[1,0,0,0,0,2,7,286]
 };

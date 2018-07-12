@@ -29,10 +29,11 @@ var NAVTREEINDEX182 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_trace_listener.html#a8a4249c0f944e443a999999f3a039d39":[1,0,0,0,0,2,2,8,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_trace_listener.html#af2f0d0902c5520adb744d65a7ec5324e":[1,0,0,0,0,2,2,8,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_user.html":[1,0,0,0,0,2,2,9],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_user.html#a44b2d1bda3f3edee57cfa7cde4a3d1fd":[1,0,0,0,0,2,2,9,2],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_user.html#a44b2d1bda3f3edee57cfa7cde4a3d1fd":[1,0,0,0,0,2,2,9,3],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_user.html#a47c8c791f2169250135b70e1582f423a":[1,0,0,0,0,2,2,9,1],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_user.html#a5330bf1bde70706e8b89a7f25419a6c9":[1,0,0,0,0,2,2,9,2],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_user.html#acb05f038003894217b3d5e60a0cd03c2":[1,0,0,0,0,2,2,9,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_user.html#ad9d9b2281c0f2cfff20e9f0a9b134927":[1,0,0,0,0,2,2,9,3],
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1_lib_1_1_dfp_user.html#ad9d9b2281c0f2cfff20e9f0a9b134927":[1,0,0,0,0,2,2,9,4],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201708_1_1_date_time_utilities.html":[1,0,0,0,0,2,3,0,0],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201708_1_1_pql_utilities.html":[1,0,0,0,0,2,3,0,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_util_1_1v201708_1_1_report_utilities.html":[1,0,0,0,0,2,3,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX182 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule_service.html#abbdce663dcc56b66550f4b8ffa929a5d":[1,0,0,0,0,2,4,463,6],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_exclusion_rule_service.html#ad4f761d9ce6cf6a7d8500e19214d29e8":[1,0,0,0,0,2,4,463,2],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_mob_backfill_creative.html":[1,0,0,0,0,2,4,110],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_mob_backfill_creative.html#a121402343618c87d10e1ef856c919a94":[1,0,0,0,0,2,4,110,3],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_mob_backfill_creative.html#a84c3e7e1a1dad8a96729b9365ede53a0":[1,0,0,0,0,2,4,110,2]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_mob_backfill_creative.html#a121402343618c87d10e1ef856c919a94":[1,0,0,0,0,2,4,110,3]
 };

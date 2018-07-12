@@ -1,5 +1,6 @@
 var NAVTREEINDEX269 =
 {
+"namespacemembers_0x6b.html":[0,1,0,10],
 "namespacemembers_0x6c.html":[0,1,0,11],
 "namespacemembers_0x6d.html":[0,1,0,12],
 "namespacemembers_0x6e.html":[0,1,0,13],
@@ -248,6 +249,5 @@ var NAVTREEINDEX269 =
 "v201708_2_dfp_api_8cs.html#a0ee26d1874bcb2f2d3b0cc059177a68e":[2,0,0,0,0,0,0,0,1,2,3,0,1108],
 "v201708_2_dfp_api_8cs.html#a0ee26d1874bcb2f2d3b0cc059177a68ea0ccbd766a3fbedd3e2314ab08657aa85":[2,0,0,0,0,0,0,0,1,2,3,0,1108,0],
 "v201708_2_dfp_api_8cs.html#a0ee26d1874bcb2f2d3b0cc059177a68ea17c196a8ad93cc0164bb45f14d86996b":[2,0,0,0,0,0,0,0,1,2,3,0,1108,2],
-"v201708_2_dfp_api_8cs.html#a0ee26d1874bcb2f2d3b0cc059177a68eaf23a383a9d4eea3a92df0430fde250c1":[2,0,0,0,0,0,0,0,1,2,3,0,1108,1],
-"v201708_2_dfp_api_8cs.html#a0ef2594511720c2fafb0c51d93f2a39d":[2,0,0,0,0,0,0,0,1,2,3,0,1081]
+"v201708_2_dfp_api_8cs.html#a0ee26d1874bcb2f2d3b0cc059177a68eaf23a383a9d4eea3a92df0430fde250c1":[2,0,0,0,0,0,0,0,1,2,3,0,1108,1]
 };

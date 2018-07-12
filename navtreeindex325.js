@@ -1,5 +1,6 @@
 var NAVTREEINDEX325 =
 {
+"v201802_2_dfp_api_8cs.html#af46cb1749bb25469d6cc1b0dca9a62b1a8a343e3a5dd7353da306c80d0d305ea3":[2,0,0,0,0,0,0,0,1,2,5,0,1122,7],
 "v201802_2_dfp_api_8cs.html#af46cb1749bb25469d6cc1b0dca9a62b1a8de38ba88026d711fddf464d21a69245":[2,0,0,0,0,0,0,0,1,2,5,0,1122,37],
 "v201802_2_dfp_api_8cs.html#af46cb1749bb25469d6cc1b0dca9a62b1a9de0cd4873a3d06e1da1c9ec3d211541":[2,0,0,0,0,0,0,0,1,2,5,0,1122,38],
 "v201802_2_dfp_api_8cs.html#af46cb1749bb25469d6cc1b0dca9a62b1ab26b8bed7a17c4758c98dd485fdec71c":[2,0,0,0,0,0,0,0,1,2,5,0,1122,32],
@@ -248,6 +249,5 @@ var NAVTREEINDEX325 =
 "v201802_2_product_service_2_get_all_products_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,2,29,0],
 "v201802_2_product_service_2_get_products_for_product_template_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,2,29,1],
 "v201802_2_product_service_2_update_products_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,2,29,2],
-"v201802_2_product_template_service_2_activate_product_templates_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,2,30,0],
-"v201802_2_product_template_service_2_create_product_templates_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,2,30,1]
+"v201802_2_product_template_service_2_activate_product_templates_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,2,30,0]
 };

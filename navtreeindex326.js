@@ -1,5 +1,6 @@
 var NAVTREEINDEX326 =
 {
+"v201802_2_product_template_service_2_create_product_templates_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,2,30,1],
 "v201802_2_product_template_service_2_create_programmatic_product_templates_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,2,30,2],
 "v201802_2_product_template_service_2_get_all_product_templates_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,2,30,3],
 "v201802_2_product_template_service_2_get_sponsorship_product_templates_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,2,30,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX326 =
 "v201805_2_dfp_api_8cs.html#a088613192b9fdd06aa1392be0dcb6778a383316922f2516abe5abe53370284a7f":[2,0,0,0,0,0,0,0,1,2,6,0,1324,4],
 "v201805_2_dfp_api_8cs.html#a088613192b9fdd06aa1392be0dcb6778a46bda4cde2f10bdb9e51e3bbefa4a2bf":[2,0,0,0,0,0,0,0,1,2,6,0,1324,0],
 "v201805_2_dfp_api_8cs.html#a088613192b9fdd06aa1392be0dcb6778a5b1d59b5451c06afb65ab1bc2713cfb4":[2,0,0,0,0,0,0,0,1,2,6,0,1324,2],
-"v201805_2_dfp_api_8cs.html#a088613192b9fdd06aa1392be0dcb6778a696b031073e74bf2cb98e5ef201d4aa3":[2,0,0,0,0,0,0,0,1,2,6,0,1324,8],
-"v201805_2_dfp_api_8cs.html#a088613192b9fdd06aa1392be0dcb6778a7c9d2c64290a49546e6e24ab1afda809":[2,0,0,0,0,0,0,0,1,2,6,0,1324,6]
+"v201805_2_dfp_api_8cs.html#a088613192b9fdd06aa1392be0dcb6778a696b031073e74bf2cb98e5ef201d4aa3":[2,0,0,0,0,0,0,0,1,2,6,0,1324,8]
 };

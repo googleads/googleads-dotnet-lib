@@ -1,7 +1,7 @@
 var class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl =
 [
     [ "AdsOAuthProviderImpl", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#a22aa9a0d5a55a8c1953199ec75fda692", null ],
-    [ "CreateAuthorizationUrl", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#ae487e0498cfedb1768799953546b5a76", null ],
+    [ "CreateAuthorizationUrl", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#a0990b14dda820171ca1bfec31475456e", null ],
     [ "ExchangeCodeForToken", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#af7bbbe7fe9db6d2b6ea611cbb30040af", null ],
     [ "FetchAccessAndRefreshTokens", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#ab0f98b79e0c3e1a31e50034298423e33", null ],
     [ "GenerateAccessTokenForServiceAccount", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html#af26e3a56d4acee2e4a6aefde099cd5cd", null ],

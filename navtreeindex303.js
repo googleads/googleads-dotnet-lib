@@ -1,5 +1,6 @@
 var NAVTREEINDEX303 =
 {
+"v201711_2_inventory_service_2_get_ad_units_by_statement_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,1,17,3],
 "v201711_2_inventory_service_2_get_all_ad_unit_sizes_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,1,17,5],
 "v201711_2_inventory_service_2_get_all_ad_units_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,1,17,4],
 "v201711_2_inventory_service_2_get_inventory_tree_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,1,17,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX303 =
 "v201802_2_ad_words_api_8cs.html#a0b5edcf45df74f3383176fd7a907db58a434eb3e2a1aba3739eb5f1538e657ca1":[2,0,0,0,0,0,0,0,1,0,4,0,2604,1],
 "v201802_2_ad_words_api_8cs.html#a0b5edcf45df74f3383176fd7a907db58a8133aac1b966fb7293d83b6ed1785d56":[2,0,0,0,0,0,0,0,1,0,4,0,2604,6],
 "v201802_2_ad_words_api_8cs.html#a0b5edcf45df74f3383176fd7a907db58add912956b69fb3e570820021206968a3":[2,0,0,0,0,0,0,0,1,0,4,0,2604,2],
-"v201802_2_ad_words_api_8cs.html#a0b5edcf45df74f3383176fd7a907db58ae423b8bde9bfbfd7e9409b23b23aed91":[2,0,0,0,0,0,0,0,1,0,4,0,2604,0],
-"v201802_2_ad_words_api_8cs.html#a0b5edcf45df74f3383176fd7a907db58ae60ae31f67ab883c746bb71c7a145c18":[2,0,0,0,0,0,0,0,1,0,4,0,2604,5]
+"v201802_2_ad_words_api_8cs.html#a0b5edcf45df74f3383176fd7a907db58ae423b8bde9bfbfd7e9409b23b23aed91":[2,0,0,0,0,0,0,0,1,0,4,0,2604,0]
 };

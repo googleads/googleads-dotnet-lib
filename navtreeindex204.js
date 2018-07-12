@@ -1,5 +1,6 @@
 var NAVTREEINDEX204 =
 {
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_value.html#add76aa93178128ea4fdbfdb60c31a7e1":[1,0,0,0,0,2,5,177,7],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_value.html#aeaf4ca61639b0456480507d2460fe22d":[1,0,0,0,0,2,5,177,3],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_value.html#aecb894fdca55f0e95e0ab54701950322":[1,0,0,0,0,2,5,177,6],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_custom_targeting_value_action.html":[1,0,0,0,0,2,5,183],
@@ -248,6 +249,5 @@ var NAVTREEINDEX204 =
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_forecast_service.html#ae9b76d449a5ef7b96974517e694affa8":[1,0,0,0,0,2,5,308,1],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_forecast_service.html#aead5b505338957507b9059cc982c0ed1":[1,0,0,0,0,2,5,308,2],
 "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_frequency_cap.html":[1,0,0,0,0,2,5,267],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_frequency_cap.html#a10b702c30c6e7a316bc654458ba1a208":[1,0,0,0,0,2,5,267,0],
-"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_frequency_cap.html#a8318830ff83ce93cadf1f9304f3ea770":[1,0,0,0,0,2,5,267,1]
+"class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_frequency_cap.html#a10b702c30c6e7a316bc654458ba1a208":[1,0,0,0,0,2,5,267,0]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX302 =
 {
+"v201711_2_dfp_api_8cs.html#aee6d012a870993be6f5fbd6284e15374a202806cc14f6ff5d5928d87eae97add2":[2,0,0,0,0,0,0,0,1,2,4,0,1178,3],
 "v201711_2_dfp_api_8cs.html#aee6d012a870993be6f5fbd6284e15374a607196d8889a6f2304ce4d470dd972a1":[2,0,0,0,0,0,0,0,1,2,4,0,1178,0],
 "v201711_2_dfp_api_8cs.html#aee6d012a870993be6f5fbd6284e15374a696b031073e74bf2cb98e5ef201d4aa3":[2,0,0,0,0,0,0,0,1,2,4,0,1178,4],
 "v201711_2_dfp_api_8cs.html#aee6d012a870993be6f5fbd6284e15374a8dbd90e2f82aca3dcf0851b977065ddb":[2,0,0,0,0,0,0,0,1,2,4,0,1178,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX302 =
 "v201711_2_forecast_service_2_get_delivery_forecast_by_ids_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,1,16,2],
 "v201711_2_inventory_service_2_create_ad_units_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,1,17,0],
 "v201711_2_inventory_service_2_create_video_ad_unit_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,1,17,1],
-"v201711_2_inventory_service_2_de_activate_ad_units_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,1,17,2],
-"v201711_2_inventory_service_2_get_ad_units_by_statement_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,1,17,3]
+"v201711_2_inventory_service_2_de_activate_ad_units_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,1,17,2]
 };

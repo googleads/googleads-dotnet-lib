@@ -1,5 +1,6 @@
 var NAVTREEINDEX291 =
 {
+"v201711_2_audience_segment_service_2_populate_first_party_audience_segments_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,1,2,3],
 "v201711_2_audience_segment_service_2_update_audience_segments_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,1,2,4],
 "v201711_2_base_rate_service_2_create_product_base_rates_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,1,3,0],
 "v201711_2_base_rate_service_2_create_product_template_base_rates_8cs.html":[2,0,0,0,0,0,0,0,0,1,0,1,3,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX291 =
 "v201711_2_dfp_api_8cs.html#a1a2b8a09bb33b350b8fc695a9535e8dea06883a14e92ff5d9ad932807e8c70f51":[2,0,0,0,0,0,0,0,1,2,4,0,1073,323],
 "v201711_2_dfp_api_8cs.html#a1a2b8a09bb33b350b8fc695a9535e8dea07241c4c739ef7af82d100af38a1334d":[2,0,0,0,0,0,0,0,1,2,4,0,1073,242],
 "v201711_2_dfp_api_8cs.html#a1a2b8a09bb33b350b8fc695a9535e8dea076840a3709ab112cd7b6f5d055cbe49":[2,0,0,0,0,0,0,0,1,2,4,0,1073,162],
-"v201711_2_dfp_api_8cs.html#a1a2b8a09bb33b350b8fc695a9535e8dea07783d3c3a4c9484010eb33ff8f321e5":[2,0,0,0,0,0,0,0,1,2,4,0,1073,300],
-"v201711_2_dfp_api_8cs.html#a1a2b8a09bb33b350b8fc695a9535e8dea07af0b30647d16a2a4d32814d05a38df":[2,0,0,0,0,0,0,0,1,2,4,0,1073,38]
+"v201711_2_dfp_api_8cs.html#a1a2b8a09bb33b350b8fc695a9535e8dea07783d3c3a4c9484010eb33ff8f321e5":[2,0,0,0,0,0,0,0,1,2,4,0,1073,300]
 };
