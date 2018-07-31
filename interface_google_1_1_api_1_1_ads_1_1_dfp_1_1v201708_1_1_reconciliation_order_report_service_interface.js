@@ -1,6 +1,9 @@
 var interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_order_report_service_interface =
 [
     [ "getReconciliationOrderReportsByStatement", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_order_report_service_interface.html#a93ff09e4c4c669f01a1192b93d5fe8f5", null ],
+    [ "getReconciliationOrderReportsByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_order_report_service_interface.html#a192ae2f152f19db6f614d475ffc1daa7", null ],
     [ "performReconciliationOrderReportAction", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_order_report_service_interface.html#aacf33c495c31dee36fa270e3b6bf15bb", null ],
-    [ "updateReconciliationOrderReports", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_order_report_service_interface.html#aefb18e4fe305d6b9de861a5a7a5c6f78", null ]
+    [ "performReconciliationOrderReportActionAsync", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_order_report_service_interface.html#a3dc28d803e666d4a3cc262a87dc77a3c", null ],
+    [ "updateReconciliationOrderReports", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_order_report_service_interface.html#aefb18e4fe305d6b9de861a5a7a5c6f78", null ],
+    [ "updateReconciliationOrderReportsAsync", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_order_report_service_interface.html#ac224c30559950c7f01e9a2f618c0fa5c", null ]
 ];

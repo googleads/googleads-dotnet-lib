@@ -142,10 +142,18 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_page.html">Google.Api.Ads.AdWords.v201806.AssetPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_service.html#ad1a59af2c66b67a4784f3a2a825e1926">get</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_selector.html">Google.Api.Ads.AdWords.v201806.Selector</a> selector)</td></tr>
 <tr class="memdesc:ad1a59af2c66b67a4784f3a2a825e1926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_page.html" title="Contains a filtered and paged subset of Assets as returned by AssetService::get. ">AssetPage</a> containing a list of <a href="Asset">Asset</a> objects matching the selector.  <a href="#ad1a59af2c66b67a4784f3a2a825e1926">More...</a><br/></td></tr>
 <tr class="separator:ad1a59af2c66b67a4784f3a2a825e1926"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7316d336dd5d8a840701f06cb2e1ede0"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
+System.Threading.Tasks.Task<br class="typebreak"/>
+&lt; <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_page.html">Google.Api.Ads.AdWords.v201806.AssetPage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_service.html#a7316d336dd5d8a840701f06cb2e1ede0">getAsync</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_selector.html">Google.Api.Ads.AdWords.v201806.Selector</a> selector)</td></tr>
+<tr class="separator:a7316d336dd5d8a840701f06cb2e1ede0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a503bcfcd7e2aebbede4a09bd257ddefd"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
 <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_return_value.html">Google.Api.Ads.AdWords.v201806.AssetReturnValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_service.html#a503bcfcd7e2aebbede4a09bd257ddefd">mutate</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_operation.html">Google.Api.Ads.AdWords.v201806.AssetOperation</a>[] operations)</td></tr>
 <tr class="memdesc:a503bcfcd7e2aebbede4a09bd257ddefd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the list of mutate operations. For <a href="AssetService">AssetService</a>, only ADD and REMOVE operations are currently allowed.  <a href="#a503bcfcd7e2aebbede4a09bd257ddefd">More...</a><br/></td></tr>
 <tr class="separator:a503bcfcd7e2aebbede4a09bd257ddefd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20b2b4bd2afd28cc49e42c6233eb7afa"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
+System.Threading.Tasks.Task<br class="typebreak"/>
+&lt; <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_return_value.html">Google.Api.Ads.AdWords.v201806.AssetReturnValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_service.html#a20b2b4bd2afd28cc49e42c6233eb7afa">mutateAsync</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_operation.html">Google.Api.Ads.AdWords.v201806.AssetOperation</a>[] operations)</td></tr>
+<tr class="separator:a20b2b4bd2afd28cc49e42c6233eb7afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="afcc782befdff40aa65e05bcc8963f01e"></a>
@@ -340,12 +348,38 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Returns a page of matching asset objects.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_api_exception.html" title="Exception class for holding a list of service errors. ">ApiException</a></td><td>if errors occurred while retrieving the results.</td></tr>
+    <tr><td class="paramname">AdWordsApiException</td><td>if errors occurred while retrieving the results.</td></tr>
   </table>
   </dd>
 </dl>
 
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_service_interface.html#ae5f7960e1a0e9ed2bced44cc837031fa">Google.Api.Ads.AdWords.v201806.AssetServiceInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7316d336dd5d8a840701f06cb2e1ede0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual System.Threading.Tasks.Task&lt;<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_page.html">Google.Api.Ads.AdWords.v201806.AssetPage</a>&gt; Google.Api.Ads.AdWords.v201806.AssetService.getAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_selector.html">Google.Api.Ads.AdWords.v201806.Selector</a>&#160;</td>
+          <td class="paramname"><em>selector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_service_interface.html#a53075766c8e091d59c5ef2b032578690">Google.Api.Ads.AdWords.v201806.AssetServiceInterface</a>.</p>
 
 </div>
 </div>
@@ -384,8 +418,34 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a20b2b4bd2afd28cc49e42c6233eb7afa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual System.Threading.Tasks.Task&lt;<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_return_value.html">Google.Api.Ads.AdWords.v201806.AssetReturnValue</a>&gt; Google.Api.Ads.AdWords.v201806.AssetService.mutateAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_operation.html">Google.Api.Ads.AdWords.v201806.AssetOperation</a>[]&#160;</td>
+          <td class="paramname"><em>operations</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_i_asset_service.html#adc8c51b723728cb5c861d53708283f9e">Google.Api.Ads.AdWords.v201806.IAssetService</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.5NipV7sbrS/dist/github/src/AdWords/v201806/<a class="el" href="v201806_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>dist/github/src/AdWords/v201806/<a class="el" href="v201806_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -393,7 +453,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806.html">v201806</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_service.html">AssetService</a></li>
-    <li class="footer">Generated on Thu Jul 12 2018 12:53:59 for Ads API .NET library by
+    <li class="footer">Generated on Tue Jul 31 2018 15:48:09 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

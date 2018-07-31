@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_customer_negative_criterion_return_value =
-[
-    [ "value", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_customer_negative_criterion_return_value.html#a6e72c79c87b3c63388312486ce43f0a3", null ]
-];

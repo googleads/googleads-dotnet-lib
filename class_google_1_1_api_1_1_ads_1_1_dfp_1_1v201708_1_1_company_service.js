@@ -6,6 +6,9 @@ var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company_service =
     [ "CompanyService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company_service.html#a3ba551b5d0974d2625afb1d4969e8d20", null ],
     [ "CompanyService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company_service.html#a5af4d011025e7727ecac55136c09d168", null ],
     [ "createCompanies", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company_service.html#a720cd36bcf1a36119cbe75289f41c09e", null ],
+    [ "createCompaniesAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company_service.html#ab45785c851102d6a14f34e0dda9685b5", null ],
     [ "getCompaniesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company_service.html#a74a4e563d77ee40c07b09c880c75a632", null ],
-    [ "updateCompanies", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company_service.html#a77b8d7a49764b6dd75390bbef6318b82", null ]
+    [ "getCompaniesByStatementAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company_service.html#afc282b02f826e069d1c94a99c786277f", null ],
+    [ "updateCompanies", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company_service.html#a77b8d7a49764b6dd75390bbef6318b82", null ],
+    [ "updateCompaniesAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_company_service.html#a830043e0fcc4606833fad0100430c8d2", null ]
 ];

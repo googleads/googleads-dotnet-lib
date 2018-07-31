@@ -6,5 +6,7 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_trial_async_error_s
     [ "TrialAsyncErrorService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_trial_async_error_service.html#a2b09d5dda2d31037079d228c1e891622", null ],
     [ "TrialAsyncErrorService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_trial_async_error_service.html#a16068fce3735d556dcfc086baa431034", null ],
     [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_trial_async_error_service.html#a1be03875384eb68b7e6e393358af7fb4", null ],
-    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_trial_async_error_service.html#a8943c51ddc260c84cb87781a853eba2e", null ]
+    [ "getAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_trial_async_error_service.html#a834560e886ee4f36ce1fe90390b60300", null ],
+    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_trial_async_error_service.html#a8943c51ddc260c84cb87781a853eba2e", null ],
+    [ "queryAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_trial_async_error_service.html#a328e1d295cac469ee3f8b36b3c76f3a4", null ]
 ];

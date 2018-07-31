@@ -6,5 +6,7 @@ var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request_service
     [ "WorkflowRequestService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request_service.html#a5550f608fa54ab3324e1972e9a07d717", null ],
     [ "WorkflowRequestService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request_service.html#a7090ca0aeec24b00ef4aaba9a561496c", null ],
     [ "getWorkflowRequestsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request_service.html#afb3457d8a6fbb2bbde9aa60d5a303052", null ],
-    [ "performWorkflowRequestAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request_service.html#ab11276a987b6753ad70502f12eb5da4a", null ]
+    [ "getWorkflowRequestsByStatementAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request_service.html#ae1be5fc32474d8c275181746176c2e9d", null ],
+    [ "performWorkflowRequestAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request_service.html#ab11276a987b6753ad70502f12eb5da4a", null ],
+    [ "performWorkflowRequestActionAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_workflow_request_service.html#ac7d9a6ef624ff9a26a043ae52483fcf2", null ]
 ];

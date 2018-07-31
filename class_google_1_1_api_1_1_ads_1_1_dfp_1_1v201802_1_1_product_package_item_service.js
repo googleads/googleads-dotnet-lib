@@ -6,7 +6,11 @@ var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_item_ser
     [ "ProductPackageItemService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_item_service.html#ad40e62b84bcc1bb07d218b0f9281f3ad", null ],
     [ "ProductPackageItemService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_item_service.html#aedb87b94fe5d8e4bef672fb7cb28e5cd", null ],
     [ "createProductPackageItems", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_item_service.html#a6dfb55b0a591f98989cb24a1d8be9a32", null ],
+    [ "createProductPackageItemsAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_item_service.html#a22ce651a2305a2ee672e99e51f483cc5", null ],
     [ "getProductPackageItemsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_item_service.html#af966dc7578d04c7353faf65b5bc3863a", null ],
+    [ "getProductPackageItemsByStatementAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_item_service.html#a38af4c5e386c1cc3a7e41f474989fbcb", null ],
     [ "performProductPackageItemAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_item_service.html#af588ca442d7652c978d0064fc20f28e1", null ],
-    [ "updateProductPackageItems", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_item_service.html#ab594e25402d3d0508ed78f21b0995889", null ]
+    [ "performProductPackageItemActionAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_item_service.html#abcafa9c7127ba6a9a0f218b4f2c0191a", null ],
+    [ "updateProductPackageItems", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_item_service.html#ab594e25402d3d0508ed78f21b0995889", null ],
+    [ "updateProductPackageItemsAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_product_package_item_service.html#a481ba7f8afe367f460d9d241c01290e1", null ]
 ];

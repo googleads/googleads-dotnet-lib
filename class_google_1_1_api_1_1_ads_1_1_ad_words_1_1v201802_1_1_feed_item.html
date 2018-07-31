@@ -184,7 +184,7 @@ Selectable">This field can be selected using the value "Scheduling".</span>  <a 
 <tr class="memdesc:afe0511ce249c49f761ef3020033f14a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geo targeting specifies what locations this feed item can serve with. On update, if the field is left unspecified, the previous geo targeting state will not be changed. On update, if the field is set with a null value for criterionId, the geo targeting will be cleared.  <a href="#afe0511ce249c49f761ef3020033f14a8">More...</a><br/></td></tr>
 <tr class="separator:afe0511ce249c49f761ef3020033f14a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd5f8b4c9a7f7e845bffb6731ddcad2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_feed_item_geo_restriction.html">FeedItemGeoRestriction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_feed_item.html#abd5f8b4c9a7f7e845bffb6731ddcad2d">geoTargetingRestriction</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:abd5f8b4c9a7f7e845bffb6731ddcad2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geo targeting restriction specifies the type of location that can be used for targeting. On update, if the field is left unspecified, the previous geo targeting restriction state will not be changed. On update, if the field is set with a null GeoRestriction enum, the geo targeting restriction will be cleared.  <a href="#abd5f8b4c9a7f7e845bffb6731ddcad2d">More...</a><br/></td></tr>
+<tr class="memdesc:abd5f8b4c9a7f7e845bffb6731ddcad2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geo targeting restriction specifies the type of location that can be used for targeting. Only applies if the feed item has a location <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_feed_item_target.html" title="Represents one target for a FeedItem. ">FeedItemTarget</a>. On update, if the field is left unspecified, the previous geo targeting restriction state will not be changed. On update, if the field is set with a null GeoRestriction enum, the geo targeting restriction will be cleared.  <a href="#abd5f8b4c9a7f7e845bffb6731ddcad2d">More...</a><br/></td></tr>
 <tr class="separator:abd5f8b4c9a7f7e845bffb6731ddcad2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a85791bb489298acbdabbfeaac8d52e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_custom_parameters.html">CustomParameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_feed_item.html#a2a85791bb489298acbdabbfeaac8d52e">urlCustomParameters</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a2a85791bb489298acbdabbfeaac8d52e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of mappings to be used for substituting URL custom parameter tags in the trackingUrlTemplate, finalUrls, and/or finalMobileUrls. <span class="constraint
@@ -440,7 +440,7 @@ Required">This field is required and should not be </span></p>
 </table>
 </div><div class="memdoc">
 
-<p>Geo targeting restriction specifies the type of location that can be used for targeting. On update, if the field is left unspecified, the previous geo targeting restriction state will not be changed. On update, if the field is set with a null GeoRestriction enum, the geo targeting restriction will be cleared. </p>
+<p>Geo targeting restriction specifies the type of location that can be used for targeting. Only applies if the feed item has a location <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_feed_item_target.html" title="Represents one target for a FeedItem. ">FeedItemTarget</a>. On update, if the field is left unspecified, the previous geo targeting restriction state will not be changed. On update, if the field is set with a null GeoRestriction enum, the geo targeting restriction will be cleared. </p>
 
 </div>
 </div>
@@ -606,7 +606,7 @@ Selectable">This field can be selected using the value "UrlCustomParameters".</s
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.5NipV7sbrS/dist/github/src/AdWords/v201802/<a class="el" href="v201802_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>dist/github/src/AdWords/v201802/<a class="el" href="v201802_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -614,7 +614,7 @@ Selectable">This field can be selected using the value "UrlCustomParameters".</s
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802.html">v201802</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_feed_item.html">FeedItem</a></li>
-    <li class="footer">Generated on Thu Jul 12 2018 12:47:25 for Ads API .NET library by
+    <li class="footer">Generated on Tue Jul 31 2018 15:44:08 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

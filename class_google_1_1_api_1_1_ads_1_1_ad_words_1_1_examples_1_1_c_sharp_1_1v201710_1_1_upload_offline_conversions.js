@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_upload_offline_conversions =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_upload_offline_conversions.html#a5e25c4b0baf3119bd53966e8a7ac79f7", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_upload_offline_conversions.html#a833718c275369647c306df3a45f6948f", null ]
-];

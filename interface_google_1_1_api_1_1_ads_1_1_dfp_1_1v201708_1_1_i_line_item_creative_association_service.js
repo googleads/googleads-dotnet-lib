@@ -1,5 +1,7 @@
 var interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_line_item_creative_association_service =
 [
     [ "createLineItemCreativeAssociations", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_line_item_creative_association_service.html#a7fe3c637c6d9eafd09b13c7cf0b486f8", null ],
-    [ "updateLineItemCreativeAssociations", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_line_item_creative_association_service.html#a72763cba60dccd5c4c9c153aab3c79e6", null ]
+    [ "createLineItemCreativeAssociationsAsync", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_line_item_creative_association_service.html#a0e8b4d338a73bd24a7026018d42f3a53", null ],
+    [ "updateLineItemCreativeAssociations", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_line_item_creative_association_service.html#a72763cba60dccd5c4c9c153aab3c79e6", null ],
+    [ "updateLineItemCreativeAssociationsAsync", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_i_line_item_creative_association_service.html#a38d1e08e709084fc1f574118077d6398", null ]
 ];

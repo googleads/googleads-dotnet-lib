@@ -6,5 +6,7 @@ var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_report_ro
     [ "ReconciliationReportRowService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_report_row_service.html#a66fc292c5eb4569235456e06d97bda71", null ],
     [ "ReconciliationReportRowService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_report_row_service.html#a3ac31e6cb7b4247162a0de8156343a52", null ],
     [ "getReconciliationReportRowsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_report_row_service.html#a6a157b71428f56562112c3ef2f463d3c", null ],
-    [ "updateReconciliationReportRows", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_report_row_service.html#ad44abe99b5829db325125a3d37396748", null ]
+    [ "getReconciliationReportRowsByStatementAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_report_row_service.html#a5640122e3442892a21e9d140737af2c7", null ],
+    [ "updateReconciliationReportRows", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_report_row_service.html#ad44abe99b5829db325125a3d37396748", null ],
+    [ "updateReconciliationReportRowsAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_reconciliation_report_row_service.html#a898ec7562f38796db54f617d2fc147c0", null ]
 ];

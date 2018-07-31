@@ -963,6 +963,7 @@ var v201802_2_dfp_api_8cs =
     [ "updateContentBundlesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_request.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_request" ],
     [ "updateContentBundlesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_response.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_response" ],
     [ "ContentBundle", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_bundle.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_bundle" ],
+    [ "ContentFilterError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_filter_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_filter_error" ],
     [ "ContentBundleServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_bundle_service_interface.html", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_bundle_service_interface" ],
     [ "ContentBundlePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_bundle_page.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_bundle_page" ],
     [ "ContentBundleAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_bundle_action.html", null ],
@@ -1916,6 +1917,11 @@ var v201802_2_dfp_api_8cs =
       [ "ACTIVE", "v201802_2_dfp_api_8cs.html#ad43c0daa203c2defbb4655cb9c5da1eda18ff74f43da410c5529f7d6fca84f115", null ],
       [ "INACTIVE", "v201802_2_dfp_api_8cs.html#ad43c0daa203c2defbb4655cb9c5da1eda6b273343c454f9c53dcfc9c4ccf171d2", null ],
       [ "ARCHIVED", "v201802_2_dfp_api_8cs.html#ad43c0daa203c2defbb4655cb9c5da1eda75b8b0f4c0aee5b8df95a0541307c9f4", null ]
+    ] ],
+    [ "ContentFilterErrorReason", "v201802_2_dfp_api_8cs.html#a93194177e8e5cc032ca7dc0c5ba510bf", [
+      [ "UNKNOWN", "v201802_2_dfp_api_8cs.html#a93194177e8e5cc032ca7dc0c5ba510bfa696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "WRONG_NUMBER_OF_ARGUMENTS", "v201802_2_dfp_api_8cs.html#a93194177e8e5cc032ca7dc0c5ba510bfad6433654849fd1709e5deba667900136", null ],
+      [ "ANY_FILTER_NOT_SUPPORTED", "v201802_2_dfp_api_8cs.html#a93194177e8e5cc032ca7dc0c5ba510bfaee5b1ce5d382245c4cea551653a59b67", null ]
     ] ],
     [ "ContentMetadataKeyHierarchyErrorReason", "v201802_2_dfp_api_8cs.html#afc72d9ba3e88a1a8afec1ec19b89934b", [
       [ "LEVEL_MISSING", "v201802_2_dfp_api_8cs.html#afc72d9ba3e88a1a8afec1ec19b89934ba401c58c69631caf1ee34a9db858b9425", null ],

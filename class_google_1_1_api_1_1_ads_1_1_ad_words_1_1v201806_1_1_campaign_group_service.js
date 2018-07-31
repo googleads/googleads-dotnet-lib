@@ -6,5 +6,7 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_serv
     [ "CampaignGroupService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_service.html#a0b4fe0047ae903b2f715f6f997826ff4", null ],
     [ "CampaignGroupService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_service.html#ac306856a3c9fe3d113376d2dc3076682", null ],
     [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_service.html#ae3a36901ce1b03d356737ddb8ecc56a1", null ],
-    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_service.html#a775bd5d7fd63ad9a7321837e833730a8", null ]
+    [ "getAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_service.html#a80b64ea857fcf5f90f4806a91d815188", null ],
+    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_service.html#a775bd5d7fd63ad9a7321837e833730a8", null ],
+    [ "mutateAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_service.html#ab60a39de8b527c1dd0df04083e580740", null ]
 ];

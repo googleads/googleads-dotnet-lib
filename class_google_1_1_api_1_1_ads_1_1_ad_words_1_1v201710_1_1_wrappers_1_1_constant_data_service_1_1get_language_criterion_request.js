@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_constant_data_service_1_1get_language_criterion_request =
-[
-    [ "getLanguageCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_constant_data_service_1_1get_language_criterion_request.html#a3f0a8d433d45a493faadf6e6ed431187", null ]
-];

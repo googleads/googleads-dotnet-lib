@@ -6,7 +6,11 @@ var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_servi
     [ "ProposalLineItemService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_service.html#a23554ec07c34e3957ad33986866fbef9", null ],
     [ "ProposalLineItemService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_service.html#af6e639675dc28234be926b6063359a84", null ],
     [ "createProposalLineItems", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_service.html#a3539302159e66eda96606b37fa7ce85d", null ],
+    [ "createProposalLineItemsAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_service.html#aca54998c792bfe683f941bc3f92ac2a5", null ],
     [ "getProposalLineItemsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_service.html#a7bd76b82f313209ca9a817fa0af4317e", null ],
+    [ "getProposalLineItemsByStatementAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_service.html#a8990d7f6aa2bb8e786d4bb5b757ea1cc", null ],
     [ "performProposalLineItemAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_service.html#afee863fc2943913572788781b0396b3e", null ],
-    [ "updateProposalLineItems", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_service.html#a560494bd79052cc4cf20e69d35451a3f", null ]
+    [ "performProposalLineItemActionAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_service.html#a4bc5a660a87ab48d124e05eb379c274a", null ],
+    [ "updateProposalLineItems", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_service.html#a560494bd79052cc4cf20e69d35451a3f", null ],
+    [ "updateProposalLineItemsAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_line_item_service.html#a196853eaf8e8295392232bda3c6294bf", null ]
 ];

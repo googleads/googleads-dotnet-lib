@@ -145,10 +145,18 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_page.html">Google.Api.Ads.AdWords.v201802.CampaignGroupPerformanceTargetPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_service.html#add84776b3cb539237f7b7031de822de2">get</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_selector.html">Google.Api.Ads.AdWords.v201802.Selector</a> selector)</td></tr>
 <tr class="memdesc:add84776b3cb539237f7b7031de822de2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of campaign group performance targets that meet the selector criteria.  <a href="#add84776b3cb539237f7b7031de822de2">More...</a><br/></td></tr>
 <tr class="separator:add84776b3cb539237f7b7031de822de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6d11a54714f26f0620deb37a72e6dec"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
+System.Threading.Tasks.Task<br class="typebreak"/>
+&lt; <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_page.html">Google.Api.Ads.AdWords.v201802.CampaignGroupPerformanceTargetPage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_service.html#ac6d11a54714f26f0620deb37a72e6dec">getAsync</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_selector.html">Google.Api.Ads.AdWords.v201802.Selector</a> selector)</td></tr>
+<tr class="separator:ac6d11a54714f26f0620deb37a72e6dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38b7cad3b5066133cfcbf7a5b0b109a3"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
 <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_return_value.html">Google.Api.Ads.AdWords.v201802.CampaignGroupPerformanceTargetReturnValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_service.html#a38b7cad3b5066133cfcbf7a5b0b109a3">mutate</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_operation.html">Google.Api.Ads.AdWords.v201802.CampaignGroupPerformanceTargetOperation</a>[] operations)</td></tr>
 <tr class="memdesc:a38b7cad3b5066133cfcbf7a5b0b109a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds, updates, or deletes campaign group performance targets.  <a href="#a38b7cad3b5066133cfcbf7a5b0b109a3">More...</a><br/></td></tr>
 <tr class="separator:a38b7cad3b5066133cfcbf7a5b0b109a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8bc0ece6ac4092d4159c9922d76e3e6"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
+System.Threading.Tasks.Task<br class="typebreak"/>
+&lt; <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_return_value.html">Google.Api.Ads.AdWords.v201802.CampaignGroupPerformanceTargetReturnValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_service.html#ae8bc0ece6ac4092d4159c9922d76e3e6">mutateAsync</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_operation.html">Google.Api.Ads.AdWords.v201802.CampaignGroupPerformanceTargetOperation</a>[] operations)</td></tr>
+<tr class="separator:ae8bc0ece6ac4092d4159c9922d76e3e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Use this service to manage campaign group performance targets. A <a href="CampaignGroupPerformanceTarget">CampaignGroupPerformanceTarget</a> is an entity that specifies a time range for a campaign group and various metrics by which the performance of that campaign group can be measured for the time period that the performance target is active. </p>
@@ -345,12 +353,38 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A list of campaign group performance targets.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_api_exception.html" title="Exception class for holding a list of service errors. ">ApiException</a></td><td>if problems occurred while fetching campaign group performance target information.</td></tr>
+    <tr><td class="paramname">AdWordsApiException</td><td>if problems occurred while fetching campaign group performance target information.</td></tr>
   </table>
   </dd>
 </dl>
 
 <p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_service_interface.html#a5b15a7bec893e2a67fef57ba64a7de0a">Google.Api.Ads.AdWords.v201802.CampaignGroupPerformanceTargetServiceInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac6d11a54714f26f0620deb37a72e6dec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual System.Threading.Tasks.Task&lt;<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_page.html">Google.Api.Ads.AdWords.v201802.CampaignGroupPerformanceTargetPage</a>&gt; Google.Api.Ads.AdWords.v201802.CampaignGroupPerformanceTargetService.getAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_selector.html">Google.Api.Ads.AdWords.v201802.Selector</a>&#160;</td>
+          <td class="paramname"><em>selector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_service_interface.html#aa61714e719e5142d0898042b90d474b3">Google.Api.Ads.AdWords.v201802.CampaignGroupPerformanceTargetServiceInterface</a>.</p>
 
 </div>
 </div>
@@ -386,7 +420,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The list of updated campaign groups performance targets, returned in the same order as the <code>operations</code> array.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_api_exception.html" title="Exception class for holding a list of service errors. ">ApiException</a></td><td>if problems occurred while updating campaign group performance target information.</td></tr>
+    <tr><td class="paramname">AdWordsApiException</td><td>if problems occurred while updating campaign group performance target information.</td></tr>
   </table>
   </dd>
 </dl>
@@ -395,8 +429,34 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ae8bc0ece6ac4092d4159c9922d76e3e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual System.Threading.Tasks.Task&lt;<a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_return_value.html">Google.Api.Ads.AdWords.v201802.CampaignGroupPerformanceTargetReturnValue</a>&gt; Google.Api.Ads.AdWords.v201802.CampaignGroupPerformanceTargetService.mutateAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_operation.html">Google.Api.Ads.AdWords.v201802.CampaignGroupPerformanceTargetOperation</a>[]&#160;</td>
+          <td class="paramname"><em>operations</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_i_campaign_group_performance_target_service.html#ae3286c360d9c93d8d84c7dd28baf53bc">Google.Api.Ads.AdWords.v201802.ICampaignGroupPerformanceTargetService</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.5NipV7sbrS/dist/github/src/AdWords/v201802/<a class="el" href="v201802_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>dist/github/src/AdWords/v201802/<a class="el" href="v201802_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -404,7 +464,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802.html">v201802</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_service.html">CampaignGroupPerformanceTargetService</a></li>
-    <li class="footer">Generated on Thu Jul 12 2018 12:46:47 for Ads API .NET library by
+    <li class="footer">Generated on Tue Jul 31 2018 15:43:46 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

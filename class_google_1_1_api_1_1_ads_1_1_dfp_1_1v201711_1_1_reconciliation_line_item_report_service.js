@@ -6,5 +6,7 @@ var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_line_item
     [ "ReconciliationLineItemReportService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_line_item_report_service.html#ac74638f8fa8f687afb15cdbffde24b16", null ],
     [ "ReconciliationLineItemReportService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_line_item_report_service.html#a5c09b80c1a28a6caf5c554e3a0afdef2", null ],
     [ "getReconciliationLineItemReportsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_line_item_report_service.html#a9506a4cb41f6d32eea70ff4fde3e9ce5", null ],
-    [ "updateReconciliationLineItemReports", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_line_item_report_service.html#a413f2ee03bb2a89fd4bc5f3d6143de3a", null ]
+    [ "getReconciliationLineItemReportsByStatementAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_line_item_report_service.html#af55d03fc25eb61b459b709e6727d6d8e", null ],
+    [ "updateReconciliationLineItemReports", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_line_item_report_service.html#a413f2ee03bb2a89fd4bc5f3d6143de3a", null ],
+    [ "updateReconciliationLineItemReportsAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_reconciliation_line_item_report_service.html#aec3b6e6f228d2cc45b61b5ea0123cad2", null ]
 ];

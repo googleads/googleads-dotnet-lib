@@ -1,8 +1,13 @@
 var interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_service_interface =
 [
     [ "createProposals", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_service_interface.html#ab07024a020d444ada356a3a76dac6011", null ],
+    [ "createProposalsAsync", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_service_interface.html#aeee6c00a6553472f81cd2af8ad20cd16", null ],
     [ "getMarketplaceCommentsByStatement", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_service_interface.html#aef6f572c61b59bcf87257228f138f1ca", null ],
+    [ "getMarketplaceCommentsByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_service_interface.html#ab81810b138a645057a3deea52ac365d5", null ],
     [ "getProposalsByStatement", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_service_interface.html#a00f5e2fd53e1d042cfac7815bca363a7", null ],
+    [ "getProposalsByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_service_interface.html#aeb53226c07774e251c1511dd33560851", null ],
     [ "performProposalAction", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_service_interface.html#aaf3d25048732552987ed33cfbac7cc38", null ],
-    [ "updateProposals", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_service_interface.html#a100ca778ccfd3a2767e9c99bc6596d7f", null ]
+    [ "performProposalActionAsync", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_service_interface.html#ae6e896c403351c562122fdbaa57d2398", null ],
+    [ "updateProposals", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_service_interface.html#a100ca778ccfd3a2767e9c99bc6596d7f", null ],
+    [ "updateProposalsAsync", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal_service_interface.html#a37d6fe31feb2c57d78c230fd2baad9cb", null ]
 ];

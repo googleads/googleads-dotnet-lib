@@ -6,6 +6,9 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_shared_criterion_se
     [ "SharedCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_shared_criterion_service.html#a11085e4afe5f08ee3f335c6b05a4fd20", null ],
     [ "SharedCriterionService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_shared_criterion_service.html#ac90dab0ca183e5fcaafbba009020fd28", null ],
     [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_shared_criterion_service.html#ab895f8da9d0c3b7dd46040b6d5174f96", null ],
+    [ "getAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_shared_criterion_service.html#ab43b5127b7cc3ccbf1fc3533fdc48972", null ],
     [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_shared_criterion_service.html#a77b053566f70b9a614069aad0e9ca3fb", null ],
-    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_shared_criterion_service.html#a645381573a589d7e0daa39795974fe98", null ]
+    [ "mutateAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_shared_criterion_service.html#a0d74d0154cc7c69e9b58d17de81ce1de", null ],
+    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_shared_criterion_service.html#a645381573a589d7e0daa39795974fe98", null ],
+    [ "queryAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_shared_criterion_service.html#a303e6304c8dbfe317bf491d28f18a960", null ]
 ];

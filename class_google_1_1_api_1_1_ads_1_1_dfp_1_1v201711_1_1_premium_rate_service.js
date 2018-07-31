@@ -6,6 +6,9 @@ var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_premium_rate_service =
     [ "PremiumRateService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_premium_rate_service.html#a4cdbab06ad0fa499fc0ccb0a79bad5e2", null ],
     [ "PremiumRateService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_premium_rate_service.html#a0e228f11900e81e45633e3631c8b3fb3", null ],
     [ "createPremiumRates", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_premium_rate_service.html#a06ac52830c5b325b26a974c155ba334a", null ],
+    [ "createPremiumRatesAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_premium_rate_service.html#aa1239dd8f8c59d7455f9dde4ae257836", null ],
     [ "getPremiumRatesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_premium_rate_service.html#a87052aa6ba996d524bf78b030e7a21b4", null ],
-    [ "updatePremiumRates", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_premium_rate_service.html#aca7305ee9bafd8466458dae5c995e0a0", null ]
+    [ "getPremiumRatesByStatementAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_premium_rate_service.html#a0274e276f4328a4d0fe56d164ee5c883", null ],
+    [ "updatePremiumRates", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_premium_rate_service.html#aca7305ee9bafd8466458dae5c995e0a0", null ],
+    [ "updatePremiumRatesAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_premium_rate_service.html#af8aa2b0cbe0325da95988bc557046310", null ]
 ];

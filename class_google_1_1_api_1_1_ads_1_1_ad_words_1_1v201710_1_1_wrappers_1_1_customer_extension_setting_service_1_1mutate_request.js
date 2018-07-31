@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_extension_setting_service_1_1mutate_request =
-[
-    [ "mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_extension_setting_service_1_1mutate_request.html#ab033c0c2c708f8e64be27c9febb32ad2", null ],
-    [ "mutateRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_extension_setting_service_1_1mutate_request.html#a647937df655ec3361d6304e630b47efc", null ],
-    [ "operations", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_customer_extension_setting_service_1_1mutate_request.html#a7e525b711aea558ede0151e92f78b95d", null ]
-];

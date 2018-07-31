@@ -145,6 +145,10 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_result_set.html">Google.Api.Ads.Dfp.v201805.ResultSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_publisher_query_language_service.html#ab6d4f386ede1420de54018fe7049c577">select</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_statement.html">Google.Api.Ads.Dfp.v201805.Statement</a> selectStatement)</td></tr>
 <tr class="memdesc:ab6d4f386ede1420de54018fe7049c577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves rows of data that satisfy the given <a href="Statement#query">Statement::query</a> from the system.  <a href="#ab6d4f386ede1420de54018fe7049c577">More...</a><br/></td></tr>
 <tr class="separator:ab6d4f386ede1420de54018fe7049c577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1be4f54ec99c034e6f75171f5f425142"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
+System.Threading.Tasks.Task<br class="typebreak"/>
+&lt; <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_result_set.html">Google.Api.Ads.Dfp.v201805.ResultSet</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_publisher_query_language_service.html#a1be4f54ec99c034e6f75171f5f425142">selectAsync</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_statement.html">Google.Api.Ads.Dfp.v201805.Statement</a> selectStatement)</td></tr>
+<tr class="separator:a1be4f54ec99c034e6f75171f5f425142"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides methods for executing a PQL <a href="Statement">Statement</a> to retrieve information from the system. In order to support the selection of columns of interest from various tables, <a href="Statement">Statement</a> objects support a "select" clause. </p>
@@ -441,7 +445,7 @@ Union_Territory </li>
 <tr>
 <td>Name </td><td><code>Text</code> </td><td>Display name that references the buyer.  </td></tr>
 <tr>
-<td>ParentId </td><td><code>Number</code> </td><td>The ID of the programmatic buyer's parent. If the programmatic buyer has no parent, this field will be zero.  </td></tr>
+<td>ParentId </td><td><code>Number</code> </td><td>The ID of the programmatic buyer's sponsor. If the programmatic buyer has no sponsor, this field will be -1.  </td></tr>
 </table>
 <h2 id="Audience_Segment_Category">Audience_Segment_Category</h2>
 <table class="doxtable">
@@ -742,8 +746,34 @@ Union_Territory </li>
 
 </div>
 </div>
+<a class="anchor" id="a1be4f54ec99c034e6f75171f5f425142"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual System.Threading.Tasks.Task&lt;<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_result_set.html">Google.Api.Ads.Dfp.v201805.ResultSet</a>&gt; Google.Api.Ads.Dfp.v201805.PublisherQueryLanguageService.selectAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_statement.html">Google.Api.Ads.Dfp.v201805.Statement</a>&#160;</td>
+          <td class="paramname"><em>selectStatement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_publisher_query_language_service_interface.html#a65f86503711365d72edb601179a659d2">Google.Api.Ads.Dfp.v201805.PublisherQueryLanguageServiceInterface</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.5NipV7sbrS/dist/github/src/Dfp/v201805/<a class="el" href="v201805_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>dist/github/src/Dfp/v201805/<a class="el" href="v201805_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -751,7 +781,7 @@ Union_Territory </li>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805.html">v201805</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_publisher_query_language_service.html">PublisherQueryLanguageService</a></li>
-    <li class="footer">Generated on Thu Jul 12 2018 12:54:44 for Ads API .NET library by
+    <li class="footer">Generated on Tue Jul 31 2018 15:48:50 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

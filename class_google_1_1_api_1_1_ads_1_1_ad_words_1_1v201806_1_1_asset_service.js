@@ -6,5 +6,7 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_service =
     [ "AssetService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_service.html#a8bab92e3b2533698ab741068adf26eb8", null ],
     [ "AssetService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_service.html#a7f3f3825065a28a8b741f471585ac516", null ],
     [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_service.html#ad1a59af2c66b67a4784f3a2a825e1926", null ],
-    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_service.html#a503bcfcd7e2aebbede4a09bd257ddefd", null ]
+    [ "getAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_service.html#a7316d336dd5d8a840701f06cb2e1ede0", null ],
+    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_service.html#a503bcfcd7e2aebbede4a09bd257ddefd", null ],
+    [ "mutateAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_asset_service.html#a20b2b4bd2afd28cc49e42c6233eb7afa", null ]
 ];

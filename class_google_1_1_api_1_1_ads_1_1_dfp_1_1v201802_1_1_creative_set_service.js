@@ -6,6 +6,9 @@ var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_set_service =
     [ "CreativeSetService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_set_service.html#a24b53a738b3433d1a1f7520fcb2ca5e9", null ],
     [ "CreativeSetService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_set_service.html#ac8d4db8b8431bd7635dfd2ba9b97d8d3", null ],
     [ "createCreativeSet", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_set_service.html#a382e7c5f2154a3ef8c09ba4abcda0d3a", null ],
+    [ "createCreativeSetAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_set_service.html#a765ef19c87e719b9c081e0decdca2c65", null ],
     [ "getCreativeSetsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_set_service.html#a6207da08128d70b7c33cf22689e2fbdb", null ],
-    [ "updateCreativeSet", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_set_service.html#ab4e13b53aa10dd3522aee70faab07a52", null ]
+    [ "getCreativeSetsByStatementAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_set_service.html#a32ab486a4be63c18e7a6faad5d471d23", null ],
+    [ "updateCreativeSet", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_set_service.html#ab4e13b53aa10dd3522aee70faab07a52", null ],
+    [ "updateCreativeSetAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_set_service.html#aa80cb88db443aa8469b6079795fc13e7", null ]
 ];

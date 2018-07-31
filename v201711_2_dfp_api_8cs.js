@@ -962,6 +962,7 @@ var v201711_2_dfp_api_8cs =
     [ "updateContentBundlesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_request.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_request" ],
     [ "updateContentBundlesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_response.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_response" ],
     [ "ContentBundle", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_bundle.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_bundle" ],
+    [ "ContentFilterError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_filter_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_filter_error" ],
     [ "ContentBundleServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_bundle_service_interface.html", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_bundle_service_interface" ],
     [ "ContentBundlePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_bundle_page.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_bundle_page" ],
     [ "ContentBundleAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_bundle_action.html", null ],
@@ -1686,6 +1687,7 @@ var v201711_2_dfp_api_8cs =
       [ "AD_EXCHANGE_ACTIVE_VIEW_REVENUE", "v201711_2_dfp_api_8cs.html#a1a2b8a09bb33b350b8fc695a9535e8dea920a84e985373eac74296d2a280f7a64", null ],
       [ "AD_EXCHANGE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME", "v201711_2_dfp_api_8cs.html#a1a2b8a09bb33b350b8fc695a9535e8dea263abeab0654868c1862c6de969f776e", null ],
       [ "TOTAL_ACTIVE_VIEW_REVENUE", "v201711_2_dfp_api_8cs.html#a1a2b8a09bb33b350b8fc695a9535e8deab767dc0f337e95bef5542ffa9ceb069f", null ],
+      [ "AUDIENCE_EXTENSION_COST", "v201711_2_dfp_api_8cs.html#a1a2b8a09bb33b350b8fc695a9535e8dea0cdf1ffd14a3aa7bf6d395d34d236f6a", null ],
       [ "VIEW_THROUGH_CONVERSIONS", "v201711_2_dfp_api_8cs.html#a1a2b8a09bb33b350b8fc695a9535e8dea134437e8459370aedc6564df16fbf708", null ],
       [ "CONVERSIONS_PER_THOUSAND_IMPRESSIONS", "v201711_2_dfp_api_8cs.html#a1a2b8a09bb33b350b8fc695a9535e8dea9bdb907ac3d335542f0826c28cf7ef43", null ],
       [ "CLICK_THROUGH_CONVERSIONS", "v201711_2_dfp_api_8cs.html#a1a2b8a09bb33b350b8fc695a9535e8deab992cf0f2570aae72af0b9a69b32ca31", null ],
@@ -1914,6 +1916,11 @@ var v201711_2_dfp_api_8cs =
       [ "ACTIVE", "v201711_2_dfp_api_8cs.html#a724699352facd19ad861d8603de306e2a18ff74f43da410c5529f7d6fca84f115", null ],
       [ "INACTIVE", "v201711_2_dfp_api_8cs.html#a724699352facd19ad861d8603de306e2a6b273343c454f9c53dcfc9c4ccf171d2", null ],
       [ "ARCHIVED", "v201711_2_dfp_api_8cs.html#a724699352facd19ad861d8603de306e2a75b8b0f4c0aee5b8df95a0541307c9f4", null ]
+    ] ],
+    [ "ContentFilterErrorReason", "v201711_2_dfp_api_8cs.html#a59b9e47f83c15dc3d75918fd45e0826f", [
+      [ "UNKNOWN", "v201711_2_dfp_api_8cs.html#a59b9e47f83c15dc3d75918fd45e0826fa696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "WRONG_NUMBER_OF_ARGUMENTS", "v201711_2_dfp_api_8cs.html#a59b9e47f83c15dc3d75918fd45e0826fad6433654849fd1709e5deba667900136", null ],
+      [ "ANY_FILTER_NOT_SUPPORTED", "v201711_2_dfp_api_8cs.html#a59b9e47f83c15dc3d75918fd45e0826faee5b1ce5d382245c4cea551653a59b67", null ]
     ] ],
     [ "ContentMetadataKeyHierarchyErrorReason", "v201711_2_dfp_api_8cs.html#a406f7ff643fabd8db1512d73d716203c", [
       [ "LEVEL_MISSING", "v201711_2_dfp_api_8cs.html#a406f7ff643fabd8db1512d73d716203ca401c58c69631caf1ee34a9db858b9425", null ],
@@ -3719,6 +3726,8 @@ var v201711_2_dfp_api_8cs =
       [ "INVALID_PROGRAMMATIC_CREATIVE_SOURCE", "v201711_2_dfp_api_8cs.html#af144e1eda180606ef37fa06639010281a31897bedd4a4e5c9f27ccd67da7698f2", null ],
       [ "CANNOT_UPDATE_PROGRAMMATIC_CREATIVE_SOURCE", "v201711_2_dfp_api_8cs.html#af144e1eda180606ef37fa06639010281a871240f14b8523ae8e17c5aac486a9d7", null ],
       [ "INVALID_NUM_UNITS", "v201711_2_dfp_api_8cs.html#af144e1eda180606ef37fa06639010281af91a74648419e155cb0ef890aa1470cb", null ],
+      [ "MIX_NATIVE_AND_BANNER_SIZE_NOT_ALLOWED", "v201711_2_dfp_api_8cs.html#af144e1eda180606ef37fa06639010281a8133da1a8e7b89322e0f998f06c58ad7", null ],
+      [ "CANNOT_UPDATE_SIZES", "v201711_2_dfp_api_8cs.html#af144e1eda180606ef37fa06639010281a08609d262f09c478fe82ec8495b6eac4", null ],
       [ "INVALID_SPONSORSHIP_CONTRACTED_UNITS_BOUGHT", "v201711_2_dfp_api_8cs.html#af144e1eda180606ef37fa06639010281aa9b47cf613a33d3930f82c528cadc24c", null ],
       [ "INVALID_PROGRAMMATIC_PRICING_MODEL", "v201711_2_dfp_api_8cs.html#af144e1eda180606ef37fa06639010281aaf19501be4c210bb0f3b5ae4ea430726", null ],
       [ "UNKNOWN", "v201711_2_dfp_api_8cs.html#af144e1eda180606ef37fa06639010281a696b031073e74bf2cb98e5ef201d4aa3", null ]

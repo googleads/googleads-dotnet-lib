@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_customizer_feed_attribute_1_1_fields =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_ad_customizer_feed_attribute_1_1_fields.html#a87ea2a256c1f12af45009361656cf8c1", null ]
-];

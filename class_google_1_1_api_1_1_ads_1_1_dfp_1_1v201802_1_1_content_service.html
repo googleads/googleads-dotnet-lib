@@ -145,10 +145,18 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_page.html">Google.Api.Ads.Dfp.v201802.ContentPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_service.html#ad16ace5272a826eda4a7ccb96d709e8e">getContentByStatement</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_statement.html">Google.Api.Ads.Dfp.v201802.Statement</a> statement)</td></tr>
 <tr class="memdesc:ad16ace5272a826eda4a7ccb96d709e8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="">Statement::query</a>. The following fields are supported for filtering:  <a href="#ad16ace5272a826eda4a7ccb96d709e8e">More...</a><br/></td></tr>
 <tr class="separator:ad16ace5272a826eda4a7ccb96d709e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a270d9775a6ca2123a58fab999f90d939"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
+System.Threading.Tasks.Task<br class="typebreak"/>
+&lt; <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_page.html">Google.Api.Ads.Dfp.v201802.ContentPage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_service.html#a270d9775a6ca2123a58fab999f90d939">getContentByStatementAsync</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_statement.html">Google.Api.Ads.Dfp.v201802.Statement</a> statement)</td></tr>
+<tr class="separator:a270d9775a6ca2123a58fab999f90d939"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed5a1b8b93219f28e1f5a6fac7ceee37"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
 <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_page.html">Google.Api.Ads.Dfp.v201802.ContentPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_service.html#aed5a1b8b93219f28e1f5a6fac7ceee37">getContentByStatementAndCustomTargetingValue</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_statement.html">Google.Api.Ads.Dfp.v201802.Statement</a> filterStatement, long customTargetingValueId)</td></tr>
 <tr class="memdesc:aed5a1b8b93219f28e1f5a6fac7ceee37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="ContentPage">ContentPage</a> of <a href="Content">Content</a> objects that satisfy the given <a href="Statement#query">Statement::query</a>. Additionally, filters on the given value ID and key ID that the value belongs to. The following fields are supported for filtering:  <a href="#aed5a1b8b93219f28e1f5a6fac7ceee37">More...</a><br/></td></tr>
 <tr class="separator:aed5a1b8b93219f28e1f5a6fac7ceee37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4268d4a816f86105d8e6abde48e5440"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
+System.Threading.Tasks.Task<br class="typebreak"/>
+&lt; <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_page.html">Google.Api.Ads.Dfp.v201802.ContentPage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_service.html#ac4268d4a816f86105d8e6abde48e5440">getContentByStatementAndCustomTargetingValueAsync</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_statement.html">Google.Api.Ads.Dfp.v201802.Statement</a> filterStatement, long customTargetingValueId)</td></tr>
+<tr class="separator:ac4268d4a816f86105d8e6abde48e5440"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Service for retrieving <a href="Content">Content</a>. </p>
@@ -434,8 +442,70 @@ Call <a href="#getContentByStatementAndCustomTargetingValue">#getContentByStatem
 
 </div>
 </div>
+<a class="anchor" id="ac4268d4a816f86105d8e6abde48e5440"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual System.Threading.Tasks.Task&lt;<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_page.html">Google.Api.Ads.Dfp.v201802.ContentPage</a>&gt; Google.Api.Ads.Dfp.v201802.ContentService.getContentByStatementAndCustomTargetingValueAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_statement.html">Google.Api.Ads.Dfp.v201802.Statement</a>&#160;</td>
+          <td class="paramname"><em>filterStatement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>customTargetingValueId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_service_interface.html#a7bf562ba56521490ab0faedaa9d6ca47">Google.Api.Ads.Dfp.v201802.ContentServiceInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a270d9775a6ca2123a58fab999f90d939"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual System.Threading.Tasks.Task&lt;<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_page.html">Google.Api.Ads.Dfp.v201802.ContentPage</a>&gt; Google.Api.Ads.Dfp.v201802.ContentService.getContentByStatementAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_statement.html">Google.Api.Ads.Dfp.v201802.Statement</a>&#160;</td>
+          <td class="paramname"><em>statement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_service_interface.html#ad5999b33ff5bcc5ebbd0e855747749bc">Google.Api.Ads.Dfp.v201802.ContentServiceInterface</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.5NipV7sbrS/dist/github/src/Dfp/v201802/<a class="el" href="v201802_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>dist/github/src/Dfp/v201802/<a class="el" href="v201802_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -443,7 +513,7 @@ Call <a href="#getContentByStatementAndCustomTargetingValue">#getContentByStatem
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802.html">v201802</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_content_service.html">ContentService</a></li>
-    <li class="footer">Generated on Thu Jul 12 2018 12:54:34 for Ads API .NET library by
+    <li class="footer">Generated on Tue Jul 31 2018 15:48:40 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

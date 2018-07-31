@@ -785,6 +785,7 @@ var namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711 =
     [ "CompanyServiceInterfaceChannel", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_company_service_interface_channel.html", null ],
     [ "CompanyService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_company_service.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_company_service" ],
     [ "ContentBundle", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_bundle.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_bundle" ],
+    [ "ContentFilterError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_filter_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_filter_error" ],
     [ "ContentBundleServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_bundle_service_interface.html", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_bundle_service_interface" ],
     [ "ContentBundlePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_bundle_page.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_bundle_page" ],
     [ "ContentBundleAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_content_bundle_action.html", null ],

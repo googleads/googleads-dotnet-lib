@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_add_universal_app_campaign =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_add_universal_app_campaign.html#a213f3f15cd5d5f1442c0f829f8ca30f1", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201710_1_1_add_universal_app_campaign.html#ad8f0e8aa89ee538c0c8fdcb2ceb1f3a5", null ]
-];

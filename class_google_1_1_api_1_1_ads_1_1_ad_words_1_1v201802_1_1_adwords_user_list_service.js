@@ -6,7 +6,11 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_adwords_user_list_s
     [ "AdwordsUserListService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_adwords_user_list_service.html#a287f7137268c957072944cc746b8beb8", null ],
     [ "AdwordsUserListService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_adwords_user_list_service.html#a25ad5b44f1bed3932fcbd7c5b4561a8d", null ],
     [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_adwords_user_list_service.html#ad611e84449aaf8e3875e16605d598c16", null ],
+    [ "getAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_adwords_user_list_service.html#abfc944ccf15c19dc76abb9b70335cd6d", null ],
     [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_adwords_user_list_service.html#af2ceb21719269b10696bc35fd71149fb", null ],
+    [ "mutateAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_adwords_user_list_service.html#ab57ed54b13795e176167fce0c4fdc2d2", null ],
     [ "mutateMembers", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_adwords_user_list_service.html#a4922f2ddb1a8e42ce03ffbddb8c806bf", null ],
-    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_adwords_user_list_service.html#ada19f6eb628be76a038855488fb5fadd", null ]
+    [ "mutateMembersAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_adwords_user_list_service.html#af0dea8b08a10da0dc530b867e5f4e8a3", null ],
+    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_adwords_user_list_service.html#ada19f6eb628be76a038855488fb5fadd", null ],
+    [ "queryAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_adwords_user_list_service.html#a49b808fdb8f4cc96c062507ee9ef8fd3", null ]
 ];

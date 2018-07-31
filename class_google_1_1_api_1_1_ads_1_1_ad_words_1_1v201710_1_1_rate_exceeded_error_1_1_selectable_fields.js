@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_rate_exceeded_error_1_1_selectable_fields =
-[
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_rate_exceeded_error_1_1_selectable_fields.html#a9ef5836c2ddc2d7c9d21b67a9e945b8c", null ]
-];

@@ -6,5 +6,7 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_param_service =
     [ "AdParamService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_param_service.html#a48560096667185bc4acd1ea5c00293d1", null ],
     [ "AdParamService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_param_service.html#ae8633df6f888776688b082379a71e5ba", null ],
     [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_param_service.html#a5b72d6cc467562a2ab96dd505d199afc", null ],
-    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_param_service.html#a129d399b0f54a80ba9ceb318a33a07f2", null ]
+    [ "getAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_param_service.html#ad5316cf873436a2641ca71c6d0518266", null ],
+    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_param_service.html#a129d399b0f54a80ba9ceb318a33a07f2", null ],
+    [ "mutateAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_ad_param_service.html#a4723a2522b39b849e0a3fb41fd237af7", null ]
 ];

@@ -1,4 +1,5 @@
 var interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_template_service_interface =
 [
-    [ "getCreativeTemplatesByStatement", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_template_service_interface.html#aed93950550a3e3b2e1ca1d0d7d101e6b", null ]
+    [ "getCreativeTemplatesByStatement", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_template_service_interface.html#aed93950550a3e3b2e1ca1d0d7d101e6b", null ],
+    [ "getCreativeTemplatesByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_template_service_interface.html#a69dd7c73b9bdfe8f3278509c07ce472c", null ]
 ];

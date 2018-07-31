@@ -145,10 +145,18 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_page.html">Google.Api.Ads.Dfp.v201802.SuggestedAdUnitPage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_service.html#ac5750172bbc61196123e194f1474ebd5">getSuggestedAdUnitsByStatement</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_statement.html">Google.Api.Ads.Dfp.v201802.Statement</a> filterStatement)</td></tr>
 <tr class="memdesc:ac5750172bbc61196123e194f1474ebd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a href="SuggestedAdUnitPage">SuggestedAdUnitPage</a> of <a href="SuggestedAdUnit">SuggestedAdUnit</a> objects that satisfy the filter query. There is a system-enforced limit of 1000 on the number of suggested ad units that are suggested at any one time.  <a href="#ac5750172bbc61196123e194f1474ebd5">More...</a><br/></td></tr>
 <tr class="separator:ac5750172bbc61196123e194f1474ebd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab494f5f9524fcecd70af22a9ed25d8cf"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
+System.Threading.Tasks.Task<br class="typebreak"/>
+&lt; <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_page.html">Google.Api.Ads.Dfp.v201802.SuggestedAdUnitPage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_service.html#ab494f5f9524fcecd70af22a9ed25d8cf">getSuggestedAdUnitsByStatementAsync</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_statement.html">Google.Api.Ads.Dfp.v201802.Statement</a> filterStatement)</td></tr>
+<tr class="separator:ab494f5f9524fcecd70af22a9ed25d8cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50297431dc30d74c258ae65bc165960f"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
 <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_update_result.html">Google.Api.Ads.Dfp.v201802.SuggestedAdUnitUpdateResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_service.html#a50297431dc30d74c258ae65bc165960f">performSuggestedAdUnitAction</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_action.html">Google.Api.Ads.Dfp.v201802.SuggestedAdUnitAction</a> suggestedAdUnitAction, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_statement.html">Google.Api.Ads.Dfp.v201802.Statement</a> filterStatement)</td></tr>
 <tr class="memdesc:a50297431dc30d74c258ae65bc165960f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs actions on <a href="SuggestedAdUnit">SuggestedAdUnit</a> objects that match the given <a href="Statement#query">Statement::query</a>. The following fields are supported for filtering:  <a href="#a50297431dc30d74c258ae65bc165960f">More...</a><br/></td></tr>
 <tr class="separator:a50297431dc30d74c258ae65bc165960f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa59651886e752b681c47cdb46b6ab6cc"><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
+System.Threading.Tasks.Task<br class="typebreak"/>
+&lt; <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_update_result.html">Google.Api.Ads.Dfp.v201802.SuggestedAdUnitUpdateResult</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_service.html#aa59651886e752b681c47cdb46b6ab6cc">performSuggestedAdUnitActionAsync</a> (<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_action.html">Google.Api.Ads.Dfp.v201802.SuggestedAdUnitAction</a> suggestedAdUnitAction, <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_statement.html">Google.Api.Ads.Dfp.v201802.Statement</a> filterStatement)</td></tr>
+<tr class="separator:aa59651886e752b681c47cdb46b6ab6cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This service provides operations for retrieving and approving <a href="SuggestedAdUnit">SuggestedAdUnit</a> objects. </p>
@@ -359,6 +367,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab494f5f9524fcecd70af22a9ed25d8cf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual System.Threading.Tasks.Task&lt;<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_page.html">Google.Api.Ads.Dfp.v201802.SuggestedAdUnitPage</a>&gt; Google.Api.Ads.Dfp.v201802.SuggestedAdUnitService.getSuggestedAdUnitsByStatementAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_statement.html">Google.Api.Ads.Dfp.v201802.Statement</a>&#160;</td>
+          <td class="paramname"><em>filterStatement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_service_interface.html#aa40d09efd74f618def72c890d89a44f5">Google.Api.Ads.Dfp.v201802.SuggestedAdUnitServiceInterface</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a50297431dc30d74c258ae65bc165960f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -413,8 +447,44 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa59651886e752b681c47cdb46b6ab6cc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual System.Threading.Tasks.Task&lt;<a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_update_result.html">Google.Api.Ads.Dfp.v201802.SuggestedAdUnitUpdateResult</a>&gt; Google.Api.Ads.Dfp.v201802.SuggestedAdUnitService.performSuggestedAdUnitActionAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_action.html">Google.Api.Ads.Dfp.v201802.SuggestedAdUnitAction</a>&#160;</td>
+          <td class="paramname"><em>suggestedAdUnitAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_statement.html">Google.Api.Ads.Dfp.v201802.Statement</a>&#160;</td>
+          <td class="paramname"><em>filterStatement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_service_interface.html#a220a7a804b8e7463c3e32cb4676faf20">Google.Api.Ads.Dfp.v201802.SuggestedAdUnitServiceInterface</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.5NipV7sbrS/dist/github/src/Dfp/v201802/<a class="el" href="v201802_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>dist/github/src/Dfp/v201802/<a class="el" href="v201802_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -422,7 +492,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802.html">v201802</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_suggested_ad_unit_service.html">SuggestedAdUnitService</a></li>
-    <li class="footer">Generated on Thu Jul 12 2018 12:54:38 for Ads API .NET library by
+    <li class="footer">Generated on Tue Jul 31 2018 15:48:44 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

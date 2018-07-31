@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_places_of_interest_operand =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_places_of_interest_operand_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_places_of_interest_operand_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_places_of_interest_operand_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_places_of_interest_operand_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_places_of_interest_operand_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_places_of_interest_operand_1_1_selectable_fields" ],
-    [ "category", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_places_of_interest_operand.html#ad49ef55736a7aadf629f0bf816cd2537", null ],
-    [ "categorySpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_places_of_interest_operand.html#a15a16c2efe7245437f15942af5c412b6", null ]
-];

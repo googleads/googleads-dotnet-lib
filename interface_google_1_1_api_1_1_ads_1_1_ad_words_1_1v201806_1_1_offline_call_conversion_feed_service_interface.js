@@ -1,4 +1,5 @@
 var interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_offline_call_conversion_feed_service_interface =
 [
-    [ "mutate", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_offline_call_conversion_feed_service_interface.html#aab145c6cc8f1b6a6521046e0d12b94aa", null ]
+    [ "mutate", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_offline_call_conversion_feed_service_interface.html#aab145c6cc8f1b6a6521046e0d12b94aa", null ],
+    [ "mutateAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_offline_call_conversion_feed_service_interface.html#ac39076e5f27adf3348e33be8d2431793", null ]
 ];

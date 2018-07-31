@@ -7,6 +7,7 @@ var v201708_2_dfp_api_8cs =
     [ "ActivityGroup", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_activity_group.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_activity_group" ],
     [ "UniqueError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_unique_error.html", null ],
     [ "StringLengthError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_string_length_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_string_length_error" ],
+    [ "StringFormatError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_string_format_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_string_format_error" ],
     [ "StatementError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_statement_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_statement_error" ],
     [ "ServerError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_server_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_server_error" ],
     [ "RequiredError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_required_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_required_error" ],
@@ -328,6 +329,7 @@ var v201708_2_dfp_api_8cs =
     [ "ClickTrackingLineItemError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_click_tracking_line_item_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_click_tracking_line_item_error" ],
     [ "AudienceExtensionError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_extension_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_audience_extension_error" ],
     [ "AdUnitCodeError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_unit_code_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_unit_code_error" ],
+    [ "AdRuleSlotError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_rule_slot_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_rule_slot_error" ],
     [ "ForecastServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_forecast_service_interface.html", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_forecast_service_interface" ],
     [ "DeliveryForecastOptions", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_delivery_forecast_options.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_delivery_forecast_options" ],
     [ "DeliveryForecast", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_delivery_forecast.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_delivery_forecast" ],
@@ -730,7 +732,6 @@ var v201708_2_dfp_api_8cs =
     [ "AdRule", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_rule.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_rule" ],
     [ "PoddingError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_podding_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_podding_error" ],
     [ "AdRuleTargetingError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_rule_targeting_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_rule_targeting_error" ],
-    [ "AdRuleSlotError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_rule_slot_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_rule_slot_error" ],
     [ "AdRulePriorityError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_rule_priority_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_rule_priority_error" ],
     [ "AdRuleFrequencyCapError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_rule_frequency_cap_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_rule_frequency_cap_error" ],
     [ "AdRuleDateError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_rule_date_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_ad_rule_date_error" ],
@@ -931,6 +932,7 @@ var v201708_2_dfp_api_8cs =
     [ "updateContentBundlesRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_request.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_request" ],
     [ "updateContentBundlesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_response.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_content_bundle_service_1_1update_content_bundles_response" ],
     [ "ContentBundle", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_content_bundle.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_content_bundle" ],
+    [ "ContentFilterError", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_content_filter_error.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_content_filter_error" ],
     [ "ContentBundleServiceInterface", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_content_bundle_service_interface.html", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_content_bundle_service_interface" ],
     [ "ContentBundlePage", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_content_bundle_page.html", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_content_bundle_page" ],
     [ "ContentBundleAction", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_content_bundle_action.html", null ],
@@ -1663,6 +1665,7 @@ var v201708_2_dfp_api_8cs =
       [ "AD_EXCHANGE_ACTIVE_VIEW_REVENUE", "v201708_2_dfp_api_8cs.html#a7a62a01cec957fabc62248e2480301eba920a84e985373eac74296d2a280f7a64", null ],
       [ "AD_EXCHANGE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME", "v201708_2_dfp_api_8cs.html#a7a62a01cec957fabc62248e2480301eba263abeab0654868c1862c6de969f776e", null ],
       [ "TOTAL_ACTIVE_VIEW_REVENUE", "v201708_2_dfp_api_8cs.html#a7a62a01cec957fabc62248e2480301ebab767dc0f337e95bef5542ffa9ceb069f", null ],
+      [ "AUDIENCE_EXTENSION_COST", "v201708_2_dfp_api_8cs.html#a7a62a01cec957fabc62248e2480301eba0cdf1ffd14a3aa7bf6d395d34d236f6a", null ],
       [ "VIEW_THROUGH_CONVERSIONS", "v201708_2_dfp_api_8cs.html#a7a62a01cec957fabc62248e2480301eba134437e8459370aedc6564df16fbf708", null ],
       [ "CONVERSIONS_PER_THOUSAND_IMPRESSIONS", "v201708_2_dfp_api_8cs.html#a7a62a01cec957fabc62248e2480301eba9bdb907ac3d335542f0826c28cf7ef43", null ],
       [ "CLICK_THROUGH_CONVERSIONS", "v201708_2_dfp_api_8cs.html#a7a62a01cec957fabc62248e2480301ebab992cf0f2570aae72af0b9a69b32ca31", null ],
@@ -1885,6 +1888,11 @@ var v201708_2_dfp_api_8cs =
       [ "ACTIVE", "v201708_2_dfp_api_8cs.html#a876ec0c2d966de9cef469dae76f151dda18ff74f43da410c5529f7d6fca84f115", null ],
       [ "INACTIVE", "v201708_2_dfp_api_8cs.html#a876ec0c2d966de9cef469dae76f151dda6b273343c454f9c53dcfc9c4ccf171d2", null ],
       [ "ARCHIVED", "v201708_2_dfp_api_8cs.html#a876ec0c2d966de9cef469dae76f151dda75b8b0f4c0aee5b8df95a0541307c9f4", null ]
+    ] ],
+    [ "ContentFilterErrorReason", "v201708_2_dfp_api_8cs.html#ac8d36663b95cd6c7c11e4cc1a4184874", [
+      [ "UNKNOWN", "v201708_2_dfp_api_8cs.html#ac8d36663b95cd6c7c11e4cc1a4184874a696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "WRONG_NUMBER_OF_ARGUMENTS", "v201708_2_dfp_api_8cs.html#ac8d36663b95cd6c7c11e4cc1a4184874ad6433654849fd1709e5deba667900136", null ],
+      [ "ANY_FILTER_NOT_SUPPORTED", "v201708_2_dfp_api_8cs.html#ac8d36663b95cd6c7c11e4cc1a4184874aee5b1ce5d382245c4cea551653a59b67", null ]
     ] ],
     [ "ContentMetadataKeyHierarchyErrorReason", "v201708_2_dfp_api_8cs.html#a04a08bfd87ea8b3d0eee00b0619b9e51", [
       [ "LEVEL_MISSING", "v201708_2_dfp_api_8cs.html#a04a08bfd87ea8b3d0eee00b0619b9e51a401c58c69631caf1ee34a9db858b9425", null ],
@@ -3671,6 +3679,8 @@ var v201708_2_dfp_api_8cs =
       [ "ZERO_COST_PER_UNIT_NOT_SUPPORTED", "v201708_2_dfp_api_8cs.html#a5351ba921e439515ef2b6a4171ce5124a2a0cc3f321c8e18779b07c0976977aca", null ],
       [ "INVALID_PROGRAMMATIC_CREATIVE_SOURCE", "v201708_2_dfp_api_8cs.html#a5351ba921e439515ef2b6a4171ce5124a31897bedd4a4e5c9f27ccd67da7698f2", null ],
       [ "INVALID_NUM_UNITS", "v201708_2_dfp_api_8cs.html#a5351ba921e439515ef2b6a4171ce5124af91a74648419e155cb0ef890aa1470cb", null ],
+      [ "MIX_NATIVE_AND_BANNER_SIZE_NOT_ALLOWED", "v201708_2_dfp_api_8cs.html#a5351ba921e439515ef2b6a4171ce5124a8133da1a8e7b89322e0f998f06c58ad7", null ],
+      [ "CANNOT_UPDATE_SIZES", "v201708_2_dfp_api_8cs.html#a5351ba921e439515ef2b6a4171ce5124a08609d262f09c478fe82ec8495b6eac4", null ],
       [ "INVALID_SPONSORSHIP_CONTRACTED_UNITS_BOUGHT", "v201708_2_dfp_api_8cs.html#a5351ba921e439515ef2b6a4171ce5124aa9b47cf613a33d3930f82c528cadc24c", null ],
       [ "INVALID_PROGRAMMATIC_PRICING_MODEL", "v201708_2_dfp_api_8cs.html#a5351ba921e439515ef2b6a4171ce5124aaf19501be4c210bb0f3b5ae4ea430726", null ],
       [ "UNKNOWN", "v201708_2_dfp_api_8cs.html#a5351ba921e439515ef2b6a4171ce5124a696b031073e74bf2cb98e5ef201d4aa3", null ]
@@ -4000,6 +4010,11 @@ var v201708_2_dfp_api_8cs =
     [ "StatementErrorReason", "v201708_2_dfp_api_8cs.html#a88b0d7cd1fe42a767f1086fffabc2273", [
       [ "VARIABLE_NOT_BOUND_TO_VALUE", "v201708_2_dfp_api_8cs.html#a88b0d7cd1fe42a767f1086fffabc2273acd615242516bb819d99ca8f536ce0d31", null ],
       [ "UNKNOWN", "v201708_2_dfp_api_8cs.html#a88b0d7cd1fe42a767f1086fffabc2273a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "StringFormatErrorReason", "v201708_2_dfp_api_8cs.html#a4baaf0da7901260f8a1d32ca4e374ea9", [
+      [ "UNKNOWN", "v201708_2_dfp_api_8cs.html#a4baaf0da7901260f8a1d32ca4e374ea9a696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "ILLEGAL_CHARS", "v201708_2_dfp_api_8cs.html#a4baaf0da7901260f8a1d32ca4e374ea9adcbb73fe200444cdaf827f2a4ba4e3c6", null ],
+      [ "INVALID_FORMAT", "v201708_2_dfp_api_8cs.html#a4baaf0da7901260f8a1d32ca4e374ea9a252d8e34178da47f2208605a66051241", null ]
     ] ],
     [ "StringLengthErrorReason", "v201708_2_dfp_api_8cs.html#aef1c781080e0eec12107768a566c6f68", [
       [ "TOO_LONG", "v201708_2_dfp_api_8cs.html#aef1c781080e0eec12107768a566c6f68a96307b673d66e1f465af10eaaa8f7f37", null ],

@@ -5,5 +5,6 @@ var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_template_servi
     [ "LineItemTemplateService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_template_service.html#a670061ad0f5a037275c4e8d215170c9d", null ],
     [ "LineItemTemplateService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_template_service.html#a7030cabc94a2a795b235bc762c4d677d", null ],
     [ "LineItemTemplateService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_template_service.html#a248687590715a786cefbb1906ce9c6ef", null ],
-    [ "getLineItemTemplatesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_template_service.html#acb0db309f0e7a2c0777e41e4dab1a3e7", null ]
+    [ "getLineItemTemplatesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_template_service.html#acb0db309f0e7a2c0777e41e4dab1a3e7", null ],
+    [ "getLineItemTemplatesByStatementAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_line_item_template_service.html#a6a069863c5b65ba600426c1794c0933c", null ]
 ];

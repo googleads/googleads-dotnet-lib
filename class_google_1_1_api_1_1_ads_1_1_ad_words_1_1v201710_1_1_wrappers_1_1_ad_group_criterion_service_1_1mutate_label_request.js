@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_criterion_service_1_1mutate_label_request =
-[
-    [ "mutateLabelRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_criterion_service_1_1mutate_label_request.html#a43be436477a09e758e41c44c95d1ca9b", null ],
-    [ "mutateLabelRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_criterion_service_1_1mutate_label_request.html#a61ca1b235dbe6d273a93fe67ae03d45d", null ],
-    [ "operations", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710_1_1_wrappers_1_1_ad_group_criterion_service_1_1mutate_label_request.html#adcd5ea442680637c69c38f80b6b49710", null ]
-];

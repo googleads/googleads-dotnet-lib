@@ -265,10 +265,10 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a dynamic search ad. This ad will have its headline and final URL auto-generated at serving time according to domain name specific information provided by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_dynamic_search_ads_setting.html" title="Setting for controlling Dynamic Search Ads (DSA). Contains the domain name and the language used by t...">DynamicSearchAdsSetting</a> at the campaign level.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_dynamic_search_ad.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_responsive_search_ad.html">ResponsiveSearchAd</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a responsive search ad  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_responsive_search_ad.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a responsive search ad.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_responsive_search_ad.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_goal_optimized_shopping_ad.html">GoalOptimizedShoppingAd</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a goal-optimized Shopping ad (known as Shopping ad (goal-optimized) in the <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a> user interface). A goal-optimized Shopping ad targets multiple advertising channels across Search, <a class="el" href="namespace_google.html">Google</a> Display Network, and YouTube with a focus on retail. This supports ads that display product data (managed using the <a class="el" href="namespace_google.html">Google</a> Merchant Center) as specified in the parent campaign's <a href="ShoppingSetting">Shopping setting</a> as well as ads using advertiser provided asset data.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_goal_optimized_shopping_ad.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a Smart Shopping ad that optimizes towards your goals. A Smart Shopping ad targets multiple advertising channels across Search, <a class="el" href="namespace_google.html">Google</a> Display Network, and YouTube with a focus on retail. This supports ads that display product data (managed using the <a class="el" href="namespace_google.html">Google</a> Merchant Center) as specified in the parent campaign's <a href="ShoppingSetting">Shopping setting</a> as well as ads using advertiser provided asset data.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_goal_optimized_shopping_ad.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_text_ad.html">TextAd</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_text_ad.html" title="Represents a TextAd. This is disabled for AdX when it is contained within Operators: ADD...">TextAd</a>. <span class="constraint AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD, SET.</span>  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_text_ad.html#details">More...</a><br/></td></tr>
@@ -383,7 +383,7 @@ AdxEnabled">This is enabled for AdX.</span>  <a href="class_google_1_1_api_1_1_a
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents violations of a single policy by some text in a field. Violations of a single policy by the same string in multiple places within a field is reported in one instance of this class and only one exemption needs to be filed. Violations of a single policy by two different strings is reported as two separate instances of this class. e.g. If 'ACME' violates 'capitalization' and occurs twice in a text ad it would be represented by one instance. If the ad also contains 'INC' which also violates 'capitalization' it would be represented in a separate instance.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_policy_violation_error.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_policy_finding_error.html">PolicyFindingError</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error indicating that a reviewable was not saved because it contained a policy summary with a PROHIBITED or FULLY_LIMITED policy topic entry.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_policy_finding_error.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error indicating that an entity will be disapproved unless changes are made to it before it is saved. This error occurs when the entity will have a policy summary that includes a PROHIBITED policy topic entry.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_policy_finding_error.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_paging_error.html">PagingError</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error codes for pagination.  <a href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_paging_error.html#details">More...</a><br/></td></tr>
@@ -7453,7 +7453,7 @@ Enumerations</h2></td></tr>
 <p>AdGroups limited to serving Showcase/Merchant ads in shopping results. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ad72a443efd9a5533a63be3330204afa9ac24cc3de4a14284f4dfc46541eb7214e"></a>SHOPPING_GOAL_OPTIMIZED_ADS</em>&nbsp;</td><td class="fielddoc">
-<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html" title="The base class of all ad types. ">Ad</a> group type for goal-optimized Shopping Campaigns. </p>
+<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_ad.html" title="The base class of all ad types. ">Ad</a> group type for Smart Shopping Campaigns. </p>
 </td></tr>
 </table>
 
@@ -7508,7 +7508,7 @@ Enumerations</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a1d3e8fca50313381f5ae8313ee8306cba696b031073e74bf2cb98e5ef201d4aa3"></a>UNKNOWN</em>&nbsp;</td><td class="fielddoc">
 <p>Invalid type. Should not be used except for detecting values that are incorrect, or values that are not yet known to the user. <span class="constraint
-    Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
+        Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a1d3e8fca50313381f5ae8313ee8306cba1e3694515211d22b83d11e850b588c79"></a>OPTIMIZE</em>&nbsp;</td><td class="fielddoc">
 <p>Adwords will optimize your adgroups based on clicks or conversions based on your bidding strategy </p>
@@ -9371,7 +9371,7 @@ Enumerations</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a8dcaa23fcab71a01732e0d070784eec8a696b031073e74bf2cb98e5ef201d4aa3"></a>UNKNOWN</em>&nbsp;</td><td class="fielddoc">
 <p>Invalid type. Should not be used except for detecting values that are incorrect, or values that are not yet known to the user. <span class="constraint
-    Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
+        Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a8dcaa23fcab71a01732e0d070784eec8ae7b1a5c82772e0e055096008cb9883ef"></a>BASE</em>&nbsp;</td><td class="fielddoc">
 <p>This is a regular campaign created by the advertiser. </p>
@@ -9599,14 +9599,14 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a5b89d7059db5b241aa00fe2fed712607ae17d3d1705f1951b44dc51c455b5c456"></a>AFE</em>&nbsp;</td><td class="fielddoc">
 <p>Error pages </p>
-<p><b>Note:</b> Starting with <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html">v201710</a>, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely.</p>
+<p><b>Note:</b> Starting with v201710, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely.</p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a5b89d7059db5b241aa00fe2fed712607acf0f939a7105e13b5f070f61267364bd"></a>BELOW_THE_FOLD</em>&nbsp;</td><td class="fielddoc">
 <p>Below the fold placements </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a5b89d7059db5b241aa00fe2fed712607addbe277f267f119df2ef18a8fe3364ae"></a>CONFLICT</em>&nbsp;</td><td class="fielddoc">
 <p>Military &amp; international conflict </p>
-<p><b>Note:</b> Starting with <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html">v201710</a>, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely. Please use the <code>TRAGEDY</code> label instead of this one going forward.</p>
+<p><b>Note:</b> Starting with v201710, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely. Please use the <code>TRAGEDY</code> label instead of this one going forward.</p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a5b89d7059db5b241aa00fe2fed712607ae2fca8135c2fadca093abd79a6b1c0d2"></a>DP</em>&nbsp;</td><td class="fielddoc">
 <p>Parked domains </p>
@@ -9625,23 +9625,23 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a5b89d7059db5b241aa00fe2fed712607aca83805a79c28a1c8368396e08e1f5d3"></a>UGC_FORUMS</em>&nbsp;</td><td class="fielddoc">
 <p>Forums </p>
-<p><b>Note:</b> Starting with <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html">v201710</a>, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely.</p>
+<p><b>Note:</b> Starting with v201710, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely.</p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a5b89d7059db5b241aa00fe2fed712607a96dfeb0e6b8bcbc6ec8392e7849e5f23"></a>UGC_IMAGES</em>&nbsp;</td><td class="fielddoc">
 <p>Image-sharing pages </p>
-<p><b>Note:</b> Starting with <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html">v201710</a>, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely.</p>
+<p><b>Note:</b> Starting with v201710, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely.</p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a5b89d7059db5b241aa00fe2fed712607aecc77b4a0a41770316597b951a5a70d5"></a>UGC_SOCIAL</em>&nbsp;</td><td class="fielddoc">
 <p>Social networks </p>
-<p><b>Note:</b> Starting with <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html">v201710</a>, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely.</p>
+<p><b>Note:</b> Starting with v201710, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely.</p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a5b89d7059db5b241aa00fe2fed712607a0d89db014e6007376198de977c722d25"></a>UGC_VIDEOS</em>&nbsp;</td><td class="fielddoc">
 <p>Video-sharing pages </p>
-<p><b>Note:</b> Starting with <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html">v201710</a>, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely.</p>
+<p><b>Note:</b> Starting with v201710, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely.</p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a5b89d7059db5b241aa00fe2fed712607a55eac582b941ef00665d988cbcf0577a"></a>SIRENS</em>&nbsp;</td><td class="fielddoc">
 <p>Crime, police &amp; emergency </p>
-<p><b>Note:</b> Starting with <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html">v201710</a>, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely. Please use the <code>TRAGEDY</code> label instead of this one going forward.</p>
+<p><b>Note:</b> Starting with v201710, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely. Please use the <code>TRAGEDY</code> label instead of this one going forward.</p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a5b89d7059db5b241aa00fe2fed712607a5dca85301b784aaae4e8cdf990da6eb2"></a>TRAGEDY</em>&nbsp;</td><td class="fielddoc">
 <p>Tragedy &amp; conflict </p>
@@ -9669,7 +9669,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a5b89d7059db5b241aa00fe2fed712607adfe1226009b9e80f999ed5315dde0508"></a>ALLOWED_GAMBLING_CONTENT</em>&nbsp;</td><td class="fielddoc">
 <p>Allowed gambling content. </p>
-<p><b>Note:</b> Starting with <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201710.html">v201710</a>, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely.</p>
+<p><b>Note:</b> Starting with v201710, this label is deprecated and can only be removed from campaigns - it can no longer be added. A future release will remove this label entirely.</p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a5b89d7059db5b241aa00fe2fed712607a696b031073e74bf2cb98e5ef201d4aa3"></a>UNKNOWN</em>&nbsp;</td><td class="fielddoc">
 <p><span class="constraint Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
@@ -9894,7 +9894,7 @@ Enumerations</h2></td></tr>
 <p>The email address of the sender or the recipient of a snippet email was invalid. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a09d261679ca6c4ed9aa4533ab528e49cad7fbc97663c2441b3575758df050c835"></a>INVALID_ORIGINAL_CONVERSION_TYPE_ID</em>&nbsp;</td><td class="fielddoc">
-<p>When providing a global conversion type id to fork from in an ADD operation, the global conversion type id is not acceptable (i.e.: we don't allow this global conversion type to be forked from) </p>
+<p>Editing the settings for the system-wide default conversion trackers is not permitted in <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a> API. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a09d261679ca6c4ed9aa4533ab528e49caaccdd3686a602099774e778bd7d93f2e"></a>MUST_SET_APP_PLATFORM_AND_APP_CONVERSION_TYPE_TOGETHER</em>&nbsp;</td><td class="fielddoc">
 <p>The AppPlatform and AppConversionType must be set at the same time. It is an error to set just one or the other. </p>
@@ -10719,7 +10719,6 @@ Enumerations</h2></td></tr>
 <p>Cannot create a criterion with an invalid SharedSetType. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ab8ff21214283d7042bc2e964f28f6eaba37459cfb7ee553a7d485b21c40ff5c5d"></a>PLACEMENT_LIST_TYPE_ONLY_ALLOWED_FOR_XBID</em>&nbsp;</td><td class="fielddoc">
-<p>Only Xbid customers can exclude criteria of placement list type. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ab8ff21214283d7042bc2e964f28f6eabaa3a3fe0530122c83e3b2bee2ace1c9c2"></a>MANAGER_CUSTOMER_CANNOT_ADD</em>&nbsp;</td><td class="fielddoc">
 <p>Manager customer is not allowed to add customer exclusion criteria. </p>
@@ -11236,7 +11235,7 @@ Enumerations</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a37af33ffd23366468d45304487e2f62ea696b031073e74bf2cb98e5ef201d4aa3"></a>UNKNOWN</em>&nbsp;</td><td class="fielddoc">
 <p>Invalid status. Should not be used except for detecting values that are incorrect, or values that are not yet known to the user. <span class="constraint
-    Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
+        Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a37af33ffd23366468d45304487e2f62ea5ab32e6ce0b16229fdc25a631220b22c"></a>PROPOSED</em>&nbsp;</td><td class="fielddoc">
 <p>Initial state of the draft, the advertiser can start adding changes with no effect on serving. </p>
@@ -12904,7 +12903,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a1222a6389073d109d34c39b8e9c61471a696b031073e74bf2cb98e5ef201d4aa3"></a>UNKNOWN</em>&nbsp;</td><td class="fielddoc">
 <p>This value cannot be set by the user and sent to the <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a> API servers, as it would generate a <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_rejected_error.html" title="Indicates that a field was rejected due to compatibility issues. ">RejectedError</a>. It can only be received by the user from the <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a> API servers and it means that a new value available in a newer API release version is not known in the current API release version. If the user encounters this value, it means an upgrade is required in order to take advantage of the latest <a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a> API functionality. <span class="constraint
-    Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
+        Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
 </td></tr>
 </table>
 
@@ -13890,7 +13889,7 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a11ab9c40836ff53976b406e4cfa1a675a095c9e300add208f1101991352bc67e1"></a>UKNOWN</em>&nbsp;</td><td class="fielddoc">
-<p>Invalid type to provide default for grubby.Should not be used. <span class="constraint Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
+<p><span class="constraint Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a11ab9c40836ff53976b406e4cfa1a675ac3be3694d35cb5aeacf8299eee3d9da2"></a>RETRACT</em>&nbsp;</td><td class="fielddoc">
 <p>Adjustment reported a retraction. </p>
@@ -14498,7 +14497,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_policy_finding_error.html" title="Error indicating that a reviewable was not saved because it contained a policy summary with a PROHIBI...">PolicyFindingError</a> error codes. </p>
+<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_policy_finding_error.html" title="Error indicating that an entity will be disapproved unless changes are made to it before it is saved...">PolicyFindingError</a> error codes. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a3c632f41a9c7836f11ba10861be99f78ab1d5cd3b02c8eb40c5f096f7dc684eb5"></a>POLICY_FINDING</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
@@ -15487,10 +15486,10 @@ Enumerations</h2></td></tr>
 <p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_customer.html" title="Represents a customer for the CustomerService. ">Customer</a> can not create report of a selected type. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a036a05f8d4be583c7c092502e4aa7f0eaead79ee7184ccde5a844b5f17a4acd57"></a>CLIENT_SELECTOR_NO_CUSTOMER_IDENTIFIER</em>&nbsp;</td><td class="fielddoc">
-<p>Cross client report has an client selector without any valid identifier for a customer. </p>
+<p>Cross-client report has a client selector without any valid identifier for a customer. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a036a05f8d4be583c7c092502e4aa7f0eae88cdddb820c52bbeafff16c1e762e02"></a>CLIENT_SELECTOR_INVALID_CUSTOMER_ID</em>&nbsp;</td><td class="fielddoc">
-<p>Cross client report has an invalid external customer ID in the client selector. </p>
+<p>Cross-client report has an invalid external customer ID in the client selector. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a036a05f8d4be583c7c092502e4aa7f0ea3f25e607ed3630b3e3f1ff50df58636c"></a>REPORT_DEFINITION_ERROR</em>&nbsp;</td><td class="fielddoc">
 </td></tr>
@@ -16676,7 +16675,7 @@ Enumerations</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a56f1e61b8d8836f3f46185d216c3e89ba696b031073e74bf2cb98e5ef201d4aa3"></a>UNKNOWN</em>&nbsp;</td><td class="fielddoc">
 <p>Whether the ad can be expanded is unknown. <span class="constraint
-    Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
+        Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a56f1e61b8d8836f3f46185d216c3e89ba4b25ca1aa7d525452281e62922a02a8f"></a>EXPANDING_UP</em>&nbsp;</td><td class="fielddoc">
 <p>The ad is allowed to expand upward. </p>
@@ -16846,7 +16845,7 @@ Enumerations</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ac5b2fe09521d445b5534c60c82ffb037a696b031073e74bf2cb98e5ef201d4aa3"></a>UNKNOWN</em>&nbsp;</td><td class="fielddoc">
 <p>Invalid status. Should not be used except for detecting values that are incorrect, or values that are not yet known to the user. <span class="constraint
-    Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
+        Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ac5b2fe09521d445b5534c60c82ffb037a6aa51a91f98b50db5edf13a471e12f17"></a>CREATING</em>&nbsp;</td><td class="fielddoc">
 <p>The trial campaign is being created. </p>
@@ -17617,20 +17616,20 @@ Enumerations</h2></td></tr>
 <p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a> value of <a href="WebpageCondition">WebpageCondition</a>. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="adaff49dbd10ed8128da5c0c8d23e04aaae6b391a8d2c4d45902a23a8b6585703d"></a>URL</em>&nbsp;</td><td class="fielddoc">
-<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a> denoting a webpage URL targeting condition. The operator <a href="StringConditionOperator#CONTAINS">StringConditionOperator::CONTAINS</a> will be used for such conditions. </p>
+<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a> denoting a webpage URL targeting condition. Operators <a href="WebpageConditionOperator#CONTAINS">WebpageConditionOperator::CONTAINS</a> and <a href="WebpageConditionOperator#EQUALS">WebpageConditionOperator::EQUALS</a> are supported for such conditions. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="adaff49dbd10ed8128da5c0c8d23e04aaae38583f3a073fa2a86a841b672aba548"></a>CATEGORY</em>&nbsp;</td><td class="fielddoc">
-<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a> denoting a webpage category targeting condition. The operator <a href="StringConditionOperator#EQUALS">StringConditionOperator::EQUALS</a> will be used for such conditions. </p>
+<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a> denoting a webpage category targeting condition. The operator <a href="WebpageConditionOperator#EQUALS">WebpageConditionOperator::EQUALS</a> will be used for such conditions. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="adaff49dbd10ed8128da5c0c8d23e04aaabf4e5952ce83fa2afb613e86eac5b9bf"></a>PAGE_TITLE</em>&nbsp;</td><td class="fielddoc">
-<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a> denoting a webpage title targeting condition. The operator <a href="StringConditionOperator#CONTAINS">StringConditionOperator::CONTAINS</a> will be used for such conditions. </p>
+<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a> denoting a webpage title targeting condition. The operator <a href="WebpageConditionOperator#CONTAINS">WebpageConditionOperator::CONTAINS</a> will be used for such conditions. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="adaff49dbd10ed8128da5c0c8d23e04aaaf23aaffa4c3dbc1b123812b5b1c79a20"></a>PAGE_CONTENT</em>&nbsp;</td><td class="fielddoc">
-<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a> denoting a webpage content targeting condition. The operator <a href="StringConditionOperator#CONTAINS">StringConditionOperator::CONTAINS</a> will be used for such conditions. </p>
+<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a> denoting a webpage content targeting condition. The operator <a href="WebpageConditionOperator#CONTAINS">WebpageConditionOperator::CONTAINS</a> will be used for such conditions. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="adaff49dbd10ed8128da5c0c8d23e04aaa89b362b3a9e73d95cb9e5d308dbf4c5f"></a>CUSTOM_LABEL</em>&nbsp;</td><td class="fielddoc">
 <p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_operand.html" title="A marker interface for entities that can be operated upon in mutate operations. ">Operand</a> denoting a webpage custom label targeting condition.<br/>
- The operator <a href="StringConditionOperator#EQUALS">StringConditionOperator::EQUALS</a> will be used for such conditions. </p>
+ The operator <a href="WebpageConditionOperator#EQUALS">WebpageConditionOperator::EQUALS</a> will be used for such conditions. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="adaff49dbd10ed8128da5c0c8d23e04aaa696b031073e74bf2cb98e5ef201d4aa3"></a>UNKNOWN</em>&nbsp;</td><td class="fielddoc">
 <p><span class="constraint Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span> </p>
@@ -17670,7 +17669,7 @@ Enumerations</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806.html">v201806</a></li>
-    <li class="footer">Generated on Thu Jul 12 2018 12:49:30 for Ads API .NET library by
+    <li class="footer">Generated on Tue Jul 31 2018 15:45:27 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

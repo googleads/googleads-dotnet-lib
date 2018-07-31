@@ -216,7 +216,8 @@ Properties</h2></td></tr>
 <tr class="memdesc:a802ce4560d95c71fa5d7aef4b49b6c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of unique IDs of <a href="User">User</a> objects who are responsible for trafficking the  <a href="#a802ce4560d95c71fa5d7aef4b49b6c9e">More...</a><br/></td></tr>
 <tr class="separator:a802ce4560d95c71fa5d7aef4b49b6c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05cf227f39444e0f337b91c400341f85"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html#a05cf227f39444e0f337b91c400341f85">sellerContactIds</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a05cf227f39444e0f337b91c400341f85"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a href="User">users</a> who are the seller's contacts. This attribute is optional. <span class="constraint Applicable">This attribute is applicable when:</span>  <a href="#a05cf227f39444e0f337b91c400341f85">More...</a><br/></td></tr>
+<tr class="memdesc:a05cf227f39444e0f337b91c400341f85"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a href="User">users</a> who are the seller's contacts. <span class="constraint
+Applicable">This attribute is applicable when:</span>  <a href="#a05cf227f39444e0f337b91c400341f85">More...</a><br/></td></tr>
 <tr class="separator:a05cf227f39444e0f337b91c400341f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4eb59ca5c67154382b2765a1b96616e"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html#ad4eb59ca5c67154382b2765a1b96616e">appliedTeamIds</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:ad4eb59ca5c67154382b2765a1b96616e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The IDs of all teams that the  <a href="#ad4eb59ca5c67154382b2765a1b96616e">More...</a><br/></td></tr>
@@ -345,7 +346,7 @@ Applicable">This attribute is applicable when:</span> </p>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 <p><span class="constraint
 ReadOnly">This attribute is read-only when:</span> </p>
@@ -353,7 +354,7 @@ ReadOnly">This attribute is read-only when:</span> </p>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -406,7 +407,7 @@ Applicable">This attribute is applicable when:</span> </p>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -479,7 +480,7 @@ not using programmatic guaranteed, using sales management. </li>
 <p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html" title="A ">Proposal</a></code>. The percentage value is stored as millipercents, and must be multiples of 10 with the range from 0 to 99990. This attribute is optional and default value is 0. <span class="constraint Applicable">This attribute is applicable when:</span> </p>
 <ul>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -577,14 +578,15 @@ not using programmatic guaranteed, using sales management. </li>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
-<p><span class="constraint ReadOnly">This attribute is read-only when:</span> </p>
+<p><span class="constraint
+ReadOnly">This attribute is read-only when:</span> </p>
 <ul>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -634,7 +636,7 @@ not using programmatic guaranteed, using sales management. </li>
 <p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html" title="A ">Proposal</a></code>. For example, for a flat fee <a href="BillingSource#CONTRACTED">contracted</a> <a href="#billingSource">#billingSource</a>, set this to <a href="BillingBase#REVENUE">BillingBase::REVENUE</a>. This attribute is optional and defaults to <a href="BillingBase#VOLUME">BillingBase::VOLUME</a>. This attribute can be configured as editable after the proposal has been submitted. Please check with your network administrator for editable fields configuration. <span class="constraint Applicable">This attribute is applicable when:</span> </p>
 <ul>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -684,7 +686,7 @@ not using programmatic guaranteed, using sales management. </li>
 <p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html" title="A ">Proposal</a></code>. This attribute is optional and default value is <a href="BillingCap#CAPPED_CUMULATIVE">BillingCap::CAPPED_CUMULATIVE</a>. Either this attribute or <a href="#billingSchedule">#billingSchedule</a> will be used, according to the <a href="#billingSource">#billingSource</a>. This attribute can be configured as editable after the proposal has been submitted. Please check with your network administrator for editable fields configuration. <span class="constraint Applicable">This attribute is applicable when:</span> </p>
 <ul>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -734,7 +736,7 @@ not using programmatic guaranteed, using sales management. </li>
 <p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html" title="A ">Proposal</a></code>. This attribute is optional and default value is <a href="BillingSchedule#PRORATED">BillingSchedule::PRORATED</a>. Either this attribute or <a href="#billingCap">#billingCap</a> will be used, according to the <a href="#billingSource">#billingSource</a>. This attribute can be configured as editable after the proposal has been submitted. Please check with your network administrator for editable fields configuration. <span class="constraint Applicable">This attribute is applicable when:</span> </p>
 <ul>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -784,7 +786,7 @@ not using programmatic guaranteed, using sales management. </li>
 <p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html" title="A ">Proposal</a></code>. This attribute is optional and default value is <a href="BillingSource#THIRD_PARTY_VOLUME">BillingSource::THIRD_PARTY_VOLUME</a>. If the value is <a href="BillingSource#CONTRACTED">BillingSource::CONTRACTED</a>, the <a href="#billingSchedule">#billingSchedule</a> will be used for billing, otherwise the <a href="billingCap">billingCap</a> will be used. This attribute can be configured as editable after the proposal has been submitted. Please check with your network administrator for editable fields configuration. <span class="constraint Applicable">This attribute is applicable when:</span> </p>
 <ul>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -836,7 +838,7 @@ not using programmatic guaranteed, using sales management. </li>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -909,7 +911,7 @@ not using programmatic guaranteed, using sales management. </li>
 <p><code>thirdPartyAdServerId</code> is set to 0, and actual third party ad server name is set here. When <code>thirdPartyAdServerId</code> is not 0, this field is ignored. <span class="constraint Applicable">This attribute is applicable when:</span> </p>
 <ul>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -933,7 +935,7 @@ not using programmatic guaranteed, using sales management. </li>
 </div><div class="memdoc">
 
 <p>The unique ID of corresponding <a href="Order">Order</a>. This will be </p>
-<p><code>null</code> if the <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html" title="A ">Proposal</a></code> has not been pushed to DFP. This attribute is read-only. </p>
+<p><code>null</code> if the <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html" title="A ">Proposal</a></code> has not been pushed to Ad Manager. This attribute is read-only. </p>
 
 </div>
 </div>
@@ -1075,7 +1077,7 @@ Applicable">This attribute is applicable when:</span> </p>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 <p><span class="constraint
 ReadOnly">This attribute is read-only when:</span> </p>
@@ -1083,7 +1085,7 @@ ReadOnly">This attribute is read-only when:</span> </p>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -1386,7 +1388,7 @@ Applicable">This attribute is applicable when:</span> </p>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 <p><span class="constraint
 ReadOnly">This attribute is read-only when:</span> </p>
@@ -1394,7 +1396,7 @@ ReadOnly">This attribute is read-only when:</span> </p>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -1446,7 +1448,7 @@ using programmatic guaranteed, not using sales management. </li>
 </div><div class="memdoc">
 
 <p>The name of the </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html" title="A ">Proposal</a></code>. This value has a maximum length of 255 characters. This value is copied to <a href="Order#name">Order::name</a> when the proposal turns into an order. This attribute can be configured as editable after the proposal has been submitted. Please check with your network administrator for editable fields configuration. This attribute is required. </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html" title="A ">Proposal</a></code>. This value has a maximum length of 255 characters. This value is copied to <a href="Order#name">Order::name</a> when the proposal turns into an order. This attribute can be configured as editable after the proposal has been submitted. Please check with your network administrator for editable fields configuration. <span class="constraint Required">This attribute is required.</span> </p>
 
 </div>
 </div>
@@ -1496,7 +1498,7 @@ using programmatic guaranteed, not using sales management. </li>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -1524,7 +1526,7 @@ not using programmatic guaranteed, using sales management. </li>
 Applicable">This attribute is applicable when:</span> </p>
 <ul>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -1641,17 +1643,18 @@ not using programmatic guaranteed, using sales management. </li>
 <p>The probability to close this </p>
 <p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html" title="A ">Proposal</a></code>. This percentage value is in terms of millipercent, and should be multiples of 10 with the range from 0 to</p>
 <ol type="1">
-<li>This attribute is required and will be used to calculate the revenue in reporting. <span class="constraint Applicable">This attribute is applicable when:</span> <ul>
+<li>This attribute will be used to calculate the revenue in reporting. <span class="constraint Applicable">This attribute is applicable when:</span> <ul>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
-<span class="constraint Required">This attribute is required when:</span> <ul>
+<span class="constraint
+Required">This attribute is required when:</span> <ul>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 </li>
 </ol>
@@ -1705,7 +1708,7 @@ not using programmatic guaranteed, using sales management. </li>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -1801,7 +1804,7 @@ not using programmatic guaranteed, using sales management. </li>
 <p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html" title="A ">Proposal</a></code>. This attribute is optional. This attribute can be configured as editable after the proposal has been submitted. Please check with your network administrator for editable fields configuration. <span class="constraint Applicable">This attribute is applicable when:</span> </p>
 <ul>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -1853,7 +1856,7 @@ not using programmatic guaranteed, using sales management. </li>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -1882,7 +1885,7 @@ not using programmatic guaranteed, using sales management. </li>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -1905,12 +1908,15 @@ not using programmatic guaranteed, using sales management. </li>
 </table>
 </div><div class="memdoc">
 
-<p><a href="User">users</a> who are the seller's contacts. This attribute is optional. <span class="constraint Applicable">This attribute is applicable when:</span> </p>
+<p><a href="User">users</a> who are the seller's contacts. <span class="constraint
+Applicable">This attribute is applicable when:</span> </p>
 <ul>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
 using programmatic guaranteed, not using sales management. </li>
+<li>
+using preferred deals, not using sales management. </li>
 </ul>
 
 </div>
@@ -2006,7 +2012,7 @@ using programmatic guaranteed, not using sales management. </li>
 <p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html" title="A ">Proposal</a></code>. This field is optional. <span class="constraint Applicable">This attribute is applicable when:</span> </p>
 <ul>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -2033,7 +2039,7 @@ not using programmatic guaranteed, using sales management. </li>
 <p><code>Third_Party_Company</code> PQL table. If actual third party ad server is not in the predefined list, this field is set to 0, and actual third party ad server name is set in <code></code>. Third party ad server is optional. By default, this field is 0, and <code></code> is null which means no third party ad server is specified. <span class="constraint Applicable">This attribute is applicable when:</span> </p>
 <ul>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -2083,7 +2089,7 @@ not using programmatic guaranteed, using sales management. </li>
 <p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html" title="A ">Proposal</a></code>. The <a href="#startDateTime">#startDateTime</a> and <a href="#endDateTime">#endDateTime</a> will be returned in this time zone. This attribute is optional and defaults to the network's time zone. <span class="constraint Applicable">This attribute is applicable when:</span> </p>
 <ul>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -2110,7 +2116,7 @@ not using programmatic guaranteed, using sales management. </li>
 <p><code></code>. The percentage value is stored as millipercents, and must be multiples of 10 with the range from 0 to 100000. This attribute is optional and default value is 0. <span class="constraint Applicable">This attribute is applicable when:</span> </p>
 <ul>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
@@ -2162,20 +2168,21 @@ not using programmatic guaranteed, using sales management. </li>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
-<p><span class="constraint ReadOnly">This attribute is read-only when:</span> </p>
+<p><span class="constraint
+ReadOnly">This attribute is read-only when:</span> </p>
 <ul>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
-not using programmatic guaranteed, using sales management. </li>
+not using programmatic, using sales management. </li>
 </ul>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.5NipV7sbrS/dist/github/src/Dfp/v201708/<a class="el" href="v201708_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>dist/github/src/Dfp/v201708/<a class="el" href="v201708_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -2183,7 +2190,7 @@ not using programmatic guaranteed, using sales management. </li>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708.html">v201708</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_proposal.html">Proposal</a></li>
-    <li class="footer">Generated on Thu Jul 12 2018 12:54:24 for Ads API .NET library by
+    <li class="footer">Generated on Tue Jul 31 2018 15:48:29 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

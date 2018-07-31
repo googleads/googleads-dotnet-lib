@@ -6,6 +6,9 @@ var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_cdn_configuration_servic
     [ "CdnConfigurationService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_cdn_configuration_service.html#a44db97920deaace2a84a58c2a65e6162", null ],
     [ "CdnConfigurationService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_cdn_configuration_service.html#a72dc7b9c856570a2057467d394350687", null ],
     [ "createCdnConfigurations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_cdn_configuration_service.html#abf60b51465f2247c6ef281fb28afb248", null ],
+    [ "createCdnConfigurationsAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_cdn_configuration_service.html#abdac788c72244185bd093aa91c6b44bf", null ],
     [ "getCdnConfigurationsByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_cdn_configuration_service.html#a9b56d7ff2fbba8857736390514cfd797", null ],
-    [ "updateCdnConfigurations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_cdn_configuration_service.html#ac297b2e2af75105fabe499821e02882f", null ]
+    [ "getCdnConfigurationsByStatementAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_cdn_configuration_service.html#a17a01ed7a463c0a5ef10c76dbb6e05d7", null ],
+    [ "updateCdnConfigurations", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_cdn_configuration_service.html#ac297b2e2af75105fabe499821e02882f", null ],
+    [ "updateCdnConfigurationsAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_cdn_configuration_service.html#a1f525b2361fec63e05210287f8e59c2c", null ]
 ];

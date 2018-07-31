@@ -216,7 +216,8 @@ Properties</h2></td></tr>
 <tr class="memdesc:ab2c6f758ec1ce8df9e77e10e0aade45b"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of unique IDs of <a href="User">User</a> objects who are responsible for trafficking the  <a href="#ab2c6f758ec1ce8df9e77e10e0aade45b">More...</a><br/></td></tr>
 <tr class="separator:ab2c6f758ec1ce8df9e77e10e0aade45b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaae0e52fb23e9314d54c4423de6cc5b6"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal.html#aaae0e52fb23e9314d54c4423de6cc5b6">sellerContactIds</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aaae0e52fb23e9314d54c4423de6cc5b6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a href="User">users</a> who are the seller's contacts. This attribute is optional. <span class="constraint Applicable">This attribute is applicable when:</span>  <a href="#aaae0e52fb23e9314d54c4423de6cc5b6">More...</a><br/></td></tr>
+<tr class="memdesc:aaae0e52fb23e9314d54c4423de6cc5b6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a href="User">users</a> who are the seller's contacts. <span class="constraint
+Applicable">This attribute is applicable when:</span>  <a href="#aaae0e52fb23e9314d54c4423de6cc5b6">More...</a><br/></td></tr>
 <tr class="separator:aaae0e52fb23e9314d54c4423de6cc5b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03efac1935d3bf0b786cc74b12dcec76"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal.html#a03efac1935d3bf0b786cc74b12dcec76">appliedTeamIds</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a03efac1935d3bf0b786cc74b12dcec76"><td class="mdescLeft">&#160;</td><td class="mdescRight">The IDs of all teams that the  <a href="#a03efac1935d3bf0b786cc74b12dcec76">More...</a><br/></td></tr>
@@ -934,7 +935,7 @@ not using programmatic, using sales management. </li>
 </div><div class="memdoc">
 
 <p>The unique ID of corresponding <a href="Order">Order</a>. This will be </p>
-<p><code>null</code> if the <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal.html" title="A ">Proposal</a></code> has not been pushed to DFP. This attribute is read-only. </p>
+<p><code>null</code> if the <code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal.html" title="A ">Proposal</a></code> has not been pushed to Ad Manager. This attribute is read-only. </p>
 
 </div>
 </div>
@@ -1447,7 +1448,7 @@ using programmatic guaranteed, not using sales management. </li>
 </div><div class="memdoc">
 
 <p>The name of the </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal.html" title="A ">Proposal</a></code>. This value has a maximum length of 255 characters. This value is copied to <a href="Order#name">Order::name</a> when the proposal turns into an order. This attribute can be configured as editable after the proposal has been submitted. Please check with your network administrator for editable fields configuration. This attribute is required. </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal.html" title="A ">Proposal</a></code>. This value has a maximum length of 255 characters. This value is copied to <a href="Order#name">Order::name</a> when the proposal turns into an order. This attribute can be configured as editable after the proposal has been submitted. Please check with your network administrator for editable fields configuration. <span class="constraint Required">This attribute is required.</span> </p>
 
 </div>
 </div>
@@ -1642,13 +1643,14 @@ not using programmatic, using sales management. </li>
 <p>The probability to close this </p>
 <p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal.html" title="A ">Proposal</a></code>. This percentage value is in terms of millipercent, and should be multiples of 10 with the range from 0 to</p>
 <ol type="1">
-<li>This attribute is required and will be used to calculate the revenue in reporting. <span class="constraint Applicable">This attribute is applicable when:</span> <ul>
+<li>This attribute will be used to calculate the revenue in reporting. <span class="constraint Applicable">This attribute is applicable when:</span> <ul>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
 not using programmatic, using sales management. </li>
 </ul>
-<span class="constraint Required">This attribute is required when:</span> <ul>
+<span class="constraint
+Required">This attribute is required when:</span> <ul>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
@@ -1906,12 +1908,15 @@ not using programmatic, using sales management. </li>
 </table>
 </div><div class="memdoc">
 
-<p><a href="User">users</a> who are the seller's contacts. This attribute is optional. <span class="constraint Applicable">This attribute is applicable when:</span> </p>
+<p><a href="User">users</a> who are the seller's contacts. <span class="constraint
+Applicable">This attribute is applicable when:</span> </p>
 <ul>
 <li>
 using programmatic guaranteed, using sales management. </li>
 <li>
 using programmatic guaranteed, not using sales management. </li>
+<li>
+using preferred deals, not using sales management. </li>
 </ul>
 
 </div>
@@ -2177,7 +2182,7 @@ not using programmatic, using sales management. </li>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.5NipV7sbrS/dist/github/src/Dfp/v201711/<a class="el" href="v201711_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>dist/github/src/Dfp/v201711/<a class="el" href="v201711_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -2185,7 +2190,7 @@ not using programmatic, using sales management. </li>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711.html">v201711</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_proposal.html">Proposal</a></li>
-    <li class="footer">Generated on Thu Jul 12 2018 12:54:31 for Ads API .NET library by
+    <li class="footer">Generated on Tue Jul 31 2018 15:48:37 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

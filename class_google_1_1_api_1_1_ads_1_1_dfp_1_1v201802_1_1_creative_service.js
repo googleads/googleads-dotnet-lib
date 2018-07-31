@@ -6,6 +6,9 @@ var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_service =
     [ "CreativeService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_service.html#a170688dfe1c86a79b690aa5e4810bfc4", null ],
     [ "CreativeService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_service.html#a4684ee685eb950638d3230cac4594fbd", null ],
     [ "createCreatives", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_service.html#a34636ae6f231374cf2785881563c0600", null ],
+    [ "createCreativesAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_service.html#a7f3f1ab7c94bbf13e43fd9c3452d0e50", null ],
     [ "getCreativesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_service.html#a4c7a0bba6d45f9fb8284d8dac0f8eb6d", null ],
-    [ "updateCreatives", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_service.html#ae4b5d56d0e4e70abd50f2cf5234fbfa2", null ]
+    [ "getCreativesByStatementAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_service.html#afd234ec4dd38d9bc6b0be749afbb0166", null ],
+    [ "updateCreatives", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_service.html#ae4b5d56d0e4e70abd50f2cf5234fbfa2", null ],
+    [ "updateCreativesAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_creative_service.html#abaf5c12dfc2f1def86a714f765cd3ff1", null ]
 ];

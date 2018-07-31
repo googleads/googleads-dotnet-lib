@@ -197,7 +197,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 
 <p>The bidding strategy metadata. Bidding strategy can be associated using the <a href="">BiddingStrategyConfiguration::biddingStrategyType</a> or the bidding scheme. </p>
 <p>For details on portfolio vs. standard availability, see the <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding guide</a>.</p>
-<p>Starting with v201705, this field cannot be set at the ad group or ad group criterion level.</p>
+<p>Starting with v201705, this field cannot be set at the ad group or ad group criterion level. <span class="constraint CampaignType">This field may not be set.</span></p>
 
 </div>
 </div>
@@ -220,7 +220,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 </div><div class="memdoc">
 
 <p>Id of the bidding strategy to be associated with the campaign, ad group or ad group criteria. A bidding strategy is created using the <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_bidding_strategy_service.html" title="BiddingStrategy Service to get/mutate bidding strategies. This is disabled for AdX. ">BiddingStrategyService</a> ADD operation and is assigned a BiddingStrategyId. The BiddingStrategyId can be shared across campaigns, ad groups and ad group criteria. </p>
-<p>Starting with v201705, this field cannot be set at the ad group or ad group criterion level. <span class="constraint Selectable">This field can be selected using the value "BiddingStrategyId".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint AdxEnabled">This is disabled for AdX.</span> <span class="constraint CampaignType">This field may not be set for campaign channel type SHOPPING.</span></p>
+<p>Starting with v201705, this field cannot be set at the ad group or ad group criterion level. <span class="constraint Selectable">This field can be selected using the value "BiddingStrategyId".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint AdxEnabled">This is disabled for AdX.</span> <span class="constraint CampaignType">This field may not be set.</span></p>
 
 </div>
 </div>
@@ -336,7 +336,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 
 <p>The type of the bidding strategy to be attached. </p>
 <p>For details on portfolio vs. standard availability, see the <a href="https://developers.google.com/adwords/api/docs/guides/bidding">bidding guide</a>.</p>
-<p>Starting with v201705, this field cannot be set at the ad group or ad group criterion level to any value other than <code></code>. <span class="constraint Selectable">This field can be selected using the value "BiddingStrategyType".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint CampaignType">This field may only be set to the values: MANUAL_CPC, PAGE_ONE_PROMOTED, TARGET_SPEND, ENHANCED_CPC, TARGET_CPA, TARGET_ROAS, MAXIMIZE_CONVERSIONS, MAXIMIZE_CONVERSION_VALUE, TARGET_OUTRANK_SHARE, NONE for campaign channel type SEARCH.</span> <span class="constraint CampaignType">This field may only be set to NONE for campaign channel type SHOPPING with ad group type SHOPPING_SHOWCASE_ADS.</span> <span class="constraint CampaignType">This field may only be set to the values: MANUAL_CPC, ENHANCED_CPC, TARGET_ROAS, TARGET_SPEND, NONE for campaign channel type SHOPPING.</span> <span class="constraint CampaignType">This field may only be set to NONE for campaign channel type SHOPPING with campaign channel subtype SHOPPING_UNIVERSAL_ADS.</span> <span class="constraint CampaignType">This field may only be set to NONE for campaign channel type DISPLAY.</span> <span class="constraint CampaignType">This field may only be set to NONE for campaign channel type DISPLAY with campaign channel subtype DISPLAY_MOBILE_APP.</span> <span class="constraint CampaignType">This field may only be set to the values: MANUAL_CPC, MAXIMIZE_CONVERSIONS, NONE, PAGE_ONE_PROMOTED, TARGET_CPA, TARGET_OUTRANK_SHARE, TARGET_ROAS, TARGET_SPEND for campaign channel subtype SEARCH_MOBILE_APP.</span> <span class="constraint CampaignType">This field may only be set to NONE for campaign channel subtype UNIVERSAL_APP_CAMPAIGN.</span> <span class="constraint CampaignType">This field may only be set to the values: MANUAL_CPC, ENHANCED_CPC, TARGET_CPA, TARGET_ROAS, NONE for campaign channel type DISPLAY with campaign channel subtype DISPLAY_GMAIL_AD.</span></p>
+<p>Starting with v201705, this field cannot be set at the ad group or ad group criterion level to any value other than <code></code>. <span class="constraint Selectable">This field can be selected using the value "BiddingStrategyType".</span><span class="constraint Filterable">This field can be filtered on.</span> <span class="constraint CampaignType">This field may only be set to NONE.</span></p>
 
 </div>
 </div>
@@ -434,7 +434,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.5NipV7sbrS/dist/github/src/AdWords/v201802/<a class="el" href="v201802_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
+<li>dist/github/src/AdWords/v201802/<a class="el" href="v201802_2_ad_words_api_8cs.html">AdWordsApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -442,7 +442,7 @@ ReadOnly">This field is read only and will be ignored when sent to the API.</spa
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words.html">AdWords</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802.html">v201802</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_bidding_strategy_configuration.html">BiddingStrategyConfiguration</a></li>
-    <li class="footer">Generated on Thu Jul 12 2018 12:46:18 for Ads API .NET library by
+    <li class="footer">Generated on Tue Jul 31 2018 15:43:28 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

@@ -156,7 +156,7 @@ Properties</h2></td></tr>
 <tr class="memdesc:a88c3cfacae3c69f1c5c050ca128c6a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">The date and time on which the  <a href="#a88c3cfacae3c69f1c5c050ca128c6a52">More...</a><br/></td></tr>
 <tr class="separator:a88c3cfacae3c69f1c5c050ca128c6a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01ac5f12761519416a18d48beaad119a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html#a01ac5f12761519416a18d48beaad119a">autoExtensionDays</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a01ac5f12761519416a18d48beaad119a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of days to allow a line item to deliver past its <a href="#endDateTime">#endDateTime</a>. A maximum of 7 days is allowed. This is a premium feature available for <a href="LineItemType#STANDARD">LineItemType::STANDARD</a> line items.  <a href="#a01ac5f12761519416a18d48beaad119a">More...</a><br/></td></tr>
+<tr class="memdesc:a01ac5f12761519416a18d48beaad119a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of days to allow a line item to deliver past its <a href="#endDateTime">#endDateTime</a>. A maximum of 7 days is allowed. This is feature is only available for Ad Manager 360 accounts.  <a href="#a01ac5f12761519416a18d48beaad119a">More...</a><br/></td></tr>
 <tr class="separator:a01ac5f12761519416a18d48beaad119a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa756ce4189c8ee92f26a4194c950f901"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html#aa756ce4189c8ee92f26a4194c950f901">autoExtensionDaysSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:aa756ce4189c8ee92f26a4194c950f901"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -359,7 +359,7 @@ Properties</h2></td></tr>
 <tr class="memitem:a9c94c8f3b9329cbf4368baa3a97e1525"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html#a9c94c8f3b9329cbf4368baa3a97e1525">viewabilityProviderCompanyIdSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a9c94c8f3b9329cbf4368baa3a97e1525"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7339c1ff566369421acb88669689674"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805.html#a577e0b3873f94ec574d50492ffe8d393">UserConsentEligibility</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html#aa7339c1ff566369421acb88669689674">userConsentEligibility</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa7339c1ff566369421acb88669689674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user.html" title="Represents a user of the system. ">User</a> consent eligibility designation for this line item. Defaults <a href="UserConsentEligibility#NONE">UserConsentEligibility::NONE</a> if the network's EU <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user.html" title="Represents a user of the system. ">User</a> Consent settings limit line items. This field has no effect on serving enforcement unless you opt to "Limit line items" in the network's EU <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user.html" title="Represents a user of the system. ">User</a> Consent settings. See <a href="https://support.google.com/dfp_premium/answer/7673898#limit">https://support.google.com/dfp_premium/answer/7673898#limit</a> for more information.  <a href="#aa7339c1ff566369421acb88669689674">More...</a><br/></td></tr>
+<tr class="memdesc:aa7339c1ff566369421acb88669689674"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user.html" title="Represents a user of the system. ">User</a> consent eligibility designation for this line item. This field is optional and defaults to <a href="UserConsentEligibility#NONE">UserConsentEligibility::NONE</a>. This field has no effect on serving enforcement unless you opt to "Limit line items" in the network's EU <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user.html" title="Represents a user of the system. ">User</a> Consent settings. See the <a href="https://support.google.com/dfp_premium/answer/7673898#limit">Ad Manager Help Center</a> for more information.  <a href="#aa7339c1ff566369421acb88669689674">More...</a><br/></td></tr>
 <tr class="separator:aa7339c1ff566369421acb88669689674"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26871f48052ca70d4d9e9570f1a71480"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html#a26871f48052ca70d4d9e9570f1a71480">userConsentEligibilitySpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a26871f48052ca70d4d9e9570f1a71480"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -520,7 +520,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The number of days to allow a line item to deliver past its <a href="#endDateTime">#endDateTime</a>. A maximum of 7 days is allowed. This is a premium feature available for <a href="LineItemType#STANDARD">LineItemType::STANDARD</a> line items. </p>
+<p>The number of days to allow a line item to deliver past its <a href="#endDateTime">#endDateTime</a>. A maximum of 7 days is allowed. This is feature is only available for Ad Manager 360 accounts. </p>
 
 </div>
 </div>
@@ -856,7 +856,7 @@ The <a href="#roadblockingType">#roadblockingType</a> is <a href="RoadblockingTy
 
 <p>The values of the custom fields associated with this line item. </p>
 
-<p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201805_1_1_set_line_item_custom_field_value.html#a69f1f81af7f3e711b268e9dd1892cb49">Google.Api.Ads.Dfp.Examples.CSharp.v201805.SetLineItemCustomFieldValue.Run()</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201805_1_1_run_report_with_custom_fields.html#ab5f306d62fd3b817b99d841177c6b3fc">Google.Api.Ads.Dfp.Examples.CSharp.v201805.RunReportWithCustomFields.Run()</a>.</p>
+<p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201805_1_1_run_report_with_custom_fields.html#ab5f306d62fd3b817b99d841177c6b3fc">Google.Api.Ads.Dfp.Examples.CSharp.v201805.RunReportWithCustomFields.Run()</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201805_1_1_set_line_item_custom_field_value.html#a69f1f81af7f3e711b268e9dd1892cb49">Google.Api.Ads.Dfp.Examples.CSharp.v201805.SetLineItemCustomFieldValue.Run()</a>.</p>
 
 </div>
 </div>
@@ -1566,7 +1566,7 @@ The <a href="Creative#appliedLabels">Creative::appliedLabels</a> of an associate
 </div><div class="memdoc">
 
 <p>Indicates the line item type of a </p>
-<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item.html">LineItem</a></code>. This attribute is required. The line item type determines the default priority of the line item. More information can be found on the <a href="https://support.google.com/dfp_premium/answer/177279">DFP Help Center</a>. </p>
+<p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item.html">LineItem</a></code>. This attribute is required. The line item type determines the default priority of the line item. More information can be found on the <a href="https://support.google.com/dfp_premium/answer/177279">Ad Manager Help Center</a>. </p>
 
 </div>
 </div>
@@ -2319,7 +2319,7 @@ The <a href="Creative#appliedLabels">Creative::appliedLabels</a> of an associate
 </table>
 </div><div class="memdoc">
 
-<p>Optional <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user.html" title="Represents a user of the system. ">User</a> consent eligibility designation for this line item. Defaults <a href="UserConsentEligibility#NONE">UserConsentEligibility::NONE</a> if the network's EU <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user.html" title="Represents a user of the system. ">User</a> Consent settings limit line items. This field has no effect on serving enforcement unless you opt to "Limit line items" in the network's EU <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user.html" title="Represents a user of the system. ">User</a> Consent settings. See <a href="https://support.google.com/dfp_premium/answer/7673898#limit">https://support.google.com/dfp_premium/answer/7673898#limit</a> for more information. </p>
+<p><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user.html" title="Represents a user of the system. ">User</a> consent eligibility designation for this line item. This field is optional and defaults to <a href="UserConsentEligibility#NONE">UserConsentEligibility::NONE</a>. This field has no effect on serving enforcement unless you opt to "Limit line items" in the network's EU <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_user.html" title="Represents a user of the system. ">User</a> Consent settings. See the <a href="https://support.google.com/dfp_premium/answer/7673898#limit">Ad Manager Help Center</a> for more information. </p>
 
 </div>
 </div>
@@ -2342,7 +2342,7 @@ The <a href="Creative#appliedLabels">Creative::appliedLabels</a> of an associate
 </div><div class="memdoc">
 
 <p></p>
-<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html#aa7339c1ff566369421acb88669689674" title="Optional User consent eligibility designation for this line item. Defaults UserConsentEligibility::NO...">userConsentEligibility</a>, <code>false</code> otherwise. </p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html#aa7339c1ff566369421acb88669689674" title="User consent eligibility designation for this line item. This field is optional and defaults to UserC...">userConsentEligibility</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -2482,7 +2482,7 @@ The <a href="Creative#appliedLabels">Creative::appliedLabels</a> of an associate
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/usr/local/google/users/cseeley/tmp/tmp.5NipV7sbrS/dist/github/src/Dfp/v201805/<a class="el" href="v201805_2_dfp_api_8cs.html">DfpApi.cs</a></li>
+<li>dist/github/src/Dfp/v201805/<a class="el" href="v201805_2_dfp_api_8cs.html">DfpApi.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -2490,7 +2490,7 @@ The <a href="Creative#appliedLabels">Creative::appliedLabels</a> of an associate
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp.html">Dfp</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805.html">v201805</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_line_item_summary.html">LineItemSummary</a></li>
-    <li class="footer">Generated on Thu Jul 12 2018 12:54:42 for Ads API .NET library by
+    <li class="footer">Generated on Tue Jul 31 2018 15:48:48 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

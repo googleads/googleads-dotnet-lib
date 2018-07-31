@@ -6,6 +6,9 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_label_service =
     [ "LabelService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_label_service.html#a78c65f36bf0bcabbf0e8283a6dd0f5b1", null ],
     [ "LabelService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_label_service.html#a7d25fbe804f9f841839b26aeefb588ac", null ],
     [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_label_service.html#a7167a9105484437ed02355826e4cedca", null ],
+    [ "getAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_label_service.html#a7b6e9be65b601ac94ad5c5235616cb2c", null ],
     [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_label_service.html#a6256eca37845000e1b7d4e273faa6564", null ],
-    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_label_service.html#a29efc400bacb487cef548bb373b45f04", null ]
+    [ "mutateAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_label_service.html#a91ecfa6f31f73296b40cc10314356bb7", null ],
+    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_label_service.html#a29efc400bacb487cef548bb373b45f04", null ],
+    [ "queryAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_label_service.html#a399fcfeffa81a046d3d6b2d964d54ebc", null ]
 ];

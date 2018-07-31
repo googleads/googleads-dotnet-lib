@@ -6,5 +6,7 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_perf
     [ "CampaignGroupPerformanceTargetService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_performance_target_service.html#ad97050e0bccca5b442bbf2a95876b146", null ],
     [ "CampaignGroupPerformanceTargetService", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_performance_target_service.html#abeccc4b93a1b2239fa1d503b9cbed8e0", null ],
     [ "get", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_performance_target_service.html#a95edd1a4406ede77504344a8dbd7c9ad", null ],
-    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_performance_target_service.html#af879da07604cfb74134e28ecc40ad6d0", null ]
+    [ "getAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_performance_target_service.html#ac8baf9011603a6d3937de863f5b35542", null ],
+    [ "mutate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_performance_target_service.html#af879da07604cfb74134e28ecc40ad6d0", null ],
+    [ "mutateAsync", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_campaign_group_performance_target_service.html#a35285f58d311edaaac41efdcde04ad9d", null ]
 ];

@@ -6,6 +6,9 @@ var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activity_service =
     [ "ActivityService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activity_service.html#aca68333dbfb135f27ef25841c4e33a39", null ],
     [ "ActivityService", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activity_service.html#a8372abf4654fa8d52b88950eee7b8ed4", null ],
     [ "createActivities", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activity_service.html#a9d26dd92ff6fd6e5270bef3cc59a54b4", null ],
+    [ "createActivitiesAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activity_service.html#aaf242a91c0871254a3f5b354d83245a4", null ],
     [ "getActivitiesByStatement", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activity_service.html#abb69247a264cf5187760beaee0d506e4", null ],
-    [ "updateActivities", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activity_service.html#a8602463fda05df13ffc0cd9760d20767", null ]
+    [ "getActivitiesByStatementAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activity_service.html#af98f55a72b7ad0039d5d8580264862d6", null ],
+    [ "updateActivities", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activity_service.html#a8602463fda05df13ffc0cd9760d20767", null ],
+    [ "updateActivitiesAsync", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201805_1_1_activity_service.html#aac14e09863de4ea406d4af555e4b2593", null ]
 ];
