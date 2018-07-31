@@ -19,89 +19,98 @@ using Google.Api.Ads.Dfp.Util.v201805;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example runs a report from a saved query.
-  /// </summary>
-  public class RunSavedQuery : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example runs a report from a saved query.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example runs a report from a saved query.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      RunSavedQuery codeExample = new RunSavedQuery();
-      Console.WriteLine(codeExample.Description);
-
-      // Set the ID of the saved query to run. This ID is part of the URL in the DFP UI.
-      long savedQueryId = long.Parse(_T("INSERT_SAVED_QUERY_ID_HERE"));
-      codeExample.Run(new DfpUser(), savedQueryId);
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user, long savedQueryId) {
-      using (ReportService reportService = (ReportService) user.GetService(
-          DfpService.v201805.ReportService)) {
-
-        // Set the file path where the report will be saved.
-        String filePath = _T("INSERT_FILE_PATH_HERE");
-
-        // Create statement to retrieve the saved query.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("id = :id")
-            .OrderBy("id ASC")
-            .Limit(1)
-            .AddValue("id", savedQueryId);
-
-        SavedQueryPage page =
-            reportService.getSavedQueriesByStatement(statementBuilder.ToStatement());
-        SavedQuery savedQuery = page.results[0];
-
-        if (!savedQuery.isCompatibleWithApiVersion) {
-          throw new InvalidOperationException("Saved query is not compatible with this " +
-              "API version");
+    public class RunSavedQuery : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This code example runs a report from a saved query."; }
         }
 
-        // Optionally modify the query.
-        ReportQuery reportQuery = savedQuery.reportQuery;
-        reportQuery.adUnitView = ReportQueryAdUnitView.HIERARCHICAL;
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            RunSavedQuery codeExample = new RunSavedQuery();
+            Console.WriteLine(codeExample.Description);
 
-        // Create a report job using the saved query.
-        ReportJob reportJob = new ReportJob();
-        reportJob.reportQuery = reportQuery;
-
-        try {
-          // Run report.
-          reportJob = reportService.runReportJob(reportJob);
-
-          ReportUtilities reportUtilities = new ReportUtilities(reportService, reportJob.id);
-
-          // Set download options.
-          ReportDownloadOptions options = new ReportDownloadOptions();
-          options.exportFormat = ExportFormat.CSV_DUMP;
-          options.useGzipCompression = true;
-          reportUtilities.reportDownloadOptions = options;
-
-          // Download the report.
-          using (ReportResponse reportResponse = reportUtilities.GetResponse()) {
-            reportResponse.Save(filePath);
-          }
-          Console.WriteLine("Report saved to \"{0}\".", filePath);
-
-        } catch (Exception e) {
-          Console.WriteLine("Failed to run saved query. Exception says \"{0}\"",
-              e.Message);
+            // Set the ID of the saved query to run. This ID is part of the URL in the DFP UI.
+            long savedQueryId = long.Parse(_T("INSERT_SAVED_QUERY_ID_HERE"));
+            codeExample.Run(new DfpUser(), savedQueryId);
         }
-      }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user, long savedQueryId)
+        {
+            using (ReportService reportService =
+                (ReportService) user.GetService(DfpService.v201805.ReportService))
+            {
+                // Set the file path where the report will be saved.
+                String filePath = _T("INSERT_FILE_PATH_HERE");
+
+                // Create statement to retrieve the saved query.
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("id = :id")
+                    .OrderBy("id ASC")
+                    .Limit(1)
+                    .AddValue("id", savedQueryId);
+
+                SavedQueryPage page =
+                    reportService.getSavedQueriesByStatement(statementBuilder.ToStatement());
+                SavedQuery savedQuery = page.results[0];
+
+                if (!savedQuery.isCompatibleWithApiVersion)
+                {
+                    throw new InvalidOperationException("Saved query is not compatible with this " +
+                        "API version");
+                }
+
+                // Optionally modify the query.
+                ReportQuery reportQuery = savedQuery.reportQuery;
+                reportQuery.adUnitView = ReportQueryAdUnitView.HIERARCHICAL;
+
+                // Create a report job using the saved query.
+                ReportJob reportJob = new ReportJob();
+                reportJob.reportQuery = reportQuery;
+
+                try
+                {
+                    // Run report.
+                    reportJob = reportService.runReportJob(reportJob);
+
+                    ReportUtilities reportUtilities =
+                        new ReportUtilities(reportService, reportJob.id);
+
+                    // Set download options.
+                    ReportDownloadOptions options = new ReportDownloadOptions();
+                    options.exportFormat = ExportFormat.CSV_DUMP;
+                    options.useGzipCompression = true;
+                    reportUtilities.reportDownloadOptions = options;
+
+                    // Download the report.
+                    using (ReportResponse reportResponse = reportUtilities.GetResponse())
+                    {
+                        reportResponse.Save(filePath);
+                    }
+
+                    Console.WriteLine("Report saved to \"{0}\".", filePath);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to run saved query. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

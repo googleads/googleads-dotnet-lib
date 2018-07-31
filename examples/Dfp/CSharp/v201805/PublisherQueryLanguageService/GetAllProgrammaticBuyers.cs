@@ -20,82 +20,91 @@ using Google.Api.Ads.Dfp.v201805;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This example gets all programmatic buyers in your network using the
-  /// Programmatic_Buyer table.
-  /// </summary>
-  public class GetAllProgrammaticBuyers : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example gets all programmatic buyers in your network using the
+    /// Programmatic_Buyer table.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example gets all programmatic buyers in your network using the "
-            + "Programmatic_Buyer table.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetAllProgrammaticBuyers codeExample = new GetAllProgrammaticBuyers();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (PublisherQueryLanguageService pqlService =
-          (PublisherQueryLanguageService) user.GetService(
-              DfpService.v201805.PublisherQueryLanguageService)) {
-
-        // Create statement to select all programmatic buyers.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Select("BuyerAccountId, Name")
-            .From("Programmatic_Buyer")
-            .OrderBy("BuyerAccountId ASC")
-            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-
-        int resultSetSize = 0;
-        List<Row> allRows = new List<Row>();
-        ResultSet resultSet;
-
-        try {
-          do {
-            // Get programmatic buyers.
-            resultSet = pqlService.select(statementBuilder.ToStatement());
-
-            // Collect all programmatic buyers from each page.
-            allRows.AddRange(resultSet.rows);
-
-            // Display results.
-            Console.WriteLine(PqlUtilities.ResultSetToString(resultSet));
-
-            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-            resultSetSize = resultSet.rows == null ? 0 : resultSet.rows.Length;
-          } while (resultSetSize == StatementBuilder.SUGGESTED_PAGE_LIMIT);
-
-          Console.WriteLine("Number of results found: " + allRows.Count);
-
-          // Optionally, save all rows to a CSV.
-          // Get a string array representation of the data rows.
-          resultSet.rows = allRows.ToArray();
-          List<String[]> rows = PqlUtilities.ResultSetToStringArrayList(resultSet);
-
-          // Write the contents to a csv file.
-          CsvFile file = new CsvFile();
-          file.Headers.AddRange(rows[0]);
-          file.Records.AddRange(rows.GetRange(1, rows.Count - 1).ToArray());
-          file.Write("Programmatic_Buyers_" + this.GetTimeStamp() + ".csv");
-        } catch (Exception e) {
-          Console.WriteLine("Failed to get programmatic buyers. Exception says \"{0}\"",
-              e.Message);
+    public class GetAllProgrammaticBuyers : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This example gets all programmatic buyers in your network using the " +
+                    "Programmatic_Buyer table.";
+            }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetAllProgrammaticBuyers codeExample = new GetAllProgrammaticBuyers();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (PublisherQueryLanguageService pqlService =
+                (PublisherQueryLanguageService) user.GetService(DfpService.v201805
+                    .PublisherQueryLanguageService))
+            {
+                // Create statement to select all programmatic buyers.
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Select("BuyerAccountId, Name").From("Programmatic_Buyer")
+                    .OrderBy("BuyerAccountId ASC")
+                    .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+                int resultSetSize = 0;
+                List<Row> allRows = new List<Row>();
+                ResultSet resultSet;
+
+                try
+                {
+                    do
+                    {
+                        // Get programmatic buyers.
+                        resultSet = pqlService.select(statementBuilder.ToStatement());
+
+                        // Collect all programmatic buyers from each page.
+                        allRows.AddRange(resultSet.rows);
+
+                        // Display results.
+                        Console.WriteLine(PqlUtilities.ResultSetToString(resultSet));
+
+                        statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+                        resultSetSize = resultSet.rows == null ? 0 : resultSet.rows.Length;
+                    } while (resultSetSize == StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+                    Console.WriteLine("Number of results found: " + allRows.Count);
+
+                    // Optionally, save all rows to a CSV.
+                    // Get a string array representation of the data rows.
+                    resultSet.rows = allRows.ToArray();
+                    List<String[]> rows = PqlUtilities.ResultSetToStringArrayList(resultSet);
+
+                    // Write the contents to a csv file.
+                    CsvFile file = new CsvFile();
+                    file.Headers.AddRange(rows[0]);
+                    file.Records.AddRange(rows.GetRange(1, rows.Count - 1).ToArray());
+                    file.Write("Programmatic_Buyers_" + this.GetTimeStamp() + ".csv");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to get programmatic buyers. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

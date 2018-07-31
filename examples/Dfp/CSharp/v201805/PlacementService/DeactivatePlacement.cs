@@ -19,92 +19,114 @@ using Google.Api.Ads.Dfp.v201805;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example deactivates a placement. To determine which
-  /// placements exist, run GetAllPlacements.cs.
-  /// </summary>
-  public class DeactivatePlacement : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example deactivates a placement. To determine which
+    /// placements exist, run GetAllPlacements.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example deactivates a placement. To determine which " +
-            "placements exist, run GetAllPlacements.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      DeactivatePlacement codeExample = new DeactivatePlacement();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (PlacementService placementService =
-          (PlacementService) user.GetService(DfpService.v201805.PlacementService)) {
-
-        // Create statement to select active placements.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("status = :status")
-            .OrderBy("id ASC")
-            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-            .AddValue("status", InventoryStatus.ACTIVE.ToString());
-
-        // Sets default for page.
-        PlacementPage page = new PlacementPage();
-        List<string> placementIds = new List<string>();
-
-        try {
-          do {
-            // Get placements by statement.
-            page = placementService.getPlacementsByStatement(statementBuilder.ToStatement());
-
-            if (page.results != null) {
-              int i = page.startIndex;
-              foreach (Placement placement in page.results) {
-                Console.WriteLine("{0}) Placement with ID ='{1}', name ='{2}', and status ='{3}'" +
-                    " will be deactivated.", i, placement.id, placement.name, placement.status);
-                placementIds.Add(placement.id.ToString());
-                i++;
-              }
+    public class DeactivatePlacement : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example deactivates a placement. To determine which " +
+                    "placements exist, run GetAllPlacements.cs.";
             }
-
-            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-
-          Console.WriteLine("Number of placements to be deactivated: {0}", placementIds.Count);
-
-          if (placementIds.Count > 0) {
-            // Modify statement for action.
-            statementBuilder.RemoveLimitAndOffset();
-
-            // Create action.
-            DeactivatePlacements action = new DeactivatePlacements();
-
-            // Perform action.
-            UpdateResult result = placementService.performPlacementAction(action,
-                statementBuilder.ToStatement());
-
-            // Display results.
-            if (result != null && result.numChanges > 0) {
-              Console.WriteLine("Number of placements deactivated: {0}", result.numChanges);
-            } else {
-              Console.WriteLine("No placements were deactivated.");
-            }
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to deactivate placements. Exception says \"{0}\"",
-              e.Message);
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            DeactivatePlacement codeExample = new DeactivatePlacement();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (PlacementService placementService =
+                (PlacementService) user.GetService(DfpService.v201805.PlacementService))
+            {
+                // Create statement to select active placements.
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("status = :status")
+                    .OrderBy("id ASC")
+                    .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+                    .AddValue("status", InventoryStatus.ACTIVE.ToString());
+
+                // Sets default for page.
+                PlacementPage page = new PlacementPage();
+                List<string> placementIds = new List<string>();
+
+                try
+                {
+                    do
+                    {
+                        // Get placements by statement.
+                        page = placementService.getPlacementsByStatement(statementBuilder
+                            .ToStatement());
+
+                        if (page.results != null)
+                        {
+                            int i = page.startIndex;
+                            foreach (Placement placement in page.results)
+                            {
+                                Console.WriteLine(
+                                    "{0}) Placement with ID ='{1}', name ='{2}', and " +
+                                    "status ='{3}' will be deactivated.",
+                                    i, placement.id, placement.name, placement.status);
+                                placementIds.Add(placement.id.ToString());
+                                i++;
+                            }
+                        }
+
+                        statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+                    } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+                    Console.WriteLine("Number of placements to be deactivated: {0}",
+                        placementIds.Count);
+
+                    if (placementIds.Count > 0)
+                    {
+                        // Modify statement for action.
+                        statementBuilder.RemoveLimitAndOffset();
+
+                        // Create action.
+                        DeactivatePlacements action = new DeactivatePlacements();
+
+                        // Perform action.
+                        UpdateResult result =
+                            placementService.performPlacementAction(action,
+                                statementBuilder.ToStatement());
+
+                        // Display results.
+                        if (result != null && result.numChanges > 0)
+                        {
+                            Console.WriteLine("Number of placements deactivated: {0}",
+                                result.numChanges);
+                        }
+                        else
+                        {
+                            Console.WriteLine("No placements were deactivated.");
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to deactivate placements. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

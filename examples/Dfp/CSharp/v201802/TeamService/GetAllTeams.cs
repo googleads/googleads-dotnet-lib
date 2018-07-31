@@ -11,78 +11,82 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201802;
 using Google.Api.Ads.Dfp.v201802;
+
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This example gets all teams.
-  /// </summary>
-  public class GetAllTeams : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example gets all teams.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example gets all teams.";
-      }
-    }
+    public class GetAllTeams : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This example gets all teams."; }
+        }
 
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetAllTeams codeExample = new GetAllTeams();
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new DfpUser());
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get teams. Exception says \"{0}\"",
-            e.Message);
-      }
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser dfpUser) {
-      using (TeamService teamService =
-          (TeamService) dfpUser.GetService(DfpService.v201802.TeamService)) {
-
-        // Create a statement to select teams.
-        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .OrderBy("id ASC")
-            .Limit(pageSize);
-
-        // Retrieve a small amount of teams at a time, paging through until all
-        // teams have been retrieved.
-        int totalResultSetSize = 0;
-        do {
-          TeamPage page = teamService.getTeamsByStatement(
-              statementBuilder.ToStatement());
-
-          // Print out some information for each team.
-          if (page.results != null) {
-            totalResultSetSize = page.totalResultSetSize;
-            int i = page.startIndex;
-            foreach (Team team in page.results) {
-              Console.WriteLine(
-                  "{0}) Team with ID {1} and name \"{2}\" was found.",
-                  i++,
-                  team.id,
-                  team.name
-              );
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetAllTeams codeExample = new GetAllTeams();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new DfpUser());
             }
-          }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to get teams. Exception says \"{0}\"", e.Message);
+            }
+        }
 
-          statementBuilder.IncreaseOffsetBy(pageSize);
-        } while (statementBuilder.GetOffset() < totalResultSetSize);
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser dfpUser)
+        {
+            using (TeamService teamService =
+                (TeamService) dfpUser.GetService(DfpService.v201802.TeamService))
+            {
+                // Create a statement to select teams.
+                int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+                StatementBuilder statementBuilder =
+                    new StatementBuilder().OrderBy("id ASC").Limit(pageSize);
 
-        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
-      }
+                // Retrieve a small amount of teams at a time, paging through until all
+                // teams have been retrieved.
+                int totalResultSetSize = 0;
+                do
+                {
+                    TeamPage page = teamService.getTeamsByStatement(statementBuilder.ToStatement());
+
+                    // Print out some information for each team.
+                    if (page.results != null)
+                    {
+                        totalResultSetSize = page.totalResultSetSize;
+                        int i = page.startIndex;
+                        foreach (Team team in page.results)
+                        {
+                            Console.WriteLine("{0}) Team with ID {1} and name \"{2}\" was found.",
+                                i++, team.id, team.name);
+                        }
+                    }
+
+                    statementBuilder.IncreaseOffsetBy(pageSize);
+                } while (statementBuilder.GetOffset() < totalResultSetSize);
+
+                Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+            }
+        }
     }
-  }
 }

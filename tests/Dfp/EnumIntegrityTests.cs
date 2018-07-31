@@ -19,47 +19,54 @@ using NUnit.Framework;
 
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.Dfp.Tests {
-
-  /// <summary>
-  /// UnitTests for service creation.
-  /// </summary>
-  [TestFixture]
-  [Category("Smoke")]
-  public class EnumIntegrityTests : BaseTests {
-    private const string ROOT_NAMESPACE = "Google.Api.Ads.Dfp.";
-
+namespace Google.Api.Ads.Dfp.Tests
+{
     /// <summary>
-    /// Default public constructor.
+    /// UnitTests for service creation.
     /// </summary>
-    public EnumIntegrityTests()
-      : base() {
+    [TestFixture]
+    [Category("Smoke")]
+    public class EnumIntegrityTests : BaseTests
+    {
+        private const string ROOT_NAMESPACE = "Google.Api.Ads.Dfp.";
+
+        /// <summary>
+        /// Default public constructor.
+        /// </summary>
+        public EnumIntegrityTests() : base()
+        {
+        }
+
+        /// <summary>
+        /// Test whether enum values are same across versions.
+        /// </summary>
+        [Test]
+        public void TestEnumValues()
+        {
+            Dictionary<string, int> lookup = new Dictionary<string, int>();
+
+            // Enumerate through each of the enums and their fields.
+            StubIntegrityTestHelper.EnumerateEnumFields<DfpService>(ROOT_NAMESPACE,
+
+                // For each matching enum and field, process it.
+                delegate(string hashedFieldName, int enumValue)
+                {
+                    // If this key exists in the lookup table, then the value of that
+                    // entry should match the value of the enum field we are examining.
+                    int existingEnumValue = 0;
+                    if (lookup.TryGetValue(hashedFieldName, out existingEnumValue))
+                    {
+                        Assert.AreEqual(existingEnumValue, enumValue,
+                            string.Format(
+                                "Enum value of {0} doesn't match. Old value: {1}, new value: {2}",
+                                hashedFieldName, existingEnumValue, enumValue));
+                    }
+                    else
+                    {
+                        // Otherwise, this is a new enum type / field. Add it to the lookup map.
+                        lookup[hashedFieldName] = enumValue;
+                    }
+                });
+        }
     }
-
-    /// <summary>
-    /// Test whether enum values are same across versions.
-    /// </summary>
-    [Test]
-    public void TestEnumValues() {
-      Dictionary<string, int> lookup = new Dictionary<string, int>();
-
-      // Enumerate through each of the enums and their fields.
-      StubIntegrityTestHelper.EnumerateEnumFields<DfpService>(ROOT_NAMESPACE,
-
-        // For each matching enum and field, process it.
-        delegate(string hashedFieldName, int enumValue) {
-          // If this key exists in the lookup table, then the value of that
-          // entry should match the value of the enum field we are examining.
-          int existingEnumValue = 0;
-          if (lookup.TryGetValue(hashedFieldName, out existingEnumValue)) {
-            Assert.AreEqual(existingEnumValue, enumValue,
-              string.Format("Enum value of {0} doesn't match. Old value: {1}, new value: {2}",
-                  hashedFieldName, existingEnumValue, enumValue));
-          } else {
-            // Otherwise, this is a new enum type / field. Add it to the lookup map.
-            lookup[hashedFieldName] = enumValue;
-          }
-        });
-    }
-  }
 }

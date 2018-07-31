@@ -13,30 +13,31 @@
 // limitations under the License.
 
 using Google.Api.Ads.Common.Lib;
+
 using System.Xml;
 
-namespace Google.Api.Ads.Common.Logging {
-
-  /// <summary>
-  /// Listens to SOAP messages sent and received by this library.
-  /// </summary>
-  public interface SoapListener : Configurable {
-
+namespace Google.Api.Ads.Common.Logging
+{
     /// <summary>
-    /// Initializes the listener for handling an API call.
+    /// Listens to SOAP messages sent and received by this library.
     /// </summary>
-    void InitForCall();
+    public interface SoapListener : Configurable
+    {
+        /// <summary>
+        /// Initializes the listener for handling an API call.
+        /// </summary>
+        void InitForCall();
 
-    /// <summary>
-    /// Handles the request and response for a message.
-    /// </summary>
-    /// <param name="requestInfo">Request info.</param>
-    /// <param name="responseInfo">Response info.</param>
-    void HandleMessage(RequestInfo requestInfo, ResponseInfo responseInfo);
+        /// <summary>
+        /// Handles the request and response for a message.
+        /// </summary>
+        /// <param name="requestInfo">Request info.</param>
+        /// <param name="responseInfo">Response info.</param>
+        void HandleMessage(RequestInfo requestInfo, ResponseInfo responseInfo);
 
-    /// <summary>
-    /// Cleans up any resources after an API call.
-    /// </summary>
-    void CleanupAfterCall();
-  }
+        /// <summary>
+        /// Cleans up any resources after an API call.
+        /// </summary>
+        void CleanupAfterCall();
+    }
 }

@@ -13,6 +13,7 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.v201802;
+
 using System;
 using System.Globalization;
 
@@ -21,7 +22,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201802 {
   /// <summary>
   /// Class for building report queries.
   /// </summary>
-  public class ReportQueryBuilder : IReportQueryBuilder<ReportQueryBuilder,
+  public class ReportQueryBuilder : IReportQueryBuilder<ReportQueryBuilder, ReportQuery,
       ReportDefinitionReportType, ReportDefinitionDateRangeType> {
 
     /// <summary>
@@ -30,6 +31,15 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201802 {
     private ReportDefinition reportDefinition = new ReportDefinition() {
       selector = new Selector()
     };
+
+    /// <summary>
+    /// Gets the report definition.
+    /// </summary>
+    internal ReportDefinition ReportDefinition {
+      get {
+        return reportDefinition;
+      }
+    }
 
     /// <summary>
     /// Checks if the date format is in yyyyMMdd format.
@@ -175,8 +185,8 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201802 {
     /// <returns>
     /// The query.
     /// </returns>
-    public string Build() {
-      return reportDefinition.ToQuery();
+    public ReportQuery Build() {
+      return new ReportQuery(this);
     }
   }
 }

@@ -16,16 +16,18 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Google.Api.Ads.Common.Lib {
-  /// <summary>
-  /// Lists all the services available through this library.
-  /// </summary>
-  public abstract class AdsService {
+namespace Google.Api.Ads.Common.Lib
+{
     /// <summary>
-    /// Gets all service types defined in this service.
+    /// Lists all the services available through this library.
     /// </summary>
-    /// <returns>The nested types that define service versions under this
-    /// service.</returns>
-    public abstract Type[] GetServiceTypes();
-  }
+    public abstract class AdsService
+    {
+        /// <summary>
+        /// Gets all service types defined in this service.
+        /// </summary>
+        /// <returns>The nested types that define service versions under this
+        /// service.</returns>
+        public abstract Type[] GetServiceTypes();
+    }
 }

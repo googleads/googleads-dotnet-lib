@@ -14,18 +14,21 @@
 
 using System;
 
-namespace Google.Api.Ads.Common.Lib {
-  /// <summary>
-  /// Direction of SOAP message.
-  /// </summary>
-  public enum SoapMessageDirection {
+namespace Google.Api.Ads.Common.Lib
+{
     /// <summary>
-    /// Response from the server.
+    /// Direction of SOAP message.
     /// </summary>
-    IN,
-    /// <summary>
-    /// Request to the server.
-    /// </summary>
-    OUT
-  }
+    public enum SoapMessageDirection
+    {
+        /// <summary>
+        /// Response from the server.
+        /// </summary>
+        IN,
+
+        /// <summary>
+        /// Request to the server.
+        /// </summary>
+        OUT
+    }
 }

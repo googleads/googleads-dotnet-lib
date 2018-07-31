@@ -21,42 +21,49 @@ using System.Runtime.Serialization;
 using System.Security.Permissions;
 using System.Xml.Serialization;
 
-namespace Google.Api.Ads.Common.Util {
-  /// <summary>
-  /// Custom exception class for handling csv errors.
-  /// </summary>
-  [Serializable]
-  public class CsvException : AdsException {
+namespace Google.Api.Ads.Common.Util
+{
     /// <summary>
-    /// Public constructor.
+    /// Custom exception class for handling csv errors.
     /// </summary>
-    public CsvException() : base() {
-    }
+    [Serializable]
+    public class CsvException : AdsException
+    {
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        public CsvException() : base()
+        {
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="message">Error message for this API exception.</param>
-    public CsvException(string message) : base(message) {
-    }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="message">Error message for this API exception.</param>
+        public CsvException(string message) : base(message)
+        {
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="message">Error message for this API exception.</param>
-    /// <param name="innerException">Inner exception, if any.</param>
-    public CsvException(string message, Exception innerException)
-        : base(message, innerException) {
-    }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="message">Error message for this API exception.</param>
+        /// <param name="innerException">Inner exception, if any.</param>
+        public CsvException(string message, Exception innerException) : base(message,
+            innerException)
+        {
+        }
 
-    /// <summary>
-    /// Protected constructor. Used by serialization frameworks while
-    /// deserializing an exception object.
-    /// </summary>
-    /// <param name="info">Info about the serialization context.</param>
-    /// <param name="context">A streaming context that represents the
-    /// serialization stream.</param>
-    protected CsvException(SerializationInfo info, StreamingContext context) : base(info, context) {
+        /// <summary>
+        /// Protected constructor. Used by serialization frameworks while
+        /// deserializing an exception object.
+        /// </summary>
+        /// <param name="info">Info about the serialization context.</param>
+        /// <param name="context">A streaming context that represents the
+        /// serialization stream.</param>
+        protected CsvException(SerializationInfo info, StreamingContext context) : base(info,
+            context)
+        {
+        }
     }
-  }
 }

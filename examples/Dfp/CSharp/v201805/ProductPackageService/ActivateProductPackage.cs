@@ -19,98 +19,118 @@ using Google.Api.Ads.Dfp.v201805;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example activates a product package. To determine which product packages exist,
-  /// run GetAllProductPackages.cs.
-  ///       ProductPackageService.performProductPackageAction
-  /// </summary>
-  public class ActivateProductPackage : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example activates a product package. To determine which product packages exist,
+    /// run GetAllProductPackages.cs.
+    ///       ProductPackageService.performProductPackageAction
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example activates a product package. To determine which product " +
-            "packages exist, run GetAllProductPackages.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      ActivateProductPackage codeExample = new ActivateProductPackage();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (ProductPackageService productPackageService =
-          (ProductPackageService) user.GetService(DfpService.v201805.ProductPackageService)) {
-
-        // Set the ID of the product package.
-        long productPackageId = long.Parse(_T("INSERT_PRODUCT_PACKAGE_ID_HERE"));
-
-        // Create statement to select the product package.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("id = :id")
-            .OrderBy("id ASC")
-            .Limit(1)
-            .AddValue("id", productPackageId);
-
-        // Set default for page.
-        ProductPackagePage page = new ProductPackagePage();
-        List<string> productPackageIds = new List<string>();
-        int i = 0;
-
-        try {
-          do {
-            // Get product packages by statement.
-            page = productPackageService.getProductPackagesByStatement(
-                statementBuilder.ToStatement());
-
-            if (page.results != null) {
-              foreach (ProductPackage productPackage in page.results) {
-                Console.WriteLine("{0}) Product package with ID = '{1}', name = '{2}', and " +
-                    "status ='{3}' will be activated.", i++, productPackage.id,
-                    productPackage.name, productPackage.status);
-                productPackageIds.Add(productPackage.id.ToString());
-              }
+    public class ActivateProductPackage : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return
+                    "This code example activates a product package. To determine which product " +
+                    "packages exist, run GetAllProductPackages.cs.";
             }
-
-            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-
-          Console.WriteLine("Number of product packages to be activated: {0}",
-              productPackageIds.Count);
-
-          if (productPackageIds.Count > 0) {
-            // Modify statement for action.
-            statementBuilder.RemoveLimitAndOffset();
-
-            // Create action.
-            ActivateProductPackages action = new ActivateProductPackages();
-
-            // Perform action.
-            UpdateResult result = productPackageService.performProductPackageAction(action,
-                statementBuilder.ToStatement());
-
-            // Display results.
-            if (result != null && result.numChanges > 0) {
-              Console.WriteLine("Number of product packages activated: {0}", result.numChanges);
-            } else {
-              Console.WriteLine("No product packages were activated.");
-            }
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to activate product packages. Exception says \"{0}\"",
-              e.Message);
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            ActivateProductPackage codeExample = new ActivateProductPackage();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (ProductPackageService productPackageService =
+                (ProductPackageService) user.GetService(DfpService.v201805.ProductPackageService))
+            {
+                // Set the ID of the product package.
+                long productPackageId = long.Parse(_T("INSERT_PRODUCT_PACKAGE_ID_HERE"));
+
+                // Create statement to select the product package.
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("id = :id")
+                    .OrderBy("id ASC")
+                    .Limit(1)
+                    .AddValue("id", productPackageId);
+
+                // Set default for page.
+                ProductPackagePage page = new ProductPackagePage();
+                List<string> productPackageIds = new List<string>();
+                int i = 0;
+
+                try
+                {
+                    do
+                    {
+                        // Get product packages by statement.
+                        page = productPackageService.getProductPackagesByStatement(
+                            statementBuilder.ToStatement());
+
+                        if (page.results != null)
+                        {
+                            foreach (ProductPackage productPackage in page.results)
+                            {
+                                Console.WriteLine(
+                                    "{0}) Product package with ID = '{1}', name = '{2}', and " +
+                                    "status ='{3}' will be activated.", i++, productPackage.id,
+                                    productPackage.name, productPackage.status);
+                                productPackageIds.Add(productPackage.id.ToString());
+                            }
+                        }
+
+                        statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+                    } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+                    Console.WriteLine("Number of product packages to be activated: {0}",
+                        productPackageIds.Count);
+
+                    if (productPackageIds.Count > 0)
+                    {
+                        // Modify statement for action.
+                        statementBuilder.RemoveLimitAndOffset();
+
+                        // Create action.
+                        ActivateProductPackages action = new ActivateProductPackages();
+
+                        // Perform action.
+                        UpdateResult result =
+                            productPackageService.performProductPackageAction(action,
+                                statementBuilder.ToStatement());
+
+                        // Display results.
+                        if (result != null && result.numChanges > 0)
+                        {
+                            Console.WriteLine("Number of product packages activated: {0}",
+                                result.numChanges);
+                        }
+                        else
+                        {
+                            Console.WriteLine("No product packages were activated.");
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to activate product packages. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

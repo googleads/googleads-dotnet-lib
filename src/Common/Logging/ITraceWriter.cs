@@ -12,25 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.Common.Logging {
-
-  /// <summary>
-  /// Interface for SOAP trace log writers.
-  /// </summary>
-  public interface ITraceWriter {
-
+namespace Google.Api.Ads.Common.Logging
+{
     /// <summary>
-    /// Writes detailed logs.
+    /// Interface for SOAP trace log writers.
     /// </summary>
-    /// <param name="message">The log content to write</param>
-    /// <param name="isFailure">If the log is for a failed request.</param>
-    void WriteDetailedRequestLogs(string message, bool isFailure);
+    public interface ITraceWriter
+    {
+        /// <summary>
+        /// Writes detailed logs.
+        /// </summary>
+        /// <param name="message">The log content to write</param>
+        /// <param name="isFailure">If the log is for a failed request.</param>
+        void WriteDetailedRequestLogs(string message, bool isFailure);
 
-    /// <summary>
-    /// Writes summary logs.
-    /// </summary>
-    /// <param name="message">The log content to write</param>
-    /// <param name="isFailure">If the log is for a failed request.</param>
-    void WriteSummaryRequestLogs(string message, bool isFailure);
-  }
+        /// <summary>
+        /// Writes summary logs.
+        /// </summary>
+        /// <param name="message">The log content to write</param>
+        /// <param name="isFailure">If the log is for a failed request.</param>
+        void WriteSummaryRequestLogs(string message, bool isFailure);
+    }
 }

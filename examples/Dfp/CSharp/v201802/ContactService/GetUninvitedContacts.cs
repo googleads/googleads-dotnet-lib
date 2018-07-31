@@ -11,80 +11,87 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201802;
 using Google.Api.Ads.Dfp.v201802;
+
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This example gets all contacts that aren't invited yet.
-  /// </summary>
-  public class GetUninvitedContacts : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example gets all contacts that aren't invited yet.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example gets all contacts that aren't invited yet.";
-      }
-    }
+    public class GetUninvitedContacts : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This example gets all contacts that aren't invited yet."; }
+        }
 
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetUninvitedContacts codeExample = new GetUninvitedContacts();
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new DfpUser());
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get contacts. Exception says \"{0}\"",
-            e.Message);
-      }
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser dfpUser) {
-      using (ContactService contactService =
-          (ContactService) dfpUser.GetService(DfpService.v201802.ContactService)) {
-
-        // Create a statement to select contacts.
-        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("status = :status")
-            .OrderBy("id ASC")
-            .Limit(pageSize)
-            .AddValue("status", ContactStatus.UNINVITED.ToString());
-
-        // Retrieve a small amount of contacts at a time, paging through until all
-        // contacts have been retrieved.
-        int totalResultSetSize = 0;
-        do {
-          ContactPage page = contactService.getContactsByStatement(
-              statementBuilder.ToStatement());
-
-          // Print out some information for each contact.
-          if (page.results != null) {
-            totalResultSetSize = page.totalResultSetSize;
-            int i = page.startIndex;
-            foreach (Contact contact in page.results) {
-              Console.WriteLine(
-                  "{0}) Contact with ID {1} and name \"{2}\" was found.",
-                  i++,
-                  contact.id,
-                  contact.name
-              );
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetUninvitedContacts codeExample = new GetUninvitedContacts();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new DfpUser());
             }
-          }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to get contacts. Exception says \"{0}\"", e.Message);
+            }
+        }
 
-          statementBuilder.IncreaseOffsetBy(pageSize);
-        } while (statementBuilder.GetOffset() < totalResultSetSize);
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser dfpUser)
+        {
+            using (ContactService contactService =
+                (ContactService) dfpUser.GetService(DfpService.v201802.ContactService))
+            {
+                // Create a statement to select contacts.
+                int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("status = :status")
+                    .OrderBy("id ASC")
+                    .Limit(pageSize)
+                    .AddValue("status", ContactStatus.UNINVITED.ToString());
 
-        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
-      }
+                // Retrieve a small amount of contacts at a time, paging through until all
+                // contacts have been retrieved.
+                int totalResultSetSize = 0;
+                do
+                {
+                    ContactPage page =
+                        contactService.getContactsByStatement(statementBuilder.ToStatement());
+
+                    // Print out some information for each contact.
+                    if (page.results != null)
+                    {
+                        totalResultSetSize = page.totalResultSetSize;
+                        int i = page.startIndex;
+                        foreach (Contact contact in page.results)
+                        {
+                            Console.WriteLine(
+                                "{0}) Contact with ID {1} and name \"{2}\" was found.", i++,
+                                contact.id, contact.name);
+                        }
+                    }
+
+                    statementBuilder.IncreaseOffsetBy(pageSize);
+                } while (statementBuilder.GetOffset() < totalResultSetSize);
+
+                Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+            }
+        }
     }
-  }
 }

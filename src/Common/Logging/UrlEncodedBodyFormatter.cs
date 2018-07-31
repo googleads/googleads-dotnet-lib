@@ -16,37 +16,42 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Web;
 
-namespace Google.Api.Ads.Common.Logging {
-
-  /// <summary>
-  /// Formats a URL encoded HTTP trace message by masking out sensitive fields.
-  /// </summary>
-  public class UrlEncodedBodyFormatter : TraceFormatter {
-
+namespace Google.Api.Ads.Common.Logging
+{
     /// <summary>
-    /// Masks the contents of the traced message.
+    /// Formats a URL encoded HTTP trace message by masking out sensitive fields.
     /// </summary>
-    /// <param name="body">The message body.</param>
-    /// <param name="keysToMask">The keys for which values should be masked
-    /// in the message body.</param>
-    /// <returns>
-    /// The formatted message body.
-    /// </returns>
-    public override string MaskContents(string body, ISet<string> keysToMask) {
-      NameValueCollection collection = HttpUtility.ParseQueryString(body);
+    public class UrlEncodedBodyFormatter : TraceFormatter
+    {
+        /// <summary>
+        /// Masks the contents of the traced message.
+        /// </summary>
+        /// <param name="body">The message body.</param>
+        /// <param name="keysToMask">The keys for which values should be masked
+        /// in the message body.</param>
+        /// <returns>
+        /// The formatted message body.
+        /// </returns>
+        public override string MaskContents(string body, ISet<string> keysToMask)
+        {
+            NameValueCollection collection = HttpUtility.ParseQueryString(body);
 
-      foreach (string key in keysToMask) {
-        if (keysToMask.Contains(key)) {
-          collection[key] = MASK_PATTERN;
+            foreach (string key in keysToMask)
+            {
+                if (keysToMask.Contains(key))
+                {
+                    collection[key] = MASK_PATTERN;
+                }
+            }
+
+            List<string> encodedParams = new List<string>();
+            foreach (string key in collection.Keys)
+            {
+                encodedParams.Add(string.Format("{0}={1}", HttpUtility.UrlEncode(key),
+                    HttpUtility.UrlEncode(collection[key])));
+            }
+
+            return string.Join("&", encodedParams.ToArray());
         }
-      }
-
-      List<string> encodedParams = new List<string>();
-      foreach (string key in collection.Keys) {
-        encodedParams.Add(string.Format("{0}={1}", HttpUtility.UrlEncode(key),
-            HttpUtility.UrlEncode(collection[key])));
-      }
-      return string.Join("&", encodedParams.ToArray());
     }
-  }
 }

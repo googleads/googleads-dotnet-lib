@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Title>AdWords API Dotnet Client Library</Title>
     <PackageId>Google.AdWords</PackageId>
-    <Version>23.5.1</Version>
+    <Version>23.6.0</Version>
     <Description>This library provides you with functionality to access the AdWords API.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
     <PackageTags>AdWords Google</PackageTags>
@@ -32,7 +32,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Google.Ads.Common" Version="9.3.1" />
+    <PackageReference Include="Google.Ads.Common" Version="9.4.0" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.4.2" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)'=='net452'">
@@ -49,12 +49,6 @@
     <Copy SourceFiles="App.config" DestinationFiles="app.config.transform" />
     <Copy SourceFiles="App.config" DestinationFiles="web.config.transform" />
   </Target>
-  <!-- Exclude Properties until all projects are migrated to Core format -->
-  <ItemGroup>
-    <Compile Remove="Properties\**" />
-    <Content Remove="Properties\**" />
-    <None Remove="Properties\**" />
-  </ItemGroup>
   <PropertyGroup Condition="'$(TargetFramework)'=='net452'">
     <DefineConstants>NET452</DefineConstants>
   </PropertyGroup>

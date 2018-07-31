@@ -17,73 +17,87 @@ using Google.Api.Ads.Dfp.v201805;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example creates a package. To determine which packages exist,
-  /// run GetAllPackages.cs.
-  /// </summary>
-  public class CreatePackages : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example creates a package. To determine which packages exist,
+    /// run GetAllPackages.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example creates a package. To determine which packages exist, " +
-            "run GetAllPackages.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      CreatePackages codeExample = new CreatePackages();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (PackageService packageService =
-          (PackageService) user.GetService(DfpService.v201805.PackageService)) {
-
-        // Set the ID of the product package to create the package from.
-        long productPackageId = long.Parse(_T("INSERT_PRODUCT_PACKAGE_ID"));
-
-        // Set the proposal ID for the package.
-        long proposalId = long.Parse(_T("INSERT_PROPOSAL_ID"));
-
-        // Set the ID of the rate card the proposal line items belonging to the product
-        // package are priced from.
-        long rateCardId = long.Parse(_T("INSERT_RATE_CARD_ID"));
-
-        // Create a local package.
-        Package package = new Package();
-        package.name = "Package #" + new Random().Next(int.MaxValue);
-
-        // Set the proposal ID for the package.
-        package.proposalId = proposalId;
-
-        // Set the product package ID to create the package from.
-        package.productPackageId = productPackageId;
-
-        // Set the rate card ID the proposal line items are priced with.
-        package.rateCardId = rateCardId;
-
-        try {
-          // Create the package on the server.
-          Package[] packages = packageService.createPackages(new Package[] { package });
-
-          foreach (Package createdPackage in packages) {
-            Console.WriteLine("A package with ID \"{0}\" and name \"{1}\" was created.",
-                createdPackage.id, createdPackage.name);
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to create packages. Exception says \"{0}\"", e.Message);
+    public class CreatePackages : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example creates a package. To determine which packages exist, " +
+                    "run GetAllPackages.cs.";
+            }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            CreatePackages codeExample = new CreatePackages();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (PackageService packageService =
+                (PackageService) user.GetService(DfpService.v201805.PackageService))
+            {
+                // Set the ID of the product package to create the package from.
+                long productPackageId = long.Parse(_T("INSERT_PRODUCT_PACKAGE_ID"));
+
+                // Set the proposal ID for the package.
+                long proposalId = long.Parse(_T("INSERT_PROPOSAL_ID"));
+
+                // Set the ID of the rate card the proposal line items belonging to the product
+                // package are priced from.
+                long rateCardId = long.Parse(_T("INSERT_RATE_CARD_ID"));
+
+                // Create a local package.
+                Package package = new Package();
+                package.name = "Package #" + new Random().Next(int.MaxValue);
+
+                // Set the proposal ID for the package.
+                package.proposalId = proposalId;
+
+                // Set the product package ID to create the package from.
+                package.productPackageId = productPackageId;
+
+                // Set the rate card ID the proposal line items are priced with.
+                package.rateCardId = rateCardId;
+
+                try
+                {
+                    // Create the package on the server.
+                    Package[] packages = packageService.createPackages(new Package[]
+                    {
+                        package
+                    });
+
+                    foreach (Package createdPackage in packages)
+                    {
+                        Console.WriteLine("A package with ID \"{0}\" and name \"{1}\" was created.",
+                            createdPackage.id, createdPackage.name);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to create packages. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

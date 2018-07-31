@@ -14,67 +14,73 @@
 
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util;
+
 using System.ComponentModel;
 
-namespace Google.Api.Ads.Common.Config {
-
-  /// <summary>
-  /// A config setting, to be used with <see cref="AppConfigBase"/> and derived classes.
-  /// </summary>
-  public abstract class ConfigSetting {
-
+namespace Google.Api.Ads.Common.Config
+{
     /// <summary>
-    /// Gets the name of the setting.
+    /// A config setting, to be used with <see cref="AppConfigBase"/> and derived classes.
     /// </summary>
-    public string Name { get; protected set; }
+    public abstract class ConfigSetting
+    {
+        /// <summary>
+        /// Gets the name of the setting.
+        /// </summary>
+        public string Name { get; protected set; }
 
-    /// <summary>
-    /// Tries to parse a value.
-    /// </summary>
-    /// <param name="valueText">The value text.</param>
-    public abstract void TryParse(string valueText);
-  }
-
-  /// <summary>
-  /// A config setting of a specified type, to be used with <see cref="AppConfigBase"/>
-  /// and derived classes.
-  /// </summary>
-  /// <typeparam name="T">The type of the setting.</typeparam>
-  public class ConfigSetting<T> : ConfigSetting {
-
-    /// <summary>
-    /// Gets or sets the value of the setting.
-    /// </summary>
-    public T Value { get; set; }
-
-    /// <summary>
-    /// Gets the default value of the setting.
-    /// </summary>
-    public T DefaultValue { get; private set; }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ConfigSetting{T}"/> class.
-    /// </summary>
-    /// <param name="name">Name of the setting.</param>
-    /// <param name="defaultValue">The default value.</param>
-    public ConfigSetting(string name, T defaultValue) {
-      Name = name;
-      DefaultValue = defaultValue;
-      Value = defaultValue;
+        /// <summary>
+        /// Tries to parse a value.
+        /// </summary>
+        /// <param name="valueText">The value text.</param>
+        public abstract void TryParse(string valueText);
     }
 
     /// <summary>
-    /// Tries to parse a value.
+    /// A config setting of a specified type, to be used with <see cref="AppConfigBase"/>
+    /// and derived classes.
     /// </summary>
-    /// <param name="valueText">The value text.</param>
-    public override void TryParse(string valueText) {
-      TypeConverter converter = TypeDescriptor.GetConverter(typeof(T));
-      try {
-        Value = (T) converter.ConvertFromInvariantString(valueText);
-      } catch {
-        TraceUtilities.WriteGeneralWarnings(string.Format(
-            CommonErrorMessages.ConfigSettingParseError, Name, valueText));
-      }
+    /// <typeparam name="T">The type of the setting.</typeparam>
+    public class ConfigSetting<T> : ConfigSetting
+    {
+        /// <summary>
+        /// Gets or sets the value of the setting.
+        /// </summary>
+        public T Value { get; set; }
+
+        /// <summary>
+        /// Gets the default value of the setting.
+        /// </summary>
+        public T DefaultValue { get; private set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConfigSetting{T}"/> class.
+        /// </summary>
+        /// <param name="name">Name of the setting.</param>
+        /// <param name="defaultValue">The default value.</param>
+        public ConfigSetting(string name, T defaultValue)
+        {
+            Name = name;
+            DefaultValue = defaultValue;
+            Value = defaultValue;
+        }
+
+        /// <summary>
+        /// Tries to parse a value.
+        /// </summary>
+        /// <param name="valueText">The value text.</param>
+        public override void TryParse(string valueText)
+        {
+            TypeConverter converter = TypeDescriptor.GetConverter(typeof(T));
+            try
+            {
+                Value = (T) converter.ConvertFromInvariantString(valueText);
+            }
+            catch
+            {
+                TraceUtilities.WriteGeneralWarnings(
+                    string.Format(CommonErrorMessages.ConfigSettingParseError, Name, valueText));
+            }
+        }
     }
-  }
 }

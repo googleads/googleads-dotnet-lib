@@ -16,60 +16,68 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Google.Api.Ads.Common.Util {
-
-  /// <summary>
-  /// Generates a sequence of temporary negative IDs.
-  /// </summary>
-  public class TemporaryIdGenerator {
+namespace Google.Api.Ads.Common.Util
+{
     /// <summary>
-    /// The number generation sequence.
+    /// Generates a sequence of temporary negative IDs.
     /// </summary>
-    private IEnumerator<int> sequence;
+    public class TemporaryIdGenerator
+    {
+        /// <summary>
+        /// The number generation sequence.
+        /// </summary>
+        private IEnumerator<int> sequence;
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="TemporaryIdGenerator"/> class.
-    /// </summary>
-    public TemporaryIdGenerator()
-      : this(Int32.MinValue) {
-    }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="TemporaryIdGenerator"/> class.
-    /// </summary>
-    /// <param name="startId">The ID to start generating the sequence from.</param>
-    /// <exception cref="ArgumentException">If startId is a positive value.</exception>
-    /// <remarks>The IDs are generated in the <i>increasing</i> order from the
-    /// <paramref name="startId"/>.</remarks>
-    public TemporaryIdGenerator(int startId) {
-      if (startId >= 0) {
-        throw new ArgumentException("ID cannot be positive.");
-      }
-      int count = -1 - startId;
-      sequence = Enumerable.Range(startId, count).GetEnumerator();
-    }
-
-    /// <summary>
-    /// Returns the next ID in the list.
-    /// </summary>
-    /// <returns></returns>
-    public long Next {
-      get {
-        if (sequence.MoveNext()) {
-          return sequence.Current;
-        } else {
-          throw new ApplicationException("No more IDs to generate.");
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TemporaryIdGenerator"/> class.
+        /// </summary>
+        public TemporaryIdGenerator() : this(Int32.MinValue)
+        {
         }
-      }
-    }
 
-    /// <summary>
-    /// Gets the sequence of numbers.
-    /// </summary>
-    public IEnumerator<int> Sequence {
-      get {
-        return sequence;
-      }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TemporaryIdGenerator"/> class.
+        /// </summary>
+        /// <param name="startId">The ID to start generating the sequence from.</param>
+        /// <exception cref="ArgumentException">If startId is a positive value.</exception>
+        /// <remarks>The IDs are generated in the <i>increasing</i> order from the
+        /// <paramref name="startId"/>.</remarks>
+        public TemporaryIdGenerator(int startId)
+        {
+            if (startId >= 0)
+            {
+                throw new ArgumentException("ID cannot be positive.");
+            }
+
+            int count = -1 - startId;
+            sequence = Enumerable.Range(startId, count).GetEnumerator();
+        }
+
+        /// <summary>
+        /// Returns the next ID in the list.
+        /// </summary>
+        /// <returns></returns>
+        public long Next
+        {
+            get
+            {
+                if (sequence.MoveNext())
+                {
+                    return sequence.Current;
+                }
+                else
+                {
+                    throw new ApplicationException("No more IDs to generate.");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets the sequence of numbers.
+        /// </summary>
+        public IEnumerator<int> Sequence
+        {
+            get { return sequence; }
+        }
     }
-  }
 }

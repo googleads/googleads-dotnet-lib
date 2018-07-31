@@ -1,3 +1,20 @@
+23.6.0
+======
+AdWords:
+   - Removed support for v201710.
+   - Closed https://github.com/googleads/googleads-dotnet-lib/issues/176.
+   - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/2.
+   - Updated GetKeywordBidSimulations example to use QueryBuilders.
+   - Regenerated v201802 and v201806 stubs.
+   - Removed AddClickToDownloadAd example from all versions.
+DFP:
+   - Reformatted all source files to be compatible with Microsoft's style guide.
+   - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/2
+
+Common:
+   - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/134
+   - Reformatted all source files to be compatible with Microsoft's style guide.
+
 23.5.1
 ======
 AdWords:

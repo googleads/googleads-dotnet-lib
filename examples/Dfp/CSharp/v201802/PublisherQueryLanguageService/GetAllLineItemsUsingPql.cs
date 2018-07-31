@@ -20,84 +20,95 @@ using Google.Api.Ads.Dfp.v201802;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This code example gets all line items in your network using the Line_Item
-  /// table. This code example may take a while to run. The Line_Item PQL table
-  /// schema can be found here:
-  /// https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PublisherQueryLanguageService#Line_Item
-  /// </summary>
-  public class GetAllLineItemsUsingPql : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example gets all line items in your network using the Line_Item
+    /// table. This code example may take a while to run. The Line_Item PQL table
+    /// schema can be found here:
+    /// https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PublisherQueryLanguageService#Line_Item
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example gets all line items in your network using the Line_Item table. " +
-            "This code example may take a while to run. The Line_Item PQL table schema can be " +
-            "found here: https://developers.google.com/doubleclick-publishers/docs/reference/v201802/PublisherQueryLanguageService#Line_Item";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetAllLineItemsUsingPql codeExample = new GetAllLineItemsUsingPql();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (PublisherQueryLanguageService pqlService =
-          (PublisherQueryLanguageService) user.GetService(
-              DfpService.v201802.PublisherQueryLanguageService)) {
-
-        // Create statement to select all line items.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Select("Id, Name, Status")
-            .From("Line_Item")
-            .OrderBy("id ASC")
-            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-
-        int resultSetSize = 0;
-        List<Row> allRows = new List<Row>();
-        ResultSet resultSet;
-
-        try {
-          do {
-            // Get all line items.
-            resultSet = pqlService.select(statementBuilder.ToStatement());
-
-            // Collect all line items from each page.
-            allRows.AddRange(resultSet.rows);
-
-            // Display results.
-            Console.WriteLine(PqlUtilities.ResultSetToString(resultSet));
-
-            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-            resultSetSize = resultSet.rows == null ? 0 : resultSet.rows.Length;
-          } while (resultSetSize == StatementBuilder.SUGGESTED_PAGE_LIMIT);
-
-          Console.WriteLine("Number of results found: " + allRows.Count);
-
-          // Optionally, save all rows to a CSV.
-          // Get a string array representation of the data rows.
-          resultSet.rows = allRows.ToArray();
-          List<String[]> rows = PqlUtilities.ResultSetToStringArrayList(resultSet);
-
-          // Write the contents to a csv file.
-          CsvFile file = new CsvFile();
-          file.Headers.AddRange(rows[0]);
-          file.Records.AddRange(rows.GetRange(1, rows.Count - 1).ToArray());
-          file.Write("line_items_" + this.GetTimeStamp() + ".csv");
-        } catch (Exception e) {
-          Console.WriteLine("Failed to get all line items. Exception says \"{0}\"", e.Message);
+    public class GetAllLineItemsUsingPql : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example gets all line items in your network using the " +
+                    "Line_Item table. This code example may take a while to run. The Line_Item " +
+                    "PQL table schema can be found here: " +
+                    "https://developers.google.com/doubleclick-publishers/docs/reference/v201802/" +
+                    "PublisherQueryLanguageService#Line_Item";
+            }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetAllLineItemsUsingPql codeExample = new GetAllLineItemsUsingPql();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (PublisherQueryLanguageService pqlService =
+                (PublisherQueryLanguageService) user.GetService(DfpService.v201802
+                    .PublisherQueryLanguageService))
+            {
+                // Create statement to select all line items.
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Select("Id, Name, Status").From("Line_Item").OrderBy("id ASC")
+                    .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+                int resultSetSize = 0;
+                List<Row> allRows = new List<Row>();
+                ResultSet resultSet;
+
+                try
+                {
+                    do
+                    {
+                        // Get all line items.
+                        resultSet = pqlService.select(statementBuilder.ToStatement());
+
+                        // Collect all line items from each page.
+                        allRows.AddRange(resultSet.rows);
+
+                        // Display results.
+                        Console.WriteLine(PqlUtilities.ResultSetToString(resultSet));
+
+                        statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+                        resultSetSize = resultSet.rows == null ? 0 : resultSet.rows.Length;
+                    } while (resultSetSize == StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+                    Console.WriteLine("Number of results found: " + allRows.Count);
+
+                    // Optionally, save all rows to a CSV.
+                    // Get a string array representation of the data rows.
+                    resultSet.rows = allRows.ToArray();
+                    List<String[]> rows = PqlUtilities.ResultSetToStringArrayList(resultSet);
+
+                    // Write the contents to a csv file.
+                    CsvFile file = new CsvFile();
+                    file.Headers.AddRange(rows[0]);
+                    file.Records.AddRange(rows.GetRange(1, rows.Count - 1).ToArray());
+                    file.Write("line_items_" + this.GetTimeStamp() + ".csv");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to get all line items. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

@@ -19,24 +19,27 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace Google.Api.Ads.Dfp.Tests {
-  /// <summary>
-  /// Base class for all test suites.
-  /// </summary>
-  public class BaseTests {
+namespace Google.Api.Ads.Dfp.Tests
+{
     /// <summary>
-    /// The Dfp user to be used for tests.
+    /// Base class for all test suites.
     /// </summary>
-    protected DfpUser user = new DfpUser();
+    public class BaseTests
+    {
+        /// <summary>
+        /// The Dfp user to be used for tests.
+        /// </summary>
+        protected DfpUser user = new DfpUser();
 
-    /// <summary>
-    /// Default public constructor.
-    /// </summary>
-    /// <remarks>The constructor adds a 200 ms delay between running individual
-    /// tests so that we don't hit the server frequently and cause quota errors.
-    /// </remarks>
-    public BaseTests() {
-      Thread.Sleep(200);
+        /// <summary>
+        /// Default public constructor.
+        /// </summary>
+        /// <remarks>The constructor adds a 200 ms delay between running individual
+        /// tests so that we don't hit the server frequently and cause quota errors.
+        /// </remarks>
+        public BaseTests()
+        {
+            Thread.Sleep(200);
+        }
     }
-  }
 }

@@ -19,76 +19,93 @@ using Google.Api.Ads.Dfp.v201805;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example updates the delivery rate of a line items.
-  /// To determine which line items exist, run GetAllLineItems.cs.
-  /// </summary>
-  public class UpdateLineItems : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example updates the delivery rate of a line items.
+    /// To determine which line items exist, run GetAllLineItems.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example updates the delivery rate of a line item. To determine which " +
-          "line items exist, run GetAllLineItems.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      UpdateLineItems codeExample = new UpdateLineItems();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (LineItemService lineItemService =
-          (LineItemService) user.GetService(DfpService.v201805.LineItemService)) {
-
-        // Set the ID of the line item.
-        long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
-
-        // Create a statement to get the line item.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("id = :lineItemId")
-            .OrderBy("id ASC")
-            .Limit(1)
-            .AddValue("lineItemId", lineItemId);
-
-        try {
-          // Get line items by statement.
-          LineItemPage page = lineItemService.getLineItemsByStatement(
-              statementBuilder.ToStatement());
-
-          LineItem lineItem = page.results[0];
-
-          // Update line item object by changing its delivery rate.
-          lineItem.deliveryRateType = DeliveryRateType.AS_FAST_AS_POSSIBLE;
-
-          // Update the line item on the server.
-          LineItem[] lineItems = lineItemService.updateLineItems(new LineItem[] { lineItem });
-
-          if (lineItems != null) {
-            foreach (LineItem updatedLineItem in lineItems) {
-              Console.WriteLine("A line item with ID = '{0}', belonging to order ID = '{1}', " +
-                  "named '{2}', and having delivery rate = '{3}' was updated.",
-                  updatedLineItem.id, updatedLineItem.orderId, updatedLineItem.name,
-                  updatedLineItem.deliveryRateType);
+    public class UpdateLineItems : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example updates the delivery rate of a line item. " +
+                    "To determine which line items exist, run GetAllLineItems.cs.";
             }
-          } else {
-            Console.WriteLine("No line items updated.");
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to update line items. Exception says \"{0}\"",
-              e.Message);
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            UpdateLineItems codeExample = new UpdateLineItems();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (LineItemService lineItemService =
+                (LineItemService) user.GetService(DfpService.v201805.LineItemService))
+            {
+                // Set the ID of the line item.
+                long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
+
+                // Create a statement to get the line item.
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("id = :lineItemId")
+                    .OrderBy("id ASC")
+                    .Limit(1)
+                    .AddValue("lineItemId", lineItemId);
+
+                try
+                {
+                    // Get line items by statement.
+                    LineItemPage page =
+                        lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
+
+                    LineItem lineItem = page.results[0];
+
+                    // Update line item object by changing its delivery rate.
+                    lineItem.deliveryRateType = DeliveryRateType.AS_FAST_AS_POSSIBLE;
+
+                    // Update the line item on the server.
+                    LineItem[] lineItems = lineItemService.updateLineItems(new LineItem[]
+                    {
+                        lineItem
+                    });
+
+                    if (lineItems != null)
+                    {
+                        foreach (LineItem updatedLineItem in lineItems)
+                        {
+                            Console.WriteLine(
+                                "A line item with ID = '{0}', belonging to order ID = '{1}', " +
+                                "named '{2}', and having delivery rate = '{3}' was updated.",
+                                updatedLineItem.id, updatedLineItem.orderId, updatedLineItem.name,
+                                updatedLineItem.deliveryRateType);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No line items updated.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to update line items. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

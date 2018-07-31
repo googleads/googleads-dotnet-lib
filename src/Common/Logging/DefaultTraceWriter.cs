@@ -14,18 +14,21 @@
 
 using Google.Api.Ads.Common.Util;
 
-namespace Google.Api.Ads.Common.Logging {
+namespace Google.Api.Ads.Common.Logging
+{
+    /// <summary>
+    /// Default instance of TraceWriter, which just delegates to TraceUtilities.
+    /// </summary>
+    public class DefaultTraceWriter : ITraceWriter
+    {
+        void ITraceWriter.WriteDetailedRequestLogs(string message, bool isFailure)
+        {
+            TraceUtilities.WriteDetailedRequestLogs(message, isFailure);
+        }
 
-  /// <summary>
-  /// Default instance of TraceWriter, which just delegates to TraceUtilities.
-  /// </summary>
-  public class DefaultTraceWriter : ITraceWriter {
-    void ITraceWriter.WriteDetailedRequestLogs(string message, bool isFailure) {
-      TraceUtilities.WriteDetailedRequestLogs(message, isFailure);
+        void ITraceWriter.WriteSummaryRequestLogs(string message, bool isFailure)
+        {
+            TraceUtilities.WriteSummaryRequestLogs(message, isFailure);
+        }
     }
-
-    void ITraceWriter.WriteSummaryRequestLogs(string message, bool isFailure) {
-      TraceUtilities.WriteSummaryRequestLogs(message, isFailure);
-    }
-  }
 }

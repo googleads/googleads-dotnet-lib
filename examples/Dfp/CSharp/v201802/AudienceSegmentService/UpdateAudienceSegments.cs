@@ -18,74 +18,87 @@ using Google.Api.Ads.Dfp.v201802;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This code example updates a first party audience segment's member
-  /// expiration days. To determine which first party audience segments exist,
-  /// run GetFirstPartyAudienceSegments.cs.
-  /// </summary>
-  public class UpdateAudienceSegments : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example updates a first party audience segment's member
+    /// expiration days. To determine which first party audience segments exist,
+    /// run GetFirstPartyAudienceSegments.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example updates a first party audience segment's member expiration " +
-            "days. To determine which first party audience segments exist, " +
-            "run GetFirstPartyAudienceSegments.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      UpdateAudienceSegments codeExample = new UpdateAudienceSegments();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (AudienceSegmentService audienceSegmentService =
-          (AudienceSegmentService) user.GetService(DfpService.v201802.AudienceSegmentService)) {
-
-        // Set the ID of the audience segment to update.
-        int audienceSegmentId = int.Parse(_T("INSERT_AUDIENCE_SEGMENT_ID_HERE"));
-
-        // Create a statement to only select a specified first party audience
-        // segment.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("id = :audienceSegmentId")
-            .OrderBy("id ASC")
-            .Limit(1)
-            .AddValue("audienceSegmentId", audienceSegmentId);
-
-        try {
-          // Get the audience segment.
-          RuleBasedFirstPartyAudienceSegment audienceSegment =
-              (RuleBasedFirstPartyAudienceSegment) audienceSegmentService
-                  .getAudienceSegmentsByStatement(statementBuilder.ToStatement()).results[0];
-
-          // Update the member expiration days.
-          audienceSegment.membershipExpirationDays = 180;
-
-          // Update the audience segment on the server.
-          AudienceSegment[] audienceSegments = audienceSegmentService.updateAudienceSegments(
-              new FirstPartyAudienceSegment[] { audienceSegment });
-
-          foreach (AudienceSegment updatedAudienceSegment in audienceSegments) {
-            Console.WriteLine(
-                "Audience segment with ID \"{0}\" and name \"{1}\" was updated.\n",
-                updatedAudienceSegment.id, updatedAudienceSegment.name);
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to update audience segment. Exception says \"{0}\"",
-              e.Message);
+    public class UpdateAudienceSegments : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example updates a first party audience segment's member " +
+                    "expiration days. To determine which first party audience segments exist, " +
+                    "run GetFirstPartyAudienceSegments.cs.";
+            }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            UpdateAudienceSegments codeExample = new UpdateAudienceSegments();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (AudienceSegmentService audienceSegmentService =
+                (AudienceSegmentService) user.GetService(DfpService.v201802.AudienceSegmentService))
+            {
+                // Set the ID of the audience segment to update.
+                int audienceSegmentId = int.Parse(_T("INSERT_AUDIENCE_SEGMENT_ID_HERE"));
+
+                // Create a statement to only select a specified first party audience
+                // segment.
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("id = :audienceSegmentId").OrderBy("id ASC").Limit(1)
+                    .AddValue("audienceSegmentId", audienceSegmentId);
+
+                try
+                {
+                    // Get the audience segment.
+                    RuleBasedFirstPartyAudienceSegment audienceSegment =
+                        (RuleBasedFirstPartyAudienceSegment) audienceSegmentService
+                            .getAudienceSegmentsByStatement(statementBuilder.ToStatement())
+                            .results[0];
+
+                    // Update the member expiration days.
+                    audienceSegment.membershipExpirationDays = 180;
+
+                    // Update the audience segment on the server.
+                    AudienceSegment[] audienceSegments =
+                        audienceSegmentService.updateAudienceSegments(
+                            new FirstPartyAudienceSegment[]
+                            {
+                                audienceSegment
+                            });
+
+                    foreach (AudienceSegment updatedAudienceSegment in audienceSegments)
+                    {
+                        Console.WriteLine(
+                            "Audience segment with ID \"{0}\" and name \"{1}\" was updated.\n",
+                            updatedAudienceSegment.id, updatedAudienceSegment.name);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to update audience segment. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

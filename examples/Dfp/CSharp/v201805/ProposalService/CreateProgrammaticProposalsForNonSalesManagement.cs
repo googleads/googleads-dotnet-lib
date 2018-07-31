@@ -17,78 +17,100 @@ using Google.Api.Ads.Dfp.v201805;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This example creates a programmatic proposal for networks not using sales management.
-  /// </summary>
-  public class CreateProgrammaticProposalsForNonSalesManagement : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example creates a programmatic proposal for networks not using sales management.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example creates a programmatic proposal for networks "
-            + "not using sales management";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      CreateProgrammaticProposalsForNonSalesManagement codeExample = 
-          new CreateProgrammaticProposalsForNonSalesManagement();
-      Console.WriteLine(codeExample.Description);
-
-      long primarySalespersonId = long.Parse(_T("INSERT_PRIMARY_SALESPERSON_ID_HERE"));
-      long primaryTraffickerId = long.Parse(_T("INSERT_PRIMARY_TRAFFICKER_ID_HERE"));
-
-      // Set the ID of the programmatic buyer. This can be obtained through the
-      // Programmatic_Buyer PQL table.
-      long programmaticBuyerId = long.Parse(_T("INSERT_PROGRAMMATIC_BUYER_ID_HERE"));
-
-      codeExample.Run(new DfpUser(), primarySalespersonId, primaryTraffickerId,
-          programmaticBuyerId);
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user, long primarySalespersonId, long primaryTraffickerId,
-        long programmaticBuyerId) {
-      using (ProposalService proposalService =
-          (ProposalService) user.GetService(DfpService.v201805.ProposalService)) {
-
-        // Create a proposal.
-        Proposal proposal = new Proposal();
-        proposal.name = "Programmatic proposal #" + new Random().Next(int.MaxValue);
-
-        // Set required Marketplace information
-        proposal.marketplaceInfo = new ProposalMarketplaceInfo() {
-          buyerAccountId = programmaticBuyerId
-        };
-        proposal.isProgrammatic = true;
-        proposal.primaryTraffickerId = primaryTraffickerId;
-
-        // Create salesperson splits for the primary salesperson and secondary salespeople.
-        SalespersonSplit primarySalesperson = new SalespersonSplit();
-        primarySalesperson.userId = primarySalespersonId;
-        primarySalesperson.split = 100000;
-        proposal.primarySalesperson = primarySalesperson;
-
-        try {
-          // Create the proposal on the server.
-          Proposal[] proposals = proposalService.createProposals(new Proposal[] { proposal });
-
-          foreach (Proposal createdProposal in proposals) {
-            Console.WriteLine("A programmatic proposal with ID \"{0}\" and name \"{1}\" " +
-                "was created.", createdProposal.id, createdProposal.name);
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to create proposals. Exception says \"{0}\"",
-              e.Message);
+    public class CreateProgrammaticProposalsForNonSalesManagement : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This example creates a programmatic proposal for networks " +
+                    "not using sales management";
+            }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            CreateProgrammaticProposalsForNonSalesManagement codeExample =
+                new CreateProgrammaticProposalsForNonSalesManagement();
+            Console.WriteLine(codeExample.Description);
+
+            long primarySalespersonId = long.Parse(_T("INSERT_PRIMARY_SALESPERSON_ID_HERE"));
+            long primaryTraffickerId = long.Parse(_T("INSERT_PRIMARY_TRAFFICKER_ID_HERE"));
+
+            // Set the ID of the programmatic buyer. This can be obtained through the
+            // Programmatic_Buyer PQL table.
+            long programmaticBuyerId = long.Parse(_T("INSERT_PROGRAMMATIC_BUYER_ID_HERE"));
+
+            long advertiserId = long.Parse(_T("INSERT_ADVERTISER_ID_HERE"));
+
+            codeExample.Run(new DfpUser(), primarySalespersonId, primaryTraffickerId,
+                programmaticBuyerId, advertiserId);
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user, long primarySalespersonId, long primaryTraffickerId,
+            long programmaticBuyerId, long advertiserId)
+        {
+            using (ProposalService proposalService =
+                (ProposalService) user.GetService(DfpService.v201805.ProposalService))
+            {
+
+                // Create a proposal with the minimum required fields.
+                Proposal proposal = new Proposal()
+                {
+                    name = "Programmatic proposal #" + new Random().Next(int.MaxValue),
+                    isProgrammatic = true,
+                    // Set required Marketplace information
+                    marketplaceInfo = new ProposalMarketplaceInfo()
+                    {
+                        buyerAccountId = programmaticBuyerId
+                    }
+                };
+
+                // Set fields that are required before sending the proposal to the buyer.
+                proposal.primaryTraffickerId = primaryTraffickerId;
+                proposal.sellerContactIds = new long[] { primarySalespersonId };
+                proposal.primarySalesperson = new SalespersonSplit()
+                {
+                    userId = primarySalespersonId,
+                    split = 100000
+                };
+                proposal.advertiser = new ProposalCompanyAssociation()
+                {
+                    type = ProposalCompanyAssociationType.ADVERTISER,
+                    companyId = advertiserId
+                };
+
+                try
+                {
+                    // Create the proposal on the server.
+                    Proposal[] proposals = proposalService.createProposals(new Proposal[] { proposal });
+
+                    foreach (Proposal createdProposal in proposals)
+                    {
+                        Console.WriteLine("A programmatic proposal with ID \"{0}\" and name \"{1}\" " +
+                            "was created.", createdProposal.id, createdProposal.name);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to create proposals. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

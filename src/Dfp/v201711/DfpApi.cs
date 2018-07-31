@@ -1,3 +1,17 @@
+// Copyright 2017, Google Inc. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 #pragma warning disable 1591
 namespace Google.Api.Ads.Dfp.v201711
 {
@@ -184,6 +198,7 @@ namespace Google.Api.Ads.Dfp.v201711
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(NativeStyleError))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseRateActionError))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(CdnConfigurationError))]
+	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ContentFilterError))]
 	public abstract partial class ApiError {
 		private string fieldPathField;
 
@@ -413,11 +428,11 @@ namespace Google.Api.Ads.Dfp.v201711
 			}
 		}
 
-		/// <summary>DFP records view-through conversions for users who have previously viewed a DFP
-		/// ad within the number of days that you set here (1 to 30 days), then visits a
-		/// webpage containing activity tags from this activity group. To be counted, the ad
-		/// needs to belong to one of the companies associated with the activity group. This
-		/// attribute is required to create an activity group.
+		/// <summary>Ad Manager records view-through conversions for users who have previously viewed
+		/// an Ad Manager ad within the number of days that you set here (1 to 30 days),
+		/// then visits a webpage containing activity tags from this activity group. To be
+		/// counted, the ad needs to belong to one of the companies associated with the
+		/// activity group. This attribute is required to create an activity group.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 3)]
 		public int impressionsLookback {
@@ -443,11 +458,11 @@ namespace Google.Api.Ads.Dfp.v201711
 			}
 		}
 
-		/// <summary>DFP records click-through conversions for users who have previously clicked on a
-		/// DFP ad within the number of days that you set here (1 to 30 days), then visits a
-		/// webpage containing activity tags from this activity group. To be counted, the ad
-		/// needs to belong to one of the companies associated with the activity group. This
-		/// attribute is required to create an activity group.
+		/// <summary>Ad Manager records click-through conversions for users who have previously
+		/// clicked on an Ad Manager ad within the number of days that you set here (1 to 30
+		/// days), then visits a webpage containing activity tags from this activity group.
+		/// To be counted, the ad needs to belong to one of the companies associated with
+		/// the activity group. This attribute is required to create an activity group.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 4)]
 		public int clicksLookback {
@@ -948,9 +963,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// allowable limit. The recommended approach to handle this error is to wait about
 		/// 5 seconds and then retry the request. Note that this does not guarantee the
 		/// request will succeed. If it fails again, try increasing the wait time.
-		/// <p>Another way to mitigate this error is to limit requests to 2 per second for
-		/// Small Business networks, or 8 per second for Premium networks. Once again this
-		/// does not guarantee that every request will succeed, but may help reduce the
+		/// <p>Another way to mitigate this error is to limit requests to 8 per second for
+		/// Ad Manager 360 accounts, or 2 per second for Ad Manager accounts. Once again
+		/// this does not guarantee that every request will succeed, but may help reduce the
 		/// number of times you receive this error.</p>
 		/// </summary>
 		EXCEEDED_QUOTA = 0,
@@ -2215,9 +2230,9 @@ namespace Google.Api.Ads.Dfp.v201711
 
 	/// <summary>Contains an object value. <p><b>This object is experimental!
 	/// <code>ObjectValue</code> is an experimental, innovative, and rapidly changing
-	/// new feature for DFP. Unfortunately, being on the bleeding edge means that we may
-	/// make backwards-incompatible changes to <code>ObjectValue</code>. We will inform
-	/// the community when this feature is no longer experimental.</b></p>
+	/// new feature for Ad Manager. Unfortunately, being on the bleeding edge means that
+	/// we may make backwards-incompatible changes to <code>ObjectValue</code>. We will
+	/// inform the community when this feature is no longer experimental.</b></p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -2420,11 +2435,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.ActivityGroupService.createActivityGroupsResponse createActivityGroups(Wrappers.ActivityGroupService.createActivityGroupsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ActivityGroupService.createActivityGroupsResponse> createActivityGroupsAsync(Wrappers.ActivityGroupService.createActivityGroupsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ActivityGroupPage getActivityGroupsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ActivityGroupPage> getActivityGroupsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -2433,6 +2455,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ActivityGroupService.updateActivityGroupsResponse updateActivityGroups(Wrappers.ActivityGroupService.updateActivityGroupsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ActivityGroupService.updateActivityGroupsResponse> updateActivityGroupsAsync(Wrappers.ActivityGroupService.updateActivityGroupsRequest request);
 	}
 
 
@@ -2490,6 +2515,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ActivityGroupService.createActivityGroupsResponse> Google.Api.Ads.Dfp.v201711.ActivityGroupServiceInterface.createActivityGroupsAsync(Wrappers.ActivityGroupService.createActivityGroupsRequest request) {
+			return base.Channel.createActivityGroupsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ActivityGroup[]> createActivityGroupsAsync(Google.Api.Ads.Dfp.v201711.ActivityGroup[] activityGroups) {
+			Wrappers.ActivityGroupService.createActivityGroupsRequest inValue = new Wrappers.ActivityGroupService.createActivityGroupsRequest();
+			inValue.activityGroups = activityGroups;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ActivityGroup[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ActivityGroupServiceInterface)(this)).createActivityGroupsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets an <a href='ActivityGroupPage'>ActivityGroupPage</a> of <a
 		/// href='ActivityGroup'>ActivityGroup</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
@@ -2511,6 +2547,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getActivityGroupsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ActivityGroupPage> getActivityGroupsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getActivityGroupsByStatementAsync(filterStatement);
+		}
+
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.ActivityGroupService.updateActivityGroupsResponse Google.Api.Ads.Dfp.v201711.ActivityGroupServiceInterface.updateActivityGroups(Wrappers.ActivityGroupService.updateActivityGroupsRequest request) {
 			return base.Channel.updateActivityGroups(request);
@@ -2524,6 +2564,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.activityGroups = activityGroups;
 			Wrappers.ActivityGroupService.updateActivityGroupsResponse retVal = ((Google.Api.Ads.Dfp.v201711.ActivityGroupServiceInterface)(this)).updateActivityGroups(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ActivityGroupService.updateActivityGroupsResponse> Google.Api.Ads.Dfp.v201711.ActivityGroupServiceInterface.updateActivityGroupsAsync(Wrappers.ActivityGroupService.updateActivityGroupsRequest request) {
+			return base.Channel.updateActivityGroupsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ActivityGroup[]> updateActivityGroupsAsync(Google.Api.Ads.Dfp.v201711.ActivityGroup[] activityGroups) {
+			Wrappers.ActivityGroupService.updateActivityGroupsRequest inValue = new Wrappers.ActivityGroupService.updateActivityGroupsRequest();
+			inValue.activityGroups = activityGroups;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ActivityGroup[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ActivityGroupServiceInterface)(this)).updateActivityGroupsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ContentMetadataKeyHierarchyService
@@ -2950,11 +3001,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.ContentMetadataKeyHierarchyService.createContentMetadataKeyHierarchiesResponse createContentMetadataKeyHierarchies(Wrappers.ContentMetadataKeyHierarchyService.createContentMetadataKeyHierarchiesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ContentMetadataKeyHierarchyService.createContentMetadataKeyHierarchiesResponse> createContentMetadataKeyHierarchiesAsync(Wrappers.ContentMetadataKeyHierarchyService.createContentMetadataKeyHierarchiesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchyPage getContentMetadataKeyHierarchiesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchyPage> getContentMetadataKeyHierarchiesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -2963,6 +3021,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performContentMetadataKeyHierarchyAction(Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchyAction contentMetadataKeyHierarchyAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performContentMetadataKeyHierarchyActionAsync(Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchyAction contentMetadataKeyHierarchyAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -2970,6 +3032,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesResponse updateContentMetadataKeyHierarchies(Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesResponse> updateContentMetadataKeyHierarchiesAsync(Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesRequest request);
 	}
 
 
@@ -3187,6 +3252,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ContentMetadataKeyHierarchyService.createContentMetadataKeyHierarchiesResponse> Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchyServiceInterface.createContentMetadataKeyHierarchiesAsync(Wrappers.ContentMetadataKeyHierarchyService.createContentMetadataKeyHierarchiesRequest request) {
+			return base.Channel.createContentMetadataKeyHierarchiesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchy[]> createContentMetadataKeyHierarchiesAsync(Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchy[] contentMetadataKeyHierarchies) {
+			Wrappers.ContentMetadataKeyHierarchyService.createContentMetadataKeyHierarchiesRequest inValue = new Wrappers.ContentMetadataKeyHierarchyService.createContentMetadataKeyHierarchiesRequest();
+			inValue.contentMetadataKeyHierarchies = contentMetadataKeyHierarchies;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchy[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchyServiceInterface)(this)).createContentMetadataKeyHierarchiesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a
 		/// href='ContentMetadataKeyHierarchyPage'>ContentMetadataKeyHierarchyPage</a> of <a
 		/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects that
@@ -3210,6 +3286,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getContentMetadataKeyHierarchiesByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchyPage> getContentMetadataKeyHierarchiesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getContentMetadataKeyHierarchiesByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a
 		/// href='ContentMetadataKeyHierarchy'>ContentMetadataKeyHierarchy</a> objects that
 		/// match the given <a href=''>Statement#query</a>.
@@ -3219,6 +3299,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performContentMetadataKeyHierarchyAction(Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchyAction contentMetadataKeyHierarchyAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performContentMetadataKeyHierarchyAction(contentMetadataKeyHierarchyAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performContentMetadataKeyHierarchyActionAsync(Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchyAction contentMetadataKeyHierarchyAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performContentMetadataKeyHierarchyActionAsync(contentMetadataKeyHierarchyAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3237,6 +3321,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.contentMetadataKeyHierarchies = contentMetadataKeyHierarchies;
 			Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesResponse retVal = ((Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchyServiceInterface)(this)).updateContentMetadataKeyHierarchies(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesResponse> Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchyServiceInterface.updateContentMetadataKeyHierarchiesAsync(Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesRequest request) {
+			return base.Channel.updateContentMetadataKeyHierarchiesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchy[]> updateContentMetadataKeyHierarchiesAsync(Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchy[] contentMetadataKeyHierarchies) {
+			Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesRequest inValue = new Wrappers.ContentMetadataKeyHierarchyService.updateContentMetadataKeyHierarchiesRequest();
+			inValue.contentMetadataKeyHierarchies = contentMetadataKeyHierarchies;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchy[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchyServiceInterface)(this)).updateContentMetadataKeyHierarchiesAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ContentService
@@ -3259,8 +3354,8 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		private string cmsContentIdField;
 
-		/// <summary>The ID of the Content Source associated with the CMS in DFP. This attribute is
-		/// read-only.
+		/// <summary>The ID of the Content Source associated with the CMS in Ad Manager. This
+		/// attribute is read-only.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 0)]
 		public long id {
@@ -3532,9 +3627,9 @@ namespace Google.Api.Ads.Dfp.v201711
 
 
 	/// <summary>A <code>Content</code> represents video metadata from a publisher's Content
-	/// Management System (CMS) that has been synced to DFP. <p>Video line items can be
-	/// targeted to <code>Content</code> to indicate what ads should match when the
-	/// <code>Content</code> is being played.</p>
+	/// Management System (CMS) that has been synced to Ad Manager. <p>Video line items
+	/// can be targeted to <code>Content</code> to indicate what ads should match when
+	/// the <code>Content</code> is being played.</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -4023,11 +4118,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.ContentPage getContentByStatement(Google.Api.Ads.Dfp.v201711.Statement statement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentPage> getContentByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ContentPage getContentByStatementAndCustomTargetingValue(Google.Api.Ads.Dfp.v201711.Statement filterStatement, long customTargetingValueId);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentPage> getContentByStatementAndCustomTargetingValueAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement, long customTargetingValueId);
 	}
 
 
@@ -4107,6 +4210,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getContentByStatement(statement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentPage> getContentByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement) {
+			return base.Channel.getContentByStatementAsync(statement);
+		}
+
 		/// <summary>Gets a <a href='ContentPage'>ContentPage</a> of <a href='Content'>Content</a>
 		/// objects that satisfy the given <a href='Statement#query'>Statement#query</a>.
 		/// Additionally, filters on the given value ID and key ID that the value belongs
@@ -4125,6 +4232,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the content that matches the given filter</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.ContentPage getContentByStatementAndCustomTargetingValue(Google.Api.Ads.Dfp.v201711.Statement filterStatement, long customTargetingValueId) {
 			return base.Channel.getContentByStatementAndCustomTargetingValue(filterStatement, customTargetingValueId);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentPage> getContentByStatementAndCustomTargetingValueAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement, long customTargetingValueId) {
+			return base.Channel.getContentByStatementAndCustomTargetingValueAsync(filterStatement, customTargetingValueId);
 		}
 	}
 	namespace Wrappers.CreativeService
@@ -4656,8 +4767,8 @@ namespace Google.Api.Ads.Dfp.v201711
 
 	/// <summary>Click tags define click-through URLs for each exit on an HTML5 creative. An exit
 	/// is any area that can be clicked that directs the browser to a landing page. Each
-	/// click tag defines the click-through URL for a different exit. In DFP, tracking
-	/// pixels are attached to the click tags if URLs are valid.
+	/// click tag defines the click-through URL for a different exit. In Ad Manager,
+	/// tracking pixels are attached to the click tags if URLs are valid.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -5914,7 +6025,10 @@ namespace Google.Api.Ads.Dfp.v201711
 	}
 
 
-	/// <summary>A <code>Creative</code> represents the media for the ad being served.
+	/// <summary>A <code>Creative</code> represents the media for the ad being served. <p>Read
+	/// more about creatives on the <a
+	/// href="https://support.google.com/dfp_premium/answer/3185155">Ad Manager Help
+	/// Center</a>.</p>
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(VastRedirectCreative))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(UnsupportedCreative))]
@@ -6423,7 +6537,8 @@ namespace Google.Api.Ads.Dfp.v201711
 
 
 	/// <summary>A <code>Creative</code> that isn't supported by this version of the API. This
-	/// object is readonly and when encountered should be reported on the DFP API forum.
+	/// object is readonly and when encountered should be reported on the Ad Manager API
+	/// forum.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -6955,10 +7070,10 @@ namespace Google.Api.Ads.Dfp.v201711
 	}
 
 
-	/// <summary>A <code>Creative</code> hosted by DoubleClick for Advertisers (DFA). <p>Similar
-	/// to third-party creatives, a DoubleClick tag is used to retrieve a creative
-	/// asset. However, DoubleClick tags are not sent to the user's browser. Instead,
-	/// they are processed internally within the DoubleClick system..</p>
+	/// <summary>A <code>Creative</code> hosted by Campaign Manager. <p>Similar to third-party
+	/// creatives, a Campaign Manager tag is used to retrieve a creative asset. However,
+	/// Campaign Manager tags are not sent to the user's browser. Instead, they are
+	/// processed internally within the Google Marketing Platform system..</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -7490,8 +7605,9 @@ namespace Google.Api.Ads.Dfp.v201711
 
 
 	/// <summary>A <code>Creative</code> that displays an externally hosted Flash-based ad and is
-	/// served via VAST 2.0 XML. It is displayed in a linear fashion with a video
-	/// (before, after, interrupting). This creative is read only.
+	/// served via VAST XML. It is displayed in a linear fashion with a video (before,
+	/// after, interrupting). This creative is read only. <p>This creative type has been
+	/// deprecated as part of the Flash deprecation.</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -7688,8 +7804,9 @@ namespace Google.Api.Ads.Dfp.v201711
 
 
 	/// <summary>A <code>Creative</code> that displays a DFP-hosted Flash-based ad and is served
-	/// via VAST 2.0 XML. It is displayed in a linear fashion with a video (before,
-	/// after, interrupting). This creative is read only.
+	/// via VAST XML. It is displayed in a linear fashion with a video (before, after,
+	/// interrupting). This creative is read only. <p>This creative type has been
+	/// deprecated as part of the Flash deprecation.</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -8398,8 +8515,8 @@ namespace Google.Api.Ads.Dfp.v201711
 	}
 
 
-	/// <summary>A <code>Creative</code> that contains DFP-hosted video ads and is served via
-	/// VAST 2.0 XML. This creative is read-only.
+	/// <summary>A <code>Creative</code> that contains Ad Manager hosted video ads and is served
+	/// via VAST XML. This creative is read-only.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -8524,8 +8641,8 @@ namespace Google.Api.Ads.Dfp.v201711
 
 
 	/// <summary>An overlay <code>Creative</code> that loads an image asset from a specified URL
-	/// and is served via VAST 2.0 XML. Overlays cover part of the video content they
-	/// are displayed on top of. This creative is read only.
+	/// and is served via VAST XML. Overlays cover part of the video content they are
+	/// displayed on top of. This creative is read only.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -9082,8 +9199,8 @@ namespace Google.Api.Ads.Dfp.v201711
 
 
 	/// <summary>An overlay <code>Creative</code> that loads a Flash asset from a specified URL
-	/// and is served via VAST 2.0 XML. Overlays cover part of the video content they
-	/// are displayed on top of.
+	/// and is served via VAST XML. Overlays cover part of the video content they are
+	/// displayed on top of.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -9428,8 +9545,8 @@ namespace Google.Api.Ads.Dfp.v201711
 
 
 	/// <summary>An overlay <code>Creative</code> that displays a Flash-based ad and is served
-	/// via VAST 2.0 XML. Overlays cover part of the video content they are displayed on
-	/// top of. This creative is read-only.
+	/// via VAST XML. Overlays cover part of the video content they are displayed on top
+	/// of. This creative is read-only.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -10573,9 +10690,9 @@ namespace Google.Api.Ads.Dfp.v201711
 			}
 		}
 
-		/// <summary>The AdMob publisher ID. See
-		/// https://support.google.com/dfp_premium/answer/1209767#admob for more
-		/// information. This attribute is required.
+		/// <summary>The AdMob publisher ID. See the <a
+		/// href="https://support.google.com/dfp_premium/answer/1209767#admob">Ad Manager
+		/// Help Center</a> for more information. This attribute is required.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 1)]
 		public string publisherId {
@@ -10801,7 +10918,7 @@ namespace Google.Api.Ads.Dfp.v201711
 	}
 
 
-	/// <summary>Lists all errors associated with Rich Media Studio creatives.
+	/// <summary>Lists all errors associated with Studio creatives.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -10847,7 +10964,7 @@ namespace Google.Api.Ads.Dfp.v201711
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "RichMediaStudioCreativeError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201711")]
 	public enum RichMediaStudioCreativeErrorReason {
-		/// <summary>Only DoubleClick Rich Media Studio can create a <code></code>.
+		/// <summary>Only Studio can create a <code>RichMediaStudioCreative</code>.
 		/// </summary>
 		CREATION_NOT_ALLOWED = 0,
 		/// <summary>Unknown error
@@ -11325,7 +11442,7 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <summary>The uploaded file is too large.
 		/// </summary>
 		FILE_TOO_LARGE = 20,
-		/// <summary>A system error occured, please try again.
+		/// <summary>A system error occurred, please try again.
 		/// </summary>
 		SYSTEM_ERROR = 21,
 		/// <summary>The image density for a primary asset was not one of the expected image
@@ -12199,12 +12316,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.CreativeService.createCreativesResponse createCreatives(Wrappers.CreativeService.createCreativesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CreativeService.createCreativesResponse> createCreativesAsync(Wrappers.CreativeService.createCreativesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(Asset))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.CreativePage getCreativesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativePage> getCreativesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -12214,6 +12338,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(Asset))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.CreativeService.updateCreativesResponse updateCreatives(Wrappers.CreativeService.updateCreativesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CreativeService.updateCreativesResponse> updateCreativesAsync(Wrappers.CreativeService.updateCreativesRequest request);
 	}
 
 
@@ -12311,6 +12438,9 @@ namespace Google.Api.Ads.Dfp.v201711
 	/// href='Creative'>Creative</a> objects. <p>For a creative to run, it must be
 	/// associated with a <a href='LineItem'>LineItem</a> managed by the <a
 	/// href='LineItemCreativeAssociationService'>LineItemCreativeAssociationService</a>.</p>
+	/// <p>Read more about creatives on the <a
+	/// href="https://support.google.com/dfp_premium/answer/3185155">DFP Help
+	/// Center</a>.</p>
 	/// </summary>
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -12359,6 +12489,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CreativeService.createCreativesResponse> Google.Api.Ads.Dfp.v201711.CreativeServiceInterface.createCreativesAsync(Wrappers.CreativeService.createCreativesRequest request) {
+			return base.Channel.createCreativesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Creative[]> createCreativesAsync(Google.Api.Ads.Dfp.v201711.Creative[] creatives) {
+			Wrappers.CreativeService.createCreativesRequest inValue = new Wrappers.CreativeService.createCreativesRequest();
+			inValue.creatives = creatives;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Creative[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CreativeServiceInterface)(this)).createCreativesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='CreativePage'>CreativePage</a> of <a
 		/// href='Creative'>Creative</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
@@ -12381,6 +12522,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getCreativesByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativePage> getCreativesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getCreativesByStatementAsync(filterStatement);
+		}
+
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.CreativeService.updateCreativesResponse Google.Api.Ads.Dfp.v201711.CreativeServiceInterface.updateCreatives(Wrappers.CreativeService.updateCreativesRequest request) {
 			return base.Channel.updateCreatives(request);
@@ -12394,6 +12539,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.creatives = creatives;
 			Wrappers.CreativeService.updateCreativesResponse retVal = ((Google.Api.Ads.Dfp.v201711.CreativeServiceInterface)(this)).updateCreatives(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CreativeService.updateCreativesResponse> Google.Api.Ads.Dfp.v201711.CreativeServiceInterface.updateCreativesAsync(Wrappers.CreativeService.updateCreativesRequest request) {
+			return base.Channel.updateCreativesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Creative[]> updateCreativesAsync(Google.Api.Ads.Dfp.v201711.Creative[] creatives) {
+			Wrappers.CreativeService.updateCreativesRequest inValue = new Wrappers.CreativeService.updateCreativesRequest();
+			inValue.creatives = creatives;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Creative[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CreativeServiceInterface)(this)).updateCreativesAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.CreativeSetService
@@ -12527,6 +12683,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.CreativeSet createCreativeSet(Google.Api.Ads.Dfp.v201711.CreativeSet creativeSet);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeSet> createCreativeSetAsync(Google.Api.Ads.Dfp.v201711.CreativeSet creativeSet);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
@@ -12534,11 +12694,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.CreativeSetPage getCreativeSetsByStatement(Google.Api.Ads.Dfp.v201711.Statement statement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeSetPage> getCreativeSetsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.CreativeSet updateCreativeSet(Google.Api.Ads.Dfp.v201711.CreativeSet creativeSet);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeSet> updateCreativeSetAsync(Google.Api.Ads.Dfp.v201711.CreativeSet creativeSet);
 	}
 
 
@@ -12674,6 +12842,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.createCreativeSet(creativeSet);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeSet> createCreativeSetAsync(Google.Api.Ads.Dfp.v201711.CreativeSet creativeSet) {
+			return base.Channel.createCreativeSetAsync(creativeSet);
+		}
+
 		/// <summary>Gets a <a href='CreativeSetPage'>CreativeSetPage</a> of <a
 		/// href='CreativeSet'>CreativeSet</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
@@ -12694,11 +12866,19 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getCreativeSetsByStatement(statement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeSetPage> getCreativeSetsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement) {
+			return base.Channel.getCreativeSetsByStatementAsync(statement);
+		}
+
 		/// <summary>Updates the specified <a href='CreativeSet'>CreativeSet</a>.
 		/// </summary><param name='creativeSet'>the creative set to update</param>
 		/// <returns>the updated creative set</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.CreativeSet updateCreativeSet(Google.Api.Ads.Dfp.v201711.CreativeSet creativeSet) {
 			return base.Channel.updateCreativeSet(creativeSet);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeSet> updateCreativeSetAsync(Google.Api.Ads.Dfp.v201711.CreativeSet creativeSet) {
+			return base.Channel.updateCreativeSetAsync(creativeSet);
 		}
 	}
 	namespace Wrappers.CreativeTemplateService
@@ -13465,6 +13645,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.CreativeTemplatePage getCreativeTemplatesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeTemplatePage> getCreativeTemplatesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 	}
 
 
@@ -13526,6 +13710,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the creative templates that match the given filter</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.CreativeTemplatePage getCreativeTemplatesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.getCreativeTemplatesByStatement(filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeTemplatePage> getCreativeTemplatesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getCreativeTemplatesByStatementAsync(filterStatement);
 		}
 	}
 	namespace Wrappers.CreativeWrapperService
@@ -14006,11 +14194,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.CreativeWrapperService.createCreativeWrappersResponse createCreativeWrappers(Wrappers.CreativeWrapperService.createCreativeWrappersRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CreativeWrapperService.createCreativeWrappersResponse> createCreativeWrappersAsync(Wrappers.CreativeWrapperService.createCreativeWrappersRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.CreativeWrapperPage getCreativeWrappersByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeWrapperPage> getCreativeWrappersByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -14019,6 +14214,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performCreativeWrapperAction(Google.Api.Ads.Dfp.v201711.CreativeWrapperAction creativeWrapperAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performCreativeWrapperActionAsync(Google.Api.Ads.Dfp.v201711.CreativeWrapperAction creativeWrapperAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -14026,6 +14225,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.CreativeWrapperService.updateCreativeWrappersResponse updateCreativeWrappers(Wrappers.CreativeWrapperService.updateCreativeWrappersRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CreativeWrapperService.updateCreativeWrappersResponse> updateCreativeWrappersAsync(Wrappers.CreativeWrapperService.updateCreativeWrappersRequest request);
 	}
 
 
@@ -14217,6 +14419,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CreativeWrapperService.createCreativeWrappersResponse> Google.Api.Ads.Dfp.v201711.CreativeWrapperServiceInterface.createCreativeWrappersAsync(Wrappers.CreativeWrapperService.createCreativeWrappersRequest request) {
+			return base.Channel.createCreativeWrappersAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeWrapper[]> createCreativeWrappersAsync(Google.Api.Ads.Dfp.v201711.CreativeWrapper[] creativeWrappers) {
+			Wrappers.CreativeWrapperService.createCreativeWrappersRequest inValue = new Wrappers.CreativeWrapperService.createCreativeWrappersRequest();
+			inValue.creativeWrappers = creativeWrappers;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeWrapper[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CreativeWrapperServiceInterface)(this)).createCreativeWrappersAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='CreativeWrapperPage'>CreativeWrapperPage</a> of <a
 		/// href='CreativeWrapper'>CreativeWrapper</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
@@ -14236,6 +14449,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getCreativeWrappersByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeWrapperPage> getCreativeWrappersByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getCreativeWrappersByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='CreativeWrapper'>CreativeWrapper</a> objects that
 		/// match the given <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='creativeWrapperAction'>the action to perform</param>
@@ -14244,6 +14461,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performCreativeWrapperAction(Google.Api.Ads.Dfp.v201711.CreativeWrapperAction creativeWrapperAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performCreativeWrapperAction(creativeWrapperAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performCreativeWrapperActionAsync(Google.Api.Ads.Dfp.v201711.CreativeWrapperAction creativeWrapperAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performCreativeWrapperActionAsync(creativeWrapperAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -14260,6 +14481,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.creativeWrappers = creativeWrappers;
 			Wrappers.CreativeWrapperService.updateCreativeWrappersResponse retVal = ((Google.Api.Ads.Dfp.v201711.CreativeWrapperServiceInterface)(this)).updateCreativeWrappers(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CreativeWrapperService.updateCreativeWrappersResponse> Google.Api.Ads.Dfp.v201711.CreativeWrapperServiceInterface.updateCreativeWrappersAsync(Wrappers.CreativeWrapperService.updateCreativeWrappersRequest request) {
+			return base.Channel.updateCreativeWrappersAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeWrapper[]> updateCreativeWrappersAsync(Google.Api.Ads.Dfp.v201711.CreativeWrapper[] creativeWrappers) {
+			Wrappers.CreativeWrapperService.updateCreativeWrappersRequest inValue = new Wrappers.CreativeWrapperService.updateCreativeWrappersRequest();
+			inValue.creativeWrappers = creativeWrappers;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeWrapper[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CreativeWrapperServiceInterface)(this)).updateCreativeWrappersAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.CustomTargetingService
@@ -14826,7 +15058,7 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// is too long.
 		/// </summary>
 		VALUE_DISPLAY_NAME_INVALID_LENGTH = 15,
-		/// <summary>Only DFP Premium networks can have <a
+		/// <summary>Only Ad Manager 360 networks can have <a
 		/// href='CustomTargetingValue#matchType'>CustomTargetingValue#matchType</a> other
 		/// than <a
 		/// href='CustomTargetingValue.MatchType#EXACT'>CustomTargetingValue.MatchType#EXACT</a>.
@@ -14926,6 +15158,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.CustomTargetingService.createCustomTargetingKeysResponse createCustomTargetingKeys(Wrappers.CustomTargetingService.createCustomTargetingKeysRequest request);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CustomTargetingService.createCustomTargetingKeysResponse> createCustomTargetingKeysAsync(Wrappers.CustomTargetingService.createCustomTargetingKeysRequest request);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -14935,11 +15170,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.CustomTargetingService.createCustomTargetingValuesResponse createCustomTargetingValues(Wrappers.CustomTargetingService.createCustomTargetingValuesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CustomTargetingService.createCustomTargetingValuesResponse> createCustomTargetingValuesAsync(Wrappers.CustomTargetingService.createCustomTargetingValuesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.CustomTargetingKeyPage getCustomTargetingKeysByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingKeyPage> getCustomTargetingKeysByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -14949,6 +15191,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.CustomTargetingValuePage getCustomTargetingValuesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingValuePage> getCustomTargetingValuesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
@@ -14956,11 +15202,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.UpdateResult performCustomTargetingKeyAction(Google.Api.Ads.Dfp.v201711.CustomTargetingKeyAction customTargetingKeyAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performCustomTargetingKeyActionAsync(Google.Api.Ads.Dfp.v201711.CustomTargetingKeyAction customTargetingKeyAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performCustomTargetingValueAction(Google.Api.Ads.Dfp.v201711.CustomTargetingValueAction customTargetingValueAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performCustomTargetingValueActionAsync(Google.Api.Ads.Dfp.v201711.CustomTargetingValueAction customTargetingValueAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -14970,6 +15224,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.CustomTargetingService.updateCustomTargetingKeysResponse updateCustomTargetingKeys(Wrappers.CustomTargetingService.updateCustomTargetingKeysRequest request);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CustomTargetingService.updateCustomTargetingKeysResponse> updateCustomTargetingKeysAsync(Wrappers.CustomTargetingService.updateCustomTargetingKeysRequest request);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -14977,6 +15234,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.CustomTargetingService.updateCustomTargetingValuesResponse updateCustomTargetingValues(Wrappers.CustomTargetingService.updateCustomTargetingValuesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CustomTargetingService.updateCustomTargetingValuesResponse> updateCustomTargetingValuesAsync(Wrappers.CustomTargetingService.updateCustomTargetingValuesRequest request);
 	}
 
 
@@ -15535,6 +15795,17 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CustomTargetingService.createCustomTargetingKeysResponse> Google.Api.Ads.Dfp.v201711.CustomTargetingServiceInterface.createCustomTargetingKeysAsync(Wrappers.CustomTargetingService.createCustomTargetingKeysRequest request) {
+			return base.Channel.createCustomTargetingKeysAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingKey[]> createCustomTargetingKeysAsync(Google.Api.Ads.Dfp.v201711.CustomTargetingKey[] keys) {
+			Wrappers.CustomTargetingService.createCustomTargetingKeysRequest inValue = new Wrappers.CustomTargetingService.createCustomTargetingKeysRequest();
+			inValue.keys = keys;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingKey[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CustomTargetingServiceInterface)(this)).createCustomTargetingKeysAsync(inValue)).Result.rval);
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.CustomTargetingService.createCustomTargetingValuesResponse Google.Api.Ads.Dfp.v201711.CustomTargetingServiceInterface.createCustomTargetingValues(Wrappers.CustomTargetingService.createCustomTargetingValuesRequest request) {
 			return base.Channel.createCustomTargetingValues(request);
 		}
@@ -15550,6 +15821,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.values = values;
 			Wrappers.CustomTargetingService.createCustomTargetingValuesResponse retVal = ((Google.Api.Ads.Dfp.v201711.CustomTargetingServiceInterface)(this)).createCustomTargetingValues(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CustomTargetingService.createCustomTargetingValuesResponse> Google.Api.Ads.Dfp.v201711.CustomTargetingServiceInterface.createCustomTargetingValuesAsync(Wrappers.CustomTargetingService.createCustomTargetingValuesRequest request) {
+			return base.Channel.createCustomTargetingValuesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingValue[]> createCustomTargetingValuesAsync(Google.Api.Ads.Dfp.v201711.CustomTargetingValue[] values) {
+			Wrappers.CustomTargetingService.createCustomTargetingValuesRequest inValue = new Wrappers.CustomTargetingService.createCustomTargetingValuesRequest();
+			inValue.values = values;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingValue[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CustomTargetingServiceInterface)(this)).createCustomTargetingValuesAsync(inValue)).Result.rval);
 		}
 
 		/// <summary>Gets a <a href='CustomTargetingKeyPage'>CustomTargetingKeyPage</a> of <a
@@ -15570,6 +15852,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the custom targeting keys that match the given filter</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.CustomTargetingKeyPage getCustomTargetingKeysByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.getCustomTargetingKeysByStatement(filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingKeyPage> getCustomTargetingKeysByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getCustomTargetingKeysByStatementAsync(filterStatement);
 		}
 
 		/// <summary>Gets a <a href='CustomTargetingValuePage'>CustomTargetingValuePage</a> of <a
@@ -15604,6 +15890,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getCustomTargetingValuesByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingValuePage> getCustomTargetingValuesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getCustomTargetingValuesByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='CustomTargetingKey'>CustomTargetingKey</a> objects
 		/// that match the given <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='customTargetingKeyAction'>the action to perform</param>
@@ -15614,6 +15904,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.performCustomTargetingKeyAction(customTargetingKeyAction, filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performCustomTargetingKeyActionAsync(Google.Api.Ads.Dfp.v201711.CustomTargetingKeyAction customTargetingKeyAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performCustomTargetingKeyActionAsync(customTargetingKeyAction, filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='CustomTargetingValue'>CustomTargetingValue</a>
 		/// objects that match the given <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='customTargetingValueAction'>the action to perform</param>
@@ -15622,6 +15916,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performCustomTargetingValueAction(Google.Api.Ads.Dfp.v201711.CustomTargetingValueAction customTargetingValueAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performCustomTargetingValueAction(customTargetingValueAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performCustomTargetingValueActionAsync(Google.Api.Ads.Dfp.v201711.CustomTargetingValueAction customTargetingValueAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performCustomTargetingValueActionAsync(customTargetingValueAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -15641,6 +15939,17 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CustomTargetingService.updateCustomTargetingKeysResponse> Google.Api.Ads.Dfp.v201711.CustomTargetingServiceInterface.updateCustomTargetingKeysAsync(Wrappers.CustomTargetingService.updateCustomTargetingKeysRequest request) {
+			return base.Channel.updateCustomTargetingKeysAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingKey[]> updateCustomTargetingKeysAsync(Google.Api.Ads.Dfp.v201711.CustomTargetingKey[] keys) {
+			Wrappers.CustomTargetingService.updateCustomTargetingKeysRequest inValue = new Wrappers.CustomTargetingService.updateCustomTargetingKeysRequest();
+			inValue.keys = keys;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingKey[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CustomTargetingServiceInterface)(this)).updateCustomTargetingKeysAsync(inValue)).Result.rval);
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.CustomTargetingService.updateCustomTargetingValuesResponse Google.Api.Ads.Dfp.v201711.CustomTargetingServiceInterface.updateCustomTargetingValues(Wrappers.CustomTargetingService.updateCustomTargetingValuesRequest request) {
 			return base.Channel.updateCustomTargetingValues(request);
 		}
@@ -15654,6 +15963,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.values = values;
 			Wrappers.CustomTargetingService.updateCustomTargetingValuesResponse retVal = ((Google.Api.Ads.Dfp.v201711.CustomTargetingServiceInterface)(this)).updateCustomTargetingValues(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CustomTargetingService.updateCustomTargetingValuesResponse> Google.Api.Ads.Dfp.v201711.CustomTargetingServiceInterface.updateCustomTargetingValuesAsync(Wrappers.CustomTargetingService.updateCustomTargetingValuesRequest request) {
+			return base.Channel.updateCustomTargetingValuesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingValue[]> updateCustomTargetingValuesAsync(Google.Api.Ads.Dfp.v201711.CustomTargetingValue[] values) {
+			Wrappers.CustomTargetingService.updateCustomTargetingValuesRequest inValue = new Wrappers.CustomTargetingService.updateCustomTargetingValuesRequest();
+			inValue.values = values;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingValue[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CustomTargetingServiceInterface)(this)).updateCustomTargetingValuesAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.CustomFieldService
@@ -15990,6 +16310,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.CustomFieldService.createCustomFieldOptionsResponse createCustomFieldOptions(Wrappers.CustomFieldService.createCustomFieldOptionsRequest request);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CustomFieldService.createCustomFieldOptionsResponse> createCustomFieldOptionsAsync(Wrappers.CustomFieldService.createCustomFieldOptionsRequest request);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -15999,11 +16322,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.CustomFieldService.createCustomFieldsResponse createCustomFields(Wrappers.CustomFieldService.createCustomFieldsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CustomFieldService.createCustomFieldsResponse> createCustomFieldsAsync(Wrappers.CustomFieldService.createCustomFieldsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.CustomFieldOption getCustomFieldOption(long customFieldOptionId);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomFieldOption> getCustomFieldOptionAsync(long customFieldOptionId);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -16013,11 +16343,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.CustomFieldPage getCustomFieldsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomFieldPage> getCustomFieldsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performCustomFieldAction(Google.Api.Ads.Dfp.v201711.CustomFieldAction customFieldAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performCustomFieldActionAsync(Google.Api.Ads.Dfp.v201711.CustomFieldAction customFieldAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -16027,6 +16365,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.CustomFieldService.updateCustomFieldOptionsResponse updateCustomFieldOptions(Wrappers.CustomFieldService.updateCustomFieldOptionsRequest request);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CustomFieldService.updateCustomFieldOptionsResponse> updateCustomFieldOptionsAsync(Wrappers.CustomFieldService.updateCustomFieldOptionsRequest request);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -16034,6 +16375,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.CustomFieldService.updateCustomFieldsResponse updateCustomFields(Wrappers.CustomFieldService.updateCustomFieldsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CustomFieldService.updateCustomFieldsResponse> updateCustomFieldsAsync(Wrappers.CustomFieldService.updateCustomFieldsRequest request);
 	}
 
 
@@ -16520,6 +16864,17 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CustomFieldService.createCustomFieldOptionsResponse> Google.Api.Ads.Dfp.v201711.CustomFieldServiceInterface.createCustomFieldOptionsAsync(Wrappers.CustomFieldService.createCustomFieldOptionsRequest request) {
+			return base.Channel.createCustomFieldOptionsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomFieldOption[]> createCustomFieldOptionsAsync(Google.Api.Ads.Dfp.v201711.CustomFieldOption[] customFieldOptions) {
+			Wrappers.CustomFieldService.createCustomFieldOptionsRequest inValue = new Wrappers.CustomFieldService.createCustomFieldOptionsRequest();
+			inValue.customFieldOptions = customFieldOptions;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomFieldOption[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CustomFieldServiceInterface)(this)).createCustomFieldOptionsAsync(inValue)).Result.rval);
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.CustomFieldService.createCustomFieldsResponse Google.Api.Ads.Dfp.v201711.CustomFieldServiceInterface.createCustomFields(Wrappers.CustomFieldService.createCustomFieldsRequest request) {
 			return base.Channel.createCustomFields(request);
 		}
@@ -16538,6 +16893,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CustomFieldService.createCustomFieldsResponse> Google.Api.Ads.Dfp.v201711.CustomFieldServiceInterface.createCustomFieldsAsync(Wrappers.CustomFieldService.createCustomFieldsRequest request) {
+			return base.Channel.createCustomFieldsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomField[]> createCustomFieldsAsync(Google.Api.Ads.Dfp.v201711.CustomField[] customFields) {
+			Wrappers.CustomFieldService.createCustomFieldsRequest inValue = new Wrappers.CustomFieldService.createCustomFieldsRequest();
+			inValue.customFields = customFields;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomField[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CustomFieldServiceInterface)(this)).createCustomFieldsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Returns the <a href='CustomFieldOption'>CustomFieldOption</a> uniquely
 		/// identified by the given ID.
 		/// </summary><param name='customFieldOptionId'>the ID of the custom field option, which must
@@ -16546,6 +16912,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// ID</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.CustomFieldOption getCustomFieldOption(long customFieldOptionId) {
 			return base.Channel.getCustomFieldOption(customFieldOptionId);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomFieldOption> getCustomFieldOptionAsync(long customFieldOptionId) {
+			return base.Channel.getCustomFieldOptionAsync(customFieldOptionId);
 		}
 
 		/// <summary>Gets a <a href='CustomFieldPage'>CustomFieldPage</a> of <a
@@ -16569,6 +16939,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getCustomFieldsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomFieldPage> getCustomFieldsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getCustomFieldsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='CustomField'>CustomField</a> objects that match the
 		/// given <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='customFieldAction'>the action to perform</param>
@@ -16577,6 +16951,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performCustomFieldAction(Google.Api.Ads.Dfp.v201711.CustomFieldAction customFieldAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performCustomFieldAction(customFieldAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performCustomFieldActionAsync(Google.Api.Ads.Dfp.v201711.CustomFieldAction customFieldAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performCustomFieldActionAsync(customFieldAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -16595,6 +16973,17 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CustomFieldService.updateCustomFieldOptionsResponse> Google.Api.Ads.Dfp.v201711.CustomFieldServiceInterface.updateCustomFieldOptionsAsync(Wrappers.CustomFieldService.updateCustomFieldOptionsRequest request) {
+			return base.Channel.updateCustomFieldOptionsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomFieldOption[]> updateCustomFieldOptionsAsync(Google.Api.Ads.Dfp.v201711.CustomFieldOption[] customFieldOptions) {
+			Wrappers.CustomFieldService.updateCustomFieldOptionsRequest inValue = new Wrappers.CustomFieldService.updateCustomFieldOptionsRequest();
+			inValue.customFieldOptions = customFieldOptions;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomFieldOption[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CustomFieldServiceInterface)(this)).updateCustomFieldOptionsAsync(inValue)).Result.rval);
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.CustomFieldService.updateCustomFieldsResponse Google.Api.Ads.Dfp.v201711.CustomFieldServiceInterface.updateCustomFields(Wrappers.CustomFieldService.updateCustomFieldsRequest request) {
 			return base.Channel.updateCustomFields(request);
 		}
@@ -16607,6 +16996,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.customFields = customFields;
 			Wrappers.CustomFieldService.updateCustomFieldsResponse retVal = ((Google.Api.Ads.Dfp.v201711.CustomFieldServiceInterface)(this)).updateCustomFields(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CustomFieldService.updateCustomFieldsResponse> Google.Api.Ads.Dfp.v201711.CustomFieldServiceInterface.updateCustomFieldsAsync(Wrappers.CustomFieldService.updateCustomFieldsRequest request) {
+			return base.Channel.updateCustomFieldsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomField[]> updateCustomFieldsAsync(Google.Api.Ads.Dfp.v201711.CustomField[] customFields) {
+			Wrappers.CustomFieldService.updateCustomFieldsRequest inValue = new Wrappers.CustomFieldService.updateCustomFieldsRequest();
+			inValue.customFields = customFields;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomField[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CustomFieldServiceInterface)(this)).updateCustomFieldsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ExchangeRateService
@@ -17008,11 +17408,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.ExchangeRateService.createExchangeRatesResponse createExchangeRates(Wrappers.ExchangeRateService.createExchangeRatesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ExchangeRateService.createExchangeRatesResponse> createExchangeRatesAsync(Wrappers.ExchangeRateService.createExchangeRatesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ExchangeRatePage getExchangeRatesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ExchangeRatePage> getExchangeRatesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -17021,6 +17428,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performExchangeRateAction(Google.Api.Ads.Dfp.v201711.ExchangeRateAction exchangeRateAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performExchangeRateActionAsync(Google.Api.Ads.Dfp.v201711.ExchangeRateAction exchangeRateAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -17028,6 +17439,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ExchangeRateService.updateExchangeRatesResponse updateExchangeRates(Wrappers.ExchangeRateService.updateExchangeRatesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ExchangeRateService.updateExchangeRatesResponse> updateExchangeRatesAsync(Wrappers.ExchangeRateService.updateExchangeRatesRequest request);
 	}
 
 
@@ -17202,6 +17616,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ExchangeRateService.createExchangeRatesResponse> Google.Api.Ads.Dfp.v201711.ExchangeRateServiceInterface.createExchangeRatesAsync(Wrappers.ExchangeRateService.createExchangeRatesRequest request) {
+			return base.Channel.createExchangeRatesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ExchangeRate[]> createExchangeRatesAsync(Google.Api.Ads.Dfp.v201711.ExchangeRate[] exchangeRates) {
+			Wrappers.ExchangeRateService.createExchangeRatesRequest inValue = new Wrappers.ExchangeRateService.createExchangeRatesRequest();
+			inValue.exchangeRates = exchangeRates;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ExchangeRate[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ExchangeRateServiceInterface)(this)).createExchangeRatesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='ExchangeRatePage'>ExchangeRatePage</a> of <a
 		/// href='ExchangeRate'>ExchangeRate</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
@@ -17222,6 +17647,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the exchange rates that match the given filter</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.ExchangeRatePage getExchangeRatesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.getExchangeRatesByStatement(filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ExchangeRatePage> getExchangeRatesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getExchangeRatesByStatementAsync(filterStatement);
 		}
 
 		/// <summary>Performs an action on <a href='ExchangeRate'>ExchangeRate</a> objects that
@@ -17246,6 +17675,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.performExchangeRateAction(exchangeRateAction, filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performExchangeRateActionAsync(Google.Api.Ads.Dfp.v201711.ExchangeRateAction exchangeRateAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performExchangeRateActionAsync(exchangeRateAction, filterStatement);
+		}
+
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.ExchangeRateService.updateExchangeRatesResponse Google.Api.Ads.Dfp.v201711.ExchangeRateServiceInterface.updateExchangeRates(Wrappers.ExchangeRateService.updateExchangeRatesRequest request) {
 			return base.Channel.updateExchangeRates(request);
@@ -17259,6 +17692,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.exchangeRates = exchangeRates;
 			Wrappers.ExchangeRateService.updateExchangeRatesResponse retVal = ((Google.Api.Ads.Dfp.v201711.ExchangeRateServiceInterface)(this)).updateExchangeRates(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ExchangeRateService.updateExchangeRatesResponse> Google.Api.Ads.Dfp.v201711.ExchangeRateServiceInterface.updateExchangeRatesAsync(Wrappers.ExchangeRateService.updateExchangeRatesRequest request) {
+			return base.Channel.updateExchangeRatesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ExchangeRate[]> updateExchangeRatesAsync(Google.Api.Ads.Dfp.v201711.ExchangeRate[] exchangeRates) {
+			Wrappers.ExchangeRateService.updateExchangeRatesRequest inValue = new Wrappers.ExchangeRateService.updateExchangeRatesRequest();
+			inValue.exchangeRates = exchangeRates;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ExchangeRate[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ExchangeRateServiceInterface)(this)).updateExchangeRatesAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ForecastService
@@ -18597,7 +19041,7 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='CustomCriteriaSet'>CustomCriteriaSet</a>.</p> <p>The third level can only
 		/// comprise of <a href='CustomCriteria'>CustomCriteria</a> objects.</p> <p>The
 		/// resulting custom targeting tree would be of the form:</p> <br /> <img
-		/// src="http://chart.apis.google.com/chart?cht=gv&amp;chl=digraph{customTargeting_LogicalOperator_OR-%3ECustomCriteriaSet_LogicalOperator_AND_1-%3ECustomCriteria_1;CustomCriteriaSet_LogicalOperator_AND_1-%3Eellipsis1;customTargeting_LogicalOperator_OR-%3Eellipsis2;ellipsis1[label=%22...%22,shape=none,fontsize=32];ellipsis2[label=%22...%22,shape=none,fontsize=32]}&amp;chs=450x200"/>
+		/// src="https://chart.apis.google.com/chart?cht=gv&amp;chl=digraph{customTargeting_LogicalOperator_OR-%3ECustomCriteriaSet_LogicalOperator_AND_1-%3ECustomCriteria_1;CustomCriteriaSet_LogicalOperator_AND_1-%3Eellipsis1;customTargeting_LogicalOperator_OR-%3Eellipsis2;ellipsis1[label=%22...%22,shape=none,fontsize=32];ellipsis2[label=%22...%22,shape=none,fontsize=32]}&amp;chs=450x200"/>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 4)]
 		public CustomCriteriaSet customTargeting {
@@ -19707,8 +20151,8 @@ namespace Google.Api.Ads.Dfp.v201711
 	}
 
 
-	/// <summary>Represents a mobile carrier. Carrier targeting is only available to DFP mobile
-	/// publishers.
+	/// <summary>Represents a mobile carrier. Carrier targeting is only available to Ad Manager
+	/// mobile publishers.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -20321,7 +20765,8 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>The logical operator to be applied to <a
 		/// href='CustomCriteriaSet#children'>CustomCriteriaSet#children</a>. This attribute
-		/// is required.
+		/// is required. <span class="constraint Required">This attribute is
+		/// required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 0)]
 		public CustomCriteriaSetLogicalOperator logicalOperator {
@@ -22650,9 +23095,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		/// <summary>The number of days to allow a line item to deliver past its <a
-		/// href='#endDateTime'>#endDateTime</a>. A maximum of 7 days is allowed. This is a
-		/// premium feature available for <a
-		/// href='LineItemType#STANDARD'>LineItemType#STANDARD</a> line items.
+		/// href='#endDateTime'>#endDateTime</a>. A maximum of 7 days is allowed. This is
+		/// feature is only available for Ad Manager 360 accounts.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 8)]
 		public int autoExtensionDays {
@@ -22810,7 +23254,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		/// <summary>Indicates the line item type of a <code>LineItem</code>. This attribute is
-		/// required.
+		/// required. The line item type determines the default priority of the line item.
+		/// More information can be found on the <a
+		/// href="https://support.google.com/dfp_premium/answer/177279">Ad Manager Help
+		/// Center</a>.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 14)]
 		public LineItemType lineItemType {
@@ -23952,15 +24399,15 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// </summary>
 		LEGACY_DFP = 6,
 		/// <summary>The type of <a href='LineItem'>LineItem</a> used for ads that track ads being
-		/// served externally of DFP, for example an email newsletter. The click through
-		/// would reference this ad, and the click would be tracked via this ad.
+		/// served externally of Ad Manager, for example an email newsletter. The click
+		/// through would reference this ad, and the click would be tracked via this ad.
 		/// </summary>
 		CLICK_TRACKING = 7,
 		/// <summary>A <a href='LineItem'>LineItem</a> using dynamic allocation backed by AdSense.
 		/// </summary>
 		ADSENSE = 8,
-		/// <summary>A <a href='LineItem'>LineItem</a> using dynamic allocation backed by the
-		/// Doubleclick Ad Exchange.
+		/// <summary>A <a href='LineItem'>LineItem</a> using dynamic allocation backed by the Google
+		/// Ad Exchange.
 		/// </summary>
 		AD_EXCHANGE = 9,
 		/// <summary>Represents a non-monetizable video <a href='LineItem'>LineItem</a> that targets
@@ -24266,9 +24713,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		private bool advertiserIdFieldSpecified;
 
 		/// <summary>The target of the forecast. If <a href='LineItem#id'>LineItem#id</a> is null or
-		/// no line item exists with that ID, then a forecast is computed for the the
-		/// subject, predicting what would happen if it were added to the network. If a line
-		/// item already exists with <a href='LineItem#id'>LineItem#id</a>, the forecast is
+		/// no line item exists with that ID, then a forecast is computed for the subject,
+		/// predicting what would happen if it were added to the network. If a line item
+		/// already exists with <a href='LineItem#id'>LineItem#id</a>, the forecast is
 		/// computed for the subject, predicting what would happen if the existing line
 		/// item's settings were modified to match the subject.
 		/// </summary>
@@ -24743,13 +25190,14 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// </summary>
 		INVALID_LINE_ITEM_PRIORITY = 16,
 		/// <summary>When a set-top box line item is pushed to Canoe, a revision number is used to
-		/// keep track of the last version of the line item that DFP synced with Canoe. The
-		/// only changes allowed on revisions within DFP is increasing the revision number.
+		/// keep track of the last version of the line item that Ad Manager synced with
+		/// Canoe. The only change allowed on revisions within Ad Manager is increasing the
+		/// revision number.
 		/// </summary>
 		SYNC_REVISION_NOT_INCREASING = 17,
 		/// <summary>When a set-top box line item is pushed to Canoe, a revision number is used to
-		/// keep track of the last version of the line item that DFP synced with Canoe. Sync
-		/// revisions begin at one and can only increase in value.
+		/// keep track of the last version of the line item that Ad Manager synced with
+		/// Canoe. Sync revisions begin at one and can only increase in value.
 		/// </summary>
 		SYNC_REVISION_MUST_BE_GREATER_THAN_ZERO = 18,
 		/// <summary>Set Top box line items cannot be unarchived.
@@ -24997,9 +25445,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='LineItemType#STANDARD'>LineItemType#STANDARD</a>.
 		/// </summary>
 		LINE_ITEM_TYPE_NOT_ALLOWED = 7,
-		/// <summary>Remnant line items from the Google Ad Manager cannot be changed to other line
-		/// item types once delivery begins. This restriction does not apply for new line
-		/// items created in Doubleclick For Publishers.
+		/// <summary>Network remnant line items cannot be changed to other line item types once
+		/// delivery begins. This restriction does not apply to any new line items created
+		/// in Ad Manager.
 		/// </summary>
 		NETWORK_REMNANT_ORDER_CANNOT_UPDATE_LINEITEM_TYPE = 8,
 		/// <summary>A dynamic allocation web property can only be set on a line item of type AdSense
@@ -25610,15 +26058,15 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <summary>Companion backfill is enabled but environment type not video.
 		/// </summary>
 		COMPANION_BACKFILL_REQUIRES_VIDEO = 24,
-		/// <summary>Companion delivery options require premium networks.
+		/// <summary>Companion delivery options require Ad Manager 360 networks.
 		/// </summary>
 		COMPANION_DELIVERY_OPTION_REQUIRE_PREMIUM = 25,
 		/// <summary>The master size of placeholders have duplicates.
 		/// </summary>
 		DUPLICATE_MASTER_SIZES = 26,
 		/// <summary>The line item priority is invalid if for dynamic allocation line items it is
-		/// different than the default for free publishers. When allowed, Premium publishers
-		/// can change the priority to any value.
+		/// different than the default for free publishers. When allowed, Ad Manager 360
+		/// users can change the priority to any value.
 		/// </summary>
 		INVALID_PRIORITY_FOR_LINE_ITEM_TYPE = 27,
 		/// <summary>The environment type is not valid.
@@ -25867,7 +26315,7 @@ namespace Google.Api.Ads.Dfp.v201711
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "InventoryUnitError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201711")]
 	public enum InventoryUnitErrorReason {
 		/// <summary><a href='AdUnit#explicitlyTargeted'>AdUnit#explicitlyTargeted</a> can be set to
-		/// <code>true</code> only in a DFP Premium account.
+		/// <code>true</code> only in an Ad Manager 360 account.
 		/// </summary>
 		EXPLICIT_TARGETING_NOT_ALLOWED = 0,
 		/// <summary>The specified target platform is not applicable for the inventory unit.
@@ -26022,8 +26470,9 @@ namespace Google.Api.Ads.Dfp.v201711
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "GrpSettingsError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201711")]
 	public enum GrpSettingsErrorReason {
-		/// <summary>Age range for GRP audience is not valid. Please see
-		/// https://support.google.com/dfp_premium/answer/6337075 for more information.
+		/// <summary>Age range for GRP audience is not valid. Please see the <a
+		/// href="https://support.google.com/dfp_premium/answer/6135438">Ad Manager Help
+		/// Center</a> for more information.
 		/// </summary>
 		INVALID_AGE_RANGE = 0,
 		/// <summary>GRP settings are only supported for video line items.
@@ -27088,12 +27537,20 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.AvailabilityForecast getAvailabilityForecast(Google.Api.Ads.Dfp.v201711.ProspectiveLineItem lineItem, Google.Api.Ads.Dfp.v201711.AvailabilityForecastOptions forecastOptions);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AvailabilityForecast> getAvailabilityForecastAsync(Google.Api.Ads.Dfp.v201711.ProspectiveLineItem lineItem, Google.Api.Ads.Dfp.v201711.AvailabilityForecastOptions forecastOptions);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(LineItemSummary))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.AvailabilityForecast getAvailabilityForecastById(long lineItemId, Google.Api.Ads.Dfp.v201711.AvailabilityForecastOptions forecastOptions);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AvailabilityForecast> getAvailabilityForecastByIdAsync(long lineItemId, Google.Api.Ads.Dfp.v201711.AvailabilityForecastOptions forecastOptions);
 
 		// CODEGEN: Parameter 'lineItems' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -27104,6 +27561,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ForecastService.getDeliveryForecastResponse getDeliveryForecast(Wrappers.ForecastService.getDeliveryForecastRequest request);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ForecastService.getDeliveryForecastResponse> getDeliveryForecastAsync(Wrappers.ForecastService.getDeliveryForecastRequest request);
+
 		// CODEGEN: Parameter 'lineItemIds' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -27112,6 +27572,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(LineItemSummary))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ForecastService.getDeliveryForecastByIdsResponse getDeliveryForecastByIds(Wrappers.ForecastService.getDeliveryForecastByIdsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ForecastService.getDeliveryForecastByIdsResponse> getDeliveryForecastByIdsAsync(Wrappers.ForecastService.getDeliveryForecastByIdsRequest request);
 	}
 
 
@@ -27453,6 +27916,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getAvailabilityForecast(lineItem, forecastOptions);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AvailabilityForecast> getAvailabilityForecastAsync(Google.Api.Ads.Dfp.v201711.ProspectiveLineItem lineItem, Google.Api.Ads.Dfp.v201711.AvailabilityForecastOptions forecastOptions) {
+			return base.Channel.getAvailabilityForecastAsync(lineItem, forecastOptions);
+		}
+
 		/// <summary>Gets an <a href='AvailabilityForecast'>AvailabilityForecast</a> for an existing
 		/// <a href='LineItem'>LineItem</a> object. An availability forecast reports the
 		/// maximum number of available units that the line item can be booked with, and
@@ -27466,6 +27933,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <param name='forecastOptions'>options controlling the forecast</param>
 		public virtual Google.Api.Ads.Dfp.v201711.AvailabilityForecast getAvailabilityForecastById(long lineItemId, Google.Api.Ads.Dfp.v201711.AvailabilityForecastOptions forecastOptions) {
 			return base.Channel.getAvailabilityForecastById(lineItemId, forecastOptions);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AvailabilityForecast> getAvailabilityForecastByIdAsync(long lineItemId, Google.Api.Ads.Dfp.v201711.AvailabilityForecastOptions forecastOptions) {
+			return base.Channel.getAvailabilityForecastByIdAsync(lineItemId, forecastOptions);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -27489,6 +27960,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ForecastService.getDeliveryForecastResponse> Google.Api.Ads.Dfp.v201711.ForecastServiceInterface.getDeliveryForecastAsync(Wrappers.ForecastService.getDeliveryForecastRequest request) {
+			return base.Channel.getDeliveryForecastAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.DeliveryForecast> getDeliveryForecastAsync(Google.Api.Ads.Dfp.v201711.ProspectiveLineItem[] lineItems, Google.Api.Ads.Dfp.v201711.DeliveryForecastOptions forecastOptions) {
+			Wrappers.ForecastService.getDeliveryForecastRequest inValue = new Wrappers.ForecastService.getDeliveryForecastRequest();
+			inValue.lineItems = lineItems;
+			inValue.forecastOptions = forecastOptions;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.DeliveryForecast>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ForecastServiceInterface)(this)).getDeliveryForecastAsync(inValue)).Result.rval);
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.ForecastService.getDeliveryForecastByIdsResponse Google.Api.Ads.Dfp.v201711.ForecastServiceInterface.getDeliveryForecastByIds(Wrappers.ForecastService.getDeliveryForecastByIdsRequest request) {
 			return base.Channel.getDeliveryForecastByIds(request);
 		}
@@ -27506,6 +27989,18 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.forecastOptions = forecastOptions;
 			Wrappers.ForecastService.getDeliveryForecastByIdsResponse retVal = ((Google.Api.Ads.Dfp.v201711.ForecastServiceInterface)(this)).getDeliveryForecastByIds(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ForecastService.getDeliveryForecastByIdsResponse> Google.Api.Ads.Dfp.v201711.ForecastServiceInterface.getDeliveryForecastByIdsAsync(Wrappers.ForecastService.getDeliveryForecastByIdsRequest request) {
+			return base.Channel.getDeliveryForecastByIdsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.DeliveryForecast> getDeliveryForecastByIdsAsync(long[] lineItemIds, Google.Api.Ads.Dfp.v201711.DeliveryForecastOptions forecastOptions) {
+			Wrappers.ForecastService.getDeliveryForecastByIdsRequest inValue = new Wrappers.ForecastService.getDeliveryForecastByIdsRequest();
+			inValue.lineItemIds = lineItemIds;
+			inValue.forecastOptions = forecastOptions;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.DeliveryForecast>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ForecastServiceInterface)(this)).getDeliveryForecastByIdsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ActivityService
@@ -27599,11 +28094,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	}
 	/// <summary><p>An activity is a specific user action that an advertiser wants to track, such
 	/// as the completion of a purchase or a visit to a webpage. You create and manage
-	/// activities in DFP. When a user performs the action after seeing an advertiser's
-	/// ad, that's a conversion.</p> <p>For example, you set up an activity in DFP to
-	/// track how many users visit an advertiser's promotional website after viewing or
-	/// clicking on an ad. When a user views an ad, then visits the page, that's one
-	/// conversion.</p>
+	/// activities in Ad Manager. When a user performs the action after seeing an
+	/// advertiser's ad, that's a conversion.</p> <p>For example, you set up an activity
+	/// in Ad Manager to track how many users visit an advertiser's promotional website
+	/// after viewing or clicking on an ad. When a user views an ad, then visits the
+	/// page, that's one conversion.</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -27834,11 +28329,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.ActivityService.createActivitiesResponse createActivities(Wrappers.ActivityService.createActivitiesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ActivityService.createActivitiesResponse> createActivitiesAsync(Wrappers.ActivityService.createActivitiesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ActivityPage getActivitiesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ActivityPage> getActivitiesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -27847,6 +28349,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ActivityService.updateActivitiesResponse updateActivities(Wrappers.ActivityService.updateActivitiesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ActivityService.updateActivitiesResponse> updateActivitiesAsync(Wrappers.ActivityService.updateActivitiesRequest request);
 	}
 
 
@@ -27994,6 +28499,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ActivityService.createActivitiesResponse> Google.Api.Ads.Dfp.v201711.ActivityServiceInterface.createActivitiesAsync(Wrappers.ActivityService.createActivitiesRequest request) {
+			return base.Channel.createActivitiesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Activity[]> createActivitiesAsync(Google.Api.Ads.Dfp.v201711.Activity[] activities) {
+			Wrappers.ActivityService.createActivitiesRequest inValue = new Wrappers.ActivityService.createActivitiesRequest();
+			inValue.activities = activities;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Activity[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ActivityServiceInterface)(this)).createActivitiesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets an <a href='ActivityPage'>ActivityPage</a> of <a
 		/// href='Activity'>Activity</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
@@ -28014,6 +28530,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getActivitiesByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ActivityPage> getActivitiesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getActivitiesByStatementAsync(filterStatement);
+		}
+
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.ActivityService.updateActivitiesResponse Google.Api.Ads.Dfp.v201711.ActivityServiceInterface.updateActivities(Wrappers.ActivityService.updateActivitiesRequest request) {
 			return base.Channel.updateActivities(request);
@@ -28027,6 +28547,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.activities = activities;
 			Wrappers.ActivityService.updateActivitiesResponse retVal = ((Google.Api.Ads.Dfp.v201711.ActivityServiceInterface)(this)).updateActivities(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ActivityService.updateActivitiesResponse> Google.Api.Ads.Dfp.v201711.ActivityServiceInterface.updateActivitiesAsync(Wrappers.ActivityService.updateActivitiesRequest request) {
+			return base.Channel.updateActivitiesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Activity[]> updateActivitiesAsync(Google.Api.Ads.Dfp.v201711.Activity[] activities) {
+			Wrappers.ActivityService.updateActivitiesRequest inValue = new Wrappers.ActivityService.updateActivitiesRequest();
+			inValue.activities = activities;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Activity[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ActivityServiceInterface)(this)).updateActivitiesAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.InventoryService
@@ -28990,7 +29521,7 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <summary>If this field is set to <code>true</code>, then the <code>AdUnit</code> will not
 		/// be implicitly targeted when its parent is. Traffickers must explicitly target
 		/// such an ad unit or else no line items will serve to it. This feature is only
-		/// available for DFP Premium accounts.
+		/// available for Ad Manager 360 accounts.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 11)]
 		public bool explicitlyTargeted {
@@ -29640,13 +30171,14 @@ namespace Google.Api.Ads.Dfp.v201711
 	public enum AdUnitHierarchyErrorReason {
 		/// <summary>The depth of the <a href='AdUnit'>AdUnit</a> in the inventory hierarchy is
 		/// greater than is allowed. The maximum allowed depth is two below the effective
-		/// root ad unit for Premium accounts and one level below effective root ad unit for
-		/// Small Business accounts.
+		/// root ad unit for Ad Manager 360 accounts and is one level below the effective
+		/// root ad unit for Ad Manager accounts.
 		/// </summary>
 		INVALID_DEPTH = 0,
-		/// <summary>The only valid <a href='AdUnit#parentId'>AdUnit#parentId</a> for a DFP Small
-		/// Business account is the <a
-		/// href='Network#effectiveRootAdUnitId'>Network#effectiveRootAdUnitId</a>.
+		/// <summary>The only valid <a href='AdUnit#parentId'>AdUnit#parentId</a> for an Ad Manager
+		/// account is the <a
+		/// href='Network#effectiveRootAdUnitId'>Network#effectiveRootAdUnitId</a>, Ad
+		/// Manager 360 accounts can specify an ad unit hierarchy with more than two levels.
 		/// </summary>
 		INVALID_PARENT = 1,
 		/// <summary>The value returned if the actual value is not exposed by the requested API
@@ -29698,8 +30230,8 @@ namespace Google.Api.Ads.Dfp.v201711
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "AdSenseAccountError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201711")]
 	public enum AdSenseAccountErrorReason {
-		/// <summary>An error occured while trying to associate an AdSense account with DFP. Unable
-		/// to create an association with AdSense or Ad Exchange account.
+		/// <summary>An error occurred while trying to associate an AdSense account with Ad Manager.
+		/// Unable to create an association with AdSense or Ad Exchange account.
 		/// </summary>
 		ASSOCIATE_ACCOUNT_API_ERROR = 0,
 		/// <summary>An error occured while trying to get an associated web property's ad slots.
@@ -29740,6 +30272,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.InventoryService.createAdUnitsResponse createAdUnits(Wrappers.InventoryService.createAdUnitsRequest request);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.InventoryService.createAdUnitsResponse> createAdUnitsAsync(Wrappers.InventoryService.createAdUnitsRequest request);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -29749,11 +30284,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.InventoryService.getAdUnitSizesByStatementResponse getAdUnitSizesByStatement(Wrappers.InventoryService.getAdUnitSizesByStatementRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.InventoryService.getAdUnitSizesByStatementResponse> getAdUnitSizesByStatementAsync(Wrappers.InventoryService.getAdUnitSizesByStatementRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.AdUnitPage getAdUnitsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdUnitPage> getAdUnitsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -29762,6 +30304,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performAdUnitAction(Google.Api.Ads.Dfp.v201711.AdUnitAction adUnitAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performAdUnitActionAsync(Google.Api.Ads.Dfp.v201711.AdUnitAction adUnitAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -29769,6 +30315,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.InventoryService.updateAdUnitsResponse updateAdUnits(Wrappers.InventoryService.updateAdUnitsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.InventoryService.updateAdUnitsResponse> updateAdUnitsAsync(Wrappers.InventoryService.updateAdUnitsRequest request);
 	}
 
 
@@ -29965,6 +30514,17 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.InventoryService.createAdUnitsResponse> Google.Api.Ads.Dfp.v201711.InventoryServiceInterface.createAdUnitsAsync(Wrappers.InventoryService.createAdUnitsRequest request) {
+			return base.Channel.createAdUnitsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdUnit[]> createAdUnitsAsync(Google.Api.Ads.Dfp.v201711.AdUnit[] adUnits) {
+			Wrappers.InventoryService.createAdUnitsRequest inValue = new Wrappers.InventoryService.createAdUnitsRequest();
+			inValue.adUnits = adUnits;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdUnit[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.InventoryServiceInterface)(this)).createAdUnitsAsync(inValue)).Result.rval);
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.InventoryService.getAdUnitSizesByStatementResponse Google.Api.Ads.Dfp.v201711.InventoryServiceInterface.getAdUnitSizesByStatement(Wrappers.InventoryService.getAdUnitSizesByStatementRequest request) {
 			return base.Channel.getAdUnitSizesByStatement(request);
 		}
@@ -29984,6 +30544,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.filterStatement = filterStatement;
 			Wrappers.InventoryService.getAdUnitSizesByStatementResponse retVal = ((Google.Api.Ads.Dfp.v201711.InventoryServiceInterface)(this)).getAdUnitSizesByStatement(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.InventoryService.getAdUnitSizesByStatementResponse> Google.Api.Ads.Dfp.v201711.InventoryServiceInterface.getAdUnitSizesByStatementAsync(Wrappers.InventoryService.getAdUnitSizesByStatementRequest request) {
+			return base.Channel.getAdUnitSizesByStatementAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdUnitSize[]> getAdUnitSizesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			Wrappers.InventoryService.getAdUnitSizesByStatementRequest inValue = new Wrappers.InventoryService.getAdUnitSizesByStatementRequest();
+			inValue.filterStatement = filterStatement;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdUnitSize[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.InventoryServiceInterface)(this)).getAdUnitSizesByStatementAsync(inValue)).Result.rval);
 		}
 
 		/// <summary>Gets a <a href='AdUnitPage'>AdUnitPage</a> of <a href='AdUnit'>AdUnit</a>
@@ -30007,6 +30578,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getAdUnitsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdUnitPage> getAdUnitsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getAdUnitsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='AdUnit'>AdUnit</a> objects that match the given <a
 		/// href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='adUnitAction'>the action to perform</param>
@@ -30015,6 +30590,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performAdUnitAction(Google.Api.Ads.Dfp.v201711.AdUnitAction adUnitAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performAdUnitAction(adUnitAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performAdUnitActionAsync(Google.Api.Ads.Dfp.v201711.AdUnitAction adUnitAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performAdUnitActionAsync(adUnitAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -30030,6 +30609,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.adUnits = adUnits;
 			Wrappers.InventoryService.updateAdUnitsResponse retVal = ((Google.Api.Ads.Dfp.v201711.InventoryServiceInterface)(this)).updateAdUnits(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.InventoryService.updateAdUnitsResponse> Google.Api.Ads.Dfp.v201711.InventoryServiceInterface.updateAdUnitsAsync(Wrappers.InventoryService.updateAdUnitsRequest request) {
+			return base.Channel.updateAdUnitsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdUnit[]> updateAdUnitsAsync(Google.Api.Ads.Dfp.v201711.AdUnit[] adUnits) {
+			Wrappers.InventoryService.updateAdUnitsRequest inValue = new Wrappers.InventoryService.updateAdUnitsRequest();
+			inValue.adUnits = adUnits;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdUnit[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.InventoryServiceInterface)(this)).updateAdUnitsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.LabelService
@@ -30279,11 +30869,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.LabelService.createLabelsResponse createLabels(Wrappers.LabelService.createLabelsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.LabelService.createLabelsResponse> createLabelsAsync(Wrappers.LabelService.createLabelsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.LabelPage getLabelsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LabelPage> getLabelsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -30292,6 +30889,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performLabelAction(Google.Api.Ads.Dfp.v201711.LabelAction labelAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performLabelActionAsync(Google.Api.Ads.Dfp.v201711.LabelAction labelAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -30299,6 +30900,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.LabelService.updateLabelsResponse updateLabels(Wrappers.LabelService.updateLabelsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.LabelService.updateLabelsResponse> updateLabelsAsync(Wrappers.LabelService.updateLabelsRequest request);
 	}
 
 
@@ -30477,6 +31081,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.LabelService.createLabelsResponse> Google.Api.Ads.Dfp.v201711.LabelServiceInterface.createLabelsAsync(Wrappers.LabelService.createLabelsRequest request) {
+			return base.Channel.createLabelsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Label[]> createLabelsAsync(Google.Api.Ads.Dfp.v201711.Label[] labels) {
+			Wrappers.LabelService.createLabelsRequest inValue = new Wrappers.LabelService.createLabelsRequest();
+			inValue.labels = labels;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Label[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.LabelServiceInterface)(this)).createLabelsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='LabelPage'>LabelPage</a> of <a href='Label'>Label</a> objects
 		/// that satisfy the given <a href='Statement#query'>Statement#query</a>. The
 		/// following fields are supported for filtering: <table> <tr> <th scope="col">PQL
@@ -30495,6 +31110,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getLabelsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LabelPage> getLabelsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getLabelsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='Label'>Label</a> objects that match the given <a
 		/// href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='labelAction'>the action to perform</param>
@@ -30503,6 +31122,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performLabelAction(Google.Api.Ads.Dfp.v201711.LabelAction labelAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performLabelAction(labelAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performLabelActionAsync(Google.Api.Ads.Dfp.v201711.LabelAction labelAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performLabelActionAsync(labelAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -30518,6 +31141,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.labels = labels;
 			Wrappers.LabelService.updateLabelsResponse retVal = ((Google.Api.Ads.Dfp.v201711.LabelServiceInterface)(this)).updateLabels(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.LabelService.updateLabelsResponse> Google.Api.Ads.Dfp.v201711.LabelServiceInterface.updateLabelsAsync(Wrappers.LabelService.updateLabelsRequest request) {
+			return base.Channel.updateLabelsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Label[]> updateLabelsAsync(Google.Api.Ads.Dfp.v201711.Label[] labels) {
+			Wrappers.LabelService.updateLabelsRequest inValue = new Wrappers.LabelService.updateLabelsRequest();
+			inValue.labels = labels;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Label[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.LabelServiceInterface)(this)).updateLabelsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.LineItemCreativeAssociationService
@@ -30974,7 +31608,7 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>Overrides the value set for <a
 		/// href='LineItem#startDateTime'>LineItem#startDateTime</a>. This value is optional
-		/// and is only valid for DFP premium networks.
+		/// and is only valid for Ad Manager 360 networks.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 5)]
 		public DateTime startDateTime {
@@ -31015,7 +31649,7 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		/// <summary>Overrides <a href='LineItem#endDateTime'>LineItem#endDateTime</a>. This value is
-		/// optional and is only valid for DFP premium networks.
+		/// optional and is only valid for Ad Manager 360 networks.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 7)]
 		public DateTime endDateTime {
@@ -31029,7 +31663,7 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>Overrides the value set for <a
 		/// href='HasDestinationUrlCreative#destinationUrl'>HasDestinationUrlCreative#destinationUrl</a>.
-		/// This value is optional and is only valid for DFP premium networks.
+		/// This value is optional and is only valid for Ad Manager 360 networks.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 8)]
 		public string destinationUrl {
@@ -31282,6 +31916,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.LineItemCreativeAssociationService.createLineItemCreativeAssociationsResponse createLineItemCreativeAssociations(Wrappers.LineItemCreativeAssociationService.createLineItemCreativeAssociationsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.LineItemCreativeAssociationService.createLineItemCreativeAssociationsResponse> createLineItemCreativeAssociationsAsync(Wrappers.LineItemCreativeAssociationService.createLineItemCreativeAssociationsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
@@ -31289,11 +31926,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationPage getLineItemCreativeAssociationsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationPage> getLineItemCreativeAssociationsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		string getPreviewUrl(long lineItemId, long creativeId, string siteUrl);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<string> getPreviewUrlAsync(long lineItemId, long creativeId, string siteUrl);
 
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -31304,11 +31949,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.LineItemCreativeAssociationService.getPreviewUrlsForNativeStylesResponse getPreviewUrlsForNativeStyles(Wrappers.LineItemCreativeAssociationService.getPreviewUrlsForNativeStylesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.LineItemCreativeAssociationService.getPreviewUrlsForNativeStylesResponse> getPreviewUrlsForNativeStylesAsync(Wrappers.LineItemCreativeAssociationService.getPreviewUrlsForNativeStylesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performLineItemCreativeAssociationAction(Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationAction lineItemCreativeAssociationAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performLineItemCreativeAssociationActionAsync(Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationAction lineItemCreativeAssociationAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -31317,6 +31969,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsResponse updateLineItemCreativeAssociations(Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsResponse> updateLineItemCreativeAssociationsAsync(Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsRequest request);
 	}
 
 
@@ -31527,7 +32182,9 @@ namespace Google.Api.Ads.Dfp.v201711
 	/// line item, the creative must have a size that exists within the attribute <a
 	/// href='LineItem#creativeSizes'>LineItem#creativeSizes</a>.</p> <p>Each LICA has a
 	/// start and end date and time that defines when the creative should be
-	/// displayed.</p>
+	/// displayed.</p> <p>To read more about associating creatives with line items, see
+	/// this <a href="https://support.google.com/dfp_premium/answer/3187916">DFP Help
+	/// Center</a> article.</p>
 	/// </summary>
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -31579,6 +32236,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.LineItemCreativeAssociationService.createLineItemCreativeAssociationsResponse> Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationServiceInterface.createLineItemCreativeAssociationsAsync(Wrappers.LineItemCreativeAssociationService.createLineItemCreativeAssociationsRequest request) {
+			return base.Channel.createLineItemCreativeAssociationsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociation[]> createLineItemCreativeAssociationsAsync(Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociation[] lineItemCreativeAssociations) {
+			Wrappers.LineItemCreativeAssociationService.createLineItemCreativeAssociationsRequest inValue = new Wrappers.LineItemCreativeAssociationService.createLineItemCreativeAssociationsRequest();
+			inValue.lineItemCreativeAssociations = lineItemCreativeAssociations;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociation[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationServiceInterface)(this)).createLineItemCreativeAssociationsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a
 		/// href='LineItemCreativeAssociationPage'>LineItemCreativeAssociationPage</a> of <a
 		/// href='LineItemCreativeAssociation'>LineItemCreativeAssociation</a> objects that
@@ -31606,6 +32274,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getLineItemCreativeAssociationsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationPage> getLineItemCreativeAssociationsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getLineItemCreativeAssociationsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Returns an insite preview URL that references the specified site URL with the
 		/// specified creative from the association served to it. For Creative Set
 		/// previewing you may specify the master creative Id.
@@ -31619,6 +32291,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// creative served to it</returns>
 		public virtual string getPreviewUrl(long lineItemId, long creativeId, string siteUrl) {
 			return base.Channel.getPreviewUrl(lineItemId, creativeId, siteUrl);
+		}
+
+		public virtual System.Threading.Tasks.Task<string> getPreviewUrlAsync(long lineItemId, long creativeId, string siteUrl) {
+			return base.Channel.getPreviewUrlAsync(lineItemId, creativeId, siteUrl);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -31647,6 +32323,19 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.LineItemCreativeAssociationService.getPreviewUrlsForNativeStylesResponse> Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationServiceInterface.getPreviewUrlsForNativeStylesAsync(Wrappers.LineItemCreativeAssociationService.getPreviewUrlsForNativeStylesRequest request) {
+			return base.Channel.getPreviewUrlsForNativeStylesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeNativeStylePreview[]> getPreviewUrlsForNativeStylesAsync(long lineItemId, long creativeId, string siteUrl) {
+			Wrappers.LineItemCreativeAssociationService.getPreviewUrlsForNativeStylesRequest inValue = new Wrappers.LineItemCreativeAssociationService.getPreviewUrlsForNativeStylesRequest();
+			inValue.lineItemId = lineItemId;
+			inValue.creativeId = creativeId;
+			inValue.siteUrl = siteUrl;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeNativeStylePreview[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationServiceInterface)(this)).getPreviewUrlsForNativeStylesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Performs actions on <a
 		/// href='LineItemCreativeAssociation'>LineItemCreativeAssociation</a> objects that
 		/// match the given <a href='Statement#query'>Statement#query</a>.
@@ -31656,6 +32345,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performLineItemCreativeAssociationAction(Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationAction lineItemCreativeAssociationAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performLineItemCreativeAssociationAction(lineItemCreativeAssociationAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performLineItemCreativeAssociationActionAsync(Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationAction lineItemCreativeAssociationAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performLineItemCreativeAssociationActionAsync(lineItemCreativeAssociationAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -31673,6 +32366,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.lineItemCreativeAssociations = lineItemCreativeAssociations;
 			Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsResponse retVal = ((Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationServiceInterface)(this)).updateLineItemCreativeAssociations(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsResponse> Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationServiceInterface.updateLineItemCreativeAssociationsAsync(Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsRequest request) {
+			return base.Channel.updateLineItemCreativeAssociationsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociation[]> updateLineItemCreativeAssociationsAsync(Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociation[] lineItemCreativeAssociations) {
+			Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsRequest inValue = new Wrappers.LineItemCreativeAssociationService.updateLineItemCreativeAssociationsRequest();
+			inValue.lineItemCreativeAssociations = lineItemCreativeAssociations;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociation[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociationServiceInterface)(this)).updateLineItemCreativeAssociationsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.LineItemService
@@ -31778,12 +32482,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.LineItemService.createLineItemsResponse createLineItems(Wrappers.LineItemService.createLineItemsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.LineItemService.createLineItemsResponse> createLineItemsAsync(Wrappers.LineItemService.createLineItemsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(LineItemSummary))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.LineItemPage getLineItemsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItemPage> getLineItemsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -31793,6 +32504,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performLineItemAction(Google.Api.Ads.Dfp.v201711.LineItemAction lineItemAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performLineItemActionAsync(Google.Api.Ads.Dfp.v201711.LineItemAction lineItemAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -31801,6 +32516,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(LineItemSummary))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.LineItemService.updateLineItemsResponse updateLineItems(Wrappers.LineItemService.updateLineItemsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.LineItemService.updateLineItemsResponse> updateLineItemsAsync(Wrappers.LineItemService.updateLineItemsRequest request);
 	}
 
 
@@ -32098,7 +32816,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	/// the elements of an ad campaign.</p> <p>Line items and creatives can be
 	/// associated with each other through <a href=''>LineItemCreativeAssociation</a>
 	/// objects. An ad unit will host a creative through both this association and the
-	/// <a href='LineItem#targeting'>LineItem#targeting</a> to it.</p>
+	/// <a href='LineItem#targeting'>LineItem#targeting</a> to it. The delivery of a
+	/// line item depends on its priority. More information on line item priorities can
+	/// be found on the <a
+	/// href="https://support.google.com/dfp_premium/answer/177279">DFP Help
+	/// Center</a>.</p>
 	/// </summary>
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -32147,6 +32869,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.LineItemService.createLineItemsResponse> Google.Api.Ads.Dfp.v201711.LineItemServiceInterface.createLineItemsAsync(Wrappers.LineItemService.createLineItemsRequest request) {
+			return base.Channel.createLineItemsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItem[]> createLineItemsAsync(Google.Api.Ads.Dfp.v201711.LineItem[] lineItems) {
+			Wrappers.LineItemService.createLineItemsRequest inValue = new Wrappers.LineItemService.createLineItemsRequest();
+			inValue.lineItems = lineItems;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItem[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.LineItemServiceInterface)(this)).createLineItemsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='LineItemPage'>LineItemPage</a> of <a
 		/// href='LineItem'>LineItem</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
@@ -32188,6 +32921,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getLineItemsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItemPage> getLineItemsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getLineItemsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='LineItem'>LineItem</a> objects that match the given
 		/// <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='lineItemAction'>the action to perform</param>
@@ -32196,6 +32933,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performLineItemAction(Google.Api.Ads.Dfp.v201711.LineItemAction lineItemAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performLineItemAction(lineItemAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performLineItemActionAsync(Google.Api.Ads.Dfp.v201711.LineItemAction lineItemAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performLineItemActionAsync(lineItemAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -32211,6 +32952,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.lineItems = lineItems;
 			Wrappers.LineItemService.updateLineItemsResponse retVal = ((Google.Api.Ads.Dfp.v201711.LineItemServiceInterface)(this)).updateLineItems(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.LineItemService.updateLineItemsResponse> Google.Api.Ads.Dfp.v201711.LineItemServiceInterface.updateLineItemsAsync(Wrappers.LineItemService.updateLineItemsRequest request) {
+			return base.Channel.updateLineItemsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItem[]> updateLineItemsAsync(Google.Api.Ads.Dfp.v201711.LineItem[] lineItems) {
+			Wrappers.LineItemService.updateLineItemsRequest inValue = new Wrappers.LineItemService.updateLineItemsRequest();
+			inValue.lineItems = lineItems;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItem[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.LineItemServiceInterface)(this)).updateLineItemsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.LineItemTemplateService
@@ -32415,7 +33167,7 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <summary>The default time of the <a
 		/// href='LineItem#startDateTime'>LineItem#startDateTime</a> field of a new
 		/// <code>LineItem</code>. Only the time part is used, and the date part is ignored.
-		/// This attribute is optional.
+		/// This attribute is deprecated.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 7)]
 		public DateTime startTime {
@@ -32429,7 +33181,7 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>The default time of the <a href='LineItem#endDateTime'>LineItem#endDateTime</a>
 		/// field of a new <code>LineItem</code>. Only the time part is used, and the date
-		/// part is ignored. This attribute is optional.
+		/// part is ignored. This attribute is deprecated.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 8)]
 		public DateTime endTime {
@@ -32618,6 +33370,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.LineItemTemplatePage getLineItemTemplatesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItemTemplatePage> getLineItemTemplatesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 	}
 
 
@@ -32674,6 +33430,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <exception cref='ApiException'>if a RuntimeException is thrown</exception>
 		public virtual Google.Api.Ads.Dfp.v201711.LineItemTemplatePage getLineItemTemplatesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.getLineItemTemplatesByStatement(filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItemTemplatePage> getLineItemTemplatesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getLineItemTemplatesByStatementAsync(filterStatement);
 		}
 	}
 	namespace Wrappers.LiveStreamEventService
@@ -33298,8 +34058,8 @@ namespace Google.Api.Ads.Dfp.v201711
 	/// <summary>A <code>LiveStreamEvent</code> encapsulates all the information necessary to
 	/// enable DAI (Dynamic Ad Insertion) into a live video stream. <p>This includes
 	/// information such as the start and expected end time of the event, the URL of the
-	/// actual content for DFP to pull and insert ads into, as well as the metadata
-	/// necessary to generate ad requests during the event.</p>
+	/// actual content for Ad Manager to pull and insert ads into, as well as the
+	/// metadata necessary to generate ad requests during the event.</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -33519,7 +34279,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		/// <summary>The scheduled end date and time of this <code>LiveStreamEvent</code>. This
-		/// attribute is required.
+		/// attribute is required if <code>unlimitedEndDateTime</code> is false and ignored
+		/// if <code>unlimitedEndDateTime</code> is true.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 8)]
 		public DateTime endDateTime {
@@ -33572,8 +34333,9 @@ namespace Google.Api.Ads.Dfp.v201711
 			}
 		}
 
-		/// <summary>The list of DFP ad tag URLs generated by DFP trafficking workflow that are
-		/// associated with this live stream event. This attribute is required.
+		/// <summary>The list of Ad Manager ad tag URLs generated by the Ad Manager trafficking
+		/// workflow that are associated with this live stream event. This attribute is
+		/// required.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute("adTags", Order = 11)]
 		public string[] adTags {
@@ -34060,6 +34822,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.LiveStreamEventService.createLiveStreamEventsResponse createLiveStreamEvents(Wrappers.LiveStreamEventService.createLiveStreamEventsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.LiveStreamEventService.createLiveStreamEventsResponse> createLiveStreamEventsAsync(Wrappers.LiveStreamEventService.createLiveStreamEventsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
@@ -34067,11 +34832,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.LiveStreamEventPage getLiveStreamEventsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LiveStreamEventPage> getLiveStreamEventsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performLiveStreamEventAction(Google.Api.Ads.Dfp.v201711.LiveStreamEventAction liveStreamEventAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performLiveStreamEventActionAsync(Google.Api.Ads.Dfp.v201711.LiveStreamEventAction liveStreamEventAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -34081,6 +34854,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.LiveStreamEventService.registerSessionsForMonitoringResponse registerSessionsForMonitoring(Wrappers.LiveStreamEventService.registerSessionsForMonitoringRequest request);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.LiveStreamEventService.registerSessionsForMonitoringResponse> registerSessionsForMonitoringAsync(Wrappers.LiveStreamEventService.registerSessionsForMonitoringRequest request);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -34088,6 +34864,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.LiveStreamEventService.updateLiveStreamEventsResponse updateLiveStreamEvents(Wrappers.LiveStreamEventService.updateLiveStreamEventsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.LiveStreamEventService.updateLiveStreamEventsResponse> updateLiveStreamEventsAsync(Wrappers.LiveStreamEventService.updateLiveStreamEventsRequest request);
 	}
 
 
@@ -34303,6 +35082,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.LiveStreamEventService.createLiveStreamEventsResponse> Google.Api.Ads.Dfp.v201711.LiveStreamEventServiceInterface.createLiveStreamEventsAsync(Wrappers.LiveStreamEventService.createLiveStreamEventsRequest request) {
+			return base.Channel.createLiveStreamEventsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LiveStreamEvent[]> createLiveStreamEventsAsync(Google.Api.Ads.Dfp.v201711.LiveStreamEvent[] liveStreamEvents) {
+			Wrappers.LiveStreamEventService.createLiveStreamEventsRequest inValue = new Wrappers.LiveStreamEventService.createLiveStreamEventsRequest();
+			inValue.liveStreamEvents = liveStreamEvents;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LiveStreamEvent[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.LiveStreamEventServiceInterface)(this)).createLiveStreamEventsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='LiveStreamEventPage'>LiveStreamEventPage</a> of <a
 		/// href='LiveStreamEvent'>LiveStreamEvent</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
@@ -34316,6 +35106,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getLiveStreamEventsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LiveStreamEventPage> getLiveStreamEventsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getLiveStreamEventsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='LiveStreamEvent'>LiveStreamEvent</a> objects that
 		/// match the given <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='liveStreamEventAction'>the action to perform</param>
@@ -34326,6 +35120,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.performLiveStreamEventAction(liveStreamEventAction, filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performLiveStreamEventActionAsync(Google.Api.Ads.Dfp.v201711.LiveStreamEventAction liveStreamEventAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performLiveStreamEventActionAsync(liveStreamEventAction, filterStatement);
+		}
+
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.LiveStreamEventService.registerSessionsForMonitoringResponse Google.Api.Ads.Dfp.v201711.LiveStreamEventServiceInterface.registerSessionsForMonitoring(Wrappers.LiveStreamEventService.registerSessionsForMonitoringRequest request) {
 			return base.Channel.registerSessionsForMonitoring(request);
@@ -34333,8 +35131,8 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>Registers the specified list of <code>sessionIds</code> for monitoring. Once the
 		/// session IDs have been registered, all logged information about the sessions will
-		/// be persisted and can be viewed via the DFP UI. <p>A session ID is a unique
-		/// identifier of a single user watching a live stream event. </p>
+		/// be persisted and can be viewed via the Ad Manager UI. <p>A session ID is a
+		/// unique identifier of a single user watching a live stream event. </p>
 		/// </summary><param name='sessionIds'>a list of session IDs to register for
 		/// monitoring</param>
 		/// <returns>the list of session IDs that were registered for monitoring</returns>
@@ -34345,6 +35143,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.sessionIds = sessionIds;
 			Wrappers.LiveStreamEventService.registerSessionsForMonitoringResponse retVal = ((Google.Api.Ads.Dfp.v201711.LiveStreamEventServiceInterface)(this)).registerSessionsForMonitoring(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.LiveStreamEventService.registerSessionsForMonitoringResponse> Google.Api.Ads.Dfp.v201711.LiveStreamEventServiceInterface.registerSessionsForMonitoringAsync(Wrappers.LiveStreamEventService.registerSessionsForMonitoringRequest request) {
+			return base.Channel.registerSessionsForMonitoringAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<string[]> registerSessionsForMonitoringAsync(string[] sessionIds) {
+			Wrappers.LiveStreamEventService.registerSessionsForMonitoringRequest inValue = new Wrappers.LiveStreamEventService.registerSessionsForMonitoringRequest();
+			inValue.sessionIds = sessionIds;
+			return System.Threading.Tasks.Task<string[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.LiveStreamEventServiceInterface)(this)).registerSessionsForMonitoringAsync(inValue)).Result.rval);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -34362,6 +35171,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.liveStreamEvents = liveStreamEvents;
 			Wrappers.LiveStreamEventService.updateLiveStreamEventsResponse retVal = ((Google.Api.Ads.Dfp.v201711.LiveStreamEventServiceInterface)(this)).updateLiveStreamEvents(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.LiveStreamEventService.updateLiveStreamEventsResponse> Google.Api.Ads.Dfp.v201711.LiveStreamEventServiceInterface.updateLiveStreamEventsAsync(Wrappers.LiveStreamEventService.updateLiveStreamEventsRequest request) {
+			return base.Channel.updateLiveStreamEventsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LiveStreamEvent[]> updateLiveStreamEventsAsync(Google.Api.Ads.Dfp.v201711.LiveStreamEvent[] liveStreamEvents) {
+			Wrappers.LiveStreamEventService.updateLiveStreamEventsRequest inValue = new Wrappers.LiveStreamEventService.updateLiveStreamEventsRequest();
+			inValue.liveStreamEvents = liveStreamEvents;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LiveStreamEvent[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.LiveStreamEventServiceInterface)(this)).updateLiveStreamEventsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.MobileApplicationService
@@ -34850,11 +35670,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.MobileApplicationService.createMobileApplicationsResponse createMobileApplications(Wrappers.MobileApplicationService.createMobileApplicationsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.MobileApplicationService.createMobileApplicationsResponse> createMobileApplicationsAsync(Wrappers.MobileApplicationService.createMobileApplicationsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.MobileApplicationPage getMobileApplicationsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.MobileApplicationPage> getMobileApplicationsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -34863,6 +35690,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performMobileApplicationAction(Google.Api.Ads.Dfp.v201711.MobileApplicationAction mobileApplicationAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performMobileApplicationActionAsync(Google.Api.Ads.Dfp.v201711.MobileApplicationAction mobileApplicationAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -34870,6 +35701,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.MobileApplicationService.updateMobileApplicationsResponse updateMobileApplications(Wrappers.MobileApplicationService.updateMobileApplicationsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.MobileApplicationService.updateMobileApplicationsResponse> updateMobileApplicationsAsync(Wrappers.MobileApplicationService.updateMobileApplicationsRequest request);
 	}
 
 
@@ -35052,6 +35886,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.MobileApplicationService.createMobileApplicationsResponse> Google.Api.Ads.Dfp.v201711.MobileApplicationServiceInterface.createMobileApplicationsAsync(Wrappers.MobileApplicationService.createMobileApplicationsRequest request) {
+			return base.Channel.createMobileApplicationsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.MobileApplication[]> createMobileApplicationsAsync(Google.Api.Ads.Dfp.v201711.MobileApplication[] mobileApplications) {
+			Wrappers.MobileApplicationService.createMobileApplicationsRequest inValue = new Wrappers.MobileApplicationService.createMobileApplicationsRequest();
+			inValue.mobileApplications = mobileApplications;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.MobileApplication[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.MobileApplicationServiceInterface)(this)).createMobileApplicationsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='MobileApplicationPage'>mobileApplicationPage</a> of <a
 		/// href='MobileApplication'>mobile applications</a> that satisfy the given <a
 		/// href='Statement'>Statement</a>. The following fields are supported for
@@ -35064,14 +35909,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='MobileApplication#appStore'>MobileApplication#appStore</a></td> </tr> <tr>
 		/// <td><code>appStoreId</code></td> <td><a
 		/// href='MobileApplication#appStoreId'>MobileApplication#appStoreId</a></td> </tr>
-		/// <tr> <tr> <td><code>isArchived</code></td> <td><a
+		/// <tr> </tr><tr> <td><code>isArchived</code></td> <td><a
 		/// href='MobileApplication#isArchived'>MobileApplication#isArchived</a></td> </tr>
-		/// </tr></table>
+		/// </table>
 		/// </summary><param name='filterStatement'>a Publisher Query Language statement used to
 		/// filter a set of mobile applications.</param>
 		/// <returns>the mobile applications that match the given filter</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.MobileApplicationPage getMobileApplicationsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.getMobileApplicationsByStatement(filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.MobileApplicationPage> getMobileApplicationsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getMobileApplicationsByStatementAsync(filterStatement);
 		}
 
 		/// <summary>Performs an action on <a href='MobileApplication'>mobile applications</a>.
@@ -35081,6 +35930,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performMobileApplicationAction(Google.Api.Ads.Dfp.v201711.MobileApplicationAction mobileApplicationAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performMobileApplicationAction(mobileApplicationAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performMobileApplicationActionAsync(Google.Api.Ads.Dfp.v201711.MobileApplicationAction mobileApplicationAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performMobileApplicationActionAsync(mobileApplicationAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -35096,6 +35949,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.mobileApplications = mobileApplications;
 			Wrappers.MobileApplicationService.updateMobileApplicationsResponse retVal = ((Google.Api.Ads.Dfp.v201711.MobileApplicationServiceInterface)(this)).updateMobileApplications(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.MobileApplicationService.updateMobileApplicationsResponse> Google.Api.Ads.Dfp.v201711.MobileApplicationServiceInterface.updateMobileApplicationsAsync(Wrappers.MobileApplicationService.updateMobileApplicationsRequest request) {
+			return base.Channel.updateMobileApplicationsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.MobileApplication[]> updateMobileApplicationsAsync(Google.Api.Ads.Dfp.v201711.MobileApplication[] mobileApplications) {
+			Wrappers.MobileApplicationService.updateMobileApplicationsRequest inValue = new Wrappers.MobileApplicationService.updateMobileApplicationsRequest();
+			inValue.mobileApplications = mobileApplications;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.MobileApplication[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.MobileApplicationServiceInterface)(this)).updateMobileApplicationsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.NetworkService
@@ -35468,8 +36332,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// version.
 		/// </summary>
 		UNKNOWN = 0,
-		/// <summary>Multi-currency support is not enabled for this network. This is a premium
-		/// feature.
+		/// <summary>Multi-currency support is not enabled for this network. This is an Ad Manager
+		/// 360 feature.
 		/// </summary>
 		MULTI_CURRENCY_NOT_SUPPORTED = 1,
 		/// <summary>Currency provided is not supported.
@@ -35552,11 +36416,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.NetworkService.getAllNetworksResponse getAllNetworks(Wrappers.NetworkService.getAllNetworksRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.NetworkService.getAllNetworksResponse> getAllNetworksAsync(Wrappers.NetworkService.getAllNetworksRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.Network getCurrentNetwork();
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Network> getCurrentNetworkAsync();
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -35566,11 +36437,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.Network makeTestNetwork();
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Network> makeTestNetworkAsync();
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.Network updateNetwork(Google.Api.Ads.Dfp.v201711.Network network);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Network> updateNetworkAsync(Google.Api.Ads.Dfp.v201711.Network network);
 	}
 
 
@@ -35631,6 +36510,16 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.NetworkService.getAllNetworksResponse> Google.Api.Ads.Dfp.v201711.NetworkServiceInterface.getAllNetworksAsync(Wrappers.NetworkService.getAllNetworksRequest request) {
+			return base.Channel.getAllNetworksAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Network[]> getAllNetworksAsync() {
+			Wrappers.NetworkService.getAllNetworksRequest inValue = new Wrappers.NetworkService.getAllNetworksRequest();
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Network[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.NetworkServiceInterface)(this)).getAllNetworksAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Returns the current network for which requests are being made.
 		/// </summary><returns>the network for which the user is currently making the
 		/// request</returns>
@@ -35638,23 +36527,31 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getCurrentNetwork();
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Network> getCurrentNetworkAsync() {
+			return base.Channel.getCurrentNetworkAsync();
+		}
+
 		/// <summary>Creates a new blank network for testing purposes using the current login.
 		/// <p>Each login(i.e. email address) can only have one test network. Data from any
 		/// of your existing networks will not be transferred to the new test network. Once
 		/// the test network is created, the test network can be used in the API by
 		/// supplying the <a href='Network#networkCode'>Network#networkCode</a> in the SOAP
-		/// header or by logging into the DFP UI.</p> <p>Test networks are limited in the
-		/// following ways:</p> <ul> <li>Test networks cannot serve ads.</li> <li>Because
-		/// test networks cannot serve ads, reports will always come back without data.</li>
-		/// <li>Since forecasting requires serving history, forecast service results will be
-		/// faked. See <a href='ForecastService'>ForecastService</a> for more info.</li>
-		/// <li>Test networks are, by default, small business networks and do not have any
-		/// premium features. To have additional features turned on, please contact your
-		/// account manager.</li> <li>Test networks are limited to 10,000 objects per entity
-		/// type.</li> </ul> <br /> <br />
+		/// header or by logging into the Ad Manager UI.</p> <p>Test networks are limited in
+		/// the following ways:</p> <ul> <li>Test networks cannot serve ads.</li>
+		/// <li>Because test networks cannot serve ads, reports will always come back
+		/// without data.</li> <li>Since forecasting requires serving history, forecast
+		/// service results will be faked. See <a href='ForecastService'>ForecastService</a>
+		/// for more info.</li> <li>Test networks are, by default, Ad Manager networks and
+		/// don't have any features from Ad Manager 360. To have additional features turned
+		/// on, please contact your account manager.</li> <li>Test networks are limited to
+		/// 10,000 objects per entity type.</li> </ul> <br /> <br />
 		/// </summary>
 		public virtual Google.Api.Ads.Dfp.v201711.Network makeTestNetwork() {
 			return base.Channel.makeTestNetwork();
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Network> makeTestNetworkAsync() {
+			return base.Channel.makeTestNetworkAsync();
 		}
 
 		/// <summary>Updates the specified network. Currently, only the network display name can be
@@ -35663,6 +36560,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the updated network</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.Network updateNetwork(Google.Api.Ads.Dfp.v201711.Network network) {
 			return base.Channel.updateNetwork(network);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Network> updateNetworkAsync(Google.Api.Ads.Dfp.v201711.Network network) {
+			return base.Channel.updateNetworkAsync(network);
 		}
 	}
 	namespace Wrappers.OrderService
@@ -36513,11 +37414,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.OrderService.createOrdersResponse createOrders(Wrappers.OrderService.createOrdersRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.OrderService.createOrdersResponse> createOrdersAsync(Wrappers.OrderService.createOrdersRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.OrderPage getOrdersByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.OrderPage> getOrdersByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -36526,6 +37434,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performOrderAction(Google.Api.Ads.Dfp.v201711.OrderAction orderAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performOrderActionAsync(Google.Api.Ads.Dfp.v201711.OrderAction orderAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -36533,6 +37445,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.OrderService.updateOrdersResponse updateOrders(Wrappers.OrderService.updateOrdersRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.OrderService.updateOrdersResponse> updateOrdersAsync(Wrappers.OrderService.updateOrdersRequest request);
 	}
 
 
@@ -36892,6 +37807,10 @@ namespace Google.Api.Ads.Dfp.v201711
 
 	/// <summary>The action used for approving <a href='Order'>Order</a> objects. All <a
 	/// href='LineItem'>LineItem</a> objects within the order will be approved as well.
+	/// For more information on what happens to an order and its line items when it is
+	/// approved, see the <a
+	/// href="https://support.google.com/dfp_premium/answer/177334">Ad Manager Help
+	/// Center</a>. <br /> <br />
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(ApproveAndOverbookOrders))]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
@@ -36935,7 +37854,10 @@ namespace Google.Api.Ads.Dfp.v201711
 
 	/// <summary>The action used for approving and overbooking <a href='Order'>Order</a> objects.
 	/// All <a href='LineItem'>LineItem</a> objects within the order will be approved as
-	/// well.
+	/// well. For more information on what happens to an order and its line items when
+	/// it is approved and overbooked, see the <a
+	/// href="https://support.google.com/dfp_premium/answer/177334">Ad Manager Help
+	/// Center</a>.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -36954,10 +37876,9 @@ namespace Google.Api.Ads.Dfp.v201711
 
 	/// <summary>Provides methods for creating, updating and retrieving <a href='Order'>Order</a>
 	/// objects. <p>An order is a grouping of <a href='LineItem'>LineItem</a> objects.
-	/// Line items have a one-to-one relationship with orders. Each line item can belong
-	/// to only one order. Orders, however, have a one-to-many relationship with line
-	/// items, meaning each order can have multiple line items. An order can be used to
-	/// manage the line items it contains.</p>
+	/// Line items have a many-to-one relationship with orders, meaning each line item
+	/// can belong to only one order, but orders can have multiple line items. An order
+	/// can be used to manage the line items it contains.</p>
 	/// </summary>
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -37006,6 +37927,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.OrderService.createOrdersResponse> Google.Api.Ads.Dfp.v201711.OrderServiceInterface.createOrdersAsync(Wrappers.OrderService.createOrdersRequest request) {
+			return base.Channel.createOrdersAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Order[]> createOrdersAsync(Google.Api.Ads.Dfp.v201711.Order[] orders) {
+			Wrappers.OrderService.createOrdersRequest inValue = new Wrappers.OrderService.createOrdersRequest();
+			inValue.orders = orders;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Order[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.OrderServiceInterface)(this)).createOrdersAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets an <a href='OrderPage'>OrderPage</a> of <a href='Order'>Order</a> objects
 		/// that satisfy the given <a href='Statement#query'>Statement#query</a>. The
 		/// following fields are supported for filtering: <table> <tr> <th scope="col">PQL
@@ -37033,6 +37965,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getOrdersByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.OrderPage> getOrdersByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getOrdersByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='Order'>Order</a> objects that match the given <a
 		/// href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='orderAction'>the action to perform</param>
@@ -37041,6 +37977,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performOrderAction(Google.Api.Ads.Dfp.v201711.OrderAction orderAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performOrderAction(orderAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performOrderActionAsync(Google.Api.Ads.Dfp.v201711.OrderAction orderAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performOrderActionAsync(orderAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -37056,6 +37996,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.orders = orders;
 			Wrappers.OrderService.updateOrdersResponse retVal = ((Google.Api.Ads.Dfp.v201711.OrderServiceInterface)(this)).updateOrders(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.OrderService.updateOrdersResponse> Google.Api.Ads.Dfp.v201711.OrderServiceInterface.updateOrdersAsync(Wrappers.OrderService.updateOrdersRequest request) {
+			return base.Channel.updateOrdersAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Order[]> updateOrdersAsync(Google.Api.Ads.Dfp.v201711.Order[] orders) {
+			Wrappers.OrderService.updateOrdersRequest inValue = new Wrappers.OrderService.updateOrdersRequest();
+			inValue.orders = orders;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Order[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.OrderServiceInterface)(this)).updateOrdersAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.PlacementService
@@ -37383,12 +38334,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.PlacementService.createPlacementsResponse createPlacements(Wrappers.PlacementService.createPlacementsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.PlacementService.createPlacementsResponse> createPlacementsAsync(Wrappers.PlacementService.createPlacementsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(SiteTargetingInfo))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.PlacementPage getPlacementsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.PlacementPage> getPlacementsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -37398,6 +38356,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performPlacementAction(Google.Api.Ads.Dfp.v201711.PlacementAction placementAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performPlacementActionAsync(Google.Api.Ads.Dfp.v201711.PlacementAction placementAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -37406,6 +38368,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(SiteTargetingInfo))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.PlacementService.updatePlacementsResponse updatePlacements(Wrappers.PlacementService.updatePlacementsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.PlacementService.updatePlacementsResponse> updatePlacementsAsync(Wrappers.PlacementService.updatePlacementsRequest request);
 	}
 
 
@@ -37601,6 +38566,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.PlacementService.createPlacementsResponse> Google.Api.Ads.Dfp.v201711.PlacementServiceInterface.createPlacementsAsync(Wrappers.PlacementService.createPlacementsRequest request) {
+			return base.Channel.createPlacementsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Placement[]> createPlacementsAsync(Google.Api.Ads.Dfp.v201711.Placement[] placements) {
+			Wrappers.PlacementService.createPlacementsRequest inValue = new Wrappers.PlacementService.createPlacementsRequest();
+			inValue.placements = placements;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Placement[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.PlacementServiceInterface)(this)).createPlacementsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='PlacementPage'>PlacementPage</a> of <a
 		/// href='Placement'>Placement</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
@@ -37626,6 +38602,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getPlacementsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.PlacementPage> getPlacementsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getPlacementsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='Placement'>Placement</a> objects that match the
 		/// given <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='placementAction'>the action to perform</param>
@@ -37634,6 +38614,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performPlacementAction(Google.Api.Ads.Dfp.v201711.PlacementAction placementAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performPlacementAction(placementAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performPlacementActionAsync(Google.Api.Ads.Dfp.v201711.PlacementAction placementAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performPlacementActionAsync(placementAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -37649,6 +38633,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.placements = placements;
 			Wrappers.PlacementService.updatePlacementsResponse retVal = ((Google.Api.Ads.Dfp.v201711.PlacementServiceInterface)(this)).updatePlacements(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.PlacementService.updatePlacementsResponse> Google.Api.Ads.Dfp.v201711.PlacementServiceInterface.updatePlacementsAsync(Wrappers.PlacementService.updatePlacementsRequest request) {
+			return base.Channel.updatePlacementsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Placement[]> updatePlacementsAsync(Google.Api.Ads.Dfp.v201711.Placement[] placements) {
+			Wrappers.PlacementService.updatePlacementsRequest inValue = new Wrappers.PlacementService.updatePlacementsRequest();
+			inValue.placements = placements;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Placement[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.PlacementServiceInterface)(this)).updatePlacementsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.AdExclusionRuleService
@@ -37949,7 +38944,7 @@ namespace Google.Api.Ads.Dfp.v201711
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201711")]
 	public enum AdExclusionRuleType {
-		/// <summary>Rule is associated with labels and relevant only in DFP.
+		/// <summary>Rule is associated with labels and is relevant only for direct reservations.
 		/// </summary>
 		LABEL = 0,
 		/// <summary>The value returned if the actual value is not exposed by the requested API
@@ -38065,11 +39060,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.AdExclusionRuleService.createAdExclusionRulesResponse createAdExclusionRules(Wrappers.AdExclusionRuleService.createAdExclusionRulesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.AdExclusionRuleService.createAdExclusionRulesResponse> createAdExclusionRulesAsync(Wrappers.AdExclusionRuleService.createAdExclusionRulesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.AdExclusionRulePage getAdExclusionRulesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdExclusionRulePage> getAdExclusionRulesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -38078,6 +39080,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performAdExclusionRuleAction(Google.Api.Ads.Dfp.v201711.AdExclusionRuleAction adExclusionRuleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performAdExclusionRuleActionAsync(Google.Api.Ads.Dfp.v201711.AdExclusionRuleAction adExclusionRuleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -38085,6 +39091,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.AdExclusionRuleService.updateAdExclusionRulesResponse updateAdExclusionRules(Wrappers.AdExclusionRuleService.updateAdExclusionRulesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.AdExclusionRuleService.updateAdExclusionRulesResponse> updateAdExclusionRulesAsync(Wrappers.AdExclusionRuleService.updateAdExclusionRulesRequest request);
 	}
 
 
@@ -38267,6 +39276,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.AdExclusionRuleService.createAdExclusionRulesResponse> Google.Api.Ads.Dfp.v201711.AdExclusionRuleServiceInterface.createAdExclusionRulesAsync(Wrappers.AdExclusionRuleService.createAdExclusionRulesRequest request) {
+			return base.Channel.createAdExclusionRulesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdExclusionRule[]> createAdExclusionRulesAsync(Google.Api.Ads.Dfp.v201711.AdExclusionRule[] adExclusionRules) {
+			Wrappers.AdExclusionRuleService.createAdExclusionRulesRequest inValue = new Wrappers.AdExclusionRuleService.createAdExclusionRulesRequest();
+			inValue.adExclusionRules = adExclusionRules;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdExclusionRule[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.AdExclusionRuleServiceInterface)(this)).createAdExclusionRulesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='AdExclusionRulePage'>AdExclusionRulePage</a> of <a
 		/// href='AdExclusionRule'>AdExclusionRule</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
@@ -38284,6 +39304,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getAdExclusionRulesByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdExclusionRulePage> getAdExclusionRulesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getAdExclusionRulesByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs action on <a href='AdExclusionRule'>AdExclusionRule</a> objects that
 		/// satisfy the given <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='adExclusionRuleAction'>the action to perform</param>
@@ -38292,6 +39316,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performAdExclusionRuleAction(Google.Api.Ads.Dfp.v201711.AdExclusionRuleAction adExclusionRuleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performAdExclusionRuleAction(adExclusionRuleAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performAdExclusionRuleActionAsync(Google.Api.Ads.Dfp.v201711.AdExclusionRuleAction adExclusionRuleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performAdExclusionRuleActionAsync(adExclusionRuleAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -38307,6 +39335,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.adExclusionRules = adExclusionRules;
 			Wrappers.AdExclusionRuleService.updateAdExclusionRulesResponse retVal = ((Google.Api.Ads.Dfp.v201711.AdExclusionRuleServiceInterface)(this)).updateAdExclusionRules(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.AdExclusionRuleService.updateAdExclusionRulesResponse> Google.Api.Ads.Dfp.v201711.AdExclusionRuleServiceInterface.updateAdExclusionRulesAsync(Wrappers.AdExclusionRuleService.updateAdExclusionRulesRequest request) {
+			return base.Channel.updateAdExclusionRulesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdExclusionRule[]> updateAdExclusionRulesAsync(Google.Api.Ads.Dfp.v201711.AdExclusionRule[] adExclusionRules) {
+			Wrappers.AdExclusionRuleService.updateAdExclusionRulesRequest inValue = new Wrappers.AdExclusionRuleService.updateAdExclusionRulesRequest();
+			inValue.adExclusionRules = adExclusionRules;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdExclusionRule[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.AdExclusionRuleServiceInterface)(this)).updateAdExclusionRulesAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.PremiumRateService
@@ -39171,11 +40210,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.PremiumRateService.createPremiumRatesResponse createPremiumRates(Wrappers.PremiumRateService.createPremiumRatesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.PremiumRateService.createPremiumRatesResponse> createPremiumRatesAsync(Wrappers.PremiumRateService.createPremiumRatesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.PremiumRatePage getPremiumRatesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.PremiumRatePage> getPremiumRatesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -39184,6 +40230,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.PremiumRateService.updatePremiumRatesResponse updatePremiumRates(Wrappers.PremiumRateService.updatePremiumRatesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.PremiumRateService.updatePremiumRatesResponse> updatePremiumRatesAsync(Wrappers.PremiumRateService.updatePremiumRatesRequest request);
 	}
 
 
@@ -39330,6 +40379,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.PremiumRateService.createPremiumRatesResponse> Google.Api.Ads.Dfp.v201711.PremiumRateServiceInterface.createPremiumRatesAsync(Wrappers.PremiumRateService.createPremiumRatesRequest request) {
+			return base.Channel.createPremiumRatesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.PremiumRate[]> createPremiumRatesAsync(Google.Api.Ads.Dfp.v201711.PremiumRate[] premiumRates) {
+			Wrappers.PremiumRateService.createPremiumRatesRequest inValue = new Wrappers.PremiumRateService.createPremiumRatesRequest();
+			inValue.premiumRates = premiumRates;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.PremiumRate[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.PremiumRateServiceInterface)(this)).createPremiumRatesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='PremiumRatePage'>PremiumRatePage</a> of <a
 		/// href='PremiumRate'>PremiumRate</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
@@ -39348,6 +40408,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getPremiumRatesByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.PremiumRatePage> getPremiumRatesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getPremiumRatesByStatementAsync(filterStatement);
+		}
+
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.PremiumRateService.updatePremiumRatesResponse Google.Api.Ads.Dfp.v201711.PremiumRateServiceInterface.updatePremiumRates(Wrappers.PremiumRateService.updatePremiumRatesRequest request) {
 			return base.Channel.updatePremiumRates(request);
@@ -39361,6 +40425,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.premiumRates = premiumRates;
 			Wrappers.PremiumRateService.updatePremiumRatesResponse retVal = ((Google.Api.Ads.Dfp.v201711.PremiumRateServiceInterface)(this)).updatePremiumRates(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.PremiumRateService.updatePremiumRatesResponse> Google.Api.Ads.Dfp.v201711.PremiumRateServiceInterface.updatePremiumRatesAsync(Wrappers.PremiumRateService.updatePremiumRatesRequest request) {
+			return base.Channel.updatePremiumRatesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.PremiumRate[]> updatePremiumRatesAsync(Google.Api.Ads.Dfp.v201711.PremiumRate[] premiumRates) {
+			Wrappers.PremiumRateService.updatePremiumRatesRequest inValue = new Wrappers.PremiumRateService.updatePremiumRatesRequest();
+			inValue.premiumRates = premiumRates;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.PremiumRate[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.PremiumRateServiceInterface)(this)).updatePremiumRatesAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ProductService
@@ -39549,7 +40624,7 @@ namespace Google.Api.Ads.Dfp.v201711
 	}
 
 
-	/// <summary>Identifies the the format of inventory or "channel" in which ads serve.
+	/// <summary>Identifies the format of inventory or "channel" in which ads serve.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -39558,10 +40633,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <summary>Ads serve in a browser.
 		/// </summary>
 		DISPLAY = 0,
-		/// <summary>Ads serve in a video.
+		/// <summary>In-stream video ads serve in a video.
 		/// </summary>
 		VIDEO = 1,
-		/// <summary>Ads serve in a game.
+		/// <summary>In-stream video ads serve in a game.
 		/// </summary>
 		GAMES = 2,
 		/// <summary>Ads serve in a mobile app.
@@ -40324,7 +41399,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// to <a
 		/// href='ValueSourceType#DIRECTLY_SPECIFIED'>ValueSourceType#DIRECTLY_SPECIFIED</a>
 		/// when setting the value of this field. It has maximum length of 255 characters if
-		/// overridden via update. This attribute is required.
+		/// overridden via update. <span class="constraint Required">This attribute is
+		/// required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 0)]
 		public string name {
@@ -40530,8 +41606,6 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='ProposalLineItem'>ProposalLineItem</a>. <span class="constraint
 		/// ReadOnly">This attribute is read-only when:</span> <ul> <li>using programmatic
 		/// guaranteed, using sales management.</li> <li>not using programmatic, using sales
-		/// management.</li> </ul> <span class="constraint Required">This attribute is
-		/// required when:</span> <ul> <li>using programmatic guaranteed, not using sales
 		/// management.</li> </ul>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 9)]
@@ -40694,9 +41768,7 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// creative placeholders must have a master and at least one companion size. <span
 		/// class="constraint ReadOnly">This attribute is read-only when:</span></p> <ul>
 		/// <li>using programmatic guaranteed, using sales management.</li> <li>not using
-		/// programmatic, using sales management.</li> </ul> <span class="constraint
-		/// Required">This attribute is required when:</span> <ul> <li>using programmatic
-		/// guaranteed, not using sales management.</li> </ul>
+		/// programmatic, using sales management.</li> </ul>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute("creativePlaceholders", Order = 14)]
 		public CreativePlaceholder[] creativePlaceholders {
@@ -40712,8 +41784,6 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='ProposalLineItem'>ProposalLineItem</a>. <span class="constraint
 		/// ReadOnly">This attribute is read-only when:</span> <ul> <li>using programmatic
 		/// guaranteed, using sales management.</li> <li>not using programmatic, using sales
-		/// management.</li> </ul> <span class="constraint Required">This attribute is
-		/// required when:</span> <ul> <li>using programmatic guaranteed, not using sales
 		/// management.</li> </ul>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 15)]
@@ -40744,8 +41814,6 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// The priority is a value between 1 and 16. <span class="constraint ReadOnly">This
 		/// attribute is read-only when:</span> <ul> <li>using programmatic guaranteed,
 		/// using sales management.</li> <li>not using programmatic, using sales
-		/// management.</li> </ul> <span class="constraint Required">This attribute is
-		/// required when:</span> <ul> <li>using programmatic guaranteed, not using sales
 		/// management.</li> </ul>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 16)]
@@ -40800,9 +41868,7 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// See details in <a href='ProductTemplate'>ProductTemplate</a>. <span
 		/// class="constraint ReadOnly">This attribute is read-only when:</span> <ul>
 		/// <li>using programmatic guaranteed, using sales management.</li> <li>not using
-		/// programmatic, using sales management.</li> </ul> <span class="constraint
-		/// Required">This attribute is required when:</span> <ul> <li>using programmatic
-		/// guaranteed, not using sales management.</li> </ul>
+		/// programmatic, using sales management.</li> </ul>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 18)]
 		public Targeting builtInTargeting {
@@ -40858,9 +41924,7 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='EnvironmentType#VIDEO_PLAYER'>EnvironmentType#VIDEO_PLAYER</a>. <span
 		/// class="constraint ReadOnly">This attribute is read-only when:</span> <ul>
 		/// <li>using programmatic guaranteed, using sales management.</li> <li>not using
-		/// programmatic, using sales management.</li> </ul> <span class="constraint
-		/// Required">This attribute is required when:</span> <ul> <li>using programmatic
-		/// guaranteed, not using sales management.</li> </ul>
+		/// programmatic, using sales management.</li> </ul>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 21)]
 		public EnvironmentType environmentType {
@@ -40888,8 +41952,6 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>The rate of this <code>Product</code>. <span class="constraint Applicable">This
 		/// attribute is applicable when:</span> <ul> <li>using programmatic guaranteed, not
-		/// using sales management.</li> </ul> <span class="constraint Required">This
-		/// attribute is required when:</span> <ul> <li>using programmatic guaranteed, not
 		/// using sales management.</li> </ul>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 22)]
@@ -40904,11 +41966,9 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>Marketplace information of this <code>Product</code>. <span class="constraint
 		/// Applicable">This attribute is applicable when:</span> <ul> <li>using
-		/// programmatic guaranteed, using sales management.</li> <li>using programmatic
-		/// guaranteed, not using sales management.</li> </ul> <span class="constraint
-		/// Required">This attribute is required when:</span> <ul> <li>using programmatic
-		/// guaranteed, using sales management.</li> <li>using programmatic guaranteed, not
-		/// using sales management.</li> </ul>
+		/// programmatic guaranteed, using sales management.</li> </ul> <span
+		/// class="constraint Required">This attribute is required when:</span> <ul>
+		/// <li>using programmatic guaranteed, using sales management.</li> </ul>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 23)]
 		public ProductMarketplaceInfo productMarketplaceInfo {
@@ -41463,11 +42523,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.ProductService.createProductsResponse createProducts(Wrappers.ProductService.createProductsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ProductService.createProductsResponse> createProductsAsync(Wrappers.ProductService.createProductsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ProductPage getProductsByStatement(Google.Api.Ads.Dfp.v201711.Statement statement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPage> getProductsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -41476,6 +42543,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performProductAction(Google.Api.Ads.Dfp.v201711.ProductAction productAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performProductActionAsync(Google.Api.Ads.Dfp.v201711.ProductAction productAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -41483,6 +42554,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ProductService.updateProductsResponse updateProducts(Wrappers.ProductService.updateProductsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ProductService.updateProductsResponse> updateProductsAsync(Wrappers.ProductService.updateProductsRequest request);
 	}
 
 
@@ -41693,6 +42767,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ProductService.createProductsResponse> Google.Api.Ads.Dfp.v201711.ProductServiceInterface.createProductsAsync(Wrappers.ProductService.createProductsRequest request) {
+			return base.Channel.createProductsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Product[]> createProductsAsync(Google.Api.Ads.Dfp.v201711.Product[] products) {
+			Wrappers.ProductService.createProductsRequest inValue = new Wrappers.ProductService.createProductsRequest();
+			inValue.products = products;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Product[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ProductServiceInterface)(this)).createProductsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='ProductPage'>ProductPage</a> of <a href='Product'>Product</a>
 		/// objects that satisfy the criteria specified by given <a
 		/// href='Statement#query'>Statement#query</a>. <p>When using sales management, the
@@ -41718,25 +42803,16 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// </tr> <tr> <td><code>id</code></td> <td><a href='Product#id'>Product#id</a></td>
 		/// <td>Yes</td> <td>Yes</td> </tr> <tr> <td><code>lastModifiedDateTime</code></td>
 		/// <td><a href='Product#lastModifiedDateTime'>Product#lastModifiedDateTime</a></td>
-		/// <td>Yes</td> <td>Yes</td> </tr> </table> When using programmatic guaranteed and
-		/// not sales management, the following fields are supported for filtering and/or
-		/// sorting. <table> <tr> <th scope="col">PQL Property</th> <th scope="col">Object
-		/// Property</th> <th scope="col">Filterable</th> <th scope="col">Sortable</th>
-		/// </tr> <tr> <td><code>status</code></td> <td><a
-		/// href='Product#status'>Product#status</a></td> <td>Yes</td> <td>Yes</td> </tr>
-		/// <tr> <td><code>rateType</code></td> <td><a
-		/// href='Product#rateType'>Product#rateType</a></td> <td>Yes</td> <td>Yes</td>
-		/// </tr> <tr> <td><code>name</code></td> <td><a
-		/// href='Product#name'>Product#name</a></td> <td>Yes</td> <td>Yes</td> </tr> <tr>
-		/// <td><code>id</code></td> <td><a href='Product#id'>Product#id</a></td>
-		/// <td>Yes</td> <td>Yes</td> </tr> <tr> <td><code>lastModifiedDateTime</code></td>
-		/// <td><a href='Product#lastModifiedDateTime'>Product#lastModifiedDateTime</a></td>
 		/// <td>Yes</td> <td>Yes</td> </tr> </table>
 		/// </summary><param name='statement'>a Publisher Query Language statement which specifies the
 		/// filtering criteria over products</param>
 		/// <returns>the products that match the given statement</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.ProductPage getProductsByStatement(Google.Api.Ads.Dfp.v201711.Statement statement) {
 			return base.Channel.getProductsByStatement(statement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPage> getProductsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement) {
+			return base.Channel.getProductsByStatementAsync(statement);
 		}
 
 		/// <summary>Performs action on <a href='Product'>Product</a> objects that satisfy the given
@@ -41747,6 +42823,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performProductAction(Google.Api.Ads.Dfp.v201711.ProductAction productAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performProductAction(productAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performProductActionAsync(Google.Api.Ads.Dfp.v201711.ProductAction productAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performProductActionAsync(productAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -41763,6 +42843,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.products = products;
 			Wrappers.ProductService.updateProductsResponse retVal = ((Google.Api.Ads.Dfp.v201711.ProductServiceInterface)(this)).updateProducts(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ProductService.updateProductsResponse> Google.Api.Ads.Dfp.v201711.ProductServiceInterface.updateProductsAsync(Wrappers.ProductService.updateProductsRequest request) {
+			return base.Channel.updateProductsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Product[]> updateProductsAsync(Google.Api.Ads.Dfp.v201711.Product[] products) {
+			Wrappers.ProductService.updateProductsRequest inValue = new Wrappers.ProductService.updateProductsRequest();
+			inValue.products = products;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Product[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ProductServiceInterface)(this)).updateProductsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ProductTemplateService
@@ -42298,7 +43389,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		/// <summary>The name of the <code>ProductTemplate</code>. This attribute has maximum length
-		/// of 255 characters. This attribute is required.
+		/// of 255 characters. <span class="constraint Required">This attribute is
+		/// required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 1)]
 		public string name {
@@ -42430,7 +43522,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='#lineItemType'>#lineItemType</a>, <a
 		/// href='#frequencyCaps'>#frequencyCaps</a>, <a
 		/// href='#productSegmentation'>#productSegmentation</a> and <a
-		/// href='#targeting'>#targeting</a>.</b> This attribute is required.
+		/// href='#targeting'>#targeting</a>.</b> <span class="constraint Required">This
+		/// attribute is required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 7)]
 		public ProductType productType {
@@ -42484,7 +43577,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		/// <summary>The method used for billing the created <a
-		/// href='ProposalLineItem'>ProposalLineItem</a>. This attribute is required.
+		/// href='ProposalLineItem'>ProposalLineItem</a>. <span class="constraint
+		/// Required">This attribute is required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 9)]
 		public RateType rateType {
@@ -43243,11 +44337,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.ProductTemplateService.createProductTemplatesResponse createProductTemplates(Wrappers.ProductTemplateService.createProductTemplatesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ProductTemplateService.createProductTemplatesResponse> createProductTemplatesAsync(Wrappers.ProductTemplateService.createProductTemplatesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ProductTemplatePage getProductTemplatesByStatement(Google.Api.Ads.Dfp.v201711.Statement statement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductTemplatePage> getProductTemplatesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -43256,6 +44357,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performProductTemplateAction(Google.Api.Ads.Dfp.v201711.ProductTemplateAction action, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performProductTemplateActionAsync(Google.Api.Ads.Dfp.v201711.ProductTemplateAction action, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -43263,6 +44368,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ProductTemplateService.updateProductTemplatesResponse updateProductTemplates(Wrappers.ProductTemplateService.updateProductTemplatesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ProductTemplateService.updateProductTemplatesResponse> updateProductTemplatesAsync(Wrappers.ProductTemplateService.updateProductTemplatesRequest request);
 	}
 
 
@@ -43472,6 +44580,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ProductTemplateService.createProductTemplatesResponse> Google.Api.Ads.Dfp.v201711.ProductTemplateServiceInterface.createProductTemplatesAsync(Wrappers.ProductTemplateService.createProductTemplatesRequest request) {
+			return base.Channel.createProductTemplatesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductTemplate[]> createProductTemplatesAsync(Google.Api.Ads.Dfp.v201711.ProductTemplate[] productTemplates) {
+			Wrappers.ProductTemplateService.createProductTemplatesRequest inValue = new Wrappers.ProductTemplateService.createProductTemplatesRequest();
+			inValue.productTemplates = productTemplates;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductTemplate[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ProductTemplateServiceInterface)(this)).createProductTemplatesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='ProductTemplatePage'>ProductTemplatePage</a> of <a
 		/// href='ProductTemplate'>ProductTemplate</a> objects that satisfy the filtering
 		/// criteria specified by given <a href='Statement#query'>Statement#query</a>. The
@@ -43501,6 +44620,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getProductTemplatesByStatement(statement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductTemplatePage> getProductTemplatesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement) {
+			return base.Channel.getProductTemplatesByStatementAsync(statement);
+		}
+
 		/// <summary>Performs action on <a href='ProductTemplate'>ProductTemplate</a> objects that
 		/// satisfy the given <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='action'>the action to perform</param>
@@ -43509,6 +44632,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performProductTemplateAction(Google.Api.Ads.Dfp.v201711.ProductTemplateAction action, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performProductTemplateAction(action, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performProductTemplateActionAsync(Google.Api.Ads.Dfp.v201711.ProductTemplateAction action, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performProductTemplateActionAsync(action, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -43524,6 +44651,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.productTemplates = productTemplates;
 			Wrappers.ProductTemplateService.updateProductTemplatesResponse retVal = ((Google.Api.Ads.Dfp.v201711.ProductTemplateServiceInterface)(this)).updateProductTemplates(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ProductTemplateService.updateProductTemplatesResponse> Google.Api.Ads.Dfp.v201711.ProductTemplateServiceInterface.updateProductTemplatesAsync(Wrappers.ProductTemplateService.updateProductTemplatesRequest request) {
+			return base.Channel.updateProductTemplatesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductTemplate[]> updateProductTemplatesAsync(Google.Api.Ads.Dfp.v201711.ProductTemplate[] productTemplates) {
+			Wrappers.ProductTemplateService.updateProductTemplatesRequest inValue = new Wrappers.ProductTemplateService.updateProductTemplatesRequest();
+			inValue.productTemplates = productTemplates;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductTemplate[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ProductTemplateServiceInterface)(this)).updateProductTemplatesAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ProposalService
@@ -43615,9 +44753,9 @@ namespace Google.Api.Ads.Dfp.v201711
 			}
 		}
 	}
-	/// <summary>An error that occurs for an internal DFP process that happens in the background.
-	/// For example, <a href='Proposal'>Proposal</a> workflows can have background tasks
-	/// that may have offline errors.
+	/// <summary>An error that occurs for an internal Ad Manager process that happens in the
+	/// background. For example, <a href='Proposal'>Proposal</a> workflows can have
+	/// background tasks that may have offline errors.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -43811,7 +44949,7 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		/// <summary>The ID of the buyer that this <code>Proposal</code> is being negotiated with.
-		/// This attribute is required.
+		/// <span class="constraint Required">This attribute is required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 4)]
 		public long buyerAccountId {
@@ -43953,8 +45091,8 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		private string contentField;
 
-		/// <summary>The ID of the terms and conditions added to the proposal. This attribute is
-		/// required.
+		/// <summary>The ID of the terms and conditions added to the proposal. <span
+		/// class="constraint Required">This attribute is required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 0)]
 		public long termsAndConditionsId {
@@ -44063,7 +45201,7 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>The name of the <code>ProposalLink</code>. Must be unique under the same <a
 		/// href='Proposal'>Proposal</a>. This attribute has a maximum length of 255
-		/// characters. This attribute is required.
+		/// characters. <span class="constraint Required">This attribute is required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 1)]
 		public string name {
@@ -44102,7 +45240,8 @@ namespace Google.Api.Ads.Dfp.v201711
 			}
 		}
 
-		/// <summary>The link to the <code>ProposalLink</code> resource. This attribute is required.
+		/// <summary>The link to the <code>ProposalLink</code> resource. <span class="constraint
+		/// Required">This attribute is required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 3)]
 		public string url {
@@ -44770,7 +45909,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		private bool splitFieldSpecified;
 
 		/// <summary>The unique ID of the <a href='User'>User</a> responsible for the sales of the <a
-		/// href='Proposal'>Proposal</a>. This attribute is required.
+		/// href='Proposal'>Proposal</a>. <span class="constraint Required">This attribute
+		/// is required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 0)]
 		public long userId {
@@ -44847,7 +45987,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		private long[] contactIdsField;
 
 		/// <summary>The unique ID of the <a href='Company'>Company</a> associated with the <a
-		/// href='Proposal'>Proposal</a>. This attribute is required.
+		/// href='Proposal'>Proposal</a>. <span class="constraint Required">This attribute
+		/// is required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 0)]
 		public long companyId {
@@ -44874,7 +46015,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		/// <summary>The association type of the <a href='Company'>Company</a> and <a
-		/// href='Proposal'>Proposal</a>. This attribute is required.
+		/// href='Proposal'>Proposal</a>. <span class="constraint Required">This attribute
+		/// is required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 1)]
 		public ProposalCompanyAssociationType type {
@@ -45154,8 +46296,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		/// <summary>The unique ID of corresponding <a href='Order'>Order</a>. This will be
-		/// <code>null</code> if the <code>Proposal</code> has not been pushed to DFP. This
-		/// attribute is read-only.
+		/// <code>null</code> if the <code>Proposal</code> has not been pushed to Ad
+		/// Manager. This attribute is read-only.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 2)]
 		public long dfpOrderId {
@@ -45185,7 +46327,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// characters. This value is copied to <a href='Order#name'>Order#name</a> when the
 		/// proposal turns into an order. This attribute can be configured as editable after
 		/// the proposal has been submitted. Please check with your network administrator
-		/// for editable fields configuration. This attribute is required.
+		/// for editable fields configuration. <span class="constraint Required">This
+		/// attribute is required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 3)]
 		public string name {
@@ -45374,13 +46517,13 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>The probability to close this <code>Proposal</code>. This percentage value is in
 		/// terms of millipercent, and should be multiples of 10 with the range from 0 to
-		/// 100000. This attribute is required and will be used to calculate the revenue in
-		/// reporting. <span class="constraint Applicable">This attribute is applicable
-		/// when:</span> <ul> <li>using programmatic guaranteed, using sales
-		/// management.</li> <li>not using programmatic, using sales management.</li> </ul>
-		/// <span class="constraint Required">This attribute is required when:</span> <ul>
+		/// 100000. This attribute will be used to calculate the revenue in reporting. <span
+		/// class="constraint Applicable">This attribute is applicable when:</span> <ul>
 		/// <li>using programmatic guaranteed, using sales management.</li> <li>not using
-		/// programmatic, using sales management.</li> </ul>
+		/// programmatic, using sales management.</li> </ul> <span class="constraint
+		/// Required">This attribute is required when:</span> <ul> <li>using programmatic
+		/// guaranteed, using sales management.</li> <li>not using programmatic, using sales
+		/// management.</li> </ul>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 12)]
 		public long probabilityOfClose {
@@ -45700,11 +46843,11 @@ namespace Google.Api.Ads.Dfp.v201711
 			}
 		}
 
-		/// <summary><a href='User'>users</a> who are the seller's contacts. This attribute is
-		/// optional. <span class="constraint Applicable">This attribute is applicable
-		/// when:</span> <ul> <li>using programmatic guaranteed, using sales
-		/// management.</li> <li>using programmatic guaranteed, not using sales
-		/// management.</li> </ul>
+		/// <summary><a href='User'>users</a> who are the seller's contacts. <span class="constraint
+		/// Applicable">This attribute is applicable when:</span> <ul> <li>using
+		/// programmatic guaranteed, using sales management.</li> <li>using programmatic
+		/// guaranteed, not using sales management.</li> <li>using preferred deals, not
+		/// using sales management.</li> </ul>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute("sellerContactIds", Order = 25)]
 		public long[] sellerContactIds {
@@ -46389,10 +47532,11 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// of what actually delivered.
 		/// </summary>
 		CONTRACTED = 0,
-		/// <summary>Charge based on what actually delivered counted by DFP
+		/// <summary>Charge based on what actually delivered, as counted by Ad Manager.
 		/// </summary>
 		DFP_VOLUME = 1,
-		/// <summary>Charge based on what actually delivered counted by third party ads server
+		/// <summary>Charge based on what actually delivered, as counted by the third party ads
+		/// server.
 		/// </summary>
 		THIRD_PARTY_VOLUME = 2,
 		/// <summary>The value returned if the actual value is not exposed by the requested API
@@ -46677,12 +47821,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <summary>Cannot update programmatic creative source if the <a
 		/// href='ProposalLineItem'>proposal line item</a> has been sent to the buyer.
 		/// </summary>
-		CANNOT_UPDATE_PROGRAMMATIC_CREATIVE_SOURCE = 12,
+		CANNOT_UPDATE_PROGRAMMATIC_CREATIVE_SOURCE = 14,
 		/// <summary>The <a href='Goal#units'>Goal#units</a> value is invalid. For <a
 		/// href='RateType#CPD'>RateType#CPD</a> <a href='ProposalLineItem'>proposal line
 		/// items</a>, only 100% is allowed
 		/// </summary>
 		INVALID_NUM_UNITS = 8,
+		/// <summary>Cannot mix native and banner size in a programmatic proposal line item.
+		/// </summary>
+		MIX_NATIVE_AND_BANNER_SIZE_NOT_ALLOWED = 12,
+		/// <summary>Cannot update sizes when a programmatic proposal line item with publisher
+		/// creative source is sent to a buyer.
+		/// </summary>
+		CANNOT_UPDATE_SIZES = 13,
 		/// <summary>The {ProposalLineItem#contractedUnitsBought} cannot be <code>null</code> or zero
 		/// for programmatic <a href='RateType#CPD'>RateType#CPD</a> <a
 		/// href='ProposalLineItem'>proposal line items</a>.
@@ -46749,7 +47900,7 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// in the proposal.
 		/// </summary>
 		NOT_SAME_RATE_CARD = 0,
-		/// <summary>The proposal line item's type is not yet supported by DFP Sales Manager.
+		/// <summary>The proposal line item's type is not yet supported by Sales Manager.
 		/// </summary>
 		LINE_ITEM_TYPE_NOT_ALLOWED = 1,
 		/// <summary>The proposal line item's end date time is not after its start date time.
@@ -47572,11 +48723,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.ProposalService.createProposalsResponse createProposals(Wrappers.ProposalService.createProposalsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ProposalService.createProposalsResponse> createProposalsAsync(Wrappers.ProposalService.createProposalsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.MarketplaceCommentPage getMarketplaceCommentsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.MarketplaceCommentPage> getMarketplaceCommentsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -47586,11 +48744,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.ProposalPage getProposalsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProposalPage> getProposalsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performProposalAction(Google.Api.Ads.Dfp.v201711.ProposalAction proposalAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performProposalActionAsync(Google.Api.Ads.Dfp.v201711.ProposalAction proposalAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -47599,6 +48765,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ProposalService.updateProposalsResponse updateProposals(Wrappers.ProposalService.updateProposalsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ProposalService.updateProposalsResponse> updateProposalsAsync(Wrappers.ProposalService.updateProposalsRequest request);
 	}
 
 
@@ -48094,10 +49263,7 @@ namespace Google.Api.Ads.Dfp.v201711
 
 
 	/// <summary>Provides methods for adding, updating and retrieving <a
-	/// href='Proposal'>Proposal</a> objects. <p>To use this service, you need to have
-	/// the new sales management solution enabled on your network. If you do not see a
-	/// "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
-	/// (DFP)</a>, you will not be able to use this service.</p>
+	/// href='Proposal'>Proposal</a> objects.
 	/// </summary>
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -48148,6 +49314,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ProposalService.createProposalsResponse> Google.Api.Ads.Dfp.v201711.ProposalServiceInterface.createProposalsAsync(Wrappers.ProposalService.createProposalsRequest request) {
+			return base.Channel.createProposalsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Proposal[]> createProposalsAsync(Google.Api.Ads.Dfp.v201711.Proposal[] proposals) {
+			Wrappers.ProposalService.createProposalsRequest inValue = new Wrappers.ProposalService.createProposalsRequest();
+			inValue.proposals = proposals;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Proposal[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ProposalServiceInterface)(this)).createProposalsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='MarketplaceCommentPage'>MarketplaceCommentPage</a> of <a
 		/// href='MarketplaceComment'>MarketplaceComment</a> objects that satisfy the given
 		/// <a href='Statement#query'>Statement#query</a>. This method only returns comments
@@ -48172,6 +49349,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the marketplace comments that match the given filter</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.MarketplaceCommentPage getMarketplaceCommentsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.getMarketplaceCommentsByStatement(filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.MarketplaceCommentPage> getMarketplaceCommentsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getMarketplaceCommentsByStatementAsync(filterStatement);
 		}
 
 		/// <summary>Gets a <a href='ProposalPage'>ProposalPage</a> of <a
@@ -48215,6 +49396,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getProposalsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProposalPage> getProposalsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getProposalsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='Proposal'>Proposal</a> objects that match the given
 		/// <a href='Statement#query'>Statement#query</a>. The following fields are also
 		/// required when submitting proposals for approval: <ul> <li><a
@@ -48227,6 +49412,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performProposalAction(Google.Api.Ads.Dfp.v201711.ProposalAction proposalAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performProposalAction(proposalAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performProposalActionAsync(Google.Api.Ads.Dfp.v201711.ProposalAction proposalAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performProposalActionAsync(proposalAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -48242,6 +49431,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.proposals = proposals;
 			Wrappers.ProposalService.updateProposalsResponse retVal = ((Google.Api.Ads.Dfp.v201711.ProposalServiceInterface)(this)).updateProposals(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ProposalService.updateProposalsResponse> Google.Api.Ads.Dfp.v201711.ProposalServiceInterface.updateProposalsAsync(Wrappers.ProposalService.updateProposalsRequest request) {
+			return base.Channel.updateProposalsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Proposal[]> updateProposalsAsync(Google.Api.Ads.Dfp.v201711.Proposal[] proposals) {
+			Wrappers.ProposalService.updateProposalsRequest inValue = new Wrappers.ProposalService.updateProposalsRequest();
+			inValue.proposals = proposals;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Proposal[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ProposalServiceInterface)(this)).updateProposalsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ProposalLineItemService
@@ -48349,7 +49549,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <summary>The <a href='AdExchangeEnvironment'>AdExchangeEnvironment</a> of the marketplace
 		/// web property that is associated with this line item. This is only for <a
 		/// href='ProposalLineItem'>proposal line items</a> with a corresponding deal in
-		/// Marketplace. This attribute is required.
+		/// Marketplace. <span class="constraint Required">This attribute is
+		/// required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 0)]
 		public AdExchangeEnvironment adExchangeEnvironment {
@@ -48920,7 +50121,8 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>The unique ID of the <a href='Proposal'>Proposal</a>, to which the
 		/// <code>ProposalLineItem</code> belongs. This attribute is required for creation
-		/// and then is readonly. This attribute is required.
+		/// and then is readonly. <span class="constraint Required">This attribute is
+		/// required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 1)]
 		public long proposalId {
@@ -49050,7 +50252,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// same <a href='Proposal'>Proposal</a>. This attribute has a maximum length of 255
 		/// characters. This attribute can be configured as editable after the proposal has
 		/// been submitted. Please check with your network administrator for editable fields
-		/// configuration. This attribute is required.
+		/// configuration. <span class="constraint Required">This attribute is
+		/// required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 5)]
 		public string name {
@@ -49196,7 +50399,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// and budgeting. <a href='Goal#units'>Goal#units</a> must be greater than 0 when
 		/// the proposal line item turns into a line item, <a
 		/// href='Goal#goalType'>Goal#goalType</a> and <a href=''>Goal#unitType</a> are
-		/// readonly. This attribute is required.
+		/// readonly. For a Preferred deal <code></code>, the goal type can only be <a
+		/// href='GoalType#NONE'>GoalType#NONE</a>. <span class="constraint Required">This
+		/// attribute is required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 12)]
 		public Goal goal {
@@ -49309,7 +50514,9 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>The strategy for delivering ads over the course of the <code></code>'s duration.
 		/// This attribute is optional and default value is <a
-		/// href='DeliveryRateType#EVENLY'>DeliveryRateType#EVENLY</a>.
+		/// href='DeliveryRateType#EVENLY'>DeliveryRateType#EVENLY</a>. For a Preferred deal
+		/// <code>ProposalLineItem</code>, the value can only be <a
+		/// href='DeliveryRateType#FRONTLOADED'>DeliveryRateType#FRONTLOADED</a>.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 16)]
 		public DeliveryRateType deliveryRateType {
@@ -49478,8 +50685,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		/// <summary>The unique ID of corresponding <a href='LineItem'>LineItem</a>. This will be
-		/// <code>null</code> if the <a href=''>Proposal</a> has not been pushed to DFP.
-		/// This attribute is read-only.
+		/// <code>null</code> if the <a href=''>Proposal</a> has not been pushed to Ad
+		/// Manager. This attribute is read-only.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 22)]
 		public long dfpLineItemId {
@@ -49509,8 +50716,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <code>ProposalLineItem</code>. For a programmatic <code></code>, the value can
 		/// only be one of: <ul> <li><a
 		/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a></li> <li><a
-		/// href='LineItemType#STANDARD'>LineItemType#STANDARD</a></li> </ul> This attribute
-		/// is required.
+		/// href='LineItemType#STANDARD'>LineItemType#STANDARD</a></li> <li><a
+		/// href='LineItemType#PREFERRED_DEAL'>LineItemType#PREFERRED_DEAL</a></li> </ul>
+		/// <span class="constraint Required">This attribute is required.</span>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 23)]
 		public LineItemType lineItemType {
@@ -49785,8 +50993,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <summary>The amount of money to spend per impression or click in proposal currency. It
 		/// supports precision of 4 decimal places in terms of the fundamental currency
 		/// unit, so the <a href='Money#getAmountInMicros'>Money#getAmountInMicros</a> must
-		/// be multiples of 100. It doesn't include agency commission. <p>When using sales
-		/// management, at least one of the four fields <a
+		/// be multiples of 100. It doesn't include agency commission. <p>For example, if <a
+		/// href='Proposal#currencyCode'>Proposal#currencyCode</a> is 'USD', then $123.4567
+		/// could be represented as 123456700, but further precision is not supported.</p>
+		/// <p>When using sales management, at least one of the four fields <a
 		/// href='ProposalLineItem#netRate'>ProposalLineItem#netRate</a>, <a
 		/// href='ProposalLineItem#grossRate'>ProposalLineItem#grossRate</a>, <a
 		/// href='ProposalLineItem#netCost'>ProposalLineItem#netCost</a> and <a
@@ -49808,8 +51018,11 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <summary>The amount of money to spend per impression or click in proposal currency. It
 		/// supports precision of 4 decimal places in terms of the fundamental currency
 		/// unit, so the <a href='Money#getAmountInMicros'>Money#getAmountInMicros</a> must
-		/// be multiples of 100. It includes agency commission. <p>At least one of the four
-		/// fields <a href='ProposalLineItem#netRate'>ProposalLineItem#netRate</a>, <a
+		/// be multiples of 100. It includes agency commission. <p>For example, if <a
+		/// href='Proposal#currencyCode'>Proposal#currencyCode</a> is 'USD', then $123.4567
+		/// could be represented as 123456700, but further precision is not supported.</p>
+		/// <p>At least one of the four fields <a
+		/// href='ProposalLineItem#netRate'>ProposalLineItem#netRate</a>, <a
 		/// href='ProposalLineItem#grossRate'>ProposalLineItem#grossRate</a>, <a
 		/// href='ProposalLineItem#netCost'>ProposalLineItem#netCost</a> and <a
 		/// href='ProposalLineItem#grossCost'>ProposalLineItem#grossCost</a> is required.
@@ -49830,8 +51043,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <summary>The cost of the <code>ProposalLineItem</code> in proposal currency. It supports
 		/// precision of 2 decimal places in terms of the fundamental currency unit, so the
 		/// <a href='Money#getAmountInMicros'>Money#getAmountInMicros</a> must be multiples
-		/// of 10000. It doesn't include agency commission. <p>When using sales management,
-		/// at least one of the four fields <a
+		/// of 10000. It doesn't include agency commission. <p>For example, if <a
+		/// href='Proposal#currencyCode'>Proposal#currencyCode</a> is 'USD', then $123.45
+		/// could be represented as 123450000, but further precision is not supported.</p>
+		/// <p>When using sales management, at least one of the four fields <a
 		/// href='ProposalLineItem#netRate'>ProposalLineItem#netRate</a>, <a
 		/// href='ProposalLineItem#grossRate'>ProposalLineItem#grossRate</a>, <a
 		/// href='ProposalLineItem#netCost'>ProposalLineItem#netCost</a> and <a
@@ -49875,9 +51090,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <summary>Indicates how well the line item generated from this proposal line item has been
 		/// performing. This will be <code>null</code> if the delivery indicator information
 		/// is not available due to one of the following reasons: <ol> <li>The proposal line
-		/// item has not pushed to DFP.</li> <li>The line item is not delivering.</li>
-		/// <li>The line item has an unlimited goal or cap.</li> <li>The line item has a
-		/// percentage based goal or cap.</li> </ol> This attribute is read-only.
+		/// item has not pushed to Ad Manager.</li> <li>The line item is not
+		/// delivering.</li> <li>The line item has an unlimited goal or cap.</li> <li>The
+		/// line item has a percentage based goal or cap.</li> </ol> This attribute is
+		/// read-only.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 40)]
 		public DeliveryIndicator deliveryIndicator {
@@ -49893,8 +51109,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='LineItem'>LineItem</a> generated from this proposal line item in the last
 		/// 7 days. This will be <code></code> if the delivery data cannot be computed due
 		/// to one of the following reasons: <ol> <li>The proposal line item has not pushed
-		/// to DFP.</li> <li>The line item is not deliverable.</li> <li>The line item has
-		/// completed delivering more than 7 days ago.</li> <li>The line item has an
+		/// to Ad Manager.</li> <li>The line item is not deliverable.</li> <li>The line item
+		/// has completed delivering more than 7 days ago.</li> <li>The line item has an
 		/// absolute-based goal. <a
 		/// href='ProposalLineItem#deliveryIndicator'>ProposalLineItem#deliveryIndicator</a>
 		/// should be used to track its progress in this case.</li> <li style="list-style:
@@ -49913,7 +51129,7 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>The status of the <a href='LineItem'>LineItem</a> generated from this proposal
 		/// line item. This will be <code>null</code> if the proposal line item has not
-		/// pushed to DFP. This attribute is read-only.
+		/// pushed to Ad Manager. This attribute is read-only.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 42)]
 		public ComputedStatus computedStatus {
@@ -50573,11 +51789,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.ProposalLineItemService.createProposalLineItemsResponse createProposalLineItems(Wrappers.ProposalLineItemService.createProposalLineItemsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ProposalLineItemService.createProposalLineItemsResponse> createProposalLineItemsAsync(Wrappers.ProposalLineItemService.createProposalLineItemsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ProposalLineItemPage getProposalLineItemsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProposalLineItemPage> getProposalLineItemsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -50586,6 +51809,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performProposalLineItemAction(Google.Api.Ads.Dfp.v201711.ProposalLineItemAction proposalLineItemAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performProposalLineItemActionAsync(Google.Api.Ads.Dfp.v201711.ProposalLineItemAction proposalLineItemAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -50593,6 +51820,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ProposalLineItemService.updateProposalLineItemsResponse updateProposalLineItems(Wrappers.ProposalLineItemService.updateProposalLineItemsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ProposalLineItemService.updateProposalLineItemsResponse> updateProposalLineItemsAsync(Wrappers.ProposalLineItemService.updateProposalLineItemsRequest request);
 	}
 
 
@@ -50875,15 +52105,7 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.createProposalLineItems(request);
 		}
 
-		/// <summary>Creates new <a href='ProposalLineItem'>ProposalLineItem</a> objects. For each
-		/// proposal line item, the following fields are required: <ul> <li><a
-		/// href='ProposalLineItem#proposalId'>ProposalLineItem#proposalId</a></li> <li><a
-		/// href='ProposalLineItem#rateCardId'>ProposalLineItem#rateCardId</a></li> <li><a
-		/// href='ProposalLineItem#productId'>ProposalLineItem#productId</a></li> <li><a
-		/// href='ProposalLineItem#name'>ProposalLineItem#name</a></li> <li><a
-		/// href='ProposalLineItem#startDateTime'>ProposalLineItem#startDateTime</a></li>
-		/// <li><a href='ProposalLineItem#endDateTime'>ProposalLineItem#endDateTime</a></li>
-		/// </ul>
+		/// <summary>Creates new <a href='ProposalLineItem'>ProposalLineItem</a> objects.
 		/// </summary><param name='proposalLineItems'>the proposal line items to create</param>
 		/// <returns>the created proposal line items with their IDs filled in</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.ProposalLineItem[] createProposalLineItems(Google.Api.Ads.Dfp.v201711.ProposalLineItem[] proposalLineItems) {
@@ -50891,6 +52113,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.proposalLineItems = proposalLineItems;
 			Wrappers.ProposalLineItemService.createProposalLineItemsResponse retVal = ((Google.Api.Ads.Dfp.v201711.ProposalLineItemServiceInterface)(this)).createProposalLineItems(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ProposalLineItemService.createProposalLineItemsResponse> Google.Api.Ads.Dfp.v201711.ProposalLineItemServiceInterface.createProposalLineItemsAsync(Wrappers.ProposalLineItemService.createProposalLineItemsRequest request) {
+			return base.Channel.createProposalLineItemsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProposalLineItem[]> createProposalLineItemsAsync(Google.Api.Ads.Dfp.v201711.ProposalLineItem[] proposalLineItems) {
+			Wrappers.ProposalLineItemService.createProposalLineItemsRequest inValue = new Wrappers.ProposalLineItemService.createProposalLineItemsRequest();
+			inValue.proposalLineItems = proposalLineItems;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProposalLineItem[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ProposalLineItemServiceInterface)(this)).createProposalLineItemsAsync(inValue)).Result.rval);
 		}
 
 		/// <summary>Gets a <a href='ProposalLineItemPage'>ProposalLineItemPage</a> of <a
@@ -50933,6 +52166,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getProposalLineItemsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProposalLineItemPage> getProposalLineItemsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getProposalLineItemsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='ProposalLineItem'>ProposalLineItem</a> objects that
 		/// match the given <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='proposalLineItemAction'>the action to perform</param>
@@ -50943,14 +52180,16 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.performProposalLineItemAction(proposalLineItemAction, filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performProposalLineItemActionAsync(Google.Api.Ads.Dfp.v201711.ProposalLineItemAction proposalLineItemAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performProposalLineItemActionAsync(proposalLineItemAction, filterStatement);
+		}
+
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.ProposalLineItemService.updateProposalLineItemsResponse Google.Api.Ads.Dfp.v201711.ProposalLineItemServiceInterface.updateProposalLineItems(Wrappers.ProposalLineItemService.updateProposalLineItemsRequest request) {
 			return base.Channel.updateProposalLineItems(request);
 		}
 
 		/// <summary>Updates the specified <a href='ProposalLineItem'>ProposalLineItem</a> objects.
-		/// If free editing mode is enabled, this will trigger inventory reservation and
-		/// cause the proposal to be pushed to DFP again.
 		/// </summary><param name='proposalLineItems'>the proposal line items to update</param>
 		/// <returns>the updated proposal line items</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.ProposalLineItem[] updateProposalLineItems(Google.Api.Ads.Dfp.v201711.ProposalLineItem[] proposalLineItems) {
@@ -50958,6 +52197,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.proposalLineItems = proposalLineItems;
 			Wrappers.ProposalLineItemService.updateProposalLineItemsResponse retVal = ((Google.Api.Ads.Dfp.v201711.ProposalLineItemServiceInterface)(this)).updateProposalLineItems(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ProposalLineItemService.updateProposalLineItemsResponse> Google.Api.Ads.Dfp.v201711.ProposalLineItemServiceInterface.updateProposalLineItemsAsync(Wrappers.ProposalLineItemService.updateProposalLineItemsRequest request) {
+			return base.Channel.updateProposalLineItemsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProposalLineItem[]> updateProposalLineItemsAsync(Google.Api.Ads.Dfp.v201711.ProposalLineItem[] proposalLineItems) {
+			Wrappers.ProposalLineItemService.updateProposalLineItemsRequest inValue = new Wrappers.ProposalLineItemService.updateProposalLineItemsRequest();
+			inValue.proposalLineItems = proposalLineItems;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProposalLineItem[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ProposalLineItemServiceInterface)(this)).updateProposalLineItemsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.PublisherQueryLanguageService
@@ -50990,8 +52240,8 @@ namespace Google.Api.Ads.Dfp.v201711
 
 	/// <summary>Contains a <a href='Targeting'>Targeting</a> value. <p><b>This object is
 	/// experimental! <code>TargetingValue</code> is an experimental, innovative, and
-	/// rapidly changing new feature for DFP. Unfortunately, being on the bleeding edge
-	/// means that we may make backwards-incompatible changes to
+	/// rapidly changing new feature for Ad Manager. Unfortunately, being on the
+	/// bleeding edge means that we may make backwards-incompatible changes to
 	/// <code>TargetingValue</code>. We will inform the community when this feature is
 	/// no longer experimental.</b></p>
 	/// </summary>
@@ -51211,6 +52461,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ResultSet select(Google.Api.Ads.Dfp.v201711.Statement selectStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ResultSet> selectAsync(Google.Api.Ads.Dfp.v201711.Statement selectStatement);
 	}
 
 
@@ -51361,24 +52615,21 @@ namespace Google.Api.Ads.Dfp.v201711
 	/// <td><code>Text</code></td> <td>The name of the ad unit.</td> </tr> <tr>
 	/// <td>ParentId</td> <td><code>Number</code></td> <td>The ID of the ad unit's
 	/// parent. Every ad unit has a parent except for the root ad unit, which is created
-	/// by Google.</td> </tr> <tr> <td>PartnerId</td> <td><code>Number</code></td>
-	/// <td>The unique ID of the <a href='Company'>Company</a>, which is of type <a
-	/// href='Company.Type#AFFILIATE_DISTRIBUTION_PARTNER'>Company.Type#AFFILIATE_DISTRIBUTION_PARTNER</a>,
-	/// to which this ad unit belongs.</td> </tr> </table> <h2 id="User">User</h2>
-	/// <table> <tr> <th>Column name</th> <th>Type</th> <th>Description</th> </tr> <tr>
-	/// <td>Email</td> <td><code>Text</code></td> <td>The email or login of the
-	/// user.</td> </tr> <tr> <td>ExternalId</td> <td><code>Text</code></td> <td>An
-	/// identifier for the user that is meaningful to the publisher.</td> </tr> <tr>
-	/// <td>Id</td> <td><code>Number</code></td> <td>The unique ID of the user.</td>
-	/// </tr> <tr> <td>IsServiceAccount</td> <td><code>Boolean</code></td> <td>True if
-	/// this user is an OAuth2 service account user, false otherwise.</td> </tr> <tr>
-	/// <td>Name</td> <td><code>Text</code></td> <td>The name of the user.</td> </tr>
-	/// <tr> <td>RoleId</td> <td><code>Number</code></td> <td>The unique role ID of the
-	/// user. <a href='Role'>Role</a> objects that are created by Google will have
-	/// negative IDs.</td> </tr> <tr> <td>RoleName</td> <td><code>Text</code></td>
-	/// <td>The name of the <a href='Role'>Role</a> assigned to the user.</td> </tr>
-	/// </table> <h2 id="Exchange_Rate">Exchange_Rate</h2> <table> <tr> <th>Column
-	/// name</th> <th>Type</th> <th>Description</th> </tr> <tr> <td>CurrencyCode</td>
+	/// by Google.</td> </tr> </table> <h2 id="User">User</h2> <table> <tr> <th>Column
+	/// name</th> <th>Type</th> <th>Description</th> </tr> <tr> <td>Email</td>
+	/// <td><code>Text</code></td> <td>The email or login of the user.</td> </tr> <tr>
+	/// <td>ExternalId</td> <td><code>Text</code></td> <td>An identifier for the user
+	/// that is meaningful to the publisher.</td> </tr> <tr> <td>Id</td>
+	/// <td><code>Number</code></td> <td>The unique ID of the user.</td> </tr> <tr>
+	/// <td>IsServiceAccount</td> <td><code>Boolean</code></td> <td>True if this user is
+	/// an OAuth2 service account user, false otherwise.</td> </tr> <tr> <td>Name</td>
+	/// <td><code>Text</code></td> <td>The name of the user.</td> </tr> <tr>
+	/// <td>RoleId</td> <td><code>Number</code></td> <td>The unique role ID of the user.
+	/// <a href='Role'>Role</a> objects that are created by Google will have negative
+	/// IDs.</td> </tr> <tr> <td>RoleName</td> <td><code>Text</code></td> <td>The name
+	/// of the <a href='Role'>Role</a> assigned to the user.</td> </tr> </table> <h2
+	/// id="Exchange_Rate">Exchange_Rate</h2> <table> <tr> <th>Column name</th>
+	/// <th>Type</th> <th>Description</th> </tr> <tr> <td>CurrencyCode</td>
 	/// <td><code>Text</code></td> <td>The currency code that the exchange rate is
 	/// related to. The exchange rate is between this currency and <a
 	/// href='Network#currencyCode'>the network's currency</a>. This attribute is
@@ -51407,8 +52658,8 @@ namespace Google.Api.Ads.Dfp.v201711
 	/// buyer network for a programmatic order.</td> </tr> <tr> <td>Name</td>
 	/// <td><code>Text</code></td> <td>Display name that references the buyer.</td>
 	/// </tr> <tr> <td>ParentId</td> <td><code>Number</code></td> <td>The ID of the
-	/// programmatic buyer's parent. If the programmatic buyer has no parent, this field
-	/// will be zero.</td> </tr> </table> <h2
+	/// programmatic buyer's sponsor. If the programmatic buyer has no sponsor, this
+	/// field will be -1.</td> </tr> </table> <h2
 	/// id="Audience_Segment_Category">Audience_Segment_Category</h2> <table> <tr>
 	/// <th>Column name</th> <th>Type</th> <th>Description</th> </tr> <tr> <td>Id</td>
 	/// <td><code>Number</code></td> <td>The unique identifier for the audience segment
@@ -51442,13 +52693,17 @@ namespace Google.Api.Ads.Dfp.v201711
 	/// <code>ProposalRetractionReason</code>.</td> </tr> </table> <h2
 	/// id="Audience_Explorer">Audience_Explorer</h2> <table> <tr> <th>Column name</th>
 	/// <th>Type</th> <th>Description</th> </tr> <tr> <td>Id</td>
-	/// <td><code>Number</code></td> <td>Uniquely identifies the audience segment.</td>
+	/// <td><code>Number</code></td> <td>Uniquely identifies the audience segment. This
+	/// table has been deprecated since December 2017, and returns empty data.</td>
 	/// </tr> <tr> <td>ThirtyDayActiveSize</td> <td><code>Number</code></td> <td>The
-	/// number of active unique cookies in this segment over the last 30 days.</td>
+	/// number of active unique cookies in this segment over the last 30 days. This
+	/// table has been deprecated since December 2017, and returns empty data.</td>
 	/// </tr> <tr> <td>ThirtyDayClicks</td> <td><code>Number</code></td> <td>The number
-	/// of clicks for this segment over the last 30 days.</td> </tr> <tr>
+	/// of clicks for this segment over the last 30 days. This table has been deprecated
+	/// since December 2017, and returns empty data.</td> </tr> <tr>
 	/// <td>ThirtyDayImpressions</td> <td><code>Number</code></td> <td>The number of
-	/// impressions for this segment over the last 30 days.</td> </tr> </table> <h2
+	/// impressions for this segment over the last 30 days. This table has been
+	/// deprecated since December 2017, and returns empty data.</td> </tr> </table> <h2
 	/// id="Time_Zone">Time_Zone</h2> <table> <tr> <th>Column name</th> <th>Type</th>
 	/// <th>Description</th> </tr> <tr> <td>Id</td> <td><code>Text</code></td> <td>The
 	/// id of time zone in the form of <code></code>.</td> </tr> <tr>
@@ -51526,6 +52781,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>a result set of data that matches the given filter</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.ResultSet select(Google.Api.Ads.Dfp.v201711.Statement selectStatement) {
 			return base.Channel.select(selectStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ResultSet> selectAsync(Google.Api.Ads.Dfp.v201711.Statement selectStatement) {
+			return base.Channel.selectAsync(selectStatement);
 		}
 	}
 	namespace Wrappers.RateCardService
@@ -51996,11 +53255,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.RateCardService.createRateCardsResponse createRateCards(Wrappers.RateCardService.createRateCardsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.RateCardService.createRateCardsResponse> createRateCardsAsync(Wrappers.RateCardService.createRateCardsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.RateCardPage getRateCardsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.RateCardPage> getRateCardsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -52009,6 +53275,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performRateCardAction(Google.Api.Ads.Dfp.v201711.RateCardAction rateCardAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performRateCardActionAsync(Google.Api.Ads.Dfp.v201711.RateCardAction rateCardAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -52016,6 +53286,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.RateCardService.updateRateCardsResponse updateRateCards(Wrappers.RateCardService.updateRateCardsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.RateCardService.updateRateCardsResponse> updateRateCardsAsync(Wrappers.RateCardService.updateRateCardsRequest request);
 	}
 
 
@@ -52199,6 +53472,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.RateCardService.createRateCardsResponse> Google.Api.Ads.Dfp.v201711.RateCardServiceInterface.createRateCardsAsync(Wrappers.RateCardService.createRateCardsRequest request) {
+			return base.Channel.createRateCardsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.RateCard[]> createRateCardsAsync(Google.Api.Ads.Dfp.v201711.RateCard[] rateCards) {
+			Wrappers.RateCardService.createRateCardsRequest inValue = new Wrappers.RateCardService.createRateCardsRequest();
+			inValue.rateCards = rateCards;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.RateCard[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.RateCardServiceInterface)(this)).createRateCardsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='RateCardPage'>RateCardPage</a> of <a
 		/// href='RateCard'>RateCard</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
@@ -52219,6 +53503,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getRateCardsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.RateCardPage> getRateCardsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getRateCardsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs action on <a href='RateCard'>RateCard</a> objects that satisfy the
 		/// given <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='rateCardAction'>the action to perform</param>
@@ -52227,6 +53515,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performRateCardAction(Google.Api.Ads.Dfp.v201711.RateCardAction rateCardAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performRateCardAction(rateCardAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performRateCardActionAsync(Google.Api.Ads.Dfp.v201711.RateCardAction rateCardAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performRateCardActionAsync(rateCardAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -52242,6 +53534,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.rateCards = rateCards;
 			Wrappers.RateCardService.updateRateCardsResponse retVal = ((Google.Api.Ads.Dfp.v201711.RateCardServiceInterface)(this)).updateRateCards(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.RateCardService.updateRateCardsResponse> Google.Api.Ads.Dfp.v201711.RateCardServiceInterface.updateRateCardsAsync(Wrappers.RateCardService.updateRateCardsRequest request) {
+			return base.Channel.updateRateCardsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.RateCard[]> updateRateCardsAsync(Google.Api.Ads.Dfp.v201711.RateCard[] rateCards) {
+			Wrappers.RateCardService.updateRateCardsRequest inValue = new Wrappers.RateCardService.updateRateCardsRequest();
+			inValue.rateCards = rateCards;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.RateCard[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.RateCardServiceInterface)(this)).updateRateCardsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ReconciliationOrderReportService
@@ -52772,11 +54075,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.ReconciliationOrderReportPage getReconciliationOrderReportsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationOrderReportPage> getReconciliationOrderReportsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performReconciliationOrderReportAction(Google.Api.Ads.Dfp.v201711.ReconciliationOrderReportAction reconciliationOrderReportAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performReconciliationOrderReportActionAsync(Google.Api.Ads.Dfp.v201711.ReconciliationOrderReportAction reconciliationOrderReportAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -52785,6 +54096,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsResponse updateReconciliationOrderReports(Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsResponse> updateReconciliationOrderReportsAsync(Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsRequest request);
 	}
 
 
@@ -52898,6 +54212,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getReconciliationOrderReportsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationOrderReportPage> getReconciliationOrderReportsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getReconciliationOrderReportsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on the <a
 		/// href='ReconciliationOrderReport'>ReconciliationOrderReport</a> objects that
 		/// match the given <a href='Statement#query'>Statement#query</a>. The following
@@ -52924,6 +54242,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.performReconciliationOrderReportAction(reconciliationOrderReportAction, filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performReconciliationOrderReportActionAsync(Google.Api.Ads.Dfp.v201711.ReconciliationOrderReportAction reconciliationOrderReportAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performReconciliationOrderReportActionAsync(reconciliationOrderReportAction, filterStatement);
+		}
+
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsResponse Google.Api.Ads.Dfp.v201711.ReconciliationOrderReportServiceInterface.updateReconciliationOrderReports(Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsRequest request) {
 			return base.Channel.updateReconciliationOrderReports(request);
@@ -52941,6 +54263,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.reconciliationOrderReports = reconciliationOrderReports;
 			Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsResponse retVal = ((Google.Api.Ads.Dfp.v201711.ReconciliationOrderReportServiceInterface)(this)).updateReconciliationOrderReports(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsResponse> Google.Api.Ads.Dfp.v201711.ReconciliationOrderReportServiceInterface.updateReconciliationOrderReportsAsync(Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsRequest request) {
+			return base.Channel.updateReconciliationOrderReportsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationOrderReport[]> updateReconciliationOrderReportsAsync(Google.Api.Ads.Dfp.v201711.ReconciliationOrderReport[] reconciliationOrderReports) {
+			Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsRequest inValue = new Wrappers.ReconciliationOrderReportService.updateReconciliationOrderReportsRequest();
+			inValue.reconciliationOrderReports = reconciliationOrderReports;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationOrderReport[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ReconciliationOrderReportServiceInterface)(this)).updateReconciliationOrderReportsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ReconciliationLineItemReportService
@@ -53850,6 +55183,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReportPage getReconciliationLineItemReportsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReportPage> getReconciliationLineItemReportsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -53857,6 +55194,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsResponse updateReconciliationLineItemReports(Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsResponse> updateReconciliationLineItemReportsAsync(Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsRequest request);
 	}
 
 
@@ -53929,6 +55269,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getReconciliationLineItemReportsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReportPage> getReconciliationLineItemReportsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getReconciliationLineItemReportsByStatementAsync(filterStatement);
+		}
+
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsResponse Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReportServiceInterface.updateReconciliationLineItemReports(Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsRequest request) {
 			return base.Channel.updateReconciliationLineItemReports(request);
@@ -53948,6 +55292,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.reconciliationLineItemReports = reconciliationLineItemReports;
 			Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsResponse retVal = ((Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReportServiceInterface)(this)).updateReconciliationLineItemReports(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsResponse> Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReportServiceInterface.updateReconciliationLineItemReportsAsync(Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsRequest request) {
+			return base.Channel.updateReconciliationLineItemReportsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReport[]> updateReconciliationLineItemReportsAsync(Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReport[] reconciliationLineItemReports) {
+			Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsRequest inValue = new Wrappers.ReconciliationLineItemReportService.updateReconciliationLineItemReportsRequest();
+			inValue.reconciliationLineItemReports = reconciliationLineItemReports;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReport[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReportServiceInterface)(this)).updateReconciliationLineItemReportsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ReconciliationReportService
@@ -54292,6 +55647,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ReconciliationReportPage getReconciliationReportsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationReportPage> getReconciliationReportsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -54299,6 +55658,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ReconciliationReportService.updateReconciliationReportsResponse updateReconciliationReports(Wrappers.ReconciliationReportService.updateReconciliationReportsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ReconciliationReportService.updateReconciliationReportsResponse> updateReconciliationReportsAsync(Wrappers.ReconciliationReportService.updateReconciliationReportsRequest request);
 	}
 
 
@@ -54363,6 +55725,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getReconciliationReportsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationReportPage> getReconciliationReportsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getReconciliationReportsByStatementAsync(filterStatement);
+		}
+
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.ReconciliationReportService.updateReconciliationReportsResponse Google.Api.Ads.Dfp.v201711.ReconciliationReportServiceInterface.updateReconciliationReports(Wrappers.ReconciliationReportService.updateReconciliationReportsRequest request) {
 			return base.Channel.updateReconciliationReports(request);
@@ -54378,6 +55744,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.reconciliationReports = reconciliationReports;
 			Wrappers.ReconciliationReportService.updateReconciliationReportsResponse retVal = ((Google.Api.Ads.Dfp.v201711.ReconciliationReportServiceInterface)(this)).updateReconciliationReports(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ReconciliationReportService.updateReconciliationReportsResponse> Google.Api.Ads.Dfp.v201711.ReconciliationReportServiceInterface.updateReconciliationReportsAsync(Wrappers.ReconciliationReportService.updateReconciliationReportsRequest request) {
+			return base.Channel.updateReconciliationReportsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationReport[]> updateReconciliationReportsAsync(Google.Api.Ads.Dfp.v201711.ReconciliationReport[] reconciliationReports) {
+			Wrappers.ReconciliationReportService.updateReconciliationReportsRequest inValue = new Wrappers.ReconciliationReportService.updateReconciliationReportsRequest();
+			inValue.reconciliationReports = reconciliationReports;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationReport[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ReconciliationReportServiceInterface)(this)).updateReconciliationReportsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.AdRuleService
@@ -55656,11 +57033,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.AdRuleService.createAdRulesResponse createAdRules(Wrappers.AdRuleService.createAdRulesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.AdRuleService.createAdRulesResponse> createAdRulesAsync(Wrappers.AdRuleService.createAdRulesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.AdRulePage getAdRulesByStatement(Google.Api.Ads.Dfp.v201711.Statement statement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdRulePage> getAdRulesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -55669,6 +57053,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performAdRuleAction(Google.Api.Ads.Dfp.v201711.AdRuleAction adRuleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performAdRuleActionAsync(Google.Api.Ads.Dfp.v201711.AdRuleAction adRuleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -55676,6 +57064,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.AdRuleService.updateAdRulesResponse updateAdRules(Wrappers.AdRuleService.updateAdRulesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.AdRuleService.updateAdRulesResponse> updateAdRulesAsync(Wrappers.AdRuleService.updateAdRulesRequest request);
 	}
 
 
@@ -55868,6 +57259,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.AdRuleService.createAdRulesResponse> Google.Api.Ads.Dfp.v201711.AdRuleServiceInterface.createAdRulesAsync(Wrappers.AdRuleService.createAdRulesRequest request) {
+			return base.Channel.createAdRulesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdRule[]> createAdRulesAsync(Google.Api.Ads.Dfp.v201711.AdRule[] adRules) {
+			Wrappers.AdRuleService.createAdRulesRequest inValue = new Wrappers.AdRuleService.createAdRulesRequest();
+			inValue.adRules = adRules;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdRule[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.AdRuleServiceInterface)(this)).createAdRulesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets an <a href='AdRulePage'>AdRulePage</a> of <a href='AdRule'>AdRule</a>
 		/// objects that satisfy the given <a href=''>Statement#query</a>. The following
 		/// fields are supported for filtering: <table> <tr> <th scope="col">PQL
@@ -55888,6 +57290,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getAdRulesByStatement(statement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdRulePage> getAdRulesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement) {
+			return base.Channel.getAdRulesByStatementAsync(statement);
+		}
+
 		/// <summary>Performs actions on <a href='AdRule'>AdRule</a> objects that match the given <a
 		/// href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='adRuleAction'>the action to perform</param>
@@ -55896,6 +57302,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performAdRuleAction(Google.Api.Ads.Dfp.v201711.AdRuleAction adRuleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performAdRuleAction(adRuleAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performAdRuleActionAsync(Google.Api.Ads.Dfp.v201711.AdRuleAction adRuleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performAdRuleActionAsync(adRuleAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -55913,6 +57323,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.adRules = adRules;
 			Wrappers.AdRuleService.updateAdRulesResponse retVal = ((Google.Api.Ads.Dfp.v201711.AdRuleServiceInterface)(this)).updateAdRules(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.AdRuleService.updateAdRulesResponse> Google.Api.Ads.Dfp.v201711.AdRuleServiceInterface.updateAdRulesAsync(Wrappers.AdRuleService.updateAdRulesRequest request) {
+			return base.Channel.updateAdRulesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdRule[]> updateAdRulesAsync(Google.Api.Ads.Dfp.v201711.AdRule[] adRules) {
+			Wrappers.AdRuleService.updateAdRulesRequest inValue = new Wrappers.AdRuleService.updateAdRulesRequest();
+			inValue.adRules = adRules;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdRule[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.AdRuleServiceInterface)(this)).updateAdRulesAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ReconciliationReportRowService
@@ -56693,6 +58114,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ReconciliationReportRowPage getReconciliationReportRowsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationReportRowPage> getReconciliationReportRowsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -56700,6 +58125,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsResponse updateReconciliationReportRows(Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsResponse> updateReconciliationReportRowsAsync(Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsRequest request);
 	}
 
 
@@ -56798,6 +58226,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getReconciliationReportRowsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationReportRowPage> getReconciliationReportRowsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getReconciliationReportRowsByStatementAsync(filterStatement);
+		}
+
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsResponse Google.Api.Ads.Dfp.v201711.ReconciliationReportRowServiceInterface.updateReconciliationReportRows(Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsRequest request) {
 			return base.Channel.updateReconciliationReportRows(request);
@@ -56813,6 +58245,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.reconciliationReportRows = reconciliationReportRows;
 			Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsResponse retVal = ((Google.Api.Ads.Dfp.v201711.ReconciliationReportRowServiceInterface)(this)).updateReconciliationReportRows(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsResponse> Google.Api.Ads.Dfp.v201711.ReconciliationReportRowServiceInterface.updateReconciliationReportRowsAsync(Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsRequest request) {
+			return base.Channel.updateReconciliationReportRowsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationReportRow[]> updateReconciliationReportRowsAsync(Google.Api.Ads.Dfp.v201711.ReconciliationReportRow[] reconciliationReportRows) {
+			Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsRequest inValue = new Wrappers.ReconciliationReportRowService.updateReconciliationReportRowsRequest();
+			inValue.reconciliationReportRows = reconciliationReportRows;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationReportRow[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ReconciliationReportRowServiceInterface)(this)).updateReconciliationReportRowsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ReportService
@@ -56935,8 +58378,17 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <summary>Attribute has to be selected in combination with dimensions.
 		/// </summary>
 		ATTRIBUTES_NOT_SUPPORTED_FOR_REQUEST = 17,
-		/// <summary>Not all <a href='Column'>Column</a> objects requested are supported for the
-		/// given set of <a href='Dimension'>Dimension</a> objects.
+		/// <summary>The provided report violates one or more constraints, which govern
+		/// incompatibilities and requirements between different report properties. Some
+		/// reasons for constraint violations include: <ul> <li>Not all <a
+		/// href='Column'>Column</a> objects requested are supported for the given set of <a
+		/// href='Dimension'>Dimension</a> objects.</li> <li>The report's date range is not
+		/// compatible with the given set of <a href='Column'>Column</a> objects.</li>
+		/// <li>The report's <a href='TimeZoneType'>TimeZoneType</a> is not compatible with
+		/// the given set of <a href='Column'>Column</a> and <a
+		/// href='Dimension'>Dimension</a> objects (version 201802 and later).</li> <li>The
+		/// report's currency is not compatible with the given set of <a
+		/// href='Column'>Column</a> objects (version 201802 and later).</li> </ul>
 		/// </summary>
 		COLUMNS_NOT_SUPPORTED_FOR_REQUESTED_DIMENSIONS = 18,
 		/// <summary>Failed to store/cache a report.
@@ -56967,11 +58419,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		string getReportDownloadURL(long reportJobId, Google.Api.Ads.Dfp.v201711.ExportFormat exportFormat);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<string> getReportDownloadURLAsync(long reportJobId, Google.Api.Ads.Dfp.v201711.ExportFormat exportFormat);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		string getReportDownloadUrlWithOptions(long reportJobId, Google.Api.Ads.Dfp.v201711.ReportDownloadOptions reportDownloadOptions);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<string> getReportDownloadUrlWithOptionsAsync(long reportJobId, Google.Api.Ads.Dfp.v201711.ReportDownloadOptions reportDownloadOptions);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -56981,6 +58441,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.ReportJobStatus getReportJobStatus(long reportJobId);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReportJobStatus> getReportJobStatusAsync(long reportJobId);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
@@ -56988,11 +58452,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.SavedQueryPage getSavedQueriesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.SavedQueryPage> getSavedQueriesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ReportJob runReportJob(Google.Api.Ads.Dfp.v201711.ReportJob reportJob);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReportJob> runReportJobAsync(Google.Api.Ads.Dfp.v201711.ReportJob reportJob);
 	}
 
 
@@ -57345,7 +58817,10 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>Whether or not the saved query is compatible with the current API version. This
 		/// will be <code>true</code> if and only if <a
-		/// href='SavedQuery#reportQuery'>SavedQuery#reportQuery</a> is non-null.
+		/// href='SavedQuery#reportQuery'>SavedQuery#reportQuery</a> is non-null. A saved
+		/// query will be incompatible with the API if it uses columns, dimensions, or other
+		/// reporting features from the UI that are not available in the <a
+		/// href='ReportQuery'>ReportQuery</a> entity.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 3)]
 		public bool isCompatibleWithApiVersion {
@@ -57733,67 +59208,108 @@ namespace Google.Api.Ads.Dfp.v201711
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201711")]
 	public enum Dimension {
 		/// <summary>Breaks down reporting data by month and year in the network time zone. Can be
-		/// used to filter on month using ISO 4601 format 'YYYY-MM'.
+		/// used to filter on month using ISO 4601 format 'YYYY-MM'. <p><b>Note:</b> In
+		/// v201802 and later, this dimension is compatible with the following time zone
+		/// types:</p> <ul> <li><a
+		/// href='TimeZoneType.PUBLISHER'>TimeZoneType.PUBLISHER</a></li> <li><a
+		/// href='TimeZoneType.PROPOSAL_LOCAL'>TimeZoneType.PROPOSAL_LOCAL</a></li> </ul>
+		/// <p>Corresponds to "Month and year" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES,
+		/// PARTNER_FINANCE, CREATIVE_QOS.</p>
 		/// </summary>
 		MONTH_AND_YEAR = 0,
 		/// <summary>Breaks down reporting data by week of the year in the network time zone. Cannot
-		/// be used for filtering.
+		/// be used for filtering. <p><b>Note:</b> In v201802 and later, this dimension is
+		/// compatible with the following time zone types:</p> <ul> <li><a
+		/// href='TimeZoneType.PUBLISHER'>TimeZoneType.PUBLISHER</a></li> <li><a
+		/// href='TimeZoneType.PROPOSAL_LOCAL'>TimeZoneType.PROPOSAL_LOCAL</a></li> </ul>
+		/// <p>Corresponds to "Week" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		WEEK = 1,
 		/// <summary>Breaks down reporting data by date in the network time zone. Can be used to
-		/// filter by date using ISO 8601's format 'YYYY-MM-DD'".
+		/// filter by date using ISO 8601's format 'YYYY-MM-DD'". <p><b>Note:</b> In v201802
+		/// and later, this dimension is compatible with the following time zone types:</p>
+		/// <ul> <li><a href='TimeZoneType.PUBLISHER'>TimeZoneType.PUBLISHER</a></li> <li><a
+		/// href='TimeZoneType.PROPOSAL_LOCAL'>TimeZoneType.PROPOSAL_LOCAL</a></li> </ul>
+		/// <p>Corresponds to "Date" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		DATE = 2,
 		/// <summary>Breaks down reporting data by day of the week in the network time zone. Can be
 		/// used to filter by day of the week using the index of the day (from 1 for Monday
-		/// is 1 to 7 for Sunday).
+		/// is 1 to 7 for Sunday). <p>Corresponds to "Day of week" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SELL_THROUGH,
+		/// REACH, SALES, CREATIVE_QOS.</p>
 		/// </summary>
 		DAY = 3,
 		/// <summary>Breaks down reporting data by hour of the day in the network time zone. Can be
-		/// used to filter by hour of the day (from 0 to 23).
+		/// used to filter by hour of the day (from 0 to 23). <p>Corresponds to "Hour" in
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, REACH.</p>
 		/// </summary>
 		HOUR = 4,
 		/// <summary>Breaks down reporting data by <a href='LineItem#id'>LineItem#id</a>. Can be used
-		/// to filter by <a href='LineItem#id'>LineItem#id</a>.
+		/// to filter by <a href='LineItem#id'>LineItem#id</a>. <p>Compatible with any of
+		/// the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES,
+		/// DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		LINE_ITEM_ID = 5,
 		/// <summary>Breaks down reporting data by line item. <a
 		/// href='LineItem#name'>LineItem#name</a> and <a href='LineItem#id'>LineItem#id</a>
 		/// are automatically included as columns in the report. Can be used to filter by <a
-		/// href='LineItem#name'>LineItem#name</a>.
+		/// href='LineItem#name'>LineItem#name</a>. <p>Corresponds to "Line item" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// SELL_THROUGH, REACH, SALES, DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		LINE_ITEM_NAME = 6,
 		/// <summary>Breaks down reporting data by <a
 		/// href='LineItem#lineItemType'>LineItem#lineItemType</a>. Can be used to filter by
 		/// line item type using <a href='LineItemType'>LineItemType</a> enumeration names.
+		/// <p>Corresponds to "Line item type" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, SELL_THROUGH, REACH, DATA_LEAKAGE,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		LINE_ITEM_TYPE = 7,
-		/// <summary>Breaks down reporting data by aggregated demand channel type.
+		/// <summary>Breaks down reporting data by aggregated demand channel type. <p>This field is
+		/// deprecated and will be removed in v201805.</p> <p>Compatible with any of the
+		/// following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AGGREGATED_DEMAND_CHANNEL = 141,
 		/// <summary>Breaks down reporting data by <a href='Order#id'>Order#id</a>. Can be used to
-		/// filter by <a href='Order#id'>Order#id</a>.
+		/// filter by <a href='Order#id'>Order#id</a>. <p>Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		ORDER_ID = 8,
 		/// <summary>Breaks down reporting data by order. <a href='Order#name'>Order#name</a> and <a
 		/// href='Order#id'>Order#id</a> are automatically included as columns in the
 		/// report. Can be used to filter by <a href='Order#name'>Order#name</a>.
+		/// <p>Corresponds to "Order" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		ORDER_NAME = 9,
 		/// <summary>Delivery status of the order. Not available as a dimension to report on, but
 		/// exists as a dimension in order to filter on it using PQL. Valid values are
-		/// 'STARTED', 'NOT_STARTED' and 'COMPLETED'.
+		/// 'STARTED', 'NOT_STARTED' and 'COMPLETED'. <p>Compatible with any of the
+		/// following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		ORDER_DELIVERY_STATUS = 142,
 		/// <summary>Breaks down reporting data by advertising company <a
 		/// href='Company#id'>Company#id</a>. Can be used to filter by <a
-		/// href='Company#id'>Company#id</a>.
+		/// href='Company#id'>Company#id</a>. <p>Compatible with any of the following report
+		/// types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		ADVERTISER_ID = 10,
 		/// <summary>Breaks down reporting data by advertising company. <a
 		/// href='Company#name'>Company#name</a> and <a href='Company#id'>Company#id</a> are
 		/// automatically included as columns in the report. Can be used to filter by <a
-		/// href='Company#name'>Company#name</a>.
+		/// href='Company#name'>Company#name</a>. <p>Corresponds to "Advertiser" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// SELL_THROUGH, REACH, SALES, DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		ADVERTISER_NAME = 11,
 		/// <summary>The network that provided the ad for SDK ad mediation. <p>If selected for a
@@ -57804,150 +59320,202 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// finds an ad network with an ad to serve. The ad network that ends up serving the
 		/// ad will appear here. Note that this id does not correlate to anything in the
 		/// companies table and is not the same id as is served by <a
-		/// href='#ADVERTISER_ID'>#ADVERTISER_ID</a>.</p>
+		/// href='#ADVERTISER_ID'>#ADVERTISER_ID</a>.</p> <p>Compatible with any of the
+		/// following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AD_NETWORK_ID = 12,
 		/// <summary>The name of the network defined in <a href='#AD_NETWORK_ID'>#AD_NETWORK_ID</a>.
+		/// <p>Corresponds to "Ad network name" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AD_NETWORK_NAME = 13,
 		/// <summary>Breaks down reporting data by salesperson <a href='User#id'>User#id</a>. Can be
-		/// used to filter by <a href='User#id'>User#id</a>.
+		/// used to filter by <a href='User#id'>User#id</a>. <p>Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		SALESPERSON_ID = 14,
 		/// <summary>Breaks down reporting data by salesperson. <a href='User#name'>User#name</a> and
 		/// <a href='User#id'>User#id</a> of the salesperson are automatically included as
 		/// columns in the report. Can be used to filter by <a
-		/// href='User#name'>User#name</a>.
+		/// href='User#name'>User#name</a>. <p>Corresponds to "Salesperson" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// SELL_THROUGH, REACH, SALES, DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		SALESPERSON_NAME = 15,
 		/// <summary>Breaks down reporting data by <a href='Creative#id'>Creative#id</a> or creative
 		/// set id (master's <a href='Creative#id'>Creative#id</a>) if the creative is part
 		/// of a creative set. Can be used to filter by <a
-		/// href='Creative#id'>Creative#id</a>.
+		/// href='Creative#id'>Creative#id</a>. <p>Compatible with any of the following
+		/// report types: HISTORICAL, REACH, DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		CREATIVE_ID = 16,
 		/// <summary>Breaks down reporting data by creative. <a
 		/// href='Creative#name'>Creative#name</a> and <a href='Creative#id'>Creative#id</a>
 		/// are automatically included as columns in the report. Can be used to filter by <a
-		/// href='Creative#name'>Creative#name</a>.
+		/// href='Creative#name'>Creative#name</a>. <p>Corresponds to "Creative" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// REACH, DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		CREATIVE_NAME = 17,
-		/// <summary>Breaks down reporting data by creative type.
+		/// <summary>Breaks down reporting data by creative type. <p>Corresponds to "Creative type"
+		/// in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, REACH.</p>
 		/// </summary>
 		CREATIVE_TYPE = 18,
-		/// <summary>Breaks down reporting data by creative billing type.
+		/// <summary>Breaks down reporting data by creative billing type. <p>Corresponds to "Creative
+		/// billing type" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, REACH.</p>
 		/// </summary>
 		CREATIVE_BILLING_TYPE = 19,
-		/// <summary>Breaks down reporting data by custom event ID.
+		/// <summary>Breaks down reporting data by custom event ID. <p>Compatible with any of the
+		/// following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		CUSTOM_EVENT_ID = 20,
-		/// <summary>Breaks down reporting data by custom event name.
+		/// <summary>Breaks down reporting data by custom event name. <p>Corresponds to "Custom
+		/// event" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, REACH.</p>
 		/// </summary>
 		CUSTOM_EVENT_NAME = 21,
 		/// <summary>Breaks down reporting data by custom event type (timer/exit/counter).
+		/// <p>Corresponds to "Custom event type" in the Ad Manager UI. Compatible with any
+		/// of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		CUSTOM_EVENT_TYPE = 22,
 		/// <summary>Breaks down reporting data by <a href='Creative#size'>Creative#size</a>. Cannot
-		/// be used for filtering.
+		/// be used for filtering. <p>Corresponds to "Creative size" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		CREATIVE_SIZE = 23,
 		/// <summary>Breaks down reporting data by <a href='AdUnit#id'>AdUnit#id</a>. Can be used to
 		/// filter by <a href='AdUnit#id'>AdUnit#id</a>. <a
 		/// href='#AD_UNIT_NAME'>#AD_UNIT_NAME</a>, i.e. <a
 		/// href='AdUnit#name'>AdUnit#name</a>, is automatically included as a dimension in
-		/// the report.
+		/// the report. <p>Compatible with any of the following report types: HISTORICAL,
+		/// SELL_THROUGH, REACH, SALES, CREATIVE_QOS.</p>
 		/// </summary>
 		AD_UNIT_ID = 24,
 		/// <summary>Breaks down reporting data by ad unit. <a href='AdUnit#name'>AdUnit#name</a> and
 		/// <a href='AdUnit#id'>AdUnit#id</a> are automatically included as columns in the
 		/// report. Can be used to filter by <a href='AdUnit#name'>AdUnit#name</a>.
+		/// <p>Corresponds to "Ad unit" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		AD_UNIT_NAME = 25,
 		/// <summary>Used to filter on all the descendants of an ad unit by <a
 		/// href='AdUnit#id'>AdUnit#id</a>. Not available as a dimension to report on.
+		/// <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH,
+		/// REACH, SALES, CREATIVE_QOS.</p>
 		/// </summary>
 		PARENT_AD_UNIT_ID = 26,
 		/// <summary>Used to filter on all the descendants of an ad unit by <a
 		/// href='AdUnit#name'>AdUnit#name</a>. Not available as a dimension to report on.
+		/// <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH,
+		/// REACH, SALES, CREATIVE_QOS.</p>
 		/// </summary>
 		PARENT_AD_UNIT_NAME = 27,
 		/// <summary>Breaks down reporting data by <a href='Placement#id'>Placement#id</a>. Can be
-		/// used to filter by <a href='Placement#id'>Placement#id</a>.
+		/// used to filter by <a href='Placement#id'>Placement#id</a>. <p>Compatible with
+		/// any of the following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
 		/// </summary>
 		PLACEMENT_ID = 28,
 		/// <summary>Breaks down reporting data by placement. <a
 		/// href='Placement#name'>Placement#name</a> and <a
 		/// href='Placement#id'>Placement#id</a> are automatically included as columns in
 		/// the report. Can be used to filter by <a
-		/// href='Placement#name'>Placement#name</a>.
+		/// href='Placement#name'>Placement#name</a>. <p>Corresponds to "Placement" in the
+		/// Ad Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// SELL_THROUGH, REACH.</p>
 		/// </summary>
 		PLACEMENT_NAME = 29,
 		/// <summary>Status of the placement. Not available as a dimension to report on, but exists
 		/// as a dimension in order to filter on it using PQL. Can be used to filter on <a
 		/// href='Placement#status'>Placement#status</a> by using <a
-		/// href='InventoryStatus'>InventoryStatus</a> enumeration names.
+		/// href='InventoryStatus'>InventoryStatus</a> enumeration names. <p>Compatible with
+		/// any of the following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
 		/// </summary>
 		PLACEMENT_STATUS = 143,
-		/// <summary>Breaks down reporting data by criteria predefined by DoubleClick For Publishers
-		/// like the operating system, browser etc. Cannot be used for filtering.
+		/// <summary>Breaks down reporting data by criteria predefined by Ad Manager like the
+		/// operating system, browser etc. Cannot be used for filtering. <p>Corresponds to
+		/// "Targeting" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, REACH.</p>
 		/// </summary>
 		TARGETING = 30,
 		/// <summary>The ID of the device category to which an ad is being targeted. Can be used to
-		/// filter by device category ID.
+		/// filter by device category ID. <p>Compatible with any of the following report
+		/// types: HISTORICAL, REACH, CREATIVE_QOS.</p>
 		/// </summary>
 		DEVICE_CATEGORY_ID = 31,
 		/// <summary>The category of device (smartphone, feature phone, tablet, or desktop) to which
 		/// an ad is being targeted. Can be used to filter by device category name.
+		/// <p>Corresponds to "Device category" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, REACH, CREATIVE_QOS.</p>
 		/// </summary>
 		DEVICE_CATEGORY_NAME = 32,
 		/// <summary>Breaks down reporting data by country criteria ID. Can be used to filter by
-		/// country criteria ID.
+		/// country criteria ID. <p>Compatible with any of the following report types:
+		/// HISTORICAL, SELL_THROUGH, REACH, CREATIVE_QOS.</p>
 		/// </summary>
 		COUNTRY_CRITERIA_ID = 33,
 		/// <summary>Breaks down reporting data by country name. The country name and the country
 		/// criteria ID are automatically included as columns in the report. Can be used to
-		/// filter by country name using the US English name.
+		/// filter by country name using the US English name. <p>Corresponds to "Country" in
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SELL_THROUGH, REACH, CREATIVE_QOS.</p>
 		/// </summary>
 		COUNTRY_NAME = 34,
 		/// <summary>Breaks down reporting data by region criteria ID. Can be used to filter by
-		/// region criteria ID.
+		/// region criteria ID. <p>Compatible with any of the following report types:
+		/// HISTORICAL, REACH.</p>
 		/// </summary>
 		REGION_CRITERIA_ID = 35,
 		/// <summary>Breaks down reporting data by region name. The region name and the region
 		/// criteria ID are automatically included as columns in the report. Can be used to
-		/// filter by region name using the US English name.
+		/// filter by region name using the US English name. <p>Corresponds to "Region" in
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, REACH.</p>
 		/// </summary>
 		REGION_NAME = 36,
 		/// <summary>Breaks down reporting data by city criteria ID. Can be used to filter by city
-		/// criteria ID.
+		/// criteria ID. <p>Compatible with any of the following report types: HISTORICAL,
+		/// REACH.</p>
 		/// </summary>
 		CITY_CRITERIA_ID = 37,
 		/// <summary>Breaks down reporting data by city name. The city name and the city criteria ID
 		/// are automatically included as columns in the report. Can be used to filter by
-		/// city name using the US English name.
+		/// city name using the US English name. <p>Corresponds to "City" in the Ad Manager
+		/// UI. Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		CITY_NAME = 38,
 		/// <summary>Breaks down reporting data by metro criteria ID. Can be used to filter by metro
-		/// criteria ID.
+		/// criteria ID. <p>Compatible with any of the following report types: HISTORICAL,
+		/// REACH.</p>
 		/// </summary>
 		METRO_CRITERIA_ID = 39,
 		/// <summary>Breaks down reporting data by metro name. The metro name and the metro criteria
 		/// ID are automatically included as columns in the report. Can be used to filter by
-		/// metro name using the US English name.
+		/// metro name using the US English name. <p>Corresponds to "Metro" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// REACH.</p>
 		/// </summary>
 		METRO_NAME = 40,
 		/// <summary>Breaks down reporting data by postal code criteria ID. Can be used to filter by
-		/// postal code criteria ID.
+		/// postal code criteria ID. <p>Compatible with any of the following report types:
+		/// HISTORICAL, REACH.</p>
 		/// </summary>
 		POSTAL_CODE_CRITERIA_ID = 41,
 		/// <summary>Breaks down reporting data by postal code. The postal code and the postal code
 		/// criteria ID are automatically included as columns in the report. Can be used to
-		/// filter by postal code.
+		/// filter by postal code. <p>Corresponds to "Postal code" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		POSTAL_CODE = 42,
 		/// <summary>Breaks down reporting data by <a
 		/// href='CustomTargetingValue#id'>CustomTargetingValue#id</a>. Can be used to
 		/// filter by <a href='CustomTargetingValue#id'>CustomTargetingValue#id</a>.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH,
+		/// SALES.</p>
 		/// </summary>
 		CUSTOM_TARGETING_VALUE_ID = 43,
 		/// <summary>Breaks down reporting data by custom criteria. The <a
@@ -57965,44 +59533,58 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// included as a column in the report. Cannot be used for filtering; use <a
 		/// href='#CUSTOM_TARGETING_VALUE_ID'>#CUSTOM_TARGETING_VALUE_ID</a> instead.
 		/// <p>When using this <code>Dimension</code>, metrics for freeform key values are
-		/// only reported on when they are registered with <code></code>.</p>
+		/// only reported on when they are registered with <code></code>.</p> <p>Corresponds
+		/// to "Key-values" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		CUSTOM_CRITERIA = 44,
 		/// <summary>Breaks down reporting data by activity ID. Can be used to filter by activity ID.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		ACTIVITY_ID = 45,
 		/// <summary>Breaks down reporting data by activity. The activity name and the activity ID
 		/// are automatically included as columns in the report. Can be used to filter by
-		/// activity name.
+		/// activity name. <p>Corresponds to "Activity" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		ACTIVITY_NAME = 46,
 		/// <summary>Breaks down reporting data by activity group ID. Can be used to filter by
-		/// activity group ID.
+		/// activity group ID. <p>Compatible with any of the following report types:
+		/// HISTORICAL, REACH.</p>
 		/// </summary>
 		ACTIVITY_GROUP_ID = 47,
 		/// <summary>Breaks down reporting data by activity group. The activity group name and the
 		/// activity group ID are automatically included as columns in the report. Can be
-		/// used to filter by activity group name.
+		/// used to filter by activity group name. <p>Corresponds to "Activity group" in the
+		/// Ad Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// REACH.</p>
 		/// </summary>
 		ACTIVITY_GROUP_NAME = 48,
 		/// <summary>Breaks down reporting data by <a href='Content#id'>Content#id</a>. Can be used
-		/// to filter by <a href='Content#id'>Content#id</a>.
+		/// to filter by <a href='Content#id'>Content#id</a>. <p>Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
 		/// </summary>
 		CONTENT_ID = 49,
 		/// <summary>Breaks down reporting data by content. <a href='Content#name'>Content#name</a>
 		/// and <a href='Content#id'>Content#id</a> are automatically included as columns in
 		/// the report. Can be used to filter by <a href='Content#name'>Content#name</a>.
+		/// <p>Corresponds to "Content" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
 		/// </summary>
 		CONTENT_NAME = 50,
 		/// <summary>Breaks down reporting data by <a href='ContentBundle#id'>ContentBundle#id</a>.
 		/// Can be used to filter by <a href='ContentBundle#id'>ContentBundle#id</a>.
+		/// <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH,
+		/// REACH.</p>
 		/// </summary>
 		CONTENT_BUNDLE_ID = 51,
 		/// <summary>Breaks down reporting data by content bundle. <a
 		/// href='ContentBundle#name'>ContentBundle#name</a> and <a
 		/// href='ContentBundle#id'>ContentBundle#id</a> are automatically included as
 		/// columns in the report. Can be used to filter by <a
-		/// href='ContentBundle#name'>ContentBundle#name</a>.
+		/// href='ContentBundle#name'>ContentBundle#name</a>. <p>Corresponds to "Content
+		/// bundle" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SELL_THROUGH, REACH.</p>
 		/// </summary>
 		CONTENT_BUNDLE_NAME = 52,
 		/// <summary>Breaks down reporting data by the content hierarchy. To use this dimension, a
@@ -58010,49 +59592,64 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='ReportQuery#contentMetadataKeyHierarchyCustomTargetingKeyIds'>ReportQuery#contentMetadataKeyHierarchyCustomTargetingKeyIds</a>.
 		/// <p>This dimension can be used as a filter in the <a
 		/// href='Statement'>Statement</a> in PQL syntax:
-		/// CONTENT_HIERARCHY_CUSTOM_TARGETING_KEY[contentMetadataKeyHierarchyCustomTargetingKeyId]_ID
-		/// = <a href='CustomTargetingValue#id'>custom targeting value ID</a></p> <p>For
-		/// example: WHERE CONTENT_HIERARCHY_CUSTOM_TARGETING_KEY[4242]_ID = 53423</p>
+		/// CONTENT_HIERARCHY_CUSTOM_TARGETING_KEY[keyId]_ID = <a
+		/// href='CustomTargetingValue#id'>custom targeting value ID</a></p> <p>For example:
+		/// WHERE CONTENT_HIERARCHY_CUSTOM_TARGETING_KEY[4242]_ID = 53423</p>
 		/// </summary>
 		CONTENT_HIERARCHY = 53,
 		/// <summary>Breaks down reporting data by the fallback position of the video ad, i.e.,
 		/// <code>NON_FALLBACK</code>, <code>FALLBACK_POSITION_1</code>, <code></code>, etc.
-		/// Can be used for filtering.
+		/// Can be used for filtering. <p>Corresponds to "Fallback position" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// REACH, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_FALLBACK_POSITION = 54,
 		/// <summary>Breaks down reporting data by the position of the video ad within the video
 		/// stream, i.e., <code>UNKNOWN_POSITION</code>, <code>PREROLL</code>,
 		/// <code>POSTROLL</code>, <code>UNKNOWN_MIDROLL</code>, <code>MIDROLL_1</code>,
 		/// <code>MIDROLL_2</code>, etc. <code>UNKNOWN_MIDROLL</code> represents a midroll,
-		/// but which specific midroll is unknown. Can be used for filtering.
+		/// but which specific midroll is unknown. Can be used for filtering. <p>Corresponds
+		/// to "Position of pod" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, CREATIVE_QOS.</p>
 		/// </summary>
 		POSITION_OF_POD = 55,
 		/// <summary>Breaks down reporting data by the position of the video ad within the pod, i.e.,
 		/// <code>UNKNOWN_POSITION</code>, <code>POSITION_1</code>, <code></code>, etc. Can
-		/// be used for filtering.
+		/// be used for filtering. <p>Corresponds to "Position in pod" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, REACH,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		POSITION_IN_POD = 56,
 		/// <summary>Breaks down reporting data by partner <a href='Company#id'>Company#id</a>.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH,
+		/// PARTNER_FINANCE.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_PARTNER_ID = 57,
 		/// <summary>Breaks down reporting data by partner <a href='Company#name'>Company#name</a>
 		/// and <a href='Company#id'>Company#id</a> are automatically included as columns in
-		/// the report.
+		/// the report. <p>Corresponds to "Partner" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, REACH, PARTNER_FINANCE.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_PARTNER_NAME = 58,
 		/// <summary>Breaks down reporting data by partner label <a href='Label#id'>Label#id</a>.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH,
+		/// PARTNER_FINANCE.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_PARTNER_LABEL_ID = 59,
 		/// <summary>Breaks down reporting data by partner label. <a href='Label#name'>Label#name</a>
 		/// and <a href='Label#id'>Label#id</a> are automatically included as columns in the
-		/// report.
+		/// report. <p>Corresponds to "Partner label" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, REACH, PARTNER_FINANCE.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_PARTNER_LABEL_NAME = 60,
-		/// <summary>Breaks down reporting data by partner assignment id.
+		/// <summary>Breaks down reporting data by partner assignment id. <p>Compatible with any of
+		/// the following report types: HISTORICAL, REACH, PARTNER_FINANCE.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_ASSIGNMENT_ID = 195,
 		/// <summary>Breaks down reporting data by partner assignment name. ParnterAssignment name
-		/// and id are automatically included as columns in the report.
+		/// and id are automatically included as columns in the report. <p>Corresponds to
+		/// "Assignment" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, REACH, PARTNER_FINANCE.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_ASSIGNMENT_NAME = 196,
 		/// <summary>Breaks down reporting data by gender and age group, i.e., MALE_13_TO_17,
@@ -58061,22 +59658,29 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// FEMALE_35_TO_44, FEMALE_45_TO_54, FEMALE_55_TO_64, FEMALE_65_PLUS,
 		/// UNKNOWN_0_TO_17 and UNKNOWN. Whenever this dimension is selected, <a
 		/// href=''>#COUNTRY_NAME</a> must be selected. <p>This dimension is supported only
-		/// for GRP columns.</p>
+		/// for GRP columns.</p> <p>Can correspond to any of the following in the Ad Manager
+		/// UI: Demographics, comScore vCE demographics. Compatible with any of the
+		/// following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		GRP_DEMOGRAPHICS = 61,
-		/// <summary>Size of the creative requested for an ad.
+		/// <summary>Size of the creative requested for an ad. <p>This field is deprecated and will
+		/// be removed in v201808.</p> <p>Compatible with any of the following report types:
+		/// HISTORICAL, REACH.</p>
 		/// </summary>
 		AD_REQUEST_SIZE = 62,
 		/// <summary>Breaks down reporting data by the ad unit sizes specified in ad requests.
 		/// <p>Formatted as comma separated values, e.g. "300x250,300x250v,300x60".</p>
-		/// <p>This dimension is supported only for sell-through columns.</p>
+		/// <p>This dimension is supported only for sell-through columns.</p> <p>Corresponds
+		/// to "Ad request sizes" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH.</p>
 		/// </summary>
 		AD_REQUEST_AD_UNIT_SIZES = 63,
 		/// <summary>Breaks down reporting data by the custom criteria specified in ad requests.
 		/// <p>Formatted as comma separated <a href='CustomTargetingKey'>key</a>-<a
 		/// href='CustomTargetingValue'>values</a>, where a key-value is formatted as
 		/// <code></code>.</p> <p>This dimension is supported only for sell-through
-		/// columns.</p>
+		/// columns.</p> <p>Corresponds to "Key-values" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, SELL_THROUGH, REACH.</p>
 		/// </summary>
 		AD_REQUEST_CUSTOM_CRITERIA = 64,
 		/// <summary>The unique identifier used for an ad network that is associated with the company
@@ -58084,374 +59688,528 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// </summary>
 		BUYER_ID = 65,
 		/// <summary>The name of the ad network that is associated with the company that the ad is
-		/// served for.
+		/// served for. <p>Corresponds to "Buyer" in the Ad Manager UI.</p>
 		/// </summary>
 		BUYER_NAME = 66,
 		/// <summary>Whether the report contains only Ad Exchange traffic fulfilled by First Look
 		/// Deals or omits it. If this filter isn't included, the report will include First
 		/// Look Deals traffic in addition to any other traffic. Not available as a
-		/// dimension to report on.
+		/// dimension to report on. <p>Compatible with any of the following report types:
+		/// HISTORICAL, REACH.</p>
 		/// </summary>
 		IS_FIRST_LOOK_DEAL = 154,
 		/// <summary>Breaks down reporting data by mediation group ID. A mediation group is an
-		/// abstraction of inventory used in the DFP Mediation.
+		/// abstraction of inventory used in Ad Manager Mediation. <p>This field is
+		/// deprecated and will be removed in v201805.</p> <p>Compatible with any of the
+		/// following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		MEDIATION_GROUP_ID = 157,
 		/// <summary>Breaks down reporting data by mediation group name. A mediation group is an
-		/// abstraction of inventory used in the DFP Mediation.
+		/// abstraction of inventory used in Ad Manager Mediation. <p>This field is
+		/// deprecated and will be removed in v201805.</p> <p>Compatible with any of the
+		/// following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		MEDIATION_GROUP_NAME = 158,
-		/// <summary>Breaks down mapped Ad Exchange web property data by mediation network.
+		/// <summary>Breaks down mapped Ad Exchange web property data by mediation network. <p>This
+		/// field is deprecated and will be removed in v201805.</p> <p>Compatible with any
+		/// of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		MEDIATION_NETWORK = 159,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange network tag
-		/// name.
+		/// name. <p>This field is deprecated and will be removed in v201805.</p>
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		MEDIATION_NETWORK_TAG = 160,
 		/// <summary>Breaks down reporting data by mediation type. A mediation type can be web,
-		/// mobile app or video.
+		/// mobile app or video. <p>Corresponds to "Mediation type" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		MEDIATION_TYPE = 161,
 		/// <summary>Breaks down reporting data by native template (also known as creative template)
-		/// ID.
+		/// ID. <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		NATIVE_TEMPLATE_ID = 155,
 		/// <summary>Breaks down reporting data by native template (also known as creative template)
-		/// name.
+		/// name. <p>Corresponds to "Native ad format name" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		NATIVE_TEMPLATE_NAME = 156,
-		/// <summary>Breaks down reporting data by native style ID.
+		/// <summary>Breaks down reporting data by native style ID. <p>Compatible with any of the
+		/// following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		NATIVE_STYLE_ID = 162,
-		/// <summary>Breaks down reporting data by native style name.
+		/// <summary>Breaks down reporting data by native style name. <p>Corresponds to "Native style
+		/// name" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, REACH.</p>
 		/// </summary>
 		NATIVE_STYLE_NAME = 163,
 		/// <summary>Breaks down reporting data by mobile app name. Can be used for filtering.
+		/// <p>Corresponds to "App names" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		MOBILE_APP_NAME = 164,
 		/// <summary>Breaks down reporting data by device name. Can be used for filtering.
+		/// <p>Corresponds to "Devices" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH, CREATIVE_QOS.</p>
 		/// </summary>
 		MOBILE_DEVICE_NAME = 165,
 		/// <summary>Breaks down reporting data by inventory type. Can be used for filtering.
+		/// <p>Corresponds to "Inventory types" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		MOBILE_INVENTORY_TYPE = 166,
-		/// <summary>ID of the advertiser that filled the ad either directly (through DFP) or
-		/// indirectly via Google Ad Exchange or another ad network or exchange.
+		/// <summary>ID of the advertiser that filled the ad either directly (through Ad Manager) or
+		/// indirectly via Google Ad Exchange or another ad network or exchange. <p>This
+		/// field is deprecated and will be removed in v201808.</p>
 		/// </summary>
 		VERIFIED_ADVERTISER_ID = 67,
-		/// <summary>Name of the advertiser that filled the ad either directly (through DFP) or
-		/// indirectly via Google Ad Exchange or another ad network or exchange.
+		/// <summary>Name of the advertiser that filled the ad either directly (through Ad Manager)
+		/// or indirectly via Google Ad Exchange or another ad network or exchange. <p>This
+		/// field is deprecated and will be removed in v201808.</p> <p>Compatible with any
+		/// of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		VERIFIED_ADVERTISER_NAME = 68,
 		/// <summary>Status of the ad unit. Not available as a dimension to report on, but exists as
 		/// a dimension in order to filter on it using PQL. Valid values correspond to <a
-		/// href='InventoryStatus'>InventoryStatus</a>.
+		/// href='InventoryStatus'>InventoryStatus</a>. <p>Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, CREATIVE_QOS.</p>
 		/// </summary>
 		AD_UNIT_STATUS = 144,
 		/// <summary>Breaks down reporting data by <a href='Creative#id'>Creative#id</a>. This
 		/// includes regular creatives, and master and companions in case of creative sets.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		MASTER_COMPANION_CREATIVE_ID = 69,
 		/// <summary>Breaks down reporting data by creative. This includes regular creatives, and
-		/// master and companions in case of creative sets.
+		/// master and companions in case of creative sets. <p>Corresponds to "Master and
+		/// Companion creative" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		MASTER_COMPANION_CREATIVE_NAME = 70,
 		/// <summary>Breaks down reporting data by <a
 		/// href='ProposalLineItem#id'>ProposalLineItem#id</a>. Can be used to filter by <a
-		/// href='ProposalLineItem#id'>ProposalLineItem#id</a>.
+		/// href='ProposalLineItem#id'>ProposalLineItem#id</a>. <p>Compatible with any of
+		/// the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_ID = 71,
 		/// <summary>Breaks down reporting data by <a
 		/// href='ProposalLineItem#name'>ProposalLineItem#name</a>. Can be used to filter by
-		/// <a href='ProposalLineItem#name'>ProposalLineItem#name</a>.
+		/// <a href='ProposalLineItem#name'>ProposalLineItem#name</a>. <p>Corresponds to
+		/// "Proposal line item" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_NAME = 72,
 		/// <summary>Breaks down reporting data by <a href='Proposal#id'>Proposal#id</a>. Can be used
-		/// to filter by <a href='Proposal#id'>Proposal#id</a>.
+		/// to filter by <a href='Proposal#id'>Proposal#id</a>. <p>Compatible with any of
+		/// the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_ID = 73,
 		/// <summary>Breaks down reporting data by <a href='Proposal#name'>Proposal#name</a>. Can be
-		/// used to filter by <a href='Proposal#name'>Proposal#name</a>.
+		/// used to filter by <a href='Proposal#name'>Proposal#name</a>. <p>Corresponds to
+		/// "Proposal" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_NAME = 74,
 		/// <summary>Breaks down reporting data by salesperson <a href='User#id'>User#id</a>,
 		/// including both salesperson and secondary salespeople. Can be used to filter by
-		/// all salespeople <a href='User#id'>User#id</a>.
+		/// all salespeople <a href='User#id'>User#id</a>. <p>Compatible with any of the
+		/// following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ALL_SALESPEOPLE_ID = 75,
 		/// <summary>Breaks down reporting data by salesperson <a href='User#name'>User#name</a>,
 		/// including both salesperson and secondary salespeople. Can be used to filter by
-		/// all salespeople <a href='User#name'>User#name</a>.
+		/// all salespeople <a href='User#name'>User#name</a>. <p>Corresponds to "All
+		/// salespeople" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ALL_SALESPEOPLE_NAME = 76,
 		/// <summary>Used to filter by <a href='User#id'>User#id</a> in sales team. Sales team
 		/// includes salesperson, secondary salesperson, sales planners. Not available as a
-		/// dimension to report on.
+		/// dimension to report on. <p>Compatible with any of the following report types:
+		/// HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		SALES_TEAM_ID = 145,
 		/// <summary>Used to filter by <a href='User#name'>User#name</a> in sales team. Sales team
 		/// includes salesperson, secondary salesperson, sales planners. Not available as a
-		/// dimension to report on.
+		/// dimension to report on. <p>Compatible with any of the following report types:
+		/// HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		SALES_TEAM_NAME = 146,
 		/// <summary>Breaks down reporting data by proposal agency <a
 		/// href='Company#id'>Company#id</a>. Can be used to filter by proposal agency <a
-		/// href='Company#id'>Company#id</a>.
+		/// href='Company#id'>Company#id</a>. <p>Compatible with any of the following report
+		/// types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_ID = 77,
 		/// <summary>Breaks down reporting data by proposal agency <a
 		/// href='Company#name'>Company#name</a>. Can be used to filter by proposal agency
-		/// <a href='Company#name'>Company#name</a>.
+		/// <a href='Company#name'>Company#name</a>. <p>Corresponds to "Proposal agency" in
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_NAME = 78,
 		/// <summary>Breaks down reporting data by <a href='Product#id'>Product#id</a>. Can be used
-		/// to filter by <a href='Product#id'>Product#id</a>.
+		/// to filter by <a href='Product#id'>Product#id</a>. <p>Compatible with any of the
+		/// following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_ID = 79,
 		/// <summary>Breaks down reporting data by <a href='Product#name'>Product#name</a>.
+		/// <p>Corresponds to "Product" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_NAME = 80,
 		/// <summary>Breaks down reporting data by <a
 		/// href='ProductTemplate#id'>ProductTemplate#id</a>. Can be used to filter by <a
-		/// href='ProductTemplate#id'>ProductTemplate#id</a>.
+		/// href='ProductTemplate#id'>ProductTemplate#id</a>. <p>Compatible with any of the
+		/// following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_TEMPLATE_ID = 81,
 		/// <summary>Breaks down reporting data by <a
 		/// href='ProductTemplate#name'>ProductTemplate#name</a>. Can be used to filter by
-		/// <a href='ProductTemplate#name'>ProductTemplate#name</a>.
+		/// <a href='ProductTemplate#name'>ProductTemplate#name</a>. <p>Corresponds to
+		/// "Product template" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_TEMPLATE_NAME = 82,
 		/// <summary>Breaks down reporting data by <a href='RateCard#id'>RateCard#id</a>. Can be used
-		/// to filter by <a href=''>RateCard#id</a>.
+		/// to filter by <a href=''>RateCard#id</a>. <p>Compatible with any of the following
+		/// report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		RATE_CARD_ID = 83,
 		/// <summary>Breaks down reporting data by <a href='RateCard#name'>RateCard#name</a>. Can be
-		/// used to filter by <a href=''>RateCard#name</a>.
+		/// used to filter by <a href=''>RateCard#name</a>. <p>Corresponds to "Rate card" in
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		RATE_CARD_NAME = 84,
 		/// <summary>Used to filter by <a href='Workflow#id'>Workflow#id</a>. Not available as a
-		/// dimension to report on.
+		/// dimension to report on. <p>Compatible with any of the following report types:
+		/// HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		WORKFLOW_ID = 85,
 		/// <summary>Used to filter by <a href='Workflow#name'>Workflow#name</a>. Not available as a
-		/// dimension to report on.
+		/// dimension to report on. <p>Compatible with any of the following report types:
+		/// HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		WORKFLOW_NAME = 86,
-		/// <summary>Breaks down reporting data by <a href='Package#id'>Package#id</a>.
+		/// <summary>Breaks down reporting data by <a href='Package#id'>Package#id</a>. <p>Compatible
+		/// with any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PACKAGE_ID = 147,
 		/// <summary>Breaks down reporting data by <a href='Package#name'>Package#name</a>.
+		/// <p>Corresponds to "Package" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PACKAGE_NAME = 148,
 		/// <summary>Breaks down reporting data by <a href='ProductPackage#id'>ProductPackage#id</a>.
 		/// Can be used to filter by <a href='ProductPackage#id'>ProductPackage#id</a>.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH,
+		/// SALES.</p>
 		/// </summary>
 		PRODUCT_PACKAGE_ID = 149,
 		/// <summary>Breaks down reporting data by <a
 		/// href='ProductPackage#name'>ProductPackage#name</a>. Can be used to filter by <a
-		/// href='ProductPackage#name'>ProductPackage#name</a>.
+		/// href='ProductPackage#name'>ProductPackage#name</a>. <p>Corresponds to "Product
+		/// package" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_PACKAGE_NAME = 150,
-		/// <summary>Breaks down reporting data by billable audience segment ID.
+		/// <summary>Breaks down reporting data by billable audience segment ID. <p>Compatible with
+		/// any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AUDIENCE_SEGMENT_ID = 87,
-		/// <summary>Breaks down reporting data by billable audience segment name.
+		/// <summary>Breaks down reporting data by billable audience segment name. <p>Corresponds to
+		/// "Audience segment (billable)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AUDIENCE_SEGMENT_NAME = 88,
 		/// <summary>Breaks down reporting data by audience segment data provider name.
+		/// <p>Corresponds to "Data partner" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AUDIENCE_SEGMENT_DATA_PROVIDER_NAME = 89,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange inventory size.
+		/// <p>Corresponds to "Inventory sizes" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_INVENTORY_SIZE = 171,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange inventory size
-		/// code.
+		/// code. <p>Compatible with any of the following report types: HISTORICAL,
+		/// REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_INVENTORY_SIZE_CODE = 172,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange device category.
+		/// <p>Corresponds to "Device categories" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DEVICE_CATEGORY = 173,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange pricing rule ID.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_PRICING_RULE_ID = 92,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange pricing rule.
+		/// <p>Corresponds to "Pricing rules" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_PRICING_RULE_NAME = 93,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange tag.
+		/// <p>Corresponds to "Tags" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_TAG_NAME = 94,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange URL.
+		/// <p>Corresponds to "URLs" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_URL = 174,
-		/// <summary>Breaks down data by Ad Exchange mapped web property code.
+		/// <summary>Breaks down data by Ad Exchange mapped web property code. <p>Compatible with any
+		/// of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_WEB_PROPERTY_CODE = 175,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange creative size.
+		/// <p>Corresponds to "Creative sizes" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_CREATIVE_SIZES = 97,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange ad type.
+		/// <p>Corresponds to "Ad Types" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AD_TYPE = 176,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange channel.
+		/// <p>Corresponds to "Channels" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_CHANNEL_NAME = 99,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange product.
+		/// <p>Corresponds to "Products" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_PRODUCT_NAME = 100,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange product code.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_PRODUCT_CODE = 177,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange site.
+		/// <p>Corresponds to "Sites" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_SITE_NAME = 101,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange request source.
+		/// <p>Corresponds to "Request sources" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_REQUEST_SOURCES = 102,
 		/// <summary>Breaks down mapped Ad Exchange web property data by the Ad Exchange advertiser
-		/// name that bids on ads.
+		/// name that bids on ads. <p>Corresponds to "Advertisers" in the Ad Manager UI.
+		/// Compatible with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ADVERTISER_NAME = 104,
 		/// <summary>Breaks down mapped Ad Exchange web property data by the Ad Exchange brand name
-		/// that bids on ads.
+		/// that bids on ads. <p>Corresponds to "Brands" in the Ad Manager UI. Compatible
+		/// with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_BRAND_NAME = 178,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange agency.
+		/// <p>Corresponds to "Agencies" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AGENCY = 105,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange bid type code.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_BID_TYPE_CODE = 179,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange branding type
-		/// code.
+		/// code. <p>Compatible with any of the following report types: HISTORICAL,
+		/// REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_BRANDING_TYPE_CODE = 180,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange branding type.
-		/// Examples: Branded, Anonymous.
+		/// Examples: Branded, Anonymous. <p>Corresponds to "Branding types" in the Ad
+		/// Manager UI. Compatible with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_BRANDING_TYPE = 107,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange ad network name.
-		/// Example: Google Adwords.
+		/// Example: Google Adwords. <p>Corresponds to "Buyer networks" in the Ad Manager
+		/// UI. Compatible with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_BUYER_NETWORK_NAME = 108,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange ad network ID.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_BUYER_NETWORK_ID = 181,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange custom channel
-		/// code.
+		/// code. <p>Compatible with any of the following report types: HISTORICAL,
+		/// REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_CUSTOM_CHANNEL_CODE = 182,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange custom channel
-		/// ID.
+		/// ID. <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_CUSTOM_CHANNEL_ID = 183,
-		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange date.
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange date, in Ad
+		/// Exchange timezone. <p><b>Note:</b> In v201802 and later, this dimension is
+		/// compatible with the following time zone types:</p> <ul> <li><a
+		/// href='TimeZoneType.AD_EXCHANGE'>TimeZoneType.AD_EXCHANGE</a></li> </ul>
+		/// <p>Corresponds to "Days" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DATE = 109,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange deal id.
+		/// <p>Corresponds to "Deal IDs" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DEAL_ID = 111,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange deal name.
+		/// <p>Corresponds to "Deal names" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DEAL_NAME = 112,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange deal/transaction
-		/// type. Example: Open auction.
+		/// type. Example: Open auction. <p>Corresponds to "Transaction types" in the Ad
+		/// Manager UI. Compatible with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_TRANSACTION_TYPE = 184,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange DSP buyer
-		/// network name.
+		/// network name. <p>Corresponds to "DSPs" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DSP_BUYER_NETWORK_NAME = 114,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange expansion type.
+		/// <p>Corresponds to "Expandable types" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_EXPANSION_TYPE = 115,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange country code.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_COUNTRY_CODE = 116,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange country name.
+		/// <p>Corresponds to "Countries" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_COUNTRY_NAME = 117,
-		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange DFP ad unit ID.
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Manager ad unit ID.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_DFP_AD_UNIT_ID = 185,
-		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange DFP ad unit.
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Manager ad unit.
+		/// <p>Corresponds to "DFP Ad Units" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DFP_AD_UNIT = 186,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange inventory
-		/// ownership.
+		/// ownership. <p>Corresponds to "Inventory ownership" in the Ad Manager UI.
+		/// Compatible with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_INVENTORY_OWNERSHIP = 118,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange advertiser
-		/// domain.
+		/// domain. <p>Corresponds to "Advertiser domains" in the Ad Manager UI. Compatible
+		/// with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ADVERTISER_DOMAIN = 187,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile app name.
+		/// <p>Corresponds to "App names" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_MOBILE_APP_NAME = 120,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile carrier
-		/// name.
+		/// name. <p>Corresponds to "Carrier names" in the Ad Manager UI. Compatible with
+		/// the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_MOBILE_CARRIER_NAME = 121,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile device
-		/// name.
+		/// name. <p>Corresponds to "Devices" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_MOBILE_DEVICE_NAME = 122,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile inventory
-		/// type.
+		/// type. <p>Corresponds to "Inventory types" in the Ad Manager UI. Compatible with
+		/// the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_MOBILE_INVENTORY_TYPE = 123,
-		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange month.
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange month, in Ad
+		/// Exchange timezone. <p><b>Note:</b> In v201802 and later, this dimension is
+		/// compatible with the following time zone types:</p> <ul> <li><a
+		/// href='TimeZoneType.AD_EXCHANGE'>TimeZoneType.AD_EXCHANGE</a></li> </ul>
+		/// <p>Corresponds to "Months" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_MONTH = 124,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange network partner
-		/// name.
+		/// name. <p>Corresponds to "Network partner names" in the Ad Manager UI. Compatible
+		/// with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_NETWORK_PARTNER_NAME = 125,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange operating system
-		/// version.
+		/// version. <p>Corresponds to "Operating systems" in the Ad Manager UI. Compatible
+		/// with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_OPERATING_SYSTEM = 188,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange tags.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_TAG_CODE = 127,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange targeting type
-		/// code.
+		/// code. <p>Compatible with any of the following report types: HISTORICAL,
+		/// REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_TARGETING_TYPE_CODE = 189,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange targeting type.
+		/// <p>Corresponds to "Targeting types" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_TARGETING_TYPE = 128,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange transaction type
-		/// code
+		/// code <p>Compatible with any of the following report types: HISTORICAL,
+		/// REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_TRANSACTION_TYPE_CODE = 190,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange URL ID.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_URL_ID = 191,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange user bandwidth.
+		/// <p>Corresponds to "Bandwidth" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_USER_BANDWIDTH_NAME = 133,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange video ad
-		/// duration.
+		/// duration. <p>Compatible with any of the following report types: HISTORICAL,
+		/// REACH.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_AD_DURATION = 134,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange raw video ad
-		/// duration.
+		/// duration. <p>Corresponds to "Video ad durations" in the Ad Manager UI.
+		/// Compatible with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_AD_DURATION_RAW = 135,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange video ad type.
+		/// <p>Corresponds to "Video ad types" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_AD_TYPE = 192,
-		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange week.
+		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange week, in Ad
+		/// Exchange timezone. <p><b>Note:</b> In v201802 and later, this dimension is
+		/// compatible with the following time zone types:</p> <ul> <li><a
+		/// href='TimeZoneType.AD_EXCHANGE'>TimeZoneType.AD_EXCHANGE</a></li> </ul>
+		/// <p>Corresponds to "Weeks" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_WEEK = 137,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange ad location.
+		/// <p>Corresponds to "Ad locations" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AD_LOCATION = 193,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange advertiser
-		/// vertical.
+		/// vertical. <p>Corresponds to "Advertiser verticals" in the Ad Manager UI.
+		/// Compatible with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ADVERTISER_VERTICAL = 194,
-		/// <summary>Campaign date segment of Nielsen Digital Ad Ratings reporting.
+		/// <summary>Campaign date segment of Nielsen Digital Ad Ratings reporting. <p>Corresponds to
+		/// "Nielsen Digital Ad Ratings segment" in the Ad Manager UI. Compatible with any
+		/// of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		NIELSEN_SEGMENT = 151,
 		/// <summary>Breaks down reporting data by gender and age group, i.e., MALE_18_TO_20,
@@ -58462,21 +60220,30 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// FEMALE_65_PLUS, and OTHER.
 		/// </summary>
 		NIELSEN_DEMOGRAPHICS = 152,
-		/// <summary>Data restatement date of Nielsen Digital Ad Ratings data.
+		/// <summary>Data restatement date of Nielsen Digital Ad Ratings data. <p>Corresponds to
+		/// "Nielsen Digital Ad Ratings restatement date" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		NIELSEN_RESTATEMENT_DATE = 153,
 		/// <summary>Breaks down reporting data by <a
 		/// href='ProposalMarketplaceInfo#buyerAccountId'>ProposalMarketplaceInfo#buyerAccountId</a>.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH,
+		/// SALES.</p>
 		/// </summary>
 		PROGRAMMATIC_BUYER_ID = 167,
-		/// <summary>Breaks down reporting data by programmatic buyer name.
+		/// <summary>Breaks down reporting data by programmatic buyer name. <p>Corresponds to
+		/// "Programmatic buyer" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PROGRAMMATIC_BUYER_NAME = 168,
 		/// <summary>Breaks down reporting data by requested ad size(s). This can be a chain of sizes
-		/// or a single size.
+		/// or a single size. <p>Corresponds to "Requested ad sizes" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		REQUESTED_AD_SIZES = 169,
 		/// <summary>Breaks down reporting data by the creative size the ad was delivered to.
+		/// <p>Corresponds to "Creative size (delivered)" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		CREATIVE_SIZE_DELIVERED = 170,
 	}
@@ -58521,44 +60288,58 @@ namespace Google.Api.Ads.Dfp.v201711
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201711")]
 	public enum Column {
-		/// <summary>The number of impressions delivered by the ad server.
+		/// <summary>The number of impressions delivered by the ad server. <p>Corresponds to "Ad
+		/// server impressions" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		AD_SERVER_IMPRESSIONS = 0,
-		/// <summary>The number of downloaded impressions delivered by the ad server.
+		/// <summary>The number of downloaded impressions delivered by the ad server. <p>Corresponds
+		/// to "Ad server downloaded impressions" in the Ad Manager UI. Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_DOWNLOADED_IMPRESSIONS = 434,
 		/// <summary>The number of impressions delivered by the ad server by explicit custom criteria
-		/// targeting.
+		/// targeting. <p>Corresponds to "Ad server targeted impressions" in the Ad Manager
+		/// UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_TARGETED_IMPRESSIONS = 1,
-		/// <summary>The number of clicks delivered by the ad server.
+		/// <summary>The number of clicks delivered by the ad server. <p>Corresponds to "Ad server
+		/// clicks" in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_CLICKS = 2,
 		/// <summary>The number of clicks delivered by the ad server by explicit custom criteria
-		/// targeting.
+		/// targeting. <p>Corresponds to "Ad server targeted clicks" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_TARGETED_CLICKS = 3,
-		/// <summary>The CTR for an ad delivered by the ad server.
+		/// <summary>The CTR for an ad delivered by the ad server. <p>Corresponds to "Ad server CTR"
+		/// in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_CTR = 4,
 		/// <summary>The CPM and CPC revenue earned, calculated in publisher currency, for the ads
-		/// delivered by the ad server.
+		/// delivered by the ad server. <p>Corresponds to "Ad server CPM and CPC revenue" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_CPM_AND_CPC_REVENUE = 5,
 		/// <summary>The CPD revenue earned, calculated in publisher currency, for the ads delivered
-		/// by the ad server.
+		/// by the ad server. <p>Corresponds to "Ad server CPD revenue" in the Ad Manager
+		/// UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_CPD_REVENUE = 6,
 		/// <summary>The CPA revenue earned, calculated in publisher currency, for the ads delivered
-		/// by the ad server.
+		/// by the ad server. <p>Corresponds to "CPA revenue" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_CPA_REVENUE = 7,
 		/// <summary>The CPM, CPC and CPD revenue earned, calculated in publisher currency, for the
-		/// ads delivered by the ad server.
+		/// ads delivered by the ad server. <p>Can correspond to any of the following in the
+		/// Ad Manager UI: Ad server CPM, CPC, CPD, and vCPM revenue, Ad server CPM, CPC and
+		/// CPD revenue. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_ALL_REVENUE = 8,
 		/// <summary>The average estimated cost-per-thousand-impressions earned from the CPM and CPC
-		/// ads delivered by the ad server.
+		/// ads delivered by the ad server. <p>Corresponds to "Ad server average eCPM" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_WITHOUT_CPD_AVERAGE_ECPM = 9,
 		/// <summary>The average estimated cost-per-thousand-impressions earned from the CPM, CPC and
@@ -58567,43 +60348,51 @@ namespace Google.Api.Ads.Dfp.v201711
 		AD_SERVER_WITH_CPD_AVERAGE_ECPM = 10,
 		/// <summary>The ratio of the number of impressions delivered to the total impressions
 		/// delivered when no <a href='LineItem'>LineItem</a> reservation could be found by
-		/// the ad server for inventory-level dynamic allocation. For premium networks, this
-		/// includes line item-level dynamic allocation as well. Represented as a
-		/// percentage.
+		/// the ad server for inventory-level dynamic allocation. For Ad Manager 360
+		/// networks, this includes line item-level dynamic allocation as well. Represented
+		/// as a percentage. <p>Corresponds to "Ad server impressions (%)" in the Ad Manager
+		/// UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_INVENTORY_LEVEL_PERCENT_IMPRESSIONS = 11,
 		/// <summary>The ratio of the number of impressions delivered to the total impressions
 		/// delivered by the ad server for line item-level dynamic allocation. Represented
-		/// as a percentage.
+		/// as a percentage. <p>Corresponds to "Ad server impressions (%)" in the Ad Manager
+		/// UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_LINE_ITEM_LEVEL_PERCENT_IMPRESSIONS = 12,
 		/// <summary>The ratio of the number of clicks delivered to the total clicks delivered when
 		/// no <a href='LineItem'>LineItem</a> reservation could be found by the ad server
-		/// for inventory-level dynamic allocation. For premium networks, this includes line
-		/// item-level dynamic allocation as well. Represented as a percentage.
+		/// for inventory-level dynamic allocation. For Ad Manager 360 networks, this
+		/// includes line item-level dynamic allocation as well. Represented as a
+		/// percentage. <p>Corresponds to "Ad server clicks (%)" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_INVENTORY_LEVEL_PERCENT_CLICKS = 13,
 		/// <summary>The ratio of the number of clicks delivered to the total clicks delivered by the
 		/// ad server for line item-level dynamic allocation. Represented as a percentage.
+		/// <p>Corresponds to "Ad server clicks (%)" in the Ad Manager UI. Compatible with
+		/// the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_LINE_ITEM_LEVEL_PERCENT_CLICKS = 14,
 		/// <summary>The ratio of revenue generated by ad server to the total CPM and CPC revenue
 		/// earned by ads delivered when no <a href='LineItem'>LineItem</a> reservation
-		/// could be found by the ad server for inventory-level dynamic allocation. For
-		/// premium networks, this includes line item-level dynamic allocation as well.
-		/// Represented as a percentage.
+		/// could be found by the ad server for inventory-level dynamic allocation. For Ad
+		/// Manager 360 networks, this includes line item-level dynamic allocation as well.
+		/// Represented as a percentage. <p>Corresponds to "Ad server revenue (%)" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_INVENTORY_LEVEL_WITHOUT_CPD_PERCENT_REVENUE = 15,
 		/// <summary>The ratio of revenue generated by ad server to the total CPM, CPC and CPD
 		/// revenue earned by ads delivered when no <a href='LineItem'>LineItem</a>
 		/// reservation could be found by the ad server for inventory-level dynamic
-		/// allocation. For premium networks, this includes line item-level dynamic
+		/// allocation. For Ad Manager 360 networks, this includes line item-level dynamic
 		/// allocation as well. Represented as a percentage.
 		/// </summary>
 		AD_SERVER_INVENTORY_LEVEL_WITH_CPD_PERCENT_REVENUE = 16,
 		/// <summary>The ratio of revenue generated by ad server to the total CPM and CPC revenue
 		/// earned by the ads delivered for line item-level dynamic allocation. Represented
-		/// as a percentage.
+		/// as a percentage. <p>Corresponds to "Ad server revenue (%)" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_LINE_ITEM_LEVEL_WITHOUT_CPD_PERCENT_REVENUE = 17,
 		/// <summary>The ratio of revenue generated by ad server to the total CPM, CPC and CPD
@@ -58611,116 +60400,152 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// Represented as a percentage.
 		/// </summary>
 		AD_SERVER_LINE_ITEM_LEVEL_WITH_CPD_PERCENT_REVENUE = 18,
-		/// <summary>The number of times that the code for an ad is served by the ad server.
+		/// <summary>The number of times that the code for an ad is served by the ad server. <p>This
+		/// field is deprecated and will be removed in v201808.</p> <p>Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_CODE_SERVED_COUNT = 20,
 		/// <summary>The number of downloaded impressions delivered by the ad server including
-		/// impressions recognized as spam.
+		/// impressions recognized as spam. <p>Corresponds to "Ad server unfiltered
+		/// downloaded impressions" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		AD_SERVER_UNFILTERED_IMPRESSIONS = 435,
 		/// <summary>The number of clicks delivered by the ad server including clicks recognized as
-		/// spam.
+		/// spam. <p>Corresponds to "Ad server unfiltered clicks" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_UNFILTERED_CLICKS = 436,
 		/// <summary>The number of impressions a dynamic allocation ad delivered when no <a
 		/// href='LineItem'>LineItem</a> reservation could be found by the ad server for
-		/// inventory-level dynamic allocation. For premium networks, this includes line
-		/// item-level dynamic allocation as well.
+		/// inventory-level dynamic allocation. For Ad Manager 360 networks, this includes
+		/// line item-level dynamic allocation as well. <p>Can correspond to any of the
+		/// following in the Ad Manager UI: AdSense / Ad Exchange impressions, AdSense
+		/// impressions. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_INVENTORY_LEVEL_IMPRESSIONS = 24,
 		/// <summary>The number of impressions an AdSense ad delivered for line item-level dynamic
-		/// allocation.
+		/// allocation. <p>Corresponds to "AdSense impressions" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_IMPRESSIONS = 26,
 		/// <summary>The number of impressions an AdSense ad delivered for line item-level dynamic
-		/// allocation by explicit custom criteria targeting.
+		/// allocation by explicit custom criteria targeting. <p>Corresponds to "AdSense
+		/// targeted impressions" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_TARGETED_IMPRESSIONS = 27,
 		/// <summary>The number of clicks a dynamic allocation ad delivered when no <a
 		/// href='LineItem'>LineItem</a> reservation could be found by the ad server for
-		/// inventory-level dynamic allocation. For premium networks, this includes line
-		/// item-level dynamic allocation as well.
+		/// inventory-level dynamic allocation. For Ad Manager 360 networks, this includes
+		/// line item-level dynamic allocation as well. <p>Can correspond to any of the
+		/// following in the Ad Manager UI: AdSense / Ad Exchange clicks, AdSense clicks.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_INVENTORY_LEVEL_CLICKS = 28,
 		/// <summary>The number of clicks an AdSense ad delivered for line item-level dynamic
-		/// allocation.
+		/// allocation. <p>Corresponds to "AdSense clicks" in the Ad Manager UI. Compatible
+		/// with the HISTORICAL report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_CLICKS = 29,
 		/// <summary>The number of clicks an AdSense ad delivered for line item-level dynamic
-		/// allocation by explicit custom criteria targeting.
+		/// allocation by explicit custom criteria targeting. <p>Corresponds to "AdSense
+		/// targeted clicks" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_TARGETED_CLICKS = 30,
 		/// <summary>The ratio of clicks a dynamic allocation ad delivered to the number of
 		/// impressions it delivered when no <a href='LineItem'>LineItem</a> reservation
-		/// could be found by the ad server for inventory-level dynamic allocation. For
-		/// premium networks, this includes line item-level dynamic allocation as well.
+		/// could be found by the ad server for inventory-level dynamic allocation. For Ad
+		/// Manager 360 networks, this includes line item-level dynamic allocation as well.
+		/// <p>Can correspond to any of the following in the Ad Manager UI: AdSense / Ad
+		/// Exchange CTR, AdSense CTR. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_INVENTORY_LEVEL_CTR = 31,
 		/// <summary>The ratio of clicks an AdSense reservation ad delivered to the number of
 		/// impressions it delivered, including line item-level dynamic allocation.
+		/// <p>Corresponds to "AdSense CTR" in the Ad Manager UI. Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_CTR = 32,
 		/// <summary>Revenue generated from ads delivered for dynamic allocation when no <a
 		/// href='LineItem'>LineItem</a> reservation could be found by the ad server for
-		/// inventory-level dynamic allocation. For premium networks, this includes line
-		/// item-level dynamic allocation as well.
+		/// inventory-level dynamic allocation. For Ad Manager 360 networks, this includes
+		/// line item-level dynamic allocation as well. <p>Can correspond to any of the
+		/// following in the Ad Manager UI: AdSense / Ad Exchange revenue, AdSense revenue.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_INVENTORY_LEVEL_REVENUE = 33,
 		/// <summary>Revenue generated from AdSense ads delivered for line item-level dynamic
-		/// allocation.
+		/// allocation. <p>Corresponds to "AdSense revenue" in the Ad Manager UI. Compatible
+		/// with the HISTORICAL report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_REVENUE = 34,
 		/// <summary>The average estimated cost-per-thousand-impressions earned from dynamic
 		/// allocation ads delivered when no <a href='LineItem'>LineItem</a> reservation
-		/// could be found by the ad server for inventory-level dynamic allocation. For
-		/// premium networks, this includes line item-level dynamic allocation as well.
+		/// could be found by the ad server for inventory-level dynamic allocation. For Ad
+		/// Manager 360 networks, this includes line item-level dynamic allocation as well.
+		/// <p>Can correspond to any of the following in the Ad Manager UI: AdSense / Ad
+		/// Exchange average eCPM, AdSense average eCPM. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_INVENTORY_LEVEL_AVERAGE_ECPM = 35,
 		/// <summary>The average estimated cost-per-thousand-impressions earned from the ads
-		/// delivered by AdSense for line item-level dynamic allocation.
+		/// delivered by AdSense for line item-level dynamic allocation. <p>Corresponds to
+		/// "AdSense average eCPM" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_AVERAGE_ECPM = 36,
 		/// <summary>The ratio of the number of impressions delivered by dynamic allocation ads to
 		/// the total impressions delivered when no <a href='LineItem'>LineItem</a>
 		/// reservation could be found by the ad server for inventory-level dynamic
-		/// allocation. For premium networks, this includes line item-level dynamic
-		/// allocation as well. Represented as a percentage.
+		/// allocation. For Ad Manager 360 networks, this includes line item-level dynamic
+		/// allocation as well. Represented as a percentage. <p>Can correspond to any of the
+		/// following in the Ad Manager UI: AdSense / Ad Exchange impressions (%), AdSense
+		/// impressions (%). Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_INVENTORY_LEVEL_PERCENT_IMPRESSIONS = 37,
 		/// <summary>The ratio of the number of impressions delivered by AdSense reservation ads to
 		/// the total impressions delivered for line item-level dynamic allocation.
-		/// Represented as a percentage.
+		/// Represented as a percentage. <p>Corresponds to "AdSense impressions (%)" in the
+		/// Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_PERCENT_IMPRESSIONS = 38,
 		/// <summary>The ratio of the number of clicks delivered by dynamic allocation ads to the
 		/// total clicks delivered when no <a href='LineItem'>LineItem</a> reservation could
-		/// be found by the ad server for inventory-level dynamic allocation. For premium
-		/// networks, this includes line item-level dynamic allocation as well. Represented
-		/// as a percentage.
+		/// be found by the ad server for inventory-level dynamic allocation. For Ad Manager
+		/// 360 networks, this includes line item-level dynamic allocation as well.
+		/// Represented as a percentage. <p>Can correspond to any of the following in the Ad
+		/// Manager UI: AdSense / Ad Exchange clicks (%), AdSense clicks (%). Compatible
+		/// with the HISTORICAL report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_INVENTORY_LEVEL_PERCENT_CLICKS = 39,
 		/// <summary>The ratio of the number of clicks delivered by AdSense reservation ads to the
 		/// total clicks delivered for line item-level dynamic allocation. Represented as a
-		/// percentage.
+		/// percentage. <p>Corresponds to "AdSense clicks (%)" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_PERCENT_CLICKS = 40,
 		/// <summary>The ratio of revenue to the total revenue earned from the dynamic allocation CPM
 		/// and CPC ads delivered when no <a href='LineItem'>LineItem</a> reservation could
-		/// be found by the ad server for inventory-level dynamic allocation. For premium
-		/// networks, this includes line item-level dynamic allocation as well. Represented
-		/// as a percentage.
+		/// be found by the ad server for inventory-level dynamic allocation. For Ad Manager
+		/// 360 networks, this includes line item-level dynamic allocation as well.
+		/// Represented as a percentage. <p>Can correspond to any of the following in the Ad
+		/// Manager UI: AdSense / Ad Exchange revenue (%), AdSense revenue (%). Compatible
+		/// with the HISTORICAL report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_INVENTORY_LEVEL_WITHOUT_CPD_PERCENT_REVENUE = 41,
 		/// <summary>The ratio of revenue to the total revenue earned from the dynamic allocation
 		/// CPM, CPC and CPD ads delivered when no <a href='LineItem'>LineItem</a>
 		/// reservation could be found by the ad server for inventory-level dynamic
-		/// allocation. For premium networks, this includes line item-level dynamic
+		/// allocation. For Ad Manager 360 networks, this includes line item-level dynamic
 		/// allocation as well. Represented as a percentage.
 		/// </summary>
 		DYNAMIC_ALLOCATION_INVENTORY_LEVEL_WITH_CPD_PERCENT_REVENUE = 42,
 		/// <summary>The ratio of revenue to the total revenue earned from the CPM and CPC ads
 		/// delivered by AdSense for line item-level dynamic allocation. Represented as a
-		/// percentage.
+		/// percentage. <p>Corresponds to "AdSense revenue (%)" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_WITHOUT_CPD_PERCENT_REVENUE = 43,
 		/// <summary>The ratio of revenue to the total revenue earned from the CPM, CPC and CPD ads
@@ -58729,103 +60554,148 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_WITH_CPD_PERCENT_REVENUE = 44,
 		/// <summary>The number of impressions an Ad Exchange ad delivered for line item-level
-		/// dynamic allocation.
+		/// dynamic allocation. <p>Corresponds to "Ad Exchange impressions" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_IMPRESSIONS = 45,
 		/// <summary>Ad Impressions on mapped Ad Exchange properties. When multiple text ads fill a
 		/// single display slot it is only counted once, when the top text ad is recognized.
 		/// In these cases, the Ad Impression is attributed to the top text ad.
+		/// <p>Corresponds to "Ad impressions" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_IMPRESSIONS = 46,
 		/// <summary>Number of requests where a buyer was matched with the Ad request, for mapped Ad
-		/// Exchange properties.
+		/// Exchange properties. <p>Corresponds to "Matched requests" in the Ad Manager UI.
+		/// Compatible with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_MATCHED_REQUESTS = 440,
 		/// <summary>Ad revenue per 1000 ad impressions, for mapped Ad Exchange properties.
+		/// <p>Corresponds to "Ad eCPM" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AD_ECPM = 441,
-		/// <summary>The number of clicks delivered by mapped Ad Exchange properties.
+		/// <summary>The number of clicks delivered by mapped Ad Exchange properties. <p>Corresponds
+		/// to "Clicks" in the Ad Manager UI. Compatible with the AD_EXCHANGE_HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_CLICKS = 49,
 		/// <summary>The estimated net revenue generated by mapped Ad Exchange properties.
+		/// <p>Corresponds to "Estimated revenue" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ESTIMATED_REVENUE = 50,
-		/// <summary>The coverage reported by mapped Ad Exchange properties.
+		/// <summary>The coverage reported by mapped Ad Exchange properties. <p>Corresponds to
+		/// "Coverage" in the Ad Manager UI. Compatible with the AD_EXCHANGE_HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_COVERAGE = 51,
 		/// <summary>The matched queries click-through rate delivered by mapped Ad Exchange
-		/// properties.
+		/// properties. <p>Corresponds to "CTR" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_CTR = 58,
-		/// <summary>The total lift generated by mapped Ad Exchange properties.
+		/// <summary>The total lift generated by mapped Ad Exchange properties. <p>Corresponds to
+		/// "Lift" in the Ad Manager UI. Compatible with the AD_EXCHANGE_HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		AD_EXCHANGE_LIFT = 53,
-		/// <summary>The cost-per-click generated by mapped Ad Exchange properties.
+		/// <summary>The cost-per-click generated by mapped Ad Exchange properties. <p>Corresponds to
+		/// "CPC" in the Ad Manager UI. Compatible with the AD_EXCHANGE_HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		AD_EXCHANGE_CPC = 442,
 		/// <summary>The number of ad requests issued by mapped Ad Exchange properties.
+		/// <p>Corresponds to "Ad requests" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AD_REQUESTS = 443,
 		/// <summary>The average estimated cost-per-thousand-ad requests earned by mapped Ad Exchange
-		/// properties.
+		/// properties. <p>Corresponds to "Ad request eCPM" in the Ad Manager UI. Compatible
+		/// with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AD_REQUEST_ECPM = 444,
 		/// <summary>The click-through rate of ad requests issued by mapped Ad Exchange properties.
+		/// <p>Corresponds to "Ad request CTR" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AD_REQUEST_CTR = 445,
 		/// <summary>The click-through rate of impressions issued by mapped Ad Exchange properties.
+		/// <p>Corresponds to "Ad CTR" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AD_CTR = 446,
-		/// <summary>The video drop off rate for mapped Ad Exchange properties.
+		/// <summary>The video drop off rate for mapped Ad Exchange properties. <p>Corresponds to
+		/// "Video drop-off rate" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_DROPOFF_RATE = 59,
-		/// <summary>The video abandonment rate for mapped Ad Exchange properties.
+		/// <summary>The video abandonment rate for mapped Ad Exchange properties. <p>Corresponds to
+		/// "Video abandonment rate" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_ABANDONMENT_RATE = 60,
 		/// <summary>The average estimated cost-per-thousand-impressions generated by mapped Ad
-		/// Exchange properties.
+		/// Exchange properties. <p>Corresponds to "Matched eCPM" in the Ad Manager UI.
+		/// Compatible with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_MATCHED_ECPM = 447,
 		/// <summary>The estimated percentage of impressions generated by mapped Ad Exchange
-		/// properties that are eligible for Active View measurement.
+		/// properties that are eligible for Active View measurement. <p>Corresponds to
+		/// "Active view measurable" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_MEASURABLE = 448,
 		/// <summary>The percentage of viewable impressions out of all measurable impressions
-		/// generated by mapped Ad Exchange properties.
+		/// generated by mapped Ad Exchange properties. <p>Corresponds to "Active view
+		/// viewable" in the Ad Manager UI. Compatible with the AD_EXCHANGE_HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE = 449,
 		/// <summary>The average time (in seconds) that an individual ad impression generated by
-		/// mapped Ad Exchange properties was viewable.
+		/// mapped Ad Exchange properties was viewable. <p>Corresponds to "Average viewable
+		/// time (secs)" in the Ad Manager UI. Compatible with the AD_EXCHANGE_HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AVERAGE_VIEWABLE_TIME = 450,
 		/// <summary>Total number of impressions generated by mapped Ad Exchange properties that were
-		/// eligible to measure viewability.
+		/// eligible to measure viewability. <p>Corresponds to "Active view enabled
+		/// impressions" in the Ad Manager UI. Compatible with the AD_EXCHANGE_HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_ENABLED_IMPRESSIONS = 451,
 		/// <summary>Total number of eligible impressions generated by mapped Ad Exchange properties
-		/// that were measurable by Active View.
+		/// that were measurable by Active View. <p>Corresponds to "Active view measured
+		/// impressions" in the Ad Manager UI. Compatible with the AD_EXCHANGE_HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_MEASURED_IMPRESSIONS = 452,
 		/// <summary>Total number of Active View measurable impressions generated by mapped Ad
-		/// Exchange properties that were viewable.
+		/// Exchange properties that were viewable. <p>Corresponds to "Active view viewed
+		/// impressions" in the Ad Manager UI. Compatible with the AD_EXCHANGE_HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_VIEWED_IMPRESSIONS = 453,
 		/// <summary>Number of responses that shows that a buyer is bidding, for mapped Ad Exchange
-		/// properties.
+		/// properties. <p>Corresponds to "Deals bid responses" in the Ad Manager UI.
+		/// Compatible with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DEALS_BID_RESPONSES = 455,
 		/// <summary>Deal ad requests for mapped Ad Exchange properties which were ?matched? with
 		/// demand from the buyer associated with the Deal. Each ?Deals matched request?
 		/// represents one opportunity for the Deal Buyer to serve their ad in the context
-		/// of the Deal.
+		/// of the Deal. <p>Corresponds to "Deals matched requests" in the Ad Manager UI.
+		/// Compatible with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DEALS_MATCHED_REQUESTS = 456,
 		/// <summary>Total ad requests associated with a given Deal, for mapped Ad Exchange
-		/// properties.
+		/// properties. <p>Corresponds to "Deals ad requests" in the Ad Manager UI.
+		/// Compatible with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DEALS_AD_REQUESTS = 457,
 		/// <summary>Deals matched requests divided by Deals ad requests, for mapped Ad Exchange
-		/// properties.
+		/// properties. <p>Corresponds to "Deals match rate" in the Ad Manager UI.
+		/// Compatible with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DEALS_MATCH_RATE = 458,
 		/// <summary>A count of how many users watch the first 25% of a video ad, for mapped Ad
@@ -58837,73 +60707,102 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// </summary>
 		AD_EXCHANGE_VIDEO_QUARTILE_3 = 66,
 		/// <summary>Percentage of times a user clicked Skip, for mapped Ad Exchange properties.
+		/// <p>Corresponds to "TrueView skip rate" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_TRUEVIEW_SKIP_RATE = 67,
 		/// <summary>Number of times a video ad has been viewed to completion or watched to 30
 		/// seconds, whichever happens first, for mapped Ad Exchange properties.
+		/// <p>Corresponds to "TrueView views" in the Ad Manager UI. Compatible with the
+		/// AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_TRUEVIEW_VIEWS = 459,
 		/// <summary>TrueView views divided by TrueView impressions, for mapped Ad Exchange
-		/// properties.
+		/// properties. <p>Corresponds to "TrueView VTR" in the Ad Manager UI. Compatible
+		/// with the AD_EXCHANGE_HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_TRUEVIEW_VTR = 460,
-		/// <summary>The third-party fill rate by Ad Exchange properties linked to DFP. <p><b>This
-		/// experimental column only works with Ad Exchange web properties linked with an
-		/// active status.</b></p>
+		/// <summary>The third-party fill rate by Ad Exchange properties linked to Ad Manager.
+		/// <p><b>This experimental column only works with Ad Exchange web properties linked
+		/// with an active status.</b></p> <p>This field is deprecated and will be removed
+		/// in v201805.</p> <p>Corresponds to "Mediation fill rate" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_THIRD_PARTY_FILL_RATE = 73,
 		/// <summary>Impressions generated for mediation requests. This includes third-party network
-		/// and Ad Exchange impressions for mediation.
+		/// and Ad Exchange impressions for mediation. <p>This field is deprecated and will
+		/// be removed in v201805.</p> <p>Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		MEDIATION_IMPRESSIONS = 428,
 		/// <summary>Estimated revenue generated for mediation requests. This combines estimated
-		/// revenue from third-parties along with Ad Exchange.
+		/// revenue from third-parties along with Ad Exchange. <p>This field is deprecated
+		/// and will be removed in v201805.</p> <p>Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		MEDIATION_ESTIMATED_REVENUE = 429,
 		/// <summary>The average estimated cost-per-thousand-impressions earned from mediation ads.
+		/// <p>This field is deprecated and will be removed in v201805.</p> <p>Compatible
+		/// with the HISTORICAL report type.</p>
 		/// </summary>
 		MEDIATION_ECPM = 430,
-		/// <summary>Mediation third-party average cost-per-thousand-impressions.
+		/// <summary>Mediation third-party average cost-per-thousand-impressions. <p>Compatible with
+		/// the HISTORICAL report type.</p>
 		/// </summary>
 		MEDIATION_THIRD_PARTY_ECPM = 431,
-		/// <summary>Mediation fill rate indicating how often a network fills an ad request.
+		/// <summary>Mediation fill rate indicating how often a network fills an ad request. <p>This
+		/// field is deprecated and will be removed in v201805.</p> <p>Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		MEDIATION_FILL_RATE = 432,
-		/// <summary>Mediation passbacks recorded when a network does not fill an ad request.
+		/// <summary>Mediation passbacks recorded when a network does not fill an ad request. <p>This
+		/// field is deprecated and will be removed in v201805.</p> <p>Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		MEDIATION_PASSBACKS = 433,
 		/// <summary>The number of impressions an Ad Exchange ad delivered for line item-level
-		/// dynamic allocation by explicit custom criteria targeting.
+		/// dynamic allocation by explicit custom criteria targeting. <p>Corresponds to "Ad
+		/// Exchange targeted impressions" in the Ad Manager UI. Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_TARGETED_IMPRESSIONS = 77,
 		/// <summary>The number of clicks an Ad Exchange ad delivered for line item-level dynamic
-		/// allocation.
+		/// allocation. <p>Corresponds to "Ad Exchange clicks" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_CLICKS = 78,
 		/// <summary>The number of clicks an Ad Exchange ad delivered for line item-level dynamic
-		/// allocation by explicit custom criteria targeting.
+		/// allocation by explicit custom criteria targeting. <p>Corresponds to "Ad Exchange
+		/// targeted clicks" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_TARGETED_CLICKS = 79,
 		/// <summary>The ratio of clicks an Ad Exchange ad delivered to the number of impressions it
-		/// delivered for line item-level dynamic allocation.
+		/// delivered for line item-level dynamic allocation. <p>Corresponds to "Ad Exchange
+		/// CTR" in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_CTR = 80,
 		/// <summary>The ratio of the number of impressions delivered to the total impressions
 		/// delivered by Ad Exchange for line item-level dynamic allocation. Represented as
-		/// a percentage.
+		/// a percentage. <p>Corresponds to "Ad Exchange impressions (%)" in the Ad Manager
+		/// UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_PERCENT_IMPRESSIONS = 81,
 		/// <summary>The ratio of the number of clicks delivered to the total clicks delivered by Ad
 		/// Exchange for line item-level dynamic allocation. Represented as a percentage.
+		/// <p>Corresponds to "Ad Exchange clicks (%)" in the Ad Manager UI. Compatible with
+		/// the HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_PERCENT_CLICKS = 82,
 		/// <summary>Revenue generated from Ad Exchange ads delivered for line item-level dynamic
-		/// allocation. Represented in publisher currency and time zone.
+		/// allocation. Represented in publisher currency and time zone. <p>Corresponds to
+		/// "Ad Exchange revenue" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_REVENUE = 83,
 		/// <summary>The ratio of revenue generated by Ad Exchange to the total revenue earned by CPM
 		/// and CPC ads delivered for line item-level dynamic allocation. Represented as a
-		/// percentage.
+		/// percentage. <p>Corresponds to "Ad Exchange revenue (%)" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_WITHOUT_CPD_PERCENT_REVENUE = 84,
 		/// <summary>The ratio of revenue generated by Ad Exchange to the total revenue earned by
@@ -58912,43 +60811,58 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_WITH_CPD_PERCENT_REVENUE = 85,
 		/// <summary>The average estimated cost-per-thousand-impressions earned from the delivery of
-		/// Ad Exchange ads for line item-level dynamic allocation.
+		/// Ad Exchange ads for line item-level dynamic allocation. <p>Corresponds to "Ad
+		/// Exchange average eCPM" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_AVERAGE_ECPM = 86,
 		/// <summary>The total number of impressions delivered by the ad servers including
-		/// inventory-level dynamic allocation.
+		/// inventory-level dynamic allocation. <p>Corresponds to "Total impressions" in the
+		/// Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_INVENTORY_LEVEL_IMPRESSIONS = 87,
 		/// <summary>The total number of impressions delivered including line item-level dynamic
-		/// allocation.
+		/// allocation. <p>Corresponds to "Total impressions" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_IMPRESSIONS = 88,
 		/// <summary>The total number of impressions delivered including line item-level dynamic
-		/// allocation by explicit custom criteria targeting.
+		/// allocation by explicit custom criteria targeting. <p>Corresponds to "Total
+		/// targeted impressions" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_TARGETED_IMPRESSIONS = 89,
 		/// <summary>The total number of clicks delivered by the ad servers including inventory-level
-		/// dynamic allocation.
+		/// dynamic allocation. <p>Corresponds to "Total clicks" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_INVENTORY_LEVEL_CLICKS = 91,
 		/// <summary>The total number of clicks delivered including line item-level dynamic
-		/// allocation.
+		/// allocation. <p>Corresponds to "Total clicks" in the Ad Manager UI. Compatible
+		/// with the HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_CLICKS = 92,
 		/// <summary>The total number of clicks delivered including line item-level dynamic
-		/// allocation by explicit custom criteria targeting
+		/// allocation by explicit custom criteria targeting <p>Corresponds to "Total
+		/// targeted clicks" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_TARGETED_CLICKS = 93,
 		/// <summary>The ratio of total clicks on ads delivered by the ad servers to the total number
 		/// of impressions delivered for an ad including inventory-level dynamic allocation.
+		/// <p>Corresponds to "Total CTR" in the Ad Manager UI. Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_INVENTORY_LEVEL_CTR = 94,
 		/// <summary>The ratio of total clicks on ads delivered by the ad servers to the total number
 		/// of impressions delivered for an ad including line item-level dynamic allocation.
+		/// <p>Corresponds to "Total CTR" in the Ad Manager UI. Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_CTR = 95,
 		/// <summary>The total CPM and CPC revenue generated by the ad servers including
-		/// inventory-level dynamic allocation.
+		/// inventory-level dynamic allocation. <p>Corresponds to "Total CPM and CPC
+		/// revenue" in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_INVENTORY_LEVEL_CPM_AND_CPC_REVENUE = 96,
 		/// <summary>The total CPM, CPC and CPD revenue generated by the ad servers including
@@ -58956,15 +60870,20 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// </summary>
 		TOTAL_INVENTORY_LEVEL_ALL_REVENUE = 97,
 		/// <summary>The total CPM and CPC revenue generated by the ad servers including line
-		/// item-level dynamic allocation.
+		/// item-level dynamic allocation. <p>Corresponds to "Total CPM and CPC revenue" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_CPM_AND_CPC_REVENUE = 98,
 		/// <summary>The total CPM, CPC and CPD revenue generated by the ad servers including line
-		/// item-level dynamic allocation.
+		/// item-level dynamic allocation. <p>Can correspond to any of the following in the
+		/// Ad Manager UI: Total CPM, CPC, CPD, and vCPM revenue, Total CPM, CPC and CPD
+		/// revenue. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_ALL_REVENUE = 99,
 		/// <summary>Estimated cost-per-thousand-impressions (eCPM) of CPM and CPC ads delivered by
-		/// the ad servers including inventory-level dynamic allocation.
+		/// the ad servers including inventory-level dynamic allocation. <p>Corresponds to
+		/// "Total average eCPM" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		TOTAL_INVENTORY_LEVEL_WITHOUT_CPD_AVERAGE_ECPM = 100,
 		/// <summary>Estimated cost-per-thousand-impressions (eCPM) of CPM, CPC and CPD ads delivered
@@ -58972,7 +60891,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// </summary>
 		TOTAL_INVENTORY_LEVEL_WITH_CPD_AVERAGE_ECPM = 101,
 		/// <summary>Estimated cost-per-thousand-impressions (eCPM) of CPM and CPC ads delivered by
-		/// the ad servers including line item-level dynamic allocation.
+		/// the ad servers including line item-level dynamic allocation. <p>Corresponds to
+		/// "Total average eCPM" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_WITHOUT_CPD_AVERAGE_ECPM = 102,
 		/// <summary>Estimated cost-per-thousand-impressions (eCPM) of CPM, CPC and CPD ads delivered
@@ -58980,47 +60901,66 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_WITH_CPD_AVERAGE_ECPM = 103,
 		/// <summary>The total number of times that the code for an ad is served by the ad server
-		/// including inventory-level dynamic allocation.
+		/// including inventory-level dynamic allocation. <p>Corresponds to "Total code
+		/// served count" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		TOTAL_CODE_SERVED_COUNT = 104,
 		/// <summary>The total number of missed impressions due to the ad servers' inability to find
-		/// ads to serve, including inventory-level dynamic allocation.
+		/// ads to serve, including inventory-level dynamic allocation. <p>Corresponds to
+		/// "Unfilled impressions" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		TOTAL_INVENTORY_LEVEL_UNFILLED_IMPRESSIONS = 105,
 		/// <summary>The number of control (unoptimized) impressions delivered for an ad for which
-		/// the optimization feature has been enabled.
+		/// the optimization feature has been enabled. <p>Corresponds to "Control
+		/// impressions" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		OPTIMIZATION_CONTROL_IMPRESSIONS = 107,
 		/// <summary>Number of clicks resulting from the delivery of control (unoptimized)
 		/// impressions for an ad for which the optimization feature has been enabled.
+		/// <p>Corresponds to "Control clicks" in the Ad Manager UI. Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		OPTIMIZATION_CONTROL_CLICKS = 108,
 		/// <summary>The CTR for control (unoptimized) impressions for an order for which the
-		/// optimization feature has been enabled.
+		/// optimization feature has been enabled. <p>Corresponds to "Control CTR" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		OPTIMIZATION_CONTROL_CTR = 109,
 		/// <summary>Number of optimized impressions delivered for an ad for which the optimization
-		/// feature has been enabled.
+		/// feature has been enabled. <p>Corresponds to "Optimized impressions" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		OPTIMIZATION_OPTIMIZED_IMPRESSIONS = 110,
 		/// <summary>Number of clicks resulting from the delivery of optimized impressions for an ad
-		/// for which the optimization feature has been enabled.
+		/// for which the optimization feature has been enabled. <p>Corresponds to
+		/// "Optimized clicks" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		OPTIMIZATION_OPTIMIZED_CLICKS = 111,
 		/// <summary>Number of non-optimized impressions delivered for an ad for which the
-		/// optimization feature has been enabled.
+		/// optimization feature has been enabled. <p>Corresponds to "Non-optimized
+		/// impressions" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		OPTIMIZATION_NON_OPTIMIZED_IMPRESSIONS = 112,
 		/// <summary>Number of clicks resulting from the delivery of non-optimized impressions for an
-		/// ad for which the optimization feature has been enabled.
+		/// ad for which the optimization feature has been enabled. <p>Corresponds to
+		/// "Non-optimized clicks" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		OPTIMIZATION_NON_OPTIMIZED_CLICKS = 113,
 		/// <summary>Number of extra clicks resulting from the delivery of optimized impressions for
-		/// an ad for which the optimization feature has been enabled.
+		/// an ad for which the optimization feature has been enabled. <p>Corresponds to
+		/// "Extra clicks" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		OPTIMIZATION_EXTRA_CLICKS = 114,
 		/// <summary>The CTR for optimized impressions for an ad for which the optimization feature
-		/// has been enabled.
+		/// has been enabled. <p>Corresponds to "Optimized CTR" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		OPTIMIZATION_OPTIMIZED_CTR = 115,
 		/// <summary>The percentage by which optimized CTRs are greater than the unoptimized CTRs.
@@ -59028,382 +60968,579 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='Column#OPTIMIZATION_OPTIMIZED_CTR'>Column#OPTIMIZATION_OPTIMIZED_CTR</a>/
 		/// <a href='Column#OPTIMIZATION_CONTROL_CTR'>Column#OPTIMIZATION_CONTROL_CTR</a>) -
 		/// 1) * 100 for an ad for which the optimization feature has been enabled.
+		/// <p>Corresponds to "Lift" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		OPTIMIZATION_LIFT = 116,
 		/// <summary>The line item coverage measures how often the traffic was sent for optimization.
+		/// <p>Corresponds to "Percent optimized" in the Ad Manager UI. Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		OPTIMIZATION_COVERAGE = 117,
 		/// <summary>The number of impressions that were behind schedule at the time of their
-		/// delivery.
+		/// delivery. <p>Corresponds to "Impressions that are behind schedule" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		OPTIMIZATION_BEHIND_SCHEDULE_IMPRESSIONS = 118,
 		/// <summary>The number of impressions that did not have any clicks recorded in the recent
-		/// past.
+		/// past. <p>Corresponds to "Impressions with no clicks recorded" in the Ad Manager
+		/// UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		OPTIMIZATION_NO_CLICKS_RECORDED_IMPRESSIONS = 119,
 		/// <summary>The number of impressions that were delivered as sponsorship items.
+		/// <p>Corresponds to "Sponsorship impressions" in the Ad Manager UI. Compatible
+		/// with the HISTORICAL report type.</p>
 		/// </summary>
 		OPTIMIZATION_SPONSORSHIP_IMPRESSIONS = 120,
 		/// <summary>The number of impressions that were set to deliver as fast as possible.
+		/// <p>Corresponds to "Impressions serving as fast as possible" in the Ad Manager
+		/// UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		OPTIMIZATION_AS_FAST_AS_POSSIBLE_IMPRESSIONS = 121,
 		/// <summary>The number of impressions that have no absolute lifetime delivery goals.
+		/// <p>Corresponds to "Impressions with no lifetime goal" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		OPTIMIZATION_NO_ABSOLUTE_LIFETIME_GOAL_IMPRESSIONS = 122,
 		/// <summary>Total revenue resulting from the delivery of control (unoptimized) impressions
-		/// for an ad for which the optimization feature has been enabled.
+		/// for an ad for which the optimization feature has been enabled. <p>Corresponds to
+		/// "Control revenue" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		OPTIMIZATION_CONTROL_REVENUE = 123,
 		/// <summary>Total revenue resulting from the delivery of optimized impressions for an ad for
-		/// which the optimization feature has been enabled.
+		/// which the optimization feature has been enabled. <p>Corresponds to "Optimized
+		/// revenue" in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		OPTIMIZATION_OPTIMIZED_REVENUE = 124,
 		/// <summary>Estimated cost-per-thousand-impressions (eCPM) of control (unoptimized)
 		/// impressions for an ad for which the optimization feature has been enabled.
+		/// <p>Corresponds to "Control eCPM" in the Ad Manager UI. Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		OPTIMIZATION_CONTROL_ECPM = 125,
 		/// <summary>Estimated cost-per-thousand-impressions (eCPM) of optimized impressions for an
-		/// ad for which the optimization feature has been enabled.
+		/// ad for which the optimization feature has been enabled. <p>Corresponds to
+		/// "Optimized eCPM" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		OPTIMIZATION_OPTIMIZED_ECPM = 126,
-		/// <summary>Freed-up impressions as a result of optimization.
+		/// <summary>Freed-up impressions as a result of optimization. <p>Corresponds to "Freed-up
+		/// impressions" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		OPTIMIZATION_FREED_UP_IMPRESSIONS = 127,
-		/// <summary>Relative change in eCPM as a result of optimization.
+		/// <summary>Relative change in eCPM as a result of optimization. <p>Corresponds to "eCPM
+		/// lift" in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		OPTIMIZATION_ECPM_LIFT = 128,
-		/// <summary>The average number of ads displayed to each unique visitor.
+		/// <summary>The average number of ads displayed to each unique visitor. <p>Corresponds to
+		/// "Average impressions / visitor" in the Ad Manager UI. Compatible with the REACH
+		/// report type.</p>
 		/// </summary>
 		REACH_FREQUENCY = 129,
-		/// <summary>The average revenue earned per unique visitor.
+		/// <summary>The average revenue earned per unique visitor. <p>Corresponds to "Average
+		/// revenue / visitor" in the Ad Manager UI. Compatible with the REACH report
+		/// type.</p>
 		/// </summary>
 		REACH_AVERAGE_REVENUE = 130,
-		/// <summary>The number of unique visitors.
+		/// <summary>The number of unique visitors. <p>To maintain user privacy, "Unique visitors"
+		/// totaling 0-99 won't be displayed in the report and will appear empty.</p>
+		/// <p>Corresponds to "Unique visitors" in the Ad Manager UI. Compatible with the
+		/// REACH report type.</p>
 		/// </summary>
 		REACH = 131,
-		/// <summary>The number of people in the given demographic bucket.
+		/// <summary>The number of people in the given demographic bucket. <p>Corresponds to
+		/// "Population" in the Ad Manager UI. Compatible with the REACH report type.</p>
 		/// </summary>
 		GRP_POPULATION = 132,
 		/// <summary>The number of unique users reached in the given demographic bucket.
+		/// <p>Corresponds to "Unique viewers" in the Ad Manager UI. Compatible with the
+		/// REACH report type.</p>
 		/// </summary>
 		GRP_UNIQUE_AUDIENCE = 133,
 		/// <summary>Percentage of the number of unique users reached in the given demographic bucket
-		/// (out of the number of unique users reached in all demographics).
+		/// (out of the number of unique users reached in all demographics). <p>Corresponds
+		/// to "% Composition unique viewers" in the Ad Manager UI. Compatible with the
+		/// REACH report type.</p>
 		/// </summary>
 		GRP_UNIQUE_AUDIENCE_SHARE = 134,
-		/// <summary>The number of impressions in the given demographic bucket.
+		/// <summary>The number of impressions in the given demographic bucket. <p>Corresponds to
+		/// "Impressions" in the Ad Manager UI. Compatible with the REACH report type.</p>
 		/// </summary>
 		GRP_AUDIENCE_IMPRESSIONS = 135,
 		/// <summary>Percentage of the number of impressions in the given demographic bucket (out of
-		/// the number of impressions in all demographics).
+		/// the number of impressions in all demographics). <p>Corresponds to "% Composition
+		/// impressions" in the Ad Manager UI. Compatible with the REACH report type.</p>
 		/// </summary>
 		GRP_AUDIENCE_IMPRESSIONS_SHARE = 136,
 		/// <summary>The audience reach calculated as <a
 		/// href='#GRP_UNIQUE_AUDIENCE'>#GRP_UNIQUE_AUDIENCE</a> / <a
-		/// href='#GRP_POPULATION'>#GRP_POPULATION</a>.
+		/// href='#GRP_POPULATION'>#GRP_POPULATION</a>. <p>Corresponds to "% Population
+		/// reach" in the Ad Manager UI. Compatible with the REACH report type.</p>
 		/// </summary>
 		GRP_AUDIENCE_REACH = 137,
 		/// <summary>The audience average frequency calculated as <a
 		/// href='#GRP_AUDIENCE_IMPRESSIONS'>#GRP_AUDIENCE_IMPRESSIONS</a> / <a
-		/// href=''>#GRP_UNIQUE_AUDIENCE</a>.
+		/// href=''>#GRP_UNIQUE_AUDIENCE</a>. <p>Corresponds to "Average frequency" in the
+		/// Ad Manager UI. Compatible with the REACH report type.</p>
 		/// </summary>
 		GRP_AUDIENCE_AVERAGE_FREQUENCY = 138,
 		/// <summary>The gross rating points (GRP) calculated as <a
 		/// href='#GRP_AUDIENCE_REACH'>#GRP_AUDIENCE_REACH</a> * <a
-		/// href=''>#GRP_AUDIENCE_AVERAGE_FREQUENCY</a> * 100.
+		/// href=''>#GRP_AUDIENCE_AVERAGE_FREQUENCY</a> * 100. <p>Corresponds to "Target
+		/// rating points" in the Ad Manager UI. Compatible with the REACH report type.</p>
 		/// </summary>
 		GRP_GROSS_RATING_POINTS = 139,
 		/// <summary>The number of impressions for a particular SDK mediation creative.
+		/// <p>Corresponds to "SDK mediation creative impressions" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		SDK_MEDIATION_CREATIVE_IMPRESSIONS = 140,
-		/// <summary>The number of clicks for a particular SDK mediation creative.
+		/// <summary>The number of clicks for a particular SDK mediation creative. <p>Corresponds to
+		/// "SDK mediation creative clicks" in the Ad Manager UI. Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		SDK_MEDIATION_CREATIVE_CLICKS = 141,
 		/// <summary>The number of forecasted impressions for future sell-through reports. <p>This
 		/// metric is available for the next 90 days with a daily break down and for the
-		/// next 12 months with a monthly break down.</p>
+		/// next 12 months with a monthly break down.</p> <p>Corresponds to "Forecasted
+		/// impressions" in the Ad Manager UI. Compatible with the SELL_THROUGH report
+		/// type.</p>
 		/// </summary>
 		SELL_THROUGH_FORECASTED_IMPRESSIONS = 142,
 		/// <summary>The number of available impressions for future sell-through reports. <p>This
 		/// metric is available for the next 90 days with a daily break down and for the
-		/// next 12 months with a monthly break down.</p>
+		/// next 12 months with a monthly break down.</p> <p>Corresponds to "Available
+		/// impressions" in the Ad Manager UI. Compatible with the SELL_THROUGH report
+		/// type.</p>
 		/// </summary>
 		SELL_THROUGH_AVAILABLE_IMPRESSIONS = 143,
 		/// <summary>The number of reserved impressions for future sell-through reports. <p>This
 		/// metric is available for the next 90 days with a daily break down and for the
-		/// next 12 months with a monthly break down.</p>
+		/// next 12 months with a monthly break down.</p> <p>Corresponds to "Reserved
+		/// impressions" in the Ad Manager UI. Compatible with the SELL_THROUGH report
+		/// type.</p>
 		/// </summary>
 		SELL_THROUGH_RESERVED_IMPRESSIONS = 144,
 		/// <summary>The sell-through rate for impressions for future sell-through reports. <p>This
 		/// metric is available for the next 90 days with a daily break down and for the
-		/// next 12 months with a monthly break down.</p>
+		/// next 12 months with a monthly break down.</p> <p>Corresponds to "Sell-through
+		/// rate" in the Ad Manager UI. Compatible with the SELL_THROUGH report type.</p>
 		/// </summary>
 		SELL_THROUGH_SELL_THROUGH_RATE = 145,
 		/// <summary>The total number of times a backup image is served in place of a rich media ad.
+		/// <p>Corresponds to "Backup image impressions" in the Ad Manager UI. Compatible
+		/// with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_BACKUP_IMAGES = 146,
 		/// <summary>The amount of time(seconds) that each rich media ad is displayed to users.
+		/// <p>Corresponds to "Total display time" in the Ad Manager UI. Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_DISPLAY_TIME = 147,
 		/// <summary>The average amount of time(seconds) that each rich media ad is displayed to
-		/// users.
+		/// users. <p>Corresponds to "Average display time" in the Ad Manager UI. Compatible
+		/// with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_AVERAGE_DISPLAY_TIME = 148,
-		/// <summary>The number of times an expanding ad was expanded.
+		/// <summary>The number of times an expanding ad was expanded. <p>Corresponds to "Total
+		/// expansions" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		RICH_MEDIA_EXPANSIONS = 149,
 		/// <summary>The average amount of time(seconds) that an expanding ad is viewed in an
-		/// expanded state.
+		/// expanded state. <p>Corresponds to "Average expanding time" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_EXPANDING_TIME = 150,
 		/// <summary>The average amount of time(seconds) that a user interacts with a rich media ad.
+		/// <p>Corresponds to "Interaction time" in the Ad Manager UI. Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_INTERACTION_TIME = 151,
-		/// <summary>The number of times that a user interacts with a rich media ad.
+		/// <summary>The number of times that a user interacts with a rich media ad. <p>Corresponds
+		/// to "Total interactions" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		RICH_MEDIA_INTERACTION_COUNT = 152,
 		/// <summary>The ratio of rich media ad interactions to the number of times the ad was
-		/// displayed. Represented as a percentage.
+		/// displayed. Represented as a percentage. <p>Corresponds to "Interaction rate" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_INTERACTION_RATE = 153,
 		/// <summary>The average amount of time(seconds) that a user interacts with a rich media ad.
+		/// <p>Corresponds to "Average interaction time" in the Ad Manager UI. Compatible
+		/// with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_AVERAGE_INTERACTION_TIME = 154,
 		/// <summary>The number of impressions where a user interacted with a rich media ad.
+		/// <p>Corresponds to "Interactive impressions" in the Ad Manager UI. Compatible
+		/// with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_INTERACTION_IMPRESSIONS = 155,
 		/// <summary>The number of times that a user manually closes a floating, expanding, in-page
-		/// with overlay, or in-page with floating ad.
+		/// with overlay, or in-page with floating ad. <p>Corresponds to "Manual closes" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_MANUAL_CLOSES = 156,
 		/// <summary>A metric that measures an impression only once when a user opens an ad in full
-		/// screen mode.
+		/// screen mode. <p>Corresponds to "Full-screen impressions" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_FULL_SCREEN_IMPRESSIONS = 157,
 		/// <summary>The number of times a user clicked on the graphical controls of a video player.
+		/// <p>Corresponds to "Total video interactions" in the Ad Manager UI. Compatible
+		/// with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_INTERACTIONS = 158,
 		/// <summary>The ratio of video interactions to video plays. Represented as a percentage.
+		/// <p>Corresponds to "Video interaction rate" in the Ad Manager UI. Compatible with
+		/// the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_INTERACTION_RATE = 159,
-		/// <summary>The number of times a rich media video was muted.
+		/// <summary>The number of times a rich media video was muted. <p>Corresponds to "Mute" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_MUTES = 160,
-		/// <summary>The number of times a rich media video was paused.
+		/// <summary>The number of times a rich media video was paused. <p>Corresponds to "Pause" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_PAUSES = 161,
-		/// <summary>The number of times a rich media video was played.
+		/// <summary>The number of times a rich media video was played. <p>Corresponds to "Plays" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_PLAYES = 162,
-		/// <summary>The number of times a rich media video was played upto midpoint.
+		/// <summary>The number of times a rich media video was played upto midpoint. <p>Corresponds
+		/// to "Midpoint" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_MIDPOINTS = 163,
-		/// <summary>The number of times a rich media video was fully played.
+		/// <summary>The number of times a rich media video was fully played. <p>Corresponds to
+		/// "Complete" in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_COMPLETES = 164,
-		/// <summary>The number of times a rich media video was restarted.
+		/// <summary>The number of times a rich media video was restarted. <p>Corresponds to
+		/// "Replays" in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_REPLAYS = 165,
-		/// <summary>The number of times a rich media video was stopped.
+		/// <summary>The number of times a rich media video was stopped. <p>Corresponds to "Stops" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_STOPS = 166,
-		/// <summary>The number of times a rich media video was unmuted.
+		/// <summary>The number of times a rich media video was unmuted. <p>Corresponds to "Unmute"
+		/// in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_UNMUTES = 167,
 		/// <summary>The average amount of time(seconds) that a rich media video was viewed per view.
+		/// <p>Corresponds to "Average view time" in the Ad Manager UI. Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_VIEW_TIME = 168,
-		/// <summary>The percentage of a video watched by a user.
+		/// <summary>The percentage of a video watched by a user. <p>Corresponds to "View rate" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_VIEW_RATE = 169,
 		/// <summary>The amount of time (seconds) that a user interacts with a rich media ad.
+		/// <p>Corresponds to "Custom event - time" in the Ad Manager UI. Compatible with
+		/// the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_CUSTOM_EVENT_TIME = 170,
 		/// <summary>The number of times a user views and interacts with a specified part of a rich
-		/// media ad.
+		/// media ad. <p>Corresponds to "Custom event - count" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		RICH_MEDIA_CUSTOM_EVENT_COUNT = 171,
-		/// <summary>The number of impressions where the video was played.
+		/// <summary>The number of impressions where the video was played. <p>Corresponds to "Start"
+		/// in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_START = 172,
-		/// <summary>The number of times the video played to 25% of its length.
+		/// <summary>The number of times the video played to 25% of its length. <p>Corresponds to
+		/// "First quartile" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_FIRST_QUARTILE = 173,
-		/// <summary>The number of times the video reached its midpoint during play.
+		/// <summary>The number of times the video reached its midpoint during play. <p>Corresponds
+		/// to "Midpoint" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_MIDPOINT = 174,
-		/// <summary>The number of times the video played to 75% of its length.
+		/// <summary>The number of times the video played to 75% of its length. <p>Corresponds to
+		/// "Third quartile" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_THIRD_QUARTILE = 175,
-		/// <summary>The number of times the video played to completion.
+		/// <summary>The number of times the video played to completion. <p>Corresponds to "Complete"
+		/// in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_COMPLETE = 176,
-		/// <summary>Average percentage of the video watched by users.
+		/// <summary>Average percentage of the video watched by users. <p>Corresponds to "Average
+		/// view rate" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_AVERAGE_VIEW_RATE = 177,
-		/// <summary>Average time(seconds) users watched the video.
+		/// <summary>Average time(seconds) users watched the video. <p>Corresponds to "Average view
+		/// time" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_AVERAGE_VIEW_TIME = 178,
-		/// <summary>Percentage of times the video played to the end.
+		/// <summary>Percentage of times the video played to the end. <p>Corresponds to "Completion
+		/// rate" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_COMPLETION_RATE = 179,
 		/// <summary>The number of times an error occurred, such as a VAST redirect error, a video
-		/// playback error, or an invalid response error.
+		/// playback error, or an invalid response error. <p>Corresponds to "Total error
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_TOTAL_ERROR_COUNT = 180,
-		/// <summary>Duration of the video creative.
+		/// <summary>Duration of the video creative. <p>Corresponds to "Video length" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_VIDEO_LENGTH = 181,
-		/// <summary>The number of times a skip button is shown in video.
+		/// <summary>The number of times a skip button is shown in video. <p>Corresponds to "Skip
+		/// button shown" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_SKIP_BUTTON_SHOWN = 182,
 		/// <summary>The number of engaged views i.e. ad is viewed to completion or for 30s,
-		/// whichever comes first.
+		/// whichever comes first. <p>Corresponds to "Engaged view" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_ENGAGED_VIEW = 183,
-		/// <summary>View-through rate represented as a percentage.
+		/// <summary>View-through rate represented as a percentage. <p>Corresponds to "View-through
+		/// rate" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_VIEW_THROUGH_RATE = 184,
 		/// <summary>Number of times that the publisher specified a video ad played automatically.
+		/// <p>Corresponds to "Auto-plays" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_AUTO_PLAYS = 185,
 		/// <summary>Number of times that the publisher specified a video ad was clicked to play.
+		/// <p>Corresponds to "Click-to-plays" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_CLICK_TO_PLAYS = 186,
 		/// <summary>Error rate is the percentage of video error count from (error count + total
-		/// impressions).
+		/// impressions). <p>Corresponds to "Total error rate" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_TOTAL_ERROR_RATE = 187,
-		/// <summary>Number of VAST video errors of type 100.
+		/// <summary>Number of VAST video errors of type 100. <p>Corresponds to "VAST error 100
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_100_COUNT = 461,
-		/// <summary>Number of VAST video errors of type 101.
+		/// <summary>Number of VAST video errors of type 101. <p>Corresponds to "VAST error 101
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_101_COUNT = 462,
-		/// <summary>Number of VAST video errors of type 102.
+		/// <summary>Number of VAST video errors of type 102. <p>Corresponds to "VAST error 102
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_102_COUNT = 463,
-		/// <summary>Number of VAST video errors of type 200.
+		/// <summary>Number of VAST video errors of type 200. <p>Corresponds to "VAST error 200
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_200_COUNT = 464,
-		/// <summary>Number of VAST video errors of type 201.
+		/// <summary>Number of VAST video errors of type 201. <p>Corresponds to "VAST error 201
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_201_COUNT = 465,
-		/// <summary>Number of VAST video errors of type 202.
+		/// <summary>Number of VAST video errors of type 202. <p>Corresponds to "VAST error 202
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_202_COUNT = 466,
-		/// <summary>Number of VAST video errors of type 203.
+		/// <summary>Number of VAST video errors of type 203. <p>Corresponds to "VAST error 203
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_203_COUNT = 467,
-		/// <summary>Number of VAST video errors of type 300.
+		/// <summary>Number of VAST video errors of type 300. <p>Corresponds to "VAST error 300
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_300_COUNT = 468,
-		/// <summary>Number of VAST video errors of type 301.
+		/// <summary>Number of VAST video errors of type 301. <p>Corresponds to "VAST error 301
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_301_COUNT = 469,
-		/// <summary>Number of VAST video errors of type 302.
+		/// <summary>Number of VAST video errors of type 302. <p>Corresponds to "VAST error 302
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_302_COUNT = 470,
-		/// <summary>Number of VAST video errors of type 303.
+		/// <summary>Number of VAST video errors of type 303. <p>Corresponds to "VAST error 303
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_303_COUNT = 471,
-		/// <summary>Number of VAST video errors of type 400.
+		/// <summary>Number of VAST video errors of type 400. <p>Corresponds to "VAST error 400
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_400_COUNT = 472,
-		/// <summary>Number of VAST video errors of type 401.
+		/// <summary>Number of VAST video errors of type 401. <p>Corresponds to "VAST error 401
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_401_COUNT = 473,
-		/// <summary>Number of VAST video errors of type 402.
+		/// <summary>Number of VAST video errors of type 402. <p>Corresponds to "VAST error 402
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_402_COUNT = 474,
-		/// <summary>Number of VAST video errors of type 403.
+		/// <summary>Number of VAST video errors of type 403. <p>Corresponds to "VAST error 403
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_403_COUNT = 475,
-		/// <summary>Number of VAST video errors of type 405.
+		/// <summary>Number of VAST video errors of type 405. <p>Corresponds to "VAST error 405
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_405_COUNT = 476,
-		/// <summary>Number of VAST video errors of type 500.
+		/// <summary>Number of VAST video errors of type 500. <p>Corresponds to "VAST error 500
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_500_COUNT = 477,
-		/// <summary>Number of VAST video errors of type 501.
+		/// <summary>Number of VAST video errors of type 501. <p>Corresponds to "VAST error 501
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_501_COUNT = 478,
-		/// <summary>Number of VAST video errors of type 502.
+		/// <summary>Number of VAST video errors of type 502. <p>Corresponds to "VAST error 502
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_502_COUNT = 479,
-		/// <summary>Number of VAST video errors of type 503.
+		/// <summary>Number of VAST video errors of type 503. <p>Corresponds to "VAST error 503
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_503_COUNT = 480,
-		/// <summary>Number of VAST video errors of type 600.
+		/// <summary>Number of VAST video errors of type 600. <p>Corresponds to "VAST error 600
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_600_COUNT = 481,
-		/// <summary>Number of VAST video errors of type 601.
+		/// <summary>Number of VAST video errors of type 601. <p>Corresponds to "VAST error 601
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_601_COUNT = 482,
-		/// <summary>Number of VAST video errors of type 602.
+		/// <summary>Number of VAST video errors of type 602. <p>Corresponds to "VAST error 602
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_602_COUNT = 483,
-		/// <summary>Number of VAST video errors of type 603.
+		/// <summary>Number of VAST video errors of type 603. <p>Corresponds to "VAST error 603
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_603_COUNT = 484,
-		/// <summary>Number of VAST video errors of type 604.
+		/// <summary>Number of VAST video errors of type 604. <p>Corresponds to "VAST error 604
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_604_COUNT = 485,
-		/// <summary>Number of VAST video errors of type 900.
+		/// <summary>Number of VAST video errors of type 900. <p>Corresponds to "VAST error 900
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_900_COUNT = 486,
-		/// <summary>Number of VAST video errors of type 901.
+		/// <summary>Number of VAST video errors of type 901. <p>Corresponds to "VAST error 901
+		/// count" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_901_COUNT = 487,
-		/// <summary>Video interaction event: The number of times user paused ad clip.
+		/// <summary>Video interaction event: The number of times user paused ad clip. <p>Corresponds
+		/// to "Pause" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_INTERACTION_PAUSE = 216,
 		/// <summary>Video interaction event: The number of times the user unpaused the video.
+		/// <p>Corresponds to "Resume" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_INTERACTION_RESUME = 217,
 		/// <summary>Video interaction event: The number of times a user rewinds the video.
+		/// <p>Corresponds to "Rewind" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_INTERACTION_REWIND = 218,
 		/// <summary>Video interaction event: The number of times video player was in mute state
-		/// during play of ad clip.
+		/// during play of ad clip. <p>Corresponds to "Mute" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_INTERACTION_MUTE = 219,
 		/// <summary>Video interaction event: The number of times a user unmutes the video.
+		/// <p>Corresponds to "Unmute" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_INTERACTION_UNMUTE = 220,
 		/// <summary>Video interaction event: The number of times a user collapses a video, either to
-		/// its original size or to a different size.
+		/// its original size or to a different size. <p>Corresponds to "Collapse" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_INTERACTION_COLLAPSE = 221,
 		/// <summary>Video interaction event: The number of times a user expands a video.
+		/// <p>Corresponds to "Expand" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_INTERACTION_EXPAND = 222,
 		/// <summary>Video interaction event: The number of times ad clip played in full screen mode.
+		/// <p>Corresponds to "Full screen" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_INTERACTION_FULL_SCREEN = 223,
 		/// <summary>Video interaction event: The number of user interactions with a video, on
-		/// average, such as pause, full screen, mute, etc.
+		/// average, such as pause, full screen, mute, etc. <p>Corresponds to "Average
+		/// interaction rate" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_INTERACTION_AVERAGE_INTERACTION_RATE = 224,
 		/// <summary>Video interaction event: The number of times a skippable video is skipped.
+		/// <p>Corresponds to "Video skipped" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, CREATIVE_QOS.</p>
 		/// </summary>
 		VIDEO_INTERACTION_VIDEO_SKIPS = 225,
-		/// <summary>The number of control starts.
+		/// <summary>The number of control starts. <p>Corresponds to "Control starts" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_CONTROL_STARTS = 226,
-		/// <summary>The number of optimized starts.
+		/// <summary>The number of optimized starts. <p>Corresponds to "Optimized starts" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_OPTIMIZED_STARTS = 227,
-		/// <summary>The number of control completes.
+		/// <summary>The number of control completes. <p>Corresponds to "Control completes" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_CONTROL_COMPLETES = 228,
-		/// <summary>The number of optimized completes.
+		/// <summary>The number of optimized completes. <p>Corresponds to "Optimized completes" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_OPTIMIZED_COMPLETES = 229,
-		/// <summary>The rate of control completions.
+		/// <summary>The rate of control completions. <p>Corresponds to "Control completion rate" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_CONTROL_COMPLETION_RATE = 230,
-		/// <summary>The rate of optimized completions.
+		/// <summary>The rate of optimized completions. <p>Corresponds to "Optimized completion rate"
+		/// in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_OPTIMIZED_COMPLETION_RATE = 231,
 		/// <summary>The percentage by which optimized completion rate is greater than the
@@ -59412,37 +61549,52 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <a
 		/// href='Column#VIDEO_OPTIMIZATION_CONTROL_COMPLETION_RATE'>Column#VIDEO_OPTIMIZATION_CONTROL_COMPLETION_RATE</a>)
 		/// - 1) * 100 for an ad for which the optimization feature has been enabled.
+		/// <p>Corresponds to "Completion rate lift" in the Ad Manager UI. Compatible with
+		/// the HISTORICAL report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_COMPLETION_RATE_LIFT = 232,
-		/// <summary>The number of control skip buttons shown.
+		/// <summary>The number of control skip buttons shown. <p>Corresponds to "Control skip button
+		/// shown" in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_CONTROL_SKIP_BUTTON_SHOWN = 233,
-		/// <summary>The number of optimized skip buttons shown.
+		/// <summary>The number of optimized skip buttons shown. <p>Corresponds to "Optimized skip
+		/// button shown" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_OPTIMIZED_SKIP_BUTTON_SHOWN = 234,
-		/// <summary>The number of control engaged views.
+		/// <summary>The number of control engaged views. <p>Corresponds to "Control engaged view" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_CONTROL_ENGAGED_VIEW = 235,
-		/// <summary>The number of optimized engaged views.
+		/// <summary>The number of optimized engaged views. <p>Corresponds to "Optimized engaged
+		/// view" in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_OPTIMIZED_ENGAGED_VIEW = 236,
-		/// <summary>The control view-through rate.
+		/// <summary>The control view-through rate. <p>Corresponds to "Control view-through rate" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_CONTROL_VIEW_THROUGH_RATE = 237,
-		/// <summary>The optimized view-through rate.
+		/// <summary>The optimized view-through rate. <p>Corresponds to "Optimized view-through rate"
+		/// in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_OPTIMIZED_VIEW_THROUGH_RATE = 238,
 		/// <summary>The percentage by which optimized view-through rate is greater than the
 		/// unoptimized view-through rate. This is calculated as (( <a
 		/// href=''>Column#VIDEO_OPTIMIZATION_OPTIMIZED_VIEW_THROUGH_RATE</a>/ <a
 		/// href=''>Column#VIDEO_OPTIMIZATION_CONTROL_VIEW_THROUGH_RATE</a>) - 1) * 100 for
-		/// an ad for which the optimization feature has been enabled.
+		/// an ad for which the optimization feature has been enabled. <p>Corresponds to
+		/// "View-through rate lift" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_VIEW_THROUGH_RATE_LIFT = 239,
-		/// <summary>The total number of impressions viewed on the user's screen.
+		/// <summary>The total number of impressions viewed on the user's screen. <p>Corresponds to
+		/// "Total Active View viewable impressions" in the Ad Manager UI. Compatible with
+		/// the HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS = 240,
 		/// <summary>The total number of impressions that were sampled and measured by active view.
+		/// <p>Corresponds to "Total Active View measurable impressions" in the Ad Manager
+		/// UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS = 241,
 		/// <summary>The percentage of total impressions viewed on the user's screen (out of the
@@ -59450,131 +61602,193 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// </summary>
 		TOTAL_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE = 242,
 		/// <summary>Total number of impressions that were eligible to measure viewability.
+		/// <p>Corresponds to "Total Active View eligible impressions" in the Ad Manager UI.
+		/// Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS = 243,
 		/// <summary>The percentage of total impressions that were measurable by active view (out of
-		/// all the total impressions sampled for active view).
+		/// all the total impressions sampled for active view). <p>Corresponds to "Total
+		/// Active View % measurable impressions" in the Ad Manager UI. Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS_RATE = 244,
 		/// <summary>Active View total average time in seconds that specific impressions are reported
-		/// as being viewable.
+		/// as being viewable. <p>Corresponds to "Total Active View Average Viewable Time
+		/// (seconds)" in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME = 488,
 		/// <summary>The number of impressions delivered by the ad server viewed on the user's
-		/// screen.
+		/// screen. <p>Corresponds to "Ad server Active View viewable impressions" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS = 245,
 		/// <summary>The number of impressions delivered by the ad server that were sampled, and
-		/// measurable by active view.
+		/// measurable by active view. <p>Corresponds to "Ad server Active View measurable
+		/// impressions" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		AD_SERVER_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS = 246,
 		/// <summary>The percentage of impressions delivered by the ad server viewed on the user's
 		/// screen (out of the ad server impressions measurable by active view).
+		/// <p>Corresponds to "Ad server Active View % viewable impressions" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE = 247,
 		/// <summary>Total number of impressions delivered by the ad server that were eligible to
-		/// measure viewability.
+		/// measure viewability. <p>Corresponds to "Ad server Active View eligible
+		/// impressions" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		AD_SERVER_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS = 248,
 		/// <summary>The percentage of impressions delivered by the ad server that were measurable by
 		/// active view ( out of all the ad server impressions sampled for active view).
+		/// <p>Corresponds to "Ad server Active View % measurable impressions" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS_RATE = 249,
-		/// <summary>Active View ad server revenue.
+		/// <summary>Active View ad server revenue. <p>Corresponds to "Ad Server Active View Revenue"
+		/// in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_SERVER_ACTIVE_VIEW_REVENUE = 422,
 		/// <summary>Active View ad server average time in seconds that specific impressions are
-		/// reported as being viewable.
+		/// reported as being viewable. <p>Corresponds to "Ad Server Active View Average
+		/// Viewable Time (seconds)" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		AD_SERVER_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME = 489,
 		/// <summary>The number of impressions delivered by AdSense viewed on the user's screen,
+		/// <p>Corresponds to "AdSense Active View viewable impressions" in the Ad Manager
+		/// UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		ADSENSE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS = 250,
 		/// <summary>The number of impressions delivered by AdSense that were sampled, and measurable
-		/// by active view.
+		/// by active view. <p>Corresponds to "AdSense Active View measurable impressions"
+		/// in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		ADSENSE_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS = 251,
 		/// <summary>The percentage of impressions delivered by AdSense viewed on the user's screen
-		/// (out of AdSense impressions measurable by active view).
+		/// (out of AdSense impressions measurable by active view). <p>Corresponds to
+		/// "AdSense Active View % viewable impressions" in the Ad Manager UI. Compatible
+		/// with the HISTORICAL report type.</p>
 		/// </summary>
 		ADSENSE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE = 252,
 		/// <summary>Total number of impressions delivered by AdSense that were eligible to measure
-		/// viewability.
+		/// viewability. <p>Corresponds to "AdSense Active View eligible impressions" in the
+		/// Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		ADSENSE_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS = 253,
 		/// <summary>The percentage of impressions delivered by AdSense that were measurable by
 		/// active view ( out of all AdSense impressions sampled for active view).
+		/// <p>Corresponds to "AdSense Active View % measurable impressions" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		ADSENSE_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS_RATE = 254,
-		/// <summary>Active View AdSense revenue.
+		/// <summary>Active View AdSense revenue. <p>Corresponds to "AdSense Active View Revenue" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		ADSENSE_ACTIVE_VIEW_REVENUE = 423,
 		/// <summary>Active View AdSense average time in seconds that specific impressions are
-		/// reported as being viewable.
+		/// reported as being viewable. <p>Corresponds to "AdSense Active View Average
+		/// Viewable Time (seconds)" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		ADSENSE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME = 490,
 		/// <summary>The number of impressions delivered by Ad Exchange viewed on the user's screen,
+		/// <p>Corresponds to "Ad Exchange Active View viewable impressions" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS = 255,
 		/// <summary>The number of impressions delivered by Ad Exchange that were sampled, and
-		/// measurable by active view.
+		/// measurable by active view. <p>Corresponds to "Ad Exchange Active View measurable
+		/// impressions" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS = 256,
 		/// <summary>The percentage of impressions delivered by Ad Exchange viewed on the user's
 		/// screen (out of Ad Exchange impressions measurable by active view).
+		/// <p>Corresponds to "Ad Exchange Active View % viewable impressions" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE = 257,
 		/// <summary>Total number of impressions delivered by Ad Exchange that were eligible to
-		/// measure viewability.
+		/// measure viewability. <p>Corresponds to "Ad Exchange Active View eligible
+		/// impressions" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS = 258,
 		/// <summary>The percentage of impressions delivered by Ad Exchange that were measurable by
 		/// active view ( out of all Ad Exchange impressions sampled for active view).
+		/// <p>Corresponds to "Ad Exchange Active View % measurable impressions" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS_RATE = 259,
-		/// <summary>Active View AdExchange revenue.
+		/// <summary>Active View AdExchange revenue. <p>Corresponds to "Ad Exchange Active View
+		/// Revenue" in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_REVENUE = 424,
 		/// <summary>Active View AdExchange average time in seconds that specific impressions are
-		/// reported as being viewable.
+		/// reported as being viewable. <p>Corresponds to "Ad Exchange Active View Average
+		/// Viewable Time (seconds)" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME = 491,
-		/// <summary>Active View total revenue.
+		/// <summary>Active View total revenue. <p>Corresponds to "Total Active View Revenue" in the
+		/// Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_ACTIVE_VIEW_REVENUE = 425,
+		/// <summary>Cost for audience extension ie. cost the publisher had to pay in order to buy
+		/// the inventory. <p>This field is deprecated and will be removed in v201805.</p>
+		/// <p>Compatible with the HISTORICAL report type.</p>
+		/// </summary>
+		AUDIENCE_EXTENSION_COST = 492,
 		/// <summary>Number of view-through conversions.
 		/// </summary>
 		VIEW_THROUGH_CONVERSIONS = 260,
-		/// <summary>Number of view-through conversions per thousand impressions.
+		/// <summary>Number of view-through conversions per thousand impressions. <p>Corresponds to
+		/// "Conversions per thousand impressions" in the Ad Manager UI. Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		CONVERSIONS_PER_THOUSAND_IMPRESSIONS = 261,
-		/// <summary>Number of click-through conversions.
+		/// <summary>Number of click-through conversions. <p>Corresponds to "Click-through
+		/// conversions" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		CLICK_THROUGH_CONVERSIONS = 262,
-		/// <summary>Number of click-through conversions per click.
+		/// <summary>Number of click-through conversions per click. <p>Corresponds to "Conversions
+		/// per click" in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		CONVERSIONS_PER_CLICK = 263,
-		/// <summary>Revenue for view-through conversions.
+		/// <summary>Revenue for view-through conversions. <p>Corresponds to "Advertiser view-through
+		/// sales" in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		VIEW_THROUGH_REVENUE = 264,
-		/// <summary>Revenue for click-through conversions.
+		/// <summary>Revenue for click-through conversions. <p>Corresponds to "Advertiser
+		/// click-through sales" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		CLICK_THROUGH_REVENUE = 265,
-		/// <summary>Total number of conversions.
+		/// <summary>Total number of conversions. <p>Corresponds to "Total conversions" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_CONVERSIONS = 266,
-		/// <summary>Total revenue for conversions.
+		/// <summary>Total revenue for conversions. <p>Corresponds to "Total advertiser sales" in the
+		/// Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		TOTAL_CONVERSION_REVENUE = 267,
 		/// <summary>The number of impressions sent to Ad Exchange / AdSense, regardless of whether
 		/// they won or lost (total number of dynamic allocation impressions).
+		/// <p>Corresponds to "Impressions competing" in the Ad Manager UI. Compatible with
+		/// the HISTORICAL report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_OPPORTUNITY_IMPRESSIONS_COMPETING_TOTAL = 268,
 		/// <summary>The number of unfilled queries that attempted dynamic allocation by Ad Exchange
-		/// / AdSense.
+		/// / AdSense. <p>Corresponds to "Unfilled competing impressions" in the Ad Manager
+		/// UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_OPPORTUNITY_UNFILLED_IMPRESSIONS_COMPETING = 269,
-		/// <summary>The number of Ad Exchange / AdSense and DFP impressions.
+		/// <summary>The number of Ad Exchange / AdSense and Ad Manager impressions. <p>Corresponds
+		/// to "Eligible impressions" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_OPPORTUNITY_ELIGIBLE_IMPRESSIONS_TOTAL = 270,
 		/// <summary>The difference between eligible impressions and competing impressions in dynamic
@@ -59582,77 +61796,110 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// </summary>
 		DYNAMIC_ALLOCATION_OPPORTUNITY_IMPRESSIONS_NOT_COMPETING_TOTAL = 271,
 		/// <summary>The percentage of eligible impressions that are not competing in dynamic
-		/// allocation.
+		/// allocation. <p>Corresponds to "Impressions not competing (%)" in the Ad Manager
+		/// UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_OPPORTUNITY_IMPRESSIONS_NOT_COMPETING_PERCENT_TOTAL = 272,
 		/// <summary>The percent of eligible impressions participating in dynamic allocation.
 		/// </summary>
 		DYNAMIC_ALLOCATION_OPPORTUNITY_SATURATION_RATE_TOTAL = 273,
-		/// <summary>The percent of total dynamic allocation queries that won.
+		/// <summary>The percent of total dynamic allocation queries that won. <p>Corresponds to
+		/// "Dynamic allocation match rate" in the Ad Manager UI. Compatible with the
+		/// HISTORICAL report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_OPPORTUNITY_MATCH_RATE_TOTAL = 274,
 		/// <summary>The contracted net revenue of the <a
-		/// href='ProposalLineItem'>ProposalLineItem</a>.
+		/// href='ProposalLineItem'>ProposalLineItem</a>. <p>Corresponds to "Contracted
+		/// revenue (net)" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SALES.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE = 275,
 		/// <summary>The contracted net revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. See <a
 		/// href='#CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE'>#CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE</a>
+		/// <p>Can correspond to any of the following in the Ad Manager UI: Contracted
+		/// revenue (local), Contracted revenue (net) (local). Compatible with any of the
+		/// following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_LOCAL_CONTRACTED_NET_REVENUE = 276,
 		/// <summary>The contracted gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>, including agency commission.
+		/// <p>Corresponds to "Contracted revenue (gross)" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE = 277,
 		/// <summary>The contracted gross revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>, including agency commission. See
 		/// <a
 		/// href='#CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE'>#CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE</a>
+		/// <p>Corresponds to "Contracted revenue (gross) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_LOCAL_CONTRACTED_GROSS_REVENUE = 278,
 		/// <summary>The value added tax on contracted net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
+		/// <p>Corresponds to "Contracted VAT" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_CONTRACTED_VAT = 279,
 		/// <summary>The value added tax on contracted net revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
 		/// See <a
 		/// href='#CONTRACTED_REVENUE_CONTRACTED_VAT'>#CONTRACTED_REVENUE_CONTRACTED_VAT</a>
+		/// <p>Corresponds to "Contracted VAT (local)" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_LOCAL_CONTRACTED_VAT = 280,
 		/// <summary>The contracted agency commission of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
+		/// <p>Corresponds to "Contracted agency commission" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION = 281,
 		/// <summary>The contracted agency commission in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
 		/// See <a
 		/// href='#CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION'>#CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION</a>
+		/// <p>Corresponds to "Contracted agency commission (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_LOCAL_CONTRACTED_AGENCY_COMMISSION = 282,
 		/// <summary>The contracted impressions of the <a
-		/// href='ProposalLineItem'>ProposalLineItem</a>.
+		/// href='ProposalLineItem'>ProposalLineItem</a>. <p>Corresponds to "Contracted
+		/// impressions" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_CONTRACT_CONTRACTED_IMPRESSIONS = 283,
 		/// <summary>The contracted clicks of the <a href='ProposalLineItem'>ProposalLineItem</a>.
+		/// <p>Corresponds to "Contracted clicks" in the Ad Manager UI. Compatible with any
+		/// of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_CONTRACT_CONTRACTED_CLICKS = 284,
 		/// <summary>The contracted volume of the <a href='ProposalLineItem'>ProposalLineItem</a>.
 		/// Volume represents impressions for rate type CPM, clicks for CPC, and days for
-		/// CPD.
+		/// CPD. <p>Corresponds to "Contracted volume" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_CONTRACT_CONTRACTED_VOLUME = 285,
-		/// <summary>The budget of the <a href='Proposal'>Proposal</a>.
+		/// <summary>The budget of the <a href='Proposal'>Proposal</a>. <p>Corresponds to "Budget" in
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_CONTRACT_BUDGET = 286,
 		/// <summary>The remaining budget of the <a href='Proposal'>Proposal</a>. It is calculated by
-		/// subtracting the contracted net revenue from the budget.
+		/// subtracting the contracted net revenue from the budget. <p>Corresponds to
+		/// "Remaining budget" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_CONTRACT_REMAINING_BUDGET = 287,
 		/// <summary>The buffered impressions of the <a href='ProposalLineItem'>ProposalLineItem</a>.
+		/// <p>Corresponds to "Buffered impressions" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_CONTRACT_BUFFERED_IMPRESSIONS = 288,
 		/// <summary>The buffered clicks of the <a href='ProposalLineItem'>ProposalLineItem</a>.
+		/// <p>Corresponds to "Buffered clicks" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_CONTRACT_BUFFERED_CLICKS = 289,
 		/// <summary>The scheduled impressions of a <a href='ProposalLineItem'>ProposalLineItem</a>.
@@ -59660,6 +61907,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='#SALES_CONTRACT_CONTRACTED_IMPRESSIONS'>#SALES_CONTRACT_CONTRACTED_IMPRESSIONS</a>
 		/// and <a
 		/// href='#SALES_CONTRACT_BUFFERED_IMPRESSIONS'>#SALES_CONTRACT_BUFFERED_IMPRESSIONS</a>.
+		/// <p>Corresponds to "Scheduled impressions" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SCHEDULED_SCHEDULED_IMPRESSIONS = 290,
 		/// <summary>The scheduled clicks of a <a href='ProposalLineItem'>ProposalLineItem</a>. It is
@@ -59667,49 +61916,68 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='#SALES_CONTRACT_CONTRACTED_CLICKS'>#SALES_CONTRACT_CONTRACTED_CLICKS</a>
 		/// and <a
 		/// href='#SALES_CONTRACT_BUFFERED_CLICKS'>#SALES_CONTRACT_BUFFERED_CLICKS</a>.
+		/// <p>Corresponds to "Scheduled clicks" in the Ad Manager UI. Compatible with any
+		/// of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SCHEDULED_SCHEDULED_CLICKS = 291,
 		/// <summary>The scheduled volume of a <a href='ProposalLineItem'>ProposalLineItem</a>. It is
 		/// the sum of <a
 		/// href='#SALES_CONTRACT_CONTRACTED_VOLUME'>#SALES_CONTRACT_CONTRACTED_VOLUME</a>
-		/// and buffered volume.
+		/// and buffered volume. <p>Corresponds to "Scheduled volume" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SCHEDULED_SCHEDULED_VOLUME = 292,
 		/// <summary>The scheduled net revenue of a <a href='ProposalLineItem'>ProposalLineItem</a>.
+		/// <p>Corresponds to "Scheduled revenue (net)" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SCHEDULED_SCHEDULED_NET_REVENUE = 293,
 		/// <summary>The scheduled net revenue in the local currency of a <a
-		/// href='ProposalLineItem'>ProposalLineItem</a>.
+		/// href='ProposalLineItem'>ProposalLineItem</a>. <p>Corresponds to "Scheduled
+		/// revenue (net) (local)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SCHEDULED_LOCAL_SCHEDULED_NET_REVENUE = 294,
 		/// <summary>The scheduled gross revenue of a <a
-		/// href='ProposalLineItem'>ProposalLineItem</a>.
+		/// href='ProposalLineItem'>ProposalLineItem</a>. <p>Corresponds to "Scheduled
+		/// revenue (gross)" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SCHEDULED_SCHEDULED_GROSS_REVENUE = 295,
 		/// <summary>The scheduled gross revenue in the local currency of a <a
-		/// href='ProposalLineItem'>ProposalLineItem</a>.
+		/// href='ProposalLineItem'>ProposalLineItem</a>. <p>Corresponds to "Scheduled
+		/// revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SCHEDULED_LOCAL_SCHEDULED_GROSS_REVENUE = 296,
 		/// <summary>The total budget of the <a href='Proposal'>Proposal</a>. It differs from <a
 		/// href='#SALES_CONTRACT_BUDGET'>#SALES_CONTRACT_BUDGET</a> since it always
-		/// contains the total budget, not the prorated budget.
+		/// contains the total budget, not the prorated budget. <p>Corresponds to "Total
+		/// budget" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_BUDGET = 297,
 		/// <summary>The total remaining budget of the <a href='Proposal'>Proposal</a>. It differs
 		/// from <a href=''>#SALES_CONTRACT_REMAINING_BUDGET</a> since it always contains
-		/// the total remaining budget, not the prorated remaining budget.
+		/// the total remaining budget, not the prorated remaining budget. <p>Corresponds to
+		/// "Total remaining budget" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_REMAINING_BUDGET = 298,
 		/// <summary>The total contracted volume of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href=''>#SALES_CONTRACT_CONTRACTED_VOLUME</a> that the volume is not prorated
-		/// with regard to the date range.
+		/// with regard to the date range. <p>Corresponds to "Total contracted volume" in
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_VOLUME = 299,
 		/// <summary>The total contracted net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href=''>#CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE</a> that the revenue is not
-		/// prorated with regard to the date range.
+		/// prorated with regard to the date range. <p>Corresponds to "Total contracted
+		/// revenue (net)" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE = 300,
 		/// <summary>The total contracted net revenue in the local currency of the <a
@@ -59717,12 +61985,16 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='#CONTRACTED_REVENUE_LOCAL_CONTRACTED_NET_REVENUE'>#CONTRACTED_REVENUE_LOCAL_CONTRACTED_NET_REVENUE</a>
 		/// that the revenue is not prorated with regard to the date range. <p>See <a
 		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE'>#SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE</a></p>
+		/// <p>Corresponds to "Total contracted revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_NET_REVENUE = 301,
 		/// <summary>The total contracted gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href=''>#CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE</a> that the revenue is not
-		/// prorated with regard to the date range.
+		/// prorated with regard to the date range. <p>Corresponds to "Total contracted
+		/// revenue (gross)" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE = 302,
 		/// <summary>The total contracted gross revenue in the local currency of the <a
@@ -59730,12 +62002,16 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='#CONTRACTED_REVENUE_LOCAL_CONTRACTED_GROSS_REVENUE'>#CONTRACTED_REVENUE_LOCAL_CONTRACTED_GROSS_REVENUE</a>
 		/// that the revenue is not prorated with regard to the date range. <p>See <a
 		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE'>#SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE</a></p>
+		/// <p>Corresponds to "Total contracted revenue (gross) (local)" in the Ad Manager
+		/// UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_GROSS_REVENUE = 303,
 		/// <summary>The total contracted agency commission of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href=''>#CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION</a> that the revenue is
-		/// not prorated with regard to the date range.
+		/// not prorated with regard to the date range. <p>Corresponds to "Total contracted
+		/// agency commission" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION = 304,
 		/// <summary>The total contracted agency commission in the local currency of the <a
@@ -59743,29 +62019,40 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='#CONTRACTED_REVENUE_LOCAL_CONTRACTED_AGENCY_COMMISSION'>#CONTRACTED_REVENUE_LOCAL_CONTRACTED_AGENCY_COMMISSION</a>
 		/// that the revenue is not prorated with regard to the date range. <p>See <a
 		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION'>#SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION</a></p>
+		/// <p>Corresponds to "Total contracted agency commission (local)" in the Ad Manager
+		/// UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_AGENCY_COMMISSION = 305,
 		/// <summary>The total net revenue plus its value added tax of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. The revenue is not prorated with
-		/// regard to the date range.
+		/// regard to the date range. <p>Corresponds to "Total contracted revenue with VAT
+		/// (net)" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE_WITH_VAT = 306,
 		/// <summary>The total net revenue plus its value added tax in the local currency of the <a
 		/// href=''>ProposalLineItem</a>. The revenue is not prorated with regard to the
 		/// date range. <p>See <a
 		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_WITH_VAT'>#SALES_TOTAL_TOTAL_CONTRACTED_WITH_VAT</a></p>
+		/// <p>Corresponds to "Total contracted revenue with VAT (net) (local)" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// SALES.</p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_NET_REVENUE_WITH_VAT = 307,
 		/// <summary>The total scheduled volume of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href=''>#SCHEDULED_SCHEDULED_VOLUME</a> that the volume is not prorated with
-		/// regard to the date range.
+		/// regard to the date range. <p>Corresponds to "Total scheduled volume" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// SALES.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_SCHEDULED_VOLUME = 308,
 		/// <summary>The total scheduled net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href=''>#SCHEDULED_SCHEDULED_NET_REVENUE</a> that the revenue is not prorated
-		/// with regard to the date range.
+		/// with regard to the date range. <p>Corresponds to "Total scheduled revenue (net)"
+		/// in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE = 309,
 		/// <summary>The total scheduled net revenue in the local currency of the <a
@@ -59773,12 +62060,16 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='#SCHEDULED_LOCAL_SCHEDULED_NET_REVENUE'>#SCHEDULED_LOCAL_SCHEDULED_NET_REVENUE</a>
 		/// that the revenue is not prorated with regard to the date range. <p>See <a
 		/// href='#SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE'>#SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE</a></p>
+		/// <p>Corresponds to "Total scheduled revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_SCHEDULED_NET_REVENUE = 310,
 		/// <summary>The total scheduled gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href=''>#SCHEDULED_SCHEDULED_GROSS_REVENUE</a> that the revenue is not prorated
-		/// with regard to the date range.
+		/// with regard to the date range. <p>Corresponds to "Total scheduled revenue
+		/// (gross)" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE = 311,
 		/// <summary>The total scheduled gross revenue in the local currency of the <a
@@ -59786,69 +62077,86 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='#SCHEDULED_LOCAL_SCHEDULED_GROSS_REVENUE'>#SCHEDULED_LOCAL_SCHEDULED_GROSS_REVENUE</a>
 		/// that the revenue is not prorated with regard to the date range. <p>See <a
 		/// href='#SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE'>#SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE</a></p>
+		/// <p>Corresponds to "Total scheduled revenue (gross) (local)" in the Ad Manager
+		/// UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_SCHEDULED_GROSS_REVENUE = 312,
 		/// <summary>The unreconciled net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
-		/// href=''>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a> coming from unreconciled DFP
-		/// volume.
+		/// href=''>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a> coming from unreconciled Ad
+		/// Manager volume. <p>Corresponds to "Unreconciled revenue (net)" in the Ad Manager
+		/// UI. Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE = 313,
 		/// <summary>The unreconciled net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> in local currency. It is the
 		/// portion of <a
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE</a>
-		/// coming from unreconciled DFP volume. <p>See <a
+		/// coming from unreconciled Ad Manager volume. <p>See <a
 		/// href='#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE'>#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE</a></p>
+		/// <p>Corresponds to "Unreconciled revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_UNRECONCILED_NET_REVENUE = 314,
 		/// <summary>The unreconciled gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
-		/// href=''>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a> coming from unreconciled DFP
-		/// volume.
+		/// href=''>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a> coming from unreconciled Ad
+		/// Manager volume. <p>Corresponds to "Unreconciled revenue (gross)" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// SALES.</p>
 		/// </summary>
 		UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE = 315,
 		/// <summary>The unreconciled gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> in local currency. It is the
 		/// portion of <a
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE</a>
-		/// coming from unreconciled DFP volume. <p>See <a
+		/// coming from unreconciled Ad manager volume. <p>See <a
 		/// href='#UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE'>#UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE</a></p>
+		/// <p>Corresponds to "Unreconciled revenue (gross) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_UNRECONCILED_GROSS_REVENUE = 316,
 		/// <summary>The forecasted net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
-		/// href=''>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a> coming from forecasted DFP
-		/// volume.
+		/// href=''>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a> coming from forecasted Ad
+		/// Manager volume. <p>Corresponds to "Forecasted revenue (net)" in the Ad Manager
+		/// UI. Compatible with the SALES report type.</p>
 		/// </summary>
 		UNIFIED_REVENUE_FORECASTED_NET_REVENUE = 317,
 		/// <summary>The forecasted net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> in local currency. It is the
 		/// portion of <a
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE</a>
-		/// coming from forecasted DFP volume. <p>See <a
+		/// coming from forecasted Ad Manager volume. <p>See <a
 		/// href='#UNIFIED_REVENUE_FORECASTED_NET_REVENUE'>#UNIFIED_REVENUE_FORECASTED_NET_REVENUE</a></p>
+		/// <p>Corresponds to "Forecasted revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with the SALES report type.</p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_FORECASTED_NET_REVENUE = 318,
 		/// <summary>The forecasted gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
-		/// href=''>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a> coming from forecasted DFP
-		/// volume.
+		/// href=''>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a> coming from forecasted Ad
+		/// Manager volume. <p>Corresponds to "Forecasted revenue (gross)" in the Ad Manager
+		/// UI. Compatible with the SALES report type.</p>
 		/// </summary>
 		UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE = 319,
 		/// <summary>The forecasted gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> in local currency. It is the
 		/// portion of <a
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE</a>
-		/// coming from forecasted DFP volume. <p>See <a
+		/// coming from forecasted Ad Manager volume. <p>See <a
 		/// href='#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE'>#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE</a></p>
+		/// <p>Corresponds to "Forecasted revenue (gross) (local)" in the Ad Manager UI.
+		/// Compatible with the SALES report type.</p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_FORECASTED_GROSS_REVENUE = 320,
 		/// <summary>The unified net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>.
 		/// It is a combination of <a href=''>#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE</a>,
 		/// <a href='#BILLING_BILLABLE_NET_REVENUE'>#BILLING_BILLABLE_NET_REVENUE</a>, and
 		/// <a href=''>#UNIFIED_REVENUE_FORECASTED_NET_REVENUE</a> when query date range
-		/// spans historical delivery and forecasted delivery.
+		/// spans historical delivery and forecasted delivery. <p>Corresponds to "Unified
+		/// revenue (net)" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SALES.</p>
 		/// </summary>
 		UNIFIED_REVENUE_UNIFIED_NET_REVENUE = 321,
 		/// <summary>The unified net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>
@@ -59860,6 +62168,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='#UNIFIED_REVENUE_LOCAL_FORECASTED_NET_REVENUE'>#UNIFIED_REVENUE_LOCAL_FORECASTED_NET_REVENUE</a>
 		/// when query date range spans historical delivery and forecasted delivery. See <a
 		/// href='#UNIFIED_REVENUE_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a>
+		/// <p>Corresponds to "Unified revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE = 322,
 		/// <summary>The unified net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>.
@@ -59869,6 +62179,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// and <a
 		/// href='#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE'>#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE</a>
 		/// when query date range spans historical delivery and forecasted delivery.
+		/// <p>Corresponds to "Unified revenue (gross)" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE = 323,
 		/// <summary>The unified gross revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>
@@ -59880,6 +62192,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='#UNIFIED_REVENUE_LOCAL_FORECASTED_GROSS_REVENUE'>#UNIFIED_REVENUE_LOCAL_FORECASTED_GROSS_REVENUE</a>
 		/// when query date range spans historical delivery and forecasted delivery. See <a
 		/// href='#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a>
+		/// <p>Corresponds to "Unified revenue (gross) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE = 324,
 		/// <summary>The unified agency commission of the <a
@@ -59887,7 +62201,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// unreconciled agency commission, the <a
 		/// href='#BILLING_BILLABLE_AGENCY_COMMISSION'>#BILLING_BILLABLE_AGENCY_COMMISSION</a>,
 		/// and the forecasted agency commission when query date range spans historical
-		/// delivery and forecasted delivery.
+		/// delivery and forecasted delivery. <p>Corresponds to "Unified agency commission"
+		/// in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SALES.</p>
 		/// </summary>
 		UNIFIED_REVENUE_UNIFIED_AGENCY_COMMISSION = 325,
 		/// <summary>The unified agency commission of the <a
@@ -59897,24 +62213,29 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// and the forecasted agency commission when query date range spans historical
 		/// delivery and forecasted delivery. See <a
 		/// href='#UNIFIED_REVENUE_UNIFIED_AGENCY_COMMISSION'>#UNIFIED_REVENUE_UNIFIED_AGENCY_COMMISSION</a>
+		/// <p>Corresponds to "Unified agency commission (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_UNIFIED_AGENCY_COMMISSION = 326,
 		/// <summary>The unreconciled volume of the <a href='ProposalLineItem'>ProposalLineItem</a>
 		/// for each cycle. Volume represents impressions for rate type CPM, clicks for CPC
 		/// and days for CPD. This fact can only be run in proposal or proposal line item
-		/// time zone.
+		/// time zone. <p>Corresponds to "Unreconciled volume" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		UNIFIED_REVENUE_UNRECONCILED_VOLUME = 437,
 		/// <summary>The forecasted volume of the <a href='ProposalLineItem'>ProposalLineItem</a> for
 		/// each cycle. Volume represents impressions for rate type CPM, clicks for CPC and
 		/// days for CPD. This fact can only be run in proposal or proposal line item time
-		/// zone.
+		/// zone. <p>Corresponds to "Forecasted volume" in the Ad Manager UI. Compatible
+		/// with the SALES report type.</p>
 		/// </summary>
 		UNIFIED_REVENUE_FORECASTED_VOLUME = 438,
 		/// <summary>The unified volume of the <a href='ProposalLineItem'>ProposalLineItem</a> for
 		/// each cycle. Volume represents impressions for rate type CPM, clicks for CPC and
 		/// days for CPD. This fact can only be run in proposal or proposal line item time
-		/// zone.
+		/// zone. <p>Corresponds to "Unified volume" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		UNIFIED_REVENUE_UNIFIED_VOLUME = 439,
 		/// <summary>The expected revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>. It
@@ -59922,7 +62243,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='#UNIFIED_REVENUE_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a>
 		/// when the <a href='ProposalLineItem'>ProposalLineItem</a> is sold and <a
 		/// href='#SALES_PIPELINE_PIPELINE_NET_REVENUE'>#SALES_PIPELINE_PIPELINE_NET_REVENUE</a>
-		/// otherwise.
+		/// otherwise. <p>Corresponds to "Expected revenue (net)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		EXPECTED_REVENUE_EXPECTED_NET_REVENUE = 327,
 		/// <summary>The expected revenue of the <a href='ProposalLineItem'>ProposalLineItem</a> in
@@ -59932,13 +62254,17 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='#SALES_PIPELINE_LOCAL_PIPELINE_NET_REVENUE'>#SALES_PIPELINE_LOCAL_PIPELINE_NET_REVENUE</a>
 		/// otherwise. <p>See <a
 		/// href='#EXPECTED_REVENUE_EXPECTED_NET_REVENUE'>#EXPECTED_REVENUE_EXPECTED_NET_REVENUE</a></p>
+		/// <p>Corresponds to "Expected revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		EXPECTED_REVENUE_LOCAL_EXPECTED_NET_REVENUE = 328,
 		/// <summary>The expected gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is equivalent to <a
 		/// href=''>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a> when the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> is sold and <a
-		/// href=''>#SALES_PIPELINE_PIPELINE_GROSS_REVENUE</a> otherwise.
+		/// href=''>#SALES_PIPELINE_PIPELINE_GROSS_REVENUE</a> otherwise. <p>Corresponds to
+		/// "Expected revenue (gross)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE = 329,
 		/// <summary>The expected gross revenue of the <a
@@ -59949,6 +62275,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='#SALES_PIPELINE_LOCAL_PIPELINE_GROSS_REVENUE'>#SALES_PIPELINE_LOCAL_PIPELINE_GROSS_REVENUE</a>
 		/// otherwise. <p>See <a
 		/// href='#EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE'>#EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE</a></p>
+		/// <p>Corresponds to "Expected revenue (gross) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		EXPECTED_REVENUE_LOCAL_EXPECTED_GROSS_REVENUE = 330,
 		/// <summary>The pipeline net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>.
@@ -59958,7 +62286,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='Proposal#probabilityOfClose'>Proposal#probabilityOfClose</a> by the
 		/// contracted revenue when inventory is not reserved; otherwise it is calcualted by
 		/// multiplying <a href=''>Proposal#probabilityOfClose</a> by the forecasted
-		/// revenue.
+		/// revenue. <p>Corresponds to "Pipeline revenue (net)" in the Ad Manager UI.
+		/// Compatible with the SALES report type.</p>
 		/// </summary>
 		SALES_PIPELINE_PIPELINE_NET_REVENUE = 331,
 		/// <summary>The pipeline net revenue in the local currency of the <a
@@ -59971,6 +62300,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='Proposal#probabilityOfClose'>Proposal#probabilityOfClose</a> by the
 		/// forecasted revenue. See <a
 		/// href='#SALES_PIPELINE_PIPELINE_NET_REVENUE'>#SALES_PIPELINE_PIPELINE_NET_REVENUE</a>
+		/// <p>Corresponds to "Pipeline revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with the SALES report type.</p>
 		/// </summary>
 		SALES_PIPELINE_LOCAL_PIPELINE_NET_REVENUE = 332,
 		/// <summary>The pipeline gross revenue of the <a
@@ -59981,7 +62312,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// contracted revenue including agency commission when inventory is not reserved;
 		/// otherwise it is calcualted by multiplying <a
 		/// href='Proposal#probabilityOfClose'>Proposal#probabilityOfClose</a> by the
-		/// forecasted revenue including agency commission.
+		/// forecasted revenue including agency commission. <p>Corresponds to "Pipeline
+		/// revenue (gross)" in the Ad Manager UI. Compatible with the SALES report
+		/// type.</p>
 		/// </summary>
 		SALES_PIPELINE_PIPELINE_GROSS_REVENUE = 333,
 		/// <summary>The pipeline gross revenue in the local currency of the <a
@@ -59994,13 +62327,16 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='Proposal#probabilityOfClose'>Proposal#probabilityOfClose</a> by the
 		/// forecasted revenue including agency commission. See <a
 		/// href='#SALES_PIPELINE_PIPELINE_GROSS_REVENUE'>#SALES_PIPELINE_PIPELINE_GROSS_REVENUE</a>
+		/// <p>Corresponds to "Pipeline revenue (gross) (local)" in the Ad Manager UI.
+		/// Compatible with the SALES report type.</p>
 		/// </summary>
 		SALES_PIPELINE_LOCAL_PIPELINE_GROSS_REVENUE = 334,
 		/// <summary>The pipeline agency commission of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. There is no revenue for sold <a
 		/// href='ProposalLineItem'>proposal line items</a>. For unsold <a
 		/// href='ProposalLineItem'>proposal line items</a>, it is calculated against gross
-		/// pipeline revenue.
+		/// pipeline revenue. <p>Corresponds to "Pipeline agency commission" in the Ad
+		/// Manager UI. Compatible with the SALES report type.</p>
 		/// </summary>
 		SALES_PIPELINE_PIPELINE_AGENCY_COMMISSION = 335,
 		/// <summary>The pipeline agency commission in the local currency of the <a
@@ -60010,62 +62346,90 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// pipeline revenue in local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. See <a
 		/// href='#SALES_PIPELINE_PIPELINE_AGENCY_COMMISSION'>#SALES_PIPELINE_PIPELINE_AGENCY_COMMISSION</a>
+		/// <p>Corresponds to "Pipeline agency commission (local)" in the Ad Manager UI.
+		/// Compatible with the SALES report type.</p>
 		/// </summary>
 		SALES_PIPELINE_LOCAL_PIPELINE_AGENCY_COMMISSION = 336,
-		/// <summary>The DFP volume of the <a href='ProposalLineItem'>ProposalLineItem</a>, which is
-		/// used for reconciliation. Volume represents impressions for rate type CPM, clicks
-		/// for CPC and days for CPD.
+		/// <summary>The Ad Manager volume of the <a href='ProposalLineItem'>ProposalLineItem</a>,
+		/// which is used for reconciliation. Volume represents impressions for rate type
+		/// CPM, clicks for CPC and days for CPD. <p>Corresponds to "DFP volume" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// SALES.</p>
 		/// </summary>
 		RECONCILIATION_DFP_VOLUME = 339,
 		/// <summary>The third party volume of the <a href='ProposalLineItem'>ProposalLineItem</a>,
 		/// which is used for reconciliation. Volume represents impressions for rate type
-		/// CPM, clicks for CPC and days for CPD.
+		/// CPM, clicks for CPC and days for CPD. <p>Corresponds to "Third-party volume" in
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SALES.</p>
 		/// </summary>
 		RECONCILIATION_THIRD_PARTY_VOLUME = 340,
 		/// <summary>The reconciled volume of the <a href='ProposalLineItem'>ProposalLineItem</a>,
 		/// which is used for reconciliation. Volume represents impressions for rate type
-		/// CPM, clicks for CPC and days for CPD.
+		/// CPM, clicks for CPC and days for CPD. <p>Corresponds to "Reconciled volume" in
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SALES.</p>
 		/// </summary>
 		RECONCILIATION_RECONCILED_VOLUME = 341,
-		/// <summary>The discrepancy percentage between DFP volume and third party volume.
+		/// <summary>The discrepancy percentage between Ad Manager volume and third party volume.
+		/// <p>Corresponds to "Discrepancy (%)" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		RECONCILIATION_DISCREPANCY_PERCENTAGE = 426,
-		/// <summary>The reconciled revenue of the <a href='LineItem'>LineItem</a>.
+		/// <summary>The reconciled revenue of the <a href='LineItem'>LineItem</a>. <p>Corresponds to
+		/// "Reconciled revenue" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		RECONCILIATION_RECONCILED_REVENUE = 343,
-		/// <summary>The discrepancy between DFP impressions and third party impressions.
+		/// <summary>The discrepancy between Ad Manager impressions and third party impressions.
+		/// <p>Corresponds to "Impression discrepancy" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		RECONCILIATION_IMPRESSION_DISCREPANCY = 344,
-		/// <summary>The discrepancy between DFP clicks and third party clicks.
+		/// <summary>The discrepancy between Ad Manager clicks and third party clicks. <p>Corresponds
+		/// to "Click discrepancy" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		RECONCILIATION_CLICK_DISCREPANCY = 345,
-		/// <summary>The discrepancy between DFP revenue and third party revenue.
+		/// <summary>The discrepancy between Ad Manager revenue and third party revenue.
+		/// <p>Corresponds to "Revenue discrepancy" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		RECONCILIATION_REVENUE_DISCREPANCY = 346,
 		/// <summary>The billable net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>.
 		/// It is calculated from reconciled volume and rate, with cap applied.
+		/// <p>Corresponds to "Billable revenue (net)" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_BILLABLE_NET_REVENUE = 347,
 		/// <summary>The billable net revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is calculated from reconciled
 		/// volume and rate, with cap applied. See <a
 		/// href='#BILLING_BILLABLE_NET_REVENUE'>#BILLING_BILLABLE_NET_REVENUE</a>
+		/// <p>Corresponds to "Billable revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_NET_REVENUE = 348,
 		/// <summary>The billable gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is calculated from reconciled
 		/// volume and rate, with cap applied, and including agency commission.
+		/// <p>Corresponds to "Billable revenue (gross)" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_BILLABLE_GROSS_REVENUE = 349,
 		/// <summary>The billable gross revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is calculated from reconciled
 		/// volume and rate, with cap applied, and including agency commission. See <a
 		/// href='#BILLING_BILLABLE_GROSS_REVENUE'>#BILLING_BILLABLE_GROSS_REVENUE</a>
+		/// <p>Corresponds to "Billable revenue (gross) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_GROSS_REVENUE = 350,
 		/// <summary>The billable net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>
 		/// before manual adjustment. It is calculated from reconciled volume and rate, with
-		/// cap applied, before manual adjustment.
+		/// cap applied, before manual adjustment. <p>Corresponds to "Billable revenue
+		/// before manual adjustment (net)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT = 351,
 		/// <summary>The billable net revenue in local currency of the <a
@@ -60073,12 +62437,17 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// calculated from reconciled volume and rate, with cap applied, before manual
 		/// adjustment. <p>See <a
 		/// href='#BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT'>#BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT</a></p>
+		/// <p>Corresponds to "Billable revenue before manual adjustment (net) (local)" in
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT = 352,
 		/// <summary>The billable gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> before manual adjustment. It is
 		/// calculated from reconciled volume and rate, with cap applied, before manual
-		/// adjustment.
+		/// adjustment. <p>Corresponds to "Billable revenue before manual adjustment
+		/// (gross)" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT = 353,
 		/// <summary>The billable net revenue in local currency of the <a
@@ -60086,195 +62455,266 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// calculated from reconciled volume and rate, with cap applied, before manual
 		/// adjustment. <p>See <a
 		/// href='#BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT'>#BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT</a></p>
+		/// <p>Corresponds to "Billable revenue before manual adjustment (gross) (local)" in
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT = 354,
 		/// <summary>The value added tax on billable net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href=''>Proposal</a>.
+		/// <p>Corresponds to "Billable VAT" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_BILLABLE_VAT = 355,
 		/// <summary>The value added tax on billable net revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
-		/// See <a href='#BILLING_BILLABLE_VAT'>#BILLING_BILLABLE_VAT</a>
+		/// See <a href='#BILLING_BILLABLE_VAT'>#BILLING_BILLABLE_VAT</a> <p>Corresponds to
+		/// "Billable VAT (local)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_VAT = 356,
 		/// <summary>The billable agency commission of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
+		/// <p>Corresponds to "Billable agency commission" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_BILLABLE_AGENCY_COMMISSION = 357,
 		/// <summary>The billable agency commission in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
 		/// See <a
 		/// href='#BILLING_BILLABLE_AGENCY_COMMISSION'>#BILLING_BILLABLE_AGENCY_COMMISSION</a>
+		/// <p>Corresponds to "Billable agency commission (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_AGENCY_COMMISSION = 358,
 		/// <summary>The cap quantity of the <a href='ProposalLineItem'>ProposalLineItem</a> for each
 		/// cycle. Quantity represents impressions for rate type CPM, clicks for CPC and
-		/// days for CPD.
+		/// days for CPD. <p>Corresponds to "Cap quantity" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_CAP_QUANTITY = 359,
 		/// <summary>The billable volume of the <a href='ProposalLineItem'>ProposalLineItem</a> for
 		/// each cycle. Billable volumes are calculated by applying cap quantity to
 		/// reconciled volumes. Volume represents impressions for rate type CPM, clicks for
-		/// CPC and days for CPD.
+		/// CPC and days for CPD. <p>Corresponds to "Billable volume" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_BILLABLE_VOLUME = 360,
 		/// <summary>The delivery rollover volume of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> from previous cycle. Volume
 		/// represents impressions for rate type CPM, clicks for CPC and days for CPD.
+		/// <p>Corresponds to "Delivery rollover" in the Ad Manager UI. Compatible with any
+		/// of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_DELIVERY_ROLLOVER = 427,
 		/// <summary>The CPM calcuated by <a
 		/// href='#BILLING_BILLABLE_NET_REVENUE'>#BILLING_BILLABLE_NET_REVENUE</a> and <a
-		/// href='#AD_SERVER_IMPRESSIONS'>#AD_SERVER_IMPRESSIONS</a>.
+		/// href='#AD_SERVER_IMPRESSIONS'>#AD_SERVER_IMPRESSIONS</a>. <p>Corresponds to
+		/// "Realized CPM" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_REALIZED_CPM = 362,
 		/// <summary>The rate calcuated by <a
-		/// href='#BILLING_BILLABLE_NET_REVENUE'>#BILLING_BILLABLE_NET_REVENUE</a> and DFP
-		/// volume.
+		/// href='#BILLING_BILLABLE_NET_REVENUE'>#BILLING_BILLABLE_NET_REVENUE</a> and Ad
+		/// Manager volume. <p>Corresponds to "Realized rate" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		BILLING_REALIZED_RATE = 363,
 		/// <summary>The contracted net overall discount of the <a
-		/// href='ProposalLineItem'>ProposalLineItem</a>.
+		/// href='ProposalLineItem'>ProposalLineItem</a>. <p>Corresponds to "Contracted
+		/// overall discount (net)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		DISCOUNTS_BREAKDOWN_CONTRACTED_NET_OVERALL_DISCOUNT = 364,
 		/// <summary>The billable net overall discount of the <a
-		/// href='ProposalLineItem'>ProposalLineItem</a>.
+		/// href='ProposalLineItem'>ProposalLineItem</a>. <p>Corresponds to "Billable
+		/// overall discount (net)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		DISCOUNTS_BREAKDOWN_BILLABLE_NET_OVERALL_DISCOUNT = 365,
 		/// <summary>The contracted non-billable (net) of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. The non-billable means revenue
-		/// that marked as make good, added value or barter.
+		/// that marked as make good, added value or barter. <p>Corresponds to "Contracted
+		/// non-billable (net)" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SALES.</p>
 		/// </summary>
 		DISCOUNTS_BREAKDOWN_CONTRACTED_NET_NON_BILLABLE = 374,
-		/// <summary>The number of invoiced impressions.
+		/// <summary>The number of invoiced impressions. <p>Corresponds to "Invoiced impressions" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		INVOICED_IMPRESSIONS = 379,
-		/// <summary>The number of invoiced unfilled impressions.
+		/// <summary>The number of invoiced unfilled impressions. <p>Corresponds to "Invoiced
+		/// unfilled impressions" in the Ad Manager UI. Compatible with the HISTORICAL
+		/// report type.</p>
 		/// </summary>
 		INVOICED_UNFILLED_IMPRESSIONS = 380,
 		/// <summary>The total number of impressions tracked for Nielsen Digital Ad Ratings
-		/// measurement.
+		/// measurement. <p>Corresponds to "Impressions" in the Ad Manager UI. Compatible
+		/// with the REACH report type.</p>
 		/// </summary>
 		NIELSEN_IMPRESSIONS = 400,
 		/// <summary>The total number of impressions for in-target demographic tracked for Nielsen
-		/// Digital Ad Ratings measurement.
+		/// Digital Ad Ratings measurement. <p>Corresponds to "In-target impressions" in the
+		/// Ad Manager UI. Compatible with the REACH report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_IMPRESSIONS = 411,
-		/// <summary>The population in the demographic.
+		/// <summary>The population in the demographic. <p>Corresponds to "Population base" in the Ad
+		/// Manager UI. Compatible with the REACH report type.</p>
 		/// </summary>
 		NIELSEN_POPULATION_BASE = 401,
-		/// <summary>The total population for all in-target demographics.
+		/// <summary>The total population for all in-target demographics. <p>Compatible with the
+		/// REACH report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_POPULATION_BASE = 412,
 		/// <summary>The total number of different people within the selected demographic who were
-		/// reached.
+		/// reached. <p>Corresponds to "Unique audience" in the Ad Manager UI. Compatible
+		/// with the REACH report type.</p>
 		/// </summary>
 		NIELSEN_UNIQUE_AUDIENCE = 402,
 		/// <summary>The total number of different people within all in-target demographics who were
-		/// reached.
+		/// reached. <p>Compatible with the REACH report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_UNIQUE_AUDIENCE = 413,
 		/// <summary>The unique audience reached as a percentage of the population base.
+		/// <p>Corresponds to "% audience reach" in the Ad Manager UI. Compatible with the
+		/// REACH report type.</p>
 		/// </summary>
 		NIELSEN_PERCENT_AUDIENCE_REACH = 403,
 		/// <summary>The unique audience reached as a percentage of the population base for all
-		/// in-target demographics.
+		/// in-target demographics. <p>Compatible with the REACH report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_PERCENT_AUDIENCE_REACH = 414,
 		/// <summary>The average number of times that a person within the target audience sees an
-		/// advertisement.
+		/// advertisement. <p>Corresponds to "Average frequency" in the Ad Manager UI.
+		/// Compatible with the REACH report type.</p>
 		/// </summary>
 		NIELSEN_AVERAGE_FREQUENCY = 404,
 		/// <summary>The average number of times that a person within the target audience sees an
-		/// advertisement for all in-target demographics.
+		/// advertisement for all in-target demographics. <p>Compatible with the REACH
+		/// report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_AVERAGE_FREQUENCY = 415,
 		/// <summary>The unit of audience volume, which is based on the percentage of the reached
-		/// target audience population multiplied by the average frequency.
+		/// target audience population multiplied by the average frequency. <p>Corresponds
+		/// to "Gross rating points" in the Ad Manager UI. Compatible with the REACH report
+		/// type.</p>
 		/// </summary>
 		NIELSEN_GROSS_RATING_POINTS = 405,
 		/// <summary>The unit of audience volume, which is based on the percentage of the reached
 		/// target audience population multiplied by the average frequency, for all
-		/// in-target demographics.
+		/// in-target demographics. <p>Compatible with the REACH report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_GROSS_RATING_POINTS = 416,
-		/// <summary>The share of impressions that reached the target demographic.
+		/// <summary>The share of impressions that reached the target demographic. <p>Corresponds to
+		/// "% impression share" in the Ad Manager UI. Compatible with the REACH report
+		/// type.</p>
 		/// </summary>
 		NIELSEN_PERCENT_IMPRESSIONS_SHARE = 406,
-		/// <summary>The share of impressions that reached all in-target demographics.
+		/// <summary>The share of impressions that reached all in-target demographics. <p>Corresponds
+		/// to "In-target % impression share" in the Ad Manager UI. Compatible with the
+		/// REACH report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_PERCENT_IMPRESSIONS_SHARE = 417,
 		/// <summary>The share of the total population represented by the population base.
+		/// <p>Corresponds to "% population share" in the Ad Manager UI. Compatible with the
+		/// REACH report type.</p>
 		/// </summary>
 		NIELSEN_PERCENT_POPULATION_SHARE = 407,
 		/// <summary>The share of the total population for all in-target demographics represented by
-		/// the population base.
+		/// the population base. <p>Compatible with the REACH report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_PERCENT_POPULATION_SHARE = 418,
-		/// <summary>The share of the unique audience in the demographic.
+		/// <summary>The share of the unique audience in the demographic. <p>Corresponds to "%
+		/// audience share" in the Ad Manager UI. Compatible with the REACH report type.</p>
 		/// </summary>
 		NIELSEN_PERCENT_AUDIENCE_SHARE = 408,
-		/// <summary>The share of the unique audience for all in-target demographics.
+		/// <summary>The share of the unique audience for all in-target demographics. <p>Compatible
+		/// with the REACH report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_PERCENT_AUDIENCE_SHARE = 419,
 		/// <summary>The relative unique audience in the demographic compared with its share of the
-		/// overall population.
+		/// overall population. <p>Corresponds to "Audience index" in the Ad Manager UI.
+		/// Compatible with the REACH report type.</p>
 		/// </summary>
 		NIELSEN_AUDIENCE_INDEX = 409,
 		/// <summary>The relative unique audience for all in-target demographics compared with its
-		/// share of the overall population.
+		/// share of the overall population. <p>Compatible with the REACH report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_AUDIENCE_INDEX = 420,
 		/// <summary>The relative impressions per person in the demographic compared with the
-		/// impressions per person for the overall population.
+		/// impressions per person for the overall population. <p>Corresponds to
+		/// "Impressions index" in the Ad Manager UI. Compatible with the REACH report
+		/// type.</p>
 		/// </summary>
 		NIELSEN_IMPRESSIONS_INDEX = 410,
 		/// <summary>The relative impressions per person for all in-target demographics compared with
-		/// the impressions per person for the overall population.
+		/// the impressions per person for the overall population. <p>Compatible with the
+		/// REACH report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_IMPRESSIONS_INDEX = 421,
-		/// <summary>The host impressions in the partner management.
+		/// <summary>The host impressions in the partner management. <p>Corresponds to "Host
+		/// impressions" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_HOST_IMPRESSIONS = 392,
-		/// <summary>The host clicks in the partner management.
+		/// <summary>The host clicks in the partner management. <p>Corresponds to "Host clicks" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_HOST_CLICKS = 393,
-		/// <summary>The host CTR in the partner management.
+		/// <summary>The host CTR in the partner management. <p>Corresponds to "Host CTR" in the Ad
+		/// Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_HOST_CTR = 394,
-		/// <summary>The unfilled impressions in the partner management.
+		/// <summary>The unfilled impressions in the partner management. <p>Corresponds to "Unfilled
+		/// impressions" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, PARTNER_FINANCE.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_UNFILLED_IMPRESSIONS = 399,
-		/// <summary>The partner impressions in the partner management.
+		/// <summary>The partner impressions in the partner management. <p>Corresponds to "Partner
+		/// impressions" in the Ad Manager UI. Compatible with the HISTORICAL report
+		/// type.</p>
 		/// </summary>
-		PARTNER_MANAGEMENT_PARTNER_IMPRESSIONS = 492,
-		/// <summary>The partner clicks in the partner management.
+		PARTNER_MANAGEMENT_PARTNER_IMPRESSIONS = 493,
+		/// <summary>The partner clicks in the partner management. <p>Corresponds to "Partner clicks"
+		/// in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
-		PARTNER_MANAGEMENT_PARTNER_CLICKS = 493,
-		/// <summary>The partner CTR in the partner management.
+		PARTNER_MANAGEMENT_PARTNER_CLICKS = 494,
+		/// <summary>The partner CTR in the partner management. <p>Corresponds to "Partner CTR" in
+		/// the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
-		PARTNER_MANAGEMENT_PARTNER_CTR = 494,
-		/// <summary>The gross revenue in the partner management.
+		PARTNER_MANAGEMENT_PARTNER_CTR = 495,
+		/// <summary>The gross revenue in the partner management. <p>Corresponds to "Gross revenue"
+		/// in the Ad Manager UI. Compatible with the HISTORICAL report type.</p>
 		/// </summary>
-		PARTNER_MANAGEMENT_GROSS_REVENUE = 495,
-		/// <summary>Monthly host impressions for partner finance reports.
+		PARTNER_MANAGEMENT_GROSS_REVENUE = 496,
+		/// <summary>Monthly host impressions for partner finance reports. <p>Corresponds to "Host
+		/// impressions" in the Ad Manager UI. Compatible with the PARTNER_FINANCE report
+		/// type.</p>
 		/// </summary>
-		PARTNER_FINANCE_HOST_IMPRESSIONS = 496,
-		/// <summary>Monthly host revenue for partner finance reports.
+		PARTNER_FINANCE_HOST_IMPRESSIONS = 497,
+		/// <summary>Monthly host revenue for partner finance reports. <p>Corresponds to "Host
+		/// revenue" in the Ad Manager UI. Compatible with the PARTNER_FINANCE report
+		/// type.</p>
 		/// </summary>
-		PARTNER_FINANCE_HOST_REVENUE = 497,
-		/// <summary>Monthly host eCPM for partner finance reports.
+		PARTNER_FINANCE_HOST_REVENUE = 498,
+		/// <summary>Monthly host eCPM for partner finance reports. <p>Corresponds to "Host eCPM" in
+		/// the Ad Manager UI. Compatible with the PARTNER_FINANCE report type.</p>
 		/// </summary>
-		PARTNER_FINANCE_HOST_ECPM = 498,
-		/// <summary>Monthly partner revenue for partner finance reports.
+		PARTNER_FINANCE_HOST_ECPM = 499,
+		/// <summary>Monthly partner revenue for partner finance reports. <p>Corresponds to "Partner
+		/// revenue" in the Ad Manager UI. Compatible with the PARTNER_FINANCE report
+		/// type.</p>
 		/// </summary>
-		PARTNER_FINANCE_PARTNER_REVENUE = 499,
-		/// <summary>Monthly partner eCPM for partner finance reports.
+		PARTNER_FINANCE_PARTNER_REVENUE = 500,
+		/// <summary>Monthly partner eCPM for partner finance reports. <p>Corresponds to "Partner
+		/// eCPM" in the Ad Manager UI. Compatible with the PARTNER_FINANCE report type.</p>
 		/// </summary>
-		PARTNER_FINANCE_PARTNER_ECPM = 500,
-		/// <summary>Monthly gross revenue for partner finance reports.
+		PARTNER_FINANCE_PARTNER_ECPM = 501,
+		/// <summary>Monthly gross revenue for partner finance reports. <p>Corresponds to "Gross
+		/// revenue" in the Ad Manager UI. Compatible with the PARTNER_FINANCE report
+		/// type.</p>
 		/// </summary>
-		PARTNER_FINANCE_GROSS_REVENUE = 501,
+		PARTNER_FINANCE_GROSS_REVENUE = 502,
 	}
 
 
@@ -60293,18 +62733,23 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <summary>Represents <a
 		/// href='LineItem#effectiveAppliedLabels'>LineItem#effectiveAppliedLabels</a> as a
 		/// comma separated list of <a href='Label#name'>Label#name</a> for <a
-		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>.
+		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
+		/// "Line item labels" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		LINE_ITEM_LABELS = 0,
 		/// <summary>Represents <a
 		/// href='LineItem#effectiveAppliedLabels'>LineItem#effectiveAppliedLabels</a> as a
 		/// comma separated list of <a href='Label#id'>Label#id</a> for <a
-		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>.
+		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Compatible with
+		/// any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		LINE_ITEM_LABEL_IDS = 1,
 		/// <summary>Generated as <code>true</code> for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a> which is eligible
 		/// for optimization, <code>false</code> otherwise. Can be used for filtering.
+		/// <p>Corresponds to "Optimizable" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		LINE_ITEM_OPTIMIZABLE = 2,
 		/// <summary>Indicates the progress made for the delivery of the <a
@@ -60317,11 +62762,16 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='LineItem'>LineItem</a> is on track to underdeliver.</td> </tr> <tr>
 		/// <td>N/A</td> <td>The <a href='LineItem'>LineItem</a> does not have any quantity
 		/// goals, or there is insufficient information about the <a
-		/// href='LineItem'>LineItem</a>.</td> </tr> </table>
+		/// href='LineItem'>LineItem</a>.</td> </tr> </table> <p>Corresponds to "Delivery
+		/// Indicator" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		LINE_ITEM_DELIVERY_INDICATOR = 139,
 		/// <summary>Represents <a href='LineItem#deliveryRateType'>LineItem#deliveryRateType</a> for
-		/// <a href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>.
+		/// <a href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds
+		/// to "Delivery pacing" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		LINE_ITEM_DELIVERY_PACING = 3,
 		/// <summary>Represents <a href='LineItem#frequencyCaps'>LineItem#frequencyCaps</a> as a
@@ -60330,394 +62780,571 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// per/every <a href='FrequencyCap#numTimeUnits'>FrequencyCap#numTimeUnits</a> <a
 		/// href='FrequencyCap#timeUnit'>FrequencyCap#timeUnit</a>" (e.g. "10 impressions
 		/// every day,500 impressions per lifetime") for <a
-		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>.
+		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
+		/// "Frequency cap" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		LINE_ITEM_FREQUENCY_CAP = 4,
 		/// <summary>Represents the monthly reconciliation status of the line item for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a> and <a
-		/// href='Dimension#MONTH_YEAR'>Dimension#MONTH_YEAR</a>.
+		/// href='Dimension#MONTH_YEAR'>Dimension#MONTH_YEAR</a>. <p>Corresponds to "Line
+		/// item reconciliation status" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		LINE_ITEM_RECONCILIATION_STATUS = 119,
 		/// <summary>Represents the monthly last reconciliation date time of the line item for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a> and <a
-		/// href='Dimension#MONTH_YEAR'>Dimension#MONTH_YEAR</a>.
+		/// href='Dimension#MONTH_YEAR'>Dimension#MONTH_YEAR</a>. <p>Corresponds to "Line
+		/// item last reconciliation time" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		LINE_ITEM_LAST_RECONCILIATION_DATE_TIME = 120,
 		/// <summary>Represents <a href='Company#externalId'>Company#externalId</a> for <a
-		/// href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>.
+		/// href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>. <p>Corresponds
+		/// to "External advertiser ID" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ADVERTISER_EXTERNAL_ID = 5,
 		/// <summary>Represents <a href='Company#type'>Company#type</a> for <a
 		/// href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>. Can be used for
-		/// filtering.
+		/// filtering. <p>Corresponds to "Advertiser type" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES,
+		/// DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		ADVERTISER_TYPE = 121,
 		/// <summary>Represents <a href='Company#creditStatus'>Company#creditStatus</a> for <a
 		/// href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>. Can be used for
-		/// filtering.
+		/// filtering. <p>Corresponds to "Advertiser credit status" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SELL_THROUGH,
+		/// REACH, SALES, DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		ADVERTISER_CREDIT_STATUS = 122,
 		/// <summary>Represents name and email address in the form of name(email) of primary contact
-		/// for <a href=''>Dimension#ADVERTISER_NAME</a>.
+		/// for <a href=''>Dimension#ADVERTISER_NAME</a>. <p>Corresponds to "Advertiser
+		/// primary contact" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ADVERTISER_PRIMARY_CONTACT = 6,
 		/// <summary>Represents the start date (in YYYY-MM-DD format) for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. Can be used for filtering.
+		/// <p>Corresponds to "Order start date" in the Ad Manager UI. Compatible with any
+		/// of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES,
+		/// DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		ORDER_START_DATE_TIME = 7,
 		/// <summary>Represents the end date (in YYYY-MM-DD format) for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. Can be used for filtering.
+		/// <p>Corresponds to "Order end date" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES,
+		/// DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		ORDER_END_DATE_TIME = 8,
 		/// <summary>Represents <a href='Order#externalOrderId'>Order#externalOrderId</a> for <a
-		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>.
+		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to
+		/// "External order ID" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ORDER_EXTERNAL_ID = 9,
 		/// <summary>Represents <a href='Order#poNumber'>Order#poNumber</a> for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. Can be used for filtering.
+		/// <p>Corresponds to "Order PO number" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES,
+		/// DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		ORDER_PO_NUMBER = 10,
 		/// <summary>Represents <a href='Order#orderIsProgrammatic'>Order#orderIsProgrammatic</a> for
 		/// <a href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. Can be used for
-		/// filtering.
+		/// filtering. <p>Corresponds to "Programmatic order" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ORDER_IS_PROGRAMMATIC = 11,
 		/// <summary>Represents the name of <a href='Order#agencyId'>Order#agencyId</a> for <a
-		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>.
+		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to "Agency"
+		/// in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ORDER_AGENCY = 12,
 		/// <summary>Represents <a href='Order#agencyId'>Order#agencyId</a> for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. Can be used for filtering.
+		/// <p>Corresponds to "Agency ID" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ORDER_AGENCY_ID = 13,
 		/// <summary>Represents <a
 		/// href='Order#effectiveAppliedLabels'>Order#effectiveAppliedLabels</a> as a comma
 		/// separated list of <a href='Label#name'>Label#name</a> for <a
-		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>.
+		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to "Order
+		/// labels" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ORDER_LABELS = 14,
 		/// <summary>Represents <a
 		/// href='Order#effectiveAppliedLabels'>Order#effectiveAppliedLabels</a> as a comma
 		/// separated list of <a href='Label#id'>Label#id</a> for <a
-		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>.
+		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Compatible with any of
+		/// the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ORDER_LABEL_IDS = 15,
 		/// <summary>The name and email address in the form of name(email) of the trafficker for <a
-		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>
+		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a> <p>Corresponds to
+		/// "Trafficker" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ORDER_TRAFFICKER = 16,
 		/// <summary>Represents <a href='Order#traffickerId'>Order#traffickerId</a> for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. Can be used for filtering.
+		/// <p>Compatible with any of the following report types: HISTORICAL, REACH,
+		/// SALES.</p>
 		/// </summary>
 		ORDER_TRAFFICKER_ID = 17,
 		/// <summary>The names and email addresses as a comma separated list of name(email) of the <a
 		/// href='Order#secondaryTraffickerIds'>Order#secondaryTraffickerIds</a> for <a
-		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>.
+		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to
+		/// "Secondary traffickers" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ORDER_SECONDARY_TRAFFICKERS = 18,
 		/// <summary>The name and email address in the form of name(email) of the <a
 		/// href='Order#salespersonId'>Order#salespersonId</a> for <a
-		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>.
+		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to
+		/// "Salesperson" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ORDER_SALESPERSON = 19,
 		/// <summary>The names and email addresses as a comma separated list of name(email) of the <a
 		/// href='Order#secondarySalespersonIds'>Order#secondarySalespersonIds</a> for <a
-		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>.
+		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to
+		/// "Secondary salespeople" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ORDER_SECONDARY_SALESPEOPLE = 20,
 		/// <summary>The total number of impressions delivered over the lifetime of an <a
-		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>.
+		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to "Order
+		/// lifetime impressions" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		ORDER_LIFETIME_IMPRESSIONS = 21,
 		/// <summary>The total number of clicks delivered over the lifetime of an <a
-		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>.
+		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to "Order
+		/// lifetime clicks" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		ORDER_LIFETIME_CLICKS = 22,
 		/// <summary>The cost of booking all the CPM ads for <a
-		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>.
+		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to "Booked
+		/// CPM" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ORDER_BOOKED_CPM = 23,
 		/// <summary>The cost of booking all the CPC ads for <a
-		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>.
+		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to "Booked
+		/// CPC" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ORDER_BOOKED_CPC = 24,
 		/// <summary>Represents the start date (in YYYY-MM-DD format) for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. Can be used for
-		/// filtering.
+		/// filtering. <p>Corresponds to "Line item start date" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SELL_THROUGH,
+		/// REACH, SALES, DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		LINE_ITEM_START_DATE_TIME = 25,
 		/// <summary>Represents the end date (in YYYY-MM-DD format) for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. Can be used for
-		/// filtering.
+		/// filtering. <p>Corresponds to "Line item end date" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SELL_THROUGH,
+		/// REACH, SALES, DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		LINE_ITEM_END_DATE_TIME = 26,
 		/// <summary>Represents <a href='LineItem#externalId'>LineItem#externalId</a> for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. Can be used for
-		/// filtering.
+		/// filtering. <p>Corresponds to "External Line Item ID" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		LINE_ITEM_EXTERNAL_ID = 27,
 		/// <summary>Represents <a href='LineItem#costType'>LineItem#costType</a> for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. Can be used for
-		/// filtering.
+		/// filtering. <p>Corresponds to "Cost type" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES,
+		/// DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		LINE_ITEM_COST_TYPE = 28,
 		/// <summary>Represents <a href='LineItem#costPerUnit'>LineItem#costPerUnit</a> for <a
-		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>.
+		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
+		/// "Rate" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		LINE_ITEM_COST_PER_UNIT = 29,
 		/// <summary>Represents the 3 letter currency code for <a
-		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>.
+		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
+		/// "Currency code" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		LINE_ITEM_CURRENCY_CODE = 30,
 		/// <summary>The total number of impressions, clicks or days that is reserved for <a
-		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>.
+		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
+		/// "Goal quantity" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		LINE_ITEM_GOAL_QUANTITY = 31,
 		/// <summary>The ratio between the goal quantity for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a> of <a
 		/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a> and the <a
 		/// href='#LINE_ITEM_GOAL_QUANTITY'>#LINE_ITEM_GOAL_QUANTITY</a>. Represented as a
-		/// number between 0..100.
+		/// number between 0..100. <p>Corresponds to "Sponsorship goal (%)" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// REACH, SALES.</p>
 		/// </summary>
 		LINE_ITEM_SPONSORSHIP_GOAL_PERCENTAGE = 32,
 		/// <summary>The total number of impressions delivered over the lifetime of a <a
-		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>.
+		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
+		/// "Line item lifetime impressions" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES,
+		/// DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		LINE_ITEM_LIFETIME_IMPRESSIONS = 33,
 		/// <summary>The total number of clicks delivered over the lifetime of a <a
-		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>.
+		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
+		/// "Line item lifetime clicks" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE,
+		/// CREATIVE_QOS.</p>
 		/// </summary>
 		LINE_ITEM_LIFETIME_CLICKS = 34,
 		/// <summary>Represents <a href='LineItem#priority'>LineItem#priority</a> for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a> as a value between
-		/// 1 and 16. Can be used for filtering.
+		/// 1 and 16. Can be used for filtering. <p>Corresponds to "Line item priority" in
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SELL_THROUGH, REACH, SALES, DATA_LEAKAGE, CREATIVE_QOS.</p>
 		/// </summary>
 		LINE_ITEM_PRIORITY = 35,
 		/// <summary>Indicates if a creative is a regular creative or creative set. Values will be
-		/// 'Creative' or 'Creative set'
+		/// 'Creative' or 'Creative set' <p>Compatible with any of the following report
+		/// types: HISTORICAL, REACH.</p>
 		/// </summary>
 		CREATIVE_OR_CREATIVE_SET = 36,
-		/// <summary>The type of creative in a creative set - master or companion.
+		/// <summary>The type of creative in a creative set - master or companion. <p>Corresponds to
+		/// "Master or Companion" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		MASTER_COMPANION_TYPE = 37,
 		/// <summary>Represents the <a
 		/// href='LineItem#contractedUnitsBought'>LineItem#contractedUnitsBought</a>
 		/// quantity for <a href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>.
+		/// <p>Corresponds to "Contracted quantity" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		LINE_ITEM_CONTRACTED_QUANTITY = 38,
 		/// <summary>Represents the <a href='LineItem#discount'>LineItem#discount</a> for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. The number is
 		/// either a percentage or an absolute value depending on <a
-		/// href='LineItem#discountType'>LineItem#discountType</a>.
+		/// href='LineItem#discountType'>LineItem#discountType</a>. <p>Corresponds to
+		/// "Discount" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		LINE_ITEM_DISCOUNT = 39,
 		/// <summary>The cost of booking for a non-CPD <a
-		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>.
+		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
+		/// "Booked revenue (exclude CPD)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		LINE_ITEM_NON_CPD_BOOKED_REVENUE = 40,
 		/// <summary>Represents <a href='Company#appliedLabels'>Company#appliedLabels</a> as a comma
 		/// separated list of <a href='Label#name'>Label#name</a> for <a
-		/// href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>.
+		/// href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>. <p>Corresponds
+		/// to "Advertiser labels" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ADVERTISER_LABELS = 41,
 		/// <summary>Represents <a href='Company#appliedLabels'>Company#appliedLabels</a> as a comma
 		/// separated list of <a href='Label#id'>Label#id</a> for <a
-		/// href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>.
+		/// href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>. <p>Compatible
+		/// with any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		ADVERTISER_LABEL_IDS = 42,
 		/// <summary>Represents the click-through URL for <a
-		/// href='Dimension#CREATIVE_NAME'>Dimension#CREATIVE_NAME</a>.
+		/// href='Dimension#CREATIVE_NAME'>Dimension#CREATIVE_NAME</a>. <p>Corresponds to
+		/// "Click-through URL" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		CREATIVE_CLICK_THROUGH_URL = 43,
-		/// <summary>Represents whether a creative is SSL-compliant.
+		/// <summary>Represents whether a creative is SSL-compliant. <p>Corresponds to "Creative SSL
+		/// scan result" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, REACH.</p>
 		/// </summary>
 		CREATIVE_SSL_SCAN_RESULT = 44,
-		/// <summary>Represents whether a creative's SSL status was overridden.
+		/// <summary>Represents whether a creative's SSL status was overridden. <p>Corresponds to
+		/// "Creative SSL compliance override" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		CREATIVE_SSL_COMPLIANCE_OVERRIDE = 45,
 		/// <summary>Represents a <a
 		/// href='LineItemCreativeAssociation#startDateTime'>LineItemCreativeAssociation#startDateTime</a>
 		/// for a <a href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a> and a <a
 		/// href='Dimension#CREATIVE_NAME'>Dimension#CREATIVE_NAME</a>. Includes the date
-		/// without the time.
+		/// without the time. <p>Corresponds to "Creative start date" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		LINE_ITEM_CREATIVE_START_DATE = 46,
 		/// <summary>Represents a <a
 		/// href='LineItemCreativeAssociation#endDateTime'>LineItemCreativeAssociation#endDateTime</a>
 		/// for a <a href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a> and a <a
 		/// href='Dimension#CREATIVE_NAME'>Dimension#CREATIVE_NAME</a>. Includes the date
-		/// without the time.
+		/// without the time. <p>Corresponds to "Creative end date" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		LINE_ITEM_CREATIVE_END_DATE = 47,
 		/// <summary>Represents <a href='Proposal#startDateTime'>Proposal#startDateTime</a> for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Proposal start time" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_START_DATE_TIME = 48,
 		/// <summary>Represents <a href='Proposal#endDateTime'>Proposal#endDateTime</a> for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Proposal end time" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_END_DATE_TIME = 49,
 		/// <summary>Represents <a href='Proposal#creationDateTime'>Proposal#creationDateTime</a> for
 		/// <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. Can be used for
-		/// filtering.
+		/// filtering. <p>Corresponds to "Creation time" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, SELL_THROUGH, REACH,
+		/// SALES.</p>
 		/// </summary>
 		PROPOSAL_CREATION_DATE_TIME = 50,
 		/// <summary>Represents the sold time for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Sold time" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_SOLD_DATE_TIME = 51,
 		/// <summary>Represents <a href='Proposal#isSold'>Proposal#isSold</a> for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. Can be used for
-		/// filtering.
+		/// filtering. <p>Corresponds to "Sold" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_IS_SOLD = 52,
 		/// <summary>Represents <a href='Proposal#probabilityOfClose'>Proposal#probabilityOfClose</a>
 		/// for <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// <p>Corresponds to "Probability of close" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_PROBABILITY_OF_CLOSE = 135,
 		/// <summary>Represents <a href='Proposal#status'>Proposal#status</a> for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. This attribute
 		/// includes post-sold statuses, e.g. DRAFT(SOLD) until v201611. Starting from
 		/// v201702, it will not include post-sold statuses. Can be used for filtering.
+		/// <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH,
+		/// REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_STATUS = 54,
 		/// <summary>Represents archival status for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>, the values are
-		/// ARCHIVED and NOT_ARCHIVED. Can be used for filtering.
+		/// ARCHIVED and NOT_ARCHIVED. Can be used for filtering. <p>Corresponds to
+		/// "Proposal archival status" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_ARCHIVAL_STATUS = 55,
 		/// <summary>Represents <a href='Proposal#currency'>Proposal#currency</a> for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Currency" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_CURRENCY = 56,
 		/// <summary>Represents <a href='Proposal#exchangeRate'>Proposal#exchangeRate</a> for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Exchange rate" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_EXCHANGE_RATE = 57,
 		/// <summary>Represents <a href='Proposal#agencyCommission'>Proposal#agencyCommission</a> for
-		/// <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Agency commission rate" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_COMMISSION_RATE = 58,
 		/// <summary>Represents <a href='Proposal#valueAddedTax'>Proposal#valueAddedTax</a> for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "VAT rate" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_VAT_RATE = 59,
 		/// <summary>Represents <a href='Proposal#proposalDiscount'>Proposal#proposalDiscount</a> for
-		/// <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Proposal discount" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_DISCOUNT = 60,
 		/// <summary>Represents <a href='Proposal#advertiserDiscount'>Proposal#advertiserDiscount</a>
 		/// for <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// <p>Corresponds to "Advertiser discount" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_ADVERTISER_DISCOUNT = 61,
 		/// <summary>Represents the advertiser name of <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Advertiser" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_ADVERTISER = 62,
 		/// <summary>Represents the advertiser id of <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Advertiser ID" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_ADVERTISER_ID = 63,
 		/// <summary>Represents the agency names as a comma separated string for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Agencies" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_AGENCIES = 64,
 		/// <summary>Represents the agency ids as a comma separated string for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Agency IDs" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_IDS = 65,
 		/// <summary>Represents <a href='Proposal#poNumber'>Proposal#poNumber</a> for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "PO number" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_PO_NUMBER = 66,
 		/// <summary>Represents name and email address in the form of name(email) of primary
 		/// salesperson for <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// <p>Corresponds to "Salesperson" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_PRIMARY_SALESPERSON = 67,
 		/// <summary>Represents name and email addresses in the form of name(email) of secondary
 		/// salespeople as a comma separated string for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Secondary salespeople" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_SECONDARY_SALESPEOPLE = 68,
 		/// <summary>Represents name and email address in the form of name(email) of creator for <a
-		/// href=''>Dimension#PROPOSAL_NAME</a>.
+		/// href=''>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to "Creator" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_CREATOR = 69,
 		/// <summary>Represents name and email addresses in the form of name(email) of <a
 		/// href=''>Proposal#salesPlannerIds</a> as a comma separated list string for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Sales planners" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_SALES_PLANNERS = 70,
 		/// <summary>Represents <a href='Proposal#pricingModel'>Proposal#pricingModel</a> for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Pricing model" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_PRICING_MODEL = 71,
 		/// <summary>Represents <a href='Proposal#billingSource'>Proposal#billingSource</a> for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Proposal billing source" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_BILLING_SOURCE = 72,
 		/// <summary>Represents <a href='Proposal#billingCap'>Proposal#billingCap</a> for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Proposal caps and rollovers" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_BILLING_CAP = 73,
 		/// <summary>Represents <a href='Proposal#billingSchedule'>Proposal#billingSchedule</a> for
-		/// <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Proposal billing schedule" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_BILLING_SCHEDULE = 74,
 		/// <summary>Represents <a href='Proposal#appliedTeamIds'>Proposal#appliedTeamIds</a> as a
 		/// comma separated list of <a href='Team#name'>Team#name</a>s for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Teams" in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_APPLIED_TEAM_NAMES = 75,
 		/// <summary>Represents the approval stage for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Approval stage" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_APPROVAL_STAGE = 76,
 		/// <summary>Represents the inventory release date time for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Inventory release time" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_INVENTORY_RELEASE_DATE_TIME = 77,
 		/// <summary>Represents <a href='Proposal#budget'>Proposal#budget</a> in local currency for
-		/// <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Budget (local)" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LOCAL_BUDGET = 78,
 		/// <summary>Represents the remaining budget in local currency for <a
-		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
+		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
+		/// "Remaining budget (local)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LOCAL_REMAINING_BUDGET = 79,
 		/// <summary>Represents whether the <a href='Proposal#billingBase'>Proposal#billingBase</a>
-		/// is <a href='BillingBase#REVENUE'>BillingBase#REVENUE</a>.
+		/// is <a href='BillingBase#REVENUE'>BillingBase#REVENUE</a>. <p>Corresponds to
+		/// "Proposal flat fee" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_FLAT_FEE = 133,
 		/// <summary>Represents <a href='Proposal#isProgrammatic'>Proposal#isProgrammatic</a> for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. Not available as an
 		/// attribute to report on, but exists as an attribute for filtering using PQL.
+		/// <p>Compatible with any of the following report types: HISTORICAL, SELL_THROUGH,
+		/// REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_IS_PROGRAMMATIC = 140,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#startDateTime'>ProposalLineItem#startDateTime</a> for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// <p>Corresponds to "Proposal line item start time" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SELL_THROUGH,
+		/// REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_START_DATE_TIME = 80,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#endDateTime'>ProposalLineItem#endDateTime</a> for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// <p>Corresponds to "Proposal line item end time" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, SELL_THROUGH, REACH,
+		/// SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_END_DATE_TIME = 81,
 		/// <summary>Represents <a href='ProposalLineItem#rateType'>ProposalLineItem#rateType</a> for
 		/// <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
-		/// Can be used for filtering.
+		/// Can be used for filtering. <p>Corresponds to "Proposal line item rate type" in
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_RATE_TYPE = 82,
 		/// <summary>Represents the reservation status of <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
-		/// Can be used for filtering.
+		/// Can be used for filtering. <p>Corresponds to "Reservation status" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_RESERVATION_STATUS = 123,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#costPerUnit'>ProposalLineItem#costPerUnit</a> for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// <p>Corresponds to "Rate (net)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_COST_PER_UNIT = 83,
 		/// <summary>Represents <a
@@ -60726,62 +63353,92 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
 		/// See <a
 		/// href='#PROPOSAL_LINE_ITEM_COST_PER_UNIT'>#PROPOSAL_LINE_ITEM_COST_PER_UNIT</a>
+		/// <p>Can correspond to any of the following in the Ad Manager UI: Rate (local),
+		/// Rate (net) (local). Compatible with any of the following report types:
+		/// HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_LOCAL_COST_PER_UNIT = 84,
 		/// <summary>Represents gross cost per unit for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// <p>Corresponds to "Rate (gross)" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_COST_PER_UNIT_GROSS = 85,
 		/// <summary>Represents gross cost per unit in local currency for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
 		/// See <a
 		/// href='#PROPOSAL_LINE_ITEM_COST_PER_UNIT_GROSS'>#PROPOSAL_LINE_ITEM_COST_PER_UNIT_GROSS</a>
+		/// <p>Corresponds to "Rate (gross) (local)" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_LOCAL_COST_PER_UNIT_GROSS = 86,
 		/// <summary>Represents line item type (if applicable) and line item priority (if applicable)
 		/// for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// <p>Corresponds to "Proposal line item type / priority" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SELL_THROUGH,
+		/// REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_TYPE_AND_PRIORITY = 87,
 		/// <summary>Represents the size of <a
 		/// href='ProposalLineItem#creativePlaceholders'>ProposalLineItem#creativePlaceholders</a>
 		/// for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// <p>Corresponds to "Sizes" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_SIZE = 88,
 		/// <summary>Represents archival status for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>,
 		/// the values are ARCHIVED and NOT_ARCHIVED. Can be used for filtering.
+		/// <p>Corresponds to "Proposal line item archival status" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SELL_THROUGH,
+		/// REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_ARCHIVAL_STATUS = 89,
 		/// <summary>Represents the product adjustment of <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// <p>Corresponds to "Product adjustment" in the Ad Manager UI. Compatible with any
+		/// of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_PRODUCT_ADJUSTMENT = 90,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#contractedQuantityBuffer'>ProposalLineItem#contractedQuantityBuffer</a>
 		/// for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// <p>Corresponds to "Buffer (%)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_BUFFER = 91,
 		/// <summary>Represents the listing rate (net) of <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// <p>Corresponds to "Listing rate (net)" in the Ad Manager UI. Compatible with any
+		/// of the following report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_LISTING_RATE_NET = 136,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#billingSource'>ProposalLineItem#billingSource</a> for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// <p>Corresponds to "Proposal line item billing source" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SELL_THROUGH,
+		/// REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_BILLING_SOURCE = 93,
 		/// <summary>Represents <a href='ProposalLineItem#billingCap'>ProposalLineItem#billingCap</a>
 		/// for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// <p>Corresponds to "Proposal line item caps and rollovers" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SELL_THROUGH,
+		/// REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_BILLING_CAP = 94,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#billingSchedule'>ProposalLineItem#billingSchedule</a> for
 		/// <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// <p>Corresponds to "Proposal line item billing schedule" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, SELL_THROUGH,
+		/// REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_BILLING_SCHEDULE = 95,
 		/// <summary>Represents <a href='Goal#units'>Goal#units</a> of <a
@@ -60791,115 +63448,164 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a>, <a
 		/// href=''>LineItemType#HOUSE</a>, <a
 		/// href='LineItemType#NETWORK'>LineItemType#NETWORK</a>, or <a
-		/// href='LineItemType#BUMPER'>LineItemType#BUMPER</a>.
+		/// href='LineItemType#BUMPER'>LineItemType#BUMPER</a>. <p>Corresponds to "Goal (%)"
+		/// in the Ad Manager UI. Compatible with any of the following report types:
+		/// HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_GOAL_PERCENTAGE = 96,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#costAdjustment'>ProposalLineItem#costAdjustment</a> for
-		/// <a href=''>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// <a href=''>Dimension#PROPOSAL_LINE_ITEM_NAME</a>. <p>Corresponds to "Cost
+		/// adjustment" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_COST_ADJUSTMENT = 97,
 		/// <summary>Represents the <a href='ProposalLineItem#notes'>comments</a> for <a
-		/// href=''>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
+		/// href=''>Dimension#PROPOSAL_LINE_ITEM_NAME</a>. <p>Corresponds to "Proposal line
+		/// item comments" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_COMMENTS = 98,
 		/// <summary>Represents the monthly reconciliation status of the proposal line item for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>
-		/// and <a href='Dimension#MONTH_YEAR'>Dimension#MONTH_YEAR</a>.
+		/// and <a href='Dimension#MONTH_YEAR'>Dimension#MONTH_YEAR</a>. <p>Corresponds to
+		/// "Proposal line item reconciliation status" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_RECONCILIATION_STATUS = 124,
 		/// <summary>Represents the monthly last reconciliation date time of the proposal line item
 		/// for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>
-		/// and <a href='Dimension#MONTH_YEAR'>Dimension#MONTH_YEAR</a>.
+		/// and <a href='Dimension#MONTH_YEAR'>Dimension#MONTH_YEAR</a>. <p>Corresponds to
+		/// "Proposal line item last reconciliation time" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_LAST_RECONCILIATION_DATE_TIME = 125,
 		/// <summary>Represents whether the <a
 		/// href='ProposalLineItem#billingBase'>ProposalLineItem#billingBase</a> is <a
-		/// href='BillingBase#REVENUE'>BillingBase#REVENUE</a>.
+		/// href='BillingBase#REVENUE'>BillingBase#REVENUE</a>. <p>Corresponds to "Proposal
+		/// line item flat fee" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, SELL_THROUGH, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_FLAT_FEE = 134,
 		/// <summary>Represents the corresponding product package item's archival status of <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
 		/// Not available as an attribute to report on, but exists as an attribute for
-		/// filtering using PQL.
+		/// filtering using PQL. <p>Compatible with any of the following report types:
+		/// HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_PACKAGE_ITEM_ARCHIVAL_STATUS = 126,
 		/// <summary>Represents <a href='ProductTemplate#rateType'>ProductTemplate#rateType</a> for
 		/// <a href='Dimension#PRODUCT_TEMPLATE_NAME'>Dimension#PRODUCT_TEMPLATE_NAME</a>.
+		/// <p>Corresponds to "Product template rate type" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_TEMPLATE_RATE_TYPE = 99,
 		/// <summary>Represents <a href='ProductTemplate#status'>ProductTemplate#status</a> for <a
 		/// href='Dimension#PRODUCT_TEMPLATE_NAME'>Dimension#PRODUCT_TEMPLATE_NAME</a>.
+		/// <p>Corresponds to "Product template status" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_TEMPLATE_STATUS = 100,
 		/// <summary>Represents the line item type (if applicable) and line item priority (if
 		/// applicable) of <a
 		/// href='Dimension#PRODUCT_TEMPLATE_NAME'>Dimension#PRODUCT_TEMPLATE_NAME</a>.
+		/// <p>Corresponds to "Product template type / priority" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_TEMPLATE_TYPE_AND_PRIORITY = 101,
 		/// <summary>Represents <a href='ProductTemplate#productType'>ProductTemplate#productType</a>
 		/// for <a
 		/// href='Dimension#PRODUCT_TEMPLATE_NAME'>Dimension#PRODUCT_TEMPLATE_NAME</a>.
+		/// <p>Corresponds to "Product template product type" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_TEMPLATE_PRODUCT_TYPE = 102,
 		/// <summary>Represents <a href='ProductTemplate#description'>ProductTemplate#description</a>
 		/// for <a
 		/// href='Dimension#PRODUCT_TEMPLATE_NAME'>Dimension#PRODUCT_TEMPLATE_NAME</a>.
+		/// <p>Corresponds to "Description" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_TEMPLATE_DESCRIPTION = 103,
 		/// <summary>Represents the product template's name of <a
-		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>.
+		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>. <p>Corresponds to
+		/// "Product template name" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_PRODUCT_TEMPLATE_NAME = 104,
 		/// <summary>Represents <a href='Product#rateType'>Product#rateType</a> for <a
-		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>.
+		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>. <p>Corresponds to
+		/// "Product rate type" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_RATE_TYPE = 105,
 		/// <summary>Represents <a href='Product#status'>Product#status</a> for <a
-		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>.
+		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>. <p>Corresponds to
+		/// "Product status" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_STATUS = 106,
 		/// <summary>Represents the line item type (if applicable) and line item priority (if
 		/// applicable) of <a href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>.
+		/// <p>Corresponds to "Product type / priority" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_TYPE_AND_PRIORITY = 107,
 		/// <summary>Represents the product type of <a
-		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>.
+		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>. <p>Corresponds to
+		/// "Product product type" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_PRODUCT_TYPE = 108,
 		/// <summary>Represents <a href='Product#notes'>Product#notes</a> for <a
-		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>.
+		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>. <p>Corresponds to
+		/// "Product notes" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_NOTES = 109,
 		/// <summary>Represents <a
 		/// href='Product#creativePlaceholders'>Product#creativePlaceholders</a> for <a
-		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>.
+		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>. <p>Corresponds to
+		/// "Inventory sizes" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_INVENTORY_SIZES = 141,
 		/// <summary>Represents the <a href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>'s
 		/// rate in a <a href='Dimension#RATE_CARD_NAME'>Dimension#RATE_CARD_NAME</a>.
+		/// <p>Corresponds to "Product rate" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_RATE = 137,
 		/// <summary>Represents the <a href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>'s
 		/// rate in a <a href='Dimension#RATE_CARD_NAME'>Dimension#RATE_CARD_NAME</a> and <a
 		/// href='Dimension#PRODUCT_PACKAGE_NAME'>Dimension#PRODUCT_PACKAGE_NAME</a>.
+		/// <p>Corresponds to "Packaged product rate" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PACKAGED_PRODUCT_RATE = 138,
 		/// <summary>Represents the <a href='Company#type'>Company#type</a> of <a
 		/// href='Dimension#PROPOSAL_AGENCY_NAME'>Dimension#PROPOSAL_AGENCY_NAME</a>.
+		/// <p>Corresponds to "Proposal agency type" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_TYPE = 110,
 		/// <summary>Represents the <a href='Company#creditStatus'>Company#creditStatus</a> of <a
 		/// href='Dimension#PROPOSAL_AGENCY_NAME'>Dimension#PROPOSAL_AGENCY_NAME</a>.
+		/// <p>Corresponds to "Proposal agency credit status" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_CREDIT_STATUS = 111,
 		/// <summary>Represents <a href='Company#externalId'>Company#externalId</a> for <a
 		/// href='Dimension#PROPOSAL_AGENCY_NAME'>Dimension#PROPOSAL_AGENCY_NAME</a>.
+		/// <p>Corresponds to "External agency ID" in the Ad Manager UI. Compatible with any
+		/// of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_EXTERNAL_ID = 112,
 		/// <summary>Represents <a href='Company#comment'>Company#comment</a> for <a
 		/// href='Dimension#PROPOSAL_AGENCY_NAME'>Dimension#PROPOSAL_AGENCY_NAME</a>.
+		/// <p>Corresponds to "Proposal agency comment" in the Ad Manager UI. Compatible
+		/// with any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_COMMENT = 113,
 		/// <summary>Represents the <a
@@ -60907,51 +63613,73 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// contribution to a <a href=''>Dimension#PROPOSAL_NAME</a>. This is different from
 		/// <a
 		/// href='#SALESPERSON_PROPOSAL_CONTRIBUTION'>#SALESPERSON_PROPOSAL_CONTRIBUTION</a>
-		/// as this will include both primary and secondary salespeople.
+		/// as this will include both primary and secondary salespeople. <p>Corresponds to
+		/// "Salespeople proposal contribution" in the Ad Manager UI. Compatible with any of
+		/// the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		SALESPEOPLE_PROPOSAL_CONTRIBUTION = 114,
 		/// <summary>Represents the <a
 		/// href='Dimension#SALESPERSON_NAME'>Dimension#SALESPERSON_NAME</a>'s contribution
 		/// to a <a href=''>Dimension#PROPOSAL_NAME</a>. <p>See <a
 		/// href='#SALESPERSON_PROPOSAL_CONTRIBUTION'>#SALESPERSON_PROPOSAL_CONTRIBUTION</a>.</p>
+		/// <p>Corresponds to "Salesperson proposal contribution" in the Ad Manager UI.
+		/// Compatible with any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		SALESPERSON_PROPOSAL_CONTRIBUTION = 115,
 		/// <summary>Represents <a href='ProductPackage#notes'>ProductPackage#notes</a> for <a
 		/// href='Dimension#PRODUCT_PACKAGE_NAME'>Dimension#PRODUCT_PACKAGE_NAME</a>.
+		/// <p>Corresponds to "Product package notes" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_PACKAGE_NOTES = 127,
 		/// <summary>Represents the products as a comma separated list of name for <a
 		/// href='Dimension#PRODUCT_PACKAGE_NAME'>Dimension#PRODUCT_PACKAGE_NAME</a>.
+		/// <p>Corresponds to "Product package items" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_PACKAGE_ITEMS = 128,
 		/// <summary>Represents <a href='ProductPackage#status'>ProductPackage#status</a> for <a
 		/// href='Dimension#PRODUCT_PACKAGE_NAME'>Dimension#PRODUCT_PACKAGE_NAME</a>.
+		/// <p>Corresponds to "Product package status" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PRODUCT_PACKAGE_STATUS = 129,
 		/// <summary>Represents <a href='Package#comments'>Package#comments</a> for <a
-		/// href='Dimension#PACKAGE_NAME'>Dimension#PACKAGE_NAME</a>.
+		/// href='Dimension#PACKAGE_NAME'>Dimension#PACKAGE_NAME</a>. <p>Corresponds to
+		/// "Package comments" in the Ad Manager UI. Compatible with any of the following
+		/// report types: HISTORICAL, REACH, SALES.</p>
 		/// </summary>
 		PACKAGE_COMMENTS = 130,
 		/// <summary>Represents <a href='Package#startDateTime'>Package#startDateTime</a> for
-		/// {@Dimension#PACKAGE_NAME}.
+		/// {@Dimension#PACKAGE_NAME}. <p>Corresponds to "Package start time" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// REACH, SALES.</p>
 		/// </summary>
 		PACKAGE_START_DATE_TIME = 131,
 		/// <summary>Represents <a href='Package#endDateTime'>Package#endDateTime</a> for
-		/// {@Dimension#PACKAGE_NAME}.
+		/// {@Dimension#PACKAGE_NAME}. <p>Corresponds to "Package end time" in the Ad
+		/// Manager UI. Compatible with any of the following report types: HISTORICAL,
+		/// REACH, SALES.</p>
 		/// </summary>
 		PACKAGE_END_DATE_TIME = 132,
 		/// <summary>Represents the <a href='CmsContent#displayName'>CmsContent#displayName</a>
 		/// within the first element of <a href='Content#cmsContent'>Content#cmsContent</a>
-		/// for <a href='Dimension#CONTENT_NAME'>Dimension#CONTENT_NAME</a>.
+		/// for <a href='Dimension#CONTENT_NAME'>Dimension#CONTENT_NAME</a>. <p>Corresponds
+		/// to "Content source name" in the Ad Manager UI. Compatible with any of the
+		/// following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		CONTENT_CMS_NAME = 116,
 		/// <summary>Represents the <a href='CmsContent#cmsContentId'>CmsContent#cmsContentId</a>
 		/// within the first element of <a href='Content#cmsContent'>Content#cmsContent</a>
-		/// for <a href='Dimension#CONTENT_NAME'>Dimension#CONTENT_NAME</a>.
+		/// for <a href='Dimension#CONTENT_NAME'>Dimension#CONTENT_NAME</a>. <p>Corresponds
+		/// to "ID of the video in the content source" in the Ad Manager UI. Compatible with
+		/// any of the following report types: HISTORICAL, REACH.</p>
 		/// </summary>
 		CONTENT_CMS_VIDEO_ID = 117,
 		/// <summary>Represents <a href='AdUnit#adUnitCode'>AdUnit#adUnitCode</a> for <a
-		/// href='Dimension#AD_UNIT_NAME'>Dimension#AD_UNIT_NAME</a>.
+		/// href='Dimension#AD_UNIT_NAME'>Dimension#AD_UNIT_NAME</a>. <p>Corresponds to "Ad
+		/// unit code" in the Ad Manager UI. Compatible with any of the following report
+		/// types: HISTORICAL, SELL_THROUGH, REACH, SALES, CREATIVE_QOS.</p>
 		/// </summary>
 		AD_UNIT_CODE = 118,
 	}
@@ -60979,8 +63707,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// would go from February 1 to April 30.
 		/// </summary>
 		LAST_3_MONTHS = 14,
-		/// <summary>The last 5 months and the current month to date. This date range is only usable
-		/// for the columns <a href='Column#REACH_FREQUENCY'>Column#REACH_FREQUENCY</a>, <a
+		/// <summary>The last 63 days. This date range is only usable for the columns <a
+		/// href='Column#REACH_FREQUENCY'>Column#REACH_FREQUENCY</a>, <a
 		/// href='Column#REACH_AVERAGE_REVENUE'>Column#REACH_AVERAGE_REVENUE</a> and <a
 		/// href='Column#REACH'>Column#REACH</a>.
 		/// </summary>
@@ -61142,6 +63870,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getReportDownloadURL(reportJobId, exportFormat);
 		}
 
+		public virtual System.Threading.Tasks.Task<string> getReportDownloadURLAsync(long reportJobId, Google.Api.Ads.Dfp.v201711.ExportFormat exportFormat) {
+			return base.Channel.getReportDownloadURLAsync(reportJobId, exportFormat);
+		}
+
 		/// <summary>Returns the URL at which the report file can be downloaded, and allows for
 		/// customization of the downloaded report. <p>By default, the report will be
 		/// generated as a gzip archive, containing the report file itself. This can be
@@ -61157,11 +63889,19 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getReportDownloadUrlWithOptions(reportJobId, reportDownloadOptions);
 		}
 
+		public virtual System.Threading.Tasks.Task<string> getReportDownloadUrlWithOptionsAsync(long reportJobId, Google.Api.Ads.Dfp.v201711.ReportDownloadOptions reportDownloadOptions) {
+			return base.Channel.getReportDownloadUrlWithOptionsAsync(reportJobId, reportDownloadOptions);
+		}
+
 		/// <summary>Returns the <a href='ReportJobStatus'>ReportJobStatus</a> of the report job with
 		/// the specified ID.
 		/// </summary>
 		public virtual Google.Api.Ads.Dfp.v201711.ReportJobStatus getReportJobStatus(long reportJobId) {
 			return base.Channel.getReportJobStatus(reportJobId);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReportJobStatus> getReportJobStatusAsync(long reportJobId) {
+			return base.Channel.getReportJobStatusAsync(reportJobId);
 		}
 
 		/// <summary>Retrieves a page of the saved queries either created by or shared with the
@@ -61184,6 +63924,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getSavedQueriesByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.SavedQueryPage> getSavedQueriesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getSavedQueriesByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Initiates the execution of a <a href='ReportQuery'>ReportQuery</a> on the
 		/// server. <p>The following fields are required:</p> <ul> <li><a
 		/// href='ReportJob#reportQuery'>ReportJob#reportQuery</a></li> </ul>
@@ -61191,6 +63935,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the report job with its ID filled in</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.ReportJob runReportJob(Google.Api.Ads.Dfp.v201711.ReportJob reportJob) {
 			return base.Channel.runReportJob(reportJob);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReportJob> runReportJobAsync(Google.Api.Ads.Dfp.v201711.ReportJob reportJob) {
+			return base.Channel.runReportJobAsync(reportJob);
 		}
 	}
 	namespace Wrappers.SuggestedAdUnitService
@@ -61486,11 +64234,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.SuggestedAdUnitPage getSuggestedAdUnitsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.SuggestedAdUnitPage> getSuggestedAdUnitsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.SuggestedAdUnitUpdateResult performSuggestedAdUnitAction(Google.Api.Ads.Dfp.v201711.SuggestedAdUnitAction suggestedAdUnitAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.SuggestedAdUnitUpdateResult> performSuggestedAdUnitActionAsync(Google.Api.Ads.Dfp.v201711.SuggestedAdUnitAction suggestedAdUnitAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 	}
 
 
@@ -61648,6 +64404,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getSuggestedAdUnitsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.SuggestedAdUnitPage> getSuggestedAdUnitsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getSuggestedAdUnitsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='SuggestedAdUnit'>SuggestedAdUnit</a> objects that
 		/// match the given <a href='Statement#query'>Statement#query</a>. The following
 		/// fields are supported for filtering: <table> <tr> <th scope="col">PQL
@@ -61663,6 +64423,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.SuggestedAdUnitUpdateResult performSuggestedAdUnitAction(Google.Api.Ads.Dfp.v201711.SuggestedAdUnitAction suggestedAdUnitAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performSuggestedAdUnitAction(suggestedAdUnitAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.SuggestedAdUnitUpdateResult> performSuggestedAdUnitActionAsync(Google.Api.Ads.Dfp.v201711.SuggestedAdUnitAction suggestedAdUnitAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performSuggestedAdUnitActionAsync(suggestedAdUnitAction, filterStatement);
 		}
 	}
 	namespace Wrappers.TeamService
@@ -62002,11 +64766,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.TeamService.createTeamsResponse createTeams(Wrappers.TeamService.createTeamsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.TeamService.createTeamsResponse> createTeamsAsync(Wrappers.TeamService.createTeamsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.TeamPage getTeamsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.TeamPage> getTeamsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -62015,6 +64786,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performTeamAction(Google.Api.Ads.Dfp.v201711.TeamAction teamAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performTeamActionAsync(Google.Api.Ads.Dfp.v201711.TeamAction teamAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -62022,6 +64797,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.TeamService.updateTeamsResponse updateTeams(Wrappers.TeamService.updateTeamsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.TeamService.updateTeamsResponse> updateTeamsAsync(Wrappers.TeamService.updateTeamsRequest request);
 	}
 
 
@@ -62202,6 +64980,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.TeamService.createTeamsResponse> Google.Api.Ads.Dfp.v201711.TeamServiceInterface.createTeamsAsync(Wrappers.TeamService.createTeamsRequest request) {
+			return base.Channel.createTeamsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Team[]> createTeamsAsync(Google.Api.Ads.Dfp.v201711.Team[] teams) {
+			Wrappers.TeamService.createTeamsRequest inValue = new Wrappers.TeamService.createTeamsRequest();
+			inValue.teams = teams;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Team[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.TeamServiceInterface)(this)).createTeamsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <code>TeamPage</code> of <code>Team</code> objects that satisfy the given
 		/// <a href='Statement#query'>Statement#query</a>. The following fields are
 		/// supported for filtering: <table> <tr> <th scope="col">PQL Property</th> <th
@@ -62216,6 +65005,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getTeamsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.TeamPage> getTeamsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getTeamsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='Team'>Team</a> objects that match the given <a
 		/// href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='teamAction'>the action to perform</param>
@@ -62224,6 +65017,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performTeamAction(Google.Api.Ads.Dfp.v201711.TeamAction teamAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performTeamAction(teamAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performTeamActionAsync(Google.Api.Ads.Dfp.v201711.TeamAction teamAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performTeamActionAsync(teamAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -62239,6 +65036,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.teams = teams;
 			Wrappers.TeamService.updateTeamsResponse retVal = ((Google.Api.Ads.Dfp.v201711.TeamServiceInterface)(this)).updateTeams(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.TeamService.updateTeamsResponse> Google.Api.Ads.Dfp.v201711.TeamServiceInterface.updateTeamsAsync(Wrappers.TeamService.updateTeamsRequest request) {
+			return base.Channel.updateTeamsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Team[]> updateTeamsAsync(Google.Api.Ads.Dfp.v201711.Team[] teams) {
+			Wrappers.TeamService.updateTeamsRequest inValue = new Wrappers.TeamService.updateTeamsRequest();
+			inValue.teams = teams;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Team[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.TeamServiceInterface)(this)).updateTeamsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.UserService
@@ -62703,6 +65511,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.UserService.createUsersResponse createUsers(Wrappers.UserService.createUsersRequest request);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.UserService.createUsersResponse> createUsersAsync(Wrappers.UserService.createUsersRequest request);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -62713,12 +65524,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.UserService.getAllRolesResponse getAllRoles(Wrappers.UserService.getAllRolesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.UserService.getAllRolesResponse> getAllRolesAsync(Wrappers.UserService.getAllRolesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(UserRecord))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.User getCurrentUser();
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.User> getCurrentUserAsync();
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -62729,12 +65547,20 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.UserPage getUsersByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UserPage> getUsersByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(UserRecord))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performUserAction(Google.Api.Ads.Dfp.v201711.UserAction userAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performUserActionAsync(Google.Api.Ads.Dfp.v201711.UserAction userAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -62744,6 +65570,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(UserRecord))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.UserService.updateUsersResponse updateUsers(Wrappers.UserService.updateUsersRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.UserService.updateUsersResponse> updateUsersAsync(Wrappers.UserService.updateUsersRequest request);
 	}
 
 
@@ -63048,6 +65877,17 @@ namespace Google.Api.Ads.Dfp.v201711
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.UserService.createUsersResponse> Google.Api.Ads.Dfp.v201711.UserServiceInterface.createUsersAsync(Wrappers.UserService.createUsersRequest request) {
+			return base.Channel.createUsersAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.User[]> createUsersAsync(Google.Api.Ads.Dfp.v201711.User[] users) {
+			Wrappers.UserService.createUsersRequest inValue = new Wrappers.UserService.createUsersRequest();
+			inValue.users = users;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.User[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.UserServiceInterface)(this)).createUsersAsync(inValue)).Result.rval);
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.UserService.getAllRolesResponse Google.Api.Ads.Dfp.v201711.UserServiceInterface.getAllRoles(Wrappers.UserService.getAllRolesRequest request) {
 			return base.Channel.getAllRoles(request);
 		}
@@ -63061,10 +65901,24 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.UserService.getAllRolesResponse> Google.Api.Ads.Dfp.v201711.UserServiceInterface.getAllRolesAsync(Wrappers.UserService.getAllRolesRequest request) {
+			return base.Channel.getAllRolesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Role[]> getAllRolesAsync() {
+			Wrappers.UserService.getAllRolesRequest inValue = new Wrappers.UserService.getAllRolesRequest();
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Role[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.UserServiceInterface)(this)).getAllRolesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Returns the current <a href='User'>User</a>.
 		/// </summary><returns>the current user</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.User getCurrentUser() {
 			return base.Channel.getCurrentUser();
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.User> getCurrentUserAsync() {
+			return base.Channel.getCurrentUserAsync();
 		}
 
 		/// <summary>Gets a <a href='UserPage'>UserPage</a> of <a href='User'>User</a> objects that
@@ -63087,6 +65941,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getUsersByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UserPage> getUsersByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getUsersByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='User'>User</a> objects that match the given <a
 		/// href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='userAction'>the action to perform</param>
@@ -63095,6 +65953,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performUserAction(Google.Api.Ads.Dfp.v201711.UserAction userAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performUserAction(userAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performUserActionAsync(Google.Api.Ads.Dfp.v201711.UserAction userAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performUserActionAsync(userAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -63110,6 +65972,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.users = users;
 			Wrappers.UserService.updateUsersResponse retVal = ((Google.Api.Ads.Dfp.v201711.UserServiceInterface)(this)).updateUsers(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.UserService.updateUsersResponse> Google.Api.Ads.Dfp.v201711.UserServiceInterface.updateUsersAsync(Wrappers.UserService.updateUsersRequest request) {
+			return base.Channel.updateUsersAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.User[]> updateUsersAsync(Google.Api.Ads.Dfp.v201711.User[] users) {
+			Wrappers.UserService.updateUsersRequest inValue = new Wrappers.UserService.updateUsersRequest();
+			inValue.users = users;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.User[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.UserServiceInterface)(this)).updateUsersAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.UserTeamAssociationService
@@ -63362,12 +66235,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.UserTeamAssociationService.createUserTeamAssociationsResponse createUserTeamAssociations(Wrappers.UserTeamAssociationService.createUserTeamAssociationsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.UserTeamAssociationService.createUserTeamAssociationsResponse> createUserTeamAssociationsAsync(Wrappers.UserTeamAssociationService.createUserTeamAssociationsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(UserRecordTeamAssociation))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UserTeamAssociationPage getUserTeamAssociationsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UserTeamAssociationPage> getUserTeamAssociationsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -63377,6 +66257,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performUserTeamAssociationAction(Google.Api.Ads.Dfp.v201711.UserTeamAssociationAction userTeamAssociationAction, Google.Api.Ads.Dfp.v201711.Statement statement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performUserTeamAssociationActionAsync(Google.Api.Ads.Dfp.v201711.UserTeamAssociationAction userTeamAssociationAction, Google.Api.Ads.Dfp.v201711.Statement statement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -63385,6 +66269,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(UserRecordTeamAssociation))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.UserTeamAssociationService.updateUserTeamAssociationsResponse updateUserTeamAssociations(Wrappers.UserTeamAssociationService.updateUserTeamAssociationsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.UserTeamAssociationService.updateUserTeamAssociationsResponse> updateUserTeamAssociationsAsync(Wrappers.UserTeamAssociationService.updateUserTeamAssociationsRequest request);
 	}
 
 
@@ -63557,6 +66444,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.UserTeamAssociationService.createUserTeamAssociationsResponse> Google.Api.Ads.Dfp.v201711.UserTeamAssociationServiceInterface.createUserTeamAssociationsAsync(Wrappers.UserTeamAssociationService.createUserTeamAssociationsRequest request) {
+			return base.Channel.createUserTeamAssociationsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UserTeamAssociation[]> createUserTeamAssociationsAsync(Google.Api.Ads.Dfp.v201711.UserTeamAssociation[] userTeamAssociations) {
+			Wrappers.UserTeamAssociationService.createUserTeamAssociationsRequest inValue = new Wrappers.UserTeamAssociationService.createUserTeamAssociationsRequest();
+			inValue.userTeamAssociations = userTeamAssociations;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UserTeamAssociation[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.UserTeamAssociationServiceInterface)(this)).createUserTeamAssociationsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='UserTeamAssociationPage'>UserTeamAssociationPage</a> of <a
 		/// href='UserTeamAssociation'>UserTeamAssociation</a> objects that satisfy the
 		/// given <a href='Statement#query'>Statement#query</a>. The following fields are
@@ -63573,6 +66471,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getUserTeamAssociationsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UserTeamAssociationPage> getUserTeamAssociationsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getUserTeamAssociationsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='UserTeamAssociation'>UserTeamAssociation</a>
 		/// objects that match the given <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='userTeamAssociationAction'>the action to perform</param>
@@ -63581,6 +66483,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performUserTeamAssociationAction(Google.Api.Ads.Dfp.v201711.UserTeamAssociationAction userTeamAssociationAction, Google.Api.Ads.Dfp.v201711.Statement statement) {
 			return base.Channel.performUserTeamAssociationAction(userTeamAssociationAction, statement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performUserTeamAssociationActionAsync(Google.Api.Ads.Dfp.v201711.UserTeamAssociationAction userTeamAssociationAction, Google.Api.Ads.Dfp.v201711.Statement statement) {
+			return base.Channel.performUserTeamAssociationActionAsync(userTeamAssociationAction, statement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -63597,6 +66503,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.userTeamAssociations = userTeamAssociations;
 			Wrappers.UserTeamAssociationService.updateUserTeamAssociationsResponse retVal = ((Google.Api.Ads.Dfp.v201711.UserTeamAssociationServiceInterface)(this)).updateUserTeamAssociations(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.UserTeamAssociationService.updateUserTeamAssociationsResponse> Google.Api.Ads.Dfp.v201711.UserTeamAssociationServiceInterface.updateUserTeamAssociationsAsync(Wrappers.UserTeamAssociationService.updateUserTeamAssociationsRequest request) {
+			return base.Channel.updateUserTeamAssociationsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UserTeamAssociation[]> updateUserTeamAssociationsAsync(Google.Api.Ads.Dfp.v201711.UserTeamAssociation[] userTeamAssociations) {
+			Wrappers.UserTeamAssociationService.updateUserTeamAssociationsRequest inValue = new Wrappers.UserTeamAssociationService.updateUserTeamAssociationsRequest();
+			inValue.userTeamAssociations = userTeamAssociations;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UserTeamAssociation[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.UserTeamAssociationServiceInterface)(this)).updateUserTeamAssociationsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.WorkflowRequestService
@@ -64032,11 +66949,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Google.Api.Ads.Dfp.v201711.WorkflowRequestPage getWorkflowRequestsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.WorkflowRequestPage> getWorkflowRequestsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performWorkflowRequestAction(Google.Api.Ads.Dfp.v201711.WorkflowRequestAction action, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performWorkflowRequestActionAsync(Google.Api.Ads.Dfp.v201711.WorkflowRequestAction action, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 	}
 
 
@@ -64204,6 +67129,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getWorkflowRequestsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.WorkflowRequestPage> getWorkflowRequestsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getWorkflowRequestsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Perform actions on <a href='WorkflowRequest'>WorkflowRequest</a> objects that
 		/// match the given <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='action'>the action to perform</param>
@@ -64212,6 +67141,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performWorkflowRequestAction(Google.Api.Ads.Dfp.v201711.WorkflowRequestAction action, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performWorkflowRequestAction(action, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performWorkflowRequestActionAsync(Google.Api.Ads.Dfp.v201711.WorkflowRequestAction action, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performWorkflowRequestActionAsync(action, filterStatement);
 		}
 	}
 	namespace Wrappers.PackageService
@@ -64595,11 +67528,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.PackageService.createPackagesResponse createPackages(Wrappers.PackageService.createPackagesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.PackageService.createPackagesResponse> createPackagesAsync(Wrappers.PackageService.createPackagesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.PackagePage getPackagesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.PackagePage> getPackagesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -64608,6 +67548,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performPackageAction(Google.Api.Ads.Dfp.v201711.PackageAction packageAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performPackageActionAsync(Google.Api.Ads.Dfp.v201711.PackageAction packageAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -64615,6 +67559,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.PackageService.updatePackagesResponse updatePackages(Wrappers.PackageService.updatePackagesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.PackageService.updatePackagesResponse> updatePackagesAsync(Wrappers.PackageService.updatePackagesRequest request);
 	}
 
 
@@ -64790,6 +67737,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.PackageService.createPackagesResponse> Google.Api.Ads.Dfp.v201711.PackageServiceInterface.createPackagesAsync(Wrappers.PackageService.createPackagesRequest request) {
+			return base.Channel.createPackagesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Package[]> createPackagesAsync(Google.Api.Ads.Dfp.v201711.Package[] packages) {
+			Wrappers.PackageService.createPackagesRequest inValue = new Wrappers.PackageService.createPackagesRequest();
+			inValue.packages = packages;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Package[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.PackageServiceInterface)(this)).createPackagesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='PackagePage'>PackagePage</a> of <a href='Package'>Package</a>
 		/// objects that satisfy the given <a href='Statement#query'>Statement#query</a>.
 		/// The following fields are supported for filtering: <table> <tr> <th
@@ -64812,6 +67770,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getPackagesByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.PackagePage> getPackagesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getPackagesByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='Package'>Package</a> objects that match the given
 		/// <a href='Statement'>Statement</a>.
 		/// </summary><param name='packageAction'>the action to perform</param>
@@ -64820,6 +67782,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performPackageAction(Google.Api.Ads.Dfp.v201711.PackageAction packageAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performPackageAction(packageAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performPackageActionAsync(Google.Api.Ads.Dfp.v201711.PackageAction packageAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performPackageActionAsync(packageAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -64835,6 +67801,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.packages = packages;
 			Wrappers.PackageService.updatePackagesResponse retVal = ((Google.Api.Ads.Dfp.v201711.PackageServiceInterface)(this)).updatePackages(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.PackageService.updatePackagesResponse> Google.Api.Ads.Dfp.v201711.PackageServiceInterface.updatePackagesAsync(Wrappers.PackageService.updatePackagesRequest request) {
+			return base.Channel.updatePackagesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Package[]> updatePackagesAsync(Google.Api.Ads.Dfp.v201711.Package[] packages) {
+			Wrappers.PackageService.updatePackagesRequest inValue = new Wrappers.PackageService.updatePackagesRequest();
+			inValue.packages = packages;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Package[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.PackageServiceInterface)(this)).updatePackagesAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ProductPackageService
@@ -65315,11 +68292,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.ProductPackageService.createProductPackagesResponse createProductPackages(Wrappers.ProductPackageService.createProductPackagesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ProductPackageService.createProductPackagesResponse> createProductPackagesAsync(Wrappers.ProductPackageService.createProductPackagesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ProductPackagePage getProductPackagesByStatement(Google.Api.Ads.Dfp.v201711.Statement statement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackagePage> getProductPackagesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -65328,6 +68312,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performProductPackageAction(Google.Api.Ads.Dfp.v201711.ProductPackageAction action, Google.Api.Ads.Dfp.v201711.Statement statement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performProductPackageActionAsync(Google.Api.Ads.Dfp.v201711.ProductPackageAction action, Google.Api.Ads.Dfp.v201711.Statement statement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -65335,6 +68323,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ProductPackageService.updateProductPackagesResponse updateProductPackages(Wrappers.ProductPackageService.updateProductPackagesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ProductPackageService.updateProductPackagesResponse> updateProductPackagesAsync(Wrappers.ProductPackageService.updateProductPackagesRequest request);
 	}
 
 
@@ -65542,6 +68533,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ProductPackageService.createProductPackagesResponse> Google.Api.Ads.Dfp.v201711.ProductPackageServiceInterface.createProductPackagesAsync(Wrappers.ProductPackageService.createProductPackagesRequest request) {
+			return base.Channel.createProductPackagesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackage[]> createProductPackagesAsync(Google.Api.Ads.Dfp.v201711.ProductPackage[] productPackages) {
+			Wrappers.ProductPackageService.createProductPackagesRequest inValue = new Wrappers.ProductPackageService.createProductPackagesRequest();
+			inValue.productPackages = productPackages;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackage[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ProductPackageServiceInterface)(this)).createProductPackagesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='ProductPackagePage'>ProductPackagePage</a> of <a
 		/// href='ProductPackage'>ProductPackage</a> objects that satisfy the filtering
 		/// criteria specified by given <a href='Statement#query'>Statement#query</a>. The
@@ -65567,6 +68569,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getProductPackagesByStatement(statement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackagePage> getProductPackagesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement) {
+			return base.Channel.getProductPackagesByStatementAsync(statement);
+		}
+
 		/// <summary>Performs actions on <a href='ProductPackage'>ProductPackage</a> objects that
 		/// match the given <a href=''>Statement#query</a>.
 		/// </summary><param name='action'>the action to perform</param>
@@ -65575,6 +68581,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performProductPackageAction(Google.Api.Ads.Dfp.v201711.ProductPackageAction action, Google.Api.Ads.Dfp.v201711.Statement statement) {
 			return base.Channel.performProductPackageAction(action, statement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performProductPackageActionAsync(Google.Api.Ads.Dfp.v201711.ProductPackageAction action, Google.Api.Ads.Dfp.v201711.Statement statement) {
+			return base.Channel.performProductPackageActionAsync(action, statement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -65590,6 +68600,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.productPackages = productPackages;
 			Wrappers.ProductPackageService.updateProductPackagesResponse retVal = ((Google.Api.Ads.Dfp.v201711.ProductPackageServiceInterface)(this)).updateProductPackages(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ProductPackageService.updateProductPackagesResponse> Google.Api.Ads.Dfp.v201711.ProductPackageServiceInterface.updateProductPackagesAsync(Wrappers.ProductPackageService.updateProductPackagesRequest request) {
+			return base.Channel.updateProductPackagesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackage[]> updateProductPackagesAsync(Google.Api.Ads.Dfp.v201711.ProductPackage[] productPackages) {
+			Wrappers.ProductPackageService.updateProductPackagesRequest inValue = new Wrappers.ProductPackageService.updateProductPackagesRequest();
+			inValue.productPackages = productPackages;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackage[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ProductPackageServiceInterface)(this)).updateProductPackagesAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ProductPackageItemService
@@ -65942,11 +68963,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.ProductPackageItemService.createProductPackageItemsResponse createProductPackageItems(Wrappers.ProductPackageItemService.createProductPackageItemsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ProductPackageItemService.createProductPackageItemsResponse> createProductPackageItemsAsync(Wrappers.ProductPackageItemService.createProductPackageItemsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ProductPackageItemPage getProductPackageItemsByStatement(Google.Api.Ads.Dfp.v201711.Statement statement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackageItemPage> getProductPackageItemsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -65955,6 +68983,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performProductPackageItemAction(Google.Api.Ads.Dfp.v201711.ProductPackageItemAction productPackageItemAction, Google.Api.Ads.Dfp.v201711.Statement statement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performProductPackageItemActionAsync(Google.Api.Ads.Dfp.v201711.ProductPackageItemAction productPackageItemAction, Google.Api.Ads.Dfp.v201711.Statement statement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -65962,6 +68994,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ProductPackageItemService.updateProductPackageItemsResponse updateProductPackageItems(Wrappers.ProductPackageItemService.updateProductPackageItemsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ProductPackageItemService.updateProductPackageItemsResponse> updateProductPackageItemsAsync(Wrappers.ProductPackageItemService.updateProductPackageItemsRequest request);
 	}
 
 
@@ -66146,6 +69181,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ProductPackageItemService.createProductPackageItemsResponse> Google.Api.Ads.Dfp.v201711.ProductPackageItemServiceInterface.createProductPackageItemsAsync(Wrappers.ProductPackageItemService.createProductPackageItemsRequest request) {
+			return base.Channel.createProductPackageItemsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackageItem[]> createProductPackageItemsAsync(Google.Api.Ads.Dfp.v201711.ProductPackageItem[] productPackageItems) {
+			Wrappers.ProductPackageItemService.createProductPackageItemsRequest inValue = new Wrappers.ProductPackageItemService.createProductPackageItemsRequest();
+			inValue.productPackageItems = productPackageItems;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackageItem[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ProductPackageItemServiceInterface)(this)).createProductPackageItemsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='ProductPackageItemPage'>ProductPackageItemPage</a> of
 		/// <code>ProductPackageItem</code> objects that satisfy the filtering criteria
 		/// specified by given <a href='Statement#query'>Statement#query</a>. The following
@@ -66171,6 +69217,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getProductPackageItemsByStatement(statement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackageItemPage> getProductPackageItemsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement) {
+			return base.Channel.getProductPackageItemsByStatementAsync(statement);
+		}
+
 		/// <summary>Performs actions on <a href='ProductPackageItem'>ProductPackageItem</a> objects
 		/// that satisfy the given <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='productPackageItemAction'>the action to perform</param>
@@ -66179,6 +69229,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performProductPackageItemAction(Google.Api.Ads.Dfp.v201711.ProductPackageItemAction productPackageItemAction, Google.Api.Ads.Dfp.v201711.Statement statement) {
 			return base.Channel.performProductPackageItemAction(productPackageItemAction, statement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performProductPackageItemActionAsync(Google.Api.Ads.Dfp.v201711.ProductPackageItemAction productPackageItemAction, Google.Api.Ads.Dfp.v201711.Statement statement) {
+			return base.Channel.performProductPackageItemActionAsync(productPackageItemAction, statement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -66195,6 +69249,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.productPackageItems = productPackageItems;
 			Wrappers.ProductPackageItemService.updateProductPackageItemsResponse retVal = ((Google.Api.Ads.Dfp.v201711.ProductPackageItemServiceInterface)(this)).updateProductPackageItems(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ProductPackageItemService.updateProductPackageItemsResponse> Google.Api.Ads.Dfp.v201711.ProductPackageItemServiceInterface.updateProductPackageItemsAsync(Wrappers.ProductPackageItemService.updateProductPackageItemsRequest request) {
+			return base.Channel.updateProductPackageItemsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackageItem[]> updateProductPackageItemsAsync(Google.Api.Ads.Dfp.v201711.ProductPackageItem[] productPackageItems) {
+			Wrappers.ProductPackageItemService.updateProductPackageItemsRequest inValue = new Wrappers.ProductPackageItemService.updateProductPackageItemsRequest();
+			inValue.productPackageItems = productPackageItems;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackageItem[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ProductPackageItemServiceInterface)(this)).updateProductPackageItemsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ContactService
@@ -66620,12 +69685,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.ContactService.createContactsResponse createContacts(Wrappers.ContactService.createContactsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ContactService.createContactsResponse> createContactsAsync(Wrappers.ContactService.createContactsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseContact))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ContactPage getContactsByStatement(Google.Api.Ads.Dfp.v201711.Statement statement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContactPage> getContactsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement);
 
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -66635,6 +69707,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseContact))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ContactService.updateContactsResponse updateContacts(Wrappers.ContactService.updateContactsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ContactService.updateContactsResponse> updateContactsAsync(Wrappers.ContactService.updateContactsRequest request);
 	}
 
 
@@ -66778,6 +69853,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ContactService.createContactsResponse> Google.Api.Ads.Dfp.v201711.ContactServiceInterface.createContactsAsync(Wrappers.ContactService.createContactsRequest request) {
+			return base.Channel.createContactsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Contact[]> createContactsAsync(Google.Api.Ads.Dfp.v201711.Contact[] contacts) {
+			Wrappers.ContactService.createContactsRequest inValue = new Wrappers.ContactService.createContactsRequest();
+			inValue.contacts = contacts;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Contact[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ContactServiceInterface)(this)).createContactsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='ContactPage'>ContactPage</a> of <a href='Contact'>Contact</a>
 		/// objects that satisfy the given <a href='Statement#query'>Statement#query</a>.
 		/// The following fields are supported for filtering: <table> <tr> <th
@@ -66806,6 +69892,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getContactsByStatement(statement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContactPage> getContactsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement) {
+			return base.Channel.getContactsByStatementAsync(statement);
+		}
+
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.ContactService.updateContactsResponse Google.Api.Ads.Dfp.v201711.ContactServiceInterface.updateContacts(Wrappers.ContactService.updateContactsRequest request) {
 			return base.Channel.updateContacts(request);
@@ -66819,6 +69909,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.contacts = contacts;
 			Wrappers.ContactService.updateContactsResponse retVal = ((Google.Api.Ads.Dfp.v201711.ContactServiceInterface)(this)).updateContacts(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ContactService.updateContactsResponse> Google.Api.Ads.Dfp.v201711.ContactServiceInterface.updateContactsAsync(Wrappers.ContactService.updateContactsRequest request) {
+			return base.Channel.updateContactsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Contact[]> updateContactsAsync(Google.Api.Ads.Dfp.v201711.Contact[] contacts) {
+			Wrappers.ContactService.updateContactsRequest inValue = new Wrappers.ContactService.updateContactsRequest();
+			inValue.contacts = contacts;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Contact[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ContactServiceInterface)(this)).updateContactsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.NativeStyleService
@@ -67235,11 +70336,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.NativeStyleService.createNativeStylesResponse createNativeStyles(Wrappers.NativeStyleService.createNativeStylesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.NativeStyleService.createNativeStylesResponse> createNativeStylesAsync(Wrappers.NativeStyleService.createNativeStylesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.NativeStylePage getNativeStylesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.NativeStylePage> getNativeStylesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -67248,6 +70356,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performNativeStyleAction(Google.Api.Ads.Dfp.v201711.NativeStyleAction nativeStyleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performNativeStyleActionAsync(Google.Api.Ads.Dfp.v201711.NativeStyleAction nativeStyleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -67255,6 +70367,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.NativeStyleService.updateNativeStylesResponse updateNativeStyles(Wrappers.NativeStyleService.updateNativeStylesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.NativeStyleService.updateNativeStylesResponse> updateNativeStylesAsync(Wrappers.NativeStyleService.updateNativeStylesRequest request);
 	}
 
 
@@ -67421,6 +70536,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.NativeStyleService.createNativeStylesResponse> Google.Api.Ads.Dfp.v201711.NativeStyleServiceInterface.createNativeStylesAsync(Wrappers.NativeStyleService.createNativeStylesRequest request) {
+			return base.Channel.createNativeStylesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.NativeStyle[]> createNativeStylesAsync(Google.Api.Ads.Dfp.v201711.NativeStyle[] nativeStyles) {
+			Wrappers.NativeStyleService.createNativeStylesRequest inValue = new Wrappers.NativeStyleService.createNativeStylesRequest();
+			inValue.nativeStyles = nativeStyles;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.NativeStyle[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.NativeStyleServiceInterface)(this)).createNativeStylesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='NativeStylePage'>NativeStylePage</a> of <a
 		/// href='NativeStyle'>NativeStyle</a> objects that satisfy the given <a
 		/// href='Statement'>Statement</a>. The following fields are supported for
@@ -67436,6 +70562,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getNativeStylesByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.NativeStylePage> getNativeStylesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getNativeStylesByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='NativeStyle'>native styles</a> that match the given
 		/// <a href='Statement'>Statement</a>.
 		/// </summary><param name='nativeStyleAction'>the action to perform</param>
@@ -67444,6 +70574,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performNativeStyleAction(Google.Api.Ads.Dfp.v201711.NativeStyleAction nativeStyleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performNativeStyleAction(nativeStyleAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performNativeStyleActionAsync(Google.Api.Ads.Dfp.v201711.NativeStyleAction nativeStyleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performNativeStyleActionAsync(nativeStyleAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -67459,6 +70593,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.nativeStyles = nativeStyles;
 			Wrappers.NativeStyleService.updateNativeStylesResponse retVal = ((Google.Api.Ads.Dfp.v201711.NativeStyleServiceInterface)(this)).updateNativeStyles(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.NativeStyleService.updateNativeStylesResponse> Google.Api.Ads.Dfp.v201711.NativeStyleServiceInterface.updateNativeStylesAsync(Wrappers.NativeStyleService.updateNativeStylesRequest request) {
+			return base.Channel.updateNativeStylesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.NativeStyle[]> updateNativeStylesAsync(Google.Api.Ads.Dfp.v201711.NativeStyle[] nativeStyles) {
+			Wrappers.NativeStyleService.updateNativeStylesRequest inValue = new Wrappers.NativeStyleService.updateNativeStylesRequest();
+			inValue.nativeStyles = nativeStyles;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.NativeStyle[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.NativeStyleServiceInterface)(this)).updateNativeStylesAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.AudienceSegmentService
@@ -67595,7 +70740,7 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// href='CustomCriteriaSet'>CustomCriteriaSet</a>.</li> <li>The third level can
 		/// only comprise of <a href='CustomCriteria'>CustomCriteria</a> objects.</li> </ul>
 		/// <p>The resulting custom criteria rule would be of the form:<br /> <img
-		/// src="http://chart.apis.google.com/chart?cht=gv&amp;chl=digraph{customTargeting_LogicalOperator_OR-%3ECustomCriteriaSet_LogicalOperator_AND_1-%3ECustomCriteria_1;CustomCriteriaSet_LogicalOperator_AND_1-%3Eellipsis1;customTargeting_LogicalOperator_OR-%3Eellipsis2;ellipsis1[label=%22...%22,shape=none,fontsize=32];ellipsis2[label=%22...%22,shape=none,fontsize=32]}&amp;chs=450x200"/></p>
+		/// src="https://chart.apis.google.com/chart?cht=gv&amp;chl=digraph{customTargeting_LogicalOperator_OR-%3ECustomCriteriaSet_LogicalOperator_AND_1-%3ECustomCriteria_1;CustomCriteriaSet_LogicalOperator_AND_1-%3Eellipsis1;customTargeting_LogicalOperator_OR-%3Eellipsis2;ellipsis1[label=%22...%22,shape=none,fontsize=32];ellipsis2[label=%22...%22,shape=none,fontsize=32]}&amp;chs=450x200"/></p>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 1)]
 		public CustomCriteriaSet customCriteriaRule {
@@ -67989,7 +71134,7 @@ namespace Google.Api.Ads.Dfp.v201711
 
 	/// <summary>A <a href='ThirdPartyAudienceSegment'>ThirdPartyAudienceSegment</a> is an <a
 	/// href='AudienceSegment'>AudienceSegment</a> owned by a data provider and licensed
-	/// to the DFP publisher.
+	/// to the Ad Manager publisher.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -68142,7 +71287,7 @@ namespace Google.Api.Ads.Dfp.v201711
 		DIRECT_LICENSE = 0,
 		/// <summary>A global license is the result of an agreement between Google and the data
 		/// provider, which agrees to license their audience segments to all the publishers
-		/// and/or advertisers of the Doubleclick ecosystem.
+		/// and/or advertisers of the Google ecosystem.
 		/// </summary>
 		GLOBAL_LICENSE = 1,
 		/// <summary>The value returned if the actual value is not exposed by the requested API
@@ -68317,7 +71462,8 @@ namespace Google.Api.Ads.Dfp.v201711
 	/// is a <a href='FirstPartyAudienceSegment'>FirstPartyAudienceSegment</a> owned by
 	/// the publisher network. It doesn't contain a rule. Cookies are usually added to
 	/// this segment via cookie upload. <p>These segments are created by data management
-	/// platforms or Google Analytics. They cannot be created using the DFP API.</p>
+	/// platforms or Google Analytics. They cannot be created using the Ad Manager
+	/// API.</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -68373,12 +71519,19 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.AudienceSegmentService.createAudienceSegmentsResponse createAudienceSegments(Wrappers.AudienceSegmentService.createAudienceSegmentsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.AudienceSegmentService.createAudienceSegmentsResponse> createAudienceSegmentsAsync(Wrappers.AudienceSegmentService.createAudienceSegmentsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(AudienceSegment))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.AudienceSegmentPage getAudienceSegmentsByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AudienceSegmentPage> getAudienceSegmentsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -68388,6 +71541,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performAudienceSegmentAction(Google.Api.Ads.Dfp.v201711.AudienceSegmentAction action, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performAudienceSegmentActionAsync(Google.Api.Ads.Dfp.v201711.AudienceSegmentAction action, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -68396,6 +71553,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(AudienceSegment))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.AudienceSegmentService.updateAudienceSegmentsResponse updateAudienceSegments(Wrappers.AudienceSegmentService.updateAudienceSegmentsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.AudienceSegmentService.updateAudienceSegmentsResponse> updateAudienceSegmentsAsync(Wrappers.AudienceSegmentService.updateAudienceSegmentsRequest request);
 	}
 
 
@@ -68623,6 +71783,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.AudienceSegmentService.createAudienceSegmentsResponse> Google.Api.Ads.Dfp.v201711.AudienceSegmentServiceInterface.createAudienceSegmentsAsync(Wrappers.AudienceSegmentService.createAudienceSegmentsRequest request) {
+			return base.Channel.createAudienceSegmentsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.FirstPartyAudienceSegment[]> createAudienceSegmentsAsync(Google.Api.Ads.Dfp.v201711.FirstPartyAudienceSegment[] segments) {
+			Wrappers.AudienceSegmentService.createAudienceSegmentsRequest inValue = new Wrappers.AudienceSegmentService.createAudienceSegmentsRequest();
+			inValue.segments = segments;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.FirstPartyAudienceSegment[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.AudienceSegmentServiceInterface)(this)).createAudienceSegmentsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets an <a href='AudienceSegmentPage'>AudienceSegmentPage</a> of <a
 		/// href='AudienceSegment'>AudienceSegment</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
@@ -68655,6 +71826,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getAudienceSegmentsByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AudienceSegmentPage> getAudienceSegmentsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getAudienceSegmentsByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs the given <a href='AudienceSegmentAction'>AudienceSegmentAction</a> on
 		/// the set of segments identified by the given statement.
 		/// </summary><param name='action'><a href='AudienceSegmentAction'>AudienceSegmentAction</a>
@@ -68664,6 +71839,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns><a href='UpdateResult'>UpdateResult</a> indicating the result</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performAudienceSegmentAction(Google.Api.Ads.Dfp.v201711.AudienceSegmentAction action, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performAudienceSegmentAction(action, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performAudienceSegmentActionAsync(Google.Api.Ads.Dfp.v201711.AudienceSegmentAction action, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performAudienceSegmentActionAsync(action, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -68681,6 +71860,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.segments = segments;
 			Wrappers.AudienceSegmentService.updateAudienceSegmentsResponse retVal = ((Google.Api.Ads.Dfp.v201711.AudienceSegmentServiceInterface)(this)).updateAudienceSegments(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.AudienceSegmentService.updateAudienceSegmentsResponse> Google.Api.Ads.Dfp.v201711.AudienceSegmentServiceInterface.updateAudienceSegmentsAsync(Wrappers.AudienceSegmentService.updateAudienceSegmentsRequest request) {
+			return base.Channel.updateAudienceSegmentsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.FirstPartyAudienceSegment[]> updateAudienceSegmentsAsync(Google.Api.Ads.Dfp.v201711.FirstPartyAudienceSegment[] segments) {
+			Wrappers.AudienceSegmentService.updateAudienceSegmentsRequest inValue = new Wrappers.AudienceSegmentService.updateAudienceSegmentsRequest();
+			inValue.segments = segments;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.FirstPartyAudienceSegment[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.AudienceSegmentServiceInterface)(this)).updateAudienceSegmentsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.BaseRateService
@@ -69101,11 +72291,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.BaseRateService.createBaseRatesResponse createBaseRates(Wrappers.BaseRateService.createBaseRatesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.BaseRateService.createBaseRatesResponse> createBaseRatesAsync(Wrappers.BaseRateService.createBaseRatesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.BaseRatePage getBaseRatesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.BaseRatePage> getBaseRatesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -69114,6 +72311,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performBaseRateAction(Google.Api.Ads.Dfp.v201711.BaseRateAction baseRateAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performBaseRateActionAsync(Google.Api.Ads.Dfp.v201711.BaseRateAction baseRateAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -69121,6 +72322,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.BaseRateService.updateBaseRatesResponse updateBaseRates(Wrappers.BaseRateService.updateBaseRatesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.BaseRateService.updateBaseRatesResponse> updateBaseRatesAsync(Wrappers.BaseRateService.updateBaseRatesRequest request);
 	}
 
 
@@ -69291,6 +72495,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.BaseRateService.createBaseRatesResponse> Google.Api.Ads.Dfp.v201711.BaseRateServiceInterface.createBaseRatesAsync(Wrappers.BaseRateService.createBaseRatesRequest request) {
+			return base.Channel.createBaseRatesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.BaseRate[]> createBaseRatesAsync(Google.Api.Ads.Dfp.v201711.BaseRate[] baseRates) {
+			Wrappers.BaseRateService.createBaseRatesRequest inValue = new Wrappers.BaseRateService.createBaseRatesRequest();
+			inValue.baseRates = baseRates;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.BaseRate[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.BaseRateServiceInterface)(this)).createBaseRatesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='BaseRatePage'>BaseRatePage</a> of <a
 		/// href='BaseRate'>BaseRate</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
@@ -69312,6 +72527,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getBaseRatesByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.BaseRatePage> getBaseRatesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getBaseRatesByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='BaseRate'>BaseRate</a> objects that satisfy the
 		/// given <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='baseRateAction'>the action to perform</param>
@@ -69320,6 +72539,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performBaseRateAction(Google.Api.Ads.Dfp.v201711.BaseRateAction baseRateAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performBaseRateAction(baseRateAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performBaseRateActionAsync(Google.Api.Ads.Dfp.v201711.BaseRateAction baseRateAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performBaseRateActionAsync(baseRateAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -69335,6 +72558,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.baseRates = baseRates;
 			Wrappers.BaseRateService.updateBaseRatesResponse retVal = ((Google.Api.Ads.Dfp.v201711.BaseRateServiceInterface)(this)).updateBaseRates(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.BaseRateService.updateBaseRatesResponse> Google.Api.Ads.Dfp.v201711.BaseRateServiceInterface.updateBaseRatesAsync(Wrappers.BaseRateService.updateBaseRatesRequest request) {
+			return base.Channel.updateBaseRatesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.BaseRate[]> updateBaseRatesAsync(Google.Api.Ads.Dfp.v201711.BaseRate[] baseRates) {
+			Wrappers.BaseRateService.updateBaseRatesRequest inValue = new Wrappers.BaseRateService.updateBaseRatesRequest();
+			inValue.baseRates = baseRates;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.BaseRate[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.BaseRateServiceInterface)(this)).updateBaseRatesAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.CdnConfigurationService
@@ -69499,11 +72733,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.CdnConfigurationService.createCdnConfigurationsResponse createCdnConfigurations(Wrappers.CdnConfigurationService.createCdnConfigurationsRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CdnConfigurationService.createCdnConfigurationsResponse> createCdnConfigurationsAsync(Wrappers.CdnConfigurationService.createCdnConfigurationsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.CdnConfigurationPage getCdnConfigurationsByStatement(Google.Api.Ads.Dfp.v201711.Statement statement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CdnConfigurationPage> getCdnConfigurationsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement);
 
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -69512,6 +72753,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.CdnConfigurationService.updateCdnConfigurationsResponse updateCdnConfigurations(Wrappers.CdnConfigurationService.updateCdnConfigurationsRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CdnConfigurationService.updateCdnConfigurationsResponse> updateCdnConfigurationsAsync(Wrappers.CdnConfigurationService.updateCdnConfigurationsRequest request);
 	}
 
 
@@ -69654,6 +72898,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CdnConfigurationService.createCdnConfigurationsResponse> Google.Api.Ads.Dfp.v201711.CdnConfigurationServiceInterface.createCdnConfigurationsAsync(Wrappers.CdnConfigurationService.createCdnConfigurationsRequest request) {
+			return base.Channel.createCdnConfigurationsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CdnConfiguration[]> createCdnConfigurationsAsync(Google.Api.Ads.Dfp.v201711.CdnConfiguration[] cdnConfigurations) {
+			Wrappers.CdnConfigurationService.createCdnConfigurationsRequest inValue = new Wrappers.CdnConfigurationService.createCdnConfigurationsRequest();
+			inValue.cdnConfigurations = cdnConfigurations;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CdnConfiguration[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CdnConfigurationServiceInterface)(this)).createCdnConfigurationsAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='CdnConfigurationPage'>CdnConfigurationPage</a> of <a
 		/// href='CdnConfiguration'>CdnConfiguration</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. Currently only CDN Configurations of
@@ -69669,6 +72924,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getCdnConfigurationsByStatement(statement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CdnConfigurationPage> getCdnConfigurationsByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement statement) {
+			return base.Channel.getCdnConfigurationsByStatementAsync(statement);
+		}
+
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.CdnConfigurationService.updateCdnConfigurationsResponse Google.Api.Ads.Dfp.v201711.CdnConfigurationServiceInterface.updateCdnConfigurations(Wrappers.CdnConfigurationService.updateCdnConfigurationsRequest request) {
 			return base.Channel.updateCdnConfigurations(request);
@@ -69681,6 +72940,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.cdnConfigurations = cdnConfigurations;
 			Wrappers.CdnConfigurationService.updateCdnConfigurationsResponse retVal = ((Google.Api.Ads.Dfp.v201711.CdnConfigurationServiceInterface)(this)).updateCdnConfigurations(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CdnConfigurationService.updateCdnConfigurationsResponse> Google.Api.Ads.Dfp.v201711.CdnConfigurationServiceInterface.updateCdnConfigurationsAsync(Wrappers.CdnConfigurationService.updateCdnConfigurationsRequest request) {
+			return base.Channel.updateCdnConfigurationsAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CdnConfiguration[]> updateCdnConfigurationsAsync(Google.Api.Ads.Dfp.v201711.CdnConfiguration[] cdnConfigurations) {
+			Wrappers.CdnConfigurationService.updateCdnConfigurationsRequest inValue = new Wrappers.CdnConfigurationService.updateCdnConfigurationsRequest();
+			inValue.cdnConfigurations = cdnConfigurations;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CdnConfiguration[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CdnConfigurationServiceInterface)(this)).updateCdnConfigurationsAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.CompanyService
@@ -69806,7 +73076,7 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>Default billing cap for <a href='Proposal'>proposals</a> created by the <a
 		/// href='Company'>Company</a> of type <a
-		/// href='Company.Type#ADVERTISER'>Company.Type#ADVERTISER</a> in DFP Sales Manager.
+		/// href='Company.Type#ADVERTISER'>Company.Type#ADVERTISER</a> in Sales Manager.
 		/// Return null if default billing setting feature is disabled or <a
 		/// href='BillingSource'>BillingSource</a> is <a
 		/// href='BillingSource#CONTRACTED'>BillingSource#CONTRACTED</a>. It is allowed that
@@ -69839,7 +73109,7 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>Default billing schedule for <a href='Proposal'>proposals</a> created by the <a
 		/// href='Company'>Company</a> of type <a
-		/// href='Company.Type#ADVERTISER'>Company.Type#ADVERTISER</a> in DFP Sales Manager.
+		/// href='Company.Type#ADVERTISER'>Company.Type#ADVERTISER</a> in Sales Manager.
 		/// Return null if default billing setting feature is disabled or <a
 		/// href='BillingSource'>BillingSource</a> is not <a
 		/// href='BillingSource#CONTRACTED'>BillingSource#CONTRACTED</a>. It is allowed that
@@ -69872,7 +73142,7 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>Default billing source for <a href='Proposal'>proposals</a> created by the <a
 		/// href='Company'>Company</a> of type <a
-		/// href='Company.Type#ADVERTISER'>Company.Type#ADVERTISER</a> in DFP Sales Manager.
+		/// href='Company.Type#ADVERTISER'>Company.Type#ADVERTISER</a> in Sales Manager.
 		/// Return null if default billing setting feature is disabled. It is allowed that
 		/// all of the BillingCap, BillingSchedule, BillingSource are null when the company
 		/// has no setting about these values.
@@ -69903,7 +73173,7 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>Default advertiser discount for <a href='Proposal'>proposals</a> created by the
 		/// <a href='Company'>Company</a> of type <a
-		/// href='Company.Type#ADVERTISER'>Company.Type#ADVERTISER</a> in DFP Sales Manager.
+		/// href='Company.Type#ADVERTISER'>Company.Type#ADVERTISER</a> in Sales Manager.
 		/// Return null if default billing setting feature is disabled or the company has no
 		/// setting on this value. It presents in millipercentage (values 0 to 100000).
 		/// </summary>
@@ -69933,7 +73203,7 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>Default value added tax for <a href='Proposal'>proposals</a> created by the <a
 		/// href='Company'>Company</a> of type <a
-		/// href='Company.Type#ADVERTISER'>Company.Type#ADVERTISER</a> in DFP Sales Manager.
+		/// href='Company.Type#ADVERTISER'>Company.Type#ADVERTISER</a> in Sales Manager.
 		/// Return null if default billing setting feature is disabled or the company has no
 		/// setting on this value. It presents in millipercentage (values 0 to 100000).
 		/// </summary>
@@ -69963,9 +73233,9 @@ namespace Google.Api.Ads.Dfp.v201711
 
 		/// <summary>Default agency commission for <a href='Proposal'>proposals</a> associated with
 		/// the <a href='Company'>Company</a> of type <a
-		/// href='Company.Type#AGENCY'>Company.Type#AGENCY</a> in DFP Sales Manager. Return
-		/// null if the default billing setting feature is disabled or the company has no
-		/// setting on this value. It presents in millipercentage (values 0 to 100000).
+		/// href='Company.Type#AGENCY'>Company.Type#AGENCY</a> in Sales Manager. Return null
+		/// if the default billing setting feature is disabled or the company has no setting
+		/// on this value. It presents in millipercentage (values 0 to 100000).
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 5)]
 		public long agencyCommission {
@@ -70362,12 +73632,12 @@ namespace Google.Api.Ads.Dfp.v201711
 	/// <summary>Specifies the credit-worthiness of the company for which the publisher runs an
 	/// order. By doing so, the publisher can control the running of campaigns for the
 	/// company. A publisher can choose between Basic and Advanced Credit Status
-	/// settings. This feature needs to be enabled in the DoubleClick For Publishers web
-	/// site. Also the kind of setting you need - Basic or Advanced must be configured.
-	/// If Basic is enabled then, the values allowed are <code></code> and
-	/// <code>INACTIVE</code>. If Advanced is chosen, then all values are allowed.
-	/// Choosing an Advanced setting when only the Basic feature has been enabled, or
-	/// using the Basic setting without turning the feature on will result in an error.
+	/// settings. This feature needs to be enabled in the Ad Manager web site. Also the
+	/// kind of setting you need - Basic or Advanced must be configured. If Basic is
+	/// enabled then, the values allowed are <code>ACTIVE</code> and <code></code>. If
+	/// Advanced is chosen, then all values are allowed. Choosing an Advanced setting
+	/// when only the Basic feature has been enabled, or using the Basic setting without
+	/// turning the feature on will result in an error.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -70394,8 +73664,8 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// of the company. However, line items that were activated before the credit status
 		/// change will remain active. You cannot create any new orders or line items for
 		/// the company. It is used to mark companies with which business is to be
-		/// discontinued. Such companies are not listed in Doubleclick for Publishers
-		/// website. This is a Basic as well as an Advanced Credit Status setting.
+		/// discontinued. Such companies are not listed in Ad Manager web site. This is a
+		/// Basic as well as an Advanced Credit Status setting.
 		/// </summary>
 		INACTIVE = 3,
 		/// <summary>When the credit status of a company is marked blocked, then all active line
@@ -70420,11 +73690,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.CompanyService.createCompaniesResponse createCompanies(Wrappers.CompanyService.createCompaniesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CompanyService.createCompaniesResponse> createCompaniesAsync(Wrappers.CompanyService.createCompaniesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.CompanyPage getCompaniesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CompanyPage> getCompaniesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
@@ -70433,6 +73710,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.CompanyService.updateCompaniesResponse updateCompanies(Wrappers.CompanyService.updateCompaniesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.CompanyService.updateCompaniesResponse> updateCompaniesAsync(Wrappers.CompanyService.updateCompaniesRequest request);
 	}
 
 
@@ -70576,6 +73856,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CompanyService.createCompaniesResponse> Google.Api.Ads.Dfp.v201711.CompanyServiceInterface.createCompaniesAsync(Wrappers.CompanyService.createCompaniesRequest request) {
+			return base.Channel.createCompaniesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Company[]> createCompaniesAsync(Google.Api.Ads.Dfp.v201711.Company[] companies) {
+			Wrappers.CompanyService.createCompaniesRequest inValue = new Wrappers.CompanyService.createCompaniesRequest();
+			inValue.companies = companies;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Company[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CompanyServiceInterface)(this)).createCompaniesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='CompanyPage'>CompanyPage</a> of <a href='Company'>Company</a>
 		/// objects that satisfy the given <a href='Statement#query'>Statement#query</a>.
 		/// The following fields are supported for filtering: <table> <tr> <th
@@ -70594,6 +73885,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getCompaniesByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CompanyPage> getCompaniesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getCompaniesByStatementAsync(filterStatement);
+		}
+
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
 		Wrappers.CompanyService.updateCompaniesResponse Google.Api.Ads.Dfp.v201711.CompanyServiceInterface.updateCompanies(Wrappers.CompanyService.updateCompaniesRequest request) {
 			return base.Channel.updateCompanies(request);
@@ -70607,6 +73902,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			inValue.companies = companies;
 			Wrappers.CompanyService.updateCompaniesResponse retVal = ((Google.Api.Ads.Dfp.v201711.CompanyServiceInterface)(this)).updateCompanies(inValue);
 			return retVal.rval;
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.CompanyService.updateCompaniesResponse> Google.Api.Ads.Dfp.v201711.CompanyServiceInterface.updateCompaniesAsync(Wrappers.CompanyService.updateCompaniesRequest request) {
+			return base.Channel.updateCompaniesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Company[]> updateCompaniesAsync(Google.Api.Ads.Dfp.v201711.Company[] companies) {
+			Wrappers.CompanyService.updateCompaniesRequest inValue = new Wrappers.CompanyService.updateCompaniesRequest();
+			inValue.companies = companies;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Company[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.CompanyServiceInterface)(this)).updateCompaniesAsync(inValue)).Result.rval);
 		}
 	}
 	namespace Wrappers.ContentBundleService
@@ -70807,6 +74113,60 @@ namespace Google.Api.Ads.Dfp.v201711
 	}
 
 
+	/// <summary>Errors associated with the incorrect creation of a <a
+	/// href='Condition'>Condition</a>.
+	/// </summary>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201711")]
+	public partial class ContentFilterError : ApiError {
+		private ContentFilterErrorReason reasonField;
+
+		private bool reasonFieldSpecified;
+
+		[System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+		public ContentFilterErrorReason reason {
+			get {
+				return this.reasonField;
+			}
+			set {
+				this.reasonField = value;
+				this.reasonSpecified = true;
+			}
+		}
+
+		/// <summary> <code>true</code>, if a value is specified for <see cref="reason" />,
+		/// <code>false</code> otherwise. </summary>
+		[System.Xml.Serialization.XmlIgnoreAttribute()]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public bool reasonSpecified {
+			get {
+				return this.reasonFieldSpecified;
+			}
+			set {
+				this.reasonFieldSpecified = value;
+			}
+		}
+	}
+
+
+	/// <summary>The reasons for the <a href='ContentFilterError'>ContentFilterError</a>.
+	/// </summary>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ContentFilterError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201711")]
+	public enum ContentFilterErrorReason {
+		/// <summary>The value returned if the actual value is not exposed by the requested API
+		/// version.
+		/// </summary>
+		UNKNOWN = 0,
+		WRONG_NUMBER_OF_ARGUMENTS = 1,
+		ANY_FILTER_NOT_SUPPORTED = 2,
+	}
+
+
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
 	[System.ServiceModel.ServiceContractAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201711", ConfigurationName = "Google.Api.Ads.Dfp.v201711.ContentBundleServiceInterface")]
 	public interface ContentBundleServiceInterface
@@ -70820,11 +74180,18 @@ namespace Google.Api.Ads.Dfp.v201711
 		Wrappers.ContentBundleService.createContentBundlesResponse createContentBundles(Wrappers.ContentBundleService.createContentBundlesRequest request);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ContentBundleService.createContentBundlesResponse> createContentBundlesAsync(Wrappers.ContentBundleService.createContentBundlesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
 		[System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults = true)]
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.ContentBundlePage getContentBundlesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentBundlePage> getContentBundlesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -70833,6 +74200,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Google.Api.Ads.Dfp.v201711.UpdateResult performContentBundleAction(Google.Api.Ads.Dfp.v201711.ContentBundleAction contentBundleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performContentBundleActionAsync(Google.Api.Ads.Dfp.v201711.ContentBundleAction contentBundleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		// CODEGEN: Parameter 'rval' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
 		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
 		[System.ServiceModel.FaultContractAttribute(typeof(Google.Api.Ads.Dfp.v201711.ApiException), Action = "", Name = "ApiExceptionFault")]
@@ -70840,6 +74211,9 @@ namespace Google.Api.Ads.Dfp.v201711
 		[System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationException))]
 		[return: System.ServiceModel.MessageParameterAttribute(Name = "rval")]
 		Wrappers.ContentBundleService.updateContentBundlesResponse updateContentBundles(Wrappers.ContentBundleService.updateContentBundlesRequest request);
+
+		[System.ServiceModel.OperationContractAttribute(Action = "", ReplyAction = "*")]
+		System.Threading.Tasks.Task<Wrappers.ContentBundleService.updateContentBundlesResponse> updateContentBundlesAsync(Wrappers.ContentBundleService.updateContentBundlesRequest request);
 	}
 
 
@@ -71087,6 +74461,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			return retVal.rval;
 		}
 
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ContentBundleService.createContentBundlesResponse> Google.Api.Ads.Dfp.v201711.ContentBundleServiceInterface.createContentBundlesAsync(Wrappers.ContentBundleService.createContentBundlesRequest request) {
+			return base.Channel.createContentBundlesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentBundle[]> createContentBundlesAsync(Google.Api.Ads.Dfp.v201711.ContentBundle[] contentBundles) {
+			Wrappers.ContentBundleService.createContentBundlesRequest inValue = new Wrappers.ContentBundleService.createContentBundlesRequest();
+			inValue.contentBundles = contentBundles;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentBundle[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ContentBundleServiceInterface)(this)).createContentBundlesAsync(inValue)).Result.rval);
+		}
+
 		/// <summary>Gets a <a href='ContentBundlePage'>ContentBundlePage</a> of <a
 		/// href='ContentBundle'>ContentBundle</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
@@ -71104,6 +74489,10 @@ namespace Google.Api.Ads.Dfp.v201711
 			return base.Channel.getContentBundlesByStatement(filterStatement);
 		}
 
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentBundlePage> getContentBundlesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.getContentBundlesByStatementAsync(filterStatement);
+		}
+
 		/// <summary>Performs actions on <a href='ContentBundle'>ContentBundle</a> objects that match
 		/// the given <a href='Statement#query'>Statement#query</a>.
 		/// </summary><param name='contentBundleAction'>the action to perform</param>
@@ -71112,6 +74501,10 @@ namespace Google.Api.Ads.Dfp.v201711
 		/// <returns>the result of the action performed</returns>
 		public virtual Google.Api.Ads.Dfp.v201711.UpdateResult performContentBundleAction(Google.Api.Ads.Dfp.v201711.ContentBundleAction contentBundleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
 			return base.Channel.performContentBundleAction(contentBundleAction, filterStatement);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UpdateResult> performContentBundleActionAsync(Google.Api.Ads.Dfp.v201711.ContentBundleAction contentBundleAction, Google.Api.Ads.Dfp.v201711.Statement filterStatement) {
+			return base.Channel.performContentBundleActionAsync(contentBundleAction, filterStatement);
 		}
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -71128,6 +74521,17 @@ namespace Google.Api.Ads.Dfp.v201711
 			Wrappers.ContentBundleService.updateContentBundlesResponse retVal = ((Google.Api.Ads.Dfp.v201711.ContentBundleServiceInterface)(this)).updateContentBundles(inValue);
 			return retVal.rval;
 		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+		System.Threading.Tasks.Task<Wrappers.ContentBundleService.updateContentBundlesResponse> Google.Api.Ads.Dfp.v201711.ContentBundleServiceInterface.updateContentBundlesAsync(Wrappers.ContentBundleService.updateContentBundlesRequest request) {
+			return base.Channel.updateContentBundlesAsync(request);
+		}
+
+		public virtual System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentBundle[]> updateContentBundlesAsync(Google.Api.Ads.Dfp.v201711.ContentBundle[] contentBundles) {
+			Wrappers.ContentBundleService.updateContentBundlesRequest inValue = new Wrappers.ContentBundleService.updateContentBundlesRequest();
+			inValue.contentBundles = contentBundles;
+			return System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentBundle[]>.Factory.StartNew(() => (((Google.Api.Ads.Dfp.v201711.ContentBundleServiceInterface)(this)).updateContentBundlesAsync(inValue)).Result.rval);
+		}
 	}
 
 
@@ -71142,7 +74546,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.ActivityGroup[] createActivityGroups(Google.Api.Ads.Dfp.v201711.ActivityGroup[] activityGroups);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ActivityGroup[]> createActivityGroupsAsync(Google.Api.Ads.Dfp.v201711.ActivityGroup[] activityGroups);
+
 		Google.Api.Ads.Dfp.v201711.ActivityGroup[] updateActivityGroups(Google.Api.Ads.Dfp.v201711.ActivityGroup[] activityGroups);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ActivityGroup[]> updateActivityGroupsAsync(Google.Api.Ads.Dfp.v201711.ActivityGroup[] activityGroups);
 	}
 
 
@@ -71153,7 +74561,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchy[] createContentMetadataKeyHierarchies(Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchy[] contentMetadataKeyHierarchies);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchy[]> createContentMetadataKeyHierarchiesAsync(Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchy[] contentMetadataKeyHierarchies);
+
 		Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchy[] updateContentMetadataKeyHierarchies(Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchy[] contentMetadataKeyHierarchies);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchy[]> updateContentMetadataKeyHierarchiesAsync(Google.Api.Ads.Dfp.v201711.ContentMetadataKeyHierarchy[] contentMetadataKeyHierarchies);
 	}
 
 
@@ -71183,12 +74595,19 @@ namespace Google.Api.Ads.Dfp.v201711
 	/// href='Creative'>Creative</a> objects. <p>For a creative to run, it must be
 	/// associated with a <a href='LineItem'>LineItem</a> managed by the <a
 	/// href='LineItemCreativeAssociationService'>LineItemCreativeAssociationService</a>.</p>
+	/// <p>Read more about creatives on the <a
+	/// href="https://support.google.com/dfp_premium/answer/3185155">DFP Help
+	/// Center</a>.</p>
 	/// </summary>
 	public interface ICreativeService : CreativeServiceInterface, IDisposable
 	{
 		Google.Api.Ads.Dfp.v201711.Creative[] createCreatives(Google.Api.Ads.Dfp.v201711.Creative[] creatives);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Creative[]> createCreativesAsync(Google.Api.Ads.Dfp.v201711.Creative[] creatives);
+
 		Google.Api.Ads.Dfp.v201711.Creative[] updateCreatives(Google.Api.Ads.Dfp.v201711.Creative[] creatives);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Creative[]> updateCreativesAsync(Google.Api.Ads.Dfp.v201711.Creative[] creatives);
 	}
 
 
@@ -71219,7 +74638,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.CreativeWrapper[] createCreativeWrappers(Google.Api.Ads.Dfp.v201711.CreativeWrapper[] creativeWrappers);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeWrapper[]> createCreativeWrappersAsync(Google.Api.Ads.Dfp.v201711.CreativeWrapper[] creativeWrappers);
+
 		Google.Api.Ads.Dfp.v201711.CreativeWrapper[] updateCreativeWrappers(Google.Api.Ads.Dfp.v201711.CreativeWrapper[] creativeWrappers);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeWrapper[]> updateCreativeWrappersAsync(Google.Api.Ads.Dfp.v201711.CreativeWrapper[] creativeWrappers);
 	}
 
 
@@ -71231,11 +74654,19 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.CustomTargetingKey[] createCustomTargetingKeys(Google.Api.Ads.Dfp.v201711.CustomTargetingKey[] keys);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingKey[]> createCustomTargetingKeysAsync(Google.Api.Ads.Dfp.v201711.CustomTargetingKey[] keys);
+
 		Google.Api.Ads.Dfp.v201711.CustomTargetingValue[] createCustomTargetingValues(Google.Api.Ads.Dfp.v201711.CustomTargetingValue[] values);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingValue[]> createCustomTargetingValuesAsync(Google.Api.Ads.Dfp.v201711.CustomTargetingValue[] values);
 
 		Google.Api.Ads.Dfp.v201711.CustomTargetingKey[] updateCustomTargetingKeys(Google.Api.Ads.Dfp.v201711.CustomTargetingKey[] keys);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingKey[]> updateCustomTargetingKeysAsync(Google.Api.Ads.Dfp.v201711.CustomTargetingKey[] keys);
+
 		Google.Api.Ads.Dfp.v201711.CustomTargetingValue[] updateCustomTargetingValues(Google.Api.Ads.Dfp.v201711.CustomTargetingValue[] values);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomTargetingValue[]> updateCustomTargetingValuesAsync(Google.Api.Ads.Dfp.v201711.CustomTargetingValue[] values);
 	}
 
 
@@ -71246,11 +74677,19 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.CustomFieldOption[] createCustomFieldOptions(Google.Api.Ads.Dfp.v201711.CustomFieldOption[] customFieldOptions);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomFieldOption[]> createCustomFieldOptionsAsync(Google.Api.Ads.Dfp.v201711.CustomFieldOption[] customFieldOptions);
+
 		Google.Api.Ads.Dfp.v201711.CustomField[] createCustomFields(Google.Api.Ads.Dfp.v201711.CustomField[] customFields);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomField[]> createCustomFieldsAsync(Google.Api.Ads.Dfp.v201711.CustomField[] customFields);
 
 		Google.Api.Ads.Dfp.v201711.CustomFieldOption[] updateCustomFieldOptions(Google.Api.Ads.Dfp.v201711.CustomFieldOption[] customFieldOptions);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomFieldOption[]> updateCustomFieldOptionsAsync(Google.Api.Ads.Dfp.v201711.CustomFieldOption[] customFieldOptions);
+
 		Google.Api.Ads.Dfp.v201711.CustomField[] updateCustomFields(Google.Api.Ads.Dfp.v201711.CustomField[] customFields);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CustomField[]> updateCustomFieldsAsync(Google.Api.Ads.Dfp.v201711.CustomField[] customFields);
 	}
 
 
@@ -71261,7 +74700,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.ExchangeRate[] createExchangeRates(Google.Api.Ads.Dfp.v201711.ExchangeRate[] exchangeRates);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ExchangeRate[]> createExchangeRatesAsync(Google.Api.Ads.Dfp.v201711.ExchangeRate[] exchangeRates);
+
 		Google.Api.Ads.Dfp.v201711.ExchangeRate[] updateExchangeRates(Google.Api.Ads.Dfp.v201711.ExchangeRate[] exchangeRates);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ExchangeRate[]> updateExchangeRatesAsync(Google.Api.Ads.Dfp.v201711.ExchangeRate[] exchangeRates);
 	}
 
 
@@ -71305,7 +74748,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.DeliveryForecast getDeliveryForecast(Google.Api.Ads.Dfp.v201711.ProspectiveLineItem[] lineItems, Google.Api.Ads.Dfp.v201711.DeliveryForecastOptions forecastOptions);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.DeliveryForecast> getDeliveryForecastAsync(Google.Api.Ads.Dfp.v201711.ProspectiveLineItem[] lineItems, Google.Api.Ads.Dfp.v201711.DeliveryForecastOptions forecastOptions);
+
 		Google.Api.Ads.Dfp.v201711.DeliveryForecast getDeliveryForecastByIds(long[] lineItemIds, Google.Api.Ads.Dfp.v201711.DeliveryForecastOptions forecastOptions);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.DeliveryForecast> getDeliveryForecastByIdsAsync(long[] lineItemIds, Google.Api.Ads.Dfp.v201711.DeliveryForecastOptions forecastOptions);
 	}
 
 
@@ -71320,7 +74767,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.Activity[] createActivities(Google.Api.Ads.Dfp.v201711.Activity[] activities);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Activity[]> createActivitiesAsync(Google.Api.Ads.Dfp.v201711.Activity[] activities);
+
 		Google.Api.Ads.Dfp.v201711.Activity[] updateActivities(Google.Api.Ads.Dfp.v201711.Activity[] activities);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Activity[]> updateActivitiesAsync(Google.Api.Ads.Dfp.v201711.Activity[] activities);
 	}
 
 
@@ -71328,9 +74779,15 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.AdUnit[] createAdUnits(Google.Api.Ads.Dfp.v201711.AdUnit[] adUnits);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdUnit[]> createAdUnitsAsync(Google.Api.Ads.Dfp.v201711.AdUnit[] adUnits);
+
 		Google.Api.Ads.Dfp.v201711.AdUnitSize[] getAdUnitSizesByStatement(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdUnitSize[]> getAdUnitSizesByStatementAsync(Google.Api.Ads.Dfp.v201711.Statement filterStatement);
+
 		Google.Api.Ads.Dfp.v201711.AdUnit[] updateAdUnits(Google.Api.Ads.Dfp.v201711.AdUnit[] adUnits);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdUnit[]> updateAdUnitsAsync(Google.Api.Ads.Dfp.v201711.AdUnit[] adUnits);
 	}
 
 
@@ -71340,7 +74797,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.Label[] createLabels(Google.Api.Ads.Dfp.v201711.Label[] labels);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Label[]> createLabelsAsync(Google.Api.Ads.Dfp.v201711.Label[] labels);
+
 		Google.Api.Ads.Dfp.v201711.Label[] updateLabels(Google.Api.Ads.Dfp.v201711.Label[] labels);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Label[]> updateLabelsAsync(Google.Api.Ads.Dfp.v201711.Label[] labels);
 	}
 
 
@@ -71353,15 +74814,23 @@ namespace Google.Api.Ads.Dfp.v201711
 	/// line item, the creative must have a size that exists within the attribute <a
 	/// href='LineItem#creativeSizes'>LineItem#creativeSizes</a>.</p> <p>Each LICA has a
 	/// start and end date and time that defines when the creative should be
-	/// displayed.</p>
+	/// displayed.</p> <p>To read more about associating creatives with line items, see
+	/// this <a href="https://support.google.com/dfp_premium/answer/3187916">DFP Help
+	/// Center</a> article.</p>
 	/// </summary>
 	public interface ILineItemCreativeAssociationService : LineItemCreativeAssociationServiceInterface, IDisposable
 	{
 		Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociation[] createLineItemCreativeAssociations(Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociation[] lineItemCreativeAssociations);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociation[]> createLineItemCreativeAssociationsAsync(Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociation[] lineItemCreativeAssociations);
+
 		Google.Api.Ads.Dfp.v201711.CreativeNativeStylePreview[] getPreviewUrlsForNativeStyles(long lineItemId, long creativeId, string siteUrl);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CreativeNativeStylePreview[]> getPreviewUrlsForNativeStylesAsync(long lineItemId, long creativeId, string siteUrl);
+
 		Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociation[] updateLineItemCreativeAssociations(Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociation[] lineItemCreativeAssociations);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociation[]> updateLineItemCreativeAssociationsAsync(Google.Api.Ads.Dfp.v201711.LineItemCreativeAssociation[] lineItemCreativeAssociations);
 	}
 
 
@@ -71372,13 +74841,21 @@ namespace Google.Api.Ads.Dfp.v201711
 	/// the elements of an ad campaign.</p> <p>Line items and creatives can be
 	/// associated with each other through <a href=''>LineItemCreativeAssociation</a>
 	/// objects. An ad unit will host a creative through both this association and the
-	/// <a href='LineItem#targeting'>LineItem#targeting</a> to it.</p>
+	/// <a href='LineItem#targeting'>LineItem#targeting</a> to it. The delivery of a
+	/// line item depends on its priority. More information on line item priorities can
+	/// be found on the <a
+	/// href="https://support.google.com/dfp_premium/answer/177279">DFP Help
+	/// Center</a>.</p>
 	/// </summary>
 	public interface ILineItemService : LineItemServiceInterface, IDisposable
 	{
 		Google.Api.Ads.Dfp.v201711.LineItem[] createLineItems(Google.Api.Ads.Dfp.v201711.LineItem[] lineItems);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItem[]> createLineItemsAsync(Google.Api.Ads.Dfp.v201711.LineItem[] lineItems);
+
 		Google.Api.Ads.Dfp.v201711.LineItem[] updateLineItems(Google.Api.Ads.Dfp.v201711.LineItem[] lineItems);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LineItem[]> updateLineItemsAsync(Google.Api.Ads.Dfp.v201711.LineItem[] lineItems);
 	}
 
 
@@ -71399,9 +74876,15 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.LiveStreamEvent[] createLiveStreamEvents(Google.Api.Ads.Dfp.v201711.LiveStreamEvent[] liveStreamEvents);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LiveStreamEvent[]> createLiveStreamEventsAsync(Google.Api.Ads.Dfp.v201711.LiveStreamEvent[] liveStreamEvents);
+
 		string[] registerSessionsForMonitoring(string[] sessionIds);
 
+		System.Threading.Tasks.Task<string[]> registerSessionsForMonitoringAsync(string[] sessionIds);
+
 		Google.Api.Ads.Dfp.v201711.LiveStreamEvent[] updateLiveStreamEvents(Google.Api.Ads.Dfp.v201711.LiveStreamEvent[] liveStreamEvents);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.LiveStreamEvent[]> updateLiveStreamEventsAsync(Google.Api.Ads.Dfp.v201711.LiveStreamEvent[] liveStreamEvents);
 	}
 
 
@@ -71412,7 +74895,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.MobileApplication[] createMobileApplications(Google.Api.Ads.Dfp.v201711.MobileApplication[] mobileApplications);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.MobileApplication[]> createMobileApplicationsAsync(Google.Api.Ads.Dfp.v201711.MobileApplication[] mobileApplications);
+
 		Google.Api.Ads.Dfp.v201711.MobileApplication[] updateMobileApplications(Google.Api.Ads.Dfp.v201711.MobileApplication[] mobileApplications);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.MobileApplication[]> updateMobileApplicationsAsync(Google.Api.Ads.Dfp.v201711.MobileApplication[] mobileApplications);
 	}
 
 
@@ -71423,21 +74910,26 @@ namespace Google.Api.Ads.Dfp.v201711
 	public interface INetworkService : NetworkServiceInterface, IDisposable
 	{
 		Google.Api.Ads.Dfp.v201711.Network[] getAllNetworks();
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Network[]> getAllNetworksAsync();
 	}
 
 
 	/// <summary>Provides methods for creating, updating and retrieving <a href='Order'>Order</a>
 	/// objects. <p>An order is a grouping of <a href='LineItem'>LineItem</a> objects.
-	/// Line items have a one-to-one relationship with orders. Each line item can belong
-	/// to only one order. Orders, however, have a one-to-many relationship with line
-	/// items, meaning each order can have multiple line items. An order can be used to
-	/// manage the line items it contains.</p>
+	/// Line items have a many-to-one relationship with orders, meaning each line item
+	/// can belong to only one order, but orders can have multiple line items. An order
+	/// can be used to manage the line items it contains.</p>
 	/// </summary>
 	public interface IOrderService : OrderServiceInterface, IDisposable
 	{
 		Google.Api.Ads.Dfp.v201711.Order[] createOrders(Google.Api.Ads.Dfp.v201711.Order[] orders);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Order[]> createOrdersAsync(Google.Api.Ads.Dfp.v201711.Order[] orders);
+
 		Google.Api.Ads.Dfp.v201711.Order[] updateOrders(Google.Api.Ads.Dfp.v201711.Order[] orders);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Order[]> updateOrdersAsync(Google.Api.Ads.Dfp.v201711.Order[] orders);
 	}
 
 
@@ -71452,7 +74944,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.Placement[] createPlacements(Google.Api.Ads.Dfp.v201711.Placement[] placements);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Placement[]> createPlacementsAsync(Google.Api.Ads.Dfp.v201711.Placement[] placements);
+
 		Google.Api.Ads.Dfp.v201711.Placement[] updatePlacements(Google.Api.Ads.Dfp.v201711.Placement[] placements);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Placement[]> updatePlacementsAsync(Google.Api.Ads.Dfp.v201711.Placement[] placements);
 	}
 
 
@@ -71466,7 +74962,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.AdExclusionRule[] createAdExclusionRules(Google.Api.Ads.Dfp.v201711.AdExclusionRule[] adExclusionRules);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdExclusionRule[]> createAdExclusionRulesAsync(Google.Api.Ads.Dfp.v201711.AdExclusionRule[] adExclusionRules);
+
 		Google.Api.Ads.Dfp.v201711.AdExclusionRule[] updateAdExclusionRules(Google.Api.Ads.Dfp.v201711.AdExclusionRule[] adExclusionRules);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdExclusionRule[]> updateAdExclusionRulesAsync(Google.Api.Ads.Dfp.v201711.AdExclusionRule[] adExclusionRules);
 	}
 
 
@@ -71480,7 +74980,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.PremiumRate[] createPremiumRates(Google.Api.Ads.Dfp.v201711.PremiumRate[] premiumRates);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.PremiumRate[]> createPremiumRatesAsync(Google.Api.Ads.Dfp.v201711.PremiumRate[] premiumRates);
+
 		Google.Api.Ads.Dfp.v201711.PremiumRate[] updatePremiumRates(Google.Api.Ads.Dfp.v201711.PremiumRate[] premiumRates);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.PremiumRate[]> updatePremiumRatesAsync(Google.Api.Ads.Dfp.v201711.PremiumRate[] premiumRates);
 	}
 
 
@@ -71498,7 +75002,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.Product[] createProducts(Google.Api.Ads.Dfp.v201711.Product[] products);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Product[]> createProductsAsync(Google.Api.Ads.Dfp.v201711.Product[] products);
+
 		Google.Api.Ads.Dfp.v201711.Product[] updateProducts(Google.Api.Ads.Dfp.v201711.Product[] products);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Product[]> updateProductsAsync(Google.Api.Ads.Dfp.v201711.Product[] products);
 	}
 
 
@@ -71514,21 +75022,26 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.ProductTemplate[] createProductTemplates(Google.Api.Ads.Dfp.v201711.ProductTemplate[] productTemplates);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductTemplate[]> createProductTemplatesAsync(Google.Api.Ads.Dfp.v201711.ProductTemplate[] productTemplates);
+
 		Google.Api.Ads.Dfp.v201711.ProductTemplate[] updateProductTemplates(Google.Api.Ads.Dfp.v201711.ProductTemplate[] productTemplates);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductTemplate[]> updateProductTemplatesAsync(Google.Api.Ads.Dfp.v201711.ProductTemplate[] productTemplates);
 	}
 
 
 	/// <summary>Provides methods for adding, updating and retrieving <a
-	/// href='Proposal'>Proposal</a> objects. <p>To use this service, you need to have
-	/// the new sales management solution enabled on your network. If you do not see a
-	/// "Sales" tab in <a href="https://www.google.com/dfp">DoubleClick for Publishers
-	/// (DFP)</a>, you will not be able to use this service.</p>
+	/// href='Proposal'>Proposal</a> objects.
 	/// </summary>
 	public interface IProposalService : ProposalServiceInterface, IDisposable
 	{
 		Google.Api.Ads.Dfp.v201711.Proposal[] createProposals(Google.Api.Ads.Dfp.v201711.Proposal[] proposals);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Proposal[]> createProposalsAsync(Google.Api.Ads.Dfp.v201711.Proposal[] proposals);
+
 		Google.Api.Ads.Dfp.v201711.Proposal[] updateProposals(Google.Api.Ads.Dfp.v201711.Proposal[] proposals);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Proposal[]> updateProposalsAsync(Google.Api.Ads.Dfp.v201711.Proposal[] proposals);
 	}
 
 
@@ -71542,7 +75055,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.ProposalLineItem[] createProposalLineItems(Google.Api.Ads.Dfp.v201711.ProposalLineItem[] proposalLineItems);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProposalLineItem[]> createProposalLineItemsAsync(Google.Api.Ads.Dfp.v201711.ProposalLineItem[] proposalLineItems);
+
 		Google.Api.Ads.Dfp.v201711.ProposalLineItem[] updateProposalLineItems(Google.Api.Ads.Dfp.v201711.ProposalLineItem[] proposalLineItems);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProposalLineItem[]> updateProposalLineItemsAsync(Google.Api.Ads.Dfp.v201711.ProposalLineItem[] proposalLineItems);
 	}
 
 
@@ -71687,24 +75204,21 @@ namespace Google.Api.Ads.Dfp.v201711
 	/// <td><code>Text</code></td> <td>The name of the ad unit.</td> </tr> <tr>
 	/// <td>ParentId</td> <td><code>Number</code></td> <td>The ID of the ad unit's
 	/// parent. Every ad unit has a parent except for the root ad unit, which is created
-	/// by Google.</td> </tr> <tr> <td>PartnerId</td> <td><code>Number</code></td>
-	/// <td>The unique ID of the <a href='Company'>Company</a>, which is of type <a
-	/// href='Company.Type#AFFILIATE_DISTRIBUTION_PARTNER'>Company.Type#AFFILIATE_DISTRIBUTION_PARTNER</a>,
-	/// to which this ad unit belongs.</td> </tr> </table> <h2 id="User">User</h2>
-	/// <table> <tr> <th>Column name</th> <th>Type</th> <th>Description</th> </tr> <tr>
-	/// <td>Email</td> <td><code>Text</code></td> <td>The email or login of the
-	/// user.</td> </tr> <tr> <td>ExternalId</td> <td><code>Text</code></td> <td>An
-	/// identifier for the user that is meaningful to the publisher.</td> </tr> <tr>
-	/// <td>Id</td> <td><code>Number</code></td> <td>The unique ID of the user.</td>
-	/// </tr> <tr> <td>IsServiceAccount</td> <td><code>Boolean</code></td> <td>True if
-	/// this user is an OAuth2 service account user, false otherwise.</td> </tr> <tr>
-	/// <td>Name</td> <td><code>Text</code></td> <td>The name of the user.</td> </tr>
-	/// <tr> <td>RoleId</td> <td><code>Number</code></td> <td>The unique role ID of the
-	/// user. <a href='Role'>Role</a> objects that are created by Google will have
-	/// negative IDs.</td> </tr> <tr> <td>RoleName</td> <td><code>Text</code></td>
-	/// <td>The name of the <a href='Role'>Role</a> assigned to the user.</td> </tr>
-	/// </table> <h2 id="Exchange_Rate">Exchange_Rate</h2> <table> <tr> <th>Column
-	/// name</th> <th>Type</th> <th>Description</th> </tr> <tr> <td>CurrencyCode</td>
+	/// by Google.</td> </tr> </table> <h2 id="User">User</h2> <table> <tr> <th>Column
+	/// name</th> <th>Type</th> <th>Description</th> </tr> <tr> <td>Email</td>
+	/// <td><code>Text</code></td> <td>The email or login of the user.</td> </tr> <tr>
+	/// <td>ExternalId</td> <td><code>Text</code></td> <td>An identifier for the user
+	/// that is meaningful to the publisher.</td> </tr> <tr> <td>Id</td>
+	/// <td><code>Number</code></td> <td>The unique ID of the user.</td> </tr> <tr>
+	/// <td>IsServiceAccount</td> <td><code>Boolean</code></td> <td>True if this user is
+	/// an OAuth2 service account user, false otherwise.</td> </tr> <tr> <td>Name</td>
+	/// <td><code>Text</code></td> <td>The name of the user.</td> </tr> <tr>
+	/// <td>RoleId</td> <td><code>Number</code></td> <td>The unique role ID of the user.
+	/// <a href='Role'>Role</a> objects that are created by Google will have negative
+	/// IDs.</td> </tr> <tr> <td>RoleName</td> <td><code>Text</code></td> <td>The name
+	/// of the <a href='Role'>Role</a> assigned to the user.</td> </tr> </table> <h2
+	/// id="Exchange_Rate">Exchange_Rate</h2> <table> <tr> <th>Column name</th>
+	/// <th>Type</th> <th>Description</th> </tr> <tr> <td>CurrencyCode</td>
 	/// <td><code>Text</code></td> <td>The currency code that the exchange rate is
 	/// related to. The exchange rate is between this currency and <a
 	/// href='Network#currencyCode'>the network's currency</a>. This attribute is
@@ -71733,8 +75247,8 @@ namespace Google.Api.Ads.Dfp.v201711
 	/// buyer network for a programmatic order.</td> </tr> <tr> <td>Name</td>
 	/// <td><code>Text</code></td> <td>Display name that references the buyer.</td>
 	/// </tr> <tr> <td>ParentId</td> <td><code>Number</code></td> <td>The ID of the
-	/// programmatic buyer's parent. If the programmatic buyer has no parent, this field
-	/// will be zero.</td> </tr> </table> <h2
+	/// programmatic buyer's sponsor. If the programmatic buyer has no sponsor, this
+	/// field will be -1.</td> </tr> </table> <h2
 	/// id="Audience_Segment_Category">Audience_Segment_Category</h2> <table> <tr>
 	/// <th>Column name</th> <th>Type</th> <th>Description</th> </tr> <tr> <td>Id</td>
 	/// <td><code>Number</code></td> <td>The unique identifier for the audience segment
@@ -71768,13 +75282,17 @@ namespace Google.Api.Ads.Dfp.v201711
 	/// <code>ProposalRetractionReason</code>.</td> </tr> </table> <h2
 	/// id="Audience_Explorer">Audience_Explorer</h2> <table> <tr> <th>Column name</th>
 	/// <th>Type</th> <th>Description</th> </tr> <tr> <td>Id</td>
-	/// <td><code>Number</code></td> <td>Uniquely identifies the audience segment.</td>
+	/// <td><code>Number</code></td> <td>Uniquely identifies the audience segment. This
+	/// table has been deprecated since December 2017, and returns empty data.</td>
 	/// </tr> <tr> <td>ThirtyDayActiveSize</td> <td><code>Number</code></td> <td>The
-	/// number of active unique cookies in this segment over the last 30 days.</td>
+	/// number of active unique cookies in this segment over the last 30 days. This
+	/// table has been deprecated since December 2017, and returns empty data.</td>
 	/// </tr> <tr> <td>ThirtyDayClicks</td> <td><code>Number</code></td> <td>The number
-	/// of clicks for this segment over the last 30 days.</td> </tr> <tr>
+	/// of clicks for this segment over the last 30 days. This table has been deprecated
+	/// since December 2017, and returns empty data.</td> </tr> <tr>
 	/// <td>ThirtyDayImpressions</td> <td><code>Number</code></td> <td>The number of
-	/// impressions for this segment over the last 30 days.</td> </tr> </table> <h2
+	/// impressions for this segment over the last 30 days. This table has been
+	/// deprecated since December 2017, and returns empty data.</td> </tr> </table> <h2
 	/// id="Time_Zone">Time_Zone</h2> <table> <tr> <th>Column name</th> <th>Type</th>
 	/// <th>Description</th> </tr> <tr> <td>Id</td> <td><code>Text</code></td> <td>The
 	/// id of time zone in the form of <code></code>.</td> </tr> <tr>
@@ -71828,7 +75346,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.RateCard[] createRateCards(Google.Api.Ads.Dfp.v201711.RateCard[] rateCards);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.RateCard[]> createRateCardsAsync(Google.Api.Ads.Dfp.v201711.RateCard[] rateCards);
+
 		Google.Api.Ads.Dfp.v201711.RateCard[] updateRateCards(Google.Api.Ads.Dfp.v201711.RateCard[] rateCards);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.RateCard[]> updateRateCardsAsync(Google.Api.Ads.Dfp.v201711.RateCard[] rateCards);
 	}
 
 
@@ -71838,6 +75360,8 @@ namespace Google.Api.Ads.Dfp.v201711
 	public interface IReconciliationOrderReportService : ReconciliationOrderReportServiceInterface, IDisposable
 	{
 		Google.Api.Ads.Dfp.v201711.ReconciliationOrderReport[] updateReconciliationOrderReports(Google.Api.Ads.Dfp.v201711.ReconciliationOrderReport[] reconciliationOrderReports);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationOrderReport[]> updateReconciliationOrderReportsAsync(Google.Api.Ads.Dfp.v201711.ReconciliationOrderReport[] reconciliationOrderReports);
 	}
 
 
@@ -71847,6 +75371,8 @@ namespace Google.Api.Ads.Dfp.v201711
 	public interface IReconciliationLineItemReportService : ReconciliationLineItemReportServiceInterface, IDisposable
 	{
 		Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReport[] updateReconciliationLineItemReports(Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReport[] reconciliationLineItemReports);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReport[]> updateReconciliationLineItemReportsAsync(Google.Api.Ads.Dfp.v201711.ReconciliationLineItemReport[] reconciliationLineItemReports);
 	}
 
 
@@ -71858,6 +75384,8 @@ namespace Google.Api.Ads.Dfp.v201711
 	public interface IReconciliationReportService : ReconciliationReportServiceInterface, IDisposable
 	{
 		Google.Api.Ads.Dfp.v201711.ReconciliationReport[] updateReconciliationReports(Google.Api.Ads.Dfp.v201711.ReconciliationReport[] reconciliationReports);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationReport[]> updateReconciliationReportsAsync(Google.Api.Ads.Dfp.v201711.ReconciliationReport[] reconciliationReports);
 	}
 
 
@@ -71869,7 +75397,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.AdRule[] createAdRules(Google.Api.Ads.Dfp.v201711.AdRule[] adRules);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdRule[]> createAdRulesAsync(Google.Api.Ads.Dfp.v201711.AdRule[] adRules);
+
 		Google.Api.Ads.Dfp.v201711.AdRule[] updateAdRules(Google.Api.Ads.Dfp.v201711.AdRule[] adRules);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.AdRule[]> updateAdRulesAsync(Google.Api.Ads.Dfp.v201711.AdRule[] adRules);
 	}
 
 
@@ -71879,6 +75411,8 @@ namespace Google.Api.Ads.Dfp.v201711
 	public interface IReconciliationReportRowService : ReconciliationReportRowServiceInterface, IDisposable
 	{
 		Google.Api.Ads.Dfp.v201711.ReconciliationReportRow[] updateReconciliationReportRows(Google.Api.Ads.Dfp.v201711.ReconciliationReportRow[] reconciliationReportRows);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ReconciliationReportRow[]> updateReconciliationReportRowsAsync(Google.Api.Ads.Dfp.v201711.ReconciliationReportRow[] reconciliationReportRows);
 	}
 
 
@@ -71938,7 +75472,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.Team[] createTeams(Google.Api.Ads.Dfp.v201711.Team[] teams);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Team[]> createTeamsAsync(Google.Api.Ads.Dfp.v201711.Team[] teams);
+
 		Google.Api.Ads.Dfp.v201711.Team[] updateTeams(Google.Api.Ads.Dfp.v201711.Team[] teams);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Team[]> updateTeamsAsync(Google.Api.Ads.Dfp.v201711.Team[] teams);
 	}
 
 
@@ -71952,9 +75490,15 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.User[] createUsers(Google.Api.Ads.Dfp.v201711.User[] users);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.User[]> createUsersAsync(Google.Api.Ads.Dfp.v201711.User[] users);
+
 		Google.Api.Ads.Dfp.v201711.Role[] getAllRoles();
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Role[]> getAllRolesAsync();
+
 		Google.Api.Ads.Dfp.v201711.User[] updateUsers(Google.Api.Ads.Dfp.v201711.User[] users);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.User[]> updateUsersAsync(Google.Api.Ads.Dfp.v201711.User[] users);
 	}
 
 
@@ -71968,7 +75512,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.UserTeamAssociation[] createUserTeamAssociations(Google.Api.Ads.Dfp.v201711.UserTeamAssociation[] userTeamAssociations);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UserTeamAssociation[]> createUserTeamAssociationsAsync(Google.Api.Ads.Dfp.v201711.UserTeamAssociation[] userTeamAssociations);
+
 		Google.Api.Ads.Dfp.v201711.UserTeamAssociation[] updateUserTeamAssociations(Google.Api.Ads.Dfp.v201711.UserTeamAssociation[] userTeamAssociations);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.UserTeamAssociation[]> updateUserTeamAssociationsAsync(Google.Api.Ads.Dfp.v201711.UserTeamAssociation[] userTeamAssociations);
 	}
 
 
@@ -71993,7 +75541,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.Package[] createPackages(Google.Api.Ads.Dfp.v201711.Package[] packages);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Package[]> createPackagesAsync(Google.Api.Ads.Dfp.v201711.Package[] packages);
+
 		Google.Api.Ads.Dfp.v201711.Package[] updatePackages(Google.Api.Ads.Dfp.v201711.Package[] packages);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Package[]> updatePackagesAsync(Google.Api.Ads.Dfp.v201711.Package[] packages);
 	}
 
 
@@ -72009,7 +75561,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.ProductPackage[] createProductPackages(Google.Api.Ads.Dfp.v201711.ProductPackage[] productPackages);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackage[]> createProductPackagesAsync(Google.Api.Ads.Dfp.v201711.ProductPackage[] productPackages);
+
 		Google.Api.Ads.Dfp.v201711.ProductPackage[] updateProductPackages(Google.Api.Ads.Dfp.v201711.ProductPackage[] productPackages);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackage[]> updateProductPackagesAsync(Google.Api.Ads.Dfp.v201711.ProductPackage[] productPackages);
 	}
 
 
@@ -72025,7 +75581,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.ProductPackageItem[] createProductPackageItems(Google.Api.Ads.Dfp.v201711.ProductPackageItem[] productPackageItems);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackageItem[]> createProductPackageItemsAsync(Google.Api.Ads.Dfp.v201711.ProductPackageItem[] productPackageItems);
+
 		Google.Api.Ads.Dfp.v201711.ProductPackageItem[] updateProductPackageItems(Google.Api.Ads.Dfp.v201711.ProductPackageItem[] productPackageItems);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ProductPackageItem[]> updateProductPackageItemsAsync(Google.Api.Ads.Dfp.v201711.ProductPackageItem[] productPackageItems);
 	}
 
 
@@ -72036,7 +75596,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.Contact[] createContacts(Google.Api.Ads.Dfp.v201711.Contact[] contacts);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Contact[]> createContactsAsync(Google.Api.Ads.Dfp.v201711.Contact[] contacts);
+
 		Google.Api.Ads.Dfp.v201711.Contact[] updateContacts(Google.Api.Ads.Dfp.v201711.Contact[] contacts);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Contact[]> updateContactsAsync(Google.Api.Ads.Dfp.v201711.Contact[] contacts);
 	}
 
 
@@ -72047,7 +75611,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.NativeStyle[] createNativeStyles(Google.Api.Ads.Dfp.v201711.NativeStyle[] nativeStyles);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.NativeStyle[]> createNativeStylesAsync(Google.Api.Ads.Dfp.v201711.NativeStyle[] nativeStyles);
+
 		Google.Api.Ads.Dfp.v201711.NativeStyle[] updateNativeStyles(Google.Api.Ads.Dfp.v201711.NativeStyle[] nativeStyles);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.NativeStyle[]> updateNativeStylesAsync(Google.Api.Ads.Dfp.v201711.NativeStyle[] nativeStyles);
 	}
 
 
@@ -72058,7 +75626,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.FirstPartyAudienceSegment[] createAudienceSegments(Google.Api.Ads.Dfp.v201711.FirstPartyAudienceSegment[] segments);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.FirstPartyAudienceSegment[]> createAudienceSegmentsAsync(Google.Api.Ads.Dfp.v201711.FirstPartyAudienceSegment[] segments);
+
 		Google.Api.Ads.Dfp.v201711.FirstPartyAudienceSegment[] updateAudienceSegments(Google.Api.Ads.Dfp.v201711.FirstPartyAudienceSegment[] segments);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.FirstPartyAudienceSegment[]> updateAudienceSegmentsAsync(Google.Api.Ads.Dfp.v201711.FirstPartyAudienceSegment[] segments);
 	}
 
 
@@ -72072,7 +75644,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.BaseRate[] createBaseRates(Google.Api.Ads.Dfp.v201711.BaseRate[] baseRates);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.BaseRate[]> createBaseRatesAsync(Google.Api.Ads.Dfp.v201711.BaseRate[] baseRates);
+
 		Google.Api.Ads.Dfp.v201711.BaseRate[] updateBaseRates(Google.Api.Ads.Dfp.v201711.BaseRate[] baseRates);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.BaseRate[]> updateBaseRatesAsync(Google.Api.Ads.Dfp.v201711.BaseRate[] baseRates);
 	}
 
 
@@ -72083,7 +75659,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.CdnConfiguration[] createCdnConfigurations(Google.Api.Ads.Dfp.v201711.CdnConfiguration[] cdnConfigurations);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CdnConfiguration[]> createCdnConfigurationsAsync(Google.Api.Ads.Dfp.v201711.CdnConfiguration[] cdnConfigurations);
+
 		Google.Api.Ads.Dfp.v201711.CdnConfiguration[] updateCdnConfigurations(Google.Api.Ads.Dfp.v201711.CdnConfiguration[] cdnConfigurations);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.CdnConfiguration[]> updateCdnConfigurationsAsync(Google.Api.Ads.Dfp.v201711.CdnConfiguration[] cdnConfigurations);
 	}
 
 
@@ -72094,7 +75674,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.Company[] createCompanies(Google.Api.Ads.Dfp.v201711.Company[] companies);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Company[]> createCompaniesAsync(Google.Api.Ads.Dfp.v201711.Company[] companies);
+
 		Google.Api.Ads.Dfp.v201711.Company[] updateCompanies(Google.Api.Ads.Dfp.v201711.Company[] companies);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.Company[]> updateCompaniesAsync(Google.Api.Ads.Dfp.v201711.Company[] companies);
 	}
 
 
@@ -72107,7 +75691,11 @@ namespace Google.Api.Ads.Dfp.v201711
 	{
 		Google.Api.Ads.Dfp.v201711.ContentBundle[] createContentBundles(Google.Api.Ads.Dfp.v201711.ContentBundle[] contentBundles);
 
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentBundle[]> createContentBundlesAsync(Google.Api.Ads.Dfp.v201711.ContentBundle[] contentBundles);
+
 		Google.Api.Ads.Dfp.v201711.ContentBundle[] updateContentBundles(Google.Api.Ads.Dfp.v201711.ContentBundle[] contentBundles);
+
+		System.Threading.Tasks.Task<Google.Api.Ads.Dfp.v201711.ContentBundle[]> updateContentBundlesAsync(Google.Api.Ads.Dfp.v201711.ContentBundle[] contentBundles);
 	}
 }
 #pragma warning restore 1591

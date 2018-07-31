@@ -14,25 +14,25 @@
 
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.Common.Logging {
-
-  /// <summary>
-  /// Formats a Trace message.
-  /// </summary>
-  public abstract class TraceFormatter {
-
+namespace Google.Api.Ads.Common.Logging
+{
     /// <summary>
-    /// The mask pattern to be used when masking sensitive data in logs.
+    /// Formats a Trace message.
     /// </summary>
-    public const string MASK_PATTERN = "REDACTED";
+    public abstract class TraceFormatter
+    {
+        /// <summary>
+        /// The mask pattern to be used when masking sensitive data in logs.
+        /// </summary>
+        public const string MASK_PATTERN = "REDACTED";
 
-    /// <summary>
-    /// Masks the contents of the traced message.
-    /// </summary>
-    /// <param name="body">The message body.</param>
-    /// <param name="keysToMask">The keys for which values should be masked
-    /// in the message body.</param>
-    /// <returns>The formatted message body.</returns>
-    public abstract string MaskContents(string body, ISet<string> keysToMask);
-  }
+        /// <summary>
+        /// Masks the contents of the traced message.
+        /// </summary>
+        /// <param name="body">The message body.</param>
+        /// <param name="keysToMask">The keys for which values should be masked
+        /// in the message body.</param>
+        /// <returns>The formatted message body.</returns>
+        public abstract string MaskContents(string body, ISet<string> keysToMask);
+    }
 }

@@ -11,60 +11,65 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201802;
+
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This example gets all networks.
-  /// </summary>
-  public class GetAllNetworks : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example gets all networks.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example gets all networks.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetAllNetworks codeExample = new GetAllNetworks();
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new DfpUser());
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get networks. Exception says \"{0}\"",
-            e.Message);
-      }
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser dfpUser) {
-      using (NetworkService networkService =
-          (NetworkService) dfpUser.GetService(DfpService.v201802.NetworkService)) {
-
-        Network[] networks = networkService.getAllNetworks();
-
-        // Print out some information for each network.
-        int i = 0;
-        foreach (Network network in networks) {
-          Console.WriteLine(
-              "{0}) Network with code \"{1}\" and display name \"{2}\" was found.",
-              i++,
-              network.networkCode,
-              network.displayName
-          );
+    public class GetAllNetworks : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This example gets all networks."; }
         }
 
-        Console.WriteLine("Number of results found: {0}", networks.Length);
-      }
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetAllNetworks codeExample = new GetAllNetworks();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new DfpUser());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to get networks. Exception says \"{0}\"", e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser dfpUser)
+        {
+            using (NetworkService networkService =
+                (NetworkService) dfpUser.GetService(DfpService.v201802.NetworkService))
+            {
+                Network[] networks = networkService.getAllNetworks();
+
+                // Print out some information for each network.
+                int i = 0;
+                foreach (Network network in networks)
+                {
+                    Console.WriteLine(
+                        "{0}) Network with code \"{1}\" and display name \"{2}\" was found.", i++,
+                        network.networkCode, network.displayName);
+                }
+
+                Console.WriteLine("Number of results found: {0}", networks.Length);
+            }
+        }
     }
-  }
 }

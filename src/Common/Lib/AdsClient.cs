@@ -14,71 +14,53 @@
 
 using System;
 using System.Net;
+
 using Google.Api.Ads.Common.Lib;
 
-namespace Google.Api.Ads.Common.Lib {
-  /// <summary>
-  /// This interface defines a client protocol (SOAP, WSE, REST, etc.)
-  /// supported by the library.
-  /// </summary>
-  public interface AdsClient {
+namespace Google.Api.Ads.Common.Lib
+{
     /// <summary>
-    /// The timeout for the request.
+    /// This interface defines a client protocol (SOAP, WSE, REST, etc.)
+    /// supported by the library.
     /// </summary>
-    int Timeout {
-      get;
-      set;
-    }
+    public interface AdsClient
+    {
+        /// <summary>
+        /// The timeout for the request.
+        /// </summary>
+        int Timeout { get; set; }
 
-    /// <summary>
-    /// The url endpoint for the service.
-    /// </summary>
-    string Url {
-      get;
-      set;
-    }
+        /// <summary>
+        /// The url endpoint for the service.
+        /// </summary>
+        string Url { get; set; }
 
-    /// <summary>
-    /// Gets or sets whether gzip compression is enabled.
-    /// </summary>
-    bool EnableDecompression {
-      get;
-      set;
-    }
+        /// <summary>
+        /// Gets or sets whether gzip compression is enabled.
+        /// </summary>
+        bool EnableDecompression { get; set; }
 
-    /// <summary>
-    /// Gets or sets proxy information for making a service request through
-    /// a firewall.
-    /// </summary>
-    IWebProxy Proxy {
-      get;
-      set;
-    }
+        /// <summary>
+        /// Gets or sets proxy information for making a service request through
+        /// a firewall.
+        /// </summary>
+        IWebProxy Proxy { get; set; }
 
-    /// <summary>
-    /// Gets or sets the value for the user agent header that is sent with each
-    /// request.
-    /// </summary>
-    string UserAgent {
-      get;
-      set;
-    }
+        /// <summary>
+        /// Gets or sets the value for the user agent header that is sent with each
+        /// request.
+        /// </summary>
+        string UserAgent { get; set; }
 
-    /// <summary>
-    /// Gets or sets the AdsUser object that created this
-    /// service.
-    /// </summary>
-    AdsUser User {
-      get;
-      set;
-    }
+        /// <summary>
+        /// Gets or sets the AdsUser object that created this
+        /// service.
+        /// </summary>
+        AdsUser User { get; set; }
 
-    /// <summary>
-    /// Gets or sets the signature for this service.
-    /// </summary>
-    ServiceSignature Signature {
-      get;
-      set;
+        /// <summary>
+        /// Gets or sets the signature for this service.
+        /// </summary>
+        ServiceSignature Signature { get; set; }
     }
-  }
 }

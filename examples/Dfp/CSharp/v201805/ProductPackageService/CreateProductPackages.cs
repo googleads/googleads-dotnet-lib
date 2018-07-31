@@ -17,60 +17,77 @@ using Google.Api.Ads.Dfp.v201805;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example creates a product package. To determine which product packages exist,
-  /// run GetAllProductPackages.cs.
-  /// </summary>
-  public class CreateProductPackages : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example creates a product package. To determine which product packages exist,
+    /// run GetAllProductPackages.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example creates a product package. To determine which product packges " +
-            "exist, run GetAllProductPackages.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      CreateProductPackages codeExample = new CreateProductPackages();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (ProductPackageService productPackageService =
-          (ProductPackageService) user.GetService(DfpService.v201805.ProductPackageService)) {
-
-        // Set the ID of the rate card to associate the product package with.
-        long rateCardId = long.Parse(_T("INSERT_RATE_CARD_ID_HERE"));
-
-        // Create a product package.
-        ProductPackage productPackage = new ProductPackage();
-        productPackage.name = "Product package #" + new Random().Next(int.MaxValue);
-        productPackage.rateCardIds = new long[] { rateCardId };
-
-        try {
-          // Create the product packages on the server.
-          ProductPackage[] packages =
-              productPackageService.createProductPackages(new ProductPackage[] { productPackage });
-
-          foreach (ProductPackage createdProductPackage in packages) {
-            Console.WriteLine("A product package with ID \"{0}\" and name \"{1}\" was created.",
-                createdProductPackage.id, createdProductPackage.name);
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to create product packages. Exception says \"{0}\"",
-              e.Message);
+    public class CreateProductPackages : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example creates a product package. To determine which product " +
+                    "packges exist, run GetAllProductPackages.cs.";
+            }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            CreateProductPackages codeExample = new CreateProductPackages();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (ProductPackageService productPackageService =
+                (ProductPackageService) user.GetService(DfpService.v201805.ProductPackageService))
+            {
+                // Set the ID of the rate card to associate the product package with.
+                long rateCardId = long.Parse(_T("INSERT_RATE_CARD_ID_HERE"));
+
+                // Create a product package.
+                ProductPackage productPackage = new ProductPackage();
+                productPackage.name = "Product package #" + new Random().Next(int.MaxValue);
+                productPackage.rateCardIds = new long[]
+                {
+                    rateCardId
+                };
+
+                try
+                {
+                    // Create the product packages on the server.
+                    ProductPackage[] packages = productPackageService.createProductPackages(
+                        new ProductPackage[]
+                        {
+                            productPackage
+                        });
+
+                    foreach (ProductPackage createdProductPackage in packages)
+                    {
+                        Console.WriteLine(
+                            "A product package with ID \"{0}\" and name \"{1}\" was created.",
+                            createdProductPackage.id, createdProductPackage.name);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to create product packages. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

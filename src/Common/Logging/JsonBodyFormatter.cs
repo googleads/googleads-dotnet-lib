@@ -15,49 +15,60 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+
 using Newtonsoft.Json;
 
 
-namespace Google.Api.Ads.Common.Logging {
-
-  /// <summary>
-  /// Formats a JSON trace message by masking out sensitive fields.
-  /// </summary>
-  public class JsonBodyFormatter : TraceFormatter {
-
+namespace Google.Api.Ads.Common.Logging
+{
     /// <summary>
-    /// Masks the contents of the traced message.
+    /// Formats a JSON trace message by masking out sensitive fields.
     /// </summary>
-    /// <param name="body">The message body.</param>
-    /// <param name="keysToMask">The keys for which values should be masked
-    /// in the message body.</param>
-    /// <returns>
-    /// The formatted message body.
-    /// </returns>
-    public override string MaskContents(string body, ISet<string> keysToMask) {
-      Dictionary<string, string> jsonDict = null;
+    public class JsonBodyFormatter : TraceFormatter
+    {
+        /// <summary>
+        /// Masks the contents of the traced message.
+        /// </summary>
+        /// <param name="body">The message body.</param>
+        /// <param name="keysToMask">The keys for which values should be masked
+        /// in the message body.</param>
+        /// <returns>
+        /// The formatted message body.
+        /// </returns>
+        public override string MaskContents(string body, ISet<string> keysToMask)
+        {
+            Dictionary<string, string> jsonDict = null;
 
-      try {
-        jsonDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(body);
-      } catch {
-        // This block could be hit if
-        // - ArgumentException is thrown. This happens if the body being passed
-        // here is not a JSON text.
-        // - ArgumentNullException if body is null.
-        // In both cases, it makes sense to return body unaltered.
-        return body;
-      }
+            try
+            {
+                jsonDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(body);
+            }
+            catch
+            {
+                // This block could be hit if
+                // - ArgumentException is thrown. This happens if the body being passed
+                // here is not a JSON text.
+                // - ArgumentNullException if body is null.
+                // In both cases, it makes sense to return body unaltered.
+                return body;
+            }
 
-      if (jsonDict != null) {
-        foreach (string key in keysToMask) {
-          if (jsonDict.ContainsKey(key)) {
-            jsonDict[key] = MASK_PATTERN;
-          }
+            if (jsonDict != null)
+            {
+                foreach (string key in keysToMask)
+                {
+                    if (jsonDict.ContainsKey(key))
+                    {
+                        jsonDict[key] = MASK_PATTERN;
+                    }
+                }
+
+                return JsonConvert.SerializeObject(jsonDict);
+            }
+            else
+            {
+                return body;
+            }
         }
-        return JsonConvert.SerializeObject(jsonDict);
-      } else {
-        return body;
-      }
     }
-  }
 }

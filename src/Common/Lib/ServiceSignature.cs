@@ -16,96 +16,94 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Google.Api.Ads.Common.Lib {
-  /// <summary>
-  /// Defines an API signature object. This class is used as a support class
-  /// to assist AdsUser in creating a service object.
-  /// </summary>
-  public abstract class ServiceSignature {
+namespace Google.Api.Ads.Common.Lib
+{
     /// <summary>
-    /// The various protocols supported by the library.
+    /// Defines an API signature object. This class is used as a support class
+    /// to assist AdsUser in creating a service object.
     /// </summary>
-    public enum SupportedProtocols {
-      /// <summary>
-      /// SOAP
-      /// </summary>
-      SOAP,
+    public abstract class ServiceSignature
+    {
+        /// <summary>
+        /// The various protocols supported by the library.
+        /// </summary>
+        public enum SupportedProtocols
+        {
+            /// <summary>
+            /// SOAP
+            /// </summary>
+            SOAP,
 
-      /// <summary>
-      /// WSE
-      /// </summary>
-      WSE
+            /// <summary>
+            /// WSE
+            /// </summary>
+            WSE
+        }
+
+        /// <summary>
+        /// The supported protocol.
+        /// </summary>
+        SupportedProtocols supportedProtocol;
+
+        /// <summary>
+        /// The service version.
+        /// </summary>
+        private string version;
+
+        /// <summary>
+        /// The name of the service.
+        /// </summary>
+        private string serviceName;
+
+        /// <summary>
+        /// A unique id to distinguish the service represented by this signature
+        /// object.
+        /// </summary>
+        public virtual string Id
+        {
+            get { return version + "." + serviceName; }
+        }
+
+        /// <summary>
+        /// Gets the service version.
+        /// </summary>
+        public string Version
+        {
+            get { return version; }
+        }
+
+        /// <summary>
+        /// Gets the service name.
+        /// </summary>
+        public string ServiceName
+        {
+            get { return serviceName; }
+        }
+
+        /// <summary>
+        /// Gets the supported protocol.
+        /// </summary>
+        public SupportedProtocols SupportedProtocol
+        {
+            get { return supportedProtocol; }
+        }
+
+        /// <summary>
+        /// Gets the type of service.
+        /// </summary>
+        public abstract Type ServiceType { get; }
+
+        /// <summary>
+        /// Protected constructor.
+        /// </summary>
+        /// <param name="version">Service version.</param>
+        /// <param name="serviceName">Service name.</param>
+        /// <param name="protocol">The supported protocol.</param>
+        protected ServiceSignature(string version, string serviceName, SupportedProtocols protocol)
+        {
+            this.version = version;
+            this.serviceName = serviceName;
+            this.supportedProtocol = protocol;
+        }
     }
-
-    /// <summary>
-    /// The supported protocol.
-    /// </summary>
-    SupportedProtocols supportedProtocol;
-
-    /// <summary>
-    /// The service version.
-    /// </summary>
-    private string version;
-
-    /// <summary>
-    /// The name of the service.
-    /// </summary>
-    private string serviceName;
-
-    /// <summary>
-    /// A unique id to distinguish the service represented by this signature
-    /// object.
-    /// </summary>
-    public virtual string Id {
-      get {
-        return version + "." + serviceName;
-      }
-    }
-
-    /// <summary>
-    /// Gets the service version.
-    /// </summary>
-    public string Version {
-      get {
-        return version;
-      }
-    }
-
-    /// <summary>
-    /// Gets the service name.
-    /// </summary>
-    public string ServiceName {
-      get {
-        return serviceName;
-      }
-    }
-
-    /// <summary>
-    /// Gets the supported protocol.
-    /// </summary>
-    public SupportedProtocols SupportedProtocol {
-      get {
-        return supportedProtocol;
-      }
-    }
-
-    /// <summary>
-    /// Gets the type of service.
-    /// </summary>
-    public abstract Type ServiceType {
-      get;
-    }
-
-    /// <summary>
-    /// Protected constructor.
-    /// </summary>
-    /// <param name="version">Service version.</param>
-    /// <param name="serviceName">Service name.</param>
-    /// <param name="protocol">The supported protocol.</param>
-    protected ServiceSignature(string version, string serviceName, SupportedProtocols protocol) {
-      this.version = version;
-      this.serviceName = serviceName;
-      this.supportedProtocol = protocol;
-    }
-  }
 }

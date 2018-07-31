@@ -17,34 +17,43 @@ using System.ServiceModel.Dispatcher;
 using System.ServiceModel.Channels;
 using System.ServiceModel;
 
-namespace Google.Api.Ads.Common.Lib {
-
-  /// <summary>
-  /// OAuth2 client message inspector that adds encoding HTTP headers.
-  /// </summary>
-  public class GzipHeaderInspector : IClientMessageInspector {
-
-    internal const string ENCODING_HEADER = "Accept-Encoding";
-    internal readonly string[] ACCEPT_VALUES = {"gzip", "deflate"};
-
+namespace Google.Api.Ads.Common.Lib
+{
     /// <summary>
-    /// Adds an Accept-Encoding header to outbound requests.
+    /// OAuth2 client message inspector that adds encoding HTTP headers.
     /// </summary>
-    public object BeforeSendRequest(ref Message request, IClientChannel channel) {
-      object httpProp;
-      if (!request.Properties.TryGetValue(HttpRequestMessageProperty.Name, out httpProp)) {
-        httpProp = new HttpRequestMessageProperty();
-        request.Properties.Add(HttpRequestMessageProperty.Name, httpProp);
-      }
-      ((HttpRequestMessageProperty)httpProp).Headers
-          .Add(ENCODING_HEADER, string.Join(", ", ACCEPT_VALUES));
-      return null;
-    }
+    public class GzipHeaderInspector : IClientMessageInspector
+    {
+        internal const string ENCODING_HEADER = "Accept-Encoding";
 
-    /// <summary>
-    /// A no-op for this inspector.
-    /// </summary>
-    public void AfterReceiveReply(ref Message reply, object correlationState) {
+        internal readonly string[] ACCEPT_VALUES =
+        {
+            "gzip",
+            "deflate"
+        };
+
+        /// <summary>
+        /// Adds an Accept-Encoding header to outbound requests.
+        /// </summary>
+        public object BeforeSendRequest(ref Message request, IClientChannel channel)
+        {
+            object httpProp;
+            if (!request.Properties.TryGetValue(HttpRequestMessageProperty.Name, out httpProp))
+            {
+                httpProp = new HttpRequestMessageProperty();
+                request.Properties.Add(HttpRequestMessageProperty.Name, httpProp);
+            }
+
+            ((HttpRequestMessageProperty) httpProp).Headers.Add(ENCODING_HEADER,
+                string.Join(", ", ACCEPT_VALUES));
+            return null;
+        }
+
+        /// <summary>
+        /// A no-op for this inspector.
+        /// </summary>
+        public void AfterReceiveReply(ref Message reply, object correlationState)
+        {
+        }
     }
-  }
 }

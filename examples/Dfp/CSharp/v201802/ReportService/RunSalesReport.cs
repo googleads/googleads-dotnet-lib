@@ -19,76 +19,91 @@ using Google.Api.Ads.Dfp.Util.v201802;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This code example runs a report equal to the "Sales by salespersons
-  /// report" on the DFP website and downloads it to the specified file path.
-  /// </summary>
-  public class RunSalesReport : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example runs a report equal to the "Sales by salespersons
+    /// report" on the DFP website and downloads it to the specified file path.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example runs a report equal to the \"Sales by salespersons report\" on" +
-            "the DFP website and downloads it to the specified file path.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      RunSalesReport codeExample = new RunSalesReport();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (ReportService reportService = (ReportService) user.GetService(
-          DfpService.v201802.ReportService)) {
-
-        // Set the file path where the report will be saved.
-        String filePath = _T("INSERT_FILE_PATH_HERE");
-
-        // Create report job.
-        ReportJob reportJob = new ReportJob();
-        reportJob.reportQuery = new ReportQuery();
-        reportJob.reportQuery.dimensions = new Dimension[] {Dimension.SALESPERSON_ID,
-          Dimension.SALESPERSON_NAME};
-        reportJob.reportQuery.columns = new Column[] {
-          Column.AD_SERVER_IMPRESSIONS,
-          Column.AD_SERVER_CPM_AND_CPC_REVENUE,
-          Column.AD_SERVER_WITHOUT_CPD_AVERAGE_ECPM
-        };
-        reportJob.reportQuery.dateRangeType = DateRangeType.LAST_MONTH;
-
-        try {
-          // Run report.
-          reportJob = reportService.runReportJob(reportJob);
-
-          ReportUtilities reportUtilities = new ReportUtilities(reportService, reportJob.id);
-
-          // Set download options.
-          ReportDownloadOptions options = new ReportDownloadOptions();
-          options.exportFormat = ExportFormat.CSV_DUMP;
-          options.useGzipCompression = true;
-          reportUtilities.reportDownloadOptions = options;
-
-          // Download the report.
-          using (ReportResponse reportResponse = reportUtilities.GetResponse()) {
-            reportResponse.Save(filePath);
-          }
-          Console.WriteLine("Report saved to \"{0}\".", filePath);
-
-        } catch (Exception e) {
-          Console.WriteLine("Failed to run sales report. Exception says \"{0}\"",
-              e.Message);
+    public class RunSalesReport : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example runs a report equal to the \"Sales by salespersons " +
+                    "report\" on the DFP website and downloads it to the specified file path.";
+            }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            RunSalesReport codeExample = new RunSalesReport();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (ReportService reportService =
+                (ReportService) user.GetService(DfpService.v201802.ReportService))
+            {
+                // Set the file path where the report will be saved.
+                String filePath = _T("INSERT_FILE_PATH_HERE");
+
+                // Create report job.
+                ReportJob reportJob = new ReportJob();
+                reportJob.reportQuery = new ReportQuery();
+                reportJob.reportQuery.dimensions = new Dimension[]
+                {
+                    Dimension.SALESPERSON_ID,
+                    Dimension.SALESPERSON_NAME
+                };
+                reportJob.reportQuery.columns = new Column[]
+                {
+                    Column.AD_SERVER_IMPRESSIONS,
+                    Column.AD_SERVER_CPM_AND_CPC_REVENUE,
+                    Column.AD_SERVER_WITHOUT_CPD_AVERAGE_ECPM
+                };
+                reportJob.reportQuery.dateRangeType = DateRangeType.LAST_MONTH;
+
+                try
+                {
+                    // Run report.
+                    reportJob = reportService.runReportJob(reportJob);
+
+                    ReportUtilities reportUtilities =
+                        new ReportUtilities(reportService, reportJob.id);
+
+                    // Set download options.
+                    ReportDownloadOptions options = new ReportDownloadOptions();
+                    options.exportFormat = ExportFormat.CSV_DUMP;
+                    options.useGzipCompression = true;
+                    reportUtilities.reportDownloadOptions = options;
+
+                    // Download the report.
+                    using (ReportResponse reportResponse = reportUtilities.GetResponse())
+                    {
+                        reportResponse.Save(filePath);
+                    }
+
+                    Console.WriteLine("Report saved to \"{0}\".", filePath);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to run sales report. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

@@ -18,77 +18,91 @@ using Google.Api.Ads.Dfp.v201802;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This code example updates the description of a placement.
-  /// </summary>
-  public class UpdatePlacements : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example updates the description of a placement.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example updates the description of a placement.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      UpdatePlacements codeExample = new UpdatePlacements();
-      Console.WriteLine(codeExample.Description);
-
-      // Set the ID of the placement to update.
-      long placementId = long.Parse(_T("INSERT_PLACEMENT_ID_HERE"));
-      codeExample.Run(new DfpUser(), placementId);
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user, long placementId) {
-      using (PlacementService placementService =
-          (PlacementService) user.GetService(DfpService.v201802.PlacementService)) {
-
-        // Create a statement to select a placement by ID.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("id = :id")
-            .OrderBy("id ASC")
-            .Limit(1)
-            .AddValue("id", placementId);
-
-        try {
-          // Get placements by statement.
-          PlacementPage page = placementService.getPlacementsByStatement(
-              statementBuilder.ToStatement());
-
-          if (page.results != null) {
-            Placement placement = page.results[0];
-
-            // Update local placement object by changing the description.
-            placement.description = "This placement includes all leaderboards.";
-
-            // Update the placement on the server.
-            Placement[] placements = placementService.updatePlacements(
-                new Placement[] { placement });
-
-            // Display results.
-            if (placements != null) {
-              foreach (Placement updatedPlacement in placements) {
-                Console.WriteLine("A placement with ID \"{0}\", name \"{1}\", and description " +
-                    "\"{2}\" was updated.", updatedPlacement.id, updatedPlacement.name,
-                    updatedPlacement.description);
-              }
-            } else {
-              Console.WriteLine("No placements updated.");
-            }
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to update placements. Exception says \"{0}\"",
-              e.Message);
+    public class UpdatePlacements : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This code example updates the description of a placement."; }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            UpdatePlacements codeExample = new UpdatePlacements();
+            Console.WriteLine(codeExample.Description);
+
+            // Set the ID of the placement to update.
+            long placementId = long.Parse(_T("INSERT_PLACEMENT_ID_HERE"));
+            codeExample.Run(new DfpUser(), placementId);
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user, long placementId)
+        {
+            using (PlacementService placementService =
+                (PlacementService) user.GetService(DfpService.v201802.PlacementService))
+            {
+                // Create a statement to select a placement by ID.
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("id = :id")
+                    .OrderBy("id ASC")
+                    .Limit(1)
+                    .AddValue("id", placementId);
+
+                try
+                {
+                    // Get placements by statement.
+                    PlacementPage page =
+                        placementService.getPlacementsByStatement(statementBuilder.ToStatement());
+
+                    if (page.results != null)
+                    {
+                        Placement placement = page.results[0];
+
+                        // Update local placement object by changing the description.
+                        placement.description = "This placement includes all leaderboards.";
+
+                        // Update the placement on the server.
+                        Placement[] placements = placementService.updatePlacements(new Placement[]
+                        {
+                            placement
+                        });
+
+                        // Display results.
+                        if (placements != null)
+                        {
+                            foreach (Placement updatedPlacement in placements)
+                            {
+                                Console.WriteLine(
+                                    "A placement with ID \"{0}\", name \"{1}\", and description " +
+                                    "\"{2}\" was updated.", updatedPlacement.id,
+                                    updatedPlacement.name, updatedPlacement.description);
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No placements updated.");
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to update placements. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

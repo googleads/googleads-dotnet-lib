@@ -21,75 +21,80 @@ using System.ServiceModel.Dispatcher;
 using System.Text;
 using System.Xml;
 
-namespace Google.Api.Ads.Common.Lib {
-
-  /// <summary>
-  /// Inspector that deserializes SOAP faults into AdsExceptions and rethrows them.
-  /// </summary>
-  /// <typeparam name="TException">The type of AdsException to throw</typeparam>
-  public class SoapFaultInspector<TException> : IClientMessageInspector
-      where TException : AdsException {
-
-    private const string FAULT_ELEMENT_NAME = "ApiExceptionFault";
-
-    private const string FAULT_ELEMENT_XPATH = "descendant::*[local-name()='" +
-        FAULT_ELEMENT_NAME + "']";
-
-    private static readonly XmlWriterSettings xmlWriterSettings = new XmlWriterSettings() {
-      Encoding = Encoding.UTF8,
-      Indent = true
-    };
-
+namespace Google.Api.Ads.Common.Lib
+{
     /// <summary>
-    /// Gets or sets the type to deserialize faults into.
+    /// Inspector that deserializes SOAP faults into AdsExceptions and rethrows them.
     /// </summary>
-    public Type ErrorType { get; set; }
+    /// <typeparam name="TException">The type of AdsException to throw</typeparam>
+    public class SoapFaultInspector<TException> : IClientMessageInspector
+        where TException : AdsException
+    {
+        private const string FAULT_ELEMENT_NAME = "ApiExceptionFault";
 
-    /// <summary>
-    /// A no-op for this inspector.
-    /// </summary>
-    /// <param name="request">The request to perform actions with</param>
-    /// <param name="channel">The channel to the SOAP service</param>
-    public object BeforeSendRequest(ref Message request, IClientChannel channel) {
-      return null;
-    }
+        private const string FAULT_ELEMENT_XPATH =
+            "descendant::*[local-name()='" + FAULT_ELEMENT_NAME + "']";
 
-    /// <summary>
-    /// Throws an AdsException if the response was a SOAP fault.
-    /// </summary>
-    /// <param name="reply">The response Message</param>
-    /// <param name="correlationState">The correlation state returned by BeforeSendRequest</param>
-    public void AfterReceiveReply(ref Message reply, object correlationState) {
-      if (reply.IsFault) {
-        StringBuilder xmlStringBuilder = new StringBuilder();
-        using (XmlWriter xmlWriter = XmlWriter.Create(xmlStringBuilder, xmlWriterSettings))
-        using (MessageBuffer buffer = reply.CreateBufferedCopy(Int32.MaxValue)) {
-          // Message can only be read once, so replace it with a copy.
-          reply = buffer.CreateMessage();
-          buffer.CreateMessage().WriteBody(xmlWriter);
+        private static readonly XmlWriterSettings xmlWriterSettings = new XmlWriterSettings()
+        {
+            Encoding = Encoding.UTF8,
+            Indent = true
+        };
+
+        /// <summary>
+        /// Gets or sets the type to deserialize faults into.
+        /// </summary>
+        public Type ErrorType { get; set; }
+
+        /// <summary>
+        /// A no-op for this inspector.
+        /// </summary>
+        /// <param name="request">The request to perform actions with</param>
+        /// <param name="channel">The channel to the SOAP service</param>
+        public object BeforeSendRequest(ref Message request, IClientChannel channel)
+        {
+            return null;
         }
 
-        // Try locating the ApiExceptionFault node and deserializing it. Make sure to ignore
-        // the namespace and look only for the local name.
-        XmlDocument xDoc = new XmlDocument();
-        xDoc.LoadXml(xmlStringBuilder.ToString());
-        XmlElement faultNode = (XmlElement) xDoc.SelectSingleNode(FAULT_ELEMENT_XPATH);
+        /// <summary>
+        /// Throws an AdsException if the response was a SOAP fault.
+        /// </summary>
+        /// <param name="reply">The response Message</param>
+        /// <param name="correlationState">
+        /// The correlation state returned by BeforeSendRequest
+        /// </param>
+        public void AfterReceiveReply(ref Message reply, object correlationState)
+        {
+            if (reply.IsFault)
+            {
+                StringBuilder xmlStringBuilder = new StringBuilder();
+                using (XmlWriter xmlWriter = XmlWriter.Create(xmlStringBuilder, xmlWriterSettings))
+                    using (MessageBuffer buffer = reply.CreateBufferedCopy(Int32.MaxValue))
+                    {
+                        // Message can only be read once, so replace it with a copy.
+                        reply = buffer.CreateMessage();
+                        buffer.CreateMessage().WriteBody(xmlWriter);
+                    }
 
-        if (faultNode != null) {
-           // Deserialize the correct exception type and raise it.
-           string faultNodeNamespaceUri = faultNode.NamespaceURI;
-           string faultNodeContents = faultNode.OuterXml;
-           object apiError = SerializationUtilities.DeserializeFromXmlTextCustomRootNs(
-               faultNodeContents,
-               ErrorType,
-               faultNodeNamespaceUri,
-               FAULT_ELEMENT_NAME);
-           throw (TException) Activator.CreateInstance(
-               typeof(TException),
-               new object[] { apiError });
+                // Try locating the ApiExceptionFault node and deserializing it. Make sure to ignore
+                // the namespace and look only for the local name.
+                XmlDocument xDoc = new XmlDocument();
+                xDoc.LoadXml(xmlStringBuilder.ToString());
+                XmlElement faultNode = (XmlElement) xDoc.SelectSingleNode(FAULT_ELEMENT_XPATH);
+
+                if (faultNode != null)
+                {
+                    // Deserialize the correct exception type and raise it.
+                    string faultNodeNamespaceUri = faultNode.NamespaceURI;
+                    string faultNodeContents = faultNode.OuterXml;
+                    object apiError = SerializationUtilities.DeserializeFromXmlTextCustomRootNs(
+                        faultNodeContents, ErrorType, faultNodeNamespaceUri, FAULT_ELEMENT_NAME);
+                    throw (TException) Activator.CreateInstance(typeof(TException), new object[]
+                    {
+                        apiError
+                    });
+                }
+            }
         }
-      }
     }
-  }
 }
-

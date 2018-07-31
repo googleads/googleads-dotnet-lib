@@ -15,68 +15,71 @@
 using System;
 using System.Net;
 
-namespace Google.Api.Ads.Common.Logging {
-
-  /// <summary>
-  /// Stores the details of an HTTP request being logged.
-  /// </summary>
-  public class RequestInfo {
+namespace Google.Api.Ads.Common.Logging
+{
     /// <summary>
-    /// The request URI.
+    /// Stores the details of an HTTP request being logged.
     /// </summary>
-    public Uri Uri { get; set; }
+    public class RequestInfo
+    {
+        /// <summary>
+        /// The request URI.
+        /// </summary>
+        public Uri Uri { get; set; }
 
-    /// <summary>
-    /// The HTTP request method.
-    /// </summary>
-    public string HttpMethod { get; set; }
+        /// <summary>
+        /// The HTTP request method.
+        /// </summary>
+        public string HttpMethod { get; set; }
 
-    /// <summary>
-    /// The HTTP request headers.
-    /// </summary>
-    public WebHeaderCollection Headers { get; set; }
+        /// <summary>
+        /// The HTTP request headers.
+        /// </summary>
+        public WebHeaderCollection Headers { get; set; }
 
-    /// <summary>
-    /// The HTTP request body.
-    /// </summary>
-    public string Body { get; set; }
+        /// <summary>
+        /// The HTTP request body.
+        /// </summary>
+        public string Body { get; set; }
 
-    /// <summary>
-    /// The service being requested.
-    /// </summary>
-    public string Service { get; set; }
+        /// <summary>
+        /// The service being requested.
+        /// </summary>
+        public string Service { get; set; }
 
-    /// <summary>
-    /// The method being requested.
-    /// </summary>
-    public string Method { get; set; }
+        /// <summary>
+        /// The method being requested.
+        /// </summary>
+        public string Method { get; set; }
 
-    /// <summary>
-    /// The identifier associated with this request.
-    /// </summary>
-    public string IdentifierName { get; set; }
+        /// <summary>
+        /// The identifier associated with this request.
+        /// </summary>
+        public string IdentifierName { get; set; }
 
-    /// <summary>
-    /// The value of the identifier associated with this request.
-    /// </summary>
-    public string IdentifierValue { get; set; }
+        /// <summary>
+        /// The value of the identifier associated with this request.
+        /// </summary>
+        public string IdentifierValue { get; set; }
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="RequestInfo"/> class.
-    /// </summary>
-    public RequestInfo() {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RequestInfo"/> class.
+        /// </summary>
+        public RequestInfo()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RequestInfo"/> class.
+        /// </summary>
+        /// <param name="request">The HTTP request being logged.</param>
+        /// <param name="body">The HTTP request body.</param>
+        public RequestInfo(WebRequest request, string body)
+        {
+            this.Uri = request.RequestUri;
+            this.HttpMethod = request.Method;
+            this.Headers = request.Headers;
+            this.Body = body;
+        }
     }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="RequestInfo"/> class.
-    /// </summary>
-    /// <param name="request">The HTTP request being logged.</param>
-    /// <param name="body">The HTTP request body.</param>
-    public RequestInfo(WebRequest request, string body) {
-      this.Uri = request.RequestUri;
-      this.HttpMethod = request.Method;
-      this.Headers = request.Headers;
-      this.Body = body;
-    }
-  }
 }

@@ -15,47 +15,55 @@
 using System.ServiceModel.Dispatcher;
 using System.ServiceModel.Channels;
 using System.ServiceModel;
+
 using Google.Api.Ads.Common.Lib;
 
-namespace Google.Api.Ads.Common.OAuth {
-
-  /// <summary>
-  /// OAuth2 client message inspector that adds authorization HTTP headers.
-  /// </summary>
-  public class OAuthClientMessageInspector : IClientMessageInspector {
-
-    internal const string AUTHORIZATION_HEADER = "Authorization";
-
-    AdsOAuthProvider oauthProvider;
-
+namespace Google.Api.Ads.Common.OAuth
+{
     /// <summary>
-    /// Initializes a new instance of the OAuth2ClientMessageInspector class.
+    /// OAuth2 client message inspector that adds authorization HTTP headers.
     /// </summary>
-    public OAuthClientMessageInspector(AdsOAuthProvider oauthProvider) {
-      this.oauthProvider = oauthProvider;
-    }
+    public class OAuthClientMessageInspector : IClientMessageInspector
+    {
+        internal const string AUTHORIZATION_HEADER = "Authorization";
 
-    /// <summary>
-    /// Adds an OAuth2 authorization header to outbound requests.
-    /// </summary>
-    public object BeforeSendRequest(ref Message request, IClientChannel channel) {
-      if (this.oauthProvider == null) {
-        throw new AdsOAuthException("OAuth provider cannot be null");
-      }
-      object httpProp;
-      if (!request.Properties.TryGetValue(HttpRequestMessageProperty.Name, out httpProp)) {
-        httpProp = new HttpRequestMessageProperty();
-        request.Properties.Add(HttpRequestMessageProperty.Name, httpProp);
-      }
-      ((HttpRequestMessageProperty) httpProp).Headers
-          .Add(AUTHORIZATION_HEADER, this.oauthProvider.GetAuthHeader());
-      return null;
-    }
+        AdsOAuthProvider oauthProvider;
 
-    /// <summary>
-    /// Performs any operations after receiving the SOAP response.
-    /// </summary>
-    public void AfterReceiveReply(ref Message reply, object correlationState) {
+        /// <summary>
+        /// Initializes a new instance of the OAuth2ClientMessageInspector class.
+        /// </summary>
+        public OAuthClientMessageInspector(AdsOAuthProvider oauthProvider)
+        {
+            this.oauthProvider = oauthProvider;
+        }
+
+        /// <summary>
+        /// Adds an OAuth2 authorization header to outbound requests.
+        /// </summary>
+        public object BeforeSendRequest(ref Message request, IClientChannel channel)
+        {
+            if (this.oauthProvider == null)
+            {
+                throw new AdsOAuthException("OAuth provider cannot be null");
+            }
+
+            object httpProp;
+            if (!request.Properties.TryGetValue(HttpRequestMessageProperty.Name, out httpProp))
+            {
+                httpProp = new HttpRequestMessageProperty();
+                request.Properties.Add(HttpRequestMessageProperty.Name, httpProp);
+            }
+
+            ((HttpRequestMessageProperty) httpProp).Headers.Add(AUTHORIZATION_HEADER,
+                this.oauthProvider.GetAuthHeader());
+            return null;
+        }
+
+        /// <summary>
+        /// Performs any operations after receiving the SOAP response.
+        /// </summary>
+        public void AfterReceiveReply(ref Message reply, object correlationState)
+        {
+        }
     }
-  }
 }

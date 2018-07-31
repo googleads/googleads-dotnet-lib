@@ -18,70 +18,90 @@ using Google.Api.Ads.Dfp.v201805;
 using System;
 using System.Text;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example creates new labels. To determine which labels exist, run
-  /// GetAllLabels.cs. This feature is only available to DFP premium solution
-  /// networks.
-  /// </summary>
-  public class CreateLabels : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example creates new labels. To determine which labels exist, run
+    /// GetAllLabels.cs. This feature is only available to DFP premium solution
+    /// networks.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example creates new labels. To determine which labels exist, run " +
-            "GetAllLabels.cs. This feature is only available to DFP premium solution networks.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      CreateLabels codeExample = new CreateLabels();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (LabelService labelService =
-          (LabelService) user.GetService(DfpService.v201805.LabelService)) {
-
-        try {
-          // Create an array to store local label objects.
-          Label[] labels = new Label[5];
-
-          for (int i = 0; i < 5; i++) {
-            Label label = new Label();
-            label.name = "Label #" + GetTimeStamp();
-            label.types = new LabelType[] { LabelType.COMPETITIVE_EXCLUSION };
-            labels[i] = label;
-          }
-
-          // Create the labels on the server.
-          labels = labelService.createLabels(labels);
-
-          if (labels != null) {
-            foreach (Label label in labels) {
-              StringBuilder builder = new StringBuilder();
-              foreach (LabelType labelType in label.types) {
-                builder.AppendFormat("{0} | ", labelType);
-              }
-
-              Console.WriteLine("A label with ID '{0}', name '{1}', and type '{2}' was created.",
-                  label.id, label.name, builder.ToString().TrimEnd(' ', '|'));
+    public class CreateLabels : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example creates new labels. To determine which labels exist, " +
+                    "run GetAllLabels.cs. This feature is only available to DFP premium solution " +
+                    "networks.";
             }
-          } else {
-            Console.WriteLine("No labels created.");
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to create labels. Exception says \"{0}\"", e.Message);
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            CreateLabels codeExample = new CreateLabels();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (LabelService labelService =
+                (LabelService) user.GetService(DfpService.v201805.LabelService))
+            {
+                try
+                {
+                    // Create an array to store local label objects.
+                    Label[] labels = new Label[5];
+
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Label label = new Label();
+                        label.name = "Label #" + GetTimeStamp();
+                        label.types = new LabelType[]
+                        {
+                            LabelType.COMPETITIVE_EXCLUSION
+                        };
+                        labels[i] = label;
+                    }
+
+                    // Create the labels on the server.
+                    labels = labelService.createLabels(labels);
+
+                    if (labels != null)
+                    {
+                        foreach (Label label in labels)
+                        {
+                            StringBuilder builder = new StringBuilder();
+                            foreach (LabelType labelType in label.types)
+                            {
+                                builder.AppendFormat("{0} | ", labelType);
+                            }
+
+                            Console.WriteLine(
+                                "A label with ID '{0}', name '{1}', and type '{2}' was created.",
+                                label.id, label.name, builder.ToString().TrimEnd(' ', '|'));
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No labels created.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to create labels. Exception says \"{0}\"", e.Message);
+                }
+            }
+        }
     }
-  }
 }

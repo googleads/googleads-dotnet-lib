@@ -17,38 +17,41 @@ using Google.Api.Ads.Dfp.v201802;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This code example creates a new native style.
-  /// </summary>
-  public class CreateNativeStyles : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example creates a new native style.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example creates a new native style.";
-      }
-    }
+    public class CreateNativeStyles : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This code example creates a new native style."; }
+        }
 
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      CreateNativeStyles codeExample = new CreateNativeStyles();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            CreateNativeStyles codeExample = new CreateNativeStyles();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
 
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (NativeStyleService nativeStyleService =
-          (NativeStyleService) user.GetService(DfpService.v201802.NativeStyleService)) {
-
-        // This value is typically loaded from a file or other resource.
-        string htmlSnippet = @"<div id=""adunit"" style=""overflow: hidden;"">
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (NativeStyleService nativeStyleService =
+                (NativeStyleService) user.GetService(DfpService.v201802.NativeStyleService))
+            {
+                // This value is typically loaded from a file or other resource.
+                string htmlSnippet = @"<div id=""adunit"" style=""overflow: hidden;"">
   <img src=""[%Thirdpartyimpressiontracker%]"" style=""display:none"">
   <div class=""attribution"">Ad</div>
   <div class=""image"">
@@ -78,7 +81,7 @@ namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
   </div>
 </div>";
 
-        string cssSnippet = @"body {
+                string cssSnippet = @"body {
     background-color: rgba(255, 255, 255, 1);
     font-family: ""Roboto - Regular"", sans-serif;
     font - weight: normal;
@@ -158,42 +161,51 @@ text-decoration: none;
   display: none;
 }";
 
-        // Create nativeStyle size.
-        Size size = new Size();
-        size.width = 300;
-        size.height = 250;
+                // Create nativeStyle size.
+                Size size = new Size();
+                size.width = 300;
+                size.height = 250;
 
-        // Create a native style.
-        NativeStyle nativeStyle = new NativeStyle();
-        nativeStyle.name = string.Format("Native style #{0}", new Random().Next());
-        nativeStyle.size = size;
-        nativeStyle.htmlSnippet = htmlSnippet;
-        nativeStyle.cssSnippet = cssSnippet;
+                // Create a native style.
+                NativeStyle nativeStyle = new NativeStyle();
+                nativeStyle.name = string.Format("Native style #{0}", new Random().Next());
+                nativeStyle.size = size;
+                nativeStyle.htmlSnippet = htmlSnippet;
+                nativeStyle.cssSnippet = cssSnippet;
 
-        // This is the creative template ID for the system-defined native app
-        // install ad format, which we will create the native style from. Use
-        // CreativeTemplateService.getCreativeTemplatesByStatement() and
-        // CreativeTemplate.isNativeEligible to get other native ad formats
-        // availablein your network.
-        nativeStyle.creativeTemplateId = 10004400;
+                // This is the creative template ID for the system-defined native app
+                // install ad format, which we will create the native style from. Use
+                // CreativeTemplateService.getCreativeTemplatesByStatement() and
+                // CreativeTemplate.isNativeEligible to get other native ad formats
+                // availablein your network.
+                nativeStyle.creativeTemplateId = 10004400;
 
-        try {
-          // Create the native styles on the server.
-          NativeStyle[] nativeStyles =
-              nativeStyleService.createNativeStyles(new NativeStyle[] { nativeStyle });
+                try
+                {
+                    // Create the native styles on the server.
+                    NativeStyle[] nativeStyles = nativeStyleService.createNativeStyles(
+                        new NativeStyle[]
+                        {
+                            nativeStyle
+                        });
 
-          if (nativeStyles != null) {
-            foreach (NativeStyle createdNativeStyle in nativeStyles) {
-              // Print out some information for each created native style.
-              Console.WriteLine("A native style with ID ='{0}' and name='{1}' was created.",
-                  createdNativeStyle.id,
-                  createdNativeStyle.name);
+                    if (nativeStyles != null)
+                    {
+                        foreach (NativeStyle createdNativeStyle in nativeStyles)
+                        {
+                            // Print out some information for each created native style.
+                            Console.WriteLine(
+                                "A native style with ID ='{0}' and name='{1}' was created.",
+                                createdNativeStyle.id, createdNativeStyle.name);
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to create native styles. Exception says \"{0}\"",
+                        e.Message);
+                }
             }
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to create native styles. Exception says \"{0}\"", e.Message);
         }
-      }
     }
-  }
 }

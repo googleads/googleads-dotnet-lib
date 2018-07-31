@@ -22,105 +22,134 @@ using System.Reflection;
 
 using SamplePair = System.Collections.Generic.KeyValuePair<string, System.Type>;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp {
-  /// <summary>
-  /// The Main class for this application.
-  /// </summary>
-  class Program {
+namespace Google.Api.Ads.Dfp.Examples.CSharp
+{
     /// <summary>
-    /// A map to hold the code examples to be executed.
+    /// The Main class for this application.
     /// </summary>
-    static List<SamplePair> sampleMap = new List<SamplePair>();
+    class Program
+    {
+        /// <summary>
+        /// A map to hold the code examples to be executed.
+        /// </summary>
+        static List<SamplePair> sampleMap = new List<SamplePair>();
 
-    /// <summary>
-    /// A flag to keep track of whether help message was shown earlier.
-    /// </summary>
-    private static bool helpShown = false;
+        /// <summary>
+        /// A flag to keep track of whether help message was shown earlier.
+        /// </summary>
+        private static bool helpShown = false;
 
-    static void RegisterSample(string key, Type value) {
-      sampleMap.Add(new SamplePair(key, value));
-    }
-    /// <summary>
-    /// Static constructor to initialize the code example map.
-    /// </summary>
-    static Program() {
-      Type[] types = Assembly.GetExecutingAssembly().GetTypes();
-
-      foreach (Type type in types) {
-        if (type.BaseType == typeof(SampleBase)) {
-          RegisterSample(type.FullName.Replace(typeof(Program).Namespace + ".", ""), type);
+        static void RegisterSample(string key, Type value)
+        {
+            sampleMap.Add(new SamplePair(key, value));
         }
-      }
-    }
 
-    /// <summary>
-    /// The main method.
-    /// </summary>
-    /// <param name="args"></param>
-    public static void Main(string[] args) {
-      if (args.Length == 0) {
-        ShowUsage();
-        return;
-      }
+        /// <summary>
+        /// Static constructor to initialize the code example map.
+        /// </summary>
+        static Program()
+        {
+            Type[] types = Assembly.GetExecutingAssembly().GetTypes();
 
-      DfpUser user = new DfpUser();
-      foreach (string cmdArgs in args) {
-        SamplePair matchingPair = sampleMap.Find(delegate(SamplePair pair) {
-          return string.Compare(pair.Key, cmdArgs, true) == 0;
-        });
-
-        if (matchingPair.Key != null) {
-          RunASample(user, matchingPair.Value);
-        } else {
-          ShowUsage();
+            foreach (Type type in types)
+            {
+                if (type.BaseType == typeof(SampleBase))
+                {
+                    RegisterSample(type.FullName.Replace(typeof(Program).Namespace + ".", ""),
+                        type);
+                }
+            }
         }
-      }
-    }
 
-    /// <summary>
-    /// Runs a code example.
-    /// </summary>
-    /// <param name="user">The user whose credentials should be used for
-    /// running the code example.</param>
-    /// <param name="example">The code example to run.</param>
-    private static void RunASample(DfpUser user, Type example) {
-      try {
-        example.GetMethod("Main", BindingFlags.Public | BindingFlags.Static).Invoke(null, null);
-      } catch (Exception e) {
-        Console.WriteLine("An exception occurred while running this code sample.\n{0} at\n{1}",
-            e.Message, e.StackTrace);
-      } finally {
-        Console.WriteLine("Press [Enter] to continue");
-        Console.ReadLine();
-      }
-    }
+        /// <summary>
+        /// The main method.
+        /// </summary>
+        /// <param name="args"></param>
+        public static void Main(string[] args)
+        {
+            if (args.Length == 0)
+            {
+                ShowUsage();
+                return;
+            }
 
-    /// <summary>
-    /// Prints program usage message.
-    /// </summary>
-    private static void ShowUsage() {
-      if (helpShown) {
-        return;
-      } else {
-        helpShown = true;
-      }
-      string exeName = Path.GetFileName(Assembly.GetExecutingAssembly().Location);
-      Console.WriteLine("Runs DFP API code examples");
-      Console.WriteLine("Usage : {0} [flags]\n", exeName);
-      Console.WriteLine("Available flags\n");
-      Console.WriteLine("--help\t\t : Prints this help message.");
-      Console.WriteLine("--all\t\t : Run all code examples.");
-      Console.WriteLine("examplename1 [examplename1 ...] : " +
-          "Run specific code examples. Example name can be one of the following:\n");
-      foreach (SamplePair pair in sampleMap) {
-        SampleBase sample = Activator.CreateInstance(pair.Value) as SampleBase;
-        string description = (string) pair.Value
-          .GetProperty("Description")
-          .GetValue(sample, null);
-        Console.WriteLine("{0} : {1}", pair.Key, description);
-      }
-      Console.WriteLine("Press [Enter] to continue");
-      Console.ReadLine();
+            DfpUser user = new DfpUser();
+            foreach (string cmdArgs in args)
+            {
+                SamplePair matchingPair = sampleMap.Find(delegate(SamplePair pair)
+                {
+                    return string.Compare(pair.Key, cmdArgs, true) == 0;
+                });
+
+                if (matchingPair.Key != null)
+                {
+                    RunASample(user, matchingPair.Value);
+                }
+                else
+                {
+                    ShowUsage();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Runs a code example.
+        /// </summary>
+        /// <param name="user">The user whose credentials should be used for
+        /// running the code example.</param>
+        /// <param name="example">The code example to run.</param>
+        private static void RunASample(DfpUser user, Type example)
+        {
+            try
+            {
+                example.GetMethod("Main", BindingFlags.Public | BindingFlags.Static)
+                    .Invoke(null, null);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(
+                    "An exception occurred while running this code sample.\n{0} at\n{1}", e.Message,
+                    e.StackTrace);
+            }
+            finally
+            {
+                Console.WriteLine("Press [Enter] to continue");
+                Console.ReadLine();
+            }
+        }
+
+        /// <summary>
+        /// Prints program usage message.
+        /// </summary>
+        private static void ShowUsage()
+        {
+            if (helpShown)
+            {
+                return;
+            }
+            else
+            {
+                helpShown = true;
+            }
+
+            string exeName = Path.GetFileName(Assembly.GetExecutingAssembly().Location);
+            Console.WriteLine("Runs DFP API code examples");
+            Console.WriteLine("Usage : {0} [flags]\n", exeName);
+            Console.WriteLine("Available flags\n");
+            Console.WriteLine("--help\t\t : Prints this help message.");
+            Console.WriteLine("--all\t\t : Run all code examples.");
+            Console.WriteLine("examplename1 [examplename1 ...] : " +
+                "Run specific code examples. Example name can be one of the following:\n");
+            foreach (SamplePair pair in sampleMap)
+            {
+                SampleBase sample = Activator.CreateInstance(pair.Value) as SampleBase;
+                string description =
+                    (string) pair.Value.GetProperty("Description").GetValue(sample, null);
+                Console.WriteLine("{0} : {1}", pair.Key, description);
+            }
+
+            Console.WriteLine("Press [Enter] to continue");
+            Console.ReadLine();
+        }
     }
-  }
 }

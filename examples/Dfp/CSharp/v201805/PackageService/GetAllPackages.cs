@@ -11,79 +11,85 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201805;
 using Google.Api.Ads.Dfp.v201805;
+
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This example gets all packages.
-  /// </summary>
-  public class GetAllPackages : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example gets all packages.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example gets all packages.";
-      }
-    }
+    public class GetAllPackages : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This example gets all packages."; }
+        }
 
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetAllPackages codeExample = new GetAllPackages();
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new DfpUser());
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get packages. Exception says \"{0}\"",
-            e.Message);
-      }
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser dfpUser) {
-      using (PackageService packageService =
-          (PackageService) dfpUser.GetService(DfpService.v201805.PackageService)) {
-
-        // Create a statement to select packages.
-        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .OrderBy("id ASC")
-            .Limit(pageSize);
-
-        // Retrieve a small amount of packages at a time, paging through until all
-        // packages have been retrieved.
-        int totalResultSetSize = 0;
-        do {
-          PackagePage page = packageService.getPackagesByStatement(
-              statementBuilder.ToStatement());
-
-          // Print out some information for each package.
-          if (page.results != null) {
-            totalResultSetSize = page.totalResultSetSize;
-            int i = page.startIndex;
-            foreach (Package pkg in page.results) {
-              Console.WriteLine(
-                  "{0}) Package with ID {1}, name \"{2}\", and proposal id {3} was found.",
-                  i++,
-                  pkg.id,
-                  pkg.name,
-                  pkg.proposalId
-              );
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetAllPackages codeExample = new GetAllPackages();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new DfpUser());
             }
-          }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to get packages. Exception says \"{0}\"", e.Message);
+            }
+        }
 
-          statementBuilder.IncreaseOffsetBy(pageSize);
-        } while (statementBuilder.GetOffset() < totalResultSetSize);
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser dfpUser)
+        {
+            using (PackageService packageService =
+                (PackageService) dfpUser.GetService(DfpService.v201805.PackageService))
+            {
+                // Create a statement to select packages.
+                int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+                StatementBuilder statementBuilder =
+                    new StatementBuilder().OrderBy("id ASC").Limit(pageSize);
 
-        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
-      }
+                // Retrieve a small amount of packages at a time, paging through until all
+                // packages have been retrieved.
+                int totalResultSetSize = 0;
+                do
+                {
+                    PackagePage page =
+                        packageService.getPackagesByStatement(statementBuilder.ToStatement());
+
+                    // Print out some information for each package.
+                    if (page.results != null)
+                    {
+                        totalResultSetSize = page.totalResultSetSize;
+                        int i = page.startIndex;
+                        foreach (Package pkg in page.results)
+                        {
+                            Console.WriteLine(
+                                "{0}) Package with ID {1}, name \"{2}\", and proposal id {3} was " +
+                                "found.",
+                                i++, pkg.id, pkg.name, pkg.proposalId);
+                        }
+                    }
+
+                    statementBuilder.IncreaseOffsetBy(pageSize);
+                } while (statementBuilder.GetOffset() < totalResultSetSize);
+
+                Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+            }
+        }
     }
-  }
 }

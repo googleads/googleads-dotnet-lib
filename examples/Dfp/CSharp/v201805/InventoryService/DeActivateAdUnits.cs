@@ -19,93 +19,112 @@ using Google.Api.Ads.Dfp.v201805;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example deactivates all active ad units. To determine which ad
-  /// units exist, run GetAllAdUnits.cs or GetInventoryTree.cs.
-  /// </summary>
-  public class DeActivateAdUnits : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example deactivates all active ad units. To determine which ad
+    /// units exist, run GetAllAdUnits.cs or GetInventoryTree.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example deactivates an ad unit. To determine which ad units exist, " +
-            "run GetAllAdUnits.cs or GetInventoryTree.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      DeActivateAdUnits codeExample = new DeActivateAdUnits();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (InventoryService inventoryService =
-          (InventoryService) user.GetService(DfpService.v201805.InventoryService)) {
-
-        // Set the ID of the ad unit to deactivate.
-        int adUnitId = int.Parse(_T("INSERT_AD_UNIT_ID_HERE"));
-
-        // Create a statement to select the ad unit.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("id = :id")
-            .OrderBy("id ASC")
-            .Limit(1)
-            .AddValue("id", adUnitId);
-
-        // Set default for page.
-        AdUnitPage page = new AdUnitPage();
-        List<string> adUnitIds = new List<string>();
-
-        try {
-          do {
-            // Get ad units by statement.
-            page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
-
-            if (page.results != null) {
-              int i = page.startIndex;
-              foreach (AdUnit adUnit in page.results) {
-                Console.WriteLine("{0}) Ad unit with ID ='{1}', name = {2} and status = {3} will" +
-                    " be deactivated.", i, adUnit.id, adUnit.name, adUnit.status);
-                adUnitIds.Add(adUnit.id);
-                i++;
-              }
+    public class DeActivateAdUnits : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example deactivates an ad unit. To determine which ad units " +
+                    "exist, run GetAllAdUnits.cs or GetInventoryTree.cs.";
             }
-
-            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-
-          Console.WriteLine("Number of ad units to be deactivated: {0}", adUnitIds.Count);
-
-          // Modify statement for action.
-          statementBuilder.RemoveLimitAndOffset();
-
-          // Create action.
-          DeactivateAdUnits action = new DeactivateAdUnits();
-
-          // Perform action.
-          UpdateResult result = inventoryService.performAdUnitAction(action,
-              statementBuilder.ToStatement());
-
-          // Display results.
-          if (result != null && result.numChanges > 0) {
-            Console.WriteLine("Number of ad units deactivated: {0}", result.numChanges);
-          } else {
-            Console.WriteLine("No ad units were deactivated.");
-          }
-
-        } catch (Exception e) {
-          Console.WriteLine("Failed to deactivate ad units. Exception says \"{0}\"", e.Message);
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            DeActivateAdUnits codeExample = new DeActivateAdUnits();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (InventoryService inventoryService =
+                (InventoryService) user.GetService(DfpService.v201805.InventoryService))
+            {
+                // Set the ID of the ad unit to deactivate.
+                int adUnitId = int.Parse(_T("INSERT_AD_UNIT_ID_HERE"));
+
+                // Create a statement to select the ad unit.
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("id = :id")
+                    .OrderBy("id ASC")
+                    .Limit(1)
+                    .AddValue("id", adUnitId);
+
+                // Set default for page.
+                AdUnitPage page = new AdUnitPage();
+                List<string> adUnitIds = new List<string>();
+
+                try
+                {
+                    do
+                    {
+                        // Get ad units by statement.
+                        page = inventoryService.getAdUnitsByStatement(
+                            statementBuilder.ToStatement());
+
+                        if (page.results != null)
+                        {
+                            int i = page.startIndex;
+                            foreach (AdUnit adUnit in page.results)
+                            {
+                                Console.WriteLine(
+                                    "{0}) Ad unit with ID ='{1}', name = {2} and status = {3} " +
+                                    "will be deactivated.",
+                                    i, adUnit.id, adUnit.name, adUnit.status);
+                                adUnitIds.Add(adUnit.id);
+                                i++;
+                            }
+                        }
+
+                        statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+                    } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+                    Console.WriteLine("Number of ad units to be deactivated: {0}", adUnitIds.Count);
+
+                    // Modify statement for action.
+                    statementBuilder.RemoveLimitAndOffset();
+
+                    // Create action.
+                    DeactivateAdUnits action = new DeactivateAdUnits();
+
+                    // Perform action.
+                    UpdateResult result =
+                        inventoryService.performAdUnitAction(action,
+                            statementBuilder.ToStatement());
+
+                    // Display results.
+                    if (result != null && result.numChanges > 0)
+                    {
+                        Console.WriteLine("Number of ad units deactivated: {0}", result.numChanges);
+                    }
+                    else
+                    {
+                        Console.WriteLine("No ad units were deactivated.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to deactivate ad units. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

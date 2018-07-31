@@ -11,81 +11,87 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201802;
 using Google.Api.Ads.Dfp.v201802;
+
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This example gets all creative sets for a master creative.
-  /// </summary>
-  public class GetCreativeSetsForMasterCreative : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example gets all creative sets for a master creative.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example gets all creative sets for a master creative.";
-      }
-    }
+    public class GetCreativeSetsForMasterCreative : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This example gets all creative sets for a master creative."; }
+        }
 
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetCreativeSetsForMasterCreative codeExample = new GetCreativeSetsForMasterCreative();
-      long masterCreativeId = long.Parse("INSERT_MASTER_CREATIVE_ID_HERE");
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new DfpUser(), masterCreativeId);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get creative sets. Exception says \"{0}\"",
-            e.Message);
-      }
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser dfpUser, long masterCreativeId) {
-      using (CreativeSetService creativeSetService =
-          (CreativeSetService) dfpUser.GetService(DfpService.v201802.CreativeSetService)) {
-
-        // Create a statement to select creative sets.
-        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("masterCreativeId = :masterCreativeId")
-            .OrderBy("id ASC")
-            .Limit(pageSize)
-            .AddValue("masterCreativeId", masterCreativeId);
-
-        // Retrieve a small amount of creative sets at a time, paging through until all
-        // creative sets have been retrieved.
-        int totalResultSetSize = 0;
-        do {
-          CreativeSetPage page = creativeSetService.getCreativeSetsByStatement(
-              statementBuilder.ToStatement());
-
-          // Print out some information for each creative set.
-          if (page.results != null) {
-            totalResultSetSize = page.totalResultSetSize;
-            int i = page.startIndex;
-            foreach (CreativeSet creativeSet in page.results) {
-              Console.WriteLine(
-                  "{0}) Creative set with ID {1} and name \"{2}\" was found.",
-                  i++,
-                  creativeSet.id,
-                  creativeSet.name
-              );
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetCreativeSetsForMasterCreative codeExample = new GetCreativeSetsForMasterCreative();
+            long masterCreativeId = long.Parse("INSERT_MASTER_CREATIVE_ID_HERE");
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new DfpUser(), masterCreativeId);
             }
-          }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to get creative sets. Exception says \"{0}\"", e.Message);
+            }
+        }
 
-          statementBuilder.IncreaseOffsetBy(pageSize);
-        } while (statementBuilder.GetOffset() < totalResultSetSize);
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser dfpUser, long masterCreativeId)
+        {
+            using (CreativeSetService creativeSetService =
+                (CreativeSetService) dfpUser.GetService(DfpService.v201802.CreativeSetService))
+            {
+                // Create a statement to select creative sets.
+                int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("masterCreativeId = :masterCreativeId").OrderBy("id ASC").Limit(pageSize)
+                    .AddValue("masterCreativeId", masterCreativeId);
 
-        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
-      }
+                // Retrieve a small amount of creative sets at a time, paging through until all
+                // creative sets have been retrieved.
+                int totalResultSetSize = 0;
+                do
+                {
+                    CreativeSetPage page =
+                        creativeSetService.getCreativeSetsByStatement(
+                            statementBuilder.ToStatement());
+
+                    // Print out some information for each creative set.
+                    if (page.results != null)
+                    {
+                        totalResultSetSize = page.totalResultSetSize;
+                        int i = page.startIndex;
+                        foreach (CreativeSet creativeSet in page.results)
+                        {
+                            Console.WriteLine(
+                                "{0}) Creative set with ID {1} and name \"{2}\" was found.", i++,
+                                creativeSet.id, creativeSet.name);
+                        }
+                    }
+
+                    statementBuilder.IncreaseOffsetBy(pageSize);
+                } while (statementBuilder.GetOffset() < totalResultSetSize);
+
+                Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+            }
+        }
     }
-  }
 }

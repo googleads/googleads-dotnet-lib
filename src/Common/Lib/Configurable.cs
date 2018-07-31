@@ -14,14 +14,16 @@
 
 using System;
 
-namespace Google.Api.Ads.Common.Lib {
-  /// <summary>
-  /// Marks a class as configurable.
-  /// </summary>
-  public interface Configurable {
+namespace Google.Api.Ads.Common.Lib
+{
     /// <summary>
-    /// Gets the application configuration class for this object.
+    /// Marks a class as configurable.
     /// </summary>
-    AppConfig Config { get; }
-  }
+    public interface Configurable
+    {
+        /// <summary>
+        /// Gets the application configuration class for this object.
+        /// </summary>
+        AppConfig Config { get; }
+    }
 }

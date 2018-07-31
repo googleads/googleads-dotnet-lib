@@ -27,5 +27,11 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// <param name="numberResults">The number of results.</param>
     /// <returns>The parent builder for call chaining.</returns>
     TParent Limit(uint startIndex, uint numberResults);
+
+    /// <summary>
+    /// Adds a LIMIT clause to the query with default values.
+    /// </summary>
+    /// <returns>The parent builder for call chaining.</returns>
+    TParent DefaultLimit();
   }
 }

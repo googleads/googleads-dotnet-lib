@@ -1,4 +1,4 @@
-﻿// Copyright 2018, Google Inc. All Rights Reserved.
+﻿// Copyright 2016, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,69 +16,85 @@ using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201802;
 
 using System;
+
 using Google.Api.Ads.Dfp.Util.v201802;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This code example updates a creative wrapper to the 'OUTER' wrapping
-  /// order. To determine which creative wrappers exist, run
-  /// GetAllCreativeWrappers.cs.
-  /// </summary>
-  public class UpdateCreativeWrappers : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example updates a creative wrapper to the 'OUTER' wrapping
+    /// order. To determine which creative wrappers exist, run
+    /// GetAllCreativeWrappers.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example updates a creative wrapper to the 'OUTER' wrapping order. To " +
-            "determine which creative wrappers exist, run GetAllCreativeWrappers.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      UpdateCreativeWrappers codeExample = new UpdateCreativeWrappers();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (CreativeWrapperService creativeWrapperService =
-          (CreativeWrapperService) user.GetService(
-              DfpService.v201802.CreativeWrapperService)) {
-
-        long creativeWrapperId = long.Parse(_T("INSERT_CREATIVE_WRAPPER_ID_HERE"));
-
-        try {
-          StatementBuilder statementBuilder = new StatementBuilder()
-              .Where("id = :id")
-              .OrderBy("id ASC")
-              .Limit(1)
-              .AddValue("id", creativeWrapperId);
-          CreativeWrapperPage page = creativeWrapperService.getCreativeWrappersByStatement(
-              statementBuilder.ToStatement());
-          CreativeWrapper wrapper = page.results[0];
-
-          wrapper.ordering = CreativeWrapperOrdering.OUTER;
-          // Update the creative wrappers on the server.
-          CreativeWrapper[] creativeWrappers = creativeWrapperService.updateCreativeWrappers(
-              new CreativeWrapper[] { wrapper });
-
-          // Display results.
-          foreach (CreativeWrapper createdCreativeWrapper in creativeWrappers) {
-            Console.WriteLine("Creative wrapper with ID '{0}' and wrapping order '{1}' was " +
-                "updated.", createdCreativeWrapper.id, createdCreativeWrapper.ordering);
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to update creative wrappers. Exception says \"{0}\"",
-              e.Message);
+    public class UpdateCreativeWrappers : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example updates a creative wrapper to the 'OUTER' wrapping " +
+                    "order. To determine which creative wrappers exist, " +
+                    "run GetAllCreativeWrappers.cs.";
+            }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            UpdateCreativeWrappers codeExample = new UpdateCreativeWrappers();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (CreativeWrapperService creativeWrapperService =
+                (CreativeWrapperService) user.GetService(DfpService.v201802.CreativeWrapperService))
+            {
+                long creativeWrapperId = long.Parse(_T("INSERT_CREATIVE_WRAPPER_ID_HERE"));
+
+                try
+                {
+                    StatementBuilder statementBuilder = new StatementBuilder()
+                        .Where("id = :id")
+                        .OrderBy("id ASC")
+                        .Limit(1)
+                        .AddValue("id", creativeWrapperId);
+                    CreativeWrapperPage page =
+                        creativeWrapperService.getCreativeWrappersByStatement(
+                            statementBuilder.ToStatement());
+                    CreativeWrapper wrapper = page.results[0];
+
+                    wrapper.ordering = CreativeWrapperOrdering.OUTER;
+                    // Update the creative wrappers on the server.
+                    CreativeWrapper[] creativeWrappers =
+                        creativeWrapperService.updateCreativeWrappers(new CreativeWrapper[]
+                        {
+                            wrapper
+                        });
+
+                    // Display results.
+                    foreach (CreativeWrapper createdCreativeWrapper in creativeWrappers)
+                    {
+                        Console.WriteLine(
+                            "Creative wrapper with ID '{0}' and wrapping order '{1}' was " +
+                            "updated.", createdCreativeWrapper.id, createdCreativeWrapper.ordering);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to update creative wrappers. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

@@ -13,6 +13,7 @@
 ' limitations under the License.
 
 Imports Google.Api.Ads.AdWords.Lib
+Imports Google.Api.Ads.AdWords.Util.Reports.v201806
 Imports Google.Api.Ads.AdWords.v201806
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201806
@@ -65,45 +66,36 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201806
       Using dataService As DataService = CType(user.GetService(
           AdWordsService.v201806.DataService), DataService)
 
-        ' Create the selector.
-        Dim selector As New Selector
-        selector.fields = New String() {
-          CriterionBidLandscape.Fields.AdGroupId, CriterionBidLandscape.Fields.CriterionId,
-          CriterionBidLandscape.Fields.StartDate, CriterionBidLandscape.Fields.EndDate,
-          BidLandscapeLandscapePoint.Fields.Bid, BidLandscapeLandscapePoint.Fields.LocalClicks,
-          BidLandscapeLandscapePoint.Fields.LocalCost,
-          BidLandscapeLandscapePoint.Fields.LocalImpressions,
-          BidLandscapeLandscapePoint.Fields.BiddableConversions,
-          BidLandscapeLandscapePoint.Fields.BiddableConversionsValue
-        }
-
-        selector.predicates = New Predicate() {
-          Predicate.Equals(CriterionBidLandscape.Fields.AdGroupId, adGroupId),
-          Predicate.Equals(CriterionBidLandscape.Fields.CriterionId, keywordId)
-        }
-
-        ' Select selector paging.
-        selector.paging = Paging.Default
+        ' Create the query.
+        Dim query As SelectQuery = New SelectQueryBuilder().Select(
+            CriterionBidLandscape.Fields.AdGroupId, CriterionBidLandscape.Fields.CriterionId,
+            CriterionBidLandscape.Fields.StartDate, CriterionBidLandscape.Fields.EndDate,
+            BidLandscapeLandscapePoint.Fields.Bid, BidLandscapeLandscapePoint.Fields.LocalClicks,
+            BidLandscapeLandscapePoint.Fields.LocalCost,
+            BidLandscapeLandscapePoint.Fields.LocalImpressions,
+            BidLandscapeLandscapePoint.Fields.BiddableConversions,
+            BidLandscapeLandscapePoint.Fields.BiddableConversionsValue
+        ) _
+        .Where(CriterionBidLandscape.Fields.AdGroupId).Equals(adGroupId) _
+        .Where(CriterionBidLandscape.Fields.CriterionId).Equals(keywordId) _
+        .DefaultLimit() _
+        .Build()
         ' [END prepareRequest] MOE:strip_line
 
         ' [START requestPages] MOE:strip_line
         Dim page As New CriterionBidLandscapePage
 
         Dim landscapePointsFound As Integer = 0
-        Dim landscapePointsInLastResponse As Integer = 0
 
         Try
           Do
             ' Get bid landscape for keywords.
             ' [START sendRequest] MOE:strip_line
-            page = dataService.getCriterionBidLandscape(selector)
+            page = dataService.queryCriterionBidLandscape(query)
             ' [END sendRequest] MOE:strip_line
-            landscapePointsInLastResponse = 0
 
             ' Display bid landscapes.
             If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-              Dim i As Integer = selector.paging.startIndex
-
               For Each bidLandscape As CriterionBidLandscape In page.entries
                 Console.WriteLine("Found keyword bid landscape with ad group id ""{0}"", " &
                     "keyword id ""{1}"", start date ""{2}"", end date ""{3}"", and " &
@@ -117,16 +109,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201806
                       bidLandscapePoint.cost.microAmount, bidLandscapePoint.impressions,
                       bidLandscapePoint.biddableConversions,
                       bidLandscapePoint.biddableConversionsValue)
-                  landscapePointsInLastResponse += 1
                   landscapePointsFound += 1
                 Next
               Next
             End If
 
-            ' Offset by the number of landscape points, NOT the number
-            ' of entries (bid landscapes) in the last response.
-            selector.paging.IncreaseOffsetBy(landscapePointsInLastResponse)
-          Loop While (landscapePointsInLastResponse > 0)
+            query.NextPage(page)
+          Loop While (query.HasNextPage(page))
           ' [END requestPages] MOE:strip_line
           Console.WriteLine("Number of keyword bid landscape points found: {0}",
               landscapePointsFound)

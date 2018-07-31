@@ -18,67 +18,84 @@ using Google.Api.Ads.Dfp.Util.v201802;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This code example updates contact addresses. To determine which contacts
-  /// exist, run GetAllContacts.cs.
-  /// </summary>
-  public class UpdateContacts : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example updates contact addresses. To determine which contacts
+    /// exist, run GetAllContacts.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example updates contact comments. To determine which contacts " +
-            "exist, run GetAllContacts.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      UpdateContacts codeExample = new UpdateContacts();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (ContactService contactService =
-          (ContactService) user.GetService(DfpService.v201802.ContactService)) {
-
-        // Set the ID of the contact to update.
-        long contactId = long.Parse(_T("INSERT_CONTACT_ID_HERE"));
-
-        try {
-          StatementBuilder statementBuilder = new StatementBuilder()
-              .Where("id = :id")
-              .OrderBy("id ASC")
-              .Limit(1)
-              .AddValue("id", contactId);
-
-          // Get the contact.
-          ContactPage page = contactService.getContactsByStatement(statementBuilder.ToStatement());
-          Contact contact = page.results[0];
-
-          // Update the address of the contact.
-          contact.address = "123 New Street, New York, NY, 10011";
-
-          // Update the contact on the server.
-          Contact[] contacts = contactService.updateContacts(new Contact[] { contact });
-
-          // Display results.
-          foreach (Contact updatedContact in contacts) {
-            Console.WriteLine("Contact with ID \"{0}\", name \"{1}\", and comment \"{2}\" was " +
-                "updated.", updatedContact.id, updatedContact.name, updatedContact.comment);
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to update contacts. Exception says \"{0}\"", e.Message);
+    public class UpdateContacts : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example updates contact comments. To determine which contacts " +
+                    "exist, run GetAllContacts.cs.";
+            }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            UpdateContacts codeExample = new UpdateContacts();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (ContactService contactService =
+                (ContactService) user.GetService(DfpService.v201802.ContactService))
+            {
+                // Set the ID of the contact to update.
+                long contactId = long.Parse(_T("INSERT_CONTACT_ID_HERE"));
+
+                try
+                {
+                    StatementBuilder statementBuilder = new StatementBuilder()
+                        .Where("id = :id")
+                        .OrderBy("id ASC")
+                        .Limit(1)
+                        .AddValue("id", contactId);
+
+                    // Get the contact.
+                    ContactPage page =
+                        contactService.getContactsByStatement(statementBuilder.ToStatement());
+                    Contact contact = page.results[0];
+
+                    // Update the address of the contact.
+                    contact.address = "123 New Street, New York, NY, 10011";
+
+                    // Update the contact on the server.
+                    Contact[] contacts = contactService.updateContacts(new Contact[]
+                    {
+                        contact
+                    });
+
+                    // Display results.
+                    foreach (Contact updatedContact in contacts)
+                    {
+                        Console.WriteLine(
+                            "Contact with ID \"{0}\", name \"{1}\", and comment \"{2}\" was " +
+                            "updated.", updatedContact.id, updatedContact.name,
+                            updatedContact.comment);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to update contacts. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

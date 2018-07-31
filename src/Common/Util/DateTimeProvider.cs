@@ -14,21 +14,21 @@
 
 using System;
 
-namespace Google.Api.Ads.Common.Util {
-
-  /// <summary>
-  /// Provides the current date and time, without depending directly on
-  /// System.DateTime. This makes testing code that depends on timestamps
-  /// easier.
-  /// </summary>
-  public interface DateTimeProvider {
-
+namespace Google.Api.Ads.Common.Util
+{
     /// <summary>
-    /// Gets the current time.
+    /// Provides the current date and time, without depending directly on
+    /// System.DateTime. This makes testing code that depends on timestamps
+    /// easier.
     /// </summary>
-    /// <value>
-    /// The current time.
-    /// </value>
-    DateTime Now { get; }
-  }
+    public interface DateTimeProvider
+    {
+        /// <summary>
+        /// Gets the current time.
+        /// </summary>
+        /// <value>
+        /// The current time.
+        /// </value>
+        DateTime Now { get; }
+    }
 }

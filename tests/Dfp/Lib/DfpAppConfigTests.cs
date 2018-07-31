@@ -15,55 +15,58 @@
 using Google.Api.Ads.Dfp.Lib;
 
 using NUnit.Framework;
-using System;
 
+using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.AdWords.Tests.Lib {
-
-  internal class MockDfpAppConfig : DfpAppConfig {
-
-    /// <summary>
-    /// Allows the test cases to call ReadSettings method for testing purposes.
-    /// </summary>
-    /// <param name="dictSettings">The configuration settings.</param>
-    /// <remarks>AppConfigBase class loads its settings from App.config, and the
-    /// framework calls ReadSettings method to load the values. However, this is
-    /// a protected method, so we expose ReadSettings in the mock version to
-    /// allow easier configuration of AppConfig while running test cases.
-    /// </remarks>
-    public void MockReadSettings(Dictionary<string, string> dictSettings) =>
-      base.ReadSettings(dictSettings);
-  }
-
-  /// <summary>
-  /// Test cases for DfpAppConfig.
-  /// </summary>
-  internal class DfpAppConfigTests {
-
-    /// <summary>
-    /// The dictionary to hold the test data.
-    /// </summary>
-    private Dictionary<string, string> dictSettings = new Dictionary<string, string>() {
-      { "NetworkCode", "1234567890" },
-      { "ApplicationName", "TEST_APPLICATION_NAME" },
-      { "DfpApi.Server", "TEST_DFP_SERVER" },
-      { "AuthorizationMethod", "OAuth2" },
-    };
-
-    /// <summary>
-    /// Tests that various settings are read correctly.
-    /// </summary>
-    [Test]
-    [Category("Small")]
-    public void TestReadSettings() {
-      MockDfpAppConfig config = new MockDfpAppConfig();
-      config.MockReadSettings(dictSettings);
-
-      Assert.AreEqual(dictSettings["NetworkCode"], config.NetworkCode);
-      Assert.AreEqual(dictSettings["ApplicationName"], config.ApplicationName);
-      Assert.AreEqual(dictSettings["DfpApi.Server"], config.DfpApiServer);
-      Assert.AreEqual(dictSettings["AuthorizationMethod"], config.AuthorizationMethod.ToString());
+namespace Google.Api.Ads.AdWords.Tests.Lib
+{
+    internal class MockDfpAppConfig : DfpAppConfig
+    {
+        /// <summary>
+        /// Allows the test cases to call ReadSettings method for testing purposes.
+        /// </summary>
+        /// <param name="dictSettings">The configuration settings.</param>
+        /// <remarks>AppConfigBase class loads its settings from App.config, and the
+        /// framework calls ReadSettings method to load the values. However, this is
+        /// a protected method, so we expose ReadSettings in the mock version to
+        /// allow easier configuration of AppConfig while running test cases.
+        /// </remarks>
+        public void MockReadSettings(Dictionary<string, string> dictSettings) =>
+            base.ReadSettings(dictSettings);
     }
-  }
+
+    /// <summary>
+    /// Test cases for DfpAppConfig.
+    /// </summary>
+    internal class DfpAppConfigTests
+    {
+        /// <summary>
+        /// The dictionary to hold the test data.
+        /// </summary>
+        private Dictionary<string, string> dictSettings = new Dictionary<string, string>()
+        {
+            {"NetworkCode", "1234567890"},
+            {"ApplicationName", "TEST_APPLICATION_NAME"},
+            {"DfpApi.Server", "TEST_DFP_SERVER"},
+            {"AuthorizationMethod", "OAuth2"},
+        };
+
+        /// <summary>
+        /// Tests that various settings are read correctly.
+        /// </summary>
+        [Test]
+        [Category("Small")]
+        public void TestReadSettings()
+        {
+            MockDfpAppConfig config = new MockDfpAppConfig();
+            config.MockReadSettings(dictSettings);
+
+            Assert.AreEqual(dictSettings["NetworkCode"], config.NetworkCode);
+            Assert.AreEqual(dictSettings["ApplicationName"], config.ApplicationName);
+            Assert.AreEqual(dictSettings["DfpApi.Server"], config.DfpApiServer);
+            Assert.AreEqual(dictSettings["AuthorizationMethod"],
+                config.AuthorizationMethod.ToString());
+        }
+    }
 }

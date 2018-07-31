@@ -18,9 +18,10 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
   /// Interface for building report queries.
   /// </summary>
   /// <typeparam name="TParent">The parent builder type.</typeparam>
+  /// <typeparam name="TQuery">The type of the query.</typeparam>
   /// <typeparam name="TReportType">The enum type for predefined report types.</typeparam>
   /// <typeparam name="TDateRangeType">The enum type for predefined date range types.</typeparam>
-  internal interface IReportQueryBuilder<TParent, TReportType, TDateRangeType> :
+  internal interface IReportQueryBuilder<TParent, TQuery, TReportType, TDateRangeType> :
       ISelectBuilder<TParent>, IFilterBuilder<TParent>, IDataSourceBuilder<TParent, TReportType>,
       IDurationBuilder<TParent, TDateRangeType> {
 
@@ -28,6 +29,6 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
     /// Builds the query.
     /// </summary>
     /// <returns>The query.</returns>
-    string Build();
+    TQuery Build();
   }
 }

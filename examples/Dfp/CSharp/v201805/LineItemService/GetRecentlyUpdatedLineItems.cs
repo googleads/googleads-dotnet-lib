@@ -11,82 +11,88 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201805;
 using Google.Api.Ads.Dfp.v201805;
+
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This example gets only recently updated line items.
-  /// </summary>
-  public class GetRecentlyUpdatedLineItems : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example gets only recently updated line items.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example gets only recently updated line items.";
-      }
-    }
+    public class GetRecentlyUpdatedLineItems : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This example gets only recently updated line items."; }
+        }
 
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetRecentlyUpdatedLineItems codeExample = new GetRecentlyUpdatedLineItems();
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new DfpUser());
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get line items. Exception says \"{0}\"",
-            e.Message);
-      }
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser dfpUser) {
-      using (LineItemService lineItemService =
-          (LineItemService) dfpUser.GetService(DfpService.v201805.LineItemService)) {
-
-        // Create a statement to select line items.
-        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("lastModifiedDateTime >= :lastModifiedDateTime")
-            .OrderBy("id ASC")
-            .Limit(pageSize)
-            .AddValue("lastModifiedDateTime",
-                DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(-1),
-                    "America/New_York"));
-
-        // Retrieve a small amount of line items at a time, paging through until all
-        // line items have been retrieved.
-        int totalResultSetSize = 0;
-        do {
-          LineItemPage page = lineItemService.getLineItemsByStatement(
-              statementBuilder.ToStatement());
-
-          // Print out some information for each line item.
-          if (page.results != null) {
-            totalResultSetSize = page.totalResultSetSize;
-            int i = page.startIndex;
-            foreach (LineItem lineItem in page.results) {
-              Console.WriteLine(
-                  "{0}) Line item with ID {1} and name \"{2}\" was found.",
-                  i++,
-                  lineItem.id,
-                  lineItem.name
-              );
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetRecentlyUpdatedLineItems codeExample = new GetRecentlyUpdatedLineItems();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new DfpUser());
             }
-          }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to get line items. Exception says \"{0}\"", e.Message);
+            }
+        }
 
-          statementBuilder.IncreaseOffsetBy(pageSize);
-        } while (statementBuilder.GetOffset() < totalResultSetSize);
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser dfpUser)
+        {
+            using (LineItemService lineItemService =
+                (LineItemService) dfpUser.GetService(DfpService.v201805.LineItemService))
+            {
+                // Create a statement to select line items.
+                int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("lastModifiedDateTime >= :lastModifiedDateTime").OrderBy("id ASC")
+                    .Limit(pageSize)
+                    .AddValue("lastModifiedDateTime",
+                        DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(-1),
+                            "America/New_York"));
 
-        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
-      }
+                // Retrieve a small amount of line items at a time, paging through until all
+                // line items have been retrieved.
+                int totalResultSetSize = 0;
+                do
+                {
+                    LineItemPage page =
+                        lineItemService.getLineItemsByStatement(statementBuilder.ToStatement());
+
+                    // Print out some information for each line item.
+                    if (page.results != null)
+                    {
+                        totalResultSetSize = page.totalResultSetSize;
+                        int i = page.startIndex;
+                        foreach (LineItem lineItem in page.results)
+                        {
+                            Console.WriteLine(
+                                "{0}) Line item with ID {1} and name \"{2}\" was found.", i++,
+                                lineItem.id, lineItem.name);
+                        }
+                    }
+
+                    statementBuilder.IncreaseOffsetBy(pageSize);
+                } while (statementBuilder.GetOffset() < totalResultSetSize);
+
+                Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+            }
+        }
     }
-  }
 }

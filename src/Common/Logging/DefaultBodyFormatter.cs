@@ -14,32 +14,34 @@
 
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.Common.Logging {
-
-  /// <summary>
-  /// Default instance of TraceFormatter. This class doesn't do any formatting
-  /// transformation.
-  /// </summary>
-  public class DefaultBodyFormatter : TraceFormatter {
-
+namespace Google.Api.Ads.Common.Logging
+{
     /// <summary>
-    /// Initializes a new instance of the <see cref="DefaultBodyFormatter"/>
-    /// class.
+    /// Default instance of TraceFormatter. This class doesn't do any formatting
+    /// transformation.
     /// </summary>
-    public DefaultBodyFormatter() : base() {
-    }
+    public class DefaultBodyFormatter : TraceFormatter
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DefaultBodyFormatter"/>
+        /// class.
+        /// </summary>
+        public DefaultBodyFormatter() : base()
+        {
+        }
 
-    /// <summary>
-    /// Masks the contents of the traced message.
-    /// </summary>
-    /// <param name="body">The message body.</param>
-    /// <param name="keysToMask">The keys for which values should be masked
-    /// in the message body.</param>
-    /// <returns>
-    /// The formatted message body.
-    /// </returns>
-    public override string MaskContents(string body, ISet<string> keysToMask) {
-      return body;
+        /// <summary>
+        /// Masks the contents of the traced message.
+        /// </summary>
+        /// <param name="body">The message body.</param>
+        /// <param name="keysToMask">The keys for which values should be masked
+        /// in the message body.</param>
+        /// <returns>
+        /// The formatted message body.
+        /// </returns>
+        public override string MaskContents(string body, ISet<string> keysToMask)
+        {
+            return body;
+        }
     }
-  }
 }

@@ -17,66 +17,83 @@ using Google.Api.Ads.Dfp.v201805;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example gets a forecast for an existing line item. To determine
-  /// which line items exist, run GetAllLineItems.cs.
-  /// </summary>
-  public class GetAvailabilityForecastById : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example gets a forecast for an existing line item. To determine
+    /// which line items exist, run GetAllLineItems.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example gets a forecast for an existing line item. To determine which "
-            + "line items exist, run GetAllLineItems.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetAvailabilityForecastById codeExample = new GetAvailabilityForecastById();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (ForecastService forecastService =
-          (ForecastService) user.GetService(DfpService.v201805.ForecastService)) {
-
-        // Set the line item to get a forecast for.
-        long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
-
-        try {
-          // Get forecast for line item.
-          AvailabilityForecastOptions options = new AvailabilityForecastOptions();
-          options.includeContendingLineItems = true;
-          options.includeTargetingCriteriaBreakdown = true;
-          AvailabilityForecast forecast =
-              forecastService.getAvailabilityForecastById(lineItemId, options);
-
-          // Display results.
-          long matched = forecast.matchedUnits;
-          double availablePercent = (double) (forecast.availableUnits / (matched * 1.0)) * 100;
-          String unitType = forecast.unitType.ToString().ToLower();
-
-          Console.WriteLine("{0} {1} matched.\n{2} % {3} available.", matched, unitType,
-              availablePercent, unitType);
-          if (forecast.possibleUnitsSpecified) {
-            double possiblePercent = (double) (forecast.possibleUnits / (matched * 1.0)) * 100;
-            Console.WriteLine(possiblePercent + "% " + unitType + " possible.\n");
-          }
-          Console.WriteLine("{0} contending line items.", (forecast.contendingLineItems != null) ?
-              forecast.contendingLineItems.Length : 0);
-        } catch (Exception e) {
-          Console.WriteLine("Failed to get forecast by id. Exception says \"{0}\"", e.Message);
+    public class GetAvailabilityForecastById : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example gets a forecast for an existing line item. " +
+                    "To determine which line items exist, run GetAllLineItems.cs.";
+            }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetAvailabilityForecastById codeExample = new GetAvailabilityForecastById();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (ForecastService forecastService =
+                (ForecastService) user.GetService(DfpService.v201805.ForecastService))
+            {
+
+                // Set the line item to get a forecast for.
+                long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
+
+                try
+                {
+                    // Get forecast for line item.
+                    AvailabilityForecastOptions options = new AvailabilityForecastOptions();
+                    options.includeContendingLineItems = true;
+                    options.includeTargetingCriteriaBreakdown = true;
+                    AvailabilityForecast forecast =
+                        forecastService.getAvailabilityForecastById(lineItemId, options);
+
+                    // Display results.
+                    long matched = forecast.matchedUnits;
+                    double availablePercent =
+                        (double) (forecast.availableUnits / (matched * 1.0)) * 100;
+                    String unitType = forecast.unitType.ToString().ToLower();
+
+                    Console.WriteLine("{0} {1} matched.\n{2} % {3} available.", matched, unitType,
+                        availablePercent, unitType);
+                    if (forecast.possibleUnitsSpecified)
+                    {
+                        double possiblePercent =
+                            (double) (forecast.possibleUnits / (matched * 1.0)) * 100;
+                        Console.WriteLine(possiblePercent + "% " + unitType + " possible.\n");
+                    }
+
+                    Console.WriteLine("{0} contending line items.",
+                        (forecast.contendingLineItems != null)
+                            ? forecast.contendingLineItems.Length
+                            : 0);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to get forecast by id. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

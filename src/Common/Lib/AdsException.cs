@@ -19,54 +19,62 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Google.Api.Ads.Common.Lib {
-  /// <summary>
-  /// Base class for all exceptions thrown by the library related
-  /// to an Ads API call.
-  /// </summary>
-  [Serializable]
-  public abstract class AdsException : Exception {
+namespace Google.Api.Ads.Common.Lib
+{
     /// <summary>
-    /// Protected constructor.
+    /// Base class for all exceptions thrown by the library related
+    /// to an Ads API call.
     /// </summary>
-    protected AdsException() : base() {
-    }
+    [Serializable]
+    public abstract class AdsException : Exception
+    {
+        /// <summary>
+        /// Protected constructor.
+        /// </summary>
+        protected AdsException() : base()
+        {
+        }
 
-    /// <summary>
-    /// Protected constructor.
-    /// </summary>
-    /// <param name="message">Error message for this API exception.</param>
-    protected AdsException(string message) : base(message) {
-    }
+        /// <summary>
+        /// Protected constructor.
+        /// </summary>
+        /// <param name="message">Error message for this API exception.</param>
+        protected AdsException(string message) : base(message)
+        {
+        }
 
-    /// <summary>
-    /// Protected constructor.
-    /// </summary>
-    /// <param name="message">Error message for this API exception.</param>
-    /// <param name="innerException">Inner exception, if any.</param>
-    protected AdsException(string message, Exception innerException)
-        : base(message, innerException) {
-    }
+        /// <summary>
+        /// Protected constructor.
+        /// </summary>
+        /// <param name="message">Error message for this API exception.</param>
+        /// <param name="innerException">Inner exception, if any.</param>
+        protected AdsException(string message, Exception innerException)
+            : base(message, innerException)
+        {
+        }
 
-    /// <summary>
-    /// Protected constructor, used by serialization frameworks while
-    /// deserializing an exception object.
-    /// </summary>
-    /// <param name="info">Info about the serialization context.</param>
-    /// <param name="context">A streaming context that represents the
-    /// serialization stream.</param>
-    protected AdsException(SerializationInfo info, StreamingContext context) : base(info, context) {
-    }
+        /// <summary>
+        /// Protected constructor, used by serialization frameworks while
+        /// deserializing an exception object.
+        /// </summary>
+        /// <param name="info">Info about the serialization context.</param>
+        /// <param name="context">A streaming context that represents the
+        /// serialization stream.</param>
+        protected AdsException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+        }
 
-    /// <summary>
-    /// Gets a specified field from serialization stream.
-    /// </summary>
-    /// <typeparam name="T">The type of field.</typeparam>
-    /// <param name="info">The serialization context.</param>
-    /// <param name="fieldName">The serialization field name.</param>
-    /// <returns>The deserialized value of field.</returns>
-    protected T GetValue<T>(SerializationInfo info, string fieldName) {
-      return (T) info.GetValue(fieldName, typeof(T));
+        /// <summary>
+        /// Gets a specified field from serialization stream.
+        /// </summary>
+        /// <typeparam name="T">The type of field.</typeparam>
+        /// <param name="info">The serialization context.</param>
+        /// <param name="fieldName">The serialization field name.</param>
+        /// <returns>The deserialized value of field.</returns>
+        protected T GetValue<T>(SerializationInfo info, string fieldName)
+        {
+            return (T) info.GetValue(fieldName, typeof(T));
+        }
     }
-  }
 }

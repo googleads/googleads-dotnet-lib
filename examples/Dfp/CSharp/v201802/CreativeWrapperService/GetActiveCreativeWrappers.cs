@@ -11,80 +11,90 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201802;
 using Google.Api.Ads.Dfp.v201802;
+
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This example gets all active creative wrappers.
-  /// </summary>
-  public class GetActiveCreativeWrappers : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example gets all active creative wrappers.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example gets all active creative wrappers.";
-      }
-    }
+    public class GetActiveCreativeWrappers : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This example gets all active creative wrappers."; }
+        }
 
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetActiveCreativeWrappers codeExample = new GetActiveCreativeWrappers();
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new DfpUser());
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get creative wrappers. Exception says \"{0}\"",
-            e.Message);
-      }
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser dfpUser) {
-      using (CreativeWrapperService creativeWrapperService =
-          (CreativeWrapperService) dfpUser.GetService(DfpService.v201802.CreativeWrapperService)) {
-
-        // Create a statement to select creative wrappers.
-        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("status = :status")
-            .OrderBy("id ASC")
-            .Limit(pageSize)
-            .AddValue("status", CreativeWrapperStatus.ACTIVE.ToString());
-
-        // Retrieve a small amount of creative wrappers at a time, paging through until all
-        // creative wrappers have been retrieved.
-        int totalResultSetSize = 0;
-        do {
-          CreativeWrapperPage page = creativeWrapperService.getCreativeWrappersByStatement(
-              statementBuilder.ToStatement());
-
-          // Print out some information for each creative wrapper.
-          if (page.results != null) {
-            totalResultSetSize = page.totalResultSetSize;
-            int i = page.startIndex;
-            foreach (CreativeWrapper creativeWrapper in page.results) {
-              Console.WriteLine(
-                  "{0}) Creative wrapper with ID {1} and label ID {2} was found.",
-                  i++,
-                  creativeWrapper.id,
-                  creativeWrapper.labelId
-              );
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetActiveCreativeWrappers codeExample = new GetActiveCreativeWrappers();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new DfpUser());
             }
-          }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to get creative wrappers. Exception says \"{0}\"",
+                    e.Message);
+            }
+        }
 
-          statementBuilder.IncreaseOffsetBy(pageSize);
-        } while (statementBuilder.GetOffset() < totalResultSetSize);
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser dfpUser)
+        {
+            using (CreativeWrapperService creativeWrapperService =
+                (CreativeWrapperService) dfpUser.GetService(DfpService.v201802
+                    .CreativeWrapperService))
+            {
+                // Create a statement to select creative wrappers.
+                int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("status = :status")
+                    .OrderBy("id ASC")
+                    .Limit(pageSize)
+                    .AddValue("status", CreativeWrapperStatus.ACTIVE.ToString());
 
-        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
-      }
+                // Retrieve a small amount of creative wrappers at a time, paging through until all
+                // creative wrappers have been retrieved.
+                int totalResultSetSize = 0;
+                do
+                {
+                    CreativeWrapperPage page =
+                        creativeWrapperService.getCreativeWrappersByStatement(
+                            statementBuilder.ToStatement());
+
+                    // Print out some information for each creative wrapper.
+                    if (page.results != null)
+                    {
+                        totalResultSetSize = page.totalResultSetSize;
+                        int i = page.startIndex;
+                        foreach (CreativeWrapper creativeWrapper in page.results)
+                        {
+                            Console.WriteLine(
+                                "{0}) Creative wrapper with ID {1} and label ID {2} was found.",
+                                i++, creativeWrapper.id, creativeWrapper.labelId);
+                        }
+                    }
+
+                    statementBuilder.IncreaseOffsetBy(pageSize);
+                } while (statementBuilder.GetOffset() < totalResultSetSize);
+
+                Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+            }
+        }
     }
-  }
 }

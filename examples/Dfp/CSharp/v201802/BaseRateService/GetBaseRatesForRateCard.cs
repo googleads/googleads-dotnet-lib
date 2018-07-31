@@ -11,82 +11,87 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201802;
 using Google.Api.Ads.Dfp.v201802;
+
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This example gets all base rates belonging to a rate card.
-  /// </summary>
-  public class GetBaseRatesForRateCard : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example gets all base rates belonging to a rate card.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example gets all base rates belonging to a rate card.";
-      }
-    }
+    public class GetBaseRatesForRateCard : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This example gets all base rates belonging to a rate card."; }
+        }
 
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetBaseRatesForRateCard codeExample = new GetBaseRatesForRateCard();
-      long rateCardId = long.Parse("INSERT_RATE_CARD_ID_HERE");
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new DfpUser(), rateCardId);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get base rates. Exception says \"{0}\"",
-            e.Message);
-      }
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser dfpUser, long rateCardId) {
-      using (BaseRateService baseRateService =
-          (BaseRateService) dfpUser.GetService(DfpService.v201802.BaseRateService)) {
-
-        // Create a statement to select base rates.
-        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("rateCardId = :rateCardId")
-            .OrderBy("id ASC")
-            .Limit(pageSize)
-            .AddValue("rateCardId", rateCardId);
-
-        // Retrieve a small amount of base rates at a time, paging through until all
-        // base rates have been retrieved.
-        int totalResultSetSize = 0;
-        do {
-          BaseRatePage page = baseRateService.getBaseRatesByStatement(
-              statementBuilder.ToStatement());
-
-          // Print out some information for each base rate.
-          if (page.results != null) {
-            totalResultSetSize = page.totalResultSetSize;
-            int i = page.startIndex;
-            foreach (BaseRate baseRate in page.results) {
-              Console.WriteLine(
-                  "{0}) Base rate with ID {1}, type \"{2}\", and rate card ID {3} was found.",
-                  i++,
-                  baseRate.id,
-                  baseRate.GetType().Name,
-                  baseRate.rateCardId
-              );
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetBaseRatesForRateCard codeExample = new GetBaseRatesForRateCard();
+            long rateCardId = long.Parse("INSERT_RATE_CARD_ID_HERE");
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new DfpUser(), rateCardId);
             }
-          }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to get base rates. Exception says \"{0}\"", e.Message);
+            }
+        }
 
-          statementBuilder.IncreaseOffsetBy(pageSize);
-        } while (statementBuilder.GetOffset() < totalResultSetSize);
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser dfpUser, long rateCardId)
+        {
+            using (BaseRateService baseRateService =
+                (BaseRateService) dfpUser.GetService(DfpService.v201802.BaseRateService))
+            {
+                // Create a statement to select base rates.
+                int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("rateCardId = :rateCardId").OrderBy("id ASC").Limit(pageSize)
+                    .AddValue("rateCardId", rateCardId);
 
-        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
-      }
+                // Retrieve a small amount of base rates at a time, paging through until all
+                // base rates have been retrieved.
+                int totalResultSetSize = 0;
+                do
+                {
+                    BaseRatePage page =
+                        baseRateService.getBaseRatesByStatement(statementBuilder.ToStatement());
+
+                    // Print out some information for each base rate.
+                    if (page.results != null)
+                    {
+                        totalResultSetSize = page.totalResultSetSize;
+                        int i = page.startIndex;
+                        foreach (BaseRate baseRate in page.results)
+                        {
+                            Console.WriteLine(
+                                "{0}) Base rate with ID {1}, type \"{2}\", and rate card ID {3} " +
+                                "was found.",
+                                i++, baseRate.id, baseRate.GetType().Name, baseRate.rateCardId);
+                        }
+                    }
+
+                    statementBuilder.IncreaseOffsetBy(pageSize);
+                } while (statementBuilder.GetOffset() < totalResultSetSize);
+
+                Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+            }
+        }
     }
-  }
 }

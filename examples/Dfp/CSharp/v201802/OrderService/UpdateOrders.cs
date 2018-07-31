@@ -18,74 +18,91 @@ using Google.Api.Ads.Dfp.v201802;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This code example updates the note of an order. To determine which orders exist,
-  /// run GetAllOrders.cs.
-  /// </summary>
-  public class UpdateOrders : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example updates the note of an order. To determine which orders exist,
+    /// run GetAllOrders.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example updates the note of an order. To determine which orders " +
-            "exist, run GetAllOrders.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      UpdateOrders codeExample = new UpdateOrders();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (OrderService orderService = (OrderService) user.GetService(
-          DfpService.v201802.OrderService)) {
-
-
-        long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
-
-        // Create a statement to get the order.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("id = :id")
-            .OrderBy("id ASC")
-            .Limit(1)
-            .AddValue("id", orderId);
-
-        try {
-          // Get orders by statement.
-          OrderPage page = orderService.getOrdersByStatement(statementBuilder.ToStatement());
-
-          Order order = page.results[0];
-
-          // Update the order object by changing its note.
-          order.notes = "Spoke to advertiser. All is well.";
-
-          // Update the orders on the server.
-          Order[] orders = orderService.updateOrders(new Order[] { order });
-
-          if (orders != null) {
-            foreach (Order updatedOrder in orders) {
-              Console.WriteLine("Order with ID = '{0}', name = '{1}', advertiser ID = '{2}', " +
-                  "and notes = '{3}' was updated.", updatedOrder.id, updatedOrder.name,
-                  updatedOrder.advertiserId, updatedOrder.notes);
+    public class UpdateOrders : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return
+                    "This code example updates the note of an order. To determine which orders " +
+                    "exist, run GetAllOrders.cs.";
             }
-          } else {
-            Console.WriteLine("No orders updated.");
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to update orders. Exception says \"{0}\"",
-              e.Message);
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            UpdateOrders codeExample = new UpdateOrders();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (OrderService orderService =
+                (OrderService) user.GetService(DfpService.v201802.OrderService))
+            {
+                long orderId = long.Parse(_T("INSERT_ORDER_ID_HERE"));
+
+                // Create a statement to get the order.
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("id = :id")
+                    .OrderBy("id ASC")
+                    .Limit(1)
+                    .AddValue("id", orderId);
+
+                try
+                {
+                    // Get orders by statement.
+                    OrderPage page =
+                        orderService.getOrdersByStatement(statementBuilder.ToStatement());
+
+                    Order order = page.results[0];
+
+                    // Update the order object by changing its note.
+                    order.notes = "Spoke to advertiser. All is well.";
+
+                    // Update the orders on the server.
+                    Order[] orders = orderService.updateOrders(new Order[]
+                    {
+                        order
+                    });
+
+                    if (orders != null)
+                    {
+                        foreach (Order updatedOrder in orders)
+                        {
+                            Console.WriteLine(
+                                "Order with ID = '{0}', name = '{1}', advertiser ID = '{2}', " +
+                                "and notes = '{3}' was updated.", updatedOrder.id,
+                                updatedOrder.name, updatedOrder.advertiserId, updatedOrder.notes);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No orders updated.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to update orders. Exception says \"{0}\"", e.Message);
+                }
+            }
+        }
     }
-  }
 }

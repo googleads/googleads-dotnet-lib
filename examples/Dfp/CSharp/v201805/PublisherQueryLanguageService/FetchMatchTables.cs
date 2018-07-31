@@ -20,94 +20,102 @@ using Google.Api.Ads.Dfp.v201805;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example fetches and creates match table files from the
-  /// Line_Item and Ad_Unit tables. This example may take a while to run.
-  /// </summary>
-  public class FetchMatchTables : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example fetches and creates match table files from the
+    /// Line_Item and Ad_Unit tables. This example may take a while to run.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example fetches and creates match table files from the Line_Item " +
-            "and Ad_Unit tables. This example may take a while to run.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      FetchMatchTables codeExample = new FetchMatchTables();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (PublisherQueryLanguageService pqlService =
-          (PublisherQueryLanguageService) user.GetService(
-              DfpService.v201805.PublisherQueryLanguageService)) {
-
-        try {
-          StatementBuilder lineItemStatementBuilder = new StatementBuilder()
-              .Select("Id, Name, Status")
-              .From("Line_Item")
-              .OrderBy("Id ASC")
-              .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-          string lineItemFilePath = "Line-Item-Matchtable.csv";
-          fetchMatchTables(pqlService, lineItemStatementBuilder, lineItemFilePath);
-
-          StatementBuilder adUnitStatementBuilder = new StatementBuilder()
-              .Select("Id, Name")
-              .From("Ad_Unit")
-              .OrderBy("Id ASC")
-              .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-          string adUnitFilePath = "Ad-Unit-Matchtable.csv";
-          fetchMatchTables(pqlService, adUnitStatementBuilder, adUnitFilePath);
-
-          Console.WriteLine("Ad units saved to {0}", adUnitFilePath);
-          Console.WriteLine("Line items saved to {0}\n", lineItemFilePath);
-        } catch (Exception e) {
-          Console.WriteLine("Failed to get match tables. Exception says \"{0}\"", e.Message);
+    public class FetchMatchTables : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return
+                    "This code example fetches and creates match table files from the Line_Item " +
+                    "and Ad_Unit tables. This example may take a while to run.";
+            }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            FetchMatchTables codeExample = new FetchMatchTables();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (PublisherQueryLanguageService pqlService =
+                (PublisherQueryLanguageService) user.GetService(DfpService.v201805
+                    .PublisherQueryLanguageService))
+            {
+                try
+                {
+                    StatementBuilder lineItemStatementBuilder = new StatementBuilder()
+                        .Select("Id, Name, Status").From("Line_Item").OrderBy("Id ASC")
+                        .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+                    string lineItemFilePath = "Line-Item-Matchtable.csv";
+                    fetchMatchTables(pqlService, lineItemStatementBuilder, lineItemFilePath);
+
+                    StatementBuilder adUnitStatementBuilder = new StatementBuilder()
+                        .Select("Id, Name").From("Ad_Unit").OrderBy("Id ASC")
+                        .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+                    string adUnitFilePath = "Ad-Unit-Matchtable.csv";
+                    fetchMatchTables(pqlService, adUnitStatementBuilder, adUnitFilePath);
+
+                    Console.WriteLine("Ad units saved to {0}", adUnitFilePath);
+                    Console.WriteLine("Line items saved to {0}\n", lineItemFilePath);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to get match tables. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Fetches a match table from a PQL statement and writes it to a file.
+        /// </summary>
+        /// <param name="pqlService">The PQL service.</param>
+        /// <param name="statementBuilder">The statement builder to use.</param>
+        /// <param name="fileName">Name of the file.</param>
+        private static void fetchMatchTables(PublisherQueryLanguageService pqlService,
+            StatementBuilder statementBuilder, string fileName)
+        {
+            int resultSetSize = 0;
+            List<Row> allRows = new List<Row>();
+            ResultSet resultSet;
+
+            do
+            {
+                resultSet = pqlService.select(statementBuilder.ToStatement());
+                allRows.AddRange(resultSet.rows);
+                Console.WriteLine(PqlUtilities.ResultSetToString(resultSet));
+
+                statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
+                resultSetSize = resultSet.rows == null ? 0 : resultSet.rows.Length;
+            } while (resultSetSize == StatementBuilder.SUGGESTED_PAGE_LIMIT);
+
+            resultSet.rows = allRows.ToArray();
+            List<String[]> rows = PqlUtilities.ResultSetToStringArrayList(resultSet);
+
+            // Write the contents to a csv file.
+            CsvFile file = new CsvFile();
+            file.Headers.AddRange(rows[0]);
+            file.Records.AddRange(rows.GetRange(1, rows.Count - 1).ToArray());
+            file.Write(fileName);
+        }
     }
-
-    /// <summary>
-    /// Fetches a match table from a PQL statement and writes it to a file.
-    /// </summary>
-    /// <param name="pqlService">The PQL service.</param>
-    /// <param name="statementBuilder">The statement builder to use.</param>
-    /// <param name="fileName">Name of the file.</param>
-    private static void fetchMatchTables(PublisherQueryLanguageService pqlService,
-        StatementBuilder statementBuilder, string fileName) {
-
-      int resultSetSize = 0;
-      List<Row> allRows = new List<Row>();
-      ResultSet resultSet;
-
-      do {
-        resultSet = pqlService.select(statementBuilder.ToStatement());
-        allRows.AddRange(resultSet.rows);
-        Console.WriteLine(PqlUtilities.ResultSetToString(resultSet));
-
-        statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-        resultSetSize = resultSet.rows == null ? 0 : resultSet.rows.Length;
-      } while (resultSetSize == StatementBuilder.SUGGESTED_PAGE_LIMIT);
-
-      resultSet.rows = allRows.ToArray();
-      List<String[]> rows = PqlUtilities.ResultSetToStringArrayList(resultSet);
-
-      // Write the contents to a csv file.
-      CsvFile file = new CsvFile();
-      file.Headers.AddRange(rows[0]);
-      file.Records.AddRange(rows.GetRange(1, rows.Count - 1).ToArray());
-      file.Write(fileName);
-    }
-  }
 }

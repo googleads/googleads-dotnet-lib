@@ -14,45 +14,52 @@
 
 using Google.Api.Ads.Common.Lib;
 using Google.Apis.Http;
+
 using System.Net.Http;
 
-namespace Google.Api.Ads.Common.Util {
-
-  /// <summary>
-  /// An <see cref="HttpClientFactory"/> implementation that allows setting proxy server.
-  /// </summary>
-  internal class AdsHttpClientFactory : HttpClientFactory {
-
+namespace Google.Api.Ads.Common.Util
+{
     /// <summary>
-    /// The configuration class for obtaining proxy instance.
+    /// An <see cref="HttpClientFactory"/> implementation that allows setting proxy server.
     /// </summary>
-    private AppConfig config;
+    internal class AdsHttpClientFactory : HttpClientFactory
+    {
+        /// <summary>
+        /// The configuration class for obtaining proxy instance.
+        /// </summary>
+        private AppConfig config;
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="AdsHttpClientFactory"/> class.
-    /// </summary>
-    /// <param name="config">The configuration instance.</param>
-    internal AdsHttpClientFactory(AppConfig config) : base() {
-      this.config = config;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdsHttpClientFactory"/> class.
+        /// </summary>
+        /// <param name="config">The configuration instance.</param>
+        internal AdsHttpClientFactory(AppConfig config) : base()
+        {
+            this.config = config;
+        }
+
+        /// <summary>
+        /// Creates a HTTP message handler. Override this method to mock a message handler.
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        protected override HttpMessageHandler CreateHandler(CreateHttpClientArgs args)
+        {
+            if (config.Proxy != null)
+            {
+                HttpClientHandler webRequestHandler = new HttpClientHandler()
+                {
+                    UseProxy = true,
+                    Proxy = config.Proxy,
+                    UseCookies = false
+                };
+
+                return webRequestHandler;
+            }
+            else
+            {
+                return base.CreateHandler(args);
+            }
+        }
     }
-
-    /// <summary>
-    /// Creates a HTTP message handler. Override this method to mock a message handler.
-    /// </summary>
-    /// <param name="args"></param>
-    /// <returns></returns>
-    protected override HttpMessageHandler CreateHandler(CreateHttpClientArgs args) {
-      if (config.Proxy != null) {
-        HttpClientHandler webRequestHandler = new HttpClientHandler() {
-          UseProxy = true,
-          Proxy = config.Proxy,
-          UseCookies = false
-        };
-
-        return webRequestHandler;
-      } else {
-        return base.CreateHandler(args);
-      }
-    }
-  }
 }

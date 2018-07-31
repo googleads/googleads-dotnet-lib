@@ -17,48 +17,59 @@ using Google.Api.Ads.Dfp.v201802;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This code example gets the current network that you can make requests
-  /// against.
-  /// </summary>
-  public class GetCurrentNetwork : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example gets the current network that you can make requests
+    /// against.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example gets the current network that you can make requests against.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetCurrentNetwork codeExample = new GetCurrentNetwork();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (NetworkService networkService =
-          (NetworkService) user.GetService(DfpService.v201802.NetworkService)) {
-
-        try {
-          // Get the current network.
-          Network network = networkService.getCurrentNetwork();
-
-          Console.WriteLine("Current network has network code \"{0}\" and display name \"{1}\".",
-              network.networkCode, network.displayName);
-        } catch (Exception e) {
-          Console.WriteLine("Failed to get current network. Exception says \"{0}\"",
-              e.Message);
+    public class GetCurrentNetwork : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example gets the current network that you can make requests " +
+                    "against.";
+            }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetCurrentNetwork codeExample = new GetCurrentNetwork();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (NetworkService networkService =
+                (NetworkService) user.GetService(DfpService.v201802.NetworkService))
+            {
+                try
+                {
+                    // Get the current network.
+                    Network network = networkService.getCurrentNetwork();
+
+                    Console.WriteLine(
+                        "Current network has network code \"{0}\" and display name \"{1}\".",
+                        network.networkCode, network.displayName);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to get current network. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

@@ -16,36 +16,46 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 
-namespace Google.Api.Ads.Common.Logging {
-
-  /// <summary>
-  /// Formats a Key-value collection message by masking out sensitive fields.
-  /// </summary>
-  public class KeyValueMessageFormatter : TraceFormatter {
-
+namespace Google.Api.Ads.Common.Logging
+{
     /// <summary>
-    /// Masks the contents of the traced message.
+    /// Formats a Key-value collection message by masking out sensitive fields.
     /// </summary>
-    /// <param name="body">The message body.</param>
-    /// <param name="keysToMask">The keys for which values should be masked
-    /// in the message body.</param>
-    /// <returns>
-    /// The formatted message body.
-    /// </returns>
-    public override string MaskContents(string body, ISet<string> keysToMask) {
-      string[] splits = body.Split(new char[] {'\r', '\n'}, StringSplitOptions.RemoveEmptyEntries);
-      for (int i = 0; i < splits.Length; i++) {
-        string split = splits[i];
-        int delim = split.IndexOf('=');
-        if (delim != -1) {
-          string key = split.Substring(0, delim);
-          if (keysToMask.Contains(key)) {
-            split = string.Format("{0}={1}", key, MASK_PATTERN);
-          }
+    public class KeyValueMessageFormatter : TraceFormatter
+    {
+        /// <summary>
+        /// Masks the contents of the traced message.
+        /// </summary>
+        /// <param name="body">The message body.</param>
+        /// <param name="keysToMask">The keys for which values should be masked
+        /// in the message body.</param>
+        /// <returns>
+        /// The formatted message body.
+        /// </returns>
+        public override string MaskContents(string body, ISet<string> keysToMask)
+        {
+            string[] splits = body.Split(new char[]
+            {
+                '\r',
+                '\n'
+            }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < splits.Length; i++)
+            {
+                string split = splits[i];
+                int delim = split.IndexOf('=');
+                if (delim != -1)
+                {
+                    string key = split.Substring(0, delim);
+                    if (keysToMask.Contains(key))
+                    {
+                        split = string.Format("{0}={1}", key, MASK_PATTERN);
+                    }
+                }
+
+                splits[i] = split;
+            }
+
+            return string.Join("\r\n", splits);
         }
-        splits[i] = split;
-      }
-      return string.Join("\r\n", splits);
     }
-  }
 }

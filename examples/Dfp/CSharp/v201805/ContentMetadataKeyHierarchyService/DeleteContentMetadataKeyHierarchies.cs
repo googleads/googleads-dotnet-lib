@@ -18,79 +18,94 @@ using Google.Api.Ads.Dfp.v201805;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This example deletes a content metadata key hierarchy. To determine
-  /// which content metadata key hierarchies exist, run
-  /// GetAllContentMetadataKeyHierarchies.cs.
-  /// </summary>
-  public class DeleteContentMetadataKeyHierarchies : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example deletes a content metadata key hierarchy. To determine
+    /// which content metadata key hierarchies exist, run
+    /// GetAllContentMetadataKeyHierarchies.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example deletes a content metadata key hierarchy. To determine " +
-            "which content metadata key hierarchies exist, run " +
-            "GetAllContentMetadataKeyHierarchies.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      CreateCustomTargetingKeysAndValues codeExample = new CreateCustomTargetingKeysAndValues();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (ContentMetadataKeyHierarchyService contentMetadataKeyHierarchyService =
-          (ContentMetadataKeyHierarchyService) user.GetService(
-              DfpService.v201805.ContentMetadataKeyHierarchyService)) {
-
-        // Set the ID of the content metadata key hierarchy to delete.
-        long contentMetadataKeyHierarchyId =
-            long.Parse(_T("INSERT_CONTENT_METADATA_KEY_HIERARCHY_ID_HERE"));
-
-        // Create a statement to select a content metadata key hierarchy.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("WHERE id = :id")
-            .OrderBy("id ASC")
-            .Limit(1)
-            .AddValue("id", contentMetadataKeyHierarchyId);
-
-        try {
-          // Get content metadata key hierarchies by statement.
-          ContentMetadataKeyHierarchyPage page = contentMetadataKeyHierarchyService
-              .getContentMetadataKeyHierarchiesByStatement(statementBuilder.ToStatement());
-
-          ContentMetadataKeyHierarchy contentMetadataKeyHierarchy = page.results[0];
-
-          Console.WriteLine("Content metadata key hierarchy with ID \"{0}\" will be deleted.",
-              contentMetadataKeyHierarchy.id);
-
-          statementBuilder.RemoveLimitAndOffset();
-
-          // Create action.
-          Google.Api.Ads.Dfp.v201805.DeleteContentMetadataKeyHierarchies action =
-            new Google.Api.Ads.Dfp.v201805.DeleteContentMetadataKeyHierarchies();
-
-          // Perform action.
-          UpdateResult result = contentMetadataKeyHierarchyService
-            .performContentMetadataKeyHierarchyAction(action, statementBuilder.ToStatement());
-
-          Console.WriteLine("Number of content metadata key hierarchies deleted: {0}",
-              result.numChanges);
-        } catch (Exception e) {
-          Console.WriteLine("Failed to delete content metadata key hierarchies. " +
-              "Exception says \"{0}\"", e.Message);
+    public class DeleteContentMetadataKeyHierarchies : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This example deletes a content metadata key hierarchy. To determine " +
+                    "which content metadata key hierarchies exist, run " +
+                    "GetAllContentMetadataKeyHierarchies.cs.";
+            }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            CreateCustomTargetingKeysAndValues codeExample =
+                new CreateCustomTargetingKeysAndValues();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (ContentMetadataKeyHierarchyService contentMetadataKeyHierarchyService =
+                (ContentMetadataKeyHierarchyService) user.GetService(DfpService.v201805
+                    .ContentMetadataKeyHierarchyService))
+            {
+                // Set the ID of the content metadata key hierarchy to delete.
+                long contentMetadataKeyHierarchyId =
+                    long.Parse(_T("INSERT_CONTENT_METADATA_KEY_HIERARCHY_ID_HERE"));
+
+                // Create a statement to select a content metadata key hierarchy.
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("WHERE id = :id")
+                    .OrderBy("id ASC")
+                    .Limit(1)
+                    .AddValue("id", contentMetadataKeyHierarchyId);
+
+                try
+                {
+                    // Get content metadata key hierarchies by statement.
+                    ContentMetadataKeyHierarchyPage page =
+                        contentMetadataKeyHierarchyService
+                            .getContentMetadataKeyHierarchiesByStatement(statementBuilder
+                                .ToStatement());
+
+                    ContentMetadataKeyHierarchy contentMetadataKeyHierarchy = page.results[0];
+
+                    Console.WriteLine(
+                        "Content metadata key hierarchy with ID \"{0}\" will be deleted.",
+                        contentMetadataKeyHierarchy.id);
+
+                    statementBuilder.RemoveLimitAndOffset();
+
+                    // Create action.
+                    Google.Api.Ads.Dfp.v201805.DeleteContentMetadataKeyHierarchies action =
+                        new Google.Api.Ads.Dfp.v201805.DeleteContentMetadataKeyHierarchies();
+
+                    // Perform action.
+                    UpdateResult result =
+                        contentMetadataKeyHierarchyService.performContentMetadataKeyHierarchyAction(
+                            action, statementBuilder.ToStatement());
+
+                    Console.WriteLine("Number of content metadata key hierarchies deleted: {0}",
+                        result.numChanges);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(
+                        "Failed to delete content metadata key hierarchies. " +
+                        "Exception says \"{0}\"", e.Message);
+                }
+            }
+        }
     }
-  }
 }

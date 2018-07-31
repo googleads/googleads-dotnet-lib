@@ -18,59 +18,62 @@ using System;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 
-namespace Google.Api.Ads.Common.Util.Reports {
-
-  /// <summary>
-  /// Custom exception class for handling reporting errors.
-  /// </summary>
-  [Serializable]
-  public class AdsReportsException : AdsException {
-
+namespace Google.Api.Ads.Common.Util.Reports
+{
     /// <summary>
-    /// Public constructor.
+    /// Custom exception class for handling reporting errors.
     /// </summary>
-    public AdsReportsException()
-      : base() {
-    }
+    [Serializable]
+    public class AdsReportsException : AdsException
+    {
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        public AdsReportsException() : base()
+        {
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="message">Error message for this API exception.</param>
-    public AdsReportsException(string message)
-      : base(message) {
-    }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="message">Error message for this API exception.</param>
+        public AdsReportsException(string message) : base(message)
+        {
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="message">Error message for this API exception.</param>
-    /// <param name="innerException">Inner exception, if any.</param>
-    public AdsReportsException(string message, Exception innerException)
-      : base(message, innerException) {
-    }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="message">Error message for this API exception.</param>
+        /// <param name="innerException">Inner exception, if any.</param>
+        public AdsReportsException(string message, Exception innerException) 
+            : base(message, innerException)
+        {
+        }
 
-    /// <summary>
-    /// Protected constructor. Used by serialization frameworks while
-    /// deserializing an exception object.
-    /// </summary>
-    /// <param name="info">Info about the serialization context.</param>
-    /// <param name="context">A streaming context that represents the
-    /// serialization stream.</param>
-    protected AdsReportsException(SerializationInfo info, StreamingContext context)
-      : base(info, context) {
-    }
+        /// <summary>
+        /// Protected constructor. Used by serialization frameworks while
+        /// deserializing an exception object.
+        /// </summary>
+        /// <param name="info">Info about the serialization context.</param>
+        /// <param name="context">A streaming context that represents the
+        /// serialization stream.</param>
+        protected AdsReportsException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+        }
 
-    /// <summary>
-    /// This method is called by serialization frameworks while serializing
-    /// an exception object.
-    /// </summary>
-    /// <param name="info">Info about the serialization context.</param>
-    /// <param name="context">A streaming context that represents the
-    /// serialization stream.</param>
-    [SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter = true)]
-    public override void GetObjectData(SerializationInfo info, StreamingContext context) {
-      base.GetObjectData(info, context);
+        /// <summary>
+        /// This method is called by serialization frameworks while serializing
+        /// an exception object.
+        /// </summary>
+        /// <param name="info">Info about the serialization context.</param>
+        /// <param name="context">A streaming context that represents the
+        /// serialization stream.</param>
+        [SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter = true)]
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
     }
-  }
 }

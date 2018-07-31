@@ -22,50 +22,49 @@ using Google.Api.Ads.Dfp.v201802;
 
 using NUnit.Framework;
 
-namespace Google.Api.Ads.Dfp.Tests {
-
-  /// <summary>
-  /// UnitTests for service creation.
-  /// </summary>
-  [TestFixture]
-  [Category("Smoke")]
-  public class ServiceCreationTests : BaseTests {
-
+namespace Google.Api.Ads.Dfp.Tests
+{
     /// <summary>
-    /// Default public constructor.
+    /// UnitTests for service creation.
     /// </summary>
-    public ServiceCreationTests()
-      : base() {
-    }
+    [TestFixture]
+    [Category("Smoke")]
+    public class ServiceCreationTests : BaseTests
+    {
+        /// <summary>
+        /// Default public constructor.
+        /// </summary>
+        public ServiceCreationTests() : base()
+        {
+        }
 
-    /// <summary>
-    /// Test whether we can create all the services without any exceptions.
-    /// </summary>
-    [Test]
-    public void TestCreateServices() {
-      StubIntegrityTestHelper.EnumerateServices<DfpService>(
-          delegate(ServiceSignature serviceSignature) {
-            Assert.DoesNotThrow(delegate() {
-              user.GetService(serviceSignature);
-            });
-          });
-    }
+        /// <summary>
+        /// Test whether we can create all the services without any exceptions.
+        /// </summary>
+        [Test]
+        public void TestCreateServices()
+        {
+            StubIntegrityTestHelper.EnumerateServices<DfpService>(
+                delegate(ServiceSignature serviceSignature)
+                {
+                    Assert.DoesNotThrow(delegate() { user.GetService(serviceSignature); });
+                });
+        }
 
-    /// <summary>
-    /// Test that a generated service interface has expected methods.
-    /// </summary>
-    [Test]
-    public void TestServiceInterface() {
-      Type serviceInterface = typeof(ILineItemService);
-      var methodDictionary = serviceInterface.GetInterfaces()
-          .SelectMany(t => t.GetMethods())
-          .Where(m => !m.ReturnType.FullName.Contains("Wrappers"))
-          .Concat(serviceInterface.GetMethods())
-          .ToDictionary(m => m.Name);
-      Assert.That(methodDictionary, Contains.Key("getLineItemsByStatement"));
-      Assert.That(methodDictionary, Contains.Key("createLineItems"));
-      Assert.That(methodDictionary, Contains.Key("updateLineItems"));
-      Assert.That(methodDictionary, Contains.Key("performLineItemAction"));
+        /// <summary>
+        /// Test that a generated service interface has expected methods.
+        /// </summary>
+        [Test]
+        public void TestServiceInterface()
+        {
+            Type serviceInterface = typeof(ILineItemService);
+            var methodDictionary = serviceInterface.GetInterfaces().SelectMany(t => t.GetMethods())
+                .Where(m => !m.ReturnType.FullName.Contains("Wrappers"))
+                .Concat(serviceInterface.GetMethods()).ToDictionary(m => m.Name);
+            Assert.That(methodDictionary, Contains.Key("getLineItemsByStatement"));
+            Assert.That(methodDictionary, Contains.Key("createLineItems"));
+            Assert.That(methodDictionary, Contains.Key("updateLineItems"));
+            Assert.That(methodDictionary, Contains.Key("performLineItemAction"));
+        }
     }
-  }
 }

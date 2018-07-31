@@ -17,77 +17,98 @@ using Google.Api.Ads.Dfp.v201805;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example adds a user to a team by creating an association
-  /// between the two. To determine which teams exist, run GetAllTeams.cs. To
-  /// determine which users exist, run GetAllUsers.cs.
-  /// </summary>
-  public class CreateUserTeamAssociations : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example adds a user to a team by creating an association
+    /// between the two. To determine which teams exist, run GetAllTeams.cs. To
+    /// determine which users exist, run GetAllUsers.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example adds a user to a team by creating an association between the " +
-            "two. To determine which teams exist, run GetAllTeams.cs. To determine which users " +
-            "exist, run GetAllUsers.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      CreateUserTeamAssociations codeExample = new CreateUserTeamAssociations();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    /// <param name="dfpUser">The DFP user object running the code example.</param>
-    public void Run(DfpUser dfpUser) {
-      using (UserTeamAssociationService userTeamAssociationService = (UserTeamAssociationService)
-          dfpUser.GetService(DfpService.v201805.UserTeamAssociationService)) {
-
-        // Set the users and team to add them to.
-        long teamId = long.Parse(_T("INSERT_TEAM_ID_HERE"));
-        long[] userIds = new long[] { long.Parse(_T("INSERT_USER_ID_HERE")) };
-
-        // Create an array to store local user team association objects.
-        UserTeamAssociation[] userTeamAssociations = new UserTeamAssociation[userIds.Length];
-
-        // For each user, associate it with the given team.
-        int i = 0;
-
-        foreach (long userId in userIds) {
-          UserTeamAssociation userTeamAssociation = new UserTeamAssociation();
-          userTeamAssociation.userId = userId;
-          userTeamAssociation.teamId = teamId;
-          userTeamAssociations[i++] = userTeamAssociation;
-        }
-
-        try {
-          // Create the user team associations on the server.
-          userTeamAssociations =
-              userTeamAssociationService.createUserTeamAssociations(userTeamAssociations);
-
-          if (userTeamAssociations != null) {
-            foreach (UserTeamAssociation userTeamAssociation in userTeamAssociations) {
-              Console.WriteLine("A user team association between user with ID \"{0}\" and team " +
-                  "with ID \"{1}\" was created.", userTeamAssociation.userId,
-                  userTeamAssociation.teamId);
+    public class CreateUserTeamAssociations : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example adds a user to a team by creating an association " +
+                    "between the two. To determine which teams exist, run GetAllTeams.cs. " +
+                    "To determine which users exist, run GetAllUsers.cs.";
             }
-          } else {
-            Console.WriteLine("No user team associations created.");
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to create user team associations. Exception says \"{0}\"",
-              e.Message);
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            CreateUserTeamAssociations codeExample = new CreateUserTeamAssociations();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        /// <param name="dfpUser">The DFP user object running the code example.</param>
+        public void Run(DfpUser dfpUser)
+        {
+            using (UserTeamAssociationService userTeamAssociationService =
+                (UserTeamAssociationService) dfpUser.GetService(DfpService.v201805
+                    .UserTeamAssociationService))
+            {
+                // Set the users and team to add them to.
+                long teamId = long.Parse(_T("INSERT_TEAM_ID_HERE"));
+                long[] userIds = new long[]
+                {
+                    long.Parse(_T("INSERT_USER_ID_HERE"))
+                };
+
+                // Create an array to store local user team association objects.
+                UserTeamAssociation[] userTeamAssociations =
+                    new UserTeamAssociation[userIds.Length];
+
+                // For each user, associate it with the given team.
+                int i = 0;
+
+                foreach (long userId in userIds)
+                {
+                    UserTeamAssociation userTeamAssociation = new UserTeamAssociation();
+                    userTeamAssociation.userId = userId;
+                    userTeamAssociation.teamId = teamId;
+                    userTeamAssociations[i++] = userTeamAssociation;
+                }
+
+                try
+                {
+                    // Create the user team associations on the server.
+                    userTeamAssociations =
+                        userTeamAssociationService.createUserTeamAssociations(userTeamAssociations);
+
+                    if (userTeamAssociations != null)
+                    {
+                        foreach (UserTeamAssociation userTeamAssociation in userTeamAssociations)
+                        {
+                            Console.WriteLine(
+                                "A user team association between user with ID \"{0}\" and team " +
+                                "with ID \"{1}\" was created.", userTeamAssociation.userId,
+                                userTeamAssociation.teamId);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No user team associations created.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(
+                        "Failed to create user team associations. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

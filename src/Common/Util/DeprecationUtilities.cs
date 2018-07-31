@@ -15,37 +15,45 @@
 using System;
 using System.Reflection;
 
-namespace Google.Api.Ads.Common.Util {
-  /// <summary>
-  /// Utility class to display deprecation message at runtime.
-  /// </summary>
-  public class DeprecationUtilities {
+namespace Google.Api.Ads.Common.Util
+{
     /// <summary>
-    /// Writes a deprecation message to Trace stream.
+    /// Utility class to display deprecation message at runtime.
     /// </summary>
-    /// <param name="memberInfo">Details of the deprecated member.</param>
-    /// <remarks>The member corresponding to memberInfo should be annotated with
-    /// an ObsoleteAttribute.</remarks>
-    public static void ShowDeprecationMessage(MemberInfo memberInfo) {
-      if (memberInfo == null) {
-        throw new NullReferenceException("MemberInfo cannot be null.");
-      }
-      TraceUtilities.WriteDeprecationWarnings(GetDeprecationMessage(memberInfo));
-    }
+    public class DeprecationUtilities
+    {
+        /// <summary>
+        /// Writes a deprecation message to Trace stream.
+        /// </summary>
+        /// <param name="memberInfo">Details of the deprecated member.</param>
+        /// <remarks>The member corresponding to memberInfo should be annotated with
+        /// an ObsoleteAttribute.</remarks>
+        public static void ShowDeprecationMessage(MemberInfo memberInfo)
+        {
+            if (memberInfo == null)
+            {
+                throw new NullReferenceException("MemberInfo cannot be null.");
+            }
 
-    /// <summary>
-    /// Gets the deprecation message to be displayed.
-    /// </summary>
-    /// <param name="memberInfo">Details of the deprecated member.</param>
-    /// <returns>The deprecation message as found on the ObsoleteAttribute
-    /// decoration for this member, or null otherwise.</returns>
-    private static string GetDeprecationMessage(MemberInfo memberInfo) {
-      object[] attributes = memberInfo.GetCustomAttributes(typeof(ObsoleteAttribute), false);
+            TraceUtilities.WriteDeprecationWarnings(GetDeprecationMessage(memberInfo));
+        }
 
-      if (attributes.Length > 0) {
-        return ((ObsoleteAttribute) attributes[0]).Message;
-      }
-      return null;
+        /// <summary>
+        /// Gets the deprecation message to be displayed.
+        /// </summary>
+        /// <param name="memberInfo">Details of the deprecated member.</param>
+        /// <returns>The deprecation message as found on the ObsoleteAttribute
+        /// decoration for this member, or null otherwise.</returns>
+        private static string GetDeprecationMessage(MemberInfo memberInfo)
+        {
+            object[] attributes = memberInfo.GetCustomAttributes(typeof(ObsoleteAttribute), false);
+
+            if (attributes.Length > 0)
+            {
+                return ((ObsoleteAttribute) attributes[0]).Message;
+            }
+
+            return null;
+        }
     }
-  }
 }

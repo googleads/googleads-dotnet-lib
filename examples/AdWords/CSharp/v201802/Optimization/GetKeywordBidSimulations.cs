@@ -13,6 +13,7 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.Util.Reports.v201802;
 using Google.Api.Ads.AdWords.v201802;
 
 using System;
@@ -65,9 +66,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
       using (DataService dataService = (DataService) user.GetService(
           AdWordsService.v201802.DataService)) {
 
-        // Create the selector.
-        Selector selector = new Selector() {
-          fields = new string[] {
+        // Create the query.
+        SelectQuery query = new SelectQueryBuilder().Select(
             CriterionBidLandscape.Fields.AdGroupId, CriterionBidLandscape.Fields.CriterionId,
             CriterionBidLandscape.Fields.StartDate, CriterionBidLandscape.Fields.EndDate,
             BidLandscapeLandscapePoint.Fields.Bid, BidLandscapeLandscapePoint.Fields.LocalClicks,
@@ -75,23 +75,19 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
             BidLandscapeLandscapePoint.Fields.LocalImpressions,
             BidLandscapeLandscapePoint.Fields.BiddableConversions,
             BidLandscapeLandscapePoint.Fields.BiddableConversionsValue
-          },
-          predicates = new Predicate[] {
-            Predicate.Equals(CriterionBidLandscape.Fields.AdGroupId, adGroupId),
-            Predicate.Equals(CriterionBidLandscape.Fields.CriterionId, keywordId)
-          },
-          paging = Paging.Default
-        };
+          )
+          .Where(CriterionBidLandscape.Fields.AdGroupId).Equals(adGroupId)
+          .Where(CriterionBidLandscape.Fields.CriterionId).Equals(keywordId)
+          .DefaultLimit()
+          .Build();
 
         CriterionBidLandscapePage page = new CriterionBidLandscapePage();
         int landscapePointsFound = 0;
-        int landscapePointsInLastResponse = 0;
 
         try {
           do {
             // Get bid landscape for keywords.
-            page = dataService.getCriterionBidLandscape(selector);
-            landscapePointsInLastResponse = 0;
+            page = dataService.queryCriterionBidLandscape(query);
 
             // Display bid landscapes.
             if (page != null && page.entries != null) {
@@ -108,15 +104,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
                       bidLandscapePoint.cost.microAmount, bidLandscapePoint.impressions,
                       bidLandscapePoint.biddableConversions,
                       bidLandscapePoint.biddableConversionsValue);
-                  landscapePointsInLastResponse++;
                   landscapePointsFound++;
                 }
               }
             }
-            // Offset by the number of landscape points, NOT the number
-            // of entries (bid landscapes) in the last response.
-            selector.paging.IncreaseOffsetBy(landscapePointsInLastResponse);
-          } while (landscapePointsInLastResponse > 0);
+            query.NextPage(page);
+          } while (query.HasNextPage(page));
           Console.WriteLine("Number of keyword bid landscape points found: {0}",
               landscapePointsFound);
         } catch (Exception e) {

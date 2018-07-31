@@ -19,96 +19,114 @@ using Google.Api.Ads.Dfp.Util.v201802;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This code example runs a report equal to the "Whole network report" on the
-  /// DFP website. The report is saved to the specified file path.
-  /// </summary>
-  public class RunInventoryReport : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example runs a report equal to the "Whole network report" on the
+    /// DFP website. The report is saved to the specified file path.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example runs a report equal to the \"Whole network report\" on the " +
-            "DFP website. The report is saved to the specified file path.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      RunInventoryReport codeExample = new RunInventoryReport();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (ReportService reportService = (ReportService) user.GetService(
-          DfpService.v201802.ReportService))
-
-      using (NetworkService networkService = (NetworkService) user.GetService(
-            DfpService.v201802.NetworkService)) {
-
-        // Set the file path where the report will be saved.
-        String filePath = _T("INSERT_FILE_PATH_HERE");
-
-        // Get the root ad unit ID to filter on.
-        String rootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
-
-        // Create statement to filter on an ancestor ad unit with the root ad unit ID to
-        // include all ad units in the network.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("PARENT_AD_UNIT_ID = :parentAdUnitId")
-            .AddValue("parentAdUnitId", long.Parse(rootAdUnitId));
-
-        // Create report query.
-        ReportQuery reportQuery = new ReportQuery();
-        reportQuery.dimensions =
-            new Dimension[] { Dimension.AD_UNIT_ID, Dimension.AD_UNIT_NAME };
-        reportQuery.columns = new Column[] {Column.AD_SERVER_IMPRESSIONS,
-        Column.AD_SERVER_CLICKS, Column.DYNAMIC_ALLOCATION_INVENTORY_LEVEL_IMPRESSIONS,
-        Column.DYNAMIC_ALLOCATION_INVENTORY_LEVEL_CLICKS,
-        Column.TOTAL_INVENTORY_LEVEL_IMPRESSIONS,
-        Column.TOTAL_INVENTORY_LEVEL_CPM_AND_CPC_REVENUE};
-
-        // Set the filter statement.
-        reportQuery.statement = statementBuilder.ToStatement();
-
-        reportQuery.adUnitView = ReportQueryAdUnitView.HIERARCHICAL;
-        reportQuery.dateRangeType = DateRangeType.LAST_WEEK;
-
-        // Create report job.
-        ReportJob reportJob = new ReportJob();
-        reportJob.reportQuery = reportQuery;
-
-        try {
-          // Run report.
-          reportJob = reportService.runReportJob(reportJob);
-
-          ReportUtilities reportUtilities = new ReportUtilities(reportService, reportJob.id);
-
-          // Set download options.
-          ReportDownloadOptions options = new ReportDownloadOptions();
-          options.exportFormat = ExportFormat.CSV_DUMP;
-          options.useGzipCompression = true;
-          reportUtilities.reportDownloadOptions = options;
-
-          // Download the report.
-          using (ReportResponse reportResponse = reportUtilities.GetResponse()) {
-            reportResponse.Save(filePath);
-          }
-          Console.WriteLine("Report saved to \"{0}\".", filePath);
-
-        } catch (Exception e) {
-          Console.WriteLine("Failed to run inventory report. Exception says \"{0}\"",
-              e.Message);
+    public class RunInventoryReport : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example runs a report equal to the \"Whole network report\" on " +
+                    "the DFP website. The report is saved to the specified file path.";
+            }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            RunInventoryReport codeExample = new RunInventoryReport();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (ReportService reportService =
+                (ReportService) user.GetService(DfpService.v201802.ReportService))
+
+                using (NetworkService networkService =
+                    (NetworkService) user.GetService(DfpService.v201802.NetworkService))
+                {
+                    // Set the file path where the report will be saved.
+                    String filePath = _T("INSERT_FILE_PATH_HERE");
+
+                    // Get the root ad unit ID to filter on.
+                    String rootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
+
+                    // Create statement to filter on an ancestor ad unit with the root ad unit ID to
+                    // include all ad units in the network.
+                    StatementBuilder statementBuilder = new StatementBuilder()
+                        .Where("PARENT_AD_UNIT_ID = :parentAdUnitId")
+                        .AddValue("parentAdUnitId", long.Parse(rootAdUnitId));
+
+                    // Create report query.
+                    ReportQuery reportQuery = new ReportQuery();
+                    reportQuery.dimensions = new Dimension[]
+                    {
+                        Dimension.AD_UNIT_ID,
+                        Dimension.AD_UNIT_NAME
+                    };
+                    reportQuery.columns = new Column[]
+                    {
+                        Column.AD_SERVER_IMPRESSIONS,
+                        Column.AD_SERVER_CLICKS,
+                        Column.DYNAMIC_ALLOCATION_INVENTORY_LEVEL_IMPRESSIONS,
+                        Column.DYNAMIC_ALLOCATION_INVENTORY_LEVEL_CLICKS,
+                        Column.TOTAL_INVENTORY_LEVEL_IMPRESSIONS,
+                        Column.TOTAL_INVENTORY_LEVEL_CPM_AND_CPC_REVENUE
+                    };
+
+                    // Set the filter statement.
+                    reportQuery.statement = statementBuilder.ToStatement();
+
+                    reportQuery.adUnitView = ReportQueryAdUnitView.HIERARCHICAL;
+                    reportQuery.dateRangeType = DateRangeType.LAST_WEEK;
+
+                    // Create report job.
+                    ReportJob reportJob = new ReportJob();
+                    reportJob.reportQuery = reportQuery;
+
+                    try
+                    {
+                        // Run report.
+                        reportJob = reportService.runReportJob(reportJob);
+
+                        ReportUtilities reportUtilities =
+                            new ReportUtilities(reportService, reportJob.id);
+
+                        // Set download options.
+                        ReportDownloadOptions options = new ReportDownloadOptions();
+                        options.exportFormat = ExportFormat.CSV_DUMP;
+                        options.useGzipCompression = true;
+                        reportUtilities.reportDownloadOptions = options;
+
+                        // Download the report.
+                        using (ReportResponse reportResponse = reportUtilities.GetResponse())
+                        {
+                            reportResponse.Save(filePath);
+                        }
+
+                        Console.WriteLine("Report saved to \"{0}\".", filePath);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Failed to run inventory report. Exception says \"{0}\"",
+                            e.Message);
+                    }
+                }
+        }
     }
-  }
 }

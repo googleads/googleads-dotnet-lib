@@ -18,82 +18,98 @@ using Google.Api.Ads.Dfp.v201802;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This code example creates new users. To determine which users
-  /// exist, run GetAllUsers.cs.
-  /// </summary>
-  public class CreateUsers : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example creates new users. To determine which users
+    /// exist, run GetAllUsers.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example creates new users. To determine which users " +
-            "exist, run GetAllUsers.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      CreateUsers codeExample = new CreateUsers();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (UserService userService = (UserService) user.GetService(
-          DfpService.v201802.UserService)) {
-
-        // Set the user's email addresses and names.
-        List<string[]> emailAndNames = new List<String[]>();
-        emailAndNames.Add(new String[] {
-          _T("INSERT_EMAIL_ADDRESS_HERE"),
-          _T("INSERT_NAME_HERE")
-        });
-        emailAndNames.Add(new String[] {
-          _T("INSERT_ANOTHER_EMAIL_ADDRESS_HERE"),
-          _T("INSERT_ANOTHER_NAME_HERE")
-        });
-
-        // Roles can be obtained by running GetAllRoles.cs.
-        long roleId = long.Parse(_T("INSERT_ROLE_ID_HERE"));
-
-        // Create an array to store local user objects.
-        User[] users = new User[emailAndNames.Count];
-
-        for (int i = 0; i < users.Length; i++) {
-          // Create the new user structure.
-          User newUser = new User();
-          newUser.email = emailAndNames[i][0];
-          newUser.name = emailAndNames[i][1];
-          newUser.roleId = roleId;
-
-          users[i] = newUser;
-        }
-
-        try {
-          // Create the users.
-          users = userService.createUsers(users);
-
-          if (users != null) {
-            foreach (User newUser in users) {
-              Console.WriteLine("A user with ID = '{0}', email = '{1}', and role = '{2}' " +
-                  "was created.", newUser.id, newUser.email, newUser.roleName);
+    public class CreateUsers : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example creates new users. To determine which users " +
+                    "exist, run GetAllUsers.cs.";
             }
-          } else {
-            Console.WriteLine("No users created.");
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to create users. Exception says \"{0}\"",
-              e.Message);
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            CreateUsers codeExample = new CreateUsers();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (UserService userService =
+                (UserService) user.GetService(DfpService.v201802.UserService))
+            {
+                // Set the user's email addresses and names.
+                List<string[]> emailAndNames = new List<String[]>();
+                emailAndNames.Add(new String[]
+                {
+                    _T("INSERT_EMAIL_ADDRESS_HERE"),
+                    _T("INSERT_NAME_HERE")
+                });
+                emailAndNames.Add(new String[]
+                {
+                    _T("INSERT_ANOTHER_EMAIL_ADDRESS_HERE"),
+                    _T("INSERT_ANOTHER_NAME_HERE")
+                });
+
+                // Roles can be obtained by running GetAllRoles.cs.
+                long roleId = long.Parse(_T("INSERT_ROLE_ID_HERE"));
+
+                // Create an array to store local user objects.
+                User[] users = new User[emailAndNames.Count];
+
+                for (int i = 0; i < users.Length; i++)
+                {
+                    // Create the new user structure.
+                    User newUser = new User();
+                    newUser.email = emailAndNames[i][0];
+                    newUser.name = emailAndNames[i][1];
+                    newUser.roleId = roleId;
+
+                    users[i] = newUser;
+                }
+
+                try
+                {
+                    // Create the users.
+                    users = userService.createUsers(users);
+
+                    if (users != null)
+                    {
+                        foreach (User newUser in users)
+                        {
+                            Console.WriteLine(
+                                "A user with ID = '{0}', email = '{1}', and role = '{2}' " +
+                                "was created.", newUser.id, newUser.email, newUser.roleName);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No users created.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to create users. Exception says \"{0}\"", e.Message);
+                }
+            }
+        }
     }
-  }
 }

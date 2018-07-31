@@ -18,80 +18,99 @@ using Google.Api.Ads.Dfp.v201805;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example updates the destination URL of a LICA. To determine which LICAs exist,
-  /// run GetAllLicas.cs.
-  /// </summary>
-  public class UpdateLicas : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example updates the destination URL of a LICA. To determine which LICAs exist,
+    /// run GetAllLicas.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example updates the destination URL of a LICAs. To determine which " +
-            "LICAs exist, run GetAllLicas.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      UpdateLicas codeExample = new UpdateLicas();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (LineItemCreativeAssociationService licaService = (LineItemCreativeAssociationService)
-          user.GetService(DfpService.v201805.LineItemCreativeAssociationService)) {
-
-        // Set the line item to get LICAs by.
-        long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
-
-        // Set the creative to get LICAs by.
-        long creativeId = long.Parse(_T("INSERT_CREATIVE_ID_HERE"));
-
-        // Create a statement to get all LICAs.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("lineItemId = :lineItemId AND creativeId = :creativeId")
-            .OrderBy("lineItemId ASC, creativeId ASC")
-            .Limit(1)
-            .AddValue("lineItemId", lineItemId)
-            .AddValue("creativeId", creativeId);
-
-        try {
-          // Get LICAs by statement.
-          LineItemCreativeAssociationPage page =
-              licaService.getLineItemCreativeAssociationsByStatement(
-                  statementBuilder.ToStatement());
-
-          LineItemCreativeAssociation lica = page.results[0];
-
-          // Update the LICA object by changing its destination URL.
-          lica.destinationUrl = "http://news.google.com";
-
-          // Update the LICA on the server.
-          LineItemCreativeAssociation[] licas = licaService.updateLineItemCreativeAssociations(
-              new LineItemCreativeAssociation[] { lica });
-
-          if (licas != null) {
-            foreach (LineItemCreativeAssociation updatedLica in licas) {
-              Console.WriteLine("LICA with line item ID = '{0}, creative ID ='{1}' and " +
-                  "destination URL '{2}' was updated.", updatedLica.lineItemId,
-                  updatedLica.creativeId, updatedLica.destinationUrl);
+    public class UpdateLicas : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example updates the destination URL of a LICAs. To determine " +
+                    "which LICAs exist, run GetAllLicas.cs.";
             }
-          } else {
-            Console.WriteLine("No LICAs updated.");
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to update LICAs. Exception says \"{0}\"", e.Message);
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            UpdateLicas codeExample = new UpdateLicas();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (LineItemCreativeAssociationService licaService =
+                (LineItemCreativeAssociationService) user.GetService(DfpService.v201805
+                    .LineItemCreativeAssociationService))
+            {
+                // Set the line item to get LICAs by.
+                long lineItemId = long.Parse(_T("INSERT_LINE_ITEM_ID_HERE"));
+
+                // Set the creative to get LICAs by.
+                long creativeId = long.Parse(_T("INSERT_CREATIVE_ID_HERE"));
+
+                // Create a statement to get all LICAs.
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("lineItemId = :lineItemId AND creativeId = :creativeId")
+                    .OrderBy("lineItemId ASC, creativeId ASC")
+                    .Limit(1)
+                    .AddValue("lineItemId", lineItemId)
+                    .AddValue("creativeId", creativeId);
+
+                try
+                {
+                    // Get LICAs by statement.
+                    LineItemCreativeAssociationPage page =
+                        licaService.getLineItemCreativeAssociationsByStatement(
+                            statementBuilder.ToStatement());
+
+                    LineItemCreativeAssociation lica = page.results[0];
+
+                    // Update the LICA object by changing its destination URL.
+                    lica.destinationUrl = "http://news.google.com";
+
+                    // Update the LICA on the server.
+                    LineItemCreativeAssociation[] licas =
+                        licaService.updateLineItemCreativeAssociations(
+                            new LineItemCreativeAssociation[]
+                            {
+                                lica
+                            });
+
+                    if (licas != null)
+                    {
+                        foreach (LineItemCreativeAssociation updatedLica in licas)
+                        {
+                            Console.WriteLine(
+                                "LICA with line item ID = '{0}, creative ID ='{1}' and " +
+                                "destination URL '{2}' was updated.", updatedLica.lineItemId,
+                                updatedLica.creativeId, updatedLica.destinationUrl);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No LICAs updated.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to update LICAs. Exception says \"{0}\"", e.Message);
+                }
+            }
+        }
     }
-  }
 }

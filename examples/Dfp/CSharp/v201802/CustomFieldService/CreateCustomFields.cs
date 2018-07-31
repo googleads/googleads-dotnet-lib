@@ -17,70 +17,88 @@ using Google.Api.Ads.Dfp.v201802;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This code example creates custom fields. To determine which custom fields
-  /// exist, run GetAllCustomFields.cs.
-  /// </summary>
-  public class CreateCustomFields : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example creates custom fields. To determine which custom fields
+    /// exist, run GetAllCustomFields.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example creates custom fields. To determine which custom fields exist" +
-            ", run GetAllCustomFields.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      CreateCustomFields codeExample = new CreateCustomFields();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (CustomFieldService customFieldService = (CustomFieldService) user.GetService(
-          DfpService.v201802.CustomFieldService)) {
-
-        // Create custom fields.
-        CustomField customField1 = new CustomField();
-        customField1.name = "Customer comments #" + GetTimeStamp();
-        customField1.entityType = CustomFieldEntityType.LINE_ITEM;
-        customField1.dataType = CustomFieldDataType.STRING;
-        customField1.visibility = CustomFieldVisibility.FULL;
-
-        CustomField customField2 = new CustomField();
-        customField2.name = "Internal approval status #" + GetTimeStamp();
-        customField2.entityType = CustomFieldEntityType.LINE_ITEM;
-        customField2.dataType = CustomFieldDataType.DROP_DOWN;
-        customField2.visibility = CustomFieldVisibility.FULL;
-
-        try {
-          // Add custom fields.
-          CustomField[] customFields =
-              customFieldService.createCustomFields(
-                  new CustomField[] { customField1, customField2 });
-
-          // Display results.
-          if (customFields != null) {
-            foreach (CustomField customField in customFields) {
-              Console.WriteLine("Custom field with ID \"{0}\" and name \"{1}\" was created.",
-                  customField.id, customField.name);
+    public class CreateCustomFields : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example creates custom fields. To determine which custom " +
+                    "fields exist, run GetAllCustomFields.cs.";
             }
-          } else {
-            Console.WriteLine("No custom fields created.");
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to create custom fields. Exception says \"{0}\"", e.Message);
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            CreateCustomFields codeExample = new CreateCustomFields();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (CustomFieldService customFieldService =
+                (CustomFieldService) user.GetService(DfpService.v201802.CustomFieldService))
+            {
+                // Create custom fields.
+                CustomField customField1 = new CustomField();
+                customField1.name = "Customer comments #" + GetTimeStamp();
+                customField1.entityType = CustomFieldEntityType.LINE_ITEM;
+                customField1.dataType = CustomFieldDataType.STRING;
+                customField1.visibility = CustomFieldVisibility.FULL;
+
+                CustomField customField2 = new CustomField();
+                customField2.name = "Internal approval status #" + GetTimeStamp();
+                customField2.entityType = CustomFieldEntityType.LINE_ITEM;
+                customField2.dataType = CustomFieldDataType.DROP_DOWN;
+                customField2.visibility = CustomFieldVisibility.FULL;
+
+                try
+                {
+                    // Add custom fields.
+                    CustomField[] customFields = customFieldService.createCustomFields(
+                        new CustomField[]
+                        {
+                            customField1,
+                            customField2
+                        });
+
+                    // Display results.
+                    if (customFields != null)
+                    {
+                        foreach (CustomField customField in customFields)
+                        {
+                            Console.WriteLine(
+                                "Custom field with ID \"{0}\" and name \"{1}\" was created.",
+                                customField.id, customField.name);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No custom fields created.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to create custom fields. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

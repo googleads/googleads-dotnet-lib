@@ -11,80 +11,88 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201802;
 using Google.Api.Ads.Dfp.v201802;
+
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This example gets all user team associations.
-  /// </summary>
-  public class GetAllUserTeamAssociations : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example gets all user team associations.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example gets all user team associations.";
-      }
-    }
+    public class GetAllUserTeamAssociations : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This example gets all user team associations."; }
+        }
 
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetAllUserTeamAssociations codeExample = new GetAllUserTeamAssociations();
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new DfpUser());
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get user team associations. Exception says \"{0}\"",
-            e.Message);
-      }
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser dfpUser) {
-      using (UserTeamAssociationService userTeamAssociationService =
-          (UserTeamAssociationService) dfpUser.GetService(
-              DfpService.v201802.UserTeamAssociationService)) {
-
-        // Create a statement to select user team associations.
-        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .OrderBy("id ASC")
-            .Limit(pageSize);
-
-        // Retrieve a small amount of user team associations at a time, paging through until all
-        // user team associations have been retrieved.
-        int totalResultSetSize = 0;
-        do {
-          UserTeamAssociationPage page =
-              userTeamAssociationService.getUserTeamAssociationsByStatement(
-                  statementBuilder.ToStatement());
-
-          // Print out some information for each user team association.
-          if (page.results != null) {
-            totalResultSetSize = page.totalResultSetSize;
-            int i = page.startIndex;
-            foreach (UserTeamAssociation userTeamAssociation in page.results) {
-              Console.WriteLine(
-                  "{0}) User team association with team id {1} and user id {2} was found.",
-                  i++,
-                  userTeamAssociation.teamId,
-                  userTeamAssociation.userId
-              );
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetAllUserTeamAssociations codeExample = new GetAllUserTeamAssociations();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new DfpUser());
             }
-          }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to get user team associations. Exception says \"{0}\"",
+                    e.Message);
+            }
+        }
 
-          statementBuilder.IncreaseOffsetBy(pageSize);
-        } while (statementBuilder.GetOffset() < totalResultSetSize);
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser dfpUser)
+        {
+            using (UserTeamAssociationService userTeamAssociationService =
+                (UserTeamAssociationService) dfpUser.GetService(DfpService.v201802
+                    .UserTeamAssociationService))
+            {
+                // Create a statement to select user team associations.
+                int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+                StatementBuilder statementBuilder =
+                    new StatementBuilder().OrderBy("id ASC").Limit(pageSize);
 
-        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
-      }
+                // Retrieve a small amount of user team associations at a time, paging through until
+                // all user team associations have been retrieved.
+                int totalResultSetSize = 0;
+                do
+                {
+                    UserTeamAssociationPage page =
+                        userTeamAssociationService.getUserTeamAssociationsByStatement(
+                            statementBuilder.ToStatement());
+
+                    // Print out some information for each user team association.
+                    if (page.results != null)
+                    {
+                        totalResultSetSize = page.totalResultSetSize;
+                        int i = page.startIndex;
+                        foreach (UserTeamAssociation userTeamAssociation in page.results)
+                        {
+                            Console.WriteLine(
+                                "{0}) User team association with team id {1} and user id {2} " +
+                                "was found.",
+                                i++, userTeamAssociation.teamId, userTeamAssociation.userId);
+                        }
+                    }
+
+                    statementBuilder.IncreaseOffsetBy(pageSize);
+                } while (statementBuilder.GetOffset() < totalResultSetSize);
+
+                Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+            }
+        }
     }
-  }
 }

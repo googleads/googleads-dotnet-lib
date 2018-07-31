@@ -11,64 +11,69 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201802;
 using Google.Api.Ads.Dfp.v201802;
+
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This example gets all ad unit sizes.
-  /// </summary>
-  public class GetAllAdUnitSizes : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example gets all ad unit sizes.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example gets all ad unit sizes.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetAllAdUnitSizes codeExample = new GetAllAdUnitSizes();
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new DfpUser());
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get ad unit sizes. Exception says \"{0}\"",
-            e.Message);
-      }
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser dfpUser) {
-      using (InventoryService inventoryService =
-          (InventoryService) dfpUser.GetService(DfpService.v201802.InventoryService)) {
-
-        // Create a statement to select ad unit sizes.
-        StatementBuilder statementBuilder = new StatementBuilder();
-
-        AdUnitSize[] adUnitSizes = inventoryService.getAdUnitSizesByStatement(
-            statementBuilder.ToStatement());
-
-        // Print out some information for each ad unit size.
-        int i = 0;
-        foreach (AdUnitSize adUnitSize in adUnitSizes) {
-          Console.WriteLine(
-              "{0}) Ad unit size with dimensions \"{1}\" was found.",
-              i++,
-              adUnitSize.fullDisplayString
-          );
+    public class GetAllAdUnitSizes : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This example gets all ad unit sizes."; }
         }
 
-        Console.WriteLine("Number of results found: {0}", adUnitSizes.Length);
-      }
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetAllAdUnitSizes codeExample = new GetAllAdUnitSizes();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new DfpUser());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to get ad unit sizes. Exception says \"{0}\"", e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser dfpUser)
+        {
+            using (InventoryService inventoryService =
+                (InventoryService) dfpUser.GetService(DfpService.v201802.InventoryService))
+            {
+                // Create a statement to select ad unit sizes.
+                StatementBuilder statementBuilder = new StatementBuilder();
+
+                AdUnitSize[] adUnitSizes =
+                    inventoryService.getAdUnitSizesByStatement(statementBuilder.ToStatement());
+
+                // Print out some information for each ad unit size.
+                int i = 0;
+                foreach (AdUnitSize adUnitSize in adUnitSizes)
+                {
+                    Console.WriteLine("{0}) Ad unit size with dimensions \"{1}\" was found.", i++,
+                        adUnitSize.fullDisplayString);
+                }
+
+                Console.WriteLine("Number of results found: {0}", adUnitSizes.Length);
+            }
+        }
     }
-  }
 }

@@ -17,84 +17,96 @@ using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 using System.ServiceModel.Channels;
 
-namespace Google.Api.Ads.Common.Lib {
-
-  /// <summary>
-  /// Adds inspectors for authentication, SOAP headers, and logging to Ads API services.
-  /// </summary>
-  public class AdsServiceInspectorBehavior : IEndpointBehavior {
-
-    KeyedByTypeCollection<IClientMessageInspector> inspectors;
-
+namespace Google.Api.Ads.Common.Lib
+{
     /// <summary>
-    /// Initializes a new instance of the AdsServiceInspectorBehavior class.
+    /// Adds inspectors for authentication, SOAP headers, and logging to Ads API services.
     /// </summary>
-    public AdsServiceInspectorBehavior() {
-      this.inspectors = new KeyedByTypeCollection<IClientMessageInspector>();
-    }
+    public class AdsServiceInspectorBehavior : IEndpointBehavior
+    {
+        KeyedByTypeCollection<IClientMessageInspector> inspectors;
 
-    /// <summary>
-    /// Adds the inspector to be applied to the service.
-    /// </summary>
-    /// <param name="inspector">Inspector.</param>
-    public void Add(IClientMessageInspector inspector) {
-      inspectors.Add(inspector);
-    }
+        /// <summary>
+        /// Initializes a new instance of the AdsServiceInspectorBehavior class.
+        /// </summary>
+        public AdsServiceInspectorBehavior()
+        {
+            this.inspectors = new KeyedByTypeCollection<IClientMessageInspector>();
+        }
+
+        /// <summary>
+        /// Adds the inspector to be applied to the service.
+        /// </summary>
+        /// <param name="inspector">Inspector.</param>
+        public void Add(IClientMessageInspector inspector)
+        {
+            inspectors.Add(inspector);
+        }
 
 
-    /// <summary>
-    /// Removes inspector of type T.
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public void Remove<T>() {
-      inspectors.Remove<T>();
-    }
+        /// <summary>
+        /// Removes inspector of type T.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        public void Remove<T>()
+        {
+            inspectors.Remove<T>();
+        }
 
-    /// <summary>
-    /// Gets the inspector of the specified Type, if it exists.
-    /// Returns null otherwise.
-    /// </summary>
-    /// <typeparam name="T">The type of inspector to retrieve.</typeparam>
-    /// <returns></returns>
-    public T GetInspector<T>() {
-      return inspectors.Find<T>();
-    }
+        /// <summary>
+        /// Gets the inspector of the specified Type, if it exists.
+        /// Returns null otherwise.
+        /// </summary>
+        /// <typeparam name="T">The type of inspector to retrieve.</typeparam>
+        /// <returns></returns>
+        public T GetInspector<T>()
+        {
+            return inspectors.Find<T>();
+        }
 
-    /// <summary>
-    /// Adds the binding parameters.
-    /// </summary>
-    /// <param name="endpoint">Endpoint.</param>
-    /// <param name="bindingParameters">Binding parameters.</param>
-    public void AddBindingParameters(ServiceEndpoint endpoint,
-        BindingParameterCollection bindingParameters) { }
+        /// <summary>
+        /// Adds the binding parameters.
+        /// </summary>
+        /// <param name="endpoint">Endpoint.</param>
+        /// <param name="bindingParameters">Binding parameters.</param>
+        public void AddBindingParameters(ServiceEndpoint endpoint,
+            BindingParameterCollection bindingParameters)
+        {
+        }
 
-    /// <summary>
-    /// Applies the client behavior.
-    /// </summary>
-    /// <param name="endpoint">Endpoint.</param>
-    /// <param name="clientRuntime">Client runtime.</param>
-    public void ApplyClientBehavior(ServiceEndpoint endpoint, ClientRuntime clientRuntime) {
-      foreach(IClientMessageInspector inspector in inspectors) {
+        /// <summary>
+        /// Applies the client behavior.
+        /// </summary>
+        /// <param name="endpoint">Endpoint.</param>
+        /// <param name="clientRuntime">Client runtime.</param>
+        public void ApplyClientBehavior(ServiceEndpoint endpoint, ClientRuntime clientRuntime)
+        {
+            foreach (IClientMessageInspector inspector in inspectors)
+            {
 #if NET452
-        clientRuntime.MessageInspectors.Add(inspector);
+                clientRuntime.MessageInspectors.Add(inspector);
 #else
-        clientRuntime.ClientMessageInspectors.Add(inspector);
+                clientRuntime.ClientMessageInspectors.Add(inspector);
 #endif
-      }
+            }
+        }
+
+        /// <summary>
+        /// Applies the dispatch behavior.
+        /// </summary>
+        /// <param name="endpoint">Endpoint.</param>
+        /// <param name="endpointDispatcher">Endpoint dispatcher.</param>
+        public void ApplyDispatchBehavior(ServiceEndpoint endpoint,
+            EndpointDispatcher endpointDispatcher)
+        {
+        }
+
+        /// <summary>
+        /// Validate the specified endpoint.
+        /// </summary>
+        /// <param name="endpoint">Endpoint.</param>
+        public void Validate(ServiceEndpoint endpoint)
+        {
+        }
     }
-
-    /// <summary>
-    /// Applies the dispatch behavior.
-    /// </summary>
-    /// <param name="endpoint">Endpoint.</param>
-    /// <param name="endpointDispatcher">Endpoint dispatcher.</param>
-    public void ApplyDispatchBehavior(ServiceEndpoint endpoint, 
-        EndpointDispatcher endpointDispatcher) { }
-
-    /// <summary>
-    /// Validate the specified endpoint.
-    /// </summary>
-    /// <param name="endpoint">Endpoint.</param>
-    public void Validate(ServiceEndpoint endpoint) { }
-  }
 }

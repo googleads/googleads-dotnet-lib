@@ -11,78 +11,84 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201802;
 using Google.Api.Ads.Dfp.v201802;
+
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This example gets all placements.
-  /// </summary>
-  public class GetAllPlacements : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example gets all placements.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example gets all placements.";
-      }
-    }
+    public class GetAllPlacements : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This example gets all placements."; }
+        }
 
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetAllPlacements codeExample = new GetAllPlacements();
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new DfpUser());
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get placements. Exception says \"{0}\"",
-            e.Message);
-      }
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser dfpUser) {
-      using (PlacementService placementService =
-          (PlacementService) dfpUser.GetService(DfpService.v201802.PlacementService)) {
-
-        // Create a statement to select placements.
-        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .OrderBy("id ASC")
-            .Limit(pageSize);
-
-        // Retrieve a small amount of placements at a time, paging through until all
-        // placements have been retrieved.
-        int totalResultSetSize = 0;
-        do {
-          PlacementPage page = placementService.getPlacementsByStatement(
-              statementBuilder.ToStatement());
-
-          // Print out some information for each placement.
-          if (page.results != null) {
-            totalResultSetSize = page.totalResultSetSize;
-            int i = page.startIndex;
-            foreach (Placement placement in page.results) {
-              Console.WriteLine(
-                  "{0}) Placement with ID {1} and name \"{2}\" was found.",
-                  i++,
-                  placement.id,
-                  placement.name
-              );
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetAllPlacements codeExample = new GetAllPlacements();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new DfpUser());
             }
-          }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to get placements. Exception says \"{0}\"", e.Message);
+            }
+        }
 
-          statementBuilder.IncreaseOffsetBy(pageSize);
-        } while (statementBuilder.GetOffset() < totalResultSetSize);
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser dfpUser)
+        {
+            using (PlacementService placementService =
+                (PlacementService) dfpUser.GetService(DfpService.v201802.PlacementService))
+            {
+                // Create a statement to select placements.
+                int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+                StatementBuilder statementBuilder =
+                    new StatementBuilder().OrderBy("id ASC").Limit(pageSize);
 
-        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
-      }
+                // Retrieve a small amount of placements at a time, paging through until all
+                // placements have been retrieved.
+                int totalResultSetSize = 0;
+                do
+                {
+                    PlacementPage page =
+                        placementService.getPlacementsByStatement(statementBuilder.ToStatement());
+
+                    // Print out some information for each placement.
+                    if (page.results != null)
+                    {
+                        totalResultSetSize = page.totalResultSetSize;
+                        int i = page.startIndex;
+                        foreach (Placement placement in page.results)
+                        {
+                            Console.WriteLine(
+                                "{0}) Placement with ID {1} and name \"{2}\" was found.", i++,
+                                placement.id, placement.name);
+                        }
+                    }
+
+                    statementBuilder.IncreaseOffsetBy(pageSize);
+                } while (statementBuilder.GetOffset() < totalResultSetSize);
+
+                Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+            }
+        }
     }
-  }
 }

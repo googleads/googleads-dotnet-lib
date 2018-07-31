@@ -18,13 +18,14 @@ namespace Google.Api.Ads.AdWords.Util.Reports {
   /// Interface for building selector queries.
   /// </summary>
   /// <typeparam name="TParent">The parent builder type.</typeparam>
-  internal interface ISelectQueryBuilder<TParent> : ISelectBuilder<TParent>,
+  /// <typeparam name="TQuery">The query type.</typeparam>
+  internal interface ISelectQueryBuilder<TParent, TQuery> : ISelectBuilder<TParent>,
       IFilterBuilder<TParent>, ISortingBuilder<TParent>, ILimitBuilder<TParent> {
 
     /// <summary>
     /// Builds the query.
     /// </summary>
     /// <returns>The query.</returns>
-    string Build();
+    TQuery Build();
   }
 }

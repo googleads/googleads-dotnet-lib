@@ -144,26 +144,6 @@ namespace Google.Api.Ads.AdWords.Tests.v201806 {
     }
 
     /// <summary>
-    /// Tests the AddClickToDownloadAd VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddClickToDownloadAdVBExample() {
-      RunExample(delegate () {
-        new VBExamples.AddClickToDownloadAd().Run(user, mobileAdGroupId);
-      });
-    }
-
-    /// <summary>
-    /// Tests the AddClickToDownloadAd C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddClickToDownloadAdCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.AddClickToDownloadAd().Run(user, mobileAdGroupId);
-      });
-    }
-
-    /// <summary>
     /// Tests the AddResponsiveDisplayAd VB.NET code example.
     /// </summary>
     [Test]

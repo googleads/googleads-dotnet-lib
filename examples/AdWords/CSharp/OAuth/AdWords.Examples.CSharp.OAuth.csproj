@@ -85,8 +85,8 @@
         Include="..\..\..\..\src\AdWords\AdWords.csproj"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Google.Ads.Common" Version="9.3.1" />
-    <PackageReference Include="Google.AdWords" Version="23.5.1" />
+    <PackageReference Include="Google.Ads.Common" Version="9.4.0" />
+    <PackageReference Include="Google.AdWords" Version="23.6.0" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>

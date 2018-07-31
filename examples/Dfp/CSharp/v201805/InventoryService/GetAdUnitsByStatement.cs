@@ -18,75 +18,94 @@ using Google.Api.Ads.Dfp.v201805;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example gets all child ad units of the effective root ad unit. To create an ad
-  /// unit, run CreateAdUnits.cs.
-  /// </summary>
-  public class GetAdUnitsByStatement : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example gets all child ad units of the effective root ad unit. To create an ad
+    /// unit, run CreateAdUnits.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example gets all child ad units of the effective root ad unit. To " +
-            "create an ad unit, run CreateAdUnits.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetAdUnitsByStatement codeExample = new GetAdUnitsByStatement();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (InventoryService inventoryService =
-          (InventoryService) user.GetService(DfpService.v201805.InventoryService))
-      using (NetworkService networkService =
-          (NetworkService) user.GetService(DfpService.v201805.NetworkService)) {
-
-        // Get the effective root ad unit ID of the network.
-        string effectiveRootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
-
-        // Create a statement to select the children of the effective root ad
-        // unit.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("parentId = :parentId")
-            .OrderBy("id ASC")
-            .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
-            .AddValue("parentId", effectiveRootAdUnitId);
-
-        // Set default for page.
-        AdUnitPage page = new AdUnitPage();
-
-        try {
-          do {
-            // Get ad units by statement.
-            page = inventoryService.getAdUnitsByStatement(statementBuilder.ToStatement());
-
-            if (page.results != null) {
-              int i = page.startIndex;
-              foreach (AdUnit adUnit in page.results) {
-                Console.WriteLine("{0}) Ad unit with ID = '{1}', name = '{2}' and " +
-                    "status = '{3}' was found.", i, adUnit.id, adUnit.name, adUnit.status);
-                i++;
-              }
+    public class GetAdUnitsByStatement : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return
+                    "This code example gets all child ad units of the effective root ad unit. To " +
+                    "create an ad unit, run CreateAdUnits.cs.";
             }
-
-            statementBuilder.IncreaseOffsetBy(StatementBuilder.SUGGESTED_PAGE_LIMIT);
-          } while (statementBuilder.GetOffset() < page.totalResultSetSize);
-          Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
-        } catch (Exception e) {
-          Console.WriteLine("Failed to get ad unit. Exception says \"{0}\"", e.Message);
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetAdUnitsByStatement codeExample = new GetAdUnitsByStatement();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (InventoryService inventoryService =
+                (InventoryService) user.GetService(DfpService.v201805.InventoryService))
+                using (NetworkService networkService =
+                    (NetworkService) user.GetService(DfpService.v201805.NetworkService))
+                {
+                    // Get the effective root ad unit ID of the network.
+                    string effectiveRootAdUnitId =
+                        networkService.getCurrentNetwork().effectiveRootAdUnitId;
+
+                    // Create a statement to select the children of the effective root ad
+                    // unit.
+                    StatementBuilder statementBuilder = new StatementBuilder()
+                        .Where("parentId = :parentId").OrderBy("id ASC")
+                        .Limit(StatementBuilder.SUGGESTED_PAGE_LIMIT)
+                        .AddValue("parentId", effectiveRootAdUnitId);
+
+                    // Set default for page.
+                    AdUnitPage page = new AdUnitPage();
+
+                    try
+                    {
+                        do
+                        {
+                            // Get ad units by statement.
+                            page = inventoryService.getAdUnitsByStatement(statementBuilder
+                                .ToStatement());
+
+                            if (page.results != null)
+                            {
+                                int i = page.startIndex;
+                                foreach (AdUnit adUnit in page.results)
+                                {
+                                    Console.WriteLine(
+                                        "{0}) Ad unit with ID = '{1}', name = '{2}' and " +
+                                        "status = '{3}' was found.", i, adUnit.id, adUnit.name,
+                                        adUnit.status);
+                                    i++;
+                                }
+                            }
+
+                            statementBuilder.IncreaseOffsetBy(StatementBuilder
+                                .SUGGESTED_PAGE_LIMIT);
+                        } while (statementBuilder.GetOffset() < page.totalResultSetSize);
+
+                        Console.WriteLine("Number of results found: {0}", page.totalResultSetSize);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Failed to get ad unit. Exception says \"{0}\"",
+                            e.Message);
+                    }
+                }
+        }
     }
-  }
 }

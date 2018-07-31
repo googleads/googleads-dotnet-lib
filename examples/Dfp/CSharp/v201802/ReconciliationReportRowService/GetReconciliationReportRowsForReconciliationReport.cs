@@ -11,90 +11,101 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201802;
 using Google.Api.Ads.Dfp.v201802;
+
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This example gets a reconciliation report's rows for line items that served through DFP.
-  /// </summary>
-  public class GetReconciliationReportRowsForReconciliationReport : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example gets a reconciliation report's rows for line items that served through DFP.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example gets a reconciliation report's rows for line items that served " +
-            "through DFP.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetReconciliationReportRowsForReconciliationReport codeExample =
-          new GetReconciliationReportRowsForReconciliationReport();
-      long reconciliationReportId = long.Parse("INSERT_RECONCILIATION_REPORT_ID_HERE");
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new DfpUser(), reconciliationReportId);
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get reconciliation report rows. Exception says \"{0}\"",
-            e.Message);
-      }
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser dfpUser, long reconciliationReportId) {
-      using (ReconciliationReportRowService reconciliationReportRowService =
-          (ReconciliationReportRowService) dfpUser.GetService(
-              DfpService.v201802.ReconciliationReportRowService)) {
-
-        // Create a statement to select reconciliation report rows.
-        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("reconciliationReportId = :reconciliationReportId AND " +
-                "lineItemId != :lineItemId")
-            .OrderBy("id ASC")
-            .Limit(pageSize)
-            .AddValue("reconciliationReportId", reconciliationReportId)
-            .AddValue("lineItemId", 0);
-
-        // Retrieve a small amount of reconciliation report rows at a time, paging through
-        // until all reconciliation report rows have been retrieved.
-        int totalResultSetSize = 0;
-        do {
-          ReconciliationReportRowPage page =
-              reconciliationReportRowService.getReconciliationReportRowsByStatement(
-                  statementBuilder.ToStatement());
-
-          // Print out some information for each reconciliation report row.
-          if (page.results != null) {
-            totalResultSetSize = page.totalResultSetSize;
-            int i = page.startIndex;
-            foreach (ReconciliationReportRow reconciliationReportRow in page.results) {
-              Console.WriteLine(
-                  "{0}) Reconciliation report row with ID {1}, " +
-                      "reconciliation source \"{2}\", " +
-                      "and reconciled volume {3} was found.",
-                  i++,
-                  reconciliationReportRow.id,
-                  reconciliationReportRow.reconciliationSource,
-                  reconciliationReportRow.reconciledVolume
-              );
+    public class GetReconciliationReportRowsForReconciliationReport : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return
+                    "This example gets a reconciliation report's rows for line items that served " +
+                    "through DFP.";
             }
-          }
+        }
 
-          statementBuilder.IncreaseOffsetBy(pageSize);
-        } while (statementBuilder.GetOffset() < totalResultSetSize);
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetReconciliationReportRowsForReconciliationReport codeExample =
+                new GetReconciliationReportRowsForReconciliationReport();
+            long reconciliationReportId = long.Parse("INSERT_RECONCILIATION_REPORT_ID_HERE");
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new DfpUser(), reconciliationReportId);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(
+                    "Failed to get reconciliation report rows. Exception says \"{0}\"", e.Message);
+            }
+        }
 
-        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
-      }
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser dfpUser, long reconciliationReportId)
+        {
+            using (ReconciliationReportRowService reconciliationReportRowService =
+                (ReconciliationReportRowService) dfpUser.GetService(DfpService.v201802
+                    .ReconciliationReportRowService))
+            {
+                // Create a statement to select reconciliation report rows.
+                int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("reconciliationReportId = :reconciliationReportId AND " +
+                        "lineItemId != :lineItemId").OrderBy("id ASC").Limit(pageSize)
+                    .AddValue("reconciliationReportId", reconciliationReportId)
+                    .AddValue("lineItemId", 0);
+
+                // Retrieve a small amount of reconciliation report rows at a time, paging through
+                // until all reconciliation report rows have been retrieved.
+                int totalResultSetSize = 0;
+                do
+                {
+                    ReconciliationReportRowPage page =
+                        reconciliationReportRowService.getReconciliationReportRowsByStatement(
+                            statementBuilder.ToStatement());
+
+                    // Print out some information for each reconciliation report row.
+                    if (page.results != null)
+                    {
+                        totalResultSetSize = page.totalResultSetSize;
+                        int i = page.startIndex;
+                        foreach (ReconciliationReportRow reconciliationReportRow in page.results)
+                        {
+                            Console.WriteLine(
+                                "{0}) Reconciliation report row with ID {1}, " +
+                                "reconciliation source \"{2}\", " +
+                                "and reconciled volume {3} was found.", i++,
+                                reconciliationReportRow.id,
+                                reconciliationReportRow.reconciliationSource,
+                                reconciliationReportRow.reconciledVolume);
+                        }
+                    }
+
+                    statementBuilder.IncreaseOffsetBy(pageSize);
+                } while (statementBuilder.GetOffset() < totalResultSetSize);
+
+                Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+            }
+        }
     }
-  }
 }

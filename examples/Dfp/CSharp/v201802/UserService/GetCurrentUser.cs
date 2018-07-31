@@ -17,50 +17,61 @@ using Google.Api.Ads.Dfp.v201802;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This code example gets current user. To create users, run CreateUsers.cs.
-  /// </summary>
-  public class GetCurrentUser : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example gets current user. To create users, run CreateUsers.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example gets current user. To create users, run CreateUsers.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetCurrentUser codeExample = new GetCurrentUser();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (UserService userService = (UserService) user.GetService(
-          DfpService.v201802.UserService)) {
-
-        try {
-          // Get the current user.
-          User usr = userService.getCurrentUser();
-
-          if (usr != null) {
-            Console.WriteLine("User with ID = '{0}', email = '{1}', and role = '{2}' is the " +
-                "current user.", usr.id, usr.email, usr.roleName);
-          } else {
-            Console.WriteLine("The current user could not be retrieved.");
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to get current user. Exception says \"{0}\"", e.Message);
+    public class GetCurrentUser : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This example gets current user. To create users, run CreateUsers.cs."; }
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetCurrentUser codeExample = new GetCurrentUser();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (UserService userService =
+                (UserService) user.GetService(DfpService.v201802.UserService))
+            {
+                try
+                {
+                    // Get the current user.
+                    User usr = userService.getCurrentUser();
+
+                    if (usr != null)
+                    {
+                        Console.WriteLine(
+                            "User with ID = '{0}', email = '{1}', and role = '{2}' is the " +
+                            "current user.", usr.id, usr.email, usr.roleName);
+                    }
+                    else
+                    {
+                        Console.WriteLine("The current user could not be retrieved.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to get current user. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

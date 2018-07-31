@@ -13,29 +13,34 @@
 // limitations under the License.
 
 using System;
+
 using NUnit.Framework;
+
 using System.ServiceModel.Channels;
 using System.ServiceModel;
 using System.Xml;
+
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.v201802;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests.Mocks;
 using Google.Api.Ads.Common.Util;
 
-namespace Google.Api.Ads.Dfp.Tests {
-  /// <summary>
-  /// Tests the SoapFaultInspector with DfpApiExceptions and DFP SOAP Faults.
-  /// </summary>
-  [TestFixture]
-  public class DfpSoapFaultInspectorTests {
+namespace Google.Api.Ads.Dfp.Tests
+{
     /// <summary>
-    /// The service to test faults with.
+    /// Tests the SoapFaultInspector with DfpApiExceptions and DFP SOAP Faults.
     /// </summary>
-    IClientChannel channel;
+    [TestFixture]
+    public class DfpSoapFaultInspectorTests
+    {
+        /// <summary>
+        /// The service to test faults with.
+        /// </summary>
+        IClientChannel channel;
 
-    const string fault_xml =
-@"<soap:Envelope xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/"">
+        const string fault_xml =
+            @"<soap:Envelope xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/"">
   <soap:Header>
     <ResponseHeader xmlns=""https://www.google.com/apis/ads/publisher/v201802"">
       <requestId>1234567890</requestId>
@@ -65,60 +70,65 @@ namespace Google.Api.Ads.Dfp.Tests {
   </soap:Body>
 </soap:Envelope>";
 
-    readonly MessageVersion TestMessageVersion =
-        MessageVersion.CreateVersion(EnvelopeVersion.Soap11);
+        readonly MessageVersion TestMessageVersion =
+            MessageVersion.CreateVersion(EnvelopeVersion.Soap11);
 
-    /// <summary>
-    /// Initialize this test class instance.
-    /// </summary>
-    [SetUp]
-    public void Init() {
-      EndpointAddress endpoint = new EndpointAddress("http://www.google.com");
-      BasicHttpBinding b = new BasicHttpBinding();
-      this.channel = new MockAdsService(b, endpoint).InnerChannel;
+        /// <summary>
+        /// Initialize this test class instance.
+        /// </summary>
+        [SetUp]
+        public void Init()
+        {
+            EndpointAddress endpoint = new EndpointAddress("http://www.google.com");
+            BasicHttpBinding b = new BasicHttpBinding();
+            this.channel = new MockAdsService(b, endpoint).InnerChannel;
+        }
+
+        /// <summary>
+        /// Tests that no exception is thrown for a non-fault reply.
+        /// </summary>
+        [Test]
+        public void TestNoExceptionForNoFault()
+        {
+            SoapFaultInspector<DfpApiException> inspector =
+                new SoapFaultInspector<DfpApiException>()
+                {
+                    ErrorType = typeof(ApiException)
+                };
+            Message message = Message.CreateMessage(TestMessageVersion, null);
+            Assert.DoesNotThrow(
+                delegate() { inspector.AfterReceiveReply(ref message, this.channel); },
+                "Exception was thrown for a response that wasn't a fault.");
+        }
+
+        /// <summary>
+        /// Tests that a DfpApiException is thrown for a fault.
+        /// </summary>
+        [Test]
+        public void TestDfpApiExceptionForFault()
+        {
+            SoapFaultInspector<DfpApiException> inspector =
+                new SoapFaultInspector<DfpApiException>()
+                {
+                    ErrorType = typeof(Dfp.v201802.ApiException)
+                };
+
+            XmlDocument xDoc = XmlUtilities.CreateDocument(fault_xml);
+            Message message = Message.CreateMessage(new XmlNodeReader(xDoc), Int32.MaxValue,
+                TestMessageVersion);
+
+            DfpApiException exception = Assert.Throws<DfpApiException>(
+                delegate() { inspector.AfterReceiveReply(ref message, this.channel); },
+                "No exception was thrown for a SOAP Fault response");
+            Assert.AreEqual(typeof(ApiException), exception.ApiException.GetType());
+            ApiException apiException = (ApiException) exception.ApiException;
+            Assert.AreEqual(1, apiException.errors.Length);
+            Assert.AreEqual(typeof(PublisherQueryLanguageContextError),
+                apiException.errors[0].GetType());
+            PublisherQueryLanguageContextError error =
+                (PublisherQueryLanguageContextError) apiException.errors[0];
+            Assert.AreEqual(PublisherQueryLanguageContextErrorReason.UNEXECUTABLE, error.reason);
+            Assert.AreEqual("Mapping requested for unknown identifer", error.fieldPath);
+        }
     }
-
-    /// <summary>
-    /// Tests that no exception is thrown for a non-fault reply.
-    /// </summary>
-    [Test]
-    public void TestNoExceptionForNoFault() {
-      SoapFaultInspector<DfpApiException> inspector =
-          new SoapFaultInspector<DfpApiException>() {
-        ErrorType = typeof(ApiException)
-      };
-      Message message = Message.CreateMessage(TestMessageVersion, null);
-      Assert.DoesNotThrow(delegate () {
-        inspector.AfterReceiveReply(ref message, this.channel);
-      }, "Exception was thrown for a response that wasn't a fault.");
-    }
-
-    /// <summary>
-    /// Tests that a DfpApiException is thrown for a fault.
-    /// </summary>
-    [Test]
-    public void TestDfpApiExceptionForFault() {
-      SoapFaultInspector<DfpApiException> inspector = new SoapFaultInspector<DfpApiException>() {
-        ErrorType = typeof(Dfp.v201802.ApiException)
-      };
-
-      XmlDocument xDoc = XmlUtilities.CreateDocument(fault_xml);
-      Message message = Message.CreateMessage(
-        new XmlNodeReader(xDoc), Int32.MaxValue, TestMessageVersion);
-
-      DfpApiException exception = Assert.Throws<DfpApiException>(delegate () {
-        inspector.AfterReceiveReply(ref message, this.channel);
-      }, "No exception was thrown for a SOAP Fault response");
-      Assert.AreEqual(typeof(ApiException), exception.ApiException.GetType());
-      ApiException apiException = (ApiException)exception.ApiException;
-      Assert.AreEqual(1, apiException.errors.Length);
-      Assert.AreEqual(typeof(PublisherQueryLanguageContextError),
-          apiException.errors[0].GetType());
-      PublisherQueryLanguageContextError error =
-          (PublisherQueryLanguageContextError)apiException.errors[0];
-      Assert.AreEqual(PublisherQueryLanguageContextErrorReason.UNEXECUTABLE, error.reason);
-      Assert.AreEqual("Mapping requested for unknown identifer", error.fieldPath);
-    }
-  }
 }
-

@@ -18,75 +18,93 @@ using Google.Api.Ads.Dfp.v201805;
 
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example updates a proposal line item's notes. To determine which 
-  /// proposal line items exist, run GetAllProposalLineItems.cs.
-  /// </summary>
-  public class UpdateProposalLineItems : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example updates a proposal line item's notes. To determine which 
+    /// proposal line items exist, run GetAllProposalLineItems.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example updates a proposal line item's notes. To determine which " +
-          "proposal line items exist, run GetAllProposalLineItems.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      UpdateProposalLineItems codeExample = new UpdateProposalLineItems();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (ProposalLineItemService proposalLineItemService =
-          (ProposalLineItemService) user.GetService(DfpService.v201805.ProposalLineItemService)) {
-
-        // Set the ID of the proposal line item.
-        long proposalLineItemId = long.Parse(_T("INSERT_PROPOSAL_LINE_ITEM_ID_HERE"));
-
-        // Create a statement to get the proposal line item.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("id = :proposalLineItemId")
-            .OrderBy("id ASC")
-            .Limit(1)
-            .AddValue("proposalLineItemId", proposalLineItemId);
-
-        try {
-          // Get proposal line items by statement.
-          ProposalLineItemPage page = proposalLineItemService
-              .getProposalLineItemsByStatement(statementBuilder.ToStatement());
-
-          ProposalLineItem proposalLineItem = page.results[0];
-
-          // Update proposal line item notes.
-          proposalLineItem.internalNotes = "Proposal line item ready for submission";
-
-          // Update the proposal line item on the server.
-          ProposalLineItem[] proposalLineItems = proposalLineItemService
-              .updateProposalLineItems(new ProposalLineItem[] { proposalLineItem });
-
-          if (proposalLineItems != null) {
-            foreach (ProposalLineItem updatedProposalLineItem in proposalLineItems) {
-              Console.WriteLine("A proposal line item with ID = '{0}' and name '{1}' was updated.",
-                  updatedProposalLineItem.id, updatedProposalLineItem.name);
+    public class UpdateProposalLineItems : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return
+                    "This code example updates a proposal line item's notes. To determine which " +
+                    "proposal line items exist, run GetAllProposalLineItems.cs.";
             }
-          } else {
-            Console.WriteLine("No proposal line items updated.");
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to update proposal line items. Exception says \"{0}\"",
-              e.Message);
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            UpdateProposalLineItems codeExample = new UpdateProposalLineItems();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (ProposalLineItemService proposalLineItemService =
+                (ProposalLineItemService) user.GetService(
+                    DfpService.v201805.ProposalLineItemService))
+            {
+                // Set the ID of the proposal line item.
+                long proposalLineItemId = long.Parse(_T("INSERT_PROPOSAL_LINE_ITEM_ID_HERE"));
+
+                // Create a statement to get the proposal line item.
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("id = :proposalLineItemId").OrderBy("id ASC").Limit(1)
+                    .AddValue("proposalLineItemId", proposalLineItemId);
+
+                try
+                {
+                    // Get proposal line items by statement.
+                    ProposalLineItemPage page =
+                        proposalLineItemService.getProposalLineItemsByStatement(
+                            statementBuilder.ToStatement());
+
+                    ProposalLineItem proposalLineItem = page.results[0];
+
+                    // Update proposal line item notes.
+                    proposalLineItem.internalNotes = "Proposal line item ready for submission";
+
+                    // Update the proposal line item on the server.
+                    ProposalLineItem[] proposalLineItems =
+                        proposalLineItemService.updateProposalLineItems(new ProposalLineItem[]
+                        {
+                            proposalLineItem
+                        });
+
+                    if (proposalLineItems != null)
+                    {
+                        foreach (ProposalLineItem updatedProposalLineItem in proposalLineItems)
+                        {
+                            Console.WriteLine(
+                                "A proposal line item with ID = '{0}' and name '{1}' was updated.",
+                                updatedProposalLineItem.id, updatedProposalLineItem.name);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No proposal line items updated.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(
+                        "Failed to update proposal line items. Exception says \"{0}\"", e.Message);
+                }
+            }
+        }
     }
-  }
 }

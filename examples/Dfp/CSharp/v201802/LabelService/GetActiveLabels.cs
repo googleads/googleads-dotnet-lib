@@ -11,81 +11,86 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 using Google.Api.Ads.Dfp.Lib;
 using Google.Api.Ads.Dfp.Util.v201802;
 using Google.Api.Ads.Dfp.v201802;
+
 using System;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802 {
-  /// <summary>
-  /// This example gets all active labels.
-  /// </summary>
-  public class GetActiveLabels : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This example gets all active labels.
     /// </summary>
-    public override string Description {
-      get {
-        return "This example gets all active labels.";
-      }
-    }
+    public class GetActiveLabels : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This example gets all active labels."; }
+        }
 
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      GetActiveLabels codeExample = new GetActiveLabels();
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new DfpUser());
-      } catch (Exception e) {
-        Console.WriteLine("Failed to get labels. Exception says \"{0}\"",
-            e.Message);
-      }
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser dfpUser) {
-      using (LabelService labelService =
-          (LabelService) dfpUser.GetService(DfpService.v201802.LabelService)) {
-
-        // Create a statement to select labels.
-        int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("isActive = :isActive")
-            .OrderBy("id ASC")
-            .Limit(pageSize)
-            .AddValue("isActive", true);
-
-        // Retrieve a small amount of labels at a time, paging through until all
-        // labels have been retrieved.
-        int totalResultSetSize = 0;
-        do {
-          LabelPage page = labelService.getLabelsByStatement(
-              statementBuilder.ToStatement());
-
-          // Print out some information for each label.
-          if (page.results != null) {
-            totalResultSetSize = page.totalResultSetSize;
-            int i = page.startIndex;
-            foreach (Label label in page.results) {
-              Console.WriteLine(
-                  "{0}) Label with ID {1}, name \"{2}\", and is active {3} was found.",
-                  i++,
-                  label.id,
-                  label.name,
-                  label.isActive
-              );
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            GetActiveLabels codeExample = new GetActiveLabels();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new DfpUser());
             }
-          }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to get labels. Exception says \"{0}\"", e.Message);
+            }
+        }
 
-          statementBuilder.IncreaseOffsetBy(pageSize);
-        } while (statementBuilder.GetOffset() < totalResultSetSize);
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser dfpUser)
+        {
+            using (LabelService labelService =
+                (LabelService) dfpUser.GetService(DfpService.v201802.LabelService))
+            {
+                // Create a statement to select labels.
+                int pageSize = StatementBuilder.SUGGESTED_PAGE_LIMIT;
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("isActive = :isActive").OrderBy("id ASC").Limit(pageSize)
+                    .AddValue("isActive", true);
 
-        Console.WriteLine("Number of results found: {0}", totalResultSetSize);
-      }
+                // Retrieve a small amount of labels at a time, paging through until all
+                // labels have been retrieved.
+                int totalResultSetSize = 0;
+                do
+                {
+                    LabelPage page =
+                        labelService.getLabelsByStatement(statementBuilder.ToStatement());
+
+                    // Print out some information for each label.
+                    if (page.results != null)
+                    {
+                        totalResultSetSize = page.totalResultSetSize;
+                        int i = page.startIndex;
+                        foreach (Label label in page.results)
+                        {
+                            Console.WriteLine(
+                                "{0}) Label with ID {1}, name \"{2}\", and is" +
+                                " active {3} was found.",
+                                i++, label.id, label.name, label.isActive);
+                        }
+                    }
+
+                    statementBuilder.IncreaseOffsetBy(pageSize);
+                } while (statementBuilder.GetOffset() < totalResultSetSize);
+
+                Console.WriteLine("Number of results found: {0}", totalResultSetSize);
+            }
+        }
     }
-  }
 }

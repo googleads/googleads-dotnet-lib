@@ -19,76 +19,91 @@ using Google.Api.Ads.Dfp.v201805;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example updates the note of an proposal. To determine which proposals exist,
-  /// run GetAllProposals.cs.
-  /// </summary>
-  public class UpdateProposals : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example updates the note of an proposal. To determine which proposals exist,
+    /// run GetAllProposals.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example updates the note of an proposal. To determine which proposals " +
-            "exist, run GetAllProposals.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      UpdateProposals codeExample = new UpdateProposals();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (ProposalService proposalService =
-          (ProposalService) user.GetService(DfpService.v201805.ProposalService)) {
-
-        long proposalId = long.Parse(_T("INSERT_PROPOSAL_ID_HERE"));
-
-        // Create a statement to get the proposal.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("id = :id")
-            .OrderBy("id ASC")
-            .Limit(1)
-            .AddValue("id", proposalId);
-
-        try {
-          // Get proposals by statement.
-          ProposalPage page =
-              proposalService.getProposalsByStatement(statementBuilder.ToStatement());
-
-          Proposal proposal = page.results[0];
-
-          // Update the proposal object by changing its note.
-          proposal.internalNotes = "Proposal needs further review before approval.";
-
-          // Update the proposals on the server.
-          Proposal[] proposals = proposalService.updateProposals(new Proposal[] { proposal });
-
-          if (proposals != null) {
-            foreach (Proposal updatedProposal in proposals) {
-              Console.WriteLine("Proposal with ID = '{0}', name = '{1}', and notes = '{2}' was " +
-                  "updated.",
-                  updatedProposal.id,
-                  updatedProposal.name,
-                  updatedProposal.internalNotes);
+    public class UpdateProposals : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example updates the note of an proposal. To determine which " +
+                    "proposals exist, run GetAllProposals.cs.";
             }
-          } else {
-            Console.WriteLine("No proposals updated.");
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to update proposals. Exception says \"{0}\"",
-              e.Message);
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            UpdateProposals codeExample = new UpdateProposals();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (ProposalService proposalService =
+                (ProposalService) user.GetService(DfpService.v201805.ProposalService))
+            {
+                long proposalId = long.Parse(_T("INSERT_PROPOSAL_ID_HERE"));
+
+                // Create a statement to get the proposal.
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("id = :id")
+                    .OrderBy("id ASC")
+                    .Limit(1)
+                    .AddValue("id", proposalId);
+
+                try
+                {
+                    // Get proposals by statement.
+                    ProposalPage page =
+                        proposalService.getProposalsByStatement(statementBuilder.ToStatement());
+
+                    Proposal proposal = page.results[0];
+
+                    // Update the proposal object by changing its note.
+                    proposal.internalNotes = "Proposal needs further review before approval.";
+
+                    // Update the proposals on the server.
+                    Proposal[] proposals = proposalService.updateProposals(new Proposal[]
+                    {
+                        proposal
+                    });
+
+                    if (proposals != null)
+                    {
+                        foreach (Proposal updatedProposal in proposals)
+                        {
+                            Console.WriteLine(
+                                "Proposal with ID = '{0}', name = '{1}', and notes = '{2}' was " +
+                                "updated.", updatedProposal.id, updatedProposal.name,
+                                updatedProposal.internalNotes);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No proposals updated.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to update proposals. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }

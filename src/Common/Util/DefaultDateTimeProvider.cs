@@ -14,23 +14,22 @@
 
 using System;
 
-namespace Google.Api.Ads.Common.Util {
-
-  /// <summary>
-  /// Default implementation of DateTimeProvider.
-  /// </summary>
-  public class DefaultDateTimeProvider : DateTimeProvider {
-
+namespace Google.Api.Ads.Common.Util
+{
     /// <summary>
-    /// Gets the current time.
+    /// Default implementation of DateTimeProvider.
     /// </summary>
-    /// <value>
-    /// The current time.
-    /// </value>
-    public DateTime Now {
-      get {
-        return DateTime.Now;
-      }
+    public class DefaultDateTimeProvider : DateTimeProvider
+    {
+        /// <summary>
+        /// Gets the current time.
+        /// </summary>
+        /// <value>
+        /// The current time.
+        /// </value>
+        public DateTime Now
+        {
+            get { return DateTime.Now; }
+        }
     }
-  }
 }

@@ -19,79 +19,104 @@ using Google.Api.Ads.Dfp.v201805;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805 {
-  /// <summary>
-  /// This code example updates a base rate's value. To determine which base rates
-  /// exist, run GetAllBaseRates.cs.
-  /// </summary>
-  public class UpdateBaseRates : SampleBase {
+namespace Google.Api.Ads.Dfp.Examples.CSharp.v201805
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example updates a base rate's value. To determine which base rates
+    /// exist, run GetAllBaseRates.cs.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example updates a base rate's value. To determine which base rates " +
-            "exist, run GetAllBaseRates.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    public static void Main() {
-      UpdateBaseRates codeExample = new UpdateBaseRates();
-      Console.WriteLine(codeExample.Description);
-      codeExample.Run(new DfpUser());
-    }
-
-    /// <summary>
-    /// Run the code example.
-    /// </summary>
-    public void Run(DfpUser user) {
-      using (BaseRateService baseRateService =
-          (BaseRateService) user.GetService(DfpService.v201805.BaseRateService)) {
-
-        long baseRateId = long.Parse(_T("INSERT_BASE_RATE_ID_HERE"));
-
-        // Create a statement to get the baseRate.
-        StatementBuilder statementBuilder = new StatementBuilder()
-            .Where("id = :id")
-            .OrderBy("id ASC")
-            .Limit(1)
-            .AddValue("id", baseRateId);
-
-        try {
-          // Get base rates by statement.
-          BaseRatePage page =
-              baseRateService.getBaseRatesByStatement(statementBuilder.ToStatement());
-
-          BaseRate baseRate = page.results[0];
-
-          // Update base rate value to $3 USD.
-          Money newRate = new Money() { currencyCode = "USD", microAmount = 3000000L };
-
-          if (baseRate is ProductTemplateBaseRate) {
-            ((ProductTemplateBaseRate) baseRate).rate = newRate;
-          } else if (baseRate is ProductBaseRate) {
-            ((ProductBaseRate) baseRate).rate = newRate;
-          }
-
-          // Update the base rates on the server.
-          BaseRate[] baseRates = baseRateService.updateBaseRates(new BaseRate[] { baseRate });
-
-          if (baseRates != null) {
-            foreach (BaseRate updatedBaseRate in baseRates) {
-              Console.WriteLine("Base rate with ID ='{0}' and type '{1}' belonging to rate card " +
-                  "'{2}' was updated.", baseRate.id, baseRate.GetType().Name, baseRate.rateCardId);
+    public class UpdateBaseRates : SampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example updates a base rate's value. To determine which base " +
+                    "rates exist, run GetAllBaseRates.cs.";
             }
-          } else {
-            Console.WriteLine("No base rates updated.");
-          }
-        } catch (Exception e) {
-          Console.WriteLine("Failed to update base rates. Exception says \"{0}\"",
-              e.Message);
         }
-      }
+
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        public static void Main()
+        {
+            UpdateBaseRates codeExample = new UpdateBaseRates();
+            Console.WriteLine(codeExample.Description);
+            codeExample.Run(new DfpUser());
+        }
+
+        /// <summary>
+        /// Run the code example.
+        /// </summary>
+        public void Run(DfpUser user)
+        {
+            using (BaseRateService baseRateService =
+                (BaseRateService) user.GetService(DfpService.v201805.BaseRateService))
+            {
+                long baseRateId = long.Parse(_T("INSERT_BASE_RATE_ID_HERE"));
+
+                // Create a statement to get the baseRate.
+                StatementBuilder statementBuilder = new StatementBuilder()
+                    .Where("id = :id")
+                    .OrderBy("id ASC")
+                    .Limit(1)
+                    .AddValue("id", baseRateId);
+
+                try
+                {
+                    // Get base rates by statement.
+                    BaseRatePage page =
+                        baseRateService.getBaseRatesByStatement(statementBuilder.ToStatement());
+
+                    BaseRate baseRate = page.results[0];
+
+                    // Update base rate value to $3 USD.
+                    Money newRate = new Money()
+                    {
+                        currencyCode = "USD",
+                        microAmount = 3000000L
+                    };
+
+                    if (baseRate is ProductTemplateBaseRate)
+                    {
+                        ((ProductTemplateBaseRate) baseRate).rate = newRate;
+                    }
+                    else if (baseRate is ProductBaseRate)
+                    {
+                        ((ProductBaseRate) baseRate).rate = newRate;
+                    }
+
+                    // Update the base rates on the server.
+                    BaseRate[] baseRates = baseRateService.updateBaseRates(new BaseRate[]
+                    {
+                        baseRate
+                    });
+
+                    if (baseRates != null)
+                    {
+                        foreach (BaseRate updatedBaseRate in baseRates)
+                        {
+                            Console.WriteLine(
+                                "Base rate with ID ='{0}' and type '{1}' belonging to rate card " +
+                                "'{2}' was updated.", baseRate.id, baseRate.GetType().Name,
+                                baseRate.rateCardId);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No base rates updated.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to update base rates. Exception says \"{0}\"",
+                        e.Message);
+                }
+            }
+        }
     }
-  }
 }
