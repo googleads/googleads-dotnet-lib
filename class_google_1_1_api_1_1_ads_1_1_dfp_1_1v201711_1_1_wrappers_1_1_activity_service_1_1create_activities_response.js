@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_activity_service_1_1create_activities_response =
-[
-    [ "createActivitiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_activity_service_1_1create_activities_response.html#a780803acf6d1bed0a27e7fa5ff7d24a3", null ],
-    [ "createActivitiesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_activity_service_1_1create_activities_response.html#a35602d20d9ded82ed7c6e4438441776b", null ],
-    [ "rval", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_wrappers_1_1_activity_service_1_1create_activities_response.html#a0bf65aa06857a34dfae9508a81395bc7", null ]
-];

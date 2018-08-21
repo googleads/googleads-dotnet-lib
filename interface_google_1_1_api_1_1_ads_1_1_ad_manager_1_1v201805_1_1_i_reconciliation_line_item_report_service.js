@@ -1,0 +1,5 @@
+var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_i_reconciliation_line_item_report_service =
+[
+    [ "updateReconciliationLineItemReports", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_i_reconciliation_line_item_report_service.html#a3b6ceb4d14f75e9e0d2bf46b8a8255bc", null ],
+    [ "updateReconciliationLineItemReportsAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_i_reconciliation_line_item_report_service.html#a8f0e8b22aaf663ed4f2d2f49a7904eed", null ]
+];

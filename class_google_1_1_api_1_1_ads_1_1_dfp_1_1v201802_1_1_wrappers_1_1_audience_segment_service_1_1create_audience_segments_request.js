@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_audience_segment_service_1_1create_audience_segments_request =
-[
-    [ "createAudienceSegmentsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_audience_segment_service_1_1create_audience_segments_request.html#a4b1f8dd2acfcc6419e162367ed1bf633", null ],
-    [ "createAudienceSegmentsRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_audience_segment_service_1_1create_audience_segments_request.html#a597acb845e8e0c4748af9f85d33b9add", null ],
-    [ "segments", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_wrappers_1_1_audience_segment_service_1_1create_audience_segments_request.html#afc2a19aeb97b064ade219c78c0db3023", null ]
-];

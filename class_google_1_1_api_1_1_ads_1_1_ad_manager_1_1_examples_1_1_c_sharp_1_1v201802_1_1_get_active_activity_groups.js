@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201802_1_1_get_active_activity_groups =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201802_1_1_get_active_activity_groups.html#aa115706c08a2764b6c9c7d9fcee67f13", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201802_1_1_get_active_activity_groups.html#aa6f77268a00d19e3bca15af4f15dd139", null ]
+];

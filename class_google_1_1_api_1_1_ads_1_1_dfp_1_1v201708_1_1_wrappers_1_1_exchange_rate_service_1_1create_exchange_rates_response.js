@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_exchange_rate_service_1_1create_exchange_rates_response =
-[
-    [ "createExchangeRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_exchange_rate_service_1_1create_exchange_rates_response.html#a4b7a1c61ada494469148f3d82dae15e8", null ],
-    [ "createExchangeRatesResponse", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_exchange_rate_service_1_1create_exchange_rates_response.html#a656c73e3f7ff790afb7e6d60474a50bd", null ],
-    [ "rval", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_exchange_rate_service_1_1create_exchange_rates_response.html#adedd27867b9d1c519e722c6d05501702", null ]
-];

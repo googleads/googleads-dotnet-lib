@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_create_creative_wrappers =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_create_creative_wrappers.html#a170e8b352f7ca0258b21ef7b81e86240", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_create_creative_wrappers.html#ae323ce76332f814c5964980f4bf7cfd6", null ]
+];

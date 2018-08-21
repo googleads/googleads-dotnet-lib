@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201805_1_1_create_content_metadata_key_hierarchies =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201805_1_1_create_content_metadata_key_hierarchies.html#a34d3f1b8246026afdffa18100f54ec01", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201805_1_1_create_content_metadata_key_hierarchies.html#aaa069ec04174b8547fc042ec1612ebe3", null ]
-];

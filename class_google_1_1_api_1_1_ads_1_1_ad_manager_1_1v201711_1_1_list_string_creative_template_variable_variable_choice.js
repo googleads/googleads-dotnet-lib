@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_list_string_creative_template_variable_variable_choice =
+[
+    [ "label", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_list_string_creative_template_variable_variable_choice.html#ac7de3394152d7e32c9eb9389fa4f0b06", null ],
+    [ "value", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_list_string_creative_template_variable_variable_choice.html#a9b6a0b6f389d8202d8deba1fe8a9444e", null ]
+];

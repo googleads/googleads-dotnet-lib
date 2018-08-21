@@ -1,7 +1,0 @@
-var interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_contact_service =
-[
-    [ "createContacts", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_contact_service.html#a334e87f9726f275c28b48294c90c3cb6", null ],
-    [ "createContactsAsync", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_contact_service.html#a82dcd2af0b012d46b41fb19825b99518", null ],
-    [ "updateContacts", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_contact_service.html#ae68f10fd71d362bfbc88f15ab478f59d", null ],
-    [ "updateContactsAsync", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201802_1_1_i_contact_service.html#ae736826e00b1c8a07f4797893dcf20f3", null ]
-];

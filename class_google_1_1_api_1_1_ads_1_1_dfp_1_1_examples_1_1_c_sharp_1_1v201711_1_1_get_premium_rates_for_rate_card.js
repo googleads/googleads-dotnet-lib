@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201711_1_1_get_premium_rates_for_rate_card =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201711_1_1_get_premium_rates_for_rate_card.html#aefb450f1d1d30d957d318f3ad64ed6d3", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1_examples_1_1_c_sharp_1_1v201711_1_1_get_premium_rates_for_rate_card.html#adc73d7ab551de695a833fddd7532d08b", null ]
-];

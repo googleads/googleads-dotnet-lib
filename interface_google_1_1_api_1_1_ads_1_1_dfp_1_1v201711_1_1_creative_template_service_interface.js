@@ -1,5 +1,0 @@
-var interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_template_service_interface =
-[
-    [ "getCreativeTemplatesByStatement", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_template_service_interface.html#ae359365488bc7c3123cf738c9d3d6db6", null ],
-    [ "getCreativeTemplatesByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_dfp_1_1v201711_1_1_creative_template_service_interface.html#aa9d190230682b303e1bc0b90eca5a487", null ]
-];

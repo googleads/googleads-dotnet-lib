@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201802_1_1_delete_content_metadata_key_hierarchies =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201802_1_1_delete_content_metadata_key_hierarchies.html#a6ef74b8140991a85e774c27aae260561", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201802_1_1_delete_content_metadata_key_hierarchies.html#a9cf3f4c245bca4db93cd68b8c6dc15e9", null ]
+];

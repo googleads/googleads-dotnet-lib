@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_wrappers_1_1_ad_exclusion_rule_servic7aa53661992abb17fee8a2973739ce90 =
+[
+    [ "updateAdExclusionRulesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_wrappers_1_1_ad_exclusion_rule_servic7aa53661992abb17fee8a2973739ce90.html#adada3816592a01aafa650fdbbdfa4fdc", null ],
+    [ "updateAdExclusionRulesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_wrappers_1_1_ad_exclusion_rule_servic7aa53661992abb17fee8a2973739ce90.html#a43884841acbf60ca5d65835a5f4d38b3", null ],
+    [ "adExclusionRules", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_wrappers_1_1_ad_exclusion_rule_servic7aa53661992abb17fee8a2973739ce90.html#a6a0592f1b8a94223bcd5a392cc6cc5f0", null ]
+];

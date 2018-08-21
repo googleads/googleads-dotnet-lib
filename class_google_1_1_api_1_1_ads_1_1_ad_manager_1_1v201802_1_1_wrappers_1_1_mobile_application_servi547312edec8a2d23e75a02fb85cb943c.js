@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_mobile_application_servi547312edec8a2d23e75a02fb85cb943c =
+[
+    [ "updateMobileApplicationsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_mobile_application_servi547312edec8a2d23e75a02fb85cb943c.html#a65994df95b9a55f182d3f0341e4a14ab", null ],
+    [ "updateMobileApplicationsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_mobile_application_servi547312edec8a2d23e75a02fb85cb943c.html#a6dcfcda9cffa944d5d421221b2c5ac2f", null ],
+    [ "mobileApplications", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_mobile_application_servi547312edec8a2d23e75a02fb85cb943c.html#a6da97c26827cbaad6e289276ea3c777c", null ]
+];

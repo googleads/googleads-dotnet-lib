@@ -1,0 +1,5 @@
+var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_i_reconciliation_order_report_service =
+[
+    [ "updateReconciliationOrderReports", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_i_reconciliation_order_report_service.html#aff8df9ad761617c44bc3e63f06d71708", null ],
+    [ "updateReconciliationOrderReportsAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_i_reconciliation_order_report_service.html#a3bd41a58d175c57767babc3266a860ee", null ]
+];

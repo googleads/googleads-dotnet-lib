@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_live_stream_event_service_1_1reb89df7602ddb3c59ce9ae43188f835ce =
-[
-    [ "registerSessionsForMonitoringRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_live_stream_event_service_1_1reb89df7602ddb3c59ce9ae43188f835ce.html#a810af42b89e942eac284a5492b239607", null ],
-    [ "registerSessionsForMonitoringRequest", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_live_stream_event_service_1_1reb89df7602ddb3c59ce9ae43188f835ce.html#afbbdac1709f68cc27fb7fbd290272567", null ],
-    [ "sessionIds", "class_google_1_1_api_1_1_ads_1_1_dfp_1_1v201708_1_1_wrappers_1_1_live_stream_event_service_1_1reb89df7602ddb3c59ce9ae43188f835ce.html#aba03da2b0e3b2b0af70d3a009ef218d6", null ]
-];
