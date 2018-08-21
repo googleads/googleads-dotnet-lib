@@ -1,3 +1,18 @@
+24.0.0
+======
+AdWords:
+   - No changes.
+
+Ad Manager:
+   - DFP is now Ad Manager. See the migration guide at
+     https://github.com/googleads/googleads-dotnet-lib/wiki/DFP-to-Ad-Manager-rebrand-guide
+   - Added support for v201808.
+   - Removed support for v201708.
+   - Removed examples for v201711.
+
+Common:
+   - No changes.
+
 23.6.0
 ======
 AdWords:

@@ -20,118 +20,135 @@ using Google.Api.Ads.Common.Util.Reports;
 using System;
 using System.IO.Compression;
 
-namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806 {
-
-  /// <summary>
-  /// The class that holds the data of one row of the report.
-  /// </summary>
-  public class CriteriaReportRow {
-
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806
+{
     /// <summary>
-    /// The Keyword ID column.
+    /// The class that holds the data of one row of the report.
     /// </summary>
-    [ReportColumn("keywordID")]
-    public long KeywordID { get; set; }
+    public class CriteriaReportRow
+    {
+        /// <summary>
+        /// The Keyword ID column.
+        /// </summary>
+        [ReportColumn("keywordID")]
+        public long KeywordID { get; set; }
 
-    /// <summary>
-    /// The impressions column.
-    /// </summary>
-    [ReportColumn("impressions")]
-    public long Impressions { get; set; }
+        /// <summary>
+        /// The impressions column.
+        /// </summary>
+        [ReportColumn("impressions")]
+        public long Impressions { get; set; }
 
-    /// <summary>
-    /// The network column.
-    /// </summary>
-    [ReportColumn("network")]
-    public string NetworkType { get; set; }
+        /// <summary>
+        /// The network column.
+        /// </summary>
+        [ReportColumn("network")]
+        public string NetworkType { get; set; }
 
-    /// <summary>
-    /// Returns a string that represents the current report row.
-    /// </summary>
-    override public string ToString() {
-      return "Id: " + KeywordID + " Impressions: "
-          + Impressions + " NetworkType: " + NetworkType;
-    }
-  }
-
-  /// <summary>
-  /// This code example streams the results of an ad hoc report, and
-  /// returns the data in the report as objects of a given type.
-  /// </summary>
-  public class StreamCriteriaReportToPoco : ExampleBase {
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      StreamCriteriaReportToPoco codeExample = new StreamCriteriaReportToPoco();
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new AdWordsUser());
-      } catch (Exception e) {
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e));
-      }
-      Console.ReadLine();
-    }
-
-    /// <summary>
-    /// Returns a description about the code example.
-    /// </summary>
-    public override string Description {
-      get {
-        return "This code example streams the results of an ad hoc report, and " +
-            "returns the data in the report as objects of a given type.";
-      }
-    }
-
-    /// <summary>
-    /// Runs the code example.
-    /// </summary>
-    /// <param name="user">The AdWords user.</param>
-    public void Run(AdWordsUser user) {
-      // Create the query.
-      string query = "SELECT Id, AdNetworkType1, Impressions FROM CRITERIA_PERFORMANCE_REPORT " +
-          "WHERE Status IN [ENABLED, PAUSED] DURING LAST_7_DAYS";
-
-      ReportUtilities reportUtilities = new ReportUtilities(user, "v201806", query,
-          DownloadFormat.GZIPPED_XML.ToString());
-
-      try {
-        using (ReportResponse response = reportUtilities.GetResponse()) {
-          using (GZipStream gzipStream =
-            new GZipStream(response.Stream,
-              CompressionMode.Decompress)) {
-            // Deserialize the report into a list of CriteriaReportRow.
-            // You can also deserialize the list into your own POCOs as follows.
-            // 1. Annotate your class properties with ReportRow annotation.
-            //
-            //  public class MyCriteriaReportRow {
-            //
-            //    [ReportColumn]
-            //    public long KeywordID { get; set; }
-            //
-            //    [ReportColumn]
-            //    public long Impressions { get; set; }
-            //  }
-            //
-            // 2. Deserialize into your own report rows.
-            //
-            // var report = new AwReport<MyCriteriaReportRow>(
-            //                new AwXmlTextReader(gzipStream), "Example");
-            using (var report = new AwReport<CriteriaReportRow>(
-                new AwXmlTextReader(gzipStream), "Example")) {
-              // Print the contents of each row object.
-              foreach (var record in report.Rows) {
-                Console.WriteLine(record);
-              }
-            }
-          }
+        /// <summary>
+        /// Returns a string that represents the current report row.
+        /// </summary>
+        override public string ToString()
+        {
+            return "Id: " + KeywordID + " Impressions: " + Impressions + " NetworkType: " +
+                NetworkType;
         }
-      } catch (Exception e) {
-        throw new System.ApplicationException("Failed to download and parse report.", e);
-      }
     }
-  }
+
+    /// <summary>
+    /// This code example streams the results of an ad hoc report, and
+    /// returns the data in the report as objects of a given type.
+    /// </summary>
+    public class StreamCriteriaReportToPoco : ExampleBase
+    {
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        /// <param name="args">The command line arguments.</param>
+        public static void Main(string[] args)
+        {
+            StreamCriteriaReportToPoco codeExample = new StreamCriteriaReportToPoco();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new AdWordsUser());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                    ExampleUtilities.FormatException(e));
+            }
+
+            Console.ReadLine();
+        }
+
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example streams the results of an ad hoc report, and " +
+                    "returns the data in the report as objects of a given type.";
+            }
+        }
+
+        /// <summary>
+        /// Runs the code example.
+        /// </summary>
+        /// <param name="user">The AdWords user.</param>
+        public void Run(AdWordsUser user)
+        {
+            // Create the query.
+            string query =
+                "SELECT Id, AdNetworkType1, Impressions FROM CRITERIA_PERFORMANCE_REPORT " +
+                "WHERE Status IN [ENABLED, PAUSED] DURING LAST_7_DAYS";
+
+            ReportUtilities reportUtilities = new ReportUtilities(user, "v201806", query,
+                DownloadFormat.GZIPPED_XML.ToString());
+
+            try
+            {
+                using (ReportResponse response = reportUtilities.GetResponse())
+                {
+                    using (GZipStream gzipStream =
+                        new GZipStream(response.Stream, CompressionMode.Decompress))
+                    {
+                        // Deserialize the report into a list of CriteriaReportRow.
+                        // You can also deserialize the list into your own POCOs as follows.
+                        // 1. Annotate your class properties with ReportRow annotation.
+                        //
+                        //  public class MyCriteriaReportRow {
+                        //
+                        //    [ReportColumn]
+                        //    public long KeywordID { get; set; }
+                        //
+                        //    [ReportColumn]
+                        //    public long Impressions { get; set; }
+                        //  }
+                        //
+                        // 2. Deserialize into your own report rows.
+                        //
+                        // var report = new AwReport<MyCriteriaReportRow>(
+                        //                new AwXmlTextReader(gzipStream), "Example");
+                        using (var report =
+                            new AwReport<CriteriaReportRow>(new AwXmlTextReader(gzipStream),
+                                "Example"))
+                        {
+                            // Print the contents of each row object.
+                            foreach (var record in report.Rows)
+                            {
+                                Console.WriteLine(record);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw new System.ApplicationException("Failed to download and parse report.", e);
+            }
+        }
+    }
 }

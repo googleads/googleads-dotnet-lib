@@ -19,44 +19,44 @@ using NUnit.Framework;
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201806;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201806;
 
-namespace Google.Api.Ads.AdWords.Tests.v201806 {
-
-  /// <summary>
-  /// Test cases for all the code examples under v201806\Migration.
-  /// </summary>
-  internal class MigrationTest : VersionedExampleTestsBase {
-    private long campaignId;
-    private long adGroupId;
-    private long adId;
-
+namespace Google.Api.Ads.AdWords.Tests.v201806
+{
     /// <summary>
-    /// Inits this instance.
+    /// Test cases for all the code examples under v201806\Migration.
     /// </summary>
-    [SetUp]
-    public void Init() {
-      campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
-      adGroupId = utils.CreateAdGroup(user, campaignId);
-      adId = utils.CreateExpandedTextAd(user, adGroupId, false);
-    }
+    internal class MigrationTest : VersionedExampleTestsBase
+    {
+        private long campaignId;
+        private long adGroupId;
+        private long adId;
 
-    /// <summary>
-    /// Tests the MigrateToExtensionSettings VB.NET code example.
-    /// </summary>
-    [Test]
-    public void MigrateToExtensionSettingsVBExample() {
-      RunExample(delegate () {
-        new VBExamples.MigrateToExtensionSettings().Run(user);
-      });
-    }
+        /// <summary>
+        /// Inits this instance.
+        /// </summary>
+        [SetUp]
+        public void Init()
+        {
+            campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
+            adGroupId = utils.CreateAdGroup(user, campaignId);
+            adId = utils.CreateExpandedTextAd(user, adGroupId, false);
+        }
 
-    /// <summary>
-    /// Tests the MigrateToExtensionSettings C# code example.
-    /// </summary>
-    [Test]
-    public void MigrateToExtensionSettingsCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.MigrateToExtensionSettings().Run(user);
-      });
+        /// <summary>
+        /// Tests the MigrateToExtensionSettings VB.NET code example.
+        /// </summary>
+        [Test]
+        public void MigrateToExtensionSettingsVBExample()
+        {
+            RunExample(delegate() { new VBExamples.MigrateToExtensionSettings().Run(user); });
+        }
+
+        /// <summary>
+        /// Tests the MigrateToExtensionSettings C# code example.
+        /// </summary>
+        [Test]
+        public void MigrateToExtensionSettingsCSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.MigrateToExtensionSettings().Run(user); });
+        }
     }
-  }
 }

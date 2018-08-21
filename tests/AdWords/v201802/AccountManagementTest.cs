@@ -17,31 +17,29 @@ using NUnit.Framework;
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201802;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201802;
 
-namespace Google.Api.Ads.AdWords.Tests.v201802 {
-
-  /// <summary>
-  /// Test cases for all the code examples under v201802\AccountManagement.
-  /// </summary>
-  internal class AccountManagementTest : VersionedExampleTestsBase {
-
+namespace Google.Api.Ads.AdWords.Tests.v201802
+{
     /// <summary>
-    /// Tests the GetAccountChanges VB.NET code example.
+    /// Test cases for all the code examples under v201802\AccountManagement.
     /// </summary>
-    [Test]
-    public void TestGetAccountChangesVBExample() {
-      RunExample(delegate () {
-        new VBExamples.GetAccountChanges().Run(user);
-      });
-    }
+    internal class AccountManagementTest : VersionedExampleTestsBase
+    {
+        /// <summary>
+        /// Tests the GetAccountChanges VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestGetAccountChangesVBExample()
+        {
+            RunExample(delegate() { new VBExamples.GetAccountChanges().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the GetAccountChanges C# code example.
-    /// </summary>
-    [Test]
-    public void TestGetAccountChangesCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.GetAccountChanges().Run(user);
-      });
+        /// <summary>
+        /// Tests the GetAccountChanges C# code example.
+        /// </summary>
+        [Test]
+        public void TestGetAccountChangesCSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.GetAccountChanges().Run(user); });
+        }
     }
-  }
 }

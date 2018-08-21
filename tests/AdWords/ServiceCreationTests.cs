@@ -16,53 +16,57 @@ using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.v201802;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests;
+
 using NUnit.Framework;
+
 using System;
 using System.Linq;
 
-namespace Google.Api.Ads.AdWords.Tests {
-
-  /// <summary>
-  /// UnitTests for service creation.
-  /// </summary>
-  [TestFixture]
-  public class ServiceCreationTests : ExampleTestsBase {
-
+namespace Google.Api.Ads.AdWords.Tests
+{
     /// <summary>
-    /// Default public constructor.
+    /// UnitTests for service creation.
     /// </summary>
-    public ServiceCreationTests()
-      : base() {
-    }
+    [TestFixture]
+    public class ServiceCreationTests : ExampleTestsBase
+    {
+        /// <summary>
+        /// Default public constructor.
+        /// </summary>
+        public ServiceCreationTests() : base()
+        {
+        }
 
-    /// <summary>
-    /// Test whether we can create all the services without any exceptions.
-    /// </summary>
-    [Test]
-    public void TestCreateServices() {
-      StubIntegrityTestHelper.EnumerateServices<AdWordsService>(
-          delegate (ServiceSignature serviceSignature) {
-            Assert.DoesNotThrow(delegate () {
-              AdsClient service = user.GetService(serviceSignature);
-            });
-          });
-    }
+        /// <summary>
+        /// Test whether we can create all the services without any exceptions.
+        /// </summary>
+        [Test]
+        public void TestCreateServices()
+        {
+            StubIntegrityTestHelper.EnumerateServices<AdWordsService>(
+                delegate(ServiceSignature serviceSignature)
+                {
+                    Assert.DoesNotThrow(delegate()
+                    {
+                        AdsClient service = user.GetService(serviceSignature);
+                    });
+                });
+        }
 
-    /// <summary>
-    /// Test that a generated service interface has expected methods.
-    /// </summary>
-    [Test]
-    public void TestServiceInterface() {
-      Type serviceInterface = typeof(IAdGroupService);
-      var methodDictionary = serviceInterface.GetInterfaces()
-          .SelectMany(t => t.GetMethods())
-          .Where(m => !m.ReturnType.FullName.Contains("Wrappers"))
-          .Concat(serviceInterface.GetMethods())
-          .ToDictionary(m => m.Name);
-      Assert.That(methodDictionary, Contains.Key("get"));
-      Assert.That(methodDictionary, Contains.Key("mutate"));
-      Assert.That(methodDictionary, Contains.Key("mutateLabel"));
-      Assert.That(methodDictionary, Contains.Key("query"));
+        /// <summary>
+        /// Test that a generated service interface has expected methods.
+        /// </summary>
+        [Test]
+        public void TestServiceInterface()
+        {
+            Type serviceInterface = typeof(IAdGroupService);
+            var methodDictionary = serviceInterface.GetInterfaces().SelectMany(t => t.GetMethods())
+                .Where(m => !m.ReturnType.FullName.Contains("Wrappers"))
+                .Concat(serviceInterface.GetMethods()).ToDictionary(m => m.Name);
+            Assert.That(methodDictionary, Contains.Key("get"));
+            Assert.That(methodDictionary, Contains.Key("mutate"));
+            Assert.That(methodDictionary, Contains.Key("mutateLabel"));
+            Assert.That(methodDictionary, Contains.Key("query"));
+        }
     }
-  }
 }

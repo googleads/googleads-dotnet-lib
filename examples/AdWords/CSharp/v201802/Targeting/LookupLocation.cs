@@ -18,101 +18,127 @@ using Google.Api.Ads.AdWords.v201802;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
-
-  /// <summary>
-  /// This code example gets location criteria by name.
-  /// </summary>
-  public class LookupLocation : ExampleBase {
-
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Main method, to run this code example as a standalone application.
+    /// This code example gets location criteria by name.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      LookupLocation codeExample = new LookupLocation();
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new AdWordsUser());
-      } catch (Exception e) {
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e));
-      }
-    }
-
-    /// <summary>
-    /// Returns a description about the code example.
-    /// </summary>
-    public override string Description {
-      get {
-        return "This code example gets location criteria by name.";
-      }
-    }
-
-    /// <summary>
-    /// Runs the code example.
-    /// </summary>
-    /// <param name="user">The AdWords user.</param>
-    public void Run(AdWordsUser user) {
-      using (LocationCriterionService locationCriterionService =
-          (LocationCriterionService) user.GetService(AdWordsService.v201802.
-              LocationCriterionService)) {
-
-        string[] locationNames = new string[] { "Paris", "Quebec", "Spain", "Deutschland" };
-
-        Selector selector = new Selector() {
-          fields = new string[] {
-            Location.Fields.Id, Location.Fields.LocationName,
-            LocationCriterion.Fields.CanonicalName, Location.Fields.DisplayType,
-            Location.Fields.ParentLocations, LocationCriterion.Fields.Reach,
-            Location.Fields.TargetingStatus
-          },
-
-          predicates = new Predicate[] {
-            // Location names must match exactly, only EQUALS and IN are supported.
-            Predicate.In(Location.Fields.LocationName, locationNames),
-
-            // Set the locale of the returned location names.
-            Predicate.Equals(LocationCriterion.Fields.Locale, "en")
-          }
-        };
-
-        try {
-          // Make the get request.
-          LocationCriterion[] locationCriteria = locationCriterionService.get(selector);
-
-          // Display the resulting location criteria.
-          foreach (LocationCriterion locationCriterion in locationCriteria) {
-            string parentLocations = "N/A";
-
-            if (locationCriterion.location != null &&
-                locationCriterion.location.parentLocations != null) {
-              List<string> parentLocationList = new List<string>();
-              foreach (Location location in locationCriterion.location.parentLocations) {
-                parentLocationList.Add(GetLocationString(location));
-              }
-              parentLocations = string.Join(", ", parentLocationList);
+    public class LookupLocation : ExampleBase
+    {
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        /// <param name="args">The command line arguments.</param>
+        public static void Main(string[] args)
+        {
+            LookupLocation codeExample = new LookupLocation();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new AdWordsUser());
             }
-
-            Console.WriteLine("The search term '{0}' returned the location '{1}' of type '{2}' " +
-                "with parent locations '{3}',  reach '{4}' and targeting status '{5}.",
-                locationCriterion.searchTerm, locationCriterion.location.locationName,
-                locationCriterion.location.displayType, parentLocations, locationCriterion.reach,
-                locationCriterion.location.targetingStatus);
-          }
-        } catch (Exception e) {
-          throw new System.ApplicationException("Failed to get location criteria.", e);
+            catch (Exception e)
+            {
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                    ExampleUtilities.FormatException(e));
+            }
         }
-      }
-    }
 
-    /// <summary>
-    /// Gets a string representation for a location.
-    /// </summary>
-    /// <param name="location">The location</param>
-    /// <returns>The string representation</returns>
-    public string GetLocationString(Location location) {
-      return string.Format("{0} ({1})", location.locationName, location.displayType);
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get { return "This code example gets location criteria by name."; }
+        }
+
+        /// <summary>
+        /// Runs the code example.
+        /// </summary>
+        /// <param name="user">The AdWords user.</param>
+        public void Run(AdWordsUser user)
+        {
+            using (LocationCriterionService locationCriterionService =
+                (LocationCriterionService) user.GetService(AdWordsService.v201802
+                    .LocationCriterionService))
+            {
+                string[] locationNames = new string[]
+                {
+                    "Paris",
+                    "Quebec",
+                    "Spain",
+                    "Deutschland"
+                };
+
+                Selector selector = new Selector()
+                {
+                    fields = new string[]
+                    {
+                        Location.Fields.Id,
+                        Location.Fields.LocationName,
+                        LocationCriterion.Fields.CanonicalName,
+                        Location.Fields.DisplayType,
+                        Location.Fields.ParentLocations,
+                        LocationCriterion.Fields.Reach,
+                        Location.Fields.TargetingStatus
+                    },
+
+                    predicates = new Predicate[]
+                    {
+                        // Location names must match exactly, only EQUALS and IN are supported.
+                        Predicate.In(Location.Fields.LocationName, locationNames),
+
+                        // Set the locale of the returned location names.
+                        Predicate.Equals(LocationCriterion.Fields.Locale, "en")
+                    }
+                };
+
+                try
+                {
+                    // Make the get request.
+                    LocationCriterion[] locationCriteria = locationCriterionService.get(selector);
+
+                    // Display the resulting location criteria.
+                    foreach (LocationCriterion locationCriterion in locationCriteria)
+                    {
+                        string parentLocations = "N/A";
+
+                        if (locationCriterion.location != null &&
+                            locationCriterion.location.parentLocations != null)
+                        {
+                            List<string> parentLocationList = new List<string>();
+                            foreach (Location location in locationCriterion.location.parentLocations
+                            )
+                            {
+                                parentLocationList.Add(GetLocationString(location));
+                            }
+
+                            parentLocations = string.Join(", ", parentLocationList);
+                        }
+
+                        Console.WriteLine(
+                            "The search term '{0}' returned the location '{1}' of type '{2}' " +
+                            "with parent locations '{3}',  reach '{4}' and targeting status '{5}.",
+                            locationCriterion.searchTerm, locationCriterion.location.locationName,
+                            locationCriterion.location.displayType, parentLocations,
+                            locationCriterion.reach, locationCriterion.location.targetingStatus);
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw new System.ApplicationException("Failed to get location criteria.", e);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets a string representation for a location.
+        /// </summary>
+        /// <param name="location">The location</param>
+        /// <returns>The string representation</returns>
+        public string GetLocationString(Location location)
+        {
+            return string.Format("{0} ({1})", location.locationName, location.displayType);
+        }
     }
-  }
 }

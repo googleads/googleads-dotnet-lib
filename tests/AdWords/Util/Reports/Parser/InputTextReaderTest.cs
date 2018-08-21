@@ -13,58 +13,67 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.Util.Reports;
+
 using NUnit.Framework;
+
 using System;
 using System.Linq;
 
-namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser {
-
-  /// <summary>
-  /// Tests for the <see ref="InputTextReader" /> classes.
-  /// </summary>
-  internal class InputReaderTest {
-
-    // A sample fake XML report for testing.
-    private readonly string testXml = Resources.ValidXMLRepeatedRows;
-
-    private void testActionWithXmlTextReader(Action<AwXmlTextReader> action) {
-      TestUtils.testActionWithXmlTextReader(action, testXml);
-    }
-
+namespace Google.Api.Ads.AdWords.Tests.Util.Reports.Parser
+{
     /// <summary>
-    /// A test for the <see ref="AwXmlTextReader" /> class. Tests that the reader
-    /// can be advanced to the next row 4 times as there are only 4 rows in the
-    /// sample xml.
+    /// Tests for the <see ref="InputTextReader" /> classes.
     /// </summary>
-    [Test]
-    public void testXmlRead() {
-      testActionWithXmlTextReader(reader => {
-        var rows = 0;
+    internal class InputReaderTest
+    {
+        // A sample fake XML report for testing.
+        private readonly string testXml = Resources.ValidXMLRepeatedRows;
 
-        while (reader.Read()) {
-          rows++;
+        private void testActionWithXmlTextReader(Action<AwXmlTextReader> action)
+        {
+            TestUtils.testActionWithXmlTextReader(action, testXml);
         }
-        Assert.AreEqual(4, rows);
-      });
+
+        /// <summary>
+        /// A test for the <see ref="AwXmlTextReader" /> class. Tests that the reader
+        /// can be advanced to the next row 4 times as there are only 4 rows in the
+        /// sample xml.
+        /// </summary>
+        [Test]
+        public void testXmlRead()
+        {
+            testActionWithXmlTextReader(reader =>
+            {
+                var rows = 0;
+
+                while (reader.Read())
+                {
+                    rows++;
+                }
+
+                Assert.AreEqual(4, rows);
+            });
+        }
+
+        /// <summary>
+        /// Tests that the names and values of the columns in a row are
+        /// retrieved properly.
+        /// </summary>
+        [Test]
+        public void testXmlGetAttributes()
+        {
+            testActionWithXmlTextReader(reader =>
+            {
+                reader.Read();
+
+                var attributes = reader.GetAttributes()
+                    .ToDictionary(colval => colval.ColName, colval => colval.Value);
+
+                Assert.AreEqual(3, attributes.Count);
+                Assert.AreEqual("1", attributes["Atrib1"]);
+                Assert.AreEqual("2", attributes["Atrib2"]);
+                Assert.AreEqual("3", attributes["Atrib3"]);
+            });
+        }
     }
-
-    /// <summary>
-    /// Tests that the names and values of the columns in a row are
-    /// retrieved properly.
-    /// </summary>
-    [Test]
-    public void testXmlGetAttributes() {
-      testActionWithXmlTextReader(reader => {
-        reader.Read();
-
-        var attributes = reader.GetAttributes()
-            .ToDictionary(colval => colval.ColName, colval => colval.Value);
-
-        Assert.AreEqual(3, attributes.Count);
-        Assert.AreEqual("1", attributes["Atrib1"]);
-        Assert.AreEqual("2", attributes["Atrib2"]);
-        Assert.AreEqual("3", attributes["Atrib3"]);
-      });
-    }
-  }
 }

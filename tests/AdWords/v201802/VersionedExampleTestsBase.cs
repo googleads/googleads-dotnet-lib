@@ -12,22 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Tests.v201802 {
-
-  /// <summary>
-  /// Base class for code examples that adds version-specific features.
-  /// </summary>
-  internal class VersionedExampleTestsBase : ExampleTestsBase {
-
+namespace Google.Api.Ads.AdWords.Tests.v201802
+{
     /// <summary>
-    /// Test utilities instance for support functionality when running tests.
+    /// Base class for code examples that adds version-specific features.
     /// </summary>
-    protected TestUtils utils = new TestUtils();
+    internal class VersionedExampleTestsBase : ExampleTestsBase
+    {
+        /// <summary>
+        /// Test utilities instance for support functionality when running tests.
+        /// </summary>
+        protected TestUtils utils = new TestUtils();
 
-    /// <summary>
-    /// Default public constructor.
-    /// </summary>
-    public VersionedExampleTestsBase() : base() {
+        /// <summary>
+        /// Default public constructor.
+        /// </summary>
+        public VersionedExampleTestsBase() : base()
+        {
+        }
     }
-  }
 }

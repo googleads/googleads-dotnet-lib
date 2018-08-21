@@ -17,78 +17,73 @@ using NUnit.Framework;
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201802;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201802;
 
-namespace Google.Api.Ads.AdWords.Tests.v201802 {
-
-  /// <summary>
-  /// Test cases for all the code examples under v201802\Miscellaneous.
-  /// </summary>
-  internal class MiscellaneousTest : VersionedExampleTestsBase {
-
+namespace Google.Api.Ads.AdWords.Tests.v201802
+{
     /// <summary>
-    /// Inits this instance.
+    /// Test cases for all the code examples under v201802\Miscellaneous.
     /// </summary>
-    [SetUp]
-    public void Init() {
-    }
+    internal class MiscellaneousTest : VersionedExampleTestsBase
+    {
+        /// <summary>
+        /// Inits this instance.
+        /// </summary>
+        [SetUp]
+        public void Init()
+        {
+        }
 
-    /// <summary>
-    /// Tests the GetAllVideosAndImages VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestGetAllVideosAndImagesVBExample() {
-      RunExample(delegate () {
-        new VBExamples.GetAllVideosAndImages().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the GetAllVideosAndImages VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestGetAllVideosAndImagesVBExample()
+        {
+            RunExample(delegate() { new VBExamples.GetAllVideosAndImages().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the GetAllVideosAndImages C# code example.
-    /// </summary>
-    [Test]
-    public void TestGetAllVideosAndImagesCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.GetAllVideosAndImages().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the GetAllVideosAndImages C# code example.
+        /// </summary>
+        [Test]
+        public void TestGetAllVideosAndImagesCSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.GetAllVideosAndImages().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the UploadImage VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestUploadImageVBExample() {
-      RunExample(delegate () {
-        new VBExamples.UploadImage().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the UploadImage VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestUploadImageVBExample()
+        {
+            RunExample(delegate() { new VBExamples.UploadImage().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the UploadImage C# code example.
-    /// </summary>
-    [Test]
-    public void TestUploadImageCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.UploadImage().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the UploadImage C# code example.
+        /// </summary>
+        [Test]
+        public void TestUploadImageCSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.UploadImage().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the UploadHtml5 VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestUploadHtml5VBExample() {
-      RunExample(delegate () {
-        new VBExamples.UploadMediaBundle().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the UploadHtml5 VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestUploadHtml5VBExample()
+        {
+            RunExample(delegate() { new VBExamples.UploadMediaBundle().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the UploadHtml5 C# code example.
-    /// </summary>
-    [Test]
-    public void TestUploadHtml5CSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.UploadMediaBundle().Run(user);
-      });
+        /// <summary>
+        /// Tests the UploadHtml5 C# code example.
+        /// </summary>
+        [Test]
+        public void TestUploadHtml5CSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.UploadMediaBundle().Run(user); });
+        }
     }
-  }
 }

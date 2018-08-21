@@ -17,78 +17,98 @@ using Google.Api.Ads.AdWords.v201802;
 
 using System;
 
-namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
-
-  /// <summary>
-  /// This code example illustrates how to retrieve all carriers and languages
-  /// available for targeting.
-  /// </summary>
-  public class GetTargetableLanguagesAndCarriers : ExampleBase {
-
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Main method, to run this code example as a standalone application.
+    /// This code example illustrates how to retrieve all carriers and languages
+    /// available for targeting.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      GetTargetableLanguagesAndCarriers codeExample = new GetTargetableLanguagesAndCarriers();
-      Console.WriteLine(codeExample.Description);
-      try {
-        codeExample.Run(new AdWordsUser());
-      } catch (Exception e) {
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e));
-      }
-    }
-
-    /// <summary>
-    /// Returns a description about the code example.
-    /// </summary>
-    public override string Description {
-      get {
-        return "This code example illustrates how to retrieve all carriers and languages " +
-            "available for targeting.";
-      }
-    }
-
-    /// <summary>
-    /// Runs the code example.
-    /// </summary>
-    /// <param name="user">The AdWords user.</param>
-    public void Run(AdWordsUser user) {
-      using (ConstantDataService constantDataService = (ConstantDataService) user.GetService(
-          AdWordsService.v201802.ConstantDataService)) {
-
-        try {
-          // Get all carriers.
-          Carrier[] carriers = constantDataService.getCarrierCriterion();
-
-          // Display the results.
-          if (carriers != null) {
-            foreach (Carrier carrier in carriers) {
-              Console.WriteLine("Carrier name is '{0}', ID is {1} and country code is '{2}'.",
-                  carrier.name, carrier.id, carrier.countryCode);
+    public class GetTargetableLanguagesAndCarriers : ExampleBase
+    {
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        /// <param name="args">The command line arguments.</param>
+        public static void Main(string[] args)
+        {
+            GetTargetableLanguagesAndCarriers codeExample = new GetTargetableLanguagesAndCarriers();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                codeExample.Run(new AdWordsUser());
             }
-          } else {
-            Console.WriteLine("No carriers were retrieved.");
-          }
-
-          // Get all languages.
-          Language[] languages = constantDataService.getLanguageCriterion();
-
-          // Display the results.
-          if (languages != null) {
-            foreach (Language language in languages) {
-              Console.WriteLine("Language name is '{0}', ID is {1} and code is '{2}'.",
-                  language.name, language.id, language.code);
+            catch (Exception e)
+            {
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                    ExampleUtilities.FormatException(e));
             }
-          } else {
-            Console.WriteLine("No languages were found.");
-          }
-        } catch (Exception e) {
-          throw new System.ApplicationException("Failed to get targetable carriers and languages.",
-              e);
         }
-      }
+
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example illustrates how to retrieve all carriers and languages " +
+                    "available for targeting.";
+            }
+        }
+
+        /// <summary>
+        /// Runs the code example.
+        /// </summary>
+        /// <param name="user">The AdWords user.</param>
+        public void Run(AdWordsUser user)
+        {
+            using (ConstantDataService constantDataService =
+                (ConstantDataService) user.GetService(AdWordsService.v201802.ConstantDataService))
+            {
+                try
+                {
+                    // Get all carriers.
+                    Carrier[] carriers = constantDataService.getCarrierCriterion();
+
+                    // Display the results.
+                    if (carriers != null)
+                    {
+                        foreach (Carrier carrier in carriers)
+                        {
+                            Console.WriteLine(
+                                "Carrier name is '{0}', ID is {1} and country code is '{2}'.",
+                                carrier.name, carrier.id, carrier.countryCode);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No carriers were retrieved.");
+                    }
+
+                    // Get all languages.
+                    Language[] languages = constantDataService.getLanguageCriterion();
+
+                    // Display the results.
+                    if (languages != null)
+                    {
+                        foreach (Language language in languages)
+                        {
+                            Console.WriteLine(
+                                "Language name is '{0}', ID is {1} and code is '{2}'.",
+                                language.name, language.id, language.code);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No languages were found.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw new System.ApplicationException(
+                        "Failed to get targetable carriers and languages.", e);
+                }
+            }
+        }
     }
-  }
 }

@@ -18,218 +18,274 @@ using Google.Api.Ads.AdWords.v201802;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
-
-  /// <summary>
-  /// This code example demonstrates how to find and remove shared sets and
-  /// shared set criteria.
-  /// </summary>
-  public class FindAndRemoveCriteriaFromSharedSet : ExampleBase {
-
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Returns a description about the code example.
+    /// This code example demonstrates how to find and remove shared sets and
+    /// shared set criteria.
     /// </summary>
-    public override string Description {
-      get {
-        return "This code example demonstrates how to find and remove shared sets and shared " +
-            "set criteria.";
-      }
-    }
-
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      FindAndRemoveCriteriaFromSharedSet codeExample = new FindAndRemoveCriteriaFromSharedSet();
-      Console.WriteLine(codeExample.Description);
-      try {
-        long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
-        codeExample.Run(new AdWordsUser(), campaignId);
-      } catch (Exception e) {
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e));
-      }
-    }
-
-    /// <summary>
-    /// Runs the code example.
-    /// </summary>
-    /// <param name="user">The AdWords user.</param>
-    /// <param name="campaignId">Id of the campaign from which items shared
-    /// criteria are removed.</param>
-    public void Run(AdWordsUser user, long campaignId) {
-      // Get the list of shared sets that are attached to the campaign.
-      List<string> sharedSetIds = GetSharedSetIds(user, campaignId);
-
-      // Get the shared criteria in those shared sets.
-      List<SharedCriterion> sharedCriteria = GetSharedCriteria(user, sharedSetIds);
-
-      // Remove the shared criteria from the shared sets.
-      RemoveSharedCriteria(user, sharedCriteria);
-    }
-
-    /// <summary>
-    /// Gets the shared set IDs associated with a campaign.
-    /// </summary>
-    /// <param name="user">The user that owns the campaign.</param>
-    /// <param name="campaignId">The campaign identifier.</param>
-    /// <returns>The list of shared set IDs associated with the campaign.</returns>
-    private List<string> GetSharedSetIds(AdWordsUser user, long campaignId) {
-      using (CampaignSharedSetService campaignSharedSetService =
-          (CampaignSharedSetService) user.GetService(
-              AdWordsService.v201802.CampaignSharedSetService)) {
-
-        Selector selector = new Selector() {
-          fields = new string[] {
-          CampaignSharedSet.Fields.SharedSetId,
-          CampaignSharedSet.Fields.CampaignId,
-          CampaignSharedSet.Fields.SharedSetName,
-          CampaignSharedSet.Fields.SharedSetType
-        },
-          predicates = new Predicate[] {
-          Predicate.Equals(CampaignSharedSet.Fields.CampaignId, campaignId),
-          Predicate.In(CampaignSharedSet.Fields.SharedSetType,
-              new string[] { SharedSetType.NEGATIVE_KEYWORDS.ToString() }),
-        },
-          paging = Paging.Default,
-        };
-
-        List<string> sharedSetIds = new List<string>();
-        CampaignSharedSetPage page = new CampaignSharedSetPage();
-
-        try {
-          do {
-            // Get the campaigns.
-            page = campaignSharedSetService.get(selector);
-
-            // Display the results.
-            if (page != null && page.entries != null) {
-              int i = selector.paging.startIndex;
-              foreach (CampaignSharedSet campaignSharedSet in page.entries) {
-                sharedSetIds.Add(campaignSharedSet.sharedSetId.ToString());
-                Console.WriteLine("{0}) Campaign shared set ID {1} and name '{2}' found for " +
-                    "campaign ID {3}.\n", i + 1, campaignSharedSet.sharedSetId,
-                    campaignSharedSet.sharedSetName, campaignSharedSet.campaignId);
-                i++;
-              }
+    public class FindAndRemoveCriteriaFromSharedSet : ExampleBase
+    {
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example demonstrates how to find and remove shared sets and " +
+                    "shared set criteria.";
             }
-            selector.paging.IncreaseOffset();
-          } while (selector.paging.startIndex < page.totalNumEntries);
-          return sharedSetIds;
-        } catch (Exception e) {
-          throw new Exception("Failed to get shared set ids for campaign.", e);
         }
-      }
-    }
 
-    /// <summary>
-    /// Gets the shared criteria in a shared set.
-    /// </summary>
-    /// <param name="user">The user that owns the shared set.</param>
-    /// <param name="sharedSetIds">The shared criteria IDs.</param>
-    /// <returns>The list of shared criteria.</returns>
-    private List<SharedCriterion> GetSharedCriteria(AdWordsUser user,
-        List<string> sharedSetIds) {
-      using (SharedCriterionService sharedCriterionService =
-          (SharedCriterionService) user.GetService(
-              AdWordsService.v201802.SharedCriterionService)) {
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        /// <param name="args">The command line arguments.</param>
+        public static void Main(string[] args)
+        {
+            FindAndRemoveCriteriaFromSharedSet codeExample =
+                new FindAndRemoveCriteriaFromSharedSet();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+                codeExample.Run(new AdWordsUser(), campaignId);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                    ExampleUtilities.FormatException(e));
+            }
+        }
 
-        Selector selector = new Selector() {
-          fields = new string[] {
-            SharedSet.Fields.SharedSetId, Criterion.Fields.Id,
-            Keyword.Fields.KeywordText, Keyword.Fields.KeywordMatchType,
-            Placement.Fields.PlacementUrl
-        },
-          predicates = new Predicate[] {
-            Predicate.In(SharedSet.Fields.SharedSetId, sharedSetIds)
-        },
-          paging = Paging.Default
-        };
+        /// <summary>
+        /// Runs the code example.
+        /// </summary>
+        /// <param name="user">The AdWords user.</param>
+        /// <param name="campaignId">Id of the campaign from which items shared
+        /// criteria are removed.</param>
+        public void Run(AdWordsUser user, long campaignId)
+        {
+            // Get the list of shared sets that are attached to the campaign.
+            List<string> sharedSetIds = GetSharedSetIds(user, campaignId);
 
-        List<SharedCriterion> sharedCriteria = new List<SharedCriterion>();
-        SharedCriterionPage page = new SharedCriterionPage();
+            // Get the shared criteria in those shared sets.
+            List<SharedCriterion> sharedCriteria = GetSharedCriteria(user, sharedSetIds);
 
-        try {
-          do {
-            // Get the campaigns.
-            page = sharedCriterionService.get(selector);
+            // Remove the shared criteria from the shared sets.
+            RemoveSharedCriteria(user, sharedCriteria);
+        }
 
-            // Display the results.
-            if (page != null && page.entries != null) {
-              int i = selector.paging.startIndex;
-              foreach (SharedCriterion sharedCriterion in page.entries) {
-                switch (sharedCriterion.criterion.type) {
-                  case CriterionType.KEYWORD:
-                    Keyword keyword = (Keyword) sharedCriterion.criterion;
-                    Console.WriteLine("{0}) Shared negative keyword with ID {1} and text '{2}' " +
-                        "was found.", i + 1, keyword.id, keyword.text);
-                    break;
+        /// <summary>
+        /// Gets the shared set IDs associated with a campaign.
+        /// </summary>
+        /// <param name="user">The user that owns the campaign.</param>
+        /// <param name="campaignId">The campaign identifier.</param>
+        /// <returns>The list of shared set IDs associated with the campaign.</returns>
+        private List<string> GetSharedSetIds(AdWordsUser user, long campaignId)
+        {
+            using (CampaignSharedSetService campaignSharedSetService =
+                (CampaignSharedSetService) user.GetService(AdWordsService.v201802
+                    .CampaignSharedSetService))
+            {
+                Selector selector = new Selector()
+                {
+                    fields = new string[]
+                    {
+                        CampaignSharedSet.Fields.SharedSetId,
+                        CampaignSharedSet.Fields.CampaignId,
+                        CampaignSharedSet.Fields.SharedSetName,
+                        CampaignSharedSet.Fields.SharedSetType
+                    },
+                    predicates = new Predicate[]
+                    {
+                        Predicate.Equals(CampaignSharedSet.Fields.CampaignId, campaignId),
+                        Predicate.In(CampaignSharedSet.Fields.SharedSetType, new string[]
+                        {
+                            SharedSetType.NEGATIVE_KEYWORDS.ToString()
+                        }),
+                    },
+                    paging = Paging.Default,
+                };
 
-                  case CriterionType.PLACEMENT:
-                    Placement placement = (Placement) sharedCriterion.criterion;
-                    Console.WriteLine("{0}) Shared negative placement with ID {1} and URL '{2}' " +
-                        "was found.", i + 1, placement.id, placement.url);
-                    break;
+                List<string> sharedSetIds = new List<string>();
+                CampaignSharedSetPage page = new CampaignSharedSetPage();
 
-                  default:
-                    Console.WriteLine("{0}) Shared criteria with ID {1} was found.",
-                        i + 1, sharedCriterion.criterion.id);
-                    break;
+                try
+                {
+                    do
+                    {
+                        // Get the campaigns.
+                        page = campaignSharedSetService.get(selector);
+
+                        // Display the results.
+                        if (page != null && page.entries != null)
+                        {
+                            int i = selector.paging.startIndex;
+                            foreach (CampaignSharedSet campaignSharedSet in page.entries)
+                            {
+                                sharedSetIds.Add(campaignSharedSet.sharedSetId.ToString());
+                                Console.WriteLine(
+                                    "{0}) Campaign shared set ID {1} and name '{2}' found for " +
+                                    "campaign ID {3}.\n", i + 1, campaignSharedSet.sharedSetId,
+                                    campaignSharedSet.sharedSetName, campaignSharedSet.campaignId);
+                                i++;
+                            }
+                        }
+
+                        selector.paging.IncreaseOffset();
+                    } while (selector.paging.startIndex < page.totalNumEntries);
+
+                    return sharedSetIds;
                 }
-                i++;
-                sharedCriteria.Add(sharedCriterion);
-              }
+                catch (Exception e)
+                {
+                    throw new Exception("Failed to get shared set ids for campaign.", e);
+                }
             }
-            selector.paging.IncreaseOffset();
-          } while (selector.paging.startIndex < page.totalNumEntries);
-          return sharedCriteria;
-        } catch (Exception e) {
-          throw new Exception("Failed to get shared criteria.", e);
         }
-      }
-    }
 
-    /// <summary>
-    /// Removes a list of shared criteria.
-    /// </summary>
-    /// <param name="user">The user that owns the shared criteria.</param>
-    /// <param name="sharedCriteria">The list shared criteria to be removed.</param>
-    private void RemoveSharedCriteria(AdWordsUser user, List<SharedCriterion> sharedCriteria) {
-      if (sharedCriteria.Count == 0) {
-        Console.WriteLine("No shared criteria to remove.");
-        return;
-      }
+        /// <summary>
+        /// Gets the shared criteria in a shared set.
+        /// </summary>
+        /// <param name="user">The user that owns the shared set.</param>
+        /// <param name="sharedSetIds">The shared criteria IDs.</param>
+        /// <returns>The list of shared criteria.</returns>
+        private List<SharedCriterion> GetSharedCriteria(AdWordsUser user, List<string> sharedSetIds)
+        {
+            using (SharedCriterionService sharedCriterionService =
+                (SharedCriterionService) user.GetService(AdWordsService.v201802
+                    .SharedCriterionService))
+            {
+                Selector selector = new Selector()
+                {
+                    fields = new string[]
+                    {
+                        SharedSet.Fields.SharedSetId,
+                        Criterion.Fields.Id,
+                        Keyword.Fields.KeywordText,
+                        Keyword.Fields.KeywordMatchType,
+                        Placement.Fields.PlacementUrl
+                    },
+                    predicates = new Predicate[]
+                    {
+                        Predicate.In(SharedSet.Fields.SharedSetId, sharedSetIds)
+                    },
+                    paging = Paging.Default
+                };
 
-      using (SharedCriterionService sharedCriterionService =
-          (SharedCriterionService) user.GetService(
-              AdWordsService.v201802.SharedCriterionService)) {
+                List<SharedCriterion> sharedCriteria = new List<SharedCriterion>();
+                SharedCriterionPage page = new SharedCriterionPage();
 
-        List<SharedCriterionOperation> operations = new List<SharedCriterionOperation>();
+                try
+                {
+                    do
+                    {
+                        // Get the campaigns.
+                        page = sharedCriterionService.get(selector);
 
-        foreach (SharedCriterion sharedCriterion in sharedCriteria) {
-          operations.Add(new SharedCriterionOperation() {
-            @operator = Operator.REMOVE,
-            operand = new SharedCriterion() {
-              sharedSetId = sharedCriterion.sharedSetId,
-              criterion = new Criterion() {
-                id = sharedCriterion.criterion.id
-              }
+                        // Display the results.
+                        if (page != null && page.entries != null)
+                        {
+                            int i = selector.paging.startIndex;
+                            foreach (SharedCriterion sharedCriterion in page.entries)
+                            {
+                                switch (sharedCriterion.criterion.type)
+                                {
+                                    case CriterionType.KEYWORD:
+                                        Keyword keyword = (Keyword) sharedCriterion.criterion;
+                                        Console.WriteLine(
+                                            "{0}) Shared negative keyword with ID {1} and " +
+                                            "text '{2}' was found.", i + 1, keyword.id,
+                                            keyword.text);
+                                        break;
+
+                                    case CriterionType.PLACEMENT:
+                                        Placement placement = (Placement) sharedCriterion.criterion;
+                                        Console.WriteLine(
+                                            "{0}) Shared negative placement with ID {1} and " +
+                                            "URL '{2}' was found.", i + 1, placement.id, 
+                                            placement.url);
+                                        break;
+
+                                    default:
+                                        Console.WriteLine(
+                                            "{0}) Shared criteria with ID {1} was found.", i + 1,
+                                            sharedCriterion.criterion.id);
+                                        break;
+                                }
+
+                                i++;
+                                sharedCriteria.Add(sharedCriterion);
+                            }
+                        }
+
+                        selector.paging.IncreaseOffset();
+                    } while (selector.paging.startIndex < page.totalNumEntries);
+
+                    return sharedCriteria;
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Failed to get shared criteria.", e);
+                }
             }
-          });
         }
-        try {
-          SharedCriterionReturnValue sharedCriterionReturnValue = sharedCriterionService.mutate(
-              operations.ToArray());
 
-          foreach (SharedCriterion removedCriterion in sharedCriterionReturnValue.value) {
-            Console.WriteLine("Shared criterion ID {0} was successfully removed from shared " +
-                "set ID {1}.", removedCriterion.criterion.id, removedCriterion.sharedSetId);
-          }
-        } catch (Exception e) {
-          throw new Exception("Failed to remove shared criteria.", e);
+        /// <summary>
+        /// Removes a list of shared criteria.
+        /// </summary>
+        /// <param name="user">The user that owns the shared criteria.</param>
+        /// <param name="sharedCriteria">The list shared criteria to be removed.</param>
+        private void RemoveSharedCriteria(AdWordsUser user, List<SharedCriterion> sharedCriteria)
+        {
+            if (sharedCriteria.Count == 0)
+            {
+                Console.WriteLine("No shared criteria to remove.");
+                return;
+            }
+
+            using (SharedCriterionService sharedCriterionService =
+                (SharedCriterionService) user.GetService(AdWordsService.v201802
+                    .SharedCriterionService))
+            {
+                List<SharedCriterionOperation> operations = new List<SharedCriterionOperation>();
+
+                foreach (SharedCriterion sharedCriterion in sharedCriteria)
+                {
+                    operations.Add(new SharedCriterionOperation()
+                    {
+                        @operator = Operator.REMOVE,
+                        operand = new SharedCriterion()
+                        {
+                            sharedSetId = sharedCriterion.sharedSetId,
+                            criterion = new Criterion()
+                            {
+                                id = sharedCriterion.criterion.id
+                            }
+                        }
+                    });
+                }
+
+                try
+                {
+                    SharedCriterionReturnValue sharedCriterionReturnValue =
+                        sharedCriterionService.mutate(operations.ToArray());
+
+                    foreach (SharedCriterion removedCriterion in sharedCriterionReturnValue.value)
+                    {
+                        Console.WriteLine(
+                            "Shared criterion ID {0} was successfully removed from shared " +
+                            "set ID {1}.", removedCriterion.criterion.id,
+                            removedCriterion.sharedSetId);
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Failed to remove shared criteria.", e);
+                }
+            }
         }
-      }
     }
-  }
 }

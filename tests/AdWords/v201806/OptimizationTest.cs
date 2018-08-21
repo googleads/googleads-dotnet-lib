@@ -19,104 +19,118 @@ using NUnit.Framework;
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201806;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201806;
 
-namespace Google.Api.Ads.AdWords.Tests.v201806 {
-
-  /// <summary>
-  /// Test cases for all the code examples under v201806\Optimization.
-  /// </summary>
-  internal class OptimizationTest : VersionedExampleTestsBase {
-    private long campaignId;
-    private long adGroupId;
-    private long keywordId;
-
+namespace Google.Api.Ads.AdWords.Tests.v201806
+{
     /// <summary>
-    /// Inits this instance.
+    /// Test cases for all the code examples under v201806\Optimization.
     /// </summary>
-    [SetUp]
-    public void Init() {
-      campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
-      adGroupId = utils.CreateAdGroup(user, campaignId);
-      keywordId = utils.CreateKeyword(user, adGroupId);
-    }
+    internal class OptimizationTest : VersionedExampleTestsBase
+    {
+        private long campaignId;
+        private long adGroupId;
+        private long keywordId;
 
-    /// <summary>
-    /// Tests the EstimateKeywordTraffic VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestEstimateKeywordTrafficVBExample() {
-      RunExample(delegate () {
-        new VBExamples.EstimateKeywordTraffic().Run(user);
-      });
-    }
+        /// <summary>
+        /// Inits this instance.
+        /// </summary>
+        [SetUp]
+        public void Init()
+        {
+            campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
+            adGroupId = utils.CreateAdGroup(user, campaignId);
+            keywordId = utils.CreateKeyword(user, adGroupId);
+        }
 
-    /// <summary>
-    /// Tests the EstimateKeywordTraffic C# code example.
-    /// </summary>
-    [Test]
-    public void TestEstimateKeywordTrafficCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.EstimateKeywordTraffic().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the EstimateKeywordTraffic VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestEstimateKeywordTrafficVBExample()
+        {
+            RunExample(delegate() { new VBExamples.EstimateKeywordTraffic().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the GetAdGroupBidSimulations VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestGetAdGroupBidSimulationsVBExample() {
-      RunExample(delegate () {
-        new VBExamples.GetAdGroupBidSimulations().Run(user, adGroupId);
-      });
-    }
+        /// <summary>
+        /// Tests the EstimateKeywordTraffic C# code example.
+        /// </summary>
+        [Test]
+        public void TestEstimateKeywordTrafficCSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.EstimateKeywordTraffic().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the GetAdGroupBidSimulations C# code example.
-    /// </summary>
-    [Test]
-    public void TestGetAdGroupBidSimulationsCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.GetAdGroupBidSimulations().Run(user, adGroupId);
-      });
-    }
+        /// <summary>
+        /// Tests the GetAdGroupBidSimulations VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestGetAdGroupBidSimulationsVBExample()
+        {
+            RunExample(delegate()
+            {
+                new VBExamples.GetAdGroupBidSimulations().Run(user, adGroupId);
+            });
+        }
 
-    /// <summary>
-    /// Tests the GetKeywordBidSimulations VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestGetKeywordBidSimulationsVBExample() {
-      RunExample(delegate () {
-        new VBExamples.GetKeywordBidSimulations().Run(user, adGroupId, keywordId);
-      });
-    }
+        /// <summary>
+        /// Tests the GetAdGroupBidSimulations C# code example.
+        /// </summary>
+        [Test]
+        public void TestGetAdGroupBidSimulationsCSharpExample()
+        {
+            RunExample(delegate()
+            {
+                new CSharpExamples.GetAdGroupBidSimulations().Run(user, adGroupId);
+            });
+        }
 
-    /// <summary>
-    /// Tests the GetKeywordBidSimulations C# code example.
-    /// </summary>
-    [Test]
-    public void TestGetKeywordBidSimulationsCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.GetKeywordBidSimulations().Run(user, adGroupId, keywordId);
-      });
-    }
+        /// <summary>
+        /// Tests the GetKeywordBidSimulations VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestGetKeywordBidSimulationsVBExample()
+        {
+            RunExample(delegate()
+            {
+                new VBExamples.GetKeywordBidSimulations().Run(user, adGroupId, keywordId);
+            });
+        }
 
-    /// <summary>
-    /// Tests the GetCampaignCriterionBidModifierSimulations VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestGetCampaignCriterionBidModifierSimulationsVBExample() {
-      RunExample(delegate () {
-        new VBExamples.GetCampaignCriterionBidModifierSimulations().Run(user, campaignId);
-      });
-    }
+        /// <summary>
+        /// Tests the GetKeywordBidSimulations C# code example.
+        /// </summary>
+        [Test]
+        public void TestGetKeywordBidSimulationsCSharpExample()
+        {
+            RunExample(delegate()
+            {
+                new CSharpExamples.GetKeywordBidSimulations().Run(user, adGroupId, keywordId);
+            });
+        }
 
-    /// <summary>
-    /// Tests the GetCampaignCriterionBidModifierSimulations C# code example.
-    /// </summary>
-    [Test]
-    public void TestGetCampaignCriterionBidModifierSimulationsCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.GetCampaignCriterionBidModifierSimulations().Run(user, campaignId);
-      });
+        /// <summary>
+        /// Tests the GetCampaignCriterionBidModifierSimulations VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestGetCampaignCriterionBidModifierSimulationsVBExample()
+        {
+            RunExample(delegate()
+            {
+                new VBExamples.GetCampaignCriterionBidModifierSimulations().Run(user,
+                    campaignId);
+            });
+        }
+
+        /// <summary>
+        /// Tests the GetCampaignCriterionBidModifierSimulations C# code example.
+        /// </summary>
+        [Test]
+        public void TestGetCampaignCriterionBidModifierSimulationsCSharpExample()
+        {
+            RunExample(delegate()
+            {
+                new CSharpExamples.GetCampaignCriterionBidModifierSimulations().Run(user,
+                    campaignId);
+            });
+        }
     }
-  }
 }

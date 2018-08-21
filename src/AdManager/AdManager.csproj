@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <!-- nupkg properties -->
+   <PropertyGroup>
+    <Title>Google's Ad Manager API Dotnet Client Library</Title>
+    <PackageId>Google.Dfp</PackageId>
+    <Version>24.0.0</Version>
+    <Description>This library provides you with functionality to access the Google's Ad Manager API.</Description>
+    <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
+    <PackageTags>DFP Google</PackageTags>
+    <Copyright>Copyright 2011, Google Inc. All Rights Reserved.</Copyright>
+    <Authors>https://github.com/AnashOommen, https://github.com/ChristopherSeeley, https://github.com/jimper</Authors>
+    <PackageIconUrl>https://www.gstatic.com/images/branding/product/1x/google_developers_64dp.png</PackageIconUrl>
+    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/googleads/googleads-dotnet-lib</PackageProjectUrl>
+    <Company>Google</Company>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/googleads/googleads-dotnet-lib</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  <!-- build properties -->
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
+    <AssemblyName>Google.AdManager</AssemblyName>
+    <RootNamespace>Google.Api.Ads.AdManager</RootNamespace>
+    <PublicSign Condition="'$(OS)' != 'Windows_NT'">true</PublicSign>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Common\AdsApi.snk</AssemblyOriginatorKeyFile>
+    <DebugType>pdbonly</DebugType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="NodaTime" Version="2.2.0" />
+    <PackageReference Include="Google.Ads.Common" Version="9.4.0" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.4.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.config.transform" PackagePath="content" />
+    <Content Include="web.config.transform" PackagePath="content" />
+  </ItemGroup>
+  <Target Name="CopyAppConfig" BeforeTargets="pack;Build">
+    <Copy SourceFiles="App.config" DestinationFiles="app.config.transform" />
+    <Copy SourceFiles="App.config" DestinationFiles="web.config.transform" />
+  </Target>
+  <!-- Exclude Properties until all solution projects are migrated to Core format -->
+  <ItemGroup>
+    <Compile Remove="Properties\**" />
+    <Content Remove="Properties\**" />
+    <None Remove="Properties\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AdManagerErrorMessages.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AdManagerErrorMessages.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="AdManagerErrorMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AdManagerErrorMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup Condition="'$(TargetFramework)'=='net452'">
+    <DefineConstants>NET452</DefineConstants>
+  </PropertyGroup>
+  <Target Name="StrongName" AfterTargets="Build" Condition="'$(OS)' != 'Windows_NT' AND $(Configuration) == 'Release' AND '$(TargetFramework)' != ''">
+    <Exec Command="sn -R $(OutputPath)$(AssemblyName).dll $(ProjectDir)../Common/AdsApi.snk" />
+  </Target>
+</Project>

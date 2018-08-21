@@ -14,45 +14,51 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.Common.Lib;
+
 using NUnit.Framework;
+
 using System;
 
-namespace Google.Api.Ads.AdWords.Tests.Lib {
-
-  /// <summary>
-  /// Tests for the AdWordsServiceFactory
-  /// </summary>
-  [TestFixture]
-  internal class AdWordsServiceFactoryTests {
-    private const string TEST_API_VERSION = "v201806";
-    private const string TEST_SERVICE = "MediaService";
-    private const string TEST_GROUP_NAME = "cm";
-
-    private AdWordsServiceFactory serviceFactory;
-    private ServiceSignature serviceSignature;
-    private Uri testUri;
-
+namespace Google.Api.Ads.AdWords.Tests.Lib
+{
     /// <summary>
-    /// Default public constructor.
+    /// Tests for the AdWordsServiceFactory
     /// </summary>
-    public AdWordsServiceFactoryTests() {
-    }
+    [TestFixture]
+    internal class AdWordsServiceFactoryTests
+    {
+        private const string TEST_API_VERSION = "v201806";
+        private const string TEST_SERVICE = "MediaService";
+        private const string TEST_GROUP_NAME = "cm";
 
-    [SetUp]
-    public void Init() {
-      serviceFactory = new AdWordsServiceFactory();
-      serviceFactory.Config = new AdWordsAppConfig();
-      testUri = new Uri("https://google.com");
-    }
+        private AdWordsServiceFactory serviceFactory;
+        private ServiceSignature serviceSignature;
+        private Uri testUri;
 
-    /// <summary>
-    /// Test creating a service using OAuth2.
-    /// </summary>
-    [Test]
-    public void TestCreateService() {
-      serviceSignature = new AdWordsServiceSignature(TEST_API_VERSION,
-          TEST_SERVICE, TEST_GROUP_NAME);
-      serviceFactory.CreateService(serviceSignature, new AdWordsUser(), testUri);
+        /// <summary>
+        /// Default public constructor.
+        /// </summary>
+        public AdWordsServiceFactoryTests()
+        {
+        }
+
+        [SetUp]
+        public void Init()
+        {
+            serviceFactory = new AdWordsServiceFactory();
+            serviceFactory.Config = new AdWordsAppConfig();
+            testUri = new Uri("https://google.com");
+        }
+
+        /// <summary>
+        /// Test creating a service using OAuth2.
+        /// </summary>
+        [Test]
+        public void TestCreateService()
+        {
+            serviceSignature =
+                new AdWordsServiceSignature(TEST_API_VERSION, TEST_SERVICE, TEST_GROUP_NAME);
+            serviceFactory.CreateService(serviceSignature, new AdWordsUser(), testUri);
+        }
     }
-  }
 }

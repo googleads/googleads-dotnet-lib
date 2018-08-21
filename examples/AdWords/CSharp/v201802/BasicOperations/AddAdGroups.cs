@@ -18,137 +18,170 @@ using Google.Api.Ads.AdWords.v201802;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
-
-  /// <summary>
-  /// This code example illustrates how to create ad groups. To create
-  /// campaigns, run AddCampaigns.cs.
-  /// </summary>
-  public class AddAdGroups : ExampleBase {
-
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Number of items being added / updated in this code example.
+    /// This code example illustrates how to create ad groups. To create
+    /// campaigns, run AddCampaigns.cs.
     /// </summary>
-    private const int NUM_ITEMS = 5;
+    public class AddAdGroups : ExampleBase
+    {
+        /// <summary>
+        /// Number of items being added / updated in this code example.
+        /// </summary>
+        private const int NUM_ITEMS = 5;
 
-    /// <summary>
-    /// Main method, to run this code example as a standalone application.
-    /// </summary>
-    /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      AddAdGroups codeExample = new AddAdGroups();
-      Console.WriteLine(codeExample.Description);
-      try {
-        long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
-        codeExample.Run(new AdWordsUser(), campaignId);
-      } catch (Exception e) {
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e));
-      }
-    }
-
-    /// <summary>
-    /// Returns a description about the code example.
-    /// </summary>
-    public override string Description {
-      get {
-        return "This code example illustrates how to create ad groups. To create campaigns, " +
-            "run AddCampaigns.cs";
-      }
-    }
-
-    /// <summary>
-    /// Runs the code example.
-    /// </summary>
-    /// <param name="user">The AdWords user.</param>
-    /// <param name="campaignId">Id of the campaign to which ad groups are
-    /// added.</param>
-    public void Run(AdWordsUser user, long campaignId) {
-      using (AdGroupService adGroupService =
-          (AdGroupService) user.GetService(AdWordsService.v201802.AdGroupService)) {
-        List<AdGroupOperation> operations = new List<AdGroupOperation>();
-
-        for (int i = 0; i < NUM_ITEMS; i++) {
-          // Create the ad group.
-          AdGroup adGroup = new AdGroup {
-            name = string.Format("Earth to Mars Cruises #{0}",
-                ExampleUtilities.GetRandomString()),
-            status = AdGroupStatus.ENABLED,
-            campaignId = campaignId
-          };
-
-          // Set the ad group bids.
-          BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
-
-          CpcBid cpcBid = new CpcBid {
-            bid = new Money {
-              microAmount = 10000000
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        /// <param name="args">The command line arguments.</param>
+        public static void Main(string[] args)
+        {
+            AddAdGroups codeExample = new AddAdGroups();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+                codeExample.Run(new AdWordsUser(), campaignId);
             }
-          };
-
-          biddingConfig.bids = new Bids[] { cpcBid };
-
-          adGroup.biddingStrategyConfiguration = biddingConfig;
-
-          // Optional: Set targeting restrictions.
-          // Depending on the criterionTypeGroup value, most TargetingSettingDetail
-          // only affect Display campaigns. However, the USER_INTEREST_AND_LIST value
-          // works for RLSA campaigns - Search campaigns targeting using a
-          // remarketing list.
-          TargetingSetting targetingSetting = new TargetingSetting();
-
-          // Restricting to serve ads that match your ad group placements.
-          // This is equivalent to choosing "Target and bid" in the UI.
-          TargetingSettingDetail placementDetail = new TargetingSettingDetail {
-            criterionTypeGroup = CriterionTypeGroup.PLACEMENT,
-            targetAll = false
-          };
-
-          // Using your ad group verticals only for bidding. This is equivalent
-          // to choosing "Bid only" in the UI.
-          TargetingSettingDetail verticalDetail = new TargetingSettingDetail {
-            criterionTypeGroup = CriterionTypeGroup.VERTICAL,
-            targetAll = true
-          };
-
-          targetingSetting.details = new TargetingSettingDetail[] {
-            placementDetail, verticalDetail
-          };
-
-          adGroup.settings = new Setting[] { targetingSetting };
-
-          // Set the rotation mode.
-          AdGroupAdRotationMode rotationMode = new AdGroupAdRotationMode {
-            adRotationMode = AdRotationMode.OPTIMIZE
-          };
-          adGroup.adGroupAdRotationMode = rotationMode;
-
-          // Create the operation.
-          AdGroupOperation operation = new AdGroupOperation {
-            @operator = Operator.ADD,
-            operand = adGroup
-          };
-
-          operations.Add(operation);
+            catch (Exception e)
+            {
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                    ExampleUtilities.FormatException(e));
+            }
         }
 
-        try {
-          // Create the ad group.
-          AdGroupReturnValue retVal = adGroupService.mutate(operations.ToArray());
-
-          // Display the results.
-          if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-            foreach (AdGroup newAdGroup in retVal.value) {
-              Console.WriteLine("Ad group with id = '{0}' and name = '{1}' was created.",
-                  newAdGroup.id, newAdGroup.name);
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return
+                    "This code example illustrates how to create ad groups. To create campaigns, " +
+                    "run AddCampaigns.cs";
             }
-          } else {
-            Console.WriteLine("No ad groups were created.");
-          }
-        } catch (Exception e) {
-          throw new System.ApplicationException("Failed to create ad groups.", e);
         }
-      }
+
+        /// <summary>
+        /// Runs the code example.
+        /// </summary>
+        /// <param name="user">The AdWords user.</param>
+        /// <param name="campaignId">Id of the campaign to which ad groups are
+        /// added.</param>
+        public void Run(AdWordsUser user, long campaignId)
+        {
+            using (AdGroupService adGroupService =
+                (AdGroupService) user.GetService(AdWordsService.v201802.AdGroupService))
+            {
+                List<AdGroupOperation> operations = new List<AdGroupOperation>();
+
+                for (int i = 0; i < NUM_ITEMS; i++)
+                {
+                    // Create the ad group.
+                    AdGroup adGroup = new AdGroup
+                    {
+                        name = string.Format("Earth to Mars Cruises #{0}",
+                            ExampleUtilities.GetRandomString()),
+                        status = AdGroupStatus.ENABLED,
+                        campaignId = campaignId
+                    };
+
+                    // Set the ad group bids.
+                    BiddingStrategyConfiguration biddingConfig = new BiddingStrategyConfiguration();
+
+                    CpcBid cpcBid = new CpcBid
+                    {
+                        bid = new Money
+                        {
+                            microAmount = 10000000
+                        }
+                    };
+
+                    biddingConfig.bids = new Bids[]
+                    {
+                        cpcBid
+                    };
+
+                    adGroup.biddingStrategyConfiguration = biddingConfig;
+
+                    // Optional: Set targeting restrictions.
+                    // Depending on the criterionTypeGroup value, most TargetingSettingDetail
+                    // only affect Display campaigns. However, the USER_INTEREST_AND_LIST value
+                    // works for RLSA campaigns - Search campaigns targeting using a
+                    // remarketing list.
+                    TargetingSetting targetingSetting = new TargetingSetting();
+
+                    // Restricting to serve ads that match your ad group placements.
+                    // This is equivalent to choosing "Target and bid" in the UI.
+                    TargetingSettingDetail placementDetail = new TargetingSettingDetail
+                    {
+                        criterionTypeGroup = CriterionTypeGroup.PLACEMENT,
+                        targetAll = false
+                    };
+
+                    // Using your ad group verticals only for bidding. This is equivalent
+                    // to choosing "Bid only" in the UI.
+                    TargetingSettingDetail verticalDetail = new TargetingSettingDetail
+                    {
+                        criterionTypeGroup = CriterionTypeGroup.VERTICAL,
+                        targetAll = true
+                    };
+
+                    targetingSetting.details = new TargetingSettingDetail[]
+                    {
+                        placementDetail,
+                        verticalDetail
+                    };
+
+                    adGroup.settings = new Setting[]
+                    {
+                        targetingSetting
+                    };
+
+                    // Set the rotation mode.
+                    AdGroupAdRotationMode rotationMode = new AdGroupAdRotationMode
+                    {
+                        adRotationMode = AdRotationMode.OPTIMIZE
+                    };
+                    adGroup.adGroupAdRotationMode = rotationMode;
+
+                    // Create the operation.
+                    AdGroupOperation operation = new AdGroupOperation
+                    {
+                        @operator = Operator.ADD,
+                        operand = adGroup
+                    };
+
+                    operations.Add(operation);
+                }
+
+                try
+                {
+                    // Create the ad group.
+                    AdGroupReturnValue retVal = adGroupService.mutate(operations.ToArray());
+
+                    // Display the results.
+                    if (retVal != null && retVal.value != null && retVal.value.Length > 0)
+                    {
+                        foreach (AdGroup newAdGroup in retVal.value)
+                        {
+                            Console.WriteLine(
+                                "Ad group with id = '{0}' and name = '{1}' was created.",
+                                newAdGroup.id, newAdGroup.name);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No ad groups were created.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw new System.ApplicationException("Failed to create ad groups.", e);
+                }
+            }
+        }
     }
-  }
 }

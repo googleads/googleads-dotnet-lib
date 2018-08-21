@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ExampleRequest" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;soapenv:Header&gt;
+    &lt;ns1:RequestHeader xmlns:ns1="https://www.google.com/apis/ads/publisher/v201611" soapenv:mustUnderstand="0"&gt;&lt;ns1:networkCode&gt;TEST_NETWORK_CODE&lt;/ns1:networkCode&gt;
+      &lt;ns1:applicationName&gt;TEST_APP (AdManagerApi-DotNet/18.3.0, Common-DotNet/3.2.0, .NET CLR/4.0.30319.18444, gzip)&lt;/ns1:applicationName&gt;
+    &lt;/ns1:RequestHeader&gt;
+  &lt;/soapenv:Header&gt;
+  &lt;soapenv:Body&gt;
+    &lt;getCurrentNetwork xmlns="https://www.google.com/apis/ads/publisher/v201611" /&gt;
+  &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;</value>
+  </data>
+  <data name="ExampleResponseDetailsFailure" xml:space="preserve">
+    <value>-----------------BEGIN API CALL---------------------
+
+Request
+-------
+
+POST /
+TestRequestKey: TestRequestValue
+TimeStamp: Mon, 03 Nov 2014 12:25:30 GMT
+
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;soapenv:Header&gt;
+    &lt;ns1:RequestHeader xmlns:ns1="https://www.google.com/apis/ads/publisher/v201611" soapenv:mustUnderstand="0"&gt;
+      &lt;ns1:networkCode&gt;TEST_NETWORK_CODE&lt;/ns1:networkCode&gt;
+      &lt;ns1:applicationName&gt;TEST_APP (AdManagerApi-DotNet/18.3.0, Common-DotNet/3.2.0, .NET CLR/4.0.30319.18444, gzip)&lt;/ns1:applicationName&gt;
+    &lt;/ns1:RequestHeader&gt;
+  &lt;/soapenv:Header&gt;
+  &lt;soapenv:Body&gt;
+    &lt;getCurrentNetwork xmlns="https://www.google.com/apis/ads/publisher/v201611" /&gt;
+  &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+
+Response
+--------
+
+TestResponseKey: TestResponseValue
+TimeStamp: Mon, 03 Nov 2014 12:25:30 GMT
+
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;soap:Header&gt;
+    &lt;ResponseHeader xmlns="https://www.google.com/apis/ads/publisher/v201611"&gt;
+      &lt;requestId&gt;aac0b3c433f0e6049275716ddfb2c889&lt;/requestId&gt;
+      &lt;responseTime&gt;175&lt;/responseTime&gt;
+    &lt;/ResponseHeader&gt;
+  &lt;/soap:Header&gt;
+  &lt;soap:Body&gt;
+    &lt;soap:Fault&gt;
+      &lt;faultcode&gt;soap:Server&lt;/faultcode&gt;
+      &lt;faultstring&gt;[PublisherQueryLanguageContextError.UNEXECUTABLE @ Mapping requested for unknown identifer: notarealfield on table: LineItem with table scope: lineitem]&lt;/faultstring&gt;
+      &lt;detail&gt;
+        &lt;ApiExceptionFault xmlns="https://www.google.com/apis/ads/publisher/v201611"&gt;
+          &lt;message&gt;[PublisherQueryLanguageContextError.UNEXECUTABLE @ Mapping requested for unknown identifer: notarealfield on table: LineItem with table scope: lineitem]&lt;/message&gt;
+          &lt;errors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PublisherQueryLanguageContextError"&gt;
+            &lt;fieldPath&gt;Mapping requested for unknown identifer: notarealfield on table: LineItem with table scope: lineitem&lt;/fieldPath&gt;
+            &lt;trigger /&gt;
+            &lt;errorString&gt;PublisherQueryLanguageContextError.UNEXECUTABLE&lt;/errorString&gt;
+            &lt;reason&gt;UNEXECUTABLE&lt;/reason&gt;
+          &lt;/errors&gt;
+        &lt;/ApiExceptionFault&gt;
+      &lt;/detail&gt;
+    &lt;/soap:Fault&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+-----------------END API CALL-----------------------</value>
+  </data>
+  <data name="ExampleResponseDetailsSuccess" xml:space="preserve">
+    <value>-----------------BEGIN API CALL---------------------
+
+Request
+-------
+
+POST /
+TestRequestKey: TestRequestValue
+TimeStamp: Mon, 03 Nov 2014 12:25:30 GMT
+
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;soapenv:Header&gt;
+    &lt;ns1:RequestHeader xmlns:ns1="https://www.google.com/apis/ads/publisher/v201611" soapenv:mustUnderstand="0"&gt;
+      &lt;ns1:networkCode&gt;TEST_NETWORK_CODE&lt;/ns1:networkCode&gt;
+      &lt;ns1:applicationName&gt;TEST_APP (AdManagerApi-DotNet/18.3.0, Common-DotNet/3.2.0, .NET CLR/4.0.30319.18444, gzip)&lt;/ns1:applicationName&gt;
+    &lt;/ns1:RequestHeader&gt;
+  &lt;/soapenv:Header&gt;
+  &lt;soapenv:Body&gt;
+    &lt;getCurrentNetwork xmlns="https://www.google.com/apis/ads/publisher/v201611" /&gt;
+  &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+
+Response
+--------
+
+TestResponseKey: TestResponseValue
+TimeStamp: Mon, 03 Nov 2014 12:25:30 GMT
+
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;soap:Header&gt;
+    &lt;ResponseHeader xmlns="https://www.google.com/apis/ads/publisher/v201611"&gt;
+      &lt;requestId&gt;c2e78bab4fb5785733fef8e4b27e41d4&lt;/requestId&gt;
+      &lt;responseTime&gt;166&lt;/responseTime&gt;
+    &lt;/ResponseHeader&gt;
+  &lt;/soap:Header&gt;
+  &lt;soap:Body&gt;
+    &lt;getCurrentNetworkResponse xmlns="https://www.google.com/apis/ads/publisher/v201611"&gt;
+      &lt;rval&gt;
+        &lt;id&gt;TEST_NETWORK_ID&lt;/id&gt;
+        &lt;displayName&gt;TEST_NETWORK_NAME&lt;/displayName&gt;
+        &lt;networkCode&gt;TEST_NETWORK_CODE&lt;/networkCode&gt;
+        &lt;propertyCode&gt;ca-pub-8548711494677359&lt;/propertyCode&gt;
+        &lt;timeZone&gt;America/Los_Angeles&lt;/timeZone&gt;
+        &lt;currencyCode&gt;USD&lt;/currencyCode&gt;
+        &lt;secondaryCurrencyCodes&gt;AUD&lt;/secondaryCurrencyCodes&gt;
+        &lt;secondaryCurrencyCodes&gt;BRL&lt;/secondaryCurrencyCodes&gt;
+        &lt;secondaryCurrencyCodes&gt;CAD&lt;/secondaryCurrencyCodes&gt;
+        &lt;effectiveRootAdUnitId&gt;33853343&lt;/effectiveRootAdUnitId&gt;
+        &lt;isTest&gt;true&lt;/isTest&gt;
+      &lt;/rval&gt;
+    &lt;/getCurrentNetworkResponse&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+-----------------END API CALL-----------------------</value>
+  </data>
+  <data name="ExampleResponseFailure" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;soap:Header&gt;
+    &lt;ResponseHeader xmlns="https://www.google.com/apis/ads/publisher/v201611"&gt;
+      &lt;requestId&gt;aac0b3c433f0e6049275716ddfb2c889&lt;/requestId&gt;
+      &lt;responseTime&gt;175&lt;/responseTime&gt;
+    &lt;/ResponseHeader&gt;
+  &lt;/soap:Header&gt;
+  &lt;soap:Body&gt;
+    &lt;soap:Fault&gt;
+      &lt;faultcode&gt;soap:Server&lt;/faultcode&gt;
+      &lt;faultstring&gt;[PublisherQueryLanguageContextError.UNEXECUTABLE @ Mapping requested for unknown identifer: notarealfield on table: LineItem with table scope: lineitem]&lt;/faultstring&gt;
+      &lt;detail&gt;
+        &lt;ApiExceptionFault xmlns="https://www.google.com/apis/ads/publisher/v201611"&gt;
+          &lt;message&gt;[PublisherQueryLanguageContextError.UNEXECUTABLE @ Mapping requested for unknown identifer: notarealfield on table: LineItem with table scope: lineitem]&lt;/message&gt;
+          &lt;errors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PublisherQueryLanguageContextError"&gt;
+            &lt;fieldPath&gt;Mapping requested for unknown identifer: notarealfield on table: LineItem with table scope: lineitem&lt;/fieldPath&gt;
+            &lt;trigger/&gt;
+            &lt;errorString&gt;PublisherQueryLanguageContextError.UNEXECUTABLE&lt;/errorString&gt;
+            &lt;reason&gt;UNEXECUTABLE&lt;/reason&gt;
+          &lt;/errors&gt;
+        &lt;/ApiExceptionFault&gt;
+      &lt;/detail&gt;
+    &lt;/soap:Fault&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</value>
+  </data>
+  <data name="ExampleResponseSuccess" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;soap:Header&gt;
+    &lt;ResponseHeader xmlns="https://www.google.com/apis/ads/publisher/v201611"&gt;
+      &lt;requestId&gt;c2e78bab4fb5785733fef8e4b27e41d4&lt;/requestId&gt;
+      &lt;responseTime&gt;166&lt;/responseTime&gt;
+    &lt;/ResponseHeader&gt;
+  &lt;/soap:Header&gt;
+  &lt;soap:Body&gt;
+    &lt;getCurrentNetworkResponse xmlns="https://www.google.com/apis/ads/publisher/v201611"&gt;
+      &lt;rval&gt;
+        &lt;id&gt;TEST_NETWORK_ID&lt;/id&gt;
+        &lt;displayName&gt;TEST_NETWORK_NAME&lt;/displayName&gt;
+        &lt;networkCode&gt;TEST_NETWORK_CODE&lt;/networkCode&gt;
+        &lt;propertyCode&gt;ca-pub-8548711494677359&lt;/propertyCode&gt;
+        &lt;timeZone&gt;America/Los_Angeles&lt;/timeZone&gt;
+        &lt;currencyCode&gt;USD&lt;/currencyCode&gt;
+        &lt;secondaryCurrencyCodes&gt;AUD&lt;/secondaryCurrencyCodes&gt;
+        &lt;secondaryCurrencyCodes&gt;BRL&lt;/secondaryCurrencyCodes&gt;
+        &lt;secondaryCurrencyCodes&gt;CAD&lt;/secondaryCurrencyCodes&gt;
+        &lt;effectiveRootAdUnitId&gt;33853343&lt;/effectiveRootAdUnitId&gt;
+        &lt;isTest&gt;true&lt;/isTest&gt;
+      &lt;/rval&gt;
+    &lt;/getCurrentNetworkResponse&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</value>
+  </data>
+  <data name="ExampleResponseSummaryFailure" xml:space="preserve">
+    <value>Request made: Host: localhost, Service: TestService, Method: getCurrentNetwork, networkCode: TEST_NETWORK_CODE, Request ID: aac0b3c433f0e6049275716ddfb2c889, ResponseTime(ms): 175, OperationsCount: 0, IsFault: True, FaultMessage: [PublisherQueryLanguageContextError.UNEXECUTABLE @ Mapping requested for unknown identifer: notarealfield on table: LineItem with table scope: lineitem]</value>
+  </data>
+  <data name="ExampleResponseSummarySuccess" xml:space="preserve">
+    <value>Request made: Host: localhost, Service: TestService, Method: getCurrentNetwork, networkCode: TEST_NETWORK_CODE, Request ID: c2e78bab4fb5785733fef8e4b27e41d4, ResponseTime(ms): 166, OperationsCount: 0, IsFault: False, FaultMessage:</value>
+  </data>
+</root>

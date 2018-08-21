@@ -17,99 +17,92 @@ using NUnit.Framework;
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201806;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201806;
 
-namespace Google.Api.Ads.AdWords.Tests.v201806 {
-
-  /// <summary>
-  /// Test cases for all the code examples under
-  /// v201806\AudienceAndConversionManagement.
-  /// </summary>
-  internal class RemarketingTest : VersionedExampleTestsBase {
-
+namespace Google.Api.Ads.AdWords.Tests.v201806
+{
     /// <summary>
-    /// Inits this instance.
+    /// Test cases for all the code examples under
+    /// v201806\AudienceAndConversionManagement.
     /// </summary>
-    [SetUp]
-    public void Init() {
-    }
+    internal class RemarketingTest : VersionedExampleTestsBase
+    {
+        /// <summary>
+        /// Inits this instance.
+        /// </summary>
+        [SetUp]
+        public void Init()
+        {
+        }
 
-    /// <summary>
-    /// Tests the AddAudience VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddAudienceVBExample() {
-      RunExample(delegate () {
-        new VBExamples.AddAudience().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the AddAudience VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestAddAudienceVBExample()
+        {
+            RunExample(delegate() { new VBExamples.AddAudience().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the AddAudience C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddAudienceCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.AddAudience().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the AddAudience C# code example.
+        /// </summary>
+        [Test]
+        public void TestAddAudienceCSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.AddAudience().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the AddRuleBasedRemarketingList VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddRuleBasedRemarketingListVBExample() {
-      RunExample(delegate () {
-        new VBExamples.AddRuleBasedRemarketingList().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the AddRuleBasedRemarketingList VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestAddRuleBasedRemarketingListVBExample()
+        {
+            RunExample(delegate() { new VBExamples.AddRuleBasedRemarketingList().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the AddRuleBasedRemarketingList C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddRuleBasedRemarketingListCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.AddRuleBasedRemarketingList().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the AddRuleBasedRemarketingList C# code example.
+        /// </summary>
+        [Test]
+        public void TestAddRuleBasedRemarketingListCSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.AddRuleBasedRemarketingList().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the AddConversionTracker VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddConversionTrackerVBExample() {
-      RunExample(delegate () {
-        new VBExamples.AddConversionTrackers().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the AddConversionTracker VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestAddConversionTrackerVBExample()
+        {
+            RunExample(delegate() { new VBExamples.AddConversionTrackers().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the AddConversionTracker C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddConversionTrackerCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.AddConversionTrackers().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the AddConversionTracker C# code example.
+        /// </summary>
+        [Test]
+        public void TestAddConversionTrackerCSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.AddConversionTrackers().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the AddCrmBasedUserList VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddCrmBasedUserListVBExample() {
-      RunExample(delegate () {
-        new VBExamples.AddCrmBasedUserList().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the AddCrmBasedUserList VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestAddCrmBasedUserListVBExample()
+        {
+            RunExample(delegate() { new VBExamples.AddCrmBasedUserList().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the AddCrmBasedUserList C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddCrmBasedUserListCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.AddCrmBasedUserList().Run(user);
-      });
+        /// <summary>
+        /// Tests the AddCrmBasedUserList C# code example.
+        /// </summary>
+        [Test]
+        public void TestAddCrmBasedUserListCSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.AddCrmBasedUserList().Run(user); });
+        }
     }
-  }
 }

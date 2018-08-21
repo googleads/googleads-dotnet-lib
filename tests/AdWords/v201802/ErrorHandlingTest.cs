@@ -19,62 +19,69 @@ using NUnit.Framework;
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201802;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201802;
 
-namespace Google.Api.Ads.AdWords.Tests.v201802 {
-
-  /// <summary>
-  /// Test cases for all the code examples under v201802\ErrorHandling.
-  /// </summary>
-  internal class ErrorHandlingTest : VersionedExampleTestsBase {
-    private long campaignId;
-    private long adGroupId;
-
+namespace Google.Api.Ads.AdWords.Tests.v201802
+{
     /// <summary>
-    /// Inits this instance.
+    /// Test cases for all the code examples under v201802\ErrorHandling.
     /// </summary>
-    [SetUp]
-    public void Init() {
-      campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
-      adGroupId = utils.CreateAdGroup(user, campaignId);
-    }
+    internal class ErrorHandlingTest : VersionedExampleTestsBase
+    {
+        private long campaignId;
+        private long adGroupId;
 
-    /// <summary>
-    /// Tests the HandlePartialFailures VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestHandlePartialFailuresVBExample() {
-      RunExample(delegate () {
-        new VBExamples.HandlePartialFailures().Run(user, adGroupId);
-      });
-    }
+        /// <summary>
+        /// Inits this instance.
+        /// </summary>
+        [SetUp]
+        public void Init()
+        {
+            campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
+            adGroupId = utils.CreateAdGroup(user, campaignId);
+        }
 
-    /// <summary>
-    /// Tests the HandlePartialFailures C# code example.
-    /// </summary>
-    [Test]
-    public void TestHandlePartialFailuresCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.HandlePartialFailures().Run(user, adGroupId);
-      });
-    }
+        /// <summary>
+        /// Tests the HandlePartialFailures VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestHandlePartialFailuresVBExample()
+        {
+            RunExample(delegate() { new VBExamples.HandlePartialFailures().Run(user, adGroupId); });
+        }
 
-    /// <summary>
-    /// Tests the HandlePolicyViolationError VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestHandlePolicyViolationErrorVBExample() {
-      RunExample(delegate () {
-        new VBExamples.HandlePolicyViolationError().Run(user, adGroupId);
-      });
-    }
+        /// <summary>
+        /// Tests the HandlePartialFailures C# code example.
+        /// </summary>
+        [Test]
+        public void TestHandlePartialFailuresCSharpExample()
+        {
+            RunExample(delegate()
+            {
+                new CSharpExamples.HandlePartialFailures().Run(user, adGroupId);
+            });
+        }
 
-    /// <summary>
-    /// Tests the HandlePolicyViolationError C# code example.
-    /// </summary>
-    [Test]
-    public void TestHandlePolicyViolationErrorCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.HandlePolicyViolationError().Run(user, adGroupId);
-      });
+        /// <summary>
+        /// Tests the HandlePolicyViolationError VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestHandlePolicyViolationErrorVBExample()
+        {
+            RunExample(delegate()
+            {
+                new VBExamples.HandlePolicyViolationError().Run(user, adGroupId);
+            });
+        }
+
+        /// <summary>
+        /// Tests the HandlePolicyViolationError C# code example.
+        /// </summary>
+        [Test]
+        public void TestHandlePolicyViolationErrorCSharpExample()
+        {
+            RunExample(delegate()
+            {
+                new CSharpExamples.HandlePolicyViolationError().Run(user, adGroupId);
+            });
+        }
     }
-  }
 }

@@ -17,86 +17,105 @@ using Google.Api.Ads.AdWords.v201802;
 
 using System;
 
-namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
-
-  /// <summary>
-  /// This code example removes an ad using the 'REMOVE' operator. To list ads,
-  /// run GetTextAds.cs.
-  /// </summary>
-  public class RemoveAd : ExampleBase {
-
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Main method, to run this code example as a standalone application.
+    /// This code example removes an ad using the 'REMOVE' operator. To list ads,
+    /// run GetTextAds.cs.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      RemoveAd codeExample = new RemoveAd();
-      Console.WriteLine(codeExample.Description);
-      try {
-        long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
-        long adId = long.Parse("INSERT_AD_ID_HERE");
-        codeExample.Run(new AdWordsUser(), adGroupId, adId);
-      } catch (Exception e) {
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e));
-      }
-    }
-
-    /// <summary>
-    /// Returns a description about the code example.
-    /// </summary>
-    public override string Description {
-      get {
-        return "This code example removes an ad using the 'REMOVE' operator. To list ads, " +
-            "run GetTextAds.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Runs the code example.
-    /// </summary>
-    /// <param name="user">The AdWords user.</param>
-    /// <param name="adGroupId">Id of the ad group that contains the ad.</param>
-    /// <param name="adId">Id of the ad being removed.</param>
-    public void Run(AdWordsUser user, long adGroupId, long adId) {
-      using (AdGroupAdService adGroupAdService = (AdGroupAdService) user.GetService(
-          AdWordsService.v201802.AdGroupAdService)) {
-
-        // Since we do not need to update any ad-specific fields, it is enough to
-        // create the base type.
-        Ad ad = new Ad {
-          id = adId
-        };
-
-        // Create the ad group ad.
-        AdGroupAd adGroupAd = new AdGroupAd {
-          adGroupId = adGroupId,
-
-          ad = ad
-        };
-
-        // Create the operation.
-        AdGroupAdOperation operation = new AdGroupAdOperation {
-          operand = adGroupAd,
-          @operator = Operator.REMOVE
-        };
-
-        try {
-          // Remove the ad.
-          AdGroupAdReturnValue retVal = adGroupAdService.mutate(
-              new AdGroupAdOperation[] { operation });
-
-          if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-            AdGroupAd removedAdGroupAd = retVal.value[0];
-            Console.WriteLine("Ad with id = \"{0}\" and type = \"{1}\" was removed.",
-                removedAdGroupAd.ad.id, removedAdGroupAd.ad.AdType);
-          } else {
-            Console.WriteLine("No ads were removed.");
-          }
-        } catch (Exception e) {
-          throw new System.ApplicationException("Failed to remove ad.", e);
+    public class RemoveAd : ExampleBase
+    {
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        /// <param name="args">The command line arguments.</param>
+        public static void Main(string[] args)
+        {
+            RemoveAd codeExample = new RemoveAd();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                long adGroupId = long.Parse("INSERT_ADGROUP_ID_HERE");
+                long adId = long.Parse("INSERT_AD_ID_HERE");
+                codeExample.Run(new AdWordsUser(), adGroupId, adId);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                    ExampleUtilities.FormatException(e));
+            }
         }
-      }
+
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return
+                    "This code example removes an ad using the 'REMOVE' operator. To list ads, " +
+                    "run GetTextAds.cs.";
+            }
+        }
+
+        /// <summary>
+        /// Runs the code example.
+        /// </summary>
+        /// <param name="user">The AdWords user.</param>
+        /// <param name="adGroupId">Id of the ad group that contains the ad.</param>
+        /// <param name="adId">Id of the ad being removed.</param>
+        public void Run(AdWordsUser user, long adGroupId, long adId)
+        {
+            using (AdGroupAdService adGroupAdService =
+                (AdGroupAdService) user.GetService(AdWordsService.v201802.AdGroupAdService))
+            {
+                // Since we do not need to update any ad-specific fields, it is enough to
+                // create the base type.
+                Ad ad = new Ad
+                {
+                    id = adId
+                };
+
+                // Create the ad group ad.
+                AdGroupAd adGroupAd = new AdGroupAd
+                {
+                    adGroupId = adGroupId,
+
+                    ad = ad
+                };
+
+                // Create the operation.
+                AdGroupAdOperation operation = new AdGroupAdOperation
+                {
+                    operand = adGroupAd,
+                    @operator = Operator.REMOVE
+                };
+
+                try
+                {
+                    // Remove the ad.
+                    AdGroupAdReturnValue retVal = adGroupAdService.mutate(new AdGroupAdOperation[]
+                    {
+                        operation
+                    });
+
+                    if (retVal != null && retVal.value != null && retVal.value.Length > 0)
+                    {
+                        AdGroupAd removedAdGroupAd = retVal.value[0];
+                        Console.WriteLine("Ad with id = \"{0}\" and type = \"{1}\" was removed.",
+                            removedAdGroupAd.ad.id, removedAdGroupAd.ad.AdType);
+                    }
+                    else
+                    {
+                        Console.WriteLine("No ads were removed.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw new System.ApplicationException("Failed to remove ad.", e);
+                }
+            }
+        }
     }
-  }
 }

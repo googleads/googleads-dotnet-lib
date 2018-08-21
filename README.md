@@ -2,7 +2,7 @@
 
 This project hosts the .NET client library for the various SOAP-Based Ads APIs at Google -
  [AdWords API](//developers.google.com/adwords/api) and
- [Google's DoubleClick for Publishers (DFP) API](//developers.google.com/doubleclick-publishers).
+ [Google Ad Manager API](//developers.google.com/ad-manager).
 
 ## Features
 - Distributed via Nuget
@@ -31,16 +31,10 @@ http://googleadsdeveloper.blogspot.com/.
 
   - [Google.AdWords](https://www.nuget.org/packages/Google.AdWords/): AdWords and DoubleClick Ad
    Exchange Buyer API DotNet Client Library
-  - [Google.AdWords.Examples.CSharp](https://www.nuget.org/packages/Google.AdWords.Examples.CSharp/):
-   C# Code examples for AdWords API
-  - [Google.AdWords.Examples.VB](https://www.nuget.org/packages/Google.AdWords.Examples.VB/):
-   VB.NET Code examples for AdWords API
   
-  #### DFP API
+  #### Ad Manager API
   
-  - [Google.Dfp](https://www.nuget.org/packages/Google.Dfp/): DFP API DotNet Client Library
-  - [Google.Dfp.Examples.CSharp](https://www.nuget.org/packages/Google.Dfp.Examples.CSharp/):
-   C# Code examples for DFP API
+  - [Google.Dfp](https://www.nuget.org/packages/Google.Dfp/): Ad Manager API DotNet Client Library
   
   You can learn more about the nuget package manager at http://www.nuget.org. For other distribution options, see the alternative distribution options below.
 
@@ -52,11 +46,11 @@ http://googleadsdeveloper.blogspot.com/.
   **If you're accessing an API using your own credentials...**
 
   * [Using AdWords](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-using-own-credentials-(installed-application-flow))
-  * [Using DFP](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-using-own-credentials-(server-to-server-flow))
+  * [Using Ad Manager](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-using-own-credentials-(server-to-server-flow))
 
   **If you're accessing an API on behalf of clients...**
 
-  * [Developing a web application (AdWords or DFP)](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-on-behalf-of-your-clients-(web-flow))
+  * [Developing a web application (AdWords or Ad Manager)](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-on-behalf-of-your-clients-(web-flow))
 
 ## Alternative distribution options
 
@@ -66,7 +60,7 @@ The binary distribution of the Ads API .NET library consists of a precompiled ve
  library as a .NET assembly, code examples for using the library, and library documentation.
  If you are interested in just using the library and not in its internals, and you don't use
  nuget package manager in your development environment, then you should download this distribution.
- There are separate downloads for AdWords and DFP APIs.
+ There are separate downloads for AdWords and Ad Manager APIs.
 
 The contents of this distribution are as follows:
 ```
@@ -129,7 +123,7 @@ The source distribution of the Ads API .NET Client Library consists of individua
  projects for the client library, code examples and test cases, documentation, and support
  libraries and tools for compiling and running the library. If you are interested in the
  library internals you should download this distribution. There are separate downloads for
- AdWords and DFP APIs.
+ AdWords and Ad Manager APIs.
 
 ```
 The contents of this distribution are as follows:
@@ -199,11 +193,11 @@ See https://github.com/googleads/googleads-dotnet-lib/wiki#logging for details.
 
 ### API Documentation:
 - AdWords API: https://developers.google.com/adwords/api/
-- DFP API: https://developers.google.com/doubleclick-publishers/
+- Ad Manager API: https://developers.google.com/ad-manager/
 
 ### Support forum
 - AdWords API: https://developers.google.com/adwords/api/community/
-- DFP API: https://developers.google.com/doubleclick-publishers/community
+- Ad Manager API: https://developers.google.com/doubleclick-publishers/community
 
 ### Authors
 - https://github.com/AnashOommen

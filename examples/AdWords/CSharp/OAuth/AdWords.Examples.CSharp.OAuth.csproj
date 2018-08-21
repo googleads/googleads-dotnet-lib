@@ -86,7 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Google.Ads.Common" Version="9.4.0" />
-    <PackageReference Include="Google.AdWords" Version="23.6.0" />
+    <PackageReference Include="Google.AdWords" Version="24.0.0" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>

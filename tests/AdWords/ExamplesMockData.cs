@@ -14,51 +14,50 @@
 
 using Google.Api.Ads.Common.Tests;
 
-namespace Google.Api.Ads.AdWords.Tests {
-
-  /// <summary>
-  /// Contains mock data for a given code example.
-  /// </summary>
-  public class ExamplesMockData {
-
+namespace Google.Api.Ads.AdWords.Tests
+{
     /// <summary>
-    /// List of HTTP messages to be mocked.
+    /// Contains mock data for a given code example.
     /// </summary>
-    private HttpMessage[] mockMessages = null;
+    public class ExamplesMockData
+    {
+        /// <summary>
+        /// List of HTTP messages to be mocked.
+        /// </summary>
+        private HttpMessage[] mockMessages = null;
 
-    /// <summary>
-    /// Expected output from the code example.
-    /// </summary>
-    private string expectedOutput = "";
+        /// <summary>
+        /// Expected output from the code example.
+        /// </summary>
+        private string expectedOutput = "";
 
-    /// <summary>
-    /// Overloaded constructor.
-    /// </summary>
-    /// <param name="mockMessages">The list of HTTP messages to be mocked.
-    /// </param>
-    /// <param name="expectedOutput">Expected output from the code example.
-    /// </param>
-    public ExamplesMockData(HttpMessage[] mockMessages, string expectedOutput) {
-      this.mockMessages = mockMessages;
-      this.expectedOutput = expectedOutput;
+        /// <summary>
+        /// Overloaded constructor.
+        /// </summary>
+        /// <param name="mockMessages">The list of HTTP messages to be mocked.
+        /// </param>
+        /// <param name="expectedOutput">Expected output from the code example.
+        /// </param>
+        public ExamplesMockData(HttpMessage[] mockMessages, string expectedOutput)
+        {
+            this.mockMessages = mockMessages;
+            this.expectedOutput = expectedOutput;
+        }
+
+        /// <summary>
+        /// Gets the mock messages.
+        /// </summary>
+        public HttpMessage[] MockMessages
+        {
+            get { return mockMessages; }
+        }
+
+        /// <summary>
+        /// Gets the expected output.
+        /// </summary>
+        public string ExpectedOutput
+        {
+            get { return expectedOutput; }
+        }
     }
-
-    /// <summary>
-    /// Gets the mock messages.
-    /// </summary>
-    public HttpMessage[] MockMessages {
-      get {
-        return mockMessages;
-      }
-    }
-
-    /// <summary>
-    /// Gets the expected output.
-    /// </summary>
-    public string ExpectedOutput {
-      get {
-        return expectedOutput;
-      }
-    }
-  }
 }

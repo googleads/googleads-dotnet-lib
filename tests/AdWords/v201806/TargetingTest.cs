@@ -19,122 +19,132 @@ using NUnit.Framework;
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201806;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201806;
 
-namespace Google.Api.Ads.AdWords.Tests.v201806 {
-
-  /// <summary>
-  /// Test cases for all the code examples under v201806\Targeting.
-  /// </summary>
-  internal class TargetingTest : VersionedExampleTestsBase {
-    private long campaignId;
-    private long campaignCriterionId;
-
+namespace Google.Api.Ads.AdWords.Tests.v201806
+{
     /// <summary>
-    /// Inits this instance.
+    /// Test cases for all the code examples under v201806\Targeting.
     /// </summary>
-    [SetUp]
-    public void Init() {
-      campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
-      campaignCriterionId = utils.AddCampaignTargetingCriteria(user, campaignId);
-    }
+    internal class TargetingTest : VersionedExampleTestsBase
+    {
+        private long campaignId;
+        private long campaignCriterionId;
 
-    /// <summary>
-    /// Tests the AddCampaignTargetingCriteria VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddCampaignTargetingCriteriaVBExample() {
-      RunExample(delegate () {
-        new VBExamples.AddCampaignTargetingCriteria().Run(user, campaignId, null);
-      });
-    }
+        /// <summary>
+        /// Inits this instance.
+        /// </summary>
+        [SetUp]
+        public void Init()
+        {
+            campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
+            campaignCriterionId = utils.AddCampaignTargetingCriteria(user, campaignId);
+        }
 
-    /// <summary>
-    /// Tests the AddCampaignTargetingCriteria C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddCampaignTargetingCriteriaCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.AddCampaignTargetingCriteria().Run(user, campaignId, null);
-      });
-    }
+        /// <summary>
+        /// Tests the AddCampaignTargetingCriteria VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestAddCampaignTargetingCriteriaVBExample()
+        {
+            RunExample(delegate()
+            {
+                new VBExamples.AddCampaignTargetingCriteria().Run(user, campaignId, null);
+            });
+        }
 
-    /// <summary>
-    /// Tests the GetCampaignTargetingCriteria VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestGetCampaignTargetingCriteriaVBExample() {
-      RunExample(delegate () {
-        new VBExamples.GetCampaignTargetingCriteria().Run(user, campaignId);
-      });
-    }
+        /// <summary>
+        /// Tests the AddCampaignTargetingCriteria C# code example.
+        /// </summary>
+        [Test]
+        public void TestAddCampaignTargetingCriteriaCSharpExample()
+        {
+            RunExample(delegate()
+            {
+                new CSharpExamples.AddCampaignTargetingCriteria().Run(user, campaignId, null);
+            });
+        }
 
-    /// <summary>
-    /// Tests the GetCampaignTargetingCriteria C# code example.
-    /// </summary>
-    [Test]
-    public void TestGetCampaignTargetingCriteriaCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.GetCampaignTargetingCriteria().Run(user, campaignId);
-      });
-    }
+        /// <summary>
+        /// Tests the GetCampaignTargetingCriteria VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestGetCampaignTargetingCriteriaVBExample()
+        {
+            RunExample(delegate()
+            {
+                new VBExamples.GetCampaignTargetingCriteria().Run(user, campaignId);
+            });
+        }
 
-    /// <summary>
-    /// Tests the GetTargetableLanguagesAndCarriers VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestGetTargetableLanguagesAndCarriersVBExample() {
-      RunExample(delegate () {
-        new VBExamples.GetTargetableLanguagesAndCarriers().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the GetCampaignTargetingCriteria C# code example.
+        /// </summary>
+        [Test]
+        public void TestGetCampaignTargetingCriteriaCSharpExample()
+        {
+            RunExample(delegate()
+            {
+                new CSharpExamples.GetCampaignTargetingCriteria().Run(user, campaignId);
+            });
+        }
 
-    /// <summary>
-    /// Tests the GetTargetableLanguagesAndCarriers C# code example.
-    /// </summary>
-    [Test]
-    public void TestGetTargetableLanguagesAndCarriersCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.GetTargetableLanguagesAndCarriers().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the GetTargetableLanguagesAndCarriers VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestGetTargetableLanguagesAndCarriersVBExample()
+        {
+            RunExample(delegate()
+            {
+                new VBExamples.GetTargetableLanguagesAndCarriers().Run(user);
+            });
+        }
 
-    /// <summary>
-    /// Tests the LookupLocation VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestLookupLocationVBExample() {
-      RunExample(delegate () {
-        new VBExamples.LookupLocation().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the GetTargetableLanguagesAndCarriers C# code example.
+        /// </summary>
+        [Test]
+        public void TestGetTargetableLanguagesAndCarriersCSharpExample()
+        {
+            RunExample(delegate()
+            {
+                new CSharpExamples.GetTargetableLanguagesAndCarriers().Run(user);
+            });
+        }
 
-    /// <summary>
-    /// Tests the LookupLocation C# code example.
-    /// </summary>
-    [Test]
-    public void TestLookupLocationCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.LookupLocation().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the LookupLocation VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestLookupLocationVBExample()
+        {
+            RunExample(delegate() { new VBExamples.LookupLocation().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the AddCustomerNegativeCriteria VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddCustomerNegativeCriteriaVBExample() {
-      RunExample(delegate () {
-        new VBExamples.AddCustomerNegativeCriteria().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the LookupLocation C# code example.
+        /// </summary>
+        [Test]
+        public void TestLookupLocationCSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.LookupLocation().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the AddCustomerNegativeCriteria C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddCustomerNegativeCriteriaCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.AddCustomerNegativeCriteria().Run(user);
-      });
+        /// <summary>
+        /// Tests the AddCustomerNegativeCriteria VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestAddCustomerNegativeCriteriaVBExample()
+        {
+            RunExample(delegate() { new VBExamples.AddCustomerNegativeCriteria().Run(user); });
+        }
+
+        /// <summary>
+        /// Tests the AddCustomerNegativeCriteria C# code example.
+        /// </summary>
+        [Test]
+        public void TestAddCustomerNegativeCriteriaCSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.AddCustomerNegativeCriteria().Run(user); });
+        }
     }
-  }
 }

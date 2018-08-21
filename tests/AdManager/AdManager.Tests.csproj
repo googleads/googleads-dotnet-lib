@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp2.0;net452</TargetFrameworks>
+    <AssemblyName>Google.AdManager.Tests</AssemblyName>
+    <RootNamespace>Google.Api.Ads.AdManager.Tests</RootNamespace>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
+    <PublicSign Condition="'$(OS)' != 'Windows_NT'">true</PublicSign>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(ProjectDir)..\..\src\Common\AdsApi.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
+    <PackageReference Include="NodaTime" Version="2.2.6" />
+    <PackageReference Include="NUnit" Version="3.10.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Common\Common.csproj" />
+    <ProjectReference Include="..\..\src\AdManager\AdManager.csproj" />
+    <ProjectReference Include="..\Common\Common.Tests.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\AdManager\App.config">
+      <Link>App.config</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Examples\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup Condition="'$(TargetFramework)'=='net452'">
+    <DefineConstants>NET452</DefineConstants>
+  </PropertyGroup>
+  <Target Name="StrongName" AfterTargets="Build" Condition="'$(OS)' != 'Windows_NT' AND $(Configuration) == 'Release' AND '$(TargetFramework)' != ''">
+    <Exec Command="sn -R $(OutputPath)$(AssemblyName).dll $(ProjectDir)../../src/Common/AdsApi.snk" />
+  </Target>
+</Project>

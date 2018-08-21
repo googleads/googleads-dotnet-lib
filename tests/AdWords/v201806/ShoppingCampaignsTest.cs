@@ -20,131 +20,140 @@ using NUnit.Framework;
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201806;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201806;
 
-namespace Google.Api.Ads.AdWords.Tests.v201806 {
-
-  /// <summary>
-  /// Test cases for all the code examples under v201806\ShoppingCampaigns.
-  /// </summary>
-  internal class ShoppingCampaignsTest : VersionedExampleTestsBase {
-    private long adGroupId;
-    private long budgetId;
-    private long campaignId;
-
+namespace Google.Api.Ads.AdWords.Tests.v201806
+{
     /// <summary>
-    /// Inits this instance.
+    /// Test cases for all the code examples under v201806\ShoppingCampaigns.
     /// </summary>
-    [SetUp]
-    public void Init() {
-      budgetId = utils.CreateBudget(user);
-      campaignId = utils.CreateShoppingCampaign(user, BiddingStrategyType.MANUAL_CPC);
-      adGroupId = utils.CreateAdGroup(user, campaignId);
-    }
+    internal class ShoppingCampaignsTest : VersionedExampleTestsBase
+    {
+        private long adGroupId;
+        private long budgetId;
+        private long campaignId;
 
-    /// <summary>
-    /// Tests the AddProductPartitionTree C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddProductPartitionTreeCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.AddProductPartitionTree().Run(user, adGroupId);
-      });
-    }
+        /// <summary>
+        /// Inits this instance.
+        /// </summary>
+        [SetUp]
+        public void Init()
+        {
+            budgetId = utils.CreateBudget(user);
+            campaignId = utils.CreateShoppingCampaign(user, BiddingStrategyType.MANUAL_CPC);
+            adGroupId = utils.CreateAdGroup(user, campaignId);
+        }
 
-    /// <summary>
-    /// Tests the AddProductPartitionTree VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddProductPartitionTreeVBExample() {
-      RunExample(delegate () {
-        new VBExamples.AddProductPartitionTree().Run(user, adGroupId);
-      });
-    }
+        /// <summary>
+        /// Tests the AddProductPartitionTree C# code example.
+        /// </summary>
+        [Test]
+        public void TestAddProductPartitionTreeCSharpExample()
+        {
+            RunExample(delegate()
+            {
+                new CSharpExamples.AddProductPartitionTree().Run(user, adGroupId);
+            });
+        }
 
-    /// <summary>
-    /// Tests the AddProductScope C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddProductScopeCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.AddProductScope().Run(user, campaignId);
-      });
-    }
+        /// <summary>
+        /// Tests the AddProductPartitionTree VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestAddProductPartitionTreeVBExample()
+        {
+            RunExample(
+                delegate() { new VBExamples.AddProductPartitionTree().Run(user, adGroupId); });
+        }
 
-    /// <summary>
-    /// Tests the AddProductScope VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddProductScopeVBExample() {
-      RunExample(delegate () {
-        new VBExamples.AddProductScope().Run(user, campaignId);
-      });
-    }
+        /// <summary>
+        /// Tests the AddProductScope C# code example.
+        /// </summary>
+        [Test]
+        public void TestAddProductScopeCSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.AddProductScope().Run(user, campaignId); });
+        }
 
-    /// <summary>
-    /// Tests the GetAccountChanges C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddShoppingCampaignCSharpExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-      RunExample(delegate () {
-        new CSharpExamples.AddShoppingCampaign().Run(user, budgetId, config.MerchantCenterId,
-            true);
-      });
-    }
+        /// <summary>
+        /// Tests the AddProductScope VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestAddProductScopeVBExample()
+        {
+            RunExample(delegate() { new VBExamples.AddProductScope().Run(user, campaignId); });
+        }
 
-    /// <summary>
-    /// Tests the GetAccountChanges VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddShoppingCampaignVBExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-      RunExample(delegate () {
-        new VBExamples.AddShoppingCampaign().Run(user, budgetId, config.MerchantCenterId, true);
-      });
-    }
+        /// <summary>
+        /// Tests the GetAccountChanges C# code example.
+        /// </summary>
+        [Test]
+        public void TestAddShoppingCampaignCSharpExample()
+        {
+            AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+            RunExample(delegate()
+            {
+                new CSharpExamples.AddShoppingCampaign().Run(user, budgetId,
+                    config.MerchantCenterId, true);
+            });
+        }
 
-    /// <summary>
-    /// Tests the GetProductCategoryTaxonomy C# code example.
-    /// </summary>
-    [Test]
-    public void TestGetProductCategoryTaxonomyCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.GetProductCategoryTaxonomy().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the GetAccountChanges VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestAddShoppingCampaignVBExample()
+        {
+            AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+            RunExample(delegate()
+            {
+                new VBExamples.AddShoppingCampaign().Run(user, budgetId,
+                    config.MerchantCenterId, true);
+            });
+        }
 
-    /// <summary>
-    /// Tests the GetProductCategoryTaxonomy VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestGetProductCategoryTaxonomyVBExample() {
-      RunExample(delegate () {
-        new VBExamples.GetProductCategoryTaxonomy().Run(user);
-      });
-    }
+        /// <summary>
+        /// Tests the GetProductCategoryTaxonomy C# code example.
+        /// </summary>
+        [Test]
+        public void TestGetProductCategoryTaxonomyCSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.GetProductCategoryTaxonomy().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the AddShoppingCampaignForShowcaseAds C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddShoppingCampaignForShowcaseAdsCSharpExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-      RunExample(delegate () {
-        new CSharpExamples.AddShoppingCampaignForShowcaseAds().Run(user, budgetId,
-            config.MerchantCenterId);
-      });
-    }
+        /// <summary>
+        /// Tests the GetProductCategoryTaxonomy VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestGetProductCategoryTaxonomyVBExample()
+        {
+            RunExample(delegate() { new VBExamples.GetProductCategoryTaxonomy().Run(user); });
+        }
 
-    /// <summary>
-    /// Tests the AddShoppingCampaignForShowcaseAds VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddShoppingCampaignForShowcaseAdsVBExample() {
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-      RunExample(delegate () {
-        new VBExamples.AddShoppingCampaignForShowcaseAds().Run(user, budgetId,
-            config.MerchantCenterId);
-      });
+        /// <summary>
+        /// Tests the AddShoppingCampaignForShowcaseAds C# code example.
+        /// </summary>
+        [Test]
+        public void TestAddShoppingCampaignForShowcaseAdsCSharpExample()
+        {
+            AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+            RunExample(delegate()
+            {
+                new CSharpExamples.AddShoppingCampaignForShowcaseAds().Run(user, budgetId,
+                    config.MerchantCenterId);
+            });
+        }
+
+        /// <summary>
+        /// Tests the AddShoppingCampaignForShowcaseAds VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestAddShoppingCampaignForShowcaseAdsVBExample()
+        {
+            AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+            RunExample(delegate()
+            {
+                new VBExamples.AddShoppingCampaignForShowcaseAds().Run(user, budgetId,
+                    config.MerchantCenterId);
+            });
+        }
     }
-  }
 }

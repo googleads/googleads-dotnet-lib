@@ -21,131 +21,139 @@ using NUnit.Framework;
 using CSharpExamples = Google.Api.Ads.AdWords.Examples.CSharp.v201806;
 using VBExamples = Google.Api.Ads.AdWords.Examples.VB.v201806;
 
-namespace Google.Api.Ads.AdWords.Tests.v201806 {
-
-  /// <summary>
-  /// Test cases for all the code examples under v201806\Extensions.
-  /// </summary>
-  internal class ExtensionsTest : VersionedExampleTestsBase {
-    private long campaignId;
-    private long adGroupId;
-    private string gmbAccessToken = "";
-
+namespace Google.Api.Ads.AdWords.Tests.v201806
+{
     /// <summary>
-    /// Inits this instance.
+    /// Test cases for all the code examples under v201806\Extensions.
     /// </summary>
-    [SetUp]
-    public void Init() {
-      campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
-      adGroupId = utils.CreateAdGroup(user, campaignId);
+    internal class ExtensionsTest : VersionedExampleTestsBase
+    {
+        private long campaignId;
+        private long adGroupId;
+        private string gmbAccessToken = "";
 
-      // Load defaults from config file.
-      AdWordsAppConfig appConfig = new AdWordsAppConfig();
-      appConfig.OAuth2RefreshToken = appConfig.GMBOAuth2RefreshToken;
+        /// <summary>
+        /// Inits this instance.
+        /// </summary>
+        [SetUp]
+        public void Init()
+        {
+            campaignId = utils.CreateSearchCampaign(user, BiddingStrategyType.MANUAL_CPC);
+            adGroupId = utils.CreateAdGroup(user, campaignId);
 
-      AdsOAuthProviderForApplications oAuth2Provider =
-          new OAuth2ProviderForApplications(appConfig);
-      oAuth2Provider.RefreshAccessToken();
+            // Load defaults from config file.
+            AdWordsAppConfig appConfig = new AdWordsAppConfig();
+            appConfig.OAuth2RefreshToken = appConfig.GMBOAuth2RefreshToken;
 
-      gmbAccessToken = oAuth2Provider.Config.OAuth2AccessToken;
+            AdsOAuthProviderForApplications oAuth2Provider =
+                new OAuth2ProviderForApplications(appConfig);
+            oAuth2Provider.RefreshAccessToken();
+
+            gmbAccessToken = oAuth2Provider.Config.OAuth2AccessToken;
+        }
+
+        /// <summary>
+        /// Tests the AddSitelinks VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestAddSitelinksVBExample()
+        {
+            RunExample(delegate() { new VBExamples.AddSitelinks().Run(user, campaignId); });
+        }
+
+        /// <summary>
+        /// Tests the AddSitelinks C# code example.
+        /// </summary>
+        [Test]
+        public void TestAddSitelinksCSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.AddSitelinks().Run(user, campaignId); });
+        }
+
+        /// <summary>
+        /// Tests the AddPrices VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestAddPricesVBExample()
+        {
+            RunExample(delegate() { new VBExamples.AddPrices().Run(user, campaignId); });
+        }
+
+        /// <summary>
+        /// Tests the AddSitelinks C# code example.
+        /// </summary>
+        [Test]
+        public void TestAddPricesCSharpExample()
+        {
+            RunExample(delegate() { new CSharpExamples.AddPrices().Run(user, campaignId); });
+        }
+
+        /// <summary>
+        /// Tests the AddSitelinksUsingFeeds VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestAddSitelinksUsingFeedsVBExample()
+        {
+            string feedName = "SitelinkFeed" + utils.GetTimeStampAlpha();
+            RunExample(delegate()
+            {
+                new VBExamples.AddSitelinksUsingFeeds().Run(user, campaignId, feedName,
+                    adGroupId);
+            });
+        }
+
+        /// <summary>
+        /// Tests the AddSitelinksUsingFeeds C# code example.
+        /// </summary>
+        [Test]
+        public void TestAddSitelinksUsingFeedsCSharpExample()
+        {
+            string feedName = "SitelinkFeed" + utils.GetTimeStampAlpha();
+            RunExample(delegate()
+            {
+                new CSharpExamples.AddSitelinksUsingFeeds().Run(user, campaignId, feedName,
+                    adGroupId);
+            });
+        }
+
+        /// <summary>
+        /// Tests the AddGoogleMyBusinessLocationExtension C# code example.
+        /// </summary>
+        [Test]
+        public void TestAddGoogleMyBusinessLocationExtensionCSharpExample()
+        {
+            // Delete any enabled GMB feeds and their customer feeds, since only one enabled GMB feed
+            // is allowed per account.
+            utils.DeleteEnabledGmbFeeds(user);
+            utils.DeleteEnabledGmbCustomerFeeds(user);
+
+            AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+
+            RunExample(delegate()
+            {
+                new CSharpExamples.AddGoogleMyBusinessLocationExtensions().Run(user,
+                    config.GMBLoginEmail, gmbAccessToken, null);
+            });
+        }
+
+        /// <summary>
+        /// Tests the AddGoogleMyBusinessLocationExtension VB.NET code example.
+        /// </summary>
+        [Test]
+        public void TestAddGoogleMyBusinessLocationExtensionVBExample()
+        {
+            // Delete any enabled GMB feeds and their customer feeds, since only one enabled GMB feed
+            // is allowed per account.
+            utils.DeleteEnabledGmbFeeds(user);
+            utils.DeleteEnabledGmbCustomerFeeds(user);
+
+            AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
+
+            RunExample(delegate()
+            {
+                new VBExamples.AddGoogleMyBusinessLocationExtensions().Run(user,
+                    config.GMBLoginEmail, gmbAccessToken, null);
+            });
+        }
     }
-
-    /// <summary>
-    /// Tests the AddSitelinks VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddSitelinksVBExample() {
-      RunExample(delegate () {
-        new VBExamples.AddSitelinks().Run(user, campaignId);
-      });
-    }
-
-    /// <summary>
-    /// Tests the AddSitelinks C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddSitelinksCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.AddSitelinks().Run(user, campaignId);
-      });
-    }
-
-    /// <summary>
-    /// Tests the AddPrices VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddPricesVBExample() {
-      RunExample(delegate () {
-        new VBExamples.AddPrices().Run(user, campaignId);
-      });
-    }
-
-    /// <summary>
-    /// Tests the AddSitelinks C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddPricesCSharpExample() {
-      RunExample(delegate () {
-        new CSharpExamples.AddPrices().Run(user, campaignId);
-      });
-    }
-
-    /// <summary>
-    /// Tests the AddSitelinksUsingFeeds VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddSitelinksUsingFeedsVBExample() {
-      string feedName = "SitelinkFeed" + utils.GetTimeStampAlpha();
-      RunExample(delegate () {
-        new VBExamples.AddSitelinksUsingFeeds().Run(user, campaignId, feedName, adGroupId);
-      });
-    }
-
-    /// <summary>
-    /// Tests the AddSitelinksUsingFeeds C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddSitelinksUsingFeedsCSharpExample() {
-      string feedName = "SitelinkFeed" + utils.GetTimeStampAlpha();
-      RunExample(delegate () {
-        new CSharpExamples.AddSitelinksUsingFeeds().Run(user, campaignId, feedName, adGroupId);
-      });
-    }
-
-    /// <summary>
-    /// Tests the AddGoogleMyBusinessLocationExtension C# code example.
-    /// </summary>
-    [Test]
-    public void TestAddGoogleMyBusinessLocationExtensionCSharpExample() {
-      // Delete any enabled GMB feeds and their customer feeds, since only one enabled GMB feed
-      // is allowed per account.
-      utils.DeleteEnabledGmbFeeds(user);
-      utils.DeleteEnabledGmbCustomerFeeds(user);
-
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-
-      RunExample(delegate () {
-        new CSharpExamples.AddGoogleMyBusinessLocationExtensions().Run(user,
-            config.GMBLoginEmail, gmbAccessToken, null);
-      });
-    }
-
-    /// <summary>
-    /// Tests the AddGoogleMyBusinessLocationExtension VB.NET code example.
-    /// </summary>
-    [Test]
-    public void TestAddGoogleMyBusinessLocationExtensionVBExample() {
-      // Delete any enabled GMB feeds and their customer feeds, since only one enabled GMB feed
-      // is allowed per account.
-      utils.DeleteEnabledGmbFeeds(user);
-      utils.DeleteEnabledGmbCustomerFeeds(user);
-
-      AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-
-      RunExample(delegate () {
-        new VBExamples.AddGoogleMyBusinessLocationExtensions().Run(user, config.GMBLoginEmail,
-            gmbAccessToken, null);
-      });
-    }
-  }
 }

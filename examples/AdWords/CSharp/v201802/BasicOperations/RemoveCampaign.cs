@@ -17,78 +17,96 @@ using Google.Api.Ads.AdWords.v201802;
 
 using System;
 
-namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
-
-  /// <summary>
-  /// This code example removes a campaign by setting the status to 'REMOVED'.
-  /// To get campaigns, run GetCampaigns.cs.
-  /// </summary>
-  public class RemoveCampaign : ExampleBase {
-
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Main method, to run this code example as a standalone application.
+    /// This code example removes a campaign by setting the status to 'REMOVED'.
+    /// To get campaigns, run GetCampaigns.cs.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      RemoveCampaign codeExample = new RemoveCampaign();
-      Console.WriteLine(codeExample.Description);
-      try {
-        long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
-        codeExample.Run(new AdWordsUser(), campaignId);
-      } catch (Exception e) {
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e));
-      }
-    }
-
-    /// <summary>
-    /// Returns a description about the code example.
-    /// </summary>
-    public override string Description {
-      get {
-        return "This code example removes a campaign by setting the status to 'REMOVED'. " +
-            "To get campaigns, run GetCampaigns.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Runs the code example.
-    /// </summary>
-    /// <param name="user">The AdWords user.</param>
-    /// <param name="campaignId">Id of the campaign to be removed.</param>
-    public void Run(AdWordsUser user, long campaignId) {
-      using (CampaignService campaignService = (CampaignService) user.GetService(
-          AdWordsService.v201802.CampaignService)) {
-
-        // Create campaign with REMOVED status.
-        Campaign campaign = new Campaign {
-          id = campaignId,
-          status = CampaignStatus.REMOVED
-        };
-
-        // Create the operation.
-        CampaignOperation operation = new CampaignOperation {
-          operand = campaign,
-          @operator = Operator.SET
-        };
-
-        try {
-          // Remove the campaign.
-          CampaignReturnValue retVal = campaignService.mutate(
-              new CampaignOperation[] { operation });
-
-          // Display the results.
-          if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-            Campaign removedCampaign = retVal.value[0];
-            Console.WriteLine("Campaign with id = \"{0}\" was renamed to \"{1}\" and removed.",
-                removedCampaign.id, removedCampaign.name);
-          } else {
-            Console.WriteLine("No campaigns were removed.");
-          }
-        } catch (Exception e) {
-          throw new System.ApplicationException("Failed to remove campaign.", e);
+    public class RemoveCampaign : ExampleBase
+    {
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        /// <param name="args">The command line arguments.</param>
+        public static void Main(string[] args)
+        {
+            RemoveCampaign codeExample = new RemoveCampaign();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+                codeExample.Run(new AdWordsUser(), campaignId);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                    ExampleUtilities.FormatException(e));
+            }
         }
-      }
+
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example removes a campaign by setting the status to 'REMOVED'. " +
+                    "To get campaigns, run GetCampaigns.cs.";
+            }
+        }
+
+        /// <summary>
+        /// Runs the code example.
+        /// </summary>
+        /// <param name="user">The AdWords user.</param>
+        /// <param name="campaignId">Id of the campaign to be removed.</param>
+        public void Run(AdWordsUser user, long campaignId)
+        {
+            using (CampaignService campaignService =
+                (CampaignService) user.GetService(AdWordsService.v201802.CampaignService))
+            {
+                // Create campaign with REMOVED status.
+                Campaign campaign = new Campaign
+                {
+                    id = campaignId,
+                    status = CampaignStatus.REMOVED
+                };
+
+                // Create the operation.
+                CampaignOperation operation = new CampaignOperation
+                {
+                    operand = campaign,
+                    @operator = Operator.SET
+                };
+
+                try
+                {
+                    // Remove the campaign.
+                    CampaignReturnValue retVal = campaignService.mutate(new CampaignOperation[]
+                    {
+                        operation
+                    });
+
+                    // Display the results.
+                    if (retVal != null && retVal.value != null && retVal.value.Length > 0)
+                    {
+                        Campaign removedCampaign = retVal.value[0];
+                        Console.WriteLine(
+                            "Campaign with id = \"{0}\" was renamed to \"{1}\" and removed.",
+                            removedCampaign.id, removedCampaign.name);
+                    }
+                    else
+                    {
+                        Console.WriteLine("No campaigns were removed.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw new System.ApplicationException("Failed to remove campaign.", e);
+                }
+            }
+        }
     }
-  }
 }

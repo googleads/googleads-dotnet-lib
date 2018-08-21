@@ -17,92 +17,115 @@ using Google.Api.Ads.AdWords.v201802;
 
 using System;
 
-namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
-
-  /// <summary>
-  /// This code example gets all targeting criteria for a campaign. To set
-  /// campaign targeting criteria, run AddCampaignTargetingCriteria.cs. To get
-  /// campaigns, run GetCampaigns.cs.
-  /// </summary>
-  public class GetCampaignTargetingCriteria : ExampleBase {
-
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Main method, to run this code example as a standalone application.
+    /// This code example gets all targeting criteria for a campaign. To set
+    /// campaign targeting criteria, run AddCampaignTargetingCriteria.cs. To get
+    /// campaigns, run GetCampaigns.cs.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      GetCampaignTargetingCriteria codeExample = new GetCampaignTargetingCriteria();
-      Console.WriteLine(codeExample.Description);
-      try {
-        long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
-        codeExample.Run(new AdWordsUser(), campaignId);
-      } catch (Exception e) {
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e));
-      }
-    }
-
-    /// <summary>
-    /// Returns a description about the code example.
-    /// </summary>
-    public override string Description {
-      get {
-        return "This code example gets all targeting criteria for a campaign. To set campaign " +
-            "targeting criteria, run AddCampaignTargetingCriteria.cs. To get campaigns, run " +
-            "GetCampaigns.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Runs the code example.
-    /// </summary>
-    /// <param name="user">The AdWords user.</param>
-    /// <param name="campaignId">Id of the campaign from which targeting
-    /// criteria are retrieved.</param>
-    public void Run(AdWordsUser user, long campaignId) {
-      using (CampaignCriterionService campaignCriterionService =
-          (CampaignCriterionService) user.GetService(
-              AdWordsService.v201802.CampaignCriterionService)) {
-
-        // Create the selector.
-        Selector selector = new Selector() {
-          fields = new string[] {
-            Criterion.Fields.Id, Criterion.Fields.CriteriaType, CampaignCriterion.Fields.CampaignId
-          },
-          predicates = new Predicate[] {
-            Predicate.Equals(CampaignCriterion.Fields.CampaignId, campaignId)
-          },
-          paging = Paging.Default
-        };
-
-        CampaignCriterionPage page = new CampaignCriterionPage();
-
-        try {
-          do {
-            // Get all campaign targets.
-            page = campaignCriterionService.get(selector);
-
-            // Display the results.
-            if (page != null && page.entries != null) {
-              int i = selector.paging.startIndex;
-              foreach (CampaignCriterion campaignCriterion in page.entries) {
-                string negative =
-                    (campaignCriterion is NegativeCampaignCriterion) ? "Negative " : "";
-                Console.WriteLine("{0}) {1}Campaign criterion with id = '{2}' and Type = {3} " +
-                    "was found for campaign id '{4}'",
-                    i + 1, negative, campaignCriterion.criterion.id,
-                    campaignCriterion.criterion.type, campaignCriterion.campaignId);
-                i++;
-              }
+    public class GetCampaignTargetingCriteria : ExampleBase
+    {
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        /// <param name="args">The command line arguments.</param>
+        public static void Main(string[] args)
+        {
+            GetCampaignTargetingCriteria codeExample = new GetCampaignTargetingCriteria();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+                codeExample.Run(new AdWordsUser(), campaignId);
             }
-            selector.paging.IncreaseOffset();
-          } while (selector.paging.startIndex < page.totalNumEntries);
-          Console.WriteLine("Number of campaign targeting criteria found: {0}",
-              page.totalNumEntries);
-        } catch (Exception e) {
-          throw new System.ApplicationException("Failed to get campaign targeting criteria.", e);
+            catch (Exception e)
+            {
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                    ExampleUtilities.FormatException(e));
+            }
         }
-      }
+
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "This code example gets all targeting criteria for a campaign. To set " +
+                    "campaign targeting criteria, run AddCampaignTargetingCriteria.cs. To get " +
+                    "campaigns, run GetCampaigns.cs.";
+            }
+        }
+
+        /// <summary>
+        /// Runs the code example.
+        /// </summary>
+        /// <param name="user">The AdWords user.</param>
+        /// <param name="campaignId">Id of the campaign from which targeting
+        /// criteria are retrieved.</param>
+        public void Run(AdWordsUser user, long campaignId)
+        {
+            using (CampaignCriterionService campaignCriterionService =
+                (CampaignCriterionService) user.GetService(AdWordsService.v201802
+                    .CampaignCriterionService))
+            {
+                // Create the selector.
+                Selector selector = new Selector()
+                {
+                    fields = new string[]
+                    {
+                        Criterion.Fields.Id,
+                        Criterion.Fields.CriteriaType,
+                        CampaignCriterion.Fields.CampaignId
+                    },
+                    predicates = new Predicate[]
+                    {
+                        Predicate.Equals(CampaignCriterion.Fields.CampaignId, campaignId)
+                    },
+                    paging = Paging.Default
+                };
+
+                CampaignCriterionPage page = new CampaignCriterionPage();
+
+                try
+                {
+                    do
+                    {
+                        // Get all campaign targets.
+                        page = campaignCriterionService.get(selector);
+
+                        // Display the results.
+                        if (page != null && page.entries != null)
+                        {
+                            int i = selector.paging.startIndex;
+                            foreach (CampaignCriterion campaignCriterion in page.entries)
+                            {
+                                string negative = (campaignCriterion is NegativeCampaignCriterion)
+                                    ? "Negative "
+                                    : "";
+                                Console.WriteLine(
+                                    "{0}) {1}Campaign criterion with id = '{2}' and Type = {3} " +
+                                    "was found for campaign id '{4}'", i + 1, negative,
+                                    campaignCriterion.criterion.id,
+                                    campaignCriterion.criterion.type, campaignCriterion.campaignId);
+                                i++;
+                            }
+                        }
+
+                        selector.paging.IncreaseOffset();
+                    } while (selector.paging.startIndex < page.totalNumEntries);
+
+                    Console.WriteLine("Number of campaign targeting criteria found: {0}",
+                        page.totalNumEntries);
+                }
+                catch (Exception e)
+                {
+                    throw new System.ApplicationException(
+                        "Failed to get campaign targeting criteria.", e);
+                }
+            }
+        }
     }
-  }
 }

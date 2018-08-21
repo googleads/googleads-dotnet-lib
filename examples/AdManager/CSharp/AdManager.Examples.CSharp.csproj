@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>Google.Api.Ads.AdManager.Examples.CSharp</RootNamespace>
+    <AssemblyName>Google.AdManager.Examples.CSharp</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <StartupObject>Google.Api.Ads.AdManager.Examples.CSharp.Program</StartupObject>
+    <PublicSign Condition="'$(OS)' != 'Windows_NT'">true</PublicSign>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(ProjectDir)..\..\..\src\Common\AdsApi.snk</AssemblyOriginatorKeyFile>
+    <DebugType>pdbonly</DebugType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Google.Ads.Common" Version="9.4.0" />
+    <PackageReference Include="Google.Dfp" Version="24.0.0" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.4.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Include local projects over nuget dependencies if available -->
+    <ProjectReference Condition="Exists('..\..\..\src\Common\Common.csproj')"
+        Include="..\..\..\src\Common\Common.csproj" />
+    <ProjectReference Condition="Exists('..\..\..\src\AdManager\AdManager.csproj')"
+        Include="..\..\..\src\AdManager\AdManager.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="oauth\**" />
+    <Content Remove="oauth\**" />
+    <None Remove="oauth\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Condition="Exists('..\..\..\src\AdManager\App.config')"
+        Include="..\..\..\src\AdManager\App.config">
+      <Link>App.config</Link>
+    </None>
+  </ItemGroup>
+  <Target Name="StrongName" AfterTargets="Build"
+    Condition="'$(OS)' != 'Windows_NT' AND $(Configuration) == 'Release' AND '$(TargetFramework)' != ''">
+    <Exec Command="sn -R $(OutputPath)$(TargetFileName) $(ProjectDir)../../../src/Common/AdsApi.snk" />
+  </Target>
+</Project>

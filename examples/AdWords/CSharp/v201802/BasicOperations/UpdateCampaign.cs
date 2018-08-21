@@ -17,77 +17,95 @@ using Google.Api.Ads.AdWords.v201802;
 
 using System;
 
-namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802 {
-
-  /// <summary>
-  /// This code example updates a campaign. To get campaigns, run
-  /// GetCampaigns.cs.
-  /// </summary>
-  public class UpdateCampaign : ExampleBase {
-
+namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802
+{
     /// <summary>
-    /// Main method, to run this code example as a standalone application.
+    /// This code example updates a campaign. To get campaigns, run
+    /// GetCampaigns.cs.
     /// </summary>
-    /// <param name="args">The command line arguments.</param>
-    public static void Main(string[] args) {
-      UpdateCampaign codeExample = new UpdateCampaign();
-      Console.WriteLine(codeExample.Description);
-      try {
-        long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
-        codeExample.Run(new AdWordsUser(), campaignId);
-      } catch (Exception e) {
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e));
-      }
-    }
-
-    /// <summary>
-    /// Returns a description about the code example.
-    /// </summary>
-    public override string Description {
-      get {
-        return "This code example updates a campaign. To get campaigns, run GetCampaigns.cs.";
-      }
-    }
-
-    /// <summary>
-    /// Runs the code example.
-    /// </summary>
-    /// <param name="user">The AdWords user.</param>
-    /// <param name="campaignId">Id of the campaign to be updated.</param>
-    public void Run(AdWordsUser user, long campaignId) {
-      using (CampaignService campaignService =
-          (CampaignService) user.GetService(AdWordsService.v201802.CampaignService)) {
-
-        // Create the campaign.
-        Campaign campaign = new Campaign {
-          id = campaignId,
-          status = CampaignStatus.PAUSED
-        };
-
-        // Create the operation.
-        CampaignOperation operation = new CampaignOperation {
-          @operator = Operator.SET,
-          operand = campaign
-        };
-
-        try {
-          // Update the campaign.
-          CampaignReturnValue retVal = campaignService.mutate(
-              new CampaignOperation[] { operation });
-
-          // Display the results.
-          if (retVal != null && retVal.value != null && retVal.value.Length > 0) {
-            Campaign updatedCampaign = retVal.value[0];
-            Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was updated.",
-                updatedCampaign.name, updatedCampaign.id);
-          } else {
-            Console.WriteLine("No campaigns were updated.");
-          }
-        } catch (Exception e) {
-          throw new System.ApplicationException("Failed to update campaign.", e);
+    public class UpdateCampaign : ExampleBase
+    {
+        /// <summary>
+        /// Main method, to run this code example as a standalone application.
+        /// </summary>
+        /// <param name="args">The command line arguments.</param>
+        public static void Main(string[] args)
+        {
+            UpdateCampaign codeExample = new UpdateCampaign();
+            Console.WriteLine(codeExample.Description);
+            try
+            {
+                long campaignId = long.Parse("INSERT_CAMPAIGN_ID_HERE");
+                codeExample.Run(new AdWordsUser(), campaignId);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                    ExampleUtilities.FormatException(e));
+            }
         }
-      }
+
+        /// <summary>
+        /// Returns a description about the code example.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return
+                    "This code example updates a campaign. To get campaigns, run GetCampaigns.cs.";
+            }
+        }
+
+        /// <summary>
+        /// Runs the code example.
+        /// </summary>
+        /// <param name="user">The AdWords user.</param>
+        /// <param name="campaignId">Id of the campaign to be updated.</param>
+        public void Run(AdWordsUser user, long campaignId)
+        {
+            using (CampaignService campaignService =
+                (CampaignService) user.GetService(AdWordsService.v201802.CampaignService))
+            {
+                // Create the campaign.
+                Campaign campaign = new Campaign
+                {
+                    id = campaignId,
+                    status = CampaignStatus.PAUSED
+                };
+
+                // Create the operation.
+                CampaignOperation operation = new CampaignOperation
+                {
+                    @operator = Operator.SET,
+                    operand = campaign
+                };
+
+                try
+                {
+                    // Update the campaign.
+                    CampaignReturnValue retVal = campaignService.mutate(new CampaignOperation[]
+                    {
+                        operation
+                    });
+
+                    // Display the results.
+                    if (retVal != null && retVal.value != null && retVal.value.Length > 0)
+                    {
+                        Campaign updatedCampaign = retVal.value[0];
+                        Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was updated.",
+                            updatedCampaign.name, updatedCampaign.id);
+                    }
+                    else
+                    {
+                        Console.WriteLine("No campaigns were updated.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw new System.ApplicationException("Failed to update campaign.", e);
+                }
+            }
+        }
     }
-  }
 }

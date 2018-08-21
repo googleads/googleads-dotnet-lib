@@ -34,9 +34,9 @@ namespace Google.Api.Ads.Common.Utilities.OAuthTokenGenerator
         private const string ADWORDS_API_SCOPE = "https://www.googleapis.com/auth/adwords";
 
         /// <summary>
-        /// The DFP API scope.
+        /// The Ad Manager API scope.
         /// </summary>
-        private const string DFP_API_SCOPE = "https://www.googleapis.com/auth/dfp";
+        private const string AD_MANAGER_API_SCOPE = "https://www.googleapis.com/auth/dfp";
 
         /// <summary>
         /// The Application configuration patch to be displayed to the user.
@@ -78,12 +78,13 @@ namespace Google.Api.Ads.Common.Utilities.OAuthTokenGenerator
                 });
 
             // Should API scopes include AdWords API?
-            string useDfpApiScope = AcceptInputWithLimitedOptions("Authenticate for DFP API?",
-                new string[]
-                {
-                    "yes",
-                    "no"
-                });
+            string useAdManagerApiScope =
+                AcceptInputWithLimitedOptions("Authenticate for Ad Manager API?",
+                    new string[]
+                    {
+                        "yes",
+                        "no"
+                    });
 
             // Accept any additional scopes.
             Console.Write("Enter additional OAuth2 scopes to authenticate for (space separated): ");
@@ -96,9 +97,9 @@ namespace Google.Api.Ads.Common.Utilities.OAuthTokenGenerator
                 scopes.Add(ADWORDS_API_SCOPE);
             }
 
-            if (useDfpApiScope.ToLower().Trim() == "yes")
+            if (useAdManagerApiScope.ToLower().Trim() == "yes")
             {
-                scopes.Add(DFP_API_SCOPE);
+                scopes.Add(AD_MANAGER_API_SCOPE);
             }
 
             scopes.AddRange(additionalScopes.Split(' ').Select(s => s.Trim())
