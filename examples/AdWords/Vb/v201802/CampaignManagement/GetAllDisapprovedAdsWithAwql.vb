@@ -13,6 +13,7 @@
 ' limitations under the License.
 
 Imports Google.Api.Ads.AdWords.Lib
+Imports Google.Api.Ads.AdWords.Util.Reports.v201802
 Imports Google.Api.Ads.AdWords.v201802
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
@@ -64,21 +65,22 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
           AdWordsService.v201802.AdGroupAdService), AdGroupAdService)
 
         ' Get all the disapproved ads for this campaign.
-        Dim query As String = String.Format("SELECT Id, PolicySummary WHERE CampaignId = {0} " &
-            "and CombinedApprovalStatus = DISAPPROVED ORDER BY Id", campaignId)
-
-        Dim offset As Long = 0
-        Dim pageSize As Long = 500
+        Dim query As SelectQuery = New SelectQueryBuilder() _
+            .Select(Ad.Fields.Id, AdGroupAd.Fields.PolicySummary) _
+            .Where(AdGroup.Fields.CampaignId).Equals(campaignId) _
+            .Where(AdGroupAdPolicySummary.Fields.CombinedApprovalStatus) _
+            .Equals(ApprovalStatus.DISAPPROVED.ToString()) _
+            .OrderByAscending(Ad.Fields.Id) _
+            .DefaultLimit() _
+            .Build()
 
         Dim page As New AdGroupAdPage()
         Dim disapprovedAdsCount As Integer = 0
 
         Try
           Do
-            Dim queryWithPaging As String = String.Format("{0} LIMIT {1}, {2}", query, offset,
-                pageSize)
             ' Get the disapproved ads.
-            page = service.query(queryWithPaging)
+            page = service.query(query)
 
             ' Display the results.
             If Not (page Is Nothing) AndAlso Not (page.entries Is Nothing) Then
@@ -107,9 +109,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
                 Next
               Next
             End If
-
-            offset = offset + pageSize
-          Loop While (offset < page.totalNumEntries)
+            query.NextPage(page)
+          Loop While (query.HasNextPage(page))
           Console.WriteLine("Number of disapproved ads found: {0}", disapprovedAdsCount)
         Catch e As Exception
           Throw New System.ApplicationException("Failed to get disapproved ads.", e)

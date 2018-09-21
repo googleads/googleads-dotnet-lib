@@ -12,35 +12,37 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.Reports {
-
-  /// <summary>
-  /// A type used for annotating properties that will hold the values
-  /// of a row of a report. The names of the properties that are annotated
-  /// with ReportColumn must match the name of the columns in the AdWords
-  /// report, and the type of the property must be compatible with the data
-  /// in that column.
-  /// </summary>
-  public class ReportColumn : System.Attribute {
-
+namespace Google.Api.Ads.AdWords.Util.Reports
+{
     /// <summary>
-    /// An optional column name.
+    /// A type used for annotating properties that will hold the values
+    /// of a row of a report. The names of the properties that are annotated
+    /// with ReportColumn must match the name of the columns in the AdWords
+    /// report, and the type of the property must be compatible with the data
+    /// in that column.
     /// </summary>
-    public string ColumnName { get; private set; }
+    public class ReportColumn : System.Attribute
+    {
+        /// <summary>
+        /// An optional column name.
+        /// </summary>
+        public string ColumnName { get; private set; }
 
-    /// <summary>
-    /// The constructor for providing no column name.
-    /// </summary>
-    public ReportColumn() {
-      this.ColumnName = null;
+        /// <summary>
+        /// The constructor for providing no column name.
+        /// </summary>
+        public ReportColumn()
+        {
+            this.ColumnName = null;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReportColumn" /> class.
+        /// </summary>
+        /// <param name="colName">The column name</param>
+        public ReportColumn(string colName)
+        {
+            this.ColumnName = colName;
+        }
     }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ReportColumn" /> class.
-    /// </summary>
-    /// <param name="colName">The column name</param>
-    public ReportColumn(string colName) {
-      this.ColumnName = colName;
-    }
-  }
 }

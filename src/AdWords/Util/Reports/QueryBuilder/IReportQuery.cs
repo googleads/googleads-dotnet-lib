@@ -12,20 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.Reports {
-
-  /// <summary>
-  /// A reporting query.
-  /// </summary>
-  /// <typeparam name="TParent">The type of the parent.</typeparam>
-  /// <typeparam name="TBuilder">The type of the builder.</typeparam>
-  internal interface IReportQuery<TParent, TBuilder> {
-
+namespace Google.Api.Ads.AdWords.Util.Reports
+{
     /// <summary>
-    /// Gets the builder.
+    /// A reporting query.
     /// </summary>
-    TBuilder Builder {
-      get;
+    /// <typeparam name="TParent">The type of the parent.</typeparam>
+    /// <typeparam name="TBuilder">The type of the builder.</typeparam>
+    internal interface IReportQuery<TParent, TBuilder>
+    {
+        /// <summary>
+        /// Gets the builder.
+        /// </summary>
+        TBuilder Builder { get; }
     }
-  }
 }

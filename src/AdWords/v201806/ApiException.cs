@@ -15,34 +15,39 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Google.Api.Ads.AdWords.v201806 {
-
-  /// <summary>
-  /// Exception class for holding a list of service errors.
-  /// </summary>
-  public partial class ApiException {
-
+namespace Google.Api.Ads.AdWords.v201806
+{
     /// <summary>
-    /// Returns a <see cref="System.String" /> that represents this instance.
+    /// Exception class for holding a list of service errors.
     /// </summary>
-    /// <returns>
-    /// A <see cref="System.String" /> that represents this instance.
-    /// </returns>
-    public override string ToString() {
-      if (this.errors == null || this.errors.Length == 0) {
-        return base.ToString();
-      } else {
-        return string.Join<ApiError>("\n", errors);
-      }
-    }
+    public partial class ApiException
+    {
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            if (this.errors == null || this.errors.Length == 0)
+            {
+                return base.ToString();
+            }
+            else
+            {
+                return string.Join<ApiError>("\n", errors);
+            }
+        }
 
-    /// <summary>
-    /// Gets all errors of a given type.
-    /// </summary>
-    /// <typeparam name="T">The error type to get.</typeparam>
-    /// <returns>A list of errors of specified type.</returns>
-    public List<T> GetAllErrorsByType<T>() where T : ApiError {
-      return new List<T>(this.errors.Where(x => x is T).Cast<T>());
+        /// <summary>
+        /// Gets all errors of a given type.
+        /// </summary>
+        /// <typeparam name="T">The error type to get.</typeparam>
+        /// <returns>A list of errors of specified type.</returns>
+        public List<T> GetAllErrorsByType<T>() where T : ApiError
+        {
+            return new List<T>(this.errors.Where(x => x is T).Cast<T>());
+        }
     }
-  }
 }

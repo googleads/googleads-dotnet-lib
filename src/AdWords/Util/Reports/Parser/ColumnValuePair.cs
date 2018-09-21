@@ -12,32 +12,33 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.Reports {
-
-  /// <summary>
-  /// A class to hold two strings, the column name and the value in that column for a row in
-  /// a report.
-  /// </summary>
-  public class ColumnValuePair {
-
+namespace Google.Api.Ads.AdWords.Util.Reports
+{
     /// <summary>
-    /// The name of the column.
+    /// A class to hold two strings, the column name and the value in that column for a row in
+    /// a report.
     /// </summary>
-    public readonly string ColName;
+    public class ColumnValuePair
+    {
+        /// <summary>
+        /// The name of the column.
+        /// </summary>
+        public readonly string ColName;
 
-    /// <summary>
-    /// The value in this column.
-    /// </summary>
-    public readonly string Value;
+        /// <summary>
+        /// The value in this column.
+        /// </summary>
+        public readonly string Value;
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ColumnValuePair" /> class.
-    /// </summary>
-    /// <param name="colName">The column name</param>
-    /// <param name="value">The column value</param>
-    public ColumnValuePair(string colName, string value) {
-      this.ColName = colName;
-      this.Value = value;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColumnValuePair" /> class.
+        /// </summary>
+        /// <param name="colName">The column name</param>
+        /// <param name="value">The column value</param>
+        public ColumnValuePair(string colName, string value)
+        {
+            this.ColName = colName;
+            this.Value = value;
+        }
     }
-  }
 }

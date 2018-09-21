@@ -14,29 +14,30 @@
 
 using System.Runtime.Serialization;
 
-namespace Google.Api.Ads.AdManager.Headers {
-  /// <summary>
-  /// SOAP Response header for DFP API services.
-  /// </summary>
-  [DataContract(Name = "ResponseHeader", Namespace = PLACEHOLDER_NAMESPACE)]
-  public class ResponseHeader {
+namespace Google.Api.Ads.AdManager.Headers
+{
     /// <summary>
-    /// A placeholder namespace for deserializing response headers from different API versions.
+    /// SOAP Response header for DFP API services.
     /// </summary>
-    public const string PLACEHOLDER_NAMESPACE =
-        "https://www.google.com/ads/api/publisher/version";
+    [DataContract(Name = "ResponseHeader", Namespace = PLACEHOLDER_NAMESPACE)]
+    public class ResponseHeader
+    {
+        /// <summary>
+        /// A placeholder namespace for deserializing response headers from different API versions.
+        /// </summary>
+        public const string PLACEHOLDER_NAMESPACE =
+            "https://www.google.com/ads/api/publisher/version";
 
-    /// <summary>
-    /// Gets or sets the request id for this API call.
-    /// </summary>
-    [DataMember(Order = 0)]
-    public string requestId { get; set; }
+        /// <summary>
+        /// Gets or sets the request id for this API call.
+        /// </summary>
+        [DataMember(Order = 0)]
+        public string requestId { get; set; }
 
-    /// <summary>
-    /// Gets or sets the response time for this API call.
-    /// </summary>
-    [DataMember(Order = 1)]
-    public long responseTime { get; set; }
-
-  }
+        /// <summary>
+        /// Gets or sets the response time for this API call.
+        /// </summary>
+        [DataMember(Order = 1)]
+        public long responseTime { get; set; }
+    }
 }

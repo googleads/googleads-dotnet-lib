@@ -14,6 +14,7 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Util.Reports;
+using Google.Api.Ads.AdWords.Util.Reports.v201802;
 using Google.Api.Ads.AdWords.v201802;
 using Google.Api.Ads.Common.Util.Reports;
 
@@ -70,10 +71,13 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802
         /// </param>
         public void Run(AdWordsUser user, string fileName)
         {
-            string query =
-                "SELECT CampaignId, AdGroupId, Id, Criteria, CriteriaType, Impressions, " +
-                "Clicks, Cost FROM CRITERIA_PERFORMANCE_REPORT WHERE Status IN [ENABLED, PAUSED] " +
-                "DURING LAST_7_DAYS";
+            ReportQuery query = new ReportQueryBuilder()
+                .Select("CampaignId", "AdGroupId", "Id", "Criteria", "CriteriaType",
+                    "Impressions", "Clicks", "Cost")
+                .From(ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT)
+                .Where("Status").In("ENABLED", "PAUSED")
+                .During(ReportDefinitionDateRangeType.LAST_7_DAYS)
+                .Build();
 
             string filePath =
                 ExampleUtilities.GetHomeDir() + Path.DirectorySeparatorChar + fileName;

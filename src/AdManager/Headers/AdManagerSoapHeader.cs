@@ -17,25 +17,25 @@ using Google.Api.Ads.Common.Lib;
 using System;
 using System.ServiceModel.Channels;
 
-namespace Google.Api.Ads.AdManager.Headers {
-  /// <summary>
-  /// Base class for Ad Manager API Soap headers.
-  /// </summary>
-  public abstract class AdManagerSoapHeader : MessageHeader {
-
+namespace Google.Api.Ads.AdManager.Headers
+{
     /// <summary>
-    /// The API version the header should be namespaced to.
+    /// Base class for Ad Manager API Soap headers.
     /// </summary>
-    public string Version { get; set; }
+    public abstract class AdManagerSoapHeader : MessageHeader
+    {
+        /// <summary>
+        /// The API version the header should be namespaced to.
+        /// </summary>
+        public string Version { get; set; }
 
-    /// <summary>
-    /// Gets the namespace.
-    /// </summary>
-    /// <value>The namespace.</value>
-    public override string Namespace {
-      get {
-        return "https://www.google.com/apis/ads/publisher/" + Version;
-      }
+        /// <summary>
+        /// Gets the namespace.
+        /// </summary>
+        /// <value>The namespace.</value>
+        public override string Namespace
+        {
+            get { return "https://www.google.com/apis/ads/publisher/" + Version; }
+        }
     }
-  }
 }

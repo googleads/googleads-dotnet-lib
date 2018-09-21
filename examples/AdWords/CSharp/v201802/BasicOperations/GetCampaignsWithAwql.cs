@@ -13,6 +13,7 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.Util.Reports.v201802;
 using Google.Api.Ads.AdWords.v201802;
 
 using System;
@@ -68,27 +69,25 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802
                 (CampaignService) user.GetService(AdWordsService.v201802.CampaignService))
             {
                 // Create the query.
-                string query = "SELECT Id, Name, Status ORDER BY Name";
-
-                int offset = 0;
-                int pageSize = 500;
+                SelectQuery query = new SelectQueryBuilder()
+                    .Select(Campaign.Fields.Name, Campaign.Fields.Id, Campaign.Fields.Status)
+                    .OrderByAscending(Campaign.Fields.Name)
+                    .DefaultLimit()
+                    .Build();
 
                 CampaignPage page = new CampaignPage();
+                int i = 0;
 
                 try
                 {
                     do
                     {
-                        string queryWithPaging =
-                            string.Format("{0} LIMIT {1}, {2}", query, offset, pageSize);
-
                         // Get the campaigns.
-                        page = campaignService.query(queryWithPaging);
+                        page = campaignService.query(query);
 
                         // Display the results.
                         if (page != null && page.entries != null)
                         {
-                            int i = offset;
                             foreach (Campaign campaign in page.entries)
                             {
                                 Console.WriteLine(
@@ -99,8 +98,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802
                             }
                         }
 
-                        offset += pageSize;
-                    } while (offset < page.totalNumEntries);
+                        query.NextPage(page);
+                    } while (query.HasNextPage(page));
 
                     Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries);
                 }

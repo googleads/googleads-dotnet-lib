@@ -12,27 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.Reports {
-
-  /// <summary>
-  /// Builder interface for FROM capability.
-  /// </summary>
-  /// <typeparam name="TParent">The parent builder type.</typeparam>
-  /// <typeparam name="TReportType">The enum type for predefined report types.</typeparam>
-  internal interface IDataSourceBuilder<TParent, TReportType> {
-
+namespace Google.Api.Ads.AdWords.Util.Reports
+{
     /// <summary>
-    /// Adds a FROM clause to the query.
+    /// Builder interface for FROM capability.
     /// </summary>
-    /// <param name="reportType">Type of the report.</param>
-    /// <returns>The parent builder for call chaining.</returns>
-    TParent From(TReportType reportType);
+    /// <typeparam name="TParent">The parent builder type.</typeparam>
+    /// <typeparam name="TReportType">The enum type for predefined report types.</typeparam>
+    internal interface IDataSourceBuilder<TParent, TReportType>
+    {
+        /// <summary>
+        /// Adds a FROM clause to the query.
+        /// </summary>
+        /// <param name="reportType">Type of the report.</param>
+        /// <returns>The parent builder for call chaining.</returns>
+        TParent From(TReportType reportType);
 
-    /// <summary>
-    /// Adds a FROM clause to the query.
-    /// </summary>
-    /// <param name="reportType">Type of the report.</param>
-    /// <returns>The parent builder for call chaining.</returns>
-    TParent From(string reportType);
-  }
+        /// <summary>
+        /// Adds a FROM clause to the query.
+        /// </summary>
+        /// <param name="reportType">Type of the report.</param>
+        /// <returns>The parent builder for call chaining.</returns>
+        TParent From(string reportType);
+    }
 }

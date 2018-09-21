@@ -17,53 +17,58 @@ using Google.Api.Ads.Common.Logging;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.AdManager.Lib {
-
-  /// <summary>
-  /// Listens to SOAP messages sent and received by this library.
-  /// </summary>
-  public class AdManagerTraceListener : TraceListener {
-
+namespace Google.Api.Ads.AdManager.Lib
+{
     /// <summary>
-    /// The singleton instance.
+    /// Listens to SOAP messages sent and received by this library.
     /// </summary>
-    protected static AdManagerTraceListener instance = new AdManagerTraceListener();
+    public class AdManagerTraceListener : TraceListener
+    {
+        /// <summary>
+        /// The singleton instance.
+        /// </summary>
+        protected static AdManagerTraceListener instance = new AdManagerTraceListener();
 
-    /// <summary>
-    /// Protected constructor.
-    /// </summary>
-    protected AdManagerTraceListener()
-      : base(new AdManagerAppConfig()) {
+        /// <summary>
+        /// Protected constructor.
+        /// </summary>
+        protected AdManagerTraceListener() : base(new AdManagerAppConfig())
+        {
+        }
+
+        /// <summary>
+        /// Gets the singleton instance.
+        /// </summary>
+        public static SoapListener Instance
+        {
+            get { return instance; }
+        }
+
+        /// <summary>
+        /// Parses the body of the request and populates fields in the request info.
+        /// </summary>
+        /// <param name="info">The request info for this SOAP call.</param>
+        protected override void PopulateRequestInfo(ref RequestInfo info)
+        {
+            base.PopulateRequestInfo(ref info);
+
+            // Set the network code.
+            info.IdentifierName = "networkCode";
+            info.IdentifierValue = ((AdManagerAppConfig) this.Config).NetworkCode;
+        }
+
+        /// <summary>
+        /// Gets a list of fields to be masked in xml logs.
+        /// </summary>
+        /// <returns>The list of fields to be masked.</returns>
+        protected override ISet<string> GetFieldsToMask()
+        {
+            return new HashSet<string>(new string[]
+            {
+                "authToken",
+                "token",
+                "Authorization"
+            }, StringComparer.OrdinalIgnoreCase);
+        }
     }
-
-    /// <summary>
-    /// Gets the singleton instance.
-    /// </summary>
-    public static SoapListener Instance {
-      get {
-        return instance;
-      }
-    }
-
-    /// <summary>
-    /// Parses the body of the request and populates fields in the request info.
-    /// </summary>
-    /// <param name="info">The request info for this SOAP call.</param>
-    protected override void PopulateRequestInfo(ref RequestInfo info) {
-      base.PopulateRequestInfo(ref info);
-
-      // Set the network code.
-      info.IdentifierName = "networkCode";
-      info.IdentifierValue = ((AdManagerAppConfig) this.Config).NetworkCode;
-    }
-
-    /// <summary>
-    /// Gets a list of fields to be masked in xml logs.
-    /// </summary>
-    /// <returns>The list of fields to be masked.</returns>
-    protected override ISet<string> GetFieldsToMask() {
-      return new HashSet<string>(new string[] { "authToken", "token", "Authorization" },
-          StringComparer.OrdinalIgnoreCase);
-    }
-  }
 }

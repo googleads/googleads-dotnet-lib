@@ -12,14 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdManager.Lib {
-  /// <summary>
-  /// List of supported Authorization methods for Ad Manager API.
-  /// </summary>
-  public enum AdManagerAuthorizationMethod {
+namespace Google.Api.Ads.AdManager.Lib
+{
     /// <summary>
-    /// OAuth 2.0 draft 10 API.
+    /// List of supported Authorization methods for Ad Manager API.
     /// </summary>
-    OAuth2
-  }
+    public enum AdManagerAuthorizationMethod
+    {
+        /// <summary>
+        /// OAuth 2.0 draft 10 API.
+        /// </summary>
+        OAuth2
+    }
 }

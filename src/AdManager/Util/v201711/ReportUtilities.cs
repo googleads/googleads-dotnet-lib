@@ -23,75 +23,83 @@ using System.Net;
 using System.Text;
 using System.Threading;
 
-namespace Google.Api.Ads.AdManager.Util.v201711 {
-
-  /// <summary>
-  /// Utility class for DFP API report downloads.
-  /// </summary>
-  public class ReportUtilities : AdsReportUtilities {
-
+namespace Google.Api.Ads.AdManager.Util.v201711
+{
     /// <summary>
-    /// The report service object to make calls with
+    /// Utility class for DFP API report downloads.
     /// </summary>
-    private ReportService reportService;
+    public class ReportUtilities : AdsReportUtilities
+    {
+        /// <summary>
+        /// The report service object to make calls with
+        /// </summary>
+        private ReportService reportService;
 
-    /// <summary>
-    /// The ID of the report job to check
-    /// </summary>
-    private long reportJobId;
+        /// <summary>
+        /// The ID of the report job to check
+        /// </summary>
+        private long reportJobId;
 
-    /// <summary>
-    /// The options to use when downloading the completed report.
-    /// </summary>
-    public ReportDownloadOptions reportDownloadOptions;
+        /// <summary>
+        /// The options to use when downloading the completed report.
+        /// </summary>
+        public ReportDownloadOptions reportDownloadOptions;
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ReportUtilities"/>
-    /// class.
-    /// </summary>
-    /// <param name="reportService">ReportService to be used</param>
-    /// <param name="reportJobId">The ID of the report job</param>
-    public ReportUtilities(ReportService reportService, long reportJobId)
-        : base(reportService.User) {
-      this.reportService = reportService;
-      this.reportJobId = reportJobId;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReportUtilities"/>
+        /// class.
+        /// </summary>
+        /// <param name="reportService">ReportService to be used</param>
+        /// <param name="reportJobId">The ID of the report job</param>
+        public ReportUtilities(ReportService reportService, long reportJobId)
+            : base(reportService.User)
+        {
+            this.reportService = reportService;
+            this.reportJobId = reportJobId;
+        }
+
+        /// <summary>
+        /// Returns a flag indicating whether the caller should wait more time for
+        /// the report download to complete.
+        /// </summary>
+        /// <returns>True, if the caller should wait more, false otherwise.
+        /// </returns>
+        protected override bool ShouldWaitMore()
+        {
+            ReportJobStatus status = reportService.getReportJobStatus(reportJobId);
+            if (status == ReportJobStatus.FAILED)
+            {
+                throw new AdsReportsException(string.Format("Report job {0} failed.", reportJobId));
+            }
+
+            return status != ReportJobStatus.COMPLETED;
+        }
+
+        /// <summary>
+        /// Gets the report response.
+        /// </summary>
+        /// <returns>The report response.</returns>
+        protected override ReportResponse GetReport()
+        {
+            PreconditionUtilities.CheckNotNull(reportDownloadOptions,
+                "reportDownloadOptions cannot be null");
+            WebResponse response = null;
+            WebRequest request =
+                BuildRequest(
+                    reportService.getReportDownloadUrlWithOptions(reportJobId,
+                        reportDownloadOptions));
+            response = request.GetResponse();
+            return new ReportResponse(response);
+        }
+
+        /// <summary>
+        /// Builds an HTTP request for downloading reports.
+        /// </summary>
+        /// <param name="downloadUrl">The download url.</param>
+        /// <returns></returns>
+        private WebRequest BuildRequest(string downloadUrl)
+        {
+            return HttpUtilities.BuildRequest(downloadUrl, "GET", this.reportService.User.Config);
+        }
     }
-
-    /// <summary>
-    /// Returns a flag indicating whether the caller should wait more time for
-    /// the report download to complete.
-    /// </summary>
-    /// <returns>True, if the caller should wait more, false otherwise.
-    /// </returns>
-    protected override bool ShouldWaitMore() {
-      ReportJobStatus status = reportService.getReportJobStatus(reportJobId);
-      if (status == ReportJobStatus.FAILED) {
-        throw new AdsReportsException(string.Format("Report job {0} failed.", reportJobId));
-      }
-      return status != ReportJobStatus.COMPLETED;
-    }
-
-    /// <summary>
-    /// Gets the report response.
-    /// </summary>
-    /// <returns>The report response.</returns>
-    protected override ReportResponse GetReport() {
-      PreconditionUtilities.CheckNotNull(reportDownloadOptions,
-          "reportDownloadOptions cannot be null");
-      WebResponse response = null;
-      WebRequest request = BuildRequest(reportService.getReportDownloadUrlWithOptions(
-          reportJobId, reportDownloadOptions));
-      response = request.GetResponse();
-      return new ReportResponse(response);
-    }
-
-    /// <summary>
-    /// Builds an HTTP request for downloading reports.
-    /// </summary>
-    /// <param name="downloadUrl">The download url.</param>
-    /// <returns></returns>
-    private WebRequest BuildRequest(string downloadUrl) {
-      return HttpUtilities.BuildRequest(downloadUrl, "GET", this.reportService.User.Config);
-    }
-  }
 }

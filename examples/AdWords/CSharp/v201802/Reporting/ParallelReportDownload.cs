@@ -14,6 +14,7 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Util.Reports;
+using Google.Api.Ads.AdWords.Util.Reports.v201802;
 using Google.Api.Ads.AdWords.v201802;
 using Google.Api.Ads.Common.Util.Reports;
 
@@ -302,9 +303,11 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802
                 ReportDownloadData[] threadData = new ReportDownloadData[MAX_NUMBER_OF_THREADS];
 
                 // The query to be run on each account.
-                string query = "SELECT CampaignId, AdGroupId, Impressions, Clicks, Cost from " +
-                    "ADGROUP_PERFORMANCE_REPORT where AdGroupStatus IN [ENABLED, PAUSED] " +
-                    "DURING LAST_7_DAYS";
+                ReportQuery query = new ReportQueryBuilder()
+                    .Select("CampaignId", "AdGroupId", "Impressions", "Clicks", "Cost")
+                    .From(ReportDefinitionReportType.ADGROUP_PERFORMANCE_REPORT)
+                    .Where("AdGroupStatus").In("ENABLED", "PAUSED")
+                    .During(ReportDefinitionDateRangeType.LAST_7_DAYS).Build();
 
                 // Initialize the threads and their data.
                 for (int i = 0; i < MAX_NUMBER_OF_THREADS; i++)

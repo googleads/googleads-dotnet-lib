@@ -17,45 +17,49 @@ using Google.Api.Ads.Common.Lib;
 using System;
 using System.Runtime.Serialization;
 
-namespace Google.Api.Ads.AdWords.Lib {
-
-  /// <summary>
-  /// Base class for all exceptions specific to AdWords.
-  /// </summary>
-  [Serializable]
-  public class AdWordsException : AdsException {
-
+namespace Google.Api.Ads.AdWords.Lib
+{
     /// <summary>
-    /// Public constructor.
+    /// Base class for all exceptions specific to AdWords.
     /// </summary>
-    public AdWordsException() : base() {
-    }
+    [Serializable]
+    public class AdWordsException : AdsException
+    {
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        public AdWordsException() : base()
+        {
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="message">Error message for this API exception.</param>
-    public AdWordsException(string message) : base(message) {
-    }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="message">Error message for this API exception.</param>
+        public AdWordsException(string message) : base(message)
+        {
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="message">Error message for this API exception.</param>
-    /// <param name="innerException">Inner exception, if any.</param>
-    public AdWordsException(string message, Exception innerException)
-        : base(message, innerException) {
-    }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="message">Error message for this API exception.</param>
+        /// <param name="innerException">Inner exception, if any.</param>
+        public AdWordsException(string message, Exception innerException) : base(message,
+            innerException)
+        {
+        }
 
-    /// <summary>
-    /// Protected constructor. Used by serialization frameworks while
-    /// deserializing an exception object.
-    /// </summary>
-    /// <param name="info">Info about the serialization context.</param>
-    /// <param name="context">A streaming context that represents the
-    /// serialization stream.</param>
-    protected AdWordsException(SerializationInfo info, StreamingContext context)
-        : base(info, context) {
+        /// <summary>
+        /// Protected constructor. Used by serialization frameworks while
+        /// deserializing an exception object.
+        /// </summary>
+        /// <param name="info">Info about the serialization context.</param>
+        /// <param name="context">A streaming context that represents the
+        /// serialization stream.</param>
+        protected AdWordsException(SerializationInfo info, StreamingContext context) : base(info,
+            context)
+        {
+        }
     }
-  }
 }

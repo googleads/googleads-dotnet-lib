@@ -67,19 +67,21 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201806
           AdWordsService.v201806.DataService), DataService)
 
         ' Create the query.
-        Dim query As SelectQuery = New SelectQueryBuilder().Select(
-            CriterionBidLandscape.Fields.AdGroupId, CriterionBidLandscape.Fields.CriterionId,
-            CriterionBidLandscape.Fields.StartDate, CriterionBidLandscape.Fields.EndDate,
-            BidLandscapeLandscapePoint.Fields.Bid, BidLandscapeLandscapePoint.Fields.LocalClicks,
-            BidLandscapeLandscapePoint.Fields.LocalCost,
-            BidLandscapeLandscapePoint.Fields.LocalImpressions,
-            BidLandscapeLandscapePoint.Fields.BiddableConversions,
-            BidLandscapeLandscapePoint.Fields.BiddableConversionsValue
-        ) _
-        .Where(CriterionBidLandscape.Fields.AdGroupId).Equals(adGroupId) _
-        .Where(CriterionBidLandscape.Fields.CriterionId).Equals(keywordId) _
-        .DefaultLimit() _
-        .Build()
+        Dim query As SelectQuery = New SelectQueryBuilder() _
+            .Select(
+                CriterionBidLandscape.Fields.AdGroupId, CriterionBidLandscape.Fields.CriterionId,
+                CriterionBidLandscape.Fields.StartDate, CriterionBidLandscape.Fields.EndDate,
+                BidLandscapeLandscapePoint.Fields.Bid,
+                BidLandscapeLandscapePoint.Fields.LocalClicks,
+                BidLandscapeLandscapePoint.Fields.LocalCost,
+                BidLandscapeLandscapePoint.Fields.LocalImpressions,
+                BidLandscapeLandscapePoint.Fields.BiddableConversions,
+                BidLandscapeLandscapePoint.Fields.BiddableConversionsValue
+            ) _
+            .Where(CriterionBidLandscape.Fields.AdGroupId).Equals(adGroupId) _
+            .Where(CriterionBidLandscape.Fields.CriterionId).Equals(keywordId) _
+            .DefaultLimit() _
+            .Build()
         ' [END prepareRequest] MOE:strip_line
 
         ' [START requestPages] MOE:strip_line

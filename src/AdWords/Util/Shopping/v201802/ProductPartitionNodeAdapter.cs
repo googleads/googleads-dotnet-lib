@@ -13,87 +13,99 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.v201802;
-
 using Google.Api.Ads.Common.Util;
 
-namespace Google.Api.Ads.AdWords.Util.Shopping.v201802 {
-
-  /// <summary>
-  /// Adapter that translates <see cref="ProductPartitionNode"/> objects into
-  /// <see cref="AdGroupCriterion"/> objects for various operations.
-  /// </summary>
-  internal class ProductPartitionNodeAdapter {
-
+namespace Google.Api.Ads.AdWords.Util.Shopping.v201802
+{
     /// <summary>
-    /// Creates a new AdGroupCriterion configured for a REMOVE operation.
+    /// Adapter that translates <see cref="ProductPartitionNode"/> objects into
+    /// <see cref="AdGroupCriterion"/> objects for various operations.
     /// </summary>
-    /// <param name="node">The node whose criterion should be removed.</param>
-    /// <param name="adGroupId">The ad group ID of the criterion.</param>
-    /// <returns>The AdGroupCriterion to be removed.</returns>
-    internal static AdGroupCriterion CreateCriterionForRemove(ProductPartitionNode node,
-        long adGroupId) {
-      PreconditionUtilities.CheckNotNull(node, ShoppingMessages.NodeCannotBeNull);
+    internal class ProductPartitionNodeAdapter
+    {
+        /// <summary>
+        /// Creates a new AdGroupCriterion configured for a REMOVE operation.
+        /// </summary>
+        /// <param name="node">The node whose criterion should be removed.</param>
+        /// <param name="adGroupId">The ad group ID of the criterion.</param>
+        /// <returns>The AdGroupCriterion to be removed.</returns>
+        internal static AdGroupCriterion CreateCriterionForRemove(ProductPartitionNode node,
+            long adGroupId)
+        {
+            PreconditionUtilities.CheckNotNull(node, ShoppingMessages.NodeCannotBeNull);
 
-      return new AdGroupCriterion() {
-        adGroupId = adGroupId,
-        criterion = new ProductPartition() {
-          id = node.ProductPartitionId
+            return new AdGroupCriterion()
+            {
+                adGroupId = adGroupId,
+                criterion = new ProductPartition()
+                {
+                    id = node.ProductPartitionId
+                }
+            };
         }
-      };
+
+        /// <summary>
+        /// Creates a new <see cref="AdGroupCriterion"/> configured for an
+        /// <code>ADD</code> operation.
+        /// </summary>
+        /// <param name="node">The node whose criterion should be added.</param>
+        /// <param name="adGroupId">The ad group ID of the criterion.</param>
+        /// <param name="idGenerator">The temporary ID generator for new nodes.</param>
+        /// <returns>An <see cref="AdGroupCriterion"/> object for <code>ADD</code>
+        /// operation.</returns>
+        internal static AdGroupCriterion CreateCriterionForAdd(ProductPartitionNode node,
+            long adGroupId, TemporaryIdGenerator idGenerator)
+        {
+            PreconditionUtilities.CheckNotNull(node, ShoppingMessages.NodeCannotBeNull);
+
+            AdGroupCriterion adGroupCriterion;
+
+            if (node.IsExcludedUnit)
+            {
+                adGroupCriterion = new NegativeAdGroupCriterion();
+            }
+            else
+            {
+                adGroupCriterion = new BiddableAdGroupCriterion()
+                {
+                    biddingStrategyConfiguration = node.GetBiddingConfig()
+                };
+            }
+
+            adGroupCriterion.adGroupId = adGroupId;
+            adGroupCriterion.criterion = node.GetCriterion();
+
+            adGroupCriterion.criterion.id = node.ProductPartitionId;
+            if (node.Parent != null)
+            {
+                (adGroupCriterion.criterion as ProductPartition).parentCriterionId =
+                    node.Parent.ProductPartitionId;
+            }
+
+            return adGroupCriterion;
+        }
+
+        /// <summary>
+        /// Creates a new AdGroupCriterion configured for a SET operation that will
+        /// set the criterion's bid.
+        /// </summary>
+        /// <param name="node">The node whose criterion should be updated.</param>
+        /// <param name="adGroupId">The ad group ID of the criterion.</param>
+        /// <returns>The AdGroupCriterion for SET operation.</returns>
+        internal static AdGroupCriterion CreateCriterionForSetBid(ProductPartitionNode node,
+            long adGroupId)
+        {
+            PreconditionUtilities.CheckNotNull(node, ShoppingMessages.NodeCannotBeNull);
+            PreconditionUtilities.CheckArgument(node.IsBiddableUnit,
+                string.Format(ShoppingMessages.NodeForBidUpdateIsNotBiddable,
+                    node.ProductPartitionId));
+
+            return new BiddableAdGroupCriterion()
+            {
+                adGroupId = adGroupId,
+                criterion = node.GetCriterion(),
+                biddingStrategyConfiguration = node.GetBiddingConfig()
+            };
+        }
     }
-
-    /// <summary>
-    /// Creates a new <see cref="AdGroupCriterion"/> configured for an
-    /// <code>ADD</code> operation.
-    /// </summary>
-    /// <param name="node">The node whose criterion should be added.</param>
-    /// <param name="adGroupId">The ad group ID of the criterion.</param>
-    /// <param name="idGenerator">The temporary ID generator for new nodes.</param>
-    /// <returns>An <see cref="AdGroupCriterion"/> object for <code>ADD</code>
-    /// operation.</returns>
-    internal static AdGroupCriterion CreateCriterionForAdd(ProductPartitionNode node,
-        long adGroupId, TemporaryIdGenerator idGenerator) {
-      PreconditionUtilities.CheckNotNull(node, ShoppingMessages.NodeCannotBeNull);
-
-      AdGroupCriterion adGroupCriterion;
-
-      if (node.IsExcludedUnit) {
-        adGroupCriterion = new NegativeAdGroupCriterion();
-      } else {
-        adGroupCriterion = new BiddableAdGroupCriterion() {
-          biddingStrategyConfiguration = node.GetBiddingConfig()
-        };
-      }
-      adGroupCriterion.adGroupId = adGroupId;
-      adGroupCriterion.criterion = node.GetCriterion();
-
-      adGroupCriterion.criterion.id = node.ProductPartitionId;
-      if (node.Parent != null) {
-        (adGroupCriterion.criterion as ProductPartition).parentCriterionId =
-           node.Parent.ProductPartitionId;
-      }
-
-      return adGroupCriterion;
-    }
-
-    /// <summary>
-    /// Creates a new AdGroupCriterion configured for a SET operation that will
-    /// set the criterion's bid.
-    /// </summary>
-    /// <param name="node">The node whose criterion should be updated.</param>
-    /// <param name="adGroupId">The ad group ID of the criterion.</param>
-    /// <returns>The AdGroupCriterion for SET operation.</returns>
-    internal static AdGroupCriterion CreateCriterionForSetBid(ProductPartitionNode node,
-        long adGroupId) {
-      PreconditionUtilities.CheckNotNull(node, ShoppingMessages.NodeCannotBeNull);
-      PreconditionUtilities.CheckArgument(node.IsBiddableUnit,
-          string.Format(ShoppingMessages.NodeForBidUpdateIsNotBiddable, node.ProductPartitionId));
-
-      return new BiddableAdGroupCriterion() {
-        adGroupId = adGroupId,
-        criterion = node.GetCriterion(),
-        biddingStrategyConfiguration = node.GetBiddingConfig()
-      };
-    }
-  }
 }

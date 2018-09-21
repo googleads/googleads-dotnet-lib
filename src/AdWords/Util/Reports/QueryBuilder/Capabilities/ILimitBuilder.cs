@@ -12,26 +12,26 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.Reports {
-
-  /// <summary>
-  /// Builder interface for LIMIT BY capability.
-  /// </summary>
-  /// <typeparam name="TParent">The parent builder type.</typeparam>
-  internal interface ILimitBuilder<TParent> {
-
+namespace Google.Api.Ads.AdWords.Util.Reports
+{
     /// <summary>
-    /// Adds a LIMIT clause to the query.
+    /// Builder interface for LIMIT BY capability.
     /// </summary>
-    /// <param name="startIndex">The start index.</param>
-    /// <param name="numberResults">The number of results.</param>
-    /// <returns>The parent builder for call chaining.</returns>
-    TParent Limit(uint startIndex, uint numberResults);
+    /// <typeparam name="TParent">The parent builder type.</typeparam>
+    internal interface ILimitBuilder<TParent>
+    {
+        /// <summary>
+        /// Adds a LIMIT clause to the query.
+        /// </summary>
+        /// <param name="startIndex">The start index.</param>
+        /// <param name="numberResults">The number of results.</param>
+        /// <returns>The parent builder for call chaining.</returns>
+        TParent Limit(uint startIndex, uint numberResults);
 
-    /// <summary>
-    /// Adds a LIMIT clause to the query with default values.
-    /// </summary>
-    /// <returns>The parent builder for call chaining.</returns>
-    TParent DefaultLimit();
-  }
+        /// <summary>
+        /// Adds a LIMIT clause to the query with default values.
+        /// </summary>
+        /// <returns>The parent builder for call chaining.</returns>
+        TParent DefaultLimit();
+    }
 }

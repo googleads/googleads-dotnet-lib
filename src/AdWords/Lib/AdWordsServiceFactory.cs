@@ -16,130 +16,150 @@ using Google.Api.Ads.AdWords.Headers;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Logging;
 using Google.Api.Ads.Common.OAuth;
+
 using System;
 using System.Globalization;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.Text;
 
-namespace Google.Api.Ads.AdWords.Lib {
-
-  /// <summary>
-  /// The factory class for all AdWords API services.
-  /// </summary>
-  public class AdWordsServiceFactory : ServiceFactory {
-    private static readonly string ENDPOINT_TEMPLATE = "{0}api/adwords/{1}/{2}/{3}";
-
+namespace Google.Api.Ads.AdWords.Lib
+{
     /// <summary>
-    /// The request header to be used with AdWords API services.
+    /// The factory class for all AdWords API services.
     /// </summary>
-    private RequestHeader requestHeader;
+    public class AdWordsServiceFactory : ServiceFactory
+    {
+        private static readonly string ENDPOINT_TEMPLATE = "{0}api/adwords/{1}/{2}/{3}";
 
-    /// <summary>
-    /// Default public constructor.
-    /// </summary>
-    public AdWordsServiceFactory() {
-    }
+        /// <summary>
+        /// The request header to be used with AdWords API services.
+        /// </summary>
+        private RequestHeader requestHeader;
 
-    /// <summary>
-    /// Create a service object.
-    /// </summary>
-    /// <param name="signature">Signature of the service being created.</param>
-    /// <param name="user">The user for which the service is being created.</param>
-    /// <param name="serverUrl">The server to which the API calls should be
-    /// made.</param>
-    /// <returns>An object of the desired service type.</returns>
-    public override AdsClient CreateService(ServiceSignature signature, AdsUser user,
-        Uri serverUrl) {
-      AdWordsAppConfig awConfig = (AdWordsAppConfig) Config;
-      if (serverUrl == null) {
-        serverUrl = new Uri(awConfig.AdWordsApiServer);
-      }
+        /// <summary>
+        /// Default public constructor.
+        /// </summary>
+        public AdWordsServiceFactory()
+        {
+        }
 
-      if (user == null) {
-        throw new ArgumentNullException("user");
-      }
+        /// <summary>
+        /// Create a service object.
+        /// </summary>
+        /// <param name="signature">Signature of the service being created.</param>
+        /// <param name="user">The user for which the service is being created.</param>
+        /// <param name="serverUrl">The server to which the API calls should be
+        /// made.</param>
+        /// <returns>An object of the desired service type.</returns>
+        public override AdsClient CreateService(ServiceSignature signature, AdsUser user,
+            Uri serverUrl)
+        {
+            AdWordsAppConfig awConfig = (AdWordsAppConfig) Config;
+            if (serverUrl == null)
+            {
+                serverUrl = new Uri(awConfig.AdWordsApiServer);
+            }
 
-      CheckServicePreconditions(signature);
+            if (user == null)
+            {
+                throw new ArgumentNullException("user");
+            }
 
-      AdWordsServiceSignature awapiSignature = signature as AdWordsServiceSignature;
-      EndpointAddress endpoint = new EndpointAddress(string.Format(ENDPOINT_TEMPLATE,
-        serverUrl, awapiSignature.GroupName, awapiSignature.Version,
-        awapiSignature.ServiceName));
+            CheckServicePreconditions(signature);
 
-      // Create the binding for the service.
-      BasicHttpBinding binding = new BasicHttpBinding();
-      binding.Security.Mode = BasicHttpSecurityMode.Transport;
-      binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.None;
-      binding.MaxReceivedMessageSize = int.MaxValue;
-      binding.TextEncoding = Encoding.UTF8;
+            AdWordsServiceSignature awapiSignature = signature as AdWordsServiceSignature;
+            EndpointAddress endpoint = new EndpointAddress(string.Format(ENDPOINT_TEMPLATE,
+                serverUrl, awapiSignature.GroupName, awapiSignature.Version,
+                awapiSignature.ServiceName));
 
-      AdsClient service = (AdsClient) Activator.CreateInstance(
-        awapiSignature.ServiceType,
-        new object[] { binding, endpoint });
+            // Create the binding for the service.
+            BasicHttpBinding binding = new BasicHttpBinding();
+            binding.Security.Mode = BasicHttpSecurityMode.Transport;
+            binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.None;
+            binding.MaxReceivedMessageSize = int.MaxValue;
+            binding.TextEncoding = Encoding.UTF8;
 
-      ServiceEndpoint serviceEndpoint =
-        (ServiceEndpoint) service.GetType().GetProperty("Endpoint").GetValue(service, null);
+            AdsClient service = (AdsClient) Activator.CreateInstance(awapiSignature.ServiceType,
+                new object[]
+                {
+                    binding,
+                    endpoint
+                });
 
-      AdsServiceInspectorBehavior inspectorBehavior = new AdsServiceInspectorBehavior();
-      inspectorBehavior.Add(new OAuthClientMessageInspector(user.OAuthProvider));
+            ServiceEndpoint serviceEndpoint =
+                (ServiceEndpoint) service.GetType().GetProperty("Endpoint").GetValue(service, null);
 
-      RequestHeader clonedHeader = (RequestHeader) requestHeader.Clone();
-      clonedHeader.Version = awapiSignature.Version;
-      clonedHeader.GroupName = awapiSignature.GroupName;
-      inspectorBehavior.Add(new AdWordsSoapHeaderInspector() {
-        RequestHeader = clonedHeader,
-        User = (AdWordsUser) user,
-      });
-      inspectorBehavior.Add(new SoapListenerInspector(user, awapiSignature.ServiceName));
-      inspectorBehavior.Add(new SoapFaultInspector<AdWordsApiException>() {
-        ErrorType = awapiSignature.ServiceType.Assembly.GetType(
-          awapiSignature.ServiceType.Namespace + ".ApiException")
-      });
+            AdsServiceInspectorBehavior inspectorBehavior = new AdsServiceInspectorBehavior();
+            inspectorBehavior.Add(new OAuthClientMessageInspector(user.OAuthProvider));
+
+            RequestHeader clonedHeader = (RequestHeader) requestHeader.Clone();
+            clonedHeader.Version = awapiSignature.Version;
+            clonedHeader.GroupName = awapiSignature.GroupName;
+            inspectorBehavior.Add(new AdWordsSoapHeaderInspector()
+            {
+                RequestHeader = clonedHeader,
+                User = (AdWordsUser) user,
+            });
+            inspectorBehavior.Add(new SoapListenerInspector(user, awapiSignature.ServiceName));
+            inspectorBehavior.Add(new SoapFaultInspector<AdWordsApiException>()
+            {
+                ErrorType =
+                    awapiSignature.ServiceType.Assembly.GetType(
+                        awapiSignature.ServiceType.Namespace + ".ApiException")
+            });
 #if NET452
       serviceEndpoint.Behaviors.Add(inspectorBehavior);
 #else
-      serviceEndpoint.EndpointBehaviors.Add(inspectorBehavior);
+            serviceEndpoint.EndpointBehaviors.Add(inspectorBehavior);
 #endif
 
-      if (awConfig.Proxy != null) {
-        service.Proxy = awConfig.Proxy;
-      }
-      service.Timeout = awConfig.Timeout;
-      service.EnableDecompression = awConfig.EnableGzipCompression;
-      service.User = user;
-      service.Signature = awapiSignature;
-      return service;
+            if (awConfig.Proxy != null)
+            {
+                service.Proxy = awConfig.Proxy;
+            }
+
+            service.Timeout = awConfig.Timeout;
+            service.EnableDecompression = awConfig.EnableGzipCompression;
+            service.User = user;
+            service.Signature = awapiSignature;
+            return service;
+        }
+
+        /// <summary>
+        /// Reads the headers from App.config.
+        /// </summary>
+        /// <param name="config">The configuration class.</param>
+        protected override void ReadHeadersFromConfig(AppConfig config)
+        {
+            AdWordsAppConfig awConfig = (AdWordsAppConfig) config;
+            this.requestHeader = new RequestHeader();
+
+            if (!string.IsNullOrEmpty(awConfig.ClientCustomerId))
+            {
+                requestHeader.clientCustomerId = awConfig.ClientCustomerId;
+            }
+
+            requestHeader.developerToken = awConfig.DeveloperToken;
+        }
+
+        /// <summary>
+        /// Checks preconditions of the service signature and throws and exception if the service
+        /// cannot be generated.
+        /// </summary>
+        /// <param name="signature">the service signature for generating the service</param>
+        protected override void CheckServicePreconditions(ServiceSignature signature)
+        {
+            if (signature == null)
+            {
+                throw new ArgumentNullException("signature");
+            }
+
+            if (!(signature is AdWordsServiceSignature))
+            {
+                throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
+                    AdWordsErrorMessages.SignatureIsOfWrongType, typeof(AdWordsServiceSignature)));
+            }
+        }
     }
-
-    /// <summary>
-    /// Reads the headers from App.config.
-    /// </summary>
-    /// <param name="config">The configuration class.</param>
-    protected override void ReadHeadersFromConfig(AppConfig config) {
-      AdWordsAppConfig awConfig = (AdWordsAppConfig) config;
-      this.requestHeader = new RequestHeader();
-
-      if (!string.IsNullOrEmpty(awConfig.ClientCustomerId)) {
-        requestHeader.clientCustomerId = awConfig.ClientCustomerId;
-      }
-      requestHeader.developerToken = awConfig.DeveloperToken;
-    }
-
-    /// <summary>
-    /// Checks preconditions of the service signature and throws and exception if the service
-    /// cannot be generated.
-    /// </summary>
-    /// <param name="signature">the service signature for generating the service</param>
-    protected override void CheckServicePreconditions(ServiceSignature signature) {
-      if (signature == null) {
-        throw new ArgumentNullException("signature");
-      }
-
-      if (!(signature is AdWordsServiceSignature)) {
-        throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
-            AdWordsErrorMessages.SignatureIsOfWrongType, typeof(AdWordsServiceSignature)));
-      }
-    }
-  }
 }

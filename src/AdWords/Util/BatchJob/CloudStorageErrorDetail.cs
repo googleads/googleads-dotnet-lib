@@ -12,89 +12,72 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.BatchJob {
-
-  /// <summary>
-  /// Additional details of a <see cref="CloudStorageError"/>.
-  /// </summary>
-  public class CloudStorageErrorDetail {
-    private string domainField;
-    private string reasonField;
-    private string messageField;
-    private string locationTypeField;
-    private string locationField;
-    private string debugInfoField;
-
+namespace Google.Api.Ads.AdWords.Util.BatchJob
+{
     /// <summary>
-    /// Gets or sets the domain.
+    /// Additional details of a <see cref="CloudStorageError"/>.
     /// </summary>
-    public string domain {
-      get {
-        return domainField;
-      }
-      set {
-        domainField = value;
-      }
-    }
+    public class CloudStorageErrorDetail
+    {
+        private string domainField;
+        private string reasonField;
+        private string messageField;
+        private string locationTypeField;
+        private string locationField;
+        private string debugInfoField;
 
-    /// <summary>
-    /// Gets or sets the reason.
-    /// </summary>
-    public string reason {
-      get {
-        return reasonField;
-      }
-      set {
-        reasonField = value;
-      }
-    }
+        /// <summary>
+        /// Gets or sets the domain.
+        /// </summary>
+        public string domain
+        {
+            get { return domainField; }
+            set { domainField = value; }
+        }
 
-    /// <summary>
-    /// Gets or sets the error message.
-    /// </summary>
-    public string message {
-      get {
-        return messageField;
-      }
-      set {
-        messageField = value;
-      }
-    }
+        /// <summary>
+        /// Gets or sets the reason.
+        /// </summary>
+        public string reason
+        {
+            get { return reasonField; }
+            set { reasonField = value; }
+        }
 
-    /// <summary>
-    /// Gets or sets the type of the location for error.
-    /// </summary>
-    public string locationType {
-      get {
-        return locationTypeField;
-      }
-      set {
-        locationTypeField = value;
-      }
-    }
+        /// <summary>
+        /// Gets or sets the error message.
+        /// </summary>
+        public string message
+        {
+            get { return messageField; }
+            set { messageField = value; }
+        }
 
-    /// <summary>
-    /// Gets or sets the location of error.
-    /// </summary>
-    public string location {
-      get {
-        return locationField;
-      }
-      set {
-        locationField = value;
-      }
-    }
+        /// <summary>
+        /// Gets or sets the type of the location for error.
+        /// </summary>
+        public string locationType
+        {
+            get { return locationTypeField; }
+            set { locationTypeField = value; }
+        }
 
-    /// <summary>
-    /// Gets or sets the additional debug information, if available.
-    /// </summary>
-    public string debugInfo {
-      get {
-        return debugInfoField;
-      }
-      set {
-        debugInfoField = value;
-      }
+        /// <summary>
+        /// Gets or sets the location of error.
+        /// </summary>
+        public string location
+        {
+            get { return locationField; }
+            set { locationField = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the additional debug information, if available.
+        /// </summary>
+        public string debugInfo
+        {
+            get { return debugInfoField; }
+            set { debugInfoField = value; }
+        }
     }
-  }
 }

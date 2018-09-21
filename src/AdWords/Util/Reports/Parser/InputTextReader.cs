@@ -15,23 +15,23 @@
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.AdWords.Util.Reports {
-
-  /// <summary>
-  /// An Interface for use by the report parsing classes.
-  /// </summary>
-  public interface InputTextReader : IDisposable {
-
+namespace Google.Api.Ads.AdWords.Util.Reports
+{
     /// <summary>
-    /// Advances the InputTextReader to the next row in the report text.
+    /// An Interface for use by the report parsing classes.
     /// </summary>
-    /// <returns>True if moved to next row, and false if no rows remain in report.</returns>
-    bool Read();
+    public interface InputTextReader : IDisposable
+    {
+        /// <summary>
+        /// Advances the InputTextReader to the next row in the report text.
+        /// </summary>
+        /// <returns>True if moved to next row, and false if no rows remain in report.</returns>
+        bool Read();
 
-    /// <summary>
-    /// Returns the column names with their values at the current row.
-    /// </summary>
-    /// <returns>The column names and corresponding values.</returns>
-    IEnumerable<ColumnValuePair> GetAttributes();
-  }
+        /// <summary>
+        /// Returns the column names with their values at the current row.
+        /// </summary>
+        /// <returns>The column names and corresponding values.</returns>
+        IEnumerable<ColumnValuePair> GetAttributes();
+    }
 }

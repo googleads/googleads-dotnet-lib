@@ -21,45 +21,50 @@ using System.Text;
 
 using AdManagerDateTime = Google.Api.Ads.AdManager.v201805.DateTime;
 
-namespace Google.Api.Ads.AdManager.Util.v201805 {
-  /// <summary>
-  /// A utility class that allows you to build Datetime objects from strings.
-  /// </summary>
-  public class DateTimeUtilities {
+namespace Google.Api.Ads.AdManager.Util.v201805
+{
     /// <summary>
-    /// Converts the string in format yyyyMMdd HH:mm:ss to a DateTime object
-    /// with the specified time zone.
+    /// A utility class that allows you to build Datetime objects from strings.
     /// </summary>
-    /// <param name="dateString">The date string.</param>
-    /// <param name="timeZoneId">The timeZoneId to set.</param>
-    /// <returns>A AdManager Datetime object.</returns>
-    public static AdManagerDateTime FromString(string dateString, string timeZoneId) {
-      System.DateTime dateTime = System.DateTime.ParseExact(dateString, "yyyyMMdd HH:mm:ss", null);
-      return FromDateTime(dateTime, timeZoneId);
-    }
+    public class DateTimeUtilities
+    {
+        /// <summary>
+        /// Converts the string in format yyyyMMdd HH:mm:ss to a DateTime object
+        /// with the specified time zone.
+        /// </summary>
+        /// <param name="dateString">The date string.</param>
+        /// <param name="timeZoneId">The timeZoneId to set.</param>
+        /// <returns>A AdManager Datetime object.</returns>
+        public static AdManagerDateTime FromString(string dateString, string timeZoneId)
+        {
+            System.DateTime dateTime =
+                System.DateTime.ParseExact(dateString, "yyyyMMdd HH:mm:ss", null);
+            return FromDateTime(dateTime, timeZoneId);
+        }
 
-    /// <summary>
-    /// Converts a System.DateTime object to a AdManager DateTime object with the specified timeZoneId.
-    /// Does not perform time zone conversion. This means the returned DateTime value
-    /// may not represent the same instant as the System.DateTime value.
-    /// </summary>
-    /// <param name="dateTime">The DateTime object.</param>
-    /// <param name="timeZoneId">The timeZoneId to use.</param>
-    /// <returns>A AdManager Datetime object.</returns>
-    public static AdManagerDateTime FromDateTime(System.DateTime dateTime, string timeZoneId) {
-      PreconditionUtilities.CheckArgumentNotNull(dateTime, "dateTime");
-      PreconditionUtilities.CheckArgumentNotNull(timeZoneId, "timeZoneId");
+        /// <summary>
+        /// Converts a System.DateTime object to a AdManager DateTime object with the specified
+        /// timeZoneId. Does not perform time zone conversion. This means the returned DateTime
+        /// value may not represent the same instant as the System.DateTime value.
+        /// </summary>
+        /// <param name="dateTime">The DateTime object.</param>
+        /// <param name="timeZoneId">The timeZoneId to use.</param>
+        /// <returns>A AdManager Datetime object.</returns>
+        public static AdManagerDateTime FromDateTime(System.DateTime dateTime, string timeZoneId)
+        {
+            PreconditionUtilities.CheckArgumentNotNull(dateTime, "dateTime");
+            PreconditionUtilities.CheckArgumentNotNull(timeZoneId, "timeZoneId");
 
-      AdManagerDateTime retval = new AdManagerDateTime();
-      retval.date = new Date();
-      retval.date.year = dateTime.Year;
-      retval.date.month = dateTime.Month;
-      retval.date.day = dateTime.Day;
-      retval.hour = dateTime.Hour;
-      retval.minute = dateTime.Minute;
-      retval.second = dateTime.Second;
-      retval.timeZoneID = timeZoneId;
-      return retval;
+            AdManagerDateTime retval = new AdManagerDateTime();
+            retval.date = new Date();
+            retval.date.year = dateTime.Year;
+            retval.date.month = dateTime.Month;
+            retval.date.day = dateTime.Day;
+            retval.hour = dateTime.Hour;
+            retval.minute = dateTime.Minute;
+            retval.second = dateTime.Second;
+            retval.timeZoneID = timeZoneId;
+            return retval;
+        }
     }
-  }
 }

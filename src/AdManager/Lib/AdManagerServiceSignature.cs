@@ -17,28 +17,33 @@ using Google.Api.Ads.Common.Lib;
 using System;
 using System.Globalization;
 
-namespace Google.Api.Ads.AdManager.Lib {
-  /// <summary>
-  /// Service creation params for DFP API family of services.
-  /// </summary>
-  public class AdManagerServiceSignature : ServiceSignature {
+namespace Google.Api.Ads.AdManager.Lib
+{
     /// <summary>
-    /// Gets the type of service.
+    /// Service creation params for DFP API family of services.
     /// </summary>
-    public override Type ServiceType {
-      get {
-        return Type.GetType(string.Format(CultureInfo.InvariantCulture,
-            "Google.Api.Ads.AdManager.{0}.{1}", Version, ServiceName));
-      }
-    }
+    public class AdManagerServiceSignature : ServiceSignature
+    {
+        /// <summary>
+        /// Gets the type of service.
+        /// </summary>
+        public override Type ServiceType
+        {
+            get
+            {
+                return Type.GetType(string.Format(CultureInfo.InvariantCulture,
+                    "Google.Api.Ads.AdManager.{0}.{1}", Version, ServiceName));
+            }
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="version">Service version.</param>
-    /// <param name="serviceName">Service name.</param>
-    public AdManagerServiceSignature(string version, string serviceName) : base(version, serviceName,
-        SupportedProtocols.SOAP) {
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="version">Service version.</param>
+        /// <param name="serviceName">Service name.</param>
+        public AdManagerServiceSignature(string version, string serviceName)
+            : base(version, serviceName, SupportedProtocols.SOAP)
+        {
+        }
     }
-  }
 }

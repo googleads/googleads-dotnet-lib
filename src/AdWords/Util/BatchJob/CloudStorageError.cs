@@ -12,50 +12,42 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.BatchJob {
-
-  /// <summary>
-  /// An error from Google Cloud Storage servers.
-  /// </summary>
-  public class CloudStorageError {
-    private int codeField;
-    private string messageField;
-    private CloudStorageErrorDetail[] errorsField;
-
+namespace Google.Api.Ads.AdWords.Util.BatchJob
+{
     /// <summary>
-    /// Gets or sets the HTTP error code.
+    /// An error from Google Cloud Storage servers.
     /// </summary>
-    public int code {
-      get {
-        return codeField;
-      }
-      set {
-        codeField = value;
-      }
-    }
+    public class CloudStorageError
+    {
+        private int codeField;
+        private string messageField;
+        private CloudStorageErrorDetail[] errorsField;
 
-    /// <summary>
-    /// Gets or sets the error message.
-    /// </summary>
-    public string message {
-      get {
-        return messageField;
-      }
-      set {
-        messageField = value;
-      }
-    }
+        /// <summary>
+        /// Gets or sets the HTTP error code.
+        /// </summary>
+        public int code
+        {
+            get { return codeField; }
+            set { codeField = value; }
+        }
 
-    /// <summary>
-    /// Gets or sets the additional error details.
-    /// </summary>
-    public CloudStorageErrorDetail[] errors {
-      get {
-        return errorsField;
-      }
-      set {
-        errorsField = value;
-      }
+        /// <summary>
+        /// Gets or sets the error message.
+        /// </summary>
+        public string message
+        {
+            get { return messageField; }
+            set { messageField = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the additional error details.
+        /// </summary>
+        public CloudStorageErrorDetail[] errors
+        {
+            get { return errorsField; }
+            set { errorsField = value; }
+        }
     }
-  }
 }

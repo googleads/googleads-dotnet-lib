@@ -20,8 +20,7 @@ This project hosts the .NET client library for the various SOAP-Based Ads APIs a
 
 ## Announcements and updates
 
-For API and client library updates and news, please follow our Google+ Ads Developers page:
-https://plus.google.com/+GoogleAdsDevelopers/posts and our Google Ads Developers blog:
+For API and client library updates and news, please follow our Google Ads Developers blog:
 http://googleadsdeveloper.blogspot.com/.
 
 ## Getting started
@@ -29,28 +28,30 @@ http://googleadsdeveloper.blogspot.com/.
 1. Install your library of choice. We recommend using the following Nuget distributions:
   #### AdWords API
 
-  - [Google.AdWords](https://www.nuget.org/packages/Google.AdWords/): AdWords and DoubleClick Ad
-   Exchange Buyer API DotNet Client Library
-  
+  - [Google.AdWords](https://www.nuget.org/packages/Google.AdWords/): AdWords API DotNet Client
+  Library
+
   #### Ad Manager API
-  
+
   - [Google.Dfp](https://www.nuget.org/packages/Google.Dfp/): Ad Manager API DotNet Client Library
-  
-  You can learn more about the nuget package manager at http://www.nuget.org. For other distribution options, see the alternative distribution options below.
+
+  You can learn more about the nuget package manager at http://www.nuget.org. For other distribution
+  options, see the alternative distribution options below.
 
 1. Setup your OAuth2 credentials.
 
-  The AdWords and DoubleClick for Publishers APIs use
-[OAuth2](http://oauth.net/2/) as the authentication mechanism. Follow the appropriate guide below based on your use case.
+  The AdWords and Ad Manager APIs use
+[OAuth2](http://oauth.net/2/) as the authentication mechanism. Follow the appropriate guide below
+ based on your use case.
 
   **If you're accessing an API using your own credentials...**
 
-  * [Using AdWords](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-using-own-credentials-(installed-application-flow))
-  * [Using Ad Manager](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-using-own-credentials-(server-to-server-flow))
+  * [Using AdWords API](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-using-own-credentials-(installed-application-flow))
+  * [Using Ad Manager API](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-using-own-credentials-(server-to-server-flow))
 
   **If you're accessing an API on behalf of clients...**
 
-  * [Developing a web application (AdWords or Ad Manager)](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-on-behalf-of-your-clients-(web-flow))
+  * [Developing a web application (AdWords API or Ad Manager API)](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-on-behalf-of-your-clients-(web-flow))
 
 ## Alternative distribution options
 
@@ -85,7 +86,7 @@ To run the code examples:
 - Open the Properties dialog for the Examples project (Right click the Examples project of your
  choice in the Solution Explorer and select the Properties option from the context menu.).
 - Navigate to the Debug Tab and enter the command line options. The command line options are of
- the form `version.examplename`. For instance, `v201603.AddCampaign` is the command line option to
+ the form `version.examplename`. For instance, `v201809.AddCampaign` is the command line option to
  run `AddCampaign` example in `v201603` version of the AdWords API.
 - Compile and run the Examples project.
 
@@ -109,80 +110,20 @@ To use the library in a new project:
 AdWordsUser user = new AdWordsUser();
 
 // Create the required service.
-CampaignService service = (CampaignService) user.GetService(
-     AdWordsService.v201603.CampaignService);
+using (CampaignService service = (CampaignService) user.GetService(
+     AdWordsService.v201809.CampaignService))
+{
+    // make more calls to service class.
+}
 
-// make more calls to service class.
 ```
 You can refer to [this wiki article](//github.com/googleads/googleads-dotnet-lib/wiki/Getting-Started) for
  more details.
 
-### Source distribution
-
-The source distribution of the Ads API .NET Client Library consists of individual Visual Studio
- projects for the client library, code examples and test cases, documentation, and support
- libraries and tools for compiling and running the library. If you are interested in the
- library internals you should download this distribution. There are separate downloads for
- AdWords and Ad Manager APIs.
-
-```
-The contents of this distribution are as follows:
-
-  \
-    \examples
-      \adwords
-        - Adwords API code examples, in C# and VB.NET.
-    \lib
-      - External client libraries referenced by various projects in the source
-        distribution.
-    \src
-      - Client library source, provided as a Visual Studio project.
-    \tests
-      - NAnt test cases for the library, provided as a Visual Studio project
-    README
-    Visual Studio solution
-    ChangeLog
-    COPYING
-```
-
-To compile and run the project:
-
-- Open the Visual Studio solution in Microsoft Visual Studio.
-- Open `App.config` for the examples project of your choice and follow the instructions in the
- file to enter required configuration values.
-- Save and close `App.config`.
-- Open the Properties dialog for the Examples project (Right click the Examples project in the
- Solution Explorer and select the Properties option from the context menu.).
-- Navigate to the Debug tab and enter the command line options. The command line options are of
- the form `version.examplename`. For instance, `v201603.AddCampaign` is the command line option
- to run the `AddCampaign` example for the `v201603` version of the AdWords API.
-- Set the Examples project as the Startup project.
-- Compile and run the Examples project.
-
-Alternatively, each code example has a `main()` method, so you can set the appropriate code
- example as the Startup object (Select the Application tab on the Examples Properties dialog and
- pick the desired class from the "Startup object" dropdown.).
-
-To run the test cases, you need to download and install the latest version of NUnit from
- http://www.nunit.org/. Once you have installed NUnit, you can compile and run the test cases
- as follows:
-
-- Right click the appropriate Tests project and choose References from the context menu.
-- From the references dialog, add a reference to the `nunit.framework` assembly.
-- Right click theTests project and choose Properties. Navigate to the Debug tab and choose
- "Start external program". Browse to the path for `nunit.exe` and pick it as the Startup
- application.
-- Open `App.config` for the test project and follow the instructions in the file to enter
- required configuration values.
-- Set the `AdWords.Tests` project as the startup project and run the project.
-
-It is recommended that you run the test cases against a test environment. Refer to the
- appropriate API documentation for details on how this may be done.
-
 ## How to enable logging
 
 See https://github.com/googleads/googleads-dotnet-lib/wiki#logging for details.
- 
+
 ## Miscellaneous
 
 ### Wiki

@@ -12,47 +12,35 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.Reports {
-
-  /// <summary>
-  /// Marker interface for ReportDefinitionField.
-  /// </summary>
-  public interface IReportDefinitionField {
-
-    /// <summary>The field name. <span class="constraint ReadOnly">This field is read only and
-    /// will be ignored when sent to the API.</span>
+namespace Google.Api.Ads.AdWords.Util.Reports
+{
+    /// <summary>
+    /// Marker interface for ReportDefinitionField.
     /// </summary>
-    string fieldName {
-      get;
-      set;
-    }
+    public interface IReportDefinitionField
+    {
+        /// <summary>The field name. <span class="constraint ReadOnly">This field is read only and
+        /// will be ignored when sent to the API.</span>
+        /// </summary>
+        string fieldName { get; set; }
 
-    /// <summary>The XML attribute in the downloaded report. <span class="constraint
-    /// ReadOnly">This field is read only and will be ignored when sent to the
-    /// API.</span>
-    /// </summary>
-    string xmlAttributeName {
-      get;
-      set;
-    }
+        /// <summary>The XML attribute in the downloaded report. <span class="constraint
+        /// ReadOnly">This field is read only and will be ignored when sent to the
+        /// API.</span>
+        /// </summary>
+        string xmlAttributeName { get; set; }
 
-    /// <summary>The type of field. Useful for knowing what operation type to pass in for a given
-    /// field in a predicate. <span class="constraint ReadOnly">This field is read only
-    /// and will be ignored when sent to the API.</span>
-    /// </summary>
-    string fieldType {
-      get;
-      set;
-    }
+        /// <summary>The type of field. Useful for knowing what operation type to pass in for a
+        /// given field in a predicate. <span class="constraint ReadOnly">This field is read only
+        /// and will be ignored when sent to the API.</span>
+        /// </summary>
+        string fieldType { get; set; }
 
-    /// <summary>List of enum values for the corresponding field if and only if the field is an
-    /// enum type. <span class="constraint ReadOnly">This field is read only and will be
-    /// ignored when sent to the API.</span>
-    /// </summary>
-    [System.Xml.Serialization.XmlElementAttribute("enumValues")]
-    string[] enumValues {
-      get;
-      set;
+        /// <summary>List of enum values for the corresponding field if and only if the field is an
+        /// enum type. <span class="constraint ReadOnly">This field is read only and will be
+        /// ignored when sent to the API.</span>
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("enumValues")]
+        string[] enumValues { get; set; }
     }
-  }
 }

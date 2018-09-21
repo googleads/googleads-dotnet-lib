@@ -12,11 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.Reports {
-
-  /// <summary>
-  /// Marker interface for ReportDefinition.
-  /// </summary>
-  public interface IReportDefinition {
-  }
+namespace Google.Api.Ads.AdWords.Util.Reports
+{
+    /// <summary>
+    /// Marker interface for ReportDefinition.
+    /// </summary>
+    public interface IReportDefinition
+    {
+    }
 }

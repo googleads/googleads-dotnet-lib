@@ -12,16 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.Shopping {
+namespace Google.Api.Ads.AdWords.Util.Shopping
+{
+    /// <summary>
+    /// Enumeration of valid product partition node types.
+    /// </summary>
+    internal enum NodeType
+    {
+        BIDDABLE_UNIT,
 
-  /// <summary>
-  /// Enumeration of valid product partition node types.
-  /// </summary>
-  internal enum NodeType {
-    BIDDABLE_UNIT,
+        EXCLUDED_UNIT,
 
-    EXCLUDED_UNIT,
-
-    SUBDIVISION
-  }
+        SUBDIVISION
+    }
 }

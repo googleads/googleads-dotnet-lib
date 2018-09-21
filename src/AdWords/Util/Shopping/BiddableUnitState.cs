@@ -14,58 +14,54 @@
 
 using Google.Api.Ads.Common.Util;
 
-namespace Google.Api.Ads.AdWords.Util.Shopping {
-
-  /// <summary>
-  /// NodeState implementation for <see cref="F:NodeType.BIDDABLE_UNIT"/>.
-  /// </summary>
-  internal class BiddableUnitState : NodeState {
-
+namespace Google.Api.Ads.AdWords.Util.Shopping
+{
     /// <summary>
-    /// The bid in micros
+    /// NodeState implementation for <see cref="F:NodeType.BIDDABLE_UNIT"/>.
     /// </summary>
-    private long bidInMicros;
+    internal class BiddableUnitState : NodeState
+    {
+        /// <summary>
+        /// The bid in micros
+        /// </summary>
+        private long bidInMicros;
 
-    /// <summary>
-    /// A flag to determine whether bids in micros is specified or not.
-    /// </summary>
-    private bool bidsInMicrosSpecified = false;
+        /// <summary>
+        /// A flag to determine whether bids in micros is specified or not.
+        /// </summary>
+        private bool bidsInMicrosSpecified = false;
 
-    /// <summary>
-    /// Gets or sets the bid in micros.
-    /// </summary>
-    internal override long BidInMicros {
-      get {
-        return bidInMicros;
-      }
-      set {
-        PreconditionUtilities.CheckArgument(value > 0L,
-            string.Format("Invalid bid: {0}. Bid must be null or > 0.", value));
-        this.bidInMicros = value;
-        this.BidInMicrosSpecified = true;
-      }
+        /// <summary>
+        /// Gets or sets the bid in micros.
+        /// </summary>
+        internal override long BidInMicros
+        {
+            get { return bidInMicros; }
+            set
+            {
+                PreconditionUtilities.CheckArgument(value > 0L,
+                    string.Format("Invalid bid: {0}. Bid must be null or > 0.", value));
+                this.bidInMicros = value;
+                this.BidInMicrosSpecified = true;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether bid in micros is specified or
+        /// not.
+        /// </summary>
+        internal override bool BidInMicrosSpecified
+        {
+            get { return bidsInMicrosSpecified; }
+            set { bidsInMicrosSpecified = value; }
+        }
+
+        /// <summary>
+        /// Gets the NodeType for this state.
+        /// </summary>
+        internal override NodeType NodeType
+        {
+            get { return NodeType.BIDDABLE_UNIT; }
+        }
     }
-
-    /// <summary>
-    /// Gets or sets a value indicating whether bid in micros is specified or
-    /// not.
-    /// </summary>
-    internal override bool BidInMicrosSpecified {
-      get {
-        return bidsInMicrosSpecified;
-      }
-      set {
-        bidsInMicrosSpecified = value;
-      }
-    }
-
-    /// <summary>
-    /// Gets the NodeType for this state.
-    /// </summary>
-    internal override NodeType NodeType {
-      get {
-        return NodeType.BIDDABLE_UNIT;
-      }
-    }
-  }
 }

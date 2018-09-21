@@ -19,108 +19,128 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-namespace Google.Api.Ads.AdWords.Lib {
-  /// <summary>
-  /// Represents an AdWords API user.
-  /// </summary>
-  public partial class AdWordsUser : AdsUser {
+namespace Google.Api.Ads.AdWords.Lib
+{
     /// <summary>
-    /// Keeps track of the API calls made this user.
+    /// Represents an AdWords API user.
     /// </summary>
-    private List<ApiCallEntry> apiCalls = new List<ApiCallEntry>();
+    public partial class AdWordsUser : AdsUser
+    {
+        /// <summary>
+        /// Keeps track of the API calls made this user.
+        /// </summary>
+        private List<ApiCallEntry> apiCalls = new List<ApiCallEntry>();
 
-    /// <summary>
-    /// Public constructor. Use this version if you want to construct
-    /// an AdWordsUser with a custom configuration.
-    /// </summary>
-    public AdWordsUser(AdWordsAppConfig config)
-      : base(config) {
-    }
+        /// <summary>
+        /// Public constructor. Use this version if you want to construct
+        /// an AdWordsUser with a custom configuration.
+        /// </summary>
+        public AdWordsUser(AdWordsAppConfig config) : base(config)
+        {
+        }
 
-    /// <summary>
-    /// Public constructor. Use this version if you want the library to
-    /// use all settings from App.config.
-    /// </summary>
-    public AdWordsUser() : base(new AdWordsAppConfig()) {
-    }
+        /// <summary>
+        /// Public constructor. Use this version if you want the library to
+        /// use all settings from App.config.
+        /// </summary>
+        public AdWordsUser() : base(new AdWordsAppConfig())
+        {
+        }
 
-    /// <summary>
-    /// Parameterized constructor. Use this version if you want to construct
-    /// an AdWordsUser with a custom set of headers.
-    /// </summary>
-    /// <param name="headers">The custom set of headers.</param>
-    public AdWordsUser(Dictionary<string, string> headers) : base(new AdWordsAppConfig(), headers) {
-    }
+        /// <summary>
+        /// Parameterized constructor. Use this version if you want to construct
+        /// an AdWordsUser with a custom set of headers.
+        /// </summary>
+        /// <param name="headers">The custom set of headers.</param>
+        public AdWordsUser(Dictionary<string, string> headers) : base(new AdWordsAppConfig(),
+            headers)
+        {
+        }
 
-    /// <summary>
-    /// Gets all the service types to be registered against this user.
-    /// </summary>
-    /// <returns>The type of all service classes to be registered.</returns>
-    public override Type[] GetServiceTypes() {
-      return new AdWordsService().GetServiceTypes();
-    }
+        /// <summary>
+        /// Gets all the service types to be registered against this user.
+        /// </summary>
+        /// <returns>The type of all service classes to be registered.</returns>
+        public override Type[] GetServiceTypes()
+        {
+            return new AdWordsService().GetServiceTypes();
+        }
 
-    /// <summary>
-    /// Gets the list of default SOAP listeners.
-    /// </summary>
-    /// <returns>
-    /// A list of default SOAP listeners.
-    /// </returns>
-    public override SoapListener[] GetDefaultListeners() {
-      return new SoapListener[] {AdWordsTraceListener.Instance};
-    }
+        /// <summary>
+        /// Gets the list of default SOAP listeners.
+        /// </summary>
+        /// <returns>
+        /// A list of default SOAP listeners.
+        /// </returns>
+        public override SoapListener[] GetDefaultListeners()
+        {
+            return new SoapListener[]
+            {
+                AdWordsTraceListener.Instance
+            };
+        }
 
-    /// <summary>
-    /// Adds an API call detail to this user instance.
-    /// </summary>
-    /// <param name="apiCall">The API call details to be added.</param>
-    [MethodImpl(MethodImplOptions.Synchronized)]
-    public void AddCallDetails(ApiCallEntry apiCall) {
-      apiCalls.Add(apiCall);
-    }
+        /// <summary>
+        /// Adds an API call detail to this user instance.
+        /// </summary>
+        /// <param name="apiCall">The API call details to be added.</param>
+        [MethodImpl(MethodImplOptions.Synchronized)]
+        public void AddCallDetails(ApiCallEntry apiCall)
+        {
+            apiCalls.Add(apiCall);
+        }
 
-    /// <summary>
-    /// Gets the details of the API calls made by this user.
-    /// </summary>
-    /// <returns>The list of all call details.</returns>
-    [MethodImpl(MethodImplOptions.Synchronized)]
-    public ApiCallEntry[] GetCallDetails() {
-      return apiCalls.ToArray();
-    }
+        /// <summary>
+        /// Gets the details of the API calls made by this user.
+        /// </summary>
+        /// <returns>The list of all call details.</returns>
+        [MethodImpl(MethodImplOptions.Synchronized)]
+        public ApiCallEntry[] GetCallDetails()
+        {
+            return apiCalls.ToArray();
+        }
 
-    /// <summary>
-    /// Gets the total number of operations made by this user.
-    /// </summary>
-    /// <returns>The total number of operations made by this user, or 0 if no
-    /// calls were made.</returns>
-    [MethodImpl(MethodImplOptions.Synchronized)]
-    public int GetTotalOperationCount() {
-      int totalOperationCount = 0;
-      foreach (ApiCallEntry entry in apiCalls) {
-        totalOperationCount += entry.OperationCount;
-      }
-      return totalOperationCount;
-    }
+        /// <summary>
+        /// Gets the total number of operations made by this user.
+        /// </summary>
+        /// <returns>The total number of operations made by this user, or 0 if no
+        /// calls were made.</returns>
+        [MethodImpl(MethodImplOptions.Synchronized)]
+        public int GetTotalOperationCount()
+        {
+            int totalOperationCount = 0;
+            foreach (ApiCallEntry entry in apiCalls)
+            {
+                totalOperationCount += entry.OperationCount;
+            }
 
-    /// <summary>
-    /// Gets the number of operations for the last API call.
-    /// </summary>
-    /// <returns>The number of operations for the last API call, or 0 if no API
-    /// calls have been made so far.</returns>
-    [MethodImpl(MethodImplOptions.Synchronized)]
-    public int GetOperationCountForLastCall() {
-      if (apiCalls.Count == 0) {
-        return 0;
-      } else {
-        return apiCalls[apiCalls.Count - 1].OperationCount;
-      }
-    }
+            return totalOperationCount;
+        }
 
-    /// <summary>
-    /// Resets the call history for this user.
-    /// </summary>
-    public void ResetCallHistory() {
-      apiCalls.Clear();
+        /// <summary>
+        /// Gets the number of operations for the last API call.
+        /// </summary>
+        /// <returns>The number of operations for the last API call, or 0 if no API
+        /// calls have been made so far.</returns>
+        [MethodImpl(MethodImplOptions.Synchronized)]
+        public int GetOperationCountForLastCall()
+        {
+            if (apiCalls.Count == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return apiCalls[apiCalls.Count - 1].OperationCount;
+            }
+        }
+
+        /// <summary>
+        /// Resets the call history for this user.
+        /// </summary>
+        public void ResetCallHistory()
+        {
+            apiCalls.Clear();
+        }
     }
-  }
 }

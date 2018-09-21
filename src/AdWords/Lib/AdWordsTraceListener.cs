@@ -17,51 +17,58 @@ using Google.Api.Ads.Common.Logging;
 using System;
 using System.Collections.Generic;
 
-namespace Google.Api.Ads.AdWords.Lib {
-  /// <summary>
-  /// Listens to SOAP messages sent and received by this library.
-  /// </summary>
-  public class AdWordsTraceListener : TraceListener {
+namespace Google.Api.Ads.AdWords.Lib
+{
     /// <summary>
-    /// The singleton instance.
+    /// Listens to SOAP messages sent and received by this library.
     /// </summary>
-    protected static AdWordsTraceListener instance = new AdWordsTraceListener();
+    public class AdWordsTraceListener : TraceListener
+    {
+        /// <summary>
+        /// The singleton instance.
+        /// </summary>
+        protected static AdWordsTraceListener instance = new AdWordsTraceListener();
 
-    /// <summary>
-    /// Protected constructor.
-    /// </summary>
-    protected AdWordsTraceListener() : base(new AdWordsAppConfig()) {
+        /// <summary>
+        /// Protected constructor.
+        /// </summary>
+        protected AdWordsTraceListener() : base(new AdWordsAppConfig())
+        {
+        }
+
+        /// <summary>
+        /// Gets the singleton instance.
+        /// </summary>
+        public static SoapListener Instance
+        {
+            get { return instance; }
+        }
+
+        /// <summary>
+        /// Parses the body of the request and populates fields in the request info.
+        /// </summary>
+        /// <param name="info">The request info for this SOAP call.</param>
+        protected override void PopulateRequestInfo(ref RequestInfo info)
+        {
+            base.PopulateRequestInfo(ref info);
+
+            // Set the client customer ID.
+            info.IdentifierName = "clientCustomerId";
+            info.IdentifierValue = ((AdWordsAppConfig) this.Config).ClientCustomerId;
+        }
+
+        /// <summary>
+        /// Gets a list of fields to be masked in xml logs.
+        /// </summary>
+        /// <returns>The list of fields to be masked.</returns>
+        protected override ISet<string> GetFieldsToMask()
+        {
+            return new HashSet<string>(new string[]
+            {
+                "developerToken",
+                "Authorization",
+                "httpAuthorizationHeader"
+            }, StringComparer.OrdinalIgnoreCase);
+        }
     }
-
-    /// <summary>
-    /// Gets the singleton instance.
-    /// </summary>
-    public static SoapListener Instance {
-      get {
-        return instance;
-      }
-    }
-
-    /// <summary>
-    /// Parses the body of the request and populates fields in the request info.
-    /// </summary>
-    /// <param name="info">The request info for this SOAP call.</param>
-    protected override void PopulateRequestInfo(ref RequestInfo info) {
-      base.PopulateRequestInfo(ref info);
-
-      // Set the client customer ID.
-      info.IdentifierName = "clientCustomerId";
-      info.IdentifierValue = ((AdWordsAppConfig) this.Config).ClientCustomerId;
-    }
-
-    /// <summary>
-    /// Gets a list of fields to be masked in xml logs.
-    /// </summary>
-    /// <returns>The list of fields to be masked.</returns>
-    protected override ISet<string> GetFieldsToMask() {
-      return new HashSet<string>(
-          new string[] { "developerToken", "Authorization", "httpAuthorizationHeader" },
-          StringComparer.OrdinalIgnoreCase);
-    }
-  }
 }

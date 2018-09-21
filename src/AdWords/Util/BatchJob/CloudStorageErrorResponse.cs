@@ -12,24 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.BatchJob {
-
-  /// <summary>
-  /// An error response from Google Cloud Storage servers.
-  /// </summary>
-  public class CloudStorageErrorResponse {
-    private CloudStorageError errorField;
-
+namespace Google.Api.Ads.AdWords.Util.BatchJob
+{
     /// <summary>
-    /// Gets or sets the error.
+    /// An error response from Google Cloud Storage servers.
     /// </summary>
-    public CloudStorageError error {
-      get {
-        return errorField;
-      }
-      set {
-        errorField = value;
-      }
+    public class CloudStorageErrorResponse
+    {
+        private CloudStorageError errorField;
+
+        /// <summary>
+        /// Gets or sets the error.
+        /// </summary>
+        public CloudStorageError error
+        {
+            get { return errorField; }
+            set { errorField = value; }
+        }
     }
-  }
 }

@@ -22,113 +22,129 @@ using System.Security.Permissions;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Google.Api.Ads.AdWords.Lib {
-  /// <summary>
-  /// Custom exception class for wrapping AdWords API SOAP exceptions.
-  /// </summary>
-  [Serializable]
-  public class AdWordsApiException : AdWordsException {
+namespace Google.Api.Ads.AdWords.Lib
+{
     /// <summary>
-    /// The original ApiException object from AdWords API.
+    /// Custom exception class for wrapping AdWords API SOAP exceptions.
     /// </summary>
-    private object apiException;
+    [Serializable]
+    public class AdWordsApiException : AdWordsException
+    {
+        /// <summary>
+        /// The original ApiException object from AdWords API.
+        /// </summary>
+        private object apiException;
 
-    /// <summary>
-    /// Gets the ApiException object.
-    /// </summary>
-    public object ApiException {
-      get {
-        return apiException;
-      }
-    }
-
-    /// <summary>
-    /// Gets a message that describes the current exception.
-    /// </summary>
-    public override string Message {
-      get {
-        StringBuilder exceptionBuilder = new StringBuilder();
-        exceptionBuilder.AppendFormat("{0}: {1} ", this.GetType().Name, base.Message);
-
-        if (apiException != null) {
-          exceptionBuilder.AppendFormat("{0}{0}{1}{0}{0}", Environment.NewLine, apiException);
+        /// <summary>
+        /// Gets the ApiException object.
+        /// </summary>
+        public object ApiException
+        {
+            get { return apiException; }
         }
 
-        return exceptionBuilder.ToString();
-      }
-    }
+        /// <summary>
+        /// Gets a message that describes the current exception.
+        /// </summary>
+        public override string Message
+        {
+            get
+            {
+                StringBuilder exceptionBuilder = new StringBuilder();
+                exceptionBuilder.AppendFormat("{0}: {1} ", this.GetType().Name, base.Message);
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    public AdWordsApiException() : base() {
-    }
+                if (apiException != null)
+                {
+                    exceptionBuilder.AppendFormat("{0}{0}{1}{0}{0}", Environment.NewLine,
+                        apiException);
+                }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="apiException">The underlying ApiException from the
-    /// server.</param>
-    public AdWordsApiException(object apiException) : base() {
-      this.apiException = apiException;
-    }
+                return exceptionBuilder.ToString();
+            }
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="apiException">The underlying ApiException from the
-    /// server.</param>
-    /// <param name="message">Error message for this API exception.</param>
-    public AdWordsApiException(object apiException, string message) : base(message) {
-      this.apiException = apiException;
-    }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        public AdWordsApiException() : base()
+        {
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="apiException">The underlying ApiException from the
-    /// server.</param>
-    /// <param name="message">Error message for this API exception.</param>
-    /// <param name="innerException">Inner exception, if any.</param>
-    public AdWordsApiException(object apiException, string message, Exception innerException)
-        : base(message, innerException) {
-      this.apiException = apiException;
-    }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="apiException">The underlying ApiException from the
+        /// server.</param>
+        public AdWordsApiException(object apiException) : base()
+        {
+            this.apiException = apiException;
+        }
 
-    /// <summary>
-    /// Protected constructor. Used by serialization frameworks while
-    /// deserializing an exception object.
-    /// </summary>
-    /// <param name="info">Info about the serialization context.</param>
-    /// <param name="context">A streaming context that represents the
-    /// serialization stream.</param>
-    protected AdWordsApiException(SerializationInfo info, StreamingContext context)
-        : base(info, context) {
-      if (info == null) {
-        throw new ArgumentNullException("info");
-      }
-      apiException = SerializationUtilities.DeserializeFromXmlText(
-          GetValue<string>(info, "apiException"),
-          GetValue<Type>(info, "apiExceptionType"));
-    }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="apiException">The underlying ApiException from the
+        /// server.</param>
+        /// <param name="message">Error message for this API exception.</param>
+        public AdWordsApiException(object apiException, string message) : base(message)
+        {
+            this.apiException = apiException;
+        }
 
-    /// <summary>
-    /// This method is called by serialization frameworks while serializing
-    /// an exception object.
-    /// </summary>
-    /// <param name="info">Info about the serialization context.</param>
-    /// <param name="context">A streaming context that represents the
-    /// serialization stream.</param>
-    [SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter = true)]
-    public override void GetObjectData(SerializationInfo info, StreamingContext context) {
-      if (info == null) {
-        throw new ArgumentNullException("info");
-      }
-      base.GetObjectData(info, context);
-      if (apiException != null) {
-        info.AddValue("apiException", SerializationUtilities.SerializeAsXmlText(apiException));
-        info.AddValue("apiExceptionType", apiException.GetType());
-      }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="apiException">The underlying ApiException from the
+        /// server.</param>
+        /// <param name="message">Error message for this API exception.</param>
+        /// <param name="innerException">Inner exception, if any.</param>
+        public AdWordsApiException(object apiException, string message, Exception innerException) :
+            base(message, innerException)
+        {
+            this.apiException = apiException;
+        }
+
+        /// <summary>
+        /// Protected constructor. Used by serialization frameworks while
+        /// deserializing an exception object.
+        /// </summary>
+        /// <param name="info">Info about the serialization context.</param>
+        /// <param name="context">A streaming context that represents the
+        /// serialization stream.</param>
+        protected AdWordsApiException(SerializationInfo info, StreamingContext context) : base(info,
+            context)
+        {
+            if (info == null)
+            {
+                throw new ArgumentNullException("info");
+            }
+
+            apiException = SerializationUtilities.DeserializeFromXmlText(
+                GetValue<string>(info, "apiException"), GetValue<Type>(info, "apiExceptionType"));
+        }
+
+        /// <summary>
+        /// This method is called by serialization frameworks while serializing
+        /// an exception object.
+        /// </summary>
+        /// <param name="info">Info about the serialization context.</param>
+        /// <param name="context">A streaming context that represents the
+        /// serialization stream.</param>
+        [SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter = true)]
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            if (info == null)
+            {
+                throw new ArgumentNullException("info");
+            }
+
+            base.GetObjectData(info, context);
+            if (apiException != null)
+            {
+                info.AddValue("apiException",
+                    SerializationUtilities.SerializeAsXmlText(apiException));
+                info.AddValue("apiExceptionType", apiException.GetType());
+            }
+        }
     }
-  }
 }

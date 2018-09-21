@@ -21,43 +21,49 @@ using System.Security.Permissions;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Google.Api.Ads.AdManager.Lib {
-  /// <summary>
-  /// Base class for all exceptions specific to DFP.
-  /// </summary>
-  [Serializable]
-  public class AdManagerException : AdsException {
+namespace Google.Api.Ads.AdManager.Lib
+{
     /// <summary>
-    /// Public constructor.
+    /// Base class for all exceptions specific to DFP.
     /// </summary>
-    public AdManagerException() : base() {
-    }
+    [Serializable]
+    public class AdManagerException : AdsException
+    {
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        public AdManagerException() : base()
+        {
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="message">Error message for this API exception.</param>
-    public AdManagerException(string message) : base(message) {
-    }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="message">Error message for this API exception.</param>
+        public AdManagerException(string message) : base(message)
+        {
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="message">Error message for this API exception.</param>
-    /// <param name="innerException">Inner exception, if any.</param>
-    public AdManagerException(string message, Exception innerException)
-        : base(message, innerException) {
-    }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="message">Error message for this API exception.</param>
+        /// <param name="innerException">Inner exception, if any.</param>
+        public AdManagerException(string message, Exception innerException)
+            : base(message, innerException)
+        {
+        }
 
-    /// <summary>
-    /// Protected constructor. Used by serialization frameworks while
-    /// deserializing an exception object.
-    /// </summary>
-    /// <param name="info">Info about the serialization context.</param>
-    /// <param name="context">A streaming context that represents the
-    /// serialization stream.</param>
-    protected AdManagerException(SerializationInfo info, StreamingContext context)
-        : base(info, context) {
+        /// <summary>
+        /// Protected constructor. Used by serialization frameworks while
+        /// deserializing an exception object.
+        /// </summary>
+        /// <param name="info">Info about the serialization context.</param>
+        /// <param name="context">A streaming context that represents the
+        /// serialization stream.</param>
+        protected AdManagerException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+        }
     }
-  }
 }

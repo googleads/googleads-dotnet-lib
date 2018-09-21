@@ -23,122 +23,141 @@ using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.Text;
 
-namespace Google.Api.Ads.AdManager.Lib {
-  /// <summary>
-  /// The factory class for all Ad Manager API services.
-  /// </summary>
-  public class AdManagerServiceFactory : ServiceFactory {
-
-    private static readonly string ENDPOINT_TEMPLATE = "{0}apis/ads/publisher/{1}/{2}";
-
+namespace Google.Api.Ads.AdManager.Lib
+{
     /// <summary>
-    /// The request header to be used with Ad Manager API services.
+    /// The factory class for all Ad Manager API services.
     /// </summary>
-    private RequestHeader requestHeader;
+    public class AdManagerServiceFactory : ServiceFactory
+    {
+        private static readonly string ENDPOINT_TEMPLATE = "{0}apis/ads/publisher/{1}/{2}";
 
-    /// <summary>
-    /// Default public constructor.
-    /// </summary>
-    public AdManagerServiceFactory() {
-    }
+        /// <summary>
+        /// The request header to be used with Ad Manager API services.
+        /// </summary>
+        private RequestHeader requestHeader;
 
-    /// <summary>
-    /// Create a service object.
-    /// </summary>
-    /// <param name="signature">Signature of the service being created.</param>
-    /// <param name="user">The user for which the service is being created.
-    /// <param name="serverUrl">The server to which the API calls should be
-    /// made.</param>
-    /// </param>
-    /// <returns>An object of the desired service type.</returns>
-    public override AdsClient CreateService(ServiceSignature signature, AdsUser user,
-        Uri serverUrl) {
-      AdManagerAppConfig adManagerConfig = (AdManagerAppConfig) Config;
-      if (serverUrl == null) {
-        serverUrl = new Uri(adManagerConfig.AdManagerApiServer);
-      }
+        /// <summary>
+        /// Default public constructor.
+        /// </summary>
+        public AdManagerServiceFactory()
+        {
+        }
 
-      if (user == null) {
-        throw new ArgumentNullException("user");
-      }
+        /// <summary>
+        /// Create a service object.
+        /// </summary>
+        /// <param name="signature">Signature of the service being created.</param>
+        /// <param name="user">The user for which the service is being created.
+        /// <param name="serverUrl">The server to which the API calls should be
+        /// made.</param>
+        /// </param>
+        /// <returns>An object of the desired service type.</returns>
+        public override AdsClient CreateService(ServiceSignature signature, AdsUser user,
+            Uri serverUrl)
+        {
+            AdManagerAppConfig adManagerConfig = (AdManagerAppConfig) Config;
+            if (serverUrl == null)
+            {
+                serverUrl = new Uri(adManagerConfig.AdManagerApiServer);
+            }
 
-      CheckServicePreconditions(signature);
+            if (user == null)
+            {
+                throw new ArgumentNullException("user");
+            }
 
-      AdManagerServiceSignature adManagerSignature = signature as AdManagerServiceSignature;
-      EndpointAddress endpoint = new EndpointAddress(string.Format(ENDPOINT_TEMPLATE,
-        serverUrl, adManagerSignature.Version, adManagerSignature.ServiceName));
+            CheckServicePreconditions(signature);
 
-      // Create the binding for the service
-      BasicHttpBinding binding = new BasicHttpBinding();
-      binding.Security.Mode = BasicHttpSecurityMode.Transport;
-      binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.None;
-      binding.MaxReceivedMessageSize = int.MaxValue;
-      binding.TextEncoding = Encoding.UTF8;
+            AdManagerServiceSignature adManagerSignature = signature as AdManagerServiceSignature;
+            EndpointAddress endpoint = new EndpointAddress(string.Format(ENDPOINT_TEMPLATE,
+                serverUrl, adManagerSignature.Version, adManagerSignature.ServiceName));
 
-      AdsClient service = (AdsClient) Activator.CreateInstance(
-        adManagerSignature.ServiceType,
-        new object[] { binding, endpoint });
+            // Create the binding for the service
+            BasicHttpBinding binding = new BasicHttpBinding();
+            binding.Security.Mode = BasicHttpSecurityMode.Transport;
+            binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.None;
+            binding.MaxReceivedMessageSize = int.MaxValue;
+            binding.TextEncoding = Encoding.UTF8;
 
-      ServiceEndpoint serviceEndpoint =
-        (ServiceEndpoint) service.GetType().GetProperty("Endpoint").GetValue(service, null);
+            AdsClient service = (AdsClient) Activator.CreateInstance(adManagerSignature.ServiceType,
+                new object[]
+                {
+                    binding,
+                    endpoint
+                });
 
-      AdsServiceInspectorBehavior inspectorBehavior = new AdsServiceInspectorBehavior();
-      inspectorBehavior.Add(new OAuthClientMessageInspector(user.OAuthProvider));
+            ServiceEndpoint serviceEndpoint =
+                (ServiceEndpoint) service.GetType().GetProperty("Endpoint").GetValue(service, null);
 
-      RequestHeader clonedHeader = (RequestHeader) requestHeader.Clone();
-      clonedHeader.Version = adManagerSignature.Version;
-      inspectorBehavior.Add(new AdManagerSoapHeaderInspector() {
-        RequestHeader = clonedHeader,
-        Config = adManagerConfig
-      });
-      inspectorBehavior.Add(new SoapListenerInspector(user, adManagerSignature.ServiceName));
-      inspectorBehavior.Add(new SoapFaultInspector<AdManagerApiException>() {
-        ErrorType = adManagerSignature.ServiceType.Assembly.GetType(
-          adManagerSignature.ServiceType.Namespace + ".ApiException"),
-      });
+            AdsServiceInspectorBehavior inspectorBehavior = new AdsServiceInspectorBehavior();
+            inspectorBehavior.Add(new OAuthClientMessageInspector(user.OAuthProvider));
+
+            RequestHeader clonedHeader = (RequestHeader) requestHeader.Clone();
+            clonedHeader.Version = adManagerSignature.Version;
+            inspectorBehavior.Add(new AdManagerSoapHeaderInspector()
+            {
+                RequestHeader = clonedHeader,
+                Config = adManagerConfig
+            });
+            inspectorBehavior.Add(new SoapListenerInspector(user, adManagerSignature.ServiceName));
+            inspectorBehavior.Add(new SoapFaultInspector<AdManagerApiException>()
+            {
+                ErrorType =
+                    adManagerSignature.ServiceType.Assembly.GetType(
+                        adManagerSignature.ServiceType.Namespace + ".ApiException"),
+            });
 #if NET452
       serviceEndpoint.Behaviors.Add(inspectorBehavior);
 #else
-      serviceEndpoint.EndpointBehaviors.Add(inspectorBehavior);
+            serviceEndpoint.EndpointBehaviors.Add(inspectorBehavior);
 #endif
 
-      if (adManagerConfig.Proxy != null) {
-        service.Proxy = adManagerConfig.Proxy;
-      }
-      service.EnableDecompression = adManagerConfig.EnableGzipCompression;
-      service.Timeout = adManagerConfig.Timeout;
-      service.UserAgent = adManagerConfig.GetUserAgent();
+            if (adManagerConfig.Proxy != null)
+            {
+                service.Proxy = adManagerConfig.Proxy;
+            }
 
-      service.Signature = signature;
-      service.User = user;
-      return service;
+            service.EnableDecompression = adManagerConfig.EnableGzipCompression;
+            service.Timeout = adManagerConfig.Timeout;
+            service.UserAgent = adManagerConfig.GetUserAgent();
+
+            service.Signature = signature;
+            service.User = user;
+            return service;
+        }
+
+        /// <summary>
+        /// Reads the headers from App.config.
+        /// </summary>
+        /// <param name="config">The configuration class.</param>
+        protected override void ReadHeadersFromConfig(AppConfig config)
+        {
+            AdManagerAppConfig adManagerConfig = (AdManagerAppConfig) config;
+
+            this.requestHeader = new RequestHeader();
+            this.requestHeader.networkCode = adManagerConfig.NetworkCode;
+            this.requestHeader.applicationName = adManagerConfig.GetUserAgent();
+        }
+
+        /// <summary>
+        /// Checks preconditions of the service signature and throws and exception if the service
+        /// cannot be generated.
+        /// </summary>
+        /// <param name="signature">the service signature for generating the service</param>
+        protected override void CheckServicePreconditions(ServiceSignature signature)
+        {
+            if (signature == null)
+            {
+                throw new ArgumentNullException("signature");
+            }
+
+            if (!(signature is AdManagerServiceSignature))
+            {
+                throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
+                    AdManagerErrorMessages.SignatureIsOfWrongType,
+                    typeof(AdManagerServiceSignature)));
+            }
+        }
     }
-
-    /// <summary>
-    /// Reads the headers from App.config.
-    /// </summary>
-    /// <param name="config">The configuration class.</param>
-    protected override void ReadHeadersFromConfig(AppConfig config) {
-      AdManagerAppConfig adManagerConfig = (AdManagerAppConfig) config;
-
-      this.requestHeader = new RequestHeader();
-      this.requestHeader.networkCode = adManagerConfig.NetworkCode;
-      this.requestHeader.applicationName = adManagerConfig.GetUserAgent();
-    }
-
-    /// <summary>
-    /// Checks preconditions of the service signature and throws and exception if the service
-    /// cannot be generated.
-    /// </summary>
-    /// <param name="signature">the service signature for generating the service</param>
-    protected override void CheckServicePreconditions(ServiceSignature signature) {
-      if (signature == null) {
-        throw new ArgumentNullException("signature");
-      }
-      if (!(signature is AdManagerServiceSignature)) {
-        throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
-            AdManagerErrorMessages.SignatureIsOfWrongType, typeof(AdManagerServiceSignature)));
-      }
-    }
-  }
 }

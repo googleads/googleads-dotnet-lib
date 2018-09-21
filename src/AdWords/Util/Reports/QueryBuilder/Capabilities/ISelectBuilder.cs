@@ -12,19 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.Reports {
-
-  /// <summary>
-  /// Builder interface for SELECT capability.
-  /// </summary>
-  /// <typeparam name="TParent">The parent builder type.</typeparam>
-  internal interface ISelectBuilder<TParent> {
-
+namespace Google.Api.Ads.AdWords.Util.Reports
+{
     /// <summary>
-    /// Adds a SELECT clause to the query.
+    /// Builder interface for SELECT capability.
     /// </summary>
-    /// <param name="fields">The fields to be selected.</param>
-    /// <returns>The parent builder for call chaining.</returns>
-    TParent Select(params string[] fields);
-  }
+    /// <typeparam name="TParent">The parent builder type.</typeparam>
+    internal interface ISelectBuilder<TParent>
+    {
+        /// <summary>
+        /// Adds a SELECT clause to the query.
+        /// </summary>
+        /// <param name="fields">The fields to be selected.</param>
+        /// <returns>The parent builder for call chaining.</returns>
+        TParent Select(params string[] fields);
+    }
 }

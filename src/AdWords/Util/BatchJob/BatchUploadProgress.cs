@@ -12,27 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.BatchJob {
-
-  /// <summary>
-  /// Class to track the progress for streamed batch upload.
-  /// </summary>
-  public class BatchUploadProgress {
-
+namespace Google.Api.Ads.AdWords.Util.BatchJob
+{
     /// <summary>
-    /// The number of bytes uploaded so far.
+    /// Class to track the progress for streamed batch upload.
     /// </summary>
-    public long BytesUploaded {
-      get;
-      set;
-    }
+    public class BatchUploadProgress
+    {
+        /// <summary>
+        /// The number of bytes uploaded so far.
+        /// </summary>
+        public long BytesUploaded { get; set; }
 
-    /// <summary>
-    /// The resumable upload URL.
-    /// </summary>
-    public string Url {
-      get;
-      set;
+        /// <summary>
+        /// The resumable upload URL.
+        /// </summary>
+        public string Url { get; set; }
     }
-  }
 }

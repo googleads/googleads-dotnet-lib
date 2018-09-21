@@ -14,6 +14,7 @@
 
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.Util.Reports
+Imports Google.Api.Ads.AdWords.Util.Reports.v201806
 Imports Google.Api.Ads.AdWords.v201806
 Imports Google.Api.Ads.Common.Util.Reports
 
@@ -64,8 +65,12 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201806
     ''' <param name="user">The AdWords user.</param>
     Public Sub Run(ByVal user As AdWordsUser)
       ' Create the query.
-      Dim query As String = "SELECT Id, AdNetworkType1, Impressions FROM " &
-          "CRITERIA_PERFORMANCE_REPORT WHERE Status IN [ENABLED, PAUSED] DURING LAST_7_DAYS"
+      Dim query As ReportQuery = New ReportQueryBuilder() _
+          .Select("Id", "AdNetworkType1", "Impressions") _
+          .From(ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT) _
+          .Where("Status").In("ENABLED", "PAUSED") _
+          .During(ReportDefinitionDateRangeType.LAST_7_DAYS) _
+          .Build()
 
       Dim reportUtilities As New ReportUtilities(user, "v201806", query,
           DownloadFormat.GZIPPED_XML.ToString())

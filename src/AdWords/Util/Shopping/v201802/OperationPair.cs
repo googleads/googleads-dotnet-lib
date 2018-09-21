@@ -16,39 +16,38 @@ using Google.Api.Ads.AdWords.v201802;
 
 using System;
 
-namespace Google.Api.Ads.AdWords.Util.Shopping.v201802 {
-
-  /// <summary>
-  /// An OperationPair associates a <see cref="ProductPartitionNode"/>  with an
-  /// <see cref="AdGroupCriterionOperation"/> that mutates the node.
-  /// </summary>
-  internal class OperationPair : Tuple<ProductPartitionNode, AdGroupCriterionOperation> {
-
+namespace Google.Api.Ads.AdWords.Util.Shopping.v201802
+{
     /// <summary>
-    /// Gets the product partition node.
+    /// An OperationPair associates a <see cref="ProductPartitionNode"/>  with an
+    /// <see cref="AdGroupCriterionOperation"/> that mutates the node.
     /// </summary>
-    public ProductPartitionNode Node {
-      get {
-        return this.Item1;
-      }
-    }
+    internal class OperationPair : Tuple<ProductPartitionNode, AdGroupCriterionOperation>
+    {
+        /// <summary>
+        /// Gets the product partition node.
+        /// </summary>
+        public ProductPartitionNode Node
+        {
+            get { return this.Item1; }
+        }
 
-    /// <summary>
-    /// Gets the operation associated with this node.
-    /// </summary>
-    public AdGroupCriterionOperation Operation {
-      get {
-        return this.Item2;
-      }
-    }
+        /// <summary>
+        /// Gets the operation associated with this node.
+        /// </summary>
+        public AdGroupCriterionOperation Operation
+        {
+            get { return this.Item2; }
+        }
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="OperationPair"/> class.
-    /// </summary>
-    /// <param name="node">The product partition node.</param>
-    /// <param name="operation">Gets the product partition node.</param>
-    public OperationPair(ProductPartitionNode node, AdGroupCriterionOperation operation)
-      : base(node, operation) {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OperationPair"/> class.
+        /// </summary>
+        /// <param name="node">The product partition node.</param>
+        /// <param name="operation">Gets the product partition node.</param>
+        public OperationPair(ProductPartitionNode node, AdGroupCriterionOperation operation) : base(
+            node, operation)
+        {
+        }
     }
-  }
 }

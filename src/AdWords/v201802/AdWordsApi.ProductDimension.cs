@@ -15,109 +15,117 @@
 // This file overrides the ToString() method for all ProductDimensions supported
 // by ProductPartitionTree class.
 
-namespace Google.Api.Ads.AdWords.v201802 {
-
-  public partial class ProductType : ProductDimension {
-
-    /// <summary>
-    /// Returns a <see cref="System.String" /> that represents this instance.
-    /// </summary>
-    /// <returns>
-    /// A <see cref="System.String" /> that represents this instance.
-    /// </returns>
-    public override string ToString() {
-      return string.Format("Type: {0}, Value: {1}", this.type, this.value);
+namespace Google.Api.Ads.AdWords.v201802
+{
+    public partial class ProductType : ProductDimension
+    {
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return string.Format("Type: {0}, Value: {1}", this.type, this.value);
+        }
     }
-  }
 
-  public partial class ProductOfferId : ProductDimension {
-
-    /// <summary>
-    /// Returns a <see cref="System.String" /> that represents this instance.
-    /// </summary>
-    /// <returns>
-    /// A <see cref="System.String" /> that represents this instance.
-    /// </returns>
-    public override string ToString() {
-      return string.Format("Value: {0}", this.value);
+    public partial class ProductOfferId : ProductDimension
+    {
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return string.Format("Value: {0}", this.value);
+        }
     }
-  }
 
-  public partial class ProductCustomAttribute : ProductDimension {
-
-    /// <summary>
-    /// Returns a <see cref="System.String" /> that represents this instance.
-    /// </summary>
-    /// <returns>
-    /// A <see cref="System.String" /> that represents this instance.
-    /// </returns>
-    public override string ToString() {
-      return string.Format("Type: {0}, Value: {1}", this.type, this.value);
+    public partial class ProductCustomAttribute : ProductDimension
+    {
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return string.Format("Type: {0}, Value: {1}", this.type, this.value);
+        }
     }
-  }
 
-  public partial class ProductChannelExclusivity : ProductDimension {
-
-    /// <summary>
-    /// Returns a <see cref="System.String" /> that represents this instance.
-    /// </summary>
-    /// <returns>
-    /// A <see cref="System.String" /> that represents this instance.
-    /// </returns>
-    public override string ToString() {
-      return string.Format("Channel Exclusivity: {0}", this.channelExclusivity);
+    public partial class ProductChannelExclusivity : ProductDimension
+    {
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return string.Format("Channel Exclusivity: {0}", this.channelExclusivity);
+        }
     }
-  }
 
-  public partial class ProductChannel : ProductDimension {
-
-    /// <summary>
-    /// Returns a <see cref="System.String" /> that represents this instance.
-    /// </summary>
-    /// <returns>
-    /// A <see cref="System.String" /> that represents this instance.
-    /// </returns>
-    public override string ToString() {
-      return string.Format("Channel: {0}", this.channel);
+    public partial class ProductChannel : ProductDimension
+    {
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return string.Format("Channel: {0}", this.channel);
+        }
     }
-  }
 
-  public partial class ProductCanonicalCondition : ProductDimension {
-
-    /// <summary>
-    /// Returns a <see cref="System.String" /> that represents this instance.
-    /// </summary>
-    /// <returns>
-    /// A <see cref="System.String" /> that represents this instance.
-    /// </returns>
-    public override string ToString() {
-      return string.Format("Condition: {0}", this.condition);
+    public partial class ProductCanonicalCondition : ProductDimension
+    {
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return string.Format("Condition: {0}", this.condition);
+        }
     }
-  }
 
-  public partial class ProductBrand : ProductDimension {
-
-    /// <summary>
-    /// Returns a <see cref="System.String" /> that represents this instance.
-    /// </summary>
-    /// <returns>
-    /// A <see cref="System.String" /> that represents this instance.
-    /// </returns>
-    public override string ToString() {
-      return string.Format("Value: {0}", this.value);
+    public partial class ProductBrand : ProductDimension
+    {
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return string.Format("Value: {0}", this.value);
+        }
     }
-  }
 
-  public partial class ProductBiddingCategory : ProductDimension {
-
-    /// <summary>
-    /// Returns a <see cref="System.String" /> that represents this instance.
-    /// </summary>
-    /// <returns>
-    /// A <see cref="System.String" /> that represents this instance.
-    /// </returns>
-    public override string ToString() {
-      return string.Format("Type: {0}, Value: {1}", this.type, this.value);
+    public partial class ProductBiddingCategory : ProductDimension
+    {
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return string.Format("Type: {0}, Value: {1}", this.type, this.value);
+        }
     }
-  }
 }

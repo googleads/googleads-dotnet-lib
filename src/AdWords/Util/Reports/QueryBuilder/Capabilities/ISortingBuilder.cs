@@ -12,26 +12,26 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.Reports {
-
-  /// <summary>
-  /// Builder interface for ORDER BY capability.
-  /// </summary>
-  /// <typeparam name="TParent">The parent builder type.</typeparam>
-  internal interface ISortingBuilder<TParent> {
-
+namespace Google.Api.Ads.AdWords.Util.Reports
+{
     /// <summary>
-    /// Adds an ASC clause to the query.
+    /// Builder interface for ORDER BY capability.
     /// </summary>
-    /// <param name="fieldName">Name of the field to sort by.</param>
-    /// <returns>The parent builder for call chaining.</returns>
-    TParent OrderByAscending(string fieldName);
+    /// <typeparam name="TParent">The parent builder type.</typeparam>
+    internal interface ISortingBuilder<TParent>
+    {
+        /// <summary>
+        /// Adds an ASC clause to the query.
+        /// </summary>
+        /// <param name="fieldName">Name of the field to sort by.</param>
+        /// <returns>The parent builder for call chaining.</returns>
+        TParent OrderByAscending(string fieldName);
 
-    /// <summary>
-    /// Adds a DESC clause to the query.
-    /// </summary>
-    /// <param name="fieldName">Name of the field to sort by.</param>
-    /// <returns>The parent builder for call chaining.</returns>
-    TParent OrderByDescending(string fieldName);
-  }
+        /// <summary>
+        /// Adds a DESC clause to the query.
+        /// </summary>
+        /// <param name="fieldName">Name of the field to sort by.</param>
+        /// <returns>The parent builder for call chaining.</returns>
+        TParent OrderByDescending(string fieldName);
+    }
 }

@@ -14,74 +14,76 @@
 
 using System;
 
-namespace Google.Api.Ads.AdWords.Util.Shopping {
-
-  /// <summary>
-  /// The state of a node. This encapsulates the node type and behavior for
-  /// setting/getting bids, as well as transitions from one node type to
-  /// another.
-  /// </summary>
-  internal abstract class NodeState {
-
+namespace Google.Api.Ads.AdWords.Util.Shopping
+{
     /// <summary>
-    /// Gets the NodeType for this state.
+    /// The state of a node. This encapsulates the node type and behavior for
+    /// setting/getting bids, as well as transitions from one node type to
+    /// another.
     /// </summary>
-    internal abstract NodeType NodeType {
-      get;
+    internal abstract class NodeState
+    {
+        /// <summary>
+        /// Gets the NodeType for this state.
+        /// </summary>
+        internal abstract NodeType NodeType { get; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether bid in micros is specified or
+        /// not.
+        /// </summary>
+        internal virtual bool BidInMicrosSpecified
+        {
+            get { return false; }
+            set
+            {
+                throw new InvalidOperationException(
+                    string.Format(ShoppingMessages.CannotSetBidOnNode, this.NodeType));
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the bid in micros.
+        /// </summary>
+        internal virtual long BidInMicros
+        {
+            get { return 0; }
+            set
+            {
+                throw new InvalidOperationException(
+                    string.Format(ShoppingMessages.CannotSetBidOnNode, this.NodeType));
+            }
+        }
+
+        /// <summary>
+        /// Transitions this NodeState to a NodeState for the specified
+        /// <paramref name="nodeType"/>.
+        /// </summary>
+        /// <param name="nodeType">Type of the node.</param>
+        /// <returns>a NodeState for the specified NodeType. Will be the current
+        /// object if the NodeType matches this state's NodeType.</returns>
+        internal NodeState TransitionTo(NodeType nodeType)
+        {
+            if (this.NodeType == nodeType)
+            {
+                return this;
+            }
+
+            switch (nodeType)
+            {
+                case NodeType.BIDDABLE_UNIT:
+                    return new BiddableUnitState();
+
+                case NodeType.EXCLUDED_UNIT:
+                    return new ExcludedUnitState();
+
+                case NodeType.SUBDIVISION:
+                    return new SubdivisionState();
+
+                default:
+                    throw new ArgumentException(string.Format(ShoppingMessages.UnknownNodeType,
+                        nodeType));
+            }
+        }
     }
-
-    /// <summary>
-    /// Gets or sets a value indicating whether bid in micros is specified or
-    /// not.
-    /// </summary>
-    internal virtual bool BidInMicrosSpecified {
-      get {
-        return false;
-      }
-      set {
-        throw new InvalidOperationException(string.Format(
-            ShoppingMessages.CannotSetBidOnNode, this.NodeType));
-      }
-    }
-
-    /// <summary>
-    /// Gets or sets the bid in micros.
-    /// </summary>
-    internal virtual long BidInMicros {
-      get {
-        return 0;
-      }
-      set {
-        throw new InvalidOperationException(string.Format(
-            ShoppingMessages.CannotSetBidOnNode, this.NodeType));
-      }
-    }
-
-    /// <summary>
-    /// Transitions this NodeState to a NodeState for the specified
-    /// <paramref name="nodeType"/>.
-    /// </summary>
-    /// <param name="nodeType">Type of the node.</param>
-    /// <returns>a NodeState for the specified NodeType. Will be the current
-    /// object if the NodeType matches this state's NodeType.</returns>
-    internal NodeState TransitionTo(NodeType nodeType) {
-      if (this.NodeType == nodeType) {
-        return this;
-      }
-
-      switch (nodeType) {
-        case NodeType.BIDDABLE_UNIT:
-          return new BiddableUnitState();
-
-        case NodeType.EXCLUDED_UNIT:
-          return new ExcludedUnitState();
-
-        case NodeType.SUBDIVISION:
-          return new SubdivisionState();
-
-        default:
-          throw new ArgumentException(string.Format(ShoppingMessages.UnknownNodeType, nodeType));
-      }
-    }
-  }
 }

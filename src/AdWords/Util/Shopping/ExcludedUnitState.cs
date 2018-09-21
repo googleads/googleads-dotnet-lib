@@ -12,20 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.Shopping {
-
-  /// <summary>
-  /// NodeState implementation for <see cref="F:NodeType.EXCLUDED_UNIT"/>.
-  /// </summary>
-  internal class ExcludedUnitState : NodeState {
-
+namespace Google.Api.Ads.AdWords.Util.Shopping
+{
     /// <summary>
-    /// Gets the NodeType for this state.
+    /// NodeState implementation for <see cref="F:NodeType.EXCLUDED_UNIT"/>.
     /// </summary>
-    internal override NodeType NodeType {
-      get {
-        return NodeType.EXCLUDED_UNIT;
-      }
+    internal class ExcludedUnitState : NodeState
+    {
+        /// <summary>
+        /// Gets the NodeType for this state.
+        /// </summary>
+        internal override NodeType NodeType
+        {
+            get { return NodeType.EXCLUDED_UNIT; }
+        }
     }
-  }
 }

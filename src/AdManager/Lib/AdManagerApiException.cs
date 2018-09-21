@@ -22,97 +22,109 @@ using System.Security.Permissions;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Google.Api.Ads.AdManager.Lib {
-  /// <summary>
-  /// Custom exception class for wrapping DFP API SOAP exceptions.
-  /// </summary>
-  [Serializable]
-  public class AdManagerApiException : AdManagerException {
+namespace Google.Api.Ads.AdManager.Lib
+{
     /// <summary>
-    /// The original ApiException object from DFP API.
+    /// Custom exception class for wrapping DFP API SOAP exceptions.
     /// </summary>
-    private object apiException;
+    [Serializable]
+    public class AdManagerApiException : AdManagerException
+    {
+        /// <summary>
+        /// The original ApiException object from DFP API.
+        /// </summary>
+        private object apiException;
 
-    /// <summary>
-    /// Gets the ApiException object.
-    /// </summary>
-    public object ApiException {
-      get {
-        return apiException;
-      }
-    }
+        /// <summary>
+        /// Gets the ApiException object.
+        /// </summary>
+        public object ApiException
+        {
+            get { return apiException; }
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    public AdManagerApiException() : base() {
-    }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        public AdManagerApiException() : base()
+        {
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="apiException">The underlying ApiException from the
-    /// server.</param>
-    public AdManagerApiException(object apiException) : base() {
-      this.apiException = apiException;
-    }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="apiException">The underlying ApiException from the
+        /// server.</param>
+        public AdManagerApiException(object apiException) : base()
+        {
+            this.apiException = apiException;
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="apiException">The underlying ApiException from the
-    /// server.</param>
-    /// <param name="message">Error message for this API exception.</param>
-    public AdManagerApiException(object apiException, string message) : base(message) {
-      this.apiException = apiException;
-    }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="apiException">The underlying ApiException from the
+        /// server.</param>
+        /// <param name="message">Error message for this API exception.</param>
+        public AdManagerApiException(object apiException, string message) : base(message)
+        {
+            this.apiException = apiException;
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="apiException">The underlying ApiException from the
-    /// server.</param>
-    /// <param name="message">Error message for this API exception.</param>
-    /// <param name="innerException">Inner exception, if any.</param>
-    public AdManagerApiException(object apiException, string message, Exception innerException)
-        : base(message, innerException) {
-      this.apiException = apiException;
-    }
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="apiException">The underlying ApiException from the
+        /// server.</param>
+        /// <param name="message">Error message for this API exception.</param>
+        /// <param name="innerException">Inner exception, if any.</param>
+        public AdManagerApiException(object apiException, string message, Exception innerException)
+            : base(message, innerException)
+        {
+            this.apiException = apiException;
+        }
 
-    /// <summary>
-    /// Protected constructor. Used by serialization frameworks while
-    /// deserializing an exception object.
-    /// </summary>
-    /// <param name="info">Info about the serialization context.</param>
-    /// <param name="context">A streaming context that represents the
-    /// serialization stream.</param>
-    protected AdManagerApiException(SerializationInfo info, StreamingContext context)
-        : base(info, context) {
-      if (info == null) {
-        throw new ArgumentNullException("info");
-      }
-      apiException = SerializationUtilities.DeserializeFromXmlText(
-          GetValue<string>(info, "apiException"),
-          GetValue<Type>(info, "apiExceptionType"));
-    }
+        /// <summary>
+        /// Protected constructor. Used by serialization frameworks while
+        /// deserializing an exception object.
+        /// </summary>
+        /// <param name="info">Info about the serialization context.</param>
+        /// <param name="context">A streaming context that represents the
+        /// serialization stream.</param>
+        protected AdManagerApiException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+            if (info == null)
+            {
+                throw new ArgumentNullException("info");
+            }
 
-    /// <summary>
-    /// This method is called by serialization frameworks while serializing
-    /// an exception object.
-    /// </summary>
-    /// <param name="info">Info about the serialization context.</param>
-    /// <param name="context">A streaming context that represents the
-    /// serialization stream.</param>
-    [SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter = true)]
-    public override void GetObjectData(SerializationInfo info, StreamingContext context) {
-      if (info == null) {
-        throw new ArgumentNullException("info");
-      }
-      base.GetObjectData(info, context);
-      if (apiException != null) {
-        info.AddValue("apiException", SerializationUtilities.SerializeAsXmlText(apiException));
-        info.AddValue("apiExceptionType", apiException.GetType());
-      }
+            apiException = SerializationUtilities.DeserializeFromXmlText(
+                GetValue<string>(info, "apiException"), GetValue<Type>(info, "apiExceptionType"));
+        }
+
+        /// <summary>
+        /// This method is called by serialization frameworks while serializing
+        /// an exception object.
+        /// </summary>
+        /// <param name="info">Info about the serialization context.</param>
+        /// <param name="context">A streaming context that represents the
+        /// serialization stream.</param>
+        [SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter = true)]
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            if (info == null)
+            {
+                throw new ArgumentNullException("info");
+            }
+
+            base.GetObjectData(info, context);
+            if (apiException != null)
+            {
+                info.AddValue("apiException",
+                    SerializationUtilities.SerializeAsXmlText(apiException));
+                info.AddValue("apiExceptionType", apiException.GetType());
+            }
+        }
     }
-  }
 }

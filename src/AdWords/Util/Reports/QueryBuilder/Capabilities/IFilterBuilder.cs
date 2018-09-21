@@ -12,19 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.Reports {
-
-  /// <summary>
-  /// Builder interface for WHERE capability.
-  /// </summary>
-  /// <typeparam name="TParent">The parent builder type.</typeparam>
-  internal interface IFilterBuilder<TParent> {
-
+namespace Google.Api.Ads.AdWords.Util.Reports
+{
     /// <summary>
-    /// Adds a WHERE clause to the query.
+    /// Builder interface for WHERE capability.
     /// </summary>
-    /// <param name="fieldName">Name of the field to filter on.</param>
-    /// <returns>A builder for building the WHERE clause.</returns>
-    IWhereBuilder<TParent> Where(string fieldName);
-  }
+    /// <typeparam name="TParent">The parent builder type.</typeparam>
+    internal interface IFilterBuilder<TParent>
+    {
+        /// <summary>
+        /// Adds a WHERE clause to the query.
+        /// </summary>
+        /// <param name="fieldName">Name of the field to filter on.</param>
+        /// <returns>A builder for building the WHERE clause.</returns>
+        IWhereBuilder<TParent> Where(string fieldName);
+    }
 }

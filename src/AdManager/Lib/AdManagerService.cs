@@ -18,28 +18,32 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Google.Api.Ads.AdManager.Lib {
-  /// <summary>
-  /// Lists all the services available through this library.
-  /// </summary>
-  public partial class AdManagerService : AdsService {
+namespace Google.Api.Ads.AdManager.Lib
+{
     /// <summary>
-    /// Creates a service creation parameter for defining a DFP service.
+    /// Lists all the services available through this library.
     /// </summary>
-    /// <param name="version">Service version.</param>
-    /// <param name="serviceName">Service name.</param>
-    /// <returns>A service creation parameter defining this service.</returns>
-    protected static ServiceSignature MakeServiceSignature(string version, string serviceName) {
-      return new AdManagerServiceSignature(version, serviceName);
-    }
+    public partial class AdManagerService : AdsService
+    {
+        /// <summary>
+        /// Creates a service creation parameter for defining a DFP service.
+        /// </summary>
+        /// <param name="version">Service version.</param>
+        /// <param name="serviceName">Service name.</param>
+        /// <returns>A service creation parameter defining this service.</returns>
+        protected static ServiceSignature MakeServiceSignature(string version, string serviceName)
+        {
+            return new AdManagerServiceSignature(version, serviceName);
+        }
 
-    /// <summary>
-    /// Gets all service types defined in this service.
-    /// </summary>
-    /// <returns>The nested types that define service versions under this
-    /// service.</returns>
-    public override Type[] GetServiceTypes() {
-      return MethodInfo.GetCurrentMethod().DeclaringType.GetNestedTypes();
+        /// <summary>
+        /// Gets all service types defined in this service.
+        /// </summary>
+        /// <returns>The nested types that define service versions under this
+        /// service.</returns>
+        public override Type[] GetServiceTypes()
+        {
+            return MethodInfo.GetCurrentMethod().DeclaringType.GetNestedTypes();
+        }
     }
-  }
 }

@@ -13,6 +13,7 @@
 ' limitations under the License.
 
 Imports Google.Api.Ads.AdWords.Lib
+Imports Google.Api.Ads.AdWords.Util.Reports.v201802
 Imports Google.Api.Ads.AdWords.v201802
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
@@ -61,34 +62,31 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
 
         ' [START create_query] MOE:strip_line
         ' Create the query.
-        Dim query As String = "SELECT Id, Name, Status ORDER BY Name"
+        Dim query As SelectQuery = New SelectQueryBuilder() _
+            .Select(Campaign.Fields.Name, Campaign.Fields.Id, Campaign.Fields.Status) _
+            .OrderByAscending(Campaign.Fields.Name) _
+            .DefaultLimit() _
+            .Build()
         ' [END create_query] MOE:strip_line
 
         ' [START execute_query] MOE:strip_line
-        Dim offset As Long = 0
-        Dim pageSize As Long = 500
-
         Dim page As New CampaignPage()
+        Dim i As Integer = 0
 
         Try
           Do
-            Dim queryWithPaging As String = String.Format("{0} LIMIT {1}, {2}", query, offset,
-                pageSize)
-
-            ' Get the campaigns.
-            page = campaignService.query(queryWithPaging)
+            page = campaignService.query(query)
 
             ' Display the results.
             If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-              Dim i As Integer = CInt(offset)
               For Each campaign As Campaign In page.entries
                 Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = " &
                     "'{3}' was found.", i, campaign.id, campaign.name, campaign.status)
                 i += 1
               Next
             End If
-            offset = offset + pageSize
-          Loop While (offset < page.totalNumEntries)
+            query.NextPage(page)
+          Loop While (query.HasNextPage(page))
           Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
         Catch e As Exception
           Throw New System.ApplicationException("Failed to retrieve campaign(s).", e)

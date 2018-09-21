@@ -17,32 +17,34 @@ using Google.Api.Ads.Common.Lib;
 using System;
 using System.Reflection;
 
-namespace Google.Api.Ads.AdWords.Lib {
-
-  /// <summary>
-  /// Lists all the services available through this library.
-  /// </summary>
-  public partial class AdWordsService : AdsService {
-
+namespace Google.Api.Ads.AdWords.Lib
+{
     /// <summary>
-    /// Creates a service creation parameter for defining an AdWords service.
+    /// Lists all the services available through this library.
     /// </summary>
-    /// <param name="version">Service version.</param>
-    /// <param name="groupName">Group name.</param>
-    /// <param name="serviceName">Service name.</param>
-    /// <returns>A service creation parameter defining this service.</returns>
-    protected static ServiceSignature MakeServiceSignature(string version, string groupName,
-        string serviceName) {
-      return new AdWordsServiceSignature(version, serviceName, groupName);
-    }
+    public partial class AdWordsService : AdsService
+    {
+        /// <summary>
+        /// Creates a service creation parameter for defining an AdWords service.
+        /// </summary>
+        /// <param name="version">Service version.</param>
+        /// <param name="groupName">Group name.</param>
+        /// <param name="serviceName">Service name.</param>
+        /// <returns>A service creation parameter defining this service.</returns>
+        protected static ServiceSignature MakeServiceSignature(string version, string groupName,
+            string serviceName)
+        {
+            return new AdWordsServiceSignature(version, serviceName, groupName);
+        }
 
-    /// <summary>
-    /// Gets all service types defined in this service.
-    /// </summary>
-    /// <returns>The nested types that define service versions under this
-    /// service.</returns>
-    public override Type[] GetServiceTypes() {
-      return MethodInfo.GetCurrentMethod().DeclaringType.GetNestedTypes();
+        /// <summary>
+        /// Gets all service types defined in this service.
+        /// </summary>
+        /// <returns>The nested types that define service versions under this
+        /// service.</returns>
+        public override Type[] GetServiceTypes()
+        {
+            return MethodInfo.GetCurrentMethod().DeclaringType.GetNestedTypes();
+        }
     }
-  }
 }

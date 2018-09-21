@@ -14,6 +14,7 @@
 
 Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.Util.Reports
+Imports Google.Api.Ads.AdWords.Util.Reports.v201802
 Imports Google.Api.Ads.AdWords.v201802
 Imports Google.Api.Ads.Common.Util.Reports
 
@@ -63,9 +64,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
     ''' <param name="fileName">The file to which the report is downloaded.
     ''' </param>
     Public Sub Run(ByVal user As AdWordsUser, ByVal fileName As String)
-      Dim query As String = "SELECT CampaignId, AdGroupId, Id, Criteria, CriteriaType, " &
-          "Impressions, Clicks, Cost FROM CRITERIA_PERFORMANCE_REPORT WHERE Status IN " &
-          "[ENABLED, PAUSED] DURING LAST_7_DAYS"
+      Dim query As ReportQuery = New ReportQueryBuilder() _
+          .Select("CampaignId", "AdGroupId", "Id", "Criteria", "CriteriaType",
+              "Impressions", "Clicks", "Cost") _
+          .From(ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT) _
+          .Where("Status").In("ENABLED", "PAUSED") _
+          .During(ReportDefinitionDateRangeType.LAST_7_DAYS) _
+          .Build()
 
       Dim filePath As String = ExampleUtilities.GetHomeDir() + Path.DirectorySeparatorChar &
           fileName

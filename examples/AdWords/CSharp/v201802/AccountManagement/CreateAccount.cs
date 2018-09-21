@@ -83,13 +83,6 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802
                     @operator = Operator.ADD
                 };
 
-                // For whitelisted users only, uncomment two commands below as part of the
-                // ADD operation to invite a user to have access to an account. An email
-                // will be sent to that user inviting them to have access to the newly
-                // created account.
-                // operation.inviteeEmail = "invited_user1@example.com";
-                // operation.inviteeRole = AccessRole.ADMINISTRATIVE;
-
                 try
                 {
                     ManagedCustomerOperation[] operations = new ManagedCustomerOperation[]

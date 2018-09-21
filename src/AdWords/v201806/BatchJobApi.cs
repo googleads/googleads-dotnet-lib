@@ -14,72 +14,82 @@
 
 using System.ComponentModel;
 
-namespace Google.Api.Ads.AdWords.v201806 {
+namespace Google.Api.Ads.AdWords.v201806
+{
+    /// <summary>
+    /// Represents a request that wraps the operations sent to a batch job.
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(
+        Namespace = "https://adwords.google.com/api/adwords/cm/v201806", TypeName = "mutate")]
+    public class BatchJobMutateRequest
+    {
+        private Operation[] operationsField;
 
-  /// <summary>
-  /// Represents a request that wraps the operations sent to a batch job.
-  /// </summary>
-  [System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201806", TypeName = "mutate")]
-  public class BatchJobMutateRequest {
-    private Operation[] operationsField;
+        /// <summary>
+        /// Gets or sets the operations.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("operations")]
+        public Operation[] operations
+        {
+            get { return operationsField; }
+            set { operationsField = value; }
+        }
+    }
 
     /// <summary>
-    /// Gets or sets the operations.
+    /// Represents the SOAP envelope node that wraps a mutate response from a
+    /// batch job.
     /// </summary>
-    [System.Xml.Serialization.XmlElementAttribute("operations")]
-    public Operation[] operations {
-      get { return operationsField; }
-      set { operationsField = value; }
-    }
-  }
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "root")]
+    public class BatchJobMutateResponseEnvelope
+    {
+        BatchJobMutateResponse mutateResponseField;
 
-  /// <summary>
-  /// Represents the SOAP envelope node that wraps a mutate response from a
-  /// batch job.
-  /// </summary>
-  [System.Xml.Serialization.XmlTypeAttribute(TypeName = "root")]
-  public class BatchJobMutateResponseEnvelope {
-    BatchJobMutateResponse mutateResponseField;
+        /// <summary>
+        /// Gets or sets the mutate response.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace =
+            "https://adwords.google.com/api/adwords/cm/v201806")]
+        public BatchJobMutateResponse mutateResponse
+        {
+            get { return mutateResponseField; }
+            set { mutateResponseField = value; }
+        }
+    }
 
     /// <summary>
-    /// Gets or sets the mutate response.
+    /// Represents a mutate response from a batch job.
     /// </summary>
-    [System.Xml.Serialization.XmlElementAttribute(Namespace = "https://adwords.google.com/api/adwords/cm/v201806")]
-    public BatchJobMutateResponse mutateResponse {
-      get { return mutateResponseField; }
-      set { mutateResponseField = value; }
-    }
-  }
+    public class BatchJobMutateResponse
+    {
+        private MutateResult[] rvalField;
 
-  /// <summary>
-  /// Represents a mutate response from a batch job.
-  /// </summary>
-  public class BatchJobMutateResponse {
-    private MutateResult[] rvalField;
+        /// <summary>
+        /// Gets or sets the mutate results.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("rval")]
+        public MutateResult[] rval
+        {
+            get { return rvalField; }
+            set { rvalField = value; }
+        }
+    }
 
     /// <summary>
-    /// Gets or sets the mutate results.
+    /// The list of API errors.
     /// </summary>
-    [System.Xml.Serialization.XmlElementAttribute("rval")]
-    public MutateResult[] rval {
-      get { return rvalField; }
-      set { rvalField = value; }
-    }
-  }
+    public class ErrorList
+    {
+        private ApiError[] errorsField;
 
-  /// <summary>
-  /// The list of API errors.
-  /// </summary>
-  public class ErrorList {
-    private ApiError[] errorsField;
-
-    /// <summary>
-    /// Gets or sets the errors.
-    /// </summary>
-    [System.Xml.Serialization.XmlElementAttribute("errors")]
-    public ApiError[] errors {
-      get { return errorsField; }
-      set { errorsField = value; }
+        /// <summary>
+        /// Gets or sets the errors.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute("errors")]
+        public ApiError[] errors
+        {
+            get { return errorsField; }
+            set { errorsField = value; }
+        }
     }
-  }
 }

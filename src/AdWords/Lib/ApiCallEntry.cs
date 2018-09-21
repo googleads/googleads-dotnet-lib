@@ -12,25 +12,26 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Lib {
-  /// <summary>
-  /// Represents an API call that was made to the AdWords API server.
-  /// </summary>
-  public partial class ApiCallEntry {
-
+namespace Google.Api.Ads.AdWords.Lib
+{
     /// <summary>
-    /// Gets or sets the service that was called.
+    /// Represents an API call that was made to the AdWords API server.
     /// </summary>
-    public string Service { get; set; }
+    public partial class ApiCallEntry
+    {
+        /// <summary>
+        /// Gets or sets the service that was called.
+        /// </summary>
+        public string Service { get; set; }
 
-    /// <summary>
-    /// Gets or sets the name of the method that was called.
-    /// </summary>
-    public string Method { get; set; }
+        /// <summary>
+        /// Gets or sets the name of the method that was called.
+        /// </summary>
+        public string Method { get; set; }
 
-    /// <summary>
-    /// Gets or sets the number of API operations for this call.
-    /// </summary>
-    public int OperationCount { get; set; }
-  }
+        /// <summary>
+        /// Gets or sets the number of API operations for this call.
+        /// </summary>
+        public int OperationCount { get; set; }
+    }
 }

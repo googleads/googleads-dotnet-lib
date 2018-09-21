@@ -14,43 +14,43 @@
 
 using System;
 
-namespace Google.Api.Ads.AdWords.Util.Reports {
-
-  /// <summary>
-  /// Builder interface for DURING capability.
-  /// </summary>
-  /// <typeparam name="TParent">The parent builder type.</typeparam>
-  /// <typeparam name="TDateRangeType">The enum type for predefined date ranges.</typeparam>
-  internal interface IDurationBuilder<TParent, TDateRangeType> {
-
+namespace Google.Api.Ads.AdWords.Util.Reports
+{
     /// <summary>
-    /// Adds a DURING clause to the query.
+    /// Builder interface for DURING capability.
     /// </summary>
-    /// <param name="dateRange">The predefined date range.</param>
-    /// <returns>The parent builder for call chaining.</returns>
-    TParent During(string dateRange);
+    /// <typeparam name="TParent">The parent builder type.</typeparam>
+    /// <typeparam name="TDateRangeType">The enum type for predefined date ranges.</typeparam>
+    internal interface IDurationBuilder<TParent, TDateRangeType>
+    {
+        /// <summary>
+        /// Adds a DURING clause to the query.
+        /// </summary>
+        /// <param name="dateRange">The predefined date range.</param>
+        /// <returns>The parent builder for call chaining.</returns>
+        TParent During(string dateRange);
 
-    /// <summary>
-    /// Adds a DURING clause to the query.
-    /// </summary>
-    /// <param name="dateRangeType">The predefined date range.</param>
-    /// <returns>The parent builder for call chaining.</returns>
-    TParent During(TDateRangeType dateRangeType);
+        /// <summary>
+        /// Adds a DURING clause to the query.
+        /// </summary>
+        /// <param name="dateRangeType">The predefined date range.</param>
+        /// <returns>The parent builder for call chaining.</returns>
+        TParent During(TDateRangeType dateRangeType);
 
-    /// <summary>
-    /// Adds a DURING clause to the query.
-    /// </summary>
-    /// <param name="minDate">The minimum date in yyyyMMdd format.</param>
-    /// <param name="maxDate">The maximum date in yyyyMMdd format.</param>
-    /// <returns>The parent builder for call chaining.</returns>
-    TParent During(string minDate, string maxDate);
+        /// <summary>
+        /// Adds a DURING clause to the query.
+        /// </summary>
+        /// <param name="minDate">The minimum date in yyyyMMdd format.</param>
+        /// <param name="maxDate">The maximum date in yyyyMMdd format.</param>
+        /// <returns>The parent builder for call chaining.</returns>
+        TParent During(string minDate, string maxDate);
 
-    /// <summary>
-    /// Adds a DURING clause to the query.
-    /// </summary>
-    /// <param name="minDate">The minimum date.</param>
-    /// <param name="maxDate">The maximum date.</param>
-    /// <returns>The parent builder for call chaining.</returns>
-    TParent During(DateTime minDate, DateTime maxDate);
-  }
+        /// <summary>
+        /// Adds a DURING clause to the query.
+        /// </summary>
+        /// <param name="minDate">The minimum date.</param>
+        /// <param name="maxDate">The maximum date.</param>
+        /// <returns>The parent builder for call chaining.</returns>
+        TParent During(DateTime minDate, DateTime maxDate);
+    }
 }

@@ -12,32 +12,30 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.Reports {
-
-  /// <summary>
-  /// A selector query.
-  /// </summary>
-  internal interface ISelectQuery<TParent, TBuilder, TPage> : ILimitBuilder<TParent> {
-
+namespace Google.Api.Ads.AdWords.Util.Reports
+{
     /// <summary>
-    /// Gets the builder.
+    /// A selector query.
     /// </summary>
-    TBuilder Builder {
-      get;
+    internal interface ISelectQuery<TParent, TBuilder, TPage> : ILimitBuilder<TParent>
+    {
+        /// <summary>
+        /// Gets the builder.
+        /// </summary>
+        TBuilder Builder { get; }
+
+        /// <summary>
+        /// Determines whether the query has next page.
+        /// </summary>
+        /// <param name="page">The page.</param>
+        /// <returns>True if there's a next page, false otherwise.</returns>
+        bool HasNextPage(TPage page);
+
+        /// <summary>
+        /// Advances the query by a page.
+        /// </summary>
+        /// <param name="page">The page.</param>
+        /// <returns>The parent builder for call chaining.</returns>
+        TParent NextPage(TPage page);
     }
-
-    /// <summary>
-    /// Determines whether the query has next page.
-    /// </summary>
-    /// <param name="page">The page.</param>
-    /// <returns>True if there's a next page, false otherwise.</returns>
-    bool HasNextPage(TPage page);
-
-    /// <summary>
-    /// Advances the query by a page.
-    /// </summary>
-    /// <param name="page">The page.</param>
-    /// <returns>The parent builder for call chaining.</returns>
-    TParent NextPage(TPage page);
-  }
 }

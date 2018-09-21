@@ -12,20 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Google.Api.Ads.AdWords.Util.Reports {
-
-  /// <summary>
-  /// Interface for building selector queries.
-  /// </summary>
-  /// <typeparam name="TParent">The parent builder type.</typeparam>
-  /// <typeparam name="TQuery">The query type.</typeparam>
-  internal interface ISelectQueryBuilder<TParent, TQuery> : ISelectBuilder<TParent>,
-      IFilterBuilder<TParent>, ISortingBuilder<TParent>, ILimitBuilder<TParent> {
-
+namespace Google.Api.Ads.AdWords.Util.Reports
+{
     /// <summary>
-    /// Builds the query.
+    /// Interface for building selector queries.
     /// </summary>
-    /// <returns>The query.</returns>
-    TQuery Build();
-  }
+    /// <typeparam name="TParent">The parent builder type.</typeparam>
+    /// <typeparam name="TQuery">The query type.</typeparam>
+    internal interface ISelectQueryBuilder<TParent, TQuery> : ISelectBuilder<TParent>,
+        IFilterBuilder<TParent>, ISortingBuilder<TParent>, ILimitBuilder<TParent>
+    {
+        /// <summary>
+        /// Builds the query.
+        /// </summary>
+        /// <returns>The query.</returns>
+        TQuery Build();
+    }
 }

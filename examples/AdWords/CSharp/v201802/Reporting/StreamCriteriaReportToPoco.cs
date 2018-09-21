@@ -14,6 +14,7 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Util.Reports;
+using Google.Api.Ads.AdWords.Util.Reports.v201802;
 using Google.Api.Ads.AdWords.v201802;
 using Google.Api.Ads.Common.Util.Reports;
 
@@ -101,9 +102,12 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201802
         public void Run(AdWordsUser user)
         {
             // Create the query.
-            string query =
-                "SELECT Id, AdNetworkType1, Impressions FROM CRITERIA_PERFORMANCE_REPORT " +
-                "WHERE Status IN [ENABLED, PAUSED] DURING LAST_7_DAYS";
+            ReportQuery query = new ReportQueryBuilder()
+                .Select("Id", "AdNetworkType1", "Impressions")
+                .From(ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT)
+                .Where("Status").In("ENABLED", "PAUSED")
+                .During(ReportDefinitionDateRangeType.LAST_7_DAYS)
+                .Build();
 
             ReportUtilities reportUtilities = new ReportUtilities(user, "v201802", query,
                 DownloadFormat.GZIPPED_XML.ToString());

@@ -17,44 +17,48 @@ using Google.Api.Ads.Common.Lib;
 using System;
 using System.Globalization;
 
-namespace Google.Api.Ads.AdWords.Lib {
-  /// <summary>
-  /// Service creation params for AdWords API family of services.
-  /// </summary>
-  public class AdWordsServiceSignature : ServiceSignature {
+namespace Google.Api.Ads.AdWords.Lib
+{
     /// <summary>
-    /// The group name, for instance, cm.
+    /// Service creation params for AdWords API family of services.
     /// </summary>
-    private string groupName;
+    public class AdWordsServiceSignature : ServiceSignature
+    {
+        /// <summary>
+        /// The group name, for instance, cm.
+        /// </summary>
+        private string groupName;
 
-    /// <summary>
-    /// Gets the group name.
-    /// </summary>
-    public string GroupName {
-      get {
-        return groupName;
-      }
-    }
+        /// <summary>
+        /// Gets the group name.
+        /// </summary>
+        public string GroupName
+        {
+            get { return groupName; }
+        }
 
-    /// <summary>
-    /// Gets the type of service.
-    /// </summary>
-    public override Type ServiceType {
-      get {
-        return Type.GetType(string.Format(CultureInfo.InvariantCulture,
-            "Google.Api.Ads.AdWords.{0}.{1}", Version, ServiceName));
-      }
-    }
+        /// <summary>
+        /// Gets the type of service.
+        /// </summary>
+        public override Type ServiceType
+        {
+            get
+            {
+                return Type.GetType(string.Format(CultureInfo.InvariantCulture,
+                    "Google.Api.Ads.AdWords.{0}.{1}", Version, ServiceName));
+            }
+        }
 
-    /// <summary>
-    /// Public constructor.
-    /// </summary>
-    /// <param name="version">Service version.</param>
-    /// <param name="serviceSignature">Service name.</param>
-    /// <param name="groupName">The group name</param>
-    public AdWordsServiceSignature(string version, string serviceSignature, string groupName)
-        : base(version, serviceSignature, SupportedProtocols.SOAP) {
-      this.groupName = groupName;
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
+        /// <param name="version">Service version.</param>
+        /// <param name="serviceSignature">Service name.</param>
+        /// <param name="groupName">The group name</param>
+        public AdWordsServiceSignature(string version, string serviceSignature, string groupName) :
+            base(version, serviceSignature, SupportedProtocols.SOAP)
+        {
+            this.groupName = groupName;
+        }
     }
-  }
 }

@@ -13,6 +13,7 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.Lib;
+using Google.Api.Ads.AdWords.Util.Reports.v201806;
 using Google.Api.Ads.AdWords.v201806;
 
 using System;
@@ -71,13 +72,14 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806
                 (AdGroupAdService) user.GetService(AdWordsService.v201806.AdGroupAdService))
             {
                 // Get all the disapproved ads for this campaign.
-                string query =
-                    string.Format(
-                        "SELECT Id, PolicySummary WHERE CampaignId = {0} and " +
-                        "CombinedApprovalStatus = DISAPPROVED ORDER BY Id", campaignId);
-
-                int offset = 0;
-                int pageSize = 500;
+                SelectQuery query = new SelectQueryBuilder()
+                    .Select(Ad.Fields.Id, AdGroupAd.Fields.PolicySummary)
+                    .Where(AdGroup.Fields.CampaignId).Equals(campaignId)
+                    .Where(AdGroupAdPolicySummary.Fields.CombinedApprovalStatus)
+                    .Equals(ApprovalStatus.DISAPPROVED.ToString())
+                    .OrderByAscending(Ad.Fields.Id)
+                    .DefaultLimit()
+                    .Build();
 
                 AdGroupAdPage page = new AdGroupAdPage();
                 int disapprovedAdsCount = 0;
@@ -86,11 +88,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806
                 {
                     do
                     {
-                        string queryWithPaging =
-                            string.Format("{0} LIMIT {1}, {2}", query, offset, pageSize);
-
                         // Get the disapproved ads.
-                        page = adGroupAdService.query(queryWithPaging);
+                        page = adGroupAdService.query(query);
 
                         // Display the results.
                         if (page != null && page.entries != null)
@@ -136,8 +135,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806
                             }
                         }
 
-                        offset += pageSize;
-                    } while (offset < page.totalNumEntries);
+                        query.NextPage(page);
+                    } while (query.HasNextPage(page));
 
                     Console.WriteLine("Number of disapproved ads found: {0}", disapprovedAdsCount);
                 }

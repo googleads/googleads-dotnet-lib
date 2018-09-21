@@ -17,70 +17,63 @@ using System.Reflection;
 using System.Xml;
 using System.Xml.XPath;
 
-namespace Google.Api.Ads.AdWords.Headers {
-
-  /// <summary>
-  /// This class represents an AdWords SOAP response header.
-  /// </summary>
-  public class ResponseHeader {
-
+namespace Google.Api.Ads.AdWords.Headers
+{
     /// <summary>
-    /// Gets or sets the request id for this API call.
+    /// This class represents an AdWords SOAP response header.
     /// </summary>
-    public string requestId {
-      get; set;
+    public class ResponseHeader
+    {
+        /// <summary>
+        /// Gets or sets the request id for this API call.
+        /// </summary>
+        public string requestId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the service that was invoked.
+        /// </summary>
+        public string serviceName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the method that was invoked.
+        /// </summary>
+        public string methodName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number of operations for this API call.
+        /// </summary>
+        public long? operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets the response time for this API call.
+        /// </summary>
+        public long? responseTime { get; set; }
+
+        /// <summary>
+        /// Reads a response header from an xml reader.
+        /// </summary>
+        /// <param name="reader">The xml reader.</param>
+        /// <param name="rootNamespace"></param>
+        /// <returns>A deserialized response header.</returns>
+        public static ResponseHeader ReadFrom(XmlReader reader, string rootNamespace)
+        {
+            ResponseHeader retval = new ResponseHeader();
+            XmlReader childReader = reader.ReadSubtree();
+            XPathNavigator root = new XPathDocument(childReader).CreateNavigator();
+
+            var ns = new XmlNamespaceManager(root.NameTable);
+            ns.AddNamespace("root", rootNamespace);
+
+            foreach (XPathNavigator childNode in root.Select("root:ResponseHeader/child::*", ns))
+            {
+                string content = childNode.Value;
+                string name = childNode.LocalName;
+                PropertyInfo pi = typeof(ResponseHeader).GetProperty(name);
+                TypeConverter typeConverter = TypeDescriptor.GetConverter(pi.PropertyType);
+                pi.SetValue(retval, typeConverter.ConvertFrom(content));
+            }
+
+            return retval;
+        }
     }
-
-    /// <summary>
-    /// Gets or sets the name of the service that was invoked.
-    /// </summary>
-    public string serviceName {
-      get; set;
-    }
-
-    /// <summary>
-    /// Gets or sets the name of the method that was invoked.
-    /// </summary>
-    public string methodName {
-      get; set;
-    }
-
-    /// <summary>
-    /// Gets or sets the number of operations for this API call.
-    /// </summary>
-    public long? operations {
-      get; set;
-    }
-
-    /// <summary>
-    /// Gets or sets the response time for this API call.
-    /// </summary>
-    public long? responseTime {
-      get; set;
-    }
-
-    /// <summary>
-    /// Reads a response header from an xml reader.
-    /// </summary>
-    /// <param name="reader">The xml reader.</param>
-    /// <param name="rootNamespace"></param>
-    /// <returns>A deserialized response header.</returns>
-    public static ResponseHeader ReadFrom(XmlReader reader, string rootNamespace) {
-      ResponseHeader retval = new ResponseHeader();
-      XmlReader childReader = reader.ReadSubtree();
-      XPathNavigator root = new XPathDocument(childReader).CreateNavigator();
-
-      var ns = new XmlNamespaceManager(root.NameTable);
-      ns.AddNamespace("root", rootNamespace);
-
-      foreach (XPathNavigator childNode in root.Select("root:ResponseHeader/child::*", ns)) {
-        string content = childNode.Value;
-        string name = childNode.LocalName;
-        PropertyInfo pi = typeof(ResponseHeader).GetProperty(name);
-        TypeConverter typeConverter = TypeDescriptor.GetConverter(pi.PropertyType);
-        pi.SetValue(retval, typeConverter.ConvertFrom(content));
-      }
-      return retval;
-    }
-  }
 }
