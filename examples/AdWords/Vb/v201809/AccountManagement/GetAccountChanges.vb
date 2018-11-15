@@ -18,156 +18,166 @@ Imports Google.Api.Ads.AdWords.v201809
 Imports System.Text
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
-
-  ''' <summary>
-  ''' This code example gets the changes in the account during the last 24
-  ''' hours.
-  ''' </summary>
-  Public Class GetAccountChanges
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example gets the changes in the account during the last 24
+    ''' hours.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New GetAccountChanges
-      Console.WriteLine(codeExample.Description)
-      Try
-        codeExample.Run(New AdWordsUser)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class GetAccountChanges
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example gets the changes in the account during the last 24 hours."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New GetAccountChanges
+            Console.WriteLine(codeExample.Description)
+            Try
+                codeExample.Run(New AdWordsUser)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    Public Sub Run(ByVal user As AdWordsUser)
-      Using customerSyncService As CustomerSyncService = CType(user.GetService(
-          AdWordsService.v201809.CustomerSyncService), CustomerSyncService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example gets the changes in the account during the last 24 hours."
+            End Get
+        End Property
 
-        ' The date time string should be of the form  yyyyMMdd HHmmss zzz.
-        Dim minDateTime As String = (DateTime.Now.AddDays(-1).ToUniversalTime.ToString(
-          "yyyyMMdd HHmmss") & " UTC")
-        Dim maxDateTime As String = (DateTime.Now.ToUniversalTime.ToString(
-                                   "yyyyMMdd HHmmss") & " UTC")
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        Public Sub Run(ByVal user As AdWordsUser)
+            Using customerSyncService As CustomerSyncService = CType(
+                user.GetService(
+                    AdWordsService.v201809.CustomerSyncService),
+                CustomerSyncService)
 
-        ' Create date time range.
-        Dim dateTimeRange As New DateTimeRange
-        dateTimeRange.min = minDateTime
-        dateTimeRange.max = maxDateTime
+                ' The date time string should be of the form  yyyyMMdd HHmmss zzz.
+                Dim minDateTime As String = (DateTime.Now.AddDays(- 1).ToUniversalTime.ToString(
+                    "yyyyMMdd HHmmss") & " UTC")
+                Dim maxDateTime As String = (DateTime.Now.ToUniversalTime.ToString(
+                    "yyyyMMdd HHmmss") & " UTC")
 
-        Try
-          ' Create the selector.
-          Dim selector As New CustomerSyncSelector
-          selector.dateTimeRange = dateTimeRange
-          selector.campaignIds = GetAllCampaignIds(user)
+                ' Create date time range.
+                Dim dateTimeRange As New DateTimeRange
+                dateTimeRange.min = minDateTime
+                dateTimeRange.max = maxDateTime
 
-          ' Get all account changes for campaign.
-          Dim accountChanges As CustomerChangeData = customerSyncService.get(selector)
+                Try
+                    ' Create the selector.
+                    Dim selector As New CustomerSyncSelector
+                    selector.dateTimeRange = dateTimeRange
+                    selector.campaignIds = GetAllCampaignIds(user)
 
-          ' Display the changes.
-          If ((Not accountChanges Is Nothing) AndAlso
-            (Not accountChanges.changedCampaigns Is Nothing)) Then
-            Console.WriteLine("Displaying changes up to: {0}", accountChanges.lastChangeTimestamp)
+                    ' Get all account changes for campaign.
+                    Dim accountChanges As CustomerChangeData = customerSyncService.get(selector)
 
-            For Each campaignChanges As CampaignChangeData In accountChanges.changedCampaigns
-              Console.WriteLine("Campaign with id ""{0}"" was changed:",
-                  campaignChanges.campaignId)
-              Console.WriteLine("  Campaign changed status: {0}",
-                campaignChanges.campaignChangeStatus)
-              If (campaignChanges.campaignChangeStatus <> ChangeStatus.NEW) Then
+                    ' Display the changes.
+                    If ((Not accountChanges Is Nothing) AndAlso
+                        (Not accountChanges.changedCampaigns Is Nothing)) Then
+                        Console.WriteLine("Displaying changes up to: {0}",
+                                          accountChanges.lastChangeTimestamp)
 
-                Console.WriteLine("  Added campaign criteria: {0}",
-                  GetFormattedList(campaignChanges.addedCampaignCriteria))
+                        For Each campaignChanges As CampaignChangeData In _
+                            accountChanges.changedCampaigns
+                            Console.WriteLine("Campaign with id ""{0}"" was changed:",
+                                              campaignChanges.campaignId)
+                            Console.WriteLine("  Campaign changed status: {0}",
+                                              campaignChanges.campaignChangeStatus)
+                            If (campaignChanges.campaignChangeStatus <> ChangeStatus.NEW) Then
 
-                Console.WriteLine("  Removed campaign criteria: {0}",
-                  GetFormattedList(campaignChanges.removedCampaignCriteria))
+                                Console.WriteLine("  Added campaign criteria: {0}",
+                                                  GetFormattedList(
+                                                      campaignChanges.addedCampaignCriteria))
 
-                If (Not campaignChanges.changedAdGroups Is Nothing) Then
-                  For Each adGroupChanges As AdGroupChangeData In campaignChanges.changedAdGroups
-                    Console.WriteLine("  Ad group with id ""{0}"" was changed:",
-                      adGroupChanges.adGroupId)
-                    Console.WriteLine("    Ad group changed status: {0}",
-                      adGroupChanges.adGroupChangeStatus)
-                    If (adGroupChanges.adGroupChangeStatus <> ChangeStatus.NEW) Then
-                      Console.WriteLine("    Ads changed: {0}",
-                        GetFormattedList(adGroupChanges.changedAds))
-                      Console.WriteLine("    Criteria changed: {0}",
-                        GetFormattedList(adGroupChanges.changedCriteria))
-                      Console.WriteLine("    Criteria removed: {0}",
-                        GetFormattedList(adGroupChanges.removedCriteria))
+                                Console.WriteLine("  Removed campaign criteria: {0}",
+                                                  GetFormattedList(
+                                                      campaignChanges.removedCampaignCriteria))
+
+                                If (Not campaignChanges.changedAdGroups Is Nothing) Then
+                                    For Each adGroupChanges As AdGroupChangeData In _
+                                        campaignChanges.changedAdGroups
+                                        Console.WriteLine("  Ad group with id ""{0}"" was changed:",
+                                                          adGroupChanges.adGroupId)
+                                        Console.WriteLine("    Ad group changed status: {0}",
+                                                          adGroupChanges.adGroupChangeStatus)
+                                        If (adGroupChanges.adGroupChangeStatus <>
+                                            ChangeStatus.NEW) Then
+                                            Console.WriteLine("    Ads changed: {0}",
+                                                              GetFormattedList(
+                                                                  adGroupChanges.changedAds))
+                                            Console.WriteLine("    Criteria changed: {0}",
+                                                              GetFormattedList(
+                                                                  adGroupChanges.changedCriteria))
+                                            Console.WriteLine("    Criteria removed: {0}",
+                                                              GetFormattedList(
+                                                                  adGroupChanges.removedCriteria))
+                                        End If
+                                    Next
+                                End If
+                            End If
+                            Console.WriteLine()
+                        Next
+                    Else
+                        Console.WriteLine("No account changes were found.")
                     End If
-                  Next
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to get account changes.", e)
+                End Try
+            End Using
+        End Sub
+
+        ''' <summary>
+        ''' Formats a list of ids as a comma separated string.
+        ''' </summary>
+        ''' <param name="ids">The list of ids.</param>
+        ''' <returns>The comma separed formatted string, enclosed in square braces.
+        ''' </returns>
+        Private Function GetFormattedList(ByVal ids As Long()) As String
+            Dim builder As New StringBuilder
+            If (Not ids Is Nothing) Then
+                For Each id As Long In ids
+                    builder.AppendFormat("{0}, ", id)
+                Next
+            End If
+            Return ("[" & builder.ToString.TrimEnd(New Char() {","c, " "c}) & "]")
+        End Function
+
+        ''' <summary>
+        ''' Gets all campaign ids in the account.
+        ''' </summary>
+        ''' <param name="user">The user for which campaigns are retrieved.</param>
+        ''' <returns>The list of campaign ids.</returns>
+        Private Function GetAllCampaignIds(ByVal user As AdWordsUser) As Long()
+            ' Get the CampaignService.
+            Using campaignService As CampaignService = CType(
+                user.GetService(
+                    AdWordsService.v201809.CampaignService),
+                CampaignService)
+                Dim allCampaigns As New List(Of Long)
+
+                ' Create the selector.
+                Dim selector As New Selector
+                selector.fields = New String() {Campaign.Fields.Id}
+
+                ' Get all campaigns.
+                Dim page As CampaignPage = campaignService.get(selector)
+
+                ' Return the results.
+                If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+                    For Each campaign As Campaign In page.entries
+                        allCampaigns.Add(campaign.id)
+                    Next
                 End If
-              End If
-              Console.WriteLine()
-            Next
-          Else
-            Console.WriteLine("No account changes were found.")
-          End If
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to get account changes.", e)
-        End Try
-      End Using
-    End Sub
-
-    ''' <summary>
-    ''' Formats a list of ids as a comma separated string.
-    ''' </summary>
-    ''' <param name="ids">The list of ids.</param>
-    ''' <returns>The comma separed formatted string, enclosed in square braces.
-    ''' </returns>
-    Private Function GetFormattedList(ByVal ids As Long()) As String
-      Dim builder As New StringBuilder
-      If (Not ids Is Nothing) Then
-        For Each id As Long In ids
-          builder.AppendFormat("{0}, ", id)
-        Next
-      End If
-      Return ("[" & builder.ToString.TrimEnd(New Char() {","c, " "c}) & "]")
-    End Function
-
-    ''' <summary>
-    ''' Gets all campaign ids in the account.
-    ''' </summary>
-    ''' <param name="user">The user for which campaigns are retrieved.</param>
-    ''' <returns>The list of campaign ids.</returns>
-    Private Function GetAllCampaignIds(ByVal user As AdWordsUser) As Long()
-      ' Get the CampaignService.
-      Using campaignService As CampaignService = CType(user.GetService(
-          AdWordsService.v201809.CampaignService), CampaignService)
-        Dim allCampaigns As New List(Of Long)
-
-        ' Create the selector.
-        Dim selector As New Selector
-        selector.fields = New String() {Campaign.Fields.Id}
-
-        ' Get all campaigns.
-        Dim page As CampaignPage = campaignService.get(selector)
-
-        ' Return the results.
-        If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-          For Each campaign As Campaign In page.entries
-            allCampaigns.Add(campaign.id)
-          Next
-        End If
-        Return allCampaigns.ToArray
-      End Using
-    End Function
-
-  End Class
-
+                Return allCampaigns.ToArray
+            End Using
+        End Function
+    End Class
 End Namespace

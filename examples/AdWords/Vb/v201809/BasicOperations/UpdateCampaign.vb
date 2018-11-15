@@ -16,78 +16,78 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201809
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
-
-  ''' <summary>
-  ''' This code example updates a campaign. To get campaigns, run
-  ''' GetCampaigns.vb.
-  ''' </summary>
-  Public Class UpdateCampaign
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example updates a campaign. To get campaigns, run
+    ''' GetCampaigns.vb.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New UpdateCampaign
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
-        codeExample.Run(New AdWordsUser, campaignId)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class UpdateCampaign
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example updates a campaign. To get campaigns, run GetCampaigns.vb."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New UpdateCampaign
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
+                codeExample.Run(New AdWordsUser, campaignId)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="campaignId">Id of the campaign to be updated.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
-      Using campaignService As CampaignService = CType(user.GetService(
-          AdWordsService.v201809.CampaignService), CampaignService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return _
+                    "This code example updates a campaign. To get campaigns, run GetCampaigns.vb."
+            End Get
+        End Property
 
-        ' Create campaign with updated budget.
-        Dim campaign As New Campaign
-        campaign.id = campaignId
-        campaign.status = CampaignStatus.PAUSED
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="campaignId">Id of the campaign to be updated.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
+            Using campaignService As CampaignService = CType(
+                user.GetService(
+                    AdWordsService.v201809.CampaignService),
+                CampaignService)
 
-        ' Create the operations.
-        Dim operation As New CampaignOperation
-        operation.operator = [Operator].SET
-        operation.operand = campaign
+                ' Create campaign with updated budget.
+                Dim campaign As New Campaign
+                campaign.id = campaignId
+                campaign.status = CampaignStatus.PAUSED
 
-        Try
-          ' Update the campaign.
-          Dim retVal As CampaignReturnValue = campaignService.mutate(
-              New CampaignOperation() {operation})
+                ' Create the operations.
+                Dim operation As New CampaignOperation
+                operation.operator = [Operator].SET
+                operation.operand = campaign
 
-          ' Display the results.
-          If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso
-              (retVal.value.Length > 0)) Then
-            Dim updatedCampaign As Campaign = retVal.value(0)
-            Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was updated.",
-                updatedCampaign.name, updatedCampaign.id)
-          Else
-            Console.WriteLine("No campaigns were updated.")
-          End If
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to update campaigns.", e)
-        End Try
-      End Using
-    End Sub
+                Try
+                    ' Update the campaign.
+                    Dim retVal As CampaignReturnValue = campaignService.mutate(
+                        New CampaignOperation() {operation})
 
-  End Class
-
+                    ' Display the results.
+                    If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso
+                        (retVal.value.Length > 0)) Then
+                        Dim updatedCampaign As Campaign = retVal.value(0)
+                        Console.WriteLine("Campaign with name = '{0}' and id = '{1}' was updated.",
+                                          updatedCampaign.name, updatedCampaign.id)
+                    Else
+                        Console.WriteLine("No campaigns were updated.")
+                    End If
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to update campaigns.", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

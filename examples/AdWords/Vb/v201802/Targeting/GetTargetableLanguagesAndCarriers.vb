@@ -16,76 +16,82 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201802
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
-  ''' <summary>
-  ''' This code example illustrates how to retrieve all carriers and languages
-  ''' available for targeting.
-  ''' </summary>
-  Public Class GetTargetableLanguagesAndCarriers
-    Inherits ExampleBase
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example illustrates how to retrieve all carriers and languages
+    ''' available for targeting.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New GetTargetableLanguagesAndCarriers
-      Console.WriteLine(codeExample.Description)
-      Try
-        codeExample.Run(New AdWordsUser)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class GetTargetableLanguagesAndCarriers
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example illustrates how to retrieve all carriers and languages" &
-            "available for targeting."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New GetTargetableLanguagesAndCarriers
+            Console.WriteLine(codeExample.Description)
+            Try
+                codeExample.Run(New AdWordsUser)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    Public Sub Run(ByVal user As AdWordsUser)
-      Using constantDataService As ConstantDataService = CType(user.GetService(
-          AdWordsService.v201802.ConstantDataService), ConstantDataService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example illustrates how to retrieve all carriers and languages" &
+                       "available for targeting."
+            End Get
+        End Property
 
-        Try
-          ' Get all carriers.
-          Dim carriers As Carrier() = constantDataService.getCarrierCriterion
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        Public Sub Run(ByVal user As AdWordsUser)
+            Using constantDataService As ConstantDataService = CType(
+                user.GetService(
+                    AdWordsService.v201802.ConstantDataService),
+                ConstantDataService)
 
-          ' Display the results.
-          If (Not carriers Is Nothing) Then
-            For Each carrier As Carrier In carriers
-              Console.WriteLine("Carrier name is '{0}', ID is {1} and country code is '{2}'.",
-                  carrier.name, carrier.id, carrier.countryCode)
-            Next
-          Else
-            Console.WriteLine("No carriers were retrieved.")
-          End If
+                Try
+                    ' Get all carriers.
+                    Dim carriers As Carrier() = constantDataService.getCarrierCriterion
 
-          ' Get all languages.
-          Dim languages As Language() = constantDataService.getLanguageCriterion
+                    ' Display the results.
+                    If (Not carriers Is Nothing) Then
+                        For Each carrier As Carrier In carriers
+                            Console.WriteLine(
+                                "Carrier name is '{0}', ID is {1} and country code is '{2}'.",
+                                carrier.name, carrier.id, carrier.countryCode)
+                        Next
+                    Else
+                        Console.WriteLine("No carriers were retrieved.")
+                    End If
 
-          ' Display the results.
-          If (Not languages Is Nothing) Then
-            For Each language As Language In languages
-              Console.WriteLine("Language name is '{0}', ID is {1} and code is '{2}'.",
-                  language.name, language.id, language.code)
-            Next
-          Else
-            Console.WriteLine("No languages were found.")
-          End If
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to get targetable carriers and languages.",
-            e)
-        End Try
-      End Using
-    End Sub
-  End Class
+                    ' Get all languages.
+                    Dim languages As Language() = constantDataService.getLanguageCriterion
+
+                    ' Display the results.
+                    If (Not languages Is Nothing) Then
+                        For Each language As Language In languages
+                            Console.WriteLine("Language name is '{0}', ID is {1} and code is '{2}'.",
+                                              language.name, language.id, language.code)
+                        Next
+                    Else
+                        Console.WriteLine("No languages were found.")
+                    End If
+                Catch e As Exception
+                    Throw _
+                        New System.ApplicationException(
+                            "Failed to get targetable carriers and languages.",
+                            e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

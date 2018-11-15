@@ -16,88 +16,88 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201806
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201806
-
-  ''' <summary>
-  ''' This code example adds a label to multiple campaigns.
-  ''' </summary>
-  Public Class AddCampaignLabels
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example adds a label to multiple campaigns.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New AddCampaignLabels
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim campaignId1 As Long = Long.Parse("INSERT_CAMPAIGN_ID1_HERE")
-        Dim campaignId2 As Long = Long.Parse("INSERT_CAMPAIGN_ID2_HERE")
-        Dim labelId As Long = Long.Parse("INSERT_LABEL_ID_HERE")
+    Public Class AddCampaignLabels
+        Inherits ExampleBase
 
-        codeExample.Run(New AdWordsUser, campaignId1, campaignId2, labelId)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New AddCampaignLabels
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim campaignId1 As Long = Long.Parse("INSERT_CAMPAIGN_ID1_HERE")
+                Dim campaignId2 As Long = Long.Parse("INSERT_CAMPAIGN_ID2_HERE")
+                Dim labelId As Long = Long.Parse("INSERT_LABEL_ID_HERE")
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example adds a label to multiple campaigns."
-      End Get
-    End Property
+                codeExample.Run(New AdWordsUser, campaignId1, campaignId2, labelId)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="campaignId1">Id of the campaign to which labels are
-    ''' added.</param>
-    ''' <param name="campaignId2">Id of the ad group to which labels are
-    ''' added.</param>
-    ''' <param name="labelId">ID of the label to apply.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId1 As Long,
-                   ByVal campaignId2 As Long, ByVal labelId As Long)
-      Using campaignService As CampaignService = CType(user.GetService(
-          AdWordsService.v201806.CampaignService), CampaignService)
-        ' Create label operations.
-        Dim operations As New List(Of CampaignLabelOperation)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example adds a label to multiple campaigns."
+            End Get
+        End Property
 
-        For Each campaignId As Long In New Long() {campaignId1, campaignId2}
-          Dim campaignLabel As New CampaignLabel
-          campaignLabel.campaignId = campaignId
-          campaignLabel.labelId = labelId
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="campaignId1">Id of the campaign to which labels are
+        ''' added.</param>
+        ''' <param name="campaignId2">Id of the ad group to which labels are
+        ''' added.</param>
+        ''' <param name="labelId">ID of the label to apply.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId1 As Long,
+                       ByVal campaignId2 As Long, ByVal labelId As Long)
+            Using campaignService As CampaignService = CType(
+                user.GetService(
+                    AdWordsService.v201806.CampaignService),
+                CampaignService)
+                ' Create label operations.
+                Dim operations As New List(Of CampaignLabelOperation)
 
-          Dim operation As New CampaignLabelOperation
-          operation.operand = campaignLabel
-          operation.operator = [Operator].ADD
+                For Each campaignId As Long In New Long() {campaignId1, campaignId2}
+                    Dim campaignLabel As New CampaignLabel
+                    campaignLabel.campaignId = campaignId
+                    campaignLabel.labelId = labelId
 
-          operations.Add(operation)
-        Next
+                    Dim operation As New CampaignLabelOperation
+                    operation.operand = campaignLabel
+                    operation.operator = [Operator].ADD
 
-        Try
-          Dim retval As CampaignLabelReturnValue = campaignService.mutateLabel(
-              operations.ToArray())
+                    operations.Add(operation)
+                Next
 
-          ' Display campaign labels.
-          If Not (retval Is Nothing) AndAlso Not (retval.value Is Nothing) Then
-            For Each newCampaignLabel As CampaignLabel In retval.value
-              Console.WriteLine("Campaign label for campaign ID {0} and label ID {1} was added.\n",
-                  newCampaignLabel.campaignId, newCampaignLabel.labelId)
-            Next
-          Else
-            Console.WriteLine("No campaign labels were added.")
-          End If
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to add campaign labels.", e)
-        End Try
-      End Using
-    End Sub
+                Try
+                    Dim retval As CampaignLabelReturnValue = campaignService.mutateLabel(
+                        operations.ToArray())
 
-  End Class
-
+                    ' Display campaign labels.
+                    If Not (retval Is Nothing) AndAlso Not (retval.value Is Nothing) Then
+                        For Each newCampaignLabel As CampaignLabel In retval.value
+                            Console.WriteLine(
+                                "Campaign label for campaign ID {0} and label ID {1} was added.\n",
+                                newCampaignLabel.campaignId, newCampaignLabel.labelId)
+                        Next
+                    Else
+                        Console.WriteLine("No campaign labels were added.")
+                    End If
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to add campaign labels.", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

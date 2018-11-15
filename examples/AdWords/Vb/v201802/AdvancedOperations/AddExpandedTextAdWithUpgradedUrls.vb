@@ -16,144 +16,152 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201802
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
-
-  ''' <summary>
-  ''' This code example adds an expanded text ad that uses advanced features of upgraded
-  ''' URLs.
-  ''' </summary>
-  Public Class AddExpandedTextAdWithUpgradedUrls
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example adds an expanded text ad that uses advanced features of upgraded
+    ''' URLs.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New AddExpandedTextAdWithUpgradedUrls
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
-        codeExample.Run(New AdWordsUser, adGroupId)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class AddExpandedTextAdWithUpgradedUrls
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example adds an expanded text ad that uses advanced features of " &
-            "upgraded URLs."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New AddExpandedTextAdWithUpgradedUrls
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+                codeExample.Run(New AdWordsUser, adGroupId)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="adGroupId">ID of the adgroup to which ad is added.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-      Using adGroupAdService As AdGroupAdService = CType(user.GetService(
-          AdWordsService.v201802.AdGroupAdService), AdGroupAdService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return _
+                    "This code example adds an expanded text ad that uses advanced features of " &
+                    "upgraded URLs."
+            End Get
+        End Property
 
-        ' Create the expanded text ad.
-        Dim expandedTextAd As New ExpandedTextAd
-        expandedTextAd.headlinePart1 = "Luxury Cruise to Mars"
-        expandedTextAd.headlinePart2 = "Visit the Red Planet in style."
-        expandedTextAd.description = "Low-gravity fun for everyone!"
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="adGroupId">ID of the adgroup to which ad is added.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
+            Using adGroupAdService As AdGroupAdService = CType(
+                user.GetService(
+                    AdWordsService.v201802.AdGroupAdService),
+                AdGroupAdService)
 
-        ' [START setTrackingUrlTemplate] MOE:strip_line
-        ' Specify a tracking URL for 3rd party tracking provider. You may
-        ' specify one at customer, campaign, ad group, ad, criterion or
-        ' feed item levels.
-        expandedTextAd.trackingUrlTemplate =
-            "http://tracker.example.com/?cid={_season}&promocode={_promocode}&u={lpurl}"
-        ' [END setTrackingUrlTemplate] MOE:strip_line
+                ' Create the expanded text ad.
+                Dim expandedTextAd As New ExpandedTextAd
+                expandedTextAd.headlinePart1 = "Luxury Cruise to Mars"
+                expandedTextAd.headlinePart2 = "Visit the Red Planet in style."
+                expandedTextAd.description = "Low-gravity fun for everyone!"
 
-        ' [START setCustomParameters] MOE:strip_line
-        ' Since your tracking URL has two custom parameters, provide their
-        ' values too. This can be provided at campaign, ad group, ad, criterion
-        ' or feed item levels.
-        Dim seasonParameter As New CustomParameter
-        seasonParameter.key = "season"
-        seasonParameter.value = "christmas"
+                ' [START setTrackingUrlTemplate] MOE:strip_line
+                ' Specify a tracking URL for 3rd party tracking provider. You may
+                ' specify one at customer, campaign, ad group, ad, criterion or
+                ' feed item levels.
+                expandedTextAd.trackingUrlTemplate =
+                    "http://tracker.example.com/?cid={_season}&promocode={_promocode}&u={lpurl}"
+                ' [END setTrackingUrlTemplate] MOE:strip_line
 
-        Dim promoCodeParameter As New CustomParameter
-        promoCodeParameter.key = "promocode"
-        promoCodeParameter.value = "NYC123"
+                ' [START setCustomParameters] MOE:strip_line
+                ' Since your tracking URL has two custom parameters, provide their
+                ' values too. This can be provided at campaign, ad group, ad, criterion
+                ' or feed item levels.
+                Dim seasonParameter As New CustomParameter
+                seasonParameter.key = "season"
+                seasonParameter.value = "christmas"
 
-        expandedTextAd.urlCustomParameters = New CustomParameters
-        expandedTextAd.urlCustomParameters.parameters =
-            New CustomParameter() {seasonParameter, promoCodeParameter}
-        ' [END setCustomParameters] MOE:strip_line
+                Dim promoCodeParameter As New CustomParameter
+                promoCodeParameter.key = "promocode"
+                promoCodeParameter.value = "NYC123"
 
-        ' Specify a list of final URLs. This field cannot be set if URL field is
-        ' set. This may be specified at ad, criterion and feed item levels.
-        expandedTextAd.finalUrls = New String() {
-          "http://www.example.com/cruise/space/",
-          "http://www.example.com/locations/mars/"
-        }
+                expandedTextAd.urlCustomParameters = New CustomParameters
+                expandedTextAd.urlCustomParameters.parameters =
+                    New CustomParameter() {seasonParameter, promoCodeParameter}
+                ' [END setCustomParameters] MOE:strip_line
 
-        ' Specify a list of final mobile URLs. This field cannot be set if URL
-        ' field is set, or finalUrls is unset. This may be specified at ad,
-        ' criterion and feed item levels.
-        expandedTextAd.finalMobileUrls = New String() {
-          "http://mobile.example.com/cruise/space/",
-          "http://mobile.example.com/locations/mars/"
-        }
+                ' Specify a list of final URLs. This field cannot be set if URL field is
+                ' set. This may be specified at ad, criterion and feed item levels.
+                expandedTextAd.finalUrls = New String() { _
+                                                            "http://www.example.com/cruise/space/",
+                                                            "http://www.example.com/locations/mars/"
+                                                        }
 
-        Dim adGroupAd As New AdGroupAd
-        adGroupAd.adGroupId = adGroupId
-        adGroupAd.ad = expandedTextAd
+                ' Specify a list of final mobile URLs. This field cannot be set if URL
+                ' field is set, or finalUrls is unset. This may be specified at ad,
+                ' criterion and feed item levels.
+                expandedTextAd.finalMobileUrls =
+                    New String() { _
+                                     "http://mobile.example.com/cruise/space/",
+                                     "http://mobile.example.com/locations/mars/"
+                                 }
 
-        ' Optional: Set the status.
-        adGroupAd.status = AdGroupAdStatus.PAUSED
+                Dim adGroupAd As New AdGroupAd
+                adGroupAd.adGroupId = adGroupId
+                adGroupAd.ad = expandedTextAd
 
-        ' Create the operation.
-        Dim operation As New AdGroupAdOperation
-        operation.operator = [Operator].ADD
-        operation.operand = adGroupAd
+                ' Optional: Set the status.
+                adGroupAd.status = AdGroupAdStatus.PAUSED
 
-        Dim retVal As AdGroupAdReturnValue = Nothing
+                ' Create the operation.
+                Dim operation As New AdGroupAdOperation
+                operation.operator = [Operator].ADD
+                operation.operand = adGroupAd
 
-        Try
-          ' Create the ads.
-          retVal = adGroupAdService.mutate(New AdGroupAdOperation() {operation})
+                Dim retVal As AdGroupAdReturnValue = Nothing
 
-          ' Display the results.
-          If Not (retVal Is Nothing) AndAlso Not (retVal.value Is Nothing) Then
-            Dim newExpandedTextAd As ExpandedTextAd = CType(retVal.value(0).ad, ExpandedTextAd)
+                Try
+                    ' Create the ads.
+                    retVal = adGroupAdService.mutate(New AdGroupAdOperation() {operation})
 
-            Console.WriteLine("Expanded text ad with ID '{0}' and headline '{1} - {2}' was added.",
-                newExpandedTextAd.id, newExpandedTextAd.headlinePart1,
-                newExpandedTextAd.headlinePart2)
+                    ' Display the results.
+                    If Not (retVal Is Nothing) AndAlso Not (retVal.value Is Nothing) Then
+                        Dim newExpandedTextAd As ExpandedTextAd = CType(retVal.value(0).ad,
+                                                                        ExpandedTextAd)
 
-            Console.WriteLine("Upgraded URL properties:")
+                        Console.WriteLine(
+                            "Expanded text ad with ID '{0}' and headline '{1} - {2}' was added.",
+                            newExpandedTextAd.id, newExpandedTextAd.headlinePart1,
+                            newExpandedTextAd.headlinePart2)
 
-            Console.WriteLine("  Final URLs: {0}", String.Join(", ", newExpandedTextAd.finalUrls))
-            Console.WriteLine("  Final Mobile URLS: {0}",
-                String.Join(", ", newExpandedTextAd.finalMobileUrls))
-            Console.WriteLine("  Tracking URL template: {0}",
-                newExpandedTextAd.trackingUrlTemplate)
+                        Console.WriteLine("Upgraded URL properties:")
 
-            Dim parameters As New List(Of String)
-            For Each customParam As CustomParameter In
-                newExpandedTextAd.urlCustomParameters.parameters
-              parameters.Add(String.Format("{0}={1}", customParam.key, customParam.value))
-            Next
-            Console.WriteLine("  Custom parameters: {0}", String.Join(", ", parameters.ToArray()))
-          Else
-            Console.WriteLine("No expanded text ads were created.")
-          End If
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to add expanded text ad to adgroup.", e)
-        End Try
-      End Using
-    End Sub
+                        Console.WriteLine("  Final URLs: {0}",
+                                          String.Join(", ", newExpandedTextAd.finalUrls))
+                        Console.WriteLine("  Final Mobile URLS: {0}",
+                                          String.Join(", ", newExpandedTextAd.finalMobileUrls))
+                        Console.WriteLine("  Tracking URL template: {0}",
+                                          newExpandedTextAd.trackingUrlTemplate)
 
-  End Class
-
+                        Dim parameters As New List(Of String)
+                        For Each customParam As CustomParameter In _
+                            newExpandedTextAd.urlCustomParameters.parameters
+                            parameters.Add(String.Format("{0}={1}", customParam.key,
+                                                         customParam.value))
+                        Next
+                        Console.WriteLine("  Custom parameters: {0}",
+                                          String.Join(", ", parameters.ToArray()))
+                    Else
+                        Console.WriteLine("No expanded text ads were created.")
+                    End If
+                Catch e As Exception
+                    Throw _
+                        New System.ApplicationException("Failed to add expanded text ad to " &
+                                                        "adgroup.", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

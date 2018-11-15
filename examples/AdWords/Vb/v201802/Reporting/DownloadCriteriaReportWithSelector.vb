@@ -20,89 +20,89 @@ Imports Google.Api.Ads.Common.Util.Reports
 Imports System.IO
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
-
-  ''' <summary>
-  ''' This code example gets and downloads a criteria Ad Hoc report from an XML
-  ''' report definition.
-  ''' </summary>
-  Public Class DownloadCriteriaReportWithSelector
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example gets and downloads a criteria Ad Hoc report from an XML
+    ''' report definition.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New DownloadCriteriaReportWithSelector
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim fileName As String = "INSERT_OUTPUT_FILE_NAME"
-        codeExample.Run(New AdWordsUser, fileName)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class DownloadCriteriaReportWithSelector
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example gets and downloads a criteria Ad Hoc report from an XML report" &
-            " definition."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New DownloadCriteriaReportWithSelector
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim fileName As String = "INSERT_OUTPUT_FILE_NAME"
+                codeExample.Run(New AdWordsUser, fileName)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="fileName">The file to which the report is downloaded.
-    ''' </param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal fileName As String)
-      Dim definition As New ReportDefinition
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return _
+                    "This code example gets and downloads a criteria Ad Hoc report from an XML " &
+                    "report definition."
+            End Get
+        End Property
 
-      definition.reportName = "Last 7 days CRITERIA_PERFORMANCE_REPORT"
-      definition.reportType = ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT
-      definition.downloadFormat = DownloadFormat.GZIPPED_CSV
-      definition.dateRangeType = ReportDefinitionDateRangeType.LAST_7_DAYS
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="fileName">The file to which the report is downloaded.
+        ''' </param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal fileName As String)
+            Dim definition As New ReportDefinition
 
-      ' Create the selector.
-      Dim selector As New Selector
-      selector.fields = New String() {"CampaignId", "AdGroupId", "Id", "CriteriaType", "Criteria",
-          "FinalUrls", "Clicks", "Impressions", "Cost"}
+            definition.reportName = "Last 7 days CRITERIA_PERFORMANCE_REPORT"
+            definition.reportType = ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT
+            definition.downloadFormat = DownloadFormat.GZIPPED_CSV
+            definition.dateRangeType = ReportDefinitionDateRangeType.LAST_7_DAYS
 
-      selector.predicates = New Predicate() {
-        Predicate.In("Status", New String() {"ENABLED", "PAUSED"})
-      }
+            ' Create the selector.
+            Dim selector As New Selector
+            selector.fields = New String() _
+                {"CampaignId", "AdGroupId", "Id", "CriteriaType", "Criteria",
+                 "FinalUrls", "Clicks", "Impressions", "Cost"}
 
-      definition.selector = selector
+            selector.predicates = New Predicate() { _
+                                                      Predicate.In("Status",
+                                                                   New String() _
+                                                                      {"ENABLED", "PAUSED"})
+                                                  }
 
-      ' Optional: Include zero impression rows.
-      DirectCast(user.Config, AdWordsAppConfig).IncludeZeroImpressions = True
+            definition.selector = selector
 
-      ' Optional: You can also skip the report headers, column headers and
-      ' report summary etc. to make the report parsing simpler.
-      ' DirectCast(user.Config, AdWordsAppConfig).SkipColumnHeader = True
-      ' DirectCast(user.Config, AdWordsAppConfig).SkipReportHeader = True
-      ' DirectCast(user.Config, AdWordsAppConfig).SkipReportSummary = True
+            ' Optional: Include zero impression rows.
+            DirectCast(user.Config, AdWordsAppConfig).IncludeZeroImpressions = True
 
-      Dim filePath As String = ExampleUtilities.GetHomeDir() & Path.DirectorySeparatorChar &
-          fileName
+            ' Optional: You can also skip the report headers, column headers and
+            ' report summary etc. to make the report parsing simpler.
+            ' DirectCast(user.Config, AdWordsAppConfig).SkipColumnHeader = True
+            ' DirectCast(user.Config, AdWordsAppConfig).SkipReportHeader = True
+            ' DirectCast(user.Config, AdWordsAppConfig).SkipReportSummary = True
 
-      Try
-        Dim utilities As New ReportUtilities(user, "v201802", definition)
-        Using reportResponse As ReportResponse = utilities.GetResponse()
-          reportResponse.Save(filePath)
-        End Using
-        Console.WriteLine("Report was downloaded to '{0}'.", filePath)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to download report.", e)
-      End Try
+            Dim filePath As String = ExampleUtilities.GetHomeDir() & Path.DirectorySeparatorChar &
+                                     fileName
 
-    End Sub
-
-  End Class
-
+            Try
+                Dim utilities As New ReportUtilities(user, "v201802", definition)
+                Using reportResponse As ReportResponse = utilities.GetResponse()
+                    reportResponse.Save(filePath)
+                End Using
+                Console.WriteLine("Report was downloaded to '{0}'.", filePath)
+            Catch e As Exception
+                Throw New System.ApplicationException("Failed to download report.", e)
+            End Try
+        End Sub
+    End Class
 End Namespace

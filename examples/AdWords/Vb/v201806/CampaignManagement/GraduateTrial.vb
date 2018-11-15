@@ -16,105 +16,109 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201806
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201806
-
-  ''' <summary>
-  ''' This code example illustrates how to graduate a trial. See the Campaign
-  ''' Drafts and Experiments guide for more information:
-  ''' https://developers.google.com/adwords/api/docs/guides/campaign-drafts-experiments
-  ''' </summary>
-  Public Class GraduateTrial
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example illustrates how to graduate a trial. See the Campaign
+    ''' Drafts and Experiments guide for more information:
+    ''' https://developers.google.com/adwords/api/docs/guides/campaign-drafts-experiments
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New GraduateTrial
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim trialId As Long = Long.Parse("INSERT_TRIAL_ID_HERE")
-        codeExample.Run(New AdWordsUser(), trialId)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class GraduateTrial
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example illustrates how to graduate a trial. See the Campaign " &
-            "Drafts and Experiments guide for more information: " &
-            "https://developers.google.com/adwords/api/docs/guides/campaign-drafts-experiments"
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New GraduateTrial
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim trialId As Long = Long.Parse("INSERT_TRIAL_ID_HERE")
+                codeExample.Run(New AdWordsUser(), trialId)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="trialId">Id of the trial to be graduated.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal trialId As Long)
-      Using trialService As TrialService = CType(user.GetService(
-          AdWordsService.v201806.TrialService), TrialService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example illustrates how to graduate a trial. See the Campaign " &
+                       "Drafts and Experiments guide for more information: " &
+                       "https://developers.google.com/adwords/api/docs/guides/campaign-drafts-experiments"
+            End Get
+        End Property
 
-        ' To graduate a trial, you must specify a different budget from the
-        ' base campaign. The base campaign (in order to have had a trial based
-        ' on it) must have a non-shared budget, so it cannot be shared with
-        ' the new independent campaign created by graduation.
-        Dim budget As Budget = CreateBudget(user)
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="trialId">Id of the trial to be graduated.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal trialId As Long)
+            Using trialService As TrialService = CType(
+                user.GetService(
+                    AdWordsService.v201806.TrialService),
+                TrialService)
 
-        Dim trial As New Trial()
-        trial.id = trialId
-        trial.budgetId = budget.budgetId
-        trial.status = TrialStatus.GRADUATED
+                ' To graduate a trial, you must specify a different budget from the
+                ' base campaign. The base campaign (in order to have had a trial based
+                ' on it) must have a non-shared budget, so it cannot be shared with
+                ' the new independent campaign created by graduation.
+                Dim budget As Budget = CreateBudget(user)
 
-        Dim trialOperation As New TrialOperation()
-        trialOperation.operator = [Operator].SET
-        trialOperation.operand = trial
+                Dim trial As New Trial()
+                trial.id = trialId
+                trial.budgetId = budget.budgetId
+                trial.status = TrialStatus.GRADUATED
 
-        Try
-          ' Update the trial.
-          trial = trialService.mutate(New TrialOperation() {trialOperation}).value(0)
+                Dim trialOperation As New TrialOperation()
+                trialOperation.operator = [Operator].SET
+                trialOperation.operand = trial
 
-          ' Graduation is a synchronous operation, so the campaign is already
-          ' ready. If you promote instead, make sure to see the polling scheme
-          ' demonstrated in AddTrial.cs to wait for the asynchronous operation
-          ' to finish.
-          Console.WriteLine("Trial ID {0} graduated. Campaign ID {1} was given a new budget " &
-              "ID {2} and is no Longer dependent on this trial.", trial.id, trial.trialCampaignId,
-              budget.budgetId)
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to graduate trial.", e)
-        End Try
-      End Using
-    End Sub
+                Try
+                    ' Update the trial.
+                    trial = trialService.mutate(New TrialOperation() {trialOperation}).value(0)
 
-    ''' <summary>
-    ''' Creates the budget.
-    ''' </summary>
-    ''' <param name="user">The user.</param>
-    ''' <returns>The new budget.</returns>
-    Private Shared Function CreateBudget(user As AdWordsUser) As Budget
-      Using budgetService As BudgetService = CType(user.GetService(
-          AdWordsService.v201806.BudgetService), BudgetService)
-        Dim budget As New Budget()
-        budget.name = "Budget #" + ExampleUtilities.GetRandomString()
-        budget.amount = New Money()
-        budget.amount.microAmount = 50000000L
-        budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD
+                    ' Graduation is a synchronous operation, so the campaign is already
+                    ' ready. If you promote instead, make sure to see the polling scheme
+                    ' demonstrated in AddTrial.cs to wait for the asynchronous operation
+                    ' to finish.
+                    Console.WriteLine(
+                        "Trial ID {0} graduated. Campaign ID {1} was given a new budget " &
+                        "ID {2} and is no Longer dependent on this trial.", trial.id,
+                        trial.trialCampaignId,
+                        budget.budgetId)
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to graduate trial.", e)
+                End Try
+            End Using
+        End Sub
 
-        Dim budgetOperation As New BudgetOperation()
-        budgetOperation.operator = [Operator].ADD
-        budgetOperation.operand = budget
+        ''' <summary>
+        ''' Creates the budget.
+        ''' </summary>
+        ''' <param name="user">The user.</param>
+        ''' <returns>The new budget.</returns>
+        Private Shared Function CreateBudget(user As AdWordsUser) As Budget
+            Using budgetService As BudgetService = CType(
+                user.GetService(
+                    AdWordsService.v201806.BudgetService),
+                BudgetService)
+                Dim budget As New Budget()
+                budget.name = "Budget #" + ExampleUtilities.GetRandomString()
+                budget.amount = New Money()
+                budget.amount.microAmount = 50000000L
+                budget.deliveryMethod = BudgetBudgetDeliveryMethod.STANDARD
 
-        ' Add budget.
-        Return budgetService.mutate(New BudgetOperation() {budgetOperation}).value(0)
-      End Using
-    End Function
-  End Class
+                Dim budgetOperation As New BudgetOperation()
+                budgetOperation.operator = [Operator].ADD
+                budgetOperation.operand = budget
 
+                ' Add budget.
+                Return budgetService.mutate(New BudgetOperation() {budgetOperation}).value(0)
+            End Using
+        End Function
+    End Class
 End Namespace

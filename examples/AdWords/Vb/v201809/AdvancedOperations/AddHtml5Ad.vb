@@ -17,130 +17,130 @@ Imports Google.Api.Ads.AdWords.v201809
 Imports Google.Api.Ads.Common.Util
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
-
-  ''' <summary>
-  ''' This code example adds an HTML5 ad to a given ad group. To get ad
-  ''' groups, run GetAdGroups.vb.
-  ''' </summary>
-  Public Class AddHtml5Ad
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example adds an HTML5 ad to a given ad group. To get ad
+    ''' groups, run GetAdGroups.vb.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New AddHtml5Ad
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
-        codeExample.Run(New AdWordsUser(), adGroupId)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class AddHtml5Ad
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example adds an HTML5 ad to a given ad group. To get ad" &
-            "groups, run GetAdGroups.vb."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New AddHtml5Ad
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+                codeExample.Run(New AdWordsUser(), adGroupId)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="adGroupId">Id of the first adgroup to which ad is added.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-      Using adGroupAdService As AdGroupAdService = CType(user.GetService(
-          AdWordsService.v201809.AdGroupAdService), AdGroupAdService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example adds an HTML5 ad to a given ad group. To get ad" &
+                       "groups, run GetAdGroups.vb."
+            End Get
+        End Property
 
-        ' Create the HTML5 template ad. See
-        ' https://developers.google.com/adwords/api/docs/guides/template-ads#html5_ads
-        ' for more details.
-        Dim html5Ad As New TemplateAd()
-        html5Ad.name = "Ad for HTML5"
-        html5Ad.templateId = 419
-        html5Ad.finalUrls = New String() {"http://example.com/html5"}
-        html5Ad.displayUrl = "www.example.com/html5"
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="adGroupId">Id of the first adgroup to which ad is added.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
+            Using adGroupAdService As AdGroupAdService = CType(
+                user.GetService(
+                    AdWordsService.v201809.AdGroupAdService),
+                AdGroupAdService)
 
-        html5Ad.dimensions = New Dimensions()
-        html5Ad.dimensions.width = 300
-        html5Ad.dimensions.height = 250
+                ' Create the HTML5 template ad. See
+                ' https://developers.google.com/adwords/api/docs/guides/template-ads#html5_ads
+                ' for more details.
+                Dim html5Ad As New TemplateAd()
+                html5Ad.name = "Ad for HTML5"
+                html5Ad.templateId = 419
+                html5Ad.finalUrls = New String() {"http://example.com/html5"}
+                html5Ad.displayUrl = "www.example.com/html5"
 
-        ' The HTML5 zip file contains all the HTML, CSS, and images needed for the
-        ' HTML5 ad. For help on creating an HTML5 zip file, check out Google Web
-        ' Designer (https://www.google.com/webdesigner/).
-        Dim html5Zip As Byte() = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9Y7qI2",
-                user.Config)
+                html5Ad.dimensions = New Dimensions()
+                html5Ad.dimensions.width = 300
+                html5Ad.dimensions.height = 250
 
-        ' Create a media bundle containing the zip file with all the HTML5 components.
-        Dim mediaBundle As New MediaBundle()
-        ' You may also upload an HTML5 zip using MediaService.upload() method
-        ' set the mediaId field. See UploadMediaBundle.vb for an example on how to
-        ' upload HTML5 zip files.
-        mediaBundle.data = html5Zip
-        mediaBundle.entryPoint = "carousel/index.html"
-        mediaBundle.type = MediaMediaType.MEDIA_BUNDLE
+                ' The HTML5 zip file contains all the HTML, CSS, and images needed for the
+                ' HTML5 ad. For help on creating an HTML5 zip file, check out Google Web
+                ' Designer (https://www.google.com/webdesigner/).
+                Dim html5Zip As Byte() = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9Y7qI2",
+                                                                            user.Config)
 
-        ' Create the template elements for the ad. You can refer to
-        ' https://developers.google.com/adwords/api/docs/appendix/templateads
-        ' for the list of available template fields.
+                ' Create a media bundle containing the zip file with all the HTML5 components.
+                Dim mediaBundle As New MediaBundle()
+                ' You may also upload an HTML5 zip using MediaService.upload() method
+                ' set the mediaId field. See UploadMediaBundle.vb for an example on how to
+                ' upload HTML5 zip files.
+                mediaBundle.data = html5Zip
+                mediaBundle.entryPoint = "carousel/index.html"
+                mediaBundle.type = MediaMediaType.MEDIA_BUNDLE
 
-        Dim adData As New TemplateElement
-        adData.uniqueName = "adData"
+                ' Create the template elements for the ad. You can refer to
+                ' https://developers.google.com/adwords/api/docs/appendix/templateads
+                ' for the list of available template fields.
 
-        Dim customLayout As New TemplateElementField
-        customLayout.name = "Custom_layout"
-        customLayout.fieldMedia = mediaBundle
-        customLayout.type = TemplateElementFieldType.MEDIA_BUNDLE
+                Dim adData As New TemplateElement
+                adData.uniqueName = "adData"
 
-        Dim layout As New TemplateElementField
-        layout.name = "layout"
-        layout.fieldText = "Custom"
-        layout.type = TemplateElementFieldType.ENUM
+                Dim customLayout As New TemplateElementField
+                customLayout.name = "Custom_layout"
+                customLayout.fieldMedia = mediaBundle
+                customLayout.type = TemplateElementFieldType.MEDIA_BUNDLE
 
-        adData.fields = New TemplateElementField() {customLayout, layout}
+                Dim layout As New TemplateElementField
+                layout.name = "layout"
+                layout.fieldText = "Custom"
+                layout.type = TemplateElementFieldType.ENUM
 
-        html5Ad.templateElements = New TemplateElement() {adData}
+                adData.fields = New TemplateElementField() {customLayout, layout}
 
-        ' Create the AdGroupAd.
-        Dim html5AdGroupAd As New AdGroupAd()
-        html5AdGroupAd.adGroupId = adGroupId
-        html5AdGroupAd.ad = html5Ad
-        ' Additional properties (non-required).
-        html5AdGroupAd.status = AdGroupAdStatus.PAUSED
+                html5Ad.templateElements = New TemplateElement() {adData}
 
-        Dim adGroupAdOperation As New AdGroupAdOperation()
-        adGroupAdOperation.operator = [Operator].ADD
-        adGroupAdOperation.operand = html5AdGroupAd
+                ' Create the AdGroupAd.
+                Dim html5AdGroupAd As New AdGroupAd()
+                html5AdGroupAd.adGroupId = adGroupId
+                html5AdGroupAd.ad = html5Ad
+                ' Additional properties (non-required).
+                html5AdGroupAd.status = AdGroupAdStatus.PAUSED
 
-        Try
-          ' Add HTML5 ad.
-          Dim result As AdGroupAdReturnValue =
-            adGroupAdService.mutate(New AdGroupAdOperation() {adGroupAdOperation})
+                Dim adGroupAdOperation As New AdGroupAdOperation()
+                adGroupAdOperation.operator = [Operator].ADD
+                adGroupAdOperation.operand = html5AdGroupAd
 
-          ' Display results.
-          If (Not result Is Nothing) AndAlso (Not result.value Is Nothing) AndAlso
-            (result.value.Length > 0) Then
-            For Each adGroupAd As AdGroupAd In result.value
-              Console.WriteLine("New HTML5 ad with id '{0}' and display url '{1}' was added.",
-              adGroupAd.ad.id, adGroupAd.ad.displayUrl)
-            Next
-          Else
-            Console.WriteLine("No HTML5 ads were added.")
-          End If
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to create HTML5 ad.", e)
-        End Try
-      End Using
-    End Sub
+                Try
+                    ' Add HTML5 ad.
+                    Dim result As AdGroupAdReturnValue =
+                            adGroupAdService.mutate(New AdGroupAdOperation() {adGroupAdOperation})
 
-  End Class
-
+                    ' Display results.
+                    If (Not result Is Nothing) AndAlso (Not result.value Is Nothing) AndAlso
+                       (result.value.Length > 0) Then
+                        For Each adGroupAd As AdGroupAd In result.value
+                            Console.WriteLine(
+                                "New HTML5 ad with id '{0}' and display url '{1}' was added.",
+                                adGroupAd.ad.id, adGroupAd.ad.displayUrl)
+                        Next
+                    Else
+                        Console.WriteLine("No HTML5 ads were added.")
+                    End If
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to create HTML5 ad.", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

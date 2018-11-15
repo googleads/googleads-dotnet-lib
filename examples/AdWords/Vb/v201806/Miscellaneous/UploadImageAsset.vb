@@ -17,82 +17,83 @@ Imports Google.Api.Ads.AdWords.v201806
 Imports Google.Api.Ads.Common.Util
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201806
-
-  ''' <summary>
-  ''' This code example uploads an image asset. To get images, run GetAllImageAssets.vb.
-  ''' </summary>
-  Public Class UploadImageAsset
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example uploads an image asset. To get images, run GetAllImageAssets.vb.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New UploadImageAsset
-      Console.WriteLine(codeExample.Description)
-      Try
-        codeExample.Run(New AdWordsUser)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class UploadImageAsset
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example uploads an image asset. To get images, run " +
-            "GetAllImageAssets.vb."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New UploadImageAsset
+            Console.WriteLine(codeExample.Description)
+            Try
+                codeExample.Run(New AdWordsUser)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    Public Sub Run(ByVal user As AdWordsUser)
-      ' [START upload_image_asset] MOE:strip_line
-      Using assetService As AssetService = CType(user.GetService(
-          AdWordsService.v201806.AssetService), AssetService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example uploads an image asset. To get images, run " +
+                       "GetAllImageAssets.vb."
+            End Get
+        End Property
 
-        ' Create the image asset.
-        Dim imageAsset As New ImageAsset()
-        ' Optional: Provide a unique friendly name to identify your asset. If you specify
-        ' the assetName field, then both the asset name and the image being uploaded should be
-        ' unique, and should not match another ACTIVE asset in this customer account.
-        ' imageAsset.assetName = "Jupiter Trip " + ExampleUtilities.GetRandomString()
-        imageAsset.imageData = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/3b9Wfh",
-            user.Config)
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        Public Sub Run(ByVal user As AdWordsUser)
+            ' [START upload_image_asset] MOE:strip_line
+            Using assetService As AssetService = CType(
+                user.GetService(
+                    AdWordsService.v201806.AssetService),
+                AssetService)
 
-        ' Create the operation.
-        Dim operation As New AssetOperation()
-        operation.operator = [Operator].ADD
-        operation.operand = imageAsset
+                ' Create the image asset.
+                Dim imageAsset As New ImageAsset()
+                ' Optional: Provide a unique friendly name to identify your asset. If you specify
+                ' the assetName field, then both the asset name and the image being uploaded should be
+                ' unique, and should not match another ACTIVE asset in this customer account.
+                ' imageAsset.assetName = "Jupiter Trip " + ExampleUtilities.GetRandomString()
+                imageAsset.imageData = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/3b9Wfh",
+                                                                          user.Config)
 
-        Try
-          ' Create the asset.
-          Dim result As AssetReturnValue = assetService.mutate(New AssetOperation() {operation})
-          ' [END upload_image_asset] MOE:strip_line
+                ' Create the operation.
+                Dim operation As New AssetOperation()
+                operation.operator = [Operator].ADD
+                operation.operand = imageAsset
 
-          ' Display the results.
-          If Not (result Is Nothing) AndAlso Not (result.value Is Nothing) _
-              AndAlso result.value.Length > 0 Then
-            Dim newAsset As Asset = result.value(0)
+                Try
+                    ' Create the asset.
+                    Dim result As AssetReturnValue = assetService.mutate(
+                        New AssetOperation() _
+                                                                            {operation})
+                    ' [END upload_image_asset] MOE:strip_line
 
-            Console.WriteLine("Image asset with id = '{0}' and name = {1} was created.",
-                newAsset.assetId, newAsset.assetName)
-          Else
-            Console.WriteLine("No image asset was created.")
-          End If
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to upload image assets.", e)
-        End Try
-      End Using
-    End Sub
+                    ' Display the results.
+                    If Not (result Is Nothing) AndAlso Not (result.value Is Nothing) _
+                       AndAlso result.value.Length > 0 Then
+                        Dim newAsset As Asset = result.value(0)
 
-  End Class
-
+                        Console.WriteLine("Image asset with id = '{0}' and name = {1} was created.",
+                                          newAsset.assetId, newAsset.assetName)
+                    Else
+                        Console.WriteLine("No image asset was created.")
+                    End If
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to upload image assets.", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

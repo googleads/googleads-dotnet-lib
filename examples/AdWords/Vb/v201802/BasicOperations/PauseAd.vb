@@ -16,84 +16,85 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201802
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
-
-  ''' <summary>
-  ''' This code example pauses a given ad. To list all ads, run GetExpandedTextAds.vb.
-  ''' </summary>
-  Public Class PauseAd
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example pauses a given ad. To list all ads, run GetExpandedTextAds.vb.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New PauseAd
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
-        Dim adId As Long = Long.Parse("INSERT_AD_ID_HERE")
-        codeExample.Run(New AdWordsUser, adGroupId, adId)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class PauseAd
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example pauses a given ad. To list all ads, run GetExpandedTextAds.vb."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New PauseAd
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+                Dim adId As Long = Long.Parse("INSERT_AD_ID_HERE")
+                codeExample.Run(New AdWordsUser, adGroupId, adId)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="adGroupId">Id of the ad group that contains the ad.
-    ''' </param>
-    ''' <param name="adId">Id of the ad to be paused.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal adId As Long)
-      Using service As AdGroupAdService = CType(user.GetService(
-          AdWordsService.v201802.AdGroupAdService), AdGroupAdService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return _
+                    "This code example pauses a given ad. To list all ads, " &
+                    "run GetExpandedTextAds.vb."
+            End Get
+        End Property
 
-        Dim status As AdGroupAdStatus = AdGroupAdStatus.PAUSED
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="adGroupId">Id of the ad group that contains the ad.
+        ''' </param>
+        ''' <param name="adId">Id of the ad to be paused.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal adId As Long)
+            Using service As AdGroupAdService = CType(
+                user.GetService(
+                    AdWordsService.v201802.AdGroupAdService),
+                AdGroupAdService)
 
-        ' Create the ad group ad.
-        Dim adGroupAd As New AdGroupAd
-        adGroupAd.status = status
-        adGroupAd.adGroupId = adGroupId
+                Dim status As AdGroupAdStatus = AdGroupAdStatus.PAUSED
 
-        adGroupAd.ad = New Ad
-        adGroupAd.ad.id = adId
+                ' Create the ad group ad.
+                Dim adGroupAd As New AdGroupAd
+                adGroupAd.status = status
+                adGroupAd.adGroupId = adGroupId
 
-        ' Create the operation.
-        Dim adGroupAdOperation As New AdGroupAdOperation
-        adGroupAdOperation.operator = [Operator].SET
-        adGroupAdOperation.operand = adGroupAd
+                adGroupAd.ad = New Ad
+                adGroupAd.ad.id = adId
 
-        Try
-          ' Update the ad.
-          Dim retVal As AdGroupAdReturnValue = service.mutate(
-              New AdGroupAdOperation() {adGroupAdOperation})
+                ' Create the operation.
+                Dim adGroupAdOperation As New AdGroupAdOperation
+                adGroupAdOperation.operator = [Operator].SET
+                adGroupAdOperation.operand = adGroupAd
 
-          ' Display the results.
-          If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso
-              (retVal.value.Length > 0)) Then
-            Dim pausedAdGroupAd As AdGroupAd = retVal.value(0)
-            Console.WriteLine("Ad with id ""{0}"" was paused.", pausedAdGroupAd.ad.id)
-          Else
-            Console.WriteLine("No ads were paused.")
-          End If
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to pause ad.", e)
-        End Try
-      End Using
-    End Sub
+                Try
+                    ' Update the ad.
+                    Dim retVal As AdGroupAdReturnValue = service.mutate(
+                        New AdGroupAdOperation() {adGroupAdOperation})
 
-  End Class
-
+                    ' Display the results.
+                    If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso
+                        (retVal.value.Length > 0)) Then
+                        Dim pausedAdGroupAd As AdGroupAd = retVal.value(0)
+                        Console.WriteLine("Ad with id ""{0}"" was paused.", pausedAdGroupAd.ad.id)
+                    Else
+                        Console.WriteLine("No ads were paused.")
+                    End If
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to pause ad.", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

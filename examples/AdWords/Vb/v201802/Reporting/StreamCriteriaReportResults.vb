@@ -22,116 +22,113 @@ Imports System.IO.Compression
 Imports System.Xml
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
-
-  ''' <summary>
-  ''' This code example streams the results of an ad hoc report, collecting
-  ''' total impressions by network from each line. This demonstrates how you
-  ''' can extract data from a large report without holding the entire result
-  ''' set in memory or using files.
-  ''' </summary>
-  Public Class StreamCriteriaReportResults
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example streams the results of an ad hoc report, collecting
+    ''' total impressions by network from each line. This demonstrates how you
+    ''' can extract data from a large report without holding the entire result
+    ''' set in memory or using files.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New StreamCriteriaReportResults
-      Console.WriteLine(codeExample.Description)
-      Try
-        codeExample.Run(New AdWordsUser)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class StreamCriteriaReportResults
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example streams the results of an ad hoc report, collecting" &
-            " total impressions by network from each line. This demonstrates how you" &
-            " can extract data from a large report without holding the entire result" &
-            " set in memory or using files."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New StreamCriteriaReportResults
+            Console.WriteLine(codeExample.Description)
+            Try
+                codeExample.Run(New AdWordsUser)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    Public Sub Run(ByVal user As AdWordsUser)
-      ' Create the query.
-      Dim query As ReportQuery = New ReportQueryBuilder() _
-          .Select("Id", "AdNetworkType1", "Impressions") _
-          .From(ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT) _
-          .Where("Status").In("ENABLED", "PAUSED") _
-          .During(ReportDefinitionDateRangeType.LAST_7_DAYS) _
-          .Build()
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example streams the results of an ad hoc report, collecting" &
+                       " total impressions by network from each line. This demonstrates how you" &
+                       " can extract data from a large report without holding the entire result" &
+                       " set in memory or using files."
+            End Get
+        End Property
 
-      Dim reportUtilities As New ReportUtilities(user, "v201802", query,
-          DownloadFormat.GZIPPED_XML.ToString())
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        Public Sub Run(ByVal user As AdWordsUser)
+            ' Create the query.
+            Dim query As ReportQuery = New ReportQueryBuilder() _
+                    .Select("Id", "AdNetworkType1", "Impressions") _
+                    .From(ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT) _
+                    .Where("Status").In("ENABLED", "PAUSED") _
+                    .During(ReportDefinitionDateRangeType.LAST_7_DAYS) _
+                    .Build()
 
-      Dim impressionsByAdNetworkType1 As New Dictionary(Of String, Long)
+            Dim reportUtilities As New ReportUtilities(user, "v201802", query,
+                                                       DownloadFormat.GZIPPED_XML.ToString())
 
-      Try
-        Using response As ReportResponse = reportUtilities.GetResponse
-          Using gzipStream As GZipStream = New GZipStream(response.Stream,
-              CompressionMode.Decompress)
-            Using reader As XmlTextReader = New XmlTextReader(gzipStream)
-              While reader.Read
-                Select Case reader.NodeType
-                  Case XmlNodeType.Element ' The node is an Element.
-                    If reader.Name = "row" Then
-                      ParseRow(impressionsByAdNetworkType1, reader)
-                    End If
+            Dim impressionsByAdNetworkType1 As New Dictionary(Of String, Long)
+
+            Try
+                Using response As ReportResponse = reportUtilities.GetResponse
+                    Using gzipStream As GZipStream = New GZipStream(response.Stream,
+                                                                    CompressionMode.Decompress)
+                        Using reader As XmlTextReader = New XmlTextReader(gzipStream)
+                            While reader.Read
+                                Select Case reader.NodeType
+                                    Case XmlNodeType.Element ' The node is an Element.
+                                        If reader.Name = "row" Then
+                                            ParseRow(impressionsByAdNetworkType1, reader)
+                                        End If
+                                End Select
+                            End While
+                        End Using
+                    End Using
+                End Using
+
+                Console.WriteLine("Network, Impressions")
+                For Each network As String In impressionsByAdNetworkType1.Keys
+                    Console.WriteLine("{0}, {1}", network, impressionsByAdNetworkType1(network))
+                Next
+            Catch e As Exception
+                Throw New System.ApplicationException("Failed to download report.", e)
+            End Try
+        End Sub
+
+        ''' <summary>
+        ''' Parses a report row.
+        ''' </summary>
+        ''' <param name="impressionsByAdNetworkType1">The map that keeps track of
+        ''' the impressions grouped by by ad network type1.</param>
+        ''' <param name="reader">The XML reader that parses the report.</param>
+        Private Sub ParseRow(ByVal impressionsByAdNetworkType1 As Dictionary(Of String, Long),
+                             ByVal reader As XmlTextReader)
+            Dim network As String = Nothing
+            Dim impressions As Long = 0
+
+            While reader.MoveToNextAttribute
+                Select Case reader.Name
+                    Case "network"
+                        network = reader.Value
+
+                    Case "impressions"
+                        impressions = Long.Parse(reader.Value)
                 End Select
-              End While
-            End Using
-          End Using
-        End Using
+            End While
 
-        Console.WriteLine("Network, Impressions")
-        For Each network As String In impressionsByAdNetworkType1.Keys
-          Console.WriteLine("{0}, {1}", network, impressionsByAdNetworkType1(network))
-        Next
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to download report.", e)
-      End Try
-    End Sub
-
-    ''' <summary>
-    ''' Parses a report row.
-    ''' </summary>
-    ''' <param name="impressionsByAdNetworkType1">The map that keeps track of
-    ''' the impressions grouped by by ad network type1.</param>
-    ''' <param name="reader">The XML reader that parses the report.</param>
-    Private Sub ParseRow(ByVal impressionsByAdNetworkType1 As Dictionary(Of String, Long),
-        ByVal reader As XmlTextReader)
-      Dim network As String = Nothing
-      Dim impressions As Long = 0
-
-      While reader.MoveToNextAttribute
-        Select Case reader.Name
-          Case "network"
-            network = reader.Value
-
-          Case "impressions"
-            impressions = Long.Parse(reader.Value)
-        End Select
-      End While
-
-      If Not (network Is Nothing) Then
-        If Not (impressionsByAdNetworkType1.ContainsKey(network)) Then
-          impressionsByAdNetworkType1(network) = 0
-        End If
-        impressionsByAdNetworkType1(network) += impressions
-      End If
-    End Sub
-
-  End Class
-
+            If Not (network Is Nothing) Then
+                If Not (impressionsByAdNetworkType1.ContainsKey(network)) Then
+                    impressionsByAdNetworkType1(network) = 0
+                End If
+                impressionsByAdNetworkType1(network) += impressions
+            End If
+        End Sub
+    End Class
 End Namespace

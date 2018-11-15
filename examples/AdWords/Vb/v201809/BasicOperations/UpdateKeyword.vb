@@ -16,105 +16,105 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201809
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
-
-  ''' <summary>
-  ''' This code example updates the bid of a keyword. To get keyword, run
-  ''' GetKeywords.vb.
-  ''' </summary>
-  Public Class UpdateKeyword
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example updates the bid of a keyword. To get keyword, run
+    ''' GetKeywords.vb.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New UpdateKeyword
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
-        Dim keywordId As Long = Long.Parse("INSERT_KEYWORD_ID_HERE")
-        codeExample.Run(New AdWordsUser, adGroupId, keywordId)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class UpdateKeyword
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example updates the bid of a keyword. To get keyword, run " +
-            "GetKeywords.vb."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New UpdateKeyword
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+                Dim keywordId As Long = Long.Parse("INSERT_KEYWORD_ID_HERE")
+                codeExample.Run(New AdWordsUser, adGroupId, keywordId)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="adGroupId">Id of the ad group that contains the keyword.
-    ''' </param>
-    ''' <param name="keywordId">Id of the keyword to be updated.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal keywordId As Long)
-      Using adGroupCriterionService As AdGroupCriterionService = CType(user.GetService(
-          AdWordsService.v201809.AdGroupCriterionService), AdGroupCriterionService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example updates the bid of a keyword. To get keyword, run " +
+                       "GetKeywords.vb."
+            End Get
+        End Property
 
-        ' Since we are not updating any keyword-specific fields, it is enough to
-        ' create a criterion object.
-        Dim criterion As New Criterion
-        criterion.id = keywordId
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="adGroupId">Id of the ad group that contains the keyword.
+        ''' </param>
+        ''' <param name="keywordId">Id of the keyword to be updated.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal keywordId As Long)
+            Using adGroupCriterionService As AdGroupCriterionService = CType(
+                user.GetService(
+                    AdWordsService.v201809.AdGroupCriterionService),
+                AdGroupCriterionService)
 
-        ' Create ad group criterion.
-        Dim biddableAdGroupCriterion As New BiddableAdGroupCriterion
-        biddableAdGroupCriterion.adGroupId = adGroupId
-        biddableAdGroupCriterion.criterion = criterion
+                ' Since we are not updating any keyword-specific fields, it is enough to
+                ' create a criterion object.
+                Dim criterion As New Criterion
+                criterion.id = keywordId
 
-        ' Create the bids.
-        Dim biddingConfig As New BiddingStrategyConfiguration()
-        Dim cpcBid As New CpcBid()
-        cpcBid.bid = New Money()
-        cpcBid.bid.microAmount = 1000000
-        biddingConfig.bids = New Bids() {cpcBid}
+                ' Create ad group criterion.
+                Dim biddableAdGroupCriterion As New BiddableAdGroupCriterion
+                biddableAdGroupCriterion.adGroupId = adGroupId
+                biddableAdGroupCriterion.criterion = criterion
 
-        biddableAdGroupCriterion.biddingStrategyConfiguration = biddingConfig
+                ' Create the bids.
+                Dim biddingConfig As New BiddingStrategyConfiguration()
+                Dim cpcBid As New CpcBid()
+                cpcBid.bid = New Money()
+                cpcBid.bid.microAmount = 1000000
+                biddingConfig.bids = New Bids() {cpcBid}
 
-        ' Create the operation.
-        Dim operation As New AdGroupCriterionOperation
-        operation.operator = [Operator].SET
-        operation.operand = biddableAdGroupCriterion
+                biddableAdGroupCriterion.biddingStrategyConfiguration = biddingConfig
 
-        Try
-          ' Update the keyword.
-          Dim retVal As AdGroupCriterionReturnValue = adGroupCriterionService.mutate(
-              New AdGroupCriterionOperation() {operation})
+                ' Create the operation.
+                Dim operation As New AdGroupCriterionOperation
+                operation.operator = [Operator].SET
+                operation.operand = biddableAdGroupCriterion
 
-          ' Display the results.
-          If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso
-              (retVal.value.Length > 0)) Then
-            Dim adGroupCriterion As BiddableAdGroupCriterion =
-                CType(retVal.value(0), BiddableAdGroupCriterion)
-            Dim bidAmount As Long = 0L
-            For Each bids As Bids In adGroupCriterion.biddingStrategyConfiguration.bids
-              If TypeOf bids Is CpcBid Then
-                bidAmount = TryCast(bids, CpcBid).bid.microAmount
-              End If
-            Next
+                Try
+                    ' Update the keyword.
+                    Dim retVal As AdGroupCriterionReturnValue = adGroupCriterionService.mutate(
+                        New AdGroupCriterionOperation() {operation})
 
-            Console.WriteLine("Keyword with ad group id = '{0}', id = '{1}' was updated with " &
-                "bid amount = '{2}' micros.", adGroupCriterion.adGroupId,
-                adGroupCriterion.criterion.id, bidAmount)
-          Else
-            Console.WriteLine("No keyword was updated.")
-          End If
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to update keyword.", e)
-        End Try
-      End Using
-    End Sub
+                    ' Display the results.
+                    If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso
+                        (retVal.value.Length > 0)) Then
+                        Dim adGroupCriterion As BiddableAdGroupCriterion =
+                                CType(retVal.value(0), BiddableAdGroupCriterion)
+                        Dim bidAmount As Long = 0L
+                        For Each bids As Bids In adGroupCriterion.biddingStrategyConfiguration.bids
+                            If TypeOf bids Is CpcBid Then
+                                bidAmount = TryCast(bids, CpcBid).bid.microAmount
+                            End If
+                        Next
 
-  End Class
-
+                        Console.WriteLine(
+                            "Keyword with ad group id = '{0}', id = '{1}' was updated with " &
+                            "bid amount = '{2}' micros.", adGroupCriterion.adGroupId,
+                            adGroupCriterion.criterion.id, bidAmount)
+                    Else
+                        Console.WriteLine("No keyword was updated.")
+                    End If
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to update keyword.", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

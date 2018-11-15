@@ -16,80 +16,83 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201809
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
-
-  ''' <summary>
-  ''' This code example lists all campaigns. To add a campaign, run
-  ''' AddCampaign.vb.
-  ''' </summary>
-  Public Class GetCampaigns
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example lists all campaigns. To add a campaign, run
+    ''' AddCampaign.vb.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New GetCampaigns
-      Console.WriteLine(codeExample.Description)
-      Try
-        codeExample.Run(New AdWordsUser)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class GetCampaigns
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example lists all campaigns. To add a campaign, run AddCampaign.vb."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New GetCampaigns
+            Console.WriteLine(codeExample.Description)
+            Try
+                codeExample.Run(New AdWordsUser)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    Public Sub Run(ByVal user As AdWordsUser)
-      ' [START get_campaigns] MOE:strip_line
-      Using campaignService As CampaignService = CType(user.GetService(
-          AdWordsService.v201809.CampaignService), CampaignService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return _
+                    "This code example lists all campaigns. To add a campaign, run AddCampaign.vb."
+            End Get
+        End Property
 
-        ' Create the selector.
-        Dim selector As New Selector
-        selector.fields = New String() {
-          Campaign.Fields.Id, Campaign.Fields.Name, Campaign.Fields.Status
-        }
-        selector.paging = Paging.Default
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        Public Sub Run(ByVal user As AdWordsUser)
+            ' [START get_campaigns] MOE:strip_line
+            Using campaignService As CampaignService = CType(
+                user.GetService(
+                    AdWordsService.v201809.CampaignService),
+                CampaignService)
 
-        Dim page As New CampaignPage
+                ' Create the selector.
+                Dim selector As New Selector
+                selector.fields = New String() { _
+                                                   Campaign.Fields.Id, Campaign.Fields.Name,
+                                                   Campaign.Fields.Status
+                                               }
+                selector.paging = Paging.Default
 
-        Try
-          Do
-            ' Get the campaigns.
-            page = campaignService.get(selector)
+                Dim page As New CampaignPage
 
-            ' Display the results.
-            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-              Dim i As Integer = selector.paging.startIndex
-              For Each campaign As Campaign In page.entries
-                Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = " &
-                  "'{3}' was found.", i + 1, campaign.id, campaign.name, campaign.status)
-                i += 1
-              Next
-            End If
-            selector.paging.IncreaseOffset()
-          Loop While (selector.paging.startIndex < page.totalNumEntries)
-          Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to retrieve campaign(s).", e)
-        End Try
-        ' [END get_campaigns] MOE:strip_line
-      End Using
-    End Sub
+                Try
+                    Do
+                        ' Get the campaigns.
+                        page = campaignService.get(selector)
 
-  End Class
-
+                        ' Display the results.
+                        If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+                            Dim i As Integer = selector.paging.startIndex
+                            For Each campaign As Campaign In page.entries
+                                Console.WriteLine(
+                                    "{0}) Campaign with id = '{1}', name = '{2}' and status = " &
+                                    "'{3}' was found.", i + 1, campaign.id, campaign.name,
+                                    campaign.status)
+                                i += 1
+                            Next
+                        End If
+                        selector.paging.IncreaseOffset()
+                    Loop While (selector.paging.startIndex < page.totalNumEntries)
+                    Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to retrieve campaign(s).", e)
+                End Try
+                ' [END get_campaigns] MOE:strip_line
+            End Using
+        End Sub
+    End Class
 End Namespace

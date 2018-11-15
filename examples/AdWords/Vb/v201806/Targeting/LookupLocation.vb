@@ -16,94 +16,106 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201806
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201806
-  ''' <summary>
-  ''' This code example gets location criteria by name.
-  ''' </summary>
-  Public Class LookupLocation
-    Inherits ExampleBase
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example gets location criteria by name.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New LookupLocation
-      Console.WriteLine(codeExample.Description)
-      Try
-        codeExample.Run(New AdWordsUser)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class LookupLocation
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example gets location criteria by name."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New LookupLocation
+            Console.WriteLine(codeExample.Description)
+            Try
+                codeExample.Run(New AdWordsUser)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    Public Sub Run(ByVal user As AdWordsUser)
-      Using locationCriterionService As LocationCriterionService = CType(user.GetService(
-          AdWordsService.v201806.LocationCriterionService),
-              LocationCriterionService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example gets location criteria by name."
+            End Get
+        End Property
 
-        Dim locationNames As String() = New String() {"Paris", "Quebec", "Spain", "Deutschland"}
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        Public Sub Run(ByVal user As AdWordsUser)
+            Using locationCriterionService As LocationCriterionService = CType(
+                user.GetService(
+                    AdWordsService.v201806.LocationCriterionService),
+                LocationCriterionService)
 
-        Dim selector As New Selector
-        selector.fields = New String() {
-          Location.Fields.Id, Location.Fields.LocationName, LocationCriterion.Fields.CanonicalName,
-          Location.Fields.DisplayType, Location.Fields.ParentLocations,
-          LocationCriterion.Fields.Reach, Location.Fields.TargetingStatus
-        }
+                Dim locationNames As String() = New String() _
+                        {"Paris", "Quebec", "Spain", "Deutschland"}
 
-        selector.predicates = New Predicate() {
-          Predicate.In(Location.Fields.LocationName, locationNames),
-          Predicate.Equals(LocationCriterion.Fields.Locale, "en")
-        }
+                Dim selector As New Selector
+                selector.fields = New String() { _
+                                                   Location.Fields.Id, Location.Fields.LocationName,
+                                                   LocationCriterion.Fields.CanonicalName,
+                                                   Location.Fields.DisplayType,
+                                                   Location.Fields.ParentLocations,
+                                                   LocationCriterion.Fields.Reach,
+                                                   Location.Fields.TargetingStatus
+                                               }
 
-        Try
-          ' Make the get request.
-          Dim locationCriteria As LocationCriterion() = locationCriterionService.get(selector)
+                selector.predicates = New Predicate() { _
+                                                          Predicate.In(Location.Fields.LocationName,
+                                                                       locationNames),
+                                                          Predicate.Equals(
+                                                              LocationCriterion.Fields.Locale, "en")
+                                                      }
 
-          ' Display the resulting location criteria.
-          For Each locationCriterion As LocationCriterion In locationCriteria
-            Dim parentLocations As String = "N/A"
+                Try
+                    ' Make the get request.
+                    Dim locationCriteria As LocationCriterion() =
+                            locationCriterionService.get(selector)
 
-            If ((Not locationCriterion.location Is Nothing) AndAlso
-                (Not locationCriterion.location.parentLocations Is Nothing)) Then
-              Dim parentLocationList As New List(Of String)
-              For Each location As Location In locationCriterion.location.parentLocations
-                parentLocationList.Add(GetLocationString(location))
-              Next
-              parentLocations = String.Join(", ", parentLocationList)
-            End If
+                    ' Display the resulting location criteria.
+                    For Each locationCriterion As LocationCriterion In locationCriteria
+                        Dim parentLocations As String = "N/A"
 
-            Console.WriteLine("The search term '{0}' returned the location '{1}' of type '{2}' " &
-                "with parent locations '{3}',  reach '{4}' and targeting status '{5}.",
-                locationCriterion.searchTerm, locationCriterion.location.locationName,
-                locationCriterion.location.displayType, parentLocations, locationCriterion.reach,
-                locationCriterion.location.targetingStatus)
-          Next
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to get location criteria.", e)
-        End Try
-      End Using
-    End Sub
+                        If ((Not locationCriterion.location Is Nothing) AndAlso
+                            (Not locationCriterion.location.parentLocations Is Nothing)) Then
+                            Dim parentLocationList As New List(Of String)
+                            For Each location As Location In _
+                                locationCriterion.location.parentLocations
+                                parentLocationList.Add(GetLocationString(location))
+                            Next
+                            parentLocations = String.Join(", ", parentLocationList)
+                        End If
 
-    ''' <summary>
-    ''' Gets a string representation for a location.
-    ''' </summary>
-    ''' <param name="location">The location</param>
-    ''' <returns></returns>
-    Public Function GetLocationString(ByVal location As Location) As String
-      Return String.Format("{0} ({1})", location.locationName, location.displayType)
-    End Function
-  End Class
+                        Console.WriteLine(
+                            "The search term '{0}' returned the location '{1}' of type '{2}' " &
+                            "with parent locations '{3}',  reach '{4}' and targeting status '{5}.",
+                            locationCriterion.searchTerm, locationCriterion.location.locationName,
+                            locationCriterion.location.displayType, parentLocations,
+                            locationCriterion.reach,
+                            locationCriterion.location.targetingStatus)
+                    Next
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to get location criteria.", e)
+                End Try
+            End Using
+        End Sub
+
+        ''' <summary>
+        ''' Gets a string representation for a location.
+        ''' </summary>
+        ''' <param name="location">The location</param>
+        ''' <returns></returns>
+        Public Function GetLocationString(ByVal location As Location) As String
+            Return String.Format("{0} ({1})", location.locationName, location.displayType)
+        End Function
+    End Class
 End Namespace

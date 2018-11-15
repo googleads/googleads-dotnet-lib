@@ -16,105 +16,111 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201806
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201806
-
-  ''' <summary>
-  ''' This code example gets all keywords in an ad group. To add keywords, run
-  ''' AddKeywords.vb.
-  ''' </summary>
-  Public Class GetKeywords
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example gets all keywords in an ad group. To add keywords, run
+    ''' AddKeywords.vb.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New GetKeywords
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
-        codeExample.Run(New AdWordsUser, adGroupId)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class GetKeywords
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example gets all keywords in an ad group. To add keywords, run " &
-            "AddKeywords.vb."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New GetKeywords
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+                codeExample.Run(New AdWordsUser, adGroupId)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="adGroupId">ID of the ad group from which keywords are
-    ''' retrieved.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-      Using adGroupCriterionService As AdGroupCriterionService = CType(user.GetService(
-          AdWordsService.v201806.AdGroupCriterionService), AdGroupCriterionService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example gets all keywords in an ad group. To add keywords, run " &
+                       "AddKeywords.vb."
+            End Get
+        End Property
 
-        ' Create a selector.
-        Dim selector As New Selector
-        selector.fields = New String() {
-          Keyword.Fields.Id, Keyword.Fields.KeywordMatchType,
-          Keyword.Fields.KeywordText, Keyword.Fields.CriteriaType
-        }
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="adGroupId">ID of the ad group from which keywords are
+        ''' retrieved.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
+            Using adGroupCriterionService As AdGroupCriterionService = CType(
+                user.GetService(
+                    AdWordsService.v201806.AdGroupCriterionService),
+                AdGroupCriterionService)
 
-        ' Select only keywords.
-        Dim criteriaPredicate As New Predicate
-        criteriaPredicate.field = "CriteriaType"
-        criteriaPredicate.operator = PredicateOperator.IN
-        criteriaPredicate.values = New String() {"KEYWORD"}
+                ' Create a selector.
+                Dim selector As New Selector
+                selector.fields = New String() { _
+                                                   Keyword.Fields.Id,
+                                                   Keyword.Fields.KeywordMatchType,
+                                                   Keyword.Fields.KeywordText,
+                                                   Keyword.Fields.CriteriaType
+                                               }
 
-        ' Restrict search to an ad group.
-        Dim adGroupPredicate As New Predicate
-        adGroupPredicate.field = "AdGroupId"
-        adGroupPredicate.operator = PredicateOperator.EQUALS
-        adGroupPredicate.values = New String() {adGroupId.ToString()}
+                ' Select only keywords.
+                Dim criteriaPredicate As New Predicate
+                criteriaPredicate.field = "CriteriaType"
+                criteriaPredicate.operator = PredicateOperator.IN
+                criteriaPredicate.values = New String() {"KEYWORD"}
 
-        selector.predicates = New Predicate() {
-          Predicate.In(Keyword.Fields.CriteriaType, New String() {"KEYWORD"}),
-          Predicate.Equals(AdGroupCriterion.Fields.AdGroupId, adGroupId)
-        }
-        selector.ordering = New OrderBy() {OrderBy.Asc(Keyword.Fields.KeywordText)}
-        selector.paging = Paging.Default
+                ' Restrict search to an ad group.
+                Dim adGroupPredicate As New Predicate
+                adGroupPredicate.field = "AdGroupId"
+                adGroupPredicate.operator = PredicateOperator.EQUALS
+                adGroupPredicate.values = New String() {adGroupId.ToString()}
 
-        Dim page As New AdGroupCriterionPage
+                selector.predicates = New Predicate() { _
+                                                          Predicate.In(Keyword.Fields.CriteriaType,
+                                                                       New String() {"KEYWORD"}),
+                                                          Predicate.Equals(
+                                                              AdGroupCriterion.Fields.AdGroupId,
+                                                              adGroupId)
+                                                      }
+                selector.ordering = New OrderBy() {OrderBy.Asc(Keyword.Fields.KeywordText)}
+                selector.paging = Paging.Default
 
-        Try
-          Do
-            ' Get the keywords.
-            page = adGroupCriterionService.get(selector)
+                Dim page As New AdGroupCriterionPage
 
-            ' Display the results.
-            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-              Dim i As Integer = selector.paging.startIndex
+                Try
+                    Do
+                        ' Get the keywords.
+                        page = adGroupCriterionService.get(selector)
 
-              For Each adGroupCriterion As AdGroupCriterion In page.entries
-                Dim keyword As Keyword = CType(adGroupCriterion.criterion, Keyword)
+                        ' Display the results.
+                        If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+                            Dim i As Integer = selector.paging.startIndex
 
-                Console.WriteLine("{0}) Keyword with text '{1}', match type '{2}', criteria " &
-                    "type '{3}', and ID {4} was found.", i + 1, keyword.text, keyword.matchType,
-                    keyword.type, keyword.id)
-                i += 1
-              Next
-            End If
-            selector.paging.IncreaseOffset()
-          Loop While (selector.paging.startIndex < page.totalNumEntries)
-          Console.WriteLine("Number of keywords found: {0}", page.totalNumEntries)
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to retrieve keywords.", e)
-        End Try
-      End Using
-    End Sub
+                            For Each adGroupCriterion As AdGroupCriterion In page.entries
+                                Dim keyword As Keyword = CType(adGroupCriterion.criterion, Keyword)
 
-  End Class
-
+                                Console.WriteLine(
+                                    "{0}) Keyword with text '{1}', match type '{2}', criteria " &
+                                    "type '{3}', and ID {4} was found.", i + 1, keyword.text,
+                                    keyword.matchType,
+                                    keyword.type, keyword.id)
+                                i += 1
+                            Next
+                        End If
+                        selector.paging.IncreaseOffset()
+                    Loop While (selector.paging.startIndex < page.totalNumEntries)
+                    Console.WriteLine("Number of keywords found: {0}", page.totalNumEntries)
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to retrieve keywords.", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

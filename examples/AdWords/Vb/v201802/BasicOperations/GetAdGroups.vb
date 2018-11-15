@@ -16,87 +16,89 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201802
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
-
-  ''' <summary>
-  ''' This code example illustrates how to retrieve all the ad groups for a
-  ''' campaign. To create an ad group, run AddAdGroup.vb.
-  ''' </summary>
-  Public Class GetAdGroups
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example illustrates how to retrieve all the ad groups for a
+    ''' campaign. To create an ad group, run AddAdGroup.vb.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New GetAdGroups
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
-        codeExample.Run(New AdWordsUser, campaignId)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class GetAdGroups
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example illustrates how to retrieve all the ad groups for a " &
-            "campaign. To create an ad group, run AddAdGroup.vb."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New GetAdGroups
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
+                codeExample.Run(New AdWordsUser, campaignId)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="campaignId">Id of the campaign for which ad groups are
-    ''' retrieved.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
-      Using adGroupService As AdGroupService = CType(user.GetService(
-          AdWordsService.v201802.AdGroupService), AdGroupService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example illustrates how to retrieve all the ad groups for a " &
+                       "campaign. To create an ad group, run AddAdGroup.vb."
+            End Get
+        End Property
 
-        ' Create the selector.
-        Dim selector As New Selector
-        selector.fields = New String() {
-          AdGroup.Fields.Id, AdGroup.Fields.Name
-        }
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="campaignId">Id of the campaign for which ad groups are
+        ''' retrieved.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
+            Using adGroupService As AdGroupService = CType(
+                user.GetService(
+                    AdWordsService.v201802.AdGroupService),
+                AdGroupService)
 
-        selector.predicates = New Predicate() {
-          Predicate.Equals(AdGroup.Fields.CampaignId, campaignId)
-        }
-        selector.ordering = New OrderBy() {OrderBy.Asc(AdGroup.Fields.Name)}
-        selector.paging = Paging.Default
+                ' Create the selector.
+                Dim selector As New Selector
+                selector.fields = New String() { _
+                                                   AdGroup.Fields.Id, AdGroup.Fields.Name
+                                               }
 
-        Dim page As New AdGroupPage
+                selector.predicates = New Predicate() { _
+                                                          Predicate.Equals(
+                                                              AdGroup.Fields.CampaignId,
+                                                              campaignId)
+                                                      }
+                selector.ordering = New OrderBy() {OrderBy.Asc(AdGroup.Fields.Name)}
+                selector.paging = Paging.Default
 
-        Try
-          Do
-            ' Get the ad groups.
-            page = adGroupService.get(selector)
+                Dim page As New AdGroupPage
 
-            ' Display the results.
-            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-              Dim i As Integer = selector.paging.startIndex
-              For Each adGroup As AdGroup In page.entries
-                Console.WriteLine("{0}) Ad group name is ""{1}"" and id is ""{2}"".", i + 1,
-                    adGroup.name, adGroup.id)
-                i += 1
-              Next
-            End If
-            selector.paging.IncreaseOffset()
-          Loop While (selector.paging.startIndex < page.totalNumEntries)
-          Console.WriteLine("Number of ad groups found: {0}", page.totalNumEntries)
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to retrieve ad group(s).", e)
-        End Try
-      End Using
-    End Sub
+                Try
+                    Do
+                        ' Get the ad groups.
+                        page = adGroupService.get(selector)
 
-  End Class
-
+                        ' Display the results.
+                        If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+                            Dim i As Integer = selector.paging.startIndex
+                            For Each adGroup As AdGroup In page.entries
+                                Console.WriteLine("{0}) Ad group name is '{1}' and id is '{2}'.",
+                                                  i + 1,
+                                                  adGroup.name, adGroup.id)
+                                i += 1
+                            Next
+                        End If
+                        selector.paging.IncreaseOffset()
+                    Loop While (selector.paging.startIndex < page.totalNumEntries)
+                    Console.WriteLine("Number of ad groups found: {0}", page.totalNumEntries)
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to retrieve ad group(s).", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

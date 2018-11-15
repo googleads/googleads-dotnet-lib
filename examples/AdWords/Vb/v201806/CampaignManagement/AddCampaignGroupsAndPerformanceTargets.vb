@@ -16,201 +16,213 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201806
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201806
-
-  ''' <summary>
-  ''' This code example adds a campaign group and sets a performance target for that group. To
-  ''' get campaigns, run GetCampaigns.vb. To download reports, run
-  ''' DownloadCriteriaReportWithAwql.vb.
-  ''' </summary>
-  Public Class AddCampaignGroupsAndPerformanceTargets
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example adds a campaign group and sets a performance target for that group. To
+    ''' get campaigns, run GetCampaigns.vb. To download reports, run
+    ''' DownloadCriteriaReportWithAwql.vb.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New AddCampaignGroupsAndPerformanceTargets
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim campaignId1 As Long = Long.Parse("INSERT_CAMPAIGN_ID1_HERE")
-        Dim campaignId2 As Long = Long.Parse("INSERT_CAMPAIGN_ID2_HERE")
+    Public Class AddCampaignGroupsAndPerformanceTargets
+        Inherits ExampleBase
 
-        codeExample.Run(New AdWordsUser, campaignId1, campaignId2)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New AddCampaignGroupsAndPerformanceTargets
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim campaignId1 As Long = Long.Parse("INSERT_CAMPAIGN_ID1_HERE")
+                Dim campaignId2 As Long = Long.Parse("INSERT_CAMPAIGN_ID2_HERE")
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example adds a campaign group and sets a performance target for that " +
-            "group. To get campaigns, run GetCampaigns.vb. To download reports, run " +
-            "DownloadCriteriaReportWithAwql.vb."
-      End Get
-    End Property
+                codeExample.Run(New AdWordsUser, campaignId1, campaignId2)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="campaignId1">Id of the campaign to be added to the campaign group.</param>
-    ''' <param name="campaignId2">Id of the campaign to be added to the campaign group.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId1 As Long,
-                   ByVal campaignId2 As Long)
-      Dim campaignGroup As CampaignGroup = CreateCampaignGroup(user)
-      AddCampaignsToGroup(user, campaignGroup.id, New Long() {campaignId1, campaignId2})
-      CreatePerformanceTarget(user, campaignGroup.id)
-      Console.WriteLine("Campaign group and its performance target were setup successfully.")
-    End Sub
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return _
+                    "This code example adds a campaign group and sets a performance target for " &
+                    "that group. To get campaigns, run GetCampaigns.vb. To download reports, run" &
+                    " DownloadCriteriaReportWithAwql.vb."
+            End Get
+        End Property
 
-    ''' <summary>
-    ''' Create a campaign group.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <returns>The campaign group.</returns>
-    Private Function CreateCampaignGroup(ByVal user As AdWordsUser) As CampaignGroup
-      ' [START createCampaignGroup] MOE:strip_line
-      Using campaignGroupService As CampaignGroupService = CType(user.GetService(
-          AdWordsService.v201806.CampaignGroupService), CampaignGroupService)
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="campaignId1">Id of the campaign to be added to the campaign group.</param>
+        ''' <param name="campaignId2">Id of the campaign to be added to the campaign group.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId1 As Long,
+                       ByVal campaignId2 As Long)
+            Dim campaignGroup As CampaignGroup = CreateCampaignGroup(user)
+            AddCampaignsToGroup(user, campaignGroup.id, New Long() {campaignId1, campaignId2})
+            CreatePerformanceTarget(user, campaignGroup.id)
+            Console.WriteLine("Campaign group and its performance target were setup successfully.")
+        End Sub
 
-        ' Create the campaign group.
-        Dim campaignGroup As New CampaignGroup()
-        campaignGroup.name = "Mars campaign group - " + ExampleUtilities.GetShortRandomString()
+        ''' <summary>
+        ''' Create a campaign group.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <returns>The campaign group.</returns>
+        Private Function CreateCampaignGroup(ByVal user As AdWordsUser) As CampaignGroup
+            ' [START createCampaignGroup] MOE:strip_line
+            Using campaignGroupService As CampaignGroupService = CType(
+                user.GetService(
+                    AdWordsService.v201806.CampaignGroupService),
+                CampaignGroupService)
 
-        ' Create the operation.
-        Dim operation As New CampaignGroupOperation()
-        operation.operand = campaignGroup
-        operation.operator = [Operator].ADD
+                ' Create the campaign group.
+                Dim campaignGroup As New CampaignGroup()
+                campaignGroup.name = "Mars campaign group - " +
+                                     ExampleUtilities.GetShortRandomString()
 
-        Try
-          Dim retval As CampaignGroupReturnValue = campaignGroupService.mutate(
-              New CampaignGroupOperation() {operation})
+                ' Create the operation.
+                Dim operation As New CampaignGroupOperation()
+                operation.operand = campaignGroup
+                operation.operator = [Operator].ADD
 
-          ' Display the results.
-          Dim newCampaignGroup As CampaignGroup = retval.value(0)
-          Console.WriteLine("Campaign group with ID = '{0}' and name = '{1}' was created.",
-              newCampaignGroup.id, newCampaignGroup.name)
-          Return newCampaignGroup
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to add campaign group.", e)
-        End Try
-      End Using
-      ' [END createCampaignGroup] MOE:strip_line
-    End Function
+                Try
+                    Dim retval As CampaignGroupReturnValue = campaignGroupService.mutate(
+                        New CampaignGroupOperation() {operation})
 
-    ''' <summary>
-    ''' Adds multiple campaigns to a campaign group.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="campaignGroupId">The campaign group ID.</param>
-    ''' <param name="campaignIds">IDs of the campaigns to be added to the campaign group.</param>
-    Private Sub AddCampaignsToGroup(ByVal user As AdWordsUser, ByVal campaignGroupId As Long,
-        ByVal campaignIds() As Long)
-      ' [START addCampaignsToGroup] MOE:strip_line
-      Using campaignService As CampaignService = CType(user.GetService(
-          AdWordsService.v201806.CampaignService), CampaignService)
+                    ' Display the results.
+                    Dim newCampaignGroup As CampaignGroup = retval.value(0)
+                    Console.WriteLine("Campaign group with ID = '{0}' and name = '{1}' was " &
+                                      "created.", newCampaignGroup.id, newCampaignGroup.name)
+                    Return newCampaignGroup
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to add campaign group.", e)
+                End Try
+            End Using
+            ' [END createCampaignGroup] MOE:strip_line
+        End Function
 
-        Dim operations As New List(Of CampaignOperation)
+        ''' <summary>
+        ''' Adds multiple campaigns to a campaign group.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="campaignGroupId">The campaign group ID.</param>
+        ''' <param name="campaignIds">IDs of the campaigns to be added to the campaign group.
+        ''' </param>
+        Private Sub AddCampaignsToGroup(ByVal user As AdWordsUser, ByVal campaignGroupId As Long,
+                                        ByVal campaignIds() As Long)
+            ' [START addCampaignsToGroup] MOE:strip_line
+            Using campaignService As CampaignService = CType(
+                user.GetService(
+                    AdWordsService.v201806.CampaignService),
+                CampaignService)
 
-        For i As Integer = 0 To campaignIds.Length - 1
-          Dim campaign As New Campaign()
-          campaign.id = campaignIds(i)
-          campaign.campaignGroupId = campaignGroupId
+                Dim operations As New List(Of CampaignOperation)
 
-          Dim operation As New CampaignOperation()
-          operation.operand = campaign
-          operation.operator = [Operator].SET
-          operations.Add(operation)
-        Next
+                For i As Integer = 0 To campaignIds.Length - 1
+                    Dim campaign As New Campaign()
+                    campaign.id = campaignIds(i)
+                    campaign.campaignGroupId = campaignGroupId
 
-        Try
-          Dim retval As CampaignReturnValue = campaignService.mutate(operations.ToArray())
+                    Dim operation As New CampaignOperation()
+                    operation.operand = campaign
+                    operation.operator = [Operator].SET
+                    operations.Add(operation)
+                Next
 
-          Dim updatedCampaignIds As New List(Of Long)()
-          For Each updatedCampaign As Campaign In retval.value
-            updatedCampaignIds.Add(updatedCampaign.id)
-          Next
+                Try
+                    Dim retval As CampaignReturnValue = campaignService.mutate(operations.ToArray())
 
-          ' Display the results.
-          Console.WriteLine("The following campaign IDs were added to the campaign group " +
-              "with ID '{0}':\n\t{1}'", campaignGroupId, String.Join(", ", campaignIds))
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to add campaigns to campaign group.", e)
-        End Try
-      End Using
-      ' [END addCampaignsToGroup] MOE:strip_line
-    End Sub
+                    Dim updatedCampaignIds As New List(Of Long)()
+                    For Each updatedCampaign As Campaign In retval.value
+                        updatedCampaignIds.Add(updatedCampaign.id)
+                    Next
 
-    ''' <summary>
-    ''' Creates a performance target for the campaign group.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="campaignGroupId">Campaign group ID.</param>
-    ''' <returns>The newly created performance target.</returns>
-    Private Function CreatePerformanceTarget(ByVal user As AdWordsUser,
-        ByVal campaignGroupId As Long) As CampaignGroupPerformanceTarget
-      ' [START createPerformanceTarget] MOE:strip_line
-      Using campaignGroupPerformanceTargetService As CampaignGroupPerformanceTargetService =
-          CType(user.GetService(AdWordsService.v201806.CampaignGroupPerformanceTargetService),
-              CampaignGroupPerformanceTargetService)
+                    ' Display the results.
+                    Console.WriteLine(
+                        "The following campaign IDs were added to the campaign group " +
+                        "with ID '{0}':\n\t{1}'", campaignGroupId, String.Join(", ", campaignIds))
+                Catch e As Exception
+                    Throw New _
+                        System.ApplicationException("Failed to add campaigns to campaign group.",
+                                                    e)
+                End Try
+            End Using
+            ' [END addCampaignsToGroup] MOE:strip_line
+        End Sub
 
-        ' Create the performance target.
-        Dim campaignGroupPerformanceTarget As New CampaignGroupPerformanceTarget()
-        campaignGroupPerformanceTarget.campaignGroupId = campaignGroupId
+        ''' <summary>
+        ''' Creates a performance target for the campaign group.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="campaignGroupId">Campaign group ID.</param>
+        ''' <returns>The newly created performance target.</returns>
+        Private Function CreatePerformanceTarget(ByVal user As AdWordsUser,
+                                                 ByVal campaignGroupId As Long) _
+            As CampaignGroupPerformanceTarget
+            ' [START createPerformanceTarget] MOE:strip_line
+            Using campaignGroupPerformanceTargetService As CampaignGroupPerformanceTargetService =
+                CType(user.GetService(AdWordsService.v201806.CampaignGroupPerformanceTargetService),
+                      CampaignGroupPerformanceTargetService)
 
-        Dim performanceTarget As New PerformanceTarget()
-        ' Keep the CPC for the campaigns <$3.
-        performanceTarget.efficiencyTargetType = EfficiencyTargetType.CPC_LESS_THAN_OR_EQUAL_TO
-        performanceTarget.efficiencyTargetValue = 3000000
+                ' Create the performance target.
+                Dim campaignGroupPerformanceTarget As New CampaignGroupPerformanceTarget()
+                campaignGroupPerformanceTarget.campaignGroupId = campaignGroupId
 
-        ' Keep the maximum spend under $50.
-        performanceTarget.spendTargetType = SpendTargetType.MAXIMUM
-        Dim maxSpend As New Money()
-        maxSpend.microAmount = 500000000
-        performanceTarget.spendTarget = maxSpend
+                Dim performanceTarget As New PerformanceTarget()
+                ' Keep the CPC for the campaigns <$3.
+                performanceTarget.efficiencyTargetType =
+                    EfficiencyTargetType.CPC_LESS_THAN_OR_EQUAL_TO
+                performanceTarget.efficiencyTargetValue = 3000000
 
-        ' Aim for at least 3000 clicks.
-        performanceTarget.volumeTargetValue = 3000
-        performanceTarget.volumeGoalType = VolumeGoalType.MAXIMIZE_CLICKS
+                ' Keep the maximum spend under $50.
+                performanceTarget.spendTargetType = SpendTargetType.MAXIMUM
+                Dim maxSpend As New Money()
+                maxSpend.microAmount = 500000000
+                performanceTarget.spendTarget = maxSpend
 
-        ' Start the performance target today, And run it for the next 90 days.
-        Dim startDate As System.DateTime = System.DateTime.Now
-        Dim endDate As System.DateTime = startDate.AddDays(90)
+                ' Aim for at least 3000 clicks.
+                performanceTarget.volumeTargetValue = 3000
+                performanceTarget.volumeGoalType = VolumeGoalType.MAXIMIZE_CLICKS
 
-        performanceTarget.startDate = startDate.ToString("yyyyMMdd")
-        performanceTarget.endDate = endDate.ToString("yyyyMMdd")
+                ' Start the performance target today, And run it for the next 90 days.
+                Dim startDate As System.DateTime = System.DateTime.Now
+                Dim endDate As System.DateTime = startDate.AddDays(90)
 
-        campaignGroupPerformanceTarget.performanceTarget = performanceTarget
+                performanceTarget.startDate = startDate.ToString("yyyyMMdd")
+                performanceTarget.endDate = endDate.ToString("yyyyMMdd")
 
-        ' Create the operation.
-        Dim operation As New CampaignGroupPerformanceTargetOperation()
-        operation.operand = campaignGroupPerformanceTarget
-        operation.operator = [Operator].ADD
+                campaignGroupPerformanceTarget.performanceTarget = performanceTarget
 
-        Try
-          Dim retval As CampaignGroupPerformanceTargetReturnValue =
-              campaignGroupPerformanceTargetService.mutate(
-                  New CampaignGroupPerformanceTargetOperation() {operation})
+                ' Create the operation.
+                Dim operation As New CampaignGroupPerformanceTargetOperation()
+                operation.operand = campaignGroupPerformanceTarget
+                operation.operator = [Operator].ADD
 
-          ' Display the results.
-          Dim newCampaignPerfTarget As CampaignGroupPerformanceTarget = retval.value(0)
+                Try
+                    Dim retval As CampaignGroupPerformanceTargetReturnValue =
+                            campaignGroupPerformanceTargetService.mutate(
+                                New CampaignGroupPerformanceTargetOperation() {operation})
 
-          Console.WriteLine("Campaign performance target with id = '{0}' was added for " +
-              "campaign group ID '{1}'.", newCampaignPerfTarget.id,
-              newCampaignPerfTarget.campaignGroupId)
-          Return newCampaignPerfTarget
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to create campaign performance target.", e)
-        End Try
-      End Using
-    End Function
+                    ' Display the results.
+                    Dim newCampaignPerfTarget As CampaignGroupPerformanceTarget = retval.value(0)
 
-    ' [END createPerformanceTarget] MOE:strip_line
-  End Class
+                    Console.WriteLine("Campaign performance target with id = '{0}' was added for " +
+                                      "campaign group ID '{1}'.", newCampaignPerfTarget.id,
+                                      newCampaignPerfTarget.campaignGroupId)
+                    Return newCampaignPerfTarget
+                Catch e As Exception
+                    Throw _
+                        New System.ApplicationException(
+                            "Failed to create campaign performance target.", e)
+                End Try
+            End Using
+        End Function
 
+        ' [END createPerformanceTarget] MOE:strip_line
+    End Class
 End Namespace

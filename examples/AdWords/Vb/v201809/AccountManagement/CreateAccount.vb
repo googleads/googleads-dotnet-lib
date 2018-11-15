@@ -16,79 +16,81 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201809
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
-
-  ''' <summary>
-  ''' This code example illustrates how to create an account. Note by default,
-  ''' this account will only be accessible via its parent AdWords manager
-  ''' account.
-  ''' </summary>
-  Public Class CreateAccount
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example illustrates how to create an account. Note by default,
+    ''' this account will only be accessible via its parent AdWords manager
+    ''' account.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New CreateAccount
-      Console.WriteLine(codeExample.Description)
-      Try
-        codeExample.Run(New AdWordsUser)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class CreateAccount
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example illustrates how to create an account. Note by default," &
-            " this account will only be accessible via its parent AdWords manager account."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New CreateAccount
+            Console.WriteLine(codeExample.Description)
+            Try
+                codeExample.Run(New AdWordsUser)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    Public Sub Run(ByVal user As AdWordsUser)
-      Using managedCustomerService As ManagedCustomerService = CType(user.GetService(
-          AdWordsService.v201809.ManagedCustomerService), ManagedCustomerService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example illustrates how to create an account. Note by default, " &
+                       "this account will only be accessible via its parent AdWords manager " &
+                       "account."
+            End Get
+        End Property
 
-        ' Create account.
-        Dim customer As New ManagedCustomer()
-        customer.name = "Customer created with ManagedCustomerService on " &
-          New DateTime().ToString()
-        customer.currencyCode = "EUR"
-        customer.dateTimeZone = "Europe/London"
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        Public Sub Run(ByVal user As AdWordsUser)
+            Using managedCustomerService As ManagedCustomerService = CType(
+                user.GetService(
+                    AdWordsService.v201809.ManagedCustomerService),
+                ManagedCustomerService)
 
-        ' Create operations.
-        Dim operation As New ManagedCustomerOperation()
-        operation.operand = customer
-        operation.operator = [Operator].ADD
+                ' Create account.
+                Dim customer As New ManagedCustomer()
+                customer.name = "Customer created with ManagedCustomerService on " &
+                                New DateTime().ToString()
+                customer.currencyCode = "EUR"
+                customer.dateTimeZone = "Europe/London"
 
-        Try
-          Dim operations As ManagedCustomerOperation() = New ManagedCustomerOperation() {operation}
-          ' Add account.
-          Dim result As ManagedCustomerReturnValue = managedCustomerService.mutate(operations)
+                ' Create operations.
+                Dim operation As New ManagedCustomerOperation()
+                operation.operand = customer
+                operation.operator = [Operator].ADD
 
-          ' Display accounts.
-          If (Not result.value Is Nothing) AndAlso (result.value.Length > 0) Then
-            Dim customerResult As ManagedCustomer = result.value(0)
-            Console.WriteLine("Account with customer ID '{0}' was created.",
-              customerResult.customerId)
-          Else
-            Console.WriteLine("No accounts were created.")
-          End If
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to create accounts.", e)
-        End Try
-      End Using
-    End Sub
+                Try
+                    Dim operations As ManagedCustomerOperation() = New ManagedCustomerOperation() _
+                            {operation}
+                    ' Add account.
+                    Dim result As ManagedCustomerReturnValue =
+                            managedCustomerService.mutate(operations)
 
-  End Class
-
+                    ' Display accounts.
+                    If (Not result.value Is Nothing) AndAlso (result.value.Length > 0) Then
+                        Dim customerResult As ManagedCustomer = result.value(0)
+                        Console.WriteLine("Account with customer ID '{0}' was created.",
+                                          customerResult.customerId)
+                    Else
+                        Console.WriteLine("No accounts were created.")
+                    End If
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to create accounts.", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

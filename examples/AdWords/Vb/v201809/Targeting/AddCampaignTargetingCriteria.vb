@@ -16,150 +16,155 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201809
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
-  ''' <summary>
-  ''' This code example adds various types of targeting criteria to a campaign.
-  ''' To get a list of campaigns, run GetCampaigns.vb.
-  ''' </summary>
-  Public Class AddCampaignTargetingCriteria
-    Inherits ExampleBase
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example adds various types of targeting criteria to a campaign.
+    ''' To get a list of campaigns, run GetCampaigns.vb.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New AddCampaignTargetingCriteria
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
-        Dim feedIdText As String = "INSERT_LOCATION_FEED_ID_HERE"
+    Public Class AddCampaignTargetingCriteria
+        Inherits ExampleBase
 
-        Dim feedId As Long? = Nothing
-        Dim temp As Long = 0
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New AddCampaignTargetingCriteria
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
+                Dim feedIdText As String = "INSERT_LOCATION_FEED_ID_HERE"
 
-        If Long.TryParse(feedIdText, temp) Then
-          feedId = temp
-        End If
+                Dim feedId As Long? = Nothing
+                Dim temp As Long = 0
 
-        codeExample.Run(New AdWordsUser(), campaignId, feedId)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+                If Long.TryParse(feedIdText, temp) Then
+                    feedId = temp
+                End If
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example adds various types of targeting criteria to a campaign. To " &
-            "get a list of campaigns, run GetCampaigns.vb."
-      End Get
-    End Property
+                codeExample.Run(New AdWordsUser(), campaignId, feedId)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="campaignId">Id of the campaign to which targeting criteria
-    ''' are added.</param>
-    ''' <param name="feedId">ID of a feed that has been configured for location
-    ''' targeting, meaning it has an ENABLED FeedMapping with criterionType of
-    ''' 77. Feeds linked to a GMB account automatically have this FeedMapping.
-    ''' If you don't have such a feed, set this value to Nothing.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long, ByVal feedId As Long?)
-      Using campaignCriterionService As CampaignCriterionService = CType(user.GetService(
-          AdWordsService.v201809.CampaignCriterionService),
-              CampaignCriterionService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return _
+                    "This code example adds various types of targeting criteria to a campaign. " &
+                    "To get a list of campaigns, run GetCampaigns.vb."
+            End Get
+        End Property
 
-        ' Create locations. The IDs can be found in the documentation or
-        ' retrieved with the LocationCriterionService.
-        Dim california As New Location
-        california.id = 21137L
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="campaignId">Id of the campaign to which targeting criteria
+        ''' are added.</param>
+        ''' <param name="feedId">ID of a feed that has been configured for location
+        ''' targeting, meaning it has an ENABLED FeedMapping with criterionType of
+        ''' 77. Feeds linked to a GMB account automatically have this FeedMapping.
+        ''' If you don't have such a feed, set this value to Nothing.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long, ByVal feedId As Long?)
+            Using campaignCriterionService As CampaignCriterionService = CType(
+                user.GetService(
+                    AdWordsService.v201809.CampaignCriterionService),
+                CampaignCriterionService)
 
-        Dim mexico As New Location
-        mexico.id = 2484L
+                ' Create locations. The IDs can be found in the documentation or
+                ' retrieved with the LocationCriterionService.
+                Dim california As New Location
+                california.id = 21137L
 
-        ' Create languages. The IDs can be found in the documentation or
-        ' retrieved with the ConstantDataService.
-        Dim english As New Language
-        english.id = 1000L
+                Dim mexico As New Location
+                mexico.id = 2484L
 
-        Dim spanish As New Language
-        spanish.id = 1003L
+                ' Create languages. The IDs can be found in the documentation or
+                ' retrieved with the ConstantDataService.
+                Dim english As New Language
+                english.id = 1000L
 
-        Dim criteria As New List(Of Criterion)()
-        criteria.AddRange(New Criterion() {
-          california, mexico, english, spanish
-        })
+                Dim spanish As New Language
+                spanish.id = 1003L
 
-        ' Distance targeting. Area of 10 miles around the locations in the location feed.
-        If feedId.HasValue Then
-          Dim radiusLocationGroup As New LocationGroups
-          radiusLocationGroup.feedId = feedId.Value
+                Dim criteria As New List(Of Criterion)()
+                criteria.AddRange(New Criterion() { _
+                                                      california, mexico, english, spanish
+                                                  })
 
-          Dim radiusMatchingFunction As New [Function]
-          radiusMatchingFunction.operator = FunctionOperator.IDENTITY
+                ' Distance targeting. Area of 10 miles around the locations in the location feed.
+                If feedId.HasValue Then
+                    Dim radiusLocationGroup As New LocationGroups
+                    radiusLocationGroup.feedId = feedId.Value
 
-          Dim radiusOperand As New LocationExtensionOperand
-          radiusOperand.radius = New ConstantOperand
-          radiusOperand.radius.type = ConstantOperandConstantType.DOUBLE
-          radiusOperand.radius.unit = ConstantOperandUnit.MILES
-          radiusOperand.radius.doubleValue = 10
+                    Dim radiusMatchingFunction As New [Function]
+                    radiusMatchingFunction.operator = FunctionOperator.IDENTITY
 
-          radiusMatchingFunction.lhsOperand = New FunctionArgumentOperand() {radiusOperand}
+                    Dim radiusOperand As New LocationExtensionOperand
+                    radiusOperand.radius = New ConstantOperand
+                    radiusOperand.radius.type = ConstantOperandConstantType.DOUBLE
+                    radiusOperand.radius.unit = ConstantOperandUnit.MILES
+                    radiusOperand.radius.doubleValue = 10
 
-          criteria.Add(radiusLocationGroup)
-        End If
+                    radiusMatchingFunction.lhsOperand = New FunctionArgumentOperand() _
+                        {radiusOperand}
 
-        ' Create operations to add each of the criteria above.
-        Dim operations As New List(Of CampaignCriterionOperation)
+                    criteria.Add(radiusLocationGroup)
+                End If
 
-        For Each criterion As Criterion In criteria
-          Dim campaignCriterion As New CampaignCriterion
-          campaignCriterion.campaignId = campaignId
-          campaignCriterion.criterion = criterion
+                ' Create operations to add each of the criteria above.
+                Dim operations As New List(Of CampaignCriterionOperation)
 
-          Dim operation As New CampaignCriterionOperation
-          operation.operator = [Operator].ADD
-          operation.operand = campaignCriterion
+                For Each criterion As Criterion In criteria
+                    Dim campaignCriterion As New CampaignCriterion
+                    campaignCriterion.campaignId = campaignId
+                    campaignCriterion.criterion = criterion
 
-          operations.Add(operation)
-        Next
+                    Dim operation As New CampaignCriterionOperation
+                    operation.operator = [Operator].ADD
+                    operation.operand = campaignCriterion
 
-        ' Add a negative campaign criterion.
+                    operations.Add(operation)
+                Next
 
-        Dim negativeCriterion As New NegativeCampaignCriterion
-        negativeCriterion.campaignId = campaignId
+                ' Add a negative campaign criterion.
 
-        Dim keyword As New Keyword
-        keyword.text = "jupiter cruise"
-        keyword.matchType = KeywordMatchType.BROAD
+                Dim negativeCriterion As New NegativeCampaignCriterion
+                negativeCriterion.campaignId = campaignId
 
-        negativeCriterion.criterion = keyword
+                Dim keyword As New Keyword
+                keyword.text = "jupiter cruise"
+                keyword.matchType = KeywordMatchType.BROAD
 
-        Dim negativeCriterionOperation As New CampaignCriterionOperation
-        negativeCriterionOperation.operand = negativeCriterion
-        negativeCriterionOperation.operator = [Operator].ADD
+                negativeCriterion.criterion = keyword
 
-        operations.Add(negativeCriterionOperation)
+                Dim negativeCriterionOperation As New CampaignCriterionOperation
+                negativeCriterionOperation.operand = negativeCriterion
+                negativeCriterionOperation.operator = [Operator].ADD
 
-        Try
-          ' Set the campaign targets.
-          Dim retVal As CampaignCriterionReturnValue = campaignCriterionService.mutate(
-              operations.ToArray())
+                operations.Add(negativeCriterionOperation)
 
-          ' Display the results.
-          If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing)) Then
-            For Each criterion As CampaignCriterion In retVal.value
-              Console.WriteLine("Campaign criterion of type '{0}' was set to campaign with id " &
-                  "= '{1}'.", criterion.criterion.CriterionType, criterion.campaignId)
-            Next
-          End If
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to set campaign criteria.", e)
-        End Try
-      End Using
-    End Sub
-  End Class
+                Try
+                    ' Set the campaign targets.
+                    Dim retVal As CampaignCriterionReturnValue = campaignCriterionService.mutate(
+                        operations.ToArray())
+
+                    ' Display the results.
+                    If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing)) Then
+                        For Each criterion As CampaignCriterion In retVal.value
+                            Console.WriteLine(
+                                "Campaign criterion of type '{0}' was set to campaign with id " &
+                                "= '{1}'.", criterion.criterion.CriterionType, criterion.campaignId)
+                        Next
+                    End If
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to set campaign criteria.", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

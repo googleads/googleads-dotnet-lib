@@ -16,94 +16,97 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201809
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
-
-  ''' <summary>
-  ''' This code example sets a bid modifier for the mobile platform on given
-  ''' campaign. The campaign must be an enhanced type of campaign. To get
-  ''' campaigns, run GetCampaigns.vb. To enhance a campaign, run
-  ''' SetCampaignEnhanced.vb.
-  ''' </summary>
-  Public Class SetBidModifier
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example sets a bid modifier for the mobile platform on given
+    ''' campaign. The campaign must be an enhanced type of campaign. To get
+    ''' campaigns, run GetCampaigns.vb. To enhance a campaign, run
+    ''' SetCampaignEnhanced.vb.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New SetBidModifier
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
-        Dim bidModifier As Double = Double.Parse("INSERT_BID_MODIFIER_HERE")
-        codeExample.Run(New AdWordsUser, campaignId, bidModifier)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class SetBidModifier
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    '''
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example sets a bid modifier for the mobile platform on given " &
-            "campaign. The campaign must be an enhanced type of campaign. To get campaigns, " &
-            "run GetCampaigns.vb. To enhance a campaign, run SetCampaignEnhanced.vb."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New SetBidModifier
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
+                Dim bidModifier As Double = Double.Parse("INSERT_BID_MODIFIER_HERE")
+                codeExample.Run(New AdWordsUser, campaignId, bidModifier)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="campaignId">Id of the campaign whose bid should be modified.
-    ''' </param>
-    ''' <param name="bidModifier">The bid modifier.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long,
-        ByVal bidModifier As Double)
-      Using campaignCriterionService As CampaignCriterionService = CType(user.GetService(
-          AdWordsService.v201809.CampaignCriterionService), CampaignCriterionService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        '''
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example sets a bid modifier for the mobile platform on given " &
+                       "campaign. The campaign must be an enhanced type of campaign. To get " &
+                       "campaigns, run GetCampaigns.vb. To enhance a campaign, run " &
+                       "SetCampaignEnhanced.vb."
+            End Get
+        End Property
 
-        ' Create mobile platform. The ID can be found in the documentation.
-        ' https://developers.google.com/adwords/api/docs/appendix/platforms
-        Dim mobile As New Platform()
-        mobile.id = 30001
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="campaignId">Id of the campaign whose bid should be modified.
+        ''' </param>
+        ''' <param name="bidModifier">The bid modifier.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long,
+                       ByVal bidModifier As Double)
+            Using campaignCriterionService As CampaignCriterionService = CType(
+                user.GetService(
+                    AdWordsService.v201809.CampaignCriterionService),
+                CampaignCriterionService)
 
-        ' Create criterion with modified bid.
-        Dim criterion As New CampaignCriterion()
-        criterion.campaignId = campaignId
-        criterion.criterion = mobile
-        criterion.bidModifier = bidModifier
+                ' Create mobile platform. The ID can be found in the documentation.
+                ' https://developers.google.com/adwords/api/docs/appendix/platforms
+                Dim mobile As New Platform()
+                mobile.id = 30001
 
-        ' Create SET operation.
-        Dim operation As New CampaignCriterionOperation()
-        operation.operator = [Operator].SET
-        operation.operand = criterion
+                ' Create criterion with modified bid.
+                Dim criterion As New CampaignCriterion()
+                criterion.campaignId = campaignId
+                criterion.criterion = mobile
+                criterion.bidModifier = bidModifier
 
-        Try
-          ' Update campaign criteria.
-          Dim result As CampaignCriterionReturnValue = campaignCriterionService.mutate(
-              New CampaignCriterionOperation() {operation})
+                ' Create SET operation.
+                Dim operation As New CampaignCriterionOperation()
+                operation.operator = [Operator].SET
+                operation.operand = criterion
 
-          ' Display campaign criteria.
-          If Not result.value Is Nothing Then
-            For Each newCriterion As CampaignCriterion In result.value
-              Console.WriteLine("Campaign criterion with campaign id '{0}', criterion id '{1}' " &
-                  "and type '{2}' was modified with bid {3:F2}.", newCriterion.campaignId,
-                  newCriterion.criterion.id, newCriterion.criterion.type, newCriterion.bidModifier)
-            Next
-          Else
-            Console.WriteLine("No campaigns were modified.")
-          End If
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to set bid modifier.", e)
-        End Try
-      End Using
-    End Sub
+                Try
+                    ' Update campaign criteria.
+                    Dim result As CampaignCriterionReturnValue = campaignCriterionService.mutate(
+                        New CampaignCriterionOperation() {operation})
 
-  End Class
-
+                    ' Display campaign criteria.
+                    If Not result.value Is Nothing Then
+                        For Each newCriterion As CampaignCriterion In result.value
+                            Console.WriteLine(
+                                "Campaign criterion with campaign id '{0}', criterion id '{1}' " &
+                                "and type '{2}' was modified with bid {3:F2}.",
+                                newCriterion.campaignId,
+                                newCriterion.criterion.id, newCriterion.criterion.type,
+                                newCriterion.bidModifier)
+                        Next
+                    Else
+                        Console.WriteLine("No campaigns were modified.")
+                    End If
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to set bid modifier.", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

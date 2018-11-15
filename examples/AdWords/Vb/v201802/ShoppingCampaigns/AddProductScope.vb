@@ -20,106 +20,110 @@ Imports System.Collections.Generic
 Imports System.IO
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
-  ''' <summary>
-  ''' This code example restricts the products that will be included in the
-  ''' campaign by setting a ProductScope.
-  ''' </summary>
-  Public Class AddProductScope
-    Inherits ExampleBase
     ''' <summary>
-    ''' Returns a description about the code example.
+    ''' This code example restricts the products that will be included in the
+    ''' campaign by setting a ProductScope.
     ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example restricts the products that will be included in the " & _
-            "campaign by setting a ProductScope."
-      End Get
-    End Property
+    Public Class AddProductScope
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
-    ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New AddProductScope
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
-        codeExample.Run(New AdWordsUser, campaignId)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}", _
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example restricts the products that will be included in the " &
+                       "campaign by setting a ProductScope."
+            End Get
+        End Property
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="campaignId">The campaign id to add product scope.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
-      Using campaignCriterionService As CampaignCriterionService = CType(user.GetService(
-          AdWordsService.v201802.CampaignCriterionService),
-              CampaignCriterionService)
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New AddProductScope
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
+                codeExample.Run(New AdWordsUser, campaignId)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-        Dim productScope As New ProductScope()
-        ' This set of dimensions is for demonstration purposes only. It would be
-        ' extremely unlikely that you want to include so many dimensions in your
-        ' product scope.
-        Dim nexusBrand As New ProductBrand()
-        nexusBrand.value = "Nexus"
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="campaignId">The campaign id to add product scope.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
+            Using campaignCriterionService As CampaignCriterionService = CType(
+                user.GetService(
+                    AdWordsService.v201802.CampaignCriterionService),
+                CampaignCriterionService)
 
-        Dim newProducts As New ProductCanonicalCondition()
-        newProducts.condition = ProductCanonicalConditionCondition.NEW
+                Dim productScope As New ProductScope()
+                ' This set of dimensions is for demonstration purposes only. It would be
+                ' extremely unlikely that you want to include so many dimensions in your
+                ' product scope.
+                Dim nexusBrand As New ProductBrand()
+                nexusBrand.value = "Nexus"
 
-        Dim customAttribute As New ProductCustomAttribute()
-        customAttribute.type = ProductDimensionType.CUSTOM_ATTRIBUTE_0
-        customAttribute.value = "my attribute value"
+                Dim newProducts As New ProductCanonicalCondition()
+                newProducts.condition = ProductCanonicalConditionCondition.NEW
 
-        Dim bookOffer As New ProductOfferId()
-        bookOffer.value = "book1"
+                Dim customAttribute As New ProductCustomAttribute()
+                customAttribute.type = ProductDimensionType.CUSTOM_ATTRIBUTE_0
+                customAttribute.value = "my attribute value"
 
-        Dim mediaProducts As New ProductType()
-        mediaProducts.type = ProductDimensionType.PRODUCT_TYPE_L1
-        mediaProducts.value = "Media"
+                Dim bookOffer As New ProductOfferId()
+                bookOffer.value = "book1"
 
-        Dim bookProducts As New ProductType()
-        bookProducts.type = ProductDimensionType.PRODUCT_TYPE_L2
-        bookProducts.value = "Books"
+                Dim mediaProducts As New ProductType()
+                mediaProducts.type = ProductDimensionType.PRODUCT_TYPE_L1
+                mediaProducts.value = "Media"
 
-        ' The value for the bidding category is a fixed ID for the
-        ' 'Luggage & Bags' category. You can retrieve IDs for categories from
-        ' the ConstantDataService. See the 'GetProductCategoryTaxonomy' example
-        ' for more details.
-        Dim luggageBiddingCategory As New ProductBiddingCategory()
-        luggageBiddingCategory.type = ProductDimensionType.BIDDING_CATEGORY_L1
-        luggageBiddingCategory.value = -5914235892932915235
+                Dim bookProducts As New ProductType()
+                bookProducts.type = ProductDimensionType.PRODUCT_TYPE_L2
+                bookProducts.value = "Books"
 
-        productScope.dimensions = New ProductDimension() {
-          nexusBrand, newProducts, bookOffer, mediaProducts, luggageBiddingCategory
-        }
+                ' The value for the bidding category is a fixed ID for the
+                ' 'Luggage & Bags' category. You can retrieve IDs for categories from
+                ' the ConstantDataService. See the 'GetProductCategoryTaxonomy' example
+                ' for more details.
+                Dim luggageBiddingCategory As New ProductBiddingCategory()
+                luggageBiddingCategory.type = ProductDimensionType.BIDDING_CATEGORY_L1
+                luggageBiddingCategory.value = - 5914235892932915235
 
-        Dim campaignCriterion As New CampaignCriterion()
-        campaignCriterion.campaignId = campaignId
-        campaignCriterion.criterion = productScope
+                productScope.dimensions = New ProductDimension() { _
+                                                                     nexusBrand, newProducts,
+                                                                     bookOffer, mediaProducts,
+                                                                     luggageBiddingCategory
+                                                                 }
 
-        ' Create operation.
-        Dim operation As New CampaignCriterionOperation()
-        operation.operand = campaignCriterion
-        operation.operator = [Operator].ADD
+                Dim campaignCriterion As New CampaignCriterion()
+                campaignCriterion.campaignId = campaignId
+                campaignCriterion.criterion = productScope
 
-        Try
-          ' Make the mutate request.
-          Dim result As CampaignCriterionReturnValue = campaignCriterionService.mutate(
-              New CampaignCriterionOperation() {operation})
+                ' Create operation.
+                Dim operation As New CampaignCriterionOperation()
+                operation.operand = campaignCriterion
+                operation.operator = [Operator].ADD
 
-          Console.WriteLine("Created a ProductScope criterion with ID '{0}'",
-              result.value(0).criterion.id)
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to set shopping product scope.", e)
-        End Try
-      End Using
-    End Sub
-  End Class
+                Try
+                    ' Make the mutate request.
+                    Dim result As CampaignCriterionReturnValue = campaignCriterionService.mutate(
+                        New CampaignCriterionOperation() {operation})
 
+                    Console.WriteLine("Created a ProductScope criterion with ID '{0}'",
+                                      result.value(0).criterion.id)
+                Catch e As Exception
+                    Throw _
+                        New System.ApplicationException("Failed to set shopping product scope.", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

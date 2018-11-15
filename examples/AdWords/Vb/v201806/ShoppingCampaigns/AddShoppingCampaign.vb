@@ -17,224 +17,237 @@ Imports Google.Api.Ads.AdWords.Util.Shopping.v201806
 Imports Google.Api.Ads.AdWords.v201806
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201806
-  ''' <summary>
-  ''' This code example adds a Shopping campaign.
-  ''' </summary>
-  Public Class AddShoppingCampaign
-    Inherits ExampleBase
     ''' <summary>
-    ''' Returns a description about the code example.
+    ''' This code example adds a Shopping campaign.
     ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example adds a Shopping campaign."
-      End Get
-    End Property
+    Public Class AddShoppingCampaign
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
-    ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New AddShoppingCampaign
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim budgetId As Long = Long.Parse("INSERT_BUDGET_ID_HERE")
-        Dim merchantId As Long = Long.Parse("INSERT_MERCHANT_ID_HERE")
-        Dim createDefaultPartition As Boolean = False
-        codeExample.Run(New AdWordsUser, budgetId, merchantId, createDefaultPartition)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example adds a Shopping campaign."
+            End Get
+        End Property
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="budgetId">The budget id.</param>
-    ''' <param name="merchantId">The Merchant Center account id.</param>
-    ''' <param name="createDefaultPartition">If set to true, a default
-    ''' partition will be created. If running the AddProductPartition.cs
-    ''' example right after this example, make sure this stays set to
-    ''' false.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal budgetId As Long, ByVal merchantId As Long,
-                   ByVal createDefaultPartition As Boolean)
-      Try
-        Dim campaign As Campaign = CreateCampaign(user, budgetId, merchantId)
-        Console.WriteLine("Campaign with name '{0}' and ID '{1}' was added.", campaign.name,
-              campaign.id)
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New AddShoppingCampaign
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim budgetId As Long = Long.Parse("INSERT_BUDGET_ID_HERE")
+                Dim merchantId As Long = Long.Parse("INSERT_MERCHANT_ID_HERE")
+                Dim createDefaultPartition As Boolean = False
+                codeExample.Run(New AdWordsUser, budgetId, merchantId, createDefaultPartition)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-        Dim adGroup As AdGroup = CreateAdGroup(user, campaign)
-        Console.WriteLine("Ad group with name '{0}' and ID '{1}' was added.", adGroup.name,
-              adGroup.id)
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="budgetId">The budget id.</param>
+        ''' <param name="merchantId">The Merchant Center account id.</param>
+        ''' <param name="createDefaultPartition">If set to true, a default
+        ''' partition will be created. If running the AddProductPartition.cs
+        ''' example right after this example, make sure this stays set to
+        ''' false.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal budgetId As Long, ByVal merchantId As Long,
+                       ByVal createDefaultPartition As Boolean)
+            Try
+                Dim campaign As Campaign = CreateCampaign(user, budgetId, merchantId)
+                Console.WriteLine("Campaign with name '{0}' and ID '{1}' was added.", campaign.name,
+                                  campaign.id)
 
-        Dim adGroupAd As AdGroupAd = CreateProductAd(user, adGroup)
-        Console.WriteLine("Product ad with ID {0}' was added.", adGroupAd.ad.id)
+                Dim adGroup As AdGroup = CreateAdGroup(user, campaign)
+                Console.WriteLine("Ad group with name '{0}' and ID '{1}' was added.", adGroup.name,
+                                  adGroup.id)
 
-        If (createDefaultPartition) Then
-          CreateDefaultPartitionTree(user, adGroup.id)
-        End If
+                Dim adGroupAd As AdGroupAd = CreateProductAd(user, adGroup)
+                Console.WriteLine("Product ad with ID {0}' was added.", adGroupAd.ad.id)
 
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to create shopping campaign.", e)
-      End Try
-    End Sub
+                If (createDefaultPartition) Then
+                    CreateDefaultPartitionTree(user, adGroup.id)
+                End If
 
-    ''' <summary>
-    ''' Creates the default partition.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="adGroupId">The ad group ID.</param>
-    Private Sub CreateDefaultPartitionTree(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-      ' Get the AdGroupCriterionService.
-      Dim adGroupCriterionService As AdGroupCriterionService = CType(user.GetService(
-          AdWordsService.v201806.AdGroupCriterionService), AdGroupCriterionService)
+            Catch e As Exception
+                Throw New System.ApplicationException("Failed to create shopping campaign.", e)
+            End Try
+        End Sub
 
-      ' Build a New ProductPartitionTree using an empty set of criteria.
-      Dim partitionTree As ProductPartitionTree =
-          ProductPartitionTree.CreateAdGroupTree(adGroupId, New List(Of AdGroupCriterion)())
-      partitionTree.Root.AsBiddableUnit().CpcBid = 1000000
+        ''' <summary>
+        ''' Creates the default partition.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="adGroupId">The ad group ID.</param>
+        Private Sub CreateDefaultPartitionTree(ByVal user As AdWordsUser, ByVal adGroupId As Long)
+            ' Get the AdGroupCriterionService.
+            Dim adGroupCriterionService As AdGroupCriterionService = CType(
+                user.GetService(
+                    AdWordsService.v201806.AdGroupCriterionService),
+                AdGroupCriterionService)
 
-      Try
-        ' Make the mutate request, using the operations returned by the ProductPartitionTree.
-        Dim mutateOperations As AdGroupCriterionOperation() = partitionTree.GetMutateOperations()
+            ' Build a New ProductPartitionTree using an empty set of criteria.
+            Dim partitionTree As ProductPartitionTree =
+                    ProductPartitionTree.CreateAdGroupTree(adGroupId,
+                                                           New List(Of AdGroupCriterion)())
+            partitionTree.Root.AsBiddableUnit().CpcBid = 1000000
 
-        If mutateOperations.Length = 0 Then
-          Console.WriteLine("Skipping the mutate call because the original tree and the current " +
-              "tree are logically identical.")
-        Else
-          adGroupCriterionService.mutate(mutateOperations)
-        End If
+            Try
+                ' Make the mutate request, using the operations returned by the 
+                ' ProductPartitionTree.
+                Dim mutateOperations As AdGroupCriterionOperation() =
+                        partitionTree.GetMutateOperations()
 
-        ' The request was successful, so create a New ProductPartitionTree based on the updated
-        ' state of the ad group.
-        partitionTree = ProductPartitionTree.DownloadAdGroupTree(user, adGroupId)
+                If mutateOperations.Length = 0 Then
+                    Console.WriteLine(
+                        "Skipping the mutate call because the original tree and the current " +
+                        "tree are logically identical.")
+                Else
+                    adGroupCriterionService.mutate(mutateOperations)
+                End If
 
-        Console.WriteLine("Final tree: {0}", partitionTree)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to set shopping product partition.", e)
-      End Try
-    End Sub
+                ' The request was successful, so create a New ProductPartitionTree based on the 
+                ' updated state of the ad group.
+                partitionTree = ProductPartitionTree.DownloadAdGroupTree(user, adGroupId)
 
-    ''' <summary>
-    ''' Creates the Product Ad.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="adGroup">The ad group.</param>
-    ''' <returns>The Product Ad.</returns>
-    Private Function CreateProductAd(ByVal user As AdWordsUser,
-        ByVal adGroup As AdGroup) As AdGroupAd
-      Using adGroupAdService As AdGroupAdService = CType(user.GetService(
-          AdWordsService.v201806.AdGroupAdService), AdGroupAdService)
+                Console.WriteLine("Final tree: {0}", partitionTree)
+            Catch e As Exception
+                Throw _
+                    New System.ApplicationException("Failed to set shopping product partition.", e)
+            End Try
+        End Sub
 
-        ' Create product ad.
-        Dim productAd As New ProductAd()
+        ''' <summary>
+        ''' Creates the Product Ad.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="adGroup">The ad group.</param>
+        ''' <returns>The Product Ad.</returns>
+        Private Function CreateProductAd(ByVal user As AdWordsUser,
+                                         ByVal adGroup As AdGroup) As AdGroupAd
+            Using adGroupAdService As AdGroupAdService = CType(
+                user.GetService(
+                    AdWordsService.v201806.AdGroupAdService),
+                AdGroupAdService)
 
-        ' Create ad group ad.
-        Dim adGroupAd As New AdGroupAd()
-        adGroupAd.adGroupId = adGroup.id
-        adGroupAd.ad = productAd
+                ' Create product ad.
+                Dim productAd As New ProductAd()
 
-        ' Create operation.
-        Dim operation As New AdGroupAdOperation()
-        operation.operand = adGroupAd
-        operation.operator = [Operator].ADD
+                ' Create ad group ad.
+                Dim adGroupAd As New AdGroupAd()
+                adGroupAd.adGroupId = adGroup.id
+                adGroupAd.ad = productAd
 
-        ' Make the mutate request.
-        Dim retval As AdGroupAdReturnValue = adGroupAdService.mutate(
-            New AdGroupAdOperation() {operation})
+                ' Create operation.
+                Dim operation As New AdGroupAdOperation()
+                operation.operand = adGroupAd
+                operation.operator = [Operator].ADD
 
-        Return retval.value(0)
-      End Using
-    End Function
+                ' Make the mutate request.
+                Dim retval As AdGroupAdReturnValue = adGroupAdService.mutate(
+                    New AdGroupAdOperation() {operation})
 
-    ''' <summary>
-    ''' Creates the ad group in a Shopping campaign.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="campaign">The Shopping campaign.</param>
-    ''' <returns>The ad group.</returns>
-    Private Function CreateAdGroup(ByVal user As AdWordsUser,
-        ByVal campaign As Campaign) As AdGroup
-      Using adGroupService As AdGroupService = CType(user.GetService(
-          AdWordsService.v201806.AdGroupService), AdGroupService)
-        ' Create ad group.
-        Dim adGroup As New AdGroup()
-        adGroup.campaignId = campaign.id
-        adGroup.name = "Ad Group #" & ExampleUtilities.GetRandomString()
+                Return retval.value(0)
+            End Using
+        End Function
 
-        ' Create operation.
-        Dim operation As New AdGroupOperation()
-        operation.operand = adGroup
-        operation.operator = [Operator].ADD
+        ''' <summary>
+        ''' Creates the ad group in a Shopping campaign.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="campaign">The Shopping campaign.</param>
+        ''' <returns>The ad group.</returns>
+        Private Function CreateAdGroup(ByVal user As AdWordsUser,
+                                       ByVal campaign As Campaign) As AdGroup
+            Using adGroupService As AdGroupService = CType(
+                user.GetService(
+                    AdWordsService.v201806.AdGroupService),
+                AdGroupService)
+                ' Create ad group.
+                Dim adGroup As New AdGroup()
+                adGroup.campaignId = campaign.id
+                adGroup.name = "Ad Group #" & ExampleUtilities.GetRandomString()
 
-        ' Make the mutate request.
-        Dim retval As AdGroupReturnValue = adGroupService.mutate(
-            New AdGroupOperation() {operation})
-        Return retval.value(0)
-      End Using
-    End Function
+                ' Create operation.
+                Dim operation As New AdGroupOperation()
+                operation.operand = adGroup
+                operation.operator = [Operator].ADD
 
-    '  [START createCampaign] MOE:strip_line
-    ''' <summary>
-    ''' Creates the shopping campaign.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="budgetId">The budget id.</param>
-    ''' <param name="merchantId">The Merchant Center id.</param>
-    ''' <returns>The Shopping campaign.</returns>
-    Private Function CreateCampaign(ByVal user As AdWordsUser, ByVal budgetId As Long,
-        ByVal merchantId As Long) As Campaign
-      ' Get the required services.
-      Dim campaignService As CampaignService = CType(user.GetService(
-          AdWordsService.v201806.CampaignService), CampaignService)
+                ' Make the mutate request.
+                Dim retval As AdGroupReturnValue = adGroupService.mutate(
+                    New AdGroupOperation() {operation})
+                Return retval.value(0)
+            End Using
+        End Function
 
-      ' Create campaign.
-      Dim campaign As New Campaign()
-      campaign.name = "Shopping campaign #" & ExampleUtilities.GetRandomString()
+        '  [START createCampaign] MOE:strip_line
+        ''' <summary>
+        ''' Creates the shopping campaign.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="budgetId">The budget id.</param>
+        ''' <param name="merchantId">The Merchant Center id.</param>
+        ''' <returns>The Shopping campaign.</returns>
+        Private Function CreateCampaign(ByVal user As AdWordsUser, ByVal budgetId As Long,
+                                        ByVal merchantId As Long) As Campaign
+            ' Get the required services.
+            Dim campaignService As CampaignService = CType(
+                user.GetService(
+                    AdWordsService.v201806.CampaignService),
+                CampaignService)
 
-      ' The advertisingChannelType is what makes this a Shopping campaign.
-      campaign.advertisingChannelType = AdvertisingChannelType.SHOPPING
+            ' Create campaign.
+            Dim campaign As New Campaign()
+            campaign.name = "Shopping campaign #" & ExampleUtilities.GetRandomString()
 
-      ' Recommendation: Set the campaign to PAUSED when creating it to prevent
-      ' the ads from immediately serving. Set to ENABLED once you've added
-      ' targeting and the ads are ready to serve.
-      campaign.status = CampaignStatus.PAUSED
+            ' The advertisingChannelType is what makes this a Shopping campaign.
+            campaign.advertisingChannelType = AdvertisingChannelType.SHOPPING
 
-      ' Set shared budget (required).
-      campaign.budget = New Budget()
-      campaign.budget.budgetId = budgetId
+            ' Recommendation: Set the campaign to PAUSED when creating it to prevent
+            ' the ads from immediately serving. Set to ENABLED once you've added
+            ' targeting and the ads are ready to serve.
+            campaign.status = CampaignStatus.PAUSED
 
-      ' Set bidding strategy (required).
-      Dim biddingStrategyConfiguration As New BiddingStrategyConfiguration()
-      biddingStrategyConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC
+            ' Set shared budget (required).
+            campaign.budget = New Budget()
+            campaign.budget.budgetId = budgetId
 
-      campaign.biddingStrategyConfiguration = biddingStrategyConfiguration
+            ' Set bidding strategy (required).
+            Dim biddingStrategyConfiguration As New BiddingStrategyConfiguration()
+            biddingStrategyConfiguration.biddingStrategyType = BiddingStrategyType.MANUAL_CPC
 
-      ' All Shopping campaigns need a ShoppingSetting.
-      Dim shoppingSetting As New ShoppingSetting()
-      shoppingSetting.salesCountry = "US"
-      shoppingSetting.campaignPriority = 0
-      shoppingSetting.merchantId = merchantId
+            campaign.biddingStrategyConfiguration = biddingStrategyConfiguration
 
-      ' Enable Local Inventory Ads in your campaign.
-      shoppingSetting.enableLocal = True
-      campaign.settings = New Setting() {shoppingSetting}
+            ' All Shopping campaigns need a ShoppingSetting.
+            Dim shoppingSetting As New ShoppingSetting()
+            shoppingSetting.salesCountry = "US"
+            shoppingSetting.campaignPriority = 0
+            shoppingSetting.merchantId = merchantId
 
-      ' Create operation.
-      Dim campaignOperation As New CampaignOperation()
-      campaignOperation.operand = campaign
-      campaignOperation.operator = [Operator].ADD
+            ' Enable Local Inventory Ads in your campaign.
+            shoppingSetting.enableLocal = True
+            campaign.settings = New Setting() {shoppingSetting}
 
-      ' Make the mutate request.
-      Dim retval As CampaignReturnValue = campaignService.mutate(
-          New CampaignOperation() {campaignOperation})
+            ' Create operation.
+            Dim campaignOperation As New CampaignOperation()
+            campaignOperation.operand = campaign
+            campaignOperation.operator = [Operator].ADD
 
-      Return retval.value(0)
-    End Function
-    '  [END createCampaign] MOE:strip_line
-  End Class
+            ' Make the mutate request.
+            Dim retval As CampaignReturnValue = campaignService.mutate(
+                New CampaignOperation() {campaignOperation})
 
+            Return retval.value(0)
+        End Function
+        '  [END createCampaign] MOE:strip_line
+    End Class
 End Namespace

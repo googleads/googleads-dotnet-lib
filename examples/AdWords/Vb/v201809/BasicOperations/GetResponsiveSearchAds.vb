@@ -16,118 +16,126 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201809
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
-
-  ''' <summary>
-  ''' This code example gets non-removed responsive search ads in an ad group. To add
-  ''' responsive search ads, run AddResponsiveSearchAd.vb. To get ad groups, run
-  ''' GetAdGroups.vb.
-  ''' </summary>
-  Public Class GetResponsiveSearchAds
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example gets non-removed responsive search ads in an ad group. To add
+    ''' responsive search ads, run AddResponsiveSearchAd.vb. To get ad groups, run
+    ''' GetAdGroups.vb.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New GetResponsiveSearchAds
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
-        codeExample.Run(New AdWordsUser, adGroupId)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class GetResponsiveSearchAds
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example gets non-removed responsive search ads in an ad group. To " +
-            "add responsive search ads, run AddResponsiveSearchAd.vb. To get ad groups, run " +
-            "GetAdGroups.vb."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New GetResponsiveSearchAds
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+                codeExample.Run(New AdWordsUser, adGroupId)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="adGroupId">Id of the ad group from which expanded text ads
-    ''' are retrieved.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-      ' [START getResponsiveSearchAd] MOE:strip_line
-      Using service As AdGroupAdService = CType(user.GetService(
-          AdWordsService.v201809.AdGroupAdService), AdGroupAdService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return _
+                    "This code example gets non-removed responsive search ads in an ad group. To " +
+                    "add responsive search ads, run AddResponsiveSearchAd.vb. To get ad groups, " +
+                    "run GetAdGroups.vb."
+            End Get
+        End Property
 
-        ' Create a selector.
-        Dim selector As New Selector
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="adGroupId">Id of the ad group from which expanded text ads
+        ''' are retrieved.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
+            ' [START getResponsiveSearchAd] MOE:strip_line
+            Using service As AdGroupAdService = CType(
+                user.GetService(
+                    AdWordsService.v201809.AdGroupAdService),
+                AdGroupAdService)
 
-        selector.fields = New String() {
-            ResponsiveSearchAd.Fields.Id, AdGroupAd.Fields.Status,
-            ResponsiveSearchAd.Fields.ResponsiveSearchAdHeadlines,
-            ResponsiveSearchAd.Fields.ResponsiveSearchAdDescriptions
-        }
+                ' Create a selector.
+                Dim selector As New Selector
 
-        selector.ordering = New OrderBy() {OrderBy.Asc(ResponsiveSearchAd.Fields.Id)}
+                selector.fields = New String() { _
+                                                   ResponsiveSearchAd.Fields.Id,
+                                                   AdGroupAd.Fields.Status,
+                                                   ResponsiveSearchAd.Fields.
+                                                       ResponsiveSearchAdHeadlines,
+                                                   ResponsiveSearchAd.Fields.
+                                                       ResponsiveSearchAdDescriptions
+                                               }
 
-        selector.predicates = New Predicate() {
-          Predicate.Equals(AdGroupAd.Fields.AdGroupId, adGroupId),
-          Predicate.Equals("AdType", AdType.RESPONSIVE_SEARCH_AD.ToString())
-        }
+                selector.ordering = New OrderBy() {OrderBy.Asc(ResponsiveSearchAd.Fields.Id)}
 
-        ' Select the selector paging.
-        selector.paging = Paging.Default
+                selector.predicates =
+                    New Predicate() {Predicate.Equals(AdGroupAd.Fields.AdGroupId, adGroupId),
+                                     Predicate.Equals("AdType",
+                                                      AdType.RESPONSIVE_SEARCH_AD.ToString())}
 
-        Dim page As New AdGroupAdPage
+                ' Select the selector paging.
+                selector.paging = Paging.Default
 
-        Try
-          Do
-            ' Get the responsive search ads.
-            page = service.get(selector)
+                Dim page As New AdGroupAdPage
 
-            ' Display the results.
-            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-              Dim i As Integer = selector.paging.startIndex
+                Try
+                    Do
+                        ' Get the responsive search ads.
+                        page = service.get(selector)
 
-              For Each adGroupAd As AdGroupAd In page.entries
-                Dim ad As ResponsiveSearchAd = CType(adGroupAd.ad, ResponsiveSearchAd)
-                Console.WriteLine("{0} New responsive search ad with ID {1} and status " +
-                    "{2} was found.", i + 1, ad.id, adGroupAd.status)
+                        ' Display the results.
+                        If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+                            Dim i As Integer = selector.paging.startIndex
 
-                Console.WriteLine("Headlines:")
+                            For Each adGroupAd As AdGroupAd In page.entries
+                                Dim ad As ResponsiveSearchAd = CType(adGroupAd.ad,
+                                                                     ResponsiveSearchAd)
+                                Console.WriteLine(
+                                    "{0} New responsive search ad with ID {1} and status " +
+                                    "{2} was found.", i + 1, ad.id, adGroupAd.status)
 
-                For Each headline As AssetLink In ad.headlines
-                  Dim textAsset As TextAsset = CType(headline.asset, TextAsset)
-                  Console.WriteLine("    {0}", textAsset.assetText)
-                  If headline.pinnedFieldSpecified Then
-                    Console.WriteLine("      (pinned to {0})", headline.pinnedField)
-                  End If
-                Next
-                Console.WriteLine("Descriptions:")
-                For Each description As AssetLink In ad.descriptions
-                  Dim textAsset As TextAsset = CType(description.asset, TextAsset)
-                  Console.WriteLine("    {0}", textAsset.assetText)
-                  If (description.pinnedFieldSpecified) Then
-                    Console.WriteLine("      (pinned to {0})", description.pinnedField)
-                  End If
-                Next
-              Next
-              i += 1
-            End If
-            selector.paging.IncreaseOffset()
-          Loop While (selector.paging.startIndex < page.totalNumEntries)
-          Console.WriteLine("Number of responsive search ads found: {0}", page.totalNumEntries)
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to get responsive search ads.", e)
-        End Try
-      End Using
-      ' [END getResponsiveSearchAd] MOE:strip_line
-    End Sub
+                                Console.WriteLine("Headlines:")
 
-  End Class
-
+                                For Each headline As AssetLink In ad.headlines
+                                    Dim textAsset As TextAsset = CType(headline.asset, TextAsset)
+                                    Console.WriteLine("    {0}", textAsset.assetText)
+                                    If headline.pinnedFieldSpecified Then
+                                        Console.WriteLine("      (pinned to {0})",
+                                                          headline.pinnedField)
+                                    End If
+                                Next
+                                Console.WriteLine("Descriptions:")
+                                For Each description As AssetLink In ad.descriptions
+                                    Dim textAsset As TextAsset = CType(description.asset, TextAsset)
+                                    Console.WriteLine("    {0}", textAsset.assetText)
+                                    If (description.pinnedFieldSpecified) Then
+                                        Console.WriteLine("      (pinned to {0})",
+                                                          description.pinnedField)
+                                    End If
+                                Next
+                            Next
+                            i += 1
+                        End If
+                        selector.paging.IncreaseOffset()
+                    Loop While (selector.paging.startIndex < page.totalNumEntries)
+                    Console.WriteLine("Number of responsive search ads found: {0}",
+                                      page.totalNumEntries)
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to get responsive search ads.", e)
+                End Try
+            End Using
+            ' [END getResponsiveSearchAd] MOE:strip_line
+        End Sub
+    End Class
 End Namespace

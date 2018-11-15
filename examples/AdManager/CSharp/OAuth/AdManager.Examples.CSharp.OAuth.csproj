@@ -85,7 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Google.Ads.Common" Version="9.4.0" />
-    <PackageReference Include="Google.Dfp" Version="24.1.0" />
+    <PackageReference Include="Google.Dfp" Version="24.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

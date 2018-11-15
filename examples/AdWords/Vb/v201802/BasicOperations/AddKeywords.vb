@@ -17,112 +17,115 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201802
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
-
-  ''' <summary>
-  ''' This code example adds keywords to an ad group. To get ad groups, run
-  ''' GetAdGroups.vb.
-  ''' </summary>
-  Public Class AddKeywords
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Items being added in this code example.
+    ''' This code example adds keywords to an ad group. To get ad groups, run
+    ''' GetAdGroups.vb.
     ''' </summary>
-    ReadOnly KEYWORDS As String() = New String() {"mars cruise", "space hotel"}
+    Public Class AddKeywords
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
-    ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New AddKeywords
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
-        codeExample.Run(New AdWordsUser, adGroupId)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+        ''' <summary>
+        ''' Items being added in this code example.
+        ''' </summary>
+        ReadOnly KEYWORDS As String() = New String() {"mars cruise", "space hotel"}
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example adds keywords to an ad group. To get ad groups, run " &
-            "GetAdGroups.vb."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New AddKeywords
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim adGroupId As Long = Long.Parse("INSERT_ADGROUP_ID_HERE")
+                codeExample.Run(New AdWordsUser, adGroupId)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="adGroupId">Id of the ad group to which keywords are added.
-    ''' </param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-      Using adGroupCriterionService As AdGroupCriterionService = CType(user.GetService(
-          AdWordsService.v201802.AdGroupCriterionService), AdGroupCriterionService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example adds keywords to an ad group. To get ad groups, run " &
+                       "GetAdGroups.vb."
+            End Get
+        End Property
 
-        Dim operations As New List(Of AdGroupCriterionOperation)
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="adGroupId">Id of the ad group to which keywords are added.
+        ''' </param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
+            Using adGroupCriterionService As AdGroupCriterionService = CType(
+                user.GetService(
+                    AdWordsService.v201802.AdGroupCriterionService),
+                AdGroupCriterionService)
 
-        For Each keywordText As String In KEYWORDS
-          ' Create the keyword.
-          Dim keyword As New Keyword
-          keyword.text = keywordText
-          keyword.matchType = KeywordMatchType.BROAD
+                Dim operations As New List(Of AdGroupCriterionOperation)
 
-          ' Create the biddable ad group criterion.
-          Dim keywordCriterion As New BiddableAdGroupCriterion
-          keywordCriterion.adGroupId = adGroupId
-          keywordCriterion.criterion = keyword
+                For Each keywordText As String In KEYWORDS
+                    ' Create the keyword.
+                    Dim keyword As New Keyword
+                    keyword.text = keywordText
+                    keyword.matchType = KeywordMatchType.BROAD
 
-          ' Optional: Set the user status.
-          keywordCriterion.userStatus = UserStatus.PAUSED
+                    ' Create the biddable ad group criterion.
+                    Dim keywordCriterion As New BiddableAdGroupCriterion
+                    keywordCriterion.adGroupId = adGroupId
+                    keywordCriterion.criterion = keyword
 
-          ' Optional: Set the keyword destination url.
-          keywordCriterion.finalUrls = New UrlList()
-          keywordCriterion.finalUrls.urls = New String() {"http://example.com/mars/cruise/?kw=" &
-              HttpUtility.UrlEncode(keywordText)}
+                    ' Optional: Set the user status.
+                    keywordCriterion.userStatus = UserStatus.PAUSED
 
-          ' Create the operations.
-          Dim operation As New AdGroupCriterionOperation
-          operation.operator = [Operator].ADD
-          operation.operand = keywordCriterion
+                    ' Optional: Set the keyword destination url.
+                    keywordCriterion.finalUrls = New UrlList()
+                    keywordCriterion.finalUrls.urls = New String() _
+                        {"http://example.com/mars/cruise/?kw=" &
+                         HttpUtility.UrlEncode(keywordText)}
 
-          operations.Add(operation)
-        Next
+                    ' Create the operations.
+                    Dim operation As New AdGroupCriterionOperation
+                    operation.operator = [Operator].ADD
+                    operation.operand = keywordCriterion
 
-        Try
-          ' Create the keywords.
-          Dim retVal As AdGroupCriterionReturnValue = adGroupCriterionService.mutate(
-              operations.ToArray())
+                    operations.Add(operation)
+                Next
 
-          ' Display the results.
-          If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing)) Then
-            For Each adGroupCriterion As AdGroupCriterion In retVal.value
-              ' If you are adding multiple type of criteria, then you may need to
-              ' check for
-              '
-              ' if (adGroupCriterion is Keyword) { ... }
-              '
-              ' to identify the criterion type.
-              Console.WriteLine("Keyword with ad group id = '{0}, keyword id = '{1}, text = " &
-                  "'{2}' and match type = '{3}' was created.", adGroupCriterion.adGroupId,
-                  adGroupCriterion.criterion.id, TryCast(adGroupCriterion.criterion, Keyword).text,
-                  TryCast(adGroupCriterion.criterion, Keyword).matchType)
-            Next
-          Else
-            Console.WriteLine("No keywords were added.")
-          End If
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to create keywords.", e)
-        End Try
-      End Using
-    End Sub
+                Try
+                    ' Create the keywords.
+                    Dim retVal As AdGroupCriterionReturnValue = adGroupCriterionService.mutate(
+                        operations.ToArray())
 
-  End Class
-
+                    ' Display the results.
+                    If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing)) Then
+                        For Each adGroupCriterion As AdGroupCriterion In retVal.value
+                            ' If you are adding multiple type of criteria, then you may need to
+                            ' check for
+                            '
+                            ' if (adGroupCriterion is Keyword) { ... }
+                            '
+                            ' to identify the criterion type.
+                            Console.WriteLine(
+                                "Keyword with ad group id = '{0}, keyword id = '{1}, text = " &
+                                "'{2}' and match type = '{3}' was created.",
+                                adGroupCriterion.adGroupId,
+                                adGroupCriterion.criterion.id,
+                                TryCast(adGroupCriterion.criterion, Keyword).text,
+                                TryCast(adGroupCriterion.criterion, Keyword).matchType)
+                        Next
+                    Else
+                        Console.WriteLine("No keywords were added.")
+                    End If
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to create keywords.", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

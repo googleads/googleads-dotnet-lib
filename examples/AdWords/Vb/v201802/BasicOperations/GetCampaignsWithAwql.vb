@@ -17,84 +17,85 @@ Imports Google.Api.Ads.AdWords.Util.Reports.v201802
 Imports Google.Api.Ads.AdWords.v201802
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
-
-  ''' <summary>
-  ''' This code example lists all campaigns using an AWQL query. See
-  ''' https://developers.google.com/adwords/api/docs/guides/awql for AWQL
-  ''' documentation. To add a campaign, run AddCampaign.vb.
-  ''' </summary>
-  Public Class GetCampaignsWithAwql
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example lists all campaigns using an AWQL query. See
+    ''' https://developers.google.com/adwords/api/docs/guides/awql for AWQL
+    ''' documentation. To add a campaign, run AddCampaign.vb.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New GetCampaignsWithAwql
-      Console.WriteLine(codeExample.Description)
-      Try
-        codeExample.Run(New AdWordsUser)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class GetCampaignsWithAwql
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example lists all campaigns using an AWQL query. See " &
-            "https://developers.google.com/adwords/api/docs/guides/awql for AWQL " &
-            "documentation. To add a campaign, run AddCampaign.vb."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New GetCampaignsWithAwql
+            Console.WriteLine(codeExample.Description)
+            Try
+                codeExample.Run(New AdWordsUser)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    Public Sub Run(ByVal user As AdWordsUser)
-      Using campaignService As CampaignService = CType(user.GetService(
-          AdWordsService.v201802.CampaignService), CampaignService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example lists all campaigns using an AWQL query. See " &
+                       "https://developers.google.com/adwords/api/docs/guides/awql for AWQL " &
+                       "documentation. To add a campaign, run AddCampaign.vb."
+            End Get
+        End Property
 
-        ' [START create_query] MOE:strip_line
-        ' Create the query.
-        Dim query As SelectQuery = New SelectQueryBuilder() _
-            .Select(Campaign.Fields.Name, Campaign.Fields.Id, Campaign.Fields.Status) _
-            .OrderByAscending(Campaign.Fields.Name) _
-            .DefaultLimit() _
-            .Build()
-        ' [END create_query] MOE:strip_line
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        Public Sub Run(ByVal user As AdWordsUser)
+            Using campaignService As CampaignService = CType(
+                user.GetService(
+                    AdWordsService.v201802.CampaignService),
+                CampaignService)
 
-        ' [START execute_query] MOE:strip_line
-        Dim page As New CampaignPage()
-        Dim i As Integer = 0
+                ' [START create_query] MOE:strip_line
+                ' Create the query.
+                Dim query As SelectQuery = New SelectQueryBuilder() _
+                        .Select(Campaign.Fields.Name, Campaign.Fields.Id, Campaign.Fields.Status) _
+                        .OrderByAscending(Campaign.Fields.Name) _
+                        .DefaultLimit() _
+                        .Build()
+                ' [END create_query] MOE:strip_line
 
-        Try
-          Do
-            page = campaignService.query(query)
+                ' [START execute_query] MOE:strip_line
+                Dim page As New CampaignPage()
+                Dim i As Integer = 0
 
-            ' Display the results.
-            If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
-              For Each campaign As Campaign In page.entries
-                Console.WriteLine("{0}) Campaign with id = '{1}', name = '{2}' and status = " &
-                    "'{3}' was found.", i, campaign.id, campaign.name, campaign.status)
-                i += 1
-              Next
-            End If
-            query.NextPage(page)
-          Loop While (query.HasNextPage(page))
-          Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to retrieve campaign(s).", e)
-        End Try
-        ' [END execute_query] MOE:strip_line
-      End Using
-    End Sub
+                Try
+                    Do
+                        page = campaignService.query(query)
 
-  End Class
-
+                        ' Display the results.
+                        If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
+                            For Each campaign As Campaign In page.entries
+                                Console.WriteLine(
+                                    "{0}) Campaign with id = '{1}', name = '{2}' and status = " &
+                                    "'{3}' was found.", i, campaign.id, campaign.name,
+                                    campaign.status)
+                                i += 1
+                            Next
+                        End If
+                        query.NextPage(page)
+                    Loop While (query.HasNextPage(page))
+                    Console.WriteLine("Number of campaigns found: {0}", page.totalNumEntries)
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to retrieve campaign(s).", e)
+                End Try
+                ' [END execute_query] MOE:strip_line
+            End Using
+        End Sub
+    End Class
 End Namespace

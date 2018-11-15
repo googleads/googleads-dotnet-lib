@@ -18,190 +18,192 @@ Imports Google.Api.Ads.AdWords.v201802
 Imports DayOfWeek = Google.Api.Ads.AdWords.v201802.DayOfWeek
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
-
-  ''' <summary>
-  ''' This code example adds a price extension and associates it with an
-  ''' account. Campaign targeting is also set using the specified campaign ID.
-  ''' To get campaigns, run AddCampaigns.vb.
-  ''' </summary>
-  Public Class AddPrices
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example adds a price extension and associates it with an
+    ''' account. Campaign targeting is also set using the specified campaign ID.
+    ''' To get campaigns, run AddCampaigns.vb.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New AddPrices
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
-        codeExample.Run(New AdWordsUser, campaignId)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class AddPrices
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example adds a price extension and associates it with an account. " &
-            "Campaign targeting is also set using the specified campaign ID. To get " &
-            "campaigns, run AddCampaigns.vb."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New AddPrices
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim campaignId As Long = Long.Parse("INSERT_CAMPAIGN_ID_HERE")
+                codeExample.Run(New AdWordsUser, campaignId)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="campaignId">Id of the campaign with which sitelinks are associated.
-    ''' </param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
-      Using customerExtensionSettingService As CustomerExtensionSettingService =
-          DirectCast(user.GetService(AdWordsService.v201802.CustomerExtensionSettingService),
-                                    CustomerExtensionSettingService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return _
+                    "This code example adds a price extension and associates it with an account. " &
+                    "Campaign targeting is also set using the specified campaign ID. To get " &
+                    "campaigns, run AddCampaigns.vb."
+            End Get
+        End Property
 
-        ' [START createFeedItems] MOE:strip_line
-        ' Create the price extension feed item.
-        Dim priceFeedItem As New PriceFeedItem
-        priceFeedItem.priceExtensionType = PriceExtensionType.SERVICES
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="campaignId">Id of the campaign with which sitelinks are associated.
+        ''' </param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
+            Using customerExtensionSettingService As CustomerExtensionSettingService =
+                DirectCast(user.GetService(AdWordsService.v201802.CustomerExtensionSettingService),
+                           CustomerExtensionSettingService)
 
-        ' Price qualifier is optional.
-        priceFeedItem.priceQualifier = PriceExtensionPriceQualifier.FROM
-        priceFeedItem.trackingUrlTemplate = "http://tracker.example.com/?u={lpurl}"
-        priceFeedItem.language = "en"
+                ' [START createFeedItems] MOE:strip_line
+                ' Create the price extension feed item.
+                Dim priceFeedItem As New PriceFeedItem
+                priceFeedItem.priceExtensionType = PriceExtensionType.SERVICES
 
-        priceFeedItem.campaignTargeting = New FeedItemCampaignTargeting()
-        priceFeedItem.campaignTargeting.TargetingCampaignId = campaignId
+                ' Price qualifier is optional.
+                priceFeedItem.priceQualifier = PriceExtensionPriceQualifier.FROM
+                priceFeedItem.trackingUrlTemplate = "http://tracker.example.com/?u={lpurl}"
+                priceFeedItem.language = "en"
 
-        Dim saturdaySchedule As New FeedItemSchedule
-        saturdaySchedule.dayOfWeek = DayOfWeek.SATURDAY
-        saturdaySchedule.startHour = 10
-        saturdaySchedule.startMinute = MinuteOfHour.ZERO
-        saturdaySchedule.endHour = 22
-        saturdaySchedule.endMinute = MinuteOfHour.ZERO
+                priceFeedItem.campaignTargeting = New FeedItemCampaignTargeting()
+                priceFeedItem.campaignTargeting.TargetingCampaignId = campaignId
 
-        Dim sundaySchedule As New FeedItemSchedule
-        sundaySchedule.dayOfWeek = DayOfWeek.SUNDAY
-        sundaySchedule.startHour = 10
-        sundaySchedule.startMinute = MinuteOfHour.ZERO
-        sundaySchedule.endHour = 18
-        sundaySchedule.endMinute = MinuteOfHour.ZERO
+                Dim saturdaySchedule As New FeedItemSchedule
+                saturdaySchedule.dayOfWeek = DayOfWeek.SATURDAY
+                saturdaySchedule.startHour = 10
+                saturdaySchedule.startMinute = MinuteOfHour.ZERO
+                saturdaySchedule.endHour = 22
+                saturdaySchedule.endMinute = MinuteOfHour.ZERO
 
-        priceFeedItem.scheduling = New FeedItemSchedule() {saturdaySchedule, sundaySchedule}
+                Dim sundaySchedule As New FeedItemSchedule
+                sundaySchedule.dayOfWeek = DayOfWeek.SUNDAY
+                sundaySchedule.startHour = 10
+                sundaySchedule.startMinute = MinuteOfHour.ZERO
+                sundaySchedule.endHour = 18
+                sundaySchedule.endMinute = MinuteOfHour.ZERO
 
-        ' To create a price extension, at least three table rows are needed.
-        Dim priceTableRows As New List(Of PriceTableRow)
+                priceFeedItem.scheduling = New FeedItemSchedule() {saturdaySchedule, sundaySchedule}
 
-        Dim currencyCode As String = "USD"
+                ' To create a price extension, at least three table rows are needed.
+                Dim priceTableRows As New List(Of PriceTableRow)
 
-        priceTableRows.Add(
-            CreatePriceTableRow(
-                "Scrubs",
-                "Body Scrub, Salt Scrub",
-                "http://www.example.com/scrubs",
-                "http://m.example.com/scrubs",
-                60000000,
-                currencyCode,
-                PriceExtensionPriceUnit.PER_HOUR))
-        priceTableRows.Add(
-            CreatePriceTableRow(
-                "Hair Cuts",
-                "Once a month",
-                "http://www.example.com/haircuts",
-                "http://m.example.com/haircuts",
-                75000000,
-                currencyCode,
-                PriceExtensionPriceUnit.PER_MONTH))
-        priceTableRows.Add(
-            CreatePriceTableRow(
-                "Skin Care Package",
-                "Four times a month",
-                "http://www.example.com/skincarepackage",
-                Nothing,
-                250000000,
-                currencyCode,
-                PriceExtensionPriceUnit.PER_MONTH))
+                Dim currencyCode As String = "USD"
 
-        priceFeedItem.tableRows = priceTableRows.ToArray()
+                priceTableRows.Add(
+                    CreatePriceTableRow(
+                        "Scrubs",
+                        "Body Scrub, Salt Scrub",
+                        "http://www.example.com/scrubs",
+                        "http://m.example.com/scrubs",
+                        60000000,
+                        currencyCode,
+                        PriceExtensionPriceUnit.PER_HOUR))
+                priceTableRows.Add(
+                    CreatePriceTableRow(
+                        "Hair Cuts",
+                        "Once a month",
+                        "http://www.example.com/haircuts",
+                        "http://m.example.com/haircuts",
+                        75000000,
+                        currencyCode,
+                        PriceExtensionPriceUnit.PER_MONTH))
+                priceTableRows.Add(
+                    CreatePriceTableRow(
+                        "Skin Care Package",
+                        "Four times a month",
+                        "http://www.example.com/skincarepackage",
+                        Nothing,
+                        250000000,
+                        currencyCode,
+                        PriceExtensionPriceUnit.PER_MONTH))
 
-        ' Create your campaign extension settings. This associates the sitelinks
-        ' to your campaign.
-        Dim customerExtensionSetting As New CustomerExtensionSetting
-        customerExtensionSetting.extensionType = FeedType.PRICE
-        customerExtensionSetting.extensionSetting = New ExtensionSetting
-        customerExtensionSetting.extensionSetting.extensions =
-            New ExtensionFeedItem() {priceFeedItem}
-        ' [END createFeedItems] MOE:strip_line
+                priceFeedItem.tableRows = priceTableRows.ToArray()
 
-        Dim operation As New CustomerExtensionSettingOperation
-        operation.operand = customerExtensionSetting
-        operation.operator = [Operator].ADD
+                ' Create your campaign extension settings. This associates the sitelinks
+                ' to your campaign.
+                Dim customerExtensionSetting As New CustomerExtensionSetting
+                customerExtensionSetting.extensionType = FeedType.PRICE
+                customerExtensionSetting.extensionSetting = New ExtensionSetting
+                customerExtensionSetting.extensionSetting.extensions =
+                    New ExtensionFeedItem() {priceFeedItem}
+                ' [END createFeedItems] MOE:strip_line
 
-        Try
-          ' Add the extensions.
-          Dim retVal As CustomerExtensionSettingReturnValue =
-              customerExtensionSettingService.mutate(
-                  New CustomerExtensionSettingOperation() {operation})
-          If Not (retVal.value Is Nothing) AndAlso retVal.value.Length > 0 Then
-            Dim newExtensionSetting As CustomerExtensionSetting = retVal.value(0)
-            Console.WriteLine("Extension setting with type '{0}' was added.",
-                newExtensionSetting.extensionType)
-          Else
-            Console.WriteLine("No extension settings were created.")
-          End If
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to create extension settings.", e)
-        End Try
-      End Using
-    End Sub
+                Dim operation As New CustomerExtensionSettingOperation
+                operation.operand = customerExtensionSetting
+                operation.operator = [Operator].ADD
 
-    '  [START createPriceTableRow] MOE:strip_line
-    ''' <summary>
-    ''' Creates a price table row.
-    ''' </summary>
-    ''' <param name="header">The row header.</param>
-    ''' <param name="description">The description text.</param>
-    ''' <param name="finalUrl">The final URL.</param>
-    ''' <param name="finalMobileUrl">The mobile final URL, or null if this field
-    ''' should not be set.</param>
-    ''' <param name="priceInMicros">The price in micros.</param>
-    ''' <param name="currencyCode">The currency code.</param>
-    ''' <param name="priceUnit">The price unit.</param>
-    ''' <returns>A price table row for creating price extension.</returns>
-    Private Shared Function CreatePriceTableRow(ByVal header As String,
-        ByVal description As String, ByVal finalUrl As String, ByVal finalMobileUrl As String,
-        ByVal priceInMicros As Long, ByVal currencyCode As String,
-        ByVal priceUnit As PriceExtensionPriceUnit) As PriceTableRow
+                Try
+                    ' Add the extensions.
+                    Dim retVal As CustomerExtensionSettingReturnValue =
+                            customerExtensionSettingService.mutate(
+                                New CustomerExtensionSettingOperation() {operation})
+                    If Not (retVal.value Is Nothing) AndAlso retVal.value.Length > 0 Then
+                        Dim newExtensionSetting As CustomerExtensionSetting = retVal.value(0)
+                        Console.WriteLine("Extension setting with type '{0}' was added.",
+                                          newExtensionSetting.extensionType)
+                    Else
+                        Console.WriteLine("No extension settings were created.")
+                    End If
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to create extension settings.", e)
+                End Try
+            End Using
+        End Sub
 
-      Dim retval As New PriceTableRow
-      retval.header = header
-      retval.description = description
-      retval.finalUrls = New UrlList()
-      retval.finalUrls.urls = New String() {finalUrl}
+        '  [START createPriceTableRow] MOE:strip_line
+        ''' <summary>
+        ''' Creates a price table row.
+        ''' </summary>
+        ''' <param name="header">The row header.</param>
+        ''' <param name="description">The description text.</param>
+        ''' <param name="finalUrl">The final URL.</param>
+        ''' <param name="finalMobileUrl">The mobile final URL, or null if this field
+        ''' should not be set.</param>
+        ''' <param name="priceInMicros">The price in micros.</param>
+        ''' <param name="currencyCode">The currency code.</param>
+        ''' <param name="priceUnit">The price unit.</param>
+        ''' <returns>A price table row for creating price extension.</returns>
+        Private Shared Function CreatePriceTableRow(ByVal header As String,
+                                                    ByVal description As String,
+                                                    ByVal finalUrl As String,
+                                                    ByVal finalMobileUrl As String,
+                                                    ByVal priceInMicros As Long,
+                                                    ByVal currencyCode As String,
+                                                    ByVal priceUnit As PriceExtensionPriceUnit) _
+            As PriceTableRow
 
-      Dim moneyWithCurrency As New MoneyWithCurrency
-      moneyWithCurrency.currencyCode = currencyCode
-      moneyWithCurrency.money = New Money
-      moneyWithCurrency.money.microAmount = priceInMicros
+            Dim retval As New PriceTableRow
+            retval.header = header
+            retval.description = description
+            retval.finalUrls = New UrlList()
+            retval.finalUrls.urls = New String() {finalUrl}
 
-      retval.price = moneyWithCurrency
-      retval.priceUnit = priceUnit
+            Dim moneyWithCurrency As New MoneyWithCurrency
+            moneyWithCurrency.currencyCode = currencyCode
+            moneyWithCurrency.money = New Money
+            moneyWithCurrency.money.microAmount = priceInMicros
 
-      ' Optional: Set the mobile final URLs.
-      If Not String.IsNullOrEmpty(finalMobileUrl) Then
-        retval.finalMobileUrls = New UrlList()
-        retval.finalMobileUrls.urls = New String() {finalMobileUrl}
-      End If
+            retval.price = moneyWithCurrency
+            retval.priceUnit = priceUnit
 
-      Return retval
-    End Function
-    ' [END createPriceTableRow] MOE:strip_line
+            ' Optional: Set the mobile final URLs.
+            If Not String.IsNullOrEmpty(finalMobileUrl) Then
+                retval.finalMobileUrls = New UrlList()
+                retval.finalMobileUrls.urls = New String() {finalMobileUrl}
+            End If
 
-  End Class
-
+            Return retval
+        End Function
+        ' [END createPriceTableRow] MOE:strip_line
+    End Class
 End Namespace

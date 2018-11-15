@@ -60,111 +60,110 @@ namespace Google.Api.Ads.AdManager.Examples.CSharp.v201808
         {
             using (ProposalLineItemService proposalLineItemService =
                 user.GetService<ProposalLineItemService>())
-
-                using (NetworkService networkService = user.GetService<NetworkService>())
-                {
-                    ProposalLineItem proposalLineItem = new ProposalLineItem();
-                    proposalLineItem.name = "Programmatic proposal line item #" +
-                        new Random().Next(int.MaxValue);
-                    proposalLineItem.proposalId = proposalId;
-                    proposalLineItem.lineItemType = LineItemType.STANDARD;
-
+            using (NetworkService networkService = user.GetService<NetworkService>())
+            {
+                ProposalLineItem proposalLineItem = new ProposalLineItem() {
+                    name = "Programmatic proposal line item #" +
+                        new Random().Next(int.MaxValue),
+                    proposalId = proposalId,
+                    lineItemType = LineItemType.STANDARD,
                     // Set required Marketplace information.
-                    proposalLineItem.marketplaceInfo = new ProposalLineItemMarketplaceInfo()
+                    marketplaceInfo = new ProposalLineItemMarketplaceInfo()
                     {
                         adExchangeEnvironment = AdExchangeEnvironment.DISPLAY
-                    };
+                    }
+                };
 
-                    // Get the root ad unit ID used to target the whole site.
-                    String rootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
+                // Get the root ad unit ID used to target the whole site.
+                String rootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
 
-                    // Create inventory targeting.
-                    InventoryTargeting inventoryTargeting = new InventoryTargeting();
-
-                    // Create ad unit targeting for the root ad unit (i.e. the whole network).
-                    AdUnitTargeting adUnitTargeting = new AdUnitTargeting();
-                    adUnitTargeting.adUnitId = rootAdUnitId;
-                    adUnitTargeting.includeDescendants = true;
-
-                    inventoryTargeting.targetedAdUnits = new AdUnitTargeting[]
+                // Create targeting.
+                proposalLineItem.targeting = new Targeting() {
+                    inventoryTargeting = new InventoryTargeting()
                     {
-                        adUnitTargeting
-                    };
+                        // Create ad unit targeting for the root ad unit (i.e. the whole network).
+                        targetedAdUnits = new AdUnitTargeting[] {
+                            new AdUnitTargeting() {
+                                adUnitId = rootAdUnitId,
+                                includeDescendants = true
+                            }
+                        }
+                    },
+                    technologyTargeting = new TechnologyTargeting() {
+                        deviceCapabilityTargeting = new DeviceCapabilityTargeting() {
+                            excludedDeviceCapabilities = new DeviceCapability[] {
+                                // Exclude Mobile Apps
+                                new DeviceCapability() { id = 5005L }
+                            }
+                        }
+                    }
+                };
 
-                    // Create targeting.
-                    Targeting targeting = new Targeting();
-                    targeting.inventoryTargeting = inventoryTargeting;
-                    proposalLineItem.targeting = targeting;
-
-                    // Create creative placeholder.
-                    Size size = new Size()
+                // Create creative placeholder.
+                CreativePlaceholder creativePlaceholder = new CreativePlaceholder()
+                {
+                    size = new Size()
                     {
                         width = 300,
                         height = 250,
                         isAspectRatio = false
-                    };
-                    CreativePlaceholder creativePlaceholder = new CreativePlaceholder();
-                    creativePlaceholder.size = size;
-
-                    proposalLineItem.creativePlaceholders = new CreativePlaceholder[]
-                    {
-                        creativePlaceholder
-                    };
-
-                    // Set the length of the proposal line item to run.
-                    proposalLineItem.startDateTime =
-                        DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(7),
-                            "America/New_York");
-                    proposalLineItem.endDateTime =
-                        DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(30),
-                            "America/New_York");
-
-                    // Set delivery specifications for the proposal line item.
-                    proposalLineItem.deliveryRateType = DeliveryRateType.EVENLY;
-
-                    // Set pricing for the proposal line item for 1000 impressions at a CPM of $2
-                    // for a total value of $2.
-                    proposalLineItem.goal = new Goal()
-                    {
-                        unitType = UnitType.IMPRESSIONS,
-                        units = 1000L
-                    };
-                    proposalLineItem.netCost = new Money()
-                    {
-                        currencyCode = "USD",
-                        microAmount = 2000000L
-                    };
-                    proposalLineItem.netRate = new Money()
-                    {
-                        currencyCode = "USD",
-                        microAmount = 2000000L
-                    };
-                    proposalLineItem.rateType = RateType.CPM;
-
-                    try
-                    {
-                        // Create the proposal line item on the server.
-                        ProposalLineItem[] proposalLineItems =
-                            proposalLineItemService.createProposalLineItems(new ProposalLineItem[]
-                            {
-                                proposalLineItem
-                            });
-
-                        foreach (ProposalLineItem createdProposalLineItem in proposalLineItems)
-                        {
-                            Console.WriteLine(
-                                "A programmatic proposal line item with ID \"{0}\" " +
-                                "and name \"{1}\" was created.", createdProposalLineItem.id,
-                                createdProposalLineItem.name);
-                        }
                     }
-                    catch (Exception e)
+                };
+
+                proposalLineItem.creativePlaceholders = new CreativePlaceholder[]
+                {
+                    creativePlaceholder
+                };
+
+                // Set the length of the proposal line item to run.
+                proposalLineItem.startDateTime =
+                    DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(7),
+                        "America/New_York");
+                proposalLineItem.endDateTime =
+                    DateTimeUtilities.FromDateTime(System.DateTime.Now.AddDays(30),
+                        "America/New_York");
+
+                // Set delivery specifications for the proposal line item.
+                proposalLineItem.deliveryRateType = DeliveryRateType.EVENLY;
+
+                // Set pricing for the proposal line item for 1000 impressions at a CPM of $2
+                // for a total value of $2.
+                proposalLineItem.goal = new Goal()
+                {
+                    unitType = UnitType.IMPRESSIONS,
+                    units = 1000L
+                };
+                proposalLineItem.netRate = new Money()
+                {
+                    currencyCode = "USD",
+                    microAmount = 2000000L
+                };
+                proposalLineItem.rateType = RateType.CPM;
+
+                try
+                {
+                    // Create the proposal line item on the server.
+                    ProposalLineItem[] proposalLineItems =
+                        proposalLineItemService.createProposalLineItems(new ProposalLineItem[]
+                        {
+                            proposalLineItem
+                        });
+
+                    foreach (ProposalLineItem createdProposalLineItem in proposalLineItems)
                     {
                         Console.WriteLine(
-                            "Failed to create programmatic proposal line items. " +
-                            "Exception says \"{0}\"", e.Message);
+                            "A programmatic proposal line item with ID \"{0}\" " +
+                            "and name \"{1}\" was created.", createdProposalLineItem.id,
+                            createdProposalLineItem.name);
                     }
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(
+                        "Failed to create programmatic proposal line items. " +
+                        "Exception says \"{0}\"", e.Message);
+                }
+            }
         }
     }
 }

@@ -16,99 +16,100 @@ Imports Google.Api.Ads.AdWords.Lib
 Imports Google.Api.Ads.AdWords.v201802
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201802
-
-  ''' <summary>
-  ''' This code example illustrates how to create a draft and access its
-  ''' associated draft campaign. See the Campaign Drafts and Experiments guide
-  ''' for more information:
-  ''' https://developers.google.com/adwords/api/docs/guides/campaign-drafts-experiments
-  ''' </summary>
-  Public Class AddDraft
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example illustrates how to create a draft and access its
+    ''' associated draft campaign. See the Campaign Drafts and Experiments guide
+    ''' for more information:
+    ''' https://developers.google.com/adwords/api/docs/guides/campaign-drafts-experiments
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New AddDraft
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim baseCampaignId As Long = Long.Parse("INSERT_BASE_CAMPAIGN_ID_HERE")
+    Public Class AddDraft
+        Inherits ExampleBase
 
-        codeExample.Run(New AdWordsUser, baseCampaignId)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New AddDraft
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim baseCampaignId As Long = Long.Parse("INSERT_BASE_CAMPAIGN_ID_HERE")
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example adds a label to multiple campaigns."
-      End Get
-    End Property
+                codeExample.Run(New AdWordsUser, baseCampaignId)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="baseCampaignId">Id of the base campaign for creating draft.</param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal baseCampaignId As Long)
-      Using draftService As DraftService = CType(user.GetService(
-          AdWordsService.v201802.DraftService), DraftService)
-        ' [START createDraft] MOE:strip_line
-        Dim draft As New Draft()
-        draft.baseCampaignId = baseCampaignId
-        draft.draftName = "Test Draft #" + ExampleUtilities.GetRandomString()
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example adds a label to multiple campaigns."
+            End Get
+        End Property
 
-        Dim draftOperation As New DraftOperation()
-        draftOperation.operator = [Operator].ADD
-        draftOperation.operand = draft
-        ' [END createDraft] MOE:strip_line
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="baseCampaignId">Id of the base campaign for creating draft.</param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal baseCampaignId As Long)
+            Using draftService As DraftService = CType(
+                user.GetService(
+                    AdWordsService.v201802.DraftService),
+                DraftService)
+                ' [START createDraft] MOE:strip_line
+                Dim draft As New Draft()
+                draft.baseCampaignId = baseCampaignId
+                draft.draftName = "Test Draft #" + ExampleUtilities.GetRandomString()
 
-        Try
-          draft = draftService.mutate(New DraftOperation() {draftOperation}).value(0)
+                Dim draftOperation As New DraftOperation()
+                draftOperation.operator = [Operator].ADD
+                draftOperation.operand = draft
+                ' [END createDraft] MOE:strip_line
 
-          Console.WriteLine("Draft with ID {0}, base campaign ID {1} and draft campaign ID " &
-              "{2} created.", draft.draftId, draft.baseCampaignId, draft.draftCampaignId)
+                Try
+                    draft = draftService.mutate(New DraftOperation() {draftOperation}).value(0)
 
-          ' Once the draft is created, you can modify the draft campaign as if it
-          ' were a real campaign. For example, you may add criteria, adjust bids,
-          ' or even include additional ads. Adding a criterion is shown here.
-          Dim campaignCriterionService As CampaignCriterionService =
-              CType(user.GetService(AdWordsService.v201802.CampaignCriterionService),
-                  CampaignCriterionService)
-          ' [START customizeDraft] MOE:strip_line
-          Dim language As New Language()
-          language.id = 1003L ' Spanish
+                    Console.WriteLine(
+                        "Draft with ID {0}, base campaign ID {1} and draft campaign ID " &
+                        "{2} created.", draft.draftId, draft.baseCampaignId, draft.draftCampaignId)
 
-          ' Make sure to use the draftCampaignId when modifying the virtual draft
-          ' campaign.
-          Dim campaignCriterion As New CampaignCriterion()
-          campaignCriterion.campaignId = draft.draftCampaignId
-          campaignCriterion.criterion = language
+                    ' Once the draft is created, you can modify the draft campaign as if it
+                    ' were a real campaign. For example, you may add criteria, adjust bids,
+                    ' or even include additional ads. Adding a criterion is shown here.
+                    Dim campaignCriterionService As CampaignCriterionService =
+                            CType(user.GetService(AdWordsService.v201802.CampaignCriterionService),
+                                  CampaignCriterionService)
+                    ' [START customizeDraft] MOE:strip_line
+                    Dim language As New Language()
+                    language.id = 1003L ' Spanish
 
-          Dim criterionOperation As New CampaignCriterionOperation()
-          criterionOperation.operator = [Operator].ADD
-          criterionOperation.operand = campaignCriterion
+                    ' Make sure to use the draftCampaignId when modifying the virtual draft
+                    ' campaign.
+                    Dim campaignCriterion As New CampaignCriterion()
+                    campaignCriterion.campaignId = draft.draftCampaignId
+                    campaignCriterion.criterion = language
 
-          campaignCriterion = campaignCriterionService.mutate(
-              New CampaignCriterionOperation() {criterionOperation}).value(0)
-          ' [END customizeDraft] MOE:strip_line
+                    Dim criterionOperation As New CampaignCriterionOperation()
+                    criterionOperation.operator = [Operator].ADD
+                    criterionOperation.operand = campaignCriterion
 
-          Console.WriteLine("Draft updated to include criteria in draft campaign ID {0}.",
-              draft.draftCampaignId)
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to create draft campaign and add " &
-              "criteria.", e)
-        End Try
-      End Using
-    End Sub
+                    campaignCriterion = campaignCriterionService.mutate(
+                        New CampaignCriterionOperation() {criterionOperation}).value(0)
+                    ' [END customizeDraft] MOE:strip_line
 
-  End Class
-
+                    Console.WriteLine("Draft updated to include criteria in draft campaign ID {0}.",
+                                      draft.draftCampaignId)
+                Catch e As Exception
+                    Throw _
+                        New System.ApplicationException("Failed to create draft campaign and add " &
+                                                        "criteria.", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

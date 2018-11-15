@@ -19,13 +19,13 @@ Imports System.Collections.Generic
 Imports System.IO
 
 Namespace Google.Api.Ads.AdWords.Examples.VB
-  ''' <summary>
-  ''' This abstract class represents a code example.
-  ''' </summary>
-  Public MustInherit Class ExampleBase
     ''' <summary>
-    ''' Returns a description about the code example.
+    ''' This abstract class represents a code example.
     ''' </summary>
-    Public MustOverride ReadOnly Property Description() As String
-  End Class
+    Public MustInherit Class ExampleBase
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public MustOverride ReadOnly Property Description() As String
+    End Class
 End Namespace

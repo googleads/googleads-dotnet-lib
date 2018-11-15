@@ -17,82 +17,84 @@ Imports Google.Api.Ads.AdWords.v201809
 Imports Google.Api.Ads.Common.Util
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
-
-  ''' <summary>
-  ''' This code example uploads an HTML5 zip file.
-  ''' </summary>
-  Public Class UploadMediaBundle
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example uploads an HTML5 zip file.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New UploadMediaBundle
-      Console.WriteLine(codeExample.Description)
-      Try
-        codeExample.Run(New AdWordsUser)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class UploadMediaBundle
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example uploads an HTML5 zip file."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New UploadMediaBundle
+            Console.WriteLine(codeExample.Description)
+            Try
+                codeExample.Run(New AdWordsUser)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    Public Sub Run(ByVal user As AdWordsUser)
-      Using mediaService As MediaService = CType(user.GetService(
-          AdWordsService.v201809.MediaService), MediaService)
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return "This code example uploads an HTML5 zip file."
+            End Get
+        End Property
 
-        Try
-          ' Create HTML5 media.
-          Dim html5Zip As Byte() = MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9Y7qI2",
-              user.Config)
-          ' Create a media bundle containing the zip file with all the HTML5 components.
-          Dim mediaBundleArray(1) As Media
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        Public Sub Run(ByVal user As AdWordsUser)
+            Using mediaService As MediaService = CType(
+                user.GetService(
+                    AdWordsService.v201809.MediaService),
+                MediaService)
 
-          Dim mediaBundle As New MediaBundle()
-          mediaBundle.data = html5Zip
-          mediaBundle.type = MediaMediaType.MEDIA_BUNDLE
+                Try
+                    ' Create HTML5 media.
+                    Dim html5Zip As Byte() =
+                            MediaUtilities.GetAssetDataFromUrl("https://goo.gl/9Y7qI2",
+                                                               user.Config)
+                    ' Create a media bundle containing the zip file with all the HTML5 components.
+                    Dim mediaBundleArray(1) As Media
 
-          mediaBundleArray(0) = mediaBundle
+                    Dim mediaBundle As New MediaBundle()
+                    mediaBundle.data = html5Zip
+                    mediaBundle.type = MediaMediaType.MEDIA_BUNDLE
 
-          ' Upload HTML5 zip.
-          mediaBundleArray = mediaService.upload(mediaBundleArray)
+                    mediaBundleArray(0) = mediaBundle
 
-          ' Display HTML5 zip.
-          If (Not mediaBundleArray Is Nothing) AndAlso (mediaBundleArray.Length > 0) Then
-            Dim newBundle As Media = mediaBundleArray(0)
+                    ' Upload HTML5 zip.
+                    mediaBundleArray = mediaService.upload(mediaBundleArray)
 
-            ' Preferred: Use newBundle.dimensions.ToDict() if you are not on Mono.
-            Dim dimensions As Dictionary(Of MediaSize, Dimensions) =
-                      MapEntryExtensions.ToDict(Of MediaSize, Dimensions)(newBundle.dimensions)
+                    ' Display HTML5 zip.
+                    If (Not mediaBundleArray Is Nothing) AndAlso (mediaBundleArray.Length > 0) Then
+                        Dim newBundle As Media = mediaBundleArray(0)
 
-            Console.WriteLine("HTML5 media with id '{0}', dimensions '{1}x{2}', and " &
-                "MIME type '{3}' was uploaded.", newBundle.mediaId,
-                dimensions(MediaSize.FULL).width, dimensions(MediaSize.FULL).height,
-                newBundle.mimeType)
-          Else
-            Console.WriteLine("No HTML5 zip was uploaded.")
-          End If
-        Catch e As Exception
-          Throw New System.ApplicationException("Failed to upload HTML5 zip file.", e)
-        End Try
-      End Using
-    End Sub
+                        ' Preferred: Use newBundle.dimensions.ToDict() if you are not on Mono.
+                        Dim dimensions As Dictionary(Of MediaSize, Dimensions) =
+                                MapEntryExtensions.ToDict (Of MediaSize, Dimensions)(
+                                    newBundle.dimensions)
 
-  End Class
-
+                        Console.WriteLine("HTML5 media with id '{0}', dimensions '{1}x{2}', and " &
+                                          "MIME type '{3}' was uploaded.", newBundle.mediaId,
+                                          dimensions(MediaSize.FULL).width,
+                                          dimensions(MediaSize.FULL).height,
+                                          newBundle.mimeType)
+                    Else
+                        Console.WriteLine("No HTML5 zip was uploaded.")
+                    End If
+                Catch e As Exception
+                    Throw New System.ApplicationException("Failed to upload HTML5 zip file.", e)
+                End Try
+            End Using
+        End Sub
+    End Class
 End Namespace

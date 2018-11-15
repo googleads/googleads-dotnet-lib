@@ -21,73 +21,70 @@ Imports Google.Api.Ads.Common.Util.Reports
 Imports System.IO
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201806
-
-  ''' <summary>
-  ''' This code example gets and downloads a criteria Ad Hoc report from an AWQL
-  ''' query. See https://developers.google.com/adwords/api/docs/guides/awql for
-  ''' AWQL documentation.
-  ''' </summary>
-  Public Class DownloadCriteriaReportWithAwql
-    Inherits ExampleBase
-
     ''' <summary>
-    ''' Main method, to run this code example as a standalone application.
+    ''' This code example gets and downloads a criteria Ad Hoc report from an AWQL
+    ''' query. See https://developers.google.com/adwords/api/docs/guides/awql for
+    ''' AWQL documentation.
     ''' </summary>
-    ''' <param name="args">The command line arguments.</param>
-    Public Shared Sub Main(ByVal args As String())
-      Dim codeExample As New DownloadCriteriaReportWithAwql
-      Console.WriteLine(codeExample.Description)
-      Try
-        Dim fileName As String = "INSERT_OUTPUT_FILE_NAME"
-        codeExample.Run(New AdWordsUser, fileName)
-      Catch e As Exception
-        Console.WriteLine("An exception occurred while running this code example. {0}",
-            ExampleUtilities.FormatException(e))
-      End Try
-    End Sub
+    Public Class DownloadCriteriaReportWithAwql
+        Inherits ExampleBase
 
-    ''' <summary>
-    ''' Returns a description about the code example.
-    ''' </summary>
-    Public Overrides ReadOnly Property Description() As String
-      Get
-        Return "This code example gets and downloads a criteria Ad Hoc report from an AWQL" &
-            " query. See https://developers.google.com/adwords/api/docs/guides/awql for" &
-            " AWQL documentation."
-      End Get
-    End Property
+        ''' <summary>
+        ''' Main method, to run this code example as a standalone application.
+        ''' </summary>
+        ''' <param name="args">The command line arguments.</param>
+        Public Shared Sub Main(ByVal args As String())
+            Dim codeExample As New DownloadCriteriaReportWithAwql
+            Console.WriteLine(codeExample.Description)
+            Try
+                Dim fileName As String = "INSERT_OUTPUT_FILE_NAME"
+                codeExample.Run(New AdWordsUser, fileName)
+            Catch e As Exception
+                Console.WriteLine("An exception occurred while running this code example. {0}",
+                                  ExampleUtilities.FormatException(e))
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Runs the code example.
-    ''' </summary>
-    ''' <param name="user">The AdWords user.</param>
-    ''' <param name="fileName">The file to which the report is downloaded.
-    ''' </param>
-    Public Sub Run(ByVal user As AdWordsUser, ByVal fileName As String)
-      Dim query As ReportQuery = New ReportQueryBuilder() _
-          .Select("CampaignId", "AdGroupId", "Id", "Criteria", "CriteriaType",
-              "Impressions", "Clicks", "Cost") _
-          .From(ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT) _
-          .Where("Status").In("ENABLED", "PAUSED") _
-          .During(ReportDefinitionDateRangeType.LAST_7_DAYS) _
-          .Build()
+        ''' <summary>
+        ''' Returns a description about the code example.
+        ''' </summary>
+        Public Overrides ReadOnly Property Description() As String
+            Get
+                Return _
+                    "This code example gets and downloads a criteria Ad Hoc report from an AWQL" &
+                    " query. See https://developers.google.com/adwords/api/docs/guides/awql for" &
+                    " AWQL documentation."
+            End Get
+        End Property
 
-      Dim filePath As String = ExampleUtilities.GetHomeDir() + Path.DirectorySeparatorChar &
-          fileName
+        ''' <summary>
+        ''' Runs the code example.
+        ''' </summary>
+        ''' <param name="user">The AdWords user.</param>
+        ''' <param name="fileName">The file to which the report is downloaded.
+        ''' </param>
+        Public Sub Run(ByVal user As AdWordsUser, ByVal fileName As String)
+            Dim query As ReportQuery = New ReportQueryBuilder() _
+                    .Select("CampaignId", "AdGroupId", "Id", "Criteria", "CriteriaType",
+                            "Impressions", "Clicks", "Cost") _
+                    .From(ReportDefinitionReportType.CRITERIA_PERFORMANCE_REPORT) _
+                    .Where("Status").In("ENABLED", "PAUSED") _
+                    .During(ReportDefinitionDateRangeType.LAST_7_DAYS) _
+                    .Build()
 
-      Try
-        Dim utilities As New ReportUtilities(user, "v201806", query,
-            DownloadFormat.GZIPPED_CSV.ToString())
-        Using reportResponse As ReportResponse = utilities.GetResponse()
-          reportResponse.Save(filePath)
-        End Using
-        Console.WriteLine("Report was downloaded to '{0}'.", filePath)
-      Catch e As Exception
-        Throw New System.ApplicationException("Failed to download report.", e)
-      End Try
+            Dim filePath As String = ExampleUtilities.GetHomeDir() + Path.DirectorySeparatorChar &
+                                     fileName
 
-    End Sub
-
-  End Class
-
+            Try
+                Dim utilities As New ReportUtilities(user, "v201806", query,
+                                                     DownloadFormat.GZIPPED_CSV.ToString())
+                Using reportResponse As ReportResponse = utilities.GetResponse()
+                    reportResponse.Save(filePath)
+                End Using
+                Console.WriteLine("Report was downloaded to '{0}'.", filePath)
+            Catch e As Exception
+                Throw New System.ApplicationException("Failed to download report.", e)
+            End Try
+        End Sub
+    End Class
 End Namespace
