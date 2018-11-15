@@ -2,6 +2,7 @@ var namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job =
 [
     [ "v201802", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1v201802.html", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1v201802" ],
     [ "v201806", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1v201806.html", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1v201806" ],
+    [ "v201809", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1v201809.html", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1v201809" ],
     [ "AdWordsBulkRequestException", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_ad_words_bulk_request_exception.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_ad_words_bulk_request_exception" ],
     [ "BatchJobUtilitiesBase", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_batch_job_utilities_base.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_batch_job_utilities_base" ],
     [ "BatchUploadProgress", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_batch_upload_progress.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_batch_job_1_1_batch_upload_progress" ],

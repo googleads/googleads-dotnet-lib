@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_remarketing_money_with_currency_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_remarketing_money_with_currency_1_1_filterable_fields.html#ac5e46f7d9ae16a3eb8e7c0d492d21697", null ]
+];

@@ -5,5 +5,6 @@ var namespace_google_1_1_api_1_1_ads_1_1_ad_words =
     [ "Lib", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib.html", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_lib" ],
     [ "Util", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util.html", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util" ],
     [ "v201802", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802.html", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802" ],
-    [ "v201806", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806.html", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806" ]
+    [ "v201806", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806.html", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806" ],
+    [ "v201809", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809.html", "namespace_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809" ]
 ];

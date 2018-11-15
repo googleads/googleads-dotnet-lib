@@ -1,0 +1,7 @@
+var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_suggested_ad_unit_service_interface =
+[
+    [ "getSuggestedAdUnitsByStatement", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_suggested_ad_unit_service_interface.html#a68e8ec5aab997aa487c425170e0986b9", null ],
+    [ "getSuggestedAdUnitsByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_suggested_ad_unit_service_interface.html#a8db745910cdf350afb7f8fcf5c7e555b", null ],
+    [ "performSuggestedAdUnitAction", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_suggested_ad_unit_service_interface.html#a76f4d8439d704a8e732062239c1ffebd", null ],
+    [ "performSuggestedAdUnitActionAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_suggested_ad_unit_service_interface.html#a7b7f2df25aa0b575f9bc4db86e90e951", null ]
+];

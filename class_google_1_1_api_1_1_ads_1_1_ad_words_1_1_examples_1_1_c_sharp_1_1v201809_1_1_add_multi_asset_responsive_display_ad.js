@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_add_multi_asset_responsive_display_ad =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_add_multi_asset_responsive_display_ad.html#af767fa92de153f875df75a0dbee9ff28", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_add_multi_asset_responsive_display_ad.html#acf38336a65d89ba0a5a65555e4d5f548", null ]
+];

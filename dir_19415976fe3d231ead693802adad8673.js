@@ -1,6 +1,0 @@
-var dir_19415976fe3d231ead693802adad8673 =
-[
-    [ "GetReconciliationReportRowsForReconciliationReport.cs", "v201802_2_reconciliation_report_row_service_2_get_reconciliation_report_rows_for_reconciliation_report_8cs.html", [
-      [ "GetReconciliationReportRowsForReconciliationReport", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201802_1_1_get_reconcil95a9c6365c17a3328e95684427c6de35.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201802_1_1_get_reconcil95a9c6365c17a3328e95684427c6de35" ]
-    ] ]
-];

@@ -1,7 +1,0 @@
-var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_reconciliation_report_service_interface =
-[
-    [ "getReconciliationReportsByStatement", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_reconciliation_report_service_interface.html#ae12012e551d2f0bfa3c9a9226de62001", null ],
-    [ "getReconciliationReportsByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_reconciliation_report_service_interface.html#ad708e61b315b18515a12803ed95c3460", null ],
-    [ "updateReconciliationReports", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_reconciliation_report_service_interface.html#a6d8e8382503f7cbb0cad5264ea834dba", null ],
-    [ "updateReconciliationReportsAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_reconciliation_report_service_interface.html#a13e5ec3393d33922c40a490e25d24aa6", null ]
-];

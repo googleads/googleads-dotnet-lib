@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_wrappers_1_1_mobile_application_servia09493aedbb9ae96377a6b5db294b046 =
-[
-    [ "createMobileApplicationsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_wrappers_1_1_mobile_application_servia09493aedbb9ae96377a6b5db294b046.html#a7c06dea32086fe0b642f1642134fff10", null ],
-    [ "createMobileApplicationsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_wrappers_1_1_mobile_application_servia09493aedbb9ae96377a6b5db294b046.html#aa870d95c0afa22db273e4dbc2a48247d", null ],
-    [ "mobileApplications", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201711_1_1_wrappers_1_1_mobile_application_servia09493aedbb9ae96377a6b5db294b046.html#a8a217a93e145b465d2a400b928f05a32", null ]
-];

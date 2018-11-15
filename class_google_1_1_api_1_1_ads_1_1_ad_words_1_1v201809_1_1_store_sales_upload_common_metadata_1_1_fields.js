@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_store_sales_upload_common_metadata_1_1_fields =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_store_sales_upload_common_metadata_1_1_fields.html#a54db930e4875fb800e9b1f8a2438275a", null ]
+];

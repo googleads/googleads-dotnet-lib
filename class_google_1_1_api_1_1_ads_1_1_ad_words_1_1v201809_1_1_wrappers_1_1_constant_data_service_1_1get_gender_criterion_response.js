@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1get_gender_criterion_response =
+[
+    [ "getGenderCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1get_gender_criterion_response.html#aed5262e32d2a436de09761a6cfa17ce1", null ],
+    [ "getGenderCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1get_gender_criterion_response.html#a4241c3438fc0ea2f2742bf2ba53a887a", null ],
+    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1get_gender_criterion_response.html#abd77449feb2e9e1ae0b39477cc75e78f", null ]
+];

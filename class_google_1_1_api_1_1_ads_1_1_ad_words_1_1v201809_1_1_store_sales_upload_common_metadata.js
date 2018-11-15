@@ -1,0 +1,11 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_store_sales_upload_common_metadata =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_store_sales_upload_common_metadata_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_store_sales_upload_common_metadata_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_store_sales_upload_common_metadata_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_store_sales_upload_common_metadata_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_store_sales_upload_common_metadata_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_store_sales_upload_common_metadata_1_1_selectable_fields" ],
+    [ "loyaltyRate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_store_sales_upload_common_metadata.html#a3dfca758a5914342dab088f82783d4f8", null ],
+    [ "loyaltyRateSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_store_sales_upload_common_metadata.html#a73d85db61c3e89e4543b3621d3927a72", null ],
+    [ "StoreSalesUploadCommonMetadataType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_store_sales_upload_common_metadata.html#a4b209146744b1da62e6fadf442a41642", null ],
+    [ "transactionUploadRate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_store_sales_upload_common_metadata.html#a05574ba4c56b5dbd2beeeda1bd8aa125", null ],
+    [ "transactionUploadRateSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_store_sales_upload_common_metadata.html#a1545e6777572ef925ecd03d046b7e720", null ]
+];

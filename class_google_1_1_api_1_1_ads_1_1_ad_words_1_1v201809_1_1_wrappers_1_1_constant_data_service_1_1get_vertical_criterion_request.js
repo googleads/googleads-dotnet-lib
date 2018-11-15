@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1get_vertical_criterion_request =
+[
+    [ "getVerticalCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1get_vertical_criterion_request.html#afc0caec7658ad9526d5ce245f4527e2a", null ]
+];

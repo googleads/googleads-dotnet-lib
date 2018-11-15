@@ -1,0 +1,28 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point_1_1_selectable_fields" ],
+    [ "bid", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#a2aeb2258fe270f998e51141c1b5567fd", null ],
+    [ "biddableConversions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#a7f9688642d4c95e26e91f0c234e3b62a", null ],
+    [ "biddableConversionsSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#a1e0ee5bb1c720c28575dda00e1a7592c", null ],
+    [ "biddableConversionsValue", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#ad652d5d10f3f8c8175258f100a6fbfa8", null ],
+    [ "biddableConversionsValueSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#a8c5e8da52befb4deb04931c3f782e2ba", null ],
+    [ "bidModifier", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#aa5db6dd6816c649646488baad5c1175a", null ],
+    [ "bidModifierSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#a68e2f6bc4ef71645211438f24b475ab1", null ],
+    [ "clicks", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#af4d8c06743de5c5d51733c786e1ae9a4", null ],
+    [ "clicksSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#a273264fddc277d20cf81841eb6fe23b0", null ],
+    [ "cost", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#a6119686584442a65337da8029ffc741e", null ],
+    [ "impressions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#a013d44f364431ff3342ef0f53c5b8d10", null ],
+    [ "impressionsSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#a576bb3a98e1de6166d8084896c8aade1", null ],
+    [ "promotedImpressions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#a6f152166139a890f44131bf7a00649f7", null ],
+    [ "promotedImpressionsSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#a9a4df366a1dd8f62a575b198ddb7e3f3", null ],
+    [ "requiredBudget", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#ac6964975ba750c0491136c4ef746215d", null ],
+    [ "totalLocalClicks", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#a4888f4dd0f9628af77c4c000045f53a0", null ],
+    [ "totalLocalClicksSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#a320b1a9471972ad922944446a2ef952f", null ],
+    [ "totalLocalCost", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#abcae2b6fa147220e1ca0fec105297b46", null ],
+    [ "totalLocalImpressions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#a845f315e8ea2263dbea8acb7c2c7bd9c", null ],
+    [ "totalLocalImpressionsSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#a22f93ac30df830ad4b79069947b1d7f0", null ],
+    [ "totalLocalPromotedImpressions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#adcf9d03efed933196b948e15fe284fd0", null ],
+    [ "totalLocalPromotedImpressionsSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point.html#afe54451a33a6020a0a7bcf43b5375e7c", null ]
+];

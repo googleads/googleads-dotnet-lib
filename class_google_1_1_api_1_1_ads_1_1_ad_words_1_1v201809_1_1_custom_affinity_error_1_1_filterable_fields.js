@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_custom_affinity_error_1_1_filterable_fields =
+[
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_custom_affinity_error_1_1_filterable_fields.html#aadedadc7cea2c086f7b10df13f3b3e6b", null ]
+];
