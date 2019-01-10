@@ -1,5 +1,8 @@
 var NAVTREEINDEX34 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_line_item_summary.html#a2ffc0ba96b8e1660d7da73425db2e52d":[1,0,0,0,0,0,5,283,85],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_line_item_summary.html#a34e86609e9b76f416c121876597fcce7":[1,0,0,0,0,0,5,283,26],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_line_item_summary.html#a36a7b817d3340489db32343991f47f8b":[1,0,0,0,0,0,5,283,56],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_line_item_summary.html#a36cde8f7a9a28ad901a682d8b2df192d":[1,0,0,0,0,0,5,283,13],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_line_item_summary.html#a4570b6d94039b0e32ff0cc7b443d1e29":[1,0,0,0,0,0,5,283,61],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_line_item_summary.html#a472cf0e9faff3896dc2bc601396dcc03":[1,0,0,0,0,0,5,283,65],
@@ -246,8 +249,5 @@ var NAVTREEINDEX34 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_mobile_application_service.html#a8cd397307a098cf80bb342923a6568e9":[1,0,0,0,0,0,5,409,6],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_mobile_application_service.html#aaf6252e19700887ffc39c411910e2aba":[1,0,0,0,0,0,5,409,12],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_mobile_application_service.html#ab40f257367162045b8dd1e39ed496af7":[1,0,0,0,0,0,5,409,7],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_mobile_application_service.html#ad4a217842b952ffcaf6337d2127a7586":[1,0,0,0,0,0,5,409,4],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_mobile_application_service.html#af32f0cd9c92729ba0a7c92e0b5669224":[1,0,0,0,0,0,5,409,10],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_mobile_application_targeting.html":[1,0,0,0,0,0,5,273],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_mobile_application_targeting.html#a45bcb3e2525efc6f03d81bcb76d4f334":[1,0,0,0,0,0,5,273,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_mobile_application_service.html#ad4a217842b952ffcaf6337d2127a7586":[1,0,0,0,0,0,5,409,4]
 };

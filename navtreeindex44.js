@@ -1,5 +1,8 @@
 var NAVTREEINDEX44 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_native_style_service_1_1create_native_styles_request.html":[1,0,0,0,0,0,5,0,28,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_native_style_service_1_1create_native_styles_request.html#a1d15e3b1275ee1500d42f864a23e043b":[1,0,0,0,0,0,5,0,28,0,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_native_style_service_1_1create_native_styles_request.html#a3635de0c7421ac0bc3b03aca944e812c":[1,0,0,0,0,0,5,0,28,0,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_native_style_service_1_1create_native_styles_request.html#af1e11dd0b1f5ba5fe96158a9efdb32da":[1,0,0,0,0,0,5,0,28,0,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_native_style_service_1_1create_native_styles_response.html":[1,0,0,0,0,0,5,0,28,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_native_style_service_1_1create_native_styles_response.html#ab8af4b07370173e22159e315304e7ac3":[1,0,0,0,0,0,5,0,28,1,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX44 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_user_service_1_1get_all_roles_request.html":[1,0,0,0,0,0,5,0,49,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_user_service_1_1get_all_roles_request.html#a5fc115b848e98de7805dc55fc8c52621":[1,0,0,0,0,0,5,0,49,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_user_service_1_1get_all_roles_response.html":[1,0,0,0,0,0,5,0,49,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_user_service_1_1get_all_roles_response.html#a36659ec81e1f53a80d8db39115a79f1b":[1,0,0,0,0,0,5,0,49,3,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_user_service_1_1get_all_roles_response.html#abfeab23d6d4e172c1d21b3ff736365e6":[1,0,0,0,0,0,5,0,49,3,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_user_service_1_1get_all_roles_response.html#ae2db9c565dd90e1a47e032bd187ea623":[1,0,0,0,0,0,5,0,49,3,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_user_service_1_1update_users_request.html":[1,0,0,0,0,0,5,0,49,4]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_user_service_1_1get_all_roles_response.html#a36659ec81e1f53a80d8db39115a79f1b":[1,0,0,0,0,0,5,0,49,3,2]
 };

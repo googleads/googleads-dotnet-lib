@@ -1,5 +1,8 @@
 var NAVTREEINDEX33 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_image_overlay_creative.html#a258eacdd9e8e254cc97fe02222bbe300":[1,0,0,0,0,0,5,114,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_image_overlay_creative.html#a422719516866103d9e5bdf36bb5a8053":[1,0,0,0,0,0,5,114,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_image_overlay_creative.html#a83cccb4a64e83172fb966621a0561e76":[1,0,0,0,0,0,5,114,5],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_image_overlay_creative.html#a8832951ad9e88cd42a12bb0ee015751a":[1,0,0,0,0,0,5,114,6],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_image_overlay_creative.html#ab5df57e8925e9cb2953ddb2065e6fe0c":[1,0,0,0,0,0,5,114,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_image_overlay_creative.html#adf0e54f7b3e75aabd4bbda18e286e438":[1,0,0,0,0,0,5,114,4],
@@ -246,8 +249,5 @@ var NAVTREEINDEX33 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_line_item_summary.html#a24be7f255a0c67c0db296e2dc41542fc":[1,0,0,0,0,0,5,283,88],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_line_item_summary.html#a260afbf2f89a43b6741473e8f8c774c4":[1,0,0,0,0,0,5,283,14],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_line_item_summary.html#a28c1b429ac610cfe01fc709484bc0383":[1,0,0,0,0,0,5,283,33],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_line_item_summary.html#a2d987f779d20ce1336dbece068cb5c1d":[1,0,0,0,0,0,5,283,11],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_line_item_summary.html#a2ffc0ba96b8e1660d7da73425db2e52d":[1,0,0,0,0,0,5,283,85],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_line_item_summary.html#a34e86609e9b76f416c121876597fcce7":[1,0,0,0,0,0,5,283,26],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_line_item_summary.html#a36a7b817d3340489db32343991f47f8b":[1,0,0,0,0,0,5,283,56]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_line_item_summary.html#a2d987f779d20ce1336dbece068cb5c1d":[1,0,0,0,0,0,5,283,11]
 };

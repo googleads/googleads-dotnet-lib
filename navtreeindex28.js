@@ -1,5 +1,8 @@
 var NAVTREEINDEX28 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_audience_extension_error.html":[1,0,0,0,0,0,5,315],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_audience_extension_error.html#a5c9f313e76ef31dce96e860c035f4c30":[1,0,0,0,0,0,5,315,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_audience_extension_error.html#ada13e4673c23b399bfe1badf1edfcc59":[1,0,0,0,0,0,5,315,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_audience_segment.html":[1,0,0,0,0,0,5,761],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_audience_segment.html#a0f8db7277578064efe3881d66ca57a95":[1,0,0,0,0,0,5,761,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_audience_segment.html#a1ad7b29b3036ea849576d33ad19eb5d7":[1,0,0,0,0,0,5,761,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX28 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_buyer_rfp.html#a18ae167342150fd299766a41bfae19a6":[1,0,0,0,0,0,5,518,12],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_buyer_rfp.html#a24d6103b5ef7b87f239096512a41e0db":[1,0,0,0,0,0,5,518,8],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_buyer_rfp.html#a2e209d0643495a0889104559c51c300d":[1,0,0,0,0,0,5,518,14],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_buyer_rfp.html#a3a5cb1a285ef36ab86d23439882eb414":[1,0,0,0,0,0,5,518,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_buyer_rfp.html#a54dc20d12245dfc40c61a25b60353fcc":[1,0,0,0,0,0,5,518,13],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_buyer_rfp.html#a5c3ae1f9a446e225af98b2fe3c206524":[1,0,0,0,0,0,5,518,5],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_buyer_rfp.html#a8c7f5d265368f34d24df9af3e977e5b3":[1,0,0,0,0,0,5,518,11]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_buyer_rfp.html#a3a5cb1a285ef36ab86d23439882eb414":[1,0,0,0,0,0,5,518,3]
 };

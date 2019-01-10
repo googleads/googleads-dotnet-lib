@@ -1,5 +1,8 @@
 var NAVTREEINDEX52 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_label_service.html#a6e4c7c851b997a5c37b45acd1d76cce1":[1,0,0,0,0,0,6,382,6],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_label_service.html#ab2f476aef6fb89b348ab8ec13926475a":[1,0,0,0,0,0,6,382,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_label_service.html#ab69a49b7fca8608888f64cbf148d1795":[1,0,0,0,0,0,6,382,9],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_label_service.html#abbc2bf110a22fe95a0c00a63c4c53f84":[1,0,0,0,0,0,6,382,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_label_service.html#acc33a0e19dde712a03060a0b1bc0df40":[1,0,0,0,0,0,6,382,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_label_service.html#aec7894e260ac8e3bee98ba92c73e72ec":[1,0,0,0,0,0,6,382,8],
@@ -246,8 +249,5 @@ var NAVTREEINDEX52 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_list_string_creative_template_variable.html#adbe658b209bd469d592d5017d4554914":[1,0,0,0,0,0,6,165,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_list_string_creative_template_variable_variable_choice.html":[1,0,0,0,0,0,6,161],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_list_string_creative_template_variable_variable_choice.html#a015314adb3fd08343ae0d773d7eec004":[1,0,0,0,0,0,6,161,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_list_string_creative_template_variable_variable_choice.html#aa0f04f88f9a1841691ad29e8e003df9c":[1,0,0,0,0,0,6,161,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_live_stream_event.html":[1,0,0,0,0,0,6,418],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_live_stream_event.html#a015cd623cfd54886d25112fdea8d6834":[1,0,0,0,0,0,6,418,30],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_live_stream_event.html#a0818d12d2874488badb529bc9d57a76c":[1,0,0,0,0,0,6,418,33]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_list_string_creative_template_variable_variable_choice.html#aa0f04f88f9a1841691ad29e8e003df9c":[1,0,0,0,0,0,6,161,0]
 };

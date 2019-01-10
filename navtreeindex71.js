@@ -1,5 +1,8 @@
 var NAVTREEINDEX71 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_line_item_summary.html#a29de2413a7fa645db05278528bdee4e9":[1,0,0,0,0,0,7,302,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_line_item_summary.html#a32f06f98969f847b81a49cfc450142c1":[1,0,0,0,0,0,7,302,17],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_line_item_summary.html#a33da30cd656d51cef86b6f51f1deea8f":[1,0,0,0,0,0,7,302,23],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_line_item_summary.html#a3ca8bb330d675af85471b27ed71ac2e2":[1,0,0,0,0,0,7,302,56],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_line_item_summary.html#a3d846efbdbef090a2e8e877ace06274d":[1,0,0,0,0,0,7,302,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_line_item_summary.html#a3ecfdf8cb3ac9365e9979b5b903a12d7":[1,0,0,0,0,0,7,302,50],
@@ -246,8 +249,5 @@ var NAVTREEINDEX71 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_mobile_application_service.html#a00a66d0c6132daad19de729940707d08":[1,0,0,0,0,0,7,434,5],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_mobile_application_service.html#a0623843da9f039c26b853d911738fe58":[1,0,0,0,0,0,7,434,9],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_mobile_application_service.html#a2894bbc65cf8749aacd050ad66e0f1ee":[1,0,0,0,0,0,7,434,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_mobile_application_service.html#a36511007783cf4777076d433a299f13a":[1,0,0,0,0,0,7,434,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_mobile_application_service.html#a407a8cc6771a7f82f4994510bd6a8c82":[1,0,0,0,0,0,7,434,8],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_mobile_application_service.html#a69573ad47f7b5d232ba09768917e83d5":[1,0,0,0,0,0,7,434,7],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_mobile_application_service.html#a6ba979162ca8d7edb6ce05ce2b9f8c36":[1,0,0,0,0,0,7,434,10]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_mobile_application_service.html#a36511007783cf4777076d433a299f13a":[1,0,0,0,0,0,7,434,3]
 };

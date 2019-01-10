@@ -1,5 +1,8 @@
 var NAVTREEINDEX83 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_handle_policy_violation_error.html#a7bc38703340cbcefb60f017310cfcc17":[1,0,0,0,0,1,0,0,1,51,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_handle_rate_exceeded_error.html":[1,0,0,0,0,1,0,0,1,52],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_handle_rate_exceeded_error.html#a30c73acd1106903de98cc4d11e1eff85":[1,0,0,0,0,1,0,0,1,52,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_handle_rate_exceeded_error.html#ab5c5c036ed38ff0489830a533c89dd6d":[1,0,0,0,0,1,0,0,1,52,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_lookup_location.html":[1,0,0,0,0,1,0,0,1,90],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_lookup_location.html#a7790097ee689207fd385e768d7521e41":[1,0,0,0,0,1,0,0,1,90,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX83 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201806_1_1_get_ad_group_bid_simulations.html#a1ed7a05ce86bfe1cb8b1547034952f3e":[1,0,0,0,0,1,0,0,2,69,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201806_1_1_get_ad_group_bid_simulations.html#a278303d0810c1eab1eae526b9ed52c3f":[1,0,0,0,0,1,0,0,2,69,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201806_1_1_get_ad_groups.html":[1,0,0,0,0,1,0,0,2,26],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201806_1_1_get_ad_groups.html#aeb4e598761f23bf0fb8b50beaf2a575b":[1,0,0,0,0,1,0,0,2,26,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201806_1_1_get_ad_groups.html#aefa681662b6abd84922df471eb3bfa63":[1,0,0,0,0,1,0,0,2,26,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201806_1_1_get_all_disapproved_ads.html":[1,0,0,0,0,1,0,0,2,48],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201806_1_1_get_all_disapproved_ads.html#a23f280983819b979cae08a2b42f9e1ce":[1,0,0,0,0,1,0,0,2,48,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201806_1_1_get_ad_groups.html#aeb4e598761f23bf0fb8b50beaf2a575b":[1,0,0,0,0,1,0,0,2,26,1]
 };

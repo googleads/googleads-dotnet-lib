@@ -1,5 +1,8 @@
 var NAVTREEINDEX26 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_product_service_1_1create_products_response.html#aa5b1770697f4c66119043de2a27ce1f0":[1,0,0,0,0,0,4,0,35,1,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_product_service_1_1create_products_response.html#abff4a6ca49b7772a8a15d2c4f99dc897":[1,0,0,0,0,0,4,0,35,1,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_product_service_1_1update_products_request.html":[1,0,0,0,0,0,4,0,35,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_product_service_1_1update_products_request.html#a76c583524b6d99c813d45413b3ae970b":[1,0,0,0,0,0,4,0,35,2,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_product_service_1_1update_products_request.html#a7eed4a13df3afcb49c376491284e0a1a":[1,0,0,0,0,0,4,0,35,2,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_product_service_1_1update_products_request.html#ac054116368fb533e72fa06fe7fb96ab4":[1,0,0,0,0,0,4,0,35,2,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX26 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_ad_exchange_creative.html#ac6023c8aa78f60af705432d19935e09a":[1,0,0,0,0,0,5,129,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_ad_exchange_creative.html#ae4221e6fc4000a984d2a00e3f1c83682":[1,0,0,0,0,0,5,129,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_ad_exchange_creative.html#af674ec3a31fa2c9514be59df586f799a":[1,0,0,0,0,0,5,129,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_ad_exclusion_rule.html":[1,0,0,0,0,0,5,439],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_ad_exclusion_rule.html#a28a802299dbb65fafa9940e621dab770":[1,0,0,0,0,0,5,439,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_ad_exclusion_rule.html#a28bff69c3bcf63e506e61b9d7394be91":[1,0,0,0,0,0,5,439,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_ad_exclusion_rule.html#a36d486ea69de0feeae2f85e2f4112b54":[1,0,0,0,0,0,5,439,3]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_ad_exclusion_rule.html":[1,0,0,0,0,0,5,439]
 };

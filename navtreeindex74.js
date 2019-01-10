@@ -1,5 +1,8 @@
 var NAVTREEINDEX74 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_product_segmentation.html#a248c18c47199d376d3c69dfe39b4c070":[1,0,0,0,0,0,7,508,16],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_product_segmentation.html#a2e18e10800a0578cb35f0d65b0ade3a4":[1,0,0,0,0,0,7,508,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_product_segmentation.html#a3d45738e4ac84c0433e9a3c4603973f6":[1,0,0,0,0,0,7,508,6],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_product_segmentation.html#a4065ef40b9b09ce5e945f3481adb0a91":[1,0,0,0,0,0,7,508,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_product_segmentation.html#a412e7b38b6a62caf5b82081f472aa284":[1,0,0,0,0,0,7,508,18],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_product_segmentation.html#a4de6be5bd8c0dc8a07de0b9c52105164":[1,0,0,0,0,0,7,508,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX74 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_proposal_line_item.html#a33fdd6ddb213289b25937ee3d1667a73":[1,0,0,0,0,0,7,293,73],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_proposal_line_item.html#a379178fde879b0beb5eabb81351b48e2":[1,0,0,0,0,0,7,293,26],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_proposal_line_item.html#a384b2964a009d651da99aa5b5f129a0d":[1,0,0,0,0,0,7,293,44],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_proposal_line_item.html#a3a3356492ce37bd4697f564af84edfc7":[1,0,0,0,0,0,7,293,38],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_proposal_line_item.html#a3ae7ebb139bcb91568879cb78b14268e":[1,0,0,0,0,0,7,293,22],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_proposal_line_item.html#a3ccd40649604bc5b65a58b23e30e8131":[1,0,0,0,0,0,7,293,30],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_proposal_line_item.html#a40e6689fe0ab4621d854afbe4173f813":[1,0,0,0,0,0,7,293,49]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_proposal_line_item.html#a3a3356492ce37bd4697f564af84edfc7":[1,0,0,0,0,0,7,293,38]
 };

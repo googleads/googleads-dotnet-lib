@@ -1,5 +1,8 @@
 var NAVTREEINDEX24 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_response.html":[1,0,0,0,0,0,4,0,3,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_response.html#a6a01c11507ffd89f2d1988264619522f":[1,0,0,0,0,0,4,0,3,1,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_response.html#a939be4a73a8841550b93e5cd6d712f79":[1,0,0,0,0,0,4,0,3,1,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_response.html#a95f9418f49d93e4c18954d5866129180":[1,0,0,0,0,0,4,0,3,1,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1update_ad_rules_request.html":[1,0,0,0,0,0,4,0,3,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1update_ad_rules_request.html#a154bb485e40f398b0390eea0c6ee01c2":[1,0,0,0,0,0,4,0,3,2,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX24 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_forecast_service_1_1get_delivery_forecast_request.html#a2e8dc68c364e448e174ab38130f728e7":[1,0,0,0,0,0,4,0,19,0,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_forecast_service_1_1get_delivery_forecast_request.html#a847131d28a9e6a7ae57bba5c59662849":[1,0,0,0,0,0,4,0,19,0,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_forecast_service_1_1get_delivery_forecast_request.html#a8d515a7e743339045d00cedf8c38c79e":[1,0,0,0,0,0,4,0,19,0,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_forecast_service_1_1get_delivery_forecast_request.html#af0ba8d3329a2558c9ce74945d1529394":[1,0,0,0,0,0,4,0,19,0,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_forecast_service_1_1get_delivery_forecast_response.html":[1,0,0,0,0,0,4,0,19,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_forecast_service_1_1get_delivery_forecast_response.html#a628aaaae20b6868edf7c9f8acc17e97b":[1,0,0,0,0,0,4,0,19,1,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_forecast_service_1_1get_delivery_forecast_response.html#a70369d0e7e902397f7181feba3ff030d":[1,0,0,0,0,0,4,0,19,1,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_forecast_service_1_1get_delivery_forecast_request.html#af0ba8d3329a2558c9ce74945d1529394":[1,0,0,0,0,0,4,0,19,0,1]
 };

@@ -1,5 +1,8 @@
 var NAVTREEINDEX16 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_line_item_template_service.html#a44f43700208a0e15761bcc6f32cde34b":[1,0,0,0,0,0,4,372,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_line_item_template_service.html#a76d6bddc3a17d5b9e1da330f614b5ee1":[1,0,0,0,0,0,4,372,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_list_string_creative_template_variable.html":[1,0,0,0,0,0,4,153],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_list_string_creative_template_variable.html#a3325211f5f346c75a8edb284f6c20269":[1,0,0,0,0,0,4,153,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_list_string_creative_template_variable.html#a9087c471ad9c12013982d367fc9605f5":[1,0,0,0,0,0,4,153,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_list_string_creative_template_variable.html#a9cbca6d479e599f8c9186dae7c60ce2b":[1,0,0,0,0,0,4,153,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX16 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_non_rule_based_first_party_audience_segment.html#a0031c0700f8edd8784562091e3991b2f":[1,0,0,0,0,0,4,751,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_non_rule_based_first_party_audience_segment.html#add46246708eab24da72891139b2c098c":[1,0,0,0,0,0,4,751,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_not_null_error.html":[1,0,0,0,0,0,4,19],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_not_null_error.html#a794a2c29f632814207ee871a8016fa55":[1,0,0,0,0,0,4,19,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_not_null_error.html#acd0265c60a991099cb4f625043746979":[1,0,0,0,0,0,4,19,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_null_error.html":[1,0,0,0,0,0,4,124],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_null_error.html#a0fb2fd92d100ded16fd5028522559cab":[1,0,0,0,0,0,4,124,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_not_null_error.html#a794a2c29f632814207ee871a8016fa55":[1,0,0,0,0,0,4,19,0]
 };

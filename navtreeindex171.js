@@ -1,5 +1,12 @@
 var NAVTREEINDEX171 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_placement_performance_report_report_row.html#a55c95e8cf44131a6844329dd6f2f5170a25ed5ed2791e3b2bee84c5a007274923":[1,0,0,0,0,1,3,1,2,25,6,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_placement_performance_report_report_row.html#a55c95e8cf44131a6844329dd6f2f5170a4e9af8c54914500a82cda62a516729bc":[1,0,0,0,0,1,3,1,2,25,6,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_placement_performance_report_report_row.html#a55c95e8cf44131a6844329dd6f2f5170a639d1ba014cf943d1ff4e2b7a0e105b1":[1,0,0,0,0,1,3,1,2,25,6,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_placement_performance_report_report_row.html#a55c95e8cf44131a6844329dd6f2f5170ab356db294aa3b64fae19ef6d0f0de3f4":[1,0,0,0,0,1,3,1,2,25,6,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_placement_performance_report_report_row.html#a5a5c8616f16b7985feb07bed9df1eb39":[1,0,0,0,0,1,3,1,2,25,17],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_placement_performance_report_report_row.html#a5a86da23840cc5062a8f1f6635e81e70":[1,0,0,0,0,1,3,1,2,25,81],
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_placement_performance_report_report_row.html#a5b893e1cb465ffa7e643e2b03dc6ac2a":[1,0,0,0,0,1,3,1,2,25,5],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_placement_performance_report_report_row.html#a5b893e1cb465ffa7e643e2b03dc6ac2aa00cf4809381b3b9e42eb4af99077118a":[1,0,0,0,0,1,3,1,2,25,5,33],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_placement_performance_report_report_row.html#a5b893e1cb465ffa7e643e2b03dc6ac2aa02c62494c4f5f8c8045d223d2ac7761f":[1,0,0,0,0,1,3,1,2,25,5,24],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_placement_performance_report_report_row.html#a5b893e1cb465ffa7e643e2b03dc6ac2aa03570470bad94692ce93e32700d2e1cb":[1,0,0,0,0,1,3,1,2,25,5,17],
@@ -242,12 +249,5 @@ var NAVTREEINDEX171 =
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_product_partition_report_report_row.html#a7088e9259b9ea4e58e6bd52229f24e40a0af95e5596395cce0f58684b574bbc70":[1,0,0,0,0,1,3,1,2,36,3,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_product_partition_report_report_row.html#a7088e9259b9ea4e58e6bd52229f24e40a12dfa07427fc0f6e4aa2dda0833730be":[1,0,0,0,0,1,3,1,2,36,3,7],
 "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_product_partition_report_report_row.html#a7088e9259b9ea4e58e6bd52229f24e40a2ee75e5261a6ae682439052c8f87a756":[1,0,0,0,0,1,3,1,2,36,3,9],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_product_partition_report_report_row.html#a7088e9259b9ea4e58e6bd52229f24e40a47a335c53a091169c91925f82d274d7c":[1,0,0,0,0,1,3,1,2,36,3,4],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_product_partition_report_report_row.html#a7088e9259b9ea4e58e6bd52229f24e40a696b031073e74bf2cb98e5ef201d4aa3":[1,0,0,0,0,1,3,1,2,36,3,11],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_product_partition_report_report_row.html#a7088e9259b9ea4e58e6bd52229f24e40a6d73d086a07541818dbd395b7f6a25c8":[1,0,0,0,0,1,3,1,2,36,3,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_product_partition_report_report_row.html#a7088e9259b9ea4e58e6bd52229f24e40a85d0834e98a4639466249758cd0ecec6":[1,0,0,0,0,1,3,1,2,36,3,6],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_product_partition_report_report_row.html#a7088e9259b9ea4e58e6bd52229f24e40aad7663a84dcaaecb5491f270f3677506":[1,0,0,0,0,1,3,1,2,36,3,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_product_partition_report_report_row.html#a7088e9259b9ea4e58e6bd52229f24e40ab293c3af3aeb43e39f1de714f343853e":[1,0,0,0,0,1,3,1,2,36,3,10],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_product_partition_report_report_row.html#a7088e9259b9ea4e58e6bd52229f24e40ab50339a10e1de285ac99d4c3990b8693":[1,0,0,0,0,1,3,1,2,36,3,5],
-"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_product_partition_report_report_row.html#a7088e9259b9ea4e58e6bd52229f24e40ae1c9a8ddfb65801c35a827e71831a3f1":[1,0,0,0,0,1,3,1,2,36,3,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_product_partition_report_report_row.html#a7088e9259b9ea4e58e6bd52229f24e40a47a335c53a091169c91925f82d274d7c":[1,0,0,0,0,1,3,1,2,36,3,4]
 };

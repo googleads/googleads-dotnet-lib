@@ -1,5 +1,8 @@
 var NAVTREEINDEX23 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_update_result.html#ad9ff9ada704a9c16ecf8ee00520cd26e":[1,0,0,0,0,0,4,51,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_update_result.html#af5856f56ab18fa2f75d0711bacdd9dde":[1,0,0,0,0,0,4,51,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_url_creative_template_variable.html":[1,0,0,0,0,0,4,151],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_url_creative_template_variable.html#a594197555aa266886987969a0784b890":[1,0,0,0,0,0,4,151,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_url_creative_template_variable.html#a85c4ff09247630d4d36386030ab78b70":[1,0,0,0,0,0,4,151,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_url_creative_template_variable.html#a98a23d65c368e5f70ee87d195fb4778b":[1,0,0,0,0,0,4,151,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX23 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_request.html":[1,0,0,0,0,0,4,0,3,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_request.html#a5bb92f94e49c1927a25305be63ce210b":[1,0,0,0,0,0,4,0,3,0,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_request.html#ad21483d468d62571064911d9c8f294e1":[1,0,0,0,0,0,4,0,3,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_request.html#afae8008b64bfdfe81a67da8102602123":[1,0,0,0,0,0,4,0,3,0,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_response.html":[1,0,0,0,0,0,4,0,3,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_response.html#a6a01c11507ffd89f2d1988264619522f":[1,0,0,0,0,0,4,0,3,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_response.html#a939be4a73a8841550b93e5cd6d712f79":[1,0,0,0,0,0,4,0,3,1,2]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_request.html#afae8008b64bfdfe81a67da8102602123":[1,0,0,0,0,0,4,0,3,0,2]
 };

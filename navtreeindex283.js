@@ -1,5 +1,13 @@
 var NAVTREEINDEX283 =
 {
+"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_bid_modifier_service_interface_channel.html":[1,0,0,0,0,1,6,265],
+"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_service_interface.html":[1,0,0,0,0,1,6,198],
+"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_service_interface.html#a329fb8ee5a9e1e88d4349c9005d20081":[1,0,0,0,0,1,6,198,2],
+"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_service_interface.html#a55266f8a3c237dfae2755887e0e97484":[1,0,0,0,0,1,6,198,3],
+"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_service_interface.html#ab68666c6566a6564a0be5337915aaef6":[1,0,0,0,0,1,6,198,1],
+"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_service_interface.html#ac2a79cb11e5aacee50d5cae4d26d1776":[1,0,0,0,0,1,6,198,5],
+"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_service_interface.html#aea82534cdb999f48f9849963009e54ff":[1,0,0,0,0,1,6,198,4],
+"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_service_interface.html#aeef0ba51cbec037ded16b6fcdd193218":[1,0,0,0,0,1,6,198,0],
 "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_service_interface_channel.html":[1,0,0,0,0,1,6,201],
 "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_extension_setting_service_interface.html":[1,0,0,0,0,1,6,689],
 "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_extension_setting_service_interface.html#a087f8e3fcca09e35e88b075c94bdc078":[1,0,0,0,0,1,6,689,3],
@@ -241,13 +249,5 @@ var NAVTREEINDEX283 =
 "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_i_batch_job_service.html#a59b7aeff7d71ed3832bb201c880ebc8e":[1,0,0,0,0,1,6,872,1],
 "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_i_bidding_strategy_service.html":[1,0,0,0,0,1,6,873],
 "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_i_bidding_strategy_service.html#a0cd6ff6ed0126a73892ab5c68d1a0cc0":[1,0,0,0,0,1,6,873,0],
-"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_i_bidding_strategy_service.html#aa58cf2f7708d7ef7ec84e68c7b0a5b56":[1,0,0,0,0,1,6,873,1],
-"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_i_budget_order_service.html":[1,0,0,0,0,1,6,874],
-"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_i_budget_order_service.html#a1ae6049957aa8ce8823f38590a7f3b9e":[1,0,0,0,0,1,6,874,2],
-"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_i_budget_order_service.html#ac797575754e76dc8a74ff9402a145e78":[1,0,0,0,0,1,6,874,1],
-"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_i_budget_order_service.html#ad0f001da223fd83c4a25bb1343decb21":[1,0,0,0,0,1,6,874,3],
-"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_i_budget_order_service.html#ade0078923cf72ed59252b4d71512c417":[1,0,0,0,0,1,6,874,0],
-"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_i_budget_service.html":[1,0,0,0,0,1,6,875],
-"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_i_budget_service.html#a4c6cb10211c4ae81b87bf492cf0b3bb9":[1,0,0,0,0,1,6,875,1],
-"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_i_budget_service.html#a9aec903d2d458af6bf97eee146e1b537":[1,0,0,0,0,1,6,875,0]
+"interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_i_bidding_strategy_service.html#aa58cf2f7708d7ef7ec84e68c7b0a5b56":[1,0,0,0,0,1,6,873,1]
 };

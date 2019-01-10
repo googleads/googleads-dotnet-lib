@@ -60,6 +60,7 @@ var NAVTREEINDEX0 =
 "_ad_words_soap_header_inspector_8cs.html":[2,0,0,0,1,1,1,7],
 "_ad_words_trace_listener_8cs.html":[2,0,0,0,1,1,1,8],
 "_ad_words_user_8cs.html":[2,0,0,0,1,1,1,9],
+"_add_smart_shopping_ad_8cs.html":[2,0,0,0,0,1,0,3,11,4],
 "_ads_client_8cs.html":[2,0,0,0,1,2,1,0],
 "_ads_exception_8cs.html":[2,0,0,0,1,2,1,1],
 "_ads_feature_usage_registry_8cs.html":[2,0,0,0,1,2,2,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201805_1_1_create_contacts.html#af04b9ad12c1b60eef0c3d8036758165f":[1,0,0,0,0,0,0,0,1,24,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201805_1_1_create_content_metadata_key_hierarchies.html":[1,0,0,0,0,0,0,0,1,28],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201805_1_1_create_content_metadata_key_hierarchies.html#a403b665fc54c0624e96f0f41720cbdca":[1,0,0,0,0,0,0,0,1,28,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201805_1_1_create_content_metadata_key_hierarchies.html#a85d6707cb3ba3087279921f5a10fa8e1":[1,0,0,0,0,0,0,0,1,28,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201805_1_1_create_creative_from_template.html":[1,0,0,0,0,0,0,0,1,34]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201805_1_1_create_content_metadata_key_hierarchies.html#a85d6707cb3ba3087279921f5a10fa8e1":[1,0,0,0,0,0,0,0,1,28,1]
 };

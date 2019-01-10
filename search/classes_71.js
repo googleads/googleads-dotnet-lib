@@ -15,8 +15,8 @@ var searchData=
   ['quotacheckerror',['QuotaCheckError',['../class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_quota_check_error.html',1,'Google::Api::Ads::AdWords::v201809']]],
   ['quotacheckerror',['QuotaCheckError',['../class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_quota_check_error.html',1,'Google::Api::Ads::AdWords::v201802']]],
   ['quotacheckerror',['QuotaCheckError',['../class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_quota_check_error.html',1,'Google::Api::Ads::AdWords::v201806']]],
-  ['quotaerror',['QuotaError',['../class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_quota_error.html',1,'Google::Api::Ads::AdManager::v201811']]],
-  ['quotaerror',['QuotaError',['../class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_quota_error.html',1,'Google::Api::Ads::AdManager::v201802']]],
   ['quotaerror',['QuotaError',['../class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_quota_error.html',1,'Google::Api::Ads::AdManager::v201805']]],
+  ['quotaerror',['QuotaError',['../class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_quota_error.html',1,'Google::Api::Ads::AdManager::v201802']]],
+  ['quotaerror',['QuotaError',['../class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_quota_error.html',1,'Google::Api::Ads::AdManager::v201811']]],
   ['quotaerror',['QuotaError',['../class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_quota_error.html',1,'Google::Api::Ads::AdManager::v201808']]]
 ];

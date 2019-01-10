@@ -1,5 +1,8 @@
 var NAVTREEINDEX61 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_ad_exclusion_rule_servicac23697c43a203964d11a5afceb3ff4e.html#a89fb9d2dafe7c31a67e74f8e4c76e810":[1,0,0,0,0,0,6,0,2,3,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_ad_exclusion_rule_servicac23697c43a203964d11a5afceb3ff4e.html#ac1b79238ba43241219ac383ec6948acb":[1,0,0,0,0,0,6,0,2,3,2],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_request.html":[1,0,0,0,0,0,6,0,3,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_request.html#a2430ee8d9fa79d90f85d2a73c45748f4":[1,0,0,0,0,0,6,0,3,0,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_request.html#a9b24044f7f96754aec12a914c214a1aa":[1,0,0,0,0,0,6,0,3,0,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_rules_request.html#ad6d25a6f6c26527d030d05e7c8303a8a":[1,0,0,0,0,0,6,0,3,0,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX61 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_exchange_rate_service_1_1create_exchange_rates_response.html":[1,0,0,0,0,0,6,0,19,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_exchange_rate_service_1_1create_exchange_rates_response.html#a64396c0a05f56f72dbea5c386daf13c8":[1,0,0,0,0,0,6,0,19,1,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_exchange_rate_service_1_1create_exchange_rates_response.html#a803b5dee9af7607b22be60e48f20fab4":[1,0,0,0,0,0,6,0,19,1,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_exchange_rate_service_1_1create_exchange_rates_response.html#aa4f2aefcb89c9ec1a6405b69bf4ff638":[1,0,0,0,0,0,6,0,19,1,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_request.html":[1,0,0,0,0,0,6,0,19,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_request.html#a4a4d9af10d3e8628d2c41c84cd986b1d":[1,0,0,0,0,0,6,0,19,2,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_exchange_rate_service_1_1update_exchange_rates_request.html#ad351a0049e422dc45f1d798025896bfb":[1,0,0,0,0,0,6,0,19,2,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_exchange_rate_service_1_1create_exchange_rates_response.html#aa4f2aefcb89c9ec1a6405b69bf4ff638":[1,0,0,0,0,0,6,0,19,1,2]
 };

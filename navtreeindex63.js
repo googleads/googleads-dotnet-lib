@@ -1,5 +1,8 @@
 var NAVTREEINDEX63 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_product_package_service_09cadcf186f165abd73884172e7d32b1.html":[1,0,0,0,0,0,6,0,35,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_product_package_service_09cadcf186f165abd73884172e7d32b1.html#acedc03b87cbdc43b8c35996ec698b5b2":[1,0,0,0,0,0,6,0,35,3,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_product_package_service_09cadcf186f165abd73884172e7d32b1.html#aedc02de7ead2e58ba9e5f185e4d379ec":[1,0,0,0,0,0,6,0,35,3,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_product_package_service_09cadcf186f165abd73884172e7d32b1.html#af2e067e3434bd320c94338ae35fc19b6":[1,0,0,0,0,0,6,0,35,3,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_product_package_service_8e41436d87edc79ac4bd0a0cc416e43c.html":[1,0,0,0,0,0,6,0,35,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_product_package_service_8e41436d87edc79ac4bd0a0cc416e43c.html#a894c516c84b66258331f919dd940a84e":[1,0,0,0,0,0,6,0,35,0,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX63 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_activity_service.html#a0ff622a908389d50f6800b02563036de":[1,0,0,0,0,0,7,347,8],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_activity_service.html#a1edd9edf016ab3f151d12cc18115fd6a":[1,0,0,0,0,0,7,347,5],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_activity_service.html#a1ef87a89a8ec2fe07ac49171da20f4b4":[1,0,0,0,0,0,7,347,7],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_activity_service.html#a349abe96a642fbfb198e61381e8be7b7":[1,0,0,0,0,0,7,347,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_activity_service.html#a674286c68841e0019ecc94f390fad607":[1,0,0,0,0,0,7,347,9],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_activity_service.html#a9f3b048a0e35f6f066224f35c0ab957a":[1,0,0,0,0,0,7,347,10],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_activity_service.html#ab4fb370a8cef13b2c9b35fbf4ab6e505":[1,0,0,0,0,0,7,347,6]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_activity_service.html#a349abe96a642fbfb198e61381e8be7b7":[1,0,0,0,0,0,7,347,2]
 };

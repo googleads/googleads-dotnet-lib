@@ -2,6 +2,7 @@ var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_lib_1_1_ad_manager_app_confi
 [
     [ "AdManagerAppConfig", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_lib_1_1_ad_manager_app_config.html#ae2ab5e6b5dba761eb6f782bdc9119aa2", null ],
     [ "AdManagerAppConfig", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_lib_1_1_ad_manager_app_config.html#adb55289d0765404b7277e32090cd15e6", null ],
+    [ "AdManagerAppConfig", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_lib_1_1_ad_manager_app_config.html#a4f41ea8ba1fdd062461d7e953e74f874", null ],
     [ "GetDefaultOAuth2Scope", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_lib_1_1_ad_manager_app_config.html#ab259cf2d9bf1f3920ba3b4ddc7ba775b", null ],
     [ "GetUserAgent", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_lib_1_1_ad_manager_app_config.html#ad4901e3aa267d9c7a2d100415d4e7e5f", null ],
     [ "ReadSettings", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_lib_1_1_ad_manager_app_config.html#a8671907507b3a0b8095d824ab488b442", null ],

@@ -1,5 +1,8 @@
 var NAVTREEINDEX72 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_mobile_application_service.html#a407a8cc6771a7f82f4994510bd6a8c82":[1,0,0,0,0,0,7,434,8],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_mobile_application_service.html#a69573ad47f7b5d232ba09768917e83d5":[1,0,0,0,0,0,7,434,7],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_mobile_application_service.html#a6ba979162ca8d7edb6ce05ce2b9f8c36":[1,0,0,0,0,0,7,434,10],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_mobile_application_service.html#a6bc2d962225b1f7174182088f987da51":[1,0,0,0,0,0,7,434,12],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_mobile_application_service.html#a81213ccc9fe6ce8ddfc7e6faea23c395":[1,0,0,0,0,0,7,434,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_mobile_application_service.html#a88a57b024d8e8254d126003e76c568d1":[1,0,0,0,0,0,7,434,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX72 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_package_service.html#a13d70ccc9d37a244c4bb81a8f8a7025f":[1,0,0,0,0,0,7,711,10],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_package_service.html#a2f139ad85d223040c7b28c7b205bf7ab":[1,0,0,0,0,0,7,711,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_package_service.html#a4e993c4e9f5c4961892a798d0baa015e":[1,0,0,0,0,0,7,711,5],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_package_service.html#a55f6c798a0e41111e0039746c8bfea9d":[1,0,0,0,0,0,7,711,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_package_service.html#a726c6a8e6d90916a5c44222bdcda68a6":[1,0,0,0,0,0,7,711,6],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_package_service.html#a7b98baaedf2dd416bf334b8e84b6d893":[1,0,0,0,0,0,7,711,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_package_service.html#a7f1c2b2fbe8be71004273753d143d2a6":[1,0,0,0,0,0,7,711,11]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_package_service.html#a55f6c798a0e41111e0039746c8bfea9d":[1,0,0,0,0,0,7,711,1]
 };

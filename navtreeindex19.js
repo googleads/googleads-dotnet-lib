@@ -1,5 +1,8 @@
 var NAVTREEINDEX19 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_programmatic_error.html":[1,0,0,0,0,0,4,278],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_programmatic_error.html#a97ed11fc6f7268a15aa80032353440fe":[1,0,0,0,0,0,4,278,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_programmatic_error.html#acb556bb5fc659cac2a49b6748385899e":[1,0,0,0,0,0,4,278,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_programmatic_product_error.html":[1,0,0,0,0,0,4,482],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_programmatic_product_error.html#a70306de6264459b8e033d97f5ad97e62":[1,0,0,0,0,0,4,482,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_programmatic_product_error.html#a88ebd08ac94077f27212e8dd244e8fc4":[1,0,0,0,0,0,4,482,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX19 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_proposal_line_item_programmatic_error.html#a9958e82901b3e1edeca20219f0a27edb":[1,0,0,0,0,0,4,530,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_proposal_line_item_service.html":[1,0,0,0,0,0,4,577],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_proposal_line_item_service.html#a06fd025488b03aab1390af57eb267788":[1,0,0,0,0,0,4,577,9],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_proposal_line_item_service.html#a12482478706c1ab06efd5e3a2098b372":[1,0,0,0,0,0,4,577,10],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_proposal_line_item_service.html#a25d6b2499c3b0ec68e939bad93b37839":[1,0,0,0,0,0,4,577,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_proposal_line_item_service.html#a4735bbf81b505133d921f9a88a562940":[1,0,0,0,0,0,4,577,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_proposal_line_item_service.html#a510d0ee38e871dbf46a11342bebb16c9":[1,0,0,0,0,0,4,577,8]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_proposal_line_item_service.html#a12482478706c1ab06efd5e3a2098b372":[1,0,0,0,0,0,4,577,10]
 };

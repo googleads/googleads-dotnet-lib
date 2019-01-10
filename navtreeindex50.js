@@ -1,5 +1,8 @@
 var NAVTREEINDEX50 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_custom_targeting_value_page.html#a8bcdedf839bb8cdffeb6a4cca495b1de":[1,0,0,0,0,0,6,189,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_custom_targeting_value_page.html#ac4bceb91e7b54e47dd52199f264b5c92":[1,0,0,0,0,0,6,189,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_custom_targeting_value_page.html#ada4c8e3fcf1eb0cb9e228df516f06143":[1,0,0,0,0,0,6,189,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_custom_targeting_value_page.html#adfeba4db02ca1c820ae02640df89c835":[1,0,0,0,0,0,6,189,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_custom_targeting_value_page.html#af09828265214e3d5a870df74cac5ce5e":[1,0,0,0,0,0,6,189,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_customizable_attributes.html":[1,0,0,0,0,0,6,303],
@@ -246,8 +249,5 @@ var NAVTREEINDEX50 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_flash_creative.html#ad0630f36be79c6f1ae5a72cfaaf448c3":[1,0,0,0,0,0,6,121,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_flash_overlay_creative.html":[1,0,0,0,0,0,6,120],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_flash_overlay_creative.html#a0268e9e856f9899cbf2ea8560147f32c":[1,0,0,0,0,0,6,120,8],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_flash_overlay_creative.html#a26a9b1b6749cccd5a3b9d8f825133d22":[1,0,0,0,0,0,6,120,3],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_flash_overlay_creative.html#a34afd60a0676f36760ede37b0ad7e166":[1,0,0,0,0,0,6,120,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_flash_overlay_creative.html#a56e307f6bca22b477ab473bd7b850b2a":[1,0,0,0,0,0,6,120,4],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_flash_overlay_creative.html#a5da5f211485b05e01e6aa6f59f7c10b2":[1,0,0,0,0,0,6,120,9]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_flash_overlay_creative.html#a26a9b1b6749cccd5a3b9d8f825133d22":[1,0,0,0,0,0,6,120,3]
 };

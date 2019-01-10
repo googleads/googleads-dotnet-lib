@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_get_all_audience_segments.html":[1,0,0,0,0,0,0,0,2,9],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_get_all_audience_segments.html#adb9264d9e8cf3401a63c47e45c841b1d":[1,0,0,0,0,0,0,0,2,9,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_get_all_audience_segments.html#af3a74528b6e3fc45f557488137d48db2":[1,0,0,0,0,0,0,0,2,9,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_get_all_base_rates.html":[1,0,0,0,0,0,0,0,2,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_run_delivery_report.html":[1,0,0,0,0,0,0,0,2,166],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_run_delivery_report.html#a56f08ebe225a26e28c8473d65b6acfdf":[1,0,0,0,0,0,0,0,2,166,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_run_delivery_report.html#af456e361cb72d303d03c4d476c4e4779":[1,0,0,0,0,0,0,0,2,166,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_run_inventory_report.html":[1,0,0,0,0,0,0,0,2,167],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_run_inventory_report.html#ac459bcae29d97a4eb564f45e038d1e98":[1,0,0,0,0,0,0,0,2,167,0]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_run_inventory_report.html":[1,0,0,0,0,0,0,0,2,167]
 };

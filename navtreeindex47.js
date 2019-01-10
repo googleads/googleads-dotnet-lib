@@ -1,5 +1,8 @@
 var NAVTREEINDEX47 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_base_flash_creative.html#af4c0e151cda067c85ff9d7d3ce64bcde":[1,0,0,0,0,0,6,119,3],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_base_flash_redirect_creative.html":[1,0,0,0,0,0,6,116],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_base_flash_redirect_creative.html#a0d3d7b4eab3e56f9f7f2d6a9dff35b0d":[1,0,0,0,0,0,6,116,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_base_flash_redirect_creative.html#a206da652b7c0a42c3f7b708d3005da6b":[1,0,0,0,0,0,6,116,3],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_base_flash_redirect_creative.html#a47572b0d6a83f7d3dd371f249f6c484f":[1,0,0,0,0,0,6,116,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_base_flash_redirect_creative.html#a6359047e858a0459e85ff4c0b7ee8934":[1,0,0,0,0,0,6,116,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX47 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_company_settings.html#a318cdaa40b2f76d593a75749beff140f":[1,0,0,0,0,0,6,810,6],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_company_settings.html#a331bac529b4dc0a28213e931de5b8d67":[1,0,0,0,0,0,6,810,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_company_settings.html#a349be90e9877ed30bb1e0b1284d1379f":[1,0,0,0,0,0,6,810,9],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_company_settings.html#a9e80f223399fa8f222591d92627b94af":[1,0,0,0,0,0,6,810,7],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_company_settings.html#aad8511c31331a611a3412d0858ba38a5":[1,0,0,0,0,0,6,810,5],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_company_settings.html#abd0722b79a746299c53ef60a1f2f0c68":[1,0,0,0,0,0,6,810,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_company_settings.html#ac122d0bddcd154cd575ae46098d040a5":[1,0,0,0,0,0,6,810,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_company_settings.html#a9e80f223399fa8f222591d92627b94af":[1,0,0,0,0,0,6,810,7]
 };

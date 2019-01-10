@@ -1,5 +1,8 @@
 var NAVTREEINDEX45 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_user_service_1_1get_all_roles_response.html#abfeab23d6d4e172c1d21b3ff736365e6":[1,0,0,0,0,0,5,0,49,3,1],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_user_service_1_1get_all_roles_response.html#ae2db9c565dd90e1a47e032bd187ea623":[1,0,0,0,0,0,5,0,49,3,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_user_service_1_1update_users_request.html":[1,0,0,0,0,0,5,0,49,4],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_user_service_1_1update_users_request.html#a5ee5a0d8ba8eae44deba810fb7c94a23":[1,0,0,0,0,0,5,0,49,4,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_user_service_1_1update_users_request.html#a65350f0559ced9bbaac897c89ad7c170":[1,0,0,0,0,0,5,0,49,4,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_user_service_1_1update_users_request.html#af9c547f11f99a76b1c5aafa8d5f920d2":[1,0,0,0,0,0,5,0,49,4,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX45 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_ad_unit.html#a3e995cc929682f5128b9f9fedf237525":[1,0,0,0,0,0,6,360,7],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_ad_unit.html#a49927da8cf541c70912c032e90e312ee":[1,0,0,0,0,0,6,360,12],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_ad_unit.html#a4e743796d8742faea70de3daf6bc0d88":[1,0,0,0,0,0,6,360,28],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_ad_unit.html#a4f889ee4bb1ed944aa0a057c00f08a21":[1,0,0,0,0,0,6,360,26],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_ad_unit.html#a54b9adb68b4478b726ba5959b48383eb":[1,0,0,0,0,0,6,360,25],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_ad_unit.html#a551695951d97e29a225a86cc1c129595":[1,0,0,0,0,0,6,360,29],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_ad_unit.html#a5b46aa0ec0cd9885b5d90f9d5f26ba5d":[1,0,0,0,0,0,6,360,8]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_ad_unit.html#a4f889ee4bb1ed944aa0a057c00f08a21":[1,0,0,0,0,0,6,360,26]
 };

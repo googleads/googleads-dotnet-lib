@@ -1,5 +1,13 @@
 var NAVTREEINDEX371 =
 {
+"v201811_2_creative_service_2_get_image_creatives_8cs.html":[2,0,0,0,0,0,0,3,8,6],
+"v201811_2_creative_service_2_update_creatives_8cs.html":[2,0,0,0,0,0,0,3,8,7],
+"v201811_2_creative_set_service_2_get_all_creative_sets_8cs.html":[2,0,0,0,0,0,0,3,9,0],
+"v201811_2_creative_set_service_2_get_creative_sets_for_master_creative_8cs.html":[2,0,0,0,0,0,0,3,9,1],
+"v201811_2_creative_template_service_2_get_all_creative_templates_8cs.html":[2,0,0,0,0,0,0,3,10,0],
+"v201811_2_creative_template_service_2_get_system_defined_creative_templates_8cs.html":[2,0,0,0,0,0,0,3,10,1],
+"v201811_2_creative_wrapper_service_2_create_creative_wrappers_8cs.html":[2,0,0,0,0,0,0,3,11,0],
+"v201811_2_creative_wrapper_service_2_deactivate_creative_wrappers_8cs.html":[2,0,0,0,0,0,0,3,11,1],
 "v201811_2_creative_wrapper_service_2_get_active_creative_wrappers_8cs.html":[2,0,0,0,0,0,0,3,11,2],
 "v201811_2_creative_wrapper_service_2_get_all_creative_wrappers_8cs.html":[2,0,0,0,0,0,0,3,11,3],
 "v201811_2_creative_wrapper_service_2_update_creative_wrappers_8cs.html":[2,0,0,0,0,0,0,3,11,4],

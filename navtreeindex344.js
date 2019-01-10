@@ -1,5 +1,13 @@
 var NAVTREEINDEX344 =
 {
+"v201808_2_ad_manager_api_8cs.html#abd390e21bbec9526117fb0f5dde9ee9fa94cca3be6122320ea5cf42d9a0bcf86a":[2,0,0,0,1,0,5,0,1100,395],
+"v201808_2_ad_manager_api_8cs.html#abd390e21bbec9526117fb0f5dde9ee9fa94e7e5221ad1f2027b55f7036530e91b":[2,0,0,0,1,0,5,0,1100,329],
+"v201808_2_ad_manager_api_8cs.html#abd390e21bbec9526117fb0f5dde9ee9fa96b414ede723dd01bb28036709b18ba0":[2,0,0,0,1,0,5,0,1100,24],
+"v201808_2_ad_manager_api_8cs.html#abd390e21bbec9526117fb0f5dde9ee9fa97c25accc998abda3f092b9a3fdc7996":[2,0,0,0,1,0,5,0,1100,11],
+"v201808_2_ad_manager_api_8cs.html#abd390e21bbec9526117fb0f5dde9ee9fa97e54f9379892889fe84507abdb4a521":[2,0,0,0,1,0,5,0,1100,319],
+"v201808_2_ad_manager_api_8cs.html#abd390e21bbec9526117fb0f5dde9ee9fa9a322bd7dfbad37adc28748cf3777114":[2,0,0,0,1,0,5,0,1100,78],
+"v201808_2_ad_manager_api_8cs.html#abd390e21bbec9526117fb0f5dde9ee9fa9a3842dcc09b008b917ae99fce08f683":[2,0,0,0,1,0,5,0,1100,257],
+"v201808_2_ad_manager_api_8cs.html#abd390e21bbec9526117fb0f5dde9ee9fa9a59314847d45a265d21aec4e4a65261":[2,0,0,0,1,0,5,0,1100,401],
 "v201808_2_ad_manager_api_8cs.html#abd390e21bbec9526117fb0f5dde9ee9fa9ae3991c855a4ae8354b4d3cd2b9fe4e":[2,0,0,0,1,0,5,0,1100,81],
 "v201808_2_ad_manager_api_8cs.html#abd390e21bbec9526117fb0f5dde9ee9fa9bd720f23a5c5906afc5593c0dfcd972":[2,0,0,0,1,0,5,0,1100,278],
 "v201808_2_ad_manager_api_8cs.html#abd390e21bbec9526117fb0f5dde9ee9fa9bdb907ac3d335542f0826c28cf7ef43":[2,0,0,0,1,0,5,0,1100,264],
@@ -241,13 +249,5 @@ var NAVTREEINDEX344 =
 "v201808_2_ad_manager_api_8cs.html#ac61de09081f2b2b827ada6d686651bf0a54d4bf35b104f9e1d164f6785f62680c":[2,0,0,0,1,0,5,0,1298,2],
 "v201808_2_ad_manager_api_8cs.html#ac61de09081f2b2b827ada6d686651bf0a5a28a0d6dc6d88bf608c575966a85809":[2,0,0,0,1,0,5,0,1298,1],
 "v201808_2_ad_manager_api_8cs.html#ac61de09081f2b2b827ada6d686651bf0a696b031073e74bf2cb98e5ef201d4aa3":[2,0,0,0,1,0,5,0,1298,5],
-"v201808_2_ad_manager_api_8cs.html#ac61de09081f2b2b827ada6d686651bf0aebdf9721be38d1fc1cd6db8c737d1be0":[2,0,0,0,1,0,5,0,1298,0],
-"v201808_2_ad_manager_api_8cs.html#ac61de09081f2b2b827ada6d686651bf0afeb2b779752e78c471e492df60336c51":[2,0,0,0,1,0,5,0,1298,3],
-"v201808_2_ad_manager_api_8cs.html#ac69bae97a8f5850a438cd8126e07be1c":[2,0,0,0,1,0,5,0,1068],
-"v201808_2_ad_manager_api_8cs.html#ac69bae97a8f5850a438cd8126e07be1ca6895946be1e9147717fa31a1f4c34989":[2,0,0,0,1,0,5,0,1068,3],
-"v201808_2_ad_manager_api_8cs.html#ac69bae97a8f5850a438cd8126e07be1ca696b031073e74bf2cb98e5ef201d4aa3":[2,0,0,0,1,0,5,0,1068,4],
-"v201808_2_ad_manager_api_8cs.html#ac69bae97a8f5850a438cd8126e07be1caa6ba4244459a95c1c31595fefbb8036c":[2,0,0,0,1,0,5,0,1068,1],
-"v201808_2_ad_manager_api_8cs.html#ac69bae97a8f5850a438cd8126e07be1cab42780ad80c0cc2a82ad538c76f0cd3a":[2,0,0,0,1,0,5,0,1068,2],
-"v201808_2_ad_manager_api_8cs.html#ac69bae97a8f5850a438cd8126e07be1caf4dc450c8151abdf8d77e03a0f59742c":[2,0,0,0,1,0,5,0,1068,0],
-"v201808_2_ad_manager_api_8cs.html#ac766ace9460972fea558205beb7a9459":[2,0,0,0,1,0,5,0,1268]
+"v201808_2_ad_manager_api_8cs.html#ac61de09081f2b2b827ada6d686651bf0aebdf9721be38d1fc1cd6db8c737d1be0":[2,0,0,0,1,0,5,0,1298,0]
 };

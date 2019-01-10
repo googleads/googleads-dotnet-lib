@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_run_inventory_report.html#ac459bcae29d97a4eb564f45e038d1e98":[1,0,0,0,0,0,0,0,2,167,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_run_inventory_report.html#ac6ed7e472061560e521c7f7dc2c23650":[1,0,0,0,0,0,0,0,2,167,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_run_reach_report.html":[1,0,0,0,0,0,0,0,2,168],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_run_reach_report.html#a0249731794587da3fe5e7d865cf2d25d":[1,0,0,0,0,0,0,0,2,168,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201811_1_1_create_proposals.html#a8fb7ef2b1c3c8ba0c15c28ff9fbb27a7":[1,0,0,0,0,0,0,0,3,141,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201811_1_1_create_proposals.html#aaeef5c88fb9fd4fca94f2fe6012e7563":[1,0,0,0,0,0,0,0,3,141,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201811_1_1_create_teams.html":[1,0,0,0,0,0,0,0,3,171],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201811_1_1_create_teams.html#a08ab791a6614c19eb3f6afff3b0c691b":[1,0,0,0,0,0,0,0,3,171,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201811_1_1_create_teams.html#a7a5921f991364693fddd3bef6def644e":[1,0,0,0,0,0,0,0,3,171,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201811_1_1_create_teams.html#a08ab791a6614c19eb3f6afff3b0c691b":[1,0,0,0,0,0,0,0,3,171,0]
 };

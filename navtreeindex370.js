@@ -1,5 +1,13 @@
 var NAVTREEINDEX370 =
 {
+"v201811_2_ad_manager_api_8cs.html#aeae1dad13a10f1172d2ff4fb46e26f52a059e9861e0400dfbe05c98a841f3f96b":[2,0,0,0,1,0,6,0,1138,1],
+"v201811_2_ad_manager_api_8cs.html#aeae1dad13a10f1172d2ff4fb46e26f52a36fc6065a3e970bc3e6b2e59da52bf2a":[2,0,0,0,1,0,6,0,1138,2],
+"v201811_2_ad_manager_api_8cs.html#aeae1dad13a10f1172d2ff4fb46e26f52a696b031073e74bf2cb98e5ef201d4aa3":[2,0,0,0,1,0,6,0,1138,3],
+"v201811_2_ad_manager_api_8cs.html#aeae1dad13a10f1172d2ff4fb46e26f52ad0749aaba8b833466dfcbb0428e4f89c":[2,0,0,0,1,0,6,0,1138,0],
+"v201811_2_ad_manager_api_8cs.html#aeb3d11f08d30eb2d4d68fd37b7bf5506":[2,0,0,0,1,0,6,0,1120],
+"v201811_2_ad_manager_api_8cs.html#aeb3d11f08d30eb2d4d68fd37b7bf5506a40aa75f8e8cfdf7b660c5620e953229f":[2,0,0,0,1,0,6,0,1120,1],
+"v201811_2_ad_manager_api_8cs.html#aeb3d11f08d30eb2d4d68fd37b7bf5506accc0377a8afbf50e7094f5c23a8af223":[2,0,0,0,1,0,6,0,1120,0],
+"v201811_2_ad_manager_api_8cs.html#aeb70610ccfd8e48122cd82d1c8d0b86f":[2,0,0,0,1,0,6,0,1321],
 "v201811_2_ad_manager_api_8cs.html#aeb70610ccfd8e48122cd82d1c8d0b86fa38afd7ae34bd5e3e6fc170d8b09178a3":[2,0,0,0,1,0,6,0,1321,1],
 "v201811_2_ad_manager_api_8cs.html#aeb70610ccfd8e48122cd82d1c8d0b86fa696b031073e74bf2cb98e5ef201d4aa3":[2,0,0,0,1,0,6,0,1321,2],
 "v201811_2_ad_manager_api_8cs.html#aeb70610ccfd8e48122cd82d1c8d0b86faccc0377a8afbf50e7094f5c23a8af223":[2,0,0,0,1,0,6,0,1321,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX370 =
 "v201811_2_creative_service_2_create_creatives_8cs.html":[2,0,0,0,0,0,0,3,8,2],
 "v201811_2_creative_service_2_create_custom_creative_8cs.html":[2,0,0,0,0,0,0,3,8,3],
 "v201811_2_creative_service_2_create_native_creative_8cs.html":[2,0,0,0,0,0,0,3,8,4],
-"v201811_2_creative_service_2_get_all_creatives_8cs.html":[2,0,0,0,0,0,0,3,8,5],
-"v201811_2_creative_service_2_get_image_creatives_8cs.html":[2,0,0,0,0,0,0,3,8,6],
-"v201811_2_creative_service_2_update_creatives_8cs.html":[2,0,0,0,0,0,0,3,8,7],
-"v201811_2_creative_set_service_2_get_all_creative_sets_8cs.html":[2,0,0,0,0,0,0,3,9,0],
-"v201811_2_creative_set_service_2_get_creative_sets_for_master_creative_8cs.html":[2,0,0,0,0,0,0,3,9,1],
-"v201811_2_creative_template_service_2_get_all_creative_templates_8cs.html":[2,0,0,0,0,0,0,3,10,0],
-"v201811_2_creative_template_service_2_get_system_defined_creative_templates_8cs.html":[2,0,0,0,0,0,0,3,10,1],
-"v201811_2_creative_wrapper_service_2_create_creative_wrappers_8cs.html":[2,0,0,0,0,0,0,3,11,0],
-"v201811_2_creative_wrapper_service_2_deactivate_creative_wrappers_8cs.html":[2,0,0,0,0,0,0,3,11,1]
+"v201811_2_creative_service_2_get_all_creatives_8cs.html":[2,0,0,0,0,0,0,3,8,5]
 };

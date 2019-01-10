@@ -1,5 +1,8 @@
 var NAVTREEINDEX79 =
 {
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_video_position_targeting_error.html#a56c28543d0ea969d565c0fab2dcc16a5":[1,0,0,0,0,0,7,305,0],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_video_position_within_pod.html":[1,0,0,0,0,0,7,261],
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_video_position_within_pod.html#a49521f54c6b3aee39e82a95c7db6704a":[1,0,0,0,0,0,7,261,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_video_position_within_pod.html#aa6fd82f61498fba52c6d7fad860f967a":[1,0,0,0,0,0,7,261,1],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_video_redirect_asset.html":[1,0,0,0,0,0,7,78],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_video_redirect_asset.html#ae884c6f762890d0c8689ac99f5b05a98":[1,0,0,0,0,0,7,78,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX79 =
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_creative_wrapper_service8db86bd2d728322d4aa183df7fb03fba.html#a85546530bafa424037b2ff946290e4aa":[1,0,0,0,0,0,7,0,14,1,2],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_creative_wrapper_serviced46634f42c8ad4afb5fff7f7f968bda2.html":[1,0,0,0,0,0,7,0,14,0],
 "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_creative_wrapper_serviced46634f42c8ad4afb5fff7f7f968bda2.html#ab8bcff7ede4e8cda0be20f0fc5e54df3":[1,0,0,0,0,0,7,0,14,0,0],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_creative_wrapper_serviced46634f42c8ad4afb5fff7f7f968bda2.html#acc099f80ff0c082e1ca5065e722be5f3":[1,0,0,0,0,0,7,0,14,0,1],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_creative_wrapper_serviced46634f42c8ad4afb5fff7f7f968bda2.html#afa433652d4b2a853b9a9550fcc9a92e3":[1,0,0,0,0,0,7,0,14,0,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_creative_wrapper_servicedb32399e470c22d0fcf47ffa8b17832f.html":[1,0,0,0,0,0,7,0,14,2],
-"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_creative_wrapper_servicedb32399e470c22d0fcf47ffa8b17832f.html#a0f9326b80765e30f5da667d83f1a44ee":[1,0,0,0,0,0,7,0,14,2,1]
+"class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_creative_wrapper_serviced46634f42c8ad4afb5fff7f7f968bda2.html#acc099f80ff0c082e1ca5065e722be5f3":[1,0,0,0,0,0,7,0,14,0,1]
 };

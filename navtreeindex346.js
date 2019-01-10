@@ -1,5 +1,13 @@
 var NAVTREEINDEX346 =
 {
+"v201808_2_ad_manager_api_8cs.html#ae25215d015e9eb6a961580f351161f61aebdf9721be38d1fc1cd6db8c737d1be0":[2,0,0,0,1,0,5,0,1297,0],
+"v201808_2_ad_manager_api_8cs.html#ae2cadc24d73dcafb6d912e0763ebac2f":[2,0,0,0,1,0,5,0,1318],
+"v201808_2_ad_manager_api_8cs.html#ae2cadc24d73dcafb6d912e0763ebac2fa0ddc90d655dde577fb1f840aeca24f15":[2,0,0,0,1,0,5,0,1318,2],
+"v201808_2_ad_manager_api_8cs.html#ae2cadc24d73dcafb6d912e0763ebac2fa696b031073e74bf2cb98e5ef201d4aa3":[2,0,0,0,1,0,5,0,1318,0],
+"v201808_2_ad_manager_api_8cs.html#ae2cadc24d73dcafb6d912e0763ebac2fab50339a10e1de285ac99d4c3990b8693":[2,0,0,0,1,0,5,0,1318,1],
+"v201808_2_ad_manager_api_8cs.html#ae2cadc24d73dcafb6d912e0763ebac2fac0e3484ccea092acc6eca8b5084ad626":[2,0,0,0,1,0,5,0,1318,3],
+"v201808_2_ad_manager_api_8cs.html#ae4d9f5024c64b4812eabe898dc5c4175":[2,0,0,0,1,0,5,0,1136],
+"v201808_2_ad_manager_api_8cs.html#ae4d9f5024c64b4812eabe898dc5c4175a60e23ab29000ce4fb579818334f08cdd":[2,0,0,0,1,0,5,0,1136,1],
 "v201808_2_ad_manager_api_8cs.html#ae4d9f5024c64b4812eabe898dc5c4175a696b031073e74bf2cb98e5ef201d4aa3":[2,0,0,0,1,0,5,0,1136,6],
 "v201808_2_ad_manager_api_8cs.html#ae4d9f5024c64b4812eabe898dc5c4175a7e85e6e06cefe1c0f69c9668af73f18c":[2,0,0,0,1,0,5,0,1136,4],
 "v201808_2_ad_manager_api_8cs.html#ae4d9f5024c64b4812eabe898dc5c4175a85e274cf3d3cce1b1badc6c47e9870bd":[2,0,0,0,1,0,5,0,1136,5],
@@ -241,13 +249,5 @@ var NAVTREEINDEX346 =
 "v201808_2_ad_manager_api_8cs.html#aff8b8ee425bb881cf37e68fd5e96cf1ca6f3369b75e62a37315f00850727fb2aa":[2,0,0,0,1,0,5,0,1187,0],
 "v201808_2_ad_manager_api_8cs.html#aff8b8ee425bb881cf37e68fd5e96cf1ca708539a22aac14c909ff7476ef61a443":[2,0,0,0,1,0,5,0,1187,13],
 "v201808_2_ad_manager_api_8cs.html#aff8b8ee425bb881cf37e68fd5e96cf1ca718ad1b38dc97fcddb7fcb79cd1b8b8c":[2,0,0,0,1,0,5,0,1187,2],
-"v201808_2_ad_manager_api_8cs.html#aff8b8ee425bb881cf37e68fd5e96cf1ca7759b7b4af69afe10b771c36de9d2e13":[2,0,0,0,1,0,5,0,1187,9],
-"v201808_2_ad_manager_api_8cs.html#aff8b8ee425bb881cf37e68fd5e96cf1ca788d4b12c93ad047a508d38b4f60bcdf":[2,0,0,0,1,0,5,0,1187,8],
-"v201808_2_ad_manager_api_8cs.html#aff8b8ee425bb881cf37e68fd5e96cf1ca9255c533e73963fc0b0446aa31adb8f7":[2,0,0,0,1,0,5,0,1187,4],
-"v201808_2_ad_manager_api_8cs.html#aff8b8ee425bb881cf37e68fd5e96cf1ca97483f6036a4878fe5141634bb04935d":[2,0,0,0,1,0,5,0,1187,10],
-"v201808_2_ad_manager_api_8cs.html#aff8b8ee425bb881cf37e68fd5e96cf1cab2d213a69f609905db5d04f236bda477":[2,0,0,0,1,0,5,0,1187,3],
-"v201808_2_ad_manager_api_8cs.html#aff8b8ee425bb881cf37e68fd5e96cf1cad67158717e693d68653dc3d8d8c6eb71":[2,0,0,0,1,0,5,0,1187,5],
-"v201808_2_ad_manager_api_8cs.html#aff8b8ee425bb881cf37e68fd5e96cf1cae0d33005d39effcd8cc0330471e35f14":[2,0,0,0,1,0,5,0,1187,6],
-"v201808_2_ad_manager_api_8cs.html#aff8b8ee425bb881cf37e68fd5e96cf1caeed29c14967a154f9205c6b7e51c8fae":[2,0,0,0,1,0,5,0,1187,7],
-"v201808_2_audience_segment_service_2_create_audience_segments_8cs.html":[2,0,0,0,0,0,0,2,2,0]
+"v201808_2_ad_manager_api_8cs.html#aff8b8ee425bb881cf37e68fd5e96cf1ca7759b7b4af69afe10b771c36de9d2e13":[2,0,0,0,1,0,5,0,1187,9]
 };
