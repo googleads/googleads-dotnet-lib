@@ -42,7 +42,6 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
@@ -84,8 +83,8 @@
         Include="..\..\..\..\src\AdManager\AdManager.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Google.Ads.Common" Version="9.4.0" />
-    <PackageReference Include="Google.Dfp" Version="24.2.0" />
+    <PackageReference Include="Google.Ads.Common" Version="9.5.0" />
+    <PackageReference Include="Google.Dfp" Version="24.3.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

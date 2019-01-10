@@ -3,7 +3,7 @@
    <PropertyGroup>
     <Title>Google's Ad Manager API Dotnet Client Library</Title>
     <PackageId>Google.Dfp</PackageId>
-    <Version>24.2.0</Version>
+    <Version>24.3.0</Version>
     <Description>This library provides you with functionality to access the Google's Ad Manager API.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
     <PackageTags>DFP Google</PackageTags>
@@ -32,9 +32,9 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NodaTime" Version="2.2.0" />
-    <PackageReference Include="Google.Ads.Common" Version="9.4.0" />
-    <PackageReference Include="System.ServiceModel.Http" Version="4.4.2" />
+    <PackageReference Include="NodaTime" Version="2.4.2" />
+    <PackageReference Include="Google.Ads.Common" Version="9.5.0" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj" />

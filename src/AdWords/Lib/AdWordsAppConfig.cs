@@ -292,17 +292,28 @@ namespace Google.Api.Ads.AdWords.Lib
         }
 
         /// <summary>
-        /// Public constructor.
+        /// Public constructor. Loads the configuration from the <code>AdWordsApi</code> section
+        /// of the App.config / Web.config.
         /// </summary>
         public AdWordsAppConfig() : base()
         {
-            ReadSettings(LoadConfigSection("AdWordsApi"));
+            LoadFromAppConfigSection("AdWordsApi");
         }
 
         /// <summary>
-        /// Public constructor.
+        /// Public constructor. Loads the configuration from an <see cref="IConfigurationRoot"/>.
         /// </summary>
+        /// <param name="configurationRoot">The configuration root.</param>
         public AdWordsAppConfig(IConfigurationRoot configurationRoot) : base(configurationRoot)
+        {
+        }
+
+        /// <summary>
+        /// Public constructor. Loads the configuration from a <see cref="IConfigurationSection"/>.
+        /// </summary>
+        /// <param name="configurationSection">The configuration section.</param>
+        public AdWordsAppConfig(IConfigurationSection configurationSection)
+            : base(configurationSection)
         {
         }
 

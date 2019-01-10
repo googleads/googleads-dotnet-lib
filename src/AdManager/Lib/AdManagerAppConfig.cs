@@ -117,18 +117,28 @@ namespace Google.Api.Ads.AdManager.Lib
         }
 
         /// <summary>
-        /// Public constructor.
+        /// Public constructor. Loads the configuration from the <code>AdManagerApi</code> section
+        /// of the App.config / Web.config.
         /// </summary>
         public AdManagerAppConfig() : base()
         {
-            ReadSettings(LoadConfigSection("AdManagerApi"));
+            LoadFromAppConfigSection("AdManagerApi");
         }
 
         /// <summary>
-        /// Public constructor.
+        /// Public constructor. Loads the configuration from an <see cref="IConfigurationRoot"/>.
         /// </summary>
-        /// <param name="configurationRoot">The configuration root to read from.</param>
+        /// <param name="configurationRoot">The configuration root.</param>
         public AdManagerAppConfig(IConfigurationRoot configurationRoot) : base(configurationRoot)
+        {
+        }
+
+        /// <summary>
+        /// Public constructor. Loads the configuration from a <see cref="IConfigurationSection"/>.
+        /// </summary>
+        /// <param name="configurationSection">The configuration section.</param>
+        public AdManagerAppConfig(IConfigurationSection configurationSection)
+            : base(configurationSection)
         {
         }
 

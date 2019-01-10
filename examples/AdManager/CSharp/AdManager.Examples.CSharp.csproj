@@ -15,9 +15,9 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Google.Ads.Common" Version="9.4.0" />
-    <PackageReference Include="Google.Dfp" Version="24.2.0" />
-    <PackageReference Include="System.ServiceModel.Http" Version="4.4.2" />
+    <PackageReference Include="Google.Ads.Common" Version="9.5.0" />
+    <PackageReference Include="Google.Dfp" Version="24.3.0" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
   </ItemGroup>
   <ItemGroup>
     <!-- Include local projects over nuget dependencies if available -->

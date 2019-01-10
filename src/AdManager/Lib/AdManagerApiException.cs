@@ -61,6 +61,26 @@ namespace Google.Api.Ads.AdManager.Lib
         }
 
         /// <summary>
+        /// Gets a message that describes the current exception.
+        /// </summary>
+        public override string Message
+        {
+            get
+            {
+                StringBuilder exceptionBuilder = new StringBuilder();
+                exceptionBuilder.AppendFormat("{0}: {1} ", this.GetType().Name, base.Message);
+
+                if (apiException != null)
+                {
+                    exceptionBuilder.AppendFormat("{0}{0}{1}{0}{0}", Environment.NewLine,
+                        apiException);
+                }
+
+                return exceptionBuilder.ToString();
+            }
+        }
+
+        /// <summary>
         /// Public constructor.
         /// </summary>
         /// <param name="apiException">The underlying ApiException from the

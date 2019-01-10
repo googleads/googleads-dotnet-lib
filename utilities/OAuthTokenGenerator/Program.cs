@@ -61,6 +61,12 @@ namespace Google.Api.Ads.Common.Utilities.OAuthTokenGenerator
                 "3) Once the output is generated, copy its contents into your " +
                 "App.config file.\n\n");
 
+            Console.WriteLine("Important note: The client ID you use with the example should be " +
+                "of type 'Other'. If you are using a Web application client, you should add " +
+                "'http://127.0.0.1/authorize' and 'http://localhost/authorize' to the list of " +
+                "Authorized redirect URIs in your Google Developer Console to avoid getting a " +
+                "redirect_uri_mismatch error.\n\n");
+
             // Accept the client ID from user.
             Console.Write("Enter the client ID: ");
             string clientId = Console.ReadLine();
