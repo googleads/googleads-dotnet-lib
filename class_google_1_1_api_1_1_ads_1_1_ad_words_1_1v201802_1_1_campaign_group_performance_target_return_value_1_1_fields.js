@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_return_value_1_1_fields =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_campaign_group_performance_target_return_value_1_1_fields.html#a85e5f30611e69c0c081d6517948eedb2", null ]
-];

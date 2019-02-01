@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_remarketing_money_with_currency =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_remarketing_money_with_currency_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_remarketing_money_with_currency_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_remarketing_money_with_currency_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_remarketing_money_with_currency_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_remarketing_money_with_currency_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_remarketing_money_with_currency_1_1_selectable_fields" ],
-    [ "currencyCode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_remarketing_money_with_currency.html#a911ef516b3569fd0f8fde0c548480ca7", null ],
-    [ "money", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_remarketing_money_with_currency.html#a9c70a3a5509dfafd9d9176b5dfaa86ae", null ]
-];

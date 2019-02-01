@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_customer_service_1_1get_customers_request =
-[
-    [ "getCustomersRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_customer_service_1_1get_customers_request.html#a87aec6a52acb805908a5aa1473d88fe0", null ]
-];

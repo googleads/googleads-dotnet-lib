@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_keywords_using_incremental_batch_job =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_keywords_using_incremental_batch_job.html#a6bab82f6ad2a109e258ca7497ff50159", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201802_1_1_add_keywords_using_incremental_batch_job.html#a88a5cd5f0f63878768f552a559d0f2e6", null ]
-];

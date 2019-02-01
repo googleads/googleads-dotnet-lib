@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_vanity_pharma_1_1_selectable_fields =
-[
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_vanity_pharma_1_1_selectable_fields.html#a9061b91fefdd85ceb98b9179d1e9db9c", null ]
-];

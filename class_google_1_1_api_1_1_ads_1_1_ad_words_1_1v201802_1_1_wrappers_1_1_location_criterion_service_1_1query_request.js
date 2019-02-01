@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_location_criterion_service_1_1query_request =
-[
-    [ "queryRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_location_criterion_service_1_1query_request.html#a62cf3e55b90da456b82fd079d66a66f7", null ],
-    [ "queryRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_location_criterion_service_1_1query_request.html#aee55298a054be2e9f5af78e3cd7012e8", null ],
-    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201802_1_1_wrappers_1_1_location_criterion_service_1_1query_request.html#a7876c6ecada570d253d6291ab713305d", null ]
-];
