@@ -17,9 +17,8 @@ Imports Google.Api.Ads.AdWords.v201809
 
 Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
     ''' <summary>
-    ''' This code example gets all videos and images. To upload video, see
-    ''' http://adwords.google.com/support/aw/bin/answer.py?hl=en&amp;answer=39454.
-    ''' To upload image, run UploadImage.vb.
+    ''' This code example gets all videos And images. Use the Google Ads website to upload New
+    ''' videos. To upload image, run UploadImage.vb.
     ''' </summary>
     Public Class GetAllVideosAndImages
         Inherits ExampleBase
@@ -44,12 +43,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' </summary>
         Public Overrides ReadOnly Property Description() As String
             Get
-                Return _
-                    "This code example gets all videos and images. To upload video, see " &
-                    "http://adwords.google.com/support/aw/bin/answer.py?hl=en&amp;answer=39454. " &
-                    "To upload image, run UploadImage.vb."
-            End Get
-        End Property
+        Return _
+                  "This code example gets all videos and images. Use the Google Ads " &
+                      "website to upload new videos. To upload image, run UploadImage.vb."
+      End Get
+    End Property
 
         ''' <summary>
         ''' Runs the code example.

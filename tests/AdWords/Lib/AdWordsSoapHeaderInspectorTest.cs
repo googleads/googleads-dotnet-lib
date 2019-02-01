@@ -301,11 +301,11 @@ namespace Google.Api.Ads.AdWords.Tests.Lib
                 User = user,
                 RequestHeader = new RequestHeader()
                 {
-                    Version = "v201802",
+                    Version = "v201809",
                     GroupName = "cm"
                 }
             };
-            XmlDocument xDoc = XmlUtilities.CreateDocument(SoapMessages_v201802.UpdateCampaign);
+            XmlDocument xDoc = XmlUtilities.CreateDocument(SoapMessages_v201809.UpdateCampaign);
             XmlElement xResponse = (XmlElement) xDoc.SelectSingleNode("/Example/SOAP/Response");
             xDoc.LoadXml(xResponse.InnerText);
             this.response = Message.CreateMessage(new XmlNodeReader(xDoc), Int32.MaxValue,

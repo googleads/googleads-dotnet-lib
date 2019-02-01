@@ -565,7 +565,7 @@ namespace Google.Api.Ads.Common.OAuth
         protected virtual void RevokeRefreshToken(string refreshToken)
         {
             UserCredential userCredential = this.GetAuthorizationCodeFlowCredential();
-            Task<bool> task = userCredential.RefreshTokenAsync(CancellationToken.None);
+            Task<bool> task = userCredential.RevokeTokenAsync(CancellationToken.None);
             task.Wait();
         }
 
@@ -589,8 +589,7 @@ namespace Google.Api.Ads.Common.OAuth
                     config.OAuth2ServerUrl),
                 HttpUtilities.UpdateEndpointHostInUrl(GoogleAuthConsts.TokenUrl,
                     config.OAuth2ServerUrl),
-                HttpUtilities.UpdateEndpointHostInUrl(GoogleAuthConsts.RevokeTokenUrl,
-                    config.OAuth2ServerUrl))
+                GoogleAuthConsts.RevokeTokenUrl)
             {
             }
         }

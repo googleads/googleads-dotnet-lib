@@ -44,12 +44,11 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201806
         ''' </summary>
         Public Overrides ReadOnly Property Description() As String
             Get
-                Return _ 
-                    "This code example gets all videos and images. To upload video, see " & 
-                    "http://adwords.google.com/support/aw/bin/answer.py?hl=en&amp;answer=39454. " &
-                    "To upload image, run UploadImage.vb."
-            End Get
-        End Property
+        Return _
+                  "This code example gets all videos and images. Use the Google Ads " &
+                      "website to upload new videos. To upload image, run UploadImage.vb."
+      End Get
+    End Property
 
         ''' <summary>
         ''' Runs the code example.

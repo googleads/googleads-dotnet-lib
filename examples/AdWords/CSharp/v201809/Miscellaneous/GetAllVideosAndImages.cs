@@ -21,9 +21,8 @@ using System.Collections.Generic;
 namespace Google.Api.Ads.AdWords.Examples.CSharp.v201809
 {
     /// <summary>
-    /// This code example gets all videos and images. To upload video, see
-    /// http://adwords.google.com/support/aw/bin/answer.py?hl=en&amp;answer=39454.
-    /// To upload image, run UploadImage.cs.
+    /// This code example gets all videos and images. Use the Google Ads website to upload new
+    /// videos. To upload image, run UploadImage.cs.
     /// </summary>
     public class GetAllVideosAndImages : ExampleBase
     {
@@ -53,9 +52,8 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201809
         {
             get
             {
-                return "This code example gets all videos and images. To upload video, see " +
-                    "http://adwords.google.com/support/aw/bin/answer.py?hl=en&amp;answer=39454. " +
-                    "To upload image, run UploadImage.cs.";
+                return "This code example gets all videos and images. Use the Google Ads " +
+                    "website to upload new videos. To upload image, run UploadImage.cs.";
             }
         }
 

@@ -14,7 +14,7 @@
 
 using Google.Api.Ads.AdWords.Lib;
 using Google.Api.Ads.AdWords.Util.Reports;
-using Google.Api.Ads.AdWords.v201802;
+using Google.Api.Ads.AdWords.v201809;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util.Reports;
 
@@ -164,7 +164,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.OAuth
             try
             {
                 CampaignService service =
-                    (CampaignService) user.GetService(AdWordsService.v201802.CampaignService);
+                    (CampaignService) user.GetService(AdWordsService.v201809.CampaignService);
 
                 CampaignPage page = service.get(selector);
 

@@ -175,7 +175,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201806
 
             using (FeedItemTargetService feedItemTargetService =
                 (FeedItemTargetService) user.GetService(
-                    AdWordsService.v201802.FeedItemTargetService))
+                    AdWordsService.v201806.FeedItemTargetService))
             {
                 FeedItemTargetOperation operation = new FeedItemTargetOperation()
                 {

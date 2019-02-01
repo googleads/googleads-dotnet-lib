@@ -13,7 +13,7 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdWords.Lib;
-using Google.Api.Ads.AdWords.v201802;
+using Google.Api.Ads.AdWords.v201809;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests.Mocks;
 using Google.Api.Ads.Common.Util;
@@ -43,8 +43,8 @@ namespace Google.Api.Ads.AdWords.Tests
             // ApiExceptionFault has a namespace prefix, and not in the default namespace.
             @"<soap:Envelope xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/"">
   <soap:Header>
-    <ns2:ResponseHeader xmlns:ns2=""https://adwords.google.com/api/adwords/mcm/v201802""
-        xmlns=""https://adwords.google.com/api/adwords/cm/v201802"">
+    <ns2:ResponseHeader xmlns:ns2=""https://adwords.google.com/api/adwords/mcm/v201809""
+        xmlns=""https://adwords.google.com/api/adwords/cm/v201809"">
       <requestId>123</requestId>
       <serviceName>CustomerService</serviceName>
       <methodName>getCustomers</methodName>
@@ -57,8 +57,8 @@ namespace Google.Api.Ads.AdWords.Tests
       <faultcode>soap:Server</faultcode>
       <faultstring>fault string 1</faultstring>
       <detail>
-        <ns2:ApiExceptionFault xmlns=""https://adwords.google.com/api/adwords/cm/v201802""
-            xmlns:ns2=""https://adwords.google.com/api/adwords/mcm/v201802"">
+        <ns2:ApiExceptionFault xmlns=""https://adwords.google.com/api/adwords/cm/v201809""
+            xmlns:ns2=""https://adwords.google.com/api/adwords/mcm/v201809"">
           <message>test message1</message>
           <ApplicationException.Type>ApiException</ApplicationException.Type>
           <errors xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance""
@@ -79,8 +79,8 @@ namespace Google.Api.Ads.AdWords.Tests
             // ApiExceptionFault doesn't have a namespace prefix.
             @"<soap:Envelope xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/"">
   <soap:Header>
-    <ResponseHeader xmlns:ns2=""https://adwords.google.com/api/adwords/cm/v201802""
-        xmlns=""https://adwords.google.com/api/adwords/mcm/v201802"">
+    <ResponseHeader xmlns:ns2=""https://adwords.google.com/api/adwords/cm/v201809""
+        xmlns=""https://adwords.google.com/api/adwords/mcm/v201809"">
       <ns2:requestId>456</ns2:requestId>
       <ns2:serviceName>CustomerService</ns2:serviceName>
       <ns2:methodName>getCustomers</ns2:methodName>
@@ -93,8 +93,8 @@ namespace Google.Api.Ads.AdWords.Tests
       <faultcode>soap:Server</faultcode>
       <faultstring>fault string 2</faultstring>
       <detail>
-        <ApiExceptionFault xmlns=""https://adwords.google.com/api/adwords/mcm/v201802""
-            xmlns:ns2=""https://adwords.google.com/api/adwords/cm/v201802"">
+        <ApiExceptionFault xmlns=""https://adwords.google.com/api/adwords/mcm/v201809""
+            xmlns:ns2=""https://adwords.google.com/api/adwords/cm/v201809"">
           <ns2:message>test message 2</ns2:message>
           <ns2:ApplicationException.Type>ApiException</ns2:ApplicationException.Type>
           <ns2:errors xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance""

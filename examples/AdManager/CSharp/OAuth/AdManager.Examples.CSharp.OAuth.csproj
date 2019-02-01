@@ -83,8 +83,8 @@
         Include="..\..\..\..\src\AdManager\AdManager.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Google.Ads.Common" Version="9.5.0" />
-    <PackageReference Include="Google.Dfp" Version="24.3.0" />
+    <PackageReference Include="Google.Ads.Common" Version="9.5.1" />
+    <PackageReference Include="Google.Dfp" Version="24.4.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
