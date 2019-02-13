@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_wrappers_1_1_live_stream_event_servicfa4e72288f927011a9782a7518374089 =
+[
+    [ "registerSessionsForMonitoringRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_wrappers_1_1_live_stream_event_servicfa4e72288f927011a9782a7518374089.html#a3712a1673a9c7f428d843ead8a5ee1b9", null ],
+    [ "registerSessionsForMonitoringRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_wrappers_1_1_live_stream_event_servicfa4e72288f927011a9782a7518374089.html#ae26b61ac4c5f9daa431ae794c48bd3be", null ],
+    [ "sessionIds", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_wrappers_1_1_live_stream_event_servicfa4e72288f927011a9782a7518374089.html#a12ac1e92e029fd26ac1a8602785924f7", null ]
+];

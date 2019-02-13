@@ -1,0 +1,9 @@
+var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_reconciliation_order_report_service_interface =
+[
+    [ "getReconciliationOrderReportsByStatement", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_reconciliation_order_report_service_interface.html#a25573c549b3d1d0b591abc8939ef0faa", null ],
+    [ "getReconciliationOrderReportsByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_reconciliation_order_report_service_interface.html#a4a7c2d12ff839d52204d49dc20e9dba8", null ],
+    [ "performReconciliationOrderReportAction", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_reconciliation_order_report_service_interface.html#a759726fe5a940a3f0bef741f07fc2672", null ],
+    [ "performReconciliationOrderReportActionAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_reconciliation_order_report_service_interface.html#a4f968a9391c0b633d6ebaba3d40fbb69", null ],
+    [ "updateReconciliationOrderReports", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_reconciliation_order_report_service_interface.html#a4a57b44dce24566a2a13e35fda96e42f", null ],
+    [ "updateReconciliationOrderReportsAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_reconciliation_order_report_service_interface.html#a27d7423eb91748675c42ec2d55f55e17", null ]
+];

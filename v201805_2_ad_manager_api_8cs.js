@@ -312,6 +312,7 @@ var v201805_2_ad_manager_api_8cs =
     [ "CustomCriteriaNode", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_custom_criteria_node.html", null ],
     [ "CustomCriteriaLeaf", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_custom_criteria_leaf.html", null ],
     [ "AudienceSegmentCriteria", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_audience_segment_criteria.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_audience_segment_criteria" ],
+    [ "CmsMetadataCriteria", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_cms_metadata_criteria.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_cms_metadata_criteria" ],
     [ "CustomCriteria", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_custom_criteria.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_custom_criteria" ],
     [ "UserDomainTargeting", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_user_domain_targeting.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_user_domain_targeting" ],
     [ "ContentTargeting", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_content_targeting.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_content_targeting" ],
@@ -1435,6 +1436,10 @@ var v201805_2_ad_manager_api_8cs =
       [ "INVALID_DELIVERY_RATE_TYPE", "v201805_2_ad_manager_api_8cs.html#ac95f5c8a24e1b652a602d6278f1f1909a3223bf15828326bec40cb00efde097ea", null ],
       [ "UNSUPPORTED_FIELD", "v201805_2_ad_manager_api_8cs.html#ac95f5c8a24e1b652a602d6278f1f1909a74df41d41b141e73afbf9bddbedc4c69", null ],
       [ "UNKNOWN", "v201805_2_ad_manager_api_8cs.html#ac95f5c8a24e1b652a602d6278f1f1909a696b031073e74bf2cb98e5ef201d4aa3", null ]
+    ] ],
+    [ "CmsMetadataCriteriaComparisonOperator", "v201805_2_ad_manager_api_8cs.html#a9e3cbb151ec4b54be0d6f2da6f4561a0", [
+      [ "EQUALS", "v201805_2_ad_manager_api_8cs.html#a9e3cbb151ec4b54be0d6f2da6f4561a0a6837aeca94b8f55801166eb031e26a5a", null ],
+      [ "NOT_EQUALS", "v201805_2_ad_manager_api_8cs.html#a9e3cbb151ec4b54be0d6f2da6f4561a0ad898a01a21468f1ad0c7d1c216844db2", null ]
     ] ],
     [ "CollectionSizeErrorReason", "v201805_2_ad_manager_api_8cs.html#abad33555d7acc0c2eea33ac788fbe890", [
       [ "TOO_LARGE", "v201805_2_ad_manager_api_8cs.html#abad33555d7acc0c2eea33ac788fbe890a5a28a0d6dc6d88bf608c575966a85809", null ],
@@ -4283,6 +4288,7 @@ var v201805_2_ad_manager_api_8cs =
       [ "UNKNOWN", "v201805_2_ad_manager_api_8cs.html#aeecb03a402e5339618b17f80b81f0014a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "VideoPositionType", "v201805_2_ad_manager_api_8cs.html#a87a522978590b03f9ba4fad18ec9f520", [
+      [ "UNKNOWN", "v201805_2_ad_manager_api_8cs.html#a87a522978590b03f9ba4fad18ec9f520a696b031073e74bf2cb98e5ef201d4aa3", null ],
       [ "PREROLL", "v201805_2_ad_manager_api_8cs.html#a87a522978590b03f9ba4fad18ec9f520a08ff8d62baf34eb1f694ea4a07ea2dc6", null ],
       [ "MIDROLL", "v201805_2_ad_manager_api_8cs.html#a87a522978590b03f9ba4fad18ec9f520ad832a3298699df7b3bac1f6a8afafdda", null ],
       [ "POSTROLL", "v201805_2_ad_manager_api_8cs.html#a87a522978590b03f9ba4fad18ec9f520a6903a6322ea69be1b1b2b45d1a6e38b2", null ]

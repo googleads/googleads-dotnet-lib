@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201805_1_1_create_proposal_line_items_from_package =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201805_1_1_create_proposal_line_items_from_package.html#ac650af78b181a21e1c37ac1a4b9d1c33", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201805_1_1_create_proposal_line_items_from_package.html#a38f51e2435bc8a95fe6a6eba979a7435", null ]
-];

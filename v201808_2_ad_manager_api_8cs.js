@@ -314,6 +314,7 @@ var v201808_2_ad_manager_api_8cs =
     [ "CustomCriteriaNode", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_custom_criteria_node.html", null ],
     [ "CustomCriteriaLeaf", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_custom_criteria_leaf.html", null ],
     [ "AudienceSegmentCriteria", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_audience_segment_criteria.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_audience_segment_criteria" ],
+    [ "CmsMetadataCriteria", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_cms_metadata_criteria.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_cms_metadata_criteria" ],
     [ "CustomCriteria", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_custom_criteria.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_custom_criteria" ],
     [ "UserDomainTargeting", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_user_domain_targeting.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_user_domain_targeting" ],
     [ "ContentTargeting", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_content_targeting.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_content_targeting" ],
@@ -1451,6 +1452,10 @@ var v201808_2_ad_manager_api_8cs =
       [ "UNSUPPORTED_FIELD", "v201808_2_ad_manager_api_8cs.html#a4bc785aa50c154d10887ebc8b70d0cf6a74df41d41b141e73afbf9bddbedc4c69", null ],
       [ "UNKNOWN", "v201808_2_ad_manager_api_8cs.html#a4bc785aa50c154d10887ebc8b70d0cf6a696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
+    [ "CmsMetadataCriteriaComparisonOperator", "v201808_2_ad_manager_api_8cs.html#a13f965c43473291c456d15d39313db8a", [
+      [ "EQUALS", "v201808_2_ad_manager_api_8cs.html#a13f965c43473291c456d15d39313db8aa6837aeca94b8f55801166eb031e26a5a", null ],
+      [ "NOT_EQUALS", "v201808_2_ad_manager_api_8cs.html#a13f965c43473291c456d15d39313db8aad898a01a21468f1ad0c7d1c216844db2", null ]
+    ] ],
     [ "CollectionSizeErrorReason", "v201808_2_ad_manager_api_8cs.html#a18845f365f85e66fa8fe08a2354a9993", [
       [ "TOO_LARGE", "v201808_2_ad_manager_api_8cs.html#a18845f365f85e66fa8fe08a2354a9993a5a28a0d6dc6d88bf608c575966a85809", null ],
       [ "UNKNOWN", "v201808_2_ad_manager_api_8cs.html#a18845f365f85e66fa8fe08a2354a9993a696b031073e74bf2cb98e5ef201d4aa3", null ]
@@ -2583,7 +2588,6 @@ var v201808_2_ad_manager_api_8cs =
       [ "AD_EXCHANGE_VIDEO_AD_TYPE", "v201808_2_ad_manager_api_8cs.html#a27a11304155d36ed2841773f56996f32ae89b0008c2ad8c901caa07a26266a2bb", null ],
       [ "AD_EXCHANGE_WEEK", "v201808_2_ad_manager_api_8cs.html#a27a11304155d36ed2841773f56996f32a32ba2b59e80ad39c5f6a9cf4a3f289ed", null ],
       [ "AD_EXCHANGE_AD_LOCATION", "v201808_2_ad_manager_api_8cs.html#a27a11304155d36ed2841773f56996f32a129372edcd13b3c18fda8a74b911203b", null ],
-      [ "AD_EXCHANGE_BID_RANGE", "v201808_2_ad_manager_api_8cs.html#a27a11304155d36ed2841773f56996f32a70fa02d83f257034707513fc0e7a552d", null ],
       [ "AD_EXCHANGE_ADVERTISER_VERTICAL", "v201808_2_ad_manager_api_8cs.html#a27a11304155d36ed2841773f56996f32a09a4ddf497f23d3ebbca24792186b6db", null ],
       [ "NIELSEN_SEGMENT", "v201808_2_ad_manager_api_8cs.html#a27a11304155d36ed2841773f56996f32a0cca4d77a552e2e6be717325e287b2ab", null ],
       [ "NIELSEN_DEMOGRAPHICS", "v201808_2_ad_manager_api_8cs.html#a27a11304155d36ed2841773f56996f32a1fbc62e7535d77e1672e072c01902ff1", null ],
@@ -4323,6 +4327,7 @@ var v201808_2_ad_manager_api_8cs =
       [ "UNKNOWN", "v201808_2_ad_manager_api_8cs.html#aff229ffe94dcac0c562002592c48988ea696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
     [ "VideoPositionType", "v201808_2_ad_manager_api_8cs.html#acb94ab71d2476842e8dafe402b7eb116", [
+      [ "UNKNOWN", "v201808_2_ad_manager_api_8cs.html#acb94ab71d2476842e8dafe402b7eb116a696b031073e74bf2cb98e5ef201d4aa3", null ],
       [ "PREROLL", "v201808_2_ad_manager_api_8cs.html#acb94ab71d2476842e8dafe402b7eb116a08ff8d62baf34eb1f694ea4a07ea2dc6", null ],
       [ "MIDROLL", "v201808_2_ad_manager_api_8cs.html#acb94ab71d2476842e8dafe402b7eb116ad832a3298699df7b3bac1f6a8afafdda", null ],
       [ "POSTROLL", "v201808_2_ad_manager_api_8cs.html#acb94ab71d2476842e8dafe402b7eb116a6903a6322ea69be1b1b2b45d1a6e38b2", null ]

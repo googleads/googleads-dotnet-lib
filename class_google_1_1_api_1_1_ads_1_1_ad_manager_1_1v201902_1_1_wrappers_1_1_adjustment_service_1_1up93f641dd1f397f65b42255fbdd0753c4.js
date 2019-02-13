@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_wrappers_1_1_adjustment_service_1_1up93f641dd1f397f65b42255fbdd0753c4 =
+[
+    [ "updateTrafficAdjustmentsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_wrappers_1_1_adjustment_service_1_1up93f641dd1f397f65b42255fbdd0753c4.html#af29d615a71ddb1f840596c0806de37f3", null ],
+    [ "updateTrafficAdjustmentsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_wrappers_1_1_adjustment_service_1_1up93f641dd1f397f65b42255fbdd0753c4.html#a9da86bf6402f1254f0f4c823b033e4b3", null ],
+    [ "adjustments", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_wrappers_1_1_adjustment_service_1_1up93f641dd1f397f65b42255fbdd0753c4.html#a1271649ce71c98c02e63090ea0710804", null ]
+];

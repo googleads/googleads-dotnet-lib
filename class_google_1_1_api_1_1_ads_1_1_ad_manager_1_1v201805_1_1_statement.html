@@ -131,8 +131,9 @@ Properties</h2></td></tr>
 30"</code>.</p>
 <p>Statements support bind variables. These are substitutes for literals and can be thought of as input parameters to a PQL query.</p>
 <p>An example of such a query might be <code>"WHERE id = :idValue"</code>.</p>
-<p>Statements also support use of the LIKE keyword. This provides partial and wildcard string matching.</p>
-<p>An example of such a query might be <code>"WHERE name LIKE 'startswith%'"</code>.</p>
+<p>Statements also support use of the LIKE keyword. This provides wildcard string matching.</p>
+<p>An example of such a query might be <code>"WHERE name
+LIKE '%searchString%'"</code>.</p>
 <p>The value for the variable idValue must then be set with an object of type <a href="Value">Value</a>, e.g., <a href="NumberValue">NumberValue</a>, <a href="TextValue">TextValue</a> or <a href="BooleanValue">BooleanValue</a>. </p>
 </div><h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="ab4db520e2442502c21183e146feef1b9"></a>
@@ -203,7 +204,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_manager.html">AdManager</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805.html">v201805</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_statement.html">Statement</a></li>
-    <li class="footer">Generated on Fri Feb 1 2019 16:38:48 for Ads API .NET library by
+    <li class="footer">Generated on Wed Feb 13 2019 14:49:54 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

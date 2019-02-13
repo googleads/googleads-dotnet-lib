@@ -265,6 +265,7 @@ var namespace_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805 =
     [ "CustomCriteriaNode", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_custom_criteria_node.html", null ],
     [ "CustomCriteriaLeaf", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_custom_criteria_leaf.html", null ],
     [ "AudienceSegmentCriteria", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_audience_segment_criteria.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_audience_segment_criteria" ],
+    [ "CmsMetadataCriteria", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_cms_metadata_criteria.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_cms_metadata_criteria" ],
     [ "CustomCriteria", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_custom_criteria.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_custom_criteria" ],
     [ "UserDomainTargeting", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_user_domain_targeting.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_user_domain_targeting" ],
     [ "ContentTargeting", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_content_targeting.html", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_content_targeting" ],

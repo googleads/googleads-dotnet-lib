@@ -1,4 +1,0 @@
-var dir_876bd9146c89bb798b7245cbef890476 =
-[
-    [ "github", "dir_4d47a74c5c36682582ea94fc101963f2.html", "dir_4d47a74c5c36682582ea94fc101963f2" ]
-];

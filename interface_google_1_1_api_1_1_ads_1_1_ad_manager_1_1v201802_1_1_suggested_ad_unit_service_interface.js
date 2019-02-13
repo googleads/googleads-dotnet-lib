@@ -1,7 +1,0 @@
-var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_suggested_ad_unit_service_interface =
-[
-    [ "getSuggestedAdUnitsByStatement", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_suggested_ad_unit_service_interface.html#a7b684ea9b5d3f58391b399601ba00bbd", null ],
-    [ "getSuggestedAdUnitsByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_suggested_ad_unit_service_interface.html#a7e05105c878977376a39b947b40e1f8e", null ],
-    [ "performSuggestedAdUnitAction", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_suggested_ad_unit_service_interface.html#a2ccf65053f56198a958212240be172f8", null ],
-    [ "performSuggestedAdUnitActionAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201802_1_1_suggested_ad_unit_service_interface.html#a7ec13389053e4bff5c9898e3cd8bf365", null ]
-];
