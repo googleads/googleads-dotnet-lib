@@ -15,8 +15,8 @@
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util.Reports;
 using Google.Api.Ads.AdManager.Lib;
-using Google.Api.Ads.AdManager.Util.v201802;
-using Google.Api.Ads.AdManager.v201802;
+using Google.Api.Ads.AdManager.Util.v201902;
+using Google.Api.Ads.AdManager.v201902;
 
 using System;
 using System.Data;
@@ -170,10 +170,10 @@ namespace Google.Api.Ads.AdManager.Examples.CSharp.OAuth
             {
                 Column.AD_SERVER_IMPRESSIONS,
                 Column.AD_SERVER_CLICKS,
-                Column.DYNAMIC_ALLOCATION_INVENTORY_LEVEL_IMPRESSIONS,
-                Column.DYNAMIC_ALLOCATION_INVENTORY_LEVEL_CLICKS,
-                Column.TOTAL_INVENTORY_LEVEL_IMPRESSIONS,
-                Column.TOTAL_INVENTORY_LEVEL_CPM_AND_CPC_REVENUE
+                Column.ADSENSE_LINE_ITEM_LEVEL_IMPRESSIONS,
+                Column.ADSENSE_LINE_ITEM_LEVEL_CLICKS,
+                Column.TOTAL_LINE_ITEM_LEVEL_IMPRESSIONS,
+                Column.TOTAL_LINE_ITEM_LEVEL_CPM_AND_CPC_REVENUE
             };
 
             reportQuery.adUnitView = ReportQueryAdUnitView.HIERARCHICAL;

@@ -1,3 +1,16 @@
+24.5.0
+=====
+  AdWords:
+    - No changes.
+
+  Ad Manager:
+    - Added support for v201902.
+    - Removed support for v201802.
+    - Removed examples for v201805.
+
+  Common:
+    - No changes.
+
 24.4.0
 =====
  AdWords:

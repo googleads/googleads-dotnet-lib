@@ -19592,7 +19592,7 @@ namespace Google.Api.Ads.AdManager.v201811
 			}
 		}
 
-		/// <summary>The start date time of this range. This field is optional and if it is not set
+		/// <summary>The end date time of this range. This field is optional and if it is not set
 		/// then there is no upper bound on the date time range. If this field is not set
 		/// then <code>startDateTime</code> must be specified.
 		/// </summary>
@@ -20797,6 +20797,7 @@ namespace Google.Api.Ads.AdManager.v201811
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomCriteriaLeaf))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AudienceSegmentCriteria))]
+	[System.Xml.Serialization.XmlIncludeAttribute(typeof(CmsMetadataCriteria))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomCriteria))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomCriteriaSet))]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
@@ -20812,6 +20813,7 @@ namespace Google.Api.Ads.AdManager.v201811
 	/// generic leaf of <a href='CustomCriteria'>CustomCriteria</a> tree structure.
 	/// </summary>
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(AudienceSegmentCriteria))]
+	[System.Xml.Serialization.XmlIncludeAttribute(typeof(CmsMetadataCriteria))]
 	[System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomCriteria))]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -20886,6 +20888,73 @@ namespace Google.Api.Ads.AdManager.v201811
 	public enum AudienceSegmentCriteriaComparisonOperator {
 		IS = 0,
 		IS_NOT = 1,
+	}
+
+
+	/// <summary>A <code>CmsMetadataCriteria</code> object is used to target <code></code>
+	/// objects.
+	/// </summary>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201811")]
+	public partial class CmsMetadataCriteria : CustomCriteriaLeaf {
+		private CmsMetadataCriteriaComparisonOperator operatorField;
+
+		private bool operatorFieldSpecified;
+
+		private long[] cmsMetadataValueIdsField;
+
+		/// <summary>The comparison operator. This attribute is required.
+		/// </summary>
+		[System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+		public CmsMetadataCriteriaComparisonOperator @operator {
+			get {
+				return this.operatorField;
+			}
+			set {
+				this.operatorField = value;
+				this.operatorSpecified = true;
+			}
+		}
+
+		/// <summary> <code>true</code>, if a value is specified for <see cref="@operator"
+		/// />, <code>false</code> otherwise. </summary>
+		[System.Xml.Serialization.XmlIgnoreAttribute()]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public bool operatorSpecified {
+			get {
+				return this.operatorFieldSpecified;
+			}
+			set {
+				this.operatorFieldSpecified = value;
+			}
+		}
+
+		/// <summary>The ids of <a href='CmsMetadataValue'>CmsMetadataValue</a> objects used to
+		/// target CMS metadata. This attribute is required.
+		/// </summary>
+		[System.Xml.Serialization.XmlElementAttribute("cmsMetadataValueIds", Order = 1)]
+		public long[] cmsMetadataValueIds {
+			get {
+				return this.cmsMetadataValueIdsField;
+			}
+			set {
+				this.cmsMetadataValueIdsField = value;
+			}
+		}
+	}
+
+
+	/// <summary>Specifies the available comparison operators.
+	/// </summary>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "CmsMetadataCriteria.ComparisonOperator", Namespace = "https://www.google.com/apis/ads/publisher/v201811")]
+	public enum CmsMetadataCriteriaComparisonOperator {
+		EQUALS = 0,
+		NOT_EQUALS = 1,
 	}
 
 
@@ -21241,7 +21310,8 @@ namespace Google.Api.Ads.AdManager.v201811
 
 		/// <summary>The video bumper type to target. To target a video position or a pod position,
 		/// this value must be null. To target a bumper position this value must be
-		/// populated and the line item must have a bumper type.
+		/// populated and the line item must have a bumper type. To target a custom ad spot,
+		/// this value must be null.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 1)]
 		public VideoBumperType videoBumperType {
@@ -21269,7 +21339,7 @@ namespace Google.Api.Ads.AdManager.v201811
 
 		/// <summary>The video position within a pod to target. To target a video position or a
 		/// bumper position, this value must be null. To target a position within a pod this
-		/// value must be populated.
+		/// value must be populated. To target a custom ad spot, this value must be null.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 2)]
 		public VideoPositionWithinPod videoPositionWithinPod {
@@ -21364,6 +21434,10 @@ namespace Google.Api.Ads.AdManager.v201811
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "VideoPosition.Type", Namespace = "https://www.google.com/apis/ads/publisher/v201811")]
 	public enum VideoPositionType {
+		/// <summary>The value returned if the actual value is not exposed by the requested API
+		/// version.
+		/// </summary>
+		UNKNOWN = 3,
 		/// <summary>The position defined as showing before the video starts playing.
 		/// </summary>
 		PREROLL = 0,
@@ -53141,7 +53215,17 @@ namespace Google.Api.Ads.AdManager.v201811
 	/// <td>Operation</td> <td><code>Text</code></td> <td>The <a
 	/// href='ChangeHistoryOperation'>operation</a> that was performed on this
 	/// entity.</td> </tr> <tr> <td>UserId</td> <td><code>Number</code></td> <td>The <a
-	/// href='User#id'>ID</a> of the user that made this change.</td> </tr> </table>
+	/// href='User#id'>ID</a> of the user that made this change.</td> </tr> </table> <h2
+	/// id="ad_category">ad_category</h2> <table> <tr> <th>Column name</th>
+	/// <th>Type</th> <th>Description</th> </tr> <tr> <td>ChildIds</td> <td><code>Set of
+	/// number</code></td> <td>Child IDs of an Ad category. Only general categories have
+	/// children</td> </tr> <tr> <td>Id</td> <td><code>Number</code></td> <td>ID of an
+	/// Ad category</td> </tr> <tr> <td>Name</td> <td><code>Text</code></td>
+	/// <td>Localized name of an Ad category</td> </tr> <tr> <td>ParentId</td>
+	/// <td><code>Number</code></td> <td>Parent ID of an Ad category. Only general
+	/// categories have parents</td> </tr> <tr> <td>Type</td> <td><code>Text</code></td>
+	/// <td>Type of an Ad category. Only general categories have children</td> </tr>
+	/// </table>
 	/// </summary>
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -62682,7 +62766,7 @@ namespace Google.Api.Ads.AdManager.v201811
 		/// the impressions per person for the overall population.
 		/// </summary>
 		NIELSEN_IN_TARGET_IMPRESSIONS_INDEX = 421,
-		/// <summary>The number of impressions delivered. <p>Corresponds to "Impressions" in the Ad
+		/// <summary>Number of impressions delivered. <p>Corresponds to "Impressions" in the Ad
 		/// Manager UI.</p>
 		/// </summary>
 		DP_IMPRESSIONS = 503,
@@ -75941,7 +76025,17 @@ namespace Google.Api.Ads.AdManager.v201811
 	/// <td>Operation</td> <td><code>Text</code></td> <td>The <a
 	/// href='ChangeHistoryOperation'>operation</a> that was performed on this
 	/// entity.</td> </tr> <tr> <td>UserId</td> <td><code>Number</code></td> <td>The <a
-	/// href='User#id'>ID</a> of the user that made this change.</td> </tr> </table>
+	/// href='User#id'>ID</a> of the user that made this change.</td> </tr> </table> <h2
+	/// id="ad_category">ad_category</h2> <table> <tr> <th>Column name</th>
+	/// <th>Type</th> <th>Description</th> </tr> <tr> <td>ChildIds</td> <td><code>Set of
+	/// number</code></td> <td>Child IDs of an Ad category. Only general categories have
+	/// children</td> </tr> <tr> <td>Id</td> <td><code>Number</code></td> <td>ID of an
+	/// Ad category</td> </tr> <tr> <td>Name</td> <td><code>Text</code></td>
+	/// <td>Localized name of an Ad category</td> </tr> <tr> <td>ParentId</td>
+	/// <td><code>Number</code></td> <td>Parent ID of an Ad category. Only general
+	/// categories have parents</td> </tr> <tr> <td>Type</td> <td><code>Text</code></td>
+	/// <td>Type of an Ad category. Only general categories have children</td> </tr>
+	/// </table>
 	/// </summary>
 	public interface IPublisherQueryLanguageService : PublisherQueryLanguageServiceInterface, IDisposable
 	{
