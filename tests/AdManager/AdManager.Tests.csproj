@@ -8,6 +8,7 @@
     <DebugType>full</DebugType>
     <IncludeSymbols>true</IncludeSymbols>
     <IncludeSource>true</IncludeSource>
+    <IsTestProject>true</IsTestProject>
     <PublicSign Condition="'$(OS)' != 'Windows_NT'">true</PublicSign>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(ProjectDir)..\..\src\Common\AdsApi.snk</AssemblyOriginatorKeyFile>
