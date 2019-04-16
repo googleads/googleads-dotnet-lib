@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_third_party_redirect_ad_1_1_filterable_fields =
-[
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_third_party_redirect_ad_1_1_filterable_fields.html#a172f4d19d7ad7884b94b4034e4fd8906", null ]
-];

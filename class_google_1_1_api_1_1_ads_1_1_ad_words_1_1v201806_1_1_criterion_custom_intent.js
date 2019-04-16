@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_criterion_custom_intent =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_criterion_custom_intent_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_criterion_custom_intent_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_criterion_custom_intent_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_criterion_custom_intent_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_criterion_custom_intent_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_criterion_custom_intent_1_1_selectable_fields" ],
-    [ "customIntentId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_criterion_custom_intent.html#a3493107abf31f39189386c9452ea5525", null ],
-    [ "customIntentIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_criterion_custom_intent.html#a078569a1fd37c1f275a504e1ae77975b", null ]
-];

@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_custom_affinity_error_1_1_selectable_fields =
-[
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_custom_affinity_error_1_1_selectable_fields.html#a24068b7327cff341af7372ec20daa407", null ]
-];

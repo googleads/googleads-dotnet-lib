@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_remarketing_money_with_currency_1_1_fields =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_remarketing_money_with_currency_1_1_fields.html#ac7b9e88058252d4166fb7a3c469c5338", null ]
-];

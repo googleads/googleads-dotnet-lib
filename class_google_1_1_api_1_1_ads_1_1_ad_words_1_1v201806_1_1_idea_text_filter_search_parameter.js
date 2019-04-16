@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_idea_text_filter_search_parameter =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_idea_text_filter_search_parameter_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_idea_text_filter_search_parameter_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_idea_text_filter_search_parameter_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_idea_text_filter_search_parameter_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_idea_text_filter_search_parameter_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_idea_text_filter_search_parameter_1_1_selectable_fields" ],
-    [ "excluded", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_idea_text_filter_search_parameter.html#a89c80edae3f2e4372ba93c249e605a67", null ],
-    [ "included", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_idea_text_filter_search_parameter.html#a0ecbc69438a48b68739493ba518b284f", null ]
-];

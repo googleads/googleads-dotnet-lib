@@ -1,9 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_traffic_estimator_selector =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_traffic_estimator_selector_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_traffic_estimator_selector_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_traffic_estimator_selector_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_traffic_estimator_selector_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_traffic_estimator_selector_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_traffic_estimator_selector_1_1_selectable_fields" ],
-    [ "campaignEstimateRequests", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_traffic_estimator_selector.html#a2b2d32e82c7e8cd3fab3ab8b07958bc1", null ],
-    [ "platformEstimateRequested", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_traffic_estimator_selector.html#ada23b88111ff62ca1036cbd5aa196cd8", null ],
-    [ "platformEstimateRequestedSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_traffic_estimator_selector.html#ac88e7d1a97a9e048a0d7b9fe47536994", null ]
-];

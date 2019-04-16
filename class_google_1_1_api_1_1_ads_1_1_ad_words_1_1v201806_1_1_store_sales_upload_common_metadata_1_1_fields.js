@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_store_sales_upload_common_metadata_1_1_fields =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_store_sales_upload_common_metadata_1_1_fields.html#a1156cb80c5f0a39882f4d02b9657f79d", null ]
-];

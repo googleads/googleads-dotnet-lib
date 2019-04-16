@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_entity_access_denied_1_1_filterable_fields =
-[
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_entity_access_denied_1_1_filterable_fields.html#a3361948d3ebd9308eb0a90428fc893d8", null ]
-];

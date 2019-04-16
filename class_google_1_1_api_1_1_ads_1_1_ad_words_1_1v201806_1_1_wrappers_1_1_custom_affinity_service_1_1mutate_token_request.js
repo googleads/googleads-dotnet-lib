@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_wrappers_1_1_custom_affinity_service_1_1mutate_token_request =
-[
-    [ "mutateTokenRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_wrappers_1_1_custom_affinity_service_1_1mutate_token_request.html#a214cd7d265982ca1779f3005f0e01a4d", null ],
-    [ "mutateTokenRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_wrappers_1_1_custom_affinity_service_1_1mutate_token_request.html#ae6f7db46638020ecf231b0238098d805", null ],
-    [ "operations", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_wrappers_1_1_custom_affinity_service_1_1mutate_token_request.html#a02ffd6362a8dd36d47aa32fee38765dd", null ]
-];

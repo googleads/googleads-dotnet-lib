@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_conversion_optimizer_eligibility_1_1_fields =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201806_1_1_conversion_optimizer_eligibility_1_1_fields.html#a7f72c75c2d44541d9cb1c5c64a8d6b6f", null ]
-];
