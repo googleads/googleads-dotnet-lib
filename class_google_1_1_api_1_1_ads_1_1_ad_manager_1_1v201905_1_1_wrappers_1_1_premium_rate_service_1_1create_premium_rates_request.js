@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201905_1_1_wrappers_1_1_premium_rate_service_1_1create_premium_rates_request =
+[
+    [ "createPremiumRatesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201905_1_1_wrappers_1_1_premium_rate_service_1_1create_premium_rates_request.html#a1bf709f0b76e73c4bf6fd9681cd53c04", null ],
+    [ "createPremiumRatesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201905_1_1_wrappers_1_1_premium_rate_service_1_1create_premium_rates_request.html#ab43eed0bb6d363aa61cb396d9b4ee466", null ],
+    [ "premiumRates", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201905_1_1_wrappers_1_1_premium_rate_service_1_1create_premium_rates_request.html#aea8aaccb98786a616f1dc0ce80f9f2dc", null ]
+];

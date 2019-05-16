@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201905_1_1_wrappers_1_1_creative_wrapper_serviceb611966445f96760df4ef059af451cd9 =
+[
+    [ "createCreativeWrappersRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201905_1_1_wrappers_1_1_creative_wrapper_serviceb611966445f96760df4ef059af451cd9.html#a13a09a475c3280c83d20a8e260bbda05", null ],
+    [ "createCreativeWrappersRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201905_1_1_wrappers_1_1_creative_wrapper_serviceb611966445f96760df4ef059af451cd9.html#a97d80042f7a72eaf4dd04a2f9a4e029a", null ],
+    [ "creativeWrappers", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201905_1_1_wrappers_1_1_creative_wrapper_serviceb611966445f96760df4ef059af451cd9.html#ae7e5e38cf90c68a0f5d61f10337a5a60", null ]
+];

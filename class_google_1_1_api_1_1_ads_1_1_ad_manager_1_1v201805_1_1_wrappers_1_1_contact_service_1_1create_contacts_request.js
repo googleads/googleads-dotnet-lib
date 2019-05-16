@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_contact_service_1_1create_contacts_request =
-[
-    [ "createContactsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_contact_service_1_1create_contacts_request.html#ad5621c499a4d50b6abbf507fb44d735a", null ],
-    [ "createContactsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_contact_service_1_1create_contacts_request.html#a6a4f2b5ed91555ca5c223f8121d20651", null ],
-    [ "contacts", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_wrappers_1_1_contact_service_1_1create_contacts_request.html#a829c10ae296d6667619fdba99e616a8c", null ]
-];

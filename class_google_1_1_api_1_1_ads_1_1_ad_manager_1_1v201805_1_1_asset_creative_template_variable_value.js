@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_asset_creative_template_variable_value =
-[
-    [ "asset", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201805_1_1_asset_creative_template_variable_value.html#a95910dad60dbe03ae14c87584e21e210", null ]
-];

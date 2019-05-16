@@ -241,7 +241,7 @@ Properties</h2></td></tr>
 <tr class="memitem:a3d846efbdbef090a2e8e877ace06274d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_line_item_summary.html#a3d846efbdbef090a2e8e877ace06274d">allowOverbookSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a3d846efbdbef090a2e8e877ace06274d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adea12aa21a1c1aee9368ba3f9235d4c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_line_item_summary.html#adea12aa21a1c1aee9368ba3f9235d4c7">skipInventoryCheck</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:adea12aa21a1c1aee9368ba3f9235d4c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The flag indicates whether the inventory check should be skipped when performing an action on this line item. The default value is false.  <a href="#adea12aa21a1c1aee9368ba3f9235d4c7">More...</a><br/></td></tr>
+<tr class="memdesc:adea12aa21a1c1aee9368ba3f9235d4c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The flag indicates whether the inventory check should be skipped when creating or updating a line item. The default value is false.  <a href="#adea12aa21a1c1aee9368ba3f9235d4c7">More...</a><br/></td></tr>
 <tr class="separator:adea12aa21a1c1aee9368ba3f9235d4c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc056c0205b3cf9a2775cbb214c1e84d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_line_item_summary.html#abc056c0205b3cf9a2775cbb214c1e84d">skipInventoryCheckSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:abc056c0205b3cf9a2775cbb214c1e84d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -454,6 +454,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The flag indicates whether overbooking should be allowed when creating or updating reservations of line item types <a href="LineItemType#SPONSORSHIP">LineItemType::SPONSORSHIP</a> and <a href="LineItemType#STANDARD">LineItemType::STANDARD</a>. When true, operations on this line item will never trigger a <a href="ForecastError">ForecastError</a>, which corresponds to an overbook warning in the UI. The default value is false. </p>
+<p>Note: this field will not persist on the line item itself, and the value will only affect the current request.</p>
 
 </div>
 </div>
@@ -2090,7 +2091,8 @@ The <a href="Creative#appliedLabels">Creative::appliedLabels</a> of an associate
 </table>
 </div><div class="memdoc">
 
-<p>The flag indicates whether the inventory check should be skipped when performing an action on this line item. The default value is false. </p>
+<p>The flag indicates whether the inventory check should be skipped when creating or updating a line item. The default value is false. </p>
+<p>Note: this field will not persist on the line item itself, and the value will only affect the current request.</p>
 
 </div>
 </div>
@@ -2113,7 +2115,7 @@ The <a href="Creative#appliedLabels">Creative::appliedLabels</a> of an associate
 </div><div class="memdoc">
 
 <p></p>
-<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_line_item_summary.html#adea12aa21a1c1aee9368ba3f9235d4c7" title="The flag indicates whether the inventory check should be skipped when performing an action on this li...">skipInventoryCheck</a>, <code>false</code> otherwise. </p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_line_item_summary.html#adea12aa21a1c1aee9368ba3f9235d4c7" title="The flag indicates whether the inventory check should be skipped when creating or updating a line ite...">skipInventoryCheck</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -2490,7 +2492,7 @@ The <a href="Creative#appliedLabels">Creative::appliedLabels</a> of an associate
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_manager.html">AdManager</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811.html">v201811</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_line_item_summary.html">LineItemSummary</a></li>
-    <li class="footer">Generated on Tue Apr 16 2019 09:34:49 for Ads API .NET library by
+    <li class="footer">Generated on Thu May 16 2019 17:06:32 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

@@ -175,13 +175,13 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Describes predicted inventory availability for a <a href="ProspectiveLineItem">ProspectiveLineItem</a>. </p>
 <p>Inventory has three threshold values along a line of possible inventory. From least to most, these are:</p>
-<ul class="noindent">
+<ul>
 <li>
 Available units &ndash; How many units can be booked without affecting any other line items. Booking more than this number can cause lower and same priority line items to underdeliver. </li>
 <li>
 Possible units &ndash; How many units can be booked without affecting any higher priority line items. Booking more than this number can cause the line item to underdeliver. </li>
 <li>
-Matched (forecast) units &ndash; How many units satisfy all specified criteria.  </li>
+Matched (forecast) units &ndash; How many units satisfy all specified criteria. </li>
 </ul>
 <p>Underdelivery is caused by overbooking. However, if more impressions are served than are predicted, the extra available inventory might enable all inventory guarantees to be met without overbooking.</p>
 </div><h2 class="groupheader">Property Documentation</h2>
@@ -687,7 +687,7 @@ breakdownEntries=[availalbleUnits=20, availableUnits=200]} ] } </pre><p> where t
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_manager.html">AdManager</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902.html">v201902</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_availability_forecast.html">AvailabilityForecast</a></li>
-    <li class="footer">Generated on Tue Apr 16 2019 09:34:56 for Ads API .NET library by
+    <li class="footer">Generated on Thu May 16 2019 17:06:39 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

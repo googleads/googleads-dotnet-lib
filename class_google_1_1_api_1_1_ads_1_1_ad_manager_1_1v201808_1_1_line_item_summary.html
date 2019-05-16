@@ -241,7 +241,7 @@ Properties</h2></td></tr>
 <tr class="memitem:a3b52f5a3b9a0f396bb13cd420b0dd964"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_line_item_summary.html#a3b52f5a3b9a0f396bb13cd420b0dd964">allowOverbookSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:a3b52f5a3b9a0f396bb13cd420b0dd964"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f3a5da2a0db51023e687ab3f6ba2b44"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_line_item_summary.html#a6f3a5da2a0db51023e687ab3f6ba2b44">skipInventoryCheck</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6f3a5da2a0db51023e687ab3f6ba2b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">The flag indicates whether the inventory check should be skipped when performing an action on this line item. The default value is false.  <a href="#a6f3a5da2a0db51023e687ab3f6ba2b44">More...</a><br/></td></tr>
+<tr class="memdesc:a6f3a5da2a0db51023e687ab3f6ba2b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">The flag indicates whether the inventory check should be skipped when creating or updating a line item. The default value is false.  <a href="#a6f3a5da2a0db51023e687ab3f6ba2b44">More...</a><br/></td></tr>
 <tr class="separator:a6f3a5da2a0db51023e687ab3f6ba2b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac634d774cc6a9e92201628638d5ff9b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_line_item_summary.html#aac634d774cc6a9e92201628638d5ff9b">skipInventoryCheckSpecified</a><code> [get, set]</code></td></tr>
 <tr class="separator:aac634d774cc6a9e92201628638d5ff9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -454,6 +454,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The flag indicates whether overbooking should be allowed when creating or updating reservations of line item types <a href="LineItemType#SPONSORSHIP">LineItemType::SPONSORSHIP</a> and <a href="LineItemType#STANDARD">LineItemType::STANDARD</a>. When true, operations on this line item will never trigger a <a href="ForecastError">ForecastError</a>, which corresponds to an overbook warning in the UI. The default value is false. </p>
+<p>Note: this field will not persist on the line item itself, and the value will only affect the current request.</p>
 
 </div>
 </div>
@@ -855,8 +856,6 @@ The <a href="#roadblockingType">#roadblockingType</a> is <a href="RoadblockingTy
 </div><div class="memdoc">
 
 <p>The values of the custom fields associated with this line item. </p>
-
-<p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_run_report_with_custom_fields.html#a3e3b6c57f8b73b7199df4cecedea9392">Google.Api.Ads.AdManager.Examples.CSharp.v201808.RunReportWithCustomFields.Run()</a>, and <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_set_line_item_custom_field_value.html#a36e76755698565f37968aa94770deeda">Google.Api.Ads.AdManager.Examples.CSharp.v201808.SetLineItemCustomFieldValue.Run()</a>.</p>
 
 </div>
 </div>
@@ -1330,8 +1329,6 @@ The line item has a percentage based goal or cap. </li>
 
 <p>The archival status of the </p>
 <p><code><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_line_item.html">LineItem</a></code>. This attribute is readonly. </p>
-
-<p>Referenced by <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201808_1_1_activate_line_item.html#a54e5f179b603dedb79ba76197264733f">Google.Api.Ads.AdManager.Examples.CSharp.v201808.ActivateLineItem.Run()</a>.</p>
 
 </div>
 </div>
@@ -2090,7 +2087,8 @@ The <a href="Creative#appliedLabels">Creative::appliedLabels</a> of an associate
 </table>
 </div><div class="memdoc">
 
-<p>The flag indicates whether the inventory check should be skipped when performing an action on this line item. The default value is false. </p>
+<p>The flag indicates whether the inventory check should be skipped when creating or updating a line item. The default value is false. </p>
+<p>Note: this field will not persist on the line item itself, and the value will only affect the current request.</p>
 
 </div>
 </div>
@@ -2113,7 +2111,7 @@ The <a href="Creative#appliedLabels">Creative::appliedLabels</a> of an associate
 </div><div class="memdoc">
 
 <p></p>
-<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_line_item_summary.html#a6f3a5da2a0db51023e687ab3f6ba2b44" title="The flag indicates whether the inventory check should be skipped when performing an action on this li...">skipInventoryCheck</a>, <code>false</code> otherwise. </p>
+<p><code>true</code>, if a value is specified for <a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_line_item_summary.html#a6f3a5da2a0db51023e687ab3f6ba2b44" title="The flag indicates whether the inventory check should be skipped when creating or updating a line ite...">skipInventoryCheck</a>, <code>false</code> otherwise. </p>
 
 </div>
 </div>
@@ -2490,7 +2488,7 @@ The <a href="Creative#appliedLabels">Creative::appliedLabels</a> of an associate
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_google.html">Google</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads.html">Ads</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_manager.html">AdManager</a></li><li class="navelem"><a class="el" href="namespace_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808.html">v201808</a></li><li class="navelem"><a class="el" href="class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_line_item_summary.html">LineItemSummary</a></li>
-    <li class="footer">Generated on Tue Apr 16 2019 09:34:42 for Ads API .NET library by
+    <li class="footer">Generated on Thu May 16 2019 17:06:24 for Ads API .NET library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>
