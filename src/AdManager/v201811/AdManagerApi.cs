@@ -18403,16 +18403,15 @@ namespace Google.Api.Ads.AdManager.v201811
 	/// <summary>Describes predicted inventory availability for a <a
 	/// href='ProspectiveLineItem'>ProspectiveLineItem</a>. <p>Inventory has three
 	/// threshold values along a line of possible inventory. From least to most, these
-	/// are:</p> <ul class="noindent"> <li>Available units -- How many units can be
-	/// booked without affecting any other line items. Booking more than this number can
-	/// cause lower and same priority line items to underdeliver.</li> <li>Possible
-	/// units -- How many units can be booked without affecting any higher priority line
-	/// items. Booking more than this number can cause the line item to
-	/// underdeliver.</li> <li>Matched (forecast) units -- How many units satisfy all
-	/// specified criteria. </li> </ul> <p>Underdelivery is caused by overbooking.
-	/// However, if more impressions are served than are predicted, the extra available
-	/// inventory might enable all inventory guarantees to be met without
-	/// overbooking.</p>
+	/// are:</p> <ul> <li>Available units -- How many units can be booked without
+	/// affecting any other line items. Booking more than this number can cause lower
+	/// and same priority line items to underdeliver.</li> <li>Possible units -- How
+	/// many units can be booked without affecting any higher priority line items.
+	/// Booking more than this number can cause the line item to underdeliver.</li>
+	/// <li>Matched (forecast) units -- How many units satisfy all specified
+	/// criteria.</li> </ul> <p>Underdelivery is caused by overbooking. However, if more
+	/// impressions are served than are predicted, the extra available inventory might
+	/// enable all inventory guarantees to be met without overbooking.</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -27736,6 +27735,8 @@ namespace Google.Api.Ads.AdManager.v201811
 		/// href='LineItemType#STANDARD'>LineItemType#STANDARD</a>. When true, operations on
 		/// this line item will never trigger a <a href='ForecastError'>ForecastError</a>,
 		/// which corresponds to an overbook warning in the UI. The default value is false.
+		/// <p>Note: this field will not persist on the line item itself, and the value will
+		/// only affect the current request.</p>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 26)]
 		public bool allowOverbook {
@@ -27761,8 +27762,10 @@ namespace Google.Api.Ads.AdManager.v201811
 			}
 		}
 
-		/// <summary>The flag indicates whether the inventory check should be skipped when performing
-		/// an action on this line item. The default value is false.
+		/// <summary>The flag indicates whether the inventory check should be skipped when creating
+		/// or updating a line item. The default value is false. <p>Note: this field will
+		/// not persist on the line item itself, and the value will only affect the current
+		/// request.</p>
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 27)]
 		public bool skipInventoryCheck {
@@ -42188,9 +42191,7 @@ namespace Google.Api.Ads.AdManager.v201811
 		/// scope="col">Object Property</th> </tr> <tr> <td><code>description</code></td>
 		/// <td><a href='Placement#description'>Placement#description</a></td> </tr> <tr>
 		/// <td><code>id</code></td> <td><a href='Placement#id'>Placement#id</a></td> </tr>
-		/// <tr> <td><code>isAdSenseTargetingEnabled</code></td> <td><a
-		/// href='Placement#isAdSenseTargetingEnabled'>Placement#isAdSenseTargetingEnabled</a></td>
-		/// </tr> <tr> <td><code>name</code></td> <td><a
+		/// <tr> <td><code>name</code></td> <td><a
 		/// href='Placement#name'>Placement#name</a></td> </tr> <tr>
 		/// <td><code>placementCode</code></td> <td><a
 		/// href='Placement#placementCode'>Placement#placementCode</a></td> </tr> <tr>
