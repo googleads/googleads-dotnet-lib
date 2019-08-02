@@ -75,7 +75,18 @@ namespace Google.Api.Ads.AdWords.Lib
 
             // Create the binding for the service.
             BasicHttpBinding binding = new BasicHttpBinding();
-            binding.Security.Mode = BasicHttpSecurityMode.Transport;
+
+            // If the server end point is HTTP, then don't use security. This is used for testing
+            // purposes only.
+            if (endpoint.Uri.Scheme == "http")
+            {
+                binding.Security.Mode = BasicHttpSecurityMode.None;
+            }
+            else
+            {
+                binding.Security.Mode = BasicHttpSecurityMode.Transport;
+            }
+
             binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.None;
             binding.MaxReceivedMessageSize = int.MaxValue;
             binding.TextEncoding = Encoding.UTF8;
@@ -91,8 +102,14 @@ namespace Google.Api.Ads.AdWords.Lib
                 (ServiceEndpoint) service.GetType().GetProperty("Endpoint").GetValue(service, null);
 
             AdsServiceInspectorBehavior inspectorBehavior = new AdsServiceInspectorBehavior();
-            inspectorBehavior.Add(new OAuthClientMessageInspector(user.OAuthProvider));
 
+            // Add OAuth client message inspector only if the authorization method is OAuth2.
+            // In testing mode, the authorization method is set to Insecure.
+            if (awConfig.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2)
+            {
+                inspectorBehavior.Add(new OAuthClientMessageInspector(user.OAuthProvider));
+            }
+            
             RequestHeader clonedHeader = (RequestHeader) requestHeader.Clone();
             clonedHeader.Version = awapiSignature.Version;
             clonedHeader.GroupName = awapiSignature.GroupName;

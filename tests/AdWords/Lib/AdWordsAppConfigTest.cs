@@ -68,6 +68,7 @@ namespace Google.Api.Ads.AdWords.Tests.Lib
             {"MerchantCenter.AccountId", "123456"},
             {"UserAgent", "TEST_USER_AGENT"},
             {"AdWordsApi.Server", "TEST_API_SERVER"},
+            {"AuthorizationMethod", "Insecure"},
             {"SkipReportHeader", "true"},
             {"SkipReportSummary", "true"},
             {"SkipColumnHeader", "false"},
@@ -114,6 +115,8 @@ namespace Google.Api.Ads.AdWords.Tests.Lib
 
             Assert.AreEqual(dictSettings["UserAgent"], config.UserAgent);
             Assert.AreEqual(dictSettings["AdWordsApi.Server"], config.AdWordsApiServer);
+            Assert.AreEqual(dictSettings["AuthorizationMethod"],
+                config.AuthorizationMethod.ToString());
             Assert.AreEqual(dictSettings["SkipReportHeader"],
                 config.SkipReportHeader.ToString().ToLower());
             Assert.AreEqual(dictSettings["SkipReportSummary"],

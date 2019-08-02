@@ -233,7 +233,11 @@ namespace Google.Api.Ads.AdWords.Util.Reports
             request.Headers.Add("clientCustomerId: " + config.ClientCustomerId);
             request.ContentType = "application/x-www-form-urlencoded";
 
-            if (this.User.OAuthProvider != null)
+            // Set an authorization header only if the authorization mode is OAuth2. For testing
+            // purposes, the authorization method will be set to Insecure, and no authorization
+            // header will be sent.
+            if (config.AuthorizationMethod == AdWordsAuthorizationMethod.OAuth2 &&
+                this.User.OAuthProvider != null)
             {
                 request.Headers["Authorization"] = this.User.OAuthProvider.GetAuthHeader();
             }

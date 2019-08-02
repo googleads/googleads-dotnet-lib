@@ -1,3 +1,15 @@
+24.7.1
+======
+
+ AdWords:
+   - Added support for testing the client library against a local insecure server. 
+
+ Ad Manager:
+   - 
+ 
+ Common:
+   -
+   
 24.7.0
 ======
 
@@ -11,8 +23,6 @@
 
  Common:
    -
-
-
 
 24.6.0
 ======

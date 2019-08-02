@@ -93,6 +93,16 @@ namespace Google.Api.Ads.AdWords.Lib
             new ConfigSetting<string>("AdWordsApi.Server", DEFAULT_ADWORDSAPI_SERVER);
 
         /// <summary>
+        /// Authentication mode.
+        /// </summary>
+        /// <remarks>
+        /// This setting is only for testing purposes.
+        /// </remarks>
+        private ConfigSetting<AdWordsAuthorizationMethod> authorizationMethod =
+            new ConfigSetting<AdWordsAuthorizationMethod>("AuthorizationMethod",
+                AdWordsAuthorizationMethod.OAuth2);
+
+        /// <summary>
         /// Flag to decide whether or not to skip report header.
         /// </summary>
         private ConfigSetting<bool> skipReportHeader =
@@ -275,6 +285,16 @@ namespace Google.Api.Ads.AdWords.Lib
         }
 
         /// <summary>
+        /// Gets or sets the authorization method.
+        /// </summary>
+        /// <remarks>This setting is only for testing purposes.</remarks>
+        public AdWordsAuthorizationMethod AuthorizationMethod
+        {
+            get => authorizationMethod.Value;
+            set => SetPropertyAndNotify(authorizationMethod, value);
+        }
+
+        /// <summary>
         /// Gets a useragent string that can be used with the library.
         /// </summary>
         public override string GetUserAgent()
@@ -336,6 +356,7 @@ namespace Google.Api.Ads.AdWords.Lib
 
             ReadSetting(settings, userAgent);
             ReadSetting(settings, adWordsApiServer);
+            ReadSetting(settings, authorizationMethod);
 
             // If there is an OAuth2 scope mentioned in App.config, this will be
             // loaded by the base.ReadSettings() call above. If there isn't one, we will initialize
