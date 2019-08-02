@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201811_1_1_get_marketplace_comments =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201811_1_1_get_marketplace_comments.html#a8881948c6bfa860470b91bddc0e8ee46", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201811_1_1_get_marketplace_comments.html#a72f652a253e0719163c3065fef8c8e34", null ]
-];

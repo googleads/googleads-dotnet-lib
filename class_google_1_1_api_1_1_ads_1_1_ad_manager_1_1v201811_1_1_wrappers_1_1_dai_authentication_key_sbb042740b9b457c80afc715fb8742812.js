@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_dai_authentication_key_sbb042740b9b457c80afc715fb8742812 =
-[
-    [ "createDaiAuthenticationKeysResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_dai_authentication_key_sbb042740b9b457c80afc715fb8742812.html#a607fbc29542320357e06c045ccfadc8a", null ],
-    [ "createDaiAuthenticationKeysResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_dai_authentication_key_sbb042740b9b457c80afc715fb8742812.html#a6a06e23790e350570467c2b6656df11a", null ],
-    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_dai_authentication_key_sbb042740b9b457c80afc715fb8742812.html#ad9f00c8afef94df1ac19098d39d7be87", null ]
-];

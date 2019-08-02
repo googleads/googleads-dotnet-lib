@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_user_service_1_1update_users_response =
-[
-    [ "updateUsersResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_user_service_1_1update_users_response.html#abfe481b29667eeffe0ca492319887093", null ],
-    [ "updateUsersResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_user_service_1_1update_users_response.html#abad05dfbffc39b2633830619bd467edb", null ],
-    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_user_service_1_1update_users_response.html#acdd642e4a1b75e0e38691dc70e62466e", null ]
-];

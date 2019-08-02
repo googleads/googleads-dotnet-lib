@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201905_1_1_create_custom_targeting_keys_and_values =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201905_1_1_create_custom_targeting_keys_and_values.html#a0ec5e3107e6f2a0610e09871079e71f8", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201905_1_1_create_custom_targeting_keys_and_values.html#a272b10d556486d695513f0506aea1b58", null ]
-];

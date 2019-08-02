@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201902_1_1_activate_product_package =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201902_1_1_activate_product_package.html#a0c33bf98459bc05ba3af582e7501b6d8", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201902_1_1_activate_product_package.html#a95bfe5938fb3869e31bb09f8ed25b4e5", null ]
-];

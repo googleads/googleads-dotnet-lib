@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201902_1_1_get_marketplace_rate_cards =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201902_1_1_get_marketplace_rate_cards.html#a38cc131ef5dda36e3b95c92dc5cb850e", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201902_1_1_get_marketplace_rate_cards.html#a27310e40187f7e696a6f4ebba7f5e113", null ]
-];

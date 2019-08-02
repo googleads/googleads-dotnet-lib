@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_premium_rate_service_1_1create_premium_rates_request =
-[
-    [ "createPremiumRatesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_premium_rate_service_1_1create_premium_rates_request.html#ac8e31d7cdec992326853e02d057af50b", null ],
-    [ "createPremiumRatesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_premium_rate_service_1_1create_premium_rates_request.html#ace2f8a2e7721e0f1dba8e730c60ca71d", null ],
-    [ "premiumRates", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201811_1_1_wrappers_1_1_premium_rate_service_1_1create_premium_rates_request.html#a143bb77560a70fa7822e54768f7e4266", null ]
-];

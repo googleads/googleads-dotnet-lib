@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_ad_video_registration_error =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_ad_video_registration_error_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_ad_video_registration_error_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_ad_video_registration_error_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_ad_video_registration_error_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_ad_video_registration_error_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_ad_video_registration_error_1_1_selectable_fields" ],
-    [ "reason", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_ad_video_registration_error.html#ab6067998af505b4fbb189d245c940903", null ],
-    [ "reasonSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_ad_video_registration_error.html#a253b080a847c54c60edcb0846db34b6d", null ]
-];

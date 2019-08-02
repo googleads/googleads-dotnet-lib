@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201811_1_1_create_progra56f8151da47fc1bb148bc96b2c8fa94 =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201811_1_1_create_progra56f8151da47fc1bb148bc96b2c8fa94.html#a80f04adff8fffe161d8d153d9de34055", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201811_1_1_create_progra56f8151da47fc1bb148bc96b2c8fa94.html#aa2a622061430c2e941aa22cb566ffa9f", null ]
-];

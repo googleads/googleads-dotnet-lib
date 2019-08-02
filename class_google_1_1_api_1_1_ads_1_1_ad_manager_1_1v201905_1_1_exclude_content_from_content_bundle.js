@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201905_1_1_exclude_content_from_content_bundle =
-[
-    [ "contentStatement", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201905_1_1_exclude_content_from_content_bundle.html#a6f61831a8ef37e6610d82ffbd71a3c08", null ]
-];

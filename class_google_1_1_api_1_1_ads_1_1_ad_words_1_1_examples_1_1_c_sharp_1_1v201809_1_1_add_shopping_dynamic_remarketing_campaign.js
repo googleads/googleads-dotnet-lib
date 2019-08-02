@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_add_shopping_dynamic_remarketing_campaign =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_add_shopping_dynamic_remarketing_campaign.html#a504b055dc6b181940b12c3b3cd329557", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_add_shopping_dynamic_remarketing_campaign.html#a4a8456135a10b377fb4fa7da6a8bfa28", null ]
-];

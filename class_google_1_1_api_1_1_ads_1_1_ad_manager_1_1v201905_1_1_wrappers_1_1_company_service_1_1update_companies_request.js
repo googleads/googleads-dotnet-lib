@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201905_1_1_wrappers_1_1_company_service_1_1update_companies_request =
-[
-    [ "updateCompaniesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201905_1_1_wrappers_1_1_company_service_1_1update_companies_request.html#a8cce2018b25a4693543fb42bf87d6e11", null ],
-    [ "updateCompaniesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201905_1_1_wrappers_1_1_company_service_1_1update_companies_request.html#a3bb9659fd77b9aa54381a0a8b1735eff", null ],
-    [ "companies", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201905_1_1_wrappers_1_1_company_service_1_1update_companies_request.html#a1eae9ed43028bacf71aeb26370153ec8", null ]
-];

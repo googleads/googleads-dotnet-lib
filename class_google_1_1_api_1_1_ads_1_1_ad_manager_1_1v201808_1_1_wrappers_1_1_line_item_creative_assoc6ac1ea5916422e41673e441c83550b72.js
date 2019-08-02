@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_line_item_creative_assoc6ac1ea5916422e41673e441c83550b72 =
-[
-    [ "getPreviewUrlsForNativeStylesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_line_item_creative_assoc6ac1ea5916422e41673e441c83550b72.html#a34da8a173bc92107a3a81353e8b58c3e", null ],
-    [ "getPreviewUrlsForNativeStylesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_line_item_creative_assoc6ac1ea5916422e41673e441c83550b72.html#a183ac68fe3a38f8ab943153bfaae8a0a", null ],
-    [ "creativeId", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_line_item_creative_assoc6ac1ea5916422e41673e441c83550b72.html#a88607dda93a773dd9e72fbdcb0a6916d", null ],
-    [ "lineItemId", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_line_item_creative_assoc6ac1ea5916422e41673e441c83550b72.html#a150cd654fce3463f89680a8bd3fdfb78", null ],
-    [ "siteUrl", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201808_1_1_wrappers_1_1_line_item_creative_assoc6ac1ea5916422e41673e441c83550b72.html#ae34e971680a5f56feb0a216d74ebe50a", null ]
-];

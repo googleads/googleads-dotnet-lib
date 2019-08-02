@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1g048c50a10633f3481663c6c9f511fef9 =
-[
-    [ "getProductBiddingCategoryDataRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1g048c50a10633f3481663c6c9f511fef9.html#a813011c60948f038be90b9bf13ef038f", null ],
-    [ "getProductBiddingCategoryDataRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1g048c50a10633f3481663c6c9f511fef9.html#a9f73afd6f4e76298ad0ee5434a943436", null ],
-    [ "selector", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1g048c50a10633f3481663c6c9f511fef9.html#a546b142599a55267132fd832cb1a743d", null ]
-];

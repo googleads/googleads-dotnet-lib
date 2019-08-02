@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_size_limit_error_1_1_selectable_fields =
-[
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_size_limit_error_1_1_selectable_fields.html#ac6130ea23de72f4082ae32de3967bbf8", null ]
-];

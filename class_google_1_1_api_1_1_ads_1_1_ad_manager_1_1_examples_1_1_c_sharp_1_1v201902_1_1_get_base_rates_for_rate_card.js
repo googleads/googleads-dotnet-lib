@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201902_1_1_get_base_rates_for_rate_card =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201902_1_1_get_base_rates_for_rate_card.html#aae1b5bdcae074eeac73f3f5f81c50524", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201902_1_1_get_base_rates_for_rate_card.html#a4f24f27b8fb9b9307fa7f906b436e5a6", null ]
-];

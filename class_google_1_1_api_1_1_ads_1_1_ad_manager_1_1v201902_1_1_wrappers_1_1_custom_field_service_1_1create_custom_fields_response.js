@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_wrappers_1_1_custom_field_service_1_1create_custom_fields_response =
-[
-    [ "createCustomFieldsResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_wrappers_1_1_custom_field_service_1_1create_custom_fields_response.html#adea63fe5ccca63149a3e93d2b997eb65", null ],
-    [ "createCustomFieldsResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_wrappers_1_1_custom_field_service_1_1create_custom_fields_response.html#a4124474f7165423e85433bc4da4ef07b", null ],
-    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_wrappers_1_1_custom_field_service_1_1create_custom_fields_response.html#a3b67b191db08ab066583ec428b17499e", null ]
-];

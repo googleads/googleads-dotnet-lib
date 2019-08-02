@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201902_1_1_approve_workflow_approval_requests =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201902_1_1_approve_workflow_approval_requests.html#a054b98ce1f18aec91849ba84aed88651", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201902_1_1_approve_workflow_approval_requests.html#ab209a5982221c3c0f9f81b8bd8f29650", null ]
-];

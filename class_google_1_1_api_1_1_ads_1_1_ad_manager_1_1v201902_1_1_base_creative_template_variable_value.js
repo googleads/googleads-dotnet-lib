@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_base_creative_template_variable_value =
-[
-    [ "uniqueName", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201902_1_1_base_creative_template_variable_value.html#aa0b46cf8f6066d238df417b8d3c00f01", null ]
-];

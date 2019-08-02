@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1g7139ce8dbdfd6079a1217c4bad060c3f =
-[
-    [ "getMobileAppCategoryCriterionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1g7139ce8dbdfd6079a1217c4bad060c3f.html#ad17df5007285193f691b0f8d7525a851", null ]
-];
