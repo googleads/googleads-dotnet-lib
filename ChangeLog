@@ -1,3 +1,19 @@
+24.8.0
+======
+
+ AdWords:
+   -
+
+ Ad Manager:
+   - Added support for v201908.
+   - Removed support for v201808.
+   - Removed examples for v201811.
+   - Updated ProposalService and ProposalLineItemService example for Sales
+   Management deprecation.
+
+ Common:
+   -
+
 24.7.1
 ======
 

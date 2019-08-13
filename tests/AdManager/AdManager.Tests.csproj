@@ -9,7 +9,6 @@
     <IncludeSymbols>true</IncludeSymbols>
     <IncludeSource>true</IncludeSource>
     <IsTestProject>true</IsTestProject>
-    <PublicSign Condition="'$(OS)' != 'Windows_NT'">true</PublicSign>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(ProjectDir)..\..\src\Common\AdsApi.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
@@ -48,7 +47,4 @@
   <PropertyGroup Condition="'$(TargetFramework)'=='net452'">
     <DefineConstants>NET452</DefineConstants>
   </PropertyGroup>
-  <Target Name="StrongName" AfterTargets="Build" Condition="'$(OS)' != 'Windows_NT' AND $(Configuration) == 'Release' AND '$(TargetFramework)' != ''">
-    <Exec Command="sn -R $(OutputPath)$(AssemblyName).dll $(ProjectDir)../../src/Common/AdsApi.snk" />
-  </Target>
 </Project>

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Title>AdWords API Dotnet Client Library</Title>
     <PackageId>Google.AdWords</PackageId>
-    <Version>24.7.1</Version>
+    <Version>24.8.0</Version>
     <Description>This library provides you with functionality to access the AdWords API.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
     <PackageTags>AdWords Google</PackageTags>
@@ -22,7 +22,6 @@
     <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <AssemblyName>Google.AdWords</AssemblyName>
     <RootNamespace>Google.Api.Ads.AdWords</RootNamespace>
-    <PublicSign Condition="'$(OS)' != 'Windows_NT'">true</PublicSign>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(ProjectDir)..\Common\AdsApi.snk</AssemblyOriginatorKeyFile>
     <DebugType>pdbonly</DebugType>
@@ -52,8 +51,4 @@
   <PropertyGroup Condition="'$(TargetFramework)'=='net452'">
     <DefineConstants>NET452</DefineConstants>
   </PropertyGroup>
-  <Target Name="StrongName" AfterTargets="Build"
-    Condition="'$(OS)' != 'Windows_NT' AND $(Configuration) == 'Release' AND '$(TargetFramework)' != ''">
-    <Exec Command="sn -R $(OutputPath)$(AssemblyName).dll $(ProjectDir)../Common/AdsApi.snk" />
-  </Target>
 </Project>

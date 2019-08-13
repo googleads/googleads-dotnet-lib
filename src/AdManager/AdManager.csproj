@@ -3,7 +3,7 @@
    <PropertyGroup>
     <Title>Google's Ad Manager API Dotnet Client Library</Title>
     <PackageId>Google.Dfp</PackageId>
-    <Version>24.7.1</Version>
+    <Version>24.8.0</Version>
     <Description>This library provides you with functionality to access the Google's Ad Manager API.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
     <PackageTags>DFP Google</PackageTags>
@@ -22,7 +22,6 @@
     <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <AssemblyName>Google.AdManager</AssemblyName>
     <RootNamespace>Google.Api.Ads.AdManager</RootNamespace>
-    <PublicSign Condition="'$(OS)' != 'Windows_NT'">true</PublicSign>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\Common\AdsApi.snk</AssemblyOriginatorKeyFile>
     <DebugType>pdbonly</DebugType>
@@ -47,12 +46,6 @@
     <Copy SourceFiles="App.config" DestinationFiles="app.config.transform" />
     <Copy SourceFiles="App.config" DestinationFiles="web.config.transform" />
   </Target>
-  <!-- Exclude Properties until all solution projects are migrated to Core format -->
-  <ItemGroup>
-    <Compile Remove="Properties\**" />
-    <Content Remove="Properties\**" />
-    <None Remove="Properties\**" />
-  </ItemGroup>
   <ItemGroup>
     <Compile Update="AdManagerErrorMessages.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -69,7 +62,4 @@
   <PropertyGroup Condition="'$(TargetFramework)'=='net452'">
     <DefineConstants>NET452</DefineConstants>
   </PropertyGroup>
-  <Target Name="StrongName" AfterTargets="Build" Condition="'$(OS)' != 'Windows_NT' AND $(Configuration) == 'Release' AND '$(TargetFramework)' != ''">
-    <Exec Command="sn -R $(OutputPath)$(AssemblyName).dll $(ProjectDir)../Common/AdsApi.snk" />
-  </Target>
 </Project>

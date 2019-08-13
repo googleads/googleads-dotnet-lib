@@ -1,4 +1,4 @@
-// Copyright 2018, Google Inc. All Rights Reserved.
+// Copyright 2019 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,9 +21,7 @@ using System;
 namespace Google.Api.Ads.AdManager.Examples.CSharp.v201902
 {
     /// <summary>
-    /// This code example creates a new proposal line items. To determine which
-    /// proposal line items exist, run GetAllProposalLineItems.cs. To determine
-    /// which proposals exist, run GetAllProposals.cs.
+    /// This example creates a new proposal line item. 
     /// </summary>
     public class CreateProposalLineItems : SampleBase
     {
@@ -34,9 +32,7 @@ namespace Google.Api.Ads.AdManager.Examples.CSharp.v201902
         {
             get
             {
-                return "This code example creates new proposal line items. To determine which " +
-                    "proposal line items exist, run GetAllProposalLineItems.cs. To determine " +
-                    "which proposals exist, run GetAllProposals.cs.";
+                return "This example creates a new proposal line item.";
             }
         }
 
@@ -47,22 +43,34 @@ namespace Google.Api.Ads.AdManager.Examples.CSharp.v201902
         {
             CreateProposalLineItems codeExample = new CreateProposalLineItems();
             Console.WriteLine(codeExample.Description);
-            codeExample.Run(new AdManagerUser());
+
+            // Set the ID of the proposal that the proposal line item will belong to.
+            long proposalId = long.Parse(_T("INSERT_PROPOSAL_ID_HERE"));
+
+            codeExample.Run(new AdManagerUser(), proposalId);
         }
 
         /// <summary>
         /// Run the code examples.
         /// </summary>
-        public void Run(AdManagerUser user)
+        public void Run(AdManagerUser user, long proposalId)
         {
             using (ProposalLineItemService proposalLineItemService =
-                    user.GetService<ProposalLineItemService>())
+                user.GetService<ProposalLineItemService>())
 
                 using (NetworkService networkService = user.GetService<NetworkService>())
                 {
-                    long proposalId = long.Parse(_T("INSERT_PROPOSAL_ID_HERE"));
-                    long rateCardId = long.Parse(_T("INSERT_RATE_CARD_ID_HERE"));
-                    long productId = long.Parse(_T("INSERT_PRODUCT_ID_HERE"));
+                    ProposalLineItem proposalLineItem = new ProposalLineItem();
+                    proposalLineItem.name = "Proposal line item #" +
+                        new Random().Next(int.MaxValue);
+                    proposalLineItem.proposalId = proposalId;
+                    proposalLineItem.lineItemType = LineItemType.STANDARD;
+
+                    // Set required Marketplace information.
+                    proposalLineItem.marketplaceInfo = new ProposalLineItemMarketplaceInfo()
+                    {
+                        adExchangeEnvironment = AdExchangeEnvironment.DISPLAY
+                    };
 
                     // Get the root ad unit ID used to target the whole site.
                     String rootAdUnitId = networkService.getCurrentNetwork().effectiveRootAdUnitId;
@@ -83,16 +91,22 @@ namespace Google.Api.Ads.AdManager.Examples.CSharp.v201902
                     // Create targeting.
                     Targeting targeting = new Targeting();
                     targeting.inventoryTargeting = inventoryTargeting;
-
-                    // Create a proposal line item.
-                    ProposalLineItem proposalLineItem = new ProposalLineItem();
-                    proposalLineItem.name =
-                        "Proposal line item #" + new Random().Next(int.MaxValue);
-
-                    proposalLineItem.proposalId = proposalId;
-                    proposalLineItem.rateCardId = rateCardId;
-                    proposalLineItem.productId = productId;
                     proposalLineItem.targeting = targeting;
+
+                    // Create creative placeholder.
+                    Size size = new Size()
+                    {
+                        width = 300,
+                        height = 250,
+                        isAspectRatio = false
+                    };
+                    CreativePlaceholder creativePlaceholder = new CreativePlaceholder();
+                    creativePlaceholder.size = size;
+
+                    proposalLineItem.creativePlaceholders = new CreativePlaceholder[]
+                    {
+                        creativePlaceholder
+                    };
 
                     // Set the length of the proposal line item to run.
                     proposalLineItem.startDateTime =
@@ -104,11 +118,6 @@ namespace Google.Api.Ads.AdManager.Examples.CSharp.v201902
 
                     // Set delivery specifications for the proposal line item.
                     proposalLineItem.deliveryRateType = DeliveryRateType.EVENLY;
-                    proposalLineItem.creativeRotationType = CreativeRotationType.OPTIMIZED;
-
-                    // Set billing specifications for the proposal line item.
-                    proposalLineItem.billingCap = BillingCap.CAPPED_CUMULATIVE;
-                    proposalLineItem.billingSource = BillingSource.THIRD_PARTY_VOLUME;
 
                     // Set pricing for the proposal line item for 1000 impressions at a CPM of $2
                     // for a total value of $2.
@@ -140,17 +149,16 @@ namespace Google.Api.Ads.AdManager.Examples.CSharp.v201902
 
                         foreach (ProposalLineItem createdProposalLineItem in proposalLineItems)
                         {
-                            Console.WriteLine(
-                                "A proposal line item with ID \"{0}\" and name \"{1}\" was " +
-                                "created.",
-                                createdProposalLineItem.id, createdProposalLineItem.name);
+                            Console.WriteLine("A proposal line item with ID \"{0}\" " +
+                                "and name \"{1}\" was created.", createdProposalLineItem.id,
+                                createdProposalLineItem.name);
                         }
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine(
-                            "Failed to create proposal line items. Exception says \"{0}\"",
-                            e.Message);
+                            "Failed to create proposal line items. " +
+                            "Exception says \"{0}\"", e.Message);
                     }
                 }
         }

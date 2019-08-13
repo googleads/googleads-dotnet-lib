@@ -5,7 +5,6 @@
     <AssemblyName>Google.AdWords.Examples.CSharp</AssemblyName>
     <OutputType>Exe</OutputType>
     <StartupObject>Google.Api.Ads.AdWords.Examples.CSharp.Program</StartupObject>
-    <PublicSign Condition="'$(OS)' != 'Windows_NT'">true</PublicSign>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(ProjectDir)..\..\..\src\Common\AdsApi.snk</AssemblyOriginatorKeyFile>
     <DebugType>pdbonly</DebugType>
@@ -16,7 +15,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Google.Ads.Common" Version="9.5.1" />
-    <PackageReference Include="Google.AdWords" Version="24.7.1" />
+    <PackageReference Include="Google.AdWords" Version="24.8.0" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
   </ItemGroup>
   <ItemGroup>
@@ -39,8 +38,4 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <Target Name="StrongName" AfterTargets="Build"
-    Condition="'$(OS)' != 'Windows_NT' AND $(Configuration) == 'Release' AND '$(TargetFramework)' != ''">
-    <Exec Command="sn -R $(OutputPath)$(TargetFileName) $(ProjectDir)../../../src/Common/AdsApi.snk" />
-  </Target>
 </Project>
