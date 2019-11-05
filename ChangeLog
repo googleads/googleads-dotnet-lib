@@ -1,3 +1,20 @@
+24.9.0
+======
+
+ AdWords:
+   -
+
+ Ad Manager:
+   - Added support for v201911.
+   - Removed support for v201811.
+   - Removed examples for v201902.
+   - Updated reporting examples to demonstrate new Reach metrics
+     and custom dimensions.
+
+ Common:
+   -
+
+
 24.8.0
 ======
 
