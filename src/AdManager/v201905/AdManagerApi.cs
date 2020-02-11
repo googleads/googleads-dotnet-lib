@@ -3905,8 +3905,11 @@ namespace Google.Api.Ads.AdManager.v201905
 			}
 		}
 
-		/// <summary>The date and time at which this content was last modified. This attribute is
-		/// read-only.
+		/// <summary>The date and time at which this content was last modified. The last modified
+		/// date time will always be updated when a <a
+		/// href='ContentBundle'>ContentBundle</a> association is changed, but will not
+		/// always be updated when a <a href='CmsMetadataValue'>CmsMetadataValue</a> value
+		/// is changed. This attribute is read-only.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 11)]
 		public DateTime lastModifiedDateTime {
@@ -4345,9 +4348,9 @@ namespace Google.Api.Ads.AdManager.v201905
 		}
 
 		/// <summary>Gets a <a href='ContentPage'>ContentPage</a> of <a href='Content'>Content</a>
-		/// objects that satisfy the given <a href='Statement#query'>Statement#query</a>.
-		/// Additionally, filters on the given value ID and key ID that the value belongs
-		/// to. The following fields are supported for filtering: <table> <tr> <th
+		/// objects that satisfy the given <a href=''>Statement#query</a>. Additionally,
+		/// filters on the given value ID and key ID that the value belongs to. <p>The
+		/// following fields are supported for filtering:</p> <table> <tr> <th
 		/// scope="col">PQL Property</th> <th scope="col">Object Property</th> </tr> <tr>
 		/// <td><code>id</code></td> <td><a href='Content#id'>Content#id</a></td> </tr> <tr>
 		/// <td><code>status</code></td> <td><a
@@ -4792,8 +4795,8 @@ namespace Google.Api.Ads.AdManager.v201905
 
 	/// <summary>Represents the dimensions of an <a href='AdUnit'>AdUnit</a>, <a
 	/// href='LineItem'>LineItem</a> or <a href='Creative'>Creative</a>. <p>For
-	/// interstitial size (out-of-page), native, ignored and fluid size,
-	/// <code>Size</code> must be 1x1.</p>
+	/// interstitial size (out-of-page), native, ignored and fluid size, <a
+	/// href='Size'>Size</a> must be 1x1.</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -4867,7 +4870,7 @@ namespace Google.Api.Ads.AdManager.v201905
 			}
 		}
 
-		/// <summary>True if this size represents an aspect ratio, false otherwise.
+		/// <summary>Whether this size represents an aspect ratio.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 2)]
 		public bool isAspectRatio {
@@ -6384,18 +6387,18 @@ namespace Google.Api.Ads.AdManager.v201905
 	/// <summary>Represents the different types of policy violations that may be detected on a
 	/// given creative. <p>For more information about the various types of policy
 	/// violations, see <a
-	/// href="https://support.google.com/adwordspolicy/answer/6008942?hl=en">here</a>.</p>
+	/// href="https://support.google.com/adspolicy/answer/6008942">here</a>.</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201905")]
 	public enum CreativePolicyViolation {
 		/// <summary>Malware was found in the creative. <p>For more information see <a
-		/// href="https://support.google.com/adwordspolicy/answer/1308246">here</a>.</p>
+		/// href="https://support.google.com/adspolicy/answer/1308246">here</a>.</p>
 		/// </summary>
 		MALWARE_IN_CREATIVE = 0,
 		/// <summary>Malware was found in the landing page. <p>For more information see <a
-		/// href="https://support.google.com/adwordspolicy/answer/1308246">here</a>.</p>
+		/// href="https://support.google.com/adspolicy/answer/1308246">here</a>.</p>
 		/// </summary>
 		MALWARE_IN_LANDING_PAGE = 1,
 		/// <summary>The redirect url contains legally objectionable content.
@@ -6403,8 +6406,7 @@ namespace Google.Api.Ads.AdManager.v201905
 		LEGALLY_BLOCKED_REDIRECT_URL = 2,
 		/// <summary>The creative misrepresents the product or service being advertised. <p>For more
 		/// information see <a
-		/// href="https://support.google.com/adwordspolicy/answer/6020955?hl=en#355">
-		/// here</a>.</p>
+		/// href="https://support.google.com/adspolicy/answer/6020955">here</a>.</p>
 		/// </summary>
 		MISREPRESENTATION_OF_PRODUCT = 3,
 		/// <summary>The creative has been determined to be self clicking.
@@ -6412,13 +6414,11 @@ namespace Google.Api.Ads.AdManager.v201905
 		SELF_CLICKING_CREATIVE = 4,
 		/// <summary>The creative has been determined as attempting to game the Google network.
 		/// <p>For more information see <a
-		/// href="https://support.google.com/adwordspolicy/answer/6020954?hl=en#319">
-		/// here</a>.</p>
+		/// href="https://support.google.com/adspolicy/answer/6020954#319">here</a>.</p>
 		/// </summary>
 		GAMING_GOOGLE_NETWORK = 5,
 		/// <summary>The landing page for the creative uses a dynamic DNS. <p>For more information
-		/// see <a
-		/// href="https://support.google.com/adwordspolicy/answer/6020954?rd=1">here</a>.</p>
+		/// see <a href="https://support.google.com/adspolicy/answer/6020954">here</a>.</p>
 		/// </summary>
 		DYNAMIC_DNS = 6,
 		/// <summary>The creative has been determined as attempting to circumvent Google advertising
@@ -6426,16 +6426,16 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// </summary>
 		CIRCUMVENTING_SYSTEMS = 13,
 		/// <summary>Phishing found in creative or landing page. <p>For more information see <a
-		/// href="https://support.google.com/adwordspolicy/answer/6020955">here</a>.</p>
+		/// href="https://support.google.com/adspolicy/answer/6020955">here</a>.</p>
 		/// </summary>
 		PHISHING = 7,
 		/// <summary>The creative prompts the user to download a file. <p>For more information see <a
-		/// href="https://support.google.com/dfp_premium/answer/7513391">here</a></p>
+		/// href="https://support.google.com/admanager/answer/7513391">here</a></p>
 		/// </summary>
 		DOWNLOAD_PROMPT_IN_CREATIVE = 9,
 		/// <summary>The creative sets an unauthorized cookie on a Google domain. <p>For more
 		/// information see <a
-		/// href="https://support.google.com/dfp_premium/answer/7513391">here</a></p>
+		/// href="https://support.google.com/admanager/answer/7513391">here</a></p>
 		/// </summary>
 		UNAUTHORIZED_COOKIE_DETECTED = 10,
 		/// <summary>The creative has been temporarily paused while we investigate.
@@ -19089,7 +19089,7 @@ namespace Google.Api.Ads.AdManager.v201905
 	/// example, if you explicitly include California, you implicitly exclude all other
 	/// states. You therefore cannot explicitly exclude Florida, because it is already
 	/// implicitly excluded. Conversely if you explicitly exclude Florida, you cannot
-	/// excplicitly include California.</li> </ul>
+	/// explicitly include California.</li> </ul>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -26397,7 +26397,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		private bool externalDealIdFieldSpecified;
 
 		/// <summary>The external deal ID shared between seller and buyer. This field is only present
-		/// if the deal has been finalized.
+		/// if the deal has been finalized. This attribute is read-only and is assigned by
+		/// Google.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 0)]
 		public long externalDealId {
@@ -34844,16 +34845,12 @@ namespace Google.Api.Ads.AdManager.v201905
 			return base.Channel.getAdUnitSizesByStatement(request);
 		}
 
-		/// <summary>Gets a set of <a href='AdUnitSize'>AdUnitSize</a> objects that satisfy the given
-		/// <a href='Statement#query'>Statement#query</a>. The following fields are
-		/// supported for filtering: <table> <tr> <th scope="col">PQL Property</th> <th
-		/// scope="col">Object Property</th> </tr> <tr> <td><code>targetPlatform</code></td>
-		/// <td><a href='TargetPlatform'>TargetPlatform</a></td> </tr> </table> An exception
-		/// will be thrown for queries with unsupported fields. Paging is not supported, as
-		/// aren't the LIMIT and OFFSET PQL keywords. Only "=" operator is supported.
-		/// </summary><param name='filterStatement'>a Publisher Query Language statement used to
-		/// filter a set of ad unit sizes</param>
-		/// <returns>the ad unit sizes that match the given filter</returns>
+		/// <summary>Returns a set of all relevant <a href='AdUnitSize'>AdUnitSize</a> objects.
+		/// <p>The given <a href='Statement'>Statement</a> is currently ignored but may be
+		/// honored in future versions. </p>
+		/// </summary><param name='filterStatement'>currently ignored but may be honored in future
+		/// versions</param>
+		/// <returns>the ad unit sizes</returns>
 		public virtual Google.Api.Ads.AdManager.v201905.AdUnitSize[] getAdUnitSizesByStatement(Google.Api.Ads.AdManager.v201905.Statement filterStatement) {
 			Wrappers.InventoryService.getAdUnitSizesByStatementRequest inValue = new Wrappers.InventoryService.getAdUnitSizesByStatementRequest();
 			inValue.filterStatement = filterStatement;
@@ -37315,37 +37312,35 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// <summary>Gets a <a href='LineItemPage'>LineItemPage</a> of <a
 		/// href='LineItem'>LineItem</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
-		/// for filtering: <table> <tr> <th>PQL property</th> <th>Entity property</th> </tr>
-		/// <tr> <td><code>CostType</code></td> <td><a
-		/// href='LineItem#costType'>LineItem#costType</a></td> </tr> <tr>
+		/// for filtering: <table> <tbody> <tr> <th>PQL property</th> <th>Entity
+		/// property</th> </tr> <tr> <td><code>CostType</code></td> <td><a
+		/// href='LineItem#costType'>LineItem#costType</a> </td> </tr> <tr>
 		/// <td><code>CreationDateTime</code></td> <td><a
-		/// href='LineItem#creationDateTime'>LineItem#creationDateTime</a></td> </tr> <tr>
+		/// href='LineItem#creationDateTime'>LineItem#creationDateTime</a> </td> </tr> <tr>
 		/// <td><code>DeliveryRateType</code></td> <td><a
-		/// href='LineItem#deliveryRateType'>LineItem#deliveryRateType</a></td> </tr> <tr>
+		/// href='LineItem#deliveryRateType'>LineItem#deliveryRateType</a> </td> </tr> <tr>
 		/// <td><code>EndDateTime</code></td> <td><a
-		/// href='LineItem#endDateTime'>LineItem#endDateTime</a></td> </tr> <tr>
+		/// href='LineItem#endDateTime'>LineItem#endDateTime</a> </td> </tr> <tr>
 		/// <td><code>ExternalId</code></td> <td><a
-		/// href='LineItem#externalId'>LineItem#externalId</a></td> </tr> <tr>
-		/// <td><code>Id</code></td> <td><a href='LineItem#id'>LineItem#id</a></td> </tr>
+		/// href='LineItem#externalId'>LineItem#externalId</a> </td> </tr> <tr>
+		/// <td><code>Id</code></td> <td><a href='LineItem#id'>LineItem#id</a> </td> </tr>
 		/// <tr> <td><code>IsMissingCreatives</code></td> <td><a
-		/// href='LineItem#isMissingCreatives'>LineItem#isMissingCreatives</a></td> </tr>
+		/// href='LineItem#isMissingCreatives'>LineItem#isMissingCreatives</a> </td> </tr>
 		/// <tr> <td><code>IsSetTopBoxEnabled</code></td> <td><a
-		/// href='LineItem#isSetTopBoxEnabled'>LineItem#isSetTopBoxEnabled</a></td> </tr>
+		/// href='LineItem#isSetTopBoxEnabled'>LineItem#isSetTopBoxEnabled</a> </td> </tr>
 		/// <tr> <td><code>LastModifiedDateTime</code></td> <td><a
-		/// href='LineItem#lastModifiedDateTime'>LineItem#lastModifiedDateTime</a></td>
+		/// href='LineItem#lastModifiedDateTime'>LineItem#lastModifiedDateTime</a> </td>
 		/// </tr> <tr> <td><code>LineItemType</code></td> <td><a
-		/// href='LineItem#lineItemType'>LineItem#lineItemType</a></td> </tr> <tr>
-		/// <td><code>Name</code></td> <td><a href='LineItem#name'>LineItem#name</a></td>
+		/// href='LineItem#lineItemType'>LineItem#lineItemType</a> </td> </tr> <tr>
+		/// <td><code>Name</code></td> <td><a href='LineItem#name'>LineItem#name</a> </td>
 		/// </tr> <tr> <td><code>OrderId</code></td> <td><a
-		/// href='LineItem#orderId'>LineItem#orderId</a></td> </tr> <tr>
+		/// href='LineItem#orderId'>LineItem#orderId</a> </td> </tr> <tr>
 		/// <td><code>StartDateTime</code></td> <td><a
-		/// href='LineItem#startDateTime'>LineItem#startDateTime</a></td> </tr> <tr>
-		/// <td><code>Status</code></td> <td><a
-		/// href='LineItem#status'>LineItem#status</a></td> </tr> <tr>
-		/// <td><code>Targeting</code></td> <td><a
-		/// href='LineItem#targeting'>LineItem#targeting</a></td> </tr> <tr>
-		/// <td><code>UnitsBought</code></td> <td><a
-		/// href='LineItem#unitsBought'>LineItem#unitsBought</a></td> </tr> </table>
+		/// href='LineItem#startDateTime'>LineItem#startDateTime</a> </td> </tr> <tr>
+		/// <td><code>Status</code></td> <td><a href='LineItem#status'>LineItem#status</a>
+		/// </td> </tr> <tr> <td><code>UnitsBought</code></td> <td><a
+		/// href='LineItem#unitsBought'>LineItem#unitsBought</a> </td> </tr> </tbody>
+		/// </table>
 		/// </summary><param name='filterStatement'>a Publisher Query Language statement used to
 		/// filter a set of line items.</param>
 		/// <returns>the line items that match the given filter</returns>
@@ -38458,6 +38453,7 @@ namespace Google.Api.Ads.AdManager.v201905
 
 		/// <summary>This code is used in constructing a live stream event master playlist URL. This
 		/// attribute is read-only and is assigned by Google.
+		/// <code>liveStreamEventCode</code> was renamed <code>assetKey</code> in v201911.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 13)]
 		public string liveStreamEventCode {
@@ -52407,8 +52403,9 @@ namespace Google.Api.Ads.AdManager.v201905
 
 
 	/// <summary>The action used to request acceptance from the buyer for the <a
-	/// href='Proposal'>Proposal</a> through Marketplace. This action is only applicable
-	/// for programmatic proposals.
+	/// href='Proposal'>Proposal</a> through Marketplace. This action does check
+	/// forecasting unless <a href='#allowOverbook'>#allowOverbook</a> is set to
+	/// <code>true</code>. This action is only applicable for programmatic proposals.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -53675,15 +53672,9 @@ namespace Google.Api.Ads.AdManager.v201905
 	/// <td>Status</td> <td><code>Text</code></td> <td>The status of the
 	/// <code>LineItem</code>.</td> </tr> <tr> <td>Targeting</td>
 	/// <td><code>Targeting</code></td> <td>The targeting criteria for the ad
-	/// campaign.&lt;p&gt; &lt;b&gt;This object is experimental!
-	/// &lt;code&gt;Targeting&lt;/code&gt; is an experimental, innovative, and rapidly
-	/// changing new feature for DFP. Unfortunately, being on the bleeding edge means
-	/// that we may make backwards-incompatible changes to
-	/// &lt;code&gt;Targeting&lt;/code&gt;. We will inform the community when this
-	/// feature is no longer experimental.&lt;/b&gt;</td> </tr> <tr>
-	/// <td>UnitsBought</td> <td><code>Number</code></td> <td>The total number of
-	/// impressions or clicks that will be reserved for the <code>LineItem</code>. If
-	/// the line item is of type <a
+	/// campaign.</td> </tr> <tr> <td>UnitsBought</td> <td><code>Number</code></td>
+	/// <td>The total number of impressions or clicks that will be reserved for the
+	/// <code>LineItem</code>. If the line item is of type <a
 	/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a>, then it represents
 	/// the percentage of available impressions reserved.</td> </tr> </table> <h2
 	/// id="Ad_Unit">Ad_Unit</h2> <table> <tr> <th>Column name</th> <th>Type</th>
@@ -59603,6 +59594,8 @@ namespace Google.Api.Ads.AdManager.v201905
 	}
 
 
+	/// <summary>The reasons for report error.
+	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReportError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201905")]
@@ -59686,13 +59679,15 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// incompatibilities and requirements between different report properties. Some
 		/// reasons for constraint violations include: <ul> <li>Not all <a
 		/// href='Column'>Column</a> objects requested are supported for the given set of <a
-		/// href='Dimension'>Dimension</a> objects.</li> <li>The report's date range is not
+		/// href=''>Dimension</a> objects.</li> <li>The report's date range is not
 		/// compatible with the given set of <a href='Column'>Column</a> objects.</li>
 		/// <li>The report's <a href='TimeZoneType'>TimeZoneType</a> is not compatible with
-		/// the given set of <a href='Column'>Column</a> and <a
-		/// href='Dimension'>Dimension</a> objects (version 201802 and later).</li> <li>The
-		/// report's currency is not compatible with the given set of <a
-		/// href='Column'>Column</a> objects (version 201802 and later).</li> </ul>
+		/// the given set of <a href=''>Column</a> and <a href='Dimension'>Dimension</a>
+		/// objects (version 201802 and later).</li> <li>The report's currency is not
+		/// compatible with the given set of <a href='Column'>Column</a> objects.</li> </ul>
+		/// For versions 201911 and later, this is only returned when some or all of the <a
+		/// href='Column'>Column</a> objects are not supported for the requested <a
+		/// href='Dimension'>Dimension</a> objects.
 		/// </summary>
 		REPORT_CONSTRAINT_VIOLATION = 27,
 		/// <summary>Failed to store/cache a report.
@@ -60614,7 +60609,9 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// types:</p> <ul> <li><a
 		/// href='TimeZoneType.PUBLISHER'>TimeZoneType.PUBLISHER</a></li> <li><a
 		/// href='TimeZoneType.PROPOSAL_LOCAL'>TimeZoneType.PROPOSAL_LOCAL</a></li> </ul>
-		/// <p>Corresponds to "Month and year" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Month and year" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Future sell-through, Reach, Sales,
+		/// Partner finance.</p>
 		/// </summary>
 		MONTH_AND_YEAR = 0,
 		/// <summary>Breaks down reporting data by week of the year in the network time zone. Cannot
@@ -60622,7 +60619,9 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// compatible with the following time zone types:</p> <ul> <li><a
 		/// href='TimeZoneType.PUBLISHER'>TimeZoneType.PUBLISHER</a></li> <li><a
 		/// href='TimeZoneType.PROPOSAL_LOCAL'>TimeZoneType.PROPOSAL_LOCAL</a></li> </ul>
-		/// <p>Corresponds to "Week" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Week" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales, Data
+		/// protection.</p>
 		/// </summary>
 		WEEK = 1,
 		/// <summary>Breaks down reporting data by date in the network time zone. Can be used to
@@ -60630,61 +60629,77 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// and later, this dimension is compatible with the following time zone types:</p>
 		/// <ul> <li><a href='TimeZoneType.PUBLISHER'>TimeZoneType.PUBLISHER</a></li> <li><a
 		/// href='TimeZoneType.PROPOSAL_LOCAL'>TimeZoneType.PROPOSAL_LOCAL</a></li> </ul>
-		/// <p>Corresponds to "Date" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Date" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		DATE = 2,
 		/// <summary>Breaks down reporting data by day of the week in the network time zone. Can be
 		/// used to filter by day of the week using the index of the day (from 1 for Monday
-		/// is 1 to 7 for Sunday). <p>Corresponds to "Day of week" in the Ad Manager UI.</p>
+		/// is 1 to 7 for Sunday). <p>Corresponds to "Day of week" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Future
+		/// sell-through, Reach, Sales.</p>
 		/// </summary>
 		DAY = 3,
 		/// <summary>Breaks down reporting data by hour of the day in the network time zone. Can be
 		/// used to filter by hour of the day (from 0 to 23). <p>Corresponds to "Hour" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Reach.</p>
 		/// </summary>
 		HOUR = 4,
 		/// <summary>Breaks down reporting data by <a href='LineItem#id'>LineItem#id</a>. Can be used
-		/// to filter by <a href='LineItem#id'>LineItem#id</a>.
+		/// to filter by <a href='LineItem#id'>LineItem#id</a>. <p>Compatible with any of
+		/// the following report types: Historical, Future sell-through, Reach, Sales, Data
+		/// protection.</p>
 		/// </summary>
 		LINE_ITEM_ID = 5,
 		/// <summary>Breaks down reporting data by line item. <a
 		/// href='LineItem#name'>LineItem#name</a> and <a href='LineItem#id'>LineItem#id</a>
 		/// are automatically included as columns in the report. Can be used to filter by <a
 		/// href='LineItem#name'>LineItem#name</a>. <p>Corresponds to "Line item" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Future sell-through, Reach, Sales, Data protection.</p>
 		/// </summary>
 		LINE_ITEM_NAME = 6,
 		/// <summary>Breaks down reporting data by <a
 		/// href='LineItem#lineItemType'>LineItem#lineItemType</a>. Can be used to filter by
 		/// line item type using <a href='LineItemType'>LineItemType</a> enumeration names.
-		/// <p>Corresponds to "Line item type" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Line item type" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Future sell-through, Reach, Data
+		/// protection.</p>
 		/// </summary>
 		LINE_ITEM_TYPE = 7,
 		/// <summary>Breaks down reporting data by <a href='Order#id'>Order#id</a>. Can be used to
-		/// filter by <a href='Order#id'>Order#id</a>.
+		/// filter by <a href='Order#id'>Order#id</a>. <p>Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales, Data
+		/// protection.</p>
 		/// </summary>
 		ORDER_ID = 8,
 		/// <summary>Breaks down reporting data by order. <a href='Order#name'>Order#name</a> and <a
 		/// href='Order#id'>Order#id</a> are automatically included as columns in the
 		/// report. Can be used to filter by <a href='Order#name'>Order#name</a>.
-		/// <p>Corresponds to "Order" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Order" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales, Data
+		/// protection.</p>
 		/// </summary>
 		ORDER_NAME = 9,
 		/// <summary>Delivery status of the order. Not available as a dimension to report on, but
 		/// exists as a dimension in order to filter on it using PQL. Valid values are
-		/// 'STARTED', 'NOT_STARTED' and 'COMPLETED'.
+		/// 'STARTED', 'NOT_STARTED' and 'COMPLETED'. <p>Compatible with any of the
+		/// following report types: Historical, Reach.</p>
 		/// </summary>
 		ORDER_DELIVERY_STATUS = 142,
 		/// <summary>Breaks down reporting data by advertising company <a
 		/// href='Company#id'>Company#id</a>. Can be used to filter by <a
-		/// href='Company#id'>Company#id</a>.
+		/// href='Company#id'>Company#id</a>. <p>Compatible with any of the following report
+		/// types: Historical, Future sell-through, Reach, Sales, Data protection.</p>
 		/// </summary>
 		ADVERTISER_ID = 10,
 		/// <summary>Breaks down reporting data by advertising company. <a
 		/// href='Company#name'>Company#name</a> and <a href='Company#id'>Company#id</a> are
 		/// automatically included as columns in the report. Can be used to filter by <a
 		/// href='Company#name'>Company#name</a>. <p>Corresponds to "Advertiser" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Future sell-through, Reach, Sales, Data protection.</p>
 		/// </summary>
 		ADVERTISER_NAME = 11,
 		/// <summary>The network that provided the ad for SDK ad mediation. <p>If selected for a
@@ -60695,84 +60710,103 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// finds an ad network with an ad to serve. The ad network that ends up serving the
 		/// ad will appear here. Note that this id does not correlate to anything in the
 		/// companies table and is not the same id as is served by <a
-		/// href='#ADVERTISER_ID'>#ADVERTISER_ID</a>.</p>
+		/// href='#ADVERTISER_ID'>#ADVERTISER_ID</a>.</p> <p>Compatible with any of the
+		/// following report types: Historical, Reach.</p>
 		/// </summary>
 		AD_NETWORK_ID = 12,
 		/// <summary>The name of the network defined in <a href='#AD_NETWORK_ID'>#AD_NETWORK_ID</a>.
-		/// <p>Corresponds to "Ad network name" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Ad network name" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Reach.</p>
 		/// </summary>
 		AD_NETWORK_NAME = 13,
 		/// <summary>Breaks down reporting data by salesperson <a href='User#id'>User#id</a>. Can be
-		/// used to filter by <a href='User#id'>User#id</a>.
+		/// used to filter by <a href='User#id'>User#id</a>. <p>Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales, Data
+		/// protection.</p>
 		/// </summary>
 		SALESPERSON_ID = 14,
 		/// <summary>Breaks down reporting data by salesperson. <a href='User#name'>User#name</a> and
 		/// <a href='User#id'>User#id</a> of the salesperson are automatically included as
 		/// columns in the report. Can be used to filter by <a
 		/// href='User#name'>User#name</a>. <p>Corresponds to "Salesperson" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Future sell-through, Reach, Sales, Data protection.</p>
 		/// </summary>
 		SALESPERSON_NAME = 15,
 		/// <summary>Breaks down reporting data by <a href='Creative#id'>Creative#id</a> or creative
 		/// set id (master's <a href='Creative#id'>Creative#id</a>) if the creative is part
 		/// of a creative set. Can be used to filter by <a
-		/// href='Creative#id'>Creative#id</a>.
+		/// href='Creative#id'>Creative#id</a>. <p>Compatible with any of the following
+		/// report types: Historical, Reach, Data protection.</p>
 		/// </summary>
 		CREATIVE_ID = 16,
 		/// <summary>Breaks down reporting data by creative. <a
 		/// href='Creative#name'>Creative#name</a> and <a href='Creative#id'>Creative#id</a>
 		/// are automatically included as columns in the report. Can be used to filter by <a
 		/// href='Creative#name'>Creative#name</a>. <p>Corresponds to "Creative" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Reach, Data protection.</p>
 		/// </summary>
 		CREATIVE_NAME = 17,
 		/// <summary>Breaks down reporting data by creative type. <p>Corresponds to "Creative type"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Reach.</p>
 		/// </summary>
 		CREATIVE_TYPE = 18,
 		/// <summary>Breaks down reporting data by creative billing type. <p>Corresponds to "Creative
-		/// billing type" in the Ad Manager UI.</p>
+		/// billing type" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Reach.</p>
 		/// </summary>
 		CREATIVE_BILLING_TYPE = 19,
-		/// <summary>Breaks down reporting data by custom event ID.
+		/// <summary>Breaks down reporting data by custom event ID. <p>Compatible with any of the
+		/// following report types: Historical, Reach.</p>
 		/// </summary>
 		CUSTOM_EVENT_ID = 20,
 		/// <summary>Breaks down reporting data by custom event name. <p>Corresponds to "Custom
-		/// event" in the Ad Manager UI.</p>
+		/// event" in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Reach.</p>
 		/// </summary>
 		CUSTOM_EVENT_NAME = 21,
 		/// <summary>Breaks down reporting data by custom event type (timer/exit/counter).
-		/// <p>Corresponds to "Custom event type" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Custom event type" in the Ad Manager UI. Compatible with any
+		/// of the following report types: Historical, Reach.</p>
 		/// </summary>
 		CUSTOM_EVENT_TYPE = 22,
 		/// <summary>Breaks down reporting data by <a href='Creative#size'>Creative#size</a>. Cannot
-		/// be used for filtering. <p>Corresponds to "Creative size" in the Ad Manager
-		/// UI.</p>
+		/// be used for filtering. <p>Corresponds to "Creative size" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		CREATIVE_SIZE = 23,
 		/// <summary>Breaks down reporting data by <a href='AdUnit#id'>AdUnit#id</a>. Can be used to
 		/// filter by <a href='AdUnit#id'>AdUnit#id</a>. <a
 		/// href='#AD_UNIT_NAME'>#AD_UNIT_NAME</a>, i.e. <a
 		/// href='AdUnit#name'>AdUnit#name</a>, is automatically included as a dimension in
-		/// the report.
+		/// the report. <p>Compatible with any of the following report types: Historical,
+		/// Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		AD_UNIT_ID = 24,
 		/// <summary>Breaks down reporting data by ad unit. <a href='AdUnit#name'>AdUnit#name</a> and
 		/// <a href='AdUnit#id'>AdUnit#id</a> are automatically included as columns in the
 		/// report. Can be used to filter by <a href='AdUnit#name'>AdUnit#name</a>.
-		/// <p>Corresponds to "Ad unit" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Ad unit" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		AD_UNIT_NAME = 25,
 		/// <summary>Used to filter on all the descendants of an ad unit by <a
 		/// href='AdUnit#id'>AdUnit#id</a>. Not available as a dimension to report on.
+		/// <p>Compatible with any of the following report types: Historical, Future
+		/// sell-through, Reach, Sales.</p>
 		/// </summary>
 		PARENT_AD_UNIT_ID = 26,
 		/// <summary>Used to filter on all the descendants of an ad unit by <a
 		/// href='AdUnit#name'>AdUnit#name</a>. Not available as a dimension to report on.
+		/// <p>Compatible with any of the following report types: Historical, Future
+		/// sell-through, Reach, Sales.</p>
 		/// </summary>
 		PARENT_AD_UNIT_NAME = 27,
 		/// <summary>Breaks down reporting data by <a href='Placement#id'>Placement#id</a>. Can be
-		/// used to filter by <a href='Placement#id'>Placement#id</a>.
+		/// used to filter by <a href='Placement#id'>Placement#id</a>. <p>Compatible with
+		/// any of the following report types: Historical, Future sell-through, Reach.</p>
 		/// </summary>
 		PLACEMENT_ID = 28,
 		/// <summary>Breaks down reporting data by placement. <a
@@ -60780,81 +60814,97 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='Placement#id'>Placement#id</a> are automatically included as columns in
 		/// the report. Can be used to filter by <a
 		/// href='Placement#name'>Placement#name</a>. <p>Corresponds to "Placement" in the
-		/// Ad Manager UI.</p>
+		/// Ad Manager UI. Compatible with any of the following report types: Historical,
+		/// Future sell-through, Reach.</p>
 		/// </summary>
 		PLACEMENT_NAME = 29,
 		/// <summary>Status of the placement. Not available as a dimension to report on, but exists
 		/// as a dimension in order to filter on it using PQL. Can be used to filter on <a
 		/// href='Placement#status'>Placement#status</a> by using <a
-		/// href='InventoryStatus'>InventoryStatus</a> enumeration names.
+		/// href='InventoryStatus'>InventoryStatus</a> enumeration names. <p>Compatible with
+		/// any of the following report types: Historical, Future sell-through, Reach.</p>
 		/// </summary>
 		PLACEMENT_STATUS = 143,
 		/// <summary>Breaks down reporting data by criteria predefined by Ad Manager like the
 		/// operating system, browser etc. Cannot be used for filtering. <p>Corresponds to
-		/// "Targeting" in the Ad Manager UI.</p>
+		/// "Targeting" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Reach.</p>
 		/// </summary>
 		TARGETING = 30,
 		/// <summary>The ID of the device category to which an ad is being targeted. Can be used to
-		/// filter by device category ID.
+		/// filter by device category ID. <p>Compatible with any of the following report
+		/// types: Historical, Reach.</p>
 		/// </summary>
 		DEVICE_CATEGORY_ID = 31,
 		/// <summary>The category of device (smartphone, feature phone, tablet, or desktop) to which
 		/// an ad is being targeted. Can be used to filter by device category name.
-		/// <p>Corresponds to "Device category" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Device category" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Reach.</p>
 		/// </summary>
 		DEVICE_CATEGORY_NAME = 32,
 		/// <summary>Breaks down reporting data by country criteria ID. Can be used to filter by
-		/// country criteria ID.
+		/// country criteria ID. <p>Compatible with any of the following report types:
+		/// Historical, Future sell-through, Reach.</p>
 		/// </summary>
 		COUNTRY_CRITERIA_ID = 33,
 		/// <summary>Breaks down reporting data by country name. The country name and the country
 		/// criteria ID are automatically included as columns in the report. Can be used to
 		/// filter by country name using the US English name. <p>Corresponds to "Country" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Future sell-through, Reach.</p>
 		/// </summary>
 		COUNTRY_NAME = 34,
 		/// <summary>Breaks down reporting data by region criteria ID. Can be used to filter by
-		/// region criteria ID.
+		/// region criteria ID. <p>Compatible with any of the following report types:
+		/// Historical, Reach.</p>
 		/// </summary>
 		REGION_CRITERIA_ID = 35,
 		/// <summary>Breaks down reporting data by region name. The region name and the region
 		/// criteria ID are automatically included as columns in the report. Can be used to
 		/// filter by region name using the US English name. <p>Corresponds to "Region" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Reach.</p>
 		/// </summary>
 		REGION_NAME = 36,
 		/// <summary>Breaks down reporting data by city criteria ID. Can be used to filter by city
-		/// criteria ID.
+		/// criteria ID. <p>Compatible with any of the following report types: Historical,
+		/// Reach.</p>
 		/// </summary>
 		CITY_CRITERIA_ID = 37,
 		/// <summary>Breaks down reporting data by city name. The city name and the city criteria ID
 		/// are automatically included as columns in the report. Can be used to filter by
 		/// city name using the US English name. <p>Corresponds to "City" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		CITY_NAME = 38,
 		/// <summary>Breaks down reporting data by metro criteria ID. Can be used to filter by metro
-		/// criteria ID.
+		/// criteria ID. <p>Compatible with any of the following report types: Historical,
+		/// Reach.</p>
 		/// </summary>
 		METRO_CRITERIA_ID = 39,
 		/// <summary>Breaks down reporting data by metro name. The metro name and the metro criteria
 		/// ID are automatically included as columns in the report. Can be used to filter by
 		/// metro name using the US English name. <p>Corresponds to "Metro" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Reach.</p>
 		/// </summary>
 		METRO_NAME = 40,
 		/// <summary>Breaks down reporting data by postal code criteria ID. Can be used to filter by
-		/// postal code criteria ID.
+		/// postal code criteria ID. <p>Compatible with any of the following report types:
+		/// Historical, Reach.</p>
 		/// </summary>
 		POSTAL_CODE_CRITERIA_ID = 41,
 		/// <summary>Breaks down reporting data by postal code. The postal code and the postal code
 		/// criteria ID are automatically included as columns in the report. Can be used to
-		/// filter by postal code. <p>Corresponds to "Postal code" in the Ad Manager UI.</p>
+		/// filter by postal code. <p>Corresponds to "Postal code" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		POSTAL_CODE = 42,
 		/// <summary>Breaks down reporting data by <a
 		/// href='CustomTargetingValue#id'>CustomTargetingValue#id</a>. Can be used to
 		/// filter by <a href='CustomTargetingValue#id'>CustomTargetingValue#id</a>.
+		/// <p>Compatible with any of the following report types: Historical, Reach,
+		/// Sales.</p>
 		/// </summary>
 		CUSTOM_TARGETING_VALUE_ID = 43,
 		/// <summary>Breaks down reporting data by custom criteria. The <a
@@ -60873,39 +60923,48 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='#CUSTOM_TARGETING_VALUE_ID'>#CUSTOM_TARGETING_VALUE_ID</a> instead.
 		/// <p>When using this <code>Dimension</code>, metrics for freeform key values are
 		/// only reported on when they are registered with <code></code>.</p> <p>Corresponds
-		/// to "Key-values" in the Ad Manager UI.</p>
+		/// to "Key-values" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		CUSTOM_CRITERIA = 44,
 		/// <summary>Breaks down reporting data by activity ID. Can be used to filter by activity ID.
+		/// <p>Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		ACTIVITY_ID = 45,
 		/// <summary>Breaks down reporting data by activity. The activity name and the activity ID
 		/// are automatically included as columns in the report. Can be used to filter by
-		/// activity name. <p>Corresponds to "Activity" in the Ad Manager UI.</p>
+		/// activity name. <p>Corresponds to "Activity" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		ACTIVITY_NAME = 46,
 		/// <summary>Breaks down reporting data by activity group ID. Can be used to filter by
-		/// activity group ID.
+		/// activity group ID. <p>Compatible with any of the following report types:
+		/// Historical, Reach.</p>
 		/// </summary>
 		ACTIVITY_GROUP_ID = 47,
 		/// <summary>Breaks down reporting data by activity group. The activity group name and the
 		/// activity group ID are automatically included as columns in the report. Can be
 		/// used to filter by activity group name. <p>Corresponds to "Activity group" in the
-		/// Ad Manager UI.</p>
+		/// Ad Manager UI. Compatible with any of the following report types: Historical,
+		/// Reach.</p>
 		/// </summary>
 		ACTIVITY_GROUP_NAME = 48,
 		/// <summary>Breaks down reporting data by <a href='Content#id'>Content#id</a>. Can be used
-		/// to filter by <a href='Content#id'>Content#id</a>.
+		/// to filter by <a href='Content#id'>Content#id</a>. <p>Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach.</p>
 		/// </summary>
 		CONTENT_ID = 49,
 		/// <summary>Breaks down reporting data by content. <a href='Content#name'>Content#name</a>
 		/// and <a href='Content#id'>Content#id</a> are automatically included as columns in
 		/// the report. Can be used to filter by <a href='Content#name'>Content#name</a>.
-		/// <p>Corresponds to "Content" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Content" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach.</p>
 		/// </summary>
 		CONTENT_NAME = 50,
 		/// <summary>Breaks down reporting data by <a href='ContentBundle#id'>ContentBundle#id</a>.
 		/// Can be used to filter by <a href='ContentBundle#id'>ContentBundle#id</a>.
+		/// <p>Compatible with any of the following report types: Historical, Future
+		/// sell-through, Reach.</p>
 		/// </summary>
 		CONTENT_BUNDLE_ID = 51,
 		/// <summary>Breaks down reporting data by content bundle. <a
@@ -60913,18 +60972,21 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='ContentBundle#id'>ContentBundle#id</a> are automatically included as
 		/// columns in the report. Can be used to filter by <a
 		/// href='ContentBundle#name'>ContentBundle#name</a>. <p>Corresponds to "Content
-		/// bundle" in the Ad Manager UI.</p>
+		/// bundle" in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Future sell-through, Reach.</p>
 		/// </summary>
 		CONTENT_BUNDLE_NAME = 52,
 		/// <summary>Breaks down reporting data by <a
-		/// href='CustomTargetingKey#id'>CustomTargetingKey#id</a>.
+		/// href='CustomTargetingKey#id'>CustomTargetingKey#id</a>. <p>Compatible with any
+		/// of the following report types: Historical, Reach.</p>
 		/// </summary>
 		VIDEO_METADATA_KEY_ID = 204,
 		/// <summary>Breaks down reporting data by custom targeting key. <a
 		/// href='CustomTargetingKey#name'>CustomTargetingKey#name</a> and <a
 		/// href='CustomTargetingKey#id'>CustomTargetingKey#id</a> are automatically
 		/// included as columns in the report. <p>Corresponds to "Metadata key" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Reach.</p>
 		/// </summary>
 		VIDEO_METADATA_KEY_NAME = 205,
 		/// <summary>Breaks down reporting data by the content hierarchy. To use this dimension, a
@@ -60940,7 +61002,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// <summary>Breaks down reporting data by the fallback position of the video ad, i.e.,
 		/// <code>NON_FALLBACK</code>, <code>FALLBACK_POSITION_1</code>, <code></code>, etc.
 		/// Can be used for filtering. <p>Corresponds to "Fallback position" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Reach.</p>
 		/// </summary>
 		VIDEO_FALLBACK_POSITION = 54,
 		/// <summary>Breaks down reporting data by the position of the video ad within the video
@@ -60948,45 +61011,56 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// <code>POSTROLL</code>, <code>UNKNOWN_MIDROLL</code>, <code>MIDROLL_1</code>,
 		/// <code>MIDROLL_2</code>, etc. <code>UNKNOWN_MIDROLL</code> represents a midroll,
 		/// but which specific midroll is unknown. Can be used for filtering. <p>Corresponds
-		/// to "Position of pod" in the Ad Manager UI.</p>
+		/// to "Position of pod" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach.</p>
 		/// </summary>
 		POSITION_OF_POD = 55,
 		/// <summary>Breaks down reporting data by the position of the video ad within the pod, i.e.,
 		/// <code>UNKNOWN_POSITION</code>, <code>POSITION_1</code>, <code></code>, etc. Can
-		/// be used for filtering. <p>Corresponds to "Position in pod" in the Ad Manager
-		/// UI.</p>
+		/// be used for filtering. <p>Corresponds to "Position in pod" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		POSITION_IN_POD = 56,
 		/// <summary>Breaks down reporting data by video redirect vendor. <p>Corresponds to "Video
-		/// redirect third party" in the Ad Manager UI.</p>
+		/// redirect third party" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach.</p>
 		/// </summary>
 		VIDEO_REDIRECT_THIRD_PARTY = 206,
 		/// <summary>Breaks down reporting data by vast version type name. <p>Corresponds to "VAST
-		/// version" in the Ad Manager UI.</p>
+		/// version" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Reach.</p>
 		/// </summary>
 		VIDEO_VAST_VERSION = 207,
 		/// <summary>Breaks down reporting data by partner <a href='Company#id'>Company#id</a>.
+		/// <p>Compatible with any of the following report types: Historical, Reach, Partner
+		/// finance.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_PARTNER_ID = 57,
 		/// <summary>Breaks down reporting data by partner <a href='Company#name'>Company#name</a>
 		/// and <a href='Company#id'>Company#id</a> are automatically included as columns in
-		/// the report. <p>Corresponds to "Partner" in the Ad Manager UI.</p>
+		/// the report. <p>Corresponds to "Partner" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Reach, Partner finance.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_PARTNER_NAME = 58,
 		/// <summary>Breaks down reporting data by partner label <a href='Label#id'>Label#id</a>.
+		/// <p>Compatible with any of the following report types: Historical, Reach, Partner
+		/// finance.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_PARTNER_LABEL_ID = 59,
 		/// <summary>Breaks down reporting data by partner label. <a href='Label#name'>Label#name</a>
 		/// and <a href='Label#id'>Label#id</a> are automatically included as columns in the
-		/// report. <p>Corresponds to "Partner label" in the Ad Manager UI.</p>
+		/// report. <p>Corresponds to "Partner label" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Reach, Partner finance.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_PARTNER_LABEL_NAME = 60,
-		/// <summary>Breaks down reporting data by partner assignment id.
+		/// <summary>Breaks down reporting data by partner assignment id. <p>Compatible with any of
+		/// the following report types: Historical, Reach, Partner finance.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_ASSIGNMENT_ID = 195,
 		/// <summary>Breaks down reporting data by partner assignment name. ParnterAssignment name
 		/// and id are automatically included as columns in the report. <p>Corresponds to
-		/// "Assignment" in the Ad Manager UI.</p>
+		/// "Assignment" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Reach, Partner finance.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_ASSIGNMENT_NAME = 196,
 		/// <summary>Breaks down reporting data by gender and age group, i.e., MALE_13_TO_17,
@@ -60996,440 +61070,538 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// UNKNOWN_0_TO_17 and UNKNOWN. Whenever this dimension is selected, <a
 		/// href=''>#COUNTRY_NAME</a> must be selected. <p>This dimension is supported only
 		/// for GRP columns.</p> <p>Can correspond to any of the following in the Ad Manager
-		/// UI: Demographics, comScore vCE demographics.</p>
+		/// UI: Demographics, comScore vCE demographics. Compatible with any of the
+		/// following report types: Historical, Reach.</p>
 		/// </summary>
 		GRP_DEMOGRAPHICS = 61,
 		/// <summary>Breaks down reporting data by the ad unit sizes specified in ad requests.
 		/// <p>Formatted as comma separated values, e.g. "300x250,300x250v,300x60".</p>
 		/// <p>This dimension is supported only for sell-through columns.</p> <p>Corresponds
-		/// to "Ad request sizes" in the Ad Manager UI.</p>
+		/// to "Ad request sizes" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach.</p>
 		/// </summary>
 		AD_REQUEST_AD_UNIT_SIZES = 63,
 		/// <summary>Breaks down reporting data by the custom criteria specified in ad requests.
 		/// <p>Formatted as comma separated <a href='CustomTargetingKey'>key</a>-<a
 		/// href='CustomTargetingValue'>values</a>, where a key-value is formatted as
 		/// <code></code>.</p> <p>This dimension is supported only for sell-through
-		/// columns.</p> <p>Corresponds to "Key-values" in the Ad Manager UI.</p>
+		/// columns.</p> <p>Corresponds to "Key-values" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Future sell-through,
+		/// Reach.</p>
 		/// </summary>
 		AD_REQUEST_CUSTOM_CRITERIA = 64,
 		/// <summary>Whether the report contains only Ad Exchange traffic fulfilled by First Look
 		/// Deals or omits it. If this filter isn't included, the report will include First
 		/// Look Deals traffic in addition to any other traffic. This filter can only be
 		/// used with the string values "true" and "false". Not available as a dimension to
-		/// report on.
+		/// report on. <p>Compatible with any of the following report types: Historical,
+		/// Reach.</p>
 		/// </summary>
 		IS_FIRST_LOOK_DEAL = 154,
-		/// <summary>Breaks down reporting data by yield group ID.
+		/// <summary>Breaks down reporting data by yield group ID. <p>Compatible with any of the
+		/// following report types: Historical, Reach.</p>
 		/// </summary>
 		YIELD_GROUP_ID = 197,
 		/// <summary>Breaks down reporting data by yield group name. <p>Corresponds to "Yield group"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Reach.</p>
 		/// </summary>
 		YIELD_GROUP_NAME = 198,
 		/// <summary>Breaks down reporting data by yield partner. <p>Corresponds to "Yield partner"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Reach.</p>
 		/// </summary>
 		YIELD_PARTNER = 199,
 		/// <summary>Breaks down reporting data by the tag of a yield partner in a yield group.
-		/// <p>Corresponds to "Yield partner tag" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Yield partner tag" in the Ad Manager UI. Compatible with any
+		/// of the following report types: Historical, Reach.</p>
 		/// </summary>
 		YIELD_PARTNER_TAG = 200,
 		/// <summary>Breaks down reporting data by mediation type. A mediation type can be web,
-		/// mobile app or video. <p>Corresponds to "Mediation type" in the Ad Manager
-		/// UI.</p>
+		/// mobile app or video. <p>Corresponds to "Mediation type" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		MEDIATION_TYPE = 161,
 		/// <summary>Breaks down reporting data by native template (also known as creative template)
-		/// ID.
+		/// ID. <p>Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		NATIVE_TEMPLATE_ID = 155,
 		/// <summary>Breaks down reporting data by native template (also known as creative template)
-		/// name. <p>Corresponds to "Native ad format name" in the Ad Manager UI.</p>
+		/// name. <p>Corresponds to "Native ad format name" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		NATIVE_TEMPLATE_NAME = 156,
-		/// <summary>Breaks down reporting data by native style ID.
+		/// <summary>Breaks down reporting data by native style ID. <p>Compatible with any of the
+		/// following report types: Historical, Reach.</p>
 		/// </summary>
 		NATIVE_STYLE_ID = 162,
 		/// <summary>Breaks down reporting data by native style name. <p>Corresponds to "Native style
-		/// name" in the Ad Manager UI.</p>
+		/// name" in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Reach.</p>
 		/// </summary>
 		NATIVE_STYLE_NAME = 163,
 		/// <summary>Breaks down reporting data by mobile app name. Can be used for filtering.
-		/// <p>Corresponds to "App names" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "App names" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach.</p>
 		/// </summary>
 		MOBILE_APP_NAME = 164,
 		/// <summary>Breaks down reporting data by device name. Can be used for filtering.
-		/// <p>Corresponds to "Devices" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Devices" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach.</p>
 		/// </summary>
 		MOBILE_DEVICE_NAME = 165,
 		/// <summary>Breaks down reporting data by inventory type. Can be used for filtering. <p>Can
 		/// correspond to any of the following in the Ad Manager UI: Inventory types
-		/// (retired), Inventory types.</p>
+		/// (retired), Inventory types. Compatible with any of the following report types:
+		/// Historical, Reach.</p>
 		/// </summary>
 		MOBILE_INVENTORY_TYPE = 166,
 		/// <summary>Breaks down reporting data by request type. Can be used for filtering.
-		/// <p>Corresponds to "Request type" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Request type" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Reach.</p>
 		/// </summary>
 		REQUEST_TYPE = 201,
 		/// <summary>Status of the ad unit. Not available as a dimension to report on, but exists as
 		/// a dimension in order to filter on it using PQL. Valid values correspond to <a
-		/// href='InventoryStatus'>InventoryStatus</a>.
+		/// href='InventoryStatus'>InventoryStatus</a>. <p>Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach.</p>
 		/// </summary>
 		AD_UNIT_STATUS = 144,
 		/// <summary>Breaks down reporting data by <a href='Creative#id'>Creative#id</a>. This
 		/// includes regular creatives, and master and companions in case of creative sets.
+		/// <p>Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		MASTER_COMPANION_CREATIVE_ID = 69,
 		/// <summary>Breaks down reporting data by creative. This includes regular creatives, and
 		/// master and companions in case of creative sets. <p>Corresponds to "Master and
-		/// Companion creative" in the Ad Manager UI.</p>
+		/// Companion creative" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach.</p>
 		/// </summary>
 		MASTER_COMPANION_CREATIVE_NAME = 70,
 		/// <summary>Breaks down reporting data by <a
 		/// href='ProposalLineItem#id'>ProposalLineItem#id</a>. Can be used to filter by <a
-		/// href='ProposalLineItem#id'>ProposalLineItem#id</a>.
+		/// href='ProposalLineItem#id'>ProposalLineItem#id</a>. <p>Compatible with any of
+		/// the following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_ID = 71,
 		/// <summary>Breaks down reporting data by <a
 		/// href='ProposalLineItem#name'>ProposalLineItem#name</a>. Can be used to filter by
 		/// <a href='ProposalLineItem#name'>ProposalLineItem#name</a>. <p>Corresponds to
-		/// "Proposal line item" in the Ad Manager UI.</p>
+		/// "Proposal line item" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_NAME = 72,
 		/// <summary>Breaks down reporting data by <a href='Proposal#id'>Proposal#id</a>. Can be used
-		/// to filter by <a href='Proposal#id'>Proposal#id</a>.
+		/// to filter by <a href='Proposal#id'>Proposal#id</a>. <p>Compatible with any of
+		/// the following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_ID = 73,
 		/// <summary>Breaks down reporting data by <a href='Proposal#name'>Proposal#name</a>. Can be
 		/// used to filter by <a href='Proposal#name'>Proposal#name</a>. <p>Corresponds to
-		/// "Proposal" in the Ad Manager UI.</p>
+		/// "Proposal" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_NAME = 74,
 		/// <summary>Breaks down reporting data by salesperson <a href='User#id'>User#id</a>,
 		/// including both salesperson and secondary salespeople. Can be used to filter by
-		/// all salespeople <a href='User#id'>User#id</a>.
+		/// all salespeople <a href='User#id'>User#id</a>. <p>Compatible with any of the
+		/// following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		ALL_SALESPEOPLE_ID = 75,
 		/// <summary>Breaks down reporting data by salesperson <a href='User#name'>User#name</a>,
 		/// including both salesperson and secondary salespeople. Can be used to filter by
 		/// all salespeople <a href='User#name'>User#name</a>. <p>Corresponds to "All
-		/// salespeople" in the Ad Manager UI.</p>
+		/// salespeople" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Reach, Sales.</p>
 		/// </summary>
 		ALL_SALESPEOPLE_NAME = 76,
 		/// <summary>Used to filter by <a href='User#id'>User#id</a> in sales team. Sales team
 		/// includes salesperson, secondary salesperson, sales planners. Not available as a
-		/// dimension to report on.
+		/// dimension to report on. <p>Compatible with any of the following report types:
+		/// Historical, Reach, Sales.</p>
 		/// </summary>
 		SALES_TEAM_ID = 145,
 		/// <summary>Used to filter by <a href='User#name'>User#name</a> in sales team. Sales team
 		/// includes salesperson, secondary salesperson, sales planners. Not available as a
-		/// dimension to report on.
+		/// dimension to report on. <p>Compatible with any of the following report types:
+		/// Historical, Reach, Sales.</p>
 		/// </summary>
 		SALES_TEAM_NAME = 146,
 		/// <summary>Breaks down reporting data by proposal agency <a
 		/// href='Company#id'>Company#id</a>. Can be used to filter by proposal agency <a
-		/// href='Company#id'>Company#id</a>.
+		/// href='Company#id'>Company#id</a>. <p>Compatible with any of the following report
+		/// types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_ID = 77,
 		/// <summary>Breaks down reporting data by proposal agency <a
 		/// href='Company#name'>Company#name</a>. Can be used to filter by proposal agency
 		/// <a href='Company#name'>Company#name</a>. <p>Corresponds to "Proposal agency" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_NAME = 78,
 		/// <summary>Breaks down reporting data by <a href='Product#id'>Product#id</a>. Can be used
-		/// to filter by <a href='Product#id'>Product#id</a>.
+		/// to filter by <a href='Product#id'>Product#id</a>. <p>Compatible with any of the
+		/// following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_ID = 79,
 		/// <summary>Breaks down reporting data by <a href='Product#name'>Product#name</a>.
-		/// <p>Corresponds to "Product" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Product" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_NAME = 80,
 		/// <summary>Breaks down reporting data by <a
 		/// href='ProductTemplate#id'>ProductTemplate#id</a>. Can be used to filter by <a
-		/// href='ProductTemplate#id'>ProductTemplate#id</a>.
+		/// href='ProductTemplate#id'>ProductTemplate#id</a>. <p>Compatible with any of the
+		/// following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_TEMPLATE_ID = 81,
 		/// <summary>Breaks down reporting data by <a
 		/// href='ProductTemplate#name'>ProductTemplate#name</a>. Can be used to filter by
 		/// <a href='ProductTemplate#name'>ProductTemplate#name</a>. <p>Corresponds to
-		/// "Product template" in the Ad Manager UI.</p>
+		/// "Product template" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_TEMPLATE_NAME = 82,
 		/// <summary>Breaks down reporting data by <a href='RateCard#id'>RateCard#id</a>. Can be used
-		/// to filter by <a href=''>RateCard#id</a>.
+		/// to filter by <a href=''>RateCard#id</a>. <p>Compatible with any of the following
+		/// report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		RATE_CARD_ID = 83,
 		/// <summary>Breaks down reporting data by <a href='RateCard#name'>RateCard#name</a>. Can be
 		/// used to filter by <a href=''>RateCard#name</a>. <p>Corresponds to "Rate card" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Reach, Sales.</p>
 		/// </summary>
 		RATE_CARD_NAME = 84,
 		/// <summary>Used to filter by <a href='Workflow#id'>Workflow#id</a>. Not available as a
-		/// dimension to report on.
+		/// dimension to report on. <p>Compatible with any of the following report types:
+		/// Historical, Reach, Sales.</p>
 		/// </summary>
 		WORKFLOW_ID = 85,
 		/// <summary>Used to filter by <a href='Workflow#name'>Workflow#name</a>. Not available as a
-		/// dimension to report on.
+		/// dimension to report on. <p>Compatible with any of the following report types:
+		/// Historical, Reach, Sales.</p>
 		/// </summary>
 		WORKFLOW_NAME = 86,
-		/// <summary>Breaks down reporting data by <a href='Package#id'>Package#id</a>.
+		/// <summary>Breaks down reporting data by <a href='Package#id'>Package#id</a>. <p>Compatible
+		/// with any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PACKAGE_ID = 147,
 		/// <summary>Breaks down reporting data by <a href='Package#name'>Package#name</a>.
-		/// <p>Corresponds to "Package" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Package" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PACKAGE_NAME = 148,
 		/// <summary>Breaks down reporting data by <a href='ProductPackage#id'>ProductPackage#id</a>.
 		/// Can be used to filter by <a href='ProductPackage#id'>ProductPackage#id</a>.
+		/// <p>Compatible with any of the following report types: Historical, Reach,
+		/// Sales.</p>
 		/// </summary>
 		PRODUCT_PACKAGE_ID = 149,
 		/// <summary>Breaks down reporting data by <a
 		/// href='ProductPackage#name'>ProductPackage#name</a>. Can be used to filter by <a
 		/// href='ProductPackage#name'>ProductPackage#name</a>. <p>Corresponds to "Product
-		/// package" in the Ad Manager UI.</p>
+		/// package" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_PACKAGE_NAME = 150,
-		/// <summary>Breaks down reporting data by billable audience segment ID.
+		/// <summary>Breaks down reporting data by billable audience segment ID. <p>Compatible with
+		/// any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		AUDIENCE_SEGMENT_ID = 87,
 		/// <summary>Breaks down reporting data by billable audience segment name. <p>Corresponds to
-		/// "Audience segment (billable)" in the Ad Manager UI.</p>
+		/// "Audience segment (billable)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach.</p>
 		/// </summary>
 		AUDIENCE_SEGMENT_NAME = 88,
 		/// <summary>Breaks down reporting data by audience segment data provider name.
-		/// <p>Corresponds to "Data partner" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Data partner" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Reach.</p>
 		/// </summary>
 		AUDIENCE_SEGMENT_DATA_PROVIDER_NAME = 89,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange inventory size.
-		/// <p>Corresponds to "Inventory sizes" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Inventory sizes" in the Ad Manager UI. Compatible with the
+		/// "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_INVENTORY_SIZE = 171,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange inventory size
-		/// code.
+		/// code. <p>Compatible with any of the following report types: Historical,
+		/// Reach.</p>
 		/// </summary>
 		AD_EXCHANGE_INVENTORY_SIZE_CODE = 172,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange device category.
-		/// <p>Corresponds to "Device categories" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Device categories" in the Ad Manager UI. Compatible with the
+		/// "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DEVICE_CATEGORY = 173,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange pricing rule ID.
+		/// <p>Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		AD_EXCHANGE_PRICING_RULE_ID = 92,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange pricing rule.
-		/// <p>Corresponds to "Pricing rules" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Pricing rules" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_PRICING_RULE_NAME = 93,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange tag.
-		/// <p>Corresponds to "Tags" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Tags" in the Ad Manager UI. Compatible with the "Ad Exchange
+		/// historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_TAG_NAME = 94,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange URL.
-		/// <p>Corresponds to "URLs" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "URLs" in the Ad Manager UI. Compatible with the "Ad Exchange
+		/// historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_URL = 174,
-		/// <summary>Breaks down data by Ad Exchange mapped web property code.
+		/// <summary>Breaks down data by Ad Exchange mapped web property code. <p>Compatible with any
+		/// of the following report types: Historical, Reach.</p>
 		/// </summary>
 		AD_EXCHANGE_WEB_PROPERTY_CODE = 175,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange creative size.
-		/// <p>Corresponds to "Creative sizes" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Creative sizes" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_CREATIVE_SIZES = 97,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange ad type.
-		/// <p>Corresponds to "Ad Types" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Ad Types" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AD_TYPE = 176,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange channel.
-		/// <p>Corresponds to "Channels" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Channels" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_CHANNEL_NAME = 99,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange product.
-		/// <p>Corresponds to "Products" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Products" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_PRODUCT_NAME = 100,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange product code.
+		/// <p>Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		AD_EXCHANGE_PRODUCT_CODE = 177,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange site.
-		/// <p>Corresponds to "Sites" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Sites" in the Ad Manager UI. Compatible with the "Ad Exchange
+		/// historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_SITE_NAME = 101,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange request source.
-		/// <p>Corresponds to "Request sources" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Request sources" in the Ad Manager UI. Compatible with the
+		/// "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_REQUEST_SOURCES = 102,
 		/// <summary>Breaks down mapped Ad Exchange web property data by the Ad Exchange advertiser
-		/// name that bids on ads. <p>Corresponds to "Advertisers" in the Ad Manager UI.</p>
+		/// name that bids on ads. <p>Corresponds to "Advertisers" in the Ad Manager UI.
+		/// Compatible with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ADVERTISER_NAME = 104,
 		/// <summary>Breaks down mapped Ad Exchange web property data by the Ad Exchange brand name
-		/// that bids on ads. <p>Corresponds to "Brands" in the Ad Manager UI.</p>
+		/// that bids on ads. <p>Corresponds to "Brands" in the Ad Manager UI. Compatible
+		/// with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_BRAND_NAME = 178,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange agency.
-		/// <p>Corresponds to "Agencies" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Agencies" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AGENCY = 105,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange bid type code.
+		/// <p>Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		AD_EXCHANGE_BID_TYPE_CODE = 179,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange branding type
-		/// code.
+		/// code. <p>Compatible with any of the following report types: Historical,
+		/// Reach.</p>
 		/// </summary>
 		AD_EXCHANGE_BRANDING_TYPE_CODE = 180,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange branding type.
 		/// Examples: Branded, Anonymous. <p>Corresponds to "Branding types" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_BRANDING_TYPE = 107,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange ad network name.
 		/// Example: Google Adwords. <p>Corresponds to "Buyer networks" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_BUYER_NETWORK_NAME = 108,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange ad network ID.
+		/// <p>Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		AD_EXCHANGE_BUYER_NETWORK_ID = 181,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange custom channel
-		/// code.
+		/// code. <p>Compatible with any of the following report types: Historical,
+		/// Reach.</p>
 		/// </summary>
 		AD_EXCHANGE_CUSTOM_CHANNEL_CODE = 182,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange custom channel
-		/// ID.
+		/// ID. <p>Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		AD_EXCHANGE_CUSTOM_CHANNEL_ID = 183,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange date, in Ad
 		/// Exchange timezone. <p><b>Note:</b> In v201802 and later, this dimension is
 		/// compatible with the following time zone types:</p> <ul> <li><a
 		/// href='TimeZoneType.AD_EXCHANGE'>TimeZoneType.AD_EXCHANGE</a></li> </ul>
-		/// <p>Corresponds to "Days" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Days" in the Ad Manager UI. Compatible with the "Ad Exchange
+		/// historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DATE = 109,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange deal id.
-		/// <p>Corresponds to "Deal IDs" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Deal IDs" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DEAL_ID = 111,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange deal name.
-		/// <p>Corresponds to "Deal names" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Deal names" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DEAL_NAME = 112,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange deal/transaction
 		/// type. Example: Open auction. <p>Corresponds to "Transaction types" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_TRANSACTION_TYPE = 184,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange DSP buyer
-		/// network name. <p>Corresponds to "DSPs" in the Ad Manager UI.</p>
+		/// network name. <p>Corresponds to "DSPs" in the Ad Manager UI. Compatible with the
+		/// "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DSP_BUYER_NETWORK_NAME = 114,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange expansion type.
-		/// <p>Corresponds to "Expandable types" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Expandable types" in the Ad Manager UI. Compatible with the
+		/// "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_EXPANSION_TYPE = 115,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange country code.
+		/// <p>Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		AD_EXCHANGE_COUNTRY_CODE = 116,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange country name.
-		/// <p>Corresponds to "Countries" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Countries" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_COUNTRY_NAME = 117,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Manager ad unit ID.
+		/// <p>Compatible with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DFP_AD_UNIT_ID = 185,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Manager ad unit.
-		/// <p>Corresponds to "DFP Ad Units" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "DFP Ad Units" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DFP_AD_UNIT = 186,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange inventory
-		/// ownership. <p>Corresponds to "Inventory ownership" in the Ad Manager UI.</p>
+		/// ownership. <p>Corresponds to "Inventory ownership" in the Ad Manager UI.
+		/// Compatible with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_INVENTORY_OWNERSHIP = 118,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange advertiser
-		/// domain. <p>Corresponds to "Advertiser domains" in the Ad Manager UI.</p>
+		/// domain. <p>Corresponds to "Advertiser domains" in the Ad Manager UI. Compatible
+		/// with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ADVERTISER_DOMAIN = 187,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile app name.
-		/// <p>Corresponds to "App names" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "App names" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_MOBILE_APP_NAME = 120,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile carrier
-		/// name. <p>Corresponds to "Carrier names" in the Ad Manager UI.</p>
+		/// name. <p>Corresponds to "Carrier names" in the Ad Manager UI. Compatible with
+		/// the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_MOBILE_CARRIER_NAME = 121,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile device
-		/// name. <p>Corresponds to "Devices" in the Ad Manager UI.</p>
+		/// name. <p>Corresponds to "Devices" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_MOBILE_DEVICE_NAME = 122,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange mobile inventory
-		/// type. <p>Corresponds to "Inventory types" in the Ad Manager UI.</p>
+		/// type. <p>Corresponds to "Inventory types" in the Ad Manager UI. Compatible with
+		/// the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_MOBILE_INVENTORY_TYPE = 123,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange month, in Ad
 		/// Exchange timezone. <p><b>Note:</b> In v201802 and later, this dimension is
 		/// compatible with the following time zone types:</p> <ul> <li><a
 		/// href='TimeZoneType.AD_EXCHANGE'>TimeZoneType.AD_EXCHANGE</a></li> </ul>
-		/// <p>Corresponds to "Months" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Months" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_MONTH = 124,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange network partner
-		/// name. <p>Corresponds to "Network partner names" in the Ad Manager UI.</p>
+		/// name. <p>Corresponds to "Network partner names" in the Ad Manager UI. Compatible
+		/// with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_NETWORK_PARTNER_NAME = 125,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange operating system
-		/// version. <p>Corresponds to "Operating systems" in the Ad Manager UI.</p>
+		/// version. <p>Corresponds to "Operating systems" in the Ad Manager UI. Compatible
+		/// with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_OPERATING_SYSTEM = 188,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange tags.
+		/// <p>Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		AD_EXCHANGE_TAG_CODE = 127,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange targeting type
-		/// code.
+		/// code. <p>Compatible with any of the following report types: Historical,
+		/// Reach.</p>
 		/// </summary>
 		AD_EXCHANGE_TARGETING_TYPE_CODE = 189,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange targeting type.
-		/// <p>Corresponds to "Targeting types" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Targeting types" in the Ad Manager UI. Compatible with the
+		/// "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_TARGETING_TYPE = 128,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange transaction type
-		/// code
+		/// code <p>Compatible with any of the following report types: Historical,
+		/// Reach.</p>
 		/// </summary>
 		AD_EXCHANGE_TRANSACTION_TYPE_CODE = 190,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange URL ID.
+		/// <p>Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		AD_EXCHANGE_URL_ID = 191,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange user bandwidth.
-		/// <p>Corresponds to "Bandwidth" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Bandwidth" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_USER_BANDWIDTH_NAME = 133,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange video ad
-		/// duration.
+		/// duration. <p>Compatible with any of the following report types: Historical,
+		/// Reach.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_AD_DURATION = 134,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange raw video ad
-		/// duration. <p>Corresponds to "Video ad durations" in the Ad Manager UI.</p>
+		/// duration. <p>Corresponds to "Video ad durations" in the Ad Manager UI.
+		/// Compatible with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_AD_DURATION_RAW = 135,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange video ad type.
-		/// <p>Corresponds to "Video ad types" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Video ad types" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_AD_TYPE = 192,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange week, in Ad
 		/// Exchange timezone. <p><b>Note:</b> In v201802 and later, this dimension is
 		/// compatible with the following time zone types:</p> <ul> <li><a
 		/// href='TimeZoneType.AD_EXCHANGE'>TimeZoneType.AD_EXCHANGE</a></li> </ul>
-		/// <p>Corresponds to "Weeks" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Weeks" in the Ad Manager UI. Compatible with the "Ad Exchange
+		/// historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_WEEK = 137,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange ad location.
-		/// <p>Corresponds to "Ad locations" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Ad locations" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AD_LOCATION = 193,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Exchange advertiser
-		/// vertical. <p>Corresponds to "Advertiser verticals" in the Ad Manager UI.</p>
+		/// vertical. <p>Corresponds to "Advertiser verticals" in the Ad Manager UI.
+		/// Compatible with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ADVERTISER_VERTICAL = 194,
 		/// <summary>Campaign date segment of Nielsen Digital Ad Ratings reporting. <p>Corresponds to
-		/// "Nielsen Digital Ad Ratings segment" in the Ad Manager UI.</p>
+		/// "Nielsen Digital Ad Ratings segment" in the Ad Manager UI. Compatible with any
+		/// of the following report types: Historical, Reach.</p>
 		/// </summary>
 		NIELSEN_SEGMENT = 151,
 		/// <summary>Breaks down reporting data by gender and age group, i.e., MALE_18_TO_20,
@@ -61441,97 +61613,113 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// </summary>
 		NIELSEN_DEMOGRAPHICS = 152,
 		/// <summary>Data restatement date of Nielsen Digital Ad Ratings data. <p>Corresponds to
-		/// "Nielsen Digital Ad Ratings restatement date" in the Ad Manager UI.</p>
+		/// "Nielsen Digital Ad Ratings restatement date" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		NIELSEN_RESTATEMENT_DATE = 153,
 		/// <summary>Breaks down reporting data by <a
 		/// href='ProposalMarketplaceInfo#buyerAccountId'>ProposalMarketplaceInfo#buyerAccountId</a>.
+		/// <p>Compatible with any of the following report types: Historical, Reach,
+		/// Sales.</p>
 		/// </summary>
 		PROGRAMMATIC_BUYER_ID = 167,
 		/// <summary>Breaks down reporting data by programmatic buyer name. <p>Corresponds to
-		/// "Programmatic buyer" in the Ad Manager UI.</p>
+		/// "Programmatic buyer" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PROGRAMMATIC_BUYER_NAME = 168,
 		/// <summary>Breaks down reporting data by requested ad size(s). This can be a chain of sizes
-		/// or a single size. <p>Corresponds to "Requested ad sizes" in the Ad Manager
-		/// UI.</p>
+		/// or a single size. <p>Corresponds to "Requested ad sizes" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		REQUESTED_AD_SIZES = 169,
 		/// <summary>Breaks down reporting data by the creative size the ad was delivered to.
-		/// <p>Corresponds to "Creative size (delivered)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Creative size (delivered)" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		CREATIVE_SIZE_DELIVERED = 170,
 		/// <summary>Breaks down reporting data by the type of transaction that occurred in Ad
-		/// Exchange.
+		/// Exchange. <p>Compatible with any of the following report types: Historical,
+		/// Reach.</p>
 		/// </summary>
 		PROGRAMMATIC_CHANNEL_ID = 222,
 		/// <summary>Breaks down reporting data by the type of transaction that occurred in Ad
-		/// Exchange. <p>Corresponds to "Programmatic channel" in the Ad Manager UI.</p>
+		/// Exchange. <p>Corresponds to "Programmatic channel" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		PROGRAMMATIC_CHANNEL_NAME = 223,
 		/// <summary>Breaks down Demand reporting data by date in the network time zone. Can be used
 		/// to filter by date using ISO 8601's format 'YYYY-MM-DD'". <p>Corresponds to
-		/// "Date" in the Ad Manager UI.</p>
+		/// "Date" in the Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
 		/// </summary>
 		DP_DATE = 208,
 		/// <summary>Breaks down Demand reporting data by week of the year in the network time zone.
-		/// Cannot be used for filtering. <p>Corresponds to "Week" in the Ad Manager UI.</p>
+		/// Cannot be used for filtering. <p>Corresponds to "Week" in the Ad Manager UI.
+		/// Compatible with the "Ad Connector" report type.</p>
 		/// </summary>
 		DP_WEEK = 219,
 		/// <summary>Breaks down Demand reporting data by month and year in the network time zone.
 		/// Cannot be used to filter. <p>Corresponds to "Month and year" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with the "Ad Connector" report type.</p>
 		/// </summary>
 		DP_MONTH_YEAR = 220,
 		/// <summary>Breaks down Demand reporting data by country criteria ID. Can be used to filter
-		/// by country criteria ID.
+		/// by country criteria ID. <p>Compatible with the "Ad Connector" report type.</p>
 		/// </summary>
 		DP_COUNTRY_CRITERIA_ID = 209,
 		/// <summary>Breaks down Demand reporting data by country name. The country name and the
 		/// country criteria ID are automatically included as columns in the report. Can be
 		/// used to filter by country name using the US English name. <p>Corresponds to
-		/// "Country" in the Ad Manager UI.</p>
+		/// "Country" in the Ad Manager UI. Compatible with the "Ad Connector" report
+		/// type.</p>
 		/// </summary>
 		DP_COUNTRY_NAME = 210,
 		/// <summary>Breaks down Demand reporting data by inventory type. <p>Corresponds to
-		/// "Inventory type" in the Ad Manager UI.</p>
+		/// "Inventory type" in the Ad Manager UI. Compatible with the "Ad Connector" report
+		/// type.</p>
 		/// </summary>
 		DP_INVENTORY_TYPE = 211,
 		/// <summary>Breaks down Demand reporting data by the creative size the ad was delivered to.
-		/// <p>Corresponds to "Creative size" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Creative size" in the Ad Manager UI. Compatible with the "Ad
+		/// Connector" report type.</p>
 		/// </summary>
 		DP_CREATIVE_SIZE = 212,
 		/// <summary>Breaks down Demand reporting data by the brand name that bids on ads.
-		/// <p>Corresponds to "Brand" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Brand" in the Ad Manager UI. Compatible with the "Ad
+		/// Connector" report type.</p>
 		/// </summary>
 		DP_BRAND_NAME = 213,
 		/// <summary>Breaks down Demand reporting data by the advertiser name that bid on ads.
-		/// <p>Corresponds to "Advertiser" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Advertiser" in the Ad Manager UI. Compatible with the "Ad
+		/// Connector" report type.</p>
 		/// </summary>
 		DP_ADVERTISER_NAME = 214,
 		/// <summary>Breaks down Demand reporting data by Ad Exchange ad network name. Example:
-		/// Google Adwords. <p>Corresponds to "Buyer network" in the Ad Manager UI.</p>
+		/// Google Adwords. <p>Corresponds to "Buyer network" in the Ad Manager UI.
+		/// Compatible with the "Ad Connector" report type.</p>
 		/// </summary>
 		DP_ADX_BUYER_NETWORK_NAME = 215,
 		/// <summary>Breaks down reporting data by device name. <p>Corresponds to "Device" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Ad Connector" report type.</p>
 		/// </summary>
 		DP_MOBILE_DEVICE_NAME = 216,
 		/// <summary>Breaks down reporting data by the category of device (smartphone, feature phone,
-		/// tablet, or desktop). <p>Corresponds to "Device category" in the Ad Manager
-		/// UI.</p>
+		/// tablet, or desktop). <p>Corresponds to "Device category" in the Ad Manager UI.
+		/// Compatible with the "Ad Connector" report type.</p>
 		/// </summary>
 		DP_DEVICE_CATEGORY_NAME = 217,
 		/// <summary>Breaks down reporting data by the tag id provided by the publisher in the ad
-		/// request. <p>Corresponds to "Tag ID" in the Ad Manager UI.</p>
+		/// request. <p>Corresponds to "Tag ID" in the Ad Manager UI. Compatible with the
+		/// "Ad Connector" report type.</p>
 		/// </summary>
 		DP_TAG_ID = 221,
 		/// <summary>Breaks down reporting data by the deal id provided by the publisher in the ad
-		/// request. <p>Corresponds to "Deal IDs" in the Ad Manager UI.</p>
+		/// request. <p>Corresponds to "Deal IDs" in the Ad Manager UI. Compatible with the
+		/// "Ad Connector" report type.</p>
 		/// </summary>
 		DP_DEAL_ID = 224,
-		/// <summary>Breaks down reporting data by mobile app ID.. <p>Corresponds to "App ID" in the
-		/// Ad Manager UI.</p>
+		/// <summary>Breaks down reporting data by mobile app ID. <p>Corresponds to "App ID" in the
+		/// Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
 		/// </summary>
 		DP_APP_ID = 225,
 		/// <summary>Breaks down reporting data by the <a
@@ -61541,11 +61729,13 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='ReportQuery#customDimensionKeyIds'>ReportQuery#customDimensionKeyIds</a>.
 		/// </summary>
 		CUSTOM_DIMENSION = 226,
-		/// <summary>Breaks down reporting data by demand channels.
+		/// <summary>Breaks down reporting data by demand channels. <p>Compatible with any of the
+		/// following report types: Historical, Reach.</p>
 		/// </summary>
 		DEMAND_CHANNEL_ID = 202,
 		/// <summary>Breaks down reporting data by demand channel name. <p>Corresponds to "Demand
-		/// channel" in the Ad Manager UI.</p>
+		/// channel" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Reach.</p>
 		/// </summary>
 		DEMAND_CHANNEL_NAME = 203,
 	}
@@ -61591,50 +61781,52 @@ namespace Google.Api.Ads.AdManager.v201905
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201905")]
 	public enum Column {
 		/// <summary>The number of impressions delivered by the ad server. <p>Corresponds to "Ad
-		/// server impressions" in the Ad Manager UI.</p>
+		/// server impressions" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		AD_SERVER_IMPRESSIONS = 0,
 		/// <summary>The number of impressions delivered by the ad server by explicit custom criteria
 		/// targeting. <p>Corresponds to "Ad server targeted impressions" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_TARGETED_IMPRESSIONS = 1,
 		/// <summary>The number of clicks delivered by the ad server. <p>Corresponds to "Ad server
-		/// clicks" in the Ad Manager UI.</p>
+		/// clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_CLICKS = 2,
 		/// <summary>The number of clicks delivered by the ad server by explicit custom criteria
-		/// targeting. <p>Corresponds to "Ad server targeted clicks" in the Ad Manager
-		/// UI.</p>
+		/// targeting. <p>Corresponds to "Ad server targeted clicks" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_TARGETED_CLICKS = 3,
 		/// <summary>The CTR for an ad delivered by the ad server. <p>Corresponds to "Ad server CTR"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_CTR = 4,
 		/// <summary>The CPM and CPC revenue earned, calculated in publisher currency, for the ads
 		/// delivered by the ad server. <p>Corresponds to "Ad server CPM and CPC revenue" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_CPM_AND_CPC_REVENUE = 5,
 		/// <summary>The CPD revenue earned, calculated in publisher currency, for the ads delivered
 		/// by the ad server. <p>Corresponds to "Ad server CPD revenue" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_CPD_REVENUE = 6,
 		/// <summary>The CPA revenue earned, calculated in publisher currency, for the ads delivered
-		/// by the ad server. <p>Corresponds to "CPA revenue" in the Ad Manager UI.</p>
+		/// by the ad server. <p>Corresponds to "CPA revenue" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_CPA_REVENUE = 7,
 		/// <summary>The CPM, CPC and CPD revenue earned, calculated in publisher currency, for the
 		/// ads delivered by the ad server. <p>Can correspond to any of the following in the
 		/// Ad Manager UI: Ad server CPM, CPC, CPD, and vCPM revenue, Ad server CPM, CPC and
-		/// CPD revenue.</p>
+		/// CPD revenue. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_ALL_REVENUE = 8,
 		/// <summary>The average estimated cost-per-thousand-impressions earned from the CPM and CPC
 		/// ads delivered by the ad server. <p>Corresponds to "Ad server average eCPM" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_WITHOUT_CPD_AVERAGE_ECPM = 9,
 		/// <summary>The average estimated cost-per-thousand-impressions earned from the CPM, CPC and
@@ -61644,12 +61836,13 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// <summary>The ratio of the number of impressions delivered to the total impressions
 		/// delivered by the ad server for line item-level dynamic allocation. Represented
 		/// as a percentage. <p>Corresponds to "Ad server impressions (%)" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_LINE_ITEM_LEVEL_PERCENT_IMPRESSIONS = 12,
 		/// <summary>The ratio of the number of clicks delivered to the total clicks delivered by the
 		/// ad server for line item-level dynamic allocation. Represented as a percentage.
-		/// <p>Corresponds to "Ad server clicks (%)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Ad server clicks (%)" in the Ad Manager UI. Compatible with
+		/// the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_LINE_ITEM_LEVEL_PERCENT_CLICKS = 14,
 		/// <summary>The ratio of revenue generated by ad server to the total CPM, CPC and CPD
@@ -61661,8 +61854,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		AD_SERVER_INVENTORY_LEVEL_WITH_CPD_PERCENT_REVENUE = 16,
 		/// <summary>The ratio of revenue generated by ad server to the total CPM and CPC revenue
 		/// earned by the ads delivered for line item-level dynamic allocation. Represented
-		/// as a percentage. <p>Corresponds to "Ad server revenue (%)" in the Ad Manager
-		/// UI.</p>
+		/// as a percentage. <p>Corresponds to "Ad server revenue (%)" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_LINE_ITEM_LEVEL_WITHOUT_CPD_PERCENT_REVENUE = 17,
 		/// <summary>The ratio of revenue generated by ad server to the total CPM, CPC and CPD
@@ -61672,54 +61865,64 @@ namespace Google.Api.Ads.AdManager.v201905
 		AD_SERVER_LINE_ITEM_LEVEL_WITH_CPD_PERCENT_REVENUE = 18,
 		/// <summary>The number of downloaded impressions delivered by the ad server including
 		/// impressions recognized as spam. <p>Corresponds to "Ad server unfiltered
-		/// downloaded impressions" in the Ad Manager UI.</p>
+		/// downloaded impressions" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		AD_SERVER_UNFILTERED_IMPRESSIONS = 435,
 		/// <summary>The number of clicks delivered by the ad server including clicks recognized as
-		/// spam. <p>Corresponds to "Ad server unfiltered clicks" in the Ad Manager UI.</p>
+		/// spam. <p>Corresponds to "Ad server unfiltered clicks" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_UNFILTERED_CLICKS = 436,
 		/// <summary>The number of impressions an AdSense ad delivered for line item-level dynamic
-		/// allocation. <p>Corresponds to "AdSense impressions" in the Ad Manager UI.</p>
+		/// allocation. <p>Corresponds to "AdSense impressions" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_IMPRESSIONS = 26,
 		/// <summary>The number of impressions an AdSense ad delivered for line item-level dynamic
 		/// allocation by explicit custom criteria targeting. <p>Corresponds to "AdSense
-		/// targeted impressions" in the Ad Manager UI.</p>
+		/// targeted impressions" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_TARGETED_IMPRESSIONS = 27,
 		/// <summary>The number of clicks an AdSense ad delivered for line item-level dynamic
-		/// allocation. <p>Corresponds to "AdSense clicks" in the Ad Manager UI.</p>
+		/// allocation. <p>Corresponds to "AdSense clicks" in the Ad Manager UI. Compatible
+		/// with the "Historical" report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_CLICKS = 29,
 		/// <summary>The number of clicks an AdSense ad delivered for line item-level dynamic
 		/// allocation by explicit custom criteria targeting. <p>Corresponds to "AdSense
-		/// targeted clicks" in the Ad Manager UI.</p>
+		/// targeted clicks" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_TARGETED_CLICKS = 30,
 		/// <summary>The ratio of clicks an AdSense reservation ad delivered to the number of
 		/// impressions it delivered, including line item-level dynamic allocation.
-		/// <p>Corresponds to "AdSense CTR" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "AdSense CTR" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_CTR = 32,
 		/// <summary>Revenue generated from AdSense ads delivered for line item-level dynamic
-		/// allocation. <p>Corresponds to "AdSense revenue" in the Ad Manager UI.</p>
+		/// allocation. <p>Corresponds to "AdSense revenue" in the Ad Manager UI. Compatible
+		/// with the "Historical" report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_REVENUE = 34,
 		/// <summary>The average estimated cost-per-thousand-impressions earned from the ads
 		/// delivered by AdSense for line item-level dynamic allocation. <p>Corresponds to
-		/// "AdSense average eCPM" in the Ad Manager UI.</p>
+		/// "AdSense average eCPM" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_AVERAGE_ECPM = 36,
 		/// <summary>The ratio of the number of impressions delivered by AdSense reservation ads to
 		/// the total impressions delivered for line item-level dynamic allocation.
 		/// Represented as a percentage. <p>Corresponds to "AdSense impressions (%)" in the
-		/// Ad Manager UI.</p>
+		/// Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_PERCENT_IMPRESSIONS = 38,
 		/// <summary>The ratio of the number of clicks delivered by AdSense reservation ads to the
 		/// total clicks delivered for line item-level dynamic allocation. Represented as a
-		/// percentage. <p>Corresponds to "AdSense clicks (%)" in the Ad Manager UI.</p>
+		/// percentage. <p>Corresponds to "AdSense clicks (%)" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_PERCENT_CLICKS = 40,
 		/// <summary>The ratio of revenue to the total revenue earned from the dynamic allocation
@@ -61731,7 +61934,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		DYNAMIC_ALLOCATION_INVENTORY_LEVEL_WITH_CPD_PERCENT_REVENUE = 42,
 		/// <summary>The ratio of revenue to the total revenue earned from the CPM and CPC ads
 		/// delivered by AdSense for line item-level dynamic allocation. Represented as a
-		/// percentage. <p>Corresponds to "AdSense revenue (%)" in the Ad Manager UI.</p>
+		/// percentage. <p>Corresponds to "AdSense revenue (%)" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		ADSENSE_LINE_ITEM_LEVEL_WITHOUT_CPD_PERCENT_REVENUE = 43,
 		/// <summary>The ratio of revenue to the total revenue earned from the CPM, CPC and CPD ads
@@ -61741,123 +61945,147 @@ namespace Google.Api.Ads.AdManager.v201905
 		ADSENSE_LINE_ITEM_LEVEL_WITH_CPD_PERCENT_REVENUE = 44,
 		/// <summary>The number of impressions an Ad Exchange ad delivered for line item-level
 		/// dynamic allocation. <p>Corresponds to "Ad Exchange impressions" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_IMPRESSIONS = 45,
 		/// <summary>Ad Impressions on mapped Ad Exchange properties. When multiple text ads fill a
 		/// single display slot it is only counted once, when the top text ad is recognized.
 		/// In these cases, the Ad Impression is attributed to the top text ad.
-		/// <p>Corresponds to "Ad impressions" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Ad impressions" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_IMPRESSIONS = 46,
 		/// <summary>Number of requests where a buyer was matched with the Ad request, for mapped Ad
-		/// Exchange properties. <p>Corresponds to "Matched requests" in the Ad Manager
-		/// UI.</p>
+		/// Exchange properties. <p>Corresponds to "Matched requests" in the Ad Manager UI.
+		/// Compatible with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_MATCHED_REQUESTS = 440,
 		/// <summary>Ad revenue per 1000 ad impressions, for mapped Ad Exchange properties.
-		/// <p>Corresponds to "Ad eCPM" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Ad eCPM" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AD_ECPM = 441,
 		/// <summary>The number of clicks delivered by mapped Ad Exchange properties. <p>Corresponds
-		/// to "Clicks" in the Ad Manager UI.</p>
+		/// to "Clicks" in the Ad Manager UI. Compatible with the "Ad Exchange historical"
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_CLICKS = 49,
 		/// <summary>The estimated net revenue generated by mapped Ad Exchange properties.
-		/// <p>Corresponds to "Estimated revenue" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Estimated revenue" in the Ad Manager UI. Compatible with the
+		/// "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ESTIMATED_REVENUE = 50,
 		/// <summary>The coverage reported by mapped Ad Exchange properties. <p>Corresponds to
-		/// "Coverage" in the Ad Manager UI.</p>
+		/// "Coverage" in the Ad Manager UI. Compatible with the "Ad Exchange historical"
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_COVERAGE = 51,
 		/// <summary>The matched queries click-through rate delivered by mapped Ad Exchange
-		/// properties. <p>Corresponds to "CTR" in the Ad Manager UI.</p>
+		/// properties. <p>Corresponds to "CTR" in the Ad Manager UI. Compatible with the
+		/// "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_CTR = 58,
 		/// <summary>The total lift generated by mapped Ad Exchange properties. <p>Corresponds to
-		/// "Lift" in the Ad Manager UI.</p>
+		/// "Lift" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report
+		/// type.</p>
 		/// </summary>
 		AD_EXCHANGE_LIFT = 53,
 		/// <summary>The cost-per-click generated by mapped Ad Exchange properties. <p>Corresponds to
-		/// "CPC" in the Ad Manager UI.</p>
+		/// "CPC" in the Ad Manager UI. Compatible with the "Ad Exchange historical" report
+		/// type.</p>
 		/// </summary>
 		AD_EXCHANGE_CPC = 442,
 		/// <summary>The number of ad requests issued by mapped Ad Exchange properties.
-		/// <p>Corresponds to "Ad requests" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Ad requests" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AD_REQUESTS = 443,
 		/// <summary>The average estimated cost-per-thousand-ad requests earned by mapped Ad Exchange
-		/// properties. <p>Corresponds to "Ad request eCPM" in the Ad Manager UI.</p>
+		/// properties. <p>Corresponds to "Ad request eCPM" in the Ad Manager UI. Compatible
+		/// with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AD_REQUEST_ECPM = 444,
 		/// <summary>The click-through rate of ad requests issued by mapped Ad Exchange properties.
-		/// <p>Corresponds to "Ad request CTR" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Ad request CTR" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AD_REQUEST_CTR = 445,
 		/// <summary>The click-through rate of impressions issued by mapped Ad Exchange properties.
-		/// <p>Corresponds to "Ad CTR" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Ad CTR" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AD_CTR = 446,
 		/// <summary>The video drop off rate for mapped Ad Exchange properties. <p>Corresponds to
-		/// "Video drop-off rate" in the Ad Manager UI.</p>
+		/// "Video drop-off rate" in the Ad Manager UI. Compatible with the "Ad Exchange
+		/// historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_DROPOFF_RATE = 59,
 		/// <summary>The video abandonment rate for mapped Ad Exchange properties. <p>Corresponds to
-		/// "Video abandonment rate" in the Ad Manager UI.</p>
+		/// "Video abandonment rate" in the Ad Manager UI. Compatible with the "Ad Exchange
+		/// historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_ABANDONMENT_RATE = 60,
 		/// <summary>The average estimated cost-per-thousand-impressions generated by mapped Ad
-		/// Exchange properties. <p>Corresponds to "Matched eCPM" in the Ad Manager UI.</p>
+		/// Exchange properties. <p>Corresponds to "Matched eCPM" in the Ad Manager UI.
+		/// Compatible with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_MATCHED_ECPM = 447,
 		/// <summary>The estimated percentage of impressions generated by mapped Ad Exchange
 		/// properties that are eligible for Active View measurement. <p>Corresponds to
-		/// "Active view measurable" in the Ad Manager UI.</p>
+		/// "Active view measurable" in the Ad Manager UI. Compatible with the "Ad Exchange
+		/// historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_MEASURABLE = 448,
 		/// <summary>The percentage of viewable impressions out of all measurable impressions
 		/// generated by mapped Ad Exchange properties. <p>Corresponds to "Active view
-		/// viewable" in the Ad Manager UI.</p>
+		/// viewable" in the Ad Manager UI. Compatible with the "Ad Exchange historical"
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE = 449,
 		/// <summary>The average time (in seconds) that an individual ad impression generated by
 		/// mapped Ad Exchange properties was viewable. <p>Corresponds to "Average viewable
-		/// time (secs)" in the Ad Manager UI.</p>
+		/// time (secs)" in the Ad Manager UI. Compatible with the "Ad Exchange historical"
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_AVERAGE_VIEWABLE_TIME = 450,
 		/// <summary>Total number of impressions generated by mapped Ad Exchange properties that were
 		/// eligible to measure viewability. <p>Corresponds to "Active view enabled
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Ad Exchange historical"
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_ENABLED_IMPRESSIONS = 451,
 		/// <summary>Total number of eligible impressions generated by mapped Ad Exchange properties
 		/// that were measurable by Active View. <p>Corresponds to "Active view measured
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Ad Exchange historical"
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_MEASURED_IMPRESSIONS = 452,
 		/// <summary>Total number of Active View measurable impressions generated by mapped Ad
 		/// Exchange properties that were viewable. <p>Corresponds to "Active view viewed
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Ad Exchange historical"
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_VIEWED_IMPRESSIONS = 453,
 		/// <summary>Number of responses that shows that a buyer is bidding, for mapped Ad Exchange
-		/// properties. <p>Corresponds to "Deals bid responses" in the Ad Manager UI.</p>
+		/// properties. <p>Corresponds to "Deals bid responses" in the Ad Manager UI.
+		/// Compatible with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DEALS_BID_RESPONSES = 455,
 		/// <summary>Deal ad requests for mapped Ad Exchange properties which were ?matched? with
 		/// demand from the buyer associated with the Deal. Each ?Deals matched request?
 		/// represents one opportunity for the Deal Buyer to serve their ad in the context
-		/// of the Deal. <p>Corresponds to "Deals matched requests" in the Ad Manager
-		/// UI.</p>
+		/// of the Deal. <p>Corresponds to "Deals matched requests" in the Ad Manager UI.
+		/// Compatible with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DEALS_MATCHED_REQUESTS = 456,
 		/// <summary>Total ad requests associated with a given Deal, for mapped Ad Exchange
-		/// properties. <p>Corresponds to "Deals ad requests" in the Ad Manager UI.</p>
+		/// properties. <p>Corresponds to "Deals ad requests" in the Ad Manager UI.
+		/// Compatible with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DEALS_AD_REQUESTS = 457,
 		/// <summary>Deals matched requests divided by Deals ad requests, for mapped Ad Exchange
-		/// properties. <p>Corresponds to "Deals match rate" in the Ad Manager UI.</p>
+		/// properties. <p>Corresponds to "Deals match rate" in the Ad Manager UI.
+		/// Compatible with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DEALS_MATCH_RATE = 458,
 		/// <summary>A count of how many users watch the first 25% of a video ad, for mapped Ad
@@ -61869,60 +62097,69 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// </summary>
 		AD_EXCHANGE_VIDEO_QUARTILE_3 = 66,
 		/// <summary>Percentage of times a user clicked Skip, for mapped Ad Exchange properties.
-		/// <p>Corresponds to "TrueView skip rate" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "TrueView skip rate" in the Ad Manager UI. Compatible with the
+		/// "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_TRUEVIEW_SKIP_RATE = 67,
 		/// <summary>Number of times a video ad has been viewed to completion or watched to 30
 		/// seconds, whichever happens first, for mapped Ad Exchange properties.
-		/// <p>Corresponds to "TrueView views" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "TrueView views" in the Ad Manager UI. Compatible with the "Ad
+		/// Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_TRUEVIEW_VIEWS = 459,
 		/// <summary>TrueView views divided by TrueView impressions, for mapped Ad Exchange
-		/// properties. <p>Corresponds to "TrueView VTR" in the Ad Manager UI.</p>
+		/// properties. <p>Corresponds to "TrueView VTR" in the Ad Manager UI. Compatible
+		/// with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_VIDEO_TRUEVIEW_VTR = 460,
-		/// <summary>Mediation third-party average cost-per-thousand-impressions.
+		/// <summary>Mediation third-party average cost-per-thousand-impressions. <p>Compatible with
+		/// the "Historical" report type.</p>
 		/// </summary>
 		MEDIATION_THIRD_PARTY_ECPM = 431,
 		/// <summary>The number of impressions an Ad Exchange ad delivered for line item-level
 		/// dynamic allocation by explicit custom criteria targeting. <p>Corresponds to "Ad
-		/// Exchange targeted impressions" in the Ad Manager UI.</p>
+		/// Exchange targeted impressions" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_TARGETED_IMPRESSIONS = 77,
 		/// <summary>The number of clicks an Ad Exchange ad delivered for line item-level dynamic
-		/// allocation. <p>Corresponds to "Ad Exchange clicks" in the Ad Manager UI.</p>
+		/// allocation. <p>Corresponds to "Ad Exchange clicks" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_CLICKS = 78,
 		/// <summary>The number of clicks an Ad Exchange ad delivered for line item-level dynamic
 		/// allocation by explicit custom criteria targeting. <p>Corresponds to "Ad Exchange
-		/// targeted clicks" in the Ad Manager UI.</p>
+		/// targeted clicks" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_TARGETED_CLICKS = 79,
 		/// <summary>The ratio of clicks an Ad Exchange ad delivered to the number of impressions it
 		/// delivered for line item-level dynamic allocation. <p>Corresponds to "Ad Exchange
-		/// CTR" in the Ad Manager UI.</p>
+		/// CTR" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_CTR = 80,
 		/// <summary>The ratio of the number of impressions delivered to the total impressions
 		/// delivered by Ad Exchange for line item-level dynamic allocation. Represented as
 		/// a percentage. <p>Corresponds to "Ad Exchange impressions (%)" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_PERCENT_IMPRESSIONS = 81,
 		/// <summary>The ratio of the number of clicks delivered to the total clicks delivered by Ad
 		/// Exchange for line item-level dynamic allocation. Represented as a percentage.
-		/// <p>Corresponds to "Ad Exchange clicks (%)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Ad Exchange clicks (%)" in the Ad Manager UI. Compatible with
+		/// the "Historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_PERCENT_CLICKS = 82,
 		/// <summary>Revenue generated from Ad Exchange ads delivered for line item-level dynamic
 		/// allocation. Represented in publisher currency and time zone. <p>Corresponds to
-		/// "Ad Exchange revenue" in the Ad Manager UI.</p>
+		/// "Ad Exchange revenue" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_REVENUE = 83,
 		/// <summary>The ratio of revenue generated by Ad Exchange to the total revenue earned by CPM
 		/// and CPC ads delivered for line item-level dynamic allocation. Represented as a
-		/// percentage. <p>Corresponds to "Ad Exchange revenue (%)" in the Ad Manager
-		/// UI.</p>
+		/// percentage. <p>Corresponds to "Ad Exchange revenue (%)" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_WITHOUT_CPD_PERCENT_REVENUE = 84,
 		/// <summary>The ratio of revenue generated by Ad Exchange to the total revenue earned by
@@ -61932,30 +62169,36 @@ namespace Google.Api.Ads.AdManager.v201905
 		AD_EXCHANGE_LINE_ITEM_LEVEL_WITH_CPD_PERCENT_REVENUE = 85,
 		/// <summary>The average estimated cost-per-thousand-impressions earned from the delivery of
 		/// Ad Exchange ads for line item-level dynamic allocation. <p>Corresponds to "Ad
-		/// Exchange average eCPM" in the Ad Manager UI.</p>
+		/// Exchange average eCPM" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_LINE_ITEM_LEVEL_AVERAGE_ECPM = 86,
 		/// <summary>The total number of impressions delivered including line item-level dynamic
-		/// allocation. <p>Corresponds to "Total impressions" in the Ad Manager UI.</p>
+		/// allocation. <p>Corresponds to "Total impressions" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_IMPRESSIONS = 88,
 		/// <summary>The total number of impressions delivered including line item-level dynamic
 		/// allocation by explicit custom criteria targeting. <p>Corresponds to "Total
-		/// targeted impressions" in the Ad Manager UI.</p>
+		/// targeted impressions" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_TARGETED_IMPRESSIONS = 89,
 		/// <summary>The total number of clicks delivered including line item-level dynamic
-		/// allocation. <p>Corresponds to "Total clicks" in the Ad Manager UI.</p>
+		/// allocation. <p>Corresponds to "Total clicks" in the Ad Manager UI. Compatible
+		/// with the "Historical" report type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_CLICKS = 92,
 		/// <summary>The total number of clicks delivered including line item-level dynamic
 		/// allocation by explicit custom criteria targeting <p>Corresponds to "Total
-		/// targeted clicks" in the Ad Manager UI.</p>
+		/// targeted clicks" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_TARGETED_CLICKS = 93,
 		/// <summary>The ratio of total clicks on ads delivered by the ad servers to the total number
 		/// of impressions delivered for an ad including line item-level dynamic allocation.
-		/// <p>Corresponds to "Total CTR" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Total CTR" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_CTR = 95,
 		/// <summary>The total CPM, CPC and CPD revenue generated by the ad servers including
@@ -61964,13 +62207,13 @@ namespace Google.Api.Ads.AdManager.v201905
 		TOTAL_INVENTORY_LEVEL_ALL_REVENUE = 97,
 		/// <summary>The total CPM and CPC revenue generated by the ad servers including line
 		/// item-level dynamic allocation. <p>Corresponds to "Total CPM and CPC revenue" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_CPM_AND_CPC_REVENUE = 98,
 		/// <summary>The total CPM, CPC and CPD revenue generated by the ad servers including line
 		/// item-level dynamic allocation. <p>Can correspond to any of the following in the
 		/// Ad Manager UI: Total CPM, CPC, CPD, and vCPM revenue, Total CPM, CPC and CPD
-		/// revenue.</p>
+		/// revenue. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_ALL_REVENUE = 99,
 		/// <summary>Estimated cost-per-thousand-impressions (eCPM) of CPM, CPC and CPD ads delivered
@@ -61979,7 +62222,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		TOTAL_INVENTORY_LEVEL_WITH_CPD_AVERAGE_ECPM = 101,
 		/// <summary>Estimated cost-per-thousand-impressions (eCPM) of CPM and CPC ads delivered by
 		/// the ad servers including line item-level dynamic allocation. <p>Corresponds to
-		/// "Total average eCPM" in the Ad Manager UI.</p>
+		/// "Total average eCPM" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		TOTAL_LINE_ITEM_LEVEL_WITHOUT_CPD_AVERAGE_ECPM = 102,
 		/// <summary>Estimated cost-per-thousand-impressions (eCPM) of CPM, CPC and CPD ads delivered
@@ -61988,56 +62232,65 @@ namespace Google.Api.Ads.AdManager.v201905
 		TOTAL_LINE_ITEM_LEVEL_WITH_CPD_AVERAGE_ECPM = 103,
 		/// <summary>The total number of times that the code for an ad is served by the ad server
 		/// including inventory-level dynamic allocation. <p>Corresponds to "Total code
-		/// served count" in the Ad Manager UI.</p>
+		/// served count" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		TOTAL_CODE_SERVED_COUNT = 104,
 		/// <summary>The total number of missed impressions due to the ad servers' inability to find
 		/// ads to serve, including inventory-level dynamic allocation. <p>Corresponds to
-		/// "Unfilled impressions" in the Ad Manager UI.</p>
+		/// "Unfilled impressions" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		TOTAL_INVENTORY_LEVEL_UNFILLED_IMPRESSIONS = 105,
 		/// <summary>The number of control (unoptimized) impressions delivered for an ad for which
 		/// the optimization feature has been enabled. <p>Corresponds to "Control
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		OPTIMIZATION_CONTROL_IMPRESSIONS = 107,
 		/// <summary>Number of clicks resulting from the delivery of control (unoptimized)
 		/// impressions for an ad for which the optimization feature has been enabled.
-		/// <p>Corresponds to "Control clicks" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Control clicks" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		OPTIMIZATION_CONTROL_CLICKS = 108,
 		/// <summary>The CTR for control (unoptimized) impressions for an order for which the
 		/// optimization feature has been enabled. <p>Corresponds to "Control CTR" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		OPTIMIZATION_CONTROL_CTR = 109,
 		/// <summary>Number of optimized impressions delivered for an ad for which the optimization
 		/// feature has been enabled. <p>Corresponds to "Optimized impressions" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		OPTIMIZATION_OPTIMIZED_IMPRESSIONS = 110,
 		/// <summary>Number of clicks resulting from the delivery of optimized impressions for an ad
 		/// for which the optimization feature has been enabled. <p>Corresponds to
-		/// "Optimized clicks" in the Ad Manager UI.</p>
+		/// "Optimized clicks" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		OPTIMIZATION_OPTIMIZED_CLICKS = 111,
 		/// <summary>Number of non-optimized impressions delivered for an ad for which the
 		/// optimization feature has been enabled. <p>Corresponds to "Non-optimized
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		OPTIMIZATION_NON_OPTIMIZED_IMPRESSIONS = 112,
 		/// <summary>Number of clicks resulting from the delivery of non-optimized impressions for an
 		/// ad for which the optimization feature has been enabled. <p>Corresponds to
-		/// "Non-optimized clicks" in the Ad Manager UI.</p>
+		/// "Non-optimized clicks" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		OPTIMIZATION_NON_OPTIMIZED_CLICKS = 113,
 		/// <summary>Number of extra clicks resulting from the delivery of optimized impressions for
 		/// an ad for which the optimization feature has been enabled. <p>Corresponds to
-		/// "Extra clicks" in the Ad Manager UI.</p>
+		/// "Extra clicks" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		OPTIMIZATION_EXTRA_CLICKS = 114,
 		/// <summary>The CTR for optimized impressions for an ad for which the optimization feature
-		/// has been enabled. <p>Corresponds to "Optimized CTR" in the Ad Manager UI.</p>
+		/// has been enabled. <p>Corresponds to "Optimized CTR" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		OPTIMIZATION_OPTIMIZED_CTR = 115,
 		/// <summary>The percentage by which optimized CTRs are greater than the unoptimized CTRs.
@@ -62045,495 +62298,545 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='Column#OPTIMIZATION_OPTIMIZED_CTR'>Column#OPTIMIZATION_OPTIMIZED_CTR</a>/
 		/// <a href='Column#OPTIMIZATION_CONTROL_CTR'>Column#OPTIMIZATION_CONTROL_CTR</a>) -
 		/// 1) * 100 for an ad for which the optimization feature has been enabled.
-		/// <p>Corresponds to "Lift" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Lift" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		OPTIMIZATION_LIFT = 116,
 		/// <summary>The line item coverage measures how often the traffic was sent for optimization.
-		/// <p>Corresponds to "Percent optimized" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Percent optimized" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		OPTIMIZATION_COVERAGE = 117,
 		/// <summary>The number of impressions that were behind schedule at the time of their
 		/// delivery. <p>Corresponds to "Impressions that are behind schedule" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		OPTIMIZATION_BEHIND_SCHEDULE_IMPRESSIONS = 118,
 		/// <summary>The number of impressions that did not have any clicks recorded in the recent
 		/// past. <p>Corresponds to "Impressions with no clicks recorded" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		OPTIMIZATION_NO_CLICKS_RECORDED_IMPRESSIONS = 119,
 		/// <summary>The number of impressions that were delivered as sponsorship items.
-		/// <p>Corresponds to "Sponsorship impressions" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Sponsorship impressions" in the Ad Manager UI. Compatible
+		/// with the "Historical" report type.</p>
 		/// </summary>
 		OPTIMIZATION_SPONSORSHIP_IMPRESSIONS = 120,
 		/// <summary>The number of impressions that were set to deliver as fast as possible.
 		/// <p>Corresponds to "Impressions serving as fast as possible" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		OPTIMIZATION_AS_FAST_AS_POSSIBLE_IMPRESSIONS = 121,
 		/// <summary>The number of impressions that have no absolute lifetime delivery goals.
-		/// <p>Corresponds to "Impressions with no lifetime goal" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Impressions with no lifetime goal" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		OPTIMIZATION_NO_ABSOLUTE_LIFETIME_GOAL_IMPRESSIONS = 122,
 		/// <summary>Total revenue resulting from the delivery of control (unoptimized) impressions
 		/// for an ad for which the optimization feature has been enabled. <p>Corresponds to
-		/// "Control revenue" in the Ad Manager UI.</p>
+		/// "Control revenue" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		OPTIMIZATION_CONTROL_REVENUE = 123,
 		/// <summary>Total revenue resulting from the delivery of optimized impressions for an ad for
 		/// which the optimization feature has been enabled. <p>Corresponds to "Optimized
-		/// revenue" in the Ad Manager UI.</p>
+		/// revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		OPTIMIZATION_OPTIMIZED_REVENUE = 124,
 		/// <summary>Estimated cost-per-thousand-impressions (eCPM) of control (unoptimized)
 		/// impressions for an ad for which the optimization feature has been enabled.
-		/// <p>Corresponds to "Control eCPM" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Control eCPM" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		OPTIMIZATION_CONTROL_ECPM = 125,
 		/// <summary>Estimated cost-per-thousand-impressions (eCPM) of optimized impressions for an
 		/// ad for which the optimization feature has been enabled. <p>Corresponds to
-		/// "Optimized eCPM" in the Ad Manager UI.</p>
+		/// "Optimized eCPM" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		OPTIMIZATION_OPTIMIZED_ECPM = 126,
 		/// <summary>Freed-up impressions as a result of optimization. <p>Corresponds to "Freed-up
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		OPTIMIZATION_FREED_UP_IMPRESSIONS = 127,
 		/// <summary>Relative change in eCPM as a result of optimization. <p>Corresponds to "eCPM
-		/// lift" in the Ad Manager UI.</p>
+		/// lift" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		OPTIMIZATION_ECPM_LIFT = 128,
-		/// <summary>The average number of ads displayed to each unique visitor. <p>Corresponds to
-		/// "Average impressions / visitor" in the Ad Manager UI.</p>
+		/// <summary>The average number of ads displayed to each unique visitor. <p>Compatible with
+		/// the "Reach" report type.</p>
 		/// </summary>
 		REACH_FREQUENCY = 129,
-		/// <summary>The average revenue earned per unique visitor. <p>Corresponds to "Average
-		/// revenue / visitor" in the Ad Manager UI.</p>
+		/// <summary>The average revenue earned per unique visitor. <p>Compatible with the "Reach"
+		/// report type.</p>
 		/// </summary>
 		REACH_AVERAGE_REVENUE = 130,
 		/// <summary>The number of unique visitors. <p>To maintain user privacy, "Unique visitors"
 		/// totaling 0-99 won't be displayed in the report and will appear empty.</p>
-		/// <p>Corresponds to "Unique visitors" in the Ad Manager UI.</p>
+		/// <p>Compatible with the "Reach" report type.</p>
 		/// </summary>
 		REACH = 131,
 		/// <summary>The number of people in the given demographic bucket. <p>Corresponds to
-		/// "Population" in the Ad Manager UI.</p>
+		/// "Population" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
 		/// </summary>
 		GRP_POPULATION = 132,
 		/// <summary>The number of unique users reached in the given demographic bucket.
-		/// <p>Corresponds to "Unique viewers" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Unique viewers" in the Ad Manager UI. Compatible with the
+		/// "Reach" report type.</p>
 		/// </summary>
 		GRP_UNIQUE_AUDIENCE = 133,
 		/// <summary>Percentage of the number of unique users reached in the given demographic bucket
 		/// (out of the number of unique users reached in all demographics). <p>Corresponds
-		/// to "% Composition unique viewers" in the Ad Manager UI.</p>
+		/// to "% Composition unique viewers" in the Ad Manager UI. Compatible with the
+		/// "Reach" report type.</p>
 		/// </summary>
 		GRP_UNIQUE_AUDIENCE_SHARE = 134,
 		/// <summary>The number of impressions in the given demographic bucket. <p>Corresponds to
-		/// "Impressions" in the Ad Manager UI.</p>
+		/// "Impressions" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
 		/// </summary>
 		GRP_AUDIENCE_IMPRESSIONS = 135,
 		/// <summary>Percentage of the number of impressions in the given demographic bucket (out of
 		/// the number of impressions in all demographics). <p>Corresponds to "% Composition
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
 		/// </summary>
 		GRP_AUDIENCE_IMPRESSIONS_SHARE = 136,
 		/// <summary>The audience reach calculated as <a
 		/// href='#GRP_UNIQUE_AUDIENCE'>#GRP_UNIQUE_AUDIENCE</a> / <a
 		/// href='#GRP_POPULATION'>#GRP_POPULATION</a>. <p>Corresponds to "% Population
-		/// reach" in the Ad Manager UI.</p>
+		/// reach" in the Ad Manager UI. Compatible with the "Reach" report type.</p>
 		/// </summary>
 		GRP_AUDIENCE_REACH = 137,
 		/// <summary>The audience average frequency calculated as <a
 		/// href='#GRP_AUDIENCE_IMPRESSIONS'>#GRP_AUDIENCE_IMPRESSIONS</a> / <a
 		/// href=''>#GRP_UNIQUE_AUDIENCE</a>. <p>Corresponds to "Average frequency" in the
-		/// Ad Manager UI.</p>
+		/// Ad Manager UI. Compatible with the "Reach" report type.</p>
 		/// </summary>
 		GRP_AUDIENCE_AVERAGE_FREQUENCY = 138,
 		/// <summary>The gross rating points (GRP) calculated as <a
 		/// href='#GRP_AUDIENCE_REACH'>#GRP_AUDIENCE_REACH</a> * <a
 		/// href=''>#GRP_AUDIENCE_AVERAGE_FREQUENCY</a> * 100. <p>Corresponds to "Target
-		/// rating points" in the Ad Manager UI.</p>
+		/// rating points" in the Ad Manager UI. Compatible with the "Reach" report
+		/// type.</p>
 		/// </summary>
 		GRP_GROSS_RATING_POINTS = 139,
 		/// <summary>The number of impressions for a particular SDK mediation creative.
-		/// <p>Corresponds to "SDK mediation creative impressions" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "SDK mediation creative impressions" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		SDK_MEDIATION_CREATIVE_IMPRESSIONS = 140,
 		/// <summary>The number of clicks for a particular SDK mediation creative. <p>Corresponds to
-		/// "SDK mediation creative clicks" in the Ad Manager UI.</p>
+		/// "SDK mediation creative clicks" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		SDK_MEDIATION_CREATIVE_CLICKS = 141,
 		/// <summary>The number of forecasted impressions for future sell-through reports. <p>This
 		/// metric is available for the next 90 days with a daily break down and for the
 		/// next 12 months with a monthly break down.</p> <p>Corresponds to "Forecasted
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Future sell-through"
+		/// report type.</p>
 		/// </summary>
 		SELL_THROUGH_FORECASTED_IMPRESSIONS = 142,
 		/// <summary>The number of available impressions for future sell-through reports. <p>This
 		/// metric is available for the next 90 days with a daily break down and for the
 		/// next 12 months with a monthly break down.</p> <p>Corresponds to "Available
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Future sell-through"
+		/// report type.</p>
 		/// </summary>
 		SELL_THROUGH_AVAILABLE_IMPRESSIONS = 143,
 		/// <summary>The number of reserved impressions for future sell-through reports. <p>This
 		/// metric is available for the next 90 days with a daily break down and for the
 		/// next 12 months with a monthly break down.</p> <p>Corresponds to "Reserved
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Future sell-through"
+		/// report type.</p>
 		/// </summary>
 		SELL_THROUGH_RESERVED_IMPRESSIONS = 144,
 		/// <summary>The sell-through rate for impressions for future sell-through reports. <p>This
 		/// metric is available for the next 90 days with a daily break down and for the
 		/// next 12 months with a monthly break down.</p> <p>Corresponds to "Sell-through
-		/// rate" in the Ad Manager UI.</p>
+		/// rate" in the Ad Manager UI. Compatible with the "Future sell-through" report
+		/// type.</p>
 		/// </summary>
 		SELL_THROUGH_SELL_THROUGH_RATE = 145,
 		/// <summary>The total number of times a backup image is served in place of a rich media ad.
-		/// <p>Corresponds to "Backup image impressions" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Backup image impressions" in the Ad Manager UI. Compatible
+		/// with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_BACKUP_IMAGES = 146,
 		/// <summary>The amount of time(seconds) that each rich media ad is displayed to users.
-		/// <p>Corresponds to "Total display time" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Total display time" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_DISPLAY_TIME = 147,
 		/// <summary>The average amount of time(seconds) that each rich media ad is displayed to
-		/// users. <p>Corresponds to "Average display time" in the Ad Manager UI.</p>
+		/// users. <p>Corresponds to "Average display time" in the Ad Manager UI. Compatible
+		/// with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_AVERAGE_DISPLAY_TIME = 148,
 		/// <summary>The number of times an expanding ad was expanded. <p>Corresponds to "Total
-		/// expansions" in the Ad Manager UI.</p>
+		/// expansions" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		RICH_MEDIA_EXPANSIONS = 149,
 		/// <summary>The average amount of time(seconds) that an expanding ad is viewed in an
-		/// expanded state. <p>Corresponds to "Average expanding time" in the Ad Manager
-		/// UI.</p>
+		/// expanded state. <p>Corresponds to "Average expanding time" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_EXPANDING_TIME = 150,
 		/// <summary>The average amount of time(seconds) that a user interacts with a rich media ad.
-		/// <p>Corresponds to "Interaction time" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Interaction time" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_INTERACTION_TIME = 151,
 		/// <summary>The number of times that a user interacts with a rich media ad. <p>Corresponds
-		/// to "Total interactions" in the Ad Manager UI.</p>
+		/// to "Total interactions" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		RICH_MEDIA_INTERACTION_COUNT = 152,
 		/// <summary>The ratio of rich media ad interactions to the number of times the ad was
 		/// displayed. Represented as a percentage. <p>Corresponds to "Interaction rate" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_INTERACTION_RATE = 153,
 		/// <summary>The average amount of time(seconds) that a user interacts with a rich media ad.
-		/// <p>Corresponds to "Average interaction time" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Average interaction time" in the Ad Manager UI. Compatible
+		/// with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_AVERAGE_INTERACTION_TIME = 154,
 		/// <summary>The number of impressions where a user interacted with a rich media ad.
-		/// <p>Corresponds to "Interactive impressions" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Interactive impressions" in the Ad Manager UI. Compatible
+		/// with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_INTERACTION_IMPRESSIONS = 155,
 		/// <summary>The number of times that a user manually closes a floating, expanding, in-page
 		/// with overlay, or in-page with floating ad. <p>Corresponds to "Manual closes" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_MANUAL_CLOSES = 156,
 		/// <summary>A metric that measures an impression only once when a user opens an ad in full
-		/// screen mode. <p>Corresponds to "Full-screen impressions" in the Ad Manager
-		/// UI.</p>
+		/// screen mode. <p>Corresponds to "Full-screen impressions" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_FULL_SCREEN_IMPRESSIONS = 157,
 		/// <summary>The number of times a user clicked on the graphical controls of a video player.
-		/// <p>Corresponds to "Total video interactions" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Total video interactions" in the Ad Manager UI. Compatible
+		/// with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_INTERACTIONS = 158,
 		/// <summary>The ratio of video interactions to video plays. Represented as a percentage.
-		/// <p>Corresponds to "Video interaction rate" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Video interaction rate" in the Ad Manager UI. Compatible with
+		/// the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_INTERACTION_RATE = 159,
 		/// <summary>The number of times a rich media video was muted. <p>Corresponds to "Mute" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_MUTES = 160,
 		/// <summary>The number of times a rich media video was paused. <p>Corresponds to "Pause" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_PAUSES = 161,
 		/// <summary>The number of times a rich media video was played. <p>Corresponds to "Plays" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_PLAYES = 162,
 		/// <summary>The number of times a rich media video was played upto midpoint. <p>Corresponds
-		/// to "Midpoint" in the Ad Manager UI.</p>
+		/// to "Midpoint" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_MIDPOINTS = 163,
 		/// <summary>The number of times a rich media video was fully played. <p>Corresponds to
-		/// "Complete" in the Ad Manager UI.</p>
+		/// "Complete" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_COMPLETES = 164,
 		/// <summary>The number of times a rich media video was restarted. <p>Corresponds to
-		/// "Replays" in the Ad Manager UI.</p>
+		/// "Replays" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_REPLAYS = 165,
 		/// <summary>The number of times a rich media video was stopped. <p>Corresponds to "Stops" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_STOPS = 166,
 		/// <summary>The number of times a rich media video was unmuted. <p>Corresponds to "Unmute"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_UNMUTES = 167,
 		/// <summary>The average amount of time(seconds) that a rich media video was viewed per view.
-		/// <p>Corresponds to "Average view time" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Average view time" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_VIEW_TIME = 168,
 		/// <summary>The percentage of a video watched by a user. <p>Corresponds to "View rate" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_VIDEO_VIEW_RATE = 169,
 		/// <summary>The amount of time (seconds) that a user interacts with a rich media ad.
-		/// <p>Corresponds to "Custom event - time" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Custom event - time" in the Ad Manager UI. Compatible with
+		/// the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_CUSTOM_EVENT_TIME = 170,
 		/// <summary>The number of times a user views and interacts with a specified part of a rich
-		/// media ad. <p>Corresponds to "Custom event - count" in the Ad Manager UI.</p>
+		/// media ad. <p>Corresponds to "Custom event - count" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		RICH_MEDIA_CUSTOM_EVENT_COUNT = 171,
 		/// <summary>The number of impressions where the video was played. <p>Corresponds to "Start"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_START = 172,
 		/// <summary>The number of times the video played to 25% of its length. <p>Corresponds to
-		/// "First quartile" in the Ad Manager UI.</p>
+		/// "First quartile" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_FIRST_QUARTILE = 173,
 		/// <summary>The number of times the video reached its midpoint during play. <p>Corresponds
-		/// to "Midpoint" in the Ad Manager UI.</p>
+		/// to "Midpoint" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_MIDPOINT = 174,
 		/// <summary>The number of times the video played to 75% of its length. <p>Corresponds to
-		/// "Third quartile" in the Ad Manager UI.</p>
+		/// "Third quartile" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_THIRD_QUARTILE = 175,
 		/// <summary>The number of times the video played to completion. <p>Corresponds to "Complete"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_COMPLETE = 176,
 		/// <summary>Average percentage of the video watched by users. <p>Corresponds to "Average
-		/// view rate" in the Ad Manager UI.</p>
+		/// view rate" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_AVERAGE_VIEW_RATE = 177,
 		/// <summary>Average time(seconds) users watched the video. <p>Corresponds to "Average view
-		/// time" in the Ad Manager UI.</p>
+		/// time" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_AVERAGE_VIEW_TIME = 178,
 		/// <summary>Percentage of times the video played to the end. <p>Corresponds to "Completion
-		/// rate" in the Ad Manager UI.</p>
+		/// rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_COMPLETION_RATE = 179,
 		/// <summary>The number of times an error occurred, such as a VAST redirect error, a video
 		/// playback error, or an invalid response error. <p>Corresponds to "Total error
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_TOTAL_ERROR_COUNT = 180,
 		/// <summary>Duration of the video creative. <p>Corresponds to "Video length" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_VIDEO_LENGTH = 181,
 		/// <summary>The number of times a skip button is shown in video. <p>Corresponds to "Skip
-		/// button shown" in the Ad Manager UI.</p>
+		/// button shown" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_SKIP_BUTTON_SHOWN = 182,
 		/// <summary>The number of engaged views i.e. ad is viewed to completion or for 30s,
-		/// whichever comes first. <p>Corresponds to "Engaged view" in the Ad Manager
-		/// UI.</p>
+		/// whichever comes first. <p>Corresponds to "Engaged view" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_ENGAGED_VIEW = 183,
 		/// <summary>View-through rate represented as a percentage. <p>Corresponds to "View-through
-		/// rate" in the Ad Manager UI.</p>
+		/// rate" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_VIEW_THROUGH_RATE = 184,
 		/// <summary>Number of times that the publisher specified a video ad played automatically.
-		/// <p>Corresponds to "Auto-plays" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Auto-plays" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_AUTO_PLAYS = 185,
 		/// <summary>Number of times that the publisher specified a video ad was clicked to play.
-		/// <p>Corresponds to "Click-to-plays" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Click-to-plays" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_CLICK_TO_PLAYS = 186,
 		/// <summary>Error rate is the percentage of video error count from (error count + total
-		/// impressions). <p>Corresponds to "Total error rate" in the Ad Manager UI.</p>
+		/// impressions). <p>Corresponds to "Total error rate" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_VIEWERSHIP_TOTAL_ERROR_RATE = 187,
 		/// <summary>Number of VAST video errors of type 100. <p>Corresponds to "VAST error 100
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_100_COUNT = 461,
 		/// <summary>Number of VAST video errors of type 101. <p>Corresponds to "VAST error 101
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_101_COUNT = 462,
 		/// <summary>Number of VAST video errors of type 102. <p>Corresponds to "VAST error 102
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_102_COUNT = 463,
 		/// <summary>Number of VAST video errors of type 200. <p>Corresponds to "VAST error 200
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_200_COUNT = 464,
 		/// <summary>Number of VAST video errors of type 201. <p>Corresponds to "VAST error 201
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_201_COUNT = 465,
 		/// <summary>Number of VAST video errors of type 202. <p>Corresponds to "VAST error 202
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_202_COUNT = 466,
 		/// <summary>Number of VAST video errors of type 203. <p>Corresponds to "VAST error 203
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_203_COUNT = 467,
 		/// <summary>Number of VAST video errors of type 300. <p>Corresponds to "VAST error 300
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_300_COUNT = 468,
 		/// <summary>Number of VAST video errors of type 301. <p>Corresponds to "VAST error 301
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_301_COUNT = 469,
 		/// <summary>Number of VAST video errors of type 302. <p>Corresponds to "VAST error 302
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_302_COUNT = 470,
 		/// <summary>Number of VAST video errors of type 303. <p>Corresponds to "VAST error 303
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_303_COUNT = 471,
 		/// <summary>Number of VAST video errors of type 400. <p>Corresponds to "VAST error 400
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_400_COUNT = 472,
 		/// <summary>Number of VAST video errors of type 401. <p>Corresponds to "VAST error 401
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_401_COUNT = 473,
 		/// <summary>Number of VAST video errors of type 402. <p>Corresponds to "VAST error 402
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_402_COUNT = 474,
 		/// <summary>Number of VAST video errors of type 403. <p>Corresponds to "VAST error 403
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_403_COUNT = 475,
 		/// <summary>Number of VAST video errors of type 405. <p>Corresponds to "VAST error 405
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_405_COUNT = 476,
 		/// <summary>Number of VAST video errors of type 500. <p>Corresponds to "VAST error 500
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_500_COUNT = 477,
 		/// <summary>Number of VAST video errors of type 501. <p>Corresponds to "VAST error 501
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_501_COUNT = 478,
 		/// <summary>Number of VAST video errors of type 502. <p>Corresponds to "VAST error 502
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_502_COUNT = 479,
 		/// <summary>Number of VAST video errors of type 503. <p>Corresponds to "VAST error 503
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_503_COUNT = 480,
 		/// <summary>Number of VAST video errors of type 600. <p>Corresponds to "VAST error 600
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_600_COUNT = 481,
 		/// <summary>Number of VAST video errors of type 601. <p>Corresponds to "VAST error 601
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_601_COUNT = 482,
 		/// <summary>Number of VAST video errors of type 602. <p>Corresponds to "VAST error 602
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_602_COUNT = 483,
 		/// <summary>Number of VAST video errors of type 603. <p>Corresponds to "VAST error 603
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_603_COUNT = 484,
 		/// <summary>Number of VAST video errors of type 604. <p>Corresponds to "VAST error 604
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_604_COUNT = 485,
 		/// <summary>Number of VAST video errors of type 900. <p>Corresponds to "VAST error 900
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_900_COUNT = 486,
 		/// <summary>Number of VAST video errors of type 901. <p>Corresponds to "VAST error 901
-		/// count" in the Ad Manager UI.</p>
+		/// count" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_ERRORS_VAST_ERROR_901_COUNT = 487,
 		/// <summary>Video interaction event: The number of times user paused ad clip. <p>Corresponds
-		/// to "Pause" in the Ad Manager UI.</p>
+		/// to "Pause" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		VIDEO_INTERACTION_PAUSE = 216,
 		/// <summary>Video interaction event: The number of times the user unpaused the video.
-		/// <p>Corresponds to "Resume" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Resume" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		VIDEO_INTERACTION_RESUME = 217,
 		/// <summary>Video interaction event: The number of times a user rewinds the video.
-		/// <p>Corresponds to "Rewind" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Rewind" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		VIDEO_INTERACTION_REWIND = 218,
 		/// <summary>Video interaction event: The number of times video player was in mute state
-		/// during play of ad clip. <p>Corresponds to "Mute" in the Ad Manager UI.</p>
+		/// during play of ad clip. <p>Corresponds to "Mute" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_INTERACTION_MUTE = 219,
 		/// <summary>Video interaction event: The number of times a user unmutes the video.
-		/// <p>Corresponds to "Unmute" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Unmute" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		VIDEO_INTERACTION_UNMUTE = 220,
 		/// <summary>Video interaction event: The number of times a user collapses a video, either to
 		/// its original size or to a different size. <p>Corresponds to "Collapse" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_INTERACTION_COLLAPSE = 221,
 		/// <summary>Video interaction event: The number of times a user expands a video.
-		/// <p>Corresponds to "Expand" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Expand" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		VIDEO_INTERACTION_EXPAND = 222,
 		/// <summary>Video interaction event: The number of times ad clip played in full screen mode.
-		/// <p>Corresponds to "Full screen" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Full screen" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		VIDEO_INTERACTION_FULL_SCREEN = 223,
 		/// <summary>Video interaction event: The number of user interactions with a video, on
 		/// average, such as pause, full screen, mute, etc. <p>Corresponds to "Average
-		/// interaction rate" in the Ad Manager UI.</p>
+		/// interaction rate" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		VIDEO_INTERACTION_AVERAGE_INTERACTION_RATE = 224,
 		/// <summary>Video interaction event: The number of times a skippable video is skipped.
-		/// <p>Corresponds to "Video skipped" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Video skipped" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		VIDEO_INTERACTION_VIDEO_SKIPS = 225,
 		/// <summary>The number of control starts. <p>Corresponds to "Control starts" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_CONTROL_STARTS = 226,
 		/// <summary>The number of optimized starts. <p>Corresponds to "Optimized starts" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_OPTIMIZED_STARTS = 227,
 		/// <summary>The number of control completes. <p>Corresponds to "Control completes" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_CONTROL_COMPLETES = 228,
 		/// <summary>The number of optimized completes. <p>Corresponds to "Optimized completes" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_OPTIMIZED_COMPLETES = 229,
 		/// <summary>The rate of control completions. <p>Corresponds to "Control completion rate" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_CONTROL_COMPLETION_RATE = 230,
 		/// <summary>The rate of optimized completions. <p>Corresponds to "Optimized completion rate"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_OPTIMIZED_COMPLETION_RATE = 231,
 		/// <summary>The percentage by which optimized completion rate is greater than the
@@ -62542,31 +62845,33 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// <a
 		/// href='Column#VIDEO_OPTIMIZATION_CONTROL_COMPLETION_RATE'>Column#VIDEO_OPTIMIZATION_CONTROL_COMPLETION_RATE</a>)
 		/// - 1) * 100 for an ad for which the optimization feature has been enabled.
-		/// <p>Corresponds to "Completion rate lift" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Completion rate lift" in the Ad Manager UI. Compatible with
+		/// the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_COMPLETION_RATE_LIFT = 232,
 		/// <summary>The number of control skip buttons shown. <p>Corresponds to "Control skip button
-		/// shown" in the Ad Manager UI.</p>
+		/// shown" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_CONTROL_SKIP_BUTTON_SHOWN = 233,
 		/// <summary>The number of optimized skip buttons shown. <p>Corresponds to "Optimized skip
-		/// button shown" in the Ad Manager UI.</p>
+		/// button shown" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_OPTIMIZED_SKIP_BUTTON_SHOWN = 234,
 		/// <summary>The number of control engaged views. <p>Corresponds to "Control engaged view" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_CONTROL_ENGAGED_VIEW = 235,
 		/// <summary>The number of optimized engaged views. <p>Corresponds to "Optimized engaged
-		/// view" in the Ad Manager UI.</p>
+		/// view" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_OPTIMIZED_ENGAGED_VIEW = 236,
 		/// <summary>The control view-through rate. <p>Corresponds to "Control view-through rate" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_CONTROL_VIEW_THROUGH_RATE = 237,
 		/// <summary>The optimized view-through rate. <p>Corresponds to "Optimized view-through rate"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_OPTIMIZED_VIEW_THROUGH_RATE = 238,
 		/// <summary>The percentage by which optimized view-through rate is greater than the
@@ -62574,16 +62879,18 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href=''>Column#VIDEO_OPTIMIZATION_OPTIMIZED_VIEW_THROUGH_RATE</a>/ <a
 		/// href=''>Column#VIDEO_OPTIMIZATION_CONTROL_VIEW_THROUGH_RATE</a>) - 1) * 100 for
 		/// an ad for which the optimization feature has been enabled. <p>Corresponds to
-		/// "View-through rate lift" in the Ad Manager UI.</p>
+		/// "View-through rate lift" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		VIDEO_OPTIMIZATION_VIEW_THROUGH_RATE_LIFT = 239,
 		/// <summary>The total number of impressions viewed on the user's screen. <p>Corresponds to
-		/// "Total Active View viewable impressions" in the Ad Manager UI.</p>
+		/// "Total Active View viewable impressions" in the Ad Manager UI. Compatible with
+		/// the "Historical" report type.</p>
 		/// </summary>
 		TOTAL_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS = 240,
 		/// <summary>The total number of impressions that were sampled and measured by active view.
 		/// <p>Corresponds to "Total Active View measurable impressions" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		TOTAL_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS = 241,
 		/// <summary>The percentage of total impressions viewed on the user's screen (out of the
@@ -62591,174 +62898,190 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// </summary>
 		TOTAL_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE = 242,
 		/// <summary>Total number of impressions that were eligible to measure viewability.
-		/// <p>Corresponds to "Total Active View eligible impressions" in the Ad Manager
-		/// UI.</p>
+		/// <p>Corresponds to "Total Active View eligible impressions" in the Ad Manager UI.
+		/// Compatible with the "Historical" report type.</p>
 		/// </summary>
 		TOTAL_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS = 243,
 		/// <summary>The percentage of total impressions that were measurable by active view (out of
 		/// all the total impressions sampled for active view). <p>Corresponds to "Total
-		/// Active View % measurable impressions" in the Ad Manager UI.</p>
+		/// Active View % measurable impressions" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		TOTAL_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS_RATE = 244,
 		/// <summary>Active View total average time in seconds that specific impressions are reported
 		/// as being viewable. <p>Corresponds to "Total Active View Average Viewable Time
-		/// (seconds)" in the Ad Manager UI.</p>
+		/// (seconds)" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		TOTAL_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME = 488,
 		/// <summary>The number of impressions delivered by the ad server viewed on the user's
 		/// screen. <p>Corresponds to "Ad server Active View viewable impressions" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS = 245,
 		/// <summary>The number of impressions delivered by the ad server that were sampled, and
 		/// measurable by active view. <p>Corresponds to "Ad server Active View measurable
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		AD_SERVER_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS = 246,
 		/// <summary>The percentage of impressions delivered by the ad server viewed on the user's
 		/// screen (out of the ad server impressions measurable by active view).
 		/// <p>Corresponds to "Ad server Active View % viewable impressions" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE = 247,
 		/// <summary>Total number of impressions delivered by the ad server that were eligible to
 		/// measure viewability. <p>Corresponds to "Ad server Active View eligible
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		AD_SERVER_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS = 248,
 		/// <summary>The percentage of impressions delivered by the ad server that were measurable by
 		/// active view ( out of all the ad server impressions sampled for active view).
 		/// <p>Corresponds to "Ad server Active View % measurable impressions" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS_RATE = 249,
 		/// <summary>Active View ad server revenue. <p>Corresponds to "Ad Server Active View Revenue"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_SERVER_ACTIVE_VIEW_REVENUE = 422,
 		/// <summary>Active View ad server average time in seconds that specific impressions are
 		/// reported as being viewable. <p>Corresponds to "Ad Server Active View Average
-		/// Viewable Time (seconds)" in the Ad Manager UI.</p>
+		/// Viewable Time (seconds)" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		AD_SERVER_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME = 489,
 		/// <summary>The number of impressions delivered by AdSense viewed on the user's screen,
 		/// <p>Corresponds to "AdSense Active View viewable impressions" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		ADSENSE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS = 250,
 		/// <summary>The number of impressions delivered by AdSense that were sampled, and measurable
 		/// by active view. <p>Corresponds to "AdSense Active View measurable impressions"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		ADSENSE_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS = 251,
 		/// <summary>The percentage of impressions delivered by AdSense viewed on the user's screen
 		/// (out of AdSense impressions measurable by active view). <p>Corresponds to
-		/// "AdSense Active View % viewable impressions" in the Ad Manager UI.</p>
+		/// "AdSense Active View % viewable impressions" in the Ad Manager UI. Compatible
+		/// with the "Historical" report type.</p>
 		/// </summary>
 		ADSENSE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE = 252,
 		/// <summary>Total number of impressions delivered by AdSense that were eligible to measure
 		/// viewability. <p>Corresponds to "AdSense Active View eligible impressions" in the
-		/// Ad Manager UI.</p>
+		/// Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		ADSENSE_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS = 253,
 		/// <summary>The percentage of impressions delivered by AdSense that were measurable by
 		/// active view ( out of all AdSense impressions sampled for active view).
 		/// <p>Corresponds to "AdSense Active View % measurable impressions" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		ADSENSE_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS_RATE = 254,
 		/// <summary>Active View AdSense revenue. <p>Corresponds to "AdSense Active View Revenue" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		ADSENSE_ACTIVE_VIEW_REVENUE = 423,
 		/// <summary>Active View AdSense average time in seconds that specific impressions are
 		/// reported as being viewable. <p>Corresponds to "AdSense Active View Average
-		/// Viewable Time (seconds)" in the Ad Manager UI.</p>
+		/// Viewable Time (seconds)" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		ADSENSE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME = 490,
 		/// <summary>The number of impressions delivered by Ad Exchange viewed on the user's screen,
 		/// <p>Corresponds to "Ad Exchange Active View viewable impressions" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS = 255,
 		/// <summary>The number of impressions delivered by Ad Exchange that were sampled, and
 		/// measurable by active view. <p>Corresponds to "Ad Exchange Active View measurable
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS = 256,
 		/// <summary>The percentage of impressions delivered by Ad Exchange viewed on the user's
 		/// screen (out of Ad Exchange impressions measurable by active view).
 		/// <p>Corresponds to "Ad Exchange Active View % viewable impressions" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE = 257,
 		/// <summary>Total number of impressions delivered by Ad Exchange that were eligible to
 		/// measure viewability. <p>Corresponds to "Ad Exchange Active View eligible
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS = 258,
 		/// <summary>The percentage of impressions delivered by Ad Exchange that were measurable by
 		/// active view ( out of all Ad Exchange impressions sampled for active view).
 		/// <p>Corresponds to "Ad Exchange Active View % measurable impressions" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS_RATE = 259,
 		/// <summary>Active View AdExchange revenue. <p>Corresponds to "Ad Exchange Active View
-		/// Revenue" in the Ad Manager UI.</p>
+		/// Revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_REVENUE = 424,
 		/// <summary>Active View AdExchange average time in seconds that specific impressions are
 		/// reported as being viewable. <p>Corresponds to "Ad Exchange Active View Average
-		/// Viewable Time (seconds)" in the Ad Manager UI.</p>
+		/// Viewable Time (seconds)" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		AD_EXCHANGE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME = 491,
 		/// <summary>Active View total revenue. <p>Corresponds to "Total Active View Revenue" in the
-		/// Ad Manager UI.</p>
+		/// Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		TOTAL_ACTIVE_VIEW_REVENUE = 425,
 		/// <summary>Number of view-through conversions.
 		/// </summary>
 		VIEW_THROUGH_CONVERSIONS = 260,
 		/// <summary>Number of view-through conversions per thousand impressions. <p>Corresponds to
-		/// "Conversions per thousand impressions" in the Ad Manager UI.</p>
+		/// "Conversions per thousand impressions" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		CONVERSIONS_PER_THOUSAND_IMPRESSIONS = 261,
 		/// <summary>Number of click-through conversions. <p>Corresponds to "Click-through
-		/// conversions" in the Ad Manager UI.</p>
+		/// conversions" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		CLICK_THROUGH_CONVERSIONS = 262,
 		/// <summary>Number of click-through conversions per click. <p>Corresponds to "Conversions
-		/// per click" in the Ad Manager UI.</p>
+		/// per click" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		CONVERSIONS_PER_CLICK = 263,
 		/// <summary>Revenue for view-through conversions. <p>Corresponds to "Advertiser view-through
-		/// sales" in the Ad Manager UI.</p>
+		/// sales" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		VIEW_THROUGH_REVENUE = 264,
 		/// <summary>Revenue for click-through conversions. <p>Corresponds to "Advertiser
-		/// click-through sales" in the Ad Manager UI.</p>
+		/// click-through sales" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		CLICK_THROUGH_REVENUE = 265,
 		/// <summary>Total number of conversions. <p>Corresponds to "Total conversions" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		TOTAL_CONVERSIONS = 266,
 		/// <summary>Total revenue for conversions. <p>Corresponds to "Total advertiser sales" in the
-		/// Ad Manager UI.</p>
+		/// Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		TOTAL_CONVERSION_REVENUE = 267,
 		/// <summary>The number of impressions sent to Ad Exchange / AdSense, regardless of whether
 		/// they won or lost (total number of dynamic allocation impressions).
-		/// <p>Corresponds to "Impressions competing" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Impressions competing" in the Ad Manager UI. Compatible with
+		/// the "Historical" report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_OPPORTUNITY_IMPRESSIONS_COMPETING_TOTAL = 268,
 		/// <summary>The number of unfilled queries that attempted dynamic allocation by Ad Exchange
 		/// / AdSense. <p>Corresponds to "Unfilled competing impressions" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_OPPORTUNITY_UNFILLED_IMPRESSIONS_COMPETING = 269,
 		/// <summary>The number of Ad Exchange / AdSense and Ad Manager impressions. <p>Corresponds
-		/// to "Eligible impressions" in the Ad Manager UI.</p>
+		/// to "Eligible impressions" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_OPPORTUNITY_ELIGIBLE_IMPRESSIONS_TOTAL = 270,
 		/// <summary>The difference between eligible impressions and competing impressions in dynamic
@@ -62767,94 +63090,109 @@ namespace Google.Api.Ads.AdManager.v201905
 		DYNAMIC_ALLOCATION_OPPORTUNITY_IMPRESSIONS_NOT_COMPETING_TOTAL = 271,
 		/// <summary>The percentage of eligible impressions that are not competing in dynamic
 		/// allocation. <p>Corresponds to "Impressions not competing (%)" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_OPPORTUNITY_IMPRESSIONS_NOT_COMPETING_PERCENT_TOTAL = 272,
 		/// <summary>The percent of eligible impressions participating in dynamic allocation.
 		/// </summary>
 		DYNAMIC_ALLOCATION_OPPORTUNITY_SATURATION_RATE_TOTAL = 273,
 		/// <summary>The percent of total dynamic allocation queries that won. <p>Corresponds to
-		/// "Dynamic allocation match rate" in the Ad Manager UI.</p>
+		/// "Dynamic allocation match rate" in the Ad Manager UI. Compatible with the
+		/// "Historical" report type.</p>
 		/// </summary>
 		DYNAMIC_ALLOCATION_OPPORTUNITY_MATCH_RATE_TOTAL = 274,
 		/// <summary>The contracted net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. <p>Corresponds to "Contracted
-		/// revenue (net)" in the Ad Manager UI.</p>
+		/// revenue (net)" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Sales.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE = 275,
 		/// <summary>The contracted net revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. See <a
 		/// href='#CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE'>#CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE</a>
 		/// <p>Can correspond to any of the following in the Ad Manager UI: Contracted
-		/// revenue (local), Contracted revenue (net) (local).</p>
+		/// revenue (local), Contracted revenue (net) (local). Compatible with any of the
+		/// following report types: Historical, Sales.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_LOCAL_CONTRACTED_NET_REVENUE = 276,
 		/// <summary>The contracted gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>, including agency commission.
-		/// <p>Corresponds to "Contracted revenue (gross)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Contracted revenue (gross)" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE = 277,
 		/// <summary>The contracted gross revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>, including agency commission. See
 		/// <a
 		/// href='#CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE'>#CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE</a>
-		/// <p>Corresponds to "Contracted revenue (gross) (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Contracted revenue (gross) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_LOCAL_CONTRACTED_GROSS_REVENUE = 278,
 		/// <summary>The value added tax on contracted net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
-		/// <p>Corresponds to "Contracted VAT" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Contracted VAT" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Sales.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_CONTRACTED_VAT = 279,
 		/// <summary>The value added tax on contracted net revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
 		/// See <a
 		/// href='#CONTRACTED_REVENUE_CONTRACTED_VAT'>#CONTRACTED_REVENUE_CONTRACTED_VAT</a>
-		/// <p>Corresponds to "Contracted VAT (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Contracted VAT (local)" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_LOCAL_CONTRACTED_VAT = 280,
 		/// <summary>The contracted agency commission of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
-		/// <p>Corresponds to "Contracted agency commission" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Contracted agency commission" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION = 281,
 		/// <summary>The contracted agency commission in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
 		/// See <a
 		/// href='#CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION'>#CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION</a>
-		/// <p>Corresponds to "Contracted agency commission (local)" in the Ad Manager
-		/// UI.</p>
+		/// <p>Corresponds to "Contracted agency commission (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		CONTRACTED_REVENUE_LOCAL_CONTRACTED_AGENCY_COMMISSION = 282,
 		/// <summary>The contracted impressions of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. <p>Corresponds to "Contracted
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Sales.</p>
 		/// </summary>
 		SALES_CONTRACT_CONTRACTED_IMPRESSIONS = 283,
 		/// <summary>The contracted clicks of the <a href='ProposalLineItem'>ProposalLineItem</a>.
-		/// <p>Corresponds to "Contracted clicks" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Contracted clicks" in the Ad Manager UI. Compatible with any
+		/// of the following report types: Historical, Sales.</p>
 		/// </summary>
 		SALES_CONTRACT_CONTRACTED_CLICKS = 284,
 		/// <summary>The contracted volume of the <a href='ProposalLineItem'>ProposalLineItem</a>.
 		/// Volume represents impressions for rate type CPM, clicks for CPC, and days for
-		/// CPD. <p>Corresponds to "Contracted volume" in the Ad Manager UI.</p>
+		/// CPD. <p>Corresponds to "Contracted volume" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		SALES_CONTRACT_CONTRACTED_VOLUME = 285,
 		/// <summary>The budget of the <a href='Proposal'>Proposal</a>. <p>Corresponds to "Budget" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Sales.</p>
 		/// </summary>
 		SALES_CONTRACT_BUDGET = 286,
 		/// <summary>The remaining budget of the <a href='Proposal'>Proposal</a>. It is calculated by
 		/// subtracting the contracted net revenue from the budget. <p>Corresponds to
-		/// "Remaining budget" in the Ad Manager UI.</p>
+		/// "Remaining budget" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Sales.</p>
 		/// </summary>
 		SALES_CONTRACT_REMAINING_BUDGET = 287,
 		/// <summary>The buffered impressions of the <a href='ProposalLineItem'>ProposalLineItem</a>.
-		/// <p>Corresponds to "Buffered impressions" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Buffered impressions" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		SALES_CONTRACT_BUFFERED_IMPRESSIONS = 288,
 		/// <summary>The buffered clicks of the <a href='ProposalLineItem'>ProposalLineItem</a>.
-		/// <p>Corresponds to "Buffered clicks" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Buffered clicks" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Sales.</p>
 		/// </summary>
 		SALES_CONTRACT_BUFFERED_CLICKS = 289,
 		/// <summary>The scheduled impressions of a <a href='ProposalLineItem'>ProposalLineItem</a>.
@@ -62862,7 +63200,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='#SALES_CONTRACT_CONTRACTED_IMPRESSIONS'>#SALES_CONTRACT_CONTRACTED_IMPRESSIONS</a>
 		/// and <a
 		/// href='#SALES_CONTRACT_BUFFERED_IMPRESSIONS'>#SALES_CONTRACT_BUFFERED_IMPRESSIONS</a>.
-		/// <p>Corresponds to "Scheduled impressions" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Scheduled impressions" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		SCHEDULED_SCHEDULED_IMPRESSIONS = 290,
 		/// <summary>The scheduled clicks of a <a href='ProposalLineItem'>ProposalLineItem</a>. It is
@@ -62870,59 +63209,68 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='#SALES_CONTRACT_CONTRACTED_CLICKS'>#SALES_CONTRACT_CONTRACTED_CLICKS</a>
 		/// and <a
 		/// href='#SALES_CONTRACT_BUFFERED_CLICKS'>#SALES_CONTRACT_BUFFERED_CLICKS</a>.
-		/// <p>Corresponds to "Scheduled clicks" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Scheduled clicks" in the Ad Manager UI. Compatible with any
+		/// of the following report types: Historical, Sales.</p>
 		/// </summary>
 		SCHEDULED_SCHEDULED_CLICKS = 291,
 		/// <summary>The scheduled volume of a <a href='ProposalLineItem'>ProposalLineItem</a>. It is
 		/// the sum of <a
 		/// href='#SALES_CONTRACT_CONTRACTED_VOLUME'>#SALES_CONTRACT_CONTRACTED_VOLUME</a>
-		/// and buffered volume. <p>Corresponds to "Scheduled volume" in the Ad Manager
-		/// UI.</p>
+		/// and buffered volume. <p>Corresponds to "Scheduled volume" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		SCHEDULED_SCHEDULED_VOLUME = 292,
 		/// <summary>The scheduled net revenue of a <a href='ProposalLineItem'>ProposalLineItem</a>.
-		/// <p>Corresponds to "Scheduled revenue (net)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Scheduled revenue (net)" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		SCHEDULED_SCHEDULED_NET_REVENUE = 293,
 		/// <summary>The scheduled net revenue in the local currency of a <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. <p>Corresponds to "Scheduled
-		/// revenue (net) (local)" in the Ad Manager UI.</p>
+		/// revenue (net) (local)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Sales.</p>
 		/// </summary>
 		SCHEDULED_LOCAL_SCHEDULED_NET_REVENUE = 294,
 		/// <summary>The scheduled gross revenue of a <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. <p>Corresponds to "Scheduled
-		/// revenue (gross)" in the Ad Manager UI.</p>
+		/// revenue (gross)" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Sales.</p>
 		/// </summary>
 		SCHEDULED_SCHEDULED_GROSS_REVENUE = 295,
 		/// <summary>The scheduled gross revenue in the local currency of a <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. <p>Corresponds to "Scheduled
-		/// revenue (gross) (local)" in the Ad Manager UI.</p>
+		/// revenue (gross) (local)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Sales.</p>
 		/// </summary>
 		SCHEDULED_LOCAL_SCHEDULED_GROSS_REVENUE = 296,
 		/// <summary>The total budget of the <a href='Proposal'>Proposal</a>. It differs from <a
 		/// href='#SALES_CONTRACT_BUDGET'>#SALES_CONTRACT_BUDGET</a> since it always
 		/// contains the total budget, not the prorated budget. <p>Corresponds to "Total
-		/// budget" in the Ad Manager UI.</p>
+		/// budget" in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Sales.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_BUDGET = 297,
 		/// <summary>The total remaining budget of the <a href='Proposal'>Proposal</a>. It differs
 		/// from <a href=''>#SALES_CONTRACT_REMAINING_BUDGET</a> since it always contains
 		/// the total remaining budget, not the prorated remaining budget. <p>Corresponds to
-		/// "Total remaining budget" in the Ad Manager UI.</p>
+		/// "Total remaining budget" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Sales.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_REMAINING_BUDGET = 298,
 		/// <summary>The total contracted volume of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href=''>#SALES_CONTRACT_CONTRACTED_VOLUME</a> that the volume is not prorated
 		/// with regard to the date range. <p>Corresponds to "Total contracted volume" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Sales.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_VOLUME = 299,
 		/// <summary>The total contracted net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href=''>#CONTRACTED_REVENUE_CONTRACTED_NET_REVENUE</a> that the revenue is not
 		/// prorated with regard to the date range. <p>Corresponds to "Total contracted
-		/// revenue (net)" in the Ad Manager UI.</p>
+		/// revenue (net)" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Sales.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE = 300,
 		/// <summary>The total contracted net revenue in the local currency of the <a
@@ -62930,15 +63278,16 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='#CONTRACTED_REVENUE_LOCAL_CONTRACTED_NET_REVENUE'>#CONTRACTED_REVENUE_LOCAL_CONTRACTED_NET_REVENUE</a>
 		/// that the revenue is not prorated with regard to the date range. <p>See <a
 		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE'>#SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE</a></p>
-		/// <p>Corresponds to "Total contracted revenue (net) (local)" in the Ad Manager
-		/// UI.</p>
+		/// <p>Corresponds to "Total contracted revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_NET_REVENUE = 301,
 		/// <summary>The total contracted gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href=''>#CONTRACTED_REVENUE_CONTRACTED_GROSS_REVENUE</a> that the revenue is not
 		/// prorated with regard to the date range. <p>Corresponds to "Total contracted
-		/// revenue (gross)" in the Ad Manager UI.</p>
+		/// revenue (gross)" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Sales.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE = 302,
 		/// <summary>The total contracted gross revenue in the local currency of the <a
@@ -62947,14 +63296,15 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// that the revenue is not prorated with regard to the date range. <p>See <a
 		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE'>#SALES_TOTAL_TOTAL_CONTRACTED_GROSS_REVENUE</a></p>
 		/// <p>Corresponds to "Total contracted revenue (gross) (local)" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_GROSS_REVENUE = 303,
 		/// <summary>The total contracted agency commission of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href=''>#CONTRACTED_REVENUE_CONTRACTED_AGENCY_COMMISSION</a> that the revenue is
 		/// not prorated with regard to the date range. <p>Corresponds to "Total contracted
-		/// agency commission" in the Ad Manager UI.</p>
+		/// agency commission" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Sales.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION = 304,
 		/// <summary>The total contracted agency commission in the local currency of the <a
@@ -62963,13 +63313,14 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// that the revenue is not prorated with regard to the date range. <p>See <a
 		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION'>#SALES_TOTAL_TOTAL_CONTRACTED_AGENCY_COMMISSION</a></p>
 		/// <p>Corresponds to "Total contracted agency commission (local)" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_AGENCY_COMMISSION = 305,
 		/// <summary>The total net revenue plus its value added tax of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. The revenue is not prorated with
 		/// regard to the date range. <p>Corresponds to "Total contracted revenue with VAT
-		/// (net)" in the Ad Manager UI.</p>
+		/// (net)" in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Sales.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_CONTRACTED_NET_REVENUE_WITH_VAT = 306,
 		/// <summary>The total net revenue plus its value added tax in the local currency of the <a
@@ -62977,21 +63328,24 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// date range. <p>See <a
 		/// href='#SALES_TOTAL_TOTAL_CONTRACTED_WITH_VAT'>#SALES_TOTAL_TOTAL_CONTRACTED_WITH_VAT</a></p>
 		/// <p>Corresponds to "Total contracted revenue with VAT (net) (local)" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Sales.</p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_CONTRACTED_NET_REVENUE_WITH_VAT = 307,
 		/// <summary>The total scheduled volume of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href=''>#SCHEDULED_SCHEDULED_VOLUME</a> that the volume is not prorated with
 		/// regard to the date range. <p>Corresponds to "Total scheduled volume" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Sales.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_SCHEDULED_VOLUME = 308,
 		/// <summary>The total scheduled net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href=''>#SCHEDULED_SCHEDULED_NET_REVENUE</a> that the revenue is not prorated
 		/// with regard to the date range. <p>Corresponds to "Total scheduled revenue (net)"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Sales.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE = 309,
 		/// <summary>The total scheduled net revenue in the local currency of the <a
@@ -62999,15 +63353,16 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='#SCHEDULED_LOCAL_SCHEDULED_NET_REVENUE'>#SCHEDULED_LOCAL_SCHEDULED_NET_REVENUE</a>
 		/// that the revenue is not prorated with regard to the date range. <p>See <a
 		/// href='#SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE'>#SALES_TOTAL_TOTAL_SCHEDULED_NET_REVENUE</a></p>
-		/// <p>Corresponds to "Total scheduled revenue (net) (local)" in the Ad Manager
-		/// UI.</p>
+		/// <p>Corresponds to "Total scheduled revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_SCHEDULED_NET_REVENUE = 310,
 		/// <summary>The total scheduled gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It differs from <a
 		/// href=''>#SCHEDULED_SCHEDULED_GROSS_REVENUE</a> that the revenue is not prorated
 		/// with regard to the date range. <p>Corresponds to "Total scheduled revenue
-		/// (gross)" in the Ad Manager UI.</p>
+		/// (gross)" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Sales.</p>
 		/// </summary>
 		SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE = 311,
 		/// <summary>The total scheduled gross revenue in the local currency of the <a
@@ -63016,14 +63371,14 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// that the revenue is not prorated with regard to the date range. <p>See <a
 		/// href='#SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE'>#SALES_TOTAL_TOTAL_SCHEDULED_GROSS_REVENUE</a></p>
 		/// <p>Corresponds to "Total scheduled revenue (gross) (local)" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		SALES_TOTAL_LOCAL_TOTAL_SCHEDULED_GROSS_REVENUE = 312,
 		/// <summary>The unreconciled net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
 		/// href=''>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a> coming from unreconciled Ad
 		/// Manager volume. <p>Corresponds to "Unreconciled revenue (net)" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE = 313,
 		/// <summary>The unreconciled net revenue of the <a
@@ -63032,14 +63387,16 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE</a>
 		/// coming from unreconciled Ad Manager volume. <p>See <a
 		/// href='#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE'>#UNIFIED_REVENUE_UNRECONCILED_NET_REVENUE</a></p>
-		/// <p>Corresponds to "Unreconciled revenue (net) (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Unreconciled revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_UNRECONCILED_NET_REVENUE = 314,
 		/// <summary>The unreconciled gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
 		/// href=''>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a> coming from unreconciled Ad
 		/// Manager volume. <p>Corresponds to "Unreconciled revenue (gross)" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Sales.</p>
 		/// </summary>
 		UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE = 315,
 		/// <summary>The unreconciled gross revenue of the <a
@@ -63048,15 +63405,15 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE</a>
 		/// coming from unreconciled Ad manager volume. <p>See <a
 		/// href='#UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE'>#UNIFIED_REVENUE_UNRECONCILED_GROSS_REVENUE</a></p>
-		/// <p>Corresponds to "Unreconciled revenue (gross) (local)" in the Ad Manager
-		/// UI.</p>
+		/// <p>Corresponds to "Unreconciled revenue (gross) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_UNRECONCILED_GROSS_REVENUE = 316,
 		/// <summary>The forecasted net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
 		/// href=''>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a> coming from forecasted Ad
 		/// Manager volume. <p>Corresponds to "Forecasted revenue (net)" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with the "Sales" report type.</p>
 		/// </summary>
 		UNIFIED_REVENUE_FORECASTED_NET_REVENUE = 317,
 		/// <summary>The forecasted net revenue of the <a
@@ -63065,14 +63422,15 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE</a>
 		/// coming from forecasted Ad Manager volume. <p>See <a
 		/// href='#UNIFIED_REVENUE_FORECASTED_NET_REVENUE'>#UNIFIED_REVENUE_FORECASTED_NET_REVENUE</a></p>
-		/// <p>Corresponds to "Forecasted revenue (net) (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Forecasted revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with the "Sales" report type.</p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_FORECASTED_NET_REVENUE = 318,
 		/// <summary>The forecasted gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is the portion of <a
 		/// href=''>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a> coming from forecasted Ad
 		/// Manager volume. <p>Corresponds to "Forecasted revenue (gross)" in the Ad Manager
-		/// UI.</p>
+		/// UI. Compatible with the "Sales" report type.</p>
 		/// </summary>
 		UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE = 319,
 		/// <summary>The forecasted gross revenue of the <a
@@ -63081,7 +63439,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE</a>
 		/// coming from forecasted Ad Manager volume. <p>See <a
 		/// href='#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE'>#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE</a></p>
-		/// <p>Corresponds to "Forecasted revenue (gross) (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Forecasted revenue (gross) (local)" in the Ad Manager UI.
+		/// Compatible with the "Sales" report type.</p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_FORECASTED_GROSS_REVENUE = 320,
 		/// <summary>The unified net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>.
@@ -63089,7 +63448,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// <a href='#BILLING_BILLABLE_NET_REVENUE'>#BILLING_BILLABLE_NET_REVENUE</a>, and
 		/// <a href=''>#UNIFIED_REVENUE_FORECASTED_NET_REVENUE</a> when query date range
 		/// spans historical delivery and forecasted delivery. <p>Corresponds to "Unified
-		/// revenue (net)" in the Ad Manager UI.</p>
+		/// revenue (net)" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Sales.</p>
 		/// </summary>
 		UNIFIED_REVENUE_UNIFIED_NET_REVENUE = 321,
 		/// <summary>The unified net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>
@@ -63101,7 +63461,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='#UNIFIED_REVENUE_LOCAL_FORECASTED_NET_REVENUE'>#UNIFIED_REVENUE_LOCAL_FORECASTED_NET_REVENUE</a>
 		/// when query date range spans historical delivery and forecasted delivery. See <a
 		/// href='#UNIFIED_REVENUE_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a>
-		/// <p>Corresponds to "Unified revenue (net) (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Unified revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_UNIFIED_NET_REVENUE = 322,
 		/// <summary>The unified net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>.
@@ -63111,7 +63472,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// and <a
 		/// href='#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE'>#UNIFIED_REVENUE_FORECASTED_GROSS_REVENUE</a>
 		/// when query date range spans historical delivery and forecasted delivery.
-		/// <p>Corresponds to "Unified revenue (gross)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Unified revenue (gross)" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE = 323,
 		/// <summary>The unified gross revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>
@@ -63123,7 +63485,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='#UNIFIED_REVENUE_LOCAL_FORECASTED_GROSS_REVENUE'>#UNIFIED_REVENUE_LOCAL_FORECASTED_GROSS_REVENUE</a>
 		/// when query date range spans historical delivery and forecasted delivery. See <a
 		/// href='#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE'>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a>
-		/// <p>Corresponds to "Unified revenue (gross) (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Unified revenue (gross) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_UNIFIED_GROSS_REVENUE = 324,
 		/// <summary>The unified agency commission of the <a
@@ -63132,7 +63495,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='#BILLING_BILLABLE_AGENCY_COMMISSION'>#BILLING_BILLABLE_AGENCY_COMMISSION</a>,
 		/// and the forecasted agency commission when query date range spans historical
 		/// delivery and forecasted delivery. <p>Corresponds to "Unified agency commission"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Sales.</p>
 		/// </summary>
 		UNIFIED_REVENUE_UNIFIED_AGENCY_COMMISSION = 325,
 		/// <summary>The unified agency commission of the <a
@@ -63142,25 +63506,29 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// and the forecasted agency commission when query date range spans historical
 		/// delivery and forecasted delivery. See <a
 		/// href='#UNIFIED_REVENUE_UNIFIED_AGENCY_COMMISSION'>#UNIFIED_REVENUE_UNIFIED_AGENCY_COMMISSION</a>
-		/// <p>Corresponds to "Unified agency commission (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Unified agency commission (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		UNIFIED_REVENUE_LOCAL_UNIFIED_AGENCY_COMMISSION = 326,
 		/// <summary>The unreconciled volume of the <a href='ProposalLineItem'>ProposalLineItem</a>
 		/// for each cycle. Volume represents impressions for rate type CPM, clicks for CPC
 		/// and days for CPD. This fact can only be run in proposal or proposal line item
-		/// time zone. <p>Corresponds to "Unreconciled volume" in the Ad Manager UI.</p>
+		/// time zone. <p>Corresponds to "Unreconciled volume" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		UNIFIED_REVENUE_UNRECONCILED_VOLUME = 437,
 		/// <summary>The forecasted volume of the <a href='ProposalLineItem'>ProposalLineItem</a> for
 		/// each cycle. Volume represents impressions for rate type CPM, clicks for CPC and
 		/// days for CPD. This fact can only be run in proposal or proposal line item time
-		/// zone. <p>Corresponds to "Forecasted volume" in the Ad Manager UI.</p>
+		/// zone. <p>Corresponds to "Forecasted volume" in the Ad Manager UI. Compatible
+		/// with the "Sales" report type.</p>
 		/// </summary>
 		UNIFIED_REVENUE_FORECASTED_VOLUME = 438,
 		/// <summary>The unified volume of the <a href='ProposalLineItem'>ProposalLineItem</a> for
 		/// each cycle. Volume represents impressions for rate type CPM, clicks for CPC and
 		/// days for CPD. This fact can only be run in proposal or proposal line item time
-		/// zone. <p>Corresponds to "Unified volume" in the Ad Manager UI.</p>
+		/// zone. <p>Corresponds to "Unified volume" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		UNIFIED_REVENUE_UNIFIED_VOLUME = 439,
 		/// <summary>The expected revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>. It
@@ -63168,7 +63536,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='#UNIFIED_REVENUE_UNIFIED_NET_REVENUE'>#UNIFIED_REVENUE_UNIFIED_NET_REVENUE</a>
 		/// when the <a href='ProposalLineItem'>ProposalLineItem</a> is sold and <a
 		/// href='#SALES_PIPELINE_PIPELINE_NET_REVENUE'>#SALES_PIPELINE_PIPELINE_NET_REVENUE</a>
-		/// otherwise. <p>Corresponds to "Expected revenue (net)" in the Ad Manager UI.</p>
+		/// otherwise. <p>Corresponds to "Expected revenue (net)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		EXPECTED_REVENUE_EXPECTED_NET_REVENUE = 327,
 		/// <summary>The expected revenue of the <a href='ProposalLineItem'>ProposalLineItem</a> in
@@ -63178,7 +63547,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='#SALES_PIPELINE_LOCAL_PIPELINE_NET_REVENUE'>#SALES_PIPELINE_LOCAL_PIPELINE_NET_REVENUE</a>
 		/// otherwise. <p>See <a
 		/// href='#EXPECTED_REVENUE_EXPECTED_NET_REVENUE'>#EXPECTED_REVENUE_EXPECTED_NET_REVENUE</a></p>
-		/// <p>Corresponds to "Expected revenue (net) (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Expected revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		EXPECTED_REVENUE_LOCAL_EXPECTED_NET_REVENUE = 328,
 		/// <summary>The expected gross revenue of the <a
@@ -63186,7 +63556,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href=''>#UNIFIED_REVENUE_UNIFIED_GROSS_REVENUE</a> when the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> is sold and <a
 		/// href=''>#SALES_PIPELINE_PIPELINE_GROSS_REVENUE</a> otherwise. <p>Corresponds to
-		/// "Expected revenue (gross)" in the Ad Manager UI.</p>
+		/// "Expected revenue (gross)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Sales.</p>
 		/// </summary>
 		EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE = 329,
 		/// <summary>The expected gross revenue of the <a
@@ -63197,7 +63568,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='#SALES_PIPELINE_LOCAL_PIPELINE_GROSS_REVENUE'>#SALES_PIPELINE_LOCAL_PIPELINE_GROSS_REVENUE</a>
 		/// otherwise. <p>See <a
 		/// href='#EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE'>#EXPECTED_REVENUE_EXPECTED_GROSS_REVENUE</a></p>
-		/// <p>Corresponds to "Expected revenue (gross) (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Expected revenue (gross) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		EXPECTED_REVENUE_LOCAL_EXPECTED_GROSS_REVENUE = 330,
 		/// <summary>The pipeline net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>.
@@ -63207,7 +63579,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='Proposal#probabilityOfClose'>Proposal#probabilityOfClose</a> by the
 		/// contracted revenue when inventory is not reserved; otherwise it is calcualted by
 		/// multiplying <a href=''>Proposal#probabilityOfClose</a> by the forecasted
-		/// revenue. <p>Corresponds to "Pipeline revenue (net)" in the Ad Manager UI.</p>
+		/// revenue. <p>Corresponds to "Pipeline revenue (net)" in the Ad Manager UI.
+		/// Compatible with the "Sales" report type.</p>
 		/// </summary>
 		SALES_PIPELINE_PIPELINE_NET_REVENUE = 331,
 		/// <summary>The pipeline net revenue in the local currency of the <a
@@ -63220,7 +63593,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='Proposal#probabilityOfClose'>Proposal#probabilityOfClose</a> by the
 		/// forecasted revenue. See <a
 		/// href='#SALES_PIPELINE_PIPELINE_NET_REVENUE'>#SALES_PIPELINE_PIPELINE_NET_REVENUE</a>
-		/// <p>Corresponds to "Pipeline revenue (net) (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Pipeline revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with the "Sales" report type.</p>
 		/// </summary>
 		SALES_PIPELINE_LOCAL_PIPELINE_NET_REVENUE = 332,
 		/// <summary>The pipeline gross revenue of the <a
@@ -63232,7 +63606,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// otherwise it is calcualted by multiplying <a
 		/// href='Proposal#probabilityOfClose'>Proposal#probabilityOfClose</a> by the
 		/// forecasted revenue including agency commission. <p>Corresponds to "Pipeline
-		/// revenue (gross)" in the Ad Manager UI.</p>
+		/// revenue (gross)" in the Ad Manager UI. Compatible with the "Sales" report
+		/// type.</p>
 		/// </summary>
 		SALES_PIPELINE_PIPELINE_GROSS_REVENUE = 333,
 		/// <summary>The pipeline gross revenue in the local currency of the <a
@@ -63245,7 +63620,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='Proposal#probabilityOfClose'>Proposal#probabilityOfClose</a> by the
 		/// forecasted revenue including agency commission. See <a
 		/// href='#SALES_PIPELINE_PIPELINE_GROSS_REVENUE'>#SALES_PIPELINE_PIPELINE_GROSS_REVENUE</a>
-		/// <p>Corresponds to "Pipeline revenue (gross) (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Pipeline revenue (gross) (local)" in the Ad Manager UI.
+		/// Compatible with the "Sales" report type.</p>
 		/// </summary>
 		SALES_PIPELINE_LOCAL_PIPELINE_GROSS_REVENUE = 334,
 		/// <summary>The pipeline agency commission of the <a
@@ -63253,7 +63629,7 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='ProposalLineItem'>proposal line items</a>. For unsold <a
 		/// href='ProposalLineItem'>proposal line items</a>, it is calculated against gross
 		/// pipeline revenue. <p>Corresponds to "Pipeline agency commission" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Sales" report type.</p>
 		/// </summary>
 		SALES_PIPELINE_PIPELINE_AGENCY_COMMISSION = 335,
 		/// <summary>The pipeline agency commission in the local currency of the <a
@@ -63263,76 +63639,90 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// pipeline revenue in local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. See <a
 		/// href='#SALES_PIPELINE_PIPELINE_AGENCY_COMMISSION'>#SALES_PIPELINE_PIPELINE_AGENCY_COMMISSION</a>
-		/// <p>Corresponds to "Pipeline agency commission (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Pipeline agency commission (local)" in the Ad Manager UI.
+		/// Compatible with the "Sales" report type.</p>
 		/// </summary>
 		SALES_PIPELINE_LOCAL_PIPELINE_AGENCY_COMMISSION = 336,
 		/// <summary>The Ad Manager volume of the <a href='ProposalLineItem'>ProposalLineItem</a>,
 		/// which is used for reconciliation. Volume represents impressions for rate type
 		/// CPM, clicks for CPC and days for CPD. <p>Corresponds to "DFP volume" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Sales.</p>
 		/// </summary>
 		RECONCILIATION_DFP_VOLUME = 339,
 		/// <summary>The third party volume of the <a href='ProposalLineItem'>ProposalLineItem</a>,
 		/// which is used for reconciliation. Volume represents impressions for rate type
 		/// CPM, clicks for CPC and days for CPD. <p>Corresponds to "Third-party volume" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Sales.</p>
 		/// </summary>
 		RECONCILIATION_THIRD_PARTY_VOLUME = 340,
 		/// <summary>The reconciled volume of the <a href='ProposalLineItem'>ProposalLineItem</a>,
 		/// which is used for reconciliation. Volume represents impressions for rate type
 		/// CPM, clicks for CPC and days for CPD. <p>Corresponds to "Reconciled volume" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Sales.</p>
 		/// </summary>
 		RECONCILIATION_RECONCILED_VOLUME = 341,
 		/// <summary>The discrepancy percentage between Ad Manager volume and third party volume.
-		/// <p>Corresponds to "Discrepancy (%)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Discrepancy (%)" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Sales.</p>
 		/// </summary>
 		RECONCILIATION_DISCREPANCY_PERCENTAGE = 426,
 		/// <summary>The reconciled revenue of the <a href='LineItem'>LineItem</a>. <p>Corresponds to
-		/// "Reconciled revenue" in the Ad Manager UI.</p>
+		/// "Reconciled revenue" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Sales.</p>
 		/// </summary>
 		RECONCILIATION_RECONCILED_REVENUE = 343,
 		/// <summary>The discrepancy between Ad Manager impressions and third party impressions.
-		/// <p>Corresponds to "Impression discrepancy" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Impression discrepancy" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		RECONCILIATION_IMPRESSION_DISCREPANCY = 344,
 		/// <summary>The discrepancy between Ad Manager clicks and third party clicks. <p>Corresponds
-		/// to "Click discrepancy" in the Ad Manager UI.</p>
+		/// to "Click discrepancy" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Sales.</p>
 		/// </summary>
 		RECONCILIATION_CLICK_DISCREPANCY = 345,
 		/// <summary>The discrepancy between Ad Manager revenue and third party revenue.
-		/// <p>Corresponds to "Revenue discrepancy" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Revenue discrepancy" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		RECONCILIATION_REVENUE_DISCREPANCY = 346,
 		/// <summary>The billable net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>.
 		/// It is calculated from reconciled volume and rate, with cap applied.
-		/// <p>Corresponds to "Billable revenue (net)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Billable revenue (net)" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		BILLING_BILLABLE_NET_REVENUE = 347,
 		/// <summary>The billable net revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is calculated from reconciled
 		/// volume and rate, with cap applied. See <a
 		/// href='#BILLING_BILLABLE_NET_REVENUE'>#BILLING_BILLABLE_NET_REVENUE</a>
-		/// <p>Corresponds to "Billable revenue (net) (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Billable revenue (net) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_NET_REVENUE = 348,
 		/// <summary>The billable gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is calculated from reconciled
 		/// volume and rate, with cap applied, and including agency commission.
-		/// <p>Corresponds to "Billable revenue (gross)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Billable revenue (gross)" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		BILLING_BILLABLE_GROSS_REVENUE = 349,
 		/// <summary>The billable gross revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. It is calculated from reconciled
 		/// volume and rate, with cap applied, and including agency commission. See <a
 		/// href='#BILLING_BILLABLE_GROSS_REVENUE'>#BILLING_BILLABLE_GROSS_REVENUE</a>
-		/// <p>Corresponds to "Billable revenue (gross) (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Billable revenue (gross) (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_GROSS_REVENUE = 350,
 		/// <summary>The billable net revenue of the <a href='ProposalLineItem'>ProposalLineItem</a>
 		/// before manual adjustment. It is calculated from reconciled volume and rate, with
 		/// cap applied, before manual adjustment. <p>Corresponds to "Billable revenue
-		/// before manual adjustment (net)" in the Ad Manager UI.</p>
+		/// before manual adjustment (net)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Sales.</p>
 		/// </summary>
 		BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT = 351,
 		/// <summary>The billable net revenue in local currency of the <a
@@ -63341,14 +63731,16 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// adjustment. <p>See <a
 		/// href='#BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT'>#BILLING_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT</a></p>
 		/// <p>Corresponds to "Billable revenue before manual adjustment (net) (local)" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Sales.</p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_NET_REVENUE_BEFORE_MANUAL_ADJUSTMENT = 352,
 		/// <summary>The billable gross revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> before manual adjustment. It is
 		/// calculated from reconciled volume and rate, with cap applied, before manual
 		/// adjustment. <p>Corresponds to "Billable revenue before manual adjustment
-		/// (gross)" in the Ad Manager UI.</p>
+		/// (gross)" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Sales.</p>
 		/// </summary>
 		BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT = 353,
 		/// <summary>The billable net revenue in local currency of the <a
@@ -63357,247 +63749,287 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// adjustment. <p>See <a
 		/// href='#BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT'>#BILLING_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT</a></p>
 		/// <p>Corresponds to "Billable revenue before manual adjustment (gross) (local)" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Sales.</p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_GROSS_REVENUE_BEFORE_MANUAL_ADJUSTMENT = 354,
 		/// <summary>The value added tax on billable net revenue of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href=''>Proposal</a>.
-		/// <p>Corresponds to "Billable VAT" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Billable VAT" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Sales.</p>
 		/// </summary>
 		BILLING_BILLABLE_VAT = 355,
 		/// <summary>The value added tax on billable net revenue in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
 		/// See <a href='#BILLING_BILLABLE_VAT'>#BILLING_BILLABLE_VAT</a> <p>Corresponds to
-		/// "Billable VAT (local)" in the Ad Manager UI.</p>
+		/// "Billable VAT (local)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Sales.</p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_VAT = 356,
 		/// <summary>The billable agency commission of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
-		/// <p>Corresponds to "Billable agency commission" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Billable agency commission" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		BILLING_BILLABLE_AGENCY_COMMISSION = 357,
 		/// <summary>The billable agency commission in the local currency of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> or <a href='Proposal'>Proposal</a>.
 		/// See <a
 		/// href='#BILLING_BILLABLE_AGENCY_COMMISSION'>#BILLING_BILLABLE_AGENCY_COMMISSION</a>
-		/// <p>Corresponds to "Billable agency commission (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Billable agency commission (local)" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		BILLING_LOCAL_BILLABLE_AGENCY_COMMISSION = 358,
 		/// <summary>The cap quantity of the <a href='ProposalLineItem'>ProposalLineItem</a> for each
 		/// cycle. Quantity represents impressions for rate type CPM, clicks for CPC and
-		/// days for CPD. <p>Corresponds to "Cap quantity" in the Ad Manager UI.</p>
+		/// days for CPD. <p>Corresponds to "Cap quantity" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		BILLING_CAP_QUANTITY = 359,
 		/// <summary>The billable volume of the <a href='ProposalLineItem'>ProposalLineItem</a> for
 		/// each cycle. Billable volumes are calculated by applying cap quantity to
 		/// reconciled volumes. Volume represents impressions for rate type CPM, clicks for
-		/// CPC and days for CPD. <p>Corresponds to "Billable volume" in the Ad Manager
-		/// UI.</p>
+		/// CPC and days for CPD. <p>Corresponds to "Billable volume" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		BILLING_BILLABLE_VOLUME = 360,
 		/// <summary>The delivery rollover volume of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a> from previous cycle. Volume
 		/// represents impressions for rate type CPM, clicks for CPC and days for CPD.
-		/// <p>Corresponds to "Delivery rollover" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Delivery rollover" in the Ad Manager UI. Compatible with any
+		/// of the following report types: Historical, Sales.</p>
 		/// </summary>
 		BILLING_DELIVERY_ROLLOVER = 427,
 		/// <summary>The CPM calcuated by <a
 		/// href='#BILLING_BILLABLE_NET_REVENUE'>#BILLING_BILLABLE_NET_REVENUE</a> and <a
 		/// href='#AD_SERVER_IMPRESSIONS'>#AD_SERVER_IMPRESSIONS</a>. <p>Corresponds to
-		/// "Realized CPM" in the Ad Manager UI.</p>
+		/// "Realized CPM" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Sales.</p>
 		/// </summary>
 		BILLING_REALIZED_CPM = 362,
 		/// <summary>The rate calcuated by <a
 		/// href='#BILLING_BILLABLE_NET_REVENUE'>#BILLING_BILLABLE_NET_REVENUE</a> and Ad
-		/// Manager volume. <p>Corresponds to "Realized rate" in the Ad Manager UI.</p>
+		/// Manager volume. <p>Corresponds to "Realized rate" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Sales.</p>
 		/// </summary>
 		BILLING_REALIZED_RATE = 363,
 		/// <summary>The contracted net overall discount of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. <p>Corresponds to "Contracted
-		/// overall discount (net)" in the Ad Manager UI.</p>
+		/// overall discount (net)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Sales.</p>
 		/// </summary>
 		DISCOUNTS_BREAKDOWN_CONTRACTED_NET_OVERALL_DISCOUNT = 364,
 		/// <summary>The billable net overall discount of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. <p>Corresponds to "Billable
-		/// overall discount (net)" in the Ad Manager UI.</p>
+		/// overall discount (net)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Sales.</p>
 		/// </summary>
 		DISCOUNTS_BREAKDOWN_BILLABLE_NET_OVERALL_DISCOUNT = 365,
 		/// <summary>The contracted non-billable (net) of the <a
 		/// href='ProposalLineItem'>ProposalLineItem</a>. The non-billable means revenue
 		/// that marked as make good, added value or barter. <p>Corresponds to "Contracted
-		/// non-billable (net)" in the Ad Manager UI.</p>
+		/// non-billable (net)" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Sales.</p>
 		/// </summary>
 		DISCOUNTS_BREAKDOWN_CONTRACTED_NET_NON_BILLABLE = 374,
 		/// <summary>The number of invoiced impressions. <p>Corresponds to "Invoiced impressions" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		INVOICED_IMPRESSIONS = 379,
 		/// <summary>The number of invoiced unfilled impressions. <p>Corresponds to "Invoiced
-		/// unfilled impressions" in the Ad Manager UI.</p>
+		/// unfilled impressions" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
 		/// </summary>
 		INVOICED_UNFILLED_IMPRESSIONS = 380,
 		/// <summary>The total number of impressions tracked for Nielsen Digital Ad Ratings
-		/// measurement. <p>Corresponds to "Impressions" in the Ad Manager UI.</p>
+		/// measurement. <p>Corresponds to "Impressions" in the Ad Manager UI. Compatible
+		/// with the "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_IMPRESSIONS = 400,
 		/// <summary>The total number of impressions for in-target demographic tracked for Nielsen
 		/// Digital Ad Ratings measurement. <p>Corresponds to "In-target impressions" in the
-		/// Ad Manager UI.</p>
+		/// Ad Manager UI. Compatible with the "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_IMPRESSIONS = 411,
 		/// <summary>The population in the demographic. <p>Corresponds to "Population base" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_POPULATION_BASE = 401,
-		/// <summary>The total population for all in-target demographics.
+		/// <summary>The total population for all in-target demographics. <p>Compatible with the
+		/// "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_POPULATION_BASE = 412,
 		/// <summary>The total number of different people within the selected demographic who were
-		/// reached. <p>Corresponds to "Unique audience" in the Ad Manager UI.</p>
+		/// reached. <p>Corresponds to "Unique audience" in the Ad Manager UI. Compatible
+		/// with the "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_UNIQUE_AUDIENCE = 402,
 		/// <summary>The total number of different people within all in-target demographics who were
-		/// reached.
+		/// reached. <p>Compatible with the "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_UNIQUE_AUDIENCE = 413,
 		/// <summary>The unique audience reached as a percentage of the population base.
-		/// <p>Corresponds to "% audience reach" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "% audience reach" in the Ad Manager UI. Compatible with the
+		/// "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_PERCENT_AUDIENCE_REACH = 403,
 		/// <summary>The unique audience reached as a percentage of the population base for all
-		/// in-target demographics.
+		/// in-target demographics. <p>Compatible with the "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_PERCENT_AUDIENCE_REACH = 414,
 		/// <summary>The average number of times that a person within the target audience sees an
-		/// advertisement. <p>Corresponds to "Average frequency" in the Ad Manager UI.</p>
+		/// advertisement. <p>Corresponds to "Average frequency" in the Ad Manager UI.
+		/// Compatible with the "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_AVERAGE_FREQUENCY = 404,
 		/// <summary>The average number of times that a person within the target audience sees an
-		/// advertisement for all in-target demographics.
+		/// advertisement for all in-target demographics. <p>Compatible with the "Reach"
+		/// report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_AVERAGE_FREQUENCY = 415,
 		/// <summary>The unit of audience volume, which is based on the percentage of the reached
 		/// target audience population multiplied by the average frequency. <p>Corresponds
-		/// to "Gross rating points" in the Ad Manager UI.</p>
+		/// to "Gross rating points" in the Ad Manager UI. Compatible with the "Reach"
+		/// report type.</p>
 		/// </summary>
 		NIELSEN_GROSS_RATING_POINTS = 405,
 		/// <summary>The unit of audience volume, which is based on the percentage of the reached
 		/// target audience population multiplied by the average frequency, for all
-		/// in-target demographics.
+		/// in-target demographics. <p>Compatible with the "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_GROSS_RATING_POINTS = 416,
 		/// <summary>The share of impressions that reached the target demographic. <p>Corresponds to
-		/// "% impression share" in the Ad Manager UI.</p>
+		/// "% impression share" in the Ad Manager UI. Compatible with the "Reach" report
+		/// type.</p>
 		/// </summary>
 		NIELSEN_PERCENT_IMPRESSIONS_SHARE = 406,
 		/// <summary>The share of impressions that reached all in-target demographics. <p>Corresponds
-		/// to "In-target % impression share" in the Ad Manager UI.</p>
+		/// to "In-target % impression share" in the Ad Manager UI. Compatible with the
+		/// "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_PERCENT_IMPRESSIONS_SHARE = 417,
 		/// <summary>The share of the total population represented by the population base.
-		/// <p>Corresponds to "% population share" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "% population share" in the Ad Manager UI. Compatible with the
+		/// "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_PERCENT_POPULATION_SHARE = 407,
 		/// <summary>The share of the total population for all in-target demographics represented by
-		/// the population base.
+		/// the population base. <p>Compatible with the "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_PERCENT_POPULATION_SHARE = 418,
 		/// <summary>The share of the unique audience in the demographic. <p>Corresponds to "%
-		/// audience share" in the Ad Manager UI.</p>
+		/// audience share" in the Ad Manager UI. Compatible with the "Reach" report
+		/// type.</p>
 		/// </summary>
 		NIELSEN_PERCENT_AUDIENCE_SHARE = 408,
-		/// <summary>The share of the unique audience for all in-target demographics.
+		/// <summary>The share of the unique audience for all in-target demographics. <p>Compatible
+		/// with the "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_PERCENT_AUDIENCE_SHARE = 419,
 		/// <summary>The relative unique audience in the demographic compared with its share of the
-		/// overall population. <p>Corresponds to "Audience index" in the Ad Manager UI.</p>
+		/// overall population. <p>Corresponds to "Audience index" in the Ad Manager UI.
+		/// Compatible with the "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_AUDIENCE_INDEX = 409,
 		/// <summary>The relative unique audience for all in-target demographics compared with its
-		/// share of the overall population.
+		/// share of the overall population. <p>Compatible with the "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_AUDIENCE_INDEX = 420,
 		/// <summary>The relative impressions per person in the demographic compared with the
 		/// impressions per person for the overall population. <p>Corresponds to
-		/// "Impressions index" in the Ad Manager UI.</p>
+		/// "Impressions index" in the Ad Manager UI. Compatible with the "Reach" report
+		/// type.</p>
 		/// </summary>
 		NIELSEN_IMPRESSIONS_INDEX = 410,
 		/// <summary>The relative impressions per person for all in-target demographics compared with
-		/// the impressions per person for the overall population.
+		/// the impressions per person for the overall population. <p>Compatible with the
+		/// "Reach" report type.</p>
 		/// </summary>
 		NIELSEN_IN_TARGET_IMPRESSIONS_INDEX = 421,
 		/// <summary>Number of impressions delivered. <p>Corresponds to "Impressions" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Ad Connector" report type.</p>
 		/// </summary>
 		DP_IMPRESSIONS = 503,
-		/// <summary>Number of clicks delivered <p>Corresponds to "Clicks" in the Ad Manager UI.</p>
+		/// <summary>Number of clicks delivered <p>Corresponds to "Clicks" in the Ad Manager UI.
+		/// Compatible with the "Ad Connector" report type.</p>
 		/// </summary>
 		DP_CLICKS = 507,
-		/// <summary>Number of requests. <p>Corresponds to "Queries" in the Ad Manager UI.</p>
+		/// <summary>Number of requests. <p>Corresponds to "Queries" in the Ad Manager UI. Compatible
+		/// with the "Ad Connector" report type.</p>
 		/// </summary>
 		DP_QUERIES = 504,
 		/// <summary>Number of requests where a buyer was matched with the Ad request. <p>Corresponds
-		/// to "Matched queries" in the Ad Manager UI.</p>
+		/// to "Matched queries" in the Ad Manager UI. Compatible with the "Ad Connector"
+		/// report type.</p>
 		/// </summary>
 		DP_MATCHED_QUERIES = 505,
 		/// <summary>The revenue earned, calculated in publisher currency, for the ads delivered.
-		/// <p>Corresponds to "Cost" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Cost" in the Ad Manager UI. Compatible with the "Ad
+		/// Connector" report type.</p>
 		/// </summary>
 		DP_COST = 506,
 		/// <summary>The host impressions in the partner management. <p>Corresponds to "Host
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_HOST_IMPRESSIONS = 392,
 		/// <summary>The host clicks in the partner management. <p>Corresponds to "Host clicks" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_HOST_CLICKS = 393,
 		/// <summary>The host CTR in the partner management. <p>Corresponds to "Host CTR" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_HOST_CTR = 394,
 		/// <summary>The unfilled impressions in the partner management. <p>Corresponds to "Unfilled
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Partner finance.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_UNFILLED_IMPRESSIONS = 399,
 		/// <summary>The partner impressions in the partner management. <p>Corresponds to "Partner
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_PARTNER_IMPRESSIONS = 493,
 		/// <summary>The partner clicks in the partner management. <p>Corresponds to "Partner clicks"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_PARTNER_CLICKS = 494,
 		/// <summary>The partner CTR in the partner management. <p>Corresponds to "Partner CTR" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_PARTNER_CTR = 495,
 		/// <summary>The gross revenue in the partner management. <p>Corresponds to "Gross revenue"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		PARTNER_MANAGEMENT_GROSS_REVENUE = 496,
 		/// <summary>Monthly host impressions for partner finance reports. <p>Corresponds to "Host
-		/// impressions" in the Ad Manager UI.</p>
+		/// impressions" in the Ad Manager UI. Compatible with the "Partner finance" report
+		/// type.</p>
 		/// </summary>
 		PARTNER_FINANCE_HOST_IMPRESSIONS = 497,
 		/// <summary>Monthly host revenue for partner finance reports. <p>Corresponds to "Host
-		/// revenue" in the Ad Manager UI.</p>
+		/// revenue" in the Ad Manager UI. Compatible with the "Partner finance" report
+		/// type.</p>
 		/// </summary>
 		PARTNER_FINANCE_HOST_REVENUE = 498,
 		/// <summary>Monthly host eCPM for partner finance reports. <p>Corresponds to "Host eCPM" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with the "Partner finance" report type.</p>
 		/// </summary>
 		PARTNER_FINANCE_HOST_ECPM = 499,
 		/// <summary>Monthly partner revenue for partner finance reports. <p>Corresponds to "Partner
-		/// revenue" in the Ad Manager UI.</p>
+		/// revenue" in the Ad Manager UI. Compatible with the "Partner finance" report
+		/// type.</p>
 		/// </summary>
 		PARTNER_FINANCE_PARTNER_REVENUE = 500,
 		/// <summary>Monthly partner eCPM for partner finance reports. <p>Corresponds to "Partner
-		/// eCPM" in the Ad Manager UI.</p>
+		/// eCPM" in the Ad Manager UI. Compatible with the "Partner finance" report
+		/// type.</p>
 		/// </summary>
 		PARTNER_FINANCE_PARTNER_ECPM = 501,
 		/// <summary>Monthly gross revenue for partner finance reports. <p>Corresponds to "Gross
-		/// revenue" in the Ad Manager UI.</p>
+		/// revenue" in the Ad Manager UI. Compatible with the "Partner finance" report
+		/// type.</p>
 		/// </summary>
 		PARTNER_FINANCE_GROSS_REVENUE = 502,
 	}
@@ -63619,19 +64051,22 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='LineItem#effectiveAppliedLabels'>LineItem#effectiveAppliedLabels</a> as a
 		/// comma separated list of <a href='Label#name'>Label#name</a> for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
-		/// "Line item labels" in the Ad Manager UI.</p>
+		/// "Line item labels" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		LINE_ITEM_LABELS = 0,
 		/// <summary>Represents <a
 		/// href='LineItem#effectiveAppliedLabels'>LineItem#effectiveAppliedLabels</a> as a
 		/// comma separated list of <a href='Label#id'>Label#id</a> for <a
-		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>.
+		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Compatible with
+		/// any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		LINE_ITEM_LABEL_IDS = 1,
 		/// <summary>Generated as <code>true</code> for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a> which is eligible
 		/// for optimization, <code>false</code> otherwise. Can be used for filtering.
-		/// <p>Corresponds to "Optimizable" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Optimizable" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		LINE_ITEM_OPTIMIZABLE = 2,
 		/// <summary>Indicates the progress made for the delivery of the <a
@@ -63645,12 +64080,15 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// <td>N/A</td> <td>The <a href='LineItem'>LineItem</a> does not have any quantity
 		/// goals, or there is insufficient information about the <a
 		/// href='LineItem'>LineItem</a>.</td> </tr> </table> <p>Corresponds to "Delivery
-		/// Indicator" in the Ad Manager UI.</p>
+		/// Indicator" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Reach, Sales.</p>
 		/// </summary>
 		LINE_ITEM_DELIVERY_INDICATOR = 139,
 		/// <summary>Represents <a href='LineItem#deliveryRateType'>LineItem#deliveryRateType</a> for
 		/// <a href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds
-		/// to "Delivery pacing" in the Ad Manager UI.</p>
+		/// to "Delivery pacing" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales, Data
+		/// protection.</p>
 		/// </summary>
 		LINE_ITEM_DELIVERY_PACING = 3,
 		/// <summary>Represents <a href='LineItem#frequencyCaps'>LineItem#frequencyCaps</a> as a
@@ -63660,170 +64098,214 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='FrequencyCap#timeUnit'>FrequencyCap#timeUnit</a>" (e.g. "10 impressions
 		/// every day,500 impressions per lifetime") for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
-		/// "Frequency cap" in the Ad Manager UI.</p>
+		/// "Frequency cap" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		LINE_ITEM_FREQUENCY_CAP = 4,
 		/// <summary>Represents the monthly reconciliation status of the line item for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a> and <a
 		/// href='Dimension#MONTH_YEAR'>Dimension#MONTH_YEAR</a>. <p>Corresponds to "Line
-		/// item reconciliation status" in the Ad Manager UI.</p>
+		/// item reconciliation status" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		LINE_ITEM_RECONCILIATION_STATUS = 119,
 		/// <summary>Represents the monthly last reconciliation date time of the line item for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a> and <a
 		/// href='Dimension#MONTH_YEAR'>Dimension#MONTH_YEAR</a>. <p>Corresponds to "Line
-		/// item last reconciliation time" in the Ad Manager UI.</p>
+		/// item last reconciliation time" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		LINE_ITEM_LAST_RECONCILIATION_DATE_TIME = 120,
 		/// <summary>Represents <a href='Company#externalId'>Company#externalId</a> for <a
 		/// href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>. <p>Corresponds
-		/// to "External advertiser ID" in the Ad Manager UI.</p>
+		/// to "External advertiser ID" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		ADVERTISER_EXTERNAL_ID = 5,
 		/// <summary>Represents <a href='Company#type'>Company#type</a> for <a
 		/// href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>. Can be used for
-		/// filtering. <p>Corresponds to "Advertiser type" in the Ad Manager UI.</p>
+		/// filtering. <p>Corresponds to "Advertiser type" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Future sell-through, Reach,
+		/// Sales, Data protection.</p>
 		/// </summary>
 		ADVERTISER_TYPE = 121,
 		/// <summary>Represents <a href='Company#creditStatus'>Company#creditStatus</a> for <a
 		/// href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>. Can be used for
-		/// filtering. <p>Corresponds to "Advertiser credit status" in the Ad Manager
-		/// UI.</p>
+		/// filtering. <p>Corresponds to "Advertiser credit status" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Future
+		/// sell-through, Reach, Sales, Data protection.</p>
 		/// </summary>
 		ADVERTISER_CREDIT_STATUS = 122,
 		/// <summary>Represents name and email address in the form of name(email) of primary contact
 		/// for <a href=''>Dimension#ADVERTISER_NAME</a>. <p>Corresponds to "Advertiser
-		/// primary contact" in the Ad Manager UI.</p>
+		/// primary contact" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		ADVERTISER_PRIMARY_CONTACT = 6,
 		/// <summary>Represents the start date (in YYYY-MM-DD format) for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. Can be used for filtering.
-		/// <p>Corresponds to "Order start date" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Order start date" in the Ad Manager UI. Compatible with any
+		/// of the following report types: Historical, Future sell-through, Reach, Sales,
+		/// Data protection.</p>
 		/// </summary>
 		ORDER_START_DATE_TIME = 7,
 		/// <summary>Represents the end date (in YYYY-MM-DD format) for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. Can be used for filtering.
-		/// <p>Corresponds to "Order end date" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Order end date" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Future sell-through, Reach, Sales, Data
+		/// protection.</p>
 		/// </summary>
 		ORDER_END_DATE_TIME = 8,
 		/// <summary>Represents <a href='Order#externalOrderId'>Order#externalOrderId</a> for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to
-		/// "External order ID" in the Ad Manager UI.</p>
+		/// "External order ID" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		ORDER_EXTERNAL_ID = 9,
 		/// <summary>Represents <a href='Order#poNumber'>Order#poNumber</a> for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. Can be used for filtering.
-		/// <p>Corresponds to "Order PO number" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Order PO number" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Future sell-through, Reach, Sales, Data
+		/// protection.</p>
 		/// </summary>
 		ORDER_PO_NUMBER = 10,
 		/// <summary>Represents <a href='Order#orderIsProgrammatic'>Order#orderIsProgrammatic</a> for
 		/// <a href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. Can be used for
-		/// filtering. <p>Corresponds to "Programmatic order" in the Ad Manager UI.</p>
+		/// filtering. <p>Corresponds to "Programmatic order" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		ORDER_IS_PROGRAMMATIC = 11,
 		/// <summary>Represents the name of <a href='Order#agencyId'>Order#agencyId</a> for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to "Agency"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Reach, Sales.</p>
 		/// </summary>
 		ORDER_AGENCY = 12,
 		/// <summary>Represents <a href='Order#agencyId'>Order#agencyId</a> for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. Can be used for filtering.
-		/// <p>Corresponds to "Agency ID" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Agency ID" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		ORDER_AGENCY_ID = 13,
 		/// <summary>Represents <a
 		/// href='Order#effectiveAppliedLabels'>Order#effectiveAppliedLabels</a> as a comma
 		/// separated list of <a href='Label#name'>Label#name</a> for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to "Order
-		/// labels" in the Ad Manager UI.</p>
+		/// labels" in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Reach, Sales.</p>
 		/// </summary>
 		ORDER_LABELS = 14,
 		/// <summary>Represents <a
 		/// href='Order#effectiveAppliedLabels'>Order#effectiveAppliedLabels</a> as a comma
 		/// separated list of <a href='Label#id'>Label#id</a> for <a
-		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>.
+		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Compatible with any of
+		/// the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		ORDER_LABEL_IDS = 15,
 		/// <summary>The name and email address in the form of name(email) of the trafficker for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a> <p>Corresponds to
-		/// "Trafficker" in the Ad Manager UI.</p>
+		/// "Trafficker" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Reach, Sales.</p>
 		/// </summary>
 		ORDER_TRAFFICKER = 16,
 		/// <summary>Represents <a href='Order#traffickerId'>Order#traffickerId</a> for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. Can be used for filtering.
+		/// <p>Compatible with any of the following report types: Historical, Reach,
+		/// Sales.</p>
 		/// </summary>
 		ORDER_TRAFFICKER_ID = 17,
 		/// <summary>The names and email addresses as a comma separated list of name(email) of the <a
 		/// href='Order#secondaryTraffickerIds'>Order#secondaryTraffickerIds</a> for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to
-		/// "Secondary traffickers" in the Ad Manager UI.</p>
+		/// "Secondary traffickers" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		ORDER_SECONDARY_TRAFFICKERS = 18,
 		/// <summary>The name and email address in the form of name(email) of the <a
 		/// href='Order#salespersonId'>Order#salespersonId</a> for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to
-		/// "Salesperson" in the Ad Manager UI.</p>
+		/// "Salesperson" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Reach, Sales.</p>
 		/// </summary>
 		ORDER_SALESPERSON = 19,
 		/// <summary>The names and email addresses as a comma separated list of name(email) of the <a
 		/// href='Order#secondarySalespersonIds'>Order#secondarySalespersonIds</a> for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to
-		/// "Secondary salespeople" in the Ad Manager UI.</p>
+		/// "Secondary salespeople" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		ORDER_SECONDARY_SALESPEOPLE = 20,
 		/// <summary>The total number of impressions delivered over the lifetime of an <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to "Order
-		/// lifetime impressions" in the Ad Manager UI.</p>
+		/// lifetime impressions" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales, Data
+		/// protection.</p>
 		/// </summary>
 		ORDER_LIFETIME_IMPRESSIONS = 21,
 		/// <summary>The total number of clicks delivered over the lifetime of an <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to "Order
-		/// lifetime clicks" in the Ad Manager UI.</p>
+		/// lifetime clicks" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales, Data
+		/// protection.</p>
 		/// </summary>
 		ORDER_LIFETIME_CLICKS = 22,
 		/// <summary>The cost of booking all the CPM ads for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to "Booked
-		/// CPM" in the Ad Manager UI.</p>
+		/// CPM" in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Reach, Sales.</p>
 		/// </summary>
 		ORDER_BOOKED_CPM = 23,
 		/// <summary>The cost of booking all the CPC ads for <a
 		/// href='Dimension#ORDER_NAME'>Dimension#ORDER_NAME</a>. <p>Corresponds to "Booked
-		/// CPC" in the Ad Manager UI.</p>
+		/// CPC" in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Reach, Sales.</p>
 		/// </summary>
 		ORDER_BOOKED_CPC = 24,
 		/// <summary>Represents the start date (in YYYY-MM-DD format) for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. Can be used for
-		/// filtering. <p>Corresponds to "Line item start date" in the Ad Manager UI.</p>
+		/// filtering. <p>Corresponds to "Line item start date" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Future
+		/// sell-through, Reach, Sales, Data protection.</p>
 		/// </summary>
 		LINE_ITEM_START_DATE_TIME = 25,
 		/// <summary>Represents the end date (in YYYY-MM-DD format) for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. Can be used for
-		/// filtering. <p>Corresponds to "Line item end date" in the Ad Manager UI.</p>
+		/// filtering. <p>Corresponds to "Line item end date" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Future
+		/// sell-through, Reach, Sales, Data protection.</p>
 		/// </summary>
 		LINE_ITEM_END_DATE_TIME = 26,
 		/// <summary>Represents <a href='LineItem#externalId'>LineItem#externalId</a> for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. Can be used for
-		/// filtering. <p>Corresponds to "External Line Item ID" in the Ad Manager UI.</p>
+		/// filtering. <p>Corresponds to "External Line Item ID" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		LINE_ITEM_EXTERNAL_ID = 27,
 		/// <summary>Represents <a href='LineItem#costType'>LineItem#costType</a> for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. Can be used for
-		/// filtering. <p>Corresponds to "Cost type" in the Ad Manager UI.</p>
+		/// filtering. <p>Corresponds to "Cost type" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Future sell-through, Reach,
+		/// Sales, Data protection.</p>
 		/// </summary>
 		LINE_ITEM_COST_TYPE = 28,
 		/// <summary>Represents <a href='LineItem#costPerUnit'>LineItem#costPerUnit</a> for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
-		/// "Rate" in the Ad Manager UI.</p>
+		/// "Rate" in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Future sell-through, Reach, Sales, Data protection.</p>
 		/// </summary>
 		LINE_ITEM_COST_PER_UNIT = 29,
 		/// <summary>Represents the 3 letter currency code for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
-		/// "Currency code" in the Ad Manager UI.</p>
+		/// "Currency code" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales, Data
+		/// protection.</p>
 		/// </summary>
 		LINE_ITEM_CURRENCY_CODE = 30,
 		/// <summary>The total number of impressions, clicks or days that is reserved for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
-		/// "Goal quantity" in the Ad Manager UI.</p>
+		/// "Goal quantity" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales, Data
+		/// protection.</p>
 		/// </summary>
 		LINE_ITEM_GOAL_QUANTITY = 31,
 		/// <summary>The ratio between the goal quantity for <a
@@ -63831,295 +64313,357 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a> and the <a
 		/// href='#LINE_ITEM_GOAL_QUANTITY'>#LINE_ITEM_GOAL_QUANTITY</a>. Represented as a
 		/// number between 0..100. <p>Corresponds to "Sponsorship goal (%)" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Reach, Sales.</p>
 		/// </summary>
 		LINE_ITEM_SPONSORSHIP_GOAL_PERCENTAGE = 32,
 		/// <summary>The total number of impressions delivered over the lifetime of a <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
-		/// "Line item lifetime impressions" in the Ad Manager UI.</p>
+		/// "Line item lifetime impressions" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Future sell-through, Reach, Sales, Data
+		/// protection.</p>
 		/// </summary>
 		LINE_ITEM_LIFETIME_IMPRESSIONS = 33,
 		/// <summary>The total number of clicks delivered over the lifetime of a <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
-		/// "Line item lifetime clicks" in the Ad Manager UI.</p>
+		/// "Line item lifetime clicks" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales, Data
+		/// protection.</p>
 		/// </summary>
 		LINE_ITEM_LIFETIME_CLICKS = 34,
 		/// <summary>Represents <a href='LineItem#priority'>LineItem#priority</a> for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a> as a value between
 		/// 1 and 16. Can be used for filtering. <p>Corresponds to "Line item priority" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Future sell-through, Reach, Sales, Data protection.</p>
 		/// </summary>
 		LINE_ITEM_PRIORITY = 35,
 		/// <summary>Indicates if a creative is a regular creative or creative set. Values will be
-		/// 'Creative' or 'Creative set'
+		/// 'Creative' or 'Creative set' <p>Compatible with any of the following report
+		/// types: Historical, Reach.</p>
 		/// </summary>
 		CREATIVE_OR_CREATIVE_SET = 36,
 		/// <summary>The type of creative in a creative set - master or companion. <p>Corresponds to
-		/// "Master or Companion" in the Ad Manager UI.</p>
+		/// "Master or Companion" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach.</p>
 		/// </summary>
 		MASTER_COMPANION_TYPE = 37,
 		/// <summary>Represents the <a
 		/// href='LineItem#contractedUnitsBought'>LineItem#contractedUnitsBought</a>
 		/// quantity for <a href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>.
-		/// <p>Corresponds to "Contracted quantity" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Contracted quantity" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		LINE_ITEM_CONTRACTED_QUANTITY = 38,
 		/// <summary>Represents the <a href='LineItem#discount'>LineItem#discount</a> for <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. The number is
 		/// either a percentage or an absolute value depending on <a
 		/// href='LineItem#discountType'>LineItem#discountType</a>. <p>Corresponds to
-		/// "Discount" in the Ad Manager UI.</p>
+		/// "Discount" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Reach, Sales.</p>
 		/// </summary>
 		LINE_ITEM_DISCOUNT = 39,
 		/// <summary>The cost of booking for a non-CPD <a
 		/// href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a>. <p>Corresponds to
-		/// "Booked revenue (exclude CPD)" in the Ad Manager UI.</p>
+		/// "Booked revenue (exclude CPD)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		LINE_ITEM_NON_CPD_BOOKED_REVENUE = 40,
 		/// <summary>Represents <a href='Company#appliedLabels'>Company#appliedLabels</a> as a comma
 		/// separated list of <a href='Label#name'>Label#name</a> for <a
 		/// href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>. <p>Corresponds
-		/// to "Advertiser labels" in the Ad Manager UI.</p>
+		/// to "Advertiser labels" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		ADVERTISER_LABELS = 41,
 		/// <summary>Represents <a href='Company#appliedLabels'>Company#appliedLabels</a> as a comma
 		/// separated list of <a href='Label#id'>Label#id</a> for <a
-		/// href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>.
+		/// href='Dimension#ADVERTISER_NAME'>Dimension#ADVERTISER_NAME</a>. <p>Compatible
+		/// with any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		ADVERTISER_LABEL_IDS = 42,
 		/// <summary>Represents the click-through URL for <a
 		/// href='Dimension#CREATIVE_NAME'>Dimension#CREATIVE_NAME</a>. <p>Corresponds to
-		/// "Click-through URL" in the Ad Manager UI.</p>
+		/// "Click-through URL" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach.</p>
 		/// </summary>
 		CREATIVE_CLICK_THROUGH_URL = 43,
 		/// <summary>Represents whether a creative is SSL-compliant. <p>Corresponds to "Creative SSL
-		/// scan result" in the Ad Manager UI.</p>
+		/// scan result" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Reach.</p>
 		/// </summary>
 		CREATIVE_SSL_SCAN_RESULT = 44,
 		/// <summary>Represents whether a creative's SSL status was overridden. <p>Corresponds to
-		/// "Creative SSL compliance override" in the Ad Manager UI.</p>
+		/// "Creative SSL compliance override" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Reach.</p>
 		/// </summary>
 		CREATIVE_SSL_COMPLIANCE_OVERRIDE = 45,
 		/// <summary>Represents a <a
 		/// href='LineItemCreativeAssociation#startDateTime'>LineItemCreativeAssociation#startDateTime</a>
 		/// for a <a href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a> and a <a
 		/// href='Dimension#CREATIVE_NAME'>Dimension#CREATIVE_NAME</a>. Includes the date
-		/// without the time. <p>Corresponds to "Creative start date" in the Ad Manager
-		/// UI.</p>
+		/// without the time. <p>Corresponds to "Creative start date" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		LINE_ITEM_CREATIVE_START_DATE = 46,
 		/// <summary>Represents a <a
 		/// href='LineItemCreativeAssociation#endDateTime'>LineItemCreativeAssociation#endDateTime</a>
 		/// for a <a href='Dimension#LINE_ITEM_NAME'>Dimension#LINE_ITEM_NAME</a> and a <a
 		/// href='Dimension#CREATIVE_NAME'>Dimension#CREATIVE_NAME</a>. Includes the date
-		/// without the time. <p>Corresponds to "Creative end date" in the Ad Manager
-		/// UI.</p>
+		/// without the time. <p>Corresponds to "Creative end date" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		LINE_ITEM_CREATIVE_END_DATE = 47,
 		/// <summary>Represents <a href='Proposal#startDateTime'>Proposal#startDateTime</a> for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Proposal start time" in the Ad Manager UI.</p>
+		/// "Proposal start time" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_START_DATE_TIME = 48,
 		/// <summary>Represents <a href='Proposal#endDateTime'>Proposal#endDateTime</a> for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Proposal end time" in the Ad Manager UI.</p>
+		/// "Proposal end time" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_END_DATE_TIME = 49,
 		/// <summary>Represents <a href='Proposal#creationDateTime'>Proposal#creationDateTime</a> for
 		/// <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. Can be used for
-		/// filtering. <p>Corresponds to "Creation time" in the Ad Manager UI.</p>
+		/// filtering. <p>Corresponds to "Creation time" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Future sell-through, Reach,
+		/// Sales.</p>
 		/// </summary>
 		PROPOSAL_CREATION_DATE_TIME = 50,
 		/// <summary>Represents the sold time for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Sold time" in the Ad Manager UI.</p>
+		/// "Sold time" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_SOLD_DATE_TIME = 51,
 		/// <summary>Represents <a href='Proposal#isSold'>Proposal#isSold</a> for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. Can be used for
-		/// filtering. <p>Corresponds to "Sold" in the Ad Manager UI.</p>
+		/// filtering. <p>Corresponds to "Sold" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_IS_SOLD = 52,
 		/// <summary>Represents <a href='Proposal#probabilityOfClose'>Proposal#probabilityOfClose</a>
 		/// for <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
-		/// <p>Corresponds to "Probability of close" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Probability of close" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Future sell-through, Reach,
+		/// Sales.</p>
 		/// </summary>
 		PROPOSAL_PROBABILITY_OF_CLOSE = 135,
 		/// <summary>Represents <a href='Proposal#status'>Proposal#status</a> for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. This attribute
 		/// includes post-sold statuses, e.g. DRAFT(SOLD) until v201611. Starting from
 		/// v201702, it will not include post-sold statuses. Can be used for filtering.
+		/// <p>Compatible with any of the following report types: Historical, Future
+		/// sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_STATUS = 54,
 		/// <summary>Represents archival status for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>, the values are
 		/// ARCHIVED and NOT_ARCHIVED. Can be used for filtering. <p>Corresponds to
-		/// "Proposal archival status" in the Ad Manager UI.</p>
+		/// "Proposal archival status" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_ARCHIVAL_STATUS = 55,
 		/// <summary>Represents <a href='Proposal#currency'>Proposal#currency</a> for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Currency" in the Ad Manager UI.</p>
+		/// "Currency" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_CURRENCY = 56,
 		/// <summary>Represents <a href='Proposal#exchangeRate'>Proposal#exchangeRate</a> for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Exchange rate" in the Ad Manager UI.</p>
+		/// "Exchange rate" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_EXCHANGE_RATE = 57,
 		/// <summary>Represents <a href='Proposal#agencyCommission'>Proposal#agencyCommission</a> for
 		/// <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Agency commission rate" in the Ad Manager UI.</p>
+		/// "Agency commission rate" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_COMMISSION_RATE = 58,
 		/// <summary>Represents <a href='Proposal#valueAddedTax'>Proposal#valueAddedTax</a> for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "VAT rate" in the Ad Manager UI.</p>
+		/// "VAT rate" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_VAT_RATE = 59,
 		/// <summary>Represents <a href='Proposal#proposalDiscount'>Proposal#proposalDiscount</a> for
 		/// <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Proposal discount" in the Ad Manager UI.</p>
+		/// "Proposal discount" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_DISCOUNT = 60,
 		/// <summary>Represents <a href='Proposal#advertiserDiscount'>Proposal#advertiserDiscount</a>
 		/// for <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
-		/// <p>Corresponds to "Advertiser discount" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Advertiser discount" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Future sell-through, Reach,
+		/// Sales.</p>
 		/// </summary>
 		PROPOSAL_ADVERTISER_DISCOUNT = 61,
 		/// <summary>Represents the advertiser name of <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Advertiser" in the Ad Manager UI.</p>
+		/// "Advertiser" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_ADVERTISER = 62,
 		/// <summary>Represents the advertiser id of <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Advertiser ID" in the Ad Manager UI.</p>
+		/// "Advertiser ID" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_ADVERTISER_ID = 63,
 		/// <summary>Represents the agency names as a comma separated string for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Agencies" in the Ad Manager UI.</p>
+		/// "Agencies" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_AGENCIES = 64,
 		/// <summary>Represents the agency ids as a comma separated string for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Agency IDs" in the Ad Manager UI.</p>
+		/// "Agency IDs" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_IDS = 65,
 		/// <summary>Represents <a href='Proposal#poNumber'>Proposal#poNumber</a> for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "PO number" in the Ad Manager UI.</p>
+		/// "PO number" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_PO_NUMBER = 66,
 		/// <summary>Represents name and email address in the form of name(email) of primary
 		/// salesperson for <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>.
-		/// <p>Corresponds to "Salesperson" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Salesperson" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_PRIMARY_SALESPERSON = 67,
 		/// <summary>Represents name and email addresses in the form of name(email) of secondary
 		/// salespeople as a comma separated string for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Secondary salespeople" in the Ad Manager UI.</p>
+		/// "Secondary salespeople" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_SECONDARY_SALESPEOPLE = 68,
 		/// <summary>Represents name and email address in the form of name(email) of creator for <a
 		/// href=''>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to "Creator" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_CREATOR = 69,
 		/// <summary>Represents name and email addresses in the form of name(email) of <a
 		/// href=''>Proposal#salesPlannerIds</a> as a comma separated list string for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Sales planners" in the Ad Manager UI.</p>
+		/// "Sales planners" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_SALES_PLANNERS = 70,
 		/// <summary>Represents <a href='Proposal#pricingModel'>Proposal#pricingModel</a> for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Pricing model" in the Ad Manager UI.</p>
+		/// "Pricing model" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_PRICING_MODEL = 71,
 		/// <summary>Represents <a href='Proposal#billingSource'>Proposal#billingSource</a> for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Proposal billing source" in the Ad Manager UI.</p>
+		/// "Proposal billing source" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_BILLING_SOURCE = 72,
 		/// <summary>Represents <a href='Proposal#billingCap'>Proposal#billingCap</a> for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Proposal caps and rollovers" in the Ad Manager UI.</p>
+		/// "Proposal caps and rollovers" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_BILLING_CAP = 73,
 		/// <summary>Represents <a href='Proposal#billingSchedule'>Proposal#billingSchedule</a> for
 		/// <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Proposal billing schedule" in the Ad Manager UI.</p>
+		/// "Proposal billing schedule" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_BILLING_SCHEDULE = 74,
 		/// <summary>Represents <a href='Proposal#appliedTeamIds'>Proposal#appliedTeamIds</a> as a
 		/// comma separated list of <a href='Team#name'>Team#name</a>s for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Teams" in the Ad Manager UI.</p>
+		/// "Teams" in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_APPLIED_TEAM_NAMES = 75,
 		/// <summary>Represents the approval stage for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Approval stage" in the Ad Manager UI.</p>
+		/// "Approval stage" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_APPROVAL_STAGE = 76,
 		/// <summary>Represents the inventory release date time for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Inventory release time" in the Ad Manager UI.</p>
+		/// "Inventory release time" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_INVENTORY_RELEASE_DATE_TIME = 77,
 		/// <summary>Represents <a href='Proposal#budget'>Proposal#budget</a> in local currency for
 		/// <a href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Budget (local)" in the Ad Manager UI.</p>
+		/// "Budget (local)" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LOCAL_BUDGET = 78,
 		/// <summary>Represents the remaining budget in local currency for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. <p>Corresponds to
-		/// "Remaining budget (local)" in the Ad Manager UI.</p>
+		/// "Remaining budget (local)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LOCAL_REMAINING_BUDGET = 79,
 		/// <summary>Represents whether the <a href='Proposal#billingBase'>Proposal#billingBase</a>
 		/// is <a href='BillingBase#REVENUE'>BillingBase#REVENUE</a>. <p>Corresponds to
-		/// "Proposal flat fee" in the Ad Manager UI.</p>
+		/// "Proposal flat fee" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_FLAT_FEE = 133,
 		/// <summary>Represents <a href='Proposal#isProgrammatic'>Proposal#isProgrammatic</a> for <a
 		/// href='Dimension#PROPOSAL_NAME'>Dimension#PROPOSAL_NAME</a>. Not available as an
 		/// attribute to report on, but exists as an attribute for filtering using PQL.
+		/// <p>Compatible with any of the following report types: Historical, Future
+		/// sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_IS_PROGRAMMATIC = 140,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#startDateTime'>ProposalLineItem#startDateTime</a> for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
-		/// <p>Corresponds to "Proposal line item start time" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Proposal line item start time" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Future
+		/// sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_START_DATE_TIME = 80,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#endDateTime'>ProposalLineItem#endDateTime</a> for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
-		/// <p>Corresponds to "Proposal line item end time" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Proposal line item end time" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Future sell-through, Reach,
+		/// Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_END_DATE_TIME = 81,
 		/// <summary>Represents <a href='ProposalLineItem#rateType'>ProposalLineItem#rateType</a> for
 		/// <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
 		/// Can be used for filtering. <p>Corresponds to "Proposal line item rate type" in
-		/// the Ad Manager UI.</p>
+		/// the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_RATE_TYPE = 82,
 		/// <summary>Represents the reservation status of <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
 		/// Can be used for filtering. <p>Corresponds to "Reservation status" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_RESERVATION_STATUS = 123,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#costPerUnit'>ProposalLineItem#costPerUnit</a> for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
-		/// <p>Corresponds to "Rate (net)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Rate (net)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_COST_PER_UNIT = 83,
 		/// <summary>Represents <a
@@ -64129,76 +64673,94 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// See <a
 		/// href='#PROPOSAL_LINE_ITEM_COST_PER_UNIT'>#PROPOSAL_LINE_ITEM_COST_PER_UNIT</a>
 		/// <p>Can correspond to any of the following in the Ad Manager UI: Rate (local),
-		/// Rate (net) (local).</p>
+		/// Rate (net) (local). Compatible with any of the following report types:
+		/// Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_LOCAL_COST_PER_UNIT = 84,
 		/// <summary>Represents gross cost per unit for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
-		/// <p>Corresponds to "Rate (gross)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Rate (gross)" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_COST_PER_UNIT_GROSS = 85,
 		/// <summary>Represents gross cost per unit in local currency for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
 		/// See <a
 		/// href='#PROPOSAL_LINE_ITEM_COST_PER_UNIT_GROSS'>#PROPOSAL_LINE_ITEM_COST_PER_UNIT_GROSS</a>
-		/// <p>Corresponds to "Rate (gross) (local)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Rate (gross) (local)" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Future sell-through, Reach,
+		/// Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_LOCAL_COST_PER_UNIT_GROSS = 86,
 		/// <summary>Represents line item type (if applicable) and line item priority (if applicable)
 		/// for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
-		/// <p>Corresponds to "Proposal line item type / priority" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Proposal line item type / priority" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Future
+		/// sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_TYPE_AND_PRIORITY = 87,
 		/// <summary>Represents the size of <a
 		/// href='ProposalLineItem#creativePlaceholders'>ProposalLineItem#creativePlaceholders</a>
 		/// for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
-		/// <p>Corresponds to "Sizes" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Sizes" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_SIZE = 88,
 		/// <summary>Represents archival status for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>,
 		/// the values are ARCHIVED and NOT_ARCHIVED. Can be used for filtering.
-		/// <p>Corresponds to "Proposal line item archival status" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Proposal line item archival status" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Future
+		/// sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_ARCHIVAL_STATUS = 89,
 		/// <summary>Represents the product adjustment of <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
-		/// <p>Corresponds to "Product adjustment" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Product adjustment" in the Ad Manager UI. Compatible with any
+		/// of the following report types: Historical, Future sell-through, Reach,
+		/// Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_PRODUCT_ADJUSTMENT = 90,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#contractedQuantityBuffer'>ProposalLineItem#contractedQuantityBuffer</a>
 		/// for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
-		/// <p>Corresponds to "Buffer (%)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Buffer (%)" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_BUFFER = 91,
 		/// <summary>Represents the listing rate (net) of <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
-		/// <p>Corresponds to "Listing rate (net)" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Listing rate (net)" in the Ad Manager UI. Compatible with any
+		/// of the following report types: Historical, Future sell-through, Reach,
+		/// Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_LISTING_RATE_NET = 136,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#billingSource'>ProposalLineItem#billingSource</a> for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
-		/// <p>Corresponds to "Proposal line item billing source" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Proposal line item billing source" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Future
+		/// sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_BILLING_SOURCE = 93,
 		/// <summary>Represents <a href='ProposalLineItem#billingCap'>ProposalLineItem#billingCap</a>
 		/// for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
-		/// <p>Corresponds to "Proposal line item caps and rollovers" in the Ad Manager
-		/// UI.</p>
+		/// <p>Corresponds to "Proposal line item caps and rollovers" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Future
+		/// sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_BILLING_CAP = 94,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#billingSchedule'>ProposalLineItem#billingSchedule</a> for
 		/// <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
-		/// <p>Corresponds to "Proposal line item billing schedule" in the Ad Manager
-		/// UI.</p>
+		/// <p>Corresponds to "Proposal line item billing schedule" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Future
+		/// sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_BILLING_SCHEDULE = 95,
 		/// <summary>Represents <a href='Goal#units'>Goal#units</a> of <a
@@ -64209,144 +64771,170 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// href=''>LineItemType#HOUSE</a>, <a
 		/// href='LineItemType#NETWORK'>LineItemType#NETWORK</a>, or <a
 		/// href='LineItemType#BUMPER'>LineItemType#BUMPER</a>. <p>Corresponds to "Goal (%)"
-		/// in the Ad Manager UI.</p>
+		/// in the Ad Manager UI. Compatible with any of the following report types:
+		/// Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_GOAL_PERCENTAGE = 96,
 		/// <summary>Represents <a
 		/// href='ProposalLineItem#costAdjustment'>ProposalLineItem#costAdjustment</a> for
 		/// <a href=''>Dimension#PROPOSAL_LINE_ITEM_NAME</a>. <p>Corresponds to "Cost
-		/// adjustment" in the Ad Manager UI.</p>
+		/// adjustment" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_COST_ADJUSTMENT = 97,
 		/// <summary>Represents the <a href='ProposalLineItem#notes'>comments</a> for <a
 		/// href=''>Dimension#PROPOSAL_LINE_ITEM_NAME</a>. <p>Corresponds to "Proposal line
-		/// item comments" in the Ad Manager UI.</p>
+		/// item comments" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_COMMENTS = 98,
 		/// <summary>Represents the monthly reconciliation status of the proposal line item for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>
 		/// and <a href='Dimension#MONTH_YEAR'>Dimension#MONTH_YEAR</a>. <p>Corresponds to
-		/// "Proposal line item reconciliation status" in the Ad Manager UI.</p>
+		/// "Proposal line item reconciliation status" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_RECONCILIATION_STATUS = 124,
 		/// <summary>Represents the monthly last reconciliation date time of the proposal line item
 		/// for <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>
 		/// and <a href='Dimension#MONTH_YEAR'>Dimension#MONTH_YEAR</a>. <p>Corresponds to
-		/// "Proposal line item last reconciliation time" in the Ad Manager UI.</p>
+		/// "Proposal line item last reconciliation time" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_LAST_RECONCILIATION_DATE_TIME = 125,
 		/// <summary>Represents whether the <a
 		/// href='ProposalLineItem#billingBase'>ProposalLineItem#billingBase</a> is <a
 		/// href='BillingBase#REVENUE'>BillingBase#REVENUE</a>. <p>Corresponds to "Proposal
-		/// line item flat fee" in the Ad Manager UI.</p>
+		/// line item flat fee" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_FLAT_FEE = 134,
 		/// <summary>Represents the corresponding product package item's archival status of <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
 		/// Not available as an attribute to report on, but exists as an attribute for
-		/// filtering using PQL.
+		/// filtering using PQL. <p>Compatible with any of the following report types:
+		/// Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_PACKAGE_ITEM_ARCHIVAL_STATUS = 126,
 		/// <summary>Represents the <a
 		/// href='ProposalLineItem#lineItemType'>ProposalLineItem#lineItemType</a> of <a
 		/// href='Dimension#PROPOSAL_LINE_ITEM_NAME'>Dimension#PROPOSAL_LINE_ITEM_NAME</a>.
-		/// Only used for filtering.
+		/// Only used for filtering. <p>Compatible with any of the following report types:
+		/// Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_LINE_ITEM_TYPE = 142,
 		/// <summary>Represents <a href='ProductTemplate#rateType'>ProductTemplate#rateType</a> for
 		/// <a href='Dimension#PRODUCT_TEMPLATE_NAME'>Dimension#PRODUCT_TEMPLATE_NAME</a>.
-		/// <p>Corresponds to "Product template rate type" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Product template rate type" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_TEMPLATE_RATE_TYPE = 99,
 		/// <summary>Represents <a href='ProductTemplate#status'>ProductTemplate#status</a> for <a
 		/// href='Dimension#PRODUCT_TEMPLATE_NAME'>Dimension#PRODUCT_TEMPLATE_NAME</a>.
-		/// <p>Corresponds to "Product template status" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Product template status" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_TEMPLATE_STATUS = 100,
 		/// <summary>Represents the line item type (if applicable) and line item priority (if
 		/// applicable) of <a
 		/// href='Dimension#PRODUCT_TEMPLATE_NAME'>Dimension#PRODUCT_TEMPLATE_NAME</a>.
-		/// <p>Corresponds to "Product template type / priority" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Product template type / priority" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_TEMPLATE_TYPE_AND_PRIORITY = 101,
 		/// <summary>Represents <a href='ProductTemplate#productType'>ProductTemplate#productType</a>
 		/// for <a
 		/// href='Dimension#PRODUCT_TEMPLATE_NAME'>Dimension#PRODUCT_TEMPLATE_NAME</a>.
-		/// <p>Corresponds to "Product template product type" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Product template product type" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_TEMPLATE_PRODUCT_TYPE = 102,
 		/// <summary>Represents <a href='ProductTemplate#description'>ProductTemplate#description</a>
 		/// for <a
 		/// href='Dimension#PRODUCT_TEMPLATE_NAME'>Dimension#PRODUCT_TEMPLATE_NAME</a>.
-		/// <p>Corresponds to "Description" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Description" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_TEMPLATE_DESCRIPTION = 103,
 		/// <summary>Represents the product template's name of <a
 		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>. <p>Corresponds to
-		/// "Product template name" in the Ad Manager UI.</p>
+		/// "Product template name" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_PRODUCT_TEMPLATE_NAME = 104,
 		/// <summary>Represents <a href='Product#rateType'>Product#rateType</a> for <a
 		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>. <p>Corresponds to
-		/// "Product rate type" in the Ad Manager UI.</p>
+		/// "Product rate type" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_RATE_TYPE = 105,
 		/// <summary>Represents <a href='Product#status'>Product#status</a> for <a
 		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>. <p>Corresponds to
-		/// "Product status" in the Ad Manager UI.</p>
+		/// "Product status" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_STATUS = 106,
 		/// <summary>Represents the line item type (if applicable) and line item priority (if
 		/// applicable) of <a href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>.
-		/// <p>Corresponds to "Product type / priority" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Product type / priority" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_TYPE_AND_PRIORITY = 107,
 		/// <summary>Represents the product type of <a
 		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>. <p>Corresponds to
-		/// "Product product type" in the Ad Manager UI.</p>
+		/// "Product product type" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_PRODUCT_TYPE = 108,
 		/// <summary>Represents <a href='Product#notes'>Product#notes</a> for <a
 		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>. <p>Corresponds to
-		/// "Product notes" in the Ad Manager UI.</p>
+		/// "Product notes" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_NOTES = 109,
 		/// <summary>Represents <a
 		/// href='Product#creativePlaceholders'>Product#creativePlaceholders</a> for <a
 		/// href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>. <p>Corresponds to
-		/// "Inventory sizes" in the Ad Manager UI.</p>
+		/// "Inventory sizes" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_INVENTORY_SIZES = 141,
 		/// <summary>Represents the <a href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>'s
 		/// rate in a <a href='Dimension#RATE_CARD_NAME'>Dimension#RATE_CARD_NAME</a>.
-		/// <p>Corresponds to "Product rate" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Product rate" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_RATE = 137,
 		/// <summary>Represents the <a href='Dimension#PRODUCT_NAME'>Dimension#PRODUCT_NAME</a>'s
 		/// rate in a <a href='Dimension#RATE_CARD_NAME'>Dimension#RATE_CARD_NAME</a> and <a
 		/// href='Dimension#PRODUCT_PACKAGE_NAME'>Dimension#PRODUCT_PACKAGE_NAME</a>.
-		/// <p>Corresponds to "Packaged product rate" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Packaged product rate" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PACKAGED_PRODUCT_RATE = 138,
 		/// <summary>Represents the <a href='Company#type'>Company#type</a> of <a
 		/// href='Dimension#PROPOSAL_AGENCY_NAME'>Dimension#PROPOSAL_AGENCY_NAME</a>.
-		/// <p>Corresponds to "Proposal agency type" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Proposal agency type" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_TYPE = 110,
 		/// <summary>Represents the <a href='Company#creditStatus'>Company#creditStatus</a> of <a
 		/// href='Dimension#PROPOSAL_AGENCY_NAME'>Dimension#PROPOSAL_AGENCY_NAME</a>.
-		/// <p>Corresponds to "Proposal agency credit status" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Proposal agency credit status" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_CREDIT_STATUS = 111,
 		/// <summary>Represents <a href='Company#externalId'>Company#externalId</a> for <a
 		/// href='Dimension#PROPOSAL_AGENCY_NAME'>Dimension#PROPOSAL_AGENCY_NAME</a>.
-		/// <p>Corresponds to "External agency ID" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "External agency ID" in the Ad Manager UI. Compatible with any
+		/// of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_EXTERNAL_ID = 112,
 		/// <summary>Represents <a href='Company#comment'>Company#comment</a> for <a
 		/// href='Dimension#PROPOSAL_AGENCY_NAME'>Dimension#PROPOSAL_AGENCY_NAME</a>.
-		/// <p>Corresponds to "Proposal agency comment" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Proposal agency comment" in the Ad Manager UI. Compatible
+		/// with any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PROPOSAL_AGENCY_COMMENT = 113,
 		/// <summary>Represents the <a
@@ -64355,61 +64943,72 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// <a
 		/// href='#SALESPERSON_PROPOSAL_CONTRIBUTION'>#SALESPERSON_PROPOSAL_CONTRIBUTION</a>
 		/// as this will include both primary and secondary salespeople. <p>Corresponds to
-		/// "Salespeople proposal contribution" in the Ad Manager UI.</p>
+		/// "Salespeople proposal contribution" in the Ad Manager UI. Compatible with any of
+		/// the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		SALESPEOPLE_PROPOSAL_CONTRIBUTION = 114,
 		/// <summary>Represents the <a
 		/// href='Dimension#SALESPERSON_NAME'>Dimension#SALESPERSON_NAME</a>'s contribution
 		/// to a <a href=''>Dimension#PROPOSAL_NAME</a>. <p>See <a
 		/// href='#SALESPERSON_PROPOSAL_CONTRIBUTION'>#SALESPERSON_PROPOSAL_CONTRIBUTION</a>.</p>
-		/// <p>Corresponds to "Salesperson proposal contribution" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Salesperson proposal contribution" in the Ad Manager UI.
+		/// Compatible with any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		SALESPERSON_PROPOSAL_CONTRIBUTION = 115,
 		/// <summary>Represents <a href='ProductPackage#notes'>ProductPackage#notes</a> for <a
 		/// href='Dimension#PRODUCT_PACKAGE_NAME'>Dimension#PRODUCT_PACKAGE_NAME</a>.
-		/// <p>Corresponds to "Product package notes" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Product package notes" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_PACKAGE_NOTES = 127,
 		/// <summary>Represents the products as a comma separated list of name for <a
 		/// href='Dimension#PRODUCT_PACKAGE_NAME'>Dimension#PRODUCT_PACKAGE_NAME</a>.
-		/// <p>Corresponds to "Product package items" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Product package items" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_PACKAGE_ITEMS = 128,
 		/// <summary>Represents <a href='ProductPackage#status'>ProductPackage#status</a> for <a
 		/// href='Dimension#PRODUCT_PACKAGE_NAME'>Dimension#PRODUCT_PACKAGE_NAME</a>.
-		/// <p>Corresponds to "Product package status" in the Ad Manager UI.</p>
+		/// <p>Corresponds to "Product package status" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PRODUCT_PACKAGE_STATUS = 129,
 		/// <summary>Represents <a href='Package#comments'>Package#comments</a> for <a
 		/// href='Dimension#PACKAGE_NAME'>Dimension#PACKAGE_NAME</a>. <p>Corresponds to
-		/// "Package comments" in the Ad Manager UI.</p>
+		/// "Package comments" in the Ad Manager UI. Compatible with any of the following
+		/// report types: Historical, Reach, Sales.</p>
 		/// </summary>
 		PACKAGE_COMMENTS = 130,
 		/// <summary>Represents <a href='Package#startDateTime'>Package#startDateTime</a> for
 		/// {@Dimension#PACKAGE_NAME}. <p>Corresponds to "Package start time" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Reach, Sales.</p>
 		/// </summary>
 		PACKAGE_START_DATE_TIME = 131,
 		/// <summary>Represents <a href='Package#endDateTime'>Package#endDateTime</a> for
 		/// {@Dimension#PACKAGE_NAME}. <p>Corresponds to "Package end time" in the Ad
-		/// Manager UI.</p>
+		/// Manager UI. Compatible with any of the following report types: Historical,
+		/// Reach, Sales.</p>
 		/// </summary>
 		PACKAGE_END_DATE_TIME = 132,
 		/// <summary>Represents the <a href='CmsContent#displayName'>CmsContent#displayName</a>
 		/// within the first element of <a href='Content#cmsContent'>Content#cmsContent</a>
 		/// for <a href='Dimension#CONTENT_NAME'>Dimension#CONTENT_NAME</a>. <p>Corresponds
-		/// to "Content source name" in the Ad Manager UI.</p>
+		/// to "Content source name" in the Ad Manager UI. Compatible with any of the
+		/// following report types: Historical, Reach.</p>
 		/// </summary>
 		CONTENT_CMS_NAME = 116,
 		/// <summary>Represents the <a href='CmsContent#cmsContentId'>CmsContent#cmsContentId</a>
 		/// within the first element of <a href='Content#cmsContent'>Content#cmsContent</a>
 		/// for <a href='Dimension#CONTENT_NAME'>Dimension#CONTENT_NAME</a>. <p>Corresponds
-		/// to "ID of the video in the content source" in the Ad Manager UI.</p>
+		/// to "ID of the video in the content source" in the Ad Manager UI. Compatible with
+		/// any of the following report types: Historical, Reach.</p>
 		/// </summary>
 		CONTENT_CMS_VIDEO_ID = 117,
 		/// <summary>Represents <a href='AdUnit#adUnitCode'>AdUnit#adUnitCode</a> for <a
 		/// href='Dimension#AD_UNIT_NAME'>Dimension#AD_UNIT_NAME</a>. <p>Corresponds to "Ad
-		/// unit code" in the Ad Manager UI.</p>
+		/// unit code" in the Ad Manager UI. Compatible with any of the following report
+		/// types: Historical, Future sell-through, Reach, Sales.</p>
 		/// </summary>
 		AD_UNIT_CODE = 118,
 	}
@@ -65423,7 +66022,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		}
 
 		/// <summary>Whether or not users on this team have access to all companies. If this value is
-		/// true, then <a href='#companyIds'>#companyIds</a> must be empty.
+		/// true, then an error will be thrown if an attempt is made to associate this team
+		/// with a Company.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 4)]
 		public bool hasAllCompanies {
@@ -65450,7 +66050,8 @@ namespace Google.Api.Ads.AdManager.v201905
 		}
 
 		/// <summary>Whether or not users on this team have access to all inventory. If this value is
-		/// true, then <a href='#adUnitIds'>#adUnitIds</a> must be empty.
+		/// true, then an error will be thrown if an attempt is made to associate this team
+		/// with an AdUnit.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 5)]
 		public bool hasAllInventory {
@@ -72617,7 +73218,9 @@ namespace Google.Api.Ads.AdManager.v201905
 		/// </tr> <tr> <td><code>cmsValue</code></td> <td><a
 		/// href='CmsMetadataValue#valueName'>CmsMetadataValue#valueName</a></td> </tr> <tr>
 		/// <td><code>cmsKey</code></td> <td><a
-		/// href='CmsMetadataValue#key'>CmsMetadataValue#key</a></td> </tr> <tr>
+		/// href='CmsMetadataValue#key#name'>CmsMetadataValue#key#name</a></td> </tr> <tr>
+		/// <td><code>cmsKeyId</code></td> <td><a
+		/// href='CmsMetadataValue#key#id'>CmsMetadataValue#key#id</a></td> </tr> <tr>
 		/// <td><code>keyValueMemberContent</code></td> <td>Content IDs tagged with a CMS
 		/// metadata key-value</td> </tr> </table>
 		/// </summary>
@@ -75707,9 +76310,9 @@ namespace Google.Api.Ads.AdManager.v201905
 			}
 		}
 
-		/// <summary>The type of origin forwarding used to support Akamai authentication policies.
-		/// This field is not applicable to ingest locations, and is only applicable to
-		/// delivery media locations with the <a
+		/// <summary>The type of origin forwarding used to support Akamai authentication policies for
+		/// the master playlist. This field is not applicable to ingest locations, and is
+		/// only applicable to delivery media locations with the <a
 		/// href='#securityPolicyType'>#securityPolicyType</a> set to <a
 		/// href='SecurityPolicyType#AKAMAI'>SecurityPolicyType#AKAMAI</a>. If set elsewhere
 		/// it will be reset to null.
@@ -75738,11 +76341,11 @@ namespace Google.Api.Ads.AdManager.v201905
 			}
 		}
 
-		/// <summary>The origin path prefix provided by the publisher. This field is only applicable
-		/// for delivery media locations with the value of <a
+		/// <summary>The origin path prefix provided by the publisher for the master playlist. This
+		/// field is only applicable for delivery media locations with the value of <a
 		/// href='#originForwardingType'>#originForwardingType</a> set to <a
-		/// href=''>OriginForwardingType#CONVENTIONAL</a>, and will be set to null
-		/// otherwise.
+		/// href='OriginForwardingType#CONVENTIONAL'>OriginForwardingType#CONVENTIONAL</a>,
+		/// and will be set to null otherwise.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 4)]
 		public string originPathPrefix {
@@ -78129,15 +78732,9 @@ namespace Google.Api.Ads.AdManager.v201905
 	/// <td>Status</td> <td><code>Text</code></td> <td>The status of the
 	/// <code>LineItem</code>.</td> </tr> <tr> <td>Targeting</td>
 	/// <td><code>Targeting</code></td> <td>The targeting criteria for the ad
-	/// campaign.&lt;p&gt; &lt;b&gt;This object is experimental!
-	/// &lt;code&gt;Targeting&lt;/code&gt; is an experimental, innovative, and rapidly
-	/// changing new feature for DFP. Unfortunately, being on the bleeding edge means
-	/// that we may make backwards-incompatible changes to
-	/// &lt;code&gt;Targeting&lt;/code&gt;. We will inform the community when this
-	/// feature is no longer experimental.&lt;/b&gt;</td> </tr> <tr>
-	/// <td>UnitsBought</td> <td><code>Number</code></td> <td>The total number of
-	/// impressions or clicks that will be reserved for the <code>LineItem</code>. If
-	/// the line item is of type <a
+	/// campaign.</td> </tr> <tr> <td>UnitsBought</td> <td><code>Number</code></td>
+	/// <td>The total number of impressions or clicks that will be reserved for the
+	/// <code>LineItem</code>. If the line item is of type <a
 	/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a>, then it represents
 	/// the percentage of available impressions reserved.</td> </tr> </table> <h2
 	/// id="Ad_Unit">Ad_Unit</h2> <table> <tr> <th>Column name</th> <th>Type</th>

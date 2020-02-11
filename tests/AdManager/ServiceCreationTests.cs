@@ -18,7 +18,7 @@ using System.Linq;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests;
 using Google.Api.Ads.AdManager.Lib;
-using Google.Api.Ads.AdManager.v201902;
+using Google.Api.Ads.AdManager.v202002;
 
 using NUnit.Framework;
 

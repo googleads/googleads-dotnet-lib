@@ -3142,8 +3142,11 @@ namespace Google.Api.Ads.AdManager.v201911
 			}
 		}
 
-		/// <summary>The date and time at which this content was last modified. This attribute is
-		/// read-only.
+		/// <summary>The date and time at which this content was last modified. The last modified
+		/// date time will always be updated when a <a
+		/// href='ContentBundle'>ContentBundle</a> association is changed, but will not
+		/// always be updated when a <a href='CmsMetadataValue'>CmsMetadataValue</a> value
+		/// is changed. This attribute is read-only.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 11)]
 		public DateTime lastModifiedDateTime {
@@ -3582,9 +3585,9 @@ namespace Google.Api.Ads.AdManager.v201911
 		}
 
 		/// <summary>Gets a <a href='ContentPage'>ContentPage</a> of <a href='Content'>Content</a>
-		/// objects that satisfy the given <a href='Statement#query'>Statement#query</a>.
-		/// Additionally, filters on the given value ID and key ID that the value belongs
-		/// to. The following fields are supported for filtering: <table> <tr> <th
+		/// objects that satisfy the given <a href=''>Statement#query</a>. Additionally,
+		/// filters on the given value ID and key ID that the value belongs to. <p>The
+		/// following fields are supported for filtering:</p> <table> <tr> <th
 		/// scope="col">PQL Property</th> <th scope="col">Object Property</th> </tr> <tr>
 		/// <td><code>id</code></td> <td><a href='Content#id'>Content#id</a></td> </tr> <tr>
 		/// <td><code>status</code></td> <td><a
@@ -16769,7 +16772,7 @@ namespace Google.Api.Ads.AdManager.v201911
 	/// example, if you explicitly include California, you implicitly exclude all other
 	/// states. You therefore cannot explicitly exclude Florida, because it is already
 	/// implicitly excluded. Conversely if you explicitly exclude Florida, you cannot
-	/// excplicitly include California.</li> </ul>
+	/// explicitly include California.</li> </ul>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -19320,10 +19323,7 @@ namespace Google.Api.Ads.AdManager.v201911
 	/// href='RequestPlatformTargeting'>RequestPlatformTargeting</a> is read-only and
 	/// assigned by Google for non-video line items.</li> <li><a
 	/// href='RequestPlatformTargeting'>RequestPlatformTargeting</a> is read-only and
-	/// assigned by Google for line items generated from proposal line items.</li>
-	/// <li><a href='RequestPlatformTargeting'>RequestPlatformTargeting</a> is assigned
-	/// by Google for video line items created and updated through external API requests
-	/// when the RESPECT_EXTERNAL_API_RPT_TARGETING publisher feature is off.</li> </ul>
+	/// assigned by Google for line items generated from proposal line items.</li> </ul>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -32721,37 +32721,35 @@ namespace Google.Api.Ads.AdManager.v201911
 		/// <summary>Gets a <a href='LineItemPage'>LineItemPage</a> of <a
 		/// href='LineItem'>LineItem</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
-		/// for filtering: <table> <tr> <th>PQL property</th> <th>Entity property</th> </tr>
-		/// <tr> <td><code>CostType</code></td> <td><a
-		/// href='LineItem#costType'>LineItem#costType</a></td> </tr> <tr>
+		/// for filtering: <table> <tbody> <tr> <th>PQL property</th> <th>Entity
+		/// property</th> </tr> <tr> <td><code>CostType</code></td> <td><a
+		/// href='LineItem#costType'>LineItem#costType</a> </td> </tr> <tr>
 		/// <td><code>CreationDateTime</code></td> <td><a
-		/// href='LineItem#creationDateTime'>LineItem#creationDateTime</a></td> </tr> <tr>
+		/// href='LineItem#creationDateTime'>LineItem#creationDateTime</a> </td> </tr> <tr>
 		/// <td><code>DeliveryRateType</code></td> <td><a
-		/// href='LineItem#deliveryRateType'>LineItem#deliveryRateType</a></td> </tr> <tr>
+		/// href='LineItem#deliveryRateType'>LineItem#deliveryRateType</a> </td> </tr> <tr>
 		/// <td><code>EndDateTime</code></td> <td><a
-		/// href='LineItem#endDateTime'>LineItem#endDateTime</a></td> </tr> <tr>
+		/// href='LineItem#endDateTime'>LineItem#endDateTime</a> </td> </tr> <tr>
 		/// <td><code>ExternalId</code></td> <td><a
-		/// href='LineItem#externalId'>LineItem#externalId</a></td> </tr> <tr>
-		/// <td><code>Id</code></td> <td><a href='LineItem#id'>LineItem#id</a></td> </tr>
+		/// href='LineItem#externalId'>LineItem#externalId</a> </td> </tr> <tr>
+		/// <td><code>Id</code></td> <td><a href='LineItem#id'>LineItem#id</a> </td> </tr>
 		/// <tr> <td><code>IsMissingCreatives</code></td> <td><a
-		/// href='LineItem#isMissingCreatives'>LineItem#isMissingCreatives</a></td> </tr>
+		/// href='LineItem#isMissingCreatives'>LineItem#isMissingCreatives</a> </td> </tr>
 		/// <tr> <td><code>IsSetTopBoxEnabled</code></td> <td><a
-		/// href='LineItem#isSetTopBoxEnabled'>LineItem#isSetTopBoxEnabled</a></td> </tr>
+		/// href='LineItem#isSetTopBoxEnabled'>LineItem#isSetTopBoxEnabled</a> </td> </tr>
 		/// <tr> <td><code>LastModifiedDateTime</code></td> <td><a
-		/// href='LineItem#lastModifiedDateTime'>LineItem#lastModifiedDateTime</a></td>
+		/// href='LineItem#lastModifiedDateTime'>LineItem#lastModifiedDateTime</a> </td>
 		/// </tr> <tr> <td><code>LineItemType</code></td> <td><a
-		/// href='LineItem#lineItemType'>LineItem#lineItemType</a></td> </tr> <tr>
-		/// <td><code>Name</code></td> <td><a href='LineItem#name'>LineItem#name</a></td>
+		/// href='LineItem#lineItemType'>LineItem#lineItemType</a> </td> </tr> <tr>
+		/// <td><code>Name</code></td> <td><a href='LineItem#name'>LineItem#name</a> </td>
 		/// </tr> <tr> <td><code>OrderId</code></td> <td><a
-		/// href='LineItem#orderId'>LineItem#orderId</a></td> </tr> <tr>
+		/// href='LineItem#orderId'>LineItem#orderId</a> </td> </tr> <tr>
 		/// <td><code>StartDateTime</code></td> <td><a
-		/// href='LineItem#startDateTime'>LineItem#startDateTime</a></td> </tr> <tr>
-		/// <td><code>Status</code></td> <td><a
-		/// href='LineItem#status'>LineItem#status</a></td> </tr> <tr>
-		/// <td><code>Targeting</code></td> <td><a
-		/// href='LineItem#targeting'>LineItem#targeting</a></td> </tr> <tr>
-		/// <td><code>UnitsBought</code></td> <td><a
-		/// href='LineItem#unitsBought'>LineItem#unitsBought</a></td> </tr> </table>
+		/// href='LineItem#startDateTime'>LineItem#startDateTime</a> </td> </tr> <tr>
+		/// <td><code>Status</code></td> <td><a href='LineItem#status'>LineItem#status</a>
+		/// </td> </tr> <tr> <td><code>UnitsBought</code></td> <td><a
+		/// href='LineItem#unitsBought'>LineItem#unitsBought</a> </td> </tr> </tbody>
+		/// </table>
 		/// </summary><param name='filterStatement'>a Publisher Query Language statement used to
 		/// filter a set of line items.</param>
 		/// <returns>the line items that match the given filter</returns>
@@ -33871,8 +33869,8 @@ namespace Google.Api.Ads.AdManager.v201911
 		}
 
 		/// <summary>This code is used in constructing a live stream event master playlist URL. This
-		/// attribute is read-only and is assigned by Google. As of V201911 this field is
-		/// called assetKey.
+		/// attribute is read-only and is assigned by Google.
+		/// <code>liveStreamEventCode</code> was renamed <code>assetKey</code> in v201911.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 13)]
 		public string assetKey {
@@ -45309,7 +45307,7 @@ namespace Google.Api.Ads.AdManager.v201911
 		/// <code>MIDROLL_2</code>, etc. <code>UNKNOWN_MIDROLL</code> represents a midroll,
 		/// but which specific midroll is unknown. Can be used for filtering. <p>Corresponds
 		/// to "Position of pod" in the Ad Manager UI. Compatible with any of the following
-		/// report types: Historical, Future sell-through, Reach.</p>
+		/// report types: Historical, Reach.</p>
 		/// </summary>
 		POSITION_OF_POD = 55,
 		/// <summary>Breaks down reporting data by the position of the video ad within the pod, i.e.,
@@ -48984,7 +48982,8 @@ namespace Google.Api.Ads.AdManager.v201911
 		}
 
 		/// <summary>Whether or not users on this team have access to all companies. If this value is
-		/// true, then <a href='#companyIds'>#companyIds</a> must be empty.
+		/// true, then an error will be thrown if an attempt is made to associate this team
+		/// with a Company.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 4)]
 		public bool hasAllCompanies {
@@ -49011,7 +49010,8 @@ namespace Google.Api.Ads.AdManager.v201911
 		}
 
 		/// <summary>Whether or not users on this team have access to all inventory. If this value is
-		/// true, then <a href='#adUnitIds'>#adUnitIds</a> must be empty.
+		/// true, then an error will be thrown if an attempt is made to associate this team
+		/// with an AdUnit.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 5)]
 		public bool hasAllInventory {

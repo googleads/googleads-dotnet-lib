@@ -3142,8 +3142,11 @@ namespace Google.Api.Ads.AdManager.v201908
 			}
 		}
 
-		/// <summary>The date and time at which this content was last modified. This attribute is
-		/// read-only.
+		/// <summary>The date and time at which this content was last modified. The last modified
+		/// date time will always be updated when a <a
+		/// href='ContentBundle'>ContentBundle</a> association is changed, but will not
+		/// always be updated when a <a href='CmsMetadataValue'>CmsMetadataValue</a> value
+		/// is changed. This attribute is read-only.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 11)]
 		public DateTime lastModifiedDateTime {
@@ -3582,9 +3585,9 @@ namespace Google.Api.Ads.AdManager.v201908
 		}
 
 		/// <summary>Gets a <a href='ContentPage'>ContentPage</a> of <a href='Content'>Content</a>
-		/// objects that satisfy the given <a href='Statement#query'>Statement#query</a>.
-		/// Additionally, filters on the given value ID and key ID that the value belongs
-		/// to. The following fields are supported for filtering: <table> <tr> <th
+		/// objects that satisfy the given <a href=''>Statement#query</a>. Additionally,
+		/// filters on the given value ID and key ID that the value belongs to. <p>The
+		/// following fields are supported for filtering:</p> <table> <tr> <th
 		/// scope="col">PQL Property</th> <th scope="col">Object Property</th> </tr> <tr>
 		/// <td><code>id</code></td> <td><a href='Content#id'>Content#id</a></td> </tr> <tr>
 		/// <td><code>status</code></td> <td><a
@@ -4029,8 +4032,8 @@ namespace Google.Api.Ads.AdManager.v201908
 
 	/// <summary>Represents the dimensions of an <a href='AdUnit'>AdUnit</a>, <a
 	/// href='LineItem'>LineItem</a> or <a href='Creative'>Creative</a>. <p>For
-	/// interstitial size (out-of-page), native, ignored and fluid size,
-	/// <code>Size</code> must be 1x1.</p>
+	/// interstitial size (out-of-page), native, ignored and fluid size, <a
+	/// href='Size'>Size</a> must be 1x1.</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -4104,7 +4107,7 @@ namespace Google.Api.Ads.AdManager.v201908
 			}
 		}
 
-		/// <summary>True if this size represents an aspect ratio, false otherwise.
+		/// <summary>Whether this size represents an aspect ratio.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 2)]
 		public bool isAspectRatio {
@@ -5542,18 +5545,18 @@ namespace Google.Api.Ads.AdManager.v201908
 	/// <summary>Represents the different types of policy violations that may be detected on a
 	/// given creative. <p>For more information about the various types of policy
 	/// violations, see <a
-	/// href="https://support.google.com/adwordspolicy/answer/6008942?hl=en">here</a>.</p>
+	/// href="https://support.google.com/adspolicy/answer/6008942">here</a>.</p>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "https://www.google.com/apis/ads/publisher/v201908")]
 	public enum CreativePolicyViolation {
 		/// <summary>Malware was found in the creative. <p>For more information see <a
-		/// href="https://support.google.com/adwordspolicy/answer/1308246">here</a>.</p>
+		/// href="https://support.google.com/adspolicy/answer/1308246">here</a>.</p>
 		/// </summary>
 		MALWARE_IN_CREATIVE = 0,
 		/// <summary>Malware was found in the landing page. <p>For more information see <a
-		/// href="https://support.google.com/adwordspolicy/answer/1308246">here</a>.</p>
+		/// href="https://support.google.com/adspolicy/answer/1308246">here</a>.</p>
 		/// </summary>
 		MALWARE_IN_LANDING_PAGE = 1,
 		/// <summary>The redirect url contains legally objectionable content.
@@ -5561,8 +5564,7 @@ namespace Google.Api.Ads.AdManager.v201908
 		LEGALLY_BLOCKED_REDIRECT_URL = 2,
 		/// <summary>The creative misrepresents the product or service being advertised. <p>For more
 		/// information see <a
-		/// href="https://support.google.com/adwordspolicy/answer/6020955?hl=en#355">
-		/// here</a>.</p>
+		/// href="https://support.google.com/adspolicy/answer/6020955">here</a>.</p>
 		/// </summary>
 		MISREPRESENTATION_OF_PRODUCT = 3,
 		/// <summary>The creative has been determined to be self clicking.
@@ -5570,13 +5572,11 @@ namespace Google.Api.Ads.AdManager.v201908
 		SELF_CLICKING_CREATIVE = 4,
 		/// <summary>The creative has been determined as attempting to game the Google network.
 		/// <p>For more information see <a
-		/// href="https://support.google.com/adwordspolicy/answer/6020954?hl=en#319">
-		/// here</a>.</p>
+		/// href="https://support.google.com/adspolicy/answer/6020954#319">here</a>.</p>
 		/// </summary>
 		GAMING_GOOGLE_NETWORK = 5,
 		/// <summary>The landing page for the creative uses a dynamic DNS. <p>For more information
-		/// see <a
-		/// href="https://support.google.com/adwordspolicy/answer/6020954?rd=1">here</a>.</p>
+		/// see <a href="https://support.google.com/adspolicy/answer/6020954">here</a>.</p>
 		/// </summary>
 		DYNAMIC_DNS = 6,
 		/// <summary>The creative has been determined as attempting to circumvent Google advertising
@@ -5584,16 +5584,16 @@ namespace Google.Api.Ads.AdManager.v201908
 		/// </summary>
 		CIRCUMVENTING_SYSTEMS = 13,
 		/// <summary>Phishing found in creative or landing page. <p>For more information see <a
-		/// href="https://support.google.com/adwordspolicy/answer/6020955">here</a>.</p>
+		/// href="https://support.google.com/adspolicy/answer/6020955">here</a>.</p>
 		/// </summary>
 		PHISHING = 7,
 		/// <summary>The creative prompts the user to download a file. <p>For more information see <a
-		/// href="https://support.google.com/dfp_premium/answer/7513391">here</a></p>
+		/// href="https://support.google.com/admanager/answer/7513391">here</a></p>
 		/// </summary>
 		DOWNLOAD_PROMPT_IN_CREATIVE = 9,
 		/// <summary>The creative sets an unauthorized cookie on a Google domain. <p>For more
 		/// information see <a
-		/// href="https://support.google.com/dfp_premium/answer/7513391">here</a></p>
+		/// href="https://support.google.com/admanager/answer/7513391">here</a></p>
 		/// </summary>
 		UNAUTHORIZED_COOKIE_DETECTED = 10,
 		/// <summary>The creative has been temporarily paused while we investigate.
@@ -16772,7 +16772,7 @@ namespace Google.Api.Ads.AdManager.v201908
 	/// example, if you explicitly include California, you implicitly exclude all other
 	/// states. You therefore cannot explicitly exclude Florida, because it is already
 	/// implicitly excluded. Conversely if you explicitly exclude Florida, you cannot
-	/// excplicitly include California.</li> </ul>
+	/// explicitly include California.</li> </ul>
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -29651,16 +29651,12 @@ namespace Google.Api.Ads.AdManager.v201908
 			return base.Channel.getAdUnitSizesByStatement(request);
 		}
 
-		/// <summary>Gets a set of <a href='AdUnitSize'>AdUnitSize</a> objects that satisfy the given
-		/// <a href='Statement#query'>Statement#query</a>. The following fields are
-		/// supported for filtering: <table> <tr> <th scope="col">PQL Property</th> <th
-		/// scope="col">Object Property</th> </tr> <tr> <td><code>targetPlatform</code></td>
-		/// <td><a href='TargetPlatform'>TargetPlatform</a></td> </tr> </table> An exception
-		/// will be thrown for queries with unsupported fields. Paging is not supported, as
-		/// aren't the LIMIT and OFFSET PQL keywords. Only "=" operator is supported.
-		/// </summary><param name='filterStatement'>a Publisher Query Language statement used to
-		/// filter a set of ad unit sizes</param>
-		/// <returns>the ad unit sizes that match the given filter</returns>
+		/// <summary>Returns a set of all relevant <a href='AdUnitSize'>AdUnitSize</a> objects.
+		/// <p>The given <a href='Statement'>Statement</a> is currently ignored but may be
+		/// honored in future versions. </p>
+		/// </summary><param name='filterStatement'>currently ignored but may be honored in future
+		/// versions</param>
+		/// <returns>the ad unit sizes</returns>
 		public virtual Google.Api.Ads.AdManager.v201908.AdUnitSize[] getAdUnitSizesByStatement(Google.Api.Ads.AdManager.v201908.Statement filterStatement) {
 			Wrappers.InventoryService.getAdUnitSizesByStatementRequest inValue = new Wrappers.InventoryService.getAdUnitSizesByStatementRequest();
 			inValue.filterStatement = filterStatement;
@@ -32679,37 +32675,35 @@ namespace Google.Api.Ads.AdManager.v201908
 		/// <summary>Gets a <a href='LineItemPage'>LineItemPage</a> of <a
 		/// href='LineItem'>LineItem</a> objects that satisfy the given <a
 		/// href='Statement#query'>Statement#query</a>. The following fields are supported
-		/// for filtering: <table> <tr> <th>PQL property</th> <th>Entity property</th> </tr>
-		/// <tr> <td><code>CostType</code></td> <td><a
-		/// href='LineItem#costType'>LineItem#costType</a></td> </tr> <tr>
+		/// for filtering: <table> <tbody> <tr> <th>PQL property</th> <th>Entity
+		/// property</th> </tr> <tr> <td><code>CostType</code></td> <td><a
+		/// href='LineItem#costType'>LineItem#costType</a> </td> </tr> <tr>
 		/// <td><code>CreationDateTime</code></td> <td><a
-		/// href='LineItem#creationDateTime'>LineItem#creationDateTime</a></td> </tr> <tr>
+		/// href='LineItem#creationDateTime'>LineItem#creationDateTime</a> </td> </tr> <tr>
 		/// <td><code>DeliveryRateType</code></td> <td><a
-		/// href='LineItem#deliveryRateType'>LineItem#deliveryRateType</a></td> </tr> <tr>
+		/// href='LineItem#deliveryRateType'>LineItem#deliveryRateType</a> </td> </tr> <tr>
 		/// <td><code>EndDateTime</code></td> <td><a
-		/// href='LineItem#endDateTime'>LineItem#endDateTime</a></td> </tr> <tr>
+		/// href='LineItem#endDateTime'>LineItem#endDateTime</a> </td> </tr> <tr>
 		/// <td><code>ExternalId</code></td> <td><a
-		/// href='LineItem#externalId'>LineItem#externalId</a></td> </tr> <tr>
-		/// <td><code>Id</code></td> <td><a href='LineItem#id'>LineItem#id</a></td> </tr>
+		/// href='LineItem#externalId'>LineItem#externalId</a> </td> </tr> <tr>
+		/// <td><code>Id</code></td> <td><a href='LineItem#id'>LineItem#id</a> </td> </tr>
 		/// <tr> <td><code>IsMissingCreatives</code></td> <td><a
-		/// href='LineItem#isMissingCreatives'>LineItem#isMissingCreatives</a></td> </tr>
+		/// href='LineItem#isMissingCreatives'>LineItem#isMissingCreatives</a> </td> </tr>
 		/// <tr> <td><code>IsSetTopBoxEnabled</code></td> <td><a
-		/// href='LineItem#isSetTopBoxEnabled'>LineItem#isSetTopBoxEnabled</a></td> </tr>
+		/// href='LineItem#isSetTopBoxEnabled'>LineItem#isSetTopBoxEnabled</a> </td> </tr>
 		/// <tr> <td><code>LastModifiedDateTime</code></td> <td><a
-		/// href='LineItem#lastModifiedDateTime'>LineItem#lastModifiedDateTime</a></td>
+		/// href='LineItem#lastModifiedDateTime'>LineItem#lastModifiedDateTime</a> </td>
 		/// </tr> <tr> <td><code>LineItemType</code></td> <td><a
-		/// href='LineItem#lineItemType'>LineItem#lineItemType</a></td> </tr> <tr>
-		/// <td><code>Name</code></td> <td><a href='LineItem#name'>LineItem#name</a></td>
+		/// href='LineItem#lineItemType'>LineItem#lineItemType</a> </td> </tr> <tr>
+		/// <td><code>Name</code></td> <td><a href='LineItem#name'>LineItem#name</a> </td>
 		/// </tr> <tr> <td><code>OrderId</code></td> <td><a
-		/// href='LineItem#orderId'>LineItem#orderId</a></td> </tr> <tr>
+		/// href='LineItem#orderId'>LineItem#orderId</a> </td> </tr> <tr>
 		/// <td><code>StartDateTime</code></td> <td><a
-		/// href='LineItem#startDateTime'>LineItem#startDateTime</a></td> </tr> <tr>
-		/// <td><code>Status</code></td> <td><a
-		/// href='LineItem#status'>LineItem#status</a></td> </tr> <tr>
-		/// <td><code>Targeting</code></td> <td><a
-		/// href='LineItem#targeting'>LineItem#targeting</a></td> </tr> <tr>
-		/// <td><code>UnitsBought</code></td> <td><a
-		/// href='LineItem#unitsBought'>LineItem#unitsBought</a></td> </tr> </table>
+		/// href='LineItem#startDateTime'>LineItem#startDateTime</a> </td> </tr> <tr>
+		/// <td><code>Status</code></td> <td><a href='LineItem#status'>LineItem#status</a>
+		/// </td> </tr> <tr> <td><code>UnitsBought</code></td> <td><a
+		/// href='LineItem#unitsBought'>LineItem#unitsBought</a> </td> </tr> </tbody>
+		/// </table>
 		/// </summary><param name='filterStatement'>a Publisher Query Language statement used to
 		/// filter a set of line items.</param>
 		/// <returns>the line items that match the given filter</returns>
@@ -33830,6 +33824,7 @@ namespace Google.Api.Ads.AdManager.v201908
 
 		/// <summary>This code is used in constructing a live stream event master playlist URL. This
 		/// attribute is read-only and is assigned by Google.
+		/// <code>liveStreamEventCode</code> was renamed <code>assetKey</code> in v201911.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 13)]
 		public string liveStreamEventCode {
@@ -41599,8 +41594,9 @@ namespace Google.Api.Ads.AdManager.v201908
 
 
 	/// <summary>The action used to request acceptance from the buyer for the <a
-	/// href='Proposal'>Proposal</a> through Marketplace. This action is only applicable
-	/// for programmatic proposals.
+	/// href='Proposal'>Proposal</a> through Marketplace. This action does check
+	/// forecasting unless <a href='#allowOverbook'>#allowOverbook</a> is set to
+	/// <code>true</code>. This action is only applicable for programmatic proposals.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
@@ -43599,15 +43595,9 @@ namespace Google.Api.Ads.AdManager.v201908
 	/// <td>Status</td> <td><code>Text</code></td> <td>The status of the
 	/// <code>LineItem</code>.</td> </tr> <tr> <td>Targeting</td>
 	/// <td><code>Targeting</code></td> <td>The targeting criteria for the ad
-	/// campaign.&lt;p&gt; &lt;b&gt;This object is experimental!
-	/// &lt;code&gt;Targeting&lt;/code&gt; is an experimental, innovative, and rapidly
-	/// changing new feature for DFP. Unfortunately, being on the bleeding edge means
-	/// that we may make backwards-incompatible changes to
-	/// &lt;code&gt;Targeting&lt;/code&gt;. We will inform the community when this
-	/// feature is no longer experimental.&lt;/b&gt;</td> </tr> <tr>
-	/// <td>UnitsBought</td> <td><code>Number</code></td> <td>The total number of
-	/// impressions or clicks that will be reserved for the <code>LineItem</code>. If
-	/// the line item is of type <a
+	/// campaign.</td> </tr> <tr> <td>UnitsBought</td> <td><code>Number</code></td>
+	/// <td>The total number of impressions or clicks that will be reserved for the
+	/// <code>LineItem</code>. If the line item is of type <a
 	/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a>, then it represents
 	/// the percentage of available impressions reserved.</td> </tr> </table> <h2
 	/// id="Ad_Unit">Ad_Unit</h2> <table> <tr> <th>Column name</th> <th>Type</th>
@@ -43840,6 +43830,8 @@ namespace Google.Api.Ads.AdManager.v201908
 	}
 
 
+	/// <summary>The reasons for report error.
+	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.6.1055.0")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ReportError.Reason", Namespace = "https://www.google.com/apis/ads/publisher/v201908")]
@@ -43904,13 +43896,15 @@ namespace Google.Api.Ads.AdManager.v201908
 		/// incompatibilities and requirements between different report properties. Some
 		/// reasons for constraint violations include: <ul> <li>Not all <a
 		/// href='Column'>Column</a> objects requested are supported for the given set of <a
-		/// href='Dimension'>Dimension</a> objects.</li> <li>The report's date range is not
+		/// href=''>Dimension</a> objects.</li> <li>The report's date range is not
 		/// compatible with the given set of <a href='Column'>Column</a> objects.</li>
 		/// <li>The report's <a href='TimeZoneType'>TimeZoneType</a> is not compatible with
-		/// the given set of <a href='Column'>Column</a> and <a
-		/// href='Dimension'>Dimension</a> objects (version 201802 and later).</li> <li>The
-		/// report's currency is not compatible with the given set of <a
-		/// href='Column'>Column</a> objects (version 201802 and later).</li> </ul>
+		/// the given set of <a href=''>Column</a> and <a href='Dimension'>Dimension</a>
+		/// objects (version 201802 and later).</li> <li>The report's currency is not
+		/// compatible with the given set of <a href='Column'>Column</a> objects.</li> </ul>
+		/// For versions 201911 and later, this is only returned when some or all of the <a
+		/// href='Column'>Column</a> objects are not supported for the requested <a
+		/// href='Dimension'>Dimension</a> objects.
 		/// </summary>
 		REPORT_CONSTRAINT_VIOLATION = 27,
 		/// <summary>Failed to store/cache a report.
@@ -45184,7 +45178,7 @@ namespace Google.Api.Ads.AdManager.v201908
 		/// <code>MIDROLL_2</code>, etc. <code>UNKNOWN_MIDROLL</code> represents a midroll,
 		/// but which specific midroll is unknown. Can be used for filtering. <p>Corresponds
 		/// to "Position of pod" in the Ad Manager UI. Compatible with any of the following
-		/// report types: Historical, Future sell-through, Reach.</p>
+		/// report types: Historical, Reach.</p>
 		/// </summary>
 		POSITION_OF_POD = 55,
 		/// <summary>Breaks down reporting data by the position of the video ad within the pod, i.e.,
@@ -45692,7 +45686,7 @@ namespace Google.Api.Ads.AdManager.v201908
 		/// </summary>
 		AD_EXCHANGE_COUNTRY_NAME = 117,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Manager ad unit ID.
-		/// <p>Compatible with any of the following report types: Historical, Reach.</p>
+		/// <p>Compatible with the "Ad Exchange historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_DFP_AD_UNIT_ID = 185,
 		/// <summary>Breaks down mapped Ad Exchange web property data by Ad Manager ad unit.
@@ -45933,7 +45927,7 @@ namespace Google.Api.Ads.AdManager.v201908
 		/// "Ad Connector" report type.</p>
 		/// </summary>
 		DP_DEAL_ID = 224,
-		/// <summary>Breaks down reporting data by mobile app ID.. <p>Corresponds to "App ID" in the
+		/// <summary>Breaks down reporting data by mobile app ID. <p>Corresponds to "App ID" in the
 		/// Ad Manager UI. Compatible with the "Ad Connector" report type.</p>
 		/// </summary>
 		DP_APP_ID = 225,
@@ -46614,20 +46608,17 @@ namespace Google.Api.Ads.AdManager.v201908
 		/// lift" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
 		/// </summary>
 		OPTIMIZATION_ECPM_LIFT = 128,
-		/// <summary>The average number of ads displayed to each unique visitor. <p>Corresponds to
-		/// "Average impressions / visitor" in the Ad Manager UI. Compatible with the
-		/// "Reach" report type.</p>
+		/// <summary>The average number of ads displayed to each unique visitor. <p>Compatible with
+		/// the "Reach" report type.</p>
 		/// </summary>
 		REACH_FREQUENCY = 129,
-		/// <summary>The average revenue earned per unique visitor. <p>Corresponds to "Average
-		/// revenue / visitor" in the Ad Manager UI. Compatible with the "Reach" report
-		/// type.</p>
+		/// <summary>The average revenue earned per unique visitor. <p>Compatible with the "Reach"
+		/// report type.</p>
 		/// </summary>
 		REACH_AVERAGE_REVENUE = 130,
 		/// <summary>The number of unique visitors. <p>To maintain user privacy, "Unique visitors"
 		/// totaling 0-99 won't be displayed in the report and will appear empty.</p>
-		/// <p>Corresponds to "Unique visitors" in the Ad Manager UI. Compatible with the
-		/// "Reach" report type.</p>
+		/// <p>Compatible with the "Reach" report type.</p>
 		/// </summary>
 		REACH = 131,
 		/// <summary>The number of people in the given demographic bucket. <p>Corresponds to
@@ -50275,7 +50266,8 @@ namespace Google.Api.Ads.AdManager.v201908
 		}
 
 		/// <summary>Whether or not users on this team have access to all companies. If this value is
-		/// true, then <a href='#companyIds'>#companyIds</a> must be empty.
+		/// true, then an error will be thrown if an attempt is made to associate this team
+		/// with a Company.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 4)]
 		public bool hasAllCompanies {
@@ -50302,7 +50294,8 @@ namespace Google.Api.Ads.AdManager.v201908
 		}
 
 		/// <summary>Whether or not users on this team have access to all inventory. If this value is
-		/// true, then <a href='#adUnitIds'>#adUnitIds</a> must be empty.
+		/// true, then an error will be thrown if an attempt is made to associate this team
+		/// with an AdUnit.
 		/// </summary>
 		[System.Xml.Serialization.XmlElementAttribute(Order = 5)]
 		public bool hasAllInventory {
@@ -54063,7 +54056,9 @@ namespace Google.Api.Ads.AdManager.v201908
 		/// </tr> <tr> <td><code>cmsValue</code></td> <td><a
 		/// href='CmsMetadataValue#valueName'>CmsMetadataValue#valueName</a></td> </tr> <tr>
 		/// <td><code>cmsKey</code></td> <td><a
-		/// href='CmsMetadataValue#key'>CmsMetadataValue#key</a></td> </tr> <tr>
+		/// href='CmsMetadataValue#key#name'>CmsMetadataValue#key#name</a></td> </tr> <tr>
+		/// <td><code>cmsKeyId</code></td> <td><a
+		/// href='CmsMetadataValue#key#id'>CmsMetadataValue#key#id</a></td> </tr> <tr>
 		/// <td><code>keyValueMemberContent</code></td> <td>Content IDs tagged with a CMS
 		/// metadata key-value</td> </tr> </table>
 		/// </summary>
@@ -61927,15 +61922,9 @@ namespace Google.Api.Ads.AdManager.v201908
 	/// <td>Status</td> <td><code>Text</code></td> <td>The status of the
 	/// <code>LineItem</code>.</td> </tr> <tr> <td>Targeting</td>
 	/// <td><code>Targeting</code></td> <td>The targeting criteria for the ad
-	/// campaign.&lt;p&gt; &lt;b&gt;This object is experimental!
-	/// &lt;code&gt;Targeting&lt;/code&gt; is an experimental, innovative, and rapidly
-	/// changing new feature for DFP. Unfortunately, being on the bleeding edge means
-	/// that we may make backwards-incompatible changes to
-	/// &lt;code&gt;Targeting&lt;/code&gt;. We will inform the community when this
-	/// feature is no longer experimental.&lt;/b&gt;</td> </tr> <tr>
-	/// <td>UnitsBought</td> <td><code>Number</code></td> <td>The total number of
-	/// impressions or clicks that will be reserved for the <code>LineItem</code>. If
-	/// the line item is of type <a
+	/// campaign.</td> </tr> <tr> <td>UnitsBought</td> <td><code>Number</code></td>
+	/// <td>The total number of impressions or clicks that will be reserved for the
+	/// <code>LineItem</code>. If the line item is of type <a
 	/// href='LineItemType#SPONSORSHIP'>LineItemType#SPONSORSHIP</a>, then it represents
 	/// the percentage of available impressions reserved.</td> </tr> </table> <h2
 	/// id="Ad_Unit">Ad_Unit</h2> <table> <tr> <th>Column name</th> <th>Type</th>
