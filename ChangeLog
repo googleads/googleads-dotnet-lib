@@ -1,3 +1,14 @@
+24.10.1
+======
+ AdWords:
+   -
+
+ Ad Manager:
+   - Regenerated v202002 bindings to correct missing ReportService metrics.
+
+ Common:
+   -
+
 24.10.0
 ======
  AdWords:

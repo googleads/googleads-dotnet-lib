@@ -1,4 +1,5 @@
 #pragma warning disable 1591
+#pragma warning disable 1570
 namespace Google.Api.Ads.AdManager.v202002
 {
 	using System.ComponentModel;
@@ -47325,6 +47326,16 @@ namespace Google.Api.Ads.AdManager.v202002
 		/// "Historical" report type.</p>
 		/// </summary>
 		AD_EXCHANGE_RESPONSES_SERVED = 514,
+		/// <summary>The total number of video opportunities. <p>Corresponds to "Total Video
+		/// Opportunities" in the Ad Manager UI. Compatible with the "Historical" report
+		/// type.</p>
+		/// </summary>
+		TOTAL_VIDEO_OPPORTUNITIES = 571,
+		/// <summary>The total number of video capped opportunities. <p>Corresponds to "Total Video
+		/// Capped Opportunities" in the Ad Manager UI. Compatible with the "Historical"
+		/// report type.</p>
+		/// </summary>
+		TOTAL_VIDEO_CAPPED_OPPORTUNITIES = 572,
 		/// <summary>The total number of missed impressions due to the ad servers' inability to find
 		/// ads to serve, including inventory-level dynamic allocation. <p>Corresponds to
 		/// "Unfilled impressions" in the Ad Manager UI. Compatible with the "Historical"
@@ -64522,4 +64533,5 @@ namespace Google.Api.Ads.AdManager.v202002
 		System.Threading.Tasks.Task<Google.Api.Ads.AdManager.v202002.ContentBundle[]> updateContentBundlesAsync(Google.Api.Ads.AdManager.v202002.ContentBundle[] contentBundles);
 	}
 }
+#pragma warning restore 1570
 #pragma warning restore 1591

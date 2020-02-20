@@ -1,4 +1,5 @@
 #pragma warning disable 1591
+#pragma warning disable 1570
 namespace Google.Api.Ads.AdManager.v201908
 {
 	using System.ComponentModel;
@@ -62334,4 +62335,5 @@ namespace Google.Api.Ads.AdManager.v201908
 		System.Threading.Tasks.Task<Google.Api.Ads.AdManager.v201908.ContentBundle[]> updateContentBundlesAsync(Google.Api.Ads.AdManager.v201908.ContentBundle[] contentBundles);
 	}
 }
+#pragma warning restore 1570
 #pragma warning restore 1591
