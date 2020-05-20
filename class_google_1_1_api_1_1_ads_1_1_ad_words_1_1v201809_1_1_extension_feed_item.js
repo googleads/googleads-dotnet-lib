@@ -1,0 +1,25 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item_1_1_selectable_fields" ],
+    [ "adGroupTargeting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#aeaab49a89eaf917b68132b5df1571329", null ],
+    [ "campaignTargeting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#a6d2c55d6c264756836d5793036db86d2", null ],
+    [ "devicePreference", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#a72796c3a169663a6b887a87f53f3078d", null ],
+    [ "endTime", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#ae91ae0914441b2ee1a018bfd3035e469", null ],
+    [ "ExtensionFeedItemType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#acff3f75dae26a79c500face459800eaf", null ],
+    [ "feedId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#ad498a6d98d69dd974ba8fed333967712", null ],
+    [ "feedIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#ae7e47204af190eeca91aad08a7a5d4eb", null ],
+    [ "feedItemId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#a70a6ea4022cb830198a6241f75b10261", null ],
+    [ "feedItemIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#af70739ecc43d53e808d8aabf8af7f62e", null ],
+    [ "feedType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#a108be0491f4e05565263d8b9337ab42f", null ],
+    [ "feedTypeSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#a16639619b614973a4cfef863ed14c879", null ],
+    [ "geoTargeting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#aed9e40e4681660936148ab84b230b984", null ],
+    [ "geoTargetingRestriction", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#a42388c8eb6c093bab3f684cf76e0f1b7", null ],
+    [ "keywordTargeting", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#a9545dfa55f44318bcd2a0a00451e4237", null ],
+    [ "policySummaries", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#ae444e5e7720f1e66561f3776692de42d", null ],
+    [ "scheduling", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#aa313a677d70b2bd9ee653942cbe44059", null ],
+    [ "startTime", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#af483423fdd6b0db1243b09bdea70afa6", null ],
+    [ "status", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#af249f154bd5e4efe786d6a6ecd7e8c73", null ],
+    [ "statusSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_extension_feed_item.html#afb7548daa8071eaa9c4c856a11b5826a", null ]
+];

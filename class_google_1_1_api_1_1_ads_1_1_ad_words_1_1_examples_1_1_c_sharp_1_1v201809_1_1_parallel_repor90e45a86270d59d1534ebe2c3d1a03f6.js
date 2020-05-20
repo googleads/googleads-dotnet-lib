@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_parallel_repor90e45a86270d59d1534ebe2c3d1a03f6 =
+[
+    [ "CustomerId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_parallel_repor90e45a86270d59d1534ebe2c3d1a03f6.html#a25c49384a9e972fa3865cedda035383b", null ],
+    [ "Exception", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_parallel_repor90e45a86270d59d1534ebe2c3d1a03f6.html#a24d3bfda8be83410dbe4c85d99959477", null ]
+];

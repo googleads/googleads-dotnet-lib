@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications =
+[
+    [ "OAuth2ProviderForApplications", "class_google_1_1_api_1_1_ads_1_1_common_1_1_lib_1_1_o_auth2_provider_for_applications.html#af7ecca0a5f6addea8e98ac7addb2d652", null ]
+];

@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_location_criterion_service_1_1query_request =
+[
+    [ "queryRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_location_criterion_service_1_1query_request.html#a353b925b3342346d75df8ac2632ce66c", null ],
+    [ "queryRequest", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_location_criterion_service_1_1query_request.html#a068f0e9b9dd8e597d2dbb890483cb9e1", null ],
+    [ "query", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_location_criterion_service_1_1query_request.html#a04557693d2dbfe0bc56a9df34ce33bda", null ]
+];

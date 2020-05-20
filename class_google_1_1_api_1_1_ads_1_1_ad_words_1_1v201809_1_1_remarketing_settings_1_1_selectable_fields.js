@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_remarketing_settings_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_remarketing_settings_1_1_selectable_fields.html#a69c2d4518e2a6aed568f58b7eaba4cbd", null ]
+];

@@ -1,0 +1,25 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial_1_1_selectable_fields" ],
+    [ "baseCampaignId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#ace742e623645b091cb099e6e0c960390", null ],
+    [ "baseCampaignIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#a17ef550e704ca277dbe913aceddd31f1", null ],
+    [ "budgetId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#ac1e0236d2d2fd7fb5f72f0699e50b7c1", null ],
+    [ "budgetIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#ab90811e366abc0925040ecfd7a27cff3", null ],
+    [ "draftId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#a9bc72de5b31f2cf9e5dbbdec144a922f", null ],
+    [ "draftIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#ad5ea5bd0dc2659bb5bf57bfac305a911", null ],
+    [ "endDate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#a3b77a59e9bbdf04b85843c7f2c2cdebf", null ],
+    [ "id", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#a252bd77cd2545b443ae69c261df6d1a7", null ],
+    [ "idSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#add83ac3b6fb897bccc8a985be44df9b0", null ],
+    [ "name", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#abd95cbc983dc428bd451fa11e0a0bf13", null ],
+    [ "startDate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#ac26652cf65b58f86bf450b3e009cc386", null ],
+    [ "status", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#a6295c6eb54c21621bfd0d6afe6b596ce", null ],
+    [ "statusSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#a9531216a20d71955786306cb680796dd", null ],
+    [ "trafficSplitPercent", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#acaff382c0ee530fce3c226667bde00c2", null ],
+    [ "trafficSplitPercentSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#a4ed5a08f7c703b018bd3af836685990a", null ],
+    [ "trafficSplitType", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#a1a315eca43cc40c2022450c287f23347", null ],
+    [ "trafficSplitTypeSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#a0668efdef5f93c493837f2dca14c34f1", null ],
+    [ "trialCampaignId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#ad16333f25063b6d5a104b29247523b16", null ],
+    [ "trialCampaignIdSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_trial.html#aee1335c73fd9927015a26392ac9a440d", null ]
+];

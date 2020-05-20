@@ -1,0 +1,5 @@
+var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201911_1_1_targeting_preset_service_interface =
+[
+    [ "getTargetingPresetsByStatement", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201911_1_1_targeting_preset_service_interface.html#abf2e2bb991af6a8df6e22389ef9f8c71", null ],
+    [ "getTargetingPresetsByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201911_1_1_targeting_preset_service_interface.html#a9974a01dd846a737b229f334ec0948f4", null ]
+];

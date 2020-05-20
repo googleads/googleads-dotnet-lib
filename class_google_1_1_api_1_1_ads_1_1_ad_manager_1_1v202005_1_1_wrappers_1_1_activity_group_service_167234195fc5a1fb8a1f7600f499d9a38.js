@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202005_1_1_wrappers_1_1_activity_group_service_167234195fc5a1fb8a1f7600f499d9a38 =
+[
+    [ "createActivityGroupsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202005_1_1_wrappers_1_1_activity_group_service_167234195fc5a1fb8a1f7600f499d9a38.html#aa6b614b2a68c8d09b52cf121841053b6", null ],
+    [ "createActivityGroupsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202005_1_1_wrappers_1_1_activity_group_service_167234195fc5a1fb8a1f7600f499d9a38.html#aae0ecb743a721a8a24264c04d105ddf2", null ],
+    [ "activityGroups", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202005_1_1_wrappers_1_1_activity_group_service_167234195fc5a1fb8a1f7600f499d9a38.html#ae8cafe6c9a26fa2a321d77856ca21aed", null ]
+];

@@ -1,0 +1,7 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_video_asset =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_video_asset_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_video_asset_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_video_asset_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_video_asset_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_video_asset_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_video_asset_1_1_selectable_fields" ],
+    [ "youTubeVideoId", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_you_tube_video_asset.html#a06be5c4d85aaf6c2e3b5a20446e3def1", null ]
+];

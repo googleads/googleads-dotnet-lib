@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202005_1_1_exclude_content_from_content_bundle =
+[
+    [ "contentStatement", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202005_1_1_exclude_content_from_content_bundle.html#a52216b9ecae9b7b00a40554c501075d8", null ]
+];

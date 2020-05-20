@@ -1,0 +1,8 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_explorer_auto_optimizer_setting =
+[
+    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_explorer_auto_optimizer_setting_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_explorer_auto_optimizer_setting_1_1_fields" ],
+    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_explorer_auto_optimizer_setting_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_explorer_auto_optimizer_setting_1_1_filterable_fields" ],
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_explorer_auto_optimizer_setting_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_explorer_auto_optimizer_setting_1_1_selectable_fields" ],
+    [ "optIn", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_explorer_auto_optimizer_setting.html#aabed088ae982c05487ad2fb8b8eda5aa", null ],
+    [ "optInSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_explorer_auto_optimizer_setting.html#a8380ec02067218116649eeb05aef06df", null ]
+];

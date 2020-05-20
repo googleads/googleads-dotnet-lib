@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_long_comparison_operation_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_long_comparison_operation_1_1_selectable_fields.html#ac20db65ee0273594bba3de8f9f6e7b07", null ]
+];

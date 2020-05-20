@@ -1,0 +1,5 @@
+var namespace_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth =
+[
+    [ "AdsOAuthProviderImpl", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_ads_o_auth_provider_impl" ],
+    [ "OAuthClientMessageInspector", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_o_auth_client_message_inspector.html", "class_google_1_1_api_1_1_ads_1_1_common_1_1_o_auth_1_1_o_auth_client_message_inspector" ]
+];

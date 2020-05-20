@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_authorization_error_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_authorization_error_1_1_selectable_fields.html#aef5d1f9fa3d38f6de6b60e46bf8b87c9", null ]
+];

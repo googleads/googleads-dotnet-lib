@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point_1_1_selectable_fields =
+[
+    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_bid_landscape_landscape_point_1_1_selectable_fields.html#a1c2f5cf6b714a9daa6400011159dfcad", null ]
+];

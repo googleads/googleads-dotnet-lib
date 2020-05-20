@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1g1dd26aadec5faab1adf9e1927afe6012 =
+[
+    [ "getMobileAppCategoryCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1g1dd26aadec5faab1adf9e1927afe6012.html#ac389e1166348e983686237f3485a6ba9", null ],
+    [ "getMobileAppCategoryCriterionResponse", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1g1dd26aadec5faab1adf9e1927afe6012.html#a99699e167f0fadabe1a86afdd611be4e", null ],
+    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_wrappers_1_1_constant_data_service_1_1g1dd26aadec5faab1adf9e1927afe6012.html#a693e70f58290d439e53c6db304e53252", null ]
+];
