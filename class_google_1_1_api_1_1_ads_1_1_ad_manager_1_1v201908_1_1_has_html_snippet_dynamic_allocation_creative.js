@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201908_1_1_has_html_snippet_dynamic_allocation_creative =
-[
-    [ "codeSnippet", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201908_1_1_has_html_snippet_dynamic_allocation_creative.html#a843ca79231a0200b4b533f28e4c90f88", null ]
-];

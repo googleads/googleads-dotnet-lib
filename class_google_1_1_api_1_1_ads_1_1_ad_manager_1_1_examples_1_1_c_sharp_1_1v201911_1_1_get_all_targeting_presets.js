@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201911_1_1_get_all_targeting_presets =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201911_1_1_get_all_targeting_presets.html#a9f98baa35be38e7acdd42238972917b6", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201911_1_1_get_all_targeting_presets.html#a7aa61b0b5e698ab24c75b2c32581b1a1", null ]
-];

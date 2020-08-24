@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_wrappers_1_1_cdn_configuration_servic8a2ff778b66b2fa515b10fcf30283554 =
+[
+    [ "createCdnConfigurationsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_wrappers_1_1_cdn_configuration_servic8a2ff778b66b2fa515b10fcf30283554.html#af909fb042823f7352ec3df9277c46449", null ],
+    [ "createCdnConfigurationsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_wrappers_1_1_cdn_configuration_servic8a2ff778b66b2fa515b10fcf30283554.html#a008e380216947497e3f5782e94358840", null ],
+    [ "cdnConfigurations", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_wrappers_1_1_cdn_configuration_servic8a2ff778b66b2fa515b10fcf30283554.html#ac6dd4c171badb34b33ead7e6e46a52e3", null ]
+];

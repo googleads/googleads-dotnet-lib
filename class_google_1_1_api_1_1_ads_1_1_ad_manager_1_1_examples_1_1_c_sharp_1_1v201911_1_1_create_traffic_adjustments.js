@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201911_1_1_create_traffic_adjustments =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201911_1_1_create_traffic_adjustments.html#a654227f623463cfffbfffcb3bf14f2df", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201911_1_1_create_traffic_adjustments.html#a2ab9b7af3c660e0875a6612ee979637e", null ]
-];

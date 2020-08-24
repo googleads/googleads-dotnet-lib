@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_wrappers_1_1_activity_service_1_1update_activities_request =
+[
+    [ "updateActivitiesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_wrappers_1_1_activity_service_1_1update_activities_request.html#ac76d242d0b61dd1fcd81cda54700224a", null ],
+    [ "updateActivitiesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_wrappers_1_1_activity_service_1_1update_activities_request.html#af86695cb988ce946d4bb55ca553bbd51", null ],
+    [ "activities", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_wrappers_1_1_activity_service_1_1update_activities_request.html#a9b0589f0f4607919e8eb3dc1d070d90c", null ]
+];

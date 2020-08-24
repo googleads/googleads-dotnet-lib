@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201911_1_1_de_activate_creative_wrappers =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201911_1_1_de_activate_creative_wrappers.html#a865b6e5ba3d783a0cd3786cc2a12e301", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v201911_1_1_de_activate_creative_wrappers.html#a92ce8653a314d5650c8e30c22ea078cd", null ]
-];

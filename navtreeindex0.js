@@ -1,7 +1,6 @@
 var NAVTREEINDEX0 =
 {
 "_accept_service_link_8cs.html":[2,0,0,0,0,1,0,1,0,0],
-"_activate_cms_metadata_values_8cs.html":[2,0,0,0,0,0,0,3,5,0],
 "_ad_manager_2_c_sharp_2_o_auth_2_console_example_8cs.html":[2,0,0,0,0,0,0,0,1],
 "_ad_manager_2_c_sharp_2_o_auth_2_default_8aspx_8cs.html":[2,0,0,0,0,0,0,0,2],
 "_ad_manager_2_c_sharp_2_o_auth_2_default_8aspx_8designer_8cs.html":[2,0,0,0,0,0,0,0,3],
@@ -12,10 +11,10 @@ var NAVTREEINDEX0 =
 "_ad_manager_2_c_sharp_2_program_8cs.html#a789a02b553608152c3e9edfe1f0124ea":[2,0,0,0,0,0,0,4,1],
 "_ad_manager_2_headers_2_request_header_8cs.html":[2,0,0,0,1,0,0,1],
 "_ad_manager_2_headers_2_response_header_8cs.html":[2,0,0,0,1,0,0,2],
-"_ad_manager_2_util_2v201908_2_report_utilities_8cs.html":[2,0,0,0,1,0,2,0,2],
-"_ad_manager_2_util_2v201911_2_report_utilities_8cs.html":[2,0,0,0,1,0,2,1,2],
-"_ad_manager_2_util_2v202002_2_report_utilities_8cs.html":[2,0,0,0,1,0,2,2,2],
-"_ad_manager_2_util_2v202005_2_report_utilities_8cs.html":[2,0,0,0,1,0,2,3,2],
+"_ad_manager_2_util_2v201911_2_report_utilities_8cs.html":[2,0,0,0,1,0,2,0,2],
+"_ad_manager_2_util_2v202002_2_report_utilities_8cs.html":[2,0,0,0,1,0,2,1,2],
+"_ad_manager_2_util_2v202005_2_report_utilities_8cs.html":[2,0,0,0,1,0,2,2,2],
+"_ad_manager_2_util_2v202008_2_report_utilities_8cs.html":[2,0,0,0,1,0,2,3,2],
 "_ad_manager_api_exception_8cs.html":[2,0,0,0,1,0,1,0],
 "_ad_manager_app_config_8cs.html":[2,0,0,0,1,0,1,1],
 "_ad_manager_authorization_method_8cs.html":[2,0,0,0,1,0,1,2],
@@ -26,10 +25,10 @@ var NAVTREEINDEX0 =
 "_ad_manager_service_8cs.html":[2,0,0,0,1,0,1,4],
 "_ad_manager_service_factory_8cs.html":[2,0,0,0,1,0,1,5],
 "_ad_manager_service_signature_8cs.html":[2,0,0,0,1,0,1,6],
-"_ad_manager_service_v201908_8cs.html":[2,0,0,0,1,0,3,1],
-"_ad_manager_service_v201911_8cs.html":[2,0,0,0,1,0,4,1],
-"_ad_manager_service_v202002_8cs.html":[2,0,0,0,1,0,5,1],
-"_ad_manager_service_v202005_8cs.html":[2,0,0,0,1,0,6,1],
+"_ad_manager_service_v201911_8cs.html":[2,0,0,0,1,0,3,1],
+"_ad_manager_service_v202002_8cs.html":[2,0,0,0,1,0,4,1],
+"_ad_manager_service_v202005_8cs.html":[2,0,0,0,1,0,5,1],
+"_ad_manager_service_v202008_8cs.html":[2,0,0,0,1,0,6,1],
 "_ad_manager_soap_client_8cs.html":[2,0,0,0,1,0,1,7],
 "_ad_manager_soap_header_8cs.html":[2,0,0,0,1,0,0,0],
 "_ad_manager_soap_header_inspector_8cs.html":[2,0,0,0,1,0,1,8],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "_ad_words_api_8cs.html#a0830ef75cfbda3d6b944f42454975830ae4db4f5f832166a100de8888a273b4f2":[2,0,0,0,1,1,3,0,2787,1],
 "_ad_words_api_8cs.html#a0830ef75cfbda3d6b944f42454975830af6be64ff98e487039f48bb988657d8f6":[2,0,0,0,1,1,3,0,2787,11],
 "_ad_words_api_8cs.html#a09323d2af81c2f538df7773cea59ec3d":[2,0,0,0,1,1,3,0,2847],
-"_ad_words_api_8cs.html#a09323d2af81c2f538df7773cea59ec3daa88e1f14f968994c02ec2faaf38d9b8d":[2,0,0,0,1,1,3,0,2847,0]
+"_ad_words_api_8cs.html#a09323d2af81c2f538df7773cea59ec3daa88e1f14f968994c02ec2faaf38d9b8d":[2,0,0,0,1,1,3,0,2847,0],
+"_ad_words_api_8cs.html#a0a1437c2ff1442192beb43855c070f91":[2,0,0,0,1,1,3,0,2804]
 };

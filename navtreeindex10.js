@@ -1,6 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"_ad_words_api_8cs.html#ae8b11d6afb054a84def26fded497d541a41bc94cbd8eebea13ce0491b2ac11b88":[2,0,0,0,1,1,3,0,2660,3],
 "_ad_words_api_8cs.html#ae8b11d6afb054a84def26fded497d541a45802158e78dd9584161629098018fe8":[2,0,0,0,1,1,3,0,2660,4],
 "_ad_words_api_8cs.html#ae8b11d6afb054a84def26fded497d541a696b031073e74bf2cb98e5ef201d4aa3":[2,0,0,0,1,1,3,0,2660,0],
 "_ad_words_api_8cs.html#ae8b11d6afb054a84def26fded497d541ac4f6b1a2cc8345c11892ca0f6312b55d":[2,0,0,0,1,1,3,0,2660,2],
@@ -246,8 +245,9 @@ var NAVTREEINDEX10 =
 "_context_store_8cs.html":[2,0,0,0,1,2,1,9],
 "_create_account_8cs.html":[2,0,0,0,0,1,0,1,0,1],
 "_create_and_attach_shared_keyword_set_8cs.html":[2,0,0,0,0,1,0,1,1,12],
-"_create_forecast_adjustments_8cs.html":[2,0,0,0,0,0,0,3,2,0],
-"_create_traffic_forecast_segments_8cs.html":[2,0,0,0,0,0,0,3,2,1],
+"_create_sites_8cs.html":[2,0,0,0,0,0,0,3,28,0],
+"_create_traffic_adjustments_8cs.html":[2,0,0,0,0,0,0,1,2,0],
 "_csv_exception_8cs.html":[2,0,0,0,1,2,4,3],
-"_csv_file_8cs.html":[2,0,0,0,1,2,4,4]
+"_csv_file_8cs.html":[2,0,0,0,1,2,4,4],
+"_date_time_provider_8cs.html":[2,0,0,0,1,2,4,5]
 };
