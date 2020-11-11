@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="AdManagerApi" type="System.Configuration.DictionarySectionHandler"/>
+    <section name="system.diagnostics" type="System.Diagnostics.SystemDiagnosticsSection"/>
+  </configSections>
+  <AdManagerApi>
+    <!--
+      This section contains the settings specific to the Googles
+      Ad Manager API DotNet Client Library. You can use the App.config /
+      Web.config for quickly configuring and running a simple application.
+      However, it is not mandatory to provide your settings in the config file,
+      you may also set or override these settings at runtime. See
+      https://github.com/googleads/googleads-dotnet-lib/wiki/Getting-Started
+      for details.
+
+      You can refer to
+      https://github.com/googleads/googleads-dotnet-lib/wiki/Understanding-App.config
+      for detailed explanation of each configuration key.
+    -->
+
+    <!-- Settings related to SOAP logging. -->
+    <add key="MaskCredentials" value="true"/>
+
+    <!-- Settings related to general library behaviour. -->
+
+    <!-- Change the Timeout settings. -->
+    <!-- <add key="Timeout" value="100000" /> -->
+
+    <!-- Use this key to enable or disable gzip compression in SOAP requests.-->
+    <add key="EnableGzipCompression" value="true"/>
+
+    <!-- Set this flag to true to include the list of client library utilities
+         that your code uses in the user agent string.-->
+    <add key="IncludeUtilitiesInUserAgent" value="true"/>
+
+    <!-- Proxy settings for library. -->
+    <add key="ProxyServer" value=""/>
+    <add key="ProxyUser" value=""/>
+    <add key="ProxyPassword" value=""/>
+    <add key="ProxyDomain" value=""/>
+
+    <!-- Settings specific to Ad Manager API. Detailed descriptions of these properties
+         can be found at
+         https://developers.google.com/doubleclick-publishers/docs/soap_xml-->
+    <add key="ApplicationName" value="INSERT_YOUR_APPLICATION_NAME_HERE"/>
+    <add key="NetworkCode" value="INSERT_YOUR_NETWORK_CODE_HERE"/>
+    <!-- Optional: uncomment this key if you want to use a different server for
+        Ad Manager API. -->
+    <!-- <add key="AdManagerApi.Server" value="https://www.google.com" /> -->
+
+    <!-- Settings specific to use OAuth2 as authentication mechanism. You could
+         run Common\Util\OAuth2TokenGenerator.cs to generate this section of the
+         config file.
+    -->
+
+    <add key="AuthorizationMethod" value="OAuth2"/>
+    <!-- Provide the OAuth2 client ID and secret. You can create one from
+         https://console.developers.google.com. See
+         https://github.com/googleads/googleads-dotnet-lib/wiki/Using-OAuth2
+         for more details.
+    -->
+    <add key="OAuth2ClientId" value="INSERT_OAUTH2_CLIENT_ID_HERE"/>
+    <add key="OAuth2ClientSecret" value="INSERT_OAUTH2_CLIENT_SECRET_HERE"/>
+
+    <!-- The following OAuth2 settings are optional. -->
+    <!-- Provide a different OAuth2 scope if required. Multiple scopes should be
+         separated by spaces. -->
+    <!-- <add key="OAuth2Scope" value="INSERT_OAUTH2_SCOPE_HERE" /> -->
+
+    <!-- Use the following keys if you want to use Web / Installed application
+         OAuth flow.-->
+
+    <add key="OAuth2Mode" value="APPLICATION"/>
+    <!-- If you have only a single account, then you can run
+         OAuth2TokenGenerator.cs to generate a RefreshToken for that account and
+         set this key in your application's App.config / Web.config. If you are
+         making calls to multiple accounts, then you need to implement OAuth2
+         flow in your account and set this key at runtime. See OAuth folder
+         under Examples folder for a web and a console application example.
+    -->
+    <add key="OAuth2RefreshToken" value="INSERT_OAUTH2_REFRESH_TOKEN_HERE"/>
+
+    <!-- Optional: Specify an OAuth2 redirect url if you are building a
+         web application and implementing OAuth2 web flow in your application.
+    -->
+    <!-- <add key="OAuth2RedirectUri" value="" /> -->
+
+    <!-- Use the following keys if you want to use OAuth2 service account flow.
+         You should comment out all the keys for Web / Installed application
+         OAuth flow above. See
+         https://developers.google.com/doubleclick-publishers/docs/service_accounts
+         https://github.com/googleads/googleads-dotnet-lib/wiki/Using-OAuth2
+         for more details.
+    -->
+    <!--
+    <add key="OAuth2Mode" value="SERVICE_ACCOUNT" />
+    <add key="OAuth2SecretsJsonPath" value="INSERT_OAUTH2_SECRETS_JSON_FILE_PATH_HERE" />
+    -->
+  </AdManagerApi>
+  <system.diagnostics>
+    <sources>
+      <source name="AdsClientLibs.DeprecationMessages"
+              switchName="AdsClientLibs.DeprecationMessages"
+              switchType="System.Diagnostics.SourceSwitch">
+        <listeners>
+          <add name="myListener" type="System.Diagnostics.EventLogTraceListener"
+               initializeData="Application"/>
+        </listeners>
+      </source>
+      <source name="AdsClientLibs.DetailedRequestLogs"
+              switchName="AdsClientLibs.DetailedRequestLogs"
+              switchType="System.Diagnostics.SourceSwitch">
+        <listeners>
+          <add name="detailedRequestLogListener" type="System.Diagnostics.ConsoleTraceListener"
+               initializeData="true"/>
+          <!-- Use the following to log to file. Modify the initializeData
+               attribute to control the path to the detailed request log file.
+          <add name="detailedRequestLogListener" type="System.Diagnostics.TextWriterTraceListener"
+               initializeData="C:\Logs\AdManager\detailed_logs.log"/>
+          -->
+          <remove name="Default"/>
+        </listeners>
+      </source>
+      <source name="AdsClientLibs.SummaryRequestLogs" switchName="AdsClientLibs.SummaryRequestLogs"
+              switchType="System.Diagnostics.SourceSwitch">
+        <listeners>
+          <add name="summaryRequestLogListener" type="System.Diagnostics.ConsoleTraceListener"
+               initializeData="true"/>
+          <!-- Use the following to log to file. Modify the initializeData
+               attribute to control the path to the summary request log file.
+          <add name="summaryRequestLogListener" type="System.Diagnostics.TextWriterTraceListener"
+               initializeData="C:\Logs\AdManager\summary_logs.log"/>
+          -->
+          <remove name="Default"/>
+        </listeners>
+      </source>
+    </sources>
+    <switches>
+      <!-- Use this trace switch to control the deprecation trace messages
+          written by Ads* .NET libraries. The default is level is set to
+          Warning. To disable all messages, set this value to Off. See
+          http://msdn.microsoft.com/en-us/library/system.diagnostics.sourcelevels.aspx
+          for all possible values this key can take. -->
+      <add name="AdsClientLibs.DeprecationMessages" value="Warning" />
+      <!-- Use this trace switch to control the detailed request logs written by Ads*
+          .NET libraries. The default level is set to Off. Logs are generated at
+          both the Error and Information levels. -->
+      <add name="AdsClientLibs.DetailedRequestLogs" value="Off" />
+      <!-- Use this trace switch to control the summary request logs written by
+          Ads* .NET libraries. The default level is set to Off. Logs are
+          generated at both the Error and Information levels. -->
+      <add name="AdsClientLibs.SummaryRequestLogs" value="Off" />
+    </switches>
+    <trace autoflush="true" />
+  </system.diagnostics>
+<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2"/></startup></configuration>
