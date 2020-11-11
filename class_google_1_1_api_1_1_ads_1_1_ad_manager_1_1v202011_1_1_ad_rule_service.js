@@ -1,0 +1,28 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service =
+[
+    [ "AdRuleService", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a0851fa7022a7d578e6944780b13a8170", null ],
+    [ "AdRuleService", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a875a284dcc320290589b2b6c5803ee14", null ],
+    [ "AdRuleService", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#ac67e15c0e2d498156c2bb9c03d225653", null ],
+    [ "AdRuleService", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a258407d784cbacd63f0bb0075345c974", null ],
+    [ "AdRuleService", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a4e7e0a9a3d139851eece1ef78da06b1e", null ],
+    [ "createAdRules", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a63d22036d9a0f62d5a346e46232e9133", null ],
+    [ "createAdRulesAsync", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a73d02c23bf2e1a27cf853a570e75b732", null ],
+    [ "createAdSpots", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a65d4155c7f3f4a9f1f454d3f8ca27d34", null ],
+    [ "createAdSpotsAsync", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#aa501a9ab80ba09ce6b580eb5e011dcfc", null ],
+    [ "createBreakTemplates", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a9236b5de529076f76a27466f5ce696e7", null ],
+    [ "createBreakTemplatesAsync", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#abd3a1560c37db1e67d248b0430576e38", null ],
+    [ "getAdRulesByStatement", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a8aac89e5b3156bb5e5a5971b61081196", null ],
+    [ "getAdRulesByStatementAsync", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a96334ea70eb5b21d2d686db42b78890e", null ],
+    [ "getAdSpotsByStatement", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#ab74a8f2e0b33d00fc680ed67dd4283e9", null ],
+    [ "getAdSpotsByStatementAsync", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a015bf60f99462c7522db892de0ebc81c", null ],
+    [ "getBreakTemplatesByStatement", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a3d1ee1308e2cc6d63384c199ad063541", null ],
+    [ "getBreakTemplatesByStatementAsync", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a8910e704a92681bef8621a97e6159eff", null ],
+    [ "performAdRuleAction", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#ab5e7a1624de6d66654d59e6e55f514ef", null ],
+    [ "performAdRuleActionAsync", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#ab56211f27f2b5c8d0914ff688aa760bb", null ],
+    [ "updateAdRules", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#aa5dbe02edabd0e441c2f5cd9f7330ffb", null ],
+    [ "updateAdRulesAsync", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a93337fd747887ccd12cfb1d2dbadb220", null ],
+    [ "updateAdSpots", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a7f0a23f4f44a4b96ca2f27dc3855a39f", null ],
+    [ "updateAdSpotsAsync", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#a25db0a97496dc2c67691df5d5c5c5735", null ],
+    [ "updateBreakTemplates", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#af950f71daf5b37a12a1f0cc4476f247f", null ],
+    [ "updateBreakTemplatesAsync", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_ad_rule_service.html#ac18dd62e7ab3a54d530d3d6f4782e926", null ]
+];

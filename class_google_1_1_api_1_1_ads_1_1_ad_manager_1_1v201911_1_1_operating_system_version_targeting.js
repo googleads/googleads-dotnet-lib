@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201911_1_1_operating_system_version_targeting =
-[
-    [ "excludedOperatingSystemVersions", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201911_1_1_operating_system_version_targeting.html#a7c0f4773fa91ee8c58d3719e9f184827", null ],
-    [ "targetedOperatingSystemVersions", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v201911_1_1_operating_system_version_targeting.html#af021b489b89fe291a84a43b6b64da024", null ]
-];

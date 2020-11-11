@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202011_1_1_get_forecast294c0113eddb999a47a7f08117073f26 =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202011_1_1_get_forecast294c0113eddb999a47a7f08117073f26.html#ad9c2f161c18252a713df3b09e79060b8", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202011_1_1_get_forecast294c0113eddb999a47a7f08117073f26.html#ac1d380bb16708695dd8571300506cda5", null ]
+];

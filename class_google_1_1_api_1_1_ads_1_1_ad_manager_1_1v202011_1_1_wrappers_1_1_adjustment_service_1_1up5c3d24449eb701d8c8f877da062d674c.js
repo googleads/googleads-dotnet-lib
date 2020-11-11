@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_wrappers_1_1_adjustment_service_1_1up5c3d24449eb701d8c8f877da062d674c =
+[
+    [ "updateTrafficForecastSegmentsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_wrappers_1_1_adjustment_service_1_1up5c3d24449eb701d8c8f877da062d674c.html#aa27e21df3ac9b318f3602601e94e9df3", null ],
+    [ "updateTrafficForecastSegmentsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_wrappers_1_1_adjustment_service_1_1up5c3d24449eb701d8c8f877da062d674c.html#a61e4f9468ec05c7211f3de22394c5ad5", null ],
+    [ "trafficForecastSegments", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_wrappers_1_1_adjustment_service_1_1up5c3d24449eb701d8c8f877da062d674c.html#a85d291ed45550124fc00701e8a019643", null ]
+];
