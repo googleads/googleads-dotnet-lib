@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202002_1_1_device_capability_targeting =
-[
-    [ "excludedDeviceCapabilities", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202002_1_1_device_capability_targeting.html#a356101188708389096b1e110e5082609", null ],
-    [ "targetedDeviceCapabilities", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202002_1_1_device_capability_targeting.html#aded8356a72bb7dc5f927ff6e99d48f8c", null ]
-];

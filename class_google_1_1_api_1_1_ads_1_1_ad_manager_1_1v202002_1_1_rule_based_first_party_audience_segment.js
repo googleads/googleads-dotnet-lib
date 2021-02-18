@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202002_1_1_rule_based_first_party_audience_segment =
-[
-    [ "rule", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202002_1_1_rule_based_first_party_audience_segment.html#a949490008a4c7fba08b9db025d6e4c0f", null ]
-];

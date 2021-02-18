@@ -47,7 +47,6 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_
       [ "OCTOBER", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_campaign_ad_schedule_target_report_report_row.html#ae646c6adc5559930cda8dbd776bb2026af2141dd9e56ea6723c9a513a7cd1170b", null ],
       [ "SEPTEMBER", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_campaign_ad_schedule_target_report_report_row.html#ae646c6adc5559930cda8dbd776bb2026a658c25f244e0da9b8f9cd9e59f3b3df0", null ]
     ] ],
-    [ "accountCurrencyCode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_campaign_ad_schedule_target_report_report_row.html#a376aefefd622e1b0748648849fd4b781", null ],
     [ "accountDescriptiveName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_campaign_ad_schedule_target_report_report_row.html#a7d6cfd7464657299b4381f45905bff97", null ],
     [ "accountTimeZone", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_campaign_ad_schedule_target_report_report_row.html#ad535209e86ce86388fe687ecbece994f", null ],
     [ "allConversionRate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_campaign_ad_schedule_target_report_report_row.html#a2a81ac303c5c6a8a10ee7839c37d8c60", null ],
@@ -75,6 +74,7 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_
     [ "costPerConversion", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_campaign_ad_schedule_target_report_report_row.html#abfe8e77c0ddd04e0746224337447b8bf", null ],
     [ "crossDeviceConversions", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_campaign_ad_schedule_target_report_report_row.html#a2f60676367ed7d6e66f5f05a138072ca", null ],
     [ "ctr", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_campaign_ad_schedule_target_report_report_row.html#a2659d0254a4aa8ac03a100ea8018f774", null ],
+    [ "currencyCode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_campaign_ad_schedule_target_report_report_row.html#a1a1e3cba6c909778affef6ab7b0be27b", null ],
     [ "customerDescriptiveName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_campaign_ad_schedule_target_report_report_row.html#a2f65e48f8f5383f1d73f7522b787ad58", null ],
     [ "date", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_campaign_ad_schedule_target_report_report_row.html#a1dba512e23e656feb53de6357abbe9df", null ],
     [ "engagementRate", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_campaign_ad_schedule_target_report_report_row.html#a2120c0a8eee53d3bcfefa543d0e87cd5", null ],

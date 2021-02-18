@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202002_1_1_wrappers_1_1_custom_targeting_service74b1fbe67bf028c2a4120eb98c6648e2 =
-[
-    [ "createCustomTargetingKeysRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202002_1_1_wrappers_1_1_custom_targeting_service74b1fbe67bf028c2a4120eb98c6648e2.html#af2e7145bfca559afddfb71b77170ee0f", null ],
-    [ "createCustomTargetingKeysRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202002_1_1_wrappers_1_1_custom_targeting_service74b1fbe67bf028c2a4120eb98c6648e2.html#a82c037fe8b7f679e1681f829e6df8b5c", null ],
-    [ "keys", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202002_1_1_wrappers_1_1_custom_targeting_service74b1fbe67bf028c2a4120eb98c6648e2.html#a47693e9d26cc2a5f853005bf1cd0f54d", null ]
-];

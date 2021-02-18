@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202102_1_1_wrappers_1_1_dai_encoding_profile_ser3df531df0f1f29a428a8b6c86024812b =
+[
+    [ "updateDaiEncodingProfilesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202102_1_1_wrappers_1_1_dai_encoding_profile_ser3df531df0f1f29a428a8b6c86024812b.html#af3c578cd7f0f4f3d34e9c6bccfc396b9", null ],
+    [ "updateDaiEncodingProfilesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202102_1_1_wrappers_1_1_dai_encoding_profile_ser3df531df0f1f29a428a8b6c86024812b.html#a7d30b6829193d8aabcaada830666d98b", null ],
+    [ "daiEncodingProfiles", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202102_1_1_wrappers_1_1_dai_encoding_profile_ser3df531df0f1f29a428a8b6c86024812b.html#add68b90bb34d396230b2adf4d077db67", null ]
+];

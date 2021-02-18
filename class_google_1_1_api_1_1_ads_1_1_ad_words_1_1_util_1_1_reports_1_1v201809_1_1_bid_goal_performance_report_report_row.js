@@ -75,6 +75,7 @@ var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_
       [ "TARGET_SPEND", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_bid_goal_performance_report_report_row.html#adcc3a51e48226c48fb6e299cbcb7a4aeab293c3af3aeb43e39f1de714f343853e", null ],
       [ "UNKNOWN", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_bid_goal_performance_report_report_row.html#adcc3a51e48226c48fb6e299cbcb7a4aea696b031073e74bf2cb98e5ef201d4aa3", null ]
     ] ],
+    [ "accountCurrencyCode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_bid_goal_performance_report_report_row.html#a88b4cbe95f4d6a73844ec7a08d2c0f02", null ],
     [ "accountDescriptiveName", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_bid_goal_performance_report_report_row.html#ae0d9cebe0eb3800cf103f081562ccfee", null ],
     [ "adGroupCount", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_bid_goal_performance_report_report_row.html#affad8ced90ccabaf0130baf45d459591", null ],
     [ "adGroupCriteriaCount", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_util_1_1_reports_1_1v201809_1_1_bid_goal_performance_report_report_row.html#ac9c40a86f278dc617e2a68acaa967d9c", null ],

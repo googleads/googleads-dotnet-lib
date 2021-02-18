@@ -195,12 +195,11 @@ var NAVTREEINDEX10 =
 "_add_responsive_search_ad_8cs.html":[2,0,0,0,0,1,0,1,2,5],
 "_add_rule_based_remarketing_list_8cs.html":[2,0,0,0,0,1,0,1,9,3],
 "_add_shopping_campaign_8cs.html":[2,0,0,0,0,1,0,1,11,2],
-"_add_shopping_campaign_for_showcase_ads_8cs.html":[2,0,0,0,0,1,0,1,11,3],
 "_add_shopping_dynamic_remarketing_campaign_8cs.html":[2,0,0,0,0,1,0,1,1,10],
 "_add_sitelinks_8cs.html":[2,0,0,0,0,1,0,1,5,2],
 "_add_sitelinks_8cs.html#acdb34c28ab6ac968daaf7b40f3c795c0":[2,0,0,0,0,1,0,1,5,2,1],
 "_add_sitelinks_using_feeds_8cs.html":[2,0,0,0,0,1,0,1,5,3],
-"_add_smart_shopping_ad_8cs.html":[2,0,0,0,0,1,0,1,11,4],
+"_add_smart_shopping_ad_8cs.html":[2,0,0,0,0,1,0,1,11,3],
 "_add_trial_8cs.html":[2,0,0,0,0,1,0,1,3,6],
 "_add_universal_app_campaign_8cs.html":[2,0,0,0,0,1,0,1,1,11],
 "_ads_client_8cs.html":[2,0,0,0,1,2,1,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX10 =
 "_csv_file_8cs.html":[2,0,0,0,1,2,4,4],
 "_date_time_provider_8cs.html":[2,0,0,0,1,2,4,5],
 "_default_body_formatter_8cs.html":[2,0,0,0,1,2,2,1],
-"_default_date_time_provider_8cs.html":[2,0,0,0,1,2,4,6]
+"_default_date_time_provider_8cs.html":[2,0,0,0,1,2,4,6],
+"_default_trace_writer_8cs.html":[2,0,0,0,1,2,2,2]
 };
