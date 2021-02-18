@@ -13,8 +13,8 @@
 // limitations under the License.
 
 using Google.Api.Ads.AdManager.Lib;
-using Google.Api.Ads.AdManager.Util.v202008;
-using Google.Api.Ads.AdManager.v202008;
+using Google.Api.Ads.AdManager.Util.v202102;
+using Google.Api.Ads.AdManager.v202102;
 using Google.Api.Ads.Common.Lib;
 
 using System;

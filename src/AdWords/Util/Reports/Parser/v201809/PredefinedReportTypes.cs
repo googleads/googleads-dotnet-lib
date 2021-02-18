@@ -6970,6 +6970,9 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201809
         [ReportColumn("campaigns")]
         public long campaignCount { get; set; }
 
+        [ReportColumn("currency")]
+        public string accountCurrencyCode { get; set; }
+
         [ReportColumn("nonRemovedAdGroups")]
         public long nonRemovedAdGroupCount { get; set; }
 
@@ -9729,7 +9732,7 @@ namespace Google.Api.Ads.AdWords.Util.Reports.v201809
         }
 
         [ReportColumn("currency")]
-        public string accountCurrencyCode { get; set; }
+        public string currencyCode { get; set; }
 
         [ReportColumn("account")]
         public string accountDescriptiveName { get; set; }

@@ -120,6 +120,16 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201809
         private static Feed CreateGmbFeed(AdWordsUser user, string gmbEmailAddress,
             string gmbAccessToken, string businessAccountIdentifier)
         {
+            if (string.IsNullOrEmpty(gmbAccessToken))
+            {
+                user.OAuthProvider.RefreshAccessToken();
+                gmbAccessToken = user.OAuthProvider.Config.OAuth2AccessToken;
+            }
+            if (string.IsNullOrEmpty(businessAccountIdentifier))
+            {
+                businessAccountIdentifier = null;
+            }
+
             using (FeedService feedService =
                 (FeedService) user.GetService(AdWordsService.v201809.FeedService))
             {

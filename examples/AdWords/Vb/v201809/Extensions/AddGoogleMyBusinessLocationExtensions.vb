@@ -117,6 +117,14 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     AdWordsService.v201809.FeedService),
                 FeedService)
 
+                If String.IsNullOrEmpty(gmbAccessToken) Then
+                    user.OAuthProvider.RefreshAccessToken()
+                    gmbAccessToken = user.OAuthProvider.Config.OAuth2AccessToken
+                End If
+                If String.IsNullOrEmpty(businessAccountIdentifier) Then
+                    businessAccountIdentifier = Nothing
+                End If
+
                 ' Create a feed that will sync to the Google My Business account
                 ' specified by gmbEmailAddress. Do not add FeedAttributes to this object,
                 ' as AdWords will add them automatically because this will be a

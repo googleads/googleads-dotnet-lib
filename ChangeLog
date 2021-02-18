@@ -1,3 +1,19 @@
+24.14.0
+======
+ AdWords:
+   - Added currencyCode field to BudgetPerformanceReportReportRow class.
+   - Added a check to use default values for gmbAccessToken and businessAccountIdentifier fields
+   in AddGoogleMyBusinessLocationExtensions example if the user hasn't provided any values.
+   - Removed AddShoppingCampaignForShowcaseAds code example.
+
+ Ad Manager:
+   - Added support for v202102.
+   - Removed examples for v202005.
+   - Removed support for v202002.
+
+ Common:
+   -
+
 24.13.0
 ======
  AdWords:

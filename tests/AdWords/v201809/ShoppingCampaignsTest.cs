@@ -127,33 +127,5 @@ namespace Google.Api.Ads.AdWords.Tests.v201809
         {
             RunExample(delegate() { new VBExamples.GetProductCategoryTaxonomy().Run(user); });
         }
-
-        /// <summary>
-        /// Tests the AddShoppingCampaignForShowcaseAds C# code example.
-        /// </summary>
-        [Test]
-        public void TestAddShoppingCampaignForShowcaseAdsCSharpExample()
-        {
-            AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-            RunExample(delegate()
-            {
-                new CSharpExamples.AddShoppingCampaignForShowcaseAds().Run(user, budgetId,
-                    config.MerchantCenterId);
-            });
-        }
-
-        /// <summary>
-        /// Tests the AddShoppingCampaignForShowcaseAds VB.NET code example.
-        /// </summary>
-        [Test]
-        public void TestAddShoppingCampaignForShowcaseAdsVBExample()
-        {
-            AdWordsAppConfig config = (AdWordsAppConfig) user.Config;
-            RunExample(delegate()
-            {
-                new VBExamples.AddShoppingCampaignForShowcaseAds().Run(user, budgetId,
-                    config.MerchantCenterId);
-            });
-        }
     }
 }

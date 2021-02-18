@@ -3,15 +3,14 @@
   <PropertyGroup>
     <Title>AdWords API Dotnet Client Library</Title>
     <PackageId>Google.AdWords</PackageId>
-    <Version>24.13.0</Version>
+    <Version>24.14.0</Version>
     <Description>This library provides you with functionality to access the AdWords API.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
     <PackageTags>AdWords Google</PackageTags>
     <Copyright>Copyright 2011, Google Inc. All Rights Reserved.</Copyright>
     <Authors>https://github.com/AnashOommen, https://github.com/ChristopherSeeley, https://github.com/jimper</Authors>
     <PackageIconUrl>https://www.gstatic.com/images/branding/product/1x/google_developers_64dp.png</PackageIconUrl>
-    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/googleads/googleads-dotnet-lib</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <Company>Google</Company>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/googleads/googleads-dotnet-lib</RepositoryUrl>
@@ -26,6 +25,7 @@
     <AssemblyOriginatorKeyFile>$(ProjectDir)..\Common\AdsApi.snk</AssemblyOriginatorKeyFile>
     <DebugType>pdbonly</DebugType>
     <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <IncludeSource>true</IncludeSource>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
