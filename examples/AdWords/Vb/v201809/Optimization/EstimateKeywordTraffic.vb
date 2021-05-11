@@ -56,7 +56,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     AdWordsService.v201809.TrafficEstimatorService),
                 TrafficEstimatorService)
 
-                ' [START createKeywordEstimateRequest] MOE:strip_line
                 ' Create keywords. Up to 2000 keywords can be passed in a single request.
                 Dim keyword1 As New Keyword
                 keyword1.text = "mars cruise"
@@ -90,17 +89,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 negativeKeywordEstimateRequest.keyword = negativeKeyword1
                 negativeKeywordEstimateRequest.isNegative = True
                 keywordEstimateRequests.Add(negativeKeywordEstimateRequest)
-                ' [END createKeywordEstimateRequest] MOE:strip_line
 
-                ' [START createAdGroupEstimateRequest] MOE:strip_line
                 ' Create ad group estimate requests.
                 Dim adGroupEstimateRequest As New AdGroupEstimateRequest
                 adGroupEstimateRequest.keywordEstimateRequests = keywordEstimateRequests.ToArray
                 adGroupEstimateRequest.maxCpc = New Money
                 adGroupEstimateRequest.maxCpc.microAmount = 1000000
-                ' [END createAdGroupEstimateRequest] MOE:strip_line
 
-                ' [START createCampaignEstimateRequest] MOE:strip_line
                 ' Create campaign estimate requests.
                 Dim campaignEstimateRequest As New CampaignEstimateRequest
                 campaignEstimateRequest.adGroupEstimateRequests = New AdGroupEstimateRequest() _
@@ -118,10 +113,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
 
                 campaignEstimateRequest.criteria = New Criterion() _
                     {countryCriterion, languageCriterion}
-                ' [END createCampaignEstimateRequest] MOE:strip_line
 
                 Try
-                    ' [START makeRequest] MOE:strip_line
                     ' Create the selector.
                     Dim selector As New TrafficEstimatorSelector
                     selector.campaignEstimateRequests =
@@ -132,9 +125,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
 
                     ' Get traffic estimates.
                     Dim result As TrafficEstimatorResult = trafficEstimatorService.get(selector)
-                    ' [END makeRequest] MOE:strip_line
 
-                    ' [START displayEstimates] MOE:strip_line
                     ' Display the results.
                     If ((Not result Is Nothing) AndAlso (Not result.campaignEstimates Is Nothing) _
                         AndAlso (result.campaignEstimates.Length > 0)) Then
@@ -182,7 +173,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     Else
                         Console.WriteLine("No traffic estimates were returned.")
                     End If
-                    ' [END displayEstimates] MOE:strip_line
                 Catch e As Exception
                     Throw _
                         New System.ApplicationException("Failed to retrieve traffic estimates.", e)

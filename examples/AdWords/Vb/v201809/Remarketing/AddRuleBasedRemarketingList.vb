@@ -130,7 +130,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
 
 
                 ' Third And fourth rule item groups.
-                ' [START createRules] MOE:strip_line
                 ' Visitors of a page who visited another page. See
                 ' https//developers.google.com/adwords/api/docs/reference/latest/AdwordsUserListService.StringKey
                 ' for more details.
@@ -163,7 +162,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
 
                 Dim userVisitedSite2Rule As New Rule()
                 userVisitedSite2Rule.groups = New RuleItemGroup() {site2RuleItemGroup}
-                ' [END createRules] MOE:strip_line
 
                 ' Create the user list with no restrictions on site visit date.
                 Dim expressionUserList As New ExpressionRuleUserList()
@@ -200,7 +198,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 dateUserList.startDate = startDate.ToString(DATE_FORMAT_STRING)
                 dateUserList.endDate = endDate.ToString(DATE_FORMAT_STRING)
 
-                ' [START createCombinedRuleUserList] MOE:strip_line
                 ' Create the user list where "Visitors of a page who did visit another page".
                 ' To create a user list where "Visitors of a page who did not visit another
                 ' page", change the ruleOperator from And to AND_NOT.
@@ -211,7 +208,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 CombinedRuleUserList.leftOperand = userVisitedSite1Rule
                 CombinedRuleUserList.rightOperand = userVisitedSite2Rule
                 CombinedRuleUserList.ruleOperator = CombinedRuleUserListRuleOperator.AND
-                ' [END createCombinedRuleUserList] MOE:strip_line
 
                 ' Create operations to add the user lists.
                 Dim operations As New List(Of UserListOperation)

@@ -55,7 +55,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' </summary>
         ''' <param name="user">The AdWords user.</param>
         Public Sub Run(ByVal user As AdWordsUser)
-            ' [START prepareUAC] MOE:strip_line
             Using campaignService As CampaignService = CType(
                 user.GetService(
                     AdWordsService.v201809.CampaignService),
@@ -97,9 +96,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
 
                 ' Optional: Set the end date.
                 campaign.endDate = DateTime.Now.AddYears(1).ToString("yyyyMMdd")
-                ' [END prepareUAC] MOE:strip_line
 
-                ' [START setUACAssets] MOE:strip_line
                 ' Set the campaign's assets and ad text ideas. These values will be used to
                 ' generate ads.
                 Dim universalAppSetting As New UniversalAppCampaignSetting()
@@ -114,9 +111,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 ' See UploadImage.cs for an example on how to upload images.
                 '
                 ' universalAppSetting.imageMediaIds = new long[] { INSERT_IMAGE_MEDIA_ID_HERE };
-                ' [END setUACAssets] MOE:strip_line
 
-                ' [START optimizeUAC] MOE:strip_line
                 ' Optimize this campaign for getting new users for your app.
                 universalAppSetting.universalAppBiddingStrategyGoalType =
                     UniversalAppBiddingStrategyGoalType.OPTIMIZE_FOR_INSTALL_CONVERSION_VOLUME
@@ -141,9 +136,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     GeoTargetTypeSettingNegativeGeoTargetType.DONT_CARE
 
                 campaign.settings = New Setting() {universalAppSetting, geoSetting}
-                ' [END optimizeUAC] MOE:strip_line
 
-                ' [START createUAC] MOE:strip_line
                 ' Create the operation.
                 Dim operation As New CampaignOperation()
                 operation.operator = [Operator].ADD
@@ -173,7 +166,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                         New System.ApplicationException("Failed to add universal app campaigns.", e)
                 End Try
             End Using
-            ' [END createUAC] MOE:strip_line
         End Sub
 
         ''' <summary>
@@ -182,7 +174,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <param name="user">The AdWords user.</param>
         ''' <returns>The budget.</returns>
         Private Shared Function CreateBudget(ByVal user As AdWordsUser) As Budget
-            ' [START createBudget] MOE:strip_line
             Using budgetService As BudgetService = CType(
                 user.GetService(
                     AdWordsService.v201809.BudgetService),
@@ -205,7 +196,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
 
                 Dim budgetRetval As BudgetReturnValue = budgetService.mutate(
                     New BudgetOperation() {budgetOperation})
-                ' [END createBudget] MOE:strip_line
                 Dim newBudget As Budget = budgetRetval.value(0)
 
                 Console.WriteLine("Budget with ID = '{0}' and name = '{1}' was created.",
@@ -222,7 +212,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' created.</param>
         Private Shared Sub SetCampaignTargetingCriteria(ByVal user As AdWordsUser,
                                                         ByVal campaign As Campaign)
-            ' [START setCampaignTargetingCriteria] MOE:strip_line
             Using campaignCriterionService As CampaignCriterionService = CType(
                 user.GetService(
                     AdWordsService.v201809.CampaignCriterionService),
@@ -272,7 +261,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     Next
                 End If
             End Using
-            ' [END setCampaignTargetingCriteria] MOE:strip_line
         End Sub
     End Class
 End Namespace

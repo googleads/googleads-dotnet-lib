@@ -74,7 +74,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <param name="user">The AdWords user.</param>
         ''' <returns>The campaign group.</returns>
         Private Function CreateCampaignGroup(ByVal user As AdWordsUser) As CampaignGroup
-            ' [START createCampaignGroup] MOE:strip_line
             Using campaignGroupService As CampaignGroupService = CType(
                 user.GetService(
                     AdWordsService.v201809.CampaignGroupService),
@@ -103,7 +102,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     Throw New System.ApplicationException("Failed to add campaign group.", e)
                 End Try
             End Using
-            ' [END createCampaignGroup] MOE:strip_line
         End Function
 
         ''' <summary>
@@ -115,7 +113,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' </param>
         Private Sub AddCampaignsToGroup(ByVal user As AdWordsUser, ByVal campaignGroupId As Long,
                                         ByVal campaignIds() As Long)
-            ' [START addCampaignsToGroup] MOE:strip_line
             Using campaignService As CampaignService = CType(
                 user.GetService(
                     AdWordsService.v201809.CampaignService),
@@ -152,7 +149,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                                                     e)
                 End Try
             End Using
-            ' [END addCampaignsToGroup] MOE:strip_line
         End Sub
 
         ''' <summary>
@@ -164,7 +160,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         Private Function CreatePerformanceTarget(ByVal user As AdWordsUser,
                                                  ByVal campaignGroupId As Long) _
             As CampaignGroupPerformanceTarget
-            ' [START createPerformanceTarget] MOE:strip_line
             Using campaignGroupPerformanceTargetService As CampaignGroupPerformanceTargetService =
                 CType(user.GetService(AdWordsService.v201809.CampaignGroupPerformanceTargetService),
                       CampaignGroupPerformanceTargetService)
@@ -223,6 +218,5 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
             End Using
         End Function
 
-        ' [END createPerformanceTarget] MOE:strip_line
     End Class
 End Namespace

@@ -62,7 +62,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
 
                 Dim conversionTrackers As New List(Of ConversionTracker)
 
-                ' [START createAdWordsConversion] MOE:strip_line
                 ' Create an Adwords conversion tracker.
                 Dim adWordsConversionTracker As New AdWordsConversionTracker()
                 adWordsConversionTracker.name = "Earth to Mars Cruises Conversion #" &
@@ -75,9 +74,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 adWordsConversionTracker.defaultRevenueValue = 23.41
                 adWordsConversionTracker.alwaysUseDefaultRevenueValue = True
                 conversionTrackers.Add(adWordsConversionTracker)
-                ' [END createAdWordsConversion] MOE:strip_line
 
-                ' [START createUploadConversion] MOE:strip_line
                 ' Create an upload conversion for offline conversion imports.
                 Dim uploadConversion As New UploadConversion()
                 ' Set an appropriate category. This field is optional, and will be set to
@@ -107,10 +104,8 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 ' uploadConversion.isExternallyAttributed = True
 
                 conversionTrackers.Add(uploadConversion)
-                ' [END createUploadConversion] MOE:strip_line
 
                 Try
-                    ' [START mutateRequest] MOE:strip_line
                     ' Create operations.
                     Dim operations As New List(Of ConversionTrackerOperation)
                     For Each conversionTracker As ConversionTracker In conversionTrackers
@@ -123,7 +118,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     ' Add conversion tracker.
                     Dim retval As ConversionTrackerReturnValue = conversionTrackerService.mutate(
                         operations.ToArray())
-                    ' [END mutateRequest] MOE:strip_line
 
                     ' Display the results.
                     If (Not retval Is Nothing) AndAlso (Not retval.value Is Nothing) AndAlso

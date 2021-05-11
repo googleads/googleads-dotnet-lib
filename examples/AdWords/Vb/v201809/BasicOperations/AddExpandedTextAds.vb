@@ -61,7 +61,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <param name="adGroupId">Id of the ad group to which ads are added.
         ''' </param>
         Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-            ' [START addExpandedTextAds] MOE:strip_line
             Using service As AdGroupAdService = CType(
                 user.GetService(
                     AdWordsService.v201809.AdGroupAdService),
@@ -70,7 +69,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 Dim operations As New List(Of AdGroupAdOperation)
 
                 For i As Integer = 1 To NUMBER_OF_ADS
-                    ' [START addExpandedTextAd] MOE:strip_line
                     ' Create the expanded text ad.
                     Dim expandedTextAd As New ExpandedTextAd
                     expandedTextAd.headlinePart1 = "Cruise #" & i.ToString() & " to Mars"
@@ -86,7 +84,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
 
                     ' Optional: Set the status.
                     expandedTextAdGroupAd.status = AdGroupAdStatus.PAUSED
-                    ' [END addExpandedTextAd] MOE:strip_line
 
                     ' Create the operations.
                     Dim operation As New AdGroupAdOperation
@@ -116,7 +113,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 Catch e As Exception
                     Throw New System.ApplicationException("Failed to create expanded text ads.", e)
                 End Try
-                ' [END addExpandedTextAds] MOE:strip_line
             End Using
         End Sub
     End Class

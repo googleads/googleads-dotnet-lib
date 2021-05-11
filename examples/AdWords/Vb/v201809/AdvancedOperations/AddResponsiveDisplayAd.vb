@@ -65,7 +65,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <param name="adGroupId">Id of the ad group to which ads are added.
         ''' </param>
         Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-            ' [START addResponsiveDisplayAd] MOE:strip_line
             Using adGroupAdService As AdGroupAdService = CType(
                 user.GetService(
                     AdWordsService.v201809.AdGroupAdService),
@@ -148,7 +147,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                                                         e)
                 End Try
             End Using
-            ' [END addResponsiveDisplayAd] MOE:strip_line
         End Sub
 
         ''' <summary>

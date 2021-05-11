@@ -189,7 +189,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
             End Using
         End Function
 
-        '  [START createCampaign] MOE:strip_line
         ''' <summary>
         ''' Creates the shopping campaign.
         ''' </summary>
@@ -248,6 +247,5 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
 
             Return retval.value(0)
         End Function
-        '  [END createCampaign] MOE:strip_line
     End Class
 End Namespace

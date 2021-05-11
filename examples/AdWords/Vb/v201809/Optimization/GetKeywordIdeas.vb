@@ -60,23 +60,18 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 TargetingIdeaService)
 
                 ' Create selector.
-                ' [START prepareRequestTypes] MOE:strip_line
                 Dim selector As New TargetingIdeaSelector()
                 selector.requestType = RequestType.IDEAS
                 selector.ideaType = IdeaType.KEYWORD
-                ' [END prepareRequestTypes] MOE:strip_line
-                ' [START prepareRequestAttributeTypes] MOE:strip_line
                 selector.requestedAttributeTypes =
                     New AttributeType() { _
                                             AttributeType.KEYWORD_TEXT,
                                             AttributeType.SEARCH_VOLUME,
                                             AttributeType.CATEGORY_PRODUCTS_AND_SERVICES
                                         }
-                ' [END prepareRequestAttributeTypes] MOE:strip_line
 
                 Dim searchParameters As New List(Of SearchParameter)
 
-                ' [START prepareRequestQueryParameter] MOE:strip_line
                 ' Create related to query search parameter.
                 Dim relatedToQuerySearchParameter As New RelatedToQuerySearchParameter()
                 relatedToQuerySearchParameter.queries = New String() { _
@@ -84,7 +79,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                                                                          "birthday cake"
                                                                      }
                 searchParameters.Add(relatedToQuerySearchParameter)
-                ' [END prepareRequestQueryParameter] MOE:strip_line
 
                 ' Add a language search parameter (optional).
                 ' The ID can be found in the documentation:
@@ -95,7 +89,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 languageParameter.languages = New Language() {english}
                 searchParameters.Add(languageParameter)
 
-                ' [START prepareRequestNetworkSetting] MOE:strip_line
                 ' Add network search parameter (optional).
                 Dim networkSetting As New NetworkSetting()
                 networkSetting.targetGoogleSearch = True
@@ -106,37 +99,29 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 Dim networkSearchParameter As New NetworkSearchParameter()
                 networkSearchParameter.networkSetting = networkSetting
                 searchParameters.Add(networkSearchParameter)
-                ' [END prepareRequestNetworkSetting] MOE:strip_line
 
                 ' Optional: Use an existing ad group to generate ideas.
                 If adGroupId.HasValue() Then
-                    ' [START setSeedAdGroupId] MOE:strip_line
                     Dim seedAdGroupIdSearchParameter As New SeedAdGroupIdSearchParameter()
                     seedAdGroupIdSearchParameter.adGroupId = adGroupId.Value
                     searchParameters.Add(seedAdGroupIdSearchParameter)
-                    ' [END setSeedAdGroupId] MOE:strip_line
                 End If
 
                 ' Set the search parameters.
                 selector.searchParameters = searchParameters.ToArray()
 
-                ' [START preparePaging] MOE:strip_line
 
                 ' Set selector paging (required for targeting idea service).
                 selector.paging = Paging.Default
-                ' [END preparePaging] MOE:strip_line
 
                 Dim page As New TargetingIdeaPage()
 
                 Try
                     Dim i As Integer = 0
                     Do
-                        ' [START getKeywordIdeas] MOE:strip_line
                         ' Get related keywords.
                         page = targetingIdeaService.get(selector)
-                        ' [END getKeywordIdeas] MOE:strip_line
 
-                        ' [START displayKeywordIdeas] MOE:strip_line
                         'Display the results.
                         If Not page.entries Is Nothing AndAlso page.entries.Length > 0 Then
                             For Each targetingIdea As TargetingIdea In page.entries

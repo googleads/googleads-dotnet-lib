@@ -58,7 +58,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <param name="adGroupId">Id of the ad group from which expanded text ads
         ''' are retrieved.</param>
         Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-            ' [START getExpandedTextAds] MOE:strip_line
             Using service As AdGroupAdService = CType(
                 user.GetService(
                     AdWordsService.v201809.AdGroupAdService),
@@ -125,7 +124,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     Throw New System.ApplicationException("Failed to get expanded text ads.", e)
                 End Try
             End Using
-            ' [END getExpandedTextAds] MOE:strip_line
         End Sub
     End Class
 End Namespace

@@ -76,7 +76,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         Public Sub Run(ByVal user As AdWordsUser, ByVal conversionName As String,
                        ByVal callStartTime As String, ByVal callerId As String,
                        ByVal conversionTime As String, ByVal conversionValue As Double)
-            ' [START uploadOfflineCallConversions] MOE:strip_line
             Using offlineCallConversionFeedService As OfflineCallConversionFeedService =
                 CType(user.GetService(AdWordsService.v201809.OfflineCallConversionFeedService),
                       OfflineCallConversionFeedService)
@@ -116,7 +115,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                                                         e)
                 End Try
             End Using
-            ' [END uploadOfflineCallConversions] MOE:strip_line
         End Sub
     End Class
 End Namespace

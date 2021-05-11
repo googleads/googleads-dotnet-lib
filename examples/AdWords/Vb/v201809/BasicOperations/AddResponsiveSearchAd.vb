@@ -57,12 +57,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <param name="adGroupId">Id of the ad group to which ads are added.
         ''' </param>
         Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long)
-            ' [START AddResponsiveSearchAd] MOE:strip_line
             Using service As AdGroupAdService = CType(
                 user.GetService(
                     AdWordsService.v201809.AdGroupAdService),
                 AdGroupAdService)
-                ' [START addResponsiveSearchAd] MOE:strip_line
                 ' Create a responsive search ad.
                 Dim responsiveSearchAd As New ResponsiveSearchAd()
                 responsiveSearchAd.finalUrls = New String() {"http://www.example.com/cruise"}
@@ -101,7 +99,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
 
                 ' Optional: Set additional settings.
                 adGroupAd.status = AdGroupAdStatus.PAUSED
-                ' [END addResponsiveSearchAd] MOE:strip_line
 
                 ' Create ad group ad operation and add it to the list.
                 Dim operation As New AdGroupAdOperation()

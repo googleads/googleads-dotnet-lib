@@ -61,16 +61,13 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     AdWordsService.v201809.CampaignService),
                 CampaignService)
 
-                ' [START create_query] MOE:strip_line
                 ' Create the query.
                 Dim query As SelectQuery = New SelectQueryBuilder() _
                         .Select(Campaign.Fields.Name, Campaign.Fields.Id, Campaign.Fields.Status) _
                         .OrderByAscending(Campaign.Fields.Name) _
                         .DefaultLimit() _
                         .Build()
-                ' [END create_query] MOE:strip_line
 
-                ' [START execute_query] MOE:strip_line
                 Dim page As New CampaignPage()
                 Dim i As Integer = 0
 
@@ -96,7 +93,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 Catch e As Exception
                     Throw New System.ApplicationException("Failed to retrieve campaign(s).", e)
                 End Try
-                ' [END execute_query] MOE:strip_line
             End Using
         End Sub
     End Class

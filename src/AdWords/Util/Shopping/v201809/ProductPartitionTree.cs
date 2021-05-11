@@ -574,7 +574,7 @@ namespace Google.Api.Ads.AdWords.Util.Shopping.v201809
         /// </returns>
         private OperationPair CreateSetBidOperation(ProductPartitionNode node)
         {
-            // TODO(user): This check is dangerous, since we should only depend on parent-child
+            // TODO: This check is dangerous, since we should only depend on parent-child
             // relationships, not ID relationships.
             PreconditionUtilities.CheckArgument(node.ProductPartitionId >= NEW_ROOT_ID,
                 string.Format(ShoppingMessages.NodeForSetCannotHaveNegativeId, node));

@@ -53,7 +53,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' </summary>
         ''' <param name="user">The AdWords user.</param>
         Public Sub Run(ByVal user As AdWordsUser)
-            ' [START addNegativeCriteria] MOE:strip_line
             Using customerNegativeCriterionService As CustomerNegativeCriterionService =
                 CType(user.GetService(AdWordsService.v201809.CustomerNegativeCriterionService),
                       CustomerNegativeCriterionService)
@@ -104,7 +103,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 End Try
 
             End Using
-            ' [END addNegativeCriteria] MOE:strip_line
         End Sub
     End Class
 End Namespace

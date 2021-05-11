@@ -55,7 +55,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <param name="user">The AdWords user.</param>
         ''' <param name="serviceLinkId">The service link ID to accept.</param>
         Public Sub Run(ByVal user As AdWordsUser, ByVal serviceLinkId As Long)
-            ' [START acceptServiceLink] MOE:strip_line
             Using customerService As CustomerService = CType(
                 user.GetService(
                     AdWordsService.v201809.CustomerService),
@@ -83,7 +82,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                             mutatedServiceLink.serviceType,
                             mutatedServiceLink.linkStatus)
                     Next
-                    ' [END acceptServiceLink] MOE:strip_line
                 Catch e As Exception
                     Throw New System.ApplicationException("Failed to update service link.", e)
                 End Try

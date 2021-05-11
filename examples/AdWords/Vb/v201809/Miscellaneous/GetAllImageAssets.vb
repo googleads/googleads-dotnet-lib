@@ -52,7 +52,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' </summary>
         ''' <param name="user">The AdWords user.</param>
         Public Sub Run(ByVal user As AdWordsUser)
-            ' [START get_all_image_assets] MOE:strip_line
             Using assetService As AssetService = CType(
                 user.GetService(
                     AdWordsService.v201809.AssetService),
@@ -99,7 +98,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                         selector.paging.IncreaseOffset()
                     Loop While (selector.paging.startIndex < page.totalNumEntries)
                     Console.WriteLine("Number of image assets found: {0}", page.totalNumEntries)
-                    ' [END get_all_image_assets] MOE:strip_line
                 Catch e As Exception
                     Throw New System.ApplicationException("Failed to retrieve image assets.", e)
                 End Try

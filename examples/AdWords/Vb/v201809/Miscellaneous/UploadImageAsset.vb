@@ -53,7 +53,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' </summary>
         ''' <param name="user">The AdWords user.</param>
         Public Sub Run(ByVal user As AdWordsUser)
-            ' [START upload_image_asset] MOE:strip_line
             Using assetService As AssetService = CType(
                 user.GetService(
                     AdWordsService.v201809.AssetService),
@@ -78,7 +77,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     Dim result As AssetReturnValue = assetService.mutate(
                         New AssetOperation() _
                                                                             {operation})
-                    ' [END upload_image_asset] MOE:strip_line
 
                     ' Display the results.
                     If Not (result Is Nothing) AndAlso Not (result.value Is Nothing) _

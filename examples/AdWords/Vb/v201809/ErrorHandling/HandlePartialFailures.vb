@@ -59,13 +59,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     AdWordsService.v201809.AdGroupCriterionService),
                 AdGroupCriterionService)
 
-                ' [START enablePartialFailure] MOE:strip_line
                 ' Set partial failure mode for the service.
                 adGroupCriterionService.RequestHeader.partialFailure = True
-                ' [END enablePartialFailure] MOE:strip_line
 
                 Try
-                    ' [START addKeywords] MOE:strip_line
                     Dim operations As New List(Of AdGroupCriterionOperation)
 
                     ' Create the keywords.
@@ -94,9 +91,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     ' Create the keywords.
                     Dim result As AdGroupCriterionReturnValue = adGroupCriterionService.mutate(
                         operations.ToArray)
-                    ' [END addKeywords] MOE:strip_line
 
-                    ' [START handleSuccessfulOperations] MOE:strip_line
                     ' Display the results.
                     If ((Not result Is Nothing) AndAlso (Not result.value Is Nothing)) Then
                         For Each adGroupCriterionResult As AdGroupCriterion In result.value
@@ -112,9 +107,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     Else
                         Console.WriteLine("No keywords were added.")
                     End If
-                    ' [END handleSuccessfulOperations] MOE:strip_line
 
-                    ' [START handleFailedOperations] MOE:strip_line
                     ' Display the partial failure errors.
                     If _
                         ((Not result Is Nothing) AndAlso
@@ -138,7 +131,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                             End If
                         Next
                     End If
-                    ' [END handleFailedOperations] MOE:strip_line
                 Catch e As Exception
                     Throw _
                         New System.ApplicationException(

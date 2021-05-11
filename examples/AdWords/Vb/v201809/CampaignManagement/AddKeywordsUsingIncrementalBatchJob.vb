@@ -284,10 +284,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         Private Function GetBatchJobError(ByVal e As AdWordsApiException) As BatchJobError
             Dim temp As List(Of BatchJobError) = TryCast(e.ApiException, ApiException).
                     GetAllErrorsByType (Of BatchJobError)()
-            ' MOE:begin_strip
-            ' Reinvent FirstOrDefault since you cannot use FirstOrDefault with Mono and VBNC. It
-            ' works in C# though.
-            ' MOE:end_strip
             If temp.Count = 0 Then
                 Return Nothing
             Else

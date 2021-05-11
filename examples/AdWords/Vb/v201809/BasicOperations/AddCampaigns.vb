@@ -63,7 +63,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
 
                 Dim budget As Budget = CreateBudget(user)
 
-                ' [START create_campaigns] MOE:strip_line
                 Dim operations As New List(Of CampaignOperation)
 
                 For i As Integer = 1 To NUM_ITEMS
@@ -141,7 +140,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     Throw New System.ApplicationException("Failed to add campaigns.", e)
                 End Try
             End Using
-            ' [END create_campaigns] MOE:strip_line
         End Sub
 
         ''' <summary>
@@ -150,7 +148,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <param name="user">The AdWords user.</param>
         ''' <returns>The budget instance.</returns>
         Private Shared Function CreateBudget(user As AdWordsUser) As Budget
-            ' [START create_budget] MOE:strip_line
             Using budgetService As BudgetService = CType(
                 user.GetService(
                     AdWordsService.v201809.BudgetService),
@@ -175,7 +172,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     Throw New System.ApplicationException("Failed to add shared budget.", e)
                 End Try
             End Using
-            ' [END create_budget] MOE:strip_line
         End Function
     End Class
 End Namespace

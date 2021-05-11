@@ -295,7 +295,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <param name="feedId">The page feed ID.</param>
         Private Sub UpdateCampaignDsaSetting(ByVal user As AdWordsUser, ByVal campaignId As Long,
                                              ByVal feedId As Long)
-            ' [START getDsaSetting] MOE:strip_line
             Using campaignService As CampaignService = CType(
                 user.GetService(
                     AdWordsService.v201809.CampaignService),
@@ -337,9 +336,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 If dsaSetting Is Nothing Then
                     Throw New System.ApplicationException("This is not a DSA campaign.")
                 End If
-                ' [END getDsaSetting] MOE:strip_line
 
-                ' [START updateDsaSetting] MOE:strip_line
                 ' Use a page feed to specify precisely which URLs to use with your
                 ' Dynamic Search Ads.
                 dsaSetting.pageFeed = New PageFeed()
@@ -370,7 +367,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                         New System.ApplicationException("Failed to set page feed for campaign.", e)
                 End Try
             End Using
-            ' [END updateDsaSetting] MOE:strip_line
         End Sub
 
         ''' <summary>
@@ -382,7 +378,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <returns>The newly created webpage criterion.</returns>
         Private Function AddDsaTargeting(ByVal user As AdWordsUser, ByVal adgroupId As Long,
                                          ByVal labelName As String) As BiddableAdGroupCriterion
-            ' [START addCustomLabelTargeting] MOE:strip_line
             Using adGroupCriterionService As AdGroupCriterionService = CType(
                 user.GetService(
                     AdWordsService.v201809.AdGroupCriterionService),
@@ -439,6 +434,5 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
             End Using
         End Function
 
-        ' [END addCustomLabelTargeting] MOE:strip_line
     End Class
 End Namespace

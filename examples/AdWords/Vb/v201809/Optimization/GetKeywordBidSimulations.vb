@@ -61,7 +61,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <param name="keywordId">Id of the keyword for which bid simulations are
         ''' retrieved.</param>
         Public Sub Run(ByVal user As AdWordsUser, ByVal adGroupId As Long, ByVal keywordId As Long)
-            ' [START prepareRequest] MOE:strip_line
             Using dataService As DataService = CType(
                 user.GetService(
                     AdWordsService.v201809.DataService),
@@ -84,9 +83,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                         .Where(CriterionBidLandscape.Fields.CriterionId).Equals(keywordId) _
                         .DefaultLimit() _
                         .Build()
-                ' [END prepareRequest] MOE:strip_line
 
-                ' [START requestPages] MOE:strip_line
                 Dim page As New CriterionBidLandscapePage
 
                 Dim landscapePointsFound As Integer = 0
@@ -94,9 +91,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 Try
                     Do
                         ' Get bid landscape for keywords.
-                        ' [START sendRequest] MOE:strip_line
                         page = dataService.queryCriterionBidLandscape(query)
-                        ' [END sendRequest] MOE:strip_line
 
                         ' Display bid landscapes.
                         If ((Not page Is Nothing) AndAlso (Not page.entries Is Nothing)) Then
@@ -125,7 +120,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                         End If
                         query.NextPage(page)
                     Loop While (query.HasNextPage(page))
-                    ' [END requestPages] MOE:strip_line
                     Console.WriteLine("Number of keyword bid landscape points found: {0}",
                                       landscapePointsFound)
                 Catch e As Exception

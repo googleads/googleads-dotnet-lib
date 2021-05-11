@@ -53,7 +53,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' </summary>
         ''' <param name="user">The AdWords user.</param>
         Public Sub Run(ByVal user As AdWordsUser)
-            ' [START get_campaigns] MOE:strip_line
             Using campaignService As CampaignService = CType(
                 user.GetService(
                     AdWordsService.v201809.CampaignService),
@@ -91,7 +90,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 Catch e As Exception
                     Throw New System.ApplicationException("Failed to retrieve campaign(s).", e)
                 End Try
-                ' [END get_campaigns] MOE:strip_line
             End Using
         End Sub
     End Class

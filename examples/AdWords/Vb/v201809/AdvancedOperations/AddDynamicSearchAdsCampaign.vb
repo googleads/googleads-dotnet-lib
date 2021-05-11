@@ -71,7 +71,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <param name="user">The AdWords user.</param>
         ''' <returns>The newly created budget.</returns>
         Private Function CreateBudget(ByVal user As AdWordsUser) As Budget
-            ' [START createBudget] MOE:strip_line
             ' Get the BudgetService.
             Using budgetService As BudgetService = CType(
                 user.GetService(
@@ -99,7 +98,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 Catch e As Exception
                     Throw New System.ApplicationException("Failed to add budget.", e)
                 End Try
-                ' [END createBudget] MOE:strip_line
             End Using
         End Function
 
@@ -111,7 +109,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <returns>The newly created campaign.</returns>
         Private Function CreateCampaign(ByVal user As AdWordsUser, ByVal budget As Budget) _
             As Campaign
-            ' [START createCampaign] MOE:strip_line
             Using campaignService As CampaignService = CType(
                 user.GetService(
                     AdWordsService.v201809.CampaignService),
@@ -167,7 +164,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 Catch e As Exception
                     Throw New System.ApplicationException("Failed to add campaigns.", e)
                 End Try
-                ' [END createCampaign] MOE:strip_line
             End Using
         End Function
 
@@ -179,7 +175,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <returns>the newly created ad group.</returns>
         Private Function CreateAdGroup(ByVal user As AdWordsUser, ByVal campaignId As Long) _
             As AdGroup
-            ' [START createAdGroup] MOE:strip_line
             Using adGroupService As AdGroupService = CType(
                 user.GetService(
                     AdWordsService.v201809.AdGroupService),
@@ -225,7 +220,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 Catch e As Exception
                     Throw New System.ApplicationException("Failed to create ad group.", e)
                 End Try
-                ' [END createAdGroup] MOE:strip_line
             End Using
         End Function
 
@@ -237,7 +231,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <returns>The newly created ad.</returns>
         Private Function CreateExpandedDSA(ByVal user As AdWordsUser, ByVal adGroupId As Long) _
             As ExpandedDynamicSearchAd
-            ' [START createExpandedDSA] MOE:strip_line
             Using adGroupAdService As AdGroupAdService = CType(
                 user.GetService(
                     AdWordsService.v201809.AdGroupAdService),
@@ -282,7 +275,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                         New System.ApplicationException(
                             "Failed to create Expanded Dynamic Search Ad.", e)
                 End Try
-                ' [END createExpandedDSA] MOE:strip_line
             End Using
         End Function
 
@@ -294,7 +286,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <returns>The newly created web page criterion.</returns>
         Private Function AddWebPageCriteria(ByVal user As AdWordsUser, ByVal adGroupId As Long) _
             As BiddableAdGroupCriterion
-            ' [START createWebPageCriteria] MOE:strip_line
             Using adGroupCriterionService As AdGroupCriterionService = CType(
                 user.GetService(
                     AdWordsService.v201809.AdGroupCriterionService),
@@ -350,7 +341,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 Catch e As Exception
                     Throw New System.ApplicationException("Failed to create webpage criterion.", e)
                 End Try
-                ' [END createWebPageCriteria] MOE:strip_line
             End Using
         End Function
     End Class

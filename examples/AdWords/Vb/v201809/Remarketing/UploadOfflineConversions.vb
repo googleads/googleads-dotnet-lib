@@ -61,7 +61,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
             End Try
         End Sub
 
-        ' [START uploadOfflineConversions] MOE:strip_line
         ''' <summary>
         ''' Runs the code example.
         ''' </summary>
@@ -123,6 +122,5 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                 End Try
             End Using
         End Sub
-        ' [END uploadOfflineConversions] MOE:strip_line
     End Class
 End Namespace

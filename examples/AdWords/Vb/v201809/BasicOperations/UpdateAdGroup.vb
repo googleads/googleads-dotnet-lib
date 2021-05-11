@@ -73,7 +73,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     AdWordsService.v201809.AdGroupService),
                 AdGroupService)
 
-                ' [START updateAdGroup] MOE:strip_line
                 ' Create an ad group with the specified ID.
                 Dim adGroup As New AdGroup
                 adGroup.id = adGroupId
@@ -101,7 +100,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     ' Update the ad group.
                     Dim retVal As AdGroupReturnValue = adGroupService.mutate(
                         New AdGroupOperation() {operation})
-                    ' [END updateAdGroup] MOE:strip_line
 
                     ' Display the results.
                     If ((Not retVal Is Nothing) AndAlso (Not retVal.value Is Nothing) AndAlso

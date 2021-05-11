@@ -4,6 +4,9 @@ This project hosts the .NET client library for the various SOAP-Based Ads APIs a
  [AdWords API](//developers.google.com/adwords/api) and
  [Google Ad Manager API](//developers.google.com/ad-manager).
 
+> **The AdWords API will [sunset on April 27, 2022](https://ads-developers.googleblog.com/2021/04/upgrade-to-google-ads-api-from-adwords.html).  
+> Upgrade to the [Google Ads API](https://developers.google.com/google-ads/api/docs/client-libs).**
+
 ## Features
 - Distributed via Nuget
 - Stub classes for all the supported API versions and services.

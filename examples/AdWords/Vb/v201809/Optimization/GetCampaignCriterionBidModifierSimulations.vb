@@ -57,7 +57,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
         ''' <param name="campaignId">Id of the campaign for which bid simulations are
         ''' retrieved.</param>
         Public Sub Run(ByVal user As AdWordsUser, ByVal campaignId As Long)
-            ' [START prepareRequest] MOE:strip_line
             Using _
                 dataService As DataService =
                     CType(user.GetService(AdWordsService.v201809.DataService), DataService)
@@ -87,7 +86,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                                             CriterionBidLandscape.Fields.CampaignId, campaignId)
                                     }
                 selector.paging = Paging.Default
-                ' [END prepareRequest] MOE:strip_line
 
                 Dim landscapePointsInLastResponse As Integer = 0
                 Dim landscapePointsFound As Integer = 0
@@ -102,9 +100,7 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                         ' to iterate until you no longer get back any bid landscapes.
 
                         ' Get bid landscape for campaign.
-                        ' [START sendRequest] MOE:strip_line
                         page = dataService.getCampaignCriterionBidLandscape(selector)
-                        ' [END sendRequest] MOE:strip_line
                         landscapePointsInLastResponse = 0
 
                         If (Not page Is Nothing) AndAlso (Not page.entries Is Nothing) Then

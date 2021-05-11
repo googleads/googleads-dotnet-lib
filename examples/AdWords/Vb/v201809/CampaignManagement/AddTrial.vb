@@ -81,7 +81,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     CType(user.GetService(AdWordsService.v201809.TrialAsyncErrorService),
                           TrialAsyncErrorService)
 
-                    ' [START createTrial] MOE:strip_line
                     Dim newTrial As New Trial
                     newTrial.draftId = draftId
                     newTrial.baseCampaignId = baseCampaignId
@@ -92,12 +91,10 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                     Dim trialOperation As New TrialOperation()
                     trialOperation.operator = [Operator].ADD
                     trialOperation.operand = newTrial
-                    ' [END createTrial] MOE:strip_line
                     Try
                         Dim trialId As Long = trialService.mutate(
                             New TrialOperation() {trialOperation}).value(0).id
 
-                        ' [START pollForTrialCompletion] MOE:strip_line
                         ' Since creating a trial is asynchronous, we have to poll it to wait
                         ' for it to finish.
                         Dim trialSelector As New Selector()
@@ -135,7 +132,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                             Console.WriteLine("Trial created with ID {0} and trial campaign " &
                                               "ID {1}.",
                                               newTrial.id, newTrial.trialCampaignId)
-                            ' [START retrieveTrialErrors] MOE:strip_line
                         ElseIf newTrial.status = TrialStatus.CREATION_FAILED Then
                             ' The trial creation failed, and errors can be fetched from the
                             ' TrialAsyncErrorService.
@@ -174,7 +170,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                                     i += 1
                                 Next
                             End If
-                            ' [END retrieveTrialErrors] MOE:strip_line
                         Else
                             ' Most likely, the trial is still being created. You can continue
                             ' polling, but we have limited the number of attempts in the
@@ -183,7 +178,6 @@ Namespace Google.Api.Ads.AdWords.Examples.VB.v201809
                                 "Timed out waiting to create trial from draft ID {0} with " +
                                 "base campaign ID {1}.", draftId, baseCampaignId)
                         End If
-                        ' [END pollForTrialCompletion] MOE:strip_line
                     Catch e As Exception
                         Throw _
                             New System.ApplicationException("Failed to create trial from draft.", e)

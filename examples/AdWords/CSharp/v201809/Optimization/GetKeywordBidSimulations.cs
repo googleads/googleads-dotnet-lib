@@ -79,7 +79,7 @@ namespace Google.Api.Ads.AdWords.Examples.CSharp.v201809
                     .Select(CriterionBidLandscape.Fields.AdGroupId,
                         CriterionBidLandscape.Fields.CriterionId,
                         CriterionBidLandscape.Fields.StartDate,
-                        CriterionBidLandscape.Fields.EndDate,
+                        CriterionBidLandscape.Fields.EndDate, 
                         BidLandscapeLandscapePoint.Fields.Bid,
                         BidLandscapeLandscapePoint.Fields.LocalClicks,
                         BidLandscapeLandscapePoint.Fields.LocalCost,
