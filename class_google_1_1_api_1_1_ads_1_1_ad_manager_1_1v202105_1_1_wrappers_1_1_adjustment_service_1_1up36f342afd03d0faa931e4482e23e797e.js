@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202105_1_1_wrappers_1_1_adjustment_service_1_1up36f342afd03d0faa931e4482e23e797e =
+[
+    [ "updateForecastAdjustmentsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202105_1_1_wrappers_1_1_adjustment_service_1_1up36f342afd03d0faa931e4482e23e797e.html#a3b9fd7c39209a0afdc6a0c1f6ce3a2a7", null ],
+    [ "updateForecastAdjustmentsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202105_1_1_wrappers_1_1_adjustment_service_1_1up36f342afd03d0faa931e4482e23e797e.html#afc9922ce86015098c3bbd2978c233727", null ],
+    [ "forecastAdjustments", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202105_1_1_wrappers_1_1_adjustment_service_1_1up36f342afd03d0faa931e4482e23e797e.html#ad9581286e183717991837eb836c2a502", null ]
+];

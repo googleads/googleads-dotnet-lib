@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202105_1_1_creative_template_operation_error =
+[
+    [ "reason", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202105_1_1_creative_template_operation_error.html#a12cd6c1c63d8e23373820c22b87c9451", null ],
+    [ "reasonSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202105_1_1_creative_template_operation_error.html#a3fa9e34b8f79325e9bfe8cc580f03e8c", null ]
+];
