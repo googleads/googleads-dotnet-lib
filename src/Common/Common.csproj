@@ -6,9 +6,9 @@
     <Description>This library provides you with common functionality to access Google's Ads APIs.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
     <PackageTags>AdWords DFP DoubleClick Google</PackageTags>
+    <PackageIcon>package_icon.png</PackageIcon>
     <Copyright>Copyright 2012, Google Inc. All Rights Reserved.</Copyright>
     <Authors>https://github.com/AnashOommen, https://github.com/ChristopherSeeley, https://github.com/jimper</Authors>
-    <PackageIconUrl>https://www.gstatic.com/images/branding/product/1x/google_developers_48dp.png</PackageIconUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageId>Google.Ads.Common</PackageId>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -34,6 +34,9 @@
     <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
     <PackageReference Include="System.ServiceModel.Security" Version="4.5.3" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../package_icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />

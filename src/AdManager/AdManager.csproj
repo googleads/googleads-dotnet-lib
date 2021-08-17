@@ -3,13 +3,13 @@
    <PropertyGroup>
     <Title>Google's Ad Manager API Dotnet Client Library</Title>
     <PackageId>Google.Dfp</PackageId>
-    <Version>24.15.0</Version>
+    <Version>24.16.0</Version>
     <Description>This library provides you with functionality to access the Google's Ad Manager API.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
     <PackageTags>DFP Google</PackageTags>
+    <PackageIcon>package_icon.png</PackageIcon>
     <Copyright>Copyright 2011, Google Inc. All Rights Reserved.</Copyright>
     <Authors>https://github.com/AnashOommen, https://github.com/ChristopherSeeley, https://github.com/jimper</Authors>
-    <PackageIconUrl>https://www.gstatic.com/images/branding/product/1x/google_developers_64dp.png</PackageIconUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <Company>Google</Company>
     <RepositoryType>git</RepositoryType>
@@ -41,6 +41,9 @@
   <ItemGroup>
     <Content Include="app.config.transform" PackagePath="content" />
     <Content Include="web.config.transform" PackagePath="content" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../package_icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
   <Target Name="CopyAppConfig" BeforeTargets="pack;Build">
     <Copy SourceFiles="App.config" DestinationFiles="app.config.transform" />

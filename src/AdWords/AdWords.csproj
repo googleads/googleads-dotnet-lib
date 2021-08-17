@@ -3,13 +3,13 @@
   <PropertyGroup>
     <Title>AdWords API Dotnet Client Library</Title>
     <PackageId>Google.AdWords</PackageId>
-    <Version>24.15.0</Version>
+    <Version>24.16.0</Version>
     <Description>This library provides you with functionality to access the AdWords API.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
     <PackageTags>AdWords Google</PackageTags>
+    <PackageIcon>package_icon.png</PackageIcon>
     <Copyright>Copyright 2011, Google Inc. All Rights Reserved.</Copyright>
     <Authors>https://github.com/AnashOommen, https://github.com/ChristopherSeeley, https://github.com/jimper</Authors>
-    <PackageIconUrl>https://www.gstatic.com/images/branding/product/1x/google_developers_64dp.png</PackageIconUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <Company>Google</Company>
     <RepositoryType>git</RepositoryType>
@@ -33,6 +33,9 @@
   <ItemGroup>
     <PackageReference Include="Google.Ads.Common" Version="9.5.1" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../package_icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)'=='net452'">
     <Reference Include="System.Web" />
