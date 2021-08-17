@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202108_1_1_get_all_cdn_configurations =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202108_1_1_get_all_cdn_configurations.html#ac1754f96e95c8a88f9118b16dc4b8a73", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202108_1_1_get_all_cdn_configurations.html#a770b3b924f957c00c76b26a8249cdd55", null ]
+];

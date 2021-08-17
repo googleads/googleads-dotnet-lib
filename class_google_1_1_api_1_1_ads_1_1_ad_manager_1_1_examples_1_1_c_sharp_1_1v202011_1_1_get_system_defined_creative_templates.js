@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202011_1_1_get_system_defined_creative_templates =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202011_1_1_get_system_defined_creative_templates.html#a7e8594ce67e2e526ebac2e8dd6d5415a", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202011_1_1_get_system_defined_creative_templates.html#a14d542e68219902a5e92749653d2056e", null ]
-];

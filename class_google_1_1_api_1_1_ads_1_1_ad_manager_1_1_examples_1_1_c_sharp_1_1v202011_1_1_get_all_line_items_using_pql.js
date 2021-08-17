@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202011_1_1_get_all_line_items_using_pql =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202011_1_1_get_all_line_items_using_pql.html#af0cb7896faca5fb02483dda035c65329", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202011_1_1_get_all_line_items_using_pql.html#adf08908694069905908dac148484c238", null ]
-];

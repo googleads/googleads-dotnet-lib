@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_list_string_creative_template_variable_variable_choice =
-[
-    [ "label", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_list_string_creative_template_variable_variable_choice.html#a92986dcf6ae3f35f7a0f7be4684f5e10", null ],
-    [ "value", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_list_string_creative_template_variable_variable_choice.html#acedd5c9a91a1b3285f0813a8b42daced", null ]
-];

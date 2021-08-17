@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202108_1_1_get_user_team_associations_for_user =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202108_1_1_get_user_team_associations_for_user.html#ab7f908c797c6ca3d5313b1c11fd7b8e9", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202108_1_1_get_user_team_associations_for_user.html#aeb6ce1b24fa0ff5bc4003289214be20e", null ]
+];

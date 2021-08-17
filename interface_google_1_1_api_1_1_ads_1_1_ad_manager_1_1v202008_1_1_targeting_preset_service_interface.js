@@ -1,5 +1,0 @@
-var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_targeting_preset_service_interface =
-[
-    [ "getTargetingPresetsByStatement", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_targeting_preset_service_interface.html#a965f5c8c0ac50b6b4f158d8bc856fd93", null ],
-    [ "getTargetingPresetsByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_targeting_preset_service_interface.html#a1463f73d01612dd38e7da125d38200aa", null ]
-];

@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202108_1_1_wrappers_1_1_dai_authentication_key_sb9532987c5725b8ab10a7ab06f2b24e0 =
+[
+    [ "updateDaiAuthenticationKeysRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202108_1_1_wrappers_1_1_dai_authentication_key_sb9532987c5725b8ab10a7ab06f2b24e0.html#a0811677c5aac40fb703d292527130fd4", null ],
+    [ "updateDaiAuthenticationKeysRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202108_1_1_wrappers_1_1_dai_authentication_key_sb9532987c5725b8ab10a7ab06f2b24e0.html#ab90638183a110e8690c7c840a1132e57", null ],
+    [ "daiAuthenticationKeys", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202108_1_1_wrappers_1_1_dai_authentication_key_sb9532987c5725b8ab10a7ab06f2b24e0.html#aec8582590b8634189197f8252faa90ed", null ]
+];

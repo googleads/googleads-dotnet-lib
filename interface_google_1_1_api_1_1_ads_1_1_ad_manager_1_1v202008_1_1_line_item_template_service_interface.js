@@ -1,5 +1,0 @@
-var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_line_item_template_service_interface =
-[
-    [ "getLineItemTemplatesByStatement", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_line_item_template_service_interface.html#ae9291c2912e0df73ee62523e41ba5bf4", null ],
-    [ "getLineItemTemplatesByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202008_1_1_line_item_template_service_interface.html#a852cd3d8a8745d06f92045d280608353", null ]
-];
