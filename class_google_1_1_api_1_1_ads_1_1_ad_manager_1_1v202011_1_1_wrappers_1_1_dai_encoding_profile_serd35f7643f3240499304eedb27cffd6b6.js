@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_wrappers_1_1_dai_encoding_profile_serd35f7643f3240499304eedb27cffd6b6 =
-[
-    [ "createDaiEncodingProfilesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_wrappers_1_1_dai_encoding_profile_serd35f7643f3240499304eedb27cffd6b6.html#a5bf975aa8ec85a06ec33d3914aebcad1", null ],
-    [ "createDaiEncodingProfilesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_wrappers_1_1_dai_encoding_profile_serd35f7643f3240499304eedb27cffd6b6.html#a59f054fcb9da60328b08db9b857fa278", null ],
-    [ "daiEncodingProfiles", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_wrappers_1_1_dai_encoding_profile_serd35f7643f3240499304eedb27cffd6b6.html#ab5301fb09550994cfb57e177b5faf3c5", null ]
-];

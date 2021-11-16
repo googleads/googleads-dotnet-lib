@@ -1,0 +1,11 @@
+var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202111_1_1_dai_authentication_key_service_interface =
+[
+    [ "createDaiAuthenticationKeys", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202111_1_1_dai_authentication_key_service_interface.html#a66f262f3a157bf44d3703ff1ef5a6a7f", null ],
+    [ "createDaiAuthenticationKeysAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202111_1_1_dai_authentication_key_service_interface.html#a0f762b19c2dcdb66ca973ab024a889c6", null ],
+    [ "getDaiAuthenticationKeysByStatement", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202111_1_1_dai_authentication_key_service_interface.html#ae90fcb0f8cfd06478ac0b94fa6a94601", null ],
+    [ "getDaiAuthenticationKeysByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202111_1_1_dai_authentication_key_service_interface.html#ab9213cbefcfd2f70cda324136afc2333", null ],
+    [ "performDaiAuthenticationKeyAction", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202111_1_1_dai_authentication_key_service_interface.html#a3cdac55c64124f83795f6cb03bd5d46d", null ],
+    [ "performDaiAuthenticationKeyActionAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202111_1_1_dai_authentication_key_service_interface.html#a949db80f4942b88eabab57a224899b6c", null ],
+    [ "updateDaiAuthenticationKeys", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202111_1_1_dai_authentication_key_service_interface.html#a8b19a7d87bbd6dff3da70f2f8a5fe75f", null ],
+    [ "updateDaiAuthenticationKeysAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202111_1_1_dai_authentication_key_service_interface.html#a2b922c1acabc33c63d11f2014a085005", null ]
+];

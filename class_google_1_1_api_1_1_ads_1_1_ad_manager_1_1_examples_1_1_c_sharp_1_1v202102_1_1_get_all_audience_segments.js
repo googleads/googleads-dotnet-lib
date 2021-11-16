@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202102_1_1_get_all_audience_segments =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202102_1_1_get_all_audience_segments.html#aa8ce68cef789af4b89d582f706eaf9c6", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202102_1_1_get_all_audience_segments.html#ac4c245ec380e7cbb53a4ee52a68e8c86", null ]
-];

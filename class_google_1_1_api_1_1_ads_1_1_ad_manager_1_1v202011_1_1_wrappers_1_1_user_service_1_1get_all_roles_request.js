@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_wrappers_1_1_user_service_1_1get_all_roles_request =
-[
-    [ "getAllRolesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202011_1_1_wrappers_1_1_user_service_1_1get_all_roles_request.html#a402fbfb0fbfb29e619671b3ef70b3525", null ]
-];
