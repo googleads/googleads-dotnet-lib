@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202105_1_1_get_availability_forecast_by_id =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202105_1_1_get_availability_forecast_by_id.html#a37ddd656b8994ee411f403e6ec426ba2", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202105_1_1_get_availability_forecast_by_id.html#ad569dba00a143c226dfc095385a64da9", null ]
-];

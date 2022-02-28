@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_spots_request =
+[
+    [ "createAdSpotsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_spots_request.html#a3ea1efcb7d4538b1bcfb30e4489d17b5", null ],
+    [ "createAdSpotsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_spots_request.html#a897e8d1b2736097a52fa8e7a9cec2692", null ],
+    [ "adSpots", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_ad_rule_service_1_1create_ad_spots_request.html#abdf0143b68220dbed735a7dcb6762c02", null ]
+];

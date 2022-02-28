@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_yield_group_service_1_1create_yield_groups_request =
+[
+    [ "createYieldGroupsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_yield_group_service_1_1create_yield_groups_request.html#aaecb480e166ca0dfb2f1956c1181048b", null ],
+    [ "createYieldGroupsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_yield_group_service_1_1create_yield_groups_request.html#af48221ce7504f6a844d86787ad4c10b0", null ],
+    [ "yieldGroups", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_yield_group_service_1_1create_yield_groups_request.html#a6e48d4dad33ffff5735f31facdcbae05", null ]
+];

@@ -1,0 +1,11 @@
+var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_user_team_association_service_interface =
+[
+    [ "createUserTeamAssociations", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_user_team_association_service_interface.html#a247411553547d2d7b41209858f987909", null ],
+    [ "createUserTeamAssociationsAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_user_team_association_service_interface.html#a44c2574d0655d94b7f1b1268cfafa548", null ],
+    [ "getUserTeamAssociationsByStatement", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_user_team_association_service_interface.html#a2582a809ed2a7901cb84317d1f9bf6ce", null ],
+    [ "getUserTeamAssociationsByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_user_team_association_service_interface.html#adc81df12ebb85d8350a1f98c6f65c61b", null ],
+    [ "performUserTeamAssociationAction", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_user_team_association_service_interface.html#ae4edd49c0db880f72eba54174ad4e929", null ],
+    [ "performUserTeamAssociationActionAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_user_team_association_service_interface.html#a930776f40f566981f99713dce0656489", null ],
+    [ "updateUserTeamAssociations", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_user_team_association_service_interface.html#a38bb4ae7ff46d805a137c9bb871b24c3", null ],
+    [ "updateUserTeamAssociationsAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_user_team_association_service_interface.html#a56e5003d66efe7eeac3df4cad5e165a9", null ]
+];

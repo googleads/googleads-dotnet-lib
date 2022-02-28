@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202102_1_1_wrappers_1_1_ad_rule_service_1_1create_break_templates_response =
-[
-    [ "createBreakTemplatesResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202102_1_1_wrappers_1_1_ad_rule_service_1_1create_break_templates_response.html#abdc94b0c7acff305fe8747fd0e03a6d8", null ],
-    [ "createBreakTemplatesResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202102_1_1_wrappers_1_1_ad_rule_service_1_1create_break_templates_response.html#a5dedce70c5fe25e1dfe52746e6bf8058", null ],
-    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202102_1_1_wrappers_1_1_ad_rule_service_1_1create_break_templates_response.html#aaa060567e95a5331cbdc21085b3ec5c2", null ]
-];

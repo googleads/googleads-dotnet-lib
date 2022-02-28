@@ -244,10 +244,10 @@ var NAVTREEINDEX10 =
 "_context_store_8cs.html":[2,0,0,0,1,2,1,9],
 "_create_account_8cs.html":[2,0,0,0,0,1,0,1,0,1],
 "_create_and_attach_shared_keyword_set_8cs.html":[2,0,0,0,0,1,0,1,1,12],
+"_create_video_creative_8cs.html":[2,0,0,0,0,0,0,3,9,5],
 "_csv_exception_8cs.html":[2,0,0,0,1,2,4,3],
 "_csv_file_8cs.html":[2,0,0,0,1,2,4,4],
 "_date_time_provider_8cs.html":[2,0,0,0,1,2,4,5],
 "_default_body_formatter_8cs.html":[2,0,0,0,1,2,2,1],
-"_default_date_time_provider_8cs.html":[2,0,0,0,1,2,4,6],
-"_default_trace_writer_8cs.html":[2,0,0,0,1,2,2,2]
+"_default_date_time_provider_8cs.html":[2,0,0,0,1,2,4,6]
 };
