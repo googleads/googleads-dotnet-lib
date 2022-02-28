@@ -18,7 +18,7 @@ using System.Linq;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests;
 using Google.Api.Ads.AdManager.Lib;
-using Google.Api.Ads.AdManager.v202102;
+using Google.Api.Ads.AdManager.v202202;
 
 using NUnit.Framework;
 
@@ -47,7 +47,10 @@ namespace Google.Api.Ads.AdManager.Tests
             StubIntegrityTestHelper.EnumerateServices<AdManagerService>(
                 delegate (ServiceSignature serviceSignature)
                 {
-                    Assert.DoesNotThrow(delegate () { user.GetService(serviceSignature); });
+                    Assert.DoesNotThrow(delegate () { user.GetService(serviceSignature); },
+                    "Error when creating {0}.{1}",
+                    serviceSignature.Version,
+                    serviceSignature.ServiceName);
                 });
         }
 

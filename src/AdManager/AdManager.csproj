@@ -3,7 +3,7 @@
    <PropertyGroup>
     <Title>Google's Ad Manager API Dotnet Client Library</Title>
     <PackageId>Google.Dfp</PackageId>
-    <Version>24.17.0</Version>
+    <Version>24.18.0</Version>
     <Description>This library provides you with functionality to access the Google's Ad Manager API.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
     <PackageTags>DFP Google</PackageTags>
