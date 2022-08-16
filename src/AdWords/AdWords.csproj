@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Title>AdWords API Dotnet Client Library</Title>
     <PackageId>Google.AdWords</PackageId>
-    <Version>24.18.0</Version>
+    <Version>24.20.0</Version>
     <Description>This library provides you with functionality to access the AdWords API.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
     <PackageTags>AdWords Google</PackageTags>
@@ -31,7 +31,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Google.Ads.Common" Version="9.5.1" />
+    <PackageReference Include="Google.Ads.Common" Version="9.5.2" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
   </ItemGroup>
   <ItemGroup>

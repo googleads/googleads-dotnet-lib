@@ -1,3 +1,29 @@
+24.20.0
+======
+ AdWords:
+   -
+
+ Ad Manager:
+   - Added support for v202208
+   - Removed examples for v202111
+   - Removed support for v202108
+   -
+
+ Common:
+   - Updated Newtonsoft.Json dependency to 13.0.1
+
+24.19.0
+======
+ AdWords:
+   -
+
+ Ad Manager:
+   - Added support for v202205.
+   - Removed examples for v202108.
+   - Removed support for v202105.
+
+ Common:
+   -
 24.18.0
 ======
  AdWords:
