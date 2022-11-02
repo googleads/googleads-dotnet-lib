@@ -21,7 +21,7 @@ using System.ServiceModel;
 using System.Xml;
 
 using Google.Api.Ads.AdManager.Lib;
-using Google.Api.Ads.AdManager.v202208;
+using Google.Api.Ads.AdManager.v202211;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests.Mocks;
 using Google.Api.Ads.Common.Util;
@@ -42,7 +42,7 @@ namespace Google.Api.Ads.AdManager.Tests
         const string fault_xml =
             @"<soap:Envelope xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/"">
   <soap:Header>
-    <ResponseHeader xmlns=""https://www.google.com/apis/ads/publisher/v202208"">
+    <ResponseHeader xmlns=""https://www.google.com/apis/ads/publisher/v202211"">
       <requestId>1234567890</requestId>
       <responseTime>123</responseTime>
     </ResponseHeader>
@@ -52,7 +52,7 @@ namespace Google.Api.Ads.AdManager.Tests
       <faultcode>soap:Server</faultcode>
       <faultstring>[PublisherQueryLanguageContextError.UNEXECUTABLE]</faultstring>
       <detail>
-        <ApiExceptionFault xmlns=""https://www.google.com/apis/ads/publisher/v202208"">
+        <ApiExceptionFault xmlns=""https://www.google.com/apis/ads/publisher/v202211"">
           <message>[PublisherQueryLanguageContextError.UNEXECUTABLE]</message>
           <errors xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance""
               xsi:type=""PublisherQueryLanguageContextError"">
@@ -111,7 +111,7 @@ namespace Google.Api.Ads.AdManager.Tests
             SoapFaultInspector<AdManagerApiException> inspector =
                 new SoapFaultInspector<AdManagerApiException>()
                 {
-                    ErrorType = typeof(AdManager.v202208.ApiException)
+                    ErrorType = typeof(AdManager.v202211.ApiException)
                 };
 
             XmlDocument xDoc = XmlUtilities.CreateDocument(fault_xml);

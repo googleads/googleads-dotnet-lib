@@ -15,7 +15,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Google.Ads.Common" Version="9.5.2" />
-    <PackageReference Include="Google.AdWords" Version="24.20.0" />
+    <PackageReference Include="Google.AdWords" Version="24.21.0" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
   </ItemGroup>
   <ItemGroup>
