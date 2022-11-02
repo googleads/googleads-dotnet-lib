@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202202_1_1_get_user_by_email_address =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202202_1_1_get_user_by_email_address.html#a009d8a241f42f2c2a38806ca759ca15d", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202202_1_1_get_user_by_email_address.html#a7fcc94b6cf769aa5acae98bb1f399b62", null ]
-];

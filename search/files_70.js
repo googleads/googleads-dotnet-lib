@@ -3,13 +3,13 @@ var searchData=
   ['paging_2ecs',['Paging.cs',['../_paging_8cs.html',1,'']]],
   ['parallelreportdownload_2ecs',['ParallelReportDownload.cs',['../_parallel_report_download_8cs.html',1,'']]],
   ['pausead_2ecs',['PauseAd.cs',['../_pause_ad_8cs.html',1,'']]],
-  ['populatefirstpartyaudiencesegments_2ecs',['PopulateFirstPartyAudienceSegments.cs',['../v202205_2_audience_segment_service_2_populate_first_party_audience_segments_8cs.html',1,'']]],
-  ['populatefirstpartyaudiencesegments_2ecs',['PopulateFirstPartyAudienceSegments.cs',['../v202202_2_audience_segment_service_2_populate_first_party_audience_segments_8cs.html',1,'']]],
   ['populatefirstpartyaudiencesegments_2ecs',['PopulateFirstPartyAudienceSegments.cs',['../v202208_2_audience_segment_service_2_populate_first_party_audience_segments_8cs.html',1,'']]],
-  ['pqlutilities_2ecs',['PqlUtilities.cs',['../v202111_2_pql_utilities_8cs.html',1,'']]],
+  ['populatefirstpartyaudiencesegments_2ecs',['PopulateFirstPartyAudienceSegments.cs',['../v202205_2_audience_segment_service_2_populate_first_party_audience_segments_8cs.html',1,'']]],
+  ['populatefirstpartyaudiencesegments_2ecs',['PopulateFirstPartyAudienceSegments.cs',['../v202211_2_audience_segment_service_2_populate_first_party_audience_segments_8cs.html',1,'']]],
   ['pqlutilities_2ecs',['PqlUtilities.cs',['../v202202_2_pql_utilities_8cs.html',1,'']]],
   ['pqlutilities_2ecs',['PqlUtilities.cs',['../v202205_2_pql_utilities_8cs.html',1,'']]],
   ['pqlutilities_2ecs',['PqlUtilities.cs',['../v202208_2_pql_utilities_8cs.html',1,'']]],
+  ['pqlutilities_2ecs',['PqlUtilities.cs',['../v202211_2_pql_utilities_8cs.html',1,'']]],
   ['preconditionutilities_2ecs',['PreconditionUtilities.cs',['../_precondition_utilities_8cs.html',1,'']]],
   ['predefinedreporttypes_2ecs',['PredefinedReportTypes.cs',['../_predefined_report_types_8cs.html',1,'']]],
   ['predicate_2ecs',['Predicate.cs',['../_predicate_8cs.html',1,'']]],
@@ -20,7 +20,7 @@ var searchData=
   ['productpartitiontree_2ecs',['ProductPartitionTree.cs',['../_product_partition_tree_8cs.html',1,'']]],
   ['program_2ecs',['Program.cs',['../_ad_manager_2_c_sharp_2_program_8cs.html',1,'']]],
   ['program_2ecs',['Program.cs',['../_ad_words_2_c_sharp_2_program_8cs.html',1,'']]],
+  ['pushcreativetodevices_2ecs',['PushCreativeToDevices.cs',['../v202208_2_line_item_creative_association_service_2_push_creative_to_devices_8cs.html',1,'']]],
   ['pushcreativetodevices_2ecs',['PushCreativeToDevices.cs',['../v202205_2_line_item_creative_association_service_2_push_creative_to_devices_8cs.html',1,'']]],
-  ['pushcreativetodevices_2ecs',['PushCreativeToDevices.cs',['../v202202_2_line_item_creative_association_service_2_push_creative_to_devices_8cs.html',1,'']]],
-  ['pushcreativetodevices_2ecs',['PushCreativeToDevices.cs',['../v202208_2_line_item_creative_association_service_2_push_creative_to_devices_8cs.html',1,'']]]
+  ['pushcreativetodevices_2ecs',['PushCreativeToDevices.cs',['../v202211_2_line_item_creative_association_service_2_push_creative_to_devices_8cs.html',1,'']]]
 ];
