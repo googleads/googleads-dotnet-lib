@@ -4,7 +4,7 @@
     <Title>Ads API Dotnet Common Library</Title>
     <Version>9.5.2</Version>
     <Description>This library provides you with common functionality to access Google's Ads APIs.</Description>
-    <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/master/ChangeLog</PackageReleaseNotes>
+    <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/main/ChangeLog</PackageReleaseNotes>
     <PackageTags>AdWords DFP DoubleClick Google</PackageTags>
     <PackageIcon>package_icon.png</PackageIcon>
     <Copyright>Copyright 2012, Google Inc. All Rights Reserved.</Copyright>

@@ -1,3 +1,13 @@
+24.22.0
+======
+ Ad Manager:
+   - Added support for v202302.
+   - Removed examples for v202205.
+   - Removed support for v202202.
+
+ Common:
+   - No changes.
+
 24.21.0
 ======
  AdWords:
@@ -1470,7 +1480,7 @@ Common:
 - AdWords, AdxBuyer, DFP and DFA .NET client libraries were combined into a
   single repository and given a single version number. The older versions
   and ChangeLog may be obtained from
-  https://github.com/googleads/googleads-dotnet-lib/tree/master/legacy.
+  https://github.com/googleads/googleads-dotnet-lib/tree/main/legacy.
 
 AdWords:
 - Added support for v201406, except for AdWords for Video.
