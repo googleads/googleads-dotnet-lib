@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_user_team_association_se86254e69b66a409d5891c4a2c6d32486 =
-[
-    [ "createUserTeamAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_user_team_association_se86254e69b66a409d5891c4a2c6d32486.html#a33b62cf12e5dd1732b33409c7e1bb364", null ],
-    [ "createUserTeamAssociationsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_user_team_association_se86254e69b66a409d5891c4a2c6d32486.html#a021a1c2846973453ba09197915ac0756", null ],
-    [ "userTeamAssociations", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_user_team_association_se86254e69b66a409d5891c4a2c6d32486.html#ab3d49d1709cdcf8a138da4fe3356dd8f", null ]
-];

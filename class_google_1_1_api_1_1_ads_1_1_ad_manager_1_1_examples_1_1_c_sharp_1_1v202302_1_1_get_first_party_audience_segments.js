@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202302_1_1_get_first_party_audience_segments =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202302_1_1_get_first_party_audience_segments.html#a68814ff287e897ab8318a04522f30aa5", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202302_1_1_get_first_party_audience_segments.html#a4c699cf32c58277927c89c7646768810", null ]
+];

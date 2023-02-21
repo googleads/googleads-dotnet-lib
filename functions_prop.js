@@ -23,7 +23,5 @@ var functions_prop =
     [ "u", "functions_prop_0x75.html", null ],
     [ "v", "functions_prop_0x76.html", null ],
     [ "w", "functions_prop_0x77.html", null ],
-    [ "x", "functions_prop_0x78.html", null ],
-    [ "y", "functions_prop_0x79.html", null ],
-    [ "z", "functions_prop_0x7a.html", null ]
+    [ "y", "functions_prop_0x79.html", null ]
 ];

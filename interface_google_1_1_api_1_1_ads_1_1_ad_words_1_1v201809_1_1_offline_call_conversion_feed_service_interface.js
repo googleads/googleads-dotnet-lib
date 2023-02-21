@@ -1,5 +1,0 @@
-var interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_offline_call_conversion_feed_service_interface =
-[
-    [ "mutate", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_offline_call_conversion_feed_service_interface.html#ae0a2bb687d7d87ee5de28a0b334f45ab", null ],
-    [ "mutateAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_offline_call_conversion_feed_service_interface.html#a40dd6a6f7433dd7c0be9dcce5c1a9005", null ]
-];

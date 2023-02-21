@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_ad_sharing_error_1_1_filterable_fields =
-[
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_ad_sharing_error_1_1_filterable_fields.html#a726da1b93a60a631fe31ad7e1a42b290", null ]
-];

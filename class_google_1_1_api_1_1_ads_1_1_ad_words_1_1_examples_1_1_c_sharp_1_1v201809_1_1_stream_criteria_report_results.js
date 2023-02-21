@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_stream_criteria_report_results =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_stream_criteria_report_results.html#a0ca16771fc9faf5d40a4662892580791", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_stream_criteria_report_results.html#a88ec4447b3cad89debd752ccd98c23e9", null ]
-];

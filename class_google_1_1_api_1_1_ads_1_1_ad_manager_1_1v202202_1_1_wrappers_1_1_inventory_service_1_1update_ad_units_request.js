@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_request =
-[
-    [ "updateAdUnitsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_request.html#af830e45efb831205da1a8d6462824ef8", null ],
-    [ "updateAdUnitsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_request.html#a7b770367322043b4a4e061beb69d4919", null ],
-    [ "adUnits", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202202_1_1_wrappers_1_1_inventory_service_1_1update_ad_units_request.html#adf958adccda64d414560878e28491014", null ]
-];

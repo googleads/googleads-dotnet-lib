@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_get_keyword_bid_simulations =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_get_keyword_bid_simulations.html#aac09824b22295755dc4eb4a567ac3fdd", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_get_keyword_bid_simulations.html#a803ff42fae7a7822275fe00220618363", null ]
-];

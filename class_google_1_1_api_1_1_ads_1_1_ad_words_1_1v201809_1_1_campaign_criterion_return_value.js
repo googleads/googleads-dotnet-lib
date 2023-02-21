@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_return_value =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_return_value_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_return_value_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_return_value_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_return_value_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_return_value_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_return_value_1_1_selectable_fields" ],
-    [ "partialFailureErrors", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_return_value.html#a0ad83dd97c0a52c6aae1202876bead26", null ],
-    [ "value", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_campaign_criterion_return_value.html#a1a15ce4f43b8329198cfe3c7a5515815", null ]
-];

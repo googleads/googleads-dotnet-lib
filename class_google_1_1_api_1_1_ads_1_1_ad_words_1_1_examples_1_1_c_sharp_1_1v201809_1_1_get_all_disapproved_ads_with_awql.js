@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_get_all_disapproved_ads_with_awql =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_get_all_disapproved_ads_with_awql.html#a787ea4f274c5b84d931df076f91a69af", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1_examples_1_1_c_sharp_1_1v201809_1_1_get_all_disapproved_ads_with_awql.html#a76864091f68579f7760368bd10224cde", null ]
-];

@@ -1,8 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_ad_group_ad_rotation_mode =
-[
-    [ "Fields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_ad_group_ad_rotation_mode_1_1_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_ad_group_ad_rotation_mode_1_1_fields" ],
-    [ "FilterableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_ad_group_ad_rotation_mode_1_1_filterable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_ad_group_ad_rotation_mode_1_1_filterable_fields" ],
-    [ "SelectableFields", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_ad_group_ad_rotation_mode_1_1_selectable_fields.html", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_ad_group_ad_rotation_mode_1_1_selectable_fields" ],
-    [ "adRotationMode", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_ad_group_ad_rotation_mode.html#a29405a95dd2a54f54435ff762d660c3f", null ],
-    [ "adRotationModeSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_words_1_1v201809_1_1_ad_group_ad_rotation_mode.html#a737d10336f2230dfdd511c7d030db6e1", null ]
-];
