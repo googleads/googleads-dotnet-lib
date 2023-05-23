@@ -1,3 +1,10 @@
+24.23.0
+=====
+ Ad Manager:
+   - Added support for v202305.
+   - Removed examples for v202208.
+   - Removed support for v202205.
+
 24.22.0
 ======
  Ad Manager:
