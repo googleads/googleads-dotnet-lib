@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202211_1_1_create_custom_field_options =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202211_1_1_create_custom_field_options.html#ac29a563cfa59ed2ec1c00a73be8b4038", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202211_1_1_create_custom_field_options.html#afaa512e886639932aa77e8b035ac5c2d", null ]
-];
