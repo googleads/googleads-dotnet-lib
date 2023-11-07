@@ -1,4 +1,4 @@
-﻿// copyright 2017, google inc. all rights reserved.
+// copyright 2017, google inc. all rights reserved.
 //
 // licensed under the apache license, version 2.0 (the "license");
 // you may not use this file except in compliance with the license.
@@ -12,6 +12,7 @@
 // see the license for the specific language governing permissions and
 // limitations under the license.
 
+using System;
 using System.ServiceModel;
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Tests.Mocks;
@@ -80,6 +81,13 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       Assert.True(service.EnableDecompression);
       behavior.Remove<GzipHeaderInspector>();
       Assert.False(service.EnableDecompression);
+    }
+
+    [Test]
+    public void TestTimeout() {
+      int timeout = 10 * 60 * 1000; // 10 minutes in milliseconds.
+      service.Timeout = timeout;
+      Assert.AreEqual(timeout, service.Timeout);
     }
   }
 }

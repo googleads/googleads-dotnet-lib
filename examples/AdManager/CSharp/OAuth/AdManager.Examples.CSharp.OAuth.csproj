@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -83,8 +83,8 @@
         Include="..\..\..\..\src\AdManager\AdManager.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Google.Ads.Common" Version="9.5.2" />
-    <PackageReference Include="Google.Dfp" Version="24.24.0" />
+    <PackageReference Include="Google.Ads.Common" Version="9.5.3" />
+    <PackageReference Include="Google.Dfp" Version="24.25.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,9 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
   <!-- nupkg properties -->
    <PropertyGroup>
     <Title>Google's Ad Manager API Dotnet Client Library</Title>
     <PackageId>Google.Dfp</PackageId>
-    <Version>24.24.0</Version>
+    <Version>24.25.0</Version>
     <Description>This library provides you with functionality to access the Google's Ad Manager API.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/main/ChangeLog</PackageReleaseNotes>
     <PackageTags>DFP Google</PackageTags>
@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NodaTime" Version="2.4.2" />
-    <PackageReference Include="Google.Ads.Common" Version="9.5.2" />
+    <PackageReference Include="Google.Ads.Common" Version="9.5.3" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
   </ItemGroup>
   <ItemGroup>

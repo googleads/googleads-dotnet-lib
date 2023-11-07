@@ -31,7 +31,13 @@ namespace Google.Api.Ads.Common.Lib
         /// </summary>
         public int Timeout
         {
-            get { return this.Endpoint.Binding.SendTimeout.Milliseconds; }
+            get
+            { 
+                long ms = this.Endpoint.Binding.SendTimeout.Ticks / TimeSpan.TicksPerMillisecond;
+                // Binding limits timeouts to Int32.MaxValue TotalMilliseconds
+                // but use Convert to protect against implementation changes.
+                return Convert.ToInt32(ms);
+            }
             set
             {
                 long ticks = value * TimeSpan.TicksPerMillisecond;

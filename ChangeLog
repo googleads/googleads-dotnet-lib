@@ -1,3 +1,10 @@
+24.25.0
+=====
+   - Added support for v202311
+   - Removed examples for v202302
+   - Removed support for v202211
+   - Fixed https://github.com/googleads/googleads-dotnet-lib/issues/253
+
 24.24.0
 =====
    - Added support for v202308

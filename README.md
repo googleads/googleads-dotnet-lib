@@ -1,11 +1,7 @@
-# Google Ads API .NET Client Library
+# Google Ad Manager SOAP API .NET Client Library
 
-This project hosts the .NET client library for the various SOAP-Based Ads APIs at Google -
- [AdWords API](//developers.google.com/adwords/api) and
- [Google Ad Manager API](//developers.google.com/ad-manager).
-
-> **The AdWords API will [sunset on April 27, 2022](https://ads-developers.googleblog.com/2021/04/upgrade-to-google-ads-api-from-adwords.html).  
-> Upgrade to the [Google Ads API](https://developers.google.com/google-ads/api/docs/client-libs).**
+This project hosts the .NET client library for the
+[Google Ad Manager SOAP API](//developers.google.com/ad-manager/api).
 
 ## Features
 - Distributed via Nuget
@@ -28,13 +24,7 @@ http://googleadsdeveloper.blogspot.com/.
 
 ## Getting started
 
-1. Install your library of choice. We recommend using the following Nuget distributions:
-  #### AdWords API
-
-  - [Google.AdWords](https://www.nuget.org/packages/Google.AdWords/): AdWords API DotNet Client
-  Library
-
-  #### Ad Manager API
+1. Install your library. We recommend using the following Nuget distribution:
 
   - [Google.Dfp](https://www.nuget.org/packages/Google.Dfp/): Ad Manager API DotNet Client Library
 
@@ -43,18 +33,17 @@ http://googleadsdeveloper.blogspot.com/.
 
 1. Setup your OAuth2 credentials.
 
-  The AdWords and Ad Manager APIs use
+  The and Ad Manager API uses
 [OAuth2](http://oauth.net/2/) as the authentication mechanism. Follow the appropriate guide below
  based on your use case.
 
   **If you're accessing an API using your own credentials...**
 
-  * [Using AdWords API](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-using-own-credentials-(installed-application-flow))
-  * [Using Ad Manager API](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-using-own-credentials-(server-to-server-flow))
+  * [Using Service Accounts](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-using-own-credentials-(server-to-server-flow))
 
   **If you're accessing an API on behalf of clients...**
 
-  * [Developing a web application (AdWords API or Ad Manager API)](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-on-behalf-of-your-clients-(web-flow))
+  * [Developing a web application](https://github.com/googleads/googleads-dotnet-lib/wiki/API-access-on-behalf-of-your-clients-(web-flow))
 
 ## Alternative distribution options
 
@@ -64,7 +53,6 @@ The binary distribution of the Ads API .NET library consists of a precompiled ve
  library as a .NET assembly, code examples for using the library, and library documentation.
  If you are interested in just using the library and not in its internals, and you don't use
  nuget package manager in your development environment, then you should download this distribution.
- There are separate downloads for AdWords and Ad Manager APIs.
 
 The contents of this distribution are as follows:
 ```
@@ -89,8 +77,8 @@ To run the code examples:
 - Open the Properties dialog for the Examples project (Right click the Examples project of your
  choice in the Solution Explorer and select the Properties option from the context menu.).
 - Navigate to the Debug Tab and enter the command line options. The command line options are of
- the form `version.examplename`. For instance, `v201809.AddCampaign` is the command line option to
- run `AddCampaign` example in `v201603` version of the AdWords API.
+ the form `version.examplename`. For instance, `v202308.GetCurrentNetwork` is the command line option to
+ run `GetCurrentNetwork` example in `v202308` version of the Ad Manager API.
 - Compile and run the Examples project.
 
 Alternatively, each code example has a `main()` method, so you can set the appropriate code example
@@ -110,13 +98,12 @@ To use the library in a new project:
 
 ```
 // Create an appropriate AdsUser instance.
-AdWordsUser user = new AdWordsUser();
+AdManagerUser user = new AdManagerUser();
 
 // Create the required service.
-using (CampaignService service = (CampaignService) user.GetService(
-     AdWordsService.v201809.CampaignService))
+using (NetworkService networkService = user.GetService<NetworkService>())
 {
-    // make more calls to service class.
+    // make calls to service class.
 }
 
 ```
@@ -136,12 +123,10 @@ See https://github.com/googleads/googleads-dotnet-lib/wiki#logging for details.
 - https://github.com/googleads/googleads-dotnet-lib/issues
 
 ### API Documentation:
-- AdWords API: https://developers.google.com/adwords/api/
-- Ad Manager API: https://developers.google.com/ad-manager/
+- https://developers.google.com/ad-manager/api
 
 ### Support forum
-- AdWords API: https://developers.google.com/adwords/api/community/
-- Ad Manager API: https://developers.google.com/doubleclick-publishers/community
+- https://developers.google.com/doubleclick-publishers/community
 
 ### Authors
 - https://github.com/AnashOommen
