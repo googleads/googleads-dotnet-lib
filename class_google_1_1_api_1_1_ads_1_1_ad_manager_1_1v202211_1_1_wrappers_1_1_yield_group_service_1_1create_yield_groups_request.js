@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202211_1_1_wrappers_1_1_yield_group_service_1_1create_yield_groups_request =
-[
-    [ "createYieldGroupsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202211_1_1_wrappers_1_1_yield_group_service_1_1create_yield_groups_request.html#a5c873b4e947da37007636a8dbd49a5ba", null ],
-    [ "createYieldGroupsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202211_1_1_wrappers_1_1_yield_group_service_1_1create_yield_groups_request.html#a3359fd35cd2bf4d5a739a6ae18d5dc03", null ],
-    [ "yieldGroups", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202211_1_1_wrappers_1_1_yield_group_service_1_1create_yield_groups_request.html#a5d25a466fb3c4ae416e9897b826d6cea", null ]
-];

@@ -1,4 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202211_1_1_wrappers_1_1_yield_group_service_1_1get_yield_partners_request =
-[
-    [ "getYieldPartnersRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202211_1_1_wrappers_1_1_yield_group_service_1_1get_yield_partners_request.html#a925eb24f486aaa861f3da8335fc28fe8", null ]
-];

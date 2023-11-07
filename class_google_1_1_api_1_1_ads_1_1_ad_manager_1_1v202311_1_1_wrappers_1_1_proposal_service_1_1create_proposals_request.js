@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202311_1_1_wrappers_1_1_proposal_service_1_1create_proposals_request =
+[
+    [ "createProposalsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202311_1_1_wrappers_1_1_proposal_service_1_1create_proposals_request.html#aaa869b9c896b791c87f9508a40f3b1c4", null ],
+    [ "createProposalsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202311_1_1_wrappers_1_1_proposal_service_1_1create_proposals_request.html#abaf1b2dfe50f1ff598594859c605f0db", null ],
+    [ "proposals", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202311_1_1_wrappers_1_1_proposal_service_1_1create_proposals_request.html#a96788773f645106e8b121b77e0739020", null ]
+];
