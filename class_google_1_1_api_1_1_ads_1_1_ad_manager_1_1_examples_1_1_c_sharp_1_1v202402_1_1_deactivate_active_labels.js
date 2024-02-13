@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202402_1_1_deactivate_active_labels =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202402_1_1_deactivate_active_labels.html#af1fbc2b300f1788cf5d90621e4b2806b", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202402_1_1_deactivate_active_labels.html#a328729b21561cfcedd868dec68213c23", null ]
+];

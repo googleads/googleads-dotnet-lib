@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202305_1_1_approve_suggested_ad_units =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202305_1_1_approve_suggested_ad_units.html#a56f90f992a61a577a7219c1733b68023", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202305_1_1_approve_suggested_ad_units.html#a02940a50feab7146650362bf5457c90c", null ]
-];

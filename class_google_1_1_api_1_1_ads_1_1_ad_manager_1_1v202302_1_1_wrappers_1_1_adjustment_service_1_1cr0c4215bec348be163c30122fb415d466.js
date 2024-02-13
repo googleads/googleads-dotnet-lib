@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202302_1_1_wrappers_1_1_adjustment_service_1_1cr0c4215bec348be163c30122fb415d466 =
-[
-    [ "createForecastAdjustmentsResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202302_1_1_wrappers_1_1_adjustment_service_1_1cr0c4215bec348be163c30122fb415d466.html#a82036cc06da8624d7799255d292b7d30", null ],
-    [ "createForecastAdjustmentsResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202302_1_1_wrappers_1_1_adjustment_service_1_1cr0c4215bec348be163c30122fb415d466.html#ad4ae7703d628fe4ef622f19fc79e3895", null ],
-    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202302_1_1_wrappers_1_1_adjustment_service_1_1cr0c4215bec348be163c30122fb415d466.html#a61d011309b73b15e4ac9afd7477c7132", null ]
-];

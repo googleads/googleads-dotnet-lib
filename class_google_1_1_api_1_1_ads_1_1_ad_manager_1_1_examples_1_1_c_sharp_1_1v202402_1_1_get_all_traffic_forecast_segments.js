@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202402_1_1_get_all_traffic_forecast_segments =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202402_1_1_get_all_traffic_forecast_segments.html#a61d91771fae53a82fad43967e5f0a03c", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202402_1_1_get_all_traffic_forecast_segments.html#ad6f53005bacfba3415a20dc2bec5ace1", null ]
+];

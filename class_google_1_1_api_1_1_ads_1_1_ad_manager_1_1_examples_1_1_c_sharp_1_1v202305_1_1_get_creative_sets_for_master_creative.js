@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202305_1_1_get_creative_sets_for_master_creative =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202305_1_1_get_creative_sets_for_master_creative.html#ab295284a9438a79d58cf9764765d6c1f", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202305_1_1_get_creative_sets_for_master_creative.html#a743b23e9dcc0aff9beb525ce10c84d5b", null ]
-];
