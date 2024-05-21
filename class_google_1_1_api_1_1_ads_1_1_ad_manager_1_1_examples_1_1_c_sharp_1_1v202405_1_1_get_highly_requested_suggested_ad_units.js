@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202405_1_1_get_highly_requested_suggested_ad_units =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202405_1_1_get_highly_requested_suggested_ad_units.html#a7bceb825d7f72403c64a930a321a94a0", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202405_1_1_get_highly_requested_suggested_ad_units.html#ad4d8c42fce3ab91576bf0721aa88f528", null ]
+];

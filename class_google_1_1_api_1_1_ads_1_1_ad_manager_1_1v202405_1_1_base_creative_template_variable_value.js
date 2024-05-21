@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202405_1_1_base_creative_template_variable_value =
+[
+    [ "uniqueName", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202405_1_1_base_creative_template_variable_value.html#a9aa95717a8b295868eeacc1c5496f3db", null ]
+];
