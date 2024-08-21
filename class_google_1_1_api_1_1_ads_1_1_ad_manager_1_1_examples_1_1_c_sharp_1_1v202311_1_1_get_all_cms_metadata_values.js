@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202311_1_1_get_all_cms_metadata_values =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202311_1_1_get_all_cms_metadata_values.html#a0901d4cab9046cb078e1614afd1a9caf", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202311_1_1_get_all_cms_metadata_values.html#afd38d28927b52790699f1d0d1e38c173", null ]
-];

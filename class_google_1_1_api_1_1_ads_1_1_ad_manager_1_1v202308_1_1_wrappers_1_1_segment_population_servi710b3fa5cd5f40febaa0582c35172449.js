@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202308_1_1_wrappers_1_1_segment_population_servi710b3fa5cd5f40febaa0582c35172449 =
-[
-    [ "getSegmentPopulationResultsByIdsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202308_1_1_wrappers_1_1_segment_population_servi710b3fa5cd5f40febaa0582c35172449.html#a1a5fa9b9617b7029820679e1f6d250c3", null ],
-    [ "getSegmentPopulationResultsByIdsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202308_1_1_wrappers_1_1_segment_population_servi710b3fa5cd5f40febaa0582c35172449.html#a1ffd086be4fb28fd06b57be046b12474", null ],
-    [ "batchUploadIds", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202308_1_1_wrappers_1_1_segment_population_servi710b3fa5cd5f40febaa0582c35172449.html#ac4492a7f14a15912561a2807fa4f4ae7", null ]
-];

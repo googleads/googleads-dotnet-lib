@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202408_1_1_wrappers_1_1_yield_group_service_1_1get_yield_partners_response =
+[
+    [ "getYieldPartnersResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202408_1_1_wrappers_1_1_yield_group_service_1_1get_yield_partners_response.html#adb9deec6b4c90293ef32ab8d1d94688d", null ],
+    [ "getYieldPartnersResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202408_1_1_wrappers_1_1_yield_group_service_1_1get_yield_partners_response.html#ac2ba0974cb18178575a9d4041aca58fe", null ],
+    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202408_1_1_wrappers_1_1_yield_group_service_1_1get_yield_partners_response.html#a30f77d092ee3ac993ad086f88c7d4685", null ]
+];
