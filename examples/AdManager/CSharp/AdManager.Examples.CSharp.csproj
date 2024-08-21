@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>Google.Api.Ads.AdManager.Examples.CSharp</RootNamespace>
     <AssemblyName>Google.AdManager.Examples.CSharp</AssemblyName>
     <OutputType>Exe</OutputType>
@@ -15,7 +15,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Google.Ads.Common" Version="9.5.3" />
-    <PackageReference Include="Google.Dfp" Version="24.27.0" />
+    <PackageReference Include="Google.Dfp" Version="24.28.0" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
   </ItemGroup>
   <ItemGroup>
