@@ -15,8 +15,8 @@
 using Google.Api.Ads.Common.Lib;
 using Google.Api.Ads.Common.Util.Reports;
 using Google.Api.Ads.AdManager.Lib;
-using Google.Api.Ads.AdManager.Util.v202408;
-using Google.Api.Ads.AdManager.v202408;
+using Google.Api.Ads.AdManager.Util.v202411;
+using Google.Api.Ads.AdManager.v202411;
 
 using System;
 using System.Data;
