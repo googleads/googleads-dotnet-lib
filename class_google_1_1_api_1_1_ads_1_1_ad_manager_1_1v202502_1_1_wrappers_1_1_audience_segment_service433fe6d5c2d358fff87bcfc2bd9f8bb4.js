@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_wrappers_1_1_audience_segment_service433fe6d5c2d358fff87bcfc2bd9f8bb4 =
+[
+    [ "createAudienceSegmentsResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_wrappers_1_1_audience_segment_service433fe6d5c2d358fff87bcfc2bd9f8bb4.html#ad2763a99603e3f18450483a854ae4816", null ],
+    [ "createAudienceSegmentsResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_wrappers_1_1_audience_segment_service433fe6d5c2d358fff87bcfc2bd9f8bb4.html#a643f562a22f5b4722941ec76944f3127", null ],
+    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_wrappers_1_1_audience_segment_service433fe6d5c2d358fff87bcfc2bd9f8bb4.html#ae43f2bb3ab9374cf8cf5a694a53b64d9", null ]
+];

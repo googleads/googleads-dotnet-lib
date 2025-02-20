@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202405_1_1_get_forecast4cdc8a5661e347dc0b6262a1e1c1538b =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202405_1_1_get_forecast4cdc8a5661e347dc0b6262a1e1c1538b.html#ac2e18154c7947b7690d435c0bbc58519", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202405_1_1_get_forecast4cdc8a5661e347dc0b6262a1e1c1538b.html#a2c0a7dcb85adaec31bd4efdfa05a4b24", null ]
-];

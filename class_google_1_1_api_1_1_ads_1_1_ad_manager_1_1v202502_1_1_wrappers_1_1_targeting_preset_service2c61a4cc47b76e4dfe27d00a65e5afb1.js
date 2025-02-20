@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_wrappers_1_1_targeting_preset_service2c61a4cc47b76e4dfe27d00a65e5afb1 =
+[
+    [ "updateTargetingPresetsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_wrappers_1_1_targeting_preset_service2c61a4cc47b76e4dfe27d00a65e5afb1.html#aac1ea3deb916a2f4c4f2a8168bd5d824", null ],
+    [ "updateTargetingPresetsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_wrappers_1_1_targeting_preset_service2c61a4cc47b76e4dfe27d00a65e5afb1.html#a9a04c1bcb3ec954ae2c8df1e3a042d4c", null ],
+    [ "targetingPresets", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_wrappers_1_1_targeting_preset_service2c61a4cc47b76e4dfe27d00a65e5afb1.html#a63784417eb4ea0d0e08e31a3c042911c", null ]
+];

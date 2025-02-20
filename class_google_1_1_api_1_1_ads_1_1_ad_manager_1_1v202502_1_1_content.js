@@ -1,0 +1,25 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content =
+[
+    [ "cmsMetadataValueIds", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a7c0e686a0e15a31f36b525d13dc7b63d", null ],
+    [ "cmsSources", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#ae6184e00f0917761dbfc5e6fccd05b42", null ],
+    [ "contentBundleIds", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a4ef4805975bfb9b266edff9b19529bed", null ],
+    [ "dashIngestErrors", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#ac44c00d3a7bb7c5f9c88bf426729dfea", null ],
+    [ "dashIngestStatus", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a78fa1b006411cbb1079f5e5900889c3a", null ],
+    [ "dashIngestStatusSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a630e7ecff44623d4414fe54d127ce611", null ],
+    [ "duration", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a0426a1b75b1c16ca64eb6186bea414b2", null ],
+    [ "durationSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a680027f0cc4f63b559c48a8250698d8b", null ],
+    [ "hlsIngestErrors", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a31e1b5ab4851a2058e24576fcad7a6e0", null ],
+    [ "hlsIngestStatus", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a28880b896d6d76e6b2d2bd242ad53d67", null ],
+    [ "hlsIngestStatusSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a4dab4e8813fc101407a4c5026a01dee2", null ],
+    [ "id", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a8a774b848375b0255ac4feeb46c2083e", null ],
+    [ "idSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#ae824209e301739fa4eb01f92134bda5c", null ],
+    [ "importDateTime", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a211f10ff87a1f6ac5057d36a1cabe327", null ],
+    [ "lastDashIngestDateTime", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a40b570bbf52f63d95e5fa08e3329d053", null ],
+    [ "lastHlsIngestDateTime", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a760dfde323338acc4fb4bbab81eb1be8", null ],
+    [ "lastModifiedDateTime", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a8fd4771707c9dd6578a46c036ed7a53d", null ],
+    [ "name", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#ab6952fdfbacfa2bb75f7493ef8238089", null ],
+    [ "status", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#aa02a57ae0ba2f9e92810f58329646e9c", null ],
+    [ "statusDefinedBy", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a909e5dbc17abb664eaea64fb3572f240", null ],
+    [ "statusDefinedBySpecified", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a158c37ed0970c9d24ad62e4b06e405bf", null ],
+    [ "statusSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202502_1_1_content.html#a9bb22a97d3981caa698a053ffcdc2643", null ]
+];
