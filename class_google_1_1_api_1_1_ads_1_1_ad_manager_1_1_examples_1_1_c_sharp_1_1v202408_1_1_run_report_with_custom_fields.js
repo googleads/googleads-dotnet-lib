@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202408_1_1_run_report_with_custom_fields =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202408_1_1_run_report_with_custom_fields.html#a750a6029ec38e6e1d57bdc7570412bb3", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202408_1_1_run_report_with_custom_fields.html#ad01ab6a38523a2a55df16edf4665af44", null ]
-];

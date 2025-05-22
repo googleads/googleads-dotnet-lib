@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202505_1_1_create_traffic_adjustments =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202505_1_1_create_traffic_adjustments.html#a75666930bb5fcc1dfdd76dcca6f0a352", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202505_1_1_create_traffic_adjustments.html#a303a8cf9c8f6e26f7d07187af80a6047", null ]
+];

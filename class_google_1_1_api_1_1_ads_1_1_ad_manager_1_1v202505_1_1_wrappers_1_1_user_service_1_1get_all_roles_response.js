@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_wrappers_1_1_user_service_1_1get_all_roles_response =
+[
+    [ "getAllRolesResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_wrappers_1_1_user_service_1_1get_all_roles_response.html#a5e371d0f683b3adcb3d3a4a36e22b10b", null ],
+    [ "getAllRolesResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_wrappers_1_1_user_service_1_1get_all_roles_response.html#aa736ed636fd19133f4e6119c61553100", null ],
+    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_wrappers_1_1_user_service_1_1get_all_roles_response.html#a5f4f45c48bddca519fb1640579ca73a3", null ]
+];

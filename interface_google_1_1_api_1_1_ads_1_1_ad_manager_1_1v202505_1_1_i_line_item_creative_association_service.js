@@ -1,0 +1,9 @@
+var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_i_line_item_creative_association_service =
+[
+    [ "createLineItemCreativeAssociations", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_i_line_item_creative_association_service.html#a39c591899ceda26c2cd3515e3cfe3f0d", null ],
+    [ "createLineItemCreativeAssociationsAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_i_line_item_creative_association_service.html#a3cea4d8f2554c31dea4f0ce8113ea4f0", null ],
+    [ "getPreviewUrlsForNativeStyles", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_i_line_item_creative_association_service.html#a0837bb5504f6dc82359de0fa1c02b24e", null ],
+    [ "getPreviewUrlsForNativeStylesAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_i_line_item_creative_association_service.html#a90e084160077b6a5f58b5d82c37bfffd", null ],
+    [ "updateLineItemCreativeAssociations", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_i_line_item_creative_association_service.html#a2abac16c27d8f7b43e8c8eef7a051b70", null ],
+    [ "updateLineItemCreativeAssociationsAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_i_line_item_creative_association_service.html#af21f264d231cde2c53de6ba07c5428f3", null ]
+];

@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202408_1_1_get_all_programmatic_buyers =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202408_1_1_get_all_programmatic_buyers.html#adbd752d78457db8c2ad8f611d4ae2aa2", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202408_1_1_get_all_programmatic_buyers.html#af3537d1bf66dcfce771468cb12b8e69a", null ]
-];

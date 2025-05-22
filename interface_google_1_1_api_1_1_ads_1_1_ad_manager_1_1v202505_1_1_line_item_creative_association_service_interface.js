@@ -1,0 +1,15 @@
+var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_line_item_creative_association_service_interface =
+[
+    [ "createLineItemCreativeAssociations", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_line_item_creative_association_service_interface.html#a959aed9db82db7653ac074cc7e37f8e1", null ],
+    [ "createLineItemCreativeAssociationsAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_line_item_creative_association_service_interface.html#a0a0ee2d78760ba2c98cd1a57ec6de60c", null ],
+    [ "getLineItemCreativeAssociationsByStatement", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_line_item_creative_association_service_interface.html#a35603bccf416d9bf1e7e1ed73431f966", null ],
+    [ "getLineItemCreativeAssociationsByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_line_item_creative_association_service_interface.html#a068696d8cecfaffad8ded6dfa3e43eb9", null ],
+    [ "getPreviewUrl", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_line_item_creative_association_service_interface.html#a155f5338a817b0807990aa7187307b55", null ],
+    [ "getPreviewUrlAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_line_item_creative_association_service_interface.html#acc281c6f48c9e1abbfc3212e5f91d344", null ],
+    [ "getPreviewUrlsForNativeStyles", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_line_item_creative_association_service_interface.html#a2050cb3fb858fa65974ab74110557d5f", null ],
+    [ "getPreviewUrlsForNativeStylesAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_line_item_creative_association_service_interface.html#a55b6602fb04b274ba85349214193757d", null ],
+    [ "performLineItemCreativeAssociationAction", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_line_item_creative_association_service_interface.html#a377fa68fb66a8ab170d71afbfa95debd", null ],
+    [ "performLineItemCreativeAssociationActionAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_line_item_creative_association_service_interface.html#adfff8e45a6e2ba468db3f8b564d665f6", null ],
+    [ "updateLineItemCreativeAssociations", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_line_item_creative_association_service_interface.html#aad886b9a9e400a8176bcb3a06805958f", null ],
+    [ "updateLineItemCreativeAssociationsAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_line_item_creative_association_service_interface.html#a5ec55ace8a6672e60db92fd300e97511", null ]
+];

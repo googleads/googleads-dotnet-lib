@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_wrappers_1_1_custom_targeting_servicee2d9da4f72c2c4e893f2cf87e3d75dbb =
+[
+    [ "createCustomTargetingValuesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_wrappers_1_1_custom_targeting_servicee2d9da4f72c2c4e893f2cf87e3d75dbb.html#ada765c8b0c4334f50f3406cd88946509", null ],
+    [ "createCustomTargetingValuesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_wrappers_1_1_custom_targeting_servicee2d9da4f72c2c4e893f2cf87e3d75dbb.html#a0713cf0a0339929e5683ec6de7659d54", null ],
+    [ "values", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_wrappers_1_1_custom_targeting_servicee2d9da4f72c2c4e893f2cf87e3d75dbb.html#a33eca762c0ab5b7ff14249ba7051e8e8", null ]
+];

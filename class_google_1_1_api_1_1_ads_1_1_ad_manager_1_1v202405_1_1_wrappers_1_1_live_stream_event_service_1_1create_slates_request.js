@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202405_1_1_wrappers_1_1_live_stream_event_service_1_1create_slates_request =
-[
-    [ "createSlatesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202405_1_1_wrappers_1_1_live_stream_event_service_1_1create_slates_request.html#acbef3404f8abc58382f77fd36ee46c0b", null ],
-    [ "createSlatesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202405_1_1_wrappers_1_1_live_stream_event_service_1_1create_slates_request.html#a362c2114da6680a6aecc1dd02f541d68", null ],
-    [ "slates", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202405_1_1_wrappers_1_1_live_stream_event_service_1_1create_slates_request.html#a6978d50a13a4576f18a59126becaba6a", null ]
-];

@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_wrappers_1_1_live_stream_event_service_1_1update_slates_request =
+[
+    [ "updateSlatesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_wrappers_1_1_live_stream_event_service_1_1update_slates_request.html#a5704b39b386dd35db2fc13170ad9fcc1", null ],
+    [ "updateSlatesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_wrappers_1_1_live_stream_event_service_1_1update_slates_request.html#ae9f78a806278a23fd9acfad038862f49", null ],
+    [ "slates", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202505_1_1_wrappers_1_1_live_stream_event_service_1_1update_slates_request.html#a177be96a963a400bf3366441fe8b4959", null ]
+];

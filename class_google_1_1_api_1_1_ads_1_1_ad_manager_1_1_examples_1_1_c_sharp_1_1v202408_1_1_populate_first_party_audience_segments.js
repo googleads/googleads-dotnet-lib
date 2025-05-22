@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202408_1_1_populate_first_party_audience_segments =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202408_1_1_populate_first_party_audience_segments.html#a5a74984c830712d1f1d56bf5266bbd55", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202408_1_1_populate_first_party_audience_segments.html#a00728298d6530ab64f13eaf305e574f7", null ]
-];

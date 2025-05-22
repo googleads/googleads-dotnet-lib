@@ -1,7 +1,0 @@
-var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202405_1_1_stream_activity_monitor_service_interface =
-[
-    [ "getSamSessionsByStatement", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202405_1_1_stream_activity_monitor_service_interface.html#aa635ffd2cb7b7957bb51a907d4bcc0bd", null ],
-    [ "getSamSessionsByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202405_1_1_stream_activity_monitor_service_interface.html#a65e7749d95c9c64fde8150b07198d5ae", null ],
-    [ "registerSessionsForMonitoring", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202405_1_1_stream_activity_monitor_service_interface.html#aefc6254a112e26ed904ed94effd850a5", null ],
-    [ "registerSessionsForMonitoringAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202405_1_1_stream_activity_monitor_service_interface.html#aec6d72f856d82a223da578114cc767c8", null ]
-];
