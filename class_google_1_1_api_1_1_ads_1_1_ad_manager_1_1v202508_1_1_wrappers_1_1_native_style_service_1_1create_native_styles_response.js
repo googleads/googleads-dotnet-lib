@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202508_1_1_wrappers_1_1_native_style_service_1_1create_native_styles_response =
+[
+    [ "createNativeStylesResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202508_1_1_wrappers_1_1_native_style_service_1_1create_native_styles_response.html#a112691810b2b3d07ca6d92cbf7ad8163", null ],
+    [ "createNativeStylesResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202508_1_1_wrappers_1_1_native_style_service_1_1create_native_styles_response.html#a606f8eab7c48c86c4a7c1cacddf30f8c", null ],
+    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202508_1_1_wrappers_1_1_native_style_service_1_1create_native_styles_response.html#ad8bf653d1b64c92789f256ff0c2f7f0d", null ]
+];

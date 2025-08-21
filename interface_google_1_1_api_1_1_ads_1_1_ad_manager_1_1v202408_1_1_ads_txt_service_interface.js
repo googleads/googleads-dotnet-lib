@@ -1,5 +1,0 @@
-var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202408_1_1_ads_txt_service_interface =
-[
-    [ "getMcmSupplyChainDiagnosticsDownloadUrl", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202408_1_1_ads_txt_service_interface.html#af1f32c4e1a812ba3e22accaaef6a15b3", null ],
-    [ "getMcmSupplyChainDiagnosticsDownloadUrlAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202408_1_1_ads_txt_service_interface.html#a357f9e25c0fdebcd2a278a43556b494a", null ]
-];

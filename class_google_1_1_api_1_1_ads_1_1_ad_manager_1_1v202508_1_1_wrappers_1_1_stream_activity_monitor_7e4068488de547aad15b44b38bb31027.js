@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202508_1_1_wrappers_1_1_stream_activity_monitor_7e4068488de547aad15b44b38bb31027 =
+[
+    [ "getSamSessionsByStatementResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202508_1_1_wrappers_1_1_stream_activity_monitor_7e4068488de547aad15b44b38bb31027.html#a84930498f089b747ddeddf80a2f5ae26", null ],
+    [ "getSamSessionsByStatementResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202508_1_1_wrappers_1_1_stream_activity_monitor_7e4068488de547aad15b44b38bb31027.html#a94fd01faf9806f3dfc85fbfa1d1fff90", null ],
+    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202508_1_1_wrappers_1_1_stream_activity_monitor_7e4068488de547aad15b44b38bb31027.html#ad9a479791fcaf98405230d97172ebb5d", null ]
+];

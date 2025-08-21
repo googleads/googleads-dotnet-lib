@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202408_1_1_wrappers_1_1_proposal_line_item_service_1_1create_makegoods_request =
-[
-    [ "createMakegoodsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202408_1_1_wrappers_1_1_proposal_line_item_service_1_1create_makegoods_request.html#aec36a5005c5ae37cc443c4ed63bd41c1", null ],
-    [ "createMakegoodsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202408_1_1_wrappers_1_1_proposal_line_item_service_1_1create_makegoods_request.html#a9038feaee9901b953134ff300f2b1658", null ],
-    [ "makegoodInfos", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202408_1_1_wrappers_1_1_proposal_line_item_service_1_1create_makegoods_request.html#ab722010e539f7ccee8b97bc549885b39", null ]
-];

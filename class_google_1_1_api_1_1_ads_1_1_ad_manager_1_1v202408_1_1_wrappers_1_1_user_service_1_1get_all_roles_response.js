@@ -1,6 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202408_1_1_wrappers_1_1_user_service_1_1get_all_roles_response =
-[
-    [ "getAllRolesResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202408_1_1_wrappers_1_1_user_service_1_1get_all_roles_response.html#a40e686c8d91260a69d18c1984ebd04c9", null ],
-    [ "getAllRolesResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202408_1_1_wrappers_1_1_user_service_1_1get_all_roles_response.html#aaec9d7842e0dbb7683e0b73f40968b87", null ],
-    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202408_1_1_wrappers_1_1_user_service_1_1get_all_roles_response.html#aab88abfa63c5006a9cb44f49b6b3916d", null ]
-];
