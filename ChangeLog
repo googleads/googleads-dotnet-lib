@@ -1,3 +1,9 @@
+24.32.0
+===
+   - Added support for v202508
+   - Removed examples for v202411
+   - Removed support for v202408
+
 24.31.0
 ===
    - Added support for v202505
