@@ -16,7 +16,7 @@
 
   <!-- build properties -->
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <AssemblyName>Google.Ads.Common</AssemblyName>
     <RootNamespace>Google.Api.Ads.Common</RootNamespace>
     <SignAssembly>true</SignAssembly>
@@ -34,18 +34,9 @@
     <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
     <PackageReference Include="System.ServiceModel.Security" Version="4.5.3" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
     <None Include="../package_icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)'=='net452'">
-    <Reference Include="System.Web" />
-    <Reference Include="System.Configuration" />
-  </ItemGroup>
-  <PropertyGroup Condition="'$(TargetFramework)'=='net452'">
-    <DefineConstants>NET452</DefineConstants>
-  </PropertyGroup>
 </Project>

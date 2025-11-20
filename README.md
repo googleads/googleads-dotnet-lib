@@ -4,6 +4,7 @@ This project hosts the .NET client library for the
 [Google Ad Manager SOAP API](//developers.google.com/ad-manager/api).
 
 ## Features
+
 - Distributed via Nuget
 - Stub classes for all the supported API versions and services.
 - Helpful utilities
@@ -12,10 +13,11 @@ This project hosts the .NET client library for the
 - Easy management of credentials, authentication, and session information
 - Docs available in HTML and XML format.
 
-## Supported Frameworks
+## Supported Runtimes
 
-- .NET Framework 4.5.2+
-- .NET Standard 2.0 ([limited support](https://github.com/googleads/googleads-dotnet-lib/wiki/Cross-Platform-Development))
+- .NET Framework 4.6.2+
+- .NET Core 2.0+
+- .NET 5+
 
 ## Announcements and updates
 

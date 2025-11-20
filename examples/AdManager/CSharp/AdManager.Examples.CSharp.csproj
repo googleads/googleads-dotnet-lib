@@ -15,7 +15,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Google.Ads.Common" Version="9.5.3" />
-    <PackageReference Include="Google.Dfp" Version="24.32.0" />
+    <PackageReference Include="Google.Dfp" Version="24.33.0" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
   </ItemGroup>
   <ItemGroup>
@@ -24,11 +24,6 @@
         Include="..\..\..\src\Common\Common.csproj" />
     <ProjectReference Condition="Exists('..\..\..\src\AdManager\AdManager.csproj')"
         Include="..\..\..\src\AdManager\AdManager.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="oauth\**" />
-    <Content Remove="oauth\**" />
-    <None Remove="oauth\**" />
   </ItemGroup>
   <ItemGroup>
     <None Condition="Exists('..\..\..\src\AdManager\App.config')"

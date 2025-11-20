@@ -3,7 +3,7 @@
    <PropertyGroup>
     <Title>Google's Ad Manager API Dotnet Client Library</Title>
     <PackageId>Google.Dfp</PackageId>
-    <Version>24.32.0</Version>
+    <Version>24.33.0</Version>
     <Description>This library provides you with functionality to access the Google's Ad Manager API.</Description>
     <PackageReleaseNotes>See https://github.com/googleads/googleads-dotnet-lib/blob/main/ChangeLog</PackageReleaseNotes>
     <PackageTags>DFP Google</PackageTags>
@@ -18,7 +18,7 @@
   </PropertyGroup>
   <!-- build properties -->
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <AssemblyName>Google.AdManager</AssemblyName>
     <RootNamespace>Google.Api.Ads.AdManager</RootNamespace>
     <SignAssembly>true</SignAssembly>
@@ -62,7 +62,4 @@
       <LastGenOutput>AdManagerErrorMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <PropertyGroup Condition="'$(TargetFramework)'=='net452'">
-    <DefineConstants>NET452</DefineConstants>
-  </PropertyGroup>
 </Project>
