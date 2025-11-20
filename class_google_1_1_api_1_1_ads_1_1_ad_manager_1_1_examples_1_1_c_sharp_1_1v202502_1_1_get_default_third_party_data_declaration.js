@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202502_1_1_get_default_third_party_data_declaration =
-[
-    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202502_1_1_get_default_third_party_data_declaration.html#a6bfc03970952d61c85950c2a45662910", null ],
-    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202502_1_1_get_default_third_party_data_declaration.html#a6f89291e48b32c7bca4c3b2d7a899909", null ]
-];

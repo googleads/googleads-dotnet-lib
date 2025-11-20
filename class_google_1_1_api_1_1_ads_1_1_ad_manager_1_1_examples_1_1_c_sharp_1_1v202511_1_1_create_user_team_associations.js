@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202511_1_1_create_user_team_associations =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202511_1_1_create_user_team_associations.html#a79290275fa4f4b6eaa8cd74ae9e8fe46", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202511_1_1_create_user_team_associations.html#a3a0c1b62f9bace7abad70739d8dcb411", null ]
+];

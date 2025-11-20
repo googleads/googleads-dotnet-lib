@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202511_1_1_update_user_team_associations =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202511_1_1_update_user_team_associations.html#afd9d3f923a279784a0e8304ff83e8209", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202511_1_1_update_user_team_associations.html#ab8a53ef1adbf0763bb9780814c3411f8", null ]
+];

@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202511_1_1_wrappers_1_1_live_stream_event_service_1_1create_slates_response =
+[
+    [ "createSlatesResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202511_1_1_wrappers_1_1_live_stream_event_service_1_1create_slates_response.html#adc5490b7c863668379aa6eedcb059164", null ],
+    [ "createSlatesResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202511_1_1_wrappers_1_1_live_stream_event_service_1_1create_slates_response.html#a934ea0caa413693d3557fb517efe239b", null ],
+    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202511_1_1_wrappers_1_1_live_stream_event_service_1_1create_slates_response.html#aeafdf602951ff05590c90f75c97f6ca2", null ]
+];

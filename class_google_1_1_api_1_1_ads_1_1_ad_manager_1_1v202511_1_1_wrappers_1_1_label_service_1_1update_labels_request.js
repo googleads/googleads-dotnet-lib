@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202511_1_1_wrappers_1_1_label_service_1_1update_labels_request =
+[
+    [ "updateLabelsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202511_1_1_wrappers_1_1_label_service_1_1update_labels_request.html#aedf51ba40a2b44521ecd1678b314383e", null ],
+    [ "updateLabelsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202511_1_1_wrappers_1_1_label_service_1_1update_labels_request.html#abad6ea5fddadfad7a0bf7c8b27707912", null ],
+    [ "labels", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202511_1_1_wrappers_1_1_label_service_1_1update_labels_request.html#a88e46ec155efb0560e9b18dd8c1d47b6", null ]
+];

@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202511_1_1_wrappers_1_1_creative_wrapper_service1bbd46b9845a7e9276539b010bcdc11a =
+[
+    [ "updateCreativeWrappersResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202511_1_1_wrappers_1_1_creative_wrapper_service1bbd46b9845a7e9276539b010bcdc11a.html#a06301872dee07b71c01196d3c7743a6a", null ],
+    [ "updateCreativeWrappersResponse", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202511_1_1_wrappers_1_1_creative_wrapper_service1bbd46b9845a7e9276539b010bcdc11a.html#ad019edabbf2264ec6b2e2dec96e4ad2b", null ],
+    [ "rval", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202511_1_1_wrappers_1_1_creative_wrapper_service1bbd46b9845a7e9276539b010bcdc11a.html#a958164bc912aea52dc888eb5f6dad513", null ]
+];

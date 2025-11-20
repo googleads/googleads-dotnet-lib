@@ -1,0 +1,5 @@
+var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202511_1_1_ads_txt_service_interface =
+[
+    [ "getMcmSupplyChainDiagnosticsDownloadUrl", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202511_1_1_ads_txt_service_interface.html#a0bfd5b3ec94221ab768e699312751e25", null ],
+    [ "getMcmSupplyChainDiagnosticsDownloadUrlAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202511_1_1_ads_txt_service_interface.html#ab5c7b13c2172df7262ef3771d08a2ab6", null ]
+];

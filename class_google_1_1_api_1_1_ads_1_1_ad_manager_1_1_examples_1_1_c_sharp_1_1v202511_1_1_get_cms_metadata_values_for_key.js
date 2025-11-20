@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202511_1_1_get_cms_metadata_values_for_key =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202511_1_1_get_cms_metadata_values_for_key.html#aacc6bd271db2ce83e38690c3a4a7684c", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202511_1_1_get_cms_metadata_values_for_key.html#a7e136e00be5c2852deeb0dc7906a8298", null ]
+];

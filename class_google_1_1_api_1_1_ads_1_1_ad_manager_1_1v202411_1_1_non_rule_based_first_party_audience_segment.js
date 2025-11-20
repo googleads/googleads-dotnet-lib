@@ -1,5 +1,0 @@
-var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202411_1_1_non_rule_based_first_party_audience_segment =
-[
-    [ "membershipExpirationDays", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202411_1_1_non_rule_based_first_party_audience_segment.html#a54b6a8df0284a99383d471265ff06266", null ],
-    [ "membershipExpirationDaysSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202411_1_1_non_rule_based_first_party_audience_segment.html#a8361acff2935128f4387149783504fec", null ]
-];
