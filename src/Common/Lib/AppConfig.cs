@@ -89,6 +89,11 @@ namespace Google.Api.Ads.Common.Lib
         string OAuth2SecretsJsonPath { get; set; }
 
         /// <summary>
+        /// contents
+        /// </summary>
+        string OAuth2SecretsJson { get; set; }
+
+        /// <summary>
         /// Gets the OAuth2 private key for service account flow.
         /// </summary>
         /// <remarks>

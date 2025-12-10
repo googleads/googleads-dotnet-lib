@@ -137,6 +137,10 @@
     <value>Failed to load JSON secrets file for service account configuration. See inner exception for details.</value>
     <comment>Used by AppConfigBase class when trying to load various settings from the JSON secrets file when using OAuth2 service account flow.</comment>
   </data>
+  <data name="FailedToLoadJsonSecrets" xml:space="preserve">
+    <value>Failed to load JSON secrets for service account configuration. See inner exception for details.</value>
+    <comment>Used by AppConfigBase class when trying to load various settings from the JSON secrets when using OAuth2 service account flow.</comment>
+  </data>
   <data name="FailedToParseAuthTokenException" xml:space="preserve">
     <value>Failed to parse response from server. See inner exception for more details.</value>
     <comment>Used as default error message when auth token error parsing fails.</comment>
