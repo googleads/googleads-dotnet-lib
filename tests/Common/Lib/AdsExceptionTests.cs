@@ -1,4 +1,4 @@
-﻿// Copyright 2012, Google Inc. All Rights Reserved.
+// Copyright 2012, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,7 +19,8 @@ using NUnit.Framework;
 
 using System;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
+using System.Xml;
 
 namespace Google.Api.Ads.Common.Tests.Lib {
   /// <summary>
@@ -42,9 +43,7 @@ namespace Google.Api.Ads.Common.Tests.Lib {
     [Test]
     [Category("Small")]
     public void TestContructor1() {
-      Assert.DoesNotThrow(delegate() {
-        AdsException exception = new MockAdsException();
-      });
+      Assert.DoesNotThrow(delegate() { AdsException exception = new MockAdsException(); });
     }
 
     /// <summary>
@@ -78,13 +77,18 @@ namespace Google.Api.Ads.Common.Tests.Lib {
       Assert.DoesNotThrow(delegate() {
         MockAdsException exception = new MockAdsException();
         exception.MockProperty = 2;
-        BinaryFormatter formatter = new BinaryFormatter();
-        MemoryStream memStream = new MemoryStream();
-        formatter.Serialize(memStream, exception);
-        memStream.Seek(0, SeekOrigin.Begin);
-        MockAdsException exception1 = (MockAdsException) formatter.Deserialize(memStream);
-        memStream.Dispose();
-        Assert.AreEqual(2, exception1.MockProperty);
+        DataContractSerializer serializer = new DataContractSerializer(
+            exception.GetType(), new Type[] { typeof(AdsException), typeof(MockAdsException) });
+        using (MemoryStream memStream = new MemoryStream()) {
+          using (XmlWriter writer = XmlWriter.Create(memStream)) {
+            serializer.WriteObject(writer, exception);
+          }
+          memStream.Seek(0, SeekOrigin.Begin);
+          using (XmlReader reader = XmlReader.Create(memStream)) {
+            MockAdsException exception1 = (MockAdsException)serializer.ReadObject(reader);
+            Assert.AreEqual(2, exception1.MockProperty);
+          }
+        }
       });
     }
   }

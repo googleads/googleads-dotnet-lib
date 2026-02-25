@@ -135,7 +135,9 @@ TimeStamp: {1}
     public void Init() {
       tempFile = Path.GetTempFileName();
       CreateTestFile(tempFile);
+#pragma warning disable SYSLIB0014
       testRequest = HttpWebRequest.Create(tempFile);
+#pragma warning restore SYSLIB0014
       testResponse = testRequest.GetResponse();
     }
 

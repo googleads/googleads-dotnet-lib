@@ -45,7 +45,9 @@ namespace Google.Api.Ads.Common.Tests.Util {
       }
       fileUri = new Uri(fileName);
 
+#pragma warning disable SYSLIB0014
       webResponse = FileWebRequest.Create(fileUri.AbsoluteUri).GetResponse();
+#pragma warning restore SYSLIB0014
     }
 
     /// <summary>

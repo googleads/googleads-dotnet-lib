@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net8.0</TargetFrameworks>
     <AssemblyName>Google.AdManager.Tests</AssemblyName>
     <RootNamespace>Google.Api.Ads.AdManager.Tests</RootNamespace>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>

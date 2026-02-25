@@ -1,4 +1,4 @@
-﻿// Copyright 2012, Google Inc. All Rights Reserved.
+// Copyright 2012, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -101,6 +101,7 @@ namespace Google.Api.Ads.Common.Tests {
     /// <param name="requestUri">The request URI.</param>
     /// <param name="onBeforeSendResponse">Callback to be called before sending
     /// response.</param>
+#pragma warning disable SYSLIB0014
     public MockWebRequest(MockWebResponse webResponse, Uri requestUri,
         WebRequestInterceptor.OnBeforeSendResponse onBeforeSendResponse, bool raiseException) {
       this.webResponse = webResponse;
@@ -108,6 +109,7 @@ namespace Google.Api.Ads.Common.Tests {
       this.onBeforeSendResponse = onBeforeSendResponse;
       this.raiseException = raiseException;
     }
+#pragma warning restore SYSLIB0014
 
     /// <summary>
     /// Gets or sets the content length of the request data being sent.

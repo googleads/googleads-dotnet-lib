@@ -1,4 +1,4 @@
-﻿// Copyright 2012, Google Inc. All Rights Reserved.
+// Copyright 2012, Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -86,9 +86,15 @@ namespace Google.Api.Ads.Common.Tests.Mocks {
     /// <param name="info">Info about the serialization context.</param>
     /// <param name="context">A streaming context that represents the
     /// serialization stream.</param>
+#pragma warning disable SYSLIB0003
     [SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter = true)]
+#pragma warning restore SYSLIB0003
+#pragma warning disable CS0672
     public override void GetObjectData(SerializationInfo info, StreamingContext context) {
+#pragma warning restore CS0672
+#pragma warning disable SYSLIB0051
       base.GetObjectData(info, context);
+#pragma warning restore SYSLIB0051
       info.AddValue("MockProperty", mockProperty);
     }
   }
