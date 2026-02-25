@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202602_1_1_create_custom_targeting_keys_and_values =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202602_1_1_create_custom_targeting_keys_and_values.html#aa1a4dc76a6fb9ef63598ceecaf3d5491", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202602_1_1_create_custom_targeting_keys_and_values.html#a7665bcc60f2ff06374177b487f4876f0", null ]
+];
