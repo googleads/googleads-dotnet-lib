@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202605_1_1_get_default_third_party_data_declaration =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202605_1_1_get_default_third_party_data_declaration.html#a2fd7bbc3039f90276ad3f835d8fcec29", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202605_1_1_get_default_third_party_data_declaration.html#a62ec238eab48d54c1f7fd7c15c4fdf6f", null ]
+];

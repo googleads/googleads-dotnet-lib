@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202605_1_1_get_availability_forecast_by_id =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202605_1_1_get_availability_forecast_by_id.html#a40748f1c6e800002e0daef61146cf04b", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202605_1_1_get_availability_forecast_by_id.html#a0d9b46c36dd48f373b1c0c6b09603b1b", null ]
+];

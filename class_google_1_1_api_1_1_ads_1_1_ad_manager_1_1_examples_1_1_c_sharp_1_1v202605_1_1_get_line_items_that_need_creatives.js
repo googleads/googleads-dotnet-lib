@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202605_1_1_get_line_items_that_need_creatives =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202605_1_1_get_line_items_that_need_creatives.html#ad78def8cfb760d5c2c9f7473bee9889c", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202605_1_1_get_line_items_that_need_creatives.html#afa2bbd2223f3712f7eba71d1ef295339", null ]
+];

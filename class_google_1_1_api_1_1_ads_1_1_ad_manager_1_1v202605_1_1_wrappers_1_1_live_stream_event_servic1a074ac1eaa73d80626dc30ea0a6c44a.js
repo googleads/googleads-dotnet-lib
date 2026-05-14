@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_wrappers_1_1_live_stream_event_servic1a074ac1eaa73d80626dc30ea0a6c44a =
+[
+    [ "updateLiveStreamEventsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_wrappers_1_1_live_stream_event_servic1a074ac1eaa73d80626dc30ea0a6c44a.html#aba3cf85a87b355cec618e89ced406f6a", null ],
+    [ "updateLiveStreamEventsRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_wrappers_1_1_live_stream_event_servic1a074ac1eaa73d80626dc30ea0a6c44a.html#a445edb6dd746cbee690e289940251a9b", null ],
+    [ "liveStreamEvents", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_wrappers_1_1_live_stream_event_servic1a074ac1eaa73d80626dc30ea0a6c44a.html#a0fb2d248cc77e46476f5bf07efe6064e", null ]
+];

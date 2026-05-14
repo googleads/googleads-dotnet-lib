@@ -1,0 +1,4 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_asset_creative_template_variable_value =
+[
+    [ "asset", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_asset_creative_template_variable_value.html#a3b0b10f8d72f92033b2cf6d9db996b26", null ]
+];

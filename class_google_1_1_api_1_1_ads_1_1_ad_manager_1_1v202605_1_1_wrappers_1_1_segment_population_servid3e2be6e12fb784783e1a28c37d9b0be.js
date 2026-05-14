@@ -1,0 +1,7 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_wrappers_1_1_segment_population_servid3e2be6e12fb784783e1a28c37d9b0be =
+[
+    [ "performSegmentPopulationActionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_wrappers_1_1_segment_population_servid3e2be6e12fb784783e1a28c37d9b0be.html#a937f108b94ca2ea3655e88507c84af5f", null ],
+    [ "performSegmentPopulationActionRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_wrappers_1_1_segment_population_servid3e2be6e12fb784783e1a28c37d9b0be.html#ae3a86b0617b7e2fc8889ce9e98205011", null ],
+    [ "action", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_wrappers_1_1_segment_population_servid3e2be6e12fb784783e1a28c37d9b0be.html#a7bf2cc933d0663a091fa60abf12b8356", null ],
+    [ "batchUploadIds", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_wrappers_1_1_segment_population_servid3e2be6e12fb784783e1a28c37d9b0be.html#a1ec22382daeb18be8b4c358e5e840ade", null ]
+];

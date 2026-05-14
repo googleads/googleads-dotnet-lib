@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_publisher_provided_signals_targeting =
+[
+    [ "excludedTaxonomyCategoryIds", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_publisher_provided_signals_targeting.html#a3c08f45e61075be1df318dd42647cd1e", null ],
+    [ "targetedTaxonomyCategoryIds", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_publisher_provided_signals_targeting.html#ad8d23869573ea434d1813f6269c3385f", null ]
+];

@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_proposal_action_error =
+[
+    [ "reason", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_proposal_action_error.html#a8228fe899fcfbb2d9f7fefa430d44303", null ],
+    [ "reasonSpecified", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202605_1_1_proposal_action_error.html#af34ff2ea0f98060dbfb4ecf3cbf6aaba", null ]
+];
