@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202608_1_1_deactivate_custom_fields =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202608_1_1_deactivate_custom_fields.html#abde2c242764750fbc3f58e2e09b71952", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202608_1_1_deactivate_custom_fields.html#acb9487c28cee6b9e5dd88df84a585b07", null ]
+];

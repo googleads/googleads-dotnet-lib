@@ -1,0 +1,6 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202608_1_1_wrappers_1_1_ad_rule_service_1_1update_break_templates_request =
+[
+    [ "updateBreakTemplatesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202608_1_1_wrappers_1_1_ad_rule_service_1_1update_break_templates_request.html#aa38314f54b3060333e73684363cad6f1", null ],
+    [ "updateBreakTemplatesRequest", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202608_1_1_wrappers_1_1_ad_rule_service_1_1update_break_templates_request.html#a81efd44640a78d1994db150a01479a24", null ],
+    [ "breakTemplate", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202608_1_1_wrappers_1_1_ad_rule_service_1_1update_break_templates_request.html#a7d40ce2a45e20a82b179abeaeb7a5045", null ]
+];

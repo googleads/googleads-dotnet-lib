@@ -1,0 +1,7 @@
+var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202608_1_1_stream_activity_monitor_service_interface =
+[
+    [ "getSamSessionsByStatement", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202608_1_1_stream_activity_monitor_service_interface.html#a576f9679721ecdacca16250df6263361", null ],
+    [ "getSamSessionsByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202608_1_1_stream_activity_monitor_service_interface.html#a68c05a96da44f4f1923fea8799216a35", null ],
+    [ "registerSessionsForMonitoring", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202608_1_1_stream_activity_monitor_service_interface.html#ad21b57cac6a8ef0d676b7fd4fd5f6318", null ],
+    [ "registerSessionsForMonitoringAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202608_1_1_stream_activity_monitor_service_interface.html#a780cb2cbbbe8e0bf5106bfd233ba04c3", null ]
+];

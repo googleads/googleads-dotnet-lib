@@ -1,0 +1,5 @@
+var interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202608_1_1_line_item_template_service_interface =
+[
+    [ "getLineItemTemplatesByStatement", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202608_1_1_line_item_template_service_interface.html#ae426ab51e1919f18a524f2672944aa88", null ],
+    [ "getLineItemTemplatesByStatementAsync", "interface_google_1_1_api_1_1_ads_1_1_ad_manager_1_1v202608_1_1_line_item_template_service_interface.html#a7d26aa4d537da14a82237a3f7bb79a58", null ]
+];

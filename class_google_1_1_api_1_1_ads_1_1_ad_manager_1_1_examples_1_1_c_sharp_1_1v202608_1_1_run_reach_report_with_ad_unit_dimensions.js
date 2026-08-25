@@ -1,0 +1,5 @@
+var class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202608_1_1_run_reach_report_with_ad_unit_dimensions =
+[
+    [ "Run", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202608_1_1_run_reach_report_with_ad_unit_dimensions.html#a0f15a33bec1292ab9aaf2a36f482b658", null ],
+    [ "Description", "class_google_1_1_api_1_1_ads_1_1_ad_manager_1_1_examples_1_1_c_sharp_1_1v202608_1_1_run_reach_report_with_ad_unit_dimensions.html#af7ddf1d40af79a824e7b0cc1c5b7352f", null ]
+];
