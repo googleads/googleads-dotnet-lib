@@ -104,7 +104,15 @@ namespace Google.Api.Ads.Common {
                 return ResourceManager.GetString("FailedToLoadJsonSecretsFile", resourceCulture);
             }
         }
-        
+
+        internal static string FailedToLoadJsonSecrets
+        {
+            get
+            {
+                return ResourceManager.GetString("FailedToLoadJsonSecrets", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Failed to parse response from server. See inner exception for more details..
         /// </summary>

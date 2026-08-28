@@ -136,6 +136,9 @@ namespace Google.Api.Ads.Common.Lib
         private ConfigSetting<string> oAuth2SecretsJsonPath =
             new ConfigSetting<string>("OAuth2SecretsJsonPath", "");
 
+        private ConfigSetting<string> oAuth2SecretsJson =
+            new ConfigSetting<string>("OAuth2SecretsJson", "");
+
         /// <summary>
         /// OAuth2 scope.
         /// </summary>
@@ -352,6 +355,22 @@ namespace Google.Api.Ads.Common.Lib
         }
 
         /// <summary>
+        /// Gets or sets the OAuth2 secrets JSON file path.
+        /// </summary>
+        /// <remarks>
+        /// This setting is applicable only when using OAuth2 service accounts.
+        /// </remarks>
+        public string OAuth2SecretsJson
+        {
+            get => oAuth2SecretsJson.Value;
+            set
+            {
+                SetPropertyAndNotify(oAuth2SecretsJson, value);
+                LoadOAuth2SecretsFromString();
+            }
+        }
+
+        /// <summary>
         /// Gets or sets whether usage of various client library features should be
         /// tracked.
         /// </summary>
@@ -548,6 +567,12 @@ namespace Google.Api.Ads.Common.Lib
             // Read and parse the OAuth2 JSON secrets file if applicable.
             ReadSetting(settings, oAuth2SecretsJsonPath);
 
+            ReadSetting(settings, oAuth2SecretsJson);
+            if (!string.IsNullOrEmpty(oAuth2SecretsJson.Value))
+            {
+                LoadOAuth2SecretsFromString();
+            }
+
             if (!string.IsNullOrEmpty(oAuth2SecretsJsonPath.Value))
             {
                 LoadOAuth2SecretsFromFile();
@@ -608,22 +633,7 @@ namespace Google.Api.Ads.Common.Lib
                 using (StreamReader reader = new StreamReader(OAuth2SecretsJsonPath))
                 {
                     string contents = reader.ReadToEnd();
-                    Dictionary<string, string> config =
-                        JsonConvert.DeserializeObject<Dictionary<string, string>>(contents);
-
-                    ReadSetting(config, oAuth2ServiceAccountEmail);
-                    if (string.IsNullOrEmpty(this.OAuth2ServiceAccountEmail))
-                    {
-                        throw new AdsOAuthException(CommonErrorMessages
-                            .ClientEmailIsMissingInJsonFile);
-                    }
-
-                    ReadSetting(config, oAuth2PrivateKey);
-                    if (string.IsNullOrEmpty(this.OAuth2PrivateKey))
-                    {
-                        throw new AdsOAuthException(CommonErrorMessages
-                            .PrivateKeyIsMissingInJsonFile);
-                    }
+                    LoadOAuth2Secrets(contents);
                 }
             }
             catch (AdsOAuthException)
@@ -633,6 +643,42 @@ namespace Google.Api.Ads.Common.Lib
             catch (Exception e)
             {
                 throw new AdsOAuthException(CommonErrorMessages.FailedToLoadJsonSecretsFile, e);
+            }
+        }
+
+        private void LoadOAuth2SecretsFromString()
+        {
+            try
+            {
+                LoadOAuth2Secrets(oAuth2SecretsJson.Value);
+            }
+            catch (AdsOAuthException)
+            {
+                throw;
+            }
+            catch (Exception e)
+            {
+                throw new AdsOAuthException(CommonErrorMessages.FailedToLoadJsonSecrets, e);
+            }
+        }
+
+        private void LoadOAuth2Secrets(string contents)
+        {
+            Dictionary<string, string> config =
+                        JsonConvert.DeserializeObject<Dictionary<string, string>>(contents);
+
+            ReadSetting(config, oAuth2ServiceAccountEmail);
+            if (string.IsNullOrEmpty(this.OAuth2ServiceAccountEmail))
+            {
+                throw new AdsOAuthException(CommonErrorMessages
+                    .ClientEmailIsMissingInJsonFile);
+            }
+
+            ReadSetting(config, oAuth2PrivateKey);
+            if (string.IsNullOrEmpty(this.OAuth2PrivateKey))
+            {
+                throw new AdsOAuthException(CommonErrorMessages
+                    .PrivateKeyIsMissingInJsonFile);
             }
         }
 
